@@ -28,7 +28,7 @@ Changes to the [specification](./specification/overview.md) are versioned accord
 
 - The official project name is "FinOps Open Cost and Usage Specification"
 - The official acronym used by the FinOps Open Cost and Usage Specification project is "FOCUS"
-- While the official acronym includes the word "Specification" it is still acceptable to refer to the working group output as the "FOCUS Specification"
+- While the official acronym includes the word "Specification", it is still acceptable to refer to this working groups output as the "FOCUS Specification"
 
 ## About the project
 
@@ -36,4 +36,4 @@ See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/
 
 - [Change / contribution process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
 
-[specification]: specification-overview.md
+[specification]: specification/specification-overview.md
