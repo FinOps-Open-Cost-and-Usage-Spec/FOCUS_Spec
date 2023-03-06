@@ -1,0 +1,28 @@
+name: generate_spec_pdf
+on:
+  push:
+    branches:
+      - working_draft
+
+jobs:
+    # The job that will use the container image you just pushed to ghcr.io
+    gen_pdf:
+        runs-on: ubuntu-20.04
+        container:
+            image: pandoc/extra:latest-ubuntu
+        steps:
+            - name: Check out repository code
+              uses: actions/checkout@v3
+            - name: Build PDF
+              shell: sh
+              run: |
+                DEBIAN_FRONTEND=noninteractive apt-get install -y wkhtmltopdf
+                cd specification
+                pandoc *.md -o spec.pdf -f gfm --variable mainfont="DejaVu Sans" --metadata title="FOCUS Specification Draft" --pdf-engine=wkhtmltopdf
+            - name: Upload a Build Artifact
+              uses: actions/upload-artifact@v3.1.2
+              with:
+                # Artifact name
+                name: FOCUS_specification
+                # A file, directory or wildcard pattern that describes what to upload
+                path: specification/spec.pdf
