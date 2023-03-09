@@ -16,6 +16,7 @@ jobs:
             - name: Build PDF
               shell: sh
               run: |
+                apt-get -y update
                 DEBIAN_FRONTEND=noninteractive apt-get install -y wkhtmltopdf
                 cd specification
                 pandoc *.md -o spec.pdf -f gfm --variable mainfont="DejaVu Sans" --metadata title="FOCUS Specification Draft" --pdf-engine=wkhtmltopdf
