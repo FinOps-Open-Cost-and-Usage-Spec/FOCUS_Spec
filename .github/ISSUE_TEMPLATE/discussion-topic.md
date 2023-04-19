@@ -2,7 +2,7 @@
 name: Discussion Topic
 about: Discussion topics that require broader input from FOCUS members
 title: Title of the discussion topic OR open question needing member feedback
-labels: question
+labels: discussion topic
 assignees: ''
 
 ---
@@ -15,3 +15,6 @@ assignees: ''
 
 ### Github issue or Reference
 > If the topic is related to a particular work item, reference the Github issue. If its a specification-wide topic, indicate that.
+
+### Context
+> Add any context that may help the community think through this and provide useful feedback
