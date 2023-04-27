@@ -1,0 +1,3 @@
+### Dimensions
+
+The FOCUS specification defines a group of columns that provide qualitative values (such as dates, resource, and provider information). These columns are categorized to as 'dimensions' within the dataset and are needed to serve many [FinOps capabilities](https://www.finops.org/framework/capabilities/). You can use dimensions to categorize, filter, and reveal details in your data when grouped with 'metrics', which are the quantitative (numeric) values.
