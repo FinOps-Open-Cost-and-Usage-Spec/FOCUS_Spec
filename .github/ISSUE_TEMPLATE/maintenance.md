@@ -1,7 +1,7 @@
 ---
 name: Maintenance Task
 about: Tasks that relate to work on the GitHub Repository or GitHub Actions
-title: Repository maintenance teask
+title: Repository maintenance task
 labels: repo maintenance
 assignees: ''
 
