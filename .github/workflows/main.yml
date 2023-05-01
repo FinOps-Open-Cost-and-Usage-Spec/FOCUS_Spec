@@ -37,9 +37,3 @@ jobs:
                 # Artifact name
                 name: FOCUS_specification
                 path: specification/spec.pdf
-            - name: Upload Spec MD
-              uses: actions/upload-artifact@v3.1.2
-              with:
-                # Artifact name
-                name: FOCUS_specification
-                path: specification/spec.md
