@@ -17,7 +17,8 @@ jobs:
               shell: bash
               run: |
                 /usr/bin/apt-get -y update
-                DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y wkhtmltopdf
+                wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+                DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get -f ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
                 /usr/bin/pip3 install markdownpp
             - name: Build MD
               shell: bash
