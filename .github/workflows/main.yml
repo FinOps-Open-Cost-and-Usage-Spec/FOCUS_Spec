@@ -16,10 +16,13 @@ jobs:
             - name: Build PDF
               shell: sh
               run: |
-                apt-get -y update
-                DEBIAN_FRONTEND=noninteractive apt-get install -y wkhtmltopdf
+                /usr/bin/apt-get -y update
+                DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y wkhtmltopdf
+                /usr/bin/pip3 install markdownpp
                 cd specification
-                pandoc *.md -o spec.pdf -f gfm --variable mainfont="DejaVu Sans" --metadata title="FOCUS Specification Draft" --pdf-engine=wkhtmltopdf
+                /usr/local/bin/markdown-pp spec.mdpp -o spec.md
+                /usr/bin/sed -i 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' spec.md # Work around issue with wkhtmltopdf not linking to empty anchors
+                /usr/local/bin/pandoc spec.md -o spec.pdf -f gfm --variable mainfont="DejaVu Sans" --metadata title="FOCUS: FinOps Open Cost and Usage Specification" --pdf-engine=wkhtmltopdf
             - name: Upload a Build Artifact
               uses: actions/upload-artifact@v3.1.2
               with:
