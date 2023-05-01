@@ -13,20 +13,32 @@ jobs:
         steps:
             - name: Check out repository code
               uses: actions/checkout@v3
-            - name: Build PDF
-              shell: sh
+            - name: Install prequirements
+              shell: bash
               run: |
                 /usr/bin/apt-get -y update
                 DEBIAN_FRONTEND=noninteractive /usr/bin/apt-get install -y wkhtmltopdf
                 /usr/bin/pip3 install markdownpp
-                cd specification
+            - name: Build MD
+              shell: bash
+              working-directory: ./specification
+              run: |
                 /usr/local/bin/markdown-pp spec.mdpp -o spec.md
                 /usr/bin/sed -i 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' spec.md # Work around issue with wkhtmltopdf not linking to empty anchors
+            - name: Build PDF
+              shell: bash
+              working-directory: ./specification
+              run: |
                 /usr/local/bin/pandoc spec.md -o spec.pdf -f gfm --variable mainfont="DejaVu Sans" --metadata title="FOCUS: FinOps Open Cost and Usage Specification" --pdf-engine=wkhtmltopdf
-            - name: Upload a Build Artifact
+            - name: Upload Spec PDF
               uses: actions/upload-artifact@v3.1.2
               with:
                 # Artifact name
                 name: FOCUS_specification
-                # A file, directory or wildcard pattern that describes what to upload
                 path: specification/spec.pdf
+            - name: Upload Spec MD
+              uses: actions/upload-artifact@v3.1.2
+              with:
+                # Artifact name
+                name: FOCUS_specification
+                path: specification/spec.md
