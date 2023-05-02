@@ -38,4 +38,28 @@ See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/
 
 - [Change / contribution process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
 
+## FOCUS Specification Development Environment
+
+Most people will not need any development environment, it is mostly needed by the FinOps Foundation staff members who maintain the FOCUS Repositories and associated document build pipelines. Currently, the only tested (supported) environment is a MacOS setup, however the build pipeline in GitHub uses Ubuntu so should be possible to run on a Linux environment.
+
+### Setup Steps
+
+1. Install homebrew (as per: https://brew.sh)
+2. Setup cask
+	`brew install cask`
+3. Install python
+	`brew install python`
+4. Add packages for python
+	`/opt/homebrew/bin/pip3 install MarkdownPP pymarkdownlnt`
+5. Install pandoc and required filter library
+	`brew install pandoc`
+	`brew install --cask wkhtmltopdf`
+6. Install developer command line tools for MacOS `xcode-select --install`
+
+### Assembling the specification locally
+
+1. Move into the `specification` folder
+2. Use make to generate the spec `make`
+
 [specification]: specification/specification-overview.md
+

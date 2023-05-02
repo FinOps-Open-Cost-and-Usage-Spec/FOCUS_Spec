@@ -18,19 +18,14 @@ jobs:
               run: |
                 /usr/bin/apt-get -y update
                 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+                DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y make
                 DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y -f ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
                 /usr/bin/pip3 install markdownpp
-            - name: Build MD
-              shell: bash
-              working-directory: ./specification
-              run: |
-                /usr/local/bin/markdown-pp spec.mdpp -o spec.md
-                /usr/bin/sed -i 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' spec.md # Work around issue with wkhtmltopdf not linking to empty anchors
             - name: Build PDF
               shell: bash
               working-directory: ./specification
               run: |
-                /usr/local/bin/pandoc spec.md -o spec.pdf -f gfm --variable mainfont="DejaVu Sans" --metadata title="FOCUS: FinOps Open Cost and Usage Specification" --pdf-engine=wkhtmltopdf
+                make
             - name: Upload Spec PDF
               uses: actions/upload-artifact@v3.1.2
               with:
