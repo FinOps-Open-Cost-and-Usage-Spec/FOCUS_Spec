@@ -5,8 +5,6 @@ SED=$(shell which sed)
 
 DOC_TITLE="FOCUS: FinOps Open Cost and Usage Specification"
 MAIN_FONT="DejaVu Sans"
-DEPS=Makefile
-SED_PATTERN=
 SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard dimensions/*.md*)
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
 all: spec.md spec.pdf
