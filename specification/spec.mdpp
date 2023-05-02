@@ -1,6 +1,6 @@
-!INCLUDE "version.mdpp"
+!INCLUDE "version.md"
 
-!INCLUDE "contributors.mdpp"
+!INCLUDE "contributors.md"
 
 <div style="page-break-after: always"></div>
 
@@ -9,3 +9,5 @@
 !TOC
 
 !INCLUDE "overview.md",1
+
+!INCLUDE "dimensions/dimensions.mdpp",1
