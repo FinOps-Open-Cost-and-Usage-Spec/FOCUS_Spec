@@ -20,8 +20,7 @@ The content in the worksheets will be broken into two documents in the FOCUS_Spe
 
 Tools to use for converting to markdown:
 - [Clipboard-To-Markdown](https://euangoddard.github.io/clipboard2markdown/) is useful for converting content other than the tables within your content.
-
-- [Tables Generator](https://www.tablesgenerator.com/markdown_tables#) is useful for converting tables in your content. Ensure the following when
+- [Tables Generator](https://www.tablesgenerator.com/markdown_tables#) is useful for converting tables in your content.
 
 As you convert, be aware of the following conversion errors:
 - Content that has special characters e.g. phrase '<not specified>' or placeholders in content like '//container.googleapis.com/projects/<project_id>/locations/\<location>/clusters/\<cluster>' may not convert correctly without escaping. Find these inconsistencies after conversion and escape the special characters when necessary. 
