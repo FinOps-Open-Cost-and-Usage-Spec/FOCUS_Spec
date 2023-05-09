@@ -14,7 +14,7 @@ Current column mappings found in available data sets:
 
 Current values observed in billing data for various scenarios:
 
-See supporting content for Issue #4 (ResourceId). In some cases, the resource name is provided in the resource id as a part of the fully-qualified name
+See supporting content for [ResourceId](./resourceid.md). In some cases, the resource name is provided in the Resource ID as a part of the fully-qualified name.
 
 ## Discussion / Scratch space
 
