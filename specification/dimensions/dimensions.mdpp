@@ -5,5 +5,6 @@ columns are categorized to as 'dimensions' within the dataset and are needed to 
 dimensions to categorize, filter, and reveal details in your data when grouped with 'metrics', which are the quantitative (numeric) values.
 
 !INCLUDE "resourcename.md",1
+!INCLUDE "servicename.md",1
 
 [FODOFC]: https://www.finops.org/framework/capabilities/
