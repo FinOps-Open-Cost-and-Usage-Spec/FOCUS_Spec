@@ -15,11 +15,11 @@ Current column mappings found in available data sets:
 
 Current values observed in billing data for various scenarios:
 
-| Provider  | Data set                 | Example Value                                         |
-|-----------|--------------------------|-------------------------------------------------------|
-| AWS       | CUR                      | AmazonS3 \| AmazonRDS                                 |
-| GCP       | Big Query Billing Export | Networking \| Cloud SQL \| BigQuery                   |
-| Microsoft | Cost details             | Virtual Machines \| Azure App Service I Azure Monitor |
+| Provider  | Data set                 | Example Value                                      |
+|-----------|--------------------------|----------------------------------------------------|
+| AWS       | CUR                      | AmazonS3, AmazonRDS                                |
+| GCP       | Big Query Billing Export | Networking, Cloud SQL, BigQuery                    |
+| Microsoft | Cost details             | Virtual Machines, Azure App Service, Azure Monitor |
 
 - Microsoft: [understand-usage-details-fields](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
 - AWS: The code of the product measured
