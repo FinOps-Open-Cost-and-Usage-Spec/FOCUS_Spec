@@ -41,6 +41,7 @@ Current values observed in billing data for various scenarios:
 
 | | Billing Account | Usage Account Group (optional) | Usage Account | | |
 | Provider | Level 1 | Level 2 | Level 3 | Level 4 | Level 5 |
+|----------|---------|---------|---------|---------|---------|
 | AWS | Payer Account | Org | Account | Resource Group | Resource |
 | Azure | Tenant Root Account / Billing Account | Management Group | Subscription | Resource Group | Resource |
 | GCP | Billing Account | Folder | Project | | Resource |
