@@ -18,8 +18,12 @@ spec.md: $(SPEC_SOURCE_FILES)
 	$(MARKDOWNPP) spec.mdpp -o $@
 ifeq ($(shell uname -s), Darwin)
 	$(SED) -i '' 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' $@
+	$(SED) -Ei '' '/^[0-9]+.[0-9]+.[0-9]+\\\.\ \ /d' $@
+	$(SED) -i '' 'N;/^\n<a name=/!P;D' $@
 else
 	$(SED) -i 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' $@
+	$(SED) -ri '/^[0-9]+.[0-9]+.[0-9]+\\\.\ \ /d' $@
+	$(SED) -i 'N;/^\n<a name=/!P;D' $@
 endif
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
