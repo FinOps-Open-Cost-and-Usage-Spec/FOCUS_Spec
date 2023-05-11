@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - working_draft
+      - maintenance/**
 
 jobs:
     # The job that will use the container image you just pushed to ghcr.io
