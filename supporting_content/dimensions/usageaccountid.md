@@ -19,7 +19,7 @@ Current values observed in billing data for various scenarios:
 |-----------|----------|--------|
 | AWS       | CUR | 987456321 |
 | GCP       | Big Query Billing Export | project-name <br>project-name-789456 |
-| Microsoft | Cost details | 072fe543-fa61-465e-adaf-04d09c829c4a |
+| Microsoft | Cost details | 00000000-0000-0000-0000-000000000000 |
 | Microsoft | Price sheet | |
 
 ## Discussion / Scratch space:
