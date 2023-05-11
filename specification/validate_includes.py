@@ -5,7 +5,7 @@ import sys
 import re
 from os.path import isfile, join
 
-def compile_includes(keyname):
+def validate_includes(keyname):
     """
     This function will validate that a folder has not got any missing 
     includes in its related mdpp file. The foldername and mdpp template
@@ -45,4 +45,4 @@ if __name__ == '__main__':
 
     parser.add_argument('keyname')
     args = parser.parse_args()
-    compile_includes(args.keyname)
+    validate_includes(args.keyname)
