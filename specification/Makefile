@@ -13,6 +13,8 @@ spec.pdf: spec.md
 	$(PANDOC) spec.md -o $@ -f gfm --variable mainfont=$(MAIN_FONT) --metadata title=$(DOC_TITLE) --pdf-engine=wkhtmltopdf
 
 spec.md: $(SPEC_SOURCE_FILES)
+	./validate_includes.py dimensions
+	./validate_includes.py attributes
 	$(MARKDOWNPP) spec.mdpp -o $@
 ifeq ($(shell uname -s), Darwin)
 	$(SED) -i '' 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' $@
