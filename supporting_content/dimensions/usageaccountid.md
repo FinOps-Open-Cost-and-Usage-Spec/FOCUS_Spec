@@ -9,7 +9,6 @@ Current column mappings found in available data sets:
 | AWS       | CUR | lineItem/UsageAccountId |
 | GCP       | Big Query Billing Export | project.id |
 | Microsoft | Cost details | SubscriptionGuid |
-| Microsoft | Price sheet | |
 
 ## Example usage scenarios
 
