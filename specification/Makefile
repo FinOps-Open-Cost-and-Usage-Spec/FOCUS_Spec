@@ -12,6 +12,9 @@ all: spec.md spec.pdf
 spec.pdf: spec.md
 	$(PANDOC) spec.md -o $@ -f gfm --variable mainfont=$(MAIN_FONT) --metadata title=$(DOC_TITLE) --pdf-engine=wkhtmltopdf
 
+spec.html: spec.md
+	$(PANDOC) spec.md -o $@ -f gfm --variable mainfont=$(MAIN_FONT) --metadata title=$(DOC_TITLE)
+
 spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py dimensions
 	./validate_includes.py attributes
