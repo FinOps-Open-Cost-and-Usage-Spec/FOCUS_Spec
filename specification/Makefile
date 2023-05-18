@@ -3,17 +3,16 @@ MARKDOWNPP=$(shell which markdown-pp)
 PYMARKDOWNLNT=$(shell which pymarkdownlnt)
 SED=$(shell which sed)
 
-DOC_TITLE="FOCUS: FinOps Open Cost and Usage Specification"
 MAIN_FONT="DejaVu Sans"
 SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard dimensions/*.md*)
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
-all: spec.md spec.pdf
+all: spec.md spec.pdf spec.html
 
 spec.pdf: spec.md
-	$(PANDOC) spec.md -o $@ -f gfm --variable mainfont=$(MAIN_FONT) --metadata title=$(DOC_TITLE) --pdf-engine=wkhtmltopdf
+	$(PANDOC) spec.md -o $@ -f gfm --variable mainfont=$(MAIN_FONT) --pdf-engine=wkhtmltopdf
 
 spec.html: spec.md
-	$(PANDOC) spec.md -o $@ -f gfm --variable mainfont=$(MAIN_FONT) --metadata title=$(DOC_TITLE)
+	$(PANDOC) spec.md -o $@ -f gfm -s --variable mainfont=$(MAIN_FONT)
 
 spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py dimensions
@@ -32,4 +31,4 @@ endif
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
 
 clean:
-	rm -f spec.pdf spec.md
+	rm -f spec.pdf spec.html spec.md
