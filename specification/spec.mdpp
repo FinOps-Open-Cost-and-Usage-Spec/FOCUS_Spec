@@ -16,6 +16,7 @@ title:  'FOCUS: FinOps Open Cost and Usage Specification'
 !INCLUDE "overview.md",1
 
 !INCLUDE "dimensions/dimensions.mdpp",1
+
 !INCLUDE "attributes/attributes.mdpp",1
 
 !INCLUDE "glossary.md",1
