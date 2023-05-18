@@ -1,6 +1,11 @@
-!INCLUDE "version.md"
+---
+title:  'FOCUS: FinOps Open Cost and Usage Specification'
 
-!INCLUDE "contributors.md"
+...
+
+!INCLUDE "version.md",0
+
+!INCLUDE "contributors.md",0
 
 <div style="page-break-after: always"></div>
 
