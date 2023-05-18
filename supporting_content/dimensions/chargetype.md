@@ -4,107 +4,75 @@
 
 Current column mappings found in available data sets:
 
-| Provider  | Data set                | Column                                                                                                                                                                                     |
-| --------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| AWS       | CUR                     | `bill/InvoicingEntity` (Amazon Web Services, Inc.)<br>`bill/BillingEntity` (AWS, AWS Marketplace)<br>bill/BillType (Anniversary, Purchase, Refund)<br>`lineItem/LineItemType` (Usage, Tax) |
-| GCP       | BigQuery Billing Export | `Cost type` (regular, tax, adjustment, or rounding error)                                                                                                                                  |
-| Microsoft | Cost details            | `ChargeType` (Purchase, Usage, Refund, Adjustment, Tax?)<br><br>Related:<br>`PricingModel` (OnDemand, Reservation, SavingsPlan, Spot)<br>`Frequency` (OneTime, Recurring)                  |
+| Provider  | Data set                | Column                                                                                                                                                                                                                                                        |
+| --------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AWS       | CUR                     | `bill/BillType` (Anniversary, Purchase, Refund)<br>`lineItem/LineItemType` (Usage, Tax, BundledDiscount, Credit, Discount, DiscountedUsage, Fee, Refund, RIFee, SavingsPlanUpfrontFee, SavingsPlanRecurringFee, SavingsPlanCoveredUsage, SavingsPlanNegation) |
+| GCP       | BigQuery Billing Export | `Cost type` (regular, tax, adjustment, or rounding error)                                                                                                                                                                                                     |
+| Microsoft | Cost details            | `ChargeType` (Purchase, Usage, Refund, Adjustment, Tax?)<br><br>Related:<br>`PricingModel` (OnDemand, Reservation, SavingsPlan, Spot)<br>`Frequency` (OneTime, Recurring)                                                                                     |
 
 ## Example usage scenarios
 
 Current values observed in billing data for various scenarios:
 
-- AWS
-
-  | lineItem/LineItemType | lineItem/ProductCode | lineItem/UsageType          | lineItem/Operation       | lineItemType/ResourceId |
-  | --------------------- | -------------------- | --------------------------- | ------------------------ | ----------------------- |
-  | Usage                 | AmazonCloudWatch     | USW2-CW:GMD-Metrics         | GetMetricData            | No resource id          |
-  | Usage                 | AmazonRDS            | USW2-RDS:ChargedBackupUsage | CreateDBInstance         | No resource id          |
-  | Usage                 | AmazonS3             | Requests-Tier2              | ​​​​GetLensConfiguration | No resource id          |
-  | Usage                 | AmazonSES            | USW2-DataTransfer-In-Bytes  | SendRawEmail             | No resource id          |
-  | Usage                 | AWSCloudTrail        | APN3-FreeEventsRecorded     | None                     | No resource id          |
-  | Usage                 | AWSCostExplorer      | USE1-CostDataStorage        | CostDataStorage          | No resource id          |
-  | Usage                 | awskms               | us-west-2-KMS-Requests      | ListKeys                 | No resource id          |
-  | Usage                 | AWSLambda            | USW2-USE1-AWS-In-Bytes      | Invoke                   | No resource id          |
-  | Usage                 | AWSSupportBusiness   | Dollar                      | None                     | No resource id          |
-  | Usage                 | AmazonEC2            | USW2-ElasticIP:IdleAddress  | AssociateAddressVPC      | No resource id          |
-  | Tax                   | AmazonEC2            | USW2-BoxUsage:c5.large      | RunInstances             | No resource id          |
-
-  | lineItem/LineItemType                               | Usage Type             | Operation      | Product Code |
-  | --------------------------------------------------- | ---------------------- | -------------- | ------------ |
-  | BundledDiscount                                     | BoxUsage:c5.large      | RunInstances   | AmazonEC2    |
-  | Credit                                              | TimedStorage-ByteHrs   | CreateSnapshot | AmazonEBS    |
-  | Discount                                            | DataTransfer-Out-Bytes | AmazonS3       | AmazonS3     |
-  | DiscountedUsage                                     | BoxUsage:m5.xlarge     | RunInstances   | AmazonEC2    |
-  | Fee (paid for All Upfront RI or Partial Upfront RI) | HeavyUsage:r5.large    | RunInstances   | AmazonEC2    |
-  | Refund                                              | DataTransfer-In-Bytes  | AmazonS3       | AmazonS3     |
-  | RIFee                                               | BoxUsage:m5.large      | RunInstances   | AmazonEC2    |
-  | Tax (US sales tax or VAT)                           | DataTransfer-Out-Bytes | AmazonS3       | AmazonS3     |
-  | Usage                                               | BoxUsage:t2.micro      | RunInstances   | AmazonEC2    |
-  | SavingsPlanUpfrontFee                               | BoxUsage:c5.xlarge     | RunInstances   | AmazonEC2    |
-  | SavingsPlanRecurringFee                             | BoxUsage:m5.large      | RunInstances   | AmazonEC2    |
-  | SavingsPlanCoveredUsage                             | BoxUsage:r5.large      | RunInstances   | AmazonEC2    |
-  | SavingsPlanNegation                                 | BoxUsage:m5.2xlarge    | RunInstances   | AmazonEC2    |
+| Provider  | Current value                      | ChargeType | Scenario                                                                                                                                                                                                                                                                                                                                                   |
+| --------- | ---------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AWS       | Anniversary / Usage                | Usage      | Usage charged at on-demand rate for resources with resource id (EC2, EBS, RDS, RedShift)                                                                                                                                                                                                                                                                   |
+| AWS       | Anniversary / Usage                | Usage      | Usage charged at on-demand rate for resources with "no resource id" (Support, CloudWatch, DataTransfer)                                                                                                                                                                                                                                                    |
+| AWS       | Anniversary / Tax                  | Tax        | US sales tax or VAT with "no resource id"                                                                                                                                                                                                                                                                                                                  |
+| AWS       | Purchase / Fee                     | Purchase   | All upfront and partial upfront fees for RI purchase                                                                                                                                                                                                                                                                                                       |
+| AWS       | Purchase / RIFee                   | Purchase   | Monthly recurring RI amount for partial upfront and no upfront                                                                                                                                                                                                                                                                                             |
+| AWS       | Purchase / SavingsPlanUpfrontFee   | Purchase   | All upfront and partial upfront fees for SP purchase                                                                                                                                                                                                                                                                                                       |
+| AWS       | Purchase / SavingsPlanRecurringFee | Purchase   | Monthly recurring SP amount for partial upfront and no upfront                                                                                                                                                                                                                                                                                             |
+| AWS       | Adjustments / SavingsPlanNegation  | Usage      | Used to negate the on-demand cost covered by SP                                                                                                                                                                                                                                                                                                            |
+| AWS       | Anniversary / BundledDiscount      | Usage      | Usage based discount for free or discounted price. If a customer uses X units of product/service A, this customer gets Y units of product/service B at a discounted price (with a discount Z%).                                                                                                                                                            |
+| AWS       | Refund                             | Adjustment |
+| GCP       | regular                            | Usage      | These show up as rows that contain data of usage and costs                                                                                                                                                                                                                                                                                                 |
+| GCP       | tax                                | Tax        | These show up as monthly rows without a project as a credit and with a project with a debit.                                                                                                                                                                                                                                                               |
+| GCP       | adjustment                         | Adjustment | ![Screenshot of GCP cost details with type and mode columns.](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/assets/399533/af90e4cd-f3c0-448a-bb0f-0249bcf7135c)<br>Example 1:<br>Description: "Billing correction - Adjustment for project X for incorrect Flexible CUD charge"<br>Mode: "MANUAL_ADJUSTMENT"<br>Type: "GENERAL_ADJUSTMENT" |
+| GCP       | rounding_error                     | Adjustment | These show up as monthly rows without a project as a credit                                                                                                                                                                                                                                                                                                |
+| GCP       | credit                             | Adjustment | Fields: type, name, amount, full_name, id<br>![Screenshot of a table with a type column and 5 rows of example values](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/assets/399533/15bcc210-5a36-473b-aeac-c1d2682dfdc8)                                                                                                                    |
+| Microsoft | Purchase                           | Purchase   | Upfront or recurring fee for Marketplace offers or commitment-based discounts.                                                                                                                                                                                                                                                                             |
+| Microsoft | Usage                              | Usage      | Consumption-based usage of deployed resources.                                                                                                                                                                                                                                                                                                             |
+| Microsoft | Refund                             | Adjustment | Refund provided by support.                                                                                                                                                                                                                                                                                                                                |
+| Microsoft | Adjustment                         | Adjustment | Rounding errors.                                                                                                                                                                                                                                                                                                                                           |
+| Microsoft | Tax                                | Tax        | US sales tax or VAT.                                                                                                                                                                                                                                                                                                                                       |
 
 ## Discussion / Scratch space
 
-- What different types of line items do we want to group?
-- This work is to group the different values providers use to differentiate cost line items. The plan is to introduce a "normalized" dimension for this in v1.0
-  - Should this be prefixed with "Provider" since we want to normalize this as well? If not, we have to come up with another name for the same thing.
-  - This may be referred to in other contexts (e.g., data granularity requirements may change if its usage data vs tax or fees). ResourceId should be required based on if something is a "usage" cost?
-- Need to add more details about what each of the values means and how/when they should be used.
-- Are we making any statements about taxes being required?
+- What are the different types of spend that we want to group?
+- This work is to group the different values providers use to differentiate the spend. The plan is to introduce a ‘normalized’ dimension for this in v1.0
+  - Should this be prefixed with ‘Provider’ since we want to normalize this as well? If not, we have to come up with another name for the normalized column
+    - Decided that this should be a normalized column from v0.5.
+    - Given the mis-alignment of current vendor data, its not going to be much value to create a dimension where we put different vendor values in a single column so practitioners can use the vendor provided value using a single column rather than doing n different where clauses when looking for the vendor native value (not our normalized value).
+- This dimension may be referred to in other contexts - e.g. data granularity requirements (attribute) may change based on if its usage data vs tax or fees. For example, Should ResourceId be required based on if something is a ‘usage’ cost vs a ‘purchase’?
 - Use cases:
   - Usage for cost reporting use cases / driving accountability
   - Tax needs to be filterable for special accounting treatments within companies
   - Fees are important for cost allocation / amortization - needs to be isolated from other cost
   - Refunds - $s coming back after the original charge
   - Credits are typically based on agreements for migration of workloads
-  - AWS: Anniversary charge (BillType) Savings Plan Negations for UsageType (for -0.50)
-- Question for AWS practitioners:
-  - For the "Usage" `lineItem/LineItemType`, the `lineItenType/ResourceId` is empty for many AWS services depending on the `lineItem/UsageType` and `lineItem/Operation`.
-  - For the "Tax" `lineItem/LineItemType`, the `lineItenType/ResourceId` is always empty for all AWS services.
-- Discussion about possible ChargeType values
+  - AWS handling for SPs: Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.50)
+- Is it Recurring or not? (Attribute about the Purchase?)
+- What Charge Types can BE recurring?
+- What Charge Types for "Free Tier" with usage limits and "Free Trial" offers?
 
-  - Purchase (prepayment)
-    - SavingsPlanRecurringFee
-    - SavingsPlanUpfrontFee
-    - RIFee
-    - Fee
-  - Usage (postpayment)
-    - DiscountedUsage
-    - Discount
-    - SavingsPlanCoveredUsage
-    - BundledDiscount
-    - SavingsPlanNegation (?)
-  - Adjustment
-    - Rounding Errors (computers don't do numbers well)
-    - Refund (Correcting a charge)
-    - Credits (Mystery Money)
-  - Tax
+### Example mappings for normalized values
 
-  | Charge Type | Frequency | PricingModel |
-  | ----------- | --------- | ------------ |
-  | Purchase    | Monthly   | SavingsPlan  |
-  | Purchase    | OneTime   | SavingsPlan  |
-  | Usage       | Hourly    | OnDemand     |
-  | Usage       |           | SavingsPlan  |
-  | Usage       |           | Reservation  |
-  | Usage       |           |              |
+| Provider | Usage                                                                                                | Purchase                                                         | Adjustment           | Tax                      |
+| -------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | -------------------- | ------------------------ | --- |
+| AWS      | DiscountedUsage<br>Discount<br>SavingsPlanCoveredUsage<br>BundledDiscount<br>SavingsPlanNegation (?) | SavingsPlanRecurringFee<br>SavingsPlanUpfrontFee<br>RIFee<br>Fee | Refund<br>Credits    | Tax                      |
+| Azure    | Usage                                                                                                | Purchase                                                         | Refund<br>Adjustment | Tax                      |
+| GCP      | regular                                                                                              |                                                                  |                      | rounding_error<br>credit | tax |
 
-  | Line Item Type       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-  | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-  | Usage                | The most common type and the default. The line item represents a charge for the use of some cloud resource. "Real Cost" includes only Usage line items and uses the first available cost type provided from: amortized_cost, discounted_cost, or cost                                                                                                                                                                                                                                       |
-  | Tax                  | This line item represents any tax charges. Columns in the time, resource, and action categories should only be populated if the tax is associated with applicable Usage changes. Otherwise these columns should be left blank.                                                                                                                                                                                                                                                              |
-  | Support              | Charges for support or other human services. Columns in the time category should specify the start and end of the support contract.                                                                                                                                                                                                                                                                                                                                                         |
-  | Purchase             | Charge for a one-time purchase or non-usage based subscription; for example, software bought from the AWS Marketplace. The time category columns should represent the span of time over which the purchase applies (for subscriptions with renewal) or the time of the purchase (for one-time charges).                                                                                                                                                                                     |
-  | CommittedUsePurchase | Charges for a "committed use" (RI, savings plan, etc.) purchase. "Committed use" includes any instrument for which payment is made to receive a reduced rate on future usage. This may include one-time upfront purchases or recurring monthly charges. The time category columns should represent the span of time over which the charge applies (for example, one month for monthly recurring charges.) The amortized_cost cost column of this line item should always be zero (if used). |
-  | Discount             | A negative value cost associated with some Usage line item. Columns in the time, resource, and action categories of this line item should match those of the applicable Usage line item and the cost should be negative. The discounted_cost for this line item should be zero if this discount is fully accounted for in the discounted_cost of other Usage line items. (Please note: you must still include discounted_cost if it should be zero)                                         |
-  | Credit               | A negative value cost not associated with any specific Usage line items. May represent a refund, special sales deal, or other similar circumstance.                                                                                                                                                                                                                                                                                                                                         |
-  | Fee                  | A positive value charge for which no other line item type applies.                                                                                                                                                                                                                                                                                                                                                                                                                          |
-  | Adjustment           | An alteration made to the bill to correct for some error or rounding issue.                                                                                                                                                                                                                                                                                                                                                                                                                 |
+### Examples of how Charge Type relates to Pricing Model / Frequency columns
 
-- Additional questions:
-  - Is it Recurring or not? (Attribute about the Purchase?)
-  - What Charge Types can BE recurring?
-  - What Charge Types for "Free Tier" with usage limits and "Free Trial" offers?
+| Charge Type | PricingModel                                                                  | Frequency                                                                                     |
+| ----------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Purchase    | Commitment Discount<br>(Upfront SavingsPlan / Reservation)                    | OneTime (e.g., Upfront portion for InvoiceCost or Unused portion for AmortizedCost)           |
+| Purchase    | Commitment Discount (Partial upfront or no upfront SavingsPlan / Reservation) | Monthly (e.g., Recurring portion for InvoiceCost or Unused monthly portion for AmortizedCost) |
+| Usage       | OnDemand                                                                      | Hourly                                                                                        |
+| Usage       | SavingsPlan / Reservation                                                     | Hourly                                                                                        |
+| Usage       |                                                                               | Hourly                                                                                        |
+| Usage       |
+| Adjustment  | NULL? OnDemand?                                                               | OneTime                                                                                       |
+| Tax         | NULL? OnDemand?                                                               | Monthly                                                                                       |
