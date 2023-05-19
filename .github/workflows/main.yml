@@ -32,4 +32,4 @@ jobs:
               with:
                 # Artifact name
                 name: FOCUS_specification
-                path: specification/spec.pdf
+                path: specification/spec.*
