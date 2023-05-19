@@ -28,5 +28,3 @@ Identifier assigned to a resource by the provider.
 ## Introduced (version)
 
 0.5
-
-kjhdfkls lkhd kj“dhf kjhd fkjdf ldfkjdfh kjdf
