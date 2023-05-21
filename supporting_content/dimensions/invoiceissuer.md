@@ -1,4 +1,4 @@
-# Column: InvoicingEntity
+# Column: InvoiceIssuer
 
 ## Example provider mappings
 
@@ -31,10 +31,10 @@ Current values observed in billing data for various scenarios:
 | GCP       | Not available                                                              |               |
 | Microsoft | ?                                                                          |               |
 
-- Where do you get the following Azure Invoice Entity values today?
+- Where do you get the following Azure Invoice Issuer values today?
   - Azure China scenario, is that in the CSP data under PartnerId/PartnerName?
 
-See [Appendix: Origination of the cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Invoicing Entity dimension.
+See [Appendix: Origination of the cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Invoice Issuer dimension.
 
 ## Discussion / Scratch space
 
