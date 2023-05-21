@@ -1,5 +1,5 @@
 """
-Module to implement a plugin that looks for smart/curly quotes in the files.
+Module to implement a plugin that looks for smart characters in the files.
 """
 from typing import cast
 
@@ -13,9 +13,9 @@ from pymarkdown.plugin_manager.rule_plugin import RulePlugin
 
 class RuleMd990(RulePlugin):
     """
-    Class to implement a plugin that looks for smart quotes in the files.
+    Class to implement a plugin that looks for smart characters in the files.
     """
-    __smart_quote_items = ['“', '”']
+    __smart_char_items = [u"\u2013", u"\u201c", u"\u201d", u"\u2018", u"\u2019", u"\u2026"]
 
     def __init__(self) -> None:
         super().__init__()
@@ -25,10 +25,10 @@ class RuleMd990(RulePlugin):
         Get the details for the plugin.
         """
         return PluginDetails(
-            plugin_name="no-smart-quotes",
+            plugin_name="no-smart-characters",
             plugin_id="MD990",
             plugin_enabled_by_default=True,
-            plugin_description="Smart/curly quote found",
+            plugin_description="Smart character found",
             plugin_version="0.1.0",
             plugin_interface_version=1,
             plugin_url="",
@@ -42,9 +42,9 @@ class RuleMd990(RulePlugin):
             token.is_text
         ):
             text_token = cast(TextMarkdownToken, token)
-            for smart_quote_item in RuleMd990.__smart_quote_items:
+            for smart_char_item in RuleMd990.__smart_char_items:
                 start_index = 0
-                found_index = text_token.token_text.find(smart_quote_item, start_index)
+                found_index = text_token.token_text.find(smart_char_item, start_index)
                 while found_index != -1:
                     (
                         column_number_delta,
@@ -56,8 +56,8 @@ class RuleMd990(RulePlugin):
                         line_number_delta=line_number_delta,
                         column_number_delta=column_number_delta,
                     )
-                    start_index = found_index + len(smart_quote_item)
-                    found_index = text_token.token_text.find(smart_quote_item, start_index)
+                    start_index = found_index + len(smart_char_item)
+                    found_index = text_token.token_text.find(smart_char_item, start_index)
 
 
         elif token.is_code_block:
