@@ -33,7 +33,7 @@ Current values observed in billing data for various scenarios:
 | GCP       | Not available |                              |
 | Microsoft | Cost details  | Management group: Azure, AWS |
 
-See [Appendix: Origination of the cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Provider dimension.
+See [Appendix: Origination of cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Provider dimension.
 
 ## Discussion / Scratch space
 
