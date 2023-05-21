@@ -1,6 +1,6 @@
 # Null Handling
 
-Cost data rows that don’t have a value that can be presented for a column must be handled in a consistent way to reduce
+Cost data rows that don't have a value that can be presented for a column must be handled in a consistent way to reduce
 friction for FinOps practitioners that consume the data for analysis, reporting, and other use cases.
 
 All columns defined in FOCUS MUST follow the null handling requirements listed below. Provider generated columns SHOULD
