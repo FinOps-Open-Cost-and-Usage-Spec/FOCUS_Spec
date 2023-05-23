@@ -17,6 +17,7 @@ spec.html: spec.md
 spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py dimensions
 	./validate_includes.py attributes
+	./validate_includes.py appendix
 	$(MARKDOWNPP) spec.mdpp -o $@
 ifeq ($(shell uname -s), Darwin)
 	$(SED) -i '' 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' $@
