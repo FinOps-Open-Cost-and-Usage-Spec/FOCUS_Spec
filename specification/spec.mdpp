@@ -1,7 +1,9 @@
 ---
-title:  'FOCUS: FinOps Open Cost and Usage Specification'
-
+pagetitle: FinOps Open Cost and Usage Specification
 ...
+
+<img src="images/focus_logo.png" alt="FOCUS Logo" class="focus_logo" />
+<h1 class="title">FinOps Open Cost and Usage Specification</h1>
 
 !INCLUDE "version.md",0
 
