@@ -27,13 +27,10 @@ jobs:
               working-directory: ./specification
               run: |
                 make STYLE=draft.css
-            - name: Upload Spec PDF
+            - name: Upload Spec
               uses: actions/upload-artifact@v3.1.2
               with:
                 name: FOCUS_specification
-                path: specification/spec.html
-            - name: Upload Spec HTML
-              uses: actions/upload-artifact@v3.1.2
-              with:
-                name: FOCUS_specification
-                path: specification/spec.html
+                path: |
+                  specification/spec.html
+                  specification/spec.pdf
