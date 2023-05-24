@@ -3,7 +3,7 @@ MARKDOWNPP=$(shell which markdown-pp)
 PYMARKDOWNLNT=$(shell which pymarkdownlnt)
 SED=$(shell which sed)
 ifeq ($(STYLE),)
-STYLE="draft.css"
+STYLE="styles/draft.css"
 endif
 SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard dimensions/*.md*)
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))

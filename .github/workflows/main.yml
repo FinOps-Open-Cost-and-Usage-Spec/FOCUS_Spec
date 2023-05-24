@@ -34,3 +34,5 @@ jobs:
                 path: |
                   specification/spec.html
                   specification/spec.pdf
+                  specification/images/*
+                  specification/styles/*
