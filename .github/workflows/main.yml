@@ -26,7 +26,7 @@ jobs:
               shell: bash
               working-directory: ./specification
               run: |
-                make STYLE=draft.css
+                make STYLE=styles/draft.css
             - name: Upload Spec
               uses: actions/upload-artifact@v3.1.2
               with:
