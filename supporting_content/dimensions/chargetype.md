@@ -58,11 +58,11 @@ Current values observed in billing data for various scenarios:
 
 ### Example mappings for normalized values
 
-| Provider | Usage                                                                                                | Purchase                                                         | Adjustment           | Tax                      |
-| -------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | -------------------- | ------------------------ | --- |
-| AWS      | DiscountedUsage<br>Discount<br>SavingsPlanCoveredUsage<br>BundledDiscount<br>SavingsPlanNegation (?) | SavingsPlanRecurringFee<br>SavingsPlanUpfrontFee<br>RIFee<br>Fee | Refund<br>Credits    | Tax                      |
-| Azure    | Usage                                                                                                | Purchase                                                         | Refund<br>Adjustment | Tax                      |
-| GCP      | regular                                                                                              |                                                                  |                      | rounding_error<br>credit | tax |
+| Provider  | Usage                                                                                                | Purchase                                                         | Adjustment               | Tax |
+| --------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------ | --- |
+| AWS       | DiscountedUsage<br>Discount<br>SavingsPlanCoveredUsage<br>BundledDiscount<br>SavingsPlanNegation (?) | SavingsPlanRecurringFee<br>SavingsPlanUpfrontFee<br>RIFee<br>Fee | Refund<br>Credits        | Tax |
+| GCP       | regular                                                                                              |                                                                  | rounding_error<br>credit | tax |
+| Microsoft | Usage                                                                                                | Purchase                                                         | Refund<br>Adjustment     | Tax |
 
 ### Examples of how Charge Type relates to Pricing Model / Frequency columns
 
@@ -72,7 +72,5 @@ Current values observed in billing data for various scenarios:
 | Purchase    | Commitment Discount (Partial upfront or no upfront SavingsPlan / Reservation) | Monthly (e.g., Recurring portion for InvoiceCost or Unused monthly portion for AmortizedCost) |
 | Usage       | OnDemand                                                                      | Hourly                                                                                        |
 | Usage       | SavingsPlan / Reservation                                                     | Hourly                                                                                        |
-| Usage       |                                                                               | Hourly                                                                                        |
-| Usage       |
 | Adjustment  | NULL? OnDemand?                                                               | OneTime                                                                                       |
 | Tax         | NULL? OnDemand?                                                               | Monthly                                                                                       |
