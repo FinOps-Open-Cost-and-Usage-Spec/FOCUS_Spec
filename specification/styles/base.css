@@ -10,9 +10,9 @@ body {
   font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
   font-size: 13px;
   line-height: 1.7;
-  padding: 1em;
-  margin: auto;
-  max-width: 75em;
+  padding: 0;
+  margin: 0.5in;
+  max-width: 100%;
 }
 
 table {
