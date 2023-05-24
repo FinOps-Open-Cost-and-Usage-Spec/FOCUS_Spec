@@ -26,10 +26,14 @@ jobs:
               shell: bash
               working-directory: ./specification
               run: |
-                make
+                make STYLE=draft.css
             - name: Upload Spec PDF
               uses: actions/upload-artifact@v3.1.2
               with:
-                # Artifact name
                 name: FOCUS_specification
-                path: specification/spec.*
+                path: specification/spec.html
+            - name: Upload Spec HTML
+              uses: actions/upload-artifact@v3.1.2
+              with:
+                name: FOCUS_specification
+                path: specification/spec.html
