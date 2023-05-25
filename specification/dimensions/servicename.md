@@ -1,14 +1,16 @@
 # Service Name
 
-Service Name is an identifier assigned to a service by the provider. The Service Name is commonly used for cost reporting, analysis and allocation scenarios.
+Service Name is an identifier assigned to a service by the provider. The Service Name is commonly used for cost
+reporting, analysis and allocation scenarios.
 
-The ServiceName column MUST be present in the cost data. This column MUST be of type String and MUST NOT contain null values.
+The ServiceName column MUST be present in the cost data. This column MUST be of type String and MUST NOT contain null
+values.
 
 ## Column ID
 
 ServiceName
 
-## Display name
+## Display Name
 
 Service Name
 
@@ -16,7 +18,7 @@ Service Name
 
 Name of the service associated with the cost data.
 
-## Content constraints
+## Content Constraints
 
 |    Constraint   |      Value      |
 |:----------------|:----------------|

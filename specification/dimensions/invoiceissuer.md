@@ -1,27 +1,30 @@
 # Invoice Issuer
 
-An Invoice Issuer is an entity responsible for invoicing for the resources and/or services consumed. It is commonly used for cost analysis and reporting scenarios.
+An Invoice Issuer is an entity responsible for invoicing for the resources and/or services consumed. It is commonly
+used for cost analysis and reporting scenarios.
 
-The InvoiceIssuer column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values.
+The InvoiceIssuer column MUST be present in the billing data. This column MUST be of type String and MUST NOT
+contain null values.
 
-See [Appendix: Origination of cost data](#originationofcostdata) section for examples of Provider, Publisher and Invoice Issuer values that can be used for various purchasing scenarios.
+See [Appendix: Origination of cost data](#originationofcostdata) section for examples of Provider, Publisher and
+Invoice Issuer values that can be used for various purchasing scenarios.
 
 ## Column ID
 
-InvoiceIssuer
+InvoiceIssuerName
 
-## Display name
+## Display Name
 
 Invoice Issuer
 
 ## Description
 
-The entity responsible for invoicing for the resources and/or services consumed.
+The name of the entity responsible for invoicing for the resources and/or services consumed.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value           |
-|-----------------|-----------------|
+|:----------------|:----------------|
 | Column required | True            |
 | Data type       | String          |
 | Allows nulls    | False           |

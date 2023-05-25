@@ -1,0 +1,7 @@
+# Normalized Dimensions
+
+Below you will find details about the set of dimensions within the FOCUS specification that limit the allowed values
+(referred to as 'normalized' dimensions). Each dimension will have detailed descriptions for the allowed values as
+well as criteria for governing future modifications to the allowed values.
+
+!INCLUDE "chargetype.md",1

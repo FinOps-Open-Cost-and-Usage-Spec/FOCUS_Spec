@@ -3,22 +3,24 @@ import argparse
 from os import listdir
 import sys
 import re
-from os.path import isfile, join
+from os.path import isfile, join, basename, normpath
 
 def validate_includes(keyname):
     """
     This function will validate that a folder has not got any missing 
-    includes in its related mdpp file. The foldername and mdpp template
-    must match in name (e.g. dimension and dimension.mdpp). This function
-    will find all *.md files in the directory and the !INCLUDE lines in the
-    mdpp file. Then confirm they are matching. Function will exit() if they
-    do not match in order to cause GitHub Actions to fail builds if they don't
-    match.
+    includes in its related mdpp file. The final foldername in the path and 
+    the mdpp template must match in name (e.g. dimension and dimension.mdpp).
+    This function will find all *.md files in the directory and the !INCLUDE 
+    lines in the mdpp file. Then confirm they are matching. Function will 
+    exit() if they do not match in order to cause GitHub Actions to fail builds
+    if they don't match.
 
     Args:
-        keyname: The folder name to run the validation inside.
+        keyname: The folder name to run the validation inside (final folder 
+        must match the name of the mdpp template).
     """
-    template_filename = f'{keyname}/{keyname}.mdpp'
+    base_folder = basename(normpath(keyname))
+    template_filename = f'{keyname}/{base_folder}.mdpp'
     include_match_pattern = re.compile('!INCLUDE \"([^/]*.md)\".*')
 
     found_includes = []
