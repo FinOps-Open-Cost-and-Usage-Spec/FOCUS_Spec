@@ -1,4 +1,4 @@
-# Origination of cost data
+# Origination of Cost Data
 
 Cost data presented in the billing datasets originates from various sources depending on the purchasing mechanism. There are at least 3 different pieces of information that are important for understanding where cost originated from.
 
@@ -9,7 +9,7 @@ Cost data presented in the billing datasets originates from various sources depe
 The value for each of these may be different depending on the various purchasing scenarios for resources and/or services. Use cases for purchasing direct, via a Managed Service Provider (MSP), via a cloud marketplace, and from internal service offerings were considered. The table below presents a few scenarios to show how the value for each dimension may change based on the purchasing scenario.
 
 | #   | Scenario                                                                                                                                      | Provider                 | Publisher                                                                                                              | Invoice Issuer                                              |
-|-----|-----------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+|:----|:----------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------|:-----------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------|
 | 1.1 | Purchasing cloud services directly from cloud provider                                                                                        | Cloud service provider   | Cloud service provider                                                                                                 | Cloud service provider                                     |
 | 1.2 | Purchasing cloud services from the cloud provider where the cloud region is operated by a 3rd party                                           | Cloud service provider   | Cloud service provider                                                                                                 | Entity operating the region for the cloud service provider |
 | 2.1 | Purchasing cloud services via MSP                                                                                                             | Managed Service Provider | Cloud service provider                                                                                                 | Managed Service Provider                                   |

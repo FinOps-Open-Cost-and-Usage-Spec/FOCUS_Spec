@@ -3,3 +3,5 @@
 *This section is non-normative.*
 
 !INCLUDE "origination_of_cost_data.md",1
+
+!INCLUDE "normalized_dimensions/normalized_dimensions.mdpp",1

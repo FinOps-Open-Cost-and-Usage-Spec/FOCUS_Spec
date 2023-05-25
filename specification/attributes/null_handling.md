@@ -10,7 +10,7 @@ adopt these same null handling requirements over time.
 
 NullHandling
 
-## Attribute name
+## Attribute Name
 
 Null Handling
 

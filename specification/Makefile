@@ -6,7 +6,7 @@ ifeq ($(STYLE),)
 STYLE="styles/draft.css"
 endif
 PDF_MARGINS=--variable margin-top=15 --variable margin-bottom=15 --variable margin-left=0 --variable margin-right=0
-SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard dimensions/*.md*)
+SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard dimensions/*.md*) $(wildcard attributes/*.md*) $(wildcard metrics/*.md*) $(wildcard appendix/*.md*) $(wildcard appendix/normalized_dimensions/*.md*)
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
 all: spec.md spec.pdf spec.html
 
@@ -18,16 +18,18 @@ spec.html:
 
 spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py dimensions
+	./validate_includes.py metrics
 	./validate_includes.py attributes
 	./validate_includes.py appendix
+	./validate_includes.py appendix/normalized_dimensions
 	$(MARKDOWNPP) spec.mdpp -o $@
 ifeq ($(shell uname -s), Darwin)
 	$(SED) -i '' 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' $@
-	$(SED) -Ei '' '/^[0-9]+.[0-9]+.[0-9]+\\\.\ \ /d' $@
+	$(SED) -Ei '' '/^[0-9]+.[0-9]+.[0-9]+(.[0-9]+)*\\\.\ \ /d' $@
 	$(SED) -i '' 'N;/^\n<a name=/!P;D' $@
 else
 	$(SED) -i 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' $@
-	$(SED) -ri '/^[0-9]+.[0-9]+.[0-9]+\\\.\ \ /d' $@
+	$(SED) -ri '/^[0-9]+.[0-9]+.[0-9]+(.[0-9]+)*\\\.\ \ /d' $@
 	$(SED) -i 'N;/^\n<a name=/!P;D' $@
 endif
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
