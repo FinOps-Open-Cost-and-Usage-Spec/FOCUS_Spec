@@ -46,17 +46,23 @@ Most people will not need any development environment, it is mostly needed by th
 
 1. Install homebrew (as per: https://brew.sh)
 2. Setup cask
+
 	`brew install cask`
 3. Install python
+
 	`brew install python`
 4. Add packages for python
+
 	`pip3 install MarkdownPP pymarkdownlnt`
 5. Install pandoc and required filter library
-	
+
 	`brew install pandoc`
 	
 	`brew install --cask wkhtmltopdf`
-6. If your machine does not have git/make etc, you might fun the following: Install developer command line tools for MacOS 
+6. Install GNU sed
+
+	`brew install gnu-sed`
+7. If your machine does not have git/make etc, you might fun the following: Install developer command line tools for MacOS 
 
 	`xcode-select --install`
 
