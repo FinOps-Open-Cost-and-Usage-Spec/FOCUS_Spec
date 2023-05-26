@@ -26,4 +26,3 @@ pagetitle: FinOps Open Cost and Usage Specification
 !INCLUDE "glossary.md",1
 
 !INCLUDE "appendix/appendix.mdpp",1
-todelete

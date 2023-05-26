@@ -49,23 +49,23 @@ h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.0em;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 h3 {
-  font-size: 1.75em;
-}
-
-h4 {
   font-size: 1.5em;
 }
 
+h4 {
+  font-size: 1.3em;
+}
+
 h5 {
-  font-size: 1.25em;
+  font-size: 1.1em;
 }
 
 h6 {
@@ -84,5 +84,5 @@ h6 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
+  width: 500px;
 }
