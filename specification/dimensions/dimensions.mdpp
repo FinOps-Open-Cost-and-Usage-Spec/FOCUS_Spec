@@ -11,5 +11,7 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "resourceid.md",1
 !INCLUDE "resourcename.md",1
 !INCLUDE "servicename.md",1
+!INCLUDE "billingaccountid.md",1
+!INCLUDE "billingaccountname.md",1
 
 [FODOFC]: https://www.finops.org/framework/capabilities/
