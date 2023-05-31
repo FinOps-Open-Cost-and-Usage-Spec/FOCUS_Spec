@@ -5,6 +5,7 @@ columns are categorized to as 'dimensions' within the dataset and are needed to 
 dimensions to categorize, filter, and reveal details in your data when grouped with 'metrics', which are the quantitative (numeric) values.
 
 !INCLUDE "billingaccountid.md",1
+!INCLUDE "billingaccountname.md",1
 !INCLUDE "chargetype.md",1
 !INCLUDE "invoiceissuer.md",1
 !INCLUDE "provider.md",1
