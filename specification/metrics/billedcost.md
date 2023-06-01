@@ -5,12 +5,15 @@ Billed Cost represents a charge inclusive of negotiated discounts that a consume
 See [Supporting content](https://docs.google.com/document/d/1dwrGmkzpP-NfjZPFzv8HiSo_LBgg2serBfSKFZx4Lnk/edit#heading=h.5s5fte4oc77p)
 
 ## Column ID
+
 BilledCost
 
 ## Display name
+
 Billed Cost
 
 ## Description
+
 A charge inclusive of negotiated discounts that a consumer would be charged for each billing period.
 
 ## Content constraints
@@ -23,4 +26,5 @@ A charge inclusive of negotiated discounts that a consumer would be charged for 
 | Value format    | Numeric value   |
 
 ## Introduced (version)
+
 0.5
