@@ -36,11 +36,12 @@ An ID assigned to a grouping of resources, often used to manage access and/or co
 
 ## Appendix
 
-| | Billing Account | Sub / Resource Account |
-| Description | A provider-supported construct for isolating invoices *based on consumption (usage - e.g. resources, services and other charge types)*. <br/> Billing Accounts may additionally be used for grouping consumption based on organizational constructs and needs. Where supported by the provider, accounts may be used as a boundary for access management. | An optional provider-supported construct for organizing consumption inside of a Billing Account for reasons other than invoicing. Accounts are used for grouping consumption based on organizational constructs and needs. Where supported by the provider, accounts may be used as a boundary for access management. Accounts must be associated with a Billing Account as they do not generate invoices. |
-| Generates an invoice?  | Yes | No |
-| Invoiced level | Self | Billing Account |
-| Access separation supported? | Optional | Optional |
-| Consumption at level | Not recommended | Yes |
-| Child entities? | | |
-| Examples | AWS, GCP, Azure, Snowflake | AWS, GCP, Azure, Snowflake |
+|                              | Billing Account             | Sub / Resource Account     |
+|------------------------------|-----------------------------|----------------------------|
+| Description                  | A provider-supported construct for isolating invoices *based on consumption (usage - e.g. resources, services and other charge types)*. <br>Billing Accounts may additionally be used for grouping consumption based on organizational constructs and needs. Where supported by the provider, accounts may be used as a boundary for access management.  | An optional provider-supported construct for organizing consumption inside of a Billing Account for reasons other than invoicing. Accounts are used for grouping consumption based on organizational constructs and needs. Where supported by the provider, accounts may be used as a boundary for access management. Accounts must be associated with a Billing Account as they do not generate invoices.                    |
+| Generates an invoice?        | Yes                         | No                         |
+| Invoiced level               | Self                        | Billing                    |
+| Access separation supported? | Optional                    | Optional                   |
+| Consumption at level         | Not recommended             | Yes                        |
+| Child entities?              |                             |                            |
+| Examples                     | AWS, GCP, Azure, Snowflake  | AWS, GCP, Azure, Snowflake |
