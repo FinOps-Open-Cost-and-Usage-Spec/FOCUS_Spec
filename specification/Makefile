@@ -18,6 +18,12 @@ spec.html:
 	$(PANDOC) spec.md -o $@ -f gfm -s --css=styles/${STYLE}_html.css
 
 spec.md: $(SPEC_SOURCE_FILES)
+	echo 'local directory'
+	ls -l
+	echo 'parent directory'
+	ls -l ../
+	echo 'vendored'
+	ls -R ../vendored
 	./validate_includes.py dimensions
 	./validate_includes.py metrics
 	./validate_includes.py attributes
