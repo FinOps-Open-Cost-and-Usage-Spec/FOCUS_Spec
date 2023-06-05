@@ -53,7 +53,7 @@ Most people will not need any development environment, it is mostly needed by th
 	`brew install python`
 4. Add packages for python
 
-	`pip3 install pymarkdownlnt`
+	`pip3 install -r requirements.txt`
 5. Install pandoc and required filter library
 
 	`brew install pandoc`
