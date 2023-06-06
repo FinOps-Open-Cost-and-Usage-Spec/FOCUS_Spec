@@ -13,7 +13,7 @@ Current column mappings found in available data sets:
 ## Documentation
 
 - GCP: [Resource Hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#resource-hierarchy-detail)
-- Azure: [Resource Hierarchy](https://learn.microsoft.com/en-us/azure/governance/management-groups/overview), [Organizing resources](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/view-all-accounts)
+- Azure: [Organizing resources](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/view-all-accounts)
 - AWS: [Org Concepts](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html)
 
 ## Example usage scenarios
