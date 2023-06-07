@@ -6,7 +6,7 @@ The table below contains providers' resource and/or service grouping constructs 
 
 | Provider    | Level 1                        | Level 2                     | Level 3                    | Level 4             | Level 5                    | Level 6  |
 |:------------|:-------------------------------|:----------------------------|:---------------------------|:--------------------|:---------------------------|:---------|
-| AWS         | Management Account<sup>1</sup> | Organization unit           | Account<sup>2</sup>        | Resource Group      | Resource                   |          |
+| AWS         | Management Account<sup>1</sup> | Organization unit           | Member Account<sup>2</sup> | Resource Group      | Resource                   |          |
 | GCP         | Organization                   | Billing Account<sup>1</sup> | Folder                     | Project<sup>2</sup> | Resource                   |          |
 | MS EA       | Billing Account<sup>1</sup>    | Department                  | Account                    | Subscription        | Resource group<sup>2</sup> | Resource |
 | MS MCA      | Billing Account                | Billing profile<sup>1</sup> | Invoice section            | Subscription        | Resource group<sup>2</sup> | Resource |
