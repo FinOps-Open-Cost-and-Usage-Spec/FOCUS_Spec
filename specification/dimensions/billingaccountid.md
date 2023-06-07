@@ -2,7 +2,7 @@
 
 A billing account is a container for resources and/or services that are billed together in an invoice. Common scenarios for using billing accounts include grouping based on organizational constructs and hierarchy-based cost allocation approach.
 
-A billing account ID is an provider assigned identifier for a billing account. It is commonly used for cost reporting, invoice reconciliation and cost allocation scenarios.
+A billing account ID is a provider assigned identifier for a billing account. It is commonly used for invoice reconciliation and cost allocation scenarios.
 
 The BillingAccountId column MUST be present in the billing data. This column must be of type String and MUST NOT contain null values. BillingAccountId MUST be a globally unique identifier within a provider.
 
