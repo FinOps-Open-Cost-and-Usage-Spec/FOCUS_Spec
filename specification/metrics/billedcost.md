@@ -1,6 +1,6 @@
 # Billed Cost
 
-The billed cost represents a charge inclusive of negotiated discounts that a consumer would be charged for each billing period. Billed cost does not amortize up-front charges (one-time or recurring). Billed cost is often used to perform FinOps capabilities that require cash-basis accounting such as cost allocation, budgeting, and invoice reconciliation.
+The billed cost represents a charge inclusive of negotiated discounts that a consumer would be charged for each billing period. Billed cost does not amortize upfront charges (one-time or recurring). Billed cost is often used to perform FinOps capabilities that require cash-basis accounting such as cost allocation, budgeting, and invoice reconciliation.
 
 ## Column ID
 
