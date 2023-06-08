@@ -4,17 +4,17 @@
 
 The table below contains providers' resource and/or service grouping constructs and points out how those map to billing accounts and sub accounts. Billing accounts, sub accounts and resources are part of the FOCUS specification v0.5 scope.
 
-| Provider    | Level 1                        | Level 2                     | Level 3                    | Level 4             | Level 5                    | Level 6  |
-|:------------|:-------------------------------|:----------------------------|:---------------------------|:--------------------|:---------------------------|:---------|
-| AWS         | Management Account<sup>1</sup> | Organization unit           | Member Account<sup>2</sup> | Resource Group      | Resource                   |          |
-| GCP         | Organization                   | Billing Account<sup>1</sup> | Folder                     | Project<sup>2</sup> | Resource                   |          |
-| MS EA       | Billing Account<sup>1</sup>    | Department                  | Account                    | Subscription        | Resource group<sup>2</sup> | Resource |
-| MS MCA      | Billing Account                | Billing profile<sup>1</sup> | Invoice section            | Subscription        | Resource group<sup>2</sup> | Resource |
-| MS PAYG     | Billing Account                | Subscription<sup>1</sup>    | Resource group<sup>2</sup> | Resource            |                            |          |
-| MS Internal | Subscription<sup>1</sup>       | Resource group<sup>2</sup>  | Resource                   |                     |                            |          |
+| Provider | Level 1                                | Level 2                                          | Level 3         | Level 4                         | Level 5        | Level 6  |
+|:---------|:---------------------------------------|:-------------------------------------------------|:----------------|:--------------------------------|:---------------|:---------|
+| AWS<br>consolidated billing<sup>1</sup> | Management Account<br>*(billing account)* | Organization unit | Member Account<br>*(sub account)* | Resource Group | Resource   |          |
+| AWS<br>independent billing<sup>2</sup>  | Management Account | Organization unit  | Member Account<br>*(billing account, sub account)*     | Resource Group | Resource    |          |
+| GCP      | Organization                           | Billing Account<br>*(billing account)*           | Folder          | Project<br>*(sub account)*      | Resource       |          |
+| MS EA    | Billing Account<br>*(billing account)* | Department                                       | Account         | Subscription<br>*(sub account)* | Resource group | Resource |
+| MS MCA   | Billing Account                        | Billing profile<br>*(billing account)*           | Invoice section | Subscription<br>*(sub account)* | Resource group | Resource |
+| MS PAYG  | Billing Account                        | Subscription<br>*(billing account, sub account)* | Resource group  | Resource                        |                |          |
 
-<sup>1</sup> invoice scope, mapped to billing account (scope of FOCUS spec v0.5)<br>
-<sup>2</sup> mapped to sub account (scope of FOCUS spec v0.5)
+<sup>1</sup> For organizations that have multiple AWS Member Accounts within an AWS Organization, consolidated billing is enabled by default and invoices are received at Management Account level.<br>
+<sup>2</sup> A Member Account can be removed from AWS consolidated billing whereby the removed account receives independent invoices and is responsible for payments.<br>
 
 ### Documentation
 
