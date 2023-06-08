@@ -15,6 +15,8 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 !TOC
 
+<div style="page-break-after: always"></div>
+
 !INCLUDE "overview.md",1
 
 !INCLUDE "dimensions/dimensions.mdpp",1

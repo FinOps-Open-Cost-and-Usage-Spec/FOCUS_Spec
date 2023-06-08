@@ -1,21 +1,18 @@
 PANDOC=$(shell which pandoc)
-MARKDOWNPP=$(shell which markdown-pp)
+MARKDOWNPP=../vendored/bin/markdown-pp
 PYMARKDOWNLNT=$(shell which pymarkdownlnt)
-ifeq ($(shell uname -s), Darwin)
-	SED=$(shell which gsed)
-else
-	SED=$(shell which sed)
-endif
 ifeq ($(STYLE),)
 STYLE="working_draft"
 endif
-PDF_MARGINS=--variable margin-top=15 --variable margin-bottom=15 --variable margin-left=0 --variable margin-right=0
+PDF_MARGINS=--variable margin-top=15 --variable margin-bottom=25 --variable margin-left=0 --variable margin-right=10
+PDF_FOOTER=--pdf-engine-opt="--footer-right" --pdf-engine-opt="[page] of [topage]" --pdf-engine-opt="--footer-font-name" --pdf-engine-opt="Palatino" --pdf-engine-opt="--footer-font-size" --pdf-engine-opt="8"
 SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard dimensions/*.md*) $(wildcard attributes/*.md*) $(wildcard metrics/*.md*) $(wildcard appendix/*.md*) $(wildcard appendix/normalized_dimensions/*.md*)
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
+export TOCDEPTH=2
 all: spec.md spec.pdf spec.html
 
 spec.pdf: spec.md
-	$(PANDOC) spec.md -o $@ -f gfm --css=styles/${STYLE}.css $(PDF_MARGINS) --pdf-engine=wkhtmltopdf
+	$(PANDOC) spec.md -o $@ -f gfm --css=styles/${STYLE}.css $(PDF_MARGINS) $(PDF_FOOTER) --pdf-engine=wkhtmltopdf
 
 spec.html: 
 	$(PANDOC) spec.md -o $@ -f gfm -s --css=styles/${STYLE}_html.css
@@ -26,10 +23,7 @@ spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py attributes
 	./validate_includes.py appendix
 	./validate_includes.py appendix/normalized_dimensions
-	$(MARKDOWNPP) spec.mdpp -o $@
-	$(SED) -i 's|\(<a name=\".*\">\)</a>|\1\&nbsp;</a>|g' $@
-	$(SED) -ri '/^[0-9]+.[0-9]+.[0-9]+(.[0-9]+)*\\\.\ \ /d' $@
-	$(SED) -i 'N;/^\n<a name=/!P;D' $@
+	PYTHONPATH=../vendored/ $(MARKDOWNPP) spec.mdpp -o $@
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
 
