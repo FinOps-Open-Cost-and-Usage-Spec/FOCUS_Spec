@@ -4,7 +4,7 @@ A sub account is an optional provider-supported construct for organizing resourc
 
 A sub account name is a display name assigned to a sub account.
 
-The SubAccountName column MUST be present in the billing data. This column MUST be of type String and SHOULD NOT contain null values. If a provider doesn't support a sub account construct (only has a billing account), BillingAccountName value SHOULD BE used. If a provider does support a sub account construct, but the charge does not apply to a sub account, the SubAccountName column may be null.
+The SubAccountName column MUST be present in the billing data. This column MUST be of type String and SHOULD NOT contain null values. If a provider doesn't support a sub account construct (only has a billing account), BillingAccountName value SHOULD BE used. If a provider does support a sub account construct, but the charge does not apply to a sub account, the SubAccountName column MAY be null.
 
 ## Column ID
 
