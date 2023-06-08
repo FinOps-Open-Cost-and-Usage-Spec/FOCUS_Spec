@@ -14,7 +14,7 @@ Current column mappings found in available data sets:
 
 #### Example usage scenarios
 
-See [Cost Metrics Examples Spreadsheet](https://docs.google.com/spreadsheets/d/1bhRELDgf3LTSfQJRrCyovTt65g4ElimYHq6fmKOz83E)) for examples of billing data for various scenarios.
+See [Cost Metrics Examples Spreadsheet](https://docs.google.com/spreadsheets/d/1bhRELDgf3LTSfQJRrCyovTt65g4ElimYHq6fmKOz83E) for examples of billing data for various scenarios.
 
 Current values observed in billing data for various scenarios:
 
