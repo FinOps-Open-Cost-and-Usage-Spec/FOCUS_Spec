@@ -22,20 +22,6 @@ Current values observed in billing data for various scenarios:
 |---|---|---|
 | AWS | No up-front RI | BilledCost will represent the RI Fee charged per day for the RI (for usage). Instance that had its usage cost discounted will show up as \$0 for BilledCost. |
 
-#### Documentation
-
-AWS:
-
-\>
-
-Microsoft:
-
-\>
-
-GCP:
-
-\>
-
 ### Discussion / Scratch space
 
 - Aggregations can capture billed cost across different charge types.
@@ -73,34 +59,3 @@ GCP:
 *Do we just need a THIRD option - CostInBase, BaseCurrency - which is like UTC - it could be USD? OR are we assuming that PricedCurrency is always USD?*
 
 - List price is 5\$ comes in hourly. Providers may decide to modify that cost for various reasons (negotiated discounts, commitment discounts etc.).
-
-| List Cost | Invoice Cost | Amortized Cost |
-|---|---|---|
-
-Here is an example for purchasing Azure "Compute Savings Plan" for 3 years, no upfront cost at \$1.905 /hour commitment. The purchase of a savings plan is reported as the "Purchase" charge type. The monthly recurring amount is \$1,390.65
-
-| Type | Charge type | Pricing Model | Cost | Publisher type |
-|---|---|---|---|---|
-| Amortized Cost | Usage | OnDemand | \$7,654.99 | Microsoft |
-| Amortized Cost | Usage | SavingsPlan | \$1,371.60 | Microsoft |
-| Amortized Cost | UnusedSavingsPlan | SavingsPlan | \$0.00 | No publisher |
-| Amortized Cost | RoundingAdjustment | OnDemand | \$-1.36 | No publisher |
-| Amortized Cost | Usage | OnDemand | \$58.98 | Marketplace |
-| Actual Cost | Usage | OnDemand | \$7,597.37 | Microsoft |
-| Actual Cost | Usage | OnDemand | \$58.98 | Marketplace |
-| Actual Cost | Purchase | SavingsPlan | \$1,390.65 | Microsoft |
-
-AWS Savings Plan handling
-
-| **ChargeType** | **lineItem/LineItemType** | **lineItem/UsageAmount** | **lineItem/UnblendedCost** |
-|---|---|---|---|
-| Purchase | SavingsPlanUpfrontFee | 1 | 1200 |
-| Purchase | SavingsPlanRecurringFee | 1 | 100 |
-| Usage | SavingsPlanCoveredUsage | 744 | 0 |
-| Usage | SavingsPlanNegation | 744 | -100 |
-| Usage | Usage | | |
-
-1. SavingsPlanUpfrontFee - you made an upfront payment of \$1200 for an EC2 Savings Plan
-2. SavingsPlanRecurringFee - monthly recurring cost for your Savings Plan is \$100
-3. SavingsPlanCoveredUsage - you\'ve used 744 hours of EC2 instance time (which is roughly equivalent to a month\'s worth of usage). This usage is covered by your SP. So, the unblended cost is \$0
-4. SavingsPlanNegation is used to negate the on-demand cost covered by SP. In this case, the 744 hours of EC2 usage would have cost \$100 at on-demand rates, but this cost is negated by your Savings Plan. This is reflected in the CUR by a SavingsPlanNegation line item with an unblended cost of -\$100
