@@ -1,11 +1,7 @@
-Work item: [Issues #18](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/18)
+# Column: SubAccountName
 
-Owner: John Grubb / Michael Arkoosh
+## Example provider mappings
 
-Supporting content
-------------------
-
-#### Example provider mappings
 
 Current column mappings found in available data sets:
 
