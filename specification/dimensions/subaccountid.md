@@ -2,7 +2,7 @@
 
 A sub account is an optional provider-supported construct for organizing resources and services connected to a billing account. Sub accounts are commonly used for scenarios like grouping based on organizational constructs, access management needs and cost allocation strategies. Sub accounts must be associated with a billing account as they do not receive invoices. 
 
-A sub account ID provider assigned identifier assigned to a sub account. It is commonly used for cost allocation, reporting, and chargeback purposes.
+A sub account ID is a provider assigned identifier assigned to a sub account.
 
 The SubAccountId column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values. Where a provider doesn't support a sub account construct (only has a billing account), use the BillingAccountId value.
 
