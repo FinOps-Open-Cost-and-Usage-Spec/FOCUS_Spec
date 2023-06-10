@@ -62,5 +62,3 @@ FOCUS plans to include Level 1, Level 3 in the specification. Level 5 (resource 
   - Base level organizing entity of resources / resource container
   - A usage account is an organizing entity of provider resources.
   - (Combined) A usage account is a base-level organizing entity of provider resources often used to manage access and cost. A usage account is one of several structural elements of provider hierarchies.
-
-
