@@ -28,9 +28,6 @@ An ID assigned to a grouping of resources, often used to manage access and/or co
 | Data type       | String          |
 | Allows nulls    | True          |
 | Value format    | \<not specified> |
-
-* Where a provider doesn't support a sub account construct, use the BillingAccountId value
-
 ## Introduced (version)
 
 0.5
