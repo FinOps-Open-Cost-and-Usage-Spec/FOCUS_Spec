@@ -18,7 +18,7 @@ Sub Account ID
 
 ## Description
 
-An ID assigned to a grouping of resources, often used to manage access and/or cost.
+An ID assigned to a grouping of resources and/or services, often used to manage access and/or cost.
 
 ## Content constraints
 
