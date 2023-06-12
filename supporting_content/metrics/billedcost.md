@@ -16,12 +16,6 @@ Current column mappings found in available data sets:
 
 See [Cost Metrics Examples Spreadsheet](https://docs.google.com/spreadsheets/d/1bhRELDgf3LTSfQJRrCyovTt65g4ElimYHq6fmKOz83E) for examples of billing data for various scenarios.
 
-Current values observed in billing data for various scenarios:
-
-| **Provider** | **Scenario** | **Pattern** |
-|---|---|---|
-| AWS | No up-front RI | BilledCost will represent the RI Fee charged per day for the RI (for usage). Instance that had its usage cost discounted will show up as \$0 for BilledCost. |
-
 ### Discussion / Scratch space
 
 - Aggregations can capture billed cost across different charge types.
