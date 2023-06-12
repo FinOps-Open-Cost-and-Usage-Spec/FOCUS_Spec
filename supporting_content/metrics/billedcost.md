@@ -52,4 +52,3 @@ See [Cost Metrics Examples Spreadsheet](https://docs.google.com/spreadsheets/d/1
 
 *Do we just need a THIRD option - CostInBase, BaseCurrency - which is like UTC - it could be USD? OR are we assuming that PricedCurrency is always USD?*
 
-- List price is 5\$ comes in hourly. Providers may decide to modify that cost for various reasons (negotiated discounts, commitment discounts etc.).
