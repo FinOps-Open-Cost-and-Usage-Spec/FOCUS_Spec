@@ -2,9 +2,8 @@
 
 Attributes are requirements that apply to the billing datasets. Requirements on data content can include naming
 conventions, data types, formatting standardizations, etc. Attributes may introduce high-level requirements
-for data granularity, recency, frequency, etc. Requirements defined in attributes are necessary for servicing 
+for data granularity, recency, frequency, etc. Requirements defined in attributes are necessary for servicing
 [FinOps capabilities][FODOFC] accurately and using a standard set of instructions regardless of the origin of the data.
 
 !INCLUDE "column_naming_convention.md",1
-
-[FODOFC]: https://www.finops.org/framework/capabilities/
+!INCLUDE "null_handling.md",1

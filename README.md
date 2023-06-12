@@ -1,6 +1,5 @@
 # FinOps Open Cost and Usage Specification (FOCUS) - Specification Working Group
 
-
 The Open Cloud Bill working group will develop a common, source-neutral schema of
 billing, cost, usage, and observability data mapped to a variety of cloud service provider and SaaS product
 sources, with metadata, dimensions, metrics, and measures for the source and common schema fields. As per the [Working Group Chater]() **Link TBC**
@@ -46,13 +45,16 @@ Most people will not need any development environment, it is mostly needed by th
 
 1. Install homebrew (as per: https://brew.sh)
 2. Setup cask
+
 	`brew install cask`
 3. Install python
+
 	`brew install python`
 4. Add packages for python
-	`pip3 install MarkdownPP pymarkdownlnt`
+
+	`pip3 install -r requirements.txt`
 5. Install pandoc and required filter library
-	
+
 	`brew install pandoc`
 	
 	`brew install --cask wkhtmltopdf`
@@ -66,4 +68,3 @@ Most people will not need any development environment, it is mostly needed by th
 2. Use make to generate the spec `make`
 
 [specification]: specification/specification-overview.md
-

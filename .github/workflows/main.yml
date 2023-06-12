@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - working_draft
+      - maintenance/**
 
 jobs:
     # The job that will use the container image you just pushed to ghcr.io
@@ -20,15 +21,18 @@ jobs:
                 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
                 DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y make
                 DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y -f ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
-                /usr/bin/pip3 install markdownpp pymarkdownlnt
+                /usr/bin/pip3 install -r requirements.txt
             - name: Build PDF
               shell: bash
               working-directory: ./specification
               run: |
-                make
-            - name: Upload Spec PDF
+                make STYLE=working_draft
+            - name: Upload Spec
               uses: actions/upload-artifact@v3.1.2
               with:
-                # Artifact name
                 name: FOCUS_specification
-                path: specification/spec.pdf
+                path: |
+                  specification/spec.html
+                  specification/spec.pdf
+                  specification/images/*
+                  specification/styles/*

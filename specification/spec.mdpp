@@ -1,6 +1,13 @@
-!INCLUDE "version.md"
+---
+pagetitle: FinOps Open Cost and Usage Specification
+...
 
-!INCLUDE "contributors.md"
+<img src="images/focus_logo.png" alt="FOCUS Logo" class="focus_logo" />
+<h1 class="title">FinOps Open Cost and Usage Specification</h1>
+
+!INCLUDE "version.md",0
+
+!INCLUDE "contributors.md",0
 
 <div style="page-break-after: always"></div>
 
@@ -8,9 +15,16 @@
 
 !TOC
 
+<div style="page-break-after: always"></div>
+
 !INCLUDE "overview.md",1
 
 !INCLUDE "dimensions/dimensions.mdpp",1
+
+!INCLUDE "dimensions/metrics.mdpp",1
+
 !INCLUDE "attributes/attributes.mdpp",1
 
 !INCLUDE "glossary.md",1
+
+!INCLUDE "appendix/appendix.mdpp",1

@@ -1,3 +1,5 @@
 *.pdf
 .DS_Store
 spec.md
+spec.html
+*.pyc
