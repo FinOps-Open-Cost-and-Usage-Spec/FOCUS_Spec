@@ -1,14 +1,14 @@
 # Charge Type
 
-A charge type indicates whether the record represents an upfront or recurring fee, cost of usage that already occurred,
-an after-the-fact adjustment (e.g., credits), or taxes. The charge type is commonly used to identify prepaid purchases
+A Charge Type indicates whether the record represents an upfront or recurring fee, cost of usage that already occurred,
+an after-the-fact adjustment (e.g., credits), or taxes. The Charge Type is commonly used to identify prepaid purchases
 separately from usage-based charges, to separate taxes that may require special handling, or to apply finer-grained
 allocation logic to purchases or adjustments.
 
 The ChargeType column MUST be present and MUST NOT be null or empty. This column is restricted and MUST be one of the
 allowed values.
 
-[Appendix: Charge Type](#chargetype-1) for details about allowed values and governance criteria for this dimension.
+See [Appendix: Charge Type](#chargetype-1) for details about allowed values and governance criteria for this dimension.
 
 ## Column ID
 
