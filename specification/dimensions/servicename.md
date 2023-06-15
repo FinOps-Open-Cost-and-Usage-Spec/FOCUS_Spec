@@ -1,7 +1,8 @@
 # Service Name
 
-Service Name is an identifier assigned to a service by the provider. The Service Name is commonly used for cost
-reporting, analysis and allocation scenarios.
+A service represents the offering that was purchased through the provider (e.g., cloud or professional services). For cloud resources, the service is a higher-level classification of the resource type and may include multiple usage charges of different types (e.g., compute, storage, networking). The service is not a classification of the type of usage. Instead, it represents the offering you might find on a provider's website.
+
+The Service Name is a friendly name for the service or offering that was purchased. The Service Name is commonly used for scenarios like analyzing aggregate cost trends over time and filtering data to investigate anomalies.
 
 The ServiceName column MUST be present in the cost data. This column MUST be of type String and MUST NOT contain null
 values.
@@ -16,7 +17,7 @@ Service Name
 
 ## Description
 
-Name of the service associated with the cost data.
+Friendly name of the service or offering that was purchased through the provider (e.g., cloud or professional services).
 
 ## Content Constraints
 
