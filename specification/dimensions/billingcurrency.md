@@ -1,4 +1,4 @@
-### Billing Currency
+# Billing Currency
 
 Billing Currency is an identifier that represents the currency that a charge for resources and/or services was billed in. Billing Currency is commonly used in scenarios where costs need to be grouped or aggregated.
 
@@ -6,15 +6,16 @@ The BillingCurrency column MUST be present in the billing data. BillingCurrency 
 
 [Attribute: Currency Code Format](link) contains further details about formatting requirements for currency values.
 
-Column ID
+## Column ID
 
 BillingCurrency
 
-#### Display name
+## Display name
 
 Billing Currency
 
-#### Description
+
+## Description
 
 Represents the currency that a charge was billed in.
 
@@ -26,51 +27,6 @@ Represents the currency that a charge was billed in.
 | Value format    | list-of-values                      |
 | Allowed Values  | Values supported in  ISO 4217:2015. |
 
-#### Introduced (version)
+## Introduced (version)
 
 0.5
-
-Supporting content
-------------------
-
-#### Example provider mappings
-
-Current column mappings found in available data sets:
-
-| Provider | Data set                 | Column         |
-|----------|--------------------------|----------------|
-| AWS      | CUR                      | CurrencyCode   |
-| GCP      | Big Query Billing Export | Currency       |
-| Azure    | Cost details             | BilledCurrency |
-
-#### Example usage scenarios
-
-Current values observed in billing data for various scenarios:
-
-| Provider | Data set                 | Example Value |
-|----------|--------------------------|---------------|
-| AWS      | CUR                      | USD           |
-| GCP      | Big Query Billing Export | USD           |
-| Azure    | Cost details             | USD           |
-
-#### Requirements
-
-- For monetary values representing the amount charged for an invoice or for an overall charge, the underlying charge to be formatted should be represented as a decimal or string format
-
-- Prices and charges will be returned in currency set on the billing account unless a specific currency is included on the request
-
-- The character used as the thousands or decimal separator will be determined by the underlying currency being returned, based on industry standards
-
-References:
-
-AWS: <https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#l-C>
-
-GCP: <https://cloud.google.com/billing/docs/resources/currency>
-
-Azure: <https://azure.microsoft.com/en-us/pricing/faq/>
-
-#### Discussion / Scratch space:
-
-There is a dimension of currency rate conversions for billing data with multiple currencies. <https://cloud.google.com/billing/docs/resources/currency>. We will consider adding currency conversion rates to future versions of the specification
-
-- BillingCurrency preferred over BilledCurrency to avoid misunderstanding about if this column only applies to 'Billed Cost' or if all billing cost columns (e.g. this applies to amortized cost as well)
