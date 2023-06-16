@@ -8,7 +8,7 @@ Current column mappings found in available data sets:
 |-----------|--------------------------|-----------------------------------------------------------|
 | AWS       | CUR                      | line_item_product_code                                    |
 | GCP       | Big Query Billing Export | service.description                                       |
-| Microsoft | Cost details             | ConsumedService (represents the ARM resource provider, which is not a 1:1 relationship to the actual service)<br>Related:<br>ServiceName (EA only)<br>MeterCategory (EA and MCA)<br>(Both are functionally the same. ServiceName has “cleaner” values for EA only.)<br>Description: Name of the classification category for the meter. Same as the service in the Microsoft Customer Agreement Price Sheet. Exact string values differ. |
+| Microsoft | Cost details             | ConsumedService (represents the Azure Resource Manager resource provider, which is not a 1:1 relationship to the actual service)<br>Related:<br>ServiceName (EA only)<br>MeterCategory (EA and MCA)<br>(Both are functionally the same. ServiceName has “cleaner” values for EA only.)<br>Description: Name of the classification category for the meter. Same as the service in the Microsoft Customer Agreement Price Sheet. Exact string values differ. |
 | Microsoft | Price sheet              | serviceName                                               |
 
 ## Example usage scenarios
@@ -16,7 +16,7 @@ Current column mappings found in available data sets:
 Current values observed in billing data for various scenarios:
 
 | Provider  | Data set                 | Example Value                                      |
-|-----------|--------------------------|----------------------------------------------------|
+| --------- | ------------------------ | -------------------------------------------------- |
 | AWS       | CUR                      | AmazonS3, AmazonRDS                                |
 | GCP       | Big Query Billing Export | Networking, Cloud SQL, BigQuery                    |
 | Microsoft | Cost details             | Virtual Machines, Azure App Service, Azure Monitor |
