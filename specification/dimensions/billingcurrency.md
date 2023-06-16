@@ -20,7 +20,7 @@ Billing Currency
 Represents the currency that a charge was billed in.
 
 | Constraint      | Value                               |
-|-----------------|-------------------------------------|
+|:----------------|:------------------------------------|
 | Column required | True                                |
 | Data type       | String                              |
 | Allows nulls    | False                               |
