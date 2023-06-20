@@ -25,7 +25,7 @@ Represents the currency that a charge was billed in.
 | Data type       | String                              |
 | Allows nulls    | False                               |
 | Value format    | list-of-values                      |
-| Allowed Values  | Values supported in  ISO 4217:2015. |
+| Allowed Values  | Meets [Currency Code Format](#currencycodeformat) requirements |
 
 ## Introduced (version)
 
