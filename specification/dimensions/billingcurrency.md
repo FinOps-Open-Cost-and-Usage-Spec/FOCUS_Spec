@@ -19,6 +19,8 @@ Billing Currency
 
 Represents the currency that a charge was billed in.
 
+## Content Constraints
+
 | Constraint      | Value                               |
 |:----------------|:------------------------------------|
 | Column required | True                                |
