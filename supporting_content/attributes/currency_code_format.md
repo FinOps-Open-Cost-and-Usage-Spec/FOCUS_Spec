@@ -17,8 +17,8 @@ Current values observed in billing data for various scenarios:
 | Provider | Data set                 | Example Value |
 |:---------|:-------------------------|:--------------|
 | AWS      | CUR                      | USD           |
-| GCP      | Big Query Billing Export | USD           |
-| Azure    | Cost details             | USD           |
+| GCP      | Big Query Billing Export | EUR           |
+| Azure    | Cost details             | JPY           |
 
 ## Requirements
 
