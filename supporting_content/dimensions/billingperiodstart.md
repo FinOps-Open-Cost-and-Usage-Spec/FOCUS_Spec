@@ -21,5 +21,5 @@ Current column mappings found in available data sets:
 
 ## Discussion Topics
 
-* Can multiple invoices be generated for a billing period for a billing account? Yes. E.g. AWS might send multiple invoices for a month for support, usage and adjustments
+* Can multiple invoices be generated for a billing period for a billing account? Yes. e.g. AWS might send multiple invoices for a month for support, usage and adjustments
 * Are billing periods always a month? Can it start from a middle of a month? Yes, commonly done monthly but can be quarterly, yearly etc.
