@@ -4,28 +4,28 @@
 
 Current column mappings found in available data sets:
 
-| Provider | Data set                 | Column                                               |
-|:---------|:-------------------------|:-----------------------------------------------------|
-| AWS      | CUR                      | lineItem/UsageStartDate, lineItem/UsageEndDate, etc. |
-| GCP      | Big Query Billing Export | usage_start_time, usage_end_time, etc.               |
-| Azure    | Cost details             | date, etc.                                           |
+| Provider  | Data set                 | Column                                               |
+|:----------|:-------------------------|:-----------------------------------------------------|
+| AWS       | CUR                      | lineItem/UsageStartDate, lineItem/UsageEndDate, etc. |
+| GCP       | Big Query Billing Export | usage_start_time, usage_end_time, etc.               |
+| Microsoft | Cost details             | date, etc.                                           |
 
 ### Documentation
 
 * AWS: ?
 * GCP: ?
-* Azure: ?
+* Microsoft: ?
 
 ## Example usage scenarios
 
 Current values observed in billing data for various scenarios:
 
-| Provider | Data set                                        | Example Value        |
-|:---------|:------------------------------------------------|:---------------------|
-| AWS      | CUR                                             | 2023-05-13T21:00:00Z |
-| GCP      | Big Query Billing Export                        | 2023-05-13T21:00:00Z |
-| Azure    | Cost details via Consumption API (usageDetails) | 2023-05-13T00:00:00Z |
-| Azure    | Cost details via Cost export file               | 05/13/2023           |
+| Provider  | Data set                                        | Example Value        |
+|:----------|:------------------------------------------------|:---------------------|
+| AWS       | CUR                                             | 2023-05-13T21:00:00Z |
+| GCP       | Big Query Billing Export                        | 2023-05-13T21:00:00Z |
+| Microsoft | Cost details via Consumption API (usageDetails) | 2023-05-13T00:00:00Z |
+| Microsoft | Cost details via Cost export file               | 05/13/2023           |
 
 ## Discussion / Scratch space
 
