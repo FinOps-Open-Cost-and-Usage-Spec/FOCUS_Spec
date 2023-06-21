@@ -6,7 +6,7 @@ The AmortizedCost column MUST be present in the billing data. This column MUST b
 
 
 Practitioners are faced with two main challenges in respect to this metric:
-1. Practitioners need to amortized upfront fees over the duration of the commitment and distribute those funds to the appropriate reporting groups (e.g. tags, resources)
+1. Practitioners need to amortize upfront fees over the duration of the commitment and distribute those fees to the appropriate reporting groups (e.g. tags, resources)
 2. Many reservation-like functions include a recurring expense for the commitment for every billing period and must distribute this cost to the resources using the commitment. Thus forcing reconciliation between the initial commitment line item per period and the actual usage line items.
 
 
