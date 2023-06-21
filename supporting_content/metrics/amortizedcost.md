@@ -17,7 +17,7 @@
 
 
 ###### Note 
-*Billed cost is showing the total cash outlay for the reservation. Also note there is no initial RI fee representing the cost of the RI for the applicable period.*
+*Billed cost is showing the total cash outlay for the reservation. Also note there is no initial Reserved Instance fee representing the cost of the RI for the applicable period.*
 
 
 
@@ -34,7 +34,7 @@
 
 ___
 
-##### If the RI is unused during a period, for example another ineligible instance type is used:
+##### If the Reserved Instance is unused during a period, for example another ineligible instance type is used:
 
 
 | Charge period           | Billing period           | Charge Type     | Units | Billed Cost | Amortized Cost |
@@ -60,7 +60,7 @@ ___
 
 
 ###### Note: 
-*For the RI Usage the Billed cost is zero as this RI is full upfront. It is especially important to note that the usage units must be normalized for this formula to be applicable in cases of size flexibility (e.g. c7g.large normalized units is 4, c7g.medium is 2). Amortized cost is the same as amortization because the upfront fee covers all of the compute usage expense for this line item.*
+*For the Reserved Instance Usage the Billed cost is zero as this RI is full upfront. It is especially important to note that the usage units must be normalized for this formula to be applicable in cases of size flexibility (e.g. c7g.large normalized units is 4, c7g.medium is 2). Amortized cost is the same as amortization because the upfront fee covers all of the compute usage expense for this line item.*
 
 
 
