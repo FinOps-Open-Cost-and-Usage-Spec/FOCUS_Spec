@@ -5,5 +5,6 @@ The FOCUS specification defines a group of columns that provide numeric values. 
 allow for aggregation operations such as arithmetic operations (sum, multiplication, averaging etc.) and statistical
 operations. When combined with dimensions (which are qualitative value columns), metrics reveal details in your data.
 
-!INCLUDE "billedcost.md",1
 !INCLUDE "amortizedcost.md",1
+!INCLUDE "billedcost.md",1
+
