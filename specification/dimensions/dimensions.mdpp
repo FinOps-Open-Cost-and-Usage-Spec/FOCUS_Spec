@@ -18,5 +18,5 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "servicename.md",1
 !INCLUDE "subaccountid.md",1
 !INCLUDE "subaccountname.md",1
-
+!INCLUDE "region.md",1
 [FODOFC]: https://www.finops.org/framework/capabilities/
