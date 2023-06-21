@@ -19,7 +19,7 @@ Rules and formatting requirements for datetime related columns appearing in bill
 ## Requirements
 
 * Datetime values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.
-* Datetime values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see [ISO 8601-1:2019] governing document for details).
+* Datetime values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see [ISO 8601-1:2019](https://www.iso.org/standard/70907.html) governing document for details).
 * Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with time zone offset ('YYYY-MM-DDTHH:mm:ssZ') and conform to the following guidelines:
   * Include the date and time components, separated with the letter 'T'
   * Use two-digit hours (HH), minutes (mm), and seconds (ss).
