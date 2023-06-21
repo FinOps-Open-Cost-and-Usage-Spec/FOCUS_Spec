@@ -1,8 +1,8 @@
 # Datetime Requirements
 
-Billing data columns, that provide date and time information (datetime related columns), conforming to specified rules and formatting requirements ensure clarity, accuracy and ease of interpretation for both humans and systems.
+Billing data columns that provide date and time information (datetime related columns) conforming to specified rules and formatting requirements ensure clarity, accuracy and ease of interpretation for both humans and systems.
 
-All datetime related columns, defined in the FOCUS specification, MUST be represented in UTC and follow the ISO 8601 aligned formating requirements listed below. Provider generated datetime related columns SHOULD adopt the same format requirements over time.
+All datetime related columns, defined in the FOCUS specification, MUST be represented in UTC and follow the ISO 8601 aligned formatting requirements listed below. Provider generated datetime related columns SHOULD adopt the same format requirements over time.
 
 ## Attribute ID
 
