@@ -7,4 +7,5 @@ for data granularity, recency, frequency, etc. Requirements defined in attribute
 
 !INCLUDE "column_naming_convention.md",1
 !INCLUDE "currency_code_format.md",1
+!INCLUDE "datetime_requirements.md",1
 !INCLUDE "null_handling.md",1
