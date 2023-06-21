@@ -14,38 +14,25 @@ Current values observed in billing data for various scenarios:
 
 | Provider | Data set                 | Example Value                                  |
 |----------|--------------------------|------------------------------------------------|
-| AWS      | CUR                      | us-east-1a | me-south-1 | ap-southeast-4	   |
-| GCP      | Big Query Billing Export | us-central1-a | europe-west6-b | asia-east2-b  |
+| AWS      | CUR                      | us-east-1a, me-south-1, ap-southeast-4	   |
+| GCP      | Big Query Billing Export | us-central1-a, europe-west6-b, asia-east2-b  |
 | Azure    | Cost details             | N/A                                            |
 
 ## Discussion / Scratch space:
 
 Discussion of zone definition -
-
--   Original A zone is an identifier assigned to a geographic location by the provider. 
-
--   The zone is commonly used for cost reporting, cost-effective location migration scenarios.
-
--   Revised A zone is a logical data center within a region.
-
--   Regions typically consist of multiple physically separated and isolated zones which provide high availability and fault tolerance.
-
--   Availability zones are physically separated and isolated areas within a region which provide high availability and fault tolerance.
-
--   Allow nulls - changed from False to True
-
--   References:
-
-    AWS Billing: [Product details - AWS Cost and Usage Reports](https://docs.aws.amazon.com/cur/latest/userguide/product-columns.html#R)
-
-    GCP Billing:[Structure of Detailed data export | Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage#detailed-usage-cost-data-schema)
-
-    Azure Billing: [Understand cost details fields](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
-
-    Azure Zone: [What are Azure regions and availability zones? | Microsoft Learn](https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview)
-
-    GCP Zone: [Geography and regions](https://cloud.google.com/docs/geography-and-regions)
-
-    AWS Zone: [AWS Regions and Availability Zones](https://docs.aws.amazon.com/whitepapers/latest/get-started-documentdb/aws-regions-and-availability-zones.html)
+- Original A zone is an identifier assigned to a geographic location by the provider. 
+- The zone is commonly used for cost reporting, cost-effective location migration scenarios.
+- Revised A zone is a logical data center within a region.
+- Regions typically consist of multiple physically separated and isolated zones which provide high availability and fault tolerance.
+- Availability zones are physically separated and isolated areas within a region which provide high availability and fault tolerance.
+- Allow nulls - changed from False to True
+- References:
+  - AWS Billing: [Product details - AWS Cost and Usage Reports](https://docs.aws.amazon.com/cur/latest/userguide/product-columns.html#R)
+  - GCP Billing:[Structure of Detailed data export | Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage#detailed-usage-cost-data-schema)
+  - Azure Billing: [Understand cost details fields](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
+  - Azure Zone: [What are Azure regions and availability zones? | Microsoft Learn](https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview)
+  - GCP Zone: [Geography and regions](https://cloud.google.com/docs/geography-and-regions)
+  - AWS Zone: [AWS Regions and Availability Zones](https://docs.aws.amazon.com/whitepapers/latest/get-started-documentdb/aws-regions-and-availability-zones.html)
 
 
