@@ -17,7 +17,7 @@
 
 
 ###### Note 
-*Billed cost is showing the total cash outlay for the reservation. Amortization is negative in order to <insert reason here…I missed this part fully…I believe in order to negate any amortized cost>. Also note there is no initial RI fee representing the cost of the RI for the applicable period.*
+*Billed cost is showing the total cash outlay for the reservation. Also note there is no initial RI fee representing the cost of the RI for the applicable period.*
 
 
 
