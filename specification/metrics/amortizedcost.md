@@ -27,7 +27,7 @@ The cost inclusive of amortized upfront charges, recurring fees, and negotiated 
 While it is common in committed discount scenarios to have a line item present at the beginning of each applicable period for the amount of the commitment. Amortized cost should include that cost distributed such that there is not a need to distribute this fee. Thus the practitioner is not required to distribute this commitment, following that particular constructs logic, but rather the provider must distribute these fees over the line items for the usage of this commitment. See examples section for further clarity.
 
 ### Concerning Amortization Approaches
-The amortization of the upfront charge should be amortized using a methodology determined by the provider that reflects the needs of their customer base and is proportional with usage quantity and the time granularity of the line item.  Should a practitioner desire to amortize upfront fees using a different approach.
+The amortization of the upfront charge should be amortized using a methodology determined by the provider that reflects the needs of their customer base and is proportional with usage quantity and the time granularity of the line item.  Should a practitioner desire to amortize upfront fees using a different approach, the practioner can do so using the BilledCost for the line item representing the initial purchase.
 
 
 ## Content constraints
