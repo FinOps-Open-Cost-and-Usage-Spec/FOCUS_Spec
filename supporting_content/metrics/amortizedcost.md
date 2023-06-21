@@ -30,7 +30,7 @@
 
 
 ###### Note: 
-*The amortization is equal to the (Upfront fee / (number of normalized units reserved x periods) x normalized line item units.*
+*The amortization is equal to the (Upfront fee / (number of normalized units reserved x periods) x normalized line item units consumed).*
 
 ___
 
