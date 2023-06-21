@@ -6,3 +6,4 @@ allow for aggregation operations such as arithmetic operations (sum, multiplicat
 operations. When combined with dimensions (which are qualitative value columns), metrics reveal details in your data.
 
 !INCLUDE "billedcost.md",1
+!INCLUDE "amortizedcost.md",1
