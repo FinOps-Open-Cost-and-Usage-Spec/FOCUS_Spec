@@ -1,6 +1,6 @@
 # Billing Period Start
 
-Billing period represents the time window for which you have or will receive an invoice for. Billing period represents the time window for which you have or will receive an invoice for. The time window is inclusive of the start date and exclusive of the end date.
+Billing period represents the time window for which an organization has or will receive an invoice for. The time window is inclusive of the start date and exclusive of the end date.
 
 Billing Period Start represents the start date and time of the billing period.
 
