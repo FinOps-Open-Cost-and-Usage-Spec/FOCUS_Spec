@@ -1,6 +1,6 @@
 # Availability Zone
 
-Physically separated and isolated areas within a region which provide high availability and fault tolerance.
+Availability Zones are physically separated and isolated areas within a region which provide high availability and fault tolerance.
 
 The AvailabilityZone column MUST be present in the billing data. This column MUST be of type String and MAY contain null values.
 
@@ -14,7 +14,7 @@ Availability Zone
 
 ## Description
 
-Availability zones are physically separated and isolated areas within a region which provide high availability and fault tolerance.
+Physically separated and isolated areas within a region which provide high availability and fault tolerance.
 
 ## Content constraints
 
