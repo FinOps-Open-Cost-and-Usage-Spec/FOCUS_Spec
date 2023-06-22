@@ -25,7 +25,7 @@ Current values observed in billing data for various scenarios:
 | Provider  | Data set                   | Scenario                   |
 |-----------|----------------------------|----------------------------|
 | AWS       | CUR                        | USD                        |
-| GCP       | Big Query Billing Export   | INR                        |
+| Google Cloud | Big Query Billing Export   | INR                        |
 | Microsoft | Cost details               | USD                        |
 
 
