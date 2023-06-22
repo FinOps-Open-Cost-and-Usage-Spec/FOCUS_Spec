@@ -1,8 +1,8 @@
 # Availability Zone
 
-Availability Zones are physically separated and isolated areas within a region which provide high availability and fault tolerance.
+Availability Zones are physically separated and isolated areas within a region which provide high availability and fault tolerance. Availability Zone is commonly used for scenarios like analyzing cross-zone transfer cost and usage based on where resources are deployed.
 
-The AvailabilityZone column MUST be present in the billing data. This column MUST be of type String and MAY contain null values.
+The AvailabilityZone column SHOULD be present in the billing data. This column MUST be of type String and MAY contain null values.
 
 ## Column ID
 
@@ -20,7 +20,7 @@ Physically separated and isolated areas within a region which provide high avail
 
 | Constraint      | Value           |
 |-----------------|-----------------|
-| Column required | True            |
+| Column required | False            |
 | Data type       | String          |
 | Allows nulls    | True            |
 | Value format    | \<not specified> |
