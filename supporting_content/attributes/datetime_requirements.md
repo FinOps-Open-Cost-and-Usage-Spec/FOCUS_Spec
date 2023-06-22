@@ -20,12 +20,12 @@ Current column mappings found in available data sets:
 
 Current values observed in billing data for various scenarios:
 
-| Provider  | Data set                                        | Example Value        |
-|:----------|:------------------------------------------------|:---------------------|
-| AWS       | CUR                                             | 2023-05-13T21:00:00Z |
-| GCP       | Big Query Billing Export                        | 2023-05-13T21:00:00Z |
-| Microsoft | Cost details via Consumption API (usageDetails) | 2023-05-13T00:00:00Z |
-| Microsoft | Cost details via Cost export file               | 05/13/2023           |
+| Provider  | Data set                                        | Example Value           |
+|:----------|:------------------------------------------------|:------------------------|
+| AWS       | CUR                                             | 2023-05-13T21:00:00Z    |
+| GCP       | Big Query Billing Export                        | 2023-05-13 21:00:00 UTC |
+| Microsoft | Cost details via Consumption API (usageDetails) | 2023-05-13T00:00:00Z    |
+| Microsoft | Cost details via Cost export file               | 05/13/2023              |
 
 ## Discussion / Scratch space
 
@@ -35,3 +35,4 @@ Current values observed in billing data for various scenarios:
   * Azure currently provides daily-level data without hourly granularity.
   * GCP uses PST for timezone.
 * All date/time columns currently defined in the FOCUS specification (scope of FOCUS v0.5) provide information about a specific point in time. For this purpose, the extended format with separators (hyphens and colons) was chosen (provides consistency and improved readability). When and if the need arises, additional formats will be specified (e.g., for date/time intervals, duration, etc.).
+* The ISO 8601 format supports various precision levels. Since it is most commonly used, FOCUS specification opted for the seconds precision level ('YYYY-MM-DDTHH:mm:ssZ'). If required, other precision levels (e.g., minutes, milliseconds, or microseconds) can also be introduced.
