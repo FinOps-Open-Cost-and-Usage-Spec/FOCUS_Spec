@@ -8,7 +8,7 @@ Current column mappings found in available data sets:
 |-----------|--------------------------|-----------------------------------------------------------|
 | AWS       | CUR                      | Not available (bill_payer_account_id maps to BillingAccountId) |
 | GCP       | BigQuery Billing Export  | Not available (billing_account_id maps to BillingAccountId) |
-| Microsoft | Cost details             | EA: BillingAccountName, MCA: BillingProfileName, MOSA: SubscriptionName
+| Microsoft | Cost details             | EA: BillingAccountName, MCA: BillingProfileName, MOSA: SubscriptionName |
 
 ## Documentation
 
