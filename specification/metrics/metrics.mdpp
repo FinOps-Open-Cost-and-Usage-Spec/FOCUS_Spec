@@ -1,4 +1,4 @@
-# Dimensions
+# Metrics
 
 The FOCUS specification defines a group of columns that provide numeric values. These columns are categorized to as
 'metrics' within the dataset and are needed to serve many [FinOps capabilities][FODOFC]. Metric columns in the dataset

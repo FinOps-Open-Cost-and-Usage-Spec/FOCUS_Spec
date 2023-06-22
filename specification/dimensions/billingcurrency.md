@@ -12,7 +12,6 @@ BillingCurrency
 
 Billing Currency
 
-
 ## Description
 
 Represents the currency that a charge was billed in.
