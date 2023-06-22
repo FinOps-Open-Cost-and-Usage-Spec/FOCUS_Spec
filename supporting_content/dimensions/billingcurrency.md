@@ -33,6 +33,6 @@ Current values observed in billing data for various scenarios:
 
 AWS: https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#l-C
 
-GCP: https://cloud.google.com/billing/docs/resources/currency
+Google Cloud: https://cloud.google.com/billing/docs/resources/currency
 
 Azure: https://azure.microsoft.com/en-us/pricing/faq/
