@@ -1,4 +1,4 @@
-# Date/Time Requirements
+# Date/Time Format
 
 Columns that provide date and time information conforming to specified rules and formatting requirements ensure clarity, accuracy, and ease of interpretation for both humans and systems.
 
@@ -6,11 +6,11 @@ All date/time related columns, defined in the FOCUS specification, MUST be repre
 
 ## Attribute ID
 
-DateTimeRequirements
+DateTimeFormat
 
 ## Attribute name
 
-Date/Time Requirements
+Date/Time Format
 
 ## Description
 
