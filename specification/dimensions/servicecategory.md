@@ -2,7 +2,7 @@
 
 The Service Category is the highest-level classification of a service based on the core function of the service. Each service should have one and only one category that best aligns to its architectural design. The Service Category is commonly used for scenarios like analyzing costs across providers and tracking the migration of workloads across fundamentally different architectures.
 
-The ServiceCategory column MUST be present and MUST NOT be null or empty. This column is restricted and MUST be one of the allowed values.
+The ServiceCategory column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the allowed values.
 
 ## Column ID
 
@@ -47,7 +47,7 @@ Allowed values:
 | Security                  | Security monitoring and compliance services.                                                   |
 | Storage                   | Storage services for structured or unstructured data.                                          |
 | Web                       | Services enabling cloud applications to interact via the Internet.                             |
-| Other                     | New or emerging services that do not align with an existing category.                  |
+| Other                     | New or emerging services that do not align with an existing category.                          |
 
 ## Introduced (version)
 
