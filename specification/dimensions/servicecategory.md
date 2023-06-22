@@ -47,7 +47,7 @@ Allowed values:
 | Security                  | Security monitoring and compliance services.                                                   |
 | Storage                   | Storage services for structured or unstructured data.                                          |
 | Web                       | Services enabling cloud applications to interact via the Internet.                             |
-| Other                     | New or emerging services that do not align with an existing service category.                  |
+| Other                     | New or emerging services that do not align with an existing category.                  |
 
 ## Introduced (version)
 
