@@ -7,7 +7,7 @@ Current column mappings found in available data sets:
 | Provider  | Data set                   | Column                   |
 |-----------|----------------------------|--------------------------|
 | AWS       | CUR                        | CurrencyCode             |
-| GCP       | Big Query Billing Export   | Currency                 |
+| Google Cloud | Big Query Billing Export   | Currency                 |
 | Microsoft | Cost details               | EA: BillingCurrency      |
 
 
