@@ -4,7 +4,7 @@ Billing period represents the time window for which an organization has or will 
 
 Billing Period Start represents the start date and time of the billing period.
 
-The BillingPeriodStart column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values. BillingPeriodStart column MUST conform to [FOCUS Date/Time Format](#datetimeformat). The sum of the Billed Cost metric for line items in a given billing period MUST match the total cost of the invoices received for that billing period.
+The BillingPeriodStart column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. BillingPeriodStart column MUST conform to [FOCUS Date/Time Format](#date/timeformat). The sum of the Billed Cost metric for line items in a given billing period MUST match the total cost of the invoices received for that billing period.
 
 ## Column ID
 
@@ -16,16 +16,16 @@ Billing Period Start
 
 ## Description
 
-The beginning of a billing period.
+The beginning date and time of the billing period.
 
 ## Content Constraints
 
-| Constraint      | Value                                                        |
-|:----------------|:-------------------------------------------------------------|
-| Column Required | True                                                         |
-| Data type       | Datetime                                                     |
-| Allows nulls    | False                                                        |
-| Value format    | Meets [FOCUS Date/Time Format](#datetimeformat) requirements |
+| Constraint      | Value                                                         |
+|:----------------|:--------------------------------------------------------------|
+| Column Required | True                                                          |
+| Data type       | Date/Time                                                     |
+| Allows nulls    | False                                                         |
+| Value format    | Meets [FOCUS Date/Time Format](#date/timeformat) requirements |
 
 ## Introduced (version)
 
