@@ -18,7 +18,7 @@ Amortized Cost
 
 ## Description
 
-The cost inclusive of amortized upfront charges, recurring fees, and remaining usage cost of the line item.
+The cost inclusive of amortized upfront fees, amortized recurring fees, and the usage cost of the line item.
 
 ### Concerning Granularity and Distribution of Recurring Fee
 
