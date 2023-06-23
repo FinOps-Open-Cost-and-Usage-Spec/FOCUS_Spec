@@ -27,7 +27,6 @@ Providers should distribute the commitment purchase amount instead of including 
 ### Concerning Amortization Approaches
 The amortization of the upfront charge should be amortized using a methodology determined by the provider that reflects the needs of their customer base and is proportional with usage quantity and the time granularity of the line item.  Should a practitioner desire to amortize upfront fees using a different approach, the practitioner can do so using the Billed Cost for the line item representing the initial purchase.
 
-
 ## Content constraints
 
 |    Constraint   |      Value      |
