@@ -14,7 +14,7 @@ Availability Zone
 
 ## Description
 
-Physically separated and isolated areas within a region which provide high availability and fault tolerance.
+A provider assigned identifier for a physically separated and isolated area within a Region that provides high availability and fault tolerance.
 
 ## Content constraints
 
