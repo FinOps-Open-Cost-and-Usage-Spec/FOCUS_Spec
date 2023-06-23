@@ -2,7 +2,7 @@
 
 Amortized cost represents the sum of the amortized upfront fees, amortized recurring fees, and the usage cost of the line item. This column is often used to show spending trends that include on demand rates, effective commitment-based discount rates, recurring commitments, as well as amortization of upfront fees. The fee and upfront amortization portion of this column’s value should be proportional to the number of units for the line item and the time granularity of the data. The currency for the value specified in Amortized Cost can be found in the [Billing Currency](#billingcurrency) column. The aggregated Amortized Cost for a billing period may not match the charge received on the invoice for the same billing period.
 
-Practitioners are faced with two main challenges in respect to this metric:
+Practitioners are faced with two main challenges with respect to this metric:
 1. Practitioners need to amortize upfront fees over the duration of the commitment and distribute those fees to the appropriate reporting groups (e.g. tags, resources).
 2. Many commitment based discount constructs include a recurring expense for the commitment for every billing period and must distribute this cost to the resources using the commitment. This forces reconciliation between the initial commitment line item per period and the actual usage line items.
 
