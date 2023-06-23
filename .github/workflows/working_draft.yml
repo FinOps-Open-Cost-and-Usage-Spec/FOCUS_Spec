@@ -1,8 +1,10 @@
-name: generate_publication_spec
+name: generate_draft_spec
 on:
   push:
     branches:
-      - 'main'
+      - '*'
+      - '!main'
+      - '!candidate_release'
 
 jobs:
     # The job that will use the container image you just pushed to ghcr.io
@@ -25,7 +27,7 @@ jobs:
               shell: bash
               working-directory: ./specification
               run: |
-                make STYLE=main
+                make STYLE=working_draft
             - name: Upload Spec
               uses: actions/upload-artifact@v3.1.2
               with:

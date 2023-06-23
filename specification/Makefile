@@ -18,6 +18,11 @@ spec.html:
 	$(PANDOC) spec.md -o $@ -f gfm -s --css=styles/${STYLE}_html.css
 
 spec.md: $(SPEC_SOURCE_FILES)
+ifneq ("$(wildcard versions/${STYLE}.md)","")
+	cp versions/${STYLE}.md version.md
+else
+	cp versions/working_draft.md version.md
+endif
 	./validate_includes.py dimensions
 	./validate_includes.py metrics
 	./validate_includes.py attributes
@@ -28,4 +33,4 @@ spec.md: $(SPEC_SOURCE_FILES)
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
 
 clean:
-	rm -f spec.pdf spec.html spec.md
+	rm -f spec.pdf spec.html spec.md version.md
