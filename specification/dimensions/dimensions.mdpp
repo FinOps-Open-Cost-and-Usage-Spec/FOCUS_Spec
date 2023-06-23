@@ -4,6 +4,7 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 columns are categorized to as 'dimensions' within the dataset and are needed to serve many [FinOps capabilities][FODOFC]. You can use
 dimensions to categorize, filter, and reveal details in your data when grouped with 'metrics', which are the quantitative (numeric) values.
 
+!INCLUDE "availabilityzone.md",1
 !INCLUDE "billingaccountid.md",1
 !INCLUDE "billingaccountname.md",1
 !INCLUDE "billingcurrency.md",1
