@@ -21,7 +21,7 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 !INCLUDE "dimensions/dimensions.mdpp",1
 
-!INCLUDE "dimensions/metrics.mdpp",1
+!INCLUDE "metrics/metrics.mdpp",1
 
 !INCLUDE "attributes/attributes.mdpp",1
 
