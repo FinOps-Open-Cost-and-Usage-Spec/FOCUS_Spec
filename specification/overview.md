@@ -2,21 +2,22 @@
 
 *This section is non-normative.*
 
-FOCUS aims to establish a community-driven specification for consumption-based billing data. Due to the lack of a broadly adopted specification, infrastructure and services providers have resorted to proprietary billing schemas and terminologies that they feel best serve their customers needs. However, the lack of conformance amongst the billing data generators has forced FinOps practitioners to employ disparate, best-effort schemes for each provider in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
+FOCUS aims to establish a community-driven specification for consumption-based billing data. Due to the lack of a broadly adopted specification, infrastructure and services providers have resorted to proprietary billing schemas and terminology. However, the lack of conformance amongst the billing data generators has forced FinOps practitioners to employ disparate, best-effort schemes which each practitioner must develop individually for each provider in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
 
-The FOCUS specification's schema definition and FinOps aligned terminology provide a clear guideline for producing FinOps-serviceable billing datasets. Datasets conforming to FOCUS enable FinOps practitioners to perform common FinOps capabilities, like the ones mentioned above, using a generic set of instructions, regardless of the origin of the dataset.
+The FOCUS specification's schema definition and FinOps aligned terminology provide a clear guide for producing FinOps-serviceable billing datasets. Datasets conforming to FOCUS enable FinOps practitioners to perform common FinOps capabilities, like the ones mentioned above, using a generic set of instructions, regardless of the origin of the dataset.
 
 ## Background and History
 
-This project is sponsored and maintained by the [FinOps Foundation][FODO]. This work initially started under the Open Billing working group under the FinOps Foundation. The decision was made in Jan 2023 to begin to migrate the work to a newly formed project under the Linux Foundation called the FinOps Open Cost and Usage Specification (FOCUS) to better support the creation of a specification.
+This project is sponsored by the [FinOps Foundation][FODO]. This work initially started under the Open Billing working group under the FinOps Foundation. The decision was made in Jan 2023 to begin to migrate the work to a newly formed project under the Linux Foundation called the FinOps Open Cost and Usage Specification (FOCUS) to better support the creation of a specification.
 
 ## Intended Audience
 
 This specification is designed to be used by three major groups:
 
-* Billing data generators: Infrastructure and services providers that generate costs data, such as (but not limited to):
+* Billing data generators: Infrastructure and services providers that bill based on consumption, such as (but not limited to):
   * Cloud Service Providers (CSPs)
   * Software as a Service (SaaS) platforms
+  * Managed Service Providers (MSPs)
   * Internal infrastructure and service platforms
 * FinOps tool providers: Organizations that provide tools to assist with FinOps
 * FinOps practitioners: Organizations and individuals consuming billing data for doing FinOps
@@ -27,15 +28,15 @@ The FOCUS working group will develop an open-source specification for billing da
 
 ## Design Notes
 
-The following principals were considered while building the specification.
+The following principles were considered while building the specification.
 
-### Provider Neutral Approach by Default
+### Provider-Neutral Approach by Default
 
-While the schema, naming, terminology and attributes of many providers were reviewed during development, this specification aims to be provider neutral. In some cases, the approach may closely resemble one or more providers implementation, while in other cases, the approach might be new. In all cases, the FOCUS group (community composed of FinOps practitioners, Cloud and SaaS providers and FinOps vendors) will attempt to prioritize alignment with the FinOps [Framework][FODOF] and [Capabilities][FODOFC].
+While the schema, naming, terminology and attributes of many providers were reviewed during development, this specification aims to be provider-neutral. In some cases, the approach may closely resemble one or more provider's implementation, while in other cases, the approach might be new. In all cases, the FOCUS group (community composed of FinOps practitioners, Cloud and SaaS providers and FinOps vendors) will attempt to prioritize alignment with the FinOps [Framework][FODOF] and [Capabilities][FODOFC].
 
 ### Working Backwards
 
-The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the billing data that should be defined in the specification. The enabled capabilities will be documented within the FOCUS specification.
+The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the billing data that should be defined in the specification to fulfill that capability. Some of the enabled capabilities will be documented in the [Appendix: FinOps Capabilities Enabled by FOCUS (TODO)](#finopscapabilitiesenabledbyfocus).
 
 ### Extensibility
 
