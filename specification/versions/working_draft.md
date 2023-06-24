@@ -20,6 +20,6 @@ Publication as a working draft does not imply endorsement by the FOCUS Project a
 
 This document should be considered a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.
 
-This document was produced by a group operating under the W3C Patent Policy. FOCUS maintains a public list of any patent disclosures made in connection with the deliverables of the group; [that page]() also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains Essential Claim(s) must disclose the information in accordance with section 6 of the W3C Patent Policy.
+This document was produced by a group operating under the W3C Patent Policy. FOCUS maintains a public list of any patent disclosures made in connection with the deliverables of the group; [that page](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/ipr.md) also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains Essential Claim(s) must disclose the information in accordance with section 6 of the W3C Patent Policy.
 
 This document is governed by the [5 February 2004 W3C Patent Policy](https://www.w3.org/Consortium/Patent-Policy-20040205/).
