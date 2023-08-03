@@ -4,7 +4,7 @@ Charge period represents the time window in which a charge was incurred. The tim
 
 Charge Period Start represents the starting date and time of the charge period.
 
-The ChargePeriodStart column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. ChargePeriodStart column MUST conform to [FOCUS Date/Time Format](#date/timeformat).
+The ChargePeriodStart column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. ChargePeriodStart column MUST conform to [FOCUS Date/Time Format](../attributes/datetime_format.md).
 
 ## Column ID
 
