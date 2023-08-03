@@ -6,7 +6,7 @@ A sub account name is a display name assigned to a sub account.
 
 The SubAccountName column MUST be present in the billing data. This column MUST be of type String. If a provider supports setting a display name for sub accounts, that value MUST appear in this column. If a provider does not support a sub account construct (only has a billing account) or does support a sub account construct, but the charge does not apply to a sub account, the SubAccountName column MUST be null.
 
-See [Appendix: Grouping constructs for resources and/or services](#groupingconstructsforresourcesand/orservices) for details and examples of the different grouping constructs supported by FOCUS.
+See [Appendix: Grouping constructs for resources and/or services](../appendix/grouping_constructs_for_resources_and_or_services.md) for details and examples of the different grouping constructs supported by FOCUS.
 
 ## Column ID
 
