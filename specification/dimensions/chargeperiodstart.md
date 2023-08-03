@@ -25,7 +25,7 @@ The beginning date and time of a charge period.
 | Column Required | True                                                          |
 | Data type       | Date/Time                                                     |
 | Allows nulls    | False                                                         |
-| Value format    | Meets [FOCUS Date/Time Format](#date/timeformat) requirements |
+| Value format    | Meets [FOCUS Date/Time Format](../attributes/datetime_format.md) requirements |
 
 ## Introduced (version)
 
