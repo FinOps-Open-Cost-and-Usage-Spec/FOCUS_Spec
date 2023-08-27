@@ -24,8 +24,8 @@ Current values observed in billing data for various scenarios:
 
 | Provider  | Data set                   | Scenario                   |
 |-----------|----------------------------|----------------------------|
-| AWS       | CUR                        | arn:partition:service:region:account-id:reserved-instances/<id> |
-| AWS       | CUR                        | arn:partition:savingsplans:[region]:account-id:savingsplan/<id> |
+| AWS       | CUR                        | arn:partition:service:region:account-id:reserved-instances/\<id> |
+| AWS       | CUR                        | arn:partition:savingsplans:[region]:account-id:savingsplan/\<id> |
 | GCP       | Big Query Billing Export   | \<alphanumeric identifier> |
 | Microsoft | Cost details               |                            |
 
