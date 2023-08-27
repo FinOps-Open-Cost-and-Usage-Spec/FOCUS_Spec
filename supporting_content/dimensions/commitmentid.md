@@ -1,4 +1,4 @@
-# Column: BillingAccountId
+# Column: CommitmentId
 
 ## Example provider mappings
 
@@ -6,7 +6,8 @@ Current column mappings found in available data sets:
 
 | Provider  | Data set                   | Column                   |
 |-----------|----------------------------|--------------------------|
-| AWS       | CUR                        | bill_payer_account_id    |
+| AWS       | CUR                        | reservation/ReservationARN |
+| AWS       | CUR                        | savingsPlan/SavingsPlanArn |
 | GCP       | Big Query Billing Export   | billing_account_id       |
 | Microsoft | Cost details               | EA: BillingAccountId     |
 | Microsoft | Cost details               | MCA: BillingProfileId    |
