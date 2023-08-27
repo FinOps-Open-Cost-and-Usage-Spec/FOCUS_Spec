@@ -27,6 +27,7 @@ Current values observed in billing data for various scenarios:
 | AWS       | CUR                        | arn:partition:service:region:account-id:reserved-instances/\<id> |
 | AWS       | CUR                        | arn:partition:savingsplans:[region]:account-id:savingsplan/\<id> |
 | GCP       | Big Query Billing Export   | \<alphanumeric identifier> |
+| GCP       | Big Query Billing Export   | \<credit description>, i.e. "Committed Use Discount: CPU" |
 | Microsoft | Cost details               |                            |
 
 
