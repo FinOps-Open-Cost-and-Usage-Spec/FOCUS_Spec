@@ -6,8 +6,7 @@ Current column mappings found in available data sets:
 
 | Provider  | Data set                 | Column                   |
 |-----------|--------------------------|--------------------------|
-| AWS       | CUR                      | reservation/ReservationARN |
-| AWS       | CUR                      | savingsPlan/SavingsPlanArn |
+| AWS       | CUR                      | reservation/ReservationARN<br>savingsPlan/SavingsPlanArn |
 | GCP       | Big Query Billing Export | credits.id       |
 | Microsoft | Cost details             | ReservationId (old)<br>BenefitId (new) |
 
