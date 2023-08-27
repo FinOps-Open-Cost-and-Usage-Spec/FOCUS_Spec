@@ -34,3 +34,8 @@ Current values observed in billing data for various scenarios:
 
 ## Discussion / Scratch space:
 
+* Column names considered:
+  * CommitmentBasedDiscountId
+  * CommitmentId
+  * DiscountId
+  * BenefitId
