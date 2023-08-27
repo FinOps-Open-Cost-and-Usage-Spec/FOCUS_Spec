@@ -16,7 +16,7 @@ Commitment Name
 
 ## Description
 
-The identifier assigned to a commitment by the provider.
+The display assigned to a commitment by the provider.
 
 ## Content constraints
 
