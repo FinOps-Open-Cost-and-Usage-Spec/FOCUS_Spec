@@ -4,11 +4,11 @@
 
 Current column mappings found in available data sets:
 
-| Provider  | Data set                 | Column                   |
-|-----------|--------------------------|--------------------------|
+| Provider  | Data set                 | Column                                                   |
+|-----------|--------------------------|----------------------------------------------------------|
 | AWS       | CUR                      | reservation/ReservationARN<br>savingsPlan/SavingsPlanArn |
-| GCP       | Big Query Billing Export | credits.id       |
-| Microsoft | Cost details             | ReservationId (old)<br>BenefitId (new) |
+| GCP       | Big Query Billing Export | credits.id                                               |
+| Microsoft | Cost details             | ReservationId (old)<br>BenefitId (new)                   |
 
 
 ## Documentation
@@ -22,14 +22,14 @@ Current column mappings found in available data sets:
 
 Current values observed in billing data for various scenarios:
 
-| Provider  | Data set                   | Scenario                   |
-|-----------|----------------------------|----------------------------|
+| Provider  | Data set                   | Scenario                                                         |
+|-----------|----------------------------|------------------------------------------------------------------|
 | AWS       | CUR                        | arn:partition:service:region:account-id:reserved-instances/\<id> |
 | AWS       | CUR                        | arn:partition:savingsplans:[region]:account-id:savingsplan/\<id> |
-| GCP       | Big Query Billing Export   | \<alphanumeric identifier> |
-| GCP       | Big Query Billing Export   | \<credit description>, i.e. "Committed Use Discount: CPU" |
-| Microsoft | Commitment purchase        | Commitment order GUID      |
-| Microsoft | Amortized usage            | Commitment instance GUID      |
+| GCP       | Big Query Billing Export   | \<alphanumeric identifier>                                       |
+| GCP       | Big Query Billing Export   | \<credit description>, i.e. "Committed Use Discount: CPU"        |
+| Microsoft | Commitment purchase        | Commitment order GUID                                            |
+| Microsoft | Amortized usage            | Commitment instance GUID                                         |
 
 
 ## Discussion / Scratch space:
