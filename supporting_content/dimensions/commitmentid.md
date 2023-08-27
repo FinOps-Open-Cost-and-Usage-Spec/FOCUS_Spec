@@ -39,3 +39,6 @@ Current values observed in billing data for various scenarios:
   * CommitmentId
   * DiscountId
   * BenefitId
+* In AWS, includes RI and SP, commitments that don’t map 1:1 with a single resource, capacity reservations (i.e. DynamoDB).
+* Only commitments were identified to require an explicit id/name.
+* The name “commitment” was agreed upon. Applies to both id and name.
