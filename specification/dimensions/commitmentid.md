@@ -24,7 +24,7 @@ The identifier assigned to a commitment by the provider.
 |:----------------|:----------------|
 | Column required | True            |
 | Data type       | String          |
-| Allows nulls    | False            |
+| Allows nulls    | True             |
 | Value format    | \<not specified> |
 
 ## Introduced (version)
