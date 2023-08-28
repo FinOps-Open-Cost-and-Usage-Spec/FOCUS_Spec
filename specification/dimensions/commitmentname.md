@@ -16,7 +16,7 @@ Commitment Name
 
 ## Description
 
-The display name assigned to a commitment by the provider.
+The display name assigned to a commitment-based discount by the provider.
 
 ## Content constraints
 
