@@ -28,8 +28,8 @@ Current values observed in billing data for various scenarios:
 | AWS       | CUR                        | arn:partition:savingsplans:[region]:account-id:savingsplan/\<id> |
 | GCP       | Big Query Billing Export   | \<alphanumeric identifier>                                       |
 | GCP       | Big Query Billing Export   | \<credit description>, i.e. "Committed Use Discount: CPU"        |
-| Microsoft | Commitment purchase        | Commitment order GUID                                            |
-| Microsoft | Amortized usage            | Commitment instance GUID                                         |
+| Microsoft | Cost details               | Commitment order GUID for purchase records                       |
+| Microsoft | Cost details               | Commitment instance GUID for amortized usage                     |
 
 
 ## Discussion / Scratch space:
