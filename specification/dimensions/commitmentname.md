@@ -4,7 +4,7 @@ A commitment is a contractual commitment to use a minimum amount of spending on 
 
 A Commitment Name is the display name assigned to a commitment by the provider.
 
-The CommitmentName column MUST be present in the billing data. This column must be of type String. The ResourceName value MAY be null if a display name cannot be assigned to a commitment. CommitmentName MUST NOT be null if a display name can be assigned to a commitment and MUST NOT duplicate the value of the CommitmentId.
+The CommitmentName column MUST be present in the billing data. This column must be of type String. The CommitmentName value MAY be null if a display name cannot be assigned to a commitment-based discount. CommitmentName MUST NOT be null if a display name can be assigned to a commitment-based discount.
 
 ## Column ID
 
