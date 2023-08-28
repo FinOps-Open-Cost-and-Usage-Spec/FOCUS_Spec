@@ -27,8 +27,8 @@ Current values observed in billing data for various scenarios:
 | AWS       | CUR                        | Not present as a separate column in data.      |
 | GCP       | Big Query Billing Export   | Examples: "Spend-based committed use discount" |
 | GCP       | Big Query Billing Export   | Empty if credits.id is a description type id.  |
-| Microsoft | Commitment purchase        | Commitment order name (string)                 |
-| Microsoft | Amortized usage            | Commitment instance name (string)              |
+| Microsoft | Cost details               | Commitment order name for purchases            |
+| Microsoft | Cost details               | Commitment instance name for amortized usage   |
 
 
 ## Discussion / Scratch space:
