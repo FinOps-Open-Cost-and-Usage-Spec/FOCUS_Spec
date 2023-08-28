@@ -16,7 +16,7 @@ Commitment ID
 
 ## Description
 
-The identifier assigned to a commitment by the provider.
+The identifier assigned to a commitment-based discount by the provider.
 
 ## Content constraints
 
