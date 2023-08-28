@@ -4,7 +4,7 @@ A commitment-based discount is a contractual commitment to use a certain amount 
 
 A Commitment ID is the identifier assigned to a commitment-based discount by the provider.
 
-The CommitmentId column MUST be present in the billing data. This column must be of type String and MUST NOT contain null values. CommitmentId MUST be a globally unique identifier within a provider.
+The CommitmentId column MUST be present in the billing data. This column must be of type String and MUST NOT contain null values when a charge is related to a commitment-based discount. When a charge is not associated with a commitment-based discount, the column MUST be null. CommitmentId MUST be unique within the provider.
 
 ## Column ID
 
