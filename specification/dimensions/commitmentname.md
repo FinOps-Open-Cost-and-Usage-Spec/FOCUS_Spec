@@ -1,6 +1,6 @@
 # Commitment Name
 
-A commitment is a contractual commitment to use a minimum amount of spending on resources for a fixed term in exchange for discounts on those resources. Commitments can cover various resources such as virtual machines, or databases. A provider can offer various pricing models, payment options, and term durations for its commitment offerings.
+A commitment-based discount is a contractual commitment to use a certain amount of a specific type of usage for a fixed term in exchange for a discounted unit price. Commitment-based discounts can cover either usage or cost of various resources such as virtual machines or databases. A provider can offer various pricing models, payment options, and term durations for commitment-based discounts.
 
 A Commitment Name is the display name assigned to a commitment-based discount.
 
@@ -16,7 +16,7 @@ Commitment Name
 
 ## Description
 
-The display name assigned to a commitment-based discount by the provider.
+The display name assigned to a commitment-based discount.
 
 ## Content constraints
 
