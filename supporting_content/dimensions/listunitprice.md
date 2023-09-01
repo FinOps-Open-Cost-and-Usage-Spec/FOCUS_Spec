@@ -7,7 +7,7 @@ Current column mappings found in available data sets:
 | Provider  | Data set                     | Column                   |
 |:----------|:-----------------------------|:-------------------------|
 | AWS       | CUR;<br>AWS Price List API   | pricing/publicOnDemandRate: The public On-Demand Instance rate in this billing period for the specific line item of usage. If you have SKUs with multiple On-Demand public rates, the equivalent rate for the highest tier is displayed. For example, services offering free-tiers or tiered pricing.<br>*Note: Since currently only pricing/publicOnDemandRate definition includes note regarding highest tier, I'm not sure if volume-based pricing applies to all unit prices (rates) in CUR files. If it's not consistent, we might have to rely on the AWS Price List API.* |
-| GCP       | BigQuery Pricing Data Export | Not available in BigQuery Billing Export, but can be resolved from the list_price Struct in the BigQuery Pricing Data Export |
+| GCP       | BigQuery Pricing Data Export;<br>Cloud Billing API | Not available in BigQuery Billing Export but can be resolved from both the list_price Struct in BigQuery Pricing Data Export and the Cloud Billing API |
 | Microsoft | Cost details;<br>Azure Retail Prices REST API | pay-as-you-goPrice/PayGPrice: Retail price for the resource<br>*Note: Identified some discrepancy between the value in Cost details and the Retail Price obtained from the Azure Retail Prices REST API, particularly in the context of CSPs. Might be related to Partner Billing UC?* |
 | OCI       | List Pricing REST API        | Not available in Cost and Usage Report but can be resolved from the List Pricing REST API |
 
@@ -25,18 +25,18 @@ For better comprehension, please refer to the sample price-tiers configuration a
 
 ### Current values observed in billing data for various scenarios
 
-| Provider  | Scenario                       | Pattern                              |
-|:----------|:-------------------------------|:-------------------------------------|
-| AWS       | Flat-rate based pricing        | pricing/publicOnDemandRate: 0.000005 |
-| AWS       | Usage-dependent pricing        | pricing/publicOnDemandRate: ??? *TODO: look for a higher tier sample* |
-| GCP       | Flat-rate based pricing        | Not available                        |
-| GCP       | Usage-dependent pricing        | Not available                        |
-| Microsoft | Flat-rate based pricing - PAYG | PayGPrice: 0.00036                   |
-| Microsoft | Flat-rate based pricing - CSP  | PayGPrice: 0.0003707                 |
-| Microsoft | Usage-dependent pricing - PAYG | PayGPrice: 0.087                     |
-| Microsoft | Usage-dependent pricing - CSP  | PayGPrice: 0.087                     |
-| OCI       | Flat-rate based pricing        | Not available                        |
-| OCI       | Usage-dependent pricing        | Not available                        |
+| Provider  | Scenario                                                                        | Pattern                              |
+|:----------|:--------------------------------------------------------------------------------|:-------------------------------------|
+| AWS       | Flat-rate based pricing<br>SKU: E9YHNFENF4XQBZR6                                | pricing/publicOnDemandRate: 0.000005 |
+| AWS       | Usage-dependent pricing<br> ??? *TODO: look for a higher tier sample*           | pricing/publicOnDemandRate: ??? *TODO: look for a higher tier sample* |
+| GCP       | Flat-rate based pricing                                                         | Not available                        |
+| GCP       | Usage-dependent pricing                                                         | Not available                        |
+| Microsoft | Flat-rate based pricing - PAYG<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52 | PayGPrice: 0.00036                   |
+| Microsoft | Flat-rate based pricing - CSP<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52  | PayGPrice: 0.0003707                 |
+| Microsoft | Usage-dependent pricing - PAYG<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4 | PayGPrice: 0.087                     |
+| Microsoft | Usage-dependent pricing - CSP<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4  | PayGPrice: 0.087                     |
+| OCI       | Flat-rate based pricing                                                         | Not available                        |
+| OCI       | Usage-dependent pricing                                                         | Not available                        |
 
 ### Alternative data sources for various scenarios
 
@@ -84,7 +84,7 @@ For better comprehension, please refer to the sample price-tiers configuration a
 
 ### Prices and Currencies
 
-- If our plan includes specifying both BillingCurrency and PricingCurrency, and we permit use cases where BillingCurrency differs from PricingCurrency (rather than enforcing a single Currency per cost record), it becomes imperative to emphasize and clarify the currency that is applicable to a Unit Price dimension (should be part of the definition of the dimension). For the time being all unit price dimensions must be denominated in PricingCurrency.
+- We deliberated on whether to specify both BillingCurrency and PricingCurrency and decided to enforce a single currency, specifically BillingCurrency. This approach provides consistency and simplifies invoice reconciliation. Since some providers don't include List Unit Prices in BillingCurrency in their public price sheets, the inclusion of a CurrencyExchangeRate dimension in the billing data becomes imperative (name subject to change). This is necessary to ensure we can accurately compare and match ListUnitPrices provided in billing data with those published in public price sheets.
 
 ### Naming challenges
 
