@@ -109,7 +109,7 @@ In case of **flat-rate pricing** each pricing unit is assigned a fixed price reg
 Usage-dependent pricing involves configuration of multiple price tiers. Each tier is characterized by a pricing quantity range and associated unit prices (such as ListUnitPrice, NegotiatedUnitPrice, BilledUnitPrice, etc.). Typically, higher pricing tiers feature lower unit prices, granting users the advantage of reduced unit costs as their usage expands. Furthermore, Usage-dependent pricing may also include free-tier, which is a special price tier applicable to minimal usage levels.
 
 Within the realm of usage-dependent pricing we encounter two subtypes: volume-based pricing and tier-based pricing. The key difference between these two mechanisms lies in how charges are categorized into different price tiers. **Volume-based pricing** adjusts unit prices based on the total usage within a specific interval, affecting all charges within that interval. On the other hand, in **tier-based pricing**, unit prices change as the number of charged units increases, with specific charges moving into higher tiers as their usage crosses into those ranges.
-In both sybtypes, the count of charged units resets at the beginning of each interval.
+In both subtypes, the count of charged units resets at the beginning of each interval.
 
 For better comprehension, please refer to the following sample price-tiers configuration and UC scenarios.
 
