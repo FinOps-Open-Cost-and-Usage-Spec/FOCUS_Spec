@@ -1,4 +1,4 @@
-# Column: CommitmentName
+# Column: CommitmentDiscountName
 
 ## Example provider mappings
 
@@ -36,7 +36,7 @@ Current values observed in billing data for various scenarios:
 * Discussions on whether this is nullable or not.
 * Suggested to follow the same pattern as billingaccountname, resourcename, subaccountname in v0.5.
 * Clarification on nullability
-  * Should CommitmentId be specified as CommitmentName when name is null (when resource id is not null)
+  * Should CommitmentDiscountId be specified as CommitmentDiscountName when name is null (when resource id is not null)
   * Do providers put Id / name for everything?
-  * Based on these findings, CommitmentName column cannot be a non-null column
+  * Based on these findings, CommitmentDiscountName column cannot be a non-null column
   * See [null_handling](../attributes/null_handling.md) for additional context
