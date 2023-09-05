@@ -28,6 +28,7 @@ The length of the commitment-based discount.
 Allowed values:
 
 ### Time Unit
+
 | Value |
 | :---- |
 | hour  |
