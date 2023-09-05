@@ -1,4 +1,4 @@
-# Column: CommitmentId
+# Column: CommitmentDiscountId
 
 ## Example provider mappings
 
@@ -37,6 +37,7 @@ Current values observed in billing data for various scenarios:
 * Column names considered:
   * CommitmentBasedDiscountId
   * CommitmentId
+  * CommitmentDiscountId
   * DiscountId
   * BenefitId
 * In AWS, includes RI and SP, commitments that don’t map 1:1 with a single resource, capacity reservations (i.e. DynamoDB).
