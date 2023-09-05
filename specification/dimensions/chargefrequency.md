@@ -6,8 +6,6 @@ When charge frequency is one-time, this can be an indicator of a prepaid purchas
 The ChargeFrequency column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the
 allowed values.
 
-See [Appendix: Charge Frequency](#chargefrequency-1) for details about allowed values and governance criteria for this dimension.
-
 ## Column ID
 
 ChargeFrequency
