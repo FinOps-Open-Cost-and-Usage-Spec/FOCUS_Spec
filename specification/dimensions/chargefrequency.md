@@ -2,8 +2,7 @@
 
 Charge Frequency indicates how often a charge would occur. 
 
-The ChargeFrequency column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the
-allowed values.
+The ChargeFrequency column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the allowed values.
 
 ## Column ID
 
