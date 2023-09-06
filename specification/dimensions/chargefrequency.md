@@ -30,7 +30,7 @@ Allowed values:
 | Value       | Description                                                                                                                                                                                         |
 | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Recurring   | This charge type will occur on a periodic cadence which can be daily, hourly or monthly which indicate charges for the acquisition of a service or resource bought upfront or on a recurring basis. |
-| Usage Based | Charges based on the quantity and frequency of a service or resource that was consumed in a given period of time.                                                                                    |
+| Usage-Based | Charges based on the quantity and frequency of a service or resource that was consumed in a given period of time.                                                                                    |
 | One-time    | Charges that will occur only and indicate a one-time purchase of a contract/commitment or pre-paid service.     
                                                                          
 
