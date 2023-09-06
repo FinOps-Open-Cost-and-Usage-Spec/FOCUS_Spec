@@ -22,6 +22,11 @@ Current values observed in billing data for various scenarios:
 | Microsoft | Cost details             | Recurring,Monthly,UsageBased |
 
 
+## Example Usecases
+
+- Finops team identify and handle large one-time purchases to avoid (or educate on) large scary spikes in cloud monitoring tools/platforms. 
+- Finance teams identify and allocate one-time purchases either by amortization or cost recovery from the right entity. 
+- Engineering managers are able to identify usage-based charges to include in their budget or forecasting processes.
 
 ## Reference
 - Microsoft: [understand-usage-details-fields](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
@@ -37,3 +42,5 @@ Current values observed in billing data for various scenarios:
   - How would recurring refunds or credits be handled? Like AWS MAP credits
 -AWS handling for SPs might be a concern - Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.30)
 - What Charge Types can BE recurring? Would usage under free tier be recurring since every month that charge is $0 or would it be usage based? 
+
+

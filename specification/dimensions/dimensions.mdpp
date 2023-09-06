@@ -10,6 +10,7 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "billingcurrency.md",1
 !INCLUDE "billingperiodend.md",1
 !INCLUDE "billingperiodstart.md",1
+!INCLUDE "chargefrequency.md",1
 !INCLUDE "chargeperiodend.md",1
 !INCLUDE "chargeperiodstart.md",1
 !INCLUDE "chargetype.md",1
