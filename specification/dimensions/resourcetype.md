@@ -1,6 +1,6 @@
 # Resource Type
 
-A ResourceType is a classifiable description of a corresponding ResourceId.  While the ResourceId identifies a unique instance of a resource, the ResourceType describes the identity of the resource.
+A Resource ID is an identifier assigned to a resource by the provider. The Resource ID is commonly used for cost reporting, analysis, and allocation scenarios.  While Resource ID and Resource Name identifies a unique instance of a resource, the Resource Type describes the identity of the resource. Resource Type is commonly used for cost reporting, analysis, and allocation scenarios.
 
 The ResourceType column MUST be present within billing data.  ResourceType MUST be of type String and MUST NOT be NULL when a corresponding ResourceId is not NULL.  When a corresponding ResourceId value is NULL, the ResourceType column value MUST be NULL.
 
@@ -14,7 +14,7 @@ Resource Type
 
 ## Description
 
-Classifiable description assigned to a corresponding ResourceId
+Classifiable description of a corresponding ResourceId
 
 ## Normalized?
 
@@ -39,15 +39,15 @@ String
 
 ## Supporting content
 
-The following is a list of potential ResourceType values that could exist across AWS, Azure, and GCP.
+The following is a list of potential Resource Type values that could exist across AWS, Azure, and GCP.
 
-| AWS                       | Azure                                 | GCP                               |
-|:-----------------------   |:------------------------------------- |:--------------------------------  |
-| EC2 Virtual Machine       | Azure Virtual Machine                 | Compute Engine Virtual Machine    |
-| EBS Volume                | Managed Disk                          | Persistent Disk                   |
-| Lambda Function           | Azure Function                        | Cloud Functions Function          |
-| S3 Bucket                 | Blob Storage Container                | GCS Bucket                        |
-| EFS File System           | File Storage                          | File Store                        |
-| Elastic Load Balancer     | Public Load Balancer                  | Cloud Load Balancer               |
-| Relational Database       | Database for MySQL/Postgres Cluster   | CloudSQL Cluster                  |
-| Redshift Cluster          | Synapse Analytics Warehouse           | BigQuery Storage/Analysis         |
+| Resource Type             | AWS                       | Azure                                 | GCP                               |
+|:------------------------- |:------------------------- |:------------------------------------- |:--------------------------------- |
+| Virtual Machine           | EC2 Virtual Machine       | Azure Virtual Machine                 | Compute Engine Virtual Machine    |
+| Disk                      | EBS Volume                | Managed Disk                          | Persistent Disk                   |
+| Serverless Function       | Lambda Function           | Azure Function                        | Cloud Functions Function          |
+| Blob Storage Bucket       | S3 Bucket                 | Blob Storage Container                | GCS Bucket                        |
+| File System               | EFS File System           | File Storage                          | File Store                        |
+| Load Balancer             | Elastic Load Balancer     | Public Load Balancer                  | Cloud Load Balancer               |
+| Relational Database       | Amazon Aurora             | Database for MySQL/Postgres Cluster   | CloudSQL Cluster                  |
+| Data Warehouse            | Redshift Cluster          | Synapse Analytics Warehouse           | BigQuery Storage/Analysis         |
