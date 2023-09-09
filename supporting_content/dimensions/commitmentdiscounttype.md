@@ -14,6 +14,4 @@ TBC: Another column that describes the type of CUD in the terms of the CSP, eg.
 - Commitment Discount Program (String (non-normalised))
   - Savings Plan
   - RI/CUD
-  - Flexible CUDs 
-
-
+  - Flexible CUDs
