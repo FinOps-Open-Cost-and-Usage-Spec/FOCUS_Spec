@@ -1,6 +1,6 @@
 # Charge Frequency
 
-Charge Frequency indicates how often a charge would occur. 
+Charge Frequency indicates how often a charge will occur. Charge Frequency is commonly used for scenarios like forecasting and differentiating between one-time and recurring fees for commitment-based discounts.
 
 The ChargeFrequency column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the allowed values.
 
