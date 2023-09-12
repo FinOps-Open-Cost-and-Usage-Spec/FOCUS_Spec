@@ -19,7 +19,7 @@ Current values observed in billing data for various scenarios:
 | --------- | ------------------------ | ---------------------------- |
 | AWS       | CUR                      | Anniversary,Purchase,Refund  |
 | GCP       | Big Query Billing Export | NA                           |
-| Microsoft | Cost details             | Recurring,Monthly,UsageBased |
+| Microsoft | Cost details             | OneTime, Recurring, Monthly, UsageBased |
 
 
 ## Example Usecases
