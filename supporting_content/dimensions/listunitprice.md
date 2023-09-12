@@ -25,18 +25,18 @@ For better comprehension, please refer to the sample price-tiers configuration a
 
 ### Current values observed in billing data for various scenarios
 
-| Provider  | Scenario                                                                        | Pattern                              |
-|:----------|:--------------------------------------------------------------------------------|:-------------------------------------|
-| AWS       | Flat-rate based pricing<br>SKU: E9YHNFENF4XQBZR6                                | pricing/publicOnDemandRate: 0.000005 |
-| AWS       | Usage-dependent pricing<br> ??? *TODO: look for a higher tier sample*           | pricing/publicOnDemandRate: ??? *TODO: look for a higher tier sample* |
-| GCP       | Flat-rate based pricing                                                         | Not available                        |
-| GCP       | Usage-dependent pricing                                                         | Not available                        |
-| Microsoft | Flat-rate based pricing - PAYG<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52 | PayGPrice: 0.00036                   |
-| Microsoft | Flat-rate based pricing - CSP<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52  | PayGPrice: 0.0003707                 |
-| Microsoft | Usage-dependent pricing - PAYG<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4 | PayGPrice: 0.087                     |
-| Microsoft | Usage-dependent pricing - CSP<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4  | PayGPrice: 0.087                     |
-| OCI       | Flat-rate based pricing                                                         | Not available                        |
-| OCI       | Usage-dependent pricing                                                         | Not available                        |
+| Provider  | Scenario                                                                        | ListUnitPrice Pattern                | BilledUnitPrice Pattern |
+|:----------|:--------------------------------------------------------------------------------|:-------------------------------------|:------------------------|
+| AWS       | Flat-rate based pricing<br>SKU: E9YHNFENF4XQBZR6                                | pricing/publicOnDemandRate: 0.000005 | *TODO: Add sample data* |
+| AWS       | Usage-dependent pricing<br> ??? *TODO: look for a higher tier sample*           | pricing/publicOnDemandRate: ??? *TODO: look for a higher tier sample* | *TODO: Add sample data* |
+| GCP       | Flat-rate based pricing                                                         | Not available                        | *TODO: Add sample data* |
+| GCP       | Usage-dependent pricing                                                         | Not available                        | *TODO: Add sample data* |
+| Microsoft | Flat-rate based pricing - PAYG<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52 | PayGPrice: 0.00036                   | *TODO: Add sample data* |
+| Microsoft | Flat-rate based pricing - CSP<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52  | PayGPrice: 0.0003707                 | *TODO: Add sample data* |
+| Microsoft | Usage-dependent pricing - PAYG<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4 | PayGPrice: 0.087                     | *TODO: Add sample data* |
+| Microsoft | Usage-dependent pricing - CSP<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4  | PayGPrice: 0.087                     | *TODO: Add sample data* |
+| OCI       | Flat-rate based pricing                                                         | Not available                        | *TODO: Add sample data* |
+| OCI       | Usage-dependent pricing                                                         | Not available                        | *TODO: Add sample data* |
 
 ### Alternative data sources for various scenarios
 
@@ -137,4 +137,4 @@ The following dimensions and metrics names were influenced by these decisions:
 | S-1 | 2  | 1GB | 0.50 | 0.45 | 0.45 | USD | USD | 1  | 0.9 | 0.9 |
 | S-2 | 12 | 1GB | 0.50 | 0.45 | 0.45 | USD | USD | 6  | 5.4 | 5.4 |
 
-See [Pricing Support – UCs and Data samples Spreadsheet](https://docs.google.com/spreadsheets/d/1AZ-vtkKeKwYc8rqhxP1zMTnAVAS-svmWQQmr8cpv-IM/edit#gid=117987709) for various UC scenarios.
+See [Pricing Support – UCs and Data samples Spreadsheet](https://docs.google.com/spreadsheets/d/1AZ-vtkKeKwYc8rqhxP1zMTnAVAS-svmWQQmr8cpv-IM/edit#gid=117987709) for additional UC scenarios.
