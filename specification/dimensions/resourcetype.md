@@ -1,6 +1,6 @@
 # Resource Type
 
-A Resource Type is a classifiable representation of a specific kind of cloud service or corresponding resource that can be provisioned, configured, and managed by users. A Resource Type is commonly used for scenarios like identifying changes in cost over time or building a resource inventory.  While Resource ID and Resource Name identifies a unique instance of a resource, the Resource Type describes the identity of the resource.
+Resource Type describes the kind of resource for which you are being charged.  A Resource Type is commonly used for scenarios like identifying cost changes in groups of similar resources.
 
 The ResourceType column MUST be present within billing data.  ResourceType MUST be of type String and MUST NOT be NULL when a corresponding ResourceId is not NULL.  When a corresponding ResourceId value is NULL, the ResourceType column value MUST be NULL.
 
@@ -14,7 +14,7 @@ Resource Type
 
 ## Description
 
-A classifiable representation of a specific kind of cloud service or corresponding resource that can be provisioned, configured, and managed by users.
+The kind of resource for which you are being charged.
 
 ## Normalized?
 
