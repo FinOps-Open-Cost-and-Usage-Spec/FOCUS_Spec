@@ -2,7 +2,7 @@
 
 ## Example provider mappings
 
-Current resource types found or extraced from available data sets:
+Current resource types found or extracted from available data sets:
 
 | Provider  | Data set                | Column                                                                                                                                   |
 | :-------- | :---------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
@@ -12,7 +12,7 @@ Current resource types found or extraced from available data sets:
 
 ## Example usage scenarios
 
-The following is a list of potential Resource Type values that AWS, Azure, and GCP may provide.
+The following is a list of potential Resource Type values that AWS, Azure, and GCP may choose to provide.
 
 | Resource Type             | AWS                       | Azure                                 | GCP                               |
 |:------------------------- |:------------------------- |:------------------------------------- |:--------------------------------- |
