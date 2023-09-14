@@ -1,8 +1,18 @@
 # Column: ResourceType
 
-## Example Resource Type mappings
+## Example provider mappings
 
-The following is a list of potential Resource Type values that could exist across AWS, Azure, and GCP.
+Current resource types found or extraced from available data sets:
+
+| Provider  | Data set                | Column                                                                                                                                   |
+| :-------- | :---------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
+| AWS       | CUR                     | `lineItem/ResourceId` (only if resource-type exists within an ARN - arn:partition:service:region:account-id:*resource-type*/resource-id) |
+| GCP       | BigQuery Billing Export | (Does not exist)                                                                                                                         |
+| Microsoft | Cost details            | `ResourceType`                                                                                                                           |
+
+## Example usage scenarios
+
+The following is a list of potential Resource Type values that AWS, Azure, and GCP may provide.
 
 | Resource Type             | AWS                       | Azure                                 | GCP                               |
 |:------------------------- |:------------------------- |:------------------------------------- |:--------------------------------- |
@@ -15,9 +25,10 @@ The following is a list of potential Resource Type values that could exist acros
 | Relational Database       | Amazon Aurora             | Database for MySQL/Postgres Cluster   | CloudSQL Cluster                  |
 | Data Warehouse            | Redshift Cluster          | Synapse Analytics Warehouse           | BigQuery Storage/Analysis         |
 
-## Discussion / Scratch Space
+## Discussion / Scratch space
 
 - Too much effort to ask for Resource Type normalization across clouds.
 - Provider-based Resource Type is the first step towards potentially normalizing across clouds.
 - Happy medium is a provider-based ResourceType
 - It should be a required field that is nullable
+
