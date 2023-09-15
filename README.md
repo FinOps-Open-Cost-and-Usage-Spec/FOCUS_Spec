@@ -58,7 +58,7 @@ Most people will not need any development environment, it is mostly needed by th
 	`brew install pandoc`
 	
 	`brew install --cask wkhtmltopdf`
-6. If your machine does not have git/make etc, you might fun the following: Install developer command line tools for MacOS 
+6. If your machine does not have git/make etc, you might run the following: Install developer command line tools for MacOS 
 
 	`xcode-select --install`
 
