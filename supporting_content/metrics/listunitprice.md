@@ -36,7 +36,7 @@ Current column mappings found in available data sets:
 
 ## Example usage scenarios
 
-- See [Appendix: Quantity-Driven Pricing strategies](../apendix/quantity_driven_pricing_strategies.md) for more information on
+- See [Appendix: Quantity-Driven Pricing strategies](../apendix/quantity_driven_pricing_strategies.md) section for more information on
   - Quantity-Driven Pricing strategies (such as flat-rate, volume-based rates and tier-based rating)
   - related UC scenarios
   - Current values observed in billing data for various scenarios
