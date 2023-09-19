@@ -1,6 +1,6 @@
 # Commitment Discount Type
 
-A commitment-based discount is a contractual commitment in exchange for a discounted unit price. Commitment discounts are available as spend-based or resource-based discounts, depending on the Provider's offering.
+A commitment-based discount is a contractual commitment in exchange for a discounted unit price. These discounts may be available for spend-based commitments or resource-based commitments, depending on the Provider's offerings.
 
 This column determines whether the commitment is based on a minimum spend or minimum usage.
 
