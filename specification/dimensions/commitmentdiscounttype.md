@@ -34,7 +34,7 @@ Allowed values:
 | Value      | Description                                                                                                                                                                   |
 |:---------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Spend-Based    | Commitments are purchased and measured in terms of the dollars per hour of equivalent on-demand spend.                                                                    |
-| Resource-Based | Commitments are purchased and measured in terms of the underlying resources.                                                                                              |
+| Usage-Based | Commitments are purchased and measured in terms of the underlying resource usage.                                                                                              |
 
 ## Introduced (version)
 
