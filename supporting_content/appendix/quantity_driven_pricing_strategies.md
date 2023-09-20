@@ -2,7 +2,7 @@
 
 ## Introduction
 
-From a quantity perspective, providers often employ various quantity-driven pricing strategies, which can be categorized into two primary approaches: flat-rate pricing and quantity-dependent pricing.
+Providers employ two primary approaches for pricing their offerings: flat-rate pricing and quantity-dependent pricing.
 
 ### Flat-Rate Pricing
 
