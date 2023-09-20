@@ -1,4 +1,4 @@
-# Quantity-Driven Pricing strategies
+# Quantity-Driven Pricing Strategies
 
 ## Introduction
 
