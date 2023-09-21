@@ -12,7 +12,7 @@ With flat-rate pricing, each pricing unit is assigned a fixed price, regardless 
 
 Quantity-dependent pricing, also referred to as usage-dependent pricing, takes into account the quantity and adjusts pricing accordingly. This approach involves configuring multiple price tiers, each defined by a specific quantity range and associated unit prices, such as ListUnitPrice, NegotiatedUnitPrice, BilledUnitPrice, etc.
 
-Typically, higher usage tiers feature lower unit prices, offering users the advantage of reduced unit costs as their usage expands. Additionally, quantity-dependent pricing may include a **free-tier**, a special price tier designed for minimal usage levels.
+Typically, higher usage tiers feature lower unit prices, offering users the advantage of reduced unit costs as their usage expands. Additionally, quantity-dependent pricing may include a **free-tier**, a special price tier designed for an introductory usage level.
 
 Within the context of quantity-dependent pricing, two common strategies are volume-based pricing and tier-based pricing. While both strategies reset the count of charged units at the beginning of each interval, they differ in how charges are categorized into different price tiers:
 
