@@ -17,7 +17,7 @@ Typically, higher usage tiers feature lower unit prices, offering users the adva
 Two common quantity-dependent pricing strategies are volume-based pricing and tier-based pricing. While both strategies reset the count of charged units at the beginning of each interval, they differ in how charges are categorized into different price tiers:
 
 * **volume-based pricing:** This strategy adjusts unit prices based on the total usage within a specific interval, affecting all charges within that interval. Customers benefit from reduced unit costs as their overall usage increases.
-* **tier-based pricing:** In tier-based pricing, unit prices change as the number of charged units increases. Specific charges move into higher tiers as their usage crosses into those ranges.
+* **tier-based pricing:** In tier-based pricing, unit prices change as the number of charged units increases. You are charged for the consumed quantity within each tier based on the associated unit price for each tier.
 
 For better comprehension, please refer to the sample price-tiers configuration and UC scenarios, provided in Fictional Use Case scenarios.
 
