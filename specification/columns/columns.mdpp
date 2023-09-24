@@ -45,5 +45,6 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "subaccountid.md",1
 !INCLUDE "subaccountname.md",1
 !INCLUDE "tags.md",1
+!INCLUDE "usagetype.md",1
 
 [FODOFC]: https://www.finops.org/framework/capabilities/
