@@ -22,8 +22,8 @@ Rules and formatting requirements for columns appearing in billing data which co
   * In the case of key collisions, multiple sets of key-value pairs can be provided by prefixing tag keys to disambiguate sources.
 * Keys SHOULD be case-insensitive.
 * Values SHOULD be case-sensitive.
-* Source data containing only a keyword instead of a key-value pair SHOULD be expressed as a key-value pair with keyword being treated as the key and TRUE being the value.
-* Source data containing a key with a null value MAY be expressed as a key-value pair with key being the key and an empty string being the value.
+* Source data containing only a keyword instead of a key-value pair SHOULD be expressed as a key-value pair with keyword being treated as the key and `true` being the value.
+* Source data containing a key with a null value SHOULD be expressed as a key-value pair with key being the key and `null` being the value.
 
 ## Exceptions
 
