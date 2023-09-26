@@ -4,7 +4,7 @@ A commitment-based discount is a contractual commitment in exchange for a discou
 
 This column determines whether the commitment is based on a minimum spend or minimum usage.
 
-The CommitmentDiscountType column MUST be present in the billing data. This column must be of type String and MUST NOT contain null values when a charge is related to a commitment-based discount (the CommitmentDiscountId column can be referenced to determine this). When a charge is not associated with a commitment-based discount, the column MUST be null.
+The CommitmentDiscountType column MUST be present in the billing data. This column must be of type String, MUST be null when CommitmentDiscountId is null, and MUST NOT be null when CommitmentDiscountId is not null.
 
 The CommitmentDiscountType MUST be one of the allowed values.
 
