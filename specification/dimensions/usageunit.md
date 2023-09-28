@@ -40,7 +40,6 @@ A unit of measurement for consumption or usage of resources or services.
 | us: micro-second |           |              | T: Tera (10^12) |
 | ns: nano-second  |           |              | P: Peta (10^15) |
 
-
 ## Introduced (version)
 
 1.0
