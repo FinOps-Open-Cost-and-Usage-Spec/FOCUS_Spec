@@ -45,7 +45,7 @@ For better comprehension, please refer to the sample price-tiers configuration a
 
 #### Sample Billing data
 
-| Scenario | Pricing/Billed Quantity | Pricing Unit | List Unit Price | Negotiated Unit Price | Billed Unit Price | Pricing currency | Billed Currency | List Cost | Billed Cost | Amortized Cost |
+| Scenario | QuantityInPricingUnit | PricingUnit | ListUnitPrice | NegotiatedUnitPrice | BilledUnitPrice | PricingCurrency | BillingCurrency | ListCost | BilledCost | EffectiveCost |
 |:----|---:|:----|-----:|-----:|-----:|:----|:----|---:|----:|----:|
 | S-1 | 10 | 1GB | 1    | 0.90 | 0.90 | USD | USD | 10 | 9   | 9   |
 | S-1 | 2  | 1GB | 0.50 | 0.45 | 0.45 | USD | USD | 1  | 0.9 | 0.9 |
