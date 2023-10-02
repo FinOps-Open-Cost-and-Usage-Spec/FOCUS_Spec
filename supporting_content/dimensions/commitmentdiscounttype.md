@@ -1,5 +1,25 @@
 # Column: CommitmentDiscountType
 
+## Example provider mappings
+
+Current column mappings found in available data sets:
+
+| Provider | Data set                 | Column                    |
+|----------|--------------------------|---------------------------|
+| AWS | CUR                      | Not available   |
+| Google Cloud | BigQuery Billing Export | location.zone             |
+| Microsoft | Cost Details             | Not available               |
+
+## Example usage scenarios
+
+Current values observed in billing data for various scenarios:
+
+| Provider | Data set                 | Example Value                                  |
+|----------|--------------------------|------------------------------------------------|
+| AWS | CUR                      | N/A |
+| Google Cloud | BigQuery Billing Export | Spend-based, Resource-based |
+| Microsoft | Cost Details             | N/A |
+
 ## Documentation
 - Microsoft
   - Azure:  Understand usage details fields: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
