@@ -4,27 +4,31 @@
 
 Current column mappings found in available data sets:
 
-| Provider | Data set                 | Column                    |
-|----------|--------------------------|---------------------------|
-| AWS | CUR                      | Not available   |
-| Google Cloud | BigQuery Billing Export | location.zone             |
-| Microsoft | Cost Details             | Not available               |
+| Provider | Data set                 | Column                    |  Example Values  |
+|----------|--------------------------|---------------------------|------------------|
+| AWS | CUR                      | Not available   | N/A |
+| Google Cloud | BigQuery Billing Export | credit.type              | COMMITTED_USAGE_DISCOUNT, COMMITTED_USAGE_DISCOUNT_DOLLAR_BASE |
+| Microsoft | Cost Details             | Not available               | N/A |
 
 ## Example usage scenarios
 
 Current values observed in billing data for various scenarios:
 
-| Provider | Data set                 | Example Value                                  |
-|----------|--------------------------|------------------------------------------------|
-| AWS | CUR                      | N/A |
-| Google Cloud | BigQuery Billing Export | Spend-based, Resource-based |
-| Microsoft | Cost Details             | N/A |
+| Provider | Data set                 | CommitmentDiscountType     | CommitmentDiscountProgram (Name TBD)     |
+|----------|--------------------------|----------------------------|------------------------------------------|
+| AWS | CUR                           |                            |                                          |
+| Google Cloud | BigQuery Billing Export (credit.type) |                         |                                          |
+| Microsoft | Cost Details (PricingModel)| Spend-Based                     | Savings Plan                             |
+| Microsoft | Cost Details (PricingModel)| Spend-Based                     | Reservation                              |
+
+
 
 ## Documentation
 - Microsoft
   - Azure:  Understand usage details fields: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
 - GCP
   - Google Commitment Types:  https://cloud.google.com/docs/cuds#spend_versus_resource_commitments (This is the most similar to our selected implementation)
+  - https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage - see credit.type
 - AWS
   - Amazon: Reservation details - https://docs.aws.amazon.com/cur/latest/userguide/reservation-columns.html
 
