@@ -2,8 +2,7 @@
 
 UsageType indicates whether usage charges were consumed at on-demand or reduced rates during the charge period or if they are for unused commitments. The UsageType influences the price point and can be used to identify waste or lost savings from unused commitments. This classification offers a nuanced view into consumption patterns and helps in understanding how you're billed.
 
-The UsageType column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the
-allowed values.
+The UsageType column MUST be present, MUST NOT be null when ChargeType is "Usage", and MUST be null when ChargeType is not "Usage". This column is of type String and MUST be one of the allowed values.
 
 See [Appendix: Usage Type](#usagetype-1) for details about allowed values and governance criteria for this dimension.
 
