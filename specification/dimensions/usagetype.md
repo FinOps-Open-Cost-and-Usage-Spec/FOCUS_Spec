@@ -24,7 +24,7 @@ Indicates whether the record pertains to an on-demand or recurring charge, or re
 | :-------------- | :--------------------------------------- |
 | Column required | True                                     |
 | Data type       | String                                   |
-| Allows nulls    | False                                    |
+| Allows nulls    | True                                     |
 | Value format    | list-of-values                           |
 
 Allowed values:
