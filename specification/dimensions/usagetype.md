@@ -1,6 +1,6 @@
 # Usage Type
 
-UsageType is a categorization parameter that defines how a resource or service was consumed during a specified period. The UsageType can influence the price point and also indicate whether purchased commitments are used or unused. This classification offers a nuanced view into the resource or service's consumption patterns and helps in understanding how you're billed, especially when considered alongside attributes like ChargeType and PurchaseType.
+UsageType indicates whether usage charges were consumed at on-demand or reduced rates during the charge period or if they are for unused commitments. The UsageType influences the price point and can be used to identify waste or lost savings from unused commitments. This classification offers a nuanced view into consumption patterns and helps in understanding how you're billed.
 
 The UsageType column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the
 allowed values.
