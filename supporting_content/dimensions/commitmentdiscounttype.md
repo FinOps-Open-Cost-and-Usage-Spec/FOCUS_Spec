@@ -16,10 +16,12 @@ Current values observed in billing data for various scenarios:
 
 | Provider | Data set                 | CommitmentDiscountType     | CommitmentDiscountProgram (Name TBD)     |
 |----------|--------------------------|----------------------------|------------------------------------------|
-| AWS | CUR                           |                            |                                          |
-| Google Cloud | BigQuery Billing Export (credit.type) |                         |                                          |
-| Microsoft | Cost Details (PricingModel)| Spend-Based                     | Savings Plan                             |
-| Microsoft | Cost Details (PricingModel)| Spend-Based                     | Reservation                              |
+| AWS | CUR (PurchaseOption)                   | Usage-Based                | Reserved Instances              |
+| AWS | CUR (PurchaseOption)                   | Usage-Based                | Savings Plans                   |
+| Google Cloud | BigQuery Billing Export | Usage-Based        | Resource-based CUD                            |
+| Google Cloud | BigQuery Billing Export | Spend-Based        | Spend-based CUD                               |
+| Microsoft | Cost Details (PricingModel)| Usage-Based                     | Savings Plan                     |
+| Microsoft | Cost Details (PricingModel)| Usage-Based                     | Reservation                      |
 
 
 
@@ -45,3 +47,12 @@ The name of this additional column is yet to be determined but could be somethin
 - Commitment Discount Plan
 - Commitment Discount Plan Name
 - Other
+
+- Microsoft
+  - Azure:  PricingModel: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
+- GCP
+  - Google Commitment Types:  https://cloud.google.com/docs/cuds#spend_versus_resource_commitments (This is the most similar to our selected implementation)
+  - https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage
+- AWS
+  - Amazon: Instance purchasing options - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html
+
