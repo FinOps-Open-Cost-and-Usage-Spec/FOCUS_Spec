@@ -23,8 +23,6 @@ Current values observed in billing data for various scenarios:
 | Microsoft | Cost Details (PricingModel)| Usage-Based                     | Savings Plan                     |
 | Microsoft | Cost Details (PricingModel)| Usage-Based                     | Reservation                      |
 
-
-
 ## Documentation
 - Microsoft
   - Azure:  Understand usage details fields: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
@@ -55,4 +53,3 @@ The name of this additional column is yet to be determined but could be somethin
   - https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage
 - AWS
   - Amazon: Instance purchasing options - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html
-
