@@ -14,7 +14,7 @@ Charge Frequency
 
 ## Description
 
-Indicates the frequency with which a charge will occur - recurring (typically monthly), based on usage, or one-time
+Indicates how often a charge will occur.
 
 ## Content Constraints
 
