@@ -1,0 +1,28 @@
+# Dimensions
+
+The FOCUS specification defines a group of columns that provide qualitative values (such as dates, resource, and provider information). These
+columns are categorized to as 'dimensions' within the dataset and are needed to serve many [FinOps capabilities][FODOFC]. You can use
+dimensions to categorize, filter, and reveal details in your data when grouped with 'metrics', which are the quantitative (numeric) values. The Dimensions are presented in Alphabetical order.
+
+!INCLUDE "availabilityzone.md",1
+!INCLUDE "billingaccountid.md",1
+!INCLUDE "billingaccountname.md",1
+!INCLUDE "billingcurrency.md",1
+!INCLUDE "billingperiodend.md",1
+!INCLUDE "billingperiodstart.md",1
+!INCLUDE "chargeperiodend.md",1
+!INCLUDE "chargeperiodstart.md",1
+!INCLUDE "chargetype.md",1
+!INCLUDE "invoiceissuer.md",1
+!INCLUDE "provider.md",1
+!INCLUDE "publisher.md",1
+!INCLUDE "pricingmodel.md",1
+!INCLUDE "region.md",1
+!INCLUDE "resourceid.md",1
+!INCLUDE "resourcename.md",1
+!INCLUDE "servicecategory.md",1
+!INCLUDE "servicename.md",1
+!INCLUDE "subaccountid.md",1
+!INCLUDE "subaccountname.md",1
+
+[FODOFC]: https://www.finops.org/framework/capabilities/
