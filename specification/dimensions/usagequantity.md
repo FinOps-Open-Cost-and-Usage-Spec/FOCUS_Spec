@@ -2,7 +2,6 @@
 
 Usage Quantity is the amount of resources or services consumed. The Usage Quantity is measured in units specified by the Usage Unit. Usage Quantity may differ from a Pricing Quantity when providers use a different unit of measure for calculating cost. Usage Quantity is often used when analyzing environments to gain understanding of usage or consumption of a given product/service in an environment.
 
-
 Usage Quantity MUST exist in billing data. The column MUST be a numeric value and MUST NOT contain nulls.
 
 ## Column ID
