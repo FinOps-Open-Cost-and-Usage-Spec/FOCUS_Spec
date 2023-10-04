@@ -1,8 +1,6 @@
 # Charge Frequency
 
-Charge Frequency indicates how often a charge will occur. Charge Frequency is commonly used for scenarios like forecasting and differentiating between one-time and recurring fees for commitment-based discounts.
-
-While Charge Frequency indicates whether a charge will reoccur, dimensions Charge Period Start and Charge Period End specify the period for which this charge applies. This can typically be used to also understand the recurrence period (e.g., monthly, yearly).
+Charge Frequency indicates how often a charge will occur. Along with the Charge Period column, the Charge Frequency can be used to understand recurrence periods (e.g., monthly, yearly), forecast upcoming charges, and differentiate between one-time and recurring fees for purchases.
 
 The ChargeFrequency column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the allowed values.
 
