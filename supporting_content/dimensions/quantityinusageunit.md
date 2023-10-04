@@ -1,4 +1,4 @@
-# Column: UsageQuantity
+# Column: QuantityInUsageUnit
 
 ## Example provider mappings
 
