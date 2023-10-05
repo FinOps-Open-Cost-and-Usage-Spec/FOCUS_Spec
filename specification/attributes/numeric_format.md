@@ -1,4 +1,4 @@
-# Date/Time Format
+# Numeric Format
 
 Columns that provide numeric values conforming to specified rules and formatting requirements ensure clarity, accuracy, and ease of interpretation for both humans and systems.
 
