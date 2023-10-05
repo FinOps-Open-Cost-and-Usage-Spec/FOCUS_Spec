@@ -22,7 +22,7 @@ The following is a list of potential Resource Type values that AWS, Azure, and G
 | Blob Storage Bucket       | S3 Bucket                 | Blob Storage Container                | GCS Bucket                        |
 | File System               | EFS File System           | File Storage                          | File Store                        |
 | Load Balancer             | Elastic Load Balancer     | Public Load Balancer                  | Cloud Load Balancer               |
-| Relational Database       | Amazon Aurora             | Database for MySQL/Postgres Cluster   | CloudSQL Cluster                  |
+| Relational Database       | Amazon Aurora Cluster     | Database for MySQL/Postgres Cluster   | CloudSQL Cluster                  |
 | Data Warehouse            | Redshift Cluster          | Synapse Analytics Warehouse           | BigQuery Storage/Analysis         |
 
 ## Discussion / Scratch space
