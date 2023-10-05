@@ -9,6 +9,7 @@ Current column mappings found in available data sets:
 | AWS | CUR                      | lineItem/AvailabilityZone |
 | Google Cloud | BigQuery Billing Export | location.zone             |
 | Microsoft | Cost details             | Not available             |
+| OCI | Cost reports             | product/availabilityDomain |
 
 ## Example usage scenarios
 
@@ -19,6 +20,7 @@ Current values observed in billing data for various scenarios:
 | AWS | CUR                      | us-east-1a, me-south-1, ap-southeast-4 |
 | Google Cloud | BigQuery Billing Export | us-central1-a, europe-west6-b, asia-east2-b |
 | Microsoft | Cost details             | N/A |
+| OCI | Cost reports             | product/availabilityDomain | us-sanjose-1, ap-mumbai-1, ca-toronto-1|   
 
 ## Discussion / Scratch space:
 
@@ -34,6 +36,8 @@ Discussion of zone definition
   - AWS Billing: [Product details - AWS Cost and Usage Reports](https://docs.aws.amazon.com/cur/latest/userguide/product-columns.html#R)
   - GCP Billing: [Structure of Detailed data export | Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage#detailed-usage-cost-data-schema)
   - Azure Billing: [Understand cost details fields](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
+  - OCI Billing: [OCI Cost report schema - Cost and Usage Reports Overview](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm)
   - Azure Zone: [What are Azure regions and availability zones? | Microsoft Learn](https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview)
   - GCP Zone: [Geography and regions](https://cloud.google.com/docs/geography-and-regions)
   - AWS Zone: [AWS Regions and Availability Zones](https://docs.aws.amazon.com/whitepapers/latest/get-started-documentdb/aws-regions-and-availability-zones.html)
+  - OCI Zone: [OCI Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm)
