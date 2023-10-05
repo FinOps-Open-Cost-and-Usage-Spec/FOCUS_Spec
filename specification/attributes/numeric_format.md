@@ -18,7 +18,7 @@ Rules and formatting requirements for numeric columns appearing in billing data.
 
 ## Requirements
 
-* Metrics with a Numeric format MUST contain a single value.
+* Columns with a Numeric format MUST contain a single value.
 * The single value captured in columns with a Numeric format MUST be a real, rational.
 * Numeric values MUST be expressed as integer, decimal value, or scientific notation.
 * Fractional notation or values expressed with an arithmetic operator (e.g. 1/2) are not permitted.
