@@ -1,20 +1,16 @@
 # Usage Unit
 
-Usage Unit refers to a unit of measurement for the consumption or usage of resources or services. The Usage Unit for a particular line item may differ from the published Pricing Unit when providers use different units, unit increments, or dimensions for calculating cost.  This unit is commonly used when auditing or reconciling consumption or billing data.
+Usage Unit refers to a unit of measurement for the purchase or consumption of resources or services. The Usage Unit for a particular line item may differ from the published Pricing Unit when providers use different units, unit increments, or dimensions for calculating cost.  This unit is commonly used when auditing or reconciling consumption or billing data.
 
-The UsageUnit column MUST be present and MUST NOT be null or empty. UsageUnit is of type String.
+The UsageUnit column MUST be present and MUST NOT be null or empty. UsageUnit is of type String. UsageUnit should be expressed as a single unit of measure adhering to the following format options:
 
-Instead of "per" or "-" to denote a Composite Unit, slash ("/") SHOULD be used as a common convention.  Count based units like requests, instances, tokens SHOULD be expressed as "count".  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit should be listed as "count/day" to signify the number of requests per day.
+* &lt;plural-units&gt; - "GB", "Seconds"
+* &lt;singular-unit&gt; &lt;plural-time-units&gt; - "GB Hours", "MB Days"
+* &lt;plural-units&gt;/&lt;singular-time-unit&gt; - "GB/Hour", "PB/Day"
 
-## Mandatory Alignment with Recommended Unit Set
+If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of recommended units.
 
-UsageUnit MUST be composed of the list of recommended units or unit abbreviations listed in "Recommended Unit Set" below unless the UsageUnit value covers a dimension not listed in the recommended unit set.  If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of recommended units or unit abbreviations.
-
-This specification requires alignment with recommended units or unit abbreviations to ensure consistency and compatibility across providers, but it allows providers to adapt to emerging units or dimensions as they are introduced.
-
-For example, if a UsageUnit value is "requests/day", the unit "count/day" MUST be used instead as "requests" is not a recommended unit.  In another example, if a UsageUnit must cover distance or length, a new unit term may be introduced as the recommended unit set listed in this specification does not cover a distance of the length dimension.  
-
-Another example of a non-compliant value illustrates that count-based units must align with the recommended unit set.  If a UsageUnit captures "tokens/sec", the unit "count/sec" MUST be used instead as "tokens" is not a recommended unit.  Any unit that consists of a number of events, occurrences, or instances MUST be expressed as "count" to maintain compatibility with this specification.
+UsageUnit MUST be composed of the list of recommended units listed in "Allowed Values" below unless the UsageUnit value covers a dimension not listed in the recommended unit set or if the unit covers a count-based unit distinct from allowed values in the count dimension listed in "Allowed Values."
 
 ## Column ID
 
@@ -37,43 +33,42 @@ A unit of measurement for consumption or usage of resources or services.
 | Allows nulls    | True            |
 | Value format    | \<not specified> |
 
-## Recommended Unit Set
+## Allowed Values
 
-Units listed in the following table are presented in the following format: "abbreviation: unit (numeric prefix unit)".  Unit names are all listed with the appropriate capitalization, and abbreviations are all listed in lowercase.  The numeric prefix unit is optional, and if present, the numeric prefix unit MUST be used in conjunction with a unit.  For example, "KiB" is allowed, but "Ki" is not allowed.  
+Unit names are all listed with the appropriate capitalization.  The numeric prefix unit is optional, and if present, the numeric prefix unit MUST be used in conjunction with a unit.  For example, "KiB" is allowed, but "Ki" is not allowed.  
 
 If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning or incompatible capitalization.  An example of unit now allowed is a unit such as "calls" or "number" to signify the number of times an event occurred in this case, the unit "count" MUST be used to maintain compatibility with this specification.
 
-The following table lists the valid units for 3 dimensions of measurement: time, data, and count.  
+The following tables list the valid singular units for 3 dimensions of measurement: time, data, and count.  
 
-| Time             | Data      | Count        |
-|------------------|-----------|--------------|
-| yr: year         | bit: bit  | cnt: count   |
-| mo: month        | B: byte   |              |
-| wk: week         |           |              |
-| d: day           |           |              |
-| h: hour          |           |              |
-| min: minute      |           |              |
-| s: second        |           |              |
-| ms: millisecond  |           |              |
-| us: microsecond  |           |              |
-| ns: nanosecond   |           |              |
+| Time         | Count        |
+|--------------|--------------|
+| Day          | Count        |
+| Hour         | Unit         |
+| Minute       | Request      |
+| Second       | Token        |
+|              | Connection   |
 
-Each unit can be associated with a numeric prefix to multiply the value by a defined power of ten.  The following table lists the valid numeric prefixes.
+Data size MUST be abbreviated using the following standard abbreviations.  Each data size abbreviation can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "GB".  The following table lists the valid data size units.
 
-| NUMERIC PREFIXES        |
-|-------------------------|
-| Ki: kibi (2^10)         |
-| Mi: mebi (2^20)         |
-| Gi: gibi (2^30)         |
-| Ti: tebi (2^40)         |
-| Pi: pebi (2^50)         |
-| Ei: exbi (2^60)         |
-| K: kilo (10^3)          |
-| M: mega (10^6)          |
-| G: giga (10^9)          |
-| T: tera (10^12)         |
-| P: peta (10^15)         |
-| E: exa (10^15)          |
+| Data size in bits    | Data size in bytes    |
+| -------------------- | --------------------- |
+| Kib (kibibit = 2^10) | KiB (kibibyte = 2^10) |
+| Mib (mebibit = 2^20) | MiB (mebibyte = 2^20) |
+| Gib (gibibit = 2^30) | GiB (gibibyte = 2^30) |
+| Tib (tebibit = 2^40) | TiB (tebibyte = 2^40) |
+| Pib (pebibit = 2^50) | PiB (pebibyte = 2^50) |
+| Eib (exbibit = 2^60) | EiB (exbibyte = 2^60) |
+| Kb (kilobit = 10^3)  | KB (kilobyte = 10^3)  |
+| Mb (megabit = 10^6)  | MB (megabyte = 10^6)  |
+| Gb (gigabit = 10^9)  | GB (gigabyte = 10^9)  |
+| Tb (terabit = 10^12) | TB (terabyte = 10^12) |
+| Pb (petabit = 10^15) | PB (petabyte = 10^15) |
+| Eb (exabit = 10^15)  | EB (exabyte = 10^15)  |
+
+Instead of "per" or "-" to denote a Composite Unit, slash ("/") must be used as a common convention.  Count based units like requests, instances, tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit should be listed as "count/day" to signify the number of requests per day.
+
+For count-based units such as "count", "unit", "request", or "tokens," this dimension SHOULD align with the units listed in this section.  If a count-based dimension covers a unit not listed in this section, a new unit can be introduced.  Unknown units listed in this dimension will be considered count-based units.  For example, if a unit needs to specify the number of "certificates" granted, the unit "certificate" can be used as a UsageUnit value.  Any unknown unit will be considered a count-based unit.
 
 ## Introduced (version)
 
