@@ -20,7 +20,7 @@ Current values observed in billing data for various scenarios:
 | AWS | CUR                      | us-east-1a, me-south-1, ap-southeast-4 |
 | Google Cloud | BigQuery Billing Export | us-central1-a, europe-west6-b, asia-east2-b |
 | Microsoft | Cost details             | N/A |
-| OCI | Cost reports             | product/availabilityDomain | us-sanjose-1, ap-mumbai-1, ca-toronto-1|   
+| OCI | Cost reports             | product/availabilityDomain | EnnW:CA-TORONTO-1-AD-1, EnnW:EU-STOCKHOLM-1-AD-1, EnnW:US-ASHBURN-AD-1 |   
 
 ## Discussion / Scratch space:
 
