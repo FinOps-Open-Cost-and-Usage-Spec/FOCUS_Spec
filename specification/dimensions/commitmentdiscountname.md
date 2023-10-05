@@ -1,6 +1,6 @@
 # Commitment Discount Name
 
-A commitment-based discount is a contractual commitment to use a certain amount of a specific type of usage for a fixed term in exchange for a discounted unit price. Commitment-based discounts can cover either usage or cost of various resources such as virtual machines or databases. A provider can offer various pricing models, payment options, and term durations for commitment-based discounts.
+A commitment-based discount is a contractual commitment for an amount of usage or spend, for a specified term, in exchange for a discounted unit price. Commitment-based discounts can cover either usage or cost of various resources such as virtual machines or databases. A provider can offer various pricing models, payment options, and term durations for commitment-based discounts.
 
 A Commitment Discount Name is the display name assigned to a commitment-based discount.
 
