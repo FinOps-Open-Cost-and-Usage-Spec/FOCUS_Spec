@@ -52,7 +52,7 @@ Rules and formatting requirements for numeric columns appearing in billing data.
 
 ## Numeric Precision
 
-The FOCUS specification does not require a specific level of precision for numeric values.  The level of precision required for a given metric is determined by the provider unless specified in the metric specification.  The level of precision required for a given metric SHOULD be documented in the metric definition.  The following table outlines the options for specifying the level of precision for a given metric.
+The FOCUS specification does not require a specific level of precision for numeric values.  The level of precision required for a given column is determined by the provider and SHOULD be documented as a part of a data definition published by the provider.  The following table outlines the options for specifying the level of precision for a given metric.
 
 | Precision      | Qualifier            | Definition          | Range / Significant Digits          |
 | :--------------| :------------------- | :------------------ | :-------------------- |
