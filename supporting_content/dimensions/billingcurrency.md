@@ -9,6 +9,7 @@ Current column mappings found in available data sets:
 | AWS       | CUR                        | CurrencyCode             |
 | Google Cloud | Big Query Billing Export   | Currency                 |
 | Microsoft | Cost details               | EA: BillingCurrency      |
+| OCI       | Cost reports               | cost/currencyCode        |
 
 
 ## Requirements
@@ -27,6 +28,7 @@ Current values observed in billing data for various scenarios:
 | AWS       | CUR                        | USD                        |
 | Google Cloud | Big Query Billing Export   | INR                        |
 | Microsoft | Cost details               | USD                        |
+| OCI       | Cost reports               | USD                        |
 
 
 ## References
@@ -36,3 +38,5 @@ AWS: https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#l-C
 Google Cloud: https://cloud.google.com/billing/docs/resources/currency
 
 Azure: https://azure.microsoft.com/en-us/pricing/faq/
+
+OCI: https://www.oracle.com/cloud/price-list/
