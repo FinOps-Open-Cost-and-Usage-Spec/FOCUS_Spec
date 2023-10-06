@@ -9,6 +9,7 @@ Current values observed in billing data for various scenarios:
 | AWS       | CUR                      | Product_operation shows the type of operation used by a consumer. <br>However, in scenarios where the line item represents tax, this column is set to null. |
 | GCP       | Big Query Billing Export | Credits.name is null when a credit is not applied.                                      |
 | Microsoft | Cost Details             | ResourceGroup is null when a charge is not from a resource deployed to a resource group.|
+| OCI       | Cost reports             | product/availabilityDomain is null when resource is an Object Store bucket              |
 
 ## Discussion / Scratch space
 
