@@ -31,6 +31,12 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "pricingcategory.md",1
 !INCLUDE "pricingquantity.md",1
 !INCLUDE "pricingunit.md",1
+!INCLUDE "productcategory.md",1
+!INCLUDE "productclass.md",1
+!INCLUDE "productfamily.md",1
+!INCLUDE "productgroup.md",1
+!INCLUDE "productline.md",1
+!INCLUDE "producttype.md",1
 !INCLUDE "provider.md",1
 !INCLUDE "publisher.md",1
 !INCLUDE "regionid.md",1
