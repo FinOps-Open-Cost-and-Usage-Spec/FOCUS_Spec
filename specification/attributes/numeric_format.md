@@ -82,7 +82,6 @@ The numeric Data type is specified in the metric definition as the "Data type" c
   * 3,432,342 - contains a comma
   * +333 - contains a positive sign
 
-
 ## Exceptions
 
 None
