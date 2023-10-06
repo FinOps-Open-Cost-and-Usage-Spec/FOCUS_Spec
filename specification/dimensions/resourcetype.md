@@ -2,7 +2,7 @@
 
 Resource Type describes the kind of resource for which you are being charged.  A Resource Type is commonly used for scenarios like identifying cost changes in groups of similar resources.
 
-The ResourceType column MUST be present within billing data.  ResourceType MUST be of type String and MUST NOT be NULL when a corresponding ResourceId is not NULL.  When a corresponding ResourceId value is NULL, the ResourceType column value MUST be NULL. Providers SHOULD choose a consistent values and a value-format that accounts for additional values added.
+Resource Type MUST be present within billing data.  Resource Type MUST be of type String and MUST NOT be NULL when a corresponding ResourceId is not NULL.  When a corresponding ResourceId value is NULL, the ResourceType column value MUST also be NULL.  Resource Type MUST contain consistent values and a consistent value-format that accounts for additional values added.
 
 Some potential values MAY include Virtual Machine, Data Warehouse, and Load Balancer.
 
