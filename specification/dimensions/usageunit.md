@@ -8,9 +8,9 @@ The UsageUnit column MUST be present and MUST NOT be null or empty. UsageUnit is
 * &lt;singular-unit&gt; &lt;plural-time-units&gt; - "GB Hours", "MB Days"
 * &lt;plural-units&gt;/&lt;singular-time-unit&gt; - "GB/Hour", "PB/Day"
 
-If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of recommended units.
+If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of allowed values.
 
-UsageUnit MUST be composed of the list of recommended units listed in "Allowed Values" below unless the UsageUnit value covers a dimension not listed in the recommended unit set or if the unit covers a count-based unit distinct from allowed values in the count dimension listed in "Allowed Values."
+UsageUnit MUST be composed of the list of recommended units listed in "Allowed Values" below unless the UsageUnit value covers a dimension not listed in the recommended unit set or if the unit covers a count-based unit distinct from allowed values in the count dimension listed in "Allowed Values."  
 
 ## Column ID
 
@@ -35,9 +35,7 @@ A unit of measurement for consumption or usage of resources or services.
 
 ## Allowed Values
 
-Unit names are all listed with the appropriate capitalization.  The numeric prefix unit is optional, and if present, the numeric prefix unit MUST be used in conjunction with a unit.  For example, "KiB" is allowed, but "Ki" is not allowed.  
-
-If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning or incompatible capitalization.  An example of unit now allowed is a unit such as "calls" or "number" to signify the number of times an event occurred in this case, the unit "count" MUST be used to maintain compatibility with this specification.
+Unit names are listed in this section with the appropriate capitalization.  If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning or incompatible capitalization.  
 
 The following tables list the valid singular units for 3 dimensions of measurement: time, data, and count.  
 
@@ -48,6 +46,11 @@ The following tables list the valid singular units for 3 dimensions of measureme
 | Minute       | Request      |
 | Second       | Token        |
 |              | Connection   |
+|              | Certificate  |
+|              | Domain       |
+|              | Core         |
+
+### Data Size Units
 
 Data size MUST be abbreviated using the following standard abbreviations.  Each data size abbreviation can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "GB".  The following table lists the valid data size units.
 
@@ -66,9 +69,15 @@ Data size MUST be abbreviated using the following standard abbreviations.  Each 
 | Pb (petabit = 10^15) | PB (petabyte = 10^15) |
 | Eb (exabit = 10^15)  | EB (exabyte = 10^15)  |
 
-Instead of "per" or "-" to denote a Composite Unit, slash ("/") must be used as a common convention.  Count based units like requests, instances, tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit should be listed as "count/day" to signify the number of requests per day.
+### Count-based Units
 
-For count-based units such as "count", "unit", "request", or "tokens," this dimension SHOULD align with the units listed in this section.  If a count-based dimension covers a unit not listed in this section, a new unit can be introduced.  Unknown units listed in this dimension will be considered count-based units.  For example, if a unit needs to specify the number of "certificates" granted, the unit "certificate" can be used as a UsageUnit value.  Any unknown unit will be considered a count-based unit.
+A count-based unit is a noun that represents a discrete number of items, events, or services.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  If the list of allow values does not cover a count-based unit, a provider may introduce a new noun representing a count-based unit.  All nouns appearing in UsageUnit that are not listed in the allowed values table will be considered count-based units.  
+
+Any new count-based units introduced MUST use a capitalization scheme that is consistent with the capitalization scheme used in the allowed values table.  For example, if a provider introduces a new count-based unit "Thing", the capitalization scheme MUST be "Thing" and not "thing" or "Thing".
+
+### Composite Units
+
+Instead of "per" or "-" to denote a Composite Unit, slash ("/") must be used as a common convention.  Count based units like requests, instances, tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit should be listed as "count/day" to signify the number of requests per day.
 
 ## Introduced (version)
 
