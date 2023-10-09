@@ -4,10 +4,6 @@ Usage Unit refers to a unit of measurement for the consumption of resources or s
 
 The UsageUnit column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values when the ChargeType is 'Usage'. UsageUnit should be expressed as a single unit of measure adhering to the values and format requirements specified in the Allowed Values section below.
 
-If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of allowed values.
-
-UsageUnit MUST be composed of the list of recommended units listed in "Allowed Values" below unless the UsageUnit value covers a dimension not listed in the recommended unit set or if the unit covers a count-based unit distinct from allowed values in the count dimension listed in "Allowed Values."  
-
 ## Column ID
 
 UsageUnit
@@ -37,9 +33,11 @@ Usage units MUST be expressed as a single unit of measure adhering one of the fo
 * &lt;singular-unit&gt; &lt;plural-time-units&gt; - "GB Hours", "MB Days"
 * &lt;plural-units&gt;/&lt;singular-time-unit&gt; - "GB/Hour", "PB/Day"
 
+UsageUnit MUST be composed of the list of recommended units listed in this section unless the UsageUnit value covers a dimension not listed in the recommended unit set or if the unit covers a count-based unit distinct from allowed values in the count dimension listed in "Allowed Values."  
+
 Unit names are listed in this section with the appropriate capitalization.  If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning or incompatible capitalization.  
 
-The following tables list the valid singular units for 3 dimensions of measurement: time, data, and count.  
+The following table and next section list the valid singular units for 3 dimensions of measurement: time, data, and count.  
 
 | Time         | Count        |
 |--------------|--------------|
@@ -78,6 +76,8 @@ A count-based unit is a noun that represents a discrete number of items, events,
 Any new count-based units introduced MUST use a capitalization scheme that is consistent with the capitalization scheme used in the allowed values table.  For example, if a provider introduces a new count-based unit "Thing", the capitalization scheme MUST be "Thing" and not "thing" or "THING".
 
 ### Composite Units
+
+If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of allowed values.
 
 Instead of "per" or "-" to denote a Composite Unit, slash ("/") must be used as a common convention.  Count based units like requests, instances, tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit should be listed as "count/day" to signify the number of requests per day.
 
