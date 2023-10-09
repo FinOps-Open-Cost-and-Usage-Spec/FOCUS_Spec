@@ -4,10 +4,6 @@ Usage Unit refers to a unit of measurement for the purchase or consumption of re
 
 The UsageUnit column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values when the ChargeType is 'Usage'. UsageUnit should be expressed as a single unit of measure adhering to the values and format requirements specified in the Allowed Values section below.
 
-* &lt;plural-units&gt; - "GB", "Seconds"
-* &lt;singular-unit&gt; &lt;plural-time-units&gt; - "GB Hours", "MB Days"
-* &lt;plural-units&gt;/&lt;singular-time-unit&gt; - "GB/Hour", "PB/Day"
-
 If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of allowed values.
 
 UsageUnit MUST be composed of the list of recommended units listed in "Allowed Values" below unless the UsageUnit value covers a dimension not listed in the recommended unit set or if the unit covers a count-based unit distinct from allowed values in the count dimension listed in "Allowed Values."  
@@ -34,6 +30,12 @@ A unit of measurement for consumption or usage of resources or services.
 | Value format    | \<not specified> |
 
 ## Allowed Values
+
+Usage units MUST be expressed as a single unit of measure adhering one of the following three formats.
+
+* &lt;plural-units&gt; - "GB", "Seconds"
+* &lt;singular-unit&gt; &lt;plural-time-units&gt; - "GB Hours", "MB Days"
+* &lt;plural-units&gt;/&lt;singular-time-unit&gt; - "GB/Hour", "PB/Day"
 
 Unit names are listed in this section with the appropriate capitalization.  If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning or incompatible capitalization.  
 
@@ -73,7 +75,7 @@ Data size MUST be abbreviated using the following standard abbreviations.  Each 
 
 A count-based unit is a noun that represents a discrete number of items, events, or services.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  If the list of allow values does not cover a count-based unit, a provider may introduce a new noun representing a count-based unit.  All nouns appearing in UsageUnit that are not listed in the allowed values table will be considered count-based units.  
 
-Any new count-based units introduced MUST use a capitalization scheme that is consistent with the capitalization scheme used in the allowed values table.  For example, if a provider introduces a new count-based unit "Thing", the capitalization scheme MUST be "Thing" and not "thing" or "Thing".
+Any new count-based units introduced MUST use a capitalization scheme that is consistent with the capitalization scheme used in the allowed values table.  For example, if a provider introduces a new count-based unit "Thing", the capitalization scheme MUST be "Thing" and not "thing" or "THING".
 
 ### Composite Units
 
