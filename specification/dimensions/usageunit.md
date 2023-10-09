@@ -27,7 +27,7 @@ A unit of measurement for consumption or usage of resources or services.
 | Column required | True            |
 | Data type       | String          |
 | Allows nulls    | True            |
-| Value format    | \<not specified> |
+| Value format    | list-of-values |
 
 ## Allowed Values
 
