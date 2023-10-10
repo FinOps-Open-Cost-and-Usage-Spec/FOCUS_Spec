@@ -9,6 +9,7 @@ Current column mappings found in available data sets:
 | AWS       | CUR                      | line_item_resource_id                |
 | GCP       | Big Query Billing Export | resource.global_name                 |
 | Microsoft | Cost details             | ResourceId                           |
+| OCI       | Cost reports             | product/resourceId                   |
 
 ## Example usage scenarios
 
@@ -27,6 +28,7 @@ Current values observed in billing data for various scenarios:
 | Microsoft | Reservation purchases                             | /providers/Microsoft.Capacity/reservationOrders/\<guid>                                               |
 | Microsoft | Savings plan purchases                            | /providers/Microsoft.BillingBenefits/savingsPlanOrders/\<guid>                                        |
 | Microsoft | Marketplace and other purchases                   | (null)                                                                                                |
+| OCI       | Resource based                                    | ocid1.\<RESOURCE TYPE>.\<REALM>.\[REGION]\[.FUTURE USE].\<UNIQUE ID>
 
 ### Documentation
 
@@ -42,6 +44,9 @@ Microsoft:
 
 GCP:
 > [Resource Names documentation](https://cloud.google.com/asset-inventory/docs/resource-name-format)
+
+OCI:
+> [OCI guide on Resource identifiers](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/identifiers.htm)
 
 ## Discussion / Scratch space
 
