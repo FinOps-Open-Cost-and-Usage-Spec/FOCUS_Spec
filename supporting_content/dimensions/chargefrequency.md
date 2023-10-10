@@ -28,6 +28,11 @@ Current values observed in billing data for various scenarios:
 - Finance teams identify and allocate one-time purchases either by amortization or cost recovery from the right entity. 
 - Engineering managers are able to identify usage-based charges to include in their budget or forecasting processes.
 
+## Clarifications
+
+- "Usage-Based" value means that charges will be incurred when usage occurs. If there's a charge that happens monthly, even if it's based on usage, it would have a frequency 'recurring' as it's occurrence does not depend on usage consumption but other contractual terms. 
+- An upfront RI is a cost incurred in one billing period, similar to EC2 usage. Although neither will recur into another billing period, the upfront RI will be a 'one-time' charge and EC2 usage will be 'usage-based'. Another separate and distinct upfront RI or record of EC2 usage can be charged in the next period, if they occur. If a upfront RI is bought every month, they will be individual 'one-time' charges and cannot be considered as 'recurring'. 
+
 ## Reference
 - Microsoft: [understand-usage-details-fields](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
 - AWS: [understand-bill-details-fields](https://docs.aws.amazon.com/cur/latest/userguide/billing-columns.html)

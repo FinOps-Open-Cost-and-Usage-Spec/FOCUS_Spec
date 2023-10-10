@@ -27,12 +27,11 @@ Indicates how often a charge will occur.
 
 Allowed values:
 
-| Value       | Description                                                                                                                                                                                         |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Recurring   | This charge type will occur on a periodic cadence which can be daily, hourly or monthly which indicate charges for the acquisition of a service or resource bought upfront or on a recurring basis. |
-| Usage-Based | Charges based on the quantity and frequency of a service or resource that was consumed in a given period of time.                                                                                    |
-| One-Time    | Charges that will occur only once and indicate a one-time purchase of a contract/commitment or pre-paid service. In other words, it can either be a pre-payment of usage charges or a truly one-time fee - such as a setup fee or a service fee.   
-                                                                         
+| Value       | Description                                                                                                                                                                                                                                      |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Recurring   | This charge type will occur on a periodic cadence which can be daily, hourly or monthly which indicate charges for the acquisition of a service or resource bought upfront irrespective of their utilization on a recurring basis.               |
+| Usage-Based | Charges based on the quantity and frequency of a service or resource that was consumed in a given period of time. If the consumption/utilization of the service or resource stops, these charges will no longer be incurred.                     |
+| One-Time    | Charges that will occur only once and indicate a one-time purchase of a contract/commitment or pre-paid service. In other words, it can either be a pre-payment of usage charges or a truly one-time fee - such as a setup fee or a service fee. |                                       
 
 ## Introduced (version)
 
