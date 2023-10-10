@@ -15,7 +15,7 @@ Pricing Unit
 
 ## Description
 
-A measurement unit specified by the provider, serving as the basis for calculating unit prices associated with using a specific resource and/or service.
+A measurement unit specified by the provider, serving as the foundation (a.k.a. basis) for calculating unit prices associated with using a specific resource and/or service.
 
 ## Content constraints
 
