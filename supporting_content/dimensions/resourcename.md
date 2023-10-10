@@ -9,6 +9,7 @@ Current column mappings found in available data sets:
 | AWS       | CUR                      | Not present as a separate column in data. <br>Name available in some cases as a part of line_item_resource_id (in the ARN OR as the id for things like s3 buckets)                  |
 | GCP       | Big Query Billing Export | Not present as a separate column in data. <br>Column resource.global_name seems to have a resource name at the very end of the fully qualified resource name (resource.global_name). |
 | Microsoft | Cost details             | ResourceName                                                                                                                                                                     |
+| OCI | Cost reports | Not present. Closest thing is product/resourceId |
 
 ## Example usage scenarios
 

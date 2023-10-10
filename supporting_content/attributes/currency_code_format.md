@@ -9,6 +9,7 @@ Current column mappings found in available data sets:
 | AWS      | CUR                      | CurrencyCode   |
 | GCP      | Big Query Billing Export | Currency       |
 | Azure    | Cost details             | BilledCurrency |
+| OCI      | Cost reports             | cost/currencyCode |
 
 ## Example usage scenarios
 
@@ -19,6 +20,7 @@ Current values observed in billing data for various scenarios:
 | AWS      | CUR                      | USD           |
 | GCP      | Big Query Billing Export | EUR           |
 | Azure    | Cost details             | JPY           |
+| OCI      | Cost reports             | USD           |
 
 ## Requirements
 
@@ -33,6 +35,8 @@ AWS: [Currency Code](https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-c
 GCP: [Currency](https://cloud.google.com/billing/docs/resources/currency)
 
 Azure: [Pricing FAQ](https://azure.microsoft.com/en-us/pricing/faq/)
+
+OCI: [OCI Price List](https://www.oracle.com/cloud/price-list/)
 
 ## Discussion / Scratch space
 
