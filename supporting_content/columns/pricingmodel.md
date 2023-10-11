@@ -8,7 +8,7 @@ Current column mappings found in available data sets:
 |----------|--------------------------|---------------------------|------------------|
 | AWS | CUR                      |  product/PurchaseOption | On-Demand, Reserved Instances, Spot Instances, Dedicated Hosts |
 | Google Cloud | BigQuery Billing Export |              |  |
-| Microsoft | Cost Details             | PricingModel             | OnDemand, Spot, Reservation |
+| Microsoft | Cost Details             | PricingModel             | OnDemand, Spot, Reservation, SavingsPlan |
 
 ## Example usage scenarios
 
