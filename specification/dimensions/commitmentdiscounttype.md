@@ -32,7 +32,7 @@ Allowed values:
 | Value      | Description                                                                                                                                                                   |
 |:---------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Spend-Based   | Commitment-based discounts that require a predetermined amount of spend.    |
-	| Usage-Based   | Commitment-based discounts that require a predetermined amount of usage.     |
+| Usage-Based   | Commitment-based discounts that require a predetermined amount of usage.     |
 
 ## Introduced (version)
 
