@@ -13,6 +13,7 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "chargeperiodend.md",1
 !INCLUDE "chargeperiodstart.md",1
 !INCLUDE "chargetype.md",1
+!INCLUDE "commitmentutilization.md",1
 !INCLUDE "invoiceissuer.md",1
 !INCLUDE "provider.md",1
 !INCLUDE "publisher.md",1
@@ -23,6 +24,5 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "servicename.md",1
 !INCLUDE "subaccountid.md",1
 !INCLUDE "subaccountname.md",1
-!INCLUDE "usagetype.md",1
 
 [FODOFC]: https://www.finops.org/framework/capabilities/
