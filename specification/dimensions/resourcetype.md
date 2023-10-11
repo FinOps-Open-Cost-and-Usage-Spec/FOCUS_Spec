@@ -18,10 +18,6 @@ Resource Type
 
 The kind of resource for which you are being charged.
 
-## Normalized?
-
-No
-
 ## Data type
 
 String
