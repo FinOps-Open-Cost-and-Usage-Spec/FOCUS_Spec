@@ -6,7 +6,7 @@ Current column mappings found in available data sets:
 
 | Provider | Data set                 | Column                    |  Example Values  |
 |----------|--------------------------|---------------------------|------------------|
-| AWS | CUR                      |  | |
+| AWS | CUR                      |  product/PurchaseOption | On-Demand, Reserved Instances, Spot Instances, Dedicated Hosts |
 | Google Cloud | BigQuery Billing Export |              |  |
 | Microsoft | Cost Details             | PricingModel             | OnDemand, Spot, Reservation |
 
