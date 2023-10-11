@@ -26,11 +26,8 @@ Current values observed in billing data for various scenarios:
 | Microsoft | Cost Details (PricingModel)| OnDemand                    | Reservation                      |
 
 ## Documentation
-- Microsoft
-  - Azure:  Understand usage details fields: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
+- AWS: https://docs.aws.amazon.com/cur/latest/userguide/product-columns.html
 - GCP
-  -
-- AWS
-  - Amazon:
+- Microsoft:  Understand usage details fields: https://learn.microsoft.com/azure/cost-management-billing/automate/understand-usage-details-fields
 
 ## Discussion Topics
