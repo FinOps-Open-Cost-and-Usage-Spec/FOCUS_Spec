@@ -9,6 +9,7 @@ Current column mappings found in available data sets:
 | AWS | CUR                      | Product_region    |
 | Google Cloud | BigQuery Billing Export | Location.location |
 | Microsoft | EA, MCA                  | ResourceLocation  |
+| OCI       | Cost reports             | product/region    |
 
 ## Example usage scenarios
 
@@ -19,6 +20,7 @@ Current values observed in billing data for various scenarios:
 | AWS | CUR                      | us-east-1, eu-west-1, us-gov-east-1 |
 | Google Cloud | BigQuery Billing Export | northamerica-northeast1, asia-southeast1, us-central2, europe-west3, us |
 | Microsoft | Cost details             | Eastasia, AP East, WestUS, centralindia |
+| OCI       | Cost reports             | ap-mumbai-1, ca-toronto-1, eu-frankfurt-1, us-ashburn-1 |
 
 ## Discussion / Scratch space:
 
@@ -70,3 +72,4 @@ Current values observed in billing data for various scenarios:
   - AWS: [https://docs.aws.amazon.com/cur/latest/userguide/product-columns.html#R](https://docs.aws.amazon.com/cur/latest/userguide/product-columns.html#R)
   - GCP: [https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage#detailed-usage-cost-data-schema](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage#detailed-usage-cost-data-schema), [https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage)
   - Azure: [https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
+  - OCI: [https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm)
