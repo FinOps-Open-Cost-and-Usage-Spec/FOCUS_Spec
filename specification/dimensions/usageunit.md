@@ -14,7 +14,7 @@ Usage Unit
 
 ## Description
 
-A unit of measurement for the consumption of resources or services
+A measure of the amount of a resource or service was used or purchased.
 
 ## Content constraints
 
