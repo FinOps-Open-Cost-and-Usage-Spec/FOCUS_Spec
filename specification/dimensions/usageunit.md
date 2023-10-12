@@ -29,9 +29,9 @@ A measure of the amount of a resource or service was used or purchased.
 
 Usage units MUST be expressed as a single unit of measure adhering to one of the following three formats.
 
-* &lt;plural-units&gt; - "GB", "Seconds"
-* &lt;singular-unit&gt; &lt;plural-time-units&gt; - "GB Hours", "MB Days"
-* &lt;plural-units&gt;/&lt;singular-time-unit&gt; - "GB/Hour", "PB/Day"
+* `<plural-units>` - "GB", "Seconds"
+* `<singular-unit> <plural-time-units>` - "GB Hours", "MB Days"
+* `<plural-units>/<singular-time-unit>` - "GB/Hour", "PB/Day"
 
 UsageUnit MUST be composed of the list of recommended units listed in this section unless the UsageUnit value covers a dimension not listed in the recommended unit set or if the unit covers a count-based unit distinct from allowed values in the count dimension listed in "Allowed Values."  
 
