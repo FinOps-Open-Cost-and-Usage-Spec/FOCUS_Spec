@@ -6,7 +6,7 @@ Quantity In Usage Unit MUST exist in billing data. The column MUST be a numeric 
 
 ## Column ID
 
-quantity_in_usage_unit
+QuantityInUsageUnit
 
 ## Display name
 
