@@ -2,7 +2,7 @@
 
 Usage Unit is a measure of the amount of a resource or service was used or purchased. The Usage Unit for a particular line item may differ from the published Pricing Unit when providers use different units, unit increments, or columns for calculating cost.  This unit is commonly used when auditing or reconciling usage data.
 
-The UsageUnit column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values when the ChargeType is 'Usage' or 'Purchase'. UsageUnit should be expressed as a single unit of measure adhering to the values and format requirements specified in the Allowed Values section below.
+The UsageUnit column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values when the ChargeType is 'Usage'. UsageUnit should be expressed as a single unit of measure.  Units of measure used in UsageUnit SHOULD adhere to the values and format requirements specified in the Recommended Values section below.
 
 ## Column ID
 
@@ -23,18 +23,22 @@ A measure of the amount of a resource or service was used or purchased.
 | Column required | True            |
 | Data type       | String          |
 | Allows nulls    | True            |
-| Value format    | list-of-values |
+| Value format    | list-of-values  |
 
-## Allowed Values
+## Recommended Values
 
-Usage units MUST be expressed as a single unit of measure adhering to one of the following three formats.
+Usage units SHOULD be expressed as a single unit of measure adhering to one of the following three formats.
 
 * `<plural-units>` - "GB", "Seconds"
 * `<singular-unit> <plural-time-units>` - "GB Hours", "MB Days"
 * `<plural-units>/<singular-time-unit>` - "GB/Hour", "PB/Day"
+
+Usage units MAY be expressed with a unit quantity or time interval.  If a unit quantity or time interval is used, the unit quantity or time interval MUST be expressed as a whole number.  The following formats are valid.
+
+* `<quantity> <plural-units>` - "1000 Tokens", "1000 Characters"
 * `<plural-units>/<interval> <plural-time-units>` - "Units/3 Months"
 
-UsageUnit MUST be composed of the list of recommended units listed in this section unless the UsageUnit value covers a dimension not listed in the recommended unit set or if the unit covers a count-based unit distinct from allowed values in the count dimension listed in "Allowed Values."  
+UsageUnit SHOULD be composed of the list of recommended units listed in this section unless the UsageUnit value covers a dimension not listed in the recommended unit set or if the unit covers a count-based unit distinct from recommended values in the count dimension listed in this section.  
 
 Unit names are listed in this section with the appropriate capitalization.  If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning or incompatible capitalization.  
 
@@ -42,12 +46,12 @@ The following table and next section list the valid singular units for 3 dimensi
 
 | Time         | Count        |
 |--------------|--------------|
-| Day          | Count        |
-| Hour         | Unit         |
-| Minute       | Request      |
-| Second       | Token        |
-|              | Connection   |
-|              | Certificate  |
+| Year         | Count        |
+| Month        | Unit         |
+| Day          | Request      |
+| Hour         | Token        |
+| Minute       | Connection   |
+| Second       | Certificate  |
 |              | Domain       |
 |              | Core         |
 
@@ -72,13 +76,13 @@ Data size MUST be abbreviated using the following standard abbreviations.  Each 
 
 ### Count-based Units
 
-A count-based unit is a noun that represents a discrete number of items, events, or services.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  If the list of allow values does not cover a count-based unit, a provider may introduce a new noun representing a count-based unit.  All nouns appearing in UsageUnit that are not listed in the allowed values table will be considered count-based units.  
+A count-based unit is a noun that represents a discrete number of items, events, or services.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  If the list of recommended values does not cover a count-based unit, a provider may introduce a new noun representing a count-based unit.  All nouns appearing in UsageUnit that are not listed in the recommended values table will be considered count-based units.  
 
-Any new count-based units introduced MUST use a capitalization scheme that is consistent with the capitalization scheme used in the allowed values table.  For example, if a provider introduces a new count-based unit "Thing", the capitalization scheme MUST be "Thing" and not "thing" or "THING".
+Any new count-based units introduced MUST use a capitalization scheme that is consistent with the capitalization scheme used in the recommended values table.  For example, if a provider introduces a new count-based unit "Thing", the capitalization scheme MUST be "Thing" and not "thing" or "THING".
 
 ### Composite Units
 
-If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of allowed values.
+If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of recommended values.
 
 Instead of "per" or "-" to denote a Composite Unit, slash ("/") must be used as a common convention.  Count based units like requests, instances, tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit should be listed as "count/day" to signify the number of requests per day.
 
