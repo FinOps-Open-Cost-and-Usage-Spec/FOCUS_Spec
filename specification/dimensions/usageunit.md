@@ -27,7 +27,7 @@ A measure of the amount of a resource or service was used or purchased.
 
 ## Allowed Values
 
-Usage units MUST be expressed as a single unit of measure adhering one of the following three formats.
+Usage units MUST be expressed as a single unit of measure adhering to one of the following three formats.
 
 * &lt;plural-units&gt; - "GB", "Seconds"
 * &lt;singular-unit&gt; &lt;plural-time-units&gt; - "GB Hours", "MB Days"
