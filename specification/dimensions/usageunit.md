@@ -1,6 +1,6 @@
 # Usage Unit
 
-Usage Unit is a measure of the amount of a resource or service was used or consumed. Usage Unit is used in conunction with Quantity In Usage Unit to gain understanding of usage or consumption of a given product or service in an environment.
+Usage Unit is the unit of measure for the usage or consumption of a resource or service. Usage Unit is used in conjunction with Quantity In Usage Unit to gain understanding of usage or consumption of a given product or service in an environment.
 
 The UsageUnit column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values when the ChargeType is 'Usage'. UsageUnit should be expressed as a single unit of measure.  Units of measure used in UsageUnit SHOULD adhere to the values and format requirements specified in the Recommended Values section below.
 
@@ -16,7 +16,7 @@ Usage Unit
 
 ## Description
 
-A measure of the amount of a resource or service was used or consumed.
+The unit of measure for the usage or consumption of a resource or service
 
 ## Content constraints
 
