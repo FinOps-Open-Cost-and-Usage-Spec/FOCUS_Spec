@@ -1,6 +1,6 @@
 # Quantity In Usage Unit
 
-Quantity In Usage Unit is the amount of a resource or service that was used or purchased. The Quantity In Usage Unit is measured in units specified by the Usage Unit. Quantity In Usage Unit is used in conunction with Usage Unit to gain understanding of usage or consumption of a given product/service in an environment.
+Quantity In Usage Unit is the number of units of a resource or service that was used or consumed. The Quantity In Usage Unit is measured in units specified by the Usage Unit. Quantity In Usage Unit is used in conunction with Usage Unit to gain understanding of usage or consumption of a given product/service in an environment.
 
 Quantity In Usage Unit MUST exist in billing data. The column MUST be a numeric value and MUST NOT contain nulls.
 
@@ -15,6 +15,8 @@ QuantityInUsageUnit
 Quantity In Usage Unit
 
 ## Description
+
+The number of units of a resource or service that was used or consumed
 
 ## Content constraints
 
