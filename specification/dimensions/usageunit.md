@@ -4,7 +4,7 @@ Usage Unit is a measure of the amount of a resource or service was used or consu
 
 The UsageUnit column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values when the ChargeType is 'Usage'. UsageUnit should be expressed as a single unit of measure.  Units of measure used in UsageUnit SHOULD adhere to the values and format requirements specified in the Recommended Values section below.
 
-The Usage Unit for a particular line item may differ from PricingUnit when providers use different units, unit increments, or columns to determine cost. The value in UsageUnit is often listed at a finer granularity or a different time interval than the PricingUnit. The UsageUnit column MUST not be used as the basis for determining values related to any pricing or cost metric.
+The Usage Unit for a particular line item may differ from PricingUnit when providers use different units, unit increments, or columns to determine cost. The value in UsageUnit is often listed at a finer granularity or a different time interval than the PricingUnit. While UsageUnit may appear to relate to pricing and cost, UsageUnit is focused on resource or service consumption.  It is essential not to confuse UsageUnit with PricingUnit which is the basis for determining cost. The UsageUnit column MUST not be used as the basis for determining values related to any pricing or cost metric.
 
 ## Column ID
 
