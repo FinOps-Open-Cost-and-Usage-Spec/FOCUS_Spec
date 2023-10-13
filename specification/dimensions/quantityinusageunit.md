@@ -23,9 +23,7 @@ Quantity In Usage Unit
 | Column required | True         |
 | Data type       | Numeric      |
 | Allows nulls    | False        |
-| Value format    | number-range |
-| Number range    | [8,16]       |
-| String format   |              |
+| Value format    | Numeric value |
 
 ## Introduced (version)
 
