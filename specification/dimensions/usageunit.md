@@ -25,7 +25,7 @@ A measure of the amount of a resource or service was used or consumed.
 | Column required | True            |
 | Data type       | String          |
 | Allows nulls    | True            |
-| Value format    | list-of-values  |
+| Value format    | \<not specified> |
 
 ## Recommended Values
 
