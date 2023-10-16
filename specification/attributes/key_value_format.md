@@ -21,7 +21,7 @@ Rules and formatting requirements for columns appearing in billing data which co
 * Columns subject to Key-Value Format MUST be a serialized JSON string, consistent with the ECMA-404 definition of an object.
 * Keys MUST be unique within an object.
 * Values MAY be a number, string, `true`, `false`, or `null`.
-  * Values MAY NOT be an object nor an array.
+  * Values MUST NOT be an object nor an array.
 
 ## Exceptions
 
