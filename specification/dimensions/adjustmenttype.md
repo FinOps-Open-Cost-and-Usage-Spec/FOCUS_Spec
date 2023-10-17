@@ -13,7 +13,7 @@ The AdjustmentType column MUST be present and MUST NOT be null or empty when Cha
 - Balance Transfer
 - General Adjustment
 - Promo Credit
-- Refund - <refund type>
+- Refund - 'refund type'
 - Tax error
 - Rounding Error
 - Account Closure
