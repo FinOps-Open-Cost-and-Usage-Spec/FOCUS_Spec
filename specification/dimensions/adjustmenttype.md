@@ -13,7 +13,7 @@ The AdjustmentType column MUST be present and MUST NOT be null or empty when Cha
 - Balance Transfer
 - General Adjustment
 - Promo Credit
-- Refund - 'refund type'
+- Refund
 - Tax error
 - Rounding Error
 - Account Closure
@@ -53,7 +53,7 @@ Allowed values:
 - Balance Transfer
 - General Adjustment
 - Promo Credit
-- Refund - 'refund type'
+- Refund
 - Tax error
 - Rounding Error
 - Account Closure
@@ -68,7 +68,7 @@ Allowed Value Type Definition:
 - Balance Transfer | Applied to an account where a customer migrates an account from one account to another where the migrated account had a positive balance | Applied where an account had a positive balance that was not consumed in the previous month
 - General Adjustment | Any adjustment the vendor applies to a customer account that does not have a specific type or is an adjusment negotiated by the customer with the vendor
 - Promo Credit | Similar to General adjustment
-- Refund - 'refund type' | Applied by the vendor where a refund is given to the vendor, refund can be multiple types and should reference what type of refund was applied, this could be for example a refund for unused reservations, or unused pre-commit amounts.
+- Refund | Applied by the vendor where a refund is given to the vendor, refund can be multiple types, the refund type should be noted in the column ChargeType, this could be for example a refund for unused reservations, or unused pre-commit amounts.
 - Tax error | Applied where a vendor has applied the wrong tax calculations
 - Rounding Error | Applied where the usage calculations have exceeded the maximum amount of hours in a month, this would be rounded down to the correct level of usage where a vendor uses rounding methods.
 - Account Closure | Applied as a refund of unused balances in a vendor account when a customer closes an account and exits the service.
