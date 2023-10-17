@@ -1,7 +1,8 @@
 # Adjustment Type
 
-Adjustment Type indicates the record represents a change to your monthly invoice through after-the-fact adustements (e.g. refunds, pricing changes). An adjustment can be positive or negative.
-Adjustment Type can be used by practitioners to assess any impacts to spend from positive or negative adjustments.
+An adjustment is a positive or negative change in cost applied after the original usage or purchase record(s). Adjustments may be related to one or more charges and are identified by the ChargeType column.
+
+Adjustment Type indicates what kind of after-the-fact adjustment the record represents. Adjustment Type is commonly used to identify changes like credits and refunds.
 
 The AdjustmentType column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the allowed values.
 
