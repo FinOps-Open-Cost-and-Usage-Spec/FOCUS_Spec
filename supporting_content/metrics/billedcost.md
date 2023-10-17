@@ -11,6 +11,7 @@ Current column mappings found in available data sets:
 | AWS | CUR | lineItem/NetUnblendedCost (If you have an EDP, otherwise ​​line_item_unblended_cost) |
 | GCP | Big Query Billing Export | Cost (The cost of the usage before any credits, to a precision of up to six decimal places) |
 | Microsoft | Cost details | Cost, CostInBillingCurrency, CostInPricingCurrency, EffectivePrice |
+| OCI | Cost reports | cost/myCost |
 
 #### Example usage scenarios
 
