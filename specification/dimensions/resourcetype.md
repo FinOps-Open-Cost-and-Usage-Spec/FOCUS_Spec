@@ -15,6 +15,7 @@ Resource Type
 ## Description
 
 The kind of resource for which you are being charged.
+
 ## Content Constraints
 
 |    Constraint   |      Value      |
