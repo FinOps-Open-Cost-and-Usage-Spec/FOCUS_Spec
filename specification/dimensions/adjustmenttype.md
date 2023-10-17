@@ -28,7 +28,7 @@ AdjustmentType
 
 ## Display Name
 
-Adjustments
+Adjustment Type
 
 ## Description
 
