@@ -25,7 +25,7 @@ Indicates whether the commitment-based discount identified in the CommitmentDisc
 | Column required | True             |
 | Data type       | String           |
 | Allows nulls    | True             |
-| Value format    | List of values   |
+| Value format    | list-of-values   |
 
 Allowed values:
 
