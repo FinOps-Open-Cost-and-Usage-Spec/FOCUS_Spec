@@ -40,7 +40,7 @@ Indicates whether the record represents an after-the-fact change to an invoice o
 | :-------------- | :--------------------------------------- |
 | Column required | True                                     |
 | Data type       | String                                   |
-| Allows nulls    | False                                    |
+| Allows nulls    | True                                     |
 | Value format    | list-of-values                           |
 
 Allowed values:
