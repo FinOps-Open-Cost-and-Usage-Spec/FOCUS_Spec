@@ -18,7 +18,6 @@ The AdjustmentType column MUST be present and MUST NOT be null or empty when Cha
 - Rounding Error
 - Account Closure
 
-See [Appendix: adjustment type) for details about allowed values and governance criteria for this dimension.
 
 ## Column ID
 
