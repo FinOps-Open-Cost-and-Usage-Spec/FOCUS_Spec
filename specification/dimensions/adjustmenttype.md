@@ -54,7 +54,7 @@ Allowed values:
 - Balance Transfer
 - General Adjustment
 - Promo Credit
-- Refund - <refund type>
+- Refund - 'refund type'
 - Tax error
 - Rounding Error
 - Account Closure|
