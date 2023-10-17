@@ -15,11 +15,6 @@ Resource Type
 ## Description
 
 The kind of resource for which you are being charged.
-
-## Data type
-
-String
-
 ## Content Constraints
 
 |    Constraint   |      Value      |
