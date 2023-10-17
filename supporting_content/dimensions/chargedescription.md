@@ -4,21 +4,11 @@
 
 Current resource types found or extracted from available data sets:
 
-| Provider  | Data set                | Column                                            		|
+| Provider  | Data set                | Column                                            	|
 | :-------- | :---------------------- | :-------------------------------------------------------|
-| AWS       | CUR                     | lineItem/LineItemDescription 							|
-| GCP       | BigQuery Billing Export | Related to the combination of ProductName and MeterName |
-| Microsoft | Cost details            | Related to sku.description      						|
-
-## Example provider mappings
-
-Current resource types found or extracted from available data sets:
-
-| Provider  | Data set                | Column                                            		|
-| :-------- | :---------------------- | :-------------------------------------------------------|
-| AWS       | CUR                     | lineItem/LineItemDescription 							|
-| GCP       | BigQuery Billing Export | Related to the combination of ProductName and MeterName |
-| Microsoft | Cost details            | Related to sku.description      						|
+| AWS       | CUR                     | lineItem/LineItemDescription 				|
+| GCP       | BigQuery Billing Export | sku.description                                         |
+| Microsoft | Cost details            | Not available      			                |
 
 ## Example usage scenarios
 
@@ -26,7 +16,7 @@ Current resource types found or extracted from available data sets:
 |:----------|:------------------------|:-----------------------------------|:-------------------------|
 | AWS       | CUR                     | Not available                      | $0.00 per GB - US West (Oregon) data transfer from US West (Northern California) |
 | GCP       | BigQuery Billing Export | Not available                      | Not Available            |
-| Microsoft | Cost details            | via Cost export file			   | Not Available            |
+| Microsoft | Cost details            | via Cost export file		   | Not Available            |
 
 ## Discussion Topics
 
