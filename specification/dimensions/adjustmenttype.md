@@ -1,4 +1,4 @@
-# adjustment type
+# Adjustment Type
 
 Adjustment Type indicates the record represents a change to your monthly invoice through after-the-fact adustements (e.g. refunds, pricing changes). An adjustment can be positive or negative.
 Adjustment Type can be used by practitioners to assess any impacts to spend from positive or negative adjustments.
