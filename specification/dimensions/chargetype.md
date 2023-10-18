@@ -8,8 +8,6 @@ allocation logic to purchases or adjustments.
 The ChargeType column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the
 allowed values.
 
-See [Appendix: Charge Type](#chargetype-1) for details about allowed values and governance criteria for this dimension.
-
 ## Column ID
 
 ChargeType
@@ -25,17 +23,17 @@ after-the-fact adjustment (e.g., credits), or taxes.
 
 ## Content Constraints
 
-| Constraint      | Value                                    |
-| :-------------- | :--------------------------------------- |
-| Column required | True                                     |
-| Data type       | String                                   |
-| Allows nulls    | False                                    |
-| Value format    | list-of-values                           |
+| Constraint      | Value          |
+| :-------------- | :------------- |
+| Column required | True           |
+| Data type       | String         |
+| Allows nulls    | False          |
+| Value format    | list-of-values |
 
 Allowed values:
 
 | Value      | Description                                                                                                                                                                   |
-|:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Adjustment | Any adjustments that are applied after the original usage or purchase record. Adjustments may be related to multiple charges.                                                 |
 | Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.                                                                                  |
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |

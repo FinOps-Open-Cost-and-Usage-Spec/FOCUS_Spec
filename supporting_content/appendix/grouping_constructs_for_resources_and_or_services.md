@@ -32,7 +32,7 @@ The table below contains providers' resource and/or service grouping constructs 
 ## Discussion / Scratch space
 
 - Use provider terminology - or customers will get confused
-  - However, we need a way for users to be able to see a normalized csolumn with this level of information (can't just be n number of vendor columns that a consumer has to look at)
+  - However, we need a way for users to be able to see a normalized column with this level of information (can't just be n number of vendor columns that a consumer has to look at)
 
 - How about if we start with a definition:
   - Logical grouping of resources
