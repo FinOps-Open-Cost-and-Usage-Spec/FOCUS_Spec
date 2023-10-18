@@ -63,7 +63,7 @@ Rules and formatting requirements for numeric columns appearing in billing data.
 
 ## Numeric Precision
 
-The FOCUS specification does not require a specific level of precision for numeric values.  The level of precision required for a given column is determined by the provider and SHOULD be documented as a part of a data definition published by the provider.  The following table outlines the options for specifying the level of precision for a given column in a data definition document.
+FOCUS does not require a specific level of precision for numeric values.  The level of precision required for a given column is determined by the provider and SHOULD be documented as a part of a data definition published by the provider.  The following table outlines the options for specifying the level of precision for a given column in a data definition document.
 
 * Integer number formats correspond to standard data types defined ISO/IEC 9899:2018
 
