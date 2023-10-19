@@ -23,7 +23,7 @@ Highest-level classification of a service based on the core function of the serv
 | Column required | True           |
 | Data type       | String         |
 | Allows nulls    | False          |
-| Value format    | List of values |
+| Value format    | list-of-values |
 
 Allowed values:
 

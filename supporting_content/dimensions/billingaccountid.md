@@ -11,6 +11,7 @@ Current column mappings found in available data sets:
 | Microsoft | Cost details               | EA: BillingAccountId     |
 | Microsoft | Cost details               | MCA: BillingProfileId    |
 | Microsoft | Cost details               | MOSA: SubscriptionId     |
+| OCI       | Cost reports               | cost/subscriptionId      |
 
 
 ## Documentation
@@ -29,6 +30,7 @@ Current values observed in billing data for various scenarios:
 | AWS       | CUR                        |                            |
 | GCP       | Big Query Billing Export   |                            |
 | Microsoft | Cost details               |                            |
+| OCI       | Cost reports               |                            |
 
 
 ## Discussion / Scratch space:

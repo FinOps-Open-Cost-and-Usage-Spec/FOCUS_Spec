@@ -10,6 +10,7 @@ Current column mappings found in available data sets:
 | GCP       | Big Query Billing Export | project.id |
 | Microsoft | Cost details | SubscriptionGuid |
 | Microsoft | Price Sheet | |
+| OCI       | Cost reports | lineItem/tenantId |
 
 ## Example usage scenarios
 
@@ -21,10 +22,12 @@ Current values observed in billing data for various scenarios:
 | GCP       | Big Query Billing Export | Projects are used for resource grouping, access management and cost segregation purposes within a billing account. |
 | Microsoft | Cost details | Subscriptions are used for resource grouping, access management and cost segregation purposes within a billing profile. |
 | Microsoft | Price sheet | |
+| OCI       | Cost reports | Tenancies are used for segregating resources and access management. Multiple tenancies can be mapped to a "Subscription" (Billing Construct) in an Organization |
 
 - GCP: [Resource Hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#resource-hierarchy-detail)
 - Azure: [Resource Hierarchy](https://learn.microsoft.com/en-us/azure/governance/management-groups/overview), [Organizing Resources](https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/view-all-accounts)
 - AWS: [Org Concepts](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html)
+- OCI: [OCI resource hierarchy](https://docs.oracle.com/en/cloud/foundation/cloud_architecture/governance/tenancy.html#how-many-tenancies-do-i-need)
 
 FOCUS plans to include Level 1, Level 3 in the specification. Level 5 (resource name, resource id) are already in the specification.
 
@@ -37,6 +40,7 @@ FOCUS plans to include Level 1, Level 3 in the specification. Level 5 (resource 
 | MS MCA | Billing Account | Billing Profile (Invoice Scope) | Invoice Section | Subscription | Resource Group | Resource |
 | MS PAYG | Billing Account | Subscription (Invoice Scope) | Resource Group | Resource | | |
 | MS Internal | Subscription (Invoice Scope) | Resource Group | Resource | | | |
+|OCI | Organization | Subscription (Invoice Scope) | Tenancy | Compartment | Resource |
 
 ## Discussion / Scratch space:
 
