@@ -49,7 +49,10 @@ Current values observed in billing data for various scenarios:
 
 - To facilite improved comparability of quantities (in pricing units) across different entities being measured, priced, and charged, both within a single provider's offerings and across various providers, in the future (post 1.0) we plan to differentiate quantifiers from measurement units by introducing:
   - An additional metric for pricing unit quantifiers.
-  - An additional 'semi-normalized' dimension for pricing measurement units, with established guidelines and recommended values, encompassing both base units and combined/derived values, similar to the Usage Unit.
+  - An additional 'semi-normalized' dimension for pricing measurement units, with established guidelines and recommended values, encompassing both base units and combined/derived values, similar to the Usage Unit (see [Usage Unit - Specification](../../specification/dimensions/usageunit.md) and [Usage Unit - Supporting content](.usageunit.md) for details).
+
+- Note: In preparation for establishing guidelines and recommended values for the semi-normalized pricing measurement unit, it would be extremely helpful to have insight into as many current PricingUnit distinct values as possible.
+  - List of all distinct Microsoft/Azure EA unit of measure values is available at this [link](https://github.com/microsoft/finops-toolkit/pull/348).
 
 ### Add into an appendix that describes pricing units, tiers, strategies
 
