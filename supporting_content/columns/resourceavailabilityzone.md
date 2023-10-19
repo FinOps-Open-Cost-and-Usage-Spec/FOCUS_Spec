@@ -1,4 +1,4 @@
-# Column: Availability Zone
+# Column: Resource Availability Zone
 
 ## Example provider mappings
 
