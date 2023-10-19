@@ -4,23 +4,24 @@
 
 Current column mappings found in available data sets:
 
-| Provider  | Data set                     | Column                   |
-|:----------|:-----------------------------|:-------------------------|
-| AWS       | CUR                          | pricing/unit             |
-| GCP       | BigQuery Billing Export      | usage.pricing_unit       |
-| Microsoft | Cost details                 | UnitOfMeasure            |
-| OCI       | Cost and Usage Report        | cost/billingUnitReadable |
+| Provider  | Data set                                        | Column                   |
+|:----------|:------------------------------------------------|:-------------------------|
+| AWS       | CUR                                             | pricing/unit             |
+| GCP       | BigQuery Billing Export                         | usage.pricing_unit       |
+| Microsoft | Cost details                                    | UnitOfMeasure            |
+| OCI       | Cost and Usage Report;<br>List Pricing REST API | cost/billingUnitReadable is closest match<br>*Note: The values in this column are similar but not identical to those in the List Pricing REST API; therefore, it may be preferable to rely on the List Pricing REST API, which we already plan to use for ListUnitPrice.* |
 
 ## Example usage scenarios
 
 Current values observed in billing data for various scenarios:
 
-| Provider  | Scenario                                          | Pattern                                                                                                                                    |
-|-----------|---------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| AWS       | CUR                                               | hours; Hrs; Queries; GB; Secrets; vCPU-Hours; API Requests; Keys; Alarms etc.                                                              |
-| GCP       | BigQuery Billing Export                           | tebibyte; count; gibibyte; tebibyte; hour; gibibyte hour; gibibyte month; gibibyte hour; gibibyte; hour; count; gibibyte month; etc.       |
-| Microsoft | Cost details                                      | 1 Hour; 10 Hours; 1/Month; 1 GB; 10K; 1 GB-Month; etc.                                                                                     |
-| OCI       | Cost and Usage Report                             | TBC                                                                                                                                        |
+| Provider  | Scenario                | Pattern                                                                                                                              |
+|-----------|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| AWS       | CUR                     | hours; Hrs; Queries; GB; Secrets; vCPU-Hours; API Requests; Keys; Alarms etc.                                                        |
+| GCP       | BigQuery Billing Export | tebibyte; count; gibibyte; tebibyte; hour; gibibyte hour; gibibyte month; gibibyte hour; gibibyte; hour; count; gibibyte month; etc. |
+| Microsoft | Cost details            | 1 Hour; 10 Hours; 1/Month; 1 GB; 10K; 1 GB-Month; etc.                                                                               |
+| OCI       | Cost and Usage Report   | ONE GiB HOURS STORAGE_SIZE; ONE GiB HOURS MEMORY; etc.                                                                               |
+| OCI       | List Pricing REST API   | Gigabyte Per Hour; etc.<br>*Note: Gigabyte Per Hour corresponds to both ONE GiB HOURS STORAGE_SIZE and ONE GiB HOURS MEMORY*         |
 
 ## References and Resources
 
@@ -42,5 +43,14 @@ Current values observed in billing data for various scenarios:
 
 ## Discussion / Scratch space
 
+### PricingUnit - non-normalized vs normalized
+
+- PricingUnit is commonly used for scenarios like validating unit prices against the price sheet and thus must match (or at least align) with the corresponding value published in the price list. Since price sheets fall outside the scope of FOCUS, PricingUnit remains non-normalized, retaining as-is values provided by the service providers, which are typically already present in current billing data and merely mapped. Consequently, in certain cases, PricingUnit may even encompass both quantifiers and actual measurement units.
+
+- To facilite improved comparability of quantities (in pricing units) across different entities being measured, priced, and charged, both within a single provider's offerings and across various providers, in the future (post 1.0) we plan to differentiate quantifiers from measurement units by introducing:
+  - An additional metric for pricing unit quantifiers.
+  - An additional 'semi-normalized' dimension for pricing measurement units, with established guidelines and recommended values, encompassing both base units and combined/derived values, similar to the Usage Unit.
+
 ### Add into an appendix that describes pricing units, tiers, strategies
+
 The most basic math for calculating costs of cloud or SaaS services is Unit Price * Quantity = Cost.  Because different services require measuring different fundamental usage units while using a common billing format, the quantity column’s meaning or scale is unclear without specifying the unit of measure.
