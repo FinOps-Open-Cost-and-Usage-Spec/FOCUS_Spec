@@ -4,8 +4,8 @@ The Pricing Unit is a measurement unit specified by the provider for determining
 
 The PricingUnit column MUST be present in the billing data. This column MUST be of type String. It MUST NOT contain null if [QuantityInPricingUnit](#quantityinpricingunit) is not null. The PricingUnit value MUST be aligned with the corresponding pricing unit value provided in:
 
-- The provider-published price list
-- The invoice, when the invoice includes a pricing unit
+* The provider-published price list
+* The invoice, when the invoice includes a pricing unit
 
 ## Column ID
 

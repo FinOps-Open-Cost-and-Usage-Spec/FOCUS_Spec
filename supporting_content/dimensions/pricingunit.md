@@ -27,32 +27,32 @@ Current values observed in billing data for various scenarios:
 
 ### AWS
 
-- [Pricing details - AWS Cost and Usage Reports](https://docs.aws.amazon.com/cur/latest/userguide/pricing-columns.html)
+* [Pricing details - AWS Cost and Usage Reports](https://docs.aws.amazon.com/cur/latest/userguide/pricing-columns.html)
 
 ### GCP
 
-- [Structure of Detailed data export | Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
+* [Structure of Detailed data export | Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
 
 ### Microsoft
 
-- [Understand usage details fields - Microsoft Cost Management](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
+* [Understand usage details fields - Microsoft Cost Management](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
 
 ### OCI
 
-- [Cost and Usage Reports Overview](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm)
+* [Cost and Usage Reports Overview](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm)
 
 ## Discussion / Scratch space
 
 ### PricingUnit - non-normalized vs normalized
 
-- PricingUnit is commonly used for scenarios like validating unit prices against the price sheet and thus must match (or at least align) with the corresponding value published in the price list. Since price sheets fall outside the scope of FOCUS, PricingUnit remains non-normalized, retaining as-is values provided by the service providers, which are typically already present in current billing data and merely mapped. Consequently, in certain cases, PricingUnit may even encompass both quantifiers and actual measurement units.
+* PricingUnit is commonly used for scenarios like validating unit prices against the price sheet and thus must match (or at least align) with the corresponding value published in the price list. Since price sheets fall outside the scope of FOCUS, PricingUnit remains non-normalized, retaining as-is values provided by the service providers, which are typically already present in current billing data and merely mapped. Consequently, in certain cases, PricingUnit may even encompass both quantifiers and actual measurement units.
 
-- To facilite improved comparability of quantities (in pricing units) across different entities being measured, priced, and charged, both within a single provider's offerings and across various providers, in the future (post 1.0) we plan to differentiate quantifiers from measurement units by introducing:
-  - An additional metric for pricing unit quantifiers.
-  - An additional 'semi-normalized' dimension for pricing measurement units, with established guidelines and recommended values, encompassing both base units and combined/derived values, similar to the Usage Unit (see [Usage Unit - Specification](../../specification/dimensions/usageunit.md) and [Usage Unit - Supporting content](.usageunit.md) for details).
+* To facilite improved comparability of quantities (in pricing units) across different entities being measured, priced, and charged, both within a single provider's offerings and across various providers, in the future (post 1.0) we plan to differentiate quantifiers from measurement units by introducing:
+  * An additional metric for pricing unit quantifiers.
+  * An additional 'semi-normalized' dimension for pricing measurement units, with established guidelines and recommended values, encompassing both base units and combined/derived values, similar to the Usage Unit (see [Usage Unit - Specification](../../specification/dimensions/usageunit.md) and [Usage Unit - Supporting content](.usageunit.md) for details).
 
-- Note: In preparation for establishing guidelines and recommended values for the semi-normalized pricing measurement unit, it would be extremely helpful to have insight into as many current PricingUnit distinct values as possible.
-  - List of all distinct Microsoft/Azure EA unit of measure values is available at this [link](https://github.com/microsoft/finops-toolkit/pull/348).
+* Note: In preparation for establishing guidelines and recommended values for the semi-normalized pricing measurement unit, it would be extremely helpful to have insight into as many current PricingUnit distinct values as possible.
+  * List of all distinct Microsoft/Azure EA unit of measure values is available at this [link](https://github.com/microsoft/finops-toolkit/pull/348).
 
 ### Add into an appendix that describes pricing units, tiers, strategies
 
