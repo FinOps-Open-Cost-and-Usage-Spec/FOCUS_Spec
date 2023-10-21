@@ -18,7 +18,7 @@ Provider-defined Tags additionally adhere to the following requirements:
 
 ## Provider-Defined vs. User-Defined Tags
 
-The following is an example of one User-Defined Tag and one Provider-Defined Tag, respectively, with tag key, foo.  The 1st property is not prefixed, and the Provider has a pre-selected prefix, `marketplace/`, applied to denote that it is a different type of tag.
+The following is an example of one User-Defined Tag and one Provider-Defined Tag, respectively, with tag key, `foo`.  The first property is not prefixed, and the Provider has a pre-selected prefix, `marketplace/`, applied to denote that it is a different type of tag.
 
 ```json
     {
@@ -36,7 +36,7 @@ The following example shows a simplified cost and usage data with one metered Ac
 | Account         | my-account | { "team": "web", "env": "prod" }   |
 | Virtual Machine | my-vm      | { "team": "web", *"env": "prod"* } |
 
-After all tag inheritance rules are processed, the finalized cost and usage dataset shows that the Virtual Machine Resource did inherit tag, `env:prod`, from its corresponding Account because no tag with the same key exists.  Conversely, the Virtual Machine Resource did not inherit tag, `team:web`, because the Provider's tag inheritance rules determine that aResource already containing a tag with the same key maintains that same tag.
+After all tag inheritance rules are processed, the finalized cost and usage dataset shows that the Virtual Machine Resource did inherit tag, `env:prod`, from its corresponding Account because no tag with the same key exists.  Conversely, the Virtual Machine Resource did not inherit tag, `team:web`, because the Provider's tag inheritance rules determine that a Resource already containing a tag with the same key maintains that same tag.
 
 ## Column ID
 
