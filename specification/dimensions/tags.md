@@ -29,7 +29,7 @@ The following is an example of one User-Defined Tag and one Provider-Defined Tag
 
 ## Finalized Tags
 
-The following example shows a simplified cost and usage data with one metered Account that contains one metered Virtual Machine.  The Provider supports tag inheritance where an Account's User-Defined Tags are applied to all Resources' User-Defined Tags, where applicable.
+A Tag can either be static or dynamic. If a Tag is static, its value is immutable. If a Tag is dynamic, its value is determined by a set of predefined user or provider rules. A finalized Tag is the final result of any static or dynamic Tag.
 
 | ResourceType    | ResourceId | Column                             |
 | :---------------| :----------| :----------------------------------|
