@@ -30,9 +30,9 @@ Indicates whether the commitment-based discount identified in the CommitmentDisc
 Allowed values:
 
 | Value      | Description                                                                                                                                                                   |
-|:---------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|:--------|:--------------------------------------------------------------------------------|
 | Spend   | Commitment-based discounts that require a predetermined amount of spend.    |
-| Usage   | Commitment-based discounts that require a predetermined amount of usage.     |
+| Usage   | Commitment-based discounts that require a predetermined amount of usage.    |
 
 ## Introduced (version)
 
