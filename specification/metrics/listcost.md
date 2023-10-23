@@ -4,8 +4,8 @@ The List Cost represents a charge inclusive of the impacts of volume/tier-based 
 
 The ListCost column MUST be present in the billing data. This column MUST be a valid numeric value of type Decimal and MUST NOT contain null values. When a [ListUnitPrice](#listunitprice) is not null, multiplying the [ListUnitPrice](#listunitprice) by [QuantityInPricingUnit](#quantityinpricingunit ) MUST produce the ListCost. In cases where the [ListUnitPrice](#listunitprice) is null, the following applies:
 
-- If the line item is based on other charges (e.g. [ChargeType](#chargetype) is ‘Tax’), the ListCost MUST be calculated based on ListCost of the related charges
-- If the line item is unrelated to other charges (e.g. [AdjustmentType](#adjustmenttype) is ‘Credit’), the ListCost MUST match the [BilledCost](#billedcost).
+* If the line item is based on other charges (e.g. [ChargeType](#chargetype) is ‘Tax’), the ListCost MUST be calculated based on ListCost of the related charges
+* If the line item is unrelated to other charges (e.g. [AdjustmentType](#adjustmenttype) is ‘Credit’), the ListCost MUST match the [BilledCost](#billedcost).
 
 ## Column ID
 
