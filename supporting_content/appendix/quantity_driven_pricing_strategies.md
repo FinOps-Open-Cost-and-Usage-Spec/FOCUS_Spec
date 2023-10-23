@@ -60,7 +60,8 @@ For better comprehension, please refer to the sample price-tiers configuration a
 | GCP       | Flat-rate based pricing                                                            | Not available                        | *TODO: Add sample data* |
 | GCP       | Quantity-dependent pricing                                                         | Not available                        | *TODO: Add sample data* |
 | Microsoft | Flat-rate based pricing - PAYG<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52    | PayGPrice: 0.00036                   | *TODO: Add sample data* |
-| Microsoft | Flat-rate based pricing - CSP<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52     | PayGPrice: 0.0003707                 | *TODO: Add sample data* |
+| Microsoft | Flat-rate based pricing - CSP<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52     | PayGPrice: 0.00036                   | *TODO: Add sample data* |
+| Microsoft | Flat-rate based pricing - EA<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52      | PayGPrice: 0.0003707                 | *TODO: Add sample data* |
 | Microsoft | Quantity-dependent pricing - PAYG<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4 | PayGPrice: 0.087                     | *TODO: Add sample data* |
 | Microsoft | Quantity-dependent pricing - CSP<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4  | PayGPrice: 0.087                     | *TODO: Add sample data* |
 | OCI       | Flat-rate based pricing                                                            | Not available                        | *TODO: Add sample data* |
