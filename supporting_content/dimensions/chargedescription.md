@@ -20,8 +20,14 @@ Current resource types found or extracted from available data sets:
 
 ## Discussion Topics
 
-- Should we explicitly define the minimum required information for this column? A list of FOCUS (Irena)
+### Minimum Information Requirements vs Open-Ended
+
+We deliberated if we should be more specific and define the minimum required information for this column?
+
+- A list of FOCUS columns which we believe provide this high-level context without the need for additional discovery and thus must be included (concatenated) as part of the Charge description? (Irena)
 - Are these enough? Region/location? Qty? (Larry)
-	- What: lineItem/LineItemDescription
-	- Where: Region
-	- How (many): Qty
+  - What: lineItem/LineItemDescription
+  - Where: Region
+  - How (many): Qty
+
+Considering a variable landscape across cloud, SaaS, etc. we decided to keep it open-ended.
