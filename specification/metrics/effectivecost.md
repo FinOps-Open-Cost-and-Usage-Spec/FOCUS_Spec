@@ -5,7 +5,7 @@ Effective cost represents the sum of the amortized upfront fees, amortized recur
 Practitioners are faced with two main challenges with respect to this metric:
 
 1. Practitioners need to amortize upfront fees over the duration of the commitment and distribute those fees to the appropriate reporting groups (e.g. tags, resources).
-2. Many commitment based discount constructs include a recurring expense for the commitment for every billing period and must distribute this cost to the resources using the commitment. This forces reconciliation between the initial commitment line item per period and the actual usage line items.
+2. Many commitment-based discount constructs include a recurring expense for the commitment for every billing period and must distribute this cost to the resources using the commitment. This forces reconciliation between the initial commitment line item per period and the actual usage line items.
 
 The EffectiveCost column MUST be present in the billing data. This column MUST be a numeric value of type Decimal and MUST NOT contain null values.
 
