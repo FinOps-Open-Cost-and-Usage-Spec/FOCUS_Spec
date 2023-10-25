@@ -1,8 +1,8 @@
 # Key-Value Format
 
-This is the specified format for providing data in the form of key-value pairs, which are also known as name-value pairs, attribute-value pairs, and field-value pairs in other contexts. 
+Columns that provide Key-Value information are often used in place of separate columns for enumerating data which would be inherently sparse and/or without predetermined keys. This consolidates related information and provides more consistency in the schema. Key-value pairs are also referred to as name-value pairs, attribute-value pairs, or field-value pairs.
 
-This format is often used in place of enumerating data which would be inherently sparse and/or without predetermined keys (attributes) into separate columns. To faciliate parsing, this format does not support nesting.
+All key-value related columns defined in the FOCUS specification MUST follow the key-value formatting requirements listed below. These columns SHALL NOT contain nested elements.
 
 ## Attribute ID
 
@@ -18,10 +18,10 @@ Rules and formatting requirements for columns appearing in billing data which co
 
 ## Requirements
 
-* Columns subject to Key-Value Format MUST be a serialized JSON string, consistent with the ECMA-404 definition of an object.
-* Keys MUST be unique within an object.
-* Values MAY be a number, string, `true`, `false`, or `null`.
-  * Values MUST NOT be an object nor an array.
+* Key-Value Format columns MUST contain a serialized JSON string, consistent with the ECMA-404 definition of an object.
+* Keys in a key-value pair MUST be unique within an object.
+* Values in a key-value pair MUST one of the following types: number, string, `true`, `false`, or `null`.
+* Values in a key-value pair MUST NOT be an object nor an array.
 
 ## Exceptions
 
