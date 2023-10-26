@@ -14,18 +14,9 @@ Usage Unit
 
 ## Description
 
-The Usage Unit for a particular line item may differ from PricingUnit when providers use different units, unit increments, or columns to determine cost. The values in UsageUnit and QuantityInUsageUnit are often listed at a finer granularity or over a different time interval than the PricingUnit and QuantityInPricingUnit. While UsageUnit may appear to relate to pricing and cost, UsageUnit is focused on resource or service consumption.  It is essential not to confuse UsageUnit with PricingUnit which is the basis for determining cost.
-
 The unit of measure for the usage or consumption of a resource or service
 
-### Content constraints
-
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column required | True            |
-| Data type       | String          |
-| Allows nulls    | True            |
-| Value format    | \<not specified> |
+The Usage Unit for a particular line item may differ from PricingUnit when providers use different units, unit increments, or columns to determine cost. The values in UsageUnit and QuantityInUsageUnit are often listed at a finer granularity or over a different time interval than the PricingUnit and QuantityInPricingUnit. While UsageUnit may appear to relate to pricing and cost, UsageUnit is focused on resource or service consumption.  It is essential not to confuse UsageUnit with PricingUnit which is the basis for determining cost.
 
 ### Recommended Values
 
@@ -100,6 +91,15 @@ A time-based unit is a noun that represents a time interval.  Time-based units c
 If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of recommended values.
 
 Instead of "per" or "-" to denote a Composite Unit, slash ("/") and space(" ") must be used as a common convention.  Count-based units like requests, instances, and tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit should be listed as "count/day" to signify the number of requests per day.
+
+## Content constraints
+
+|    Constraint   |      Value      |
+|:----------------|:----------------|
+| Column required | True            |
+| Data type       | String          |
+| Allows nulls    | True            |
+| Value format    | \<not specified> |
 
 ## Introduced (version)
 
