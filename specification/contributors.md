@@ -12,7 +12,7 @@ Thanks to the following FOCUS members for their contributions to this work.
 * Jason Kelly (Anglepoint Group Inc)
 * Joe Ferrero (DB Gurus Inc.)
 * John Grubb (platform.sh)
-* Josh Kwon (Ternary)
+* Joshua Kwan (Ternary)
 * Karl Kraft (Walmart)
 * Mark Krawczeniuk (NetApp)
 * Michael Arkoosh (Vega)
