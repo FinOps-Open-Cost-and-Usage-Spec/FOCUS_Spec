@@ -1,6 +1,6 @@
 # List Cost
 
-The List Cost represents a charge inclusive of the impacts of volume/tier-based rates while excluding any negotiated or commitment-based discounts. This cost is denominated in the [Billing Currency](#billingcurrency). The List Cost equals the [BilledCost](#billedcost) if there are no negotiated or commitment-based discounts against the resource and/or service. It is used to calculate savings based on rate optimization activities, by comparing it with [EffectiveCost](#effectivecost).
+The List Cost represents a charge inclusive of the impacts of volume/tier-based rates while excluding any negotiated discounts, commitment-based discounts or the amortization of upfront charges (one-time or recurring). This cost is denominated in the [Billing Currency](#billingcurrency). The List Cost equals the [Billed Cost](#billedcost) if there are no negotiated or commitment-based discounts against the resource and/or service. It is used to calculate savings based on rate optimization activities, by comparing it with [Effective Cost](#effectivecost).
 
 The ListCost column MUST be present in the billing data. This column MUST be a valid numeric value of type Decimal and MUST NOT contain null values. When a [ListUnitPrice](#listunitprice) is not null, multiplying the ListUnitPrice by [QuantityInPricingUnit](#quantityinpricingunit ) MUST produce the ListCost. In cases where the ListUnitPrice is null, the following applies:
 
@@ -17,7 +17,7 @@ List Cost
 
 ## Description
 
-A charge inclusive of the impacts of volume/tier-based rates while excluding any negotiated or commitment-based discounts.
+A charge inclusive of the impacts of volume/tier-based rates while excluding any negotiated discounts, commitment-based discounts or the amortization of upfront charges (one-time or recurring).
 
 ## Content Constraints
 
