@@ -14,8 +14,8 @@ The Tags column adheres to the following requirements:
 
 Provider-defined Tags additionally adhere to the following requirements:
 
-* Provider-defined Tags MUST be prefixed with a provider-defined prefix.
-* Providers SHOULD publish all provider-defined prefixes within their respective documentation.
+* Provider-defined tags MUST be prefixed with a provider-specified tag key prefix.
+* Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
 
 ## Provider-Defined vs. User-Defined Tags
 
