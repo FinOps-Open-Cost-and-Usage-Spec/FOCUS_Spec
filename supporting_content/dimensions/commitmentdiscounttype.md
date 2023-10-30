@@ -38,6 +38,9 @@ It was discussed whether or not this field should be a normalized list of values
   - RI/CUD
   - Flexible CUDs
 
+For AWS, this column could possibly calculated as such:
+  if reservation/ReservationARN <> '' then Usage, else if savingsPlan/SavingsPlanArn <> '' then Spend, else nullThis column
+
 It was agreed that another column would be added (ideally in V1.0) that would identify the CUD name as termed by the Cloud Provider and that this column would be normalized to allow practitioners to have a standard interface to group and compare CUDs from multiple sources. This would be a non-normalized string.
 
 The name of this additional column is yet to be determined but could be something like:
