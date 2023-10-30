@@ -19,7 +19,7 @@ Provider-defined Tags additionally adhere to the following requirements:
 
 ## Provider-Defined vs. User-Defined Tags
 
-The following is an example of one User-Defined Tag and one Provider-Defined Tag, respectively, with tag key, `foo`.  The first property is not prefixed, and the Provider has a pre-selected prefix, `marketplace/`, applied to denote that it is a different type of tag.
+The following is an example of one user-defined tag and one provider-defined tag, respectively, with tag key, `foo`.  The first tag, which is user-defined, is not prefixed. The second tag is prefixed with marketplace/ which the provider has specified as a reserved tag key prefix.
 
 ```json
     {
