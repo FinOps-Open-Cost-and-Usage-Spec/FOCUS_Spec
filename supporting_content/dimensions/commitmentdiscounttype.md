@@ -16,12 +16,12 @@ Current values observed in billing data for various scenarios:
 
 | Provider | Data set                 | CommitmentDiscountType     | CommitmentDiscountProgram (Name TBD)     |
 |----------|--------------------------|----------------------------|------------------------------------------|
-| AWS | CUR (PurchaseOption)                   | Usage-Based                | Reserved Instances              |
-| AWS | CUR (PurchaseOption)                   | Usage-Based                | Savings Plans                   |
-| Google Cloud | BigQuery Billing Export | Usage-Based        | Resource-based CUD                            |
-| Google Cloud | BigQuery Billing Export | Spend-Based        | Spend-based CUD                               |
-| Microsoft | Cost Details (PricingModel)| Usage-Based                     | Savings Plan                     |
-| Microsoft | Cost Details (PricingModel)| Usage-Based                     | Reservation                      |
+| AWS | CUR (PurchaseOption)                   | Usage               | Reserved Instances              |
+| AWS | CUR (PurchaseOption)                   | Spend               | Savings Plans                   |
+| Google Cloud | BigQuery Billing Export | Usage        | Resource-based CUD                            |
+| Google Cloud | BigQuery Billing Export | Spend        | Spend-based CUD                               |
+| Microsoft | Cost Details (PricingModel)| Spend                     | Savings Plan                     |
+| Microsoft | Cost Details (PricingModel)| Usage                     | Reservation                      |
 
 ## Documentation
 - Microsoft
