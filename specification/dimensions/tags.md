@@ -30,12 +30,22 @@ The following is an example of one user-defined tag and one provider-defined tag
 
 A Tag can either be static or dynamic. If a Tag is static, its value is immutable. If a Tag is dynamic, its value is determined by a set of predefined user or provider rules. A finalized Tag is the final result of any static or dynamic Tag.
 
-| ResourceType    | ResourceId | Column                             |
-| :---------------| :----------| :----------------------------------|
-| Account         | my-account | { "team": "web", "env": "prod" }   |
-| Virtual Machine | my-vm      | { "team": "web", *"env": "prod"* } |
+As a example, let's assume 1 Account exists with 1 Virtual Machine with the following details:
+1. **Account**
+   * id: *my-account*
+   * user-defined tags: *team:ops*, *env:prod*
+2. **Virtual Machine**
+   * id: *my-vm*
+   * user-defined tags: *team:web*
 
-After all tag inheritance rules are processed, the finalized cost and usage dataset shows that the Virtual Machine Resource did inherit tag, `env:prod`, from its corresponding Account because no tag with the same key exists.  Conversely, the Virtual Machine Resource did not inherit tag, `team:web`, because the Provider's tag inheritance rules determine that a Resource already containing a tag with the same key maintains that same tag.
+The table below represents a finalized cost and usage dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
+
+| ResourceType    | ResourceId | Column                                   |
+| :---------------| :----------| :----------------------------------------|
+| Account         | my-account | { "team": "ops", "env": "prod" }         |
+| Virtual Machine | my-vm      | { "team": "web", ==**"env": "prod"**== } |
+
+Because the the Virtual Machine Resource did not have an `env` tag, it inherited tag, `env:prod` (highlighted), from its parent Account.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it did not inherit `team:ops` from its parent Account.
 
 ## Column ID
 
