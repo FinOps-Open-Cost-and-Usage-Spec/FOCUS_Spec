@@ -1,6 +1,6 @@
 # Tags
 
-Tags are the set of finalized User-Defined and/or Provider-Defined Tags assigned to Tag Sources.  Tags commonly add business context to billing data to identify and accurately allocate charges.
+The Tags column represents the set of finalized user-defined and/or provider-defined tags assigned to Tag Sources.  Tags commonly add business context to billing data to identify and accurately allocate charges.
 
 If a Tag is subject to a set of prioritized rules for determining its value, it is finalized after a single value is chosen from a set of corresponding values.  Otherwise, a Tag and a finalized Tag are equal.
 
