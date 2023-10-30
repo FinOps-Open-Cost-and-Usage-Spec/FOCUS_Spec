@@ -4,12 +4,13 @@ The Tags column represents the set of finalized user-defined and/or provider-def
 
 If a Tag is subject to a set of prioritized rules for determining its value, it is finalized after a single value is chosen from a set of corresponding values.  Otherwise, a Tag and a finalized Tag are equal.
 
-Tags adhere to the following requirements:
+The Tags column adheres to the following requirements:
 
-* Tags MUST only contain finalized tags.
-* Tags MUST standardize to Key-Value Format.
+* The Tags column MUST contain user-defined and provider-defined tags.
+* The Tags column MUST only contain finalized tags.
+* The Tags column MUST be in Key-Value Format.
 * A Tag without a specified value MUST have its value set to null.
-* Providers MUST NOT alter User-Defined Tag keys.
+* Providers MUST NOT alter user-defined Tag keys or values.
 
 Provider-defined Tags additionally adhere to the following requirements:
 
