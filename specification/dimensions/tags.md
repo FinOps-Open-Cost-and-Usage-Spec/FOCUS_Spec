@@ -54,7 +54,7 @@ The set of finalized tags assigned to Tag Sources.
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column required | True             |
-| Data type       | Object           |
+| Data type       | JSON Object      |
 | Allows nulls    | True             |
 | Value format    | MUST adhere to KeyValueFormat Attribute |
 
