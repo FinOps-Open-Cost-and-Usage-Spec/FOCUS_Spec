@@ -47,9 +47,9 @@ The table below represents a finalized cost and usage dataset with these resourc
 | ResourceType    | ResourceId | Column                                   |
 | :---------------| :----------| :----------------------------------------|
 | Account         | my-account | { "team": "ops", "env": "prod" }         |
-| Virtual Machine | my-vm      | { "team": "web", ==**"env": "prod"**== } |
+| Virtual Machine | my-vm      | { "team": "web", **"env": "prod"** } |
 
-Because the the Virtual Machine Resource did not have an `env` tag, it inherited tag, `env:prod` (highlighted), from its parent Account.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it did not inherit `team:ops` from its parent Account.
+Because the the Virtual Machine Resource did not have an `env` tag, it inherited tag, `env:prod` (bolded), from its parent Account.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it did not inherit `team:ops` from its parent Account.
 
 ## Column ID
 
