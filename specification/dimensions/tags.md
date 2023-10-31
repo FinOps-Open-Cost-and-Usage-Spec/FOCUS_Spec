@@ -44,12 +44,12 @@ As a example, let's assume 1 Account exists with 1 Virtual Machine with the foll
 
 The table below represents a finalized cost and usage dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
 
-| ResourceType    | ResourceId | Column                                   |
-| :---------------| :----------| :----------------------------------------|
-| Account         | my-account | { "team": "ops", "env": "prod" }         |
-| Virtual Machine | my-vm      | { "team": "web", **"env": "prod"** } |
+| ResourceType    | ResourceId | Tags                                        |
+| :---------------| :----------| :-------------------------------------------|
+| Account         | my-account | { "team": "ops", "env": "prod" }            |
+| Virtual Machine | my-vm      | { "team": "web", *"env": "prod"* }          |
 
-Because the the Virtual Machine Resource did not have an `env` tag, it inherited tag, `env:prod` (bolded), from its parent Account.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it did not inherit `team:ops` from its parent Account.
+Because the the Virtual Machine Resource did not have an `env` tag, it inherited tag, `env:prod` (italicized), from its parent Account.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it did not inherit `team:ops` from its parent Account.
 
 ## Column ID
 
