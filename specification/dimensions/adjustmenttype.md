@@ -27,7 +27,7 @@ A positive or negative change in cost applied after the original usage or purcha
 | Allows nulls    | True                                     |
 | Value format    | list-of-values                           |
 
-### Allowed values
+Allowed values:
 
 | Value      | Description                                                                                                                                                                   |
 |:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
