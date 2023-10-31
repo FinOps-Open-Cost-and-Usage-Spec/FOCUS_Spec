@@ -4,7 +4,7 @@ An adjustment is a positive or negative change in cost applied after the origina
 
 Adjustment Type indicates what kind of after-the-fact adjustment the record represents. Adjustment Type is commonly used to identify changes like credits and refunds.
 
-The AdjustmentType column MUST be present and MUST NOT be null or empty when ChargeType is "Adjustment". AdjustmentType MUST be null when ChargeType is not "Adjustment". This column is of type String and SHOULD be one of the example Allowed values or a value of choosing from the vendor.
+The AdjustmentType column MUST be present and MUST NOT be null or empty when ChargeType is "Adjustment". AdjustmentType MUST be null when ChargeType is not "Adjustment". This column is of type String and SHOULD be one of the example allowed values or a value of choosing from the vendor.
 
 ## Column ID
 
