@@ -33,11 +33,14 @@ A Tag can either be static or dynamic. If a Tag is static, its value is immutabl
 As a example, let's assume 1 Account exists with 1 Virtual Machine with the following details:
 
 ### Account
-   * id: *my-account*
-   * user-defined tags: *team:ops*, *env:prod*
+
+* id: *my-account*
+* user-defined tags: *team:ops*, *env:prod*
+
 ### Virtual Machine
-   * id: *my-vm*
-   * user-defined tags: *team:web*
+
+* id: *my-vm*
+* user-defined tags: *team:web*
 
 The table below represents a finalized cost and usage dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
 
