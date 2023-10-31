@@ -1,4 +1,4 @@
-# Column: CommitmentDiscountType
+# Column: CommitmentDiscountCategory
 
 ## Example provider mappings
 
@@ -14,7 +14,7 @@ Current column mappings found in available data sets:
 
 Current values observed in billing data for various scenarios:
 
-| Provider | Data set                 | CommitmentDiscountType     | CommitmentDiscountProgram (Name TBD)     |
+| Provider | Data set                 | CommitmentDiscountCategory     | CommitmentDiscountProgram (Name TBD)     |
 |----------|--------------------------|----------------------------|------------------------------------------|
 | AWS | CUR (PurchaseOption)                   | Usage               | Reserved Instances              |
 | AWS | CUR (PurchaseOption)                   | Spend               | Savings Plans                   |
