@@ -30,12 +30,6 @@ A positive or negative change in cost applied after the original usage or purcha
 Allowed values:
 
 | Value      | Description                                                                                                                                                                   |
-|:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Adjustment | Any adjustments that are applied after the original usage or purchase record. Adjustments may be related to multiple charges.  Adjustment types can be any of the example values or a value the vendor chooses, but MUST be added if ChargeType is of type Adjustment.
-
-
-Allowed Value Type Definition:
-| Value | Description |
 |:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Refund | Applied by the vendor where a refund is given to the vendor, refund can be multiple types, the refund type should be noted in the column ChargeType, this could be for example a refund for unused reservations, or unused pre-commit amounts.
 | Usage Correction | Applied when vendor has incorrectly billed usage - example, a virtual machine ran for 700 hours but was billed for 730 hours, the adjustment would show usage correction, with comments or notes stating a correction was made in billing for usage of virtual machines due to billing calculation errors.
