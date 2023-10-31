@@ -7,8 +7,8 @@ Current resource types found or extracted from available data sets:
 | Provider  | Dataset                 | Column                                      | Hierarchical Resources | Supports Inheritance?
 | :-------- | :---------------------- | :-------------------------------------------| :-------------------------------------------| :----------
 | AWS       | CUR                     | resourceTags/user:\*, costCategories/\*       | Organization, Organizational Unit(s), Account | No
-| GCP       | BigQuery Billing Export | Tags 									 	| Resource Group, Subscription | Yes
-| Microsoft | Cost details            | tags, labels, system_labels, project.labels	| Folder(s), Project | Yes
+| GCP       | BigQuery Billing Export | tags, labels, system_labels, project.labels 									 	|  Folder(s), Project | Yes
+| Microsoft | Cost details            | Tags | Subscription, Resource Group | Yes
 
 ## Discussion Topics
 
