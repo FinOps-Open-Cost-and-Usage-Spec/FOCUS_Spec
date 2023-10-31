@@ -1,0 +1,87 @@
+# Column: QuantityInPricingUnit
+
+## Example treatment for non-metered charges (e.g. Tax Treatment)
+
+Example A
+| Description          | Quantity in Pricing Unit  | Unit Price   | Total     | 
+|:---------------------|:--------------------------|:-------------|-----------|
+| Compute Usage        | 100                       | 1.0          | $100      |
+| Tax on Compute Usage | 100                       | 0.2          | $20       |
+| TOTAL                | 200                       | 1.2          | $120      |
+NOTE: Double counting of hours
+
+Example B
+| Description          | Quantity in Pricing Unit  | Unit Price   | Total     | 
+|:---------------------|:--------------------------|:-------------|-----------|
+| Compute Usage        | 100                       | 1.0          | $100      |
+| Tax on Compute Usage | 1                         | 20           | $20       |
+| TOTAL                | 101                       | 21           | $120      |
+NOTE: Skews average of Unit price
+
+Example C
+| Description          | Quantity in Pricing Unit  | Unit Price   | Total     | 
+|:---------------------|:--------------------------|:-------------|-----------|
+| Compute Usage        | 100                       | 1.0          | $100      |
+| Tax on Compute Usage | NULL                      | NULL         | $20       |
+| TOTAL                | 100                       | 1.0          | $120      |
+NOTE: Preferred option?
+
+## Example provider mappings
+
+Current column mappings found in available data sets:
+
+| Provider  | Data set                     | Column                   |
+|:----------|:-----------------------------|:-------------------------|
+| AWS       | Cost and Usage Report        | lineItem/UsageAmount (NOTE: how to handle reservation/TotalReservedUnits|
+| GCP       | BigQuery Billing             | usage.amount             |
+| Microsoft | Cost Details                 | Quantity                 |
+| OCI       | Cost and Usage Report        | usage/billedQuantity  Note: usage/billedQuantity preferred over usage/billedQuantityOverage since the latter does not include the quantity covered by Universal Credits (commitment-based discounts) |
+
+## References and Resources
+
+### AWS
+
+- [Pricing details - AWS Cost and Usage Reports](https://docs.aws.amazon.com/cur/latest/userguide/pricing-columns.html)
+
+### GCP
+
+- [Structure of Detailed data export | Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage)
+
+### Microsoft
+
+- [Understand usage details fields - Microsoft Cost Management](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
+
+### OCI
+
+- [Cost and Usage Reports Overview](https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm)
+
+## Discussion / Scratch space
+
+ - Do we need to support negative values in the case of credits / refunds? (currently assumed yes)
+ - AWS issue “For size-flexible Reserved Instances, use the reservation/TotalReservedUnits column instead.”
+ - OCI seems to support separate billed quantities with an overage calculation… needs investigation.
+ - How will this apply for marketplace transactions…. What behavior do we expect for prices and quantities for marketplace purchases (and refunds)
+
+### ChargeType 'Tax'
+
+#### GCP
+ - Couldn’t find tax-related cost records in case of one small GCP account
+ - HS Data provided samples:
+     - Usage.amount values: 1.0, 2.0, 4.0
+     - usage.unit: count
+
+#### AWS
+ - Tax-related records contain:
+     - lineItem/UsageAmount: 1
+     - pricing/unit: null
+
+#### Azure
+ - Tax-related record are not available in billing data
+
+##### OCI
+ - Tax-related record are not available in billing data
+
+## Example usage scenarios
+
+- See [Appendix: Pricing Support - UCs and Data samples Spreadsheet](../apendix/pricingsupport.md) for various UC scenarios
+
