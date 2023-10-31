@@ -16,7 +16,7 @@ Adjustment Type
 
 ## Description
 
-Indicates the record represents an after-the-fact change to an invoice or cost of usage that already occurred (e.g., refunds, credits).
+A positive or negative change in cost applied after the original usage or purchase record(s).
 
 ## Content Constraints
 
