@@ -28,8 +28,7 @@ Type of unit price applied to a charge at the time it was used or purchased.
 Allowed values:
 
 | Value                     | Description                                                                                                                                                                                                  |
-| :------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Fixed                     | Charges priced at a constant rate, regardless of quantity used or purchased.                                                                                                                                 |
+| :------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |                                                                                                       |
 | On-Demand                 | Charges priced at the standard rate for the billing account. This includes any applicable negotiated discounts and volume/tiered pricing, but does not include dynamic or commitment-based discount pricing. |
 | Dynamic                   | Charges priced at a variable rate that is designed to change throughout the day. This includes any product or service with a unit price the provider can change at any moment without notice, like interruptible or low priority resources.   |
 | Commitment-Based Discount | Charges with reduced prices due to a commitment-based discount specified by the Commitment Discount ID.                                                                                                      |
