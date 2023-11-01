@@ -43,12 +43,7 @@ For AWS, this column could possibly calculated as such:
 
 It was agreed that another column would be added (ideally in V1.0) that would identify the CUD name as termed by the Cloud Provider and that this column would be normalized to allow practitioners to have a standard interface to group and compare CUDs from multiple sources. This would be a non-normalized string.
 
-The name of this additional column is yet to be determined but could be something like:
-- Commitment Discount Type
-- Commitment Discount Program
-- Commitment Discount Plan
-- Commitment Discount Plan Name
-- Other
+Update: The name of this additional column has been determined as Commitment Discount Type.
 
 - Microsoft
   - Azure:  PricingModel: https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields
