@@ -2,6 +2,8 @@
 
 The Tags column represents the set of finalized user-defined and/or provider-defined tags assigned to Tag Sources.  Tags commonly add business context to billing data to identify and accurately allocate charges.
 
+A tag is 'finalized' after a single tag value is chosen from a set of corresponding tag values for a single tag key.  Whether a tag key can have multiple, possible values is determined by the Provider.
+
 The Tags column adheres to the following requirements:
 
 * The Tags column MUST contain user-defined and provider-defined tags.
