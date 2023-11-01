@@ -6,7 +6,7 @@ A tag is 'finalized' after a single tag value is chosen from a set of correspond
 
 The Tags column adheres to the following requirements:
 
-* The Tags column MUST contain user-defined and provider-defined tags.
+* The Tags column MUST contain user-defined and/or provider-defined tags.
 * The Tags column MUST only contain finalized tags.
 * The Tags column MUST be in Key-Value Format.
 * A Tag without a specified value MUST have its value set to null.
