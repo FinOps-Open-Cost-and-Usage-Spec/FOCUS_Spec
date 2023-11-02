@@ -4,13 +4,6 @@ A unique identifier that defines the price of a SKU that incurred a charge.  Th
 
 The composition of SKU Price attributes may differ from one provider to the next.  For example, the provider may use a Region to define the price, whereas another may use a Region to define the SKU itself.  Examples of SKU Price attributes may include, but are not limited to:
 
-- Term (e.g. On Demand, Reserved, Savings Plan)
-- Tier (e.g. Free, Low Tier, High Tier)
-- Tier Range (e.g. 0 to 20k, 20k to 40k)
-- Commitment Length (e.g. 1 Year, 3 Years)
-- Payment Option (e.g. No Upfront, Partial Upfront)
-
-Future versions of the FOCUS specification may include more precise definitions of those attributes.  In the interim, the SKU Price ID can be used in concert with an externally-sourced price sheet to facilitate practitioner data modeling and analysis. 
 
 Every SKU has one or more SKU Prices.  For providers that define their prices at the SKU level, the SKU ID and SKU Price ID shall be the same.
 
