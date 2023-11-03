@@ -4,7 +4,7 @@ Charge Subcategory is a detailed descriptor within the billing and usage reports
 
 This linkage to the parent ChargeType means that for every entry under ChargeType, there is a corresponding Charge Subcategory that further refines the nature of the charge. It's a nested level of detail that allows users to see not just what type of charge was incurred, but also how that charge interacts with their purchasing agreements and discounts.
 
-When ChargeType is "Usage", the Charge Subcategory is list of values such as Commitment Used and Commitment Unused to show that the usage is covered by pre-purchased commitment agreements such as Savings Plans and Reserved Instances or did not apply those discounts.
+When "ChargeType" is classified as "Usage", the corresponding "Charge Subcategory" includes values such as "Commitment Used" and "Commitment Unused". These values specify if the usage is accounted for by pre-purchased commitments like Savings Plans and Reserved Instances, or if the usage has not benefited from these discounts.
 
 When Charge Type is "Adjustment", the Charge Subcategory is "Adjustment Category" indicates what kind of after-the-fact adjustment the record represents. Adjustment Category is commonly used to identify changes like credits and refunds.
 
