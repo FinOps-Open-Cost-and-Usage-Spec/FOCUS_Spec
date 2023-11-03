@@ -30,6 +30,7 @@ Naming convention for columns appearing in billing data.
 ## Exceptions
 
 * Identifiers will use the "Id" abbreviation since this is a standard pattern across the industry.
+* Stock Keep Units will use the "SKU" abbreviation since this is a standard pattern across the industry.
 
 ## Introduced (version)
 
