@@ -67,8 +67,8 @@ Current column mappings found in available data sets:
 #### GCP
  - Couldn’t find tax-related cost records in case of one small GCP account
  - HS Data provided samples:
-     - Usage.amount values: 1.0, 2.0, 4.0
-     - usage.unit: count
+     - usage.amount_in_pricing_units values: 1.0, 2.0, 4.0
+     - usage.pricing_unit: count
 
 #### AWS
  - Tax-related records contain:
