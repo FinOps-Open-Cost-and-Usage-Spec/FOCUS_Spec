@@ -1,6 +1,6 @@
 ### SKU Price ID
 
-A SKU Price ID is a unique identifier that defines the price of a SKU that incurred a charge. This identifier represents a unique collection of nullable attributes that determine the price. SKU Price ID can be referenced on a price list published by a provider to look up detailed information about the SKU and the unit price associated with the SKU. The composition of the detailed information associated with the price may differ from one provider to the next.
+A SKU Price ID is a unique identifier that defines the price that is used to bill the SKU of the charge. This identifier represents a unique collection of nullable attributes that determine the price. SKU Price ID can be referenced on a price list published by a provider to look up detailed information about the SKU and the unit price associated with the SKU. The composition of the detailed information associated with the price may differ from one provider to the next.
 
 Every SKU has one or more SKU Prices.  For providers that define their prices at the SKU level, the SKU ID and SKU Price ID shall be the same.
 
