@@ -4,7 +4,11 @@ An adjustment is a positive or negative change in cost applied after the origina
 
 Adjustment Category indicates what kind of after-the-fact adjustment the record represents. Adjustment Category is commonly used to identify changes like credits and refunds.
 
-The AdjustmentCategory column MUST be present and MUST NOT be null or empty when ChargeType is "Adjustment". AdjustmentCategory MUST be null when ChargeType is not "Adjustment". This column is of type String and SHOULD be one of the allowed values or a value of choosing from the vendor.
+- The AdjustmentCategory column MUST be present and MUST NOT be null or empty when ChargeType is "Adjustment".
+- AdjustmentCategory MUST be null when ChargeType is not "Adjustment". 
+- This column is of type String and MUST be one of the allowed values.
+- When AdjustmentCategory is "Refund" or "Credit", the charge MUST be negative.
+- When an adjustment applies to a specific item, the corresponding FOCUS columns that identify that item MUST NOT be null and MUST match the applicable item details the adjustment pertains to.
 
 ## Column ID
 
