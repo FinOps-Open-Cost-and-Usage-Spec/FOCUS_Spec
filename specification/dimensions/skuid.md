@@ -4,18 +4,18 @@
 
 A SKU ID is an identifier assigned to the SKU that’s associated with a charge. SKU ID can be referenced on a price list published by a provider to look up detailed information about the SKU including the different unit prices associated with the SKU.
 
-The SKUId column MUST be present in the billing data. This column MUST be of type String. The SKUId MUST NOT be null when [Charge Type](#ChargeType) is ‘Purchase’ or ‘Usage’. The SKUId SHOULD NOT be null when [Charge Type](#ChargeType) is ‘Adjustment’ or [Adjustment Type](#AdjustmentType) is ‘Refund’.
+The SkuId column MUST be present in the billing data. This column MUST be of type String. The SkuId MUST NOT be null when Charge Type is ‘Purchase’ or ‘Usage’. The SkuId SHOULD NOT be null when Adjustment Type is ‘Refund’.
 
-SKUID may have a collection of nullable attributes such as Service, Region, instance type, etc. Future versions of the FOCUS specification may include more precise definitions of those attributes.  In the interim, the SKU ID can be used in concert with an externally-sourced price sheet to facilitate practitioner data modeling and analysis. 
+SkuId may have a collection of nullable attributes such as Service, Region, instance type, etc. Future versions of the FOCUS specification may include more precise definitions of those attributes.  In the interim, the SkuId can be used in concert with an externally-sourced price sheet to facilitate practitioner data modeling and analysis. 
 
-A SKU ID doesn’t necessarily define the price as there may be additional attributes such as tier, region, etc. of the SKU ID that map to a price. 
+A SkuId doesn’t necessarily define the price as there may be additional attributes such as tier, region, etc. of the SkuId that map to a price. 
 
-Every SKU has one or more SKU Prices.  For providers that define their prices at the SKU level, the SKU ID and SKU Price ID shall be the same.
+Every SKU has one or more SKU Prices.  For providers that define their prices at the SKU level, the SkuId and SkuPriceId shall be the same.
 
 
 #### Column ID
 
-SKUId
+SkuId
 
 
 #### Display name
@@ -30,12 +30,12 @@ A provider-assigned identifier that maps to a unique product offering that has a
 
 #### Content constraints
 
-|         Constraint             | Value                   |
+|         Constraint   | Value              |
 | -------------------- | ------------------ |
-| Column required | True          |
-|  Data type       |  String        |
-|  Allows nulls    |  True          |
-| Value format    | string-format |
+| Column required      | True               |
+|  Data type           | String             |
+|  Allows nulls        | True               |
+| Value format         | Undefined          |
 
 
 #### Introduced (version)
@@ -53,7 +53,7 @@ Current column mappings found in available data sets:
 | ------------ | --------------------------- | --------------- |
 | **Provider** | **Data set**                | **Column**      |
 | AWS          | CUR                         | product/sku     |
-| Azure        | Cost details export or API  | PartNumber     |
+| Azure        | Cost details export or API  | PartNumber      |
 | GCP          | Big Query Export            | sku.id          |
 | OCI          | Cost Reports                | cost/productSku |
 |              |                             |                 |
@@ -67,7 +67,7 @@ Current values observed in billing data for various scenarios:
 | ------------ | -------------------------- | ---------------- |
 | **Provider** | **Scenario**               | **Pattern**      |
 | AWS          | CUR                        | FFNT87MQSCR328W6 |
-| Azure        | Cost Details export or API |  ABC-12345                |
+| Azure        | Cost Details export or API |  ABC-12345       |
 | GCP          | Big Query                  | F1ED-0732-5BDA   |
 | OCI          | Cost Reports               | B91962           |
 |              |                            |                  |
