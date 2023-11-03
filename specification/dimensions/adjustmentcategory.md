@@ -36,7 +36,7 @@ Allowed values:
 | Value      | Description                                                                                                                                                                   |
 |:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Refund | Negative charges that were previously billed and are being returned by the provider. Providers can have multiple types of refunds such as resolving a tax error or for returned or exchanged commitment-based discounts.
-|Credits  | Applied when vendor has incorrectly billed usage or applied a credit for usage such as a promo credit, tax error, SLA violation, usage correction or pricing correction.
+| Credit  | Negative charges granted by the provider for various scenarios, like negotiated benefits, usage discounts, or promotional credits.
 | Rounding Error | Applied where the usage calculations have exceeded the maximum amount of hours in a month, this would be rounded down to the correct level of usage where a vendor uses rounding methods.
 | Balance Transfer | Applied to an account where a customer migrates an account from one account to another where the migrated account had a positive balance | Applied where an account had a positive balance that was not consumed in the previous month.
 | General Adjustment | Any adjustment the vendor applies to a customer account that does not have a specific type.
