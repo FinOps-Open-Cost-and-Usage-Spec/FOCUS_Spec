@@ -1,4 +1,4 @@
-# Adjustment Category
+# Charge SubCategory
 
 An adjustment is a positive or negative change in cost applied after the original usage or purchase record(s). Adjustments may be related to one or more charges and are identified by the ChargeType column.
 
@@ -8,11 +8,11 @@ The AdjustmentCategory column MUST be present and MUST NOT be null or empty when
 
 ## Column ID
 
-AdjustmentCategory
+ChargeSubCategory
 
 ## Display Name
 
-Adjustment Category
+Charge SubCategory
 
 ## Description
 
