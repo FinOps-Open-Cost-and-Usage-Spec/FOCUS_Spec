@@ -14,7 +14,7 @@ Quantity In Pricing Unit
 
 ## Description
 
-The volume of a given resource and/or service used or purchased based on the [PricingUnit](#pricingunit).
+The volume of a given resource and/or service used or purchased based on the Pricing Unit.
 
 ## Content constraints
 
