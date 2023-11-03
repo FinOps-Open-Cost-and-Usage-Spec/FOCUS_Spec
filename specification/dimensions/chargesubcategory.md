@@ -34,28 +34,28 @@ Charge Subcategory is a detailed descriptor within the billing and usage reports
 
 ## Content Constraints
 
-| Constraint      | Value                                    |
-| :-------------- | :--------------------------------------- |
-| Column required | True                                     |
-| Data type       | String                                   |
-| Allows nulls    | True                                     |
-| Value format    | list-of-values                           |
+| Constraint      | Value          |
+| :-------------- | :------------- |
+| Column required | True           |
+| Data type       | String         |
+| Allows nulls    | True           |
+| Value format    | list-of-values |
 
 Allowed values for usage:
 
-| Value      | Description                                                                                                                                                                   |
-|:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Commitment Used  | This Charge Subcategory value shows that the usage is covered by and benefiting from discounted rates due to pre-existing commitment agreements, such as Reserved Instances or Savings Plans.
-| Commitment Unused | This value would represent the portion of a commitment that has not been used. For example, if an organization has reserved instances but is not utilizing all of them, the unused portion falls under this category. It highlights an area where the organization is not fully leveraging its commitments, which could be a lost cost-saving opportunity.
+| Value             | Description                                                                                                                                                                                                                                                                                                                                                |
+| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Commitment Used   | This Charge Subcategory value shows that the usage is covered by and benefiting from discounted rates due to pre-existing commitment agreements, such as Reserved Instances or Savings Plans.                                                                                                                                                              |
+| Commitment Unused | This value would represent the portion of a commitment that has not been used. For example, if an organization has reserved instances but is not utilizing all of them, the unused portion falls under this category. It highlights an area where the organization is not fully leveraging its commitments, which could be a lost cost-saving opportunity. |
 
 Allowed values for adjustments:
 
-| Value      | Description                                                                                                                                                                   |
-|:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Refund | Negative charges that were previously billed and are being returned by the provider. Providers can have multiple types of refunds such as resolving a tax error or for returned or exchanged commitment-based discounts.
-| Credit  | Negative charges granted by the provider for various scenarios, like negotiated benefits, usage discounts, or promotional credits.
-| Rounding Error | Positive or negative charges that are needed to ensure raw cost and usage data aggregations match the total cost on the invoice, which may be rounded. |
-| General Adjustment | Positive or negative charges the provider applies that do not fall into other adjustment category values. |
+| Value              | Description                                                                                                                                                                                                              |
+| :----------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Refund             | Negative charges that were previously billed and are being returned by the provider. Providers can have multiple types of refunds such as resolving a tax error or for returned or exchanged commitment-based discounts. |
+| Credit             | Negative charges granted by the provider for various scenarios, like negotiated benefits, usage discounts, or promotional credits.                                                                                       |
+| Rounding Error     | Positive or negative charges that are needed to ensure raw cost and usage data aggregations match the total cost on the invoice, which may be rounded.                                                                   |
+| General Adjustment | Positive or negative charges the provider applies that do not fall into other adjustment category values.                                                                                                                |
 
 ## Introduced (version)
 
