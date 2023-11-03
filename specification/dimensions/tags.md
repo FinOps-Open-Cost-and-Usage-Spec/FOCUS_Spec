@@ -32,17 +32,14 @@ The following is an example of one user-defined tag and one provider-defined tag
 
 A Tag can either be static or dynamic. If a Tag is static, its value is immutable. If a Tag is dynamic, its value is determined by a set of predefined user or provider rules. A finalized Tag is the final result of any static or dynamic Tag.
 
-As a example, let's assume 1 Account exists with 1 Virtual Machine with the following details:
+As a example, let's assume 1 sub account exists with 1 virtual machine with the following details:
 
-### Account
-
-* id: *my-account*
-* user-defined tags: *team:ops*, *env:prod*
-
-### Virtual Machine
-
-* id: *my-vm*
-* user-defined tags: *team:web*
+* Sub account
+  * id: *my-account*
+  * user-defined tags: *team:ops*, *env:prod*
+* Virtual machine
+  * id: *my-vm*
+  * user-defined tags: *team:web*
 
 The table below represents a finalized cost and usage dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
 
