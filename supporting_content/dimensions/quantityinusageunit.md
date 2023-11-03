@@ -8,4 +8,4 @@ Current column mappings found in available data sets:
 |----------|-------------------------|----------------------|
 | AWS      | CUR                     | lineitem/UsageAmount |
 | Azure    | Cost Details            | quantity             |
-| GCP      | BigQuery Billing Export | amount               |
+| GCP      | BigQuery Billing Export | usage.amount               |
