@@ -38,7 +38,8 @@ Allowed values:
 | Refund | Negative charges that were previously billed and are being returned by the provider. Providers can have multiple types of refunds such as resolving a tax error or for returned or exchanged commitment-based discounts.
 | Credit  | Negative charges granted by the provider for various scenarios, like negotiated benefits, usage discounts, or promotional credits.
 | Rounding Error | Positive or negative charges that are needed to ensure raw cost and usage data aggregations match the total cost on the invoice, which may be rounded. |
-| General Adjustment | Any adjustment the vendor applies to a customer account that does not have a specific type.
+| General Adjustment | Positive or negative charges the provider applies that do not fall into other adjustment category values. |
+
 ## Introduced (version)
 
 1.0
