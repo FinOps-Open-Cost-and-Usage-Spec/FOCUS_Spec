@@ -28,7 +28,7 @@ An identifier assigned to the Unit Price associated with the SKU that incurred a
 |  Column required |  True          |
 |  Data type       |  String        |
 |  Allows nulls    |  True          |
-|  Value format    |  \<none specified\> |
+|  Value format    |  \<not specified\> |
 
 
 #### Introduced (version)
