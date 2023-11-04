@@ -4,7 +4,9 @@ A discount is a type of pricing model in which cloud providers offer their custo
 
 Some of the discount offers can be purchased from a provider in order to get reduced prices. The most common example of this is commitment-based discounts, where you "purchase" a commitment to use or spend a specific amount within a period. There are instances where a portion of the purchased discount may go unused. This can result in effectively lost savings and needs to be clearly identifiable at a granular level to enable FinOps scenarios. In order to facilitate this, the amount of a purchased discount is amortized over the term that the discount is applied to (e.g., 1 year). Amortization is a process used to break down and spread the purchase costs over a period of time or term of use. When a purchase is applicable to resources, like commitment-based discounts, the amortized cost of a resource takes the initial payment and term into account and distributes it out based on the resource's usage, attributing the prorated cost for each hour of billing. Amortization provides a method for FinOps practitioners to reallocate purchase charges to the appropriate audience in support of their cost allocation efforts. Discount Handling for purchased commitments is commonly used for scenarios like calculating utilization and implementing chargeback of the purchase amount.
 
-While providers may use different terms to describe discounts, FOCUS identifies a discount as being a reduced price applied directly to a row or charge. Any price or cost reductions that are awarded after the fact are identified as a "Credit" Adjustment Type. One example might be when a provider offers a reduced rate after passing a certain threshold of usage or spend.
+While providers may use different terms to describe discounts, FOCUS identifies a discount as being a reduced price applied directly to a row or charge. Any price or cost reductions that are awarded after the fact are identified as a "Credit" Charge Subcategory. One example might be when a provider offers a reduced rate after passing a certain threshold of usage or spend.
+
+All rows defined in FOCUS MUST follow the discount handling requirements listed below.
 
 ## Attribute ID
 
@@ -33,7 +35,7 @@ Indicates how to include and apply discounts to usage charges or rows.
   * CommitmentUtilization MUST be "Used" for rows that received a reduced price from that commitment.
   * If a commitment is not fully utilized, the provider MUST include a row that represents the unused portion of the commitment for that charge period. CommitmentUtilization MUST be "Not Used".
   * The sum of the EffectiveCost for all "Used" and "Not Used" rows for each CommitmentDiscountId MUST be the same as the BilledCost of the commitment-based discount purchase.
-* Credits that are applied after the fact MUST use a ChargeType of "Adjustment" and AdjustmentCategory of "Credit".
+* Credits that are applied after the fact MUST use a ChargeType of "Adjustment" and ChargeSubcategory of "Credit".
 
 ## Exceptions
 
