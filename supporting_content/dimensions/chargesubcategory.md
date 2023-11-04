@@ -1,4 +1,4 @@
-# Column: AdjustmentCategory
+# Column: ChargeSubcategory
 
 ## Example provider mappings
 
