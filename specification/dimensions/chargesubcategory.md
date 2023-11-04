@@ -19,7 +19,7 @@ ChargeSubcategory MUST abide by the following requirements:
 - ChargeSubcategory MUST NOT be null or empty when ChargeType is "Adjustment".
   - When ChargeSubcategory is "Refund" or "Credit", the charge MUST be negative.
   - When an adjustment applies to a specific item, the corresponding FOCUS columns that identify that item MUST NOT be null and MUST match the applicable item details the adjustment pertains to.
-- ChargeSubcategory MUST be null when ChargeType is "Tax".
+- ChargeSubcategory MUST be null when ChargeType is "Purchase" or "Tax".
 
 ## Column ID
 
