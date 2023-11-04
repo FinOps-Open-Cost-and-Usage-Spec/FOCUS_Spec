@@ -6,7 +6,7 @@ This linkage to the parent ChargeType means that for every entry under ChargeTyp
 
 When Charge Type is "Usage", the Charge Subcategory specifies if the usage is accounted for by pre-purchased commitments or if the usage has not benefited from these discounts.
 
-When Charge Type is "Adjustment", the Charge Subcategory indicates what kind of after-the-fact adjustment the record represents. Adjustment Category is commonly used to identify changes like credits and refunds.
+When Charge Type is "Adjustment", the Charge Subcategory indicates what kind of after-the-fact adjustment the record represents. Adjustment type is commonly used to identify changes like credits and refunds.
 
 ChargeSubcategory MUST abide by the following requirements:
 
