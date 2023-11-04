@@ -31,7 +31,7 @@ Charge Subcategory
 
 ## Description
 
-Charge Subcategory is a detailed descriptor within the billing and usage reports that acts as a supplementary detail to the main ChargeType column.
+Indicates what kind of usage or adjustment the row represents.
 
 ## Content Constraints
 
