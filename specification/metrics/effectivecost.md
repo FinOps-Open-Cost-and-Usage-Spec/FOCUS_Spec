@@ -31,12 +31,13 @@ The amortization of the upfront charge should be amortized using a methodology d
 
 ## Content constraints
 
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column required | True            |
-| Data type       | Decimal         |
-| Allows nulls    | False           |
-| Value format    | Numeric value   |
+|    Constraint   |      Value              |
+|:----------------|:------------------------|
+| Column required | True                    |
+| Data type       | Decimal                 |
+| Allows nulls    | False                   |
+| Value format    | Numeric value           |
+| Number range    | Any valid decimal value |
 
 ## Introduced (version)
 
