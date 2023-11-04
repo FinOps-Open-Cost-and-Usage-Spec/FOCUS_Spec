@@ -16,12 +16,14 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "chargetype.md",1
 !INCLUDE "commitmentdiscountid.md",1
 !INCLUDE "commitmentdiscountname.md",1
+!INCLUDE "commitmentdiscountcategory.md",1
 !INCLUDE "invoiceissuer.md",1
 !INCLUDE "provider.md",1
 !INCLUDE "publisher.md",1
 !INCLUDE "region.md",1
 !INCLUDE "resourceid.md",1
 !INCLUDE "resourcename.md",1
+!INCLUDE "resourcetype.md",1
 !INCLUDE "servicecategory.md",1
 !INCLUDE "servicename.md",1
 !INCLUDE "subaccountid.md",1
