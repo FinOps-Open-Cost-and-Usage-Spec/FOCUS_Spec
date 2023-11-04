@@ -44,7 +44,7 @@ Current values observed in billing data for various scenarios:
 1. A consulting charge based on hours \[used\] would be a "Usage" charge.
    - If the charge happens once and is not based on a long-term agreement over multiple "periods" (as defined by the consuling firm), then it would be a "One-Time" charge.
    - If there is an agreement that services would be available on a repeated basis with a consistent billing date, then the charge would be "Recurring".
-   - A "Usage-Based" frequency would only make sense if the company were to charge after each consulting engagement (e.g., separate line items for each day consulting services were provided).
+   - A "Usage-Based" frequency would only make sense if the company were to charge after each consulting engagement (e.g., separate rows for each day consulting services were provided).
 2. A rounding adjustment ("Adjustment") happens when invoices are generated.
    - If the invoice is generated once and is not expected to repeat, it would be "One-Time".
    - Generally, invoices are repeated every billing period, which would be a "Recurring" frequency.
