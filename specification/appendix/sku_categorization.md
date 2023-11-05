@@ -1,0 +1,26 @@
+# SKU Categorization
+
+SKU Categorization is a set of columns used to organize SKUs into a hierarchy of categories, brands, groups, families, classes, lines, and types. The SKU categorization columns are used to identify the SKU being purchased or used and to group SKUs together for analysis and reporting. SKU categorization is important because it streamlines analysis by facilitating hierarchical exploration of cost and usage data. SKU categorization is commonly used for scenarios like identifying the top cost contributors within a specific grouping of SKUs, identifying and drilling into anomalies.
+
+SKU Categorization is broken down into a normalized set of provider agnostic columns that are required and a set of provider-specific columns that are mostly optional.
+
+The normalized columns are required to ensure consistency and comparability across providers. Currently, there is only one normalized category level, SKU Category. Additional levels of categorization are being considered for future versions of FOCUS.
+
+Of the provider-specific columns, the only column that is required is SKU Brand. The remaining columns are optional and not required to be present in the data. The provider-specific columns are not normalized and are not required to be consistent across providers. The provider-specific columns are intended to provide additional information about the SKU being purchased or used that can be used to organize related SKUs. Groups within each level of categorization should be mutually exclusive and collectively exhaustive with respect to the providers' offerings.
+
+- SKU Category is a mandatory column that identifies the core function of the SKU, similar to Service Category. SKU Category is distinct in that a service (e.g., a virtual server) will utilize SKUs from multiple SKU Categories (e.g., compute, storage, networking).
+- SKU Brand and SKU Group are mandatory columns that indicate provider's marketing brand and service names for the SKU to support the highest provider-specific categorization of the SKU.
+- SKU Family, SKU Class, and SKU Line are optional fields that are not required with no requirement for normalization across providers. Each provides increasing specificity about the SKU.
+- SKU Type is a mandatory column that identifies the specific version or variation of the SKU that was used or purchased based on its distinct specifications.
+
+The following table outlines the level and column names alongside normalization requirements and descriptions for each column.
+
+| Level    | Column       | Normalized | Required | Description                                                                                                                                                                                                                                         |
+| -------- | ------------ | ---------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Category | SkuCategory  | Yes        | Yes      | SKU Category indicates the highest-level classification of the core function of the SKU.                                                                                                                                                            |
+| Brand    | SkuBrandName | No         | Yes      | SKU Brand is the provider-specific marketing name for the overarching offering the SKU falls within.                                                                                                                                                |
+| Group    | SkuGroup     | No         | Yes      | SKU Group is the provider-specific marketing name for the service under the brand. SKUs in a group typically serve the same purpose.                                                                                                                |
+| Family   | SkuFamily    | No         | No       | SKU Family is a group of SKU Classes that address the same core need within the SKU Group.                                                                                                                                                          |
+| Class    | SkuClass     | No         | No       | SKU Class is a collection of SKU Lines that perform a comparable function and can somewhat substitute each other, offering similar features.                                                                                                        |
+| Line     | SkuLine      | No         | No       | SKU Line is a set or series of related SKU Types that have the same characteristics or even technical specifications.                                                                                                                               |
+| Type     | SkuType      | Yes        | Yes      | SKU Type is the specific variation of a product that was used or purchased. SKU Type is a distinct item with a unique technical specifications (e.g., size, price, availability) that cannot depend on any other SKU Type within the same SKU Line. |

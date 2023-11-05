@@ -1,6 +1,6 @@
 # SKU Category
 
-The SKU Category is the highest-level classification of a product that can be used or purchased within an overarching service based on its core function. Each product should have one and only one category that best aligns to its primary purpose. The Product Category may be the same as the Service Category, but can also differ as many services utilize multiple products based on their needs. As an example, a virtual machine may use compute, network, and storage products in order to deliver its core compute service functionality. The Product Category is commonly used for scenarios like analyzing cost trends across providers and identifying anomalous cost patterns.
+The SKU Category is the highest-level classification of a SKU that can be used or purchased within an overarching service based on its core function. Each SKU should have one and only one category that best aligns to its primary purpose. The SKU Category may be the same as the Service Category, but can also differ as many services utilize multiple products based on their needs. As an example, a virtual machine may use compute, network, and storage products in order to deliver its core compute service functionality. The SKU Category is commonly used for scenarios like analyzing cost trends across providers and identifying anomalous cost patterns.
 
 The SkuCategory column MUST be present and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
 
@@ -14,7 +14,7 @@ SKU Category
 
 ## Description
 
-Highest-level classification of a product that can be used or purchased within an overarching service based on its core function.
+Highest-level classification of a SKU that can be used or purchased within an overarching service based on its core function.
 
 ## Content Constraints
 
@@ -27,7 +27,7 @@ Highest-level classification of a product that can be used or purchased within a
 
 Allowed values:
 
-| SKU Category          | Description                                                                                    |
+| SKU Category              | Description                                                                                    |
 | ------------------------- | ---------------------------------------------------------------------------------------------- |
 | AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                             |
 | Analytics                 | Data processing, analytics, and visualization capabilities.                                    |
