@@ -14,7 +14,7 @@ ChargeSubcategory MUST abide by the following requirements:
 - ChargeSubcategory is of type String and MUST be one of the allowed values.
 - ChargeSubcategory MUST NOT be null or empty when ChargeType is "Usage" and the charge is covered by a commitment.
   - When a usage charge is covered by a commitment, ChargeSubcategory MUST be "Commitment Used".
-  - When a commitment is not used within the committed period, ChargeSubcategory MUST be "Commitment Unused" for the unused usage charge.
+  - When a commitment is not used within the committed period, ChargeSubcategory MUST be "Commitment Not Used" for the unused usage charge.
 - ChargeSubcategory MUST be null when ChargeType is "Usage" and is not covered by a commitment.
 - ChargeSubcategory MUST NOT be null or empty when ChargeType is "Adjustment".
   - When ChargeSubcategory is "Refund" or "Credit", the charge MUST be negative.
