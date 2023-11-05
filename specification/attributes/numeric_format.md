@@ -53,6 +53,7 @@ This format requires that single numeric values be represented using an integer 
   
 * Values NOT Meeting Numeric Requirements
   * 1 1/2 - contains fractional notation
+  * 35.2E-7 - contains E notation
   * [3,5,8] - contains an array
   * [4:5] - contains a range
   * 5i + 4 - contains a complex number
