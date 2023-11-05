@@ -4,16 +4,16 @@
 
 Current column mappings for each level of the hierarchy found in available data sets:
 
-| Level    | AWS                                                        | GCP                     | Microsoft           | Oracle                      |
-| -------- | ---------------------------------------------------------- | ----------------------- | ------------------- | --------------------------- |
-| Data set | CUR                                                        | BigQuery                | Cost details        | Cost report                 |
-| Category | None                                                       | None                    | ServiceFamily       |
-| Brand    | Part of servicename                                        | None                    | Provider (MCA only) |
-| Group    | product_group<br>product_servicename                       | SKU Group (not in data) | MeterCategory       | product/service             |
-| Family   | product_product_family                                     | service.description     | MeterSubcategory    | Part of product/Description |
-| Class    | product_instance_family<br>product_abd_instance_class?     | None                    |                     | Part of product/Description |
-| Line     | product_instance_type_family                               | None                    |                     | None                        |
-| Type     | product_instance_type<br>product_transfer_type<br>instance | Part of sku.description | Part of ProductName | Part of product/Description |
+| Level    | AWS                                                        | GCP                     | Microsoft                     | Oracle                      |
+| -------- | ---------------------------------------------------------- | ----------------------- | ----------------------------- | --------------------------- |
+| Data set | CUR                                                        | BigQuery                | Cost details                  | Cost report                 |
+| Category | None                                                       | None                    | ServiceFamily                 | None                        |
+| Brand    | Part of servicename                                        | None                    | Provider (MCA only)           | None                        |
+| Group    | product_group<br>product_servicename                       | SKU Group (not in data) | MeterCategory                 | product/service             |
+| Family   | product_product_family                                     | service.description     | None                          | Part of product/Description |
+| Class    | product_instance_family<br>product_abd_instance_class?     | None                    | ProductCategory (not in data) | Part of product/Description |
+| Line     | product_instance_type_family                               | None                    | MeterSubcategory              | None                        |
+| Type     | product_instance_type<br>product_transfer_type<br>instance | Part of sku.description | Part of ProductName           | Part of product/Description |
 
 ## Example values
 
