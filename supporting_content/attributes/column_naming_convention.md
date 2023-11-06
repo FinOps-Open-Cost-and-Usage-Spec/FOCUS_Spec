@@ -22,20 +22,11 @@ Examples of column names found in provider datasets:
 - Providers need to add additional details that are not available in FOCUS columns to support additional FinOps scenarios.
 - FOCUS needs to allow the addition of these columns without the risk of collision with future FOCUS columns.
 - Considerations:
-  - Augment FOCUS columns vs. custom columns:
-    - Augmenting FOCUS columns allows providers to add FOCUS columns to existing datasets without breaking anyone, which could make adoption simpler
-      - This would double the size of the dataset as new columns are added.
-      - It's unlikely that any provider will add FOCUS columns to an existing datasets without an explicit opt-in, which means we likely wouldn't see the benefit of this approach.
-      - This makes the spec feel like it's a supplemental thing, rather than the primary thing that should be used.
-      - Practitioners will need to explicitly switch to the new columns anyway, so the value of augmenting existing provider-specific columns provides little to no value.
-      - In general, this isn't approach any other open specification tasks for its primary dataset.
-    - Augmenting custom columns establishes FOCUS as _the_ schema and custom columns as the exceptional thing that should be caveated.
-    - BEST: **Augment Custom columns**.
-  - Placement (prefix vs. suffix):
+  - **Placement (prefix vs. suffix):**
     - A prefix would be easier to identify as a custom column even with limited space.
     - A suffix would require expanding the column or explicitly looking at the end of the column name, which can be difficult is some client tools where the end of the name gets cut off.
     - BEST: **Prefix**.
-  - Separator character:
+  - **Separator character:**
     - Should be easily identifiable as a separator.
       - Common: `_`, `-`, `.`, `:`. `@`, `/`, `~`, `|`, `+`, `=`, `;`
       - Uncommon: `$`, `&`, `#`, `!`, `?`, `*`
@@ -47,8 +38,16 @@ Examples of column names found in provider datasets:
       - Common: `_`, `.`, `/`
       - Uncommon: `-`, `:`. `~`, `+`, `$`, `#`
     - BEST: **Underscore** (`_`).
-  - Identifying string (vendor-specific vs. constant vs. none):
-    - A vendor ID would require every vendor to have new columns, which would bloat the column count of a consolidated dataset.
+  - **Identifying string (FOCUS vs. provider-specific vs. constant vs. none):**
+    - A FOCUS prefix allows providers to add FOCUS columns to existing datasets without breaking anyone, which could make adoption simpler
+      - Examples: `FOCUS_`, `focus_`, `f_`
+      - This would double the size of the dataset as new columns are added.
+      - It's unlikely that any provider will add FOCUS columns to an existing datasets without an explicit opt-in, which means we likely wouldn't see the benefit of this approach since practitioners still need to opt-in and change their reporting.
+      - This makes the spec feel like it's a supplemental thing, rather than the primary thing that should be used.
+      - Practitioners will need to explicitly switch to the new columns anyway, so the value of augmenting existing provider-specific datasets provides little to no value.
+      - In general, this isn't approach any other open specification tasks for its primary dataset.
+      - Prefixing custom columns establishes FOCUS as _the_ schema and custom columns as the exceptional thing that should be caveated.
+    - A provider ID would require every provider to have new columns, which would bloat the column count of a consolidated dataset.
       - Examples: `ali_`, `aws_`, `gcp_`, `ibm_`, `ms_`, `oci_`, `tencent_`, `vmw_`
     - A constant string would allow providers to reuse column names, but would make column names longer. This might also look like a FOCUS column if capitalized in the same way.
       - Examples: `Custom_`, `External_`, `Provider_`, `Vendor_`
@@ -57,9 +56,9 @@ Examples of column names found in provider datasets:
     - An abbreviated or very short constant string would keep names short, but goes against the no abbreviations rule.
       - Examples: `alt_`, `aux`, `col_`, `dim_`, `ext_`, `m_`, `oth_`, `p_`, `src_`
     - Using a single character alone would be the shortest and would distinguish it from the FOCUS columns that don't have a prefix.
+      - Examples: `_`, `.`, `~`, `$`, `#`, `@`
       - Using a special character first would also keep all provider columns together outside of the core FOCUS columns when columns are sorted alphabetically.
       - Some programming languages use an underscore (`_`) as a convention to indicate that a property is private. While these values are not "private", it might be a good way to indicate that these columns are not part of the core FOCUS columns.
-      - Examples: `_`, `.`, `~`, `$`, `#`, `@`
     - BEST: **None** (underscore only).
 
 Examples:
