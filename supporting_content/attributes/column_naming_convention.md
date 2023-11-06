@@ -22,6 +22,15 @@ Examples of column names found in provider datasets:
 - Providers need to add additional details that are not available in FOCUS columns to support additional FinOps scenarios.
 - FOCUS needs to allow the addition of these columns without the risk of collision with future FOCUS columns.
 - Considerations:
+  - Augment FOCUS columns vs. custom columns:
+    - Augmenting FOCUS columns allows providers to add FOCUS columns to existing datasets without breaking anyone, which could make adoption simpler
+      - This would double the size of the dataset as new columns are added.
+      - It's unlikely that any provider will add FOCUS columns to an existing datasets without an explicit opt-in, which means we likely wouldn't see the benefit of this approach.
+      - This makes the spec feel like it's a supplemental thing, rather than the primary thing that should be used.
+      - Practitioners will need to explicitly switch to the new columns anyway, so the value of augmenting existing provider-specific columns provides little to no value.
+      - In general, this isn't approach any other open specification tasks for its primary dataset.
+    - Augmenting custom columns establishes FOCUS as _the_ schema and custom columns as the exceptional thing that should be caveated.
+    - BEST: **Augment Custom columns**.
   - Placement (prefix vs. suffix):
     - A prefix would be easier to identify as a custom column even with limited space.
     - A suffix would require expanding the column or explicitly looking at the end of the column name, which can be difficult is some client tools where the end of the name gets cut off.
