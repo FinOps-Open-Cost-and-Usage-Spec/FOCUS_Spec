@@ -31,7 +31,8 @@ Indicates how to include and apply discounts to usage charges or rows.
     * If a provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.
 * Purchased discounts (e.g., commitment-based discounts) MUST specify CommitmentUtilization on the usage rows that received the reduced rates from the discount. 
 * Purchased discounts (e.g., commitment-based discounts) MUST be amortized.
-  * The BilledCost MUST be 0 for the discounted portion of the charge and the EffectiveCost MUST be the portion of the purchase cost that applies to this row.
+  * The BilledCost MUST be 0 for any row where the commitment covers the entire cost for the charge period.
+  * The EffectiveCost MUST be the portion of the amortized purchase cost that applies to this row.
   * CommitmentUtilization MUST be "Used" for rows that received a reduced price from that commitment.
   * If a commitment is not fully utilized, the provider MUST include a row that represents the unused portion of the commitment for that charge period. CommitmentUtilization MUST be "Not Used".
   * The sum of the EffectiveCost for all "Used" and "Not Used" rows for each CommitmentDiscountId MUST be the same as the BilledCost of the commitment-based discount purchase.
