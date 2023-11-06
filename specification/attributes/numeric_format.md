@@ -22,7 +22,7 @@ Rules and formatting requirements for numeric columns appearing in billing data.
 * Numeric values MUST be expressed as integer or decimal values. Fractional notation MUST NOT be used.
 * Numeric values MUST NOT be expressed with mathematical symbols, operators, or exponent values.
 * Numeric values MUST NOT contain qualifiers or additional characters (e.g., currency symbols, units of measure, etc.).
-* Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point if required to express a decimal value.
+* Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (`.`) if required to express a decimal value.
 * Numeric values MUST NOT include a character to represent a sign for a positive value. A negative sign (-) MUST indicate a negative value.
 * Numeric values MUST NOT be used to represent binary values (e.g., 0 or 1).
 * Columns with a Numeric value format MUST present one of the following values as the "Data type" in the column definition.
