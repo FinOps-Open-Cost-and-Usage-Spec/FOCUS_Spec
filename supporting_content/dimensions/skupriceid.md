@@ -6,7 +6,7 @@ Current column mappings found in available data sets:
 | ------------ | --------------------------- | -------------------------------------- |
 | AWS          | CUR                         | pricing/rate\_code \| pricing/rate\_id |
 | Azure        | Cost details export or API  | ProductID                              |
-| GCP          | Big Query Export            | sku.id                                 |
+| GCP          | BigQuery Billing Export            | sku.id                                 |
 | OCI          | Cost Reports                | cost/productSKU (no price level ID)    |
 
 
