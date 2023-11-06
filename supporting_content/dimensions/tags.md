@@ -13,6 +13,8 @@ Current resource types found or extracted from available data sets:
 ## Discussion Topics
 
 Discussion / Scratch space:
+- Finalized section may or may not be necessary because providers would only provide finalized tags
+	- Remove 'finalized' from first sentence of Tags 
 - User-defined tags should not have a prefix
 - Provider can create and account for a reserved prefix set
 - Providers should publish known prefixes somewhere
