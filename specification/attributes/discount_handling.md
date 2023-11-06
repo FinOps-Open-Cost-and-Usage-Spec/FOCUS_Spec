@@ -23,7 +23,7 @@ Indicates how to include and apply discounts to usage charges or rows.
 ## Requirements
 
 * All applicable discounts MUST be applied to each row they pertain to and MUST NOT be negated in a separate row.
-* All discounts applied to a row MUST apply to the entire charge. 
+* All discounts applied to a row MUST apply to the entire charge.
   * If a discount only applies to a subset of the charge, then that portion of the charge MUST be split into a separate row. One with the discount and one without.
   * If multiple discounts apply, there MUST be separate rows for each unique combination of applied discounts or undiscounted amount.
   * Each discount MUST be identifiable using existing FOCUS columns. 
