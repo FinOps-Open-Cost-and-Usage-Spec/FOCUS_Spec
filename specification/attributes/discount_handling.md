@@ -35,7 +35,7 @@ Indicates how to include and apply discounts to usage charges or rows.
   * The EffectiveCost MUST be the portion of the amortized purchase cost that applies to this row.
   * CommitmentUtilization MUST be "Used" for rows that received a reduced price from that commitment.
   * If a commitment is not fully utilized, the provider MUST include a row that represents the unused portion of the commitment for that charge period. Charge Subcategory MUST be "Commitment Unused".
-  * The sum of the EffectiveCost for all "Used" and "Not Used" rows for each CommitmentDiscountId MUST be the same as the BilledCost of the commitment-based discount purchase.
+  * The sum of the EffectiveCost for all "Commitment Used" and "Commitment Unused" rows for each ChargeSubcategory MUST be the same as the BilledCost of the commitment-based discount purchase.
 * Credits that are applied after the fact MUST use a ChargeType of "Adjustment" and ChargeSubcategory of "Credit".
 
 ## Exceptions
