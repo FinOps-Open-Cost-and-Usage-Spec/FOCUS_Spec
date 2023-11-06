@@ -2,7 +2,7 @@
 
 Columns that provide Key-Value information are often used in place of separate columns for enumerating data which would be inherently sparse and/or without predetermined keys. This consolidates related information and provides more consistency in the schema. Key-value pairs are also referred to as name-value pairs, attribute-value pairs, or field-value pairs.
 
-All key-value related columns defined in the FOCUS specification MUST follow the key-value formatting requirements listed below. These columns SHALL NOT contain nested elements.
+All key-value related columns defined in the FOCUS specification MUST follow the key-value formatting requirements listed below.
 
 ## Attribute ID
 
