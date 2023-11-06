@@ -2,7 +2,7 @@
 
 Charge Subcategory indicates what kind of usage or adjustment the row represents. Charge Subcategory is a supplemental detail to the Charge Type. It provide additional context to describe the primary category of charge.
 
-This linkage to the parent ChargeType means that for every entry under ChargeType, there is a corresponding Charge Subcategory that further refines the nature of the charge. It's a nested level of detail that allows users to see not just what type of charge was incurred, but also how that charge interacts with their purchasing agreements and discounts.
+This linkage to the parent Charge Type means that for every entry under Charge Type, there can be a corresponding Charge Subcategory that further refines the nature of the charge. It's a nested level of detail that allows users to see not just what type of charge was incurred. Current sub-categorization currently applies to Charge Type values 'Usage' and 'Adjustment'. Support for others will be added as needed.
 
 When Charge Type is "Usage", the Charge Subcategory specifies if the usage is accounted for by pre-purchased commitments or if the usage has not benefited from these discounts.
 
