@@ -2,7 +2,7 @@
 
 Columns that contain currency information in cost data following a consistent format reduces friction for FinOps practitioners that consume the data for analysis, reporting, and other use cases.
 
-All currency related columns defined in the FOCUS schema MUST follow the currency formatting requirements listed below. Provider generated currency-related columns SHOULD adopt the same format requirements over time.
+All currency related columns defined in the FOCUS schema MUST follow the currency formatting requirements listed below. Custom currency-related columns SHOULD also follow the currency formatting requirements.
 
 ## Attribute ID
 
