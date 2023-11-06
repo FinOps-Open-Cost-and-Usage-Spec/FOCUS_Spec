@@ -86,6 +86,8 @@ Product categorization sources:
 - https://catsy.com/blog/product-categorization
 - https://www.cleverism.com/lexicon/product-hierarchy
 - https://www.yourarticlelibrary.com/products/product-management-product-levels-product-hierarchy-product-mix-and-other-details/22202
+- https://airfocus.com/blog/how-to-setup-product-hierarchies
+- https://www.indeed.com/career-advice/career-development/product-hierarchy
 - https://www.marketing91.com/product-class
 - https://www.marketing91.com/understanding-product-hierarchy
 - https://docs.bmc.com/docs/ac2105/product-categorization-1002218039.html
