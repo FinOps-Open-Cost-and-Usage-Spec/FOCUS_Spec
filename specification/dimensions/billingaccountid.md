@@ -4,7 +4,7 @@ A billing account is a container for resources and/or services that are billed t
 
 A Billing Account ID is a provider assigned identifier for a billing account.
 
-The BillingAccountId column MUST be present in the billing data. This column must be of type String and MUST NOT contain null values. BillingAccountId MUST be a globally unique identifier within a provider.
+The BillingAccountId column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values. BillingAccountId MUST be a globally unique identifier within a provider.
 
 See [Appendix: Grouping constructs for resources and/or services](#groupingconstructsforresourcesand/orservices) for details and examples of the different grouping constructs supported by FOCUS.
 
