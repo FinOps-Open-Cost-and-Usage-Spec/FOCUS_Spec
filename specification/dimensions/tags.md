@@ -69,7 +69,7 @@ The set of finalized tags assigned to Tag Sources.
 | Column required | True             |
 | Data type       | JSON Object      |
 | Allows nulls    | True             |
-| Value format    | MUST adhere to KeyValueFormat Attribute |
+| Value format    | Key-Value Format |
 
 ## Introduced (version)
 
