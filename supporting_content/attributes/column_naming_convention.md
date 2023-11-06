@@ -46,9 +46,10 @@ Examples of column names found in provider datasets:
     - A lowercase constant string would distinguish it from FOCUS column naming conventions, but could still make column names exceedingly long.
       - Examples: `custom_`, `provider_`, `vendor_`
     - An abbreviated or very short constant string would keep names short, but goes against the no abbreviations rule.
-      - Examples: `alt_`, `aux`, `col_`, `dim_`, `ext_`, `oth_`, `p_`, `src_`
+      - Examples: `alt_`, `aux`, `col_`, `dim_`, `ext_`, `m_`, `oth_`, `p_`, `src_`
     - Using a single character alone would be the shortest and would distinguish it from the FOCUS columns that don't have a prefix.
       - Using a special character first would also keep all provider columns together outside of the core FOCUS columns when columns are sorted alphabetically.
+      - Some programming languages use an underscore (`_`) as a convention to indicate that a property is private. While these values are not "private", it might be a good way to indicate that these columns are not part of the core FOCUS columns.
       - Examples: `_`, `.`, `~`, `$`, `#`, `@`
     - BEST: **Underscore** (`_`).
 
