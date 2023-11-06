@@ -34,21 +34,21 @@ A tag can either be static or dynamic. If a tag is static, its value is immutabl
 
 As a example, let's assume 1 sub account exists with 1 virtual machine with the following details:
 
-* Sub account
-  * id: *my-account*
+* Sub Account
+  * id: *my-sub-account*
   * user-defined tags: *team:ops*, *env:prod*
-* Virtual machine
+* Virtual Machine
   * id: *my-vm*
   * user-defined tags: *team:web*
 
 The table below represents a finalized cost and usage dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
 
-| ResourceType    | ResourceId | Tags                                        |
-| :---------------| :----------| :-------------------------------------------|
-| Account         | my-account | { "team": "ops", "env": "prod" }            |
-| Virtual Machine | my-vm      | { "team": "web", *"env": "prod"* }          |
+| ResourceType    | ResourceId     | Tags                                        |
+| :---------------| :--------------| :-------------------------------------------|
+| Sub Account     | my-sub-account | { "team": "ops", "env": "prod" }            |
+| Virtual Machine | my-vm          | { "team": "web", *"env": "prod"* }          |
 
-Because the the Virtual Machine Resource did not have an `env` tag, it inherited tag, `env:prod` (italicized), from its parent Account.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it did not inherit `team:ops` from its parent Account.
+Because the the Virtual Machine Resource did not have an `env` tag, it inherited tag, `env:prod` (italicized), from its parent Sub Account.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it did not inherit `team:ops` from its parent Sub Account.
 
 ## Column ID
 
