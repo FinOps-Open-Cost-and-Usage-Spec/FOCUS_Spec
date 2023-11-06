@@ -18,7 +18,7 @@ Current values observed in billing data for various scenarios:
 | ------------ | -------------------------- | ------------------------------------------------------------------------ |
 | AWS          | CUR                        | rate\_code: KF338J7FCKZPUBD9.JRTCKXETXF.6YS6EN2CT7 rate\_id: 20457007287 |
 | Azure        | Cost Details export or API | DZH318Z0BNZH006F                                                                         |
-| GCP          | Big Query                  | F1ED-0732-5BDA                                                           |
+| GCP          | BigQuery Billing Export                  | F1ED-0732-5BDA                                                           |
 | OCI          | Cost Reports               | B93382 (no price level ID)                                               |
 
 ## Discussion / Scratch space
