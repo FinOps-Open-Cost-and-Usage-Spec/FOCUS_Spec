@@ -18,7 +18,7 @@ Discount Handling
 
 ## Description
 
-Indicates how to include and apply discounts to usage charges or rows. 
+Indicates how to include and apply discounts to usage charges or rows.
 
 ## Requirements
 
