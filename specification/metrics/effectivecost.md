@@ -1,6 +1,6 @@
 # Effective Cost
 
-The Effective Cost represents a charge inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of relevant pre-paid fees (one-time or recurring) paid to cover future eligible charges. The amortized  portion included should be proportional to the [Quantity In Pricing Unit](#quantityinpricingunit) and the time granularity of the data. This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
+The Effective Cost represents a charge inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of relevant purchases (one-time or recurring) paid to cover future eligible charges. The amortized portion included should be proportional to the [Quantity In Pricing Unit](#quantityinpricingunit) and the time granularity of the data. This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
 
 Practitioners are faced with two main challenges with respect to this metric:
 
@@ -19,7 +19,7 @@ Effective Cost
 
 ## Description
 
-A charge inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of upfront charges (one-time or recurring).
+A charge inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of relevant purchases (one-time or recurring) paid to cover future eligible charges.
 
 ### Concerning Granularity and Distribution of Recurring Fee
 
@@ -27,7 +27,7 @@ Providers should distribute the commitment purchase amount instead of including 
 
 ### Concerning Amortization Approaches
 
-The amortization of the upfront charge should be amortized using a methodology determined by the provider that reflects the needs of their customer base and is proportional with usage quantity and the time granularity of the line item.  Should a practitioner desire to amortize upfront fees using a different approach, the practitioner can do so using the Billed Cost for the line item representing the initial purchase.
+The amortization of the upfront charge should be amortized using a methodology determined by the provider that reflects the needs of their customer base and is proportional with usage quantity and the time granularity of the line item. Should a practitioner desire to amortize upfront fees using a different approach, the practitioner can do so using the Billed Cost for the line item representing the initial purchase.
 
 ## Content constraints
 
