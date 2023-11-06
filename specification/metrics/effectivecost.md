@@ -1,6 +1,6 @@
 # Effective Cost
 
-The Effective Cost represents a charge inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of upfront charges (one-time or recurring). This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends. The amortization of upfront charges portion of this metric's value should be proportional to the [Quantity In Pricing Unit](#quantityinpricingunit) and the time granularity of the data.
+The Effective Cost represents a charge inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of relevant pre-paid fees (one-time or recurring) paid to cover future eligible charges. The amortized  portion included should be proportional to the [Quantity In Pricing Unit](#quantityinpricingunit) and the time granularity of the data. This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
 
 Practitioners are faced with two main challenges with respect to this metric:
 
