@@ -47,8 +47,10 @@ Examples of column names found in provider datasets:
       - Practitioners will need to explicitly switch to the new columns anyway, so the value of augmenting existing provider-specific datasets provides little to no value.
       - In general, this isn't approach any other open specification tasks for its primary dataset.
       - Prefixing custom columns establishes FOCUS as _the_ schema and custom columns as the exceptional thing that should be caveated.
-    - A provider ID would require every provider to have new columns, which would bloat the column count of a consolidated dataset.
+    - A provider ID would make the source of the data easily identifiable, but requires every provider to have new columns which would bloat the column count of a consolidated dataset.
       - Examples: `ali_`, `aws_`, `gcp_`, `ibm_`, `ms_`, `oci_`, `tencent_`, `vmw_`
+      - If we use a provider prefix, there are concerns about conflicting names that would require a registration system, which is a lot of work.
+      - Ultimately, there shouldn't be a need to use custom prefixes since provider-specific columns will never conflict due to data being in separate rows.
     - A constant string would allow providers to reuse column names, but would make column names longer. This might also look like a FOCUS column if capitalized in the same way.
       - Examples: `Custom_`, `External_`, `Provider_`, `Vendor_`
     - A lowercase constant string would distinguish it from FOCUS column naming conventions, but could still make column names exceedingly long.
