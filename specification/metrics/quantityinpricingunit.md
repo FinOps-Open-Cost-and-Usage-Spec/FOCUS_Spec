@@ -2,7 +2,7 @@
 
 The Quantity in Pricing Unit represents the volume of a given resource and/or service used or purchased based on the [Pricing Unit](#pricingunit). Distinct from [Quantity In Usage Unit](#quantityinusageunit) (complementary to [Usage Unit](#usageunit)), it focuses on pricing and cost, not resource and service consumption.
 
-The QuantityInPricingUnit column MUST be present in the billing data. This column MUST be a numeric value of type Decimal. The value MAY be negative in cases where [ChargeType](#chargetype) is 'Adjustment'. This column MUST NOT contain null values where unit prices are not null. When unit prices are not null, multiplying QuantityInPricingUnit by a unit price MUST produce a result equal to the corresponding cost metric.
+The QuantityInPricingUnit column MUST be present in the billing data. This column MUST be a numeric value of type Decimal. The value MAY be negative in cases where [ChargeType](#chargetype) is "Adjustment". This column MUST NOT contain null values where unit prices are not null. When unit prices are not null, multiplying QuantityInPricingUnit by a unit price MUST produce a result equal to the corresponding cost metric.
 
 ## Column ID
 
