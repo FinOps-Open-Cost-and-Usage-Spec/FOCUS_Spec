@@ -6,7 +6,7 @@ Some discount offers can be purchased from a provider to get reduced prices. The
 
 Amortization is a process used to break down and spread purchase costs over a period of time or term of use. When a purchase is applicable to resources, like commitment-based discounts, the amortized cost of a resource takes the initial payment and term into account and distributes it out based on the resource's usage, attributing the prorated cost for each unit of billing. Amortization enables users of billing data to distribute purchase charges to the appropriate audience in support of cost allocation efforts. Discount Handling for purchased commitments is commonly used for scenarios like calculating utilization and implementing chargeback for the purchase amount.
 
-While providers may use different terms to describe discounts, FOCUS identifies a discount as being a reduced price applied directly to a row or charge. Any price or cost reductions that are awarded after the fact are identified as a "Credit" Charge Subcategory. One example might be when a provider offers a reduced rate after passing a certain threshold of usage or spend.
+While providers may use different terms to describe discounts, FOCUS identifies a discount as being a reduced price applied directly to a row. Any price or cost reductions that are awarded after the fact are identified as a "Credit" Charge Subcategory. One example might be when a provider offers a reduced rate after passing a certain threshold of usage or spend.
 
 All rows defined in FOCUS MUST follow the discount handling requirements listed below.
 
@@ -29,7 +29,7 @@ Indicates how to include and apply discounts to usage charges or rows.
   * If a discount only applies to a subset of the charge, then that portion of the charge MUST be split into a separate row. One with the discount and one without.
   * If multiple discounts apply, there MUST be separate rows for each unique combination of applied discounts or undiscounted amount.
   * Each discount MUST be identifiable using existing FOCUS columns.
-    * Discounts applied to charges/rows from a commitment-based discount MUST include a CommitmentDiscountId.
+    * Discounts applied to rows from a commitment-based discount MUST include a CommitmentDiscountId.
     * If a provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.
 * Purchased discounts (e.g., commitment-based discounts) MUST specify CommitmentUtilization on the usage rows that received the reduced rates from the discount.
 * Purchased discounts (e.g., commitment-based discounts) MUST be amortized.
