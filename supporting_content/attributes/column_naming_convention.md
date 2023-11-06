@@ -60,7 +60,7 @@ Examples of column names found in provider datasets:
       - Using a special character first would also keep all provider columns together outside of the core FOCUS columns when columns are sorted alphabetically.
       - Some programming languages use an underscore (`_`) as a convention to indicate that a property is private. While these values are not "private", it might be a good way to indicate that these columns are not part of the core FOCUS columns.
       - Examples: `_`, `.`, `~`, `$`, `#`, `@`
-    - BEST: **Underscore** (`_`).
+    - BEST: **None** (underscore only).
 
 Examples:
 
