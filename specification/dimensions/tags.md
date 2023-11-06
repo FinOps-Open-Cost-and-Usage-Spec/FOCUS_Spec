@@ -30,7 +30,7 @@ The following is an example of one user-defined tag and one provider-defined tag
 
 ## Finalized Tags
 
-A Tag can either be static or dynamic. If a Tag is static, its value is immutable. If a Tag is dynamic, its value is determined by a set of predefined user or provider rules. A finalized Tag is the final result of any static or dynamic Tag.
+A tag can either be static or dynamic. If a tag is static, its value is immutable. If a tag is dynamic, its value is determined by a set of predefined user or provider rules. A finalized tag is the final result of any static or dynamic Tag.
 
 As a example, let's assume 1 sub account exists with 1 virtual machine with the following details:
 
