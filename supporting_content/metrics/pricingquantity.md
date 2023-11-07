@@ -1,9 +1,9 @@
-# Column: QuantityInPricingUnit
+# Column: PricingQuantity
 
 ## Example treatment for non-metered charges (e.g. Tax Treatment)
 
 Example A
-| Description          | Quantity in Pricing Unit  | Unit Price   | Total     | 
+| Description          | Pricing Quantity          | Unit Price   | Total     | 
 |:---------------------|:--------------------------|:-------------|-----------|
 | Compute Usage        | 100                       | 1.0          | $100      |
 | Tax on Compute Usage | 100                       | 0.2          | $20       |
@@ -11,7 +11,7 @@ Example A
 NOTE: Double counting of hours
 
 Example B
-| Description          | Quantity in Pricing Unit  | Unit Price   | Total     | 
+| Description          | Pricing Quantity          | Unit Price   | Total     | 
 |:---------------------|:--------------------------|:-------------|-----------|
 | Compute Usage        | 100                       | 1.0          | $100      |
 | Tax on Compute Usage | 1                         | 20           | $20       |
@@ -19,7 +19,7 @@ Example B
 NOTE: Skews average of Unit price
 
 Example C
-| Description          | Quantity in Pricing Unit  | Unit Price   | Total     | 
+| Description          | Pricing Quantity          | Unit Price   | Total     | 
 |:---------------------|:--------------------------|:-------------|-----------|
 | Compute Usage        | 100                       | 1.0          | $100      |
 | Tax on Compute Usage | NULL                      | NULL         | $20       |
