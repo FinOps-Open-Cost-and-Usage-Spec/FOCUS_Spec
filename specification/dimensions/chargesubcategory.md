@@ -6,7 +6,7 @@ This linkage to the parent Charge Type means that for every entry under Charge T
 
 When Charge Type is "Usage" and the charge is related to a commitment, the Charge Subcategory indicates whether the row represents committed usage or is an amortized charge for the unused portion of the commitment. Charge Subcategory is commonly used for scenarios like calculating commitment utilization when ChargeType is "Usage".
 
-When Charge Type is "Adjustment", the Charge Subcategory indicates what kind of after-the-fact adjustment the record represents. Adjustment type is commonly used to identify changes like credits and refunds.
+When Charge Type is "Adjustment", the Charge Subcategory indicates what kind of after-the-fact adjustment the record represents and is commonly used to identify changes like credits and refunds.
 
 ChargeSubcategory MUST follow the requirements listed below:
 
