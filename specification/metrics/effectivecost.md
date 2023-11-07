@@ -2,7 +2,7 @@
 
 The Effective Cost represents a charge inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of relevant purchases (one-time or recurring) paid to cover future eligible charges. The amortized portion included should be proportional to the [Quantity In Pricing Unit](#quantityinpricingunit) and the time granularity of the data. This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
 
-Practitioners are faced with two main challenges with respect to this metric:
+This metric resolves two challenges that are faced by practitioners:
 
 1. Practitioners need to amortize upfront fees over the duration of the commitment and distribute those fees to the appropriate reporting groups (e.g. tags, resources).
 2. Many commitment-based discount constructs include a recurring expense for the commitment for every billing period and must distribute this cost to the resources using the commitment. This forces reconciliation between the initial commitment line item per period and the actual usage line items.
