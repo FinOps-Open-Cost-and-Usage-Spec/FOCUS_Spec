@@ -8,7 +8,7 @@ Current resource types found or extracted from available data sets:
 | :-------- | :---------------------- | :-------------------------------------------------------|
 | AWS       | CUR                     | lineItem/LineItemDescription 				|
 | GCP       | BigQuery Billing Export | sku.description                                         |
-| Microsoft | Cost details            | Not available      			                |
+| Microsoft | Cost details            | ProductName      			                |
 
 ## Example usage scenarios
 
