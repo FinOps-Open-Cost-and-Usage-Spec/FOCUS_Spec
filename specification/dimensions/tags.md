@@ -9,7 +9,8 @@ The Tags column adheres to the following requirements:
 * The Tags column MUST contain user-defined and/or provider-defined tags.
 * The Tags column MUST only contain finalized tags.
 * The Tags column MUST be in Key-Value Format.
-* A Tag without a specified value MUST have its value set to null.
+* A Tag key without a specified value MUST have its tag value set to null.
+* If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
 * Providers MUST NOT alter user-defined Tag keys or values.
 
 Provider-defined Tags additionally adhere to the following requirements:
