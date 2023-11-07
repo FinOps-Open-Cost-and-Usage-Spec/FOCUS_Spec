@@ -8,7 +8,7 @@ When Charge Type is "Usage" and the charge is related to a commitment, the Charg
 
 When Charge Type is "Adjustment", the Charge Subcategory indicates what kind of after-the-fact adjustment the record represents. Adjustment type is commonly used to identify changes like credits and refunds.
 
-ChargeSubcategory MUST abide by the following requirements:
+ChargeSubcategory MUST follow the requirements listed below:
 
 - The ChargeSubcategory MUST be present in the billing data.
 - ChargeSubcategory is of type String and MUST be one of the allowed values.
