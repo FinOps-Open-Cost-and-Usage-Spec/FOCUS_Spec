@@ -2,7 +2,7 @@
 
 The List Unit Price represents a suggested provider-published unit price, identified by the [SKU Price ID](#skupriceid), for a single [Pricing Unit](#pricingunit) of the associated SKU of a charge. This price is denominated in the [Billing Currency](#billingcurrency). The List Unit Price can be used for calculating savings based on various rate optimization activities.
 
-The ListUnitPrice column MUST be present in the billing data. This column MUST be a numeric value of type Decimal within the range of non-negative decimal values and specified in the BillingCurrency. ListUnitPrice MUST NOT be null or empty if SkuPriceId is not null and MUST be null if SkuPriceId is null. When ListUnitPrice is not null, multiplying ListUnitPrice by [QuantityInPricingUnit](#quantityinpricingunit) MUST equal [ListCost](#listcost).
+The ListUnitPrice column MUST be present in the billing data. This column MUST be a numeric value of type Decimal within the range of non-negative decimal values and denominated in the BillingCurrency. ListUnitPrice MUST NOT be null or empty if SkuPriceId is not null and MUST be null if SkuPriceId is null. When ListUnitPrice is not null, multiplying ListUnitPrice by [QuantityInPricingUnit](#quantityinpricingunit) MUST equal [ListCost](#listcost).
 
 ## Column ID
 
