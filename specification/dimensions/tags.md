@@ -32,7 +32,7 @@ The following is an example of one user-defined tag and one provider-defined tag
 
 A tag can either be static or dynamic. If a tag is static, its value is immutable. If a tag is dynamic, its value is determined by a set of predefined user or provider rules. A finalized tag is the final result of any static or dynamic Tag.
 
-As a example, let's assume 1 sub account exists with 1 virtual machine with the following details:
+As a example, let's assume 1 sub account exists with 1 virtual machine with the following details, and tag inheritance favors Resources over Sub Accounts.
 
 * Sub Account
   * id: *my-sub-account*
