@@ -4,7 +4,7 @@
 
 ### 7 Day Full upfront Reservation
 
-#### On the day of purchase a line item exist for the upfront cost of the reservation as follows
+#### On the day of purchase a line item exists for the upfront cost of the reservation as follows
 
 | Charge period           | Billing period           | Charge Type | Units | Billed Cost | Effective Cost |
 | ----------------------- | ------------------------ | ----------- | ----- | ----------- | -------------- |
