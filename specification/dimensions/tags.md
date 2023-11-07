@@ -60,7 +60,7 @@ Tags
 
 ## Description
 
-The set of finalized tags assigned to Tag Sources.
+The set of tags assigned to Tag Sources that also account for potential provider-defined or user-defined tag evaluations.
 
 ## Content Constraints
 
