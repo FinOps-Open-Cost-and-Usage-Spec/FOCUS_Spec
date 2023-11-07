@@ -51,5 +51,3 @@ Potato / Tomato v1 discussion: <https://docs.google.com/document/d/1-flGM09zj3Qk
 
 Potato / Tomato v2 discussion:\
 <https://docs.google.com/document/d/18eL6G8WhbmEIHtrjqQlWqckgMRUQSs1aZwmwuRKQfqU/edit#heading=h.swm58hl317f3>
-
-I have no experience with GCP reseller UC, but I assume you should/could use [REST Resource: billingAccounts | Cloud Billing](https://cloud.google.com/billing/docs/reference/rest/v1/billingAccounts) in order to resolve the Parent Billing account ID for Provider mapping?!
