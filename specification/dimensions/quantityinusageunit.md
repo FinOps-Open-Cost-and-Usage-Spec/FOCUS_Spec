@@ -24,7 +24,7 @@ The number of units of a resource or service that was used or consumed based on 
 |-----------------|--------------|
 | Column required | True         |
 | Data type       | Numeric      |
-| Allows nulls    | False        |
+| Allows nulls    | True         |
 | Value format    | Numeric value |
 
 ## Introduced (version)
