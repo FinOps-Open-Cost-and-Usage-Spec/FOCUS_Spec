@@ -13,11 +13,11 @@ Current values observed in billing data for various scenarios:
 
 ## Discussion / Scratch space
 
-- Two main classes - user-controlled columns and provider controlled columns
+- Two main classes - user-controlled columns and provider-controlled columns
 - Tags are user defined and may include empty strings
   - User may not set a value here - where it would be null
   - If tags come in a single column serialized as a map or something equivalent, then the empty tag value issue may not be an issue
-  - If no tags were defined, it should be set to null OR an empty json object<br>
+  - If no tags were defined, it should be set to null OR an empty JSON object<br>
     `TODO:` In appropriate place, define how tags should be provided in the billing data by providers
 - Outside of tags, every value should be null where it can't be specified as opposed to placeholder values.
   - Is there a case where on a required column that doesn't allow nulls, and a provider doesn't have a valid value that applies, we may need to come up with a placeholder value
