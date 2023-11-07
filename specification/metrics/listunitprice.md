@@ -14,7 +14,7 @@ List Unit Price
 
 ## Description
 
-A suggested provider-published unit price for a single pricing measurement unit (identified by a [Sku Price Id](#skupriceid)), which incorporates free-tier, volume/tier-based, BYOL-based and dynamically priced SKU rates, while excluding any other discounts or the amortization of upfront charges (one-time or recurring).
+A suggested provider-published unit price, identified by the [SKU Price ID](#skupriceid), for a single [Pricing Unit](#pricingunit) of the associated SKU of a charge.
 
 ## Content Constraints
 
