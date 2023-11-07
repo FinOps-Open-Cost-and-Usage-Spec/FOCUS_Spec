@@ -2,7 +2,7 @@
 
 The Open Cloud Bill working group will develop a common, source-neutral schema of
 billing, cost, usage, and observability data mapped to a variety of cloud service provider and SaaS product
-sources, with metadata, dimensions, metrics, and measures for the source and common schema fields. As per the [Working Group Chater]() **Link TBC**
+sources, with metadata, dimensions, metrics, and measures for the source and common schema fields. As per the [Working Group Charter]() **Link TBC**
 
 ## Notation Conventions and Compliance
 
@@ -56,9 +56,9 @@ Most people will not need any development environment, it is mostly needed by th
 5. Install pandoc and required filter library
 
 	`brew install pandoc`
-	
+
 	`brew install --cask wkhtmltopdf`
-6. If your machine does not have git/make etc, you might fun the following: Install developer command line tools for MacOS 
+6. If your machine does not have git/make etc, you might fun the following: Install developer command line tools for MacOS
 
 	`xcode-select --install`
 

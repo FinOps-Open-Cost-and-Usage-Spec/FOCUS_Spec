@@ -9,6 +9,7 @@ Current column mappings found in available data sets:
 | AWS       | CUR                      | None                                       |
 | GCP       | Big Query Billing Export | None                                       |
 | Microsoft | Cost details             | ServiceFamily is close, but based on usage |
+| OCI | Cost reports | Closest thing is column product/service in cost reports |
 
 ## Discussion / Scratch space
 

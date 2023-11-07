@@ -1,22 +1,21 @@
-## Supporting content
+# Column: Billed Cost
 
-### Column: Billed Cost
-
-#### Example provider mappings 
+## Example provider mappings
 
 Current column mappings found in available data sets:
 
 | **Provider** | **Data set** | **Column** |
 |---|---|---|
 | AWS | CUR | lineItem/NetUnblendedCost (If you have an EDP, otherwise ​​line_item_unblended_cost) |
-| GCP | Big Query Billing Export | Cost (The cost of the usage before any credits, to a precision of up to six decimal places) |
+| GCP | Big Query Billing Export | credits + cost (The cost of the usage before any credits, to a precision of up to six decimal places. To get the total cost including credits, any credits.amount should be added to cost.) |
 | Microsoft | Cost details | Cost, CostInBillingCurrency, CostInPricingCurrency, EffectivePrice |
+| OCI | Cost reports | cost/myCostOverage (The cost billed for overage usage of a resource) |
 
-#### Example usage scenarios
+## Example usage scenarios
 
 See [Cost Metrics Examples Spreadsheet](https://docs.google.com/spreadsheets/d/1bhRELDgf3LTSfQJRrCyovTt65g4ElimYHq6fmKOz83E) for examples of billing data for various scenarios.
 
-### Discussion / Scratch space
+## Discussion / Scratch space
 
 - Aggregations can capture billed cost across different charge types.
   - The cost shown in a single line item may not be the final billed cost of a given resource for a billing period as taxes, discounts and other adjustments for the same resource will be in other rows.
@@ -51,4 +50,3 @@ See [Cost Metrics Examples Spreadsheet](https://docs.google.com/spreadsheets/d/1
 | 369.15 | CNY | 369.15 | CNY |
 
 *Do we just need a THIRD option - CostInBase, BaseCurrency - which is like UTC - it could be USD? OR are we assuming that PricedCurrency is always USD?*
-
