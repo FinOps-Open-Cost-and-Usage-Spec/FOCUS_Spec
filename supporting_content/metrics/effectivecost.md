@@ -24,7 +24,7 @@ ___
 
 ___
 
-#### If the Reserved Instance is unused during a period, for example another ineligible instance type is used:
+#### If the Reserved Instance is unused during a period, for example another ineligible instance type is used
 
 | Charge period           | Billing period           | Charge Type     | Units | Billed Cost | Effective Cost |
 | ----------------------- | ------------------------ | --------------- | ----- | ----------- | -------------- |
@@ -35,7 +35,7 @@ ___
 
 ___
 
-#### If the RI is partially unused during a period, for example a scale down occurs:
+#### If the RI is partially unused during a period, for example a scale down occurs
 
 | Charge period           | Billing period           | Charge Type     | Units | Billed Cost | Effective Cost |
 | ----------------------- | ------------------------ | --------------- | ----- | ----------- | -------------- |
