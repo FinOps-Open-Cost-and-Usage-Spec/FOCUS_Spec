@@ -1,4 +1,4 @@
-# Column: PricingUnit
+# Column: PricingMeasure
 
 ## Example provider mappings
 
@@ -43,15 +43,17 @@ Current values observed in billing data for various scenarios:
 
 ## Discussion / Scratch space
 
-### PricingUnit - non-normalized vs normalized
+### PricingMeasure - non-normalized vs normalized
+* After several discussions the team has decided to use **PricingMeasure (non-normalized)** instead of earlier proposed PricingUnit (semi-normalized).
+* Distinction between non-normalized, semi-normalized/normalized columns is clear and it is in line with UsageUnit (semi-normalized) name.
 
-* PricingUnit is commonly used for scenarios like validating unit prices against the price sheet and thus must match (or at least align) with the corresponding value published in the price list. Since price sheets fall outside the scope of FOCUS, PricingUnit remains non-normalized, retaining as-is values provided by the service providers, which are typically already present in current billing data and merely mapped. Consequently, in certain cases, PricingUnit may even encompass both quantifiers and actual measurement units.
+* PricingMeasure is commonly used for scenarios like validating unit prices against the price sheet and thus must match (or at least align) with the corresponding value published in the price list. Since price sheets fall outside the scope of FOCUS, PricingMeasure remains non-normalized, retaining as-is values provided by the service providers, which are typically already present in current billing data and merely mapped. Consequently, in certain cases, PricingMeasure may even encompass both quantifiers and actual measurement units.
 
 * To facilite improved comparability of quantities (in pricing units) across different entities being measured, priced, and charged, both within a single provider's offerings and across various providers, in the future (post 1.0) we plan to differentiate quantifiers from measurement units by introducing:
   * An additional metric for pricing unit quantifiers.
   * An additional 'semi-normalized' dimension for pricing measurement units, with established guidelines and recommended values, encompassing both base units and combined/derived values, similar to the Usage Unit (see [Usage Unit - Specification](../../specification/dimensions/usageunit.md) and [Usage Unit - Supporting content](.usageunit.md) for details).
 
-* Note: In preparation for establishing guidelines and recommended values for the semi-normalized pricing measurement unit, it would be extremely helpful to have insight into as many current PricingUnit distinct values as possible.
+* Note: In preparation for establishing guidelines and recommended values for the semi-normalized pricing measurement unit, it would be extremely helpful to have insight into as many current PricingMeasure distinct values as possible.
   * List of all distinct Microsoft/Azure EA unit of measure values is available at this [link](https://github.com/microsoft/finops-toolkit/pull/348).
 
 ### Add into an appendix that describes pricing units, tiers, strategies
