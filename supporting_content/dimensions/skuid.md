@@ -10,7 +10,6 @@ Current column mappings found in available data sets:
 | Azure        | Cost details export or API  | PartNumber      |
 | GCP          | BigQuery Billing Export     | sku.id          |
 | OCI          | Cost Reports                | cost/productSku |
-|              |                             |                 |
 
 ## Example scenarios for current provider data
 
