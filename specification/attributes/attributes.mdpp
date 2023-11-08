@@ -9,4 +9,5 @@ for data granularity, recency, frequency, etc. Requirements defined in attribute
 !INCLUDE "currency_code_format.md",1
 !INCLUDE "datetime_format.md",1
 !INCLUDE "discount_handling.md",1
+!INCLUDE "key_value_format.md",1
 !INCLUDE "null_handling.md",1
