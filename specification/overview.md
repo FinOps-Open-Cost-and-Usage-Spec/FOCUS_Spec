@@ -68,7 +68,8 @@ The goal is not to get to a complete, finished specification in one pass. Releas
 
 * Columns should be optimized for data analysis (aggregations and breakdowns) at scale and should not require splitting or parsing.
 * Data that cannot be represented in predefined columns (e.g., tags) should use a simplified JSON object that does not use nested objects and arrays, and is parseable within spreadsheet applications (e.g. Excel, Google Sheets.)
-* Avoid complex JSON structures for any scenario that requires non-technical personas or has a well-defined structure that could be represented as separate, flat columns.
+* Avoid complex JSON structures when an alternative columnar structure is possible.
+* Avoid creating a technical barrier for parsing and processing any FOCUS data value.
 * FOCUS should include all data necessary as the system of record for cost and usage data and scenarios that require this dataset.
 * Minimize the need for expensive joins at scale for non-technical personas and avoid duplicating data for scenarios that require engineering support where complex joins are more feasible (e.g., forecasting).
 
