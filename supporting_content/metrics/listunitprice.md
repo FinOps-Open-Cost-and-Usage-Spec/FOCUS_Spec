@@ -49,6 +49,10 @@ Current column mappings found in available data sets:
 
 * We deliberated on whether to specify both BillingCurrency and PricingCurrency and decided to enforce a single currency, specifically BillingCurrency. This approach provides consistency and simplifies invoice reconciliation. Since some providers don't include List Unit Prices in BillingCurrency in their public price sheets, the inclusion of a CurrencyExchangeRate dimension in the billing data becomes imperative (name subject to change). This is necessary to ensure we can accurately compare and match ListUnitPrices provided in billing data with those published in public price sheets.
 
+### Free-tier, volume/tier-based, BYOL-based and dynamically-priced SKU rates
+
+* Being inclusive of free-tier, volume/tier-based, BYOL-based and dynamically priced SKU rates, the List Unit Price cannot be used for calculating savings based on volume/tier-based pricing, the use of pre-owned software licenses (BYOL - Bring Your Own License), leveraging interruptible resources and/or services, or optimizing usage to take advantage of dynamic pricing models.
+
 ### Current data sources
 
 * For GCP and OCI, Pricing Data serves as the sole data source for ListUnitPrice, while for AWS, it is the preferred data source due to concerns related to volume/tier-based pricing. To determine the relevant price in Pricing Data for a specific charge record, the billing data must include the UnitPriceId. As previously mentioned, when BillingCurrency and PricingCurrency differ, the exchange rate must also be considered.
