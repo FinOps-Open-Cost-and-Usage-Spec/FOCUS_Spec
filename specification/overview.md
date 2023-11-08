@@ -59,7 +59,7 @@ The goal is not to get to a complete, finished specification in one pass. Releas
 ### Extensibility
 
 * The initial specification aims to introduce a common schema and terminology for billing datasets produced by Cloud Service Providers (CSPs).
-* The specification however aims to be extensible to SaaS products and other types of cost datasets.
+* The specification, however, aims to be extensible to SaaS products and other types of cost datasets.
 * Future versions of the specification will look to expand the content to support a broader set of prioritized FinOps capabilities.
 
 ## Design Notes
