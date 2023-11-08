@@ -16,7 +16,7 @@ Commitment Discount Type
 
 ## Description
 
-A provider-assigned identifier for the type of commitment-based discount applied to this record.
+A provider-assigned identifier for the type of commitment-based discount applied to the row.
 
 ## Content constraints
 
