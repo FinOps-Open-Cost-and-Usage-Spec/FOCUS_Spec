@@ -87,4 +87,7 @@ Current column mappings found in available data sets:
 
 ## Example usage scenarios
 
-* See [Appendix: Pricing Support - UCs and Data samples Spreadsheet](../appendix/pricingsupport.md) for various UC scenarios
+* See [Appendix: Quantity-Driven Pricing strategies](../apendix/quantity_driven_pricing_strategies.md) section for more information on
+  * Quantity-Driven Pricing strategies (such as flat-rate, volume-based rates and tier-based rating)
+  * related UC scenarios
+* See [Pricing Support – UCs and Data samples Spreadsheet](https://docs.google.com/spreadsheets/d/1AZ-vtkKeKwYc8rqhxP1zMTnAVAS-svmWQQmr8cpv-IM/edit#gid=117987709) for various UC scenarios and sample data.
