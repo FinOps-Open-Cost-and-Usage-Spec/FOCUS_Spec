@@ -21,7 +21,6 @@ Current values observed in billing data for various scenarios:
 | Azure        | Cost Details export or API | ABC-12345       |
 | GCP          | BigQuery Billing Export    | F1ED-0732-5BDA   |
 | OCI          | Cost Reports               | B91962           |
-|              |                            |                  |
 
 ## Discussion / Scratch space
 
