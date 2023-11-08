@@ -36,7 +36,7 @@ The goal is not to get to a complete, finished specification in one pass. Releas
 
 ### Working Backwards
 
-* The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the billing data that should be defined in the specification to fulfill that capability.
+* The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the cost and usage data that should be defined in the specification to fulfill that capability.
 * Be FinOps scenario-driven. Define columns that answer scenario questions; don't look for scenarios to fit a column, each column must have a use case.
 * Don't add data just because we can.
 
