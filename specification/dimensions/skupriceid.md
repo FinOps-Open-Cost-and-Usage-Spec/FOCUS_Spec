@@ -14,7 +14,7 @@ SKU Price ID
 
 ## Description
 
-A unique identifier that defines the list unit price associated with the charge. This can be referenced on a price list published by a provider to look up detailed information about the list unit price.
+A unique identifier that defines the unit price used to calculate the charge. SKU Price ID can be referenced on a price list published by a provider to look up detailed information, including a corresponding list unit price.
 
 ## Content constraints
 
