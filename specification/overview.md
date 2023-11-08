@@ -26,21 +26,57 @@ This specification is designed to be used by three major groups:
 
 The FOCUS working group will develop an open-source specification for billing data. The schema will define data dimensions, metrics, a set of attributes about billing data, and a common lexicon for describing billing data.
 
-## Design Notes
+## Design Principles
 
 The following principles were considered while building the specification.
 
-### Provider-Neutral Approach by Default
+### FOCUS is an iterative, living specification
 
-While the schema, naming, terminology and attributes of many providers were reviewed during development, this specification aims to be provider-neutral. In some cases, the approach may closely resemble one or more provider's implementation, while in other cases, the approach might be new. In all cases, the FOCUS group (community composed of FinOps practitioners, Cloud and SaaS providers and FinOps vendors) will attempt to prioritize alignment with the FinOps [Framework][FODOF] and [Capabilities][FODOFC].
+The goal is not to get to a complete finish specification in one pass, releasing incremental iterations of the specification will provide value to practitioners and allow feedback as the specification develops.
 
 ### Working Backwards
 
-The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the billing data that should be defined in the specification to fulfill that capability. Some of the enabled capabilities will be documented in the [Appendix: FinOps Capabilities Enabled by FOCUS (TODO)](#finopscapabilitiesenabledbyfocus).
+* The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the billing data that should be defined in the specification to fulfill that capability.
+* Be FinOps scenario-driven. Define columns that answer scenario questions; don't look for scenarios to fit a column, each column must have a use case.
+* Don't add data just because we can.
+
+### Ease of adoption is important
+
+* When defining the specification consideration should be made to existing data already in the major providers' data sources.
+* As long as it solves the FinOps use case, there should be a preference to align with data that is already present in two of the three major providers.
+* Strive for Simplicity. However, prioritize Accuracy, Clarity, and Consistency.
+* Columns should have a single responsibility with clear and concise names and values.
+* Data should be human readable, free from jargon, using simple understandable terms, and be approachable.
+* Naming and terms used should be carefully considered to avoid using terms for which the definition could be confused by the reader, if a term must be used which has either an unclear or multiple definitions it should be clarified in the [glossary](#glossary).
+* The specification should provide all of the data elements necessary for the FinOps capabilities.
+
+### Provider-Neutral Approach by Default
+
+* While the schema, naming, terminology, and attributes of many providers are reviewed during development, this specification aims to be provider-neutral.
+* Contributors must take care to ensure the specification examines how each decision relates to each of the major cloud providers and SaaS vendors, not favoring any one.
+* In some cases, the approach may closely resemble one or more provider's implementation, while in other cases, the approach might be new. In all cases, the FOCUS group (community composed of FinOps practitioners, Cloud and SaaS providers and FinOps vendors) will attempt to prioritize alignment with the FinOps [Framework][FODOF] and [Capabilities][FODOFC].
 
 ### Extensibility
 
-The initial specification aims to introduce a common schema and terminology for billing datasets produced by Cloud Service Providers (CSPs). The specification however aims to be extensible to SaaS products and other types of cost datasets. Future versions of the specification will look to expand the content to support a broader set of prioritized FinOps capabilities.
+* The initial specification aims to introduce a common schema and terminology for billing datasets produced by Cloud Service Providers (CSPs).
+* The specification however aims to be extensible to SaaS products and other types of cost datasets.
+* Future versions of the specification will look to expand the content to support a broader set of prioritized FinOps capabilities.
+
+## Design Notes
+
+### Optimize for data analysis
+
+* Columns should be optimized for data analysis (aggregations and breakdowns) at scale and should not require splitting or parsing.
+* Data that cannot be represented in predefined columns (e.g., tags) should use a simplified JSON object that does not use nested objects and arrays, and is parseable within spreadsheets.
+* Avoid complex JSON structures for any scenario that requires non-technical personas or has a well-defined structure that could be represented as separate, flat columns.
+* FOCUS should include all data necessary as the system of record for cost and usage data and scenarios that require this dataset.
+* Minimize the need for expensive joins at scale for non-technical personas and avoid duplicating data for scenarios that require engineering support where complex joins are more feasible (e.g., forecasting).
+
+### Consistency helps with clarity
+
+* Where possible use consistent names that will naturally group like data in the specification
+* Use common patterns to reinforce learning, (e.g. Id dimensions always contain an identifier, Category dimensions are always normalized)
+* Use well established standards (e.g. ISO8601 for dates, ISO4217 for currency)
 
 ## Typographic Conventions
 
