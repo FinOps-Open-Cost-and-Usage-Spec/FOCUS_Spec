@@ -1,8 +1,8 @@
 # SKU Price ID
 
-A SKU Price ID is a unique identifier that defines the list unit price associated with the charge. SKU Price ID can be referenced on a price list published by a provider to look up detailed information about the list unit price. The composition of the detailed information associated with the SKU Price ID may differ across providers.
+A SKU Price ID is a unique identifier that defines the list unit price associated with the charge. SKU Price ID can be referenced on a price list published by a provider to look up detailed information about the list unit price. The composition of the properties associated with the SKU Price ID may differ across providers. SKU Price ID is commonly used for analyzing cost based on pricing properties such as Terms and Tiers.
 
-The SkuPriceId column MUST be present in the billing data. This column MUST be of type String. SkuPriceId MUST define a single list unit price. The ListUnitPrice corresponding to a SkuPriceId MUST be the same value as the list unit price in the provider published pricing sheet.
+The SkuPriceId column MUST be present in the billing data. This column MUST be of type String. SkuPriceId MUST define a single list unit price. The ListUnitPrice corresponding to a SkuPriceId MUST be the same value as the list unit price in the provider published pricing sheet. The SkuPriceId MUST NOT be null when ChargeType is ‘Purchase’ or ‘Usage’. The SkuPriceId SHOULD NOT be null when ChargeSubcategory is ‘Refund’.
 
 ## Column ID
 
