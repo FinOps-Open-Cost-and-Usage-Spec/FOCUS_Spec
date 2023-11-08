@@ -43,7 +43,7 @@ The goal is not to get to a complete, finished specification in one pass. Releas
 ### Ease of adoption is important
 
 * When defining the specification, consideration should be made to existing data already in the major providers' data sources.
-* As long as it solves the FinOps use case, there should be a preference to align with data that is already present in two of the three major providers.
+* As long as it solves the FinOps use case, there should be a preference to align with data that is already present in a majority of the major providers.
 * Strive for Simplicity. However, prioritize Accuracy, Clarity, and Consistency.
 * Columns should have a single responsibility with clear and concise names and values.
 * Data should be human readable, free from jargon, using simple understandable terms, and be approachable.
