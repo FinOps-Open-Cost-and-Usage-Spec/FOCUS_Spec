@@ -1,8 +1,8 @@
 # SKU ID
 
-A SKU ID is a unique identifier that defines the SKU associated with the charge. SKU ID can be referenced on a price list published by a provider to look up detailed information about the SKU and the identified unit price associated with the SKU. The composition of the detailed information associated with the SKU may differ between providers.
+A SKU ID is an unique identifier that defines a provider-supported construct for organizing properties that are common across one or more SKU Prices. SKU ID can be referenced on a catalog or price list published by a provider to look up detailed information about the SKU. The composition of the properties associated with the SKU ID may differ across providers. Some providers may not support the SKU construct and instead associate all such properties directly with the SKU Price. SKU ID is commonly used for analyzing cost based on SKU related properties above the pricing constructs.
 
-The SkuId column MUST be present in the billing data. This column MUST be of type String. The SkuId MUST NOT be null when Charge Type is 'Purchase' or 'Usage'. The SkuId SHOULD NOT be null when Adjustment Type is 'Refund'.
+The SkuId column MUST be present in the billing data. This column MUST be of type String. The SkuId MUST NOT be null when SkuPriceId is not null. The SkuId MUST be null when SkuPriceId is null. SkuId MUST equal SkuPriceId when a provider does not support an overarching SKU ID construct.
 
 ## Column ID
 
@@ -14,7 +14,7 @@ SKU ID
 
 ## Description
 
-A provider-assigned identifier that maps to a unique product offering that has a charge associated with it.
+An unique identifier that defines a provider-supported construct for organizing properties that are common across one or more SKU Prices.
 
 ## Content constraints
 
