@@ -1,13 +1,13 @@
 # List Cost
 
-The List Cost represents a suggested provider published cost inclusive of the impacts of free-tier, volume/tier-based, BYOL-based SKU rates, while excluding any other discounts or the amortization of upfront charges (one-time or recurring). List cost is denominated in the [Billing Currency](#billingcurrency) and is used for calculating savings based on rate optimization activities, by comparing it with [Effective Cost](#effectivecost).
+The List Cost represents a suggested provider-published cost inclusive of the impacts of free-tier, volume/tier-based, BYOL-based SKU rates, while excluding any other discounts or the amortization of upfront charges (one-time or recurring). List cost is denominated in the [Billing Currency](#billingcurrency) and is used for calculating savings based on various rate optimization activities, by comparing it with [Effective Cost](#effectivecost).
 
-The ListCost column MUST be present in the billing data. This column MUST be a valid numeric value of type Decimal and MUST NOT contain null values. When a [ListUnitPrice](#listunitprice) is not null, multiplying the ListUnitPrice by [PricingQuantity](#pricingquantity) MUST produce the ListCost.
+The ListCost column MUST be present in the billing data. This column MUST be a valid numeric value of type Decimal, denominated in the BillingCurrency,and MUST NOT contain null values. When a [ListUnitPrice](#listunitprice) is not null, multiplying the ListUnitPrice by [PricingQuantity](#pricingquantity) MUST produce the ListCost.
 
 In cases where the ListUnitPrice is null, the following applies:
 
-* If the line item is based on other charges (e.g. [ChargeType](#chargetype) is 'Tax'), the ListCost MUST be calculated based on ListCost of the related charges
-* If the line item is unrelated to other charges (e.g. [AdjustmentType](#adjustmenttype) is 'Credit'), the ListCost MUST match the BilledCost.
+* If the line item is based on other charges (e.g. [ChargeCategory](#chargecategory) is 'Tax'), the ListCost MUST be calculated based on ListCost of the related charges
+* If the line item is unrelated to other charges (e.g. [ChargeSubcategory](#chargesubcategory) is 'Credit'), the ListCost MUST match the BilledCost.
 
 ## Column ID
 

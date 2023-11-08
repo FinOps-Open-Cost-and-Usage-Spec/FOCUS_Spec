@@ -35,6 +35,11 @@ Current column mappings found in available data sets:
 
 * In cases where ListUnitPrice and QuantityInPricingUnit are available (i.e., not null), the following applies: Cost = Price * Quantity. However, in cases where ListUnitPrice and QuantityInPricingUnit are not available (e.g., in the case of tax, ad-hoc credits, etc.), ListCost must be provided and must comply with the specified normative.
 
+### Free-tier, volume/tier-based, BYOL-based and dynamically-priced SKU rates
+
+* Being inclusive of the impacts of free-tier, volume/tier-based, BYOL-based and dynamically priced SKU rates, the **List Cost cannot** be used for calculating savings based on volume/tier-based pricing, the use of pre-owned software licenses (BYOL - Bring Your Own License), leveraging interruptible resources and/or services, or optimizing usage to take advantage of dynamic pricing models.
+
+
 ### Quantity-Driven Pricing strategies
 
 * See [Appendix: Quantity-Driven Pricing strategies](../appendix/quantity_driven_pricing_strategies.md) section for more information on Quantity-Driven Pricing strategies (such as flat-rate, volume-based rates and tier-based rating) and related UC scenarios
