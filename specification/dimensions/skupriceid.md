@@ -6,7 +6,7 @@ The SkuPriceId column MUST be present in the billing data. This column MUST be o
 
 ## Column ID
 
-SkuPriceID
+SkuPriceId
 
 ## Display name
 
