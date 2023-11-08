@@ -87,4 +87,4 @@ Current column mappings found in available data sets:
 
 ## Example usage scenarios
 
-* See [Appendix: Pricing Support - UCs and Data samples Spreadsheet](../apendix/pricingsupport.md) for various UC scenarios
+* See [Appendix: Pricing Support - UCs and Data samples Spreadsheet](../appendix/pricingsupport.md) for various UC scenarios
