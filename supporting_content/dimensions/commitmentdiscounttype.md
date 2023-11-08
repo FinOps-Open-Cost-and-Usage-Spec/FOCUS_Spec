@@ -11,3 +11,11 @@ Examples of found in available data sets:
 | Google Cloud |Committed Use Discount (CUD) |
 | Microsoft | Savings Plan |
 | Microsoft | Reservation |
+
+## Discussion topics
+
+- Alternative names discussed:
+  - Commitment Discount Program
+  - Commitment Discount Plan
+  - Commitment Discount Plan Name
+  - Decided to use "Type" to be consistent with "ResourceType"
