@@ -7,7 +7,7 @@ This metric resolves two challenges that are faced by practitioners:
 1. Practitioners need to amortize relevant purchases, such as upfront fees, over the duration of the commitment and distribute them to the appropriate reporting groups (e.g. tags, resources).
 2. Many commitment-based discount constructs include a recurring expense for the commitment for every billing period and must distribute this cost to the resources using the commitment. This forces reconciliation between the initial commitment line item per period and the actual usage line items.
 
-The EffectiveCost column MUST be present in the billing data. This column MUST be a valid numeric value of type Decimal and MUST NOT contain null values. The aggregated EffectiveCost for a billing period MAY NOT match the charge received on the invoice for the same billing period.
+The EffectiveCost column MUST be present in the billing data. This column MUST be a valid numeric value of type Decimal, denominated in the BillingCurrency, and MUST NOT contain null values. The aggregated EffectiveCost for a billing period MAY NOT match the charge received on the invoice for the same billing period.
 
 ## Column ID
 
