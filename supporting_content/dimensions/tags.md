@@ -9,7 +9,7 @@ Current resource types found or extracted from available data sets:
 | AWS       | CUR                     | resourceTags/user:\*, costCategories/\*       | Organization, Organizational Unit(s), Account | No
 | GCP       | BigQuery Billing Export | tags, labels, system_labels, project.labels   | Folder(s), Project                            | Yes
 | Microsoft | Cost details            | Tags | Billing Account, Billing Profile, Invoice Section, Department, Enrollment Account, Management Group, Subscription, Resource Group | Yes
-| OCI       | Cost reports            | tags\/                                          | Organization, Tenancy, Compartment            | Yes
+| OCI       | Cost reports            | tags/\*                                          | Organization, Tenancy, Compartment            | Yes
 
 ## Documentation
 - AWS - [Resource tags details](https://docs.aws.amazon.com/cur/latest/userguide/resource-tags-columns.html)
