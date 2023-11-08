@@ -7,7 +7,7 @@ Current column mappings found in available data sets:
 | AWS          | CUR                         | pricing/rate\_code \| pricing/rate\_id |
 | Azure        | Cost details export or API  | ProductID                              |
 | GCP          | BigQuery Billing Export            | Not available, but can be derived from sku.id and price.tier_start_amount                                 |
-| OCI          | Cost Reports                | cost/productSKU (no price level ID)    |
+| OCI          | Cost Reports                | Not available    |
 
 
 ## Example scenarios for current provider data
@@ -18,8 +18,8 @@ Current values observed in billing data for various scenarios:
 | ------------ | -------------------------- | ------------------------------------------------------------------------ |
 | AWS          | CUR                        | rate\_code: KF338J7FCKZPUBD9.JRTCKXETXF.6YS6EN2CT7 rate\_id: 20457007287 |
 | Azure        | Cost Details export or API | DZH318Z0BNZH006F                                                                         |
-| GCP          | BigQuery Billing Export                  | F1ED-0732-5BDA                                                           |
-| OCI          | Cost Reports               | B93382 (no price level ID)                                               |
+| GCP          | BigQuery Billing Export                  | sku.id: 947D-3B46-7781 price.tier_start_amount: 10                                                          |
+| OCI          | Cost Reports               | Not available                                               |
 
 ## Discussion / Scratch space
 
