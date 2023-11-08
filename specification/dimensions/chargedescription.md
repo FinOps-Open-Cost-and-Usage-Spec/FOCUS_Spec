@@ -1,8 +1,8 @@
 # Charge Description
 
-A Charge Description provides a high-level context of a line item without requiring additional discovery.  This column is a self-contained, summary explanation of what the charge is for and how it was priced.  It typically covers a select group of corresponding details across a cost and usage dataset or provides information not otherwise available.
+A Charge Description provides a high-level context of a line item without requiring additional discovery.  This column is a self-contained summary of what the charge is for and how it is priced.  It typically covers a select group of corresponding details across a cost and usage dataset or provides information not otherwise available.
 
-The Charge Description column MUST be present within the dataset, MUST be of type String, and SHOULD NOT be null.  Providers SHOULD specify the length of this column in their publicly available FOCUS documentation.
+The Charge Description column MUST be present within the dataset, MUST be of type String, and MUST NOT be null.  Providers SHOULD specify the length of this column in their publicly available FOCUS documentation.
 
 ## Column ID
 
