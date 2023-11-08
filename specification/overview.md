@@ -75,7 +75,7 @@ The goal is not to get to a complete, finished specification in one pass. Releas
 
 ### Consistency helps with clarity
 
-* Where possible use consistent names that will naturally group like data in the specification
+* Where possible, use consistent names that will naturally create associations between related columns in the specification.
 * Use common patterns to reinforce learning, (e.g. Id dimensions always contain an identifier, Category dimensions are always normalized)
 * Use well established standards (e.g. ISO8601 for dates, ISO4217 for currency)
 
