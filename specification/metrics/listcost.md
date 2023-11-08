@@ -1,6 +1,6 @@
 # List Cost
 
-The List Cost represents a suggested provider-published cost inclusive of the impacts of free-tier, volume/tier-based, BYOL-based SKU rates, while excluding any other discounts or the amortization of upfront charges (one-time or recurring). List cost is denominated in the [Billing Currency](#billingcurrency) and is used for calculating savings based on various rate optimization activities, by comparing it with [Effective Cost](#effectivecost).
+The List Cost represents a suggested provider-published cost inclusive of the impacts of free-tier, volume/tier-based, BYOL-based, and dynamically priced SKU rates, while excluding any other discounts or the amortization of relevant purchases (one-time or recurring) paid to cover future eligible charges. List cost is denominated in the [Billing Currency](#billingcurrency) and is used for calculating savings based on various rate optimization activities, by comparing it with [Effective Cost](#effectivecost).
 
 The ListCost column MUST be present in the billing data. This column MUST be a valid numeric value of type Decimal, denominated in the BillingCurrency,and MUST NOT contain null values. When a [ListUnitPrice](#listunitprice) is not null, multiplying the ListUnitPrice by [PricingQuantity](#pricingquantity) MUST produce the ListCost.
 
@@ -19,7 +19,7 @@ List Cost
 
 ## Description
 
-A charge inclusive of the impacts of free-tier, volume/tier-based, BYOL-based and dynamically priced SKU rates, while excluding any other discounts or the amortization of upfront charges (one-time or recurring).
+A suggested provider-published cost inclusive of the impacts of free-tier, volume/tier-based, BYOL-based, and dynamically priced SKU rates, while excluding any other discounts or the amortization of relevant purchases (one-time or recurring) paid to cover future eligible charges.
 
 ## Content Constraints
 
