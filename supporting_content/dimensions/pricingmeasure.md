@@ -44,6 +44,7 @@ Current values observed in billing data for various scenarios:
 ## Discussion / Scratch space
 
 ### PricingMeasure - non-normalized vs normalized
+
 * After several discussions the team has decided to use **PricingMeasure (non-normalized)** instead of earlier proposed PricingUnit (semi-normalized).
 * Distinction between non-normalized, semi-normalized/normalized columns is clear and it is in line with UsageUnit (semi-normalized) name.
 
