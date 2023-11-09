@@ -90,7 +90,7 @@ A time-based unit is a noun that represents a time interval.  Time-based units c
 
 If the UsageUnit value is a composite value made from combinations of one or more units, each component MUST also align with the set of recommended values.
 
-Instead of "per" or "-" to denote a Composite Unit, slash ("/") and space(" ") must be used as a common convention.  Count-based units like requests, instances, and tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit should be listed as "count/day" to signify the number of requests per day.
+Instead of "per" or "-" to denote a Composite Unit, slash ("/") and space(" ") MUST be used as a common convention.  Count-based units like requests, instances, and tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit SHOULD be listed as "count/day" to signify the number of requests per day.
 
 ## Content constraints
 
