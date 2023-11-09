@@ -6,7 +6,7 @@ Providers offer various discounting schemes for their service offerings. These d
 * Tier-based discounts
 * Negotiated discounts
 * Promotional discounts
-* Partnership-based discounts
+* Usage-based discounts
 
 ## Commitment-based discounts
 
