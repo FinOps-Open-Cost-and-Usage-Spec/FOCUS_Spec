@@ -6,7 +6,7 @@ Current column mappings found in available data sets:
 
 | Provider  | Data set                | Provider column        |
 |-----------|-------------------------|------------------------|
-| AWS       | CUR                     | Pricing_unit	       |
+| AWS       | CUR                     | pricing/unit	       |
 | GCP       | BigQuery Billing Export | usage_unit             |
 | Microsoft | Cost details            | UnitOfMeasure Quantity |
 
