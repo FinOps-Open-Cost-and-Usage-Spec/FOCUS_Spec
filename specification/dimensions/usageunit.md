@@ -16,7 +16,7 @@ Usage Unit
 
 The unit of measure for the usage or consumption of a resource or service
 
-The Usage Unit for a particular line item may differ from PricingUnit when providers use different units, unit increments, or columns to determine cost. The values in UsageUnit and QuantityInUsageUnit are often listed at a finer granularity or over a different time interval than the PricingUnit and QuantityInPricingUnit. While UsageUnit may appear to relate to pricing and cost, UsageUnit is focused on resource or service consumption.  It is essential not to confuse UsageUnit with PricingUnit which is the basis for determining cost.
+The UsageUnit for a particular line item may differ from PricingUnit when providers use different units, unit increments, or columns to determine cost. The values in UsageUnit and QuantityInUsageUnit are often listed at a finer granularity or over a different time interval than the PricingUnit and QuantityInPricingUnit. While UsageUnit may appear to relate to pricing and cost, UsageUnit is focused on resource or service consumption.  It is essential not to confuse UsageUnit with PricingUnit, which is the basis for determining cost.
 
 ### Recommended Values
 
