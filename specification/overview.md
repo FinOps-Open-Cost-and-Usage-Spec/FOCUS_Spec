@@ -70,7 +70,7 @@ The following principles were considered while building the specification.
 * Data that cannot be represented in predefined columns (e.g., tags) should use a simplified JSON object that does not use nested objects and arrays, and is parseable within spreadsheet applications (e.g. Excel, Google Sheets.)
 * Avoid complex JSON structures when an alternative columnar structure is possible.
 * Avoid creating a technical barrier for parsing and processing any FOCUS data value.
-* FOCUS should include all data necessary as the system of record for cost and usage data and scenarios that require this dataset.
+* FOCUS should facilitate the inclusion of data necessary for a system of record for cost and usage data to consume.
 * Minimize the need for expensive joins at scale for non-technical personas while also avoiding the duplication of data for scenarios that require engineering support where complex joins are more feasible (e.g., forecasting).
 
 ### Consistency helps with clarity
