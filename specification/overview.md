@@ -42,7 +42,7 @@ Incremental iterations of the specification released on a regular basis will pro
 
 ### Ease of adoption is important
 
-* When defining the specification, consideration should be made to existing data already in the major providers' data sources.
+* When defining the specification, consideration should be made to existing data already in the major providers' (AWS, GCP, Azure, OCI) data sources.
 * As long as it solves the FinOps use case, there should be a preference to align with data that is already present in a majority of the major providers.
 * Strive for simplicity. However, prioritize accuracy, clarity, and consistency.
 * Columns should have a single purpose, with clear and concise names and values.
