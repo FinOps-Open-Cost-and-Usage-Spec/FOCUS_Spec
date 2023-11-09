@@ -44,7 +44,7 @@ Incremental iterations of the specification released on a regular basis will pro
 
 * When defining the specification, consideration should be made to existing data already in the major providers' data sources.
 * As long as it solves the FinOps use case, there should be a preference to align with data that is already present in a majority of the major providers.
-* Strive for Simplicity. However, prioritize Accuracy, Clarity, and Consistency.
+* Strive for simplicity. However, prioritize accuracy, clarity, and consistency.
 * Columns should have a single purpose, with clear and concise names and values.
 * Data should be human-readable, free from jargon, using simple understandable terms, and be approachable.
 * Naming and terms used should be carefully considered to avoid using terms for which the definition could be confused by the reader. If a term must be used which has either an unclear or multiple definitions, it should be clarified in the [glossary](#glossary).
