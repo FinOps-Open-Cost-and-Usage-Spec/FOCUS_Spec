@@ -50,7 +50,7 @@ Incremental iterations of the specification released on a regular basis will pro
 * Naming and terms used should be carefully considered to avoid using terms for which the definition could be confused by the reader. If a term must be used which has either an unclear or multiple definitions, it should be clarified in the [glossary](#glossary).
 * The specification should provide all of the data elements necessary for the [FinOps capabilities](https://finops.org/framework/capabilities).
 
-### Provider-Neutral Approach by Default
+### Provider-neutral approach by default
 
 * While the schema, naming, terminology, and attributes of many providers are reviewed during development, this specification aims to be provider-neutral.
 * Contributors must take care to ensure the specification examines how each decision relates to each of the major cloud providers and SaaS vendors, not favoring any one.
