@@ -28,7 +28,7 @@ Indicates standards for expressing units of measure in columns appearing in bill
 * Unit values and components of columns using the Unit Format MUST use a capitalization scheme that is consistent with the capitalization scheme used in this attribute, if that term is listed in this section. For example, a value of "gigabyte-seconds" would not be compliant with this specification as the terms "gigabyte" and "second" are listed in this section with the appropriate capitalization.  If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning with the same capitalization scheme.
 * Units SHOULD be composed of the list of recommended units listed in this section, unless the unit value covers a dimension not listed in the recommended unit set, or if the unit covers a count-based unit distinct from recommended values in the count dimension listed in this section.  
 
-#### Data Size Unit Names
+### Data Size Unit Names
 
 Data size MUST be abbreviated using the following standard abbreviations.  Each data size abbreviation can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "GB".  The following table lists the valid data size units.
 
@@ -47,7 +47,7 @@ Data size MUST be abbreviated using the following standard abbreviations.  Each 
 | Pb (petabit = 10^15) | PB (petabyte = 10^15) |
 | Eb (exabit = 10^15)  | EB (exabyte = 10^15)  |
 
-#### Count-based Unit Names
+### Count-based Unit Names
 
 A count-based unit is a noun that represents a discrete number of items, events, or services.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  
 
@@ -64,7 +64,7 @@ If the list of recommended values does not cover a count-based unit, a provider 
 | Domain       |
 | Core         |
 
-#### Time-based Unit Names
+### Time-based Unit Names
 
 A time-based unit is a noun that represents a time interval.  Time-based units can be used to measure consumption over a time interval or in combination with another unit to capture a rate of consumption.
 
