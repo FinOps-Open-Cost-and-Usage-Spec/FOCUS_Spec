@@ -1,6 +1,6 @@
 # Commitment Discount Type
 
-A commitment-based discount is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The commitment may be based on quantities of resource units or monetary value, with various payment options and time frames.
+A commitment-based discount is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The commitment may be based on quantities of resource units or monetary value, with various payment options, time frames, and/or additional usage charges.
 
 Commitment Discount Type is a provider-assigned name to identify the type of commitment-based discount applied to the row.
 
