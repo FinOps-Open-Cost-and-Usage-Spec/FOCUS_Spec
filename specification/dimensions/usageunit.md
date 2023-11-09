@@ -60,7 +60,7 @@ Data size MUST be abbreviated using the following standard abbreviations.  Each 
 
 A count-based unit is a noun that represents a discrete number of items, events, or services.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  
 
-If the list of recommended values does not cover a count-based unit, a provider may introduce a new noun representing a count-based unit.  All nouns appearing in UsageUnit that are not listed in the recommended values table will be considered count-based units.  A new count-based unit value MUST be capitalized.
+If the list of recommended values does not cover a count-based unit, a provider MAY introduce a new noun representing a count-based unit.  All nouns appearing in UsageUnit that are not listed in the recommended values table will be considered count-based units.  A new count-based unit value MUST be capitalized.
 
 | Count        |
 |--------------|
