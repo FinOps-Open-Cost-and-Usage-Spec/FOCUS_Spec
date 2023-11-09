@@ -38,7 +38,7 @@ The following principles were considered while building the specification.
 
 * The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the cost and usage data that should be defined in the specification to fulfill that capability.
 * Be FinOps scenario-driven. Define columns that answer scenario questions; don't look for scenarios to fit a column, each column must have a use case.
-* Don't add data just because it can be added.
+* Don't add dimensions or metrics to the specification just because it can be added.
 
 ### Ease of adoption is important
 
