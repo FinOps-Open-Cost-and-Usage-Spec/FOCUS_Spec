@@ -77,7 +77,7 @@ Incremental iterations of the specification released on a regular basis will pro
 
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
 * Use common patterns to reinforce learning, (e.g. Id dimensions always contain an identifier, Category dimensions are always normalized)
-* Use well established standards (e.g. ISO8601 for dates, ISO4217 for currency)
+* Use established standards (e.g., ISO8601 for dates, ISO4217 for currency).
 
 ## Typographic Conventions
 
