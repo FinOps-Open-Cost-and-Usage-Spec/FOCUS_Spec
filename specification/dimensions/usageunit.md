@@ -26,7 +26,7 @@ Usage units SHOULD be expressed as a single unit of measure adhering to one of t
 * `<singular-unit>-<plural-time-units>` - "GB-Hours", "MB-Days"
 * `<plural-units>/<singular-time-unit>` - "GB/Hour", "PB/Day"
 
-Usage units MAY be expressed with a unit quantity or time interval.  If a unit quantity or time interval is used, the unit quantity or time interval MUST be expressed as a whole number.  The following formats are valid.
+UsageUnit MAY be expressed with a unit quantity or time interval.  If a unit quantity or time interval is used, the unit quantity or time interval MUST be expressed as a whole number.  The following formats are valid:
 
 * `<quantity> <plural-units>` - "1000 Tokens", "1000 Characters"
 * `<plural-units>/<interval> <plural-time-units>` - "Units/3 Months"
