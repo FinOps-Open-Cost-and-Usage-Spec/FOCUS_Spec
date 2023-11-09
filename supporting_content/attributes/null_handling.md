@@ -4,12 +4,12 @@
 
 Current values observed in billing data for various scenarios:
 
-| Provider  | Data set                 | Scenario                                                                                |
-|-----------|--------------------------|-----------------------------------------------------------------------------------------|
-| AWS       | CUR                      | Product_operation shows the type of operation used by a consumer. <br>However, in scenarios where the line item represents tax, this column is set to null. |
-| GCP       | Big Query Billing Export | Credits.name is null when a credit is not applied.                                      |
-| Microsoft | Cost Details             | ResourceGroup is null when a charge is not from a resource deployed to a resource group.|
-| OCI       | Cost reports             | product/availabilityDomain is null when resource is an Object Store bucket              |
+| Provider  | Data set                 | Scenario                                                                                                                                             |
+| --------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AWS       | CUR                      | Product_operation shows the type of operation used by a consumer.<br>However, in scenarios where the row represents tax, this column is set to null. |
+| GCP       | Big Query Billing Export | Credits.name is null when a credit is not applied.                                                                                                   |
+| Microsoft | Cost Details             | ResourceGroup is null when a charge is not from a resource deployed to a resource group.                                                             |
+| OCI       | Cost reports             | product/availabilityDomain is null when resource is an Object Store bucket                                                                           |
 
 ## Discussion / Scratch space
 
@@ -24,7 +24,7 @@ Current values observed in billing data for various scenarios:
   - We don't have a good use case for this right now, so punt on that for now and only allow nulls or 'valid values'
 - May require  thinking about cost outside of cloud/SaaS space
 - Is there a difference between qualitative and quantitative columns<br>
-    `TODO:` come back after metrics and other quantitative columns are defined so we can specify if dimensions should have separate null handling compared to metrics/measures columns
+  `TODO:` come back after metrics and other quantitative columns are defined so we can specify if dimensions should have separate null handling compared to metrics/measures columns
   - Many data analytics solutions will ignore NULL values when using aggregation functions. Aggregation functions are frequently used on quantitative columns
 - Cost data generators shouldn't intentionally convert data (e.g. convert empty tag -> null or the reverse null -> 'Not Set')
   - There were arguments on both sides of this
