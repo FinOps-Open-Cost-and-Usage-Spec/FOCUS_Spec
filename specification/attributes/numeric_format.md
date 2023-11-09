@@ -25,14 +25,12 @@ Rules and formatting requirements for numeric columns appearing in billing data.
 * Numeric values MUST NOT contain qualifiers or additional characters (e.g., currency symbols, units of measure, etc.).
 * Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (`.`) if required to express a decimal value.
 * Numeric values MUST NOT include a character to represent a sign for a positive value. A negative sign (-) MUST indicate a negative value.
-* Numeric values MUST NOT be used to represent binary values (e.g., 0 or 1).
 * Columns with a Numeric value format MUST present one of the following values as the "Data type" in the column definition.
   | Data Type | Type Description |
   |:----------|:-----------------|
-  | Numeric   | Specifies any numeric value compliant with this attribute definition. This type is used when the column definition does not specify a more specific numeric type. |
   | Integer   | Specifies a numeric value represented by a whole number or by zero. Integer number formats correspond to standard data types defined by ISO/IEC 9899:2018 |
   | Decimal   | Specifies a numeric value represented by a decimal number. Decimal formats correspond to ISO/IEC/IEEE 60559:2011 and IEEE 754-2008 definitions. |
-* Providers SHOULD define one of the following precision values for every column with a numeric data type in a data definition document that providers publish.
+* Providers SHOULD define precision and scale for Numeric Format columns using one of the following precision values in a data definition document that providers publish.
   | Data Type | Precision | Definition                                                                | Range / Significant Digits       |
   |:----------|:----------|:--------------------------------------------------------------------------|:---------------------------------|
   | Integer   | Short     | 16-bit signed short int ISO/IEC 9899:2018                                 | -32,767 to +32,767               |
