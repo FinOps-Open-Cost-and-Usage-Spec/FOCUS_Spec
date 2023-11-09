@@ -5,10 +5,18 @@
 Current resource types found or extracted from available data sets:
 
 | Provider  | Dataset                 | Column                                      | Hierarchical Resources | Supports Inheritance?
-| :-------- | :---------------------- | :-------------------------------------------| :-------------------------------------------| :----------
+| :-------- | :---------------------- | :-------------------------------------------| :-----------------------------------------------| :----------
 | AWS       | CUR                     | resourceTags/user:\*, costCategories/\*       | Organization, Organizational Unit(s), Account | No
-| GCP       | BigQuery Billing Export | tags, labels, system_labels, project.labels 									 	|  Folder(s), Project | Yes
+| GCP       | BigQuery Billing Export | tags, labels, system_labels, project.labels   | Folder(s), Project                            | Yes
 | Microsoft | Cost details            | Tags | Billing Account, Billing Profile, Invoice Section, Department, Enrollment Account, Management Group, Subscription, Resource Group | Yes
+| OCI       | Cost reports            | tags/\*                                          | Organization, Tenancy, Compartment            | Yes
+
+## Documentation
+- AWS - [Resource tags details](https://docs.aws.amazon.com/cur/latest/userguide/resource-tags-columns.html)
+- Azure - [Usage details](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields#list-of-fields-and-descriptions)
+- GCP - [Billing reports](https://cloud.google.com/billing/docs/how-to/reports#columns-in-csv)
+- OCI - [Cost reports](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm)
+
 
 ## Discussion Topics
 
