@@ -23,7 +23,7 @@ The Usage Unit for a particular line item may differ from PricingUnit when provi
 Usage units SHOULD be expressed as a single unit of measure adhering to one of the following three formats.
 
 * `<plural-units>` - "GB", "Seconds"
-* `<singular-unit> <plural-time-units>` - "GB Hours", "MB Days"
+* `<singular-unit>-<plural-time-units>` - "GB-Hours", "MB-Days"
 * `<plural-units>/<singular-time-unit>` - "GB/Hour", "PB/Day"
 
 Usage units MAY be expressed with a unit quantity or time interval.  If a unit quantity or time interval is used, the unit quantity or time interval MUST be expressed as a whole number.  The following formats are valid.
