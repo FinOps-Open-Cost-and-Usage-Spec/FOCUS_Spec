@@ -20,7 +20,7 @@ The UsageUnit for a particular line item may differ from PricingUnit when provid
 
 ### Recommended Values
 
-Usage units SHOULD be expressed as a single unit of measure adhering to one of the following three formats.
+UsageUnit SHOULD be expressed as a single unit of measure adhering to one of the following three formats.
 
 * `<plural-units>` - "GB", "Seconds"
 * `<singular-unit>-<plural-time-units>` - "GB-Hours", "MB-Days"
