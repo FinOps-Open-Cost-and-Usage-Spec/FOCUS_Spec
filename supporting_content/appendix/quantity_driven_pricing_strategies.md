@@ -10,7 +10,7 @@ With flat-rate pricing, each pricing unit is assigned a fixed price, regardless 
 
 ### Quantity-Dependent Pricing (Usage-Dependent Pricing)
 
-Quantity-dependent pricing, also referred to as usage-dependent pricing, takes into account the quantity and adjusts pricing accordingly. This approach involves configuring multiple price tiers, each defined by a specific quantity range and associated unit prices, such as ListUnitPrice, NegotiatedUnitPrice, BilledUnitPrice, etc.
+Quantity-dependent pricing, also referred to as usage-dependent pricing, takes into account the quantity and adjusts pricing accordingly. This approach involves configuring multiple price tiers, each defined by a specific quantity range and associated unit prices, such as ListUnitPrice, NegotiatedUnitPrice, etc.
 
 Typically, higher usage tiers feature lower unit prices, offering users the advantage of reduced unit costs as their usage expands. Additionally, quantity-dependent pricing may include a **free-tier**, a special price tier designed for an introductory usage level.
 
@@ -45,27 +45,27 @@ For better comprehension, please refer to the sample price-tiers configuration a
 
 #### Sample Billing data
 
-| Scenario | QuantityInPricingUnit | PricingUnit | ListUnitPrice | NegotiatedUnitPrice | BilledUnitPrice | PricingCurrency | BillingCurrency | ListCost | BilledCost | EffectiveCost |
-| :------- | --------------------: | :---------- | ------------: | ------------------: | --------------: | :-------------- | :-------------- | -------: | ---------: | ------------: |
-| S-1      |                    10 | 1GB         |             1 |                0.90 |            0.90 | USD             | USD             |       10 |          9 |             9 |
-| S-1      |                     2 | 1GB         |          0.50 |                0.45 |            0.45 | USD             | USD             |        1 |        0.9 |           0.9 |
-| S-2      |                    12 | 1GB         |          0.50 |                0.45 |            0.45 | USD             | USD             |        6 |        5.4 |           5.4 |
+| Scenario | QuantityInPricingUnit | PricingUnit | ListUnitPrice | NegotiatedUnitPrice | PricingCurrency | BillingCurrency | ListCost | BilledCost | EffectiveCost |
+| :------- | --------------------: | :---------- | ------------: | ------------------: | :-------------- | :-------------- | -------: | ---------: | ------------: |
+| S-1      |                    10 | 1GB         |             1 |                0.90 | USD             | USD             |       10 |          9 |             9 |
+| S-1      |                     2 | 1GB         |          0.50 |                0.45 | USD             | USD             |        1 |        0.9 |           0.9 |
+| S-2      |                    12 | 1GB         |          0.50 |                0.45 | USD             | USD             |        6 |        5.4 |           5.4 |
 
 ### Current values observed in billing data for various scenarios
 
-| Provider  | Scenario                                                                           | ListUnitPrice Pattern                                                 | BilledUnitPrice Pattern |
-| :-------- | :--------------------------------------------------------------------------------- | :-------------------------------------------------------------------- | :---------------------- |
-| AWS       | Flat-rate based pricing<br>SKU: E9YHNFENF4XQBZR6                                   | pricing/publicOnDemandRate: 0.000005                                  | _TODO: Add sample data_ |
-| AWS       | Quantity-dependent pricing<br> ??? _TODO: look for a higher tier sample_           | pricing/publicOnDemandRate: ??? _TODO: look for a higher tier sample_ | _TODO: Add sample data_ |
-| GCP       | Flat-rate based pricing                                                            | Not available                                                         | _TODO: Add sample data_ |
-| GCP       | Quantity-dependent pricing                                                         | Not available                                                         | _TODO: Add sample data_ |
-| Microsoft | Flat-rate based pricing - PAYG<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52    | PayGPrice: 0.00036                                                    | _TODO: Add sample data_ |
-| Microsoft | Flat-rate based pricing - CSP<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52     | PayGPrice: 0.00036                                                    | _TODO: Add sample data_ |
-| Microsoft | Flat-rate based pricing - EA<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52      | PayGPrice: 0.0003707                                                  | _TODO: Add sample data_ |
-| Microsoft | Quantity-dependent pricing - PAYG<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4 | PayGPrice: 0.087                                                      | _TODO: Add sample data_ |
-| Microsoft | Quantity-dependent pricing - CSP<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4  | PayGPrice: 0.087                                                      | _TODO: Add sample data_ |
-| OCI       | Flat-rate based pricing                                                            | Not available                                                         | _TODO: Add sample data_ |
-| OCI       | Quantity-dependent pricing                                                         | Not available                                                         | _TODO: Add sample data_ |
+| Provider  | Scenario                                                                           | ListUnitPrice Pattern                                                 |
+| :-------- |:---------------------------------------------------------------------------------- | :-------------------------------------------------------------------- |
+| AWS       | Flat-rate based pricing<br>SKU: E9YHNFENF4XQBZR6                                   | pricing/publicOnDemandRate: 0.000005                                  |
+| AWS       | Quantity-dependent pricing<br> ??? _TODO: look for a higher tier sample_           | pricing/publicOnDemandRate: ??? _TODO: look for a higher tier sample_ |
+| GCP       | Flat-rate based pricing                                                            | Not available                                                         |
+| GCP       | Quantity-dependent pricing                                                         | Not available                                                         |
+| Microsoft | Flat-rate based pricing - PAYG<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52    | PayGPrice: 0.00036                                                    |
+| Microsoft | Flat-rate based pricing - CSP<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52     | PayGPrice: 0.00036                                                    |
+| Microsoft | Flat-rate based pricing - EA<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52      | PayGPrice: 0.0003707                                                  |
+| Microsoft | Quantity-dependent pricing - PAYG<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4 | PayGPrice: 0.087                                                      |
+| Microsoft | Quantity-dependent pricing - CSP<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4  | PayGPrice: 0.087                                                      |
+| OCI       | Flat-rate based pricing                                                            | Not available                                                         |
+| OCI       | Quantity-dependent pricing                                                         | Not available                                                         |
 
 ### Alternative data sources for various scenarios
 
