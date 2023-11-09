@@ -19,7 +19,7 @@ List Cost
 
 ## Description
 
-A suggested provider-published cost inclusive of the impacts of free-tier, volume/tier-based, BYOL-based, and dynamically priced SKU rates, while excluding any other discounts or the amortization of relevant purchases (one-time or recurring) paid to cover future eligible charges.
+Cost calculated based on List Unit Price and the corresponding Pricing Quantity.
 
 ## Content Constraints
 
