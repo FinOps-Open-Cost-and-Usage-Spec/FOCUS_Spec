@@ -21,3 +21,5 @@ Examples of found in available data sets:
   - Commitment Discount Plan
   - Commitment Discount Plan Name
   - Decided to use "Type" to be consistent with "ResourceType"
+
+  Note: See Supporting Content for CommitmentDiscountCategory for further explanation.
