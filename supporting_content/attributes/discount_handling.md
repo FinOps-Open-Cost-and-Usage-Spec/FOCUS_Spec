@@ -11,14 +11,32 @@ Providers offer various discounting schemes for their service offerings. These d
 
 ## Commitment-based discounts
 
-Notes:
-
 - Usage-based commitment discounts
 - Spend-based commitment discounts
 
 ## Tier-based discounts
 
-- RI Volume Discounts?
+Provider partners usually receive discounts (along with other benefits) based on the partnership tier.
+
+- AWS
+  - Select Tier
+  - Advanced Tier
+  - Premier Tier
+
+- Microsoft
+  - Service
+    - Member
+    - Action Pack
+    - Solutions Partner
+    - Specialist
+  - ISV
+    - Member
+    - Founders Hub
+    - ISV Success
+
+- GCP
+  - Partner Level
+  - Premier Level
 
 ## Negotiated discounts
 
@@ -32,6 +50,7 @@ TBD
 ## Usage-based discounts
 
 - An example of this is GCP's [Sustained use discounts](https://cloud.google.com/compute/docs/sustained-use-discounts) which are still usage-based but not associated to any commitments.
+- AWS' RI Volume discounts?
 
 ## Partner discounts
 
@@ -46,6 +65,7 @@ TBD
   - Reserved Instances - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-reserved-instances.html
   - Savings Plans - https://docs.aws.amazon.com/savingsplans/latest/userguide/what-is-savings-plans.html
   - Bundled discounts - https://aws.amazon.com/blogs/aws-cloud-financial-management/bundled-discounts-in-aws-cost-and-usage-report/
+  - AWS partner tiers - https://aws.amazon.com/partners/services-tiers/
 
 - GCP
   - Committed use discounts - https://cloud.google.com/compute/docs/instances/committed-use-discounts-overview
@@ -53,12 +73,14 @@ TBD
   - Spend-based CUDs - https://cloud.google.com/docs/cuds-spend-based
   - Sustained use discounts - https://cloud.google.com/compute/docs/sustained-use-discounts
   - Credit types - https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/standard-usage#standard-usage-cost-data-schema
+  - GCP Partner Advantage - https://cloud.google.com/partners/become-a-partner
 
 - Microsoft
   - Reservations - https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations
   - Savings Plans - https://learn.microsoft.com/en-us/azure/cost-management-billing/savings-plan/savings-plan-compute-overview
   - Azure Hybrid Benefit - https://azure.microsoft.com/en-us/pricing/hybrid-benefit/#overview
   - Azure Dev/Test Pricing - https://azure.microsoft.com/en-us/pricing/offers/dev-test/
+  - Microsoft Partnership - https://partner.microsoft.com/en-us/partnership/compare-programs
 
 # Discussion / Scratch space
 
