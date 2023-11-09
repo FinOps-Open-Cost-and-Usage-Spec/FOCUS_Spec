@@ -6,8 +6,8 @@ The ListCost column MUST be present in the billing data. This column MUST be a v
 
 In cases where the ListUnitPrice is null, the following applies:
 
-* If the line item is based on other charges (e.g. [ChargeCategory](#chargecategory) is 'Tax'), the ListCost MUST be calculated based on ListCost of the related charges
-* If the line item is unrelated to other charges (e.g. [ChargeSubcategory](#chargesubcategory) is 'Credit'), the ListCost MUST match the BilledCost.
+* If the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is 'Tax'), the ListCost MUST be calculated based on the ListCost of the related charges.
+* If the charge is unrelated to other charges (e.g. [ChargeSubcategory](#chargesubcategory) is 'Credit'), the ListCost MUST match the BilledCost.
 
 ## Column ID
 
