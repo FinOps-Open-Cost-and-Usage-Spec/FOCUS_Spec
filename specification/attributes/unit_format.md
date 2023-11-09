@@ -25,10 +25,7 @@ Indicates standards for expressing units of measure in columns appearing in bill
 * Units MAY be expressed with a unit quantity or time interval.  If a unit quantity or time interval is used, the unit quantity or time interval MUST be expressed as a whole number.  The following formats are valid:
   * `<quantity> <plural-units>` - "1000 Tokens", "1000 Characters"
   * `<plural-units>/<interval> <plural-time-units>` - "Units/3 Months"
-
-### Recommended Usage Unit Values
-
-* Unit values and components of columns using the Unit Format MUST use a capitalization scheme that is consistent with the capitalization scheme used in this section, if that term is listed in this section. For example, a value of "gigabyte-seconds" would not be compliant with this specification as the terms "gigabyte" and "second" are listed in this section with the appropriate capitalization.  If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning.
+* Unit values and components of columns using the Unit Format MUST use a capitalization scheme that is consistent with the capitalization scheme used in this attribute, if that term is listed in this section. For example, a value of "gigabyte-seconds" would not be compliant with this specification as the terms "gigabyte" and "second" are listed in this section with the appropriate capitalization.  If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning with the same capitalization scheme.
 * Units SHOULD be composed of the list of recommended units listed in this section, unless the unit value covers a dimension not listed in the recommended unit set, or if the unit covers a count-based unit distinct from recommended values in the count dimension listed in this section.  
 
 #### Data Size Unit Names
