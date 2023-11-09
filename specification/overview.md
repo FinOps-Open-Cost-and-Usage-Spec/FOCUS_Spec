@@ -48,7 +48,7 @@ Incremental iterations of the specification released on a regular basis will pro
 * Columns should have a single purpose, with clear and concise names and values.
 * Data should be human-readable, free from jargon, using simple understandable terms, and be approachable.
 * Naming and terms used should be carefully considered to avoid using terms for which the definition could be confused by the reader. If a term must be used which has either an unclear or multiple definitions, it should be clarified in the [glossary](#glossary).
-* The specification should provide all of the data elements necessary for the FinOps capabilities.
+* The specification should provide all of the data elements necessary for the [FinOps capabilities](https://finops.org/framework/capabilities).
 
 ### Provider-Neutral Approach by Default
 
