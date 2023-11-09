@@ -23,4 +23,4 @@ Current column mappings found in available data sets:
 
 ## Discussion Topics
 
-* See discussion topics from [Billing Period Start](../billingperiodstart.md)
+* See discussion topics from [Billing Period Start](billingperiodstart.md)
