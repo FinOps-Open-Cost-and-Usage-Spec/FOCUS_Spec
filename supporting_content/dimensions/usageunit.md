@@ -16,5 +16,5 @@ Current values observed in billing data for various scenarios:
 | Provider | Provider Column | Example Value                                                   |
 |----------|-----------------|-----------------------------------------------------------------|
 | AWS      | pricing_unit    | Gigabyte, Month, Requests, GB-MONTH, Hrs, Seconds           |
-| GCP      | Usage_unit      | Gigabyte, hour, mebibyte, second, month                        |
+| GCP      | usage.unit      | Gigabyte, hour, mebibyte, second, month                        |
 | Azure    | UnitOfMeasure   | 1 GB, 1 GB/Month, 100 Hours, 1/Day, 10K, 1 GiB Second      |
