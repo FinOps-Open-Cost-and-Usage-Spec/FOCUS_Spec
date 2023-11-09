@@ -32,7 +32,7 @@ The following principles were considered while building the specification.
 
 ### FOCUS is an iterative, living specification
 
-Incremental iterations of the specification released on a regular basis will provide higher value to practitioners and allow feedback as the specification develops. The goal is not to get to a complete, finished specification in one pass.
+* Incremental iterations of the specification released on a regular basis will provide higher value to practitioners and allow feedback as the specification develops. The goal is not to get to a complete, finished specification in one pass.
 
 ### Working backwards
 
