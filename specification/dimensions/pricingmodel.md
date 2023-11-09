@@ -22,7 +22,7 @@ Type of unit price applied to a charge at the time it was used or purchased.
 |:----------------|:-----------------|
 | Column required | True             |
 | Data type       | String           |
-| Allows nulls    | False             |
+| Allows nulls    | True             |
 | Value format    | list-of-values   |
 
 Allowed values:
