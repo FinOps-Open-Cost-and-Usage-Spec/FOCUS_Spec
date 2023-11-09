@@ -8,7 +8,9 @@ Examples of found in available data sets:
 |----------|--------------------------|
 | AWS | Reserved Instances (RI) |
 | AWS | Savings Plan |
-| Google Cloud |Committed Use Discount (CUD) |
+| AWS | Capacity Blocks for ML |
+| Google Cloud | Committed Use Discount (CUD) |
+| Google Cloud | BigQuery Reservations |
 | Microsoft | Savings Plan |
 | Microsoft | Reservation |
 
