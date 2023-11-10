@@ -25,6 +25,6 @@ Unique identifier that defines the unit price used to calculate the charge.
 |  Allows nulls    |  True          |
 |  Value format    |  \<not specified\> |
 
-#### Introduced (version)
+## Introduced (version)
 
 1.0
