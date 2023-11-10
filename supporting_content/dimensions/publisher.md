@@ -4,34 +4,37 @@
 
 Current column mappings found in available data sets:
 
-| Provider  | Data set                 | Column                                       |
-|-----------|--------------------------|----------------------------------------------|
-| AWS       | CUR                      | Not available (closest is lineItem/LegalEntity, for non-marketplace line items this will equal the AWS Legal Entity) |
-| GCP       | Big Query Billing Export | Exists in product_taxonomy, but not in a consistent location (e.g. GCP > Marketplace Services > MongoDB Inc.) |
-| Microsoft | Cost details             | PublisherName |
+| Provider  | Data set                 | Column                                                                                                         |
+| --------- | ------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| AWS       | CUR                      | Not available (closest is lineItem/LegalEntity, for non-marketplace rows this will equal the AWS Legal Entity) |
+| GCP       | Big Query Billing Export | Exists in product_taxonomy, but not in a consistent location (e.g. GCP > Marketplace Services > MongoDB Inc.)  |
+| Microsoft | Cost details             | PublisherName                                                                                                  |
 
 ### Documentation
 
 AWS:
+
 > [Billing details - AWS Cost and Usage Reports](https://docs.aws.amazon.com/cur/latest/userguide/billing-columns.html)
 
 GCP:
+
 > [Structure of pricing data export | Cloud Billing](https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/pricing-data)
 
 No dimensions providing this data in billing, but can map based on SKU from the pricing sheet.
 
 Microsoft:
+
 > [Understand usage details fields - Microsoft Cost Management](https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields)
 
 ## Example usage scenarios
 
 Current values observed in billing data for various scenarios:
 
-| Provider  | Scenario                                                         | Pattern |
-|-----------|------------------------------------------------------------------|---------|
-| AWS       | CUR provides lineItem/LegalEntity for non-marketplace line items | Not equivalent to a publisher. Following values are supported:<ul><li>Amazon Web Services, Inc.</li><li>Amazon Web Services India Private Limited</li></ul> |
-| GCP       | ?                                                                |         |
-| Microsoft | ?                                                                |         |
+| Provider  | Scenario                                                   | Pattern                                                                                                                                                     |
+| --------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AWS       | CUR provides lineItem/LegalEntity for non-marketplace rows | Not equivalent to a publisher. Following values are supported:<ul><li>Amazon Web Services, Inc.</li><li>Amazon Web Services India Private Limited</li></ul> |
+| GCP       | ?                                                          |                                                                                                                                                             |
+| Microsoft | ?                                                          |                                                                                                                                                             |
 
 See [Appendix: Origination of cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Publisher dimension.
 
