@@ -30,7 +30,8 @@ AWS - (<https://docs.aws.amazon.com/cur/latest/userguide/product-columns.html#pr
 
 Azure - (<https://learn.microsoft.com/en-us/azure/cost-management-billing/automate/understand-usage-details-fields>)
 
-Big Query - (<https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage>)
+GCP - (<https://cloud.google.com/billing/docs/how-to/export-data-bigquery-tables/detailed-usage>)
+(also, SKU information can be found via the BigQuery Pricing Export)
 
 OCI - (<https://docs.oracle.com/en-us/iaas/Content/Billing/Concepts/usagereportsoverview.htm>)
 
