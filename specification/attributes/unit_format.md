@@ -1,6 +1,6 @@
 # Unit Format
 
-Cost and utilization data frequently captures data measured in units related to data size, count, time, and other dimensions. The Unit Format attribute provides a standard for expressing units of measure in columns appearing in billing data.
+Cost and usage data frequently captures data measured in units related to data size, count, time, and other dimensions. The Unit Format attribute provides a standard for expressing units of measure in columns appearing in billing data.
 
 All columns defined in FOCUS specifying Unit Format as a value format MUST follow the requirements listed below.
 
@@ -14,7 +14,7 @@ Unit Format
 
 ## Description
 
-Indicates standards for expressing units of measure in columns appearing in billing data.
+Indicates standards for expressing measurement units in columns appearing in billing data.
 
 ## Requirements
 
@@ -45,13 +45,13 @@ Data size MUST be abbreviated using the following standard abbreviations.  Each 
 | Gb (gigabit = 10^9)  | GB (gigabyte = 10^9)  |
 | Tb (terabit = 10^12) | TB (terabyte = 10^12) |
 | Pb (petabit = 10^15) | PB (petabyte = 10^15) |
-| Eb (exabit = 10^15)  | EB (exabyte = 10^15)  |
+| Eb (exabit = 10^18)  | EB (exabyte = 10^18)  |
 
 ### Count-based Unit Names
 
 A count-based unit is a noun that represents a discrete number of items, events, or services.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  
 
-If the list of recommended values does not cover a count-based unit, a provider MAY introduce a new noun representing a count-based unit.  All nouns appearing in unit that are not listed in the recommended values table will be considered count-based units.  A new count-based unit value MUST be capitalized.
+If the following list of recommended values does not cover a count-based unit, a provider MAY introduce a new noun representing a count-based unit.  All nouns appearing in unit that are not listed in the recommended values table will be considered count-based units.  A new count-based unit value MUST be capitalized.
 
 | Count        |
 |--------------|
@@ -81,7 +81,7 @@ A time-based unit is a noun that represents a time interval.  Time-based units c
 
 If the unit value is a composite value made from combinations of one or more units, each component MUST also align with the set of recommended values.
 
-Instead of "per" or "-" to denote a Composite Unit, slash ("/") and space(" ") MUST be used as a common convention.  Count-based units like requests, instances, and tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit SHOULD be listed as "count/day" to signify the number of requests per day.
+Instead of "per" or "-" to denote a Composite Unit, slash ("/") and space(" ") MUST be used as a common convention.  Count-based units like requests, instances, and tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit SHOULD be listed as "Requests/Day" to signify the number of requests per day.
 
 ## Exceptions
 
