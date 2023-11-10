@@ -27,6 +27,7 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "resourcetype.md",1
 !INCLUDE "servicecategory.md",1
 !INCLUDE "servicename.md",1
+!INCLUDE "skuid.md",1
 !INCLUDE "subaccountid.md",1
 !INCLUDE "subaccountname.md",1
 !INCLUDE "tags.md",1
