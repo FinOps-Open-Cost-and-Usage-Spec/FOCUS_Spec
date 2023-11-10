@@ -62,28 +62,31 @@ Current column mappings found in available data sets:
 ### Example PricingQuantity values for charges where ChargeCategory is "Tax"
 
 Example A
-| Description          | Pricing Quantity          | Unit Price   | Total     |
-|:---------------------|:--------------------------|:-------------|-----------|
-| Compute Usage        | 100                       | 1.0          | $100      |
-| Tax on Compute Usage | 100                       | 0.2          | $20       |
-| TOTAL                | 200                       | 1.2          | $120      |
+| Description          | Pricing Quantity          | Unit Price   | Billed Cost |
+|:---------------------|:--------------------------|:-------------|-------------|
+| Compute Usage        | 100                       | 1.0          | $100        |
+| Tax on Compute Usage | 100                       | 0.2          | $20         |
+|:---------------------|:--------------------------|:-------------|-------------|
+| TOTAL                | 200                       | NA           | $120        |
 NOTE: Double counting of hours
 
 Example B
-| Description          | Pricing Quantity          | Unit Price   | Total     |
-|:---------------------|:--------------------------|:-------------|-----------|
-| Compute Usage        | 100                       | 1.0          | $100      |
-| Tax on Compute Usage | 1                         | 20           | $20       |
-| TOTAL                | 101                       | 21           | $120      |
-NOTE: Skews average of Unit price
+| Description          | Pricing Quantity          | Unit Price   | Billed Cost |
+|:---------------------|:--------------------------|:-------------|-------------|
+| Compute Usage        | 100                       | 1.0          | $100        |
+| Tax on Compute Usage | 1                         | 20           | $20         |
+|:---------------------|:--------------------------|:-------------|-------------|
+| TOTAL                | 101                       | NA           | $120        |
+NOTE: Incorrect counting of hours
 
 Example C
-| Description          | Pricing Quantity          | Unit Price   | Total     |
-|:---------------------|:--------------------------|:-------------|-----------|
-| Compute Usage        | 100                       | 1.0          | $100      |
-| Tax on Compute Usage | NULL                      | NULL         | $20       |
-| TOTAL                | 100                       | 1.0          | $120      |
-NOTE: Preferred option
+| Description          | Pricing Quantity          | Unit Price   | Billed Cost |
+|:---------------------|:--------------------------|:-------------|-------------|
+| Compute Usage        | 100                       | 1.0          | $100        |
+| Tax on Compute Usage | NULL                      | NULL         | $20         |
+|:---------------------|:--------------------------|:-------------|-------------|
+| TOTAL                | 100                       | NA           | $120        |
+NOTE: Preferred option?
 
 ## Example usage scenarios
 
