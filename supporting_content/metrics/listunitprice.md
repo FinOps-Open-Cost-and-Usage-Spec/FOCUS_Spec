@@ -55,7 +55,7 @@ Current column mappings found in available data sets:
 
 ### Current data sources
 
-* For GCP and OCI, Pricing Data serves as the sole data source for ListUnitPrice, while for AWS, it is the preferred data source due to concerns related to volume/tier-based pricing. To determine the relevant price in Pricing Data for a specific charge record, the billing data must include the UnitPriceId. As previously mentioned, when BillingCurrency and PricingCurrency differ, the exchange rate must also be considered.
+* For GCP and OCI, Pricing Data serves as the sole data source for ListUnitPrice, while for AWS, it is the preferred data source due to concerns related to volume/tier-based pricing. To determine the relevant price in Pricing Data for a specific charge record, the billing data must include the SkuPriceId. As previously mentioned, when BillingCurrency and PricingCurrency differ, the exchange rate must also be considered.
 
 ### Prices and Currencies
 
