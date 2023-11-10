@@ -1,6 +1,6 @@
 # Column: PricingQuantity
 
-## Example treatment for non-metered charges (e.g. Tax Treatment)
+## Example PricingQuantity values for charges where ChargeCategory is "Tax"
 
 Example A
 | Description          | Pricing Quantity          | Unit Price   | Total     |
