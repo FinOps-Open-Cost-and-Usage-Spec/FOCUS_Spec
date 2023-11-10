@@ -2,6 +2,14 @@
 
 ## Example provider mappings
 
+| Provider  | Data set                 | Column                                                   |
+| --------- | ------------------------ | -------------------------------------------------------- |
+| AWS       | CUR                      | reservation/ReservationARN<br>savingsPlan/SavingsPlanArn |
+| GCP       | Big Query Billing Export | credits.id                                               |
+| Microsoft | Cost details             | ReservationId (old)<br>BenefitId (new)                   |
+
+## Example usage scenarios
+
 Examples of found in available data sets:
 
 | Provider | Example Values  |
