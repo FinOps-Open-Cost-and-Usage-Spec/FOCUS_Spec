@@ -19,7 +19,7 @@ List Cost
 
 ## Description
 
-Cost calculated by multiplyingn List Unit Price and the corresponding Pricing Quantity.
+Cost calculated by multiplying List Unit Price and the corresponding Pricing Quantity.
 
 ## Content Constraints
 
