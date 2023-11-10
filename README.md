@@ -66,5 +66,3 @@ Most people will not need any development environment, it is mostly needed by th
 
 1. Move into the `specification` folder
 2. Use make to generate the spec `make`
-
-[specification]: specification/specification-overview.md
