@@ -34,14 +34,11 @@ The following principles were considered while building the specification.
 
 * Incremental iterations of the specification released on a regular basis will provide higher value to practitioners and allow feedback as the specification develops. The goal is not to get to a complete, finished specification in one pass.
 
-### Working backwards
+### Working backwards with ease of adoption
 
 * The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the cost and usage data that should be defined in the specification to fulfill that capability.
 * Be FinOps scenario-driven. Define columns that answer scenario questions; don't look for scenarios to fit a column, each column must have a use case.
 * Don't add dimensions or metrics to the specification just because it can be added.
-
-### Ease of adoption is important
-
 * When defining the specification, consideration should be made to existing data already in the major providers' (AWS, GCP, Azure, OCI) data sources.
 * As long as it solves the FinOps use case, there should be a preference to align with data that is already present in a majority of the major providers.
 * Strive for simplicity. However, prioritize accuracy, clarity, and consistency.
