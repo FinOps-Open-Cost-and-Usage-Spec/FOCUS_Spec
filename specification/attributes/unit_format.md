@@ -30,22 +30,23 @@ Indicates standards for expressing measurement units in columns appearing in bil
 
 ### Data Size Unit Names
 
-Data size MUST be abbreviated using the following standard abbreviations.  Each data size abbreviation can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "GB".  The following table lists the valid data size units.
+Data size unit names MUST be abbreviated using one of abbreviations in the following table.  For example, a unit name of 'TB' is a valid unit name, and a unit name of 'terabyte' is an invalid unit name. Data size abbreviations can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "gigabyte", and "GBs" would an invalid unit name.  The following table lists the valid abbreviations for data size units from a single bit or byte to 10^18 bits or bytes.
 
 | Data size in bits    | Data size in bytes    |
 | -------------------- | --------------------- |
-| Kib (kibibit = 2^10) | KiB (kibibyte = 2^10) |
-| Mib (mebibit = 2^20) | MiB (mebibyte = 2^20) |
-| Gib (gibibit = 2^30) | GiB (gibibyte = 2^30) |
-| Tib (tebibit = 2^40) | TiB (tebibyte = 2^40) |
-| Pib (pebibit = 2^50) | PiB (pebibyte = 2^50) |
-| Eib (exbibit = 2^60) | EiB (exbibyte = 2^60) |
+| b (bit) = 10^1       | B (byte = 10^1)       |
 | Kb (kilobit = 10^3)  | KB (kilobyte = 10^3)  |
 | Mb (megabit = 10^6)  | MB (megabyte = 10^6)  |
 | Gb (gigabit = 10^9)  | GB (gigabyte = 10^9)  |
 | Tb (terabit = 10^12) | TB (terabyte = 10^12) |
 | Pb (petabit = 10^15) | PB (petabyte = 10^15) |
 | Eb (exabit = 10^18)  | EB (exabyte = 10^18)  |
+| Kib (kibibit = 2^10) | KiB (kibibyte = 2^10) |
+| Mib (mebibit = 2^20) | MiB (mebibyte = 2^20) |
+| Gib (gibibit = 2^30) | GiB (gibibyte = 2^30) |
+| Tib (tebibit = 2^40) | TiB (tebibyte = 2^40) |
+| Pib (pebibit = 2^50) | PiB (pebibyte = 2^50) |
+| Eib (exbibit = 2^60) | EiB (exbibyte = 2^60) |
 
 ### Count-based Unit Names
 
