@@ -21,12 +21,15 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "invoiceissuer.md",1
 !INCLUDE "provider.md",1
 !INCLUDE "publisher.md",1
+!INCLUDE "usagequantity.md",1
 !INCLUDE "region.md",1
 !INCLUDE "resourceid.md",1
 !INCLUDE "resourcename.md",1
 !INCLUDE "resourcetype.md",1
 !INCLUDE "servicecategory.md",1
 !INCLUDE "servicename.md",1
+!INCLUDE "skuid.md",1
+!INCLUDE "skupriceid.md",1
 !INCLUDE "subaccountid.md",1
 !INCLUDE "subaccountname.md",1
 !INCLUDE "tags.md",1
