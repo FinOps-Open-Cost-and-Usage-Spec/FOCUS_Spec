@@ -3,8 +3,7 @@
 Column IDs provided in cost data following a consistent naming convention reduces friction for FinOps practitioners
 that consume the data for analysis, reporting, and other use cases.
 
-All columns defined in FOCUS MUST follow the naming requirements listed below. Provider generated columns SHOULD adopt
-these same naming requirements over time.
+All columns defined in the FOCUS specification MUST follow the naming requirements listed below. Provider-generated columns SHOULD adopt these same naming requirements over time.
 
 ## Attribute ID
 
