@@ -45,11 +45,11 @@ For better comprehension, please refer to the sample price-tiers configuration a
 
 #### Sample Billing data
 
-| Scenario | QuantityInPricingUnit | PricingUnit | ListUnitPrice | NegotiatedUnitPrice | PricingCurrency | BillingCurrency | ListCost | BilledCost | EffectiveCost |
-| :------- | --------------------: | :---------- | ------------: | ------------------: | :-------------- | :-------------- | -------: | ---------: | ------------: |
-| S-1      |                    10 | 1GB         |             1 |                0.90 | USD             | USD             |       10 |          9 |             9 |
-| S-1      |                     2 | 1GB         |          0.50 |                0.45 | USD             | USD             |        1 |        0.9 |           0.9 |
-| S-2      |                    12 | 1GB         |          0.50 |                0.45 | USD             | USD             |        6 |        5.4 |           5.4 |
+| Scenario | PricingQuantity | PricingMeasure | ListUnitPrice | NegotiatedUnitPrice | PricingCurrency | BillingCurrency | ListCost | BilledCost | EffectiveCost |
+| :------- | --------------: | :------------- | ------------: | ------------------: | :-------------- | :-------------- | -------: | ---------: | ------------: |
+| S-1      |              10 | 1GB            |             1 |                0.90 | USD             | USD             |       10 |          9 |             9 |
+| S-1      |               2 | 1GB            |          0.50 |                0.45 | USD             | USD             |        1 |        0.9 |           0.9 |
+| S-2      |              12 | 1GB            |          0.50 |                0.45 | USD             | USD             |        6 |        5.4 |           5.4 |
 
 ### Current values observed in billing data for various scenarios
 
