@@ -1,6 +1,7 @@
 # Column Naming Convention
 
-Column IDs provided in cost data follow a consistent naming convention to reduce friction for FinOps practitioners. Custom columns are prefixed with a vendor-specific string to indicate the source of the column, distinguish them from FOCUS columns, and avoid conflicts in future releases.
+Column IDs provided in cost data following a consistent naming convention reduces friction for FinOps practitioners
+that consume the data for analysis, reporting, and other use cases.
 
 All columns defined in the FOCUS specification MUST follow the naming requirements listed below.
 
@@ -23,11 +24,9 @@ Naming convention for columns appearing in billing data.
   - Column IDs MUST NOT use abbreviations.
   - Column IDs SHOULD NOT use acronyms.
   - Column IDs MUST be alphanumeric with no special characters.
-  - Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the `Name` suffix if there are no other columns with the same name prefix.
+  - Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the Name suffix if there are no other columns with the same name prefix.
 - Custom columns SHOULD follow the same rules as FOCUS columns listed above.
-- All custom column IDs MUST start with a vendor prefix string and an underscore (e.g., `abc_ColumnName`).
-  - Vendor prefixes MUST be lowercase, alphanumeric strings and SHOULD NOT be longer than 10 characters in length.
-  - Vendor prefixes MUST be representative of the company or brand that generated the column.
+- All custom columns MUST be prefixed with an underscore (`_`) to distinguish them from FOCUS columns and avoid conflicts in future releases.
 
 ## Exceptions
 
