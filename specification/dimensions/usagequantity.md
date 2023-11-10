@@ -14,7 +14,7 @@ Usage Quantity
 
 ## Description
 
-The volume of a given resource and/or service used or purchased based on the [Usage Unit](#usageunit).
+Volume of a given resource and/or service used or purchased based on the [Usage Unit](#usageunit).
 
 ## Content constraints
 
