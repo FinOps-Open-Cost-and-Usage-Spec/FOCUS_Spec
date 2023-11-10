@@ -2,7 +2,7 @@
 
 Column IDs provided in cost data follow a consistent naming convention to reduce friction for FinOps practitioners. Custom columns are prefixed with a vendor-specific string to indicate the source of the column, distinguish them from FOCUS columns, and avoid conflicts in future releases.
 
-All columns included in a FOCUS dataset MUST follow the naming requirements listed below.
+All columns defined in the FOCUS specification MUST follow the naming requirements listed below.
 
 ## Attribute ID
 
