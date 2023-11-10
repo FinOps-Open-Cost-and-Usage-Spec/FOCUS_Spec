@@ -5,7 +5,6 @@ List Cost represents the cost calculated based on [List Unit Price](#listunitpri
 The ListCost column MUST be present in the billing data. This column MUST be a valid numeric value of type Decimal, denominated in the BillingCurrency, and MUST NOT contain null values. When a ListUnitPrice is not null, multiplying the ListUnitPrice by PricingQuantity MUST produce the ListCost.
 
 In cases where the ListUnitPrice is null, the following applies:
-
 * If the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is 'Tax'), the ListCost MUST be calculated based on the ListCost of the related charges.
 * If the charge is unrelated to other charges (e.g. [ChargeSubcategory](#chargesubcategory) is 'Credit'), the ListCost MUST match the BilledCost.
 
