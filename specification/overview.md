@@ -63,12 +63,9 @@ The following principles were considered while building the specification.
 
 ### Optimize for data analysis
 
-* Columns should be optimized for data analysis (aggregations and breakdowns) at scale and should not require splitting or parsing.
-* Data that cannot be represented in predefined columns (e.g., tags) should use a simplified JSON object that does not use nested objects and arrays, and is parseable within spreadsheet applications (e.g. Excel, Google Sheets.)
+* Optimize columns for data analysis at scale and avoid the requirement of splitting or parsing values.
 * Avoid complex JSON structures when an alternative columnar structure is possible.
-* Avoid creating a technical barrier for parsing and processing any FOCUS data value.
 * FOCUS should facilitate the inclusion of data necessary for a system of record for cost and usage data to consume.
-* Minimize the need for expensive joins at scale for non-technical personas while also avoiding the duplication of data for scenarios that require engineering support where complex joins are more feasible (e.g., forecasting).
 
 ### Consistency helps with clarity
 
