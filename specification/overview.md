@@ -46,14 +46,14 @@ The following principles were considered while building the specification.
 * As long as it solves the FinOps use case, there should be a preference to align with data that is already present in a majority of the major providers.
 * Strive for simplicity. However, prioritize accuracy, clarity, and consistency.
 * Strive to build columns that serve a single purpose, with clear and concise names and values.
-* Data should be human-readable, free from jargon, using simple understandable terms, and be approachable.
+* The specification should allow data to be presented free from jargon, using simple understandable terms, and be approachable.
 * Naming and terms used should be carefully considered to avoid using terms for which the definition could be confused by the reader. If a term must be used which has either an unclear or multiple definitions, it should be clarified in the [glossary](#glossary).
 * The specification should provide all of the data elements necessary for the [FinOps capabilities](https://finops.org/framework/capabilities).
 
 ### Provider-neutral approach by default
 
 * While the schema, naming, terminology, and attributes of many providers are reviewed during development, this specification aims to be provider-neutral.
-* Contributors must take care to ensure the specification examines how each decision relates to each of the major cloud providers and SaaS vendors, not favoring any one.
+* Contributors must take care to ensure the specification examines how each decision relates to each of the major cloud providers and SaaS vendors, not favoring any single one.
 * In some cases, the approach may closely resemble one or more provider's implementation, while in other cases, the approach might be new. In all cases, the FOCUS group (community composed of FinOps practitioners, Cloud and SaaS providers and FinOps vendors) will attempt to prioritize alignment with the FinOps [Framework][FODOF] and [Capabilities][FODOFC].
 
 ### Extensibility
