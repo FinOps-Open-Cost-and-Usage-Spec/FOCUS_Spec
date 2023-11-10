@@ -30,7 +30,9 @@ Indicates standards for expressing measurement units in columns appearing in bil
 
 ### Data Size Unit Names
 
-Data size unit names MUST be abbreviated using one of abbreviations in the following table.  For example, a unit name of 'TB' is a valid unit name, and a unit name of 'terabyte' is an invalid unit name. Data size abbreviations can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "gigabyte", and "GBs" would an invalid unit name.  The following table lists the valid abbreviations for data size units from a single bit or byte to 10^18 bits or bytes.
+Data size unit names MUST be abbreviated using one of abbreviations in the following table.  For example, a unit name of 'TB' is a valid unit name, and a unit name of 'terabyte' is an invalid unit name. Data size abbreviations can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "gigabyte", and "GBs" would an invalid unit name.  Values that exceed 10^18 MUST use the abbreviation for exabit, exabyte, exbibit, and exbibyte, and values smaller than a byte MUST use the abbreviation for bit or byte.   For example, the abbreviation "YB" for "yottabyte" is not a valid data size unit name as it represents a value larger than what is listed in the following table.
+
+The following table lists the valid abbreviations for data size units from a single bit or byte to 10^18 bits or bytes.   
 
 | Data size in bits    | Data size in bytes    |
 | -------------------- | --------------------- |
@@ -67,7 +69,7 @@ If the following list of recommended values does not cover a count-based unit, a
 
 ### Time-based Unit Names
 
-A time-based unit is a noun that represents a time interval.  Time-based units can be used to measure consumption over a time interval or in combination with another unit to capture a rate of consumption.
+A time-based unit is a noun that represents a time interval.  Time-based units can be used to measure consumption over a time interval or in combination with another unit to capture a rate of consumption.  Time-based units MUST match one of the values listed in the following table.
 
 | Time         |
 |--------------|
