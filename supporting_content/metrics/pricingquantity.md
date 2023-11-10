@@ -1,31 +1,5 @@
 # Column: PricingQuantity
 
-## Example PricingQuantity values for charges where ChargeCategory is "Tax"
-
-Example A
-| Description          | Pricing Quantity          | Unit Price   | Total     |
-|:---------------------|:--------------------------|:-------------|-----------|
-| Compute Usage        | 100                       | 1.0          | $100      |
-| Tax on Compute Usage | 100                       | 0.2          | $20       |
-| TOTAL                | 200                       | 1.2          | $120      |
-NOTE: Double counting of hours
-
-Example B
-| Description          | Pricing Quantity          | Unit Price   | Total     |
-|:---------------------|:--------------------------|:-------------|-----------|
-| Compute Usage        | 100                       | 1.0          | $100      |
-| Tax on Compute Usage | 1                         | 20           | $20       |
-| TOTAL                | 101                       | 21           | $120      |
-NOTE: Skews average of Unit price
-
-Example C
-| Description          | Pricing Quantity          | Unit Price   | Total     |
-|:---------------------|:--------------------------|:-------------|-----------|
-| Compute Usage        | 100                       | 1.0          | $100      |
-| Tax on Compute Usage | NULL                      | NULL         | $20       |
-| TOTAL                | 100                       | 1.0          | $120      |
-NOTE: Preferred option?
-
 ## Example provider mappings
 
 Current column mappings found in available data sets:
@@ -62,7 +36,7 @@ Current column mappings found in available data sets:
 * OCI seems to support separate billed quantities with an overage calculation… needs investigation.
 * How will this apply for marketplace transactions…. What behavior do we expect for prices and quantities for marketplace purchases (and refunds)
 
-### ChargeCategory 'Tax'
+### Current billing data for charges where ChargeCategory 'Tax'
 
 #### GCP - Tax
 
@@ -84,6 +58,32 @@ Current column mappings found in available data sets:
 ##### OCI - Tax
 
 * Tax-related record are not available in billing data
+
+### Example PricingQuantity values for charges where ChargeCategory is "Tax"
+
+Example A
+| Description          | Pricing Quantity          | Unit Price   | Total     |
+|:---------------------|:--------------------------|:-------------|-----------|
+| Compute Usage        | 100                       | 1.0          | $100      |
+| Tax on Compute Usage | 100                       | 0.2          | $20       |
+| TOTAL                | 200                       | 1.2          | $120      |
+NOTE: Double counting of hours
+
+Example B
+| Description          | Pricing Quantity          | Unit Price   | Total     |
+|:---------------------|:--------------------------|:-------------|-----------|
+| Compute Usage        | 100                       | 1.0          | $100      |
+| Tax on Compute Usage | 1                         | 20           | $20       |
+| TOTAL                | 101                       | 21           | $120      |
+NOTE: Skews average of Unit price
+
+Example C
+| Description          | Pricing Quantity          | Unit Price   | Total     |
+|:---------------------|:--------------------------|:-------------|-----------|
+| Compute Usage        | 100                       | 1.0          | $100      |
+| Tax on Compute Usage | NULL                      | NULL         | $20       |
+| TOTAL                | 100                       | 1.0          | $120      |
+NOTE: Preferred option
 
 ## Example usage scenarios
 
