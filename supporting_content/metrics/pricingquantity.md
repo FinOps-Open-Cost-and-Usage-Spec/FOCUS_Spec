@@ -7,7 +7,7 @@ Current column mappings found in available data sets:
 | Provider  | Data set                     | Column                   |
 |:----------|:-----------------------------|:-------------------------|
 | AWS       | Cost and Usage Report        | lineItem/UsageAmount (NOTE: how to handle reservation/TotalReservedUnits|
-| GCP       | BigQuery Billing Export    | usage.amount_in_pricing_units (NOTE: usage.amount provides UsageQuantity) |
+| GCP       | BigQuery Billing Export      | usage.amount_in_pricing_units (NOTE: usage.amount provides UsageQuantity) |
 | Microsoft | Cost Details                 | Not available (NOTE: While Quantity is the closest, it provides UsageQuantity and not PricingQuantity) |
 | OCI       | Cost and Usage Report        | usage/billedQuantity  Note: usage/billedQuantity preferred over usage/billedQuantityOverage since the latter does not include the quantity covered by Universal Credits (commitment-based discounts) |
 
@@ -36,7 +36,7 @@ Current column mappings found in available data sets:
 * OCI seems to support separate billed quantities with an overage calculation… needs investigation.
 * How will this apply for marketplace transactions…. What behavior do we expect for prices and quantities for marketplace purchases (and refunds)
 
-### Current billing data for charges where ChargeCategory 'Tax'
+### Current billing data for charges where ChargeType 'Tax'
 
 #### GCP - Tax
 
@@ -59,7 +59,7 @@ Current column mappings found in available data sets:
 
 * Tax-related record are not available in billing data
 
-### Example PricingQuantity values for charges where ChargeCategory is "Tax"
+### Example PricingQuantity values for charges where ChargeType is "Tax"
 
 Example A
 | Description          | Pricing Quantity          | Unit Price   | Billed Cost |
