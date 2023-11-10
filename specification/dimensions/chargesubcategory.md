@@ -45,8 +45,9 @@ Allowed values when ChargeType is `Usage`:
 
 | Value             | Description                                                                                                                                                                                                                                                                                                                                                |
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Commitment Used   | Usage charges that are associated with consumption of a commitment's underlying basis.                                                                                                                                              |
-| Commitment Not Used | Amortized usage charges for the portion of a commitment that has not been used. For example, if an organization has a commitment-based discount that is not fully utilized, the unused portion falls under this category. It highlights an area where the organization is not fully leveraging its commitments, which could be a lost cost-saving opportunity. |
+| On-Demand         |  Usage charges that are not associated with a commitment |
+| Used Commitment   | Usage charges that are associated with consumption of a commitment's underlying basis.                                                                                                                                              |
+| Unused Commitment | Amortized usage charges for the portion of a commitment that has not been used. For example, if an organization has a commitment-based discount that is not fully utilized, the unused portion falls under this category. It highlights an area where the organization is not fully leveraging its commitments, which could be a lost cost-saving opportunity. |
 
 Allowed values when ChargeType is `Adjustment`:
 
