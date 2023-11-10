@@ -32,7 +32,7 @@ Indicates standards for expressing measurement units in columns appearing in bil
 
 Data size unit names MUST be abbreviated using one of abbreviations in the following table.  For example, a unit name of 'TB' is a valid unit name, and a unit name of 'terabyte' is an invalid unit name. Data size abbreviations can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "gigabyte", and "GBs" would an invalid unit name.  Values that exceed 10^18 MUST use the abbreviation for exabit, exabyte, exbibit, and exbibyte, and values smaller than a byte MUST use the abbreviation for bit or byte.   For example, the abbreviation "YB" for "yottabyte" is not a valid data size unit name as it represents a value larger than what is listed in the following table.
 
-The following table lists the valid abbreviations for data size units from a single bit or byte to 10^18 bits or bytes.   
+The following table lists the valid abbreviations for data size units from a single bit or byte to 10^18 bits or bytes.
 
 | Data size in bits    | Data size in bytes    |
 | -------------------- | --------------------- |
