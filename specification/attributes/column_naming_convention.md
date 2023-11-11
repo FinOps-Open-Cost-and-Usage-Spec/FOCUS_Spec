@@ -1,7 +1,6 @@
 # Column Naming Convention
 
-Column IDs provided in cost data following a consistent naming convention reduces friction for FinOps practitioners
-that consume the data for analysis, reporting, and other use cases.
+Column IDs provided in cost data following a consistent naming convention reduces friction for FinOps practitioners that consume the data for analysis, reporting, and other use cases.
 
 All columns defined in the FOCUS specification MUST follow the naming requirements listed below.
 
@@ -19,14 +18,17 @@ Naming convention for columns appearing in billing data.
 
 ## Requirements
 
-- All columns defined by FOCUS MUST follow the following rules:
-  - Column IDs MUST use [Pascal case](https://techterms.com/definition/pascalcase).
-  - Column IDs MUST NOT use abbreviations.
-  - Column IDs SHOULD NOT use acronyms.
-  - Column IDs MUST be alphanumeric with no special characters.
-  - Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the Name suffix if there are no other columns with the same name prefix.
-- Custom columns SHOULD follow the same rules as FOCUS columns listed above.
-- All custom columns MUST be prefixed with an underscore (`_`) to distinguish them from FOCUS columns and avoid conflicts in future releases.
+* All columns defined by FOCUS MUST follow the following rules:
+  * Column IDs MUST use [Pascal case](https://techterms.com/definition/pascalcase).
+  * Column IDs MUST NOT use abbreviations.
+  * Column IDs SHOULD NOT use acronyms.
+  * Column IDs MUST be alphanumeric with no special characters.
+  * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the Name suffix if there are no other columns with the same name prefix.
+* Custom columns SHOULD follow the same rules as FOCUS columns listed above.
+* All custom columns MUST be prefixed with an underscore (`_`) to distinguish them from FOCUS columns and avoid conflicts in future releases.
+* All FOCUS columns MUST be first in provided dataset.
+  * Custom columns MUST be listed after all FOCUS columns and MUST NOT be intermixed.
+  * FOCUS and custom columns MAY be sorted alphabetically, but MUST remain separate.
 
 ## Exceptions
 
