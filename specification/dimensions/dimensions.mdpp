@@ -14,7 +14,7 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "chargeperiodstart.md",1
 !INCLUDE "chargetype.md",1
 !INCLUDE "invoiceissuer.md",1
-!INCLUDE "pricingmodel.md",1
+!INCLUDE "pricingcategory.md",1
 !INCLUDE "provider.md",1
 !INCLUDE "publisher.md",1
 !INCLUDE "region.md",1
