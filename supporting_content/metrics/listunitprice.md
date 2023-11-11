@@ -49,17 +49,23 @@ Current column mappings found in available data sets:
 
 * We deliberated on whether to specify both BillingCurrency and PricingCurrency and decided to enforce a single currency, specifically BillingCurrency. This approach provides consistency and simplifies invoice reconciliation. Since some providers don't include List Unit Prices in BillingCurrency in their public price sheets, the inclusion of a CurrencyExchangeRate dimension in the billing data becomes imperative (name subject to change). This is necessary to ensure we can accurately compare and match ListUnitPrices provided in billing data with those published in public price sheets.
 
+### Current data sources and SkuPriceId
+
+* For GCP and OCI, Pricing Data serves as the sole data source for ListUnitPrice, while for AWS, it is the preferred data source due to concerns related to volume/tier-based pricing. To determine the relevant price in Pricing Data for a specific charge record, the billing data must include the SkuPriceId. * Considering that providers publish not only list/on-demand prices but also unit prices inclusive of commitment-based discounts (and perhaps more), we can't directly associate ListUnitPrice with the SkuPriceId.
+* How to resolve the ListUnitPrice from the Price Sheet or Pricing API based on SkuPriceId? Consider introducing an additional column that would contain the ID of the corresponding List/On-Demand SKU Price ID, instead of providing guidelines and expecting practitioners to resolve it.
+* As previously mentioned, when BillingCurrency and PricingCurrency differ, the exchange rate must also be considered.
+
 ### Free-tier, volume/tier-based, BYOL-based and dynamically-priced SKU rates
 
+* For the definition of the ListUnitPrice, we considered the following versions:
+  * OPTION A: The List Unit Price represents a suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, which incorporates free-tier, volume/tier-based, BYOL-based and dynamically priced SKU rates, while excluding any discounts.
+    * The list of included reduced-rates based on Cloud FinOps - Rate optimization chapter
+    * Is it ok to assume that rates of interruptible resources and services (spare capacity, spot) fall into category of dynamically priced SKU rates? (do we plan to cover this in the glossary?)
+  * OPTION B: The List Unit Price represents a suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts.
+    * Is it ok to assume that practitioners perceive mentioned rates as reduced rates rather than discounts?
+  * OPTION C: The List Unit Price represents a suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any negotiated or commitment-based discounts.
+    * Is it ok to assume that those are the only two discounts?
 * Being inclusive of free-tier, volume/tier-based, BYOL-based and dynamically priced SKU rates, the List Unit Price cannot be used for calculating savings based on volume/tier-based pricing, the use of pre-owned software licenses (BYOL - Bring Your Own License), leveraging interruptible resources and/or services, or optimizing usage to take advantage of dynamic pricing models.
-
-### Current data sources
-
-* For GCP and OCI, Pricing Data serves as the sole data source for ListUnitPrice, while for AWS, it is the preferred data source due to concerns related to volume/tier-based pricing. To determine the relevant price in Pricing Data for a specific charge record, the billing data must include the SkuPriceId. As previously mentioned, when BillingCurrency and PricingCurrency differ, the exchange rate must also be considered.
-
-### Prices and Currencies
-
-* We deliberated on whether to specify both BillingCurrency and PricingCurrency and decided to enforce a single currency, specifically BillingCurrency. This approach provides consistency and simplifies invoice reconciliation. Since some providers don't include List Unit Prices in BillingCurrency in their public price sheets, the inclusion of a CurrencyExchangeRate dimension in the billing data becomes imperative (name subject to change). This is necessary to ensure we can accurately compare and match ListUnitPrices provided in billing data with those published in public price sheets.
 
 ### Naming challenges
 
