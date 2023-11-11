@@ -32,7 +32,7 @@ Pricing model where the cost of a particular resource or service is determined b
 
 ## Charge
 
-A line item in a FOCUS compatible cost and usage data associated with the usage of a service.
+A row in a FOCUS compatible cost and usage data associated with the usage of a service.
 
 ## Commitment
 
