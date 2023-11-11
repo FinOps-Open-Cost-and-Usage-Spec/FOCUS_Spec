@@ -108,11 +108,11 @@ A capability defined and offered by cloud service providers to satisfy certain n
 
 ## SKU
 
-Potato
+Construct composed of the common properties of a product offering associated with one or many SKU Prices.
 
 ## SKU Price
 
-Potato price
+Unit price used to calculate a charge. Any SKU Price can only be associated to one SKU. 
 
 ## Sub Account
 
