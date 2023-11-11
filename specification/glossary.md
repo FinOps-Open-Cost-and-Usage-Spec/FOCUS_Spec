@@ -28,7 +28,7 @@ The time interval over which a customer's usage of services is measured for bill
 
 ## Block Pricing
 
-Pricing model where the cost of a particular resource or service is determined based on predefined blocks or tiers of usage. In these scenarios, the Pricing Quantity can be different from the Usage Quantity.
+Pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Quantity can be different from the Usage Quantity.
 
 ## Charge
 
@@ -36,7 +36,7 @@ A row in a FOCUS compatible cost and usage data associated with the usage of a s
 
 ## Commitment
 
-This refers to a customer's agreement to purchase or use a specific quantity or level of a service over a defined period. The customer commits to a minimum usage or spending threshold.
+A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
 
 ## Commitment-Based Discount
 
@@ -112,7 +112,7 @@ Construct composed of the common properties of a product offering associated wit
 
 ## SKU Price
 
-Unit price used to calculate a charge. Any SKU Price can only be associated to one SKU. 
+Unit price used to calculate a charge. Any SKU Price can only be associated to one SKU.
 
 ## Sub Account
 
