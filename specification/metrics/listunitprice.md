@@ -14,7 +14,7 @@ List Unit Price
 
 ## Description
 
-A suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts.
+The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts.
 
 ## Content Constraints
 
