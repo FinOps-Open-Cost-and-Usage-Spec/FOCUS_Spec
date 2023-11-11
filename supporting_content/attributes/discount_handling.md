@@ -97,6 +97,8 @@ TBD
   - COMMITTED_USAGE_DISCOUNT - resource-based commitment discounts.
   - COMMITTED_USAGE_DISCOUNT_DOLLAR_BASE - Spend-based commitment discounts.
   - SUSTAINED_USAGE_DISCOUNT - automatic discount earned for prolonged usage.
+    > [!NOTE]
+    > Sustained Use Discounts (SUDs) are handled as after-the-fact adjustments (aka credits) and do not apply to the Discount Handling attribute since this attribute requires that discounts be applied directly to the row they're discounting.
   - FREE_TIER - free resource usage up to specified limits.
   - PROMOTION - includes free tial, marketing campaign credits, or other grants to use GCP.
   - RESELLER_MARGIN - indicates the Reseller Program Discounts earned on every eligible line item.
