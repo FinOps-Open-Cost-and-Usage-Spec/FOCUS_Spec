@@ -1,8 +1,8 @@
 # List Unit Price
 
-The List Unit Price represents the suggested provider published unit price for a single pricing measurement unit, which incorporates volume/tier-based rates while excluding any negotiated or commitment-based discounts. This price is denominated in the [Billing Currency](#billingcurrency). It is used to calculate List Cost and savings based on rate optimization activities.
+The List Unit Price represents the suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts. This price is denominated in the [Billing Currency](#billingcurrency). The List Unit Price can be used for calculating savings based on various rate optimization activities.
 
-The ListUnitPrice column MUST be present in the billing data. This column MUST be a numeric value of type Decimal within the range of non-negative decimal values. It MUST NOT contain null values in cases where the [ChargeType](#chargetype) is 'usage' or 'purchase'. When ListUnitPrice is not null, multiplying ListUnitPrice by [QuantityInPricingUnit](#quantityinpricingunit) MUST equal [ListCost](#listcost).
+The ListUnitPrice column MUST be present in the billing data. This column MUST be a numeric value of type Decimal within the range of non-negative decimal values and denominated in the BillingCurrency. ListUnitPrice MUST NOT be null if [SkuPriceId](#skupriceid) is not null and MUST be null if SkuPriceId is null. When ListUnitPrice is not null, multiplying ListUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ListCost](#listcost).
 
 ## Column ID
 
@@ -14,7 +14,7 @@ List Unit Price
 
 ## Description
 
-Represents the suggested provider published price for a single pricing measurement unit, which incorporates volume/tier-based reductions while excluding any negotiated or commitment-based discounts.
+The suggested provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts.
 
 ## Content Constraints
 
