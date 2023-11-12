@@ -65,7 +65,7 @@ The following principles were considered while building the specification.
 
 * Optimize columns for data analysis at scale and avoid the requirement of splitting or parsing values.
 * Avoid complex JSON structures when an alternative columnar structure is possible.
-* FOCUS should facilitate the inclusion of data necessary for a system of record for cost and usage data to consume.
+* Facilitate the inclusion of data necessary for a system of record for cost and usage data to consume.
 
 ### Consistency helps with clarity
 
