@@ -45,7 +45,7 @@ The following principles were considered while building the specification.
 * Strive to build columns that serve a single purpose, with clear and concise names and values.
 * The specification should allow data to be presented free from jargon, using simple understandable terms, and be approachable.
 * Naming and terms used should be carefully considered to avoid using terms for which the definition could be confused by the reader. If a term must be used which has either an unclear or multiple definitions, it should be clarified in the [glossary](#glossary).
-* The specification should provide all of the data elements necessary for the [FinOps capabilities](https://finops.org/framework/capabilities).
+* The specification should provide all of the data elements necessary for the [Capabilities][FODOFC].
 
 ### Provider-neutral approach by default
 
