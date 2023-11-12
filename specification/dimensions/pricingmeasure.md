@@ -2,7 +2,7 @@
 
 The Pricing Measure is a provider-specified measurement unit for determining unit prices, indicating how a provider rates measured usage and purchase quantities after applying pricing rules like block pricing. Common examples include the number of hours for compute appliance runtime, gigabyte-hours for a storage appliance, or an accumulated count of requests for a network appliance or API service. Pricing Measure complements the [Pricing Quantity](#pricingquantity) measurement. Distinct from the [Usage Unit](#usageunit), it focuses on pricing and cost, not resource and service consumption, often at a coarser granularity.
 
-The PricingMeasure column MUST be present in the billing data. This column MUST be of type String. It MUST NOT be null if PricingQuantity is not null. The PricingMeasure value MUST be equal to the corresponding pricing measure value provided in:
+The PricingMeasure column MUST be present in the billing data. This column MUST be of type String. It MUST NOT be null if PricingQuantity is not null. The PricingMeasure value MUST be equal to the corresponding pricing measurement unit value provided in:
 
 * The provider-published price list
 * The invoice, when the invoice includes a pricing measure
