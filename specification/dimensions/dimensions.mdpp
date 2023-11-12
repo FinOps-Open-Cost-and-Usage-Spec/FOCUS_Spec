@@ -21,7 +21,7 @@ dimensions to categorize, filter, and reveal details in your data when grouped w
 !INCLUDE "commitmentdiscountname.md",1
 !INCLUDE "commitmentdiscounttype.md",1
 !INCLUDE "invoiceissuer.md",1
-!INCLUDE "pricingmeasure.md",1
+!INCLUDE "pricingunit.md",1
 !INCLUDE "provider.md",1
 !INCLUDE "publisher.md",1
 !INCLUDE "usagequantity.md",1
