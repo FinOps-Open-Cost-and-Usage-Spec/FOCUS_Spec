@@ -84,7 +84,7 @@ A term that describes a service that is available and provided immediately or as
 
 ## Practitioner
 
-Any individual whose charter is to enhance business value from cloud infrastructure, by balancing innovation, velocity, and cost efficiency.
+An individual whose charter is to enhance business value from cloud infrastructure, by balancing innovation, velocity, and cost efficiency.
 
 ## Provider
 
