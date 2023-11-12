@@ -10,14 +10,14 @@ With flat-rate pricing, each pricing unit is assigned a fixed price, regardless 
 
 ### Quantity-Dependent Pricing (Usage-Dependent Pricing)
 
-Quantity-dependent pricing, also referred to as usage-dependent pricing, takes into account the quantity and adjusts pricing accordingly. This approach involves configuring multiple price tiers, each defined by a specific quantity range and associated unit prices, such as ListUnitPrice, NegotiatedUnitPrice, BilledUnitPrice, etc.
+Quantity-dependent pricing, also referred to as usage-dependent pricing, takes into account the quantity and adjusts pricing accordingly. This approach involves configuring multiple price tiers, each defined by a specific quantity range and associated unit prices, such as ListUnitPrice, NegotiatedUnitPrice, etc.
 
 Typically, higher usage tiers feature lower unit prices, offering users the advantage of reduced unit costs as their usage expands. Additionally, quantity-dependent pricing may include a **free-tier**, a special price tier designed for an introductory usage level.
 
 Two common quantity-dependent pricing strategies are volume-based pricing and tier-based pricing. While both strategies reset the count of charged units at the beginning of each billing period, they differ in how charges are categorized into different price tiers:
 
-- **volume-based pricing:** This strategy adjusts unit prices based on the total usage within a specific billing period, affecting all charges within it. Customers benefit from reduced unit costs as their overall usage increases.
-- **tier-based pricing:** In tier-based pricing, unit prices change as the number of charged units increases. You are charged for the consumed quantity within each tier based on the associated unit price for each tier.
+* **volume-based pricing:** This strategy adjusts unit prices based on the total usage within a specific billing period, affecting all charges within it. Customers benefit from reduced unit costs as their overall usage increases.
+* **tier-based pricing:** In tier-based pricing, unit prices change as the number of charged units increases. You are charged for the consumed quantity within each tier based on the associated unit price for each tier.
 
 For better comprehension, please refer to the sample price-tiers configuration and UC scenarios, provided in Fictional Use Case scenarios.
 
@@ -45,26 +45,29 @@ For better comprehension, please refer to the sample price-tiers configuration a
 
 #### Sample Billing data
 
-| Scenario | QuantityInPricingUnit | PricingUnit | ListUnitPrice | NegotiatedUnitPrice | BilledUnitPrice | PricingCurrency | BillingCurrency | ListCost | BilledCost | EffectiveCost |
-| :------- | --------------------: | :---------- | ------------: | ------------------: | --------------: | :-------------- | :-------------- | -------: | ---------: | ------------: |
-| S-1      |                    10 | 1GB         |             1 |                0.90 |            0.90 | USD             | USD             |       10 |          9 |             9 |
-| S-1      |                     2 | 1GB         |          0.50 |                0.45 |            0.45 | USD             | USD             |        1 |        0.9 |           0.9 |
-| S-2      |                    12 | 1GB         |          0.50 |                0.45 |            0.45 | USD             | USD             |        6 |        5.4 |           5.4 |
+| Scenario | PricingQuantity | PricingUnit | ListUnitPrice | NegotiatedUnitPrice (1.0+) | PricingCurrency (1.0+) | BillingCurrency | ListCost | BilledCost | EffectiveCost |
+| :------- | --------------: | :---------- | ------------: | -------------------------: | :--------------------- | :-------------- | -------: | ---------: | ------------: |
+| S-1      |              10 | 1GB         |             1 |                       0.90 | USD                    | USD             |       10 |          9 |             9 |
+| S-1      |               2 | 1GB         |          0.50 |                       0.45 | USD                    | USD             |        1 |        0.9 |           0.9 |
+| S-2      |              12 | 1GB         |          0.50 |                       0.45 | USD                    | USD             |        6 |        5.4 |           5.4 |
+
+* Note:  Although relevant in the context of this example, it is important to clarify that columns marked with 1.0+ will not be incorporated into the FOCUS 1.0 specification. Additionally, it should be noted that the nomenclature of these columns may undergo modifications.
 
 ### Current values observed in billing data for various scenarios
 
-| Provider  | Scenario                                                                           | ListUnitPrice Pattern                                                 | BilledUnitPrice Pattern |
-| :-------- | :--------------------------------------------------------------------------------- | :-------------------------------------------------------------------- | :---------------------- |
-| AWS       | Flat-rate based pricing<br>SKU: E9YHNFENF4XQBZR6                                   | pricing/publicOnDemandRate: 0.000005                                  | _TODO: Add sample data_ |
-| AWS       | Quantity-dependent pricing<br> ??? _TODO: look for a higher tier sample_           | pricing/publicOnDemandRate: ??? _TODO: look for a higher tier sample_ | _TODO: Add sample data_ |
-| GCP       | Flat-rate based pricing                                                            | Not available                                                         | _TODO: Add sample data_ |
-| GCP       | Quantity-dependent pricing                                                         | Not available                                                         | _TODO: Add sample data_ |
-| Microsoft | Flat-rate based pricing - PAYG<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52    | PayGPrice: 0.00036                                                    | _TODO: Add sample data_ |
-| Microsoft | Flat-rate based pricing - CSP<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52     | PayGPrice: 0.0003707                                                  | _TODO: Add sample data_ |
-| Microsoft | Quantity-dependent pricing - PAYG<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4 | PayGPrice: 0.087                                                      | _TODO: Add sample data_ |
-| Microsoft | Quantity-dependent pricing - CSP<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4  | PayGPrice: 0.087                                                      | _TODO: Add sample data_ |
-| OCI       | Flat-rate based pricing                                                            | Not available                                                         | _TODO: Add sample data_ |
-| OCI       | Quantity-dependent pricing                                                         | Not available                                                         | _TODO: Add sample data_ |
+| Provider  | Scenario                                                                           | ListUnitPrice Pattern                                                 |
+| :-------- |:---------------------------------------------------------------------------------- | :-------------------------------------------------------------------- |
+| AWS       | Flat-rate based pricing<br>SKU: E9YHNFENF4XQBZR6                                   | pricing/publicOnDemandRate: 0.000005                                  |
+| AWS       | Quantity-dependent pricing<br> ??? _TODO: look for a higher tier sample_           | pricing/publicOnDemandRate: ??? _TODO: look for a higher tier sample_ |
+| GCP       | Flat-rate based pricing                                                            | Not available                                                         |
+| GCP       | Quantity-dependent pricing                                                         | Not available                                                         |
+| Microsoft | Flat-rate based pricing - PAYG<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52    | PayGPrice: 0.00036                                                    |
+| Microsoft | Flat-rate based pricing - CSP<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52     | PayGPrice: 0.00036                                                    |
+| Microsoft | Flat-rate based pricing - EA<br>meterId: b9e5e77c-a0b3-4a2c-9b8b-57fa54f31c52      | PayGPrice: 0.0003707                                                  |
+| Microsoft | Quantity-dependent pricing - PAYG<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4 | PayGPrice: 0.087                                                      |
+| Microsoft | Quantity-dependent pricing - CSP<br>meterId: 9995d93a-7d35-4d3f-9c69-7a7fea447ef4  | PayGPrice: 0.087                                                      |
+| OCI       | Flat-rate based pricing                                                            | Not available                                                         |
+| OCI       | Quantity-dependent pricing                                                         | Not available                                                         |
 
 ### Alternative data sources for various scenarios
 
@@ -82,5 +85,5 @@ For better comprehension, please refer to the sample price-tiers configuration a
 
 ## Discussion / Scratch space
 
-- Quantity-driven pricing strategies might not be the most appropriate term
-- See [Pricing Support – UCs and Data samples Spreadsheet](https://docs.google.com/spreadsheets/d/1AZ-vtkKeKwYc8rqhxP1zMTnAVAS-svmWQQmr8cpv-IM/edit#gid=117987709) for additional UC scenarios.
+* Quantity-driven pricing strategies might not be the most appropriate term
+* See [Pricing Support – UCs and Data samples Spreadsheet](https://docs.google.com/spreadsheets/d/1AZ-vtkKeKwYc8rqhxP1zMTnAVAS-svmWQQmr8cpv-IM/edit#gid=117987709) for additional UC scenarios.
