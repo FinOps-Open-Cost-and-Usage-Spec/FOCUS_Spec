@@ -4,13 +4,13 @@ Pricing Category describes the kind of pricing model used for a charge at the ti
 
 PricingCategory MUST follow the requirements listed below:
 
-- PricingCategory MUST be present in the billing data and MUST be of type String.
-- PricingCategory MUST be null if SkuPriceId is null and MUST NOT be null if SkuPriceId is not null.
-- PricingCategory MUST be one of the allowed values.
-- PricingCategory MUST be "On-Demand" when pricing is predetermined at the standard rate for the billing account.
-- PricingCategory MUST be "Commitment-Based" when CommitmentDiscountId is not null.
-- PricingCategory MUST be "Dynamic" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing.
-- PricingCategory MUST be "Other" when there is a pricing model but none of the current allowed values apply.
+* PricingCategory MUST be present in the billing data and MUST be of type String.
+* PricingCategory MUST be null if SkuPriceId is null and MUST NOT be null if SkuPriceId is not null.
+* PricingCategory MUST be one of the allowed values.
+* PricingCategory MUST be "On-Demand" when pricing is predetermined at the standard rate for the billing account.
+* PricingCategory MUST be "Commitment-Based" when CommitmentDiscountId is not null.
+* PricingCategory MUST be "Dynamic" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing.
+* PricingCategory MUST be "Other" when there is a pricing model but none of the current allowed values apply.
 
 ## Column ID
 
