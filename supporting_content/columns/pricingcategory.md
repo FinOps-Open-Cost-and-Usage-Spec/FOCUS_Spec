@@ -7,25 +7,23 @@ Current column mappings found in available data sets:
 | Provider     | Data set                | Column                 | Example Values                                                 |
 | ------------ | ----------------------- | ---------------------- | -------------------------------------------------------------- |
 | AWS          | CUR                     | product/PurchaseOption | On-Demand, Reserved Instances, Spot Instances, Dedicated Hosts |
-| Google Cloud | BigQuery Billing Export |                        |                                                                |
+| Google Cloud | BigQuery Billing Export | (None)                 | (None)                                                         |
 | Microsoft    | Cost Details            | PricingModel           | OnDemand, Spot, Reservation, SavingsPlan                       |
 
 ## Example usage scenarios
 
 Current values observed in billing data for various scenarios:
 
-| Provider     | Data set                    | Provider value     | PricingCategory  | PricingSubcategory |
-| ------------ | --------------------------- | ------------------ | ---------------- | ------------------ |
-| AWS          | CUR (PurchaseOption)        | On-Demand          | On-Demand        | (depends on usage) |
-| AWS          | CUR (PurchaseOption)        | Reserved Instances | Commitment-Based | Committed Usage    |
-| AWS          | CUR (PurchaseOption)        | Spot Instances     | Dynamic          | Spot               |
-| AWS          | CUR (PurchaseOption)        | Dedicated Hosts    | On-Demand        | (depends on usage) |
-| Google Cloud | BigQuery Billing Export     |                    |                  |
-| Google Cloud | BigQuery Billing Export     |                    |                  |
-| Microsoft    | Cost Details (PricingModel) | OnDemand           | On-Demand        |
-| Microsoft    | Cost Details (PricingModel) | SavingsPlan        | Commitment-Based | Committed Spend    |
-| Microsoft    | Cost Details (PricingModel) | Reservation        | Commitment-Based | Committed Usage    |
-| Microsoft    | Cost Details (PricingModel) | Spot               | Reservation      |
+| Provider  | Data set                    | Provider value     | PricingCategory  | PricingSubcategory |
+| --------- | --------------------------- | ------------------ | ---------------- | ------------------ |
+| AWS       | CUR (PurchaseOption)        | On-Demand          | On-Demand        | (depends on usage) |
+| AWS       | CUR (PurchaseOption)        | Reserved Instances | Commitment-Based | Committed Usage    |
+| AWS       | CUR (PurchaseOption)        | Spot Instances     | Dynamic          | Spot               |
+| AWS       | CUR (PurchaseOption)        | Dedicated Hosts    | On-Demand        | (depends on usage) |
+| Microsoft | Cost Details (PricingModel) | OnDemand           | On-Demand        |
+| Microsoft | Cost Details (PricingModel) | SavingsPlan        | Commitment-Based | Committed Spend    |
+| Microsoft | Cost Details (PricingModel) | Reservation        | Commitment-Based | Committed Usage    |
+| Microsoft | Cost Details (PricingModel) | Spot               | Reservation      |
 
 ## Documentation
 
