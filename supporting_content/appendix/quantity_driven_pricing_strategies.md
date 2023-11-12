@@ -51,6 +51,8 @@ For better comprehension, please refer to the sample price-tiers configuration a
 | S-1      |               2 | 1GB         |          0.50 |                       0.45 | USD                    | USD             |        1 |        0.9 |           0.9 |
 | S-2      |              12 | 1GB         |          0.50 |                       0.45 | USD                    | USD             |        6 |        5.4 |           5.4 |
 
+* Note:  Although relevant in the context of this example, it is important to clarify that columns marked with 1.0+ will not be incorporated into the FOCUS 1.0 specification. Additionally, it should be noted that the nomenclature of these columns may undergo modifications.
+
 ### Current values observed in billing data for various scenarios
 
 | Provider  | Scenario                                                                           | ListUnitPrice Pattern                                                 |
