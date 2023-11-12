@@ -10,6 +10,10 @@ A charge representing a modification to billing data to account for certain even
 
 The gradual recognition of upfront costs over the duration of time that the good or service is consumed. An upfront payment made toward a commitment based discount can be amortized over commitment life. Amortization is valuable when the commitment period (time duration of the cost) extends beyond the granularity of the source report.
 
+## Availability Zone
+
+Geograhically separated locations containing a data center or cluster of data centers. Each availability zone (AZ) should have its own power, cooling, and networking, to provide redundancy and fault tolerance.
+
 ## Billed Cost
 
 The total amount of fees and discounts as documented in an itemized bill.
@@ -28,7 +32,7 @@ The time interval over which a customer's usage of services is measured for bill
 
 ## Block Pricing
 
-Pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Quantity can be different from the Usage Quantity.
+ A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Quantity can be different from the Usage Quantity.
 
 ## Charge
 
@@ -42,41 +46,41 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 Also known as Commitment Discount, this is a pricing strategy or incentive offered by a service provider to encourage customers to commit to a certain level of usage or purchase over a specified period. Offerings vary in specificity of commitment, penalties for underutilization, and possible remedies.
 
-## CSP
+## Cloud Service Provider (CSP)
 
-Cloud Service Provider (e.g. Amazon Web Services, Microsoft Azure, Google Cloud Platform).
+A company or organization that provides remote access to computing resources, infrastructure, or applications for a fee.
 
 ## Dimension
 
-Specification-defined categorical attribute that provides context or categorization to billing data.
+A specification-defined categorical attribute that provides context or categorization to billing data.
 
 ## Effective Cost
 
-A comprehensive and realistic measure of the true cost of a service, inclusive of all reduced rates, discounts, and impacts of amortization.
+A measure of the true cost of a service, inclusive of all reduced rates, discounts, and impacts of amortization.
 
 ## Finalized Tag
 
 A tag with one tag value chosen from a set of possible tag values after being processed by a set of provider-defined or user-defined rules.
 
-## FOCUS
+## FinOps Cost and Usage Specification (FOCUS)
 
-FinOps Cost and Usage Specification - An effort to build an open specification for cloud billing data.
+An effort to build an open specification for cloud billing data.
 
 ## Interruptible
 
-Category of compute resources that can be paused or terminated by the CSP within certain criteria, often available for discounted pricing when compared to the equivalent non-interruptible resource.
+A category of compute resources in which resources can be paused or terminated by the CSP within certain criteria, often available for discounted pricing when compared to the equivalent non-interruptible resource.
 
 ## List Unit Price
 
-Provider published unit price for a single pricing measurement unit.
+A provider published unit price for a single pricing measurement unit.
 
 ## Metric
 
 A quantifiable, standardized measure used to assess, evaluate, or track the performance, quality, or characteristics of a system, process, or service.
 
-## MSP
+## Managed Service Provider (MSP)
 
-Managed Service Provider - A company or organization that provides outsourced management and support of a range of IT services, such as network infrastructure, cybersecurity, cloud computing, and more.
+A company or organization that provides outsourced management and support of a range of IT services, such as network infrastructure, cybersecurity, cloud computing, and more.
 
 ## On-Demand
 
@@ -92,11 +96,11 @@ An entity that delivers services to consumers or clients i.e. a company that off
 
 ## Price List
 
-Comprehensive list of prices for offerings from a CSP, published by the CSP.
+A comprehensive list of prices for offerings from a CSP, published by the CSP.
 
 ## Resource
 
-An provisionable infrastructure component that is available to a customer in a cloud environement e.g. virtual machine, storage volume etc.
+A provisionable infrastructure component that is available to a customer in a cloud environement e.g. virtual machine, storage volume etc.
 
 ## Row
 
@@ -108,11 +112,11 @@ A capability defined and offered by cloud service providers to satisfy certain n
 
 ## SKU
 
-Construct composed of the common properties of a product offering associated with one or many SKU Prices.
+A construct composed of the common properties of a product offering associated with one or many SKU Prices.
 
 ## SKU Price
 
-Unit price used to calculate a charge. Any SKU Price can only be associated to one SKU.
+The unit price used to calculate a charge. Any SKU Price can only be associated to one SKU.
 
 ## Sub Account
 
@@ -125,7 +129,3 @@ A metadata label assigned to a resource to provide information about it or to ca
 ## Tag Source
 
 A Resource or Provider-defined construct for grouping resources and/or other Provider-defined constructs.
-
-## Zone
-
-Geograhically separated locations containing a data center or cluster of data centers. Each availability zone (AZ) should have its own power, cooling, and networking, to provide redundancy and fault tolerance.
