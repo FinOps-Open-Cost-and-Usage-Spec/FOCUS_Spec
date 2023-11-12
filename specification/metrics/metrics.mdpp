@@ -9,3 +9,4 @@ operations. When combined with dimensions (which are qualitative value columns),
 !INCLUDE "effectivecost.md",1
 !INCLUDE "listcost.md",1
 !INCLUDE "listunitprice.md",1
+!INCLUDE "pricingquantity.md",1
