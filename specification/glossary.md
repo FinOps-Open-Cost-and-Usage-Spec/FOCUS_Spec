@@ -90,7 +90,7 @@ An individual whose charter is to enhance business value from cloud infrastructu
 
 An entity that delivers services to consumers or clients i.e. a company that offers cloud computing, managed IT services, web hosting, or other technology-related services.
 
-## Price list
+## Price List
 
 Comprehensive list of prices for offerings from a CSP, published by the CSP.
 
