@@ -37,7 +37,7 @@ Allowed values:
 
 | Value            | Description                                                                                                                                                                                                  |
 | :--------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| On-Demand        | Charges priced at the standard rate for the billing account. This includes any applicable negotiated discounts and volume/tiered pricing, but does not include dynamic or commitment-based discount pricing. |
+| On-Demand        | Charges priced at the standard rate for the billing account. This includes any flat rate and volume/tiered pricing but does not include dynamic or commitment-based discount pricing. |
 | Dynamic          | Charges priced at a variable rate determined by the provider. This includes any product or service with a unit price the provider can change without notice, like interruptible or low priority resources.   |
 | Commitment-Based | Charges with reduced prices due to a commitment-based discount specified by the Commitment Discount ID.                                                                                                      |
 | Other            | Charges priced in a way not covered by another pricing category.                                                                                                                                             |
