@@ -26,7 +26,7 @@ Indicates how to include and apply discounts to usage charges or rows.
 
 * All applicable discounts SHOULD be applied to each row they pertain to and SHOULD NOT be negated in a separate row.
 * All discounts applied to a row MUST apply to the entire charge.
-  * If a discount only applies to a subset of the charge, then that portion of the charge MUST be split into a separate row. One with the discount and one without.
+  * If a discount only applies to a portion of a charge, then the discounted portion of the charge MUST be split into a separate row while the standard priced portion should be kept in it's own row.
   * If multiple discounts apply, there MUST be separate rows for each unique combination of applied discounts or undiscounted amount.
   * Each discount MUST be identifiable using existing FOCUS columns.
     * Discounts applied to rows from a commitment-based discount MUST include a CommitmentDiscountId.
