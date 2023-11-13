@@ -44,7 +44,7 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 ## Commitment-Based Discount
 
-Also known as Commitment Discount, this is a pricing strategy or incentive offered by a service provider to encourage customers to commit to a certain level of usage or purchase over a specified period. Offerings vary in specificity of commitment, penalties for underutilization, and possible remedies.
+Also known as Commitment Discount, this is a pricing strategy or incentive offered by a service provider to encourage customers to commit to a certain level of usage or spend, over a specified period. Offerings vary in specificity of commitment, penalties for underutilization, and possible remedies.
 
 ## Cloud Service Provider (CSP)
 
