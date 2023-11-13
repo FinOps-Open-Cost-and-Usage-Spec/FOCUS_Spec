@@ -36,7 +36,7 @@ The time interval over which a customer's usage of services is measured for bill
 
 ## Charge
 
-A row in a FOCUS compatible cost and usage data associated with the usage of a service.
+A row in a FOCUS compatible cost and usage dataset.
 
 ## Commitment
 
@@ -88,7 +88,7 @@ A term that describes a service that is available and provided immediately or as
 
 ## Practitioner
 
-An individual whose charter is to enhance business value from cloud infrastructure, by balancing innovation, velocity, and cost efficiency.
+An individual who performs FinOps within an organization to maximize the business value of using cloud and cloud-like services.
 
 ## Provider
 
@@ -104,7 +104,7 @@ A provisionable infrastructure component that is available to a customer in a cl
 
 ## Row
 
-An entry in a billing data set representing the consumption of a resource or other measurable activity.
+A row in a FOCUS compatible cost and usage dataset.
 
 ## Service
 
@@ -120,7 +120,7 @@ The unit price used to calculate a charge. Any SKU Price can only be associated 
 
 ## Sub Account
 
-A child account associated with a billing account, for further organization and separation of resources and services.
+A sub account is an optional provider-supported construct for organizing resources and/or services connected to a billing account. Sub accounts are commonly used for scenarios like grouping based on organizational constructs, access management needs and cost allocation strategies. Sub accounts must be associated with a billing account as they do not receive invoices.
 
 ## Tag
 
@@ -128,4 +128,4 @@ A metadata label assigned to a resource to provide information about it or to ca
 
 ## Tag Source
 
-A Resource or Provider-defined construct for grouping resources and/or other Provider-defined constructs.
+A Resource or Provider-defined construct for grouping resources and/or other Provider-defined construct that a Tag can be assigned to.
