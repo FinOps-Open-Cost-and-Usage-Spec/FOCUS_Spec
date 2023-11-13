@@ -9,6 +9,7 @@ Examples of column names found in provider datasets:
 | AWS       | CUR                      | bill_invoicing_entity |
 | GCP       | Big Query Billing Export | resource.global_name  |
 | Microsoft | Cost details             | ResourceId            |
+| OCI       | Cost reports             | product/resourceId    | 
 
 ## Discussion / Scratch space
 
