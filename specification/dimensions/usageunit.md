@@ -23,7 +23,7 @@ Units of a given resource and/or service used or purchased in combination with [
 | Column required | True            |
 | Data type       | String          |
 | Allows nulls    | True            |
-| Value format    | Unit Format     |
+| Value format    | Unit Format recommended |
 
 ## Introduced (version)
 
