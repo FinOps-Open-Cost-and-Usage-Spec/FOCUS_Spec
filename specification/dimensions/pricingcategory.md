@@ -1,6 +1,6 @@
 # Pricing Category
 
-Pricing Category describes the kind of pricing model used for a charge at the time it was used or purchased. Pricing Category is commonly used for scenarios like differentiating between charges at on-demand vs. reduced prices when investigating optimization opportunities, like for commitment-based discount coverage.
+Pricing Category describes the pricing model used for a charge at the time of use or purchase. It can be useful for distinguishing between charges at the [List Unit Price](#ListUnitPrice) or a reduced price and exposing optimization opportunities, like increasing commitment-based discount coverage.
 
 PricingCategory MUST follow the requirements listed below:
 
