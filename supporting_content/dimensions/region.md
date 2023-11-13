@@ -39,6 +39,7 @@ Current values observed in billing data for various scenarios:
   - Location.region ---> When location.location is a region or zone, this field is the region of usage, e.g. us-central1. For more information, see Geography and regions and Google Cloud locations.
   - Location.region ---> When location.location is a region or zone, this field is the region of usage, e.g. us-central1. For more information, see Geography and regions and Google Cloud locations.
   - Another region related column might be billed region, priced region or something of that sort that signifies where the pricing rules are set
+- We had a poll about whether Region should be nullable or not and decided it should. Updated this as part of 1.0.
 
 -   Definition discussion:\
     "A Region is an isolated geographic area where a resource is provisioned in OR a service is provided from. The region identifier is assigned by the provider. Resources and/or services are commonly utilized from different regions based on considerations for data sovereignty, performance, cost, convenience, or geopolitical reasons. "
