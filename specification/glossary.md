@@ -32,7 +32,7 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 **Block Pricing**
 
- A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Quantity can be different from the Usage Quantity.
+ A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Usage Unit and Usage Quantity.
 
 **Charge**
 
@@ -64,15 +64,15 @@ A tag with one tag value chosen from a set of possible tag values after being pr
 
 **FinOps Cost and Usage Specification (FOCUS)**
 
-An effort to build an open specification for cloud billing data.
+An open source specification that defines requirements for billing data.
 
 **Interruptible**
 
-A category of compute resources in which resources can be paused or terminated by the CSP within certain criteria, often available for discounted pricing when compared to the equivalent non-interruptible resource.
+A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
 
 **List Unit Price**
 
-A provider published unit price for a single pricing measurement unit.
+The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
 
 **Metric**
 
