@@ -24,8 +24,8 @@ Naming convention for columns appearing in billing data.
   * Column IDs SHOULD NOT use acronyms.
   * Column IDs MUST be alphanumeric with no special characters.
   * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the Name suffix if there are no other columns with the same name prefix.
-* Custom columns SHOULD follow the same rules as FOCUS columns listed above.
-* All custom columns MUST be prefixed with an underscore (`_`) to distinguish them from FOCUS columns and avoid conflicts in future releases.
+* Custom (e.g., provider-defined) columns SHOULD follow the same rules as FOCUS columns listed above.
+* All custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
 * All FOCUS columns SHOULD be first in the provided dataset.
   * Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.
   * Columns MAY be sorted alphabetically but custom columns SHOULD be after all FOCUS columns.
