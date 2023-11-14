@@ -23,17 +23,17 @@ Rules and formatting requirements for numeric columns appearing in billing data.
 * Numeric values expressed using scientific notation MUST be expressed using E notation "mEn" with a real number m and an integer n indictating a value of "m x 10^n".   The sign of the exponent MUST only be expressed as part of the exponent value if n is negative.
 * Numeric values MUST NOT be expressed with mathematical symbols, functions, or operators.
 * Numeric values MUST NOT contain qualifiers or additional characters (e.g., currency symbols, units of measure, etc.).
-* Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (`.`) if required to express a decimal value.
+* Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (".") if required to express a decimal value.
 * Numeric values MUST NOT include a character to represent a sign for a positive value. A negative sign (-) MUST indicate a negative value.
 * Columns with a Numeric value format MUST present one of the following values as the "Data type" in the column definition.
-  * Values:
+  * Allowed values:
 
     | Data Type | Type Description |
     |:----------|:-----------------|
     | Integer   | Specifies a numeric value represented by a whole number or by zero. Integer number formats correspond to standard data types defined by ISO/IEC 9899:2018 |
     | Decimal   | Specifies a numeric value represented by a decimal number. Decimal formats correspond to ISO/IEC/IEEE 60559:2011 and IEEE 754-2008 definitions. |
 * Providers SHOULD define precision and scale for Numeric Format columns using one of the following precision values in a data definition document that providers publish.
-  * Values:
+  * Allowed values:
 
     | Data Type | Precision | Definition                                                                | Range / Significant Digits       |
     |:----------|:----------|:--------------------------------------------------------------------------|:---------------------------------|

@@ -6,9 +6,9 @@ A tag becomes *finalized* when a single value is selected from a set of possible
 
 The Tags column adheres to the following requirements:
 
-* The Tags column MUST contain user-defined and/or provider-defined tags.
+* The Tags column MUST contain user-defined and provider-defined tags.
 * The Tags column MUST only contain finalized tags.
-* The Tags column MUST be in Key-Value Format.
+* The Tags column MUST be in [Key-Value Format](#key-valueformat).
 * A Tag key without a specified value MUST have its tag value set to null.
 * If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
 * Providers MUST NOT alter user-defined Tag keys or values.
@@ -42,7 +42,7 @@ As a example, let's assume 1 sub account exists with 1 virtual machine with the 
   * id: *my-vm*
   * user-defined tags: *team:web*
 
-The table below represents a finalized cost and usage dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
+The table below represents a finalized billing dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
 
 | ResourceType    | ResourceId     | Tags                                        |
 | :---------------| :--------------| :-------------------------------------------|
@@ -67,10 +67,11 @@ The set of tags assigned to Tag Sources that also account for potential provider
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
+| Column type     | Dimension        |
 | Column required | True             |
-| Data type       | JSON             |
 | Allows nulls    | True             |
-| Value format    | Key-Value Format |
+| Data type       | JSON             |
+| Value format    | [Key-Value Format](#key-valueformat) |
 
 ## Introduced (version)
 

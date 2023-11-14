@@ -36,7 +36,7 @@ Current column mappings found in available data sets:
 * OCI seems to support separate billed quantities with an overage calculation… needs investigation.
 * How will this apply for marketplace transactions…. What behavior do we expect for prices and quantities for marketplace purchases (and refunds)
 
-### Current billing data for charges where ChargeType 'Tax'
+### Current billing data for charges where ChargeCategory 'Tax'
 
 #### GCP - Tax
 
@@ -59,7 +59,7 @@ Current column mappings found in available data sets:
 
 * Tax-related record are not available in billing data
 
-### Example PricingQuantity values for charges where ChargeType is "Tax"
+### Example PricingQuantity values for charges where ChargeCategory is "Tax"
 
 Example A
 | Description          | Pricing Quantity          | Unit Price   | Billed Cost |

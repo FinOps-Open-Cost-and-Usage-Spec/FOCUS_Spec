@@ -1,6 +1,6 @@
 # Publisher
 
-A Publisher is an entity that produced the resources and/or services that were purchased. It is commonly used for cost
+A Publisher is an entity that produced the resources or services that were purchased. It is commonly used for cost
 analysis and reporting scenarios.
 
 The Publisher column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null
@@ -19,15 +19,16 @@ Publisher
 
 ## Description
 
-The name of the entity that produced the resources and/or services that were purchased.
+The name of the entity that produced the resources or services that were purchased.
 
 ## Content Constraints
 
 | Constraint      | Value           |
 |:----------------|:----------------|
+| Column type     | Dimension       |
 | Column required | True            |
-| Data type       | String          |
 | Allows nulls    | False           |
+| Data type       | String          |
 | Value format    | \<not specified> |
 
 ## Introduced (version)
