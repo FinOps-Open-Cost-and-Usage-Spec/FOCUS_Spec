@@ -25,9 +25,9 @@ Indicates how to include and apply discounts to usage charges or rows.
 ## Requirements
 
 * All applicable discounts SHOULD be applied to each row they pertain to and SHOULD NOT be negated in a separate row.
-* All discounts applied to a row MUST apply to the entire charge.
-  * If a discount only applies to a portion of a charge, then the discounted portion of the charge MUST be split into a separate row while the standard priced portion should be kept in it's own row.
-  * If multiple discounts apply, there MUST be separate rows for each unique combination of applied discounts or undiscounted amount.
+* All discounts applied to a row MUST apply to the entire charge. 
+  * Multiple discounts MAY apply to a row, but they MUST apply to the entire charge covered by that row.
+  * If a discount only applies to a portion of a charge, then the discounted portion of the charge MUST be split into a separate row.
   * Each discount MUST be identifiable using existing FOCUS columns.
     * Rows with a commitment-based discount applied to it MUST include a CommitmentDiscountId.
     * If a provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.
@@ -37,7 +37,7 @@ Indicates how to include and apply discounts to usage charges or rows.
   * The EffectiveCost MUST be the portion of the amortized purchase cost that applies to this row.
   * ChargeSubcategory MUST be "Used" for rows that received a reduced price from that commitment.
   * If a commitment is not fully utilized, the provider MUST include a row that represents the unused portion of the commitment for that charge period. ChargeSubcategory MUST be "Unused Commitment".
-  * The sum of the EffectiveCost for all "Used Commitment" and "Unused Commitment" rows for each ChargeSubcategory MUST be the same as the BilledCost of the commitment-based discount purchase.
+  * The sum of the EffectiveCost for all "Used Commitment" and "Unused Commitment" rows for each CommitmentDiscountId over the entire duration of the commitment MUST be the same as the total BilledCost of the commitment-based discount.
 * Credits that are applied after the fact MUST use a ChargeType of "Adjustment" and ChargeSubcategory of "Credit".
 
 ## Exceptions
