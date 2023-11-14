@@ -25,7 +25,7 @@ The name of the entity that produced the resources or services that were purchas
 
 | Constraint      | Value           |
 |:----------------|:----------------|
-| Column Type     | Dimension       |
+| Column type     | Dimension       |
 | Column required | True            |
 | Allows nulls    | False           |
 | Data type       | String          |

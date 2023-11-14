@@ -22,7 +22,7 @@ The end date and time of the billing period.
 
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
-| Column Type     | Dimension                            |
+| Column type     | Dimension                            |
 | Column Required | True                                 |
 | Allows nulls    | False                                |
 | Data type       | Date/Time                            |

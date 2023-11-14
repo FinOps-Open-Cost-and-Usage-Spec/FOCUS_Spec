@@ -20,7 +20,7 @@ An unique identifier that defines a provider-supported construct for organizing 
 
 | Constraint      | Value            |
 | :-------------- | :--------------- |
-| Column Type     | Dimension        |
+| Column type     | Dimension        |
 | Column required | True             |
 | Allows nulls    | True             |
 | Data type       | String           |

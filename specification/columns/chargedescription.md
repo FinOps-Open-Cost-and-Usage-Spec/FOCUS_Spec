@@ -20,7 +20,7 @@ Brief, human-readable summary of a row.
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
-| Column Type     | Dimension        |
+| Column type     | Dimension        |
 | Column required | True             |
 | Allows nulls    | True             |
 | Data type       | String           |

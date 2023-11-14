@@ -20,7 +20,7 @@ The suggested provider-published unit price for a single Pricing Unit of the ass
 
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
-| Column Type     | Metric                               |
+| Column type     | Metric                               |
 | Column required | True                                 |
 | Allows nulls    | True                                 |
 | Data type       | Decimal                              |

@@ -20,7 +20,7 @@ Unique identifier that defines the unit price used to calculate the charge.
 
 | Constraint       | Value          |
 | :--------------- | :------------- |
-| Column Type      | Dimension      |
+| Column type      | Dimension      |
 | Column required  | True           |
 | Allows nulls     | True           |
 | Data type        | String         |

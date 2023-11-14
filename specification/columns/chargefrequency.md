@@ -20,7 +20,7 @@ Indicates how often a charge will occur.
 
 | Constraint      | Value          |
 |:----------------|:---------------|
-| Column Type     | Dimension      |
+| Column type     | Dimension      |
 | Column required | True           |
 | Allows nulls    | False          |
 | Data type       | String         |

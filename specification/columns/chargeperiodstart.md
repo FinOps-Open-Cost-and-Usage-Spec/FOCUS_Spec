@@ -22,7 +22,7 @@ The beginning date and time of a charge period.
 
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
-| Column Type     | Dimension                            |
+| Column type     | Dimension                            |
 | Column Required | True                                 |
 | Allows nulls    | False                                |
 | Data type       | Date/Time                            |

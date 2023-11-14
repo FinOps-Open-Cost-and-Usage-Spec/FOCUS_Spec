@@ -24,7 +24,7 @@ after-the-fact adjustment (e.g., credits), or taxes.
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
-| Column Type     | Dimension      |
+| Column type     | Dimension      |
 | Column required | True           |
 | Allows nulls    | False          |
 | Data type       | String         |

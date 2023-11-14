@@ -20,7 +20,7 @@ A charge serving as the basis for invoicing, inclusive of all reduced rates and 
 
 |    Constraint   |      Value              |
 |:----------------|:------------------------|
-| Column Type     | Metric                  |
+| Column type     | Metric                  |
 | Column required | True                    |
 | Allows nulls    | False                   |
 | Data type       | Decimal                 |

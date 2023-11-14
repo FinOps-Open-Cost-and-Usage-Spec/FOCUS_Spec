@@ -24,7 +24,7 @@ An ID assigned to a grouping of resources or services, often used to manage acce
 
 |    Constraint   |      Value      |
 |:----------------|:----------------|
-| Column Type     | Dimension       |
+| Column type     | Dimension       |
 | Column required | True            |
 | Allows nulls    | True            |
 | Data type       | String          |

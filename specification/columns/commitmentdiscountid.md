@@ -22,7 +22,7 @@ The identifier assigned to a commitment-based discount by the provider.
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
-| Column Type     | Dimension        |
+| Column type     | Dimension        |
 | Column required | True             |
 | Allows nulls    | True             |
 | Data type       | String           |

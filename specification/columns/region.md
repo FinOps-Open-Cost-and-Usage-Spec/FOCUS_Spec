@@ -20,7 +20,7 @@ Isolated geographic area where a resource is provisioned in or a service is prov
 
 | Constraint      | Value           |
 |-----------------|-----------------|
-| Column Type     | Dimension       |
+| Column type     | Dimension       |
 | Column required | True            |
 | Allows nulls    | True            |
 | Data type       | String          |

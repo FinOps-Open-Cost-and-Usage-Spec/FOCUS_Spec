@@ -24,7 +24,7 @@ A name assigned to a grouping of resources or services, often used to manage acc
 
 | Constraint      | Value           |
 |:----------------|:----------------|
-| Column Type     | Dimension       |
+| Column type     | Dimension       |
 | Column required | True            |
 | Allows nulls    | True            |
 | Data type       | String          |

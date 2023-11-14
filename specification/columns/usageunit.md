@@ -20,7 +20,7 @@ Units of a given resource or service used or purchased in combination with [Usag
 
 |    Constraint   |      Value      |
 |:----------------|:----------------|
-| Column Type     | Metric          |
+| Column type     | Metric          |
 | Column required | True            |
 | Allows nulls    | True            |
 | Data type       | String          |

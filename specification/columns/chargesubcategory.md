@@ -36,7 +36,7 @@ Indicates what kind of usage or adjustment the row represents.
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
-| Column Type     | Dimension      |
+| Column type     | Dimension      |
 | Column required | True           |
 | Allows nulls    | True           |
 | Data type       | String         |

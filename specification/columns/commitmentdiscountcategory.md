@@ -22,7 +22,7 @@ Indicates whether the commitment-based discount identified in the CommitmentDisc
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
-| Column Type     | Dimension        |
+| Column type     | Dimension        |
 | Column required | True             |
 | Allows nulls    | True             |
 | Data type       | String           |

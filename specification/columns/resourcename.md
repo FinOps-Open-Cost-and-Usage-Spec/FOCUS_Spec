@@ -24,7 +24,7 @@ Display name assigned to a resource.
 
 |    Constraint   |      Value      |
 |:----------------|:----------------|
-| Column Type     | Dimension       |
+| Column type     | Dimension       |
 | Column required | True            |
 | Allows nulls    | True            |
 | Data type       | String          |

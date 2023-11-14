@@ -67,7 +67,7 @@ The set of tags assigned to Tag Sources that also account for potential provider
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
-| Column Type     | Dimension        |
+| Column type     | Dimension        |
 | Column required | True             |
 | Allows nulls    | True             |
 | Data type       | JSON             |

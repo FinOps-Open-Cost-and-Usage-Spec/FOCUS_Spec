@@ -20,7 +20,7 @@ Represents the currency that a charge was billed in.
 
 | Constraint      | Value                               |
 |:----------------|:------------------------------------|
-| Column Type     | Dimension                           |
+| Column type     | Dimension                           |
 | Column required | True                                |
 | Allows nulls    | False                               |
 | Data type       | String                              |

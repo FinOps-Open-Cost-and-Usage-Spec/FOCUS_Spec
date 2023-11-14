@@ -24,7 +24,7 @@ The display name assigned to a billing account.
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
-| Column Type     | Dimension        |
+| Column type     | Dimension        |
 | Column required | True             |
 | Allows nulls    | True             |
 | Data type       | String           |

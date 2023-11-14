@@ -25,7 +25,7 @@ The name of the entity that made the resources or services available for purchas
 
 | Constraint      | Value           |
 |:----------------|:----------------|
-| Column Type     | Dimension       |
+| Column type     | Dimension       |
 | Column required | True            |
 | Allows nulls    | False           |
 | Data type       | String          |

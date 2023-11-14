@@ -20,7 +20,7 @@ The volume of a given resource or service used or purchased based on the Pricing
 
 |    Constraint   |      Value                |
 |:----------------|:--------------------------|
-| Column Type     | Metric                    |
+| Column type     | Metric                    |
 | Column required | True                      |
 | Allows nulls    | True                      |
 | Data type       | Decimal                   |

@@ -25,7 +25,7 @@ Cost calculated by multiplying List Unit Price and the corresponding Pricing Qua
 
 | Constraint      | Value                   |
 |:----------------|:------------------------|
-| Column Type     | Metric                  |
+| Column type     | Metric                  |
 | Column required | True                    |
 | Allows nulls    | False                   |
 | Data type       | Decimal                 |
