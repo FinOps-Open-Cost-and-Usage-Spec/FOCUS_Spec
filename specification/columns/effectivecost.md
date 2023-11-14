@@ -28,11 +28,11 @@ Cost inclusive of the impacts of all reduced rates and discounts, augmented with
 
 ### Concerning Granularity and Distribution of Recurring Fee
 
-Providers should distribute the *commitment* purchase amount instead of including a row at the beginning of a period so practitioners do not need to manually distribute the fee themselves.
+[*Providers*](#glossary:provider) should distribute the *commitment* purchase amount instead of including a row at the beginning of a period so practitioners do not need to manually distribute the fee themselves.
 
 ### Concerning Amortization Approaches
 
-Eligible purchases should be *amortized* using a methodology determined by the provider that reflects the needs of their customer base and is proportional with the Pricing Quantity and the time granularity of the row. Should a practitioner desire to *amortize* relevant purchases using a different approach, the practitioner can do so using the Billed Cost for the line item representing the initial purchase.
+Eligible purchases should be *amortized* using a methodology determined by the *provider* that reflects the needs of their customer base and is proportional with the Pricing Quantity and the time granularity of the row. Should a practitioner desire to *amortize* relevant purchases using a different approach, the practitioner can do so using the Billed Cost for the line item representing the initial purchase.
 
 ## Content constraints
 
