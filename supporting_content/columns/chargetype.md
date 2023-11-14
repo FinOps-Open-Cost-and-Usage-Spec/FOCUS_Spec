@@ -64,13 +64,14 @@ Current values observed in billing data for various scenarios:
 | GCP       | regular                                                                                              |                                                                  | rounding_error<br>credit | tax |
 | Microsoft | Usage                                                                                                | Purchase                                                         | Refund<br>Adjustment     | Tax |
 
-### Examples of how Charge Type relates to Pricing Model / Frequency columns
+### Examples of how Charge Type relates to Pricing Category / Charge Frequency columns
 
-| Charge Type | PricingModel                                                                  | Frequency                                                                                     |
-| ----------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| Purchase    | Commitment Discount<br>(Upfront SavingsPlan / Reservation)                    | OneTime (e.g., Upfront portion for InvoiceCost or Unused portion for AmortizedCost)           |
-| Purchase    | Commitment Discount (Partial upfront or no upfront SavingsPlan / Reservation) | Monthly (e.g., Recurring portion for InvoiceCost or Unused monthly portion for AmortizedCost) |
-| Usage       | OnDemand                                                                      | Hourly                                                                                        |
-| Usage       | SavingsPlan / Reservation                                                     | Hourly                                                                                        |
-| Adjustment  | NULL? OnDemand?                                                               | OneTime                                                                                       |
-| Tax         | NULL? OnDemand?                                                               | Monthly                                                                                       |
+| Scenario| ChargeCategory | ChargeSubcategory | PricingCategory  | Charge Frequency |
+|-|-|-|-|-|
+| Upfront discount purchase | Purchase| NULL  | On-Demand  | One-time |
+| Partial Upfront discount monthly fee | Purchase    | NULL  | On-Demand  | Recurring  |
+| Usage covered by upfront portion of partial upfront discount | Usage   | Used Commitment   | Commitment-based | Usage-based  |
+| Unused commitment of partial upfront discount    | Usage   | Unused Commitment | Commitment-based | Usage-based      |
+| Usage not covered by discount | Usage | On-Demand  | On-Demand   | Usage-based|
+| Refund | Adjustment   | Refund | NULL | One-time  |
+| Usage invoice tax charge   | Tax   |  NULL |  NULL | Recurring        |
