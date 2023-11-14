@@ -35,7 +35,7 @@ Data size unit names MUST be abbreviated using one of abbreviations in the follo
 The following table lists the valid abbreviations for data size units from a single bit or byte to 10^18 bits or bytes.
 
 | Data size in bits    | Data size in bytes    |
-| -------------------- | --------------------- |
+| :------------------- | :-------------------- |
 | b (bit) = 10^1       | B (byte = 10^1)       |
 | Kb (kilobit = 10^3)  | KB (kilobyte = 10^3)  |
 | Mb (megabit = 10^6)  | MB (megabyte = 10^6)  |
@@ -57,7 +57,7 @@ A count-based unit is a noun that represents a discrete number of items, events,
 If the following list of recommended values does not cover a count-based unit, a provider MAY introduce a new noun representing a count-based unit.  All nouns appearing in unit that are not listed in the recommended values table will be considered count-based units.  A new count-based unit value MUST be capitalized.
 
 | Count        |
-|--------------|
+|:-------------|
 | Count        |
 | Unit         |
 | Request      |
@@ -72,7 +72,7 @@ If the following list of recommended values does not cover a count-based unit, a
 A time-based unit is a noun that represents a time interval.  Time-based units can be used to measure consumption over a time interval or in combination with another unit to capture a rate of consumption.  Time-based units MUST match one of the values listed in the following table.
 
 | Time         |
-|--------------|
+|:-------------|
 | Year         |
 | Month        |
 | Day          |
