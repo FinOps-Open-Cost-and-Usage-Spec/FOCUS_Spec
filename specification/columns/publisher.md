@@ -25,6 +25,7 @@ The name of the entity that produced the resources and/or services that were pur
 
 | Constraint      | Value           |
 |:----------------|:----------------|
+| Column Type     | Dimension       |
 | Column required | True            |
 | Allows nulls    | False           |
 | Data type       | String          |

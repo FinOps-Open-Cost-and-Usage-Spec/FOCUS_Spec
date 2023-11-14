@@ -22,6 +22,7 @@ An offering that can be purchased from a provider (e.g., cloud virtual machine, 
 
 | Constraint      | Value            |
 | :-------------- | :--------------- |
+| Column Type     | Dimension        |
 | Column required | True             |
 | Allows nulls    | False            |
 | Data type       | String           |

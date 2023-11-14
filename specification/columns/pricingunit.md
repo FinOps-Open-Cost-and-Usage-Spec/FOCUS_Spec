@@ -25,6 +25,7 @@ A provider-specified measurement unit for determining unit prices, indicating ho
 
 | Constraint      | Value                   |
 |-----------------|-------------------------|
+| Column Type     | Dimension               |
 | Column required | True                    |
 | Allows nulls    | True                    |
 | Data type       | String                  |

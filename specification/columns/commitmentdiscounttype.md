@@ -4,7 +4,7 @@ A commitment-based discount is a commitment for an amount of usage or spend thro
 
 Commitment Discount Type is a provider-assigned name to identify the type of commitment-based discount applied to the row.
 
-The CommitmentDiscountType column MUST be present in the billing data. This column MUST be of type String, MUST be null when CommitmentDiscountId is null, and MUST NOT be null when CommitmentDiscountId is not null. Providers MUST use a consistent value-format and a set of values for CommitmentDiscountType values within their cost and usage datasets.
+The CommitmentDiscountType column MUST be present in the billing data. This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null. Providers MUST use a consistent value-format and a set of values for CommitmentDiscountType values within their cost and usage datasets.
 
 ## Column ID
 
@@ -22,6 +22,7 @@ A provider-assigned identifier for the type of commitment-based discount applied
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
+| Column Type     | Dimension        |
 | Column required | False            |
 | Allows nulls    | True             |
 | Data type       | String           |

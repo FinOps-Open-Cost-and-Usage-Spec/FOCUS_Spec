@@ -20,10 +20,11 @@ Highest-level classification of a service based on the core function of the serv
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Column Type     | Dimension      |
 | Column required | True           |
 | Allows nulls    | False          |
 | Data type       | String         |
-| Value format    | Allowed values |
+| Value format    | Allowed Values |
 
 Allowed values:
 

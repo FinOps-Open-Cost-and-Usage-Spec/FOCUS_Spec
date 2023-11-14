@@ -20,6 +20,7 @@ A provider assigned identifier for a physically separated and isolated area with
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
+| Column Type     | Dimension        |
 | Column required | False            |
 | Allows nulls    | True             |
 | Data type       | String           |

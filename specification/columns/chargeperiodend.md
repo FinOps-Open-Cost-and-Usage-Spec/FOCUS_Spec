@@ -4,7 +4,7 @@ Charge period represents the time window in which a charge was incurred. The tim
 
 Charge Period End represents the end date and time of the charge period.
 
-The ChargePeriodEnd column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. ChargePeriodEnd column MUST conform to [FOCUS Date/Time Format](#date/timeformat).
+The ChargePeriodEnd column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. ChargePeriodEnd column MUST conform to [Date/Time Format](#date/timeformat).
 
 ## Column ID
 
@@ -22,6 +22,7 @@ The end date and time of a charge period.
 
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
+| Column Type     | Dimension                            |
 | Column Required | True                                 |
 | Allows nulls    | False                                |
 | Data type       | Date/Time                            |

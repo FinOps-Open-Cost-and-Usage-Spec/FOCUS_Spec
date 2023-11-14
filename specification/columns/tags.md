@@ -8,7 +8,7 @@ The Tags column adheres to the following requirements:
 
 * The Tags column MUST contain user-defined and/or provider-defined tags.
 * The Tags column MUST only contain finalized tags.
-* The Tags column MUST be in Key-Value Format.
+* The Tags column MUST be in [Key-Value Format](#key-valueformat).
 * A Tag key without a specified value MUST have its tag value set to null.
 * If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
 * Providers MUST NOT alter user-defined Tag keys or values.
@@ -67,10 +67,11 @@ The set of tags assigned to Tag Sources that also account for potential provider
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
+| Column Type     | Dimension        |
 | Column required | True             |
 | Allows nulls    | True             |
 | Data type       | JSON             |
-| Value format    | Key-Value Format |
+| Value format    | [Key-Value Format](#key-valueformat) |
 
 ## Introduced (version)
 

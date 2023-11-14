@@ -24,6 +24,7 @@ The identifier assigned to a billing account by the provider.
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
+| Column Type     | Dimension        |
 | Column required | True             |
 | Allows nulls    | False            |
 | Data type       | String           |
