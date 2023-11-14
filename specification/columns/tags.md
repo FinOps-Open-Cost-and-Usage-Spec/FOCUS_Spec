@@ -6,7 +6,7 @@ A tag becomes *finalized* when a single value is selected from a set of possible
 
 The Tags column adheres to the following requirements:
 
-* The Tags column MUST contain user-defined and/or provider-defined tags.
+* The Tags column MUST contain user-defined and provider-defined tags.
 * The Tags column MUST only contain finalized tags.
 * The Tags column MUST be in [Key-Value Format](#key-valueformat).
 * A Tag key without a specified value MUST have its tag value set to null.
@@ -42,7 +42,7 @@ As a example, let's assume 1 sub account exists with 1 virtual machine with the 
   * id: *my-vm*
   * user-defined tags: *team:web*
 
-The table below represents a finalized cost and usage dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
+The table below represents a finalized billing dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
 
 | ResourceType    | ResourceId     | Tags                                        |
 | :---------------| :--------------| :-------------------------------------------|

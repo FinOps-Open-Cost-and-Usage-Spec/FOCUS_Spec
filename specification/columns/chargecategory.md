@@ -5,7 +5,7 @@ an after-the-fact adjustment (e.g., credits), or taxes. The Charge Category is c
 separately from usage-based charges, to separate taxes that may require special handling, or to apply finer-grained
 allocation logic to purchases or adjustments.
 
-The ChargeCategory column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the allowed values.
+The ChargeCategory column MUST be present and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
 
 ## Column ID
 

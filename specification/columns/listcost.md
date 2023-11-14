@@ -1,6 +1,6 @@
 # List Cost
 
-List Cost represents the cost calculated by multiplying [List Unit Price](#listunitprice) and the corresponding [Pricing Quantity](#pricingquantity). List Cost is denominated in the [Billing Currency](#billingcurrency) and is used for calculating savings based on various rate optimization activities, by comparing it with [Effective Cost](#effectivecost).
+List Cost represents the cost calculated by multiplying [List Unit Price](#listunitprice) and the corresponding [Pricing Quantity](#pricingquantity). List Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on various rate optimization activities, by comparing it with [Effective Cost](#effectivecost).
 
 The ListCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency. When a ListUnitPrice is not null, multiplying the ListUnitPrice by PricingQuantity MUST produce the ListCost.
 
