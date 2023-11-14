@@ -1,7 +1,7 @@
 # Charge Type
 
 A Charge Type indicates whether the row represents an upfront or recurring fee, cost of usage that already occurred,
-an after-the-fact [adjustment](glossary:adjustment) (e.g., credits), or taxes. The Charge Type is commonly used to identify prepaid purchases
+an after-the-fact [*adjustment*](glossary:adjustment) (e.g., credits), or taxes. The Charge Type is commonly used to identify prepaid purchases
 separately from usage-based charges, to separate taxes that may require special handling, or to apply finer-grained
 allocation logic to purchases or *adjustments*.
 
