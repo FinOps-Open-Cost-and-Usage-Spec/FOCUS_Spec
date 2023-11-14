@@ -25,10 +25,11 @@ A provider-specified measurement unit for determining unit prices, indicating ho
 
 | Constraint      | Value                   |
 |-----------------|-------------------------|
+| Column type     | Dimension               |
 | Column required | True                    |
-| Data type       | String                  |
 | Allows nulls    | True                    |
-| Value format    | Unit Format recommended |
+| Data type       | String                  |
+| Value format    | [Unit Format](#unitformat) |
 
 ## Introduced (version)
 

@@ -26,20 +26,20 @@ Current values observed in billing data for various scenarios:
 - Finance teams identify and allocate one-time purchases either by amortization or cost recovery from the right entity.
 - Engineering managers are able to identify usage-based charges to include in their budget or forecasting processes.
 
-| Scenario                                                       | ChargeType   | ChargeFrequency       |
-| -------------------------------------------------------------- | ------------ | --------------------- |
-| Upfront commitment purchase                                    | Purchase     | One-Time              |
-| Monthly commitment fee                                         | Purchase     | Recurring             |
-| (No known scenario / Not supported)                            | ~~Purchase~~ | ~~Usage-Based~~       |
-| Short-term consulting charged based on hours                   | Usage        | One-Time<sup>1</sup>  |
-| Long-term consulting contract based on hours                   | Usage        | Recurring<sup>1</sup> |
-| Ad-hoc usage charges                                           | Usage        | Usage-Based           |
-| Refund                                                         | Adjustment   | One-Time              |
-| Rounding adjustment<sup>2</sup>                                | Adjustment   | Recurring             |
-| Complex credit based on usage of multiple services<sup>3</sup> | Adjustment   | Usage-Based           |
-| Tax for a purchase invoice that will not happen again          | Tax          | One-Time              |
-| Tax for invoices generated every billing period                | Tax          | Recurring             |
-| Tax applied every time there is usage (unlikely)               | Tax          | Usage-Based           |
+| Scenario                                                       | ChargeCategory | ChargeFrequency       |
+| -------------------------------------------------------------- | -------------- | --------------------- |
+| Upfront commitment purchase                                    | Purchase       | One-Time              |
+| Monthly commitment fee                                         | Purchase       | Recurring             |
+| (No known scenario / Not supported)                            | ~~Purchase~~   | ~~Usage-Based~~       |
+| Short-term consulting charged based on hours                   | Usage          | One-Time<sup>1</sup>  |
+| Long-term consulting contract based on hours                   | Usage          | Recurring<sup>1</sup> |
+| Ad-hoc usage charges                                           | Usage          | Usage-Based           |
+| Refund                                                         | Adjustment     | One-Time              |
+| Rounding adjustment<sup>2</sup>                                | Adjustment     | Recurring             |
+| Complex credit based on usage of multiple services<sup>3</sup> | Adjustment     | Usage-Based           |
+| Tax for a purchase invoice that will not happen again          | Tax            | One-Time              |
+| Tax for invoices generated every billing period                | Tax            | Recurring             |
+| Tax applied every time there is usage (unlikely)               | Tax            | Usage-Based           |
 
 1. A consulting charge based on hours \[used\] would be a "Usage" charge.
    - If the charge happens once and is not based on a long-term agreement over multiple "periods" (as defined by the consuling firm), then it would be a "One-Time" charge.
@@ -72,5 +72,5 @@ Current values observed in billing data for various scenarios:
   - Fees are important for cost allocation / amortization - sometimes needs to be isolated from other cost
   - How would recurring refunds or credits be handled? Like AWS MAP credits
 - AWS handling for SPs might be a concern - Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.30)
-- What Charge Types can BE recurring? Would usage under free tier be recurring since every month that charge is $0 or would it be usage based?
+- What Charge Category values can BE recurring? Would usage under free tier be recurring since every month that charge is $0 or would it be usage based?
 - There was a discussion about using the word periodic vs. recurring to indicate that a charge would show up on a certain schedule. Based on multiple inputs, we decided to go with recurring simply becuase it is more commonly used although periodic might have been the better fitting English word per standard definitions.

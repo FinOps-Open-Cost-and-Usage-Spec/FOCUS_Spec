@@ -22,9 +22,10 @@ The display name assigned to a commitment-based discount.
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
+| Column type     | Dimension        |
 | Column required | True             |
-| Data type       | String           |
 | Allows nulls    | True             |
+| Data type       | String           |
 | Value format    | \<not specified> |
 
 ## Introduced (version)
