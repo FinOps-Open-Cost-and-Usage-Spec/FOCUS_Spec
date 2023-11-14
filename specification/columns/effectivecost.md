@@ -4,8 +4,8 @@ Effective Cost represents a cost inclusive of the impacts of all reduced rates a
 
 This metric resolves two challenges that are faced by practitioners:
 
-1. Practitioners need to *amortize* relevant purchases, such as upfront fees, over the duration of the commitment and distribute them to the appropriate reporting groups (e.g. tags, resources).
-2. Many commitment-based discount constructs include a recurring expense for the commitment for every [*billing period*](#glossary:billing-period) and must distribute this cost to the resources using the commitment. This forces reconciliation between the initial commitment row per period and the actual usage rows.
+1. Practitioners need to *amortize* relevant purchases, such as upfront fees, over the duration of the [*commitment*](#glossary:commitment) and distribute them to the appropriate reporting groups (e.g. tags, resources).
+2. Many [*commitment-based discount*](#glossary:commitment-based-discount) constructs include a recurring expense for the *commitment* for every [*billing period*](#glossary:billing-period) and must distribute this cost to the resources using the *commitment*. This forces reconciliation between the initial *commitment* row per period and the actual usage rows.
 
 The EffectiveCost column MUST be present in the billing data. This column MUST be a valid numeric value of type Decimal, denominated in the BillingCurrency, and MUST NOT be null. The aggregated EffectiveCost for a *billing period* MAY NOT match the *charge* received on the invoice for the same *billing period*.
 
@@ -28,7 +28,7 @@ Cost inclusive of the impacts of all reduced rates and discounts, augmented with
 
 ### Concerning Granularity and Distribution of Recurring Fee
 
-Providers should distribute the commitment purchase amount instead of including a row at the beginning of a period so practitioners do not need to manually distribute the fee themselves.
+Providers should distribute the *commitment* purchase amount instead of including a row at the beginning of a period so practitioners do not need to manually distribute the fee themselves.
 
 ### Concerning Amortization Approaches
 
