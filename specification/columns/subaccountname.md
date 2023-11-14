@@ -1,6 +1,6 @@
 # Sub Account Name
 
-A sub account is an optional [*provider*](#glossary:provider)-supported construct for organizing resources and/or services connected to a [*billing account*](#glossary:billing-account). Sub accounts are commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies. Sub accounts must be associated with a *billing account* as they do not receive invoices.
+A sub account is an optional [provider](#glossary:provider)-supported construct for organizing resources and/or services connected to a [*billing account*](#glossary:billing-account). Sub accounts are commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies. Sub accounts must be associated with a *billing account* as they do not receive invoices.
 
 A sub account name is a display name assigned to a sub account.
 
