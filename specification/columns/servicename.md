@@ -1,6 +1,6 @@
 # Service Name
 
-A service represents an offering that can be purchased from a provider (e.g., cloud virtual machine, SaaS database, professional services from a systems integrator). A service offering can include various types of usage or other charges. For example, a cloud database service may include compute, storage, and networking charges.
+A service represents an offering that can be purchased from a provider (e.g., cloud virtual machine, SaaS database, professional services from a systems integrator). A service offering can include various types of usage or other [*charges*](#glossary:charge). For example, a cloud database service may include compute, storage, and networking *charges*.
 
 The Service Name is a display name for the offering that was purchased. The Service Name is commonly used for scenarios like analyzing aggregate cost trends over time and filtering data to investigate anomalies.
 
