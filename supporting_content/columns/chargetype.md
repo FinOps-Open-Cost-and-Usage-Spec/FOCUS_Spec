@@ -66,7 +66,7 @@ Current values observed in billing data for various scenarios:
 
 ### Examples of how Charge Type relates to Pricing Category / Charge Frequency columns
 
-| Scenario| ChargeCategory | ChargeSubcategory | PricingCategory  | Charge Frequency |
+| Scenario| ChargeType | ChargeSubcategory | PricingCategory  | Charge Frequency |
 |-|-|-|-|-|
 | Upfront discount purchase | Purchase| NULL  | On-Demand  | One-time |
 | Partial Upfront discount monthly fee | Purchase    | NULL  | On-Demand  | Recurring  |
