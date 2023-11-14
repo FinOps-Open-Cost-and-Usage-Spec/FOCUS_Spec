@@ -12,7 +12,7 @@ The distribution of upfront costs over time to accurately reflect the consumptio
 
 **Availability Zone**
 
-Geograhically separated locations containing a data center or cluster of data centers. Each availability zone (AZ) should have its own power, cooling, and networking, to provide redundancy and fault tolerance.
+A collection of geographically-separated locations containing a data center or cluster of data centers. Each availability zone (AZ) should have its own power, cooling, and networking, to provide redundancy and fault tolerance.
 
 **Billed Cost**
 
@@ -56,7 +56,7 @@ A specification-defined categorical attribute that provides context or categoriz
 
 **Effective Cost**
 
-A measure of the true cost of a service, inclusive of all reduced rates, discounts, and impacts of amortization.
+Cost inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of relevant purchases (one-time or recurring) paid to cover future eligible charges.
 
 **Finalized Tag**
 
@@ -96,11 +96,11 @@ An entity that made internal or 3rd party resources and/or services available fo
 
 **Price List**
 
-A comprehensive list of prices for offerings from a CSP, published by the CSP.
+A comprehensive list of prices offered by a provider.
 
 **Resource**
 
-A provisionable infrastructure component that is available to a customer in a cloud environement e.g. virtual machine, storage volume etc.
+A unique physical or logical component that incurs a charge.
 
 **Row**
 
@@ -116,7 +116,7 @@ A construct composed of the common properties of a product offering associated w
 
 **SKU Price**
 
-The unit price used to calculate a charge. Any SKU Price can only be associated to one SKU.
+The unit price used to calculate a charge that is associated to one SKU.  SKU Prices are usually referenced from provider's price list and unique to various providers.
 
 **Sub Account**
 
