@@ -21,10 +21,9 @@ Represents the currency that a charge was billed in.
 | Constraint      | Value                               |
 |:----------------|:------------------------------------|
 | Column required | True                                |
-| Data type       | String                              |
 | Allows nulls    | False                               |
-| Value format    | list-of-values                      |
-| Allowed Values  | Meets [FOCUS Currency Code Format](#currencycodeformat) requirements |
+| Data type       | String                              |
+| Value format    | [Currency Code Format](#currencycodeformat) |
 
 ## Introduced (version)
 

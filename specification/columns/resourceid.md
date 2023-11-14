@@ -25,8 +25,8 @@ Identifier assigned to a resource by the provider.
 | Constraint      | Value           |
 |:----------------|:----------------|
 | Column required | True            |
-| Data type       | String          |
 | Allows nulls    | True            |
+| Data type       | String          |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

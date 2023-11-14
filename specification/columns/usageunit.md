@@ -21,9 +21,9 @@ Units of a given resource and/or service used or purchased in combination with [
 |    Constraint   |      Value      |
 |:----------------|:----------------|
 | Column required | True            |
-| Data type       | String          |
 | Allows nulls    | True            |
-| Value format    | Unit Format recommended |
+| Data type       | String          |
+| Value format    | [Unit Format](#unitformat) recommended |
 
 ## Introduced (version)
 

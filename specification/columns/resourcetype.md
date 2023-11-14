@@ -21,8 +21,8 @@ The kind of resource for which you are being charged.
 |    Constraint   |      Value      |
 |:----------------|:----------------|
 | Column required | True            |
-| Data type       | String          |
 | Allows nulls    | True            |
+| Data type       | String          |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

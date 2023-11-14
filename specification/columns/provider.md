@@ -26,8 +26,8 @@ The name of the entity that made the resources and/or services available for pur
 | Constraint      | Value           |
 |:----------------|:----------------|
 | Column required | True            |
-| Data type       | String          |
 | Allows nulls    | False           |
+| Data type       | String          |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

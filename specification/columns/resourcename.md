@@ -26,8 +26,8 @@ Display name assigned to a resource.
 |    Constraint   |      Value      |
 |:----------------|:----------------|
 | Column required | True            |
-| Data type       | String          |
 | Allows nulls    | True            |
+| Data type       | String          |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

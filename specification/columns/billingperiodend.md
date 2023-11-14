@@ -20,12 +20,12 @@ The end date and time of the billing period.
 
 ## Content Constraints
 
-| Constraint      | Value                                                         |
-|:----------------|:--------------------------------------------------------------|
-| Column Required | True                                                          |
-| Data type       | Date/Time                                                     |
-| Allows nulls    | False                                                         |
-| Value format    | Meets [FOCUS Date/Time Format](#date/timeformat) requirements |
+| Constraint      | Value                                |
+|:----------------|:-------------------------------------|
+| Column Required | True                                 |
+| Allows nulls    | False                                |
+| Data type       | Date/Time                            |
+| Value format    | [Date/Time Format](#date/timeformat) |
 
 ## Introduced (version)
 

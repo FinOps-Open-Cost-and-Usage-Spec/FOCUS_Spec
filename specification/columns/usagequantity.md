@@ -21,9 +21,9 @@ Volume of a given resource and/or service used or purchased based on the [Usage 
 | Constraint      | Value         |
 |:----------------|:--------------|
 | Column required | True          |
-| Data type       | Decimal       |
 | Allows nulls    | True          |
-| Value format    | Numeric value |
+| Data type       | Decimal       |
+| Value format    | [Numeric Format](#numericformat) |
 | Number range    | Any valid decimal value |
 
 ## Introduced (version)

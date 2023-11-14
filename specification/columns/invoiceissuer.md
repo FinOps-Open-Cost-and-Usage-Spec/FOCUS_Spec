@@ -26,8 +26,8 @@ The name of the entity responsible for invoicing for the resources and/or servic
 | Constraint      | Value           |
 |:----------------|:----------------|
 | Column required | True            |
-| Data type       | String          |
 | Allows nulls    | False           |
+| Data type       | String          |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

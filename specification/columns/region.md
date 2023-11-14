@@ -21,8 +21,8 @@ Isolated geographic area where a resource is provisioned in and/or a service is 
 | Constraint      | Value           |
 |-----------------|-----------------|
 | Column required | True            |
-| Data type       | String          |
 | Allows nulls    | True            |
+| Data type       | String          |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

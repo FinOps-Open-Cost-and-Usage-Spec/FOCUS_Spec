@@ -21,14 +21,14 @@ Highest-level classification of a service based on the core function of the serv
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column required | True           |
-| Data type       | String         |
 | Allows nulls    | False          |
-| Value format    | list-of-values |
+| Data type       | String         |
+| Value format    | Allowed values |
 
 Allowed values:
 
 | Service Category          | Description                                                                                    |
-| ------------------------- | ---------------------------------------------------------------------------------------------- |
+| :------------------------ | :--------------------------------------------------------------------------------------------- |
 | AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                             |
 | Analytics                 | Data processing, analytics, and visualization capabilities.                                    |
 | Business Applications     | Business and productivity applications and services.                                           |

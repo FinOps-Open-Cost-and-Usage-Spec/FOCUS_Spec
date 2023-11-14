@@ -21,9 +21,9 @@ The volume of a given resource and/or service used or purchased based on the Pri
 |    Constraint   |      Value                |
 |:----------------|:--------------------------|
 | Column required | True                      |
-| Data type       | Decimal                   |
 | Allows nulls    | True                      |
-| Value format    | Numeric value             |
+| Data type       | Decimal                   |
+| Value format    | [Numeric Format](#numericformat) |
 | Number Range    | Any valid decimal value   |
 
 ## Introduced (version)

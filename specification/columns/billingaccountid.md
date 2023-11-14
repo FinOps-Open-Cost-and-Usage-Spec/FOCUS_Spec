@@ -22,11 +22,11 @@ The identifier assigned to a billing account by the provider.
 
 ## Content constraints
 
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column required | True            |
-| Data type       | String          |
+|    Constraint   |      Value       |
+|:----------------|:-----------------|
+| Column required | True             |
 | Allows nulls    | False            |
+| Data type       | String           |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

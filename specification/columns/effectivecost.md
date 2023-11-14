@@ -39,9 +39,9 @@ Eligible purchases should be amortized using a methodology determined by the pro
 |    Constraint   |      Value              |
 |:----------------|:------------------------|
 | Column required | True                    |
-| Data type       | Decimal                 |
 | Allows nulls    | False                   |
-| Value format    | Numeric value           |
+| Data type       | Decimal                 |
+| Value format    | [Numeric Format](#numericformat) |
 | Number range    | Any valid decimal value |
 
 ## Introduced (version)

@@ -23,10 +23,10 @@ A name assigned to a grouping of resources and/or services, often used to manage
 ## Content constraints
 
 | Constraint      | Value           |
-|-----------------|-----------------|
+|:----------------|:----------------|
 | Column required | True            |
+| Allows nulls    | True            |
 | Data type       | String          |
-| Allows nulls    | True          |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

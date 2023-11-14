@@ -68,8 +68,8 @@ The set of tags assigned to Tag Sources that also account for potential provider
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column required | True             |
-| Data type       | JSON             |
 | Allows nulls    | True             |
+| Data type       | JSON             |
 | Value format    | Key-Value Format |
 
 ## Introduced (version)

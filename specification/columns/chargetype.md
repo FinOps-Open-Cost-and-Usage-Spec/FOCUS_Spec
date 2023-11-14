@@ -26,18 +26,18 @@ after-the-fact adjustment (e.g., credits), or taxes.
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column required | True           |
-| Data type       | String         |
 | Allows nulls    | False          |
-| Value format    | list-of-values |
+| Data type       | String         |
+| Value format    | Allowed values |
 
 Allowed values:
 
-| Value      | Description                                                                                                                                                                   |
-| :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Adjustment | Any adjustments that are applied after the original usage or purchase row. Adjustments may be related to multiple charges.                                                    |
-| Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.                                                                                  |
+| Value      | Description                          |
+| :--------- | :------------------------------------|
+| Adjustment | Any adjustments that are applied after the original usage or purchase row. Adjustments may be related to multiple charges.   |
+| Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
-| Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.                                                                         |
+| Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
 
 ## Introduced (version)
 

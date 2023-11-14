@@ -23,14 +23,14 @@ Indicates whether the commitment-based discount identified in the CommitmentDisc
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column required | True             |
-| Data type       | String           |
 | Allows nulls    | True             |
+| Data type       | String           |
 | Value format    | list-of-values   |
 
 Allowed values:
 
-| Value      | Description                                                                                                                                                                   |
-|:--------|:--------------------------------------------------------------------------------|
+| Value      | Description                                                              |
+|:--------|:----------------------------------------------------------------------------|
 | Spend   | Commitment-based discounts that require a predetermined amount of spend.    |
 | Usage   | Commitment-based discounts that require a predetermined amount of usage.    |
 

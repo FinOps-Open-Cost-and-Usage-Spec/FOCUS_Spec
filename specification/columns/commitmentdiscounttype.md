@@ -23,8 +23,8 @@ A provider-assigned identifier for the type of commitment-based discount applied
 | Constraint      | Value            |
 |:----------------|:-----------------|
 | Column required | False            |
-| Data type       | String           |
 | Allows nulls    | True             |
+| Data type       | String           |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

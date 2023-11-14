@@ -22,11 +22,11 @@ The display name assigned to a billing account.
 
 ## Content constraints
 
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column required | True            |
-| Data type       | String          |
-| Allows nulls    | True            |
+|    Constraint   |      Value       |
+|:----------------|:-----------------|
+| Column required | True             |
+| Allows nulls    | True             |
+| Data type       | String           |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

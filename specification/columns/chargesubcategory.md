@@ -37,22 +37,22 @@ Indicates what kind of usage or adjustment the row represents.
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column required | True           |
-| Data type       | String         |
 | Allows nulls    | True           |
-| Value format    | list-of-values |
+| Data type       | String         |
+| Value format    | Allowed values |
 
 Allowed values when ChargeType is `Usage`:
 
-| Value             | Description                                                                                                                                                                                                                                                                                                                                                |
-| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| On-Demand         | Usage charges that are not associated with a commitment |
-| Used Commitment   | Usage charges that are associated with consumption of a commitment's underlying basis.                                                                                                                                              |
+| Value             | Description                                                                            |
+| :---------------- | :------------------------------------------------------------------------------------- |
+| On-Demand         | Usage charges that are not associated with a commitment                                |
+| Used Commitment   | Usage charges that are associated with consumption of a commitment's underlying basis. |
 | Unused Commitment | Amortized usage charges for the portion of a commitment that has not been used. For example, if an organization has a commitment-based discount that is not fully utilized, the unused portion falls under this category. It highlights an area where the organization is not fully leveraging its commitments, which could be a lost cost-saving opportunity. |
 
 Allowed values when ChargeType is `Adjustment`:
 
-| Value              | Description                                                                                                                                                                                                              |
-| :----------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Value              | Description                                           |
+| :----------------- | :-----------------------------------------------------|
 | Refund             | Negative charges that were previously billed and are being returned by the provider. Providers can have multiple types of refunds such as resolving a tax error or for returned or exchanged commitment-based discounts. |
 | Credit             | Negative charges granted by the provider for various scenarios, like negotiated benefits, usage discounts, or promotional credits.                                                                                       |
 | Rounding Error     | Positive or negative charges that are needed to ensure raw cost and usage data aggregations match the total cost on the invoice, which may be rounded.                                                                   |

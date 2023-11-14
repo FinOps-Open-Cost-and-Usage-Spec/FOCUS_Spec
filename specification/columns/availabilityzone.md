@@ -21,8 +21,8 @@ A provider assigned identifier for a physically separated and isolated area with
 | Constraint      | Value            |
 |:----------------|:-----------------|
 | Column required | False            |
-| Data type       | String           |
 | Allows nulls    | True             |
+| Data type       | String           |
 | Value format    | \<not specified> |
 
 ## Introduced (version)

@@ -21,9 +21,9 @@ The suggested provider-published unit price for a single Pricing Unit of the ass
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
 | Column required | True                                 |
-| Data type       | Decimal                              |
 | Allows nulls    | True                                 |
-| Value format    | Numeric value                        |
+| Data type       | Decimal                              |
+| Value format    | [Numeric Format](#numericformat)     |
 | Number range    | Any valid non-negative decimal value |
 
 ## Introduced (version)
