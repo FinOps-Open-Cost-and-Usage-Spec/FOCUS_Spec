@@ -53,8 +53,8 @@ Current values observed in billing data for various scenarios:
   - Credits are typically based on agreements for migration of workloads
   - AWS handling for SPs: Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.50)
 - Is it Recurring or not? (Attribute about the Purchase?)
-- What Charge Categorys can BE recurring?
-- What Charge Categorys for "Free Tier" with usage limits and "Free Trial" offers?
+- What Charge Category values can BE recurring?
+- What Charge Category values for "Free Tier" with usage limits and "Free Trial" offers?
 
 ### Example mappings for normalized values
 

@@ -72,5 +72,5 @@ Current values observed in billing data for various scenarios:
   - Fees are important for cost allocation / amortization - sometimes needs to be isolated from other cost
   - How would recurring refunds or credits be handled? Like AWS MAP credits
 - AWS handling for SPs might be a concern - Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.30)
-- What Charge Categorys can BE recurring? Would usage under free tier be recurring since every month that charge is $0 or would it be usage based?
+- What Charge Category values can BE recurring? Would usage under free tier be recurring since every month that charge is $0 or would it be usage based?
 - There was a discussion about using the word periodic vs. recurring to indicate that a charge would show up on a certain schedule. Based on multiple inputs, we decided to go with recurring simply becuase it is more commonly used although periodic might have been the better fitting English word per standard definitions.
