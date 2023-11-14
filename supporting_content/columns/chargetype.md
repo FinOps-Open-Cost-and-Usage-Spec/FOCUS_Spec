@@ -1,4 +1,4 @@
-# Column: ChargeType
+# Column: ChargeCategory
 
 ## Example provider mappings
 
@@ -8,13 +8,13 @@ Current column mappings found in available data sets:
 | --------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | AWS       | CUR                     | `bill/BillType` (Anniversary, Purchase, Refund)<br>`lineItem/LineItemType` (Usage, Tax, BundledDiscount, Credit, Discount, DiscountedUsage, Fee, Refund, RIFee, SavingsPlanUpfrontFee, SavingsPlanRecurringFee, SavingsPlanCoveredUsage, SavingsPlanNegation) |
 | GCP       | BigQuery Billing Export | `Cost type` (regular, tax, adjustment, or rounding error)                                                                                                                                                                                                     |
-| Microsoft | Cost details            | `ChargeType` (Purchase, Usage, Refund, Adjustment, Tax?)<br><br>Related:<br>`PricingModel` (OnDemand, Reservation, SavingsPlan, Spot)<br>`Frequency` (OneTime, Recurring)                                                                                     |
+| Microsoft | Cost details            | `ChargeCategory` (Purchase, Usage, Refund, Adjustment, Tax?)<br><br>Related:<br>`PricingModel` (OnDemand, Reservation, SavingsPlan, Spot)<br>`Frequency` (OneTime, Recurring)                                                                                     |
 
 ## Example usage scenarios
 
 Current values observed in billing data for various scenarios:
 
-| Provider  | Current value                      | ChargeType | Scenario                                                                                                                                                                                                                                                                                                                                                   |
+| Provider  | Current value                      | ChargeCategory | Scenario                                                                                                                                                                                                                                                                                                                                                   |
 | --------- | ---------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | AWS       | Anniversary / Usage                | Usage      | Usage charged at on-demand rate for resources with resource id (EC2, EBS, RDS, RedShift)                                                                                                                                                                                                                                                                   |
 | AWS       | Anniversary / Usage                | Usage      | Usage charged at on-demand rate for resources with "no resource id" (Support, CloudWatch, DataTransfer)                                                                                                                                                                                                                                                    |
@@ -53,8 +53,8 @@ Current values observed in billing data for various scenarios:
   - Credits are typically based on agreements for migration of workloads
   - AWS handling for SPs: Anniversary charge (BillType) Savings Plan for $1 and a negation for UsageType (for -0.50)
 - Is it Recurring or not? (Attribute about the Purchase?)
-- What Charge Types can BE recurring?
-- What Charge Types for "Free Tier" with usage limits and "Free Trial" offers?
+- What Charge Categorys can BE recurring?
+- What Charge Categorys for "Free Tier" with usage limits and "Free Trial" offers?
 
 ### Example mappings for normalized values
 
@@ -66,7 +66,7 @@ Current values observed in billing data for various scenarios:
 
 ### Examples of how Charge Type relates to Pricing Category / Charge Frequency columns
 
-| Scenario| ChargeType | ChargeSubcategory | PricingCategory  | Charge Frequency |
+| Scenario| ChargeCategory | ChargeSubcategory | PricingCategory  | Charge Frequency |
 |-|-|-|-|-|
 | Upfront discount purchase | Purchase| NULL  | On-Demand  | One-time |
 | Partial Upfront discount monthly fee | Purchase    | NULL  | On-Demand  | Recurring  |

@@ -6,7 +6,7 @@
 
 #### On the day of purchase a row exists for the upfront cost of the reservation as follows
 
-| Charge period           | Billing period           | Charge Type | Units | Billed Cost | Effective Cost |
+| Charge period           | Billing period           | Charge Category | Units | Billed Cost | Effective Cost |
 | ----------------------- | ------------------------ | ----------- | ----- | ----------- | -------------- |
 | Jan 1 2023 - Jan 1 2024 | Jan 1 2023 - Jan 31 2023 | Purchase    | 3     | 26.69589041 | 0              |
 
@@ -16,7 +16,7 @@ ___
 
 #### Also on each hour a row is added as follows
 
-| Charge period           | Billing period           | Charge Type | Units | Billed Cost | Effective Cost |
+| Charge period           | Billing period           | Charge Category | Units | Billed Cost | Effective Cost |
 | ----------------------- | ------------------------ | ----------- | ----- | ----------- | -------------- |
 | Jan 1 2023 - Jan 2 2023 | Jan 1 2023 - Jan 31 2023 | Usage       | 3     | 0           | 3.81369863     |
 
@@ -26,7 +26,7 @@ ___
 
 #### If the Reserved Instance is unused during a period, for example another ineligible instance type is used
 
-| Charge period           | Billing period           | Charge Type     | Units | Billed Cost | Effective Cost |
+| Charge period           | Billing period           | Charge Category     | Units | Billed Cost | Effective Cost |
 | ----------------------- | ------------------------ | --------------- | ----- | ----------- | -------------- |
 | Jan 4 2023 - Jan 5 2023 | Jan 1 2023 - Jan 31 2023 | OD Usag         | 3     | 5.544       | 5.544          |
 | Jan 4 2023 - Jan 5 2023 | Jan 1 2023 - Jan 31 2023 | Unused RI Usage | 3     | 0           | 3.81369863     |
@@ -37,7 +37,7 @@ ___
 
 #### If the RI is partially unused during a period, for example a scale down occurs
 
-| Charge period           | Billing period           | Charge Type     | Units | Billed Cost | Effective Cost |
+| Charge period           | Billing period           | Charge Category     | Units | Billed Cost | Effective Cost |
 | ----------------------- | ------------------------ | --------------- | ----- | ----------- | -------------- |
 | Jan 4 2023 - Jan 5 2023 | Jan 1 2023 - Jan 31 2023 | OD Usage        | 1     | 0           | 2.542465753          |
 | Jan 4 2023 - Jan 5 2023 | Jan 1 2023 - Jan 31 2023 | Unused RI Usage | 2     | 0           | 1.271232877     |

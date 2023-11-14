@@ -11,7 +11,7 @@ The EffectiveCost column MUST be present in the billing data. This column MUST b
 
 In cases where the [SkuPriceId](#skupriceid) is null, the following applies:
 
-* The EffectiveCost MUST be calculated based on the EffectiveCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeType](#chargetype) is 'Tax').
+* The EffectiveCost MUST be calculated based on the EffectiveCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is 'Tax').
 * The EffectiveCost MUST match the BilledCost if the charge is unrelated to other charges (e.g. [AdjustmentType](#adjustmenttype) is 'Credit').
 
 ## Column ID
