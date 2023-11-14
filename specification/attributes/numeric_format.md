@@ -26,19 +26,23 @@ Rules and formatting requirements for numeric columns appearing in billing data.
 * Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (`.`) if required to express a decimal value.
 * Numeric values MUST NOT include a character to represent a sign for a positive value. A negative sign (-) MUST indicate a negative value.
 * Columns with a Numeric value format MUST present one of the following values as the "Data type" in the column definition.
-  | Data Type | Type Description |
-  |:----------|:-----------------|
-  | Integer   | Specifies a numeric value represented by a whole number or by zero. Integer number formats correspond to standard data types defined by ISO/IEC 9899:2018 |
-  | Decimal   | Specifies a numeric value represented by a decimal number. Decimal formats correspond to ISO/IEC/IEEE 60559:2011 and IEEE 754-2008 definitions. |
+  * Values:
+
+    | Data Type | Type Description |
+    |:----------|:-----------------|
+    | Integer   | Specifies a numeric value represented by a whole number or by zero. Integer number formats correspond to standard data types defined by ISO/IEC 9899:2018 |
+    | Decimal   | Specifies a numeric value represented by a decimal number. Decimal formats correspond to ISO/IEC/IEEE 60559:2011 and IEEE 754-2008 definitions. |
 * Providers SHOULD define precision and scale for Numeric Format columns using one of the following precision values in a data definition document that providers publish.
-  | Data Type | Precision | Definition                                                                | Range / Significant Digits       |
-  |:----------|:----------|:--------------------------------------------------------------------------|:---------------------------------|
-  | Integer   | Short     | 16-bit signed short int ISO/IEC 9899:2018                                 | -32,767 to +32,767               |
-  | Integer   | Long      | 32-bit signed long int ISO/IEC 9899:2018                                  | -2,147,483,647 to +2,147,483,647 |
-  | Integer   | Extended  | 64-bit signed two's complement integer *or higher*                        | -(2^63 - 1) to (2^63 - 1)        |
-  | Decimal   | Single    | 32-bit binary format IEEE 754-2008 floating-point (decimal32)             | 9                                |
-  | Decimal   | Double    | 64-bit binary format IEEE 754-2008 floating-point (decimal64)             | 16                               |
-  | Decimal   | Extended  | 128-bit binary format IEEE 754-2008 floating-point (decimal128) or higher | 36+                              |
+  * Values:
+
+    | Data Type | Precision | Definition                                                                | Range / Significant Digits       |
+    |:----------|:----------|:--------------------------------------------------------------------------|:---------------------------------|
+    | Integer   | Short     | 16-bit signed short int ISO/IEC 9899:2018                                 | -32,767 to +32,767               |
+    | Integer   | Long      | 32-bit signed long int ISO/IEC 9899:2018                                  | -2,147,483,647 to +2,147,483,647 |
+    | Integer   | Extended  | 64-bit signed two's complement integer *or higher*                        | -(2^63 - 1) to (2^63 - 1)        |
+    | Decimal   | Single    | 32-bit binary format IEEE 754-2008 floating-point (decimal32)             | 9                                |
+    | Decimal   | Double    | 64-bit binary format IEEE 754-2008 floating-point (decimal64)             | 16                               |
+    | Decimal   | Extended  | 128-bit binary format IEEE 754-2008 floating-point (decimal128) or higher | 36+                              |
 
 ### Examples
 
