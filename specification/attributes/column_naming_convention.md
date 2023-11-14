@@ -24,7 +24,8 @@ Naming convention for columns appearing in billing data.
 * Column IDs SHOULD NOT use acronyms.
 * Column IDs MUST be alphanumeric with no special characters.
 * Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID. Display Name for a Column MAY
-  avoid the Name suffix if it is considered superfluous
+  avoid the Name suffix if it is considered superfluous.
+* Columns with the Category suffix must be normalized.
 
 ## Exceptions
 
