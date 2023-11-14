@@ -1,10 +1,10 @@
 # Billing Period End
 
-Billing period represents the time window for which an organization has or will receive an invoice for. The time window is inclusive of the start date and exclusive of the end date.
+[*Billing period*](#glossary:billing-period) represents the time window for which an organization has or will receive an invoice for. The time window is inclusive of the start date and exclusive of the end date.
 
-Billing Period End represents the end date and time of the billing period.
+Billing Period End represents the end date and time of the *billing period*.
 
-The BillingPeriodEnd column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. BillingPeriodEnd column MUST conform to [FOCUS Date/Time Format](#date/timeformat). The sum of the Billed Cost metric for rows in a given billing period MUST match the sum of the invoices received for that billing period for a billing account.
+The BillingPeriodEnd column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. BillingPeriodEnd column MUST conform to [FOCUS Date/Time Format](#date/timeformat). The sum of the [Billed Cost](#billedcost) metric for rows in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a billing account.
 
 ## Column ID
 
@@ -16,7 +16,7 @@ Billing Period End
 
 ## Description
 
-The end date and time of the billing period.
+The end date and time of the *billing period*.
 
 ## Content Constraints
 
