@@ -31,7 +31,7 @@ Indicates how to include and apply discounts to usage charges or rows.
   * Each discount MUST be identifiable using existing FOCUS columns.
     * Rows with a commitment-based discount applied to it MUST include a CommitmentDiscountId.
     * If a provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.
-* Purchased discounts (e.g., commitment-based discounts) MUST specify ChargeSubcategory on the usage rows that received the reduced rates from the discount.
+* ChargeSubCategory MUST NOT be null for rows where ChargeType is "Usage" and the row received reduced rates from a discount. 
 * Purchased discounts (e.g., commitment-based discounts) MUST be amortized.
   * The BilledCost MUST be 0 for any row where the commitment covers the entire cost for the charge period.
   * The EffectiveCost MUST be the portion of the amortized purchase cost that applies to this row.
