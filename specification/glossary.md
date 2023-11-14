@@ -98,7 +98,7 @@ A comprehensive list of prices offered by a provider.
 
 ## <a name="glossary:resource">Resource</a>
 
-A unique physical or logical component that incurs a charge.
+A unique component that incurs a charge.
 
 ## <a name="glossary:row">Row</a>
 
