@@ -36,13 +36,17 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 A row in a FOCUS compatible cost and usage dataset.
 
+<a name="glossary:chargeperiod"><b>Charge Period</b></a>
+
+The time window in which a charge was incurred, inclusive of the start date and exclusive of the end date. A charge can start and/or end at any time within a charge period window. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily).
+
 <a name="glossary:commitment"><b>Commitment</b></a>
 
 A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
 
 <a name="glossary:commitment-based-discount"><b>Commitment-Based Discount</b></a>
 
-Also known as Commitment Discount, this is a pricing strategy or incentive offered by a service provider to encourage customers to commit to a certain level of usage or spend, over a specified period. Offerings vary in specificity of commitment, penalties for underutilization, and possible remedies.
+Also known as Commitment Discount, this is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The commitment may be based on quantities of resource units or monetary value, with various payment options and time frames.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -118,7 +122,7 @@ The unit price used to calculate a charge that is associated to one SKU.  SKU Pr
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
-A sub account is an optional provider-supported construct for organizing resources and/or services connected to a billing account. Sub accounts are commonly used for scenarios like grouping based on organizational constructs, access management needs and cost allocation strategies. Sub accounts must be associated with a billing account as they do not receive invoices.
+A sub account is an optional provider-supported construct for organizing resources and/or services connected to a billing account. Sub accounts must be associated with a billing account as they do not receive invoices.
 
 <a name="glossary:tag"><b>Tag</b></a>
 
