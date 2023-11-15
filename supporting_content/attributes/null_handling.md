@@ -14,17 +14,17 @@ Current values observed in billing data for various scenarios:
 ## Discussion / Scratch space
 
 - Two main classes - user-controlled columns and provider-controlled columns
-- Tags are user defined and may include empty strings
+- [*Tags*](#glossary:tag) are user defined and may include empty strings
   - User may not set a value here - where it would be null
-  - If tags come in a single column serialized as a map or something equivalent, then the empty tag value issue may not be an issue
-  - If no tags were defined, it should be set to null OR an empty JSON object<br>
-    `TODO:` In appropriate place, define how tags should be provided in the billing data by providers
-- Outside of tags, every value should be null where it can't be specified as opposed to placeholder values.
+  - If *tags* come in a single column serialized as a map or something equivalent, then the empty *tag* value issue may not be an issue
+  - If no *tags* were defined, it should be set to null OR an empty JSON object<br>
+    `TODO:` In appropriate place, define how *tags* should be provided in the billing data by providers
+- Outside of *tags*, every value should be null where it can't be specified as opposed to placeholder values.
   - Is there a case where on a required column that doesn't allow nulls, and a provider doesn't have a valid value that applies, we may need to come up with a placeholder value
   - We don't have a good use case for this right now, so punt on that for now and only allow nulls or 'valid values'
 - May require  thinking about cost outside of cloud/SaaS space
 - Is there a difference between qualitative and quantitative columns<br>
   `TODO:` come back after metrics and other quantitative columns are defined so we can specify if dimensions should have separate null handling compared to metrics/measures columns
   - Many data analytics solutions will ignore NULL values when using aggregation functions. Aggregation functions are frequently used on quantitative columns
-- Cost data generators shouldn't intentionally convert data (e.g. convert empty tag -> null or the reverse null -> 'Not Set')
+- Cost data generators shouldn't intentionally convert data (e.g. convert empty *tag* -> null or the reverse null -> 'Not Set')
   - There were arguments on both sides of this
