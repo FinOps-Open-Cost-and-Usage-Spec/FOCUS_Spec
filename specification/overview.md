@@ -24,7 +24,7 @@ This specification is designed to be used by three major groups:
 
 ## Scope
 
-The FOCUS working group will develop an open-source specification for billing data. The schema will define data dimensions, metrics, a set of attributes about billing data, and a common lexicon for describing billing data.
+The FOCUS working group will develop an open-source specification for billing data. The schema will define data [*dimensions*](#glossary:dimension), [*metrics*](#glossary:metric), a set of attributes about billing data, and a common lexicon for describing billing data.
 
 ## Design Notes
 
@@ -36,7 +36,7 @@ While the schema, naming, terminology and attributes of many *providers* were re
 
 ### Working Backwards
 
-The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the billing data that should be defined in the specification to fulfill that capability. Some of the enabled capabilities will be documented in the [Appendix: FinOps Capabilities Enabled by FOCUS (TODO)](#finopscapabilitiesenabledbyfocus).
+The FOCUS group working on the specification aims to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the *dimensions*, *metrics* and the attributes of the billing data that should be defined in the specification to fulfill that capability. Some of the enabled capabilities will be documented in the [Appendix: FinOps Capabilities Enabled by FOCUS (TODO)](#finopscapabilitiesenabledbyfocus).
 
 ### Extensibility
 
