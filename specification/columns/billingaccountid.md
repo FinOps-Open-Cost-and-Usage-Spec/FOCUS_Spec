@@ -6,7 +6,7 @@ A Billing Account ID is a [*provider*](#glossary:provider) assigned identifier f
 
 The BillingAccountId column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values. BillingAccountId MUST be a globally unique identifier within a *provider*.
 
-See [Appendix: Grouping constructs for resources and/or services](#groupingconstructsforresourcesand/orservices) for details and examples of the different grouping constructs supported by FOCUS.
+See [Appendix: Grouping constructs for resources and/or services](#groupingconstructsforresourcesand/orservices) for details and examples of the different grouping constructs supported by [FOCUS](#glossary:finops-cost-and-usage-specification).
 
 ## Column ID
 
