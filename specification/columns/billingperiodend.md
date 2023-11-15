@@ -1,6 +1,5 @@
 # Billing Period End
 
-[*Billing period*](#glossary:billing-period) represents the time window for which an organization has or will receive an invoice for. The time window is inclusive of the start date and exclusive of the end date.
 
 Billing Period End represents the end date and time of the *billing period*.
 
