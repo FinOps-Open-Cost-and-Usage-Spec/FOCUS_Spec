@@ -1,6 +1,6 @@
 # Commitment Discount Category
 
-A [*commitment-based discount*](#glossary:commitment-based-discount) is a [*commitment*](#glossary:commitment) for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The *commitment* may be based on quantities of resource units or monetary value, with various payment options and time frames.
+A [*commitment-based discount*](#glossary:commitment-based-discount) is a [*commitment*](#glossary:commitment) for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The *commitment* may be based on quantities of [*resource*](#glossary:resource) units or monetary value, with various payment options and time frames.
 
 Commitment Discount Category indicates whether the *commitment-based discount* identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend").
 
