@@ -21,8 +21,8 @@ See supporting content for [ResourceId](./resourceid.md). In some cases, the res
 
 - Should this be prefixed with 'Provider' e.g. ProviderResourceName to show that it's a 1:1 mapping to a column possibly in the data from the provider namespace (no data normalization done).
   - No, keep the name simple for now. Larger namespace discussion will happen before v1.0
-- Need to consider if we should account for using tags for custom display names.
-  - If a display name is provided (regardless of via tag or directly for the resource), it should appear in this column
+- Need to consider if we should account for using [*tags*](#glossary:tag) for custom display names.
+  - If a display name is provided (regardless of via *tag* or directly for the resource), it should appear in this column
 - Should a FullResourceName be introduced as well? Seems several providers have a fully qualified name that they provide at least in some cases (e.g. gcp resource.global_name, AWS ARN in some cases)
 - Should the description say user-defined? Some providers set 'name' using system defined logic (kubernetes)
   - For now, we've settled on the 'display name' terminology
