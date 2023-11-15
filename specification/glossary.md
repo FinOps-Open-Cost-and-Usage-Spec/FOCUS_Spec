@@ -46,7 +46,7 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 <a name="glossary:commitment-based-discount"><b>Commitment-Based Discount</b></a>
 
-Also known as Commitment Discount, this is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The *commitment* may be based on quantities of resource units or monetary value, with various payment options and time frames.
+Also known as Commitment Discount, this is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The commitment may be based on quantities of resource units or monetary value, with various payment options and time frames.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
