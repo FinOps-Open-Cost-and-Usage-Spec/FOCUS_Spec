@@ -1,10 +1,10 @@
 # Charge Subcategory
 
-Charge Subcategory indicates what kind of usage or [*adjustment*](#glossary:adjustment) the row represents. Charge Subcategory is a supplemental detail to the [Charge Type](#chargetype). It provides additional context to describe the primary category of [*charge*](#glossary:charge).
+Charge Subcategory indicates what kind of usage or [*adjustment*](#glossary:adjustment) the [*row*](#glossary:row) represents. Charge Subcategory is a supplemental detail to the [Charge Type](#chargetype). It provides additional context to describe the primary category of [*charge*](#glossary:charge).
 
 This linkage to the parent Charge Type means that for every entry under Charge Type, there can be a corresponding Charge Subcategory that further refines the nature of the *charge*. It's a nested level of detail that allows users to see not just what type of *charge* was incurred. Current sub-categorization currently applies to Charge Type values 'Usage' and 'Adjustment'. Support for others will be added as needed.
 
-When Charge Type is "Usage" and the *charge* is related to a [*commitment*](#glossary:commitment), the Charge Subcategory indicates whether the row represents committed usage or is an [*amortized*](#glossary:amortization) *charge* for the unused portion of the *commitment*. Charge Subcategory is commonly used for scenarios like calculating *commitment* utilization when Charge Type is "Usage".
+When Charge Type is "Usage" and the *charge* is related to a [*commitment*](#glossary:commitment), the Charge Subcategory indicates whether the *row* represents committed usage or is an [*amortized*](#glossary:amortization) *charge* for the unused portion of the *commitment*. Charge Subcategory is commonly used for scenarios like calculating *commitment* utilization when Charge Type is "Usage".
 
 When Charge Type is "Adjustment", the Charge Subcategory indicates what kind of after-the-fact *adjustment* the record represents and is commonly used to identify changes like credits and refunds.
 
@@ -30,7 +30,7 @@ Charge Subcategory
 
 ## Description
 
-Indicates what kind of usage or *adjustment* the row represents.
+Indicates what kind of usage or *adjustment* the *row* represents.
 
 ## Content Constraints
 
