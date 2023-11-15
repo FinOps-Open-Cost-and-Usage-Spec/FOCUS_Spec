@@ -14,7 +14,7 @@ Charge Description
 
 ## Description
 
-Brief, human-readable summary of a row.
+Self-contained summary of the charge's purpose and price.
 
 ## Content Constraints
 
