@@ -6,7 +6,7 @@ A sub account ID is a [*provider*](#glossary:provider) assigned identifier assig
 
 The SubAccountId column MUST be present in the billing data. This column MUST be of type String. If a *provider* supports a sub account construct, that value MUST appear in this column. If a *provider* does not support a sub account construct (only has a *billing account*) or does support a sub account construct, but the [*charge*](#glossary:charge) does not apply to a sub account, the SubAccountId column MUST be null.
 
-See [Appendix: Grouping constructs for resources and/or services](#groupingconstructsforresourcesand/orservices) for details and examples of the different grouping constructs supported by FOCUS.
+See [Appendix: Grouping constructs for resources and/or services](#groupingconstructsforresourcesand/orservices) for details and examples of the different grouping constructs supported by [FOCUS](#glossary:finops-cost-and-usage-specification).
 
 ## Column ID
 
