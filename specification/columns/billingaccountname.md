@@ -1,6 +1,6 @@
 # Billing Account Name
 
-A Billing Account Name is a display name assigned to a *billing account*. *Billing accounts* are commonly used for scenarios like grouping based on organizational constructs, invoice reconciliation and cost allocation strategies.
+A Billing Account Name is a display name assigned to a [*billing account*](#glossary:billing-account). *Billing accounts* are commonly used for scenarios like grouping based on organizational constructs, invoice reconciliation and cost allocation strategies.
 
 The BillingAccountName column MUST be present in the billing data. This column MUST be of type String. The BillingAccountName MUST NOT be null if a display name can be assigned to a *billing account*. BillingAccountName MUST be unique within a customer when a customer has more than one *billing account*.
 
