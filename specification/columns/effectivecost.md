@@ -2,7 +2,7 @@
 
 Effective Cost represents a cost inclusive of the impacts of all reduced rates and discounts, augmented with the [*amortization*](#glossary:amortization) of relevant purchases (one-time or recurring) paid to cover future eligible [*charges*](#glossary:charge). The *amortized* portion included should be proportional to the [PricingQuantity](#pricingquantity) and the time granularity of the data. This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
 
-This metric resolves two challenges that are faced by practitioners:
+This column resolves two challenges that are faced by practitioners:
 
 1. Practitioners need to *amortize* relevant purchases, such as upfront fees, over the duration of the [*commitment*](#glossary:commitment) and distribute them to the appropriate reporting groups (e.g. tags, resources).
 2. Many [*commitment-based discount*](#glossary:commitment-based-discount) constructs include a recurring expense for the *commitment* for every [*billing period*](#glossary:billing-period) and must distribute this cost to the resources using the *commitment*. This forces reconciliation between the initial *commitment* row per period and the actual usage rows.
