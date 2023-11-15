@@ -6,7 +6,7 @@ The PricingUnit column MUST be present in the billing data. This column MUST be 
 
 The PricingUnit value MUST be semantically equal to the corresponding pricing measurement unit value provided in:
 
-* The provider-published price list
+* The provider-published [*price list*](#glossary:price-list)
 * The invoice, when the invoice includes a pricing measurement unit
 
 ## Column ID
