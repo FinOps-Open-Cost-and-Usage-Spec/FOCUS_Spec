@@ -49,7 +49,7 @@ The table below represents a finalized billing dataset with these resources.  It
 | Sub Account     | my-sub-account | { "team": "ops", "env": "prod" }            |
 | Virtual Machine | my-vm          | { "team": "web", *"env": "prod"* }          |
 
-Because the the Virtual Machine Resource does not have an `env` tag, `env:prod` is inherited tag, `env:prod` (italicized), from its parent Sub Account.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it does not inherit `team:ops` from its parent Sub Account.
+Because the Virtual Machine Resource does not have an `env` tag, `env:prod` is the inherited tag from its parent Sub Account.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it does not inherit `team:ops` from its parent Sub Account.
 
 ## Column ID
 
