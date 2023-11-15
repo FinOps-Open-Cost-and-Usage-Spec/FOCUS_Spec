@@ -6,7 +6,7 @@ A Billing Account Name is a display name assigned to a *billing account*.
 
 The BillingAccountName column MUST be present in the billing data. This column MUST be of type String. The BillingAccountName MUST NOT be null if a display name can be assigned to a *billing account*. BillingAccountName MUST be unique within a customer when a customer has more than one *billing account*.
 
-See [Appendix: Grouping constructs for resources and/or services](#groupingconstructsforresourcesand/orservices) for details and examples of the different grouping constructs supported by FOCUS.
+See [Appendix: Grouping constructs for resources and/or services](#groupingconstructsforresourcesand/orservices) for details and examples of the different grouping constructs supported by [FOCUS](#glossary:finops-cost-and-usage-specification).
 
 ## Column ID
 
