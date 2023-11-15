@@ -4,7 +4,7 @@ Effective Cost represents a cost inclusive of the impacts of all reduced rates a
 
 This metric resolves two challenges that are faced by practitioners:
 
-1. Practitioners need to amortize relevant purchases, such as upfront fees, over the duration of the commitment and distribute them to the appropriate reporting groups (e.g. tags, resources).
+1. Practitioners need to amortize relevant purchases, such as upfront fees, over the duration of the commitment and distribute them to the appropriate reporting groups (e.g. [*tags*](#glossary:tag), resources).
 2. Many commitment-based discount constructs include a recurring expense for the commitment for every billing period and must distribute this cost to the resources using the commitment. This forces reconciliation between the initial commitment row per period and the actual usage rows.
 
 The EffectiveCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency. The aggregated EffectiveCost for a billing period MAY NOT match the charge received on the invoice for the same billing period.
