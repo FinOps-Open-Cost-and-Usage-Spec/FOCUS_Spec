@@ -31,7 +31,7 @@ The following is an example of one user-defined tag and one provider-defined tag
 
 ## Finalized Tags
 
-Within a *provider*, tag keys may be associated with multiple values, and potentially defined at different levels within the *provider*, such as accounts, folders, resources and other resource grouping constructs. When finalizing, *providers* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each *provider*, but must be documented within their respective documentation.
+Within a *provider*, tag keys may be associated with multiple values, and potentially defined at different levels within the *provider*, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, *providers* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each *provider*, but must be documented within their respective documentation.
 
 As a example, let's assume 1 sub account exists with 1 virtual machine with the following details, and tag inheritance favors Resources over Sub Accounts.
 
@@ -42,7 +42,7 @@ As a example, let's assume 1 sub account exists with 1 virtual machine with the 
   * id: *my-vm*
   * user-defined tags: *team:web*
 
-The table below represents a finalized cost and usage dataset with these resources.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
+The table below represents a finalized cost and usage dataset with these *resources*.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
 
 | ResourceType    | ResourceId     | Tags                                        |
 | :---------------| :--------------| :-------------------------------------------|
