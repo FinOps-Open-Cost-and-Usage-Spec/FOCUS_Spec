@@ -1,6 +1,6 @@
 # Charge Subcategory
 
-Charge Subcategory indicates what kind of usage or [*adjustment*](glossary:adjustment) the [*row*](glossary:row) represents. Charge Subcategory is a supplemental detail to the [Charge Category](#chargecategory). It provides additional context to describe the primary category of charge.
+Charge Subcategory indicates what kind of usage or [*adjustment*](#glossary:adjustment) the [*row*](#glossary:row) represents. Charge Subcategory is a supplemental detail to the [Charge Category](#chargecategory). It provides additional context to describe the primary category of charge.
 
 This linkage to the parent Charge Category means that for every entry under Charge Category, there can be a corresponding Charge Subcategory that further refines the nature of the charge. It's a nested level of detail that allows users to see not just what type of charge was incurred. Current sub-categorization currently applies to Charge Category values "Usage" and "Adjustment". Support for others will be added as needed.
 
