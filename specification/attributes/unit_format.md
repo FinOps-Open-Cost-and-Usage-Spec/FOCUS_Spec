@@ -2,7 +2,7 @@
 
 Cost and usage data frequently captures data measured in units related to data size, count, time, and other [*dimensions*](#glossary:dimension). The Unit Format attribute provides a standard for expressing units of measure in columns appearing in billing data.
 
-All columns defined in FOCUS specifying Unit Format as a value format MUST follow the requirements listed below.
+All columns defined in [FOCUS](#glossary:finops-cost-and-usage-specification) specifying Unit Format as a value format MUST follow the requirements listed below.
 
 ## Attribute ID
 
