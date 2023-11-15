@@ -1,6 +1,10 @@
 # Unit Format
 
+<<<<<<< HEAD
 Cost and usage data frequently captures data measured in units related to data size, count, time, and other [*dimensions*](#glossary:dimension). The Unit Format attribute provides a standard for expressing units of measure in columns appearing in billing data.
+=======
+Billing data frequently captures data measured in units related to data size, count, time, and other dimensions. The Unit Format attribute provides a standard for expressing units of measure in columns appearing in billing data.
+>>>>>>> upstream/aq-glossary-hyperlinks
 
 All columns defined in [FOCUS](#glossary:finops-cost-and-usage-specification) specifying Unit Format as a value format MUST follow the requirements listed below.
 
@@ -30,7 +34,7 @@ Indicates standards for expressing measurement units in columns appearing in bil
 
 ### Data Size Unit Names
 
-Data size unit names MUST be abbreviated using one of abbreviations in the following table.  For example, a unit name of 'TB' is a valid unit name, and a unit name of 'terabyte' is an invalid unit name. Data size abbreviations can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "gigabyte", and "GBs" would an invalid unit name.  Values that exceed 10^18 MUST use the abbreviation for exabit, exabyte, exbibit, and exbibyte, and values smaller than a byte MUST use the abbreviation for bit or byte.   For example, the abbreviation "YB" for "yottabyte" is not a valid data size unit name as it represents a value larger than what is listed in the following table.
+Data size unit names MUST be abbreviated using one of abbreviations in the following table.  For example, a unit name of "TB" is a valid unit name, and a unit name of "terabyte" is an invalid unit name. Data size abbreviations can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "gigabyte", and "GBs" would an invalid unit name.  Values that exceed 10^18 MUST use the abbreviation for exabit, exabyte, exbibit, and exbibyte, and values smaller than a byte MUST use the abbreviation for bit or byte.   For example, the abbreviation "YB" for "yottabyte" is not a valid data size unit name as it represents a value larger than what is listed in the following table.
 
 The following table lists the valid abbreviations for data size units from a single bit or byte to 10^18 bits or bytes.
 
@@ -52,9 +56,9 @@ The following table lists the valid abbreviations for data size units from a sin
 
 ### Count-based Unit Names
 
-A count-based unit is a noun that represents a discrete number of items, events, or services.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  
+A count-based unit is a noun that represents a discrete number of items, events, or actions.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  
 
-If the following list of recommended values does not cover a count-based unit, a [*provider*](#glossary:provider) MAY introduce a new noun representing a count-based unit.  All nouns appearing in unit that are not listed in the recommended values table will be considered count-based units.  A new count-based unit value MUST be capitalized.
+If the following list of recommended values does not cover a count-based unit, a provider MAY introduce a new noun representing a count-based unit.  All nouns appearing in unit that are not listed in the recommended values table will be considered count-based units.  A new count-based unit value MUST be capitalized.
 
 | Count        |
 |:-------------|

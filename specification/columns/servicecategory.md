@@ -1,8 +1,8 @@
 # Service Category
 
-The Service Category is the highest-level classification of a service based on the core function of the service. Each service should have one and only one category that best aligns to its primary purpose. The Service Category is commonly used for scenarios like analyzing costs across [*providers*](#glossary:provider) and tracking the migration of workloads across fundamentally different architectures.
+The Service Category is the highest-level classification of a [*service*](#glossary:service) based on the core function of the *service*. Each *service* should have one and only one category that best aligns to its primary purpose. The Service Category is commonly used for scenarios like analyzing costs across providers and tracking the migration of workloads across fundamentally different architectures.
 
-The ServiceCategory column MUST be present and MUST NOT be null or empty. This column is of type String and MUST be one of the allowed values.
+The ServiceCategory column MUST be present and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
 
 ## Column ID
 
@@ -14,21 +14,22 @@ Service Category
 
 ## Description
 
-Highest-level classification of a service based on the core function of the service.
+Highest-level classification of a *service* based on the core function of the *service*.
 
 ## Content Constraints
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Column type     | Dimension      |
 | Column required | True           |
-| Data type       | String         |
 | Allows nulls    | False          |
-| Value format    | list-of-values |
+| Data type       | String         |
+| Value format    | Allowed Values |
 
 Allowed values:
 
 | Service Category          | Description                                                                                    |
-| ------------------------- | ---------------------------------------------------------------------------------------------- |
+| :------------------------ | :--------------------------------------------------------------------------------------------- |
 | AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                             |
 | Analytics                 | Data processing, analytics, and visualization capabilities.                                    |
 | Business Applications     | Business and productivity applications and services.                                           |

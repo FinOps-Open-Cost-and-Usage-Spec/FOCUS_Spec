@@ -1,10 +1,8 @@
 # Billing Period Start
 
-[*Billing period*](#glossary:billing-period) represents the time window for which an organization has or will receive an invoice for. The time window is inclusive of the start date and exclusive of the end date.
+Billing Period Start represents the start date and time of the [*billing period*](#glossary:billing-period).
 
-Billing Period Start represents the start date and time of the *billing period*.
-
-The BillingPeriodStart column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. BillingPeriodStart column MUST conform to [FOCUS Date/Time Format](#date/timeformat). The sum of the Billed Cost column for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+The BillingPeriodStart column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. BillingPeriodStart column MUST conform to [Date/Time Format](#date/timeformat). The sum of the [BilledCost](#billedcost) metric for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 ## Column ID
 
@@ -20,12 +18,13 @@ The beginning date and time of the *billing period*.
 
 ## Content Constraints
 
-| Constraint      | Value                                                         |
-|:----------------|:--------------------------------------------------------------|
-| Column Required | True                                                          |
-| Data type       | Date/Time                                                     |
-| Allows nulls    | False                                                         |
-| Value format    | Meets [FOCUS Date/Time Format](#date/timeformat) requirements |
+| Constraint      | Value                                |
+|:----------------|:-------------------------------------|
+| Column type     | Dimension                            |
+| Column required | True                                 |
+| Allows nulls    | False                                |
+| Data type       | Date/Time                            |
+| Value format    | [Date/Time Format](#date/timeformat) |
 
 ## Introduced (version)
 

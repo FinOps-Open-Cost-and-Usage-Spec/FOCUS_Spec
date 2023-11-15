@@ -1,10 +1,8 @@
 # Commitment Discount Category
 
-A [*commitment-based discount*](#glossary:commitment-based-discount) is a [*commitment*](#glossary:commitment) for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The *commitment* may be based on quantities of [*resource*](#glossary:resource) units or monetary value, with various payment options and time frames.
+Commitment Discount Category indicates whether the [*commitment-based discount*](#glossary:commitment-based-discount) identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend").
 
-Commitment Discount Category indicates whether the *commitment-based discount* identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend").
-
-The CommitmentDiscountCategory column MUST be present in the billing data. This column MUST be of type String, MUST be null when CommitmentDiscountId is null, and MUST NOT be null when CommitmentDiscountId is not null. The CommitmentDiscountCategory MUST be one of the allowed values.
+The CommitmentDiscountCategory column MUST be present in the billing data. This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null. The CommitmentDiscountCategory MUST be one of the allowed values.
 
 ## Column ID
 
@@ -22,17 +20,18 @@ Indicates whether the *commitment-based discount* identified in the CommitmentDi
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
+| Column type     | Dimension        |
 | Column required | True             |
-| Data type       | String           |
 | Allows nulls    | True             |
-| Value format    | list-of-values   |
+| Data type       | String           |
+| Value format    | Allowed Values   |
 
 Allowed values:
 
-| Value      | Description                                                                                                                                                                   |
-|:--------|:--------------------------------------------------------------------------------|
-| Spend   | Commitment-based discounts that require a predetermined amount of spend.    |
-| Usage   | Commitment-based discounts that require a predetermined amount of usage.    |
+| Value   | Description                                                              |
+|:--------|:-------------------------------------------------------------------------|
+| Spend   | Commitment-based discounts that require a predetermined amount of spend. |
+| Usage   | Commitment-based discounts that require a predetermined amount of usage. |
 
 ## Introduced (version)
 
