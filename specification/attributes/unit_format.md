@@ -1,8 +1,8 @@
 # Unit Format
 
-Billing data frequently captures data measured in units related to data size, count, time, and other dimensions. The Unit Format attribute provides a standard for expressing units of measure in columns appearing in billing data.
+Billing data frequently captures data measured in units related to data size, count, time, and other [*dimensions*](#glossary:dimension). The Unit Format attribute provides a standard for expressing units of measure in columns appearing in billing data.
 
-All columns defined in FOCUS specifying Unit Format as a value format MUST follow the requirements listed below.
+All columns defined in [FOCUS](#glossary:finops-cost-and-usage-specification) specifying Unit Format as a value format MUST follow the requirements listed below.
 
 ## Attribute ID
 
@@ -26,7 +26,7 @@ Indicates standards for expressing measurement units in columns appearing in bil
   * `<quantity> <plural-units>` - "1000 Tokens", "1000 Characters"
   * `<plural-units>/<interval> <plural-time-units>` - "Units/3 Months"
 * Unit values and components of columns using the Unit Format MUST use a capitalization scheme that is consistent with the capitalization scheme used in this attribute, if that term is listed in this section. For example, a value of "gigabyte-seconds" would not be compliant with this specification as the terms "gigabyte" and "second" are listed in this section with the appropriate capitalization.  If the unit is not listed in the table, it is to be used over a functional equivalent with similar meaning with the same capitalization scheme.
-* Units SHOULD be composed of the list of recommended units listed in this section, unless the unit value covers a dimension not listed in the recommended unit set, or if the unit covers a count-based unit distinct from recommended values in the count dimension listed in this section.  
+* Units SHOULD be composed of the list of recommended units listed in this section, unless the unit value covers a *dimension* not listed in the recommended unit set, or if the unit covers a count-based unit distinct from recommended values in the count *dimension* listed in this section.  
 
 ### Data Size Unit Names
 
@@ -52,7 +52,7 @@ The following table lists the valid abbreviations for data size units from a sin
 
 ### Count-based Unit Names
 
-A count-based unit is a noun that represents a discrete number of items, events, or services.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  
+A count-based unit is a noun that represents a discrete number of items, events, or actions.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  
 
 If the following list of recommended values does not cover a count-based unit, a provider MAY introduce a new noun representing a count-based unit.  All nouns appearing in unit that are not listed in the recommended values table will be considered count-based units.  A new count-based unit value MUST be capitalized.
 
@@ -84,7 +84,7 @@ A time-based unit is a noun that represents a time interval.  Time-based units c
 
 If the unit value is a composite value made from combinations of one or more units, each component MUST also align with the set of recommended values.
 
-Instead of "per" or "-" to denote a Composite Unit, slash ("/") and space(" ") MUST be used as a common convention.  Count-based units like requests, instances, and tokens SHOULD be expressed using a value listed in the count dimension.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit SHOULD be listed as "Requests/Day" to signify the number of requests per day.
+Instead of "per" or "-" to denote a Composite Unit, slash ("/") and space(" ") MUST be used as a common convention.  Count-based units like requests, instances, and tokens SHOULD be expressed using a value listed in the count *dimension*.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit SHOULD be listed as "Requests/Day" to signify the number of requests per day.
 
 ## Exceptions
 
