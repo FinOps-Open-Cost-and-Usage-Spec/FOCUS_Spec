@@ -18,7 +18,7 @@ A charge that serves as the basis for invoicing. It includes the total amount of
 
 <a name="glossary:billing-account"><b>Billing Account</b></a>
 
-A container for resources and/or services that are billed together in an invoice. A billing account may have sub-accounts, all of whose costs are consolidated and invoiced to the billing account.
+A container for resources and/or services that are billed together in an invoice. A billing account may have sub accounts, all of whose costs are consolidated and invoiced to the billing account.
 
 <a name="glossary:billing-currency"><b>Billing Currency</b></a>
 
