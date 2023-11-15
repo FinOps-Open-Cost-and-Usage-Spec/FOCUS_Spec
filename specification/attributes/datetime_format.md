@@ -2,7 +2,7 @@
 
 Columns that provide date and time information conforming to specified rules and formatting requirements ensure clarity, accuracy, and ease of interpretation for both humans and systems.
 
-All columns capturing a date/time value, defined in the FOCUS specification, MUST follow the formatting requirements listed below. Provider-generated, date/time-related columns SHOULD adopt the same format requirements over time.
+All columns capturing a date/time value, defined in the [FOCUS](#glossary:finops-cost-and-usage-specification) specification, MUST follow the formatting requirements listed below. Provider-generated, date/time-related columns SHOULD adopt the same format requirements over time.
 
 ## Attribute ID
 
