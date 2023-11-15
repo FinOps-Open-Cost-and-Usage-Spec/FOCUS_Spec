@@ -2,9 +2,9 @@
 
 *This section is non-normative.*
 
-FOCUS aims to establish a community-driven specification for consumption-based billing data. Due to the lack of a broadly adopted specification, infrastructure and services [*providers*](#glossary:provider) have resorted to proprietary billing schemas and terminology. However, the lack of conformance amongst the billing data generators has forced FinOps [*practitioners*](#glossary:practitioner) to employ disparate, best-effort schemes which each *practitioner* must develop individually for each *provider* in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
+FOCUS aims to establish a community-driven specification for consumption-based billing data. Due to the lack of a broadly adopted specification, infrastructure and services [*providers*](#glossary:provider) have resorted to proprietary billing schemas and terminology. However, the lack of conformance amongst the billing data generators has forced FinOps practitioners to employ disparate, best-effort schemes which each *practitioner* must develop individually for each *provider* in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
 
-The FOCUS specification's schema definition and FinOps aligned terminology provide a clear guide for producing FinOps-serviceable billing datasets. Datasets conforming to FOCUS enable FinOps *practitioners* to perform common FinOps capabilities, like the ones mentioned above, using a generic set of instructions, regardless of the origin of the dataset.
+The FOCUS specification's schema definition and FinOps aligned terminology provide a clear guide for producing FinOps-serviceable billing datasets. Datasets conforming to FOCUS enable FinOps practitioners to perform common FinOps capabilities, like the ones mentioned above, using a generic set of instructions, regardless of the origin of the dataset.
 
 ## Background and History
 

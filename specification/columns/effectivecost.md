@@ -28,7 +28,7 @@ Cost inclusive of the impacts of all reduced rates and discounts, augmented with
 
 ### Concerning Granularity and Distribution of Recurring Fee
 
-Providers should distribute the *commitment* purchase amount instead of including a *row* at the beginning of a period so *practitioners* do not need to manually distribute the fee themselves.
+Providers should distribute the *commitment* purchase amount instead of including a *row* at the beginning of a period so practitioners do not need to manually distribute the fee themselves.
 
 ### Concerning Amortization Approaches
 
