@@ -4,7 +4,7 @@ Charge Subcategory indicates what kind of usage or [*adjustment*](#glossary:adju
 
 This linkage to the parent Charge Category means that for every entry under Charge Category, there can be a corresponding Charge Subcategory that further refines the nature of the charge. It's a nested level of detail that allows users to see not just what type of charge was incurred. Current sub-categorization currently applies to Charge Category values "Usage" and "Adjustment". Support for others will be added as needed.
 
-When Charge Category is "Usage" and the charge is related to a [*commitment*](glossary:commitment), the Charge Subcategory indicates whether the row represents committed usage or is an [*amortized*](glossary:amortization) charge for the unused portion of the *commitment*. Charge Subcategory is commonly used for scenarios like calculating *commitment* utilization when Charge Category is "Usage".
+When Charge Category is "Usage" and the charge is related to a [*commitment*](#glossary:commitment), the Charge Subcategory indicates whether the row represents committed usage or is an [*amortized*](#glossary:amortization) charge for the unused portion of the *commitment*. Charge Subcategory is commonly used for scenarios like calculating *commitment* utilization when Charge Category is "Usage".
 
 When Charge Category is "Adjustment", the Charge Subcategory indicates what kind of after-the-fact *adjustment* the record represents and is commonly used to identify changes like credits and refunds.
 
