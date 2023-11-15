@@ -2,7 +2,7 @@
 
 The Tags column represents the set of tags assigned to Tag Sources that also account for potential provider-defined or user-defined tag evaluations.  Tags are commonly used for scenarios like adding business context to billing data to identify and accurately allocate [*charges*](#glossary:charge).
 
-A tag becomes *finalized* when a single value is selected from a set of possible tag values assigned to the tag key.  When supported by a [*provider*](#glossary:provider), this can occur when a tag value is set by provider-defined or user-defined rules.
+A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is selected from a set of possible tag values assigned to the tag key.  When supported by a [*provider*](#glossary:provider), this can occur when a tag value is set by provider-defined or user-defined rules.
 
 The Tags column adheres to the following requirements:
 
