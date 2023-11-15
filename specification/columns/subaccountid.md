@@ -1,6 +1,6 @@
 # Sub Account ID
 
-A sub account is an optional provider-supported construct for organizing resources and/or services connected to a [*billing account*](#glossary:billing-account). Sub accounts are commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies. Sub accounts must be associated with a *billing account* as they do not receive invoices.
+A sub account is an optional provider-supported construct for organizing [*resources*](#glossary:resource) and/or services connected to a [*billing account*](#glossary:billing-account). Sub accounts are commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies. Sub accounts must be associated with a *billing account* as they do not receive invoices.
 
 A sub account ID is a [*provider*](#glossary:provider) assigned identifier assigned to a sub account.
 
@@ -18,7 +18,7 @@ Sub Account ID
 
 ## Description
 
-An ID assigned to a grouping of resources and/or services, often used to manage access and/or cost.
+An ID assigned to a grouping of *resources* and/or services, often used to manage access and/or cost.
 
 ## Content constraints
 
