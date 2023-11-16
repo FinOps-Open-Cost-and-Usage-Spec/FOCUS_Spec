@@ -17,7 +17,7 @@ Thanks to the following FOCUS members for their contributions to this specificat
 * Chew Esmero (Alphaus Inc.)
 * Christopher Harris (Datadog)
 * Colin Jack (Snow Software)
-* Deeja Cruz (DataDog)
+* Deeja Cruz (Datadog)
 * Eleni Rundle (Google)
 * Erik Peterson (CloudZero)
 * Graham Murphy (Australian Retirement Trust)
