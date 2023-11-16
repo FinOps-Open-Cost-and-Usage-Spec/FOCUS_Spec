@@ -22,4 +22,4 @@ The specification content:
 * must be written with an overall model before digging into the details. Each section will start with an overview of the feature and description
 * should be written in order, so when read top to bottom any referenced content has already been covered in a previous section
 
-Some of these items have been formed based on this W3C video on [Best Pracitices for Editing W3C Specifications](https://www.youtube.com/watch?v=FdB8mqlf1l8)
+Some of these items have been formed based on this W3C video on [Best Practices for Editing W3C Specifications](https://www.youtube.com/watch?v=FdB8mqlf1l8)

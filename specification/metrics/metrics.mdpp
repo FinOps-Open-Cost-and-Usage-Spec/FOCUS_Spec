@@ -1,9 +1,0 @@
-# Metrics
-
-The FOCUS specification defines a group of columns that provide numeric values. These columns are categorized to as
-'metrics' within the dataset and are needed to serve many [FinOps capabilities][FODOFC]. Metric columns in the dataset
-allow for aggregation operations such as arithmetic operations (sum, multiplication, averaging etc.) and statistical
-operations. When combined with dimensions (which are qualitative value columns), metrics reveal details in your data.
-
-!INCLUDE "amortizedcost.md",1
-!INCLUDE "billedcost.md",1

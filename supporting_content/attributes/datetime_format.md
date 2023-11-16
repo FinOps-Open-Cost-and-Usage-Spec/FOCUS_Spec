@@ -9,6 +9,7 @@ Current column mappings found in available data sets:
 | AWS       | CUR                      | lineItem/UsageStartDate, lineItem/UsageEndDate, etc. |
 | GCP       | Big Query Billing Export | usage_start_time, usage_end_time, etc.               |
 | Microsoft | Cost details             | date, etc.                                           |
+| OCI       | Cost reports             | lineItem/intervalUsageStart, lineItem/intervalUsageEnd |
 
 ### Documentation
 
@@ -26,6 +27,7 @@ Current values observed in billing data for various scenarios:
 | GCP       | Big Query Billing Export                        | 2023-05-13 21:00:00 UTC |
 | Microsoft | Cost details via Consumption API (usageDetails) | 2023-05-13T00:00:00Z    |
 | Microsoft | Cost details via Cost export file               | 05/13/2023              |
+| OCI       | Cost reports                                    | 2022-08-19T01:00Z       |
 
 ## Discussion / Scratch space
 
