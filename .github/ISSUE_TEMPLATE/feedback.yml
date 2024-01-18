@@ -2,7 +2,7 @@ name: FinOps Use Case Feedback
 description: Provide feedback on FinOps use cases that cannot be performed with the current FOCUS specification.
 title: "[FEEDBACK]: "
 labels: ["feedback", "use-case"]
-assignees: ["Maintainer"]
+assignees: ["mike-finopsorg,udam-f2"]
 body:
   - type: markdown
     attributes:
