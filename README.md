@@ -39,7 +39,7 @@ See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/
 
 ## FOCUS Specification Development Environment
 
-Most people will not need any development environment, it is mostly needed by the FinOps Foundation staff members who maintain the FOCUS Repositories and associated document build pipelines. Currently, the only tested (supported) environment is a MacOS setup, however the build pipeline in GitHub uses Ubuntu so should be possible to run on a Linux environment.
+Most people will not need any development environment, it is mostly needed by the FinOps Foundation staff members who maintain the FOCUS Repositories and associated document build pipelines.
 
 ### Setup Steps (MacOS)
 
