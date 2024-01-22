@@ -41,7 +41,7 @@ See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/
 
 Most people will not need any development environment, it is mostly needed by the FinOps Foundation staff members who maintain the FOCUS Repositories and associated document build pipelines. Currently, the only tested (supported) environment is a MacOS setup, however the build pipeline in GitHub uses Ubuntu so should be possible to run on a Linux environment.
 
-### Setup Steps
+### Setup Steps (MacOS)
 
 1. Install homebrew (as per: https://brew.sh)
 2. Setup cask
@@ -61,6 +61,21 @@ Most people will not need any development environment, it is mostly needed by th
 6. If your machine does not have git/make etc, you might fun the following: Install developer command line tools for MacOS
 
 	`xcode-select --install`
+
+### Setup Steps (Fedora Linux)
+
+1. Clone the repository and enter the project folder
+2. Install pandoc, wkhtmltopdf, and make
+
+	`sudo dnf install pandoc wkhtmltopdf make`
+3. Create a python virtual environment and switch to it
+
+	`python -m venv focus`
+
+	`source focus/bin/activate`
+4. Add packages for python
+
+	`pip3 install -r requirements.txt`
 
 ### Assembling the specification locally
 
