@@ -1,0 +1,61 @@
+name: FinOps Use Case Feedback
+description: Provide feedback on FinOps use cases that cannot be performed with the current FOCUS specification.
+title: "[FEEDBACK]: "
+labels: ["feedback", "use-case"]
+assignees: ["mike-finopsorg,udam-f2"]
+body:
+  - type: markdown
+    attributes:
+      value: "The FOCUS working group wants to understand what FinOps use cases cannot be performed today using the current specification so they can be prioritized for upcoming release. Please do not provide any information that may be considered Intellectual Property by any individual or organization."
+  
+  - type: input
+    attributes:
+      label: Proposed Change
+      description: Short description of the change and why it is necessary.
+      placeholder: Describe the proposed change briefly and why it is necessary
+    validations:
+      required: true
+  
+  - type: textarea
+    attributes:
+      label: What FinOps use cases cannot be performed without the proposed change?
+      description: Describe in detail the current FinOps use cases your organization cannot perform without the proposed change
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Which FinOps personas perform this use case?
+      description: List one or more FinOps personas that perform this use case
+      placeholder: e.g., Cost Analyst, Cloud Architect, etc
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: For which providers do you perform this use case for?
+      description: List each provider separated by commas
+      placeholder: e.g., AWS, Azure, GCP, Snowflake, etc
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Criticality Scale
+      description: On a scale of 1 - 4, how critical is this for your organization?
+      options:
+        - '1: Blocks my organization from adopting FOCUS'
+        - '2: Important for adoption in the next 3-6 months'
+        - '3: Important for adoption in the next 6-12 months'
+        - '4: Suggestion, not planning to use FOCUS soon'
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Context / Supporting information
+      description: Provide any other relevant information here
+      placeholder: Additional details...
+    validations:
+      required: true
+
