@@ -19,10 +19,11 @@ See [Discount Handling notes](../attributes/discount_handling.md) for details ab
 
 Spot pricing details:
 
-> "The spot price is the current market price of a security, currency, or commodity available to be bought/sold for immediate settlement. In other words, it is the price at which the sellers and buyers value an asset right now."
->
-> Source: https://corporatefinanceinstitute.com/resources/career-map/sell-side/capital-markets/spot-price/
+1. _"The spot price is the current market price of a security, currency, or commodity available to be bought/sold for immediate settlement. In other words, it is the price at which the sellers and buyers value an asset right now."<br>Source: https://corporatefinanceinstitute.com/resources/career-map/sell-side/capital-markets/spot-price_
+2. _"The spot price is the current price in the marketplace at which a given asset—such as a security, commodity, or currency—can be bought or sold for immediate delivery. While spot prices are specific to both time and place, in a global economy the spot price of most securities or commodities tends to be fairly uniform worldwide when accounting for exchange rates. In contrast to the spot price, a futures price is an agreed upon price for future delivery of the asset."<br>Source: https://www.investopedia.com/terms/s/spotprice.asp_
 
-> "The spot price is the current price in the marketplace at which a given asset—such as a security, commodity, or currency—can be bought or sold for immediate delivery. While spot prices are specific to both time and place, in a global economy the spot price of most securities or commodities tends to be fairly uniform worldwide when accounting for exchange rates. In contrast to the spot price, a futures price is an agreed upon price for future delivery of the asset."
->
-> Source: https://www.investopedia.com/terms/s/spotprice.asp
+Why are PricingSubcategory and CommitmentDiscountCategory so similar when PricingCategory is "Commitment-Based"?
+
+- PricingSubcategory describes the pricing model used for commitment-based discounts.
+- CommitmentDiscountCategory provides a provider-agnostic grouping of commitment-based discount types.
+- While the two columns are similar _today_, they serve different purposes and could possibly differ in the future.
