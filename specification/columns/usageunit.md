@@ -7,7 +7,7 @@ The UsageUnit column MUST be present in the billing data.
 This column MUST NOT be null under the following conditions:
 
 * When [ChargeCategory](#chargecategory) is "Usage" and ChargeSubcategory is "On-Demand" or "Used Commitment".
-* When ChargeCategory is “Adjustment” and ChargeSubcategory is "Refund", related to charges with a specific SkuPriceId.
+* When ChargeCategory is "Adjustment" and ChargeSubcategory is "Refund", related to charges with a specific SkuPriceId.
 
 This column MUST be null in case of any other ChargeCategory – ChargeSubcategory combinations.
 
