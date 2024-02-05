@@ -11,7 +11,6 @@ This column MUST NOT be null under the following conditions:
 
 This column MUST be null in case of any other ChargeCategory - ChargeSubcategory combinations.
 
-
 Units of measure used in UsageUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute. The UsageUnit column MUST NOT be used as the basis for determining values related to any pricing or cost metric.
 
 ## Column ID
