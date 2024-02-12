@@ -2,16 +2,7 @@
 
 The Usage Unit represents a provider-specified measurement unit indicating how a provider measures usage of a given SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service). Usage Unit complements the [Usage Quantity](#usagequantity) metric. It is often listed at a finer granularity or over a different time interval when compared to the [Pricing Unit](#pricingunit) (complementary to [Pricing Quantity](#pricingquantity)), and focuses on *resource* and *service* consumption, not pricing and cost.
 
-The UsageUnit column MUST be present in the billing data.
-
-This column MUST NOT be null under the following conditions:
-
-* When [ChargeCategory](#chargecategory) is "Usage" and ChargeSubcategory is "On-Demand" or "Used Commitment".
-* When ChargeCategory is "Adjustment" and ChargeSubcategory is "Refund", related to charges with a specific SkuPriceId.
-
-This column MUST be null in case of any other ChargeCategory - ChargeSubcategory combinations.
-
-Units of measure used in UsageUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute. The UsageUnit column MUST NOT be used as the basis for determining values related to any pricing or cost metric.
+The UsageUnit column MUST be present in the billing data. This column MUST NOT be null if [SkuPriceId](#skupriceid) is not null and MUST be null if SkuPriceId is null. Units of measure used in UsageUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute. The UsageUnit column MUST NOT be used as the basis for determining values related to any pricing or cost metric.
 
 ## Column ID
 
