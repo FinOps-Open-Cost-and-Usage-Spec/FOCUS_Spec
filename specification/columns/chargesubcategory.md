@@ -15,7 +15,7 @@ ChargeSubcategory MUST follow the requirements listed below:
 * ChargeSubcategory MUST NOT be null when ChargeCategory is "Usage" and the charge is covered by a *commitment*.
   * When a usage charge is covered by a *commitment*, ChargeSubcategory MUST be "Used Commitment".
   * When a *commitment* is not used fully used or partially used within the committed period, ChargeSubcategory MUST be "Unused Commitment" for the unused usage charge.
-* ChargeSubcategory MUST be null when ChargeCategory is "Usage" and is not covered by a *commitment*.
+* ChargeSubcategory MUST be "On-Demand" when ChargeCategory is "Usage" and is not covered by a *commitment*.
 * ChargeSubcategory MUST NOT be null when ChargeCategory is "Adjustment".
   * When an *adjustment* applies to a specific item, the corresponding FOCUS columns that identify that item MUST NOT be null and MUST match the applicable item details the *adjustment* pertains to.
 * ChargeSubcategory MUST be null when ChargeCategory is "Purchase" or "Tax".
