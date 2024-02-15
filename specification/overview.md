@@ -2,9 +2,9 @@
 
 *This section is non-normative.*
 
-FOCUS aims to establish a community-driven specification for consumption-based billing data. Due to the lack of a broadly adopted specification, infrastructure and services [*providers*](#glossary:provider) have resorted to proprietary billing schemas and terminology. However, the lack of conformance amongst the billing data generators has forced FinOps practitioners to employ disparate, best-effort schemes which each *practitioner* must develop individually for each *provider* in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
+FOCUS aims to establish a community-driven specification for consumption-based billing data. Due to the lack of a broadly adopted specification, infrastructure and services [*providers*](#glossary:provider) have resorted to proprietary billing schemas and terminology. The lack of conformance amongst the billing data generators has forced FinOps practitioners to employ disparate, best-effort schemes which each *practitioner* must develop individually for each *provider* to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
 
-The FOCUS specification's schema definition and FinOps aligned terminology provide a clear guide for producing FinOps-serviceable billing datasets. Datasets conforming to FOCUS enable FinOps practitioners to perform common FinOps capabilities, like the ones mentioned above, using a generic set of instructions, regardless of the origin of the dataset.
+The FOCUS specification's schema definition and FinOps-aligned terminology provide a clear guide for producing FinOps-serviceable billing datasets. Datasets conforming to FOCUS enable FinOps practitioners to perform common FinOps capabilities, like the ones mentioned above, using a generic set of instructions, regardless of the origin of the dataset.
 
 ## Background and History
 
@@ -72,6 +72,14 @@ The following principles were considered while building the specification.
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
 * Column naming must strictly follow the [column naming conventions](#columnnamingconvention).
 * Use established standards (e.g., ISO8601 for dates, ISO4217 for currency).
+
+## Summary vs Detailed Cost and Usage Data
+
+Cloud Service Providers (CSPs) generate detailed cost and usage data in near real-time, making them valuable for an extensive set of FinOps capabilities that enable accountability and efficiency for dynamic consumption-based costs within an organization. However, other cost datasets are provided at a summary level due to the pricing and cost not being based on consumption, or from providers that aren’t yet producing detailed consumption-based cost and usage datasets. FinOps practitioners can still perform essential FinOps capabilities like invoice reconciliation, data ingestion, and normalization as long as a subset of the essential columns is available. Additionally, FinOps practitioners can perform simplified versions of capabilities like cost reporting, chargeback, showback, and budgeting/forecasting with the summary level data.
+
+FOCUS is designed to help FinOps practitioners perform common FinOps capabilities by using a generic set of instructions. The specification will maintain two compatibility levels - to enable the above-mentioned goal across a broader set of providers and cost datasets. The first compatibility level is the FOCUS 'summary' dataset, which provides all essential data elements required to perform the FinOps capabilities mentioned above. The second level is the FOCUS 'detailed' dataset, which enables the complete set of FinOps capabilities, including those specific to consumption-based billing models such as usage analysis and commitment discount optimizations.
+
+Each FOCUS [column](#columns) defined in the specification will display if that column is required for both compatibility levels or if it's only required in the 'extended' dataset. All columns required by the ‘summary’ dataset are automatically required by the ‘extended’ dataset.
 
 ## Typographic Conventions
 
