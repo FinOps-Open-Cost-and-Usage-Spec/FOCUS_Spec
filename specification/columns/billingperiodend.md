@@ -18,13 +18,13 @@ The end date and time of the *billing period*.
 
 ## Content Constraints
 
-| Constraint          | Value                                |
-|:--------------------|:-------------------------------------|
-| Column type         | Dimension                            |
-| Dataset requirement | Both                                 |
-| Allows nulls        | False                                |
-| Data type           | Date/Time                            |
-| Value format        | [Date/Time Format](#date/timeformat) |
+| Constraint      | Value                                |
+|:----------------|:-------------------------------------|
+| Column type     | Dimension                            |
+| FOCUS Essential | True                                 |
+| Allows nulls    | False                                |
+| Data type       | Date/Time                            |
+| Value format    | [Date/Time Format](#date/timeformat) |
 
 ## Introduced (version)
 
