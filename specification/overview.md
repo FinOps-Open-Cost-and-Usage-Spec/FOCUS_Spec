@@ -34,9 +34,9 @@ The following principles were considered while building the specification.
 
 * Incremental iterations of the specification released on a regular basis will provide higher value to practitioners and allow feedback as the specification develops. The goal is not to get to a complete, finished specification in one pass.
 
-### Working backwards with ease of adoption
+### Working backward with ease of adoption
 
-* Aim to work backwards from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and the attributes of the cost and usage data that should be defined in the specification to fulfill that capability.
+* Aim to work backward from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and attributes of the cost and usage data that should be defined in the specification to fulfill that capability.
 * Be FinOps scenario-driven. Define columns that answer scenario questions; don't look for scenarios to fit a column, each column must have a use case.
 * Don't add dimensions or metrics to the specification just because it can be added.
 * When defining the specification, consideration should be made to existing data already in the major providers' (AWS, GCP, Azure, OCI) datasets.
@@ -72,14 +72,6 @@ The following principles were considered while building the specification.
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
 * Column naming must strictly follow the [column naming conventions](#columnnamingconvention).
 * Use established standards (e.g., ISO8601 for dates, ISO4217 for currency).
-
-## Summary vs Detailed Cost and Usage Data
-
-Cloud Service Providers (CSPs) generate detailed cost and usage data in near real-time enabling an extensive set of FinOps capabilities to drive accountability and efficiency for dynamic consumption-based costs.  However, other cost datasets are provided at a summary level due to the pricing and cost not being based on consumption, or from providers that aren’t yet producing detailed consumption-based cost and usage datasets. FinOps practitioners can still perform essential FinOps capabilities like invoice reconciliation, data ingestion, and normalization as long as a subset of the essential columns is available. Additionally, FinOps practitioners can perform simplified versions of capabilities like cost reporting, chargeback, showback, and budgeting/forecasting with the summary level data.
-
-FOCUS is designed to help FinOps practitioners perform common FinOps capabilities by using a generic set of instructions. The specification will maintain two compatibility levels - to enable the above-mentioned goal across a broader set of providers and cost datasets. The first compatibility level is the FOCUS 'summary' dataset, which provides all essential data elements required to perform the FinOps capabilities mentioned above. The second level is the FOCUS 'detailed' dataset, which enables the complete set of FinOps capabilities, including those specific to consumption-based billing models such as usage analysis and commitment discount optimizations.
-
-Each FOCUS [column](#columns) defined in the specification will display if that column is required for both compatibility levels or if it's only required in the 'extended' dataset. All columns required by the ‘summary’ dataset are automatically required by the ‘extended’ dataset.
 
 ## Typographic Conventions
 
