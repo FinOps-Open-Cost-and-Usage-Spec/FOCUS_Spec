@@ -1,19 +1,23 @@
 # FOCUS Compliance
 
-Most billing datasets are unique based on the provider, its method of determining cost (e.g. fixed vs consumption-based billing), support for various concepts (e.g. commitment-based discounts), and the provider's billing system's maturity level.
+The FOCUS specification is designed to assist FinOps practitioners in performing common FinOps capabilities by utilizing a standardized set of instructions, regardless of the billing data generator. It does so by establishing compliance criteria that account for provider-level variances in the cost and usage datasets providers produce. This section outlines the two primary types of cost datasets that FinOps practitioners currently work with and explains how FOCUS can enhance the interoperability between these different datasets.
 
-FOCUS aims to help FinOps practitioners perform common FinOps capabilities by using a generic set of instructions. FOCUS accomplishes this by defining compliance requirements that account for the provider-level differences mentioned above.
+## Differences in Cost and Usage Datasets
 
-## Enabling FinOps Capabilities For Heterogeneous Cost Datasets
+Cost and usage datasets can vary considerably depending on the provider, the method used to calculate costs (e.g. fixed vs consumption-based billing), and provider support for different concepts like usage and commitment-based discounts. The maturity level of the provider's billing system also plays a role in determining the depth of the cost and usage datasets.
 
-Cloud Service Providers (CSPs) generate detailed cost and usage data in near real-time enabling an extensive set of FinOps capabilities to drive accountability and efficiency for dynamic consumption-based costs.  Non-CSP providers typically provide billing datasets that lack the same level of detail. The purpose of FOCUS Essential's reduced data set is to allow easier access for non-CSP providers to be incorporated in the full FOCUS data cube without breaking any primary FinOps capabilities, performing invoice reconciliation, data ingestion, and data normalization. Simplified versions of additional FinOps capabilities like cost reporting, chargeback, showback, and budgeting/forecasting can also be performed using a less-detailed billing dataset when essential requirements are met.
+Cloud Service Providers (CSPs) and some SaaS providers generate detailed cost and usage data in near real-time, which enables a wide range of FinOps capabilities. These capabilities help organizations make data-driven decisions to maximize the value they extract from the providers.
 
-Performing these capabilities will ultimately benefit organizations by enabling efficient, data-driven decision-making. The essential requirements needed to perform the important FinOps capabilities defined above are hereby referred to as the 'FOCUS Essential' requirements.
+Most other providers typically offer billing datasets that lack the same level of detail. However, those less-detailed datasets meeting an essential set of requirements can enable some important FinOps capabilities like invoice reconciliation, data ingestion, and data normalization. Simplified versions of additional FinOps capabilities like cost reporting, chargeback, showback, and budgeting/forecasting can also be performed using less-detailed billing datasets when these essential requirements are met.
+
+The essential set of data requirements needed to perform the most important FinOps capabilities is referred to as the 'FOCUS Essential' requirements.
 
 ## Meeting FOCUS Requirements
 
-FOCUS [Columns](#columns) designated as FOCUS Essential are required to be present in all compliant datasets and comply with the requirements (e.g. nullability and various other semantics) specified in the normative prose of such columns.
+*This section is normative.*
 
-Non-FOCUS Essential columns defined in the specification may be omitted from the billing dataset based on the semantics defined in the normative prose of such columns. For example, columns related to commitment-based discounts can specify that they can be omitted when a provider doesn't support commitment-based discounts. Conversely, the providers that do support this discount construct are required to provide this column and meet all requirements defined in the normative prose of those columns.
+All [columns](#columns) presented in a FOCUS-compliant dataset MUST meet the requirements specified in the normative prose of each column. These requirements may include nullability, value and format restrictions, and other scenario-specific requirements. Additionally, all FOCUS-compliant datasets MUST meet all [attributes](#attributes) defined in the FOCUS specification.
 
-Requirements defined under FOCUS [Attributes](#attributes) must be met regardless of the FOCUS Essential designation.
+The set of columns defined as FOCUS Essential MUST be present in a FOCUS-compliant dataset. The non-FOCUS Essential columns MAY be omitted from the billing dataset based on the conditions defined in the normative prose of such columns.
+
+For example, if a provider doesn't support commitment-based discounts, the columns related to commitment-based discounts can be omitted. Providers that support the commitment-based discount construct must provide the commitment-based discount columns and meet the requirements defined in the normative prose of those columns. If a provider doesn’t support commitment-based discounts and chooses to include commitment-based discount-related columns, the data presented in those columns must still meet all requirements specified in the normative prose of the commitment-based discount columns that were included.
