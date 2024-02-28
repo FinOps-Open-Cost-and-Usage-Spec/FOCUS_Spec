@@ -6,6 +6,12 @@ The FinOps Open Cost and Usage Specification (FOCUS) is a community-driven effor
 
 The vision of the FOCUS project is to help the cloud and SaaS industry move toward a common vocabulary around usage and billing data.  This will not only help FinOps professionals in the analysis of billing data from disparate sources but will also help software engineering teams by providing a target format for the usage and billing data that their products will generate.
 
+Some of the usecases this capability can enable:
+
+- The FOCUS spec will make it easier for FinOps practitioners to approach a new billing data source, as common concepts have been mapped to the common vocabulary of the spec.
+- The FOCUS spec will make it easier to merge multiple billing data sources together, and perform cross-cloud and cross-vendor analysis and cost reporting.
+- The FOCUS spec should make it easier to open source more FinOps visibility tools, and to accelerate the FinOps framework principle of data ingestion and normalization.
+
 [Working Group Charter]() **Link TBC**
 
 ## Notation Conventions and Compliance
