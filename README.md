@@ -1,8 +1,12 @@
 # FinOps Open Cost and Usage Specification (FOCUS) - Specification Working Group
 
-The Open Cloud Bill working group will develop a common, source-neutral schema of
-billing, cost, usage, and observability data mapped to a variety of cloud service provider and SaaS product
-sources, with metadata, dimensions, metrics, and measures for the source and common schema fields. As per the [Working Group Charter]() **Link TBC**
+## Overview
+
+The FinOps Open Cost and Usage Specification (FOCUS) is a community-driven effort to develop a standard schema for cloud and SaaS billing data. The primary goal of the FOCUS specification is to make it easier to understand, report on, and manage cloud costs. The FOCUS spec and schema is intended to be adaptable across a variety of cloud service provider and SaaS product sources, with metadata, dimensions, metrics, and example mappings between the source and common schema fields.
+
+The vision of the FOCUS project is to help the cloud and SaaS industry move toward a common vocabulary around usage and billing data.  This will not only help FinOps professionals in the analysis of billing data from disparate sources but will also help software engineering teams by providing a target format for the usage and billing data that their products will generate.
+
+[Working Group Charter]() **Link TBC**
 
 ## Notation Conventions and Compliance
 
@@ -37,32 +41,3 @@ See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/
 
 - [Change / contribution process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
 
-## FOCUS Specification Development Environment
-
-Most people will not need any development environment, it is mostly needed by the FinOps Foundation staff members who maintain the FOCUS Repositories and associated document build pipelines. Currently, the only tested (supported) environment is a MacOS setup, however the build pipeline in GitHub uses Ubuntu so should be possible to run on a Linux environment.
-
-### Setup Steps
-
-1. Install homebrew (as per: https://brew.sh)
-2. Setup cask
-
-	`brew install cask`
-3. Install python
-
-	`brew install python`
-4. Add packages for python
-
-	`pip3 install -r requirements.txt`
-5. Install pandoc and required filter library
-
-	`brew install pandoc`
-
-	`brew install --cask wkhtmltopdf`
-6. If your machine does not have git/make etc, you might fun the following: Install developer command line tools for MacOS
-
-	`xcode-select --install`
-
-### Assembling the specification locally
-
-1. Move into the `specification` folder
-2. Use make to generate the spec `make`
