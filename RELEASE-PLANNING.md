@@ -43,7 +43,7 @@ This estimated time line was approved by the Members working group on the Feb 29
         </tr>
         <tr>
             <td>Jun 20</td>
-            <td>Onstage FOCUS Adoption stories</td>
+            <td>FinOps X: Onstage FOCUS Adoption stories</td>
             <td></td>
         </tr>
     </tbody>
