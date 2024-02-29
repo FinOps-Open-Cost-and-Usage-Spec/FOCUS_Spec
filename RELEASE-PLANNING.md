@@ -18,7 +18,7 @@ This estimated time line was approved by the Members working group on the Feb 29
         </tr>
         <tr>
             <td>Mar 12 - Apr 22</td>
-            <td>Ongoing W.I.P</td>
+            <td>Drive v1.0 milestone issues to completion</td>
             <td>New issues & resolution <a href="https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/labels" target="_blank">(P1)</a>: → CREATION → TRIAGE → WIP → R&A</td>
         </tr>
         <tr>
