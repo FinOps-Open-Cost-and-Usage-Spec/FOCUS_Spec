@@ -1,4 +1,5 @@
 ## Release Planning 
+This estimated time line was approved by the Members working group on the Feb 29 meeting.
 
 <table border="1">
     <caption>Estimated Timeline v1.0</caption>
