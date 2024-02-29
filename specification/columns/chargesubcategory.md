@@ -13,12 +13,13 @@ ChargeSubcategory MUST follow the requirements listed below:
 * The ChargeSubcategory MUST be present in the billing data.
 * ChargeSubcategory is of type String and MUST be one of the allowed values.
 * ChargeSubcategory MUST NOT be null when ChargeCategory is "Usage" and the charge is covered by a *commitment*.
-  * When a usage charge is covered by a *commitment*, ChargeSubcategory MUST be "Used Commitment".
-  * When a *commitment* is not used fully used or partially used within the committed period, ChargeSubcategory MUST be "Unused Commitment" for the unused usage charge.
-* ChargeSubcategory MUST be null when ChargeCategory is "Usage" and is not covered by a *commitment*.
+  * When a usage charge is covered by a *commitment*, ChargeSubcategory MUST be *_commitment_*.
+* ChargeSubcategory MUST be *_On-Demand_* when ChargeCategory is "Usage" and is not covered by a *commitment*.
 * ChargeSubcategory MUST NOT be null when ChargeCategory is "Adjustment".
   * When an *adjustment* applies to a specific item, the corresponding FOCUS columns that identify that item MUST NOT be null and MUST match the applicable item details the *adjustment* pertains to.
-* ChargeSubcategory MUST be null when ChargeCategory is "Purchase" or "Tax".
+* ChargeSubcategory MUST NOT be null when ChargeCategory is "Purchase".
+  * When ChargeCategory is *purchase*, the corresponding FOCUS columns that identify that item MUST NOT be null and MUST match the applicable item details the *purchase* pertains to.
+
 
 ## Column ID
 
@@ -47,8 +48,8 @@ Allowed values when ChargeCategory is "Usage":
 | Value             | Description                                                                            |
 | :---------------- | :------------------------------------------------------------------------------------- |
 | On-Demand         | Usage charges that are not associated with a commitment                                |
-| Used Commitment   | Usage charges that are associated with consumption of a commitment's underlying basis. |
-| Unused Commitment | Amortized usage charges for the portion of a commitment that has not been used. For example, if an organization has a commitment-based discount that is not fully utilized, the unused portion falls under this category. It highlights an area where the organization is not fully leveraging its commitments, which could be a lost cost-saving opportunity. |
+| Commitment   | Usage charges that are associated with consumption of a commitment's underlying basis. |
+
 
 Allowed values when ChargeCategory is "Adjustment":
 
@@ -57,7 +58,15 @@ Allowed values when ChargeCategory is "Adjustment":
 | Refund             | Negative charges that were previously billed and are being returned by the provider. Providers can have multiple types of refunds such as resolving a tax error or for returned or exchanged commitment-based discounts. |
 | Credit             | Negative charges granted by the provider for various scenarios, like negotiated benefits, usage discounts, or promotional credits.                                                                                       |
 | Rounding Error     | Positive or negative charges that are needed to ensure raw billing data aggregations match the total cost on the invoice, which may be rounded.                                                                   |
-| General Adjustment | Positive or negative charges the provider applies that do not fall into other adjustment category values.                                                                                                                |
+| Other              | Positive or negative charges the provider applies that do not fall into other adjustment category values.                                                                                                                |
+
+Allowed valuew when ChargeCategory is "Purchase"
+
+| Value              | Description     |
+| :------------------| :----------------------------------------------------------------------------------------|
+| Commitment         | Purchase relates to a commitment based purchase such as reservation, savings plan or partial upfront reservation or savings plan |
+| MarketPlace        | Purchase relates to a service purchased from the CSP marketplace |
+| Other              | Purchase type not covered by commmitments or marketplace purchases |
 
 ## Introduced (version)
 
