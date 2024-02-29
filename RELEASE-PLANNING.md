@@ -24,7 +24,7 @@ This estimated time line was approved by the Members working group on the Feb 29
         <tr>
             <td>Apr 23 - Apr 30</td>
             <td>Final Consistency Review</td>
-            <td>Freeze working-draft. </br> Final review, only expected editorial comments.</td>
+            <td>Freeze working-draft. </br> Final review, only expecting editorial comments.</td>
         </tr>
         <tr>
             <td>May 2</td>
