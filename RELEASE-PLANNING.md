@@ -19,7 +19,7 @@ This estimated time line was approved by the Members working group on the Feb 29
         <tr>
             <td>Mar 12 - Apr 22</td>
             <td>Drive v1.0 milestone issues to completion</td>
-            <td>New issues & resolution <a href="https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/labels" target="_blank">(P1)</a>: → CREATION → TRIAGE → WIP → R&A</td>
+            <td>Incoming issues will be prioritized by maintainers. Only <a href="https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/labels" target="_blank">P0 and some P1</a> issues will get added to the v1.0 milestone. Prioritization will take voting and comments in issues into consideration</td>
         </tr>
         <tr>
             <td>Apr 23 - Apr 30</td>
