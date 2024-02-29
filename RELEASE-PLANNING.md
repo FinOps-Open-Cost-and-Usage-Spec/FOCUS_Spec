@@ -14,12 +14,12 @@ This estimated time line was approved by the Members working group on the Feb 29
         <tr>
             <td>Feb 28 - Mar 11</td>
             <td>Consistency Review</td>
-            <td>Opportunity for everyone to review what has been agreed upon so far in the working-draft branch. </br> Lock scope except P0.</td>
+            <td>Opportunity for everyone to review what has been agreed upon so far in the working-draft branch. </br> Lock scope except <a href="https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/labels" target="_blank">(P0)</a>.</td>
         </tr>
         <tr>
             <td>Mar 12 - Apr 22</td>
             <td>Ongoing W.I.P</td>
-            <td>New issues & resolution (P1-P3): → CREATION → TRIAGE → WIP → R&A</td>
+            <td>New issues & resolution <a href="https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/labels" target="_blank">(P1-P3)</a>: → CREATION → TRIAGE → WIP → R&A</td>
         </tr>
         <tr>
             <td>Apr 23 - Apr 30</td>
