@@ -19,7 +19,7 @@ This estimated time line was approved by the Members working group on the Feb 29
         <tr>
             <td>Mar 12 - Apr 22</td>
             <td>Ongoing W.I.P</td>
-            <td>New issues & resolution <a href="https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/labels" target="_blank">(P1-P3)</a>: → CREATION → TRIAGE → WIP → R&A</td>
+            <td>New issues & resolution <a href="https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/labels" target="_blank">(P1)</a>: → CREATION → TRIAGE → WIP → R&A</td>
         </tr>
         <tr>
             <td>Apr 23 - Apr 30</td>
