@@ -33,10 +33,64 @@ Allowed values:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Adjustment | Any adjustments that are applied after the original usage or purchase row. Adjustments may be related to multiple charges.   |
+| Refund     | Any adjustments that are applied after the original usage or purchase row. Adjustments may be related to multiple charges. (NOTE: Tax excluded)   |
+| Tax Refund | Tax related to any adjustments that are applied after the original usage or purchase row. Adjustments may be related to multiple charges.  |
+| Credit     | Credits assoicated with promotional usage or incentives   |
 | Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
 | Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
+
+show all 3 options ... add to supporting content sub field for refund (refund for tax and usage and purchase)
+is credit usage vs purchase relevant or just one parent credit?
+
+Option 2:
+
+CC:
+Usage
+Purchase
+Tax
+
+Adjustment Category:
+NULL
+Refund - ( includes rounding errors ??)
+Credit 
+
+Usage -- NULL -- general usage
+Usage -- Refund - specific redunds /..e.g miss billing
+Usage -- Credit - service specific incentives?
+Purchase -- NULL - general marketplace or 3rd party purchase
+Purchase -- Refund - 
+Purchase -- Credit - non-service /usage specific credits
+Tax -- NULL - general tax
+Tax -- Refund - specific tax refund
+Tax -- Credit - NOT APPLICABLE
+Other - I got 10K that can go anywhere :)
+
+--------------
+Option 3:
+
+CC:
+Usage
+Purchase
+Tax
+Credit (for external incentives???)
+
+Adjustment Category:
+NULL
+Refund - ( includes rounding errors ??)
+Bulk Refund
+
+Usage -- NULL -- general usage
+Usage -- Refund - specific redunds /..e.g miss billing
+Credit  NULL - service specific incentives?
+Purchase -- NULL - general marketplace or 3rd party purchase
+Purchase -- Refund - specific 3rd party refund
+Credit - NULL - non-service /usage specific credits
+Tax -- NULL - general tax
+Tax -- Refund - specific tax refund
+Other - I got 10K that can go anywhere :)
+
+ADD as as seprate branch?
 
 ## Introduced (version)
 
