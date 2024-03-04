@@ -1,6 +1,6 @@
 # Service Category
 
-The Service Category is the highest-level classification of a [*service*](#glossary:service) based on the core function of the *service*. Each *service* should have one and only one category that best aligns to its primary purpose. The Service Category is commonly used for scenarios like analyzing costs across providers and tracking the migration of workloads across fundamentally different architectures.
+The Service Category is the highest-level classification of a [*service*](#glossary:service) based on the core function of the *service*. Each *service* should have one and only one category that best aligns with its primary purpose. The Service Category is commonly used for scenarios like analyzing costs across providers and tracking the migration of workloads across fundamentally different architectures.
 
 The ServiceCategory column MUST be present and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
 
@@ -21,7 +21,7 @@ Highest-level classification of a *service* based on the core function of the *s
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column type     | Dimension      |
-| Column required | True           |
+| FOCUS Essential | True           |
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed Values |

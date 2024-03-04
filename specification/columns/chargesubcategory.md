@@ -10,11 +10,11 @@ When Charge Category is "Adjustment", the Charge Subcategory indicates what kind
 
 ChargeSubcategory MUST follow the requirements listed below:
 
-* The ChargeSubcategory MUST be present in the billing data.
+* The ChargeSubcategory column MUST be present in the billing data when the provider supports sub-categorization of the [Charge Category](#chargecategory) values.
 * ChargeSubcategory is of type String and MUST be one of the allowed values.
 * ChargeSubcategory MUST NOT be null when ChargeCategory is "Usage" and the charge is covered by a *commitment*.
   * When a usage charge is covered by a *commitment*, ChargeSubcategory MUST be "Used Commitment".
-  * When a *commitment* is not used fully used or partially used within the committed period, ChargeSubcategory MUST be "Unused Commitment" for the unused usage charge.
+  * When a *commitment* is not used, fully used, or partially used within the committed period ChargeSubcategory MUST be "Unused Commitment" for the unused usage charge.
 * ChargeSubcategory MUST be null when ChargeCategory is "Usage" and is not covered by a *commitment*.
 * ChargeSubcategory MUST NOT be null when ChargeCategory is "Adjustment".
   * When an *adjustment* applies to a specific item, the corresponding FOCUS columns that identify that item MUST NOT be null and MUST match the applicable item details the *adjustment* pertains to.
@@ -37,7 +37,7 @@ Indicates what kind of usage or *adjustment* the *row* represents.
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column type     | Dimension      |
-| Column required | True           |
+| FOCUS Essential | False          |
 | Allows nulls    | True           |
 | Data type       | String         |
 | Value format    | Allowed values |

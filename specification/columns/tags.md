@@ -6,6 +6,7 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 
 The Tags column adheres to the following requirements:
 
+* The Tags column MUST be present in the billing data when the provider supports setting user or provider-defined tags.
 * The Tags column MUST contain user-defined and provider-defined tags.
 * The Tags column MUST only contain finalized tags.
 * The Tags column MUST be in [Key-Value Format](#key-valueformat).
@@ -31,9 +32,9 @@ The following is an example of one user-defined tag and one provider-defined tag
 
 ## Finalized Tags
 
-Within a provider, tag keys may be associated with multiple values, and potentially defined at different levels within the provider, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, *providers* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each provider, but must be documented within their respective documentation.
+Within a provider, tag keys may be associated with multiple values, and potentially defined at different levels within the provider, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, *providers* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each provider but must be documented within their respective documentation.
 
-As a example, let's assume 1 [*sub account*](#glossary:sub-account) exists with 1 virtual machine with the following details, and tag inheritance favors Resources over *Sub Accounts*.
+As an example, let's assume 1 [*sub account*](#glossary:sub-account) exists with 1 virtual machine with the following details, and tag inheritance favors Resources over *Sub Accounts*.
 
 * Sub Account
   * id: *my-sub-account*
@@ -61,14 +62,14 @@ Tags
 
 ## Description
 
-The set of tags assigned to *tag sources* that also account for potential provider-defined or user-defined tag evaluations.
+The set of tags assigned to *tag sources* that account for potential provider-defined or user-defined tag evaluations.
 
 ## Content Constraints
 
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| Column required | True             |
+| FOCUS Essential | False            |
 | Allows nulls    | True             |
 | Data type       | JSON             |
 | Value format    | [Key-Value Format](#key-valueformat) |

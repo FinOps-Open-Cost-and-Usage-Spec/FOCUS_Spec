@@ -24,7 +24,7 @@ The name of the entity that produced the *resources* or *services* that were pur
 | Constraint      | Value           |
 |:----------------|:----------------|
 | Column type     | Dimension       |
-| Column required | True            |
+| FOCUS Essential | True            |
 | Allows nulls    | False           |
 | Data type       | String          |
 | Value format    | \<not specified> |
