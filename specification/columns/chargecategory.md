@@ -73,12 +73,14 @@ CC:
 Usage
 Purchase
 Tax
-Credit (for external incentives???)
+Credit (for external incentives??? --- will always have NULL adjustment category?)
 
 Adjustment Category:
 NULL
-Refund - ( includes rounding errors ??)
-Bulk Refund
+Refund (any billing period and charge period)
+Bulk Refund (do we want to specify this?)
+Rounding Error (current billing period only)
+Other
 
 Usage -- NULL -- general usage
 Usage -- Refund - specific redunds /..e.g miss billing
