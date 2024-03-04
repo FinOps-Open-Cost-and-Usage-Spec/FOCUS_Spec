@@ -2,7 +2,7 @@
 
 Billing Period Start represents the start date and time of the [*billing period*](#glossary:billing-period).
 
-The BillingPeriodStart column MUST be present in all FOCUS-compatible billing datasets. This column MUST be of type Date/Time and MUST NOT contain null values. BillingPeriodStart column MUST conform to the [Date/Time Format](#date/timeformat). The sum of the [BilledCost](#billedcost) metric for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+The BillingPeriodStart column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. BillingPeriodStart column MUST conform to the [Date/Time Format](#date/timeformat). The sum of the [BilledCost](#billedcost) metric for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 ## Column ID
 
