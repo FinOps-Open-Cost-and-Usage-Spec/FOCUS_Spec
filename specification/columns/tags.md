@@ -26,7 +26,7 @@ The following is an example of one user-defined tag and one provider-defined tag
 ```json
     {
         "foo":"bar",
-        "acme/foo": "bar"
+        "acme/foo":"bar"
     }
 ```
 
