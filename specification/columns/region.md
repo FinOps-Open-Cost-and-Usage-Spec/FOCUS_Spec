@@ -2,7 +2,7 @@
 
 A Region ID is a provider assigned identifier for an isolated geographic area where a [*resource*](#glossary:resource) is provisioned in or a [*service*](#glossary:service) is provided from. Region is commonly used for scenarios like analyzing cost and unit prices based on where *resources* are deployed.
 
-Region ID MUST be present in the billing data and MUST be of type String. Region ID MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region. Region ID values MUST be consistent within the provider and MUST be the same values used to indicate the region when provisioning or purchasing the *resource* or *service*.
+RegionId MUST be present in the billing data and MUST be of type String. RegionId MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region. RegionId values MUST be consistent within the provider and MUST be the same values used to indicate the region when provisioning or purchasing the *resource* or *service*.
 
 ## Column ID
 
