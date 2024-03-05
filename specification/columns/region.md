@@ -6,7 +6,7 @@ RegionId MUST be present in the billing data and MUST be of type String. RegionI
 
 ## Column ID
 
-Region ID
+RegionId
 
 ## Display name
 
