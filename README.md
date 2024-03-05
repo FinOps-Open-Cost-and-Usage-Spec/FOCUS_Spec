@@ -2,7 +2,7 @@
 
 ## Overview
 
-The FinOps Open Cost and Usage Specification (FOCUS) is a community-driven effort to develop a standard schema for cloud and SaaS billing data. The primary goal of the FOCUS specification is to make it easier to understand, report on, and manage cloud costs. The FOCUS spec and schema is intended to be adaptable across a variety of cloud service provider and SaaS product sources, with metadata, dimensions, metrics, and example mappings between the source and common schema fields.
+The FinOps Open Cost and Usage Specification (FOCUS) is a community-driven effort to develop a standard schema for cloud, SaaS, and other billing data. The primary goal of the FOCUS specification is to make it easier to understand, report on, and manage cloud costs. The FOCUS specification is intended to be adaptable across a variety of cloud service provider and SaaS product sources and defines columns (dimensions and metrics), column-specific requirements, and attributes (spec-wide requirements).  This repo also provides supporting content that includes example mappings between well-known provider datasets and what's defined in the FOCUS specification.
 
 The vision of the FOCUS project is to help the cloud and SaaS industry move toward a common vocabulary around usage and billing data.  This will not only help FinOps professionals in the analysis of billing data from disparate sources but will also help software engineering teams by providing a target format for the usage and billing data that their products will generate.
 
@@ -10,7 +10,7 @@ Some of the usecases this capability can enable:
 
 - The FOCUS spec will make it easier for FinOps practitioners to approach a new billing data source, as common concepts have been mapped to the common vocabulary of the spec.
 - The FOCUS spec will make it easier to merge multiple billing data sources together, and perform cross-cloud and cross-vendor analysis and cost reporting.
-- The FOCUS spec should make it easier to open source more FinOps visibility tools, and to accelerate the FinOps framework principle of data ingestion and normalization.
+- The FOCUS spec should make it easier to open source more FinOps visibility tools, and to accelerate the FinOps framework capability of data ingestion and normalization.
 
 [Working Group Charter]() **Link TBC**
 
