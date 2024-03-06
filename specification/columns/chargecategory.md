@@ -36,7 +36,6 @@ Allowed values:
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
 | Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
 
-
 ## Introduced (version)
 
 0.5
