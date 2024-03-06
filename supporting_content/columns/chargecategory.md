@@ -4,7 +4,6 @@
 
 Current column mappings found in available data sets:
 
-
 ## Example usage scenarios
 
 Current scenarios considered:
@@ -19,10 +18,7 @@ Current scenarios considered:
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
 | Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
 
-Tax cannot be classified correctly, assuming refunds and purchases have a tax implication then we would need to look for negative tax values matching the refund line in order ot acertain the total value of the refund.
-
-show all 3 options ... add to supporting content sub field for refund (refund for tax and usage and purchase)
-is credit usage vs purchase relevant or just one parent credit?
+ISSUE: Tax cannot be classified correctly, assuming refunds and purchases have a tax implication then we would need to look for negative tax values matching the refund line in order ot acertain the total value of the refund.
 
 ### Option 2:
 
