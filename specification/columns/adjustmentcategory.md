@@ -34,7 +34,6 @@ Allowed values:
 | Refund     | Refunded related to usage or prucahse specific activities (expects a matching 'tax' transaction) |
 | Credit     | Promotional / negotiated / incentive credits provided at providers discression (does NOT expect a matching 'tax' transaction)       |
 
-
 ## Introduced (version)
 
 0.5
