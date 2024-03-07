@@ -21,7 +21,7 @@ The name of Isolated geographic area where a *resource* is provisioned in or a *
 | Constraint      | Value           |
 |-----------------|-----------------|
 | Column type     | Dimension       |
-| Column required | True            |
+| FOCUS Essential | False            |
 | Allows nulls    | True            |
 | Data type       | String          |
 | Value format    | \<not specified> |
