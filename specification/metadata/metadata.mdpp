@@ -1,0 +1,9 @@
+# Columns
+
+The FOCUS specification defines a metadata structure that is to be supplied by data providers to facilitate practioners in data ingestion, data locations, schema of the FOCUS dataset.
+
+!INCLUDE "metadata_strucuture.md",1
+!INCLUDE "billedcost.md",1
+
+
+[FODOFC]: https://www.finops.org/framework/capabilities/
