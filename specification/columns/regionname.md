@@ -24,8 +24,8 @@ The name of Isolated geographic area where a *resource* is provisioned in or a *
 | FOCUS Essential | False           |
 | Allows nulls    | True            |
 | Data type       | String          |
-| Value format    | \<not specified> |
+| Value format    | \<not specified>|
 
 ## Introduced (version)
 
-1.5
+1.0
