@@ -9,7 +9,8 @@ The Tags column adheres to the following requirements:
 * The Tags column MUST contain user-defined and provider-defined tags.
 * The Tags column MUST only contain finalized tags.
 * The Tags column MUST be in [Key-Value Format](#key-valueformat).
-* A Tag key that supports a corresponding, non-null value tied to a resource SHOULD be included.
+* A Tag key with a non-null value for a given resource SHOULD be included in the tags column.
+* Depending on the provider's tag finalization process, a Tag key with a null value for a given resource MAY be included in the tags column.
 * A Tag key that does *not* support a corresponding value, sometimes referred to as a *label*, MUST have a corresponding true (boolean) value set.
 * If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
 * Providers MUST NOT alter user-defined Tag keys or values.
@@ -21,12 +22,13 @@ Provider-defined Tags additionally adhere to the following requirements:
 
 ## Provider-Defined vs. User-Defined Tags
 
-The following is an example of one user-defined tag and one provider-defined tag, respectively, with tag key, `foo`.  The first tag is user-defined and not prefixed. The second tag is provider-defined and prefixed with `acme/`, which the provider has specified as a reserved tag key prefix.
+The following is an example of one user-defined tag, one provider-defined tag, respectively, with tag key, `foo`, and one tag key without a supported value.  The first tag is user-defined and not prefixed. The second tag is provider-defined and prefixed with `acme/`, which the provider has specified as a reserved tag key prefix. The third tag with tag key, `baz`, does not support a value, so `null` is assigned as its value.
 
 ```json
     {
-        "foo":"bar",
-        "acme/foo":"bar"
+        "foo": "bar",
+        "acme/foo": "bar",
+        "baz": null,
     }
 ```
 
