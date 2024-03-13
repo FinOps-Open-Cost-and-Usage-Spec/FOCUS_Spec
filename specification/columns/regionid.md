@@ -14,7 +14,7 @@ Region ID
 
 ## Description
 
-Provider-assigned identifier for an isolated geographic area where a *resource* is provisioned or a *service* is provided
+Provider-assigned identifier for an isolated geographic area where a *resource* is provisioned or a *service* is provided.
 
 ## Content constraints
 
