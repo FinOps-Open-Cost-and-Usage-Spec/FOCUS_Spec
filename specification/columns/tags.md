@@ -22,13 +22,13 @@ Provider-defined Tags additionally adhere to the following requirements:
 
 ## Provider-Defined vs. User-Defined Tags
 
-The following is an example of one user-defined tag, one provider-defined tag, respectively, with tag key, `foo`, and one tag key without a supported value.  The first tag is user-defined and not prefixed. The second tag is provider-defined and prefixed with `acme/`, which the provider has specified as a reserved tag key prefix. The third tag with tag key, `baz`, does not support a value, so `null` is assigned as its value.
+The following is an example of one user-defined tag, one provider-defined tag, respectively, with tag key, `foo`, and one tag key without a supported value.  The first tag is user-defined and not prefixed. The second tag is provider-defined and prefixed with `acme/`, which the provider has specified as a reserved tag key prefix. The third tag with tag key, `baz`, does not support a value, so `true` (boolean) is assigned as its value.
 
 ```json
     {
         "foo": "bar",
         "acme/foo": "bar",
-        "baz": null,
+        "baz": true,
     }
 ```
 
