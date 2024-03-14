@@ -8,7 +8,7 @@ The RegionId column MUST be present in the billing data when the provider suppor
 
 RegionId
 
-## Display name
+## Display Name
 
 Region ID
 

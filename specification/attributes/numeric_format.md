@@ -8,7 +8,7 @@ All columns capturing a numeric value, defined in the FOCUS specification, MUST 
 
 NumericFormat
 
-## Attribute name
+## Attribute Name
 
 Numeric Format
 

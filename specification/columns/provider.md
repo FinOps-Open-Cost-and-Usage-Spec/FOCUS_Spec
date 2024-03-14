@@ -1,7 +1,6 @@
 # Provider
 
-A Provider is an entity that made the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for purchase. It is commonly used for cost
-analysis and reporting scenarios.
+A Provider is an entity that makes the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for purchase. It is commonly used for cost analysis and reporting scenarios.
 
 The Provider column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values.
 

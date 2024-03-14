@@ -1,6 +1,6 @@
 # Sub Account Name
 
-A sub account name is a display name assigned to a *sub account*. Sub account Name is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
+A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub-account). Sub account Name is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
 
 The SubAccountName column MUST be present in the billing data when the provider supports a *sub account* construct. This column MUST be of type String. If a charge does not apply to a *sub account*, the SubAccountName column MUST be null.
 
@@ -10,13 +10,13 @@ See [Appendix: Grouping constructs for resources or services](#groupingconstruct
 
 SubAccountName
 
-## Display name
+## Display Name
 
 Sub Account Name
 
 ## Description
 
-A name assigned to a grouping of *resources* or *services*, often used to manage access and/or cost.
+A name assigned to a grouping of [*resources*](#glossary:resource) or [*services*](#glossary:service), often used to manage access and/or cost.
 
 ## Content constraints
 

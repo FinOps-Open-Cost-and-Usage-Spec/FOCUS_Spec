@@ -8,7 +8,7 @@ All columns capturing a date/time value, defined in the [FOCUS](#glossary:finops
 
 DateTimeFormat
 
-## Attribute name
+## Attribute Name
 
 Date/Time Format
 
