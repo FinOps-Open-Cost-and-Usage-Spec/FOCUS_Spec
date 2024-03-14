@@ -8,7 +8,7 @@ The CommitmentDiscountCategory column MUST be present in the billing data when t
 
 CommitmentDiscountCategory
 
-## Display name
+## Display Name
 
 Commitment Discount Category
 

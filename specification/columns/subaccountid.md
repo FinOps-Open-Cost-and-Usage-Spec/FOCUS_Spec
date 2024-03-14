@@ -10,13 +10,13 @@ See [Appendix: Grouping constructs for resources or services](#groupingconstruct
 
 SubAccountId
 
-## Display name
+## Display Name
 
 Sub Account ID
 
 ## Description
 
-An ID assigned to a grouping of *resources* or *services*, often used to manage access and/or cost.
+An ID assigned to a grouping of [*resources*](#glossary:resource) or [*services*](#glossary:service), often used to manage access and/or cost.
 
 ## Content constraints
 

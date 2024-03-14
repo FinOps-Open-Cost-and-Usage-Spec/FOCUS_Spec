@@ -8,7 +8,7 @@ The SkuId column MUST be present in the billing data when the provider publishes
 
 SkuId
 
-## Display name
+## Display Name
 
 SKU ID
 

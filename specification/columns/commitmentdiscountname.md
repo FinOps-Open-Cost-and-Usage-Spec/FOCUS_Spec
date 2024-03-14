@@ -8,7 +8,7 @@ The CommitmentDiscountName column MUST be present in the billing data when the p
 
 CommitmentDiscountName
 
-## Display name
+## Display Name
 
 Commitment Discount Name
 

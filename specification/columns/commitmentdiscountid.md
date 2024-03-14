@@ -8,7 +8,7 @@ The CommitmentDiscountId column MUST be present in the billing data when the pro
 
 CommitmentDiscountId
 
-## Display name
+## Display Name
 
 Commitment Discount ID
 

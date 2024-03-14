@@ -10,7 +10,7 @@ See [Appendix: Grouping constructs for resources or services](#groupingconstruct
 
 BillingAccountId
 
-## Display name
+## Display Name
 
 Billing Account ID
 
