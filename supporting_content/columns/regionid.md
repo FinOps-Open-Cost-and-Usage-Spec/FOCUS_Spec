@@ -1,4 +1,4 @@
-# Column: Region
+# Column: Region ID
 	
 ## Example provider mappings
 
@@ -42,7 +42,7 @@ Current values observed in billing data for various scenarios:
 - We had a poll about whether Region should be nullable or not and decided it should. Updated this as part of 1.0.
 
 -   Definition discussion:\
-    "A Region is an isolated geographic area where a resource is provisioned in OR a service is provided from. The region identifier is assigned by the provider. Resources and/or services are commonly utilized from different regions based on considerations for data sovereignty, performance, cost, convenience, or geopolitical reasons. "
+    "A Region ID is an identifier for an isolated geographic area where a resource is provisioned in OR a service is provided from. The region identifier is assigned by the provider. Resources and/or services are commonly utilized from different regions based on considerations for data sovereignty, performance, cost, convenience, or geopolitical reasons. "
 
 | Provider  | Provider Region / Location | AZ / Zone  | Region Category(?) | Geographical Region (code? Continent) | Country (code?) | TimeZone (check need) |
 |-----------|----------------------------|------------|--------------------|---------------------------------------|-----------------|-----------------------|
