@@ -36,7 +36,6 @@ Allowed values:
 | Adjustment      | Positive or negative charges the provider applies that do not fall into other category values.    |
 | Credit      | Negative charges granted by the provider for various scenarios, like negotiated benefits, usage discounts, or promotional credits.     |
 
-
 ## Introduced (version)
 
 0.5
