@@ -32,7 +32,8 @@ Allowed values:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|           |
-| Regular     | Regular billing line item  |
+| Regular     | Normal charge  |
+
 | Correction    | Correction to one or more previous charges       |
 
 
