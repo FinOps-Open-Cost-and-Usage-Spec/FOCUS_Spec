@@ -24,7 +24,7 @@ Naming convention for columns appearing in billing data.
   * Column IDs MUST be alphanumeric with no special characters.
   * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the Name suffix if there are no other columns with the same name prefix.
   * Column IDs SHOULD NOT use acronyms.
-  * Column IDs SHOULD NOT exceed 59 characters.
+  * Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories.
 * All custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
 * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the `Name` suffix if it is considered superfluous.
 * Columns with the `Category` suffix MUST be normalized.
