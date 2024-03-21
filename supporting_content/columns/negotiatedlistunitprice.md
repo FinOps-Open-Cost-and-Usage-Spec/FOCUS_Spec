@@ -1,4 +1,4 @@
-# Column: NegotiatedListUnitPrice
+# Column: ContractedUnitPrice
 
 ## Example provider mappings
 
@@ -43,7 +43,7 @@ Current column mappings found in available data sets:
 ### GCP column mappings related issues
 
 * **price.effective_price** is present only in detail export and thus available only for small subset of services/resources. In order to resolve this information we should rely on **BigQuery Pricing Data Export** and/or **Cloud Billing API**, which provide price related structs (out-of-scope of this document).
-* Similar to cost, regardless of the data source we use, the resolved price does not include reductions provided in credits, which aligns with the definition of NegotiatedListUnitPrice.
+* Similar to cost, regardless of the data source we use, the resolved price does not include reductions provided in credits, which aligns with the definition of ContractedUnitPrice.
 
 ### Microsoft column mappings related issues
 

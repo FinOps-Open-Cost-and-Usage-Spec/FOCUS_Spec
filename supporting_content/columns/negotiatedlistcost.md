@@ -1,4 +1,4 @@
-# Column: NegotiatedListCost
+# Column: ContractedCost
 
 ## Example provider mappings
 
@@ -48,4 +48,4 @@ Current column mappings found in available data sets:
 * Cost and usage reports contain cost/myCost and cost/myCostOverage columns.
   * **cost/myCost** - The cost charged for this line of usage. `myCost` is equal to `usage/billedQuanty * cost/unitPrice`. Note: billedQuantity, myCost, and unitPrice are inclusive of Overage numbers.
   * **cost/myCostOverage** - The cost billed for overage usage of a resource.
-* Conclusion: Mapping **cost/myCost** to negotiated list cost and cost/myCostOverage to billed cost
+* Conclusion: Mapping **cost/myCost** to Contracted Cost and cost/myCostOverage to Billed Cost
