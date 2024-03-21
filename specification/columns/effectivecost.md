@@ -1,6 +1,6 @@
 # Effective Cost
 
-Effective Cost represents a cost inclusive of the impacts of all reduced rates and discounts, augmented with the [*amortization*](#glossary:amortization) of relevant purchases (one-time or recurring) paid to cover future eligible charges. The *amortized* portion included should be proportional to the [Pricing Quantity](#pricingquantity) and the time granularity of the data. This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
+Effective Cost represents a cost inclusive of the impacts of all reduced rates and discounts, augmented with the [*amortization*](#glossary:amortization) of relevant purchases (one-time or recurring) paid to cover future eligible charges. The *amortized* portion included should be proportional to the [Pricing Quantity](#pricingquantity) and the time granularity of the data. Effective Cost does not mix or "blend" costs across multiple charges of the same service. This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
 
 This column resolves two challenges that are faced by practitioners:
 
