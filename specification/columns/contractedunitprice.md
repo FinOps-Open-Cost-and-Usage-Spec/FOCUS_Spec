@@ -2,7 +2,7 @@
 
 The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment-based discounts or any other discounts. This price is denominated in the [Billing Currency](#billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If negotiated discounts are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#listunitprice).
 
-The ContractedUnitPrice column MUST be present in the billing data when the provider supports negotiated pricing concept. This column MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency. ContractedUnitPrice MUST NOT be null if [SkuPriceId](#skupriceid) is not null and MUST be null if SkuPriceId is null. When ContractedUnitPrice is not null, multiplying ContractedUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ContractedCost](#contractedcost).
+The ContractedUnitPrice column MUST be present in the billing data when the provider supports negotiated pricing concept. This column MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. When ContractedUnitPrice is present, it MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage" or "Purchase" and MAY be null for other ChargeCategory values. When ContractedUnitPrice is present and not null, multiplying ContractedUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ContractedCost](#contractedcost).
 
 ## Column ID
 
@@ -14,7 +14,7 @@ Contracted Unit Price
 
 ## Description
 
-The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts.
+The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment-based discounts or any other discounts.
 
 ## Content Constraints
 
