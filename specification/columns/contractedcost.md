@@ -1,10 +1,10 @@
 # Contracted Cost
 
-Contracted Cost represents the cost calculated by multiplying [Contracted Unit Price](#contractedunitprice) and the corresponding [Pricing Quantity](#pricingquantity). Contracted Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on negotiation activities, by comparing it with [List Cost](#listcost). If negotiated discounts are not applicable, the Contracted Cost defaults to the List Cost.
+Contracted Cost represents the cost calculated by multiplying [*contracted unit price*](#glossary:contracted-unit-price) and the corresponding [Pricing Quantity](#pricingquantity). Contracted Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on negotiation activities, by comparing it with [List Cost](#listcost). If negotiated discounts are not applicable, the Contracted Cost defaults to the List Cost.
 
-The ContractedCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency. When a ContractedUnitPrice is not null, multiplying the ContractedUnitPrice by PricingQuantity MUST produce the ContractedCost.
+The ContractedCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. When ContractedUnitPrice is present and is not null, multiplying the ContractedUnitPrice by PricingQuantity MUST produce the ContractedCost.
 
-In cases where the ContractedUnitPrice is null, the following applies:
+In cases where the ContractedUnitPrice is present and null, the following applies:
 
 * The ContractedCost MUST be calculated based on the ContractedCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is "Tax").
 * The ContractedCost MUST match the [BilledCost](#billedcost) if the charge is unrelated to other charges (e.g. [ChargeSubcategory](#chargesubcategory) is "Credit").
@@ -19,7 +19,7 @@ Contracted Cost
 
 ## Description
 
-Cost calculated by multiplying Contracted Unit Price and the corresponding Pricing Quantity.
+Cost calculated by multiplying [*contracted unit price*](#glossary:contracted-unit-price) and the corresponding Pricing Quantity.
 
 ## Content Constraints
 
