@@ -10,7 +10,7 @@ The PricingCategory column adheres to the following requirements:
 * PricingCategory MUST be "On-Demand" when pricing is predetermined at the standard rate for the [billing account](#glossary:billing-account).
 * PricingCategory MUST be "Commitment-Based" when [CommitmentDiscountId](#commitmentdiscountid) is not null.
 * PricingCategory MUST be "Dynamic" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing.
-* PricingCategory MUST be "Other" when there is a pricing model but none of the currently allowed values apply.
+* PricingCategory MUST be "Other" when there is a pricing model but none of the allowed values apply.
 
 ## Column ID
 
