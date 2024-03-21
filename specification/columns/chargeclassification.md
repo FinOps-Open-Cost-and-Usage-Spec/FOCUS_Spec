@@ -33,7 +33,8 @@ Allowed values:
 | Value      | Description                          |
 | :--------- | :------------------------------------|           |
 | Regular     | Regular billing line item  |
-| Correction    | Correction to a previously billed line item       |
+| Correction    | Correction to one or more previous charges       |
+
 
 ## Introduced (version)
 
