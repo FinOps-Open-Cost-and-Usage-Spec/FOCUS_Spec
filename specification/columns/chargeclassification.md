@@ -1,6 +1,7 @@
 # Charge Classification
 
-A Charge Classification indicates whether the row represents a regular cost record or a correction record. Charge Classification is a supplemental detail to the [Charge Category](#chargecategory). It provides additional context to describe the nature of the charge.
+A Charge Classification indicates whether the row represents a regular charge or a correction to one or more previous charges.
+
 
 The ChargeClassification column MUST be present and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
 
