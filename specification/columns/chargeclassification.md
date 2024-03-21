@@ -15,7 +15,8 @@ Charge Classification
 
 ## Description
 
-Indicates whether the row represents regular charges, or is a correction to previoulsly billed line items.
+Indicates whether the row represents a regular charge or a correction to one or more previous charges.
+
 
 ## Content Constraints
 
