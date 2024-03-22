@@ -14,7 +14,7 @@ All rows defined in FOCUS MUST follow the discount handling requirements listed 
 
 DiscountHandling
 
-## Attribute name
+## Attribute Name
 
 Discount Handling
 

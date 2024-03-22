@@ -8,7 +8,7 @@ All columns capturing a currency value, defined in the [FOCUS](#glossary:finops-
 
 CurrencyCodeFormat
 
-## Attribute name
+## Attribute Name
 
 Currency Code Format
 
