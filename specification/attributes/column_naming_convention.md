@@ -18,7 +18,7 @@ Naming convention for columns appearing in billing data.
 
 ## Requirements
 
-* All columns defined by FOCUS(*) MUST follow the following rules:
+* All columns defined by FOCUS MUST follow the following rules:
   * Column IDs MUST use [Pascal case](https://techterms.com/definition/pascalcase).
   * Column IDs MUST NOT use abbreviations.
   * Column IDs MUST be alphanumeric with no special characters.
