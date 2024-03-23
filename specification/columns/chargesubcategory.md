@@ -8,7 +8,7 @@ When Charge Category is "Usage" and the charge is related to a [*commitment*](#g
 
 When Charge Category is "Adjustment", the Charge Subcategory indicates what kind of after-the-fact *adjustment* the record represents and is commonly used to identify changes like credits and refunds.
 
-ChargeSubcategory MUST follow the requirements listed below:
+The ChargeSubcategory column adheres to the following requirements:
 
 * The ChargeSubcategory MUST be present in the billing data.
 * ChargeSubcategory is of type String and MUST be one of the allowed values.
