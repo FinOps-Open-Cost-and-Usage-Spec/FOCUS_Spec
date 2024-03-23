@@ -2,13 +2,13 @@
 
 Commitment Discount Type is a provider-assigned name to identify the type of [*commitment-based discount*](#glossary:commitment-based-discount) applied to the [*row*](#glossary:row).
 
-The CommitmentDiscountType column MUST be present in the billing data. This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null. Providers MUST use a consistent value-format and a set of values for CommitmentDiscountType values within their billing datasets.
+The CommitmentDiscountType column MUST be present in the billing data. This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null. CommitmentDiscountType MUST be a consistent,readable display value within the billing data.
 
 ## Column ID
 
 CommitmentDiscountType
 
-## Display name
+## Display Name
 
 Commitment Discount Type
 
@@ -16,7 +16,7 @@ Commitment Discount Type
 
 A provider-assigned identifier for the type of *commitment-based discount* applied to the *row*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
