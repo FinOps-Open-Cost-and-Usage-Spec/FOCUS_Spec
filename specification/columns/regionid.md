@@ -1,4 +1,4 @@
-# Region
+# Region ID
 
 A Region ID is a provider-assigned identifier for an isolated geographic area where a [*resource*](#glossary:resource) is provisioned or a [*service*](#glossary:service) is provided. The region is commonly used for scenarios like analyzing cost and unit prices based on where *resources* are deployed.
 
@@ -14,7 +14,7 @@ Region ID
 
 ## Description
 
-Provider-assigned identifier for an isolated geographic area where a *resource* is provisioned or a *service* is provided
+Provider-assigned identifier for an isolated geographic area where a *resource* is provisioned or a *service* is provided.
 
 ## Content constraints
 

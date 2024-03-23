@@ -20,7 +20,7 @@ Rules and formatting requirements for columns appearing in billing data which co
 
 * Key-Value Format columns MUST contain a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
 * Keys in a key-value pair MUST be unique within an object.
-* Values in a key-value pair MUST one of the following types: number, string, `true`, `false`, or `null`.
+* Values in a key-value pair MUST be one of the following types: number, string, `true`, `false`, or `null`.
 * Values in a key-value pair MUST NOT be an object nor an array.
 
 ## Exceptions
