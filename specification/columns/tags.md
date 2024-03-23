@@ -1,6 +1,6 @@
 # Tags
 
-The Tags column represents the set of tags assigned to [*tag sources*](#glossary:tag-source) that also account for potential provider-defined or user-defined tag evaluations.  In FOCUS, "Tag" is a generic term to describe metadata that can be attached to a resource, account, etc. by a user or provider to help identify it. Tags may also be referred to by providers by other terms, such as labels or networks tags. Tags are commonly used for scenarios like adding business context to billing data to identify and accurately allocate charges. 
+The Tags column represents the set of tags assigned to [*tag sources*](#glossary:tag-source) that also account for potential provider-defined or user-defined tag evaluations. Tags are commonly used for scenarios like adding business context to billing data to identify and accurately allocate charges. Tags may also be referred to by providers by other terms, such as labels or networks tags.
 
 A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is selected from a set of possible tag values assigned to the tag key.  When supported by a provider, this can occur when a tag value is set by provider-defined or user-defined rules.
 
