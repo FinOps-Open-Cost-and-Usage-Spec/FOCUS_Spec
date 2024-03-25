@@ -21,7 +21,7 @@ The suggested provider-published unit price for a single Pricing Unit of the ass
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
 | Column type     | Metric                               |
-| FOCUS Essential | False                                |
+| Compliance level| Standard                             |
 | Allows nulls    | True                                 |
 | Data type       | Decimal                              |
 | Value format    | [Numeric Format](#numericformat)     |

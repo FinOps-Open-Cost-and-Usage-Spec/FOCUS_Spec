@@ -21,7 +21,7 @@ Indicates whether the row represents an upfront or recurring fee, cost of usage 
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column type     | Dimension      |
-| FOCUS Essential | True           |
+| Compliance level| Basic          |
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed values |

@@ -21,7 +21,7 @@ Provider-assigned identifier for an isolated geographic area where a *resource* 
 | Constraint      | Value           |
 |-----------------|-----------------|
 | Column type     | Dimension       |
-| FOCUS Essential | False           |
+| Compliance level| Standard        |
 | Allows nulls    | True            |
 | Data type       | String          |
 | Value format    | \<not specified> |

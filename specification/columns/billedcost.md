@@ -21,7 +21,7 @@ A charge serving as the basis for invoicing, inclusive of all reduced rates and 
 |    Constraint   |      Value              |
 |:----------------|:------------------------|
 | Column type     | Metric                  |
-| FOCUS Essential | True                    |
+| Compliance level| Basic                   |
 | Allows nulls    | False                   |
 | Data type       | Decimal                 |
 | Value format    | [Numeric Format](#numericformat) |

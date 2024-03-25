@@ -39,7 +39,7 @@ Eligible purchases should be *amortized* using a methodology determined by the p
 |    Constraint   |      Value              |
 |:----------------|:------------------------|
 | Column type     | Metric                  |
-| FOCUS Essential | True                    |
+| Compliance level| Basic                   |
 | Allows nulls    | False                   |
 | Data type       | Decimal                 |
 | Value format    | [Numeric Format](#numericformat) |

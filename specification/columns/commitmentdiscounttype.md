@@ -21,7 +21,7 @@ A provider-assigned identifier for the type of *commitment-based discount* appli
 | Constraint      | Value            |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| FOCUS Essential | False            |
+| Compliance level| Standard         |
 | Allows nulls    | True             |
 | Data type       | String           |
 | Value format    | \<not specified> |
