@@ -8,7 +8,8 @@ Current column mappings found in available data sets:
 |:----------|:-----------------------------|:-------------------------|
 | AWS       | CUR;                         | Not available            |
 | GCP       | BigQuery Billing Export;<br>BigQuery Pricing Data Export;<br>Cloud Billing API | Not available in BigQuery Billing Export<br>**price.effective_price** available only in detail export, i.e. available for a subset of resources/services<br>*see Discussion / Scratch space - GCP column mappings related issues for more details* |
-| Microsoft | Cost details                 | Not available?<br>**unitPrice** is probably the closest match but not applicable in all use cases<br>*see Discussion / Scratch space - Microsoft column mappings related issues for more details* |
+| Microsoft | Cost details (actual/amortized) | UnitPrice<br>*see Discussion / Scratch space - Microsoft column mappings related issues for more details* |
+| Microsoft | Cost details (FOCUS `1.0-preview(v1)`) | x_OnDemandUnitPrice |
 | OCI       | Cost and Usage Report        | **cost/unitPrice** is the best match<br>*see Discussion / Scratch space - OCI column mappings related issues for more details* |
 
 ## References and Resources
