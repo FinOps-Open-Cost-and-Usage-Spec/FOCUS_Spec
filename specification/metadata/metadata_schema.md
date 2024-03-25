@@ -5,7 +5,7 @@ The FOCUS metadata schema provides a list of the columns present in the FOCUS da
 ## Logical Section: Schema
 
 ## Available Metadata
- * ### schema_id
+ * ### SchemaId
    * Use: unique identifier for the schema
    * Type: STRING
  * ### index
