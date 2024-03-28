@@ -6,7 +6,7 @@ The ContractedCost column MUST be present in the billing data and MUST NOT be nu
 
 In cases where the ContractedUnitPrice is present and null, the following applies:
 
-* The ContractedCost MUST be calculated based on the ContractedCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is "Tax").
+* The ContractedCost of a charge calculated based on other charges MUST be calculated based on the ContractedCost of the other related charges (e.g. [ChargeCategory](#chargecategory) is "Tax").
 * The ContractedCost MUST match the [BilledCost](#billedcost) if the charge is unrelated to other charges (e.g. [ChargeSubcategory](#chargesubcategory) is "Credit").
 
 ## Column ID
