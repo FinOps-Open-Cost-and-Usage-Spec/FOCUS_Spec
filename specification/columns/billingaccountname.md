@@ -23,7 +23,6 @@ The display name assigned to a *billing account*.
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| FOCUS Essential | False            |
 | Allows nulls    | True             |
 | Data type       | String           |
 | Value format    | \<not specified> |

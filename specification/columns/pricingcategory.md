@@ -29,7 +29,6 @@ Describes the pricing model used for a charge at the time of use or purchase.
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column type     | Dimension      |
-| FOCUS Essential | False          |
 | Allows nulls    | True           |
 | Data type       | String         |
 | Value format    | Allowed values |
