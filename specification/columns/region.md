@@ -1,4 +1,4 @@
-# Region
+# Region Name
 
 A Region is a provider-assigned identifier for an isolated geographic area where a [*resource*](#glossary:resource) is provisioned or a [*service*](#glossary:service) is provided. The Region is commonly used for scenarios like analyzing cost and unit prices based on where *resources* are deployed.
 
