@@ -21,7 +21,7 @@ Provider-specified measurement unit indicating how a provider measures usage or 
 |    Constraint   |      Value      |
 |:----------------|:----------------|
 | Column type     | Metric          |
-| FOCUS Essential | False           |
+| Compliance level| Standard        |
 | Allows nulls    | True            |
 | Data type       | String          |
 | Value format    | [Unit Format](#unitformat) recommended |

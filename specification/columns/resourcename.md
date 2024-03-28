@@ -21,7 +21,7 @@ Display name assigned to a *resource*.
 |    Constraint   |      Value      |
 |:----------------|:----------------|
 | Column type     | Dimension       |
-| FOCUS Essential | False           |
+| Compliance level| Standard        |
 | Allows nulls    | True            |
 | Data type       | String          |
 | Value format    | \<not specified> |

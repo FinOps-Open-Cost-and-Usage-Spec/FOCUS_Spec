@@ -21,7 +21,7 @@ The end date and time of the *billing period*.
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
 | Column type     | Dimension                            |
-| FOCUS Essential | True                                 |
+| Compliance level| Basic                                |
 | Allows nulls    | False                                |
 | Data type       | Date/Time                            |
 | Value format    | [Date/Time Format](#date/timeformat) |

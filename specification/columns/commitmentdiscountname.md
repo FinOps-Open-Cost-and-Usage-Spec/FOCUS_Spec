@@ -21,7 +21,7 @@ The display name assigned to a *commitment-based discount*.
 | Constraint      | Value            |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| FOCUS Essential | False            |
+| Compliance level| Standard         |
 | Allows nulls    | True             |
 | Data type       | String           |
 | Value format    | \<not specified> |
