@@ -14,7 +14,7 @@ Most other providers typically offer billing datasets that lack the same level o
 
 *This section is normative.*
 
-FOCUS defines three levels of compliance: Basic, Standard, Full, and Enhanced. All [columns](#columns) presented in a FOCUS-compliant dataset MUST meet the requirements specified in the normative prose of each column. Compliance (and compliance level) MUST be applied to the full dataset only and cannot be achieved if part of a dataset is excluded. These requirements may include nullability, value and format restrictions, and other scenario-specific requirements. Additionally, all FOCUS-compliant datasets MUST meet all [attributes](#attributes) defined in the FOCUS specification.
+FOCUS defines four levels of compliance: Basic, Standard, Full, and Enhanced. All [columns](#columns) presented in a FOCUS-compliant dataset MUST meet the requirements specified in the normative prose of each column. Compliance (and compliance level) MUST be applied to the full dataset only and cannot be achieved if part of a dataset is excluded. These requirements may include nullability, value and format restrictions, and other scenario-specific requirements. Additionally, all FOCUS-compliant datasets MUST meet all [attributes](#attributes) defined in the FOCUS specification.
 
 Each column defines the compliance level at which that column is required. These columns MUST be present in the dataset to conform to the specified compliance level of FOCUS. Additional columns MAY be omitted from the dataset based on the conditions defined in the normative prose of such columns.
 
