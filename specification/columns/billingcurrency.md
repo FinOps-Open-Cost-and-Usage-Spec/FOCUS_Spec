@@ -21,7 +21,6 @@ Represents the currency that a charge was billed.
 | Constraint      | Value                               |
 |:----------------|:------------------------------------|
 | Column type     | Dimension                           |
-| FOCUS Essential | True                                |
 | Allows nulls    | False                               |
 | Data type       | String                              |
 | Value format    | [Currency Code Format](#currencycodeformat) |

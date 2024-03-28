@@ -25,7 +25,6 @@ The name of the entity responsible for invoicing for the *resources* or *service
 | Constraint      | Value           |
 |:----------------|:----------------|
 | Column type     | Dimension       |
-| FOCUS Essential | True            |
 | Allows nulls    | False           |
 | Data type       | String          |
 | Value format    | \<not specified> |

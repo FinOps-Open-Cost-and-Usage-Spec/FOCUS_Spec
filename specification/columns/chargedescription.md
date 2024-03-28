@@ -21,7 +21,6 @@ Self-contained summary of the charge's purpose and price.
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| FOCUS Essential | True             |
 | Allows nulls    | True             |
 | Data type       | String           |
 | Value format    | \<not specified> |
