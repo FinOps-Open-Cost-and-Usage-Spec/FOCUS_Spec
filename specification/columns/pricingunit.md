@@ -26,6 +26,7 @@ Provider-specified measurement unit for determining unit prices, indicating how 
 | Constraint      | Value                   |
 |-----------------|-------------------------|
 | Column type     | Dimension               |
+| Feature Level   | Mandatory               |
 | Allows nulls    | True                    |
 | Data type       | String                  |
 | Value format    | [Unit Format](#unitformat) |

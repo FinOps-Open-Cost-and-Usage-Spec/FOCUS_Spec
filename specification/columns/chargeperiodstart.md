@@ -21,6 +21,7 @@ The beginning date and time of a *charge period*.
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
 | Column type     | Dimension                            |
+| Feature Level   | Mandatory                            | 
 | Allows nulls    | False                                |
 | Data type       | Date/Time                            |
 | Value format    | [Date/Time Format](#date/timeformat) |
