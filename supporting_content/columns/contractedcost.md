@@ -6,7 +6,7 @@ Current column mappings found in available data sets:
 
 | Provider  | Data set                | Column                                                                                     |
 |:----------|:------------------------|:-------------------------------------------------------------------------------------------|
-| AWS       | CUR;                    | Not available                                                                              |
+| AWS       | CUR                     | Not available                                                                              |
 | GCP       | BigQuery Billing Export | Not available? or **cost** (the closest match);<br>*see Discussion / Scratch space - GCP column mappings for more details*        |
 | Microsoft | Cost details (actual/amortized) | Not available<br>Can calculate using UnitPrice * Quantity<br>*see Discussion / Scratch space - Microsoft column mappings related issues for more details* |
 | Microsoft | Cost details (FOCUS `1.0-preview(v1)`) | x_OnDemandCost |
