@@ -33,7 +33,7 @@ Allowed values:
 | Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
 | Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
-| Adjustment      | Positive or negative charges the provider applies that do not fall into other category values.    |
+| Adjustment      | Non-zero charges the provider applies that do not fall into other category values.    |
 | Credit      | Negative charges granted by the provider for various scenarios, like negotiated benefits, usage discounts, or promotional credits.     |
 
 ## Introduced (version)
