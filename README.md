@@ -43,6 +43,7 @@ Changes to the [specification](./specification/overview.md) are versioned accord
 
 ## About the project
 
+
 See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation) for information about the following, and more:
 
 - [Change / contribution process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
