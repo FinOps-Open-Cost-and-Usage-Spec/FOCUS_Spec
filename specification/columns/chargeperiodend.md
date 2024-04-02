@@ -21,7 +21,7 @@ The end date and time of a *charge period*.
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
 | Column type     | Dimension                            |
-| FOCUS Essential | True                                 |
+| Feature Level   | Mandatory                            |
 | Allows nulls    | False                                |
 | Data type       | Date/Time                            |
 | Value format    | [Date/Time Format](#date/timeformat) |

@@ -23,7 +23,7 @@ The identifier assigned to a *billing account* by the provider.
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| FOCUS Essential | True             |
+| Feature Level   | Mandatory        |
 | Allows nulls    | False            |
 | Data type       | String           |
 | Value format    | \<not specified> |
