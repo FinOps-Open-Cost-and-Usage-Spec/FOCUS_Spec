@@ -1,75 +1,63 @@
-# FOCUS Metadata Schema
-The FOCUS metadata schema provides a list of the columns present in the FOCUS dataset provided.   
-
+# FOCUS Metadata Schema 
+Each FOCUS dataset must have a schema associated with it. The schema metadata provides information about the structure of the data provided. In the event that the provider modifies the columns provided in the FOCUS dataset, a new schema must be added, including column definitions.  
 
 ## Logical Section: Schema
 
-## Available Metadata
- * ### SchemaId
+
+## Available Meta Data:
+ * ### schema_id
    * Use: unique identifier for the schema
    * Type: STRING
- * ### index
-   * use: provides the index number for the column to specify the order of the columns, 0 based
-   * type: INTEGER
- * ### column_name
-   * use: provides the date the schema was created
+ * ### FOCUS_version
+   * Use: the declared version of the FOCUS data within the schema
+   * Type: STRING
+ * ### name
+   * use: human-readable name for the schema 
    * type: STRING
- * ### data_type (provided by API delivery mechanism only)
-   * use: provides the endpoint for the schema, including the id
-   * type: STRING
-   * content_restrictions: <format for specifying datatype needed here>
+ * ### creation_date
+   * use: date the schema was created
+   * type: DATETIME
 
-
-
-## Methods of Delivery
-
-### Database 
-Although database delivery methods typically include schema information, the FOCUS metadata specification requires a table be provided to supply a schema definition for the FOCUS data. By doing this FOCUS schema metadata can support data where schema is modified by the provider as changes are made and can also support providers that supply FOCUS datasets that are versioned. 
-
-
-#### Table Name: focus_schema
-#### Example Query:
-
-    select * from focus_schemas where schema_id = '1234';
-
-#### Returned Data
-
-| schema_id | ordinal | column_name                    | data_type |
-|----------------|---------|--------------------------------|-----------|
-| 1234           | 1       | "Name of included FOCUS column" | STRING    |
-| 1234           | 2       | "Name of included FOCUS column" | LONG      |
-| 1234           | 3       | "Name of included FOCUS column" | DATETIME  |
+## Sub-Sections
+### Schema Column Definition
+  
+  * See: [Schema Column Definition](metadata_schema_column_definition.md)
+### Schema Reference
+  * See: [Schema Reference](metadata_schema_reference.md)
+   
+## Example Schema Metadata
 
 
 ### API
 
-#### Endpoint: <api_root>/FOCUS/metadata/schema/{id}
+#### Endpoint: <api_root>/FOCUS/metadata/schemas 
 #### Example Request:
-
-    GET <api_root>/FOCUS/metadata/schema/{id}
+    endpoint: <api_root>/FOCUS/metadata/schemas 
+    method: GET 
 ####
 
 #### Response 
 ```
 {
-	"schema_id": "1234",
-	"columns": [
-                 {
-                     index: 0,
-                     column_name: "<Name of included FOCUS column>",
-                     datatype: "STRING"
-                 },
-                 {
-                     index: 1,
-                     column_name: "<Name of included FOCUS column>",
-                     datatype: "LONG"
-                 },
-                 {
-                     index: 2,
-                     column_name: "OurCompaniesSpecialColumn",
-                     datatype: "DATETIME"
-                 },
-         ]
-}`
+	[
+		{
+			"schema_id": "1234",
+			"FOCUS_version": "1.0",
+			"name": "my original schema",
+			"creation_date": "2024-01-01T12:01:03.083z"
+			"schema_column_endpoint": <api_root>/FOCUS/metadata/schemas/1234
+		},
+		{
+			"schema_id": "2345",
+			"FOCUS_version": "1.1",
+			"name": "my new schema",
+			"creation_date": "2024-07-01T12:00:04.001z"
+			"schema_column_endpoint": <needs possibly a better name> my_awesome_focus_api/metadata/schemas/2345
+		}
+	]
+}
 ```
+
+
+
 
