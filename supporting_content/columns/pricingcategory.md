@@ -72,7 +72,7 @@ Current values observed in billing data for various scenarios:
     * We discussed replacing "Dynamic" with "Spot", but agreed that "Dynamic" is more inclusive of other types of dynamic pricing models that may be introduced in the future and would likely be desirable to be grouped together.
   * Given we cannot predict all pricing models that will be introduced in the future, we decided to also add "Other" in each subcategory.
 * Unfortunately, we didn't think we had enough time to close PricingSubcategory, so we decided to hold that for after 1.0.
-* On April 3, 2024, we agreed to change "On-Demand" to "Standard" and "Commitment-Based Discount" to "Committed".
+* On April 3, 2024, we agreed to change "On-Demand" to "Standard" and "Commitment-Based" to "Committed".
 
 Open issues:
 
