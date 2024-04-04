@@ -9,7 +9,7 @@ FOCUS metadata is organized in logical sections. Each logical section is organiz
 
 ### Provider 
 This section provides metadata about the provider of the FOCUS data.
-See:[Metadata Provider](metadata_provider.md)
+See:[Metadata Generator](metadata_generatorprovider.md)
 
 ### Schema
 This section provides metadata about the schemas of the FOCUS data. The schemas section provides a list of the schemas used and a column definition of those schemas. 

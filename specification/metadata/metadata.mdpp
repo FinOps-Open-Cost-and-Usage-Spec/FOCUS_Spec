@@ -3,7 +3,7 @@
 The FOCUS specification defines a metadata structure that is to be supplied by data providers to facilitate practioners in data ingestion, data locations, schema of the FOCUS dataset.
 
 !INCLUDE "metadata_structure.md",1
-!INCLUDE "metadata_provider.md",1
+!INCLUDE "metadata_generator.md",1
 !INCLUDE "metadata_schema.md",1
 !INCLUDE "metadata_schema_column_definition.md",1
 !INCLUDE "metadata_schema_reference.md",1
