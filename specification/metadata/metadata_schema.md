@@ -1,5 +1,5 @@
 # FOCUS Metadata Schema 
-Each FOCUS dataset must have a schema associated with it. The schema metadata provides information about the structure of the data provided. In the event that the provider modifies the columns provided in the FOCUS dataset, a new schema must be added, including column definitions.  
+Each FOCUS dataset must have a metadata about the schema associated with it. The schema metadata provides information about the structure of the data provided. In the event that the provider modifies the columns provided in the FOCUS dataset, metadata about the schema must be provided, including column definitions.  
 
 ## Logical Section: Schema
 
@@ -27,6 +27,7 @@ Each FOCUS dataset must have a schema associated with it. The schema metadata pr
    
 ## Example Schema Metadata
 
+In this example, the billing data includes two different structures of data. An older schema for data previously provided, and a newer schema for more recent data. Both schemas metata is provided. 
 
 ### API
 

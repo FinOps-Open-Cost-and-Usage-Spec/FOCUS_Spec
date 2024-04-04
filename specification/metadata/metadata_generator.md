@@ -16,8 +16,8 @@ The FOCUS metadata provider logical section provides metadata about the provider
 
 
 ## Example Generator Metadata
-
-### API 
+ 
+In this example the billing data generator's FOCUS metadata API is queried for the provider metadata.
 
 #### Endpoint: <api_root>/FOCUS/metadata/provider
 #### Example Request:

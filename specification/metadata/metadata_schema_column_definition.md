@@ -30,13 +30,15 @@ The FOCUS metadata schema column definition provides a list of the columns prese
 
 ## Example Schema Definition Metadata
 
+In this example the billing data generator's FOCUS metadata API is queried for the schema_id = 1234. 
+
 ### API Schema 
 
 #### Endpoint: <api_root>/FOCUS/metadata/schema/{id}/columns
 #### Example Request:
 
     Method: GET 
-    Endpoint : <api_root>/FOCUS/metadata/schema/{id}/columns
+    Endpoint : <api_root>/FOCUS/metadata/schema/1234/columns
 ####
 
 #### Response 
