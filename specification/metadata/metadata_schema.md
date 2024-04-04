@@ -45,14 +45,14 @@ Each FOCUS dataset must have a schema associated with it. The schema metadata pr
 			"FOCUS_version": "1.0",
 			"name": "my original schema",
 			"creation_date": "2024-01-01T12:01:03.083z"
-			"schema_column_endpoint": <api_root>/FOCUS/metadata/schemas/1234
+			"schema_column_endpoint": <api_root>/FOCUS/metadata/schemas/1234/columns
 		},
 		{
 			"schema_id": "2345",
 			"FOCUS_version": "1.1",
 			"name": "my new schema",
 			"creation_date": "2024-07-01T12:00:04.001z"
-			"schema_column_endpoint": <needs possibly a better name> my_awesome_focus_api/metadata/schemas/2345
+			"schema_column_endpoint": <api_root>/FOCUS/metadata/schemas/2345/columns
 		}
 	]
 }
