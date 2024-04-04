@@ -1,7 +1,6 @@
 # FOCUS Metadata Provider
 The FOCUS metadata provider logical section provides metadata about the provider of the FOCUS data. 
 
-
 ## Logical Section: Schema Provider
 
 ## Schema Definition Metadata
