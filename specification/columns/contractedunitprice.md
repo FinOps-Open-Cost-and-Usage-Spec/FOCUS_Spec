@@ -2,13 +2,13 @@
 
 The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment-based discounts or any other discounts. This price is denominated in the [Billing Currency](#billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If negotiated discounts are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#listunitprice).
 
-The ContractedUnitPrice column MUST be present in the billing data when the provider supports negotiated pricing concept. This column MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. When ContractedUnitPrice is present, it MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage" or "Purchase" and MAY be null for other ChargeCategory values. When ContractedUnitPrice is present and not null, multiplying ContractedUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ContractedCost](#contractedcost).
+The ContractedUnitPrice column SHOULD be present in the billing data when the provider supports negotiated pricing concept. This column MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. When ContractedUnitPrice is present, it MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage" or "Purchase" and MAY be null for other ChargeCategory values. When ContractedUnitPrice is present and not null, multiplying ContractedUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ContractedCost](#contractedcost).
 
 ## Column ID
 
 ContractedUnitPrice
 
-## Display name
+## Display Name
 
 Contracted Unit Price
 
@@ -21,7 +21,7 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
 | Column type     | Metric                               |
-| FOCUS Essential | False                                |
+| Feature level   | Conditional                          |
 | Allows nulls    | True                                 |
 | Data type       | Decimal                              |
 | Value format    | [Numeric Format](#numericformat)     |
