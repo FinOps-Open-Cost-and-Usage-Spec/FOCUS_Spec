@@ -1,5 +1,5 @@
 # Reference in FOCUS Data
-The provider must provide a reference to the schema utilized in the FOCUS dataset. Becuase methods of delivery vary, the reference to the schema utilized may be built in, such as a database, where schema is an included component of the tables. Others such as a file, may not be built in and therefore need to provide an ID to the schema used.  
+The provider must provide a reference to the schema utilized in the FOCUS dataset. Because methods of delivery vary, the reference to the schema utilized may be built in, such as a database, where schema is an included component of the tables. Others such as a file, may not be built in and therefore need to provide an ID to the schema used.  
 
 ## Logical Section: Schema
 ### Subsection: Schema Reference
