@@ -61,4 +61,4 @@ Allowed values when ChargeCategory is "Adjustment":
 
 ## Introduced (version)
 
-1.0
+1.0-preview
