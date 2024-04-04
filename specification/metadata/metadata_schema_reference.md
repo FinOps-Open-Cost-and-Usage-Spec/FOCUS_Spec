@@ -12,8 +12,7 @@ The provider must provide a reference to the schema utilized in the FOCUS datase
 
 ## Example Schema Reference Metadata
 
-### API
-When the provider returns the FOCUS data they include in the response a reference to the schema utilized in the FOCUS dataset. 
+In this example, when the provider returns the FOCUS data they include in the response a reference to the schema utilized in the FOCUS dataset. 
 
 #### Example Request:
     Endpoint: <api_root>/FOCUS/data/2024010001
