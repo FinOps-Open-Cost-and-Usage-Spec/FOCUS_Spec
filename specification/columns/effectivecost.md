@@ -47,4 +47,4 @@ Eligible purchases should be *amortized* using a methodology determined by the p
 
 ## Introduced (version)
 
-0.5
+1.0

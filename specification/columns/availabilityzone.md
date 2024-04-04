@@ -28,4 +28,4 @@ A provider-assigned identifier for a physically separated and isolated area with
 
 ## Introduced (version)
 
-0.5
+1.0

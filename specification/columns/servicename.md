@@ -30,4 +30,4 @@ An offering that can be purchased from a provider (e.g., cloud virtual machine, 
 
 ## Introduced (version)
 
-0.5
+1.0

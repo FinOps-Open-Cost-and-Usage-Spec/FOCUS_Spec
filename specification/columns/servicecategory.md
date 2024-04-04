@@ -52,4 +52,4 @@ Allowed values:
 
 ## Introduced (version)
 
-0.5
+1.0

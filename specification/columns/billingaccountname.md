@@ -30,4 +30,4 @@ The display name assigned to a *billing account*.
 
 ## Introduced (version)
 
-0.5
+1.0

@@ -28,4 +28,4 @@ The end date and time of the *billing period*.
 
 ## Introduced (version)
 
-0.5
+1.0

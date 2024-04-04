@@ -28,4 +28,4 @@ Represents the currency that a charge was billed in.
 
 ## Introduced (version)
 
-0.5
+1.0

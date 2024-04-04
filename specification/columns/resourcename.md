@@ -28,4 +28,4 @@ Display name assigned to a *resource*.
 
 ## Introduced (version)
 
-0.5
+1.0

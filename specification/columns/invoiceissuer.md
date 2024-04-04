@@ -32,4 +32,4 @@ The name of the entity responsible for invoicing for the *resources* or *service
 
 ## Introduced (version)
 
-0.5
+1.0

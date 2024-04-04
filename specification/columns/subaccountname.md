@@ -30,4 +30,4 @@ A name assigned to a grouping of [*resources*](#glossary:resource) or [*services
 
 ## Introduced (version)
 
-0.5
+1.0

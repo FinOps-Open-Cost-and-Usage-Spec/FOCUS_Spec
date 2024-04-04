@@ -28,4 +28,4 @@ The beginning date and time of a *charge period*.
 
 ## Introduced (version)
 
-0.5
+1.0

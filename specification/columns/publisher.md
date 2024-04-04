@@ -31,4 +31,4 @@ The name of the entity that produced the *resources* or *services* that were pur
 
 ## Introduced (version)
 
-0.5
+1.0

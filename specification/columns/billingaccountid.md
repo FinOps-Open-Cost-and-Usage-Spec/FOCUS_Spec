@@ -30,4 +30,4 @@ The identifier assigned to a *billing account* by the provider.
 
 ## Introduced (version)
 
-0.5
+1.0

@@ -29,4 +29,4 @@ A charge serving as the basis for invoicing, inclusive of all reduced rates and 
 
 ## Introduced (version)
 
-0.5
+1.0

@@ -40,4 +40,4 @@ Naming convention for columns appearing in billing data.
 
 ## Introduced (version)
 
-0.5
+1.0

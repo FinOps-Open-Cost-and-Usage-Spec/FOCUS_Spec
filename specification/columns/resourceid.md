@@ -28,4 +28,4 @@ Identifier assigned to a *resource* by the provider.
 
 ## Introduced (version)
 
-0.5
+1.0
