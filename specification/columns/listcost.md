@@ -1,19 +1,19 @@
 # List Cost
 
-List Cost represents the cost calculated by multiplying [List Unit Price](#listunitprice) and the corresponding [Pricing Quantity](#pricingquantity). List Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on various rate optimization activities, by comparing it with [Effective Cost](#effectivecost).
+List Cost represents the cost calculated by multiplying the [*list unit price*](#glossary:list-unit-price) and the corresponding [Pricing Quantity](#pricingquantity). List Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on various rate optimization activities, by comparing it with [Billed Cost](#billedcost) and [Effective Cost](#effectivecost).
 
-The ListCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency. When a ListUnitPrice is not null, multiplying the ListUnitPrice by PricingQuantity MUST produce the ListCost.
+The ListCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. When [ListUnitPrice](#listunitprice) is present and not null, multiplying the ListUnitPrice by PricingQuantity MUST produce the ListCost.
 
-In cases where the ListUnitPrice is null, the following applies:
+In cases where the ListUnitPrice is present and is null, the following applies:
 
-* The ListCost MUST be calculated based on the ListCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is "Tax").
-* The ListCost MUST match the [BilledCost](#billedcost) if the charge is unrelated to other charges (e.g. [ChargeSubcategory](#chargesubcategory) is "Credit").
+* The ListCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ListCost of those related charges.
+* The ListCost of a charge unrelated to other charges (e.g., when the [ChargeSubcategory](#chargesubcategory) is "Credit") MUST match the [BilledCost](#billedcost).
 
 ## Column ID
 
 ListCost
 
-## Display name
+## Display Name
 
 List Cost
 
@@ -26,7 +26,7 @@ Cost calculated by multiplying List Unit Price and the corresponding Pricing Qua
 | Constraint      | Value                   |
 |:----------------|:------------------------|
 | Column type     | Metric                  |
-| Column required | True                    |
+| Feature level   | Mandatory               |
 | Allows nulls    | False                   |
 | Data type       | Decimal                 |
 | Value format    | [Numeric Format](#numericformat) |
