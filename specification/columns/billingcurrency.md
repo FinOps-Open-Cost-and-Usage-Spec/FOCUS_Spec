@@ -14,7 +14,7 @@ Billing Currency
 
 ## Description
 
-Represents the currency that a charge was billed.
+Represents the currency that a charge was billed in.
 
 ## Content Constraints
 
