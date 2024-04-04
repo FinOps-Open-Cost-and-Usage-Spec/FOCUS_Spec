@@ -21,7 +21,7 @@ Highest-level classification of a *service* based on the core function of the *s
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column type     | Dimension      |
-| Feature Level   | Mandatory      |
+| Feature level   | Mandatory      |
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed Values |

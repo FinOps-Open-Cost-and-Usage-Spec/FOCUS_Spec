@@ -24,7 +24,7 @@ The name of the entity that made the *resources* or *services* available for pur
 | Constraint      | Value           |
 |:----------------|:----------------|
 | Column type     | Dimension       |
-| Feature Level   | Mandatory       |
+| Feature level   | Mandatory       |
 | Allows nulls    | False           |
 | Data type       | String          |
 | Value format    | \<not specified> |

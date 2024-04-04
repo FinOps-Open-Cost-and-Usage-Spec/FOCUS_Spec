@@ -14,7 +14,7 @@ Date/Time Format
 
 ## Description
 
-Rules and formatting requirements for date/time related columns appearing in billing data.
+Rules and formatting requirements for date/time-related columns appearing in billing data.
 
 ## Requirements
 

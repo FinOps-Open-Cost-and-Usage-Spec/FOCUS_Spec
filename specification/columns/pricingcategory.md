@@ -29,7 +29,7 @@ Describes the pricing model used for a charge at the time of use or purchase.
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column type     | Dimension      |
-| Feature Level   | Conditional    |
+| Feature level   | Conditional    |
 | Allows nulls    | True           |
 | Data type       | String         |
 | Value format    | Allowed values |

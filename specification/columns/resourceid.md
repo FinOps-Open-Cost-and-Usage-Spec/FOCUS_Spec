@@ -21,7 +21,7 @@ Identifier assigned to a *resource* by the provider.
 | Constraint      | Value           |
 |:----------------|:----------------|
 | Column type     | Dimension       |
-| Feature Level   | Conditional     |
+| Feature level   | Conditional     |
 | Allows nulls    | True            |
 | Data type       | String          |
 | Value format    | \<not specified> |

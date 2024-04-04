@@ -21,7 +21,7 @@ Indicates how often a charge will occur.
 | Constraint      | Value          |
 |:----------------|:---------------|
 | Column type     | Dimension      |
-| Feature Level   | Mandatory       |
+| Feature level   | Mandatory      |
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed values |

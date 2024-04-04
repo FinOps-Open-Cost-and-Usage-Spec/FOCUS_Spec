@@ -21,7 +21,7 @@ The suggested provider-published unit price for a single Pricing Unit of the ass
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
 | Column type     | Metric                               |
-| Feature Level   | Conditional                          |
+| Feature level   | Conditional                          |
 | Allows nulls    | True                                 |
 | Data type       | Decimal                              |
 | Value format    | [Numeric Format](#numericformat)     |

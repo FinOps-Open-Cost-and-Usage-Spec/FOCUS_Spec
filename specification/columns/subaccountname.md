@@ -23,7 +23,7 @@ A name assigned to a grouping of [*resources*](#glossary:resource) or [*services
 | Constraint      | Value           |
 |:----------------|:----------------|
 | Column type     | Dimension       |
-| Feature Level   | Conditional     |
+| Feature level   | Conditional     |
 | Allows nulls    | True            |
 | Data type       | String          |
 | Value format    | \<not specified> |

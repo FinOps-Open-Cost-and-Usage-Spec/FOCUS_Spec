@@ -29,7 +29,7 @@ Indicates how to include and apply discounts to usage charges or rows.
   * Multiple discounts MAY apply to a row, but they MUST apply to the entire charge covered by that row.
   * If a discount only applies to a portion of a charge, then the discounted portion of the charge MUST be split into a separate row.
   * Each discount MUST be identifiable using existing FOCUS columns.
-    * Rows with a commitment-based discount applied to it MUST include a CommitmentDiscountId.
+    * Rows with a commitment-based discount applied to them MUST include a CommitmentDiscountId.
     * If a provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.
 * ChargeSubCategory MUST NOT be null for rows where ChargeType is "Usage" and the row received reduced rates from a discount.
 * Purchased discounts (e.g., commitment-based discounts) MUST be amortized.

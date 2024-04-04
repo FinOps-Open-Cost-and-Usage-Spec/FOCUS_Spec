@@ -21,7 +21,7 @@ The volume of a given SKU associated with a *resource* or *service* used or purc
 | Constraint      | Value         |
 |:----------------|:--------------|
 | Column type     | Metric        |
-| Feature Level   | Conditional   |
+| Feature level   | Conditional   |
 | Allows nulls    | True          |
 | Data type       | Decimal       |
 | Value format    | [Numeric Format](#numericformat) |

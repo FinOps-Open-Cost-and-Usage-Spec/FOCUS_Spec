@@ -19,8 +19,8 @@ Rules and formatting requirements for numeric columns appearing in billing data.
 ## Requirements
 
 * Columns with a Numeric value format MUST contain a single numeric value.
-* Numeric values MUST be expressed as an integer value, a decimal values, or a value expressed in scientific notation. Fractional notation MUST NOT be used.
-* Numeric values expressed using scientific notation MUST be expressed using E notation "mEn" with a real number m and an integer n indictating a value of "m x 10^n".   The sign of the exponent MUST only be expressed as part of the exponent value if n is negative.
+* Numeric values MUST be expressed as an integer value, a decimal value, or a value expressed in scientific notation. Fractional notation MUST NOT be used.
+* Numeric values expressed using scientific notation MUST be expressed using E notation "mEn" with a real number m and an integer n indicating a value of "m x 10^n".   The sign of the exponent MUST only be expressed as part of the exponent value if n is negative.
 * Numeric values MUST NOT be expressed with mathematical symbols, functions, or operators.
 * Numeric values MUST NOT contain qualifiers or additional characters (e.g., currency symbols, units of measure, etc.).
 * Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (".") if required to express a decimal value.

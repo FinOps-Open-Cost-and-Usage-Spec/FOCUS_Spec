@@ -72,7 +72,7 @@ The set of tags assigned to *tag sources* that account for potential provider-de
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| Feature Level   | Conditional      |
+| Feature level   | Conditional      |
 | Allows nulls    | True             |
 | Data type       | JSON             |
 | Value format    | [Key-Value Format](#key-valueformat) |
