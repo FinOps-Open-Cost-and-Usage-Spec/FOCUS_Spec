@@ -32,7 +32,7 @@ Allowed values:
 | Value      | Description                          |
 | :--------- | :------------------------------------|
 | Regular    | Standard charges for services used or purchased. |
-| Correction    | Correction to one or more previous charges       |
+| Correction  | Modification to one or more previous charges, like refunds and credit modifications. |
 
 ## Introduced (version)
 
