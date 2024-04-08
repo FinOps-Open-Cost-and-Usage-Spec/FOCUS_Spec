@@ -31,7 +31,7 @@ Allowed values:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Regular     | Normal charge                        |
+| Regular    | Standard charges for services used or purchased. |
 | Correction    | Correction to one or more previous charges       |
 
 ## Introduced (version)
