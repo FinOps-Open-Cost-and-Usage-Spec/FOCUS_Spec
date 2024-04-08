@@ -31,6 +31,10 @@ FOCUS is an open-source specification for cloud billing data. It defines a commo
 
 !INCLUDE "attributes/attributes.mdpp",1
 
+<div style="page-break-after: always"></div>
+
+!INCLUDE "metadata/metadata.mdpp",1
+
 !INCLUDE "use_case_library.md",1
 
 !INCLUDE "glossary.md",1
