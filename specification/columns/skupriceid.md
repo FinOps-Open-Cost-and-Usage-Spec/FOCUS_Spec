@@ -8,23 +8,23 @@ The SkuPriceId column MUST be present in the billing data. This column MUST be o
 
 SkuPriceId
 
-## Display name
+## Display Name
 
 SKU Price ID
 
 ## Description
 
-Unique identifier that defines the unit price used to calculate the charge.
+A unique identifier that defines the unit price used to calculate the charge.
 
 ## Content constraints
 
 | Constraint       | Value          |
 | :--------------- | :------------- |
 | Column type      | Dimension      |
-| Column required  | True           |
+| Feature level    | Conditional    |
 | Allows nulls     | True           |
 | Data type        | String         |
-| Value format     | \<not specified\> |
+| Value format     | \<not specified> |
 
 ## Introduced (version)
 
