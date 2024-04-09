@@ -51,4 +51,6 @@ Discussion / Scratch space:
 		- “Custom Tags/Labels”?
 		- One key/value pair for all tags “tags”: [ … ]
 	- Which raw format do we go with?
-
+    	- After much discussion and exploring multiple different options, and formats, the following were decided:
+        	- Tags are presented in a json structure - key/value (tags) and key-only (labels) are both included using the same json object.
+        	- Labels will be shown with a value of true (boolean not string). Other options were to break labels out into a separate column, separate part of the JSON object, or provide inline with null OR the boolean    	- 
