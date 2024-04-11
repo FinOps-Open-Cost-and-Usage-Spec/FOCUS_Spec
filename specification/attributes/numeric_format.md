@@ -2,7 +2,7 @@
 
 Columns that provide numeric values conforming to specified rules and formatting requirements ensure clarity, accuracy, and ease of interpretation for humans and systems. The [FOCUS](#glossary:finops-cost-and-usage-specification) specification does not require a specific level of precision for numeric values. The level of precision required for a given column is determined by the provider and should be part of a data definition published by the provider.
 
-All columns capturing a numeric value, defined in the FOCUS specification, MUST follow the formatting requirements listed below. Provider-generated numeric value capturing columns SHOULD adopt the same format requirements over time.
+All columns capturing a numeric value, defined in the FOCUS specification, MUST follow the formatting requirements listed below. Custom numeric value capturing columns SHOULD adopt the same format requirements over time.
 
 ## Attribute ID
 
