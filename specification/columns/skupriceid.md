@@ -21,7 +21,7 @@ A unique identifier that defines the unit price used to calculate the charge.
 | Constraint       | Value          |
 | :--------------- | :------------- |
 | Column type      | Dimension      |
-| Feature level    | Conditional    |
+| Feature level    | Mandatory      |
 | Allows nulls     | True           |
 | Data type        | String         |
 | Value format     | \<not specified> |
