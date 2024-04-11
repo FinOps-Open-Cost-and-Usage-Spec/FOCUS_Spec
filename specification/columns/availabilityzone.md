@@ -21,7 +21,7 @@ A provider-assigned identifier for a physically separated and isolated area with
 | Constraint      | Value            |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| Feature level   | Conditional      |
+| Feature level   | Recommended      |
 | Allows nulls    | True             |
 | Data type       | String           |
 | Value format    | \<not specified> |
