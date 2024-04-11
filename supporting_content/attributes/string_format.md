@@ -15,10 +15,10 @@ Sample known issues observed in billing data and other data sources for various 
 
 ### Attribute scope
 
-#### Consistency regardless who controls the String value
+#### Consistency regardless of who controls the String value
 
 * Provider-controlled columns: Initial discussion revolved around consistent casing for provider-specified String values.
-* End-user controlled columns: Recognized the need to establish consistency-related requirements for end-user controlled String columns.
+* End-user-controlled columns: Recognized the need to establish consistency-related requirements for end-user-controlled String columns.
 * FOCUS-controlled columns: Noted that these requirements also apply to FOCUS-controlled String value-capturing columns.
 
 #### String columns and Value format options
@@ -31,7 +31,7 @@ Sample known issues observed in billing data and other data sources for various 
 
 * **Addressing String columns with `Value format`: `not specified` is our primary goal**, given the other Value formats already address consistency concerns.
 
-### Attribute name alternatives and refernce to the attribute
+### Attribute name alternatives and reference to the attribute
 
 * Name alternatives:
   * String Format
@@ -41,7 +41,7 @@ Sample known issues observed in billing data and other data sources for various 
 
 * How should we reference the attribute?
   * Explicitly within individual column specs (in normative paragraph and constraint table, similar to e.g. Unit and Value)?
-  * Implicitly applicable to all String columns without explicitly referencing the it in individual column specs (similar to null-handing)?
+  * Implicitly applicable to all String columns without explicitly referencing it in individual column specs (similar to null-handing)?
 
 * To avoid unintentionally suggesting a higher priority for these specific columns, current references to value-format consistency requirements were removed from the following columns:
   * RegionId
