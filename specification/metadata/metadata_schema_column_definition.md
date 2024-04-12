@@ -16,13 +16,13 @@ The FOCUS metadata schema column definition provides a list of the columns prese
  * ### max_length
    * use: provides a maximum character length for columns whose data type where character length is relevant. This is typically provided for String type columns
    * type: Integer
-* ### precision
+* ### number_precision
   * use: provide the maximum number of digits for the values in the column. This is typically provided for numeric columns
   * type: Integer 
-* ### scale
+* ### number_scale
    * use: provide the maximum number of digits after the decimal point. This is typically provided for numeric columns
    * type: Integer
-* ### encoding
+* ### string_encoding
    * use: provides the encoding of the column. This is typically provided for string columns
    * type: STRING
 
