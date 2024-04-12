@@ -1,4 +1,4 @@
-# String Format
+# String Handling
 
 Columns that capture String values conforming to specified requirements foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support more reliable data-driven decision-making.
 
@@ -6,11 +6,11 @@ All columns capturing a String value, defined in the [FOCUS](#glossary:finops-co
 
 ## Attribute ID
 
-StringFormat
+StringHandling
 
 ## Attribute Name
 
-String Format
+String Handling
 
 ## Description
 
@@ -18,10 +18,9 @@ Requirements for String-capturing columns appearing in billing data.
 
 ## Requirements
 
-* String values appearing in the billing data MUST maintain the original casing, spacing, and other pertinent consistency factors.
-* String values referring to the same entity SHOULD be consistent within a provider's context.
-* The provider SHOULD ensure that both provider-defined and user-input String values do not contain multiple consecutive spaces or leading/trailing spaces.
-* String-formatted columns MUST also adhere to [Null Handling](#nullhandling) requirements.
+* String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by providers and/or end-users.
+* Changes to mutable string values (e.g., resource names) MUST be accurately reflected in charges related to subsequent costs incurred after the string value change and MUST NOT alter the original values in historical records, preserving data integrity and auditability for past billing periods.
+* Immutable string values that refer to the same entity (e.g., resource identifiers) MUST remain consistent and unchanged across all billing periods.
 
 ## Exceptions
 

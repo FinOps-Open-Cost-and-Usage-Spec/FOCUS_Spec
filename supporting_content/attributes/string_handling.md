@@ -1,4 +1,4 @@
-# String Format
+# String Handling
 
 ## Example usage scenarios
 
@@ -35,13 +35,13 @@ Sample known issues observed in billing data and other data sources for various 
 
 * Name alternatives:
   * String Format
-  * String Handling
+  * String Handling **<-- selected by the group**
   * String Consistency Handling
   * Other suggestions?
 
 * How should we reference the attribute?
   * Explicitly within individual column specs (in normative paragraph and constraint table, similar to e.g. Unit and Value)?
-  * Implicitly applicable to all String columns without explicitly referencing it in individual column specs (similar to null-handing)?
+  * Implicitly applicable to all String columns without explicitly referencing it in individual column specs (similar to null-handing)? **<-- selected by the group**
 
 * To avoid unintentionally suggesting a higher priority for these specific columns, current references to value-format consistency requirements were removed from the following columns:
   * RegionId
@@ -51,7 +51,17 @@ Sample known issues observed in billing data and other data sources for various 
 
 ### Requirements and Exceptions
 
-#### Latest Requirements
+#### Requirements and Exceptions - v1.3
+
+* Requirements:
+  * String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by providers and/or end-users.
+  * Changes to mutable string values (e.g., resource names) MUST be accurately reflected in charges related to subsequent costs incurred after the string value change and MUST NOT alter the original values in historical records, preserving data integrity and auditability for past billing periods.
+  * Immutable string values that refer to the same entity (e.g., resource identifiers) MUST remain consistent and unchanged across all billing periods.
+
+* Exceptions:
+  * None
+
+#### Requirements and Exceptions - v1.2
 
 * Requirements:
   * **String values appearing in the billing data MUST maintain the original casing, spacing, and other pertinent consistency factors.**
@@ -65,7 +75,7 @@ Sample known issues observed in billing data and other data sources for various 
 * Exceptions:
   * None
 
-#### Previous Requirements and Exceptions
+#### Requirements and Exceptions - v1.1
 
 * Requirements:
   * String values that refer to the same entity MUST be consistent (e.g., casing and spacing) within the context of the provider.
