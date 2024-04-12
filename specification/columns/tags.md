@@ -1,6 +1,6 @@
 # Tags
 
-The Tags column represents the set of tags assigned to [*tag sources*](#glossary:tag-source) that also account for potential provider-defined or user-defined tag evaluations.  Tags are commonly used for scenarios like adding business context to billing data to identify and accurately allocate charges.
+The Tags column represents the set of tags assigned to [*tag sources*](#glossary:tag-source) that also account for potential provider-defined or user-defined tag evaluations. Tags are commonly used for scenarios like adding business context to billing data to identify and accurately allocate charges. Tags may also be referred to by providers using other terms such as labels.
 
 A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is selected from a set of possible tag values assigned to the tag key.  When supported by a provider, this can occur when a tag value is set by provider-defined or user-defined rules.
 
@@ -12,7 +12,7 @@ The Tags column adheres to the following requirements:
 * The Tags column MUST be in [Key-Value Format](#key-valueformat).
 * A Tag key with a non-null value for a given resource SHOULD be included in the tags column.
 * A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
-* A Tag key that does *not* support a corresponding value, sometimes referred to as a *label*, MUST have a corresponding true (boolean) value set.
+* A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
 * If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
 * Providers MUST NOT alter user-defined Tag keys or values.
 
@@ -79,4 +79,4 @@ The set of tags assigned to *tag sources* that account for potential provider-de
 
 ## Introduced (version)
 
-1.0
+1.0-preview

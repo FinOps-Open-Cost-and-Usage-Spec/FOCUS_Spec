@@ -33,4 +33,4 @@ Provider-specified measurement unit for determining unit prices, indicating how 
 
 ## Introduced (version)
 
-1.0
+1.0-preview

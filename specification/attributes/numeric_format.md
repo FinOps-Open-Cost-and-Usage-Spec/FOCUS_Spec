@@ -75,4 +75,4 @@ None
 
 ## Introduced (version)
 
-1.0
+1.0-preview

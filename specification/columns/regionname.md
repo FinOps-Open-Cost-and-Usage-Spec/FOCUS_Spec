@@ -28,4 +28,4 @@ The name of an isolated geographic area where a *resource* is provisioned or a *
 
 ## Introduced (version)
 
-0.5
+1.0

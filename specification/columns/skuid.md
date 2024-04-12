@@ -28,4 +28,4 @@ A unique identifier that defines a provider-supported construct for organizing p
 
 ## Introduced (version)
 
-1.0
+1.0-preview
