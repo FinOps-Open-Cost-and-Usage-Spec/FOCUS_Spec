@@ -34,4 +34,4 @@ Cost calculated by multiplying List Unit Price and the corresponding Pricing Qua
 
 ## Introduced (version)
 
-1.0
+1.0-preview

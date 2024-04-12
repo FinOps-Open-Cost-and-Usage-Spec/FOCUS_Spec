@@ -29,4 +29,4 @@ The suggested provider-published unit price for a single Pricing Unit of the ass
 
 ## Introduced (version)
 
-1.0
+1.0-preview
