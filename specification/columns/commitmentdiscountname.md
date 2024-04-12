@@ -28,4 +28,4 @@ The display name assigned to a *commitment-based discount*.
 
 ## Introduced (version)
 
-1.0
+1.0-preview

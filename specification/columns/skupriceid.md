@@ -28,4 +28,4 @@ A unique identifier that defines the unit price used to calculate the charge.
 
 ## Introduced (version)
 
-1.0
+1.0-preview

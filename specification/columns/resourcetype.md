@@ -28,4 +28,4 @@ The kind of *resource* the charge applies to.
 
 ## Introduced (version)
 
-1.0
+1.0-preview
