@@ -5,7 +5,7 @@ The FOCUS metadata provider logical section provides metadata about the provider
 
 ## Schema Definition Metadata
 
-* ### billing_generator
+* *DataGenerator*
     * use: Human readable name of the entity that is generating the data 
     * type: STRING
 * ### provider_prefix
