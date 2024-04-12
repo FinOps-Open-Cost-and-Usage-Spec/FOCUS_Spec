@@ -29,4 +29,4 @@ The volume of a given SKU associated with a *resource* or *service* used or purc
 
 ## Introduced (version)
 
-1.0
+1.0-preview

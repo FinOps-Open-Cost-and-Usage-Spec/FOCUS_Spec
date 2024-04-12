@@ -28,4 +28,4 @@ Provider-specified measurement unit indicating how a provider measures usage or 
 
 ## Introduced (version)
 
-1.0
+1.0-preview

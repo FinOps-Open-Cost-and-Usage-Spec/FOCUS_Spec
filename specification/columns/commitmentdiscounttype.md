@@ -28,4 +28,4 @@ A provider-assigned identifier for the type of *commitment-based discount* appli
 
 ## Introduced (version)
 
-1.0
+1.0-preview

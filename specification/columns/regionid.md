@@ -28,4 +28,4 @@ Provider-assigned identifier for an isolated geographic area where a *resource* 
 
 ## Introduced (version)
 
-0.5
+1.0

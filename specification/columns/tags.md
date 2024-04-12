@@ -79,4 +79,4 @@ The set of tags assigned to *tag sources* that account for potential provider-de
 
 ## Introduced (version)
 
-1.0
+1.0-preview

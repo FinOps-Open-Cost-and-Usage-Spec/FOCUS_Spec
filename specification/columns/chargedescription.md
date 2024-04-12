@@ -28,4 +28,4 @@ Self-contained summary of the charge's purpose and price.
 
 ## Introduced (version)
 
-1.0
+1.0-preview
