@@ -2,11 +2,11 @@
 
 The version of FOCUS utilized for building the dataset.
 
-The FOCUSVersion MUST be provided in the metadata. FOCUSVersion MUST be of type String and MUST NOT contain null values. FOCUSVersion MUST match one of the published versions of the FOCUS specification. FOCUSVersion MUST match the version of the FOCUS specification that the FOCUS dataset conforms to.
+The FocusVersion MUST be provided in the metadata. FocusVersion MUST be of type String and MUST NOT contain null values. FOCUSVersion MUST match one of the published versions of the FOCUS specification. FocusVersion MUST match the version of the FOCUS specification that the FOCUS dataset conforms to.
 
 ## Metadata ID
 
-FOCUSVersion
+FocusVersion
 
 ## Metadata Name
 
