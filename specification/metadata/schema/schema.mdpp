@@ -8,4 +8,4 @@ The FOCUS metadata schema definition provides a list of the columns present in t
 !INCLUDE "stringencoding.md",1
 !INCLUDE "stringmaxlength.md",1
 !INCLUDE "numericprecision.md",1
-!INCLUDE "scale.md",1
+!INCLUDE "numberscale.md",1
