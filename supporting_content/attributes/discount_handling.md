@@ -12,20 +12,20 @@ For the sake of this example, let's say the negotiated and bundled discounts cap
 
 All examples are $0.05/minute for hourly data...
 
-| Scenario | Resource | Qty | List | OnDemand | Billed | Effective |
-|-----------|-----------|------|-----|--------------|-------|-----------|
-| No discounts | Foo0 | 60 | $3.00 | $3.00 | $3.00 | $3.00 |
-| Negotiated only | Foo1 |  60 | $3.00 | $2.70 | $2.70 | $2.70 |
-| Commitment only | Foo2 |  20 | $1.00 | $1.00 | $0.00 | $0.50 |
-| Uncommitted part | Foo2 | 40 | $2.00 | $2.00 | $2.00 | $2.00 |
-| Commitment only | Foo3 | 10 | $0.50 | $0.50 | $0.00 | $0.25 |
-| Unused commitment | | | $0.00 | $0.00 | $0.00 | $0.25 |
-| Negotiated +&nbsp;committed | Foo4 | 22.22 | $1.11 | $1.00 | $0.00 | $0.50 |
-| Negotiated +&nbsp;uncommitted | Foo4 | 37.78 | $1.89 | $1.70 | $1.70 | $1.70 |
-| All discounts<sup>1</sup> | Foo5 | 24.69 | $1.11 | $1.00 | $0.00 | $0.50 |
-| Negotiated +&nbsp;bundled | Foo5 | 5.31 | $0.24 | $2.15 | $2.15 | $2.15 |
-| Negotiated only | Foo5 | 15 | $0.75 | $0.67 | $0.67 | $0.67 |
-| All discounts capped out | Foo5 | 15 | $0.75 | $0.75 | $0.75 | $0.75 |
+| Scenario                      | Resource | Qty   | List  | OnDemand | Billed | Effective |
+| ----------------------------- | -------- | ----- | ----- | -------- | ------ | --------- |
+| No discounts                  | Foo0     | 60    | $3.00 | $3.00    | $3.00  | $3.00     |
+| Negotiated only               | Foo1     | 60    | $3.00 | $2.70    | $2.70  | $2.70     |
+| Commitment only               | Foo2     | 20    | $1.00 | $1.00    | $0.00  | $0.50     |
+| Uncommitted part              | Foo2     | 40    | $2.00 | $2.00    | $2.00  | $2.00     |
+| Commitment only               | Foo3     | 10    | $0.50 | $0.50    | $0.00  | $0.25     |
+| Unused commitment             |          |       | $0.00 | $0.00    | $0.00  | $0.25     |
+| Negotiated +&nbsp;committed   | Foo4     | 22.22 | $1.11 | $1.00    | $0.00  | $0.50     |
+| Negotiated +&nbsp;uncommitted | Foo4     | 37.78 | $1.89 | $1.70    | $1.70  | $1.70     |
+| All discounts<sup>1</sup>     | Foo5     | 24.69 | $1.11 | $1.00    | $0.00  | $0.50     |
+| Negotiated +&nbsp;bundled     | Foo5     | 5.31  | $0.24 | $2.15    | $2.15  | $2.15     |
+| Negotiated only               | Foo5     | 15    | $0.75 | $0.67    | $0.67  | $0.67     |
+| All discounts capped out      | Foo5     | 15    | $0.75 | $0.75    | $0.75  | $0.75     |
 
 <sup>_1. As we've defined SKUs, bundled discounts would be applied to the list price, so that's why it doesn't look like there's a discount applied compared to Foo4._</sup>
 
@@ -156,8 +156,8 @@ TBD
   - We have not yet discussed if there are any special nuances to how spot pricing works that should be explicitly incorporated into Discount Handling beyond identification of spot-priced charges.
 
 - Where does GCP's sustained usage discount fall under? Maybe the same as spot instance, in which case, **Usage-based discounts**?
-  - Since GCP SUDs are an after-the-fact discount that includes a negative charge, they're being tracked as ChargeCategory = `Adjustment` and ChargeSubcategory = `Credit`.
-  - In the main spec content, SUDs are covered by the "Any price or cost reductions that are awarded after the fact are identified as a `Credit` Charge Subcategory" sentence.
+  - Since GCP SUDs are an after-the-fact discount that includes a negative charge, they're being tracked as ChargeCategory = `Credit`.
+  - In the main spec content, SUDs are covered by the "Any price or cost reductions that are awarded after the fact are identified as a `Credit` Charge Category" sentence.
 
 - Microsoft discounts include:
   - Azure consumption discounts

@@ -7,7 +7,7 @@ The ContractedCost column MUST be present in the billing data and MUST NOT be nu
 In cases where the ContractedUnitPrice is present and null, the following applies:
 
 * The ContractedCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related charges.
-* The ContractedCost of a charge unrelated to other charges (e.g., when the [ChargeSubcategory](#chargesubcategory) is "Credit") MUST match the [BilledCost](#billedcost).
+* The ContractedCost of a charge unrelated to other charges (e.g., when the [ChargeCategory](#chargecategory) is "Credit") MUST match the [BilledCost](#billedcost).
 
 ## Column ID
 
@@ -23,14 +23,14 @@ Cost calculated by multiplying *contracted unit price* and the corresponding Pri
 
 ## Content Constraints
 
-| Constraint      | Value                   |
-|:----------------|:------------------------|
-| Column type     | Metric                  |
-| Feature level   | Mandatory               |
-| Allows nulls    | False                   |
-| Data type       | Decimal                 |
-| Value format    | [Numeric Format](#numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint    | Value                            |
+| :------------ | :------------------------------- |
+| Column type   | Metric                           |
+| Feature level | Mandatory                        |
+| Allows nulls  | False                            |
+| Data type     | Decimal                          |
+| Value format  | [Numeric Format](#numericformat) |
+| Number range  | Any valid decimal value          |
 
 ## Introduced (version)
 
