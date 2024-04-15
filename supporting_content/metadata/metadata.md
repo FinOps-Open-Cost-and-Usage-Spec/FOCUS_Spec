@@ -78,14 +78,14 @@ In this example the billing data generator's FOCUS metadata API is queried for t
                  {
                      ColumnName: "BillingAccountId",
                      DataType: "STRING"
-                     MaxLength: 64,
-                     Encoding: "UTF-8"
+                     StringMaxLength: 64,
+                     StringEncoding: "UTF-8"
                  },
                  {
                      ColumnName: "BillingAccountName",
                      DataType: "STRING"
-                     MaxLength: 64,
-                     Encoding: "UTF-8"
+                     StringMaxLength: 64,
+                     StringEncoding: "UTF-8"
                  },
                  {
                      ColumnName: "ChargePeriodStart",
@@ -98,14 +98,14 @@ In this example the billing data generator's FOCUS metadata API is queried for t
                  {
                      ColumnName: "BilledCost",
                      DataType: "DECIMAL",
-                     Precision: 20,
-                     Scale: 10
+                     NumericPrecision: 20,
+                     NumberScale: 10
                  },
                  {
                      ColumnName: "EffecitiveCost",
                      DataType: "DECIMAL",
-                     Precision: 20,
-                     Scale: 10
+                     NumericPrecision: 20,
+                     NumberScale: 10
                  },
          ]
 }`
