@@ -1,22 +1,22 @@
 # Metadata Example API
 
-## Example Generator Metadata
+## Example Data Generator Metadata
 
 In this example the billing data generator's FOCUS metadata API is queried for the provider metadata.
 
-#### Endpoint: <api_root>/FOCUS/metadata/provider
+#### Endpoint: <api_root>/FOCUS/metadata/data_generator
 #### Example Request:
 
     Method: GET 
-    Endpoint : <api_root>/FOCUS/metadata/provider
+    Endpoint : <api_root>/FOCUS/metadata/data_generator
 ####
 
 #### Response
 ```
 {
-	"billing_generator": "awesome_corp",
-	"provider_prefix": "awecorp
-   
+	"DataGenerator": "awesome_corp",
+	"ProviderColumnPrefix": "awecorp
+	"ProviderTagPrefixes": ["awecorp", "ac"]
 }`
 ```
 
@@ -37,24 +37,24 @@ In this example, the billing data includes two different structures of data. An 
 {
 	[
 		{
-			"schema_id": "1234",
-			"FOCUS_version": "1.0",
+			"SchemaID": "1234",
+			"FocusVersion": "1.0",
 			"name": "my original schema",
-			"creation_date": "2024-01-01T12:01:03.083z"
+			"CreationDate": "2024-01-01T12:01:03.083z"
 			"schema_column_endpoint": <api_root>/FOCUS/metadata/schemas/1234/columns
 		},
 		{
-			"schema_id": "2345",
-			"FOCUS_version": "1.1",
+			"SchemaID": "2345",
+			"FocusVersion": "1.1",
 			"name": "my new schema",
-			"creation_date": "2024-07-01T12:00:04.001z"
+			"CreationDate": "2024-07-01T12:00:04.001z"
 			"schema_column_endpoint": <api_root>/FOCUS/metadata/schemas/2345/columns
 		}
 	]
 }
 ```
 
-## Example Schema Definition Metadata
+## Example Schema Column Definition Metadata
 
 In this example the billing data generator's FOCUS metadata API is queried for the schema_id = 1234. 
 
@@ -70,42 +70,42 @@ In this example the billing data generator's FOCUS metadata API is queried for t
 #### Response 
 ```
 {
-	"schema_id": "1234",
+	"SchemaID": "1234",
 	"FOCUS_version": "1.0",
     "name": "my original schema",
-    "creation_date": "2024-01-01T12:01:03.083z"
-	"column_definition": [
+    "CreationDate": "2024-01-01T12:01:03.083z"
+	"ColumnDefinition": [
                  {
-                     column_name: "BillingAccountId",
-                     datatype: "STRING"
-                     max_length: 64,
-                     encoding: "UTF-8"
+                     ColumnName: "BillingAccountId",
+                     DataType: "STRING"
+                     MaxLength: 64,
+                     Encoding: "UTF-8"
                  },
                  {
-                     column_name: "BillingAccountName",
-                     datatype: "STRING"
-                     max_length: 64,
-                     encoding: "UTF-8"
+                     ColumnName: "BillingAccountName",
+                     DataType: "STRING"
+                     MaxLength: 64,
+                     Encoding: "UTF-8"
                  },
                  {
-                     column_name: "ChargePeriodStart",
-                     datatype: "DATETIME"
+                     ColumnName: "ChargePeriodStart",
+                     DataType: "DATETIME"
                  },
                  {
-                     column_name: "ChargePeriodEnd",
-                     datatype: "DATETIME"
+                     ColumnName: "ChargePeriodEnd",
+                     DataType: "DATETIME"
                  },
                  {
-                     column_name: "BilledCost",
-                     datatype: "DECIMAL",
-                     precision: 20,
-                     scale: 10
+                     ColumnName: "BilledCost",
+                     DataType: "DECIMAL",
+                     Precision: 20,
+                     Scale: 10
                  },
                  {
-                     column_name: "EffecitiveCost",
-                     datatype: "DECIMAL",
-                     precision: 20,
-                     scale: 10
+                     ColumnName: "EffecitiveCost",
+                     DataType: "DECIMAL",
+                     Precision: 20,
+                     Scale: 10
                  },
          ]
 }`
@@ -123,7 +123,7 @@ In this example, when the provider returns the FOCUS data they include in the re
 #### Response
 ```
 {
-	"schema_id": "1234",
+	"SchemaId": "1234",
 	"data": [
              ...
          ]
