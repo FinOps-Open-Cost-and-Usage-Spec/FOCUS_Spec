@@ -57,6 +57,7 @@ Current values observed in billing data for various scenarios:
   - This brought the IBM values of Fixed, Metered, Tiered, and Reserved back into the discussion as those were a more detailed version of what we were trying to do.
   - We discussed this and decided that this was too detailed for PricingModel and would look at it in the future in another column.
   - A few weeks before this, we as a group decided to use the term "Category" for normalized types and we also introduced a ChargeSubcategory column as the next level grouping.
+    - Update: In February/April 2024, it was decided that we would remove ChargeSubcategory for 1.0 GA. We may bring it back later once we have a better idea of what ChargeCategory breakdowns might be.
   - Based on this Category/Subcategory pattern, we decided to break PricingModel into PricingCategory and PricingSubcategory, adding a more detailed breakdown of each category.
   - Regarding "dynamic on-demand", this isn't possible given our current definitions (always-changing price vs. predetermined set price).
   - As part of these discussions, we also discussed whether "On-Demand" was the right term.

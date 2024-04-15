@@ -12,7 +12,7 @@ The EffectiveCost column MUST be present in the billing data and MUST NOT be nul
 In cases where the [ChargeCategory](#chargecategory) is not "Usage" or "Purchase", the following applies:
 
 * The EffectiveCost MUST be calculated based on the EffectiveCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is "Tax").
-* The EffectiveCost MUST match the [BilledCost](#billedcost) if the charge is unrelated to other charges (e.g. [ChargeSubcategory](#chargesubcategory) is "Credit").
+* The EffectiveCost MUST match the [BilledCost](#billedcost) if the charge is unrelated to other charges (e.g. [ChargeCategory](#chargecategory) is "Credit").
 
 ## Column ID
 
@@ -36,14 +36,14 @@ Eligible purchases should be *amortized* using a methodology determined by the p
 
 ## Content constraints
 
-|    Constraint   |      Value              |
-|:----------------|:------------------------|
-| Column type     | Metric                  |
-| Feature level   | Mandatory               |
-| Allows nulls    | False                   |
-| Data type       | Decimal                 |
-| Value format    | [Numeric Format](#numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint    | Value                            |
+| :------------ | :------------------------------- |
+| Column type   | Metric                           |
+| Feature level | Mandatory                        |
+| Allows nulls  | False                            |
+| Data type     | Decimal                          |
+| Value format  | [Numeric Format](#numericformat) |
+| Number range  | Any valid decimal value          |
 
 ## Introduced (version)
 
