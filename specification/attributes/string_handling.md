@@ -18,7 +18,7 @@ Requirements for String-capturing columns appearing in billing data.
 
 ## Requirements
 
-* String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by providers and/or end-users.
+* String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by providers and end-users.
 * Changes to mutable string values (e.g., resource names) MUST be accurately reflected in charges related to subsequent costs incurred after the string value change and MUST NOT alter the original values in historical records, preserving data integrity and auditability for past billing periods.
 * Immutable string values that refer to the same entity (e.g., resource identifiers) MUST remain consistent and unchanged across all billing periods.
 
