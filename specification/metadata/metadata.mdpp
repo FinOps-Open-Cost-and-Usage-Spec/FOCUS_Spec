@@ -1,11 +1,6 @@
 # Metadata
 
-The FOCUS specification defines a metadata structure that is to be supplied by data providers to facilitate practioners in data ingestion, data locations, schema of the FOCUS dataset.
+The FOCUS specification defines a metadata structure that is to be supplied by data providers to facilitate practioners use of FOCUS data. This meta data includes general information about the data generator and the schema of the FOCUS dataset.
 
-!INCLUDE "datagenerator.md",1
-!INCLUDE "providercolumnprefix.md",1
-!INCLUDE "providertagprefix.md",1
-!INCLUDE "schemaid.md",1
-!INCLUDE "focusversion.md",1
-!INCLUDE "creationdate.md",1
+!INCLUDE "data_generator/data_generator.mdpp",1
 !INCLUDE "schema/schema.mdpp",1
