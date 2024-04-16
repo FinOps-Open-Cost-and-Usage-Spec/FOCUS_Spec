@@ -1,8 +1,14 @@
 # Commitment Utilization Total
 
-Commitment Utilization Total is a numeric value representing the aggregate unit amount of a purchased [*commitment-based discount*](#glossary:commitment-based-discount) for a billing period.  A CommitmentUtilizationTotal value MUST remain a constant value for a specific [*commitment-based discount*](#glossary:commitment-based-discount) within a billing period. The ratio of [*CommitmentUtilizationUsed*](#commitment-utilization-used) over CommitmentUtilizedTotal produces the utilization rate for a given commitment-based discount or aggregate of.
+Commitment Utilization Total is the numeric value representing the number of [Commitment Units](#glossary:commitment-unit) eligible for a resource or service.
 
-CommitmentUtilizationTotal column MUST be present in the billing data when the provider supports *commitment-based discounts*.
+CommitmentUtilizationTotal MUST be present in the billing data when the provider supports *commitment-based discounts*.
+
+When a commitment-based discount is allocated to a [Charge Period](#glossary:chargeperiod) granuarlity, a CommitmentUtilizationTotal value MUST be the total amount of commitment units eligible for a charge period. Cloud-based commitment-based discounts like Reservations and Savings Plans are allocated to each charge period of a corresponding billing period.
+
+When a commitment-based is *not* allocated to specific charge periods but over an entire billing period, a CommitmentUtilizationTotal value MUST be the constant amount of commitment units for the entire billing period.  For example, SaaS-based commitments typically apply to an entire billing period and not a corresponding charge periods.
+
+CommitmentUtilizationTotal MUST be greater than or equal to its corresponding [*CommitmentUtilizationUsed*](#commitment-utilization-used) value.
 
 A positive CommitmentUtilizationTotal value MUST be applied to a [*row*](#glossary:row) when:
 
@@ -13,9 +19,11 @@ A positive CommitmentUtilizationTotal value MUST be applied to a [*row*](#glossa
 * CommitmentUtilizationUsed is not null.
 * CommitmentUtilizationUnit is not null.
 
-When the corresponding CommitmentUtilizationUnit is *Spend*, the CommitmentUtilizationTotal value describes a monetary amount matching the associated BillingCurrency.
+In all other cases, CommitmentUtilizationTotal MUST be null.
 
-Otherwise, CommitmentUtilizationUsed MUST be null.
+The unit for the CommitmentUtilizationTotal is described by the CommitmentUtilizationUnit column. For example, when the commitment utilization unit is *Spend*, CommitmentUtilizationTotal must be provided in the currency denoted by the [BillingCurrency](#glossary:billing-currency) column.
+
+The ratio of CommitmentUtilizationUsed over CommitmentUtilizedTotal produces the utilization rate for a given commitment-based discount or aggregate of.
 
 ## Column ID
 
@@ -27,7 +35,7 @@ Commitment Utilization Total
 
 ## Description
 
-A numeric value representing the aggregate unit amount of a purchased [*commitment-based discount*](#glossary:commitment-based-discount) for a billing period.
+The numeric value representing the aggregate commitment units eligible for an eligible resource or service.
 
 ## Content constraints
 

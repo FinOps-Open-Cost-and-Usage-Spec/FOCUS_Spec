@@ -1,25 +1,29 @@
 # Commitment Utilization Used
 
-Commitment Utilization Used is a numeric value representing the unit amount of a purchased [*commitment-based discount*](#glossary:commitment-based-discount) applied or not applied to a resource during a billing period.  The ratio of CommitmentUtilizationUsed over [*CommitmentUtilizationTotal*](#commitment-utilization-total) produces the utilization rate for a given commitment-based discount or aggregate of.
+Commitment Utilization Used is the numeric value representing the number of [Commitment Units](#glossary:commitment-unit) applied to a resource or service.
 
-CommitmentUtilizationTotal column MUST be present in the billing data when the provider supports *commitment-based discounts*.
+CommitmentUtilizationUsed MUST be present in the billing data when the provider supports *commitment-based discounts*.
+
+CommitmentUtilizationUsed MUST be less than or equal to its corresponding [*CommitmentUtilizationTotal*](#commitment-utilization-total) value.
 
 A positive CommitmentUtilizationUsed value MUST be applied to a [*row*](#glossary:row) when:
 
 * ChargeCategory is *Usage*
-* ChargeSubCategory is *UsedCommitment* or *UnusedCommitment*.
+* ChargeSubCategory is *UsedCommitment*.
 * ResourceId is not null.
 * CommitmentDiscountId is not null.
 * CommitmentUtilizationTotal is not null.
 * CommitmentUtilizationUnit is not null.
 
-When the corresponding CommitmentUtilizationUnit is *Spend*, the CommitmentUtilizationTotal value describes a monetary amount matching the associated [BillingCurrency](#billing-currency).
+The unit for the CommitmentUtilizationUsed is described by the CommitmentUtilizationUnit column. For example, when the commitment utilization unit is *Spend*, CommitmentUtilizationUsed must be provided in the currency denoted by the [BillingCurrency](#glossary:billing-currency) column.
 
-When the ChargeSubCategory is *UsedCommitment*, a CommitmentUtilizationUsed value MUST be contain the remaining unit value for a specific [*commitment-based discount*](#glossary:commitment-based-discount) *after* factoring in the commitment discount for a given row.
+When the ChargeSubCategory is *UsedCommitment*, a CommitmentUtilizationUsed value MUST contain the remaining unit value for a specific [*commitment-based discount*](#glossary:commitment-based-discount) *after* factoring in the commitment discount for a given row.
 
-When the ChargeSubCategory is *UnusedCommitment*, a CommitmentUtilizationUsed value MUST be contain an unchanged unit value for a specific [*commitment-based discount*](#glossary:commitment-based-discount).
+When the ChargeSubCategory is *UnusedCommitment*, a CommitmentUtilizationUsed value MUST contain an unchanged unit value for a specific [*commitment-based discount*](#glossary:commitment-based-discount).
 
-Otherwise, CommitmentUtilizationUsed MUST be null.
+In all other cases, CommitmentUtilizationUsed MUST be null.
+
+The ratio of CommitmentUtilizationUsed over CommitmentUtilizedTotal produces the utilization rate for a given commitment-based discount or aggregate of.
 
 ## Column ID
 
@@ -31,7 +35,7 @@ Commitment Utilization Used
 
 ## Description
 
-A numeric value representing the consumed unit amount of a purchased [*commitment-based discount*](#glossary:commitment-based-discount) for a billing period.
+The numeric value representing the commitment units applied to an eligible resource or service.
 
 ## Content constraints
 

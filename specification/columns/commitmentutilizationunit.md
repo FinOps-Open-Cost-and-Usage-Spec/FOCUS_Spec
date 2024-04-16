@@ -1,8 +1,8 @@
 # Commitment Utilization Unit
 
-Commitment Utilization Unit is a String value representing the amortization unit of a [*commitment-based discount*](#glossary:commitment-based-discount) during a billing period.
+Commitment Utilization Unit is the String value representing the [Commitment Unit](#glossary:commitment-unit) unit type.
 
-CommitmentUtilizationUnit column MUST be present in the billing data when the provider supports *commitment-based discounts*.
+CommitmentUtilizationUnit MUST be present in the billing data when the provider supports *commitment-based discounts*.
 
 A CommitmentUtilizationUnit value MUST be applied to a [*row*](#glossary:row) when:
 
@@ -13,7 +13,7 @@ A CommitmentUtilizationUnit value MUST be applied to a [*row*](#glossary:row) wh
 * CommitmentUtilizationTotal is not null.
 * CommitmentUtilizationUsed is not null.
 
-CommitmentUtilizationUsed MUST be null for all other rows.
+In all other cases, CommitmentUtilizationUnit MUST be null.
 
 ## Column ID
 
@@ -25,7 +25,7 @@ Commitment Utilization Unit
 
 ## Description
 
-A String value representing the amortization unit of a purchased [*commitment-based discount*](#glossary:commitment-based-discount) for a billing period.
+The String value representing the [Commitment Unit](#glossary:commitment-unit) unit type.
 
 ## Content constraints
 
@@ -41,8 +41,8 @@ Allowed values:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Spend      | Positive amount of spend pre-allocated and amoritized over a billing period. |
-| Hour       | Positive number of hours pre-allocated and amortized over a billing period.  |
+| Spend      | Positive amount of spend pre-allocated and amortized over a billing period. |
+| Hour       | Positive number of hours pre-allocated and amortized over a billing period. |
 
 ## Introduced (version)
 
