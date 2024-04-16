@@ -1,4 +1,3 @@
-
 # Schema
 
 Each FOCUS dataset must have a metadata about the schema associated with it. The schema metadata provides information about the structure of the data provided.
