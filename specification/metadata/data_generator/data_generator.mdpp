@@ -1,0 +1,7 @@
+# Data Generator
+
+The FOCUS metadata about the generator of the FOCUS data.
+
+!INCLUDE "datagenerator.md",1
+!INCLUDE "providercolumnprefix.md",1
+!INCLUDE "providertagprefix.md",1

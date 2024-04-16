@@ -1,11 +1,8 @@
+# Schema
 
-# Schema Definition
+Each FOCUS dataset must have a metadata about the schema associated with it. The schema metadata provides information about the structure of the data provided.
 
-The FOCUS metadata schema definition provides a list of the columns present in the FOCUS dataset along with metadata about the columns. The intent of the schema metadata is to aid pracitioners to understand the structure of the FOCUS data, without the need to parse the included dataset.
-
-!INCLUDE "columnname.md",1
-!INCLUDE "datatype.md",1
-!INCLUDE "stringencoding.md",1
-!INCLUDE "stringmaxlength.md",1
-!INCLUDE "numericprecision.md",1
-!INCLUDE "numberscale.md",1
+!INCLUDE "schemaid.md",1
+!INCLUDE "creationdate.md",1
+!INCLUDE "focusversion.md",1
+!INCLUDE "column_definition/column_definition.mdpp",1
