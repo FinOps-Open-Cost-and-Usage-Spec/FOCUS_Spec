@@ -28,27 +28,36 @@ Highest-level classification of a *service* based on the core function of the *s
 
 Allowed values:
 
-| Service Category          | Description                                                                                    |
-| :------------------------ | :--------------------------------------------------------------------------------------------- |
-| AI and Machine Learning   | Artificial Intelligence and Machine Learning related technologies.                             |
-| Analytics                 | Data processing, analytics, and visualization capabilities.                                    |
-| Business Applications     | Business and productivity applications and services.                                           |
-| Compute                   | Virtual, containerized, serverless, or high-performance computing infrastructure and services. |
-| Databases                 | Database platforms and services that allow for storage and querying of data.                   |
-| Developer Tools           | Software development and delivery tools and services.                                          |
-| Multicloud                | Support for interworking of multiple cloud and/or on-premises environments.                    |
-| Identity                  | Identity and access management services.                                                       |
-| Integration               | Services that allow applications to interact with one another.                                 |
-| Internet of Things        | Development and management of IoT devices and networks.                                        |
-| Management and Governance | Management, logging, and observability of a customer's use of cloud.                           |
-| Media                     | Media and entertainment streaming and processing services.                                     |
-| Migration                 | Moving applications and data to the cloud.                                                     |
-| Mobile                    | Services enabling cloud applications to interact via mobile technologies.                      |
-| Networking                | Network connectivity and management.                                                           |
-| Security                  | Security monitoring and compliance services.                                                   |
-| Storage                   | Storage services for structured or unstructured data.                                          |
-| Web                       | Services enabling cloud applications to interact via the Internet.                             |
-| Other                     | New or emerging services that do not align with an existing category.                          |
+| Service Category           | Description                                                                                    |
+| :------------------------- | :--------------------------------------------------------------------------------------------- |
+| AI and Machine Learning    | Artificial Intelligence and Machine Learning related technologies.                             |
+| Analytics                  | Data processing, analytics, and visualization capabilities.                                    |
+| Blockchain                 | Blockchain networks and database services.                                                     |Discuss*
+| Business Applications      | Business and productivity applications and services.                                           |
+| Cloud Enablement           |                                                                                                |Not Added*
+| Cloud Financial Management | Services, tools, and resources to organize and track cost and usage data.                      |Added*
+| Compute                    | Virtual, containerized, serverless, or high-performance computing infrastructure and services. |
+| Containers                 | Services to securely store, manage, orchestrate, and run container images.                     |Added*
+| Databases                  | Database platforms and services that allow for storage and querying of data.                   |
+| Developer Tools            | Software development and delivery tools and services.                                          |
+| End User Computing         | Virtual desktops and application streaming services.                                           |Added*
+| Game Development           | .                                                                                              |Discuss*
+| Multicloud                 | Support for interworking of multiple cloud and/or on-premises environments.                    |
+| Identity                   | Identity and access management services.                                                       |
+| Integration                | Services that allow applications to interact with one another.                                 |
+| Internet of Things         | Development and management of IoT devices and networks.                                        |
+| Management and Governance  | Management, logging, and observability of a customer's use of cloud.                           |
+| Media                      | Media and entertainment streaming and processing services.                                     |
+| Migration                  | Moving applications and data to the cloud.                                                     |
+| Mobile                     | Services enabling cloud applications to interact via mobile technologies.                      |
+| Networking                 | Network connectivity and management.                                                           |
+| Quantum                    | Quantum computing services.                                                                    |Discuss*
+| Robotics                   | Services to develop, test, and deploy robotics applications.                                   |Added*
+| Satellite                | Groud Stations as a service.                                                                     |Discuss*
+| Security                   | Security monitoring and compliance services.                                                   |
+| Storage                    | Storage services for structured or unstructured data.                                          |
+| Web                        | Services enabling cloud applications to interact via the Internet.                             |
+| Other                      | New or emerging services that do not align with an existing category.                          |
 
 ## Introduced (version)
 
