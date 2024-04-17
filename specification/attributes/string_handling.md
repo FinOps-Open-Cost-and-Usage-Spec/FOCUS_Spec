@@ -14,7 +14,7 @@ String Handling
 
 ## Description
 
-Requirements for String-capturing columns appearing in billing data.
+Requirements for string-capturing columns appearing in billing data.
 
 ## Requirements
 
