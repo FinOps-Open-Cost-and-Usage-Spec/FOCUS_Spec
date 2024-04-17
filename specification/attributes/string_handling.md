@@ -1,8 +1,8 @@
 # String Handling
 
-Columns that capture String values conforming to specified requirements foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support more reliable data-driven decision-making.
+Columns that capture string values conforming to specified requirements foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support more reliable data-driven decision-making.
 
-All columns capturing a String value, defined in the [FOCUS](#glossary:finops-cost-and-usage-specification) specification, MUST follow the requirements listed below. Custom String value capturing columns SHOULD adopt the same requirements over time.
+All columns capturing a string value, defined in the [FOCUS](#glossary:finops-cost-and-usage-specification) specification, MUST follow the requirements listed below. Custom string value capturing columns SHOULD adopt the same requirements over time.
 
 ## Attribute ID
 
