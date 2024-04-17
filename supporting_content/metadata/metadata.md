@@ -15,7 +15,7 @@ In this example the billing data generator's FOCUS metadata API is queried for t
 ```
 {
 	"DataGenerator": "awesome_corp",
-	"ProviderColumnPrefix": "awecorp
+    "DataGeneratorVersion": "1.0.1",
 	"ProviderTagPrefixes": ["awecorp", "ac"]
 }`
 ```
@@ -37,14 +37,12 @@ In this example, the billing data includes two different structures of data. An 
 {
 	[
 		{
-			"SchemaID": "1234",
 			"FocusVersion": "1.0",
 			"name": "my original schema",
 			"CreationDate": "2024-01-01T12:01:03.083z"
 			"schema_column_endpoint": <api_root>/FOCUS/metadata/schemas/1234/columns
 		},
 		{
-			"SchemaID": "2345",
 			"FocusVersion": "1.1",
 			"name": "my new schema",
 			"CreationDate": "2024-07-01T12:00:04.001z"
@@ -70,7 +68,6 @@ In this example the billing data generator's FOCUS metadata API is queried for t
 #### Response 
 ```
 {
-	"SchemaID": "1234",
 	"FOCUS_version": "1.0",
     "name": "my original schema",
     "CreationDate": "2024-01-01T12:01:03.083z"
@@ -123,7 +120,6 @@ In this example, when the provider returns the FOCUS data they include in the re
 #### Response
 ```
 {
-	"SchemaId": "1234",
 	"data": [
              ...
          ]
