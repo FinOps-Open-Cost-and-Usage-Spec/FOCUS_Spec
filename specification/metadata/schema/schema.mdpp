@@ -2,7 +2,6 @@
 
 Each FOCUS dataset must have a metadata about the schema associated with it. The schema metadata provides information about the structure of the data provided.
 
-!INCLUDE "schemaid.md",1
 !INCLUDE "creationdate.md",1
 !INCLUDE "focusversion.md",1
 !INCLUDE "column_definition/column_definition.mdpp",1
