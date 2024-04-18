@@ -4,7 +4,7 @@ Pricing Category describes the pricing model used for a charge at the time of us
 
 The PricingCategory column adheres to the following requirements:
 
-* PricingCategory SHOULD be present in the billing data when the provider supports more than one pricing category across all SKUs and MUST be of type String.
+* PricingCategory MUST be present in the billing data when the provider supports more than one pricing category across all SKUs and MUST be of type String.
 * PricingCategory MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage" or "Purchase" and MUST be null for other ChargeCategory values.
 * PricingCategory MUST be one of the allowed values.
 * PricingCategory MUST be "On-Demand" when pricing is predetermined at the standard rate for the [billing account](#glossary:billing-account).
