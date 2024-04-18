@@ -1,6 +1,6 @@
 # Commitment Utilization Unit
 
-Commitment Utilization Unit is the String value representing the [Commitment Unit](#glossary:commitment-unit) unit type.
+Commitment Utilization Unit is the string value representing the [Commitment Unit](#glossary:commitment-unit) unit type.
 
 CommitmentUtilizationUnit MUST be present in the billing data when the provider supports *commitment-based discounts*.
 
