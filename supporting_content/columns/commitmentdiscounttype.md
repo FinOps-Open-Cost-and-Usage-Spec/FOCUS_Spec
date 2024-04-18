@@ -18,6 +18,7 @@ Examples of found in available data sets:
 | AWS | Savings Plan |
 | AWS | Capacity Blocks for ML |
 | Google Cloud | Committed Use Discount (CUD) |
+| Google Cloud | Flex Committed Use Discount (Flex CUD) |
 | Google Cloud | BigQuery Reservations |
 | Microsoft | Savings Plan |
 | Microsoft | Reservation |
