@@ -1,6 +1,6 @@
 # Commitment Discount Category
 
-Commitment Discount Category indicates the category of a [*commitment-based discount*](#glossary:commitment-based-discount) purchase or the eligibility category of an on-demand or usage-based charges.
+Commitment Discount Category indicates the category of a [*commitment-based discount*](#glossary:commitment-based-discount) purchase or the eligibility category of on-demand or usage-based charges.
 
 The CommitmentDiscountCategory column MUST be of type String and be present in the billing data when the provider supports commitment-based discounts.
 
@@ -22,7 +22,7 @@ Commitment Discount Category
 
 ## Description
 
-Indicates the category of a Commitment-Based Discount purchase or the eligibility category of an on-demand or usage-based charges
+Indicates the category of a Commitment-Based Discount purchase or the eligibility category of on-demand or usage-based charges
 
 ## Content constraints
 
