@@ -8,20 +8,68 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 **Added:**
 
+-  `ChargeClass` column
+- `ContractedCost` column
+- `ContractedUnitPrice` column
 - `RegionId` column
+- `RegionName` column
 
 **Changed:**
 
 - `Column naming convention` attribute includes the following new provisions:
   - Column IDs should not exceed 50 characters.
-- `EffectiveCost` column updated to clarify it does not mix or "blend" costs across multiple charges.
-- `Region` column renamed to `RegionName`.
-- `Tags` column updated to include:
+- `ChargeCategory` column updates:
+  - Added "Credit" value for credits and any applicable credit corrections. See added `ChargeClass` column.
+  - Updated "Usage", "Purchase", and "Tax" to include refunds/corrections. See added `ChargeClass` column.
+  - Updated "Adjustment" value to exclude credits and refunds.
+- `ChargeFrequency` column updates:
+  - Column is recommended and may not be present.
+- `CommitmentDiscountCategory` column updates:
+  - Column is conditional and only required when the provider supports commitment discounts.
+- `CommitmentDiscountId` column updates:
+  - Column is conditional and only required when the provider supports commitment discounts.
+- `CommitmentDiscountName` column updates:
+  - Column is conditional and only required when the provider supports commitment discounts.
+- `CommitmentDiscountType` column updates:
+  - Column is conditional and only required when the provider supports commitment discounts.
+- `EffectiveCost` column updates:
+  - Clarified that effective cost does not mix or "blend" costs across multiple charges.
+- `ListUnitPrice` column updates:
+  - Column is conditional and only required when the provider publishes a price list that excludes discounts.
+- `PricingCategory` column updates:
+  - Column is conditional and only required when the provider supports more than one pricing category value.
+- `ResourceId` column updates:
+  - Column is conditional and only required when the provider supports billing based on provisioned resource instances.
+- `ResourceName` column updates:
+  - Column is conditional and only required when the provider supports billing based on provisioned resource instances.
+- `ResourceType` column updates:
+  - Column is conditional and only required when the provider supports billing based on provisioned resource instances and supports multiple "types" of resources.
+- `SkuId` column updates:
+  - Column is conditional and only required when the provider publishes a SKU list.
+- `SkuPriceId` column updates:
+  - Column is conditional and only required when the provider publishes a SKU price list.
+  - Must not be null when `ChargeClass` is "Regular"
+  - Must not be null when `ChargeCategory` is "Credit" or "Adjustment" and the charge is associated with a specific `SkuPriceId`.
+- `SubAccountId` column updates:
+  - Column is conditional and only required when the provider supports a sub account construct.
+- `SubAccountName` column updates:
+  - Column is conditional and only required when the provider supports a sub account construct.
+- `Tags` column updates:
   - Tag keys that cannot have a value must use a boolean `true` as the tag value.
+  - Column is conditional and only required when the provider supports setting user- or provider-defined tags.
+- `UsageQuantity` column updates:
+    - Column is conditional and only required when the provider supports the measurement of usage.
+- `UsageUnit` column updates:
+    - Column is conditional and only required when the provider supports the measurement of usage.
 
 **Fixed:**
 
 - `CommitmentDiscountType` column constraints were updated to show the column as required to align with the normative text.
+
+**Removed:**
+
+- `ChargeSubcategory` column - See `ChargeCategory` and `ChargeClass` columns
+- `Region` column - See `RegionId` and `RegionName` columns
 
 [All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0-preview-cr...working_draft)
 
