@@ -10,16 +10,15 @@ A positive CommitmentUtilizationUsed value MUST be applied to a [*row*](#glossar
 
 * ChargeCategory is *Usage*
 * ChargeSubCategory is *UsedCommitment*.
-* ResourceId is not null.
 * CommitmentDiscountId is not null.
 * CommitmentUtilizationTotal is not null.
 * CommitmentUtilizationUnit is not null.
 
-The unit for the CommitmentUtilizationUsed is described by the CommitmentUtilizationUnit column. For example, when the commitment utilization unit is *Spend*, CommitmentUtilizationUsed must be provided in the currency denoted by the [BillingCurrency](#glossary:billing-currency) column.
+The unit for the CommitmentUtilizationUsed is described by the CommitmentUtilizationUnit column. For example, when the commitment utilization unit is *Spend*, the CommitmentUtilizationUsed amount is the cost denoted by the [BillingCurrency](#glossary:billing-currency) column.
 
-When the ChargeSubCategory is *UsedCommitment*, a CommitmentUtilizationUsed value MUST contain the remaining unit value for a specific [*commitment-based discount*](#glossary:commitment-based-discount) *after* factoring in the commitment discount for a given row.
+When the ChargeSubCategory is *UsedCommitment*, a CommitmentUtilizationUsed value MUST contain the remaining unit value for a specific Commitment-Based Discount](#glossary:commitment-based-discount) *after* factoring in the commitment discount for a given row.
 
-When the ChargeSubCategory is *UnusedCommitment*, a CommitmentUtilizationUsed value MUST contain an unchanged unit value for a specific [*commitment-based discount*](#glossary:commitment-based-discount).
+When the ChargeSubCategory is *UnusedCommitment*, a CommitmentUtilizationUsed value MUST contain an unchanged unit value for a specific commitment-based discount.
 
 In all other cases, CommitmentUtilizationUsed MUST be null.
 
