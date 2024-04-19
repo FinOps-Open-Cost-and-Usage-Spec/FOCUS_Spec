@@ -25,7 +25,7 @@ Requirements for string-capturing columns appearing in billing data.
 
 ## Exceptions
 
-None
+* When a record is provided after a change to a mutable string value and the [ChargeClass](#chargeclass) is "Correction", the record MAY contain the altered value.
 
 ## Introduced (version)
 
