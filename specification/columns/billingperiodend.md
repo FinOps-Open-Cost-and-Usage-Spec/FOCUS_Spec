@@ -4,7 +4,9 @@ Billing Period End represents the end date and time of the [*billing period*](#g
 
 The BillingPeriodEnd column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values.
 
-BillingPeriodEnd column MUST conform to [Date/Time Format](#date/timeformat) requirements and MUST be an exclusive value. The sum of the [BilledCost](#billedcost) column for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+BillingPeriodEnd column MUST conform to an [Exclusive](#glossary:exclusivebound) [Date/Time Format](#date/timeformat) requirements. The sum of the [BilledCost](#billedcost) column for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+
+For example, a time period where BillingPeriodStart is '2024-01-01T00:00:00Z' and BillingPeriodEnd is '2024-02-01T00:00:00Z' only includes charges for January, given BillingPeriodEnd is *excluded* from the period.
 
 ## Column ID
 

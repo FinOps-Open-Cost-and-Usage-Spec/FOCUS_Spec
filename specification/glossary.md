@@ -60,6 +60,10 @@ A specification-defined categorical attribute that provides context or categoriz
 
 Cost inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of relevant purchases (one-time or recurring) paid to cover future eligible charges.
 
+<a name="glossary:exclusivebound"><b>Exclusive Bound</b></a>
+
+A Date/Time Format value that is not contained within the ending bound of a time period.
+
 <a name="glossary:finalized-tag"><b>Finalized Tag</b></a>
 
 A tag with one tag value chosen from a set of possible tag values after being processed by a set of provider-defined or user-defined rules.
@@ -67,6 +71,10 @@ A tag with one tag value chosen from a set of possible tag values after being pr
 <a name="glossary:finops-cost-and-usage-specification"><b>FinOps Cost and Usage Specification (FOCUS)</b></a>
 
 An open-source specification that defines requirements for billing data.
+
+<a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
+
+A Date/Time Format value that is contained within the beginning bound of a time period.
 
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 

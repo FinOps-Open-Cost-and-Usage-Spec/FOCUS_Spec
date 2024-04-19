@@ -4,7 +4,9 @@ Billing Period Start represents the start date and time of the [*billing period*
 
 The BillingPeriodStart column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values.
 
-BillingPeriodStart column MUST conform to [Date/Time Format](#date/timeformat) requirements and MUST be an inclusive value. The sum of the [BilledCost](#billedcost) metric for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+BillingPeriodStart column MUST conform to an [Inclusive](#glossary:inclusivebound) [Date/Time Format](#date/timeformat) requirements. The sum of the [BilledCost](#billedcost) metric for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+
+For example, a time period where BillingPeriodStart is '2024-01-01T00:00:00Z' and BillingPeriodEnd is '2024-02-01T00:00:00Z' only includes charges for January, given BillingPeriodStart is *included* within the period.
 
 ## Column ID
 
