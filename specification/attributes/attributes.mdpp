@@ -12,4 +12,5 @@ for data granularity, recency, frequency, etc. Requirements defined in attribute
 !INCLUDE "key_value_format.md",1
 !INCLUDE "null_handling.md",1
 !INCLUDE "numeric_format.md",1
+!INCLUDE "string_handling.md",1
 !INCLUDE "unit_format.md",1
