@@ -6,7 +6,7 @@ All columns defined in the [FOCUS](#glossary:finops-cost-and-usage-specification
 
 ## Attribute ID
 
-ColumnNamingAndOrderingConvention
+ColumnNamingAndOrdering
 
 ## Attribute Name
 
