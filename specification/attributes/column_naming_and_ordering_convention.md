@@ -1,4 +1,4 @@
-# Column Naming and Ordering Convention
+# Column Naming and Ordering
 
 Column IDs provided in cost data following a consistent naming and ordering convention reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
