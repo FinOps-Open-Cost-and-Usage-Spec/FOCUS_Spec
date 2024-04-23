@@ -2,7 +2,7 @@
 
 Cost data [*rows*](#glossary:row) that don't have a value that can be presented for a column must be handled in a consistent way to reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
-All columns defined in the [FOCUS](#glossary:finops-cost-and-usage-specification) specification MUST follow the null handling requirements listed below. Custom columns SHOULD also follow the same formatting requirements.
+All columns defined in the FOCUS specification MUST follow the null handling requirements listed below. Custom columns SHOULD also follow the same formatting requirements.
 
 ## Attribute ID
 
