@@ -14,9 +14,7 @@ In this example the billing data generator's FOCUS metadata API is queried for t
 #### Response
 ```
 {
-	"DataGenerator": "awesome_corp",
-    "DataGeneratorVersion": "1.0.1",
-	"ProviderTagPrefixes": ["awecorp", "ac"]
+	"DataGenerator": "awesome_corp"
 }`
 ```
 
@@ -69,43 +67,48 @@ In this example the billing data generator's FOCUS metadata API is queried for t
 ```
 {
 	"FOCUS_version": "1.0",
-    "name": "my original schema",
-    "CreationDate": "2024-01-01T12:01:03.083z"
+	"name": "my original schema",
+	"CreationDate": "2024-01-01T12:01:03.083z"
 	"ColumnDefinition": [
-                 {
-                     ColumnName: "BillingAccountId",
-                     DataType: "STRING"
-                     StringMaxLength: 64,
-                     StringEncoding: "UTF-8"
-                 },
-                 {
-                     ColumnName: "BillingAccountName",
-                     DataType: "STRING"
-                     StringMaxLength: 64,
-                     StringEncoding: "UTF-8"
-                 },
-                 {
-                     ColumnName: "ChargePeriodStart",
-                     DataType: "DATETIME"
-                 },
-                 {
-                     ColumnName: "ChargePeriodEnd",
-                     DataType: "DATETIME"
-                 },
-                 {
-                     ColumnName: "BilledCost",
-                     DataType: "DECIMAL",
-                     NumericPrecision: 20,
-                     NumberScale: 10
-                 },
-                 {
-                     ColumnName: "EffecitiveCost",
-                     DataType: "DECIMAL",
-                     NumericPrecision: 20,
-                     NumberScale: 10
-                 },
-         ]
-}`
+		{
+			"ColumnName": "BillingAccountId",
+            		"DataType": "STRING",
+            		"StringMaxLength: 64,
+            		"StringEncoding: "UTF-8"
+        	},
+        	{
+            		"ColumnName: "BillingAccountName",
+            		"DataType: "STRING"
+            		"StringMaxLength: 64,
+            		"StringEncoding: "UTF-8"
+	        },
+	        {
+	           	 "ColumnName: "ChargePeriodStart",
+	           	 "DataType: "DATETIME"
+	        },
+	        {
+	            	"ColumnName: "ChargePeriodEnd",
+	            	"DataType: "DATETIME"
+	        },
+	        {
+	            	"ColumnName: "BilledCost",
+	            	"DataType: "DECIMAL",
+	            	"NumericPrecision: 20,
+	            	"NumberScale: 10
+	        },
+	        {
+	            	"ColumnName: "EffecitiveCost",
+	            	"DataType: "DECIMAL",
+	            	"NumericPrecision: 20,
+	            	"NumberScale: 10
+	        },
+	        {
+	            	"ColumnName": "Tags",
+	            	"DataType": "JSON",
+	            	"ProviderTagPrefixes": ["awecorp", "ac"]
+	        }
+    	]
+}
 ```
 
 ## Example Schema Reference Metadata
