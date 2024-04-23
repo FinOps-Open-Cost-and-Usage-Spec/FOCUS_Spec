@@ -8,7 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 **Added:**
 
--  `ChargeClass` column
+- `String handling` attribute
+- `ChargeClass` column
 - `ContractedCost` column
 - `ContractedUnitPrice` column
 - `RegionId` column
@@ -149,50 +150,55 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 [All 0.5 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/7106bbe...v0.5-cr)
 
+<br>
+
 ## Columns History
+
 This table maps the evolution of the billing data, showcasing column introductions and updates from its initial version 0.5 to the comprehensive revisions in "1.0-preview", "1.0" and beyond.
 
-| **Column Title**                  | **Revision Introduced** | **Latest Update**
-|-----------------------------------|-------------------|--------------------------|
-| Availability Zone                             | 0.5                          |                                          |                  
-| Billed Cost                      | 0.5               |                                            |         
-| Billing Account ID               | 0.5               |                                          |    
-| Billing Account Name             | 0.5               |                                          |    
-| Billing Currency                 | 0.5               |                                          |    
-| Billing Period End               | 0.5               |                                          |    
-| Billing Period Start             | 0.5               |                                          |    
-| Charge Category                  | 0.5               |                                          |    
-| Charge Description               | 1.0-preview               |                                          |    
-| Charge Frequency                 | 1.0-preview              |                                          |    
-| Charge Period End                | 0.5               |                                          |    
-| Charge Period Start              | 0.5               |                                          |    
-| Charge Subcategory               | 1.0-preview              |                                          |    
-| Commitment Discount Category     | 1.0-preview               |                                          |    
-| Commitment Discount ID           | 1.0-preview              |                                          |    
-| Commitment Discount Name         | 1.0-preview               |                                          |    
-| Commitment Discount Type         | 1.0-preview             |                                          |    
-| Contracted Cost                  | 1.0               |                                          |    
-| Contracted Unit Price            | 1.0               |                                          |    
-| Effective Cost                   | 0.5               |                                          |    
-| Invoice Issuer                   | 0.5              |                                          |    
-| List Cost                        | 1.0-preview              |                                          |    
-| List Unit Price                  | 1.0-preview               |                                          |    
-| Pricing Category                 | 1.0-preview               |                                          |    
-| Pricing Quantity                 | 1.0-preview              |                                          |    
-| Pricing Unit                     | 1.0-preview               |                                          |    
-| Provider                         | 0.5               |                                          |    
-| Publisher                        | 0.5               |                                          |    
-| Region ID                        | 1.0               |                                          |    
-| Region Name                      | 1.0               |                                          |    
-| Resource ID                      | 0.5               |                                          |    
-| Resource Name                    | 0.5               |                                          |    
-| Resource Type                    | 1.0-preview              |                                          |    
-| Service Category                 | 0.5               |                                          |    
-| Service Name                     | 0.5               |                                          |    
-| SKU ID                           | 1.0-preview             |                                          |    
-| SKU Price ID                     | 1.0-preview              |                                          |    
-| Sub Account ID                   | 0.5               |                                          |    
-| Sub Account Name                 | 0.5               |                                          |    
-| Tags                             | 1.0-preview               |                                          |    
-| Usage Quantity                   | 1.0-preview             |                                          |    
-| Usage Unit                       | 1.0-preview              |                                          |    
+| **Column ID**                | **Revision Introduced** | **Latest Update** |
+|------------------------------|-------------------------|-------------------|
+| AvailabilityZone             | 0.5                     |                   |
+| BilledCost                   | 0.5                     |                   |
+| BillingAccountId             | 0.5                     |                   |
+| BillingAccountName           | 0.5                     |                   |
+| BillingCurrency              | 0.5                     |                   |
+| BillingPeriodEnd             | 0.5                     |                   |
+| BillingPeriodStart           | 0.5                     |                   |
+| ChargeCategory               | 0.5                     | 1.0               |
+| ChargeClass                  | 1.0                     |                   |
+| ChargeDescription            | 1.0-preview             |                   |
+| ChargeFrequency              | 1.0-preview             |                   |
+| ChargePeriodEnd              | 0.5                     |                   |
+| ChargePeriodStart            | 0.5                     |                   |
+| ChargeSubcategory            | 1.0-preview             | Removed in 1.0    |    
+| CommitmentDiscountCategory   | 1.0-preview             |                   |
+| CommitmentDiscountId         | 1.0-preview             |                   |
+| CommitmentDiscountName       | 1.0-preview             |                   |
+| CommitmentDiscountType       | 1.0-preview             |                   |
+| ContractedCost               | 1.0                     |                   |
+| ContractedUnitPrice          | 1.0                     |                   |
+| EffectiveCost                | 0.5                     |                   |    
+| InvoiceIssuerName            | 0.5                     |                   |    
+| ListCost                     | 1.0-preview             |                   |
+| ListUnitPrice                | 1.0-preview             |                   |
+| PricingCategory              | 1.0-preview             |                   |
+| PricingQuantity              | 1.0-preview             |                   |
+| PricingUnit                  | 1.0-preview             |                   |
+| ProviderName                 | 0.5                     |                   |
+| PublisherName                | 0.5                     |                   |
+| Region                       | 0.5                     | Removed in 1.0    |
+| RegionId                     | 1.0                     |                   |
+| RegionName                   | 1.0                     |                   |
+| ResourceId                   | 0.5                     |                   |
+| ResourceName                 | 0.5                     |                   |
+| ResourceType                 | 1.0-preview             |                   |
+| ServiceCategory              | 0.5                     |                   |
+| ServiceName                  | 0.5                     |                   |
+| SkuId                        | 1.0-preview             |                   |
+| SkuPriceId                   | 1.0-preview             | 1.0               |
+| SubAccountId                 | 0.5                     |                   |
+| SubAccountName               | 0.5                     |                   |
+| Tags                         | 1.0-preview             | 1.0               |
+| UsageQuantity                | 1.0-preview             |                   |
+| UsageUnit                    | 1.0-preview             |                   |
