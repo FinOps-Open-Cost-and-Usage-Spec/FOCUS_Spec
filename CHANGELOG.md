@@ -39,6 +39,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Column is conditional and only required when the provider publishes a price list that excludes discounts.
 - `PricingCategory` column updates:
   - Column is conditional and only required when the provider supports more than one pricing category value.
+  - Changed "On-Demand" to "Standard".
+  - Changed "Commitment-Based" to "Committed".
 - `ResourceId` column updates:
   - Column is conditional and only required when the provider supports billing based on provisioned resource instances.
 - `ResourceName` column updates:
@@ -56,8 +58,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `SubAccountName` column updates:
   - Column is conditional and only required when the provider supports a sub account construct.
 - `Tags` column updates:
-  - Tag keys that cannot have a value must use a boolean `true` as the tag value.
   - Column is conditional and only required when the provider supports setting user- or provider-defined tags.
+  - Tag keys that cannot have a value must use a boolean `true` as the tag value.
 - `UsageQuantity` column updates:
     - Column is conditional and only required when the provider supports the measurement of usage.
 - `UsageUnit` column updates:
@@ -182,7 +184,7 @@ This table maps the evolution of the billing data, showcasing column introductio
 | InvoiceIssuerName            | 0.5                     |                   |    
 | ListCost                     | 1.0-preview             |                   |
 | ListUnitPrice                | 1.0-preview             |                   |
-| PricingCategory              | 1.0-preview             |                   |
+| PricingCategory              | 1.0-preview             | 1.0               |
 | PricingQuantity              | 1.0-preview             |                   |
 | PricingUnit                  | 1.0-preview             |                   |
 | ProviderName                 | 0.5                     |                   |
