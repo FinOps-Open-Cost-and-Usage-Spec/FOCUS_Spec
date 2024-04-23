@@ -10,6 +10,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - `String handling` attribute
 - `ChargeClass` column
+- `CommitmentDiscountStatus` column
 - `ContractedCost` column
 - `ContractedUnitPrice` column
 - `RegionId` column
@@ -175,6 +176,7 @@ This table maps the evolution of the billing data, showcasing column introductio
 | CommitmentDiscountCategory   | 1.0-preview             |                   |
 | CommitmentDiscountId         | 1.0-preview             |                   |
 | CommitmentDiscountName       | 1.0-preview             |                   |
+| CommitmentDiscountStatus     | 1.0                     |                   |
 | CommitmentDiscountType       | 1.0-preview             |                   |
 | ContractedCost               | 1.0                     |                   |
 | ContractedUnitPrice          | 1.0                     |                   |
