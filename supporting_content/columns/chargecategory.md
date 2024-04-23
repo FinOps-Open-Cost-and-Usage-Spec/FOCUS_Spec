@@ -149,12 +149,12 @@ Permutations:
 
 ### Examples of how Charge Type relates to Pricing Category / Charge Frequency columns
 
-| Scenario                                                     | ChargeCategory | ChargeSubcategory | PricingCategory  | ChargeFrequency | CommitmentDisocuntUsage |
-| ------------------------------------------------------------ | -------------- | ----------------- | ---------------- | --------------- | ----------------------- |
-| Upfront discount purchase                                    | Purchase       | NULL              | On-Demand        | One-time        | NULL                    |
-| Partial Upfront discount monthly fee                         | Purchase       | NULL              | On-Demand        | Recurring       | NULL                    |
-| Usage covered by upfront portion of partial upfront discount | Usage          | NULL              | Commitment-based | Usage-based     | Unused                  |
-| Unused commitment of partial upfront discount                | Usage          | NULL              | Commitment-based | Usage-based     | Used                    |
-| Usage not covered by discount                                | Usage          | On-Demand         | On-Demand        | Usage-based     | NULL                    |
-| Refund                                                       | Adjustment     | Refund            | NULL             | One-time        | NULL                    |
-| Usage invoice tax charge                                     | Tax            | NULL              | NULL             | Recurring       | NULL                    |
+| Scenario                                                     | ChargeCategory | ChargeSubcategory | PricingCategory | ChargeFrequency | CommitmentDisocuntUsage |
+| ------------------------------------------------------------ | -------------- | ----------------- | --------------- | --------------- | ----------------------- |
+| Upfront discount purchase                                    | Purchase       | NULL              | Standard        | One-time        | NULL                    |
+| Partial Upfront discount monthly fee                         | Purchase       | NULL              | Standard        | Recurring       | NULL                    |
+| Usage covered by upfront portion of partial upfront discount | Usage          | NULL              | Committed       | Usage-based     | Unused                  |
+| Unused commitment of partial upfront discount                | Usage          | NULL              | Committed       | Usage-based     | Used                    |
+| Usage not covered by discount                                | Usage          | On-Demand         | Standard        | Usage-based     | NULL                    |
+| Refund                                                       | Adjustment     | Refund            | NULL            | One-time        | NULL                    |
+| Usage invoice tax charge                                     | Tax            | NULL              | NULL            | Recurring       | NULL                    |
