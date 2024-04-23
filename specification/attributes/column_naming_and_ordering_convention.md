@@ -10,7 +10,7 @@ ColumnNamingAndOrdering
 
 ## Attribute Name
 
-Column Naming and Ordering Convention
+Column Naming and Ordering
 
 ## Description
 
