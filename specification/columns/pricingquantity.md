@@ -18,14 +18,14 @@ The volume of a given SKU associated with a *resource* or *service* used or purc
 
 ## Content constraints
 
-| Constraint    | Value                            |
-| :------------ | :------------------------------- |
-| Column type   | Metric                           |
-| Feature level | Mandatory                        |
-| Allows nulls  | True                             |
-| Data type     | Decimal                          |
-| Value format  | [Numeric Format](#numericformat) |
-| Number Range  | Any valid decimal value          |
+|    Constraint   |      Value                |
+|:----------------|:--------------------------|
+| Column type     | Metric                    |
+| Feature level   | Mandatory                 |
+| Allows nulls    | True                      |
+| Data type       | Decimal                   |
+| Value format    | [Numeric Format](#numericformat) |
+| Number Range    | Any valid decimal value   |
 
 ## Introduced (version)
 

@@ -36,14 +36,14 @@ Eligible purchases should be *amortized* using a methodology determined by the p
 
 ## Content constraints
 
-| Constraint    | Value                            |
-| :------------ | :------------------------------- |
-| Column type   | Metric                           |
-| Feature level | Mandatory                        |
-| Allows nulls  | False                            |
-| Data type     | Decimal                          |
-| Value format  | [Numeric Format](#numericformat) |
-| Number range  | Any valid decimal value          |
+|    Constraint   |      Value              |
+|:----------------|:------------------------|
+| Column type     | Metric                  |
+| Feature level   | Mandatory               |
+| Allows nulls    | False                   |
+| Data type       | Decimal                 |
+| Value format    | [Numeric Format](#numericformat) |
+| Number range    | Any valid decimal value |
 
 ## Introduced (version)
 
