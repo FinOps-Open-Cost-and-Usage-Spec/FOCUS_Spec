@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - `Column naming convention` attribute includes the following new provisions:
   - Column IDs should not exceed 50 characters.
+  - Attribute renamed to `Column naming and ordering` to denote it also includes rules for column ordering.
 - `ChargeCategory` column updates:
   - Added "Credit" value for credits and any applicable credit corrections. See added `ChargeClass` column.
   - Updated "Usage", "Purchase", and "Tax" to include refunds/corrections. See added `ChargeClass` column.
