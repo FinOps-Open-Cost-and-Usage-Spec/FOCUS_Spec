@@ -37,7 +37,7 @@ Indicates how to include and apply discounts to usage charges or rows.
   * CommitmentDiscountStatus MUST be "Used" for rows that received a reduced price from that commitment.
   * If a commitment is not fully utilized, the provider MUST include a row that represents the unused portion of the commitment for that charge period. CommitmentDiscountStatus MUST be "Unused".
   * The sum of the EffectiveCost for all rows where CommitmentDiscountStatus is "Used" or "Unused" for each CommitmentDiscountId over the entire duration of the commitment MUST be the same as the total BilledCost of the commitment-based discount.
-* Credits that are applied after the fact MUST use a ChargeType of "Adjustment" and ChargeSubcategory of "Credit".
+* Credits that are applied after the fact MUST use a ChargeCategory of "Credit".
 
 ## Exceptions
 
