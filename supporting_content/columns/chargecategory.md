@@ -8,7 +8,7 @@ Current column mappings found in available data sets:
 | --------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | AWS       | CUR                     | `bill/BillType` (Anniversary, Purchase, Refund)<br>`lineItem/LineItemType` (Usage, Tax, BundledDiscount, Credit, Discount, DiscountedUsage, Fee, Refund, RIFee, SavingsPlanUpfrontFee, SavingsPlanRecurringFee, SavingsPlanCoveredUsage, SavingsPlanNegation) |
 | GCP       | BigQuery Billing Export | `Cost type` (regular, tax, adjustment, or rounding error)                                                                                                                                                                                                     |
-| Microsoft | Cost details            | `ChargeCategory` (Purchase, Usage, Refund, Adjustment, Tax?)<br><br>Related:<br>`PricingModel` (OnDemand, Reservation, SavingsPlan, Spot)<br>`Frequency` (OneTime, Recurring)                                                                                     |
+| Microsoft | Cost details            | `ChargeType` (Purchase, Usage, Refund, Adjustment, Tax?)<br><br>Related:<br>`PricingModel` (OnDemand, Reservation, SavingsPlan, Spot)<br>`Frequency` (OneTime, Recurring)                                                                                     |
 
 ## Example usage scenarios
 
@@ -149,12 +149,12 @@ Permutations:
 
 ### Examples of how Charge Type relates to Pricing Category / Charge Frequency columns
 
-| Scenario                                                     | ChargeCategory | ChargeSubcategory | PricingCategory | Charge Frequency |
-| ------------------------------------------------------------ | -------------- | ----------------- | --------------- | ---------------- |
-| Upfront discount purchase                                    | Purchase       | NULL              | Standard        | One-time         |
-| Partial Upfront discount monthly fee                         | Purchase       | NULL              | Standard        | Recurring        |
-| Usage covered by upfront portion of partial upfront discount | Usage          | Used Commitment   | Committed       | Usage-based      |
-| Unused commitment of partial upfront discount                | Usage          | Unused Commitment | Committed       | Usage-based      |
-| Usage not covered by discount                                | Usage          | On-Demand         | Standard        | Usage-based      |
-| Refund                                                       | Adjustment     | Refund            | NULL            | One-time         |
-| Usage invoice tax charge                                     | Tax            | NULL              | NULL            | Recurring        |
+| Scenario                                                     | ChargeCategory | ChargeSubcategory | PricingCategory | ChargeFrequency | CommitmentDisocuntUsage |
+| ------------------------------------------------------------ | -------------- | ----------------- | --------------- | --------------- | ----------------------- |
+| Upfront discount purchase                                    | Purchase       | NULL              | Standard        | One-time        | NULL                    |
+| Partial Upfront discount monthly fee                         | Purchase       | NULL              | Standard        | Recurring       | NULL                    |
+| Usage covered by upfront portion of partial upfront discount | Usage          | NULL              | Committed       | Usage-based     | Unused                  |
+| Unused commitment of partial upfront discount                | Usage          | NULL              | Committed       | Usage-based     | Used                    |
+| Usage not covered by discount                                | Usage          | On-Demand         | Standard        | Usage-based     | NULL                    |
+| Refund                                                       | Adjustment     | Refund            | NULL            | One-time        | NULL                    |
+| Usage invoice tax charge                                     | Tax            | NULL              | NULL            | Recurring       | NULL                    |
