@@ -19,6 +19,7 @@ Naming and ordering convention for columns appearing in billing data.
 ## Requirements
 
 ### Column Names
+
 * All columns defined by FOCUS MUST follow the following rules:
   * Column IDs MUST use [Pascal case](https://techterms.com/definition/pascalcase).
   * Column IDs MUST NOT use abbreviations.
@@ -32,6 +33,7 @@ Naming and ordering convention for columns appearing in billing data.
 * Custom (e.g., provider-defined) columns SHOULD follow the same rules listed above for FOCUS columns.
 
 ### Column Order
+
 * All FOCUS columns SHOULD be first in the provided dataset.
 * Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.
 * Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns.
