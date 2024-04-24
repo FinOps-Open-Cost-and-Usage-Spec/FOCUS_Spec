@@ -14,14 +14,14 @@ Charge Class
 
 ## Description
 
-Indicates whether the row represents a regular charge or a correction to one or more previous charges, its primary use iis for differentiating refunds from normal usage.
+Indicates whether the row represents a regular charge or a correction to one or more previous charges, its primary use is for differentiating refunds from normal usage.
 
 ## Content Constraints
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column type     | Dimension      |
-| Column required | True           |
+| Feature level   | Mandatory      |
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed values |
