@@ -1,6 +1,6 @@
 # Charge Class
 
-A Charge Class indicates whether the row represents a regular charge or a correction to one or more previous charges. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
+A Charge Class indicates whether the row represents the original charge for services used/purchased or a correction to one or more previous charges. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
 
 The ChargeClass column MUST be present and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
 
@@ -30,7 +30,7 @@ Allowed values:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Standard    | Standard charges for services used or purchased. |
+| Original   | Original charges for services used or purchased. |
 | Correction  | Modification to one or more previous charges, like refunds and credit modifications. |
 
 ## Introduced (version)
