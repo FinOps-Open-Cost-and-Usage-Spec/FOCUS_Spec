@@ -30,7 +30,7 @@ Allowed values:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Regular    | Standard charges for services used or purchased. |
+| Standard    | Standard charges for services used or purchased. |
 | Correction  | Modification to one or more previous charges, like refunds and credit modifications. |
 | Percentage  | Denotes a charge that is billed NOT based on direct unit consumption but is based on a % cost of another service e.g. Support Costs |
 
