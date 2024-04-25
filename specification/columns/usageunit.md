@@ -14,7 +14,7 @@ Usage Unit
 
 ## Description
 
-Provider-specified measurement unit indicating how a provider measures usage or purchase of a given SKU associated with a *resource* or *service*.
+Provider-specified measurement unit indicating how a provider measures usage of a given SKU associated with a *resource* or *service*.
 
 ## Content constraints
 
