@@ -1,22 +1,24 @@
-# Column Naming Convention
+# Column Naming and Ordering
 
-Column IDs provided in cost data following a consistent naming convention reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
+Column IDs provided in cost data following a consistent naming and ordering convention reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
-All columns defined in the [FOCUS](#glossary:finops-cost-and-usage-specification) specification MUST follow the naming requirements listed below.
+All columns defined in the FOCUS specification MUST follow the naming and ordering requirements listed below.
 
 ## Attribute ID
 
-ColumnNamingConvention
+ColumnNamingAndOrdering
 
 ## Attribute Name
 
-Column Naming Convention
+Column Naming and Ordering
 
 ## Description
 
-Naming convention for columns appearing in billing data.
+Naming and ordering convention for columns appearing in billing data.
 
 ## Requirements
+
+### Column Names
 
 * All columns defined by FOCUS MUST follow the following rules:
   * Column IDs MUST use [Pascal case](https://techterms.com/definition/pascalcase).
@@ -28,10 +30,13 @@ Naming convention for columns appearing in billing data.
 * All custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
 * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the `Name` suffix if it is considered superfluous.
 * Columns with the `Category` suffix MUST be normalized.
-* Custom (e.g., provider-defined) columns SHOULD follow the same rules as FOCUS(*) columns listed above.
+* Custom (e.g., provider-defined) columns SHOULD follow the same rules listed above for FOCUS columns.
+
+### Column Order
+
 * All FOCUS columns SHOULD be first in the provided dataset.
-  * Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.
-  * Columns MAY be sorted alphabetically but custom columns SHOULD be after all FOCUS columns.
+* Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.
+* Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns.
 
 ## Exceptions
 

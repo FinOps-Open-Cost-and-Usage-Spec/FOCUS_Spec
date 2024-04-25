@@ -149,12 +149,12 @@ Permutations:
 
 ### Examples of how Charge Type relates to Pricing Category / Charge Frequency columns
 
-| Scenario| ChargeCategory | ChargeSubcategory | PricingCategory  | Charge Frequency |
-|-|-|-|-|-|
-| Upfront discount purchase | Purchase| NULL  | On-Demand  | One-time |
-| Partial Upfront discount monthly fee | Purchase    | NULL  | On-Demand  | Recurring  |
-| Usage covered by upfront portion of partial upfront discount | Usage   | Used Commitment   | Commitment-based | Usage-based  |
-| Unused commitment of partial upfront discount    | Usage   | Unused Commitment | Commitment-based | Usage-based      |
-| Usage not covered by discount | Usage | On-Demand  | On-Demand   | Usage-based|
-| Refund | Adjustment   | Refund | NULL | One-time  |
-| Usage invoice tax charge   | Tax   |  NULL |  NULL | Recurring        |
+| Scenario                                                     | ChargeCategory | PricingCategory  | Charge Frequency |
+| ------------------------------------------------------------ | -------------- | ---------------- | ---------------- |
+| Upfront discount purchase                                    | Purchase       | On-Demand        | One-time         |
+| Partial Upfront discount monthly fee                         | Purchase       | On-Demand        | Recurring        |
+| Usage covered by upfront portion of partial upfront discount | Usage          | Commitment-based | Usage-based      |
+| Unused commitment of partial upfront discount                | Usage          | Commitment-based | Usage-based      |
+| Usage not covered by discount                                | Usage          | On-Demand        | Usage-based      |
+| Refund                                                       | Adjustment     | NULL             | One-time         |
+| Usage invoice tax charge                                     | Tax            | NULL             | Recurring        |
