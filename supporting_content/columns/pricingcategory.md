@@ -14,22 +14,22 @@ Current column mappings found in available data sets:
 
 Current values observed in billing data for various scenarios:
 
-| Provider  | Data set                    | Provider value     | PricingCategory  | PricingSubcategory |
-| --------- | --------------------------- | ------------------ | ---------------- | ------------------ |
-| AWS       | CUR (PurchaseOption)        | On-Demand          | On-Demand        | (depends on usage) |
-| AWS       | CUR (PurchaseOption)        | Reserved Instances | Commitment-Based | Committed Usage    |
-| AWS       | CUR (PurchaseOption)        | Spot Instances     | Dynamic          | Spot               |
-| AWS       | CUR (PurchaseOption)        | Dedicated Hosts    | On-Demand        | (depends on usage) |
-| Microsoft | Cost Details (PricingModel) | OnDemand           | On-Demand        |
-| Microsoft | Cost Details (PricingModel) | SavingsPlan        | Commitment-Based | Committed Spend    |
-| Microsoft | Cost Details (PricingModel) | Reservation        | Commitment-Based | Committed Usage    |
-| Microsoft | Cost Details (PricingModel) | Spot               | Reservation      |
+| Provider  | Data set                    | Provider value     | PricingCategory | PricingSubcategory |
+| --------- | --------------------------- | ------------------ | --------------- | ------------------ |
+| AWS       | CUR (PurchaseOption)        | On-Demand          | Standard        | (depends on usage) |
+| AWS       | CUR (PurchaseOption)        | Reserved Instances | Committed       | Committed Usage    |
+| AWS       | CUR (PurchaseOption)        | Spot Instances     | Dynamic         | Spot               |
+| AWS       | CUR (PurchaseOption)        | Dedicated Hosts    | Standard        | (depends on usage) |
+| Microsoft | Cost Details (PricingModel) | OnDemand           | Standard        |                    |
+| Microsoft | Cost Details (PricingModel) | SavingsPlan        | Committed       | Committed Spend    |
+| Microsoft | Cost Details (PricingModel) | Reservation        | Committed       | Committed Usage    |
+| Microsoft | Cost Details (PricingModel) | Spot               | Reservation     |                    |
 
 ## Documentation
 
-- AWS: https://docs.aws.amazon.com/cur/latest/userguide/product-columns.html
-- GCP
-- Microsoft: https://learn.microsoft.com/azure/cost-management-billing/automate/understand-usage-details-fields
+* AWS: https://docs.aws.amazon.com/cur/latest/userguide/product-columns.html
+* GCP
+* Microsoft: https://learn.microsoft.com/azure/cost-management-billing/automate/understand-usage-details-fields
 
 ## Discussion Topics
 
@@ -57,6 +57,7 @@ Current values observed in billing data for various scenarios:
   - This brought the IBM values of Fixed, Metered, Tiered, and Reserved back into the discussion as those were a more detailed version of what we were trying to do.
   - We discussed this and decided that this was too detailed for PricingModel and would look at it in the future in another column.
   - A few weeks before this, we as a group decided to use the term "Category" for normalized types and we also introduced a ChargeSubcategory column as the next level grouping.
+    - Update: In February/April 2024, it was decided that we would remove ChargeSubcategory for 1.0 GA. We may bring it back later once we have a better idea of what ChargeCategory breakdowns might be.
   - Based on this Category/Subcategory pattern, we decided to break PricingModel into PricingCategory and PricingSubcategory, adding a more detailed breakdown of each category.
   - Regarding "dynamic on-demand", this isn't possible given our current definitions (always-changing price vs. predetermined set price).
   - As part of these discussions, we also discussed whether "On-Demand" was the right term.
@@ -75,7 +76,7 @@ Current values observed in billing data for various scenarios:
 
 Open issues:
 
-- Issues with null values (e.g., usability, dimensional modeling).
-- Define PricingSubcategory column.
-- Define principles to support PricingCategory values (similar to ServiceCategory).
-- Consider defining an attribute that applies to all Category/Subcategory columns (e.g., must have principles, "Other" value).
+* Issues with null values (e.g., usability, dimensional modeling).
+* Define PricingSubcategory column.
+* Define principles to support PricingCategory values (similar to ServiceCategory).
+* Consider defining an attribute that applies to all Category/Subcategory columns (e.g., must have principles, "Other" value).

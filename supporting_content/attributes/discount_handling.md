@@ -156,8 +156,8 @@ TBD
   - We have not yet discussed if there are any special nuances to how spot pricing works that should be explicitly incorporated into Discount Handling beyond identification of spot-priced charges.
 
 - Where does GCP's sustained usage discount fall under? Maybe the same as spot instance, in which case, **Usage-based discounts**?
-  - Since GCP SUDs are an after-the-fact discount that includes a negative charge, they're being tracked as ChargeCategory = `Adjustment` and ChargeSubcategory = `Credit`.
-  - In the main spec content, SUDs are covered by the "Any price or cost reductions that are awarded after the fact are identified as a `Credit` Charge Subcategory" sentence.
+  - Since GCP SUDs are an after-the-fact discount that includes a negative charge, they're being tracked as ChargeCategory = `Credit`.
+  - In the main spec content, SUDs are covered by the "Any price or cost reductions that are awarded after the fact are identified as a `Credit` Charge Category" sentence.
 
 - Microsoft discounts include:
   - Azure consumption discounts

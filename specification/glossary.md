@@ -102,7 +102,7 @@ A company or organization that provides outsourced management and support of a r
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
-A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In Cloud Computing, virtual machines can be created and terminated as needed, i.e. on demand.
+A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e. on demand.
 
 <a name="glossary:practitioner"><b>Practitioner</b></a>
 
