@@ -72,6 +72,7 @@ The following principles were considered while building the specification.
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
 * Column naming must strictly follow the [column naming conventions](#columnnamingconvention).
 * Use established standards (e.g., ISO8601 for dates, ISO4217 for currency).
+* The use of the term `service` used throughout this specification will be used to reference offerings by cloud service providers/SaaS Vendors/Internal Platforms. [Managed Service Providers (MSPs)](#glossary:managed-service-provider) will be used when refering to MSPs or Resellers.
 
 ## Typographic Conventions
 
