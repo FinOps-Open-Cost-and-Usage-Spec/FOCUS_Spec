@@ -19,7 +19,7 @@ Indicates how to handle columns that don't have a value.
 ## Requirements
 
 * Columns MUST use NULL when there isn't a value that can be specified for a nullable column.
-* Columns MUST NOT use empty strings or placeholder values such as 0 for numeric columns or "Not Applicable" for string columns, regardless of whether the column allows nulls or not.
+* Columns MUST NOT use empty strings or placeholder values to represent a (NULL/No Value) such as 0 for numeric columns or "Not Applicable" for string columns, regardless of whether the column allows nulls or not.
 
 ## Exceptions
 
