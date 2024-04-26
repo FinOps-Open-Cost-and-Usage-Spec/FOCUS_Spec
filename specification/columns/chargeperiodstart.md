@@ -1,8 +1,8 @@
 # Charge Period Start
 
-Charge Period Start represents the starting date and time of the [*charge period*](#glossary:chargeperiod).
+Charge Period Start represents the [*inclusive*](#glossary:inclusivebound) start date and time within a [*charge period*](#glossary:chargeperiod). For example, a time period where ChargePeriodStart is '2024-01-01T00:00:00Z' and [ChargePeriodEnd](#chargeperiodend) is '2024-01-02T00:00:00Z' includes charges for January 1, since ChargePeriodStart is *inclusive*, but does not include charges for January 2 since ChargePeriodEnd is [*exclusive*](#glossary:exclusivebound).
 
-The ChargePeriodStart column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. ChargePeriodStart column MUST conform to [Date/Time Format](#date/timeformat) requirements.
+ChargePeriodStart MUST be present in the billing data, MUST be of type Date/Time, MUST be an *inclusive* value, and MUST NOT contain null values.
 
 ## Column ID
 
@@ -14,7 +14,7 @@ Charge Period Start
 
 ## Description
 
-The beginning date and time of a *charge period*.
+The [*inclusive*](#glossary:inclusivebound) start date and time within a [*charge period*](#glossary:chargeperiod).
 
 ## Content constraints
 
