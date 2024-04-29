@@ -1,8 +1,8 @@
 # Charge Period End
 
-Charge Period End represents the end date and time of the [*charge period*](#glossary:chargeperiod).
+Charge Period End represents the [*exclusive*](#glossary:exclusivebound) end date and time of a [*charge period*](#glossary:chargeperiod). For example, a time period where [ChargePeriodStart](#chargeperiodstart) is '2024-01-01T00:00:00Z' and ChargePeriodEnd is '2024-01-02T00:00:00Z' includes charges for January 1, since ChargePeriodStart is [*inclusive*](#glossary:inclusivebound), but does not include charges for January 2 since ChargePeriodEnd is *exclusive*.
 
-The ChargePeriodEnd column MUST be present in the billing data. This column MUST be of type Date/Time and MUST NOT contain null values. ChargePeriodEnd column MUST conform to [Date/Time Format](#date/timeformat) requirements.
+ChargePeriodEnd MUST be present in the billing data, MUST be of type Date/Time, MUST be an *exclusive* value, and MUST NOT contain null values.
 
 ## Column ID
 
@@ -14,7 +14,7 @@ Charge Period End
 
 ## Description
 
-The end date and time of a *charge period*.
+The [*exclusive*](#glossary:exclusivebound) end date and time of a charge period.
 
 ## Content constraints
 
