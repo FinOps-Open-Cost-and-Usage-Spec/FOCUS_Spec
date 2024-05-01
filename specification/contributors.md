@@ -1,14 +1,4 @@
-## Steering Committee Members
-
-Thanks to the following FOCUS Steering Committee Members for their contributions to this specification.
-
-* Anne Johnston (Capital One)
-* Michael Flanakin (Microsoft)
-* Mike Fuller (FinOps Foundation)
-* Roy Wolman (Amazon Web Services)
-* Sarah McMullin (Google)
-* Tim O'Brien (Walmart)
-* Udam Dewaraja (FinOps Foundation)
+## Working Group
 
 ## Maintainers
 
@@ -93,3 +83,16 @@ Thanks to the following FOCUS members for their contributions to this specificat
 * Udam Dewaraja (FinOps Foundation)
 * Webb Brown (Kubecost)
 * Yuriy Prykhodko (Amazon Web Services)
+
+# Steering Committee Members
+
+Thanks to the following FOCUS Steering Committee Members for their contributions to this specification.
+
+* Anne Johnston (Capital One)
+* Michael Flanakin (Microsoft)
+* Mike Fuller (FinOps Foundation)
+* Roy Wolman (Amazon Web Services)
+* Sarah McMullin (Google)
+* Tim O'Brien (Walmart)
+* Udam Dewaraja (FinOps Foundation)
+
