@@ -84,6 +84,7 @@ Thanks to the following FOCUS members for their contributions to this specificat
 * Sanjna Srivatsa (VMWare)
 * Sarah McMullin (Google)
 * Shawn Alpay (Envisor)
+* Sonal Garg (Kyndryl)
 * Sumaira Nazir (Platform.sh)
 * Tatiana Dubovchenko (Flexera)
 * Tim O'Brien (Walmart)
