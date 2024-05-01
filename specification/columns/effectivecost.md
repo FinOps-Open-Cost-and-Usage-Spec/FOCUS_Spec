@@ -7,7 +7,7 @@ This column resolves two challenges that are faced by practitioners:
 1. Practitioners need to *amortize* relevant purchases, such as upfront fees, throughout the *commitment* and distribute them to the appropriate reporting groups (e.g. [*tags*](#glossary:tag), [*resources*](#glossary:resource)).
 2. Many [*commitment-based discount*](#glossary:commitment-based-discount) constructs include a recurring expense for the *commitment* for every [*billing period*](#glossary:billing-period) and must distribute this cost to the *resources* using the *commitment*. This forces reconciliation between the initial *commitment* [*row*](#glossary:row) per period and the actual usage *rows*.
 
-The EffectiveCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. The aggregated EffectiveCost for a billing period MAY NOT match the charge received on the invoice for the same *billing period*.
+The EffectiveCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. The EffectiveCost MUST be 0 when a charge is associated with a purchase (one-time or recurring) paid to cover future eligible charges. The aggregated EffectiveCost for a billing period may not match the charge received on the invoice for the same *billing period*.
 
 In cases where the [ChargeCategory](#chargecategory) is not "Usage" or "Purchase", the following applies:
 
