@@ -1,8 +1,8 @@
 # Charge Class
 
-A Charge Class indicates whether the row represents a regular charge or a correction to one or more previous charges. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
+A Charge Class indicates whether the row represents a correction to one or more [*charges*](#glossary:charge) already invoiced in previous billing periods. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
 
-The ChargeClass column MUST be present and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
+The ChargeClass column MUST be present in the billing data. This column MUST be of type String and MUST be set to "Correction" in case of a correction to one or more charges already invoiced in previous billing periods. Otherwise, it MUST be null.
 
 ## Column ID
 
@@ -14,7 +14,7 @@ Charge Class
 
 ## Description
 
-Indicates whether the row represents a regular charge or a correction to one or more previous charges, its primary use is for differentiating refunds from normal usage.
+Indicates whether the row represents a correction to one or more *charges* already invoiced in previous billing periods.
 
 ## Content Constraints
 
@@ -22,7 +22,7 @@ Indicates whether the row represents a regular charge or a correction to one or 
 | :-------------- | :------------- |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
-| Allows nulls    | False          |
+| Allows nulls    | True           |
 | Data type       | String         |
 | Value format    | Allowed values |
 
@@ -30,8 +30,7 @@ Allowed values:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Standard    | Standard charges for services used or purchased. |
-| Correction  | Modification to one or more previous charges, like refunds and credit modifications. |
+| Correction | Modification to one or more charges already invoiced in previous billing periods (e.g., refunds and credit modifications). |
 
 ## Introduced (version)
 
