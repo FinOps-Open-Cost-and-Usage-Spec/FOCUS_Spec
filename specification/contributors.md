@@ -1,6 +1,6 @@
-# Working Group
+## Working Group
 
-## Maintainers
+### Maintainers
 
 Thanks to the following FOCUS Maintainers for their contributions to this specification.
 
@@ -21,7 +21,7 @@ Thanks to the following FOCUS Maintainers for their contributions to this specif
 * Tim O'Brien (Walmart)
 * Udam Dewaraja (FinOps Foundation)
 
-## Contributors
+### Contributors
 
 Thanks to the following FOCUS members for their contributions to this specification.
 
@@ -71,7 +71,7 @@ Thanks to the following FOCUS members for their contributions to this specificat
 * Webb Brown (Kubecost)
 * Yuriy Prykhodko (Amazon Web Services)
 
-# Steering Committee Members
+## Steering Committee Members
 
 Thanks to the following FOCUS Steering Committee Members for their contributions to this specification.
 
