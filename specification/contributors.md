@@ -1,4 +1,4 @@
-## Working Group
+# Working Group
 
 ## Maintainers
 
