@@ -1,6 +1,6 @@
 # Charge Class
 
-A Charge Class indicates whether the row represents a correction to one or more [*charges*](#glossary:charge) already invoiced in previous billing periods. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
+A Charge Class indicates whether the row represents a correction to one or more [*charges*](#glossary:charge) that have been invoiced in previous billing periods. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
 
 The ChargeClass column MUST be present in the billing data. This column MUST be of type String and MUST be set to "Correction" in case of a correction to one or more charges already invoiced in previous billing periods. Otherwise, it MUST be null.
 
@@ -14,7 +14,7 @@ Charge Class
 
 ## Description
 
-Indicates whether the row represents a correction to one or more *charges* already invoiced in previous billing periods.
+Indicates whether the row represents a correction to one or more *charges* that have been invoiced in previous billing periods.
 
 ## Content Constraints
 
@@ -30,7 +30,7 @@ Allowed values:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Correction | Modification to one or more charges already invoiced in previous billing periods (e.g., refunds and credit modifications). |
+| Correction | Modification to one or more charges invoiced in previous billing periods (e.g., refunds and credit modifications). |
 
 ## Introduced (version)
 
