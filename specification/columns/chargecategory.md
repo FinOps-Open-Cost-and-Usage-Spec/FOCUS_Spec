@@ -1,6 +1,6 @@
 # Charge Category
 
-A Charge Category is the highest level classification for the type of charge that the billing row represents. The Charge Category is commonly used to identify prepaid purchases separately from usage-based charges or to separate charges that may require special handling from regular usage.
+Charge Category represents the highest-level classification of a charge based on its nature, distinguishing between usage-based charges, purchases (one-time or recurring), after-the-fact adjustments, credits, and taxes.
 
 The ChargeCategory column MUST be present in the billing data and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
 
@@ -14,7 +14,7 @@ Charge Category
 
 ## Description
 
-Indicates whether the row represents an upfront or recurring fee, cost of usage that already occurred, an after-the-fact *adjustment* (e.g., credits), or taxes.
+Represents the highest-level classification of a charge based on its nature, distinguishing between usage-based charges, purchases (one-time or recurring), after-the-fact adjustments, credits, and taxes.
 
 ## Content Constraints
 
