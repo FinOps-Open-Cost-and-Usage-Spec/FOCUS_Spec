@@ -1,3 +1,36 @@
+## Steering Committee Members
+
+Thanks to the following FOCUS Steering Committee Members for their contributions to this specification.
+
+* Anne Johnston (Capital One)
+* Michael Flanakin (Microsoft)
+* Mike Fuller (FinOps Foundation)
+* Roy Wolman (Amazon Web Services)
+* Sarah McMullin (Google)
+* Tim O'Brien (Walmart)
+* Udam Dewaraja (FinOps Foundation)
+
+## Maintainers
+
+Thanks to the following FOCUS Maintainers for their contributions to this specification.
+
+* Anne Johnston (Capital One)
+* Christopher Harris (Datadog)
+* Dennis Park-Rodriguez (Amazon Web Services)
+* Erik Peterzon (CloudZero)
+* Irena Jurica (Neos)
+* Joaquin Prado (FinOps Foundation)
+* Karl Kraft (Walmart)
+* Larry Advey (Twilio)
+* Michael Flanakin (Microsoft)
+* Mike Fuller (FinOps Foundation)
+* Riley Jenkins (DOMO)
+* Roy Wolman (Amazon Web Services)
+* Rupa Patel (Google)
+* Sarah McMullin (Google)
+* Tim O'Brien (Walmart)
+* Udam Dewaraja (FinOps Foundation)
+
 ## Contributors
 
 Thanks to the following FOCUS members for their contributions to this specification.
