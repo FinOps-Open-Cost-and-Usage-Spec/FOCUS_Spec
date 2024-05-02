@@ -37,7 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Column is conditional and only required when the provider supports commitment discounts.
 - `EffectiveCost` column updates:
   - Clarified that effective cost does not mix or "blend" costs across multiple charges.
-  - Specified that in the case of a purchase charge paid to cover future eligible charges, the Effective Cost is always 0.
+  - Specified that in the case of a purchase charge paid to cover future eligible charges, the Effective Cost is set to 0.
 - `ListUnitPrice` column updates:
   - Column is conditional and only required when the provider publishes a price list that excludes discounts.
   - Must not be null when `ChargeClass` is "Regular" and `ChargeCategory` is "Usage" or "Purchase".
