@@ -70,6 +70,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS speci
 * Trig Ghosh (Accenture)
 * Webb Brown (Kubecost)
 * Yuriy Prykhodko (Amazon Web Services)
+* Zach Erdman (Amazon Web Services)
 
 ## Steering Committee Members
 
