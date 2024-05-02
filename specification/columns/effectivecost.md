@@ -24,7 +24,7 @@ Effective Cost
 
 ## Description
 
-Cost inclusive of the impacts of all reduced rates and discounts, augmented with the *amortization* of relevant purchases (one-time or recurring) paid to cover future eligible *charges*, with the exception that, in the case of a purchase charge paid to cover future eligible charges, it amounts to 0.
+The *amortized* cost of the *charge* after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
 
 ### Concerning Granularity and Distribution of Recurring Fee
 
