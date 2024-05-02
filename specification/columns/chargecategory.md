@@ -1,6 +1,6 @@
 # Charge Category
 
-Charge Category represents the highest-level classification of a charge based on its nature, distinguishing between usage-based charges, purchases (one-time or recurring), after-the-fact adjustments, credits, and taxes.
+Charge Category represents the highest-level classification of a charge based on the nature of how it is billed. Charge Category is commonly used to identify and distinguish between types of charges that may require different handling.
 
 The ChargeCategory column MUST be present in the billing data and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
 
