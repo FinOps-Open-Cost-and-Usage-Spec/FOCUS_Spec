@@ -3,7 +3,7 @@
 The Actual Quantity represents the volume of a given SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Actual Unit](#actualunit). Actual Quantity is often derived at a finer granularity or over a different time interval when compared to the [Pricing Quantity](#pricingquantity) (complementary to [Pricing Unit](#pricingunit)) and focuses on the actual amount of a *resource* or *service* used or purchased, not pricing and cost.
 
 When [ChargeCategory](#chargecategory) is "Purchase":
-    The value represents a measurement that represents the volume of units purchased of a [*resource*](#glossary:resource) or [*service*](#glossary:service) and should be relevant to any associated [ChargeCategory](#chargecategory) "Usage" records. 
+    The value represents a measurement that represents the volume of units purchased of a [*resource*](#glossary:resource) or [*service*](#glossary:service) and should be relevant to any associated [ChargeCategory](#chargecategory) "Usage" records.
 
 When [ChargeCategory](#chargecategory) is "Usage":
     The measurement represents the actual quantity consumed which may be a different value to the quantity that is charged represented in the [PricingQuantity](#pricingquantity) column or measured in a different unit to that of [pricingunit](#pricingunit).
