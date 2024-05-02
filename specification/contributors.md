@@ -2,7 +2,7 @@
 
 ### Maintainers
 
-Thanks to the following FOCUS Maintainers for their contributions to this specification.
+Thanks to the following FOCUS Maintainers for their leadership of the FOCUS specification.
 
 * Anne Johnston (Capital One)
 * Christopher Harris (Datadog)
@@ -23,7 +23,7 @@ Thanks to the following FOCUS Maintainers for their contributions to this specif
 
 ### Contributors
 
-Thanks to the following FOCUS members for their contributions to this specification.
+Thanks to the following FOCUS members for their contributions to the FOCUS specification.
 
 * Alex Hullah (Goldman Sachs)
 * Amit Wadhwa (Google)
@@ -73,7 +73,7 @@ Thanks to the following FOCUS members for their contributions to this specificat
 
 ## Steering Committee Members
 
-Thanks to the following FOCUS Steering Committee Members for their contributions to this specification.
+Thanks to the following FOCUS Steering Committee Members for their contributions to the FOCUS specification.
 
 * Anne Johnston (Capital One)
 * Michael Flanakin (Microsoft)
