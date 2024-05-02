@@ -22,4 +22,4 @@ Current values observed in billing data for various scenarios:
 
 ## Discussion Topics
 
-* AWS and Azure Usage Units are not currently meeting the requirements recommended by the UnitFormat attribute. As such values from these providers are not recommended to be used directly. The formatting should be updated on values in Usage and Pricing Unit columns.
+* AWS and Azure Usage Units are not currently meeting the requirements recommended by the UnitFormat attribute. As such values from these providers are not recommended to be used directly. The formatting should be updated on values in Actual Unit and Pricing Unit columns.
