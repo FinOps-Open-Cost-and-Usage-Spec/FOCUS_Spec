@@ -6,7 +6,7 @@ When [ChargeCategory](#chargecategory) is "Purchase":
     The value represents the volume of units purchased of a [*resource*](#glossary:resource) or [*service*](#glossary:service) which may be different from the quantity represented in the [PricingQuantity](#pricingquantity) column or measured in a different unit to that of [PricingUnit](#pricingunit). It should be relevant to any associated  [ChargeCategory](#chargecategory) "Usage" records.
 
 When [ChargeCategory](#chargecategory) is "Usage":
-    The measurement represents the actual quantity consumed which may be a different value to the quantity that is charged represented in the [PricingQuantity](#pricingquantity) column or measured in a different unit to that of [pricingunit](#pricingunit).
+    The value represents the actual quantity consumed which may be a different value to the quantity that is charged represented in the [PricingQuantity](#pricingquantity) column or measured in a different unit to that of [pricingunit](#pricingunit).
 
 ActualQuantity column MUST be present in the billing data when the provider supports the measurement of usage or purchases. This column MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements. The value MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction". This column MUST NOT be null when [ChargeClass](#chargeclass) is "Standard" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
 
