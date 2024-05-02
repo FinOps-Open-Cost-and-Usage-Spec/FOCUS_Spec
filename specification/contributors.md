@@ -7,7 +7,7 @@ Thanks to the following FOCUS Maintainers for their contributions to this specif
 * Anne Johnston (Capital One)
 * Christopher Harris (Datadog)
 * Dennis Park-Rodriguez (Amazon Web Services)
-* Erik Peterzon (CloudZero)
+* Erik Peterson (CloudZero)
 * Irena Jurica (Neos)
 * Joaquin Prado (FinOps Foundation)
 * Karl Kraft (Walmart)
