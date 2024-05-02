@@ -36,7 +36,7 @@ Current column mappings found in available data sets:
 
 ## Discussion / Scratch space
 
-* 4/20/2024 update: Double counting issue was discussed in github issue [#424](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/424). Options discussed were:
+* April 20, 2024 update: Double counting issue was discussed in github issue [#424](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/424). Options discussed were:
   * Enhance the description about excluding ListCost and ContractedCost from purchases and related charges (e.g. Tax for the purchase) from aggregations related to savings calculations to avoid double counting
   * Update the description to require purchases that cover future eligible charges to have a ContractedCost of 0$
   * Update the description to require the covered rows to have a ContractedCost of 0$
