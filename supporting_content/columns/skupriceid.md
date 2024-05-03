@@ -36,7 +36,7 @@ Current values observed in billing data for various scenarios:
 
 ### Impacts of 1.0 ChargeCategory and ChargeClass cleanup
 
-The following table serves as the basis for reviewing the SkuPriceId spec, as well as price, cost, quantity metrics, etc., impacted by the ChargeCategory and ChargeClass columns cleanup
+The following table serves as the basis for reviewing the SkuPriceId spec, as well as price, cost, quantity metrics, etc., impacted by the ChargeCategory and ChargeClass columns cleanup.
 
 | ChargeCategory | ChargeClass                             | perSku/bulk                       | SkuId            | SkuPriceId       |
 |----------------|-----------------------------------------|-----------------------------------|------------------|------------------|
