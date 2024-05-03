@@ -38,15 +38,15 @@ Current values observed in billing data for various scenarios:
 
 The following table serves as the basis for reviewing the SkuPriceId spec, as well as price, cost, quantity metrics, etc., impacted by the ChargeCategory and ChargeClass columns cleanup
 
-| ChargeCategory | ChargeClass | perSku/bulk                       | SkuId            | SkuPriceId       |
-|----------------|-------------|-----------------------------------|------------------|------------------|
+| ChargeCategory | ChargeClass                             | perSku/bulk                       | SkuId            | SkuPriceId       |
+|----------------|-----------------------------------------|-----------------------------------|------------------|------------------|
 | Usage          | Regular/Standard/Original/Direct/(null) | MUST be perSku and perSkuPrice    | MUST not be null | MUST not be null |
-| Usage          | Correction  | MAY be bulk                       | MAY be null      | MAY be null      |
-| Purchase       | (null)      | MUST be perSku and perSkuPrice    | MUST not be null | MUST not be null |
-| Purchase       | Correction  | MAY be bulk                       | MAY be null      | MAY be null      |
-| Credit         | (null)      | MAY be bulk                       | MAY be null      | MAY be null      |
-| Credit         | Correction  | MAY be bulk                       | MAY be null      | MAY be null      |
-| Adjustment     | (null)      | MAY be bulk                       | MAY be null      | MAY be null      |
-| Adjustment     | Correction  | MAY be bulk                       | MAY be null      | MAY be null      |
-| Tax            | (null)      | MUST be bulk                      | MUST be null     | MUST be null     |
-| Tax            | Correction  | MUST be bulk                      | MUST be null     | MUST be null     |
+| Usage          | Correction                              | MAY be bulk                       | MAY be null      | MAY be null      |
+| Purchase       | Regular/Standard/Original/Direct/(null) | MUST be perSku and perSkuPrice    | MUST not be null | MUST not be null |
+| Purchase       | Correction                              | MAY be bulk                       | MAY be null      | MAY be null      |
+| Credit         | Regular/Standard/Original/Direct/(null) | MAY be bulk                       | MAY be null      | MAY be null      |
+| Credit         | Correction                              | MAY be bulk                       | MAY be null      | MAY be null      |
+| Adjustment     | Regular/Standard/Original/Direct/(null) | MAY be bulk                       | MAY be null      | MAY be null      |
+| Adjustment     | Correction                              | MAY be bulk                       | MAY be null      | MAY be null      |
+| Tax            | Regular/Standard/Original/Direct/(null) | MUST be bulk                      | MUST be null     | MUST be null     |
+| Tax            | Correction                              | MUST be bulk                      | MUST be null     | MUST be null     |
