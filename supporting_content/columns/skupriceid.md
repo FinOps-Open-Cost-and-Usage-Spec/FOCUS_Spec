@@ -40,7 +40,7 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
 
 | ChargeCategory | ChargeClass | perSku/bulk                       | SkuId            | SkuPriceId       |
 |----------------|-------------|-----------------------------------|------------------|------------------|
-| Usage          | (null)      | MUST be perSku and perSkuPrice    | MUST not be null | MUST not be null |
+| Usage          | Regular/Standard/Original/Direct/(null) | MUST be perSku and perSkuPrice    | MUST not be null | MUST not be null |
 | Usage          | Correction  | MAY be bulk                       | MAY be null      | MAY be null      |
 | Purchase       | (null)      | MUST be perSku and perSkuPrice    | MUST not be null | MUST not be null |
 | Purchase       | Correction  | MAY be bulk                       | MAY be null      | MAY be null      |
