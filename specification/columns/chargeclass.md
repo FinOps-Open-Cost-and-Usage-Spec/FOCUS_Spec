@@ -1,8 +1,8 @@
 # Charge Class
 
-A Charge Class indicates whether the row represents a regular charge or a correction to one or more previous charges. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
+Charge Class indicates whether the row represents the original [*charge*](#glossary:charge), a correction to one or more previous *charges* that occurred in the same [*billing period*](#glossary:billing-period), or a correction to one or more *charges* that have been invoiced in a previous *billing period*. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
 
-The ChargeClass column MUST be present and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
+The ChargeClass column MUST be present in the billing data. This column MUST be of type String, MUST NOT be null, and MUST be one of the allowed values.
 
 ## Column ID
 
@@ -14,12 +14,12 @@ Charge Class
 
 ## Description
 
-Indicates whether the row represents a regular charge or a correction to one or more previous charges, its primary use is for differentiating refunds from normal usage.
+Indicates whether the row represents the original *charge*, a correction to one or more *charges* that occurred in the same *billing period*, or a correction to one or more *charges* that have been invoiced in a previous *billing period*.
 
 ## Content Constraints
 
 | Constraint      | Value          |
-| :-------------- | :------------- |
+|:----------------| :--------------|
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |
@@ -28,11 +28,12 @@ Indicates whether the row represents a regular charge or a correction to one or 
 
 Allowed values:
 
-| Value      | Description                          |
-| :--------- | :------------------------------------|
-| Standard    | Standard charges for services used or purchased. |
-| Correction  | Modification to one or more previous charges, like refunds and credit modifications. |
+| Value                    | Description |
+|:-------------------------|:------------|
+| Original                 | Original charges for services used or purchased.                                        |
+| Current-cycle Correction | Correction to one or more previous charges that occurred in the same billing period.    |
+| Past-cycle Correction    | Correction to one or more charges that have been invoiced in a previous billing period. |
 
 ## Introduced (version)
 
-0.5
+1.0

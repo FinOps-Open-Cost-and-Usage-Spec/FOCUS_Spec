@@ -5,7 +5,7 @@ Pricing Category describes the pricing model used for a charge at the time of us
 The PricingCategory column adheres to the following requirements:
 
 * PricingCategory MUST be present in the billing data when the provider supports more than one pricing category across all SKUs and MUST be of type String.
-* PricingCategory MUST NOT be null when [ChargeClass](#chargeclass) is "Standard" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+* PricingCategory MUST NOT be null when [ChargeClass](#chargeclass) is "Original" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
 * PricingCategory MUST be one of the allowed values.
 * PricingCategory MUST be "Standard" when pricing is predetermined at the agreed upon rate for the [billing account](#glossary:billing-account).
 * PricingCategory MUST be "Committed" when [CommitmentDiscountId](#commitmentdiscountid) is not null.
