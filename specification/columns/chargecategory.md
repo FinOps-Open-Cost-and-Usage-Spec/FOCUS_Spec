@@ -14,7 +14,7 @@ Charge Category
 
 ## Description
 
-Represents the highest-level classification of a charge based on its nature, distinguishing between usage-based charges, purchases (one-time or recurring), after-the-fact adjustments, credits, and taxes.
+Represents the highest-level classification of a charge based on the nature of how it is billed.
 
 ## Content Constraints
 
