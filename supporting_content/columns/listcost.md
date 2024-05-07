@@ -47,3 +47,11 @@ Current column mappings found in available data sets:
 ### Current data sources
 
 * Even though some major CSPs provide candidate columns for mapping to ListCost within their billing data, it is advisable to rely on multiplying the predetermined values in the FOCUS columns ListUnitPrice and PricingQuantity. This approach ensures more consistent and reliable results.
+
+### Avoid double counting
+
+* 4/20/2024 Double counting issue was discussed in github issue [#424](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/424). Options discussed were:
+  * Enhance the description about excluding ListCost and ContractedCost from purchases and related charges (e.g. Tax for the purchase) from aggregations related to savings calculations to avoid double counting
+  * Update the description to require purchases that cover future eligible charges to have a ListCost of 0$
+  * Update the description to require the covered rows to have a ListCost of 0$
+* Based on discussions, we determined that it was useful at a row-level to have the ListCost specified but call out the need to exclude the purchase or usage rows to avoid double counting when aggregated. For accrual basis analysis, the purchase might be excluded. For cash-basis analysis, the usage charges may be excluded.
