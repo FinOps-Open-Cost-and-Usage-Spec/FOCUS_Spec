@@ -1,13 +1,13 @@
 # Effective Cost
 
-Effective Cost represents a cost inclusive of the impacts of all reduced rates and discounts, augmented with the [*amortization*](#glossary:amortization) of relevant purchases (one-time or recurring) paid to cover future eligible charges. The *amortized* portion included should be proportional to the [Pricing Quantity](#pricingquantity) and the time granularity of the data. Effective Cost does not mix or "blend" costs across multiple charges of the same service. This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
+Effective Cost represents the [*amortized*](#glossary:amortization) cost of the [*charge*](#glossary:charge) after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge. The *amortized* portion included should be proportional to the [Pricing Quantity](#pricingquantity) and the time granularity of the data. Since amortization breaks down and spreads the cost of a prepaid purchase, to subsequent eligible charges, the Effective Cost of the original prepaid charge is set to 0. Effective Cost does not mix or "blend" costs across multiple charges of the same service. This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
 
 This column resolves two challenges that are faced by practitioners:
 
 1. Practitioners need to *amortize* relevant purchases, such as upfront fees, throughout the *commitment* and distribute them to the appropriate reporting groups (e.g. [*tags*](#glossary:tag), [*resources*](#glossary:resource)).
 2. Many [*commitment-based discount*](#glossary:commitment-based-discount) constructs include a recurring expense for the *commitment* for every [*billing period*](#glossary:billing-period) and must distribute this cost to the *resources* using the *commitment*. This forces reconciliation between the initial *commitment* [*row*](#glossary:row) per period and the actual usage *rows*.
 
-The EffectiveCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. The aggregated EffectiveCost for a billing period MAY NOT match the charge received on the invoice for the same *billing period*.
+The EffectiveCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover future eligible charges. The aggregated EffectiveCost for a billing period may not match the charge received on the invoice for the same *billing period*.
 
 In cases where the [ChargeCategory](#chargecategory) is not "Usage" or "Purchase", the following applies:
 
@@ -24,7 +24,7 @@ Effective Cost
 
 ## Description
 
-Cost inclusive of the impacts of all reduced rates and discounts, augmented with the *amortization* of relevant purchases (one-time or recurring) paid to cover future eligible *charges*.
+The *amortized* cost of the *charge* after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
 
 ### Concerning Granularity and Distribution of Recurring Fee
 
