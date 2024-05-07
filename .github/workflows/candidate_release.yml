@@ -2,36 +2,36 @@ name: generate_candidate_release_spec
 on:
   push:
     branches:
-      - 'candidate_release'
+      - "candidate_release"
 
 jobs:
-    # The job that will use the container image you just pushed to ghcr.io
-    gen_pdf:
-        runs-on: ubuntu-20.04
-        container:
-            image: pandoc/extra:latest-ubuntu
-        steps:
-            - name: Check out repository code
-              uses: actions/checkout@v3
-            - name: Install prequirements
-              shell: bash
-              run: |
-                /usr/bin/apt-get -y update
-                wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
-                DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y make
-                DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y -f ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
-                /usr/bin/pip3 install -r requirements.txt
-            - name: Build PDF
-              shell: bash
-              working-directory: ./specification
-              run: |
-                make STYLE=candidate_release
-            - name: Upload Spec
-              uses: actions/upload-artifact@v3.1.2
-              with:
-                name: FOCUS_specification
-                path: |
-                  specification/spec.html
-                  specification/spec.pdf
-                  specification/images/*
-                  specification/styles/*
+  # The job that will use the container image you just pushed to ghcr.io
+  gen_pdf:
+    runs-on: ubuntu-20.04
+    container:
+      image: pandoc/extra:latest-ubuntu
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Install prequirements
+        shell: bash
+        run: |
+          /usr/bin/apt-get -y update
+          wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+          DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y make
+          DEBIAN_FRONTEND=noninteractive /usr/bin/apt install -y -f ./wkhtmltox_0.12.6.1-2.jammy_amd64.deb
+          /usr/bin/pip3 install --break-system-packages -r requirements.txt
+      - name: Build PDF
+        shell: bash
+        working-directory: ./specification
+        run: |
+          make STYLE=candidate_release
+      - name: Upload Spec
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: FOCUS_specification
+          path: |
+            specification/spec.html
+            specification/spec.pdf
+            specification/images/*
+            specification/styles/*
