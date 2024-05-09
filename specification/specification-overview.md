@@ -1,4 +1,0 @@
-FOCUS Specification Overview
-----------------------
-
-TBD
