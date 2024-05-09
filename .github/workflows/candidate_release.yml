@@ -2,7 +2,7 @@ name: generate_candidate_release_spec
 on:
   push:
     branches:
-      - "candidate_release"
+      - "candidate_recommendation"
 
 jobs:
   # The job that will use the container image you just pushed to ghcr.io
