@@ -36,6 +36,12 @@ Current column mappings found in available data sets:
 
 ## Discussion / Scratch space
 
+* April 20, 2024 update: Double counting issue was discussed in github issue [#424](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/424). Options discussed were:
+  * Enhance the description about excluding ListCost and ContractedCost from purchases and related charges (e.g. Tax for the purchase) from aggregations related to savings calculations to avoid double counting
+  * Update the description to require purchases that cover future eligible charges to have a ContractedCost of 0$
+  * Update the description to require the covered rows to have a ContractedCost of 0$
+* Based on discussions, we determined that it was useful at a row-level to have the ContractedCost specified but call out the need to exclude the purchase or usage rows to avoid double counting when aggregated. For accrual basis analysis, the purchase might be excluded. For cash-basis analysis, the usage charges may be excluded.
+
 ### GCP column mappings
 
 * **cost** - The cost of the usage before any credits, to a precision of up to six decimal places. To get the total cost including credits, any credits.amount should be added to cost.
