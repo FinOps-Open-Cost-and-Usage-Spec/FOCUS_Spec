@@ -14,7 +14,7 @@ Thanks to the following FOCUS Maintainers for their leadership of the FOCUS spec
 * Larry Advey (Twilio)
 * Michael Flanakin (Microsoft)
 * Mike Fuller (FinOps Foundation)
-* Riley Jenkins (DOMO)
+* Riley Jenkins (Domo)
 * Roy Wolman (Amazon Web Services)
 * Rupa Patel (Google)
 * Sarah McMullin (Google)
