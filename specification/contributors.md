@@ -27,6 +27,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS speci
 * Anand Tripathi (Amazon Web Services)
 * Anderson Oliveira (Farfetch.com)
 * Andrew Qu (Everest)
+* Anne Johnston (Capital One)
 * Arun Ramakrishnan (Oracle)
 * Ben Shy (Microsoft)
 * Ben Swoboda (NetApp)
