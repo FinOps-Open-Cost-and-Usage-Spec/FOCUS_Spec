@@ -38,7 +38,6 @@ Thanks to the following FOCUS members for their contributions to the FOCUS speci
 * Colin Jack (Snow Software)
 * Deeja Cruz (Datadog)
 * Eleni Rundle (Google)
-* Francesco Sodano (Microsoft)
 * Graham Murphy (Australian Retirement Trust)
 * Harish Kumar Munagapat (Kyndryl)
 * Hrishikesh Sardar (Kyndryl)
