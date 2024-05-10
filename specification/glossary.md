@@ -110,7 +110,7 @@ An individual who performs FinOps within an organization to maximize the busines
 
 <a name="glossary:potato"><b>Potato</b></a>
 
-A long and often painful conversation had by the FOCUS contributors. Sometimes the name of a thing that we could not yet name. No potato was harmed during the production of this specification. We thank potato for its contribution in the creation of this specification.
+A long and often painful conversation had by the FOCUS contributors. Sometimes the name of a thing that we could not yet name. No starchy root vegetables were harmed during the production of this specification. We thank potato for its contribution in the creation of this specification.
 
 <a name="glossary:provider"><b>Provider</b></a>
 
