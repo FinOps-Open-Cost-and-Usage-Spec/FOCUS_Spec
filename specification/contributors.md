@@ -79,7 +79,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS speci
 
 ## Steering Committee Members
 
-Thanks to the following FOCUS Steering Committee Members for their contributions to the FOCUS specification.
+Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS specification.
 
 * Anne Johnston (Capital One)
 * Michael Flanakin (Microsoft)
