@@ -13,7 +13,7 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 * Larry Advey (Twilio)
 * Michael Flanakin (Microsoft)
 * Mike Fuller (FinOps Foundation)
-* Riley Jenkins (DOMO)
+* Riley Jenkins (Domo)
 * Rupa Patel (Google)
 * Udam Dewaraja (FinOps Foundation)
 
