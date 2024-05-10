@@ -1,6 +1,6 @@
 # Charge Class
 
-Charge Class indicates whether the row represents a correction to one or more [*charges*](#glossary:charge) invoiced in a previous billing period. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
+Charge Class indicates whether the row represents a correction to one or more [*charges*](#glossary:charge) invoiced in a previous billing period. Charge Class is commonly used to differentiate corrections from regularly incurred charges.
 
 The ChargeClass column MUST be present in the billing data. This column MUST be of type String and MUST be "Correction" when the row represents a correction to one or more charges invoiced in a previous billing period. ChargeClass MUST be null when it is not a correction or when it is a correction within the current billing period.
 
