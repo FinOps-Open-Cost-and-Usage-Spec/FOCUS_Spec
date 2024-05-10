@@ -15,7 +15,6 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 * Mike Fuller (FinOps Foundation)
 * Riley Jenkins (DOMO)
 * Rupa Patel (Google)
-* Tim O'Brien (Walmart)
 * Udam Dewaraja (FinOps Foundation)
 
 ### Contributors
