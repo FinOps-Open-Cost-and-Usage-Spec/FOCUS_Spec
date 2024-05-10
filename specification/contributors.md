@@ -68,7 +68,6 @@ Thanks to the following FOCUS members for their contributions to the FOCUS speci
 * Sireesha Oram (Kyndryl)
 * Sonal Garg (Kyndryl)
 * Sumaira Nazir (Platform.sh)
-* Sureshkrishna Gonugunta (Box)
 * Tatiana Dubovchenko (Flexera)
 * Tim O'Brien (Walmart)
 * Trey Morgan (Microsoft)
