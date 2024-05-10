@@ -48,19 +48,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Specified that in the case of a purchase charge paid to cover future eligible charges, the Effective Cost is set to 0.
 - `ListUnitPrice` column updates:
   - Column is conditional and only required when the provider publishes a price list that excludes discounts.
-  - Must not be null when `ChargeClass` is "Regular" and `ChargeCategory` is "Usage" or "Purchase".
+  - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
   - Must be null when `ChargeCategory` is "Tax".
 - `PricingCategory` column updates:
   - Column is conditional and only required when the provider supports more than one pricing category value.
   - Changed "On-Demand" to "Standard".
   - Changed "Commitment-Based" to "Committed".
-  - Must not be null when `ChargeClass` is "Regular" and `ChargeCategory` is "Usage" or "Purchase".
+  - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
   - Must be null when `ChargeCategory` is "Tax".
 - `PricingQuantity`
-  - Must not be null when `ChargeClass` is "Regular" and `ChargeCategory` is "Usage" or "Purchase".
+  - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
   - Must be null when `ChargeCategory` is "Tax".
 - `PricingUnit`
-  - Must not be null when `ChargeClass` is "Regular" and `ChargeCategory` is "Usage" or "Purchase".
+  - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
   - Must be null when `ChargeCategory` is "Tax".
 - `ResourceId` column updates:
   - Column is conditional and only required when the provider supports billing based on provisioned resource instances.
@@ -70,11 +70,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Column is conditional and only required when the provider supports billing based on provisioned resource instances and supports multiple "types" of resources.
 - `SkuId` column updates:
   - Column is conditional and only required when the provider publishes a SKU list.
-  - Must not be null when `ChargeClass` is "Regular" and `ChargeCategory` is "Usage" or "Purchase".
+  - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
   - Must be null when `ChargeCategory` is "Tax".
 - `SkuPriceId` column updates:
   - Column is conditional and only required when the provider publishes a SKU price list.
-  - Must not be null when `ChargeClass` is "Regular" and `ChargeCategory` is "Usage" or "Purchase".
+  - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
   - Must be null when `ChargeCategory` is "Tax".
 - `SubAccountId` column updates:
   - Column is conditional and only required when the provider supports a sub account construct.
