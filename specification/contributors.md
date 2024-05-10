@@ -2,7 +2,7 @@
 
 ### Maintainers
 
-Thanks to the following FOCUS Maintainers for their leadership of the FOCUS specification.
+Thanks to the following FOCUS Maintainers for their leadership and contributions to the FOCUS specification.
 
 * Christopher Harris (Datadog)
 * Dennis Park-Rodriguez (Amazon Web Services)
