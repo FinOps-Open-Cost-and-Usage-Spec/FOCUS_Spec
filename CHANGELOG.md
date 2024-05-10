@@ -35,8 +35,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Column is conditional and only required when the provider supports commitment discounts.
 - `CommitmentDiscountType` column updates:
   - Column is conditional and only required when the provider supports commitment discounts.
+- `ConsumedQuantity` column updates:
+  - Column renamed from UsageQuantity. It is now limited to ChargeType "Usage" rows.
+  - Column is conditional and only required when the provider supports the measurement of usage.
+  - Column must not be null when `ChargeCategory` is "Usage" and `ChargeClass` is not "Correction".
+- `ConsumedUnit` column updates:
+  - Column renamed from UsageUnit. It is now limited to ChargeType "Usage" rows.
+  - Column is conditional and only required when the provider supports the measurement of usage.
+  - Column must not be null when `ChargeCategory` is "Usage" and `ChargeClass` is not "Correction".
 - `EffectiveCost` column updates:
   - Clarified that effective cost does not mix or "blend" costs across multiple charges.
+  - Specified that in the case of a purchase charge paid to cover future eligible charges, the Effective Cost is set to 0.
 - `ListUnitPrice` column updates:
   - Column is conditional and only required when the provider publishes a price list that excludes discounts.
   - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
@@ -74,14 +83,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `Tags` column updates:
   - Column is conditional and only required when the provider supports setting user- or provider-defined tags.
   - Tag keys that cannot have a value must use a boolean `true` as the tag value.
-- `UsageQuantity` column updates:
-  - Column is conditional and only required when the provider supports the measurement of usage.
-  - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
-  - Must be null when `ChargeCategory` is "Tax".
-- `UsageUnit` column updates:
-  - Column is conditional and only required when the provider supports the measurement of usage.
-  - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
-  - Must be null when `ChargeCategory` is "Tax".
 
 **Fixed:**
 

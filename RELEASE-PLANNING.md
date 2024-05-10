@@ -22,22 +22,22 @@ This estimated time line was approved by the Members working group on the Feb 29
             <td>Incoming issues will be prioritized by maintainers. Only <a href="https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/labels" target="_blank">P0 and some P1</a> issues will get added to the v1.0 milestone. Prioritization will take voting and comments in issues into consideration</td>
         </tr>
         <tr>
-            <td>Apr 25 - May 02</td>
+            <td>Apr 25 - May 09</td>
             <td>Final Consistency Review</td>
             <td>Freeze working-draft. </br> Final review, only expecting editorial comments.</td>
         </tr>
         <tr>
-            <td>May 2 - May 31</td>
+            <td>May 13 - June 11</td>
             <td>IPR Review</td>
             <td>Members may exclude any Essential Claims from their licensing commitments during this period.</td>
         </tr>
         <tr>
-            <td>June 6</td>
+            <td>June 13</td>
             <td>Release Candidate Approve by the WG Members</td>
             <td></td>
         </tr>
         <tr>
-            <td>Jun 6</td>
+            <td>Jun 19</td>
             <td>Steering Committee Ratifies the Release</td>
             <td></td>
         </tr>
