@@ -92,8 +92,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - `ChargeSubcategory` column - See `ChargeCategory` and `ChargeClass` columns
 - `Region` column - See `RegionId` and `RegionName` columns
-
-[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0-preview-cr...working_draft)
+- `UsageQuantity` column
+- `UsageUnit` column
+[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0-preview-cr...v1.0)
 
 <br>
 
