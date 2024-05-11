@@ -198,6 +198,8 @@ This table maps the evolution of the billing data, showcasing column introductio
 | CommitmentDiscountName       | 1.0-preview             |                   |
 | CommitmentDiscountStatus     | 1.0                     |                   |
 | CommitmentDiscountType       | 1.0-preview             |                   |
+| ConsumedQuantity             | 1.0                     |                   |
+| ConsumedUnit                 | 1.0                     |                   |
 | ContractedCost               | 1.0                     |                   |
 | ContractedUnitPrice          | 1.0                     |                   |
 | EffectiveCost                | 0.5                     |                   |    
@@ -222,5 +224,5 @@ This table maps the evolution of the billing data, showcasing column introductio
 | SubAccountId                 | 0.5                     |                   |
 | SubAccountName               | 0.5                     |                   |
 | Tags                         | 1.0-preview             | 1.0               |
-| UsageQuantity                | 1.0-preview             |                   |
-| UsageUnit                    | 1.0-preview             |                   |
+| UsageQuantity                | 1.0-preview             | Removed in 1.0    |
+| UsageUnit                    | 1.0-preview             | Removed in 1.0    |
