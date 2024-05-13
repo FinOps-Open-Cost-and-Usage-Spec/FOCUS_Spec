@@ -38,7 +38,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:chargeperiod"><b>Charge Period</b></a>
 
-The time window in which a charge was incurred, inclusive of the start date and exclusive of the end date. A charge can start and/or end at any time within a charge period window. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily).
+The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the duration of eligibility.
 
 <a name="glossary:commitment"><b>Commitment</b></a>
 
@@ -107,6 +107,10 @@ A term that describes a service that is available and provided immediately or as
 <a name="glossary:practitioner"><b>Practitioner</b></a>
 
 An individual who performs FinOps within an organization to maximize the business value of using cloud and cloud-like services.
+
+<a name="glossary:potato"><b>Potato</b></a>
+
+A long and often painful conversation had by the FOCUS contributors. Sometimes the name of a thing that we could not yet name. No starchy root vegetables were harmed during the production of this specification. We thank potato for its contribution in the creation of this specification.
 
 <a name="glossary:provider"><b>Provider</b></a>
 

@@ -1,8 +1,8 @@
 # Charge Class
 
-A Charge Class indicates whether the row represents a regular charge or a correction to one or more previous charges. Charge Class is commonly used to differentiate refunds from regularly incurred charges.
+Charge Class indicates whether the row represents a correction to one or more [*charges*](#glossary:charge) invoiced in a previous billing period. Charge Class is commonly used to differentiate corrections from regularly incurred charges.
 
-The ChargeClass column MUST be present and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
+The ChargeClass column MUST be present in the billing data. This column MUST be of type String and MUST be "Correction" when the row represents a correction to one or more charges invoiced in a previous billing period. ChargeClass MUST be null when it is not a correction or when it is a correction within the current billing period.
 
 ## Column ID
 
@@ -14,7 +14,7 @@ Charge Class
 
 ## Description
 
-Indicates whether the row represents a regular charge or a correction to one or more previous charges, its primary use is for differentiating refunds from normal usage.
+Indicates whether the row represents a correction to one or more *charges* invoiced in a previous billing period.
 
 ## Content Constraints
 
@@ -22,7 +22,7 @@ Indicates whether the row represents a regular charge or a correction to one or 
 | :-------------- | :------------- |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
-| Allows nulls    | False          |
+| Allows nulls    | True           |
 | Data type       | String         |
 | Value format    | Allowed values |
 
@@ -30,9 +30,8 @@ Allowed values:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Standard    | Standard charges for services used or purchased. |
-| Correction  | Modification to one or more previous charges, like refunds and credit modifications. |
+| Correction | Correction to one or more charges invoiced in previous billing periods (e.g., refunds and credit modifications). |
 
 ## Introduced (version)
 
-0.5
+1.0
