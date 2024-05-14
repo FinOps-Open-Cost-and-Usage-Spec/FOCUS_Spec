@@ -14,7 +14,7 @@ All rows defined in FOCUS MUST follow the discount handling requirements listed 
 
 DiscountHandling
 
-## Attribute name
+## Attribute Name
 
 Discount Handling
 
@@ -29,16 +29,16 @@ Indicates how to include and apply discounts to usage charges or rows.
   * Multiple discounts MAY apply to a row, but they MUST apply to the entire charge covered by that row.
   * If a discount only applies to a portion of a charge, then the discounted portion of the charge MUST be split into a separate row.
   * Each discount MUST be identifiable using existing FOCUS columns.
-    * Rows with a commitment-based discount applied to it MUST include a CommitmentDiscountId.
+    * Rows with a commitment-based discount applied to them MUST include a CommitmentDiscountId.
     * If a provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.
-* ChargeSubCategory MUST NOT be null for rows where ChargeType is "Usage" and the row received reduced rates from a discount.
 * Purchased discounts (e.g., commitment-based discounts) MUST be amortized.
   * The BilledCost MUST be 0 for any row where the commitment covers the entire cost for the charge period.
   * The EffectiveCost MUST include the portion of the amortized purchase cost that applies to this row.
-  * ChargeSubcategory MUST be "Used Commitment" for rows that received a reduced price from that commitment.
-  * If a commitment is not fully utilized, the provider MUST include a row that represents the unused portion of the commitment for that charge period. ChargeSubcategory MUST be "Unused Commitment".
-  * The sum of the EffectiveCost for all "Used Commitment" and "Unused Commitment" rows for each CommitmentDiscountId over the entire duration of the commitment MUST be the same as the total BilledCost of the commitment-based discount.
-* Credits that are applied after the fact MUST use a ChargeType of "Adjustment" and ChargeSubcategory of "Credit".
+  * The sum of the EffectiveCost for all rows where CommitmentDiscountStatus is "Used" or "Unused" for each CommitmentDiscountId over the entire duration of the commitment MUST be the same as the total BilledCost of the commitment-based discount.
+  * The CommitmentDiscountId and ResourceId MUST be set to the ID assigned to the commitment-based discount. ChargeCategory MUST be set to "Purchase" on rows that represent a purchase of a commitment-based discount.
+  * CommitmentDiscountStatus MUST be "Used" for ChargeCategory "Usage" rows that received a reduced price from a commitment. CommitmentDiscountId MUST be set to the ID assigned to the discount. ResourceId MUST be set to the ID of the resource that received the discount.
+  * If a commitment is not fully utilized, the provider MUST include a row that represents the unused portion of the commitment for that charge period. These rows MUST be represented with CommitmentDiscountStatus set to "Unused" and ChargeCategory set to "Usage". Such rows MUST have their CommitmentDiscountId and ResourceId set to the ID assigned to the commitment-based discount.
+* Credits that are applied after the fact MUST use a ChargeCategory of "Credit".
 
 ## Exceptions
 
@@ -46,4 +46,4 @@ None
 
 ## Introduced (version)
 
-1.0
+1.0-preview

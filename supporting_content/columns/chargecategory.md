@@ -8,7 +8,7 @@ Current column mappings found in available data sets:
 | --------- | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | AWS       | CUR                     | `bill/BillType` (Anniversary, Purchase, Refund)<br>`lineItem/LineItemType` (Usage, Tax, BundledDiscount, Credit, Discount, DiscountedUsage, Fee, Refund, RIFee, SavingsPlanUpfrontFee, SavingsPlanRecurringFee, SavingsPlanCoveredUsage, SavingsPlanNegation) |
 | GCP       | BigQuery Billing Export | `Cost type` (regular, tax, adjustment, or rounding error)                                                                                                                                                                                                     |
-| Microsoft | Cost details            | `ChargeCategory` (Purchase, Usage, Refund, Adjustment, Tax?)<br><br>Related:<br>`PricingModel` (OnDemand, Reservation, SavingsPlan, Spot)<br>`Frequency` (OneTime, Recurring)                                                                                     |
+| Microsoft | Cost details            | `ChargeType` (Purchase, Usage, Refund, Adjustment, Tax?)<br><br>Related:<br>`PricingModel` (OnDemand, Reservation, SavingsPlan, Spot)<br>`Frequency` (OneTime, Recurring)                                                                                     |
 
 ## Example usage scenarios
 
@@ -37,6 +37,84 @@ Current values observed in billing data for various scenarios:
 | Microsoft | Adjustment                         | Adjustment | Rounding errors.                                                                                                                                                                                                                                                                                                                                           |
 | Microsoft | Tax                                | Tax        | US sales tax or VAT.                                                                                                                                                                                                                                                                                                                                       |
 
+Current scenarios considered include:
+
+### Option 1
+
+| Value      | Description                          |
+| :--------- | :------------------------------------|
+| Refund     | Any adjustments that are applied after the original usage or purchase row. Adjustments may be related to multiple charges. (NOTE: Tax excluded)   |
+| Credit     | Credits assoicated with promotional usage or incentives   |
+| Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
+| Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
+| Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
+
+ISSUE: Tax cannot be classified correctly, assuming refunds and purchases have a tax implication then we would need to look for negative tax values matching the refund line in order ot acertain the total value of the refund.
+
+### Option 2:
+
+| Value      | Description                          |
+| :--------- | :------------------------------------|
+| Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
+| Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
+| Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
+
+
+New Column: Adjustment Category
+
+| Value      | Description                          |
+| :--------- | :------------------------------------|
+| NULL       | Default value for all incomming charges.             |
+| Refund     | Refunded related to usage or purchase specific activities (expects a matching 'tax' transaction) |
+| Credit     | Promotional / negotiated / incentive credits provided at providers discression (does NOT expect a matching 'tax' transaction)       |
+
+Permutations:
+
+| Charge Category     | Adjustment Category         | Example usage                 |
+| :--------- | :------------------------------------|:------------------------------|
+|Usage       | NULL                                 | general usage                                                                                |
+|Usage       | Refund                               | service specific refunds /..e.g miss billing                                                 |
+|Usage       | Credit                               | service specific incentives                                                                  |
+|Purchase    | NULL                                 | general marketplace or 3rd party purchase                                                    |
+|Purchase    | Refund                               | bulk / general refunds                                                                       |
+|Purchase    | Credit                               | Non-service / usage specific credits                                                         |
+|Tax         | NULL                                 | general tax                                                                                  |
+|Tax         | Refund                               | tax refund for usage or purchase refunded                                                    |
+|Tax         | Credit                               | NOT APPLICABLE                                                                               |
+
+### Option 3:
+
+| Value      | Description                          |
+| :--------- | :------------------------------------|
+| Credit     | Credits assoicated with promotional usage or incentives   |
+| Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
+| Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
+| Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
+
+New Column: Adjustment Category
+
+| Value      | Description                          |
+| :--------- | :------------------------------------|
+| NULL       | Default value for all incomming charges.             |
+| Refund     | Refunded related to usage or purchase specific activities (expects a matching 'tax' transaction) |
+| Bulk Refund     | General refund (expects a matching 'tax' transaction) |
+| Rounding Error     | Small corrections - Applicable to current billing period only |
+| Other    | Catch all       |
+
+Permutations:
+
+| Charge Category     | Adjustment Category         | Example usage                 |
+| :--------- | :------------------------------------|:------------------------------|
+|Usage       | NULL                                 | general usage                                                                                |
+|Usage       | Refund                               | service specific refunds /..e.g miss billing                                                 |
+|Purchase    | NULL                                 | general marketplace or 3rd party purchase                                                    |
+|Purchase    | Refund                               | specific / 3rd party refund                                                                  |
+|Tax         | NULL                                 | general tax                                                                                  |
+|Tax         | Refund                               | tax refund for usage or purchase refunded                                                    |
+|Credit      | NULL                                 | service specific incentives                                                                  |
+|Credit      | Other                                | vendor specific / non usage related incentives                                               |
+
+
 ## Discussion / Scratch space
 
 - What are the different types of spend that we want to group?
@@ -55,6 +133,11 @@ Current values observed in billing data for various scenarios:
 - Is it Recurring or not? (Attribute about the Purchase?)
 - What Charge Category values can BE recurring?
 - What Charge Category values for "Free Tier" with usage limits and "Free Trial" offers?
+- What adjustment categories do we need to group?
+- Do we need to normalize adjustment categories?
+- Refunds - $s coming back after the original charge
+- Credits are typically based on agreements for migration of workloads, or promotional items negotiated with the provider
+- Balance transfers - how do you show what a balance transfer is if in the unliely event you close an account with a positive value and open a new account
 
 ### Example mappings for normalized values
 
@@ -66,12 +149,12 @@ Current values observed in billing data for various scenarios:
 
 ### Examples of how Charge Type relates to Pricing Category / Charge Frequency columns
 
-| Scenario| ChargeCategory | ChargeSubcategory | PricingCategory  | Charge Frequency |
-|-|-|-|-|-|
-| Upfront discount purchase | Purchase| NULL  | On-Demand  | One-time |
-| Partial Upfront discount monthly fee | Purchase    | NULL  | On-Demand  | Recurring  |
-| Usage covered by upfront portion of partial upfront discount | Usage   | Used Commitment   | Commitment-based | Usage-based  |
-| Unused commitment of partial upfront discount    | Usage   | Unused Commitment | Commitment-based | Usage-based      |
-| Usage not covered by discount | Usage | On-Demand  | On-Demand   | Usage-based|
-| Refund | Adjustment   | Refund | NULL | One-time  |
-| Usage invoice tax charge   | Tax   |  NULL |  NULL | Recurring        |
+| Scenario                                                     | ChargeCategory | ChargeSubcategory | PricingCategory | ChargeFrequency | CommitmentDisocuntUsage |
+| ------------------------------------------------------------ | -------------- | ----------------- | --------------- | --------------- | ----------------------- |
+| Upfront discount purchase                                    | Purchase       | NULL              | Standard        | One-time        | NULL                    |
+| Partial Upfront discount monthly fee                         | Purchase       | NULL              | Standard        | Recurring       | NULL                    |
+| Usage covered by upfront portion of partial upfront discount | Usage          | NULL              | Committed       | Usage-based     | Unused                  |
+| Unused commitment of partial upfront discount                | Usage          | NULL              | Committed       | Usage-based     | Used                    |
+| Usage not covered by discount                                | Usage          | On-Demand         | Standard        | Usage-based     | NULL                    |
+| Refund                                                       | Adjustment     | Refund            | NULL            | One-time        | NULL                    |
+| Usage invoice tax charge                                     | Tax            | NULL              | NULL            | Recurring       | NULL                    |

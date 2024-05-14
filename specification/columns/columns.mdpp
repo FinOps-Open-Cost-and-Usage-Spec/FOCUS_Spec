@@ -10,15 +10,20 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "billingperiodend.md",1
 !INCLUDE "billingperiodstart.md",1
 !INCLUDE "chargecategory.md",1
+!INCLUDE "chargeclass.md",1
 !INCLUDE "chargedescription.md",1
 !INCLUDE "chargefrequency.md",1
 !INCLUDE "chargeperiodend.md",1
 !INCLUDE "chargeperiodstart.md",1
-!INCLUDE "chargesubcategory.md",1
 !INCLUDE "commitmentdiscountcategory.md",1
 !INCLUDE "commitmentdiscountid.md",1
 !INCLUDE "commitmentdiscountname.md",1
 !INCLUDE "commitmentdiscounttype.md",1
+!INCLUDE "commitmentdiscountstatus.md",1
+!INCLUDE "consumedquantity.md",1
+!INCLUDE "consumedunit.md",1
+!INCLUDE "contractedcost.md",1
+!INCLUDE "contractedunitprice.md",1
 !INCLUDE "effectivecost.md",1
 !INCLUDE "invoiceissuer.md",1
 !INCLUDE "listcost.md",1
@@ -28,7 +33,8 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "pricingunit.md",1
 !INCLUDE "provider.md",1
 !INCLUDE "publisher.md",1
-!INCLUDE "region.md",1
+!INCLUDE "regionid.md",1
+!INCLUDE "regionname.md",1
 !INCLUDE "resourceid.md",1
 !INCLUDE "resourcename.md",1
 !INCLUDE "resourcetype.md",1
@@ -39,7 +45,5 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "subaccountid.md",1
 !INCLUDE "subaccountname.md",1
 !INCLUDE "tags.md",1
-!INCLUDE "usagequantity.md",1
-!INCLUDE "usageunit.md",1
 
 [FODOFC]: https://www.finops.org/framework/capabilities/

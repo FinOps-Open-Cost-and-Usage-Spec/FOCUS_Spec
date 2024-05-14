@@ -1,19 +1,21 @@
 # List Cost
 
-List Cost represents the cost calculated by multiplying [List Unit Price](#listunitprice) and the corresponding [Pricing Quantity](#pricingquantity). List Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on various rate optimization activities, by comparing it with [Effective Cost](#effectivecost).
+List Cost represents the cost calculated by multiplying the [*list unit price*](#glossary:list-unit-price) and the corresponding [Pricing Quantity](#pricingquantity). List Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on various rate optimization activities, by comparing it with [Contracted Cost](#contractedcost), [Billed Cost](#billedcost) and [Effective Cost](#effectivecost).
 
-The ListCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency. When a ListUnitPrice is not null, multiplying the ListUnitPrice by PricingQuantity MUST produce the ListCost.
+**Important:** When aggregating List Cost for savings calculations, it's important to exclude either one-time or recurring charges ([Charge Category](#chargecategory) "Purchase") that are paid to cover future eligible charges (e.g., [Commitment-Based Discount](#glossary:commitment-based-discount)) or the covered charges themselves. This exclusion helps prevent double counting of these charges in the aggregation. Which set of charges to exclude depends on whether cost are aggregated on a billed basis (exclude covered charges) or accrual basis (exclude Purchases for future charges). For instance, charges categorized as [Charge Category](#chargecategory) "Purchase" and their related [Charge Category](#chargecategory) "Tax" charges for a Commitment-Based Discount might be excluded from an accrual basis cost aggregation of List Cost. This is because the "Usage" and "Tax" charge records provided during the term of the commitment discount already specify the List Cost. Purchase charges that cover future eligible charges can be identified by filtering for [Charge Category](#chargecategory) "Purchase" records with a [Billed Cost](#billedcost) greater than 0 and an [Effective Cost](#effectivecost) equal to 0.
 
-In cases where the ListUnitPrice is null, the following applies:
+The ListCost column MUST be present in the billing data and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. When [ListUnitPrice](#listunitprice) is present and not null, multiplying the ListUnitPrice by PricingQuantity MUST produce the ListCost, except in cases of [ChargeClass](#chargeclass) "Correction", which may address PricingQuantity or any cost discrepancies independently.
 
-* The ListCost MUST be calculated based on the ListCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is "Tax").
-* The ListCost MUST match the [BilledCost](#billedcost) if the charge is unrelated to other charges (e.g. [ChargeSubcategory](#chargesubcategory) is "Credit").
+In cases where the ListUnitPrice is present and is null, the following applies:
+
+* The ListCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ListCost of those related charges.
+* The ListCost of a charge unrelated to other charges (e.g., when the [ChargeCategory](#chargecategory) is "Credit") MUST match the [BilledCost](#billedcost).
 
 ## Column ID
 
 ListCost
 
-## Display name
+## Display Name
 
 List Cost
 
@@ -26,7 +28,7 @@ Cost calculated by multiplying List Unit Price and the corresponding Pricing Qua
 | Constraint      | Value                   |
 |:----------------|:------------------------|
 | Column type     | Metric                  |
-| Column required | True                    |
+| Feature level   | Mandatory               |
 | Allows nulls    | False                   |
 | Data type       | Decimal                 |
 | Value format    | [Numeric Format](#numericformat) |
@@ -34,4 +36,4 @@ Cost calculated by multiplying List Unit Price and the corresponding Pricing Qua
 
 ## Introduced (version)
 
-1.0
+1.0-preview

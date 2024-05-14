@@ -2,7 +2,7 @@
 
 <a name="glossary:adjustment"><b>Adjustment</b></a>
 
-A charge representing a modification to billing data to account for certain events or circumstances not previously captured, or captured incorrectly. Examples include: billing errors, service disruptions, or pricing changes.
+A charge representing a modification to billing data to account for certain events or circumstances not previously captured, or captured incorrectly. Examples include billing errors, service disruptions, or pricing changes.
 
 <a name="glossary:amortization"><b>Amortization</b></a>
 
@@ -10,7 +10,7 @@ The distribution of upfront costs over time to accurately reflect the consumptio
 
 <a name="glossary:availability-zone"><b>Availability Zone</b></a>
 
-A collection of geographically-separated locations containing a data center or cluster of data centers. Each availability zone (AZ) should have its own power, cooling, and networking, to provide redundancy and fault tolerance.
+A collection of geographically separated locations containing a data center or cluster of data centers. Each availability zone (AZ) should have its own power, cooling, and networking, to provide redundancy and fault tolerance.
 
 <a name="glossary:billed-cost"><b>Billed Cost</b></a>
 
@@ -30,15 +30,15 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 <a name="glossary:block-pricing"><b>Block Pricing</b></a>
 
- A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Usage Unit and Usage Quantity.
+ A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
 
 <a name="glossary:charge"><b>Charge</b></a>
 
-A row in a FOCUS compatible cost and usage dataset.
+A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:chargeperiod"><b>Charge Period</b></a>
 
-The time window in which a charge was incurred, inclusive of the start date and exclusive of the end date. A charge can start and/or end at any time within a charge period window. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily).
+The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the duration of eligibility.
 
 <a name="glossary:commitment"><b>Commitment</b></a>
 
@@ -58,7 +58,11 @@ A specification-defined categorical attribute that provides context or categoriz
 
 <a name="glossary:effective-cost"><b>Effective Cost</b></a>
 
-Cost inclusive of the impacts of all reduced rates and discounts, augmented with the amortization of relevant purchases (one-time or recurring) paid to cover future eligible charges.
+The amortized cost of the charge after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
+
+<a name="glossary:exclusivebound"><b>Exclusive Bound</b></a>
+
+A Date/Time Format value that is not contained within the ending bound of a time period.
 
 <a name="glossary:finalized-tag"><b>Finalized Tag</b></a>
 
@@ -66,7 +70,11 @@ A tag with one tag value chosen from a set of possible tag values after being pr
 
 <a name="glossary:finops-cost-and-usage-specification"><b>FinOps Cost and Usage Specification (FOCUS)</b></a>
 
-An open source specification that defines requirements for billing data.
+An open-source specification that defines requirements for billing data.
+
+<a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
+
+A Date/Time Format value that is contained within the beginning bound of a time period.
 
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
@@ -74,23 +82,35 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
+The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
+
+<a name="glossary:list-unit-price"><b>Contracted Unit Price</b></a>
+
+The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
+
+<a name="glossary:list-unit-price"><b>Contracted Unit Price</b></a>
+
+The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
 
 <a name="glossary:metric"><b>Metric</b></a>
 
-A FOCUS defined column that provides numeric values, allowing for aggregation operations such as arithmetic operations (sum, multiplication, averaging etc.) and statistical operations.
+A FOCUS-defined column that provides numeric values, allowing for aggregation operations such as arithmetic operations (sum, multiplication, averaging etc.) and statistical operations.
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
 A company or organization that provides outsourced management and support of a range of IT services, such as network infrastructure, cybersecurity, cloud computing, and more.
 
-<a name="glossary:on-demand"><b>On Demand</b></a>
+<a name="glossary:on-demand"><b>On-Demand</b></a>
 
-A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In Cloud Computing, virtual machines can be created and terminated as needed, i.e. on demand.
+A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e. on demand.
 
 <a name="glossary:practitioner"><b>Practitioner</b></a>
 
 An individual who performs FinOps within an organization to maximize the business value of using cloud and cloud-like services.
+
+<a name="glossary:potato"><b>Potato</b></a>
+
+A long and often painful conversation had by the FOCUS contributors. Sometimes the name of a thing that we could not yet name. No starchy root vegetables were harmed during the production of this specification. We thank potato for its contribution in the creation of this specification.
 
 <a name="glossary:provider"><b>Provider</b></a>
 
@@ -106,7 +126,7 @@ A unique component that incurs a charge.
 
 <a name="glossary:row"><b>Row</b></a>
 
-A row in a FOCUS compatible cost and usage dataset.
+A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:service"><b>Service</b></a>
 
@@ -118,7 +138,7 @@ A construct composed of the common properties of a product offering associated w
 
 <a name="glossary:sku-price"><b>SKU Price</b></a>
 
-The unit price used to calculate a charge that is associated to one SKU.  SKU Prices are usually referenced from provider's price list and unique to various providers.
+The unit price used to calculate a charge that is associated with one SKU.  SKU Prices are usually referenced from the provider's price list and are unique to various providers.
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 

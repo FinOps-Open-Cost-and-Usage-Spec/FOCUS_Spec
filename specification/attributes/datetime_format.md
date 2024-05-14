@@ -2,19 +2,19 @@
 
 Columns that provide date and time information conforming to specified rules and formatting requirements ensure clarity, accuracy, and ease of interpretation for both humans and systems.
 
-All columns capturing a date/time value, defined in the [FOCUS](#glossary:finops-cost-and-usage-specification) specification, MUST follow the formatting requirements listed below. Custom date/time-related columns SHOULD also follow the same formatting requirements.
+All columns capturing a date/time value, defined in the FOCUS specification, MUST follow the formatting requirements listed below. Custom date/time-related columns SHOULD also follow the same formatting requirements.
 
 ## Attribute ID
 
 DateTimeFormat
 
-## Attribute name
+## Attribute Name
 
 Date/Time Format
 
 ## Description
 
-Rules and formatting requirements for date/time related columns appearing in billing data.
+Rules and formatting requirements for date/time-related columns appearing in billing data.
 
 ## Requirements
 

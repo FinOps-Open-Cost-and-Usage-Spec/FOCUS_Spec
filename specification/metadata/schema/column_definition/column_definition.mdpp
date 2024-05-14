@@ -1,0 +1,11 @@
+# Column Definition
+
+The FOCUS metadata schema column definition provides a list of the columns present in the FOCUS dataset along with metadata about the columns.
+
+!INCLUDE "columnname.md",1
+!INCLUDE "datatype.md",1
+!INCLUDE "numericprecision.md",1
+!INCLUDE "numberscale.md",1
+!INCLUDE "providertagprefixes.md",1
+!INCLUDE "stringencoding.md",1
+!INCLUDE "stringmaxlength.md",1

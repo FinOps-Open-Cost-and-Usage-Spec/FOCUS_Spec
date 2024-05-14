@@ -1,14 +1,14 @@
 # Numeric Format
 
-Columns that provide numeric values conforming to specified rules and formatting requirements ensure clarity, accuracy, and ease of interpretation for humans and systems. The [FOCUS](#glossary:finops-cost-and-usage-specification) specification does not require a specific level of precision for numeric values. The level of precision required for a given column is determined by the provider and should be part of a data definition published by the provider.
+Columns that provide numeric values conforming to specified rules and formatting requirements ensure clarity, accuracy, and ease of interpretation for humans and systems. The FOCUS specification does not require a specific level of precision for numeric values. The level of precision required for a given column is determined by the provider and should be part of a data definition published by the provider.
 
-All columns capturing a numeric value, defined in the FOCUS specification, MUST follow the formatting requirements listed below. Provider-generated numeric value capturing columns SHOULD adopt the same format requirements over time.
+All columns capturing a numeric value, defined in the FOCUS specification, MUST follow the formatting requirements listed below. Custom numeric value capturing columns SHOULD adopt the same format requirements over time.
 
 ## Attribute ID
 
 NumericFormat
 
-## Attribute name
+## Attribute Name
 
 Numeric Format
 
@@ -19,8 +19,8 @@ Rules and formatting requirements for numeric columns appearing in billing data.
 ## Requirements
 
 * Columns with a Numeric value format MUST contain a single numeric value.
-* Numeric values MUST be expressed as an integer value, a decimal values, or a value expressed in scientific notation. Fractional notation MUST NOT be used.
-* Numeric values expressed using scientific notation MUST be expressed using E notation "mEn" with a real number m and an integer n indictating a value of "m x 10^n".   The sign of the exponent MUST only be expressed as part of the exponent value if n is negative.
+* Numeric values MUST be expressed as an integer value, a decimal value, or a value expressed in scientific notation. Fractional notation MUST NOT be used.
+* Numeric values expressed using scientific notation MUST be expressed using E notation "mEn" with a real number m and an integer n indicating a value of "m x 10^n".   The sign of the exponent MUST only be expressed as part of the exponent value if n is negative.
 * Numeric values MUST NOT be expressed with mathematical symbols, functions, or operators.
 * Numeric values MUST NOT contain qualifiers or additional characters (e.g., currency symbols, units of measure, etc.).
 * Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (".") if required to express a decimal value.
@@ -75,4 +75,4 @@ None
 
 ## Introduced (version)
 
-1.0
+1.0-preview
