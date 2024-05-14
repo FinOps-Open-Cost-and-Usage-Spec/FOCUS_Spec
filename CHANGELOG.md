@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## Unreleased
+## v1.0
+
+<sup>Announced June 20, 2024</sup>
 
 **Added:**
 
@@ -62,6 +64,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `PricingUnit`
   - Must not be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" or "Purchase".
   - Must be null when `ChargeCategory` is "Tax".
+- `RegionId` column updates:
+  - `Region` column was renamed to `RegionId` when `RegionName` column was introduced
 - `ResourceId` column updates:
   - Column is conditional and only required when the provider supports billing based on provisioned resource instances.
 - `ResourceName` column updates:
@@ -91,13 +95,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 **Removed:**
 
 - `ChargeSubcategory` column - See `ChargeCategory` and `ChargeClass` columns
-- `Region` column - See `RegionId` and `RegionName` columns
 
 [All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0-preview-cr...working_draft)
 
 <br>
 
 ## v1.0-preview
+
 <sup>Announced November 15, 2023</sup>
 
 **Added:**
@@ -177,8 +181,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 This table maps the evolution of the billing data, showcasing column introductions and updates from its initial version 0.5 to the comprehensive revisions in "1.0-preview", "1.0" and beyond.
 
-| **Column ID**                | **Revision Introduced** | **Latest Update** |
+| **Column ID**                | **Revision Introduced** | **Status**        |
 |------------------------------|-------------------------|-------------------|
+| AmortizedCost                | 0.5                     | Renamed to EffectiveCost in v1.0-preview |
 | AvailabilityZone             | 0.5                     |                   |
 | BilledCost                   | 0.5                     |                   |
 | BillingAccountId             | 0.5                     |                   |
@@ -186,31 +191,34 @@ This table maps the evolution of the billing data, showcasing column introductio
 | BillingCurrency              | 0.5                     |                   |
 | BillingPeriodEnd             | 0.5                     |                   |
 | BillingPeriodStart           | 0.5                     |                   |
-| ChargeCategory               | 0.5                     | 1.0               |
+| ChargeType                   | 0.5                     | Renamed to ChargeCategory in v1.0-preview |
+| ChargeCategory               | 1.0-preview             | Renamed from ChargeType in v1.0-preview |
 | ChargeClass                  | 1.0                     |                   |
 | ChargeDescription            | 1.0-preview             |                   |
 | ChargeFrequency              | 1.0-preview             |                   |
 | ChargePeriodEnd              | 0.5                     |                   |
 | ChargePeriodStart            | 0.5                     |                   |
-| ChargeSubcategory            | 1.0-preview             | Removed in 1.0    |    
+| ChargeSubcategory            | 1.0-preview             | Removed in v1.0   |
 | CommitmentDiscountCategory   | 1.0-preview             |                   |
 | CommitmentDiscountId         | 1.0-preview             |                   |
 | CommitmentDiscountName       | 1.0-preview             |                   |
 | CommitmentDiscountStatus     | 1.0                     |                   |
 | CommitmentDiscountType       | 1.0-preview             |                   |
+| ConsumedQuantity             | 1.0                     | Renamed from UsageQuantity in v1.0 |
+| ConsumedUnit                 | 1.0                     | Renamed from UsageUnit in v1.0 |
 | ContractedCost               | 1.0                     |                   |
 | ContractedUnitPrice          | 1.0                     |                   |
-| EffectiveCost                | 0.5                     |                   |    
-| InvoiceIssuerName            | 0.5                     |                   |    
+| EffectiveCost                | 1.0-preview             | Renamed from AmortizedCost in v1.0-preview |
+| InvoiceIssuerName            | 0.5                     |                   |
 | ListCost                     | 1.0-preview             |                   |
 | ListUnitPrice                | 1.0-preview             |                   |
-| PricingCategory              | 1.0-preview             | 1.0               |
+| PricingCategory              | 1.0-preview             |                   |
 | PricingQuantity              | 1.0-preview             |                   |
 | PricingUnit                  | 1.0-preview             |                   |
 | ProviderName                 | 0.5                     |                   |
 | PublisherName                | 0.5                     |                   |
-| Region                       | 0.5                     | Removed in 1.0    |
-| RegionId                     | 1.0                     |                   |
+| Region                       | 0.5                     | Renamed to RegionId in v1.0 |
+| RegionId                     | 1.0                     | Renamed from Region in v1.0 |
 | RegionName                   | 1.0                     |                   |
 | ResourceId                   | 0.5                     |                   |
 | ResourceName                 | 0.5                     |                   |
@@ -218,9 +226,9 @@ This table maps the evolution of the billing data, showcasing column introductio
 | ServiceCategory              | 0.5                     |                   |
 | ServiceName                  | 0.5                     |                   |
 | SkuId                        | 1.0-preview             |                   |
-| SkuPriceId                   | 1.0-preview             | 1.0               |
+| SkuPriceId                   | 1.0-preview             |                   |
 | SubAccountId                 | 0.5                     |                   |
 | SubAccountName               | 0.5                     |                   |
-| Tags                         | 1.0-preview             | 1.0               |
-| UsageQuantity                | 1.0-preview             |                   |
-| UsageUnit                    | 1.0-preview             |                   |
+| Tags                         | 1.0-preview             |                   |
+| UsageQuantity                | 1.0-preview             | Renamed to ConsumedQuantity in v1.0 |
+| UsageUnit                    | 1.0-preview             | Renamed to ConsumedUnit in v1.0 |
