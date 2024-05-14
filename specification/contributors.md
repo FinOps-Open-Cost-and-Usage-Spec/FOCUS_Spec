@@ -1,7 +1,27 @@
-## Contributors
+## Working Group
 
-Thanks to the following FOCUS members for their contributions to this specification.
+### Maintainers
 
+Thanks to the following FOCUS Maintainers for their leadership and contributions to the FOCUS specification.
+
+* Christopher Harris (Datadog)
+* Dennis Park-Rodriguez (Amazon Web Services)
+* Erik Peterson (CloudZero)
+* Irena Jurica (Neos)
+* Joaquin Prado (FinOps Foundation)
+* Karl Kraft (Walmart)
+* Larry Advey (Twilio)
+* Michael Flanakin (Microsoft)
+* Mike Fuller (FinOps Foundation)
+* Riley Jenkins (Domo)
+* Rupa Patel (Google)
+* Udam Dewaraja (FinOps Foundation)
+
+### Contributors
+
+Thanks to the following FOCUS members for their contributions to the FOCUS specification.
+
+* Adam Schwartz (Ernst & Young)
 * Alex Hullah (Goldman Sachs)
 * Amit Wadhwa (Google)
 * Anand Tripathi (Amazon Web Services)
@@ -15,47 +35,55 @@ Thanks to the following FOCUS members for their contributions to this specificat
 * Casey Doran (Apptio)
 * Chandra Devarajan (CloudTrakr)
 * Chew Esmero (Alphaus Inc.)
-* Christopher Harris (Datadog)
 * Colin Jack (Snow Software)
 * Deeja Cruz (Datadog)
 * Eleni Rundle (Google)
-* Erik Peterson (CloudZero)
+* George Parker (Salesforce)
 * Graham Murphy (Australian Retirement Trust)
-* Irena Jurica (Neos)
-* Jacky Liu (Google)
+* Harish Kumar Munagapat (Kyndryl)
+* Hrishikesh Sardar (Kyndryl)
+* Ilia Semenov (CloudThread)
+* Jacky Liu (Google Cloud)
+* Jacqui Wilson (Old Mutual South Africa)
 * Janine Pickard-Green (MagicOrange Group Limited)
 * Jason Kelly (Anglepoint Group Inc)
 * Joe Ferrero (DB Gurus Inc)
 * John Grubb (Platform.sh)
 * Joshua Kwan (Ternary)
-* Karl Kraft (Walmart)
-* Larry Advey (Twilio)
 * Letian Wang (Atlassian)
 * Luna Bernal (Twilio)
-* Marc Perreaut (amadeus)
+* Marc Perreaut (Amadeus)
 * Marcin Walkow (Nordcloud)
 * Mark Krawczeniuk (NetApp)
 * Matt Ray (Kubecost)
 * Michael Arkoosh (Vega)
-* Michael Flanakin (Microsoft)
-* Mike Fuller (FinOps Foundation)
 * Mike Polson (VMWare)
 * Nick Kotze (Surveil)
 * Nicolas Fonrose (Teevity)
 * Peter Marton (OpenMeter.io)
 * Ray Ding (Accenture)
 * Ricardo Triana (Accenture)
-* Riley Jenkins (Domo)
 * Rodney Joyce (CloudMonitor)
-* Rupa Patel (Google)
 * Sanjna Srivatsa (VMWare)
-* Sarah McMullin (Google)
 * Shawn Alpay (Envisor)
+* Sireesha Oram (Kyndryl)
+* Sonal Garg (Kyndryl)
 * Sumaira Nazir (Platform.sh)
 * Tatiana Dubovchenko (Flexera)
 * Tim O'Brien (Walmart)
 * Trey Morgan (Microsoft)
 * Trig Ghosh (Accenture)
-* Udam Dewaraja (FinOps Foundation)
 * Webb Brown (Kubecost)
 * Yuriy Prykhodko (Amazon Web Services)
+* Zach Erdman (Amazon Web Services)
+
+## Steering Committee Members
+
+Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS specification.
+
+* Anne Johnston (Capital One)
+* Michael Flanakin (Microsoft)
+* Mike Fuller (FinOps Foundation)
+* Roy Wolman (Amazon Web Services)
+* Sarah McMullin (Google)
+* Tim O'Brien (Walmart)
