@@ -1,8 +1,8 @@
 ## Version
 
-Publication version 1.0-Preview
+Publication version 1.0
 
-Copyright © 2023 - FinOps Open Cost and Usage Specification (FOCUS) a Series of the Joint Development Foundation Projects, LLC. Linux Foundation [trademark](https://www.linuxfoundation.org/legal/trademarks), and document use rules apply.
+Copyright © 2024 - FinOps Open Cost and Usage Specification (FOCUS) a Series of the Joint Development Foundation Projects, LLC. Linux Foundation [trademark](https://www.linuxfoundation.org/legal/trademarks), and document use rules apply.
 
 ## Status of This Document
 
