@@ -64,7 +64,7 @@ This table displays key milestones and dates related to the development of FOCUS
             <td>Two weeks Interim Consistency Review FOCUS Rel v1.1</td>
         </tr>
         <tr>
-            <td style="color:red;">19-Sep-24 to 03-Oct-24</td>
+            <td><strong>19-Sep-24 to 03-Oct-24</strong></td>
             <td>Start / End of the FOCUS Rel v1.1 Final Consistency Review</td>
             <td>Two weeks Final Consistency Review FOCUS Rel v1.1</td>
         </tr>
