@@ -54,6 +54,11 @@ This table displays key milestones and dates related to the development of FOCUS
             <td>17 weeks to develop FOCUS Rel v1.1</td>
         </tr>
         <tr>
+            <td>27-Jun-24</td>
+            <td>Approval FOCUS v1.1 Scope</td>
+            <td>Close the scope for FOCUS Release v1.1</td>
+        </tr>
+        <tr>
             <td>27-Jun-24 to 11-Jul-24</td>
             <td>Start / End Interim Consistency Review</td>
             <td>Two weeks Interim Consistency Review FOCUS Rel v1.1</td>
