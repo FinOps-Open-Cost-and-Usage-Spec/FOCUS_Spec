@@ -1,8 +1,102 @@
 ## Release Planning 
-This estimated time line was approved by the Members working group on the Feb 29 meeting.
+This section outlines the planned release schedule and key milestones for the FOCUS project. It includes the scope and high-level system requirements for each version, as well as detailed timelines for the development and review processes for each present and past releases. 
 
-<table border="1">
-    <caption>Estimated Timeline v1.0</caption>
+### FOCUS Releases Scope
+<table>
+    <tr>
+        <th>Version</th>
+        <th>Release By</th>
+        <th>Scope | High-Level System Requirements</th>
+    </tr>
+    <tr>
+        <td>v1.1</td>
+        <td>Nov 11, 2024</td>
+        <td>
+            REQ 1: Keyword value/brief description<br>
+            REQ 2: Keyword value/brief description<br>
+            REQ 3: Keyword value/brief description
+        </td>
+    </tr>
+    <tr>
+        <td>v1.2</td>
+        <td>Jun 20, 2025</td>
+        <td>
+            REQ 4: Keyword value/brief description<br>
+            REQ 5: Keyword value/brief description<br>
+            REQ 6: Keyword value/brief description
+        </td>
+    </tr>
+    <tr>
+        <td>v1.3</td>
+        <td>Nov 11, 2025</td>
+        <td>
+            REQ 7: Keyword value/brief description<br>
+            REQ 8: Keyword value/brief description<br>
+            REQ 9: Keyword value/brief description
+        </td>
+    </tr>
+</table>
+
+### Estimated Timeline for v1.1
+This table displays key milestones and dates related to the development of FOCUS Release v1.1.
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Milestone</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>16-May-24 to 19-Sep-24</td>
+            <td>Start / End of the Development FOCUS Rel v1.1</td>
+            <td>17 weeks to develop FOCUS Rel v1.1</td>
+        </tr>
+        <tr>
+            <td>27-Jun-24 to 11-Jul-24</td>
+            <td>Start / End Interim Consistency Review</td>
+            <td>Two weeks Interim Consistency Review FOCUS Rel v1.1</td>
+        </tr>
+        <tr>
+            <td>19-Sep-24 to 03-Oct-24</td>
+            <td>Start / End of the FOCUS Rel v1.1 Final Consistency Review</td>
+            <td>Two weeks Final Consistency Review FOCUS Rel v1.1</td>
+        </tr>
+        <tr>
+            <td>03-Oct-24 to 08-Oct-24</td>
+            <td>Preparing FOCUS Rel v1.1 baseline for IPR Review</td>
+            <td>Five days to get ready the baseline Specifications for IPR Review</td>
+        </tr>
+        <tr>
+            <td>08-Oct-24 to 07-Nov-24</td>
+            <td>Start / End of IPR Review v1.1</td>
+            <td>During the 30-day period, members may exclude essential claims from their licensing commitments.</td>
+        </tr>
+        <tr>
+            <td>07-Nov-24</td>
+            <td>WG Approve v1.1</td>
+            <td>FOCUS Release Candidate v1.1. Approved by FOCUS Members</td>
+        </tr>
+        <tr>
+            <td>07-Nov-24</td>
+            <td>SC Ratification v1.1</td>
+            <td>FOCUS Steering Committee Ratifies v1.1</td>
+        </tr>
+        <tr>
+            <td>11-Nov-24</td>
+            <td>FinOpsX Europe Announcement of v1.1</td>
+            <td>Announcement of FOCUS Release v1.1 during the FinOpsX Europe Keynote (Barcelona)</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+### Estimated Timeline for v1.0
+FOCUS Release V1.1 will be announced during the FinOpsX event in San Diego on June 20, 2024.
+<table>
     <thead>
         <tr>
             <th>Date</th>
