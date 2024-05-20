@@ -19,7 +19,7 @@ This section outlines the planned release schedule and key milestones for the FO
     </tr>
     <tr>
         <td>v1.2</td>
-        <td>Jun 20, 2025</td>
+        <td>Mid, 2025</td>
         <td>
             REQ 4: Keyword value/brief description<br>
             REQ 5: Keyword value/brief description<br>
@@ -28,7 +28,7 @@ This section outlines the planned release schedule and key milestones for the FO
     </tr>
     <tr>
         <td>v1.3</td>
-        <td>Nov 11, 2025</td>
+        <td>Late, 2025</td>
         <td>
             REQ 7: Keyword value/brief description<br>
             REQ 8: Keyword value/brief description<br>
