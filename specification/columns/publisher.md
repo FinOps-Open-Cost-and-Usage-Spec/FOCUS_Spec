@@ -5,7 +5,7 @@ A Publisher is an entity that produces the [*resources*](#glossary:resource) or 
 The Publisher column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values.
 
 See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider](#provider), Publisher and
-[Invoice Issuer](#invoiceissuer) values that can be used for various purchasing scenarios.
+[InvoiceIssuer](#invoiceissuer) values that can be used for various purchasing scenarios.
 
 ## Column ID
 
