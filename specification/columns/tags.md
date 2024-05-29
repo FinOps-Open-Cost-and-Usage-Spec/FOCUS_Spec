@@ -1,6 +1,6 @@
 # Tags
 
-The Tags column represents the set of tags assigned to [*tag sources*](#glossary:tag-source) that also account for potential provider-defined or user-defined tag evaluations. Tags are commonly used for scenarios like adding business context to billing data to identify and accurately allocate charges. Tags may also be referred to by providers using other terms such as labels.
+The Tags column represents the set of tags assigned to [*tag sources*](#glossary:tag-source) that also account for potential provider-defined or user-defined tag evaluations. Tags are commonly used for scenarios like adding business context to cost and usage data to identify and accurately allocate charges. Tags may also be referred to by providers using other terms such as labels.
 
 A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is selected from a set of possible tag values assigned to the tag key.  When supported by a provider, this can occur when a tag value is set by provider-defined or user-defined rules.
 
@@ -46,7 +46,7 @@ As an example, let's assume 1 [*sub account*](#glossary:sub-account) exists with
   * id: *my-vm*
   * user-defined tags: *team:web*
 
-The table below represents a finalized billing dataset with these *resources*.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
+The table below represents a finalized dataset with these *resources*.  It also shows the finalized state after all resource-oriented, tag inheritance rules are processed.
 
 | ResourceType    | ResourceId     | Tags                                        |
 | :---------------| :--------------| :-------------------------------------------|

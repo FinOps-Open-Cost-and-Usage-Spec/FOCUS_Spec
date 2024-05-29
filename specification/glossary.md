@@ -74,7 +74,7 @@ An open-source specification that defines requirements for billing data.
 
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
-A structured collection of cost and usage data that meets or exceeds the Basic compliance critiera of FOCUS.
+A structured collection of cost and usage data that meets or exceeds the Basic compliance criteria of FOCUS.
 
 <a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
 
