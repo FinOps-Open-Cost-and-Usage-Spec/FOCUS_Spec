@@ -20,7 +20,6 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "commitmentdiscountname.md",1
 !INCLUDE "commitmentdiscountstatus.md",1
 !INCLUDE "commitmentdiscounttype.md",1
-!INCLUDE "commitmentterm.md",1
 !INCLUDE "consumedquantity.md",1
 !INCLUDE "consumedunit.md",1
 !INCLUDE "contractedcost.md",1
@@ -43,6 +42,7 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "servicename.md",1
 !INCLUDE "skuid.md",1
 !INCLUDE "skupriceid.md",1
+!INCLUDE "skuterm.md",1
 !INCLUDE "subaccountid.md",1
 !INCLUDE "subaccountname.md",1
 !INCLUDE "tags.md",1
