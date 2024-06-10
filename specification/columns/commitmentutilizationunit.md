@@ -6,9 +6,9 @@ CommitmentUtilizationUnit MUST be present in the billing data when the provider 
 
 A CommitmentUtilizationUnit value MUST be applied to a [*row*](#glossary:row) when:
 
-* ChargeCategory is *Usage*.
-* ChargeSubCategory is *UsedCommitment* or *UnusedCommitment*.
-* ResourceId is not null.
+* ChargeCategory is either *Purchase* or *Recurring*.
+* PricingCategory is *Committed*.
+* CommitmentDiscountStatus is not null.
 * CommitmentDiscountId is not null.
 * CommitmentUtilizationTotal is not null.
 * CommitmentUtilizationUsed is not null.
