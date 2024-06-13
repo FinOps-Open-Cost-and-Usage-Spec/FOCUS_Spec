@@ -26,7 +26,7 @@ WHETHER BASED ON BREACH OF CONTRACT, TORT (INCLUDING NEGLIGENCE), OR
 OTHERWISE, AND WHETHER OR NOT THE OTHER MEMBER HAS BEEN ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 
-This document is governed by the Patent Policy Option 3: Open Web Foundation 1.0 Mode:
+This document is governed by the Patent Policy Option 4: W3C Mode:
 See [project charter](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf).
 
 <div style="page-break-after: always"></div>
