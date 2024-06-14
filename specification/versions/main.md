@@ -12,7 +12,7 @@ This is a published release of the FinOps Open Cost and Usage Specification.
 
 This document was produced by a group operating under the Joint Development Foundation Projects agreement. FOCUS maintains a public list of any patent disclosures made in connection with the deliverables of the group; [that page](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/ipr.md) also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains Essential Claim(s) must disclose the information.
 
-This document is governed by the Patent Policy Option 3: Open Web Foundation 1.0 Mode:
+This document is governed by the Patent Policy Option 4: W3C Mode:
 See [project charter](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf).
 
 <div style="page-break-after: always"></div>
