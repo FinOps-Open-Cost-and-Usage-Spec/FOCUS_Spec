@@ -6,7 +6,7 @@ The ConsumedUnit column MUST be present in the billing data when the provider su
 
 ## Column ID
 
-ConsumedeUnit
+ConsumedUnit
 
 ## Display Name
 
