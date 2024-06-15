@@ -48,6 +48,10 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 Also known as Commitment Discount, this is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The commitment may be based on quantities of resource units or monetary value, with various payment options and time frames.
 
+<a name="glossary:commitment-unit"><b>Commitment Unit</b></a>
+
+The amount of resource consumption or service spend allocated to a resource or service from a given commitment over a charge period.
+
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
 A company or organization that provides remote access to computing resources, infrastructure, or applications for a fee.
