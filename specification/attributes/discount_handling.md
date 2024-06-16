@@ -20,7 +20,7 @@ Discount Handling
 
 ## Description
 
-Indicates how to include and apply discounts to usage charges or rows.
+Indicates how to include and apply discounts to usage charges or rows in a FOCUS dataset.
 
 ## Requirements
 
