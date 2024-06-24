@@ -1,0 +1,45 @@
+name: Discussion Topic
+description: Initiate discussion on broad topics within the FOCUS community.
+title: "[DISCUSSION]: "
+labels: ["discussion topic"]
+assignees: ["mike-finopsorg,udam-f2"]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: Describe the discussion topic, the discussions that have already taken place, and where community feedback is needed. Provide specifics, especially if there are multiple possible options.
+      placeholder: Describe the topic and any prior discussions here.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Proposed Approach
+      description: Describe the approach that your group is proposing for the discussion topic.
+      placeholder: Outline your proposed approach here.
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: GitHub Issue or Reference
+      description: If the topic is related to a particular work item, reference the GitHub issue here. If it's a specification-wide topic, indicate that.
+      placeholder: e.g., Issue #123 or Specification-wide
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Context
+      description: Add any context that may help the community think through this and provide useful feedback.
+      placeholder: Provide additional context here.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Data Submission for Discussion
+      description: Provide relevant sample data or data extracts that support your discussion. Ensure data is anonymized and does not include sensitive or proprietary information.
+      placeholder: Attach sample data or data extracts here. Ensure compliance with data privacy guidelines.
+    validations:
+      required: true
