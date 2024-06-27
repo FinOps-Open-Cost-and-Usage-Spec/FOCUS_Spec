@@ -12,14 +12,14 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.1</td>
         <td>Nov 11, 2024</td>
         <td>
-            REQ 1: Keyword value/brief description<br>
+            REQ 1: Improve SKU Details<br>
             REQ 2: Keyword value/brief description<br>
             REQ 3: Keyword value/brief description
         </td>
     </tr>
     <tr>
         <td>v1.2</td>
-        <td>Jun 20, 2025</td>
+        <td>Mid, 2025</td>
         <td>
             REQ 4: Keyword value/brief description<br>
             REQ 5: Keyword value/brief description<br>
@@ -28,7 +28,7 @@ This section outlines the planned release schedule and key milestones for the FO
     </tr>
     <tr>
         <td>v1.3</td>
-        <td>Nov 11, 2025</td>
+        <td>Late, 2025</td>
         <td>
             REQ 7: Keyword value/brief description<br>
             REQ 8: Keyword value/brief description<br>
@@ -54,12 +54,12 @@ This table displays key milestones and dates related to the development of FOCUS
             <td>17 weeks to develop FOCUS Rel v1.1</td>
         </tr>
         <tr>
-            <td>27-Jun-24</td>
+            <td>18-Jul-24</td>
             <td>Approval FOCUS v1.1 Scope</td>
             <td>Close the scope for FOCUS Release v1.1</td>
         </tr>
         <tr>
-            <td>27-Jun-24 to 11-Jul-24</td>
+            <td>18-Jul-24 to 1-Aug-24</td>
             <td>Start / End Interim Consistency Review</td>
             <td>Two weeks Interim Consistency Review FOCUS Rel v1.1</td>
         </tr>
