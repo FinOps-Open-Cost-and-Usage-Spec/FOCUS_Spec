@@ -4,7 +4,6 @@ about: Spec change issue
 title: Spec Change title
 labels: spec change
 assignees: ''
-
 ---
 
 ### Type
