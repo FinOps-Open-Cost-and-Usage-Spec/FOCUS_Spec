@@ -42,4 +42,4 @@ body:
       description: Provide relevant sample data or data extracts that support your discussion. Ensure data is anonymized and does not include sensitive or proprietary information.
       placeholder: Attach sample data or data extracts here. Ensure compliance with data privacy guidelines.
     validations:
-      required: true
+      required: false
