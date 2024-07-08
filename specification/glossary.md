@@ -132,7 +132,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 An offering that can be purchased from a provider, and can include many types of usage or other charges; eg., a cloud database service may include compute, storage, and networking charges.
 
-<a name="glossary:sku"><b>SKU</b></a>
+<a name="glossary:sku"><b>Stock Keeping Unit (SKU)</b></a>
 
 A construct composed of the common properties of a product offering associated with one or many SKU Prices.
 
