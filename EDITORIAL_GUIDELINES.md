@@ -7,7 +7,7 @@ This document provides editorial style suggestions for the FOCUS v1.0 specificat
    - **Example**: **Billing Account ID**, **Resource Name**
 
 2. **Column IDs**
-   - **Style**: *Italic*, (_without blank space for compound names, and compound words capatilized_)
+   - **Style**: *Italic*, (_without blank space for compound names, and compound words capitalized_)
    - **Reasoning**: Italicizing the column IDs helps differentiate them from the display names and other text, making it clear when referring to specific IDs.
    - **Example**: *BillingAccountId*, *ResourceName*
 
