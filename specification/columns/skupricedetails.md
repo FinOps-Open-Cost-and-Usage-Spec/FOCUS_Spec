@@ -6,7 +6,7 @@ The **SKU Price Details** column represents a list of relevant properties shared
 The _SkuPriceDetails_ column adheres to the following requirements:
 
 * The properties (both key and value) contained in the _SkuPriceDetails_ column **MUST** be shared across all resources having the same _SkuPriceId_.
-* The _SkuPriceDetails_ column **MUST** be in [_Key-Value Format_](#key-valueformat).
+* The _SkuPriceDetails_ column **MUST** be in [_KeyValueFormat_](#key-valueformat).
 * The _SkuPriceDetails_ column **SHOULD NOT** contain properties which are not applicable to the corresponding _SkuPriceId_.
 * The _SkuPriceDetails_ column **SHOULD NOT** contain properties which are already captured in the [_SkuDetails_](#skudetails) column.
 * Where _SkuPriceDetails_ contains a property with a value which is a numerical, the value provided **MUST** represent the value for a [_ConsumedUnit_](#consumedunit) of 1.
