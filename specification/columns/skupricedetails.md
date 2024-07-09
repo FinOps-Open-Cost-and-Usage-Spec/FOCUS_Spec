@@ -5,13 +5,13 @@ The **SKU Price Details** column represents a list of relevant properties shared
 
 The _SkuPriceDetails_ column adheres to the following requirements:
 
-* The properties (both key and value) contained in the _SkuPriceDetails_ column MUST be shared across all resources having the same _SkuPriceId_.
-* The _SkuPriceDetails_ column MUST be in [_Key-Value Format_](#key-valueformat).
-* The _SkuPriceDetails_ column SHOULD NOT contain properties which are not applicable to the corresponding _SkuPriceId_.
-* The _SkuPriceDetails_ column SHOULD NOT contain properties which are already captured in the [_SkuDetails_](#skudetails) column.
-* Where _SkuPriceDetails_ contains a property with a value which is a numerical, the value provided MUST represent the value for a [_ConsumedUnit_](#consumedunit) of 1.
-* The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
-* Properties included in _SkuPriceDetails_ SHOULD be immutable once included for a _SkuPriceId_.
+* The properties (both key and value) contained in the _SkuPriceDetails_ column **MUST** be shared across all resources having the same _SkuPriceId_.
+* The _SkuPriceDetails_ column **MUST** be in [_Key-Value Format_](#key-valueformat).
+* The _SkuPriceDetails_ column **SHOULD NOT** contain properties which are not applicable to the corresponding _SkuPriceId_.
+* The _SkuPriceDetails_ column **SHOULD NOT** contain properties which are already captured in the [_SkuDetails_](#skudetails) column.
+* Where _SkuPriceDetails_ contains a property with a value which is a numerical, the value provided **MUST** represent the value for a [_ConsumedUnit_](#consumedunit) of 1.
+* The key for a property **SHOULD** remain consistent across comparable SKUs having that property and the values for this key **SHOULD** remain in a consistent format.
+* Properties included in _SkuPriceDetails_ **SHOULD** be immutable once included for a _SkuPriceId_.
 
 ## Examples
 
