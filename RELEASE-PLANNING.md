@@ -12,7 +12,7 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.1</td>
         <td>Nov 11, 2024</td>
         <td>
-            <strong>SKU and SKU Price Details<strong>
+            <strong>SKU and SKU Price Details</strong>
             <ul>
                 <li>Provide deeper visibility into SKU and SKU Price details (in addition to the current SKU and SKU Price IDs that are available in FOCUS) which enables many standard FinOps use cases from cost reporting to commitment optimization.
                 </li>
