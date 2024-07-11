@@ -9,7 +9,7 @@ The _SkuPriceDetails_ column adheres to the following requirements:
 * The _SkuPriceDetails_ column **MUST** be in [_KeyValueFormat_](#key-valueformat).
 * The _SkuPriceDetails_ column **SHOULD NOT** contain properties which are not applicable to the corresponding _SkuPriceId_.
 * The _SkuPriceDetails_ column **SHOULD NOT** contain properties which are already captured in the [_SkuDetails_](#skudetails) column.
-* Where _SkuPriceDetails_ contains a property with a value which is a numerical, the value provided **MUST** represent the value for a [_ConsumedUnit_](#consumedunit) of 1.
+* Where _SkuPriceDetails_ contains a property with a value which is a numerical, the value provided **MUST** represent the value for a [_ConsumedQuantity_](#consumedquantity) of 1.
 * The key for a property **SHOULD** remain consistent across comparable SKUs having that property and the values for this key **SHOULD** remain in a consistent format.
 * Properties included in _SkuPriceDetails_ **SHOULD** be immutable once included for a _SkuPriceId_.
 
