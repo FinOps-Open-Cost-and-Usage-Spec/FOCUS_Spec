@@ -12,9 +12,26 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.1</td>
         <td>Nov 11, 2024</td>
         <td>
-            REQ 1: Improve SKU Details<br>
-            REQ 2: Keyword value/brief description<br>
-            REQ 3: Keyword value/brief description
+            <strong>SKU and SKU Price Details<strong>
+            <ul>
+                <li>Provide deeper visibility into SKU and SKU Price details (in addition to the current SKU and SKU Price IDs that are available in FOCUS) which enables many standard FinOps use cases from cost reporting to commitment optimization.
+                </li>
+            </ul>
+            <strong>Deeper service classification</strong>
+            <ul>
+                <li>Move beyond the highest-level service categorization to a sub-categorization for services while adding flexibility for providers to share their native categorizations within FOCUS.
+                </li>
+            </ul>
+            <strong>Capacity Reservation</strong>
+            <ul>
+                <li>Ability to represent on-demand capacity reservations within FOCUS datasets.
+                </li>
+            </ul>
+            <strong>Improve metadata support</strong>
+            <ul>
+                <li>Strengthen the correlation between FOCUS-compatible datasets and the corresponding metadata to better support data analysis and ETL use cases
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
