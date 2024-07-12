@@ -52,6 +52,10 @@ Also known as Commitment Discount, this is a commitment for an amount of usage o
 
 A company or organization that provides remote access to computing resources, infrastructure, or applications for a fee.
 
+<a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
+
+The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
+
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
@@ -83,14 +87,6 @@ A category of compute resources that can be paused or terminated by the CSP with
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
 The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
-
-<a name="glossary:list-unit-price"><b>Contracted Unit Price</b></a>
-
-The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
-
-<a name="glossary:list-unit-price"><b>Contracted Unit Price</b></a>
-
-The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
 
 <a name="glossary:metric"><b>Metric</b></a>
 
