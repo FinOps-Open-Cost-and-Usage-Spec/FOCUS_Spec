@@ -6,9 +6,9 @@ The ConsumedQuantity column adheres to the following requirements:
 
 * ConsumedQuantity MUST be present in the billing data when the provider supports the measurement of usage.
 * ConsumedQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
-* ConsumedQuantity MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage", unless [ChargeClass](#chargeclass) is "Correction" or [CommitmentStatus](#ommitmentstatus) is "Unused".
+* ConsumedQuantity MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage", unless [ChargeClass](#chargeclass) is "Correction" or [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
 * ConsumedQuantity MAY be null if ChargeCategory is "Usage" and ChargeClass is "Correction"
-* ConsumedQuantity MUST be null if CommitmentStatus is "Unused" or for other ChargeCategory values.
+* ConsumedQuantity MUST be null if CommitmentDiscountStatus is "Unused" or for other ChargeCategory values.
 * ConsumedQuantity value MAY be negative in cases where ChargeClass is "Correction".
 
 The ConsumedQuantity column MUST NOT be used to determine values related to any pricing or cost metrics.

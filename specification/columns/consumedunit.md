@@ -6,9 +6,9 @@ The ConsumedQuantity column adheres to the following requirements:
 
 * ConsumedUnit MUST be present in the billing data when the provider supports the measurement of usage.
 * ConsumedUnit MUST be of type String, and the units of measure used in ConsumedUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
-* ConsumedUnit MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage", unless [ChargeClass](#chargeclass) is "Correction" or [CommitmentStatus](#ommitmentstatus) is "Unused".
+* ConsumedUnit MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage", unless [ChargeClass](#chargeclass) is "Correction" or [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
 * ConsumedUnit MAY be null if ChargeCategory is "Usage" and ChargeClass is "Correction"
-* ConsumedUnit MUST be null if CommitmentStatus is "Unused" or for other ChargeCategory values.
+* ConsumedUnit MUST be null if CommitmentDiscountStatus is "Unused" or for other ChargeCategory values.
 
 The ConsumedUnit column MUST NOT be used to determine values related to any pricing or cost metrics.
 
