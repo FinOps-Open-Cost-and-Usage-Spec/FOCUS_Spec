@@ -78,7 +78,7 @@ This table displays key milestones and dates related to the development of FOCUS
         <tr>
             <td>18-Jul-24 to 1-Aug-24</td>
             <td>Start / End Interim Consistency Review</td>
-            <td>Two weeks Interim Consistency Review FOCUS Rel v1.1</td>
+            <td><strong>CANCELED</strong> Two weeks Interim Consistency Review FOCUS Rel v1.1</td>
         </tr>
         <tr>
             <td><strong>19-Sep-24 to 03-Oct-24</strong></td>
