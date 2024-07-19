@@ -20,7 +20,7 @@ Provider-specified measurement unit indicating how a provider measures usage of 
 
 |    Constraint   |      Value      |
 |:----------------|:----------------|
-| Column type     | Metric          |
+| Column type     | Dimension       |
 | Feature level   | Conditional     |
 | Allows nulls    | True            |
 | Data type       | String          |
