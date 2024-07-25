@@ -100,6 +100,10 @@ A company or organization that provides outsourced management and support of a r
 
 A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e. on demand.
 
+<a name="glossary:pascalcase"><b>Pascal Case</b></a>
+
+Pascal Case (PascalCase, also known as UpperCamelCase) is a format for identifiers which contain one or more words meaning the words are concatenated together with no delimiter and the first letter of each word is capitalized.
+
 <a name="glossary:practitioner"><b>Practitioner</b></a>
 
 An individual who performs FinOps within an organization to maximize the business value of using cloud and cloud-like services.
