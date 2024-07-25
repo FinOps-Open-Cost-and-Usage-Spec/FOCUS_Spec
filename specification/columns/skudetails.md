@@ -17,9 +17,9 @@ The _SkuDetails_ column adheres to the following requirements:
 
 ```json
     {
-        "cores": 4,
-        "ephemeral_disk_gb": 100,
-        "nested_virtualization": true,
+        "Cores": 4,
+        "EphemeralDiskGB": 100,
+        "NestedVirtualization": true,
     }
 ```
 
