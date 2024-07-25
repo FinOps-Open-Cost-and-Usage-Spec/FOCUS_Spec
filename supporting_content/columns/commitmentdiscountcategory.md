@@ -14,14 +14,29 @@ Current column mappings found in available data sets:
 
 Current values observed in billing data for various scenarios:
 
-| Provider | Data set                 | CommitmentDiscountCategory     | CommitmentDiscountProgram (Name TBD)     |
-|----------|--------------------------|----------------------------|------------------------------------------|
-| AWS | CUR (PurchaseOption)                   | Usage               | Reserved Instances              |
-| AWS | CUR (PurchaseOption)                   | Spend               | Savings Plans                   |
-| Google Cloud | BigQuery Billing Export | Usage        | Resource-based CUD                            |
-| Google Cloud | BigQuery Billing Export | Spend        | Spend-based CUD                               |
-| Microsoft | Cost Details (PricingModel)| Spend                     | Savings Plan                     |
-| Microsoft | Cost Details (PricingModel)| Usage                     | Reservation                      |
+| Provider     | CommitmentDiscountName (Name TBD)      | CommitmentDiscountCateogory |
+|--------------|----------------------------------------------------------------------|
+| AWS          | Reserved Instances (RI)                | Usage                       |
+| AWS          | Savings Plan                           | Spend                       |
+| Google Cloud | Committed Use Discount (CUD)           | Usage                       |
+| Google Cloud | Flex Committed Use Discount (Flex CUD) | Usage                       |
+| Google Cloud | BigQuery Reservations                  | Usage                       |
+| Microsoft    | Reservation                            | Usage                       |
+| Microsoft    | Savings Plan                           | Spend                       |
+
+Additionally, typical SaaS annual commits should also fall under *Spend*.
+
+Example of mock dataset with Commitment Discount Category:
+
+| ProviderName | ServiceName         | Charge Category | Charge Subcategory | Commitment Discount Type | Commitment Discount Category |
+|--------------|----------------------------------------------------------------------------------------------------------------------|
+| AWS          | AmazonEC2           | Purchase        | null               | Reserved Instances (RI)  | Usage                        |
+| AWS          | ComputeSavingsPlans | Purchase        | null               | Savings Plan             | Spend                        |
+| AWS          | AmazonEC2           | Usage           | On-Demand          | null                     | Multiple                     |
+| AWS          | AmazonEC2           | Usage           | Used               | Reserved Instances (RI)  | Usage                        |
+| AWS          | AmazonEC2           | Usage           | Unused             | Reserved Instances (RI)  | Usage                        |
+| AWS          | AmazonEC2           | Usage           | Used               | Savings Plan             | Spend                        | 
+| AWS          | AmazonEC2           | Usage           | Unused             | Savings Plan             | Spend                        |
 
 ## Documentation
 - Microsoft
