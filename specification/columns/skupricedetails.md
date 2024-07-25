@@ -11,15 +11,16 @@ The _SkuPriceDetails_ column adheres to the following requirements:
 * The _SkuPriceDetails_ column **SHOULD NOT** contain properties which are already captured in the [_SkuDetails_](#skudetails) column.
 * Where _SkuPriceDetails_ contains a property with a value which is a numerical, the value provided **MUST** represent the value for a [_ConsumedQuantity_](#consumedquantity) of 1.
 * The key for a property **SHOULD** remain consistent across comparable SKUs having that property and the values for this key **SHOULD** remain in a consistent format.
+* The key for a property **SHOULD** be formatted in PascalCase.
 * Properties included in _SkuPriceDetails_ **SHOULD** be immutable once included for a _SkuPriceId_.
 
 ## Examples
 
 ```json
     {
-        "operation_class": "A",
-        "pricing_tier": 2,
-        "preimum_processing": true,
+        "OperationClass": "A",
+        "PricingTier": 2,
+        "PreimumProcessing": true,
     }
 ```
 
