@@ -1,8 +1,8 @@
 # Capacity Reservation Total
 
-Capacity Reservation Total is the numeric value representing the amount of capacity (in number of unnormalized *consumed unit*) that were reserved over the specified charge period by the [*capacity reservation*](#glossary:capacity-reservation) identified in the CapacityReservationId column. 
+Capacity Reservation Total is the numeric value representing the amount of capacity (in number of unnormalized *consumed unit*) that were reserved over the specified charge period by the [*capacity reservation*](#glossary:capacity-reservation) identified in the charge. 
 
-The CapacityReservationTotal column MUST be present in the billing data when the provider supports *capacity-reservations*. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the ConsumedUnit. This column MUST NOT be null when CapacityReservationId is not null. 
+The CapacityReservationTotal column MUST be present in the billing data when the provider supports *capacity-reservations*. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the ConsumedUnit. This column MUST NOT be null when CapacityReservationStatus is not null. 
 
 ## Column ID
 
