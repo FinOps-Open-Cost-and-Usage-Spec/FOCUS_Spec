@@ -1,0 +1,21 @@
+name: Maintenance Task
+description: Create tasks related to work on the GitHub Repository or GitHub Actions.
+title: "[MAINTENANCE]: "
+labels: ["repo maintenance"]
+assignees: ["mike-finopsorg,udam-f2"]
+body:
+  - type: textarea
+    attributes:
+      label: Description
+      description: Describe the maintenance issue that needs to be addressed.
+      placeholder: Provide a detailed description of the maintenance task here.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Definition of Done
+      description: Describe the outcomes that will indicate the task has been successfully completed.
+      placeholder: Specify what 'done' looks like for this task.
+    validations:
+      required: true
