@@ -12,9 +12,26 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.1</td>
         <td>Nov 11, 2024</td>
         <td>
-            REQ 1: Keyword value/brief description<br>
-            REQ 2: Keyword value/brief description<br>
-            REQ 3: Keyword value/brief description
+            <strong>SKU and SKU Price Details</strong>
+            <ul>
+                <li>Provide deeper visibility into SKU and SKU Price details (in addition to the current SKU and SKU Price IDs that are available in FOCUS) which enables many standard FinOps use cases from cost reporting to commitment optimization.
+                </li>
+            </ul>
+            <strong>Deeper service classification</strong>
+            <ul>
+                <li>Move beyond the highest-level service categorization to a sub-categorization for services while adding flexibility for providers to share their native categorizations within FOCUS.
+                </li>
+            </ul>
+            <strong>Capacity Reservation</strong>
+            <ul>
+                <li>Ability to represent on-demand capacity reservations within FOCUS datasets.
+                </li>
+            </ul>
+            <strong>Improve metadata support</strong>
+            <ul>
+                <li>Strengthen the correlation between FOCUS-compatible datasets and the corresponding metadata to better support data analysis and ETL use cases
+                </li>
+            </ul>
         </td>
     </tr>
     <tr>
@@ -54,14 +71,14 @@ This table displays key milestones and dates related to the development of FOCUS
             <td>17 weeks to develop FOCUS Rel v1.1</td>
         </tr>
         <tr>
-            <td>27-Jun-24</td>
+            <td>18-Jul-24</td>
             <td>Approval FOCUS v1.1 Scope</td>
             <td>Close the scope for FOCUS Release v1.1</td>
         </tr>
         <tr>
-            <td>27-Jun-24 to 11-Jul-24</td>
+            <td>18-Jul-24 to 1-Aug-24</td>
             <td>Start / End Interim Consistency Review</td>
-            <td>Two weeks Interim Consistency Review FOCUS Rel v1.1</td>
+            <td><strong>CANCELED</strong> Two weeks Interim Consistency Review FOCUS Rel v1.1</td>
         </tr>
         <tr>
             <td><strong>19-Sep-24 to 03-Oct-24</strong></td>
