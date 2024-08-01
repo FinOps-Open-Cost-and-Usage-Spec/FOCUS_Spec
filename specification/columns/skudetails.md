@@ -8,9 +8,10 @@ The _SkuDetails_ column adheres to the following requirements:
 * The properties (both key and value) contained in the _SkuDetails_ column MUST be shared across all resources having the same _SkuId_.
 * The _SkuDetails_ column MUST be in [_KeyValueFormat_](#key-valueformat).
 * The _SkuDetails_ column SHOULD NOT contain properties which are not applicable to the corresponding _SkuId_.
+* The _SkuDetails_ column MAY contain properties which are captured in other dedicated columns.
 * Where _SkuDetails_ contains a property with a value which is a numerical, the value provided MUST represent the value for a [_ConsumedQuantity_](#consumedquantity) of 1.
 * The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
-* The key for a property SHOULD be formatted in PascalCase.
+* The key for a property SHOULD be formatted in [PascalCase](#glossary:pascalcase).
 * Properties included in _SkuDetails_ SHOULD be immutable once included for a _SkuId_.
 
 ## Examples
