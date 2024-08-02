@@ -76,6 +76,10 @@ A tag with one tag value chosen from a set of possible tag values after being pr
 
 An open-source specification that defines requirements for billing data.
 
+<a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
+
+A structured collection of cost and usage data that meets or exceeds the Basic compliance criteria of FOCUS.
+
 <a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
