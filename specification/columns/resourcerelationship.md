@@ -2,7 +2,7 @@
 
 Resource Relationship describes the relationship to to the entity defined in Related Resource ID.
 
-The ResourceRelationship column MUST be present in the billing data when a RelatedResourceID is supplied. This column MUST be of type String, MUST be null when a RelatedResourceID is NOT supplied. The ResourceRelationship MUST be one of the allowed values. 
+The ResourceRelationship column MUST be present in the FOCUS data when a RelatedResourceID is supplied. This column MUST be of type String, MUST be null when a RelatedResourceID is NOT supplied. The ResourceRelationship MUST be one of the allowed values. 
 
 ## Column ID
 
@@ -14,7 +14,7 @@ Resource Relationship
 
 ## Description
 
-Indicates whether the charge represents either the consumption of a *capacity reservation* or when a *capacity reservation* is unused.
+Indicates the relationship to Related Resource ID that has modified the billing behaviour of the current usage line.
 
 ## Content constraints
 
