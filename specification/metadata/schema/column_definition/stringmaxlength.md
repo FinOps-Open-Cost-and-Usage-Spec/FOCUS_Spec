@@ -2,8 +2,6 @@
 
 The string max length of the data that can be stored in the column.
 
-StringMaxLength SHOULD be provided in the FOCUS Metadata schema for String columns. StringMaxLength MUST be of type Integer and MUST NOT contain null values.
-
 ## Metadata ID
 
 StringMaxLength
@@ -11,6 +9,11 @@ StringMaxLength
 ## Metadata Name
 
 String Max Length
+
+## Requirements
+- SHOULD be provided in the FOCUS Metadata schema for String columns 
+- MUST be of type Integer
+- MUST NOT contain null values
 
 ## Introduced (version)
 
