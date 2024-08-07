@@ -1,6 +1,6 @@
 # Pricing Category
 
-Pricing Category describes the pricing model used for a charge at the time of use or purchase. It can be useful for distinguishing between charges incurred at the [*list unit price*](#glossary:list-unit-price) or a reduced price and exposing optimization opportunities, like increasing [commitment-based discount](#glossary:commitment-based-discount) coverage.
+Pricing Category describes the pricing model used for a charge at the time of use or purchase. It can be useful for distinguishing between charges incurred at the [*list unit price*](#glossary:list-unit-price) or a reduced price and exposing optimization opportunities, like increasing [*commitment-based discount*](#glossary:commitment-based-discount) coverage.
 
 The PricingCategory column adheres to the following requirements:
 
@@ -38,9 +38,9 @@ Allowed values:
 
 | Value     | Description                                                                                                                                                                                                              |
 | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Standard  | Charges priced at the agreed upon rate for the billing account, including negotiated discounts. This includes any flat rate and volume/tiered pricing but does not include dynamic or commitment-based discount pricing. |
+| Standard  | Charges priced at the agreed upon rate for the billing account, including [*negotiated discounts*](#glossary:negotiated-discount). This includes any flat rate and volume/tiered pricing but does not include dynamic or *commitment-based discount* pricing. |
 | Dynamic   | Charges priced at a variable rate determined by the provider. This includes any product or service with a unit price the provider can change without notice, like interruptible or low priority resources.               |
-| Committed | Charges with reduced prices due to a commitment-based discount specified by the Commitment Discount ID.                                                                                                                  |
+| Committed | Charges with reduced prices due to a *commitment-based discount* specified by the Commitment Discount ID.                                                                                                                  |
 | Other     | Charges priced in a way not covered by another pricing category.                                                                                                                                                         |
 
 ## Introduced (version)

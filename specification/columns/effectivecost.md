@@ -13,6 +13,8 @@ In cases where the [ChargeCategory](#chargecategory) is not "Usage" or "Purchase
 
 * The EffectiveCost MUST be calculated based on the EffectiveCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is "Tax").
 * The EffectiveCost MUST match the [BilledCost](#billedcost) if the charge is unrelated to other charges (e.g. [ChargeCategory](#chargecategory) is "Credit").
+* The EffectiveCost MUST be the total cost unamortized by the corresponding *commitment-based discount* for the given charge period when [CommitmentDiscountStatus](#commitment-discount-status) is "Unused".
+* The EffectiveCost MUST be the total cost unamortized by a *negotiated discount* at the end of its [*term*](#glossary:term) and allocated to the last eligible *billing period*.
 
 ## Column ID
 

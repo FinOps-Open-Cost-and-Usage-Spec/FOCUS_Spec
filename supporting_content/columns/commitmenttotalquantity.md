@@ -1,4 +1,4 @@
-# Column: CommitmentUtilizationTotal
+# Column: CommitmentTotalQuantity
 
 ## Example provider mappings
 

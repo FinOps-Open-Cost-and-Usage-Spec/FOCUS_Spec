@@ -46,11 +46,7 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 <a name="glossary:commitment-based-discount"><b>Commitment-Based Discount</b></a>
 
-Also known as Commitment Discount, this is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The commitment may be based on quantities of resource units or monetary value, with various payment options and time frames.
-
-<a name="glossary:commitment-unit"><b>Commitment Unit</b></a>
-
-The amount of resource consumption or service spend allocated to a resource or service from a given commitment over a charge period.
+A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment-based discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e. hourly), and unused amounts cannot be carried over to subsequent charge periods.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -108,6 +104,10 @@ A company or organization that provides outsourced management and support of a r
 
 A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e. on demand.
 
+<a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
+
+A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment-based discounts*](#glossary:commitment-based-discount), negotiated discounts are typically more customized to customer's accounts, can be burned down at varying frequencies, and may be overlap with *commitment-based discounts*.
+
 <a name="glossary:practitioner"><b>Practitioner</b></a>
 
 An individual who performs FinOps within an organization to maximize the business value of using cloud and cloud-like services.
@@ -155,3 +155,7 @@ A metadata label assigned to a resource to provide information about it or to ca
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
 A Resource or Provider-defined construct for grouping resources and/or other Provider-defined construct that a Tag can be assigned to.
+
+<a name="glossary:term"><b>Term</b></a>
+
+A duration of a contractual agreement like with a [*commitment-based discount*](#glossary:commitment-based-discount) or [*negotiated discount*](#glossary:negotiated-discount).

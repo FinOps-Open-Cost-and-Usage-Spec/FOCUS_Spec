@@ -1,4 +1,4 @@
-# Column: CommitmentUtilizationUsed
+# Column: CommitmentConsumedQuantity
 
 ## Example provider mappings
 
