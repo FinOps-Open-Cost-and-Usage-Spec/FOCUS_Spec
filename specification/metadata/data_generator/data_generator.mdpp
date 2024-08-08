@@ -2,4 +2,7 @@
 
 The FOCUS metadata about the generator of the FOCUS data.
 
+## Schema Example
+For an example of the FOCUS Data Generator metadata please refer to: [Metadata Example](#metadata-example))
+
 !INCLUDE "datagenerator.md",1

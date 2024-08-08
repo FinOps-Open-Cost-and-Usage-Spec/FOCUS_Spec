@@ -2,7 +2,6 @@
 
 The schema metadata object and its contents provides information about the structure of the data provided.
 
-
 ## Requirements
 
 ### Reference to FOCUS Data
@@ -19,12 +18,11 @@ These scenarios include, but are not limited to:
 - Changing the data type of a column
 - FOCUS Version is changed
 
-
 ### Schema Metadata Updates
 Should the there be an error where the schema metadata object does not match the schema of the FOCUS data artifact, the provider MUST update the schema metadata object to match the schema of the FOCUS data artifact. This is to ensure that the schema metadata object is always accurate.
 
-#TODO Do we need a documentation requirement? If so where does it go?
-
+## Schema Example
+For an example of the FOCUS schema metadata please refer to: [Metadata Example](#metadata-example))
 
 !INCLUDE "schemaid.md",1
 !INCLUDE "creationdate.md",1
