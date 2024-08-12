@@ -38,7 +38,7 @@ Content:
 ```
 {
   "SchemaId": "1234-abcde-12345-abcde-12345",
-  "FOCUS_version": "1.0",
+  "FocusVersion": "1.0",
   "name": "my original schema",
   "CreationDate": "2024-01-01T12:01:03.083z",
   "ColumnDefinition": [
@@ -141,7 +141,7 @@ Content:
 ```
  {
   "SchemaId": "23456-abcde-23456-abcde-23456",
-  "FOCUS_version": "1.0",
+  "FocusVersion": "1.0",
   "name": "New Columns",
   "CreationDate": "2024-02-02T12:01:03.083z",
   "ColumnDefinition": [
