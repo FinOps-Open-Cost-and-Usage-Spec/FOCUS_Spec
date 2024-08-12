@@ -1,6 +1,6 @@
 # Metadata Examples
 
-The following is an example metadata JSON structure provided by a hypothetical FOCUS data provider. This example also illustrates an example of how a provider can supply the required reference between the FOCUS data and the schema metadata.  Provider implementations will vary on how the metadata is stored and retrieved, however the providers chosen metadata delivery approach should be able to support the structure represented in this example. 
+The following is an example metadata JSON structure provided by a hypothetical FOCUS data provider. This example illustrates an example of how a provider can supply the required reference between the FOCUS data and the schema metadata.  Provider implementations will vary on how the metadata is stored and retrieved, however the providers chosen metadata delivery approach should be able to support the structure represented in this example. 
 
 ## Scenario
 In this example, the provider supports delivery of FOCUS data via file export to a data storage system. The provider delivers data every 12 hours. 
@@ -20,7 +20,7 @@ Location: /FOCUS/metadata/data_generator.json
 Content: 
 ```
 {
-    "DataGenerator": "awesome_corp"
+    "DataGenerator": "ACME"
 }
 ```
 
@@ -28,7 +28,7 @@ Content:
 
 ### Scenario
 
-Awesome corp has only provided one schema for their provided FOCUS data. Awesome Corp provides a directory of schemas and each schema is a single file. Currently, there is only one file in this directory. 
+ACME has only provided one schema for their provided FOCUS data. ACME provides a directory of schemas and each schema is a single file. Currently, there is only one file in this directory. 
 
 #### Supplied Metadata
 
@@ -87,7 +87,7 @@ Content:
 
 ### Scenario
 
-For each FOCUS data export, Awesome corp includes a metadata reference to the schema object. Because multiple files are provided, Awesome corp has elected to include a metadata file that includes the focus schema reference that applies to the data export files. 
+For each FOCUS data export, ACME includes a metadata reference to the schema object. Because multiple files are provided, ACME has elected to include a metadata file that includes the focus schema reference that applies to the data export files. 
 
 #### Supplied Metadata
 
@@ -127,7 +127,7 @@ Content:
 
 ### Scenario
 
-Awesome Corp has decided add additional columns to their FOCUS data export. The new columns are x_awesome_column1 and x_awesome_column2.
+ACME has decided add additional columns to their FOCUS data export. The new columns are x_awesome_column1 and x_awesome_column2.
 
 ### New schema metadata object
 
