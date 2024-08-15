@@ -52,7 +52,7 @@ With Subcategories now in scope for FOCUS 1.1, there was then the potential of c
 - `Integration` could be rescoped and renamed `Data Management` to be more inclusive of Service Subcategories such as Data Processing and API Management.
 - `Multicloud` could be rescoped and renamed `Hybrid and Multicloud` to be more inclusive of on-premises Services.
 
-After much discussion, particularly on the 8/6 TF1 call, it became clear that the "burden of proof" for changing existing Categories is higher, given that some of the group feels this to constitute a "breaking change".  Some of the group felt that the Service hierarchy should be considered more of a "living document" that is revisited from one FOCUS release to another, in order to stay more tightly aligned with the slowly-changing nature of Service categorizations; others felt that would be prohibitively disruptive for FOCUS consumers who have constructed various downstream artifacts and depend on a certain Category and Subcategory composition.
+After much discussion, particularly on the Aug 6 TF1 call, it became clear that the "burden of proof" for changing existing Categories is higher, given that some of the group feels this to constitute a "breaking change".  Some of the group felt that the Service hierarchy should be considered more of a "living document" that is revisited from one FOCUS release to another, in order to stay more tightly aligned with the slowly-changing nature of Service categorizations; others felt that would be prohibitively disruptive for FOCUS consumers who have constructed various downstream artifacts and depend on a certain Category and Subcategory composition.
 
 _Outcome_: leave the Category composition in place for FOCUS 1.1 and narrow scope of this release to only add Subcategories underneath them, leaving the door open to alter the Category composition in a future release (either major or not, pending a larger decision around what constitutes a "breaking change").
 
@@ -64,7 +64,7 @@ Commitment Discounts have various models that could belong in various places of 
 - An AWS Compute savings plan can be Categorized (i.e. `Compute`) but not Subcategorized (e.g. it can be applied to both `Virtual Machines` and `Serverless Compute`).
 - An OCI Credit can neither be Categorized nor Subcategorized (e.g. it can be applied to a wide variety of usage).
 
-Based on that, there was a robust discussion, particularly on the 7/23 TF1 and 8/8 Member calls, as to where Commitment Discounts belong.  Do they deserve their own Subcategories (e.g. `Commitments (Compute)`, `Commitments (Databases)`) underneath each Category?  Do they also deserve their own Category (e.g. `Commitments` or `Crossfunctional`)?
+Based on that, there was a robust discussion, particularly on the Jul 23 TF1 and Aug 8 Member calls, as to where Commitment Discounts belong.  Do they deserve their own Subcategories (e.g. `Commitments (Compute)`, `Commitments (Databases)`) underneath each Category?  Do they also deserve their own Category (e.g. `Commitments` or `Crossfunctional`)?
 
 _Outcome_: given the decision not to change the Category composition, and given the principle of undercategorizing rather than overcategorizing: 
 
@@ -76,7 +76,7 @@ _Outcome_: given the decision not to change the Category composition, and given 
 
 The group discussed the possibility of "graduating" Services to their own net-new categories, such as `Blockchain`, `Containers`, and `Mixed Reality`.  These are technologies for which some or all of the three major cloud service providers have created their own Categories, and there is certainly a use case for being able to easily build reports to show those (and only those) Services.
 
-Given the decision not to change the Category composition on the 8/6 TF1 call, this became a moot discussion.  However, the group did discuss some specific examples, particularly on the 7/23 TF1 and 7/25 Member calls:
+Given the decision not to change the Category composition on the Aug 6 TF1 call, this became a moot discussion.  However, the group did discuss some specific examples, particularly on the Jul 23 TF1 and Jul 25 Member calls:
 
 - `Blockchain` belongs under `Databases > Ledger`.
 - `Containers` belongs under `Compute > Containers`.
@@ -87,7 +87,7 @@ Given the decision not to change the Category composition on the 8/6 TF1 call, t
 
 #### What shall we call the "unsubcategorized" Subcategory?
 
-Each Category carries an "Other" Subcategory to allow the providers to provide a Category without a Subcategory.  A vote issued on 8/13/24 with the following options:
+Each Category carries an "Other" Subcategory to allow the providers to provide a Category without a Subcategory.  A vote was issued via Slack on Aug 13 with the following options:
 
 :one: `Uncategorized (<Category Name>)`  
 :two: `Other (<Category Name>)`  
