@@ -71,7 +71,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
         <td>
             This column:</br>
             &nbsp;&nbsp; * MUST NOT be null when ChargeClass is not ... </br>
-            &nbsp;&nbsp; * MUST be null when ChargeCategory is "Tax", ... </br>
+            &nbsp;&nbsp; * MUST be null when ChargeCategory is ... </br>
             &nbsp;&nbsp; * MAY be null for all other combinations of ... </br>
         </td>
         <td>
