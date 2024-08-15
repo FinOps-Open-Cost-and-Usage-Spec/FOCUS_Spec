@@ -1,5 +1,7 @@
-## Editorial Style Suggestions
+## Editorial Style Guidelines
+The "Editorial Style Guidelines" section ensures consistency and clarity across all documentation. Adhering to these guidelines is crucial for maintaining a unified style, which enhances readability and reduces misinterpretation. By following the specified standards—whether in formatting, linking, or structuring information—we ensure that all documents are professional, clear, and aligned with our editorial principles. Consistent application of these guidelines contributes to high-quality, user-friendly documentation.
 
+These guidelines can be modified if necessary through a Pull Request (PR), which must be reviewed and agreed upon by the members. This process ensures that any changes are thoughtfully considered and maintain the overall integrity of our editorial standards.
 
 
 <table>
@@ -133,7 +135,7 @@
 
 >**2.28. Pricing Quantity**
 >
->The **[Pricing Quantity](#pricing-quantity)** represents the volume of a given [SKU](#glossary:sku) associated with a [resource](#glossary:resource) or [service](#glossary:service) used or purchased, based on the **[Pricing Unit](#pricing-unit)**. Distinct from **[Consumed Quantity](#consumed-quantity)** (complementary to **[Consumed Unit](#consumed-unit)**), it focuses on pricing and cost, not resource and service consumption. 
+>The **[Pricing Quantity](#pricing-quantity)** represents the volume of a given [SKU]() associated with a [resource]() or [service]() used or purchased, based on the **[Pricing Unit](#pricing-unit)**. Distinct from **[Consumed Quantity](#consumed-quantity)** (complementary to **[Consumed Unit](#consumed-unit)**), it focuses on pricing and cost, not resource and service consumption. 
 >
 >  * The PricingQuantity column MUST be present in the billing data. 
 >  * This column MUST be of type Decimal and MUST conform to Numeric Format requirements. 
