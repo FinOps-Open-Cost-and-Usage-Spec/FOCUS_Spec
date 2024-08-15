@@ -2,21 +2,6 @@
 
 
 
-
- **Tables and Lists**
-   - **Style**: Use standard table formatting with clear column headings in bold.
-   - **Reasoning**: Standard table formatting with bold headings improves readability and ensures that data is well-organized and easy to interpret.
-   - **Example**:
-
-     | **Constraint**      | **Value**            |
-     |---------------------|----------------------|
-     | Column type         | Dimension            |
-     | Feature level       | Conditional          |
-     | Allows nulls        | True                 |
-     | Data type           | String               |
-     | Value format        | Not specified        |
-
-
 <table>
     <tr>
         <th>Editorial Type</th>
@@ -25,7 +10,7 @@
         <th>Editorial Guidelines</th>
     </tr>
     <tr>
-        <td>Column &amp; Attributes Names:</td>
+        <td><strong>Column &amp; Attributes Names</strong>:</td>
         <td>
             <strong>Column Names:<br>
             Pricing Quantity<br>
@@ -47,15 +32,15 @@
         </td>
     </tr>
     <tr>
-        <td>Columns &amp; Attributes IDs:</td>
+        <td><strong>Columns &amp; Attributes IDs:</strong></td>
         <td>
-           <strong>Columns IDs:<br>
+           Columns IDs:<br>
             ChargeClass, ChargeCategory, PricingQuantity<br><br>
             Attributes IDs:<br>
-            CurrencyCodeFormat, ChargeClass, ChargeCategory, PricingQuantity</strong>
+            CurrencyCodeFormat, ChargeClass, ChargeCategory, PricingQuantity
         </td>
         <td>
-            <strong>CurrencyCodeFormat</strong>
+            CurrencyCodeFormat
         </td>
         <td>
             Display normal text without italics.<br>
@@ -63,7 +48,7 @@
         </td>
     </tr>
     <tr>
-        <td>Normative Keywords &amp; Statements</td>
+        <td><strong>Normative Keywords &amp; Statements</strong></td>
         <td>
             MUST, MAY, MUST NOT and normative statements
         </td>
@@ -81,7 +66,7 @@
         </td>
     </tr>
     <tr>
-        <td>Glossary</td>
+        <td><strong>Glossary</strong></td>
         <td>
             SKU, resource, service
         </td>
@@ -100,7 +85,7 @@
         <td>It is added as a note.</td>
     </tr>
     <tr>
-        <td>Key-Value Format</td>
+        <td><strong>Key-Value Format</strong></td>
         <td>JSON Script</td>
         <td>
                 <pre>
@@ -117,10 +102,9 @@
         <td>Monospace font</td>
     </tr>
     <tr>
-      <td>Tables</td>
+      <td><strong>Tables</strong></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8"></td>
-      <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72">
+      <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72"></td>
       <td>Tables</td>
-</td>
     </tr>
 </table>
