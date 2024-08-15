@@ -37,6 +37,25 @@ To be clear, this list is neither prescriptive nor suggestive; it shall be up to
 
 ### Discussions
 
+#### What to call the "unsubcategorized" Subcategory
+
+Each Category carries an "Other" Subcategory to allow the providers to provide a Category without a Subcategory.  A vote issued on 8/13/24 with the following options:
+
+:one: `Uncategorized (<Category Name>)`  
+:two: `Other (<Category Name>)`  
+:three: `Uncategorized`  
+:four: `Other`  
+
+The following considerations were included:
+
+- Brevity, simplicity, and consistency of Subcategory names (e.g. “Uncategorized (Management and Governance)” is pretty long).
+- Delineation of Category values from Subcategory values (e.g. use of Subcategory “Other” underneath all Categories “Compute”, “Databases” and “Other” could be confusing).
+- Analytical utility of Subcategory without Category context (e.g. uncategorized Compute from uncategorized Databases are automatically separated in a bar chart).
+
+Outcome: Option :two: was chosen.
+
+
+
 
 
 
