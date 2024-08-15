@@ -41,7 +41,6 @@
         </td>
         <td>
           <strong>Columns IDs</strong>:<br>
-            
           <strong>Attributes IDs:</strong> </br>
             CurrencyCodeFormat </br>
             ChargeClass </br>
