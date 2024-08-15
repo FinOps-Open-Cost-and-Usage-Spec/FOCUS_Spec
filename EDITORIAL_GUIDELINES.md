@@ -6,7 +6,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
 
 <table>
     <tr>
-        <th>Editorial Type</th>
+        <th>Component</th>
         <th>Display (PDF, HTML)</th>
         <th>Markdown (examples)</th>
         <th>Editorial Guidelines</th>
@@ -34,7 +34,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
         <td>
             - Bold <br>
             - Use the display name in the non-normative section.<br>
-            - The first occurrence in a new section is linked
+            - The first occurrence in a section is linked to the section.
         </td>
     </tr>
     <tr>
@@ -58,8 +58,9 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
           &nbsp;&nbsp; DateTimeFormat <br>
         </td>
         <td>
-           - Display normal text without italics.<br>
-           - The first occurrence in a new section is linked.
+           - Use PascalCamel case (the first letter of every word, is capitalized)
+           - Normal text without bold or italics.<br>
+           - The first occurrence in a section is linked to the section.
         </td>
     </tr>
     <tr>
@@ -69,15 +70,12 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
         </td>
         <td>
             ConsumedQuantity and ConsumedUnit:<br>
-            <ul>
-                <li>MUST NOT be null if ChargeCategory is "Usage", unless ChargeClass is "Correction" or CommitmentStatus is 'Unused'</li>
-                <li>MAY be null if ChargeCategory is "Usage" and ChargeClass is "Correction"</li>
-            </ul>
+              * MUST NOT be null if ChargeCategory is "Usage", unless ChargeClass is "Correction" or CommitmentStatus is 'Unused'</br>
+              * MAY be null if ChargeCategory is "Usage" and ChargeClass is "Correction"
         </td>
         <td>
-           - Uppercase, without bold.<br>
-           - Bullet list format<br>
-           - Presenting normative statements in a bullet list format ensures clarity and facilitates quick scanning and comprehension.
+           - All uppercase, without bold.<br>
+           - Bullet list format. <br>
         </td>
     </tr>
     <tr>
@@ -91,8 +89,8 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
             [*service*](#glossary:service) <br>
         </td>
         <td>
-            - Blue + italic<br>
-            - link to the glossary of the first iteration in the section.
+            - Blue font + italic<br>
+            - The first ocurrence in a section is linked to the glossary.
         </td>
     </tr>
     <tr>
@@ -127,7 +125,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
 </table>
 
 **Editorial Notes**
-* **Linking Only the First Time**: To prevent excessive linking within sections, Column Name, Column ID, Attributes Names, Attributes IDs, and Glossary will only be linked to their corresponding description section or description the first time they appear in a new section.
+* **Linking Only the First Time**: To prevent excessive linking within sections, Column Name, Column ID, Attributes Names, Attributes IDs, and Glossary will only be linked to their corresponding section or glossary the first time they appear in a section.
 
 * **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) should be written as bullet points instead of lengthy sentences. 
 
@@ -148,12 +146,15 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
 > * When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 >
 > **2.28.1. Column ID**
+>
 > PricingQuantity 
 >
 > **2.28.2. Display Name**
+>
 > Pricing Quantity
 >
 > **2.28.3. Description**
+>
 > The volume of a given SKU associated with a resource or service used or purchased, based on the Pricing Unit. 
 >
 > **2.28.4. Content Constraints Constraint**
@@ -161,4 +162,5 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
 > <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
 >
 > **2.28.5. Introduced (version)** 
+>
 > 1.0-preview
