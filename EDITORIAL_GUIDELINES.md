@@ -69,9 +69,10 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
             MUST, MAY, MUST NOT and normative statements
         </td>
         <td>
-            ConsumedQuantity and ConsumedUnit:<br>
-              * MUST NOT be null if ChargeCategory is "Usage", unless ChargeClass is "Correction" or CommitmentStatus is 'Unused'</br>
-              * MAY be null if ChargeCategory is "Usage" and ChargeClass is "Correction"
+            This column:
+              * MUST NOT be null when ChargeClass is not "Correction" and ChargeCategory is "Usage" or "Purchase", </br>
+             * MUST be null when ChargeCategory is "Tax", and </br>
+            * MAY be null for all other combinations of ChargeClass and ChargeCategory. </br>
         </td>
         <td>
            - All uppercase, without bold.<br>
