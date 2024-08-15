@@ -123,3 +123,38 @@
       <td> - Tables</td>
     </tr>
 </table>
+
+### Editorial Notes
+* > **Linking Only the First Time**: To prevent excessive linking within sections, Column Name, Column ID, Attributes Names, Attributes IDs, and Glossary will only be linked to their corresponding description section or description the first time they appear in a new section.
+* > **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) should be written as bullet points instead of lengthy sentences. 
+
+### Example
+
+>**2.28. Pricing Quantity**
+>
+>The Pricing Quantity represents the volume of a given SKU associated with a resource or service used or purchased, based on the Pricing Unit. Distinct from Consumed Quantity (complementary to Consumed Unit), it focuses on pricing and cost, not resource and service consumption. 
+>
+  * >The PricingQuantity column MUST be present in the billing data. 
+  * > This column MUST be of type Decimal and MUST conform to Numeric Format requirements. 
+  * > The value MAY be negative in cases where ChargeClass is "Correction". 
+* > This column:
+  * > MUST NOT be null when ChargeClass is not "Correction" and ChargeCategory is "Usage" or "Purchase", 
+  * > MUST be null when ChargeCategory is "Tax", and 
+  * > MAY be null for all other combinations of ChargeClass and ChargeCategory. 
+* > When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
+>
+> **2.28.1. Column ID**
+> PricingQuantity 
+>
+> **2.28.2. Display Name**
+> Pricing Quantity
+>
+> **2.28.3. Description**
+> The volume of a given SKU associated with a resource or service used or purchased, based on the Pricing Unit. 
+>
+> **2.28.4. Content Constraints Constraint**
+> 
+> <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
+>
+> **2.28.5. Introduced (version)** 
+> 1.0-preview
