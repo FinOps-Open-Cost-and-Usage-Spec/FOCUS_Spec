@@ -37,6 +37,24 @@ To be clear, this list is neither prescriptive nor suggestive; it shall be up to
 
 ### Discussions
 
+A series of open questions were discussed over the course of July and August 2024, both in the [draft spreadsheet](https://docs.google.com/spreadsheets/d/1aYq79sWp8TK4zbcSKUb-gRIBei3fERVwAgDJ5ezZf1w/edit?usp=sharing) and in Task Force (TF) and Member calls.  This section attempts to capture the largest of those discussions.
+
+#### Shall the Category composition from FOCUS 1.0?
+
+With Subcategories now in scope for FOCUS 1.1, it unlocks the potential of rolling existing Categories together.  For example: 
+
+- `Identity` could become a child Subcategory of `Security`.
+- `Web` and `Mobile` could be grouped together into a net-new category (proposed `Front-end` or `Application Tools`).
+- Activity that is truly cross-categorical could be placed in a net-new category (proposed `Crossfunctional`).
+
+After much discussion, particularly on the 8/6 TF1 call, it became clear that the "burden of proof" for changing existing Categories is higher, given that some of the group feels this to constitute a "breaking change".  Some of the group felt that Service Categories and Subcategories should be considered more of a "living document" that is revisited from one FOCUS release to another, in order to stay more tightly aligned with the slowly-changing nature of Service categorizations; others felt that would be disruptive for FOCUS consumers who have constructed various downstream artifacts that depend on a certain Category and Subcategory composition.
+
+Outcome: leave the Category composition in place for FOCUS 1.1 and narrow scope of this release to only add Subcategories underneath them, leaving the door open to alter the Category composition in a future major release.
+
+#### Shall Blockchain become its own Category, or shall it be a Subcategory of Compute?
+
+This was discussed on the 7/23/24 Task Force (TF) 1 call.
+
 #### What to call the "unsubcategorized" Subcategory
 
 Each Category carries an "Other" Subcategory to allow the providers to provide a Category without a Subcategory.  A vote issued on 8/13/24 with the following options:
