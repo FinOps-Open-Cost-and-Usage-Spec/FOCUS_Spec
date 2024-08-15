@@ -13,16 +13,16 @@
         <td><strong>Column &amp; Attributes Names</strong>:</td>
         <td>
             <strong>Column Names:<br>
-            Pricing Quantity<br>
-            Pricing Unit<br><br>
-            Attribute Names:<br>
-            Currency Code Format<br>
-            Date/Time Format</strong>
+            - Pricing Quantity<br>
+            - Pricing Unit<br><br>
+            - Attribute Names:<br>
+            - Currency Code Format<br>
+            - Date/Time Format</strong>
         </td>
         <td>
             **Pricing Quantity**<br>
             **Pricing Unit**<br><br>
-            **Currency Code Format**<br>
+            **Provider**<br>
             **Date/Time Format**<br>
         </td>
         <td>
@@ -34,13 +34,19 @@
     <tr>
         <td><strong>Columns &amp; Attributes IDs:</strong></td>
         <td>
-           Columns IDs:<br>
-            ChargeClass, ChargeCategory, PricingQuantity<br><br>
-            Attributes IDs:<br>
-            CurrencyCodeFormat, ChargeClass, ChargeCategory, PricingQuantity
+           <strong>Columns IDs</strong>:<br>
+            -  PricingQuantity, PricingUnit, ProviderName <br>
+          <strong>Attributes IDs</strong>:<br>
+            - CurrencyCodeFormat, ChargeClass, ChargeCategory, PricingQuantity
         </td>
         <td>
-            CurrencyCodeFormat
+          <strong>Columns IDs</strong>:<br>
+            
+          <strong>Attributes IDs:</strong> </br>
+            CurrencyCodeFormat </br>
+            ChargeClass </br>
+            ChargeCategory </br>
+            PricingQuantity </br>
         </td>
         <td>
             Display normal text without italics.<br>
