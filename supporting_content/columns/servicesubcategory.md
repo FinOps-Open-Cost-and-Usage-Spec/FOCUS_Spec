@@ -85,6 +85,8 @@ Given the decision not to change the Category composition on the Aug 6 TF1 call,
 - `Industry Specific` does not deserve its own Category.
 - `Marketplace` Services shall be placed into the Category and Subcategory aligned with their purpose, rather than placed into a `Marketplace` Category.
 
+_Outcome_: No Category additions or changes at this time.
+
 #### What shall we call the "unsubcategorized" Subcategory?
 
 Each Category carries an "Other" Subcategory to allow the providers to provide a Category without a Subcategory.  A vote was issued via Slack on Aug 13 with the following options:
@@ -102,7 +104,13 @@ The following considerations were included:
 
 _Outcome_: Option :two: was chosen.
 
+#### Shall this column be mandatory or optional?
 
+There was some discussion around this at the 8/15 Member call.  Some felt that Service Subcategory should be mandatory because Service Category is mandatory, and together they form a hierarchy.  Others felt that provider adoption would be easier if the column were not required.  Still others felt that making the column mandatory, even populated completely with Other, would entice FOCUS consumers to petition their provider(s) to populate the column with actual Subcategories.
+
+Ultimately, it seemed that the majority leaned towards making it optional.
+
+_Outcome_: Optional.
 
 
 
