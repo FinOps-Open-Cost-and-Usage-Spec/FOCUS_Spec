@@ -1,6 +1,6 @@
 # SKU Price Details
 
-The **SKU Price Details** column represents a list of relevant properties shared by all resources having the same [**SKU Price ID**](#skupriceid). These properties enable a practitioner to more easily calculate metrics such as total units of a service when it is not directly billed in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. They also help a practitioner understand the specifics of a **SKU Price ID**.
+The **SKU Price Details** column represents a list of relevant properties shared by all resources having the same [**SKU Price ID**](#skupriceid). These properties enable a practitioner to more easily calculate metrics such as total units of a service when it is not directly billed in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. They also help a practitioner understand the specifics of a **SKU Price ID**. 
 
 
 The _SkuPriceDetails_ column adheres to the following requirements:
@@ -15,6 +15,7 @@ The _SkuPriceDetails_ column adheres to the following requirements:
 * Additional properties (key-value pairs) MAY be added to _SkuPriceDetails_ for a _SkuPriceId_.
   * Properties SHOULD NOT be removed from _SkuPriceDetails_ for a _SkuPriceId_, once they have been included.
   * Individual properties (key-value pairs) SHOULD NOT be modified for a _SkuPriceId_.
+ * The _SkuPriceDetils_ column MUST be present in the billing data when the provider includes a _SkuPriceID_.
 
 ## Examples
 
