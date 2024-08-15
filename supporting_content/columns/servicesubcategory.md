@@ -40,19 +40,21 @@ To be clear, this list is neither prescriptive nor suggestive; it shall be up to
 
 ### Discussions
 
-A series of open questions were discussed over the course of July and August 2024, both in the [draft spreadsheet](https://docs.google.com/spreadsheets/d/1aYq79sWp8TK4zbcSKUb-gRIBei3fERVwAgDJ5ezZf1w/edit?usp=sharing) and in Task Force (TF) and Member calls.  This section attempts to capture the largest of those discussions.
+A series of open questions were discussed over the course of July and August 2024, both in the [draft spreadsheet](https://docs.google.com/spreadsheets/d/1aYq79sWp8TK4zbcSKUb-gRIBei3fERVwAgDJ5ezZf1w/edit?usp=sharing) and in Task Force (TF) and Member calls.  This section attempts to describe the largest of those discussions.
 
-#### Shall the Category composition from FOCUS 1.0?
+#### Shall the Category composition change from FOCUS 1.0?
 
-With Subcategories now in scope for FOCUS 1.1, it unlocks the potential of rolling existing Categories together.  For example: 
+With Subcategories now in scope for FOCUS 1.1, there was then the potential of changing Categories.  For example: 
 
 - `Identity` could become a child Subcategory of `Security`.
 - `Web` and `Mobile` could be grouped together into a net-new category (proposed `Front-end` or `Application Tools`).
-- Activity that is truly cross-categorical could be placed in a net-new category (proposed `Crossfunctional`).
+- Activity that is truly cross-categorical could be placed in a net-new category (proposed `Crossfunctional`) separate from `Other`, which is more of an uncategorized placeholder.
+- `Integration` could be rescoped and renamed `Data Management` to be more inclusive of Service Subcategories such as Data Processing and API Management.
+- `Multicloud` could be rescoped and renamed `Hybrid and Multicloud` to be more inclusive of on-premises Services.
 
-After much discussion, particularly on the 8/6 TF1 call, it became clear that the "burden of proof" for changing existing Categories is higher, given that some of the group feels this to constitute a "breaking change".  Some of the group felt that Service Categories and Subcategories should be considered more of a "living document" that is revisited from one FOCUS release to another, in order to stay more tightly aligned with the slowly-changing nature of Service categorizations; others felt that would be disruptive for FOCUS consumers who have constructed various downstream artifacts that depend on a certain Category and Subcategory composition.
+After much discussion, particularly on the 8/6 TF1 call, it became clear that the "burden of proof" for changing existing Categories is higher, given that some of the group feels this to constitute a "breaking change".  Some of the group felt that the Service hierarchy should be considered more of a "living document" that is revisited from one FOCUS release to another, in order to stay more tightly aligned with the slowly-changing nature of Service categorizations; others felt that would be prohibitively disruptive for FOCUS consumers who have constructed various downstream artifacts and depend on a certain Category and Subcategory composition.
 
-_Outcome_: leave the Category composition in place for FOCUS 1.1 and narrow scope of this release to only add Subcategories underneath them, leaving the door open to alter the Category composition in a future major release.
+_Outcome_: leave the Category composition in place for FOCUS 1.1 and narrow scope of this release to only add Subcategories underneath them, leaving the door open to alter the Category composition in a future release (either major or not, pending a larger decision around what constitutes a "breaking change").
 
 #### Where do Commitment Discounts belong?
 
@@ -74,13 +76,16 @@ _Outcome_: given the decision not to change the Category composition, and given 
 
 The group discussed the possibility of "graduating" Services to their own net-new categories, such as `Blockchain`, `Containers`, and `Mixed Reality`.  These are technologies for which some or all of the three major cloud service providers have created their own Categories, and there is certainly a use case for being able to easily build reports to show those (and only those) Services.
 
-Given the decision not to change the Category composition on the 8/6 TF1 call, this became a moot discussion.  However, the group did discuss some specific examples, particularly on the 7/23 TF1 call:
+Given the decision not to change the Category composition on the 8/6 TF1 call, this became a moot discussion.  However, the group did discuss some specific examples, particularly on the 7/23 TF1 and 7/25 Member calls:
 
 - `Blockchain` belongs under `Databases > Ledger`.
 - `Containers` belongs under `Compute > Containers`.
-- `Mixed Reality` does not yet deserve its own Category.
+- `Support` belongs under `Management and Governance`.
+- `Mixed Reality` does not deserve its own Category.
+- `Industry Specific` does not deserve its own Category.
+- `Marketplace` Services shall be placed into the Category and Subcategory aligned with their purpose, rather than placed into a `Marketplace` Category.
 
-#### What to call the "unsubcategorized" Subcategory
+#### What shall we call the "unsubcategorized" Subcategory?
 
 Each Category carries an "Other" Subcategory to allow the providers to provide a Category without a Subcategory.  A vote issued on 8/13/24 with the following options:
 
