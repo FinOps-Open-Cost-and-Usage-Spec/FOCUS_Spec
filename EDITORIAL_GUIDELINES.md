@@ -12,17 +12,19 @@
     <tr>
         <td><strong>Column &amp; Attributes Names</strong>:</td>
         <td>
-            <strong>Column Names:<br>
-            - Pricing Quantity<br>
-            - Pricing Unit<br><br>
-            - Attribute Names:<br>
-            - Currency Code Format<br>
-            - Date/Time Format</strong>
+            <strong>Column Names</strong>:<br>
+            - <strong>Pricing Quantity</strong><br>
+            - <strong>Pricing Unit</strong><br>
+            - <strong>Provider</strong> <br><br>
+            <strong>Attribute Names</strong>:<br>
+            - <strong>Currency Code Format</strong><br>
+            - <strong>Date/Time Format</strong>
         </td>
         <td>
             **Pricing Quantity**<br>
-            **Pricing Unit**<br><br>
-            **Provider**<br>
+            **Pricing Unit**<br><br><br>
+            **Provider**<br><br>
+            **Currency Code Format**<br>
             **Date/Time Format**<br>
         </td>
         <td>
@@ -35,17 +37,21 @@
         <td><strong>Columns &amp; Attributes IDs:</strong></td>
         <td>
            <strong>Columns IDs</strong>:<br>
-            -  PricingQuantity, PricingUnit, ProviderName <br>
+            - PricingQuantity</strong><br> 
+            - PricingUnit</strong><br> 
+            - ProviderName</strong> <br><br>
           <strong>Attributes IDs</strong>:<br>
-            - CurrencyCodeFormat, ChargeClass, ChargeCategory, PricingQuantity
+            - CurrencyCodeFormat <br> 
+            - DateTimeFormat <br>
         </td>
         <td>
-          <strong>Columns IDs</strong>:<br>
+          <strong>Columns IDs:</strong>:<br>
+          &nbsp;&nbsp; PricingQuantity <br>
+          &nbsp;&nbsp; PricingUnit</strong><br>
+          &nbsp;&nbsp; ProviderName</strong> <br><br>
           <strong>Attributes IDs:</strong> </br>
-            CurrencyCodeFormat </br>
-            ChargeClass </br>
-            ChargeCategory </br>
-            PricingQuantity </br>
+          &nbsp;&nbsp; CurrencyCodeFormat </br>
+          &nbsp;&nbsp; DateTimeFormat <br>
         </td>
         <td>
             Display normal text without italics.<br>
