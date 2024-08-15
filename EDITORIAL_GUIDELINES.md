@@ -124,24 +124,26 @@
     </tr>
 </table>
 
-### Editorial Notes
-* > **Linking Only the First Time**: To prevent excessive linking within sections, Column Name, Column ID, Attributes Names, Attributes IDs, and Glossary will only be linked to their corresponding description section or description the first time they appear in a new section.
-* > **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) should be written as bullet points instead of lengthy sentences. 
+**Editorial Notes**
+* **Linking Only the First Time**: To prevent excessive linking within sections, Column Name, Column ID, Attributes Names, Attributes IDs, and Glossary will only be linked to their corresponding description section or description the first time they appear in a new section.
+
+* **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) should be written as bullet points instead of lengthy sentences. 
 
 ### Example
 
 >**2.28. Pricing Quantity**
 >
->The Pricing Quantity represents the volume of a given SKU associated with a resource or service used or purchased, based on the Pricing Unit. Distinct from Consumed Quantity (complementary to Consumed Unit), it focuses on pricing and cost, not resource and service consumption. 
+>The **[Pricing Quantity](#pricing-quantity)** represents the volume of a given [SKU](#glossary:sku) associated with a [resource](#glossary:resource) or [service](#glossary:service) used or purchased, based on the **[Pricing Unit](#pricing-unit)**. Distinct from **[Consumed Quantity](#consumed-quantity)** (complementary to **[Consumed Unit](#consumed-unit)**), it focuses on pricing and cost, not resource and service consumption. 
 >
-  * >The PricingQuantity column MUST be present in the billing data. 
-  * > This column MUST be of type Decimal and MUST conform to Numeric Format requirements. 
-  * > The value MAY be negative in cases where ChargeClass is "Correction". 
-* > This column:
-  * > MUST NOT be null when ChargeClass is not "Correction" and ChargeCategory is "Usage" or "Purchase", 
-  * > MUST be null when ChargeCategory is "Tax", and 
-  * > MAY be null for all other combinations of ChargeClass and ChargeCategory. 
-* > When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
+>  * The PricingQuantity column MUST be present in the billing data. 
+>  * This column MUST be of type Decimal and MUST conform to Numeric Format requirements. 
+>  * The value MAY be negative in cases where ChargeClass is "Correction". 
+> 
+>This column:
+>  *  MUST NOT be null when ChargeClass is not "Correction" and ChargeCategory is "Usage" or "Purchase", 
+>  * MUST be null when ChargeCategory is "Tax", and 
+>  * MAY be null for all other combinations of ChargeClass and ChargeCategory. 
+> * When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 >
 > **2.28.1. Column ID**
 > PricingQuantity 
