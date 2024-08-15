@@ -127,7 +127,7 @@ Content:
 
 ### Scenario
 
-ACME has decided add additional columns to their FOCUS data export. The new columns are x_awesome_column1 and x_awesome_column2.
+ACME has decided add additional columns to their FOCUS data export. The new columns are x_awesome_column1, x_awesome_column2, and x_awesome_column3.
 
 ### New schema metadata object
 
@@ -192,6 +192,12 @@ Content:
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
           },
+          {
+                "ColumnName": "x_awesome_column3",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
       ]
 }
 ```
@@ -231,5 +237,191 @@ Content:
       "total_rows": 4450
     }
   ]
+}
+```
+
+## Removal of FOCUS Data Columns
+
+### Scenario
+
+ACME has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3.
+
+### New schema metadata object
+
+The provider creates a new schema object to represent the new schema, this schema object has a unique SchemaId.
+
+#### Supplied Metadata
+
+Location: `/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
+
+Content:
+```
+ {
+  "SchemaId": "34567-abcde-34567-abcde-34567",
+  "FocusVersion": "1.0",
+  "name": "New Columns",
+  "CreationDate": "2024-03-02T12:01:03.083z",
+  "ColumnDefinition": [
+    {
+      "ColumnName": "BillingAccountId",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+                "ColumnName": "BillingAccountName",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+               "ColumnName": "ChargePeriodStart",
+               "DataType": "DATETIME"
+          },
+          {
+                "ColumnName": "ChargePeriodEnd",
+                "DataType": "DATETIME"
+          },
+          {
+                "ColumnName": "BilledCost",
+                "DataType": "DECIMAL",
+                "NumericPrecision": 20,
+                "NumberScale": 10
+          },
+          {
+                "ColumnName": "EffecitiveCost",
+                "DataType": "DECIMAL",
+                "NumericPrecision": 20,
+                "NumberScale": 10
+          },
+          {
+                "ColumnName": "Tags",
+                "DataType": "JSON",
+                "ProviderTagPrefixes": ["awecorp", "ac"]
+          },
+          {
+                "ColumnName": "x_awesome_column1",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+                "ColumnName": "x_awesome_column2",
+                "DataType": "DATETIME"
+          },
+      ]
+}
+```
+
+### New schema metadata object is referenced in export metadata
+
+The provider includes a reference to the applicable schema object for exports that use the new schema.
+
+#### Supplied Metadata
+
+Location: `/FOCUS/data/export3-metadata.json`
+
+Content:
+```
+{
+  "SchemaId":"34567-abcde-34567-abcde-34567",  
+  "data_location": 
+  [
+    {
+      "filepath": "/FOCUS/data/export3/export3-part1.csv",
+      "total_bytes": 9010387,
+      "total_rows": 4450
+    },
+    {
+      "filepath": "/FOCUS/data/export3/export3-part2.csv",
+      "total_bytes": 9010387,
+      "total_rows": 4450
+    },
+    {
+      "filepath": "/FOCUS/data/export3/export3-part3.csv",
+      "total_bytes": 9010387,
+      "total_rows": 4450
+    },
+    {
+      "filepath": "/FOCUS/data/export3/export3-part4.csv",
+      "total_bytes": 9010387,
+      "total_rows": 4450
+    }
+  ]
+}
+```
+
+## Provider has an error in their schema metadata.  
+
+### Scenario
+
+Acme has discovered that while their export includes the column x_awesome_column3, the schema metadata does not include this column. In this case, the provider fixes the metadata in existing the schema object and does not need to create a new schema object.  Reference metadat remains the same. 
+
+### Updated schema metadata object
+
+The provider updates the existing schema object to represent the new schema, this schema object has a unique SchemaId.
+
+#### Supplied Metadata
+
+Location: `/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
+
+Content:
+```
+ {
+  "SchemaId": "34567-abcde-34567-abcde-34567",
+  "FocusVersion": "1.0",
+  "name": "New Columns",
+  "CreationDate": "2024-03-02T12:01:03.083z",
+  "ColumnDefinition": [
+    {
+      "ColumnName": "BillingAccountId",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+                "ColumnName": "BillingAccountName",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+               "ColumnName": "ChargePeriodStart",
+               "DataType": "DATETIME"
+          },
+          {
+                "ColumnName": "ChargePeriodEnd",
+                "DataType": "DATETIME"
+          },
+          {
+                "ColumnName": "BilledCost",
+                "DataType": "DECIMAL",
+                "NumericPrecision": 20,
+                "NumberScale": 10
+          },
+          {
+                "ColumnName": "EffecitiveCost",
+                "DataType": "DECIMAL",
+                "NumericPrecision": 20,
+                "NumberScale": 10
+          },
+          {
+                "ColumnName": "Tags",
+                "DataType": "JSON",
+                "ProviderTagPrefixes": ["awecorp", "ac"]
+          },
+          {
+                "ColumnName": "x_awesome_column1",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+                "ColumnName": "x_awesome_column2",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+      ]
 }
 ```
