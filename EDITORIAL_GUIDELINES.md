@@ -21,11 +21,13 @@
             - <strong>Date/Time Format</strong>
         </td>
         <td>
-            **Pricing Quantity**<br>
-            **Pricing Unit**<br><br><br>
-            **Provider**<br><br>
-            **Currency Code Format**<br>
-            **Date/Time Format**<br>
+            <strong>Column Names</strong>:<br>
+            &nbsp;&nbsp; **Pricing Quantity**<br>
+            &nbsp;&nbsp; **Pricing Unit**<br>
+            &nbsp;&nbsp; **Provider**<br><br>
+            <strong>Attribute Names</strong>:<br>
+            &nbsp;&nbsp; **Currency Code Format**<br>
+            &nbsp;&nbsp; **Date/Time Format**<br>
         </td>
         <td>
             Bold <br>
