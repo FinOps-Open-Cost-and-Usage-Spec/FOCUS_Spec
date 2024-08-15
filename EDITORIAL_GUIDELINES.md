@@ -32,7 +32,7 @@
         <td>
             - Bold <br>
             - Use the display name in the non-normative section.<br>
-            - *The first occurrence in a new section is linked*
+            - The first occurrence in a new section is linked
         </td>
     </tr>
     <tr>
@@ -56,8 +56,8 @@
           &nbsp;&nbsp; DateTimeFormat <br>
         </td>
         <td>
-            Display normal text without italics.<br>
-            The first occurrence in a new section is linked.
+           - Display normal text without italics.<br>
+           - The first occurrence in a new section is linked.
         </td>
     </tr>
     <tr>
@@ -66,58 +66,60 @@
             MUST, MAY, MUST NOT and normative statements
         </td>
         <td>
-            **ConsumedQuantity** and **ConsumedUnit**:<br>
+            ConsumedQuantity and ConsumedUnit:<br>
             <ul>
-                <li>* MUST NOT be null if ChargeCategory is "Usage", unless ChargeClass is "Correction" or CommitmentStatus is 'Unused'</li>
-                <li>* MAY be null if ChargeCategory is "Usage" and ChargeClass is "Correction"</li>
+                <li>MUST NOT be null if ChargeCategory is "Usage", unless ChargeClass is "Correction" or CommitmentStatus is 'Unused'</li>
+                <li>MAY be null if ChargeCategory is "Usage" and ChargeClass is "Correction"</li>
             </ul>
         </td>
         <td>
-            Uppercase, without bold.<br>
-            Bullet list format<br>
-            Presenting normative statements in a bullet list format ensures clarity and facilitates quick scanning and comprehension.
+           - Uppercase, without bold.<br>
+           - Bullet list format<br>
+           - Presenting normative statements in a bullet list format ensures clarity and facilitates quick scanning and comprehension.
         </td>
     </tr>
     <tr>
         <td><strong>Glossary</strong></td>
         <td>
-            SKU, resource, service
+            [SKU](), [resource](), [service]()
         </td>
         <td>
-            [*service*](#glossary:service)
+            [*SKU*](#glossary:sku) <br>
+            [*resource*](#glossary:resource) <br>
+            [*service*](#glossary:service) <br>
         </td>
         <td>
-            Blue + italic<br>
-            *link to the glossary of the first iteration in the section.
+            - Blue + italic<br>
+            - link to the glossary of the first iteration in the section.
         </td>
     </tr>
     <tr>
-        <td>Important Text</td>
+        <td><strong>Important Text</strong></td>
         <td> <img width="492" alt="image" src="https://github.com/user-attachments/assets/c6f60ff9-1503-43a3-8229-004595b334d2"></td>
         <td>> Important Consideration</td>
-        <td>It is added as a note.</td>
+        <td>- It is added as a note.</td>
     </tr>
     <tr>
         <td><strong>Key-Value Format</strong></td>
         <td>JSON Script</td>
         <td>
-                <pre>
-                 **Example**:
-                  ```json
-                    {
-                        "key1": "value1",
-                        "key2": true,
-                        "key3": 123
-                    }
-                  ```
-                </pre>
+            <pre>
+              **Example**:
+              ```json
+                {
+                    "key1": "value1",
+                    "key2": true,
+                    "key3": 123
+                }
+              ```
+            </pre>
         </td>
-        <td>Monospace font</td>
+        <td>- Monospace font</td>
     </tr>
     <tr>
       <td><strong>Tables</strong></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8"></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72"></td>
-      <td>Tables</td>
+      <td> - Tables</td>
     </tr>
 </table>
