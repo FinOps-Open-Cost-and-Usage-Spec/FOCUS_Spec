@@ -30,9 +30,9 @@
             &nbsp;&nbsp; **Date/Time Format**<br>
         </td>
         <td>
-            Bold <br>
-            Use the display name in the non-normative section.<br>
-            *The first occurrence in a new section is linked*
+            - Bold <br>
+            - Use the display name in the non-normative section.<br>
+            - *The first occurrence in a new section is linked*
         </td>
     </tr>
     <tr>
