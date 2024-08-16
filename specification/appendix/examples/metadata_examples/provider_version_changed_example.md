@@ -1,10 +1,11 @@
-## Focus Version Changed by Provider Using Provider Version
+# Focus Version Changed by Provider Using Provider Version
 
-### Scenario
+## Scenario
 
 ACME uses provider version. They have made a change to their approach to create Focus data that does not adopt a new Focus Version, nor make a change the included columns but does impact values in the data. This is to illustrate that Provider Version changes are independent of column changes, however provider version changes may include column changes.
 
 The provider creates a new schema object to represent the new schema. The provider includes both the new Focus Version and Provider Version in the schema object.
+
 ### Supplied Metadata
 
 #### Location of the new schema object:
@@ -73,6 +74,7 @@ The provider creates a new schema object to represent the new schema. The provid
       ]
 }
 ```
+
 For an example of how Acme ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)
 
 

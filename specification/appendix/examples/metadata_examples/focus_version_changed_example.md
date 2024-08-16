@@ -1,6 +1,6 @@
-## Provider has an error in their schema metadata.
+# Provider has an error in their schema metadata.
 
-### Scenario
+## Scenario
 
 Acme's previous exports used Focus Version 1.0. They are now going to adopt Focus Version 1.1.  It is required that they create a new schema metadata object when using a new focus version regardless of schema changes. In this example the FOCUS new version adoption doesn't include columns changes. This is to illustrate that Focus Version changes are independent of column changes, however this scenario is unlikely.
 
@@ -71,6 +71,7 @@ Acme's previous exports used Focus Version 1.0. They are now going to adopt Focu
       ]
 }
 ```
+
 For an example of how Acme ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)
 
 

@@ -1,6 +1,6 @@
-## Provider has an error in their schema metadata.
+# Provider has an error in their schema metadata.
 
-### Scenario
+## Scenario
 
 Acme has discovered that while their export includes the column x_awesome_column3, the schema metadata does not include this column. In this case, the provider fixes the metadata in existing the schema object and does not need to create a new schema object.  Reference metadat remains the same.
 

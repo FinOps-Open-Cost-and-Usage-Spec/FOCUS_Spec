@@ -1,6 +1,6 @@
-## Schema Metadata
+# Schema Metadata
 
-### Scenario
+## Scenario
 
 ACME has only provided one schema for their provided FOCUS data. ACME provides a directory of schemas and each schema is a single file. Acme's provides a file representing the schema for the data they provide.
 
@@ -13,6 +13,7 @@ ACME has only provided one schema for their provided FOCUS data. ACME provides a
 ```
 
 #### Content of the schema object: 
+
 ```
 {
   "SchemaId": "1234-abcde-12345-abcde-12345",

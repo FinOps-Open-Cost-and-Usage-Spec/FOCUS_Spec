@@ -1,4 +1,4 @@
-# Adding New Columns
+# Changing a Column's Metadata Example
 
 ## Scenario
 

@@ -8,10 +8,13 @@ Our providers name is ACME. ACME has provides a metadata file that includes the 
 ### Supplied Metadata
 
 #### Location of Data Generator Metadata File: 
+
 ```
     /FOCUS/metadata/data_generator.json
 ```
+
 #### Content of Data Generator Metadata File: 
+
 ```
 {
     "DataGenerator": "ACME"
