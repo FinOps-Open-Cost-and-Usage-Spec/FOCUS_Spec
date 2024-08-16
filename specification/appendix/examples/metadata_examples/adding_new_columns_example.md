@@ -13,6 +13,7 @@ ACME has decided add additional columns to their FOCUS data export. The new colu
 ```
 
 #### Content for the new schema object:
+
 ```
  {
   "SchemaId": "23456-abcde-23456-abcde-23456",
