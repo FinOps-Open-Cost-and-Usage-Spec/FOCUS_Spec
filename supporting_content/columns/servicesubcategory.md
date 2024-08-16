@@ -122,9 +122,9 @@ In addition to the principles as defined during the creation of Service Categori
   - The Service hierarchy is meant to serve as a relatively high-level set of groupings that primarily address the needs of the Executive persona.  A given Service can fulfill multiple functions across and within organizations, and so the assignment of a Service to one and only one Category and Subcategory may be inaccurate from org to the next.  However, this hierarchy will then give the Practitioner a solid place to start, and they can make a few tweaks to its composition to meet their org's needs rather than create a hierarchy from scratch.  Ultimately, the creation and maintenance of the Service hierarchy requires us to embrace the imperfect and somewhat subjective nature of assigining a given Service to a single Category / Subcategory.
   - The (forthcoming) SKU hierarchy will be an opportunity to get very specific on the categorizations of cost and usage activity.  For example, GCP maintains a seven-level taxonomy for every SKU, and this will hopefully more concretely address the lower-level reporting needs of the Engineering persona.
 
-### Discussions
+### Discussion Outcomes
 
-A series of open questions were discussed over the course of July and August 2024, both in the [draft spreadsheet](https://docs.google.com/spreadsheets/d/1aYq79sWp8TK4zbcSKUb-gRIBei3fERVwAgDJ5ezZf1w/edit?usp=sharing) and in Task Force (TF) and Member calls.  This section attempts to describe the largest of those discussions.
+A series of open questions were discussed over the course of July and August 2024, both in the [draft spreadsheet](https://docs.google.com/spreadsheets/d/1aYq79sWp8TK4zbcSKUb-gRIBei3fERVwAgDJ5ezZf1w/edit?usp=sharing) and in Task Force (TF) and Member calls.  This section attempts to describe the largest topics and outcomes of those discussions.
 
 #### Shall the Category composition change from FOCUS 1.0?
 
