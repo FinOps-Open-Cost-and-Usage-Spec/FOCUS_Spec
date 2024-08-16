@@ -28,98 +28,98 @@ Second-highest-level classification of a *service* based on its core function.
 
 Allowed values:
 
-| Service Category          | Service Subcategory               | Service Subcategory Description |
-| ------------------------- | --------------------------------- | ------------------------------- |
-| AI and Machine Learning   | Generative AI                     |                                 |
-|                           | Language AI                       |                                 |
-|                           | Machine Learning                  |                                 |
-|                           | Search                            |                                 |
-|                           | Bots                              |                                 |
-|                           | Other (AI and Machine Learning)   |                                 |
-|                           |                                   |                                 |
-| Analytics                 | Analytics Platform                |                                 |
-|                           | Business Intelligence             |                                 |
-|                           | Streaming Analytics               |                                 |
-|                           | Data Processing                   |                                 |
-|                           | Other (Analytics)                 |                                 |
-|                           |                                   |                                 |
-| Business Applications     | Other (Business Applications)     |                                 |
-|                           |                                   |                                 |
-| Compute                   | Virtual Machines                  |                                 |
-|                           | End User Computing                |                                 |
-|                           | Containers                        |                                 |
-|                           | Serverless Compute                |                                 |
-|                           | Quantum                           |                                 |
-|                           | Other (Compute)                   |                                 |
-|                           |                                   |                                 |
-| Databases                 | Data Warehouse                    |                                 |
-|                           | Relational                        |                                 |
-|                           | NoSQL                             |                                 |
-|                           | Caching                           |                                 |
-|                           | Ledger                            |                                 |
-|                           | Time Series                       |                                 |
-|                           | Other (Databases)                 |                                 |
-|                           |                                   |                                 |
-| Developer Tools           | Other (Developer Tools)           |                                 |
-|                           |                                   |                                 |
-| Identity                  | Other (Identity)                  |                                 |
-|                           |                                   |                                 |
-| Integration               | API Management                    |                                 |
-|                           | Messaging                         |                                 |
-|                           | Workflow Automation               |                                 |
-|                           | Other (Integration)               |                                 |
-|                           |                                   |                                 |
-| Internet of Things        | Other (Internet of Things)        |                                 |
-|                           |                                   |                                 |
-| Management and Governance | Administration                    |                                 |
-|                           | Architecture                      |                                 |
-|                           | Cost Management                   |                                 |
-|                           | Compliance                        |                                 |
-|                           | Data Governance                   |                                 |
-|                           | Disaster Recovery                 |                                 |
-|                           | Observability                     |                                 |
-|                           | Support                           |                                 |
-|                           | Other (Management and Governance) |                                 |
-|                           |                                   |                                 |
-| Media                     | Other (Media)                     |                                 |
-|                           |                                   |                                 |
-| Migration                 | Other (Migration)                 |                                 |
-|                           |                                   |                                 |
-| Mobile                    | Other (Mobile)                    |                                 |
-|                           |                                   |                                 |
-| Multicloud                | Other (Multicloud)                |                                 |
-|                           |                                   |                                 |
-| Networking                | Virtual Network                   |                                 |
-|                           | NAT                               |                                 |
-|                           | VPN                               |                                 |
-|                           | Content Delivery Network          |                                 |
-|                           | Dedicated Network                 |                                 |
-|                           | Load Balancing                    |                                 |
-|                           | DNS                               |                                 |
-|                           | Network Monitoring                |                                 |
-|                           | Private Link                      |                                 |
-|                           | Remote Access                     |                                 |
-|                           | Data Transfer                     |                                 |
-|                           | Firewall                          |                                 |
-|                           | Telecommunications                |                                 |
-|                           | Other (Networking)                |                                 |
-|                           |                                   |                                 |
-| Security                  | CSPM                              |                                 |
-|                           | Secrets, Certificates, and Keys   |                                 |
-|                           | SIEM                              |                                 |
-|                           | Threat Detection                  |                                 |
-|                           | Other (Security)                  |                                 |
-|                           |                                   |                                 |
-| Storage                   | Object Storage                    |                                 |
-|                           | Disk                              |                                 |
-|                           | Files                             |                                 |
-|                           | Bulk Transfer                     |                                 |
-|                           | Backups                           |                                 |
-|                           | Other (Storage)                   |                                 |
-|                           |                                   |                                 |
-| Web                       | Other (Web)                       |                                 |
-|                           |                                   |                                 |
-| Other                     | Other (Other)                     |
+| Service Category          | Service Subcategory               | Service Subcategory Description                                                                                                                                                                                                            |
+| ------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| AI and Machine Learning   | Generative AI                     | Creation of content like text, images, and music by learning patterns from existing data.                                                                                                                                                  |
+|                           | Language AI                       | Generation of human language, handling tasks like translation, sentiment analysis, and text summarization.                                                                                                                                 |
+|                           | Machine Learning                  | Training of algorithms to recognize patterns and make decisions based on data.                                                                                                                                                             |
+|                           | Search                            | Discovery of information by indexing and retrieving data from various sources.                                                                                                                                                             |
+|                           | Bots                              | Automated performance of tasks such as customer service, data collection, and content moderation.                                                                                                                                          |
+|                           | Other (AI and Machine Learning)   | AI and Machine Learning services that do not fall into one of the defined subcategories.                                                                                                                                                   |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Analytics                 | Analytics Platform                | Collection, processing, and analysis of data to provide insights and support decision-making.                                                                                                                                              |
+|                           | Business Intelligence             | Tracking of performance and identification of trends via semantic models, dashboards, reports, and data visualizations.                                                                                                                    |
+|                           | Streaming Analytics               | Processing of real-time data streams to detect patterns, trends, and anomalies as they occur.                                                                                                                                              |
+|                           | Data Processing                   | Collection, transformation, and organization of data to make it useful for analysis. Includes tasks like data cleaning, integration, and aggregation.                                                                                      |
+|                           | Other (Analytics)                 | Analytics services that do not fall into one of the defined subcategories.                                                                                                                                                                 |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Business Applications     | Other (Business Applications)     | All Business Applications services.                                                                                                                                                                                                        |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Compute                   | Virtual Machines                  | Deployment and running of various applications in a flexible computing environment.                                                                                                                                                        |
+|                           | End User Computing                | Systems and tools that allow non-IT users to create and manage their own applications and data, including desktop virtualization, mobile computing, and self-service analytics.                                                            |
+|                           | Containers                        | Lightweight, portable units that package applications and their dependencies, ensuring they run consistently across different environments.                                                                                                |
+|                           | Serverless Compute                | Faciliates building and running applications without managing servers. Automatically scales resources based on demand, reducing operational complexity.                                                                                    |
+|                           | Quantum                           | Leverages the principles of quantum mechanics to perform complex calculations at high speed.                                                                                                                                               |
+|                           | Other (Compute)                   | Compute services that do not fall into one of the defined subcategories.                                                                                                                                                                   |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Databases                 | Data Warehouse                    | Centralized repository that stores large volumes of structured data from multiple sources, supporting complex queries and historical analysis.                                                                                             |
+|                           | Relational                        | Data organized into tables with rows and columns, using SQL for querying and managing data, supporting transactions and business applications.                                                                                             |
+|                           | NoSQL                             | Unstructured or semi-structured data, offering flexibility and scalability in big data applications, real-time web apps, and situations where data models change frequently.                                                               |
+|                           | Caching                           | Frequently accessed data housed in a temporary storage area for quick retrieval, improving application performance.                                                                                                                        |
+|                           | Ledger                            | Transparent, immutable, and cryptographically verifiable transaction log used in applications requiring a secure and auditable record of transactions, such as blockchain.                                                                 |
+|                           | Time Series                       | Data store that is optimized for storing and querying time-stamped data, used in applications like monitoring, IoT, and financial analysis where tracking changes over time is crucial.                                                    |
+|                           | Other (Databases)                 | Database services that do not fall into one of the defined subcategories.                                                                                                                                                                  |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Developer Tools           | Other (Developer Tools)           | All Developer Tools services.                                                                                                                                                                                                              |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Identity                  | Other (Identity)                  | All Identity services.                                                                                                                                                                                                                     |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Integration               | API Management                    | Creation, publishing, and governance application programming interfaces, ensuring secure and efficient communication between different software systems and services.                                                                      |
+|                           | Messaging                         | Asynchronous communication between distributed applications, ensuring reliable information delivery for event-driven architectures and microservices.                                                                                      |
+|                           | Workflow Automation               | Streamlining of business processes through the automation of repetitive tasks and orchestration of complex interdependent activities.                                                                                                      |
+|                           | Other (Integration)               | Integration services that do not fall into one of the defined subcategories.                                                                                                                                                               |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Internet of Things        | Other (Internet of Things)        | All Internet of Things (IoT) services.                                                                                                                                                                                                     |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Management and Governance | Administration                    | Management and maintenance of cloud systems, ensuring they run smoothly and efficiently.                                                                                                                                                   |
+|                           | Architecture                      | Design and structure of cloud systems, including the planning and implementation of frameworks that ensure scalability, reliability, and performance.                                                                                      |
+|                           | Cost Management                   | Monitoring and controlling expenses related to cloud resources.                                                                                                                                                                            |
+|                           | Compliance                        | Ensuring that cloud systems and processes adhere to regulatory standards and industry best practices.                                                                                                                                      |
+|                           | Data Governance                   | Management of the availability, usability, integrity, and security of data, ensuring that data is accurate, consistent, and used responsibly across the organization.                                                                      |
+|                           | Disaster Recovery                 | Plans and procedures that ensure cloud systems can recover quickly from disruptions and minimize downtime.                                                                                                                                 |
+|                           | Observability                     | Monitoring, logging, and tracing of data to track the performance and health of cloud systems and resolve issues proactively.                                                                                                              |
+|                           | Support                           | Planning, advisory, and cloud expertise to help achieve business outcomes with increased speed and scale in cloud platforms.                                                                                                               |
+|                           | Other (Management and Governance) | Management and governance services that do not fall into one of the defined subcategories.                                                                                                                                                 |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Media                     | Other (Media)                     | All Media services.                                                                                                                                                                                                                        |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Migration                 | Other (Migration)                 | All Migration services.                                                                                                                                                                                                                    |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Mobile                    | Other (Mobile)                    | All Mobile services.                                                                                                                                                                                                                       |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Multicloud                | Other (Multicloud)                | All Multicloud services.                                                                                                                                                                                                                   |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Networking                | Virtual Network                   | Communication of multiple devices over a simulated network environment, providing secure, scalable connectivity for cloud resources.                                                                                                       |
+|                           | NAT                               | Communication between private IP addresses and external networks, helping conserve IP addresses and enhance security by masking internal network structures.                                                                               |
+|                           | VPN                               | Encrypted connections that allow remote users to access private networks safely and securely.                                                                                                                                              |
+|                           | Content Delivery Network          | Distribution of content across multiple servers to improve load times and reliability, enhancing user experience by delivering content from the nearest server.                                                                            |
+|                           | Dedicated Network                 | Exclusive, high-performance connectivity for specific applications or users, ensuring consistent bandwidth and low latency for critical operations.                                                                                        |
+|                           | Load Balancing                    | Distribution of incoming network traffic across multiple servers to prevent server overload and ensure optimal performance and reliability.                                                                                                |
+|                           | DNS                               | Translation of domain names into IP addresses, enabling users to access websites using easy-to-remember names.                                                                                                                             |
+|                           | Network Monitoring                | Tracking of performance and health of network infrastructure, helping detect issues, optimize performance, and ensure reliable connectivity.                                                                                               |
+|                           | Private Link                      | Secure connectivity between services and applications within a cloud environment, ensuring data remains within the trusted network.                                                                                                        |
+|                           | Remote Access                     | User connection to IT systems and resources from remote locations, supporting flexible work environments and ensuring secure access to applications.                                                                                       |
+|                           | Data Transfer                     | Movement of data between systems, locations, or formats via data migration, synchronization, and replication tasks.                                                                                                                        |
+|                           | Firewall                          | Monitoring and control of incoming and outgoing network traffic, protecting cloud systems from unauthorized access and cyber threats.                                                                                                      |
+|                           | Telecommunications                | Transmission and exchange of voice and video data over significant distances.                                                                                                                                                              |
+|                           | Other (Networking)                | Networking services that do not fall into one of the defined subcategories.                                                                                                                                                                |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Security                  | CSPM                              | Cloud Security Posture Management tools that help organizations manage and improve their cloud security by monitoring cloud environments for compliance, security risks, and misconfigurations.                                            |
+|                           | Credentials                       | Information used to authenticate users and systems, including secrets, certificates, tokens, and other keys.                                                                                                                               |
+|                           | SIEM                              | Security Information and Event Management (SIEM) systems collect and analyze security data from various sources to detect and respond to threats, providing real-time monitoring, incident detection, and automated response capabilities. |
+|                           | Threat Detection                  | Identification of potential security threats and vulnerabilities within a cloud environment using various techniques, including anomaly detection, signature-based detection, and behavioral analysis, to protect against cyber attacks.   |
+|                           | Other (Security)                  | Security services that do not fall into one of the defined subcategories.                                                                                                                                                                  |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Storage                   | Object Storage                    | A highly scalable data management architecture ideal for storing large amounts of unstructured data such as multimedia files and backups.                                                                                                  |
+|                           | Disk                              | Persistent storage for operating systems, applications, and user data, offering various performance and capacity options.                                                                                                                  |
+|                           | Files                             | Hierarchical structure of directories for storing documents, images, and other types of data.                                                                                                                                              |
+|                           | Bulk Transfer                     | Movement of large volumes of data between systems or locations.                                                                                                                                                                            |
+|                           | Backups                           | Copies of data created to provide business continuity and protect against data loss.                                                                                                                                                       |
+|                           | Other (Storage)                   | Storage services that do not fall into one of the defined subcategories.                                                                                                                                                                   |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Web                       | Other (Web)                       | All Web services.                                                                                                                                                                                                                          |
+|                           |                                   |                                                                                                                                                                                                                                            |
+| Other                     | Other (Other)                     | All services that do not fall into one of the defined categories.                                                                                                                                                                          |
 
 ## Introduced (version)
 
