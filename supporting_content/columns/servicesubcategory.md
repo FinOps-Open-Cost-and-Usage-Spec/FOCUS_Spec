@@ -198,6 +198,10 @@ The following considerations were included:
 
 _Outcome_: Option :two: was chosen.
 
+#### Why do some of the Categories lack Subcategories beyond "Other"?
+
+Per the principles and some of the outcomes described above, we have leaned towards subcategorizing only those Categories on which we had broad consensus and/or could target significant usage.  Several of the existing Categories do not have sufficient Service counts and/or activity to allow designating Subcategories at a high degree of confidence, and future FOCUS versions can add such groupings if and when requested by the community.
+
 #### Shall this column be mandatory or optional?
 
 There was some discussion around this at the 8/15 Member call.  Some felt that Service Subcategory should be mandatory because Service Category is mandatory, and together they form a hierarchy.  Others felt that provider adoption would be easier if the column were not required.  Still others felt that making the column mandatory, even populated completely with Other, would entice FOCUS consumers to petition their provider(s) to populate the column with actual Subcategories.
