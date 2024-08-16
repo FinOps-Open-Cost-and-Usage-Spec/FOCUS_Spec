@@ -114,7 +114,13 @@ To be clear, this list is neither exhaustive nor prescriptive nor suggestive; it
 | Other                     | Other (Other)                     |                                                                           | Mixed Reality, Spatial Anchors                                                                                                                                                          |
 ### Principles
 
-- Undercategorize rather than overcategorize where there is not broad consensus.  Allow the community to advocate for new Subcategories (and Categories) in future releases, and leave Services uncategorized and/or unsubcategorized in the meantime.
+In addition to the principles as defined during the creation of Service Categories in FOCUS 0.5, the following principles shall also be followed when constructing Service Subcategories:
+
+- Undercategorize rather than overcategorize where there is not broad consensus and/or materiality.
+  - Allow the community to advocate for new Subcategories (and Categories) in future releases, and leave Services uncategorized and/or unsubcategorized in the meantime.
+- Assign each Service to the one (and only one) Subcategory that describes its primary function.  
+  - The Service hierarchy is meant to serve as a relatively high-level set of groupings that primarily address the needs of the Executive persona.  A given Service can fulfill multiple functions across and within organizations, and so the assignment of a Service to one and only one Category and Subcategory may be inaccurate from org to the next.  However, this hierarchy will then give the Practitioner a solid place to start, and they can make a few tweaks to its composition to meet their org's needs rather than create a hierarchy from scratch.  Ultimately, the creation and maintenance of the Service hierarchy requires us to embrace the imperfect and somewhat subjective nature of assigining a given Service to a single Category / Subcategory.
+  - The (forthcoming) SKU hierarchy will be an opportunity to get very specific on the categorizations of cost and usage activity.  For example, GCP maintains a seven-level taxonomy for every SKU, and this will hopefully more concretely address the lower-level reporting needs of the Engineering persona.
 
 ### Discussions
 
@@ -133,6 +139,16 @@ With Subcategories now in scope for FOCUS 1.1, there was then the potential of c
 After much discussion, particularly on the Aug 6 TF1 call, it became clear that the "burden of proof" for changing existing Categories is higher, given that some of the group feels this to constitute a "breaking change".  Some of the group felt that the Service hierarchy should be considered more of a "living document" that is revisited from one FOCUS release to another, in order to stay more tightly aligned with the slowly-changing nature of Service categorizations; others felt that would be prohibitively disruptive for FOCUS consumers who have constructed various downstream artifacts and depend on a certain Category and Subcategory composition.
 
 _Outcome_: leave the Category composition in place for FOCUS 1.1 and narrow scope of this release to only add Subcategories underneath them, leaving the door open to alter the Category composition in a future release (either major or not, pending a larger decision around what constitutes a "breaking change").
+
+#### Shall the Subcategory (and Category) assignment describe the activity's _use case_?
+
+Consider the example of [AWS Inf2 VM instances](https://aws.amazon.com/ec2/instance-types/inf2/).  These instance types are purpose-built to be used for AI and ML use cases, and so any related cost and usage activity belongs in the Category of `AI and Machine Learning`, right?
+
+Not so fast.  While the _intended purpose_ of this VM is for AI use cases, it's still a VM that technically could be used for anything.  Ultimately, we cannot attempt to categorize the _SKU_ with our Service Subcategory; we can only categorize the Service, which in this case is still EC2, which therefore falls into `Compute > Virtual Machines`.  When FOCUS implements a SKU taxonomy / hierarchy, we would be able to get more specific about the use of Inf2 vs, say, T2 instances.  Any reporting that attempted to better convey the use case would either need to leverage that future hierarchy or an appropriate tag of the involved Resources that conveys purpose.
+
+This was discussed at the Jul 30 TF1 call, and the strong majority, if not consensus, opinion was that examples such as these should remain in their Service's assignment, regardless of use case.  However, it does not dismiss the fair point that a Service Category of AI & Machine Learning will exclude Services that can be used for AI and ML purposes.  That is an issue that goes beyond the scope of these columns and must be solved with other mechanisms.
+
+_Outcome_: Service Category and Subcategory shall describe the Service's primary function -- not the use case of the usage or SKU.
 
 #### Where do Commitment Discounts belong?
 
