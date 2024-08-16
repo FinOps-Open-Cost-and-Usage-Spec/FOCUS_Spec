@@ -52,6 +52,10 @@ Also known as Commitment Discount, this is a commitment for an amount of usage o
 
 A company or organization that provides remote access to computing resources, infrastructure, or applications for a fee.
 
+<a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
+
+The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
+
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
@@ -72,6 +76,10 @@ A tag with one tag value chosen from a set of possible tag values after being pr
 
 An open-source specification that defines requirements for billing data.
 
+<a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
+
+A structured collection of cost and usage data that meets or exceeds the Basic compliance criteria of FOCUS.
+
 <a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
@@ -83,14 +91,6 @@ A category of compute resources that can be paused or terminated by the CSP with
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
 The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
-
-<a name="glossary:list-unit-price"><b>Contracted Unit Price</b></a>
-
-The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
-
-<a name="glossary:list-unit-price"><b>Contracted Unit Price</b></a>
-
-The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
 
 <a name="glossary:metric"><b>Metric</b></a>
 

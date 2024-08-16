@@ -187,7 +187,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## Columns History
 
-This table maps the evolution of the billing data, showcasing column introductions and updates from its initial version 0.5 to the comprehensive revisions in "1.0-preview", "1.0" and beyond.
+This table maps the evolution of the specification, showcasing column introductions and updates from its initial version 0.5 to the comprehensive revisions in "1.0-preview", "1.0" and beyond.
 
 | **Column ID**                | **Revision Introduced** | **Status**        |
 |------------------------------|-------------------------|-------------------|
