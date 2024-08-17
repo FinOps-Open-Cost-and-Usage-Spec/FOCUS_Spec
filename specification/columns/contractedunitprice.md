@@ -4,7 +4,7 @@ The Contracted Unit Price represents the agreed-upon unit price for a single [Pr
 
 The ContractedUnitPrice column MUST be present in a FOCUS dataset when the provider supports negotiated pricing concept. This column MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
 
-When [ChargeCategory](#chargecategory) is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused", ContractedUnitPrice MUST reflect the corresponding *commitment-based discount's* purchase's ContractUnitPrice value, or be zero if no purchase record exists.
+ContractedUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
 
 When ContractedUnitPrice is present and not null, multiplying ContractedUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ContractedCost](#contractedcost), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 

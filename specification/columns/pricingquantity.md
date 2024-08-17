@@ -4,7 +4,7 @@ The Pricing Quantity represents the volume of a given SKU associated with a [*re
 
 The PricingQuantity column MUST be present in a FOCUS dataset. This column MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements. The value MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction". This column MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
 
-When [ChargeCategory](#chargecategory) is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused", PricingQuantity MUST reflect the quantity of usage or spend of the corresponding [*commitment-based-discount*](#glossary:commitment-based-discount) that was not amortized by a *resource*.
+PricingQuantity MUST be null when [ChargeCategory](#chargecategory) is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
 
 When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 

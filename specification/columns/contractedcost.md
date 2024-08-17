@@ -6,7 +6,7 @@ Contracted Cost represents the cost calculated by multiplying [*contracted unit 
 
 The ContractedCost column MUST be present in a FOCUS dataset and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. When [ContractedUnitPrice](#contractedunitprice) is present and not null, multiplying the ContractedUnitPrice by PricingQuantity MUST produce the ContractedCost, except in cases of [ChargeClass](#chargeclass) "Correction", which may address PricingQuantity or any cost discrepancies independently.
 
-When [ChargeCategory](#chargecategory) is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused", ContractedCost MUST reflect the corresponding *commitment-based discount's* purchase's ContractCost value, or be zero if no purchase record exists.
+ContractedCost MUST be 0 when [ChargeCategory](#chargecategory) is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
 
 In cases where the ContractedUnitPrice is present and null, the following applies:
 
