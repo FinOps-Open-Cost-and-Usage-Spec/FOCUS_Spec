@@ -4,8 +4,7 @@ The Pricing Unit represents a provider-specified measurement unit for determinin
 
 The PricingUnit column adheres to the following requirements:
 
-* PricingUnit MUST be present in a FOCUS dataset.
-* PricingUnit MUST be of type String.
+* PricingUnit MUST be present in a FOCUS dataset and MUST be of type String.
 * PricingUnit MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase".
 * PricingUnit MUST be null when *ChargeCategory* is "Tax" or when *ChargeCategory* is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
 * PricingUnit MAY be null for all other combinations of ChargeClass and ChargeCategory.
