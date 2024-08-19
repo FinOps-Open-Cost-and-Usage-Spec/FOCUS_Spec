@@ -12,6 +12,15 @@ SchemaId
 
 Schema ID
 
+## Content constraints
+
+| Constraint    | Value                    |
+|:--------------|:-------------------------|
+| Feature level | Mandatory                |
+| Allows nulls  | False                    |
+| Data type     | STRING                   |
+| Value format  | Recommend us GUID String |
+
 ## Introduced (version)
 
 1.0
