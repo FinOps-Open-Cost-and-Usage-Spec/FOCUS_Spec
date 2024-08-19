@@ -14,11 +14,11 @@ It is recommended that the schema reference be provided as a external reference 
 
 Should the provider change the structure of the supplied FOCUS data artifact, a new schema metadata object MUST be supplied.
 These scenarios include, but are not limited to:
-- Adding a new column
-- Removing a column
-- Renaming a column
-- Changing the data type of a column
-- FOCUS Version is changed
+* Adding a new column
+* Removing a column
+* Renaming a column
+* Changing the data type of a column
+* FOCUS Version is changed
 
 ### Schema Metadata Updates
 
