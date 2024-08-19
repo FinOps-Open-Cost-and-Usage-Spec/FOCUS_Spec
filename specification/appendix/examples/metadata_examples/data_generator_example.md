@@ -1,4 +1,3 @@
-
 # Data Generator Metadata
 
 ## Scenario
