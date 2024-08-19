@@ -1,6 +1,6 @@
 # SKU Price Details
 
-The **SKU Price Details** column represents a list of relevant properties shared by all resources having the same [**SKU Price ID**](#skupriceid). These properties enable a practitioner to more easily calculate metrics such as total units of a service when it is not directly billed in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. They also help a practitioner understand the specifics of a **SKU Price ID**. 
+The **SKU Price Details** column represents a list of relevant properties shared by all charges with the same [**SKU Price ID**](#skupriceid). These properties enable practitioners to calculate metrics such as total units of a service when it is not directly billed in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. They also help a practitioner understand the specifics of a **SKU Price ID**.
 
 
 The _SkuPriceDetails_ column adheres to the following requirements:
