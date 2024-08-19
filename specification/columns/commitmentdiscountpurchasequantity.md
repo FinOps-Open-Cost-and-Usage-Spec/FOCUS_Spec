@@ -2,11 +2,13 @@
 
 Commitment Discount Purchase Quantity is the numeric value of [CommitmentDiscountUnits](#commitmentdiscountunit) that is eligible for amortization for any full or partial upfront purchase of a [*commitment-based discount*](#glossary:commitment-based-discount).
 
-CommitmentDiscountPurchaseQuantity MUST be present in the billing data when the provider supports *commitment-based discounts*. CommitmentDiscountPurchaseQuantity value MUST be the total amount of units, denoted by CommitmentDiscountUnit, available for a *commitment-based discount* for its [*term*](#glossary:term) at the time of an applicable purchase.
+The CommitmentDiscountPurchaseQuantity column adheres to the following requirements:
 
-CommitmentDiscountPurchaseQuantity MUST be a positive value when [ChargeCategory](#chargecategory) is *Purchase*, [PricingCategory](#pricingcategory) is *Committed*, and [CommitmentDiscountId](#commitmentdiscountid) is not null when a purchase record exists for a *commitment-based discount*.
-
-CommitmentDiscountPurchaseQuantity MUST be null in all other cases,
+* CommitmentDiscountPurchaseQuantity MUST be present in the billing data when the provider supports *commitment-based discounts*.
+* CommitmentDiscountPurchaseQuantity MUST be a positive value when [ChargeCategory](#chargecategory) is *Purchase*, [PricingCategory](#pricingcategory) is *Committed*, and [CommitmentDiscountId](#commitmentdiscountid) is not null.
+* CommitmentDiscountPurchaseQuantity value MUST be the total, positive amount of units, denoted by CommitmentDiscountUnit, available for a *commitment-based discount* across its [*term*](#glossary:term) at the time of an applicable purchase.
+* CommitmentDiscountPurchaseQuantity MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction".
+* CommitmentDiscountPurchaseQuantity MUST be null in all other cases.
 
 ## Column ID
 

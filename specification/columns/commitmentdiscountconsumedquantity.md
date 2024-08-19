@@ -2,13 +2,15 @@
 
 Commitment Discount Consumed Quantity is the numeric value of [CommitmentDiscountUnits](#commitmentdiscountunit) that is either applied to a metered [*resource*](#glossary:resource) or [*service*](#glossary:service) or is unused over a [*charge period*](#glossary:chargeperiod).
 
-CommitmentDiscountConsumedQuantity MUST be present in the billing data when the provider supports *commitment-based discounts*. When CommitmentDiscountStatus is "Used", CommitmentDiscountConsumedQuantity MUST be the amortized quantity of a corresponding *commitment-based discount* by a metered *resource* or *service* over the charge period. When CommitmentDiscountStatus is "Unused", CommitmentDiscountConsumedQuantity MUST be the remaining, unused quantity for the corresponding *commitment-based-discount* over the charge period. CommitmentDiscountConsumedQuantity values MUST be less than or equal to the corresponding ConsumedQuantity value over a charge period when both values are not null and ConsumedUnit and CommitmentDiscountUnit values are equal.
+The CommitmentDiscountConsumedQuantity column adheres to the following requirements:
 
-CommitmentDiscountConsumedQuantity MUST be null when [ChargeCategory](#chargecategory) is *Purchase*, [PricingCategory](#pricingcategory) is *Committed*, and [*CommitmentDiscountId*](#commitmentdiscountid) is not null.
-
-CommitmentDiscountConsumedQuantity MUST be a positive value when [ChargeCategory](#chargecategory) is *Usage*, [PricingCategory](#pricingcategory) is *Committed*, [ResourceId](#resourceid) is not null, and [CommitmentDiscountId](#commitmentdiscountid) is not null.
-
-CommitmentDiscountConsumedQuantity MUST be null in all other cases.
+* CommitmentDiscountConsumedQuantity MUST be present in the billing data when the provider supports *commitment-based discounts*. 
+* CommitmentDiscountConsumedQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
+* CommitmentDiscountConsumedQuantity MUST be null when [ChargeCategory](#chargecategory) is *Purchase*, [PricingCategory](#pricingcategory) is *Committed*, and [*CommitmentDiscountId*](#commitmentdiscountid) is null.
+* CommitmentDiscountConsumedQuantity MUST be the positive, used quantity of a corresponding *commitment-based discount* by a metered *resource* or *service* over the charge period when CommitmentDiscountStatus is "Used" and [ChargeClass](#chargeclass) is not "Correction".
+* CommitmentDiscountConsumedQuantity MUST be the remaining, unused quantity for the corresponding *commitment-based-discount* over the charge period when CommitmentDiscountStatus is "Unused".
+* CommitmentDiscountConsumedQuantity MAY be negative or null if ChargeClass is "Correction".
+* CommitmentDiscountConsumedQuantity MUST be null in all other cases.
 
 ## Column ID
 

@@ -2,11 +2,13 @@
 
 Commitment Discount Unit is the string value representing the provider-specified measurement unit that corresponds to [CommitmentDiscountConsumedQuantity](#commitmentdiscountconsumedquantity) and [CommitmentDiscountPurchaseQuantity](#commitmentdiscountpurchasequantity).
 
-CommitmentDiscountUnit MUST be present in the billing data when the provider supports [*commitment-based discounts*](#glossary:commitment-based-discount).
+The CommitmentDiscountUnit column adheres to the following requirements:
 
-CommitmentDiscountUnit MUST not be null when [ChargeCategory](#chargecategory) is either *Purchase* or *Usage*, [PricingCategory](#pricingcategory) is *Committed*, and [CommitmentDiscountId](#commitmentdiscountid) is not null.
-
-CommitmentDiscountUnit MUST be null in all other cases.
+ * CommitmentDiscountUnit MUST be present in the billing data when the provider supports [*commitment-based discounts*](#glossary:commitment-based-discount).
+ * CommitmentDiscountUnit MUST be of type String, and the units of measure used in CommitmentDiscountUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
+ * CommitmentDiscountUnit MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage" or *Purchase* and [*CommitmentDiscountId*](#commitmentdiscountid) is not null, unless [ChargeClass](#chargeclass) is "Correction".
+ * CommitmentDiscountUnit MAY be null if ChargeCategory is "Usage" or "Purchase" and ChargeClass is "Correction".
+ * CommitmentDiscountUnit MUST be null in all other cases.
 
 ## Column ID
 
