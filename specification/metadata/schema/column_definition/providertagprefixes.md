@@ -12,6 +12,15 @@ ProviderTagPrefixes
 
 Provider Tag Prefixes
 
+## Content constraints
+
+| Constraint    | Value       |
+|:--------------|:------------|
+| Feature level | Conditional |
+| Allows nulls  | False       |
+| Data type     | Array       |
+| Value format  | STRING      |
+
 ## Introduced (version)
 
 1.0
