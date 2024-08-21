@@ -12,9 +12,8 @@ The CommitmentDiscountPurchaseQuantity column adheres to the following requireme
 
 In cases where *ChargeCategory* is "Purchase" and *CommitmentDiscountId* is not null, the following applies:
 
-* When *ChargeFrequency* is "One-Time", CommitmentDiscountPurchaseQuantity contains the eligible quantity of *CommitmentDiscountUnits* that is paid fully or partially before the *commitment-based discount's* [term](#glossary:term) begins.
-* When *ChargeFrequency* is "Recurring", CommitmentDiscountPurchaseQuantity contains the eligible quantity of *CommitmentDiscountUnits* for each
-*charge period* of the *commitment-based discount's* *term*.
+* When *ChargeFrequency* is "One-Time", CommitmentDiscountPurchaseQuantity MUST be the quantity of *CommitmentDiscountUnits*, paid fully or partially upfront, that is eligible for amortization over all *charge periods* of *commitment-based discount's* [term](#glossary:term),
+* When *ChargeFrequency* is "Recurring", CommitmentDiscountPurchaseQuantity MUST be the quantity of *CommitmentDiscountUnits*, billed during the *charge period*, that is eligible for amortization over that *charge period*.
 
 ## Column ID
 
