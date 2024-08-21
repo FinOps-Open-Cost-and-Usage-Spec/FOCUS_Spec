@@ -76,5 +76,3 @@ The provider creates a new schema object to represent the new schema. The provid
 ```
 
 For an example of how Acme ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)
-
-

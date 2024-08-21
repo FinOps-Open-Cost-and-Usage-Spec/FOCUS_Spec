@@ -73,5 +73,3 @@ Acme has discovered that while their export includes the column x_awesome_column
       ]
 }
 ```
-
-

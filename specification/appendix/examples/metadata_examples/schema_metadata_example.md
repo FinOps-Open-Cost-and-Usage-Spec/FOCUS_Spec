@@ -60,6 +60,4 @@ ACME has only provided one schema for their provided FOCUS data. ACME provides a
           }
       ]
 } 
-
 ```
-

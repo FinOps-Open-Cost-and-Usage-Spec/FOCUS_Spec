@@ -19,5 +19,3 @@ Our providers name is ACME. ACME has provides a metadata file that includes the 
     "DataGenerator": "ACME"
 }
 ```
-
-

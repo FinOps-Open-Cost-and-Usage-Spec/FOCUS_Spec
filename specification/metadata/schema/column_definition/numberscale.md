@@ -21,7 +21,6 @@ Number Scale
 | Data type     | Integer                          |
 | Value format  | [Numeric Format](#numericformat) |
 
-
 ## Introduced (version)
 
 1.0
