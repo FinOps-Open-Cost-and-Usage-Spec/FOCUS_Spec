@@ -7,7 +7,6 @@ The ListUnitPrice column adheres to the following requirements:
 * ListUnitPrice MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the *BillingCurrency*.
 * ListUnitPrice MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase"
-* ListUnitPrice MUST be null when ChargeCategory is "Tax" or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
 * ListUnitPrice MAY be null for all other combinations of ChargeClass and ChargeCategory.
 * When ListUnitPrice is present and is not null, multiplying ListUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ListCost](#listcost), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 

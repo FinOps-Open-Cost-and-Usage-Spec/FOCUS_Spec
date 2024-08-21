@@ -1,13 +1,13 @@
 # Contracted Unit Price
 
-The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment-based discounts*](#glossary:commitment-based-discount) or any other discounts. This price is denominated in the [Billing Currency](#billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If *negotiated discounts* are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#listunitprice).
+The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding [*commitment-based discounts*](#glossary:commitment-based-discount) or any other discounts. This price is denominated in the [Billing Currency](#billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If *negotiated discounts* are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#listunitprice).
 
 The ListCost column adheres to the following requirements:
 
 * ContractedUnitPrice column MUST be present in a FOCUS dataset when the provider supports negotiated pricing concept.
 * ContractedUnitPrice MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the *BillingCurrency*.
 * ContractedUnitPrice MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase"
-* ContractedUnitPrice MUST be null when *ChargeCategory* is "Tax" or when [ChargeCategory](#chargecategory) is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
+* ContractedUnitPrice MUST be null when *ChargeCategory* is "Tax"
 * ContractedUnitPrice MAY be null for all other combinations of *ChargeClass* and *ChargeCategory*.
 * When ContractedUnitPrice is present and not null, multiplying ContractedUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ContractedCost](#contractedcost), except in cases of *ChargeClass* "Correction", which may address *PricingQuantity* or any cost discrepancies independently.
 
@@ -21,7 +21,7 @@ Contracted Unit Price
 
 ## Description
 
-The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of any *negotiated discounts*, commitment-based discounted rates, or other discounts.
+The agreed-upon unit price for a single *Pricing Unit* of the associated SKU, inclusive of *negotiated discounts*, if present, while excluding commitment-based discounted rates, or other discounts.
 
 ## Content Constraints
 

@@ -9,8 +9,6 @@ The ListCost column adheres to the following requirements:
 * ListCost MUST be present in a FOCUS dataset and MUST NOT be null.
 * ListCost MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the *BillingCurrency*.
 * When [ListUnitPrice](#listunitprice) is present and not null, multiplying the *ListUnitPrice* by *PricingQuantity* MUST produce the ListCost, except in cases of [ChargeClass](#chargeclass) "Correction", which may address PricingQuantity or any cost discrepancies independently.
-* ListCost MUST reflect the corresponding *commitment-based discount's* purchase's ListCost value, or be zero if no purchase record exists when *ChargeCategory* is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
-* ListCost MUST be 0 when *ChargeCategory* is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
 
 In cases where the *ListUnitPrice* is present and is null, the following applies:
 
