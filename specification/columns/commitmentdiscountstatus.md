@@ -1,6 +1,6 @@
 # Commitment Discount Status
 
-Commitment Discount Status indicates whether the charge corresponds with the consumption of the [*commitment-based discount*](#glossary:commitment-based-discount) identified in the CommitmentDiscountId column or the unused portion of the committed amount.
+Commitment Discount Status indicates whether the charge corresponds with the consumption of a [*commitment-based discount*](#glossary:commitment-based-discount), not to be confused with a [*negotiated discount*](#glossary:negotiated-discount), identified in the CommitmentDiscountId column or the unused portion of the committed amount.
 
 The CommitmentDiscountStatus column MUST be present in a FOCUS dataset when the provider supports *commitment-based discounts*. This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null and [Charge Category](#chargecategory) is "Usage". The CommitmentDiscountCategory MUST be one of the allowed values.
 

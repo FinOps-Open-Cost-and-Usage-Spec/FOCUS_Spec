@@ -1,6 +1,6 @@
 # Commitment Discount Consumed Quantity
 
-Commitment Discount Consumed Quantity is the numeric value of [CommitmentDiscountUnits](#commitmentdiscountunit) that is either applied to a metered [*resource*](#glossary:resource) or [*service*](#glossary:service) or is unused over a [*charge period*](#glossary:chargeperiod).
+Commitment Discount Consumed Quantity relates to [*commitment-based discounts*](#glossary:commitment-based-discount), not to be confused with [*negotiated discounts*](#glossary:negotiated-discount), and is the numeric value of [CommitmentDiscountUnits](#commitmentdiscountunit) that is either applied to a metered [*resource*](#glossary:resource) or [*service*](#glossary:service) or is unused over a [*charge period*](#glossary:chargeperiod).
 
 The CommitmentDiscountConsumedQuantity column adheres to the following requirements:
 

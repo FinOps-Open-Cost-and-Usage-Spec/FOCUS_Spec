@@ -1,6 +1,6 @@
 # Commitment Discount Category
 
-Commitment Discount Category indicates whether the [*commitment-based discount*](#glossary:commitment-based-discount) identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend").
+Commitment Discount Category indicates whether the [*commitment-based discount*](#glossary:commitment-based-discount), not to be confused with a [*negotiated discount*](#glossary:negotiated-discount), identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend").
 
 The CommitmentDiscountCategory column MUST be present in a FOCUS dataset when the provider supports *commitment-based discounts*. This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null. The CommitmentDiscountCategory MUST be one of the allowed values.
 

@@ -1,6 +1,6 @@
 # Commitment Discount Purchase Quantity
 
-Commitment Discount Purchase Quantity is the numeric value of [CommitmentDiscountUnits](#commitmentdiscountunit) that is eligible for amortization for any full or partial upfront purchase of a [*commitment-based discount*](#glossary:commitment-based-discount).
+Commitment Discount Purchase Quantity is the numeric value of [CommitmentDiscountUnits](#commitmentdiscountunit) that is eligible for amortization for any full or partial upfront purchase of a [*commitment-based discount*](#glossary:commitment-based-discount), not to be confused with a [*negotiated discount*](#glossary:negotiated-discount).
 
 The CommitmentDiscountPurchaseQuantity column adheres to the following requirements:
 
