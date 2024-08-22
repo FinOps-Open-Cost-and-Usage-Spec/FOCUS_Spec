@@ -32,4 +32,5 @@ For an example of the FOCUS schema metadata please refer to: [Schema Metadata Ex
 !INCLUDE "schemaid.md",1
 !INCLUDE "creationdate.md",1
 !INCLUDE "focusversion.md",1
+!INCLUDE "providerversion.md",
 !INCLUDE "column_definition/column_definition.mdpp",1
