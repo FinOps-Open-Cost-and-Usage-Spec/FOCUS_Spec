@@ -1,6 +1,6 @@
 # Metadata Examples
 
-The following is an example metadata JSON structure provided by a hypothetical FOCUS data provider. This example illustrates an example of how a provider can supply the required reference between the FOCUS data and the schema metadata.  Provider implementations will vary on how the metadata is stored and retrieved, however the providers chosen metadata delivery approach should be able to support the structure represented in this example. 
+The following is an example metadata JSON structure provided by a hypothetical FOCUS data provider. This example illustrates how a provider might supply the required reference between the FOCUS data and the schema metadata.  Provider implementations will vary on how the metadata is stored and retrieved, however the providers chosen metadata delivery approach should be able to support the structure represented in this example. 
 
 ## Scenario
 
