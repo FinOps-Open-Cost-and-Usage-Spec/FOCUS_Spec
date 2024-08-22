@@ -7,8 +7,8 @@ The CommitmentDiscountConsumedQuantity column adheres to the following requireme
 * CommitmentDiscountConsumedQuantity MUST be present in the billing data when the provider supports *commitment-based discounts*.
 * CommitmentDiscountConsumedQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
 * CommitmentDiscountConsumedQuantity MUST be the positive, used quantity of a corresponding *commitment-based discount* by a metered *resource* or *service* over the charge period when [ChargeCategory](#chargecategory) is "Usage", [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used", and [ChargeClass](#chargeclass) is not "Correction".
-* CommitmentDiscountConsumedQuantity MUST be the remaining, positive, unused quantity for the corresponding *commitment-based-discount* over the charge period when *ChargeCategory* is "Usage", *CommitmentDiscountStatus* is "Unused", and *ChargeClass is not "Correction".
-* CommitmentDiscountConsumedQuantity MAY be negative or null if *ChargeClass* is "Correction".
+* CommitmentDiscountConsumedQuantity MUST be the remaining, positive, unused quantity for the corresponding *commitment-based-discount* over the charge period when *ChargeCategory* is "Usage", *CommitmentDiscountStatus* is "Unused", and *ChargeClass* is not "Correction".
+* CommitmentDiscountConsumedQuantity MAY be negative, 0, or null if *ChargeClass* is "Correction".
 * CommitmentDiscountConsumedQuantity MUST be null in all other cases.
 
 ## Column ID
@@ -31,7 +31,7 @@ The numeric value of CommitmentDiscountUnits that is either applied to a metered
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
 | Data type       | Numeric          |
-| Value format    | Any valid, non-negative, decimal value |
+| Value format    | Any valid decimal value |
 
 ## Introduced (version)
 

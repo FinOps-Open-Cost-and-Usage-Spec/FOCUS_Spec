@@ -5,9 +5,9 @@ Commitment Discount Purchased Quantity is the numeric value of [CommitmentDiscou
 The CommitmentDiscountPurchasedQuantity column adheres to the following requirements:
 
 * CommitmentDiscountPurchasedQuantity MUST be present in the billing data when the provider supports *commitment-based discounts*.
-* CommitmentDiscountPurchasedQuantity MUST be a positive value when [ChargeCategory](#chargecategory) is *Purchase* and [CommitmentDiscountId](#commitmentdiscountid) is not null.
+* CommitmentDiscountPurchasedQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements when [ChargeCategory](#chargecategory) is *Purchase* and [CommitmentDiscountId](#commitmentdiscountid) is not null.
 * CommitmentDiscountPurchasedQuantity value MUST be the total, positive quantity of units, denoted by [CommitmentDiscountUnit](#commitmentdiscountunit), available for a *commitment-based discount* across the [charge period](#glossary:chargeperiod).
-* CommitmentDiscountPurchasedQuantity MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction".
+* CommitmentDiscountPurchasedQuantity MAY be negative, 0, or null in cases where [ChargeClass](#chargeclass) is "Correction".
 * CommitmentDiscountPurchasedQuantity MUST be null in all other cases.
 
 In cases where *ChargeCategory* is "Purchase" and *CommitmentDiscountId* is not null, the following applies:
@@ -34,8 +34,8 @@ The numeric value of *CommitmentDiscountUnits* that is eligible for amortization
 | Column type     | Dimension        |
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
-| Data type       | Numeric          |
-| Value format    | Any valid, non-negative, decimal value |
+| Value format    | [Numeric Format](#numericformat) |
+| Number range    | Any valid decimal value |
 
 ## Introduced (version)
 
