@@ -29,7 +29,7 @@ The string value representing the provider-specified measurement unit that corre
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
 | Data type       | String           |
-| Value format    | [Unit Format](#unitformat) recommended |
+| Value format    | [Unit Format](#unitformat)|
 
 ## Introduced (version)
 
