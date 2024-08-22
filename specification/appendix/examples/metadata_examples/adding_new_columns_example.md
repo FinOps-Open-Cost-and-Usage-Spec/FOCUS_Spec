@@ -21,8 +21,8 @@ ACME has decided add additional columns to their FOCUS data export. The new colu
   "name": "New Columns",
   "CreationDate": "2024-02-02T12:01:03.083z",
   "ColumnDefinition": [
-    {
-      "ColumnName": "BillingAccountId",
+          {
+                "ColumnName": "BillingAccountId",
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8"
