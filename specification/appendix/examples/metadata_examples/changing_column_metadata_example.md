@@ -71,4 +71,4 @@ ACME has decided to change the datatype of column x_awesome_column1 from a strin
 }
 ```
 
-For an example of how Acme ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)

@@ -2,7 +2,7 @@
 
 ## Scenario
 
-Acme makes a change to the schema of their data exports. For each FOCUS data export, ACME includes a metadata reference to the schema object.  Because multiple files are provided, Acme has elected to include a metadata file that includes the focus schema reference that applies to the data export files. They therefore include the new schema id in their export metadata file. 
+ACME makes a change to the schema of their data exports. For each FOCUS data export, ACME includes a metadata reference to the schema object.  Because multiple files are provided, Acme has elected to include a metadata file that includes the focus schema reference that applies to the data export files. They therefore include the new schema id in their export metadata file. 
 
 ### Supplied Metadata
 
