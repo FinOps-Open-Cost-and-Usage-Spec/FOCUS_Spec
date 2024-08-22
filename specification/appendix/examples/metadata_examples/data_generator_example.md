@@ -2,7 +2,7 @@
 
 ## Scenario
 
-Our providers name is ACME. ACME has provides a metadata file that includes the name of the entity that is generating the data.
+Our provider's name is ACME, and they provide a metadata file that includes the name of the entity that is generating the data.
 
 ### Supplied Metadata
 
