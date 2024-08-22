@@ -1,4 +1,4 @@
-# Column: CommitmentTotalQuantity
+# Column: CommitmentDiscountPurchasedQuantity
 
 ## Example provider mappings
 
