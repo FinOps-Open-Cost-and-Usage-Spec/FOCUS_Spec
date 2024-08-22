@@ -106,7 +106,7 @@ A term that describes a service that is available and provided immediately or as
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
-A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment-based discounts*](#glossary:commitment-based-discount), negotiated discounts are typically more customized to customer's accounts, can be burned down at varying frequencies, and may be overlap with *commitment-based discounts*.
+A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment-based discounts*](#glossary:commitment-based-discount), negotiated discounts are typically more customized to customer's accounts, can be burned down at varying frequencies, and may overlap with *commitment-based discounts*.
 
 <a name="glossary:practitioner"><b>Practitioner</b></a>
 
