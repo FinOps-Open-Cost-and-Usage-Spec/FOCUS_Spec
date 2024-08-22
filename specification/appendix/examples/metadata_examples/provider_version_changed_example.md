@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME uses provider version. They have made a change to their approach to create Focus data that does not adopt a new Focus Version, nor make a change the included columns but does impact values in the data. This is to illustrate that Provider Version changes are independent of column changes, however provider version changes may include column changes.
+ACME uses provider version, and they made a change to their approach to create Focus data that does not adopt a new Focus Version, nor make a change the included columns but does impact values in the data. This is to illustrate that Provider Version changes are independent of column changes, however provider version changes may include column changes.
 
 The provider creates a new schema object to represent the new schema. The provider includes both the new Focus Version and Provider Version in the schema object.
 
