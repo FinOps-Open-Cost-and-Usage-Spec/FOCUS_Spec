@@ -8,12 +8,11 @@ ACME has decided to remove columns from their FOCUS data export. The column remo
 
 #### Location for the new schema object:
 
-```
-/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json
-```
+`/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
 
 #### Content for the new schema object:
-```
+
+```json
  {
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
@@ -47,7 +46,7 @@ ACME has decided to remove columns from their FOCUS data export. The column remo
                 "NumberScale": 10
           },
           {
-                "ColumnName": "EffecitiveCost",
+                "ColumnName": "EffectiveCost",
                 "DataType": "DECIMAL",
                 "NumericPrecision": 20,
                 "NumberScale": 10
@@ -55,7 +54,7 @@ ACME has decided to remove columns from their FOCUS data export. The column remo
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["awecorp", "ac"]
+                "ProviderTagPrefixes": ["acme", "ac"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -66,9 +65,9 @@ ACME has decided to remove columns from their FOCUS data export. The column remo
           {
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
-          },
+          }
       ]
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)

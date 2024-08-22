@@ -1,4 +1,4 @@
-# Provider has an error in their schema metadata.
+# Provider has an error in their schema metadata
 
 ## Scenario
 
@@ -8,13 +8,11 @@ ACME has discovered that while their export includes the column x_awesome_column
 
 #### Location of the schema object:
 
-```
-/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json
-```
+`/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
 
-#### Content of the schema object: 
+#### Content of the schema object:
 
-```
+```json
  {
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
@@ -48,7 +46,7 @@ ACME has discovered that while their export includes the column x_awesome_column
                 "NumberScale": 10
           },
           {
-                "ColumnName": "EffecitiveCost",
+                "ColumnName": "EffectiveCost",
                 "DataType": "DECIMAL",
                 "NumericPrecision": 20,
                 "NumberScale": 10
@@ -56,7 +54,7 @@ ACME has discovered that while their export includes the column x_awesome_column
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["awecorp", "ac"]
+                "ProviderTagPrefixes": ["acme", "ac"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -69,7 +67,7 @@ ACME has discovered that while their export includes the column x_awesome_column
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8"
-          },
+          }
       ]
 }
 ```

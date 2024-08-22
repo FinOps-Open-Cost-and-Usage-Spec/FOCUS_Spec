@@ -2,21 +2,20 @@
 
 ## Scenario
 
-ACME makes a change to the schema of their data exports. For each FOCUS data export, ACME includes a metadata reference to the schema object.  Because multiple files are provided, Acme has elected to include a metadata file that includes the focus schema reference that applies to the data export files. They therefore include the new schema id in their export metadata file. 
+ACME makes a change to the schema of their data exports. For each FOCUS data export, ACME includes a metadata reference to the schema object.  Because multiple files are provided, Acme has elected to include a metadata file that includes the focus schema reference that applies to the data export files. They therefore include the new schema id in their export metadata file.
 
 ### Supplied Metadata
 
-#### Location of the existing schema metadata reference file: 
+#### Location of the existing schema metadata reference file:
 
-```
-/FOCUS/data/export1-metadata.json
-```
+`/FOCUS/data/export1-metadata.json`
 
-#### Content for the existing export metadata object: 
-```
+#### Content for the existing export metadata object:
+
+```json
 {
-  "SchemaId":"1234-abcde-12345-abcde-12345",  
-  "data_location": 
+  "SchemaId":"1234-abcde-12345-abcde-12345",
+  "data_location":
   [
     {
       "filepath": "/FOCUS/data/export1/export1-part1.csv",
@@ -42,16 +41,16 @@ ACME makes a change to the schema of their data exports. For each FOCUS data exp
 }
 ```
 
-
 #### Location for the new export metadata object:
-```
+
 `/FOCUS/data/export2-metadata.json`
-```
+
 #### Content for the new export metadata object:
-```
+
+```json
 {
-  "SchemaId":"23456-abcde-23456-abcde-23456",  
-  "data_location": 
+  "SchemaId":"23456-abcde-23456-abcde-23456",
+  "data_location":
   [
     {
       "filepath": "/FOCUS/data/export2/export2-part1.csv",

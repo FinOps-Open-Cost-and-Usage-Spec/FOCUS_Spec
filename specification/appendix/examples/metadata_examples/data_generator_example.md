@@ -6,15 +6,13 @@ Our provider's name is ACME, and they provide a metadata file that includes the 
 
 ### Supplied Metadata
 
-#### Location of Data Generator Metadata File: 
+#### Location of Data Generator Metadata File:
 
-```
-    /FOCUS/metadata/data_generator.json
-```
+`/FOCUS/metadata/data_generator.json`
 
-#### Content of Data Generator Metadata File: 
+#### Content of Data Generator Metadata File:
 
-```
+```json
 {
     "DataGenerator": "ACME"
 }

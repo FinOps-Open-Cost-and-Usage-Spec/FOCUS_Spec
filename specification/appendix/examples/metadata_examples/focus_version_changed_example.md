@@ -1,4 +1,4 @@
-# Provider has an error in their schema metadata.
+# Provider has an error in their schema metadata
 
 ## Scenario
 
@@ -8,13 +8,11 @@ ACME's previous exports used Focus Version 1.0. They are now going to adopt Focu
 
 #### Location of the new schema object:
 
-```
-/FOCUS/metadata/schemas/schema-45678-abcde-45678-abcde-45678.json
-```
+`/FOCUS/metadata/schemas/schema-45678-abcde-45678-abcde-45678.json`
 
-#### Content of the schema object: 
+#### Content of the schema object:
 
-```
+```json
  {
   "SchemaId": "45678-abcde-45678-abcde-45678",
   "FocusVersion": "1.1",
@@ -48,7 +46,7 @@ ACME's previous exports used Focus Version 1.0. They are now going to adopt Focu
                 "NumberScale": 10
           },
           {
-                "ColumnName": "EffecitiveCost",
+                "ColumnName": "EffectiveCost",
                 "DataType": "DECIMAL",
                 "NumericPrecision": 20,
                 "NumberScale": 10
@@ -56,7 +54,7 @@ ACME's previous exports used Focus Version 1.0. They are now going to adopt Focu
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["awecorp", "ac"]
+                "ProviderTagPrefixes": ["acme", "ac"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -67,9 +65,9 @@ ACME's previous exports used Focus Version 1.0. They are now going to adopt Focu
           {
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
-          },
+          }
       ]
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)

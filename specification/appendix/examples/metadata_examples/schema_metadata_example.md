@@ -1,4 +1,4 @@
-# Schema Metadata
+# Schema Metadata Example
 
 ## Scenario
 
@@ -8,13 +8,11 @@ ACME has only provided one schema for their provided FOCUS data. ACME provides a
 
 #### Location of the schema object:
 
-```
-/FOCUS/metadata/schemas/schema-1234-abcde-12345-abcde-12345.json
-```
+`/FOCUS/metadata/schemas/schema-1234-abcde-12345-abcde-12345.json`
 
-#### Content of the schema object: 
+#### Content of the schema object:
 
-```
+```json
 {
   "SchemaId": "1234-abcde-12345-abcde-12345",
   "FocusVersion": "1.0",
@@ -48,7 +46,7 @@ ACME has only provided one schema for their provided FOCUS data. ACME provides a
                 "NumberScale": 10
           },
           {
-                "ColumnName": "EffecitiveCost",
+                "ColumnName": "EffectiveCost",
                 "DataType": "DECIMAL",
                 "NumericPrecision": 20,
                 "NumberScale": 10
@@ -56,8 +54,9 @@ ACME has only provided one schema for their provided FOCUS data. ACME provides a
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["awecorp", "ac"]
+                "ProviderTagPrefixes": ["acme", "ac"]
           }
       ]
-} 
+}
 ```
+

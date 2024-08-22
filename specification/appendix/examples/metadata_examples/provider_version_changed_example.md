@@ -10,13 +10,12 @@ The provider creates a new schema object to represent the new schema. The provid
 
 #### Location of the new schema object:
 
-```
-/FOCUS/metadata/schemas/schema-56789-abcde-56789-abcde-56789.json
-```
+
+`/FOCUS/metadata/schemas/schema-56789-abcde-56789-abcde-56789.json`
 
 #### Content of the new schema object:
 
-```
+```json
  {
   "SchemaId": "56789-abcde-56789-abcde-56789",
   "FocusVersion": "1.1",
@@ -51,7 +50,7 @@ The provider creates a new schema object to represent the new schema. The provid
                 "NumberScale": 10
           },
           {
-                "ColumnName": "EffecitiveCost",
+                "ColumnName": "EffectiveCost",
                 "DataType": "DECIMAL",
                 "NumericPrecision": 20,
                 "NumberScale": 10
@@ -59,7 +58,7 @@ The provider creates a new schema object to represent the new schema. The provid
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["awecorp", "ac"]
+                "ProviderTagPrefixes": ["acme", "ac"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -70,9 +69,9 @@ The provider creates a new schema object to represent the new schema. The provid
           {
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
-          },
+          }
       ]
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)

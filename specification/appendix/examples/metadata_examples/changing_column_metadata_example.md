@@ -2,18 +2,17 @@
 
 ## Scenario
 
-ACME has decided to change the datatype of column x_awesome_column1 from a string to a number. Acem creates a new schema object with the modification to x_awesome_column2. 
+ACME has decided to change the datatype of column x_awesome_column1 from a string to a number. ACME creates a new schema object with the modification to x_awesome_column2.
 
 ### Supplied Metadata
 
 #### Location for the new schema object:
 
-```
-/FOCUS/metadata/schemas/schema-67891-abcde-67891-abcde-67891.json
-```
+`/FOCUS/metadata/schemas/schema-67891-abcde-67891-abcde-67891.json`
 
 #### Content for the new schema object:
-```
+
+```json
  {
   "SchemaId": "67891-abcde-67891-abcde-67891",
   "FocusVersion": "1.0",
@@ -47,7 +46,7 @@ ACME has decided to change the datatype of column x_awesome_column1 from a strin
                 "NumberScale": 10
           },
           {
-                "ColumnName": "EffecitiveCost",
+                "ColumnName": "EffectiveCost",
                 "DataType": "DECIMAL",
                 "NumericPrecision": 20,
                 "NumberScale": 10
@@ -55,7 +54,7 @@ ACME has decided to change the datatype of column x_awesome_column1 from a strin
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["awecorp", "ac"]
+                "ProviderTagPrefixes": ["acme", "ac"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -66,9 +65,9 @@ ACME has decided to change the datatype of column x_awesome_column1 from a strin
           {
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
-          },
+          }
       ]
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)

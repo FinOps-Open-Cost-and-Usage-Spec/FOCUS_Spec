@@ -2,19 +2,17 @@
 
 ## Scenario
 
-ACME has decided add additional columns to their FOCUS data export. The new columns are x_awesome_column1, x_awesome_column2, and x_awesome_column3. The provider creates a new schema object to represent the new schema, this schema object has a unique SchemaId. The subsequent data exports that use the new schema include the new schema's id as a reference to their corresponding schema object. 
+ACME has decided add additional columns to their FOCUS data export. The new columns are x_awesome_column1, x_awesome_column2, and x_awesome_column3. The provider creates a new schema object to represent the new schema, this schema object has a unique SchemaId. The subsequent data exports that use the new schema include the new schema's id as a reference to their corresponding schema object.
 
 ### Supplied Metadata
 
 #### Location for the new schema object:
 
-```
-/FOCUS/metadata/schemas/schema-23456-abcde-23456-abcde-23456.json
-```
+`/FOCUS/metadata/schemas/schema-23456-abcde-23456-abcde-23456.json`
 
 #### Content for the new schema object:
 
-```
+```json
  {
   "SchemaId": "23456-abcde-23456-abcde-23456",
   "FocusVersion": "1.0",
@@ -73,7 +71,7 @@ ACME has decided add additional columns to their FOCUS data export. The new colu
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8"
-          },
+          }
       ]
 }
 ```
