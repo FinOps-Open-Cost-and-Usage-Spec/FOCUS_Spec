@@ -44,7 +44,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
 
-<a name="glossary:commitment-based-discount"><b>Commitment-Based Discount</b></a>
+<a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
 Also known as Commitment Discount, this is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The commitment may be based on quantities of resource units or monetary value, with various payment options and time frames.
 
