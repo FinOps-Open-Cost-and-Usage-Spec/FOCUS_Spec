@@ -5,7 +5,7 @@ Effective Cost represents the [*amortized*](#glossary:amortization) cost of the 
 This column resolves two challenges that are faced by practitioners:
 
 1. Practitioners need to *amortize* relevant purchases, such as upfront fees, throughout the *commitment* and distribute them to the appropriate reporting groups (e.g. [*tags*](#glossary:tag), [*resources*](#glossary:resource)).
-2. Many [*commitment-based discount*](#glossary:commitment-based-discount) constructs include a recurring expense for the *commitment* for every [*billing period*](#glossary:billing-period) and must distribute this cost to the *resources* using the *commitment*. This forces reconciliation between the initial *commitment* [*row*](#glossary:row) per period and the actual usage *rows*.
+2. Many [*commitment discount*](#glossary:commitment-discount) constructs include a recurring expense for the *commitment* for every [*billing period*](#glossary:billing-period) and must distribute this cost to the *resources* using the *commitment*. This forces reconciliation between the initial *commitment* [*row*](#glossary:row) per period and the actual usage *rows*.
 
 The EffectiveCost column MUST be present in a FOCUS dataset and MUST NOT be null. This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency. EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover future eligible charges. The aggregated EffectiveCost for a billing period may not match the charge received on the invoice for the same *billing period*.
 
@@ -13,7 +13,7 @@ In cases where the [ChargeCategory](#chargecategory) is not "Usage" or "Purchase
 
 * The EffectiveCost MUST be calculated based on the EffectiveCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is "Tax").
 * The EffectiveCost MUST match the [BilledCost](#billedcost) if the charge is unrelated to other charges (e.g. [ChargeCategory](#chargecategory) is "Credit").
-* The EffectiveCost MUST be the total cost unamortized by the corresponding *commitment-based discount* for the given charge period when [CommitmentDiscountStatus](#commitment-discount-status) is "Unused".
+* The EffectiveCost MUST be the total cost unamortized by the corresponding *commitment discount* for the given charge period when [CommitmentDiscountStatus](#commitment-discount-status) is "Unused".
 * The EffectiveCost MUST be the total cost unamortized by a *negotiated discount* at the end of its [*term*](#glossary:term) and allocated to the last eligible *billing period*.
 
 ## Column ID

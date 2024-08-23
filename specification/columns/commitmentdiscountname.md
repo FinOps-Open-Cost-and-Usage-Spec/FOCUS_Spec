@@ -1,8 +1,8 @@
 # Commitment Discount Name
 
-A Commitment Discount Name is the display name assigned to a [*commitment-based discount*](#glossary:commitment-based-discount), not to be confused with a [*negotiated discount*](#glossary:negotiated-discount).
+A Commitment Discount Name is the display name assigned to a [*commitment discount*](#glossary:commitment-discount), not to be confused with a [*negotiated discount*](#glossary:negotiated-discount).
 
-The CommitmentDiscountName column MUST be present in a FOCUS dataset when the provider supports *commitment-based discounts*. This column MUST be of type String. The CommitmentDiscountName value MUST be null if the charge is not related to a *commitment-based discount* and MAY be null if a display name cannot be assigned to a *commitment-based discount*. CommitmentDiscountName MUST NOT be null if a display name can be assigned to a *commitment-based discount*.
+The CommitmentDiscountName column MUST be present in a FOCUS dataset when the provider supports *commitment discounts*. This column MUST be of type String. The CommitmentDiscountName value MUST be null if the charge is not related to a *commitment discount* and MAY be null if a display name cannot be assigned to a *commitment discount*. CommitmentDiscountName MUST NOT be null if a display name can be assigned to a *commitment discount*.
 
 ## Column ID
 
@@ -14,7 +14,7 @@ Commitment Discount Name
 
 ## Description
 
-The display name assigned to a *commitment-based discount*.
+The display name assigned to a *commitment discount*.
 
 ## Content constraints
 

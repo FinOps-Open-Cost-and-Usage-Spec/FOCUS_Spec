@@ -44,9 +44,9 @@ The time window for which a charge is effective, inclusive of the start date and
 
 A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
 
-<a name="glossary:commitment-based-discount"><b>Commitment-Based Discount</b></a>
+<a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment-based discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e. hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
+A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e. hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -106,7 +106,7 @@ A term that describes a service that is available and provided immediately or as
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
-A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment-based discounts*](#glossary:commitment-based-discount), negotiated discounts are typically more customized to customer's accounts, can be burned down at varying frequencies, and may overlap with *commitment-based discounts*.
+A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be burned down at varying frequencies, and may overlap with *commitment discounts*.
 
 <a name="glossary:practitioner"><b>Practitioner</b></a>
 
@@ -158,4 +158,4 @@ A Resource or Provider-defined construct for grouping resources and/or other Pro
 
 <a name="glossary:term"><b>Term</b></a>
 
-A duration of a contractual agreement like with a [*commitment-based discount*](#glossary:commitment-based-discount) or [*negotiated discount*](#glossary:negotiated-discount).
+A duration of a contractual agreement like with a [*commitment discount*](#glossary:commitment-discount) or [*negotiated discount*](#glossary:negotiated-discount).
