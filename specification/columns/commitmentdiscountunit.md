@@ -6,7 +6,7 @@ The CommitmentDiscountUnit column adheres to the following requirements:
 
 * CommitmentDiscountUnit MUST be present in the billing data when the provider supports [*commitment-based discounts*](#glossary:commitment-based-discount).
 * CommitmentDiscountUnit MUST be of type String, and the units of measure used in CommitmentDiscountUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
-* CommitmentDiscountUnit MUST NOT be null when [*CommitmentDiscountId*](#commitmentdiscountid) is not null and *ChargeClass* is not "Correction".
+* CommitmentDiscountUnit MUST NOT be null when [*CommitmentDiscountId*](#commitmentdiscountid) is not null.
 * CommitmentDiscountUnit MUST be null in all other cases.
 
 ## Column ID
