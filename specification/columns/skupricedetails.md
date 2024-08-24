@@ -14,7 +14,7 @@ The _SkuPriceDetails_ column adheres to the following requirements:
 * The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
 * The _SkuPriceDetails_ column MUST NOT contain properties which are not applicable to the corresponding _SkuPriceId_.
 * The _SkuPriceDetails_ column MAY contain properties which are already captured in other dedicated columns.
-* Properties in _SkuPriceDetails_ which have a numerical value MUST represent the value for a the individual [_ConsumedUnit_](#consumedunit) i.e. a [_ConsumedQuantity_](#consumedquantity) of 1.
+* If a property has a numeric value, it must represent the value for a single [_ConsumedUnit_](#consumedunit).
 * Additional properties (key-value pairs) MAY be added to _SkuPriceDetails_ for a _SkuPriceId_.
   * Properties SHOULD NOT be removed from _SkuPriceDetails_ for a _SkuPriceId_, once they have been included.
   * Individual properties (key-value pairs) SHOULD NOT be modified for a _SkuPriceId_.
@@ -41,7 +41,7 @@ SKU Price Details
 
 ## Description
 
-A set of properties of a **SKU Price ID** which are meaningful and common to all instances of that **SKU Price ID**
+A set of properties of a **SKU Price ID** which are meaningful and common to all instances of that **SKU Price ID**.
 
 ## Content Constraints
 
