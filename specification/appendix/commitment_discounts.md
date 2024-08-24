@@ -1,25 +1,25 @@
 # Commitment Discounts
 
-A commitment discount is a billing discount that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term. Within cost and usage datasets, commitment discounts typically consist of a set of purchases and usage records.
+A commitment discount is a billing discount that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term. Commitment discounts typically consist of a set of purchase and usage records within cost and usage datasets.
 
-## Purchases
+## Purchasing
 
 While customers are bound to the term of a commitment discount, cloud-service providers, or CSPs, offer various payment options before and/or during the term:
 
-* In-Advance - The commitment discount is paid in full before the term begins
-* Monthly - The commitment discount is paid monthly over the term.
-* Hybrid (In-Advance & Monthly) - Half of the commitment discount is paid in-advance and half is paid monthly over the term.
+* *Upfront* - The commitment discount is paid in full before the term begins
+* *Monthly* - The commitment discount is paid monthly over the term.
+* *Hybrid* (1/2 Upfront & 1/2 Monthly) - Half of the commitment discount is paid in advance and half is paid monthly over the term.
 
-For example, if a customer buys a spend-based commitment discount for 1 year, with a $1.00 hourly commitment, and pays with the hybrid option, their purchase schedule is:
+For example, if a customer buys a spend-based commitment discount for 1 year, with a $1.00 hourly commitment, and pays with the hybrid option, the commitment discount's payment consists of both:
 
-* In-Advance: $4,380 (24 hours \* 365 days \* $1.00 \* 0.5)
-* Monthly: $182.50 (24 hours \* 365 days \* $1.00 / 12 months)
+1. *Upfront* - $4,380 (`24 hours * 365 days * $1.00 * 0.5`)
+2. *Monthly* - $182.50 (`24 hours * 365 days * $1.00 / 12 months`)
 
 ## Usage
 
-Commitment discounts follow a "use-it-or-lose-it" model where the amortization of a commitment discount's purchase applies evenly over each charge period (typically hourly) over the term.
+Commitment discounts follow a "use-it-or-lose-it" model where the amortization of a commitment discount's purchase applies evenly over each charge period of eligible resources over the term.
 
-For example, if a customer buys a spend-based commitment with a $1.00 hourly commitment in January (31 days), only $1.00 is eligible for amortization for each hourly charge period.  This means that if I have eligible resources running during this charge period, some or all of the $1.00 allocated to the charge period will be also be allocated to one or more resources.  Conversely, if I don't have eligible resources running during this charge period, the $1.00 allocated to the charge period is wasted.
+For example, if a customer buys a spend-based commitment with a $1.00 hourly commitment in January (31 days), only $1.00 is eligible for amortization for each hourly charge period.  This means that if a customer have eligible resources running during this charge period, some or all of the $1.00 that is allocated to the charge period will be also be allocated to some or all of these resources.  Conversely, if a customer does not have eligible resources running during this charge period, the $1.00 allocated to the charge period is wasted.
 
 ## Commitment Discounts in FOCUS
 
@@ -27,15 +27,15 @@ Within the FOCUS specification, the following examples demonstrate how a commitm
 
 ### Purchase Rows
 
-All commitment discount purchases appear with a positive `BilledCost`, `PricingCategory:Committed`, and the commitment discount's id as both the `ResourceId` and `CommitmentDiscountId` value. In-advance purchases appear as a single record also with `ChargeCategory:Purchase`, `ChargeFrequency:One-Time`, and the commitment discount's entire purchased quantity, `CommitmentDiscountPurchasedQuantity`, and units, `CommitmentDiscountUnit` for the term.
+All commitment discount purchases appear with a positive `BilledCost`, `PricingCategory` as "Committed", and the commitment discount's id populating both the `ResourceId` and `CommitmentDiscountId` value. Upfront purchases appear as a single record also with `ChargeCategory` as "Purchase", `ChargeFrequency` as "One-Time", and the total quantity and units for commitment discount's term as `CommitmentDiscountPurchasedQuantity` and `CommitmentDiscountUnit`, respectively.
 
-Monthly purchases are spread across all corresponding charge periods of the term also with `ChargeCateogry:Purchase`, `ChargeFrequency:One-Time`, and the commitment discount's purchase quantity, `CommitmentDiscountPurchasedQuantity`, and units, `CommitmentDiscountUnit` for the charge period.
+Monthly purchases are allocated across all corresponding charge periods of the term when `ChargeCateogry` is "Purchase", `ChargeFrequency` is "One-Time". and the commitment discount's purchase quantity, `CommitmentDiscountPurchasedQuantity`, and units, `CommitmentDiscountUnit` are reflected only for that charge period.
 
-Using the same example as above, various purchase for a one-year, spend-based commitment discount with a $1.00 hourly commitment purchased on Jan 1, 2023 can be seen as:
+Using the same commitment discount example as above, a one-year, spend-based commitment discount with a $1.00 hourly commitment purchased on Jan 1, 2023, various purchase options can occur:
 
-#### In-Advance
+#### Scenario #1: Upfront
 
-The entire commitment is billed _once_ during the first charge period of the term for $8,670 (24 hours \* 365 days \* $1.00).
+The entire commitment is billed _once_ during the first charge period of the term for $8,670 (derived as `24 hours * 365 days * $1.00`).
 
 ```json
 [
@@ -57,7 +57,7 @@ The entire commitment is billed _once_ during the first charge period of the ter
 ]
 ```
 
-#### Monthly
+#### Scenario #2: Monthly
 
 The commitment is billed across all 8,760 charge periods of the term with $1.00 allocated to each charge period over the term.
 
@@ -83,9 +83,9 @@ The commitment is billed across all 8,760 charge periods of the term with $1.00 
 ]
 ```
 
-#### Hybrid (In-Advance & Monthly)
+#### Scenario #3: Hybrid (1/2 Upfront & 1/2 Monthly)
 
-Half of the commitment is billed _once_ during the first charge period of the term _and_ the other half is billed across each charge period over the term. Amortized costs incur half of the amount (i.e. $0.50) from the in-advance purchase and the other half from monthly purchase.
+Half of the commitment is billed _once_ during the first charge period of the term for $4,380 (derived as `24 hours * 182.5 days * $1.00`), and the other half is billed across each charge period over the term, derived as (`$1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e. $0.50) from the upfront purchase and the other half from the monthly purchase.
 
 ```json
 [
@@ -98,7 +98,7 @@ Half of the commitment is billed _once_ during the first charge period of the te
         "ChargeFrequency": "One-Time",
         "PricingCategory": "Committed",
         "ResourceId": "<commitment-discount-id>",
-        "BilledCost": 1.00,
+        "BilledCost": 4380.00,
         "EffectiveCost": 0.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
         "CommitmentDiscountPurchasedQuantity": 4380.00,
@@ -126,16 +126,16 @@ Half of the commitment is billed _once_ during the first charge period of the te
 
 ### Usage Rows
 
-Amortization of commitment discounts occur the same way no matter how a purchase(s) are made.  The same fixed usage-based or spend-based amount is applied evenly across all charge periods to eligible resources.  Continuing with the same one-year, spend-based commitment discount with a $1.00 hourly commitment as above, there are 4 possible types of scenarios that can occur with eligible resource(s) during a charge period:
+Amortization of commitment discounts occur the same way regardless of how one or more purchases are made.  The same usage-based or spend-based amount is applied evenly across all charge periods and potentially allocated to eligible resources.  Continuing with the same commitment discount example, a one-year, spend-based commitment discount with a $1.00 hourly commitment, 4 types of scenarios can occur during a charge period:
 
-* Scenario 1: 1 resource runs for $1.00 (100% utilization)
-* Scenario 2: No eligible resources run (0% utilization)
-* Scenario 3: 1 resource runs for $0.75 (75% utilization)
-* Scenario 4: 1 resource runs for over the $1.00 hourly commitment (100% utilization + overage)
+* Scenario #1: Eligible resource(s) runs for $1.00 (100% utilization)
+* Scenario #2: No eligible resources run (0% utilization)
+* Scenario #3: Eligible resource(s) runs for $0.75 (75% utilization)
+* Scenario #4: Eligible resource(s) runs for over the $1.00 hourly commitment (100% utilization + overage)
 
-#### Scenario 1: 1 resource runs for $1.00 (100% utilization)
+#### Scenario #1: Eligible resource(s) runs for $1.00 (100% utilization)
 
-In this scenario, one eligible resource runs for the full hour and costs $1.00.
+In this scenario, one eligible resource runs for the full hour, so one row allocated to the resource is produced.
 
 ```json
 [
@@ -160,9 +160,9 @@ In this scenario, one eligible resource runs for the full hour and costs $1.00.
 ]
 ```
 
-#### Scenario 2: No eligible resources run (0% utilization)
+#### Scenario #2: No eligible resources run (0% utilization)
 
-In this scenario, the entire, eligible amount was unused and remained allocated to the commitment discount.
+In this scenario, the entire, eligible amount was unused, so one unused row, allocated to the commitment discount, was produced.
 
 ```json
 [
@@ -187,9 +187,9 @@ In this scenario, the entire, eligible amount was unused and remained allocated 
 ]
 ```
 
-#### Scenario 3: 1 resource runs for $0.75 (75% utilization)
+#### Scenario #3: Eligible resource(s) runs for $0.75 (75% utilization)
 
-In this scenario, one eligible resource runs for the full hour, costs $0.75, and leaves $0.25 as unused.
+In this scenario, one eligible resource runs for the full hour. One row shows $0.75 to a resource, and the other shows that $0.25 remained unused.
 
 ```json
 [
@@ -232,9 +232,9 @@ In this scenario, one eligible resource runs for the full hour, costs $0.75, and
 ]
 ```
 
-#### Scenario 4: 1 resource runs for over the $1.00 hourly commitment (100% utilization + overage)
+#### Scenario #4: Eligible resource(s) runs for over the $1.00 hourly commitment (100% utilization + overage)
 
-In this scenario, one eligible resource runs for the full hour and costs $1.50. $1.00 was amortized from the commitment discount, and $0.50 was charge as standard, on-demand spend.
+In this scenario, one eligible resource runs for the full hour and costs $1.50. One row shows that $1.00 was amortized from the commitment discount, and the other shows that $0.50 was charged as standard, on-demand spend.
 
 ```json
 [
