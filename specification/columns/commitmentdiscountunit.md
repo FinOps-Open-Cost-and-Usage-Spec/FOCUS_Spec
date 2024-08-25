@@ -1,6 +1,6 @@
 # Commitment Discount Unit
 
-Commitment Discount Unit relates to [*commitment discounts*](#glossary:commitment-discount), not to be confused with [*negotiated discounts*](#glossary:negotiated-discount), and is the string value representing the provider-specified measurement unit that corresponds to [CommitmentDiscountQuantity](#commitmentdiscountconsumedquantity) and [CommitmentDiscountPurchasedQuantity](#commitmentdiscountpurchasedquantity).
+Commitment Discount Unit is the string value representing the provider-specified measurement unit that corresponds to [Commitment Discount Quantity](#commitmentdiscountconsumedquantity) and [Commitment Discount Purchased Quantity](#commitmentdiscountpurchasedquantity) of a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountUnit column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 The CommitmentDiscountUnit column adheres to the following requirements:
 
@@ -19,7 +19,7 @@ Commitment Discount Unit
 
 ## Description
 
-The string value representing the provider-specified measurement unit that corresponds to *CommitmentDiscountQuantity* and *CommitmentDiscountPurchasedQuantity*.
+The string value representing the provider-specified measurement unit that corresponds to *CommitmentDiscountQuantity* and *CommitmentDiscountPurchasedQuantity* of a *commitment discount*.
 
 ## Content constraints
 
