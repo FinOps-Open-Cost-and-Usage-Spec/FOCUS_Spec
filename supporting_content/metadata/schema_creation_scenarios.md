@@ -3,7 +3,7 @@
 ## The following is a list of scenarios and their schema update requirements
 
 
-| Scenario                                                                                                 | Requires New Schema object	 | Requires Change in Provider Version | 	Requires Change Focus Version |
+| Scenario                                                                                                 | Requires New Schema object	 | Requires Change in Provider Version | 	Requires Change FOCUS Version |
 |:---------------------------------------------------------------------------------------------------------|:----------------------------|:------------------------------------|:-------------------------------|
 | Provider uses a new focus version when they supply a provider version	                                   | Y                           |                                     | Y                              |N |
 | Provider is changing the way they generate the data that doesn't affect the focus version or the columns | 	Y	                         | Y                                   | 	N                             |
