@@ -14,7 +14,7 @@ Provider Version
 
 * The provider MUST document what changes are present in the ProviderVersion.
 * ProviderVersion MUST be of type String and MUST NOT contain null values.
-* If FOCUSVersion is changed a new ProviderVersion MUST be also changed.
+* If FocusVersion is changed a new ProviderVersion MUST be also changed.
 
 ## Content constraints
 
