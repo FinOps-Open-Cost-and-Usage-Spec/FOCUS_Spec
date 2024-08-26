@@ -6,7 +6,7 @@
 
 * Initially, ChargeClass was defined as a non-nullable column with two allowed values: Regular and Correction.
 * Various alternative names for Regular charges were discussed, including Regular, Standard, Original, and Direct.
-* Eventually, the team decided on a nullable column approach, where Correction is the sole allowed value, representing corrections to one or more charges invoiced in a previous billing period.
+* Eventually, the team decided on a nullable column approach, where Correction is the sole allowed value, representing corrections to a previously invoiced billing period.
 
 ### Impacts of 1.0 ChargeCategory and ChargeClass cleanup
 

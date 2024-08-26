@@ -44,7 +44,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
 
-<a name="glossary:commitment-based-discount"><b>Commitment-Based Discount</b></a>
+<a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
 Also known as Commitment Discount, this is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The commitment may be based on quantities of resource units or monetary value, with various payment options and time frames.
 
@@ -75,6 +75,10 @@ A tag with one tag value chosen from a set of possible tag values after being pr
 <a name="glossary:finops-cost-and-usage-specification"><b>FinOps Cost and Usage Specification (FOCUS)</b></a>
 
 An open-source specification that defines requirements for billing data.
+
+<a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
+
+A structured collection of cost and usage data that meets or exceeds the Basic compliance criteria of FOCUS.
 
 <a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
 
