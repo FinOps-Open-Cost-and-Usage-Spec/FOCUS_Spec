@@ -6,14 +6,14 @@ ACME uses provider version, and they made a change to their approach to create F
 
 The provider creates a new schema object to represent the new schema. The provider includes both the new Focus Version and Provider Version in the schema object.
 
-### Supplied Metadata
+## Supplied Metadata
 
-#### Location of the new schema object:
+## Location of the new schema object
 
 
 `/FOCUS/metadata/schemas/schema-56789-abcde-56789-abcde-56789.json`
 
-#### Content of the new schema object:
+## Content of the new schema object
 
 ```json
  {

@@ -4,13 +4,13 @@
 
 ACME has discovered that while their export includes the column x_awesome_column3, the schema metadata does not include this column. In this case, the provider fixes the metadata in existing the schema object and does not need to create a new schema object.  Reference metadata remains the same.
 
-### Supplied Metadata
+## Supplied Metadata
 
-#### Location of the schema object:
+## Location of the schema object
 
 `/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
 
-#### Content of the schema object:
+## Content of the schema object
 
 ```json
  {

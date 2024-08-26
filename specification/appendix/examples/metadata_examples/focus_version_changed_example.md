@@ -4,13 +4,13 @@
 
 ACME's previous exports used Focus Version 1.0. They are now going to adopt Focus Version 1.1.  It is required that they create a new schema metadata object when using a new FOCUS version regardless of schema changes. In this example, the FOCUS new version adoption doesn't include columns changes. This is to illustrate that FOCUS Version changes are independent of column changes, however, this scenario is unlikely.
 
-### Supplied Metadata
+## Supplied Metadata
 
-#### Location of the new schema object:
+## Location of the new schema object
 
 `/FOCUS/metadata/schemas/schema-45678-abcde-45678-abcde-45678.json`
 
-#### Content of the schema object:
+## Content of the schema object
 
 ```json
  {

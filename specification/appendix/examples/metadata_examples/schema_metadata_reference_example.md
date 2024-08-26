@@ -4,13 +4,13 @@
 
 ACME makes a change to the schema of their data exports. For each FOCUS data export, ACME includes a metadata reference to the schema object.  Because multiple files are provided, Acme has elected to include a metadata file that includes the focus schema reference that applies to the data export files. They therefore include the new schema id in their export metadata file.
 
-### Supplied Metadata
+## Supplied Metadata
 
-#### Location of the existing schema metadata reference file:
+## Location of the existing schema metadata reference file
 
 `/FOCUS/data/export1-metadata.json`
 
-#### Content for the existing export metadata object:
+## Content for the existing export metadata object
 
 ```json
 {
@@ -41,11 +41,11 @@ ACME makes a change to the schema of their data exports. For each FOCUS data exp
 }
 ```
 
-#### Location for the new export metadata object:
+## Location for the new export metadata object
 
 `/FOCUS/data/export2-metadata.json`
 
-#### Content for the new export metadata object:
+## Content for the new export metadata object
 
 ```json
 {
@@ -75,3 +75,4 @@ ACME makes a change to the schema of their data exports. For each FOCUS data exp
   ]
 }
 ```
+

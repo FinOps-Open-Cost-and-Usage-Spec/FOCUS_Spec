@@ -6,13 +6,13 @@ ACME uses Provider Version, and their previous exports used FOCUS Version 1.0. T
 
 The provider creates a new schema object to represent the new schema. The provider includes both the new Focus Version and Provider Version in the schema object.
 
-### Supplied Metadata
+## Supplied Metadata
 
-#### Location of the previous schema object:
+## Location of the previous schema object
 
 `/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
 
-#### Content of the previous schema object:
+## Content of the previous schema object
 
 ```json
  {
@@ -73,11 +73,11 @@ The provider creates a new schema object to represent the new schema. The provid
 }
 ```
 
-#### Location of the new schema object:
+## Location of the new schema object
 
 `/FOCUS/metadata/schemas/schema-45678-abcde-45678-abcde-45678.json`
 
-#### Content of the new schema object:
+## Content of the new schema object
 
 ```json
  {

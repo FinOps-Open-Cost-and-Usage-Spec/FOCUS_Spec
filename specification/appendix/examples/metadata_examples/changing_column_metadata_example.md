@@ -4,13 +4,13 @@
 
 ACME has decided to change the datatype of column x_awesome_column1 from a string to a number. ACME creates a new schema object with the modification to x_awesome_column2.
 
-### Supplied Metadata
+## Supplied Metadata
 
-#### Location for the new schema object:
+## Location for the new schema object
 
 `/FOCUS/metadata/schemas/schema-67891-abcde-67891-abcde-67891.json`
 
-#### Content for the new schema object:
+## Content for the new schema object
 
 ```json
  {

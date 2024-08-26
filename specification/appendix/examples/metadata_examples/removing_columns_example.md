@@ -4,13 +4,13 @@
 
 ACME has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3. The provider creates a new schema object to represent the new schema, this schema object has a unique SchemaId.
 
-### Supplied Metadata
+## Supplied Metadata
 
-#### Location for the new schema object:
+## Location for the new schema object
 
 `/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
 
-#### Content for the new schema object:
+## Content for the new schema object
 
 ```json
  {

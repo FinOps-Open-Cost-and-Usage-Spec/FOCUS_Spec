@@ -4,13 +4,13 @@
 
 ACME has only provided one schema for their provided FOCUS data. ACME provides a directory of schemas and each schema is a single file. Acme's provides a file representing the schema for the data they provide.
 
-### Supplied Metadata
+## Supplied Metadata
 
-#### Location of the schema object:
+## Location of the schema object
 
 `/FOCUS/metadata/schemas/schema-1234-abcde-12345-abcde-12345.json`
 
-#### Content of the schema object:
+## Content of the schema object
 
 ```json
 {
