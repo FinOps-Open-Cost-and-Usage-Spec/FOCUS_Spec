@@ -1,6 +1,6 @@
 # Service Subcategory
 
-The Service Subcategory is a further classification of the Service Category of a [*service*](#glossary:service) based on its core function.  The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing costs across providers and tracking the migration of workloads across fundamentally different architectures.  
+The Service Subcategory is a further classification of the Service Category for a [*service*](#glossary:service) based on its core function.  The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing costs across providers and tracking the migration of workloads across fundamentally different architectures.  
 
 The ServiceSubcategory column MUST be present in a FOCUS dataset and MUST NOT be null. This column is of type String and MUST be one of the allowed values.  Each Service Subcategory value MUST have one and only one Service Category parent. Though a given *service* can have multiple purposes, each *service* SHOULD have one and only one Subcategory that best aligns with its primary purpose. 
 
@@ -14,7 +14,7 @@ Service Subcategory
 
 ## Description
 
-Second-highest-level classification of a *service* based on its core function.
+Further classification of the Service Category for a *service* based on its core function.
 
 ## Content Constraints
 
