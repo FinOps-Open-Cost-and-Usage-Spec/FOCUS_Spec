@@ -30,8 +30,9 @@ The quantity of Commitment Discount Units that represents the amount that was co
 | Column type     | Dimension        |
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
-| Data type       | Numeric          |
-| Value format    | Any valid decimal value |
+| Data type       | Decimal          |
+| Value format    | [Numeric Format](#numericformat) |
+| Number range    | Any valid decimal value |
 
 ## Introduced (version)
 
