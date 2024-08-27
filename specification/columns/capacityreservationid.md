@@ -2,7 +2,11 @@
 
 A Capacity Reservation ID is the identifier assigned to a [*capacity reservation*](#glossary:capacity-reservation) by the provider. Capacity Reservation ID is commonly used for scenarios to allocate charges for capacity reservation usage.
 
-The CapacityReservationId column SHOULD be present in the billing data when the provider supports capacity reservations. This column MUST be of type String and SHOULD NOT contain null values when a charge is related to a capacity reservation. When a charge is not associated with a capacity reservation, the column MUST be null. CapacityReservationID SHOULD be a fully-qualified identifier that ensures global uniqueness within the provider.
+The CapacityReservationId column adheres to the following requirements:
+
+* CapacityReservationId column MUST be present in the billing data when the provider supports *capacity reservations* and MUST be of type String.
+* CapacityReservationId MUST NOT contain null values when the [CapacityReservationStatus](#capacityreservationstatus) is `Unused` and SHOULD NOT contain null values when a charge is related to a capacity reservation.
+* CapacityReservationID SHOULD be a fully-qualified identifier that ensures global uniqueness within the provider.
 
 ## Column ID
 
