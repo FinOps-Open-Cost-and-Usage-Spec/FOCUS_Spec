@@ -21,7 +21,7 @@ Commitment Discount Consumed Quantity
 
 ## Description
 
-The quantity of Commitment Discount Units that represents either a *resource's* consumption or complete unuse of a *commitment discount* over a *row's* *charge period*.
+The quantity of Commitment Discount Units that represents the amount that was committed to by a *commitment discount* over the specified *charge period*.
 
 ## Content constraints
 
