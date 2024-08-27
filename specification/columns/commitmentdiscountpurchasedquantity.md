@@ -30,6 +30,7 @@ The total, positive quantity of Commitment Discount Units that is eligible for c
 | Column type     | Dimension        |
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
+| Data type       | Decimal          |
 | Value format    | [Numeric Format](#numericformat) |
 | Number range    | Any valid decimal value |
 
