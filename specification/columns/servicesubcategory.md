@@ -28,8 +28,10 @@ Second-highest-level classification of a *service* based on its core function.
 
 Allowed values:
 
-| AI and Machine Learning   | Generative AI                     | Creation of content like text, images, and music by learning patterns from existing data.                                                                                                                                                  |
+| Service Category              | Service Subcategory       | Description                                                                                                                                                   
+                                                                                                                                                                                                   |
 | ------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| AI and Machine Learning   | Generative AI                     | Creation of content like text, images, and music by learning patterns from existing data.                                                                                                                                                  |
 |                           | Natural Language Processing       | Generation of human language, handling tasks like translation, sentiment analysis, and text summarization.                                                                                                                                 |
 |                           | Machine Learning                  | Training of algorithms to recognize patterns and make decisions based on data.                                                                                                                                                             |
 |                           | Bots                              | Automated performance of tasks such as customer service, data collection, and content moderation.                                                                                                                                          |
