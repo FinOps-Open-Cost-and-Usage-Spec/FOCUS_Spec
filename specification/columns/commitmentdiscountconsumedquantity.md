@@ -1,13 +1,13 @@
 # Commitment Discount Consumed Quantity
 
-Commitment Discount Consumed Quantity is the total quantity of [Commitment Discount Units](#commitmentdiscountunit) amortized to either one or more metered [*resources*](#glossary:resource) or [*services*](#glossary:service) or that is unused over a [*charge period*](#glossary:chargeperiod) from one or more *commitment discount* purchases. The CommitmentDiscountConsumedQuantity column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Consumed Quantity is the quantity of [Commitment Discount Units](#commitmentdiscountunit) that represents either a [*resource's*](#glossary:resource) consumption or complete unuse of a [*commitment discount*](#glossary:commitment-discount) over a [*row's*](#glossary:row) [*charge period*](#glossary:chargeperiod). The CommitmentDiscountConsumedQuantity column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 The CommitmentDiscountConsumedQuantity column adheres to the following requirements:
 
 * CommitmentDiscountConsumedQuantity MUST be present in the billing data when the provider supports *commitment discounts*.
 * CommitmentDiscountConsumedQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
-* CommitmentDiscountConsumedQuantity MUST be the positive, used quantity of a corresponding *commitment discount* by a metered *resource* or *service* over the charge period when [ChargeCategory](#chargecategory) is "Usage", [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used", and [ChargeClass](#chargeclass) is not "Correction".
-* CommitmentDiscountConsumedQuantity MUST be the remaining, positive, unused quantity for the corresponding *commitment discount* over the charge period when *ChargeCategory* is "Usage", *CommitmentDiscountStatus* is "Unused", and *ChargeClass* is not "Correction".
+* CommitmentDiscountConsumedQuantity MUST be the positive, metered quantity of the *commitment discount* that is allocated to a *resource* over the [*row's*](#glossary:row) [*charge period*](#glossary:chargeperiod) when [*ChargeCategory*](#chargecategory) is "Usage", [*CommitmentDiscountStatus*](#commitmentdiscountstatus) is "Used", and [*ChargeClass*](#chargeclass) is not "Correction".
+* CommitmentDiscountConsumedQuantity MUST be the remaining, positive, unused quantity for the corresponding *commitment discount* over the *row's* *charge period* when *ChargeCategory* is "Usage", *CommitmentDiscountStatus* is "Unused", and *ChargeClass* is not "Correction".
 * CommitmentDiscountConsumedQuantity MAY be negative, 0, or null if *ChargeClass* is "Correction".
 * CommitmentDiscountConsumedQuantity MUST be null in all other cases.
 
@@ -21,7 +21,7 @@ Commitment Discount Consumed Quantity
 
 ## Description
 
-The numeric, total quantity of Commitment Discount Units that is amortized to either a metered *resource* or *service* or that is unused over a *charge period* from one or more *commitment discount* purchases.
+The quantity of Commitment Discount Units that represents either a *resource's* consumption or complete unuse of a *commitment discount* over a *row's* *charge period*.
 
 ## Content constraints
 
