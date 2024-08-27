@@ -8,7 +8,7 @@ Current column mappings found in available data sets:
 |----------|----------|--------|
 | AWS | CUR | Not available |
 | Google Cloud | BigQuery Billing Export | Not available |
-| Microsoft | Cost Details | Not available |
+| Microsoft | Cost Details | Usage commitments: UnitOfMeasure<br>Spend commitments: BillingCurrency |
 
 ## Example usage scenarios
 
