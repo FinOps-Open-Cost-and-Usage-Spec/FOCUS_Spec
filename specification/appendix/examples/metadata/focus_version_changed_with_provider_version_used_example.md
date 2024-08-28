@@ -1,10 +1,10 @@
-# Focus Version Changed by Provider Using Provider Version
+# FOCUS Version Changed by Provider Using Provider Version
 
 ## Scenario
 
 ACME uses Provider Version, and their previous exports used FOCUS Version 1.0. Their current Provider Version is 2.2. They are now going to adopt FOCUS Version 1.1. Because it is required that they update their Provider Version when using a new FOCUS Version, they create a new schema object designating that both have changed. In this example, the adoption of the new FOCUS Version doesn't include additional columns. This is to illustrate that Provider Version changes are independent of column changes; however, this scenario is unlikely.
 
-The provider creates a new schema object to represent the new schema. The provider includes both the new Focus Version and Provider Version in the schema object.
+The provider creates a new schema object to represent the new schema. The provider includes both the new FOCUS Version and Provider Version in the schema object.
 
 ## Supplied Metadata
 
