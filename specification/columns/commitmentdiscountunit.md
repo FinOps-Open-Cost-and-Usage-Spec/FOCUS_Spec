@@ -6,8 +6,15 @@ The CommitmentDiscountUnit column adheres to the following requirements:
 
 * CommitmentDiscountUnit MUST be present in the billing data when the provider supports [*commitment discounts*](#glossary:commitment-discount).
 * CommitmentDiscountUnit MUST be of type String, and the units of measure used in CommitmentDiscountUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
-* CommitmentDiscountUnit MUST NOT be null when [*CommitmentDiscountId*](#commitmentdiscountid) is not null.
+* The CommitmentDiscountUnit MUST be the same across all *rows* where *CommitmentDiscountConsumedQuantity* or *CommitmentDiscountPurchasedQuantity* share the same [*CommitmentDiscountId*](#commitmentdiscountid).
+* CommitmentDiscountUnit MUST NOT be null when *CommitmentDiscountId* is not null.
 * CommitmentDiscountUnit MUST be null in all other cases.
+
+In cases where the *CommitmentDiscountConsumedQuantity* or *CommitmentDiscountPurchasedQuantity* are present, the following applies:
+
+* When the *commitment discount* commits to a usage amount over a term, the CommitmentDiscountUnit SHOULD be "Hours".
+* When the *commitment discount* commits to a usage amount over a term where size-flexibility is applied, the CommitmentDiscountUnit SHOULD be "Normalized Hours".
+* When the *commitment discount* commits to a spend amount over a term, the CommitmentDiscountUnit SHOULD match the [*BillingCurrency*](#billingcurrency).
 
 ## Column ID
 
