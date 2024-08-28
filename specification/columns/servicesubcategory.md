@@ -17,7 +17,7 @@ Service Subcategory
 
 ## Description
 
-Further classification of the Service Category for a *service* based on its core function.
+Secondary classification of the Service Category for a *service* based on its core function.
 
 ## Content Constraints
 
