@@ -50,7 +50,7 @@ Current column mappings found in available data sets:
 
 * [Azure Billing Enterprise APIs - PriceSheet | Microsoft Learn](https://learn.microsoft.com/en-us/rest/api/billing/enterprise/ provides information for EA.
 * TODO: Check if there is a Microsoft Custom Prices REST API, which might provide custom/negotiated prices for all account types.
-* **unitPrice** (The price per unit for the charge.) includes commitment based discounts and thus is not applicable for all use cases. Furthermore,  
+* **unitPrice** (The price per unit for the charge.) includes commitment discounts and thus is not applicable for all use cases. Furthermore,  
   * According to  documentation, it is available only for EA and PAYG.
   * It is unclear if it's denominated in Billing or Pricing currency. Noticed that for different accounts types different relations apply
     * In one case `unitPrice * quantity = costInBillingCurrency`

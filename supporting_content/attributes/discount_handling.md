@@ -49,14 +49,14 @@ Explanation of the unused commitment row:
      
 Providers offer various discounting schemes for their service offerings. These discounts typically fall into common types such as:
 
-- Commitment-based discounts
+- Commitment discounts
 - Tier-based discounts
 - Negotiated discounts
 - Promotional discounts
 - Usage-based discounts
 - Partner discounts
 
-## Commitment-based discounts
+## Commitment discounts
 
 - Usage-based commitment discounts
 - Spend-based commitment discounts
