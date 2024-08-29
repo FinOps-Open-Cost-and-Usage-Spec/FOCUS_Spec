@@ -169,7 +169,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
 ### Example HTML Table
 This is an example of a complex table:
 
-<table border="1" cellpadding="8" cellspacing="0">
+<table  border="1" cellpadding="8" cellspacing="0">
   <tr>
     <th colspan="2"><b>Heading 1</b></th>
     <th><b>Heading 2</b></th>
@@ -187,20 +187,20 @@ This is an example of a complex table:
     <td><b>Heading 7</b></td>
   </tr>
   <tr>
-    <td>Cell 2,1</td>
-    <td colspan="3">Cell 3,2, Cell 3,3, and Cell 3,4 Merged</td>
+    <td colspan="2">Cell 2,1 & Cell 2,2</td>
+    <td rowspan="2">Cell 3,3 </br>& </br> Cell 4,3</td>
+    <td>Cell 3,4</td>
   </tr>
   <tr>
     <td>Cell 4,1</td>
     <td>Cell 4,2</td>
-    <td>Cell 4,3</td>
     <td>Cell 4,4</td>
   </tr>
 </table>
 
 This is how it is written in HTML:
 ```html
-<table border="1" cellpadding="8" cellspacing="0">
+<table  border="1" cellpadding="8" cellspacing="0">
   <tr>
     <th colspan="2"><b>Heading 1</b></th>
     <th><b>Heading 2</b></th>
@@ -218,13 +218,13 @@ This is how it is written in HTML:
     <td><b>Heading 7</b></td>
   </tr>
   <tr>
-    <td>Cell 2,1</td>
-    <td colspan="3">Cell 3,2, Cell 3,3, and Cell 3,4 Merged</td>
+    <td colspan="2">Cell 2,1 & Cell 2,2</td>
+    <td rowspan="2">Cell 3,3 </br>& </br> Cell 4,3</td>
+    <td>Cell 3,4</td>
   </tr>
   <tr>
     <td>Cell 4,1</td>
     <td>Cell 4,2</td>
-    <td>Cell 4,3</td>
     <td>Cell 4,4</td>
   </tr>
 </table>
