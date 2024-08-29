@@ -105,14 +105,14 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
         <td>JSON Script</td>
         <td>
             <pre>
-              **Example**:
-              ```json
-                {
-                    "key1": "value1",
-                    "key2": true,
-                    "key3": 123
-                }
-              ```
+**Example**:
+```json
+{
+    "key1": "value1",
+    "key2": true,
+    "key3": 123
+}
+```
             </pre>
         </td>
         <td>- Monospace font</td>
