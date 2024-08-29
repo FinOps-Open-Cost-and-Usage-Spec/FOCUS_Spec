@@ -38,7 +38,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
         </td>
     </tr>
     <tr>
-        <td><strong>Columns &amp; Attributes IDs:</strong></td>
+        <td><strong>Column &amp; Attribute IDs:</strong></td>
         <td>
            <strong>Columns IDs</strong>:<br>
             - PricingQuantity</strong><br> 
