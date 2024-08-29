@@ -167,7 +167,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
 > 1.0-preview
 
 ### Example HTML Table
-This is an example of a complex table:
+This is an example of a complex table with merged rows and columns, along with an additional header row.
 
 <table  border="1" cellpadding="8" cellspacing="0">
   <tr>
