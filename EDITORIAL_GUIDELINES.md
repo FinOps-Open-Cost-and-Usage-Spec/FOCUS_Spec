@@ -12,7 +12,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
         <th>Editorial Guidelines</th>
     </tr>
     <tr>
-        <td><strong>Column &amp; Attributes Names</strong>:</td>
+        <td><strong>Column &amp; Attribute Names</strong>:</td>
         <td>
             <strong>Column Names</strong>:<br>
             - <strong>Pricing Quantity</strong><br>
