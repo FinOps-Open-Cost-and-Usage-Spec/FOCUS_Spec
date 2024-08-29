@@ -3,19 +3,19 @@
 The **SKU Price Details** column represents a list of relevant properties shared by all charges with the same [**SKU Price ID**](#skupriceid). These properties provide qualitative and quantitative details about the service represented by a **SKU Price ID**. This can enable practitioners to calculate metrics such as total units of a service when it is not directly billed in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. These properties can also help a practitioner understand the specifics of a **SKU Price ID** and differentiate it other **SKU Price IDs**.
 
 
-The _SkuPriceDetails_ column adheres to the following requirements:
+The *SkuPriceDetails* column adheres to the following requirements:
 
-* The _SkuPriceDetails_ column MUST be in [_KeyValueFormat_](#key-valueformat).
-* The key for a property SHOULD be formatted in [PascalCase](#glossary:pascalcase).
-* The properties (both keys and values) contained in the _SkuPriceDetails_ column MUST be shared across all charges having the same _SkuPriceId_.
-  * Additional properties (key-value pairs) MAY be added to _SkuPriceDetails_ for a given _SkuPriceId_.
-  * Properties SHOULD NOT be removed from _SkuPriceDetails_ for a given _SkuPriceId_, once they have been included.
-  * Individual properties (key-value pairs) SHOULD NOT be modified for a given _SkuPriceId_ and SHOULD remain consistent over time.
-* The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
-* The _SkuPriceDetails_ column MUST NOT contain properties which are not applicable to the corresponding _SkuPriceId_.
-* The _SkuPriceDetails_ column MAY contain properties which are already captured in other dedicated columns.
-* If a property has a numeric value, it MUST represent the value for a single [_PricingUnit_](#pricingunit).
-* The _SkuPriceDetils_ column MUST be present in the billing data when the provider includes a _SkuPriceID_.
+- The *SkuPriceDetails* column MUST be in [*KeyValueFormat*](#key-valueformat).
+- The key for a property SHOULD be formatted in [PascalCase](#glossary:pascalcase).
+- The properties (both keys and values) contained in the *SkuPriceDetails* column MUST be shared across all charges having the same *SkuPriceId*.
+  - Additional properties (key-value pairs) MAY be added to *SkuPriceDetails* for a given *SkuPriceId*.
+  - Properties SHOULD NOT be removed from *SkuPriceDetails* for a given *SkuPriceId*, once they have been included.
+  - Individual properties (key-value pairs) SHOULD NOT be modified for a given *SkuPriceId* and SHOULD remain consistent over time.
+- The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
+- The *SkuPriceDetails* column MUST NOT contain properties which are not applicable to the corresponding *SkuPriceId*.
+- The *SkuPriceDetails* column MAY contain properties which are already captured in other dedicated columns.
+- If a property has a numeric value, it MUST represent the value for a single [*PricingUnit*](#pricingunit).
+- The *SkuPriceDetils* column MUST be present in the billing data when the provider includes a *SkuPriceID*.
 
 ## Examples
 
