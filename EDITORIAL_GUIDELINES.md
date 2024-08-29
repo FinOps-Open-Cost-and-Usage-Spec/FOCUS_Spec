@@ -140,7 +140,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
 >  * This column MUST be of type Decimal and MUST conform to Numeric Format requirements. 
 >  * The value MAY be negative in cases where ChargeClass is "Correction". 
 > 
->This column:
+> This column:
 >  *  MUST NOT be null when ChargeClass is not "Correction" and ChargeCategory is "Usage" or "Purchase", 
 >  * MUST be null when ChargeCategory is "Tax", and 
 >  * MAY be null for all other combinations of ChargeClass and ChargeCategory. 
