@@ -2,7 +2,7 @@
 
 Commitment Discount Purchased Quantity is the total, positive quantity of [*Commitment Discount Units*](#commitmentdiscountunit) that is eligible for consumption from a [*commitment discount's*](#glossary:commitment-discount) purchase over a [*row's*](glossary:row) [*charge period*](#glossary:chargeperiod). The CommitmentDiscountPurchaseQuantity column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
-The Commitment Discount Purchase Quantity typically helps customers track how many total *Commitment Discount Units* are available across *commitment discounts* at various points in time.  Based on utilization rates of the corresponding [*Commitment Discount Consumed Quantity*](#commitmentdiscountconsumedquantity), customers better forecast whether or not to purchase additional *commitment discounts* in the future.
+The Commitment Discount Purchase Quantity typically helps customers track how many total *Commitment Discount Units* are available across *commitment discounts* at various points in time. Along with *commitment discount* utilization rates, this helps customers better forecast when to purchase additional *commitment discounts* and which kinds.
 
 The CommitmentDiscountPurchasedQuantity column adheres to the following requirements:
 
