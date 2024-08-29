@@ -2,7 +2,7 @@
 
 ## Scenario
 
-Our provider's name is ACME, and they provide a metadata file that includes the name of the entity that is generating the data.
+Acme provides metadata about the data generator. They provide this via the Data Generator schema object.
 
 ## Supplied Metadata
 
