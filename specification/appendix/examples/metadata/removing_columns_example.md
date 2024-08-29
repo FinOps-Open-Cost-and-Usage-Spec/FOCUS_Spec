@@ -16,7 +16,6 @@ ACME has decided to remove columns from their FOCUS data export. The column remo
  {
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
-  "name": "New Columns",
   "CreationDate": "2024-03-02T12:01:03.083z",
   "ColumnDefinition": [
     {

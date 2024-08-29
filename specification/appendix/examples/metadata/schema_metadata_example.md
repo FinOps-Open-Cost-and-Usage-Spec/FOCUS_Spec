@@ -16,7 +16,6 @@ ACME has only provided one schema for their provided FOCUS data. ACME provides a
 {
   "SchemaId": "1234-abcde-12345-abcde-12345",
   "FocusVersion": "1.0",
-  "name": "my original schema",
   "CreationDate": "2024-01-01T12:01:03.083z",
   "ColumnDefinition": [
     {

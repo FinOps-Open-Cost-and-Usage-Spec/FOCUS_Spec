@@ -16,7 +16,6 @@ ACME has decided to change the datatype of column x_awesome_column1 from a strin
  {
   "SchemaId": "67891-abcde-67891-abcde-67891",
   "FocusVersion": "1.0",
-  "name": "New Columns",
   "CreationDate": "2024-06-02T12:01:03.083z",
   "ColumnDefinition": [
     {

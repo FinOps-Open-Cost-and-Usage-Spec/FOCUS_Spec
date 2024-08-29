@@ -16,7 +16,6 @@ ACME has discovered that while their export includes the column x_awesome_column
  {
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
-  "name": "New Columns",
   "CreationDate": "2024-03-02T12:01:03.083z",
   "ColumnDefinition": [
     {

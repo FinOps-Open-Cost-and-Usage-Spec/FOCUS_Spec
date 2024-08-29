@@ -16,7 +16,6 @@ ACME's previous exports used Focus Version 1.0. They are now going to adopt Focu
  {
   "SchemaId": "45678-abcde-45678-abcde-45678",
   "FocusVersion": "1.1",
-  "name": "Focus Version 1.1 Schema",
   "CreationDate": "2024-04-02T12:01:03.083z",
   "ColumnDefinition": [
     {

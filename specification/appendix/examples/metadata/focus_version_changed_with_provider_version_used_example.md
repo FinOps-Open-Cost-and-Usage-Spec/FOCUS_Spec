@@ -19,7 +19,6 @@ The provider creates a new schema object to represent the new schema. The provid
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.1",
   "ProviderVersion": "2.2",
-  "name": "New Columns",
   "CreationDate": "2024-04-02T12:01:03.083z",
   "ColumnDefinition": [
     {

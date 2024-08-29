@@ -16,7 +16,6 @@ ACME has decided add additional columns to their FOCUS data export. The new colu
  {
   "SchemaId": "23456-abcde-23456-abcde-23456",
   "FocusVersion": "1.0",
-  "name": "New Columns",
   "CreationDate": "2024-02-02T12:01:03.083z",
   "ColumnDefinition": [
           {
