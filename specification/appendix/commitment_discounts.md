@@ -130,7 +130,7 @@ Half of the commitment is billed _once_ during the first charge period of the te
 
 ### Usage Rows
 
-Amortization of commitment discounts occur the same way regardless of how one or more purchases are made.  The same usage-based or spend-based amount is applied evenly across all charge periods and potentially allocated to eligible resources.  Continuing with the same commitment discount example, a one-year, spend-based commitment discount with a $1.00 hourly commitment, 4 types of scenarios can occur during a charge period:
+Amortization of commitment discounts occur the same way regardless of how one or more purchases are made.  The same usage-based or spend-based amount is applied evenly across all charge periods and potentially allocated to eligible resources.  Continuing with the same commitment discount example, a one-year, spend-based commitment discount with a $1.00 hourly commitment, and 1 resource, 4 types of scenarios can occur during a charge period:
 
 * Scenario #1: Eligible resource(s) runs for $1.00 (100% utilization)
 * Scenario #2: No eligible resources run (0% utilization)
