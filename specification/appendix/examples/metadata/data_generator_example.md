@@ -14,7 +14,7 @@ Our provider's name is ACME, and they provide a metadata file that includes the 
 
 ```json
 {
-    "DataGenerator": "ACME"
+    "DataGenerator": "Acme"
 }
 ```
 
