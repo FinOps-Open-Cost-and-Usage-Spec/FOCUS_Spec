@@ -33,7 +33,7 @@ Within the FOCUS specification, the following examples demonstrate how a commitm
 
 All commitment discount purchases appear with a positive `BilledCost`, `PricingCategory` as "Committed", and the commitment discount's id populating both the `ResourceId` and `CommitmentDiscountId` value. Upfront purchases appear as a single record also with `ChargeCategory` as "Purchase", `ChargeFrequency` as "One-Time", and the total quantity and units for commitment discount's term as `CommitmentDiscountPurchasedQuantity` and `CommitmentDiscountUnit`, respectively.
 
-Recurring purchases are allocated across all corresponding charge periods of the term when `ChargeCategory` is "Purchase", `ChargeFrequency` is "One-Time". and the commitment discount's purchase quantity, `CommitmentDiscountPurchasedQuantity`, and units, `CommitmentDiscountUnit` are reflected only for that charge period.
+Recurring purchases are allocated across all corresponding charge periods of the term when `ChargeCategory` is "Purchase", `ChargeFrequency` is "One-Time", and `CommitmentDiscountPurchasedQuantity` and `CommitmentDiscountUnit` are reflected only for that charge period.
 
 Using the same commitment discount example as above, a one-year, spend-based commitment discount with a $1.00 hourly commitment purchased on Jan 1, 2023, various purchase options can occur:
 
