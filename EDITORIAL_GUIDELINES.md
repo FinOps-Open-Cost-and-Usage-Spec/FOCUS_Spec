@@ -121,7 +121,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
       <td><strong>Tables</strong></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8"></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72"></td>
-      <td> - Tables</td>
+      <td> - Tables: Simple tables can be created using markdown, but for more complex tables it is RECOMMENDED to use HTML elements. See example below. </td>
     </tr>
 </table>
 
@@ -165,3 +165,68 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
 > **2.28.5. Introduced (version)** 
 >
 > 1.0-preview
+
+### Example HTML Table
+This is an example of a complex table:
+
+<table border="1" cellpadding="8" cellspacing="0">
+  <tr>
+    <th colspan="2"><b>Heading 1</b></th>
+    <th><b>Heading 2</b></th>
+    <th><b>Heading 3</b></th>
+  </tr>
+  <tr>
+    <td colspan="2">Cell 1,1 and Cell 1,2 Merged</td>
+    <td>Cell 1,3</td>
+    <td>Cell 1,4</td>
+  </tr>
+  <tr>
+    <td><b>Heading 4</b></td>
+    <td><b>Heading 5</b></td>
+    <td><b>Heading 6</b></td>
+    <td><b>Heading 7</b></td>
+  </tr>
+  <tr>
+    <td>Cell 2,1</td>
+    <td colspan="3">Cell 3,2, Cell 3,3, and Cell 3,4 Merged</td>
+  </tr>
+  <tr>
+    <td>Cell 4,1</td>
+    <td>Cell 4,2</td>
+    <td>Cell 4,3</td>
+    <td>Cell 4,4</td>
+  </tr>
+</table>
+
+This is how it is written in HTML:
+```html
+<table border="1" cellpadding="8" cellspacing="0">
+  <tr>
+    <th colspan="2"><b>Heading 1</b></th>
+    <th><b>Heading 2</b></th>
+    <th><b>Heading 3</b></th>
+  </tr>
+  <tr>
+    <td colspan="2">Cell 1,1 and Cell 1,2 Merged</td>
+    <td>Cell 1,3</td>
+    <td>Cell 1,4</td>
+  </tr>
+  <tr>
+    <td><b>Heading 4</b></td>
+    <td><b>Heading 5</b></td>
+    <td><b>Heading 6</b></td>
+    <td><b>Heading 7</b></td>
+  </tr>
+  <tr>
+    <td>Cell 2,1</td>
+    <td colspan="3">Cell 3,2, Cell 3,3, and Cell 3,4 Merged</td>
+  </tr>
+  <tr>
+    <td>Cell 4,1</td>
+    <td>Cell 4,2</td>
+    <td>Cell 4,3</td>
+    <td>Cell 4,4</td>
+  </tr>
+</table>
+
+```
