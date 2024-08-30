@@ -9,7 +9,7 @@ The CommitmentDiscountConsumedQuantity column adheres to the following requireme
 * CommitmentDiscountConsumedQuantity MUST be present in the billing data when the provider supports *commitment discounts*.
 * CommitmentDiscountConsumedQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
 * When [*ChargeCategory*](#chargecategory) is "Usage", *CommitmentDiscountStatus* is "Used", and [*ChargeClass*](#chargeclass) is not "Correction", CommitmentDiscountConsumedQuantity MUST be the positive, metered quantity of *CommitmentDiscountUnits* that is consumed over the *row's* *charge period*.
-* When *ChargeCategory* is "Usage", *CommitmentDiscountStatus* is "Unused", and *ChargeClass* is not "Correction", CommitmentDiscountConsumedQuantity MUST be the remaining, positive, unused quantity of *CommitmentDiscountUnits* over the *row's* *charge period*
+* When *ChargeCategory* is "Usage", *CommitmentDiscountStatus* is "Unused", and *ChargeClass* is not "Correction", CommitmentDiscountConsumedQuantity MUST be the remaining, positive, unused quantity of *CommitmentDiscountUnits* over the *row's* *charge period*.
 * CommitmentDiscountConsumedQuantity MAY be negative if *ChargeClass* is "Correction".
 * CommitmentDiscountConsumedQuantity MUST be null in all other cases.
 
