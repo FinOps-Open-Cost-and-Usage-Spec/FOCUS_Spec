@@ -14,7 +14,7 @@ Column Naming and Ordering
 
 ## Description
 
-Naming and ordering convention for columns appearing in billing data.
+Naming and ordering convention for columns appearing in a FOCUS dataset.
 
 ## Requirements
 
