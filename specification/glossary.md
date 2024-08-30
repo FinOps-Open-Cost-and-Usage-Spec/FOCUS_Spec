@@ -32,6 +32,10 @@ The time window that an organization receives an invoice for, inclusive of the s
 
  A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
 
+<a name="glossary:capacity-reservation"><b>Capacity Reservation</b></a>
+
+Capacity Reservations allow you to secure compute capacity for resource instances in a particular region or zone. By utilizing Capacity Reservations, you can proactively address the potential challenge of acquiring capacity in situations where there might be capacity limitations. If you have specific capacity demands and operate mission-critical workloads that necessitate reliable and predictable capacity levels, it is advised that you create a Capacity Reservation.
+
 <a name="glossary:charge"><b>Charge</b></a>
 
 A row in a FOCUS-compatible cost and usage dataset.
