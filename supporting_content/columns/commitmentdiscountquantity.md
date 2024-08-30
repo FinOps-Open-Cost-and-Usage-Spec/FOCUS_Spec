@@ -1,4 +1,4 @@
-# Column: CommitmentDiscountPurchasedQuantity
+# Column: CommitmentDiscountQuantity
 
 ## Example provider mappings
 
@@ -6,7 +6,7 @@ Current column mappings found in available data sets:
 
 | Provider | Data set | Column |
 |----------|----------|--------|
-| AWS | CUR | reservation/TotalReservedUnits, savingsPlan/TotalCommitmentToDate |
+| AWS | CUR | reservation/UnusedQuantity (inverse), reservation/TotalReservedUnits, savingsPlan/UsedCommitment, savingsPlan/TotalCommitmentToDate |
 | Google Cloud | BigQuery Billing Export | Not available |
 | Microsoft | Cost Details | Not available |
 
@@ -21,3 +21,5 @@ AWS Savings Plan Utilization Rate: savingsPlan/UsedCommitment / savingsPlan/Tota
 - AWS
   - Reservation details - https://docs.aws.amazon.com/cur/latest/userguide/reservation-columns.html
   - Savings Plans details - https://docs.aws.amazon.com/cur/latest/userguide/savingsplans-columns.html
+
+

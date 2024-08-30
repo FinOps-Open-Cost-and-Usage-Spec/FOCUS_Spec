@@ -20,8 +20,7 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "commitmentdiscountname.md",1
 !INCLUDE "commitmentdiscountstatus.md",1
 !INCLUDE "commitmentdiscounttype.md",1
-!INCLUDE "commitmentdiscountconsumedquantity.md",1
-!INCLUDE "commitmentdiscountpurchasedquantity.md",1
+!INCLUDE "commitmentdiscountquantity.md",1
 !INCLUDE "commitmentdiscountunit.md",1
 !INCLUDE "consumedquantity.md",1
 !INCLUDE "consumedunit.md",1
