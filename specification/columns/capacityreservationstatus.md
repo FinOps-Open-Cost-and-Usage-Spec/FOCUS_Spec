@@ -4,7 +4,7 @@ Capacity Reservation Status indicates whether the charge represents either the c
 
 The CapacityReservationStatus column adheres to the following requirements:
  * CapacityReservationStatus MUST be present in the billing data when the provider supports *capacity reservations* and MUST be of type String.
- * CapacityReservationStatus MUST be null when CapacityReservationId is null and MUST NOT be null when CapacityReservationId is not null.
+ * CapacityReservationStatus MUST be null when CapacityReservationId is null and SHOULD NOT be null when CapacityReservationId is not null.
  * CapacityReservationStatus MUST be one of the allowed values.
  * CapacityReservationStatus MUST label all unused *capacity reservation* charges and MUST label used *capacity reservation* charges if the provider supports it.
 
