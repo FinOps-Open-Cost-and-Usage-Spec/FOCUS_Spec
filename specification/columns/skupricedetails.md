@@ -7,8 +7,8 @@ The *SkuPriceDetails* column adheres to the following requirements:
 
 - The *SkuPriceDetails* column MUST be in [*KeyValueFormat*](#key-valueformat).
 - The key for a property SHOULD be formatted in [PascalCase](#glossary:pascalcase).
-- The properties (both keys and values) contained in the *SkuPriceDetails* column MUST be shared across all charges having the same *SkuPriceId*.
-  - Additional properties (key-value pairs) MAY be added to *SkuPriceDetails* for a given *SkuPriceId*.
+- The properties (both keys and values) contained in the *SkuPriceDetails* column MUST be shared across all charges having the same *SkuPriceId*, subject to the below provisions.
+  - Additional properties (key-value pairs) MAY be added to *SkuPriceDetails* going forward for a given *SkuPriceId*.
   - Properties SHOULD NOT be removed from *SkuPriceDetails* for a given *SkuPriceId*, once they have been included.
   - Individual properties (key-value pairs) SHOULD NOT be modified for a given *SkuPriceId* and SHOULD remain consistent over time.
 - The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
