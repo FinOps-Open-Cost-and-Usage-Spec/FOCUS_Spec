@@ -1,26 +1,14 @@
 # Commitment Discount Quantity
 
-Commitment Discount Quantity is the amount of purchased, used, or unused [*Commitment Discount Units*](#glossary:commitmentdiscountunit) applied to a [*commitment discount's*](#commitment-discount) [*row*](#glossary:row). For a purchase, the Commitment Discount Quantity is either the total or apportioned number of *Commitment Discount Units* over a *commitment discount's* [*term*](#glossary:term). For committed usage, the Commitment Discount Quantity is either the number of *Commitment Discount Units* consumed by a [*row*](glossary:#row) that is covered by a *commitment discount* or is the unused portion of a *commitment discount* over a [*charge period*](#glossary:chargeperiod). The CommitmentDiscountQuantity column only applies to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Quantity is the amount of a [*commitment discount*](#commitment-discount) purchased or accounted for in *commitment discount* related [*rows*](#glossary:row). The amounts are denominated in [*Commitment Discount Units*](#glossary:commitmentdiscountunit). For a purchase, the Commitment Discount Quantity is either the total of *Commitment Discount Units* over a *commitment discount's* [*term*](#glossary:term) or the apportioned amount for the [*charge period*](#glossary:chargeperiod). For committed usage, the Commitment Discount Quantity is either the number of *Commitment Discount Units* consumed by a [*row*](glossary:#row) that is covered by a *commitment discount* or is the unused portion of a *commitment discount* over a *charge period*. The CommitmentDiscountQuantity column only applies to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount). Commitment Discount Quantity is commonly used in commitment discount analysis and optimization use cases.
 
-For purchases, the Commitment Discount Quantity helps customers track how many total *Commitment Discount Units* are available across *commitment discounts* at various points in time, and for committed usage, it helps customers track how efficiently their *commitment discounts* apply to their workloads. The *commitment discount's* utilization rate is used to measure this efficiency and can be derived by dividing the used portion of CommitmentDiscountQuantity by the sum of CommitmentDiscountQuantity for the *charge period*. As an example, a SQL statement calculating a commitment discount's utilization rate might be:
+Commitment Discount Quantity is commonly used in commitment discount analysis and optimization use cases. For purchases, the Commitment Discount Quantity helps customers track how many total *Commitment Discount Units* are available across *commitment discounts* at various points in time, and for committed usage, it helps customers track how efficiently their *commitment discounts* apply to their workloads. The *commitment discount's* utilization rate is used to measure this efficiency and can be derived by dividing the used portion of CommitmentDiscountQuantity by the sum of CommitmentDiscountQuantity for the *charge period*. With this information, customers can analyze their existing *commitment discount* strategy to make more informed decisions on additional purchases.
 
-```sql
-SELECT (
-    SELECT SUM(CommitmentDiscountQuantity) FROM <dataset> WHERE ChargeCategory = 'Usage'
-    AND CommitmentDiscountStatus = 'Used' AND CommitmentDiscountId = '<commitment-discount-id>'
-    /
-    SELECT SUM(CommitmentDiscountQuantity) FROM <dataset> WHERE ChargeCategory = 'Usage'
-    AND CommitmentDiscountId = '<commitment-discount-id>'
-)
-```
-
-With this information, customers can analyze their existing *commitment discount* strategy to make more informed decisions on additional purchases.
-
-**Important:** When aggregating Commitment Discount Quantity for utilization calculations, it's important to exclude either one-time or recurring *commitment discount* purchases (i.e. when *ChargeCategory* is *Purchase*) that are paid to cover future eligible charges (e.g., *Commitment Discount*). This exclusion helps prevent double counting of these charges in the aggregation.
+**Important:** When aggregating Commitment Discount Quantity for utilization calculations, it's important to exclude *commitment discount* purchases (i.e. when *ChargeCategory* is *Purchase*) that are paid to cover future eligible charges (e.g., *Commitment Discount*). This exclusion helps prevent double counting of these quantities in the aggregation.
 
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
-* CommitmentDiscountQuantity MUST be present in the billing data when the provider supports *commitment discounts*.
+* CommitmentDiscountQuantity MUST be present a FOCUS dataset when the provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
 * CommitmentDiscountQuantity MAY be negative if [*ChargeClass*](#chargeclass) is "Correction".
 
@@ -46,7 +34,7 @@ Commitment Discount Quantity
 
 ## Description
 
-The amount of purchased, used, or unused *Commitment Discount Units* applied to a *commitment discount's* *row*.
+The amount of a *commitment discount* purchased or accounted for in *commitment discount* related *rows*.
 
 ## Content constraints
 
