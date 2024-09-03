@@ -3,7 +3,7 @@
 Capacity Reservation Status indicates whether the charge represents either the consumption of the [*capacity reservation*](#glossary:capacity-reservation) identified in the CapacityReservationId column or when the *capacity reservation* is unused.
 
 The CapacityReservationStatus column adheres to the following requirements:
- * CapacityReservationStatus MUST be present in the billing data when the provider supports *capacity reservations* and MUST be of type String.
+ * CapacityReservationStatus MUST be present in a FOCUS dataset when the provider supports *capacity reservations* and MUST be of type String.
  * CapacityReservationStatus MUST be null when CapacityReservationId is null.
  * CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and [ChargeCategory](#chargecategory) is "Usage".
  * CapacityReservationStatus MUST be one of the allowed values.
