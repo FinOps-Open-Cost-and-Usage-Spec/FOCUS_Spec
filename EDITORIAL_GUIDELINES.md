@@ -1,7 +1,7 @@
 ## Editorial Style Guidelines
 The "Editorial Style Guidelines" section ensures consistency and clarity across all documentation. Adhering to these guidelines is crucial for maintaining a unified style, which enhances readability and reduces misinterpretation. By following the specified standards—whether in formatting, linking, or structuring information—we ensure that all documents are professional, clear, and aligned with our editorial principles. Consistent application of these guidelines contributes to high-quality, user-friendly documentation.
 
-These guidelines can be modified if necessary through a Pull Request (PR), which must be reviewed and agreed upon by the members. This process ensures that any changes are thoughtfully considered and maintain the overall integrity of our editorial standards.
+These guidelines can be modified through a Pull Request (PR), which the members must review and agree upon. This process ensures that any changes are thoughtfully considered and maintains the overall integrity of our editorial standards.
 
 
 <table>
