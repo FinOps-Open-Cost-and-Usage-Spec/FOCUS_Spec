@@ -20,17 +20,17 @@ The above, made-up SKU pricing attributes show that this provider, *TinyCloud*, 
 #### Scenario #1: 100% utilization with matching resources
 
 Purchase: 1 commitment discount purchased for 1 year (2023) for 1 VM_Large.
-Usage: 1 VM_Large resource runs from 2023-01-01 00:00:00 to 2023-01-01 01:00:00.
+Usage: 1 VM_Large resource runs from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
 
 The commitment discount covers the first charge period for 1 VM_Large resource (i.e. <my-vm-id>) resulting in a $1 amortized cost.
 
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01 00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01 00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01 00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01 01:00:00Z",
+        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
+        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
+        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
+        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -52,17 +52,17 @@ The commitment discount covers the first charge period for 1 VM_Large resource (
 #### Scenario #2: 0% utilization with a non-matching resource
 
 Purchase: 1 commitment discount purchased for 1 year (2023) for 1 VM_Large.
-Usage: 1 VM_Medium resource runs from 2023-01-01 00:00:00 to 2023-01-01 01:00:00.
+Usage: 1 VM_Medium resource runs from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
 
 The VM_Large commitment discount is unused because no VM_Large resources are running. Additionally, 1 hour of on-demand usage was incurred by the running VM_Medium resource. These charges result in a $2 amortized cost.
 
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01 00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01 00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01 00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01 01:00:00Z",
+        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
+        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
+        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
+        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -79,10 +79,10 @@ The VM_Large commitment discount is unused because no VM_Large resources are run
         "CommitmentDiscountUnit": "Hour"
     },
     {
-        "BillingPeriodStartDate": "2023-01-01 00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01 00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01 00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01 01:00:00Z",
+        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
+        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
+        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
+        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Standard",
@@ -102,17 +102,17 @@ The VM_Large commitment discount is unused because no VM_Large resources are run
 #### Scenario #1: 100% utilization with 2 VM_medium resources
 
 Purchase: 1 commitment discount purchased for 1 year (2023) for 1 VM_XLarge with a normalization factor of 8.
-Usage: 2 VM_Medium resources run from 2023-01-01 00:00:00 to 2023-01-01 01:00:00 with a normalization factor of 4 for each resource.
+Usage: 2 VM_Medium resources run from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 4 for each resource.
 
 1 commitment discount for a VM_XLarge has a normalization factor of 8, and 2 VM_Medium resources have a normalization factor of 4, each. Therefore, with size flexibility, 1 VM_XLarge commitment discount can fully cover 2 VM_Medium resources resulting in a $2 amortized cost.
 
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01 00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01 00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01 00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01 01:00:00Z",
+        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
+        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
+        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
+        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -129,10 +129,10 @@ Usage: 2 VM_Medium resources run from 2023-01-01 00:00:00 to 2023-01-01 01:00:00
         "CommitmentDiscountUnit": "Normalized Hour"
     },
     {
-        "BillingPeriodStartDate": "2023-01-01 00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01 00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01 00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01 01:00:00Z",
+        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
+        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
+        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
+        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -154,17 +154,17 @@ Usage: 2 VM_Medium resources run from 2023-01-01 00:00:00 to 2023-01-01 01:00:00
 #### Scenario #2: 100% utilization with 1 VM_Large resource
 
 Purchase: 1 commitment discount purchased for 1 year (2023) for 1 VM_Small with a normalization factor of 1.
-Usage: 1 VM_Large resource runs from 2023-01-01 00:00:00 to 2023-01-01 01:00:00 with a normalization factor of 4.
+Usage: 1 VM_Large resource runs from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 4.
 
 The VM_Small commitment discount was fully utilized but still only covered 25% of the VM_Large resource, so the rest of the VM incurred an on-demand cost of $1.50, and the amortized cost for this resource is $1.75.
 
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01 00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01 00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01 00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01 01:00:00Z",
+        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
+        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
+        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
+        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -181,10 +181,10 @@ The VM_Small commitment discount was fully utilized but still only covered 25% o
         "CommitmentDiscountUnit": "Normalized Hour"
     },
     {
-        "BillingPeriodStartDate": "2023-01-01 00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01 00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01 00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01 01:00:00Z",
+        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
+        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
+        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
+        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Standard",
