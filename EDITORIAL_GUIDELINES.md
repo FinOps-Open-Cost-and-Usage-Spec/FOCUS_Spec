@@ -121,7 +121,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
       <td><strong>Tables</strong></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8"></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72"></td>
-      <td> - Tables: Simple tables can be created using markdown, but for more complex tables it is RECOMMENDED to use HTML elements. See example below. </td>
+      <td> - Tables: Simple tables can be created using markdown, but for more complex tables, it is RECOMMENDED to use HTML elements. See example below. </td>
     </tr>
 </table>
 
@@ -134,7 +134,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
 
 > **2.28. Pricing Quantity**
 >
-> The **[Pricing Quantity](#pricing-quantity)** represents the volume of a given [SKU](#glossary:SKU) associated with a [resource](#glossary:resource) or [service](#glossary:service) used or purchased, based on the **[Pricing Unit](#pricing-unit)**. Distinct from **[Consumed Quantity](#consumed-quantity)** (complementary to **[Consumed Unit](#consumed-unit)**), it focuses on pricing and cost, not resource and service consumption. 
+> The **[Pricing Quantity](#pricing-quantity)** represents the volume of a given [SKU](#glossary:sku) associated with a [resource](#glossary:resource) or [service](#glossary:service) used or purchased, based on the **[Pricing Unit](#pricing-unit)**. Distinct from **[Consumed Quantity](#consumed-quantity)** (complementary to **[Consumed Unit](#consumed-unit)**), it focuses on pricing and cost, not resource and service consumption. 
 >
 >  * The PricingQuantity column MUST be present in the billing data. 
 >  * This column MUST be of type Decimal and MUST conform to Numeric Format requirements. 
