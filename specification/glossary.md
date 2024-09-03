@@ -34,7 +34,7 @@ A pricing approach where the cost of a particular resource or service is determi
 
 <a name="glossary:capacity-reservation"><b>Capacity Reservation</b></a>
 
-Capacity Reservations allow you to secure compute capacity for resource instances in a particular region or zone. By utilizing Capacity Reservations, you can proactively address the potential challenge of acquiring capacity in situations where there might be capacity limitations. If you have specific capacity demands and operate mission-critical workloads that necessitate reliable and predictable capacity levels, it is advised that you create a Capacity Reservation.
+A capacity reservation is an agreement that secures a dedicated amount of resources or services for a specified period. This ensures the reserved capacity is always available and accessible, even if it's not fully utilized. Customers are typically charged for the reserved capacity, regardless of actual consumption.```
 
 <a name="glossary:charge"><b>Charge</b></a>
 
