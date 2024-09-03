@@ -12,7 +12,7 @@ The CommitmentDiscountUnit column adheres to the following requirements:
 
 In cases where the *CommitmentDiscountQuantity* are present, the following applies:
 
-* When the [*CommitmentDiscountCategory*](#commitmentdiscountcategory) is "Usage", where size-flexibility is applicable for the commitment discount, the CommitmentDiscountUnit SHOULD be "Normalized Hours". If size-flexibility is not applicable, CommitmentDiscountUnit SHOULD be "Hours".
+* When the [*CommitmentDiscountCategory*](#commitmentdiscountcategory) is "Usage", where [*size-flexibility*](#glossary:size-flexibility) is applicable for the commitment discount, the CommitmentDiscountUnit SHOULD be "Normalized Hours". If *size-flexibility* is not applicable, CommitmentDiscountUnit SHOULD be "Hours".
 * When the *CommitmentDiscountCategory* is "Spend", the CommitmentDiscountUnit SHOULD match the [*BillingCurrency*](#billingcurrency).
 
 ## Column ID
