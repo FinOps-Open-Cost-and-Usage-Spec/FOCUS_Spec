@@ -82,7 +82,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
     <tr>
         <td><strong>Glossary</strong></td>
         <td>
-            [SKU](), [resource](), [service]()
+            <a>SKU</a>, <a>resource</a>, <a>service</a>
         </td>
         <td>
             [*SKU*](#glossary:sku) <br>
@@ -91,7 +91,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
         </td>
         <td>
             - Blue font + italic<br>
-            - The first ocurrence in a section is linked to the glossary.
+            - The first occurrence in a section is linked to the glossary.
         </td>
     </tr>
     <tr>
@@ -121,7 +121,7 @@ These guidelines can be modified if necessary through a Pull Request (PR), which
       <td><strong>Tables</strong></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8"></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72"></td>
-      <td> - Tables: Simple tables can be created using markdown, but for more complex tables it is RECOMMENDED to use HTML elements. See example below. </td>
+      <td> - Tables: Simple tables can be created using markdown, but for more complex tables, it is RECOMMENDED to use HTML elements. See the example below. </td>
     </tr>
 </table>
 
