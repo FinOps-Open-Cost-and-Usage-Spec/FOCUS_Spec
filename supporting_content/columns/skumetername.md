@@ -1,4 +1,4 @@
-# Column: SKUMeterName
+# Column: SkuMeterName
 
 ## Example provider mappings
 
