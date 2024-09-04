@@ -9,7 +9,7 @@ The SkuMeterName column adheres to the following requirements:
 * SkuMeterName MUST be present in the billing data when when the provider includes a [SkuId](#skuid).
 * SkuMeterName MUST be of type String.
 * SkuMeterName MUST be null when SkuId is null.
-
+* SkuMeterName SHOULD NOT be null when SkuId is not null.
 ## Examples
 
 ComputeUsage, BlockVolumeUsage, DataTransfer, ApiRequests
