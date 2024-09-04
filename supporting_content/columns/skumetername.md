@@ -1,4 +1,4 @@
-# Column: CommitmentDiscountCategory
+# Column: SKUMeterName
 
 ## Example provider mappings
 
