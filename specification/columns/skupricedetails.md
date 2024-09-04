@@ -15,7 +15,7 @@ The *SkuPriceDetails* column adheres to the following requirements:
 - The *SkuPriceDetails* column MUST NOT contain properties which are not applicable to the corresponding *SkuPriceId*.
 - The *SkuPriceDetails* column MAY contain properties which are already captured in other dedicated columns.
 - If a property has a numeric value, it MUST represent the value for a single [*PricingUnit*](#pricingunit).
-- The *SkuPriceDetils* column MUST be present in the billing data when the provider includes a *SkuPriceID*.
+- The *SkuPriceDetails* column MUST be present in the billing data when the provider includes a *SkuPriceId*.
 
 ## Examples
 
