@@ -33,35 +33,36 @@ Allowed values:
 
 | Service Category          | Service Subcategory               | Service Subcategory Description                                                                                     |
 | ------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| AI and Machine Learning   | AI Platform                       | Framework of tools for development and deployment of AI-powered applications.                                       |
+| AI and Machine Learning   | AI Platforms                      | Framework of tools for development and deployment of AI-powered applications.                                       |
 | AI and Machine Learning   | Bots                              | Automated performance of tasks such as customer service, data collection, and content moderation.                   |
 | AI and Machine Learning   | Generative AI                     | Creation of content like text, images, and music by learning patterns from existing data.                           |
 | AI and Machine Learning   | Machine Learning                  | Creation, training, and deployment of statistical algorithms that learn from and perform tasks based on data.       |
 | AI and Machine Learning   | Natural Language Processing       | Generation of human language, handling tasks like translation, sentiment analysis, and text summarization.          |
 | AI and Machine Learning   | Other (AI and Machine Learning)   | AI and Machine Learning services that do not fall into one of the defined subcategories.                            |
-| Analytics                 | Analytics Platform                | Unified solution that combines technologies to meet enterprise needs across the entire analytics lifecycle.         |
+| Analytics                 | Analytics Platforms               | Unified solution that combines technologies to meet enterprise needs across the entire analytics lifecycle.         |
 | Analytics                 | Business Intelligence             | Semantic models, dashboards, reports, and data visualizations to track performance and identify trends.             |
 | Analytics                 | Data Processing                   | Integration and transformation tasks to prepare data for analysis.                                                  |
 | Analytics                 | Search                            | Discovery of information by indexing and retrieving data from various sources.                                      |
 | Analytics                 | Streaming Analytics               | Real-time data stream processes to detect patterns, trends, and anomalies as they occur.                            |
 | Analytics                 | Other (Analytics)                 | Analytics services that do not fall into one of the defined subcategories.                                          |
-| Business Applications     | Other (Business Applications)     | All Business Applications services.                                                                                 |
+| Business Applications     | Other (Business Applications)     | Business Applications services that do not fall into one of the defined subcategories.                              |
 | Compute                   | Containers                        | Management and orchestration of containerized compute platforms.                                                    |
 | Compute                   | End User Computing                | Virtualized desktop infrastructure and device / endpoint management.                                                |
-| Compute                   | Serverless Compute                | Enablement of compute capabilities without provisioning or managing servers.                                        |
 | Compute                   | Quantum                           | Resources and simulators that leverage the principles of quantum mechanics.                                         |
+| Compute                   | Serverless Compute                | Enablement of compute capabilities without provisioning or managing servers.                                        |
 | Compute                   | Virtual Machines                  | Computing environments created by abstracting resources from physical hardware.                                     |
 | Compute                   | Other (Compute)                   | Compute services that do not fall into one of the defined subcategories.                                            |
-| Databases                 | Caching                           | Low-latency and high-throughput access to frequently accessed data.                                                 |
-| Databases                 | Data Warehouse                    | Big data storage and querying capabilities.                                                                         |
-| Databases                 | Relational                        | Structured data storage and querying capabilities.                                                                  |
-| Databases                 | NoSQL                             | Unstructured or semi-structured data storage and querying capabilities.                                             |
-| Databases                 | Ledger                            | Immutable and transparent databases to record tamper-proof and cryptographically secure transactions.               |
-| Databases                 | Time Series                       | Time-stamped data storage and querying capabilities.                                                                |
+| Databases                 | Cache Databases                   | Low-latency and high-throughput access to frequently accessed data.                                                 |
+| Databases                 | Data Warehouses                   | Big data storage and querying capabilities.                                                                         |
+| Databases                 | Ledger Databases                  | Immutable and transparent databases to record tamper-proof and cryptographically secure transactions.               |
+| Databases                 | NoSQL Databases                   | Unstructured or semi-structured data storage and querying capabilities.                                             |
+| Databases                 | Relational Databases              | Structured data storage and querying capabilities.                                                                  |
+| Databases                 | Time Series Databases             | Time-stamped data storage and querying capabilities.                                                                |
 | Databases                 | Other (Databases)                 | Database services that do not fall into one of the defined subcategories.                                           |
 | Developer Tools           | Other (Developer Tools)           | All Developer Tools services.                                                                                       |
 | Identity                  | Other (Identity)                  | All Identity services.                                                                                              |
 | Integration               | API Management                    | Creation, publishing, and management of application programming interfaces.                                         |
+| Integration               | Integration Platforms             | Integration environments that facilitate a combination of messaging, management, and automation.                    |
 | Integration               | Messaging                         | Asynchronous communication between distributed applications.                                                        |
 | Integration               | Workflow Automation               | Design, execution, and management of business processes and workflows.                                              |
 | Integration               | Other (Integration)               | Integration services that do not fall into one of the defined subcategories.                                        |
@@ -81,12 +82,12 @@ Allowed values:
 | Multicloud                | Other (Multicloud)                | All Multicloud services.                                                                                            |
 | Networking                | Content Delivery                  | Distribution of digital content using a network of servers (CDNs).                                                  |
 | Networking                | Load Balancing                    | Distribution of incoming network traffic across multiple servers to prevent server overload.                        |
+| Networking                | Network Connectivity              | Movement of data between systems, locations, or formats via data migration, synchronization, and replication tasks. |
 | Networking                | Network Infrastructure            | Configuration, monitoring, and troubleshooting of network devices.                                                  |
 | Networking                | Network Security                  | Protection from unauthorized network access and cyber threats using firewalls, VPNs, and anti-malware tools.        |
-| Networking                | Network Connectivity              | Movement of data between systems, locations, or formats via data migration, synchronization, and replication tasks. |
 | Networking                | Other (Networking)                | Networking services that do not fall into one of the defined subcategories.                                         |
 | Security                  | Secret Management                 | Information used to authenticate users and systems, including secrets, certificates, tokens, and other keys.        |
-| Security                  | Service Posture Management        | Tools that help organizations configure, monitor, and improve system security.                                      |
+| Security                  | Security Posture Management       | Tools that help organizations configure, monitor, and improve system security.                                      |
 | Security                  | Threat Detection and Response     | Collect and analyze security data to identify and respond to potential security threats and vulnerabilities.        |
 | Security                  | Other (Security)                  | Security services that do not fall into one of the defined subcategories.                                           |
 | Storage                   | Backup Storage                    | Secondary storage to protect against data loss.                                                                     |
@@ -94,7 +95,7 @@ Allowed values:
 | Storage                   | Data Transfer                     | Secure, high-speed, and offline transfer of stored data from one location to another.                               |
 | Storage                   | File Storage                      | Scalable, sharable storage for file-based data.                                                                     |
 | Storage                   | Object Storage                    | Highly available, durable storage for unstructured data.                                                            |
-| Storage                   | Storage Platform                  | Unified solution that supports multiple storage types.                                                              |
+| Storage                   | Storage Platforms                 | Unified solution that supports multiple storage types.                                                              |
 | Storage                   | Other (Storage)                   | Storage services that do not fall into one of the defined subcategories.                                            |
 | Web                       | Other (Web)                       | All Web services.                                                                                                   |
 | Other                     | Other (Other)                     | All services that do not fall into one of the defined categories.                                                   |
