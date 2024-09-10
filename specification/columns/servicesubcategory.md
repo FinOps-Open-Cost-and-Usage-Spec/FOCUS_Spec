@@ -24,7 +24,7 @@ Secondary classification of the Service Category for a *service* based on its co
 | Constraint      | Value          |
 | :-------------- | :------------- |
 | Column type     | Dimension      |
-| Feature level   | Mandatory      |
+| Feature level   | Optional      |
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Allowed Values |
