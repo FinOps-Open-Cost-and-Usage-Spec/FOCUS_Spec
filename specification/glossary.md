@@ -52,6 +52,10 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e. hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
 
+<a name="glossary:commitment-flexibility"><b>Commitment Flexibility</b></a>
+
+A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermind amount of usage purchased or consumed based on additional, provider-specific requirements.
+
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
 A company or organization that provides remote access to computing resources, infrastructure, or applications for a fee.
@@ -143,10 +147,6 @@ A row in a FOCUS-compatible cost and usage dataset.
 <a name="glossary:service"><b>Service</b></a>
 
 An offering that can be purchased from a provider, and can include many types of usage or other charges; eg., a cloud database service may include compute, storage, and networking charges.
-
-<a name="glossary:size-flexibility"><b>Size Flexibility</b></a>
-
-A feature of [*commitment discounts*](#glossary:commitment-discount) that may transform the number of resource hours purchased or consumed into an amount based on additional, provider-specific, [*SKU*](glossary:sku) aspects.
 
 <a name="glossary:sku"><b>SKU</b></a>
 

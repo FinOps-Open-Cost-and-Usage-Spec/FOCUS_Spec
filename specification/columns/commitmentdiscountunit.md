@@ -12,8 +12,8 @@ The CommitmentDiscountUnit column adheres to the following requirements:
 
 In cases where the *CommitmentDiscountQuantity* are present, the following applies:
 
-* When the [*CommitmentDiscountCategory*](#commitmentdiscountcategory) is "Usage", where [*size-flexibility*](#glossary:size-flexibility) is applicable for the *commitment discount*, the CommitmentDiscountUnit SHOULD be the unit adhering to the provider-specific requirements. Otherwise, CommitmentDiscountUnit SHOULD be "Hours".
-* When the *CommitmentDiscountCategory* is "Spend", the CommitmentDiscountUnit SHOULD be the [*BillingCurrency*](#billingcurrency).
+* The CommitmentDiscountUnit MUST be the unit measured by the *commitment discount*.
+* When accounting for *commitment flexibility*, the value SHOULD be reflected in the CommitmentDiscountUnit.
 
 ## Column ID
 
