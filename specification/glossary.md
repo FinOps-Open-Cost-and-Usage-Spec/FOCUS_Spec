@@ -84,18 +84,6 @@ A structured collection of cost and usage data that meets or exceeds the Basic c
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
 
-<a name="glossary:instance-family"><b>Instance Family</b></a>
-
-A SKU property that groups compute-based SKUs with similar hardware and features that differ by allocated amounts of compute, memory, or storage.
-
-<a name="glossary:instance-size"><b>Instance Size</b></a>
-
-A SKU property denoting the SKU's relative computing capability within its [*instance family*](#glossary:instance-family).
-
-<a name="glossary:instance-type-ratio"><b>Instance Type Ratio</b></a>
-
-A uniquely-assigned, numerical SKU property assigned to all SKUs with the same [*instance family*](#glossary:instance-family) to denote its relative size amongst members.
-
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
 A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
@@ -150,7 +138,7 @@ An offering that can be purchased from a provider, and can include many types of
 
 <a name="glossary:size-flexibility"><b>Size Flexibility</b></a>
 
-A feature applicable to usage-based [*commitment discounts*](#glossary:commitment-discount) allowing varying coverage amounts across all [*instance types*](#glossary:instance-type) of the same [*instance family*](#glossary:instance-family) relative to each SKU's [*instance type ratio*](#instance-type-ratio).
+A feature of [*commitment discounts*](#glossary:commitment-discount) that may transform the number of resource hours purchased or consumed into an amount based on additional, provider-specific, [*SKU*](glossary:sku) aspects.
 
 <a name="glossary:sku"><b>SKU</b></a>
 
