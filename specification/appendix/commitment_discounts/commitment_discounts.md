@@ -2,9 +2,9 @@
 
 A commitment discount is a billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term. Commitment discounts typically consist of a set of purchase and usage records within cost and usage datasets.
 
-Usage-based commitment discounts obligate a customer to a total quantity of time of a preselected term, typically measured in "Hours".  In some cases, usage-based commitment discounts allow similar resources of different size classifications to relatively benefit from commitment discount rates.  This is typically known as "size flexibility", and is determined by multiplying the number of actual hours consumed by a resource by its predetermined normalization factor to derive the number of "Normalized Hours" consumed.
+Usage-based commitment discounts obligate a customer to a predetermined amount of usage over a preselected term, typically measured in "Hours". In some cases, usage-based commitment discounts allow similar resources of different size classifications to relatively benefit from commitment discount rates. This is typically known as "commitment flexibility", and can be derived by multiplying the number of actual hours consumed by a resource by its predetermined *normalization factor* or *ratio* to derive the number of normalized hours consumed.
 
-Spend-based commitment discounts obligate a customer to total monetary quantity over a preselected term, typically denoted by the invoice's selected billing currency (ex: "USD").
+Spend-based commitment discounts obligate a customer to a predetermined amount of spend over a preselected term, typically denoted by the invoice's selected billing currency (ex: "USD").
 
 ## Purchasing
 
@@ -31,9 +31,9 @@ Within the FOCUS specification, the following examples demonstrate how a commitm
 
 ### Purchase Rows
 
-All commitment discount purchases appear with a positive `BilledCost`, `PricingCategory` as "Committed", and the commitment discount's id populating both the `ResourceId` and `CommitmentDiscountId` value. Upfront purchases appear as a single record also with `ChargeCategory` as "Purchase", `ChargeFrequency` as "One-Time", and the total quantity and units for commitment discount's term as `CommitmentDiscountPurchasedQuantity` and `CommitmentDiscountUnit`, respectively.
+All commitment discount purchases appear with a positive `BilledCost`, `PricingCategory` as "Committed", and the commitment discount's id populating both the `ResourceId` and `CommitmentDiscountId` value. Upfront purchases appear as a single record also with `ChargeCategory` as "Purchase", `ChargeFrequency` as "One-Time", and the total quantity and units for commitment discount's term as `CommitmentDiscountQuantity` and `CommitmentDiscountUnit`, respectively.
 
-Recurring purchases are allocated across all corresponding charge periods of the term when `ChargeCategory` is "Purchase", `ChargeFrequency` is "Recurring", and `CommitmentDiscountPurchasedQuantity` and `CommitmentDiscountUnit` are reflected only for that charge period.
+Recurring purchases are allocated across all corresponding charge periods of the term when `ChargeCategory` is "Purchase", `ChargeFrequency` is "Recurring", and `CommitmentDiscountQuantity` and `CommitmentDiscountUnit` are reflected only for that charge period.
 
 Using the same commitment discount example as above, a one-year, spend-based commitment discount with a $1.00 hourly commitment purchased on Jan 1, 2023, various purchase options can occur:
 
@@ -55,7 +55,7 @@ The entire commitment is billed _once_ during the first charge period of the ter
         "BilledCost": 8760.00,
         "EffectiveCost": 0.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountPurchasedQuantity": 8760.00,
+        "CommitmentDiscountQuantity": 8760.00,
         "CommitmentDiscountUnit": "USD"
     }
 ]
@@ -79,7 +79,7 @@ The commitment is billed across all 8,760 charge periods of the term with $1.00 
         "BilledCost": 1.00,
         "EffectiveCost": 0.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountPurchasedQuantity": 1.00,
+        "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountUnit": "USD"
     },
 
@@ -89,7 +89,7 @@ The commitment is billed across all 8,760 charge periods of the term with $1.00 
 
 #### Scenario #3: Hybrid
 
-Half of the commitment is billed _once_ during the first charge period of the term for $4,380 (derived as `24 hours * 182.5 days * $1.00`), and the other half is billed across each charge period over the term, derived as (`$1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e. $0.50) from the upfront purchase and the other half from the recurring purchase.
+With a 50/50 split, half of the commitment is billed _once_ during the first charge period of the term for $4,380 (derived as `24 hours * 182.5 days * $1.00`), and the other half is billed across each charge period over the term, derived as (`$1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e. $0.50) from the upfront purchase and the other half from the recurring purchase.
 
 ```json
 [
@@ -105,7 +105,7 @@ Half of the commitment is billed _once_ during the first charge period of the te
         "BilledCost": 4380.00,
         "EffectiveCost": 0.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountPurchasedQuantity": 4380.00,
+        "CommitmentDiscountQuantity": 4380.00,
         "CommitmentDiscountUnit": "USD"
     },
     {
@@ -120,7 +120,7 @@ Half of the commitment is billed _once_ during the first charge period of the te
         "BilledCost": 0.50,
         "EffectiveCost": 0.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountPurchasedQuantity": 0.50,
+        "CommitmentDiscountQuantity": 0.50,
         "CommitmentDiscountUnit": "USD"
     },
 
@@ -158,7 +158,7 @@ In this scenario, one eligible resource runs for the full hour, so one row alloc
         "EffectiveCost": 1.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
         "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountConsumedQuantity": 1.00,
+        "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountUnit": "USD"
     }
 ]
@@ -166,7 +166,7 @@ In this scenario, one eligible resource runs for the full hour, so one row alloc
 
 #### Scenario #2: No eligible resources run (0% utilization)
 
-In this scenario, the entire, eligible amount was unused, so one unused row, allocated to the commitment discount, was produced. Most notably, ConsumedQuantity and ConsumedUnit are null while CommitmentDiscountConsumedQuantity is not because $1 was still drawn down by the commitment discount even though it was not consumed by a resource.
+In this scenario, the entire, eligible amount was unused, so one unused row, allocated to the commitment discount, was produced. Most notably, ConsumedQuantity and ConsumedUnit are null while CommitmentDiscountQuantity is not because $1 was still drawn down by the commitment discount even though it was not consumed by a resource.
 
 ```json
 [
@@ -185,7 +185,7 @@ In this scenario, the entire, eligible amount was unused, so one unused row, all
         "EffectiveCost": 1.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
         "CommitmentDiscountStatus": "Unused",
-        "CommitmentDiscountConsumedQuantity": 1.00,
+        "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountUnit": "USD"
     }
 ]
@@ -212,7 +212,7 @@ In this scenario, one eligible resource runs for the full hour. One row shows $0
         "EffectiveCost": 0.75,
         "CommitmentDiscountId": "<commitment-discount-id>",
         "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountConsumedQuantity": 0.75,
+        "CommitmentDiscountQuantity": 0.75,
         "CommitmentDiscountUnit": "USD"
     },
     {
@@ -230,7 +230,7 @@ In this scenario, one eligible resource runs for the full hour. One row shows $0
         "EffectiveCost": 0.25,
         "CommitmentDiscountId": "<commitment-discount-id>",
         "CommitmentDiscountStatus": "Unused",
-        "CommitmentDiscountConsumedQuantity": 0.25,
+        "CommitmentDiscountQuantity": 0.25,
         "CommitmentDiscountUnit": "USD"
     }
 ]
@@ -257,7 +257,7 @@ In this scenario, one eligible resource runs for the full hour and costs $1.50. 
         "EffectiveCost": 1.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
         "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountConsumedQuantity": 1.00,
+        "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountUnit": "USD"
     },
     {
