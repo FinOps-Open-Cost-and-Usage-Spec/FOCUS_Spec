@@ -7,7 +7,7 @@ Current column mappings found in available data sets:
 | Provider  | Data set                 | Column                             |
 |-----------|--------------------------|------------------------------------|
 | AWS       | CUR                      | line_item_usage_type               |
-| GCP       | Big Query Billing Export | service.description                |
+| GCP       | Big Query Billing Export | sku.description                |
 | Microsoft | Cost details             | MeterName                          |
 | OCI       | Cost reports             | TBD                                |
 
