@@ -30,7 +30,11 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 <a name="glossary:block-pricing"><b>Block Pricing</b></a>
 
- A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
+A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
+
+<a name="glossary:capacity-reservation"><b>Capacity Reservation</b></a>
+
+A capacity reservation is an agreement that secures a dedicated amount of resources or services for a specified period. This ensures the reserved capacity is always available and accessible, even if it's not fully utilized. Customers are typically charged for the reserved capacity, regardless of actual consumption.
 
 <a name="glossary:charge"><b>Charge</b></a>
 
@@ -103,6 +107,10 @@ A company or organization that provides outsourced management and support of a r
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
 A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e. on demand.
+
+<a name="glossary:pascalcase"><b>Pascal Case</b></a>
+
+Pascal Case (PascalCase, also known as UpperCamelCase) is a format for identifiers which contain one or more words meaning the words are concatenated together with no delimiter and the first letter of each word is capitalized.
 
 <a name="glossary:practitioner"><b>Practitioner</b></a>
 
