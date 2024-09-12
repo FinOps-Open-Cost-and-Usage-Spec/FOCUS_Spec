@@ -1,6 +1,6 @@
 # Commitment Discount Unit
 
-Commitment Discount Unit represents a provider-specified measurement unit indicating how a provider measures [Commitment Discount Quantity](#commitmentdiscountquantity) of a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountUnit column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Unit represents the provider-specified measurement unit indicating how a provider measures the [Commitment Discount Quantity](#commitmentdiscountquantity) of a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountUnit column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 The CommitmentDiscountUnit column adheres to the following requirements:
 
@@ -25,7 +25,7 @@ Commitment Discount Unit
 
 ## Description
 
-The provider-specified measurement unit indicating how a provider measures *Commitment Discount Quantity* of a *commitment discount*.
+The provider-specified measurement unit indicating how a provider measures the *Commitment Discount Quantity* of a *commitment discount*.
 
 ## Content constraints
 
