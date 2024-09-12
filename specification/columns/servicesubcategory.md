@@ -39,7 +39,7 @@ Allowed values:
 | AI and Machine Learning   | Machine Learning                  | Creation, training, and deployment of statistical algorithms that learn from and perform tasks based on data.        |
 | AI and Machine Learning   | Natural Language Processing       | Generation of human language, handling tasks like translation, sentiment analysis, and text summarization.           |
 | AI and Machine Learning   | Other (AI and Machine Learning)   | AI and Machine Learning services that do not fall into one of the defined subcategories.                             |
-| Analytics                 | Analytics Platforms               | Unified solution that combines technologies to meet enterprise needs across the entire analytics lifecycle.          |
+| Analytics                 | Analytics Platforms               | Unified solution that combines technologies across the entire analytics lifecycle.          |
 | Analytics                 | Business Intelligence             | Semantic models, dashboards, reports, and data visualizations to track performance and identify trends.              |
 | Analytics                 | Data Processing                   | Integration and transformation tasks to prepare data for analysis.                                                   |
 | Analytics                 | Search                            | Discovery of information by indexing and retrieving data from various sources.                                       |
@@ -61,7 +61,7 @@ Allowed values:
 | Databases                 | Relational Databases              | Structured data storage and querying capabilities.                                                                   |
 | Databases                 | Time Series Databases             | Time-stamped data storage and querying capabilities.                                                                 |
 | Databases                 | Other (Databases)                 | Database services that do not fall into one of the defined subcategories.                                            |
-| Developer Tools           | Developer Platforms               | Integrated environments that facilitate multiple development needs.                                                  |
+| Developer Tools           | Developer Platforms               | Unified solution that combines technologies across multiple areas of the software development lifecycle.                                                  |
 | Developer Tools           | Deployment                        | Tools and services that support deploying code for software and systems.                                             |
 | Developer Tools           | Development                       | Tools and services that support authoring code for software and systems.                                             |
 | Developer Tools           | Quality Assurance                 | Tools and services that support testing code for software and systems.                                               |
@@ -69,12 +69,12 @@ Allowed values:
 | Identity                  | Identity and Access Management    | Technologies that ensure users have appropriate access to resources.                                                 |
 | Identity                  | Other (Identity)                  | Identity services that do not fall into one of the defined subcategories.                                            |
 | Integration               | API Management                    | Creation, publishing, and management of application programming interfaces.                                          |
-| Integration               | Integration Platforms             | Integration environments that facilitate a combination of messaging, management, and automation.                     |
+| Integration               | Integration Platforms             | Unified solution that combines technologies across messaging, management, and automation.                     |
 | Integration               | Messaging                         | Asynchronous communication between distributed applications.                                                         |
 | Integration               | Workflow Automation               | Design, execution, and management of business processes and workflows.                                               |
 | Integration               | Other (Integration)               | Integration services that do not fall into one of the defined subcategories.                                         |
 | Internet of Things        | IoT Analytics                     | Examination of data collected from IoT devices.                                                                      |
-| Internet of Things        | IoT Platforms                     | Environments that facilitate a combination of IoT data collection, processing, visualization, and device management. |
+| Internet of Things        | IoT Platforms                     | Unified solution that combines technologies across IoT data collection, processing, visualization, and device management. |
 | Internet of Things        | Other (Internet of Things)        | Internet of Things (IoT) services that do not fall into one of the defined subcategories.                            |
 | Management and Governance | Architecture                      | Planning, design, and construction of software systems.                                                              |
 | Management and Governance | Compliance                        | Adherance to regulatory standards and industry best practices.                                                       |
