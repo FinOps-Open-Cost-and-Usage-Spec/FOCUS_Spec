@@ -10,7 +10,7 @@ The SkuMeter column adheres to the following requirements:
 * SkuMeter MUST be of type String.
 * SkuMeter MUST be null when SkuId is null.
 * SkuMeter SHOULD NOT be null when SkuId is not null.
-* SkuMeterName SHOULD remain consistent over time for a given SkuId.
+* SkuMeter SHOULD remain consistent over time for a given SkuId.
 
 ## Examples
 
