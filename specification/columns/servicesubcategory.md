@@ -62,7 +62,7 @@ Allowed values:
 | Databases                 | Time Series Databases             | Time-stamped data storage and querying capabilities.                                                                 |
 | Databases                 | Other (Databases)                 | Database services that do not fall into one of the defined subcategories.                                            |
 | Developer Tools           | Developer Platforms               | Unified solution that combines technologies across multiple areas of the software development lifecycle.                                                  |
-| Developer Tools           | Deployment                        | Tools and services that support deploying code for software and systems.                                             |
+| Developer Tools           | Continuous Integration and Deployment                        | CI/CD tools and services that support building and deploying code for software and systems.           |
 | Developer Tools           | Development                       | Tools and services that support authoring code for software and systems.                                             |
 | Developer Tools           | Quality Assurance                 | Tools and services that support testing code for software and systems.                                               |
 | Developer Tools           | Other (Developer Tools)           | Developer Tools services that do not fall into one of the defined subcategories.                                     |
