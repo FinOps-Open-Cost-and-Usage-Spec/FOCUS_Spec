@@ -10,7 +10,7 @@ Commitment Discount Quantity is commonly used in commitment discount analysis an
 
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
-* CommitmentDiscountQuantity MUST be present a FOCUS dataset when the provider supports *commitment discounts*.
+* CommitmentDiscountQuantity MUST be present in a FOCUS dataset when the provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
 * CommitmentDiscountQuantity MAY be negative if [*ChargeClass*](#chargeclass) is "Correction".
 
