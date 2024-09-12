@@ -94,7 +94,7 @@ Allowed values:
 | Migration                 | Resource Migration                | Movement of resources from one location to another.                                                                  |
 | Migration                 | Other (Migration)                 | Migration services that do not fall into one of the defined subcategories.                                           |
 | Mobile                    | Other (Mobile)                    | All Mobile services.                                                                                                 |
-| Multicloud                | Multicloud Platforms              | Environments that facilitate consumption of services from multiple cloud providers.                                  |
+| Multicloud                | Multicloud Integration              | Environments that facilitate consumption of services from multiple cloud providers.                                  |
 | Multicloud                | Other (Multicloud)                | Multicloud services that do not fall into one of the defined subcategories.                                          |
 | Networking                | Content Delivery                  | Distribution of digital content using a network of servers (CDNs).                                                   |
 | Networking                | Load Balancing                    | Distribution of incoming network traffic across multiple servers to prevent server overload.                         |
