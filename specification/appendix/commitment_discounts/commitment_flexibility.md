@@ -37,15 +37,15 @@ The commitment discount covers the first charge period for 1 VM_Large resource (
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
         "ResourceId": "<my-large-vm-id>",
-        "PricingQuantity": 1,
+        "PricingQuantity": 1.00,
         "BilledCost": 0.00,
         "EffectiveCost": 1.00,
-        "ConsumedUnit": 1,
+        "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_Large",
         "CommitmentDiscountId": "<commitment-discount-id>",
+        "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountQuantity": 1,
         "CommitmentDiscountUnit": "Hour"
     }
 ]
@@ -69,15 +69,15 @@ The VM_Large commitment discount is unused because no VM_Large resources are run
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
         "ResourceId": "<my-large-vm-id>",
-        "PricingQuantity": 1,
+        "PricingQuantity": 1.00,
         "BilledCost": 0.00,
         "EffectiveCost": 1.00,
-        "ConsumedUnit": 1,
+        "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_Large",
         "CommitmentDiscountId": "<commitment-discount-id>",
+        "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountStatus": "Unused",
-        "CommitmentDiscountQuantity": 1,
         "CommitmentDiscountUnit": "Hour"
     },
     {
@@ -89,10 +89,10 @@ The VM_Large commitment discount is unused because no VM_Large resources are run
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Standard",
         "ResourceId": "<my-medium-vm-id>",
-        "PricingQuantity": 1,
+        "PricingQuantity": 1.00,
         "BilledCost": 1.00,
         "EffectiveCost": 0.00,
-        "ConsumedUnit": 1,
+        "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_Medium"
     }
@@ -119,15 +119,15 @@ Usage: 2 VM_Medium resources run from 2023-01-01T00:00:00 to 2023-01-01T01:00:00
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
         "ResourceId": "<my-medium-vm-id>",
-        "PricingQuantity": 1,
+        "PricingQuantity": 1.00,
         "BilledCost": 0.00,
         "EffectiveCost": 1.00,
-        "ConsumedUnit": 1,
+        "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_Medium",
         "CommitmentDiscountId": "<commitment-discount-id>",
+        "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountQuantity": 1,
         "CommitmentDiscountUnit": "Normalized Hour"
     },
     {
@@ -139,15 +139,15 @@ Usage: 2 VM_Medium resources run from 2023-01-01T00:00:00 to 2023-01-01T01:00:00
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
         "ResourceId": "<my-medium-vm-id>",
-        "PricingQuantity": 1,
+        "PricingQuantity": 1.00,
         "BilledCost": 0.00,
         "EffectiveCost": 1.00,
-        "ConsumedUnit": 1,
+        "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_Medium",
         "CommitmentDiscountId": "<commitment-discount-id>",
+        "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountQuantity": 1,
         "CommitmentDiscountUnit": "Normalized Hour"
     }
 ]
@@ -174,12 +174,12 @@ The VM_Small commitment discount was fully utilized but still only covered 25% o
         "PricingQuantity": 0.25,
         "BilledCost": 0.00,
         "EffectiveCost": 0.25,
-        "ConsumedUnit": 1,
+        "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_Large",
         "CommitmentDiscountId": "<commitment-discount-id>",
+        "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountQuantity": 1,
         "CommitmentDiscountUnit": "Normalized Hour"
     },
     {
@@ -194,7 +194,7 @@ The VM_Small commitment discount was fully utilized but still only covered 25% o
         "PricingQuantity": 0.75,
         "BilledCost": 1.50,
         "EffectiveCost": 0.00,
-        "ConsumedUnit": 1,
+        "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_Large"
     }
