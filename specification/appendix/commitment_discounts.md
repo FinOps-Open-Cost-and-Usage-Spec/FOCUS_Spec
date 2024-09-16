@@ -157,8 +157,8 @@ In this scenario, one eligible resource runs for the full hour, so one row alloc
         "BilledCost": 0.00,
         "EffectiveCost": 1.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountStatus": "Used",
         "CommitmentDiscountQuantity": 1.00,
+        "CommitmentDiscountStatus": "Used",
         "CommitmentDiscountUnit": "USD"
     }
 ]
@@ -184,8 +184,8 @@ In this scenario, the entire, eligible amount was unused, so one unused row, all
         "BilledCost": 0.00,
         "EffectiveCost": 1.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountStatus": "Unused",
         "CommitmentDiscountQuantity": 1.00,
+        "CommitmentDiscountStatus": "Unused",
         "CommitmentDiscountUnit": "USD"
     }
 ]
@@ -211,8 +211,8 @@ In this scenario, one eligible resource runs for the full hour. One row shows $0
         "BilledCost": 0.00,
         "EffectiveCost": 0.75,
         "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountStatus": "Used",
         "CommitmentDiscountQuantity": 0.75,
+        "CommitmentDiscountStatus": "Used",
         "CommitmentDiscountUnit": "USD"
     },
     {
@@ -229,8 +229,8 @@ In this scenario, one eligible resource runs for the full hour. One row shows $0
         "BilledCost": 0.00,
         "EffectiveCost": 0.25,
         "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountStatus": "Unused",
         "CommitmentDiscountQuantity": 0.25,
+        "CommitmentDiscountStatus": "Unused",
         "CommitmentDiscountUnit": "USD"
     }
 ]
@@ -256,8 +256,8 @@ In this scenario, one eligible resource runs for the full hour and costs $1.50. 
         "BilledCost": 0.00,
         "EffectiveCost": 1.00,
         "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountStatus": "Used",
         "CommitmentDiscountQuantity": 1.00,
+        "CommitmentDiscountStatus": "Used",
         "CommitmentDiscountUnit": "USD"
     },
     {
