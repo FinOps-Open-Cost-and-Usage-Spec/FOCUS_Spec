@@ -30,7 +30,11 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 <a name="glossary:block-pricing"><b>Block Pricing</b></a>
 
- A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
+A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
+
+<a name="glossary:capacity-reservation"><b>Capacity Reservation</b></a>
+
+A capacity reservation is an agreement that secures a dedicated amount of resources or services for a specified period. This ensures the reserved capacity is always available and accessible, even if it's not fully utilized. Customers are typically charged for the reserved capacity, regardless of actual consumption.
 
 <a name="glossary:charge"><b>Charge</b></a>
 
@@ -46,7 +50,11 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-Also known as Commitment Discount, this is a commitment for an amount of usage or spend throughout a specified term, in exchange for discounted unit pricing on that amount. The commitment may be based on quantities of resource units or monetary value, with various payment options and time frames.
+A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e. hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
+
+<a name="glossary:commitment-flexibility"><b>Commitment Flexibility</b></a>
+
+A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermind amount of usage purchased or consumed based on additional, provider-specific requirements.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -100,9 +108,17 @@ A FOCUS-defined column that provides numeric values, allowing for aggregation op
 
 A company or organization that provides outsourced management and support of a range of IT services, such as network infrastructure, cybersecurity, cloud computing, and more.
 
+<a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
+
+A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
+
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
 A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e. on demand.
+
+<a name="glossary:pascalcase"><b>Pascal Case</b></a>
+
+Pascal Case (PascalCase, also known as UpperCamelCase) is a format for identifiers which contain one or more words meaning the words are concatenated together with no delimiter and the first letter of each word is capitalized.
 
 <a name="glossary:practitioner"><b>Practitioner</b></a>
 
@@ -151,3 +167,7 @@ A metadata label assigned to a resource to provide information about it or to ca
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
 A Resource or Provider-defined construct for grouping resources and/or other Provider-defined construct that a Tag can be assigned to.
+
+<a name="glossary:term"><b>Term</b></a>
+
+A duration of a contractual agreement like with a [*commitment discount*](#glossary:commitment-discount) or [*negotiated discount*](#glossary:negotiated-discount).
