@@ -95,8 +95,8 @@ Allowed values:
 | Mobile                    | Other (Mobile)                        | All Mobile services.                                                                                                 |
 | Multicloud                | Multicloud Integration                | Environments that facilitate consumption of services from multiple cloud providers.                                  |
 | Multicloud                | Other (Multicloud)                    | Multicloud services that do not fall into one of the defined subcategories.                                          |
-| Networking                | Content Delivery                      | Distribution of digital content using a network of servers (CDNs).                                                   |
 | Networking                | Application Networking                | Distribution of incoming network traffic across multiple servers to prevent server overload.                         |
+| Networking                | Content Delivery                      | Distribution of digital content using a network of servers (CDNs).                                                   |
 | Networking                | Network Connectivity                  | Services and activities that facilitate secure connection between network components.                                |
 | Networking                | Network Infrastructure                | Configuration, monitoring, and troubleshooting of network devices.                                                   |
 | Networking                | Network Routing                       | Services that select paths for traffic within or across networks.                                                    |
