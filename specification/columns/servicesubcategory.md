@@ -33,7 +33,7 @@ Allowed values:
 
 | Service Category          | Service Subcategory                   | Service Subcategory Description                                                                                      |
 | ------------------------- | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
-| AI and Machine Learning   | AI Platforms                          | Framework of tools for development and deployment of AI-powered applications.                                        |
+| AI and Machine Learning   | AI Platforms                          | Unified solution that combines artificial intelligence and machine learning technologies.                            |
 | AI and Machine Learning   | Bots                                  | Automated performance of tasks such as customer service, data collection, and content moderation.                    |
 | AI and Machine Learning   | Generative AI                         | Creation of content like text, images, and music by learning patterns from existing data.                            |
 | AI and Machine Learning   | Machine Learning                      | Creation, training, and deployment of statistical algorithms that learn from and perform tasks based on data.        |
@@ -49,11 +49,11 @@ Allowed values:
 | Business Applications     | Other (Business Applications)         | Business Applications services that do not fall into one of the defined subcategories.                               |
 | Compute                   | Containers                            | Management and orchestration of containerized compute platforms.                                                     |
 | Compute                   | End User Computing                    | Virtualized desktop infrastructure and device / endpoint management.                                                 |
-| Compute                   | Quantum                               | Resources and simulators that leverage the principles of quantum mechanics.                                          |
+| Compute                   | Quantum Compute                       | Resources and simulators that leverage the principles of quantum mechanics.                                          |
 | Compute                   | Serverless Compute                    | Enablement of compute capabilities without provisioning or managing servers.                                         |
-| Compute                   | Virtual Machines                      | Computing environments created by abstracting resources from physical hardware.                                      |
+| Compute                   | Virtual Machines                      | Computing environments created by abstracting resources from physical hardware, including bare-metal servers.        |
 | Compute                   | Other (Compute)                       | Compute services that do not fall into one of the defined subcategories.                                             |
-| Databases                 | Cache Databases                       | Low-latency and high-throughput access to frequently accessed data.                                                  |
+| Databases                 | Caching                               | Low-latency and high-throughput access to frequently accessed data.                                                  |
 | Databases                 | Data Warehouses                       | Big data storage and querying capabilities.                                                                          |
 | Databases                 | Ledger Databases                      | Immutable and transparent databases to record tamper-proof and cryptographically secure transactions.                |
 | Databases                 | NoSQL Databases                       | Unstructured or semi-structured data storage and querying capabilities.                                              |
@@ -61,17 +61,16 @@ Allowed values:
 | Databases                 | Time Series Databases                 | Time-stamped data storage and querying capabilities.                                                                 |
 | Databases                 | Other (Databases)                     | Database services that do not fall into one of the defined subcategories.                                            |
 | Developer Tools           | Developer Platforms                   | Unified solution that combines technologies across multiple areas of the software development lifecycle.             |
-| Developer Tools           | Continuous Integration and Deployment | Tools and services that support deploying code for software and systems.                                             |
-| Developer Tools           | Development                           | Tools and services that support authoring code for software and systems.                                             |
+| Developer Tools           | Continuous Integration and Deployment | CI/CD tools and services that support building and deploying code for software and systems.                          |
+| Developer Tools           | Development Environments              | Tools and services that support authoring code for software and systems.                                             |
 | Developer Tools           | Source Code Management                | Tools and services that support version control of code for software and systems.                                    |
 | Developer Tools           | Quality Assurance                     | Tools and services that support testing code for software and systems.                                               |
 | Developer Tools           | Other (Developer Tools)               | Developer Tools services that do not fall into one of the defined subcategories.                                     |
 | Identity                  | Identity and Access Management        | Technologies that ensure users have appropriate access to resources.                                                 |
 | Identity                  | Other (Identity)                      | Identity services that do not fall into one of the defined subcategories.                                            |
 | Integration               | API Management                        | Creation, publishing, and management of application programming interfaces.                                          |
-| Integration               | Integration Platforms                 | Unified solution that combines technologies across messaging, management, and automation.                            |
 | Integration               | Messaging                             | Asynchronous communication between distributed applications.                                                         |
-| Integration               | Workflow Automation                   | Design, execution, and management of business processes and workflows.                                               |
+| Integration               | Workflow Orchestration                | Design, execution, and management of business processes and workflows.                                               |
 | Integration               | Other (Integration)                   | Integration services that do not fall into one of the defined subcategories.                                         |
 | Internet of Things        | IoT Analytics                         | Examination of data collected from IoT devices.                                                                      |
 | Internet of Things        | IoT Platforms                         | Environments that facilitate a combination of IoT data collection, processing, visualization, and device management. |
@@ -86,7 +85,7 @@ Allowed values:
 | Management and Governance | Support                               | Assistance and expertise supplied by providers.                                                                      |
 | Management and Governance | Other (Management and Governance)     | Management and governance services that do not fall into one of the defined subcategories.                           |
 | Media                     | Content Creation                      | Production of media content.                                                                                         |
-| Media                     | Gaming                                | Development and consumption of games.                                                                                |
+| Media                     | Gaming                                | Development and delivery of gaming services.                                                                         |
 | Media                     | Media Streaming                       | Multimedia delivered and rendered in real-time on devices.                                                           |
 | Media                     | Mixed Reality                         | Technologies that blend real-world and computer-generated environments.                                              |
 | Media                     | Other (Media)                         | Media services that do not fall into one of the defined subcategories.                                               |
@@ -97,10 +96,11 @@ Allowed values:
 | Multicloud                | Multicloud Integration                | Environments that facilitate consumption of services from multiple cloud providers.                                  |
 | Multicloud                | Other (Multicloud)                    | Multicloud services that do not fall into one of the defined subcategories.                                          |
 | Networking                | Content Delivery                      | Distribution of digital content using a network of servers (CDNs).                                                   |
-| Networking                | Load Balancing                        | Distribution of incoming network traffic across multiple servers to prevent server overload.                         |
-| Networking                | Network Connectivity                  | Movement of data between systems, locations, or formats via data migration, synchronization, and replication tasks.  |
+| Networking                | Application Networking                | Distribution of incoming network traffic across multiple servers to prevent server overload.                         |
+| Networking                | Network Connectivity                  | Services and activities that facilitate secure connection between network components.                                |
 | Networking                | Network Infrastructure                | Configuration, monitoring, and troubleshooting of network devices.                                                   |
-| Networking                | Network Security                      | Protection from unauthorized network access and cyber threats using firewalls, VPNs, and anti-malware tools.         |
+| Networking                | Network Routing                       | Services that select paths for traffic within or across networks.                                                    |
+| Networking                | Network Security                      | Protection from unauthorized network access and cyber threats using firewalls and anti-malware tools.                |
 | Networking                | Other (Networking)                    | Networking services that do not fall into one of the defined subcategories.                                          |
 | Security                  | Secret Management                     | Information used to authenticate users and systems, including secrets, certificates, tokens, and other keys.         |
 | Security                  | Security Posture Management           | Tools that help organizations configure, monitor, and improve system security.                                       |
