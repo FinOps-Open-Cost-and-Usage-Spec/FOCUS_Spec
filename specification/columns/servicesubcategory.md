@@ -97,7 +97,7 @@ Allowed values:
 | Multicloud                | Other (Multicloud)                    | Multicloud services that do not fall into one of the defined subcategories.                                   |
 | Networking                | Application Networking                | Distribution of incoming network traffic across application-based workloads.                                  |
 | Networking                | Content Delivery                      | Distribution of digital content using a network of servers (CDNs).                                            |
-| Networking                | Network Connectivity                  | Facilitates communication between network segments.                                                           |
+| Networking                | Network Connectivity                  | Facilitates communication between networks or network segments.                                               |
 | Networking                | Network Infrastructure                | Configuration, monitoring, and troubleshooting of network devices.                                            |
 | Networking                | Network Routing                       | Services that select paths for traffic within or across networks.                                             |
 | Networking                | Network Security                      | Protection from unauthorized network access and cyber threats using firewalls and anti-malware tools.         |
