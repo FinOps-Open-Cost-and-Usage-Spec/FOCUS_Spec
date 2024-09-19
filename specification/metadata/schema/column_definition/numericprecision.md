@@ -12,6 +12,15 @@ NumericPrecision
 
 Numeric Precision
 
+## Content constraints
+
+| Constraint    | Value                            |
+|:--------------|:---------------------------------|
+| Feature level | Conditional                      |
+| Allows nulls  | False                            |
+| Data type     | Integer                          |
+| Value format  | [Numeric Format](#numericformat) |
+
 ## Introduced (version)
 
 1.0
