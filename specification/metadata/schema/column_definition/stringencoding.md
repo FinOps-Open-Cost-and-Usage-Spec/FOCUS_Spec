@@ -12,6 +12,15 @@ StringEncoding
 
 StringEncoding
 
+## Content constraints
+
+| Constraint      | Value            |
+|:----------------|:-----------------|
+| Feature level   | Conditional      |
+| Allows nulls    | False            |
+| Data type       | String           |
+| Value format    | \<not specified> |
+
 ## Introduced (version)
 
 1.0

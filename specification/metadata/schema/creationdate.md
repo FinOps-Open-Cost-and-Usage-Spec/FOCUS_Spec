@@ -12,6 +12,15 @@ CreationDate
 
 Creation Date
 
+## Content constraints
+
+| Constraint    | Value                                     |
+|:--------------|:------------------------------------------|
+| Feature level | Mandatory                                 |
+| Allows nulls  | False                                     |
+| Data type       | Date/Time                            |
+| Value format    | [Date/Time Format](#date/timeformat) |
+
 ## Introduced (version)
 
 1.0

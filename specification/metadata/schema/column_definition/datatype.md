@@ -12,6 +12,15 @@ DataType
 
 Data Type
 
+## Content constraints
+
+| Constraint      | Value            |
+|:----------------|:-----------------|
+| Feature level   | Mandatory        |
+| Allows nulls    | False            |
+| Data type       | String           |
+| Value format    | \<not specified> |
+
 ## Introduced (version)
 
 1.0
