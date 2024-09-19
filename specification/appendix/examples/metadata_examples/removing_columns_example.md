@@ -1,25 +1,23 @@
-# Adding New Columns
+# Removing Columns
 
 ## Scenario
 
-ACME has decided add additional columns to their FOCUS data export. The new columns are x_awesome_column1, x_awesome_column2, and x_awesome_column3. The provider creates a new schema object to represent the new schema, this schema object has a unique SchemaId. The subsequent data exports that use the new schema include the new schema's id as a reference to their corresponding schema object.
+ACME has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3. The provider creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid).
 
 ## Supplied Metadata
 
-## Location for the new schema object
+Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`.
 
-`/FOCUS/metadata/schemas/schema-23456-abcde-23456-abcde-23456.json`
-
-## Content for the new schema object
+The updated schema related metadata could look like this:
 
 ```json
  {
-  "SchemaId": "23456-abcde-23456-abcde-23456",
+  "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
-  "CreationDate": "2024-02-02T12:01:03.083z",
+  "CreationDate": "2024-03-02T12:01:03.083z",
   "ColumnDefinition": [
-          {
-                "ColumnName": "BillingAccountId",
+    {
+      "ColumnName": "BillingAccountId",
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8"
@@ -53,7 +51,7 @@ ACME has decided add additional columns to their FOCUS data export. The new colu
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["awecorp", "ac"]
+                "ProviderTagPrefixes": ["acme", "ac"]
           },
           {
                 "ColumnName": "x_awesome_column1",
@@ -64,15 +62,9 @@ ACME has decided add additional columns to their FOCUS data export. The new colu
           {
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
-          },
-          {
-                "ColumnName": "x_awesome_column3",
-                "DataType": "STRING",
-                "StringMaxLength": 64,
-                "StringEncoding": "UTF-8"
           }
       ]
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](../schema_metadata_reference_example.md)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)
