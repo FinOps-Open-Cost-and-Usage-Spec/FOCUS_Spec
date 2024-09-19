@@ -10,13 +10,13 @@ Spend-based commitment discounts obligate a customer to a predetermined amount o
 
 While customers are bound to the term of a commitment discount, cloud-service providers offer some or all of the following payment options before and/or during the term:
 
-* *Upfront* - The commitment discount is paid in full before the term begins.
-* *Recurring* - The commitment discount is paid on a repeated basis, typically over each billing period of the term.
-* *Partial* - Some of the commitment discount is paid before the term begins, and the rest is paid repeatedly over the term.
+* *All Upfront* - The commitment discount is paid in full before the term begins.
+* *No Upfront* - The commitment discount is paid on a repeated basis, typically over each billing period of the term.
+* *Partial Upfront* - Some of the commitment discount is paid before the term begins, and the rest is paid repeatedly over the term.
 
-For example, if a customer buys a 1-year, spend-based commitment discount with a $1.00 hourly commit and pays with the partial option, the commitment discount's payment consists of 1 upfront purchase in the beginning of the term *and* monthly recurring purchases with the following totals:
+For example, if a customer buys a 1-year, spend-based commitment discount with a $1.00 hourly commit and pays with the partial option, the commitment discount's payment consists of a one-time purchase in the beginning of the term *and* monthly recurring purchases with the following totals:
 
-1. *Upfront* - $4,380 (`24 hours * 365 days * $1.00 * 0.5`)
+1. *One-Time* - $4,380 (`24 hours * 365 days * $1.00 * 0.5`)
 2. *Recurring* - $182.50 (`24 hours * 365 days * $1.00 / 12 months`)
 
 ## Usage
@@ -31,13 +31,13 @@ Within the FOCUS specification, the following examples demonstrate how a commitm
 
 ### Purchase Rows
 
-All commitment discount purchases appear with a positive `BilledCost`, `PricingCategory` as "Committed", and with the commitment discount's id populating both the `ResourceId` and `CommitmentDiscountId` value. Upfront purchases appear as a single record with `ChargeCategory` as "Purchase", `ChargeFrequency` as "One-Time", and the total quantity and units for commitment discount's term reflected as `CommitmentDiscountQuantity` and `CommitmentDiscountUnit`, respectively.
+All commitment discount purchases appear with a positive `BilledCost`, `PricingCategory` as "Committed", and with the commitment discount's id populating both the `ResourceId` and `CommitmentDiscountId` value. One-time purchases appear as a single record with `ChargeCategory` as "Purchase", `ChargeFrequency` as "One-Time", and the total quantity and units for commitment discount's term reflected as `CommitmentDiscountQuantity` and `CommitmentDiscountUnit`, respectively.
 
 Recurring purchases are allocated across all corresponding charge periods of the term when `ChargeCategory` is "Purchase", `ChargeFrequency` is "Recurring", and `CommitmentDiscountQuantity` and `CommitmentDiscountUnit` are reflected only for that charge period.
 
 Using the same commitment discount example as above with a one-year, spend-based commitment discount with a $1.00 hourly commitment purchased on Jan 1, 2023, various purchase options are available:
 
-#### Scenario #1: Upfront
+#### Scenario #1: All Upfront
 
 The entire commitment discount is billed _once_ during the first charge period of the term for $8,670 (derived as `24 hours * 365 days * $1.00`).
 
@@ -61,7 +61,7 @@ The entire commitment discount is billed _once_ during the first charge period o
 ]
 ```
 
-#### Scenario #2: Recurring
+#### Scenario #2: No Upfront
 
 The commitment discount is billed across all 8,760 (`24 hours * 365 days`) charge periods of the term with $1.00 allocated to each charge period over the term.
 
@@ -87,9 +87,9 @@ The commitment discount is billed across all 8,760 (`24 hours * 365 days`) charg
 ]
 ```
 
-#### Scenario #3: Partial
+#### Scenario #3: Partial Upfront
 
-With a 50/50 split, half of the commitment is billed _once_ during the first charge period of the term for $4,380 (derived as `24 hours * 182.5 days * $1.00`), and the other half is billed across each charge period over the term, derived as (`$1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e. $0.50) from the upfront purchase and the other half from the recurring purchase.
+With a 50/50 split, half of the commitment is billed _once_ during the first charge period of the term for $4,380 (derived as `24 hours * 182.5 days * $1.00`), and the other half is billed across each charge period over the term, derived as (`$1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e. $0.50) from the one-time purchase and the other half from the recurring purchase.
 
 ```json
 [
