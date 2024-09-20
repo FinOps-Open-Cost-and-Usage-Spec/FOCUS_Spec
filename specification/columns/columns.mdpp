@@ -46,6 +46,7 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "servicename.md",1
 !INCLUDE "servicesubcategory.md",1
 !INCLUDE "skuid.md",1
+!INCLUDE "skumeter.md",1
 !INCLUDE "skupricedetails.md",1
 !INCLUDE "skupriceid.md",1
 !INCLUDE "subaccountid.md",1
