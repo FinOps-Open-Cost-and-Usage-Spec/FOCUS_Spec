@@ -1,6 +1,6 @@
 # Commitment Discounts
 
-A commitment discount is a billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term. Commitment discounts typically consist of a set of purchase and usage records within cost and usage datasets.
+A commitment discount is a billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term. Commitment discounts typically consist of purchase and usage records within cost and usage datasets.
 
 Usage-based commitment discounts obligate a customer to a predetermined amount of usage over a preselected term, typically measured in "Hours". In some cases, usage-based commitment discounts allow similar resources of different size classifications to relatively benefit from commitment discount rates. This is typically known as *commitment flexibility*, and can be derived by multiplying the number of actual resource hours consumed by a predefined SKU-based coefficient, sometimes referred to as a *normalization factor* or *ratio*, to derive the number of normalized hours consumed.
 
