@@ -8,7 +8,7 @@ Spend-based commitment discounts obligate a customer to a predetermined amount o
 
 ## Purchasing
 
-While customers are bound to the term of a commitment discount, cloud-service providers offer some or all of the following payment options before and/or during the term:
+While customers are bound to the term of a commitment discount, providers offer some or all of the following payment options before or during the term:
 
 * *All Upfront* - The commitment discount is paid in full before the term begins.
 * *No Upfront* - The commitment discount is paid on a repeated basis, typically over each billing period of the term.
