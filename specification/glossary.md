@@ -54,7 +54,7 @@ A billing discount model that offers reduced rates on preselected SKUs in exchan
 
 <a name="glossary:commitment-flexibility"><b>Commitment Flexibility</b></a>
 
-A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermind amount of usage purchased or consumed based on additional, provider-specific requirements.
+A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, provider-specific requirements.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
