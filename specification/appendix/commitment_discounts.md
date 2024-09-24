@@ -2,7 +2,7 @@
 
 A [*commitment discount*](glossary:commitment-discount) is a billing discount model that offers reduced rates on preselected [SKUs](#glossary:sku) in exchange for an obligated usage or spend amount over a predefined [*term*](glossary:term). *Commitment discounts* typically consist of purchase and usage records within cost and usage datasets.
 
-Usage-based *commitment discounts* obligate a customer to a predetermined amount of usage over a preselected *term*. In some cases, usage-based *commitment discounts* also feature [*commitment flexibility*](glossary:commitment-flexibility) which may expand the types of *resources* that a *commitment discount* can cover. It is important to note when mixing *commitment discounts* with and without *commitment flexibility*, the `CommitmentDiscountUnit` should reflect this difference.
+Usage-based *commitment discounts* obligate a customer to a predetermined amount of usage over a preselected *term*. In some cases, usage-based *commitment discounts* also feature [*commitment discount flexibility*](glossary:commitment-discount-flexibility) which may expand the types of *resources* that a *commitment discount* can cover. It is important to note when mixing *commitment discounts* with and without *commitment discount flexibility*, the `CommitmentDiscountUnit` should reflect this difference.
 
 Spend-based commitment discounts obligate a customer to a predetermined amount of spend over a preselected *term*. In the usage examples below, each [*row*](glossary:row) measures the monetary amount of the hourly commit consumed by the *commitment discount*, so the `CommitmentDiscountUnit` chosen is "USD", or the [*billing currency*](glossary:billing-currency).
 
