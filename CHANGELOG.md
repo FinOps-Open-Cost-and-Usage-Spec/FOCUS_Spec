@@ -32,6 +32,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `CommitmentDiscountId` column updates:
   - Must be globally unique within the provider.
   - Should be a fully-qualified identifier.
+- `EffectiveCost` column updates:
+  - When `CommitmentDiscountStatus` is "Unused", must be the difference between the used commitment amount and the portion of the total commitment purchase applicable for the charge period.
 - `PricingCategory` column updates:
   - Must not be "Committed" when the charge is for a commitment discount purchase.
 - `SkuPriceId` column updates:
