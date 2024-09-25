@@ -20,6 +20,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - `CapacityReservationId` column
 - `CapacityReservationStatus` column
+- `CommitmentDiscountQuantity` column
+- `CommitmentDiscountUnit` column
 - `ServiceSubcategory` column
 - `SkuMeter` column
 - `SkuPriceDetails` column
@@ -267,6 +269,8 @@ This table maps the evolution of the specification, showcasing column introducti
 | CommitmentDiscountName     | 1.0-preview             |                                            |
 | CommitmentDiscountStatus   | 1.0                     |                                            |
 | CommitmentDiscountType     | 1.0-preview             |                                            |
+| CommitmentDiscountQuantity | 1.1                     |                                            |
+| CommitmentDiscountUnit     | 1.1                     |                                            |
 | ConsumedQuantity           | 1.0                     | Renamed from UsageQuantity in v1.0         |
 | ConsumedUnit               | 1.0                     | Renamed from UsageUnit in v1.0             |
 | ContractedCost             | 1.0                     |                                            |
