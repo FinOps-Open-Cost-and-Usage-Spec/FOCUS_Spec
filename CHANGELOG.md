@@ -5,9 +5,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!--
-## v1.1
+## v1.2
 
-[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.0-cr...working_draft)
+[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
 
 <br>
 -->
@@ -32,6 +32,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `CommitmentDiscountId` column updates:
   - Must be globally unique within the provider.
   - Should be a fully-qualified identifier.
+- `ConsumedQuantity` column updates:
+  - Must be null when `CommitmentDiscountStatus` is "Unused".
+- `ConsumedUnit` column updates:
+  - Must be null when `ChargeClass` is not "Correction" and `ChargeCategory` is not "Usage".
+  - Must be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" and `CommitmentDiscountStatus` is "Unused".
+  - May be null when `ChargeCategory` is "Usage" and `ChargeClass` is "Correction.
 - `EffectiveCost` column updates:
   - When `CommitmentDiscountStatus` is "Unused", must be the difference between the used commitment amount and the portion of the total commitment purchase applicable for the charge period.
 - `PricingCategory` column updates:
@@ -48,9 +54,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   - Metadata implementation should be publicly documented.
 - `SchemaId` metadata schema property updates:
   - Recommended to be a globally unique identifier (GUID) instead of a universally unique identifier (UUID) or SemVer version.
-
-**Fixed:**
-**Removed:**
 
 [All 1.1 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0...v1.1-cr)
 
