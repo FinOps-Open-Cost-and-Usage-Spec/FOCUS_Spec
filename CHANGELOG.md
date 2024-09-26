@@ -14,7 +14,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## v1.1
 
-<sup>Announced November 12, 2024</sup>
+<sup>Announced November 2024</sup>
 
 **Added:**
 
