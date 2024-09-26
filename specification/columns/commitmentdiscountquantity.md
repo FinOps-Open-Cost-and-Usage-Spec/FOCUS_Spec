@@ -10,13 +10,13 @@ The CommitmentDiscountQuantity column adheres to the following requirements:
 
 * CommitmentDiscountQuantity MUST be present in a FOCUS dataset when the provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
-* If [*CommitmentDiscountId*](#commitmentdiscountid) is not null and [*ChargeClass*](#chargeclass) is not "Correction", the following applies:
+* If [*ChargeCategory*](#chargecategory) is "Usage" or "Purchase", [*CommitmentDiscountId*](#commitmentdiscountid) is not null, and [*ChargeClass*](#chargeclass) is not "Correction", the following applies:
   * CommitmentDiscountQuantity MUST NOT be null and MUST be a valid positive decimal value.
   * When *ChargeCategory* is "Purchase" and [*ChargeFrequency*](#chargefrequency) is "One-Time", CommitmentDiscountQuantity MUST be the positive quantity of *CommitmentDiscountUnits*, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term*.
   * When *ChargeCategory* is "Purchase" and *ChargeFrequency* is "Recurring", CommitmentDiscountQuantity MUST be the positive quantity of *CommitmentDiscountUnits* that is eligible for consumption for each *charge period* that corresponds with the purchase.
   * When *ChargeCategory* is "Usage" and *CommitmentDiscountStatus* is "Used", CommitmentDiscountQuantity MUST be the positive, metered quantity of *CommitmentDiscountUnits* that is consumed over the *row's* *charge period*.
   * When *ChargeCategory* is "Usage" and *CommitmentDiscountStatus* is "Unused", CommitmentDiscountQuantity MUST be the remaining, positive, unused quantity of *CommitmentDiscountUnits* for the *row's* *charge period*.
-* If *CommitmentDiscountId* is not null, and *ChargeClass* is "Correction", CommitmentDiscountQuantity MAY be null or any valid decimal value.
+* If *ChargeCategory* is "Usage" or "Purchase", *CommitmentDiscountId* is not null, and *ChargeClass* is "Correction", CommitmentDiscountQuantity MAY be null or any valid decimal value.
 * CommitmentDiscountQuantity MUST be null in all other cases.
 
 ## Column ID

@@ -7,8 +7,9 @@ The CommitmentDiscountUnit column adheres to the following requirements:
 * CommitmentDiscountUnit MUST be present in a FOCUS dataset when the provider supports [*commitment discounts*](#glossary:commitment-discount).
 * CommitmentDiscountUnit MUST be of type String.
 * Units of measure used in CommitmentDiscountUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
-* CommitmentDiscountUnit MUST NOT be null when *CommitmentDiscountId* is not null and [*ChargeClass*](#chargeclass) is not "Correction".
-* CommitmentDiscountUnit MAY be null when *CommitmentDiscountId* is not null and *ChargeClass* is "Correction".
+* If *CommitmentDiscountId* is not null and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", the following applies:
+  * CommitmentDiscountUnit MUST NOT be null when [*ChargeClass*](#chargeclass) is not "Correction".
+  * CommitmentDiscountUnit MAY be null when *ChargeClass* is "Correction".
 * CommitmentDiscountUnit MUST be null in all other cases.
 * In cases where the CommitmentDiscountUnit is not null, the following applies:
   * CommitmentDiscountUnit MUST be the same across all *rows* having the same [*CommitmentDiscountId*](#commitmentdiscountid).
