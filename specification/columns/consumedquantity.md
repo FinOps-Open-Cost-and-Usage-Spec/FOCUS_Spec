@@ -5,7 +5,7 @@ The Consumed Quantity represents the volume of a given SKU associated with a met
 The ConsumedQuantity column adheres to the following requirements:
 
 * ConsumedQuantity MUST be present in a FOCUS dataset when the provider supports the measurement of usage.
-* ConsumedQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
+* ConsumedQuantity MUST be of type decimal and MUST conform to [Numeric Format](#numericformat) requirements.
 * ConsumedQuantity MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage" and [ChargeClass](#chargeclass) is not "Correction".
 * ConsumedQuantity MUST be null if [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused" or for other *ChargeCategory* values.
 * ConsumedQuantity MAY be negative or null in cases where *ChargeClass* is "Correction".
