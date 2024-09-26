@@ -37,9 +37,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `ConsumedUnit` column updates:
   - Must be null when `ChargeClass` is not "Correction" and `ChargeCategory` is not "Usage".
   - Must be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" and `CommitmentDiscountStatus` is "Unused".
-  - May be null when `ChargeCategory` is "Usage" and `ChargeClass` is "Correction.
+  - May be null when `ChargeCategory` is "Usage" and `ChargeClass` is "Correction".
 - `EffectiveCost` column updates:
-  - When `CommitmentDiscountStatus` is "Unused", must be the difference between the used commitment amount and the portion of the total commitment purchase applicable for the charge period.
+  - When `CommitmentDiscountStatus` is "Unused", must be the difference between the used commitment discount amount and the portion of the total commitment discount purchase applicable for the charge period.
 - `PricingCategory` column updates:
   - Must not be "Committed" when the charge is for a commitment discount purchase.
 - `SkuPriceId` column updates:
