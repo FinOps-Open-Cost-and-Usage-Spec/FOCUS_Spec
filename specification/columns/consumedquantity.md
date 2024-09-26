@@ -6,7 +6,7 @@ The ConsumedQuantity column adheres to the following requirements:
 
 * ConsumedQuantity MUST be present in a FOCUS dataset when the provider supports the measurement of usage.
 * ConsumedQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
-* If [ChargeCategory](#chargecategory) is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is not "Unused", the following applies:
+* If [ChargeCategory](#chargecategory) is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used", the following applies:
   * ConsumedQuantity MUST NOT be null and MUST be a valid positive decimal value if [ChargeClass](#chargeclass) is not "Correction".
   * ConsumedQuantity MAY be null or any valid decimal value if [ChargeClass](#chargeclass) is "Correction".
 * ConsumedQuantity MUST be null in all other cases.
