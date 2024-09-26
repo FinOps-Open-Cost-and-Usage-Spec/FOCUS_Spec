@@ -16,6 +16,10 @@ List Unit Price
 
 The suggested provider-published unit price for a single Pricing Unit of the associated SKU, exclusive of any discounts.
 
+## Usability Constraints
+
+**Aggregation:** This column does not support aggregation.
+
 ## Content Constraints
 
 | Constraint      | Value                                |
