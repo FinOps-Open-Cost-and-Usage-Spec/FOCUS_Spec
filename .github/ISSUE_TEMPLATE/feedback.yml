@@ -1,12 +1,12 @@
-name: FinOps Use Case Feedback
-description: Provide feedback on FinOps use cases that cannot be performed with the current FOCUS specification.
+name: Feature Request and Use Case Feedback
+description: Provide feedback on use cases or feature requests that cannot be performed with the current FOCUS specification. These may include FinOps-specific scenarios or other areas where the specification falls short. Your input will help prioritize improvements for upcoming releases. Please avoid sharing any information that may be considered Intellectual Property by any individual or organization.
 title: "[FEEDBACK]: "
-labels: [""]
-assignees: ["mike-finopsorg,udam-f2"]
+labels: ["use case"]
+assignees: ["salpaysenturus, udam-f2, jpradocueva,"]
 body:
   - type: markdown
     attributes:
-      value: "The FOCUS working group wants to understand what FinOps use cases cannot be performed today using the current specification so they can be prioritized for upcoming release. Please do not provide any information that may be considered Intellectual Property by any individual or organization."
+      value: "The FOCUS working group aims to identify gaps in the current specification, both for FinOps-related use cases and broader areas. We are interested in understanding which use cases or features cannot be supported by the current specification so they can be prioritized for future releases. Please do not include any information that may be regarded as Intellectual Property."
   
   - type: input
     attributes:
@@ -18,8 +18,8 @@ body:
   
   - type: textarea
     attributes:
-      label: What FinOps use cases cannot be performed without the proposed change?
-      description: Describe in detail the current FinOps use cases your organization cannot perform without the proposed change
+      label: What use cases, FinOps or others, can't be performed with the current specification without this change?
+      description: Describe in detail the use cases, whether FinOps-related or otherwise, that your organization cannot perform with the current specification without the proposed change.
     validations:
       required: true
 
@@ -53,6 +53,55 @@ body:
 
   - type: textarea
     attributes:
+      label: Business and Financial Objectives
+      description: Describe the business and financial objectives this use case aims to achieve.
+      placeholder: Describe the expected business and financial outcomes.
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Cost Drivers
+      description: Identify the primary cost drivers related to this use case (e.g., cloud spending, infrastructure costs).
+      placeholder: e.g., cloud spending, infrastructure costs, etc.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Key Metrics and KPIs
+      description: List the metrics and KPIs that will measure the success of this use case (e.g., cost per service, spend reduction percentage).
+      placeholder: e.g., cost per service, spend reduction percentage, etc.
+    validations:
+      required: false
+
+  - type: input
+    attributes:
+      label: Expected Financial Impact
+      description: Quantify the expected financial impact, if applicable (e.g., percentage cost savings, budget reductions).
+      placeholder: e.g., 10% cost savings, 5% budget reduction, etc.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Testing Approach
+      description: Outline how the use case will be tested before full implementation. Specify the types of testing (e.g., pilot testing, A/B testing).
+      placeholder: Describe your testing approach.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Validation Criteria
+      description: Define how success will be validated after implementation. Include metrics that will be reviewed post-implementation.
+      placeholder: e.g., metrics to validate success, financial impact, etc.
+    validations:
+      required: false
+
+
+  - type: textarea
+    attributes:
       label: Context / Supporting information
       description: Provide any other relevant information here
       placeholder: Additional details...
@@ -65,5 +114,5 @@ body:
       description: Provide relevant sample data or data extracts that support your feedback. Ensure data is anonymized and does not include sensitive or proprietary information.
       placeholder: Attach sample data or data extracts here. Ensure compliance with data privacy guidelines.
     validations:
-      required: false  
+      required: true  
 
