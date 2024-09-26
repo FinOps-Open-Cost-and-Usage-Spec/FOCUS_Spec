@@ -1,12 +1,12 @@
 name: Feature Request and Use Case Feedback
-description: Provide feedback on use cases or feature requests that cannot be performed with the current FOCUS specification. These may include FinOps-specific scenarios or other areas where the specification falls short. Your input will help prioritize improvements for upcoming releases. Please avoid sharing any information that may be considered Intellectual Property by any individual or organization.
+description: Provide feedback on unsupported use cases or features in the FOCUS specification, including FinOps scenarios, to help prioritize updates. Avoid sharing proprietary information.
 title: "[FEEDBACK]: "
 labels: ["use case"]
 assignees: ["salpaysenturus, udam-f2, jpradocueva,"]
 body:
   - type: markdown
     attributes:
-      value: "The FOCUS working group aims to identify gaps in the current specification, both for FinOps-related use cases and broader areas. We are interested in understanding which use cases or features cannot be supported by the current specification so they can be prioritized for future releases. Please do not include any information that may be regarded as Intellectual Property."
+      value: "FOCUS working group seeks gaps in the current specification for FinOps and beyond. Share unsupported use cases or features to prioritize updates. Avoid sharing proprietary information."
   
   - type: input
     attributes:
