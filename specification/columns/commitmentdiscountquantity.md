@@ -35,7 +35,7 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
-| Column type     | Dimension        |
+| Column type     | Metric           |
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
 | Data type       | Decimal          |
