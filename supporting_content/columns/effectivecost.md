@@ -42,7 +42,7 @@ ___
 | Jan 4 2023 - Jan 5 2023 | Jan 1 2023 - Jan 31 2023 | OD Usage        | 1     | 0           | 2.542465753          |
 | Jan 4 2023 - Jan 5 2023 | Jan 1 2023 - Jan 31 2023 | Unused RI Usage | 2     | 0           | 1.271232877     |
 
-*Note: For the Reserved Instance Usage the Billed cost is zero as this RI is full upfront. It is especially important to note that the usage units must be normalized for this formula to be applicable in cases of size flexibility (e.g. c7g.large normalized units is 4, c7g.medium is 2). Effective cost is the same as amortization because the upfront fee covers all of the compute usage expense for this row.*
+*Note: For the Reserved Instance Usage the Billed cost is zero as this RI is full upfront. It is especially important to note that the usage units must be normalized for this formula to be applicable in cases of commitment discount flexibility (e.g. c7g.large normalized units is 4, c7g.medium is 2). Effective cost is the same as amortization because the upfront fee covers all of the compute usage expense for this row.*
 
 ### Example usage scenarios
 
