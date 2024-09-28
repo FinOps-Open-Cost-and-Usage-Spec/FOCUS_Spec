@@ -2,7 +2,7 @@
 
 Billing Period End represents the [*exclusive*](#glossary:exclusivebound) end date and time of a [*billing period*](#glossary:billing-period). For example, a time period where [BillingPeriodStart](#glossary:billingperiodstart) is '2024-01-01T00:00:00Z' and BillingPeriodEnd is '2024-02-01T00:00:00Z' includes charges for January, since BillingPeriodStart is [*inclusive*](#glossary:inclusivebound), but does not include charges for February since BillingPeriodEnd is *exclusive*.
 
-The XYZ column adheres to the following requirements:
+The BillingPeriodEnd column adheres to the following requirements:
 
 * The BillingPeriodEnd column MUST be present in a FOCUS dataset.
 * This column MUST be of type [Date/Time Format](#date/timeformat), MUST be an *exclusive* value, and MUST NOT contain null values.
