@@ -31,7 +31,7 @@ Within the FOCUS specification, the following examples demonstrate how a *commit
 
 ### Purchase *Rows*
 
-All *commitment discount* purchases appear with a positive `BilledCost`, `PricingCategory` as "Committed", and with the *commitment discount's* id populating both the `ResourceId` and `CommitmentDiscountId` value. One-time purchases appear as a single record with `ChargeCategory` as "Purchase", `ChargeFrequency` as "One-Time", and the total quantity and units for *commitment discount's* *term* reflected as `CommitmentDiscountQuantity` and `CommitmentDiscountUnit`, respectively.
+All *commitment discount* purchases appear with a positive `BilledCost`, `PricingCategory` as "Standard", and with the *commitment discount's* id populating both the `ResourceId` and `CommitmentDiscountId` value. One-time purchases appear as a single record with `ChargeCategory` as "Purchase", `ChargeFrequency` as "One-Time", and the total quantity and units for *commitment discount's* *term* reflected as `CommitmentDiscountQuantity` and `CommitmentDiscountUnit`, respectively.
 
 Recurring purchases are allocated across all corresponding *charge periods* of the *term* when `ChargeCategory` is "Purchase", `ChargeFrequency` is "Recurring", and `CommitmentDiscountQuantity` and `CommitmentDiscountUnit` are reflected only for that *charge period*.
 
@@ -50,7 +50,7 @@ The entire *commitment discount* is billed _once_ during the first *charge perio
         "ChargePeriodEndDate": "2024-01-01T00:00:00Z",
         "ChargeCategory": "Purchase",
         "ChargeFrequency": "One-Time",
-        "PricingCategory": "Committed",
+        "PricingCategory": "Standard",
         "ResourceId": "<commitment-discount-id>",
         "BilledCost": 8760.00,
         "EffectiveCost": 0.00,
@@ -74,7 +74,7 @@ The *commitment discount* is billed across all 8,760 (`24 hours * 365 days`) *ch
         "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Purchase",
         "ChargeFrequency": "Recurring",
-        "PricingCategory": "Committed",
+        "PricingCategory": "Standard",
         "ResourceId": "<commitment-discount-id>",
         "BilledCost": 1.00,
         "EffectiveCost": 0.00,
@@ -100,7 +100,7 @@ With a 50/50 split, half of the commitment is billed _once_ during the first *ch
         "ChargePeriodEndDate": "2024-01-01T00:00:00Z",
         "ChargeCategory": "Purchase",
         "ChargeFrequency": "One-Time",
-        "PricingCategory": "Committed",
+        "PricingCategory": "Standard",
         "ResourceId": "<commitment-discount-id>",
         "BilledCost": 4380.00,
         "EffectiveCost": 0.00,
@@ -115,7 +115,7 @@ With a 50/50 split, half of the commitment is billed _once_ during the first *ch
         "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Purchase",
         "ChargeFrequency": "Recurring",
-        "PricingCategory": "Committed",
+        "PricingCategory": "Standard",
         "ResourceId": "<commitment-discount-id>",
         "BilledCost": 0.50,
         "EffectiveCost": 0.00,
