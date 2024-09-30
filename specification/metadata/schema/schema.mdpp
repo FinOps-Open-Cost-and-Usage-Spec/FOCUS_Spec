@@ -17,9 +17,9 @@ These scenarios include, but are not limited to:
 
 * [Adding a new column](#addingnewcolumns)
 * [Removing a column](#removingcolumns)
-* [Changing column metadata](#changingacolumnmetadata)
-* [FOCUS Version is changed](#focusversionchange)
-* [Provider Version is changed](#schemametadatatofocusdatareference)
+* [Changing column metadata](#changingcolumnmetadata)
+* [FOCUS Version has changed](#focusversionchanged)
+* [Provider Version has changed](#schemametadatatofocusdatareference)
 * [Correcting schema metadata errors](#providermetadataerrorcorrection)
 
 ### Schema Metadata Updates
