@@ -22,6 +22,10 @@ This section outlines the planned release schedule and key milestones for the FO
                 <li>Move beyond the highest-level service categorization to a sub-categorization for services while adding flexibility for providers to share their native categorizations within FOCUS.
                 </li>
             </ul>
+            <strong>Commitment Discount Visibility</strong>
+            <ul>
+                <li>Provide deeper visibility into how various commitment discount purchases are amortized across eligible resources.</li>
+            </ul>
             <strong>Capacity Reservation</strong>
             <ul>
                 <li>Ability to represent on-demand capacity reservations within FOCUS datasets.
