@@ -6,7 +6,7 @@ The ServiceSubcategory column adheres to the following requirements:
 
 * ServiceSubcategory is RECOMMENDED to be present in a FOCUS dataset and MUST NOT be null.
 * ServiceSubcategory is of type String and MUST be one of the allowed values.
-* Each ServiceSubcategory value MUST have one and only one ServiceCategory parent.
+* Each ServiceSubcategory value MUST have one and only one parent ServiceCategory as specified in the allowed values below.
 * Though a given *service* can have multiple purposes, each *service* SHOULD have one and only one ServiceSubcategory that best aligns with its primary purpose.
 
 ## Column ID
