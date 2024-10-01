@@ -1,6 +1,6 @@
 # Consumed Quantity
 
-The Consumed Quantity represents the volume of a given SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used, based on the [Consumed Unit](#consumedunit). Consumed Quantity is often derived at a finer granularity or over a different time interval when compared to the [Pricing Quantity](#pricingquantity) (complementary to [Pricing Unit](#pricingunit)) and focuses on *resource* and *service* consumption, not pricing and cost.
+The Consumed Quantity represents the volume of a metered SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used, based on the [Consumed Unit](#consumedunit). Consumed Quantity is often derived at a finer granularity or over a different time interval when compared to the [Pricing Quantity](#pricingquantity) (complementary to [Pricing Unit](#pricingunit)) and focuses on *resource* and *service* consumption, not pricing and cost.
 
 The ConsumedQuantity column adheres to the following requirements:
 
@@ -21,7 +21,7 @@ Consumed Quantity
 
 ## Description
 
-The volume of a given SKU associated with a *resource* or *service* used, based on the Consumed Unit.
+The volume of a metered SKU associated with a *resource* or *service* used, based on the Consumed Unit.
 
 ## Content constraints
 

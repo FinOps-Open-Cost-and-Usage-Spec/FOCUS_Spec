@@ -1,6 +1,6 @@
 # Consumed Unit
 
-The Consumed Unit represents a provider-specified measurement unit indicating how a provider measures usage of a given SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service). Consumed Unit complements the [Consumed Quantity](#consumedquantity) metric. It is often listed at a finer granularity or over a different time interval when compared to [Pricing Unit](#pricingunit) (complementary to [Pricing Quantity](#pricingquantity)), and focuses on *resource* and *service* consumption, not pricing and cost.
+The Consumed Unit represents a provider-specified measurement unit indicating how a provider measures usage of a metered SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service). Consumed Unit complements the [Consumed Quantity](#consumedquantity) metric. It is often listed at a finer granularity or over a different time interval when compared to [Pricing Unit](#pricingunit) (complementary to [Pricing Quantity](#pricingquantity)), and focuses on *resource* and *service* consumption, not pricing and cost.
 
 The ConsumedUnit column adheres to the following requirements:
 
@@ -22,7 +22,7 @@ Consumed Unit
 
 ## Description
 
-Provider-specified measurement unit indicating how a provider measures usage of a given SKU associated with a *resource* or *service*.
+Provider-specified measurement unit indicating how a provider measures usage of a metered SKU associated with a *resource* or *service*.
 
 ## Content constraints
 
