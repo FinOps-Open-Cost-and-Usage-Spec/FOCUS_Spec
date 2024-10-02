@@ -130,6 +130,11 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) should be written as bullet points instead of lengthy sentences. 
 
+* **Column IDs:** They SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. These Column IDs should be formatted without spaces and should match the exact naming conventions used in the schema (e.g., CommitmentDiscountID). 
+
+* **Display Names:** They SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. In these sections, display names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
+
+
 ### Example
 
 > **2.28. Pricing Quantity**
