@@ -33,7 +33,6 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Sonal Garg (Kyndryl)
 * Tim Wright (Google)
 
-
 ## Steering Committee Members
 
 Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS  specification.
