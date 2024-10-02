@@ -2,88 +2,44 @@
 
 ### Maintainers
 
-Thanks to the following FOCUS Maintainers for their leadership and contributions to the FOCUS specification.
+Thanks to the following FOCUS Maintainers for their leadership and contributions to the FOCUS Release **v1.1** specification.
 
+* Alex Hullah (Goldman Sachs)
 * Christopher Harris (Datadog)
-* Dennis Park-Rodriguez (Amazon Web Services)
-* Erik Peterson (CloudZero)
 * Irena Jurica (Neos)
 * Joaquin Prado (FinOps Foundation)
 * Karl Kraft (Walmart)
 * Larry Advey (Twilio)
 * Michael Flanakin (Microsoft)
-* Mike Fuller (FinOps Foundation)
 * Riley Jenkins (Domo)
-* Rupa Patel (Google)
+* Rob Martin (FinOps Foundation)
+* Shawn Alpay (Envisor)
 * Udam Dewaraja (FinOps Foundation)
+* Zach Erdman (Amazon Web Services)
 
 ### Contributors
 
-Thanks to the following FOCUS members for their contributions to the FOCUS specification.
+Thanks to the following FOCUS members for their contributions to the FOCUS Release **v1.1** specification.
 
 * Adam Schwartz (Ernst & Young)
-* Alex Hullah (Goldman Sachs)
-* Amit Wadhwa (Google)
-* Anand Tripathi (Amazon Web Services)
-* Anderson Oliveira (Farfetch.com)
 * Andrew Qu (Everest)
-* Anne Johnston (Capital One)
 * Arun Ramakrishnan (Oracle)
-* Ben Shy (Microsoft)
-* Ben Swoboda (NetApp)
-* Ben Zhou (Apptio)
-* Casey Doran (Apptio)
-* Chandra Devarajan (CloudTrakr)
-* Chew Esmero (Alphaus Inc.)
-* Colin Jack (Snow Software)
-* Deeja Cruz (Datadog)
-* Eleni Rundle (Google)
 * George Parker (Salesforce)
 * Graham Murphy (Australian Retirement Trust)
-* Harish Kumar Munagapat (Kyndryl)
-* Hrishikesh Sardar (Kyndryl)
-* Ilia Semenov (CloudThread)
-* Jacky Liu (Google Cloud)
-* Jacqui Wilson (Old Mutual South Africa)
 * Janine Pickard-Green (MagicOrange Group Limited)
-* Jason Kelly (Anglepoint Group Inc)
-* Joe Ferrero (DB Gurus Inc)
 * John Grubb (Platform.sh)
-* Joshua Kwan (Ternary)
-* Letian Wang (Atlassian)
-* Luna Bernal (Twilio)
 * Marc Perreaut (Amadeus)
-* Marcin Walkow (Nordcloud)
-* Mark Krawczeniuk (NetApp)
-* Matt Ray (Kubecost)
-* Michael Arkoosh (Vega)
-* Mike Polson (VMWare)
-* Nick Kotze (Surveil)
-* Nicolas Fonrose (Teevity)
-* Peter Marton (OpenMeter.io)
-* Ray Ding (Accenture)
-* Ricardo Triana (Accenture)
-* Rodney Joyce (CloudMonitor)
 * Sanjna Srivatsa (VMWare)
-* Shawn Alpay (Envisor)
-* Sireesha Oram (Kyndryl)
 * Sonal Garg (Kyndryl)
-* Sumaira Nazir (Platform.sh)
-* Tatiana Dubovchenko (Flexera)
-* Tim O'Brien (Walmart)
-* Trey Morgan (Microsoft)
-* Trig Ghosh (Accenture)
-* Webb Brown (Kubecost)
-* Yuriy Prykhodko (Amazon Web Services)
-* Zach Erdman (Amazon Web Services)
+* Tim Wright (Google)
+
 
 ## Steering Committee Members
 
-Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS specification.
+Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS  specification.
 
 * Anne Johnston (Capital One)
 * Michael Flanakin (Microsoft)
-* Mike Fuller (FinOps Foundation)
 * Roy Wolman (Amazon Web Services)
 * Sarah McMullin (Google)
 * Tim O'Brien (Walmart)
