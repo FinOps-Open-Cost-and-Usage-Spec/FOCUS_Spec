@@ -55,7 +55,7 @@ This section outlines the planned release schedule and key milestones for the FO
 </table>
 
 ### Estimated Timeline for v1.2
-This table displays key milestones and dates related to the development of FOCUS Release v1.1.
+This table displays key milestones and dates related to the development of FOCUS Release v1.2 Specifications.
 <table>
   <tr>
     <th>Date</th>
