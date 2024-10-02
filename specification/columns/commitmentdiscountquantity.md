@@ -22,7 +22,7 @@ In cases where the *ChargeCategory* is "Usage", *CommitmentDiscountId* is not nu
 * When *CommitmentDiscountStatus* is "Used", CommitmentDiscountQuantity MUST be the positive, metered quantity of *CommitmentDiscountUnits* that is consumed over the *row's* *charge period*.
 * When *CommitmentDiscountStatus* is "Unused", CommitmentDiscountQuantity MUST be the remaining, positive, unused quantity of *CommitmentDiscountUnits* for the *row's* *charge period*.
 
-CommitmentDiscountQuantity MUST be null for all other *ChargeCategory* values.
+CommitmentDiscountQuantity MUST be null in all other cases.
 
 ## Column ID
 
