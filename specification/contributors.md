@@ -39,6 +39,7 @@ Thanks to the following FOCUS Steering Committee members for their leadership on
 
 * Anne Johnston (Capital One)
 * Michael Flanakin (Microsoft)
+* Mike Fuller (FinOps Foundation)
 * Roy Wolman (Amazon Web Services)
 * Sarah McMullin (Google)
 * Tim O'Brien (Walmart)
