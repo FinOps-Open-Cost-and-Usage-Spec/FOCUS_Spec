@@ -22,7 +22,6 @@ Consumed Quantity
 
 The volume of a metered SKU associated with a *resource* or *service* used, based on the Consumed Unit.
 
-
 ## Content constraints
 
 | Constraint      | Value         |
