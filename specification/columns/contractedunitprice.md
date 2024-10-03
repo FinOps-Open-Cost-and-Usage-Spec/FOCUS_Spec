@@ -18,7 +18,7 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 
 ## Usability Constraints
 
-**Aggregation:** This column does not support aggregation.
+**Aggregation:** Column values should only be viewed in context of its row and not aggregated to produce a total.
 
 ## Content Constraints
 
