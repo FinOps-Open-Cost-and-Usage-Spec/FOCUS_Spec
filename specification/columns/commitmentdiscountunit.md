@@ -9,7 +9,7 @@ The CommitmentDiscountUnit column adheres to the following requirements:
 * The CommitmentDiscountUnit MUST be the same across all *rows* where *CommitmentDiscountQuantity* has the same [*CommitmentDiscountId*](#commitmentdiscountid).
 * CommitmentDiscountUnit MAY be null if [*CommitmentDiscountId*](#commitmentdiscountid) is not null and [*ChargeClass*](#chargeclass) is "Correction".
 * CommitmentDiscountUnit MUST NOT be null when *CommitmentDiscountId* is not null and *ChargeClass* is not "Correction".
-* CommitmentDiscountUnit MUST be null in all other cases when *CommitmentDiscountId* is not null.
+* CommitmentDiscountUnit MUST be null in all other cases.
 
 In cases where the CommitmentDiscountUnit is not null, the following applies:
 
