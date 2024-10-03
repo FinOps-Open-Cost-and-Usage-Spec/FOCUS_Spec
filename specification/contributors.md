@@ -28,6 +28,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Janine Pickard-Green (MagicOrange Group Limited)
 * John Grubb (Platform.sh)
 * Marc Perreaut (Amadeus)
+* Rob Martin (FinOps Foundation)
 * Sanjna Srivatsa (VMWare)
 * Sonal Garg (Kyndryl)
 * Tim Wright (Google)
