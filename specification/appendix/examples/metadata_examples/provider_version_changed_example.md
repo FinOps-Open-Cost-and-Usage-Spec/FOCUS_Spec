@@ -1,22 +1,23 @@
-# Removing Columns
+# Data Changed by Provider Using Provider Version
 
 ## Scenario
 
-ACME has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3. The provider creates a new schema object to represent the new schema, this schema object has a unique SchemaId.
+ACME specifies the optional metadata property [Provider Version](#providerversion) in their [Schema](#schema) object. They made a change to the FOCUS dataset they produce that does not adopt a new FOCUS Version, nor make a change the included columns but does impact values in the data. This example illustrates that Provider Version changes are independent of column changes, however provider version changes may include column changes.
+
+The provider creates a new schema object to represent the new schema. The provider includes both the FOCUS Version and Provider Version in the schema object.
 
 ## Supplied Metadata
 
-## Location for the new schema object
+Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-56789-abcde-56789-abcde-56789.json`.
 
-`/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
-
-## Content for the new schema object
+The updated schema related metadata could look like this:
 
 ```json
  {
-  "SchemaId": "34567-abcde-34567-abcde-34567",
-  "FocusVersion": "1.0",
-  "CreationDate": "2024-03-02T12:01:03.083z",
+  "SchemaId": "56789-abcde-56789-abcde-56789",
+  "FocusVersion": "1.1",
+  "ProviderVersion": "2.4",
+  "CreationDate": "2024-05-02T12:01:03.083z",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
@@ -69,4 +70,4 @@ ACME has decided to remove columns from their FOCUS data export. The column remo
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#schemametadatatofocusdatareference)

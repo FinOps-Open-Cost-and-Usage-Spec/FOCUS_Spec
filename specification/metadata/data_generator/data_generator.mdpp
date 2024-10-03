@@ -8,6 +8,6 @@ The FOCUS Data Generator metadata MUST be provided. This metadata MUST be of typ
 
 ## Schema Example
 
-For an example of the FOCUS Data Generator metadata please refer to: [Data Generator Example](#data_generator_example)
+For an example of the FOCUS Data Generator metadata please refer to: [Data Generator Example](#datageneratormetadata)
 
 !INCLUDE "datagenerator.md",1
