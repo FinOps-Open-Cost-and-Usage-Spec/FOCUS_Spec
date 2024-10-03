@@ -12,7 +12,7 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 * Larry Advey (Twilio)
 * Michael Flanakin (Microsoft)
 * Riley Jenkins (Domo)
-* Shawn Alpay (Envisor)
+* Shawn Alpay (Envisor / FinOps Foundation)
 * Udam Dewaraja (FinOps Foundation)
 * Zach Erdman (Amazon Web Services)
 
