@@ -23,6 +23,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Adam Schwartz (Ernst & Young)
 * Andrew Qu (Everest)
 * Arun Ramakrishnan (Oracle)
+* Erik Peterson (CloudZero)
 * George Parker (Salesforce)
 * Graham Murphy (Australian Retirement Trust)
 * Janine Pickard-Green (MagicOrange Group Limited)
