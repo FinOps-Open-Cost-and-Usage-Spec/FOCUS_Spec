@@ -22,9 +22,6 @@ Consumed Quantity
 
 The volume of a metered SKU associated with a *resource* or *service* used, based on the Consumed Unit.
 
-## Usability Constraints
-
-**Aggregation:** When aggregating Consumed Quantity for commitment utilization calculations, it's important to exclude *commitment discount* purchases (i.e. when *ChargeCategory* is "Purchase") that are paid to cover future eligible charges (e.g., *Commitment Discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when *ChargeCategory* is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
 
 ## Content constraints
 
