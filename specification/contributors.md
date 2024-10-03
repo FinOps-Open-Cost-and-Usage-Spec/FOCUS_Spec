@@ -31,6 +31,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Joseph John (Microsoft)
 * Marc Perreaut (Amadeus)
 * Rob Martin (FinOps Foundation)
+* Rupa Patel (Google)
 * Sanjna Srivatsa (VMWare)
 * Sonal Garg (Kyndryl)
 * Tim Wright (Google)
