@@ -1,22 +1,20 @@
-# Changing a Column's Metadata Example
+# FOCUS Version Changed
 
 ## Scenario
 
-ACME has decided to change the datatype of column x_awesome_column1 from a string to a number. ACME creates a new schema object with the modification to x_awesome_column2.
+ACME's previous exports used FOCUS version 1.0. They are now going to adopt FOCUS version 1.1.  It is required that they create a new schema metadata object which specifies the new FOCUS version via the [FOCUS Version](#focusversion) property - regardless of schema changes. In this example, the new FOCUS version adoption doesn't include columns changes. This is to illustrate that FOCUS version changes are independent of column changes, however, this scenario is unlikely.
 
 ## Supplied Metadata
 
-## Location for the new schema object
+Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-45678-abcde-45678-abcde-45678.json`.
 
-`/FOCUS/metadata/schemas/schema-67891-abcde-67891-abcde-67891.json`
-
-## Content for the new schema object
+The updated schema related metadata could look like this:
 
 ```json
  {
-  "SchemaId": "67891-abcde-67891-abcde-67891",
-  "FocusVersion": "1.0",
-  "CreationDate": "2024-06-02T12:01:03.083z",
+  "SchemaId": "45678-abcde-45678-abcde-45678",
+  "FocusVersion": "1.1",
+  "CreationDate": "2024-04-02T12:01:03.083z",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
@@ -57,9 +55,9 @@ ACME has decided to change the datatype of column x_awesome_column1 from a strin
           },
           {
                 "ColumnName": "x_awesome_column1",
-                "DataType": "DECIMAL",
-                "NumericPrecision": 20,
-                "NumberScale": 10
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
           },
           {
                 "ColumnName": "x_awesome_column2",
@@ -69,4 +67,4 @@ ACME has decided to change the datatype of column x_awesome_column1 from a strin
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#schemametadatatofocusdatareference)
