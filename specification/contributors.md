@@ -28,6 +28,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Graham Murphy (Australian Retirement Trust)
 * Janine Pickard-Green (MagicOrange Group Limited)
 * John Grubb (Platform.sh)
+* Joseph John (Microsoft)
 * Marc Perreaut (Amadeus)
 * Rob Martin (FinOps Foundation)
 * Sanjna Srivatsa (VMWare)
