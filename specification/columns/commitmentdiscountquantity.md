@@ -10,19 +10,19 @@ The CommitmentDiscountQuantity column adheres to the following requirements:
 
 * CommitmentDiscountQuantity MUST be present in a FOCUS dataset when the provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
-* CommitmentDiscountQuantity MAY be negative if [*ChargeClass*](#chargeclass) is "Correction".
+* CommitmentDiscountQuantity MAY be null or any valid decimal value if [*CommitmentDiscountId*](#commitmentdiscountid) is not null and [*ChargeClass*](#chargeclass) is "Correction".
 
-In cases where the *ChargeCategory* is "Purchase" and [*CommitmentDiscountId*](#commitmentdiscountid) is not null, the following applies:
+In cases where the *ChargeCategory* is "Purchase", *CommitmentDiscountId* is not null, and *ChargeClass* is not "Correction", the following applies:
 
 * When [*ChargeFrequency*](#chargefrequency) is "One-Time", and *CommitmentDiscountId* is not null, CommitmentDiscountQuantity MUST be the positive quantity of *CommitmentDiscountUnits*, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term*.
 * When *ChargeFrequency* is "Recurring", and *CommitmentDiscountId* is not null, CommitmentDiscountQuantity MUST be the positive quantity of *CommitmentDiscountUnits* that is eligible for consumption for each *charge period* that corresponds with the purchase.
 
-In cases where the *ChargeCategory* is "Usage" and *CommitmentDiscountId* is not null, the following applies:
+In cases where the *ChargeCategory* is "Usage", *CommitmentDiscountId* is not null, and *ChargeClass* is not "Correction", the following applies:
 
-* When *CommitmentDiscountStatus* is "Used", and *ChargeClass* is not "Correction", CommitmentDiscountQuantity MUST be the positive, metered quantity of *CommitmentDiscountUnits* that is consumed over the *row's* *charge period*.
-* When *CommitmentDiscountStatus* is "Unused", and *ChargeClass* is not "Correction", CommitmentDiscountQuantity MUST be the remaining, positive, unused quantity of *CommitmentDiscountUnits* for the *row's* *charge period*.
+* When *CommitmentDiscountStatus* is "Used", CommitmentDiscountQuantity MUST be the positive, metered quantity of *CommitmentDiscountUnits* that is consumed over the *row's* *charge period*.
+* When *CommitmentDiscountStatus* is "Unused", CommitmentDiscountQuantity MUST be the remaining, positive, unused quantity of *CommitmentDiscountUnits* for the *row's* *charge period*.
 
-CommitmentDiscountQuantity MUST be null for all other *ChargeCategory* values.
+CommitmentDiscountQuantity MUST be null in all other cases.
 
 ## Column ID
 
@@ -40,7 +40,7 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
-| Column type     | Dimension        |
+| Column type     | Metric           |
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
 | Data type       | Decimal          |
