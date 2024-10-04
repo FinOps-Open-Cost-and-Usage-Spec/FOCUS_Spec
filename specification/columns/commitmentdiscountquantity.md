@@ -4,8 +4,6 @@ Commitment Discount Quantity is the amount of a [*commitment discount*](#commitm
 
 When *CommitmentDiscountCategory* is "Usage" (usage-based *commitment discounts*), the Commitment Discount Quantity reflects the predefined amount of usage purchased or consumed. If [*commitment discount flexibility*](glossary:commitment-discount-flexibility) is applicable, this value may be further transformed based on additional, provider-specific requirements. When *CommitmentDiscountCategory* is "Spend" (spend-based *commitment discounts*), the Commitment Discount Quantity reflects the predefined amount of spend purchased or consumed.
 
-**Important:** When aggregating Commitment Discount Quantity for utilization calculations, it's important to exclude *commitment discount* purchases (i.e. when *ChargeCategory* is "Purchase") that are paid to cover future eligible charges (e.g., *Commitment Discount*). This exclusion helps prevent double counting of these quantities in the aggregation.
-
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
 * CommitmentDiscountQuantity MUST be present in a FOCUS dataset when the provider supports *commitment discounts*.
@@ -35,6 +33,10 @@ Commitment Discount Quantity
 ## Description
 
 The amount of a *commitment discount* purchased or accounted for in *commitment discount* related *rows* that is denominated in *Commitment Discount Units*.
+
+## Usability Constraints
+
+**Aggregation:** When aggregating Commitment Discount Quantity for commitment utilization calculations, it's important to exclude *commitment discount* purchases (i.e. when *ChargeCategory* is "Purchase") that are paid to cover future eligible charges (e.g., *Commitment Discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when *ChargeCategory* is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
 
 ## Content constraints
 
