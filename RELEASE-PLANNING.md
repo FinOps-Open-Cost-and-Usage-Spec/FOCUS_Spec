@@ -75,10 +75,10 @@ This table displays key milestones and dates related to the development of FOCUS
   <tr>
     <td>21-Nov-24 to 3-Apr-25</td>
     <td>Development Phase</td>
-    <td>Twenty-three weeks (23) to develop FOCUS Rel v1.2 specifications.</td>
+    <td>Nineteen weeks (19) to develop FOCUS Rel v1.2 specifications.</td>
   </tr>
   <tr>
-    <td>30-Jan-25 to 13-Feb-25</td>
+    <td>23-Jan-25 to 6-Feb-25</td>
     <td>Interim Consistency Review</td>
     <td>Two weeks (2) for the Interim Consistency Review of FOCUS Rel v1.2.</td>
   </tr>
