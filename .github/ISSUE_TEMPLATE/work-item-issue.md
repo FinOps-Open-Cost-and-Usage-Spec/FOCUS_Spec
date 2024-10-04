@@ -1,24 +1,24 @@
 # Work Item Issue Template
 
-## 1. **Title**
+## 1. **Title** *
 Provide a concise and descriptive title for the work item.
 
 Your input ...
 
-## 2. **Problem Statement**
+## 2. **Problem Statement** *
 Describe the problem, issue, or opportunity that this work item addresses.
 - **What is the problem?**: Explain the context and why it needs resolution.
 - **Impact**: Describe how the problem affects users, systems, or the project.
 
 Your input ...
 
-## 3. **Objective**
+## 3. **Objective** *
 State the objective of this work item. What outcome is expected?
 - **Success Criteria**: Define how success will be measured (e.g., KPIs, metrics).
 
 Your input ...
 
-## 4. **Supporting Documentation**
+## 4. **Supporting Documentation** *
 Include links to supporting documents such as:
 - Data Examples: [Link to data or relevant files]
 - Related Use Cases or Discussion Documents: [Link to discussion]
@@ -38,7 +38,7 @@ Indicate if this issue is part of a broader epic or theme. _(OPTIONAL)_
 - **Epic**: [Epic Name or Number]
 - **Theme**: [Theme Name, if applicable]
 
-## 7. **Stakeholders**
+## 7. **Stakeholders** *
 List the main stakeholders for this issue.
 - **Primary Stakeholder**: [Name/Role]
 - **Other Involved Parties**: [Names/Roles]
@@ -76,6 +76,6 @@ Use GitHub to apply appropriate labels for tracking and categorization:
 ---
 
 ### **Template Usage Notes**:
-1. All fields marked as **mandatory** must be filled before submission.
+1. All fields marked as **mandatory** [*] must be filled before submission.
 2. Use the `[ ]` checkboxes under **Acceptance Criteria** to track completion.
 3. For **Supporting Documentation**, ensure that linked files are accessible to relevant stakeholders.
