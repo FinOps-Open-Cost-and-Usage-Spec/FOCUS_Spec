@@ -73,7 +73,7 @@ This table displays key milestones and dates related to the development of FOCUS
     <td>Six weeks (6) to develop the FOCUS Release (Rel) v1.2 scope.</td>
   </tr>
   <tr>
-    <td>21-Nov-24 to 1-May-25</td>
+    <td>21-Nov-24 to 3-Apr-25</td>
     <td>Development Phase</td>
     <td>Twenty-three weeks (23) to develop FOCUS Rel v1.2 specifications.</td>
   </tr>
@@ -83,32 +83,32 @@ This table displays key milestones and dates related to the development of FOCUS
     <td>Two weeks (2) for the Interim Consistency Review of FOCUS Rel v1.2.</td>
   </tr>
   <tr>
-    <td>1-May-25</td>
+    <td>3-Apr-25</td>
     <td>End Development Phase</td>
     <td>End of FOCUS Rel v1.2 development.</td>
   </tr>
   <tr>
-    <td>1-May-25 to 15-May-25</td>
+    <td>3-17-Apr-25</td>
     <td>Consistency Review</td>
     <td>Two weeks (2) for the Final Consistency Review of FOCUS Rel v1.2.</td>
   </tr>
   <tr>
-    <td>15-May-25</td>
+    <td>17-24-Apr-25</td>
     <td>Preparing baseline for IPR Review</td>
     <td>One week (1) of preparation to start the IPR Review.</td>
   </tr>
   <tr>
-    <td>22-April-25 to 22-May-25</td>
+    <td>24-April-25 to 24-May-25</td>
     <td>Start / End IPR Review v1.2</td>
     <td>During this 30-day period, members may exclude essential claims from their licensing commitments. Contact the FOCUS Executive Director.</td>
   </tr>
   <tr>
-    <td>22-May-25</td>
+    <td>29-May-25</td>
     <td>WG Approval v1.2</td>
     <td>FOCUS Release Candidate v1.2 approved by the FOCUS members.</td>
   </tr>
   <tr>
-    <td>22-May-25</td>
+    <td>29-May-25</td>
     <td>SC Ratification v1.2</td>
     <td>FOCUS Steering Committee ratifies Rel v1.2.</td>
   </tr>
