@@ -39,7 +39,7 @@ SKU Price Details
 
 ## Description
 
-A set of properties of a **SKU Price ID** which are meaningful and common to all instances of that **SKU Price ID**.
+A set of properties of a SKU Price ID which are meaningful and common to all instances of that SKU Price ID.
 
 ## Content Constraints
 
