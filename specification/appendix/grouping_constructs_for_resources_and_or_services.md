@@ -4,8 +4,8 @@ Providers natively support various constructs for grouping resources or services
 
 Providers may support multiple levels of resource or service grouping mechanisms. FOCUS supports two distinct levels of groupings that are commonly needed for FinOps capabilities like chargeback, invoice reconciliation and cost allocation.
 
-* Billing account: A mandatory container for resources or services that are billed together in an invoice. Billing accounts are commonly used for scenarios like grouping based on organizational constructs, invoice reconciliation and cost allocation strategies.
-* Sub account: An optional provider-supported construct for organizing resources and services connected to a billing account. Sub accounts are commonly used for scenarios like grouping based on organizational constructs, access management needs and cost allocation strategies. Sub accounts must be associated with a billing account as they do not receive invoices.
+* [*Billing account*](#glossary:billing-account): A mandatory container for resources or services that are billed together in an invoice. *Billing accounts* are commonly used for scenarios like grouping based on organizational constructs, invoice reconciliation and cost allocation strategies.
+* [Sub account](#glossary:sub-account): An optional provider-supported construct for organizing resources and services connected to a *billing account*. *Sub accounts* are commonly used for scenarios like grouping based on organizational constructs, access management needs and cost allocation strategies. *Sub accounts* must be associated with a *billing account* as they do not receive invoices.
 
 The table below highlights key properties of the two grouping constructs supported by FOCUS.
 
