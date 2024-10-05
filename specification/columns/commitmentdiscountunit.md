@@ -5,10 +5,10 @@ Commitment Discount Unit represents the provider-specified measurement unit indi
 The CommitmentDiscountUnit column adheres to the following requirements:
 
 * CommitmentDiscountUnit MUST be present in a FOCUS dataset when the provider supports [*commitment discounts*](#glossary:commitment-discount).
-* CommitmentDiscountUnit MUST be of type String, and the units of measure used in CommitmentDiscountUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
-* The CommitmentDiscountUnit MUST be the same across all *rows* where *CommitmentDiscountQuantity* has the same [*CommitmentDiscountId*](#commitmentdiscountid).
-* CommitmentDiscountUnit MAY be null if [*CommitmentDiscountId*](#commitmentdiscountid) is not null and [*ChargeClass*](#chargeclass) is "Correction".
-* CommitmentDiscountUnit MUST NOT be null when *CommitmentDiscountId* is not null and *ChargeClass* is not "Correction".
+* CommitmentDiscountUnit MUST be of type String, and the units of measure used in CommitmentDiscountUnit SHOULD adhere to the values and format requirements specified in the [Unit Format](#unitformat) attribute.
+* The CommitmentDiscountUnit MUST be the same across all *rows* where CommitmentDiscountQuantity has the same [CommitmentDiscountId](#commitmentdiscountid).
+* CommitmentDiscountUnit MAY be null if CommitmentDiscountId is not null and [ChargeClass](#chargeclass) is "Correction".
+* CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountId is not null and ChargeClass is not "Correction".
 * CommitmentDiscountUnit MUST be null in all other cases.
 
 In cases where the CommitmentDiscountUnit is not null, the following applies:
@@ -26,7 +26,7 @@ Commitment Discount Unit
 
 ## Description
 
-The provider-specified measurement unit indicating how a provider measures the *Commitment Discount Quantity* of a *commitment discount*.
+The provider-specified measurement unit indicating how a provider measures the Commitment Discount Quantity of a *commitment discount*.
 
 ## Content constraints
 
