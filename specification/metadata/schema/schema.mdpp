@@ -8,7 +8,7 @@ The schema metadata object and its contents provides information about the struc
 
 FOCUS data artifacts, whether they are data files, data streams, or data tables, MUST provide a clear reference to the schema of the data. This reference MUST be retrievable without inspection of the contents of the FOCUS data within the data artifact. For some delivery mechanisms such as database tables, the provider may rely on the schema functionality of the providing system.
 
-It is recommended that the schema reference be provided as an external reference rather than included in full as metadata accompanying the data artifact. This allows for easier understanding of when changes to the schema of the FOCUS datasets occurs.
+It is recommended that the schema reference be provided as an external reference rather than included in full as metadata accompanying the data artifact. This allows for easier understanding of when changes to the schema of the [*FOCUS datasets*](#glossary:FOCUS-dataset) occurs.
 
 ### Schema Metadata Creation
 

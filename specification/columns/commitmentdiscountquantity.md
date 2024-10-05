@@ -6,7 +6,7 @@ When *CommitmentDiscountCategory* is "Usage" (usage-based *commitment discounts*
 
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
-* CommitmentDiscountQuantity MUST be present in a FOCUS dataset when the provider supports *commitment discounts*.
+* CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
 * CommitmentDiscountQuantity MAY be null or any valid decimal value if [*CommitmentDiscountId*](#commitmentdiscountid) is not null and [*ChargeClass*](#chargeclass) is "Correction".
 
