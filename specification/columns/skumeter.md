@@ -6,7 +6,7 @@ Providers often have billing models in which multiple SKUs exist for a given ser
 
 The SkuMeter column adheres to the following requirements:
 
-* SkuMeter MUST be present in the billing data when when the provider includes a [SkuId](#skuid).
+* SkuMeter MUST be present in a *FOCUS dataset* when when the provider includes a [SkuId](#skuid).
 * SkuMeter MUST be of type String.
 * SkuMeter MUST be null when SkuId is null.
 * SkuMeter SHOULD NOT be null when SkuId is not null.
