@@ -4,7 +4,7 @@ The SKU Price Details column represents a list of relevant properties shared by 
 
 The SkuPriceDetails column adheres to the following requirements:
 
-* The SkuPriceDetails column MUST be in [KeyValueFormat](#key-valueformat).
+* The SkuPriceDetails column MUST be in [Key-Value Format](#key-valueformat).
 * The key for a property SHOULD be formatted in [PascalCase](#glossary:pascalcase).
 * The properties (both keys and values) contained in the SkuPriceDetails column MUST be shared across all charges having the same SkuPriceId, subject to the below provisions.
   * Additional properties (key-value pairs) MAY be added to SkuPriceDetails going forward for a given SkuPriceId.
