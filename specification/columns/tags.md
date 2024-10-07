@@ -9,7 +9,7 @@ The Tags column adheres to the following requirements:
 * The Tags column MUST be present in a FOCUS dataset when the provider supports setting user or provider-defined tags.
 * The Tags column MUST contain user-defined and provider-defined tags.
 * The Tags column MUST only contain finalized tags.
-* The Tags column MUST be in [Key-Value Format](#key-valueformat).
+* The Tags column MUST be in [KeyValueFormat](#key-valueformat).
 * A Tag key with a non-null value for a given resource SHOULD be included in the tags column.
 * A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
 * A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
