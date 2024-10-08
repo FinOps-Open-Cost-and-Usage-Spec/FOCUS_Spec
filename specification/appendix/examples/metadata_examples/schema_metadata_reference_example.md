@@ -2,15 +2,13 @@
 
 ## Scenario
 
-ACME makes a change to the schema of their data exports. For each FOCUS data export, ACME includes a metadata reference to the schema object.  Because multiple files are provided, Acme has elected to include a metadata file that includes the focus schema reference that applies to the data export files. They therefore include the new schema id in their export metadata file.
+ACME makes a change to the [Schema](#schema) of their data exports. For each FOCUS data export, ACME includes a metadata reference to the schema object.  Because multiple files are provided in each export, Acme has elected to include a metadata file in each export folder that includes the FOCUS schema reference that applies to the data export files within that folder. When the schema changes, they include the new [Schema ID](#schemaid) in their export metadata file of the new folder.
 
 ## Supplied Metadata
 
-## Location of the existing schema metadata reference file
+Metadata can be provided at a location such as `/FOCUS/data/export1-metadata.json`
 
-`/FOCUS/data/export1-metadata.json`
-
-## Content for the existing export metadata object
+The export metadata could look like this:
 
 ```json
 {
@@ -41,11 +39,9 @@ ACME makes a change to the schema of their data exports. For each FOCUS data exp
 }
 ```
 
-## Location for the new export metadata object
+New metadata can be provided at a location such as `/FOCUS/data/export2-metadata.json`.
 
-`/FOCUS/data/export2-metadata.json`
-
-## Content for the new export metadata object
+The new export metadata could look like this:
 
 ```json
 {
