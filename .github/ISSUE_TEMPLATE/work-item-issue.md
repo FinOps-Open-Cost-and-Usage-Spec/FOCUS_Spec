@@ -14,7 +14,7 @@ Your input ...
 
 ## 3. **Objective** *
 State the objective of this work item. What outcome is expected?
-- **Success Criteria**: Define how success will be measured (e.g., KPIs, metrics).
+- **Success Criteria**: Define how success will be measured (e.g. columns, KPIs, metrics, content).
 
 Your input ...
 
