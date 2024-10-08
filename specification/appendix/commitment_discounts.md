@@ -1,17 +1,17 @@
 # Commitment Discounts
 
-A [*commitment discount*](glossary:commitment-discount) is a billing discount model that offers reduced rates on preselected [*SKUs*](#glossary:sku) in exchange for an obligated usage or spend amount over a predefined [*term*](glossary:term). *Commitment discounts* typically consist of purchase and usage records within cost and usage datasets.
+A [*commitment discount*](#glossary:commitment-discount) is a billing discount model that offers reduced rates on preselected [*SKUs*](#glossary:sku) in exchange for an obligated usage or spend amount over a predefined [*term*](#glossary:term). *Commitment discounts* typically consist of purchase and usage records within cost and usage datasets.
 
-Usage-based *commitment discounts* obligate a customer to a predetermined amount of usage over a preselected *term*. In some cases, usage-based *commitment discounts* also feature [*commitment discount flexibility*](glossary:commitment-discount-flexibility) which may expand the types of *resources* that a *commitment discount* can cover. It is important to note when mixing *commitment discounts* with and without *commitment discount flexibility*, the `CommitmentDiscountUnit` should reflect this difference.
+Usage-based *commitment discounts* obligate a customer to a predetermined amount of usage over a preselected *term*. In some cases, usage-based *commitment discounts* also feature [*commitment discount flexibility*](#glossary:commitment-discount-flexibility) which may expand the types of [*resources*](#glossary:resource) that a *commitment discount* can cover. It is important to note when mixing *commitment discounts* with and without *commitment discount flexibility*, the [CommitmentDiscountUnit](#commitmentdiscountunit) should reflect this difference.
 
-Spend-based commitment discounts obligate a customer to a predetermined amount of spend over a preselected *term*. In the usage examples below, each [*row*](glossary:row) measures the monetary amount of the hourly commit consumed by the *commitment discount*, so the `CommitmentDiscountUnit` chosen is "USD", or the [*billing currency*](glossary:billing-currency).
+Spend-based commitment discounts obligate a customer to a predetermined amount of spend over a preselected *term*. In the usage examples below, each [*row*](#glossary:row) measures the monetary amount of the hourly commit consumed by the *commitment discount*, so the CommitmentDiscountUnit chosen is "USD", or the [*billing currency*](#glossary:billing-currency).
 
 ## Purchasing
 
 While customers are bound to the *term* of a *commitment discounts*, providers offer some or all of the following payment options before and/or during the *term*:
 
 * *All Upfront* - The *commitment discounts* is paid in full before the *term* begins.
-* *No Upfront* - The *commitment discounts* is paid on a repeated basis, typically over each [*billing period*](glossary:billing-period) of the *term*.
+* *No Upfront* - The *commitment discounts* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *term*.
 * *Partial Upfront* - Some of the *commitment discounts* is paid before the *term* begins, and the rest is paid repeatedly over the *term*.
 
 For example, if a customer buys a 1-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *term* *and* monthly recurring purchases with the following totals:
@@ -21,7 +21,7 @@ For example, if a customer buys a 1-year, spend-based *commitment discount* with
 
 ## Usage
 
-Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization*](glossary:amortization) of a *commitment discount's* purchase applies evenly to eligible *resources* over each [*charge period*](glossary:charge-period) of the *term*.
+Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization*](#glossary:amortization) of a *commitment discount's* purchase applies evenly to eligible *resources* over each [*charge period*](#glossary:charge-period) of the *term*.
 
 For example, if a customer buys a spend-based *commitment discount* with a &dollar;1.00 hourly commit in January (31 days), only &dollar;1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to &dollar;1.00 will be allocated to these *resources*. Conversely, if a customer does have eligible *resources* running that fully take advantage of this &dollar;1.00 during this *charge period*, then some or all of this amount will go to waste.
 
@@ -31,9 +31,9 @@ Within the FOCUS specification, the following examples demonstrate how a *commit
 
 ### Purchase *Rows*
 
-All *commitment discount* purchases appear with a positive `BilledCost`, `PricingCategory` as "Standard", and with the *commitment discount's* id populating both the `ResourceId` and `CommitmentDiscountId` value. One-time purchases appear as a single record with `ChargeCategory` as "Purchase", `ChargeFrequency` as "One-Time", and the total quantity and units for *commitment discount's* *term* reflected as `CommitmentDiscountQuantity` and `CommitmentDiscountUnit`, respectively.
+All *commitment discount* purchases appear with a positive [BilledCost](#billedcost), [PricingCategory](#pricingcategory) as "Standard", and with the *commitment discount's* id populating both the [ResourceId](#resourceid) and [CommitmentDiscountId](#commitmentdiscountid) value. One-time purchases appear as a single record with [ChargeCategory](#chargecategory) as "Purchase", [ChargeFrequency](#chargefrequency) as "One-Time", and the total quantity and units for *commitment discount's* *term* reflected as [CommitmentDiscountQuantity](#commitmentdiscountquantity) and CommitmentDiscountUnit, respectively.
 
-Recurring purchases are allocated across all corresponding *charge periods* of the *term* when `ChargeCategory` is "Purchase", `ChargeFrequency` is "Recurring", and `CommitmentDiscountQuantity` and `CommitmentDiscountUnit` are reflected only for that *charge period*.
+Recurring purchases are allocated across all corresponding *charge periods* of the *term* when ChargeCategory is "Purchase", ChargeFrequency is "Recurring", and CommitmentDiscountQuantity and CommitmentDiscountUnit are reflected only for that *charge period*.
 
 Using the same *commitment discount* example as above with a one-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit purchased on Jan 1, 2023, various purchase options are available:
 
@@ -166,7 +166,7 @@ In this scenario, one eligible *resource* runs for the full hour and consumes &d
 
 #### Scenario #2: No eligible *resource* consumes the allocated amount (0% utilization)
 
-In this situation, the full eligible, &dollar;1.00 amount remained unutilized and results in 1 unused *row*. In this scenario, it is important to note that while `CommitmentDiscountQuantity` is not because &dollar;1 was still drawn down by the *commitment discount* even though, no *resource* was allocated, so `ConsumedQuantity` and `ConsumedUnit` are null.
+In this situation, the full eligible, &dollar;1.00 amount remained unutilized and results in 1 unused *row*. In this scenario, it is important to note that while CommitmentDiscountQuantity is not because &dollar;1 was still drawn down by the *commitment discount* even though, no *resource* was allocated, so [ConsumedQuantity](#consumedquantity) and [ConsumedUnit](#consumedunit) are null.
 
 ```json
 [

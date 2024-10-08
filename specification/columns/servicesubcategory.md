@@ -1,6 +1,6 @@
 # Service Subcategory
 
-The Service Subcategory is a secondary classification of the Service Category for a [*service*](#glossary:service) based on its core function. The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing spend and usage for specific workload types across providers and tracking the migration of workloads across fundamentally different architectures.  
+The Service Subcategory is a secondary classification of the [Service Category](#servicecategory) for a [*service*](#glossary:service) based on its core function. The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing spend and usage for specific workload types across providers and tracking the migration of workloads across fundamentally different architectures.  
 
 The ServiceSubcategory column adheres to the following requirements:
 
