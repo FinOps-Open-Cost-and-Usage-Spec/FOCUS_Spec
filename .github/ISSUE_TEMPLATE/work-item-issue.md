@@ -1,24 +1,19 @@
 # Work Item Issue Template
 
-## 1. **Title** *
-Provide a concise and descriptive title for the work item.
-
-Your input ...
-
-## 2. **Problem Statement** *
+## 1. **Problem Statement** *
 Describe the problem, issue, use case, or opportunity that this work item addresses.
 - **What is the problem?**: Explain the context and why it needs resolution.
 - **Impact**: Describe how the problem affects users, systems, or the project.
 
 Your input ...
 
-## 3. **Objective** *
+## 2. **Objective** *
 State the objective of this work item. What outcome is expected?
 - **Success Criteria**: Define how success will be measured (e.g. columns, KPIs, metrics, content).
 
 Your input ...
 
-## 4. **Supporting Documentation** *
+## 3. **Supporting Documentation** *
 Include links to supporting documents such as:
 - Data Examples: [Link to data or relevant files]
 - Related Use Cases or Discussion Documents: [Link to discussion]
@@ -26,46 +21,22 @@ Include links to supporting documents such as:
 
 Your input ...
 
-## 5. **Proposed Solution / Approach**
+## 4. **Proposed Solution / Approach**
 Outline any proposed solutions, approaches, or potential paths forward.
 - **Initial Ideas**: Describe potential solution paths, tools, or technologies.
 - **Considerations**: Include any constraints, dependencies, or risks.
 
 Your input ...
 
-## 6. **Epic or Theme Association**
-> This senction will be completed by the Maintainers.
-> - **Epic**: [Epic Name or Number]
+## 5. **Epic or Theme Association**
+> This section will be completed by the Maintainers.
+> - **Epic**: [Epic Name]
 > - **Theme**: [Theme Name, if applicable]
 
-## 7. **Stakeholders** *
+## 6. **Stakeholders** *
 List the main stakeholders for this issue.
 - **Primary Stakeholder**: [Name/Role]
 - **Other Involved Parties**: [Names/Roles]
-
-## 8. **Priority and Effort Estimation**
-> This senction will be completed by the Maintainers.
-> - **Effort Level**: Low / Medium / High
-> - **Priority**: P1 / P2 / P3 (define based on project standards)
-
-## 9. **Dependencies and Related Work**
-List any dependencies or related work items that need to be addressed.
-- **Dependency 1**: [Link to dependent issue/PR]
-- **Dependency 2**: [Link to related work item]
-
-## 10. **Risks and Mitigation**
-Identify any potential risks associated with this work item.
-- **Risk 1**: Describe the risk and its potential impact.
-- **Mitigation Strategy**: Outline mitigation steps for each identified risk.
-
-## 11. **Assignees**
-Use GitHub to assign relevant team members or maintainers to the issue.
-
-
-## 12. **Labels**
-Use GitHub to apply appropriate labels for tracking and categorization:
-> - Type: `bug`, `feature`, `documentation`, etc.
-> - Status: `triage`, `in-progress`, `backlog`, etc.
 
 ---
 
