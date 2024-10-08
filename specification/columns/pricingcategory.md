@@ -38,9 +38,9 @@ Allowed values:
 
 | Value     | Description                                                                                                                                                                                                              |
 | :-------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Standard  | Charges priced at the agreed upon rate for the billing account, including [*negotiated discounts*](#glossary:negotiated-discount). This includes any flat rate and volume/tiered pricing but does not include dynamic or *commitment discount* pricing. |
+| Standard  | Charges priced at the agreed upon rate for the billing account, including [*negotiated discounts*](#glossary:negotiated-discount). This pricing includes any flat rate and volume/tiered pricing but does not include dynamic pricing or reduced pricing due to the application of a *commitment discount*. This does include the purchase of a commitment discount at agreed upon rates. |
 | Dynamic   | Charges priced at a variable rate determined by the provider. This includes any product or service with a unit price the provider can change without notice, like interruptible or low priority resources.               |
-| Committed | Charges with reduced prices due to a *commitment discount* specified by the Commitment Discount ID.                                                                                                                  |
+| Committed | Charges with reduced pricing due to the application of the *commitment discount* specified by the Commitment Discount ID.                                                                                                |
 | Other     | Charges priced in a way not covered by another pricing category.                                                                                                                                                         |
 
 ## Introduced (version)

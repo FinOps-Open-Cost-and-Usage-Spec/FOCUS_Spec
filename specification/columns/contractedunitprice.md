@@ -16,6 +16,10 @@ Contracted Unit Price
 
 The agreed-upon unit price for a single Pricing Unit of the associated SKU, inclusive of negotiated discounts, if present, while excluding negotiated commitment discounts or any other discounts.
 
+## Usability Constraints
+
+**Aggregation:** Column values should only be viewed in the context of their row and not aggregated to produce a total.
+
 ## Content Constraints
 
 | Constraint      | Value                                |
