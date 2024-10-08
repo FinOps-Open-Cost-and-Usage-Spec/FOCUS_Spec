@@ -34,9 +34,9 @@ Outline any proposed solutions, approaches, or potential paths forward.
 Your input ...
 
 ## 6. **Epic or Theme Association**
-Indicate if this issue is part of a broader epic or theme. _(OPTIONAL)_
-- **Epic**: [Epic Name or Number]
-- **Theme**: [Theme Name, if applicable]
+> This senction will be completed by the Maintainers.
+> - **Epic**: [Epic Name or Number]
+> - **Theme**: [Theme Name, if applicable]
 
 ## 7. **Stakeholders** *
 List the main stakeholders for this issue.
@@ -44,31 +44,25 @@ List the main stakeholders for this issue.
 - **Other Involved Parties**: [Names/Roles]
 
 ## 8. **Priority and Effort Estimation**
-Provide a rough estimation of the effort required and the priority level.
-- **Effort Level**: Low / Medium / High
-- **Priority**: P1 / P2 / P3 (define based on project standards)
-  
-## 9. **Acceptance Criteria**
-Define clear acceptance criteria that must be met for this work item to be considered complete.
-- [ ] Criterion 1
-- [ ] Criterion 2
-- [ ] Criterion 3
+> This senction will be completed by the Maintainers.
+> - **Effort Level**: Low / Medium / High
+> - **Priority**: P1 / P2 / P3 (define based on project standards)
 
-## 10. **Dependencies and Related Work**
+## 9. **Dependencies and Related Work**
 List any dependencies or related work items that need to be addressed.
 - **Dependency 1**: [Link to dependent issue/PR]
 - **Dependency 2**: [Link to related work item]
 
-## 11. **Risks and Mitigation**
+## 10. **Risks and Mitigation**
 Identify any potential risks associated with this work item.
 - **Risk 1**: Describe the risk and its potential impact.
 - **Mitigation Strategy**: Outline mitigation steps for each identified risk.
 
-## 12. **Assignees**
+## 11. **Assignees**
 Use GitHub to assign relevant team members or maintainers to the issue.
 
 
-## 13. **Labels**
+## 12. **Labels**
 Use GitHub to apply appropriate labels for tracking and categorization:
 > - Type: `bug`, `feature`, `documentation`, etc.
 > - Status: `triage`, `in-progress`, `backlog`, etc.
