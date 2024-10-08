@@ -6,7 +6,7 @@ Provide a concise and descriptive title for the work item.
 Your input ...
 
 ## 2. **Problem Statement** *
-Describe the problem, issue, or opportunity that this work item addresses.
+Describe the problem, issue, use case, or opportunity that this work item addresses.
 - **What is the problem?**: Explain the context and why it needs resolution.
 - **Impact**: Describe how the problem affects users, systems, or the project.
 
