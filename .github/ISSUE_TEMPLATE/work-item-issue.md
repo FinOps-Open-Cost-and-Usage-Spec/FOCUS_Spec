@@ -1,5 +1,8 @@
 # Work Item Issue Template
-
+description:
+title: "[Work_Item ]"
+labels: ["work item"]
+assignees: [shawnalpay, jpradocueva]
 ## 1. **Problem Statement** *
 Describe the problem, issue, use case, or opportunity that this work item addresses.
 - **What is the problem?**: Explain the context and why it needs resolution.
