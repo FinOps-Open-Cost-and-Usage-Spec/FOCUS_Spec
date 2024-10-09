@@ -2,7 +2,7 @@ name: Feature Request and Use Case Feedback
 description: Provide feedback on unsupported use cases or features in the FOCUS specification, including FinOps scenarios, to help prioritize updates. Avoid sharing proprietary information.
 title: "[FEEDBACK]: "
 labels: ["use case"]
-assignees: ["shawnalpay, udam-f2, jpradocueva,"]
+assignees: ["shawnalpay, jpradocueva,"]
 body:
   - type: markdown
     attributes:
