@@ -53,52 +53,11 @@ body:
 
   - type: textarea
     attributes:
-      label: Business and Financial Objectives
-      description: Describe the business and financial objectives this use case aims to achieve.
-      placeholder: Describe the expected business and financial outcomes.
-    validations:
-      required: false
-
-  - type: input
-    attributes:
-      label: Cost Drivers
-      description: Identify the primary cost drivers related to this use case (e.g., cloud spending, infrastructure costs).
-      placeholder: e.g., cloud spending, infrastructure costs, etc.
-    validations:
-      required: false
-
-  - type: textarea
-    attributes:
       label: Key Metrics and KPIs
       description: List the metrics and KPIs that will measure the success of this use case (e.g., cost per service, spend reduction percentage).
       placeholder: e.g., cost per service, spend reduction percentage, etc.
     validations:
       required: false
-
-  - type: input
-    attributes:
-      label: Expected Financial Impact
-      description: Quantify the expected financial impact, if applicable (e.g., percentage cost savings, budget reductions).
-      placeholder: e.g., 10% cost savings, 5% budget reduction, etc.
-    validations:
-      required: false
-
-  - type: textarea
-    attributes:
-      label: Testing Approach
-      description: Outline how the use case will be tested before full implementation. Specify the types of testing (e.g., pilot testing, A/B testing).
-      placeholder: Describe your testing approach.
-    validations:
-      required: false
-
-  - type: textarea
-    attributes:
-      label: Validation Criteria
-      description: Define how success will be validated after implementation. Include metrics that will be reviewed post-implementation.
-      placeholder: e.g., metrics to validate success, financial impact, etc.
-    validations:
-      required: false
-
 
   - type: textarea
     attributes:
@@ -115,4 +74,3 @@ body:
       placeholder: Attach sample data or data extracts here. Ensure compliance with data privacy guidelines.
     validations:
       required: true  
-
