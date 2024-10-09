@@ -32,8 +32,8 @@ Current values observed in billing data for various scenarios:
 FOCUS plans to include Level 1, Level 3 in the specification. Level 5 (resource name, resource id) are already in the specification.
 
 | Provider | Level 1 | Level 2 | Level 3 | Level 4 | Level 5 | |
-| | Billing Account | Sub Account Group (optional) | Sub Account | | | |
 |----------|---------|---------|---------|---------|---------|---------|
+| | Billing Account | Sub Account Group (optional) | Sub Account | | | |
 | AWS | Management Account | Org | Account | Resource Group (optional) | Resource | |
 | GCP | Billing Account | Folder | Project | | | |
 | MS EA | Billing Account (Invoice Scope) | Department | Enrollment Account | Subscription | Resource Group | Resource |

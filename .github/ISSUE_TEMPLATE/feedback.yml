@@ -1,7 +1,7 @@
 name: FinOps Use Case Feedback
 description: Provide feedback on FinOps use cases that cannot be performed with the current FOCUS specification.
 title: "[FEEDBACK]: "
-labels: ["feedback", "use-case"]
+labels: [""]
 assignees: ["mike-finopsorg,udam-f2"]
 body:
   - type: markdown
@@ -58,4 +58,12 @@ body:
       placeholder: Additional details...
     validations:
       required: true
+
+  - type: textarea
+    attributes:
+      label: Data Submission for Discussion
+      description: Provide relevant sample data or data extracts that support your feedback. Ensure data is anonymized and does not include sensitive or proprietary information.
+      placeholder: Attach sample data or data extracts here. Ensure compliance with data privacy guidelines.
+    validations:
+      required: false  
 
