@@ -42,5 +42,4 @@ List the main stakeholders for this issue.
 
 ### **Template Usage Notes**:
 1. All fields marked as **mandatory** [*] must be filled before submission.
-2. Use the `[ ]` checkboxes under **Acceptance Criteria** to track completion.
-3. For **Supporting Documentation**, ensure that linked files are accessible to relevant stakeholders.
+2. For **Supporting Documentation**, ensure that linked files are accessible to relevant stakeholders.
