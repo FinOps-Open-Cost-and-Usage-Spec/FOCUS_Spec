@@ -8,7 +8,7 @@ body:
     attributes:
       value: "FOCUS working group seeks gaps in the current specification for FinOps and beyond. Share unsupported use cases or features to prioritize updates. Avoid sharing proprietary information."
   
-  - type: input
+  - type: textarea
     attributes:
       label: Proposed Change
       description: Short description of the change and why it is necessary.
