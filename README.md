@@ -47,3 +47,4 @@ See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/
 
 - [Change / contribution process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
 
+
