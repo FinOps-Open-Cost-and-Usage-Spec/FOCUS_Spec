@@ -44,6 +44,10 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the duration of eligibility.
 
+<a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
+
+A company or organization that provides remote access to computing resources, infrastructure, or applications for a fee.
+
 <a name="glossary:commitment"><b>Commitment</b></a>
 
 A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
@@ -52,13 +56,9 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e. hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
 
-<a name="glossary:commitment-flexibility"><b>Commitment Flexibility</b></a>
+<a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
 A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, provider-specific requirements.
-
-<a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
-
-A company or organization that provides remote access to computing resources, infrastructure, or applications for a fee.
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
@@ -100,13 +100,13 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
 
-<a name="glossary:metric"><b>Metric</b></a>
-
-A FOCUS-defined column that provides numeric values, allowing for aggregation operations such as arithmetic operations (sum, multiplication, averaging etc.) and statistical operations.
-
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
 A company or organization that provides outsourced management and support of a range of IT services, such as network infrastructure, cybersecurity, cloud computing, and more.
+
+<a name="glossary:metric"><b>Metric</b></a>
+
+A FOCUS-defined column that provides numeric values, allowing for aggregation operations such as arithmetic operations (sum, multiplication, averaging etc.) and statistical operations.
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
@@ -120,21 +120,21 @@ A term that describes a service that is available and provided immediately or as
 
 Pascal Case (PascalCase, also known as UpperCamelCase) is a format for identifiers which contain one or more words meaning the words are concatenated together with no delimiter and the first letter of each word is capitalized.
 
-<a name="glossary:practitioner"><b>Practitioner</b></a>
-
-An individual who performs FinOps within an organization to maximize the business value of using cloud and cloud-like services.
-
 <a name="glossary:potato"><b>Potato</b></a>
 
 A long and often painful conversation had by the FOCUS contributors. Sometimes the name of a thing that we could not yet name. No starchy root vegetables were harmed during the production of this specification. We thank potato for its contribution in the creation of this specification.
 
-<a name="glossary:provider"><b>Provider</b></a>
+<a name="glossary:practitioner"><b>Practitioner</b></a>
 
-An entity that made internal or 3rd party resources and/or services available for purchase.
+An individual who performs FinOps within an organization to maximize the business value of using cloud and cloud-like services.
 
 <a name="glossary:price-list"><b>Price List</b></a>
 
 A comprehensive list of prices offered by a provider.
+
+<a name="glossary:provider"><b>Provider</b></a>
+
+An entity that made internal or 3rd party resources and/or services available for purchase.
 
 <a name="glossary:resource"><b>Resource</b></a>
 

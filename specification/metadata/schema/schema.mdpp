@@ -8,20 +8,19 @@ The schema metadata object and its contents provides information about the struc
 
 FOCUS data artifacts, whether they are data files, data streams, or data tables, MUST provide a clear reference to the schema of the data. This reference MUST be retrievable without inspection of the contents of the FOCUS data within the data artifact. For some delivery mechanisms such as database tables, the provider may rely on the schema functionality of the providing system.
 
-It is recommended that the schema reference be provided as an external reference rather than included in full as metadata accompanying the data artifact. This allows for easier understanding of when changes to the schema of the FOCUS datasets occurs.
+It is recommended that the schema reference be provided as an external reference rather than included in full as metadata accompanying the data artifact. This allows for easier understanding of when changes to the schema of the [*FOCUS datasets*](#glossary:FOCUS-dataset) occurs.
 
 ### Schema Metadata Creation
 
 Should the provider change the structure of the supplied FOCUS data artifact, a new schema metadata object MUST be supplied.
 These scenarios include, but are not limited to:
 
-* [Adding a new column](#adding_new_columns_example)
-* [Removing a column](#removing_columns_example)
-* [Renaming a column](#renaming_columns_example)
-* [Changing column metadata](#changing_column_metadata_example)
-* [FOCUS Version is changed](#focus_version_change_example)
-* [Provider Version is changed](#provider_version_change_example)
-* [Correcting schema metadata errors](#correcting_schema_metadata_errors)
+* [Adding a new column](#addingnewcolumns)
+* [Removing a column](#removingcolumns)
+* [Changing column metadata](#changingcolumnmetadata)
+* [FOCUS Version has changed](#focusversionchanged)
+* [Provider Version has changed](#schemametadatatofocusdatareference)
+* [Correcting schema metadata errors](#providermetadataerrorcorrection)
 
 ### Schema Metadata Updates
 
@@ -29,10 +28,10 @@ Should there be an error where the schema metadata object does not match the sch
 
 ## Schema Example
 
-For an example of the FOCUS schema metadata please refer to: [Schema Metadata Example](#schema-metadata-examples)
+For an example of the FOCUS schema metadata please refer to: [Schema Metadata Example](#schemametadata)
 
 !INCLUDE "schemaid.md",1
 !INCLUDE "creationdate.md",1
 !INCLUDE "focusversion.md",1
-!INCLUDE "providerversion.md",
+!INCLUDE "providerversion.md",1
 !INCLUDE "column_definition/column_definition.mdpp",1
