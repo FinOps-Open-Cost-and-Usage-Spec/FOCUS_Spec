@@ -1,6 +1,6 @@
 name: "Work Item Issue Template"
 description: "Template for creating new work item issues"
-title: "[Work_Item ]"
+title: "[Work_Item]"
 labels: 
   - "work item"
 assignees: 
