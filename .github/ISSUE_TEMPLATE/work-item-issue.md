@@ -1,10 +1,11 @@
 # Work Item Issue Template
 description:
-title: "[Work_Item ]"
+title: "[Work_Item]"
 labels: ["work item"]
 assignees: [shawnalpay, jpradocueva]
 ## 1. **Problem Statement** *
 Describe the problem, issue, use case, or opportunity that this work item addresses.
+Include practitioner quotes illustrating real examples a) of questions being asked by practitioners and b) value unlocked by answering these questions, if available.
 - **What is the problem?**: Explain the context and why it needs resolution.
 - **Impact**: Describe how the problem affects users, systems, or the project.
 
@@ -12,13 +13,13 @@ Your input ...
 
 ## 2. **Objective** *
 State the objective of this work item. What outcome is expected?
-- **Success Criteria**: Define how success will be measured (e.g. columns, KPIs, metrics, content).
+- **Success Criteria**: Define how success will be measured (e.g. metrics and KPIs).
 
 Your input ...
 
 ## 3. **Supporting Documentation** *
 Include links to supporting documents such as:
-- Data Examples: [Link to data or relevant files]
+- Data Examples: [Link to data or relevant files; DO NOT share proprietary information]
 - Related Use Cases or Discussion Documents: [Link to discussion]
 - PRs or Other References: [Link to relevant references]
 
@@ -38,7 +39,7 @@ Your input ...
 
 ## 6. **Stakeholders** *
 List the main stakeholders for this issue.
-- **Primary Stakeholder**: [Name/Role]
+- **Primary Stakeholders**: [Name/Role]
 - **Other Involved Parties**: [Names/Roles]
 
 ---
