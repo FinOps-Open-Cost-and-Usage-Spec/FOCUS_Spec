@@ -3,6 +3,14 @@ description:
 title: "[Work_Item]"
 labels: ["work item"]
 assignees: [shawnalpay, jpradocueva]
+
+### **Template Usage Notes**:
+1. All fields marked as **mandatory** [*] must be filled before submission.  While some datapoints are optional for the initial creation of the work item, all datapoints must be provided in order to be considered for spec development.
+2. If you have suggestions for the specification but cannot fill out all fields in this issue template, please fill out a [Feedback] or [Discussion] issue template instead.
+3. For **Supporting Documentation**, ensure that linked files are accessible to relevant stakeholders.
+   
+---
+
 ## 1. **Problem Statement** *
 Describe the problem, issue, use case, or opportunity that this work item addresses.
 Include practitioner quotes illustrating real examples a) of questions being asked by practitioners and b) value unlocked by answering these questions, if available.
@@ -43,9 +51,3 @@ Your input ...
 List the main stakeholders for this issue.
 - **Primary Stakeholders**: [Name/Role]
 - **Other Involved Parties**: [Names/Roles]
-
----
-
-### **Template Usage Notes**:
-1. All fields marked as **mandatory** [*] must be filled before submission.
-2. For **Supporting Documentation**, ensure that linked files are accessible to relevant stakeholders.
