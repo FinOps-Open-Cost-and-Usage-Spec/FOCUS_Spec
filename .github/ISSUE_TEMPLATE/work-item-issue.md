@@ -29,6 +29,8 @@ Your input ...
 Outline any proposed solutions, approaches, or potential paths forward.
 - **Initial Ideas**: Describe potential solution paths, tools, or technologies.
 - **Considerations**: Include any constraints, dependencies, or risks.
+- **Feasibility**: Include any information that helps quantify feasibility, such as perceived level of effort to augment the spec, or existing fields in current data generator exports. 
+- **Benchmarks**: Are there established best practices for solving this problem available to practitioners today (e.g. mappings from existing CSP exports that are widely used)?
 
 Your input ...
 
