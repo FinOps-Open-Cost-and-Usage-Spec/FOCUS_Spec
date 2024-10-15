@@ -15,24 +15,23 @@ These guidelines can be modified through a Pull Request (PR), which the members 
         <td><strong>Column &amp; Attribute Names</strong>:</td>
         <td>
             <strong>Column Names</strong>:<br>
-            - <strong>Pricing Quantity</strong><br>
-            - <strong>Pricing Unit</strong><br>
-            - <strong>Provider</strong> <br><br>
+            - Pricing Quantity<br>
+            - Pricing Unit<br>
+            - Provider <br><br>
             <strong>Attribute Names</strong>:<br>
-            - <strong>Currency Code Format</strong><br>
-            - <strong>Date/Time Format</strong>
+            - Currency Code Format<br>
+            - Date/Time Format
         </td>
         <td>
             <strong>Column Names</strong>:<br>
-            &nbsp;&nbsp; **Pricing Quantity**<br>
-            &nbsp;&nbsp; **Pricing Unit**<br>
-            &nbsp;&nbsp; **Provider**<br><br>
+            &nbsp;&nbsp; Pricing Quantity<br>
+            &nbsp;&nbsp; Pricing Unit<br>
+            &nbsp;&nbsp; Provider<br><br>
             <strong>Attribute Names</strong>:<br>
-            &nbsp;&nbsp; **Currency Code Format**<br>
-            &nbsp;&nbsp; **Date/Time Format**<br>
+            &nbsp;&nbsp; Currency Code Format<br>
+            &nbsp;&nbsp; Date/Time Format<br>
         </td>
         <td>
-            - Bold <br>
             - Use the display name in the non-normative section.<br>
             - The first occurrence in a section is linked to the section.
         </td>
@@ -41,9 +40,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
         <td><strong>Column &amp; Attribute IDs:</strong></td>
         <td>
            <strong>Columns IDs</strong>:<br>
-            - PricingQuantity</strong><br> 
-            - PricingUnit</strong><br> 
-            - ProviderName</strong> <br><br>
+            - PricingQuantity<br> 
+            - PricingUnit<br> 
+            - ProviderName<br><br>
           <strong>Attributes IDs</strong>:<br>
             - CurrencyCodeFormat <br> 
             - DateTimeFormat <br>
@@ -51,8 +50,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
         <td>
           <strong>Columns IDs:</strong>:<br>
           &nbsp;&nbsp; PricingQuantity <br>
-          &nbsp;&nbsp; PricingUnit</strong><br>
-          &nbsp;&nbsp; ProviderName</strong> <br><br>
+          &nbsp;&nbsp; PricingUnit<br>
+          &nbsp;&nbsp; ProviderName <br><br>
           <strong>Attributes IDs:</strong> </br>
           &nbsp;&nbsp; CurrencyCodeFormat </br>
           &nbsp;&nbsp; DateTimeFormat <br>
@@ -139,17 +138,17 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 > **2.28. Pricing Quantity**
 >
-> The **[Pricing Quantity](#pricing-quantity)** represents the volume of a given [SKU](#glossary:sku) associated with a [resource](#glossary:resource) or [service](#glossary:service) used or purchased, based on the **[Pricing Unit](#pricing-unit)**. Distinct from **[Consumed Quantity](#consumed-quantity)** (complementary to **[Consumed Unit](#consumed-unit)**), it focuses on pricing and cost, not resource and service consumption. 
+> The Pricing Quantity represents the volume of a given SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Pricing Unit](#pricingunit). Distinct from [Consumed Quantity](#consumedquantity) (complementary to [Consumed Unit](#consumedunit)), it focuses on pricing and cost, not *resource* and *service* consumption.
 >
->  * The PricingQuantity column MUST be present in the billing data. 
->  * This column MUST be of type Decimal and MUST conform to Numeric Format requirements. 
->  * The value MAY be negative in cases where ChargeClass is "Correction". 
+>  * The PricingQuantity column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset). 
+>  * This column MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements 
+>  * The value MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction".
 > 
 > This column:
->  * MUST NOT be null when ChargeClass is not "Correction" and ChargeCategory is "Usage" or "Purchase", 
+>  * MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", 
 >  * MUST be null when ChargeCategory is "Tax", and 
 >  * MAY be null for all other combinations of ChargeClass and ChargeCategory. 
-> * When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
+> When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 >
 > **2.28.1. Column ID**
 >
@@ -161,7 +160,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 >
 > **2.28.3. Description**
 >
-> The volume of a given SKU associated with a resource or service used or purchased, based on the Pricing Unit. 
+> The volume of a given SKU associated with a *resource* or *service* used or purchased, based on the Pricing Unit. 
 >
 > **2.28.4. Content Constraints Constraint**
 > 
