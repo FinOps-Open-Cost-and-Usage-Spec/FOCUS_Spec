@@ -148,8 +148,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 >  * MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", 
 >  * MUST be null when ChargeCategory is "Tax", and 
 >  * MAY be null for all other combinations of ChargeClass and ChargeCategory. 
->
-> When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
+>  * When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 >
 > **2.28.1. Column ID**
 >
