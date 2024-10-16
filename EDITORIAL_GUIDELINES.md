@@ -12,7 +12,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
         <th>Editorial Guidelines</th>
     </tr>
     <tr>
-        <td><strong>Column &amp; Attribute Names</strong>:</td>
+        <td><strong>Column &amp; Attribute Names:</strong></td>
         <td>
             <strong>Column Names</strong>:<br>
             - Pricing Quantity<br>
@@ -23,7 +23,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
             - Date/Time Format
         </td>
         <td>
-            <strong>Column Names</strong>:<br>
+            <strong>Column Names:</strong><br>
             &nbsp;&nbsp; Pricing Quantity<br>
             &nbsp;&nbsp; Pricing Unit<br>
             &nbsp;&nbsp; Provider<br><br>
@@ -48,7 +48,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
             - DateTimeFormat <br>
         </td>
         <td>
-          <strong>Columns IDs:</strong>:<br>
+          <strong>Columns IDs:</strong><br>
           &nbsp;&nbsp; PricingQuantity <br>
           &nbsp;&nbsp; PricingUnit<br>
           &nbsp;&nbsp; ProviderName <br><br>
