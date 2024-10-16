@@ -3,7 +3,6 @@ The "Editorial Style Guidelines" section ensures consistency and clarity across 
 
 These guidelines can be modified through a Pull Request (PR), which the members must review and agree upon. This process ensures that any changes are thoughtfully considered and maintains the overall integrity of our editorial standards.
 
-
 <table>
     <tr>
         <th>Component</th>
@@ -57,9 +56,25 @@ These guidelines can be modified through a Pull Request (PR), which the members 
           &nbsp;&nbsp; DateTimeFormat <br>
         </td>
         <td>
-           - Use PascalCamel case (the first letter of every word, is capitalized)
+           - Use PascalCamel case (the first letter of every word, is capitalized)<br>
            - Normal text without bold or italics.<br>
            - The first occurrence in a section is linked to the section.
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Column Values:</strong></td>
+        <td>
+            - "Usage"<br>
+            - "Tax"<br>
+            - "TB"<br>
+        </td>
+        <td>
+            This column:<br>
+            &nbsp;&nbsp; * MUST be null when ChargeCategory is "Tax" ...
+        </td>
+        <td>
+            - Enclosed in double quotation marks<br>
+            - Normal text without bold or italics
         </td>
     </tr>
     <tr>
