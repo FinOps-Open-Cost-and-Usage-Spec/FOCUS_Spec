@@ -38,7 +38,7 @@ Include links to supporting documents such as:
 Your input ...
 
 ## 4. **Proposed Solution / Approach**
-Outline any proposed solutions, approaches, or potential paths forward.
+Outline any proposed solutions, approaches, or potential paths forward.  Do not submit detailed solutions; please keep suggestions high-level.
 - **Initial Ideas**: Describe potential solution paths, tools, or technologies.
 - **Considerations**: Include any constraints, dependencies, or risks.
 - **Feasibility**: Include any information that helps quantify feasibility, such as perceived level of effort to augment the spec, or existing fields in current data generator exports. 
