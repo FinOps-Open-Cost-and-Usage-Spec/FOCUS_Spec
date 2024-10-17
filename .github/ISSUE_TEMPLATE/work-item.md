@@ -2,7 +2,6 @@
 description:
 title: "[Work_Item]"
 labels: ["work item"]
-<<<<<<< HEAD:.github/ISSUE_TEMPLATE/work-item.md
 assignees: [shawnalpay, jpradocueva]
 
 ### **Template Usage Notes**:
@@ -11,9 +10,6 @@ assignees: [shawnalpay, jpradocueva]
 3. For **Supporting Documentation**, ensure that linked files are accessible to relevant stakeholders.
    
 ---
-=======
-assignees: ["shawnalpay, jpradocueva"]
->>>>>>> 2a1d69f (updates):.github/ISSUE_TEMPLATE/work-item-issue.md
 
 ## 1. **Problem Statement** *
 Describe the problem, issue, use case, or opportunity that this work item addresses.
