@@ -14,6 +14,21 @@ body:
   - type: markdown
     attributes:
       value: |
+        ## 2. Issue area
+        Select the the area(s) this issue relates to
+
+  - type: dropdown
+    id: issue-area
+    attributes:
+      label: "Indicate which area this issue relates to:"
+      options:
+        - 'Missing FinOps feature, use case, or scenario'
+        - 'Current FOCUS specification content'
+        - 'Produced FOCUS dataset'
+        
+  - type: markdown
+    attributes:
+      value: |
         ## 1. Proposed Change
         Please provide a short description of the change and explain why it is necessary.
 
@@ -24,24 +39,6 @@ body:
       placeholder: "Your input here..."
     validations:
       required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 2. Issue area
-        Select the the area(s) this issue relates to
-
-  - type: dropdown
-    id: issue-area
-    attributes:
-      label: Indicate which area(s) this issue relates to (you may select more than one, if applicable)
-      options:
-        - label: FinOps feature, use case, or scenario
-          value: feature_usecases_scenario
-        - label: Current FOCUS specification content
-          value: FOCUS_specification_content
-        - label: Produced FOCUS dataset
-          value: FOCUS_dataset
 
   - type: markdown
     attributes:
