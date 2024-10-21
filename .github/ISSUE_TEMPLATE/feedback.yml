@@ -1,18 +1,21 @@
-name: Feature Request and Use Case Feedback
-description: Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the current FOCUS specification content or FOCUS datasets. Avoid sharing proprietary information.
+name: "Feature Request and Use Case Feedback"
+description: "Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the current FOCUS specification content or FOCUS datasets. Avoid sharing proprietary information."
 title: "[FEEDBACK]: "
-labels: ["feedback"]
-assignees: ["shawnalpay, jpradocueva,"]
+labels:
+  - "feedback"
+assignees:
+  - "shawnalpay"
+  - "jpradocueva"
 body:
   - type: markdown
     attributes:
       value: "Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the current FOCUS specification content or FOCUS datasets. Avoid sharing proprietary information."
 
-- type: markdown
-  attributes:
-    value: |
-      ## 1. Proposed Change
-      Please provide a short description of the change and explain why it is necessary.
+  - type: markdown
+    attributes:
+      value: |
+        ## 1. Proposed Change
+        Please provide a short description of the change and explain why it is necessary.
 
   - type: textarea
     attributes:
