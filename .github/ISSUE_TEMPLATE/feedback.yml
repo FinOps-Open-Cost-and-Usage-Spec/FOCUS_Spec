@@ -1,21 +1,45 @@
 name: Feature Request and Use Case Feedback
-description: Provide feedback on unsupported use cases or features in the FOCUS specification, including FinOps scenarios, to help prioritize updates. Avoid sharing proprietary information.
+description: Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the current FOCUS specification content or FOCUS datasets. Avoid sharing proprietary information.
 title: "[FEEDBACK]: "
-labels: ["use case"]
+labels: ["feedback"]
 assignees: ["shawnalpay, jpradocueva,"]
 body:
   - type: markdown
     attributes:
-      value: "FOCUS working group seeks gaps in the current specification for FinOps and beyond. Share unsupported use cases or features to prioritize updates. Avoid sharing proprietary information."
-  
+      value: "Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the current FOCUS specification content or FOCUS datasets. Avoid sharing proprietary information."
+
+- type: markdown
+  attributes:
+    value: |
+      ## Proposed Change
+      Please provide a short description of the change and explain why it is necessary.
+
   - type: textarea
     attributes:
       label: Proposed Change
-      description: Short description of the change and why it is necessary.
-      placeholder: Describe the proposed change briefly and why it is necessary
+      description: "Describe the proposed change briefly and explain its necessity."
+      placeholder: "Your input here..."
     validations:
       required: true
-  
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Issue area
+        Select the the area(s) this issue relates to
+
+  - type: checkbox
+    id: issue-area
+    attributes:
+      label: Indicate which area(s) this issue relates to (you may select more than one, if applicable)
+      options:
+        - label: FinOps feature, use case, or scenario
+          value: feature_usecases_scenario
+        - label: Current FOCUS specification content
+          value: FOCUS_specification_content
+        - label: Produced FOCUS dataset
+          value: FOCUS_dataset
+
   - type: textarea
     attributes:
       label: What use cases, FinOps or others, can't be performed with the current specification without this change?
@@ -23,39 +47,116 @@ body:
     validations:
       required: true
 
-  - type: input
+  - type: markdown
     attributes:
-      label: Which FinOps personas perform this use case?
-      description: List one or more FinOps personas that perform this use case
-      placeholder: e.g., Cost Analyst, Cloud Architect, etc
+      value: |
+        ## FinOps Personas
+        Below is a list of FinOps personas. Please check all that apply.
+
+  - type: checkbox
+    id: finops-personas
+    attributes:
+      label: Which the FinOps personas this issue relates to?
+      description: Indicate which FinOps Personas this issue relates to (you may select more than one, if applicable).
+      options:
+        - label: Practitioner
+          value: practitioner
+        - label: Executive
+          value: executive
+        - label: Finance
+          value: finance
+        - label: Engineering
+          value: engineering
+        - label: Product
+          value: product
+        - label: Procurement
+          value: procurement
+        - label: Operations
+          value: operations
+        - label: Other (please specify below)
+          value: other
     validations:
       required: true
 
   - type: input
+    id: other-finops-persona
     attributes:
-      label: For which providers do you perform this use case for?
-      description: List each provider separated by commas
-      placeholder: e.g., AWS, Azure, GCP, Snowflake, etc
+      label: If 'Other', please specify FinOps personas
+      description: "Leave this field empty if you did not select 'Other'."
+      placeholder: Enter FinOps persona(s) name here...
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Providers
+        Select the Providers this issue relates to
+
+  - type: checkbox
+    id: providers
+    attributes:
+      label: Indicate which Providers this issue relates to
+      options:
+        - label: AWS
+          value: AWS
+        - label: GCP
+          value: GCP
+        - label: Microsoft
+          value: Microsoft
+        - label: OCI 
+          value: OCI        
+        - label: Other (please specify below)
+          value: other
     validations:
       required: true
+
+  - type: input
+    id: other-provider
+    attributes:
+      label: If 'Other', please specify the provider
+      description: "Leave this field empty if you did not select 'Other'."
+      placeholder: Enter provider name here...
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Criticality Scale
+        Please indicate how critical this issue or feature request is for your organization using the scale provided below.
 
   - type: dropdown
+    id: criticality-scale
     attributes:
       label: Criticality Scale
       description: On a scale of 1 - 4, how critical is this for your organization?
       options:
-        - '1: Blocks my organization from adopting FOCUS'
-        - '2: Important for adoption in the next 3-6 months'
-        - '3: Important for adoption in the next 6-12 months'
-        - '4: Suggestion, not planning to use FOCUS soon'
+        - label: '1: Blocks my organization from adopting FOCUS'
+          value: 1
+        - label: '2: Important for adoption in the next 3-6 months'
+          value: 2
+        - label: '3: Important for adoption in the next 6-12 months'
+          value: 3
+        - label: '4: Suggestion'
+          value: 4
     validations:
       required: true
 
-  - type: textarea
+  - type: markdown
     attributes:
-      label: Key Metrics and KPIs
-      description: List the metrics and KPIs that will measure the success of this use case (e.g., cost per service, spend reduction percentage).
-      placeholder: e.g., cost per service, spend reduction percentage, etc.
+      value: |
+        ## Objective
+        State the objective of this work item. What outcome is expected?
+        - **Success Criteria**: Define how success will be measured (e.g. metrics and KPIs).
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objective"
+      description: "Describe the expected outcome and success criteria."
+      placeholder: "Your input here..."
+      value: "Outline the expected outcome and success criteria."
     validations:
       required: false
 
@@ -67,10 +168,19 @@ body:
     validations:
       required: true
 
-  - type: textarea
+  - type: markdown
     attributes:
-      label: Data Submission for Discussion
-      description: Provide relevant sample data or data extracts that support your feedback. Ensure data is anonymized and does not include sensitive or proprietary information.
-      placeholder: Attach sample data or data extracts here. Ensure compliance with data privacy guidelines.
+      value: |
+        ## Supporting Documentation
+        - Data Examples: [Attach relevant sample data or provide links; DO NOT share proprietary information]
+        - Related Use Cases: [Attach use cases or provide links]
+        - PRs or Other References: [Provide links to relevant references]
+
+  - type: textarea
+    id: supporting_documentation
+    attributes:
+      label: "Supporting Documentation"
+      description: "Attach or provide links to relevant sample data, data extracts, and related use cases. If available, also provide links to existing PRs or other relevant documents. Ensure data is anonymized and does not include sensitive or proprietary information."
+      placeholder: "Your input here..."
     validations:
-      required: false  
+      required: false
