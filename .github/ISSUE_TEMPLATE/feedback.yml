@@ -14,7 +14,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 2. Issue area
+        ## 1. Issue area
         Select the the area(s) this issue relates to
 
   - type: dropdown
@@ -25,11 +25,13 @@ body:
         - 'Missing FinOps feature, use case, or scenario'
         - 'Current FOCUS specification content'
         - 'Produced FOCUS dataset'
-        
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: |
-        ## 1. Proposed Change
+        ## 2. Proposed Change
         Please provide a short description of the change and explain why it is necessary.
 
   - type: textarea
