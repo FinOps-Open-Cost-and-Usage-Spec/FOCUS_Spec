@@ -31,7 +31,7 @@ body:
         ## 2. Issue area
         Select the the area(s) this issue relates to
 
-  - type: checkbox
+  - type: dropdown
     id: issue-area
     attributes:
       label: Indicate which area(s) this issue relates to (you may select more than one, if applicable)
@@ -73,7 +73,7 @@ body:
         ## 3. FinOps Personas
         Below is a list of FinOps personas. Please check all that apply.
 
-  - type: checkbox
+  - type: dropdown
     id: finops-personas
     attributes:
       label: Which the FinOps personas this issue relates to?
@@ -113,7 +113,7 @@ body:
         ## 4. Providers
         Select the Providers this issue relates to
 
-  - type: checkbox
+  - type: dropdown
     id: providers
     attributes:
       label: Indicate which Providers this issue relates to
