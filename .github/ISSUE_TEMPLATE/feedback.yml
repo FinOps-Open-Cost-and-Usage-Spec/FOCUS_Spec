@@ -11,7 +11,7 @@ body:
 - type: markdown
   attributes:
     value: |
-      ## Proposed Change
+      ## 1. Proposed Change
       Please provide a short description of the change and explain why it is necessary.
 
   - type: textarea
@@ -25,7 +25,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## Issue area
+        ## 2. Issue area
         Select the the area(s) this issue relates to
 
   - type: checkbox
@@ -40,17 +40,34 @@ body:
         - label: Produced FOCUS dataset
           value: FOCUS_dataset
 
+  - type: markdown
+    attributes:
+      value: |
+        ## Use Cases Impacted
+        Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the current specification without the proposed change.
+
   - type: textarea
+    id: impacted_use_cases
     attributes:
       label: What use cases, FinOps or others, can't be performed with the current specification without this change?
-      description: Describe in detail the use cases, whether FinOps-related or otherwise, that your organization cannot perform with the current specification without the proposed change.
+      description: "Provide detailed descriptions of the use cases that can't be performed due to the current limitations."
+      placeholder: "Your input here..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: supporting_information
+    attributes:
+      label: Context / Supporting Information
+      description: "Provide any other relevant information here."
+      placeholder: "Your input here..."
     validations:
       required: true
 
   - type: markdown
     attributes:
       value: |
-        ## FinOps Personas
+        ## 3. FinOps Personas
         Below is a list of FinOps personas. Please check all that apply.
 
   - type: checkbox
@@ -83,14 +100,14 @@ body:
     attributes:
       label: If 'Other', please specify FinOps personas
       description: "Leave this field empty if you did not select 'Other'."
-      placeholder: Enter FinOps persona(s) name here...
+      placeholder: "Your input here..."
     validations:
       required: false
 
   - type: markdown
     attributes:
       value: |
-        ## Providers
+        ## 4. Providers
         Select the Providers this issue relates to
 
   - type: checkbox
@@ -116,14 +133,14 @@ body:
     attributes:
       label: If 'Other', please specify the provider
       description: "Leave this field empty if you did not select 'Other'."
-      placeholder: Enter provider name here...
+      placeholder: "Your input here..."
     validations:
       required: false
 
   - type: markdown
     attributes:
       value: |
-        ## Criticality Scale
+        ## 5. Criticality Scale
         Please indicate how critical this issue or feature request is for your organization using the scale provided below.
 
   - type: dropdown
@@ -160,27 +177,18 @@ body:
     validations:
       required: false
 
-  - type: textarea
-    attributes:
-      label: Context / Supporting information
-      description: Provide any other relevant information here
-      placeholder: Additional details...
-    validations:
-      required: true
-
   - type: markdown
     attributes:
       value: |
-        ## Supporting Documentation
+        ## 6. Supporting Documentation
         - Data Examples: [Attach relevant sample data or provide links; DO NOT share proprietary information]
-        - Related Use Cases: [Attach use cases or provide links]
         - PRs or Other References: [Provide links to relevant references]
 
   - type: textarea
     id: supporting_documentation
     attributes:
       label: "Supporting Documentation"
-      description: "Attach or provide links to relevant sample data, data extracts, and related use cases. If available, also provide links to existing PRs or other relevant documents. Ensure data is anonymized and does not include sensitive or proprietary information."
+      description: "Attach or provide links to relevant sample data or data extracts. If available, also provide links to existing PRs or other relevant documents. Ensure data is anonymized and does not include sensitive or proprietary information."
       placeholder: "Your input here..."
     validations:
       required: false
