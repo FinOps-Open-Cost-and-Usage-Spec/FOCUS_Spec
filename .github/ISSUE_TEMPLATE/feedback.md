@@ -1,5 +1,5 @@
 # Feature Request and Use Case Feedback
-description: Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the current FOCUS specification content. Avoid sharing proprietary information.
+description: Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the existing FOCUS specification content. Avoid sharing proprietary information.
 title: "[FEEDBACK]"
 labels: ["feedback"]
 assignees: [shawnalpay, jpradocueva]
@@ -20,7 +20,7 @@ _Briefly describe the problem or opportunity that this issue addresses and why i
 **Which area does this issue relate to?**  
 _Select one of the provided options:_  
 - A: Missing FinOps feature, use case, or scenario
-- B: Current FOCUS specification content
+- B: Existing FOCUS specification content
 - C: Other
 
 **Detailed Description:**  
@@ -28,11 +28,11 @@ _Provide a detailed description of the problem or opportunity. Add context or an
 > **Placeholder:** Provide a comprehensive description of the problem or opportunity, including context and any relevant details.
 
 ## 2. **Use Cases**
-Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the current specification unless this issue is addressed.
+Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the existing specification unless this issue is addressed.
 
-**What use cases, FinOps or others, can't be performed with the current specification unless this issue is addressed?**  
+**What use cases, FinOps or others, can't be performed with the existing specification unless this issue is addressed?**  
 _Provide detailed descriptions of the use cases that can't be performed unless this issue is addressed._  
-> **Placeholder:** List the specific use cases that can't be performed due to the current limitations.
+> **Placeholder:** List the specific use cases that can't be performed due to the existing limitations.
 
 ## 3. **FinOps Personas**
 List the FinOps personas this issue relates to.

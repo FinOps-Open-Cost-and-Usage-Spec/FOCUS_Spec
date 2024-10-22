@@ -1,5 +1,5 @@
 name: "Feature Request and Use Case Feedback"
-description: "Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the current FOCUS specification content. Avoid sharing proprietary information."
+description: "Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the existing FOCUS specification content. Avoid sharing proprietary information."
 title: "[FEEDBACK]: "
 labels:
   - "feedback"
@@ -37,7 +37,7 @@ body:
       description: "Select one of the provided options:"
       options:
         - 'A: Missing FinOps feature, use case, or scenario'
-        - 'B: Current FOCUS specification content'
+        - 'B: Existing FOCUS specification content'
         - 'C: Other'
     validations:
       required: true
@@ -55,14 +55,14 @@ body:
     attributes:
       value: |
         ## 2. **Use Cases**
-        Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the current specification unless this issue is addressed.
+        Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the existing specification unless this issue is addressed.
 
   - type: textarea
     id: use_cases
     attributes:
-      label: What use cases, FinOps or others, can't be performed with the current specification unless this issue is addressed?
+      label: What use cases, FinOps or others, can't be performed with the existing specification unless this issue is addressed?
       description: "Provide detailed descriptions of the use cases that can't be performed unless this issue is addressed."
-      placeholder: "List the specific use cases that can't be performed due to the current limitations."
+      placeholder: "List the specific use cases that can't be performed due to the existing limitations."
     validations:
       required: true
 
