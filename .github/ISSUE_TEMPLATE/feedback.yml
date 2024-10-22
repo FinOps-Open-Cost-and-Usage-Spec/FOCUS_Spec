@@ -72,7 +72,7 @@ body:
         ## 3. **FinOps Personas**
         List the FinOps personas this issue relates to.
 
-  - type: input
+  - type: textarea
     id: finops-personas
     attributes:
       label: Which FinOps personas does this issue relate to?
@@ -87,7 +87,7 @@ body:
         ## 4. **Providers**
         List provider groups or specific providers this issue relates to.
 
-  - type: input
+  - type: textarea
     id: providers
     attributes:
       label: Which provider groups or specific providers does this issue relate to?
