@@ -13,45 +13,45 @@ assignees: [shawnalpay, jpradocueva]
 ## 1. **Problem statement**
 Describe the problem or opportunity that this issue addresses. Explain the context and why it needs resolution.
 
-**Summary:**  
+**Summary:** *  
 _Briefly describe the problem or opportunity that this issue addresses and why it needs resolution._  
 > **Placeholder:** Briefly describe the problem or opportunity that needs resolution.
 
-**Which area does this issue relate to?**  
+**Which area does this issue relate to?** *
 _Select one of the provided options:_  
 - A: Missing FinOps feature, use case, or scenario
 - B: Existing FOCUS specification content
 - C: Other
 
-**Detailed Description:**  
+**Detailed Description:** *
 _Provide a detailed description of the problem or opportunity. Add context or any other relevant information that may help in addressing this issue._  
 > **Placeholder:** Provide a comprehensive description of the problem or opportunity, including context and any relevant details.
 
 ## 2. **Use Cases**
 Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the existing specification unless this issue is addressed.
 
-**What use cases, FinOps or others, can't be performed with the existing specification unless this issue is addressed?**  
+**What use cases, FinOps or others, can't be performed with the existing specification unless this issue is addressed?** *
 _Provide detailed descriptions of the use cases that can't be performed unless this issue is addressed._  
 > **Placeholder:** List the specific use cases that can't be performed due to the existing limitations.
 
 ## 3. **FinOps Personas**
 List the FinOps personas this issue relates to.
 
-**Which FinOps personas does this issue relate to?**  
+**Which FinOps personas does this issue relate to?** *
 _Indicate which FinOps personas this issue relates to._  
 > **Placeholder:** e.g., Practitioner, Executive, Finance, Engineering, Procurement, Operations, etc.
 
 ## 4. **Providers**
 List provider groups or specific providers this issue relates to.
 
-**Which provider groups or specific providers does this issue relate to?**  
+**Which provider groups or specific providers does this issue relate to?** *
 _List provider groups (e.g., CSPs, SaaS) separated by semicolons (`;`), and specific providers within those groups separated by commas (`,`). If the issue applies to all providers within a group, you can simply specify the group name (e.g., 'All CSPs')._  
 > **Placeholder:** e.g., All CSPs; SaaS: Snowflake, Salesforce
 
 ## 5. **Criticality Scale**
 Indicate how critical this issue or feature request is for your organization using the scale provided below.
 
-**On a scale of 1 - 4, how critical is this for your organization?**  
+**On a scale of 1 - 4, how critical is this for your organization?** *
 _Select one of the provided options:_  
 - 1: Blocks my organization from adopting FOCUS
 - 2: Important for adoption in the next 3-6 months
