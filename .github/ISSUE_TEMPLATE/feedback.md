@@ -53,10 +53,10 @@ Indicate how critical this issue or feature request is for your organization usi
 
 **On a scale of 1 - 4, how critical is this for your organization? [*]**  
 _Select one of the provided options:_  
-- 1: Blocks my organization from adopting FOCUS
-- 2: Important for adoption in the next 3-6 months
-- 3: Important for adoption in the next 6-12 months
-- 4: Suggestion, not planning to use FOCUS soon
+- 1: Critical - Blocks my organization from adopting FOCUS
+- 2: Important - Ideally resolved within the next 3-6 months
+- 3: Important - Ideally resolved within the next 6-12 months
+- 4: Suggestion - Resolution not urgent
 
 ## 6. **Objective**
 State the objective of this feedback. 
