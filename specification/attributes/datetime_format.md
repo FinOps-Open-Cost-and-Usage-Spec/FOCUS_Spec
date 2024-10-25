@@ -14,7 +14,7 @@ Date/Time Format
 
 ## Description
 
-Rules and formatting requirements for date/time-related columns appearing in a FOCUS dataset.
+Rules and formatting requirements for date/time-related columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Requirements
 
