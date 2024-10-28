@@ -1,6 +1,6 @@
 # Data Type
 
-The data type of the column provided in the FOCUS dataset.
+The data type of the column provided in the [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 The DataType MUST be provided in the FOCUS Metadata schema. DataType MUST be of type String and MUST NOT contain null values.
 
