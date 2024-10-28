@@ -1,4 +1,4 @@
-# Feature Request and Use Case Feedback
+# Feedback on Unsupported Features, Use Cases, and Existing FOCUS Spec.
 description: Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the existing FOCUS specification content. Avoid sharing proprietary information.  
 title: "[FEEDBACK]"  
 labels: ["feedback"]  
