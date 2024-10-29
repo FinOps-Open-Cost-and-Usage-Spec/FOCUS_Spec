@@ -4,7 +4,7 @@ Charge Period End represents the [*exclusive*](#glossary:exclusivebound) end dat
 
 The ChargePeriodEnd column adheres to the following requirements:
 
-* ChargePeriodEnd MUST be present in a FOCUS dataset, MUST be of type Date/Time, MUST be an *exclusive* value, and MUST NOT contain null values.
+* ChargePeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset), MUST be of type Date/Time, MUST be an *exclusive* value, and MUST NOT contain null values.
 * ChargePeriodEnd MUST match the ending date and time boundary of the effective period of the charge.
 
 ## Column ID
