@@ -2,7 +2,7 @@
 
 Charge Class indicates whether the row represents a correction to a previously invoiced [*billing period*](#glossary:billing-period). Charge Class is commonly used to differentiate corrections from regularly incurred charges.
 
-The ChargeClass column MUST be present in the FOCUS dataset. This column MUST be of type String and MUST be "Correction" when the row represents a correction to a previously invoiced *billing period*. ChargeClass MUST be null when it is not a correction or when it is a correction within the current *billing period*.
+The ChargeClass column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset). This column MUST be of type String and MUST be "Correction" when the row represents a correction to a previously invoiced *billing period*. ChargeClass MUST be null when it is not a correction or when it is a correction within the current *billing period*.
 
 ## Column ID
 

@@ -1,22 +1,20 @@
-# Provider has an error in their schema metadata
+# Provider Metadata Error Correction
 
 ## Scenario
 
-ACME's previous exports used Focus Version 1.0. They are now going to adopt Focus Version 1.1.  It is required that they create a new schema metadata object when using a new FOCUS version regardless of schema changes. In this example, the FOCUS new version adoption doesn't include columns changes. This is to illustrate that FOCUS Version changes are independent of column changes, however, this scenario is unlikely.
+ACME has discovered that while their export includes the column x_awesome_column3, the [Schema](#schema) metadata does not include this column. In this case, the provider fixes the metadata in the existing schema object and does not need to create a new schema object. Reference metadata remains the same.
 
 ## Supplied Metadata
 
-## Location of the new schema object
+Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`.
 
-`/FOCUS/metadata/schemas/schema-45678-abcde-45678-abcde-45678.json`
-
-## Content of the schema object
+The updated schema related metadata could look like this:
 
 ```json
  {
-  "SchemaId": "45678-abcde-45678-abcde-45678",
-  "FocusVersion": "1.1",
-  "CreationDate": "2024-04-02T12:01:03.083z",
+  "SchemaId": "34567-abcde-34567-abcde-34567",
+  "FocusVersion": "1.0",
+  "CreationDate": "2024-03-02T12:01:03.083z",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
@@ -63,10 +61,11 @@ ACME's previous exports used Focus Version 1.0. They are now going to adopt Focu
           },
           {
                 "ColumnName": "x_awesome_column2",
-                "DataType": "DATETIME"
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
           }
       ]
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)
