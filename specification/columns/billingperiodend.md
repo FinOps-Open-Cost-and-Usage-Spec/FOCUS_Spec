@@ -4,7 +4,7 @@ Billing Period End represents the [*exclusive*](#glossary:exclusivebound) end da
 
 The BillingPeriodEnd column adheres to the following requirements:
 
-* The BillingPeriodEnd column MUST be present in a FOCUS dataset.
+* The BillingPeriodEnd column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * This column MUST be of type [Date/Time Format](#date/timeformat), MUST be an *exclusive* value, and MUST NOT contain null values.
 * The sum of the [BilledCost](#billedcost) column for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
