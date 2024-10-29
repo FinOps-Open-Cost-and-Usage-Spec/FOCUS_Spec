@@ -4,7 +4,7 @@ Charge Frequency indicates how often a charge will occur. Along with the [charge
 
 The ChargeFrequency column adheres to the following requirements:
 
-* The ChargeFrequency column is RECOMMENDED be present in a FOCUS dataset and MUST NOT be null.
+* The ChargeFrequency column is RECOMMENDED be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
 * This column is of type String and MUST be one of the allowed values.
 * When [ChargeCategory](#chargecategory) is "Purchase", ChargeFrequency MUST NOT be "Usage-Based".
 
