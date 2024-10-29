@@ -12,13 +12,6 @@ Some of the use cases this capability can enable:
 - The FOCUS spec will make it easier to merge multiple billing data sources together, and perform cross-cloud and cross-vendor analysis and cost reporting.
 - The FOCUS spec should make it easier to open source more FinOps visibility tools, and to accelerate the FinOps framework capability of data ingestion and normalization.
 
-For more information, please see:
-
-- [Project Charter](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf)
-- [Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md)
-- [Steering Committee](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/steering_committee.md)
-- [Release Planning](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/RELEASE-PLANNING.md)
-
 ## Notation Conventions and Compliance
 
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
@@ -50,5 +43,9 @@ Changes to the [specification](./specification/overview.md) are versioned accord
 
 See the [project repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation) for information about the following, and more:
 
+- [Project Charter](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf)
+- [Operating Procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md)
+- [Steering Committee](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/steering_committee.md)
+- [Release Planning](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/RELEASE-PLANNING.md)
 - [Change / contribution process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/contributing.md)
 
