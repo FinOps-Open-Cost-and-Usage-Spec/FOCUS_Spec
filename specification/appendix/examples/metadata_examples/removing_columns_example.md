@@ -1,16 +1,14 @@
-# Provider has an error in their schema metadata
+# Removing Columns
 
 ## Scenario
 
-ACME has discovered that while their export includes the column x_awesome_column3, the schema metadata does not include this column. In this case, the provider fixes the metadata in existing the schema object and does not need to create a new schema object.  Reference metadata remains the same.
+ACME has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3. The provider creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid).
 
 ## Supplied Metadata
 
-## Location of the schema object
+Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`.
 
-`/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
-
-## Content of the schema object
+The updated schema related metadata could look like this:
 
 ```json
  {
@@ -63,10 +61,10 @@ ACME has discovered that while their export includes the column x_awesome_column
           },
           {
                 "ColumnName": "x_awesome_column2",
-                "DataType": "STRING",
-                "StringMaxLength": 64,
-                "StringEncoding": "UTF-8"
+                "DataType": "DATETIME"
           }
       ]
 }
 ```
+
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#schemametadatatofocusdatareference)

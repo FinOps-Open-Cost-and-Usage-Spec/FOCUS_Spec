@@ -1,22 +1,20 @@
-# Removing Columns
+# FOCUS Version Changed
 
 ## Scenario
 
-ACME has decided to remove columns from their FOCUS data export. The column removed is x_awesome_column3. The provider creates a new schema object to represent the new schema, this schema object has a unique SchemaId.
+ACME's previous exports used FOCUS version 1.0. They are now going to adopt FOCUS version 1.1.  It is required that they create a new schema metadata object which specifies the new FOCUS version via the [FOCUS Version](#focusversion) property - regardless of schema changes. In this example, the new FOCUS version adoption doesn't include columns changes. This is to illustrate that FOCUS version changes are independent of column changes, however, this scenario is unlikely.
 
 ## Supplied Metadata
 
-## Location for the new schema object
+Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-45678-abcde-45678-abcde-45678.json`.
 
-`/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`
-
-## Content for the new schema object
+The updated schema related metadata could look like this:
 
 ```json
  {
-  "SchemaId": "34567-abcde-34567-abcde-34567",
-  "FocusVersion": "1.0",
-  "CreationDate": "2024-03-02T12:01:03.083z",
+  "SchemaId": "45678-abcde-45678-abcde-45678",
+  "FocusVersion": "1.1",
+  "CreationDate": "2024-04-02T12:01:03.083z",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
@@ -69,4 +67,4 @@ ACME has decided to remove columns from their FOCUS data export. The column remo
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#schemametadatatofocusdatareference)

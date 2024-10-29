@@ -1,22 +1,20 @@
-# Changing a Column's Metadata Example
+# Schema Metadata
 
 ## Scenario
 
-ACME has decided to change the datatype of column x_awesome_column1 from a string to a number. ACME creates a new schema object with the modification to x_awesome_column2.
+ACME has only provided one [Schema](#schema) for their FOCUS data export. ACME provides a directory of schemas and each schema is a single file. Acme's provides a file representing the schema for the data they provide.
 
 ## Supplied Metadata
 
-## Location for the new schema object
+Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-1234-abcde-12345-abcde-12345.json`.
 
-`/FOCUS/metadata/schemas/schema-67891-abcde-67891-abcde-67891.json`
-
-## Content for the new schema object
+The updated schema related metadata could look like this:
 
 ```json
- {
-  "SchemaId": "67891-abcde-67891-abcde-67891",
+{
+  "SchemaId": "1234-abcde-12345-abcde-12345",
   "FocusVersion": "1.0",
-  "CreationDate": "2024-06-02T12:01:03.083z",
+  "CreationDate": "2024-01-01T12:01:03.083z",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
@@ -54,19 +52,8 @@ ACME has decided to change the datatype of column x_awesome_column1 from a strin
                 "ColumnName": "Tags",
                 "DataType": "JSON",
                 "ProviderTagPrefixes": ["acme", "ac"]
-          },
-          {
-                "ColumnName": "x_awesome_column1",
-                "DataType": "DECIMAL",
-                "NumericPrecision": 20,
-                "NumberScale": 10
-          },
-          {
-                "ColumnName": "x_awesome_column2",
-                "DataType": "DATETIME"
           }
       ]
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](schema_metadata_reference_example.md)
