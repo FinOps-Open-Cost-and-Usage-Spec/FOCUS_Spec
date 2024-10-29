@@ -1,6 +1,6 @@
 # Unit Format
 
-Billing data frequently captures data measured in units related to data size, count, time, and other [*dimensions*](#glossary:dimension). The Unit Format attribute provides a standard for expressing units of measure in columns appearing in a FOCUS dataset.
+Billing data frequently captures data measured in units related to data size, count, time, and other [*dimensions*](#glossary:dimension). The Unit Format attribute provides a standard for expressing units of measure in columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 All columns defined in FOCUS specifying Unit Format as a value format MUST follow the requirements listed below.
 
@@ -14,7 +14,7 @@ Unit Format
 
 ## Description
 
-Indicates standards for expressing measurement units in columns appearing in a FOCUS dataset.
+Indicates standards for expressing measurement units in columns appearing in a *FOCUS dataset*.
 
 ## Requirements
 

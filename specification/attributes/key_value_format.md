@@ -14,7 +14,7 @@ Key-Value Format
 
 ## Description
 
-Rules and formatting requirements for columns appearing in a FOCUS dataset that convey data as key-value pairs.
+Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset) that convey data as key-value pairs.
 
 ## Requirements
 
