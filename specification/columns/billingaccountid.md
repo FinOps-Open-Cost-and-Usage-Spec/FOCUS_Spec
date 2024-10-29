@@ -4,7 +4,7 @@ A Billing Account ID is a provider-assigned identifier for a [*billing account*]
 
 The BillingAccountId column adheres to the following requirements:
 
-* The BillingAccountId column MUST be present in a FOCUS dataset.
+* The BillingAccountId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * This column MUST be of type String and MUST NOT contain null values.
 * BillingAccountId MUST be a globally unique identifier within a provider.
 
