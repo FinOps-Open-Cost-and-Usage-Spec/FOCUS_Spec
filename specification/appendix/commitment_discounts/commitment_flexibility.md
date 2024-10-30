@@ -29,10 +29,10 @@ The commitment discount covers the first charge period for 1 VM_Large resource (
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -61,10 +61,10 @@ The VM_Large commitment discount is unused because no VM_Large resources are run
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -81,10 +81,10 @@ The VM_Large commitment discount is unused because no VM_Large resources are run
         "CommitmentDiscountUnit": "Hour"
     },
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Standard",
@@ -111,10 +111,10 @@ Usage: 2 VM_Medium resources run from 2023-01-01T00:00:00 to 2023-01-01T01:00:00
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -131,10 +131,10 @@ Usage: 2 VM_Medium resources run from 2023-01-01T00:00:00 to 2023-01-01T01:00:00
         "CommitmentDiscountUnit": "Normalized Hour"
     },
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -163,10 +163,10 @@ The VM_Small commitment discount was fully utilized but still only covered 25% o
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -183,10 +183,10 @@ The VM_Small commitment discount was fully utilized but still only covered 25% o
         "CommitmentDiscountUnit": "Normalized Hour"
     },
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Standard",
