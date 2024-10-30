@@ -2,7 +2,7 @@ name: Spec Change
 description: Submit changes or updates to the current specification.
 title: "[SPEC CHANGE]: "
 labels: ["discussion topic"]
-assignees: ["mike-finopsorg,udam-f2"]
+assignees: ["shawnalpay"]
 body:
   - type: dropdown
     attributes:
