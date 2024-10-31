@@ -5,7 +5,7 @@ used for cost analysis and reporting scenarios.
 
 The InvoiceIssuer column adheres to the following requirements:
 
-* The InvoiceIssuer column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset). 
+* The InvoiceIssuer column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * This column MUST be of type String and MUST NOT contain null values.
 
 See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider](#provider), [Publisher](#publisher) and
