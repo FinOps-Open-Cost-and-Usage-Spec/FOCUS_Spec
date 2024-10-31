@@ -14,6 +14,8 @@ body:
         ### **Template Usage Notes**:
         1. All fields marked as **mandatory** [*] must be filled before submission.
         2. For **Supporting Data/Documentation**, ensure that linked files are accessible to relevant stakeholders.
+        3. If you wish to file a bug report using the markdown version of this issue template, please click [here](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/new?template=feedback.md)
+
 
   - type: markdown
     attributes:
