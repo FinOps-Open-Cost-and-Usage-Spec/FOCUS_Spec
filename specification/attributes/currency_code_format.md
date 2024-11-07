@@ -14,7 +14,7 @@ Currency Code Format
 
 ## Description
 
-Formatting for currency columns appearing in billing data.
+Formatting for currency columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Requirements
 

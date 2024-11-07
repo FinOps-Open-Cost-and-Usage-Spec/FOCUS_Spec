@@ -2,7 +2,7 @@
 
 A Publisher is an entity that produces the [*resources*](#glossary:resource) or [*services*](#glossary:service) that were purchased. It is commonly used for cost analysis and reporting scenarios.
 
-The Publisher column MUST be present in the billing data. This column MUST be of type String and MUST NOT contain null values.
+The Publisher column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset). This column MUST be of type String and MUST NOT contain null values.
 
 See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider](#provider), Publisher and
 [Invoice Issuer](#invoiceissuer) values that can be used for various purchasing scenarios.
