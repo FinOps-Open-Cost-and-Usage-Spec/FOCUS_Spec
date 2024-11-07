@@ -4,7 +4,7 @@ A Region ID is a provider-assigned identifier for an isolated geographic area wh
 
 The RegionId column adheres to the following requirements:
 
-* The RegionId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a *region* and MUST be of type String.
+* The RegionId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region and MUST be of type String.
 * RegionId MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region by the Provider and MAY contain null values when a *resource* or *service* is not restricted to an isolated geographic area.
 
 ## Column ID
