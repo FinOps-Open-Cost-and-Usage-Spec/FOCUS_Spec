@@ -1,6 +1,6 @@
 ## Version
 
-v1.0 Candidate Release
+v1.2 Candidate Release
 
 | <span style="color:Red">&#x26A1; Warning</span>                                |
 |:-------------------------------------------------------------------------------|
