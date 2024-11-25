@@ -1,7 +1,46 @@
 ## Release Planning 
 This section outlines the planned release schedule and key milestones for the FOCUS project. It includes the scope and high-level system requirements for each version, as well as detailed timelines for the development and review processes for each present and past releases. 
 
-### FOCUS Releases Scope
+### Scope of Upcoming Releases
+
+<table>
+    <tr>
+        <th>Version</th>
+        <th>Release By</th>
+        <th>Scope | High-Level System Requirements</th>
+    </tr>
+        <tr>
+        <td>v1.2</td>
+        <td>June 2025</td>
+        <td>
+            <strong>Initial Software as a Service (SaaS) Support</strong>
+            <ul>
+                <li>TBD
+                </li>
+            </ul>
+            <strong>Continued expansion of Cloud Service Provider concepts</strong>
+            <ul>
+                <li>TBD
+                </li>
+            </ul>
+            <strong>Fixes and clarifications</strong>
+            <ul>
+                <li>TBD</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>v1.3</td>
+        <td>Late 2025</td>
+        <td>
+            REQ 7: Keyword value/brief description<br>
+            REQ 8: Keyword value/brief description<br>
+            REQ 9: Keyword value/brief description
+        </td>
+    </tr>
+</table>
+
+### Scope of Previous Releases
 <table>
     <tr>
         <th>Version</th>
@@ -10,9 +49,9 @@ This section outlines the planned release schedule and key milestones for the FO
     </tr>
     <tr>
         <td>v1.1</td>
-        <td>Nov 11, 2024</td>
+        <td>Nov 2024</td>
         <td>
-            <strong>SKU and SKU Price Details</strong>
+<strong>SKU and SKU Price Details</strong>
             <ul>
                 <li>Provide deeper visibility into SKU and SKU Price details (in addition to the current SKU and SKU Price IDs that are available in FOCUS) which enables many standard FinOps use cases from cost reporting to commitment optimization.
                 </li>
@@ -39,17 +78,8 @@ This section outlines the planned release schedule and key milestones for the FO
         </td>
     </tr>
     <tr>
-        <td>v1.2</td>
-        <td>Mid, 2025</td>
-        <td>
-            REQ 4: Keyword value/brief description<br>
-            REQ 5: Keyword value/brief description<br>
-            REQ 6: Keyword value/brief description
-        </td>
-    </tr>
-    <tr>
-        <td>v1.3</td>
-        <td>Late, 2025</td>
+        <td>v1.0</td>
+        <td>June 2024</td>
         <td>
             REQ 7: Keyword value/brief description<br>
             REQ 8: Keyword value/brief description<br>
