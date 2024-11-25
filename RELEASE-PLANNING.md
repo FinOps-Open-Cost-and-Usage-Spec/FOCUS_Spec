@@ -15,17 +15,19 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>
             <strong>Initial Software as a Service (SaaS) Support</strong>
             <ul>
-                <li>TBD
+                <li>Addition of columns to support SaaS-centric concepts and billing models
                 </li>
             </ul>
             <strong>Continued expansion of Cloud Service Provider concepts</strong>
             <ul>
-                <li>TBD
+                <li>Addition of Invoice ID to support invoice reconciliation use cases
+                </li>
+                <li>Addition of SKU properties that are prominent / common across providers
                 </li>
             </ul>
             <strong>Fixes and clarifications</strong>
             <ul>
-                <li>TBD</li>
+                <li>Revisions of existing specification content to increase consistency and reduce ambiguity</li>
             </ul>
         </td>
     </tr>
@@ -33,9 +35,7 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.3</td>
         <td>Late 2025</td>
         <td>
-            REQ 7: Keyword value/brief description<br>
-            REQ 8: Keyword value/brief description<br>
-            REQ 9: Keyword value/brief description
+            TBD
         </td>
     </tr>
 </table>
@@ -46,6 +46,13 @@ This section outlines the planned release schedule and key milestones for the FO
         <th>Version</th>
         <th>Release By</th>
         <th>Scope | High-Level System Requirements</th>
+    </tr>
+        <tr>
+        <td>v1.0</td>
+        <td>June 2024</td>
+        <td>
+            TBD
+        </td>
     </tr>
     <tr>
         <td>v1.1</td>
@@ -77,19 +84,11 @@ This section outlines the planned release schedule and key milestones for the FO
             </ul>
         </td>
     </tr>
-    <tr>
-        <td>v1.0</td>
-        <td>June 2024</td>
-        <td>
-            REQ 7: Keyword value/brief description<br>
-            REQ 8: Keyword value/brief description<br>
-            REQ 9: Keyword value/brief description
-        </td>
-    </tr>
+
 </table>
 
 ### Estimated Timeline for v1.2
-This table displays key milestones and dates related to the development of FOCUS Release v1.2 Specifications.
+This table displays key milestones and dates related to the development of FOCUS Release v1.2 Specification.
 <table>
   <tr>
     <th>Date</th>
@@ -154,7 +153,7 @@ This table displays key milestones and dates related to the development of FOCUS
 </table>
 
 ### Estimated Timeline for v1.1
-This table displays key milestones and dates related to the development of FOCUS Release v1.1.
+FOCUS Release V1.1 was announced during the FinOps XE event in Barcelona on November 12, 2024.
 <table>
     <thead>
         <tr>
@@ -196,7 +195,7 @@ This table displays key milestones and dates related to the development of FOCUS
         </tr>
         <tr>
             <td>07-Nov-24</td>
-            <td>WG Approve v1.1</td>
+            <td>WG Approval v1.1</td>
             <td>FOCUS Release Candidate v1.1. Approved by FOCUS Members</td>
         </tr>
         <tr>
@@ -212,11 +211,8 @@ This table displays key milestones and dates related to the development of FOCUS
     </tbody>
 </table>
 
-
-
-
 ### Estimated Timeline for v1.0
-FOCUS Release V1.1 will be announced during the FinOpsX event in San Diego on June 20, 2024.
+FOCUS Release V1.0 was announced during the FinOpsX event in San Diego on June 20, 2024.
 <table>
     <thead>
         <tr>
@@ -248,12 +244,12 @@ FOCUS Release V1.1 will be announced during the FinOpsX event in San Diego on Ju
         </tr>
         <tr>
             <td>June 13</td>
-            <td>Release Candidate Approve by the WG Members</td>
+            <td>WG Approval v1.0</td>
             <td></td>
         </tr>
         <tr>
             <td>Jun 19</td>
-            <td>Steering Committee Ratifies the Release</td>
+            <td>SC Ratification v1.2</td>
             <td></td>
         </tr>
         <tr>
