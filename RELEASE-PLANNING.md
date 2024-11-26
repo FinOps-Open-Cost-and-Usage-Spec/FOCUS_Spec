@@ -23,6 +23,8 @@ This section outlines the planned release schedule and key milestones for the FO
                 <li>Addition of Invoice ID to support invoice reconciliation use cases
                 </li>
                 <li>Addition of SKU properties that are prominent / common across providers
+                </li>                
+                <li>Addition of Commitment Discount Unit Price and Cost
                 </li>
             </ul>
             <strong>Fixes and clarifications</strong>
