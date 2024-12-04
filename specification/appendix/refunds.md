@@ -60,8 +60,8 @@ Current values observed in billing data for various scenarios:
 | GCP       | credit                             | Adjustment | Correction | DISCOUNT |
 | GCP       | credit                             | Adjustment | Correction | PROMOTION |
 | GCP       | credit                             | Adjustment | Correction | NULL |
-| GCP       | credit                             | Adjustment | NULL       | FREE_TIER |
-| GCP       | credit                             | Adjustment | NULL       | COMMITTED_USAGE_DISCOUNT |
+| GCP       | credit                             | Adjustment | NULL       | FREE_TIER ----- should this not be usage? |
+| GCP       | credit                             | Adjustment | NULL       | COMMITTED_USAGE_DISCOUNT  ----- should this not be usage?|
 | Microsoft | Purchase                           | Purchase   | NULL      | Upfront or recurring fee for Marketplace offers or commitment discounts.                                                                                                                                                                                                                                                                             |
 | Microsoft | Usage                              | Usage      | NULL      | Consumption-based usage of deployed resources.                                                                                                                                                                                                                                                                                                             |
 | Microsoft | Refund                             | Adjustment | Correction | Refund provided by support.                                                                                                                                                                                                                                                                                                                                |
