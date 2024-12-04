@@ -36,6 +36,14 @@ Allowed values:
 | :--------- | :------------------------------------|
 | Correction | Correction to a previously invoiced *billing period* (e.g., refunds and credit modifications). |
 
+OPTIONS:
+
+| Value      | Description                          |
+| :--------- | :------------------------------------|
+| General Correction | Correction to a previously invoiced *billing period* (e.g., refunds and credit modifications). |
+| Price Correction | Correction to a previously invoiced *billing period* (e.g., refunds and credit modifications). |
+| Usage Correction | Correction to a previously invoiced *billing period* (e.g., refunds and credit modifications). |
+
 ## Introduced (version)
 
 1.0
