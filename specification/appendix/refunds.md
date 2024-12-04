@@ -30,8 +30,6 @@ Multi line item correction that follows the billing format and time period of th
 
 this solution is more complex for providers to implement but alignes the refund line items to the service and time period being refunded providing a more accurate billing history and representation, whilst maintaining support for invoice reconciliation. 
 
-## Usage Scenarios
-
 ## Example usage scenarios
 
 Current values observed in billing data for various scenarios:
@@ -59,7 +57,7 @@ Current values observed in billing data for various scenarios:
 | Microsoft | Adjustment                         | Adjustment | NULL      | Rounding errors.                                                                                                                                                                                                                                                                                                                                           |
 | Microsoft | Tax                                | Tax        | NULL      | US sales tax or VAT.                                                                                                                                                                                                                                                                                                                                       |
 
-## Examples
+## Record Styles Intended Usage
 
 | ChargeCategory | ChargeClass | record style       | SkuId              | SkuPriceId         |
 |----------------|-------------|--------------------|--------------------|--------------------|
@@ -73,6 +71,8 @@ Current values observed in billing data for various scenarios:
 | Adjustment     | Correction  | MAY be bulk        | MAY be null        | MAY be null        |
 | Tax            | (null)      | MUST be bulk       | MUST be null       | MUST be null       |
 | Tax            | Correction  | MUST be bulk       | MUST be null       | MUST be null       |
+
+## Examples
 
 Within the FOCUS specification, the following examples demonstrate how a refund or credit appears across various usage scenarios.
 
