@@ -8,7 +8,7 @@ The PricingQuantity column adheres to the following requirements:
 * This column MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
 * The value MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction".
 * This column MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
-* When unit prices are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric, except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
+* When unit prices (e.g. [ContractedUnitPrice](#contractedunitprice)) are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric (e.g. [ContractedCost](#contractedcost)), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 
 ## Column ID
 
