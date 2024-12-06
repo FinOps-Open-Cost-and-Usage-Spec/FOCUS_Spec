@@ -11,7 +11,7 @@ The EffectiveCost column adheres to the following requirements:
 
 * The EffectiveCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
 * This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency.
-* EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover future eligible charges. 
+* EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover future eligible charges.
 * The aggregated EffectiveCost for a billing period may not match the charge received on the invoice for the same *billing period*.
 
 In cases where the [ChargeCategory](#chargecategory) is not "Usage" or "Purchase", the following applies:
