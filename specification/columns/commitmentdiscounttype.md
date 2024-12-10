@@ -2,6 +2,17 @@
 
 Commitment Discount Type is a provider-assigned name to identify the type of [*commitment discount*](#glossary:commitment-discount) applied to the [*row*](#glossary:row). The CommitmentDiscountType column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
+---
+The CommitmentDiscountType column adheres to the following requirements:
+
+* CommitmentDiscountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* If present, the column MUST conform to the following additional requirements:
+  * CommitmentDiscountType MUST be of type String.
+  * CommitmentDiscountType MUST conform to [String Handling](#stringhandling) requirements.
+  * CommitmentDiscountType MUST be null if [CommitmentDiscountId](#commitmentdiscountid) is null.
+  * CommitmentDiscountType MUST NOT be null if CommitmentDiscountId is not null.
+
+---
 The CommitmentDiscountType column adheres to the following requirements:
 
 * The CommitmentDiscountType column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
