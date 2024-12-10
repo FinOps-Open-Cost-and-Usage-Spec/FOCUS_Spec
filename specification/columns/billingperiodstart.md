@@ -2,6 +2,17 @@
 
 Billing Period Start represents the [*inclusive*](#glossary:inclusivebound) start date and time of a [*billing period*](#glossary:billing-period). For example, a time period where BillingPeriodStart is '2024-01-01T00:00:00Z' and [BillingPeriodEnd](#billingperiodend) is '2024-02-01T00:00:00Z' includes charges for January, since BillingPeriodStart is inclusive, but does not include charges for February since BillingPeriodEnd is [*exclusive*](#glossary:exclusivebound).
 
+---
+The BillingPeriodStart column adheres to the following requirements:
+
+* BillingPeriodStart MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BillingPeriodStart MUST be of type Date/Time.
+* BillingPeriodStart MUST conform to [Date/Time Format](#date/timeformat) requirements.
+* BillingPeriodStart MUST NOT be null.
+* BillingPeriodStart MUST be the *inclusive beginning bound* of the *billing period*.
+* The sum of the [BilledCost](#billedcost) for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+
+---
 The BillingPeriodStart column adheres to the following requirements:
 
 * The BillingPeriodStart column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset), MUST be of type [Date/Time Format](#date/timeformat), MUST be an *inclusive* value, and MUST NOT contain null values.
