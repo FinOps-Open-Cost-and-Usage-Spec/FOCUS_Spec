@@ -2,6 +2,17 @@
 
 Resource Type describes the kind of [*resource*](#glossary:resource) the charge applies to. A Resource Type is commonly used for scenarios like identifying cost changes in groups of similar *resources* and may include values like Virtual Machine, Data Warehouse, and Load Balancer.
 
+---
+The ResourceType column adheres to the following requirements:
+
+* ResourceType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources and supports assigning types to resources.
+* If present, the column MUST conform to the following additional requirements:
+  * ResourceType MUST be of type String.
+  * ResourceType MUST conform to [String Handling](#stringhandling) requirements.
+  * ResourceType MUST be null if [ResourceId](#resourceid) is null.
+  * ResourceType MUST NOT be null if ResourceId is not null.
+
+---
 The ResourceType column adheres to the following requirements:
 
 * The ResourceType column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources and supports assigning a type for resources.
