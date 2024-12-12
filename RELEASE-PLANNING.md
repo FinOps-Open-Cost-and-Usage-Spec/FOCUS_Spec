@@ -11,7 +11,7 @@ This section outlines the planned release schedule and key milestones for the FO
     </tr>
         <tr>
         <td>v1.2</td>
-        <td>June 2025</td>
+        <td>Jun 2025</td>
         <td>
             <strong>Initial Software as a Service (SaaS) Support</strong>
             <ul>
@@ -51,7 +51,7 @@ This section outlines the planned release schedule and key milestones for the FO
     </tr>
         <tr>
         <td>v1.0</td>
-        <td>June 2024</td>
+        <td>Jun 2024</td>
         <td>
             TBD
         </td>
@@ -240,12 +240,12 @@ FOCUS Release V1.0 was announced during the FinOpsX event in San Diego on June 2
             <td>Freeze working-draft. </br> Final review, only expecting editorial comments.</td>
         </tr>
         <tr>
-            <td>May 13 - June 11</td>
+            <td>May 13 - Jun 11</td>
             <td>IPR Review</td>
             <td>Members may exclude any Essential Claims from their licensing commitments during this period.</td>
         </tr>
         <tr>
-            <td>June 13</td>
+            <td>Jun 13</td>
             <td>WG Approval v1.0</td>
             <td></td>
         </tr>
