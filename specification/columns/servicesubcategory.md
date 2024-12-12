@@ -6,7 +6,7 @@ The Service Subcategory is a secondary classification of the [Service Category](
 The ServiceSubcategory column adheres to the following requirements:
 
 * ServiceSubcategory is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* If present, the column MUST conform to the following additional requirements:
+* If present, the column adheres to the following additional requirements:
   * ServiceSubcategory MUST be of type String.
   * ServiceSubcategory MUST NOT be null.
   * ServiceSubcategory MUST be one of the allowed values.

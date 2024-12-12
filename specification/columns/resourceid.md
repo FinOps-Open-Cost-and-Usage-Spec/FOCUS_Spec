@@ -6,7 +6,7 @@ A Resource ID is an identifier assigned to a [*resource*](#glossary:resource) by
 The ResourceId column adheres to the following requirements:
 
 * ResourceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
-* If present, the column MUST conform to the following additional requirements:
+* If present, the column adheres to the following additional requirements:
   * ResourceId MUST be of type String.
   * ResourceId MUST conform to [String Handling](#stringhandling) requirements.
   * ResourceId MUST be null when a charge  is not related to a *resource*.

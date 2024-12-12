@@ -6,7 +6,7 @@ Pricing Category describes the pricing model used for a charge at the time of us
 The PricingCategory column adheres to the following requirements:
 
 * PricingCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all SKUs.
-* If present, the column MUST conform to the following additional requirements:
+* If present, the column adheres to the following additional requirements:
   * PricingCategory MUST be of type String.
   * PricingCategory MUST be null if [ChargeCategory](#chargecategory) is "Tax".
   * PricingCategory MUST NOT be null if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".

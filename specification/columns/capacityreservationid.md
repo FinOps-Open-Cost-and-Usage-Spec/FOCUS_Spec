@@ -6,7 +6,7 @@ A Capacity Reservation ID is the identifier assigned to a [*capacity reservation
 The CapacityReservationId column adheres to the following requirements:
 
 * CapacityReservationId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *capacity reservations*.
-* If present, the column MUST conform to the following additional requirements:
+* If present, the column adheres to the following additional requirements:
   * CapacityReservationId MUST be of type String.
   * CapacityReservationId MUST conform to [String Handling](#stringhandling) requirements.
   * CapacityReservationId MUST be null when a charge is not related to a *capacity reservation*.
