@@ -133,7 +133,7 @@ This table displays key milestones and dates related to the development of FOCUS
     <td>One week (1) of preparation to start the IPR Review.</td>
   </tr>
   <tr>
-    <td>24-April-25 to 24-May-25</td>
+    <td>24-Apr-25 to 24-May-25</td>
     <td>Start / End IPR Review v1.2</td>
     <td>During this 30-day period, members may exclude essential claims from their licensing commitments. Contact the FOCUS Executive Director.</td>
   </tr>
