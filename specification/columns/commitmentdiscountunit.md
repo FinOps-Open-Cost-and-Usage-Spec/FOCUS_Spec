@@ -11,7 +11,7 @@ The CommitmentDiscountUnit column adheres to the following requirements:
 * CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountId is not null and ChargeClass is not "Correction".
 * CommitmentDiscountUnit MUST be null in all other cases.
 
-In cases where the CommitmentDiscountUnit is not null, the following applies:
+In cases where the CommitmentDiscountUnit is not null, the column adheres to the following additional requirements:
 
 * The CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
 * When accounting for [*commitment discount flexibility*](#glossary:commitment-discount-flexibility), the CommitmentDiscountUnit value SHOULD reflect this consideration.

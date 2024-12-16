@@ -8,7 +8,7 @@ The ChargeClass column adheres to the following requirements:
 * ChargeClass MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeClass MUST be of type String.
 * ChargeClass MUST be null when the row does not represent a correction or when it represents a correction within the current *billing period*.
-* When the row represents a correction to a previously invoiced *billing period*, the following applies:
+* When the row represents a correction to a previously invoiced *billing period*, the column adheres to the following additional requirements:
   * ChargeClass MUST NOT be null.
   * ChargeClass MUST be one of the allowed values.
   * ChargeClass MUST be "Correction".

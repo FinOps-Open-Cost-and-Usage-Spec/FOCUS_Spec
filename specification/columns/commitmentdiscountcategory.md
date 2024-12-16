@@ -10,7 +10,7 @@ The CommitmentDiscountCategory column adheres to the following requirements:
   * CommitmentDiscountCategory MUST be of type String.
   * CommitmentDiscountCategory MUST conform to [String Handling](#stringhandling) requirements.
   * CommitmentDiscountCategory MUST be null if [CommitmentDiscountId](#commitmentdiscountid) is null.
-  * If CommitmentDiscountId is not null, the following applies:
+  * If CommitmentDiscountId is not null, the column adheres to the following additional requirements:
     * CommitmentDiscountCategory MUST NOT be null.
     * CommitmentDiscountCategory MUST be one of the allowed values.
 

@@ -10,7 +10,7 @@ The CommitmentDiscountName column adheres to the following requirements:
   * CommitmentDiscountName MUST be of type String.
   * CommitmentDiscountName MUST conform to [String Handling](#stringhandling) requirements.
   * CommitmentDiscountName MUST be null if [CommitmentDiscountId](#commitmentdiscountid) is null.
-  * If CommitmentDiscountId is not null, the following applies:
+  * If CommitmentDiscountId is not null, the column adheres to the following additional requirements:
     * CommitmentDiscountName MUST NOT be null when a display name can be assigned to a *commitment discount*.
     * CommitmentDiscountName MAY be null when a display name cannot be assigned to a *commitment discount*.
 
