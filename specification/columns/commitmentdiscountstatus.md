@@ -6,10 +6,10 @@ Commitment Discount Status indicates whether the charge corresponds with the con
 The CommitmentDiscountStatus column adheres to the following requirements:
 
 * CommitmentDiscountStatus MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
-* If present, the column adheres to the following additional requirements:
+* If present, CommitmentDiscountStatus adheres to the following additional requirements:
   * CommitmentDiscountStatus MUST be of type String.
   * CommitmentDiscountStatus MUST be null if [CommitmentDiscountId](#commitmentdiscountid) is null.
-  * If CommitmentDiscountId is not null and [Charge Category](#chargecategory) is "Usage", the column adheres to the following additional requirements:
+  * If CommitmentDiscountId is not null and [Charge Category](#chargecategory) is "Usage", CommitmentDiscountStatus adheres to the following additional requirements:
     * CommitmentDiscountStatus MUST NOT be null.
     * CommitmentDiscountStatus MUST be one of the allowed values.
 

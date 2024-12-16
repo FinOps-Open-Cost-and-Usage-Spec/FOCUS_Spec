@@ -6,7 +6,7 @@ A SKU Price ID is a unique identifier that defines the unit price used to calcul
 The SkuPriceId column adheres to the following requirements:
 
 * SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list.
-* If present, the column adheres to the following additional requirements:
+* If present, SkuPriceId adheres to the following additional requirements:
   * SkuPriceId MUST be of type String.
   * SkuPriceId MUST conform to [String Handling](#stringhandling) requirements.
   * SkuPriceId MUST be null if [ChargeCategory](#chargecategory) is "Tax".

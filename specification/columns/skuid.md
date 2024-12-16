@@ -6,7 +6,7 @@ A SKU ID is a unique identifier that defines a provider-supported construct for 
 The SkuId column adheres to the following requirements:
 
 * SkuId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
-* If present, the column adheres to the following additional requirements:
+* If present, SkuId adheres to the following additional requirements:
   * SkuId MUST be of type String.
   * SkuId MUST conform to [String Handling](#stringhandling) requirements.
   * SkuId MUST be null if [ChargeCategory](#chargecategory) is "Tax".

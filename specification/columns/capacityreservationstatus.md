@@ -6,10 +6,10 @@ Capacity Reservation Status indicates whether the charge represents either the c
 The CapacityReservationStatus column adheres to the following requirements:
 
 * CapacityReservationStatus MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *capacity reservations*.
-* If present, the column adheres to the following additional requirements:
+* If present, CapacityReservationStatus adheres to the following additional requirements:
   * CapacityReservationStatus MUST be of type String.
   * CapacityReservationStatus MUST be null if CapacityReservationId is null.
-  * If CapacityReservationId is not null and [ChargeCategory](#chargecategory) is "Usage", the column adheres to the following additional requirements:
+  * If CapacityReservationId is not null and [ChargeCategory](#chargecategory) is "Usage", CapacityReservationStatus adheres to the following additional requirements:
     * CapacityReservationStatus MUST NOT be null.
     * CapacityReservationStatus MUST be one of the allowed values.
     * CapacityReservationStatus MUST be "Unused" when the charge represents the unused portion of a *capacity reservation*.

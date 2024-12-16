@@ -6,11 +6,11 @@ Commitment Discount Category indicates whether the [*commitment discount*](#glos
 The CommitmentDiscountCategory column adheres to the following requirements:
 
 * CommitmentDiscountCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
-* If present, the column adheres to the following additional requirements:
+* If present, CommitmentDiscountCategory adheres to the following additional requirements:
   * CommitmentDiscountCategory MUST be of type String.
   * CommitmentDiscountCategory MUST conform to [String Handling](#stringhandling) requirements.
   * CommitmentDiscountCategory MUST be null if [CommitmentDiscountId](#commitmentdiscountid) is null.
-  * If CommitmentDiscountId is not null, the column adheres to the following additional requirements:
+  * If CommitmentDiscountId is not null, CommitmentDiscountCategory adheres to the following additional requirements:
     * CommitmentDiscountCategory MUST NOT be null.
     * CommitmentDiscountCategory MUST be one of the allowed values.
 

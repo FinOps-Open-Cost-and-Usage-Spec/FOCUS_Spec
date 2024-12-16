@@ -6,7 +6,7 @@ Charge Frequency indicates how often a charge will occur. Along with the [charge
 The ChargeFrequency column adheres to the following requirements:
 
 * ChargeFrequency is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* If present, the column adheres to the following additional requirements:
+* If present, ChargeFrequency adheres to the following additional requirements:
   * ChargeFrequency MUST be of type String.
   * ChargeFrequency MUST NOT be null.
   * ChargeFrequency MUST be one of the allowed values.
