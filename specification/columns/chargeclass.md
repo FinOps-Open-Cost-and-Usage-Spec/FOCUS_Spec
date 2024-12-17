@@ -19,6 +19,7 @@ Charge Class
 ## Description
 
 Indicates whether the row represents a correction to a previously invoiced *billing period*.
+OCI INDICATED: this restriction may need to be removed as corrections can happen in month... need to be aware of this to avoid historic reprocessing 
 
 ## Content Constraints
 

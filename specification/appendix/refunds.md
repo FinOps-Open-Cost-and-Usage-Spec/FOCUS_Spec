@@ -5,6 +5,8 @@
 
 //applies where charge class is correction????
 
+REMINDER: need a headline on why REDUND is not a first class item... i..e. it is meant to be captured in usage and purchase make this clearer
+
 Refunds & late arriving costs are examples of....
  represent line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include: 
 
@@ -84,6 +86,8 @@ Current values observed in billing data for various scenarios:
 | Tax            | Correction  | MUST be bulk       | MUST be null       | MUST be null       |
 
 ## Examples
+
+Show scenarios where correction happens within current billing periond and also where it applies to previous billing period.... highlight charge period differences and itemized vs not itemized... note in billing period segmentation 
 
 Within the FOCUS specification, the following examples demonstrate how a refund or credit appears across various usage scenarios.
 
