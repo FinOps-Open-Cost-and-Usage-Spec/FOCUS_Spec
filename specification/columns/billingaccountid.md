@@ -2,6 +2,16 @@
 
 A Billing Account ID is a provider-assigned identifier for a [*billing account*](#glossary:billing-account). *Billing accounts* are commonly used for scenarios like grouping based on organizational constructs, invoice reconciliation and cost allocation strategies.
 
+---
+The BillingAccountId column adheres to the following requirements:
+
+* BillingAccountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BillingAccountId MUST be of type String.
+* BillingAccountId MUST conform to [String Handling](#stringhandling) requirements.
+* BillingAccountId MUST NOT be null.
+* BillingAccountId MUST be a globally unique identifier within a provider.
+
+---
 The BillingAccountId column adheres to the following requirements:
 
 * The BillingAccountId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).

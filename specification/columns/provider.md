@@ -2,6 +2,15 @@
 
 A Provider is an entity that makes the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for purchase. It is commonly used for cost analysis and reporting scenarios.
 
+---
+The ProviderName column adheres to the following requirements:
+
+* ProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ProviderName MUST be of type String.
+* ProviderName MUST conform to [String Handling](#stringhandling) requirements.
+* ProviderName MUST NOT be null.
+
+---
 The Provider column adheres to the following requirements:
 
 * The Provider column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).

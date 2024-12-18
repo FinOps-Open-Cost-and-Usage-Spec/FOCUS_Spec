@@ -2,6 +2,16 @@
 
 Charge Period End represents the [*exclusive*](#glossary:exclusivebound) end date and time of a [*charge period*](#glossary:chargeperiod). For example, a time period where [ChargePeriodStart](#chargeperiodstart) is '2024-01-01T00:00:00Z' and ChargePeriodEnd is '2024-01-02T00:00:00Z' includes charges for January 1, since ChargePeriodStart is [*inclusive*](#glossary:inclusivebound), but does not include charges for January 2 since ChargePeriodEnd is *exclusive*.
 
+---
+The ChargePeriodEnd column adheres to the following requirements:
+
+* ChargePeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargePeriodEnd MUST be of type Date/Time.
+* ChargePeriodEnd MUST conform to [Date/Time Format](#date/timeformat) requirements.
+* ChargePeriodEnd MUST NOT be null.
+* ChargePeriodEnd MUST be the *exclusive ending bound* of the effective period of the charge.
+
+---
 The ChargePeriodEnd column adheres to the following requirements:
 
 * ChargePeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset), MUST be of type Date/Time, MUST be an *exclusive* value, and MUST NOT contain null values.

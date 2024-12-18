@@ -2,6 +2,16 @@
 
 Charge Category represents the highest-level classification of a charge based on the nature of how it is billed. Charge Category is commonly used to identify and distinguish between types of charges that may require different handling.
 
+---
+The ChargeCategory column adheres to the following requirements:
+
+* ChargeCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeCategory MUST be of type String.
+* ChargeCategory MUST NOT be null.
+* ChargeCategory MUST be one of the allowed values.
+
+---
+
 The ChargeCategory column adheres to the following requirements:
 
 * The ChargeCategory column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
