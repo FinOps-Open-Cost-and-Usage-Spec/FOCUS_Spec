@@ -1,17 +1,15 @@
 # Correction Handling - (Refund & Credit Handling)
 
-// Need glossary definition?
-// Need to call out positive adjustments?
+Corrections are line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include: 
 
-//applies where charge class is correction????
+- [*Refund*](#glossary:refund) - experiencing a billing technical error (i.e. charging the incorrect rate/volume for a service line item)
+- [*Credit*](#glossary:credit) - providing a promotional benefit (i.e. migration incentives or new service incentives)
+- Need an observation on late landing costs or rounding errors???
+- need an observation on positive adjustments??? (misbilled and charged more?)
 
-REMINDER: need a headline on why REDUND is not a first class item... i..e. it is meant to be captured in usage and purchase make this clearer
+Refunds are applied to retrospective charge records where the usage has already been incurred whereas credits are applied in a forward looking perspective and are consumed ('burned-down') by future usage.
 
-Refunds & late arriving costs are examples of....
- represent line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include: 
-
-- experiencing a billing technical error (i.e. charging the incorrect rate for a service line item)
-- providing a promotional benefit (i.e. migration credits or new service incentives)
+[*Refunds*](#glossary:refund) are intentionally not a separate 'Charge Category' in FOCUS as the objective is to have these adjustments handled as itemized 'Usage' or 'Purchase' correction records that can be recorded alongside the itemised charge record that is being refunded. This eliminates the chargeback reverse-enginnering practicioners face when handling bulk refunds that are submitted as a single line item (as the practicioner then needs to split that line item up and work out who should be refunded for what).
 
 FOCUS supports two distinct models for the representation of corrections (Refunds & Credits) in the specification with the understanding that providers typically support the 'Bulk' record style, but SHOULD support the 'Itemized' record style where possible to improve visibility into this data set.
 
