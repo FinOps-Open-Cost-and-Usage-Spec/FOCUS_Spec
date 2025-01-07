@@ -1,4 +1,9 @@
-# Correction Handling - (Refund & Credit Handling)
+# Corrections/Refunds/Credits Handling (POTATO)
+
+
+how much do we care about the month end boundary for defining correction
+what about corrections to non numeric columns do they go through the same process?
+do an example where dimension data changes i.e service in wrong az / region (are these always itemized ???)
 
 Corrections are line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include: 
 
@@ -13,6 +18,12 @@ Refunds are applied to retrospective charge records where the usage has already 
 
 FOCUS supports two distinct models for the representation of corrections (Refunds & Credits) in the specification with the understanding that providers typically support the 'Bulk' record style, but SHOULD support the 'Itemized' record style where possible to improve visibility into this data set.
 
+# Credit (you can have a refund/correcton of a credit)
+this will have an original record and a correction record
+do we expect negative values? ( look at all charge categories)
+
+
+# Refund
 ## Bulk
 
 Single line item correction where both billing period and usage period will share the same value and be represented within the current billing cycle
