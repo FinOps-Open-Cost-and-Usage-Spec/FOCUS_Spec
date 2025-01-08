@@ -64,6 +64,10 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
 
+<a name="glossary:correction"><b>Correction</b></a>
+
+A correction refers to a charge record applied to a previously invoiced billing period. A correction can be positive (e.g., an additional charge due to late-arriving costs or unbilled usage) or negative (e.g., a [*refund*](#glossary:refund)). Corrections ensure accurate billing by accounting for discrepancies, missed charges, or necessary modifications.
+
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
@@ -135,6 +139,10 @@ A comprehensive list of prices offered by a provider.
 <a name="glossary:provider"><b>Provider</b></a>
 
 An entity that made internal or 3rd party resources and/or services available for purchase.
+
+<a name="glossary:refund"><b>Refund</b></a>
+
+A refund refers to a reimbursement or credit issued due to billing inaccuracies, service outages, failure to meet Service Level Agreements (SLAs), or any other reason deemed valid under the provider's policies. Refunds may also apply to voluntary cancellations (e.g., unused pre-paid services, reserved capacity, or other up-front commitments) provided the cancellation complies with the provider’s refund policy criteria.
 
 <a name="glossary:resource"><b>Resource</b></a>
 
