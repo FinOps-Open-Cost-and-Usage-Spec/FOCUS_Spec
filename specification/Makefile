@@ -1,6 +1,7 @@
 PANDOC=$(shell which pandoc)
 MARKDOWNPP=../vendored/bin/markdown-pp
 PYMARKDOWNLNT=$(shell which pymarkdownlnt)
+WKHTMLTOPDF=$(shell which wkhtmltopdf)
 ifeq ($(STYLE),)
 STYLE="working_draft"
 endif
@@ -11,11 +12,12 @@ SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
 export TOCDEPTH=2
 all: spec.md spec.pdf spec.html
 
-spec.pdf: spec.md
-	$(PANDOC) spec.md -o $@ -f gfm --css=styles/${STYLE}.css $(PDF_MARGINS) $(PDF_FOOTER) --pdf-engine=wkhtmltopdf
-
-spec.html: 
+spec.html: spec.md
 	$(PANDOC) spec.md -o $@ -f gfm -s --css=styles/${STYLE}_html.css
+
+spec.pdf: spec.html
+	$(PANDOC) spec.md -o spec_pdf.html -f gfm -s --css=styles/${STYLE}.css $(PDF_MARGINS)
+	$(WKHTMLTOPDF) --enable-local-file-access --footer-right "[page] of [topage]" --footer-font-name "Palatino" --footer-font-size 8 spec_pdf.html $@
 
 spec.md: $(SPEC_SOURCE_FILES)
 ifneq ("$(wildcard versions/${STYLE}.md)","")
@@ -37,4 +39,4 @@ endif
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
 
 clean:
-	rm -f spec.pdf spec.html spec.md version.md
+	rm -f spec.pdf spec.html spec.md spec_pdf.md version.md
