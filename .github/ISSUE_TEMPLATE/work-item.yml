@@ -37,6 +37,25 @@ body:
   - type: markdown
     attributes:
       value: |
+        ## 1a. **Use Case**
+        Describe the use case that this work item addresses.
+        Review https://focus.finops.org/use-cases/ for examples of existing use cases.
+        - **What is the use case?**: Write the use case(s) this problem solves.  Use one of the formats:
+        -- "As a <FinOps persona> I want to <elaborate on the use case>"
+        -- 1 to 2 sentences detailing the use case(s).
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: "Use Case"
+      description: "Provide 1 to 2 sentences detailing the use case."
+      placeholder: "Provide 1 to 2 sentences detailing the use case here."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
         ## 2. **Objective**
         State the objective of this work item. What outcome is expected?
         - **Success Criteria**: Define how success will be measured (e.g. metrics and KPIs).

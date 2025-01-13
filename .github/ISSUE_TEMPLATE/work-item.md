@@ -15,7 +15,17 @@ assignees: [shawnalpay, jpradocueva]
 Describe the problem, issue, use case, or opportunity that this work item addresses.
 Include practitioner quotes illustrating real examples a) of questions being asked by practitioners and b) value unlocked by answering these questions, if available.
 - **What is the problem?**: Explain the context and why it needs resolution.
+- **What is the use case?**: Write the use case(s) this provides using the format "As a <FinOps persona> I want to <elaborate on the use case>" OR a 1 to 2 sentences detailing the use case(s).
 - **Impact**: Describe how the problem affects users, systems, or the project.
+
+Your input ...
+
+## 1a. **Use Case** *
+Describe the use case(s) that this work item addresses.
+Review https://focus.finops.org/use-cases/ for examples of existing use cases.
+- **What is the use case?**: Write the use case(s) this problem solves.  Use one of the formats:
+-- "As a <FinOps persona> I want to <elaborate on the use case>"
+-- 1 to 2 sentences detailing the use case(s).
 
 Your input ...
 
