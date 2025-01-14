@@ -9,7 +9,7 @@ The SubAccountId column adheres to the following requirements:
 * If present, SubAccountId adheres to the following additional requirements:
   * SubAccountId MUST be of type String.
   * SubAccountId MUST conform to [String Handling](#stringhandling) requirements.
-  * SubAccountId MUST be null when a charge  is not related to a *sub account*.
+  * SubAccountId MUST be null when a charge is not related to a *sub account*.
   * SubAccountId MUST NOT be null when a charge is related to a *sub account*.
 
 ---
