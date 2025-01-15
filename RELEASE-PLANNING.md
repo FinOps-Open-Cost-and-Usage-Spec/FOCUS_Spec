@@ -1,5 +1,6 @@
 ## Release Planning 
-This section outlines the planned release schedule and key milestones for the FOCUS project. It includes the scope and high-level system requirements for each version, as well as detailed timelines for the development and review processes for each present and past releases. 
+
+This section outlines the planned release schedule and key milestones for the FOCUS project. It includes the scope and high-level system requirements for each version, as well as detailed timelines for the development and review processes for each present and past releases.
 
 ### Scope of Upcoming Releases
 
@@ -43,6 +44,7 @@ This section outlines the planned release schedule and key milestones for the FO
 </table>
 
 ### Scope of Previous Releases
+
 <table>
     <tr>
         <th>Version</th>
@@ -90,7 +92,9 @@ This section outlines the planned release schedule and key milestones for the FO
 </table>
 
 ### Estimated Timeline for v1.2
+
 This table displays key milestones and dates related to the development of FOCUS Release v1.2 Specification.
+
 <table>
   <tr>
     <th>Date</th>
@@ -155,7 +159,9 @@ This table displays key milestones and dates related to the development of FOCUS
 </table>
 
 ### Estimated Timeline for v1.1
+
 FOCUS Release V1.1 was announced during the FinOps XE event in Barcelona on November 12, 2024.
+
 <table>
     <thead>
         <tr>
@@ -214,7 +220,9 @@ FOCUS Release V1.1 was announced during the FinOps XE event in Barcelona on Nove
 </table>
 
 ### Estimated Timeline for v1.0
+
 FOCUS Release V1.0 was announced during the FinOpsX event in San Diego on June 20, 2024.
+
 <table>
     <thead>
         <tr>
