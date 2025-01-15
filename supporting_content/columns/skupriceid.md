@@ -65,8 +65,9 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
 
 ##### SKU Price ID
 
-* **Current SKU Price ID column definition** specifies that SKU Price ID represents the unit price used to calculate the charge, while **the composition of the properties associated with SKU Price ID may differ across providers**.
-* A bit more clarity on the Purpose and Supported Use Cases would be beneficial, especially for providers that still don't support the concept.
-  * While it is clear that SKU Price ID can be used for pricing-related scenarios, the varying composition of its properties across providers means that for more specific use cases, practitioners should consult the provider's documentation.
-  * To define which use cases this column can or should consistently support across providers, we need to be more specific about its purpose. We must provide greater clarity on which pricing-related properties should be represented in SKU Price ID and included in SKU Price Details, versus those that are relevant to pricing (and available in price sheets) but should not (or even must not) be reflected in these columns.
-  * Of course, these columns will always contain provider-specific values, but they should serve the same purpose and be based on a similar concept.
+* Current SKU Price ID column definition specifies that SKU Price ID represents the unit price used to calculate the charge, while **the composition of the properties associated with SKU Price ID may differ across providers**.
+* While it is clear that SKU Price ID can be used for pricing-related scenarios, the varying composition of its properties across providers means that **for more specific use cases, practitioners should consult the provider's documentation**.
+* To define which use cases this column can or should consistently support across providers, ee need to be more specific about its purpose and provide greater clarity on:
+  * **which pricing-related properties should be represented in SKU Price ID** (and included in SKU Price Details),
+  * versus those that are relevant to pricing (and available in price sheets) but **should not (or even must not) be reflected in these columns**.
+* Of course, these columns will always contain **provider-specific values**, but they should serve the **same purpose** and be based on a **similar concept**.
