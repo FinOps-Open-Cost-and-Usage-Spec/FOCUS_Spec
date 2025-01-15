@@ -50,3 +50,23 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
 | Adjustment     | Correction                              | MAY be bulk                       | MAY be null      | MAY be null      |
 | Tax            | Regular/Standard/Original/Direct/(null) | MUST be bulk                      | MUST be null     | MUST be null     |
 | Tax            | Correction                              | MUST be bulk                      | MUST be null     | MUST be null     |
+
+### SKU ID, SKU Price ID and SKU Price Details clarification (FOCUS 1.2)
+
+#### Conceptual Notes
+
+* While terminology may vary, the majority, if not all, CSP and SaaS providers have equivalent concepts to SKU ID, SKU Price ID, and SKU Price Details.
+* Even if some providers do not explicitly support SKU ID, SKU Price ID, and SKU Price Details concepts, all providers must have public or custom price sheets—either published or shared directly with customers. These necessitate the ability to create and share unique identifiers for unit prices (e.g., even for a single invoice line item, providers should be able to generate a unique identifier for the product or service being charged).
+* SKU ID (or equivalent): Represents a higher-level grouping construct compared to SKU Price ID. It identifies the core product configuration (e.g., virtual machine type, storage tier), independent of pricing details.
+* SKU Price ID (or equivalent): Represents a specific pricing instance of a SKU. It inherits SKU properties and adds associated price-specific attributes.
+* SKU Price Details (or equivalent): Represents a list of unit price properties, encompassing those related to both SKU ID and SKU Price ID. As SKU ID is a higher-level construct, properties associated with SKU Price ID are implied to inherit from the parent SKU.
+* Even if concepts like SKU ID, SKU Price ID, and SKU Price Details are not currently exposed in cost and usage data or price sheets, providers should have the capability to include them over time.
+* If only one identifier can be supported, the same value may appear in both SKU ID and SKU Price ID columns. Additionally, even when both concepts are supported, the same value might be used in both columns, particularly when there is only one SKU Price instance for a given SKU.
+
+##### SKU Price ID
+
+* **Current SKU Price ID column definition** specifies that SKU Price ID represents the unit price used to calculate the charge, while **the composition of the properties associated with SKU Price ID may differ across providers**.
+* A bit more clarity on the Purpose and Supported Use Cases would be beneficial, especially for providers that still don't support the concept.
+  * While it is clear that SKU Price ID can be used for pricing-related scenarios, the varying composition of its properties across providers means that for more specific use cases, practitioners should consult the provider's documentation.
+  * To define which use cases this column can or should consistently support across providers, we need to be more specific about its purpose. We must provide greater clarity on which pricing-related properties should be represented in SKU Price ID and included in SKU Price Details, versus those that are relevant to pricing (and available in price sheets) but should not (or even must not) be reflected in these columns.
+  * Of course, these columns will always contain provider-specific values, but they should serve the same purpose and be based on a similar concept.
