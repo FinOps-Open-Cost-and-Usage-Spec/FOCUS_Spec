@@ -1,8 +1,14 @@
 # Billing Account Type
 
-Billing Account Type is the label the provider uses to describe the kind of [*billing account*](#glossary:billing-account). Billing Account Type is a readable display name and not a code. Billing Account Type is commonly used for scenarios like mapping FOCUS constructs to provider constructs and summarizing costs across providers.
+Billing Account Type is a provider-assigned name to identify the type of [*billing account*](#glossary:billing-account). Billing Account Type is a readable display name and not a code. Billing Account Type is commonly used for scenarios like mapping FOCUS constructs to provider constructs and summarizing costs across providers.
 
-The BillingAccountType column MUST be present in the billing data. This column MUST be of type String, MUST be null when [BillingAccountId](#billingaccountid) is null, and MUST NOT be null when BillingAccountId is not null. BillingAccountType MUST be a consistent, readable display value within the billing data.
+The BillingAccountType column adheres to the following requirements:
+
+* BillingAccountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one possible BillingAccountType value.
+* BillingAccountType MUST be of type String.
+* BillingAccountType MUST be null when BillingAccountId is null.
+* BillingAccountType MUST NOT be null when BillingAccountId not is null.
+* BillingAccountType MUST be a consistent, readable display value.
 
 ## Column ID
 
@@ -14,13 +20,14 @@ Billing Account Type
 
 ## Description
 
-Label the provider uses to describe the kind of billing account.
+A provider-assigned identifier for the type of *billing account* applied to the *row*.
 
 ## Content Constraints
 
 | Constraint      | Value            |
 | :-------------- | :--------------- |
 | Column type     | Dimension        |
+| Feature level   | Conditional      |
 | Column required | True             |
 | Allows nulls    | False            |
 | Data type       | String           |
@@ -28,4 +35,4 @@ Label the provider uses to describe the kind of billing account.
 
 ## Introduced (version)
 
-1.0
+1.2

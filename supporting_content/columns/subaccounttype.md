@@ -22,6 +22,17 @@ Current terms used by providers:
 
 | Provider  | Value            |
 | --------- | ---------------- |
-| AWS       | "Member Account" |
+| AWS       | "Membership Account" |
 | GCP       | "Project"        |
 | Microsoft | "Subscription"   |
+| OCI       | "Tenancy"        |
+| OCI       | "Child Tenancy"  |
+
+## Discussion / scratch space
+
+We ran a poll to determine if BillingAccountType and SubAccountType columns were desired. Poll results:
+* 4 votes for `Yes, add both columns as REQUIRED for ALL providers`
+* 10 votes for `Yes, add both columns as REQUIRED for providers that have DIFFERENT ACCOUNT TYPES`
+* 1 vote for `Yes, add both columns as OPTIONAL for all providers`
+* 4 votes for `I am fine with or without these columns`
+* 0 votes for `No, I do not want/need these columns in the FOCUS dataset`

@@ -1,8 +1,14 @@
 # Sub Account Type
 
-Sub Account Type is the label the provider uses to describe the kind of [*sub account*](#glossary:sub-account). Sub Account Type is a readable display name and not a code. Sub Account Type is commonly used for scenarios like mapping FOCUS constructs to provider constructs and summarizing costs across providers.
+Sub Account Type is a provider-assigned name to identify the type of [*sub account*](#glossary:sub-account). Sub Account Type is a readable display name and not a code. Sub Account Type is commonly used for scenarios like mapping FOCUS constructs to provider constructs and summarizing costs across providers.
 
-The SubAccountType column MUST be present in the billing data. This column MUST be of type String, MUST be null when [SubAccountId](#subaccountid) is null, and MUST NOT be null when SubAccountId is not null. SubAccountType MUST be a consistent, readable display value within the billing data.
+The SubAccountType column adheres to the following requirements:
+
+* SubAccountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one possible SubAccountType value.
+* SubAccountType  MUST be of type String.
+* SubAccountType MUST be null when SubAccountId is null.
+* SubAccountType MUST NOT be null when SubAccountId not is null.
+* SubAccountType MUST be a consistent, readable display value.
 
 ## Column ID
 
@@ -14,13 +20,14 @@ Sub Account Type
 
 ## Description
 
-Label the provider uses to describe the kind of sub account.
+A provider-assigned identifier for the type of *sub account* applied to the *row*.
 
 ## Content Constraints
 
 | Constraint      | Value            |
 | :-------------- | :--------------- |
 | Column type     | Dimension        |
+| Feature level   | Conditional      |
 | Column required | True             |
 | Allows nulls    | True             |
 | Data type       | String           |
@@ -28,4 +35,4 @@ Label the provider uses to describe the kind of sub account.
 
 ## Introduced (version)
 
-1.0
+1.2

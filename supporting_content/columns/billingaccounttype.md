@@ -22,8 +22,18 @@ Current terms used by providers:
 
 | Provider  | Scenario      | Value                |
 | --------- | ------------- | -------------------- |
-| AWS       | Not available | "Management Account" |
+| AWS       | Not available | "Payer Account" |
 | GCP       | Not available | "Billing Account"    |
 | Microsoft | EA            | "Billing Account"    |
 | Microsoft | MCA/MPA       | "Billing Profile"    |
 | Microsoft | Other         | "Subscription"       |
+| OCI       | Not available | "Billing Account"    |
+
+## Discussion / scratch space
+
+We ran a poll to determine if BillingAccountType and SubAccountType columns were desired. Poll results:
+* 4 votes for `Yes, add both columns as REQUIRED for ALL providers`
+* 10 votes for `Yes, add both columns as REQUIRED for providers that have DIFFERENT ACCOUNT TYPES`
+* 1 vote for `Yes, add both columns as OPTIONAL for all providers`
+* 4 votes for `I am fine with or without these columns`
+* 0 votes for `No, I do not want/need these columns in the FOCUS dataset`
