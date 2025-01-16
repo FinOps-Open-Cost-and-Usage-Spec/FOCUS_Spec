@@ -14,7 +14,7 @@ Numeric Format
 
 ## Description
 
-Rules and formatting requirements for numeric columns appearing in billing data.
+Rules and formatting requirements for numeric columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Requirements
 

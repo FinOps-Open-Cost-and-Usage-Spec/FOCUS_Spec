@@ -14,14 +14,14 @@ Column Naming and Ordering
 
 ## Description
 
-Naming and ordering convention for columns appearing in billing data.
+Naming and ordering convention for columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Requirements
 
 ### Column Names
 
 * All columns defined by FOCUS MUST follow the following rules:
-  * Column IDs MUST use [Pascal case](https://techterms.com/definition/pascalcase).
+  * Column IDs MUST use [Pascal case](#glossary:pascalcase).
   * Column IDs MUST NOT use abbreviations.
   * Column IDs MUST be alphanumeric with no special characters.
   * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the Name suffix if there are no other columns with the same name prefix.

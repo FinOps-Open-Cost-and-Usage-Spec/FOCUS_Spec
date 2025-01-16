@@ -1,4 +1,4 @@
-# Column: CommitmentDiscountUsage
+# Column: CommitmentDiscountStatus
 
 ## Example provider mappings
 

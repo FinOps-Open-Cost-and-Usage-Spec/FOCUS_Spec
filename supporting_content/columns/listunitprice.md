@@ -51,7 +51,7 @@ Current column mappings found in available data sets:
 
 ### Current data sources and SkuPriceId
 
-* For GCP and OCI, Pricing Data serves as the sole data source for ListUnitPrice, while for AWS, it is the preferred data source due to concerns related to volume/tier-based pricing. To determine the relevant price in Pricing Data for a specific charge record, the billing data must include the SkuPriceId. * Considering that providers publish not only list/on-demand prices but also unit prices inclusive of commitment-based discounts (and perhaps more), we can't directly associate ListUnitPrice with the SkuPriceId.
+* For GCP and OCI, Pricing Data serves as the sole data source for ListUnitPrice, while for AWS, it is the preferred data source due to concerns related to volume/tier-based pricing. To determine the relevant price in Pricing Data for a specific charge record, the billing data must include the SkuPriceId. * Considering that providers publish not only list/on-demand prices but also unit prices inclusive of commitment discounts (and perhaps more), we can't directly associate ListUnitPrice with the SkuPriceId.
 * How to resolve the ListUnitPrice from the Price Sheet or Pricing API based on SkuPriceId? Consider introducing an additional column that would contain the ID of the corresponding List/On-Demand SKU Price ID, instead of providing guidelines and expecting practitioners to resolve it.
 * As previously mentioned, when BillingCurrency and PricingCurrency differ, the exchange rate must also be considered.
 
@@ -63,7 +63,7 @@ Current column mappings found in available data sets:
     * Is it ok to assume that rates of interruptible resources and services (spare capacity, spot) fall into category of dynamically priced SKU rates? (do we plan to cover this in the glossary?)
   * OPTION B: The List Unit Price represents a suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts.
     * Is it ok to assume that practitioners perceive mentioned rates as reduced rates rather than discounts?
-  * OPTION C: The List Unit Price represents a suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any negotiated or commitment-based discounts.
+  * OPTION C: The List Unit Price represents a suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any negotiated or commitment discounts.
     * Is it ok to assume that those are the only two discounts?
 * Being inclusive of free-tier, volume/tier-based, BYOL-based and dynamically priced SKU rates, the List Unit Price cannot be used for calculating savings based on volume/tier-based pricing, the use of pre-owned software licenses (BYOL - Bring Your Own License), leveraging interruptible resources and/or services, or optimizing usage to take advantage of dynamic pricing models.
 

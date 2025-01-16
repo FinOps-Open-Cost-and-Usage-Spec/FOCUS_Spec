@@ -5,12 +5,59 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!--
-## v1.1
+## v1.2
 
-[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.0-cr...working_draft)
+[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
 
 <br>
 -->
+
+## v1.1
+
+<sup>Announced November 2024</sup>
+
+**Added:**
+
+- `CapacityReservationId` column
+- `CapacityReservationStatus` column
+- `CommitmentDiscountQuantity` column
+- `CommitmentDiscountUnit` column
+- `ServiceSubcategory` column
+- `SkuMeter` column
+- `SkuPriceDetails` column
+- `ProviderVersion` metadata schema property
+
+**Changed:**
+
+- `CommitmentDiscountId` column updates:
+  - Must be globally unique within the provider.
+  - Should be a fully-qualified identifier.
+- `ConsumedQuantity` column updates:
+  - Must be null when `CommitmentDiscountStatus` is "Unused".
+- `ConsumedUnit` column updates:
+  - Must be null when `ChargeClass` is not "Correction" and `ChargeCategory` is not "Usage".
+  - Must be null when `ChargeClass` is not "Correction" and `ChargeCategory` is "Usage" and `CommitmentDiscountStatus` is "Unused".
+  - May be null when `ChargeCategory` is "Usage" and `ChargeClass` is "Correction".
+- `EffectiveCost` column updates:
+  - When `CommitmentDiscountStatus` is "Unused", must be the difference between the used commitment discount amount and the portion of the total commitment discount purchase applicable for the charge period.
+- `PricingCategory` column updates:
+  - Must not be "Committed" when the charge is for a commitment discount purchase.
+- `SkuPriceId` column updates:
+  - `SkuId` can be used if the provider does not have a `SkuPriceId` but other requirements must be met.
+- Metadata updates:
+  - Must be provided in the defined metadata schema.
+  - Must be an object.
+  - Must not be null.
+  - Must include a reference to the schema of the data.
+  - Schema reference must not be in the FOCUS dataset itself.
+  - Must be an accurate and complete representation of the provided FOCUS dataset.
+  - Metadata implementation should be publicly documented.
+- `SchemaId` metadata schema property updates:
+  - Recommended to be a globally unique identifier (GUID) instead of a universally unique identifier (UUID) or SemVer version.
+
+[All 1.1 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0...v1.1-cr)
+
+<br>
 
 ## v1.0
 
@@ -25,6 +72,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `ContractedUnitPrice` column
 - `RegionId` column
 - `RegionName` column
+- `DataGenerator` metadata property
+- `CreationDate` metadata schema property
+- `FocusVersion` metadata schema property
+- `SchemaId` metadata schema property
+- `ColumnName` metadata column definition property
+- `DataType` metadata column definition property
+- `NumberScale` metadata column definition property
+- `NumberPrecision` metadata column definition property
+- `ProviderTagPrefix` metadata column definition property
+- `StringEncoding` metadata column definition property
+- `StringMaxLength` metadata column definition property
 
 **Changed:**
 
@@ -104,7 +162,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - `ChargeSubcategory` column - See `ChargeCategory` and `ChargeClass` columns
 
-[All 1.0 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0-preview-cr...1.0-cr)
+[All 1.0 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0-preview...v1.0)
 
 <br>
 
@@ -147,14 +205,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `AmortizedCost` column renamed to `EffectiveCost`
 - `ChargeType` column renamed to `ChargeCategory`
 
-[All 1.0-preview changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v0.5-cr...v1.0-preview-cr)
+[All 1.0-preview changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v0.5...v1.0-preview)
 
 <br>
 
 ## v0.5
+
 <sup>Announced June 24, 2023</sup>
 
 **Added:**
+
 - `Column naming convention` attribute
 - `Currency code format` attribute
 - `Date/time format` attribute
@@ -181,13 +241,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `SubAccountId` column
 - `SubAccountName` column
 
-[All 0.5 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/7106bbe...v0.5-cr)
+[All 0.5 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/7106bbe...v0.5)
 
 <br>
 
 ## Columns History
 
-This table maps the evolution of the billing data, showcasing column introductions and updates from its initial version 0.5 to the comprehensive revisions in "1.0-preview", "1.0" and beyond.
+This table maps the evolution of the specification, showcasing column introductions and updates from its initial version 0.5 to the comprehensive revisions in "1.0-preview", "1.0" and beyond.
 
 | **Column ID**                | **Revision Introduced** | **Status**        |
 |------------------------------|-------------------------|-------------------|
@@ -199,6 +259,8 @@ This table maps the evolution of the billing data, showcasing column introductio
 | BillingCurrency              | 0.5                     |                   |
 | BillingPeriodEnd             | 0.5                     |                   |
 | BillingPeriodStart           | 0.5                     |                   |
+| CapacityReservationId        | 1.1                     |                   |
+| CapacityReservationStatus    | 1.1                     |                   |
 | ChargeType                   | 0.5                     | Renamed to ChargeCategory in v1.0-preview |
 | ChargeCategory               | 1.0-preview             | Renamed from ChargeType in v1.0-preview |
 | ChargeClass                  | 1.0                     |                   |
@@ -212,6 +274,8 @@ This table maps the evolution of the billing data, showcasing column introductio
 | CommitmentDiscountName       | 1.0-preview             |                   |
 | CommitmentDiscountStatus     | 1.0                     |                   |
 | CommitmentDiscountType       | 1.0-preview             |                   |
+| CommitmentDiscountQuantity   | 1.1                     |                   |
+| CommitmentDiscountUnit       | 1.1                     |                   |
 | ConsumedQuantity             | 1.0                     | Renamed from UsageQuantity in v1.0 |
 | ConsumedUnit                 | 1.0                     | Renamed from UsageUnit in v1.0 |
 | ContractedCost               | 1.0                     |                   |
@@ -233,7 +297,10 @@ This table maps the evolution of the billing data, showcasing column introductio
 | ResourceType                 | 1.0-preview             |                   |
 | ServiceCategory              | 0.5                     |                   |
 | ServiceName                  | 0.5                     |                   |
+| ServiceSubcategory           | 1.1                     |                   |
 | SkuId                        | 1.0-preview             |                   |
+| SkuMeter                     | 1.1                     |                   |
+| SkuPriceDetails              | 1.1                     |                   |
 | SkuPriceId                   | 1.0-preview             |                   |
 | SubAccountId                 | 0.5                     |                   |
 | SubAccountName               | 0.5                     |                   |

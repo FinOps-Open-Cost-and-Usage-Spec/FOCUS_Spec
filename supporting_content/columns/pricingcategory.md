@@ -34,7 +34,7 @@ Current values observed in billing data for various scenarios:
 ## Discussion Topics
 
 * Goal of the column is to enable practitioners to identify charges that have reduced prices vs. not.
-  * The most common question for this column is to identify commitment-based discounts and spot separate from on-demand.
+  * The most common question for this column is to identify commitment discounts and spot separate from on-demand.
 * In 0.5, we didn't have enough time to close on how spot would be included:
   * Someone mentioned that "spot" was a marketing term, so we tried to avoid it.
   * We discussed values like "Preemptible" (confusing), "Interruptible" (not a pricing model), "Market-Based", "Variable", and "Dynamic". Ultimately, we agreed on "Dynamic".
@@ -64,7 +64,7 @@ Current values observed in billing data for various scenarios:
     * We felt "Standard" was more clear as a differentiator from "Tiered" pricing. Another alternative was "Flat Rate".
   * We also discussed whether to use "Commitment-Based" or "Discounted".
     * If we use "Discounted", then any future discounting strategy could get rolled into a single column without the need to change values.
-    * The main downside of this is that, given how important commitment-based discounts are (and the fact that they are one of the primary reasons for adding this column), we felt it was important to call them out explicitly.
+    * The main downside of this is that, given how important commitment discounts are (and the fact that they are one of the primary reasons for adding this column), we felt it was important to call them out explicitly.
     * Additionally, given different discount strategies will price things differently, it's also important that we distinguish the separate pricing models at the top level.
     * We also didn't have any other clear examples that would fall into "Discounted" pricing that would be meaningfully grouped together in a way that practitioners would want to see together and not distinguished separately from their committed costs.
   * We also discussed the term "Dynamic" and whether it was clear enough.

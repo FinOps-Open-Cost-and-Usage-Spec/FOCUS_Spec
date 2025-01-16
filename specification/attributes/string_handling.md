@@ -14,7 +14,7 @@ String Handling
 
 ## Description
 
-Requirements for string-capturing columns appearing in billing data.
+Requirements for string-capturing columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Requirements
 
