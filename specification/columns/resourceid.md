@@ -9,7 +9,7 @@ The ResourceId column adheres to the following requirements:
 * If present, ResourceId adheres to the following additional requirements:
   * ResourceId MUST be of type String.
   * ResourceId MUST conform to [String Handling](#stringhandling) requirements.
-  * ResourceId MUST be null when a charge  is not related to a *resource*.
+  * ResourceId MUST be null when a charge is not related to a *resource*.
   * ResourceId MUST NOT be null when a charge is related to a *resource*.
   * ResourceId MUST ensure global uniqueness within the provider.
   * ResourceId SHOULD be a fully-qualified identifier.
