@@ -8,6 +8,24 @@ The PricingCategory column adheres to the following requirements:
 * PricingCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all SKUs.
 * If present, PricingCategory adheres to the following additional requirements:
   * PricingCategory MUST be of type String.
+  * If [ChargeCategory](#chargecategory) is "Tax", PricingCategory adheres to the following additional requirement:
+    * PricingCategory MUST be null.
+  * Else if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction", PricingCategory adheres to the following additional requirement:
+    * PricingCategory MUST NOT be null.
+  * Else PricingCategory adheres to the following additional requirement:
+    * PricingCategory MAY be null.
+  * If PricingCategory is not null, PricingCategory adheres to the following additional requirements:
+    * PricingCategory MUST be one of the allowed values.
+    * PricingCategory MUST be "Standard" when pricing is predetermined at the agreed upon rate for the [billing account](#glossary:billing-account).
+    * PricingCategory MUST be "Committed" when the charge is subject to an existing *commitment discount* and is not the purchase of the *commitment discount*.
+    * PricingCategory MUST be "Dynamic" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing.
+    * PricingCategory MUST be "Other" when there is a pricing model but none of the allowed values apply.
+
+The PricingCategory column adheres to the following requirements:
+
+* PricingCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all SKUs.
+* If present, PricingCategory adheres to the following additional requirements:
+  * PricingCategory MUST be of type String.
   * PricingCategory MUST be null if [ChargeCategory](#chargecategory) is "Tax".
   * PricingCategory MUST NOT be null if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * PricingCategory MAY be null in all other cases.
