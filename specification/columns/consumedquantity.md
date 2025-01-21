@@ -2,6 +2,21 @@
 
 The Consumed Quantity represents the volume of a metered SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used, based on the [Consumed Unit](#consumedunit). Consumed Quantity is often derived at a finer granularity or over a different time interval when compared to the [Pricing Quantity](#pricingquantity) (complementary to [Pricing Unit](#pricingunit)) and focuses on *resource* and *service* consumption, not pricing and cost.
 
+---
+The ConsumedQuantity column adheres to the following requirements:
+
+* ConsumedQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
+* If present, ConsumedQuantity adheres to the following additional requirements:
+  * ConsumedQuantity MUST be of type Decimal.
+  * ConsumedQuantity MUST conform to [Numeric Format](#numericformat) requirements.
+  * ConsumedQuantity MUST be null if [ChargeCategory](#chargecategory) is not "Usage", or if ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
+  * If ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity adheres to the following additional requirements:
+    * ConsumedQuantity MUST NOT be null if [ChargeClass](#chargeclass) is not "Correction".
+    * ConsumedQuantity MAY be null if ChargeClass is "Correction"."
+  * If ConsumedQuantity is not null, ConsumedQuantity adheres to the following additional requirement:
+    * ConsumedQuantity MUST be a valid decimal value.
+
+---
 The ConsumedQuantity column adheres to the following requirements:
 
 * ConsumedQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
