@@ -49,6 +49,5 @@ GROUP BY
 * SubAccountId
 
 ## Use Case Change Log
-| Version | Change | Description |
+| Version | Change | Purpose |
 | :-------| :------| :-----------|
-| 
