@@ -11,7 +11,7 @@ Compare billed cost per subaccount to budget
 ## Description
 Product wants to confirm charges are in line with expectations (budgets) for a business which has all its cost within a single subaccount. The ChargePeriod is used for filtering to capture items that apply to the period only (excludes adjustments from previous periods that were applied in the current BillingPeriod).
 
-## 1st Degree Columns
+## Directly Dependent Columns
 * Provider
 * Sub Account ID
 * Sub Account Name
@@ -20,7 +20,7 @@ Product wants to confirm charges are in line with expectations (budgets) for a b
 * Charge Period Start
 * Charge Period End
 
-## 2nd Degree Columns
+## Indirectly Dependent Columns
 
 
 
