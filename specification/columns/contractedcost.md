@@ -2,6 +2,22 @@
 
 Contracted Cost represents the cost calculated by multiplying [*contracted unit price*](#glossary:contracted-unit-price) and the corresponding [Pricing Quantity](#pricingquantity). Contracted Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on negotiation activities, by comparing it with [List Cost](#listcost). If [*negotiated discounts*](#glossary:negotiated-discount) are not applicable, the Contracted Cost defaults to the List Cost.
 
+---
+The ContractedCost column adheres to the following requirements:
+
+* ContractedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractedCost MUST be of type Decimal.
+* ContractedCost MUST conform to [Numeric Format](#numericformat) requirements.
+* ContractedCost MUST NOT be null.
+* ContractedCost MUST be a valid decimal value.
+* ContractedCost MUST be denominated in the BillingCurrency.
+* If [ContractedUnitPrice](#contractedunitprice) is present and null, ContractedCost adheres to the following additional requirements:
+  * ContractedCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related charges.
+  * ContractedCost of a charge unrelated to other charges (e.g., when the [ChargeCategory](#chargecategory) is "Credit") MUST match the [BilledCost](#billedcost).
+* The product of ContractedUnitPrice and PricingQuantity and MUST match the ContractedCost if ContractedUnitPrice is present and not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
+* Discrepancies in ContractedCost, ContractedUnitPrice, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
+
+---
 The ContractedCost column adheres to the following requirements:
 
 * The ContractedCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.

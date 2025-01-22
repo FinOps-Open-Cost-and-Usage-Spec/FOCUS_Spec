@@ -2,6 +2,26 @@
 
 The List Unit Price represents the suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts. This price is denominated in the [Billing Currency](#billingcurrency). The List Unit Price is commonly used for calculating savings based on various rate optimization activities.
 
+---
+The ListUnitPrice column adheres to the following requirements:
+
+* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
+* If present, ListUnitPrice adheres to the following additional requirements:
+  * ListUnitPrice MUST be of type Decimal.
+  * ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
+  * If [ChargeCategory](#chargecategory) is "Tax", ListUnitPrice adheres to the following additional requirement:
+    * ListUnitPrice MUST be null.
+  * Else if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction", ListUnitPrice adheres to the following additional requirement:
+    * ListUnitPrice MUST NOT be null.
+  * Else ListUnitPrice adheres to the following additional requirement:
+    * ListUnitPrice MAY be null.
+  * If ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
+    * ListUnitPrice MUST be a non-negative decimal value.
+    * ListUnitPrice MUST be denominated in the BillingCurrency.
+    * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) if PricingQuantity is not null and ChargeClass is not "Correction".
+  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
+
+---
 The ListUnitPrice column adheres to the following requirements:
 
 * The ListUnitPrice column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
