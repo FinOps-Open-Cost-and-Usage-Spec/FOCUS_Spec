@@ -71,8 +71,16 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
   * versus those that are relevant to pricing (and available in price sheets) but **should not (or even must not) be reflected in these columns**.
 * Of course, these columns will always contain **provider-specific values**, but they should serve the **same purpose** and be based on a **similar concept**.
 * By providing guidance on what must be included and excluded, we can establish a more consistent framework for analysis, despite variations across SKUs and providers. While it may not be feasible to explicitly define all properties that must be included (as these can vary significantly even between SKUs within a single provider), we can offer greater precision regarding which price-related properties must be excluded. As long as the SKU Price ID adheres to these requirements, the following use cases should be consistently supported:
-  * **Price Analysis Over Time** by excluding dynamic or negotiable properties such as unit price amount and temporal validity (e.g., effective dates).
-  * **Price Comparison Across Different Contracts** by excluding dynamic or negotiable properties such as unit price amount and contract-specific or negotiation-specific elements,
+  * **Price Analysis Over Time** by excluding dynamic properties such as unit price amount and **temporal validity (e.g., effective dates)**.
+  * **Price Comparison Across Different Contracts** by excluding dynamic and negotiable properties such as unit price amount and **contract-specific or negotiation-specific elements**.
+* Currency-Agnostic SKU Price ID (and SKU Price Details)
+  * Basic Assumption: Properties reflected in the SKU ID and SKU Price ID are also provided in the SKU Price Details. Conversely, properties explicitly excluded from the SKU Price ID should not appear in the SKU Price Details either.
+  * Use Case Scenario to Avoid: If a provider does not offer pricing in your BillingCurrency but includes some other PricingCurrency in the SKU Price Details or reflects it in the SKU Price ID, this would create inconsistency. Such information would not align with your charges when analyzing or comparing prices.
+  * **PROs for Currency-Agnostic SKU Price ID and SKU Price Details:**  
+    * **Usability:** To ensure usability in the scenario described above, the currency of a unit price must not be included in either the SKU Price ID or the SKU Price Details.  
+    * **Simplicity and Consistency:** Instead of addressing such issues on a case-by-case basis, we define the SKU Price ID and SKU Price Details as inherently **currency-agnostic**. This approach avoids inconsistencies and ensures clarity across all scenarios.
+  * **CONs for Currency-Agnostic SKU Price ID and SKU Price Details:**  
+    * **TODO:** Identify and list potential drawbacks of a currency-agnostic approach.
 
 ##### Suggested updates to SKU Price ID Specification
 
@@ -103,5 +111,5 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
   * *The SKU Price ID is also commonly used to analyze costs based on pricing properties such as Terms and Tiers.*
     * Considering that the SKU Price ID doesn't remain the same across different tiers, such an analysis would require **not only cost and unit price metrics and the SKU Price ID** but also the **SKU ID** (consistent across tiers) and **SKU Price Details** — the former to more easily filter SKUs that make sense to compare, and the latter to obtain information about the tiers.
   * *A given value of SkuPriceId MUST be associated with one and only one SkuId, **except in cases of commitment discount flexibility**.*
-    * Do we need to keep on emphasizing this exception? 
+    * Do we need to keep on emphasizing this exception?
     * Based on discussion in WorkItem #644, even in cases of commitment discount flexibility SkuPriceId is still associated to the same, one and only SkuId. To be more precise, in that case the SkuId, SkuPriceId, SkuPriceDetails, ListUnitPrice, and ContractedUnitPrice reflect the running resource's SKU/SKU Price-related properties, while only the unit price amount of the purchased commitment SKU Price is provided in CommitmentDiscountUnitPrice.
