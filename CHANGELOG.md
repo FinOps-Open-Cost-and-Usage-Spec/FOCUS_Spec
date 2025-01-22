@@ -65,24 +65,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 **Added:**
 
-- `String handling` attribute
-- `ChargeClass` column
-- `CommitmentDiscountStatus` column
-- `ContractedCost` column
-- `ContractedUnitPrice` column
-- `RegionId` column
-- `RegionName` column
-- `DataGenerator` metadata property
-- `CreationDate` metadata schema property
-- `FocusVersion` metadata schema property
-- `SchemaId` metadata schema property
-- `ColumnName` metadata column definition property
-- `DataType` metadata column definition property
-- `NumberScale` metadata column definition property
-- `NumberPrecision` metadata column definition property
-- `ProviderTagPrefix` metadata column definition property
-- `StringEncoding` metadata column definition property
-- `StringMaxLength` metadata column definition property
+New use cases:
+- Compare billed cost per subaccount to budget
+
+New attributes:
+- `String handling`
+
+New columns:
+- `ChargeClass`
+- `CommitmentDiscountStatus`
+- `ContractedCost`
+- `ContractedUnitPrice`
+- `RegionId`
+- `RegionName`
+
+New metadata properties:
+- `DataGenerator`
+
+New metadata schema properties:
+- `CreationDate`
+- `FocusVersion`
+- `SchemaId`
+
+New metadata column definition properties:
+- `ColumnName`
+- `DataType`
+- `NumberScale`
+- `NumberPrecision`
+- `ProviderTagPrefix`
+- `StringEncoding`
+- `StringMaxLength`
 
 **Changed:**
 
