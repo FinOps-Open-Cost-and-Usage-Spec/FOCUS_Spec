@@ -63,6 +63,85 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
 * Even if concepts like SKU ID, SKU Price ID, and SKU Price Details are not currently exposed in cost and usage data or price sheets, providers should have the capability to include them over time.
 * If only one identifier can be supported, the same value may appear in both SKU ID and SKU Price ID columns. Additionally, even when both concepts are supported, the same value might be used in both columns, particularly when there is only one SKU Price instance for a given SKU.
 
+#### Hypothetical Provider Price Sheet
+
+##### Structure overview
+
+* **PriceSheetLineItems** (Array)
+  * **SkuPrice** (Object) - Represents Unit Price
+    * **SkuPriceId** (String) - Unique identifier for SKU Price, i.e. this Unit Price
+    * **MaxTier** (Integer) - Inclusive
+    * **MinTier** (Integer) - Exclusive
+    * **Sku** (Object)
+      * **SkuId** (String) - Unique identifier for SKU
+      * **SkuShape** (String) - SKU property
+      * **SkuMeter** (String) - SKU property
+  * **Prices** (Array)
+    * **CurrencyCode** (String) - Currency code (e.g., "USD", "EUR")
+      * **PricesPerCurrency** (Array)
+        * **ContractId** (String or null) - Contract ID (null for ListUnitPrice; non-null for ContractedUnitPrice)
+        * **EffectiveStartDate** (Date) - Price start date
+        * **EffectiveEndDate** (Date) - Price end date
+        * **Amount** (Decimal) - Price amount
+
+##### JSON Mock
+
+```json
+{
+  "PriceSheetLineItems": [
+    {
+      "SkuPrice": {
+        "SkuPriceId": "12345", // Unique identifier for SKU Price, i.e. this Unit Price
+        "TierRangeMin": 10, // Inclusive
+        "TierRangeMax": 1, // Exclusive
+        "Sku": {
+          "SkuId": "SKU001", // Unique identifier for SKU
+          "SkuShape": "SKU Shape X", // SKU property
+          "SkuMeter": "SKU Meter X" // SKU property
+        }
+      },
+      "Prices": [
+        {
+          "CurrencyCode": "USD", // Currency code (e.g., "USD", "EUR")
+          "PricesPerCurrency": [
+            {
+              "ContractId": null, // null for ListUnitPrice; non-null for ContractedUnitPrice
+              "EffectiveStartDate": "2024-01-01T00:00:00Z", // Price start date
+              "EffectiveEndDate": "2025-01-01T00:00:00Z", // Price end date
+              "Amount": 100.00 // Price amount
+            },
+            {
+              "ContractId": null, // null for ListUnitPrice; non-null for ContractedUnitPrice
+              "EffectiveStartDate": "2025-01-01T00:00:00Z", // Price start date
+              "EffectiveEndDate": null, // Price end date
+              "Amount": 90.00 // Price amount
+            }
+          ]
+        },
+        {
+          "CurrencyCode": "EUR", // Currency code (e.g., "USD", "EUR")
+          "PricesPerCurrency": [
+            {
+              "ContractId": null, // null for ListUnitPrice; non-null for ContractedUnitPrice
+              "EffectiveStartDate": "2025-01-01T00:00:00Z", // Price start date
+              "EffectiveEndDate": "null", // Price end date
+              "Amount": 86.40 // Price amount
+            },
+            {
+              "ContractId": "C001", // null for ListUnitPrice; non-null for ContractedUnitPrice
+              "EffectiveStartDate": "2025-01-15T00:00:00Z", // Price start date
+              "EffectiveEndDate": "2026-01-15T00:00:00Z", // Price end date
+              "Amount": 70.00 // Price amount
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+```
+
+
 #### SKU Price ID Notes
 
 * Current SKU Price ID column definition specifies that SKU Price ID represents the unit price used to calculate the charge, while **the composition of the properties associated with SKU Price ID may differ across providers**. While it is clear that SKU Price ID can be used for pricing-related scenarios, the varying composition of its properties across providers means that **for more specific use cases, practitioners should consult the provider's documentation**.
