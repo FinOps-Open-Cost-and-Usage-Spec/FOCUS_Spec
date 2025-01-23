@@ -13,7 +13,7 @@ Considerations:
  
 | Category | ProposedKey | Explanation | Concerns |
 | ---- | ---- | ---- | ---- |
-| Size & Shape | SizeVcpu | This is to capture the size in terms of cores / vCPUs per the Pricing Unit of the SKU | Time Normalization |
+| Size & Shape | SizeCoreCount | This is to capture the size in terms of cores / vCPUs per the Pricing Unit of the SKU | Time Normalization |
 | Size & Shape | SizeGib | This is to capture the size in terms of GiB per Pricing Unit; this was intentionally kept generic to allow it to be used for multiple different types of SKUs | Time Normalization, Unit Size, a SKU may have 2 different things that could be measured in GiB (e.g. memory + ephemeral disk) |
 | Size & Shape | SizeName | This is to capture the name of the size/shape so that it can be used for aggregation independent of other factors that make up the SKU (e.g. region) | 
 | Size & Shape | SkuVersionName | This is to capture the name of the version or family to aggregate like SKUs | |
