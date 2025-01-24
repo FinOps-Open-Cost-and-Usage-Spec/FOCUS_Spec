@@ -1,4 +1,4 @@
-# Marketplace Transactions and FOCUS Data
+# Simple Single Invoice and FOCUS Data
 
 Many vendors do not provide an extensive resource level breakdown of the cost of their service. While high fidelity cost and usage data is a valuable feature, providing invoice level cost records via FOCUS offers valuable cost reporting data to customers.
 
