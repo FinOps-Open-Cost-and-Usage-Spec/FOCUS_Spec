@@ -100,6 +100,49 @@ Show scenarios where correction happens within current billing periond and also 
 
 Within the FOCUS specification, the following examples demonstrate how a refund or credit appears across various usage scenarios.
 
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
+| Bulk | Correction to multiple billing errors | Correction | Usage | NULL | NULL | -5000 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+
+In this scenario we are correcting multiple errors in a bulk single line item. This is NOT PREFERRED as the correction record is not represented agains the accounts where the original usage was incurred.
+
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
+| Usage & Cost | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Usage & Cost | Correction to Compute usage in US East | Correction | Usage | -300 | 1 | -300 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+
+In this scenario we are correcting the usage and the associated cost for this misbilled usage maintaining cost calculation integrity rules.
+
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
+| Simple Usage | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Simple Usage | Correction to Compute usage in US East | Correction | Usage | -300 | NULL | NULL | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+
+In this scenario we are utilizing the NULLABILITY of the Rate and Cost columns to make a correction to a usage volume that did NOT have a corresponding impact on cost.
+
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
+| Simple Rate  | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Simple Rate  | Correction to Compute usage in US East | Correction | Usage | NULL | NULL | -300 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+
+In this scenario we are utilizing the NULLABILITY of the Rate and Volume columns to make a correction to a cost that did NOT have a corresponding impact on the volume of serviece consumed.
+
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
+| Accounting Usage | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Accounting Usage | Correction to Compute usage in US East | Correction | Usage | -1500 | 1 | -1500 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Accounting Usage | Corrected Compute usage in US East | Correction | Usage | 1300 | 1 | 1300 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+
+In this scenario we maintain cost calculation integrity rules by using the first correction record to fully negate the original record that contained the error. We then supply a new complete billing record containing the corrected usage data. This follows accounting data principals.
+
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
+| Accounting Rate | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Accounting Rate | Correction to Compute usage in US East | Correction | Usage | -1500 | 1 | -1500 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Accounting Rate | Corrected Compute usage in US East | Correction | Usage | 1500 | 0.8 | 1200 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+
+In this scenario we maintain cost calculation integrity rules by using the first correction record to fully negate the original record that contained the error. We then supply a new complete billing record containing the corrected rate and cost data. This follows accounting data principals.
+
 ### Bulk Refunds
 
 The entire correction / refund is billed _once_ during the first applicable *billing period*.
