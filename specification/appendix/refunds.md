@@ -45,7 +45,7 @@ this solution is more complex for providers to implement but alignes the refund 
 | Usage          | Correction  | SHOULD be Itemized | SHOULD not be null | SHOULD not be null |
 | Purchase       | (null)      | MUST be Itemized   | MUST not be null   | MUST not be null   |
 | Purchase       | Correction  | SHOULD be Itemized | SHOULD not be null | SHOULD not be null |
-| Credit         | (null)      | Not Valid          | MAY be null        | MAY be null        |
+| Credit         | (null)      | MAY be bulk        | MAY be null        | MAY be null        |
 | Credit         | Correction  | MAY be bulk        | MAY be null        | MAY be null        |
 | Adjustment     | (null)      | MAY be bulk        | MAY be null        | MAY be null        |
 | Adjustment     | Correction  | MAY be bulk        | MAY be null        | MAY be null        |
