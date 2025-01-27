@@ -4,6 +4,25 @@ The Tags column represents the set of tags assigned to [*tag sources*](#glossary
 
 A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is selected from a set of possible tag values assigned to the tag key.  When supported by a provider, this can occur when a tag value is set by provider-defined or user-defined rules.
 
+---
+The Tags column adheres to the following requirements:
+
+* Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
+* If present, Tags adheres to the following additional requirements:
+  * Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+  * If Tags is not null, Tags adheres to the following additional requirements:
+    * Tags MUST contain user-defined and provider-defined tags.
+    * Tags MUST only contain finalized tags.
+    * A Tag key with a non-null value for a given resource SHOULD be included in the tags column.
+    * A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
+    * A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
+    * Providers MUST publish tag finalization methods and semantics within their respective documentation if Tag finalization is supported.
+    * Providers MUST NOT alter user-defined Tag keys or values.
+    * Provider-defined Tags adheres to the following additional requirements:
+      * Provider-defined tags MUST be prefixed with a provider-specified tag key prefix.
+      * Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
+
+---
 The Tags column adheres to the following requirements:
 
 * The Tags column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
