@@ -4,6 +4,28 @@ Commitment Discount Quantity is the amount of a [*commitment discount*](#glossar
 
 When [CommitmentDiscountCategory](#commitmentdiscountcategory) is "Usage" (usage-based *commitment discounts*), the Commitment Discount Quantity reflects the predefined amount of usage purchased or consumed. If [*commitment discount flexibility*](#glossary:commitment-discount-flexibility) is applicable, this value may be further transformed based on additional, provider-specific requirements. When CommitmentDiscountCategory is "Spend" (spend-based *commitment discounts*), the Commitment Discount Quantity reflects the predefined amount of spend purchased or consumed.
 
+---
+The CommitmentDiscountQuantity column adheres to the following requirements:
+
+* CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* If present, CommitmentDiscountQuantity adheres to the following additional requirements:
+  * CommitmentDiscountQuantity MUST be of type Decimal.
+  * CommitmentDiscountQuantity MUST conform to [Numeric Format](#numericformat) requirements.
+  * If ChargeCategory is "Usage" or "Purchase" and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
+    * CommitmentDiscountQuantity MUST NOT be null if [ChargeClass](#chargeclass) is not "Correction".
+    * CommitmentDiscountQuantity MAY be null if ChargeClass is "Correction".
+  * Else CommitmentDiscountQuantity adheres to the following additional requirement:
+    * CommitmentDiscountQuantity MUST be null.
+  * If CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
+    * CommitmentDiscountQuantity MUST be a valid decimal value.
+    * If ChargeCategory is "Purchase", CommitmentDiscountQuantity adheres to the following additional requirements:
+      * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnits, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* if [ChargeFrequency](#chargefrequency) is "One-Time".
+      * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnits that is eligible for consumption for each *charge period* that corresponds with the purchase if ChargeFrequency is "Recurring".
+    * If ChargeCategory is "Usage", CommitmentDiscountQuantity adheres to the following additional requirements:
+      * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnits that is consumed over the *row's* *charge period* if [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
+      * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnits for the *row's* *charge period* if CommitmentDiscountStatus is "Unused".
+
+---
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
 * CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
