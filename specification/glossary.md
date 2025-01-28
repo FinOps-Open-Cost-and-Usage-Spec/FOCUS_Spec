@@ -146,7 +146,7 @@ An entity that made internal or 3rd party resources and/or services available fo
 
 <a name="glossary:refund"><b>Refund</b></a>
 
-A refund refers to a reimbursement or credit issued due to billing inaccuracies, service outages, failure to meet Service Level Agreements (SLAs), or any other reason deemed valid under the provider's policies. Refunds may also apply to voluntary cancellations (e.g., unused pre-paid services, reserved capacity, or other up-front commitments) provided the cancellation complies with the provider's refund policy criteria.
+A return of funds that have previously been charged.
 
 <a name="glossary:resource"><b>Resource</b></a>
 
