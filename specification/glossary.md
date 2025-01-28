@@ -66,7 +66,7 @@ The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the asso
 
 <a name="glossary:correction"><b>Correction</b></a>
 
-A correction refers to a charge record applied to a previously invoiced billing period. A correction can be positive (e.g., an additional charge due to late-arriving costs or unbilled usage) or negative (e.g., a [*refund*](#glossary:refund)). Corrections ensure accurate billing by accounting for discrepancies, missed charges, or necessary modifications.
+A charge that serves as a correction to a previously invoiced [*billing period*](#glossary:billing-period), accounting for discrepancies, missed charges, or required changes.
 
 <a name="glossary:credit"><b>Credit</b></a>
 
