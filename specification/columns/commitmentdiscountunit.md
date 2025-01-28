@@ -2,6 +2,25 @@
 
 Commitment Discount Unit represents the provider-specified measurement unit indicating how a provider measures the [Commitment Discount Quantity](#commitmentdiscountquantity) of a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountUnit column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
+---
+The CommitmentDiscountUnit column adheres to the following requirements:
+
+* CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* If present, the column adheres to the following additional requirements:
+  * CommitmentDiscountUnit MUST be of type String.
+  * CommitmentDiscountUnit MUST conform to [String Handling](#stringhandling) requirements.
+  * CommitmentDiscountUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+  * If ChargeCategory is "Usage" or "Purchase" and [CommitmentDiscountId](#commitmentdiscountid) is not null, CommitmentDiscountUnit adheres to the following additional requirements:
+    * CommitmentDiscountUnit MUST NOT be null if [ChargeClass](#chargeclass) is not "Correction".
+    * CommitmentDiscountUnit MAY be null if ChargeClass is "Correction".
+  * Else CommitmentDiscountUnit adheres to the following additional requirement:
+    * CommitmentDiscountUnit MUST be null.
+  * If CommitmentDiscountUnit is not null, CommitmentDiscountUnit adheres to the following additional requirements:
+    * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
+    * CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
+    * When accounting for [*commitment discount flexibility*](#glossary:commitment-discount-flexibility), the CommitmentDiscountUnit value SHOULD reflect this consideration.
+
+---
 The CommitmentDiscountUnit column adheres to the following requirements:
 
 * CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [*commitment discounts*](#glossary:commitment-discount).
