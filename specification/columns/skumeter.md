@@ -4,6 +4,19 @@ The SKU Meter describes the functionality being metered or measured by a particu
 
 Providers often have billing models in which multiple SKUs exist for a given service to describe and bill for different functionalities for that service. For example, an object storage service may have separate SKUs for functionalities such as object storage, API requests, data transfer, encryption, and object management. This field helps practitioners understand which functionalities are being metered by the different SKUs that appear in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
+---
+The SkuMeter column adheres to the following requirements:
+
+* SkuMeter MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
+* If present, SkuMeter adheres to the following additional requirements:
+  * SkuMeter MUST be of type String.
+  * SkuMeter MUST conform to [String Handling](#stringhandling) requirements.
+  * SkuMeter MUST be null if SkuId is null.
+  * SkuMeter SHOULD NOT be null if SkuId is not null.
+  * If SkuMeter is not null, SkuMeter adheres to the following additional requirement:
+    * SkuMeter SHOULD remain consistent over time for a given SkuId.
+
+---
 The SkuMeter column adheres to the following requirements:
 
 * SkuMeter MUST be present in a *FOCUS dataset* when when the provider includes a [SkuId](#skuid).
