@@ -14,6 +14,7 @@ The Tags column adheres to the following requirements:
 * A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
 * A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
 * If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
+* Providers MUST NOT alter user-defined Tag values
 
 User-defined Tags additionally adhere to the following requirements:
 
@@ -27,13 +28,17 @@ Provider-defined Tags additionally adhere to the following requirements:
 
 ## Provider-Defined vs. User-Defined Tags
 
-This example illustrates four different tagging scenarios. The first three illustrate when the provider supports both keys and values, while the third is for supporting keys only. The first tag is user-defined and doesn't have a provider prefix. The second and third tags are provider-defined and have prefixes of `scheme2/` & `scheme3/` which are reserved by the provider. The fourth tag has a tag key of `baz` and its value is assigned the boolean value `true` since the tag doesn't support a value.
+This example illustrates various tags produced from multiple user-defined and provider-defined tag schemes.  The first three tags illustrate examples from three different, user-defined tag schemes, and the provider has predetermined that 1 user-defined tag scheme (i.e. `"foo": "bar"`) does not have a prepended prefix, but the two (i.e. `"userDefinedTagScheme2/foo": "bar"`, `"userDefinedTagScheme3/foo": true`) have predetermined and reserved prefixes.  Additionally, the third tag was produced from a valueless, user-defined tag scheme, so the provider provides `true` as its default value.
+
+The last two tags illustrate examples from two different, provider-defined tag schemes, and since all provider-defined tag schemes require a prefix, the provider has prepended prefixes (`providerDefinedTagScheme1/`, `providerDefinedTagScheme2/`) to each tag.
 
 ```json
     {
         "foo": "bar",
-        "scheme2/foo": "bar",
-        "scheme3/foo": "baz",
+        "userDefinedTagScheme2/foo": "bar",
+        "userDefinedTagScheme3/foo": true,
+        "providerDefinedTagScheme1/foo": "bar",
+        "providerDefinedTagScheme2/foo": "bar"
         "baz": true,
     }
 ```
