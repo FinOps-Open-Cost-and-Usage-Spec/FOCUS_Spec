@@ -39,7 +39,6 @@ The last two tags illustrate examples from two different, provider-defined tag s
         "userDefinedTagScheme3/foo": true,
         "providerDefinedTagScheme1/foo": "bar",
         "providerDefinedTagScheme2/foo": "bar"
-        "baz": true,
     }
 ```
 
