@@ -4,8 +4,12 @@ Corrections are line items that appear in the FOCUS data set to support any scen
 
 - [*Refund*](#glossary:refund) - experiencing a billing technical error (i.e. charging the incorrect rate/volume for a service line item)
 - [*Credit*](#glossary:credit) - providing a promotional benefit (i.e. migration incentives or new service incentives)
-- Need an observation on late landing costs or rounding errors???
+- Need an observation on late landing costs 
 - need an observation on positive adjustments??? (misbilled and charged more?)
+
+this document assumes we do not support regenerating/restating data from previously closed billing periods#
+you SHOULD NOT regenerate data from previoulsy closed billing periods
+NEED to do some scenarios where billing data has been regenrated
 
 Refunds are applied to retrospective charge records where the usage has already been incurred whereas credits are applied in a forward looking perspective and are consumed ('burned-down') by future usage.
 
@@ -60,7 +64,7 @@ Within the FOCUS specification, the following examples demonstrate how a refund 
 
 | Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
 |------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
-| Bulk | Correction to multiple billing errors | Correction | Usage | NULL | NULL | -5000 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Bulk | Correction to multiple billing errors | Correction | Usage | NULL | NULL | -5000 | 2023-02-01T00:00:00Z | 2023-02-01T00:00:00Z |
 
 In this scenario we are correcting multiple errors in a bulk single line item. This is NOT PREFERRED as the correction record is not represented agains the accounts where the original usage was incurred.
 
@@ -85,6 +89,9 @@ In this scenario we are utilizing the NULLABILITY of the Rate and Cost columns t
 
 In this scenario we are utilizing the NULLABILITY of the Rate and Volume columns to make a correction to a cost that did NOT have a corresponding impact on the volume of serviece consumed.
 
+
+MAIN DIFFERENCE HERE WE ARE SUPPLYING USAGE/ CORRECTIONS IN DUPLICATE OR TRIPLICATE, TRIPLICATE IS BETTER FOR TRANSPARENCEY AND DATA CONSISTENCY, DUPLICATE IS BETTER FOR DATA VOLUMES
+
 | Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
 |------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
 | Accounting Usage | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
@@ -100,6 +107,15 @@ In this scenario we maintain cost calculation integrity rules by using the first
 | Accounting Rate | Corrected Compute usage in US East | Correction | Usage | 1500 | 0.8 | 1200 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
 
 In this scenario we maintain cost calculation integrity rules by using the first correction record to fully negate the original record that contained the error. We then supply a new complete billing record containing the corrected rate and cost data. This follows accounting data principals.
+
+Riley:
+Usage and billing correction done at separate times and as separate line items (NOTE: the usage corrections may be multiple line items but the cost corrections may be in bulk --- THIS IS NOT PREFERRED)
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
+| Accounting Rate | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Accounting Rate | Correction to Compute usage in US East | Correction | Usage | -1500 | 1 | -1500 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Accounting Rate | Corrected Compute usage in US East | Correction | Usage | 1500 | 0.8 | 1200 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
+
 
 
 #### NOTES
