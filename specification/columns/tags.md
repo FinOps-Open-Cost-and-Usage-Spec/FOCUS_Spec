@@ -14,7 +14,11 @@ The Tags column adheres to the following requirements:
 * A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
 * A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
 * If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
-* Providers with two or more user-defined tag schemes MUST ensure that all but one user-defined tag scheme are uniquely identified by a provider-defined prefix, allowing one scheme to remain unprefixed at their discretion.
+
+User-defined Tags additionally adhere to the following requirements:
+
+* When a provider has only 1 user-defined tag scheme, the provider MUST NOT alter any user-defined Tag keys.
+* When a provider has 2 or more user-defined tag scheme, the provider MUST alter all but 1 provider-determined tag scheme with unique, provider-defined prefixes.
 
 Provider-defined Tags additionally adhere to the following requirements:
 
