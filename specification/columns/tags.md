@@ -14,7 +14,7 @@ The Tags column adheres to the following requirements:
 * A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
 * A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
 * If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
-* Providers MUST NOT alter user-defined Tag keys or values.
+* Providers with two or more user-defined tag schemes MUST ensure that all but one user-defined tag scheme are uniquely identified by a provider-defined prefix, allowing one scheme to remain unprefixed at their discretion.
 
 Provider-defined Tags additionally adhere to the following requirements:
 
@@ -23,12 +23,13 @@ Provider-defined Tags additionally adhere to the following requirements:
 
 ## Provider-Defined vs. User-Defined Tags
 
-This example illustrates three different tagging scenarios. The first two illustrate when the provider supports both keys and values, while the third is for supporting keys only. The first tag is user-defined and doesn't have a provider prefix. The second tag is provider-defined and has a prefix of `acme/`, which is reserved by the provider. The third tag has a tag key of `baz` and its value is assigned the boolean value `true` since the tag doesn't support a value.
+This example illustrates four different tagging scenarios. The first three illustrate when the provider supports both keys and values, while the third is for supporting keys only. The first tag is user-defined and doesn't have a provider prefix. The second and third tags are provider-defined and have prefixes of `scheme2/` & `scheme3/` which are reserved by the provider. The fourth tag has a tag key of `baz` and its value is assigned the boolean value `true` since the tag doesn't support a value.
 
 ```json
     {
         "foo": "bar",
-        "acme/foo": "bar",
+        "scheme2/foo": "bar",
+        "scheme3/foo": "baz",
         "baz": true,
     }
 ```
