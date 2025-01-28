@@ -13,7 +13,7 @@ The ContractedCost column adheres to the following requirements:
 * ContractedCost MUST be denominated in the BillingCurrency.
 * If [ContractedUnitPrice](#contractedunitprice) is present and null, ContractedCost adheres to the following additional requirements:
   * ContractedCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related charges.
-  * ContractedCost of a charge unrelated to other charges (e.g., when the [ChargeCategory](#chargecategory) is "Credit") MUST match the [BilledCost](#billedcost).
+  * ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
 * The product of ContractedUnitPrice and PricingQuantity and MUST match the ContractedCost if ContractedUnitPrice is present and not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
 * Discrepancies in ContractedCost, ContractedUnitPrice, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
 
