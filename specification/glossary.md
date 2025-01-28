@@ -70,7 +70,7 @@ A correction refers to a charge record applied to a previously invoiced billing 
 
 <a name="glossary:credit"><b>Credit</b></a>
 
-A financial incentives or allowances granted by providers independently of other charges to offset costs in various scenarios.
+A financial incentive or allowance granted by provider independently of other charges to offset costs in various scenarios.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
