@@ -1,9 +1,20 @@
 Request is to make avaialble an invoice ID column that will be updated at invoice generation time to add the invoice ID to the rows of data for easier reconcilliation of spend to invoice ID
+# Options
+## Option 1 - Add InvoiceID column to FOCUS table
+Adding a new column called InvoiceID
+This option is probably less complex than option 2 but requires providers to do an update on millions and millions of rows of data at the end of each period to inlcude the relevant invoiceID for the billing period. 
+It may increase data sizes and doubles the export requirements for practitioners at the end of each month.
+We will need to work through how to determine the InvoiceID or Invoice section ID and how to links to the specific rows of data for the billing period noting we may have some invoice month items land in a different billing period outside the invoice month.
+
+## Option 2 - Create an invoice Schema outside of FOCUS - preffered
+Discussing this option with Riley, it sounds like a very suitable option for linking InvoiceID back to billed rows of data for a billing period. 
+We would create a new schema for Invoice data which can be updated at the end of each month and would use dimension data to provide a unique link back to each row of data the invoice was associated to
+Examples of this can eb found here: https://docs.google.com/spreadsheets/d/1fzLutxkXWoxDifz8YgGHQxbEyO67lA_6_EHr-E5Jlzk/edit?gid=1540478077#gid=1540478077
 
 # The Problem:
 Without Invoice ID there are situations like when an account is moved between different Billing Accounts, where you loose track and are unable to properly match those.
 Invoice reconcilliation is harder to achieve when practiioners are not able to determine which charges in a month relate to the invoice for the invoie month.
-Credits are har to allocate as each creadit or refund will receive a new credit memo and is not linked to previous invoices or invoice months.
+Credits are hard to allocate as each credit or refund will receive a new credit memo and is not linked to previous invoices or invoice months.
 Another important use case are Credit Memos (Refund Invoices): AWS creates Credit Memos and they show up in the CUR at that point in time, however there is a manual process involved to request that Credit Memo to be applied to a given regular Invoice. The result is that you cannot usually include the credit memo in the same billing period. We set the applicable billing period for each Credit Memo to take them into account, and for that we need the Invoice ID to be able to discriminate the right rows of data in the input. PR #675 https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/675 should be reviewed for credit/refund details
 
 ## Use Cases
@@ -27,7 +38,10 @@ It may be necessary to link part number from the invoice to SKU ID or Sku Price 
 Adding an invoice ID to FOCUS exports in the current form would require a backfill of data to be done by MSFT for each row as well as identifying each invoice section ID linked to the billing ID structure created by each customer
 
 ## AWS
-Not enough detail in AWS yet for me to work this out but will get more invoice detail shortly.
+AWS invoice will either be per account ID or if account ID's are linked to a primary accoutn for billing all details will be in a single invoice with linked account ID at the end of the invoice that the invoice applies to. the invoice from what i can see does not contain SKU's or part numbers in the invoice.
 
 # SaaS providers
 Here we will add invoice handling information from SaaS Providers for discussion on how we may include SaaS invoice ID's
+@Riley could you add something here around SaaS handling
+
+
