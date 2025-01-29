@@ -45,3 +45,9 @@ Here we will add invoice handling information from SaaS Providers for discussion
 @Riley could you add something here around SaaS handling
 
 
+# TF2 meeting notes 30/01/2025
+Pre generate invoice number in FOCUS for invoice month rqther than invoice ID at invoice generation time
+Ensures invoice ID is in FOCUS 
+Include detailed invoice schem ID in Dataset to view detailed invoice information
+what does a change look like
+is there rewrite required on this
