@@ -1,6 +1,6 @@
 # Sub Account Type
 
-Sub Account Type is a provider-assigned name to identify the type of [*sub account*](#glossary:sub-account). Sub Account Type is a readable display name and not a code. Sub Account Type is commonly used for scenarios like mapping FOCUS constructs to provider constructs and summarizing costs across providers.
+Sub Account Type is a provider-assigned name to identify the type of [*sub account*](#glossary:sub-account). Sub Account Type is a readable display name and not a code. Sub Account Type is commonly used for scenarios like mapping FOCUS and provider constructs, summarizing costs across providers, or invoicing and chargeback.
 
 The SubAccountType column adheres to the following requirements:
 
