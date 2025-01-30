@@ -18,12 +18,14 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "chargeperiodend.md",1
 !INCLUDE "chargeperiodstart.md",1
 !INCLUDE "commitmentdiscountcategory.md",1
+!INCLUDE "commitmentdiscountcost.md",1
 !INCLUDE "commitmentdiscountid.md",1
 !INCLUDE "commitmentdiscountname.md",1
 !INCLUDE "commitmentdiscountquantity.md",1
 !INCLUDE "commitmentdiscountstatus.md",1
 !INCLUDE "commitmentdiscounttype.md",1
 !INCLUDE "commitmentdiscountunit.md",1
+!INCLUDE "commitmentdiscountunitprice.md",1
 !INCLUDE "consumedquantity.md",1
 !INCLUDE "consumedunit.md",1
 !INCLUDE "contractedcost.md",1

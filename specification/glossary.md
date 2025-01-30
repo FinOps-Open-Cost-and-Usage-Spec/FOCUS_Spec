@@ -68,6 +68,10 @@ The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the asso
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
 
+<a name="glossary:effective-unit-price">Effective Unit Price</a>
+
+The discounted rate or predefined amount of spend associated with a [*commitment discount*](#glossary:commitment-discount) and derived as the committed purchase amount divided by the number of [*charge periods*](glossary:chargeperiod) within its [*term*](glossary:term).
+
 <a name="glossary:effective-cost"><b>Effective Cost</b></a>
 
 The amortized cost of the charge after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
