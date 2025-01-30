@@ -30,7 +30,7 @@ Provider-defined Tags additionally adhere to the following requirements:
 
 This example illustrates various tags produced from multiple user-defined and provider-defined tag schemes.  The first three tags illustrate examples from three different, user-defined tag schemes. The provider predetermined that 1 user-defined tag scheme (i.e. `"foo": "bar"`) does not have a prepended prefix, but the remaining two user-defined tag schemes (i.e. `"userDefinedTagScheme2/foo": "bar"`, `"userDefinedTagScheme3/foo": true`) do have predefined and reserved prefixes specified by the provider.  Additionally, the third tag was produced from a valueless, user-defined tag scheme, so the provider also applies `true` as its default value.
 
-The last two tags illustrate examples from two different, provider-defined tag schemes, and since all provider-defined tag schemes require a prefix, the provider has prepended prefixes (`providerDefinedTagScheme1/`, `providerDefinedTagScheme2/`) to each tag.
+The last two tags illustrate examples from two different, provider-defined tag schemes. Since all provider-defined tag schemes require a prefix, the provider has prepended predefined and reserved prefixes (`providerDefinedTagScheme1/`, `providerDefinedTagScheme2/`) to each tag.
 
 ```json
     {
