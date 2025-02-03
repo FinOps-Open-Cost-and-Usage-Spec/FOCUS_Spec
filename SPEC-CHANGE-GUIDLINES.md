@@ -92,8 +92,3 @@ Examples:
 
 
 
-
-
-## Supported Features
-
-
