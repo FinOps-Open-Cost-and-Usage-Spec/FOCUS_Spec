@@ -15,17 +15,16 @@ The Tags column adheres to the following requirements:
 * A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
 * Providers MUST NOT alter Tag values unless applying true (boolean) to valueless tags
 * If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
+* Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
 
-
-User-defined Tags additionally adhere to the following requirements:
+User-defined tags additionally adhere to the following requirements:
 
 * When a provider has only 1 user-defined tag scheme, the provider MUST NOT alter any user-defined Tag keys.
-* When a provider has 2 or more user-defined tag schemes, the provider MUST alter all but 1 user-defined tag scheme with unique, provider-defined tag key prefixes.
+* When a provider has 2 or more user-defined tag schemes, the provider MUST alter all but 1 user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme.
 
-Provider-defined Tags additionally adhere to the following requirements:
+Provider-defined tags additionally adhere to the following requirements:
 
-* Provider-defined tags MUST be prefixed with a provider-specified tag key prefix.
-* Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
+* Provider-defined tags MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
 
 ## Provider-Defined vs. User-Defined Tags
 
