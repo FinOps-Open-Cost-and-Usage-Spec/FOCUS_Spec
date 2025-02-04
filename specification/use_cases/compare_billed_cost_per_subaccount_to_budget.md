@@ -47,7 +47,3 @@ GROUP BY
 * ChargePeriodEnd
 * ProviderName
 * SubAccountId
-
-## Use Case Change Log
-| Version | Change | Purpose |
-| :-------| :------| :-----------|
