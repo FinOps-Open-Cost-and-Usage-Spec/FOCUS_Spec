@@ -1,15 +1,12 @@
 # Corrections/Refunds/Credits Handling (POTATO)
 
+this document assumes we do not support regenerating/restating data from previously closed billing periods
+you SHOULD NOT regenerate data from previoulsy closed billing periods
+
 Corrections are line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include: 
 
 - [*Refund*](#glossary:refund) - experiencing a billing technical error (i.e. charging the incorrect rate/volume for a service line item)
 - [*Credit*](#glossary:credit) - providing a promotional benefit (i.e. migration incentives or new service incentives)
-- Need an observation on late landing costs 
-- need an observation on positive adjustments??? (misbilled and charged more?)
-
-this document assumes we do not support regenerating/restating data from previously closed billing periods#
-you SHOULD NOT regenerate data from previoulsy closed billing periods
-NEED to do some scenarios where billing data has been regenrated
 
 Refunds are applied to retrospective charge records where the usage has already been incurred whereas credits are applied in a forward looking perspective and are consumed ('burned-down') by future usage.
 
@@ -68,6 +65,8 @@ Within the FOCUS specification, the following examples demonstrate how a refund 
 
 In this scenario we are correcting multiple errors in a bulk single line item. This is NOT PREFERRED as the correction record is not represented agains the accounts where the original usage was incurred.
 
+All Corrections in the below examples should be itemized to the ResourceId and SkuPriceId
+
 | Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
 |------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
 | Usage & Cost | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
@@ -89,8 +88,20 @@ In this scenario we are utilizing the NULLABILITY of the Rate and Cost columns t
 
 In this scenario we are utilizing the NULLABILITY of the Rate and Volume columns to make a correction to a cost that did NOT have a corresponding impact on the volume of serviece consumed.
 
+Riley:
+Usage and billing correction done at separate times and as separate line items (NOTE: the usage corrections may be multiple line items but the cost corrections may be in bulk --- THIS IS NOT PREFERRED)
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
+| Separate Events | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Separate Events | Correction to Compute usage in US East | Correction | Usage | -300 | NULL | NULL | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
+| Separate Events | Corrected Compute cost in US East | Correction | Usage | NULL | NULL | -300 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
 
-MAIN DIFFERENCE HERE WE ARE SUPPLYING USAGE/ CORRECTIONS IN DUPLICATE OR TRIPLICATE, TRIPLICATE IS BETTER FOR TRANSPARENCEY AND DATA CONSISTENCY, DUPLICATE IS BETTER FOR DATA VOLUMES
+
+
+
+### PREFERRED CORRECTION APPROATCH
+
+The main difference here is that usage / corrections are supplied in triplicate which improves transparency and data consistency. NOTE: this increases data volumes compared to the duplicate mechanism describes above
 
 | Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
 |------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
@@ -108,15 +119,19 @@ In this scenario we maintain cost calculation integrity rules by using the first
 
 In this scenario we maintain cost calculation integrity rules by using the first correction record to fully negate the original record that contained the error. We then supply a new complete billing record containing the corrected rate and cost data. This follows accounting data principals.
 
-Riley:
-Usage and billing correction done at separate times and as separate line items (NOTE: the usage corrections may be multiple line items but the cost corrections may be in bulk --- THIS IS NOT PREFERRED)
-| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
-|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
-| Accounting Rate | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
-| Accounting Rate | Correction to Compute usage in US East | Correction | Usage | -1500 | 1 | -1500 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
-| Accounting Rate | Corrected Compute usage in US East | Correction | Usage | 1500 | 0.8 | 1200 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
 
+### In the Event of Billing File Regeneration / Restatement
 
+FOCUS billing generators MUST NOT regenerate historic billing data from PREVIOUSLY CLOSED BILLING PERIODS as it decouples the invoicing cycle from the billing activity data.
+
+In this case where historic billing data is regenerated practicioners are not able to reconclie the billing period start to when they are invoiced for the correction.
+
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start | Invoice ID |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|---------------|
+| Simple  | REMOVED - Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z | ID123 |
+| Simple  | Compute usage in US East | NULL| Usage | 1200 | 1 | 1200 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z | ID456 |
+
+NOTE: this correction record will be invoiced in 2023-02 but will appear in the billing data for 2023-01
 
 #### NOTES
 
