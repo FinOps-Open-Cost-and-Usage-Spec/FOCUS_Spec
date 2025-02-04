@@ -8,12 +8,12 @@ Since providers have different rules for when commitment flexibility is or is no
 
 ## SKUs & Rates
 
-| ProviderName | Service | SkuId     | ListUnitPrice  | x_CommittedUnitPrice | x_NormalizationFactor |
-| ------------ | ------- | --------- | -------------- | ---------------------| --------------------- |
-| TinyCloud    | Compute | VM_Small  | $0.50          | $0.25                | 1                     |
-| TinyCloud    | Compute | VM_Medium | $1.00          | $0.50                | 2                     |
-| TinyCloud    | Compute | VM_Large  | $2.00          | $1.00                | 4                     |
-| TinyCloud    | Compute | VM_XLarge | $4.00          | $2.00                | 8                     |
+| ProviderName | Service | SkuId     | ListUnitPrice  | x_CommitmentDiscountUnitPrice | x_NormalizationFactor |
+| ------------ | ------- | --------- | -------------- | ------------------------------| --------------------- |
+| TinyCloud    | Compute | VM_Small  | $0.50          | $0.25                         | 1                     |
+| TinyCloud    | Compute | VM_Medium | $1.00          | $0.50                         | 2                     |
+| TinyCloud    | Compute | VM_Large  | $2.00          | $1.00                         | 4                     |
+| TinyCloud    | Compute | VM_XLarge | $4.00          | $2.00                         | 8                     |
 
 The above, fictitious SKU pricing attributes show that this provider, *TinyCloud*, only has 1 service that offers 4 virtual machine SKUs with various list rates, committed rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its committed rate. Usage-based commitment discounts with commitment flexibility can fully cover any combination of 1 or more SKUs where the sum of their normalization factor equals the normalization factor of the commitment discount.
 
@@ -91,7 +91,7 @@ The VM_Large commitment discount is unused because no VM_Large resources are run
         "ResourceId": "<my-medium-vm-id>",
         "PricingQuantity": 1.00,
         "BilledCost": 1.00,
-        "EffectiveCost": 0.00,
+        "EffectiveCost": 1.00,
         "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_Medium"
@@ -193,7 +193,7 @@ The VM_Small commitment discount was fully utilized but still only covered 25% o
         "ResourceId": "<my-large-vm-id>",
         "PricingQuantity": 0.75,
         "BilledCost": 1.50,
-        "EffectiveCost": 0.00,
+        "EffectiveCost": 1.50,
         "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_Large"
