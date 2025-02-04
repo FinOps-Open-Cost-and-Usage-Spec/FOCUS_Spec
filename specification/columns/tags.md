@@ -7,7 +7,7 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 The Tags column adheres to the following requirements:
 
 * Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
-* Tags MUST contain user-defined and provider-defined tags.
+* Tags MUST contain all user-defined and provider-defined tags.
 * Tags MUST only contain finalized tags.
 * Tags MUST be in [KeyValueFormat](#key-valueformat).
 * A Tag key with a non-null value for a given resource SHOULD be included in the tags column.
