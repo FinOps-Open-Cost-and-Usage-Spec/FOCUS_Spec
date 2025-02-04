@@ -6,20 +6,21 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 
 The Tags column adheres to the following requirements:
 
-* The Tags column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
-* The Tags column MUST contain user-defined and provider-defined tags.
-* The Tags column MUST only contain finalized tags.
-* The Tags column MUST be in [KeyValueFormat](#key-valueformat).
+* Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
+* Tags MUST contain user-defined and provider-defined tags.
+* Tags MUST only contain finalized tags.
+* Tags MUST be in [KeyValueFormat](#key-valueformat).
 * A Tag key with a non-null value for a given resource SHOULD be included in the tags column.
 * A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
 * A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
-* If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
 * Providers MUST NOT alter Tag values unless applying true (boolean) to valueless tags
+* If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
+
 
 User-defined Tags additionally adhere to the following requirements:
 
 * When a provider has only 1 user-defined tag scheme, the provider MUST NOT alter any user-defined Tag keys.
-* When a provider has 2 or more user-defined tag scheme, the provider MUST alter all but 1 provider-determined tag scheme with unique, provider-defined prefixes.
+* When a provider has 2 or more user-defined tag schemes, the provider MUST alter all but 1 user-defined tag scheme with unique, provider-defined tag key prefixes.
 
 Provider-defined Tags additionally adhere to the following requirements:
 
