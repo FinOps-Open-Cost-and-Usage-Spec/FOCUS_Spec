@@ -20,7 +20,7 @@ Considerations:
 | Size & Shape | SkuXUnits | This is to capture units specific to a PaaS offering which often conatain a measure of processing power (RUs, PTUs, DBUs, etc.) | X is a placeholder for another word |
 
 
-| ID | Type | CSP | Description | SizeVcpu | SizeGib | SizeName | SkuVersionName | SkuXUnits |
+| ID | Type | Provider | SkuMeter | SizeVcpu | SizeGib | SizeName | SkuVersionName | SkuXUnits |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | 1e0af169-e265-53c0-832b-c5e6a58395d1 | IaaS | Azure | Virtual Machines Ddsv5 Series - D32ds v5 - US West 2 | 32 | 128 | D32ds v5 | Ddsv5 | |
 | | IaaS | Azure | P50 LRS Disk | | 4096 | P50 | P-series disk | |
