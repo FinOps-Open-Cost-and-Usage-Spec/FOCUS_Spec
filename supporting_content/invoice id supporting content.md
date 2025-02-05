@@ -2,11 +2,15 @@ Request is to make avaialble an invoice ID column that will be updated at invoic
 # Options
 ## Option 1 - Add InvoiceID column to FOCUS table
 Adding a new column called InvoiceID
+Allow nulls in the column and require vendors you create an invoiceID to add it to the row
+Have cloud providers update the data at invoice generation to include the invoiceID
 This option is probably less complex than option 2 but requires providers to do an update on millions and millions of rows of data at the end of each period to inlcude the relevant invoiceID for the billing period. 
 It may increase data sizes and doubles the export requirements for practitioners at the end of each month.
 We will need to work through how to determine the InvoiceID or Invoice section ID and how to links to the specific rows of data for the billing period noting we may have some invoice month items land in a different billing period outside the invoice month.
+After TF2 last week and a discussion with Mike today, there seems to be support for this option. I would like to know more from cloud providers on their views of this.
 
-## Option 2 - Create an invoice Schema outside of FOCUS - preffered
+
+## Option 2 - Create an invoice Schema outside of FOCUS - post release 1.2
 Discussing this option with Riley, it sounds like a very suitable option for linking InvoiceID back to billed rows of data for a billing period. 
 We would create a new schema for Invoice data which can be updated at the end of each month and would use dimension data to provide a unique link back to each row of data the invoice was associated to
 Examples of this can eb found here: https://docs.google.com/spreadsheets/d/1fzLutxkXWoxDifz8YgGHQxbEyO67lA_6_EHr-E5Jlzk/edit?gid=1540478077#gid=1540478077
