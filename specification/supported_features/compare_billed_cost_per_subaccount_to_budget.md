@@ -1,9 +1,6 @@
-# Use Case
+# Supported Feature
 
 Compare billed cost per subaccount to budget
-
-## Use Case ID
-14383
 
 ## Supported Specification Version
 1.0

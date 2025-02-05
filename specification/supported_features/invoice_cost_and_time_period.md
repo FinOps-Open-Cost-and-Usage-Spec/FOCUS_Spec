@@ -1,8 +1,6 @@
-# Use Case
+# Supported Feature
 
-Cost data in the FOCUS specification is represented such that cost information is consistent with the costs indicated on invoices.  
-
-## Use Case ID
+Cost data in the FOCUS specification is represented such that cost information is consistent with the costs indicated on invoices.
 
 
 ## Supported Specification Version
