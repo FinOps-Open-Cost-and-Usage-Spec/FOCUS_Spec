@@ -54,4 +54,13 @@ Pre generate invoice number in FOCUS for invoice month rqther than invoice ID at
 Ensures invoice ID is in FOCUS 
 Include detailed invoice schem ID in Dataset to view detailed invoice information
 what does a change look like
-is there rewrite required on this
+
+# TF2 meeting notes 6/2/2025
+Conditionality is more complex if we make it required if you do it??
+We recognise there is a construct of invoiceID but we dont make it required is seen as a better way forwards. 
+what happens if you do get a value and you do something with that, does the invoiceID change, what happens when it changes. 
+Normative requirements for the value over time? 
+what would happen if you negate out the rows with invoiceID. 
+Can we have invoice contain the invoiceID value if different from the actual invoiceID? 
+OCI issues on not having null or not restating the data? 
+if a row contains a credit, does the row get an invoiceID, is there rewrite required on this?
