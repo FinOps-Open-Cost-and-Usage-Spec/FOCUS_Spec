@@ -4,6 +4,8 @@
 
 * Grouping and ordering of requirements ensure clarity, logical flow, and consistency across all columns, making related requirements easy to identify and follow. The order established in the cookbook should be used for consistency across specifications. See the cookbook for the exact sequence, but generally:
 
+* **Note**: This section provides a current preview of the requirements grouping and ordering as established in the cookbook. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
+
   1. **Technical (Actionable) Requirements**
      1. **Presence of the Column**: Defines whether this column must exist in the dataset.
      2. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
@@ -30,8 +32,6 @@
         2. **Cost Correction Discrepancies**: Disclaimer on discrepancies in unit pricing, pricing quantities, and costs, which can be addressed independently when ChargeClass is 'Correction'.
      6. **Cost Calculation and Relationships**: Defines how costs are calculated in specific use cases, including dependencies on related charges and alignment with other cost values.
      7. **Other**
-
-  * **Note**: This section provides a current preview of the requirements grouping and ordering as established in the cookbook. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
 * Within each group of requirements, order individual requirements as follows:
   * **MUST** – an absolute requirement
@@ -127,12 +127,6 @@
     * <ColumnId> MUST NOT be null when <Condition>.
     * <ColumnId> MAY be null when <Condition>.
   ```
-
-### Brief Description of Examples
-
-* **Example 1**: This example illustrates how to define **nullability** for a column. It starts by clearly stating the nullability conditions and outlines the requirements for each condition. It includes a fallback "In all other cases" clause.
-  
-* **Example 2**: This example demonstrates the use of **nested requirements** under a specific condition. It shows how a main condition can group specific requirements, which are then elaborated with nested bullets beginning with the <ColumnId.
 
 ## Consistent Wording and Patterns in Requirements
 
