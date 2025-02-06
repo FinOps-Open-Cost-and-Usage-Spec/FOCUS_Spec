@@ -15,6 +15,7 @@ Current column mappings found in available data sets:
 - GCP: [Resource Hierarchy](https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy#resource-hierarchy-detail)
 - Azure: [Organizing resources](https://learn.microsoft.com/azure/cost-management-billing/manage/view-all-accounts)
 - AWS: [Org Concepts](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html)
+- AWS: [Configuring your AWS Invoices using Invoice Configuration](https://aws.amazon.com/blogs/aws-cloud-financial-management/configuring-your-aws-invoices-using-invoice-configuration/)
 
 ## Example usage scenarios
 
