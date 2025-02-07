@@ -1,6 +1,6 @@
 # Non-Currency Consumable Units
 
-Some providers offer services where the consumption of resources is not directly tied to a currency rate. Instead, the consumption is measured in terms of consumable units. These consumable units are purchased at a currency rate and are consumed based on the usage of the service.
+Some providers offer services where the consumption of resources is not directly tied to a currency rate. Instead, another consumable unit is used like a currency, such as tokens, credits, or points. These consumable units are purchased at a currency rate and are consumed based on the usage of the service.
 
 ## Scenario
 
@@ -37,6 +37,10 @@ On April 1st, 2025, ACME executes a contract  and invoices AwesomeCorp $205,000.
 Entries in the FOCUS dataset:
 
 SEE: SCENARIO Initial Purchase Token Allocation https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788
+
+## Recurring Allocations
+As part of AwesomeCorp's contract with ACME, AwesomeCorp receives a monthly allocation of 100 Z widget tokens. These tokens are allocated on the first of each month.
+<TODO>
 
 ## Usage Records IN FOCUS
 On April 2nd, 2025, ACME's consumption billing system calculates and provies usage and a resource level for the usage of 3 different resouces and their applicable SKUS:

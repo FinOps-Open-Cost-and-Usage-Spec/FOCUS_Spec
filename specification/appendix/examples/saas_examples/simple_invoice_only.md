@@ -6,9 +6,6 @@ Many vendors do not provide an extensive resource level breakdown of the cost of
 
 ACME Corp provides a PDF invoice to its customers for all purchases of their solution, but does not provide a detailed low level breakdown of their cost. Awesome Corp purchases their service on April 1st 2025 for a total of $1000, payable upfront for a year of service.
 
-## Key Factors
-- In order to ensure aggregatable cost and usage data the marketplaces FOCUS data must reflect the payable invoice amount, without duplicative BilledCost values that would result in double counting the invoice amount payable by the end customer.
-
 ## Initial Purchase Record
 On April 1st CSPCorp provides the following records in their FOCUS data for the $1000 purchase:
 
