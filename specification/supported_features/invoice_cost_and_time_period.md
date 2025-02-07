@@ -3,8 +3,8 @@
 Cost data in the FOCUS specification is represented such that cost information is consistent with the costs indicated on invoices.
 
 
-## Supported Specification Version
-
+## Introduced Version
+0.5
 
 ## Description
 FOCUS data should be consistent with the costs indicated on invoices. This is relevant to the total cost of the invoice, as well as the period of time the invoice covers.

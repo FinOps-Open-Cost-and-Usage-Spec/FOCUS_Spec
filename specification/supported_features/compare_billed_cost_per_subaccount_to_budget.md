@@ -2,7 +2,7 @@
 
 Compare billed cost per subaccount to budget
 
-## Supported Specification Version
+## Introduced Version
 1.0
 
 ## Description

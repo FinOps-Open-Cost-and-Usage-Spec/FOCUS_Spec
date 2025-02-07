@@ -2,7 +2,7 @@
 
 Compare billed cost to the effective cost, to understand the actual savings rate. Used to compare with negotiated discounts
 
-## Supported Specification Version
+## Introduced Version
 1.0
 
 ## Description
