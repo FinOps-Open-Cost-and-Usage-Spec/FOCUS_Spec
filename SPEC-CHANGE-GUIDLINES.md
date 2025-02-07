@@ -77,7 +77,7 @@ Examples:
 
 ### Migration Compatible Change:
 
-Any change that still supports the Published Use Cases, but may require modification to query or ingestion by consumers of a FOCUS dataset.
+Any change that still supports the Published Supported Features, but may require modification to query or ingestion by consumers of a FOCUS dataset.
 
 Examples: 
    - An existing categorization column is changes to split a category into two different categories
