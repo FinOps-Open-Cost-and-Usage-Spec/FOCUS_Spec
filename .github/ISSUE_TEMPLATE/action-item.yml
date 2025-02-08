@@ -1,6 +1,6 @@
 name: "Action Item"
 description: "This is an issue to update an action item"
-title: "[AI]: "
+title: "[AI] "
 type: "Action Item"
 # assignees: 
 #   - "shawnalpay"
