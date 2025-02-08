@@ -2,9 +2,9 @@ name: "Action Item"
 description: "This is an issue to update an action item"
 title: "[AI]: "
 type: "Action Item"
-assignees: 
-   - "shawnalpay"
-   - "jpradocueva"
+# assignees: 
+#   - "shawnalpay"
+#   - "jpradocueva"
 body:
   - type: markdown
     attributes:
