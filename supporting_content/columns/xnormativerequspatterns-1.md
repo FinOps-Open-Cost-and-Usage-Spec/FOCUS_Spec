@@ -57,7 +57,7 @@ Applies to the following columns:
 
 ```markdown
 * (*Optional*) <ColumnId> nullability is defined as follows:
-  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null if/when <Condition>.
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
 ```
 
 Applies to the following columns:
@@ -76,8 +76,8 @@ Applies to the following columns:
 
 ```markdown
 * <ColumnId> nullability is defined as follows:
-  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null if/when <Condition1>.
-  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null if/when <Condition2>.
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition1>.
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition2>.
 ```
 
 Applies to the following columns:
@@ -138,10 +138,10 @@ Applies to the following columns:
 
 ```markdown
 * <ColumnId> nullability is defined as follows:
-  * <ColumnId> MUST be null if <Condition>.
-  * If <Condition>, the column adheres to the following additional requirements:
-    * <ColumnId> MUST NOT be null if <Condition>.
-    * <ColumnId> MAY be null if <Condition>.
+  * <ColumnId> MUST be null when <Condition>.
+  * When <Condition>, the column adheres to the following additional requirements:
+    * <ColumnId> MUST NOT be null when <Condition>.
+    * <ColumnId> MAY be null when <Condition>.
 ```
 
 Applies to the following columns:
@@ -174,21 +174,21 @@ Applies to the following columns:
 Rplace this:
 
 ```markdown
-* If <Condition>, <Column> adheres to the following additional requirements:
-  * <Column> MUST NOT be null if <Condition>.
-  * <Column> MAY be null if <Condition>.
-* Else <Column> adheres to the following additional requirement:
-  * <Column> MUST be null.
+* If <Condition>, <ColumnId> adheres to the following additional requirements:
+  * <ColumnId> MUST NOT be null if <Condition>.
+  * <ColumnId> MAY be null if <Condition>.
+* Else <ColumnId> adheres to the following additional requirement:
+  * <ColumnId> MUST be null.
 ```
 
 With this:
 
 ```markdown
 * <ColumnId> nullability is defined as follows:
-  * If <Condition>, <Column> adheres to the following additional requirements:
-    * <Column> MUST NOT be null if <Condition>.
-    * <Column> MAY be null if <Condition>.
-  * <Column> MUST be null in all other cases.
+  * When <Condition>, <ColumnId> adheres to the following additional requirements:
+    * <ColumnId> MUST NOT be null when <Condition>.
+    * <ColumnId> MAY be null when <Condition>.
+  * <ColumnId> MUST be null in all other cases.
 ```
 
 ---
@@ -220,8 +220,9 @@ Replace this:
 With this:
 
 ```markdown
-* <ColumnId> MUST be null if <Condition>.
-* <ColumnId> MUST NOT be null if/when <Condition>.
+* <ColumnId> nullability is defined as follows:
+  * <ColumnId> MUST be null when <Condition>.
+  * <ColumnId> MUST NOT be null when <Condition>.
 ```
 
 Applies to the following columns:
@@ -254,9 +255,9 @@ Applies to the following columns:
 Replace this:
 
 ```markdown
-* If xxx, <ColumnId> adheres to the following additional requirement:
+* If <Condition>, <ColumnId> adheres to the following additional requirement:
   * <ColumnId> MUST be null.
-* Else if yyy, <ColumnId> adheres to the following additional requirement:
+* Else if <Condition>, <ColumnId> adheres to the following additional requirement:
   * <ColumnId> MUST NOT be null.
 * Else <ColumnId> adheres to the following additional requirement:
   * <ColumnId> MAY be null.
@@ -266,8 +267,8 @@ With this:
 
 ```markdown
 * <ColumnId> nullability is defined as follows:
-  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null if/when <Condition>.
-  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null if/when <Condition>.
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
   * <ColumnId> MAY be null in all other cases.
 ```
 
@@ -339,7 +340,7 @@ Note! This applies to all requirements that follow the nullability - Value Forma
 ### If-Not-Null Pattern
 
 ```markdown
-* If <ColumnId> is not null, <ColumnId> adheres to the following additional requirement(s):
+* When <ColumnId> is not null, <ColumnId> adheres to the following additional requirement(s):
 ```
 
 Applies to the following columns:
