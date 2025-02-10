@@ -47,7 +47,7 @@
   * <ColumnId> nullability is defined as follows:
     * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
     * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
-    * In all other cases, <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null.
+    * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null in all other cases.
   ```
 
   **Example 2:**
@@ -103,7 +103,7 @@ The ListUnitPrice column adheres to the following requirements:
 * **(Nullability - Definition)** ListUnitPrice nullability is defined as follows:
   * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
-  * In all other cases, ListUnitPrice MAY be null.
+  * ListUnitPrice MAY be null in all other cases.
 * **(Nullability - Conditional)** When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
   * **(Values and Value Ranges)** ListUnitPrice MUST be a non-negative decimal value.
   * **(Unit/Denomination)** ListUnitPrice MUST be denominated in the BillingCurrency.
@@ -119,7 +119,7 @@ The ListUnitPrice column adheres to the following requirements:
 * ListUnitPrice nullability is defined as follows:
   * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
-  * In all other cases, ListUnitPrice MAY be null.
+  * ListUnitPrice MAY be null in all other cases.
 * When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
