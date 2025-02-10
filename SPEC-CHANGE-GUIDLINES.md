@@ -25,7 +25,7 @@ TODO: A series of guidelines of how changes are proposed, reviewed, and accepted
 
 ### Addition of a New Feature or Column
 
-    When a new feature or column is introduced to the FOCUS specification, depending on the circumstances of the change, the support of the column may be initially optional. This is to allow for the adoption of a new feature or columne by prodivers that support it, without restricting other adopters from using newer versions of the specification. 
+When a new feature or column is introduced to the FOCUS specification, depending on the circumstances of the change, the support of the column may be initially optional. This is to allow for the adoption of a new feature or columne by prodivers that support it, without restricting other adopters from using newer versions of the specification. 
 - The feature or item addition is proposed and specification is modified. 
 - Change log includes an indication that the new feature/column has been added.
     - example: "Example  Column 1 has been added in version 2.0"
@@ -33,7 +33,7 @@ TODO: A series of guidelines of how changes are proposed, reviewed, and accepted
 
 ### Removal of a Feature or Column
     
-    When a feature or column is removed from the FOCUS specification, the following steps are taken:
+When a feature or column is removed from the FOCUS specification, the following steps are taken:
 - The feature or item removal is proposed, which, in addition to the proposed specification change, includes a deprecation period expressed in terms of Focus versions
   - example: "Example  Column 1 will be deprecated in version 2.1 and removed in version 2.4"
   
