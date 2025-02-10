@@ -75,7 +75,7 @@ The BillingAccountId column adheres to the following requirements:
 * BillingAccountId MUST conform to [String Handling](#stringhandling) requirements.
 * BillingAccountId nullability is defined as follows:
   * BillingAccountId MUST NOT be null.
-* BillingAccountId MUST be a globally unique identifier within a provider.
+* BillingAccountId MUST ensure global uniqueness within a provider.
 
 ### **Billing Account ID v.1.2 (Technical Refinement)**
 
@@ -96,6 +96,36 @@ The BillingAccountId column adheres to the following requirements:
 * BillingAccountId MUST be a globally unique identifier within a provider.
 
 ## Column: Billing Account Name
+
+### **Billing Account Name v.1.2 (Simplified Refinement)**
+
+The BillingAccountName column adheres to the following requirements:
+
+* BillingAccountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BillingAccountName MUST be of type String.
+* BillingAccountName MUST conform to [String Handling](#stringhandling) requirements.
+* BillingAccountName nullability is defined as follows:
+  * BillingAccountName MUST NOT be null when the provider supports assigning a display name for the *billing account*.
+* When BillingAccountName is not null, BillingAccountName adheres to the following additional requirements:
+  * BillingAccountName MUST ensure uniqueness within a customer.
+
+### **Billing Account Name v.1.2 (Technical Refinement)**
+
+The BillingAccountName column adheres to the following requirements:
+
+* BillingAccountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BillingAccountName MUST be of type String.
+* BillingAccountName MUST conform to [String Handling](#stringhandling) requirements.
+* BillingAccountName MUST NOT be null when the provider supports assigning a display name for the *billing account*.
+* BillingAccountName MUST be unique within a customer.
+
+### **Billing Account Name v.1.1 (Original)**
+
+The BillingAccountName column adheres to the following requirements:
+
+* The BillingAccountName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null when the provider supports assigning a display name for the *billing account*.
+* This column MUST be of type String.
+* BillingAccountName MUST be unique within a customer when a customer has more than one *billing account*.
 
 ## Column: Billing Currency
 
