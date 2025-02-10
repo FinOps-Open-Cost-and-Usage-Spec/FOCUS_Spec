@@ -6,7 +6,7 @@
 
 * **Note**: This section provides a current preview of the requirements grouping and ordering as established in the cookbook. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
-  1. **Technical (Actionable) Requirements**
+  1. **Technical Requirements**
      1. **Presence of the Column**: Defines whether this column must exist in the dataset.
      2. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
      3. **Value Format**: Ensures the value (if present) adheres to specific structural or syntactic rules.
@@ -16,7 +16,7 @@
         * Example:
           * *ColumnId SHOULD/MUST remain consistent over time for a given ReferencedColumnId.*
 
-  2. **Business & Contextual Requirements ("Non-Actionable")**
+  2. **Business & Contextual Requirements**
      1. **Unit/Denomination**: Ensures consistency in measurement or currency.
         * Example:
           * *ColumnId MUST be denominated in the BillingCurrency.*
@@ -27,7 +27,6 @@
      3. **Fallback/Substitute Values**: Specifies what alternative values may be used if the expected value is missing.
      4. **Relationships Outside the Spec**: Defines dependencies on external systems or datasets.
      5. **Cost Validation Rules:**
-        * Note: Consider relocating this to the Technical Requirements section!!!
         1. **Formula-based Cost Validation (e.g., P × Q = C)**: Ensures calculated fields adhere to mathematical rules.
         2. **Cost Correction Discrepancies**: Disclaimer on discrepancies in unit pricing, pricing quantities, and costs, which can be addressed independently when ChargeClass is 'Correction'.
      6. **Cost Calculation and Relationships**: Defines how costs are calculated in specific use cases, including dependencies on related charges and alignment with other cost values.
@@ -61,53 +60,6 @@
       * <ColumnId> MAY be null when <Condition>.
   ```
 
-### Examples
-
-#### List Unit Price
-
-* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
-* ListUnitPrice MUST be of type Decimal.
-* ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
-* ListUnitPrice nullability is defined as follows:
-  * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
-  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
-  * In all other cases, ListUnitPrice MAY be null.
-* **(DISCARD?)** When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
-  * ListUnitPrice MUST be a non-negative decimal value.
-  * ListUnitPrice MUST be denominated in the BillingCurrency.
-  * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) if PricingQuantity is not null and ChargeClass is not "Correction".
-  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
-
----
-
-* **(Presence)** ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
-* **(Data Type)** ListUnitPrice MUST be of type Decimal.
-* **(Value Format)** ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
-* **(Nullability - Definition)** ListUnitPrice nullability is defined as follows:
-  * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
-  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
-  * In all other cases, ListUnitPrice MAY be null.
-* **(DISCARD?: Nullability - Conditional)** When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
-  * **(Values and Value Ranges)** ListUnitPrice MUST be a non-negative decimal value.
-  * **(Unit/Denomination)** ListUnitPrice MUST be denominated in the BillingCurrency.
-  * **(Formula-based Cost Validation)** The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) if PricingQuantity is not null and ChargeClass is not "Correction".
-  * **(Cost Correction Discrepancies)** Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
-
----
-
-* **(Presence)** ListUnitPrice MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts.
-* **(Data Type)** ListUnitPrice MUST be of type Decimal.
-* **(Nullability - Definition)** ListUnitPrice nullability is defined as follows:
-  * ListUnitPrice MUST be null when ChargeCategory is "Tax".
-  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
-  * ListUnitPrice MAY be null in all other cases.
-* **(Nullability - Conditional)** When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
-  * ListUnitPrice MUST conform to Numeric Format requirements.
-  * ListUnitPrice MUST be a non-negative decimal value.
-  * ListUnitPrice MUST be denominated in the BillingCurrency.
-  * The product of ListUnitPrice and PricingQuantity MUST match the ListCost if PricingQuantity is not null and ChargeClass is not "Correction".
-* **(Other Logical Requirements)** Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
-
 ## Guidelines for Structuring Individual Requirements
 
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
@@ -136,3 +88,112 @@ To ensure clarity and consistency across columns and requirements, it is importa
 * **Follow common requirement patterns where applicable**  
 
 **Note:** Refer to the cookbook for a set of recognized requirement patterns and commonly used phrasing.
+
+## Examples
+
+### **List Unit Price**
+
+#### **List Unit Price v.1.2 (Simplified Refinement)**
+
+The ListUnitPrice column adheres to the following requirements:
+
+* **(Presence)** ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
+* **(Data Type)** ListUnitPrice MUST be of type Decimal.
+* **(Value Format)** ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
+* **(Nullability - Definition)** ListUnitPrice nullability is defined as follows:
+  * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * In all other cases, ListUnitPrice MAY be null.
+* **(Nullability - Conditional)** When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
+  * **(Values and Value Ranges)** ListUnitPrice MUST be a non-negative decimal value.
+  * **(Unit/Denomination)** ListUnitPrice MUST be denominated in the BillingCurrency.
+  * **(Formula-based Cost Validation)** The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) if PricingQuantity is not null and ChargeClass is not "Correction".
+  * **(Cost Correction Discrepancies)** Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
+
+---
+The ListUnitPrice column adheres to the following requirements:
+
+* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit unit prices exclusive of discounts.
+* ListUnitPrice MUST be of type Decimal.
+* ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
+* ListUnitPrice nullability is defined as follows:
+  * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * In all other cases, ListUnitPrice MAY be null.
+* When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
+  * ListUnitPrice MUST be a non-negative decimal value.
+  * ListUnitPrice MUST be denominated in the BillingCurrency.
+  * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) if PricingQuantity is not null and ChargeClass is not "Correction".
+  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
+
+#### **List Unit Price v.1.2 (Technical Refinement)**
+
+The ListUnitPrice column adheres to the following requirements:
+
+* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
+* If present, ListUnitPrice adheres to the following additional requirements:
+  * ListUnitPrice MUST be of type Decimal.
+  * ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
+  * If [ChargeCategory](#chargecategory) is "Tax", ListUnitPrice adheres to the following additional requirement:
+    * ListUnitPrice MUST be null.
+  * Else if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction", ListUnitPrice adheres to the following additional requirement:
+    * ListUnitPrice MUST NOT be null.
+  * Else ListUnitPrice adheres to the following additional requirement:
+    * ListUnitPrice MAY be null.
+  * If ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
+    * ListUnitPrice MUST be a non-negative decimal value.
+    * ListUnitPrice MUST be denominated in the BillingCurrency.
+    * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) if PricingQuantity is not null and ChargeClass is not "Correction".
+  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
+
+#### **List Unit Price v.1.1 (Original)**
+
+The ListUnitPrice column adheres to the following requirements:
+
+* The ListUnitPrice column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
+* This column MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency.
+* It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+* When ListUnitPrice is present and is not null, multiplying ListUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ListCost](#listcost), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
+
+### Billed Cost
+
+#### **Billed Cost v.1.2 (Simplified Refinement)**
+
+The BilledCost column adheres to the following requirements:
+
+* BilledCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BilledCost MUST be of type Decimal.
+* BilledCost MUST conform to [Numeric Format](#numericformat) requirements.
+* BilledCost nullability is defined as follows:
+  * BilledCost MUST NOT be null.
+* BilledCost MUST be a valid decimal value.
+* BilledCost MUST be denominated in the BillingCurrency.
+* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+
+#### **Billed Cost v.1.2 (Technical Refinement)**
+
+The BilledCost column adheres to the following requirements:
+
+* BilledCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BilledCost MUST be of type Decimal.
+* BilledCost MUST conform to [Numeric Format](#numericformat) requirements.
+* BilledCost MUST NOT be null.
+* BilledCost MUST be a valid decimal value.
+* BilledCost MUST be denominated in the BillingCurrency.
+* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+
+#### **Billed Cost v.1.1 (Original)**
+
+The BilledCost column adheres to the following requirements:
+
+* The BilledCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
+* This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency.
+* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+
+### ColumnName
+
+#### **ColumnName v.1.2 (Simplified Refinement)**
+
+#### **ColumnName v.1.2 (Technical Refinement)**
+
+#### **ColumnName v.1.1 (Original)**
