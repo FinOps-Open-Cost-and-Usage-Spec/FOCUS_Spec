@@ -7,7 +7,7 @@
 * **Note**: This section provides a current preview of the requirements grouping and ordering as established in the cookbook. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
   1. **Technical Requirements**
-     1. **Presence of the Column**: Defines whether this column must exist in the dataset.
+     1. **Presence**: Defines whether this column must exist in the dataset.
      2. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
      3. **Value Format**: Ensures the value (if present) adheres to specific structural or syntactic rules.
      4. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
