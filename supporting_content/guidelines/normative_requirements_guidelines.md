@@ -30,7 +30,7 @@
         1. **Formula-based Cost Validation (e.g., P × Q = C)**: Ensures calculated fields adhere to mathematical rules.
         2. **Cost Correction Discrepancies**: Disclaimer on discrepancies in unit pricing, pricing quantities, and costs, which can be addressed independently when ChargeClass is 'Correction'.
      6. **Cost Calculation and Relationships**: Defines how costs are calculated in specific use cases, including dependencies on related charges and alignment with other cost values.
-     7. **Other**
+     7. **Other**: Requirements that do not fall into one of the previous categories.
 
 * Within each group of requirements, order individual requirements as follows:
   * **MUST** – an absolute requirement
