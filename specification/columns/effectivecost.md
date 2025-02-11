@@ -18,10 +18,10 @@ The EffectiveCost column adheres to the following requirements:
 * EffectiveCost MUST be 0 if [ChargeCategory](#chargecategory) is "Purchase" and the purchase is intended to cover future eligible charges.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * The sum of EffectiveCost for *rows* in a given *billing period* may not match the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
-* When CommitmentDiscountStatus is "Unused", the EffectiveCost MUST be the total committed cost consumed for the given charge period minus related usage charges.
 * If ChargeCategory is not "Usage" or "Purchase", EffectiveCost adheres to the following additional requirements:
   * EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related charges.
   * EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
+* When CommitmentDiscountStatus is "Unused", the EffectiveCost MUST be the total committed cost consumed for the given charge period minus related usage charges.
 
 ---
 The EffectiveCost column adheres to the following requirements:
