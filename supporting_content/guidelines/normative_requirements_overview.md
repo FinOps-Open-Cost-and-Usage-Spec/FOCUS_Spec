@@ -274,7 +274,7 @@ The CapacityReservationStatus column adheres to the following requirements:
 * CapacityReservationStatus MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *capacity reservations*.
 * CapacityReservationStatus MUST be of type String.
 * CapacityReservationStatus nullability is defined as follows:
-  * CapacityReservationStatus MUST be null if CapacityReservationId is null.
+  * CapacityReservationStatus MUST be null when CapacityReservationId is null.
   * CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and [ChargeCategory](#chargecategory) is "Usage".
 * When CapacityReservationStatus is not null, CapacityReservationStatus adheres to the following additional requirements:
   * CapacityReservationStatus MUST be one of the allowed values.
@@ -594,7 +594,124 @@ The ListUnitPrice column adheres to the following requirements:
 ## Column: SKU ID
 ## Column: SKU Meter
 ## Column: SKU Price Details
+
+### **SKU Price Details v.1.2 (Simplified Refinement)**
+
+The SkuPriceDetails column adheres to the following requirements:
+
+* SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list.
+* SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* SkuPriceDetails property key SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* SkuPriceDetails nullability is defined as follows:
+  * SkuPriceDetails MUST be null when SkuPriceId is null.
+  * SkuPriceDetails MAY be null when SkuPriceId is not null.
+* When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:
+  * SkuPriceDetails MUST NOT contain properties which are not applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails MAY contain properties which are already captured in other dedicated columns.
+  * SkuPriceDetails SHOULD remain consistent over time for a given SkuPriceId.
+  * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
+    * Existing properties SHOULD remain consistent over time.
+    * Existing properties SHOULD NOT be removed.
+    * Additional properties MAY be added over time.
+  * SkuPriceDetails property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
+  * SkuPriceDetails property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
+
+### **SKU Price Details v.1.2 (Technical Refinement)**
+
+The SkuPriceDetails column adheres to the following requirements:
+
+* SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list.
+* If present, SkuPriceDetails adheres to the following additional requirements:
+  * SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+  * SkuPriceDetails property key SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+  * SkuPriceDetails MUST be null when SkuPriceId is null.
+  * SkuPriceDetails MAY be null when SkuPriceId is not null.
+  * If SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:
+    * SkuPriceDetails MUST NOT contain properties which are not applicable to the corresponding SkuPriceId.
+    * SkuPriceDetails MAY contain properties which are already captured in other dedicated columns.
+    * SkuPriceDetails SHOULD remain consistent over time for a given SkuPriceId.
+    * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
+      * Existing properties SHOULD remain consistent over time.
+      * Existing properties SHOULD NOT be removed.
+      * Additional properties MAY be added over time.
+    * SkuPriceDetails property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
+    * SkuPriceDetails property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
+
+### **SKU Price Details v.1.1 (Original)**
+
+The SkuPriceDetails column adheres to the following requirements:
+
+* The SkuPriceDetails column MUST be in [KeyValueFormat](#key-valueformat).
+* The key for a property SHOULD be formatted in [PascalCase](#glossary:pascalcase).
+* The properties (both keys and values) contained in the SkuPriceDetails column MUST be shared across all charges having the same SkuPriceId, subject to the below provisions.
+  * Additional properties (key-value pairs) MAY be added to SkuPriceDetails going forward for a given SkuPriceId.
+  * Properties SHOULD NOT be removed from SkuPriceDetails for a given SkuPriceId, once they have been included.
+  * Individual properties (key-value pairs) SHOULD NOT be modified for a given SkuPriceId and SHOULD remain consistent over time.
+* The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
+* The SkuPriceDetails column MUST NOT contain properties which are not applicable to the corresponding SkuPriceId.
+* The SkuPriceDetails column MAY contain properties which are already captured in other dedicated columns.
+* If a property has a numeric value, it MUST represent the value for a single [PricingUnit](#pricingunit).
+* The SkuPriceDetails column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider includes a SkuPriceId.
+  * The SkuPriceDetails column MAY be null when SkuPriceId is not null.
+  * The SkuPriceDetails column MUST be null when SkuPriceId is null.
+
 ## Column: SKU Price ID
 ## Column: Sub Account ID
 ## Column: Sub Account Name
 ## Column: Tags
+
+### **Tags v.1.2 (Simplified Refinement)**
+
+The Tags column adheres to the following requirements:
+
+* Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
+* Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* When Tags is not null, Tags adheres to the following additional requirements:
+  * Tags MUST contain user-defined and provider-defined tags.
+  * Tags MUST only contain finalized tags.
+  * Tag key with a non-null value for a given resource SHOULD be included in the Tags column.
+  * Tag key with a null value for a given resource MAY be included in the Tags column depending on the provider's tag finalization process.
+  * Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
+  * Providers MUST publish tag finalization methods and semantics within their respective documentation when tag finalization is supported.
+  * Providers MUST NOT alter user-defined tag keys or values.
+  * Provider-defined tags adhere to the following additional requirements:
+    * Provider-defined tags MUST be prefixed with a provider-specified tag key prefix.
+    * Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
+
+### **Tags v.1.2 (Technical Refinement)**
+
+The Tags column adheres to the following requirements:
+
+* Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
+* If present, Tags adheres to the following additional requirements:
+  * Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+  * If Tags is not null, Tags adheres to the following additional requirements:
+    * Tags MUST contain user-defined and provider-defined tags.
+    * Tags MUST only contain finalized tags.
+    * Tag key with a non-null value for a given resource SHOULD be included in the Tags column.
+    * Tag key with a null value for a given resource MAY be included in the Tags column depending on the provider's tag finalization process.
+    * Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
+    * Providers MUST publish tag finalization methods and semantics within their respective documentation if tag finalization is supported.
+    * Providers MUST NOT alter user-defined tag keys or values.
+    * Provider-defined tags adhere to the following additional requirements:
+      * Provider-defined tags MUST be prefixed with a provider-specified tag key prefix.
+      * Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
+
+### **Tags v.1.1 (Original)**
+
+The Tags column adheres to the following requirements:
+
+* The Tags column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
+* The Tags column MUST contain user-defined and provider-defined tags.
+* The Tags column MUST only contain finalized tags.
+* The Tags column MUST be in [KeyValueFormat](#key-valueformat).
+* A Tag key with a non-null value for a given resource SHOULD be included in the tags column.
+* A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
+* A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
+* If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
+* Providers MUST NOT alter user-defined Tag keys or values.
+
+Provider-defined Tags additionally adhere to the following requirements:
+
+* Provider-defined tags MUST be prefixed with a provider-specified tag key prefix.
+* Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
