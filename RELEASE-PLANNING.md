@@ -1,18 +1,68 @@
 ## Release Planning 
-This section outlines the planned release schedule and key milestones for the FOCUS project. It includes the scope and high-level system requirements for each version, as well as detailed timelines for the development and review processes for each present and past releases. 
 
-### FOCUS Releases Scope
+This section outlines the planned release schedule and key milestones for the FOCUS project. It includes the scope and high-level system requirements for each version, as well as detailed timelines for the development and review processes for each present and past releases.
+
+### Scope of Upcoming Releases
+
 <table>
     <tr>
         <th>Version</th>
         <th>Release By</th>
         <th>Scope | High-Level System Requirements</th>
     </tr>
+        <tr>
+        <td>v1.2</td>
+        <td>Jun 2025</td>
+        <td>
+            <strong>Initial Software as a Service (SaaS) Support</strong>
+            <ul>
+                <li>Addition of columns to support SaaS-centric concepts and billing models
+                </li>
+            </ul>
+            <strong>Continued expansion of Cloud Service Provider concepts</strong>
+            <ul>
+                <li>Addition of Invoice ID to support invoice reconciliation use cases
+                </li>
+                <li>Addition of SKU properties that are prominent / common across providers
+                </li>                
+                <li>Addition of Commitment Discount Unit Price and Cost
+                </li>
+            </ul>
+            <strong>Fixes and clarifications</strong>
+            <ul>
+                <li>Revisions of existing specification content to increase consistency and reduce ambiguity</li>
+            </ul>
+        </td>
+    </tr>
+    <tr>
+        <td>v1.3</td>
+        <td>Late 2025</td>
+        <td>
+            TBD
+        </td>
+    </tr>
+</table>
+
+### Scope of Previous Releases
+
+<table>
+    <tr>
+        <th>Version</th>
+        <th>Release By</th>
+        <th>Scope | High-Level System Requirements</th>
+    </tr>
+        <tr>
+        <td>v1.0</td>
+        <td>Jun 2024</td>
+        <td>
+            TBD
+        </td>
+    </tr>
     <tr>
         <td>v1.1</td>
-        <td>Nov 11, 2024</td>
+        <td>Nov 2024</td>
         <td>
-            <strong>SKU and SKU Price Details</strong>
+<strong>SKU and SKU Price Details</strong>
             <ul>
                 <li>Provide deeper visibility into SKU and SKU Price details (in addition to the current SKU and SKU Price IDs that are available in FOCUS) which enables many standard FinOps use cases from cost reporting to commitment optimization.
                 </li>
@@ -38,28 +88,13 @@ This section outlines the planned release schedule and key milestones for the FO
             </ul>
         </td>
     </tr>
-    <tr>
-        <td>v1.2</td>
-        <td>Mid, 2025</td>
-        <td>
-            REQ 4: Keyword value/brief description<br>
-            REQ 5: Keyword value/brief description<br>
-            REQ 6: Keyword value/brief description
-        </td>
-    </tr>
-    <tr>
-        <td>v1.3</td>
-        <td>Late, 2025</td>
-        <td>
-            REQ 7: Keyword value/brief description<br>
-            REQ 8: Keyword value/brief description<br>
-            REQ 9: Keyword value/brief description
-        </td>
-    </tr>
+
 </table>
 
 ### Estimated Timeline for v1.2
-This table displays key milestones and dates related to the development of FOCUS Release v1.2 Specifications.
+
+This table displays key milestones and dates related to the development of FOCUS Release v1.2 Specification.
+
 <table>
   <tr>
     <th>Date</th>
@@ -102,7 +137,7 @@ This table displays key milestones and dates related to the development of FOCUS
     <td>One week (1) of preparation to start the IPR Review.</td>
   </tr>
   <tr>
-    <td>24-April-25 to 24-May-25</td>
+    <td>24-Apr-25 to 24-May-25</td>
     <td>Start / End IPR Review v1.2</td>
     <td>During this 30-day period, members may exclude essential claims from their licensing commitments. Contact the FOCUS Executive Director.</td>
   </tr>
@@ -124,7 +159,9 @@ This table displays key milestones and dates related to the development of FOCUS
 </table>
 
 ### Estimated Timeline for v1.1
-This table displays key milestones and dates related to the development of FOCUS Release v1.1.
+
+FOCUS Release V1.1 was announced during the FinOps XE event in Barcelona on November 12, 2024.
+
 <table>
     <thead>
         <tr>
@@ -166,7 +203,7 @@ This table displays key milestones and dates related to the development of FOCUS
         </tr>
         <tr>
             <td>07-Nov-24</td>
-            <td>WG Approve v1.1</td>
+            <td>WG Approval v1.1</td>
             <td>FOCUS Release Candidate v1.1. Approved by FOCUS Members</td>
         </tr>
         <tr>
@@ -182,11 +219,10 @@ This table displays key milestones and dates related to the development of FOCUS
     </tbody>
 </table>
 
-
-
-
 ### Estimated Timeline for v1.0
-FOCUS Release V1.1 will be announced during the FinOpsX event in San Diego on June 20, 2024.
+
+FOCUS Release V1.0 was announced during the FinOpsX event in San Diego on June 20, 2024.
+
 <table>
     <thead>
         <tr>
@@ -212,18 +248,18 @@ FOCUS Release V1.1 will be announced during the FinOpsX event in San Diego on Ju
             <td>Freeze working-draft. </br> Final review, only expecting editorial comments.</td>
         </tr>
         <tr>
-            <td>May 13 - June 11</td>
+            <td>May 13 - Jun 11</td>
             <td>IPR Review</td>
             <td>Members may exclude any Essential Claims from their licensing commitments during this period.</td>
         </tr>
         <tr>
-            <td>June 13</td>
-            <td>Release Candidate Approve by the WG Members</td>
+            <td>Jun 13</td>
+            <td>WG Approval v1.0</td>
             <td></td>
         </tr>
         <tr>
             <td>Jun 19</td>
-            <td>Steering Committee Ratifies the Release</td>
+            <td>SC Ratification v1.2</td>
             <td></td>
         </tr>
         <tr>

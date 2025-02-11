@@ -1,0 +1,21 @@
+name: "Action Item"
+description: "This is an issue to update an action item"
+title: "[AI] "
+type: "Action Item"
+# assignees: 
+#   - "shawnalpay"
+#   - "jpradocueva"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Action Item Details
+
+  - type: textarea
+    id: details
+    attributes:
+      label: "Detailed Description"
+      description: "Provide a detailed explanation of the action item, including context and any required steps."
+      placeholder: "Explain why this action is needed and any dependencies."
+    validations:
+      required: false
