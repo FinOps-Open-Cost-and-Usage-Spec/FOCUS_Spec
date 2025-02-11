@@ -593,6 +593,43 @@ The ListUnitPrice column adheres to the following requirements:
 ## Column: Service Subcategory
 ## Column: SKU ID
 ## Column: SKU Meter
+
+### **SKU Meter v.1.2 (Simplified Refinement)**
+
+The SkuMeter column adheres to the following requirements:
+
+* SkuMeter MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
+* SkuMeter MUST be of type String.
+* SkuMeter MUST conform to [String Handling](#stringhandling) requirements.
+* SkuMeter nullability is defined as follows:
+  * SkuMeter MUST be null if SkuId is null.
+  * SkuMeter SHOULD NOT be null if SkuId is not null.
+* When SkuMeter is not null, SkuMeter adheres to the following additional requirement:
+  * SkuMeter SHOULD remain consistent over time for a given SkuId.
+
+### **SKU Meter v.1.2 (Technical Refinement)**
+
+The SkuMeter column adheres to the following requirements:
+
+* SkuMeter MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
+* If present, SkuMeter adheres to the following additional requirements:
+  * SkuMeter MUST be of type String.
+  * SkuMeter MUST conform to [String Handling](#stringhandling) requirements.
+  * SkuMeter MUST be null if SkuId is null.
+  * SkuMeter SHOULD NOT be null if SkuId is not null.
+  * If SkuMeter is not null, SkuMeter adheres to the following additional requirement:
+    * SkuMeter SHOULD remain consistent over time for a given SkuId.
+
+### **SKU Meter v.1.1 (Original)**
+
+The SkuMeter column adheres to the following requirements:
+
+* SkuMeter MUST be present in a *FOCUS dataset* when when the provider includes a [SkuId](#skuid).
+* SkuMeter MUST be of type String.
+* SkuMeter MUST be null when SkuId is null.
+* SkuMeter SHOULD NOT be null when SkuId is not null.
+* SkuMeter SHOULD remain consistent over time for a given SkuId.
+
 ## Column: SKU Price Details
 
 ### **SKU Price Details v.1.2 (Simplified Refinement)**
@@ -656,8 +693,115 @@ The SkuPriceDetails column adheres to the following requirements:
   * The SkuPriceDetails column MUST be null when SkuPriceId is null.
 
 ## Column: SKU Price ID
+
+### **SKU Price ID v.1.2 (Simplified Refinement)**
+
+The SkuPriceId column adheres to the following requirements:
+
+* SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list.
+* SkuPriceId MUST be of type String.
+* SkuPriceId MUST conform to [String Handling](#stringhandling) requirements.
+* SkuPriceId nullability is defined as follows:
+  * SkuPriceId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * SkuPriceId MAY be null in all other cases.
+* When SkuPriceId is not null, SkuPriceId adheres to the following additional requirements:
+  * SkuPriceId MUST be associated with one and only one [SkuId](#skuid), except in cases of [commitment discount flexibility](#glossary:commitment-discount-flexibility).
+  * SkuPriceId MUST define a single unit price used for calculating the charge.
+  * When a provider does not have a SkuPriceId and wants to include information in columns linked to SkuPriceId such as ListUnitPrice or [SkuPriceDetails](#skupricedetails), the SkuId MAY be used in the SkuPriceId column as long as it adheres to the above conditions.
+  * [ListUnitPrice](#listunitprice) MUST be associated with the SkuPriceId in the provider published price list.
+
+### **SKU Price ID v.1.2 (Technical Refinement)**
+
+The SkuPriceId column adheres to the following requirements:
+
+* SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list.
+* If present, SkuPriceId adheres to the following additional requirements:
+  * SkuPriceId MUST be of type String.
+  * SkuPriceId MUST conform to [String Handling](#stringhandling) requirements.
+  * SkuPriceId MUST be null if [ChargeCategory](#chargecategory) is "Tax".
+  * SkuPriceId MUST NOT be null if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * SkuPriceId MAY be null in all other cases.
+  * SkuPriceId MUST be associated with one and only one [SkuId](#skuid), except in cases of [commitment discount flexibility](#glossary:commitment-discount-flexibility).
+  * SkuPriceId MUST define a single unit price used for calculating the charge.
+  * [ListUnitPrice](#listunitprice) MUST be associated with the SkuPriceId in the provider published price list.
+  * When a provider does not have a SkuPriceId and wants to include information in columns linked to SkuPriceId such as ListUnitPrice or [SkuPriceDetails](#skupricedetails), the SkuId MAY be used in the SkuPriceId column as long as it adheres to the above conditions.
+
+### **SKU Price ID v.1.1 (Original)**
+
+The SkuPriceId column adheres to the following requirements:
+
+* SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list and MUST be of type String.
+* SkuPriceId MUST define a single unit price used for calculating the charge.
+* [ListUnitPrice](#listunitprice) MUST be associated with the SkuPriceId in the provider published price list.
+* SkuPriceId MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+* A given value of SkuPriceId MUST be associated with one and only one [SkuId](#skuid), except in cases of [commitment discount flexibility](#glossary:commitment-discount-flexibility).
+* If a provider does not have a SkuPriceId and wants to include information in columns linked to SkuPriceId such as ListUnitPrice or [SkuPriceDetails](#skupricedetails), the SkuId MAY be used in the SkuPriceId column as long as it adheres to the above conditions.
+
 ## Column: Sub Account ID
+
+### **Sub Account ID v.1.2 (Simplified Refinement)**
+
+The SubAccountId column adheres to the following requirements:
+
+* SubAccountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
+* SubAccountId MUST be of type String.
+* SubAccountId MUST conform to [String Handling](#stringhandling) requirements.
+* SubAccountId nullability is defined as follows:
+  * SubAccountId MUST be null when a charge is not related to a *sub account*.
+  * SubAccountId MUST NOT be null when a charge is related to a *sub account*.
+
+### **Sub Account ID v.1.2 (Technical Refinement)**
+
+The SubAccountId column adheres to the following requirements:
+
+* SubAccountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
+* If present, SubAccountId adheres to the following additional requirements:
+  * SubAccountId MUST be of type String.
+  * SubAccountId MUST conform to [String Handling](#stringhandling) requirements.
+  * SubAccountId MUST be null when a charge is not related to a *sub account*.
+  * SubAccountId MUST NOT be null when a charge is related to a *sub account*.
+
+### **Sub Account ID v.1.1 (Original)**
+
+The SubAccountId column adheres to the following requirements:
+
+* The SubAccountId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
+* This column MUST be of type String.
+* If a charge does not apply to a *sub account*, the SubAccountId column MUST be null.
+
 ## Column: Sub Account Name
+
+### **Sub Account Name v.1.2 (Simplified Refinement)**
+
+The SubAccountName column adheres to the following requirements:
+
+* SubAccountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
+* SubAccountName MUST be of type String.
+* SubAccountName MUST conform to [String Handling](#stringhandling) requirements.
+* SubAccountName nullability is defined as follows:
+  * SubAccountName MUST be null when [SubAccountId](#subaccountid) is null.
+  * SubAccountName MUST NOT be null when SubAccountId is not null.
+
+### **Sub Account Name v.1.2 (Technical Refinement)**
+
+The SubAccountName column adheres to the following requirements:
+
+* SubAccountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
+* If present, SubAccountName adheres to the following additional requirements:
+  * SubAccountName MUST be of type String.
+  * SubAccountName MUST conform to [String Handling](#stringhandling) requirements.
+  * SubAccountName MUST be null if [SubAccountId](#subaccountid) is null.
+  * SubAccountName MUST NOT be null if SubAccountId is not null.
+
+### **Sub Account Name v.1.1 (Original)**
+
+The SubAccountName column adheres to the following requirements:
+
+* The SubAccountName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
+* This column MUST be of type String.
+* If a charge does not apply to a *sub account*, the SubAccountName column MUST be null.
+
 ## Column: Tags
 
 ### **Tags v.1.2 (Simplified Refinement)**
