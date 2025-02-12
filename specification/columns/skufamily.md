@@ -2,7 +2,7 @@
 
 The SKU Family column represents the common name for the family or version of the [*SKU*](#glossary:SKU).
 
-It is oftentimes the case that within a [Service Subcategory](#servicesubcategory) a Provider(#provider) offers multiple different families of versions of SKUs. The SKU Family column provides this information to group and aggregate cost and usage data across SKUs of the same family or version.
+It is oftentimes the case that within a [Service Subcategory](#servicesubcategory) a [Provider](#provider) offers multiple different families of versions of SKUs. The SKU Family column provides this information to group and aggregate cost and usage data across SKUs of the same family or version.
 
 The SkuFamily column adheres to the following requirements:
 
