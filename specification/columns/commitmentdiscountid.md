@@ -11,7 +11,7 @@ The CommitmentDiscountId column adheres to the following requirements:
   * CommitmentDiscountId MUST conform to [String Handling](#stringhandling) requirements.
   * CommitmentDiscountId MUST be null when a charge is not related to a *commitment discount*.
   * CommitmentDiscountId MUST NOT be null when a charge is related to a *commitment discount*.
-  * CommitmentDiscountId MUST ensure global uniqueness within the provider.
+  * CommitmentDiscountId MUST be a globally unique identifier within the provider.
   * CommitmentDiscountId SHOULD be a fully-qualified identifier.
 
 ---

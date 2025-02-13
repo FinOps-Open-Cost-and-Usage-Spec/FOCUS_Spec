@@ -72,7 +72,7 @@ The BillingAccountId column adheres to the following requirements:
 * BillingAccountId MUST be of type String.
 * BillingAccountId MUST conform to [String Handling](#stringhandling) requirements.
 * BillingAccountId MUST NOT be null.
-* BillingAccountId MUST ensure global uniqueness within a provider.
+* BillingAccountId MUST be a globally unique identifier within a provider.
 
 ### **Billing Account ID v.1.2 (Technical Refinement)**
 
@@ -103,7 +103,7 @@ The BillingAccountName column adheres to the following requirements:
 * BillingAccountName MUST conform to [String Handling](#stringhandling) requirements.
 * BillingAccountName MUST NOT be null when the provider supports assigning a display name for the *billing account*.
 * When BillingAccountName is not null, BillingAccountName adheres to the following additional requirement:
-  * BillingAccountName MUST ensure uniqueness within a customer.
+  * BillingAccountName MUST be unique within a customer.
 
 ### **Billing Account Name v.1.2 (Technical Refinement)**
 
@@ -231,7 +231,7 @@ The CapacityReservationId column adheres to the following requirements:
   * CapacityReservationId MUST NOT be null when a charge represents the unused portion of a *capacity reservation*.
   * CapacityReservationId SHOULD NOT be null when a charge is related to a capacity reservation.
 * When CapacityReservationId is not null, CapacityReservationId adheres to the following additional requirements:
-  * CapacityReservationId MUST ensure global uniqueness within the provider.
+  * CapacityReservationId MUST be a globally unique identifier within the provider.
   * CapacityReservationId SHOULD be a fully-qualified identifier.
 
 ### **Capacity Reservation ID v.1.2 (Technical Refinement)**
@@ -245,7 +245,7 @@ The CapacityReservationId column adheres to the following requirements:
   * CapacityReservationId MUST be null when a charge is not related to a *capacity reservation*.
   * CapacityReservationId SHOULD NOT be null when a charge is related to a capacity reservation.
   * CapacityReservationId MUST NOT be null when a charge represents the unused portion of a *capacity reservation*.
-  * CapacityReservationId MUST ensure global uniqueness within the provider.
+  * CapacityReservationId MUST be a globally unique identifier within the provider.
   * CapacityReservationId SHOULD be a fully-qualified identifier.
 
 ### **Capacity Reservation ID v.1.1 (Original)**
