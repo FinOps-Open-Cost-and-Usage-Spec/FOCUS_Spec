@@ -13,17 +13,9 @@
      4. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
      5. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
      6. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
-        * Example:
-          * *ColumnId SHOULD/MUST remain consistent over time for a given ReferencedColumnId.*
-
   2. **Business & Contextual Requirements**
      1. **Unit/Denomination**: Ensures consistency in measurement or currency.
-        * Example:
-          * *ColumnId MUST be denominated in the BillingCurrency.*
      2. **Uniqueness**: Defines uniqueness constraints for data integrity.
-        * Examples:
-          * *BillingAccountId MUST be a globally unique identifier within a provider.*
-          * *BillingAccountName MUST be unique within a customer.*
      3. **Fallback/Substitute Values**: Specifies what alternative values may be used if the expected value is missing.
      4. **Relationships Outside the Spec**: Defines dependencies on external systems or datasets.
      5. **Cost Validation Rules:**
@@ -31,6 +23,16 @@
         2. **Cost Correction Discrepancies**: Disclaimer on discrepancies in unit pricing, pricing quantities, and costs, which can be addressed independently when ChargeClass is 'Correction'.
      6. **Cost Calculation and Relationships**: Defines how costs are calculated in specific use cases, including dependencies on related charges and alignment with other cost values.
      7. **Other**: Requirements that do not fall into one of the previous categories.
+
+* When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
+
+  **Example Pattern 1:**
+
+  ```markdown
+  * <ColumnId> nullability is defined as follows:
+    * <ColumnId> MUST be null when <Condition>.
+    * <ColumnId> MUST NOT be null when <Condition>.
+  ```
 
 * Within each group of requirements, order individual requirements as follows:
   * **MUST** – an absolute requirement
@@ -41,7 +43,7 @@
 
 * When requirements follow conditional logic (e.g., "If... Else If... Else"), the order should be adjusted so that the most specific conditions appear first, while the most general requirement (e.g., a MUST or SHOULD) is placed last as the fallback rule ("In all other cases" clause).
 
-  **Example 1:**
+  **Example Pattern 2:**
 
   ```markdown
   * <ColumnId> nullability is defined as follows:
@@ -50,7 +52,7 @@
     * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null in all other cases.
   ```
 
-  **Example 2:**
+  **Example Pattern 3:**
 
   ```markdown
   * <ColumnId> nullability is defined as follows:
@@ -59,6 +61,25 @@
       * <ColumnId> MUST NOT be null when <Condition>.
       * <ColumnId> MAY be null when <Condition>.
   ```
+
+### Tabular Overview of Requirement Grouping and Specifications
+
+| **Requirement Type** | **Requirement Group**              | **When required?**                | **Example**                                                                              |
+|----------------------|------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------|
+| Technical            | Presence                           | Always                            | ColumnId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when Condition. |
+| Technical            | Data Type                          | Always                            | ColumnId MUST be of type String.                                                         |
+| Technical            | Value Format                       | Always                            | ColumnId MUST conform to [String Handling](#stringhandling) requirements.                |
+| Technical            | Nullability                        | Always                            | ColumnId MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when Condition.                     |
+| Technical            | Values and Value Ranges            | Metrics and normalized dimensions | ColumnId MUST be a valid decimal value.<br/>ColumnId MUST be one of the allowed values.  |
+| Technical            | Column to column Relationships     | When applicable                   | ColumnId SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
+| Business             | Unit/Denomination                  | When applicable                   | ColumnId MUST be denominated in the BillingCurrency.                                     |
+| Business             | Uniqueness                         | When applicable                   | BillingAccountId MUST be a globally unique identifier within a provider.                 |
+| Business             | Fallback/Substitute Values         | When applicable                   |                                                                                          |
+| Business             | Relationships Outside the Spec     | When applicable                   |                                                                                          |
+| Business             | Formula-based Cost Validation      | When applicable                   |                                                                                          |
+| Business             | Cost Correction Discrepancies      | When applicable                   |                                                                                          |
+| Business             | Cost Calculation and Relationships | When applicable                   |                                                                                          |
+| Business             | Other                              | When applicable                   |                                                                                          |
 
 ## Guidelines for Structuring Individual Requirements
 
