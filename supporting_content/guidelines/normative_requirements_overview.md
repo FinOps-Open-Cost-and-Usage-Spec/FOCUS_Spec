@@ -72,7 +72,7 @@ The BillingAccountId column adheres to the following requirements:
 * BillingAccountId MUST be of type String.
 * BillingAccountId MUST conform to [String Handling](#stringhandling) requirements.
 * BillingAccountId MUST NOT be null.
-* BillingAccountId MUST be a globally unique identifier within a provider.
+* BillingAccountId MUST be a unique identifier within a provider.
 
 ### **Billing Account ID v.1.2 (Technical Refinement)**
 
@@ -82,7 +82,7 @@ The BillingAccountId column adheres to the following requirements:
 * BillingAccountId MUST be of type String.
 * BillingAccountId MUST conform to [String Handling](#stringhandling) requirements.
 * BillingAccountId MUST NOT be null.
-* BillingAccountId MUST be a globally unique identifier within a provider.
+* BillingAccountId MUST be a unique identifier within a provider.
 
 ### **Billing Account ID v.1.1 (Original)**
 
@@ -102,8 +102,7 @@ The BillingAccountName column adheres to the following requirements:
 * BillingAccountName MUST be of type String.
 * BillingAccountName MUST conform to [String Handling](#stringhandling) requirements.
 * BillingAccountName MUST NOT be null when the provider supports assigning a display name for the *billing account*.
-* When BillingAccountName is not null, BillingAccountName adheres to the following additional requirement:
-  * BillingAccountName MUST be unique within a customer.
+* BillingAccountName MUST be unique within a customer.
 
 ### **Billing Account Name v.1.2 (Technical Refinement)**
 
@@ -231,7 +230,7 @@ The CapacityReservationId column adheres to the following requirements:
   * CapacityReservationId MUST NOT be null when a charge represents the unused portion of a *capacity reservation*.
   * CapacityReservationId SHOULD NOT be null when a charge is related to a capacity reservation.
 * When CapacityReservationId is not null, CapacityReservationId adheres to the following additional requirements:
-  * CapacityReservationId MUST be a globally unique identifier within the provider.
+  * CapacityReservationId MUST be a unique identifier within the provider.
   * CapacityReservationId SHOULD be a fully-qualified identifier.
 
 ### **Capacity Reservation ID v.1.2 (Technical Refinement)**
@@ -245,7 +244,7 @@ The CapacityReservationId column adheres to the following requirements:
   * CapacityReservationId MUST be null when a charge is not related to a *capacity reservation*.
   * CapacityReservationId SHOULD NOT be null when a charge is related to a capacity reservation.
   * CapacityReservationId MUST NOT be null when a charge represents the unused portion of a *capacity reservation*.
-  * CapacityReservationId MUST be a globally unique identifier within the provider.
+  * CapacityReservationId MUST be a unique identifier within the provider.
   * CapacityReservationId SHOULD be a fully-qualified identifier.
 
 ### **Capacity Reservation ID v.1.1 (Original)**
@@ -488,7 +487,7 @@ The ListCost column adheres to the following requirements:
 * When [ListUnitPrice](#listunitprice) is null, ListCost adheres to the following additional requirements:
   * ListCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ListCost of those related charges.
   * ListCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
-* The product of ListUnitPrice and PricingQuantity and MUST match the ListCost when ListUnitPrice is present and not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
+* The product of ListUnitPrice and PricingQuantity MUST match the ListCost when ListUnitPrice is not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
 * Discrepancies in ListCost, ListUnitPrice, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
 
 ### **List Cost v.1.2 (Technical Refinement)**
@@ -504,7 +503,7 @@ The ListCost column adheres to the following requirements:
 * If [ListUnitPrice](#listunitprice) is present and null, ListCost adheres to the following additional requirements:
   * ListCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ListCost of those related charges.
   * ListCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
-* The product of ListUnitPrice and PricingQuantity and MUST match the ListCost if ListUnitPrice is present and not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
+* The product of ListUnitPrice and PricingQuantity MUST match the ListCost if ListUnitPrice is present and not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
 * Discrepancies in ListCost, ListUnitPrice, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
 
 ### **List Cost v.1.1 (Original)**
@@ -594,8 +593,7 @@ The SkuMeter column adheres to the following requirements:
 * SkuMeter nullability is defined as follows:
   * SkuMeter MUST be null if SkuId is null.
   * SkuMeter SHOULD NOT be null if SkuId is not null.
-* When SkuMeter is not null, SkuMeter adheres to the following additional requirement:
-  * SkuMeter SHOULD remain consistent over time for a given SkuId.
+* SkuMeter SHOULD remain consistent over time for a given SkuId.
 
 ### **SKU Meter v.1.2 (Technical Refinement)**
 
@@ -800,6 +798,7 @@ The Tags column adheres to the following requirements:
 
 * Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
 * Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* Tags MAY be null.
 * When Tags is not null, Tags adheres to the following additional requirements:
   * Tags MUST contain user-defined and provider-defined tags.
   * Tags MUST only contain finalized tags.
