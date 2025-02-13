@@ -9,7 +9,7 @@ The BillingAccountId column adheres to the following requirements:
 * BillingAccountId MUST be of type String.
 * BillingAccountId MUST conform to [String Handling](#stringhandling) requirements.
 * BillingAccountId MUST NOT be null.
-* BillingAccountId MUST be a globally unique identifier within a provider.
+* BillingAccountId MUST be a unique identifier within a provider.
 
 ---
 The BillingAccountId column adheres to the following requirements:

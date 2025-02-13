@@ -73,7 +73,7 @@
 | Technical            | Values and Value Ranges            | Metrics and normalized dimensions | ColumnId MUST be a valid decimal value.<br/>ColumnId MUST be one of the allowed values.  |
 | Technical            | Column to column Relationships     | When applicable                   | ColumnId SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
 | Business             | Unit/Denomination                  | When applicable                   | ColumnId MUST be denominated in the BillingCurrency.                                     |
-| Business             | Uniqueness                         | When applicable                   | BillingAccountId MUST be a globally unique identifier within a provider.                 |
+| Business             | Uniqueness                         | When applicable                   | BillingAccountId MUST be a unique identifier within a provider.                 |
 | Business             | Fallback/Substitute Values         | When applicable                   |                                                                                          |
 | Business             | Relationships Outside the Spec     | When applicable                   |                                                                                          |
 | Business             | Formula-based Cost Validation      | When applicable                   |                                                                                          |
