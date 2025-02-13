@@ -10,7 +10,7 @@ The RegionId column adheres to the following requirements:
   * RegionId MUST be of type String.
   * RegionId MUST conform to [String Handling](#stringhandling) requirements.
   * RegionId MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region.
-  * RegionId MAY be null when a *resource* or *service* is operated in or managed from a distinct region.
+  * RegionId MAY be null when a *resource* or *service* is not operated in or managed from a distinct region.
 
 ---
 The RegionId column adheres to the following requirements:
