@@ -1,0 +1,6 @@
+# Examples
+
+*This section is non-normative.*
+
+!INCLUDE "commitment_discounts/commitment_discounts.md",1
+!INCLUDE "commitment_discounts/size_flexibility.md",1
