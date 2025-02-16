@@ -1,6 +1,6 @@
 # Commitment Discount Unit Price
 
-Commitment Discount Unit Price represents the [*effective unit price*](#glossary:effectiveunitprice) for a single [Pricing Unit](#pricingunit) of the associated [*commitment discount's*](#glossary:commitmentdiscount) purchase or utilizing resource's SKU, exclusive of any [*negotiated discounts*](#negotiated-discount]). This price is denominated in the [Billing Currency](#billingcurrency) and is commonly used to calculate the discounted cost of a purchase or resource utilizing the *commitment discount*.
+Commitment Discount Unit Price represents the [*covering cost*](#glossary:coveringcost) of the associated [*commitment discount's*](#glossary:commitmentdiscount) purchase or discounted unit price of a utilizing resource's [Sku Id](#skuid) before any applicable [*negotiated discounts*](#negotiated-discount]). This price is denominated in the [Billing Currency](#billingcurrency) and is commonly used to calculate the discounted cost of a purchase or resource utilizing the *commitment discount*.
 
 The CommitmentDiscountUnitPrice column adheres to the following requirements:
 
@@ -9,19 +9,19 @@ The CommitmentDiscountUnitPrice column adheres to the following requirements:
 * CommitmentDiscountUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
 * CommitmentDiscountUnitPrice MUST be denominated in the [*BillingCurrency*](#billingcurrency).
 * CommitmentDiscountUnitPrice MUST be present when [*CommitmentDiscountId*](#commitmentdiscountid) is present.
-* CommitmentDiscountUnitPrice MUST NOT include [*negotiated discounts*](#glossary:negotiated-discount)
+* CommitmentDiscountUnitPrice MUST NOT include *negotiated discounts*
 * CommitmentDiscountUnitPrice MAY be null or any valid decimal value if [*ChargeClass*](#chargeclass) is "Correction".
 
-When [*CommitmentDiscountCategory*](#commitmentdiscountcategory) is "Spend" and *ChargeClass* is not "Correction", the following applies:
+When [*CommitmentDiscountCategory*](#commitmentdiscountcategory) is "Spend", *ChargeClass* is not "Correction", and before any applicable *negotiated discounts*, the following applies:
 
-* When [*ChargeCategory*](#chargecategory) is "Purchase", CommitmentDiscountUnitPrice MUST be the predefined amount of spend committed for each [*charge period*](glossary:chargeperiod) of the *commitment discount's* [*term*](glossary:term).
-* When *ChargeCategory* is "Usage", CommitmentDiscountUnitPrice MUST be the *effective unit price* of the covering resource's SKU.
+* When [*ChargeCategory*](#chargecategory) is "Purchase", CommitmentDiscountUnitPrice MUST equal the *covering cost* associated with the *commitment discount*.
+* When *ChargeCategory* is "Usage", [*CommitmentDiscountCost*](#commitmentdiscountcost) across all [*rows*](#glossary:row) of the same [*charge period*](#glossary:chargeperiod) and [*CommitmentDiscountId*](#commitmentdiscountid) MUST equal the *covering cost* associated with the *commitment discount*.
 
-When *CommitmentDiscountCategory* is "Usage" and *ChargeClass* is not "Correction", the following applies:
+When *CommitmentDiscountCategory* is "Usage", *ChargeClass* is not "Correction", and before any applicable *negotiated discounts*, the following applies:
 
-* CommitmentDiscountUnitPrice MUST be the *effective unit price* for the preselected SKU.
-* When *commitment discount flexibility* applies, the CommitmentDiscountUnitPrice of the covering resource's SKU MAY be different than the purchasing SKU.
-* When [*commitment discount flexibility*](glossary:commitment-discount-flexibility) does not apply, the CommitmentDiscountUnitPrice of the covering resource's SKU MUST match the purchasing SKU.
+* CommitmentDiscountUnitPrice MUST equal the *covering cost* of the preselected [*SkuId*](#skuid).
+* When *commitment discount flexibility* applies, the CommitmentDiscountUnitPrice of the covering resource's *SkuId* MAY be different than the purchasing *SkuId*.
+* When [*commitment discount flexibility*](glossary:commitment-discount-flexibility) does not apply, the CommitmentDiscountUnitPrice of the covering resource's *SkuId* MUST match the purchasing *SkuId*.
 
 ## Column ID
 
@@ -33,7 +33,7 @@ Commitment Discount Unit Price
 
 ## Description
 
-The *effective unit price* for a single Pricing Unit of the associated *commitment discount's* purchase or covering resource's SKU, exclusive of any *negotiated discounts*.
+The *covering cost* of the associated *commitment discount's* purchase or discounted unit price of a utilizing resource's *SkuId* before any *negotiated discounts* are applied.
 
 ## Usability Constraints
 

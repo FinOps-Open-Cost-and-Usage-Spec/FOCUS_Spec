@@ -64,13 +64,13 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
 
+<a name="glossary:covering-cost">Covering Cost</a>
+
+The amount of spend applied to each [*charge period*] derived as the total committed purchase amount divided by the number of [*charge periods*](glossary:chargeperiod) within a [*commitment discount's*](#glossary:commitment-discount) [*term*](#glossary:term).
+
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
-
-<a name="glossary:effective-unit-price">Effective Unit Price</a>
-
-The discounted rate or predefined amount of spend associated with a [*commitment discount*](#glossary:commitment-discount) and derived as the committed purchase amount divided by the number of [*charge periods*](glossary:chargeperiod) within its [*term*](glossary:term).
 
 <a name="glossary:effective-cost"><b>Effective Cost</b></a>
 
