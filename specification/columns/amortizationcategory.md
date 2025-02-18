@@ -1,11 +1,11 @@
 # Amortization Category
 
-Amortization Category represents the various classifications of a charge 
-based on it's eligibility for coverage by a commitment discount, and 
+Amortization Category represents the various classifications of a charge
+based on it's eligibility for coverage by a commitment discount, and
 whether or not a commitment discount was actually applied.
 
-Amortization Category is used to identify and distinguish between types of charges 
-that may require different handling, for example an upfront payment on 
+Amortization Category is used to identify and distinguish between types of charges
+that may require different handling, for example an upfront payment on
 a Savings Plan that is amortized over time into usage by other line items.
 
 The AmortizationCategory column adheres to the following requirements:
@@ -23,8 +23,8 @@ Amortization Category
 
 ## Description
 
-Represents the various classifications of a charge 
-based on it's eligibility for coverage by a commitment discount, and 
+Represents the various classifications of a charge
+based on it's eligibility for coverage by a commitment discount, and
 whether or not a commitment discount was actually applied.
 
 ## Content Constraints
