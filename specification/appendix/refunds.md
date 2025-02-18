@@ -1,42 +1,6 @@
-# Corrections/Refunds/Credits Handling (POTATO)
-
-this document assumes we do not support regenerating/restating data from previously closed billing periods
-you SHOULD NOT regenerate data from previoulsy closed billing periods
-
-Corrections are line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include: 
-
-- [*Refund*](#glossary:refund) - experiencing a billing technical error (i.e. charging the incorrect rate/volume for a service line item)
-- [*Credit*](#glossary:credit) - providing a promotional benefit (i.e. migration incentives or new service incentives)
-
-Refunds are applied to retrospective charge records where the usage has already been incurred whereas credits are applied in a forward looking perspective and are consumed ('burned-down') by future usage.
-
-[*Refunds*](#glossary:refund) are intentionally not a separate 'Charge Category' in FOCUS as the objective is to have these adjustments handled as itemized 'Usage' or 'Purchase' correction records that can be recorded alongside the itemised charge record that is being refunded. This eliminates the chargeback reverse-enginnering practicioners face when handling bulk refunds that are submitted as a single line item (as the practicioner then needs to split that line item up and work out who should be refunded for what).
-
-FOCUS supports two distinct models for the representation of corrections (Refunds & Credits) in the specification with the understanding that providers typically support the 'Bulk' record style, but SHOULD support the 'Itemized' record style where possible to improve visibility into this data set.
-
-# Credit (you can have a refund/correcton of a credit)
-Credits can be supplied as bulk or itemised charge line items as most appropriate. Credits may also have subsequent correction records that should follow the format of the original record.
-
-do we expect negative values? (TODO: look at all charge categories)
 
 
-# Refund
-## Bulk
-
-Single line item correction where both billing period and usage period will share the same value and be represented within the current billing cycle
-WHERE 'Charge Class' = Correction & 'Charge Category' SHOULD = Credit / Adjustment
-
-this solution is simpler for providers to implement but adds complexity for FOCUS data consumers as the refund / credit is decoupled form the service being credited for
-
-
-## Itemized
-
-WHERE 'Charge Class' = Correction & 'Charge Category' SHOULD = Usage / Purchase / Credit
-MUST be perSku and perSkuPrice
-
-Multi line item correction that follows the billing format and time period of the items that are being corrected i.e the billing period will be the current billing cycle but the usage period will share the same datetime values for the original line items that are being corrected.
-
-this solution is more complex for providers to implement but alignes the refund line items to the service and time period being refunded providing a more accurate billing history and representation, whilst maintaining support for invoice reconciliation. 
+--------------------------------------------------------------------------------
 
 ## Record Styles Intended Usage
 
@@ -133,6 +97,30 @@ In this case where historic billing data is regenerated practicioners are not ab
 
 NOTE: this correction record will be invoiced in 2023-02 but will appear in the billing data for 2023-01
 
+### In the Event of Late Arriving Costs
+
+FOCUS billing generators MUST NOT regenerate historic billing data from PREVIOUSLY CLOSED BILLING PERIODS as it decouples the invoicing cycle from the billing activity data.
+
+In this case where historic billing data is regenerated practicioners are not able to reconclie the billing period start to when they are invoiced for the correction.
+
+| Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start | Invoice ID |
+|------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|---------------|
+| Simple  | REMOVED - Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z | ID123 |
+| Simple  | Compute usage in US East | NULL| Usage | 1200 | 1 | 1200 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z | ID456 |
+
+NOTE: this correction record will be invoiced in 2023-02 but will appear in the billing data for 2023-01
+
+
+DO AN EXAMPLE WITH A PURELY USAGE CORRECTION--- DOES THIS IMPACT>?>?
+do i need to show a difference between billed vs effective cost???
+Restated Field?????
+
+once boundar is crosed we cancorect the charge
+usage is corrected retrospecifely
+???
+does the billed vs effecttive help with this
+
+
 #### NOTES
 
 ## Example usage scenarios
@@ -222,3 +210,42 @@ The correction / refund is billed _daily_ during the first applicable *billing p
 ]
 ```
 
+# Correction Handling (incl. Refunds & Credits)
+
+this document assumes we do not support regenerating/restating data from previously closed billing periods
+you SHOULD NOT regenerate data from previoulsy closed billing periods
+
+Corrections are line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include: 
+
+- [*Refund*](#glossary:refund) - experiencing a billing technical error (i.e. charging the incorrect rate/volume for a service line item)
+- [*Credit*](#glossary:credit) - providing a promotional benefit (i.e. migration incentives or new service incentives)
+
+Refunds are applied to retrospective charge records where the usage has already been incurred whereas credits are applied in a forward looking perspective and are consumed ('burned-down') by future usage.
+
+[*Refunds*](#glossary:refund) are intentionally not a separate 'Charge Category' in FOCUS as the objective is to have these adjustments handled as itemized 'Usage' or 'Purchase' correction records that can be recorded alongside the itemised charge record that is being refunded. This eliminates the chargeback reverse-enginnering practicioners face when handling bulk refunds that are submitted as a single line item (as the practicioner then needs to split that line item up and work out who should be refunded for what).
+
+FOCUS supports two distinct models for the representation of corrections (Refunds & Credits) in the specification with the understanding that providers typically support the 'Bulk' record style, but SHOULD support the 'Itemized' record style where possible to improve visibility into this data set.
+
+# Credit (you can have a refund/correcton of a credit)
+Credits can be supplied as bulk or itemised charge line items as most appropriate. Credits may also have subsequent correction records that should follow the format of the original record.
+
+do we expect negative values? (TODO: look at all charge categories)
+
+
+# Refund
+## Bulk
+
+Single line item correction where both billing period and usage period will share the same value and be represented within the current billing cycle
+WHERE 'Charge Class' = Correction & 'Charge Category' SHOULD = Credit / Adjustment
+
+this solution is simpler for providers to implement but adds complexity for FOCUS data consumers as the refund / credit is decoupled form the service being credited for
+
+
+## Itemized
+
+WHERE 'Charge Class' = Correction & 'Charge Category' SHOULD = Usage / Purchase / Credit
+MUST be perSku and perSkuPrice
+
+Multi line item correction that follows the billing format and time period of the items that are being corrected i.e the billing period will be the current billing cycle but the usage period will share the same datetime values for the original line items that are being corrected.
+
+this solution is more complex for providers to implement but alignes the refund line items to the service and time period being refunded providing a more accurate billing history and representation, whilst maintaining support for invoice reconciliation. 
