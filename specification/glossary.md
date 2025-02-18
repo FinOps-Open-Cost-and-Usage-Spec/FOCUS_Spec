@@ -66,7 +66,7 @@ The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the asso
 
 <a name="glossary:correction"><b>Correction</b></a>
 
-A charge that serves as a correction to a previously invoiced [*billing period*](#glossary:billing-period), accounting for discrepancies, missed charges, or required changes.
+A charge to correct cost or usage data in a previously invoiced [*billing period*](#glossary:billing-period).
 
 <a name="glossary:credit"><b>Credit</b></a>
 
