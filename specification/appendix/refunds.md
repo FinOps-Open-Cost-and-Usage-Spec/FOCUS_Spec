@@ -97,7 +97,7 @@ In this case where historic billing data is regenerated practicioners are not ab
 
 NOTE: this correction record will be invoiced in 2023-02 but will appear in the billing data for 2023-01
 
-### In the Event of Late Arriving Costs
+### In the Event of Late Arriving Costs --- TODO
 
 FOCUS billing generators MUST NOT regenerate historic billing data from PREVIOUSLY CLOSED BILLING PERIODS as it decouples the invoicing cycle from the billing activity data.
 
