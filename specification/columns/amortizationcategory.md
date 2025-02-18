@@ -45,6 +45,7 @@ Allowed values:
 | Eligible - Covered | Usage that is discounted or covered by a commitment discount |
 | Eligible - Not Covered | Usage that could be covered by some form of commitment discount, but is not |
 | Not Applicable | Usage that is ineligible for commitment discounts of any kind. |
+
 ## Introduced (version)
 
 1.2
