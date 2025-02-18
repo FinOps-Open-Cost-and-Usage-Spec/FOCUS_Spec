@@ -70,7 +70,7 @@ A charge that serves as a correction to a previously invoiced [*billing period*]
 
 <a name="glossary:credit"><b>Credit</b></a>
 
-A financial incentive or allowance granted by provider independently of other charges to offset costs in various scenarios.
+A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
