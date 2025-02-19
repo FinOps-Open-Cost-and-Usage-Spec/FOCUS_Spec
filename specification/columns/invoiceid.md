@@ -7,7 +7,7 @@ The Invoice ID column adheres to the following requirements:
 * The Invoice ID column SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MAY be null.
 * Invoice ID MUST be of type string
 * When Invoice ID is not associated with a line item, invoice ID MUST be null
-* When Invoice ID is associated with a line item, invoice ID MUST NOT be null
+* When an Invoice ID is associated with a line item, invoice ID MUST NOT be null
 * An invoice ID MAY be generated prior to an invoice being issued and MUST be associated with line items linked to the pre-generated invoice
 
 
