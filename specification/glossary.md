@@ -154,7 +154,7 @@ A construct composed of the common properties of a product offering associated w
 
 <a name="glossary:sku-price"><b>SKU Price</b></a>
 
-A pricing construct that specifies pricing details for a particular SKU, while excluding dynamic or negotiable elements such as unit price amount, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
+A pricing construct that encompasses SKU properties (e.g., functionality and technical specifications), along with core stable pricing details for a particular SKU, while excluding dynamic or negotiable pricing elements such as unit price amounts, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
