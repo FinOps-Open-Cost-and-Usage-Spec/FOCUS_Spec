@@ -4,7 +4,7 @@ An Invoice ID is a provider-assigned identifier for an invoice encapsulating som
 
 The Invoice ID column adheres to the following requirements:
 
-* The Invoice ID column SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MAY be null.
+* InvoiceId is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * Invoice ID MUST be of type string
 * When an Invoice ID is not associated with a line item, invoice ID MUST be null
 * When an Invoice ID is associated with a line item, invoice ID MUST NOT be null
