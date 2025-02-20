@@ -1,6 +1,6 @@
 # Invoice ID
 
-An Invoice ID is a provider-assigned identifier for an invoice encapsulating some or all charges in the corresponding billing period. Invoices are commonly used for scenarios like tracking billing transactions, facilitating payment processes and for performing invoice reconciliation between usage and invoice months. 
+An Invoice ID is a provider-assigned identifier for an invoice encapsulating some or all charges in the corresponding [*billing period*](#glossary:billing-period) for a given [*billing account](#glossary:billing-account). Invoices are commonly used for scenarios like tracking billing transactions, facilitating payment processes and for performing invoice reconciliation between usage and invoice months. 
 
 The Invoice ID column adheres to the following requirements:
 
