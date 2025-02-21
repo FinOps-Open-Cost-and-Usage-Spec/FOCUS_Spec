@@ -6,8 +6,7 @@ The BilledCost column adheres to the following requirements:
 
 * The BilledCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
 * This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency.
-* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the payable invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
-* BilledCost values MUST not include cost associated to estimate invoices or no payment invoices.
+* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 ## Column ID
 
