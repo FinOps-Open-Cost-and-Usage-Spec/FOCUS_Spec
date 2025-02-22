@@ -361,7 +361,7 @@ The CommitmentDiscountQuantity column adheres to the following requirements:
 * When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
   * CommitmentDiscountQuantity MUST be a valid decimal value.
   * When ChargeCategory is "Purchase", CommitmentDiscountQuantity adheres to the following additional requirements:
-    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnits, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#chargefrequency) is "One-Time".
+    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#chargefrequency) is "One-Time".
     * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnits that is eligible for consumption for each *charge period* that corresponds with the purchase when ChargeFrequency is "Recurring".
   * When ChargeCategory is "Usage", CommitmentDiscountQuantity adheres to the following additional requirements:
     * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnits that is consumed over the *row's* *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
