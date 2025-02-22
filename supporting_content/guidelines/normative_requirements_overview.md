@@ -626,7 +626,7 @@ The SkuPriceDetails column adheres to the following requirements:
 
 * SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list.
 * SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-* SkuPriceDetails property key SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* SkuPriceDetails keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * SkuPriceDetails nullability is defined as follows:
   * SkuPriceDetails MUST be null when SkuPriceId is null.
   * SkuPriceDetails MAY be null when SkuPriceId is not null.
