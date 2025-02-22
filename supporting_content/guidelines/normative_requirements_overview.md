@@ -635,9 +635,9 @@ The SkuPriceDetails column adheres to the following requirements:
   * SkuPriceDetails MAY contain properties which are already captured in other dedicated columns.
   * SkuPriceDetails SHOULD remain consistent over time for a given SkuPriceId.
   * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
-    * Existing properties SHOULD remain consistent over time.
-    * Existing properties SHOULD NOT be removed.
-    * Additional properties MAY be added over time.
+      * Existing SkuPriceDetails properties SHOULD remain consistent over time.
+      * Existing SkuPriceDetails properties SHOULD NOT be removed.
+      * Additional SkuPriceDetails properties MAY be added over time.
   * SkuPriceDetails property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
   * SkuPriceDetails property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
 
