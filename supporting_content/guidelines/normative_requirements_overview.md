@@ -326,23 +326,329 @@ The ChargeCategory column adheres to the following requirements:
 
 ## Column: Charge Class
 
+### **Charge Class v.1.2 (Simplified Refinement)**
+
+The ChargeClass column adheres to the following requirements:
+
+* ChargeClass MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeClass MUST be of type String.
+* ChargeClass nullability is defined as follows:
+  * ChargeClass MUST be null when the row does not represent a correction or when it represents a correction within the current *billing period*.
+  * ChargeClass MUST NOT be null when the row represents a correction to a previously invoiced *billing period*.
+* When ChargeClass is not null, ChargeClass adheres to the following additional requirements:
+  * ChargeClass MUST be one of the allowed values.
+  * ChargeClass MUST be "Correction".
+
+### **Charge Class v.1.2 (Technical Refinement)**
+
+The ChargeClass column adheres to the following requirements:
+
+* ChargeClass MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeClass MUST be of type String.
+* ChargeClass MUST be null when the row does not represent a correction or when it represents a correction within the current *billing period*.
+* When the row represents a correction to a previously invoiced *billing period*, ChargeClass adheres to the following additional requirements:
+  * ChargeClass MUST NOT be null.
+  * ChargeClass MUST be one of the allowed values.
+  * ChargeClass MUST be "Correction".
+
+### **Charge Class v.1.1 (Original)**
+
+The ChargeClass column adheres to the following requirements:
+
+* The ChargeClass column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* This column MUST be of type String and MUST be "Correction" when the row represents a correction to a previously invoiced *billing period*.
+* ChargeClass MUST be null when it is not a correction or when it is a correction within the current *billing period*.
+
 ## Column: Charge Description
+
+### **Charge Description v.1.2 (Simplified Refinement)**
+
+The ChargeDescription column adheres to the following requirements:
+
+* ChargeDescription MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeDescription MUST be of type String.
+* ChargeDescription MUST conform to [String Handling](#stringhandling) requirements.
+* ChargeDescription SHOULD NOT be null.
+* ChargeDescription length SHOULD be specified by providers in their publicly available documentation.
+
+### **Charge Description v.1.2 (Technical Refinement)**
+
+The ChargeDescription column adheres to the following requirements:
+
+* ChargeDescription MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeDescription MUST be of type String.
+* ChargeDescription MUST conform to [String Handling](#stringhandling) requirements.
+* ChargeDescription SHOULD NOT be null.
+* ChargeDescription length SHOULD be specified by providers in their publicly available documentation.
+
+### **Charge Description v.1.1 (Original)**
+
+The ChargeDescription column adheres to the following requirements:
+
+* The ChargeDescription column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset), MUST be of type String, and SHOULD NOT be null.
+* Providers SHOULD specify the length of this column in their publicly available documentation.
 
 ## Column: Charge Frequency
 
+### **Charge Frequency v.1.2 (Simplified Refinement)**
+
+The ChargeFrequency column adheres to the following requirements:
+
+* ChargeFrequency is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeFrequency MUST be of type String.
+* ChargeFrequency MUST NOT be null.
+* ChargeFrequency MUST be one of the allowed values.
+* ChargeFrequency MUST NOT be "Usage-Based" when [ChargeCategory](#chargecategory) is "Purchase".
+
+### **Charge Frequency v.1.2 (Technical Refinement)**
+
+The ChargeFrequency column adheres to the following requirements:
+
+* ChargeFrequency is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* If present, ChargeFrequency adheres to the following additional requirements:
+  * ChargeFrequency MUST be of type String.
+  * ChargeFrequency MUST NOT be null.
+  * ChargeFrequency MUST be one of the allowed values.
+  * ChargeFrequency MUST NOT be "Usage-Based" if [ChargeCategory](#chargecategory) is "Purchase".
+
+### **Charge Frequency v.1.1 (Original)**
+
+The ChargeFrequency column adheres to the following requirements:
+
+* The ChargeFrequency column is RECOMMENDED be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
+* This column is of type String and MUST be one of the allowed values.
+* When [ChargeCategory](#chargecategory) is "Purchase", ChargeFrequency MUST NOT be "Usage-Based".
+
 ## Column: Charge Period End
+
+### **Charge Period End v.1.2 (Simplified Refinement)**
+
+The ChargePeriodEnd column adheres to the following requirements:
+
+* ChargePeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargePeriodEnd MUST be of type Date/Time.
+* ChargePeriodEnd MUST conform to [Date/Time Format](#date/timeformat) requirements.
+* ChargePeriodEnd MUST NOT be null.
+* ChargePeriodEnd MUST be the *exclusive ending bound* of the effective period of the charge.
+
+### **Charge Period End v.1.2 (Technical Refinement)**
+
+The ChargePeriodEnd column adheres to the following requirements:
+
+* ChargePeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargePeriodEnd MUST be of type Date/Time.
+* ChargePeriodEnd MUST conform to [Date/Time Format](#date/timeformat) requirements.
+* ChargePeriodEnd MUST NOT be null.
+* ChargePeriodEnd MUST be the *exclusive ending bound* of the effective period of the charge.
+
+### **Charge Period End v.1.1 (Original)**
+
+The ChargePeriodEnd column adheres to the following requirements:
+
+* ChargePeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset), MUST be of type Date/Time, MUST be an *exclusive* value, and MUST NOT contain null values.
+* ChargePeriodEnd MUST match the ending date and time boundary of the effective period of the charge.
 
 ## Column: Charge Period Start
 
+### **Charge Period Start v.1.2 (Simplified Refinement)**
+
+The ChargePeriodStart column adheres to the following requirements:
+
+* ChargePeriodStart MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargePeriodStart MUST be of type Date/Time.
+* ChargePeriodStart MUST conform to [Date/Time Format](#date/timeformat) requirements.
+* ChargePeriodStart MUST NOT be null.
+* ChargePeriodStart MUST be the *inclusive beginning bound* of the effective period of the charge.
+
+### **Charge Period Start v.1.2 (Technical Refinement)**
+
+The ChargePeriodStart column adheres to the following requirements:
+
+* ChargePeriodStart MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargePeriodStart MUST be of type Date/Time.
+* ChargePeriodStart MUST conform to [Date/Time Format](#date/timeformat) requirements.
+* ChargePeriodStart MUST NOT be null.
+* ChargePeriodStart MUST be the *inclusive beginning bound* of the effective period of the charge.
+
+### **Charge Period Start v.1.1 (Original)**
+
+The ChargePeriodStart column adheres to the following requirements:
+
+* ChargePeriodStart MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset), MUST be of type Date/Time, MUST be an *inclusive* value, and MUST NOT contain null values.
+* ChargePeriodStart MUST match the beginning date and time boundary of the effective period of the charge.
+
 ## Column: Commitment Discount Category
+
+### **Commitment Discount Category v.1.2 (Simplified Refinement)**
+
+The CommitmentDiscountCategory column adheres to the following requirements:
+
+* CommitmentDiscountCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountCategory MUST be of type String.
+* CommitmentDiscountCategory MUST conform to [String Handling](#stringhandling) requirements.
+* CommitmentDiscountCategory MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
+* When CommitmentDiscountId is not null, CommitmentDiscountCategory adheres to the following additional requirements:
+  * CommitmentDiscountCategory MUST NOT be null.
+  * CommitmentDiscountCategory MUST be one of the allowed values.
+
+### **Commitment Discount Category v.1.2 (Technical Refinement)**
+
+The CommitmentDiscountCategory column adheres to the following requirements:
+
+* CommitmentDiscountCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* If present, CommitmentDiscountCategory adheres to the following additional requirements:
+  * CommitmentDiscountCategory MUST be of type String.
+  * CommitmentDiscountCategory MUST conform to [String Handling](#stringhandling) requirements.
+  * CommitmentDiscountCategory MUST be null if [CommitmentDiscountId](#commitmentdiscountid) is null.
+  * If CommitmentDiscountId is not null, CommitmentDiscountCategory adheres to the following additional requirements:
+    * CommitmentDiscountCategory MUST NOT be null.
+    * CommitmentDiscountCategory MUST be one of the allowed values.
+
+### **Commitment Discount Category v.1.1 (Original)**
+
+The CommitmentDiscountCategory column adheres to the following requirements:
+
+* The CommitmentDiscountCategory column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null.
+* The CommitmentDiscountCategory MUST be one of the allowed values.
 
 ## Column: Commitment Discount ID
 
+### **Commitment Discount ID v.1.2 (Simplified Refinement)**
+
+The CommitmentDiscountId column adheres to the following requirements:
+
+* CommitmentDiscountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountId MUST be of type String.
+* CommitmentDiscountId MUST conform to [String Handling](#stringhandling) requirements.
+* CommitmentDiscountId nullability is defined as follows:
+  * CommitmentDiscountId MUST be null when a charge is not related to a *commitment discount*.
+  * CommitmentDiscountId MUST NOT be null when a charge is related to a *commitment discount*.
+* When CommitmentDiscountId is not null, CommitmentDiscountId adheres to the following additional requirements:
+  * CommitmentDiscountId MUST be a unique identifier within the provider.
+  * CommitmentDiscountId SHOULD be a fully-qualified identifier.
+
+### **Commitment Discount ID v.1.2 (Technical Refinement)**
+
+The CommitmentDiscountId column adheres to the following requirements:
+
+* CommitmentDiscountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* If present, CommitmentDiscountId adheres to the following additional requirements:
+  * CommitmentDiscountId MUST be of type String.
+  * CommitmentDiscountId MUST conform to [String Handling](#stringhandling) requirements.
+  * CommitmentDiscountId MUST be null when a charge is not related to a *commitment discount*.
+  * CommitmentDiscountId MUST NOT be null when a charge is related to a *commitment discount*.
+  * CommitmentDiscountId MUST be a unique identifier within the provider.
+  * CommitmentDiscountId SHOULD be a fully-qualified identifier.
+
+### **Commitment Discount ID v.1.1 (Original)**
+
+The CommitmentDiscountId column adheres to the following requirements:
+
+* The CommitmentDiscountId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* This column MUST be of type String and MUST NOT contain null values when a charge is related to a *commitment discount*.
+* When a charge is not associated with a *commitment discount*, the column MUST be null.
+* CommitmentDiscountId MUST ensure global uniqueness within the provider and SHOULD be a fully-qualified identifier.
+
 ## Column: Commitment Discount Name
+
+### **Commitment Discount Name v.1.2 (Simplified Refinement)**
+
+The CommitmentDiscountName column adheres to the following requirements:
+
+* CommitmentDiscountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountName MUST be of type String.
+* CommitmentDiscountName MUST conform to [String Handling](#stringhandling) requirements.
+* CommitmentDiscountName MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
+* When CommitmentDiscountId is not null, CommitmentDiscountName adheres to the following additional requirements:
+  * CommitmentDiscountName MUST NOT be null when a display name can be assigned to a *commitment discount*.
+  * CommitmentDiscountName MAY be null when a display name cannot be assigned to a *commitment discount*.
+
+### **Commitment Discount Name v.1.2 (Technical Refinement)**
+
+The CommitmentDiscountName column adheres to the following requirements:
+
+* CommitmentDiscountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* If present, CommitmentDiscountName adheres to the following additional requirements:
+  * CommitmentDiscountName MUST be of type String.
+  * CommitmentDiscountName MUST conform to [String Handling](#stringhandling) requirements.
+  * CommitmentDiscountName MUST be null if [CommitmentDiscountId](#commitmentdiscountid) is null.
+  * If CommitmentDiscountId is not null, CommitmentDiscountName adheres to the following additional requirements:
+    * CommitmentDiscountName MUST NOT be null when a display name can be assigned to a *commitment discount*.
+    * CommitmentDiscountName MAY be null when a display name cannot be assigned to a *commitment discount*.
+
+### **Commitment Discount Name v.1.1 (Original)**
+
+The CommitmentDiscountName column adheres to the following requirements:
+
+* The CommitmentDiscountName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* This column MUST be of type String.
+* The CommitmentDiscountName value MUST be null if the charge is not related to a *commitment discount* and MAY be null if a display name cannot be assigned to a *commitment discount*.
+* CommitmentDiscountName MUST NOT be null if a display name can be assigned to a *commitment discount*.
 
 ## Column: Commitment Discount Status
 
+### **Commitment Discount Status v.1.2 (Simplified Refinement)**
+
+The CommitmentDiscountStatus column adheres to the following requirements:
+
+* CommitmentDiscountStatus MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountStatus MUST be of type String.
+* CommitmentDiscountStatus nullability is defined as follows:
+  * CommitmentDiscountStatus MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
+  * CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and [Charge Category](#chargecategory) is "Usage".
+* CommitmentDiscountStatus MUST be one of the allowed values.
+
+### **Commitment Discount Status v.1.2 (Technical Refinement)**
+
+The CommitmentDiscountStatus column adheres to the following requirements:
+
+* CommitmentDiscountStatus MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* If present, CommitmentDiscountStatus adheres to the following additional requirements:
+  * CommitmentDiscountStatus MUST be of type String.
+  * CommitmentDiscountStatus MUST be null if [CommitmentDiscountId](#commitmentdiscountid) is null.
+  * If CommitmentDiscountId is not null and [Charge Category](#chargecategory) is "Usage", CommitmentDiscountStatus adheres to the following additional requirements:
+    * CommitmentDiscountStatus MUST NOT be null.
+    * CommitmentDiscountStatus MUST be one of the allowed values.
+
+### **Commitment Discount Status v.1.1 (Original)**
+
+The CommitmentDiscountStatus column adheres to the following requirements:
+
+* The CommitmentDiscountStatus column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null and [Charge Category](#chargecategory) is "Usage".
+* CommitmentDiscountStatus MUST be one of the allowed values.
+
 ## Column: Commitment Discount Type
+
+### **Commitment Discount Type v.1.2 (Simplified Refinement)**
+
+The CommitmentDiscountType column adheres to the following requirements:
+
+* CommitmentDiscountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountType MUST be of type String.
+* CommitmentDiscountType MUST conform to [String Handling](#stringhandling) requirements.
+* CommitmentDiscountType nullability is defined as follows:
+  * CommitmentDiscountType MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
+  * CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
+
+### **Commitment Discount Type v.1.2 (Technical Refinement)**
+
+The CommitmentDiscountType column adheres to the following requirements:
+
+* CommitmentDiscountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* If present, CommitmentDiscountType adheres to the following additional requirements:
+  * CommitmentDiscountType MUST be of type String.
+  * CommitmentDiscountType MUST conform to [String Handling](#stringhandling) requirements.
+  * CommitmentDiscountType MUST be null if [CommitmentDiscountId](#commitmentdiscountid) is null.
+  * CommitmentDiscountType MUST NOT be null if CommitmentDiscountId is not null.
+
+### **Commitment Discount Type v.1.1 (Original)**
+
+The CommitmentDiscountType column adheres to the following requirements:
+
+* The CommitmentDiscountType column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null.
 
 ## Column: Commitment Discount Quantity
 
@@ -471,6 +777,31 @@ In cases where the [ChargeCategory](#chargecategory) is not "Usage" or "Purchase
 * When CommitmentDiscountStatus is "Unused", the EffectiveCost MUST be the total committed cost consumed for the given charge period minus related usage charges.
 
 ## Column: Invoice Issuer
+
+### **Invoice Issuer v.1.2 (Simplified Refinement)**
+
+The InvoiceIssuerName column adheres to the following requirements:
+
+* InvoiceIssuerName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* InvoiceIssuerName MUST be of type String.
+* InvoiceIssuerName MUST conform to [String Handling](#stringhandling) requirements.
+* InvoiceIssuerName MUST NOT be null.
+
+### **Invoice Issuer v.1.2 (Technical Refinement)**
+
+The InvoiceIssuerName column adheres to the following requirements:
+
+* InvoiceIssuerName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* InvoiceIssuerName MUST be of type String.
+* InvoiceIssuerName MUST conform to [String Handling](#stringhandling) requirements.
+* InvoiceIssuerName MUST NOT be null.
+
+### **Invoice Issuer v.1.1 (Original)**
+
+The InvoiceIssuer column adheres to the following requirements:
+
+* The InvoiceIssuer column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* This column MUST be of type String and MUST NOT contain null values.
 
 ## Column: List Cost
 
