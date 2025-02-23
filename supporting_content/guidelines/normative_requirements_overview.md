@@ -1121,10 +1121,208 @@ The ListUnitPrice column adheres to the following requirements:
 * When ListUnitPrice is present and is not null, multiplying ListUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ListCost](#listcost), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 
 ## Column: Pricing Category
+
+### **Pricing Category v.1.2 (Simplified Refinement)**
+
+The PricingCategory column adheres to the following requirements:
+
+* PricingCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all SKUs.
+* If present, PricingCategory adheres to the following additional requirements:
+  * PricingCategory MUST be of type String.
+* PricingCategory nullability is defined as follows:
+  * PricingCategory MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * PricingCategory MAY be null in all other cases.
+* When PricingCategory is not null, PricingCategory adheres to the following additional requirements:
+  * PricingCategory MUST be one of the allowed values.
+  * PricingCategory MUST be "Standard" when pricing is predetermined at the agreed upon rate for the [billing account](#glossary:billing-account).
+  * PricingCategory MUST be "Committed" when the charge is subject to an existing *commitment discount* and is not the purchase of the *commitment discount*.
+  * PricingCategory MUST be "Dynamic" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing.
+  * PricingCategory MUST be "Other" when there is a pricing model but none of the allowed values apply.
+
+### **Pricing Category v.1.2 (Technical Refinement)**
+
+The PricingCategory column adheres to the following requirements:
+
+* PricingCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all SKUs.
+* If present, PricingCategory adheres to the following additional requirements:
+  * PricingCategory MUST be of type String.
+  * If [ChargeCategory](#chargecategory) is "Tax", PricingCategory adheres to the following additional requirement:
+    * PricingCategory MUST be null.
+  * Else if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction", PricingCategory adheres to the following additional requirement:
+    * PricingCategory MUST NOT be null.
+  * Else PricingCategory adheres to the following additional requirement:
+    * PricingCategory MAY be null.
+  * If PricingCategory is not null, PricingCategory adheres to the following additional requirements:
+    * PricingCategory MUST be one of the allowed values.
+    * PricingCategory MUST be "Standard" when pricing is predetermined at the agreed upon rate for the [billing account](#glossary:billing-account).
+    * PricingCategory MUST be "Committed" when the charge is subject to an existing *commitment discount* and is not the purchase of the *commitment discount*.
+    * PricingCategory MUST be "Dynamic" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing.
+    * PricingCategory MUST be "Other" when there is a pricing model but none of the allowed values apply.
+
+### **Pricing Category v.1.1 (Original)**
+
+The PricingCategory column adheres to the following requirements:
+
+* PricingCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all SKUs and MUST be of type String.
+* PricingCategory MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+* PricingCategory MUST be one of the allowed values.
+* PricingCategory MUST be "Standard" when pricing is predetermined at the agreed upon rate for the [billing account](#glossary:billing-account).
+* PricingCategory MUST be "Committed" when the charge is subject to an existing *commitment discount* and is not the purchase of the *commitment discount*.
+* PricingCategory MUST be "Dynamic" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing.
+* PricingCategory MUST be "Other" when there is a pricing model but none of the allowed values apply.
+
 ## Column: Pricing Quantity
+
+### **PricingQuantity v.1.2 (Simplified Refinement)**
+
+The PricingQuantity column adheres to the following requirements:
+
+* PricingQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* PricingQuantity MUST be of type Decimal.
+* PricingQuantity MUST conform to [Numeric Format](#numericformat) requirements.
+* PricingQuantity nullability is defined as follows:
+  * PricingQuantity MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * PricingQuantity MAY be null in all other cases.
+* When PricingQuantity is not null, PricingQuantity adheres to the following additional requirements:
+  * PricingQuantity MUST be a valid decimal value.
+  * The product of PricingQuantity and a unit price (e.g., [ContractedUnitPrice](#contractedunitprice)) MUST match the corresponding cost metric (e.g., [ContractedCost](#contractedcost)) when the unit price is not null, and ChargeClass is not "Correction".
+* Discrepancies in PricingQuantity, unit prices (e.g., ContractedUnitPrice), or costs (e.g., ContractedCost) MAY be addressed independently if ChargeClass is "Correction".
+
+### **PricingQuantity v.1.2 (Technical Refinement)**
+
+The PricingQuantity column adheres to the following requirements:
+
+* PricingQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* PricingQuantity MUST be of type Decimal.
+* PricingQuantity MUST conform to [Numeric Format](#numericformat) requirements.
+* If [ChargeCategory](#chargecategory) is "Tax", PricingQuantity adheres to the following additional requirement:
+  * PricingQuantity MUST be null.
+* Else if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction", PricingQuantity adheres to the following additional requirement:
+  * PricingQuantity MUST NOT be null.
+* Else PricingQuantity adheres to the following additional requirement:
+  * PricingQuantity MAY be null.
+* If PricingQuantity is not null, PricingQuantity adheres to the following additional requirements:
+  * PricingQuantity MUST be a valid decimal value.
+  * The product of PricingQuantity and a unit price (e.g., [ContractedUnitPrice](#contractedunitprice)) MUST match the corresponding cost metric (e.g., [ContractedCost](#contractedcost)) when the unit price is present and not null, and ChargeClass is not "Correction".
+* Discrepancies in PricingQuantity, unit prices (e.g., ContractedUnitPrice), or costs (e.g., ContractedCost) MAY be addressed independently if ChargeClass is "Correction".
+
+### **PricingQuantity v.1.1 (Original)**
+
+The PricingQuantity column adheres to the following requirements:
+
+* The PricingQuantity column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* This column MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
+* The value MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction".
+* This column MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+* When unit prices (e.g. [ContractedUnitPrice](#contractedunitprice)) are not null, multiplying PricingQuantity by a unit price MUST produce a result equal to the corresponding cost metric (e.g. [ContractedCost](#contractedcost)), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
+
 ## Column: Pricing Unit
+
+### **Pricing Unit v.1.2 (Simplified Refinement)**
+
+The PricingUnit column adheres to the following requirements:
+
+* PricingUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* PricingUnit MUST be of type String.
+* PricingUnit MUST conform to [String Handling](#stringhandling) requirements.
+* PricingUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+* PricingUnit nullability is defined as follows:
+  * PricingUnit MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * PricingUnit MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * PricingUnit MAY be null in all other cases.
+* When PricingUnit is not null, PricingUnit adheres to the following additional requirements:
+  * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in provider-published [*price list*](#glossary:price-list).
+  * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in invoice, when the invoice includes a pricing measurement unit.
+
+### **Pricing Unit v.1.2 (Technical Refinement)**
+
+The PricingUnit column adheres to the following requirements:
+
+* PricingUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* PricingUnit MUST be of type String.
+* PricingUnit MUST conform to [String Handling](#stringhandling) requirements.
+* PricingUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+* If [ChargeCategory](#chargecategory) is "Tax", PricingUnit adheres to the following additional requirement:
+  * PricingUnit MUST be null.
+* Else if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction", PricingUnit adheres to the following additional requirement:
+  * PricingUnit MUST NOT be null.
+* Else PricingUnit adheres to the following additional requirement:
+  * PricingUnit MAY be null.
+* If PricingUnit is not null, PricingUnit adheres to the following additional requirements:
+  * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in:
+    * Provider-published [*price list*](#glossary:price-list)
+    * Invoice, when the invoice includes a pricing measurement unit
+
+### **Pricing Unit v.1.1 (Original)**
+
+The PricingUnit column adheres to the following requirements:
+
+* The PricingUnit column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* This column MUST be of type String.
+* It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+* Units of measure used in PricingUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
+
+The PricingUnit value MUST be semantically equal to the corresponding pricing measurement unit value provided in:
+
+* The provider-published [*price list*](#glossary:price-list)
+* The invoice, when the invoice includes a pricing measurement unit
+
 ## Column: Provider
+
+### **ProviderName v.1.2 (Simplified Refinement)**
+
+The ProviderName column adheres to the following requirements:
+
+* ProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ProviderName MUST be of type String.
+* ProviderName MUST conform to [String Handling](#stringhandling) requirements.
+* ProviderName MUST NOT be null.
+
+### **ProviderName v.1.2 (Technical Refinement)**
+
+The ProviderName column adheres to the following requirements:
+
+* ProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ProviderName MUST be of type String.
+* ProviderName MUST conform to [String Handling](#stringhandling) requirements.
+* ProviderName MUST NOT be null.
+
+### **ProviderName v.1.1 (Original)**
+
+The Provider column adheres to the following requirements:
+
+* The Provider column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* This column MUST be of type String and MUST NOT contain null values.
+
 ## Column: Publisher
+
+### **Publisher v.1.2 (Simplified Refinement)**
+
+The PublisherName column adheres to the following requirements:
+
+* PublisherName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* PublisherName MUST be of type String.
+* PublisherName MUST conform to [String Handling](#stringhandling) requirements.
+* PublisherName MUST NOT be null.
+
+### **Publisher v.1.2 (Technical Refinement)**
+
+The PublisherName column adheres to the following requirements:
+
+* PublisherName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* PublisherName MUST be of type String.
+* PublisherName MUST conform to [String Handling](#stringhandling) requirements.
+* PublisherName MUST NOT be null.
+
+### **Publisher v.1.1 (Original)**
+
+The Publisher column adheres to the following requirements:
+
+* The Publisher column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* This column MUST be of type String and MUST NOT contain null values.
+
 ## Column: Region ID
 ## Column: Region Name
 ## Column: Resource ID
