@@ -1324,10 +1324,174 @@ The Publisher column adheres to the following requirements:
 * This column MUST be of type String and MUST NOT contain null values.
 
 ## Column: Region ID
+
+### **Region ID v.1.2 (Simplified Refinement)**
+
+The RegionId column adheres to the following requirements:
+
+* RegionId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
+* RegionId MUST be of type String.
+* RegionId MUST conform to [String Handling](#stringhandling) requirements.
+* Region ID nullability is defined as follows:
+  * RegionId MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region.
+  * RegionId MAY be null when a *resource* or *service* is not operated in or managed from a distinct region.
+
+### **Region ID v.1.2 (Technical Refinement)**
+
+The RegionId column adheres to the following requirements:
+
+* RegionId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
+* If present, RegionId adheres to the following additional requirements:
+  * RegionId MUST be of type String.
+  * RegionId MUST conform to [String Handling](#stringhandling) requirements.
+  * RegionId MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region.
+  * RegionId MAY be null when a *resource* or *service* is not operated in or managed from a distinct region.
+
+### **Region ID v.1.1 (Original)**
+
+The RegionId column adheres to the following requirements:
+
+* The RegionId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region and MUST be of type String.
+* RegionId MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region by the Provider and MAY contain null values when a *resource* or *service* is not restricted to an isolated geographic area.
+
 ## Column: Region Name
+
+### **Region Name v.1.2 (Simplified Refinement)**
+
+The RegionName column adheres to the following requirements:
+
+* RegionName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
+* RegionName MUST be of type String.
+* RegionName MUST conform to [String Handling](#stringhandling) requirements.
+* RegionName nullability is defined as follows:
+  * RegionName MUST be null if [RegionId](#regionid) is null.
+  * RegionName MUST NOT be null if RegionId is not null.
+
+### **Region Name v.1.2 (Technical Refinement)**
+
+The RegionName column adheres to the following requirements:
+
+* RegionName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
+* If present, RegionName adheres to the following additional requirements:
+  * RegionName MUST be of type String.
+  * RegionName MUST conform to [String Handling](#stringhandling) requirements.
+  * RegionName MUST be null if [RegionId](#regionid) is null.
+  * RegionName MUST NOT be null if RegionId is not null.
+
+### **Region Name v.1.1 (Original)**
+
+The RegionName column adheres to the following requirements:
+
+* The RegionName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region and MUST be of type String.
+* RegionName MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region by the Provider and MAY contain null values when a *resource* or *service* is not restricted to an isolated geographic area.
+
 ## Column: Resource ID
+
+### **Resource ID v.1.2 (Simplified Refinement)**
+
+The ResourceId column adheres to the following requirements:
+
+* ResourceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
+* ResourceId MUST be of type String.
+* ResourceId MUST conform to [String Handling](#stringhandling) requirements.
+* ResourceId nullability is defined as follows:
+  * ResourceId MUST be null when a charge is not related to a *resource*.
+  * ResourceId MUST NOT be null when a charge is related to a *resource*.
+* When ResourceId is not null, ResourceId adheres to the following additional requirements:
+  * ResourceId MUST be a unique identifier within the provider.
+  * ResourceId SHOULD be a fully-qualified identifier.
+
+### **Resource ID v.1.2 (Technical Refinement)**
+
+The ResourceId column adheres to the following requirements:
+
+* ResourceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
+* If present, ResourceId adheres to the following additional requirements:
+  * ResourceId MUST be of type String.
+  * ResourceId MUST conform to [String Handling](#stringhandling) requirements.
+  * ResourceId MUST be null when a charge is not related to a *resource*.
+  * ResourceId MUST NOT be null when a charge is related to a *resource*.
+  * ResourceId MUST be a unique identifier within the provider.
+  * ResourceId SHOULD be a fully-qualified identifier.
+
+### **Resource ID v.1.1 (Original)**
+
+The ResourceId column adheres to the following requirements:
+
+* The ResourceId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
+* This column MUST be of type String.
+* The ResourceId value MAY be a nullable column as some cost data [*rows*](#glossary:row) may not be associated with a *resource*.
+* ResourceId MUST appear in the cost data if an identifier is assigned to a *resource* by the provider.
+* ResourceId SHOULD be a fully-qualified identifier that ensures global uniqueness within the provider.
+
 ## Column: Resource Name
+
+### **Resource Name v.1.2 (Simplified Refinement)**
+
+The ResourceName column adheres to the following requirements:
+
+* ResourceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
+* ResourceName MUST be of type String.
+* ResourceName MUST conform to [String Handling](#stringhandling) requirements.
+* ResourceName nullability is defined as follows:
+  * ResourceName MUST be null when [ResourceId](#resourceid) is null or when the *resource* only has a system-generated ResourceId without an assigned display name.
+  * ResourceName MUST NOT be null when ResourceId is not null and the *resource* has an assigned display name.
+* ResourceName MUST NOT duplicate ResourceId when the *resources* is not provisioned interactively or only has a system-generated [ResourceId](#resourceid).
+
+### **Resource Name v.1.2 (Technical Refinement)**
+
+The ResourceName column adheres to the following requirements:
+
+* ResourceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
+* If present, ResourceName adheres to the following additional requirements:
+  * ResourceName MUST be of type String.
+  * ResourceName MUST conform to [String Handling](#stringhandling) requirements.
+  * ResourceName MUST be null if [ResourceId](#resourceid) is null or when the *resource* only has a system-generated ResourceId without an assigned display name.
+  * ResourceName MUST NOT be null if ResourceId is not null and the *resource* has an assigned display name.
+  * ResourceName SHOULD NOT duplicate ResourceId.
+
+### **Resource Name v.1.1 (Original)**
+
+The ResourceName column adheres to the following requirements:
+
+* The ResourceName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
+* This column MUST be of type String.
+* The ResourceName value MAY be a nullable column as some cost data [*rows*](#glossary:row) may not be associated with a *resource* or because a display name cannot be assigned to a *resource*.
+* ResourceName MUST NOT be null if a display name can be assigned to a *resource*.
+* *Resources* not provisioned interactively or only have a system-generated [ResourceId](#resourceid) MUST NOT duplicate the same value as the ResourceName.
+
 ## Column: Resource Type
+
+### **Resource Type v.1.2 (Simplified Refinement)**
+
+The ResourceType column adheres to the following requirements:
+
+* ResourceType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources and supports assigning types to resources.
+* ResourceType MUST be of type String.
+* ResourceType MUST conform to [String Handling](#stringhandling) requirements.
+* ResourceType nullability is defined as follows:
+  * ResourceType MUST be null when [ResourceId](#resourceid) is null.
+  * ResourceType MUST NOT be null when ResourceId is not null.
+
+### **Resource Type v.1.2 (Technical Refinement)**
+
+The ResourceType column adheres to the following requirements:
+
+* ResourceType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources and supports assigning types to resources.
+* If present, ResourceType adheres to the following additional requirements:
+  * ResourceType MUST be of type String.
+  * ResourceType MUST conform to [String Handling](#stringhandling) requirements.
+  * ResourceType MUST be null if [ResourceId](#resourceid) is null.
+  * ResourceType MUST NOT be null if ResourceId is not null.
+
+### **Resource Type v.1.1 (Original)**
+
+The ResourceType column adheres to the following requirements:
+
+* The ResourceType column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources and supports assigning a type for resources.
+* This column MUST be of type String and MUST NOT be null when a corresponding [ResourceId](#resourceid) is not null.
+* When a corresponding ResourceId value is null, the ResourceType column value MUST also be null.
+
 ## Column: Service Category
 ## Column: Service Name
 ## Column: Service Subcategory
