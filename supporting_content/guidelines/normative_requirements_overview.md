@@ -1493,9 +1493,130 @@ The ResourceType column adheres to the following requirements:
 * When a corresponding ResourceId value is null, the ResourceType column value MUST also be null.
 
 ## Column: Service Category
+
+### **Service Category v.1.2 (Simplified Refinement)**
+
+The ServiceCategory column adheres to the following requirements:
+
+* ServiceCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ServiceCategory MUST be of type String.
+* ServiceCategory MUST NOT be null.
+* ServiceCategory MUST be one of the allowed values.
+
+### **Service Category v.1.2 (Technical Refinement)**
+
+The ServiceCategory column adheres to the following requirements:
+
+* ServiceCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ServiceCategory MUST be of type String.
+* ServiceCategory MUST NOT be null.
+* ServiceCategory MUST be one of the allowed values.
+
+### **Service Category v.1.1 (Original)**
+
+The ServiceCategory column adheres to the following requirements:
+
+* The ServiceCategory column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
+* This column is of type String and MUST be one of the allowed values.
+
 ## Column: Service Name
+
+### **Service Name v.1.2 (Simplified Refinement)**
+
+The ServiceName column adheres to the following requirements:
+
+* ServiceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ServiceName MUST be of type String.
+* ServiceName MUST conform to [String Handling](#stringhandling) requirements.
+* ServiceName MUST NOT be null.
+
+### **Service Name v.1.2 (Technical Refinement)**
+
+The ServiceName column adheres to the following requirements:
+
+* ServiceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ServiceName MUST be of type String.
+* ServiceName MUST conform to [String Handling](#stringhandling) requirements.
+* ServiceName MUST NOT be null.
+
+### **Service Name v.1.1 (Original)**
+
+The ServiceName column adheres to the following requirements:
+
+* The ServiceName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* This column MUST be of type String and MUST NOT contain null values.
+
 ## Column: Service Subcategory
+
+### **Service Subcategory v.1.2 (Simplified Refinement)**
+
+The ServiceSubcategory column adheres to the following requirements:
+
+* ServiceSubcategory is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ServiceSubcategory MUST be of type String.
+* ServiceSubcategory MUST NOT be null.
+* ServiceSubcategory MUST be one of the allowed values.
+* ServiceSubcategory MUST have one and only one parent ServiceCategory as specified in the allowed values below.
+* Though a given *service* can have multiple purposes, each *service* SHOULD have one and only one ServiceSubcategory that best aligns with its primary purpose
+
+### **Service Subcategory v.1.2 (Technical Refinement)**
+
+The ServiceSubcategory column adheres to the following requirements:
+
+* ServiceSubcategory is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* If present, ServiceSubcategory adheres to the following additional requirements:
+  * ServiceSubcategory MUST be of type String.
+  * ServiceSubcategory MUST NOT be null.
+  * ServiceSubcategory MUST be one of the allowed values.
+  * ServiceSubcategory MUST have one and only one parent ServiceCategory as specified in the allowed values below.
+  * Though a given *service* can have multiple purposes, each *service* SHOULD have one and only one ServiceSubcategory that best aligns with its primary purpose
+
+### **Service Subcategory v.1.1 (Original)**
+
+The ServiceSubcategory column adheres to the following requirements:
+
+* ServiceSubcategory is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
+* ServiceSubcategory is of type String and MUST be one of the allowed values.
+* Each ServiceSubcategory value MUST have one and only one parent ServiceCategory as specified in the allowed values below.
+* Though a given *service* can have multiple purposes, each *service* SHOULD have one and only one ServiceSubcategory that best aligns with its primary purpose.
+
 ## Column: SKU ID
+
+### **SKU ID v.1.2 (Simplified Refinement)**
+
+The SkuId column adheres to the following requirements:
+
+* SkuId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
+* SkuId MUST be of type String.
+* SkuId MUST conform to [String Handling](#stringhandling) requirements.
+* SkuId nullability is defined as follows:
+  * SkuId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * SkuId MAY be null in all other cases.
+* SkuId MUST equal SkuPriceId when a provider does not support an overarching SKU ID construct.
+
+### **SKU ID v.1.2 (Technical Refinement)**
+
+The SkuId column adheres to the following requirements:
+
+* SkuId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
+* If present, SkuId adheres to the following additional requirements:
+  * SkuId MUST be of type String.
+  * SkuId MUST conform to [String Handling](#stringhandling) requirements.
+  * SkuId MUST be null if [ChargeCategory](#chargecategory) is "Tax".
+  * SkuId MUST NOT be null if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * SkuId MAY be null in all other cases.
+  * SkuId MUST equal SkuPriceId when a provider does not support an overarching SKU ID construct.
+
+### **SKU ID v.1.1 (Original)**
+
+The SkuId column adheres to the following requirements:
+
+* The SkuId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
+* This column MUST be of type String.
+* It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+* SkuId MUST equal SkuPriceId when a provider does not support an overarching SKU ID construct.
+
 ## Column: SKU Meter
 
 ### **SKU Meter v.1.2 (Simplified Refinement)**
