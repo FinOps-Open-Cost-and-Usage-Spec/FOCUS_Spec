@@ -717,13 +717,235 @@ CommitmentDiscountQuantity MUST be null in all other cases.
 
 ## Column: Commitment Discount Unit
 
+### **Commitment Discount Unit v.1.2 (Simplified Refinement)**
+
+The CommitmentDiscountUnit column adheres to the following requirements:
+
+* CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountUnit MUST be of type String.
+* CommitmentDiscountUnit MUST conform to [String Handling](#stringhandling) requirements.
+* CommitmentDiscountUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+* CommitmentDiscountUnit nullability is defined as follows:
+  * When ChargeCategory is "Usage" or "Purchase" and [CommitmentDiscountId](#commitmentdiscountid) is not null, CommitmentDiscountUnit adheres to the following additional requirements:
+    * CommitmentDiscountUnit MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction".
+    * CommitmentDiscountUnit MAY be null when ChargeClass is "Correction".
+  * CommitmentDiscountUnit MUST be null in all other cases.
+* When CommitmentDiscountUnit is not null, CommitmentDiscountUnit adheres to the following additional requirements:
+  * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
+  * CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
+  * When accounting for [*commitment discount flexibility*](#glossary:commitment-discount-flexibility), the CommitmentDiscountUnit value SHOULD reflect this consideration.
+
+### **Commitment Discount Unit v.1.2 (Technical Refinement)**
+
+The CommitmentDiscountUnit column adheres to the following requirements:
+
+* CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* If present, CommitmentDiscountUnit adheres to the following additional requirements:
+  * CommitmentDiscountUnit MUST be of type String.
+  * CommitmentDiscountUnit MUST conform to [String Handling](#stringhandling) requirements.
+  * CommitmentDiscountUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+  * If ChargeCategory is "Usage" or "Purchase" and [CommitmentDiscountId](#commitmentdiscountid) is not null, CommitmentDiscountUnit adheres to the following additional requirements:
+    * CommitmentDiscountUnit MUST NOT be null if [ChargeClass](#chargeclass) is not "Correction".
+    * CommitmentDiscountUnit MAY be null if ChargeClass is "Correction".
+  * Else CommitmentDiscountUnit adheres to the following additional requirement:
+    * CommitmentDiscountUnit MUST be null.
+  * If CommitmentDiscountUnit is not null, CommitmentDiscountUnit adheres to the following additional requirements:
+    * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
+    * CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
+    * When accounting for [*commitment discount flexibility*](#glossary:commitment-discount-flexibility), the CommitmentDiscountUnit value SHOULD reflect this consideration.
+
+### **Commitment Discount Unit v.1.1 (Original)**
+
+The CommitmentDiscountUnit column adheres to the following requirements:
+
+* CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [*commitment discounts*](#glossary:commitment-discount).
+* CommitmentDiscountUnit MUST be of type String, and the units of measure used in CommitmentDiscountUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
+* The CommitmentDiscountUnit MUST be the same across all *rows* where CommitmentDiscountQuantity has the same [CommitmentDiscountId](#commitmentdiscountid).
+* CommitmentDiscountUnit MAY be null if CommitmentDiscountId is not null and [ChargeClass](#chargeclass) is "Correction".
+* CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountId is not null and ChargeClass is not "Correction".
+* CommitmentDiscountUnit MUST be null in all other cases.
+
+In cases where the CommitmentDiscountUnit is not null, the following applies:
+
+* The CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
+* When accounting for [*commitment discount flexibility*](#glossary:commitment-discount-flexibility), the CommitmentDiscountUnit value SHOULD reflect this consideration.
+
 ## Column: Consumed Quantity
+
+### **Consumed Quantity v.1.2 (Simplified Refinement)**
+
+The ConsumedQuantity column adheres to the following requirements:
+
+* ConsumedQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
+* ConsumedQuantity MUST be of type Decimal.
+* ConsumedQuantity MUST conform to [Numeric Format](#numericformat) requirements.
+* ConsumedQuantity nullability is defined as follows:
+  * ConsumedQuantity MUST be null when [ChargeCategory](#chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
+  * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity adheres to the following additional requirements:
+    * ConsumedQuantity MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction".
+    * ConsumedQuantity MAY be null when ChargeClass is "Correction"."
+* ConsumedQuantity MUST be a valid decimal value when not null.
+
+### **Consumed Quantity v.1.2 (Technical Refinement)**
+
+The ConsumedQuantity column adheres to the following requirements:
+
+* ConsumedQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
+* If present, ConsumedQuantity adheres to the following additional requirements:
+  * ConsumedQuantity MUST be of type Decimal.
+  * ConsumedQuantity MUST conform to [Numeric Format](#numericformat) requirements.
+  * ConsumedQuantity MUST be null if [ChargeCategory](#chargecategory) is not "Usage", or if ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
+  * If ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity adheres to the following additional requirements:
+    * ConsumedQuantity MUST NOT be null if [ChargeClass](#chargeclass) is not "Correction".
+    * ConsumedQuantity MAY be null if ChargeClass is "Correction"."
+  * If ConsumedQuantity is not null, ConsumedQuantity adheres to the following additional requirement:
+    * ConsumedQuantity MUST be a valid decimal value.
+
+### **Consumed Quantity v.1.1 (Original)**
+
+The ConsumedQuantity column adheres to the following requirements:
+
+* ConsumedQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
+* ConsumedQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
+* ConsumedQuantity MUST NOT be null and MUST be a valid positive decimal value if [ChargeCategory](#chargecategory) is "Usage", [CommitmentDiscountStatus](#commitmentdiscountstatus) is not "Unused", and [ChargeClass](#chargeclass) is not "Correction".
+* ConsumedQuantity MAY be null or any valid decimal value if ChargeCategory is "Usage", CommitmentDiscountStatus is not "Unused", and ChargeClass is "Correction".
+* ConsumedQuantity MUST be null in all other cases.
 
 ## Column: Consumed Unit
 
+### **Consumed Unit v.1.2 (Simplified Refinement)**
+
+The ConsumedUnit column adheres to the following requirements:
+
+* ConsumedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
+* ConsumedUnit MUST be of type String.
+* ConsumedUnit MUST conform to [String Handling](#stringhandling) requirements.
+* ConsumedUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+* ConsumedUnit nullability is defined as follows:
+  * ConsumedUnit MUST be null when [ChargeCategory](#chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
+  * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedUnit adheres to the following additional requirements:
+    * ConsumedUnit MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction".
+    * ConsumedUnit MAY be null when ChargeClass is "Correction".
+
+### **Consumed Unit v.1.2 (Technical Refinement)**
+
+The ConsumedUnit column adheres to the following requirements:
+
+* ConsumedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
+* If present, ConsumedUnit adheres to the following additional requirements:
+  * ConsumedUnit MUST be of type String.
+  * ConsumedUnit MUST conform to [String Handling](#stringhandling) requirements.
+  * ConsumedUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+  * ConsumedUnit MUST be null if [ChargeCategory](#chargecategory) is not "Usage", or if ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
+  * If ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedUnit adheres to the following additional requirements:
+    * ConsumedUnit MUST NOT be null if [ChargeClass](#chargeclass) is not "Correction".
+    * ConsumedUnit MAY be null if ChargeClass is "Correction".
+
+### **Consumed Unit v.1.1 (Original)**
+
+The ConsumedUnit column adheres to the following requirements:
+
+* ConsumedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
+* ConsumedUnit MUST be of type String, and the units of measure used in ConsumedUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
+* ConsumedUnit MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage", [CommitmentDiscountStatus](#commitmentdiscountstatus) is not "Unused", and [ChargeClass](#chargeclass) is not "Correction".
+* ConsumedUnit MAY be null if ChargeCategory is "Usage", CommitmentDiscountStatus is not "Unused", and ChargeClass is "Correction".
+* ConsumedUnit MUST be null in all other cases.
+
 ## Column: Contracted Cost
 
+### **Contracted Cost v.1.2 (Simplified Refinement)**
+
+The ContractedCost column adheres to the following requirements:
+
+* ContractedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractedCost MUST be of type Decimal.
+* ContractedCost MUST conform to [Numeric Format](#numericformat) requirements.
+* ContractedCost MUST NOT be null.
+* ContractedCost MUST be a valid decimal value.
+* ContractedCost MUST be denominated in the BillingCurrency.
+* When [ContractedUnitPrice](#contractedunitprice) is null, ContractedCost adheres to the following additional requirements:
+  * ContractedCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related charges.
+  * ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
+* The product of ContractedUnitPrice and PricingQuantity MUST match the ContractedCost when ContractedUnitPrice is not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
+* Discrepancies in ContractedCost, ContractedUnitPrice, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
+
+### **Contracted Cost v.1.2 (Technical Refinement)**
+
+The ContractedCost column adheres to the following requirements:
+
+* ContractedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractedCost MUST be of type Decimal.
+* ContractedCost MUST conform to [Numeric Format](#numericformat) requirements.
+* ContractedCost MUST NOT be null.
+* ContractedCost MUST be a valid decimal value.
+* ContractedCost MUST be denominated in the BillingCurrency.
+* If [ContractedUnitPrice](#contractedunitprice) is present and null, ContractedCost adheres to the following additional requirements:
+  * ContractedCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related charges.
+  * ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
+* The product of ContractedUnitPrice and PricingQuantity MUST match the ContractedCost if ContractedUnitPrice is present and not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
+* Discrepancies in ContractedCost, ContractedUnitPrice, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
+
+### **Contracted Cost v.1.1 (Original)**
+
+The ContractedCost column adheres to the following requirements:
+
+* The ContractedCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
+* This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency.
+* When [ContractedUnitPrice](#contractedunitprice) is present and not null, multiplying the ContractedUnitPrice by PricingQuantity MUST produce the ContractedCost, except in cases of [ChargeClass](#chargeclass) "Correction", which may address PricingQuantity or any cost discrepancies independently.
+
+In cases where the ContractedUnitPrice is present and null, the following applies:
+
+* The ContractedCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related charges.
+* The ContractedCost of a charge unrelated to other charges (e.g., when the [ChargeCategory](#chargecategory) is "Credit") MUST match the [BilledCost](#billedcost).
+
 ## Column: Contracted Unit Price
+
+### **Contracted Unit Price v.1.2 (Simplified Refinement)**
+
+The ContractedUnitPrice column adheres to the following requirements:
+
+* ContractedUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports negotiated pricing concepts.
+* ContractedUnitPrice adheres to the following additional requirements:
+* ContractedUnitPrice MUST be of type Decimal.
+* ContractedUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
+* ContractedUnitPrice nullability is defined as follows:
+  * ContractedUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * ListUnitPrice MAY be null in all other cases.
+* When ContractedUnitPrice is not null, ContractedUnitPrice adheres to the following additional requirements:
+  * ContractedUnitPrice MUST be a non-negative decimal value.
+  * ContractedUnitPrice MUST be denominated in the BillingCurrency.
+  * The product of ContractedUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ContractedCost](#contractedcost) when PricingQuantity is not null and ChargeClass is not "Correction".
+* Discrepancies in ContractedUnitPrice, ContractedCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
+
+### **Contracted Unit Price v.1.2 (Technical Refinement)**
+
+The ContractedUnitPrice column adheres to the following requirements:
+
+* ContractedUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports negotiated pricing concepts.
+* If present, ContractedUnitPrice adheres to the following additional requirements:
+* ContractedUnitPrice MUST be of type Decimal.
+* ContractedUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
+  * If [ChargeCategory](#chargecategory) is "Tax", ContractedUnitPrice adheres to the following additional requirement:
+    * ContractedUnitPrice MUST be null.
+  * Else if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction", ContractedUnitPrice adheres to the following additional requirement:
+    * ContractedUnitPrice MUST NOT be null.
+  * Else ContractedUnitPrice adheres to the following additional requirement:
+    * ContractedUnitPrice MAY be null.
+  * If ContractedUnitPrice is not null, ContractedUnitPrice adheres to the following additional requirements:
+    * ContractedUnitPrice MUST be a non-negative decimal value.
+    * ContractedUnitPrice MUST be denominated in the BillingCurrency.
+    * The product of ContractedUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ContractedCost](#contractedcost) if PricingQuantity is not null and ChargeClass is not "Correction".
+  * Discrepancies in ContractedUnitPrice, ContractedCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
+
+### **Contracted Unit Price v.1.1 (Original)**
+
+The ContractedUnitPrice column adheres to the following requirements:
+
+* The ContractedUnitPrice column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports negotiated pricing concepts.
+* This column MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency.
+* It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+* When ContractedUnitPrice is present and not null, multiplying ContractedUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ContractedCost](#contractedcost), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 
 ## Column: Effective Cost
 
