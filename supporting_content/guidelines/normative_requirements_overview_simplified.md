@@ -23,7 +23,7 @@ The BilledCost column adheres to the following requirements:
 * BilledCost MUST NOT be null.
 * BilledCost MUST be a valid decimal value.
 * BilledCost MUST be denominated in the BillingCurrency.
-* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+* The sum of BilledCost in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 ## Column: Billing Account ID
 
@@ -72,7 +72,7 @@ The BillingPeriodEnd column adheres to the following requirements:
 * BillingPeriodEnd MUST conform to [Date/Time Format](#date/timeformat) requirements.
 * BillingPeriodEnd MUST NOT be null.
 * BillingPeriodEnd MUST be the *exclusive ending bound* of the *billing period*.
-* The sum of the [BilledCost](#billedcost) for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+* The sum of [BilledCost](#billedcost) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 ## Column: Billing Period Start
 
@@ -85,7 +85,7 @@ The BillingPeriodStart column adheres to the following requirements:
 * BillingPeriodStart MUST conform to [Date/Time Format](#date/timeformat) requirements.
 * BillingPeriodStart MUST NOT be null.
 * BillingPeriodStart MUST be the *inclusive beginning bound* of the *billing period*.
-* The sum of the [BilledCost](#billedcost) for [*rows*](#glossary:row) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+* The sum of [BilledCost](#billedcost) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 ## Column: Capacity Reservation ID
 
@@ -390,7 +390,7 @@ The EffectiveCost column adheres to the following requirements:
 * EffectiveCost MUST be a valid decimal value.
 * EffectiveCost MUST be 0 when [ChargeCategory](#chargecategory) is "Purchase" and the purchase is intended to cover future eligible charges.
 * EffectiveCost MUST be denominated in the BillingCurrency.
-* The sum of EffectiveCost for *rows* in a given *billing period* may not match the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
+* The sum of EffectiveCost in a given *billing period* may not match the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
 * When ChargeCategory is not "Usage" or "Purchase", EffectiveCost adheres to the following additional requirements:
   * EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related charges.
   * EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
