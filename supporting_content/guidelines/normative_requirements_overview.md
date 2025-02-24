@@ -916,7 +916,7 @@ The ContractedUnitPrice column adheres to the following requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
   * ContractedUnitPrice MUST be denominated in the BillingCurrency.
   * The product of ContractedUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ContractedCost](#contractedcost) when PricingQuantity is not null and ChargeClass is not "Correction".
-* Discrepancies in ContractedUnitPrice, ContractedCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
+* Discrepancies in ContractedUnitPrice, ContractedCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
 
 ### **Contracted Unit Price v.1.2 (Technical Refinement)**
 
@@ -1127,8 +1127,7 @@ The ListUnitPrice column adheres to the following requirements:
 The PricingCategory column adheres to the following requirements:
 
 * PricingCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all SKUs.
-* If present, PricingCategory adheres to the following additional requirements:
-  * PricingCategory MUST be of type String.
+* PricingCategory MUST be of type String.
 * PricingCategory nullability is defined as follows:
   * PricingCategory MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
@@ -1188,7 +1187,7 @@ The PricingQuantity column adheres to the following requirements:
 * When PricingQuantity is not null, PricingQuantity adheres to the following additional requirements:
   * PricingQuantity MUST be a valid decimal value.
   * The product of PricingQuantity and a unit price (e.g., [ContractedUnitPrice](#contractedunitprice)) MUST match the corresponding cost metric (e.g., [ContractedCost](#contractedcost)) when the unit price is not null, and ChargeClass is not "Correction".
-* Discrepancies in PricingQuantity, unit prices (e.g., ContractedUnitPrice), or costs (e.g., ContractedCost) MAY be addressed independently if ChargeClass is "Correction".
+* Discrepancies in PricingQuantity, unit prices (e.g., ContractedUnitPrice), or costs (e.g., ContractedCost) MAY be addressed independently when ChargeClass is "Correction".
 
 ### **PricingQuantity v.1.2 (Technical Refinement)**
 
@@ -1364,8 +1363,8 @@ The RegionName column adheres to the following requirements:
 * RegionName MUST be of type String.
 * RegionName MUST conform to [String Handling](#stringhandling) requirements.
 * RegionName nullability is defined as follows:
-  * RegionName MUST be null if [RegionId](#regionid) is null.
-  * RegionName MUST NOT be null if RegionId is not null.
+  * RegionName MUST be null when [RegionId](#regionid) is null.
+  * RegionName MUST NOT be null when RegionId is not null.
 
 ### **Region Name v.1.2 (Technical Refinement)**
 
@@ -1627,8 +1626,8 @@ The SkuMeter column adheres to the following requirements:
 * SkuMeter MUST be of type String.
 * SkuMeter MUST conform to [String Handling](#stringhandling) requirements.
 * SkuMeter nullability is defined as follows:
-  * SkuMeter MUST be null if SkuId is null.
-  * SkuMeter SHOULD NOT be null if SkuId is not null.
+  * SkuMeter MUST be null when SkuId is null.
+  * SkuMeter SHOULD NOT be null when SkuId is not null.
 * SkuMeter SHOULD remain consistent over time for a given SkuId.
 
 ### **SKU Meter v.1.2 (Technical Refinement)**
