@@ -1,14 +1,14 @@
 # Pricing Denomination to Billing Currency
 
-The Pricing Denomination to Billing Currency represents the conversion factor from [Pricing Denomination](#pricingdenomination) to [Billing Currency](#billingcurrency).
-
-The Pricing Denomination to Billing Currency is commonly used for `<<USE CASE TBD>>`.
+A Pricing Denomination to Billing Currency represents the conversion factor from [Pricing Denomination](#pricingdenomination) to [Billing Currency](#billingcurrency).  Pricing Denomination to Billing Currency is commonly used in scenarios where costs need to be grouped or aggregated by proprietary units of measure.
 
 The PricingDenominationToBillingCurrency column adheres to the following requirements:
 
-* The ListUnitPrice column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider `<<CONDITION TBD>>`.
-* This column MUST be a Decimal within the range of non-negative decimal values and MUST conform to [Numeric Format](#numericformat) requirements.
-* `<<NULLABILITY REQ TBD>>`
+* PricingDenominationToBillingCurrency MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider presents prices in a proprietary, non-currency unit of measure (e.g. credits, tokens).
+* PricingDenominationToBillingCurrency MUST be of type Decimal.
+* PricingDenominationToBillingCurrency MUST conform to [Numeric Format](#numericformat) requirements.
+* PricingDenominationToBillingCurrency MUST NOT be null when the provider presents prices in a proprietary, non-currency unit of measure (e.g. credits, tokens).
+* PricingDenominationToBillingCurrency MUST be a non-negative decimal value.
 
 ## Column ID
 
