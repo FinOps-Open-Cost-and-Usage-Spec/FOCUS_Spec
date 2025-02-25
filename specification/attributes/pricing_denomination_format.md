@@ -18,8 +18,8 @@ Formatting for proprietary unit of measure columns appearing in a [*FOCUS datase
 
 ## Requirements
 
-* Pricing Denomination columns MUST be represented as a three-letter alphabetic code as dictated in the governing document [ISO 4217:2015](https://www.iso.org/standard/64758.html) when [ChargeCategory](#chargecategory) = "Purchase".
-* Pricing Denomination columns MUST conform to String Handling](#stringhandling) requirements in all other cases.
+* Pricing Denomination columns MUST conform to [Currency Code Format](#currencycodeformat) requirements when [ChargeCategory](#chargecategory) = "Purchase".
+* Pricing Denomination columns MUST conform to [String Handling](#stringhandling) requirements in all other cases.
 
 ## Exceptions
 
