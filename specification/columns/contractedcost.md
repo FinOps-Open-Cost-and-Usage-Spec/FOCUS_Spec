@@ -4,14 +4,17 @@ Contracted Cost represents the cost calculated by multiplying [*contracted unit 
 
 The ContractedCost column adheres to the following requirements:
 
-* The ContractedCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
-* This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency.
-* When [ContractedUnitPrice](#contractedunitprice) is present and not null, multiplying the ContractedUnitPrice by PricingQuantity MUST produce the ContractedCost, except in cases of [ChargeClass](#chargeclass) "Correction", which may address PricingQuantity or any cost discrepancies independently.
-
-In cases where the ContractedUnitPrice is present and null, the following applies:
-
-* The ContractedCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related charges.
-* The ContractedCost of a charge unrelated to other charges (e.g., when the [ChargeCategory](#chargecategory) is "Credit") MUST match the [BilledCost](#billedcost).
+* ContractedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractedCost MUST be of type Decimal.
+* ContractedCost MUST conform to [Numeric Format](#numericformat) requirements.
+* ContractedCost MUST NOT be null.
+* ContractedCost MUST be a valid decimal value.
+* ContractedCost MUST be denominated in the BillingCurrency.
+* When [ContractedUnitPrice](#contractedunitprice) is null, ContractedCost adheres to the following additional requirements:
+  * ContractedCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related charges.
+  * ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
+* The product of ContractedUnitPrice and PricingQuantity MUST match the ContractedCost when ContractedUnitPrice is not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
+* Discrepancies in ContractedCost, ContractedUnitPrice, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
 
 ## Column ID
 

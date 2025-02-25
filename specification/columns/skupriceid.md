@@ -4,12 +4,18 @@ A SKU Price ID is a unique identifier that defines the unit price used to calcul
 
 The SkuPriceId column adheres to the following requirements:
 
-* SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list and MUST be of type String.
-* SkuPriceId MUST define a single unit price used for calculating the charge.
-* [ListUnitPrice](#listunitprice) MUST be associated with the SkuPriceId in the provider published price list.
-* SkuPriceId MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
-* A given value of SkuPriceId MUST be associated with one and only one [SkuId](#skuid), except in cases of [commitment discount flexibility](#glossary:commitment-discount-flexibility).
-* If a provider does not have a SkuPriceId and wants to include information in columns linked to SkuPriceId such as ListUnitPrice or [SkuPriceDetails](#skupricedetails), the SkuId MAY be used in the SkuPriceId column as long as it adheres to the above conditions.
+* SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list.
+* SkuPriceId MUST be of type String.
+* SkuPriceId MUST conform to [String Handling](#stringhandling) requirements.
+* SkuPriceId nullability is defined as follows:
+  * SkuPriceId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * SkuPriceId MAY be null in all other cases.
+* When SkuPriceId is not null, SkuPriceId adheres to the following additional requirements:
+  * SkuPriceId MUST be associated with one and only one [SkuId](#skuid), except in cases of [commitment discount flexibility](#glossary:commitment-discount-flexibility).
+  * SkuPriceId MUST define a single unit price used for calculating the charge.
+  * When a provider does not have a SkuPriceId and wants to include information in columns linked to SkuPriceId such as ListUnitPrice or [SkuPriceDetails](#skupricedetails), the SkuId MAY be used in the SkuPriceId column as long as it adheres to the above conditions.
+  * [ListUnitPrice](#listunitprice) MUST be associated with the SkuPriceId in the provider published price list.
 
 ## Column ID
 

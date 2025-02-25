@@ -4,15 +4,17 @@ The Pricing Unit represents a provider-specified measurement unit for determinin
 
 The PricingUnit column adheres to the following requirements:
 
-* The PricingUnit column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* This column MUST be of type String.
-* It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
-* Units of measure used in PricingUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
-
-The PricingUnit value MUST be semantically equal to the corresponding pricing measurement unit value provided in:
-
-* The provider-published [*price list*](#glossary:price-list)
-* The invoice, when the invoice includes a pricing measurement unit
+* PricingUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* PricingUnit MUST be of type String.
+* PricingUnit MUST conform to [String Handling](#stringhandling) requirements.
+* PricingUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+* PricingUnit nullability is defined as follows:
+  * PricingUnit MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * PricingUnit MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * PricingUnit MAY be null in all other cases.
+* When PricingUnit is not null, PricingUnit adheres to the following additional requirements:
+  * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in provider-published [*price list*](#glossary:price-list).
+  * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in invoice, when the invoice includes a pricing measurement unit.
 
 ## Column ID
 

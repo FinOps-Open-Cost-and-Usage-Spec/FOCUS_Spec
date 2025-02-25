@@ -4,9 +4,13 @@ A SKU ID is a unique identifier that defines a provider-supported construct for 
 
 The SkuId column adheres to the following requirements:
 
-* The SkuId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
-* This column MUST be of type String.
-* It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
+* SkuId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
+* SkuId MUST be of type String.
+* SkuId MUST conform to [String Handling](#stringhandling) requirements.
+* SkuId nullability is defined as follows:
+  * SkuId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * SkuId MAY be null in all other cases.
 * SkuId MUST equal SkuPriceId when a provider does not support an overarching SKU ID construct.
 
 ## Column ID

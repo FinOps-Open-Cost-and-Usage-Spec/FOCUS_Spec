@@ -4,14 +4,17 @@ List Cost represents the cost calculated by multiplying the [*list unit price*](
 
 The ListCost column adheres to the following requirements:
 
-* The ListCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
-* This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency.
-* When [ListUnitPrice](#listunitprice) is present and not null, multiplying the ListUnitPrice by PricingQuantity MUST produce the ListCost, except in cases of [ChargeClass](#chargeclass) "Correction", which may address PricingQuantity or any cost discrepancies independently.
-
-In cases where the ListUnitPrice is present and is null, the following applies:
-
-* The ListCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ListCost of those related charges.
-* The ListCost of a charge unrelated to other charges (e.g., when the [ChargeCategory](#chargecategory) is "Credit") MUST match the [BilledCost](#billedcost).
+* ListCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ListCost MUST be of type Decimal.
+* ListCost MUST conform to [Numeric Format](#numericformat) requirements.
+* ListCost MUST NOT be null.
+* ListCost MUST be a valid decimal value.
+* ListCost MUST be denominated in the BillingCurrency.
+* When [ListUnitPrice](#listunitprice) is null, ListCost adheres to the following additional requirements:
+  * ListCost of a charge calculated based on other charges (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ListCost of those related charges.
+  * ListCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
+* The product of ListUnitPrice and PricingQuantity MUST match the ListCost when ListUnitPrice is not null, PricingQuantity is not null, and [ChargeClass](#chargeclass) is not "Correction".
+* Discrepancies in ListCost, ListUnitPrice, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
 
 ## Column ID
 
