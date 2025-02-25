@@ -1,6 +1,6 @@
 # Pricing Denomination
 
-[*Pricing denomination*](#glossary:pricing-denomination) is an identifier that represents the proprietary unit of measure (e.g. credits, tokens) in which a charge for [*resources*](#glossary:resource) or [*services*](#glossary:service) was priced. Pricing Denomination is commonly used in scenarios where costs need to be grouped or aggregated.
+[*Pricing Denomination*](#glossary:pricing-denomination) is a value that represents the proprietary unit of measure (e.g. credits, tokens) in which a charge for [*resources*](#glossary:resource) or [*services*](#glossary:service) was priced. Pricing Denomination is commonly used in scenarios where costs need to be grouped or aggregated by proprietary units of measure.
 
 The PricingDenomination column adheres to the following requirements:
 
