@@ -10,7 +10,8 @@ The Invoice ID column adheres to the following requirements:
 * InvoiceId MUST be null when the [*charge*](#glossary:charge) is not associated either with an issued invoice or with a pre-generated provisional invoice.
 * InvoiceId MUST NOT be null when the *charge* is associated with either an issued invoice or a pre-generated provisional invoice.
 * InvoiceId MUST be associated with one and only one [BillingAccountId](#billingaccountid) within a customer.
-* An invoice ID MAY be generated prior to an invoice being issued and MUST be associated with line items linked to the pre-generated invoice
+* InvoiceId MAY be generated prior to an invoice being issued
+* Where a pre-generated Invoice or provisional invoice exists, it MUST be associated with the related charge and billingaccountId
 
 
 See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
