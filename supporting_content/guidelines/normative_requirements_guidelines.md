@@ -66,19 +66,19 @@
 
 | **Requirement Type** | **Requirement Group**              | **When required?**                | **Example**                                                                              |
 |----------------------|------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------|
-| Technical            | Presence                           | Always                            | ColumnId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when Condition. |
-| Technical            | Data Type                          | Always                            | ColumnId MUST be of type String.                                                         |
-| Technical            | Value Format                       | Always                            | ColumnId MUST conform to [String Handling](#stringhandling) requirements.                |
-| Technical            | Nullability                        | Always                            | ColumnId MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when Condition.                     |
-| Technical            | Values and Value Ranges            | Metrics and normalized dimensions | ColumnId MUST be a valid decimal value.<br/>ColumnId MUST be one of the allowed values.  |
-| Technical            | Column to column Relationships     | When applicable                   | ColumnId SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
-| Business             | Unit/Denomination                  | When applicable                   | ColumnId MUST be denominated in the BillingCurrency.                                     |
+| Technical            | Presence                           | Always                            | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when Condition. |
+| Technical            | Data Type                          | Always                            | {ColumnId} MUST be of type String.                                                         |
+| Technical            | Value Format                       | Always                            | {ColumnId} MUST conform to [String Handling](#stringhandling) requirements.                |
+| Technical            | Nullability                        | Always                            | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when Condition.                     |
+| Technical            | Values and Value Ranges            | Metrics and normalized dimensions | {ColumnId} MUST be a valid decimal value.<br/>{ColumnId} MUST be one of the allowed values.  |
+| Technical            | Column to column Relationships     | When applicable                   | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
+| Business             | Unit/Denomination                  | When applicable                   | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
 | Business             | Uniqueness                         | When applicable                   | BillingAccountId MUST be a unique identifier within a provider.                          |
-| Business             | Fallback/Substitute Values         | When applicable                   | ColumnId MUST NOT duplicate OtherColumnId when Condition.                                |
-| Business             | Relationships Outside the Spec     | When applicable                   | The sum of ColumnId in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
+| Business             | Fallback/Substitute Values         | When applicable                   | {ColumnId} MUST NOT duplicate {OtherColumnId} when Condition.                                |
+| Business             | Relationships Outside the Spec     | When applicable                   | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
 | Business             | Formula-based Cost Validation      | When applicable                   | The product of Column1 and Column2 MUST match the column3 when Condition.                |
 | Business             | Cost Correction Discrepancies      | When applicable                   | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction". |
-| Business             | Cost Calculation and Relationships | When applicable                   | When Condition, ColumnId adheres to the following additional requirements:<br>  * ColumnId of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * ColumnId of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
+| Business             | Cost Calculation and Relationships | When applicable                   | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
 | Business             | Other                              | When applicable                   |                                                                                         |
 
 ## Guidelines for Structuring Individual Requirements
@@ -105,8 +105,37 @@
 
 To ensure clarity and consistency across columns and requirements, it is important to:
 
-* **Use standardized phrasing and terminology**  
-* **Follow common requirement patterns where applicable**  
+* **Follow common requirement patterns where applicable**
+* **Use standardized phrasing and terminology**
+
+### Standardized Terminology
+
+* Identifiers and Uniqueness within Scope
+  * Patterns:
+    * {ColumnId} MUST be a unique identifier within {Scope}.
+    * {ColumnId} SHOULD be a fully-qualified identifier.
+    * {ColumnId} MUST be unique within a customer.
+  * Examples:
+    * BillingAccountId MUST be a unique identifier within a provider.
+    * BillingAccountName MUST be unique within a customer.
+    * ResourceId SHOULD be a fully-qualified identifier.
+
+* Column Aggregation
+  * Pattern: The sum of {ColumnId} in a given billing period...
+  * Example: The sum of BilledCost in a given billing period...
+
+* Column value Consistency
+  * Patterns:
+    * {ColumnId} MUST/SHOULD remain consistent over time for a given {OtherColumnId}.
+  * Examples:
+    * SkuMeter SHOULD remain consistent over time for a given SkuId.
+    * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
+
+* References to charge and billing periods
+  * Patterns: 
+    * in a given billing period
+    * in a given charge period
+
 
 **Note:** Refer to the cookbook for a set of recognized requirement patterns and commonly used phrasing.
 
