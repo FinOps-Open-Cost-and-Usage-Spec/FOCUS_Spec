@@ -108,36 +108,169 @@ To ensure clarity and consistency across columns and requirements, it is importa
 * **Follow common requirement patterns where applicable**
 * **Use standardized phrasing and terminology**
 
+### Requirement Patterns
+
+#### Technical Requirements: Presence
+
+```markdown
+* <ColumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* l<CoumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
+* <ColumnId> is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
+```
+
+#### Technical Requirements: Data Type
+
+```markdown
+* <ColumnId> MUST be of type String.
+* <ColumnId> MUST be of type Decimal.
+* <ColumnId> MUST be of type Date/Time.
+```
+
+#### Technical Requirements: Value Format
+
+```markdown
+* <ColumnId> MUST conform to [String Handling](#stringhandling) requirements.
+* <ColumnId> MUST conform to [Numeric Format](#numericformat) requirements.
+* <ColumnId> MUST conform to [Date/Time Format](#date/timeformat) requirements.
+* <ColumnId> SHOULD conform to [UnitFormat](#unitformat) requirements.
+* <ColumnId> MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* <ColumnId> MUST conform to [Currency Code Format](#currencycodeformat) requirements.
+```
+
+#### Technical Requirements: Nullability
+
+```markdown
+* <ColumnId> MUST NOT be null.
+```
+
+```markdown
+* <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
+```
+
+```markdown
+* <ColumnId> nullability is defined as follows:
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition1>.
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition2>.
+```
+
+```markdown
+* <ColumnId> nullability is defined as follows:
+  * <ColumnId> MUST be null when <Condition>.
+  * When <Condition>, the column adheres to the following additional requirements:
+    * <ColumnId> MUST NOT be null when <Condition>.
+    * <ColumnId> MAY be null when <Condition>.
+```
+
+```markdown
+* <ColumnId> nullability is defined as follows:
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
+  * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
+  * <ColumnId> MAY be null in all other cases.
+```
+
+```markdown
+* <ColumnId> nullability is defined as follows:
+  * When <Condition>, <ColumnId> adheres to the following additional requirements:
+    * <ColumnId> MUST NOT be null when <Condition>.
+    * <ColumnId> MAY be null when <Condition>.
+  * <ColumnId> MUST be null in all other cases.
+```
+
+#### Technical Requirements: Values and Value Ranges
+
+```markdown
+* <ColumnId> MUST be a valid decimal value.
+* <ColumnId> MUST be a non-negative decimal value.
+```
+
+#### Technical Requirements: Column-to-Column Relationships
+
+```markdown
+* <ColumnId> SHOULD/MUST remain consistent over time for a given <OtherColumnId>.
+```
+
+#### Business & Contextual Requirements: Unit/Denomination
+
+```markdown
+* <ColumnId> MUST be denominated in the BillingCurrency.
+* <ColumnId> MUST be expressed in the <OtherColumnId>.
+```
+
+#### Business & Contextual Requirements: Uniqueness
+
+```markdown
+TODO
+```
+
+#### Business & Contextual Requirements: Fallback/Substitute Values
+
+```markdown
+TODO
+```
+
+#### Business & Contextual Requirements: Relationships Outside the Spec
+
+```markdown
+TODO
+```
+
+#### Business & Contextual Requirements: Cost Validation Rules
+
+##### Formula-based Cost Validation
+
+```markdown
+TODO
+```
+
+##### Cost Correction Discrepancies
+
+```markdown
+TODO
+```
+
+#### Business & Contextual Requirements: Cost Calculation and Relationships
+
+```markdown
+TODO
+```
+
+#### Business & Contextual Requirements: Other
+
+```markdown
+TODO
+```
+
 ### Standardized Terminology
 
-* Identifiers and Uniqueness within Scope
-  * Patterns:
-    * {ColumnId} MUST be a unique identifier within {Scope}.
-    * {ColumnId} SHOULD be a fully-qualified identifier.
-    * {ColumnId} MUST be unique within a customer.
-  * Examples:
-    * BillingAccountId MUST be a unique identifier within a provider.
-    * BillingAccountName MUST be unique within a customer.
-    * ResourceId SHOULD be a fully-qualified identifier.
+#### Identifiers and Uniqueness within Scope
 
-* Column Aggregation
-  * Pattern: The sum of {ColumnId} in a given billing period...
-  * Example: The sum of BilledCost in a given billing period...
+* Patterns:
+  * {ColumnId} MUST be a unique identifier within {Scope}.
+  * {ColumnId} SHOULD be a fully-qualified identifier.
+  * {ColumnId} MUST be unique within a customer.
+* Examples:
+  * BillingAccountId MUST be a unique identifier within a provider.
+  * BillingAccountName MUST be unique within a customer.
+  * ResourceId SHOULD be a fully-qualified identifier.
 
-* Column value Consistency
-  * Patterns:
-    * {ColumnId} MUST/SHOULD remain consistent over time for a given {OtherColumnId}.
-  * Examples:
-    * SkuMeter SHOULD remain consistent over time for a given SkuId.
-    * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
+#### Column Aggregation
 
-* References to charge and billing periods
-  * Patterns: 
-    * in a given billing period
-    * in a given charge period
+* Pattern: The sum of {ColumnId} in a given billing period...
+* Example: The sum of BilledCost in a given billing period...
 
+#### Column value Consistency
 
-**Note:** Refer to the cookbook for a set of recognized requirement patterns and commonly used phrasing.
+* Patterns:
+  * {ColumnId} MUST/SHOULD remain consistent over time for a given {OtherColumnId}.
+* Examples:
+  * SkuMeter SHOULD remain consistent over time for a given SkuId.
+  * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
+
+#### References to charge and billing periods
+
+* Patterns:
+  * in a given billing period
+  * in a given charge period
 
 ## Examples
 
