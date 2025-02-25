@@ -1,12 +1,13 @@
 # Pricing Denomination
 
-[*Pricing denomination*](#glossary:pricing-denomination) is an identifier that represents the proprietary unit of measure in which a charge for [*resources*](#glossary:resource) or [*services*](#glossary:service) was priced. Pricing Denomination is commonly used in scenarios where costs need to be grouped or aggregated.
+[*Pricing denomination*](#glossary:pricing-denomination) is an identifier that represents the proprietary unit of measure (e.g. credits, tokens) in which a charge for [*resources*](#glossary:resource) or [*services*](#glossary:service) was priced. Pricing Denomination is commonly used in scenarios where costs need to be grouped or aggregated.
 
 The PricingDenomination column adheres to the following requirements:
 
-* PricingDenomination MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports `<<TBD>>`.
-* `<<TBD>>` need to adhere to proposed normative requirements format.
+* PricingDenomination MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider presents prices in a proprietary, non-currency unit of measure (e.g. credits, tokens).
+* PricingDenomination MUST be of type String.
 * PricingDenomination MUST conform to [Pricing Denomination Format](#pricingdenominationformat) requirements.
+* PricingDenomination MUST NOT be null when the provider presents prices in a proprietary, non-currency unit of measure (e.g. credits, tokens).
 
 ## Column ID
 
