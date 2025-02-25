@@ -4,8 +4,11 @@ A Charge Description provides a high-level context of a [*row*](#glossary:row) w
 
 The ChargeDescription column adheres to the following requirements:
 
-* The ChargeDescription column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset), MUST be of type String, and SHOULD NOT be null.
-* Providers SHOULD specify the length of this column in their publicly available documentation.
+* ChargeDescription MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeDescription MUST be of type String.
+* ChargeDescription MUST conform to [String Handling](#stringhandling) requirements.
+* ChargeDescription SHOULD NOT be null.
+* ChargeDescription length SHOULD be specified by providers in their publicly available documentation.
 
 ## Column ID
 

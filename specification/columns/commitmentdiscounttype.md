@@ -6,9 +6,10 @@ The CommitmentDiscountType column adheres to the following requirements:
 
 * CommitmentDiscountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountType MUST be of type String.
-* CommitmentDiscountType MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
-* CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
-* CommitmentDiscountType MUST be a consistent, readable display value.
+* CommitmentDiscountType MUST conform to [String Handling](#stringhandling) requirements.
+* CommitmentDiscountType nullability is defined as follows:
+  * CommitmentDiscountType MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
+  * CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
 
 ## Column ID
 

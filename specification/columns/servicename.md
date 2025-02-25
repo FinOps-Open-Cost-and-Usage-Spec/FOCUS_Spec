@@ -6,8 +6,10 @@ The Service Name is a display name for the offering that was purchased. The Serv
 
 The ServiceName column adheres to the following requirements:
 
-* The ServiceName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* This column MUST be of type String and MUST NOT contain null values.
+* ServiceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ServiceName MUST be of type String.
+* ServiceName MUST conform to [String Handling](#stringhandling) requirements.
+* ServiceName MUST NOT be null.
 
 ## Column ID
 

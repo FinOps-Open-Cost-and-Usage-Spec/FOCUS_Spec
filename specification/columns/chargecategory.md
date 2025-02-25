@@ -4,8 +4,10 @@ Charge Category represents the highest-level classification of a charge based on
 
 The ChargeCategory column adheres to the following requirements:
 
-* The ChargeCategory column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
-* This column is of type String and MUST be one of the allowed values.
+* ChargeCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeCategory MUST be of type String.
+* ChargeCategory MUST NOT be null.
+* ChargeCategory MUST be one of the allowed values.
 
 ## Column ID
 
