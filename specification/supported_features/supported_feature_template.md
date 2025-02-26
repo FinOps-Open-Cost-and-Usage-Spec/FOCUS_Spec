@@ -8,4 +8,4 @@
 * Directly Dependent Columns - Colums directly used in the query
 * Indirectly Dependent Columns - Columns indirectly used, or related to the used columns through the supported specifications.
 * Example SQL Query - the query used, including placeholders for parameters
-* Query Parameters - the format of the parameters used
+
