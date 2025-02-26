@@ -34,8 +34,4 @@ Group by
   ChargePeriodStart
 ```
 
-## Parameters
-* BillingPeriodStart
-* BillingPeriodEnd
-* SubAccountId
 
