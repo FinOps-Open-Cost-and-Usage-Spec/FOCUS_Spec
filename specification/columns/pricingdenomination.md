@@ -16,7 +16,7 @@ The PricingDenomination column adheres to the following requirements:
 * PricingDenomination MUST be of type String.
 * PricingDenomination MUST conform to [Pricing Denomination Format](#pricingdenominationformat) requirements.
 * PricingDenomination nullability is defined as follows:
-  * PricingDenomination MUST NOT be null when the provider presents prices in a presents prices in a non-currency consumable unit of measure (e.g. credits, tokens).
+  * PricingDenomination MUST NOT be null when the provider presents prices in a non-currency consumable unit of measure (e.g. credits, tokens).
   * PricingDenomination MUST NOT be null when the provider presents prices and bills in different currencies (e.g. prices are presented in USD and billed in EUR).
   * PricingDenomination MAY be null in all other cases.
 
