@@ -31,6 +31,7 @@ SELECT
   SubAccountID,
   SubAccountName,
   ChargePeriodStart,
+  ServiceName,
   SUM(BilledCost)
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
