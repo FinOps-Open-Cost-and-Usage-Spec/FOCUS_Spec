@@ -12,7 +12,7 @@ The Invoice ID column adheres to the following requirements:
 * InvoiceId MUST be associated with one and only one [BillingAccountId](#billingaccountid) within a customer.
 * InvoiceId MAY be generated prior to an invoice being issued.
 * Where a pre-generated invoice or provisional invoice exists, it MUST be associated with the related charge and billingaccountId.
-
+> Editor's Note: 
 
 See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
