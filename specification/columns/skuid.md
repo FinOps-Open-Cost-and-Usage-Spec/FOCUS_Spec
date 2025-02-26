@@ -8,14 +8,21 @@ A SKU ID is a provider-specified unique identifier that represents a specific [*
 
 SKU ID can be referenced on a catalog or [*price list*](#glossary:price-list) published by a provider to look up detailed information about the *SKU*. The composition of the properties associated with the SKU ID may differ across providers. SKU ID is commonly used for analyzing and comparing costs for the same SKU in different regions, tiers, and more.
 
+---
+
 NOTES:
-- SKU == functionality that you're getting
-- SkuId should be the same no matter how the billing account is configured
-- SkuId should support comparing before/after negotiations
-- SkuId should support comparing with a public/retail price list
-- Concepts that are part of a SKU: Publisher, parent product, pricing unit, size/shape, SLA (dev/test or prod), tech specs
-- Concepts that are part of a SKU price: State (preview or GA), SKU region, CD type, term, tier, SKU meter
-- External factors that impact price: Billing account type, negotiated discounts, billing/charge period
+
+* SKU == functionality that you're getting
+* SkuId should be the same no matter how the billing account is configured
+* SkuId should support comparing before/after negotiations
+* SkuId should support comparing with a public/retail price list
+* Concepts that are part of a SKU: Publisher, parent product, pricing unit, size/shape, SLA (dev/test or prod), tech specs
+* Concepts that are part of a SKU price: State (preview or GA), SKU region, CD type, term, tier, SKU meter
+* External factors that impact price: Billing account type, negotiated discounts, billing/charge period
+
+---
+
+**ORIG:**
 
 The SkuId column adheres to the following requirements:
 
@@ -26,6 +33,19 @@ The SkuId column adheres to the following requirements:
 * SkuId MAY be null for all other combinations of ChargeClass and ChargeCategory.
 * ~SkuId MUST equal SkuPriceId when a provider does not support an overarching SKU ID construct.~
   > NOTE: This seems wrong. SkuId is the primary identifier. SkuPriceId is the secondary identifier to account for different pricing options for that SkuId. I don't think we should be defining SkuId based on SkuPriceId. It should be the other way around.
+
+**NEW:**
+
+The SkuId column adheres to the following requirements:
+
+* SkuId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
+* SkuId MUST be of type String.
+* SkuId MUST conform to [String Handling](#stringhandling) requirements.
+* SkuId nullability is defined as follows:
+  * SkuId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * SkuId MAY be null in all other cases.
+* SkuPriceId MAY equal SkuId.
 
 ## Column ID
 
