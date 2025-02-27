@@ -183,11 +183,11 @@ To ensure clarity and consistency across columns and requirements, it is importa
 
 ```markdown
 * <ColumnId> MUST conform to [StringHandling](#stringhandling) requirements.
-* <ColumnId> MUST conform to [Numeric Format](#numericformat) requirements.
-* <ColumnId> MUST conform to [Date/Time Format](#date/timeformat) requirements.
+* <ColumnId> MUST conform to [NumericFormat](#numericformat) requirements.
+* <ColumnId> MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * <ColumnId> SHOULD conform to [UnitFormat](#unitformat) requirements.
 * <ColumnId> MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-* <ColumnId> MUST conform to [Currency Code Format](#currencycodeformat) requirements.
+* <ColumnId> MUST conform to [CurrencyCodeFormat](#currencycodeformat) requirements.
 ```
 
 #### Technical Requirements: Nullability
