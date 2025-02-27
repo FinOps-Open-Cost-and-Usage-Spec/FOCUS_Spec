@@ -6,4 +6,5 @@ The FOCUS specification is designed to meet the needs of FinOps practitioners in
 !INCLUDE "invoice_cost_and_time_period.md",1
 !INCLUDE "compare_billed_cost_per_subaccount_to_budget.md",1
 !INCLUDE "compare_billed_and_effective_costs.md",1
+!INCLUDE "resource_usage.md",1
 
