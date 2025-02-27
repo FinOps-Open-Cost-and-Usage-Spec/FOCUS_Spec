@@ -30,7 +30,7 @@ SEE: Additional License Purchase FOCUS Entries https://docs.google.com/spreadshe
 
 Same as above, ACME Corp offers its customer the ability to purchase their service with a fixed quantity of licenses. ACME provides AwesomeCorp with a Single invoice for their usage; ACME also provides a detailed usage report to AwesomeCorp. Distinct in this scenario, ACME only issues the invoice at the end of the usage period. 
 
-On April 1st, 2025, ACME audits the AwesomeCorp usage for the previous year executes a contract and invoices AwesomeCorp $100,000, public list cost of their purchase items would be $150,000.
+On April 1st, 2025, ACME audits the AwesomeCorp usage for the previous year and invoices AwesomeCorp $100,000, public list cost of their purchase items would be $150,000.
 The contract includes the following items:
 - $50,000 for 500 Licenses
 
