@@ -11,7 +11,7 @@ See [Appendix: Origination of cost data](#originationofcostdata) section for exa
 
 ## Column ID
 
-HostProvider
+HostProviderName
 
 ## Display Name
 
