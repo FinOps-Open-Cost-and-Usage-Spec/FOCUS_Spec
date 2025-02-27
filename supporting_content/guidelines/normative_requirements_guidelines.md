@@ -56,17 +56,42 @@
 
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
 
-  **Example Pattern:**
+  **Example Pattern 1**
 
   ```markdown
   * <ColumnId> MUST/MUST NOT/SHOULD/MUST be null when <Condition>.
   ```
 
+* **Use {ColumnId} for Column and Value References**: Whenever possible, use {ColumnId} when referring to a column or its values.
+
+* **Default to Singular Form**: Column references should be singular, with the understanding that the requirement applies to all values in the column.
+
+### Additional Guidelines for Columns in Simplified JSON Format
+
+#### Key-Value Pairs
+
+* **Terminology for Key-Value Pairs depends on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **provider-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
+
+* **Default to Plural for Key-Value Pairs**: When referring to key-value pairs, **tags** and **properties** should be used in the plural form to reflect the fact that the column may contain multiple key-value pairs.
+
+#### Keys and Values
+
+* **Refer to Key and Values Explicitly**: When specifying normative requirements for key and value, use precise terminology based on the column type. For instance:
+  * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
+  * In **SkuPriceDetails**, refer to **property key** when addressing only the key, and **property value** when addressing only the value.
+  * When linking a key to its value, use **corresponding value**.
+
+* **Start Key-Specific Requirements with the Key Term**: When a requirement applies to a key, it SHOULD begin with **tag key**, **property key**, or the applicable term for that column.
+
+* **Start Value-Specific Requirements with the Value Term**: When a requirement applies to a value, it SHOULD begin with **tag value**, **property value**, or the applicable term for that column.
+
+* **Default to Singular Form for Keys and Values**: Keys and values references should be singular, with the understanding that the requirement applies to all occurrences (e.g., "property key", "tag value", etc.).
+
 ## Grouping of Nullability-Related and Subsequent Normative Requirements
 
 * When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
 
-  **Example Pattern 1:**
+  **Example Pattern 1**
 
   ```markdown
   * <ColumnId> nullability is defined as follows:
@@ -76,7 +101,7 @@
 
 * When requirements follow conditional logic (e.g., "If... Else If... Else"), the order should be adjusted so that the most specific conditions appear first, while the most general requirement (e.g., a MUST or SHOULD) is placed last as the fallback rule ("In all other cases" clause).
 
-  **Example Pattern 2:**
+  **Example Pattern 2**
 
   ```markdown
   * <ColumnId> nullability is defined as follows:
@@ -85,7 +110,7 @@
     * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null in all other cases.
   ```
 
-  **Example Pattern 3:**
+  **Example Pattern 3**
 
   ```markdown
   * <ColumnId> nullability is defined as follows:
@@ -106,7 +131,7 @@
     When <Condition(s)>, <ColumnId> adheres to the following additional requirements:
   ```
 
-  **Example Pattern 1:**
+  **Example Pattern 1**
   
   ```markdown
   * When <Condition>, <ColumnId> adheres to the following additional requirements:
@@ -117,7 +142,7 @@
 * **Nested Condition**
   * For nested conditions, if the parent condition already defines the adherence (e.g., {ColumnId} adheres to the following additional requirements), do not repeat this phrase. Simply state the nested condition, and then list the specific requirements for that condition under the nested bullet.
 
-  **Example Pattern 2:**
+  **Example Pattern 2**
 
   ```markdown
   * When <Condition>, <ColumnId> adheres to the following additional requirements:
