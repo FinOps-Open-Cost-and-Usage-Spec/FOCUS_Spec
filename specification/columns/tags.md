@@ -20,7 +20,7 @@ The Tags column adheres to the following requirements:
 
 User-defined tags additionally adhere to the following requirements:
 
-* When a provider has only 1 user-defined tag scheme, the provider MUST NOT include a prefix in Tag keys.
+* When a provider has only 1 user-defined tag scheme, the provider MUST NOT include a prefix in tag keys.
 * When a provider has 2 or more user-defined tag schemes, the provider MUST prefix all but 1 user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme.
 
 Provider-defined tags additionally adhere to the following requirements:
