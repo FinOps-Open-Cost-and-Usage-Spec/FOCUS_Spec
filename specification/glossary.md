@@ -64,6 +64,14 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
 
+<a name="glossary:correction"><b>Correction</b></a>
+
+A charge to correct cost or usage data in a previously invoiced [*billing period*](#glossary:billing-period).
+
+<a name="glossary:credit"><b>Credit</b></a>
+
+A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
+
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
@@ -135,6 +143,10 @@ A comprehensive list of prices offered by a provider.
 <a name="glossary:provider"><b>Provider</b></a>
 
 An entity that made internal or 3rd party resources and/or services available for purchase.
+
+<a name="glossary:refund"><b>Refund</b></a>
+
+A return of funds that have previously been charged.
 
 <a name="glossary:resource"><b>Resource</b></a>
 
