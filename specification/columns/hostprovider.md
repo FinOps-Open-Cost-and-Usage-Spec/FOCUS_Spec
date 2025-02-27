@@ -19,7 +19,7 @@ Host Provider
 
 ## Description
 
-The name of the entity whose *resources* are used by the Publisher to make the Publisher's [*resources*](#glossary:resource) or [*services*](#glossary:service) available..
+The name of the entity whose *resources* are used by the Publisher to make the Publisher's [*resources*](#glossary:resource) or [*services*](#glossary:service) available.
 
 ## Content Constraints
 
