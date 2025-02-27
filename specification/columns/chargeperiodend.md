@@ -6,7 +6,7 @@ The ChargePeriodEnd column adheres to the following requirements:
 
 * ChargePeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargePeriodEnd MUST be of type Date/Time.
-* ChargePeriodEnd MUST conform to [Date/Time Format](#date/timeformat) requirements.
+* ChargePeriodEnd MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * ChargePeriodEnd MUST NOT be null.
 * ChargePeriodEnd MUST be the *exclusive ending bound* of the effective period of the charge.
 
