@@ -52,6 +52,8 @@
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
 
+* For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
+
 ## Guidelines for Structuring Individual Requirements
 
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
