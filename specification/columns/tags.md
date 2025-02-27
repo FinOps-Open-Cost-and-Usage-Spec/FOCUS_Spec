@@ -10,9 +10,9 @@ The Tags column adheres to the following requirements:
 * Tags MUST contain all user-defined and provider-defined tags.
 * Tags MUST only contain finalized tags.
 * Tags MUST be in [KeyValueFormat](#key-valueformat).
-* A Tag key with a non-null value for a given resource SHOULD be included in the tags column.
-* A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
-* A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
+* A tag key with a non-null value for a given resource SHOULD be included in the tags column.
+* A tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
+* A tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
 * Providers MUST NOT alter tag values unless applying true (boolean) to valueless tags
 * If tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
 * Providers MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless, user-defined tag scheme.  
