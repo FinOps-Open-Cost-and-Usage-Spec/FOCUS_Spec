@@ -7,7 +7,7 @@ The Invoice ID column adheres to the following requirements:
 * InvoiceId is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceId MUST be of type String.
 * InvoiceId MUST conform to [String Handling](#stringhandling) requirements.
-* InvoiceId MUST be null when the [*charge*](#glossary:charge) is not associated either with an issued invoice or with a pre-generated provisional invoice.
+* InvoiceId MUST be null when the [*charge*](#glossary:charge) is not associated either with an invoice or with a pre-generated provisional invoice.
 * InvoiceId MUST NOT be null when the *charge* is associated with either an issued invoice or a pre-generated provisional invoice.
 * InvoiceId MUST be associated with one and only one [BillingAccountId](#billingaccountid) within a customer.
 * InvoiceId MAY be generated prior to an invoice being issued.
