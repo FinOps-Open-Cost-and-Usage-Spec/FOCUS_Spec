@@ -1,6 +1,6 @@
 # Column Normative Requirements Guidelines
 
-## Grouping and Ordering of Requirements
+## Grouping and Ordering of Requirements Groups
 
 * Grouping and ordering of requirements ensure clarity, logical flow, and consistency across all columns, making related requirements easy to identify and follow. This structure should be maintained for consistency across the specification.
 
@@ -24,6 +24,46 @@
      6. **Cost Calculation and Relationships**: Defines how costs are calculated in specific use cases, including dependencies on related charges and alignment with other cost values.
      7. **Other**: Requirements that do not fall into one of the previous categories.
 
+### Tabular Overview of Requirement Grouping and Specifications
+
+| **Requirement Type** | **Requirement Group**              | **When required?**                | **Example**                                                                              |
+|----------------------|------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------|
+| Technical            | Presence                           | Always                            | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when Condition. |
+| Technical            | Data Type                          | Always                            | {ColumnId} MUST be of type String.                                                         |
+| Technical            | Value Format                       | Always                            | {ColumnId} MUST conform to [String Handling](#stringhandling) requirements.                |
+| Technical            | Nullability                        | Always                            | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when Condition.                     |
+| Technical            | Values and Value Ranges            | Metrics and normalized dimensions | {ColumnId} MUST be a valid decimal value.<br/>{ColumnId} MUST be one of the allowed values.  |
+| Technical            | Column to column Relationships     | When applicable                   | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
+| Business             | Unit/Denomination                  | When applicable                   | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
+| Business             | Uniqueness                         | When applicable                   | BillingAccountId MUST be a unique identifier within a provider.                          |
+| Business             | Fallback/Substitute Values         | When applicable                   | {ColumnId} MUST NOT duplicate {OtherColumnId} when Condition.                                |
+| Business             | Relationships Outside the Spec     | When applicable                   | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
+| Business             | Formula-based Cost Validation      | When applicable                   | The product of Column1 and Column2 MUST match the column3 when Condition.                |
+| Business             | Cost Correction Discrepancies      | When applicable                   | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction". |
+| Business             | Cost Calculation and Relationships | When applicable                   | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
+| Business             | Other                              | When applicable                   |                                                                                         |
+
+## Ordering of Requirements Within Groups
+
+* Within each group of requirements, order individual requirements as follows:
+  * **MUST** – an absolute requirement
+  * **MUST NOT** – a prohibition
+  * **SHOULD** – recommended but not mandatory
+  * **SHOULD NOT** – discouraged but not strictly prohibited
+  * **MAY** – optional
+
+## Guidelines for Structuring Individual Requirements
+
+* **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
+
+  **Example Pattern:**
+
+  ```markdown
+  * <ColumnId> MUST/MUST NOT/SHOULD/MUST be null when <Condition>.
+  ```
+
+## Grouping of Nullability-Related and Subsequent Normative Requirements
+
 * When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
 
   **Example Pattern 1:**
@@ -33,13 +73,6 @@
     * <ColumnId> MUST be null when <Condition>.
     * <ColumnId> MUST NOT be null when <Condition>.
   ```
-
-* Within each group of requirements, order individual requirements as follows:
-  * **MUST** – an absolute requirement
-  * **MUST NOT** – a prohibition
-  * **SHOULD** – recommended but not mandatory
-  * **SHOULD NOT** – discouraged but not strictly prohibited
-  * **MAY** – optional
 
 * When requirements follow conditional logic (e.g., "If... Else If... Else"), the order should be adjusted so that the most specific conditions appear first, while the most general requirement (e.g., a MUST or SHOULD) is placed last as the fallback rule ("In all other cases" clause).
 
@@ -62,43 +95,36 @@
       * <ColumnId> MAY be null when <Condition>.
   ```
 
-### Tabular Overview of Requirement Grouping and Specifications
+## Grouping of Requirements Based on Specific Conditions
 
-| **Requirement Type** | **Requirement Group**              | **When required?**                | **Example**                                                                              |
-|----------------------|------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------|
-| Technical            | Presence                           | Always                            | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when Condition. |
-| Technical            | Data Type                          | Always                            | {ColumnId} MUST be of type String.                                                         |
-| Technical            | Value Format                       | Always                            | {ColumnId} MUST conform to [String Handling](#stringhandling) requirements.                |
-| Technical            | Nullability                        | Always                            | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when Condition.                     |
-| Technical            | Values and Value Ranges            | Metrics and normalized dimensions | {ColumnId} MUST be a valid decimal value.<br/>{ColumnId} MUST be one of the allowed values.  |
-| Technical            | Column to column Relationships     | When applicable                   | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
-| Business             | Unit/Denomination                  | When applicable                   | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
-| Business             | Uniqueness                         | When applicable                   | BillingAccountId MUST be a unique identifier within a provider.                          |
-| Business             | Fallback/Substitute Values         | When applicable                   | {ColumnId} MUST NOT duplicate {OtherColumnId} when Condition.                                |
-| Business             | Relationships Outside the Spec     | When applicable                   | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
-| Business             | Formula-based Cost Validation      | When applicable                   | The product of Column1 and Column2 MUST match the column3 when Condition.                |
-| Business             | Cost Correction Discrepancies      | When applicable                   | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction". |
-| Business             | Cost Calculation and Relationships | When applicable                   | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
-| Business             | Other                              | When applicable                   |                                                                                         |
-
-## Guidelines for Structuring Individual Requirements
-
-* **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
-
-  **Example 3:**
+* **Parent Condition**
+  * When a specific condition (or set of conditions) applies to a subset of requirements, you may group them under that condition.
+  * The requirement's bullet should start with the {Condition}, and the following requirements should begin with the {ColumnId}.
+  * For conditions that apply to multiple nested requirements, use the following pattern:
 
   ```markdown
-  * <ColumnId> MUST/MUST NOT/SHOULD/MUST be null when <Condition>.
+    When <Condition(s)>, <ColumnId> adheres to the following additional requirements:
   ```
 
-* **Group related requirements by condition**: When a subset of requirements applies to a specific condition, you may group them under that condition. The requirement's bullet should then start with the condition, and nested requirements should begin with the ColumnId.
-
-  **Example 4:**
+  **Example Pattern 1:**
   
   ```markdown
   * When <Condition>, <ColumnId> adheres to the following additional requirements:
     * <ColumnId> MUST NOT be null when <Condition>.
     * <ColumnId> MAY be null when <Condition>.
+  ```
+
+* **Nested Condition**
+  * For nested conditions, if the parent condition already defines the adherence (e.g., {ColumnId} adheres to the following additional requirements), do not repeat this phrase. Simply state the nested condition, and then list the specific requirements for that condition under the nested bullet.
+
+  **Example Pattern 2:**
+
+  ```markdown
+  * When <Condition>, <ColumnId> adheres to the following additional requirements:
+    * <ColumnId> MUST be a valid decimal value.
+    * When <NestedCondition>:
+      * <ColumnId> MUST be <SpecificRequirement>.
+      * <ColumnId> MUST be <SpecificRequirement>.
   ```
 
 ## Consistent Wording and Patterns in Requirements
