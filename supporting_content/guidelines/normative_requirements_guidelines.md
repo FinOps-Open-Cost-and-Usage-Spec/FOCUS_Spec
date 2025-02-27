@@ -182,7 +182,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 #### Technical Requirements: Value Format
 
 ```markdown
-* <ColumnId> MUST conform to [String Handling](#stringhandling) requirements.
+* <ColumnId> MUST conform to [StringHandling](#stringhandling) requirements.
 * <ColumnId> MUST conform to [Numeric Format](#numericformat) requirements.
 * <ColumnId> MUST conform to [Date/Time Format](#date/timeformat) requirements.
 * <ColumnId> SHOULD conform to [UnitFormat](#unitformat) requirements.
