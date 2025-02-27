@@ -245,22 +245,17 @@ TODO
 ##### Formula-based Cost Validation
 
 ```markdown
-TODO
+* The product of <PricingQuantity|UnitPriceColumnId> and <UnitPriceColumnId|PricingQuantity> MUST match the <CostColumnId> when <Condition> and ChargeClass is not "Correction".
+* The product of <PricingQuantity|UnitPriceColumnId> and <UnitPriceColumnId|PricingQuantity> MUST match the <CostColumnId> when <Condition1>, <Condition2>, and ChargeClass is not "Correction".
 ```
 
 ##### Cost Correction Discrepancies
 
 ```markdown
-TODO
+* Discrepancies in <MetricId1>, <MetricId2>, or <MetricId3> MAY be addressed independently when ChargeClass is "Correction".
 ```
 
 #### Business & Contextual Requirements: Cost Calculation and Relationships
-
-```markdown
-TODO
-```
-
-#### Business & Contextual Requirements: Other
 
 ```markdown
 TODO
