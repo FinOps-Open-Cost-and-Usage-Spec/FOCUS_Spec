@@ -114,7 +114,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 
 ```markdown
 * <ColumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* l<CoumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
+* <CoumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
 * <ColumnId> is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
 ```
 
