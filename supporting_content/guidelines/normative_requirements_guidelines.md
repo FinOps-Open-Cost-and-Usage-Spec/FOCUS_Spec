@@ -296,7 +296,7 @@ The ListUnitPrice column adheres to the following requirements:
 ---
 The ListUnitPrice column adheres to the following requirements:
 
-* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit unit prices exclusive of discounts.
+* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be of type Decimal.
 * ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
 * ListUnitPrice nullability is defined as follows:
@@ -308,26 +308,6 @@ The ListUnitPrice column adheres to the following requirements:
   * ListUnitPrice MUST be denominated in the BillingCurrency.
   * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
   * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
-
-#### **List Unit Price v.1.2 (Technical Refinement)**
-
-The ListUnitPrice column adheres to the following requirements:
-
-* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
-* If present, ListUnitPrice adheres to the following additional requirements:
-  * ListUnitPrice MUST be of type Decimal.
-  * ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
-  * If [ChargeCategory](#chargecategory) is "Tax", ListUnitPrice adheres to the following additional requirement:
-    * ListUnitPrice MUST be null.
-  * Else if ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction", ListUnitPrice adheres to the following additional requirement:
-    * ListUnitPrice MUST NOT be null.
-  * Else ListUnitPrice adheres to the following additional requirement:
-    * ListUnitPrice MAY be null.
-  * If ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
-    * ListUnitPrice MUST be a non-negative decimal value.
-    * ListUnitPrice MUST be denominated in the BillingCurrency.
-    * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) if PricingQuantity is not null and ChargeClass is not "Correction".
-  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently if ChargeClass is "Correction".
 
 #### **List Unit Price v.1.1 (Original)**
 
@@ -350,19 +330,7 @@ The BilledCost column adheres to the following requirements:
 * BilledCost MUST NOT be null.
 * BilledCost MUST be a valid decimal value.
 * BilledCost MUST be denominated in the BillingCurrency.
-* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
-
-#### **Billed Cost v.1.2 (Technical Refinement)**
-
-The BilledCost column adheres to the following requirements:
-
-* BilledCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* BilledCost MUST be of type Decimal.
-* BilledCost MUST conform to [Numeric Format](#numericformat) requirements.
-* BilledCost MUST NOT be null.
-* BilledCost MUST be a valid decimal value.
-* BilledCost MUST be denominated in the BillingCurrency.
-* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+* The sum of BilledCost in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 #### **Billed Cost v.1.1 (Original)**
 
@@ -388,34 +356,12 @@ The CommitmentDiscountQuantity column adheres to the following requirements:
   * CommitmentDiscountQuantity MUST be null in all other cases.
 * When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
   * CommitmentDiscountQuantity MUST be a valid decimal value.
-  * When ChargeCategory is "Purchase", CommitmentDiscountQuantity adheres to the following additional requirements:
-    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnits, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#chargefrequency) is "One-Time".
-    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnits that is eligible for consumption for each *charge period* that corresponds with the purchase when ChargeFrequency is "Recurring".
-  * When ChargeCategory is "Usage", CommitmentDiscountQuantity adheres to the following additional requirements:
-    * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnits that is consumed over the *row's* *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
-    * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnits for the *row's* *charge period* when CommitmentDiscountStatus is "Unused".
-
-#### **CommitmentDiscountQuantity v.1.2 (Technical Refinement)**
-
-The CommitmentDiscountQuantity column adheres to the following requirements:
-
-* CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
-* If present, CommitmentDiscountQuantity adheres to the following additional requirements:
-  * CommitmentDiscountQuantity MUST be of type Decimal.
-  * CommitmentDiscountQuantity MUST conform to [Numeric Format](#numericformat) requirements.
-  * If ChargeCategory is "Usage" or "Purchase" and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
-    * CommitmentDiscountQuantity MUST NOT be null if [ChargeClass](#chargeclass) is not "Correction".
-    * CommitmentDiscountQuantity MAY be null if ChargeClass is "Correction".
-  * Else CommitmentDiscountQuantity adheres to the following additional requirement:
-    * CommitmentDiscountQuantity MUST be null.
-  * If CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
-    * CommitmentDiscountQuantity MUST be a valid decimal value.
-    * If ChargeCategory is "Purchase", CommitmentDiscountQuantity adheres to the following additional requirements:
-      * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnits, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* if [ChargeFrequency](#chargefrequency) is "One-Time".
-      * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnits that is eligible for consumption for each *charge period* that corresponds with the purchase if ChargeFrequency is "Recurring".
-    * If ChargeCategory is "Usage", CommitmentDiscountQuantity adheres to the following additional requirements:
-      * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnits that is consumed over the *row's* *charge period* if [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
-      * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnits for the *row's* *charge period* if CommitmentDiscountStatus is "Unused".
+  * When ChargeCategory is "Purchase":
+    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#chargefrequency) is "One-Time".
+    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each *charge period* that corresponds with the purchase when ChargeFrequency is "Recurring".
+  * When ChargeCategory is "Usage":
+    * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
+    * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given *charge period* when CommitmentDiscountStatus is "Unused".
 
 #### **CommitmentDiscountQuantity v.1.1 (Original)**
 
