@@ -1,12 +1,12 @@
 # SKU Price Details
 
-The SKU Price Details column represents a list of relevant properties shared by all charges with the same [SKU Price ID](#skupriceid). These properties provide qualitative and quantitative details about the service represented by a SKU Price ID. This can enable practitioners to calculate metrics such as total units of a service when it is not directly billed in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. These properties can also help a practitioner understand the specifics of a SKU Price ID and differentiate it other SKU Price IDs.
+The SKU Price Details column represents a list of relevant properties (key-value pairs) shared by all charges with the same [SKU Price ID](#skupriceid). These properties provide qualitative and quantitative details about the service represented by a SKU Price ID. This can enable practitioners to calculate metrics such as total units of a service when it is not directly billed in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. These properties can also help a practitioner understand the specifics of a SKU Price ID and differentiate it other SKU Price IDs.
 
 The SkuPriceDetails column adheres to the following requirements:
 
 * SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list.
 * SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-* SkuPriceDetails keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* Property key SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * SkuPriceDetails nullability is defined as follows:
   * SkuPriceDetails MUST be null when SkuPriceId is null.
   * SkuPriceDetails MAY be null when SkuPriceId is not null.
@@ -18,8 +18,8 @@ The SkuPriceDetails column adheres to the following requirements:
     * Existing SkuPriceDetails properties SHOULD remain consistent over time.
     * Existing SkuPriceDetails properties SHOULD NOT be removed.
     * Additional SkuPriceDetails properties MAY be added over time.
-  * SkuPriceDetails property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
-  * SkuPriceDetails property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
+  * Property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
+  * Property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
 
 ## Examples
 
