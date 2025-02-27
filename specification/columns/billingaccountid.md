@@ -6,7 +6,7 @@ The BillingAccountId column adheres to the following requirements:
 
 * BillingAccountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingAccountId MUST be of type String.
-* BillingAccountId MUST conform to [String Handling](#stringhandling) requirements.
+* BillingAccountId MUST conform to [StringHandling](#stringhandling) requirements.
 * BillingAccountId MUST NOT be null.
 * BillingAccountId MUST be a unique identifier within a provider.
 

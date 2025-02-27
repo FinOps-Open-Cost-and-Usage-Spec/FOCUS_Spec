@@ -6,7 +6,7 @@ The BillingAccountName column adheres to the following requirements:
 
 * BillingAccountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingAccountName MUST be of type String.
-* BillingAccountName MUST conform to [String Handling](#stringhandling) requirements.
+* BillingAccountName MUST conform to [StringHandling](#stringhandling) requirements.
 * BillingAccountName MUST NOT be null when the provider supports assigning a display name for the *billing account*.
 * BillingAccountName MUST be unique within a customer.
 

@@ -6,7 +6,7 @@ The ChargeDescription column adheres to the following requirements:
 
 * ChargeDescription MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeDescription MUST be of type String.
-* ChargeDescription MUST conform to [String Handling](#stringhandling) requirements.
+* ChargeDescription MUST conform to [StringHandling](#stringhandling) requirements.
 * ChargeDescription SHOULD NOT be null.
 * ChargeDescription length SHOULD be specified by providers in their publicly available documentation.
 

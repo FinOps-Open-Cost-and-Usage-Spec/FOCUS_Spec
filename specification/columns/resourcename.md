@@ -6,7 +6,7 @@ The ResourceName column adheres to the following requirements:
 
 * ResourceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
 * ResourceName MUST be of type String.
-* ResourceName MUST conform to [String Handling](#stringhandling) requirements.
+* ResourceName MUST conform to [StringHandling](#stringhandling) requirements.
 * ResourceName nullability is defined as follows:
   * ResourceName MUST be null when [ResourceId](#resourceid) is null or when the *resource* only has a system-generated ResourceId without an assigned display name.
   * ResourceName MUST NOT be null when ResourceId is not null and the *resource* has an assigned display name.

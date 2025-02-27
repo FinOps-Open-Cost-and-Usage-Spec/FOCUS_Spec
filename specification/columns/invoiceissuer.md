@@ -7,7 +7,7 @@ The InvoiceIssuerName column adheres to the following requirements:
 
 * InvoiceIssuerName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceIssuerName MUST be of type String.
-* InvoiceIssuerName MUST conform to [String Handling](#stringhandling) requirements.
+* InvoiceIssuerName MUST conform to [StringHandling](#stringhandling) requirements.
 * InvoiceIssuerName MUST NOT be null.
 
 See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider](#provider), [Publisher](#publisher) and

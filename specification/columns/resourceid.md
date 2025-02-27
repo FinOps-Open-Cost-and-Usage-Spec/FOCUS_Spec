@@ -6,7 +6,7 @@ The ResourceId column adheres to the following requirements:
 
 * ResourceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
 * ResourceId MUST be of type String.
-* ResourceId MUST conform to [String Handling](#stringhandling) requirements.
+* ResourceId MUST conform to [StringHandling](#stringhandling) requirements.
 * ResourceId nullability is defined as follows:
   * ResourceId MUST be null when a charge is not related to a *resource*.
   * ResourceId MUST NOT be null when a charge is related to a *resource*.

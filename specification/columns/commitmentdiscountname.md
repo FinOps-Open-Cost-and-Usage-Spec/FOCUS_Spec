@@ -6,7 +6,7 @@ The CommitmentDiscountName column adheres to the following requirements:
 
 * CommitmentDiscountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountName MUST be of type String.
-* CommitmentDiscountName MUST conform to [String Handling](#stringhandling) requirements.
+* CommitmentDiscountName MUST conform to [StringHandling](#stringhandling) requirements.
 * CommitmentDiscountName nullability is defined as follows:
   * CommitmentDiscountName MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
   * When CommitmentDiscountId is not null, CommitmentDiscountName adheres to the following additional requirements:

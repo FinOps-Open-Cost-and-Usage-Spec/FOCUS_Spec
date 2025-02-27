@@ -8,7 +8,7 @@ The ServiceName column adheres to the following requirements:
 
 * ServiceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceName MUST be of type String.
-* ServiceName MUST conform to [String Handling](#stringhandling) requirements.
+* ServiceName MUST conform to [StringHandling](#stringhandling) requirements.
 * ServiceName MUST NOT be null.
 
 ## Column ID

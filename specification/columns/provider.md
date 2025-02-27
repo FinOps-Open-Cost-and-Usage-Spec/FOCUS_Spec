@@ -6,7 +6,7 @@ The ProviderName column adheres to the following requirements:
 
 * ProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ProviderName MUST be of type String.
-* ProviderName MUST conform to [String Handling](#stringhandling) requirements.
+* ProviderName MUST conform to [StringHandling](#stringhandling) requirements.
 * ProviderName MUST NOT be null.
 
 See [Appendix: Origination of cost data](#originationofcostdata) section for examples of Provider, Publisher and
