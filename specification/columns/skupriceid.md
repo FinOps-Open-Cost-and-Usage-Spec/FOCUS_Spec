@@ -14,7 +14,9 @@ The SkuPriceId column adheres to the following requirements:
   * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * SkuPriceId MAY be null in all other cases.
 * When SkuPriceId is not null, SkuPriceId adheres to the following additional requirements:
-  * SkuPriceId MUST be associated with one and only one [SkuId](#skuid), except in cases of [commitment discount flexibility](#glossary:commitment-discount-flexibility).
+  * SkuPriceId MUST have one and only one parent [SkuId](#skuid), except in cases of [commitment discount flexibility](#glossary:commitment-discount-flexibility).
+  * SkuPriceId MUST remain consistent over time.
+  * SkuPriceId MUST remain consistent across billing accounts within a provider.
   * SkuPriceId MAY equal SkuId.
   * SkuPriceId MUST be associated with a given [ResourceId](#resourceid) or [ServiceName](#servicename) used or purchased.
   * SkuPriceId MUST serve as a key reference for a *SKU price* in a public price list, allowing practitioners to look up detailed information about the *SKU Price* and the corresponding [ListUnitPrice](#listunitprice) used to calculate the *charge*.
