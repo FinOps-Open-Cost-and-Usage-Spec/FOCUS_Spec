@@ -4,7 +4,7 @@
 1.0
 
 ## Description
-FOCUS standardizes tracking of cloud resource consumption through billing data. By recording what resources were used, in what quantities, and with what units of measure, practitioners can detect anomalies in usage patterns and optimize workloads.
+FOCUS enables tracking of resource consumption through billing data. By recording what resources were used, in what quantities, and with what units of measure, practitioners can identify anomalies in usage patterns and optimize workloads.
 
 ## Directly Dependent Columns
 * ChargeCategory
