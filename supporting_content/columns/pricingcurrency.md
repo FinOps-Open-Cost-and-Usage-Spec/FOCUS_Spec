@@ -1,4 +1,4 @@
-# Column: PricingDenomination
+# Column: PricingCurrency
 
 ## Example provider mappings
 
