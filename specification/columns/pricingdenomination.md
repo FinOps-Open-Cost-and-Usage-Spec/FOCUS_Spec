@@ -15,10 +15,7 @@ The PricingDenomination column adheres to the following requirements:
   * PricingDenomination MAY be present in a FOCUS dataset in all other cases.
 * PricingDenomination MUST be of type String.
 * PricingDenomination MUST conform to [Pricing Denomination Format](#pricingdenominationformat) requirements.
-* PricingDenomination nullability is defined as follows:
-  * PricingDenomination MUST NOT be null when the provider presents prices in a non-currency consumable unit of measure (e.g. credits, tokens).
-  * PricingDenomination MUST NOT be null when the provider presents prices and bills in different currencies (e.g. prices are presented in USD and billed in EUR).
-  * PricingDenomination MAY be null in all other cases.
+* PricingDenomination MUST NOT be null.
 
 ## Column ID
 
