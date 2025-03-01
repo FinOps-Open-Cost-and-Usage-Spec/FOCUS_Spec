@@ -16,7 +16,7 @@ The PricingCurrencyToBillingCurrency column adheres to the following requirement
 * PricingCurrencyToBillingCurrency MUST NOT be null.
 * PricingCurrencyToBillingCurrency MUST be a non-negative decimal value.
 * PricingCurrencyToBillingCurrency MUST represent the conversion factor from [Pricing Currency](#pricingcurrency) to [Billing Currency](#billingcurrency).
-* PricingCurrencyToBillingCurrency MUST equal 1 when the Pricing Currency and Billing Currency are the same value. 
+* PricingCurrencyToBillingCurrency MUST equal 1 when the Pricing Currency and Billing Currency are the same value.
 
 ## Column ID
 
