@@ -6,30 +6,40 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 
 The Tags column adheres to the following requirements:
 
-* The Tags column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
-* The Tags column MUST contain user-defined and provider-defined tags.
-* The Tags column MUST only contain finalized tags.
-* The Tags column MUST be in [KeyValueFormat](#key-valueformat).
-* A Tag key with a non-null value for a given resource SHOULD be included in the tags column.
-* A Tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
-* A Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
-* If Tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
-* Providers MUST NOT alter user-defined Tag keys or values.
-
-Provider-defined Tags additionally adhere to the following requirements:
-
-* Provider-defined tags MUST be prefixed with a provider-specified tag key prefix.
+* Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
+* Tags MUST contain all user-defined and provider-defined tags.
+* Tags MUST only contain finalized tags.
+* Tags MUST be in [KeyValueFormat](#key-valueformat).
+* A tag key with a non-null value for a given resource SHOULD be included in the tags column.
+* A tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
+* A tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
+* Providers MUST NOT alter tag values unless applying true (boolean) to valueless tags.
+* If tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
+* Providers MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless, user-defined tag scheme.  
 * Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
+
+User-defined tags additionally adhere to the following requirements:
+
+* When a provider has only 1 user-defined tag scheme, the provider MUST NOT include a prefix in tag keys.
+* When a provider has 2 or more user-defined tag schemes, the provider MUST prefix all but 1 user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme.
+
+Provider-defined tags additionally adhere to the following requirements:
+
+* Provider-defined tags MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
 
 ## Provider-Defined vs. User-Defined Tags
 
-This example illustrates three different tagging scenarios. The first two illustrate when the provider supports both keys and values, while the third is for supporting keys only. The first tag is user-defined and doesn't have a provider prefix. The second tag is provider-defined and has a prefix of `acme/`, which is reserved by the provider. The third tag has a tag key of `baz` and its value is assigned the boolean value `true` since the tag doesn't support a value.
+This example illustrates various tags produced from multiple user-defined and provider-defined tag schemes.  The first three tags illustrate examples from three different, user-defined tag schemes. The provider predetermined that 1 user-defined tag scheme (i.e. `"foo": "bar"`) does not have a prepended prefix, but the remaining two user-defined tag schemes (i.e. `"userDefinedTagScheme2/foo": "bar"`, `"userDefinedTagScheme3/foo": true`) do have provider-defined and reserved prefixes.  Additionally, the third tag is produced from a valueless, user-defined tag scheme, so the provider also applies `true` as its default value.
+
+The last two tags illustrate examples from two different, provider-defined tag schemes. Since all provider-defined tag schemes require a prefix, the provider has prepended predefined and reserved prefixes (`providerDefinedTagScheme1/`, `providerDefinedTagScheme2/`) to each tag.
 
 ```json
     {
         "foo": "bar",
-        "acme/foo": "bar",
-        "baz": true,
+        "userDefinedTagScheme2/foo": "bar",
+        "userDefinedTagScheme3/foo": true,
+        "providerDefinedTagScheme1/foo": "bar",
+        "providerDefinedTagScheme2/foo": "bar"
     }
 ```
 
