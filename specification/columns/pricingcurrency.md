@@ -2,8 +2,8 @@
 
 [*Pricing Currency*](#glossary:pricing-currency) is a value that represents the unit of measure in which a charge for [*resources*](#glossary:resource) or [*services*](#glossary:service) was priced. Pricing Currency is commonly used in scenarios where costs need to be grouped or aggregated by some combination of the following currency types:
 
- * Fiat currency (e.g. USD, EUR).
- * Virtual currency (e.g. tokens, credits).
+* Fiat currency (e.g. USD, EUR).
+* Virtual currency (e.g. tokens, credits).
 
 The PricingCurrency column adheres to the following requirements:
 
