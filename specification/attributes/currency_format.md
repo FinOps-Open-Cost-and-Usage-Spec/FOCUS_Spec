@@ -4,8 +4,8 @@ Columns that contain currency information in cost data following a consistent fo
 
 A currency may be one of the following currency types:
 
- * Fiat currency (e.g. USD, EUR).
- * Virtual currency (e.g. tokens, credits).
+* Fiat currency (e.g. USD, EUR).
+* Virtual currency (e.g. tokens, credits).
 
 All columns capturing a currency value, defined in the FOCUS specification, MUST follow the requirements listed below. Custom currency-related columns SHOULD also follow the same formatting requirements.
 
