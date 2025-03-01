@@ -272,7 +272,7 @@ In this scenario, one eligible *resource* runs for the full hour and is charged 
         "ConsumedQuantity": 1,
         "ConsumedUnit": "Hour",
         "BilledCost": 0.50,
-        "EffectiveCost": 0.00
+        "EffectiveCost": 0.50
     }
 ]
 ```
