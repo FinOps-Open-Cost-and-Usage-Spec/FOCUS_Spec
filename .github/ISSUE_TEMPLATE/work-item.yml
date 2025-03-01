@@ -3,6 +3,7 @@ description: "Template for creating new work item issues"
 title: "[Work_Item]"
 labels: 
   - "work item"
+type: "Work Item"
 assignees: 
   - "shawnalpay"
   - "jpradocueva"
@@ -30,8 +31,7 @@ body:
     attributes:
       label: "Problem Statement"
       description: "Provide a detailed explanation of the problem or issue."
-      placeholder: "Your input here..."
-      value: "Provide details of the problem statement here."
+      placeholder: "Provide details of the problem statement here."
     validations:
       required: true
 
@@ -47,8 +47,7 @@ body:
     attributes:
       label: "Objective"
       description: "Describe the expected outcome and success criteria."
-      placeholder: "Your input here..."
-      value: "Outline the expected outcome and success criteria."
+      placeholder: "Outline the expected outcome and success criteria."
     validations:
       required: true
 
@@ -65,8 +64,7 @@ body:
     attributes:
       label: "Supporting Documentation"
       description: "Provide links to data examples, use cases, PRs, or other relevant documents."
-      placeholder: "Your input here..."
-      value: "Include links to supporting documentation, if applicable."
+      placeholder: "Include links to supporting documentation, if applicable."
     validations:
       required: true
 
@@ -85,8 +83,7 @@ body:
     attributes:
       label: "Proposed Solution / Approach"
       description: "Outline potential solutions or approaches."
-      placeholder: "Your input here..."
-      value: "Summarize the proposed solution or approach."
+      placeholder: "Summarize the proposed solution or approach."
 
   - type: markdown
     attributes:
@@ -101,8 +98,7 @@ body:
     attributes:
       label: "Epic or Theme Association"
       description: "Provide potential epics or themes"
-      placeholder: "Your input here..."
-      value: "Provide the rational for the Epic or Theme."
+      placeholder: "Provide the rational for the Epic or Theme."
 
   - type: markdown
     attributes:
@@ -117,5 +113,4 @@ body:
     attributes:
       label: "Stakeholders"
       description: "List the main stakeholders for this work item."
-      placeholder: "Your input here..."
-      value: "Provide names and roles of key stakeholders."
+      placeholder: "Provide names and roles of key stakeholders."

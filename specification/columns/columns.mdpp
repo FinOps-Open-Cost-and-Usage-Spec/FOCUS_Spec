@@ -6,6 +6,7 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "billedcost.md",1
 !INCLUDE "billingaccountid.md",1
 !INCLUDE "billingaccountname.md",1
+!INCLUDE "billingaccounttype.md",1
 !INCLUDE "billingcurrency.md",1
 !INCLUDE "billingperiodend.md",1
 !INCLUDE "billingperiodstart.md",1
@@ -51,6 +52,7 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "skupriceid.md",1
 !INCLUDE "subaccountid.md",1
 !INCLUDE "subaccountname.md",1
+!INCLUDE "subaccounttype.md",1
 !INCLUDE "tags.md",1
 
 [FODOFC]: https://www.finops.org/framework/capabilities/
