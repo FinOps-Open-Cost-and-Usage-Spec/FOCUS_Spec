@@ -67,23 +67,28 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 
 The following keys should be used when applicable to facilitate cross-service and cross-provider queries for the same conceptual property.
 
-| Key                      | Description                                    | Data Type        | Preferred Values                                   |
-| :----------------------- | :--------------------------------------------- | :--------------- | :------------------------------------------------- |
-| AccessTier               |                                                | String           | "Hot", "Cool", "Archive"                           |
-| AutoScaling              | Options for web apps to handle varying demand. |                  |                                                    |
-| Bandwidth                | Network capacity for data transfer.            |                  |                                                    |
-| ComplianceCertifications |                                                | String array     |                                                    |
-| Cores                    | Number of physical or virtual CPUs available.  | Count-based spec | "Cores" units                                      |
-| DiskSpace                | Storage capacity available.                    | Data size spec   | "GB" units                                         |
-| DiskType                 | Kind of disk used.                             | String           | "SSD", "HDD", "NVMe"                               |
-| Encryption               |                                                |                  |                                                    |
-| GPU                      | Number of GPUs available.                      | Count-based spec | "GPUs"                                             |
-| InputOutput              | Input/output operations per second.            | Composite spec   | "Operations/Second"                                |
-| Memory                   | RAM allocated for processing.                  | Data size spec   | "GB" units                                         |
-| NetworkInterfaces        | Connections for VMs and web apps.              |                  |                                                    |
-| OperatingSystem          |                                                | String           | "Linux", "MacOS", "Windows"                        |
-| PerformanceTier          |                                                | String           |                                                    |
-| Redundancy               |                                                | String           | "Local", "Geography", "Zone", "Geo-Zone", "Global" |
+| Key                      | Description                                       | Data Type        | Preferred Values (string) or Unit of Measure (numeric)|
+| :----------------------- | :------------------------------------------------ | :--------------- | :---------------------------------------------------- |
+| AccessTier               |                                                   | String           | "Hot", "Cool", "Archive"                              |
+| AutoScaling              | Options for web apps to handle varying demand     |                  |                                                       |
+| Bandwidth                | Network capacity for data transfer                | Numeric          | Measure: Megabits per second (Mbps)                   |
+| ComplianceCertifications |                                                   | String           |                                                       |
+| CoreCount                | Number of physical or virtual CPUs available      | Numeric          | Measure: Quantity of Cores                            |
+| DiskSpace                | Storage capacity available                        | Numeric          | Measure: Gibibytes (GiB)                              |
+| DiskType                 | Kind of disk used                                 | String           | "SSD", "HDD", "NVMe"                                  |
+| Encryption               |                                                   | String           |                                                       |
+| GPU                      | Number of GPUs available                          | Numeric          | Measure: Quantity of GPUs                             |
+| InputOutput              | Input/output operations per second                | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
+| MemorySize               | RAM allocated for processing                      | Numeric          | Measure: Gibibytes (GiB*<sup>1</sup>)                 | 
+| NetworkInterfaces        | Connections for VMs and web apps                  | Numeric          |                                                       |
+| OperatingSystem          | Operating system family*<sup>2</sup>              | String           | "Linux", "MacOS", "Windows"                           |
+| PerformanceTier          |                                                   | String           |                                                       |
+| PricingTier              |                                                   | String           |                                                       |
+| Redundancy               | The level of redundancy offered by the SKU        | String           | "Local", "Geography", "Zone", "Geo-Zone", "Global"    |
+
+Notes
+*1 Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
+*2 This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
 
 ## Introduced (version)
 
