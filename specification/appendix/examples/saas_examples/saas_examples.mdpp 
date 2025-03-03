@@ -1,7 +1,10 @@
-# SAAS Examples
+# SaaS Examples
 
-The following section contains examples of SAAS providers implementing the FOCUS specification  SAAS provider implementations will vary on the level of the detail of available data, contract terms, purchasing options, and other factors.
+The following section contains examples with how SaaS providers may implement the FOCUS specification. SaaS provider implementations will vary on the level of the detail available in their data, contract terms, purchasing options, and other factors.
 
-!INCLUDE "simple_invoice_only.md",
-!INCLUDE "marketplace_purchases.md",
+!INCLUDE "license_based.md",1
+!INCLUDE "marketplace_purchases.md",1
 !INCLUDE "non_currency_consumable_units.md",1
+!INCLUDE "simple_invoice_only.md",1
+!INCLUDE "single_contract_no_commitment_usage_monthly.md",1
+!INCLUDE "spend_requirements.md",1

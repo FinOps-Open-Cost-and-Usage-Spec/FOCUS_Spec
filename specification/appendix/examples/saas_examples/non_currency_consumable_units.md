@@ -4,7 +4,7 @@ Some providers offer services where the consumption of resources is not directly
 
 ## Scenario
 
-ACME provides a SAAS service where rather than purchased items or usage rates being specified in terms of currency per unit, they are specified in terms of another consumable unit such as tokens. Customers of Awesome Corp agree to purchase these units for a currency rate. The consumption of these tokens are determined by not a dollar figure rate but a token rate. AwesomeCorp offers different classes of tokens that cover different areas of their product.
+ACME provides a SaaS service where rather than purchased items or usage rates being specified in terms of currency per unit, they are specified in terms of another consumable unit such as tokens. Customers of Awesome Corp agree to purchase these units for a currency rate. The consumption of these tokens are determined by not a dollar figure rate but a token rate. AwesomeCorp offers different classes of tokens that cover different areas of their product.
 - Token Types:
     - Standard tokens: These are the primary tokens that are consumed for most usage. Customer contracts balances include a continually depleted balance of standard tokens.
         - Z widget tokens: These are specialty tokens that are allocated for specific consumption of the z token feature, when depleted standard tokens are consumed

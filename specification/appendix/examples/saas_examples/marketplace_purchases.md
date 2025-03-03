@@ -1,6 +1,6 @@
 # Marketplace Transactions and FOCUS Data
 
-Many vendors provide the option to purchase their products through a CSP marketplace or other marketplace. In this case both the CSP's FOCUS data and the SAAS Vendors FOCUS would include records that express the cost of the purchase aligning with payable invoices and more detailed cost and usage data from the SAAS Provider.
+Many vendors provide the option to purchase their products through a CSP marketplace or other marketplace. In this case both the CSP's FOCUS data and the SaaS Vendors FOCUS would include records that express the cost of the purchase aligning with payable invoices and more detailed cost and usage data from the SaaS Provider.
 
 ## Scenario
 
@@ -23,14 +23,14 @@ SEE: CSPs Marketplace FOCUS Entries https://docs.google.com/spreadsheets/d/1kQTD
 
 - The CSP marketplace data reflects the invoiced amount in the BilledCost column for the purchase executed through the marketplace.
 
-## Initial Purchase Records Provided in the SAAS Provider's FOCUS Data
+## Initial Purchase Records Provided in the SaaS Provider's FOCUS Data
 On April 1st ACME provides the following records in their FOCUS data:
 
 Entries in the FOCUS dataset:
-SEE: SAAS Providers FOCUS Entries  https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1092393377#gid=1092393377
+SEE: SaaS Providers FOCUS Entries  https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1092393377#gid=1092393377
 
-- The SAAS Provider's data reflects the invoiced amount in the BilledCost column for the purchase executed, the SAAS vendor ensures that the BilledCost for purchases is zero because they are not issuing payable invoices. 
-- The SAAS Provider's FOCUS purchase record entries may be at a higher level of granularity than that of the CSP providers focus data, and therefore may not match the purchase records in the CSP's FOCUS data.
+- The SaaS Provider's data reflects the invoiced amount in the BilledCost column for the purchase executed, the SaaS vendor ensures that the BilledCost for purchases is zero because they are not issuing payable invoices. 
+- The SaaS Provider's FOCUS purchase record entries may be at a higher level of granularity than that of the CSP providers focus data, and therefore may not match the purchase records in the CSP's FOCUS data.
 
 ## Token Depletion Resulting in Additional Purchase Credits
 In September 2025, AwesomeCorp has depleted their standard tokens and are required to purchase 1500 additional tokens. ACME invoices AwesomeCorp $3000 on October 5th, to compensate for a credit balance of -1500. 

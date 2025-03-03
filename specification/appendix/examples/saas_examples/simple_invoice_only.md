@@ -13,7 +13,7 @@ Entries in the FOCUS dataset:
 SEE: Initial Purchase for 1 year https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=124980246#gid=124980246
 
 
-## Additional Purchase Records Provided in the SAAS Provider's FOCUS Data
+## Additional Purchase Records Provided in the SaaS Provider's FOCUS Data
 On June 1st ACME provides the following records due to another mid-contract purhase of $200
 
 Entries in the FOCUS dataset:

@@ -34,6 +34,7 @@ endif
 	./validate_includes.py appendix
 	./validate_includes.py appendix/examples
 	./validate_includes.py appendix/examples/metadata_examples
+	./validate_includes.py appendix/examples/saas_examples
 	PYTHONPATH=../vendored/ $(MARKDOWNPP) spec.mdpp -o $@
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
