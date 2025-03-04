@@ -6,7 +6,7 @@ The PricingQuantity column adheres to the following requirements:
 
 * PricingQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PricingQuantity MUST be of type Decimal.
-* PricingQuantity MUST conform to [Numeric Format](#numericformat) requirements.
+* PricingQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * PricingQuantity nullability is defined as follows:
   * PricingQuantity MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".

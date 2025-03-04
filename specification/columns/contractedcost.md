@@ -6,7 +6,7 @@ The ContractedCost column adheres to the following requirements:
 
 * ContractedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractedCost MUST be of type Decimal.
-* ContractedCost MUST conform to [Numeric Format](#numericformat) requirements.
+* ContractedCost MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractedCost MUST NOT be null.
 * ContractedCost MUST be a valid decimal value.
 * ContractedCost MUST be denominated in the BillingCurrency.

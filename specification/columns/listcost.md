@@ -6,7 +6,7 @@ The ListCost column adheres to the following requirements:
 
 * ListCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ListCost MUST be of type Decimal.
-* ListCost MUST conform to [Numeric Format](#numericformat) requirements.
+* ListCost MUST conform to [NumericFormat](#numericformat) requirements.
 * ListCost MUST NOT be null.
 * ListCost MUST be a valid decimal value.
 * ListCost MUST be denominated in the BillingCurrency.

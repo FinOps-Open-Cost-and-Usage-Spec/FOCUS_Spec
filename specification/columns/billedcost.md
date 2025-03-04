@@ -6,7 +6,7 @@ The BilledCost column adheres to the following requirements:
 
 * BilledCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BilledCost MUST be of type Decimal.
-* BilledCost MUST conform to [Numeric Format](#numericformat) requirements.
+* BilledCost MUST conform to [NumericFormat](#numericformat) requirements.
 * BilledCost MUST NOT be null.
 * BilledCost MUST be a valid decimal value.
 * BilledCost MUST be denominated in the BillingCurrency.

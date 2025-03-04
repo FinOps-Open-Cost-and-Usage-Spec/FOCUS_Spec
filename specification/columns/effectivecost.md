@@ -11,7 +11,7 @@ The EffectiveCost column adheres to the following requirements:
 
 * EffectiveCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * EffectiveCost MUST be of type Decimal.
-* EffectiveCost MUST conform to [Numeric Format](#numericformat) requirements.
+* EffectiveCost MUST conform to [NumericFormat](#numericformat) requirements.
 * EffectiveCost MUST NOT be null.
 * EffectiveCost MUST be a valid decimal value.
 * EffectiveCost MUST be 0 when [ChargeCategory](#chargecategory) is "Purchase" and the purchase is intended to cover future eligible charges.
