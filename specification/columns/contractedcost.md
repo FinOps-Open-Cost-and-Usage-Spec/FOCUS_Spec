@@ -23,7 +23,7 @@ Contracted Cost
 
 ## Description
 
-Cost calculated by multiplying *contracted unit price* and the corresponding Pricing Quantity.
+Cost calculated by multiplying *contracted unit price* and the corresponding Pricing Quantity and conversion factor of Pricing Currency to Billing Currency.
 
 ## Usability Constraints
 
