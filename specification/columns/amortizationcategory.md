@@ -11,7 +11,8 @@ a Savings Plan that is amortized over time into usage by other line items.
 The AmortizationCategory column adheres to the following requirements:
 
 * The AmortizationCategory column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
-* This column is of type String and MUST be one of the allowed values.
+* AmortizationCategory MUST be of type String.
+* AmortizationCategory MUST be one of the allowed values.
 
 ## Column ID
 
