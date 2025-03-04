@@ -6,7 +6,7 @@ The PricingUnit column adheres to the following requirements:
 
 * PricingUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PricingUnit MUST be of type String.
-* PricingUnit MUST conform to [String Handling](#stringhandling) requirements.
+* PricingUnit MUST conform to [StringHandling](#stringhandling) requirements.
 * PricingUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
 * PricingUnit nullability is defined as follows:
   * PricingUnit MUST be null when [ChargeCategory](#chargecategory) is "Tax".

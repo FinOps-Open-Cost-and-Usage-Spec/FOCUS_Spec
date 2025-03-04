@@ -8,7 +8,7 @@ The SkuMeter column adheres to the following requirements:
 
 * SkuMeter MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
 * SkuMeter MUST be of type String.
-* SkuMeter MUST conform to [String Handling](#stringhandling) requirements.
+* SkuMeter MUST conform to [StringHandling](#stringhandling) requirements.
 * SkuMeter nullability is defined as follows:
   * SkuMeter MUST be null when [SkuId](#skuid) is null.
   * SkuMeter SHOULD NOT be null when SkuId is not null.

@@ -6,7 +6,7 @@ The CommitmentDiscountUnit column adheres to the following requirements:
 
 * CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountUnit MUST be of type String.
-* CommitmentDiscountUnit MUST conform to [String Handling](#stringhandling) requirements.
+* CommitmentDiscountUnit MUST conform to [StringHandling](#stringhandling) requirements.
 * CommitmentDiscountUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
 * CommitmentDiscountUnit nullability is defined as follows:
   * When ChargeCategory is "Usage" or "Purchase" and [CommitmentDiscountId](#commitmentdiscountid) is not null, CommitmentDiscountUnit adheres to the following additional requirements:

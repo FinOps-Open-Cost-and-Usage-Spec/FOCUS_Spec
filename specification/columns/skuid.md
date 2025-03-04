@@ -6,7 +6,7 @@ The SkuId column adheres to the following requirements:
 
 * SkuId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU list.
 * SkuId MUST be of type String.
-* SkuId MUST conform to [String Handling](#stringhandling) requirements.
+* SkuId MUST conform to [StringHandling](#stringhandling) requirements.
 * SkuId nullability is defined as follows:
   * SkuId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".

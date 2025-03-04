@@ -6,7 +6,7 @@ The ConsumedUnit column adheres to the following requirements:
 
 * ConsumedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
 * ConsumedUnit MUST be of type String.
-* ConsumedUnit MUST conform to [String Handling](#stringhandling) requirements.
+* ConsumedUnit MUST conform to [StringHandling](#stringhandling) requirements.
 * ConsumedUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
 * ConsumedUnit nullability is defined as follows:
   * ConsumedUnit MUST be null when [ChargeCategory](#chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".

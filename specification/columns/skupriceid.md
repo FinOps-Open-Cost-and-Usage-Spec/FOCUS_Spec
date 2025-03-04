@@ -6,7 +6,7 @@ The SkuPriceId column adheres to the following requirements:
 
 * SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes a SKU price list.
 * SkuPriceId MUST be of type String.
-* SkuPriceId MUST conform to [String Handling](#stringhandling) requirements.
+* SkuPriceId MUST conform to [StringHandling](#stringhandling) requirements.
 * SkuPriceId nullability is defined as follows:
   * SkuPriceId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
