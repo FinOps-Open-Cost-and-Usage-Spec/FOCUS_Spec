@@ -23,7 +23,7 @@ List Cost
 
 ## Description
 
-Cost calculated by multiplying List Unit Price and the corresponding Pricing Quantity.
+Cost calculated by multiplying List Unit Price with the corresponding Pricing Quantity and conversion factor of Pricing Currency to Billing Currency.
 
 ## Usability Constraints
 
