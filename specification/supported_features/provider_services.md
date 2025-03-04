@@ -18,7 +18,6 @@ charged across providers.
 * Provider
 * SkuId
 
-
 ## Example SQL Query
 ```
 SELECT
