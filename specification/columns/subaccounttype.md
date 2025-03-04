@@ -8,7 +8,7 @@ The SubAccountType column adheres to the following requirements:
 * SubAccountType MUST be of type String.
 * SubAccountType MUST conform to [StringHandling](#stringhandling) requirements.
 * SubAccountType nullability is defined as follows:
-  * SubAccountType MUST be null when SubAccountId is null.
+  * SubAccountType MUST be null when [SubAccountId](#subaccountid) is null.
   * SubAccountType MUST NOT be null when SubAccountId not is null.
 * SubAccountType MUST be a consistent, readable display value.
 
