@@ -10,7 +10,7 @@ The ResourceName column adheres to the following requirements:
 * ResourceName nullability is defined as follows:
   * ResourceName MUST be null when [ResourceId](#resourceid) is null or when the *resource* only has a system-generated ResourceId without an assigned display name.
   * ResourceName MUST NOT be null when ResourceId is not null and the *resource* has an assigned display name.
-* ResourceName MUST NOT duplicate ResourceId when the *resources* is not provisioned interactively or only has a system-generated [ResourceId](#resourceid).
+* ResourceName MUST NOT duplicate ResourceId when the *resource* is not provisioned interactively or only has a system-generated [ResourceId](#resourceid).
 
 ## Column ID
 
