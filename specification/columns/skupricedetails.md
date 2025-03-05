@@ -65,7 +65,7 @@ The following keys should be used when applicable to facilitate cross-service an
 | DiskType                 | Kind of disk used                                 | String           | Examples: "SSD", "HDD", "NVMe"                        |
 | GpuCount                 | Number of GPUs available                          | Numeric          | Measure: Quantity of GPUs                             |
 | InputOutput              | Input/output operations per second                | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
-| MemorySize               | RAM allocated for processing                      | Numeric          | Measure: Gibibytes (GiB<sup>1</sup>)                  | 
+| MemorySize               | RAM allocated for processing                      | Numeric          | Measure: Gibibytes (GiB<sup>1</sup>)                  |
 | OperatingSystem          | Operating system family<sup>2</sup>               | String           | Examples: "Linux", "MacOS", "Windows"                 |
 | PerformanceTier          |                                                   | String           |                                                       |
 | PricingTier              | Category of pricing applicable to SkuPriceId      | String           | Examples: "Free", "Standard", "Preview"               |
