@@ -30,7 +30,7 @@
 |----------------------|------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------|
 | Technical            | Presence                           | Always                            | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when Condition. |
 | Technical            | Data Type                          | Always                            | {ColumnId} MUST be of type String.                                                         |
-| Technical            | Value Format                       | Always                            | {ColumnId} MUST conform to [String Handling](#stringhandling) requirements.                |
+| Technical            | Value Format                       | Always                            | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                |
 | Technical            | Nullability                        | Always                            | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when Condition.                     |
 | Technical            | Values and Value Ranges            | Metrics and normalized dimensions | {ColumnId} MUST be a valid decimal value.<br/>{ColumnId} MUST be one of the allowed values.  |
 | Technical            | Column to column Relationships     | When applicable                   | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
@@ -183,7 +183,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 
 ```markdown
 * <ColumnId> MUST conform to [StringHandling](#stringhandling) requirements.
-* <ColumnId> MUST conform to [NumericFormat](#numericformat) requirements.
+* <ColumnId> MUST conform to [Numeric Format](#numericformat) requirements.
 * <ColumnId> MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * <ColumnId> SHOULD conform to [UnitFormat](#unitformat) requirements.
 * <ColumnId> MUST conform to [KeyValueFormat](#key-valueformat) requirements.
@@ -320,6 +320,15 @@ TODO
   * in a given billing period
   * in a given charge period
 
+#### Preferred Terminology for Numerical References
+
+* Patterns: When specifying quantities in normative requirements, follow these conventions:
+  * Use "one" instead of "1".
+  * Use "more than one" instead of "2 or more".
+* Examples:
+  * When the provider has only one user-defined tag scheme. (instead of: When the provider has only 1 user-defined tag scheme.)
+  * When the provider has more than one user-defined tag scheme. (instead of: When the provider has 2 or more user-defined tag schemes.)
+
 ## Examples
 
 ### **List Unit Price**
@@ -330,7 +339,7 @@ The ListUnitPrice column adheres to the following requirements:
 
 * **(Presence)** ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
 * **(Data Type)** ListUnitPrice MUST be of type Decimal.
-* **(Value Format)** ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
+* **(Value Format)** ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * **(Nullability - Definition)** ListUnitPrice nullability is defined as follows:
   * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
@@ -346,7 +355,7 @@ The ListUnitPrice column adheres to the following requirements:
 
 * ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be of type Decimal.
-* ListUnitPrice MUST conform to [Numeric Format](#numericformat) requirements.
+* ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * ListUnitPrice nullability is defined as follows:
   * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
@@ -374,7 +383,7 @@ The BilledCost column adheres to the following requirements:
 
 * BilledCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BilledCost MUST be of type Decimal.
-* BilledCost MUST conform to [Numeric Format](#numericformat) requirements.
+* BilledCost MUST conform to [NumericFormat](#numericformat) requirements.
 * BilledCost MUST NOT be null.
 * BilledCost MUST be a valid decimal value.
 * BilledCost MUST be denominated in the BillingCurrency.
@@ -396,7 +405,7 @@ The CommitmentDiscountQuantity column adheres to the following requirements:
 
 * CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal.
-* CommitmentDiscountQuantity MUST conform to [Numeric Format](#numericformat) requirements.
+* CommitmentDiscountQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * CommitmentDiscountQuantity nullability is defined as follows:
   * When ChargeCategory is "Usage" or "Purchase" and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
     * CommitmentDiscountQuantity MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction".
