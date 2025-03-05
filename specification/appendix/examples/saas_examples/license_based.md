@@ -46,7 +46,6 @@ The contract includes the following items:
 
 On April 1st 2026, Acme Corp provides the following records in their FOCUS data for the $50,000 usage bill: [License Post-Purchase FOCUS Entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803)
 
-
 ## Scenario C: Usage Records on Monthly Usage Statements
 
 TODO @RileyJenkins I think it would be a good idea to provide an example for this case (E.g. shows Billed Cost of 0 and an Effective Cost for ths usage in a given period -- in this case, say a monthly charge? $100/12 for used licenses and similar rate for unused licenses?). This all depends on if the provider measures usage and provides this detail. If usage data/statements aren't provided, the Billed Cost and Effective Cost would be recognized in the same records.
