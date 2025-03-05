@@ -1,22 +1,30 @@
 # SKU Price Details
 
-The SKU Price Details column represents a list of relevant properties shared by all charges with the same [SKU Price ID](#skupriceid). These properties provide qualitative and quantitative details about the service represented by a SKU Price ID. This can enable practitioners to calculate metrics such as total units of a service when it is not directly billed in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. These properties can also help a practitioner understand the specifics of a SKU Price ID and differentiate it other SKU Price IDs.
+SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties associated with a specific [SKU Price ID](#skupriceid). These properties include qualitative and quantitative properties of a [*SKUs*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing details (e.g., pricing terms, tiers, etc.), excluding dynamic or negotiable pricing elements such as unit price amounts, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
+
+The composition of properties associated with a specific *SKU Price* may differ across providers and across *SKUs* within the same provider. However, the exclusion of dynamic or negotiable pricing properties should ensure that all charges with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different billing periods and billing accounts within a provider.
+
+SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also enable practitioners to calculate metrics such as total units of a SKU when it is not directly priced in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. Additionally, the SKU Price Details is commonly used to analyze costs based on pricing properties such as terms and tiers.
 
 The SkuPriceDetails column adheres to the following requirements:
 
-* The SkuPriceDetails column MUST be in [KeyValueFormat](#key-valueformat).
-* The key for a property SHOULD be formatted in [PascalCase](#glossary:pascalcase).
-* The properties (both keys and values) contained in the SkuPriceDetails column MUST be shared across all charges having the same SkuPriceId, subject to the below provisions.
-  * Additional properties (key-value pairs) MAY be added to SkuPriceDetails going forward for a given SkuPriceId.
-  * Properties SHOULD NOT be removed from SkuPriceDetails for a given SkuPriceId, once they have been included.
-  * Individual properties (key-value pairs) SHOULD NOT be modified for a given SkuPriceId and SHOULD remain consistent over time.
-* The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
-* The SkuPriceDetails column MUST NOT contain properties which are not applicable to the corresponding SkuPriceId.
-* The SkuPriceDetails column MAY contain properties which are already captured in other dedicated columns.
-* If a property has a numeric value, it MUST represent the value for a single [PricingUnit](#pricingunit).
-* The SkuPriceDetails column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider includes a SkuPriceId.
-  * The SkuPriceDetails column MAY be null when SkuPriceId is not null.
-  * The SkuPriceDetails column MUST be null when SkuPriceId is null.
+* SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
+* SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* Property key SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* SkuPriceDetails nullability is defined as follows:
+  * SkuPriceDetails MUST be null when SkuPriceId is null.
+  * SkuPriceDetails MAY be null when SkuPriceId is not null.
+* When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:
+  * SkuPriceDetails MUST be associated with a given [ResourceId](#resourceid) or [ServiceName](#servicename) used or purchased.
+  * SkuPriceDetails MUST NOT contain properties which are not applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails MAY contain properties which are already captured in other dedicated columns.
+  * SkuPriceDetails SHOULD remain consistent over time for a given SkuPriceId.
+  * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
+    * Existing SkuPriceDetails properties SHOULD remain consistent over time.
+    * Existing SkuPriceDetails properties SHOULD NOT be removed.
+    * Additional SkuPriceDetails properties MAY be added over time.
+  * Property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
+  * Property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
 
 ## Examples
 
