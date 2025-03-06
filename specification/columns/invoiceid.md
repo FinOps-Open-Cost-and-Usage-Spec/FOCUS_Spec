@@ -10,9 +10,13 @@ The Invoice ID column adheres to the following requirements:
 * InvoiceId MUST be null when the [*charge*](#glossary:charge) is not associated either with an invoice or with a pre-generated provisional invoice.
 * InvoiceId MUST NOT be null when the *charge* is associated with either an issued invoice or a pre-generated provisional invoice.
 * InvoiceId MAY be generated prior to an invoice being issued.
-* Where a pre-generated invoice or provisional invoice exists, it MUST be associated with the related charge and billingaccountId.
+* Where a pre-generated invoice or provisional invoice exists, it MUST be associated with the related *charge* and BillingaccountId.
 
-> Editor's Note: The group agrees the construct of the column is suitable to go for approval, however it requires some further definition to clarify credit handling. The group will determine if this should be in the column definition or supporting content.
+For credit handling the Invoice ID column adherts to the following requirements:
+* Credits related to current billing period:
+  * InvoiceId MUST NOT be null and ChargeClass MUST be correction in the current *billing period*.
+* Credits related to a previous billing period:
+  * InvoiceId MUST contain the Invoice Id related to the previous *billing period* where a credit issued in the current billing period relates to a previous *billing period* and ChargeClass MUST be *correction*.
 
 See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
@@ -22,7 +26,7 @@ InvoiceId
 
 ## Display Name
 
-Invoice Id
+Invoice ID
 
 ## Description
 
