@@ -67,14 +67,12 @@ The following keys should be used when applicable to facilitate cross-service an
 | InputOutput              | Input/output operations per second                | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | MemorySize               | RAM allocated for processing                      | Numeric          | Measure: Gibibytes (GiB<sup>1</sup>)                  |
 | OperatingSystem          | Operating system family<sup>2</sup>               | String           | Examples: "Linux", "MacOS", "Windows"                 |
-| PerformanceTier          |                                                   | String           |                                                       |
-| PricingTier              | Category of pricing applicable to SkuPriceId      | String           | Examples: "Free", "Standard", "Preview"               |
 | Redundancy               | Level of redundancy offered by the SKU            | String           | Examples: "Local", "Zonal", "Global"                  |
 | StorageTier              | Tier or class of storage provided                 | String           | Examples: "Hot", "Archive", "Nearline"                |
 
 Notes
-<sup>1</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
-<sup>2</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
+<br><sup>1</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
+<br><sup>2</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
 
 ## Introduced (version)
 
