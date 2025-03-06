@@ -7,7 +7,7 @@ The CommitmentDiscountCategory column adheres to the following requirements:
 * CommitmentDiscountCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountCategory MUST be of type String.
 * CommitmentDiscountCategory MUST conform to [StringHandling](#stringhandling) requirements.
-* CommitmentDiscountId nullability is defined as follows:
+* CommitmentDiscountCategory nullability is defined as follows:
   * CommitmentDiscountCategory MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
   * CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.
 * CommitmentDiscountCategory MUST be one of the allowed values when not null.
