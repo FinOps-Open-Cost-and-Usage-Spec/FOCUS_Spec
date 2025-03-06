@@ -8,7 +8,7 @@ Current column mappings found in available data sets:
 |:----------|:-----------------------------|:-------------------------|
 | AWS       | Cost and Usage Report        | n/a |
 | GCP       | BigQuery Billing Export      | n/a |
-| Microsoft | Cost Details                 | n/a |
+| Microsoft | Cost Details                 | PricingCurrency |
 | OCI       | Cost and Usage Report        | n/a |
 
 ## References and Resources
