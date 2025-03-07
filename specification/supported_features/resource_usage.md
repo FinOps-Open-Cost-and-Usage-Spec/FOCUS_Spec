@@ -4,21 +4,20 @@
 1.0
 
 ## Description
-FOCUS enables tracking of resource consumption through billing data. By recording what resources were used, in what quantities, and with what units of measure, practitioners can identify anomalies in usage patterns and optimize workloads.
+FOCUS enables tracking of resource consumption by providing information about which resources were used, in what quantities, and with what units of measure.
 
 ## Directly Dependent Columns
+* ConsumedQuantity
+* ConsumedUnit
+* ResourceId
+* SkuId
+
+## Supporting Columns
 * ChargeCategory
 * ChargePeriodEnd
 * ChargePeriodStart
-* ConsumedQuantity
-* ConsumedUnit
 * ProviderName
-* ResourceId
 * ServiceName
-* SkuId
-
-## Indirectly Dependent Columns
-
 
 ## Example SQL Query
 ```
