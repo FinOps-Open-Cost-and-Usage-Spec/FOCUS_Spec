@@ -16,9 +16,7 @@ The contract includes the following items:
 
 * $50,000 for 500 Licenses
 
-### Example FOCUS Data
-
-On April 1st 2025, Acme Corp provides the following FOCUS dataset for the above transaction: [License Pre-Purchase FOCUS Entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803)
+**Example FOCUS dataset:** On April 1st 2025, Acme Corp provides the following FOCUS dataset for the above transaction: [License Pre-Purchase FOCUS Entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803)
 
 ### Additional Purchase Records Provided in the SaaS Provider's FOCUS Data
 
@@ -28,9 +26,7 @@ The contract includes the following items:
 
 * $1,000 for 10 Licenses
 
-### Example FOCUS Data
-
-On April 1st 2025, Acme Corp provides the following FOCUS dataset for the above transaction: [Additional License Purchase FOCUS Entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803)
+**Example FOCUS dataset:** On April 1st 2025, Acme Corp provides the following FOCUS dataset for the above transaction: [Additional License Purchase FOCUS Entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803)
 
 ## Scenario B: Billed in Arrears
 
@@ -42,9 +38,7 @@ The contract includes the following items:
 
 * $50,000 for 500 Licenses
 
-### Example FOCUS Data
-
-On April 1st 2026, Acme Corp provides the following records in their FOCUS data for the $50,000 usage bill: [License Post-Purchase FOCUS Entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803)
+**Example FOCUS dataset:** On April 1st 2026, Acme Corp provides the following records in their FOCUS data for the $50,000 usage bill: [License Post-Purchase FOCUS Entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803)
 
 ## Scenario C: Usage Records on Monthly Usage Statements
 

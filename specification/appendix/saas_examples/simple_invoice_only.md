@@ -7,14 +7,13 @@ Many vendors do not provide an extensive resource level breakdown of the cost of
 ACME Corp provides a PDF invoice to its customers for all purchases of their solution, but does not provide a detailed low level breakdown of their cost. Awesome Corp purchases their service on April 1st 2025 for a total of $1000, payable upfront for a year of service.
 
 ## Initial Purchase Record
+
 On April 1st CSPCorp provides the following records in their FOCUS data for the $1000 purchase:
 
-Entries in the FOCUS dataset:
-SEE: Initial Purchase for 1 year https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=124980246#gid=124980246
-
+Entries in the FOCUS dataset: [Initial Purchase for 1 year](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=124980246#gid=124980246)
 
 ## Additional Purchase Records Provided in the SaaS Provider's FOCUS Data
+
 On June 1st ACME provides the following records due to another mid-contract purhase of $200
 
-Entries in the FOCUS dataset:
-SEE: Initial Purchase for 1 year https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=124980246#gid=124980246
+Entries in the FOCUS dataset: [Initial Purchase for 1 year](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=124980246#gid=124980246)
