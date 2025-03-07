@@ -9,7 +9,7 @@ on:
 jobs:
   # The job that will use the container image you just pushed to ghcr.io
   gen_pdf:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     container:
       image: pandoc/extra:latest-ubuntu
     steps:
