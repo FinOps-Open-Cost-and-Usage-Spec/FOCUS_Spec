@@ -9,7 +9,7 @@ The BillingAccountType column adheres to the following requirements:
 * BillingAccountType MUST conform to [StringHandling](#stringhandling) requirements.
 * BillingAccountType nullability is defined as follows:
   * BillingAccountType MUST be null when [BillingAccountId](#billingaccountid) is null.
-  * BillingAccountType MUST NOT be null when BillingAccountId not is null.
+  * BillingAccountType MUST NOT be null when BillingAccountId is not null.
 * BillingAccountType MUST be a consistent, readable display value.
 
 ## Column ID
