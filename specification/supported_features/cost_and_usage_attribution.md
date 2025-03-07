@@ -17,7 +17,7 @@ Many providers have features that allow Finops practitioners to enrich cost and 
 ## Example SQL Query
 ```
 SELECT
-  tags
+  tags,
   SUM(BilledCost)
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
