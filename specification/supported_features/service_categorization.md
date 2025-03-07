@@ -4,20 +4,19 @@
 1.1
 
 ## Description
-FOCUS provides a structure for categorizing services based on their core functions. By classifying services into high-level categories and more granular subcategories, practitioners can analyze costs according to functional areas, identify spending patterns, discover optimization opportunities, and support more effective procurement decisions. Service categorization also enables organizations to track migration progress by monitoring how spending shifts across service categories over time as workloads move between environments.
+FOCUS provides a structure for categorizing services based on their core functions. By classifying services into high-level categories and more granular subcategories, practitioners can organize costs according to functional areas. This standardized categorization provides data that practitioners can use in their cost management processes and decision making.
 
 ## Directly Dependent Columns
+* ServiceCategory
+* ServiceName
+* ServiceSubcategory
+
+## Supporting Columns
 * BilledCost
 * BillingCurrency
 * BillingPeriodEnd
 * BillingPeriodStart
 * ProviderName
-* ServiceCategory
-* ServiceName
-* ServiceSubcategory
-
-## Indirectly Dependent Columns
-
 
 ## Example SQL Query
 ```
