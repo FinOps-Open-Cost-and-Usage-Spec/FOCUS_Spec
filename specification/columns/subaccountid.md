@@ -6,7 +6,7 @@ The SubAccountId column adheres to the following requirements:
 
 * SubAccountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
 * SubAccountId MUST be of type String.
-* SubAccountId MUST conform to [String Handling](#stringhandling) requirements.
+* SubAccountId MUST conform to [StringHandling](#stringhandling) requirements.
 * SubAccountId nullability is defined as follows:
   * SubAccountId MUST be null when a charge is not related to a *sub account*.
   * SubAccountId MUST NOT be null when a charge is related to a *sub account*.

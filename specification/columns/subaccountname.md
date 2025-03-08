@@ -6,7 +6,7 @@ The SubAccountName column adheres to the following requirements:
 
 * SubAccountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
 * SubAccountName MUST be of type String.
-* SubAccountName MUST conform to [String Handling](#stringhandling) requirements.
+* SubAccountName MUST conform to [StringHandling](#stringhandling) requirements.
 * SubAccountName nullability is defined as follows:
   * SubAccountName MUST be null when [SubAccountId](#subaccountid) is null.
   * SubAccountName MUST NOT be null when SubAccountId is not null.

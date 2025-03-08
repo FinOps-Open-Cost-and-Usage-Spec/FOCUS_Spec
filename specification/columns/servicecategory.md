@@ -6,6 +6,7 @@ The ServiceCategory column adheres to the following requirements:
 
 * ServiceCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceCategory MUST be of type String.
+* ServiceCategory MUST conform to [StringHandling](#stringhandling) requirements.
 * ServiceCategory MUST NOT be null.
 * ServiceCategory MUST be one of the allowed values.
 

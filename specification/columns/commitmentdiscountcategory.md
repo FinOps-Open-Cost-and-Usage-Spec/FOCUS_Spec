@@ -10,7 +10,7 @@ The CommitmentDiscountCategory column adheres to the following requirements:
 * CommitmentDiscountCategory nullability is defined as follows:
   * CommitmentDiscountCategory MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
   * CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.
-* CommitmentDiscountCategory MUST be one of the allowed values when not null.
+* CommitmentDiscountCategory MUST be one of the allowed values.
 
 ## Column ID
 

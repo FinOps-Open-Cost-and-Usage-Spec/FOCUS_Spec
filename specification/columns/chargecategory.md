@@ -6,6 +6,7 @@ The ChargeCategory column adheres to the following requirements:
 
 * ChargeCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeCategory MUST be of type String.
+* ChargeCategory MUST conform to [StringHandling](#stringhandling) requirements.
 * ChargeCategory MUST NOT be null.
 * ChargeCategory MUST be one of the allowed values.
 
