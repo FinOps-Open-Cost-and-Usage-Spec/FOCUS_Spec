@@ -6,7 +6,6 @@ The CommitmentDiscountStatus column adheres to the following requirements:
 
 * CommitmentDiscountStatus MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountStatus MUST be of type String.
-* CommitmentDiscountStatus MUST conform to [StringHandling](#stringhandling) requirements.
 * CommitmentDiscountStatus nullability is defined as follows:
   * CommitmentDiscountStatus MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
   * CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and [Charge Category](#chargecategory) is "Usage".

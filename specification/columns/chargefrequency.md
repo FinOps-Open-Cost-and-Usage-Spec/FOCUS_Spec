@@ -6,7 +6,6 @@ The ChargeFrequency column adheres to the following requirements:
 
 * ChargeFrequency is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeFrequency MUST be of type String.
-* ChargeFrequency MUST conform to [StringHandling](#stringhandling) requirements.
 * ChargeFrequency MUST NOT be null.
 * ChargeFrequency MUST be one of the allowed values.
 * ChargeFrequency MUST NOT be "Usage-Based" when [ChargeCategory](#chargecategory) is "Purchase".

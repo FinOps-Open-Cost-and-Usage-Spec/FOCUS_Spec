@@ -26,22 +26,22 @@
 
 ### Tabular Overview of Requirement Grouping and Specifications
 
-| **Requirement Type** | **Requirement Group**              | **When required?**                | **Example**                                                                              |
-|----------------------|------------------------------------|-----------------------------------|------------------------------------------------------------------------------------------|
-| Technical            | Presence                           | Always                            | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when Condition. |
-| Technical            | Data Type                          | Always                            | {ColumnId} MUST be of type String.                                                         |
-| Technical            | Value Format                       | Always                            | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                |
-| Technical            | Nullability                        | Always                            | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when Condition.                     |
-| Technical            | Values and Value Ranges            | Metrics and normalized dimensions | {ColumnId} MUST be a valid decimal value.<br/>{ColumnId} MUST be one of the allowed values.  |
-| Technical            | Column to column Relationships     | When applicable                   | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
-| Business             | Unit/Denomination                  | When applicable                   | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
-| Business             | Uniqueness                         | When applicable                   | BillingAccountId MUST be a unique identifier within a provider.                          |
-| Business             | Fallback/Substitute Values         | When applicable                   | {ColumnId} MUST NOT duplicate {OtherColumnId} when Condition.                                |
-| Business             | Relationships Outside the Spec     | When applicable                   | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
-| Business             | Formula-based Cost Validation      | When applicable                   | The product of Column1 and Column2 MUST match the column3 when Condition.                |
-| Business             | Cost Correction Discrepancies      | When applicable                   | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction". |
-| Business             | Cost Calculation and Relationships | When applicable                   | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
-| Business             | Other                              | When applicable                   |                                                                                         |
+| **Requirement Type** | **Requirement Group**              | **When required?**                    | **Example**                                                                                |
+|----------------------|------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------|
+| Technical            | Presence                           | Always                                | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when Condition. |
+| Technical            | Data Type                          | Always                                | {ColumnId} MUST be of type String.                                                         |
+| Technical            | Value Format                       | Always (except normalized dimensions) | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                 |
+| Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when Condition.                     |
+| Technical            | Values and Value Ranges            | Metrics and normalized dimensions     | {ColumnId} MUST be a valid decimal value.<br/>{ColumnId} MUST be one of the allowed values. |
+| Technical            | Column to column Relationships     | When applicable                       | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
+| Business             | Unit/Denomination                  | When applicable                       | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
+| Business             | Uniqueness                         | When applicable                       | BillingAccountId MUST be a unique identifier within a provider.                            |
+| Business             | Fallback/Substitute Values         | When applicable                       | {ColumnId} MUST NOT duplicate {OtherColumnId} when Condition.                              |
+| Business             | Relationships Outside the Spec     | When applicable                       | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
+| Business             | Formula-based Cost Validation      | When applicable                       | The product of Column1 and Column2 MUST match the column3 when Condition.                  |
+| Business             | Cost Correction Discrepancies      | When applicable                       | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction". |
+| Business             | Cost Calculation and Relationships | When applicable                       | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
+| Business             | Other                              | When applicable                       |                                                                                           |
 
 ## Ordering of Requirements Within Groups
 
