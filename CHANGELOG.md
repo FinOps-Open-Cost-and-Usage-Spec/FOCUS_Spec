@@ -21,6 +21,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - `CommitmentDiscountType` column updates:
   - Must be a consistent, readable display value.
+- `ProviderVersion` metadata renamed to `DataGeneratorVersion`:
+  - Previous name collided with provider definition.
 
 **Deprecated:**
 - `PublisherName` column

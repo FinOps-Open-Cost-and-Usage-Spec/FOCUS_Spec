@@ -16,7 +16,7 @@ The updated schema related metadata could look like this:
  {
   "SchemaId": "45678-abcde-45678-abcde-45678",
   "FocusVersion": "1.1",
-  "ProviderVersion": "2.3",
+  "DataGeneratorVersion": "2.3",
   "name": "New Columns",
   "CreationDate": "2024-04-02T12:01:03.083z",
   "ColumnDefinition": [
@@ -77,7 +77,7 @@ For reference, the prior schema object looked like this:
  {
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
-  "ProviderVersion": "2.2",
+  "DataGeneratorVersion": "2.2",
   "CreationDate": "2024-04-02T12:01:03.083z",
   "ColumnDefinition": [
     {
