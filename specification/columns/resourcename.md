@@ -4,7 +4,7 @@ The Resource Name is a display name assigned to a [*resource*](#glossary:resourc
 
 The ResourceName column adheres to the following requirements:
 
-* The ResourceName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
+* The ResourceName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports billing based on provisioned resources.
 * This column MUST be of type String.
 * The ResourceName value MAY be a nullable column as some cost data [*rows*](#glossary:row) may not be associated with a *resource* or because a display name cannot be assigned to a *resource*.
 * ResourceName MUST NOT be null if a display name can be assigned to a *resource*.

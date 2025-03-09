@@ -1,10 +1,10 @@
 # Sub Account Type
 
-Sub Account Type is a provider-assigned name to identify the type of [*sub account*](#glossary:sub-account). Sub Account Type is a readable display name and not a code. Sub Account Type is commonly used for scenarios like mapping FOCUS and provider constructs, summarizing costs across providers, or invoicing and chargeback.
+Sub Account Type is a service provider-assigned name to identify the type of [*sub account*](#glossary:sub-account). Sub Account Type is a readable display name and not a code. Sub Account Type is commonly used for scenarios like mapping FOCUS and provider constructs, summarizing costs across providers, or invoicing and chargeback.
 
 The SubAccountType column adheres to the following requirements:
 
-* SubAccountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one possible SubAccountType value.
+* SubAccountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports more than one possible SubAccountType value.
 * SubAccountType  MUST be of type String.
 * SubAccountType  MUST conform to [String Handling](#stringhandling) requirements.
 * SubAccountType MUST be null when SubAccountId is null.
@@ -21,7 +21,7 @@ Sub Account Type
 
 ## Description
 
-A provider-assigned identifier for the type of *sub account* applied to the *row*.
+A service provider-assigned identifier for the type of *sub account* applied to the *row*.
 
 ## Content Constraints
 
