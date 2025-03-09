@@ -22,6 +22,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `CommitmentDiscountType` column updates:
   - Must be a consistent, readable display value.
 
+**Deprecated:**
+- `PublisherName` column
+  - Due to definitional conflicts between the Provider column and Publisher, this column is deprecated and will be removed in a future release. 
+
 [All 1.2 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
 
 <br>
