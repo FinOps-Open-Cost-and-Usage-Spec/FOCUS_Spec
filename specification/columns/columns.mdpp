@@ -37,7 +37,6 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "pricingcategory.md",1
 !INCLUDE "pricingquantity.md",1
 !INCLUDE "pricingunit.md",1
-!INCLUDE "serviceprovider.md",1
 !INCLUDE "publisher.md",1
 !INCLUDE "regionid.md",1
 !INCLUDE "regionname.md",1
@@ -46,6 +45,7 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "resourcetype.md",1
 !INCLUDE "servicecategory.md",1
 !INCLUDE "servicename.md",1
+!INCLUDE "serviceprovider.md",1
 !INCLUDE "servicesubcategory.md",1
 !INCLUDE "skuid.md",1
 !INCLUDE "skumeter.md",1
