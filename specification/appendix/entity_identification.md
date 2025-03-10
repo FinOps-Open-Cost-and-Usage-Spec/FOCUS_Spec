@@ -2,10 +2,10 @@
 
 The following examples show how entity identification columns and metadata differ depending on multiple factors such as purchasing mechanism, hosting transparency, marketplace and reseller scenarios.
 
-* [Service Provider](#ServiceProvider): The entity that made the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for purchase.
+* [Service Provider](#ServiceProvider): The entity that made the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 * [Invoice Issuer](#invoiceissuer): The entity responsible for invoicing for the *resources* or *services* consumed.
-* [Host Provider](#HostProvider): entity whose [*resources*](#glossary:resource) are used by the Service Provider to make their [*resources*](#glossary:resource) or [*services*](#glossary:service) available.
-* [Data Generator](#DataGenerator): The entity that generated the data in the dataset.
+* [Host Provider](#HostProvider): The entity whose [*resources*](#glossary:resource) are used by the Service Provider to make their [*resources*](#glossary:resource) or [*services*](#glossary:service) available.
+* [Data Generator](#DataGenerator): The entity that generated the [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 The value for each of these may be different depending on the various purchasing scenarios for *resources* or *services*. Use cases for purchasing direct, via a Managed Service Provider (MSP), via a cloud marketplace, and from internal service offerings were considered. The table below presents a few scenarios to show how the value for each dimension may change based on the purchasing scenario.
 

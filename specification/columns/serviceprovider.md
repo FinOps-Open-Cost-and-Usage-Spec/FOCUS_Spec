@@ -7,7 +7,7 @@ The Service Provider column adheres to the following requirements:
 * The Service Provider column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * This column MUST be of type String and MUST NOT contain null values.
 
-See [Appendix: Origination of cost data](#originationofcostdata) section for examples of Service Provider values that can be used for various purchasing scenarios.
+See [Appendix: Entity Identification Examples](#entityidentification) section for examples of Service Provider values for various use case scenarios.
 
 ## Column ID
 
