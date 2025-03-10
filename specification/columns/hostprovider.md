@@ -9,7 +9,7 @@ The HostProvider column adheres to the following requirements:
 * For Service Providers that DO NOT allow their customer to select or know the host provider where resources or services are deployed, this SHOULD be the name of the [Service Provider](#serviceprovider)
 * This column MUST be of type String and MAY contain null values when a line item does not pertain to a resource or services with a specific host provider, such as purchases, refunds, or taxes.
 
-See [Appendix: Origination of cost data](#originationofcostdata) section for examples of Host Provider.
+See [Appendix: Entity Identification Examples](#entityidentification) section for examples of Host Provider values for various use case scenarios.
 
 ## Column ID
 
