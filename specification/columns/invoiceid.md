@@ -10,9 +10,9 @@ The Invoice ID column adheres to the following requirements:
 * InvoiceId MUST be null when the [*charge*](#glossary:charge) is not associated either with an invoice or with a pre-generated provisional invoice.
 * InvoiceId MUST NOT be null when the *charge* is associated with either an issued invoice or a pre-generated provisional invoice.
 * InvoiceId MAY be generated prior to an invoice being issued.
-* Where a pre-generated invoice or provisional invoice exists, it MUST be associated with the related *charge* and BillingaccountId.
+* Where a pre-generated invoice or provisional invoice exists, it MUST be associated with the related *charge* and BillingAccountId.
 
-For credit handling the Invoice ID column adherts to the following requirements:
+For credit handling the Invoice ID column adheres to the following requirements:
 * Credits related to current billing period:
   * InvoiceId MUST NOT be null and ChargeClass MUST be correction in the current *billing period*.
 * Credits related to a previous billing period:
