@@ -9,3 +9,4 @@ The FOCUS specification is designed to meet the needs of FinOps practitioners in
 !INCLUDE "resource_usage.md",1
 !INCLUDE "service_categorization.md",1
 !INCLUDE "location.md",1
+!INCLUDE "cost_comparison.md",1
