@@ -9,7 +9,6 @@ The BillingPeriodEnd column adheres to the following requirements:
 * BillingPeriodEnd MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * BillingPeriodEnd MUST NOT be null.
 * BillingPeriodEnd MUST be the *exclusive ending bound* of the *billing period*.
-* The sum of [BilledCost](#billedcost) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 ## Column ID
 

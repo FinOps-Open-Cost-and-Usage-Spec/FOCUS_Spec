@@ -9,7 +9,6 @@ The BillingPeriodStart column adheres to the following requirements:
 * BillingPeriodStart MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * BillingPeriodStart MUST NOT be null.
 * BillingPeriodStart MUST be the *inclusive beginning bound* of the *billing period*.
-* The sum of [BilledCost](#billedcost) in a given *billing period* MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 ## Column ID
 
