@@ -10,6 +10,12 @@ The ServiceName column adheres to the following requirements:
 * ServiceName MUST be of type String.
 * ServiceName MUST conform to [StringHandling](#stringhandling) requirements.
 * ServiceName MUST NOT be null.
+* ServiceName relationship with [ServiceCategory](#servicecategory) is defined as follows:
+  * ServiceName MUST have one and only one ServiceCategory that best aligns with its primary purpose, except when no suitable ServiceCategory is available.
+  * ServiceName MUST be associated with the ServiceCategory "Other" only until a more suitable ServiceCategory becomes available.
+* ServiceName relationship with [ServiceSubcategory](#servicesubcategory) is defined as follows:
+  * ServiceName SHOULD have one and only one ServiceSubcategory that best aligns with its primary purpose, except when no suitable ServiceSubcategory is available.
+  * ServiceName SHOULD be associated with the ServiceSubcategory "Other" only until a more suitable ServiceSubcategory becomes available.
 
 ## Column ID
 

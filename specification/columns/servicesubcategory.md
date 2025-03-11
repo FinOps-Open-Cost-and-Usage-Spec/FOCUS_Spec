@@ -9,7 +9,6 @@ The ServiceSubcategory column adheres to the following requirements:
 * ServiceSubcategory MUST NOT be null.
 * ServiceSubcategory MUST be one of the allowed values.
 * ServiceSubcategory MUST have one and only one parent ServiceCategory as specified in the allowed values below.
-* Though a given *service* can have multiple purposes, each *service* SHOULD have one and only one ServiceSubcategory that best aligns with its primary purpose.
 
 ## Column ID
 
