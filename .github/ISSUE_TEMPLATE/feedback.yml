@@ -3,6 +3,7 @@ description: "Provide feedback on unsupported FinOps features, use cases, or sce
 title: "[FEEDBACK]: "
 labels:
   - "feedback"
+type: "Feedback"
 assignees:
   - "shawnalpay"
   - "jpradocueva"

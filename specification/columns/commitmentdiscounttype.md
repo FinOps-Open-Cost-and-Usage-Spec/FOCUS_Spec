@@ -4,8 +4,11 @@ Commitment Discount Type is a provider-assigned name to identify the type of [*c
 
 The CommitmentDiscountType column adheres to the following requirements:
 
-* The CommitmentDiscountType column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
-* This column MUST be of type String, MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null, and MUST NOT be null when CommitmentDiscountId is not null.
+* CommitmentDiscountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountType MUST be of type String.
+* CommitmentDiscountType MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
+* CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
+* CommitmentDiscountType MUST be a consistent, readable display value.
 
 ## Column ID
 
@@ -19,7 +22,7 @@ Commitment Discount Type
 
 A provider-assigned identifier for the type of *commitment discount* applied to the *row*.
 
-## Content constraints
+## Content Constraints
 
 | Constraint      | Value            |
 |:----------------|:-----------------|
