@@ -8,7 +8,7 @@ The ResourceName column adheres to the following requirements:
 * ResourceName MUST be of type String.
 * ResourceName MUST conform to [StringHandling](#stringhandling) requirements.
 * ResourceName nullability is defined as follows:
-  * ResourceName MUST be null when [ResourceId](#resourceid) is null or when the *resource* only has a system-generated ResourceId without an assigned display name.
+  * ResourceName MUST be null when [ResourceId](#resourceid) is null or when the *resource* does not have an assigned display name.
   * ResourceName MUST NOT be null when ResourceId is not null and the *resource* has an assigned display name.
 * ResourceName MUST NOT duplicate ResourceId when the *resource* is not provisioned interactively or only has a system-generated ResourceId.
 
