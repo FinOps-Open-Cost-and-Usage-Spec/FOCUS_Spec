@@ -4,11 +4,10 @@
 0.5
 
 ## Description
-The FOCUS spec supports representing costs taking into account discounts and the amortization of upfront fees paid for services. This feature represents cost after negotiated discounts, commitment discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge. The amortized portion included is proportional to the Pricing Quantity and the time granularity of the data. Effective Cost is commonly utilized to track and analyze spending trends and is complex and crucial such that it needs its own supported feature. 
+The FOCUS spec EffectiveCost enabled practitioners to analyze costs without having to distribute upfront fees and discounts.  representing costs taking into account discounts and the amortization of upfront fees paid for services. This column represents cost after negotiated discounts, commitment discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge. Effective Cost is commonly utilized to track and analyze spending trends. 
 
 ## Directly Dependent Columns
-* BilledCost
-* PricingQuantity
+* EffectiveCost
 
 ## Supporting Columns
 * BillingPeriodEnd
@@ -16,6 +15,9 @@ The FOCUS spec supports representing costs taking into account discounts and the
 * ChargeCategory
 * ChargePeriodEnd
 * ChargePeriodStart
+* ConsumedQuantity
+* ConsumedUnit
+* PricingQuantity
 * ProviderName
 * RegionName
 * ServiceName
