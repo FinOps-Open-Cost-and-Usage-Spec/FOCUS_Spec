@@ -10,8 +10,10 @@ Providers have various account structures and sub structure that FinOps practiti
 ## Directly Dependent Columns
 * BillingAccountId
 * BillingAccountName
+* BillingAccountType
 * SubAccountId
 * SubAccountName
+* SubAccountType
 
 ## Indirectly Dependent Columns
 
