@@ -17,5 +17,3 @@ The FOCUS specification is designed to meet the needs of FinOps practitioners in
 !INCLUDE "schema_metadata.md",1
 !INCLUDE "service_categorization.md",1
 !INCLUDE "verify_compare_track_unit_prices.md",1
-
-
