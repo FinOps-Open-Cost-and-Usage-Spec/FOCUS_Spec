@@ -16,7 +16,6 @@ PreviousColumnName
 
 Previous Column Name
 
-
 ## Content constraints
 
 | Constraint      | Value            |
