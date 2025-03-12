@@ -63,7 +63,7 @@ The updated schema related metadata for the schema where the rename took place c
           {
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
-          }, 
+          },
           {
                 "ColumnName": "x_awesome_column3",
                 "DataType": "STRING",
