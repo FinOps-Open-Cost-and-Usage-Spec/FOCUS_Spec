@@ -6,7 +6,7 @@ In cases where the PreviousColumnName is present, the following applies:
 
 * The PreviousColumnName MUST not be Null
 * The PreviousColumnNameof must by of type string and be the name use in previous versions of the schema. 
-* The PreviousColumnName MUST NOT be present on schema versions created after the rename. 
+* The PreviousColumnName MUST NOT be present on schema versions created after the rename.
 
 ## Metadata ID
 
