@@ -21,10 +21,12 @@ Providers have various account structures and sub structure that FinOps practiti
 ## Example SQL Query
 ```
 SELECT
-  SubAccountID,
+  BillingAccountId,
+  BillingAccountName,
+  BillingAccountType,
+  SubAccountId,
   SubAccountName,
-  ChargePeriodStart,
-  ServiceName,
+  SubAccountType,
   SUM(BilledCost)
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
