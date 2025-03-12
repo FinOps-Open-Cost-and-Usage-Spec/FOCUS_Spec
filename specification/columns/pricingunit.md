@@ -1,6 +1,6 @@
 # Pricing Unit
 
-The Pricing Unit represents a service provider-specified measurement unit for determining unit prices, indicating how the provider rates measured usage and purchase quantities after applying pricing rules like [*block pricing*](#glossary:block-pricing). Common examples include the number of hours for compute appliance runtime (e.g. `Hours`), gigabyte-hours for a storage appliance (e.g., `GB-Hours`), or an accumulated count of requests for a network appliance or API service (e.g., `1000 Requests`). Pricing Unit complements the [Pricing Quantity](#pricingquantity) metric. Distinct from the [Consumed Unit](#consumedunit), it focuses on pricing and cost, not [*resource*](#glossary:resource) and [*service*](#glossary:service) consumption, often at a coarser granularity.
+The Pricing Unit represents a provider-specified measurement unit for determining unit prices, indicating how the provider rates measured usage and purchase quantities after applying pricing rules like [*block pricing*](#glossary:block-pricing). Common examples include the number of hours for compute appliance runtime (e.g. `Hours`), gigabyte-hours for a storage appliance (e.g., `GB-Hours`), or an accumulated count of requests for a network appliance or API service (e.g., `1000 Requests`). Pricing Unit complements the [Pricing Quantity](#pricingquantity) metric. Distinct from the [Consumed Unit](#consumedunit), it focuses on pricing and cost, not [*resource*](#glossary:resource) and [*service*](#glossary:service) consumption, often at a coarser granularity.
 
 The PricingUnit column adheres to the following requirements:
 
@@ -11,7 +11,7 @@ The PricingUnit column adheres to the following requirements:
 
 The PricingUnit value MUST be semantically equal to the corresponding pricing measurement unit value provided in:
 
-* The service provider-published [*price list*](#glossary:price-list)
+* The provider-published [*price list*](#glossary:price-list)
 * The invoice, when the invoice includes a pricing measurement unit
 
 ## Column ID
@@ -24,7 +24,7 @@ Pricing Unit
 
 ## Description
 
-Service provider-specified measurement unit for determining unit prices, indicating how the service provider rates measured usage and purchase quantities after applying pricing rules like *block pricing*.
+Provider-specified measurement unit for determining unit prices, indicating how the provider rates measured usage and purchase quantities after applying pricing rules like *block pricing*.
 
 ## Content constraints
 

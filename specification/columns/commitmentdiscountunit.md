@@ -1,10 +1,10 @@
 # Commitment Discount Unit
 
-Commitment Discount Unit represents the service provider-specified measurement unit indicating how a provider measures the [Commitment Discount Quantity](#commitmentdiscountquantity) of a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountUnit column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Unit represents the provider-specified measurement unit indicating how a provider measures the [Commitment Discount Quantity](#commitmentdiscountquantity) of a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountUnit column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 The CommitmentDiscountUnit column adheres to the following requirements:
 
-* CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports [*commitment discounts*](#glossary:commitment-discount).
+* CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [*commitment discounts*](#glossary:commitment-discount).
 * CommitmentDiscountUnit MUST be of type String, and the units of measure used in CommitmentDiscountUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
 * The CommitmentDiscountUnit MUST be the same across all *rows* where CommitmentDiscountQuantity has the same [CommitmentDiscountId](#commitmentdiscountid).
 * CommitmentDiscountUnit MAY be null if CommitmentDiscountId is not null and [ChargeClass](#chargeclass) is "Correction".
@@ -26,7 +26,7 @@ Commitment Discount Unit
 
 ## Description
 
-The service provider-specified measurement unit indicating how a service provider measures the Commitment Discount Quantity of a *commitment discount*.
+The provider-specified measurement unit indicating how a provider measures the Commitment Discount Quantity of a *commitment discount*.
 
 ## Content constraints
 

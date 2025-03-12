@@ -4,7 +4,7 @@ A Commitment Discount Name is the display name assigned to a [*commitment discou
 
 The CommitmentDiscountName column adheres to the following requirements:
 
-* The CommitmentDiscountName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
+* The CommitmentDiscountName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * This column MUST be of type String.
 * The CommitmentDiscountName value MUST be null if the charge is not related to a *commitment discount* and MAY be null if a display name cannot be assigned to a *commitment discount*.
 * CommitmentDiscountName MUST NOT be null if a display name can be assigned to a *commitment discount*.

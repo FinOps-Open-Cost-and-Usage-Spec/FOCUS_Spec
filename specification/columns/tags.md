@@ -1,37 +1,37 @@
 # Tags
 
-The Tags column represents the set of tags assigned to [*tag sources*](#glossary:tag-source) that also account for potential service provider-defined or user-defined tag evaluations. Tags are commonly used for scenarios like adding business context to cost and usage data to identify and accurately allocate charges. Tags may also be referred to by providers using other terms such as labels.
+The Tags column represents the set of tags assigned to [*tag sources*](#glossary:tag-source) that also account for potential provider-defined or user-defined tag evaluations. Tags are commonly used for scenarios like adding business context to cost and usage data to identify and accurately allocate charges. Tags may also be referred to by providers using other terms such as labels.
 
-A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is selected from a set of possible tag values assigned to the tag key.  When supported by a service provider, this can occur when a tag value is set by provider-defined or user-defined rules.
+A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is selected from a set of possible tag values assigned to the tag key.  When supported by a provider, this can occur when a tag value is set by provider-defined or user-defined rules.
 
 The Tags column adheres to the following requirements:
 
-* Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports setting user or service provider-defined tags.
-* Tags MUST contain all user-defined and service provider-defined tags.
+* Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
+* Tags MUST contain all user-defined and provider-defined tags.
 * Tags MUST only contain finalized tags.
 * Tags MUST be in [KeyValueFormat](#key-valueformat).
 * A tag key with a non-null value for a given resource SHOULD be included in the tags column.
-* A tag key with a null value for a given resource MAY be included in the tags column depending on the service provider's tag finalization process.
+* A tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
 * A tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
-* Service providers MUST NOT alter tag values unless applying true (boolean) to valueless tags.
-* If tag finalization is supported, service providers MUST publish tag finalization methods and semantics within their respective documentation.
-* Service providers MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless, user-defined tag scheme.  
-* Service providers SHOULD publish all service provider-specified tag key prefixes within their respective documentation.
+* Providers MUST NOT alter tag values unless applying true (boolean) to valueless tags.
+* If tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
+* Providers MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless, user-defined tag scheme.  
+* Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
 
 User-defined tags additionally adhere to the following requirements:
 
-* When a service provider has only 1 user-defined tag scheme, the service provider MUST NOT include a prefix in tag keys.
-* When a service provider has 2 or more user-defined tag schemes, the service provider MUST prefix all but 1 user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme.
+* When a provider has only 1 user-defined tag scheme, the provider MUST NOT include a prefix in tag keys.
+* When a provider has 2 or more user-defined tag schemes, the provider MUST prefix all but 1 user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme.
 
 Provider-defined tags additionally adhere to the following requirements:
 
-* Provider-defined tags MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding service provider-specified tag scheme.
+* Provider-defined tags MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
 
 ## Provider-Defined vs. User-Defined Tags
 
-This example illustrates various tags produced from multiple user-defined and provider-defined tag schemes.  The first three tags illustrate examples from three different, user-defined tag schemes. The service provider predetermined that 1 user-defined tag scheme (i.e. `"foo": "bar"`) does not have a prepended prefix, but the remaining two user-defined tag schemes (i.e. `"userDefinedTagScheme2/foo": "bar"`, `"userDefinedTagScheme3/foo": true`) do have service provider-defined and reserved prefixes.  Additionally, the third tag is produced from a valueless, user-defined tag scheme, so the service provider also applies `true` as its default value.
+This example illustrates various tags produced from multiple user-defined and provider-defined tag schemes.  The first three tags illustrate examples from three different, user-defined tag schemes. The provider predetermined that 1 user-defined tag scheme (i.e. `"foo": "bar"`) does not have a prepended prefix, but the remaining two user-defined tag schemes (i.e. `"userDefinedTagScheme2/foo": "bar"`, `"userDefinedTagScheme3/foo": true`) do have provider-defined and reserved prefixes.  Additionally, the third tag is produced from a valueless, user-defined tag scheme, so the provider also applies `true` as its default value.
 
-The last two tags illustrate examples from two different, provider-defined tag schemes. Since all provider-defined tag schemes require a prefix, the service provider has prepended predefined and reserved prefixes (`providerDefinedTagScheme1/`, `providerDefinedTagScheme2/`) to each tag.
+The last two tags illustrate examples from two different, provider-defined tag schemes. Since all provider-defined tag schemes require a prefix, the provider has prepended predefined and reserved prefixes (`providerDefinedTagScheme1/`, `providerDefinedTagScheme2/`) to each tag.
 
 ```json
     {
@@ -45,7 +45,7 @@ The last two tags illustrate examples from two different, provider-defined tag s
 
 ## Finalized Tags
 
-Within a service provider, tag keys may be associated with multiple values, and potentially defined at different levels within the service provider, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, *service providers* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each service provider but must be documented within their respective documentation.
+Within a provider, tag keys may be associated with multiple values, and potentially defined at different levels within the provider, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, *providers* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each provider but must be documented within their respective documentation.
 
 As an example, let's assume 1 [*sub account*](#glossary:sub-account) exists with 1 virtual machine with the following details, and tag inheritance favors Resources over *Sub Accounts*.
 

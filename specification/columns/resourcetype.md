@@ -4,7 +4,7 @@ Resource Type describes the kind of [*resource*](#glossary:resource) the charge 
 
 The ResourceType column adheres to the following requirements:
 
-* The ResourceType column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports billing based on provisioned resources and supports assigning a type for resources.
+* The ResourceType column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources and supports assigning a type for resources.
 * This column MUST be of type String and MUST NOT be null when a corresponding [ResourceId](#resourceid) is not null.
 * When a corresponding ResourceId value is null, the ResourceType column value MUST also be null.
 

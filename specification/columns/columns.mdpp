@@ -1,6 +1,6 @@
 # Columns
 
-The FOCUS specification defines a group of columns that provide qualitative values (such as dates, resource, and service provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The Columns are presented in Alphabetical order.
+The FOCUS specification defines a group of columns that provide qualitative values (such as dates, resource, and provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The Columns are presented in Alphabetical order.
 
 !INCLUDE "availabilityzone.md",1
 !INCLUDE "billedcost.md",1
@@ -37,7 +37,7 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "pricingcategory.md",1
 !INCLUDE "pricingquantity.md",1
 !INCLUDE "pricingunit.md",1
-!INCLUDE "serviceprovider.md",1
+!INCLUDE "provider.md",1
 !INCLUDE "publisher.md",1
 !INCLUDE "regionid.md",1
 !INCLUDE "regionname.md",1
