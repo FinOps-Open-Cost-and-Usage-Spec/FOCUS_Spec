@@ -1,22 +1,39 @@
-# Column Naming and Ordering
+# Column Handling
 
-Column IDs provided in cost data following a consistent naming and ordering convention reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
+A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that convey information about the charges incurred with a provider. Each column describes an aspect of the charge, including but not limited to:
+
+* Who is responsible for incurring or delivering the service.
+* What the charge is for.
+* When the charge was incurred.
+* Where the service was delivered.
+* Why the charge was incurred for a specific price.
+* How much the charge is and how that cost is calculated.
+
+Given the broad range of ever-evolving providers and service offerings, FOCUS as a specification may not define all the columns needed to comprehensively describe every provider's unique cost and usage charges. Providers and data generators are responsible for including additional information required to *accurately* and *completely* describe the charges included within a *FOCUS dataset*. Rows in a *FOCUS dataset* may be aggregated or split differently than non-FOCUS datasets to meet the requirements defined by FOCUS columns and attributes (e.g., [Discount Handling](#discounthandling)). Data generators are responsible for ensuring the accuracy of dimensions and metrics when aggregating or splitting rows, especially summable metrics like costs and quantities.
+
+Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming and ordering conventions to reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
 All columns defined in the FOCUS specification MUST follow the naming and ordering requirements listed below.
 
 ## Attribute ID
 
-ColumnNamingAndOrdering
+ColumnHandling
 
 ## Attribute Name
 
-Column Naming and Ordering
+Column Handling
 
 ## Description
 
-Naming and ordering convention for columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+Naming, ordering, and inclusion criteria for columns appearing in a *FOCUS dataset*.
 
 ## Requirements
+
+### Column Inclusion
+
+When the provider publishes a non-FOCUS cost and usage dataset, the following applies:
+
+* Custom columns MUST be included for all information not covered by FOCUS columns that exists in a non-FOCUS cost and usage dataset.
 
 ### Column Names
 
@@ -31,7 +48,6 @@ Naming and ordering convention for columns appearing in a [*FOCUS dataset*](#glo
   * Columns with the `Category` suffix MUST be normalized.
 * Custom (e.g., provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
   * Custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
-  * Custom columns MUST be included for all unique concepts not defined by or that map to FOCUS columns when the provider publishes a non-FOCUS cost and usage dataset.
   * Custom columns SHOULD follow the same rules listed above for FOCUS columns.
 
 ### Column Order
