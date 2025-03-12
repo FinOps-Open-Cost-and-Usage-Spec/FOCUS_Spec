@@ -70,8 +70,8 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
 * **PriceSheetLineItems** (Array)
   * **SkuPrice** (Object) - Represents Unit Price
     * **SkuPriceId** (String) - Unique identifier for SKU Price, i.e. this Unit Price
-    * **MaxTier** (Integer) - Inclusive
-    * **MinTier** (Integer) - Exclusive
+    * **TierRangeMin** (Integer) - Exclusive?
+    * **TierRangeMax** (Integer) - Inclusive
     * **Sku** (Object)
       * **SkuId** (String) - Unique identifier for SKU
       * **SkuShape** (String) - SKU property
@@ -92,8 +92,8 @@ The following table serves as the basis for reviewing the SkuPriceId spec, as we
     {
       "SkuPrice": {
         "SkuPriceId": "12345", // Unique identifier for SKU Price, i.e. this Unit Price
-        "TierRangeMin": 10, // Inclusive
-        "TierRangeMax": 1, // Exclusive
+        "TierRangeMin": 0, // Exclusive?
+        "TierRangeMax": 10, // Inclusive
         "Sku": {
           "SkuId": "SKU001", // Unique identifier for SKU
           "SkuShape": "SKU Shape X", // SKU property
