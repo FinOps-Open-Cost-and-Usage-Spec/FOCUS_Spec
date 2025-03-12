@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has decided to rename a column in their FOCUS data export. The column for rename is x_awesome_column1 and will be renamed to x_awesome_column_one. The provider creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid). After this schema defintion is created if the data generator creates another schema, the PreviousColumnName is removed.  
+ACME has decided to rename a column in their FOCUS data export. The column for rename is x_awesome_column1 and will be renamed to x_awesome_column_one. The provider creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid). After this schema defintion is created if the data generator creates another schema, the PreviousColumnName is removed.
 
 ## Supplied Metadata
 
