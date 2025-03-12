@@ -14,17 +14,17 @@ When provider supports unit pricing concepts, The FOCUS Specification allows pra
 
 ## Directly Dependent Columns
 
-* SkuPriceId
-* ListUnitPrice
 * ContractedUnitPrice
+* ListUnitPrice
 * SkuId
 * SkuPriceDetails
-
-## Indirectly Dependent Columns
+* SkuPriceId
+* 
+## Supporting Columns
 * BillingCurrency
 * BillingPeriodId
-* ChargePeriodStart
 * ChargePeriodEnd
+* ChargePeriodStart
 
 ## Example SQL Query
 
