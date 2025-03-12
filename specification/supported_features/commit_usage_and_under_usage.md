@@ -7,18 +7,20 @@
 The FOCUS spec supports the tracking of committed use discounts usage and underusage, which can come in the form of commitment discounts, or capacity reservations. 
 
 ## Directly Dependent Columns
-* Provider
-* BillingAccountID
-* CommitmentDiscountID / CapacityReservationID
-* CommitmentDiscountType / CapacityReservationType
-* CommitmentDiscountStatus / CapactityReservationStatus
+* CommitmentDiscountID
+* CapacityReservationID
+* CommitmentDiscountType
+* CapacityReservationType
+* CommitmentDiscountStatus
+* CapactityReservationStatus
+
+
+## Supporting Columns
 * ServiceCategory
 * BilledCost
 * EffectiveCost
 * ChargePeriodStart
 * ChargePeriodEnd
-
-## Supporting Columns
 
 ## Example SQL Query for Commitment Discounts
 ```SELECT
