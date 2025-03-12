@@ -24,13 +24,15 @@ Naming and ordering convention for columns appearing in a [*FOCUS dataset*](#glo
   * Column IDs MUST use [Pascal case](#glossary:pascalcase).
   * Column IDs MUST NOT use abbreviations.
   * Column IDs MUST be alphanumeric with no special characters.
-  * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the Name suffix if there are no other columns with the same name prefix.
   * Column IDs SHOULD NOT use acronyms.
   * Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories.
-* All custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
-* Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID. Display Name for a Column MAY avoid the `Name` suffix if it is considered superfluous.
-* Columns with the `Category` suffix MUST be normalized.
-* Custom (e.g., provider-defined) columns SHOULD follow the same rules listed above for FOCUS columns.
+  * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID.
+  * Column display names MAY avoid the `Name` suffix if there are no other columns with the same name prefix.
+  * Columns with the `Category` suffix MUST be normalized.
+* Custom (e.g., provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
+  * Custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
+  * Custom columns MUST be included for all unique concepts not defined by or that map to FOCUS columns when the provider publishes a non-FOCUS cost and usage dataset.
+  * Custom columns SHOULD follow the same rules listed above for FOCUS columns.
 
 ### Column Order
 
