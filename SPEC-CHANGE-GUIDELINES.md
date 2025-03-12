@@ -30,6 +30,14 @@ When a new feature or column is introduced to the FOCUS specification, depending
 - Change log includes an indication that the new feature/column has been added.
     - example: "Example  Column 1 has been added in version 2.0"
 
+### Renaming a Column or Metadata 
+    
+The FOCUS specification requires that renaming of a column or metadata be declared in the specification
+* The column or metdata specification is to include a section that indicates the previous name and the version in which it was changed
+* example: "Example1 column was renamed Example2 in FOCUS version 2.1" 
+    
+
+
 ### Deprecation and Removal of a Feature or Column
     
 The FOCUS specifcation requires that removal actions are preceded with a deprecation notice, which includes the following steps:
