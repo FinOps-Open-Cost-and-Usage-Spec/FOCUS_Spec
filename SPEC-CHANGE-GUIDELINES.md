@@ -30,14 +30,14 @@ When a new feature or column is introduced to the FOCUS specification, depending
 - Change log includes an indication that the new feature/column has been added.
     - example: "Example  Column 1 has been added in version 2.0"
 
-
-### Removal of a Feature or Column
+### Deprecation and Removal of a Feature or Column
     
-When a feature or column is removed from the FOCUS specification, the following steps are taken:
-- The feature or item removal is proposed, which, in addition to the proposed specification change, includes a deprecation period expressed in terms of Focus versions
-  - example: "Example  Column 1 will be deprecated in version 2.1 and removed in version 2.4"
-  
-
+The FOCUS specifcation requires that removal actions are preceded with a deprecation notice, which includes the following steps:
+* The feature or item removal is proposed, which must designate the column or metadata as deprecated.
+  * If the removal version is not yet determine, the change log MUST state "This column will be removed at a future FOCUS version"
+  * if the removal verions is already determined, the change log MUST state "This column will be removed in version 2.1"
+* Prior to removal the FOCUS specification MUST be updated to include the version that will remove the deprecated column/metadata
+    
 
 ## Change Type Classification
 
