@@ -1,4 +1,4 @@
-# Removing Columns
+# Deprecating Columns
 
 ## Scenario
 
