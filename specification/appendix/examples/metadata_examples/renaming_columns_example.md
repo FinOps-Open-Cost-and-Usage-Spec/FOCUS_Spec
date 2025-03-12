@@ -1,0 +1,143 @@
+# Deprecating Columns
+
+## Scenario
+
+ACME has decided to rename a column in their FOCUS data export. The column for rename is x_awesome_column1 and will be renamed to x_awesome_column_one. The provider creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid). After this schema defintion is created if the data generator creates another schema, the PreviousColumnName is removed.  
+
+## Supplied Metadata
+
+Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-34567-abcde-34567-abcde-34567.json`.
+
+The updated schema related metadata for the schema where the rename took place could look like this:
+
+```json
+ {
+  "SchemaId": "34567-abcde-34567-abcde-34567",
+  "FocusVersion": "1.0",
+  "CreationDate": "2024-03-02T12:01:03.083z",
+  "ColumnDefinition": [
+    {
+      "ColumnName": "BillingAccountId",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+                "ColumnName": "BillingAccountName",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+               "ColumnName": "ChargePeriodStart",
+               "DataType": "DATETIME"
+          },
+          {
+                "ColumnName": "ChargePeriodEnd",
+                "DataType": "DATETIME"
+          },
+          {
+                "ColumnName": "BilledCost",
+                "DataType": "DECIMAL",
+                "NumericPrecision": 20,
+                "NumberScale": 10
+          },
+          {
+                "ColumnName": "EffectiveCost",
+                "DataType": "DECIMAL",
+                "NumericPrecision": 20,
+                "NumberScale": 10
+          },
+          {
+                "ColumnName": "Tags",
+                "DataType": "JSON",
+                "ProviderTagPrefixes": ["acme", "ac"]
+          },
+          {
+                "ColumnName": "x_awesome_column_one",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8",
+                "PreviousColumnName": "x_awesome_column1"
+          },
+          {
+                "ColumnName": "x_awesome_column2",
+                "DataType": "DATETIME"
+          }, 
+          {
+                "ColumnName": "x_awesome_column3",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8",
+                "Deprecation": true
+            }
+      ]
+}
+```
+
+The subsequent new schema metadata after the rename could look like this:
+
+```json
+ {
+  "SchemaId": "34567-abcde-34567-abcde-34567",
+  "FocusVersion": "1.0",
+  "CreationDate": "2024-03-02T12:01:03.083z",
+  "ColumnDefinition": [
+    {
+      "ColumnName": "BillingAccountId",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+                "ColumnName": "BillingAccountName",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+               "ColumnName": "ChargePeriodStart",
+               "DataType": "DATETIME"
+          },
+          {
+                "ColumnName": "ChargePeriodEnd",
+                "DataType": "DATETIME"
+          },
+          {
+                "ColumnName": "BilledCost",
+                "DataType": "DECIMAL",
+                "NumericPrecision": 20,
+                "NumberScale": 10
+          },
+          {
+                "ColumnName": "EffectiveCost",
+                "DataType": "DECIMAL",
+                "NumericPrecision": 20,
+                "NumberScale": 10
+          },
+          {
+                "ColumnName": "Tags",
+                "DataType": "JSON",
+                "ProviderTagPrefixes": ["acme", "ac"]
+          },
+          {
+                "ColumnName": "x_awesome_column_one",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8"
+          },
+          {
+                "ColumnName": "x_awesome_column2",
+                "DataType": "DATETIME"
+          }, 
+          {
+                "ColumnName": "x_awesome_column3",
+                "DataType": "STRING",
+                "StringMaxLength": 64,
+                "StringEncoding": "UTF-8",
+                "Deprecation": true
+            }
+      ]
+}
+```
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#schemametadatatofocusdatareference)
