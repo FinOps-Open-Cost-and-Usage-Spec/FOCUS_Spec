@@ -6,7 +6,7 @@
 
 ## Description
 
-When provider supports unit pricing concepts, FOCUS dataset contains SKU Price ID, which represents provider-specified reference for specific SKU price in both public and contracted price lists, allowing practitioners to access detailed information about SKU Price, including associated ListUnitPrices and ContractedUnitPrices used to calculate charges. For a given SkuPriceId, FinOps practitioners must be able to:
+When provider supports unit pricing concepts, FinOps practitioners must be able to:
 
 * Verify that the correct List Unit Prices and Contracted Unit Prices are applied.
 * Compare applied Contracted Unit Prices across different billing accounts and with applied List Unit Prices at specific points in time.
