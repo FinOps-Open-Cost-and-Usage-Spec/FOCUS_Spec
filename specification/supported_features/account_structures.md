@@ -31,10 +31,8 @@ SELECT
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 Group by
-  ServiceName,
-  SubAccountId,
-  SubAccountName,
-  ChargePeriodStart
+  BillingAccountId,
+  SubAccountId
 ```
 
 
