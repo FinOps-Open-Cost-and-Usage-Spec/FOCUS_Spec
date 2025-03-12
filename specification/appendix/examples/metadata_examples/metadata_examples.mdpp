@@ -14,6 +14,7 @@ Here are some metadata examples for various scenarios:
 
 !INCLUDE "data_generator_example.md",1
 !INCLUDE "deprecating_columns_example.md",1
+!INCLUDE "renaming_columns_example.md",1
 !INCLUDE "schema_metadata_example.md",1
 !INCLUDE "schema_metadata_reference_example.md",1
 !INCLUDE "adding_new_columns_example.md",1
