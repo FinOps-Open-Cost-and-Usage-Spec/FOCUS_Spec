@@ -11,18 +11,26 @@ Many providers have features that allow Finops practitioners to enrich cost and 
 * Tags
 
 
-## Indirectly Dependent Columns
+## Supporting Columns
+BilledCost
+EffectiveCost
+ConsumedQuantity
+ConsumedUnit
 
 
 ## Example SQL Query
 ```
 SELECT
   tags,
-  SUM(BilledCost)
+  ConsumedUnit,
+  SUM(BilledCost),
+  SUM(EffectiveCost),
+  SUM(ConsumedQuantity)
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 GROUP BY
-  tags
+  tags,
+  ConsumedUnit
 ```
 
 
