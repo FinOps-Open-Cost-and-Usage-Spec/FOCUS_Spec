@@ -6,7 +6,7 @@
 
 ## Description
 
-When provider supports unit pricing concepts, FinOps practitioners must be able to:
+When provider supports unit pricing concepts, The FOCUS Specification allows practioners to:
 
 * Verify that the correct List Unit Prices and Contracted Unit Prices are applied.
 * Compare applied Contracted Unit Prices across different billing accounts and with applied List Unit Prices at specific points in time.
@@ -15,17 +15,16 @@ When provider supports unit pricing concepts, FinOps practitioners must be able 
 ## Directly Dependent Columns
 
 * SkuPriceId
+* ListUnitPrice
+* ContractedUnitPrice
+* SkuId
+* SkuPriceDetails
+
+## Indirectly Dependent Columns
+* BillingCurrency
 * BillingPeriodId
 * ChargePeriodStart
 * ChargePeriodEnd
-* BillingCurrency
-* ListUnitPrice
-* ContractedUnitPrice
-
-## Indirectly Dependent Columns
-
-* SkuId
-* SkuPriceDetails
 
 ## Example SQL Query
 
