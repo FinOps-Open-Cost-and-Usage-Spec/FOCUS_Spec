@@ -9,6 +9,4 @@ This FOCUS schema metadata facilitates both the provider and consumer in communi
 ## Applicable Metadata 
 * Schema
   * Column Definition
-
-
-
+  

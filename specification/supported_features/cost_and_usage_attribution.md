@@ -10,13 +10,11 @@ Many providers have features that allow Finops practitioners to enrich cost and 
 ## Directly Dependent Columns
 * Tags
 
-
 ## Supporting Columns
-BilledCost
-EffectiveCost
-ConsumedQuantity
-ConsumedUnit
-
+* BilledCost
+* ConsumedQuantity
+* ConsumedUnit
+* EffectiveCost
 
 ## Example SQL Query
 ```

@@ -3,26 +3,25 @@
 ## Introduced Version
 0.5
 
-
 ## Description
 FOCUS supports the comparison of cost columns in order to identify savings, amortization, or other constructs.
 
 ## Directly Dependent Columns
 * BilledCost
-* EffectiveCost
 * ContractedCost
+* EffectiveCost
 * ListCost
 
 ## Supporting Columns
-* ProviderName
+
 * BillingAccountId
 * BillingAccountName
 * BillingCurrency
-* ServiceName
-* ChargePeriodStart
-* ChargePeriodEnd
-* BillingPeriodStart
 * BillingPeriodEnd
+* BillingPeriodStart
+* ChargePeriodEnd
+* ChargePeriodStart
+* ServiceName
 
 ## Example SQL Query
 ```

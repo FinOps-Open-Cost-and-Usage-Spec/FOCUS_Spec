@@ -12,7 +12,7 @@ The FOCUS spec supports providers specifying the services and product offerings 
 * ServiceName
 * ServiceSubcategory
 
-## Indirectly Dependent Columns
+## Supporting Columns
 * Provider
 * SkuId
 

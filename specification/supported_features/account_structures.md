@@ -17,9 +17,6 @@ A billing account is the account where invoices are generated. Each billing acco
 * SubAccountName
 * SubAccountType
 
-## Indirectly Dependent Columns
-
-
 ## Example SQL Query
 ```
 SELECT

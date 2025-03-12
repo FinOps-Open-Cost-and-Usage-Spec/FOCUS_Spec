@@ -3,16 +3,19 @@
 The FOCUS specification is designed to meet the needs of FinOps practitioners in numerous scenarios. The following section contains features supported by the FOCUS specification. This list does not represent all possible combinations or use of FOCUS data but does represent core capabilities that the FOCUS specification supports.  
 
 !INCLUDE "account_structures.md",1
-!INCLUDE "invoice_cost_and_time_period.md",1
-!INCLUDE "compare_billed_cost_per_subaccount_to_budget.md",1
-!INCLUDE "compare_billed_and_effective_costs.md",1
-!INCLUDE "verify_compare_track_unit_prices.md",1
+!INCLUDE "charge_categorization.md",1
+!INCLUDE "commit_usage_and_under_usage.md",1
 !INCLUDE "cost_and_usage_attribution.md,1
+!INCLUDE "cost_comparison.md",1
 !INCLUDE "data_granularity.md",1
+!INCLUDE "effective_costs.md",1
+!INCLUDE "invoice_cost_and_time_period.md",1
+!INCLUDE "location.md",1
+!INCLUDE "marketplace_purchase.md",1
 !INCLUDE "provider_services.md",1
 !INCLUDE "resource_usage.md",1
+!INCLUDE "schema_metadata.md",1
 !INCLUDE "service_categorization.md",1
-!INCLUDE "location.md",1
-!INCLUDE "commit_usage_and_underusage.md",1
-!INCLUDE "cost_comparison.md",1
-!INCLUDE "charge_categorization.md",1
+!INCLUDE "verify_compare_track_unit_prices.md",1
+
+

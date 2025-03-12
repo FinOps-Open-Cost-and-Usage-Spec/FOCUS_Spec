@@ -8,12 +8,12 @@ FOCUS data should be consistent with the costs indicated on payable invoices. Th
 
 ## Directly Dependent Columns
 * BilledCost
-* ChargePeriodStart
 * ChargePeriodEnd
+* ChargePeriodStart
 
-## Indirectly Dependent Columns
-
-
+## Supporting  Columns
+* ProviderName
+* ServiceName
 
 ## Example SQL Query
 ```

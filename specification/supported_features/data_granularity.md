@@ -8,12 +8,18 @@ The FOCUS schema supports multiple levels of cost and usage data granularity. Th
 
 ## Directly Dependent Columns
 * ResourceId
-* ChargePeriodStart
+* ResourceName
 * ChargePeriodEnd
+* ChargePeriodStart
 
-## Indirectly Dependent Columns
-
-
+## Supporting Columns
+* BilledCost
+* ConsumedQuantity
+* ConsumedUnit
+* EffectiveCost
+* ListCost
+* PricingCurrency
+* PricingUnit
 
 ## Example SQL Query
 ```

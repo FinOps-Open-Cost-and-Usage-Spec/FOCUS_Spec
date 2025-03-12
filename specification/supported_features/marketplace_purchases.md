@@ -7,8 +7,8 @@
 The FOCUS specification support cost and usage data for Marketplace purchases and their associated costs. It also supports the reporting of EffectiveCost for usage from the Provider.  
 
 ## Directly Dependent Columns
-* Provider
 * InvoiceIssuer
+* Provider
 
 ## Supporting Columns
 * BilledCost
