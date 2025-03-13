@@ -44,10 +44,10 @@ The entire *commitment discount* is billed _once_ during the first *charge perio
 ```json
 [
     {   
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2024-01-01T00:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2024-01-01T00:00:00Z",
         "ChargeCategory": "Purchase",
         "ChargeFrequency": "One-Time",
         "PricingCategory": "Standard",
@@ -68,10 +68,10 @@ The *commitment discount* is billed across all 8,760 (`24 hours * 365 days`) *ch
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Purchase",
         "ChargeFrequency": "Recurring",
         "PricingCategory": "Standard",
@@ -94,10 +94,10 @@ With a 50/50 split, half of the commitment is billed _once_ during the first *ch
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2024-01-01T00:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2024-01-01T00:00:00Z",
         "ChargeCategory": "Purchase",
         "ChargeFrequency": "One-Time",
         "PricingCategory": "Standard",
@@ -109,10 +109,10 @@ With a 50/50 split, half of the commitment is billed _once_ during the first *ch
         "CommitmentDiscountUnit": "USD"
     },
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Purchase",
         "ChargeFrequency": "Recurring",
         "PricingCategory": "Standard",
@@ -144,10 +144,10 @@ In this scenario, one eligible *resource* runs for the full hour and consumes &d
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -171,10 +171,10 @@ In this situation, the full eligible, &dollar;1.00 amount remained unutilized an
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -198,10 +198,10 @@ In this scenario, one eligible *resource* runs for the full hour and consumes &d
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -216,10 +216,10 @@ In this scenario, one eligible *resource* runs for the full hour and consumes &d
         "CommitmentDiscountUnit": "USD"
     },
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -243,10 +243,10 @@ In this scenario, one eligible *resource* runs for the full hour and is charged 
 ```json
 [
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Committed",
@@ -261,10 +261,10 @@ In this scenario, one eligible *resource* runs for the full hour and is charged 
         "CommitmentDiscountUnit": "USD"
     },
     {
-        "BillingPeriodStartDate": "2023-01-01T00:00:00Z",
-        "BillingPeriodEndDate": "2023-02-01T00:00:00Z",
-        "ChargePeriodStartDate": "2023-01-01T00:00:00Z",
-        "ChargePeriodEndDate": "2023-01-01T01:00:00Z",
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
         "ChargeCategory": "Usage",
         "ChargeFrequency": "Usage-Based",
         "PricingCategory": "Standard",
@@ -272,7 +272,7 @@ In this scenario, one eligible *resource* runs for the full hour and is charged 
         "ConsumedQuantity": 1,
         "ConsumedUnit": "Hour",
         "BilledCost": 0.50,
-        "EffectiveCost": 0.00
+        "EffectiveCost": 0.50
     }
 ]
 ```
