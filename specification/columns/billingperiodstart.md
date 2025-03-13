@@ -1,6 +1,6 @@
 # Billing Period Start
 
-Billing Period Start represents the [*inclusive*](#glossary:inclusivebound) start date and time of a [*billing period*](#glossary:billing-period). For example, a time period where BillingPeriodStart is '2024-01-01T00:00:00Z' and [BillingPeriodEnd](#billingperiodend) is '2024-02-01T00:00:00Z' includes charges for January, since BillingPeriodStart is inclusive, but does not include charges for February since BillingPeriodEnd is [*exclusive*](#glossary:exclusivebound).
+Billing Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a [*billing period*](#glossary:billing-period). For example, a time period where Billing Period Start is '2024-01-01T00:00:00Z' and [Billing Period End](#billingperiodend) is '2024-02-01T00:00:00Z' includes charges for January since Billing Period Start represents the *inclusive start bound*, but does not include charges for February since BillingPeriodEnd represents the [*exclusive end bound*](#glossary:exclusiveendbound).
 
 The BillingPeriodStart column adheres to the following requirements:
 
@@ -8,7 +8,7 @@ The BillingPeriodStart column adheres to the following requirements:
 * BillingPeriodStart MUST be of type Date/Time.
 * BillingPeriodStart MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * BillingPeriodStart MUST NOT be null.
-* BillingPeriodStart MUST be the *inclusive beginning bound* of the *billing period*.
+* BillingPeriodStart MUST be the *inclusive start bound* of the *billing period*.
 
 ## Column ID
 
@@ -20,7 +20,7 @@ Billing Period Start
 
 ## Description
 
-The [*inclusive*](#glossary:inclusivebound) start date and time of a [*billing period*](#glossary:billing-period).
+The *inclusive start bound* of a *billing period*.
 
 ## Content Constraints
 
