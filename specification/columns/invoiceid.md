@@ -12,13 +12,6 @@ The Invoice ID column adheres to the following requirements:
 * InvoiceId MAY be generated prior to an invoice being issued.
 * Where a pre-generated invoice or provisional invoice exists, it MUST be associated with the related *charge* and BillingAccountId.
 
-For credit handling the Invoice ID column adheres to the following requirements:
-* Credits related to current billing period:
-  * InvoiceId MUST NOT be null.
-  * ChargeClass MUST be correction in the current *billing period*.
-* Credits related to a previous billing period:
-  * InvoiceId MUST contain the Invoice Id related to the previous *billing period* where a credit issued in the current billing period relates to a previous *billing period*.
-  * ChargeClass MUST be *correction*.
 
 See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
