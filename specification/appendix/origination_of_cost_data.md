@@ -5,7 +5,7 @@ Cost data presented in the billing datasets originates from various sources depe
 * [Provider](#provider): The entity that made the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for purchase.
 * [Publisher](#publisher): The entity that produced the *resources* or *services* that were purchased.
 * [Invoice Issuer](#invoiceissuer): The entity responsible for invoicing for the *resources* or *services* consumed.
-* [Host Provider](#hostprovider): The entity whose *resources* or *services* are used by the Service Provider to make their *resources* or *services* available.
+* [Host Provider](#hostprovider): The entity whose *resources* or *services* are used by the Provider to make their *resources* or *services* available.
 * [Data Generator](#datagenerator): The entity that generated the FOCUS dataset.
 
 The value for each of these may be different depending on the various purchasing scenarios for *resources* or *services*. Use cases for purchasing direct, via a Managed Service Provider (MSP), via a cloud marketplace, and from internal service offerings were considered. The table below presents a few scenarios to show how the value for each dimension may change based on the purchasing scenario.
