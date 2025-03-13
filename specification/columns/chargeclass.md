@@ -9,9 +9,8 @@ The ChargeClass column adheres to the following requirements:
 * ChargeClass nullability is defined as follows:
   * ChargeClass MUST be null when the row does not represent a correction or when it represents a correction within the current *billing period*.
   * ChargeClass MUST NOT be null when the row represents a correction to a previously invoiced *billing period*.
-* When ChargeClass is not null, ChargeClass adheres to the following additional requirements:
-  * ChargeClass MUST be one of the allowed values.
-  * ChargeClass MUST be "Correction".
+* ChargeClass MUST be "Correction" when ChargeClass is not null.
+
 
 ## Column ID
 
