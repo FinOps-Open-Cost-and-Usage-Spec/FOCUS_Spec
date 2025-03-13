@@ -31,7 +31,7 @@ the specification.
 
 ## Versioning the Specification
 
-Changes to the [specification](./specification/overview.md) are versioned based on [Semantic Versioning 2.0](https://semver.org/spec/v2.0.0.html) and described in [CHANGELOG.md](CHANGELOG.md). However versioning does not strictly follow Semantic Versioning, in terms of implied compatibility in version naming. Layout changes are not versioned. Specific implementations of the specification should specify which version they implement.
+Changes to the [specification](./specification/overview.md) are described in [CHANGELOG.md](CHANGELOG.md) and versioned based on [Semantic Versioning 2.0](https://semver.org/spec/v2.0.0.html). However, versioning does not strictly follow SemVer in terms of implied compatibility via major, minor, and patch versions. Layout changes are not versioned. Specific implementations of the specification should specify which version they implement.
 
 ## Project Naming
 
