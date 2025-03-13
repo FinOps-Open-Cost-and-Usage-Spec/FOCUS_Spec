@@ -11,7 +11,6 @@ The ChargeClass column adheres to the following requirements:
   * ChargeClass MUST NOT be null when the row represents a correction to a previously invoiced *billing period*.
 * ChargeClass MUST be "Correction" when ChargeClass is not null.
 
-
 ## Column ID
 
 ChargeClass
