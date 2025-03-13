@@ -11,7 +11,7 @@ The following baseline conditions apply to the scenarios described below:
 * AwesomeCorp has signed an agreement with SaaS provider Acme Co to use their database services
 * On April 1 2025, AwesomeCorp agrees to spend &dollar;1200 (post-discounts) in the upcoming 12-months
 * AwesomeCorp receives a 20% negotiated discount in return for the commitment
-* Acme co calculates the spend counted against the agreements after discounts (like the negotiated discounts). Other providers may use the cost after discounts i.e., using List Cost for calculating the spend commitment.
+* Acme Co calculates the spend counted against the agreements after discounts (like the negotiated discounts). Other providers may use the cost after discounts i.e., using List Cost for calculating the spend commitment.
 
 ## Scenario A: Billed in arrears
 
@@ -25,13 +25,13 @@ For this scenario, contract terms additionally include the following terms:
 
 * Committed spend can be used anytime within the 1-year term
 
-AwesomeCorps consumption looks like this:
+AwesomeCorp's consumption looks like this:
 
 * In the first month, AwesomeCorp uses &dollar;48 of services (4 server hours). This usage has a List Cost of &dollar;60 (before discounts)
 * In the following 2 months, AwesomeCorp has some more usage
 * For the final 9 months, AwesomeCorp does not use Acme services
 
-**Example FOCUS dataset:** [Scenario A1 entries](https://docs.google.com/spreadsheets/d/1H69HmngVv-mKpFR-sveY-fSAdR49syqQd7AKOPPQ64A/edit?gid=1740845023#gid=1740845023&range=A15)
+**Example FOCUS dataset:** [Scenario A1 entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1987749478#gid=1987749478&range=A15)
 
 Note the following details in the dataset:
 
@@ -43,13 +43,13 @@ The spend agreement with Acme requires the customer to spend a minimum amount in
 
 * A minimum of &dollar;60 needs to be spent each month
 
-AwesomeCorps consumption looks like this:
+AwesomeCorp's consumption looks like this:
 
 * In the first month, the AwesomeCorp uses &dollar;48 of services (4 server hours). This usage has a List Cost of &dollar;60 (before discounts). For this month, Acme charges &dollar;12 (ListCost of &dollar;15) for not meeting the monthly minimum
 * In the following 2 months, AwesomeCorp has usage at or above the minimum requirement
 * For the final 9 months, AwesomeCorp does not use Acme services
 
-**Example FOCUS dataset:** [Scenario A2 entries](https://docs.google.com/spreadsheets/d/1H69HmngVv-mKpFR-sveY-fSAdR49syqQd7AKOPPQ64A/edit?gid=1740845023#gid=1740845023&range=A25)
+**Example FOCUS dataset:** [Scenario A2 entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1987749478#gid=1987749478&range=A25)
 
 Note the following details in the dataset:
 
@@ -66,7 +66,7 @@ For this scenario B, contract terms include the following terms in addition to t
 
 Scenario B1 is similar to scenario A1 with the difference being that it's a pre-paid contract.
 
-**Example FOCUS dataset:** [Scenario B1 entries](https://docs.google.com/spreadsheets/d/1H69HmngVv-mKpFR-sveY-fSAdR49syqQd7AKOPPQ64A/edit?gid=1740845023#gid=1740845023&range=A46)
+**Example FOCUS dataset:** [Scenario B1 entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1987749478#gid=1987749478&range=A50)
 
 Note the following details in the dataset:
 
@@ -79,7 +79,7 @@ Note the following details in the dataset:
 
 Scenario B2 is similar to A2 with the difference being that it's a pre-paid contract.
 
-**Example FOCUS dataset:** [Scenario B2 entries](https://docs.google.com/spreadsheets/d/1H69HmngVv-mKpFR-sveY-fSAdR49syqQd7AKOPPQ64A/edit?gid=1740845023#gid=1740845023&range=A58)
+**Example FOCUS dataset:** [Scenario B2 entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1987749478#gid=1987749478&range=A58)
 
 Note the following details in the dataset:
 
