@@ -1,6 +1,6 @@
 # SKU Price Details
 
-SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties associated with a specific [SKU Price ID](#skupriceid). These properties include qualitative and quantitative properties of a [*SKUs*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing details (e.g., pricing terms, tiers, etc.), excluding dynamic or negotiable pricing elements such as unit price amounts, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
+SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties (key-value pairs) associated with a specific [SKU Price ID](#skupriceid). These properties include qualitative and quantitative properties of a [*SKUs*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing properties (e.g., pricing terms, tiers, etc.), excluding dynamic or negotiable pricing elements such as unit price amounts, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
 
 The composition of properties associated with a specific *SKU Price* may differ across providers and across *SKUs* within the same provider. However, the exclusion of dynamic or negotiable pricing properties should ensure that all charges with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different billing periods and billing accounts within a provider.
 
@@ -9,6 +9,8 @@ SKU Price Details helps practitioners understand and distinguish *SKU Prices*, e
 The SkuPriceDetails column adheres to the following requirements:
 
 * SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
+* SkuPriceDetails MUST be of type String.
+* SkuPriceDetails MUST conform to [StringHandling](#stringhandling) requirements.
 * SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
 * Property key SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * SkuPriceDetails nullability is defined as follows:
@@ -56,7 +58,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 | Column type     | Dimension        |
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
-| Data type       | JSON             |
+| Data type       | String           |
 | Value format    | [Key-Value Format](#key-valueformat) |
 
 ## Introduced (version)
