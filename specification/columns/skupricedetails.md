@@ -18,8 +18,8 @@ The SkuPriceDetails column adheres to the following requirements:
   * SkuPriceDetails MAY be null when SkuPriceId is not null.
 * When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:
   * SkuPriceDetails MUST be associated with a given [ResourceId](#resourceid) or [ServiceName](#servicename) used or purchased.
-  * SkuPriceDetails MUST NOT contain properties which are not applicable to the corresponding SkuPriceId.
-  * SkuPriceDetails MAY contain properties which are already captured in other dedicated columns.
+  * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
   * SkuPriceDetails SHOULD remain consistent over time for a given SkuPriceId.
   * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
     * Existing SkuPriceDetails properties SHOULD remain consistent over time.
