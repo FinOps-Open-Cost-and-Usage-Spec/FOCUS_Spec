@@ -12,8 +12,8 @@ The Tags column adheres to the following requirements:
 * Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
 * Tags MAY be null.
 * When Tags is not null, Tags adheres to the following additional requirements:
-  * Tags MUST contain all user-defined and provider-defined tags.
-  * Tags MUST only contain finalized tags.
+  * Tags MUST include all user-defined and provider-defined tags.
+  * Tags MUST only include finalized tags.
   * Tag key with a non-null value for a given *resource* SHOULD be included in the Tags column.
   * Tag key with a null value for a given *resource* MAY be included in the Tags column depending on the provider's tag finalization process.
   * Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
