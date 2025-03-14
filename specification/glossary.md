@@ -116,6 +116,10 @@ A company or organization that provides outsourced management and support of a r
 
 A FOCUS-defined column that provides numeric values, allowing for aggregation operations such as arithmetic operations (sum, multiplication, averaging etc.) and statistical operations.
 
+<a name="glossary:national-currency"><b>National Currency</b></a>
+
+A government-issued currency (e.g. US dollars, Euros).
+
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
 A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
@@ -187,3 +191,7 @@ A Resource or Provider-defined construct for grouping resources and/or other Pro
 <a name="glossary:term"><b>Term</b></a>
 
 A duration of a contractual agreement like with a [*commitment discount*](#glossary:commitment-discount) or [*negotiated discount*](#glossary:negotiated-discount).
+
+<a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
+
+A proprietary currency (e.g. credits, tokens) issued by providers and independent of government regulation.
