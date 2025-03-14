@@ -140,6 +140,10 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a provider.
 
+<a name="glossary:pricing-currency"><b>Pricing Currency</b></a>
+
+An identifier that represents the currency that a charge for resources and/or services was priced in.
+
 <a name="glossary:provider"><b>Provider</b></a>
 
 An entity that made internal or 3rd party resources and/or services available for purchase.
