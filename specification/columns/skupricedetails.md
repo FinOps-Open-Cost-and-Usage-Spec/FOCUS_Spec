@@ -10,7 +10,7 @@ The SkuPriceDetails column adheres to the following requirements:
   * Additional properties MAY be added to SkuPriceDetails going forward for a given SkuPriceId.
   * Properties SHOULD NOT be removed from SkuPriceDetails for a given SkuPriceId, once they have been included.
   * Individual properties SHOULD NOT be modified for a given SkuPriceId and SHOULD remain consistent over time.
-* SkuPriceDetails keys and their values SHOULD remain consistent across comparable SKUs having that property.
+* The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
 * SkuPriceDetails MUST NOT contain properties which are not applicable to the corresponding SkuPriceId.
 * SkuPriceDetails MAY contain properties which are already captured in other dedicated columns.
 * SkuPriceDetails properties with a [numeric](#numeric-format) value MUST represent the value for a single [PricingUnit](#pricingunit).
