@@ -22,10 +22,7 @@ Your input ...
 
 ## 2. **Use Case** *
 Describe the use case(s) that this work item addresses.
-Review https://focus.finops.org/use-cases/ for examples of existing use cases.
-- **What is the use case?**: Write the use case(s) this problem solves.  Use one of the formats:
--- "As a <FinOps persona> I want to <elaborate on the use case>"
--- 1 to 2 sentences detailing the use case(s).
+Review [How to Craft Use Cases](/supporting_content/usecases/howtocraftusecases.md) for guidance on crafting use cases.
 
 Your input ...
 
