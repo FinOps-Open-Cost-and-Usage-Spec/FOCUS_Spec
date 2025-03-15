@@ -28,7 +28,7 @@ The SkuId column adheres to the following requirements:
   * SkuId MAY be null in all other cases.
 * SkuId MUST equal the SkuId for all other charges for the same *SKU* regardless of factors that impact the price but not the functionality.
   * SkuId MUST be consistent across billing accounts or agreements.
-  * SkuId MUST be consistent across [PricingCategory](#pricingcategory) values..
+  * SkuId MUST be consistent across [PricingCategory](#pricingcategory) values.
   * SkuId MUST be consistent across regions.
   * SkuId MUST be consistent across service level agreement (SLA) variations..
   * SkuId MUST be consistent across availability options.
