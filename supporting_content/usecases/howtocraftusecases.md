@@ -13,17 +13,12 @@ This document is for use in generating use cases for 1.2 work items and will be 
 
 
 ## Requirements
-Reference [FOCUS Use Case Library](https://focus.finops.org/use-cases/) for examples.  All use cases will end up here on the public website.
-
-Use cases must be built with the [FinOps Persona](https://www.finops.org/framework/personas/) in mind: You will need to select at least 1.
-
-Use cases must align with a [Capability](https://www.finops.org/framework/personas/) in mind:  You will need to select at least 1.
-
-Use cases should be brief and clearly stated but do not need to be in the form of a user story or a complete sentence.  The Context section for a use case is where to elaborate and describe it further.
-
-Use cases must reference [FOCUS columns](https://focus.finops.org/focus-columns/).  Use existing columns and new, upcoming ones.  Add only valuable/pertinent columns to the use case.
-
-A use case can be accompanied by a SQL query.  This will be built from the columns and we will help you build these.  The Foundation will determine the final version of the SQL query.
+* Reference [FOCUS Use Case Library](https://focus.finops.org/use-cases/) for examples.  All use cases will end up here on the public website.
+* Use cases must be built with the [FinOps Persona](https://www.finops.org/framework/personas/) in mind: You will need to select at least 1.
+* Use cases must align with a [Capability](https://www.finops.org/framework/personas/) in mind:  You will need to select at least 1.
+* Use cases should be brief and clearly stated but do not need to be in the form of a user story or a complete sentence.  The Context section for a use case is where to elaborate and describe it further.
+* Use cases must reference [FOCUS columns](https://focus.finops.org/focus-columns/).  Use existing columns and new, upcoming ones.  Add only valuable/pertinent columns to the use case.
+* A use case can be accompanied by a SQL query.  This will be built from the columns and we will help you build these.  The Foundation will determine the final version of the SQL query.
 
 ## Steps
 
