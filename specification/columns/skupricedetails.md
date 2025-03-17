@@ -14,7 +14,7 @@ The SkuPriceDetails column adheres to the following requirements:
 * SkuPriceDetails MUST NOT contain properties which are not applicable to the corresponding SkuPriceId.
 * SkuPriceDetails MAY contain properties which are already captured in other dedicated columns.
 * SkuPriceDetails properties with a [numeric](#numeric-format) value MUST represent the value for a single [PricingUnit](#pricingunit).
-* SkuPriceDetails keys MUST NOT begin with the string "F_" unless it is a FOCUS-defined property 
+* SkuPriceDetails keys MUST NOT begin with the string "F_" unless it is a FOCUS-defined property.
 * SkuPriceDetails properties that represent common constructs listed in the FOCUS-Defined Properties section below SHOULD use the defined keys.
   * Values for FOCUS-defined properties MUST be the specified data type for that property in the section below.
   * Numeric values for FOCUS-defined properties MUST be the specified unit of measure for that property in the section below.
