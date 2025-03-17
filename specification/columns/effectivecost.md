@@ -20,7 +20,9 @@ The EffectiveCost column adheres to the following requirements:
 * When ChargeCategory is not "Usage" or "Purchase", EffectiveCost adheres to the following additional requirements:
   * EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related charges.
   * EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
-* When CommitmentDiscountStatus is "Unused", the EffectiveCost MUST be the total committed cost consumed for the given charge period minus related usage charges.
+* Charges for a given [CommitmentDiscountId](#commitmentdiscountid) adhere to the following additional requirements:
+  * The sum of EffectiveCost where ChargeCategory is "Purchase" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage".
+  * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".
 
 ## Column ID
 
