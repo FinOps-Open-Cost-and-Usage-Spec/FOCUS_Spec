@@ -17,14 +17,14 @@ Current column mappings found in available data sets:
 
 This example demonstrates a commitment discount that gets 50% off list price when the organization has an 20% discount on all usage.
 
-| ChargeDescription | ChargePeriodStart |  ListCost | ContractedCost | BilledCost | EffectiveCost |
-| ----------------- | ----------------- | --------: | -------------: | ---------: | ------------: |
-| Reservation       | Jan 1             |   $365.00 |        $365.00 |    $365.00 |         $0.00 |
-| VM usage          | Jan 1             |     $2.00 |          $1.80 |      $0.00 |         $1.00 |
-| VM usage          | Jan 2             |     $2.00 |          $1.80 |      $0.00 |         $1.00 |
-| VM usage          | ...               |       ... |            ... |        ... |           ... |
-| VM usage          | Dec 31            |     $2.00 |          $1.80 |      $0.00 |         $1.00 |
-| Sum of 365 days   | Jan 1-Dec 31      | $1,095.00 |      $1,022.00 |       $365 |          $365 |
+| ChargeDescription | AmortizationClass | ChargePeriodStart |  ListCost | ContractedCost | BilledCost | EffectiveCost |
+| ----------------- | ---------------- | ----------------- | --------: | -------------: | ---------: | ------------: |
+| Reservation       | Principal        | Jan 1             |   $365.00 |        $365.00 |    $365.00 |         $0.00 |
+| VM usage          | Amortized Charge | Jan 1             |     $2.00 |          $1.80 |      $0.00 |         $1.00 |
+| VM usage          | Amortized Charge | Jan 2             |     $2.00 |          $1.80 |      $0.00 |         $1.00 |
+| VM usage          | Amortized Charge | ...               |       ... |            ... |        ... |           ... |
+| VM usage          | Amortized Charge | Dec 31            |     $2.00 |          $1.80 |      $0.00 |         $1.00 |
+| Sum of 365 days   | (sum)            | Jan 1-Dec 31      | $1,095.00 |      $1,022.00 |       $365 |          $365 |
 
 If you SUM the ListCost or ContractedCost columns as is, you'll be double counting the original "Reservation" charge and over-counting the savings present in the e.g. EffectiveCost column. We need an attribute that allows us to selectively exclude upfront payments from such calculations, so that we are only SUMming the usage charges that benefit from the original upfront payment (or "unused commitment" line items).
 
