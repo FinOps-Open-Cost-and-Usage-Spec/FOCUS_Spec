@@ -22,7 +22,6 @@ The SkuPriceDetails column adheres to the following requirements:
   * SkuPriceDetails MAY be null when SkuPriceId is not null.
   * SkuPriceDetails MUST be null when SkuPriceId is null.
 
-
 ## Examples
 
 ```json
