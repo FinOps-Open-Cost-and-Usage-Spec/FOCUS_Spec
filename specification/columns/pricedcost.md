@@ -6,7 +6,7 @@ The PricedCost column adheres to the following requirements:
 
 * PricedCost presence in a [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
   * PricedCost MUST be present in a FOCUS dataset when the provider presents prices in a virtual currency (e.g. credits, tokens).
-  * PricedCost MUST be present in a FOCUS dataset when the provider presents prices and bills in different national currencies (e.g. priced in USD and billed in EUR).
+  * PricedCost MUST be present in a FOCUS dataset when the provider presents prices and usage in different national currencies (e.g. prices in USD and usage in EUR).
   * PricedCost MAY be present in a FOCUS dataset in all other cases.
 * PricedCost MUST be of type Decimal.
 * PricedCost MUST conform to [NumericFormat](#numericformat) requirements.

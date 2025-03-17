@@ -6,7 +6,7 @@ The PricingCurrencyListUnitPrice column adheres to the following requirements:
 
 * PricingCurrencyListUnitPrice presence in a [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
   * PricingCurrencyListUnitPrice MUST be present in a FOCUS dataset when the provider presents prices in a virtual currency (e.g. credits, tokens).
-  * PricingCurrencyListUnitPrice MUST be present in a FOCUS dataset when the provider presents prices and bills in different national currencies (e.g. priced in USD and billed in EUR).
+  * PricingCurrencyListUnitPrice MUST be present in a FOCUS dataset when the provider presents prices and usage in different national currencies (e.g. prices in USD and usage in EUR).
   * PricingCurrencyListUnitPrice MAY be present in a FOCUS dataset in all other cases.
 * PricingCurrencyListUnitPrice MUST be of type Decimal.
 * PricingCurrencyListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
