@@ -266,61 +266,62 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 This table maps the evolution of the specification, showcasing column introductions and updates from its initial version 0.5 to the comprehensive revisions in "1.0-preview", "1.0" and beyond.
 
-| **Column ID**              | **Revision Introduced** | **Status**                                 |
-| -------------------------- | ----------------------- | ------------------------------------------ |
-| AmortizedCost              | 0.5                     | Renamed to EffectiveCost in v1.0-preview   |
-| AvailabilityZone           | 0.5                     |                                            |
-| BilledCost                 | 0.5                     |                                            |
-| BillingAccountId           | 0.5                     |                                            |
-| BillingAccountName         | 0.5                     |                                            |
-| BillingCurrency            | 0.5                     |                                            |
-| BillingPeriodEnd           | 0.5                     |                                            |
-| BillingPeriodStart         | 0.5                     |                                            |
-| CapacityReservationId      | 1.1                     |                                            |
-| CapacityReservationStatus  | 1.1                     |                                            |
-| ChargeType                 | 0.5                     | Renamed to ChargeCategory in v1.0-preview  |
-| ChargeCategory             | 1.0-preview             | Renamed from ChargeType in v1.0-preview    |
-| ChargeClass                | 1.0                     |                                            |
-| ChargeDescription          | 1.0-preview             |                                            |
-| ChargeFrequency            | 1.0-preview             |                                            |
-| ChargePeriodEnd            | 0.5                     |                                            |
-| ChargePeriodStart          | 0.5                     |                                            |
-| ChargeSubcategory          | 1.0-preview             | Removed in v1.0                            |
-| CommitmentDiscountCategory | 1.0-preview             |                                            |
-| CommitmentDiscountId       | 1.0-preview             |                                            |
-| CommitmentDiscountName     | 1.0-preview             |                                            |
-| CommitmentDiscountStatus   | 1.0                     |                                            |
-| CommitmentDiscountType     | 1.0-preview             |                                            |
-| CommitmentDiscountQuantity | 1.1                     |                                            |
-| CommitmentDiscountUnit     | 1.1                     |                                            |
-| ConsumedQuantity           | 1.0                     | Renamed from UsageQuantity in v1.0         |
-| ConsumedUnit               | 1.0                     | Renamed from UsageUnit in v1.0             |
-| ContractedCost             | 1.0                     |                                            |
-| ContractedUnitPrice        | 1.0                     |                                            |
-| EffectiveCost              | 1.0-preview             | Renamed from AmortizedCost in v1.0-preview |
-| InvoiceIssuerName          | 0.5                     |                                            |
-| ListCost                   | 1.0-preview             |                                            |
-| ListUnitPrice              | 1.0-preview             |                                            |
-| PricingCategory            | 1.0-preview             |                                            |
-| PricingQuantity            | 1.0-preview             |                                            |
-| PricingUnit                | 1.0-preview             |                                            |
-| ProviderName               | 0.5                     |                                            |
-| PublisherName              | 0.5                     |                                            |
-| Region                     | 0.5                     | Renamed to RegionId in v1.0                |
-| RegionId                   | 1.0                     | Renamed from Region in v1.0                |
-| RegionName                 | 1.0                     |                                            |
-| ResourceId                 | 0.5                     |                                            |
-| ResourceName               | 0.5                     |                                            |
-| ResourceType               | 1.0-preview             |                                            |
-| ServiceCategory            | 0.5                     |                                            |
-| ServiceName                | 0.5                     |                                            |
-| ServiceSubcategory         | 1.1                     |                                            |
-| SkuId                      | 1.0-preview             |                                            |
-| SkuMeter                   | 1.1                     |                                            |
-| SkuPriceDetails            | 1.1                     |                                            |
-| SkuPriceId                 | 1.0-preview             |                                            |
-| SubAccountId               | 0.5                     |                                            |
-| SubAccountName             | 0.5                     |                                            |
-| Tags                       | 1.0-preview             |                                            |
-| UsageQuantity              | 1.0-preview             | Renamed to ConsumedQuantity in v1.0        |
-| UsageUnit                  | 1.0-preview             | Renamed to ConsumedUnit in v1.0            |
+| **Column ID**                | **Revision Introduced** | **Status**        |
+|------------------------------|-------------------------|-------------------|
+| AmortizedCost                | 0.5                     | Renamed to EffectiveCost in v1.0-preview |
+| AvailabilityZone             | 0.5                     |                   |
+| BilledCost                   | 0.5                     |                   |
+| BillingAccountId             | 0.5                     |                   |
+| BillingAccountName           | 0.5                     |                   |
+| BillingCurrency              | 0.5                     |                   |
+| BillingPeriodEnd             | 0.5                     |                   |
+| BillingPeriodStart           | 0.5                     |                   |
+| CapacityReservationId        | 1.1                     |                   |
+| CapacityReservationStatus    | 1.1                     |                   |
+| ChargeType                   | 0.5                     | Renamed to ChargeCategory in v1.0-preview |
+| ChargeCategory               | 1.0-preview             | Renamed from ChargeType in v1.0-preview |
+| ChargeClass                  | 1.0                     |                   |
+| ChargeDescription            | 1.0-preview             |                   |
+| ChargeFrequency              | 1.0-preview             |                   |
+| ChargePeriodEnd              | 0.5                     |                   |
+| ChargePeriodStart            | 0.5                     |                   |
+| ChargeSubcategory            | 1.0-preview             | Removed in v1.0   |
+| CommitmentDiscountCategory   | 1.0-preview             |                   |
+| CommitmentDiscountId         | 1.0-preview             |                   |
+| CommitmentDiscountName       | 1.0-preview             |                   |
+| CommitmentDiscountStatus     | 1.0                     |                   |
+| CommitmentDiscountType       | 1.0-preview             |                   |
+| CommitmentDiscountQuantity   | 1.1                     |                   |
+| CommitmentDiscountUnit       | 1.1                     |                   |
+| ConsumedQuantity             | 1.0                     | Renamed from UsageQuantity in v1.0 |
+| ConsumedUnit                 | 1.0                     | Renamed from UsageUnit in v1.0 |
+| ContractedCost               | 1.0                     |                   |
+| ContractedUnitPrice          | 1.0                     |                   |
+| EffectiveCost                | 1.0-preview             | Renamed from AmortizedCost in v1.0-preview |
+| InvoiceIssuerName            | 0.5                     |                   |
+| ListCost                     | 1.0-preview             |                   |
+| ListUnitPrice                | 1.0-preview             |                   |
+| PricingCategory              | 1.0-preview             |                   |
+| PricingQuantity              | 1.0-preview             |                   |
+| PricingUnit                  | 1.0-preview             |                   |
+| ProviderName                 | 0.5                     |                   |
+| PublisherName                | 0.5                     |                   |
+| Region                       | 0.5                     | Renamed to RegionId in v1.0 |
+| RegionId                     | 1.0                     | Renamed from Region in v1.0 |
+| RegionName                   | 1.0                     |                   |
+| ResourceId                   | 0.5                     |                   |
+| ResourceName                 | 0.5                     |                   |
+| ResourceType                 | 1.0-preview             |                   |
+| ServiceCategory              | 0.5                     |                   |
+| ServiceName                  | 0.5                     |                   |
+| ServiceSubcategory           | 1.1                     |                   |
+| SkuId                        | 1.0-preview             |                   |
+| SkuMeter                     | 1.1                     |                   |
+| SkuPriceDetails              | 1.1                     |                   |
+| SkuPriceId                   | 1.0-preview             |                   |
+| SubAccountId                 | 0.5                     |                   |
+| SubAccountName               | 0.5                     |                   |
+| Tags                         | 1.0-preview             |                   |
+| UsageQuantity                | 1.0-preview             | Renamed to ConsumedQuantity in v1.0 |
+| UsageUnit                    | 1.0-preview             | Renamed to ConsumedUnit in v1.0 |
+
