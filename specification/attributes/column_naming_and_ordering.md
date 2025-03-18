@@ -35,6 +35,7 @@ When the provider publishes a non-FOCUS cost and usage dataset, the following ap
 
 * Custom columns MUST be included for all information not covered by FOCUS columns that exists in the latest version of non-FOCUS cost and usage datasets.
 * Data generators MAY allow practitioners to select a subset of FOCUS or custom columns.
+
 ### Column Names
 
 * All columns defined by FOCUS MUST follow the following rules:
