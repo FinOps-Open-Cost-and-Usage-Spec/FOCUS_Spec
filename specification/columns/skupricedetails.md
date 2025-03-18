@@ -26,8 +26,8 @@ The SkuPriceDetails column adheres to the following requirements:
 
 ```json
 {
-    "AccessTier": "Archive",
-    "CoreCount": 4,
+    "F_StorageClass": "Archive",
+    "F_CoreCount": 4,
     "PreimumProcessing": true,
 }
 ```
