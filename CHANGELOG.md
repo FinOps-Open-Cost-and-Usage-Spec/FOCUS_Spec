@@ -266,7 +266,7 @@ This table maps the evolution of the specification, showcasing column introducti
 
 | **Column ID**                | **Revision Introduced** | **Status**        |
 |------------------------------|-------------------------|-------------------|
-| AmortizationClass          | 1.2                     |                                            |
+| AmortizationClass            | 1.2                     |                   |
 | AmortizedCost                | 0.5                     | Renamed to EffectiveCost in v1.0-preview |
 | AvailabilityZone             | 0.5                     |                   |
 | BilledCost                   | 0.5                     |                   |
