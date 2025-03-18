@@ -252,13 +252,13 @@ To ensure clarity and consistency across columns and requirements, it is importa
 #### Business & Contextual Requirements: Uniqueness
 
 ```markdown
-TODO
+* <ColumnId> MUST be a unique identifier within <Scope>.
 ```
 
 #### Business & Contextual Requirements: Fallback/Substitute Values
 
 ```markdown
-TODO
+* <ColumnId> MUST NOT duplicate <OtherColumnId> when <Condition>
 ```
 
 #### Business & Contextual Requirements: Relationships Outside the Spec
@@ -295,10 +295,8 @@ TODO
 * Patterns:
   * {ColumnId} MUST be a unique identifier within {Scope}.
   * {ColumnId} SHOULD be a fully-qualified identifier.
-  * {ColumnId} MUST be unique within a customer.
 * Examples:
   * BillingAccountId MUST be a unique identifier within a provider.
-  * BillingAccountName MUST be unique within a customer.
   * ResourceId SHOULD be a fully-qualified identifier.
 
 #### Column Aggregation
