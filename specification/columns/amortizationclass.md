@@ -28,7 +28,7 @@ Indicates how a row relates to amortization to identify and distinguish between 
 | :------------ | :------------- |
 | Column type   | Dimension      |
 | Feature level | Conditional    |
-| Allows nulls  | False          |
+| Allows nulls  | True           |
 | Data type     | String         |
 | Value format  | Allowed values |
 
