@@ -7,14 +7,12 @@ When mixing usage-based commitment discounts with and without *commitment discou
 Since providers have different rules for when and how *commitment discount flexibility* is or is not enabled and applied, the following, fictitious SKU pricing details are used in each example below, and each example will be categorized under sections with *commitment discount flexibility* enabled or disabled.
 
 ## SKUs & Rates
-+--------------+---------+-----------+----------------+--------------------------------+-----------------------+
 | ProviderName | Service | SkuId     | ListUnitPrice  | x_CommitmentDiscountUnitPrice  | x_NormalizationFactor |
-+--------------+---------+-----------+----------------+--------------------------------+-----------------------+
+|--------------|---------|-----------|----------------|--------------------------------|-----------------------|
 | TinyCloud    | Compute | VM_Small  | $0.50          | $0.25                          | 1                     |
 | TinyCloud    | Compute | VM_Medium | $1.00          | $0.50                          | 2                     |
 | TinyCloud    | Compute | VM_Large  | $2.00          | $1.00                          | 4                     |
 | TinyCloud    | Compute | VM_XLarge | $4.00          | $2.00                          | 8                     |
-+--------------+---------+-----------+----------------+--------------------------------+-----------------------+
 
 The above SKU pricing attributes show that this provider, *TinyCloud*, only has 1 service that offers 4 virtual machine SKUs at various list rates, *commitment discount* rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* rate. Usage-based *commitment discounts* with *commitment discount flexibility* can fully cover any combination of 1 or more SKUs where the sum of their normalization factor equals the normalization factor of the commitment discount.
 
