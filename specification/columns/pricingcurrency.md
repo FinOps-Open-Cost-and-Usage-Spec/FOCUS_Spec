@@ -12,7 +12,7 @@ The PricingCurrency column adheres to the following requirements:
   * PricingCurrency MUST be present in a FOCUS dataset when the provider presents prices and usage in different national currencies (e.g. prices in USD and usage in EUR).
   * PricingCurrency MAY be present in a FOCUS dataset in all other cases.
 * PricingCurrency MUST be of type String.
-* PricingCurrency MUST conform to [Currency Format](#currencyformat) requirements.
+* PricingCurrency MUST conform to [CurrencyFormat](#currencyformat) requirements.
 * PricingCurrency MUST NOT be null.
 
 ## Column ID
