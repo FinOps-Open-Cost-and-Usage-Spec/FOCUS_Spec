@@ -24,7 +24,7 @@ Priced Cost
 
 ## Description
 
-The cost of the [*charge*](#glossary:charge) as denominated in [Pricing Currency](#pricingcurrency),
+The cost of the [*charge*](#glossary:charge) as denominated in [Pricing Currency](#pricingcurrency).
 
 ## Usability Constraints
 
