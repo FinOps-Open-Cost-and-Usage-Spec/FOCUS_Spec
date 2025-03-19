@@ -13,13 +13,12 @@ When provider supports unit pricing concepts, The FOCUS Specification allows pra
 * Track fluctuations in unit prices over time.
 
 ## Directly Dependent Columns
-
 * ContractedUnitPrice
 * ListUnitPrice
 * SkuId
 * SkuPriceDetails
 * SkuPriceId
-* 
+ 
 ## Supporting Columns
 * BillingCurrency
 * BillingPeriodId
@@ -28,7 +27,7 @@ When provider supports unit pricing concepts, The FOCUS Specification allows pra
 
 ## Example SQL Query
 
-```sql
+``` sql
 SELECT DISTINCT
   SkuPriceId,
   BillingPeriodId,
