@@ -11,7 +11,7 @@ FOCUS data should be consistent with the costs indicated on payable invoices. Th
 * ChargePeriodEnd
 * ChargePeriodStart
 
-## Supporting  Columns
+## Supporting Columns
 * ProviderName
 * ServiceName
 
