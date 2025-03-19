@@ -8,8 +8,10 @@ FOCUS data should be consistent with the costs indicated on payable invoices. Th
 
 ## Directly Dependent Columns
 * BilledCost
-* ChargePeriodEnd
-* ChargePeriodStart
+* BillingCurrency
+* BillingPeriodEnd
+* BillingPeriodStart
+* InvoiceId
 
 ## Supporting Columns
 * ProviderName
@@ -18,11 +20,13 @@ FOCUS data should be consistent with the costs indicated on payable invoices. Th
 ## Example SQL Query
 ```
 SELECT
-  ChargePeriodStart,
-  ChargePeriodEnd,
+  BillingPeriodStart,
+  BillingPeriodEnd,
+  InvoiceId,
   SUM(BilledCost)
 FROM focus_data_table
 Group by
-  ChargePeriodStart,
-  ChargePeriodEnd
+  BillingPeriodStart,
+  BillingPeriodEnd,
+  InvoiceId
 ```
