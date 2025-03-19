@@ -4,23 +4,30 @@ The SKU Price Details column represents a list of relevant properties shared by 
 
 The SkuPriceDetails column adheres to the following requirements:
 
-* SkuPriceDetails MUST be in [KeyValueFormat](#key-valueformat).
-* SkuPriceDetails keys SHOULD be formatted in [PascalCase](#glossary:pascalcase).
-* SkuPriceDetails properties (both keys and values) MUST be shared across all charges having the same SkuPriceId, subject to the below provisions.
-  * Additional properties MAY be added to SkuPriceDetails going forward for a given SkuPriceId.
-  * Properties SHOULD NOT be removed from SkuPriceDetails for a given SkuPriceId, once they have been included.
-  * Individual properties SHOULD NOT be modified for a given SkuPriceId and SHOULD remain consistent over time.
-* The key for a property SHOULD remain consistent across comparable SKUs having that property and the values for this key SHOULD remain in a consistent format.
-* SkuPriceDetails MUST NOT contain properties which are not applicable to the corresponding SkuPriceId.
-* SkuPriceDetails MAY contain properties which are already captured in other dedicated columns.
-* SkuPriceDetails properties with a [numeric](#numeric-format) value MUST represent the value for a single [PricingUnit](#pricingunit).
-* SkuPriceDetails keys MUST NOT begin with the string "F_" unless it is a FOCUS-defined property.
-* SkuPriceDetails properties that represent common constructs listed in the FOCUS-Defined Properties section below SHOULD use the defined keys.
-  * Values for FOCUS-defined properties MUST be the specified data type for that property in the section below.
-  * Numeric values for FOCUS-defined properties MUST be the specified unit of measure for that property in the section below.
-* SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider includes a SkuPriceId.
-  * SkuPriceDetails MAY be null when SkuPriceId is not null.
+* SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
+* SkuPriceDetails MUST be of type String.
+* SkuPriceDetails MUST conform to [StringHandling](#stringhandling) requirements.
+* SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* Property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* SkuPriceDetails nullability is defined as follows:
   * SkuPriceDetails MUST be null when SkuPriceId is null.
+  * SkuPriceDetails MAY be null when SkuPriceId is not null.
+* When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:
+  * SkuPriceDetails MUST be associated with a given SkuPriceId.
+  * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
+  * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
+    * Existing SkuPriceDetails properties SHOULD remain consistent over time.
+    * Existing SkuPriceDetails properties SHOULD NOT be removed.
+    * Additional SkuPriceDetails properties MAY be added over time.
+  * Property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
+  * Property key MUST NOT begin with the string "F_" unless it is a FOCUS-defined property.
+  * Property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
+* FOCUS-defined SKU Price properties adhere to the following additional requirements:
+  * Property key MUST equal the predefined key for that property.
+  * Property value MUST be of the type specified for that property.
+  * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.
 
 ## Examples
 
