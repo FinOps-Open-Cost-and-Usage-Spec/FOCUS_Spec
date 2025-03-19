@@ -17,11 +17,7 @@ A changelog is provided specifying helpful information to consumers of focus dat
 - Description of the change
 - Examples of the change if needed
 
-    
-
 ## Change Process
-
-TODO: A series of guidelines of how changes are proposed, reviewed, and accepted.
 
 ### Addition of a New Feature or Column
 
@@ -34,9 +30,7 @@ When a new feature or column is introduced to the FOCUS specification, depending
     
 The FOCUS specification requires that renaming of a column or metadata be declared in the specification
 * The column or metdata specification is to include a section that indicates the previous name and the version in which it was changed
-* example: "Example1 column was renamed Example2 in FOCUS version 2.1" 
-    
-
+* example: "Example1 column was renamed Example2 in FOCUS version 2.1"
 
 ### Deprecation and Removal of a Feature or Column
     
@@ -45,7 +39,6 @@ The FOCUS specifcation requires that removal actions are preceded with a depreca
   * If the removal version is not yet determine, the change log MUST state "This column will be removed at a future FOCUS version"
   * if the removal verions is already determined, the change log MUST state "This column will be removed in version 2.1"
 * Prior to removal the FOCUS specification MUST be updated to include the version that will remove the deprecated column/metadata
-    
 
 ## Change Type Classification
 
@@ -72,8 +65,7 @@ Modification to correct a spelling, grammar, or formatting error in the FOCUS sp
 
 ## Change Impact Classification
 
-The FOCUS specification is designed to be updated overtime to increase it use and to adapt to changes in the industry over time.  In order to provide insight into the impact of the change, changes are classified into one of the following categories Change Impact categories. :
-
+The FOCUS specification is designed to be updated overtime to increase it use and to adapt to changes in the industry over time.  In order to provide insight into the impact of the change, changes are classified into one of the following categories Change Impact categories:
 
  ### Compatible Change:
 
@@ -96,7 +88,3 @@ Any change to the spec that ends the support of a Published Use Case. The remova
 
 Examples:
    - Removing a column
-
-
-
-
