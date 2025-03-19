@@ -56,7 +56,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 
 ### FOCUS-Defined Properties
 
-The following keys should be used when applicable to facilitate cross-service and cross-provider queries for the same conceptual property. FOCUS-defined keys will be prefixed with "F_" to make them easy to identify and prevent collisions with other properties conveyed by a provider.
+The following keys should be used when applicable to facilitate cross-SKU and cross-provider queries for the same conceptual property. FOCUS-defined keys will be prefixed with "F_" to make them easy to identify and prevent collisions with other properties conveyed by a provider.
 
 | Key                        | Description                                                     | Data Type        | Unit of Measure (numeric) or example values (string)  |
 | :------------------------- | :-------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
