@@ -36,12 +36,17 @@ Azure
 
 - Capcity Planning: 
   - Quantify how many cores of a VM Series you have provisioned in a region on average.
-    - Uses: SkuPriceDetails {F_CoreCount, F_Series}, PricingUnit (e.g. in case PricingUnit is 10 Hours), PricingQuantity, ChargePeriodStart, ChargePeriodEnd, RegionName
+    - Uses: SkuPriceDetails {F_CoreCount, F_Series}, PricingQuantity, ChargePeriodStart, ChargePeriodEnd, RegionName
   - Determine how much disk storage you have provisioned
 - Unit Economics
   - Calculate the average cost per core of a VM Series
 
 ## Clarifications
+
+- The intent of the clause "Property value MUST represent the value for a single PricingUnit when the property holds a numeric value." is to handle for a situation where the pricing unit is not equal to a single unit and varies across similar SKUs.
+  - If all of my VM SKUs have a pricing unit of 1 hour, then a practitioner doesn't need to factor in the pricing unit (beyond the denominator of hour vs day) to determine how many cores are running using the Core Count property. It's as simple as Core Count * Pricing Quantity.
+  - However, if a SKU has a pricing unit of 100 hours, today a practitioner needs to take the number of cores on the VM and then parse the pricing unit to determine how many VMs 1 pricing quantity represents.
+    - In the case of a SKU for a virtual machine which has 2 cores and a pricing unit of 100 hours, the desire is to have a Core Count value of 200 communicating that a pricing quantity of 1 represents 100 VMs running for 1 hour. This once again makes the math as simple as Core Count * Pricing Quantity.
 
 ## Reference
 
