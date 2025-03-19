@@ -12,15 +12,14 @@ The SkuPriceDetails column adheres to the following requirements:
 * SkuPriceDetails MUST be of type String.
 * SkuPriceDetails MUST conform to [StringHandling](#stringhandling) requirements.
 * SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-* Property key SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* Property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * SkuPriceDetails nullability is defined as follows:
   * SkuPriceDetails MUST be null when SkuPriceId is null.
   * SkuPriceDetails MAY be null when SkuPriceId is not null.
 * When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:
-  * SkuPriceDetails MUST be associated with a given [ResourceId](#resourceid) or [ServiceName](#servicename) used or purchased.
+  * SkuPriceDetails MUST be associated with a given SkuPriceId.
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
-  * SkuPriceDetails SHOULD remain consistent over time for a given SkuPriceId.
   * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
     * Existing SkuPriceDetails properties SHOULD remain consistent over time.
     * Existing SkuPriceDetails properties SHOULD NOT be removed.
