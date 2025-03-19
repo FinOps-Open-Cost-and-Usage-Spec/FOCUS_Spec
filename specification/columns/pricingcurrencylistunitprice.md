@@ -16,7 +16,7 @@ The PricingCurrencyListUnitPrice column adheres to the following requirements:
   * PricingCurrencyListUnitPrice MAY be null in all other cases.
 * When PricingCurrencyListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
   * PricingCurrencyListUnitPrice MUST be a non-negative decimal value.
-  * PricingCurrencyListUnitPrice MUST be denominated in the BillingCurrency.
+  * PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency.
   * The product of PricingCurrencyListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
   * Discrepancies in PricingCurrencyListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
 
