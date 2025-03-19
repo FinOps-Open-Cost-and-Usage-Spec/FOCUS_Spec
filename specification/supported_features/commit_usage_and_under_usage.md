@@ -12,7 +12,7 @@ The FOCUS spec supports the tracking of committed use discounts usage and underu
 * CommitmentDiscountStatus
 * CommitmentDiscountType
 * CapacityReservationID
-* CapactityReservationStatus
+* CapacityReservationStatus
 * CapacityReservationType
 
 ## Supporting Columns

@@ -32,7 +32,7 @@ SELECT
   SUM(BilledCost)
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
-Group by
+GROUP BY
   BillingAccountId,
   SubAccountId
 ```
