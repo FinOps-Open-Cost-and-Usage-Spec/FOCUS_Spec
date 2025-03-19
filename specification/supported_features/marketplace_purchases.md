@@ -42,7 +42,7 @@ SELECT
 FROM focus_data_table
 WHERE InvoiceIssuer = '<Example CSP Marketplace>'
 GROUP BY
-  CharegePeriodStart,
+  ChargePeriodStart,
   ChargePeriodEnd,
   ResourceId
 ``` 
