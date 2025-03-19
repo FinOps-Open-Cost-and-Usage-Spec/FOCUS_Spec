@@ -72,7 +72,7 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | F_Redundancy               | Level of redundancy offered by the SKU                          | String           | Examples: "Local", "Zonal", "Global"                  |
 | F_Series                   | Common name for the series and/or generation of the SKU         | String           | Examples: "M5", "Dadv5", "N2D"                        |
 | F_SizeClass                | Logical grouping of size, which may be used for size fexibility | String           | Examples: "Large", "2xlarge", "Metal"                 |
-| F_StorageClass             | Tier or class of storage provided                               | String           | Examples: "Hot", "Archive", "Nearline"                |
+| F_StorageClass             | Class or tier of storage provided                               | String           | Examples: "Hot", "Archive", "Nearline"                |
 
 Notes
 <br><sup>1</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
