@@ -48,7 +48,7 @@ Azure
   - However, if a SKU has a pricing unit of 100 hours, today a practitioner needs to take the number of cores on the VM and then parse the pricing unit to determine how many VMs 1 pricing quantity represents.
     - In the case of a SKU for a virtual machine which has 2 cores and a pricing unit of 100 hours, the desire is to have a Core Count value of 200 communicating that a pricing quantity of 1 represents 100 VMs running for 1 hour. This once again makes the math as simple as Core Count * Pricing Quantity.
 - The clause `SkuPriceDetails MUST be associated with a given SkuPriceId.` was previously written `SkuPriceDetails properties (both keys and values) MUST be shared across all charges having the same SkuPriceId, subject to the below provisions.` with the below provisions stating that properties could be added over time but not modified or removed.
-  - The intent of this clause is still the same: All occurances of a SkuPriceId should have the same SkuPriceDetails. There were concerns with the original phrasing as being internally contradictory, so when the normative requirements were refined, this needed to be rephrased.
+  - The intent of this clause is still the same: All occurances of a SkuPriceId should have the same SkuPriceDetails, but we recognize that adoption of this column by providers can and should result in additional properties being added over time. There were concerns with the original phrasing as being internally contradictory, so when the normative requirements were refined, this needed to be rephrased.
 
 
 ## Reference
