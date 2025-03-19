@@ -26,7 +26,7 @@ Invoice Id
 
 ## Description
 
-The service provider-assigned identifier for an invoice encapsulating some or all charges in the corresponding billing period for a given billing account.
+The provider-assigned identifier for an invoice encapsulating some or all charges in the corresponding billing period for a given billing account.
 
 ## Content constraints
 
