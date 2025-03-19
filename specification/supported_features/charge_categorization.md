@@ -74,7 +74,7 @@ GROUP BY
   ChargeFrequency
 ```
 
-### Report on Refunds
+### Report on Corrections
 ```
 SELECT
   ProviderName,
