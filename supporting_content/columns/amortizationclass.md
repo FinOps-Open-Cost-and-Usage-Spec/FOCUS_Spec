@@ -1,6 +1,6 @@
 # Column: Amortization Class
 
-Objective: We need a simple method to calculate savings that doesn't accidentally double-count commitment discount purchase costs that are also represented in usage rows.
+Objective: We need a method to calculate savings that accurately accounts for commitment discount purchase costs without creating duplication in the usage rows.
 
 ## Example provider mappings
 
