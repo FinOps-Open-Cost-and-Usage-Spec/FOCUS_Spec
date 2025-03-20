@@ -24,7 +24,7 @@ Pricing Currency Effective Cost
 
 ## Description
 
-The cost of the [*charge*](#glossary:charge) as denominated in [Pricing Currency](#pricingcurrency).
+The cost of the [*charge*](#glossary:charge) after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge, as denominated in [Pricing Currency](#pricingcurrency).
 
 ## Usability Constraints
 
