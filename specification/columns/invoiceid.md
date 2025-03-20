@@ -13,7 +13,6 @@ The InvoiceId column adheres to the following requirements:
 * InvoiceId MAY be generated prior to an invoice being issued.
 * Pre-generated or provisional invoice MUST be associated with the related *charge* and [BillingAccountId](#billingaccountid) when such an invoice exists.
 
-> Editor's Note: The group agrees the construct of the column is suitable to go for approval, however it requires some further definition to clarify credit handling. The group will determine if this should be in the column definition or supporting content.
 
 See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
