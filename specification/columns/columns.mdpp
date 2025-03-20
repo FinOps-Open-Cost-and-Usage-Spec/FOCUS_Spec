@@ -34,10 +34,10 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "invoiceissuer.md",1
 !INCLUDE "listcost.md",1
 !INCLUDE "listunitprice.md",1
-!INCLUDE "pricedcost.md",1
 !INCLUDE "pricingcategory.md",1
 !INCLUDE "pricingcurrency.md",1
 !INCLUDE "pricingcurrencycontractedunitprice.md",1
+!INCLUDE "pricingcurrencyeffectivecost.md",1
 !INCLUDE "pricingcurrencylistunitprice.md",1
 !INCLUDE "pricingtobillingexchangerate.md",1
 !INCLUDE "pricingquantity.md",1
