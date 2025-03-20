@@ -26,12 +26,13 @@ The SkuId column adheres to the following requirements:
   * SkuId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * SkuId MAY be null in all other cases.
-* SkuId MUST equal the SkuId for all other charges for the same *SKU* regardless of factors that impact the price but not the functionality.
-  * SkuId MUST be consistent across [*billing accounts*](#glossary:billing-account) or agreements.
-  * SkuId MUST be consistent across [PricingCategory](#pricingcategory) values.
-  * SkuId MUST be consistent across regions.
-  * SkuId MUST be consistent across service level agreement (SLA) variations.
-  * SkuId MUST be consistent across availability options.
+* SkuId for a given *SKU* adheres to the following additional requirements:
+  * SkuId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
+  * SkuId MUST remain consistent across [PricingCategory](#pricingcategory) values.
+  * SkuId MUST remain consistent across regions.
+  * SkuId MUST remain consistent across service level agreement (SLA) variations.
+  * SkuId MUST remain consistent regardless of the [*Interruptibility*](#glossary:interruptible) of a resource.
+  * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the SKU.
 * SkuId MUST equal SkuPriceId when a provider does not offer the *SKU* with multiple pricing variations.
 
 ## Column ID
