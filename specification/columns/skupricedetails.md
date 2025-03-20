@@ -35,7 +35,7 @@ The SkuPriceDetails column adheres to the following requirements:
 {
     "F_StorageClass": "Archive",
     "F_CoreCount": 4,
-    "PreimumProcessing": true,
+    "PremiumProcessing": true,
 }
 ```
 
