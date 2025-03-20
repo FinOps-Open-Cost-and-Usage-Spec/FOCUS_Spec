@@ -9,9 +9,8 @@ The PricingUnit column adheres to the following requirements:
 * PricingUnit MUST conform to [StringHandling](#stringhandling) requirements.
 * PricingUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
 * PricingUnit nullability is defined as follows:
-  * PricingUnit MUST be null when [ChargeCategory](#chargecategory) is "Tax".
-  * PricingUnit MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
-  * PricingUnit MAY be null in all other cases.
+  * PricingUnit MUST be null when PricingQuantity is null.
+  * PricingUnit MUST NOT be null when PricingQuantity is not null.
 * When PricingUnit is not null, PricingUnit adheres to the following additional requirements:
   * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in provider-published [*price list*](#glossary:price-list).
   * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in invoice, when the invoice includes a pricing measurement unit.
