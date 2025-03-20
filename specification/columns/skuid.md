@@ -33,7 +33,7 @@ The SkuId column adheres to the following requirements:
   * SkuId MUST remain consistent across service level agreement (SLA) variations.
   * SkuId MUST remain consistent regardless of availability options (e.g., [*interruptible*](#glossary:interruptible) resources).
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the SKU.
-* SkuId MUST equal SkuPriceId when a provider does not offer the *SKU* with multiple pricing variations.
+* SkuId MAY equal [SkuPriceId](#SkuPriceId).
 
 ## Column ID
 
