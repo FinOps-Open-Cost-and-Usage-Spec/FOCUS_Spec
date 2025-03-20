@@ -4,10 +4,7 @@ The Pricing Currency Contracted Unit Price represents the agreed-upon unit price
 
 The PricingCurrencyContractedUnitPrice column adheres to the following requirements:
 
-* PricingCurrencyContractedUnitPrice presence in a [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
-  * PricingCurrencyContractedUnitPrice MUST be present in a FOCUS dataset when the provider presents prices in a virtual currency (e.g. credits, tokens).
-  * PricingCurrencyContractedUnitPrice MUST be present in a FOCUS dataset when the provider presents prices and usage in different national currencies (e.g. prices in USD and usage in EUR).
-  * PricingCurrencyContractedUnitPrice MAY be present in a FOCUS dataset in all other cases.
+* PricingCurrencyContractedUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports pricing and billing in different currencies.
 * PricingCurrencyContractedUnitPrice adheres to the following additional requirements:
 * PricingCurrencyContractedUnitPrice MUST be of type Decimal.
 * PricingCurrencyContractedUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.

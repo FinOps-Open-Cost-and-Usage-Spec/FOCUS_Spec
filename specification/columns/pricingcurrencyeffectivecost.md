@@ -4,10 +4,7 @@ The Pricing Currency Effective Cost represents the cost of the [*charge*](#gloss
 
 The PricingCurrencyEffectiveCost column adheres to the following requirements:
 
-* PricingCurrencyEffectiveCost presence in a [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
-  * PricingCurrencyEffectiveCost MUST be present in a FOCUS dataset when the provider supports virtual currencies (e.g. credits, tokens).
-  * PricingCurrencyEffectiveCost MUST be present in a FOCUS dataset when the provider uses different national currencies for pricing and billing (e.g., prices in USD and bills in EUR).
-  * PricingCurrencyEffectiveCost MAY be present in a FOCUS dataset in all other cases.
+* PricingCurrencyEffectiveCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports pricing and billing in different currencies.
 * PricingCurrencyEffectiveCost MUST be of type Decimal.
 * PricingCurrencyEffectiveCost MUST conform to [NumericFormat](#numericformat) requirements.
 * PricingCurrencyEffectiveCost MUST NOT be null.

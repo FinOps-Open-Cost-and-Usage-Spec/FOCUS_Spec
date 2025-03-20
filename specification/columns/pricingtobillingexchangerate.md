@@ -7,10 +7,7 @@ A Pricing to Billing Exchange Rate represents the conversion factor from [Pricin
 
 The PricingToBillingExchangeRate column adheres to the following requirements:
 
-* PricingToBillingExchangeRate presence in a [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
-  * PricingToBillingExchangeRate MUST be present in a FOCUS dataset when the provider presents prices in a virtual currency (e.g. credits, tokens).
-  * PricingToBillingExchangeRate MUST be present in a FOCUS dataset when the provider presents prices and bills in different national currencies (e.g. priced in USD and billed in EUR).
-  * PricingToBillingExchangeRate MAY be present in a FOCUS dataset in all other cases.
+* PricingToBillingExchangeRate MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports pricing and billing in different currencies.
 * PricingToBillingExchangeRate MUST be of type Decimal.
 * PricingToBillingExchangeRate MUST conform to [Numeric Format](#numericformat) requirements.
 * PricingToBillingExchangeRate MUST NOT be null.

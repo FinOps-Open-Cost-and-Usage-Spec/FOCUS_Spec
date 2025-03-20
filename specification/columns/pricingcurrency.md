@@ -7,8 +7,7 @@
 
 The PricingCurrency column adheres to the following requirements:
 
-* PricingCurrency presence in a [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
-  * PricingCurrency MUST be present in a FOCUS dataset when the provider presents prices in a virtual currency (e.g. credits, tokens).
+* PricingCurrency MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports pricing and billing in different currencies.
   * PricingCurrency MUST be present in a FOCUS dataset when the provider presents prices and usage in different national currencies (e.g. prices in USD and usage in EUR).
   * PricingCurrency MAY be present in a FOCUS dataset in all other cases.
 * PricingCurrency MUST be of type String.
