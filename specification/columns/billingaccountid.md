@@ -9,6 +9,7 @@ The BillingAccountId column adheres to the following requirements:
 * BillingAccountId MUST conform to [StringHandling](#stringhandling) requirements.
 * BillingAccountId MUST NOT be null.
 * BillingAccountId MUST be a unique identifier within a provider.
+* BillingAccountId SHOULD be a fully-qualified identifier.
 
 See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
