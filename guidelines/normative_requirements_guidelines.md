@@ -49,6 +49,7 @@
   * **MUST** – an absolute requirement
   * **MUST NOT** – a prohibition
   * **SHOULD** – recommended but not mandatory
+  * **RECOMMENDED** - recommended but not mandatory (currently used only for presence-related normative requirements, as specified in the [FOCUS Feature Level](#focusfeaturelevel) section)
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
 
@@ -264,7 +265,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 #### Business & Contextual Requirements: Relationships Outside the Spec
 
 ```markdown
-TODO
+* The sum of <ColumnId> in a given billing period MUST/MAY NOT match the sum of the invoices received for that billing period for a billing account.
 ```
 
 #### Business & Contextual Requirements: Cost Validation Rules
@@ -285,7 +286,9 @@ TODO
 #### Business & Contextual Requirements: Cost Calculation and Relationships
 
 ```markdown
-TODO
+* When <Condition>, <CostColumnId> adheres to the following additional requirements:
+  * <CostColumnId> of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the <CostColumnId> of those related charges.
+  * <CostColumnId> of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost.
 ```
 
 ### Standardized Terminology
