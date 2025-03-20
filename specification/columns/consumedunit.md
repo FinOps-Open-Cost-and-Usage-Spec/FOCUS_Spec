@@ -9,10 +9,8 @@ The ConsumedUnit column adheres to the following requirements:
 * ConsumedUnit MUST conform to [StringHandling](#stringhandling) requirements.
 * ConsumedUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
 * ConsumedUnit nullability is defined as follows:
-  * ConsumedUnit MUST be null when [ChargeCategory](#chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
-  * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedUnit adheres to the following additional requirements:
-    * ConsumedUnit MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction".
-    * ConsumedUnit MAY be null when ChargeClass is "Correction".
+  * ConsumedUnit MUST be null when ConsumedQuantity is null.
+  * ConsumedUnit MUST NOT be null when ConsumedQuantity is not null.
 
 ## Column ID
 
