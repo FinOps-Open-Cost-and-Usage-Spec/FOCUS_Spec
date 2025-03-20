@@ -50,4 +50,4 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 
 ## Introduced (version)
 
-1.0
+1.2
