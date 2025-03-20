@@ -9,10 +9,8 @@ The CommitmentDiscountUnit column adheres to the following requirements:
 * CommitmentDiscountUnit MUST conform to [StringHandling](#stringhandling) requirements.
 * CommitmentDiscountUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
 * CommitmentDiscountUnit nullability is defined as follows:
-  * When ChargeCategory is "Usage" or "Purchase" and [CommitmentDiscountId](#commitmentdiscountid) is not null, CommitmentDiscountUnit adheres to the following additional requirements:
-    * CommitmentDiscountUnit MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction".
-    * CommitmentDiscountUnit MAY be null when ChargeClass is "Correction".
-  * CommitmentDiscountUnit MUST be null in all other cases.
+  * CommitmentDiscountUnit MUST be null when CommitmentDiscountQuantity is null.
+  * CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountQuantity is not null.
 * When CommitmentDiscountUnit is not null, CommitmentDiscountUnit adheres to the following additional requirements:
   * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
   * CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
