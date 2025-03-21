@@ -3,6 +3,7 @@ description: "Template for creating new work item issues"
 title: "[Work_Item]"
 labels: 
   - "work item"
+type: "Work Item"
 assignees: 
   - "shawnalpay"
   - "jpradocueva"
