@@ -42,7 +42,7 @@ Using the same *commitment discount* example as above with a one-year, spend-bas
 The entire *commitment discount* is billed _once_ during the first *charge period* of the *term* for &dollar;8,670 (derived as `24 hours * 365 days * &dollar;1.00`).
 
 ```json
-[
+[commitment_discounts.md
     {
         "BillingPeriodStart": "2023-01-01T00:00:00Z",
         "BillingPeriodEnd": "2023-02-01T00:00:00Z",

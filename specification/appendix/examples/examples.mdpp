@@ -3,3 +3,4 @@
 *This section is non-normative.*
 
 !INCLUDE "metadata_examples/metadata_examples.mdpp",1
+!INCLUDE "metadata_examples/commitment_discount_flexibility_examples.mdpp",1
