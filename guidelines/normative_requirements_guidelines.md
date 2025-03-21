@@ -39,7 +39,7 @@
 | Business             | Fallback/Substitute Values         | When applicable                       | {ColumnId} MUST NOT duplicate {OtherColumnId} when Condition.                              |
 | Business             | Relationships Outside the Spec     | When applicable                       | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
 | Business             | Formula-based Cost Validation      | When applicable                       | The product of Column1 and Column2 MUST match the column3 when Condition.                  |
-| Business             | Cost Correction Discrepancies      | When applicable                       | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction". |
+| Business             | Cost Correction Discrepancies      | When applicable                       | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction". |
 | Business             | Cost Calculation and Relationships | When applicable                       | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
 | Business             | Other                              | When applicable                       |                                                                                           |
 
@@ -280,7 +280,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 ##### Cost Correction Discrepancies
 
 ```markdown
-* Discrepancies in <MetricId1>, <MetricId2>, or <MetricId3> MAY be addressed independently when ChargeClass is "Correction".
+* Discrepancies in <MetricId1>, <MetricId2>, or <MetricId3> MAY exist when ChargeClass is "Correction".
 ```
 
 #### Business & Contextual Requirements: Cost Calculation and Relationships
@@ -349,7 +349,7 @@ The ListUnitPrice column adheres to the following requirements:
   * **(Values and Value Ranges)** ListUnitPrice MUST be a non-negative decimal value.
   * **(Unit/Denomination)** ListUnitPrice MUST be denominated in the BillingCurrency.
   * **(Formula-based Cost Validation)** The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
-  * **(Cost Correction Discrepancies)** Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
+  * **(Cost Correction Discrepancies)** Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
 
 ---
 The ListUnitPrice column adheres to the following requirements:
@@ -365,7 +365,7 @@ The ListUnitPrice column adheres to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
   * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
-  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
+  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
 
 #### **List Unit Price v.1.1 (Original)**
 
