@@ -1,9 +1,6 @@
 # Pricing to Billing Exchange Rate
 
-A Pricing to Billing Exchange Rate represents the conversion factor from [Pricing Currency](#pricingcurrency) to [Billing Currency](#billingcurrency).  Pricing to Billing Exchange Rate is commonly used in scenarios where costs need to be grouped or aggregated by some combination of the following currency types:
-
-* National currency (e.g. USD, EUR).
-* Virtual currency (e.g. tokens, credits).
+A Pricing to Billing Exchange Rate represents the conversion factor from [Pricing Currency](#pricingcurrency) to [Billing Currency](#billingcurrency).  Pricing to Billing Exchange Rate is commonly used in scenarios where different currencies are used for pricing and billing.
 
 The PricingToBillingExchangeRate column adheres to the following requirements:
 
