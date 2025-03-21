@@ -6,22 +6,22 @@ When mixing usage-based commitment discounts with and without *commitment discou
 
 For more details on exactly how commitment discounts purchase and usage rows appear with and without commitment discount flexibility, see the following scenarios.
 
-### Scenarios *without* *Commitment Discount Flexibility*
+# Scenarios *without* *Commitment Discount Flexibility*
 
-#### Scenario #1: 100% utilization with matching resources
+## Scenario #1: 100% utilization with matching resources
 
 See Example: 100% utilization with matching resources without commitment discount flexibility for more details.
 
-#### Scenario #2: 0% utilization with a non-matching resource
+## Scenario #2: 0% utilization with a non-matching resource
 
 See Example: 0% utilization with a non-matching resource without commmitment discount flexibility for more details.
 
-### Scenarios *with* *Commitment Discount Flexibility*
+# Scenarios *with* *Commitment Discount Flexibility*
 
-#### Scenario #1: 100% utilization with 2 VM_medium resources
+## Scenario #1: 100% utilization with 2 VM_medium resources
 
 See Example: 100% utilization with 1 VM_Large resource with commitment discount flexibility with 1 resource for more details.
 
-#### Scenario #2: 100% utilization with 1 VM_Large resource
+## Scenario #2: 100% utilization with 1 VM_Large resource
 
 See Example: 100% utilization with 2 VM_medium resources with commitment discount flexibility with 2 resources for more details.

@@ -19,8 +19,8 @@ The above SKU pricing attributes show that this provider only has 1 service that
 
 ## Scenario
 
-1 *commitment discount* is purchased for 1 year (2023) for 1 VM_XLarge which has a normalization factor of 8.
-2 VM_Medium resources run for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 4 for each.
+- 1 *commitment discount* is purchased for 1 year (2023) for 1 VM_XLarge which has a normalization factor of 8.
+- 2 VM_Medium resources run for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 4 for each.
 
 ## Outcome
 

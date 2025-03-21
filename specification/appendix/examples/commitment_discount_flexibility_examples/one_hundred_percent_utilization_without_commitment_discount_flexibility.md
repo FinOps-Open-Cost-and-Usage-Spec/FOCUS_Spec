@@ -19,8 +19,8 @@ The above SKU pricing attributes show that this provider only has 1 service that
 
 ## Scenario
 
-The customer has 1 *commitment discount* is purchased for 1 year (2023) for 1 VM_Large.
-1 VM_Large resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
+- 1 *commitment discount* is purchased for 1 year (2023) for 1 VM_Large.
+- 1 VM_Large resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
 
 ## Outcome
 

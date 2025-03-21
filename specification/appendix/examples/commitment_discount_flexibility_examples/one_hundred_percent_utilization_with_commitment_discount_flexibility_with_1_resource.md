@@ -19,12 +19,12 @@ The above SKU pricing attributes show that this provider only has 1 service that
 
 ## Scenario
 
-1 *commitment discount* is purchased for 1 year (2023) for 1 VM_Small which has a normalization factor of 1.
-1 VM_Large resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 4.
+- 1 *commitment discount* is purchased for 1 year (2023) for 1 VM_Small which has a normalization factor of 1.
+- 1 VM_Large resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 4.
 
 ## Outcome
 
-The VM_Small *commitment discount* was fully utilized but still only covered 25% of the VM_Large resource, so the rest of the VM incurred an on-demand cost of $1.50, and the amortized cost for this resource is $1.75.
+The VM_Small *commitment discount* was fully utilized but still only covered 25% of the VM_Large resource, so the rest of the VM_Large incurred an on-demand cost of $1.50, and the amortized cost for this resource is $1.75.
 
 ```json
 [
