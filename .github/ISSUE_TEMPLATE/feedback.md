@@ -28,7 +28,7 @@ _Provide a detailed description of the problem or opportunity. Add context or an
 > **Placeholder:** Provide a comprehensive description of the problem or opportunity, including context and any relevant details.
 
 ## 2. **Use Cases**
-Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the existing specification unless this issue is addressed.
+Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the existing specification unless this issue is addressed.  Review https://focus.finops.org/use-cases/ for examples of existing use cases.
 
 **What use cases, FinOps or others, can't be performed with the existing specification unless this issue is addressed? [*]**  
 _Provide detailed descriptions of the use cases that can't be performed unless this issue is addressed._  
