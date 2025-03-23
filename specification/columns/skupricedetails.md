@@ -1,6 +1,10 @@
 # SKU Price Details
 
-The SKU Price Details column represents a list of relevant properties shared by all charges with the same [SKU Price ID](#skupriceid). These properties provide qualitative and quantitative details about the service represented by a SKU Price ID. This can enable practitioners to calculate metrics such as total units of a service when it is not directly billed in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. These properties (key-value pairs) can also help a practitioner understand the specifics of a SKU Price ID and differentiate it other SKU Price IDs.
+SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) properties (key-value pairs) associated with a specific [SKU Price ID](#skupriceid). These properties include qualitative and quantitative properties of a [*SKUs*](#glossary:sku) (e.g., functionality and technical specifications), along with core stable pricing properties (e.g., pricing terms, tiers, etc.), excluding dynamic or negotiable pricing elements such as unit price amounts, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
+
+The composition of properties associated with a specific *SKU Price* may differ across providers and across *SKUs* within the same provider. However, the exclusion of dynamic or negotiable pricing properties should ensure that all charges with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different billing periods and billing accounts within a provider.
+
+SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also enable practitioners to calculate metrics such as total units of a SKU when it is not directly priced in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as terms and tiers.
 
 The SkuPriceDetails column adheres to the following requirements:
 
