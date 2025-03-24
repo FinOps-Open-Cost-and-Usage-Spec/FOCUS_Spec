@@ -5,7 +5,6 @@ The Pricing Currency Contracted Unit Price represents the agreed-upon unit price
 The PricingCurrencyContractedUnitPrice column adheres to the following requirements:
 
 * PricingCurrencyContractedUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports pricing and billing in different currencies.
-* PricingCurrencyContractedUnitPrice adheres to the following additional requirements:
 * PricingCurrencyContractedUnitPrice MUST be of type Decimal.
 * PricingCurrencyContractedUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * PricingCurrencyContractedUnitPrice nullability is defined as follows:
