@@ -3,6 +3,7 @@ description: "Provide feedback on unsupported FinOps features, use cases, or sce
 title: "[FEEDBACK]: "
 labels:
   - "feedback"
+type: "Feedback"
 assignees:
   - "shawnalpay"
   - "jpradocueva"
@@ -56,7 +57,7 @@ body:
     attributes:
       value: |
         ## 2. **Use Cases**
-        Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the existing specification unless this issue is addressed.
+        Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the existing specification unless this issue is addressed.  Review https://focus.finops.org/use-cases/ for examples of existing use cases.
 
   - type: textarea
     id: use_cases

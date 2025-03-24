@@ -5,12 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 <!--
+[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
+-->
+
 ## v1.2
 
-[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
+<sup>Announced June 2025</sup>
+
+**Added:**
+
+- `BillingAccountType` column
+- `SubAccountType` column
+
+**Changed:**
+
+- `CommitmentDiscountType` column updates:
+  - Must be a consistent, readable display value.
+
+[All 1.2 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
 
 <br>
--->
 
 ## v1.1
 
@@ -55,7 +69,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `SchemaId` metadata schema property updates:
   - Recommended to be a globally unique identifier (GUID) instead of a universally unique identifier (UUID) or SemVer version.
 
-[All 1.1 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0...v1.1-cr)
+[All 1.1 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/v1.0...v1.1)
 
 <br>
 
