@@ -4,7 +4,7 @@
 
 ### Provider
 
-For this example, fictitious provider, *TinyCloud*, offers the following SKU pricing details which are used in the example below.
+For this example, fictitious provider, *TinyCloud*, offers the following SKUs and corresponding unit prices which are used in the example below.
 
 #### SKUs & Rates
 
