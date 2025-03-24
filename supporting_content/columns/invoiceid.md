@@ -1,8 +1,13 @@
 Request is to make avaialble an invoice ID column that will be updated at invoice generation time to add the invoice ID to the rows of data for easier reconcilliation of spend to invoice ID
-# The Problem:
+
+## The Problem:
+
 Without Invoice ID there are situations like when an account is moved between different Billing Accounts, where you loose track and are unable to properly match those.
+
 Invoice reconcilliation is harder to achieve when practiioners are not able to determine which charges in a month relate to the invoice for the invoie month.
+
 Credits are hard to allocate as each credit or refund will receive a new credit memo and is not linked to previous invoices or invoice months.
+
 Another important use case are Credit Memos (Refund Invoices): AWS creates Credit Memos and they show up in the CUR at that point in time, however there is a manual process involved to request that Credit Memo to be applied to a given regular Invoice. The result is that you cannot usually include the credit memo in the same billing period. We set the applicable billing period for each Credit Memo to take them into account, and for that we need the Invoice ID to be able to discriminate the right rows of data in the input. PR #675 https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/675 should be reviewed for credit/refund details
 
 ## Use Cases
