@@ -1,4 +1,4 @@
-# 0% utilization with a non-matching resource without commmitment discount flexibility with 1
+# 0% utilization with a non-matching resource without commitment discount flexibility with 1 resource
 
 ## Context
 
