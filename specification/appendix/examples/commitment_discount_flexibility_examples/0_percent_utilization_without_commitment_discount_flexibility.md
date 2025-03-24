@@ -8,7 +8,7 @@ For this example, fictitious provider, *TinyCloud*, offers the following SKU pri
 
 #### SKUs & Rates
 
-| ProviderName | Service | SkuId     | ListUnitPrice  | x_CommitmentDiscountUnitPrice  | x_NormalizationFactor |
+| ProviderName | ServiceName | SkuId     | ListUnitPrice  | x_CommitmentDiscountUnitPrice  | x_NormalizationFactor |
 |--------------|---------|-----------|----------------|--------------------------------|-----------------------|
 | TinyCloud    | Compute | VM_Small  | $0.50          | $0.25                          | 1                     |
 | TinyCloud    | Compute | VM_Medium | $1.00          | $0.50                          | 2                     |
