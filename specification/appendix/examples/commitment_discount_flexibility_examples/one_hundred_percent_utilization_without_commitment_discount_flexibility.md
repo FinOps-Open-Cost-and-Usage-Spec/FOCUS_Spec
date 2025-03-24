@@ -1,4 +1,4 @@
-# 100% utilization with matching resources without commitment discount flexibility
+# 100% utilization without commitment discount flexibility
 
 ## Context
 
@@ -6,28 +6,61 @@
 
 For this example, fictitious provider, *TinyCloud*, offers the following SKU pricing details which are used in the example below.
 
-#### SKUs & Rates
+#### SKU Catalog
 
-| ProviderName | Service | SkuId     | ListUnitPrice  | x_CommitmentDiscountUnitPrice  | x_NormalizationFactor |
-|--------------|---------|-----------|----------------|--------------------------------|-----------------------|
-| TinyCloud    | Compute | VM_Small  | $0.50          | $0.25                          | 1                     |
-| TinyCloud    | Compute | VM_Medium | $1.00          | $0.50                          | 2                     |
-| TinyCloud    | Compute | VM_Large  | $2.00          | $1.00                          | 4                     |
-| TinyCloud    | Compute | VM_XLarge | $4.00          | $2.00                          | 8                     |
+| Service | Sku ID    | Sku Price ID                            | SkuPriceUnitPrice | NormalizationFactor |
+|---------|-----------| ----------------------------------------|-------------------| --------------------|
+| Compute | VM_SMALL  | VM_SMALL_COMMITTED_PURCHASE_NO_UPFRONT  | $0.50             | 1                   |
+| Compute | VM_SMALL  | VM_MEDIUM_COMMITTED_PURCHASE_NO_UPFRONT | $1.00             | 2                   |
+| Compute | VM_SMALL  | VM_LARGE_COMMITTED_PURCHASE_NO_UPFRONT  | $1.50             | 3                   |
+| Compute | VM_SMALL  | VM_XLARGE_COMMITTED_PURCHASE_NO_UPFRONT | $2.00             | 4                   |
+| Compute | VM_MEDIUM | VM_MEDIUM_COMMITTED_HOUR                | $1.00             | 2                   |
+| Compute | VM_LARGE  | VM_LARGE_COMMITTED_HOUR                 | $1.50             | 3                   |
+| Compute | VM_XLARGE | VM_XLARGE_COMMITTED_HOUR                | $2.00             | 4                   |
+| Compute | VM_SMALL  | VM_SMALL_ON_DEMAND_HOUR                 | $1.00             | null                |
+| Compute | VM_MEDIUM | VM_MEDIUM_ON_DEMAND_HOUR                | $2.00             | null                |
+| Compute | VM_LARGE  | VM_LARGE_ON_DEMAND_HOUR                 | $3.00             | null                |
+| Compute | VM_XLARGE | VM_XLARGE_ON_DEMAND_HOUR                | $4.00             | null                |
 
-The above SKU pricing attributes show that this provider only has 1 service that offers 4 virtual machine SKUs at various list rates, [*commitment discount*](#glossary:commitmentdiscount) rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* rate. Usage-based *commitment discounts* with [*commitment discount flexibility*](#commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor equals the normalization factor of the *commitment discount*.
+The above SKU pricing attributes show that this provider only has 1 service that offers 4 virtual machine SKUs at various list rates, [*commitment discount*](#glossary:commitmentdiscount) rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* rate. Usage-based *commitment discounts* with [*commitment discount flexibility*](#commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor is less than or equal to the normalization factor of the *commitment discount*.
 
 ## Scenario
 
-- 1 *commitment discount* is purchased for 1 year (2023) for 1 VM_Large.
-- 1 VM_Large resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
+- 1 no upfront *commitment discount* is purchased for 1 year (2023) for 1 VM_LARGE.
+- 1 VM_LARGE resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
 
 ## Outcome
 
-The *commitment discount* completely covers the first charge period for 1 VM_Large resource (i.e. <my-vm-id>) resulting in a $1 amortized cost.
+- 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, *commitment discount* and incurs a $1.50 [*BilledCost*](#billedcost).
+- The *commitment discount* covers the first [*charge period*](#glossary:chargeperiod) for 1 VM_LARGE resource incurring a $1.50 [*EffectiveCost*](#effectivecost).
 
 ```json
 [
+    {
+        "BillingPeriodStart": "2023-01-01T00:00:00Z",
+        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
+        "ChargePeriodStart": "2023-01-01T00:00:00Z",
+        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
+        "ChargeCategory": "Purchase",
+        "ChargeFrequency": "Recurring",
+        "PricingCategory": "Standard",
+        "ResourceId": "<my-commitment-discount-id>",
+        "PricingQuantity": 1.00,
+        "ListUnitPrice": 3.00,
+        "ListCost": 3.00,
+        "x_CommitmentDiscountUnitPrice": 1.50,
+        "BilledCost": 1.50,
+        "EffectiveCost": 0.00,
+        "ConsumedQuantity": null,
+        "ConsumedUnit": null,
+        "SkuId": "VM_LARGE",
+        "SkuPriceId": "VM_LARGE_COMMITTED_PURCHASE_NO_UPFRONT",
+        "CommitmentDiscountId": "<commitment-discount-id>",
+        "CommitmentDiscountCategory": "Usage",
+        "CommitmentDiscountQuantity": 1.00,
+        "CommitmentDiscountStatus": null,
+        "CommitmentDiscountUnit": "Hour"
+    },
     {
         "BillingPeriodStart": "2023-01-01T00:00:00Z",
         "BillingPeriodEnd": "2023-02-01T00:00:00Z",
@@ -38,12 +71,17 @@ The *commitment discount* completely covers the first charge period for 1 VM_Lar
         "PricingCategory": "Committed",
         "ResourceId": "<my-large-vm-id>",
         "PricingQuantity": 1.00,
+        "ListUnitPrice": 3.00,
+        "ListCost": 3.00,
+        "x_CommitmentDiscountUnitPrice": 1.50,
         "BilledCost": 0.00,
-        "EffectiveCost": 1.00,
+        "EffectiveCost": 1.50,
         "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
-        "SkuId": "VM_Large",
+        "SkuId": "VM_LARGE",
+        "SkuId": "VM_LARGE_COMMITTED_HOUR",
         "CommitmentDiscountId": "<commitment-discount-id>",
+        "CommitmentDiscountCategory": "Usage",
         "CommitmentDiscountQuantity": 1.00,
         "CommitmentDiscountStatus": "Used",
         "CommitmentDiscountUnit": "Hour"
