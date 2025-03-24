@@ -83,12 +83,16 @@
   * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
   * In **SkuPriceDetails**, refer to **property key** when addressing only the key, and **property value** when addressing only the value.
   * When linking a key to its value, use **corresponding value**.
+  
+* **First Mention and Context**: In the case of SkuPriceDetails property key, the first mention explicitly uses "SkuPriceDetails property key" to establish the context. Subsequent references to "property key" and "property value" omit "SkuPriceDetails" as the context is already understood. In contrast, for Tags, this is not necessary, as the context is inherently clear from the column name.
 
 * **Start Key-Specific Requirements with the Key Term**: When a requirement applies to a key, it SHOULD begin with **tag key**, **property key**, or the applicable term for that column.
 
 * **Start Value-Specific Requirements with the Value Term**: When a requirement applies to a value, it SHOULD begin with **tag value**, **property value**, or the applicable term for that column.
 
-* **Default to Singular Form for Keys and Values**: Keys and values references should be singular, with the understanding that the requirement applies to all occurrences (e.g., "property key", "tag value", etc.).
+* **Plural vs. Singular Form for Keys and Values**:
+  * Use plural when referring to keys or values to reflect the fact that the column may contain multiple keys/values (e.g., "property keys", "tag values").
+  * Use singular when referring to the key or value of a single tag or property (e.g., "property key", "tag value"), with the understanding that the requirement applies to all occurrences.
 
 ## Grouping of Nullability-Related and Subsequent Normative Requirements
 
