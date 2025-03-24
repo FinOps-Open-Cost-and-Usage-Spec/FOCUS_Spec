@@ -18,10 +18,10 @@ For this example, fictitious provider, *TinyCloud*, offers the following SKUs an
 | Compute | VM_MEDIUM | VM_MEDIUM_COMMITTED_HOUR                | $1.00                | 2                    |
 | Compute | VM_LARGE  | VM_LARGE_COMMITTED_HOUR                 | $1.50                | 3                    |
 | Compute | VM_XLARGE | VM_XLARGE_COMMITTED_HOUR                | $2.00                | 4                    |
-| Compute | VM_SMALL  | VM_SMALL_ON_DEMAND_HOUR                 | $1.00                | null                 |
-| Compute | VM_MEDIUM | VM_MEDIUM_ON_DEMAND_HOUR                | $2.00                | null                 |
-| Compute | VM_LARGE  | VM_LARGE_ON_DEMAND_HOUR                 | $3.00                | null                 |
-| Compute | VM_XLARGE | VM_XLARGE_ON_DEMAND_HOUR                | $4.00                | null                 |
+| Compute | VM_SMALL  | VM_SMALL_ON_DEMAND_HOUR                 | $1.00                | 1                    |
+| Compute | VM_MEDIUM | VM_MEDIUM_ON_DEMAND_HOUR                | $2.00                | 2                    |
+| Compute | VM_LARGE  | VM_LARGE_ON_DEMAND_HOUR                 | $3.00                | 3                    |
+| Compute | VM_XLARGE | VM_XLARGE_ON_DEMAND_HOUR                | $4.00                | 4                    |
 
 The above records show that this provider only has 1 service that offers 4 virtual machine SKUs at various list unit prices, [*commitment discount*](#glossary:commitmentdiscount) unit prices, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* unit price. Usage-based *commitment discounts* with [*commitment discount flexibility*](#commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor is less than or equal to the normalization factor of the *commitment discount*.
 
