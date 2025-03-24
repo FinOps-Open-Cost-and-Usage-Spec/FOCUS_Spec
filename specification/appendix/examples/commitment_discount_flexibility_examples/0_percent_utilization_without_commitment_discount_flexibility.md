@@ -15,7 +15,7 @@ For this example, fictitious provider, *TinyCloud*, offers the following SKU pri
 | TinyCloud    | Compute | VM_Large  | $2.00          | $1.00                          | 4                     |
 | TinyCloud    | Compute | VM_XLarge | $4.00          | $2.00                          | 8                     |
 
-The above SKU pricing attributes show that this provider only has 1 service that offers 4 virtual machine SKUs at various list rates, [*commitment discount*](#glossary:commitmentdiscount) rates, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* rate. Usage-based *commitment discounts* with [*commitment discount flexibility*](#commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor equals the normalization factor of the *commitment discount*.
+The above records show that this provider only has 1 service that offers 4 virtual machine SKUs at various list unit prices, [*commitment discount*](#glossary:commitmentdiscount) unit prices, and normalization factors. Each SKU's normalization factor classifies its relative size to its *commitment discount* unit price. Usage-based *commitment discounts* with [*commitment discount flexibility*](#commitmentdiscountflexibility) can fully cover any combination of 1 or more SKUs where the sum of their normalization factor equals the normalization factor of the *commitment discount*.
 
 ## Scenario
 
