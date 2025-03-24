@@ -14,18 +14,18 @@ The Tags column adheres to the following requirements:
 * When Tags is not null, Tags adheres to the following additional requirements:
   * Tags MUST include all user-defined and provider-defined tags.
   * Tags MUST only include finalized tags.
-  * Tag key with a non-null value for a given *resource* SHOULD be included in the Tags column.
-  * Tag key with a null value for a given *resource* MAY be included in the Tags column depending on the provider's tag finalization process.
-  * Tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
+  * Tag keys with a non-null value for a given *resource* SHOULD be included in the Tags column.
+  * Tag keys with a null value for a given *resource* MAY be included in the Tags column depending on the provider's tag finalization process.
+  * Tag keys that do not support corresponding values, MUST have a corresponding true (boolean) value set.
   * Provider MUST publish tag finalization methods and semantics within their respective documentation when tag finalization is supported.
   * Provider MUST NOT alter tag values unless applying true (boolean) to valueless tags.
 * Provider-defined tags adhere to the following additional requirements:
-  * Provider-defined tags MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
+  * Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
   * Provider SHOULD publish all provider-specified tag key prefixes within their respective documentation.
 * User-defined tags adhere to the following additional requirements:
   * Provider MUST prefix all but one user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the provider has more than one user-defined tag scheme.
   * Provider MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.
-  * Provider MUST NOT include a prefix in a tag key when the provider has only one user-defined tag scheme.
+  * Provider MUST NOT prefix tag keys when the provider has only one user-defined tag scheme.
 
 ## Provider-Defined vs. User-Defined Tags
 
