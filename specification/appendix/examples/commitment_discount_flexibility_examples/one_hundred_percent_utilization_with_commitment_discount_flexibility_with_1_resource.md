@@ -2,11 +2,9 @@
 
 ## Context
 
-### Provider
-
 For this example, fictitious provider, *TinyCloud*, offers the following SKU pricing details which are used in the example below.
 
-#### SKU Catalog
+### SKU Catalog
 
 | Service | Sku ID    | Sku Price ID                            | Sku Price Unit Price | Normalization Factor |
 |---------|-----------| ----------------------------------------|----------------------| ---------------------|
@@ -27,14 +25,14 @@ The above SKU pricing attributes show that this provider only has 1 service that
 
 ## Scenario
 
-- 1 no upfront *commitment discount* is purchased for 1 year (2023) for 1 VM_SMALL which has a normalization factor of 1.
-- 1 VM_LARGE resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 4.
+* 1 no upfront *commitment discount* is purchased for 1 year (2023) for 1 VM_SMALL which has a normalization factor of 1.
+* 1 VM_LARGE resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00 with a normalization factor of 4.
 
 ## Outcome
 
-- 1 recurring, purchase record exists for 1 eligible "Normalized Hour" of the no upfront, *commitment discount* and incurs a $1.00 [*BilledCost*](#billedcost).
-- The VM_SMALL *commitment discount* is fully utilized within the corresponding [*charge period*](#glossary:chargeperiod), covers 25% of the VM_LARGE resource, and incurs a $0.50 [*EffectiveCost*](#effectivecost).
-- The VM_LARGE resource incurs an additional, on-demand $2.25 *BilledCost* and *EffectiveCost*.
+* 1 recurring, purchase record exists for 1 eligible "Normalized Hour" of the no upfront, *commitment discount* and incurs a $1.00 [*BilledCost*](#billedcost).
+* The VM_SMALL *commitment discount* is fully utilized within the corresponding [*charge period*](#glossary:chargeperiod), covers 25% of the VM_LARGE resource, and incurs a $0.50 [*EffectiveCost*](#effectivecost).
+* The VM_LARGE resource incurs an additional, on-demand $2.25 *BilledCost* and *EffectiveCost*.
 
 ```json
 [

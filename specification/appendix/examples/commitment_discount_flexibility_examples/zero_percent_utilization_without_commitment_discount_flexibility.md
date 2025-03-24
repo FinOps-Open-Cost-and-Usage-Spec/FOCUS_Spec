@@ -2,11 +2,9 @@
 
 ## Context
 
-### Provider
-
 For this example, fictitious provider, *TinyCloud*, offers the following SKUs and corresponding unit prices which are used in the example below.
 
-#### SKU Catalog
+### SKU Catalog
 
 | Service | Sku ID    | Sku Price ID                            | Sku Price Unit Price | Normalization Factor |
 |---------|-----------| ----------------------------------------|----------------------| ---------------------|
@@ -27,14 +25,14 @@ The above records show that this provider only has 1 service that offers 4 virtu
 
 ## Scenario
 
-- 1 no upfront *commitment discount* is purchased for 1 year (2023) for 1 VM_LARGE.
-- 1 VM_MEDIUM resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
+* 1 no upfront *commitment discount* is purchased for 1 year (2023) for 1 VM_LARGE.
+* 1 VM_MEDIUM resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
 
 ## Outcome
 
-- 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, *commitment discount* and incurs a $1.50 [*BilledCost*](#billedcost).
-- The VM_LARGE *commitment discount* is unused for the correspending [*charge period*](#glossary:chargeperiod) because no VM_LARGE resources are running and incurs a $1.50 [*EffectiveCost*](#effectivecost).
-- 1 hour of on-demand usage is incurred by the VM_MEDIUM resource and incurs a $2.00 *BilledCost* and *EffectiveCost*.
+* 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, *commitment discount* and incurs a $1.50 [*BilledCost*](#billedcost).
+* The VM_LARGE *commitment discount* is unused for the correspending [*charge period*](#glossary:chargeperiod) because no VM_LARGE resources are running and incurs a $1.50 [*EffectiveCost*](#effectivecost).
+* 1 hour of on-demand usage is incurred by the VM_MEDIUM resource and incurs a $2.00 *BilledCost* and *EffectiveCost*.
 
 ```json
 [   
