@@ -20,7 +20,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 **Changed:**
 
 - `Column Naming and Ordering` attribute includes the following new provisions:
-  - Providers must include custom columns or any concepts not covered by FOCUS columns when they publish a non-FOCUS cost and usage dataset.
   - Attribute renamed to `Column Handling` to cover the expanded rules for column inclusion.
 - `CommitmentDiscountType` column updates:
   - Must be a consistent, readable display value.

@@ -10,8 +10,8 @@ A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that c
 * How much the charge is and how that cost is calculated.
 
 While FOCUS establishes the core structure and standardizes columns for consistent reporting of cost and usage data, the diverse and evolving landscape of providers and service offerings may require providers and data generators to include supplemental columns in the FOCUS dataset. These additional columns may enable deeper analysis and provide more detailed descriptions of usage that may not be fully captured by standard FOCUS dataset columns.
-In such cases, providers and data generators are responsible for ensuring that their usage and cost data is accurately and comprehensively represented by including necessary supplemental columns without duplicating data in FOCUS columns. Rows in a FOCUS dataset may be aggregated or split differently than non-FOCUS datasets to align with FOCUS requirements (e.g., Discount Handling), while enriching the dataset, providers and data generators must maintain the integrity of FOCUS-defined dimensions and metrics. Providers and data generators must ensure the accuracy of all dimensions and metrics, particularly summable values such as costs and quantities, when performing these transformations.
 
+In such cases, providers and data generators are responsible for ensuring that their usage and cost data is accurately and comprehensively represented by including necessary supplemental columns without duplicating data in FOCUS columns. Rows in a FOCUS dataset may be aggregated or split differently than non-FOCUS datasets to align with FOCUS requirements (e.g., Discount Handling), while enriching the dataset, providers and data generators must maintain the integrity of FOCUS-defined dimensions and metrics. Providers and data generators must ensure the accuracy of all dimensions and metrics, particularly summable values such as costs and quantities, when performing these transformations.
 
 Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming and ordering conventions to reduce friction for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
@@ -27,16 +27,10 @@ Column Handling
 
 ## Description
 
-Naming, ordering, and inclusion criteria for columns appearing in a *FOCUS dataset*.
+Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 
 ## Requirements
 
-### Column Inclusion
-
-When the provider publishes a non-FOCUS cost and usage dataset, the following applies:
-
-* Custom columns MUST be included for all information not covered by FOCUS columns that exists in the latest version of non-FOCUS cost and usage datasets.
-* Data generators SHOULD allow practitioners to select a subset of FOCUS or custom columns.
 
 ### Column Names
 
