@@ -35,7 +35,7 @@ The above records show that this provider only has 1 service that offers 4 virtu
 * 1 hour of on-demand usage is incurred by the VM_MEDIUM resource and incurs a $2.00 *BilledCost* and *EffectiveCost*.
 
 ```json
-[   
+[
     {
         "BillingPeriodStart": "2023-01-01T00:00:00Z",
         "BillingPeriodEnd": "2023-02-01T00:00:00Z",
@@ -79,7 +79,7 @@ The above records show that this provider only has 1 service that offers 4 virtu
         "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_LARGE",
-        "SkuId": "VM_LARGE_COMMITTED_HOUR",
+        "SkuPriceId": "VM_LARGE_COMMITTED_HOUR",
         "CommitmentDiscountId": "<commitment-discount-id>",
         "CommitmentDiscountCategory": "Usage",
         "CommitmentDiscountQuantity": 1.00,
@@ -103,7 +103,8 @@ The above records show that this provider only has 1 service that offers 4 virtu
         "EffectiveCost": 2.00,
         "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
-        "SkuId": "VM_MEDIUM_ON_DEMAND_HOUR",
+        "SkuId": "VM_MEDIUM",
+        "SkuPriceId": "VM_MEDIUM_ON_DEMAND_HOUR",
         "CommitmentDiscountId": null,
         "CommitmentDiscountCategory": null,
         "CommitmentDiscountQuantity": null,

@@ -78,7 +78,7 @@ The above SKU pricing attributes show that this provider only has 1 service that
         "ConsumedQuantity": 1.00,
         "ConsumedUnit": "Hour",
         "SkuId": "VM_LARGE",
-        "SkuId": "VM_LARGE_COMMITTED_HOUR",
+        "SkuPriceId": "VM_LARGE_COMMITTED_HOUR",
         "CommitmentDiscountId": "<commitment-discount-id>",
         "CommitmentDiscountCategory": "Usage",
         "CommitmentDiscountQuantity": 1.00,
