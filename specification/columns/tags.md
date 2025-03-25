@@ -17,7 +17,7 @@ The Tags column adheres to the following requirements:
   * Tags SHOULD include tag keys with corresponding non-null values for a given *resource*.
   * Tags MAY include tag keys with a null value for a given *resource* depending on the provider's tag finalization process.
   * Tag keys that do not support corresponding values, MUST have a corresponding true (boolean) value set.
-  * Provider MUST publish tag finalization methods and semantics within their respective documentation when tag finalization is supported.
+  * Provider SHOULD publish tag finalization methods and semantics within their respective documentation.
   * Provider MUST NOT alter tag values unless applying true (boolean) to valueless tags.
 * Provider-defined tags adhere to the following additional requirements:
   * Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
