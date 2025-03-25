@@ -26,7 +26,7 @@ The SkuPriceDetails column adheres to the following requirements:
     * Existing SkuPriceDetails properties SHOULD NOT be removed.
     * Additional SkuPriceDetails properties MAY be added over time.
   * Property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
-  * Property key MUST NOT begin with the string "F_" unless it is a FOCUS-defined property.
+  * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
   * Property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
 * FOCUS-defined SKU Price properties adhere to the following additional requirements:
   * Property key MUST equal the predefined key for that property.
@@ -37,9 +37,9 @@ The SkuPriceDetails column adheres to the following requirements:
 
 ```json
 {
-    "F_StorageClass": "Archive",
-    "F_CoreCount": 4,
-    "PremiumProcessing": true,
+    "StorageClass": "Archive",
+    "CoreCount": 4,
+    "x_PremiumProcessing": true,
 }
 ```
 
@@ -67,27 +67,29 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 
 ### FOCUS-Defined Properties
 
-The following keys should be used when applicable to facilitate cross-SKU and cross-provider queries for the same conceptual property. FOCUS-defined keys will be prefixed with "F_" to make them easy to identify and prevent collisions with other properties conveyed by a provider.
+The following keys should be used when applicable to facilitate cross-SKU and cross-provider queries for the same conceptual property. Focus-defined keys will appear in the list below and Provider-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
-| Key                        | Description                                                     | Data Type        | Unit of Measure (numeric) or example values (string)  |
-| :------------------------- | :-------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
-| F_Bandwidth                | Network capacity for data transfer                              | Numeric          | Measure: Megabits per second (Mbps)                   |
-| F_CoreCount                | Number of physical or virtual CPUs available                    | Numeric          | Measure: Quantity of Cores                            |
-| F_DiskSpace                | Storage capacity available                                      | Numeric          | Measure: Gibibytes (GiB)                              |
-| F_DiskType                 | Kind of disk used                                               | String           | Examples: "SSD", "HDD", "NVMe"                        |
-| F_GpuCount                 | Number of GPUs available                                        | Numeric          | Measure: Quantity of GPUs                             |
-| F_InputOutput              | Input/output operations per second                              | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
-| F_InstanceType             | Common name of the instance including size, shape, series, etc. | String           | Examples: "m5d.2xlarge", "NC24rs_v3", "P50"           |
-| F_MemorySize               | RAM allocated for processing                                    | Numeric          | Measure: Gibibytes (GiB<sup>1</sup>)                  |
-| F_OperatingSystem          | Operating system family<sup>2</sup>                             | String           | Examples: "Linux", "MacOS", "Windows"                 |
-| F_Redundancy               | Level of redundancy offered by the SKU                          | String           | Examples: "Local", "Zonal", "Global"                  |
-| F_Series                   | Common name for the series and/or generation of the SKU         | String           | Examples: "M5", "Dadv5", "N2D"                        |
-| F_SizeClass                | Logical grouping of size, which may be used for size fexibility | String           | Examples: "Large", "2xlarge", "Metal"                 |
-| F_StorageClass             | Class or tier of storage provided                               | String           | Examples: "Hot", "Archive", "Nearline"                |
+| Key                      | Description                                                     | Data Type        | Unit of Measure (numeric) or example values (string)  |
+| :----------------------- | :-------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
+| CoreCount                | Number of physical or virtual CPUs available<br><sup>1</sup>    | Numeric          | Measure: Quantity of Cores                            |
+| DiskInputOutput          | Storage input/output operations per second<br><sup>1</sup>      | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
+| DiskSpace                | Storage capacity available                                      | Numeric          | Measure: Gibibytes (GiB)                              |
+| DiskType                 | Kind of disk used                                               | String           | Examples: "SSD", "HDD", "NVMe"                        |
+| GpuCount                 | Number of GPUs available                                        | Numeric          | Measure: Quantity of GPUs                             |
+| InstanceType             | Common name of the instance including size, shape, series, etc. | String           | Examples: "m5d.2xlarge", "NC24rs_v3", "P50"           |
+| MemorySize               | RAM allocated for processing                                    | Numeric          | Measure: Gibibytes (GiB<sup>2</sup>)                  |
+| NetworkBandwidth         | Network capacity for data transfer<br><sup>1</sup>              | Numeric          | Measure: Megabits per second (Mbps)                   |
+| NetworkInputOutput       | Network input/output operations per second<br><sup>1</sup>      | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
+| OperatingSystem          | Operating system family<sup>3</sup>                             | String           | Examples: "Linux", "MacOS", "Windows"                 |
+| Redundancy               | Level of redundancy offered by the SKU                          | String           | Examples: "Local", "Zonal", "Global"                  |
+| Series                   | Common name for the series and/or generation of the SKU         | String           | Examples: "M5", "Dadv5", "N2D"                        |
+| SizeClass                | Logical grouping of size, which may be used for size fexibility | String           | Examples: "Large", "2xlarge", "Metal"                 |
+| StorageClass             | Class or tier of storage provided                               | String           | Examples: "Hot", "Archive", "Nearline"                |
 
 Notes
-<br><sup>1</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
-<br><sup>2</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
+<br><sup>1</sup> In the case of "burstable" SKUs offering variable levels of performance, the baseline or guaranteed value should be used.
+<br><sup>2</sup> Memory manufacturers still commonly uses "GB" to refer to 2<sup>30</sup> bytes, which is known as GiB in other contexts.
+<br><sup>3</sup> This is the operating system family of the SKU, if it's included with the SKU or the SKU only supports one type of operating system.
 
 ## Introduced (version)
 
