@@ -24,8 +24,8 @@ The Tags column adheres to the following requirements:
   * Provider SHOULD publish all provider-specified tag key prefixes within their respective documentation.
 * User-defined tags adhere to the following additional requirements:
   * Provider MUST prefix all but one user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the provider has more than one user-defined tag scheme.
-  * Provider MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.
   * Provider MUST NOT prefix tag keys when the provider has only one user-defined tag scheme.
+  * Provider MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.
 
 ## Provider-Defined vs. User-Defined Tags
 
