@@ -20,7 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 **Changed:**
 
 - `Column Naming and Ordering` attribute includes the following new provisions:
-  - Attribute renamed to `Column Handling` to cover the expanded rules for column inclusion.
+  - Attribute renamed to `Column Handling`.
 - `CommitmentDiscountType` column updates:
   - Must be a consistent, readable display value.
 
