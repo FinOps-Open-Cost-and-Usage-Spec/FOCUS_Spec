@@ -6,7 +6,7 @@ For this example, fictitious provider, *TinyCloud*, offers the following SKU cat
 
 ### SKU Catalog
 
-| Service | Sku ID    | Sku Price ID                            | Sku Price Unit Price | Normalization Factor |
+| Service | Sku Id    | Sku Price Id                            | Sku Price Unit Price | Normalization Factor |
 |---------|-----------| ----------------------------------------|----------------------| ---------------------|
 | Compute | VM_SMALL  | VM_SMALL_COMMITTED_PURCHASE_NO_UPFRONT  | $0.50                | 1                    |
 | Compute | VM_MEDIUM | VM_MEDIUM_COMMITTED_PURCHASE_NO_UPFRONT | $1.00                | 2                    |
