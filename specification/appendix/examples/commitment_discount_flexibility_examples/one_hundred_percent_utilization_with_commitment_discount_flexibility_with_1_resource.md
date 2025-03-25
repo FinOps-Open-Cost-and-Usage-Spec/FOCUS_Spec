@@ -2,7 +2,7 @@
 
 ## Context
 
-For this example, fictitious provider, *TinyCloud*, offers the following SKU pricing details which are used in the example below.
+For this example, fictitious provider, *TinyCloud*, offers the following SKU catalog which is used in the scenario below.
 
 ### SKU Catalog
 
