@@ -38,7 +38,23 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 2. **Objective**
+        ## 2. **Use Case**
+        Describe the use case(s) that this work item addresses.
+        Review [How to Craft Use Cases](/supporting_content/usecases/howtocraftusecases.md) for guidance on crafting use cases.
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: "Use Case"
+      description: "Provide 1 to 2 sentences detailing the use case."
+      placeholder: "Provide 1 to 2 sentences detailing the use case here."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 3. **Objective**
         State the objective of this work item. What outcome is expected?
         - **Success Criteria**: Define how success will be measured (e.g. metrics and KPIs).
 
@@ -54,7 +70,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 3. **Supporting Documentation**
+        ## 4. **Supporting Documentation**
         - Data Examples: [Link to data or relevant files; DO NOT share proprietary information]
         - Related Use Cases or Discussion Documents: [Link to discussion]
         - PRs or Other References: [Link to relevant references]
@@ -71,7 +87,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 4. **Proposed Solution / Approach**
+        ## 5. **Proposed Solution / Approach**
         Outline any proposed solutions, approaches, or potential paths forward.  Do not submit detailed solutions; please keep suggestions high-level.
         - **Initial Ideas**: Describe potential solution paths, tools, or technologies.
         - **Considerations**: Include any constraints, dependencies, or risks.
@@ -88,7 +104,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 5. **Epic or Theme Association**
+        ## 6. **Epic or Theme Association**
         > This section will be completed by the Maintainers.
         > - **Epic**: [Epic Name]
         > - **Theme**: [Theme Name, if applicable]
@@ -103,7 +119,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 6. **Stakeholders**
+        ## 7. **Stakeholders**
         List the main stakeholders for this issue.
         - **Primary Stakeholder**: [Name/Role]
         - **Other Involved Parties**: [Names/Roles]

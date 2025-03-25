@@ -80,7 +80,7 @@ A specification-defined categorical attribute that provides context or categoriz
 
 The amortized cost of the charge after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
 
-<a name="glossary:exclusivebound"><b>Exclusive Bound</b></a>
+<a name="glossary:exclusiveendbound"><b>Exclusive End Bound</b></a>
 
 A Date/Time Format value that is not contained within the ending bound of a time period.
 
@@ -96,7 +96,7 @@ An open-source specification that defines requirements for billing data.
 
 A structured collection of cost and usage data that meets the [BCP14](https://tools.ietf.org/html/bcp14) criteria defined by FOCUS. In addition to FOCUS columns, the dataset includes custom provider columns (prefixed with `x_`) when these columns provide additional information not captured by the existing FOCUS columns. If introducing a custom column could result in splitting original charge records into multiple entries, the data generator is responsible for ensuring that the FOCUS dataset fully conforms to all aggregation-related requirements for metric columns, particularly those concerning costs and quantities.
 
-<a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
+<a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
 
