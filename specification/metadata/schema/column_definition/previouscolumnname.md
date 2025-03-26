@@ -4,9 +4,10 @@ The PreviousColumnName field indicates that on that schema the column where the 
 
 In cases where the PreviousColumnName is present, the following applies:
 
-* The PreviousColumnName MUST not be Null
-* The PreviousColumnName MUST be of type String and be the name use in previous versions of the schema.
-* The PreviousColumnName MUST NOT be present on schema versions created after the rename.
+* PreviousColumnName MUST not be null.
+* PreviousColumnName MUST be of type String.
+* PreviousColumnName MUST be the name used in previous versions of the schema.
+* PreviousColumnName MUST NOT be present in schema versions created after the rename.
 
 ## Metadata ID
 
