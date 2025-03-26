@@ -1,7 +1,3 @@
-
-
---------------------------------------------------------------------------------
-
 ## Record Styles Intended Usage
 
 | ChargeCategory | ChargeClass | record style       | SkuId              | SkuPriceId         |
@@ -19,7 +15,7 @@
 
 ## Examples
 
-Show scenarios where correction happens within current billing periond and also where it applies to previous billing period.... highlight charge period differences and itemized vs not itemized... note in billing period segmentation 
+Show scenarios where correction happens within current billing periond and also where it applies to previous billing period.... highlight charge period differences and itemized vs not itemized... note in billing period segmentation
 
 Within the FOCUS specification, the following examples demonstrate how a refund or credit appears across various usage scenarios.
 
@@ -54,14 +50,12 @@ In this scenario we are utilizing the NULLABILITY of the Rate and Volume columns
 
 Riley:
 Usage and billing correction done at separate times and as separate line items (NOTE: the usage corrections may be multiple line items but the cost corrections may be in bulk --- THIS IS NOT PREFERRED)
+
 | Example Scenario | Item Description | ChargeCategory | ChargeClass | Volume | Rate | Cost | Billing Period Start | Charge Period Start |
 |------------------|------------------|----------------|-------------|--------|------|------|----------------------|-----------------|
 | Separate Events | Compute usage in US East | NULL | Usage | 1500 | 1 | 1500 | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
 | Separate Events | Correction to Compute usage in US East | Correction | Usage | -300 | NULL | NULL | 2023-01-01T00:00:00Z | 2023-01-01T00:00:00Z |
 | Separate Events | Corrected Compute cost in US East | Correction | Usage | NULL | NULL | -300 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
-
-
-
 
 ### PREFERRED CORRECTION APPROATCH
 
@@ -82,7 +76,6 @@ In this scenario we maintain cost calculation integrity rules by using the first
 | Accounting Rate | Corrected Compute usage in US East | Correction | Usage | 1500 | 0.8 | 1200 | 2023-02-01T00:00:00Z | 2023-01-01T00:00:00Z |
 
 In this scenario we maintain cost calculation integrity rules by using the first correction record to fully negate the original record that contained the error. We then supply a new complete billing record containing the corrected rate and cost data. This follows accounting data principals.
-
 
 ### In the Event of Billing File Regeneration / Restatement
 
@@ -110,7 +103,6 @@ In this case where historic billing data is regenerated practicioners are not ab
 
 NOTE: this correction record will be invoiced in 2023-02 but will appear in the billing data for 2023-01
 
-
 DO AN EXAMPLE WITH A PURELY USAGE CORRECTION--- DOES THIS IMPACT>?>?
 do i need to show a difference between billed vs effective cost???
 Restated Field?????
@@ -119,7 +111,6 @@ once boundar is crosed we cancorect the charge
 usage is corrected retrospecifely
 ???
 does the billed vs effecttive help with this
-
 
 #### NOTES
 
@@ -160,7 +151,6 @@ Current values observed in billing data for various scenarios:
 | Microsoft | Refund                             | Adjustment | Correction | Refund provided by support.                                                                                                                                                                                                                                                                                                                                |
 | Microsoft | Adjustment                         | Adjustment | NULL      | Rounding errors.                                                                                                                                                                                                                                                                                                                                           |
 | Microsoft | Tax                                | Tax        | NULL      | US sales tax or VAT.                                                                                                                                                                                                                                                                                                                                       |
-
 
 ### Bulk Refunds
 
@@ -215,10 +205,10 @@ The correction / refund is billed _daily_ during the first applicable *billing p
 this document assumes we do not support regenerating/restating data from previously closed billing periods
 you SHOULD NOT regenerate data from previoulsy closed billing periods
 
-Corrections are line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include: 
+Corrections are line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include:
 
-- [*Refund*](#glossary:refund) - experiencing a billing technical error (i.e. charging the incorrect rate/volume for a service line item)
-- [*Credit*](#glossary:credit) - providing a promotional benefit (i.e. migration incentives or new service incentives)
+* [*Refund*](#glossary:refund) - experiencing a billing technical error (i.e. charging the incorrect rate/volume for a service line item)
+* [*Credit*](#glossary:credit) - providing a promotional benefit (i.e. migration incentives or new service incentives)
 
 Refunds are applied to retrospective charge records where the usage has already been incurred whereas credits are applied in a forward looking perspective and are consumed ('burned-down') by future usage.
 
@@ -226,26 +216,29 @@ Refunds are applied to retrospective charge records where the usage has already 
 
 FOCUS supports two distinct models for the representation of corrections (Refunds & Credits) in the specification with the understanding that providers typically support the 'Bulk' record style, but SHOULD support the 'Itemized' record style where possible to improve visibility into this data set.
 
-# Credit (you can have a refund/correcton of a credit)
+## Credit (you can have a refund/correcton of a credit)
+
 Credits can be supplied as bulk or itemised charge line items as most appropriate. Credits may also have subsequent correction records that should follow the format of the original record.
 
 do we expect negative values? (TODO: look at all charge categories)
 
+## Refund
 
-# Refund
-## Bulk
+### Bulk
 
 Single line item correction where both billing period and usage period will share the same value and be represented within the current billing cycle
-WHERE 'Charge Class' = Correction & 'Charge Category' SHOULD = Credit / Adjustment
+
+```WHERE 'Charge Class' = Correction & 'Charge Category' SHOULD = Credit / Adjustment
+```
 
 this solution is simpler for providers to implement but adds complexity for FOCUS data consumers as the refund / credit is decoupled form the service being credited for
 
+### Itemized
 
-## Itemized
-
-WHERE 'Charge Class' = Correction & 'Charge Category' SHOULD = Usage / Purchase / Credit
+```WHERE 'Charge Class' = Correction & 'Charge Category' SHOULD = Usage / Purchase / Credit
 MUST be perSku and perSkuPrice
+```
 
 Multi line item correction that follows the billing format and time period of the items that are being corrected i.e the billing period will be the current billing cycle but the usage period will share the same datetime values for the original line items that are being corrected.
 
-this solution is more complex for providers to implement but alignes the refund line items to the service and time period being refunded providing a more accurate billing history and representation, whilst maintaining support for invoice reconciliation. 
+This solution is more complex for providers to implement but alignes the refund line items to the service and time period being refunded providing a more accurate billing history and representation, whilst maintaining support for invoice reconciliation.

@@ -39,7 +39,6 @@ Allowed values:
 | Credit      | Positive or negative charges granted by the provider for various scenarios e.g promotional credits or corrections to promotional credits.     |
 | Adjustment      | Positive or negative charges the provider applies that do not fall into other category values.    |
 
-
 ## Introduced (version)
 
 0.5

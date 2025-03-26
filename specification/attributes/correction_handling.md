@@ -1,11 +1,11 @@
 # Correction Handling
 
-Corrections are line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include: 
+Corrections are line items that appear in the FOCUS data set to support any scenarios where providers need to adjust a charge to a consumer. These scenarios include:
 
-- [*Refund*](#glossary:refund) - experiencing a billing technical error (i.e. charging the incorrect rate/volume for a service line item)
-- [*Credit*](#glossary:credit) - providing a promotional benefit (i.e. migration incentives or new service incentives)
-- Metadata Corrections
-- Late Arriving Charges
+* [*Refund*](#glossary:refund) - experiencing a billing technical error (i.e. charging the incorrect rate/volume for a service line item)
+* [*Credit*](#glossary:credit) - providing a promotional benefit (i.e. migration incentives or new service incentives)
+* Metadata Corrections
+* Late Arriving Charges
 
 Refunds are applied to retrospective charge records where the usage has already been incurred whereas credits are applied in a forward looking perspective and are consumed ('burned-down') by future usage.
 
@@ -26,37 +26,6 @@ Refund previous period
 Credit current period
 credit previous period
 late arriving costs
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 A discount is a pricing construct where providers offer a reduced price for [*services*](#glossary:service). Providers may have many types of discounts, including but not limited to commercially [*negotiated discounts*](#glossary:negotiated-discount), [*commitment discounts*](#glossary:commitment-discount) when you agree to a certain amount of usage or spend, and bundled discounts where you receive free or discounted usage of one product or *service* based on the usage of another. Discount Handling is commonly used in scenarios like verifying discounts were applied and calculating cost savings.
 

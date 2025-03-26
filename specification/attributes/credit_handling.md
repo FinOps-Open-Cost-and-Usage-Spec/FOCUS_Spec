@@ -1,6 +1,6 @@
 # Credit Handling
 
- [*Credits*](#glossary:credit) are line items that appear in the FOCUS data set to support any scenarios where providers are providing a promotional benefit such as migration incentives, new service incentives or bundled discounts where you receive free or discounted usage of one product or *service* based on the usage of another. 
+ [*Credits*](#glossary:credit) are line items that appear in the FOCUS data set to support any scenarios where providers are providing a promotional benefit such as migration incentives, new service incentives or bundled discounts where you receive free or discounted usage of one product or *service* based on the usage of another.
 
 While providers may use different terms to describe credits / discounts, FOCUS identifies a discount as being a reduced price applied directly to a row. Whereas any price or cost reductions that are awarded after the fact are identified as a "Credit" Charge Category. One example might be when a provider offers a reduced rate after passing a certain threshold of usage or spend.[Discount Handling](#discounthandling)
 
