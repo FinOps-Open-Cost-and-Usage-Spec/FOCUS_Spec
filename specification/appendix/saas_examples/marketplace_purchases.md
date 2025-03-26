@@ -15,7 +15,7 @@ The contract includes the following items:
 
 ## Key Factors
 
-* In order to ensure consistent aggregation of cost and usage data the marketplace's FOCUS data, must include BilledCost that aligns with the invoiced amount. This is because the marketplace is considered the Invoice Issuer. The Provider would not include a BilledCost, else the billed cost would be double counted if aggregating both record sets. 
+* In order to ensure consistent aggregation of cost and usage data the marketplace's FOCUS data, must include BilledCost that aligns with the invoiced amount. This is because the marketplace is considered the Invoice Issuer. The Provider would not include a BilledCost, else the billed cost would be double counted if aggregating both record sets.
 
 ## Initial Purchase Records Provided in the CSP's FOCUS Data
 
@@ -33,4 +33,3 @@ Entries in the FOCUS dataset: [SaaS Providers FOCUS Entries](https://docs.google
 
 * The SaaS Provider's data does not include a Billed Cost equivalent to the purchase amount because they are not the Invoice Issuer, however they do provide a purchase record.
 * The SaaS Provider's FOCUS purchase record entries may be at a higher level of granularity than that of the CSP providers focus data, and therefore may not match the purchase records in the CSP's FOCUS data.
-

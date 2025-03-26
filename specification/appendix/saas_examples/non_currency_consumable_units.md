@@ -8,7 +8,7 @@ ACME provides a SaaS service where rather than purchased items or usage rates be
 
 * Token Consumption:
   * Customer contracts include allocations of tokens at a dollar rate and usage results in depletion of these tokens.
-  * Once tokens are fully depleted, additional tokens can be purchased. 
+  * Once tokens are fully depleted, additional tokens can be purchased.
   * Token usage above allocation results in a negative balance and a payable invoice for the additional tokens.
 
 * Currently-Provided Billing Artifacts:
@@ -22,7 +22,6 @@ ACME provides a SaaS service where rather than purchased items or usage rates be
 * All usage consume tokens
 * The token to currency rate will not be the same for each allocation of credit, depending on bulk, overage, or type factors.
 
-
 ## Initial Purchase Records in FOCUS
 
 On April 1st, 2025, ACME executes a contract  and invoices AwesomeCorp $205,000. The sale includes the following items to AwesomeCorp:
@@ -30,7 +29,6 @@ On April 1st, 2025, ACME executes a contract  and invoices AwesomeCorp $205,000.
 * 100000 tokens at $2.00 per token
 
 Entries in the FOCUS dataset: [Initial Purchase Token Allocation](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788)
-
 
 ## Usage Records IN FOCUS
 
