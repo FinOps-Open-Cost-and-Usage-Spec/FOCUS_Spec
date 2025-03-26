@@ -4,7 +4,7 @@ A usage-based [*commitment discount*](#glossary:commitmentdiscount) obligates a 
 
 When mixing usage-based commitment discounts with and without *commitment discount flexibility* and [*CommitmentDiscountQuantity*](#commitmentdiscountquantity) measured by time, it is important to differentiate the [*CommitmentDiscountUnit*](#commitmentdiscountunit) for each type of *commitment discount*. In each scenario below, *commitment discounts* *without* *commitment discount flexibility* applied use "Hour" as the *CommitmentDiscountUnit*, and conversely commitment discounts *with* *commitment discount flexibility* applied use "Normalized Hour" as the *CommitmentDiscountUnit*.
 
-For more details on exactly how commitment discounts purchase and usage rows appear with and without commitment discount flexibility, see the following scenarios:
+For more details on exactly how *commitment discounts* purchase and usage rows appear with and without *commitment discount flexibility*, see the following scenarios:
 
 !INCLUDE "one_hundred_percent_utilization_without_commitment_discount_flexibility.md",1
 !INCLUDE "zero_percent_utilization_without_commitment_discount_flexibility.md",1
