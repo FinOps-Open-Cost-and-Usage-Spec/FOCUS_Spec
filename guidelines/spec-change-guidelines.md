@@ -22,9 +22,9 @@ A changelog is provided specifying helpful information to consumers of focus dat
 ### Addition of a New Feature or Column
 
 When a new feature or column is introduced to the FOCUS specification, depending on the circumstances of the change, the support of the column may be initially optional. This is to allow for the adoption of a new feature or columne by prodivers that support it, without restricting other adopters from using newer versions of the specification. 
-- The feature or item addition is proposed and specification is modified. 
-- Change log includes an indication that the new feature/column has been added.
-    - example: "Example  Column 1 has been added in version 2.0"
+* The feature or item addition is proposed and specification is modified. 
+* Change log includes an indication that the new feature/column has been added.
+    * example: "Example  Column 1 has been added in version 2.0"
 
 ### Renaming a Column or Metadata 
     
