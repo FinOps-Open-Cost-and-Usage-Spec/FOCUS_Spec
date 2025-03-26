@@ -25,6 +25,10 @@ Current values observed in billing data for various scenarios:
 ## Discussion / Scratch space
 
 * SKU == functionality that you're getting
+  * The following were discussed for 1.2, but were not closed and will be reviewed in a future release:
+    * SkuId MUST remain consistent across regions.
+    * SkuId MUST remain consistent across service level agreement (SLA) variations.
+    * SkuId MUST remain consistent regardless of availability options (e.g., [*interruptible*](#glossary:interruptible) resources).
 * SkuId should be the same no matter how the billing account is configured
 * SkuId should support comparing before/after negotiations
 * SkuId should support comparing with a public/retail price list
