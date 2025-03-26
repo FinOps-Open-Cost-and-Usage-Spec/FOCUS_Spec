@@ -1,4 +1,4 @@
-# Deprecating Columns
+# Renaming Columns
 
 ## Scenario
 
