@@ -32,7 +32,7 @@ The provider-assigned identifier for an invoice encapsulating some or all charge
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| Feature level   | Optional        |
+| Feature level   | Recommended        |
 | Allows nulls    | True            |
 | Data type       | String           |
 | Value format    | \<not specified> |
