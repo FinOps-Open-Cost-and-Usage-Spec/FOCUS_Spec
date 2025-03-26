@@ -9,10 +9,8 @@ SKU Price Details helps practitioners understand and distinguish *SKU Prices*, e
 The SkuPriceDetails column adheres to the following requirements:
 
 * SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
-* SkuPriceDetails MUST be of type String.
-* SkuPriceDetails MUST conform to [StringHandling](#stringhandling) requirements.
 * SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-* Property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+* SkuPriceDetails property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * SkuPriceDetails nullability is defined as follows:
   * SkuPriceDetails MUST be null when SkuPriceId is null.
   * SkuPriceDetails MAY be null when SkuPriceId is not null.
@@ -57,7 +55,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 | Column type     | Dimension        |
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
-| Data type       | String           |
+| Data type       | JSON             |
 | Value format    | [Key-Value Format](#key-valueformat) |
 
 ## Introduced (version)
