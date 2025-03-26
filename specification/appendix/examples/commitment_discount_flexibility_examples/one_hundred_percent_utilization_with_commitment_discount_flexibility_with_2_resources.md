@@ -4,7 +4,7 @@
 
 For this example, fictitious provider, *TinyCloud*, offers the following SKU catalog which is used in the scenario below.
 
-### SKU Catalog
+## SKU Catalog
 
 | Service | Sku Id    | Sku Price Id                            | Sku Price Unit Price | Normalization Factor |
 |---------|-----------| ----------------------------------------|----------------------| ---------------------|
