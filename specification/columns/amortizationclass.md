@@ -7,7 +7,7 @@ The AmortizationClass column adheres to the following requirements:
 * AmortizationClass column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *amortization*.
 * AmortizationClass MUST be of type String.
 * AmortizationClass MUST be "Principal" when the row represents an original charge that is amortized across multiple other rows.
-* AmortizationClass MUST be "Amortized Charge" when the row represents a result of *amortization* from a previous charge.
+* AmortizationClass MUST be "Amortized Charge" when the row includes *amortization* from a previous charge.
 * AmortizationClass MUST be null when it is not the original, principal charge or the effective, amortized charge after *amortization* is applied.
 
 ## Column ID
