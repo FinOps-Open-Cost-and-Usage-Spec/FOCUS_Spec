@@ -22,7 +22,7 @@ Previous Column Name
 |:----------------|:-----------------|
 | Feature level   | Conditional      |
 | Allows nulls    | False            |
-| Data type       | Boolean          |
+| Data type       | String           |
 | Value format    | \<not specified> |
 
 ## Introduced (version)
