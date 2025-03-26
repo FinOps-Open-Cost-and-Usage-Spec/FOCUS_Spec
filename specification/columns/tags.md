@@ -7,8 +7,6 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 The Tags column adheres to the following requirements:
 
 * Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
-* Tags MUST be of type String.
-* Tags MUST conform to [StringHandling](#stringhandling) requirements.
 * Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
 * Tags MAY be null.
 * When Tags is not null, Tags adheres to the following additional requirements:
@@ -84,7 +82,7 @@ The set of tags assigned to *tag sources* that account for potential provider-de
 | Column type     | Dimension        |
 | Feature level   | Conditional      |
 | Allows nulls    | True             |
-| Data type       | String           |
+| Data type       | JSON             |
 | Value format    | [Key-Value Format](#key-valueformat) |
 
 ## Introduced (version)
