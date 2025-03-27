@@ -1,6 +1,6 @@
 # Pricing to Billing Effective Exchange Rate
 
-A Pricing to Billing Exchange Rate represents the conversion factor from [Pricing Currency](#pricingcurrency) to [Billing Currency](#billingcurrency).  Pricing to Billing Effective Exchange Rate is commonly used in scenarios where different currencies are used for pricing and billing.  
+A Pricing to Billing Effective Exchange Rate represents the conversion factor from [Pricing Currency](#pricingcurrency) to [Billing Currency](#billingcurrency) applied to the charge.  Pricing to Billing Effective Exchange Rate is commonly used in scenarios where different currencies are used for pricing and billing.  
 
 The PricingToBillingEffectiveExchangeRate column adheres to the following requirements:
 
@@ -22,7 +22,7 @@ Pricing to Billing Effective Exchange Rate
 
 ## Description
 
-The conversion factor from Pricing Currency to Billing Currency.
+The conversion factor from Pricing Currency to Billing Currency as applied to the charge.
 
 ## Usability Constraints
 
