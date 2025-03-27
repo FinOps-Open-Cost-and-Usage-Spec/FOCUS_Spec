@@ -11,8 +11,6 @@ Each SKU ID represents a unique set of features can be sold at different price p
 * Date the charge was incurred.
 * Provider agreements and contracts.
 * Pricing models (e.g., flat rate, tiered, committed).
-* Geographic region.
-* Service Level Agreements (SLAs).
 * Availability (e.g., spot VMs).
 
 SKU ID should be consistent across pricing variations of a good or service to facilitate price comparisons for the same functionality, like where the functionality is provided or how it's paid for. SKU ID can be referenced on a catalog or [*price list*](#glossary:price-list) published by a provider to look up detailed information about the *SKU*. The composition of the properties associated with the SKU ID may differ across providers. SKU ID is commonly used for analyzing and comparing costs for the same SKU in different regions, tiers, and more.
