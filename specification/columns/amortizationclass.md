@@ -1,6 +1,6 @@
 # Amortization Class
 
-Amortization Class indicates how a row in a [*FOCUS dataset*](#glossary:FOCUS-dataset) relates to [*amortization*](#glossary:amortization). Amortization Class is used to identify and distinguish between the charges before and after *amortization* is applied. Amortization Class is commonly used to quantify cost savings accurately by excluding charges that can be double-counted when aggregating List Cost or Contracted Cost.
+Amortization Class indicates how a row in a [*FOCUS dataset*](#glossary:FOCUS-dataset) relates to [*amortization*](#glossary:amortization). Amortization Class is used to identify and distinguish between the charges before and after *amortization* is applied. Amortization Class is commonly used to quantify cost savings accurately by excluding the original principal charges that are amortized over time, which could otherwise be double-counted when aggregating List Cost or Contracted Cost.
 
 The AmortizationClass column adheres to the following requirements:
 
