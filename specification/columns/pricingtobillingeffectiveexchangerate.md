@@ -6,7 +6,7 @@ The PricingToBillingEffectiveExchangeRate column adheres to the following requir
 
 * PricingToBillingEffectiveExchangeRate MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports pricing and billing in different currencies.
 * PricingToBillingEffectiveExchangeRate MUST be of type Decimal.
-* PricingToBillingEffectiveExchangeRate MUST conform to [Numeric Format](#numericformat) requirements.
+* PricingToBillingEffectiveExchangeRate MUST conform to [NumericFormat](#numericformat) requirements.
 * PricingToBillingEffectiveExchangeRate MUST NOT be null.
 * PricingToBillingEffectiveExchangeRate MUST be a non-negative decimal value.
 * PricingToBillingEffectiveExchangeRate MUST represent the conversion factor from [Pricing Currency](#pricingcurrency) to [Billing Currency](#billingcurrency).
