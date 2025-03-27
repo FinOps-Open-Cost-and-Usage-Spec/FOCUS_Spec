@@ -80,7 +80,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 **Added:**
 
 New use cases:
-- Compare billed cost per subaccount to budget
+- Compare Billed Cost per Sub Account to budget
 
 New attributes:
 - `String handling`
