@@ -4,8 +4,10 @@ The Service Category is the highest-level classification of a [*service*](#gloss
 
 The ServiceCategory column adheres to the following requirements:
 
-* The ServiceCategory column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
-* This column is of type String and MUST be one of the allowed values.
+* ServiceCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ServiceCategory MUST be of type String.
+* ServiceCategory MUST NOT be null.
+* ServiceCategory MUST be one of the allowed values.
 
 ## Column ID
 
