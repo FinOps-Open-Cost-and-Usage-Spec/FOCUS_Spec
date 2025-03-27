@@ -60,7 +60,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 | Column type   | Dimension                          |
 | Feature level | Conditional                        |
 | Allows nulls  | True                               |
-| Data type     | String                             |
+| Data type     | JSON                               |
 | Value format  | [KeyValueFormat](#key-valueformat) |
 
 ### FOCUS-Defined Properties
