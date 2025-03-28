@@ -24,6 +24,8 @@ The SkuPriceId column adheres to the following requirements:
   * SkuPriceId MUST enable verification of the given [ListUnitPrice](#listunitprice) when the provider publishes unit prices exclusive of discounts.
   * SkuPriceId MUST enable verification of the given [ContractedUnitPrice](#contractedunitprice) when the provider supports negotiated pricing concepts.
 
+See [Examples: Commitment Discount Flexibility](#commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
+
 ## Column ID
 
 SkuPriceId
