@@ -13,7 +13,7 @@ The PricingCurrencyEffectiveCost column adheres to the following requirements:
 * PricingCurrencyEffectiveCost MUST NOT be null.
 * PricingCurrencyEffectiveCost MUST be a valid decimal value.
 * PricingCurrencyEffectiveCost MUST be denominated in the [PricingCurrency](#pricingcurrency).
-* PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage. 
+* PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage.
 * The product of PricingCurrencyEffectiveCost and [PricingToBillingEffectiveExchangeRate](#pricingtobillingeffectiveexchangerate) MUST match the [EffectiveCost](#effectivecost) when ChargeClass is not "Correction".
 
 ## Column ID
