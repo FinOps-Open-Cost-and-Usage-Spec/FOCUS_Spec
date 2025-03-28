@@ -26,7 +26,7 @@ A billing account is the account where invoices are generated. Each billing acco
 
 ## Example SQL Query
 
-```
+```sql
 SELECT
   BillingAccountId,
   BillingAccountName,
@@ -41,4 +41,3 @@ GROUP BY
   BillingAccountId,
   SubAccountId
 ```
-
