@@ -68,6 +68,10 @@ The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the asso
 
 A charge to correct cost or usage data in a previously invoiced [*billing period*](#glossary:billing-period).
 
+<a name="glossary:covering-cost">Covering Cost</a>
+
+The amount of spend applied to each [*charge period*] derived as the total committed purchase amount divided by the number of [*charge periods*](glossary:chargeperiod) within a [*commitment discount's*](#glossary:commitment-discount) [*term*](#glossary:term).
+
 <a name="glossary:credit"><b>Credit</b></a>
 
 A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
