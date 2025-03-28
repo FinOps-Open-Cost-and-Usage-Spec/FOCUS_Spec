@@ -6,7 +6,7 @@
 
 ## Description
 
-The FOCUS spec supports the tracking of committed use discounts usage and underusage, which can come in the form of commitment discounts, or capacity reservations. 
+The FOCUS spec supports the tracking of committed use discounts usage and underusage, which can come in the form of commitment discounts, or capacity reservations.
 
 ## Directly Dependent Columns
 
