@@ -19,7 +19,7 @@ When provider supports unit pricing concepts, The FOCUS Specification allows pra
 * SkuId
 * SkuPriceDetails
 * SkuPriceId
- 
+
 ## Supporting Columns
 
 * BillingCurrency
