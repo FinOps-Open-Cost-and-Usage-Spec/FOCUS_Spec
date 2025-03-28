@@ -48,36 +48,35 @@ The FOCUS specification requires that removal actions are preceded with a deprec
 
 Changes to the FOCUS specification are classified into one of the following types:
 
-### Addition:
+### Addition
 
 The addition of a new feature or column to the FOCUS specification.
 
-### Deprecation:
+### Deprecation
 
 A feature or column from the FOCUS specification is moving to deprecated status, discouraging use and indicating that the same will be removed in a future version 
 
-### Removal:
+### Removal
 
 The removal of a feature or column from the FOCUS specification.
 
-### Improvement:
+### Improvement
 
 Modification to improve or refine a feature or column in the FOCUS specification that was not considered broken. 
 
-### Bug Fix:
+### Bug Fix
 
 Modification to correct an error in the FOCUS specification, that was considered broken.
 
-### Editorial:
+### Editorial
 
 Modification to correct a spelling, grammar, or formatting error in the FOCUS specification that does not impact the intended logic of the specification contents. 
-
 
 ## Change Impact Classification
 
 The FOCUS specification is designed to be updated overtime to increase it use and to adapt to changes in the industry over time.  In order to provide insight into the impact of the change, changes are classified into one of the following categories Change Impact categories:
 
- ### Compatible Change:
+ ### Compatible Change
 
 Any change in the spec that does not require modification by the consumer to continue using the spec for published use cases. 
 
@@ -85,7 +84,7 @@ Examples:
   - Adding a new column for a new use case or 
   - Adding a new category for an existing that does not require splitting or re-categorization.
 
-### Migration Compatible Change:
+### Migration Compatible Change
 
 Any change that still supports the Published Supported Features, but may require modification to query or ingestion by consumers of a FOCUS dataset.
 
@@ -93,7 +92,8 @@ Examples:
    - An existing categorization column is changes to split a category into two different categories
    - An existing column that contains a numerical value is has its units changed, requireing a modification to queries using the column. The ability to use the column is preserved but a new query must be written
 
-### Incompatible Change: 
+### Incompatible Change
+
 Any change to the spec that ends the support of a Published Use Case. The removal of a Use Case or a column without an alternative source for the data supplied by the column. Incompatible Changes, require prior notification and  
 
 Examples:
