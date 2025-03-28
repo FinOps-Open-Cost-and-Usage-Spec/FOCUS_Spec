@@ -1,6 +1,7 @@
 # Account Structures
 
 ## Introduced Version
+
 0.5
 
 ## Description
@@ -10,6 +11,7 @@ Different providers have different account constructs that FinOps practitioners 
 A billing account is the account where invoices are generated. Each billing account can have one or more sub accounts, which can be used for deploying and managing resources and services. Billing and sub accounts are often used to facilitate allocation strategies and FinOps practitioners must be able to break costs down by billing and sub account to facilitate FinOps scenarios like chargeback and budgeting.
 
 ## Directly Dependent Columns
+
 * BilledCost
 * BillingAccountId
 * BillingAccountName
@@ -19,9 +21,11 @@ A billing account is the account where invoices are generated. Each billing acco
 * SubAccountType
 
 ## Supporting Columns
+
 * InvoiceId
 
 ## Example SQL Query
+
 ```
 SELECT
   BillingAccountId,
@@ -37,5 +41,4 @@ GROUP BY
   BillingAccountId,
   SubAccountId
 ```
-
 
