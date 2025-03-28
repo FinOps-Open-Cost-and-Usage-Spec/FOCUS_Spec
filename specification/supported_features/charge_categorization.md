@@ -1,12 +1,15 @@
 # Charge Categorization
 
 ## Introduced Version
+
 1.0
 
 ## Description
+
 The FOCUS spec supports the categorization of charges including purchases, usage, tax, credits and adjustments. It includes classification on frequency. It includes classification on correction vs normal entries
 
 ## Directly Dependent Columns
+
 * ChargeCategory
 * ChargeClass
 * ChargeFrequency
@@ -25,7 +28,8 @@ The FOCUS spec supports the categorization of charges including purchases, usage
 ## Example SQL Query
 
 ### Report on Applied Discounts
-```
+
+```sql
 SELECT
   ProviderName,
   BillingAccountId,
@@ -48,7 +52,8 @@ GROUP BY
 ```
 
 ### Report on Commitment Discount Purchases
-```
+
+```sql
 SELECT
   MIN(ChargePeriodStart) AS ChargePeriodStart,
   MAX(ChargePeriodEnd) AS ChargePeriodEnd,
@@ -75,7 +80,8 @@ GROUP BY
 ```
 
 ### Report on Corrections
-```
+
+```sql
 SELECT
   ProviderName,
   BillingAccountId,
@@ -95,7 +101,8 @@ GROUP BY
 ```
 
 ### Report Recurring Recurring Charges
-```
+
+```sql
 SELECT
   BillingPeriodStart,
   CommitmentDiscountId,
