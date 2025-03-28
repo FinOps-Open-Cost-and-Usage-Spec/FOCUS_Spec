@@ -21,6 +21,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - `CommitmentDiscountType` column updates:
   - Must be a consistent, readable display value.
+- `SkuPriceDetails` column updates:
+  - Created FOCUS-Defined properties.
 
 [All 1.2 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
 
