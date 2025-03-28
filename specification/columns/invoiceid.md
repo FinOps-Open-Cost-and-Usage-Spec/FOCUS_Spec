@@ -39,4 +39,3 @@ The provider-assigned identifier for an invoice encapsulating some or all charge
 ## Introduced (version)
 
 1.2
-
