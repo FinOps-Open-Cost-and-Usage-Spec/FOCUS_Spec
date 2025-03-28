@@ -17,7 +17,6 @@ The PricingCurrencyContractedUnitPrice column adheres to the following requireme
 * When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice adheres to the following additional requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.
-  * The product of PricingCurrencyContractedUnitPrice, [PricingQuantity](#pricingquantity), and [PricingToBillingEffectiveExchangeRate](#pricingtobillingeffectiveexchangerate) MUST match the [ContractedCost](#contractedcost) when PricingQuantity is not null and ChargeClass is not "Correction".
 * Discrepancies in PricingCurrencyContractedUnitPrice, ContractedCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
 
 ## Column ID
