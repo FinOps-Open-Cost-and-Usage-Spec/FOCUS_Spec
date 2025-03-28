@@ -12,7 +12,6 @@ The Invoice ID column adheres to the following requirements:
 * InvoiceId MAY be generated prior to an invoice being issued.
 * InvoiceId MUST be associated with the related *charge* and BillingAccountId when a pre-generated invoice or provisional invoice exists.
 
-
 See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
 ## Column ID
@@ -40,3 +39,4 @@ The provider-assigned identifier for an invoice encapsulating some or all charge
 ## Introduced (version)
 
 1.2
+
