@@ -8,7 +8,7 @@ The FOCUS specification is released periodically. For each release a version num
 
 ## Version Changelog
 
-A changelog is provided specifying helpful information to consumers of the focus specification. The changelog for each version identifies the following:
+A changelog is provided specifying helpful information to consumers of the FOCUS specification. The changelog for each version identifies the following:
 
 * The version number
 * Impact Classification
