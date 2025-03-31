@@ -100,7 +100,7 @@ GROUP BY
   ServiceName
 ```
 
-### Report Recurring Recurring Charges
+### Report Recurring Charges
 
 ```sql
 SELECT
