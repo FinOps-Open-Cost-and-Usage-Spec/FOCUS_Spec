@@ -64,4 +64,4 @@ GROUP BY
   BillingAccountId,
   CapacityReservationId,
   CapacityReservationStatus
-  ```
+```
