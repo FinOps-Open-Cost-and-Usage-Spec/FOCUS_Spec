@@ -19,9 +19,9 @@ The SkuPriceId column adheres to the following requirements:
   * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
   * SkuPriceId MAY equal SkuId.
   * SkuPriceId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
-  * SkuPriceId MUST serve as a reference for a *SKU price* in a provider-supplied *price list*, allowing lookup of detailed information about the *SKU Price*.
-  * SkuPriceId MUST enable verification of the given [ListUnitPrice](#listunitprice) when the provider publishes unit prices exclusive of discounts.
-  * SkuPriceId MUST enable verification of the given [ContractedUnitPrice](#contractedunitprice) when the provider supports negotiated pricing concepts.
+  * SkuPriceId MUST reference a *SKU Price* in a provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
+  * SkuPriceId MUST support the lookup of the [ListUnitPrice](#listunitprice) when the provider publishes unit prices exclusive of discounts.
+  * SkuPriceId MUST support the verification of the given [ContractedUnitPrice](#contractedunitprice) when the provider supports negotiated pricing concepts.
 
 See [Examples: Commitment Discount Flexibility](#commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
 
