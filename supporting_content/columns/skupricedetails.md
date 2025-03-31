@@ -2,8 +2,8 @@
 
 ## Example provider mappings
 
-AWS
-| F_InstanceType  | Family            | Generation | Additional Scope | F_SizeClass| F_Series                |
+### AWS
+| InstanceType    | Family            | Generation | Additional Scope | SizeClass  | Series                  |
 |---------------  |-------------------|------------|------------------|---------   |-------------------------|
 | r4.xlarge       | Memory Optimized  | 4          |                  | xlarge     | r4                      |
 | r5.xlarge       | Memory Optimized  | 5          |                  | xlarge     | r5                      |
@@ -12,31 +12,38 @@ AWS
 | r6gd.8xlarge    | Memory Optimized  | 6          | local disk       | 8xlarge    | r6gd                    |
 | c6g.8xlarge     | Compute Optimized | 6          |                  | 8xlarge    | c6g                     |
 
-GCP
-| sku.id         | sku.name                                        | F_Series | F_CoreCount | F_MemorySize |
+- Per [AWS EC2 User Guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html) InstanceSeries would refer to the entire Instance Family.
+
+### GCP
+| sku.id         | sku.name                                        | Series   | CoreCount   | MemorySize   |
 | -------------- |-------------------------------------------------| -------- | ----------- | ------------ |
 | 2E27-4F75-95CD | N1 Predefined Instance Core running in Americas | N1       | 1           |              |
 | 07C7-3B6C-C92A | N2D AMD Custom Instance Ram running in Zurich   | N2D      |             | 1            |
 
-- GCP would not include F_InstanceType nor F_SizeClass because these are properties of a resource since their SKUs aren't specific to an instance size/shape
-- The CoreCount and MemorySize are both equal to 1 becuase the pricing unit is 1 core / hour and the RAM is 1 GB (2<sup>10</sup> which is referred to as GiB outside of the context of memory)
+- InstanceSeries refers to the "machine series" as defined in [Compute Engine Terminology](https://cloud.google.com/compute/docs/machine-resource#vm_terminology).
+- GCP would not include InstanceType nor SizeClass because these are properties of a resource since their SKUs aren't specific to an instance size/shape.
+- The CoreCount and MemorySize are both equal to 1 becuase the pricing unit is 1 core / hour and the RAM is 1 GB (2<sup>10</sup> which is referred to as GiB outside of the context of memory).
 
-Azure
-| F_InstanceType | F_Series | F_CoreCount | F_MemorySize | F_GpuCount | F_OperatingSystem |
+### Azure
+| InstanceType   | Series   | CoreCount   | MemorySize   | GpuCount   | OperatingSystem   |
 | -------------- | -------- | ----------- | ------------ | ---------- | ----------------- |
 | E16_v4         | Ev4      | 16          | 128          |            | Windows           |
 | NC12s_v3       | NCsv3    | 12          | 224          | 2          | Linux             |
 
 
-| F_InstanceType | F_DiskSpace   | F_Redundancy | F_DiskType | F_StorageClass |
+| InstanceType   | DiskSpace     | Redundancy   | DiskType   | StorageClass   |
 | -------------- | ------------- | ------------ | ---------- | -------------- |
 | P50            | 4096          | Zonal        | SSD        | Premium SSD    |
+
+- Azure refers to multiple groupings of Virtual Machine SKUs as series. [This page](https://azure.microsoft.com/en-us/pricing/details/virtual-machines/series/#d-series) refers to D-series, Dplds VM series, and Dpdsv5 VM series whereas [this page](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/d-family) calls the D component of these the D-family.
+  - To remove ambiguity, the InstanceSeries Focus-defined property value will refer to the subset of [Azure Virtual Machine naming convention](https://learn.microsoft.com/en-us/azure/virtual-machines/vm-naming-conventions) excluding the "# of vCPUs" and "*Constrained vCPUs" components, as shown in the [Virtual Machine name breakdowns structure](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/overview#name-structure-breakdown)
+  - Referencing the above examples, this approach aligns to how Azure lists the series which are part of the D-family, would match the "Dpdsv5 VM series" example, and matches the information in the Instance Series dropdown of the [Azure Pricing Calculator](https://azure.microsoft.com/en-us/pricing/calculator/) when Virtual Machines are selected (without the appended "-series").
 
 ## Example Usecases
 
 - Capcity Planning: 
   - Quantify how many cores of a VM Series you have provisioned in a region on average.
-    - Uses: SkuPriceDetails {F_CoreCount, F_Series}, PricingQuantity, ChargePeriodStart, ChargePeriodEnd, RegionName
+    - Uses: SkuPriceDetails {CoreCount, Series}, PricingQuantity, ChargePeriodStart, ChargePeriodEnd, RegionName
   - Determine how much disk storage you have provisioned
 - Unit Economics
   - Calculate the average cost per core of a VM Series
