@@ -27,8 +27,7 @@ The SkuId column adheres to the following requirements:
   * SkuId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
   * SkuId MUST remain consistent across [PricingCategory](#pricingcategory) values.
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the SKU.
-* SkuId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) consumed when ChargeCategory is "Usage".
-* SkuId MUST be associated with a given *resource* or *service* purchased when ChargeCategory is "Purchase".
+* SkuId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
 * SkuId MAY equal [SkuPriceId](#SkuPriceId).
 
 ## Column ID
