@@ -12,7 +12,7 @@
 | r6gd.8xlarge    | Memory Optimized  | 6          | local disk       | 8xlarge    | r6gd                    |
 | c6g.8xlarge     | Compute Optimized | 6          |                  | 8xlarge    | c6g                     |
 
-- Per [AWS EC2 User Guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html) InstanceSeries would refer to the entire Instance Family.
+- Per [AWS EC2 User Guide](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html) InstanceSeries would refer to the entire Instance Family, including all of the Series, Generation, and Options components.
 
 ### GCP
 | sku.id         | sku.name                                        | Series   | CoreCount   | MemorySize   |
