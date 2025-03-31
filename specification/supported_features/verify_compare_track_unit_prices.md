@@ -31,7 +31,9 @@ When provider supports unit pricing concepts, The FOCUS Specification allows pra
 
 ```sql
 SELECT DISTINCT
+  SkuId,
   SkuPriceId,
+  SkuPriceDetails,
   BillingPeriodId,
   ChargePeriodStart,
   ChargePeriodEnd,
