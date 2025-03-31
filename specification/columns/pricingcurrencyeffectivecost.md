@@ -1,6 +1,6 @@
 # Pricing Currency Effective Cost
 
-The Pricing Currency Effective Cost represents the cost of the [*charge*](#glossary:charge) after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge, as denominated in [Pricing Currency](#pricingcurrency).  Pricing Currency Effective Cost denominated in [Billing Currency](#billingcurrency) (i.e., [Effective Cost](#effectivecost)) can be derived by multiplying it by the [Pricing to Billing Effective Exchange Rate](#pricingtobillingeffectiveexchangerate).  This allows the practitioner to perform a conversion from either 1) a [*national currency*](#glossary:nationalcurrency) to a [*virtual currency*](#glossary:virtualcurrency) (e.g. tokens to USD), or 2) one national currency to another (e.g. EUR to USD).
+The Pricing Currency Effective Cost represents the cost of the [*charge*](#glossary:charge) after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge, as denominated in [Pricing Currency](#pricingcurrency). This allows the practitioner to perform a conversion from either 1) a [*national currency*](#glossary:nationalcurrency) to a [*virtual currency*](#glossary:virtualcurrency) (e.g. tokens to USD), or 2) one national currency to another (e.g. EUR to USD).
 
 The PricingCurrencyEffectiveCost column adheres to the following requirements:
 
@@ -14,7 +14,6 @@ The PricingCurrencyEffectiveCost column adheres to the following requirements:
 * PricingCurrencyEffectiveCost MUST be a valid decimal value.
 * PricingCurrencyEffectiveCost MUST be denominated in the [PricingCurrency](#pricingcurrency).
 * PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage.
-* The product of PricingCurrencyEffectiveCost and [PricingToBillingEffectiveExchangeRate](#pricingtobillingeffectiveexchangerate) MUST match the [EffectiveCost](#effectivecost) when ChargeClass is not "Correction".
 
 ## Column ID
 
