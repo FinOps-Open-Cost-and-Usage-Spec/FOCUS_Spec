@@ -70,18 +70,17 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | Key                      | Description                                                     | Data Type        | Unit of Measure (numeric) or example values (string)  |
 | :----------------------- | :-------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
 | CoreCount                | Number of physical or virtual CPUs available<br><sup>1</sup>    | Numeric          | Measure: Quantity of Cores                            |
-| DiskIops          | Storage input/output operations per second<br><sup>1</sup>      | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
+| DiskIops                 | Storage input/output operations per second<br><sup>1</sup>      | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | DiskSpace                | Storage capacity available                                      | Numeric          | Measure: Gibibytes (GiB)                              |
 | DiskType                 | Kind of disk used                                               | String           | Examples: "SSD", "HDD", "NVMe"                        |
 | GpuCount                 | Number of GPUs available                                        | Numeric          | Measure: Quantity of GPUs                             |
 | InstanceType             | Common name of the instance including size, shape, series, etc. | String           | Examples: "m5d.2xlarge", "NC24rs_v3", "P50"           |
+| InstanceSeries           | Common name for the series and/or generation of the instance    | String           | Examples: "M5", "Dadv5", "N2D"                        |
 | MemorySize               | RAM allocated for processing                                    | Numeric          | Measure: Gibibytes (GiB<sup>2</sup>)                  |
 | NetworkBandwidth         | Network capacity for data transfer<br><sup>1</sup>              | Numeric          | Measure: Megabits per second (Mbps)                   |
-| NetworkIops       | Network input/output operations per second<br><sup>1</sup>      | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
+| NetworkIops              | Network input/output operations per second<br><sup>1</sup>      | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | OperatingSystem          | Operating system family<sup>3</sup>                             | String           | Examples: "Linux", "MacOS", "Windows"                 |
 | Redundancy               | Level of redundancy offered by the SKU                          | String           | Examples: "Local", "Zonal", "Global"                  |
-| Series                   | Common name for the series and/or generation of the SKU         | String           | Examples: "M5", "Dadv5", "N2D"                        |
-| SizeClass                | Logical grouping of size, which may be used for size fexibility | String           | Examples: "Large", "2xlarge", "Metal"                 |
 | StorageClass             | Class or tier of storage provided                               | String           | Examples: "Hot", "Archive", "Nearline"                |
 
 Notes
