@@ -43,7 +43,7 @@ The entire *commitment discount* is billed _once_ during the first *charge perio
 
 ```json
 [
-    {   
+    {
         "BillingPeriodStart": "2023-01-01T00:00:00Z",
         "BillingPeriodEnd": "2023-02-01T00:00:00Z",
         "ChargePeriodStart": "2023-01-01T00:00:00Z",
