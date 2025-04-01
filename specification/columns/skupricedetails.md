@@ -28,7 +28,7 @@ The SkuPriceDetails column adheres to the following requirements:
   * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
   * Property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
 * FOCUS-defined SKU Price properties adhere to the following additional requirements:
-  * Property key MUST match the spelling and casing specified.
+  * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
   * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.
 
