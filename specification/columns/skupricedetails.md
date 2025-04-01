@@ -70,7 +70,7 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | Key                      | Description                                                     | Data Type        | Unit of Measure (numeric) or example values (string)  |
 | :----------------------- | :-------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
 | CoreCount                | Number of physical or virtual CPUs available<br><sup>1</sup>    | Numeric          | Measure: Quantity of Cores                            |
-| DiskInputOutput          | Storage input/output operations per second<br><sup>1</sup>      | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
+| DiskIops          | Storage input/output operations per second<br><sup>1</sup>      | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | DiskSpace                | Storage capacity available                                      | Numeric          | Measure: Gibibytes (GiB)                              |
 | DiskType                 | Kind of disk used                                               | String           | Examples: "SSD", "HDD", "NVMe"                        |
 | GpuCount                 | Number of GPUs available                                        | Numeric          | Measure: Quantity of GPUs                             |
