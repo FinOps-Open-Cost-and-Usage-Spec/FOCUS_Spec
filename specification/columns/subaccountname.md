@@ -4,9 +4,12 @@ A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub
 
 The SubAccountName column adheres to the following requirements:
 
-* The SubAccountName column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
-* This column MUST be of type String.
-* If a charge does not apply to a *sub account*, the SubAccountName column MUST be null.
+* SubAccountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
+* SubAccountName MUST be of type String.
+* SubAccountName MUST conform to [StringHandling](#stringhandling) requirements.
+* SubAccountName nullability is defined as follows:
+  * SubAccountName MUST be null when [SubAccountId](#subaccountid) is null.
+  * SubAccountName MUST NOT be null when SubAccountId is not null.
 
 See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
