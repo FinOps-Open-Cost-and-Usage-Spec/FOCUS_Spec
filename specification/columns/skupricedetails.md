@@ -4,7 +4,7 @@ SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) propert
 
 The composition of properties associated with a specific *SKU Price* may differ across providers and across *SKUs* within the same provider. However, the exclusion of dynamic or negotiable pricing properties should ensure that all charges with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different billing periods and billing accounts within a provider.
 
-SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also enable practitioners to calculate metrics such as total units of a SKU when it is not directly priced in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as terms and tiers.
+SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also help determine the quantity of units for a property when it holds a numeric value (e.g., CoreCount), even when its unit differs from the one in which the SKU is priced and charged, thus supporting FinOps capabilities like unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as terms and tiers.
 
 The SkuPriceDetails column adheres to the following requirements:
 
