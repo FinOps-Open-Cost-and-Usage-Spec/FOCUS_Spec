@@ -17,6 +17,8 @@ The SkuPriceId column adheres to the following requirements:
   * When a provider does not have a SkuPriceId and wants to include information in columns linked to SkuPriceId such as ListUnitPrice or [SkuPriceDetails](#skupricedetails), the SkuId MAY be used in the SkuPriceId column as long as it adheres to the above conditions.
   * [ListUnitPrice](#listunitprice) MUST be associated with the SkuPriceId in the provider published price list.
 
+See [Examples: Commitment Discount Flexibility](#commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
+
 ## Column ID
 
 SkuPriceId
