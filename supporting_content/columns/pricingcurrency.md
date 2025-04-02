@@ -13,7 +13,7 @@ Current column mappings found in available data sets:
 
 ## References and Resources
 
-`<<TBD>>`
+None
 
 ## Discussion / Scratch space
 
