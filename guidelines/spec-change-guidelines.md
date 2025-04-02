@@ -78,7 +78,7 @@ The FOCUS specification is designed to be updated overtime to increase use and t
 
  ### Compatible Change
 
-Any change in the spec that does not require modification by the consumer to continue using the spec for published use cases. 
+Any change in the specification that does not require modification by the consumer to continue using the specification for published use cases. 
 
 Examples: 
   - Adding a new column for a new use case or 
