@@ -17,7 +17,6 @@ FinOps Practitioners must be able to verify that proper discounting is applied f
 * BillingPeriodStart
 * BillingCurrency
 * EffectiveCost
-* ListCost
 * ProviderName
 
 ## Supporting Columns
@@ -35,9 +34,7 @@ SELECT
   BillingCurrency,
   ServiceName,
   SUM(EffectiveCost) AS TotalEffectiveCost,
-  SUM(ListCost) AS TotalListCost,
   SUM(BilledCost) AS TotalBilledCost,
-  (SUM(EffectiveCost)/SUM(BilledCost))*100 AS EffectiveDiscount
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
   AND ChargeClass != 'Correction'
