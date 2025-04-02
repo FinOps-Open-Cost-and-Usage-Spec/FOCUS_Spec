@@ -9,6 +9,7 @@
 The FOCUS spec supports the inclusion of custom columns to facilitate reporting capability that is not covered by the columns included in the specification.
 
 ## Directly Dependent Columns
+
 * x_CustomColumn
 
 ## Example SQL Query
