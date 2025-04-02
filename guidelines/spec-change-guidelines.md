@@ -89,7 +89,7 @@ Examples:
 Any change that still supports the Published Supported Features, but may require modification to query or ingestion by consumers of a FOCUS dataset.
 
 Examples: 
-   - An existing categorization column is changes to split a category into two different categories
+   - An existing categorization column is changed to split a category into two different categories
    - An existing column that contains a numerical value is has its units changed, requireing a modification to queries using the column. The ability to use the column is preserved but a new query must be written
 
 ### Incompatible Change
