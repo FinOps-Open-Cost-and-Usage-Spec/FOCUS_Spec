@@ -74,7 +74,7 @@ Modification to correct a spelling, grammar, or formatting error in the FOCUS sp
 
 ## Change Impact Classification
 
-The FOCUS specification is designed to be updated overtime to increase it use and to adapt to changes in the industry over time.  In order to provide insight into the impact of the change, changes are classified into one of the following categories Change Impact categories:
+The FOCUS specification is designed to be updated overtime to increase use and to adapt to changes in the industry over time.  In order to provide insight into the impact of the change, changes are classified into one of the following categories Change Impact categories:
 
  ### Compatible Change
 
