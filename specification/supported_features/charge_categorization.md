@@ -27,30 +27,6 @@ The FOCUS spec supports the categorization of charges including purchases, usage
 
 ## Example SQL Query
 
-### Report on Applied Discounts
-
-```sql
-SELECT
-  ProviderName,
-  BillingAccountId,
-  BillingAccountName,
-  BillingCurrency,
-  ServiceName,
-  SUM(EffectiveCost) AS TotalEffectiveCost,
-  SUM(ListCost) AS TotalListCost,
-  SUM(BilledCost) AS TotalBilledCost,
-  (SUM(EffectiveCost)/SUM(BilledCost))*100 AS EffectiveDiscount
-FROM focus_data_table
-WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
-  AND ChargeClass != 'Correction'
-GROUP BY
-  ProviderName,
-  BillingAccountId,
-  BillingAccountName,
-  BillingCurrency,
-  ServiceName
-```
-
 ### Report on Commitment Discount Purchases
 
 ```sql
