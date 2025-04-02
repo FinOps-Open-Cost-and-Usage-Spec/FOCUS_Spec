@@ -20,7 +20,7 @@ Pricing Currency
 
 ## Description
 
-Represents the unit of measure in which a charge was priced.
+The national or virtual currency denomination that a *resource* or *service* was priced in.
 
 ## Content Constraints
 

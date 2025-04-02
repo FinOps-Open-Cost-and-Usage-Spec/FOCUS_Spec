@@ -25,11 +25,7 @@ Pricing Currency Effective Cost
 
 ## Description
 
-The cost of the [*charge*](#glossary:charge) after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge, as denominated in [Pricing Currency](#pricingcurrency).
-
-## Usability Constraints
-
-**Aggregation:** Given that Pricing Currency Effective Cost can contain a combination of national and/or virtual currencies, it is necessary to group by the [Pricing Currency](#pricingcurrency) column before performing any Pricing Currency Effective Cost aggregations.  Other cost columns such as [Effective Cost](#effectivecost) state all values in a unified [Billing Currency](#billingcurrency) and therefore do not require such a grouping.
+The cost of the *charge* after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge, as denominated in *Pricing Currency*.
 
 ## Content Constraints
 
