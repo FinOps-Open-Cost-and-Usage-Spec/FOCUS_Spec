@@ -24,7 +24,8 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 
 When a new feature or column is introduced to the FOCUS specification, depending on the circumstances of the change, its support may be initially optional. This allows providers that support it to adopt the new feature or column without restricting other adopters from using newer versions of the specification. 
 
-* The feature or item addition is proposed, and the specification is modified. 
+* The feature or item addition proposed and the specification is modified. Within the columns contsraints section, feature level indicates if the column is recommended, meaning that is not required.
+   *  Example: Feature level is specified: "Recommended"    
 * Change log indicates that the new feature/column has been added.
     * Example: "Column 1 has been added in version 2.0."
 
