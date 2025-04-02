@@ -17,4 +17,4 @@ None
 
 ## Discussion / Scratch space
 
-[This spreadsheet](https://docs.google.com/spreadsheets/d/1H69HmngVv-mKpFR-sveY-fSAdR49syqQd7AKOPPQ64A/edit?gid=0#gid=0) was used for generating data samples and building consensus across the various SaaS providers (e.g. Datadog, MongoDB, Domo, Twilio).
+[This spreadsheet](https://docs.google.com/spreadsheets/d/1H69HmngVv-mKpFR-sveY-fSAdR49syqQd7AKOPPQ64A/edit?gid=0#gid=0) was used for generating data samples and building consensus across the various SaaS providers (e.g., Datadog, MongoDB, Domo, Twilio).
