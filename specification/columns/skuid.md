@@ -6,7 +6,7 @@ A SKU ID is a provider-specified unique identifier that represents a specific [*
 * Usage of a deployed resource from direct user interaction (e.g., request count).
 * Usage by a deployed resource based on the resource's configuration (e.g., running hours, storage space).
 
-Each SKU ID represents a unique set of features can be sold at different price points or [*SKU Prices*](#glossary:sku-price). SKU ID is consistent across all pricing variations, which may differ based on multiple factors beyond the common functionality and technical specifications. Examples include but are not limited to:
+Each SKU ID represents a unique set of features that can be sold at different price points or [*SKU Prices*](#glossary:sku-price). SKU ID is consistent across all pricing variations, which may differ based on multiple factors beyond the common functionality and technical specifications. Examples include but are not limited to:
 
 * Date the charge was incurred.
 * Provider agreements and contracts.
