@@ -11,7 +11,6 @@ Each SKU ID represents a unique set of features that can be sold at different pr
 * Date the charge was incurred.
 * Provider agreements and contracts.
 * Pricing tiers (e.g., free tier or volume-based tiers).
-* Pricing models (e.g., standard, committed).
 * Commitment discount pricing terms (e.g., 1 year, 3 years).
 * Negotiated discounts or other contractual terms or conditions.
 
