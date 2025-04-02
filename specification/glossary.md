@@ -118,7 +118,7 @@ A FOCUS-defined column that provides numeric values, allowing for aggregation op
 
 <a name="glossary:national-currency"><b>National Currency</b></a>
 
-A government-issued currency (e.g. US dollars, Euros).
+A government-issued currency (e.g., US dollars, Euros).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
@@ -190,4 +190,4 @@ A duration of a contractual agreement like with a [*commitment discount*](#gloss
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
-A proprietary currency (e.g. credits, tokens) issued by providers and independent of government regulation.
+A proprietary currency (e.g., credits, tokens) issued by providers and independent of government regulation.
