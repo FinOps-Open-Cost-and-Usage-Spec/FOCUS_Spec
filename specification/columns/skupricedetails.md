@@ -78,8 +78,8 @@ The following keys should be used when applicable to facilitate cross-SKU and cr
 | InstanceType             | Common name of the instance including size, shape, series, etc.          | String           | Examples: "m5d.2xlarge", "NC24rs_v3", "P50"           |
 | InstanceSeries           | Common name for the series and/or generation of the instance             | String           | Examples: "M5", "Dadv5", "N2D"                        |
 | MemorySize               | RAM allocated for processing                                             | Numeric          | Measure: Gibibytes (GiB<sup>2</sup>)                  |
-| NetworkMaxThroughput     | Network maximum sustained throughput for data transfer<br><sup>1</sup>   | Numeric          | Measure: Megabits per second (Mbps)                   |
-| NetworkIops              | Network input/output operations per second<br><sup>1</sup>               | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
+| NetworkMaxThroughput     | Network maximum sustained throughput for data transfer<sup>1</sup>       | Numeric          | Measure: Megabits per second (Mbps)                   |
+| NetworkIops              | Network input/output operations per second<sup>1</sup>                   | Numeric          | Measure: Input/Output Operations per Second (IOPS)    |
 | OperatingSystem          | Operating system family<sup>3</sup>                                      | String           | Examples: "Linux", "MacOS", "Windows"                 |
 | Redundancy               | Level of redundancy offered by the SKU                                   | String           | Examples: "Local", "Zonal", "Global"                  |
 | StorageClass             | Class or tier of storage provided                                        | String           | Examples: "Hot", "Archive", "Nearline"                |
