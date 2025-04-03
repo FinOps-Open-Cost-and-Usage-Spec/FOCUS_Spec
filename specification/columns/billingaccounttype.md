@@ -6,9 +6,10 @@ The BillingAccountType column adheres to the following requirements:
 
 * BillingAccountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one possible BillingAccountType value.
 * BillingAccountType MUST be of type String.
-* BillingAccountType MUST conform to [String Handling](#stringhandling) requirements.
-* BillingAccountType MUST be null when BillingAccountId is null.
-* BillingAccountType MUST NOT be null when BillingAccountId not is null.
+* BillingAccountType MUST conform to [StringHandling](#stringhandling) requirements.
+* BillingAccountType nullability is defined as follows:
+  * BillingAccountType MUST be null when [BillingAccountId](#billingaccountid) is null.
+  * BillingAccountType MUST NOT be null when BillingAccountId is not null.
 * BillingAccountType MUST be a consistent, readable display value.
 
 ## Column ID
