@@ -64,6 +64,14 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
 
+<a name="glossary:correction"><b>Correction</b></a>
+
+A charge to correct cost or usage data in a previously invoiced [*billing period*](#glossary:billing-period).
+
+<a name="glossary:credit"><b>Credit</b></a>
+
+A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
+
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
@@ -72,7 +80,7 @@ A specification-defined categorical attribute that provides context or categoriz
 
 The amortized cost of the charge after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
 
-<a name="glossary:exclusivebound"><b>Exclusive Bound</b></a>
+<a name="glossary:exclusiveendbound"><b>Exclusive End Bound</b></a>
 
 A Date/Time Format value that is not contained within the ending bound of a time period.
 
@@ -88,7 +96,7 @@ An open-source specification that defines requirements for billing data.
 
 A structured collection of cost and usage data that meets or exceeds the Basic compliance criteria of FOCUS. In addition to FOCUS columns, the dataset should include custom provider columns (prefixed with `x_`) when these columns provide additional information not captured by the existing FOCUS columns. If introducing a custom column could result in splitting original charge records into multiple entries, the Invoice Issuer is responsible for ensuring that the FOCUS dataset fully conforms to all aggregation-related requirements for metric columns, particularly those concerning costs and quantities.
 
-<a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
+<a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
 
@@ -135,6 +143,10 @@ A comprehensive list of prices offered by a provider.
 <a name="glossary:provider"><b>Provider</b></a>
 
 An entity that made internal or 3rd party resources and/or services available for purchase.
+
+<a name="glossary:refund"><b>Refund</b></a>
+
+A return of funds that have previously been charged.
 
 <a name="glossary:resource"><b>Resource</b></a>
 

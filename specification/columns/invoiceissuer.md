@@ -2,10 +2,12 @@
 
 An Invoice Issuer is an entity responsible for issuing payable invoices for the [*resources*](#glossary:resource) or [*services*](#glossary:service) consumed. It is commonly used for cost analysis and reporting scenarios.
 
-The InvoiceIssuer column adheres to the following requirements:
+The InvoiceIssuerName column adheres to the following requirements:
 
-* The InvoiceIssuer column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* This column MUST be of type String and MUST NOT contain null values.
+* InvoiceIssuerName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* InvoiceIssuerName MUST be of type String.
+* InvoiceIssuerName MUST conform to [StringHandling](#stringhandling) requirements.
+* InvoiceIssuerName MUST NOT be null.
 
 See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider](#provider), [Publisher](#publisher) and
 Invoice Issuer values that can be used for various purchasing scenarios.
