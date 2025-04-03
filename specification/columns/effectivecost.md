@@ -9,16 +9,20 @@ This column resolves two challenges that are faced by practitioners:
 
 The EffectiveCost column adheres to the following requirements:
 
-* The EffectiveCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
-* This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency.
-* EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover future eligible charges.
-* The aggregated EffectiveCost for a billing period may not match the charge received on the invoice for the same *billing period*.
-
-In cases where the [ChargeCategory](#chargecategory) is not "Usage" or "Purchase", the following applies:
-
-* The EffectiveCost MUST be calculated based on the EffectiveCost of the related charges if the charge is calculated based on other charges (e.g. [ChargeCategory](#chargecategory) is "Tax").
-* The EffectiveCost MUST match the [BilledCost](#billedcost) if the charge is unrelated to other charges (e.g. [ChargeCategory](#chargecategory) is "Credit").
-* When CommitmentDiscountStatus is "Unused", the EffectiveCost MUST be the total committed cost consumed for the given charge period minus related usage charges.
+* EffectiveCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* EffectiveCost MUST be of type Decimal.
+* EffectiveCost MUST conform to [NumericFormat](#numericformat) requirements.
+* EffectiveCost MUST NOT be null.
+* EffectiveCost MUST be a valid decimal value.
+* EffectiveCost MUST be 0 when [ChargeCategory](#chargecategory) is "Purchase" and the purchase is intended to cover future eligible charges.
+* EffectiveCost MUST be denominated in the BillingCurrency.
+* The sum of EffectiveCost in a given *billing period* may not match the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
+* When ChargeCategory is not "Usage" or "Purchase", EffectiveCost adheres to the following additional requirements:
+  * EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related charges.
+  * EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
+* Charges for a given [CommitmentDiscountId](#commitmentdiscountid) adhere to the following additional requirements:
+  * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".
+  * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".
 
 ## Column ID
 

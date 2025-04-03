@@ -5,10 +5,11 @@ Sub Account Type is a provider-assigned name to identify the type of [*sub accou
 The SubAccountType column adheres to the following requirements:
 
 * SubAccountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one possible SubAccountType value.
-* SubAccountType  MUST be of type String.
-* SubAccountType  MUST conform to [String Handling](#stringhandling) requirements.
-* SubAccountType MUST be null when SubAccountId is null.
-* SubAccountType MUST NOT be null when SubAccountId not is null.
+* SubAccountType MUST be of type String.
+* SubAccountType MUST conform to [StringHandling](#stringhandling) requirements.
+* SubAccountType nullability is defined as follows:
+  * SubAccountType MUST be null when [SubAccountId](#subaccountid) is null.
+  * SubAccountType MUST NOT be null when SubAccountId is not null.
 * SubAccountType MUST be a consistent, readable display value.
 
 ## Column ID
