@@ -5,10 +5,12 @@ The Consumed Unit represents a provider-specified measurement unit indicating ho
 The ConsumedUnit column adheres to the following requirements:
 
 * ConsumedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
-* ConsumedUnit MUST be of type String, and the units of measure used in ConsumedUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
-* ConsumedUnit MUST NOT be null if [ChargeCategory](#chargecategory) is "Usage", [CommitmentDiscountStatus](#commitmentdiscountstatus) is not "Unused", and [ChargeClass](#chargeclass) is not "Correction".
-* ConsumedUnit MAY be null if ChargeCategory is "Usage", CommitmentDiscountStatus is not "Unused", and ChargeClass is "Correction".
-* ConsumedUnit MUST be null in all other cases.
+* ConsumedUnit MUST be of type String.
+* ConsumedUnit MUST conform to [StringHandling](#stringhandling) requirements.
+* ConsumedUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+* ConsumedUnit nullability is defined as follows:
+  * ConsumedUnit MUST be null when ConsumedQuantity is null.
+  * ConsumedUnit MUST NOT be null when ConsumedQuantity is not null.
 
 ## Column ID
 

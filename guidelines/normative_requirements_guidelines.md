@@ -39,7 +39,7 @@
 | Business             | Fallback/Substitute Values         | When applicable                       | {ColumnId} MUST NOT duplicate {OtherColumnId} when Condition.                              |
 | Business             | Relationships Outside the Spec     | When applicable                       | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
 | Business             | Formula-based Cost Validation      | When applicable                       | The product of Column1 and Column2 MUST match the column3 when Condition.                  |
-| Business             | Cost Correction Discrepancies      | When applicable                       | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction". |
+| Business             | Cost Correction Discrepancies      | When applicable                       | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction". |
 | Business             | Cost Calculation and Relationships | When applicable                       | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
 | Business             | Other                              | When applicable                       |                                                                                           |
 
@@ -83,12 +83,16 @@
   * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
   * In **SkuPriceDetails**, refer to **property key** when addressing only the key, and **property value** when addressing only the value.
   * When linking a key to its value, use **corresponding value**.
+  
+* **First Mention and Context**: In the case of SkuPriceDetails property key, the first mention explicitly uses "SkuPriceDetails property key" to establish the context. Subsequent references to "property key" and "property value" omit "SkuPriceDetails" as the context is already understood. In contrast, for Tags, this is not necessary, as the context is inherently clear from the column name.
 
 * **Start Key-Specific Requirements with the Key Term**: When a requirement applies to a key, it SHOULD begin with **tag key**, **property key**, or the applicable term for that column.
 
 * **Start Value-Specific Requirements with the Value Term**: When a requirement applies to a value, it SHOULD begin with **tag value**, **property value**, or the applicable term for that column.
 
-* **Default to Singular Form for Keys and Values**: Keys and values references should be singular, with the understanding that the requirement applies to all occurrences (e.g., "property key", "tag value", etc.).
+* **Plural vs. Singular Form for Keys and Values**:
+  * Use plural when referring to keys or values to reflect the fact that the column may contain multiple keys/values (e.g., "property keys", "tag values").
+  * Use singular when referring to the key or value of a single tag or property (e.g., "property key", "tag value"), with the understanding that the requirement applies to all occurrences.
 
 ## Grouping of Nullability-Related and Subsequent Normative Requirements
 
@@ -280,7 +284,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 ##### Cost Correction Discrepancies
 
 ```markdown
-* Discrepancies in <MetricId1>, <MetricId2>, or <MetricId3> MAY be addressed independently when ChargeClass is "Correction".
+* Discrepancies in <MetricId1>, <MetricId2>, or <MetricId3> MAY exist when ChargeClass is "Correction".
 ```
 
 #### Business & Contextual Requirements: Cost Calculation and Relationships
@@ -349,7 +353,7 @@ The ListUnitPrice column adheres to the following requirements:
   * **(Values and Value Ranges)** ListUnitPrice MUST be a non-negative decimal value.
   * **(Unit/Denomination)** ListUnitPrice MUST be denominated in the BillingCurrency.
   * **(Formula-based Cost Validation)** The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
-  * **(Cost Correction Discrepancies)** Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
+  * **(Cost Correction Discrepancies)** Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
 
 ---
 The ListUnitPrice column adheres to the following requirements:
@@ -365,7 +369,7 @@ The ListUnitPrice column adheres to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
   * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
-  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".
+  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
 
 #### **List Unit Price v.1.1 (Original)**
 
