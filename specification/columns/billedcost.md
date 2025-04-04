@@ -4,9 +4,13 @@ The [*billed cost*](#glossary:billed-cost) represents a charge serving as the ba
 
 The BilledCost column adheres to the following requirements:
 
-* The BilledCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
-* This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency.
-* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
+* BilledCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BilledCost MUST be of type Decimal.
+* BilledCost MUST conform to [NumericFormat](#numericformat) requirements.
+* BilledCost MUST NOT be null.
+* BilledCost MUST be a valid decimal value.
+* BilledCost MUST be denominated in the BillingCurrency.
+* The sum of BilledCost in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
 ## Column ID
 

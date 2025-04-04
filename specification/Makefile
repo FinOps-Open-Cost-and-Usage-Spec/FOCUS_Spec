@@ -7,7 +7,7 @@ STYLE="working_draft"
 endif
 PDF_MARGINS=--variable margin-top=15 --variable margin-bottom=25 --variable margin-left=0 --variable margin-right=10
 PDF_FOOTER=--pdf-engine-opt="--footer-right" --pdf-engine-opt="[page] of [topage]" --pdf-engine-opt="--footer-font-name" --pdf-engine-opt="Palatino" --pdf-engine-opt="--footer-font-size" --pdf-engine-opt="8"
-SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard columns/*.md*) $(wildcard attributes/*.md*) $(wildcard appendix/*.md*)
+SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard supported_features/*.md*) $(wildcard columns/*.md*) $(wildcard attributes/*.md*) $(wildcard appendix/*.md*)
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
 export TOCDEPTH=2
 all: spec.md spec.pdf spec.html
@@ -25,6 +25,7 @@ ifneq ("$(wildcard versions/${STYLE}.md)","")
 else
 	cp versions/working_draft.md version.md
 endif
+	./validate_includes.py supported_features
 	./validate_includes.py columns
 	./validate_includes.py attributes
 	./validate_includes.py metadata
