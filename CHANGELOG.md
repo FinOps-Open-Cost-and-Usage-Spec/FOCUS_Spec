@@ -18,6 +18,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 **Changed:**
 
+- `Column Naming and Ordering` attribute includes the following new provisions:
+  - Attribute renamed to `Column Handling`.
 - `CommitmentDiscountType` column updates:
   - Must be a consistent, readable display value.
 
@@ -332,3 +334,4 @@ This table maps the evolution of the specification, showcasing column introducti
 | Tags                         | 1.0-preview             |                   |
 | UsageQuantity                | 1.0-preview             | Renamed to ConsumedQuantity in v1.0 |
 | UsageUnit                    | 1.0-preview             | Renamed to ConsumedUnit in v1.0 |
+

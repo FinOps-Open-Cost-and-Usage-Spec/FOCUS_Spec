@@ -1,4 +1,4 @@
-# Column naming convention
+# Column Handling
 
 ## Example provider mappings
 
@@ -9,7 +9,7 @@ Examples of column names found in provider datasets:
 | AWS       | CUR                      | bill_invoicing_entity |
 | GCP       | Big Query Billing Export | resource.global_name  |
 | Microsoft | Cost details             | ResourceId            |
-| OCI       | Cost reports             | product/resourceId    | 
+| OCI       | Cost reports             | product/resourceId    |
 
 ## Discussion / Scratch space
 
@@ -17,6 +17,12 @@ Examples of column names found in provider datasets:
 * Group wanted to get naming convention adopted broadly for provider columns as well, to simplify reporting and analysis by practitioners
 * Different conventions like camel case, snake case, and title case were considered
 * Discussion included different columns naming conventions used by databases
+* The following was a proposal to require providers to include columns in 1.2. This was removed to discuss further in a future release:
+  > When the provider publishes a non-FOCUS cost and usage dataset, the following applies:
+  > * Custom columns MUST be included for all information not covered by FOCUS columns that exists in the latest version of non-FOCUS cost and usage datasets.
+  > * Data generators SHOULD allow practitioners to select a subset of FOCUS or custom columns.
+  > * Data generators SHOULD provide conformance documentation that indicates whether the *FOCUS dataset* fully, partially, or does not conform to each requirement.
+  >   * Data generators SHOULD include an explanation of what does not conform when a requirement is not fully conformant so practitioners will know they need to handle the difference.
 
 ### How to handle custom columns
 
