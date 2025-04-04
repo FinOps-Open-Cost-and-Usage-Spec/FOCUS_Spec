@@ -80,7 +80,7 @@ A specification-defined categorical attribute that provides context or categoriz
 
 The amortized cost of the charge after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
 
-<a name="glossary:exclusivebound"><b>Exclusive Bound</b></a>
+<a name="glossary:exclusiveendbound"><b>Exclusive End Bound</b></a>
 
 A Date/Time Format value that is not contained within the ending bound of a time period.
 
@@ -94,9 +94,9 @@ An open-source specification that defines requirements for billing data.
 
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
-A structured collection of cost and usage data that meets or exceeds the Basic compliance criteria of FOCUS. In addition to FOCUS columns, the dataset should include custom provider columns (prefixed with `x_`) when these columns provide additional information not captured by the existing FOCUS columns. If introducing a custom column could result in splitting original charge records into multiple entries, the Invoice Issuer is responsible for ensuring that the FOCUS dataset fully conforms to all aggregation-related requirements for metric columns, particularly those concerning costs and quantities.
+A structured collection of cost and usage data that meets the [BCP14](https://tools.ietf.org/html/bcp14) criteria defined by FOCUS. In addition to FOCUS columns, the dataset should include custom provider columns (prefixed with `x_`) when these columns provide additional information not captured by the existing FOCUS columns. If introducing a custom column could result in splitting original charge records into multiple entries, the data generator is responsible for ensuring that the FOCUS dataset fully conforms to all aggregation-related requirements for metric columns, particularly those concerning costs and quantities.
 
-<a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
+<a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
 
@@ -115,6 +115,10 @@ A company or organization that provides outsourced management and support of a r
 <a name="glossary:metric"><b>Metric</b></a>
 
 A FOCUS-defined column that provides numeric values, allowing for aggregation operations such as arithmetic operations (sum, multiplication, averaging etc.) and statistical operations.
+
+<a name="glossary:national-currency"><b>National Currency</b></a>
+
+A government-issued currency (e.g., US dollars, Euros).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
@@ -183,3 +187,7 @@ A Resource or Provider-defined construct for grouping resources and/or other Pro
 <a name="glossary:term"><b>Term</b></a>
 
 A duration of a contractual agreement like with a [*commitment discount*](#glossary:commitment-discount) or [*negotiated discount*](#glossary:negotiated-discount).
+
+<a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
+
+A proprietary currency (e.g., credits, tokens) issued by providers and independent of government regulation.

@@ -4,9 +4,12 @@ Charge Class indicates whether the row represents a correction to a previously i
 
 The ChargeClass column adheres to the following requirements:
 
-* The ChargeClass column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* This column MUST be of type String and MUST be "Correction" when the row represents a correction to a previously invoiced *billing period*.
-* ChargeClass MUST be null when it is not a correction or when it is a correction within the current *billing period*.
+* ChargeClass MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeClass MUST be of type String.
+* ChargeClass nullability is defined as follows:
+  * ChargeClass MUST be null when the row does not represent a correction or when it represents a correction within the current *billing period*.
+  * ChargeClass MUST NOT be null when the row represents a correction to a previously invoiced *billing period*.
+* ChargeClass MUST be "Correction" when ChargeClass is not null.
 
 ## Column ID
 

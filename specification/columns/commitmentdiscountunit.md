@@ -4,17 +4,19 @@ Commitment Discount Unit represents the provider-specified measurement unit indi
 
 The CommitmentDiscountUnit column adheres to the following requirements:
 
-* CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [*commitment discounts*](#glossary:commitment-discount).
-* CommitmentDiscountUnit MUST be of type String, and the units of measure used in CommitmentDiscountUnit SHOULD adhere to the values and format requirements specified in the [UnitFormat](#unitformat) attribute.
-* The CommitmentDiscountUnit MUST be the same across all *rows* where CommitmentDiscountQuantity has the same [CommitmentDiscountId](#commitmentdiscountid).
-* CommitmentDiscountUnit MAY be null if CommitmentDiscountId is not null and [ChargeClass](#chargeclass) is "Correction".
-* CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountId is not null and ChargeClass is not "Correction".
-* CommitmentDiscountUnit MUST be null in all other cases.
+* CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountUnit MUST be of type String.
+* CommitmentDiscountUnit MUST conform to [StringHandling](#stringhandling) requirements.
+* CommitmentDiscountUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+* CommitmentDiscountUnit nullability is defined as follows:
+  * CommitmentDiscountUnit MUST be null when CommitmentDiscountQuantity is null.
+  * CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountQuantity is not null.
+* When CommitmentDiscountUnit is not null, CommitmentDiscountUnit adheres to the following additional requirements:
+  * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
+  * CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
+  * When accounting for [*commitment discount flexibility*](#glossary:commitment-discount-flexibility), the CommitmentDiscountUnit value SHOULD reflect this consideration.
 
-In cases where the CommitmentDiscountUnit is not null, the following applies:
-
-* The CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
-* When accounting for [*commitment discount flexibility*](#glossary:commitment-discount-flexibility), the CommitmentDiscountUnit value SHOULD reflect this consideration.
+See [Examples: Commitment Discount Flexibility](#commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
 
 ## Column ID
 

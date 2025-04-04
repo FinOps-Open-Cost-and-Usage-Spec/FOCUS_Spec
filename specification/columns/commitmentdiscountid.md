@@ -4,10 +4,15 @@ A Commitment Discount ID is the identifier assigned to a [*commitment discount*]
 
 The CommitmentDiscountId column adheres to the following requirements:
 
-* The CommitmentDiscountId column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
-* This column MUST be of type String and MUST NOT contain null values when a charge is related to a *commitment discount*.
-* When a charge is not associated with a *commitment discount*, the column MUST be null.
-* CommitmentDiscountId MUST ensure global uniqueness within the provider and SHOULD be a fully-qualified identifier.
+* CommitmentDiscountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountId MUST be of type String.
+* CommitmentDiscountId MUST conform to [StringHandling](#stringhandling) requirements.
+* CommitmentDiscountId nullability is defined as follows:
+  * CommitmentDiscountId MUST be null when a charge is not related to a *commitment discount*.
+  * CommitmentDiscountId MUST NOT be null when a charge is related to a *commitment discount*.
+* When CommitmentDiscountId is not null, CommitmentDiscountId adheres to the following additional requirements:
+  * CommitmentDiscountId MUST be a unique identifier within the provider.
+  * CommitmentDiscountId SHOULD be a fully-qualified identifier.
 
 ## Column ID
 
