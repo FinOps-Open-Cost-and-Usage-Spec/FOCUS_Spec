@@ -7,25 +7,23 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 The Tags column adheres to the following requirements:
 
 * Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
-* Tags MUST contain all user-defined and provider-defined tags.
-* Tags MUST only contain finalized tags.
-* Tags MUST be in [KeyValueFormat](#key-valueformat).
-* A tag key with a non-null value for a given resource SHOULD be included in the tags column.
-* A tag key with a null value for a given resource MAY be included in the tags column depending on the provider's tag finalization process.
-* A tag key that does *not* support a corresponding value, MUST have a corresponding true (boolean) value set.
-* Providers MUST NOT alter tag values unless applying true (boolean) to valueless tags.
-* If tag finalization is supported, providers MUST publish tag finalization methods and semantics within their respective documentation.
-* Providers MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless, user-defined tag scheme.  
-* Providers SHOULD publish all provider-specified tag key prefixes within their respective documentation.
-
-User-defined tags additionally adhere to the following requirements:
-
-* When a provider has only 1 user-defined tag scheme, the provider MUST NOT include a prefix in tag keys.
-* When a provider has 2 or more user-defined tag schemes, the provider MUST prefix all but 1 user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme.
-
-Provider-defined tags additionally adhere to the following requirements:
-
-* Provider-defined tags MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
+* Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* Tags MAY be null.
+* When Tags is not null, Tags adheres to the following additional requirements:
+  * Tags MUST include all user-defined and provider-defined tags.
+  * Tags MUST only include finalized tags.
+  * Tags SHOULD include tag keys with corresponding non-null values for a given *resource*.
+  * Tags MAY include tag keys with a null value for a given *resource* depending on the provider's tag finalization process.
+  * Tag keys that do not support corresponding values, MUST have a corresponding true (boolean) value set.
+  * Provider SHOULD publish tag finalization methods and semantics within their respective documentation.
+  * Provider MUST NOT alter tag values unless applying true (boolean) to valueless tags.
+* Provider-defined tags adhere to the following additional requirements:
+  * Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
+  * Provider SHOULD publish all provider-specified tag key prefixes within their respective documentation.
+* User-defined tags adhere to the following additional requirements:
+  * Provider MUST prefix all but one user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the provider has more than one user-defined tag scheme.
+  * Provider MUST NOT prefix tag keys when the provider has only one user-defined tag scheme.
+  * Provider MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.
 
 ## Provider-Defined vs. User-Defined Tags
 
