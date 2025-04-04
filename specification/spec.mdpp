@@ -29,6 +29,10 @@ FOCUS is an open-source specification for billing data. It defines a common sche
 
 <div style="page-break-after: always"></div>
 
+!INCLUDE "supported_features/supported_features.mdpp",1
+
+<div style="page-break-after: always"></div>
+
 !INCLUDE "columns/columns.mdpp",1
 
 !INCLUDE "attributes/attributes.mdpp",1
