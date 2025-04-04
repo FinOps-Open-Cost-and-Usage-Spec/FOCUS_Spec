@@ -31,7 +31,6 @@ Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 
 ## Requirements
 
-
 ### Column Names
 
 * All columns defined by FOCUS MUST follow the following rules:
