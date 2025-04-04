@@ -18,8 +18,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 **Changed:**
 
+- `Column Naming and Ordering` attribute includes the following new provisions:
+  - Attribute renamed to `Column Handling`.
 - `CommitmentDiscountType` column updates:
   - Must be a consistent, readable display value.
+- `SkuPriceDetails` column updates:
+  - Created FOCUS-defined properties.
 
 [All 1.2 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
 
@@ -78,24 +82,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 **Added:**
 
-- `String handling` attribute
-- `ChargeClass` column
-- `CommitmentDiscountStatus` column
-- `ContractedCost` column
-- `ContractedUnitPrice` column
-- `RegionId` column
-- `RegionName` column
-- `DataGenerator` metadata property
-- `CreationDate` metadata schema property
-- `FocusVersion` metadata schema property
-- `SchemaId` metadata schema property
-- `ColumnName` metadata column definition property
-- `DataType` metadata column definition property
-- `NumberScale` metadata column definition property
-- `NumberPrecision` metadata column definition property
-- `ProviderTagPrefix` metadata column definition property
-- `StringEncoding` metadata column definition property
-- `StringMaxLength` metadata column definition property
+New use cases:
+- Compare Billed Cost per Sub Account to budget
+
+New attributes:
+- `String handling`
+
+New columns:
+- `ChargeClass`
+- `CommitmentDiscountStatus`
+- `ContractedCost`
+- `ContractedUnitPrice`
+- `RegionId`
+- `RegionName`
+
+New metadata properties:
+- `DataGenerator`
+
+New metadata schema properties:
+- `CreationDate`
+- `FocusVersion`
+- `SchemaId`
+
+New metadata column definition properties:
+- `ColumnName`
+- `DataType`
+- `NumberScale`
+- `NumberPrecision`
+- `ProviderTagPrefix`
+- `StringEncoding`
+- `StringMaxLength`
 
 **Changed:**
 
@@ -320,3 +336,4 @@ This table maps the evolution of the specification, showcasing column introducti
 | Tags                         | 1.0-preview             |                   |
 | UsageQuantity                | 1.0-preview             | Renamed to ConsumedQuantity in v1.0 |
 | UsageUnit                    | 1.0-preview             | Renamed to ConsumedUnit in v1.0 |
+
