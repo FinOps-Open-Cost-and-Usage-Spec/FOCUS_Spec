@@ -51,6 +51,6 @@ Thanks to the following FOCUS Steering Committee members for their leadership on
 * Michael Flanakin (Microsoft)
 * Mike Fuller (FinOps Foundation)
 * Richard Steck (Adobe)
-* Roy Wolman (Amazon Web Services)
+* Roy Wolman (Amazon Web Services) (term ended 2025/01/22)
 * Sarah McMullin (Google)
 * Tim O'Brien (Walmart)
