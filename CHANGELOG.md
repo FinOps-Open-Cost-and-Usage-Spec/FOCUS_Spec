@@ -45,8 +45,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Changed metadata
 
+##### Changed metadata properties
+
 - `Data Generator Version`
   - Field renamed from `Provider Version`.
+
+##### Changed metadata schema properties
+
+##### Changed metadata column definition properties
 
 [All 1.2 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
 
