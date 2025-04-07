@@ -22,7 +22,6 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 
 * Andrew Qu (Everest)
 * Andrew Quigley (Northwestern Mutual)
-* Arun Ramakrishnan (Oracle)
 * Beau Nelford (Anglepoint)
 * David Dinh (Google)
 * Erik Peterson (CloudZero)
@@ -33,6 +32,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * John Grubb (Platform.sh)
 * Justin Grinstead (MongoDB)
 * Marc Perreaut (Amadeus)
+* Nan Braun (Thavron Solutions)
 * Ramkumar Narla (Adobe)
 * Rob Martin (FinOps Foundation)
 * Sanjna Srivatsa (VMWare)
