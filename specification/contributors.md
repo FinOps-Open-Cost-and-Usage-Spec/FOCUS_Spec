@@ -29,6 +29,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Graham Murphy (Australian Retirement Trust)
 * Janine Pickard-Green (MagicOrange Group Limited)
 * Jason Wu (Amazon Web Services)
+* Jesse Adams (Acuity)
 * John Grubb (Platform.sh)
 * Justin Grinstead (MongoDB)
 * Marc Perreaut (Amadeus)
