@@ -11,19 +11,42 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <sup>Announced June 2025</sup>
 
-**Added:**
+### Added
 
-- `BillingAccountType` column
-- `SubAccountType` column
+#### New columns
 
-**Changed:**
+- `BillingAccountType`
+- `InvoiceID`
+- `SubAccountType`
+- `PricingCurrency`
+- `PricingCurrencyEffectiveCost`
+- `PricingCurrencyContractedUnitPrice`
+- `PricingCurrencyListUnitPrice`
 
-- `Column Naming and Ordering` attribute includes the following new provisions:
-  - Attribute renamed to `Column Handling`.
-- `CommitmentDiscountType` column updates:
+### Changed
+
+#### Changed columns
+
+- Normative requirements guidelines have been applied to all columns.
+- `CommitmentDiscountType`
   - Must be a consistent, readable display value.
-- `SkuPriceDetails` column updates:
+- `SkuPriceDetails`
   - Created FOCUS-defined properties.
+- `Tags`
+  - Resolved bug involving multiple user-defined tag structures.
+
+#### Changed attributes
+
+- `Column Naming and Ordering`
+  - Column renamed from `Column Handling`.
+- `Currency Format`
+  - Attribute renamed from `Currency Code Format`.
+  - Definition augmented to handle for virtual currencies.
+
+#### Changed metadata
+
+- `Data Generator Version`
+  - Field renamed from `Provider Version`.
 
 [All 1.2 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
 
