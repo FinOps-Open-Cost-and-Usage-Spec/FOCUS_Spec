@@ -36,7 +36,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Nan Braun (Thavron Solutions)
 * Ramkumar Narla (Adobe)
 * Rob Martin (FinOps Foundation)
-* Sanjna Srivatsa (VMWare)
+* Sanjna Srivatsa (CloudHealth)
 * Steve Pearson (Capital One)
 * Tim Wright (Google)
 * Todd Blake (Datadog)
