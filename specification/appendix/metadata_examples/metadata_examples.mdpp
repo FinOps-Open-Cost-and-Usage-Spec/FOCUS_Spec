@@ -23,4 +23,3 @@ Here are some metadata examples for various scenarios:
 !INCLUDE "correcting_schema_errors_example.md",1
 !INCLUDE "focus_version_changed_example.md",1
 !INCLUDE "focus_version_changed_with_data_generator_version_used_example.md",1
-!INCLUDE "data_generator_version_changed_example.md",1
