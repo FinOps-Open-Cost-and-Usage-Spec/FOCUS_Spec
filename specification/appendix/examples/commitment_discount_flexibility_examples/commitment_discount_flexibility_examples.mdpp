@@ -1,4 +1,4 @@
-# Commitment Discount Flexibility
+# Examples: Commitment Discount Flexibility
 
 A usage-based [*commitment discount*](#glossary:commitmentdiscount) obligates a customer to a usage amount for one or more related SKUs in return for reduced rates.  For example, when a usage-based *commitment discount* is purchased to cover a specific database SKU, this commitment will cover every hour over the term where at least one instance of this SKU is running. The usage-based commitment can cover 1 resource over the hour, or in the case of [*commitment discount flexibility*](glossary:commitmentdiscountflexibility), it can cover a portion of 1 resource or multiple resources at a time.
 
