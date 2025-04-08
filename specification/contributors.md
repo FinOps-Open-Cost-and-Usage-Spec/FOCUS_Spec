@@ -2,7 +2,7 @@
 
 ### Maintainers
 
-Thanks to the following FOCUS Maintainers for their leadership and contributions to the FOCUS Release **v1.1** specification.
+Thanks to the following FOCUS Maintainers for their leadership and contributions to the FOCUS Release **v1.2** specification.
 
 * Alex Hullah (Goldman Sachs)
 * Christopher Harris (Datadog)
