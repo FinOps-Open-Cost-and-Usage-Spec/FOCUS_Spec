@@ -7,4 +7,4 @@
 !INCLUDE "origination_of_cost_data.md",1
 !INCLUDE "saas_examples/saas_examples.mdpp",1
 !INCLUDE "metadata_examples/metadata_examples.mdpp",1
-!INCLUDE "commitment_discount_flexibility_examples/commitment_discount_flexibility_examples.mdpp",1
+!INCLUDE "examples/commitment_discount_flexibility_examples/commitment_discount_flexibility_examples.mdpp",1
