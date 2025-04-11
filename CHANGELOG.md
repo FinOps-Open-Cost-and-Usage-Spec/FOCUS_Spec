@@ -38,7 +38,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Changed attributes
 
 - `Column Naming and Ordering`
-  - Column renamed from `Column Handling`.
+  - Attribute renamed to `Column Handling`.
 - `Currency Format`
   - Attribute renamed from `Currency Code Format`.
   - Definition augmented to handle for virtual currencies.
