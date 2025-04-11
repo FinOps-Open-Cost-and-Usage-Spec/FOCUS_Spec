@@ -1,6 +1,6 @@
 # SaaS Spend Agreements
 
-Many SaaS providers support billing models that utilize a non-standard currency unit such as credits, tokens or points. The provider sells these tokens at a currency rate. Usage of their product consumes these tokens. 
+Many SaaS providers support billing models that utilize a non-standard currency unit such as credits, tokens or points. The provider sells these tokens at a currency rate. Usage of their product consumes these tokens.
 
 The scenarios described below illustrate how a FOCUS-compliant dataset should look for various scenarios where a provider utilizes this pricing model.
 
@@ -9,7 +9,7 @@ The scenarios described below illustrate how a FOCUS-compliant dataset should lo
 The following baseline conditions apply to the scenarios described below:
 
 * AwesomeCorp has signed an agreement with SaaS provider Acme Co to use their SaaS platform services
-* Acme Co offers a token-based pricing model for their services, requiring a purchase of tokens in advance of usage. 
+* Acme Co offers a token-based pricing model for their services, requiring a purchase of tokens in advance of usage.
 * Acme Co requires purchase of additional tokens in the event of usage exceeding purchased tokens.
 * Acme Co publicly lists the cost of their tokens at &dollar;2 per token.
 * Acme Co publicly lists their usage to token rates. These rates are as follows:
@@ -33,7 +33,7 @@ Note the following details in the dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the licenses were ordered) and therefore will appear in the April invoice.
 * Because Acme Co uses token based pricing for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their FOCUS dataset includes the columns PricingCurrency,PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
-* A single charge representing the total payment for the initial token purchase agreement (&dollar;200,000) is charged in the first invoice. * 
+* A single charge representing the total payment for the initial token purchase agreement (&dollar;200,000) is charged in the first invoice.
   * ListCost, BilledCost, and Contracted cost of the purchase are all represented in this charge, however EffectCost is zero since the tokens are not yet consumed.
 * Pricing Quantity is set to the total tokens purchased
 * Because Awesome Corp is paying the list price ListUnitPrice and ContractedUnitPrice are all set to the same value of &dollar;2.
@@ -103,18 +103,18 @@ Additionally, Acme Co offers a modified usage to token ratio for one of their se
 
 Note the following details in the dataset:
 
-* Because of the modified rate for Workflow Operations, the PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are different for this charge. The ContractedUnitPrice is set to &dollar;1 and the ListUnitPrice is set to &dollar;2. 
-* The PricingCurrencyEffectiveCost is 240 tokens for this charge, which is less that example B2 above due to the modified rate. 
-* ListCost reflects the cost of the charge at both the list cost and the list usage to token ratio. 
+* Because of the modified rate for Workflow Operations, the PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are different for this charge. The ContractedUnitPrice is set to &dollar;1 and the ListUnitPrice is set to &dollar;2.
+* The PricingCurrencyEffectiveCost is 240 tokens for this charge, which is less that example B2 above due to the modified rate.
+* ListCost reflects the cost of the charge at both the list cost and the list usage to token ratio.
 
 ## Scenario C: Handling Overages
 
 For this scenario, Awesome Corp has exceeded their purchased tokens on October 1st 2025 by 1500 tokens and Acme Co has charged them for the overage. The following conditions apply:
 * Acme Co has charged Awesome Corp for the cost of tokens at the list price of &dollar;2 per token and this purchase is effective from April 1st 2025 to The date of the Purchase October 1st 2025.
-* Awesome Corp purchases an additional 25,000 token to facilitate usage to the end of their contract. These tokens are valid from October 1st 2025 to March 30th 2026. 
+* Awesome Corp purchases an additional 25,000 token to facilitate usage to the end of their contract. These tokens are valid from October 1st 2025 to March 30th 2026.
 
 **Example FOCUS dataset:** [Handling Overages](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788&range=25:27)
 
 Note the following details in the dataset:
-* The Charge Period for the Overage Purchase is April 1st 2025 - October 1st 2025. This is because the overage charge is to cover the period of time the overage token purchase is applicable to. 
+* The Charge Period for the Overage Purchase is April 1st 2025 - October 1st 2025. This is because the overage charge is to cover the period of time the overage token purchase is applicable to.
 * The Charge Period for the Additional Purchase is October 1st 2025 - April 1st 2026. This is because the additional purchase is to cover the period of time the additional token purchase is applicable to. Because end dates are exclusive a ChargePeriodEnd is April 1st 2026.
