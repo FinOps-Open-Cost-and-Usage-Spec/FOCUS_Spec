@@ -31,7 +31,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `CommitmentDiscountType`
   - Must be a consistent, readable display value.
 - `SkuPriceDetails`
-  - Created FOCUS-defined properties.
+  - Defined a set of common property names and units.
+  - Custom properties must prefix names with "x_".
 - `Tags`
   - Resolved bug involving multiple user-defined tag structures.
 
