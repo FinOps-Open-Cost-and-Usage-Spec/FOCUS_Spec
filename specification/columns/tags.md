@@ -61,7 +61,7 @@ The table below represents a finalized dataset with these *resources*.  It also 
 | Sub Account     | my-sub-account | { "team": "ops", "env": "prod" }            |
 | Virtual Machine | my-vm          | { "team": "web", *"env": "prod"* }          |
 
-Because the the Virtual Machine Resource did not have an `env` tag, it inherited tag, `env:prod` (italicized), from its parent *sub account*.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it did not inherit `team:ops` from its parent *sub account*.
+Because the Virtual Machine Resource did not have an `env` tag, it inherited tag, `env:prod` (italicized), from its parent *sub account*.  Conversely, because the Virtual Machine Resource already has a `team` tag (`team:web`), it did not inherit `team:ops` from its parent *sub account*.
 
 ## Column ID
 

@@ -8,11 +8,11 @@ Spend-based commitment discounts obligate a customer to a predetermined amount o
 
 ## Purchasing
 
-While customers are bound to the *term* of a *commitment discounts*, providers offer some or all of the following payment options before and/or during the *term*:
+While customers are bound to the *term* of a *commitment discount*, providers offer some or all of the following payment options before and/or during the *term*:
 
-* *All Upfront* - The *commitment discounts* is paid in full before the *term* begins.
-* *No Upfront* - The *commitment discounts* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *term*.
-* *Partial Upfront* - Some of the *commitment discounts* is paid before the *term* begins, and the rest is paid repeatedly over the *term*.
+* *All Upfront* - The *commitment discount* is paid in full before the *term* begins.
+* *No Upfront* - The *commitment discount* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *term*.
+* *Partial Upfront* - Some of the *commitment discount* is paid before the *term* begins, and the rest is paid repeatedly over the *term*.
 
 For example, if a customer buys a 1-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *term* *and* monthly recurring purchases with the following totals:
 
