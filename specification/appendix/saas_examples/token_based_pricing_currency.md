@@ -118,4 +118,3 @@ For this scenario, Awesome Corp has exceeded their purchased tokens on October 1
 Note the following details in the dataset:
 * The Charge Period for the Overage Purchase is April 1st 2025 - October 1st 2025. This is because the overage charge is to cover the period of time the overage token purchase is applicable to. 
 * The Charge Period for the Additional Purchase is October 1st 2025 - April 1st 2026. This is because the additional purchase is to cover the period of time the additional token purchase is applicable to. Because end dates are exclusive a ChargePeriodEnd is April 1st 2026.
-* 
