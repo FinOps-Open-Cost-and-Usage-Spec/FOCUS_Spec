@@ -47,8 +47,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ##### Changed metadata properties
 
-- `Data Generator Version`
-  - Field renamed from `Provider Version`.
+- `Provider Version`
+  - Field renamed to `Data Generator Version`.
 
 ##### Changed metadata schema properties
 
