@@ -20,7 +20,7 @@ The following baseline conditions apply to the scenarios described below:
 ## Scenario A: Tokens Not Offered at a Discount
 
 For this scenario, contract terms include the following terms in addition to the baseline scenario mentioned above:
-  * Acme Corp offers no discount for purchased tokens
+* Acme Corp offers no discount for purchased tokens
 
 ## Scenario A1: Initial Purchase of Tokens Non Discounted
 
@@ -71,7 +71,7 @@ Note the following details in the dataset:
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the licenses were ordered) and therefore will appear in the April invoice.
 * Because Acme Co uses token based pricing for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their FOCUS dataset includes the columns PricingCurrency,PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
 * A single charge representing the total payment for the initial token purchase agreement (&dollar;100,000) is charged in the first invoice.
-    * ListCost, BilledCost, and Contracted cost of the purchase are all represented in this charge, however EffectCost is zero since the tokens are not yet consumed.
+  * ListCost, BilledCost, and Contracted cost of the purchase are all represented in this charge, however EffectCost is zero since the tokens are not yet consumed.
 * Pricing Quantity is set to the total tokens purchased
 * Because Awesome Corp is receiving a discount on the token price, the ListUnitPrice is set to &dollar;2 and the ContractedUnitPrice is set to &dollar;1. A ListCost of (&dollar;200,000) and ContractedCost (&dollar;100,000) reflect the cost of the tokens at the list price and contracted price respectively. The BilledCost is set to &dollar;100,000 since this is the amount that Awesome Corp will be charged for the purchase of tokens.
 
