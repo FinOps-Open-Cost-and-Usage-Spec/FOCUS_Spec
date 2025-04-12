@@ -23,7 +23,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `PricingCurrencyListUnitPrice`
 - `SubAccountType`
 
-#### Supported features
+#### New appendix entries
+
+- Added examples for commitment discount flexibility
+- Added examples for SaaS scenarios
+
+#### New supported features
 
 - Added list of features the specification supports.  See the `supported_features` subfolder for a full list.
 
@@ -47,6 +52,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `Currency Code Format`
   - Attribute renamed to `Currency Format`.
   - Definition augmented to handle for virtual currencies.
+
+#### Changed appendix entries
+
+- Revised the ordering of appendix entries.
 
 #### Changed metadata
 
