@@ -329,6 +329,7 @@ This table maps the evolution of the specification, showcasing column introducti
 | BilledCost                   | 0.5                     |                   |
 | BillingAccountId             | 0.5                     |                   |
 | BillingAccountName           | 0.5                     |                   |
+| BillingAccountType           | 1.2                     |                   |
 | BillingCurrency              | 0.5                     |                   |
 | BillingPeriodEnd             | 0.5                     |                   |
 | BillingPeriodStart           | 0.5                     |                   |
@@ -354,10 +355,15 @@ This table maps the evolution of the specification, showcasing column introducti
 | ContractedCost               | 1.0                     |                   |
 | ContractedUnitPrice          | 1.0                     |                   |
 | EffectiveCost                | 1.0-preview             | Renamed from AmortizedCost in v1.0-preview |
+| InvoiceId                    | 1.2                     |                   |
 | InvoiceIssuerName            | 0.5                     |                   |
 | ListCost                     | 1.0-preview             |                   |
 | ListUnitPrice                | 1.0-preview             |                   |
 | PricingCategory              | 1.0-preview             |                   |
+| PricingCurrency              | 1.2                     |                   |
+| PricingCurrencyContractedUnitPrice | 1.2               |                   |
+| PricingCurrencyEffectiveCost | 1.2                     |                   |
+| PricingCurrencyListUnitPrice | 1.2                     |                   |
 | PricingQuantity              | 1.0-preview             |                   |
 | PricingUnit                  | 1.0-preview             |                   |
 | ProviderName                 | 0.5                     |                   |
@@ -377,6 +383,7 @@ This table maps the evolution of the specification, showcasing column introducti
 | SkuPriceId                   | 1.0-preview             |                   |
 | SubAccountId                 | 0.5                     |                   |
 | SubAccountName               | 0.5                     |                   |
+| SubAccountType               | 1.2                     |                   |
 | Tags                         | 1.0-preview             |                   |
 | UsageQuantity                | 1.0-preview             | Renamed to ConsumedQuantity in v1.0 |
 | UsageUnit                    | 1.0-preview             | Renamed to ConsumedUnit in v1.0 |
