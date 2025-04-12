@@ -56,6 +56,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Changed appendix entries
 
 - Revised the ordering of appendix entries.
+- Moved appendix examples to CSV section.
 
 #### Changed metadata
 
