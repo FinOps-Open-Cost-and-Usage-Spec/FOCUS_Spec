@@ -20,7 +20,7 @@ The following baseline conditions apply to the scenarios described below:
 ## Scenario A: Tokens Not Offered at a Discount
 
 For this scenario, contract terms include the following terms in addition to the baseline scenario mentioned above:
-    * Acme Corp offers no discount for purchased tokens
+  * Acme Corp offers no discount for purchased tokens
 
 ## Scenario A1: Initial Purchase of Tokens Non Discounted
 
