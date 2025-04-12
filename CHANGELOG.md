@@ -23,6 +23,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `PricingCurrencyListUnitPrice`
 - `SubAccountType`
 
+#### Supported features
+
+- Added list of features the specification supports.  See the `supported_features` subfolder for a full list.
+
 ### Changed
 
 #### Changed columns
