@@ -37,21 +37,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Changed columns
 
 - Normative requirements guidelines have been applied to all columns.
+- `BilledCost`
+  - Added requirement that BilledCost must be 0 when payments are received by a third-party (e.g., marketplace).
 - `CommitmentDiscountType`
   - Must be a consistent, readable display value.
 - `SkuPriceDetails`
   - Defined a set of common property names and units.
-  - Custom properties must prefix names with "x_".
+  - Added requirement that custom properties must prefix names with "x_".
 - `Tags`
   - Resolved bug involving multiple user-defined tag structures.
 
 #### Changed attributes
 
 - `Column Naming and Ordering`
-  - Attribute renamed to `Column Handling`.
+  - Renamed attribute to `Column Handling`.
 - `Currency Code Format`
   - Attribute renamed to `Currency Format`.
-  - Definition augmented to handle for virtual currencies.
+  - Augmented definition to handle for virtual currencies.
 
 #### Changed appendix entries
 
@@ -63,7 +65,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 ##### Changed metadata properties
 
 - `Provider Version`
-  - Field renamed to `Data Generator Version`.
+  - Renamed field to `Data Generator Version`.
 
 ##### Changed metadata schema properties
 
