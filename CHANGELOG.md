@@ -52,7 +52,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `Column Naming and Ordering`
   - Renamed attribute to `Column Handling`.
 - `Currency Code Format`
-  - Attribute renamed to `Currency Format`.
+  - Renamed attribute to `Currency Format`.
   - Augmented definition to handle for virtual currencies.
 
 #### Changed appendix entries
