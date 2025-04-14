@@ -14,7 +14,7 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 * Mike Fuller (FinOps Foundation)
 * Riley Jenkins (Domo)
 * Shawn Alpay (FinOps Foundation)
-* Udam Dewaraja (FinOps Foundation)
+* Udam Dewaraja (StitcherAI)
 
 ### Contributors
 
