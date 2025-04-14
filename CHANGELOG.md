@@ -4,9 +4,6 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
--->
-
 ## v1.2
 
 <sup>Announced June 2025</sup>
@@ -77,10 +74,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Changed attributes
 
-- `Column Naming and Ordering`
-  - Renamed attribute to `Column Handling`.
-- `Currency Code Format`
-  - Renamed attribute to `Currency Format`.
+- `ColumnNamingAndOrdering`
+  - Renamed attribute to `ColumnHandling`.
+- `CurrencyCodeFormat`
+  - Renamed attribute to `CurrencyFormat`.
   - Augmented definition to handle for virtual currencies.
 
 #### Changed appendix entries
@@ -92,14 +89,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ##### Changed metadata properties
 
-- `Provider Version`
-  - Renamed field to `Data Generator Version`.
+- `ProviderVersion`
+  - Renamed field to `DataGeneratorVersion`.
 
 ##### Changed metadata schema properties
 
 ##### Changed metadata column definition properties
-
-[All 1.2 changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
 
 <br>
 
