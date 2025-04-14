@@ -37,7 +37,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Changed columns
 
-- Normative requirements guidelines have been applied to all columns.
+- Normative requirements guidelines have been applied to all columns. While the formatting has changed significantly, the vast majority of such changes are not material unless specifically called out in the below list.
 - `AvailabilityZone`
   - Added a requirement that the value must be null when a charge is not specific to an availability zone.
 - `BilledCost`
