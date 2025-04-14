@@ -37,10 +37,61 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Changed columns
 
 - Normative requirements guidelines have been applied to all columns.
+- `AvailabilityZone`
+  - Added a requirement that it must be null when a charge is not specific to an availability zone.
 - `BilledCost`
   - Added requirement that BilledCost must be 0 when payments are received by a third-party (e.g., marketplace).
+  - Enforced a tighter and more granular constraint on the sum of BilledCost — per individual invoice, not just per period/account.
+- `BillingAccountId`
+  - Relaxed the uniqueness requirement from globally unique to provider-unique.
+  - Introduced a recommendation to use fully-qualified identifiers.
+- `BillingAccountName`
+  - Removed uniqueness requirement within a customer context.
+- `BillingCurrency`
+  - Added a requirement that it must be expressed in national currency (e.g., USD, EUR).
+- `BillingPeriodEnd`
+  - Clarified the requirement to specify it as the exclusive end bound of the billing period.
+- `BillingPeriodStart`
+  - Clarified the requirement to specify it as the inclusive start bound of the billing period.
+- `CapacityReservationId`
+  - Clarified nullability requirements.
+  - Added StringHandling conformance requirements.
+- `CapacityReservationStatus`
+  - Clarified nullability requirements.
+  - Explicitly defined allowed values for unused and used capacity reservations.
+- `ChargeClass`
+  - Clarified nullability requirements.
+- `ChargeDescription`
+  - Added StringHandling conformance requirements.
+  - Changed recommendation to specify maximum length in the Metadata Schema instead of publicly available documentation.
+- `ChargePeriodEnd`
+  - Clarified the requirement to specify it as the exclusive end bound of the effective period of the charge.
+- `ChargePeriodStart`
+  - Clarified the requirement to specify it as the inclusive start bound of the effective period of the charge.
+- `CommitmentDiscountId`
+  - Added StringHandling conformance requirements.
+- `CommitmentDiscountQuantity`
+  - Clarified nullability requirements.
+  - Replaced the explicit requirement for positive values with a general requirement for valid decimal values when not null.
 - `CommitmentDiscountType`
   - Must be a consistent, readable display value.
+  - Added StringHandling conformance requirements.
+- `CommitmentDiscountUnit`
+  - Added StringHandling conformance requirements.
+  - Revised nullability requirements, explicitly stating that it must be null when CommitmentDiscountQuantity is null and vice versa.
+  - Added reference to Commitment Discount Flexibility appendix.
+- `ConsumedQuantity`
+  - Clarified nullability requirements.
+  - Replaced the explicit requirement for positive values with a general requirement for valid decimal values when not null.
+- `ConsumedUnit`
+  - Added StringHandling conformance requirements.
+  - Revised nullability requirements, explicitly stating that it must be null when ConsumedQuantity is null and vice versa.
+- `ContractedCost`
+  - Added a requirement that it must be a valid decimal value.
+- `EffectiveCost`
+  - Added a requirement that it must be a valid decimal value.
+  - Revised aggregation requirements to clarify cost matching specific to billing accounts.
+  - Added requirements for CommitmentDiscountId-related charges and CommitmentDiscountStatus.
 - `SkuPriceDetails`
   - Defined a set of common property names and units.
   - Added requirement that custom properties must prefix names with "x_".
