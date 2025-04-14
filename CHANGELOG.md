@@ -29,7 +29,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - Added list of features the specification supports.  See the `supported_features` subfolder for a full list.
 
-#### New Metadata
+#### New metadata column definition properties
+
 - `schema.column_definitions.Deprecated`
 - `schema.column_definitions.PreviousColumnName`
 
