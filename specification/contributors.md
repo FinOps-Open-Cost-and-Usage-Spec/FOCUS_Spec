@@ -33,6 +33,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * John Grubb (Platform.sh)
 * Justin Grinstead (MongoDB)
 * Marc Perreaut (Amadeus)
+* Matt Cowsert (FinOps Foundation)
 * Nan Braun (Thavron Solutions)
 * Ramkumar Narla (Adobe)
 * Rob Martin (FinOps Foundation)
