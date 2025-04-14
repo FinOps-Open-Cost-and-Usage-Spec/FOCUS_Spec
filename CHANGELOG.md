@@ -22,8 +22,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New appendix entries
 
-- Added examples for commitment discount flexibility
-- Added examples for SaaS scenarios
+- Added examples for commitment discount flexibility.
+- Added examples for SaaS scenarios.
 
 #### New supported features
 
