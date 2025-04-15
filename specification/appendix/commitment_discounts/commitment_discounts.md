@@ -89,7 +89,7 @@ The *commitment discount* is billed across all 8,760 (`24 hours * 365 days`) *ch
 
 #### Scenario #3: Partial Upfront
 
-With a 50/50 split, half of the commitment is billed _once_ during the first *charge period* of the *term* for &dollar;4,380 (derived as `24 hours * 182.5 days * &dollar;1.00`), and the other half is billed across each *charge period* over the term, derived as (`&dollar;1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e. &dollar;0.50) from the one-time purchase and the other half from the recurring purchase.
+With a 50/50 split, half of the commitment is billed _once_ during the first *charge period* of the *term* for &dollar;4,380 (derived as `24 hours * 182.5 days * &dollar;1.00`), and the other half is billed across each *charge period* over the term, derived as (`&dollar;1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e., &dollar;0.50) from the one-time purchase and the other half from the recurring purchase.
 
 ```json
 [

@@ -37,7 +37,7 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Commitment Discount Quantity for commitment utilization calculations, it's important to exclude *commitment discount* purchases (i.e. when ChargeCategory is "Purchase") that are paid to cover future eligible charges (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when ChargeCategory is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
+**Aggregation:** When aggregating Commitment Discount Quantity for commitment utilization calculations, it's important to exclude *commitment discount* purchases (i.e., when ChargeCategory is "Purchase") that are paid to cover future eligible charges (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e., when ChargeCategory is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
 
 ## Content constraints
 
