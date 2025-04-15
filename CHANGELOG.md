@@ -67,6 +67,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Revised requirement to nullability: the value must be null when ConsumedQuantity is null and vice versa.
 - `EffectiveCost`
   - Clarified requirements for aggregation of values.
+- `InvoiceIssuerName`
+  - Clarified the definition by narrowing the scope to the issuance of payable invoices.
+  - Added requirement to conform to StringHandling attribute.
+- `PricingUnit`
+  - Added requirement to conform to StringHandling attribute.
+  - Revised requirement to nullability: the value must be null when PricingQuantity is null and vice versa.
+- `ProviderName`
+  - Added requirement to conform to StringHandling attribute.
+- `PublisherName`
+  - Added requirement to conform to StringHandling attribute.
+- `RegionId`
+  - Added requirement to conform to StringHandling attribute.
+- `RegionName`
+  - Added requirement to conform to StringHandling attribute.
+  - Revised requirement to nullability: the value must be null when RegionId is null and vice versa.
 - `SkuPriceDetails`
   - Defined a set of FOCUS-specified property names and units.
   - Added requirement that custom properties must prefix names with "x_".
