@@ -82,9 +82,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `RegionName`
   - Added requirement to conform to StringHandling attribute.
   - Revised requirement to nullability: the value must be null when RegionId is null and vice versa.
+- `ResourceId`
+  - Added requirement to conform to StringHandling attribute.
+  - Revised requirement for uniqueness: the value must be unique within the provider.
+- `ResourceName`
+  - Added requirement to conform to StringHandling attribute.
+  - Revised requirement to nullability: the value must be null when ResourceId is null or when the resource does not have an assigned display, and must not be null otherwise.
+- `ResourceType`
+  - Added requirement to conform to StringHandling attribute.
+- `ServiceName`
+  - Added requirement to conform to StringHandling attribute.
+  - Added requirements for mapping to a single ServiceCategory or "Other".
+  - Added recommendations for mapping to a single ServiceSubcategory or "Other".
+- `ServiceSubcategory`
+  - Removed (i.e., relocated) requirement for ServiceName mapping to a single ServiceCategory (or 'Other').
+- `SkuId`
+  - Revised column definition positions SkuId as a stable, functional identifier beyond pricing construct.
+  - TODO
+- `SkuMeter`
+  - Revised column presence requirement: the column must be present when the provider supports unit pricing and publishes price lists.
+  - Added requirement to conform to StringHandling attribute.
 - `SkuPriceDetails`
   - Defined a set of FOCUS-specified property names and units.
   - Added requirement that custom properties must prefix names with "x_".
+  - TODO
+- `SkuPriceId`
+  - TODO
+- `SubAccountId`
+  - Added requirement that custom properties must prefix names with "x_".
+- `SubAccountName`
+  - Added requirement that custom properties must prefix names with "x_".
+  - Revised requirement to nullability: the value must be null when SubAccountId is null and vice versa.
 - `Tags`
   - Resolved bug involving multiple user-defined tag structures.
 
