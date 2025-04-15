@@ -30,7 +30,6 @@ A provider-assigned name to identify the type of *sub account*.
 | :-------------- | :--------------- |
 | Column type     | Dimension        |
 | Feature level   | Conditional      |
-| Column required | True             |
 | Allows nulls    | True             |
 | Data type       | String           |
 | Value format    | \<not specified> |
