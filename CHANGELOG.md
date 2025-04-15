@@ -59,20 +59,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Added requirement to conform to StringHandling attribute.
 - `CommitmentDiscountUnit`
   - Added requirement to conform to StringHandling attribute.
-  - Revised requirement to nullability: the value must be null when CommitmentDiscountQuantity is null and vice versa.
+  - Revised requirement of nullability to be tied to the nullability of CommitmentDiscountQuantity (e.g., must be null when CommitmentDiscountQuantity is null).
 - `ConsumedQuantity`
   - Revised requirement of value range to allow any valid decimal value.
 - `ConsumedUnit`
   - Added requirement to conform to StringHandling attribute.
-  - Revised requirement to nullability: the value must be null when ConsumedQuantity is null and vice versa.
+  - Revised requirement of nullability to be tied to the nullability of ConsumedQuantity (e.g., must be null when ConsumedQuantity is null).
 - `EffectiveCost`
   - Clarified requirements for aggregation of values.
 - `InvoiceIssuerName`
-  - Clarified the definition by narrowing the scope to the issuance of payable invoices.
   - Added requirement to conform to StringHandling attribute.
 - `PricingUnit`
   - Added requirement to conform to StringHandling attribute.
-  - Revised requirement to nullability: the value must be null when PricingQuantity is null and vice versa.
+  - Revised requirement of nullability to be tied to the nullability of PricingQuantity (e.g., must be null when PricingQuantity is null).
 - `ProviderName`
   - Added requirement to conform to StringHandling attribute.
 - `PublisherName`
@@ -81,38 +80,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Added requirement to conform to StringHandling attribute.
 - `RegionName`
   - Added requirement to conform to StringHandling attribute.
-  - Revised requirement to nullability: the value must be null when RegionId is null and vice versa.
+  - Revised requirement of nullability to be tied to the nullability of RegionId (e.g., must be null when RegionId is null).
 - `ResourceId`
   - Added requirement to conform to StringHandling attribute.
   - Revised requirement for uniqueness: the value must be unique within the provider.
 - `ResourceName`
   - Added requirement to conform to StringHandling attribute.
-  - Revised requirement to nullability: the value must be null when ResourceId is null or when the resource does not have an assigned display, and must not be null otherwise.
 - `ResourceType`
   - Added requirement to conform to StringHandling attribute.
 - `ServiceName`
   - Added requirement to conform to StringHandling attribute.
-  - Added requirements for mapping to a single ServiceCategory or "Other".
-  - Added recommendations for mapping to a single ServiceSubcategory or "Other".
-- `ServiceSubcategory`
-  - Removed (i.e., relocated) requirement for ServiceName mapping to a single ServiceCategory (or 'Other').
+  - Added requirement for mapping the value to a single ServiceCategory or "Other".
+  - Added recommendation for mapping the value to a single ServiceSubcategory or "Other".
 - `SkuId`
-  - Revised column definition positions SkuId as a stable, functional identifier beyond pricing construct.
-  - TODO
+  - Revised column definition to position SkuId as a stable, functional identifier beyond pricing constructs.
+  - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
+  - Added requirements for a SkuId to be consistent across variations of billing accounts, contracts, and prices.
 - `SkuMeter`
-  - Revised column presence requirement: the column must be present when the provider supports unit pricing and publishes price lists.
+  - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
   - Added requirement to conform to StringHandling attribute.
 - `SkuPriceDetails`
-  - Defined a set of FOCUS-specified property names and units.
+  - Defined a set of FOCUS-specified property names and units, and added requirements for how they are used.
   - Added requirement that custom properties must prefix names with "x_".
-  - TODO
+  - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
 - `SkuPriceId`
-  - TODO
+  - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
+  - Added requirements for a SkuPriceId to be consistent across variations of billing accounts and contracts.
 - `SubAccountId`
   - Added requirement that custom properties must prefix names with "x_".
 - `SubAccountName`
   - Added requirement that custom properties must prefix names with "x_".
-  - Revised requirement to nullability: the value must be null when SubAccountId is null and vice versa.
+  - Revised requirement of nullability to be tied to the nullability of SubAccountId (e.g., must be null when SubAccountId is null).
 - `Tags`
   - Resolved bug involving multiple user-defined tag structures.
 
