@@ -41,92 +41,23 @@ Using the same *commitment discount* example as above with a one-year, spend-bas
 
 The entire *commitment discount* is billed _once_ during the first *charge period* of the *term* for &dollar;8,670 (derived as `24 hours * 365 days * &dollar;1.00`).
 
-```json
-[
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2024-01-01T00:00:00Z",
-        "ChargeCategory": "Purchase",
-        "ChargeFrequency": "One-Time",
-        "PricingCategory": "Standard",
-        "ResourceId": "<commitment-discount-id>",
-        "BilledCost": 8760.00,
-        "EffectiveCost": 0.00,
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountQuantity": 8760.00,
-        "CommitmentDiscountUnit": "USD"
-    }
-]
-```
+[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_purchase_scenario_1.csv)
 
 #### Scenario #2: No Upfront
 
 The *commitment discount* is billed across all 8,760 (`24 hours * 365 days`) *charge periods* of the *term* with &dollar;1.00 allocated to each *charge period* over the *term*.
 
-```json
-[
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Purchase",
-        "ChargeFrequency": "Recurring",
-        "PricingCategory": "Standard",
-        "ResourceId": "<commitment-discount-id>",
-        "BilledCost": 1.00,
-        "EffectiveCost": 0.00,
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountQuantity": 1.00,
-        "CommitmentDiscountUnit": "USD"
-    },
+[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_purchase_scenario_2.csv)
 
-    /* ... 8,759 more recurring purchase records for the *term* ... */
-]
-```
+This example shows the first three hourly rows of 8,760 total rows that are all the same except for the incrementing monthly and hourly timeframes denoted in the Billing Period and Charge Period columns, respectively.
 
 #### Scenario #3: Partial Upfront
 
 With a 50/50 split, half of the commitment is billed _once_ during the first *charge period* of the *term* for &dollar;4,380 (derived as `24 hours * 182.5 days * &dollar;1.00`), and the other half is billed across each *charge period* over the term, derived as (`&dollar;1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e. &dollar;0.50) from the one-time purchase and the other half from the recurring purchase.
 
-```json
-[
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2024-01-01T00:00:00Z",
-        "ChargeCategory": "Purchase",
-        "ChargeFrequency": "One-Time",
-        "PricingCategory": "Standard",
-        "ResourceId": "<commitment-discount-id>",
-        "BilledCost": 4380.00,
-        "EffectiveCost": 0.00,
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountQuantity": 4380.00,
-        "CommitmentDiscountUnit": "USD"
-    },
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Purchase",
-        "ChargeFrequency": "Recurring",
-        "PricingCategory": "Standard",
-        "ResourceId": "<commitment-discount-id>",
-        "BilledCost": 0.50,
-        "EffectiveCost": 0.00,
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountQuantity": 0.50,
-        "CommitmentDiscountUnit": "USD"
-    },
+[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_purchase_scenario_3.csv)
 
-    /* ... 8,759 more recurring purchase records for the *term* ... */
-]
-```
+This example shows the first three hourly rows of 8,760 total rows that are all the same except for the incrementing monthly and hourly timeframes denoted in the Billing Period and Charge Period columns, respectively.
 
 ### Usage *Rows*
 
@@ -141,138 +72,22 @@ With a 50/50 split, half of the commitment is billed _once_ during the first *ch
 
 In this scenario, one eligible *resource* runs for the full hour and consumes &dollar;1.00, so one *row* allocated to the *resource* is produced.
 
-```json
-[
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Usage",
-        "ChargeFrequency": "Usage-Based",
-        "PricingCategory": "Committed",
-        "ResourceId": "<resource-id>",
-        "ConsumedQuantity": 1,
-        "ConsumedUnit": "Hour",
-        "BilledCost": 0.00,
-        "EffectiveCost": 1.00,
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountQuantity": 1.00,
-        "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountUnit": "USD"
-    }
-]
-```
+[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_usage_scenario_1.csv)
 
 #### Scenario #2: No eligible *resource* consumes the allocated amount (0% utilization)
 
 In this situation, the full eligible, &dollar;1.00 amount remained unutilized and results in 1 unused *row*. In this scenario, it is important to note that while CommitmentDiscountQuantity is not because &dollar;1 was still drawn down by the *commitment discount* even though, no *resource* was allocated, so [ConsumedQuantity](#consumedquantity) and [ConsumedUnit](#consumedunit) are null.
 
-```json
-[
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Usage",
-        "ChargeFrequency": "Usage-Based",
-        "PricingCategory": "Committed",
-        "ResourceId": "<commitment-discount-id>",
-        "ConsumedQuantity": null,
-        "ConsumedUnit": null,
-        "BilledCost": 0.00,
-        "EffectiveCost": 1.00,
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountQuantity": 1.00,
-        "CommitmentDiscountStatus": "Unused",
-        "CommitmentDiscountUnit": "USD"
-    }
-]
-```
+[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_usage_scenario_2.csv)
 
 #### Scenario #3: An eligible *resource* partially consumes the allocated amount (75% utilization)
 
 In this scenario, one eligible *resource* runs for the full hour and consumes &dollar;0.75 of the &dollar;1.00 allocation. One *row* shows &dollar;0.75 to a *resource*, and the other *row* shows that &dollar;0.25 was unused.
 
-```json
-[
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Usage",
-        "ChargeFrequency": "Usage-Based",
-        "PricingCategory": "Committed",
-        "ResourceId": "<resource-id>",
-        "ConsumedQuantity": 1,
-        "ConsumedUnit": "Hour",
-        "BilledCost": 0.00,
-        "EffectiveCost": 0.75,
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountQuantity": 0.75,
-        "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountUnit": "USD"
-    },
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Usage",
-        "ChargeFrequency": "Usage-Based",
-        "PricingCategory": "Committed",
-        "ResourceId": "<commitment-discount-id>",
-        "ConsumedQuantity": null,
-        "ConsumedUnit": null,
-        "BilledCost": 0.00,
-        "EffectiveCost": 0.25,
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountQuantity": 0.25,
-        "CommitmentDiscountStatus": "Unused",
-        "CommitmentDiscountUnit": "USD"
-    }
-]
-```
+[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_usage_scenario_3.csv)
 
 #### Scenario #4: An eligible *resource* fully consumes the &dollar;1.00 hourly commit with an overage (100% utilization + overage)
 
 In this scenario, one eligible *resource* runs for the full hour and is charged &dollar;1.50. One *row* shows that &dollar;1.00 was *amortized* from the *commitment discount*, and the other shows that &dollar;0.50 was charged as standard, on-demand spend.
 
-```json
-[
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Usage",
-        "ChargeFrequency": "Usage-Based",
-        "PricingCategory": "Committed",
-        "ResourceId": "<resource-id>",
-        "ConsumedQuantity": 1,
-        "ConsumedUnit": "Hour",
-        "BilledCost": 0.00,
-        "EffectiveCost": 1.00,
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountQuantity": 1.00,
-        "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountUnit": "USD"
-    },
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Usage",
-        "ChargeFrequency": "Usage-Based",
-        "PricingCategory": "Standard",
-        "ResourceId": "<resource-id>",
-        "ConsumedQuantity": 1,
-        "ConsumedUnit": "Hour",
-        "BilledCost": 0.50,
-        "EffectiveCost": 0.50
-    }
-]
-```
+[CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_usage_scenario_4.csv)
