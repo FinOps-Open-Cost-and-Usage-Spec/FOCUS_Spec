@@ -55,9 +55,13 @@ The following principles were considered while building the specification.
 
 ### Extensibility
 
-* The initial specification aims to introduce a common schema and terminology for billing datasets produced by Cloud Service Providers (CSPs).
-* The specification, however, aims to be extensible to SaaS products and other types of cost datasets.
-* Future versions of the specification will look to expand the content to support a broader set of prioritized FinOps capabilities.
+The FOCUS Specification is designed to support evolving FinOps needs across diverse billing models and provider types.
+
+While the initial focus was on billing data from Cloud Service Providers (CSPs), version 1.2 introduces foundational support for Software as a Service (SaaS) platforms, including normative columns for pricing currencies, effective cost, and contracted pricing in non-monetary units such as credits or tokens.
+
+The specification supports extensibility through structured naming conventions (e.g., x_ custom columns), conditional requirements, and a version-aware schema approach.
+
+Future versions of FOCUS will expand to include additional FinOps capabilities such as forecasting, exchange rate modeling, and anomaly detection, while continuing to support a broader range of billing and cost datasets — including internal infrastructure platforms and marketplace offerings.
 
 ## Design Notes
 
