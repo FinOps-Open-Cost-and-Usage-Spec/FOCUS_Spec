@@ -22,7 +22,7 @@ Billing Account Type
 
 ## Description
 
-A provider-assigned identifier for the type of *billing account* applied to the charge.
+A provider-assigned name to identify the type of *billing account*.
 
 ## Content Constraints
 
