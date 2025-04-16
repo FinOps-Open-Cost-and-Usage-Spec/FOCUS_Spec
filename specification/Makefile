@@ -15,6 +15,7 @@ PDF_FOOTER=--pdf-engine-opt="--footer-right" --pdf-engine-opt="[page] of [topage
 SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard supported_features/*.md*) $(wildcard columns/*.md*) $(wildcard attributes/*.md*) $(wildcard appendix/*.md*)
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
 export TOCDEPTH=2
+OS=$(shell uname)
 all: spec.md spec.pdf spec.html
 
 spec.html: spec.md
@@ -25,11 +26,19 @@ spec.pdf: spec.html
 	$(WKHTMLTOPDF) --enable-local-file-access --footer-right "[page] of [topage]" --footer-font-name "Palatino" --footer-font-size 8 spec_pdf.html $@
 
 spec.md: $(SPEC_SOURCE_FILES)
-ifneq ("$(wildcard versions/${STYLE}.md)","")
-	cp versions/${STYLE}.md version.md
-else
-	cp versions/working_draft.md version.md
-endif
+	@if [ "${STYLE}" = "working_draft" ]; then \
+	  cp versions/working_draft.md version.md; \
+	  echo "working draft"; \
+	  if [ "$(OS)" = "Darwin" ]; then \
+	    echo "osx";\
+	    sed -i '' 's/Working Draft (Unversioned)/Offline Build (Unversioned)/' version.md; \
+	  elif [ "$(OS)" = "Linux" ]; then \
+	    sed -i "s/Working Draft (Unversioned)/${GITHUB_REF_NAME} (Unversioned)/" version.md; \
+	  fi; \
+	else \
+	  echo "foo ${STYLE} s";\
+	  cp versions/${STYLE}.md version.md; \
+	fi
 	./validate_includes.py supported_features
 	./validate_includes.py columns
 	./validate_includes.py attributes
