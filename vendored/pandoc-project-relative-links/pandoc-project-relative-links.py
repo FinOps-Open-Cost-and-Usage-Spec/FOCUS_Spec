@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 ## Created by Mike Fuller (FinOps Foundation)
 #  Based on Daniel Jour (musteresel)'s Haskell version of this plugin:
 #  https://github.com/musteresel/pandoc-project-relative-links/tree/master
