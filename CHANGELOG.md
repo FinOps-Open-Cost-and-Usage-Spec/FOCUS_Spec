@@ -31,8 +31,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New metadata column definition properties
 
-- `schema.column_definitions.Deprecated`
-- `schema.column_definitions.PreviousColumnName`
+- `Deprecated`
+- `PreviousColumnName`
 
 ### Changed
 
