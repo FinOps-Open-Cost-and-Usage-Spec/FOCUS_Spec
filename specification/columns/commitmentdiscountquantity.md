@@ -37,7 +37,11 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Commitment Discount Quantity for commitment utilization calculations, it's important to exclude *commitment discount* purchases (i.e. when ChargeCategory is "Purchase") that are paid to cover future eligible charges (e.g., *commitment discount*). Otherwise, when accounting for all upfront or accrued purchases, it's important to exclude *commitment discount* usage (i.e. when ChargeCategory is "Usage"). This exclusion helps prevent double counting of these quantities in the aggregation.
+### Aggregation
+
+When aggregating Commitment Discount Quantity for commitment utilization calculations, it's important to exclude certain types of charges to avoid double counting. Specifically, principal charges (defined as the original charge that is amortized over time across multiple other charges, with the [Amortization Class](#amortizationclass) set to "Principal") or amortized charges (representing the results of amortization from a previous charge, with the Amortization Class set to "Amortized Charge"). Both of these charges specify Commitment Discount Quantity, so including both would lead to double counting.
+
+In the case of a [commitment discount](#glossary:commitment-discount), principal charges typically refer to Charge Category "Purchase" charges (both one-time and recurring) that are paid to cover future eligible charges, along with their related Charge Category "Tax" charges. Amortized charges, on the other hand, correspond to Charge Category "Usage" records that are covered by these purchases.
 
 ## Content constraints
 
