@@ -1,6 +1,6 @@
 # Pricing Currency Contracted Unit Price
 
-The Pricing Currency Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Pricing Currency](#pricingcurrency). When negotiated discounts do not apply to unit prices and instead are applied to exchange rates, the Pricing Currency Contracted Unit Price defaults to the [Pricing Currency List Unit Price](#pricingcurrencylistunitprice). The Pricing Currency Contracted Unit Price is commonly used to calculate savings based on negotiation activities.
+The Pricing Currency Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated [*SKU*](#glossary:sku), inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Pricing Currency](#pricingcurrency). When negotiated discounts do not apply to unit prices and instead are applied to exchange rates, the Pricing Currency Contracted Unit Price defaults to the [Pricing Currency List Unit Price](#pricingcurrencylistunitprice). The Pricing Currency Contracted Unit Price is commonly used to calculate savings based on negotiation activities.
 
 The PricingCurrencyContractedUnitPrice column adheres to the following requirements:
 
@@ -17,7 +17,7 @@ The PricingCurrencyContractedUnitPrice column adheres to the following requireme
 * When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice adheres to the following additional requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.
-* Discrepancies in PricingCurrencyContractedUnitPrice, ContractedCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
+* Discrepancies in PricingCurrencyContractedUnitPrice, [ContractedCost](#contractedcost), or [PricingQuantity](#pricingquantity) MAY exist when ChargeClass is "Correction".
 
 ## Column ID
 
