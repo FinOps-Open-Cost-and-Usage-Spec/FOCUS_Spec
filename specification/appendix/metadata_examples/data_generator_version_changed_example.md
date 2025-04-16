@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME specifies the optional metadata property [Provider Version](#providerversion) in their [Schema](#schema) object. They made a change to the [*FOCUS dataset*](#glossary:FOCUS-dataset) they produce that does not adopt a new FOCUS Version, nor does it make a change the included columns but does impact values in the data. This example illustrates that Provider Version changes are independent of column changes, however provider version changes may include column changes.
+ACME specifies the optional metadata property [Provider Version](#providerversion) in their [Schema](#schema) object. They made a change to the [*FOCUS dataset*](#glossary:FOCUS-dataset) they produce that does not adopt a new FOCUS Version, nor make a change the included columns but does impact values in the data. This example illustrates that Provider Version changes are independent of column changes, however provider version changes may include column changes.
 
 The provider creates a new schema object to represent the new schema. The provider includes both the FOCUS Version and Provider Version in the schema object.
 
