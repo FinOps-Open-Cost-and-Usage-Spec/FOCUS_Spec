@@ -79,6 +79,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
 - `SkuPriceId`
   - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
+  - Revised requirement that the value must have a single parent SkuId, removing the prior exception for commitment discount flexibility.
+  - Added requirement that the value must be associated with a given resource or service when ChargeCategory is "Usage" or "Purchase".
   - Added requirements for a SkuPriceId to be consistent across variations of billing accounts and contracts.
 - `SubAccountName`
   - Revised requirement of nullability to be tied to the nullability of SubAccountId (e.g., must be null when SubAccountId is null).
