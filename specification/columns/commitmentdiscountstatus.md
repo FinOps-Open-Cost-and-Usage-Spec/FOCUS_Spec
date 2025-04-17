@@ -1,6 +1,6 @@
 # Commitment Discount Status
 
-Commitment Discount Status indicates whether the charge corresponds with the consumption of a [*commitment discount*](#glossary:commitment-discount) identified in the CommitmentDiscountId column or the unused portion of the committed amount. The CommitmentDiscountStatus column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Status indicates whether the [*charge*](#glossary:charge) corresponds with the consumption of a [*commitment discount*](#glossary:commitment-discount) identified in the CommitmentDiscountId column or the unused portion of the committed amount. The CommitmentDiscountStatus column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 The CommitmentDiscountStatus column adheres to the following requirements:
 
@@ -21,7 +21,7 @@ Commitment Discount Status
 
 ## Description
 
-Indicates whether the charge corresponds with the consumption of a *commitment discount* or the unused portion of the committed amount.
+Indicates whether the *charge* corresponds with the consumption of a *commitment discount* or the unused portion of the committed amount.
 
 ## Content constraints
 
@@ -35,10 +35,10 @@ Indicates whether the charge corresponds with the consumption of a *commitment d
 
 Allowed values:
 
-| Value  | Description                                                                 |
-| :----- | :-------------------------------------------------------------------------- |
-| Used   | Charges that utilized a specific amount of a commitment discount.     |
-| Unused | Charges that represent the unused portion of the commitment discount. |
+| Value  | Description                                                             |
+| :----- | :---------------------------------------------------------------------- |
+| Used   | *Charges* that utilized a specific amount of a commitment discount.     |
+| Unused | *Charges* that represent the unused portion of the commitment discount. |
 
 ## Introduced (version)
 

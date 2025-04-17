@@ -8,8 +8,8 @@ The SubAccountId column adheres to the following requirements:
 * SubAccountId MUST be of type String.
 * SubAccountId MUST conform to [StringHandling](#stringhandling) requirements.
 * SubAccountId nullability is defined as follows:
-  * SubAccountId MUST be null when a charge is not related to a *sub account*.
-  * SubAccountId MUST NOT be null when a charge is related to a *sub account*.
+  * SubAccountId MUST be null when a [*charge*](#glossary:charge) is not related to a *sub account*.
+  * SubAccountId MUST NOT be null when a *charge* is related to a *sub account*.
 
 See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
