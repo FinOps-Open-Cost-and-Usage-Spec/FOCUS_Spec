@@ -25,13 +25,13 @@ jobs:
         shell: bash
         working-directory: ./specification
         run: |
-          make STYLE=main
+          make STYLE=main BRANCH=main
       - name: Upload on failure
         uses: actions/upload-artifact@4.5.0
         if: ${{ failure()}}
         with:
           name: spec.md
-          path: spec.md
+          path: specification/spec.md
       - name: Upload Spec
         uses: actions/upload-artifact@v4.5.0
         with:
