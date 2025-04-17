@@ -75,7 +75,7 @@ Note the following details in the dataset:
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
 * Because Acme Co uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their FOCUS dataset includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
 * A single charge representing the total payment for the initial token purchase agreement (&dollar;100,000) is charged in the first invoice.
-  * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero since the tokens are not yet consumed.
+  * ListCost, BilledCost, and ContractedCost of the purchase are all represented in this charge, however EffectiveCost is zero, as required for prepaid purchases.
 * PricingQuantity is set to the total tokens purchased.
 * Because Awesome Corp is receiving a discount on the token price, the ListUnitPrice is set to &dollar;2 and the ContractedUnitPrice is set to &dollar;1. A ListCost of (&dollar;200,000) and ContractedCost (&dollar;100,000) reflect the cost of the tokens at the list price and contracted price respectively. The BilledCost is set to &dollar;100,000 since this is the amount that Awesome Corp will be charged for the purchase of tokens.
 
@@ -112,7 +112,7 @@ Note the following details in the dataset:
 
 * Because of the modified rate for Workflow Operations, the PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are different for this charge. The ContractedUnitPrice is set to &dollar;1 and the ListUnitPrice is set to &dollar;2.
 * The PricingCurrencyEffectiveCost is 240 tokens for this charge, which is less that example B2 above due to the modified rate.
-* ListCost reflects the cost of the charge at both the list cost and the list usage to token ratio.
+* ListCost reflects the cost of the charge at both the list cost of the tokens and the list rate for which the usage consumes tokens.
 
 ## Scenario C: Handling Virtual Currency Usage Overages
 
