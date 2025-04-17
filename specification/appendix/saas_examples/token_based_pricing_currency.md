@@ -118,7 +118,7 @@ Note the following details in the dataset:
 
 For this scenario, Awesome Corp has exceeded their purchased tokens on October 1st 2025 by 1,500 tokens and Acme Co has charged them for the overage. The following conditions apply:
 * Acme Co has charged Awesome Corp for the cost of tokens at the list price of &dollar;2 per token, and this purchase is effective from April 1st 2025 to the date of the purchase, October 1st 2025.
-* Awesome Corp purchases an additional 25,000 token to facilitate usage to the end of their contract. These tokens are valid from October 1st 2025 to March 30th 2026.
+* Awesome Corp purchases an additional 25,000 tokens to facilitate usage to the end of their contract. These tokens are valid from October 1st 2025 to April 1st 2026.
 
 **Example FOCUS dataset:** [Handling Virtual Currency Usage Overages](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788&range=25:27)
 
