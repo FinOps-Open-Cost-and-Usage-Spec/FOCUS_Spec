@@ -66,7 +66,7 @@ For this scenario, contract terms include the following terms in addition to the
 
 For this scenario, the initial purchase of virtual currency is executed as follows:
 
-* On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at &dollar;1 per token for a total spend &dollar;100,000. These tokens are only valid for 12 months.
+* On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at discounted cost of &dollar;1 per token for a total spend &dollar;100,000. These tokens are only valid for 12 months.
 
 **Example FOCUS dataset:** [Purchase of Virtual Currency at a Discount](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788&range=11:12)
 
