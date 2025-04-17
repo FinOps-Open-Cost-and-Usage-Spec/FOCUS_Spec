@@ -8,11 +8,11 @@ Spend-based commitment discounts obligate a customer to a predetermined amount o
 
 ## Purchasing
 
-While customers are bound to the *term* of a *commitment discounts*, providers offer some or all of the following payment options before and/or during the *term*:
+While customers are bound to the *term* of a *commitment discount*, providers offer some or all of the following payment options before and/or during the *term*:
 
-* *All Upfront* - The *commitment discounts* is paid in full before the *term* begins.
-* *No Upfront* - The *commitment discounts* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *term*.
-* *Partial Upfront* - Some of the *commitment discounts* is paid before the *term* begins, and the rest is paid repeatedly over the *term*.
+* *All Upfront* - The *commitment discount* is paid in full before the *term* begins.
+* *No Upfront* - The *commitment discount* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *term*.
+* *Partial Upfront* - Some of the *commitment discount* is paid before the *term* begins, and the rest is paid repeatedly over the *term*.
 
 For example, if a customer buys a 1-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *term* *and* monthly recurring purchases with the following totals:
 
@@ -89,7 +89,7 @@ The *commitment discount* is billed across all 8,760 (`24 hours * 365 days`) *ch
 
 #### Scenario #3: Partial Upfront
 
-With a 50/50 split, half of the commitment is billed _once_ during the first *charge period* of the *term* for &dollar;4,380 (derived as `24 hours * 182.5 days * &dollar;1.00`), and the other half is billed across each *charge period* over the term, derived as (`&dollar;1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e. &dollar;0.50) from the one-time purchase and the other half from the recurring purchase.
+With a 50/50 split, half of the commitment is billed _once_ during the first *charge period* of the *term* for &dollar;4,380 (derived as `24 hours * 182.5 days * &dollar;1.00`), and the other half is billed across each *charge period* over the term, derived as (`&dollar;1.00 * 8,760 hours * 0.5`). Amortized costs incur half of the amount (i.e., &dollar;0.50) from the one-time purchase and the other half from the recurring purchase.
 
 ```json
 [
