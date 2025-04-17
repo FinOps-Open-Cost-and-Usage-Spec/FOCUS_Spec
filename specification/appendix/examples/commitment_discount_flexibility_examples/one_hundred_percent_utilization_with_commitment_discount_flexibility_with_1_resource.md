@@ -1,4 +1,4 @@
-# 100% utilization with with commitment discount flexibility with 1 resource
+# 100% utilization with commitment discount flexibility with 1 resource
 
 ## Context
 
@@ -34,82 +34,4 @@ The above SKU catalog shows that this provider only has 1 service that offers 4 
 * The VM_SMALL *commitment discount* is fully utilized within the corresponding [*charge period*](#glossary:chargeperiod), covers 25% of the VM_LARGE resource, and incurs a $0.50 [*EffectiveCost*](#effectivecost).
 * The VM_LARGE resource incurs an additional, on-demand $2.25 *BilledCost* and *EffectiveCost*.
 
-```json
-[
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Purchase",
-        "ChargeFrequency": "Recurring",
-        "PricingCategory": "Standard",
-        "ResourceId": "<my-commitment-discount-id>",
-        "PricingQuantity": 1.00,
-        "ListUnitPrice": 1.00,
-        "ListCost": 1.00,
-        "x_CommitmentDiscountUnitPrice": 0.50,
-        "BilledCost": 0.50,
-        "EffectiveCost": 0.00,
-        "ConsumedQuantity": null,
-        "ConsumedUnit": null,
-        "SkuId": "VM_SMALL",
-        "SkuPriceId": "VM_SMALL_COMMITTED_PURCHASE_NO_UPFRONT",
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountCategory": "Usage",
-        "CommitmentDiscountQuantity": 1.00,
-        "CommitmentDiscountStatus": null,
-        "CommitmentDiscountUnit": "Normalized Hour"
-    },
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Usage",
-        "ChargeFrequency": "Usage-Based",
-        "PricingCategory": "Committed",
-        "ResourceId": "<my-large-vm-id>",
-        "PricingQuantity": 0.333,
-        "ListUnitPrice": 3.00,
-        "ListCost": 3.00,
-        "x_CommitmentDiscountUnitPrice": 1.50,
-        "BilledCost": 0.00,
-        "EffectiveCost": 0.50,
-        "ConsumedQuantity": 1.00,
-        "ConsumedUnit": "Hour",
-        "SkuId": "VM_LARGE",
-        "SkuPriceId": "VM_LARGE_COMMITTED_HOUR",
-        "CommitmentDiscountId": "<commitment-discount-id>",
-        "CommitmentDiscountCategory": "Usage",
-        "CommitmentDiscountQuantity": 1.00,
-        "CommitmentDiscountStatus": "Used",
-        "CommitmentDiscountUnit": "Normalized Hour"
-    },
-    {
-        "BillingPeriodStart": "2023-01-01T00:00:00Z",
-        "BillingPeriodEnd": "2023-02-01T00:00:00Z",
-        "ChargePeriodStart": "2023-01-01T00:00:00Z",
-        "ChargePeriodEnd": "2023-01-01T01:00:00Z",
-        "ChargeCategory": "Usage",
-        "ChargeFrequency": "Usage-Based",
-        "PricingCategory": "Standard",
-        "ResourceId": "<my-large-vm-id>",
-        "PricingQuantity": 0.75,
-        "ListUnitPrice": 3.00,
-        "ListCost": 2.25,
-        "x_CommitmentDiscountUnitPrice": 1.50,
-        "BilledCost": 2.25,
-        "EffectiveCost": 2.25,
-        "ConsumedQuantity": 1.00,
-        "ConsumedUnit": "Hour",
-        "SkuId": "VM_LARGE",
-        "SkuPriceId": "VM_LARGE_ON_DEMAND_HOUR",
-        "CommitmentDiscountId": null,
-        "CommitmentDiscountCategory": null,
-        "CommitmentDiscountQuantity": null,
-        "CommitmentDiscountStatus": null,
-        "CommitmentDiscountUnit": null
-    }
-]
-```
+[CSV Example](/specification/data/commitment_discount_flexibility/one_hundred_percent_utilization_with_commitment_discount_flexibility_with_1_resource.csv)

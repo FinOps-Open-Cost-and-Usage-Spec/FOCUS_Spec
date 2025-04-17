@@ -4,7 +4,7 @@ Effective Cost represents the [*amortized*](#glossary:amortization) cost of the 
 
 This column resolves two challenges that are faced by practitioners:
 
-1. Practitioners need to *amortize* relevant purchases, such as upfront fees, throughout the *commitment* and distribute them to the appropriate reporting groups (e.g. [*tags*](#glossary:tag), [*resources*](#glossary:resource)).
+1. Practitioners need to *amortize* relevant purchases, such as upfront fees, throughout the *commitment* and distribute them to the appropriate reporting groups (e.g., [*tags*](#glossary:tag), [*resources*](#glossary:resource)).
 2. Many [*commitment discount*](#glossary:commitment-discount) constructs include a recurring expense for the *commitment* for every [*billing period*](#glossary:billing-period) and must distribute this cost to the *resources* using the *commitment*. This forces reconciliation between the initial *commitment* [*row*](#glossary:row) per period and the actual usage *rows*.
 
 The EffectiveCost column adheres to the following requirements:

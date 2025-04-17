@@ -41,7 +41,7 @@ SKU ID
 
 ## Description
 
-Provider-specified unique identifier that represents a specific *SKU* (e.g., quantifiable good or service offering).
+Provider-specified unique identifier that represents a specific *SKU* (e.g., a quantifiable good or service offering).
 
 ## Content constraints
 
