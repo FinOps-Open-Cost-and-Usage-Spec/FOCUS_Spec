@@ -1,6 +1,7 @@
-# SaaS Examples
+# Examples: SaaS
 
 The following section contains examples with how SaaS providers may implement the FOCUS specification. SaaS provider implementations will vary on the level of the detail available in their data, contract terms, purchasing options, and other factors.
 
 !INCLUDE "simple_agreements.md",1
 !INCLUDE "spend_agreements.md",1
+!INCLUDE "virtual_currency_pricing_model.md",1

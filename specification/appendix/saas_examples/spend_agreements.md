@@ -1,6 +1,6 @@
 # SaaS Spend Agreements
 
-Many SaaS providers support billing models that allow (or in some cases require) consumers to agree to an amount to spend over a period. In some cases, customer receive a negotiated discount for usage during that period in exchange for the spend agreement. Spend agreements can have different payment models like billing in arrears or pre-paid contracts and may impose minimum spend requirements for parts of the agreement.
+Many SaaS providers support billing models that allow (or in some cases require) consumers to agree to an amount to spend over a period. In some cases, customers receive a negotiated discount for usage during that period in exchange for the spend agreement. Spend agreements can have different payment models like billing in arrears or pre-paid contracts and may impose minimum spend requirements for parts of the agreement.
 
 The scenarios described below illustrate how a FOCUS-compliant dataset should look for various spend agreement scenarios.
 
