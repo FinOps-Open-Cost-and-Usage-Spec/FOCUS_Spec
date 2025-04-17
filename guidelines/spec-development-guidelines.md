@@ -1,5 +1,4 @@
-# FOCUS specification formatting + submission process
-
+# FOCUS specification development guidelines
 
 ## Finalizing content in the Google doc
 
