@@ -21,7 +21,7 @@ The following baseline conditions apply to the scenarios described below:
 
 For this scenario, contract terms include the following terms in addition to the baseline scenario mentioned above:
 
-* Acme Corp offers no discount for purchased tokens
+* Acme Corp offers no discount for purchased tokens.
 
 ## Scenario A1: Purchase of Virtual Currency Without a Discount
 
@@ -83,6 +83,7 @@ Note the following details in the dataset:
 
 Awesome Corp uses Acme's services, consuming tokens as follows in the first day:
 
+
 * 245 executions of Q Widget
 * 5 executions of Z Widget
 * 120 operations of Workflow
@@ -98,11 +99,13 @@ Note the following details in the dataset:
 
 Awesome Corp uses Acme's services consuming tokens as follows in the first day:
 
+
 * 245 executions of Q Widget
 * 5 executions of Z Widget
 * 120 operations of Workflow
 
 Additionally, Acme Co offers a modified usage to token ratio for one of their services as follows:
+
 
 * 1 Workflow Operation = 2 tokens
 
