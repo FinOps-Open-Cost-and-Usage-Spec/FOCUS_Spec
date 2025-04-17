@@ -12,6 +12,7 @@ The following baseline conditions apply to the scenarios described below:
 * Acme Co offers a virtual currency pricing model for their services and requires a purchase of virtual currency in advance of usage. Their denomination of virtual currency is called "tokens".
 * Acme Co requires purchase of additional tokens in the event of usage exceeding purchased tokens.
 * Acme Co publicly lists the cost of their tokens at &dollar;2 per token.
+* Acme Co treats token purchases as a resource and therefore charges for token purchases include ResourceId, ResourceName, and ResourceType.
 * Acme Co publicly lists their usage to token rates. These rates are as follows:
   * 1 Q Widget Execution = 1 token
   * 1 Z Widget Execution = 2 tokens
