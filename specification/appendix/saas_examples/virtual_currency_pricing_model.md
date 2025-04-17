@@ -27,11 +27,12 @@ For this scenario, contract terms include the following terms in addition to the
 ## Scenario A1: Purchase of Virtual Currency Without a Discount
 
 For this scenario, the initial purchase of virtual currency is executed as follows:
+
 * On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at &dollar;2 per token for a total spend &dollar;200,000. These tokens are only valid for 12 months.
 
-**Example FOCUS dataset:** [Purchase of Virtual Currency Without a Discount](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788&range=2:3)
+[**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_a1.csv)
 
-Note the following details in the dataset:
+Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
 * Because Acme Co uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their FOCUS dataset includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
@@ -48,9 +49,9 @@ Awesome Corp uses Acme's services consuming tokens as follows in the first day:
 * 5 executions of Z Widget
 * 120 operations of Workflow
 
-**Example FOCUS dataset:** [Usage of Virtual Currency Purchased Without a Discount](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788&range=5:8)
+[**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_a2.csv)
 
-Note the following details in the dataset:
+Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 2nd 2025. The Billing Period is the month of April 2025.
 * PricingCurrency for these usage charges reflects the per usage token price of the particular usage.
@@ -69,9 +70,9 @@ For this scenario, the initial purchase of virtual currency is executed as follo
 
 * On April 1, 2025, AwesomeCorp agrees to purchase 100,000 tokens at discounted cost of &dollar;1 per token for a total spend &dollar;100,000. These tokens are only valid for 12 months.
 
-**Example FOCUS dataset:** [Purchase of Virtual Currency at a Discount](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788&range=11:12)
+[**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_b1.csv)
 
-Note the following details in the dataset:
+Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the tokens were purchased) and therefore will appear in the April invoice.
 * Because Acme Co uses a virtual currency pricing model for usage and publishes their token price in terms of dollars and their usage cost in terms of tokens, their FOCUS dataset includes the columns PricingCurrency, PricingCurrencyContractedUnitPrice, PricingCurrencyEffectiveCost, and PricingCurrencyListUnitPrice.
@@ -88,9 +89,9 @@ Awesome Corp uses Acme's services, consuming tokens as follows in the first day:
 * 5 executions of Z Widget
 * 120 operations of Workflow
 
-**Example FOCUS dataset:** [Usage of Virtual Currency Purchased at a Discount](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788&range=14:17)
+[**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_b2.csv)
 
-Note the following details in the dataset:
+Note the following details in the example dataset:
 
 * PricingQuantity reflects the amount of usage of the PricingUnit for each charge and is equivalent to ConsumedQuantity. While relevant to this example, there are scenarios including tiered pricing where ConsumedQuantity and PricingQuantity may not be the same.
 * Because Awesome Corp's usage includes no discount on usage to token rates, PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are equivalent.
@@ -107,9 +108,9 @@ Additionally, Acme Co offers a modified usage to token ratio for one of their se
 
 * 1 Workflow Operation = 2 tokens
 
-**Example FOCUS dataset:** [Usage of Virtual Currency at a Modified Rate](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788&range=19:22)
+[**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_b3.csv)
 
-Note the following details in the dataset:
+Note the following details in the example dataset:
 
 * Because of the modified rate for Workflow Operations, the PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are different for this charge. The ContractedUnitPrice is set to &dollar;1 and the ListUnitPrice is set to &dollar;2.
 * The PricingCurrencyEffectiveCost is 240 tokens for this charge, which is less that example B2 above due to the modified rate.
@@ -118,12 +119,14 @@ Note the following details in the dataset:
 ## Scenario C: Handling Virtual Currency Usage Overages
 
 For this scenario, Awesome Corp has exceeded their purchased tokens on October 1st 2025 by 1,500 tokens and Acme Co has charged them for the overage. The following conditions apply:
+
 * Acme Co has charged Awesome Corp for the cost of tokens at the list price of &dollar;2 per token, and this purchase is effective from April 1st 2025 to the date of the purchase, October 1st 2025.
 * Awesome Corp purchases an additional 25,000 tokens to facilitate usage to the end of their contract. These tokens are valid from October 1st 2025 to April 1st 2026.
 
-**Example FOCUS dataset:** [Handling Virtual Currency Usage Overages](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=1940546788#gid=1940546788&range=25:27)
+[**CSV Example**](/specification/data/saas_examples/virtual_currency_pricing_model_c.csv)
 
-Note the following details in the dataset:
+Note the following details in the example dataset:
+
 * This example focuses on the purchases records only for the overage and additional purchases. Neither usage charges nor earlier purchases are not included in this example.
 * The Charge Period for the Overage Purchase is April 1st 2025 - October 1st 2025. This is because the overage charge is to cover the period of time the overage token purchase is applicable to.
 * The Charge Period for the Additional Purchase is October 1st 2025 - April 1st 2026. This is because the additional purchase is to cover the period of time to which the additional token purchase is applicable. Because end dates are exclusive, ChargePeriodEnd is April 1st 2026.
