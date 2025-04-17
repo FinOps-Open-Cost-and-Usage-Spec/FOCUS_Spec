@@ -41,7 +41,7 @@ GROUP BY
 
 ```sql
 SELECT
-  CharegePeriodStart,
+  ChargePeriodStart,
   ChargePeriodEnd,
   ResourceId,
   SUM(EffectiveCost) AS TotalEffectiveCost

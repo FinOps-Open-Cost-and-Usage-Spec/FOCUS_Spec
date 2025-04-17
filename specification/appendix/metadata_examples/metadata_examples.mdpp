@@ -1,4 +1,4 @@
-# Metadata Examples
+# Examples: Metadata
 
 The following sections contain examples of metadata provided by a hypothetical FOCUS data provider called ACME to supply the required reference between the [*FOCUS dataset*](#glossary:FOCUS-dataset) and the schema metadata.  Provider implementations will vary on how the metadata is disseminated; however, the provider's chosen metadata delivery approach should be able to support the structure represented in this example.
 
@@ -17,10 +17,10 @@ Here are some metadata examples for various scenarios:
 !INCLUDE "renaming_columns_example.md",1
 !INCLUDE "schema_metadata_example.md",1
 !INCLUDE "schema_metadata_reference_example.md",1
+!INCLUDE "data_generator_version_changed_example.md",1
 !INCLUDE "adding_new_columns_example.md",1
 !INCLUDE "removing_columns_example.md",1
 !INCLUDE "changing_column_metadata_example.md",1
 !INCLUDE "correcting_schema_errors_example.md",1
 !INCLUDE "focus_version_changed_example.md",1
 !INCLUDE "focus_version_changed_with_data_generator_version_used_example.md",1
-!INCLUDE "data_generator_version_changed_example.md",1
