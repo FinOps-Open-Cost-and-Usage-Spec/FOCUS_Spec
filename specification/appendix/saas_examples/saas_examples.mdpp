@@ -4,3 +4,4 @@ The following section contains examples with how SaaS providers may implement th
 
 !INCLUDE "simple_agreements.md",1
 !INCLUDE "spend_agreements.md",1
+!INCLUDE "virtual_currency_pricing_model.md",1
