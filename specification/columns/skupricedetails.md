@@ -4,7 +4,7 @@ SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) propert
 
 The composition of properties associated with a specific *SKU Price* may differ across providers and across *SKUs* within the same provider. However, the exclusion of dynamic or negotiable pricing properties should ensure that all charges with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different billing periods and billing accounts within a provider.
 
-SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also enable practitioners to calculate metrics such as total units of a SKU when it is not directly priced in those units (e.g. cores) and thus enables FinOps capabilities such as unit economics. Additionally, the SKU Price Details is commonly used to analyze costs based on pricing properties such as terms and tiers.
+SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also help determine the quantity of units for a property when it holds a numeric value (e.g., CoreCount), even when its unit differs from the one in which the SKU is priced and charged, thus supporting FinOps capabilities such as unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as terms and tiers.
 
 The SkuPriceDetails column adheres to the following requirements:
 
@@ -17,13 +17,15 @@ The SkuPriceDetails column adheres to the following requirements:
 * When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:
   * SkuPriceDetails MUST be associated with a given SkuPriceId.
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails SHOULD include all applicable Provider-defined SKU Price properties for the corresponding SkuPriceId when an equivalent FOCUS-defined property is not included.
+  * SkuPriceDetails MUST use FOCUS-defined SKU Price properties in place of any equivalent Provider-defined property.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
   * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
     * Existing SkuPriceDetails properties SHOULD remain consistent over time.
     * Existing SkuPriceDetails properties SHOULD NOT be removed.
     * Additional SkuPriceDetails properties MAY be added over time.
   * Property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
-  * Property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
   * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
   * Property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
 * FOCUS-defined SKU Price properties adhere to the following additional requirements:
