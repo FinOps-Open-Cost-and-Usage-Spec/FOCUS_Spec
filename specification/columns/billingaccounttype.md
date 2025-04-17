@@ -30,7 +30,6 @@ A provider-assigned identifier for the type of *billing account* applied to the 
 | :-------------- | :--------------- |
 | Column type     | Dimension        |
 | Feature level   | Conditional      |
-| Column required | True             |
 | Allows nulls    | False            |
 | Data type       | String           |
 | Value format    | \<not specified> |
