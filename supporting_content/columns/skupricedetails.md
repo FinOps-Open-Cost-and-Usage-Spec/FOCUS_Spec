@@ -41,7 +41,7 @@
 
 ## Example Usecases
 
-- Capcity Planning: 
+- Capacity Planning: 
   - Quantify how many cores of a VM Series you have provisioned in a region on average.
     - Uses: SkuPriceDetails {CoreCount, Series}, PricingQuantity, ChargePeriodStart, ChargePeriodEnd, RegionName
   - Determine how much disk storage you have provisioned.
