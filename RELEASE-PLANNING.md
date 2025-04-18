@@ -9,34 +9,9 @@ This section outlines the planned release schedule and key milestones for the FO
         <th>Version</th>
         <th>Release By</th>
         <th>Scope | High-Level System Requirements</th>
-    </tr>
-        <tr>
-        <td>v1.2</td>
-        <td>Jun 2025</td>
-        <td>
-            <strong>Initial Software as a Service (SaaS) Support</strong>
-            <ul>
-                <li>Addition of columns to support SaaS-centric concepts and billing models
-                </li>
-            </ul>
-            <strong>Continued expansion of Cloud Service Provider concepts</strong>
-            <ul>
-                <li>Addition of Invoice ID to support invoice reconciliation use cases
-                </li>
-                <li>Addition of SKU properties that are prominent / common across providers
-                </li>                
-                <li>Addition of Commitment Discount Unit Price and Cost
-                </li>
-            </ul>
-            <strong>Fixes and clarifications</strong>
-            <ul>
-                <li>Revisions of existing specification content to increase consistency and reduce ambiguity</li>
-            </ul>
-        </td>
-    </tr>
     <tr>
         <td>v1.3</td>
-        <td>Late 2025</td>
+        <td>Dec 2025</td>
         <td>
             TBD
         </td>
@@ -88,8 +63,122 @@ This section outlines the planned release schedule and key milestones for the FO
             </ul>
         </td>
     </tr>
-
+    </tr>
+        <tr>
+        <td>v1.2</td>
+        <td>Jun 2025</td>
+        <td>
+            <strong>Initial Software as a Service (SaaS) Support</strong>
+            <ul>
+                <li>Addition of columns to support SaaS-centric concepts and billing models
+                </li>
+            </ul>
+            <strong>Continued expansion of Cloud Service Provider concepts</strong>
+            <ul>
+                <li>Addition of Invoice ID to support invoice reconciliation use cases
+                </li>
+                <li>Addition of SKU properties that are prominent / common across providers
+                </li>                
+                <li>Addition of Commitment Discount Unit Price and Cost
+                </li>
+            </ul>
+            <strong>Fixes and clarifications</strong>
+            <ul>
+                <li>Revisions of existing specification content to increase consistency and reduce ambiguity</li>
+            </ul>
+        </td>
+    </tr>
 </table>
+
+### Estimated Timeline for v1.3
+This table displays key milestones and dates related to the development of FOCUS Release v1.3 Specification.
+
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Milestone</th>
+        <th>Duration</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>24-Apr-25</td>
+        <td>Start IPR Review v1.2</td>
+        <td></td>
+        <td>The start of Rel v1.2 IPR Review triggers the start of Rel v1.3.</td>
+      </tr>
+      <tr>
+        <td>24-Apr-25</td>
+        <td>Start Work Item Creation v1.3</td>
+        <td>12 weeks (6 weeks in v1.2)</td>
+        <td>Define the scope and create Work Items for v1.3.</td>
+      </tr>
+      <tr>
+        <td>17-Jul-25</td>
+        <td>End Work Item Creation</td>
+        <td></td>
+        <td>Finalize Work Items for the v1.3 development phase.</td>
+      </tr>
+      <tr>
+        <td>17-Jul-25</td>
+        <td>Start Development Phase</td>
+        <td>*13 weeks (19 weeks in v1.2)</td>
+        <td>Begin developing the v1.3 specifications.<br>
+            <em>* Work Items agreed by the Members Group and ratified by the Steering Committee can start development before the July 17 milestone.</em>
+        </td>
+      </tr>
+      <tr>
+        <td>16-Oct-25</td>
+        <td>End Development Phase</td>
+        <td></td>
+        <td>Release v1.3 development reduced from 19 to 13 weeks.</td>
+      </tr>
+      <tr>
+        <td>16-Oct-25</td>
+        <td>Start Final Consistency Review</td>
+        <td>2 weeks</td>
+        <td>Ensure alignment and consistency of specifications.</td>
+      </tr>
+      <tr>
+        <td>30-Oct-25</td>
+        <td>End Consistency Review</td>
+        <td></td>
+        <td>Address all consistency-related feedback.</td>
+      </tr>
+      <tr>
+        <td>30-Oct-25</td>
+        <td>Prepare Baseline for IPR Review</td>
+        <td>6 days</td>
+        <td>Get ready for the Intellectual Property Rights review.</td>
+      </tr>
+      <tr>
+        <td>5-Nov-25</td>
+        <td>Start IPR Review</td>
+        <td>4 weeks</td>
+        <td>30-day IPR review period for essential claims review. Triggers the start of Rel v1.4.</td>
+      </tr>
+      <tr>
+        <td>4-Dec-25</td>
+        <td>End IPR Review</td>
+        <td></td>
+        <td>Finalize the IPR process for v1.3.</td>
+      </tr>
+      <tr>
+        <td>4-Dec-25</td>
+        <td>Working Group (WG) Approval of v1.3</td>
+        <td>0 day</td>
+        <td>WG approves the v1.3 Release Candidate.</td>
+      </tr>
+      <tr>
+        <td>4-Dec-25</td>
+        <td>SC Ratification of v1.3</td>
+        <td>0 day</td>
+        <td>The Steering Committee ratifies the v1.3 release.</td>
+      </tr>
+    </tbody>
+  </table>
 
 ### Estimated Timeline for v1.2
 
