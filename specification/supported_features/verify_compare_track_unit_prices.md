@@ -2,7 +2,7 @@
 
 ## Description
 
-When a provider supports unit pricing concepts, The FOCUS Specification allows practitioners to:
+When a provider supports unit pricing concepts, FOCUS allows practitioners to:
 
 * Verify that the correct List Unit Prices and Contracted Unit Prices are applied.
 * Compare applied Contracted Unit Prices across different billing accounts and with applied List Unit Prices at specific points in time.
