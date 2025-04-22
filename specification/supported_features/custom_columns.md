@@ -1,9 +1,5 @@
 # Custom Columns
 
-## Introduced Version
-
-0.5
-
 ## Description
 
 The FOCUS spec supports the inclusion of custom columns to facilitate reporting capability that is not covered by the columns included in the specification.
@@ -27,3 +23,7 @@ GROUP BY
   x_CustomColumn
 ORDER BY MonthlyCost DESC
 ```
+
+## Introduced (Version)
+
+0.5
