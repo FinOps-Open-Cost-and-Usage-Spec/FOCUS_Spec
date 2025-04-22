@@ -145,7 +145,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <tr>
         <td>5-Nov-25</td>
         <td>Start IPR Review</td>
-        <td>4 weeks. 30-day IPR review period for essential claims review. Triggers the start of Rel v1.4.</td>
+        <td>30-day IPR review period for essential claims review. Triggers the start of Release v1.4.</td>
       </tr>
       <tr>
         <td>4-Dec-25</td>
