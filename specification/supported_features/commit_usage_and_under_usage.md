@@ -61,3 +61,7 @@ GROUP BY
   CapacityReservationId,
   CapacityReservationStatus
 ```
+
+## Introduced (Version)
+
+1.0
