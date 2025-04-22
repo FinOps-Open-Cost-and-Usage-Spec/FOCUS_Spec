@@ -162,6 +162,11 @@ This table displays key milestones and dates related to the development of FOCUS
         <td>SC Ratification of v1.3</td>
         <td>The Steering Committee ratifies the v1.3 release.</td>
       </tr>
+      <tr>
+        <td>10-Dec-25</td>
+        <td>Announcement</td>
+        <td>FinOps announcement of FOCUS Release v1.3.</td>
+      </tr>
     </tbody>
   </table>
 
