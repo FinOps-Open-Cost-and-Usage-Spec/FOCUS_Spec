@@ -1,12 +1,8 @@
 # Resource Usage
 
-## Introduced Version
-
-1.0
-
 ## Description
 
-FOCUS enables tracking of resource consumption by providing information about which resources were used, in what quantities, and with what units of measure.
+The FOCUS spec enables tracking of resource consumption by providing information about which resources were used, in what quantities, and with what units of measure.
 
 ## Directly Dependent Columns
 
@@ -43,3 +39,7 @@ GROUP BY
   SkuId,
   ConsumedUnit
 ``` 
+
+## Introduced (Version)
+
+1.0
