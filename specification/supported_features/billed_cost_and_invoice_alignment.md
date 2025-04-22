@@ -26,7 +26,7 @@ SELECT
   InvoiceId,
   SUM(BilledCost)
 FROM focus_data_table
-Group by
+GROUP BY
   BillingPeriodStart,
   BillingPeriodEnd,
   InvoiceId
