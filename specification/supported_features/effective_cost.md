@@ -1,4 +1,4 @@
-# Effective Cost
+# Effective Cost Analysis
 
 ## Description
 
