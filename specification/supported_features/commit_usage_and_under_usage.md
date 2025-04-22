@@ -1,12 +1,8 @@
 # Commit Usage and Under Usage
 
-## Introduced Version
-
-1.0
-
 ## Description
 
-The FOCUS spec supports the tracking of committed use discounts usage and underusage, which can come in the form of commitment discounts or capacity reservations.
+FOCUS supports the tracking of commitment discounts usage and under usage, which can come in the form of commitment discounts or capacity reservations.
 
 ## Directly Dependent Columns
 
@@ -65,3 +61,7 @@ GROUP BY
   CapacityReservationId,
   CapacityReservationStatus
 ```
+
+## Introduced (Version)
+
+1.0

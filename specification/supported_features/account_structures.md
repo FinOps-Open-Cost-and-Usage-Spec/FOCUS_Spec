@@ -1,9 +1,5 @@
 # Account Structures
 
-## Introduced Version
-
-0.5
-
 ## Description
 
 Different providers have different account constructs that FinOps practitioners use for allocation, reporting, and more. Organizations may have one or many accounts within one or more providers and FinOps practitioners may need to review the cost broken down by each account. FOCUS has two types of accounts: a billing account and a sub account.
@@ -41,3 +37,7 @@ GROUP BY
   BillingAccountId,
   SubAccountId
 ```
+
+## Introduced (Version)
+
+0.5
