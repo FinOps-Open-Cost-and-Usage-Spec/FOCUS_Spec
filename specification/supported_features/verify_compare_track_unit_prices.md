@@ -1,9 +1,5 @@
 # Verification, Comparison, and Fluctuation Tracking of Unit Prices
 
-## Introduced Version
-
-1.0
-
 ## Description
 
 When a provider supports unit pricing concepts, The FOCUS Specification allows practitioners to:
@@ -46,3 +42,7 @@ WHERE
   AND ChargePeriodStart >= ?
   AND ChargePeriodEnd < ?
 ```
+
+## Introduced (Version)
+
+1.0
