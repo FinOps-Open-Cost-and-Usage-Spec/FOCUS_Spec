@@ -1,9 +1,5 @@
 # Charge Categorization
 
-## Introduced Version
-
-1.0
-
 ## Description
 
 The FOCUS spec supports the categorization of charges including purchases, usage, tax, credits and adjustments. It includes classification on frequency. It includes classification on correction vs normal entries
@@ -97,3 +93,7 @@ GROUP BY
   CommitmentDiscountType,
   ChargeFrequency
 ```
+
+## Introduced (Version)
+
+1.0
