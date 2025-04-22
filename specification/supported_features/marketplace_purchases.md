@@ -2,7 +2,7 @@
 
 ## Description
 
-The FOCUS specification supports cost and usage data for marketplace purchases and their associated costs. It also supports the reporting of EffectiveCost for usage from the provider.  
+FOCUS supports the analysis of cost and usage data for marketplace purchases and their associated costs. It also supports the reporting of EffectiveCost for usage from the provider.  
 
 ## Directly Dependent Columns
 
