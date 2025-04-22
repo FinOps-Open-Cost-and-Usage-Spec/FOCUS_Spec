@@ -74,7 +74,7 @@ Future versions of FOCUS will consider including additional FinOps capabilities 
 ### Consistency helps with clarity
 
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
-* Column naming must strictly follow the [column naming conventions](#columnnamingconvention).
+* Column naming must strictly follow the [column handling](#columnhandling) requirements.
 * Use established standards (e.g., ISO8601 for dates, ISO4217 for currency).
 
 ## Typographic Conventions
