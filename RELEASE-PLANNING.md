@@ -94,7 +94,7 @@ This table displays key milestones and dates related to the development of FOCUS
   <table>
     <thead>
       <tr>
-        <th width="15%">Date</th>
+        <th width="14%">Date</th>
         <th width="30%">Milestone</th>
         <th>Comments</th>
       </tr>
