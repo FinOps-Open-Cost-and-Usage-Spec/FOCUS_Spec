@@ -113,7 +113,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <tr>
         <td>17-Jul-25 to 16-Oct-25</td>
         <td>Development Phase</td>
-        <td>*13 weeks (19 weeks in v1.2). Begin developing the v1.3 specifications.<br>
+        <td>*13 weeks (vs 19 weeks in v1.2). Begin developing the v1.3 specification.<br>
             <em>* Work Items agreed by the Members Group and ratified by the Steering Committee can start development before the July 17 milestone.</em>
         </td>
       </tr>
