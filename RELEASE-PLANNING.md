@@ -156,8 +156,8 @@ This table displays key milestones and dates related to the development of FOCUS
 
 <table>
   <tr>
-    <th>Date</th>
-    <th>Milestone</th>
+    <th width="22%">Date</th>
+    <th width="30%">Milestone</th>
     <th>Comment</th>
   </tr>
   <tr>
@@ -224,8 +224,8 @@ FOCUS Release V1.1 was announced during the FinOps XE event in Barcelona on Nove
 <table>
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Milestone</th>
+            <th width="22%">Date</th>
+            <th width="30%">Milestone</th>
             <th>Comment</th>
         </tr>
     </thead>
@@ -285,8 +285,8 @@ FOCUS Release V1.0 was announced during the FinOpsX event in San Diego on June 2
 <table>
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Tasks</th>
+            <th width="22%">Date</th>
+            <th width="30%">Tasks</th>
             <th>Comments</th>
         </tr>
     </thead>
