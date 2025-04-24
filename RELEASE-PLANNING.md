@@ -108,7 +108,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <tr>
         <td>24-Apr-25 to 17-Jul-25</td>
         <td>Work Item Creation v1.3</td>
-        <td>12 weeks (6 weeks in v1.2). Define the scope and create Work Items for v1.3.</td>
+        <td>12 weeks (vs 6 weeks in v1.2). Define the scope and create Work Items for v1.3.</td>
       </tr>
       <tr>
         <td>17-Jul-25 to 16-Oct-25</td>
