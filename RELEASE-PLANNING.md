@@ -120,7 +120,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <tr>
         <td>16-30-Oct-25</td>
         <td>Final Consistency Review</td>
-        <td>2 weeks. Ensure alignment and consistency of specifications.</td>
+        <td>2 weeks. Ensure alignment and consistency of specification.</td>
       </tr>
       <tr>
         <td>30-Oct-25</td>
