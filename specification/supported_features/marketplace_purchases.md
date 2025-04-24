@@ -1,12 +1,8 @@
 # Marketplace Purchases
 
-## Introduced Version
-
-1.0
-
 ## Description
 
-The FOCUS specification support cost and usage data for Marketplace purchases and their associated costs. It also supports the reporting of EffectiveCost for usage from the Provider.  
+FOCUS supports the analysis of cost and usage data for marketplace purchases and their associated costs. It also supports the reporting of EffectiveCost for usage from the provider.  
 
 ## Directly Dependent Columns
 
@@ -52,3 +48,7 @@ GROUP BY
   ChargePeriodEnd,
   ResourceId
 ``` 
+
+## Introduced (Version)
+
+1.0
