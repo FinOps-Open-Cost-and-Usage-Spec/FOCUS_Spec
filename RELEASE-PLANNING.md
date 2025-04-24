@@ -106,36 +106,21 @@ This table displays key milestones and dates related to the development of FOCUS
         <td>The start of Rel v1.2 IPR Review triggers the start of Rel v1.3.</td>
       </tr>
       <tr>
-        <td>24-Apr-25</td>
-        <td>Start Work Item Creation v1.3</td>
+        <td>24-Apr-25 to 17-Jul-25</td>
+        <td>Work Item Creation v1.3</td>
         <td>12 weeks (6 weeks in v1.2). Define the scope and create Work Items for v1.3.</td>
       </tr>
       <tr>
-        <td>17-Jul-25</td>
-        <td>End Work Item Creation</td>
-        <td>Finalize Work Items for the v1.3 development phase.</td>
-      </tr>
-      <tr>
-        <td>17-Jul-25</td>
-        <td>Start Development Phase</td>
+        <td>17-Jul-25 to 16-Oct-25</td>
+        <td>Development Phase</td>
         <td>*13 weeks (19 weeks in v1.2). Begin developing the v1.3 specifications.<br>
             <em>* Work Items agreed by the Members Group and ratified by the Steering Committee can start development before the July 17 milestone.</em>
         </td>
       </tr>
       <tr>
-        <td>16-Oct-25</td>
-        <td>End Development Phase</td>
-        <td>Release v1.3 development reduced from 19 to 13 weeks.</td>
-      </tr>
-      <tr>
-        <td>16-Oct-25</td>
-        <td>Start Final Consistency Review</td>
+        <td>16-30-Oct-25</td>
+        <td>Final Consistency Review</td>
         <td>2 weeks. Ensure alignment and consistency of specifications.</td>
-      </tr>
-      <tr>
-        <td>30-Oct-25</td>
-        <td>End Consistency Review</td>
-        <td>Address all consistency-related feedback.</td>
       </tr>
       <tr>
         <td>30-Oct-25</td>
@@ -143,14 +128,9 @@ This table displays key milestones and dates related to the development of FOCUS
         <td>6 days. Get ready for the Intellectual Property Rights review.</td>
       </tr>
       <tr>
-        <td>5-Nov-25</td>
-        <td>Start IPR Review</td>
+        <td>5-Nov-25 to 4-Dec-25</td>
+        <td>Start / End IPR Review v1.3</td>
         <td>30-day IPR review period for essential claims review. Triggers the start of Release v1.4.</td>
-      </tr>
-      <tr>
-        <td>4-Dec-25</td>
-        <td>End IPR Review</td>
-        <td>Finalize the IPR process for v1.3.</td>
       </tr>
       <tr>
         <td>4-Dec-25</td>
