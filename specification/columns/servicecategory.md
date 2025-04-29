@@ -2,7 +2,12 @@
 
 The Service Category is the highest-level classification of a [*service*](#glossary:service) based on the core function of the *service*. Each *service* should have one and only one category that best aligns with its primary purpose. The Service Category is commonly used for scenarios like analyzing costs across providers and tracking the migration of workloads across fundamentally different architectures.
 
-The ServiceCategory column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null. This column is of type String and MUST be one of the allowed values.
+The ServiceCategory column adheres to the following requirements:
+
+* ServiceCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ServiceCategory MUST be of type String.
+* ServiceCategory MUST NOT be null.
+* ServiceCategory MUST be one of the allowed values.
 
 ## Column ID
 

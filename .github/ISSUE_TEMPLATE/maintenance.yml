@@ -2,7 +2,8 @@ name: Maintenance Task
 description: Create tasks related to work on the GitHub Repository or GitHub Actions.
 title: "[MAINTENANCE]: "
 labels: ["repo maintenance"]
-assignees: ["mike-finopsorg,udam-f2"]
+type: "Maintenance"
+assignees: ["shawnalpay"]
 body:
   - type: textarea
     attributes:

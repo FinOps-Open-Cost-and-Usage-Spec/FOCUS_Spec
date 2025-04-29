@@ -2,5 +2,7 @@
 .DS_Store
 spec.md
 spec.html
+spec_pdf.html
 *.pyc
 specification/version.md
+.vscode/*
