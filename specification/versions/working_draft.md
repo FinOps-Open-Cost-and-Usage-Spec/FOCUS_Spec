@@ -6,7 +6,7 @@ Working Draft (Unversioned)
 |:-------------------------------------------------------------------------------|
 | This version not for publication                                               |
 
-Copyright © 2023-2025 - FinOps Open Cost and Usage Specification (FOCUS) a Series of the Joint Development Foundation Projects, LLC. Linux Foundation [trademark](https://www.linuxfoundation.org/legal/trademarks), and document use rules apply.
+Copyright © 2023-2025 - FinOps Open Cost and Usage Specification (FOCUS) a Series of the Joint Development Foundation Projects, LLC. Joint Development Foundation [trademark](https://jointdevelopment.org/policies/trademark-policy/), and document use rules apply.
 
 ## Status of This Document
 
