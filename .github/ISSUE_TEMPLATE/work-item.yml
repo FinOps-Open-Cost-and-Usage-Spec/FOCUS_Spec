@@ -1,6 +1,6 @@
-name: "Work Item Issue Template"
-description: "Template for creating new work item issues"
-title: "[Work_Item]"
+name: "Work Item"
+description: "Template for creating new Work Items"
+title: "[WI]"
 labels: 
   - "work item"
 type: "Work Item"
@@ -100,33 +100,3 @@ body:
       label: "Proposed Solution / Approach"
       description: "Outline potential solutions or approaches."
       placeholder: "Summarize the proposed solution or approach."
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 6. **Epic or Theme Association**
-        > This section will be completed by the Maintainers.
-        > - **Epic**: [Epic Name]
-        > - **Theme**: [Theme Name, if applicable]
-
-  - type: textarea
-    id: epic_theme
-    attributes:
-      label: "Epic or Theme Association"
-      description: "Provide potential epics or themes"
-      placeholder: "Provide the rational for the Epic or Theme."
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 7. **Stakeholders**
-        List the main stakeholders for this issue.
-        - **Primary Stakeholder**: [Name/Role]
-        - **Other Involved Parties**: [Names/Roles]
-
-  - type: textarea
-    id: stakeholders
-    attributes:
-      label: "Stakeholders"
-      description: "List the main stakeholders for this work item."
-      placeholder: "Provide names and roles of key stakeholders."
