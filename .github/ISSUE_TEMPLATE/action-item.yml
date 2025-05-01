@@ -19,3 +19,12 @@ body:
       placeholder: "Explain why this action is needed and any dependencies."
     validations:
       required: false
+
+  - type: textarea
+    id: definition_of_done
+    attributes:
+      label: Definition of Done
+      description: "Describe what must be completed in order for this action item to be closed."
+      placeholder: "A description of what must be completed in order for this action item to be closed."
+    validations:
+      required: true
