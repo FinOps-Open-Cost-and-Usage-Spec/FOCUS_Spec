@@ -1,6 +1,6 @@
 name: "FOCUS Feature Request"
 description: Propose a new attribute, refinement, or data structure for the FOCUS Specification.
-title: "[Feature] <Short description>"
+title: "[FR]"
 labels: ["use case", "needs triage"]
 assignees: ["matt-cowsert"]
 body:
@@ -10,21 +10,6 @@ body:
         _Use this template to propose changes to the FOCUS Spec. Do not include personal information (PII)._
 
         ⚠️ **If your suggestion is a minor correction or formatting fix, use the General Feedback template instead.**
-
-  - type: input
-    id: org
-    attributes:
-      label: Submitting Organization
-      placeholder: e.g., BigCloud Inc.
-    validations:
-      required: true
-
-  - type: input
-    id: behalf
-    attributes:
-      label: Submitting on Behalf Of (Optional)
-      description: Avoid PII. Provide role and org only.
-      placeholder: e.g., FinOps Lead at GlobalCloudCorp
 
   - type: textarea
     id: problem
@@ -71,7 +56,7 @@ body:
     attributes:
       label: FinOps Scope Alignment (Optional)
       options:
-        - label: Public Cloud – AWS, Azure, GCP, etc.
+        - label: Public Cloud – e.g., AWS, Azure, GCP, OCI
         - label: Software-as-a-Service (SaaS) – e.g., Salesforce, Snowflake
         - label: Data Center – on-prem compute and infrastructure
         - label: Licensing – subscription or usage-based licensing *(under development)*
@@ -118,23 +103,5 @@ body:
         - Comment below with your **organization** and a **brief explanation** of its relevance or urgency.
         - FOCUS Staff & Maintainers will aggregate support.
 
-        _No GitHub account? Submit support via [Google Form link]._
 
-  - type: markdown
-    attributes:
-      value: |
-        ### 🔄 Maintainers Only
-        _To be completed by the FOCUS Staff or Maintainers._
-
-        **Theme Association:** [Optional grouping]
-
-        **Work Item ID:** [If applicable]
-
-        **Status (select one):**
-        - `Submitted` — awaiting triage
-        - `Needs More Info` — requires clarification
-        - `Under Consideration for Next Release` — being evaluated for current cycle
-        - `In Consideration for Future Releases` — valid idea, future potential
-        - `In Development` — work item in progress
-        - `Implemented` — included in spec release
-        - `Closed (Not Pursuing)` — not actionable or out of scope
+  
