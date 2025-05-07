@@ -78,11 +78,8 @@ This Issue type is reserved for work that does not affect the contents of the Sp
 Our branch promotion process takes the following path:
 
 - _<\<dev\_branch>>:_ The feature branch in which a FOCUS Working Group member creates changes.  Such feature branches are ephemeral and are automatically deleted once their content is merged into the working draft.
-
 - _working\_draft:_ The branch in which all approved changes are collected during development.
-
 - _candidate\_recommendation_: The branch in which all approved changes are collected at the end of development for a release. Content in this branch is held for 30 days to enable the [Intellectual Property Rights (IPR) review process](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/ipr.md).
-
 - _main_: The branch in which all approved changes are published after Steering Committee ratification of the latest release.
 
 The process by which the Working Group promotes changes across these branches is described below.
@@ -93,9 +90,7 @@ The process by which the Working Group promotes changes across these branches is
 As per the overarching [procedures](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/workflow-procedures.md)/[workflow](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/w3c_mode_workflow.md) documented in the [FOCUS Foundation repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation), the following branches are protected in GitHub:
 
 - _working\_draft_
-
 - _candidate\_recommendation_
-
 - _main_
 
 Merges into the _candidate\_recommendation_ and _main_ branches are only to be performed by the \`Admins\` group in the GitHub Organization as part of the formal approval process with the FOCUS Members and FOCUS Steering Committee respectively.
@@ -120,7 +115,6 @@ When Pull Requests are merged the option to delete the working branch should alw
 As members of FOCUS you are able to open branches in the GitHub repository. The naming convention of branches must follow one of the following patterns:
 
 1. Start with your name (e.g. flanakin/skuterm)
-
 2. Start with the Work Item number (e.g. 636-clarify-guidance-around-refunds)
 
 Branches not following this naming convention may be closed without notice.
@@ -138,18 +132,15 @@ Pull Requests (PRs) are used to promote development work through our branch pipe
 
 ### Naming and Descriptions
 
-The _name_ of a Pull Request should be short but also clearly describe what the pull request is doing. The name should start with a verb in order to describe the action that has taken place (e.g., “Reorganize metadata appendix”, “Correct typos in Section 1.2”).  The reference to the parent issue should be included in the title also (e.g. #628) as often lists of Pull Request titles are made and this helps keep the reference to the related issue (see: Related to Issues). 
+The _name_ of a Pull Request should be short but also clearly describe what the pull request is doing. The name should start with a verb in order to describe the action that has taken place (e.g., “Reorganize metadata appendix”, “Correct typos in Section 1.2”).  The reference to the parent issue should be included in the title also (e.g. #628) as often lists of Pull Request titles are made and this helps keep the reference to the related issue (see: Related to Issues).
 
 - Pull requests related directly to Work Items should have a title starting with \`WI #\<number of the WI ticket>:\` followed by a short description
-
 - Pull requests related directly to Action Items should have a title starting with \`AI #\<number of the AI ticket>:\` followed by a short description
 
 The _description_ of a Pull Request should be as detailed as possible to help other members better understand the PRs content. Descriptions should consider the following:
 
 - Any assumed knowledge (Preference a short education, links to relevant docs, etc)
-
 - Example data to demonstrate the outcome of the content being merged
-
 - Any decisions made in the development that are likely to become recurring suggestions (e.g. Decisions on naming, Lists of Values, etc). 
 
 As much as possible, descriptions should provide the most amount of information that enables those with less context of the change being proposed to review the content asynchronously and add valuable feedback.
@@ -177,9 +168,7 @@ It is important for members to review all PRs especially when they are open and 
 The aim for all comments and suggestions on Issues/PRs should be constructive feedback, this means that comments must clearly:
 
 - Describe the item which is being supported or challenged 
-
 - Aim to provide a suggestion of a solution, or at least suggest some items to consider
-
 - Remain positive and avoid being confrontational or antagonistic
 
 All FOCUS members are encouraged to review and make comments and suggestions. With the aim for all changes to the specification to be by consensus. 
@@ -198,11 +187,8 @@ All Pull Requests must go through a formal review and approval process before be
 #### Approvals Required
 
 - All reviewers assigned to the Pull Request must approve before the Pull Request is eligible for merging.
-
 - If a reviewer becomes inactive or unresponsive, Maintainers may reassign review to an alternate reviewer.
-
 - At least **one Maintainer** must approve the Pull Request.
-
 - It is not required to have approvals from _all_ FOCUS members, but all active reviewers must approve.
 
 
@@ -211,11 +197,8 @@ All Pull Requests must go through a formal review and approval process before be
 A Pull Request is eligible for approval when:
 
 - All reviewer comments and suggestions have been resolved or otherwise addressed.
-
 - The Pull Request fully meets the linked Issue's Definition of Done (DoD).
-
 - The Pull Request description is complete, including rationale, data examples, links to supporting information, and explanation of key decisions.
-
 - No unresolved objections remain from reviewers.
 
 
@@ -224,7 +207,6 @@ A Pull Request is eligible for approval when:
 If reviewers cannot reach consensus or if blocking objections are raised:
 
 - Follow the conflict resolution process outlined in the [FOCUS Foundation repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/workflow-procedures.md).
-
 - Escalate to the Maintainers group for mediation if needed.
 
 
@@ -273,20 +255,12 @@ Channel for maintainers to communicate and update each other about activities.
 ## Glossary
 
 - CLA = Contributor License Agreement
-
 - WG = Working Group
-
 - TF = Task Force
-
 - DoD = Definition of Done
-
 - PR = Pull Request
-
 - FR = Feature Request
-
 - WI = Work Item
-
 - AI = Action Item
-
-FOCUS member = Individuals contributing after their Organization signs the [CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA).
+- FOCUS member = Individuals contributing after their Organization signs the [CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA).
 
