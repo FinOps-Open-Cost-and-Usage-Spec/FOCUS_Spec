@@ -29,13 +29,13 @@ jobs:
         run: |
           make STYLE=working_draft BRANCH=${GITHUB_REF_NAME}
       - name: Upload on failure
-        uses: actions/upload-artifact@4.5.0
+        uses: actions/upload-artifact@4
         if: ${{ failure()}}
         with:
           name: spec.md
           path: specification/spec.md
       - name: Upload Spec
-        uses: actions/upload-artifact@v4.5.0
+        uses: actions/upload-artifact@v4
         with:
           name: FOCUS_specification
           path: |
