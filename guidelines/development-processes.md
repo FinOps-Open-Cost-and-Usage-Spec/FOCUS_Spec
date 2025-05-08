@@ -173,6 +173,22 @@ The aim for all comments and suggestions on Issues/PRs should be constructive fe
 
 All FOCUS members are encouraged to review and make comments and suggestions. With the aim for all changes to the specification to be by consensus. 
 
+### Reviewing Contributions on GitHub
+
+When submitting review comments using the **“Review Changes”** feature in GitHub, reviewers should select from the three available options based on the nature of their feedback:
+
+#### 1. **Comment**
+Use this option to provide *non-blocking feedback*, such as suggestions, requests for clarification, or minor edits.  
+- All comments **MUST** be reviewed and considered by the Working Group.  
+- Comments **MAY** be dismissed if they are determined to be non-impactful, already resolved, or out of scope.
+
+#### 2. **Approve**
+Select this option to indicate **formal approval** of the proposed contribution.  
+- At least **three (3)** Working Group members must submit an “Approve” review for the pull request (PR) to be eligible for merging.
+
+#### 3. **Request Changes**
+Use this option when **significant revisions** are needed.  
+- If the request is made as an **OBJECTION**, it **MUST** be resolved before the contribution can proceed to merge.
 
 ### Resolving Comments and Suggestions
 
