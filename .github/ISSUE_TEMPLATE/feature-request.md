@@ -143,7 +143,7 @@ _To be filled in by the FOCUS Staff or Maintainers._
 - `Submitted` — newly filed, awaiting triage
 - `Needs More Info` — request needs clarification or detail before evaluation
 - `Under Consideration for Next Release` — being actively evaluated for upcoming spec work
-- `In Consideration for Future Releases` — valid idea, may be revisited later
+- `Accepted in Scope` -- accepted for development in next release
 - `In Development` — linked to a work item and in progress
 - `Implemented` — published in a formal release of the spec
 - `Closed (Not Pursuing)` — out of scope, infeasible, or superseded
