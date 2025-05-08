@@ -1,6 +1,6 @@
 name: "FOCUS Feature Request"
 description: Propose a new attribute, refinement, or data structure for the FOCUS Specification.
-title: "[Feature] <Short description>"
+title: "[FR] <Short description>"
 labels: ["use case", "needs triage"]
 assignees: ["matt-cowsert"]
 body:
@@ -71,7 +71,7 @@ body:
     attributes:
       label: FinOps Scope Alignment (Optional)
       options:
-        - label: Public Cloud – AWS, Azure, GCP, etc.
+        - label: Public Cloud – e.g., AWS, Azure, GCP
         - label: Software-as-a-Service (SaaS) – e.g., Salesforce, Snowflake
         - label: Data Center – on-prem compute and infrastructure
         - label: Licensing – subscription or usage-based licensing *(under development)*
