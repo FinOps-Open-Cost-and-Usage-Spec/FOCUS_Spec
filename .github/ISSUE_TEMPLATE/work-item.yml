@@ -2,7 +2,7 @@ name: "Work Item"
 description: "Template for creating new Work Items"
 title: "[WI]"
 labels: 
-  - "work item", "needs backlog review"
+  - ["work item", "needs backlog review"]
 type: "Work Item"
 assignees: 
   - "shawnalpay"
