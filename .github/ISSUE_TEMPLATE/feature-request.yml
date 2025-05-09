@@ -23,7 +23,7 @@ body:
     id: use_case
     attributes:
       label: Use Case (Optional)
-      description: Provide 1–2 sentences describing usage. Example: As a FinOps practitioner, I want to X, so that Y.
+      description: "Provide 1–2 sentences describing usage. Example: As a FinOps practitioner, I want to X, so that Y."
 
   - type: textarea
     id: outcome
