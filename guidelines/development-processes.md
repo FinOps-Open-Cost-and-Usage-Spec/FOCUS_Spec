@@ -197,8 +197,14 @@ As the assignee of a Pull Request you are responsible for timely responses to th
 
 ### Pull Request Approval and Conflict Resolution
 
-All Pull Requests must go through a formal review and approval process before being merged into the  `working_draft` branch.
+In the FOCUS Members Working Group, contributions are first developed and discussed within the Task Forces, where consensus is gradually built. During this phase, it is considered good practice to provide regular progress updates during the Members meetings to keep the broader group informed.
 
+Once a contribution reaches a sufficient level of maturity and preliminary consensus has been established, it should proceed through **two presentation cycles** at the Members meeting:
+
+1. **First Cycle** – The contribution is presented for **review and feedback** from the broader group.  
+2. **Second Cycle** – In a subsequent meeting (typically a different week), the contribution is presented for **formal approval** by the Working Group.
+
+All Pull Requests **must go through a formal review and approval process before being merged into the `working_draft` branch**. This two-step review cycle helps ensure that contributions are visible, well-understood, and aligned with group expectations before final acceptance.
 
 #### Approvals Required
 
