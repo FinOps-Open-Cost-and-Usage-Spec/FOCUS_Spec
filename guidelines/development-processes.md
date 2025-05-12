@@ -216,7 +216,7 @@ Draft status signals that the author is still working on the pull request and wo
 
 ### Reviewing
 
-It is important for members to review all PRs especially when they are open and in status of ‘ PR Member Review’ to ensure you have an opportunity to give feedback on all changes to the Specification. Positive feedback is just as important as feedback looking for further changes, without a 👍 or “Looks good to me” comment your support for a PR is not clearly documented.
+It is important for members to review all PRs especially when they are open and in status of ‘PR Member Review’ to ensure you have an opportunity to give feedback on all changes to the Specification. Positive feedback is just as important as feedback looking for further changes, without a 👍 or “Looks good to me” comment your support for a PR is not clearly documented.
 
 
 ### Reviewers Comments and Suggestions
