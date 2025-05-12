@@ -1,6 +1,7 @@
 name: "FOCUS Feature Request"
 description: Propose a new attribute, refinement, or data structure for the FOCUS Specification.
 title: "[FR] <Short description>"
+type: "Feature"
 labels: ["use case", "needs triage"]
 assignees: ["matt-cowsert"]
 body:
