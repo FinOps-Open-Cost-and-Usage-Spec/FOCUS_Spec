@@ -117,6 +117,17 @@ Action Items carry a separate custom field called `AI Status` that carries a sma
 
 Each Action Item is assigned an AI Status of `Open` upon creation.
 
+## Content Creation
+
+This section details best practices for the creation of content that is added to the specification.  This section will be augmented over time.
+
+### Table Conversion for Markdown
+
+Working group content is often created and socialized in Google Workspace, especially via Google Sheets.  Often, content in those spreadsheets needs conversion into markdown for inclusion in the spec or supporting content.  Here a couple of tools to use for converting to markdown:
+
+- [Clipboard-To-Markdown](https://euangoddard.github.io/clipboard2markdown/) is useful for converting content other than the tables within your content.
+- [Tables Generator](https://www.tablesgenerator.com/markdown_tables) is useful for converting tables in your content.
+
 ## Git Branches
 
 ### Branch Pipeline
@@ -164,7 +175,6 @@ As members of FOCUS you are able to open branches in the GitHub repository. The 
 2. Start with the Work Item number (e.g. 636-clarify-guidance-around-refunds)
 
 Branches not following this naming convention may be closed without notice.
-
 
 ### Merging
 
