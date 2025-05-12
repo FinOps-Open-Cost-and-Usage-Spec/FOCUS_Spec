@@ -70,6 +70,52 @@ Action Item Issues will have a title that starts with \`\[AI]\`.
 
 This Issue type is reserved for work that does not affect the contents of the Specification itself but the processes around the working of the repository, such as, adding Issue Templates, updating GitHub Actions Workflows, changing settings on the repository configuration, etc.
 
+### Project
+
+The working group oversees the scope of the next release via a GitHub project.
+
+#### Status
+
+Each issue carries one of the following Status values, which represent the overall working group workflow from ideation to completion.
+
+- Submitted: newly filed, awaiting triage
+- Needs More Info: triaged; needs more clarification or detail before prioritization can begin
+- Under Consideration: being actively evaluated for upcoming spec work
+- Accepted in Scope: will be developed in next release
+- Ready for Dev: not started
+- In Discussion: in progress
+- PR Needed: TF requires a concrete proposal to move forward
+- PR In Draft: PR being authored
+- PR TF Review: PR issued and in review with Task Force
+- PR Member Review: TF approved, in review with Members
+- PR Ready for Approval: all threads resolved, ready for approval
+- PR Approved: PR approved by Members
+- Implemented: done and dusted
+- Blocked: cannot move forward
+- Closed: out of scope, not feasible, or duplicative
+
+Some notes about the use of Status values:
+
+- Each issue is assigned a Status of `Submitted` upon creation.
+- Each issue moves through these Status values as they are developed.
+- An issue that is postponed during the development phase is moved back to `Under Consideration` for the next release.
+- Each issue is assigned a Status of `Closed` upon being closed.
+- An issue that is assigned a Status of `Implemented` will automatically be closed.
+- Not every value is applicable to every issue type.
+
+#### AI Status
+
+Action Items carry a separate custom field called `AI Status` that carries a smaller set of values:
+
+- Open
+- In Progress
+- Blocked
+- On Hold
+- Closed
+- Completed
+- Postponed
+
+Each Action Item is assigned an AI Status of `Open` upon creation.
 
 ## Git Branches
 
