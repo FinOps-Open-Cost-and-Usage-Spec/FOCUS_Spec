@@ -297,7 +297,9 @@ Having met all approval criteria, a Pull Request can be scheduled for final revi
 
 ## Git Notifications
 
-GitHub platform has a [notifications inbox](https://github.com/notifications) which members should regularly check on, in order to keep tabs of updates, mentions, and open assigned work that should be reviewed and responded to. Responding to notifications is important as this enables the group to know that you are aware of and have acknowledged the notification. If you are unable to immediately perform the work needed by the notification responding that you have scheduled some time and when to expect an update helps the project keep track of work that is happening.
+GitHub platform has a [notifications inbox](https://github.com/notifications) which members should regularly check on, in order to keep tabs of updates, mentions, and open assigned work that should be reviewed and responded to.  Also, members should consider configuring [github notification settings](https://github.com/settings/notifications) and also setting items to be watched so they are notified when changes occur.
+
+Responding to notifications is important as this enables the group to know that you are aware of and have acknowledged the notification. If you are unable to immediately perform the work needed by the notification responding that you have scheduled some time and when to expect an update helps the project keep track of work that is happening.
 
 
 ## Slack
