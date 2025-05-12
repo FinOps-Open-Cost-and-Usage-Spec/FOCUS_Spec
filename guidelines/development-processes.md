@@ -324,6 +324,9 @@ Main channel for members to communicate and share information. Remember to updat
 
 Sub group specific channels for targeted conversations about work items/action items. Remember to update GitHub where relevant.
 
+##### #tf-<name>
+Further subgroups are created for larger items like SaaS, sku properties, etc.
+
 
 #### #maintainers
 
