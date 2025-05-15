@@ -33,6 +33,7 @@ How would you categorize this request? Select the option that best describes the
 - [ ] Refinement of an existing FOCUS attribute
 - [ ] Addition of a provider-supported field not yet in FOCUS
 - [ ] Net-new concept (not currently supported by providers or FOCUS)
+- [ ] Supporting Content (e.g., appendices, use cases)
 
 ---
 
