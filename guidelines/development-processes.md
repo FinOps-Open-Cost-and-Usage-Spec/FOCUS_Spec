@@ -35,9 +35,9 @@ Feedback Issues will have a title that starts with \`\[Feedback]\`.
 
 #### Feature Request
 
-All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature Request. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feedback Issues within the GitHub repository. The description for feature request items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g. Column names, types of data to include, normative text suggestions). 
+All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature Request. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feature Request Issues within the GitHub repository. The description for feature request items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g. Column names, types of data to include, normative text suggestions). 
 
-Feedback Issues will have the Type: Feature Request and Label: feature request, and be associated with the FOCUS WG project.
+Feature Request Issues will have the Type: Feature Request and Label: feature request, and be associated with the FOCUS WG project.
 
 Everyone is welcome to add comments to further define the feature request item, add concerns and/or considerations you would like to see taken into account when developing a solution for the feature request. Support for a feature request item can also be shown in the form of reactions on the Issue ticket.
 
@@ -83,7 +83,8 @@ Each issue carries one of the following Status values, which represent the overa
 - Under Consideration: being actively evaluated for upcoming spec work
 - Accepted in Scope: will be developed in next release
 - Ready for Dev: not started
-- In Discussion: in progress
+`In Discovery`: defining the concepts that this issue will entail via Task Force
+`In Development`: discussing solution for how to solve for the concept / design via Task Force
 - PR Needed: TF requires a concrete proposal to move forward
 - PR In Draft: PR being authored
 - PR TF Review: PR issued and in review with Task Force
