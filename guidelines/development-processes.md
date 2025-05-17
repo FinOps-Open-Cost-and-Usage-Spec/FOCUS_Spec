@@ -130,27 +130,25 @@ This section details best practices for the creation of content that is added to
 
 The FOCUS [Specification LifeCycle](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#51-specification-lifecycle) consists of multiple phases that guide the creation, refinement, and approval of technical standards. The following diagrams illustrate how the two initial phases—**Scope Definition** and **Specification Development**—are implemented using GitHub Issues and Pull Requests (PRs), with labels used to track progress and workflow status.
 
-#### Scope Definition
+#### Scope Definition Phase
+This diagram illustrates how the **Scope Definition** phase is practically implemented using GitHub Issues. The process begins with the creation of either **Feedback** or **Feature Request** issues. These issues are triaged and evaluated through a structured discovery process, during which labels such as `Submitted`, `In Discussion`, or `Under Consideration` are applied.
 
 <figure>
     <img src="images/FOCUS-Process-scope-phase.drawio.png" alt="Scope Definition Phase">
     <figcaption>Scope Definition Phase</figcaption>
 </figure>
 
-This diagram illustrates how the **Scope Definition** phase is practically implemented using GitHub Issues. The process begins with the creation of either **Feedback** or **Feature Request** issues. These issues are triaged and evaluated through a structured discovery process, during which labels such as `Submitted`, `In Discussion`, or `Under Consideration` are applied.
-
-Once an issue is **Accepted in Scope**, it may lead to the creation of a **Work Item** (WI), tagged for inclusion in a specific version (e.g., `vX.Y`). Stakeholders then review the proposed work items for alignment with strategic priorities. Upon approval, the work item concept is incorporated into the `RELEASE_PLANNING` document, and the item officially enters the **Development Phase**.
+Once an issue is **Accepted in Scope**, it may lead to the creation of a **Work Item** (WI), tagged for inclusion in a specific version (e.g., `vX.Y`). Stakeholders then review the proposed work items for alignment with strategic priorities. Upon approval, the work item concept is incorporated into the [`RELEASE_PLANNING`](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/main/RELEASE-PLANNING.md) document, and the item officially enters the **Development Phase**.
 
 This process ensures that all proposed features and improvements are traceable and categorized consistently through issue labels.
 
-#### Development 
+#### Specification Development Phase
+This diagram represents the **Specification Development** phase, where implementation shifts from issues to GitHub Pull Requests (PRs). Contributions are managed and tracked through a PR-based workflow, with status labels applied to indicate progress:
 
 <figure>
     <img src="images/FOCUS-Process-development-2-phase.drawio.png" alt="Specification Development">
     <figcaption>Specification Development Phase</figcaption>
 </figure>
-
-This diagram represents the **Specification Development** phase, where implementation shifts from issues to GitHub Pull Requests (PRs). Contributions are managed and tracked through a PR-based workflow, with status labels applied to indicate progress:
 
 - **Development Stage:** PRs are marked as `PR in Draft`, `In Development`, `Ready for Dev`, or `Blocked`.
 - **Review & Approval:** Once ready, PRs move into review with labels such as `PR TF Review`, `PR Member Review`, or `PR Ready for Approval`.
