@@ -126,6 +126,39 @@ Each Action Item is assigned an AI Status of `Open` upon creation.
 
 This section details best practices for the creation of content that is added to the specification.  This section will be augmented over time.
 
+### Practical Implementation of the Specification Lifecycle Using GitHub
+
+The FOCUS [Specification LifeCycle](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#51-specification-lifecycle) consists of multiple phases that guide the creation, refinement, and approval of technical standards. The following diagrams illustrate how the two initial phases—**Scope Definition** and **Specification Development**—are implemented using GitHub Issues and Pull Requests (PRs), with labels used to track progress and workflow status.
+
+#### Scope Definition
+
+<figure>
+    <img src="images/FOCUS-Process-scope-phase.drawio.png" alt="Scope Definition Phase">
+    <figcaption>Scope Definition Phase</figcaption>
+</figure>
+
+This diagram illustrates how the **Scope Definition** phase is practically implemented using GitHub Issues. The process begins with the creation of either **Feedback** or **Feature Request** issues. These issues are triaged and evaluated through a structured discovery process, during which labels such as `Submitted`, `In Discussion`, or `Under Consideration` are applied.
+
+Once an issue is **Accepted in Scope**, it may lead to the creation of a **Work Item** (WI), tagged for inclusion in a specific version (e.g., `vX.Y`). Stakeholders then review the proposed work items for alignment with strategic priorities. Upon approval, the work item concept is incorporated into the `RELEASE_PLANNING` document, and the item officially enters the **Development Phase**.
+
+This process ensures that all proposed features and improvements are traceable and categorized consistently through issue labels.
+
+#### Development 
+
+<figure>
+    <img src="images/FOCUS-Process-development-2-phase.drawio.png" alt="Specification Development">
+    <figcaption>Specification Development Phase</figcaption>
+</figure>
+
+This diagram represents the **Specification Development** phase, where implementation shifts from issues to GitHub Pull Requests (PRs). Contributions are managed and tracked through a PR-based workflow, with status labels applied to indicate progress:
+
+- **Development Stage:** PRs are marked as `PR in Draft`, `In Development`, `Ready for Dev`, or `Blocked`.
+- **Review & Approval:** Once ready, PRs move into review with labels such as `PR TF Review`, `PR Member Review`, or `PR Ready for Approval`.
+- **Conclusion:** Approved PRs are marked as `PR Approved`, followed by `Implemented` and eventually `Closed` once fully integrated.
+
+This system of labeled pull requests provides clear visibility into the status of each contribution and ensures a structured path toward readiness for the **Consistency Review** stage.
+
+
 ### Table Conversion for Markdown
 
 Working group content is often created and socialized in Google Workspace, especially via Google Sheets.  Often, content in those spreadsheets needs conversion into markdown for inclusion in the spec or supporting content.  Here a couple of tools to use for converting to markdown:
