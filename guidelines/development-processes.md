@@ -150,8 +150,8 @@ This diagram represents the **Specification Development** phase, where implement
     <figcaption>Specification Development Phase</figcaption>
 </figure>
 
-- **Development Stage:** PRs are marked as `PR in Draft`, `In Development`, `Ready for Dev`, or `Blocked`.
-- **Review & Approval:** Once ready, PRs move into review with labels such as `PR TF Review`, `PR Member Review`, or `PR Ready for Approval`.
+- **Development Stage:** PRs are marked as e.g., `PR in Draft`, `In Development`, `Ready for Dev`, or `Blocked`.
+- **Review & Approval:** Once ready, PRs move into review with labels such as e.g., `PR TF Review`, `PR Member Review`, or `PR Ready for Approval`.
 - **Conclusion:** Approved PRs are marked as `PR Approved`, followed by `Implemented` and eventually `Closed` once fully integrated.
 
 This system of labeled pull requests provides clear visibility into the status of each contribution and ensures a structured path toward readiness for the **Consistency Review** stage.
