@@ -19,7 +19,7 @@ Naming for all Issues should aim to be short, but remain clear and descriptive. 
 
 ### Issue Types
 
-Issues should be created via the use of issue templates that adhere to Issue Types. The Working Group uses four Issue Types: Feedback, Work Items, Action Items, and Maintenance Tasks.
+Issues should be created via the use of issue templates that adhere to Issue Types. The Working Group uses five Issue Types: Feedback, Feature Request, Work Items, Action Items, and Maintenance Tasks.
 
 <figure>
     <img src="images/FOCUS-Process-labels-issue-templates.drawio.png" alt="Issue Templates & Labels">
