@@ -1,0 +1,106 @@
+name: "FOCUS Feature Request"
+description: Propose a new attribute, refinement, or data structure for the FOCUS Specification.
+title: "[FR] <Short description>"
+type: "Feature"
+labels: ["use case", "needs triage"]
+assignees: ["matt-cowsert"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        _Use this template to propose changes to the FOCUS Spec. Do not include personal information (PII)._
+
+        ⚠️ **If your suggestion is a minor correction or formatting fix, use the General Feedback template instead.**
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Describe the issue or opportunity. Include real-world quotes if available.
+    validations:
+      required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use Case (Optional)
+      description: "Provide 1–2 sentences describing usage. Example: As a FinOps practitioner, I want to [...], so that [...]."
+
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired Outcome / Practitioner Impact
+      description: Describe expected result, KPIs, and impact on FinOps users.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Type of Request
+      description: Select the best fit for the novelty of this request.
+      options:
+        - Refinement of an existing FOCUS attribute
+        - Addition of a provider-supported field not yet in FOCUS
+        - Net-new concept (not currently supported by providers or FOCUS)
+        - Supporting Content (e.g., appendices, use cases)
+    validations:
+      required: true
+
+  - type: textarea
+    id: org_support
+    attributes:
+      label: Organizations Requesting or Supporting This Feature
+      description: List one or more organizations who have requested or explicitly supported this request (including your own, if applicable).
+
+  - type: checkboxes
+    id: finops_scope
+    attributes:
+      label: FinOps Scope Alignment (Optional)
+      options:
+        - label: Public Cloud – e.g., AWS, Azure, GCP, OCI
+        - label: Software-as-a-Service (SaaS) – e.g., Salesforce, Snowflake
+        - label: Data Center – on-prem compute and infrastructure
+        - label: Licensing – subscription or usage-based licensing *(under development)*
+        - label: AI – cost and usage for AI models and platforms *(under development)*
+        - label: Custom – internal tooling, specialized infra *(under development)*
+
+  - type: checkboxes
+    id: impacted_parties
+    attributes:
+      label: Impacted Parties
+      description: Which roles or systems are affected?
+      options:
+        - label: FinOps Practitioner – end users who analyze or act on the data
+        - label: FOCUS Data Generator – providers generating aligned output
+        - label: Vendor Supporting FOCUS – tools or platforms using the spec
+        - label: Other (please explain in comments)
+
+  - type: input
+    id: ambiguity
+    attributes:
+      label: Level of Ambiguity (1–5)
+      description: 1 = well defined, 3 = moderately scoped, 5 = highly complex
+      placeholder: e.g., 2
+    validations:
+      required: true
+
+  - type: textarea
+    id: docs
+    attributes:
+      label: Supporting Documentation
+      description: Include links to data, GitHub issues, or spec references. Ensure access is open.
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution / Approach
+      description: Initial ideas, feasibility notes, or references.
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 💬 Community Support (Add Your Voice)
+        If your organization supports this request or has a similar use case:
+        - Comment below with your **organization** and a **brief explanation** of its relevance or urgency.
+        - FOCUS Staff & Maintainers will aggregate support.
