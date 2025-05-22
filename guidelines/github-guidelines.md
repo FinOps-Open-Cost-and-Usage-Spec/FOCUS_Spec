@@ -1,5 +1,7 @@
 # github guidelines
 
+Guidelines, recommendations, and instructions for how to work with FOCUS on github 
+
 ## Login to github
 
 ## Configure notifications
