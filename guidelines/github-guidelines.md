@@ -17,3 +17,5 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on gith
 ## Instructions on how to submit a PR using github desktop and vscode
 
 ## Instructions on how to submit changes to an an existing PR using github desktop and vscode
+
+## Data Exercise to learn FOCUS columns
