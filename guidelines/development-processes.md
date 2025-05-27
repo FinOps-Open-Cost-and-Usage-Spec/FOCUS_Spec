@@ -2,8 +2,8 @@
 
 ## Overview
 
-This document is aimed at outlining how the FOCUS Working Group develops the specification.  It defines the workflows, processes, and collaboration expectations for all development activities, including Issue management, Pull Request handling, approval workflows, and communication guidelines.\
-\
+This document is aimed at outlining how the FOCUS Working Group develops the specification.  It defines the workflows, processes, and collaboration expectations for all development activities, including Issue management, Pull Request handling, approval workflows, and communication guidelines.
+
 Nothing in this document overrides any requirements of the FOCUS Working Group as outlined in the [FOCUS Foundation repository,](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation) including the [workflows](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/workflow-procedures.md) required to maintain our [intellectual property review](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/ipr.md) (IPR) protections. All members are required to follow the FOCUS project’s [code of conduct](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/code_of_conduct.md).
 
 
