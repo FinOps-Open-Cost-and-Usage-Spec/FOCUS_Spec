@@ -19,12 +19,12 @@ Naming for all Issues should aim to be short, but remain clear and descriptive. 
 
 ### Issue Types
 
-Issues should be created via the use of issue templates that adhere to Issue Types. The Working Group uses four Issue Types: Feedback, Work Items, Action Items, and Maintenance Tasks.
+Issues should be created via the use of issue templates that adhere to Issue Types. The Working Group uses five Issue Types: Action Item, Feedback, Feature, Maintenance, and Work Item.
 
 
 #### Feedback
 
-All minor corrections (typos, syntax, editorial changes) should be introduced to the FOCUS project via GitHub Issues of the type Feedback. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feedback Issues within the GitHub repository. The description for feedback items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g. Column names, types of data to include, normative text suggestions). 
+All minor corrections (typos, syntax, editorial changes) should be introduced to the FOCUS project via GitHub Issues of the type Feedback. The template for these Issues will ensure the needed information is gathered and available for prioritization processes. Anyone can submit Feedback Issues within the GitHub repository. The description for feedback items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g. Column names, types of data to include, normative text suggestions). 
 
 Feedback Issues will have the Type: Feedback and Label: feedback, and be associated with the FOCUS WG project.
 
@@ -35,9 +35,21 @@ Feedback Issues will have a title that starts with \`\[Feedback]\`.
 
 #### Feature Request
 
-All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature Request. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feature Request Issues within the GitHub repository. The description for feature request items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g. Column names, types of data to include, normative text suggestions). 
+All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feature Request Issues within the GitHub repository. 
 
-Feature Request Issues will have the Type: Feature Request and Label: feature request, and be associated with the FOCUS WG project.
+_Normative guidelines to develop high-quality feature request titles_:
+- **Start with a standard verb**. Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
+- **Use correct sentence structure**. Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target
+(e.g. “Add provider-calculated shared cost allocation” vs “Standardize tag export across clouds”)
+- **Describe the outcome, not the implementation**. “Add daily amortized cost” > “Create SQL to amortize daily”
+- **Sentence case; acronyms uppercase; no ALL-CAPS words**. “Add RI coverage metric” not “ADD RI COVERAGE METRIC”
+- **Use canonical FOCUS terminology; stay provider-agnostic**. Vendor specifics belong in examples, not the title
+- **Express one concept per title**. If you need two independent changes, create two issues. "And" and "or" are indications that multiple issues are needed
+- **Trim filler words unless they improve clarity**. Drop “the,” “of,” “for,” etc., where possible to save space
+- **Keep titles ≤ 75 characters (aim for ~60)**. Short enough to fit in GitHub lists, change logs, and slides without wrapping
+- **Don’t end with a trailing period**
+
+Feature Request Issues will have the Type: "Feature" and Label: "feature", and be associated with the FOCUS WG project.
 
 Everyone is welcome to add comments to further define the feature request item, add concerns and/or considerations you would like to see taken into account when developing a solution for the feature request. Support for a feature request item can also be shown in the form of reactions on the Issue ticket.
 
