@@ -1,158 +1,60 @@
-name: "Feature Request and Use Case Feedback"
-description: "Provide feedback on unsupported FinOps features, use cases, or scenarios, as well as on the existing FOCUS specification content. Avoid sharing proprietary information."
-title: "[FEEDBACK]: "
-labels:
-  - "feedback"
-type: "Feedback"
-assignees:
-  - "shawnalpay"
-  - "jpradocueva"
+name: "General Feedback"
+description: Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
+title: "[Feedback] <Brief description of issue>"
+labels: ["feedback", "needs triage"]
+assignees: ["matt-cowsert"]
 body:
   - type: markdown
     attributes:
       value: |
-        ---
-        ### **Template Usage Notes**:
-        1. All fields marked as **mandatory** [*] must be filled before submission.
-        2. For **Supporting Data/Documentation**, ensure that linked files are accessible to relevant stakeholders.
+        _Use this form to report small corrections or suggestions that improve clarity, accuracy, or consistency._
 
+        ⚠️ **Feature-related suggestions should be submitted via the Feature Request template instead.**
 
-  - type: markdown
+  - type: input
+    id: organization
     attributes:
-      value: |
-        ## 1. **Problem statement**
-        Describe the problem or opportunity that this issue addresses. Explain the context and why it needs resolution.
-
-  - type: textarea
-    id: issue-summary
-    attributes:
-      label: Summary
-      description: "Briefly describe the problem or opportunity that this issue addresses and why it needs resolution."
-      placeholder: "Briefly describe the problem or opportunity that needs resolution."
-    validations:
-      required: true
-
-  - type: dropdown
-    id: issue-area
-    attributes:
-      label: Which area does this issue relate to?
-      description: "Select one of the provided options:"
-      options:
-        - 'A: Missing FinOps feature, use case, or scenario'
-        - 'B: Existing FOCUS specification content'
-        - 'C: Other'
-    validations:
-      required: true
-
-  - type: textarea
-    id: issue-description
-    attributes:
-      label: Detailed Description
-      description: "Provide a detailed description of the problem or opportunity. Add context or any other relevant information that may help in addressing this issue."
-      placeholder: "Provide a comprehensive description of the the problem or opportunity, including context and any relevant details"
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 2. **Use Cases**
-        Please describe the use cases, whether FinOps-related or otherwise, that cannot be performed with the existing specification unless this issue is addressed.  Review https://focus.finops.org/use-cases/ for examples of existing use cases.
-
-  - type: textarea
-    id: use_cases
-    attributes:
-      label: What use cases, FinOps or others, can't be performed with the existing specification unless this issue is addressed?
-      description: "Provide detailed descriptions of the use cases that can't be performed unless this issue is addressed."
-      placeholder: "List the specific use cases that can't be performed due to the existing limitations."
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 3. **FinOps Personas**
-        List the FinOps personas this issue relates to.
-
-  - type: textarea
-    id: finops-personas
-    attributes:
-      label: Which FinOps personas does this issue relate to?
-      description: "Indicate which FinOps personas this issue relates to."
-      placeholder: "e.g., Practitioner, Executive, Finance, Engineering, Procurement, Operations, etc."
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 4. **Providers**
-        List provider groups or specific providers this issue relates to.
-
-  - type: textarea
-    id: providers
-    attributes:
-      label: Which provider groups or specific providers does this issue relate to?
-      description: "List provider groups (e.g., CSPs, SaaS) separated by semicolons (`;`), and specific providers within those groups separated by commas (`,`). If the issue applies to all providers within a group, you can simply specify the group name (e.g., 'All CSPs')."
-      placeholder: "e.g., All CSPs; SaaS: Snowflake, Salesforce"
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 5. **Criticality Scale**
-        Indicate how critical this issue or feature request is for your organization using the scale provided below.
-
-  - type: dropdown
-    id: criticality-scale
-    attributes:
-      label: On a scale of 1 - 4, how critical is this for your organization? 
-      description: "Select one of the provided options."
-      options:
-        - '1: Blocks my organization from adopting FOCUS'
-        - '2: Important for adoption in the next 3-6 months'
-        - '3: Important for adoption in the next 6-12 months'
-        - '4: Suggestion, not planning to use FOCUS soon'
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 6. **Objective**
-        State the objective of this feedback. 
-        - What outcome is expected?
-        - Define how success will be measured (e.g., metrics and KPIs).
-
-  - type: textarea
-    id: objective
-    attributes:
-      label: "Objective"
-      description: "Outline the expected outcome and success criteria."
-      placeholder: "Outline the desired outcome and any metrics or KPIs to measure success."
-    validations:
-      required: false
-
-  - type: markdown
-    attributes:
-      value: |
-        ## 7. **Supporting Data/Documentation**
-
-  - type: textarea
-    id: data_examples
-    attributes:
-      label: "Data Examples"
-      description: "Provide links to relevant sample data or attach data extracts that support your feedback. Ensure data is anonymized and does not include sensitive or proprietary information."
-      placeholder: "Add link(s) to sample data or attach extracts that support your feedback."
+      label: Submitting Organization (Optional)
+      description: If submitting on behalf of a company, enter it here.
+      placeholder: e.g., BigCloud Inc.
     validations:
       required: false
 
   - type: textarea
-    id: issue_pr_references
+    id: feedback_summary
     attributes:
-      label: "Issues, PRs, or Other References"
-      description: "Provide links to any relevant GitHub issues, pull requests, or other applicable references."
-      placeholder: "Add links to any relevant GitHub issues, pull requests, or other applicable references."
+      label: Feedback Summary
+      description: Be specific and actionable.
+      placeholder: e.g., Typo in field `skuDescription` — should say "metered" instead of "metred".
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: feedback_type
+    attributes:
+      label: Type of Feedback
+      description: Select the option that best describes your suggestion.
+      options:
+        - label: Typo or grammar
+        - label: Clarity improvement
+        - label: Field naming or label inconsistency
+        - label: Definition or behavior inconsistency
+        - label: Minor correction (non-breaking)
+        - label: Other
+
+  - type: input
+    id: affected_section
+    attributes:
+      label: Affected Section or Field (Optional)
+      placeholder: e.g., /definitions/UsageRecord or spec.md#sku-capacity
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes (Optional)
+      description: Add any extra context, examples, or links here.
+      placeholder: Anything else worth sharing?
     validations:
       required: false
