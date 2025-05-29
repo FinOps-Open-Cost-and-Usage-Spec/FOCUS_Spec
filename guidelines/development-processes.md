@@ -134,6 +134,10 @@ Each Action Item is assigned an AI Status of `Open` upon creation.
 
 This section details best practices for the creation of content that is added to the specification.  This section will be augmented over time.
 
+### Use of Google Drive During Active Development
+
+During active development, it is common practice for each Work Item to have a dedicated Google Drive folder shared internally among FOCUS members. These folders typically follow a consistent naming convention that includes the Work Item number and a brief, human-readable description. This approach ensures easy access, efficient navigation, and smooth collaboration when working with shared materials.
+
 ### Table Conversion for Markdown
 
 Working group content is often created and socialized in Google Workspace, especially via Google Sheets.  Often, content in those spreadsheets needs conversion into markdown for inclusion in the spec or supporting content.  Here a couple of tools to use for converting to markdown:
