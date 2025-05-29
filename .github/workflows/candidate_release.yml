@@ -7,12 +7,12 @@ on:
 jobs:
   # The job that will use the container image you just pushed to ghcr.io
   gen_pdf:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     container:
       image: pandoc/extra:latest-ubuntu
     steps:
       - name: Check out repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.2.2
       - name: Install prequirements
         shell: bash
         run: |
@@ -25,9 +25,15 @@ jobs:
         shell: bash
         working-directory: ./specification
         run: |
-          make STYLE=candidate_release
+          make STYLE=candidate_release BRANCH=candidate_release
+      - name: Upload on failure
+        uses: actions/upload-artifact@4.5.0
+        if: ${{ failure()}}
+        with:
+          name: spec.md
+          path: specification/spec.md
       - name: Upload Spec
-        uses: actions/upload-artifact@v3.1.2
+        uses: actions/upload-artifact@v4.5.0
         with:
           name: FOCUS_specification
           path: |

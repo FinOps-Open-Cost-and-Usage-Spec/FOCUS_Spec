@@ -1,0 +1,132 @@
+name: "Work Item Issue Template"
+description: "Template for creating new work item issues"
+title: "[Work_Item]"
+labels: 
+  - "work item"
+type: "Work Item"
+assignees: 
+  - "shawnalpay"
+  - "jpradocueva"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ### **Template Usage Notes**:
+        1. All fields marked as **mandatory** [*] must be filled before submission.  While some datapoints are optional for the initial creation of the work item, all datapoints must be provided in order to be considered for spec development.
+        2. If you have suggestions for the specification but cannot fill out all fields in this issue template, please fill out a [Feedback] or [Discussion] issue template instead.
+        3. For **Supporting Documentation**, ensure that linked files are accessible to relevant stakeholders.
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 1. **Problem Statement**
+        Describe the problem, issue, use case, or opportunity that this work item addresses.
+        Include practitioner quotes illustrating real examples a) of questions being asked by practitioners and b) value unlocked by answering these questions, if available.
+        - **What is the problem?**: Explain the context and why it needs resolution.
+        - **Impact**: Describe how the problem affects users, systems, or the project.
+
+  - type: textarea
+    id: problem_statement
+    attributes:
+      label: "Problem Statement"
+      description: "Provide a detailed explanation of the problem or issue."
+      placeholder: "Provide details of the problem statement here."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 2. **Use Case**
+        Describe the use case(s) that this work item addresses.
+        Review [How to Craft Use Cases](/supporting_content/usecases/howtocraftusecases.md) for guidance on crafting use cases.
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: "Use Case"
+      description: "Provide 1 to 2 sentences detailing the use case."
+      placeholder: "Provide 1 to 2 sentences detailing the use case here."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 3. **Objective**
+        State the objective of this work item. What outcome is expected?
+        - **Success Criteria**: Define how success will be measured (e.g. metrics and KPIs).
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: "Objective"
+      description: "Describe the expected outcome and success criteria."
+      placeholder: "Outline the expected outcome and success criteria."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 4. **Supporting Documentation**
+        - Data Examples: [Link to data or relevant files; DO NOT share proprietary information]
+        - Related Use Cases or Discussion Documents: [Link to discussion]
+        - PRs or Other References: [Link to relevant references]
+
+  - type: textarea
+    id: supporting_documentation
+    attributes:
+      label: "Supporting Documentation"
+      description: "Provide links to data examples, use cases, PRs, or other relevant documents."
+      placeholder: "Include links to supporting documentation, if applicable."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 5. **Proposed Solution / Approach**
+        Outline any proposed solutions, approaches, or potential paths forward.  Do not submit detailed solutions; please keep suggestions high-level.
+        - **Initial Ideas**: Describe potential solution paths, tools, or technologies.
+        - **Considerations**: Include any constraints, dependencies, or risks.
+        - **Feasibility**: Include any information that helps quantify feasibility, such as perceived level of effort to augment the spec, or existing fields in current data generator exports. 
+        - **Benchmarks**: Are there established best practices for solving this problem available to practitioners today (e.g. mappings from existing CSP exports that are widely used)?
+
+  - type: textarea
+    id: proposed_solution
+    attributes:
+      label: "Proposed Solution / Approach"
+      description: "Outline potential solutions or approaches."
+      placeholder: "Summarize the proposed solution or approach."
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 6. **Epic or Theme Association**
+        > This section will be completed by the Maintainers.
+        > - **Epic**: [Epic Name]
+        > - **Theme**: [Theme Name, if applicable]
+
+  - type: textarea
+    id: epic_theme
+    attributes:
+      label: "Epic or Theme Association"
+      description: "Provide potential epics or themes"
+      placeholder: "Provide the rational for the Epic or Theme."
+
+  - type: markdown
+    attributes:
+      value: |
+        ## 7. **Stakeholders**
+        List the main stakeholders for this issue.
+        - **Primary Stakeholder**: [Name/Role]
+        - **Other Involved Parties**: [Names/Roles]
+
+  - type: textarea
+    id: stakeholders
+    attributes:
+      label: "Stakeholders"
+      description: "List the main stakeholders for this work item."
+      placeholder: "Provide names and roles of key stakeholders."

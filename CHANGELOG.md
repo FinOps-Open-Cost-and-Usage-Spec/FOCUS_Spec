@@ -2,16 +2,112 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-<!--
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## v1.2
 
-[All unreleased changes](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/compare/1.1...working_draft)
+<sup>Announced June 2025</sup>
+
+### Added
+
+#### New columns
+
+- `BillingAccountType`
+- `InvoiceID`
+- `PricingCurrency`
+- `PricingCurrencyContractedUnitPrice`
+- `PricingCurrencyEffectiveCost`
+- `PricingCurrencyListUnitPrice`
+- `SubAccountType`
+
+#### New appendix entries
+
+- Added examples for commitment discount flexibility.
+- Added examples for SaaS scenarios.
+
+#### New supported features
+
+- Added list of features the specification supports.  See the `supported_features` subfolder for a full list.
+
+#### New metadata column definition properties
+
+- `Deprecated`
+- `PreviousColumnName`
+
+### Changed
+
+#### Changed columns
+
+- Normative requirements guidelines have been applied to all columns. While the formatting has changed significantly, the vast majority of such changes are not material unless specifically called out in the below list.
+- `AvailabilityZone`
+  - Added a requirement that the value must be null when a charge is not specific to an availability zone.
+- `BilledCost`
+  - Added requirement that the value must be 0 when payments are received by a third-party (e.g., marketplace).
+  - Added requirement that the sum of BilledCost for an Invoice ID must match the payable amount on a corresponding invoice.
+- `BillingAccountName`
+  - Removed requirement of uniqueness within a customer context.
+- `ChargeDescription`
+  - Changed recommendation to specify maximum length in the Metadata Schema instead of publicly available documentation.
+- `CommitmentDiscountQuantity`
+  - Revised requirement of value range to allow any valid decimal value.
+- `CommitmentDiscountUnit`
+  - Revised requirement of nullability to be tied to the nullability of CommitmentDiscountQuantity (e.g., must be null when CommitmentDiscountQuantity is null).
+- `ConsumedQuantity`
+  - Revised requirement of value range to allow any valid decimal value.
+- `ConsumedUnit`
+  - Revised requirement of nullability to be tied to the nullability of ConsumedQuantity (e.g., must be null when ConsumedQuantity is null).
+- `EffectiveCost`
+  - Clarified requirements for aggregation of values.
+- `PricingUnit`
+  - Revised requirement of nullability to be tied to the nullability of PricingQuantity (e.g., must be null when PricingQuantity is null).
+- `RegionName`
+  - Revised requirement of nullability to be tied to the nullability of RegionId (e.g., must be null when RegionId is null).
+- `ResourceId`
+  - Revised requirement for uniqueness: the value must be unique within the provider.
+- `ServiceName`
+  - Added requirement for mapping the value to a single ServiceCategory or "Other".
+  - Added recommendation for mapping the value to a single ServiceSubcategory or "Other".
+- `SkuId`
+  - Revised column definition to position SkuId as a stable, functional identifier beyond pricing constructs.
+  - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
+  - Added requirements for a SkuId to be consistent across variations of billing accounts, contracts, and prices.
+- `SkuMeter`
+  - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
+- `SkuPriceDetails`
+  - Defined a set of FOCUS-specified property names and units, and added requirements for how they are used.
+  - Added requirement that custom properties must prefix names with "x_".
+  - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
+- `SkuPriceId`
+  - Revised requirement for presence: the value must be present when the provider supports unit pricing and publishes price lists.
+  - Revised requirement that the value must have a single parent SkuId, removing the prior exception for commitment discount flexibility.
+  - Added requirement that the value must be associated with a given resource or service when ChargeCategory is "Usage" or "Purchase".
+  - Added requirements for a SkuPriceId to be consistent across variations of billing accounts and contracts.
+- `SubAccountName`
+  - Revised requirement of nullability to be tied to the nullability of SubAccountId (e.g., must be null when SubAccountId is null).
+- `Tags`
+  - Resolved bug involving multiple user-defined tag structures.
+
+#### Changed attributes
+
+- `ColumnNamingAndOrdering`
+  - Renamed attribute to `ColumnHandling`.
+- `CurrencyCodeFormat`
+  - Renamed attribute to `CurrencyFormat`.
+  - Augmented definition to handle for virtual currencies.
+
+#### Changed appendix entries
+
+- Revised the ordering of appendix entries.
+- Moved appendix examples to CSV section.
+
+#### Changed metadata
+
+##### Changed metadata properties
+
+- `ProviderVersion`
+  - Renamed field to `DataGeneratorVersion`.
 
 <br>
--->
 
 ## v1.1
 
@@ -66,24 +162,36 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 **Added:**
 
-- `String handling` attribute
-- `ChargeClass` column
-- `CommitmentDiscountStatus` column
-- `ContractedCost` column
-- `ContractedUnitPrice` column
-- `RegionId` column
-- `RegionName` column
-- `DataGenerator` metadata property
-- `CreationDate` metadata schema property
-- `FocusVersion` metadata schema property
-- `SchemaId` metadata schema property
-- `ColumnName` metadata column definition property
-- `DataType` metadata column definition property
-- `NumberScale` metadata column definition property
-- `NumberPrecision` metadata column definition property
-- `ProviderTagPrefix` metadata column definition property
-- `StringEncoding` metadata column definition property
-- `StringMaxLength` metadata column definition property
+New use cases:
+- Compare Billed Cost per Sub Account to budget
+
+New attributes:
+- `String handling`
+
+New columns:
+- `ChargeClass`
+- `CommitmentDiscountStatus`
+- `ContractedCost`
+- `ContractedUnitPrice`
+- `RegionId`
+- `RegionName`
+
+New metadata properties:
+- `DataGenerator`
+
+New metadata schema properties:
+- `CreationDate`
+- `FocusVersion`
+- `SchemaId`
+
+New metadata column definition properties:
+- `ColumnName`
+- `DataType`
+- `NumberScale`
+- `NumberPrecision`
+- `ProviderTagPrefix`
+- `StringEncoding`
+- `StringMaxLength`
 
 **Changed:**
 
@@ -257,6 +365,7 @@ This table maps the evolution of the specification, showcasing column introducti
 | BilledCost                   | 0.5                     |                   |
 | BillingAccountId             | 0.5                     |                   |
 | BillingAccountName           | 0.5                     |                   |
+| BillingAccountType           | 1.2                     |                   |
 | BillingCurrency              | 0.5                     |                   |
 | BillingPeriodEnd             | 0.5                     |                   |
 | BillingPeriodStart           | 0.5                     |                   |
@@ -282,10 +391,15 @@ This table maps the evolution of the specification, showcasing column introducti
 | ContractedCost               | 1.0                     |                   |
 | ContractedUnitPrice          | 1.0                     |                   |
 | EffectiveCost                | 1.0-preview             | Renamed from AmortizedCost in v1.0-preview |
+| InvoiceId                    | 1.2                     |                   |
 | InvoiceIssuerName            | 0.5                     |                   |
 | ListCost                     | 1.0-preview             |                   |
 | ListUnitPrice                | 1.0-preview             |                   |
 | PricingCategory              | 1.0-preview             |                   |
+| PricingCurrency              | 1.2                     |                   |
+| PricingCurrencyContractedUnitPrice | 1.2               |                   |
+| PricingCurrencyEffectiveCost | 1.2                     |                   |
+| PricingCurrencyListUnitPrice | 1.2                     |                   |
 | PricingQuantity              | 1.0-preview             |                   |
 | PricingUnit                  | 1.0-preview             |                   |
 | ProviderName                 | 0.5                     |                   |
@@ -305,6 +419,8 @@ This table maps the evolution of the specification, showcasing column introducti
 | SkuPriceId                   | 1.0-preview             |                   |
 | SubAccountId                 | 0.5                     |                   |
 | SubAccountName               | 0.5                     |                   |
+| SubAccountType               | 1.2                     |                   |
 | Tags                         | 1.0-preview             |                   |
 | UsageQuantity                | 1.0-preview             | Renamed to ConsumedQuantity in v1.0 |
 | UsageUnit                    | 1.0-preview             | Renamed to ConsumedUnit in v1.0 |
+
