@@ -23,6 +23,8 @@ Charge Class
 
 Indicates whether the *row* represents a correction to a previously invoiced *billing period*.
 
+***Editor's Note:** OCI INDICATED: this restriction may need to be removed as corrections can happen in month... need to be aware of this to avoid historic reprocessing*
+
 ## Content Constraints
 
 | Constraint      | Value          |
@@ -38,6 +40,14 @@ Allowed values:
 | Value      | Description                                                                                    |
 | :--------- | :----------------------------------------------------------------------------------------------|
 | Correction | Correction to a previously invoiced *billing period* (e.g., refunds and credit modifications). |
+
+***Editor's Note:** OPTIONS:*
+
+| Value      | Description                          |
+| :--------- | :------------------------------------|
+| General Correction | Correction to a previously invoiced *billing period* (e.g., refunds and credit modifications). |
+| Price Correction | Correction to a previously invoiced *billing period* (e.g., refunds and credit modifications). |
+| Usage Correction | Correction to a previously invoiced *billing period* (e.g., refunds and credit modifications). |
 
 ## Introduced (version)
 
