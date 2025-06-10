@@ -1,12 +1,15 @@
 # Charge Class
 
-Charge Class indicates whether the row represents a correction to a previously invoiced [*billing period*](#glossary:billing-period). Charge Class is commonly used to differentiate corrections from regularly incurred charges.
+Charge Class indicates whether the [*row*](#glossary:row) represents a correction to a previously invoiced [*billing period*](#glossary:billing-period). Charge Class is commonly used to differentiate [*corrections](#glossary:correction) from regularly incurred [*charges*](#glossary:charge).
 
 The ChargeClass column adheres to the following requirements:
 
-* The ChargeClass column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* This column MUST be of type String and MUST be "Correction" when the row represents a correction to a previously invoiced *billing period*.
-* ChargeClass MUST be null when it is not a correction or when it is a correction within the current *billing period*.
+* ChargeClass MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeClass MUST be of type String.
+* ChargeClass nullability is defined as follows:
+  * ChargeClass MUST be null when the *row* does not represent a correction or when it represents a correction within the current *billing period*.
+  * ChargeClass MUST NOT be null when the *row* represents a correction to a previously invoiced *billing period*.
+* ChargeClass MUST be "Correction" when ChargeClass is not null.
 
 ## Column ID
 
@@ -18,8 +21,9 @@ Charge Class
 
 ## Description
 
-Indicates whether the row represents a correction to a previously invoiced *billing period*.
-OCI INDICATED: this restriction may need to be removed as corrections can happen in month... need to be aware of this to avoid historic reprocessing
+Indicates whether the *row* represents a correction to a previously invoiced *billing period*.
+
+***Editor's Note:** OCI INDICATED: this restriction may need to be removed as corrections can happen in month... need to be aware of this to avoid historic reprocessing*
 
 ## Content Constraints
 
@@ -33,11 +37,11 @@ OCI INDICATED: this restriction may need to be removed as corrections can happen
 
 Allowed values:
 
-| Value      | Description                          |
-| :--------- | :------------------------------------|
+| Value      | Description                                                                                    |
+| :--------- | :----------------------------------------------------------------------------------------------|
 | Correction | Correction to a previously invoiced *billing period* (e.g., refunds and credit modifications). |
 
-OPTIONS:
+***Editor's Note:** OPTIONS:*
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|

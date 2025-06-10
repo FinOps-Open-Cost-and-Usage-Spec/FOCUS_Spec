@@ -54,7 +54,7 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e. hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
+A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
@@ -62,11 +62,15 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
-The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
+The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+
+<a name="glossary:correction"><b>Correction</b></a>
+
+A charge to correct cost or usage data in a previously invoiced [*billing period*](#glossary:billing-period).
 
 <a name="glossary:credit"><b>Credit</b></a>
 
-A positive balance or amount remaining for free/discounted usage of services that is provided independently of other charges.
+A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
@@ -76,7 +80,7 @@ A specification-defined categorical attribute that provides context or categoriz
 
 The amortized cost of the charge after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
 
-<a name="glossary:exclusivebound"><b>Exclusive Bound</b></a>
+<a name="glossary:exclusiveendbound"><b>Exclusive End Bound</b></a>
 
 A Date/Time Format value that is not contained within the ending bound of a time period.
 
@@ -90,9 +94,9 @@ An open-source specification that defines requirements for billing data.
 
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
-A structured collection of cost and usage data that meets or exceeds the Basic compliance criteria of FOCUS.
+A structured collection of cost and usage data that meets the [BCP14](https://tools.ietf.org/html/bcp14) criteria defined by FOCUS. In addition to FOCUS columns, the dataset should include custom provider columns (prefixed with `x_`) when these columns provide additional information not captured by the existing FOCUS columns. If introducing a custom column could result in splitting original charge records into multiple entries, the data generator is responsible for ensuring that the FOCUS dataset fully conforms to all aggregation-related requirements for metric columns, particularly those concerning costs and quantities.
 
-<a name="glossary:inclusivebound"><b>Inclusive Bound</b></a>
+<a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
 
@@ -102,7 +106,7 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
+The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
@@ -112,13 +116,17 @@ A company or organization that provides outsourced management and support of a r
 
 A FOCUS-defined column that provides numeric values, allowing for aggregation operations such as arithmetic operations (sum, multiplication, averaging etc.) and statistical operations.
 
+<a name="glossary:national-currency"><b>National Currency</b></a>
+
+A government-issued currency (e.g., US dollars, Euros).
+
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
 A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
-A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e. on demand.
+A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
 
 <a name="glossary:pascalcase"><b>Pascal Case</b></a>
 
@@ -142,7 +150,7 @@ An entity that made internal or 3rd party resources and/or services available fo
 
 <a name="glossary:refund"><b>Refund</b></a>
 
-A return/repayment of funds that have previously been charged.
+A return of funds that have previously been charged.
 
 <a name="glossary:resource"><b>Resource</b></a>
 
@@ -162,7 +170,7 @@ A construct composed of the common properties of a product offering associated w
 
 <a name="glossary:sku-price"><b>SKU Price</b></a>
 
-The unit price used to calculate a charge that is associated with one SKU.  SKU Prices are usually referenced from the provider's price list and are unique to various providers.
+A pricing construct that encompasses SKU properties (e.g., functionality and technical specifications), along with core stable pricing details for a particular SKU, while excluding dynamic or negotiable pricing elements such as unit price amounts, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific factors (e.g., contract or account identifiers, and negotiable discounts).
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
@@ -179,3 +187,7 @@ A Resource or Provider-defined construct for grouping resources and/or other Pro
 <a name="glossary:term"><b>Term</b></a>
 
 A duration of a contractual agreement like with a [*commitment discount*](#glossary:commitment-discount) or [*negotiated discount*](#glossary:negotiated-discount).
+
+<a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
+
+A proprietary currency (e.g., credits, tokens) issued by providers and independent of government regulation.
