@@ -138,7 +138,7 @@ Each Action Item is assigned an AI Status of `Open` upon creation.
 
 This section details best practices for the creation of content that is added to the specification.  This section will be augmented over time.
 
-**Practical Implementation of the Specification Lifecycle Using GitHub***
+**Practical Implementation of the Specification Lifecycle Using GitHub**
 
 The FOCUS [Specification LifeCycle](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#51-specification-lifecycle) consists of multiple phases that guide the creation, refinement, and approval of technical standards. The following diagrams illustrate how the two initial phases—**Scope Definition** and **Specification Development**—are implemented using GitHub Issues and Pull Requests (PRs), with labels used to track progress and workflow status.
 
