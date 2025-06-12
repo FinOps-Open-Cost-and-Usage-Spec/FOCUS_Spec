@@ -2,8 +2,8 @@
 
 ## Overview
 
-This document is aimed at outlining how the FOCUS Working Group develops the specification.  It defines the workflows, processes, and collaboration expectations for all development activities, including Issue management, Pull Request handling, approval workflows, and communication guidelines.\
-\
+This document is aimed at outlining how the FOCUS Working Group develops the specification.  It defines the workflows, processes, and collaboration expectations for all development activities, including Issue management, Pull Request handling, approval workflows, and communication guidelines.
+
 Nothing in this document overrides any requirements of the FOCUS Working Group as outlined in the [FOCUS Foundation repository,](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation) including the [workflows](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/workflow-procedures.md) required to maintain our [intellectual property review](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/ipr.md) (IPR) protections. All members are required to follow the FOCUS project’s [code of conduct](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/code_of_conduct.md).
 
 
@@ -39,9 +39,21 @@ Feedback Issues will have a title that starts with \`\[Feedback]\`.
 
 #### Feature Request
 
-All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature Request. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feature Request Issues within the GitHub repository. The description for feature request items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g. Column names, types of data to include, normative text suggestions). 
+All suggestions and feature requests should be introduced to the FOCUS project via GitHub Issues of the type Feature. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feature Request Issues within the GitHub repository. 
 
-Feature Request Issues will have the Type: Feature Request and Label: feature request, and be associated with the FOCUS WG project.
+_Normative guidelines to develop high-quality feature request titles_:
+- **Start with a standard verb**. Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
+- **Use correct sentence structure**. Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target
+(e.g. “Add provider-calculated shared cost allocation” vs “Standardize tag export across clouds”)
+- **Describe the outcome, not the implementation**. “Add daily amortized cost” > “Create SQL to amortize daily”
+- **Sentence case; acronyms uppercase; no ALL-CAPS words**. “Add RI coverage metric” not “ADD RI COVERAGE METRIC”
+- **Use canonical FOCUS terminology; stay provider-agnostic**. Vendor specifics belong in examples, not the title
+- **Express one concept per title**. If you need two independent changes, create two issues. "And" and "or" are indications that multiple issues are needed
+- **Trim filler words unless they improve clarity**. Drop “the,” “of,” “for,” etc., where possible to save space
+- **Keep titles ≤ 75 characters (aim for ~60)**. Short enough to fit in GitHub lists, change logs, and slides without wrapping
+- **Don’t end with a trailing period**
+
+Feature Request Issues will have the Type: "Feature" and Label: "feature", and be associated with the FOCUS WG project.
 
 Everyone is welcome to add comments to further define the feature request item, add concerns and/or considerations you would like to see taken into account when developing a solution for the feature request. Support for a feature request item can also be shown in the form of reactions on the Issue ticket.
 
@@ -87,8 +99,8 @@ Each issue carries one of the following Status values, which represent the overa
 - Under Consideration: being actively evaluated for upcoming spec work
 - Accepted in Scope: will be developed in next release
 - Ready for Dev: not started
-`In Discovery`: defining the concepts that this issue will entail via Task Force
-`In Development`: discussing solution for how to solve for the concept / design via Task Force
+- In Discovery: defining the concepts that this issue will entail via Task Force
+- In Development: discussing solution for how to solve for the concept / design via Task Force
 - PR Needed: TF requires a concrete proposal to move forward
 - PR In Draft: PR being authored
 - PR TF Review: PR issued and in review with Task Force
@@ -156,6 +168,9 @@ This diagram represents the **Specification Development** phase, where implement
 
 This system of labeled pull requests provides clear visibility into the status of each contribution and ensures a structured path toward readiness for the **Consistency Review** stage.
 
+### Use of Google Drive During Active Development
+
+During active development, it is common practice for each Work Item to have a dedicated Google Drive folder shared internally among FOCUS members. These folders typically follow a consistent naming convention that includes the Work Item number and a brief, human-readable description. This approach ensures easy access, efficient navigation, and smooth collaboration when working with shared materials.
 
 ### Table Conversion for Markdown
 
