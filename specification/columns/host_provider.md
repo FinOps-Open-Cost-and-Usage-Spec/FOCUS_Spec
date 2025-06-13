@@ -35,4 +35,4 @@ The name of the entity whose *resources* are used by the Service Provider to mak
 
 ## Introduced (version)
 
-1.2
+1.3
