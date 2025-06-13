@@ -9,8 +9,7 @@ The InvoiceIssuerName column adheres to the following requirements:
 * InvoiceIssuerName MUST conform to [StringHandling](#stringhandling) requirements.
 * InvoiceIssuerName MUST NOT be null.
 
-See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider](#provider), [Publisher](#publisher) and
-Invoice Issuer values that can be used for various purchasing scenarios.
+See [Appendix: Entity Identification Examples](#entityidentification) section for examples of Invoice Issuer values for various use case scenarios.
 
 ## Column ID
 
