@@ -31,7 +31,7 @@ Indicates how to include and apply refunds to usage charges or rows in a FOCUS d
 
 ## Requirements
 
-* *TODO*
+* TODO
 
 ## Exceptions
 

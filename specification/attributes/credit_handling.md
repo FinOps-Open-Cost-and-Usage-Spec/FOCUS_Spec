@@ -31,7 +31,7 @@ Indicates how to include and apply credit rows in a FOCUS dataset.
 
 ## Requirements
 
-* *TODO*
+* TODO
 
 ## Exceptions
 

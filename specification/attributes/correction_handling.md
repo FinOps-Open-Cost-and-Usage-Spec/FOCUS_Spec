@@ -41,7 +41,7 @@ Indicates how to include and apply discounts to usage charges or rows in a FOCUS
 
 ## Requirements
 
-* *TODO*
+* TODO
 
 ## Exceptions
 
