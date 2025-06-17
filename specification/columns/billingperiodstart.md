@@ -10,6 +10,8 @@ The BillingPeriodStart column adheres to the following requirements:
 * BillingPeriodStart MUST NOT be null.
 * BillingPeriodStart MUST be the *inclusive start bound* of the *billing period*.
 
+***Editor's Note:** add reference to credit and refund attributes.*
+
 ## Column ID
 
 BillingPeriodStart
