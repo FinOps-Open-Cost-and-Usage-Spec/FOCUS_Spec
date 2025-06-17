@@ -28,7 +28,7 @@ Issues should be created via the use of issue templates that adhere to Issue Typ
 
 #### Feedback
 
-All minor corrections (typos, syntax, editorial changes) should be introduced to the FOCUS project via GitHub Issues of the type Feedback. The template for these Issues will ensure the needed information is gathered and available for prioritisation processes. Anyone can submit Feedback Issues within the GitHub repository. The description for feedback items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g. Column names, types of data to include, normative text suggestions). 
+All minor corrections (typos, syntax, editorial changes) should be introduced to the FOCUS project via GitHub Issues of the type Feedback. The template for these Issues will ensure the needed information is gathered and available for prioritization processes. Anyone can submit Feedback Issues within the GitHub repository. The description for feedback items should aim to be clear what the desired outcome should be, however for non-FOCUS members a solution should not be included (e.g. Column names, types of data to include, normative text suggestions). 
 
 Feedback Issues will have the Type: Feedback and Label: feedback, and be associated with the FOCUS WG project.
 
