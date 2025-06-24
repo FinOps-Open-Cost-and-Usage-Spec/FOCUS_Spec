@@ -1,18 +1,18 @@
-# Github Guidelines
+# GitHub Guidelines
 
-Guidelines, recommendations, and instructions for how to work with FOCUS on github.
+Guidelines, recommendations, and instructions for how to work with FOCUS on GitHub.
 
 ## Table of Contents
 
-1. [Logging into GitHub](#logging-into-github)
+1. [Logging into GitHub](#logging-into-GitHub)
 2. [Configuring Notifications](#configuring-notifications)
-3. [Installing GitHub Desktop](#installing-github-desktop)
+3. [Installing GitHub Desktop](#installing-GitHub-desktop)
 4. [Describe Specification Layout](#describe-specification-layout)
 5. [How to Submit an Issue](#how-to-submit-an-issue)
 6. [How to Interact (review, comment, participate in, etc.) with an Issue](#how-to-interact-review-comment-participate-in-etc-with-an-issue)
-7. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
-8. [How to submit a Pull Request (PR) using Github Desktop and VSCode](#how-to-submit-a-pr-using-github-desktop-and-vscode)
-9. [How to submit changes to an an existing PR using github desktop and vscode](#how-to-submit-changes-to-an-an-existing-pr-using-github-desktop-and-vscode)
+7. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-GitHub-desktop)
+8. [How to submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pr-using-GitHub-desktop-and-vscode)
+9. [How to submit changes to an an existing PR using GitHub desktop and vscode](#how-to-submit-changes-to-an-an-existing-pr-using-GitHub-desktop-and-vscode)
 10. [Data Exercise to learn FOCUS columns](#data-exercise-to-learn-focus-columns)
 11. [Tips for Success](#tips-for-success)
 
@@ -24,7 +24,7 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on gith
 
 If you don't have a GitHub account yet:
 
-1. Go to [github.com](https://github.com)
+1. Go to [GitHub.com](https://GitHub.com)
 2. Click the **Sign up** button in the top right corner
 3. Enter your email address, create a password, and choose a username
 4. Complete the verification process
@@ -32,7 +32,7 @@ If you don't have a GitHub account yet:
 
 ### Logging In
 
-1. Navigate to [github.com](https://github.com)
+1. Navigate to [GitHub.com](https://GitHub.com)
 2. Click **Sign in** in the top right corner
 3. Enter your username/email and password
 4. If you have two-factor authentication enabled, enter your authentication code
@@ -113,14 +113,14 @@ GitHub Desktop is a user-friendly application that makes it easy to work with Gi
 
 **For Windows:**
 
-1. Go to [desktop.github.com](https://desktop.github.com)
+1. Go to [desktop.GitHub.com](https://desktop.GitHub.com)
 2. Click **Download for Windows**
 3. Run the downloaded installer
 4. Follow the installation wizard
 
 **For Mac:**
 
-1. Go to [desktop.github.com](https://desktop.github.com)
+1. Go to [desktop.GitHub.com](https://desktop.GitHub.com)
 2. Click **Download for macOS**
 3. Open the downloaded .zip file
 4. Drag GitHub Desktop to your Applications folder
@@ -153,7 +153,7 @@ Cloning creates a local copy of a repository on your computer, allowing you to w
 
 ### Method 1: Clone from GitHub.com
 
-1. Go to the repository you want to clone on GitHub.com (`https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec`)
+1. Go to the repository you want to clone on GitHub.com (`https://GitHub.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec`)
 2. Click the **Code** button (toward the upper right part of the screen)
 3. Select **Open with GitHub Desktop**
 4. GitHub Desktop will open automatically
@@ -177,7 +177,7 @@ Cloning creates a local copy of a repository on your computer, allowing you to w
 
 **Using URL tab:**
 
-1. Enter the repository URL (e.g., `(https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec)`)
+1. Enter the repository URL (e.g., `(https://GitHub.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec)`)
 2. Choose the local path
 3. Click **Clone**
 
@@ -196,7 +196,7 @@ Once cloned, you can:
 1. **Making changes:** Edit files in your preferred editor (recommend [VSCode](https://code.visualstudio.com/))
 2. **Reviewing changes:** GitHub Desktop shows all modified files in the left panel
 3. **Committing changes:**
-   - You will need to submit a Pull Request to make changes to the FOCUS repository.  See [Working with Pull Requests](#working-with-pull-requests) and [How to Submit a Pull Request (PR) using Github Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
+   - You will need to submit a Pull Request to make changes to the FOCUS repository.  See [Working with Pull Requests](#working-with-pull-requests) and [How to Submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-GitHub-desktop-and-vscode)
 
 ---
 
@@ -208,7 +208,7 @@ Pull requests are a way to propose changes to a repository. Sometimes you'll nee
 
 When someone creates a pull request, they're proposing to merge changes from one branch (usually called a "feature branch") into another branch (usually "main" or "master"). To work on a pull request, you need to check out the feature branch.
 
-## How to Submit a Pull Request (PR) using Github Desktop and VSCode
+## How to Submit a Pull Request (PR) using GitHub Desktop and VSCode
 
 ### Method 1: Checking Out a Pull Request from GitHub Desktop
 
@@ -235,15 +235,15 @@ When someone creates a pull request, they're proposing to merge changes from one
 
 **Step 1: Find the Pull Request Branch Name**
 
-1. Go to the pull request on GitHub.com (https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pulls)
-2. For this example, we'll use [PR 1088](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1088)
-3. Look for the branch information near the top (e.g., "ljadvey wants to merge 3 commits into working_draft from 1016/github-guidelines")
-4. Note the source branch name (in this example, "1016/github-guidelines")
+1. Go to the pull request on GitHub.com (https://GitHub.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pulls)
+2. For this example, we'll use [PR 1088](https://GitHub.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1088)
+3. Look for the branch information near the top (e.g., "ljadvey wants to merge 3 commits into working_draft from 1016/GitHub-guidelines")
+4. Note the source branch name (in this example, "1016/GitHub-guidelines")
 
 **Step 2: Clone and Check Out**
 
-1. Clone the repository if you haven't already (see [Cloning a Repository with Github Desktop](#cloning-a-repository-with-github-desktop))
-2. In GitHub Desktop, use the branch dropdown to find and check out the pull request branch (`1016/github-guidelines`)
+1. Clone the repository if you haven't already (see [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-GitHub-desktop))
+2. In GitHub Desktop, use the branch dropdown to find and check out the pull request branch (`1016/GitHub-guidelines`) by clicking on the branch which will automatically load the file changes from the repository.
 
 ### Making Modifications to the Pull Request
 
@@ -254,7 +254,7 @@ When someone creates a pull request, they're proposing to merge changes from one
 
 **Step 2: Make Your Changes**
 
-1. Open the repository files in your preferred text editor or IDE
+1. Open the repository files in your preferred text editor or IDE (recommend [VSCode](https://code.visualstudio.com/))
 2. Make the necessary modifications to the code
 3. Save your changes
 
@@ -269,9 +269,9 @@ When someone creates a pull request, they're proposing to merge changes from one
 **Step 1: Stage and Commit Changes**
 
 1. In GitHub Desktop, review all the changes you want to include
-2. Write a clear commit message describing your modifications
+2. Write a clear commit message describing your modifications (in the bottom left part of the GitHub Desktop window)
 3. Optionally, add a longer description explaining the reasoning behind your changes
-4. Click **Commit to [branch-name]**
+4. Click **Commit # file to [branch-name]**
 
 **Step 2: Push Changes to the Pull Request**
 
@@ -353,7 +353,7 @@ When someone creates a pull request, they're proposing to merge changes from one
 
 ---
 
-## How to Submit Changes to an an Existing PR using Github Desktop and VSCode
+## How to Submit Changes to an an Existing PR using GitHub Desktop and VSCode
 
 ---
 
@@ -379,8 +379,8 @@ When someone creates a pull request, they're proposing to merge changes from one
 
 ### Getting Help
 
-- **GitHub Desktop documentation:** [docs.github.com/desktop](https://docs.github.com/desktop)
-- **GitHub Support:** [support.github.com](https://support.github.com)
-- **Community Forum:** [github.community](https://github.community)
+- **GitHub Desktop documentation:** [docs.GitHub.com/desktop](https://docs.GitHub.com/desktop)
+- **GitHub Support:** [support.GitHub.com](https://support.GitHub.com)
+- **Community Forum:** [GitHub.community](https://GitHub.community)
 
 
