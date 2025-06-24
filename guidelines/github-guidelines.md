@@ -11,7 +11,7 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on gith
 5. [How to Submit an Issue](#how-to-submit-an-issue)
 6. [How to Interact (review, comment, participate in, etc.) with an Issue](#how-to-interact-review-comment-participate-in-etc-with-an-issue)
 7. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
-8. [How to submit a PR using Github Desktop and VSCode](#how-to-submit-a-pr-using-github-desktop-and-vscode)
+8. [How to submit a Pull Request (PR) using Github Desktop and VSCode](#how-to-submit-a-pr-using-github-desktop-and-vscode)
 9. [How to submit changes to an an existing PR using github desktop and vscode](#how-to-submit-changes-to-an-an-existing-pr-using-github-desktop-and-vscode)
 10. [Data Exercise to learn FOCUS columns](#data-exercise-to-learn-focus-columns)
 11. [Tips for Success](#tips-for-success)
@@ -149,12 +149,12 @@ GitHub Desktop is a user-friendly application that makes it easy to work with Gi
 
 ## Cloning a Repository with GitHub Desktop
 
-Cloning creates a local copy of a repository on your computer, allowing you to work on it offline and sync changes.
+Cloning creates a local copy of a repository on your computer, allowing you to work on it offline and then sync changes in the future.
 
 ### Method 1: Clone from GitHub.com
 
-1. Go to the repository you want to clone on GitHub.com
-2. Click the green **Code** button
+1. Go to the repository you want to clone on GitHub.com (`https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec`)
+2. Click the **Code** button (toward the upper right part of the screen)
 3. Select **Open with GitHub Desktop**
 4. GitHub Desktop will open automatically
 5. Choose where to save the repository on your computer
@@ -171,13 +171,13 @@ Cloning creates a local copy of a repository on your computer, allowing you to w
 
 **Using GitHub.com tab:**
 
-1. Select the repository you want to clone
+1. Select the repository you want to clone (`FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec`)
 2. Choose the local path where you want to save it
 3. Click **Clone**
 
 **Using URL tab:**
 
-1. Enter the repository URL (e.g., `https://github.com/username/repository-name.git`)
+1. Enter the repository URL (e.g., `(https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec)`)
 2. Choose the local path
 3. Click **Clone**
 
@@ -186,27 +186,170 @@ Cloning creates a local copy of a repository on your computer, allowing you to w
 Once cloned, you can:
 
 - **View files:** Browse the repository files in your file explorer
-- **Make changes:** Edit files using your preferred text editor or IDE
+- **Make changes:** Edit files using your preferred text editor or IDE (recommend [VSCode](https://code.visualstudio.com/))
 - **Commit changes:** Save your changes with a descriptive message
 - **Push to GitHub:** Upload your changes back to the online repository
 - **Pull updates:** Download changes made by others
 
 ### Working with Your Cloned Repository
 
-1. **Making changes:** Edit files in your preferred editor
+1. **Making changes:** Edit files in your preferred editor (recommend [VSCode](https://code.visualstudio.com/))
 2. **Reviewing changes:** GitHub Desktop shows all modified files in the left panel
 3. **Committing changes:**
-   - Add a commit message describing your changes
-   - Click **Commit to main** (or your current branch)
-4. **Pushing changes:**
-   - Click **Push origin** to upload your commits to GitHub
-5. **Pulling changes:**
-   - Click **Fetch origin** to check for updates
-   - If updates are available, click **Pull origin**
+   - You will need to submit a Pull Request to make changes to the FOCUS repository.  See [Working with Pull Requests](#working-with-pull-requests) and [How to Submit a Pull Request (PR) using Github Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
 
 ---
 
-## How to Submit a PR using Github Desktop and VSCode
+## Working with Pull Requests
+
+Pull requests are a way to propose changes to a repository. Sometimes you'll need to work on an existing pull request to make modifications or add features. Here's how to clone a pull request, make changes, and push them back.
+
+### Understanding Pull Request Branches
+
+When someone creates a pull request, they're proposing to merge changes from one branch (usually called a "feature branch") into another branch (usually "main" or "master"). To work on a pull request, you need to check out the feature branch.
+
+## How to Submit a Pull Request (PR) using Github Desktop and VSCode
+
+### Method 1: Checking Out a Pull Request from GitHub Desktop
+
+**Step 1: Clone the Repository**
+
+1. First, clone the repository using the methods described in the previous section
+2. Make sure you have the repository open in GitHub Desktop
+
+**Step 2: Fetch All Branches**
+
+1. In GitHub Desktop, click **Repository** → **Pull** to ensure you have the latest changes
+2. Click **Branch** → **New Branch** to see available branches
+3. GitHub Desktop automatically fetches remote branches
+
+**Step 3: Check Out the Pull Request Branch**
+
+1. Look for the branch associated with the pull request (you can find the branch name on the GitHub pull request page)
+2. In GitHub Desktop, click **Current Branch** dropdown at the top
+3. Look for the branch under **Remote branches**
+4. Click on the branch name to check it out locally
+5. GitHub Desktop will create a local copy of the remote branch
+
+### Method 2: Using GitHub's Pull Request Interface
+
+**Step 1: Find the Pull Request Branch Name**
+
+1. Go to the pull request on GitHub.com (https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pulls)
+2. For this example, we'll use [PR 1088](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1088)
+3. Look for the branch information near the top (e.g., "ljadvey wants to merge 3 commits into working_draft from 1016/github-guidelines")
+4. Note the source branch name (in this example, "1016/github-guidelines")
+
+**Step 2: Clone and Check Out**
+
+1. Clone the repository if you haven't already (see [Cloning a Repository with Github Desktop](#cloning-a-repository-with-github-desktop))
+2. In GitHub Desktop, use the branch dropdown to find and check out the pull request branch (`1016/github-guidelines`)
+
+### Making Modifications to the Pull Request
+
+**Step 1: Ensure You're on the Correct Branch**
+
+1. In GitHub Desktop, verify the current branch name matches the pull request branch
+2. The branch name is displayed at the top of the GitHub Desktop interface
+
+**Step 2: Make Your Changes**
+
+1. Open the repository files in your preferred text editor or IDE
+2. Make the necessary modifications to the code
+3. Save your changes
+
+**Step 3: Review Your Changes**
+
+1. Return to GitHub Desktop
+2. You'll see your modified files listed in the left panel under "Changes"
+3. Click on each file to review the specific changes (additions in green, deletions in red)
+
+### Committing and Pushing Changes
+
+**Step 1: Stage and Commit Changes**
+
+1. In GitHub Desktop, review all the changes you want to include
+2. Write a clear commit message describing your modifications
+3. Optionally, add a longer description explaining the reasoning behind your changes
+4. Click **Commit to [branch-name]**
+
+**Step 2: Push Changes to the Pull Request**
+
+1. After committing, click **Push origin** in GitHub Desktop
+2. This uploads your changes to the remote branch
+3. Your changes will automatically appear in the existing pull request
+
+### Verifying Your Changes
+
+**Step 1: Check the Pull Request Page**
+
+1. Go back to the pull request page on GitHub.com
+2. You should see your new commits listed in the conversation
+3. The "Files changed" tab will show your modifications
+
+**Step 2: Update Pull Request Description (if needed)**
+
+1. If your changes significantly alter the pull request's purpose, update the description
+2. Add comments explaining your modifications
+3. Tag relevant reviewers if necessary
+
+### Collaborative Pull Request Workflow
+
+**Working with Others:**
+
+1. **Communication:** Leave comments on the pull request explaining your changes
+2. **Conflict Resolution:** If others have pushed changes, you may need to pull their updates first
+3. **Review Process:** Your changes will go through the same review process as the original pull request
+
+**Handling Conflicts:**
+
+1. If there are merge conflicts, GitHub Desktop will show them clearly
+2. Use GitHub Desktop's built-in merge editor to resolve conflicts
+3. Commit the resolved conflicts and push to update the pull request
+
+### Best Practices for Pull Request Modifications
+
+**Before Making Changes:**
+
+- Read through the existing pull request description and comments
+- Understand the original intent and scope
+- Communicate with the original author if making significant changes
+
+**When Making Changes:**
+
+- Keep modifications focused and related to the pull request's purpose
+- Write clear commit messages that explain what and why
+- Test your changes thoroughly before pushing
+
+**Communication:**
+
+- Leave clear comments about what you changed and why
+- Tag the original pull request author
+- Update the pull request description if your changes expand the scope
+
+### Troubleshooting Common Issues
+
+**Branch Not Found:**
+
+- Make sure you've fetched the latest changes from the remote repository
+- Verify the branch name matches exactly what's shown in the pull request
+
+**Permission Issues:**
+
+- Ensure you have write access to the repository
+- For forks, you may need to push to your own fork and create a new pull request
+
+**Merge Conflicts:**
+
+- Pull the latest changes from the target branch (usually main)
+- Resolve conflicts using GitHub Desktop's merge editor
+- Commit the resolution and push
+
+**Changes Not Appearing:**
+
+- Verify you're on the correct branch before making changes
+- Ensure you've committed and pushed your changes
+- Check that you're looking at the right pull request
 
 ---
 
