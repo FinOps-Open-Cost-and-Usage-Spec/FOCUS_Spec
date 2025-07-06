@@ -9,13 +9,11 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on GitH
 3. [Configuring Notifications](#configuring-notifications)
 4. [Installing GitHub Desktop](#installing-github-desktop)
 5. [Installing Visual Studio Code](#installing-visual-studio-code)
-6. [How to Submit an Issue](#how-to-submit-an-issue)
-7. [How to Interact (review, comment, participate in, etc.) with an Issue](#how-to-interact-review-comment-participate-in-etc-with-an-issue)
-8. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
-9. [How to submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
-10. [How to submit changes to an an existing PR using GitHub desktop and vscode](#how-to-submit-changes-to-an-an-existing-pr-using-github-desktop-and-vscode)
-11. [Data Exercise to learn FOCUS columns](#data-exercise-to-learn-focus-columns)
-12. [Tips for Success](#tips-for-success)
+6. [How to Interact (review, comment, participate in, etc.) with an Issue via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-an-issue-via-web-browser)
+7. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
+8. [How to submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
+9. [How to submit changes to an an existing PR using GitHub desktop and vscode](#how-to-submit-changes-to-an-an-existing-pr-using-github-desktop-and-vscode)
+10. [Tips for Success](#tips-for-success)
 
 ---
 
@@ -23,11 +21,11 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on GitH
 
 ## General Overview of FOCUS_Spec Repository
 
-The FOCUS_Spec repository contains the FinOps Open Cost and Usage Specification (FOCUS), which is a community-driven effort to develop a standard schema for cloud, SaaS, and other billing data. The primary goal of the FOCUS specification is to make it easier to understand, report on, and manage cloud costs.
+The [FOCUS_Spec repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) contains the FinOps Open Cost and Usage Specification (FOCUS), which is a community-driven effort to develop a standard schema for cloud, SaaS, and other billing data. The primary goal of the FOCUS specification is to make it easier to understand, report on, and manage cloud costs.
 
 ## Repository Purpose
 
-FOCUS is designed to address the complexity that FinOps practitioners face when dealing with disparate billing data formats from different cloud providers. Without a standard, each provider generates unique billing data files with their own terminology, forcing practitioners to develop custom normalization schemes for each provider.
+FOCUS is designed to address the complexity that FinOps practitioners face when dealing with disparate billing data formats from different cloud, software, and other providers. Without a standard, each provider generates unique billing data files with their own terminology, forcing practitioners to develop custom normalization schemes for each provider.
 
 ## Main Folders and Their Contents
 
@@ -50,7 +48,7 @@ The repository provides supporting content that includes example mappings betwee
 
 ### 3. `guidelines` folder
 
-This folder contains various guidelines on development, editorial, normative requirements, spec change, and spec design.
+This folder contains various guidelines on development, editorial, normative requirements, specification change, and specification design.
 
 ### 4. Documentation Structure
 
@@ -60,33 +58,13 @@ The repository follows standard documentation patterns with:
 - **`CHANGELOG.md`** - Version changes and updates
 - Various markdown files for specification details
 
-## Key Content Areas
-
-### Specification Details
-
-- Column definitions (dimensions and metrics), column-specific requirements, and attributes (spec-wide requirements)
-- Data dimensions, metrics, a set of attributes about billing data, and a common lexicon for describing billing data
-- Requirements using standard terminology (MUST, SHOULD, MAY, etc.) following BCP 14 standards
-
-### Provider Integration
-
-- Support for major cloud providers including Microsoft Azure, Oracle Cloud, AWS, and Google Cloud Platform
-- Example mappings showing how provider-specific billing data maps to FOCUS standard format
-- Conversion guidelines and best practices
-
-### Use Cases and Examples
-
-- Library of FinOps capabilities that can be solved by FOCUS data
-- Cost reporting use cases
-- Chargeback scenarios enabled by net cost and amortized cost metrics
-
 ## Repository Organization Principles
 
 The repository is organized around several key principles:
 
 ### FinOps Scenario-Driven Development
 
-- Columns are defined to answer scenario questions rather than looking for scenarios to fit existing columns
+- Columns are defined to answer use cases rather than looking for use cases to fit existing columns
 - Each column must have a clear use case
 - Work backward from essential FinOps capabilities to prioritize dimensions, metrics, and attributes
 
@@ -94,44 +72,21 @@ The repository is organized around several key principles:
 
 - Incremental iterations released regularly to provide higher value to practitioners
 - Allow feedback as the specification develops
-- Goal is not to create a complete, finished specification in one pass
+- The specification is expected to evolve over time
 
 ### Provider Neutrality
 
-- Contributors must ensure the specification examines how each decision relates to each of the major cloud providers
+- Contributors must ensure the specification examines how each decision relates to each of the major cloud, SaaS, and other providers
 - Does not favor any single provider's implementation
 - Prioritizes enabling FinOps capabilities and alignment with the FinOps Framework
-
-## Specification Features
-
-### Version Information
-
-- Current focus on version 1.2 which introduces foundational support for Software as a Service (SaaS) platforms
-- Includes normative columns for pricing currencies, effective cost, and contracted pricing in non-monetary units such as credits or tokens
-- Versioned based on Semantic Versioning 2.0
-
-### Extensibility
-
-- Supports extensibility through structured naming conventions (e.g., x_ custom columns)
-- Conditional requirements
-- Version-aware schema approach
-
-### Future Considerations
-
-Future versions of FOCUS will consider including additional FinOps capabilities such as:
-
-- Forecasting
-- Exchange rate modeling
-- Anomaly detection
-- Support for broader range of billing and cost datasets including internal infrastructure platforms and marketplace offerings
 
 ## Target Audience
 
 The specification is designed to be used by three major groups:
 
-1. **Billing Data Generators** - Infrastructure and services providers that bill based on consumption
-2. **FinOps Practitioners** - Professionals who analyze and manage cloud costs
-3. **FinOps Tool Vendors** - Companies that provide tools and platforms for cloud cost management
+1. **Billing Data Generators** - Cloud, SaaS, and other infrastructure and service providers that bill based on consumption.
+2. **FinOps Practitioners** - Professionals who analyze and manage cloud costs.
+3. **FinOps Tool Vendors** - Companies that provide tools and platforms for cloud cost management.
 
 ## Repository Status
 
@@ -149,7 +104,7 @@ The repository appears to be well-structured for both specification development 
 
 ## Logging into GitHub
 
-### Creating a GitHub Account
+### Create a GitHub Account
 
 If you don't have a GitHub account yet:
 
@@ -236,7 +191,7 @@ For individual repositories:
 
 ## Installing GitHub Desktop
 
-GitHub Desktop is a user-friendly application that makes it easy to work with Git and GitHub repositories without using the command line.
+GitHub Desktop is a user-friendly application that makes it easy to work with Git and GitHub repositories without using the command line.  Further, GitHub desktop allows you to work with the repository (clone, branch, etc.) and push changes to the repository via pull requests.
 
 ### Download and Installation GitHub Desktop
 
@@ -315,15 +270,6 @@ Visual Studio Code (VSCode) is a free, powerful code editor that integrates exce
 2. You may see a welcome screen with helpful getting started information
 3. VSCode will automatically detect your system settings and apply appropriate defaults
 
-**Essential Extensions for GitHub Development:**
-
-1. Click the **Extensions** icon in the sidebar (or press `Ctrl+Shift+X`)
-2. Install these recommended extensions:
-   - **GitHub Pull Requests and Issues** - Manage pull requests and issues directly from VSCode
-   - **GitLens** - Supercharge Git capabilities with blame annotations, code lens, and more
-   - **GitHub Copilot** (optional, requires subscription) - AI-powered code completion
-   - **Bracket Pair Colorizer** - Makes matching brackets easier to identify
-
 ### Integrating VSCode with GitHub
 
 **GitHub Authentication:**
@@ -337,6 +283,8 @@ Visual Studio Code (VSCode) is a free, powerful code editor that integrates exce
 7. Return to VSCode - you should now be signed in
 
 ### Opening Repository Files in VSCode
+
+This is also elaborated more upon within the [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop) section.
 
 **Method 1: From GitHub Desktop**
 
@@ -374,15 +322,6 @@ Visual Studio Code (VSCode) is a free, powerful code editor that integrates exce
    - Commit message box
    - Sync status with remote repository
 
-**Making Commits:**
-
-1. Make changes to your files
-2. Changed files will appear in the Source Control panel
-3. Click the **+** icon next to files to stage them
-4. Enter a commit message in the text box
-5. Click the **✓** (checkmark) button to commit
-6. Click **Sync Changes** to push to GitHub
-
 **Viewing Git History:**
 
 1. Install the **GitLens** extension
@@ -390,16 +329,11 @@ Visual Studio Code (VSCode) is a free, powerful code editor that integrates exce
 3. Click on any line to see commit details
 4. Use the **GitLens** panel to explore repository history
 
-**Managing Branches:**
-
-1. Click the branch name in the bottom-left status bar
-2. Select **Create new branch** or choose an existing branch
-3. VSCode will switch to the selected branch
-4. Make changes and commit as usual
-
 ### Working with GitHub Features in VSCode
 
 **Pull Requests:**
+
+See [Working with Pull Requests](#working-with-pull-requests) for more details.
 
 1. With the **GitHub Pull Requests and Issues** extension installed
 2. Click the **GitHub** icon in the sidebar
@@ -408,40 +342,24 @@ Visual Studio Code (VSCode) is a free, powerful code editor that integrates exce
 
 **Issues:**
 
+See [How to Interact (review, comment, participate in, etc.) with an Issue via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-an-issue-via-web-browser) for more details.
+
 1. Access GitHub issues from the same GitHub panel
 2. Create new issues or work on existing ones
 3. Link commits to issues using keywords like "fixes #123"
 
 **Code Reviews:**
 
+See [Reviewing and Commenting on GitHub Issues](#reviewing-and-commenting-on-github-issues) for more details.
+
 1. Open a pull request in the GitHub panel
 2. Review changes with inline comments
 3. Suggest changes directly in the editor
 4. Approve or request changes
 
-### Useful VSCode Shortcuts for Git
-
-- **Ctrl+Shift+G**: Open Source Cont# GitHub Tutorial: Getting Started Guide
-
 ---
 
-## How to Submit an Issue
-
-1. Go to https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues
-2. Click `New Issue` (upper right)
-3. Select the type of Issue that best describes your goal
-  a. Action Item - This is a task within a Work Item issue
-  b. FOCUS Feature Request - Propose a new attribute, refinement, or data structure for the FOCUS specification.
-  c. General Feedback - Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
-  d. Maintenance Task - Create tasks related to work on the GitHub Repository or GitHub Actions.
-  e. Work Item - Template for creating new Work Items (these are linked to a Feature Request)
-  f. Blank issue - try not to use this, please
-4. Fill out the details of the template, please be straight forward and thorough.
-5. Click the `Create` button
-
----
-
-## How to Interact (review, comment, participate in, etc.) with an Issue
+## How to Interact (review, comment, participate in, etc.) with an Issue via Web Browser
 
 ## Reviewing and Commenting on GitHub Issues
 
@@ -456,20 +374,20 @@ GitHub Issues are a powerful way to track bugs, feature requests, tasks, and oth
 - Each issue has a unique number and can be referenced across the repository
 - Issues can be assigned to people, labeled, and organized into milestones
 
-**Issue Components:**
+**Types of Issues**
 
-- **Title:** Brief description of the issue
-- **Description:** Detailed explanation with context, steps to reproduce, etc.
-- **Labels:** Categories like "bug," "enhancement," "documentation"
-- **Assignees:** People responsible for working on the issue
-- **Milestone:** Project phase or version the issue belongs to
-- **Comments:** Discussion thread where collaboration happens
+- Action Item - This is a task within a Work Item issue
+- FOCUS Feature Request - Propose a new attribute, refinement, or data structure for the FOCUS specification.
+- General Feedback - Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
+- Maintenance Task - Create tasks related to work on the GitHub Repository or GitHub Actions.
+- Work Item - Template for creating new Work Items (these are linked to a Feature Request)
+- Blank issue - try not to use this, please
 
 ### Finding and Accessing Issues
 
 **Viewing Repository Issues:**
 
-1. Navigate to any GitHub repository
+1. Navigate to the [FOCUS repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec)
 2. Click the **Issues** tab near the top of the repository page
 3. You'll see a list of open issues by default
 
@@ -487,9 +405,27 @@ GitHub Issues are a powerful way to track bugs, feature requests, tasks, and oth
 1. Use the search bar at the top of the issues list
 2. Search by keywords, labels, or advanced queries
 3. Example searches:
-   - `is:open label:bug` - Open bug reports
+   - `is:issue state:open` - Open issues
+   - `is:issue state:open type:Feature` - All open features
+   - `is:issue state:open label:1.3` - Issues for version 1.3
    - `author:username` - Issues created by specific user
    - `assignee:username` - Issues assigned to specific user
+
+### How to Submit an Issue
+
+Issues are tickets in GitHub and are used to organize various request within FOCUS.
+
+1. Go to https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues
+2. Click `New Issue` (upper right)
+3. Select the type of Issue that best describes your goal
+  a. Action Item - This is a task within a Work Item issue
+  b. FOCUS Feature Request - Propose a new attribute, refinement, or data structure for the FOCUS specification.
+  c. General Feedback - Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
+  d. Maintenance Task - Create tasks related to work on the GitHub Repository or GitHub Actions.
+  e. Work Item - Template for creating new Work Items (these are linked to a Feature Request)
+  f. Blank issue - try not to use this, please
+4. Fill out the details of the template, please be straight forward and thorough.
+5. Click the `Create` button
 
 ### Reading and Analyzing Issues
 
@@ -518,7 +454,6 @@ GitHub Issues are a powerful way to track bugs, feature requests, tasks, and oth
 2. **Provide context** for your comment
 3. **Be specific and actionable**
 4. **Use formatting** to make your comment readable
-
 
 ### Best Practices for Issue Comments
 
@@ -570,47 +505,19 @@ GitHub Issues are a powerful way to track bugs, feature requests, tasks, and oth
 **How to Follow Up:**
 
 ```markdown
-**Update:** I've tested the proposed solution and can confirm it works.
+**Update:** I've reviewed the proposed solution and can confirm it works.
 
 **Testing Environment:**
-- Applied the patch from PR #789
-- Tested with sample data set
-- No errors encountered
+- Read details from PR #789
+- Confirmed compatibility
+- No concerns
 
 The fix resolves the original issue. Thanks for the quick response!
 ```
 
-### Working with Issue Templates
-
-**Understanding Templates:**
-
-- Many repositories use issue templates to guide bug reports and feature requests
-- Templates help ensure all necessary information is provided
-- Follow the template structure when creating or commenting on issues
-
-**Responding to Template Questions:**
-
-- Answer all sections of the template
-- Don't delete template sections - mark them as N/A if not applicable
-- Provide requested information like version numbers, environment details, etc.
-
-### Issue Etiquette for Different Project Types
-
-**Open Source Projects:**
-
-- Be extra patient and respectful - maintainers are often volunteers
-- Read contributing guidelines before commenting
-- Check if the project is actively maintained
-- Consider sponsoring or contributing if you benefit from the project
-
-**Work/Team Projects:**
-
-- Follow your team's established workflows and conventions
-- Use agreed-upon labels and assignment practices
-- Be more direct in communication since you're working with colleagues
-- Include relevant stakeholders in discussions
-
 ### Advanced Issue Management
+
+You can type comments and link issues to each other; entering a hashtag (#) will cause a pop-up to select the linked item (type or scroll to select the item).
 
 **Creating Links Between Issues:**
 
@@ -619,21 +526,6 @@ This issue is related to #123
 This closes #456
 Duplicate of #789
 ```
-
-**Using Keywords for Automation:**
-
-```markdown
-// In commit messages or pull requests
-fixes #123
-closes #456
-resolves #789
-```
-
-**Organizing with Projects:**
-
-- Issues can be added to GitHub Projects for better organization
-- Use project boards to track progress
-- Move issues through different status columns
 
 ### Troubleshooting Common Issues
 
@@ -722,8 +614,67 @@ When someone creates a pull request, they're proposing to merge changes from one
 
 ## How to Submit a Pull Request (PR) using GitHub Desktop and VSCode
 
-//TODO
-TODO
+Here's a comprehensive guide for submitting a Pull Request using GitHub Desktop and VSCode:
+
+## Step-by-Step Instructions
+
+### 1. Create a New Branch (GitHub Desktop)
+
+1. Open GitHub Desktop
+2. Select your repository from the dropdown
+3. Click "Current branch" at the top
+4. Click "New branch"
+5. Name your branch descriptively (e.g., Start with your name (e.g. `flanakin/skuterm`);  Start with the Work Item number (e.g. `636-clarify-guidance-around-refunds`)
+6. Click "Create branch"
+
+### 2. Make Your Changes (VSCode)
+
+1. Open VSCode
+2. Open your project folder (File → Open Folder)
+3. Make your code changes, add new files, or modify existing ones
+4. Save your changes (Ctrl+S / Cmd+S)
+
+### 3. Review and Commit Changes (GitHub Desktop)
+
+1. Switch back to GitHub Desktop
+2. You'll see your changes listed in the left panel
+3. Review the diff in the main panel to ensure changes are correct
+4. Add a descriptive commit message in the bottom left:
+   - **Summary**: Brief description (e.g., "Add user authentication form")
+   - **Description** (optional): More detailed explanation
+5. Click "Commit to [your-branch-name]"
+
+### 4. Push Your Branch
+
+1. After committing, you'll see "Publish branch" or "Push origin"
+2. Click this button to upload your branch to GitHub
+
+### 5. Create the Pull Request
+
+1. GitHub Desktop will show a "Create Pull Request" button - click it
+2. This opens GitHub in your browser, or you can go to your repository on GitHub manually
+3. You'll see a banner suggesting to create a PR for your recently pushed branch
+4. Click "Compare & pull request"
+5. Fill out the PR form:
+   - **Title**: Clear, descriptive title
+   - **Description**: Explain what changes you made and why
+   - **Reviewers**: Add team members if needed
+   - **Labels/Projects**: Add relevant tags if your repo uses them
+6. Click "Create pull request"
+
+## Alternative: Creating PR from GitHub Desktop
+
+GitHub Desktop also offers a direct "Create Pull Request" option:
+
+1. After pushing your branch, go to Branch → Create Pull Request
+2. This opens your browser with the PR creation page pre-filled
+
+## Best Practices
+
+- **Atomic commits**: Make commits that represent single, logical changes
+- **Clear commit messages**: Write messages that explain what and why, not just what
+- **Test before submitting**: Ensure your code works and doesn't break existing functionality
+- **Link issues**: Reference any related GitHub issues in your PR description using `#issue-number`
 
 ---
 
@@ -873,13 +824,11 @@ TODO
 
 ---
 
-## Data Exercise to learn FOCUS columns
-
----
-
 ## Tips for Success
 
-### Best Practices
+Read the [development practices](development-processes.md) file.
+
+Ask questions in the [working-group](https://f2-focus.slack.com/archives/C06MJPRAPCH) slack channel.
 
 - **Commit frequently** with clear, descriptive messages
 - **Pull before pushing** to avoid conflicts
