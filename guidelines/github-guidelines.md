@@ -1,6 +1,6 @@
 # GitHub Guidelines
 
-Guidelines, recommendations, and instructions for how to work with FOCUS on GitHub.
+Guidelines, recommendations, and instructions for how to work with FOCUS on GitHub, using tools like a web browser, GitHub Desktop, and VSCode.
 
 ## Table of Contents
 
