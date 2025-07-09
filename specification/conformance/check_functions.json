@@ -70,7 +70,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "DateTimeFormat-A-001-M"
+        "DateTimeFormat-A-000-M"
       ]
     },
     "FormatNumeric": {
@@ -78,7 +78,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "NumericFormat-A-001-M"
+        "NumericFormat-A-000-M"
       ]
     },
     "FormatBillingCurrencyCode": {
@@ -86,7 +86,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyCodeFormat-A-001-M"
+        "CurrencyCodeFormat-A-000-M"
       ]
     },
     "ColumnByColumnEqualsColumnValue": {
