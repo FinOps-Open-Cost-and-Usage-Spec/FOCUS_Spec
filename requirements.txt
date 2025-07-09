@@ -1,3 +1,4 @@
 watchdog==3.0.0
 pymarkdownlnt==0.9.12
 panflute==2.3.1
+jsonschema==4.24.0

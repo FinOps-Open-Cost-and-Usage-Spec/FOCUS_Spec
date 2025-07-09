@@ -1,0 +1,121 @@
+{
+  "BilledCost-C-001-M": {
+    "Function": "Define presence in dataset",
+    "Reference": "BilledCost",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "PreConditions": [],
+    "CheckType": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST be present in a FOCUS dataset",
+      "Check": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BilledCost"
+      },
+      "Condition": null
+    }
+  },
+  "BilledCost-C-002-M": {
+    "Function": "Column not nullable",
+    "Reference": "BilledCost",
+    "Notes": "A null value would invalidate accounting use cases",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "PreConditions": [],
+    "CheckType": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST NOT be null",
+      "Check": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "BilledCost",
+        "Value": null
+      },
+      "Condition": null
+    }
+  },
+  "BilledCost-C-003-M": {
+    "Function": "Specify data type",
+    "Reference": "BilledCost",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "PreConditions": [],
+    "CheckType": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST be of type Decimal",
+      "Check": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "BilledCost"
+      },
+      "Condition": null
+    }
+  },
+  "BilledCost-C-004-M": {
+    "Function": "Ensure numeric format compliance",
+    "Reference": "BilledCost",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "PreConditions": [],
+    "CheckType": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST conform to NumericFormat requirements",
+      "Check": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "BilledCost"
+      },
+      "Condition": null
+    }
+  },
+  "BilledCost-C-005-M": {
+    "Function": "Handle third-party payment exceptions",
+    "Reference": "BilledCost",
+    "Notes": "Common for marketplace charges paid by customer directly to seller",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "PreConditions": [],
+    "CheckType": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST be 0 for charges where payments are received by a third party",
+      "Check": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "BilledCost",
+        "Value": 0
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotSameValue",
+        "ColumnAName": "ProviderName",
+        "ColumnBName": "InvoiceIssuerName"
+      }
+    }
+  },
+  "BilledCost-C-006-M": {
+    "Function": "Must be in BillingCurrency",
+    "Reference": "BilledCost",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "PreConditions": [],
+    "CheckType": "Dynamic",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST be denominated in the BillingCurrency",
+      "Check": null,
+      "Condition": null
+    }
+  },
+  "BilledCost-C-007-M": {
+    "Function": "BilledCost total match invoice",
+    "Reference": "BilledCost",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "PreConditions": [],
+    "CheckType": "Dynamic",
+    "ValidationCriteria": {
+      "mustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
+      "Check": null,
+      "Condition": null
+    }
+  }
+}

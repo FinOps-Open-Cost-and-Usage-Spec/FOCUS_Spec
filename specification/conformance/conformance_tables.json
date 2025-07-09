@@ -1,0 +1,10 @@
+{
+  "ConformanceTables": {
+    "FOCUS": {
+      "ConformanceRuleSets": [
+        "BILLEDCOST-C-000-M",
+        "LISTUNITPRICE-C-000-C"
+      ]
+    }
+  }
+}

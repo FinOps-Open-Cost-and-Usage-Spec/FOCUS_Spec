@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SCR Schema",
+  "type": "object",
+  "properties": {
+    "SCRDetails": {
+      "type": "object",
+      "properties": {
+        "Version": { "type": "string" }
+      },
+      "required": ["Version"]
+    },
+    "PreConditions": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Z0-9_]+$": {
+          "type": "object",
+          "properties": {
+            "Description": { "type": "string" }
+          },
+          "required": ["Description"]
+        }
+      }
+    },
+    "Attributes": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Za-z0-9]+$": { "type": "object" }
+      }
+    },
+    "CheckFunction": {
+      "type": "object",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "properties": {
+            "Arguments": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "FormatAttributes": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "required": ["Arguments", "FormatAttributes"]
+        }
+      }
+    },
+    "ConformanceTables": {
+      "type": "object",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "properties": {
+            "ConformanceRuleSets": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "required": ["ConformanceRuleSets"]
+        }
+      }
+    },
+    "ConformanceRuleSets": {
+      "type": "object",
+      "patternProperties": {
+        "^.+$": {
+          "type": "object",
+          "properties": {
+            "Type": { "type": "string" },
+            "Rules": {
+              "type": "object",
+              "properties": {
+                "Operator": { "type": "string" },
+                "Items": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              },
+              "required": ["Operator", "Items"]
+            }
+          },
+          "required": ["Type", "Rules"]
+        }
+      }
+    },
+    "ConformanceRules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "patternProperties": {
+          "^.+$": {
+            "type": "object",
+            "properties": {
+              "Function": { "type": "string" },
+              "Reference": { "type": "string" },
+              "Notes": { "type": ["string", "null"] },
+              "VersionIntroduced": { "type": "string" },
+              "Status": { "type": "string" },
+              "PreConditions": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "CheckType": { "type": "string" },
+              "ValidationCriteria": {
+                "type": "object",
+                "properties": {
+                  "mustSatisfy": { "type": "string" },
+                  "Check": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "CheckFunction": { "type": "string" }
+                    },
+                    "required": ["CheckFunction"],
+                    "additionalProperties": true
+                  },
+                  "Condition": {
+                    "type": ["object", "null"],
+                    "properties": {
+                      "CheckFunction": { "type": "string" }
+                    },
+                    "additionalProperties": true
+                  }
+                },
+                "required": ["mustSatisfy"]
+              }
+            },
+            "required": [
+              "Function",
+              "Reference",
+              "VersionIntroduced",
+              "Status",
+              "PreConditions",
+              "CheckType",
+              "ValidationCriteria"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "SCRDetails",
+    "PreConditions",
+    "Attributes",
+    "CheckFunction",
+    "ConformanceTables",
+    "ConformanceRuleSets",
+    "ConformanceRules"
+  ],
+  "additionalProperties": false
+}
+

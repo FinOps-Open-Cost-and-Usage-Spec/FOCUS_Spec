@@ -1,0 +1,10 @@
+{
+  "PreConditions": {
+    "COMMITMENT_DISCOUNT_SUPPORTED": {
+      "Description": "Billing data when the provider supports commitment based discounts"
+    },
+    "PUBLIC_PRICE_LIST_SUPPORTED": {
+      "Description": "Provider publishes unit prices exclusive of discounts"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "CheckFunction": {
+    "OR": {
+      "Arguments": [
+        "Items"
+      ],
+      "FormatAttributes": []
+    },
+    "AND": {
+      "Arguments": [
+        "Items"
+      ],
+      "FormatAttributes": []
+    },
+    "ColumnPresent": {
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckValue": {
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckNotValue": {
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckSameValue": {
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckNotSameValue": {
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckGreaterOrEqualThanValue": {
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "TypeDecimal": {
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "TypeString": {
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "FormatDateTime": {
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "DateTimeFormat"
+      ]
+    },
+    "FormatNumeric": {
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "NumericFormat"
+      ]
+    },
+    "FormatBillingCurrencyCode": {
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "CurrencyCodeFormat"
+      ]
+    },
+    "ColumnByColumnEqualsColumnValue": {
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName",
+        "ResultColumnName"
+      ],
+      "FormatAttributes": []
+    }
+  }
+}

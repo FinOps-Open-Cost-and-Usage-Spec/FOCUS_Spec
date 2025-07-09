@@ -1,0 +1,13 @@
+{
+  "Attributes": {
+    "ColumnNamingandOrdering": {},
+    "CurrencyCodeFormat": {},
+    "DateTimeFormat": {},
+    "DiscountHandling": {},
+    "KeyValueFormat": {},
+    "NullHandling": {},
+    "NumericFormat": {},
+    "StringHandling": {},
+    "UnitFormat": {}
+  }
+}
