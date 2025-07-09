@@ -1,13 +1,13 @@
 {
   "Attributes": {
-    "ColumnNamingandOrdering": {},
-    "CurrencyCodeFormat": {},
-    "DateTimeFormat": {},
-    "DiscountHandling": {},
-    "KeyValueFormat": {},
-    "NullHandling": {},
-    "NumericFormat": {},
-    "StringHandling": {},
-    "UnitFormat": {}
+    "ColumnNamingandOrdering-A-001-M": {},
+    "CurrencyCodeFormat-A-001-M": {},
+    "DateTimeFormat-A-001-M": {},
+    "DiscountHandling-A-001-M": {},
+    "KeyValueFormat-A-001-M": {},
+    "NullHandling-A-001-M": {},
+    "NumericFormat-A-001-M": {},
+    "StringHandling-A-001-M": {},
+    "UnitFormat-A-001-M": {}
   }
 }
