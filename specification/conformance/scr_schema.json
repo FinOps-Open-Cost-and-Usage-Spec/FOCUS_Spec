@@ -1,129 +1,267 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "SCR Schema",
+  "title": "SCR Schema with Pattern-Based Keys",
   "type": "object",
   "properties": {
     "SCRDetails": {
       "type": "object",
+      "description": "Metadata about the SCR version and general properties.",
       "properties": {
-        "Version": { "type": "string" }
+        "Version": {
+          "type": "string"
+        }
       },
-      "required": ["Version"]
+      "required": [
+        "Version"
+      ],
+      "additionalProperties": false
     },
     "PreConditions": {
       "type": "object",
+      "description": "A dictionary of precondition flags used to determine rule applicability.",
       "patternProperties": {
         "^[A-Z0-9_]+$": {
           "type": "object",
           "properties": {
-            "Description": { "type": "string" }
+            "Description": {
+              "type": "string"
+            }
           },
-          "required": ["Description"]
+          "required": [
+            "Description"
+          ],
+          "additionalProperties": false
         }
-      }
+      },
+      "additionalProperties": false
     },
     "Attributes": {
       "type": "object",
       "patternProperties": {
-        "^[A-Za-z0-9]+$": { "type": "object" }
-      }
+        "^[A-Za-z0-9]+-A-\\d{3}-[MOC]$": {
+          "type": "object",
+          "properties": {
+            "Rules": {
+              "type": "object",
+              "properties": {
+                "Operator": {
+                  "type": "string"
+                },
+                "Items": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "Operator",
+                "Items"
+              ]
+            }
+          },
+          "required": [
+            "Rules"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "AttributeChecks": {
+      "type": "object",
+      "patternProperties": {
+        "^[A-Za-z0-9]+-A-\\d{3}-[MOC]$": {
+          "type": "object",
+          "properties": {
+            "Function": {
+              "type": "string"
+            },
+            "Reference": {
+              "type": "string"
+            },
+            "Notes": {
+              "type": "string"
+            },
+            "VersionIntroduced": {
+              "type": "string"
+            },
+            "Status": {
+              "type": "string"
+            },
+            "ValidationCriteria": {
+              "type": "object",
+              "properties": {
+                "mustSatisfy": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "mustSatisfy"
+              ],
+              "additionalProperties": true
+            }
+          },
+          "required": [
+            "Function",
+            "Reference",
+            "VersionIntroduced",
+            "Status",
+            "ValidationCriteria"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     },
     "CheckFunction": {
       "type": "object",
+      "description": "Reusable check functions used in validation logic (e.g., AND, OR, ColumnPresent).",
       "patternProperties": {
-        "^.+$": {
+        "^[A-Za-z0-9_]+$": {
           "type": "object",
           "properties": {
             "Arguments": {
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             },
             "FormatAttributes": {
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             }
           },
-          "required": ["Arguments", "FormatAttributes"]
+          "required": [
+            "Arguments",
+            "FormatAttributes"
+          ],
+          "additionalProperties": false
         }
-      }
+      },
+      "additionalProperties": false
     },
     "ConformanceTables": {
       "type": "object",
+      "description": "Top-level groupings (like FOCUS) mapping to sets of rule IDs.",
       "patternProperties": {
-        "^.+$": {
+        "^[A-Z0-9_]+$": {
           "type": "object",
           "properties": {
             "ConformanceRuleSets": {
               "type": "array",
-              "items": { "type": "string" }
+              "items": {
+                "type": "string"
+              }
             }
           },
-          "required": ["ConformanceRuleSets"]
+          "required": [
+            "ConformanceRuleSets"
+          ],
+          "additionalProperties": false
         }
-      }
+      },
+      "additionalProperties": false
     },
     "ConformanceRuleSets": {
       "type": "object",
       "patternProperties": {
-        "^.+$": {
+        "^[A-Za-z0-9]+-C-\\d{3}-[MOC]$": {
           "type": "object",
           "properties": {
-            "Type": { "type": "string" },
+            "Type": {
+              "type": "string"
+            },
             "Rules": {
               "type": "object",
               "properties": {
-                "Operator": { "type": "string" },
+                "Operator": {
+                  "type": "string"
+                },
                 "Items": {
                   "type": "array",
-                  "items": { "type": "string" }
+                  "items": {
+                    "type": "string"
+                  }
                 }
               },
-              "required": ["Operator", "Items"]
+              "required": [
+                "Operator",
+                "Items"
+              ],
+              "additionalProperties": false
             }
           },
-          "required": ["Type", "Rules"]
+          "required": [
+            "Type",
+            "Rules"
+          ],
+          "additionalProperties": false
         }
-      }
+      },
+      "additionalProperties": false
     },
     "ConformanceRules": {
       "type": "array",
+      "description": "The list of all atomic rules, each containing logic, reference metadata, and criteria.",
       "items": {
         "type": "object",
         "patternProperties": {
-          "^.+$": {
+          "^[A-Za-z0-9]+-C-\\d{3}-[MOC]$": {
             "type": "object",
             "properties": {
-              "Function": { "type": "string" },
-              "Reference": { "type": "string" },
-              "Notes": { "type": ["string", "null"] },
-              "VersionIntroduced": { "type": "string" },
-              "Status": { "type": "string" },
+              "Function": {
+                "type": "string"
+              },
+              "Reference": {
+                "type": "string"
+              },
+              "Notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "VersionIntroduced": {
+                "type": "string"
+              },
+              "Status": {
+                "type": "string"
+              },
               "PreConditions": {
                 "type": "array",
-                "items": { "type": "string" }
+                "items": {
+                  "type": "string"
+                }
               },
-              "CheckType": { "type": "string" },
+              "CheckType": {
+                "type": "string"
+              },
               "ValidationCriteria": {
                 "type": "object",
                 "properties": {
-                  "mustSatisfy": { "type": "string" },
+                  "mustSatisfy": {
+                    "type": "string"
+                  },
                   "Check": {
-                    "type": ["object", "null"],
-                    "properties": {
-                      "CheckFunction": { "type": "string" }
-                    },
-                    "required": ["CheckFunction"],
-                    "additionalProperties": true
+                    "type": [
+                      "object",
+                      "null"
+                    ]
                   },
                   "Condition": {
-                    "type": ["object", "null"],
-                    "properties": {
-                      "CheckFunction": { "type": "string" }
-                    },
-                    "additionalProperties": true
+                    "type": [
+                      "object",
+                      "null"
+                    ]
                   }
                 },
-                "required": ["mustSatisfy"]
+                "required": [
+                  "mustSatisfy"
+                ],
+                "additionalProperties": true
               }
             },
             "required": [
@@ -134,9 +272,11 @@
               "PreConditions",
               "CheckType",
               "ValidationCriteria"
-            ]
+            ],
+            "additionalProperties": false
           }
-        }
+        },
+        "additionalProperties": false
       }
     }
   },
@@ -144,6 +284,7 @@
     "SCRDetails",
     "PreConditions",
     "Attributes",
+    "AttributeChecks",
     "CheckFunction",
     "ConformanceTables",
     "ConformanceRuleSets",
@@ -151,4 +292,3 @@
   ],
   "additionalProperties": false
 }
-
