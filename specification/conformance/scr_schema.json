@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "SCR Schema with Pattern-Based Keys",
+  "title": "SCR Schema with Stage 2 Enhancements",
   "type": "object",
   "properties": {
     "SCRDetails": {
@@ -45,7 +45,12 @@
               "type": "object",
               "properties": {
                 "Operator": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "AND",
+                    "OR",
+                    "NOT"
+                  ]
                 },
                 "Items": {
                   "type": "array",
@@ -75,7 +80,15 @@
           "type": "object",
           "properties": {
             "Function": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "Presence",
+                "Validation",
+                "Format",
+                "Type",
+                "Conditional",
+                "Composite"
+              ]
             },
             "Reference": {
               "type": "string"
@@ -87,7 +100,12 @@
               "type": "string"
             },
             "Status": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "active",
+                "provisional",
+                "deprecated"
+              ]
             },
             "ValidationCriteria": {
               "type": "object",
@@ -178,7 +196,12 @@
               "type": "object",
               "properties": {
                 "Operator": {
-                  "type": "string"
+                  "type": "string",
+                  "enum": [
+                    "AND",
+                    "OR",
+                    "NOT"
+                  ]
                 },
                 "Items": {
                   "type": "array",
@@ -213,7 +236,15 @@
             "type": "object",
             "properties": {
               "Function": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "Presence",
+                  "Validation",
+                  "Format",
+                  "Type",
+                  "Conditional",
+                  "Composite"
+                ]
               },
               "Reference": {
                 "type": "string"
@@ -228,16 +259,18 @@
                 "type": "string"
               },
               "Status": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "active",
+                  "provisional",
+                  "deprecated"
+                ]
               },
               "PreConditions": {
                 "type": "array",
                 "items": {
                   "type": "string"
                 }
-              },
-              "CheckType": {
-                "type": "string"
               },
               "ValidationCriteria": {
                 "type": "object",
@@ -249,19 +282,86 @@
                     "type": [
                       "object",
                       "null"
-                    ]
+                    ],
+                    "properties": {
+                      "operator": {
+                        "type": "string",
+                        "enum": [
+                          "==",
+                          "!=",
+                          "IN",
+                          "NOT IN",
+                          "IS NULL",
+                          "IS NOT NULL",
+                          ">",
+                          "<",
+                          ">=",
+                          "<="
+                        ]
+                      },
+                      "left": {
+                        "type": "string"
+                      },
+                      "right": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "operator",
+                      "left",
+                      "right"
+                    ],
+                    "additionalProperties": false
                   },
                   "Condition": {
                     "type": [
                       "object",
                       "null"
-                    ]
+                    ],
+                    "properties": {
+                      "operator": {
+                        "type": "string",
+                        "enum": [
+                          "==",
+                          "!=",
+                          "IN",
+                          "NOT IN",
+                          "IS NULL",
+                          "IS NOT NULL",
+                          ">",
+                          "<",
+                          ">=",
+                          "<="
+                        ]
+                      },
+                      "left": {
+                        "type": "string"
+                      },
+                      "right": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "operator",
+                      "left",
+                      "right"
+                    ],
+                    "additionalProperties": false
                   }
                 },
                 "required": [
                   "mustSatisfy"
                 ],
                 "additionalProperties": true
+              },
+              "DisplayOrder": {
+                "type": "integer"
+              },
+              "SourceText": {
+                "type": "string"
+              },
+              "ColumnID": {
+                "type": "string"
               }
             },
             "required": [
@@ -270,14 +370,39 @@
               "VersionIntroduced",
               "Status",
               "PreConditions",
-              "CheckType",
-              "ValidationCriteria"
+              "ValidationCriteria",
+              "ColumnID"
             ],
             "additionalProperties": false
           }
         },
         "additionalProperties": false
       }
+    },
+    "Requirement": {
+      "type": "object",
+      "description": "Logical composition of SCR rule references for composite evaluation.",
+      "properties": {
+        "Operator": {
+          "type": "string",
+          "enum": [
+            "AND",
+            "OR",
+            "NOT"
+          ]
+        },
+        "Items": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "Operator",
+        "Items"
+      ],
+      "additionalProperties": false
     }
   },
   "required": [
@@ -288,7 +413,8 @@
     "CheckFunction",
     "ConformanceTables",
     "ConformanceRuleSets",
-    "ConformanceRules"
+    "ConformanceRules",
+    "Requirement"
   ],
   "additionalProperties": false
 }
