@@ -43,8 +43,181 @@ class AZ002,AZ003 mandatory;
 | 🟡 `#ffd700`| Conditional (C)|
 | 🟢 `#c0f5c0`| Optional (O)   |
 
-### Availability Zone - from JSON
+## SCR - Availability Zone
 This is the final output from stage 2. At this point it is left to identify any dependency between this column and other FOCUS v1.2 columns.
+
+### SCR - Availability Zone - JSON Format
+
+```JSON
+{
+    "SCRDetails": {
+      "Version": "0.5"
+    },
+    "PreConditions": {
+      "SUPPORTS_AVAILABILITY_ZONE": {
+        "Description": "Rule applies only when SUPPORTS_AVAILABILITY_ZONE is true"
+      }
+    },
+    "Attributes": {},
+    "AttributeChecks": {
+      "AVAILABILITYZONE-C-000-C": {
+        "Function": "Composite",
+        "Reference": "Availability Zone",
+        "Notes": "Precondition: Rule applies only when SUPPORTS_AVAILABILITY_ZONE is true",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "ValidationCriteria": {
+          "mustSatisfy": "MUST satisfy all applicable conformance rules from C-001 to C-004"
+        }
+      },
+      "AVAILABILITYZONE-C-001-C": {
+        "Function": "Presence",
+        "Reference": "Availability Zone",
+        "Notes": "Precondition: SUPPORTS_AVAILABILITY_ZONE",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "ValidationCriteria": {
+          "mustSatisfy": "AvailabilityZone is RECOMMENDED to be present when the provider supports deploying in an availability zone"
+        }
+      },
+      "AVAILABILITYZONE-C-002-M": {
+        "Function": "Type",
+        "Reference": "Availability Zone",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "ValidationCriteria": {
+          "mustSatisfy": "AvailabilityZone MUST be of type String"
+        }
+      },
+      "AVAILABILITYZONE-C-003-M": {
+        "Function": "Format",
+        "Reference": "Availability Zone",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "ValidationCriteria": {
+          "mustSatisfy": "AvailabilityZone MUST conform to StringHandling requirements"
+        }
+      },
+      "AVAILABILITYZONE-C-004-C": {
+        "Function": "Conditional",
+        "Reference": "Availability Zone",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "ValidationCriteria": {
+          "mustSatisfy": "AvailabilityZone MUST be null when a charge is not specific to an availability zone"
+        }
+      }
+    },
+    "CheckFunction": {},
+    "ConformanceTables": {
+      "AVAILABILITYZONE": {
+        "ConformanceRuleSets": [
+          "AVAILABILITYZONE-C-000-C"
+        ]
+      }
+    },
+    "ConformanceRuleSets": {
+      "AVAILABILITYZONE-C-000-C": {
+        "Type": "Composite",
+        "Rules": {
+          "Operator": "AND",
+          "Items": [
+            "AVAILABILITYZONE-C-001-C",
+            "AVAILABILITYZONE-C-002-M",
+            "AVAILABILITYZONE-C-003-M",
+            "AVAILABILITYZONE-C-004-C"
+          ]
+        }
+      }
+    },
+    "ConformanceRules": [
+      {
+        "SCRItem": "AVAILABILITYZONE-C-001-C",
+        "Function": "Presence",
+        "Reference": "Availability Zone",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "PreConditions": [
+          "SUPPORTS_AVAILABILITY_ZONE"
+        ],
+        "ValidationCriteria": {
+          "mustSatisfy": "AvailabilityZone is RECOMMENDED to be present when the provider supports deploying in an availability zone"
+        },
+        "DisplayOrder": 0,
+        "SourceText": "AvailabilityZone is RECOMMENDED to be present when the provider supports deploying in an availability zone",
+        "ColumnID": "AVAILABILITYZONE"
+      },
+      {
+        "SCRItem": "AVAILABILITYZONE-C-002-M",
+        "Function": "Type",
+        "Reference": "Availability Zone",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "PreConditions": [],
+        "ValidationCriteria": {
+          "mustSatisfy": "AvailabilityZone MUST be of type String"
+        },
+        "DisplayOrder": 1,
+        "SourceText": "AvailabilityZone MUST be of type String",
+        "ColumnID": "AVAILABILITYZONE"
+      },
+      {
+        "SCRItem": "AVAILABILITYZONE-C-003-M",
+        "Function": "Format",
+        "Reference": "Availability Zone",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "PreConditions": [],
+        "ValidationCriteria": {
+          "mustSatisfy": "AvailabilityZone MUST conform to StringHandling requirements"
+        },
+        "DisplayOrder": 2,
+        "SourceText": "AvailabilityZone MUST conform to StringHandling requirements",
+        "ColumnID": "AVAILABILITYZONE"
+      },
+      {
+        "SCRItem": "AVAILABILITYZONE-C-004-C",
+        "Function": "Conditional",
+        "Reference": "Availability Zone",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "PreConditions": [],
+        "ValidationCriteria": {
+          "mustSatisfy": "AvailabilityZone MUST be null when a charge is not specific to an availability zone"
+        },
+        "DisplayOrder": 3,
+        "SourceText": "AvailabilityZone MUST be null when a charge is not specific to an availability zone",
+        "ColumnID": "AVAILABILITYZONE"
+      },
+      {
+        "SCRItem": "AVAILABILITYZONE-C-000-C",
+        "Function": "Composite",
+        "Reference": "Availability Zone",
+        "VersionIntroduced": "0.5",
+        "Status": "active",
+        "PreConditions": [
+          "SUPPORTS_AVAILABILITY_ZONE"
+        ],
+        "ValidationCriteria": {
+          "mustSatisfy": "MUST satisfy all applicable conformance rules from C-001 to C-004"
+        },
+        "DisplayOrder": 4,
+        "SourceText": "MUST satisfy all applicable conformance rules from C-001 to C-004",
+        "ColumnID": "AVAILABILITYZONE"
+      }
+    ],
+    "Requirement": {
+      "Operator": "AND",
+      "Items": [
+        "AVAILABILITYZONE-C-001-C",
+        "AVAILABILITYZONE-C-002-M",
+        "AVAILABILITYZONE-C-003-M",
+        "AVAILABILITYZONE-C-004-C"
+      ]
+    }
+  }
+```
+
 ```mermaid
 graph TD
 
