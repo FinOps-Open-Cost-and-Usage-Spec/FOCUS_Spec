@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "SCR Schema with Pattern-Based Keys",
+  "title": "SCR Schema with Stage 2 Enhancements",
   "type": "object",
   "properties": {
     "SCRDetails": {
@@ -121,6 +121,9 @@
         "^[A-Za-z0-9_]+$": {
           "type": "object",
           "properties": {
+            "Description": {
+              "type": "string"
+            },
             "Arguments": {
               "type": "array",
               "items": {
@@ -135,6 +138,7 @@
             }
           },
           "required": [
+            "Description",
             "Arguments",
             "FormatAttributes"
           ],
@@ -150,7 +154,7 @@
         "^[A-Z0-9_]+$": {
           "type": "object",
           "properties": {
-            "ConformanceRuleSets": {
+            "ConformanceRules": {
               "type": "array",
               "items": {
                 "type": "string"
@@ -158,45 +162,7 @@
             }
           },
           "required": [
-            "ConformanceRuleSets"
-          ],
-          "additionalProperties": false
-        }
-      },
-      "additionalProperties": false
-    },
-    "ConformanceRuleSets": {
-      "type": "object",
-      "patternProperties": {
-        "^[A-Za-z0-9]+-C-\\d{3}-[MOC]$": {
-          "type": "object",
-          "properties": {
-            "Type": {
-              "type": "string"
-            },
-            "Rules": {
-              "type": "object",
-              "properties": {
-                "Operator": {
-                  "type": "string"
-                },
-                "Items": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": [
-                "Operator",
-                "Items"
-              ],
-              "additionalProperties": false
-            }
-          },
-          "required": [
-            "Type",
-            "Rules"
+            "ConformanceRules"
           ],
           "additionalProperties": false
         }
@@ -204,8 +170,8 @@
       "additionalProperties": false
     },
     "ConformanceRules": {
-      "type": "array",
-      "description": "The list of all atomic rules, each containing logic, reference metadata, and criteria.",
+      "type": "object",
+      "description": "The list of all rules, each containing logic, reference metadata, and criteria.",
       "items": {
         "type": "object",
         "patternProperties": {
@@ -213,7 +179,14 @@
             "type": "object",
             "properties": {
               "Function": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "Format",
+                  "Presence",
+                  "Validation",
+                  "Type",
+                  "Composite"
+                ]
               },
               "Reference": {
                 "type": "string"
@@ -228,7 +201,11 @@
                 "type": "string"
               },
               "Status": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "active",
+                  "deprecated"
+                ]
               },
               "PreConditions": {
                 "type": "array",
@@ -237,7 +214,11 @@
                 }
               },
               "CheckType": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "static",
+                  "dynamic"
+                ]
               },
               "ValidationCriteria": {
                 "type": "object",
@@ -287,7 +268,6 @@
     "AttributeChecks",
     "CheckFunction",
     "ConformanceTables",
-    "ConformanceRuleSets",
     "ConformanceRules"
   ],
   "additionalProperties": false

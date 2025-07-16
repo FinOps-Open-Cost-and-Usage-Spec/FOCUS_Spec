@@ -271,24 +271,28 @@
   },
   "CheckFunction": {
     "OR": {
+      "Description": "OR check items, will return true on ANY check passing",
       "Arguments": [
         "Items"
       ],
       "FormatAttributes": []
     },
     "AND": {
+      "Description": "AND check items, will return true on ALL checks passing",
       "Arguments": [
         "Items"
       ],
       "FormatAttributes": []
     },
     "ColumnPresent": {
+      "Description": "Check if column is present in the dataset",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": []
     },
     "CheckValue": {
+      "Description": "Check if column has a particular value",
       "Arguments": [
         "ColumnName",
         "Value"
@@ -296,6 +300,7 @@
       "FormatAttributes": []
     },
     "CheckNotValue": {
+      "Description": "Check if column does not have a particular value",
       "Arguments": [
         "ColumnName",
         "Value"
@@ -303,6 +308,7 @@
       "FormatAttributes": []
     },
     "CheckSameValue": {
+      "Description": "Check if column has a the same value as another column",
       "Arguments": [
         "ColumnAName",
         "ColumnBName"
@@ -310,6 +316,7 @@
       "FormatAttributes": []
     },
     "CheckNotSameValue": {
+      "Description": "Check if column does not have the same value as another column",
       "Arguments": [
         "ColumnAName",
         "ColumnBName"
@@ -317,49 +324,63 @@
       "FormatAttributes": []
     },
     "CheckGreaterOrEqualThanValue": {
+      "Description": "Check if column has value equal or greater than a value",
       "Arguments": [
         "ColumnName",
         "Value"
       ],
       "FormatAttributes": []
     },
+    "CheckSCR": {
+      "Description": "Check another SCR and turn its value",
+      "Arguments": [
+        "SCR"
+      ],
+      "FormatAttributes": []
+    },
     "TypeDecimal": {
+      "Description": "Check column has the data type of decimal",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": []
     },
     "TypeString": {
+      "Description": "Check column has the data type of string",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": []
     },
     "FormatDateTime": {
+      "Description": "Check column has the format of datetime",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": [
-        "DateTimeFormat-A-001-M"
+        "DateTimeFormat-A-000-M"
       ]
     },
     "FormatNumeric": {
+      "Description": "Check a column has a numeric format",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": [
-        "NumericFormat-A-001-M"
+        "NumericFormat-A-000-M"
       ]
     },
     "FormatBillingCurrencyCode": {
+      "Description": "Check a column has a valid country code",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyCodeFormat-A-001-M"
+        "CurrencyCodeFormat-A-000-M"
       ]
     },
     "ColumnByColumnEqualsColumnValue": {
+      "Description": "Check the result of a column value times by another column value and confrm if it matches the value of third column",
       "Arguments": [
         "ColumnAName",
         "ColumnBName",
@@ -370,406 +391,491 @@
   },
   "ConformanceTables": {
     "FOCUS": {
-      "ConformanceRuleSets": [
-        "BILLEDCOST-C-000-M",
-        "LISTUNITPRICE-C-000-C"
+      "ConformanceRules": [
+        "BilledCost-C-000-M",
+        "ListUnitPrice-C-000-C"
       ]
     }
   },
-  "ConformanceRuleSets": {
-    "BILLEDCOST-C-000-M": {
-      "Type": "Conformance",
-      "Rules": {
-        "Operator": "AND",
-        "Items": [
-          "BilledCost-C-001-M",
-          "BilledCost-C-002-M",
-          "BilledCost-C-003-M",
-          "BilledCost-C-004-M",
-          "BilledCost-C-005-M",
-          "BilledCost-C-006-M",
-          "BilledCost-C-007-M"
-        ]
+  "ConformanceRules": {
+    "ListUnitPrice-C-000-C": {
+      "Function": "Composite",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-001-C"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-002-M"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-003-M"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-004-C"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-005-C"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-008-C"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-009-C"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-010-M"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-011-C"
+            }
+          ]
+        },
+        "Condition": null
       }
     },
-    "LISTUNITPRICE-C-000-C": {
-      "Type": "Conformance",
-      "Rules": {
-        "Operator": "AND",
-        "Items": [
-          "ListUnitPrice-C-001-C",
-          "ListUnitPrice-C-002-M",
-          "ListUnitPrice-C-003-M",
-          "ListUnitPrice-C-004-C",
-          "ListUnitPrice-C-005-C",
-          "ListUnitPrice-C-006-O",
-          "ListUnitPrice-C-007-C",
-          "ListUnitPrice-C-008-C",
-          "ListUnitPrice-C-009-M",
-          "ListUnitPrice-C-010-C"
-        ]
+    "ListUnitPrice-C-001-C": {
+      "Function": "Presence",
+      "Reference": "ListUnitPrice",
+      "Notes": "",
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "ListUnitPrice"
+        },
+        "Condition": null
       }
-    }
-  },
-  "ConformanceRules": [
-    {
-      "ListUnitPrice-C-001-C": {
-        "Function": "Define presence in dataset",
-        "Reference": "ListUnitPrice",
-        "Notes": "",
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts",
-          "Check": {
-            "CheckFunction": "ColumnPresent",
-            "ColumnName": "ListUnitPrice"
-          },
-          "Condition": null
-        }
-      },
-      "ListUnitPrice-C-002-M": {
-        "Function": "Specify data type",
-        "Reference": "ListUnitPrice",
-        "Notes": "",
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST be of type Decimal",
-          "Check": {
-            "CheckFunction": "TypeDecimal",
-            "ColumnName": "ListUnitPrice"
-          },
-          "Condition": null
-        }
-      },
-      "ListUnitPrice-C-003-M": {
-        "Function": "Ensure numeric format compliance",
-        "Reference": "ListUnitPrice",
-        "Notes": "",
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST conform to NumericFormat requirements",
-          "Check": {
-            "CheckFunction": "FormatNumeric",
-            "ColumnName": "ListUnitPrice"
-          },
-          "Condition": null
-        }
-      },
-      "ListUnitPrice-C-004-C": {
-        "Function": "Must be null for Tax",
-        "Reference": "ListUnitPrice",
-        "Notes": null,
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
-          "Check": {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ListUnitPrice",
-            "Value": null
-          },
-          "Condition": {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ChargeCategory",
-            "Value": "Tax"
-          }
-        }
-      },
-      "ListUnitPrice-C-005-C": {
-        "Function": "Must not be null for Usage",
-        "Reference": "ListUnitPrice",
-        "Notes": null,
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
-          "Check": {
-            "CheckFunction": "CheckNotValue",
-            "ColumnName": "ListUnitPrice",
-            "Value": null
-          },
-          "Condition": {
-            "CheckFunction": "AND",
-            "Items": [
-              {
-                "CheckFunction": "OR",
-                "Items": [
-                  {
-                    "CheckFunction": "CheckValue",
-                    "ColumnName": "ChargeCategory",
-                    "Value": "Usage"
-                  },
-                  {
-                    "CheckFunction": "CheckValue",
-                    "ColumnName": "ChargeCategory",
-                    "Value": "Purchase"
-                  }
-                ]
-              },
-              {
-                "CheckFunction": "CheckNotValue",
-                "ColumnName": "ChargeClass",
-                "Value": "Correction"
-              }
-            ]
-          }
-        }
-      },
-      "ListUnitPrice-C-006-O": {
-        "Function": "May be null otherwise",
-        "Reference": "ListUnitPrice",
-        "Notes": null,
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MAY be null in all other cases",
-          "Check": null,
-          "Condition": null
-        }
-      },
-      "ListUnitPrice-C-007-C": {
-        "Function": "Value must be non-negative",
-        "Reference": "ListUnitPrice",
-        "Notes": null,
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST be a non-negative decimal value, when ListUnitPrice is not null",
-          "Check": {
-            "CheckFunction": "CheckGreaterOrEqualThanValue",
-            "ColumnName": "ListUnitPrice",
-            "Value": 0
-          },
-          "Condition": {
-            "CheckFunction": "CheckNotValue",
-            "ColumnName": "ListUnitPrice",
-            "Value": null
-          }
-        }
-      },
-      "ListUnitPrice-C-008-C": {
-        "Function": "Must be in BillingCurrency",
-        "Reference": "ListUnitPrice",
-        "Notes": null,
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Dynamic",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST be denominated in the BillingCurrency",
-          "Check": null,
-          "Condition": null
-        }
-      },
-      "ListUnitPrice-C-009-M": {
-        "Function": "Ensure numeric format compliance",
-        "Reference": "ListUnitPrice",
-        "Notes": null,
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST conform to NumericFormat requirements",
-          "Check": {
-            "CheckFunction": "ColumnByColumnEqualsColumnValue",
-            "ColumnAName": "ListUnitPrice",
-            "ColumnBName": "PricingQuantity",
-            "EqualsColumnName": "ListCost"
-          },
-          "Condition": {
-            "CheckFunction": "AND",
-            "Items": [
-              {
-                "CheckFunction": "CheckNotValue",
-                "ColumnName": "ListUnitPrice",
-                "Value": null
-              },
-              {
-                "CheckFunction": "CheckNotValue",
-                "ColumnName": "ChargeClass",
-                "Value": "Correction"
-              }
-            ]
-          }
-        }
-      },
-      "ListUnitPrice-C-010-C": {
-        "Function": "Allow discrepancy in correction",
-        "Reference": "ListUnitPrice",
-        "Notes": null,
-        "VersionIntroduced": "1.0",
-        "Status": "active",
-        "PreConditions": [
-          "PUBLIC_PRICE_LIST_SUPPORTED"
-        ],
-        "CheckType": "Dynamic",
-        "ValidationCriteria": {
-          "mustSatisfy": "Discrepancies MAY exist when ChargeClass is 'Correction'",
-          "Check": null,
-          "Condition": {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ChargeClass",
-            "Value": "Correction"
-          }
+    },
+    "ListUnitPrice-C-002-M": {
+      "Function": "Type",
+      "Reference": "ListUnitPrice",
+      "Notes": "",
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be of type Decimal",
+        "Requirement": {
+          "CheckFunction": "TypeDecimal",
+          "ColumnName": "ListUnitPrice"
+        },
+        "Condition": []
+      }
+    },
+    "ListUnitPrice-C-003-M": {
+      "Function": "Format",
+      "Reference": "ListUnitPrice",
+      "Notes": "",
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST conform to NumericFormat requirements",
+        "Requirement": {
+          "CheckFunction": "FormatNumeric",
+          "ColumnName": "ListUnitPrice"
+        },
+        "Condition": []
+      }
+    },
+    "ListUnitPrice-C-004-C": {
+      "Function": "Validation",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
+        "Requirement": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "ListUnitPrice",
+          "Value": null
+        },
+        "Condition": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "ChargeCategory",
+          "Value": "Tax"
         }
       }
     },
-    {
-      "BilledCost-C-001-M": {
-        "Function": "Define presence in dataset",
-        "Reference": "BilledCost",
-        "Notes": "",
-        "VersionIntroduced": "0.5",
-        "Status": "active",
-        "PreConditions": [],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST be present in a FOCUS dataset",
-          "Check": {
-            "CheckFunction": "ColumnPresent",
-            "ColumnName": "BilledCost"
-          },
-          "Condition": null
-        }
-      },
-      "BilledCost-C-002-M": {
-        "Function": "Column not nullable",
-        "Reference": "BilledCost",
-        "Notes": "A null value would invalidate accounting use cases",
-        "VersionIntroduced": "0.5",
-        "Status": "active",
-        "PreConditions": [],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST NOT be null",
-          "Check": {
-            "CheckFunction": "CheckNotValue",
-            "ColumnName": "BilledCost",
-            "Value": null
-          },
-          "Condition": null
-        }
-      },
-      "BilledCost-C-003-M": {
-        "Function": "Specify data type",
-        "Reference": "BilledCost",
-        "Notes": "",
-        "VersionIntroduced": "0.5",
-        "Status": "active",
-        "PreConditions": [],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST be of type Decimal",
-          "Check": {
-            "CheckFunction": "TypeDecimal",
-            "ColumnName": "BilledCost"
-          },
-          "Condition": null
-        }
-      },
-      "BilledCost-C-004-M": {
-        "Function": "Ensure numeric format compliance",
-        "Reference": "BilledCost",
-        "Notes": "",
-        "VersionIntroduced": "0.5",
-        "Status": "active",
-        "PreConditions": [],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST conform to NumericFormat requirements",
-          "Check": {
-            "CheckFunction": "FormatNumeric",
-            "ColumnName": "BilledCost"
-          },
-          "Condition": null
-        }
-      },
-      "BilledCost-C-005-M": {
-        "Function": "Handle third-party payment exceptions",
-        "Reference": "BilledCost",
-        "Notes": "Common for marketplace charges paid by customer directly to seller",
-        "VersionIntroduced": "0.5",
-        "Status": "active",
-        "PreConditions": [],
-        "CheckType": "Static",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST be 0 for charges where payments are received by a third party",
-          "Check": {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "BilledCost",
-            "Value": 0
-          },
-          "Condition": {
-            "CheckFunction": "CheckNotSameValue",
-            "ColumnAName": "ProviderName",
-            "ColumnBName": "InvoiceIssuerName"
-          }
-        }
-      },
-      "BilledCost-C-006-M": {
-        "Function": "Must be in BillingCurrency",
-        "Reference": "BilledCost",
-        "Notes": "",
-        "VersionIntroduced": "0.5",
-        "Status": "active",
-        "PreConditions": [],
-        "CheckType": "Dynamic",
-        "ValidationCriteria": {
-          "mustSatisfy": "MUST be denominated in the BillingCurrency",
-          "Check": null,
-          "Condition": null
-        }
-      },
-      "BilledCost-C-007-M": {
-        "Function": "BilledCost total match invoice",
-        "Reference": "BilledCost",
-        "Notes": "",
-        "VersionIntroduced": "0.5",
-        "Status": "active",
-        "PreConditions": [],
-        "CheckType": "Dynamic",
-        "ValidationCriteria": {
-          "mustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
-          "Check": null,
-          "Condition": null
+    "ListUnitPrice-C-005-C": {
+      "Function": "Composite",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "when ChargeCategory is 'Usage' or 'Purchase'",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-006-C"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "ListUnitPrice-C-007-O"
+            }
+          ]
+        },
+        "Condition": {
+          "CheckFunction": "OR",
+          "Items": [
+            {
+              "CheckFunction": "CheckValue",
+              "ColumnName": "ChargeCategory",
+              "Value": "Usage"
+            },
+            {
+              "CheckFunction": "CheckValue",
+              "ColumnName": "ChargeCategory",
+              "Value": "Purchase"
+            }
+          ]
         }
       }
+    },
+    "ListUnitPrice-C-006-C": {
+      "Function": "Validation",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
+        "Requirement": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "ListUnitPrice",
+          "Value": null
+        },
+        "Condition": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "ChargeClass",
+          "Value": "Correction"
+        }
+      }
+    },
+    "ListUnitPrice-C-007-O": {
+      "Function": "Validation",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MAY be null in all other cases",
+        "Requirement": null,
+        "Condition": []
+      }
+    },
+    "ListUnitPrice-C-008-C": {
+      "Function": "Validation",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be a non-negative decimal value, when ListUnitPrice is not null",
+        "Requirement": {
+          "CheckFunction": "CheckGreaterOrEqualThanValue",
+          "ColumnName": "ListUnitPrice",
+          "Value": 0
+        },
+        "Condition": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "ListUnitPrice",
+          "Value": null
+        }
+      }
+    },
+    "ListUnitPrice-C-009-C": {
+      "Function": "Validation",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be denominated in the BillingCurrency",
+        "Requirement": null,
+        "Condition": []
+      }
+    },
+    "ListUnitPrice-C-010-M": {
+      "Function": "Format",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST conform to NumericFormat requirements",
+        "Requirement": {
+          "CheckFunction": "ColumnByColumnEqualsColumnValue",
+          "ColumnAName": "ListUnitPrice",
+          "ColumnBName": "PricingQuantity",
+          "EqualsColumnName": "ListCost"
+        },
+        "Condition": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckNotValue",
+              "ColumnName": "ListUnitPrice",
+              "Value": null
+            },
+            {
+              "CheckFunction": "CheckNotValue",
+              "ColumnName": "ChargeClass",
+              "Value": "Correction"
+            }
+          ]
+        }
+      }
+    },
+    "ListUnitPrice-C-011-C": {
+      "Function": "Validation",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "VersionIntroduced": "1.0",
+      "Status": "active",
+      "PreConditions": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "mustSatisfy": "Discrepancies MAY exist when ChargeClass is 'Correction'",
+        "Requirement": null,
+        "Condition": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "ChargeClass",
+          "Value": "Correction"
+        }
+      }
+    },
+    "BilledCost-C-000-M": {
+      "Function": "Presence",
+      "Reference": "BilledCost",
+      "Notes": "",
+      "VersionIntroduced": "0.5",
+      "Status": "active",
+      "PreConditions": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "",
+        "Requirement": {
+          "Operator": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "BilledCost-C-001-M"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "BilledCost-C-002-M"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "BilledCost-C-003-M"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "BilledCost-C-004-M"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "BilledCost-C-005-M"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "BilledCost-C-006-M"
+            },
+            {
+              "CheckFunction": "CheckSCR",
+              "SCR": "BilledCost-C-007-M"
+            }
+          ]
+        },
+        "Condition": []
+      }
+    },
+    "BilledCost-C-001-M": {
+      "Function": "Presence",
+      "Reference": "BilledCost",
+      "Notes": "",
+      "VersionIntroduced": "0.5",
+      "Status": "active",
+      "PreConditions": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be present in a FOCUS dataset",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "BilledCost"
+        },
+        "Condition": []
+      }
+    },
+    "BilledCost-C-002-M": {
+      "Function": "Validation",
+      "Reference": "BilledCost",
+      "Notes": "A null value would invalidate accounting use cases",
+      "VersionIntroduced": "0.5",
+      "Status": "active",
+      "PreConditions": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST NOT be null",
+        "Requirement": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "BilledCost",
+          "Value": null
+        },
+        "Condition": []
+      }
+    },
+    "BilledCost-C-003-M": {
+      "Function": "Type",
+      "Reference": "BilledCost",
+      "Notes": "",
+      "VersionIntroduced": "0.5",
+      "Status": "active",
+      "PreConditions": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be of type Decimal",
+        "Requirement": {
+          "CheckFunction": "TypeDecimal",
+          "ColumnName": "BilledCost"
+        },
+        "Condition": []
+      }
+    },
+    "BilledCost-C-004-M": {
+      "Function": "Format",
+      "Reference": "BilledCost",
+      "Notes": "",
+      "VersionIntroduced": "0.5",
+      "Status": "active",
+      "PreConditions": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST conform to NumericFormat requirements",
+        "Requirement": {
+          "CheckFunction": "FormatNumeric",
+          "ColumnName": "BilledCost"
+        },
+        "Condition": []
+      }
+    },
+    "BilledCost-C-005-M": {
+      "Function": "Validation",
+      "Reference": "BilledCost",
+      "Notes": "Common for marketplace charges paid by customer directly to seller",
+      "VersionIntroduced": "0.5",
+      "Status": "active",
+      "PreConditions": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be 0 for charges where payments are received by a third party",
+        "Requirement": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "BilledCost",
+          "Value": 0
+        },
+        "Condition": {
+          "CheckFunction": "CheckNotSameValue",
+          "ColumnAName": "ProviderName",
+          "ColumnBName": "InvoiceIssuerName"
+        }
+      }
+    },
+    "BilledCost-C-006-M": {
+      "Function": "Validation",
+      "Reference": "BilledCost",
+      "Notes": "",
+      "VersionIntroduced": "0.5",
+      "Status": "active",
+      "PreConditions": [],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be denominated in the BillingCurrency",
+        "Requirement": null,
+        "Condition": []
+      }
+    },
+    "BilledCost-C-007-M": {
+      "Function": "Validation",
+      "Reference": "BilledCost",
+      "Notes": "",
+      "VersionIntroduced": "0.5",
+      "Status": "active",
+      "PreConditions": [],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "mustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
+        "Requirement": null,
+        "Condition": []
+      }
     }
-  ]
+  }
 }

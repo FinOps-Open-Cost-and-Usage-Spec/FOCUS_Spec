@@ -1,24 +1,28 @@
 {
   "CheckFunction": {
     "OR": {
+      "Description": "OR check items, will return true on ANY check passing",
       "Arguments": [
         "Items"
       ],
       "FormatAttributes": []
     },
     "AND": {
+      "Description": "AND check items, will return true on ALL checks passing",
       "Arguments": [
         "Items"
       ],
       "FormatAttributes": []
     },
     "ColumnPresent": {
+      "Description": "Check if column is present in the dataset",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": []
     },
     "CheckValue": {
+      "Description": "Check if column has a particular value",
       "Arguments": [
         "ColumnName",
         "Value"
@@ -26,6 +30,7 @@
       "FormatAttributes": []
     },
     "CheckNotValue": {
+      "Description": "Check if column does not have a particular value",
       "Arguments": [
         "ColumnName",
         "Value"
@@ -33,6 +38,7 @@
       "FormatAttributes": []
     },
     "CheckSameValue": {
+      "Description": "Check if column has a the same value as another column",
       "Arguments": [
         "ColumnAName",
         "ColumnBName"
@@ -40,6 +46,7 @@
       "FormatAttributes": []
     },
     "CheckNotSameValue": {
+      "Description": "Check if column does not have the same value as another column",
       "Arguments": [
         "ColumnAName",
         "ColumnBName"
@@ -47,25 +54,36 @@
       "FormatAttributes": []
     },
     "CheckGreaterOrEqualThanValue": {
+      "Description": "Check if column has value equal or greater than a value",
       "Arguments": [
         "ColumnName",
         "Value"
       ],
       "FormatAttributes": []
     },
+    "CheckSCR": {
+      "Description": "Check another SCR and turn its value",
+      "Arguments": [
+        "SCR"
+      ],
+      "FormatAttributes": []
+    },
     "TypeDecimal": {
+      "Description": "Check column has the data type of decimal",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": []
     },
     "TypeString": {
+      "Description": "Check column has the data type of string",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": []
     },
     "FormatDateTime": {
+      "Description": "Check column has the format of datetime",
       "Arguments": [
         "ColumnName"
       ],
@@ -74,6 +92,7 @@
       ]
     },
     "FormatNumeric": {
+      "Description": "Check a column has a numeric format",
       "Arguments": [
         "ColumnName"
       ],
@@ -82,6 +101,7 @@
       ]
     },
     "FormatBillingCurrencyCode": {
+      "Description": "Check a column has a valid country code",
       "Arguments": [
         "ColumnName"
       ],
@@ -90,6 +110,7 @@
       ]
     },
     "ColumnByColumnEqualsColumnValue": {
+      "Description": "Check the result of a column value times by another column value and confrm if it matches the value of third column",
       "Arguments": [
         "ColumnAName",
         "ColumnBName",

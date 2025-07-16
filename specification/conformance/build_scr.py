@@ -9,8 +9,7 @@ files = [
     'preconditions.json',
     'attributes.json',
     'check_functions.json',
-    'conformance_tables.json',
-    'conformance_rulesets.json',
+    'conformance_tables.json'
 ]
 for filename in files:
     with open(filename, 'rb') as f:
@@ -18,7 +17,7 @@ for filename in files:
         scr.update(details)
 
 # Load conformance rule files
-conformance_rules = []
+conformance_rules = {}
 rules_dir = 'conformance_rules'
 
 for root, _, filenames in os.walk(rules_dir):
@@ -26,8 +25,8 @@ for root, _, filenames in os.walk(rules_dir):
         if filename.endswith('.json'):
             path = os.path.join(root, filename)
             with open(path, 'rb') as f:
-                rule = json.loads(f.read())
-                conformance_rules.append(rule)
+                rules = json.loads(f.read())
+                conformance_rules.update(rules)
 scr['ConformanceRules'] = conformance_rules
 
 try:
