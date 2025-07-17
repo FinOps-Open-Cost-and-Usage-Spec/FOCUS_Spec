@@ -90,7 +90,7 @@
         "CheckFunction": "TypeDecimal",
         "ColumnName": "ListUnitPrice"
       },
-      "Condition": []
+      "Condition": {}
     }
   },
   "ListUnitPrice-C-003-M": {
@@ -109,7 +109,7 @@
         "CheckFunction": "FormatNumeric",
         "ColumnName": "ListUnitPrice"
       },
-      "Condition": []
+      "Condition": {}
     }
   },
   "ListUnitPrice-C-004-C": {
@@ -214,8 +214,8 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MAY be null in all other cases",
-      "Requirement": null,
-      "Condition": []
+      "Requirement": {},
+      "Condition": {}
     }
   },
   "ListUnitPrice-C-008-C": {
@@ -254,8 +254,8 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "mustSatisfy": "MUST be denominated in the BillingCurrency",
-      "Requirement": null,
-      "Condition": []
+      "Requirement": {},
+      "Condition": {}
     }
   },
   "ListUnitPrice-C-010-M": {
@@ -305,7 +305,7 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "mustSatisfy": "Discrepancies MAY exist when ChargeClass is 'Correction'",
-      "Requirement": null,
+      "Requirement": {},
       "Condition": {
         "CheckFunction": "CheckValue",
         "ColumnName": "ChargeClass",

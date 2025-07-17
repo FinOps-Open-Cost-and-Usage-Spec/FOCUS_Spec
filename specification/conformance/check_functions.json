@@ -19,7 +19,9 @@
       "Arguments": [
         "ColumnName"
       ],
-      "FormatAttributes": []
+      "FormatAttributes": [
+        "ColumnNamingandOrdering-A-000-M"
+      ]
     },
     "CheckValue": {
       "Description": "Check if column has a particular value",

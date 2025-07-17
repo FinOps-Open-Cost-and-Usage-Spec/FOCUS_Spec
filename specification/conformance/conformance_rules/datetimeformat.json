@@ -1,0 +1,66 @@
+{
+  "DateTimeFormat-A-000-M": {
+    "Function": "Composite",
+    "Reference": "DateTimeFormat",
+    "Notes": "",
+    "VersionIntroduced": "1.2",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "DateTimeFormat-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "DateTimeFormat-A-002-M"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "DateTimeFormat-A-003-M"
+          }
+        ]
+      },
+      "Condition": {}
+    }
+  },
+  "DateTimeFormat-A-001-M": {
+    "Function": "Validation",
+    "Reference": "DateTimeFormat",
+    "Notes": "",
+    "VersionIntroduced": "1.2",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "DateTimeFormat-A-002-M": {
+    "Function": "Validation",
+    "Reference": "DateTimeFormat",
+    "Notes": "",
+    "VersionIntroduced": "1.2",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "DateTimeFormat-A-003-M": {
+    "Function": "Validation",
+    "Reference": "DateTimeFormat",
+    "Notes": "",
+    "VersionIntroduced": "1.2",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
+      "Requirement": {},
+      "Condition": {}
+    }
+  }
+}

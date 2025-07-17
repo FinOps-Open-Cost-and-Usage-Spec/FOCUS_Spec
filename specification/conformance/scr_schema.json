@@ -35,85 +35,6 @@
       },
       "additionalProperties": false
     },
-    "Attributes": {
-      "type": "object",
-      "patternProperties": {
-        "^[A-Za-z0-9]+-A-\\d{3}-[MOC]$": {
-          "type": "object",
-          "properties": {
-            "Rules": {
-              "type": "object",
-              "properties": {
-                "Operator": {
-                  "type": "string"
-                },
-                "Items": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              },
-              "required": [
-                "Operator",
-                "Items"
-              ]
-            }
-          },
-          "required": [
-            "Rules"
-          ],
-          "additionalProperties": false
-        }
-      },
-      "additionalProperties": false
-    },
-    "AttributeChecks": {
-      "type": "object",
-      "patternProperties": {
-        "^[A-Za-z0-9]+-A-\\d{3}-[MOC]$": {
-          "type": "object",
-          "properties": {
-            "Function": {
-              "type": "string"
-            },
-            "Reference": {
-              "type": "string"
-            },
-            "Notes": {
-              "type": "string"
-            },
-            "VersionIntroduced": {
-              "type": "string"
-            },
-            "Status": {
-              "type": "string"
-            },
-            "ValidationCriteria": {
-              "type": "object",
-              "properties": {
-                "mustSatisfy": {
-                  "type": "string"
-                }
-              },
-              "required": [
-                "mustSatisfy"
-              ],
-              "additionalProperties": true
-            }
-          },
-          "required": [
-            "Function",
-            "Reference",
-            "VersionIntroduced",
-            "Status",
-            "ValidationCriteria"
-          ],
-          "additionalProperties": false
-        }
-      },
-      "additionalProperties": false
-    },
     "CheckFunction": {
       "type": "object",
       "description": "Reusable check functions used in validation logic (e.g., AND, OR, ColumnPresent).",
@@ -149,7 +70,7 @@
     },
     "ConformanceTables": {
       "type": "object",
-      "description": "Top-level groupings (like FOCUS) mapping to sets of rule IDs.",
+      "description": "Top-level groupings (like FOCUS) mapping to top level rule IDs.",
       "patternProperties": {
         "^[A-Z0-9_]+$": {
           "type": "object",
@@ -264,8 +185,6 @@
   "required": [
     "SCRDetails",
     "PreConditions",
-    "Attributes",
-    "AttributeChecks",
     "CheckFunction",
     "ConformanceTables",
     "ConformanceRules"

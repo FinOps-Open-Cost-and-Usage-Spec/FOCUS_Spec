@@ -1,261 +1,37 @@
 {
   "Attributes": {
     "ColumnNamingandOrdering-A-000-M": {
-      "Rules": {
-        "Operator": "AND",
-        "Items": [
-          "ColumnNamingandOrdering-A-001-M",
-          "ColumnNamingandOrdering-A-002-M",
-          "ColumnNamingandOrdering-A-003-M",
-          "ColumnNamingandOrdering-A-004-O",
-          "ColumnNamingandOrdering-A-005-O",
-          "ColumnNamingandOrdering-A-006-O",
-          "ColumnNamingandOrdering-A-007-O",
-          "ColumnNamingandOrdering-A-008-M",
-          "ColumnNamingandOrdering-A-009-M",
-          "ColumnNamingandOrdering-A-010-O",
-          "ColumnNamingandOrdering-A-011-O",
-          "ColumnNamingandOrdering-A-012-O",
-          "ColumnNamingandOrdering-A-013-O"
-        ]
-      }
+      "ConformanceRules": [
+        "ColumnNamingandOrdering-A-000-M"
+      ]
     },
     "CurrencyCodeFormat-A-000-M": {
-      "Rules": {
-        "Operator": "AND",
-        "Items": [
-          "CurrencyCodeFormat-A-001-M",
-          "CurrencyCodeFormat-A-002-M"
-        ]
-      }
+      "ConformanceRules": [
+        "CurrencyCodeFormat-A-000-M"
+      ]
     },
     "DateTimeFormat-A-000-M": {
-      "Rules": {
-        "Operator": "AND",
-        "Items": [
-          "DateTimeFormat-A-001-M",
-          "DateTimeFormat-A-002-M",
-          "DateTimeFormat-A-003-M"
-        ]
-      }
+      "ConformanceRules": [
+        "DateTimeFormat-A-000-M"
+      ]
     },
     "DiscountHandling-A-000-M": {
-      "Rules": {
-        "Operator": "AND",
-        "Items": []
-      }
+      "ConformanceRules": []
     },
     "KeyValueFormat-A-000-M": {
-      "Rules": {
-        "Operator": "AND",
-        "Items": []
-      }
+      "ConformanceRules": []
     },
     "NullHandling-A-000-M": {
-      "Rules": {
-        "Operator": "AND",
-        "Items": []
-      }
+      "ConformanceRules": []
     },
     "NumericFormat-A-000-M": {
-      "Rules": {
-        "Operator": "AND",
-        "Items": []
-      }
+      "ConformanceRules": []
     },
     "StringHandling-A-000-M": {
-      "Rules": {
-        "Operator": "AND",
-        "Items": []
-      }
+      "ConformanceRules": []
     },
     "UnitFormat-A-000-M": {
-      "Rules": {
-        "Operator": "AND",
-        "Items": []
-      }
-    }
-  },
-  "AttributeChecks": {
-    "ColumnNamingandOrdering-A-001-M": {
-      "Function": "Column naming casing",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Column IDs MUST use Pascal case"
-      }
-    },
-    "ColumnNamingandOrdering-A-002-M": {
-      "Function": "Column naming abbreviations",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Column IDs MUST NOT use abbreviations"
-      }
-    },
-    "ColumnNamingandOrdering-A-003-M": {
-      "Function": "Column naming allowed characters",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Column IDs MUST be alphanumeric with no special characters"
-      }
-    },
-    "ColumnNamingandOrdering-A-004-O": {
-      "Function": "Column naming acronyms",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Column IDs SHOULD NOT use acronyms"
-      }
-    },
-    "ColumnNamingandOrdering-A-005-O": {
-      "Function": "Column naming length",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories"
-      }
-    },
-    "ColumnNamingandOrdering-A-006-O": {
-      "Function": "Column naming names and Ids",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID"
-      }
-    },
-    "ColumnNamingandOrdering-A-007-O": {
-      "Function": "Column naming display names",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix"
-      }
-    },
-    "ColumnNamingandOrdering-A-008-M": {
-      "Function": "Column normalization of categories",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Columns with the Category suffix MUST be normalized"
-      }
-    },
-    "ColumnNamingandOrdering-A-009-M": {
-      "Function": "Column naming for custom colunms",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases"
-      }
-    },
-    "ColumnNamingandOrdering-A-010-O": {
-      "Function": "Column handling for custom colunms",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns"
-      }
-    },
-    "ColumnNamingandOrdering-A-011-O": {
-      "Function": "column ordering",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset"
-      }
-    },
-    "ColumnNamingandOrdering-A-012-O": {
-      "Function": "column ordering for custom columns",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed"
-      }
-    },
-    "ColumnNamingandOrdering-A-013-O": {
-      "Function": "column ordering sorting",
-      "Reference": "ColumnHandling",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns"
-      }
-    },
-    "CurrencyCodeFormat-A-001-M": {
-      "Function": "national currency representation",
-      "Reference": "CurrencyFormat",
-      "Notes": "",
-      "VersionIntroduced": "0.5",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)"
-      }
-    },
-    "CurrencyCodeFormat-A-002-M": {
-      "Function": "virtual currenct representation",
-      "Reference": "CurrencyFormat",
-      "Notes": "",
-      "VersionIntroduced": "1.2",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)"
-      }
-    },
-    "DateTimeFormat-A-001-M": {
-      "Function": "datetime in utc",
-      "Reference": "DateTimeFormat",
-      "Notes": "",
-      "VersionIntroduced": "1.2",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones"
-      }
-    },
-    "DateTimeFormat-A-002-M": {
-      "Function": "datetime in iso8601",
-      "Reference": "DateTimeFormat",
-      "Notes": "",
-      "VersionIntroduced": "1.2",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)"
-      }
-    },
-    "DateTimeFormat-A-003-M": {
-      "Function": "datetime in extended iso8601",
-      "Reference": "DateTimeFormat",
-      "Notes": "",
-      "VersionIntroduced": "1.2",
-      "Status": "active",
-      "ValidationCriteria": {
-        "mustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')"
-      }
+      "ConformanceRules": []
     }
   }
 }

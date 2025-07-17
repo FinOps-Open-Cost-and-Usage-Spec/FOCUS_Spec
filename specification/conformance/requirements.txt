@@ -1,0 +1,2 @@
+jsonschema==4.24.0
+graphviz==0.21

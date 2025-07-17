@@ -7,7 +7,6 @@ scr = {}
 files = [
     'scr_details.json',
     'preconditions.json',
-    'attributes.json',
     'check_functions.json',
     'conformance_tables.json'
 ]

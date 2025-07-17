@@ -1,0 +1,50 @@
+{
+  "CurrencyCodeFormat-A-000-M": {
+    "Function": "Composite",
+    "Reference": "CurrencyFormat",
+    "Notes": "",
+    "VersionIntroduced": "1.2",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Column IDs MUST use Pascal case",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "CurrencyCodeFormat-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "CurrencyCodeFormat-A-002-M"
+          }
+        ]
+      },
+      "Condition": {}
+    }
+  },
+  "CurrencyCodeFormat-A-001-M": {
+    "Function": "Validation",
+    "Reference": "CurrencyFormat",
+    "Notes": "",
+    "VersionIntroduced": "1.2",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "CurrencyCodeFormat-A-002-M": {
+    "Function": "Validation",
+    "Reference": "CurrencyFormat",
+    "Notes": "",
+    "VersionIntroduced": "1.2",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
+      "Requirement": {},
+      "Condition": {}
+    }
+  }
+}

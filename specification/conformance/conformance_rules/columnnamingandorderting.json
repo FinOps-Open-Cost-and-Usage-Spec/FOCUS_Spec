@@ -1,0 +1,226 @@
+{
+  "ColumnNamingandOrdering-A-000-M": {
+    "Function": "Composite",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Column IDs MUST use Pascal case",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-002-M"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-004-O"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-005-O"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-006-O"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-007-O"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-008-M"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-009-M"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-010-O"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-011-O"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-012-O"
+          },
+          {
+            "CheckFunction": "CheckSCR",
+            "SCR": "ColumnNamingandOrdering-A-013-O"
+          }
+        ]
+      },
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-001-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Column IDs MUST use Pascal case",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-002-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Column IDs MUST NOT use abbreviations",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-003-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Column IDs MUST be alphanumeric with no special characters",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-004-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Column IDs SHOULD NOT use acronyms",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-005-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-006-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-007-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-008-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Columns with the Category suffix MUST be normalized",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-009-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-010-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-011-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-012-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed",
+      "Requirement": {},
+      "Condition": {}
+    }
+  },
+  "ColumnNamingandOrdering-A-013-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "Notes": "",
+    "VersionIntroduced": "0.5",
+    "Status": "active",
+    "ValidationCriteria": {
+      "mustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns",
+      "Requirement": {},
+      "Condition": {}
+    }
+  }
+}
