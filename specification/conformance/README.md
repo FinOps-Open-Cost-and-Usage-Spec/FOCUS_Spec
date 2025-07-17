@@ -159,17 +159,17 @@ Each JSON file in `conformance_rules/` contains one or more rules structured as:
 ```json
 {
   "ListUnitPrice-C-001-C": {
-    "Function": "Define presence in dataset",
+    "Function": "Presence",
     "Reference": "ListUnitPrice",
     "CheckType": "Static",
     "PreConditions": ["PUBLIC_PRICE_LIST_SUPPORTED"],
     "ValidationCriteria": {
       "mustSatisfy": "...",
-      "Check": {
+      "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ListUnitPrice"
       },
-      "Condition": null
+      "Condition": {}
     }
   }
 }
