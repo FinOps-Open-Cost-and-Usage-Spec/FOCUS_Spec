@@ -13,23 +13,22 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.3</td>
         <td>Dec 2025</td>
         <td>
-<ul>
-  <li><strong>Augment support for Public Cloud scope</strong></li>
+<strong>Augment support for Public Cloud scope</strong>
     <ul>
       <li>Shared cost allocation</li>
       <li>Coverage eligibility</li>
       <li>Pre-discount amortized cost</li>
     </ul>
-  <li><strong>Augment support for SaaS/PaaS scope</strong></li>
+  <strong>Augment support for SaaS/PaaS scope</strong>
     <ul>
       <li>Host Provider (and clarification of related terms)</li>
     </ul>
-  <li><strong>Support for concepts applicable to all scopes</strong></li>
+  <strong>Support for concepts applicable to all scopes</strong>
     <ul>
       <li>Contractual commitments</li>
       <li>Distinguish between vendor and marketplace purchases</li>
     </ul>
-  <li><strong>Addition of metadata / non-functional requirements</strong></li>
+  <strong>Addition of metadata / non-functional requirements</strong>
     <ul>
       <li>Static conformance requirements</li>
       <li>Conformance program beta</li>
