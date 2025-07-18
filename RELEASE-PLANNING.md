@@ -6,14 +6,36 @@ This section outlines the planned release schedule and key milestones for the FO
 
 <table>
     <tr>
-        <th>Version</th>
-        <th>Release By</th>
+        <th width="10">Version</th>
+        <th width="10">Release By</th>
         <th>Scope | High-Level System Requirements</th>
     <tr>
         <td>v1.3</td>
         <td>Dec 2025</td>
         <td>
-            TBD
+<ul>
+  <li><strong>Augment support for Public Cloud scope</strong></li>
+    <ul>
+      <li>Shared cost allocation</li>
+      <li>Coverage eligibility</li>
+      <li>Pre-discount amortized cost</li>
+    </ul>
+  <li><strong>Augment support for SaaS/PaaS scope</strong></li>
+    <ul>
+      <li>Host Provider (and clarification of related terms)</li>
+    </ul>
+  <li><strong>Support for concepts applicable to all scopes</strong></li>
+    <ul>
+      <li>Contractual commitments</li>
+      <li>Distinguish between vendor and marketplace purchases</li>
+    </ul>
+  <li><strong>Addition of metadata / non-functional requirements</strong></li>
+    <ul>
+      <li>Static conformance requirements</li>
+      <li>Conformance program beta</li>
+      <li>Recency and completeness of data</li>  
+    </ul>
+</ul>
         </td>
     </tr>
 </table>
@@ -22,8 +44,8 @@ This section outlines the planned release schedule and key milestones for the FO
 
 <table>
     <tr>
-        <th>Version</th>
-        <th>Release By</th>
+        <th width="10">Version</th>
+        <th width="10">Release By</th>
         <th>Scope | High-Level System Requirements</th>
     </tr>
         <tr>
