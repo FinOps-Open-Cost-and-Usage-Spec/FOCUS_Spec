@@ -113,7 +113,7 @@ This section outlines the planned release schedule and key milestones for the FO
 </table>
 
 ### Estimated Timeline for v1.3
-This table displays key milestones and dates related to the development of FOCUS Release v1.3 Specification.
+This table displays key milestones and dates related to the development of FOCUS Release v1.3.
 
   <table>
     <thead>
@@ -176,7 +176,7 @@ This table displays key milestones and dates related to the development of FOCUS
 
 ### Estimated Timeline for v1.2
 
-This table displays key milestones and dates related to the development of FOCUS Release v1.2 Specification.
+FOCUS Release V1.2 was announced during the FinOps X event in San Diego on June 3, 2025.
 
 <table>
   <tr>
