@@ -52,7 +52,10 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.0</td>
         <td>Jun 2024</td>
         <td>
-            TBD
+<strong>First production version of specification</strong>
+    <ul>
+      <li>Initial support for Public Cloud concepts, inclusive of beta releases 0.5 and 1.0-preview</li>
+    </ul>
         </td>
     </tr>
     <tr>
@@ -90,12 +93,12 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.2</td>
         <td>Jun 2025</td>
         <td>
-            <strong>Initial Software as a Service (SaaS) Support</strong>
+            <strong>Initial Software as a Service (SaaS) / Platform as a Service (PaaS) Support</strong>
             <ul>
-                <li>Addition of columns to support SaaS-centric concepts and billing models
+                <li>Addition of columns to support SaaS/PaaS-centric concepts and billing models
                 </li>
             </ul>
-            <strong>Continued expansion of Cloud Service Provider concepts</strong>
+            <strong>Continued expansion of Public Cloud concepts</strong>
             <ul>
                 <li>Addition of Invoice ID to support invoice reconciliation use cases
                 </li>
