@@ -55,7 +55,7 @@ This directory contains custom linting rules specific to the FOCUS specification
 5. .github folder
 This is a standard GitHub directory that contains GitHub-specific configuration files and templates. Typically found at .github/workflows/ for GitHub Actions, .github/linters/ for linter configuration files.
 
-6. vendored folder
+### 6. `vendored` folder ###
 This directory contains third-party dependencies or external libraries that are directly included in the repository rather than being downloaded at build time.
 
 ### 7. Documentation Structure
