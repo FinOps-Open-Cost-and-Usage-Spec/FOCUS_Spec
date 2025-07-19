@@ -49,6 +49,14 @@ The repository provides supporting content that includes example mappings betwee
 ### 3. `guidelines` folder
 
 This folder contains various guidelines on development, editorial, normative requirements, specification change, and specification design.
+4. custom_linter_rules folder
+This directory contains custom linting rules specific to the FOCUS specification project. Linting rules help maintain code quality, ensure consistency in documentation, and establish coding best practices.
+
+5. .github folder
+This is a standard GitHub directory that contains GitHub-specific configuration files and templates. Typically found at .github/workflows/ for GitHub Actions, .github/linters/ for linter configuration files.
+
+6. vendored folder
+This directory contains third-party dependencies or external libraries that are directly included in the repository rather than being downloaded at build time.
 
 ### 7. Documentation Structure
 
