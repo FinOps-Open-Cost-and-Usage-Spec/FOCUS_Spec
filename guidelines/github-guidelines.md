@@ -29,7 +29,7 @@ FOCUS is designed to address the complexity that FinOps practitioners face when 
 
 ## Main Folders and Their Contents
 
-### 1. `specification/` folder
+### 1. `specification` folder
 
 The core folder containing the specification documentation:
 
