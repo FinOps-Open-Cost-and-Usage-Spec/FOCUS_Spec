@@ -50,7 +50,7 @@ The repository provides supporting content that includes example mappings betwee
 
 This folder contains various guidelines on development, editorial, normative requirements, specification change, and specification design.
 
-### 4. Documentation Structure
+### 7. Documentation Structure
 
 The repository follows standard documentation patterns with:
 
