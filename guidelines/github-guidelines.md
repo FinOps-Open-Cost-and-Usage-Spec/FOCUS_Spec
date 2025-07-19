@@ -49,7 +49,7 @@ The repository provides supporting content that includes example mappings betwee
 ### 3. `guidelines` folder
 
 This folder contains various guidelines on development, editorial, normative requirements, specification change, and specification design.
-4. custom_linter_rules folder
+### 4. `custom_linter_rules` folder ###
 This directory contains custom linting rules specific to the FOCUS specification project. Linting rules help maintain code quality, ensure consistency in documentation, and establish coding best practices.
 
 ### 5. `.github` folder ###
