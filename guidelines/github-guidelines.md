@@ -480,7 +480,7 @@ Issues are tickets in GitHub and are used to organize various request within FOC
 - **Spam with "+1" comments** - use the thumbs up reaction instead
 - **Ask "when will this be fixed?"** - maintainers work on volunteer time
 - **Hijack issues** with unrelated problems - create a new issue instead
-- **Be demanding or impatient** - open source is collaborative, not customer service
+- **Be demanding or impatient** - Open Standards are collaborative, not customer service
 - **Post duplicate information** that's already been shared
 - **Make assumptions** about others' skill levels or intentions
 
