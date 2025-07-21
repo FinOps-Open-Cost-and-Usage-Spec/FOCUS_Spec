@@ -1,0 +1,29 @@
+{
+  "name": "FOCUS_Spec_development",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu", 
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.vscode-pull-request-github",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "git.enableSmartCommit": true,
+        "git.confirmSync": false,
+        "githubPullRequests.remotes": ["origin"],
+        "gitlens.gitCommands.skipConfirmations": [
+          "fetch:command",
+          "pull:command",
+          "push:command"
+        ]
+      }
+    }
+  },
+//   "postCreateCommand": "gh auth status || gh auth login",
+  "forwardPorts": [],
+  "remoteUser": "vscode"
+}

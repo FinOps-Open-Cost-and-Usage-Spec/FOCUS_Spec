@@ -7,13 +7,14 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on GitH
 1. [FOCUS Repository Structure Overview](#focus-repository-structure-overview)
 2. [Logging into GitHub](#logging-into-github)
 3. [Configuring Notifications](#configuring-notifications)
-4. [Installing GitHub Desktop](#installing-github-desktop)
-5. [Installing Visual Studio Code](#installing-visual-studio-code)
-6. [How to Interact (review, comment, participate in, etc.) with an Issue via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-an-issue-via-web-browser)
-7. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
-8. [How to submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
-9. [How to submit changes to an an existing PR using GitHub desktop and vscode](#how-to-submit-changes-to-an-an-existing-pr-using-github-desktop-and-vscode)
-10. [Tips for Success](#tips-for-success)
+4. [Using Github Codespaces](#using-github-codespaces)
+5. [Installing GitHub Desktop](#installing-github-desktop)
+6. [Installing Visual Studio Code](#installing-visual-studio-code)
+7. [How to Interact (review, comment, participate in, etc.) with an Issue via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-an-issue-via-web-browser)
+8. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
+9. [How to submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
+10. [How to submit changes to an an existing PR using GitHub desktop and vscode](#how-to-submit-changes-to-an-an-existing-pr-using-github-desktop-and-vscode)
+11. [Tips for Success](#tips-for-success)
 
 ---
 
@@ -194,6 +195,37 @@ For individual repositories:
 - **Automatically watch repositories:** Enable this to watch repositories you have push access to
 - **Automatically watch teams:** Get notifications when you're added to a team
 - **Dependency graph:** Get notifications about security vulnerabilities in your dependencies
+
+## Using Github Codespaces
+
+GitHub Codespaces lets you develop directly in a cloud-powered VS Code environment without needing to install anything locally.
+All personal (individual) GitHub.com accounts include a quota of free usage each month, which organizations can enable for their private and internal repositories. GitHub will provide users in the free plan 120 core hours or 60 hours of run time on a 2 core codespace, plus 15 GB of storage each month.
+
+Here's how to get started from the GitHub interface.
+
+### 1. Navigate to FOCUS_Spec repository
+
+Go to the GitHub website and open the **[FOCUS_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec)** Repository.
+
+### 2. Open the Codespaces Menu
+
+Click the green <> Code button near the top-right of the repo.
+
+In the dropdown, you'll see a Codespaces tab next to Local.
+If no Codespace exists yet, you'll see a Create codespace on main (or other branch name) button.
+
+### 3. Create a Codespace
+
+Click:
+
+🟩 Create codespace on main (or your desired branch)
+This launches a development environment in the browser based on the devcontainer.json config (if available in the repo).
+
+✅ GitHub will set up:
+
+A containerized Linux environment
+Git and GitHub CLI pre-installed
+Your editor (VS Code in the browser) with any configured extensions
 
 ---
 
