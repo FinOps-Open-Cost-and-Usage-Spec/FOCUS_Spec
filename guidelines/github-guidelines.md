@@ -371,7 +371,7 @@ See [Reviewing and Commenting on GitHub Issues](#reviewing-and-commenting-on-git
 
 ## Reviewing and Commenting on GitHub Issues
 
-GitHub Issues are a powerful way to track bugs, feature requests, tasks, and other project-related discussions. Learning how to effectively review and comment on issues is essential for contributing to open source projects and collaborating with teams.
+GitHub Issues are a powerful way to track bugs, feature requests, tasks, and other project-related discussions. Learning how to effectively review and comment on issues is essential for contributing to open standard projects and collaborating with teams.
 
 ### Understanding GitHub Issues
 
