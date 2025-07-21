@@ -106,7 +106,7 @@ The repository is actively maintained and represents a collaborative effort betw
 - The FinOps Foundation (supporting organization)
 - Linux Foundation (hosting the specification project)
 
-The repository appears to be well-structured for both specification development and practical implementation, supporting the goal of creating a vendor-neutral standard for cloud billing data that can be adopted across different cloud providers and FinOps tools.
+The repository is well-structured for both specification development and practical implementation, supporting the goal of creating a vendor-neutral standard for cloud billing data that can be adopted across different cloud providers and FinOps tools.
 
 ---
 
