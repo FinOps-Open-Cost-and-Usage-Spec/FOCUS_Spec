@@ -12,7 +12,7 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on GitH
 6. [How to Interact (review, comment, participate in, etc.) with an Issue via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-an-issue-via-web-browser)
 7. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
 8. [How to submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
-9. [How to submit changes to an an existing PR using GitHub desktop and vscode](#how-to-submit-changes-to-an-an-existing-pr-using-github-desktop-and-vscode)
+9. [How to submit changes to an existing PR using GitHub desktop and VS Code](#how-to-submit-changes-to-an-existing-pr-using-github-desktop-and-vscode)
 10. [Tips for Success](#tips-for-success)
 
 ---
@@ -25,7 +25,7 @@ The [FOCUS_Spec repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/F
 
 ## Repository Purpose
 
-FOCUS is designed to address the complexity that FinOps practitioners face when dealing with disparate billing data formats from different cloud, software, and other providers. Without a standard, each provider generates unique billing data files with their own terminology, forcing practitioners to develop custom normalization schemes for each provider.
+FOCUS is designed to address the complexity that FinOps practitioners face when dealing with disparate billing data formats from different cloud, software, and other providers. Without a standard, each provider generates unique billing data files with their terminology, forcing practitioners to develop custom normalization schemes for each provider.
 
 ## Main Folders and Their Contents
 
@@ -78,7 +78,7 @@ The repository is organized around several key principles:
 
 ### Incremental Development
 
-- Incremental iterations released regularly to provide higher value to practitioners
+- Incremental iterations are released regularly to provide higher value to practitioners
 - Allow feedback as the specification develops
 - The specification is expected to evolve over time
 
@@ -229,7 +229,7 @@ GitHub Desktop is a user-friendly application that makes it easy to work with Gi
 
 ## Installing Visual Studio Code
 
-Visual Studio Code (VSCode) is a free, powerful code editor that integrates excellently with Git and GitHub. It's highly recommended for editing code and managing repositories.
+Visual Studio Code (VS Code) is a free, powerful code editor that integrates seamlessly with Git and GitHub. It's highly recommended for editing code and managing repositories.
 
 ### Download and Installation VSCode
 
@@ -275,7 +275,7 @@ Visual Studio Code (VSCode) is a free, powerful code editor that integrates exce
 **First Launch:**
 
 1. Open VSCode
-2. You may see a welcome screen with helpful getting started information
+2. You may see a welcome screen with helpful getting-started information
 3. VSCode will automatically detect your system settings and apply appropriate defaults
 
 ### Integrating VSCode with GitHub
@@ -292,7 +292,7 @@ Visual Studio Code (VSCode) is a free, powerful code editor that integrates exce
 
 ### Opening Repository Files in VSCode
 
-This is also elaborated more upon within the [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop) section.
+This is also elaborated upon within the [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop) section.
 
 **Method 1: From GitHub Desktop**
 
@@ -426,20 +426,20 @@ Issues are tickets in GitHub and are used to organize various request within FOC
 1. Go to https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues
 2. Click `New Issue` (upper right)
 3. Select the type of Issue that best describes your goal
-  a. Action Item - This is a task within a Work Item issue
-  b. FOCUS Feature Request - Propose a new attribute, refinement, or data structure for the FOCUS specification.
-  c. General Feedback - Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
-  d. Maintenance Task - Create tasks related to work on the GitHub Repository or GitHub Actions.
-  e. Work Item - Template for creating new Work Items (these are linked to a Feature Request)
-  f. Blank issue - try not to use this, please
-4. Fill out the details of the template, please be straight forward and thorough.
+  - Action Item - This is a task within a Work Item issue
+  - FOCUS Feature Request - Propose a new attribute, refinement, or data structure for the FOCUS specification.
+  - General Feedback - Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
+  - Maintenance Task - Create tasks related to work on the GitHub Repository or GitHub Actions.
+  - Work Item - Template for creating new Work Items (these are linked to a Feature Request)
+  - Blank issue - try not to use this, please
+4. Fill out the details of the template, and please be straightforward and thorough.
 5. Click the `Create` button
 
 ### Reading and Analyzing Issues
 
 **Before Commenting:**
 
-1. **Read the entire issue** including the original description and all comments
+1. **Read the entire issue**, including the original description and all comments
 2. **Check for duplicates** - search if similar issues already exist
 3. **Review linked pull requests** - see if someone is already working on it
 4. **Check issue status** - ensure it's still relevant and open
@@ -505,7 +505,7 @@ Issues are tickets in GitHub and are used to organize various request within FOC
 
 **When to Follow Up:**
 
-- If you've provided requested information
+- If you've provided the requested information
 - If you've found a solution or workaround
 - If the issue status has changed (bug confirmed, feature approved, etc.)
 - If you've tested a proposed fix
@@ -575,7 +575,7 @@ Cloning creates a local copy of a repository on your computer, allowing you to w
 1. Open GitHub Desktop
 2. Click **File** → **Clone repository** (or use Ctrl/Cmd + Shift + O)
 3. You'll see three tabs:
-   - **GitHub.com:** Your repositories and ones you have access to
+   - **GitHub.com:** Your repositories and those you have access to
    - **GitHub Enterprise:** If you have an enterprise account
    - **URL:** For repositories not listed or from other Git hosts
 
@@ -686,7 +686,7 @@ GitHub Desktop also offers a direct "Create Pull Request" option:
 
 ---
 
-## How to Submit Changes to an an Existing PR using GitHub Desktop and VSCode
+## How to Submit Changes to an Existing PR using GitHub Desktop and VSCode
 
 ### Method 1: Checking Out a Pull Request from GitHub Desktop
 
@@ -727,7 +727,7 @@ GitHub Desktop also offers a direct "Create Pull Request" option:
 
 **Step 1: Ensure You're on the Correct Branch**
 
-1. In GitHub Desktop, verify the current branch name matches the pull request branch
+1. In GitHub Desktop, verify that the current branch name matches the pull request branch
 2. The branch name is displayed at the top of the GitHub Desktop interface
 
 **Step 2: Make Your Changes**
