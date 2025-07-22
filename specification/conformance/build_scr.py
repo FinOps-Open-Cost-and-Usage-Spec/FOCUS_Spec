@@ -28,8 +28,9 @@ for root, _, filenames in os.walk(rules_dir):
                 conformance_rules.update(rules)
 scr['ConformanceRules'] = conformance_rules
 
+scr_output_file = f'scr-{scr['SCRDetails']['Version']}.json'
 try:
-    with open('scr.json', 'w', encoding='utf-8') as out_file:
+    with open(scr_output_file, 'w', encoding='utf-8') as out_file:
         json.dump(scr, out_file, indent=2)
     print("✅ scr.json written")
 except Exception as e:
@@ -51,4 +52,4 @@ if errors:
         print(f" - [{path}] {error.message}")
     exit(1)
 else:
-    print("✅ scr.json is valid according to scr_schema.json")
+    print(f"✅ {scr_output_file} is valid according to scr_schema.json")

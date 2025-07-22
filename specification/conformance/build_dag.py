@@ -36,7 +36,7 @@ def get_args():
     parser.add_argument('-t', '--table-name', default="FOCUS", help='Table to generate SCR graph for')
     parser.add_argument('--include-checks', action='store_true', help='Add checks to graph')
     parser.add_argument('--include-attributes', action='store_true', help='Add attributes to graph')
-    parser.add_argument('-f', '--scr-filename', type=str, default='scr.json', help='SCR definition filename to load')
+    parser.add_argument('-f', '--scr-filename', type=str, default='scr-1.2.json', help='SCR definition filename to load')
     parser.add_argument('--dot-filename', type=str, default='scr_graph.dot', help='Output SCR graph dot filename')
     parser.add_argument('--png-filename', type=str, default='scr_graph.png', help='Output SCR graph png filename')
     parser.add_argument('--logging-level', type=str, default='WARNING', choices={"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}, help='Logging level to use')
@@ -165,7 +165,6 @@ class SCRGraph:
         self.dot.render(filename.replace(f'.{format_type}', ''), format=format_type, cleanup=True)
 
 if __name__ == '__main__':
-    force_args=['--table-name', 'FOCUS', '--include-checks', '--include-attributes', '--logging-level', 'DEBUG', '--scr-file', '/Users/mfuller/git/github/FOCUS_Spec/specification/conformance/scr.json']
     args = get_args()
 
     logger = init_logger(args.logging_level)

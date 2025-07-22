@@ -90,6 +90,32 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 ---
 
+## Versioning
+
+In general, the version of each Static Conformance Requirement (SCR) is aligned with the version of the FOCUS Specification to which it applies. However, there may be occasions where a correction or clarification is required due to an error or bug in a previously published SCR definition.
+
+To accommodate these changes without altering the core FOCUS Specification version, the `Version` field of an SCR may differ slightly from the associated FOCUS Specification version. This allows us to make targeted corrections while preserving compatibility and traceability.
+
+Versioning Format:
+
+The version string is defined using the following ABNF:
+
+```ini
+version        = spec-version [ "-" "Bugfix" bugfix-num ]
+spec-version   = major "." minor
+major          = 1*DIGIT
+minor          = 2*DIGIT / 1*DIGIT
+bugfix-num     = 1*DIGIT
+```
+
+- major and minor represent the FOCUS Specification version (e.g., 1.2, 1.13, 2.01)
+- An optional -Bugfix# suffix identifies a correction to the original SCR version
+
+Example:
+If the SCR originally aligned with FOCUS Specification version `1.2`, but a correction is later made, the updated SCR version would be `1.2-Bugfix1`, a further correction would end up being `1.2-Bugfix2`
+
+This approach ensures clear linkage to the original specification version while allowing for transparent and controlled updates to individual SCR definitions.
+
 ## 📁 File & Folder Structure
 
 ### 🔄 Input Files

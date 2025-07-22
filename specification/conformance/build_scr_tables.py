@@ -1,6 +1,41 @@
 #!/usr/bin/env python3
 import json
 from collections import deque
+import logging
+import argparse
+import sys
+
+def init_logger(level):
+    # Create a logger instance
+    logger = logging.getLogger(__name__)
+    if (logger.hasHandlers()):
+        logger.handlers.clear()
+    match level:
+        case 'DEBUG':
+            logger.setLevel(logging.DEBUG)
+        case 'INFO':
+            logger.setLevel(logging.INFO)
+        case 'WARNING':
+            logger.setLevel(logging.WARNING)
+        case 'ERROR':
+            logger.setLevel(logging.ERROR)
+        case 'CRITICAL':
+            logger.setLevel(logging.CRITICAL)
+        case _:
+            logger.setLevel(logging.INFO)
+
+    console_handler = logging.StreamHandler(sys.stdout)
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    console_handler.setFormatter(formatter)
+    logger.addHandler(console_handler)
+    return logger
+
+def get_args():
+    parser = argparse.ArgumentParser(description='SCR Table Generator.')
+    parser.add_argument('-t', '--table-name', default="FOCUS", help='Table to generate SCR table for')
+    parser.add_argument('-f', '--scr-filename', type=str, default='scr-1.2.json', help='SCR definition filename to load')
+    parser.add_argument('--logging-level', type=str, default='WARNING', choices={"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}, help='Logging level to use')
+    return parser.parse_args()
 
 def summarize_check(node):
     if not node:
@@ -17,10 +52,13 @@ def summarize_check(node):
         return f"{func}({node['ColumnAName']}, {node['ColumnBName']})"
     return func or ""
 
-def generate_markdown(data):
+def generate_markdown(data, generate_table_name):
     output_tables = []
 
     for table_name, table in data.get("ConformanceTables", {}).items():
+        if table_name != generate_table_name:
+            continue
+
         headers = [
             "ConformanceRuleId", "Function", "Status", "ApplicabilityCriteria",
             "Type", "mustSatisfy", "Requirement", "Condition"
@@ -78,10 +116,14 @@ def generate_markdown(data):
     return "\n\n".join(output_tables)
 
 if __name__ == "__main__":
-    with open("scr.json", "r") as f:
+    args = get_args()
+
+    logger = init_logger(args.logging_level)
+
+    with open(args.scr_filename, "r") as f:
         scr_data = json.load(f)
     
-    markdown_output = generate_markdown(scr_data)
+    markdown_output = generate_markdown(scr_data, generate_table_name=args.table_name)
 
     with open("conformance_tables.md", "w") as f:
         f.write(markdown_output)
