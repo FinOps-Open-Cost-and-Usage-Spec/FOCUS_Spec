@@ -42,7 +42,8 @@
           }
         ]
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "BilledCost-C-001-M": {
@@ -59,7 +60,8 @@
         "CheckFunction": "ColumnPresent",
         "ColumnName": "BilledCost"
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "BilledCost-C-002-M": {
@@ -77,7 +79,8 @@
         "ColumnName": "BilledCost",
         "Value": null
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "BilledCost-C-003-M": {
@@ -94,7 +97,8 @@
         "CheckFunction": "TypeDecimal",
         "ColumnName": "BilledCost"
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "BilledCost-C-004-M": {
@@ -111,7 +115,8 @@
         "CheckFunction": "FormatNumeric",
         "ColumnName": "BilledCost"
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "BilledCost-C-005-M": {
@@ -133,7 +138,8 @@
         "CheckFunction": "CheckNotSameValue",
         "ColumnAName": "ProviderName",
         "ColumnBName": "InvoiceIssuerName"
-      }
+      },
+      "Dependencies": []
     }
   },
   "BilledCost-C-006-M": {
@@ -147,7 +153,8 @@
     "ValidationCriteria": {
       "mustSatisfy": "MUST be denominated in the BillingCurrency",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "BilledCost-C-007-M": {
@@ -161,7 +168,8 @@
     "ValidationCriteria": {
       "mustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }

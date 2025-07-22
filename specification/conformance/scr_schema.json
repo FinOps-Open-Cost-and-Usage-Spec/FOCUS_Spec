@@ -93,93 +93,99 @@
     "ConformanceRules": {
       "type": "object",
       "description": "The list of all rules, each containing logic, reference metadata, and criteria.",
-      "items": {
-        "type": "object",
-        "patternProperties": {
-          "^[A-Za-z0-9]+-C-\\d{3}-[MOC]$": {
-            "type": "object",
-            "properties": {
-              "Function": {
-                "type": "string",
-                "enum": [
-                  "Format",
-                  "Presence",
-                  "Validation",
-                  "Type",
-                  "Composite"
-                ]
-              },
-              "Reference": {
+      "patternProperties": {
+        "^[A-Za-z0-9]+-[CA]{1}-\\d{3}-[MOC]$": {
+          "type": "object",
+          "properties": {
+            "Function": {
+              "type": "string",
+              "enum": [
+                "Format",
+                "Presence",
+                "Validation",
+                "Type",
+                "Composite"
+              ]
+            },
+            "Reference": {
+              "type": "string"
+            },
+            "Notes": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "VersionIntroduced": {
+              "type": "string"
+            },
+            "Status": {
+              "type": "string",
+              "enum": [
+                "active",
+                "deprecated"
+              ]
+            },
+            "ApplicabilityCriteria": {
+              "type": "array",
+              "items": {
                 "type": "string"
-              },
-              "Notes": {
-                "type": [
-                  "string",
-                  "null"
-                ]
-              },
-              "VersionIntroduced": {
-                "type": "string"
-              },
-              "Status": {
-                "type": "string",
-                "enum": [
-                  "active",
-                  "deprecated"
-                ]
-              },
-              "ApplicabilityCriteria": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "CheckType": {
-                "type": "string",
-                "enum": [
-                  "static",
-                  "dynamic"
-                ]
-              },
-              "ValidationCriteria": {
-                "type": "object",
-                "properties": {
-                  "mustSatisfy": {
-                    "type": "string"
-                  },
-                  "Check": {
-                    "type": [
-                      "object",
-                      "null"
-                    ]
-                  },
-                  "Condition": {
-                    "type": [
-                      "object",
-                      "null"
-                    ]
-                  }
-                },
-                "required": [
-                  "mustSatisfy"
-                ],
-                "additionalProperties": true
               }
             },
-            "required": [
-              "Function",
-              "Reference",
-              "VersionIntroduced",
-              "Status",
-              "ApplicabilityCriteria",
-              "CheckType",
-              "ValidationCriteria"
-            ],
-            "additionalProperties": false
-          }
-        },
-        "additionalProperties": false
-      }
+            "Type": {
+              "type": "string",
+              "enum": [
+                "Static",
+                "Dynamic"
+              ]
+            },
+            "ValidationCriteria": {
+              "type": "object",
+              "properties": {
+                "mustSatisfy": {
+                  "type": "string"
+                },
+                "Requirement": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                },
+                "Condition": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                },
+                "Dependencies": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "mustSatisfy",
+                "Requirement",
+                "Condition",
+                "Dependencies"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "Function",
+            "Reference",
+            "VersionIntroduced",
+            "Status",
+            "ApplicabilityCriteria",
+            "Type",
+            "ValidationCriteria"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     }
   },
   "required": [

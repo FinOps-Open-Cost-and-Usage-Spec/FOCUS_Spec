@@ -5,6 +5,8 @@
     "Notes": "",
     "VersionIntroduced": "1.2",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "",
       "Requirement": {
@@ -24,7 +26,8 @@
           }
         ]
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "DateTimeFormat-A-001-M": {
@@ -33,10 +36,13 @@
     "Notes": "",
     "VersionIntroduced": "1.2",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "DateTimeFormat-A-002-M": {
@@ -45,10 +51,13 @@
     "Notes": "",
     "VersionIntroduced": "1.2",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "DateTimeFormat-A-003-M": {
@@ -57,10 +66,13 @@
     "Notes": "",
     "VersionIntroduced": "1.2",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }

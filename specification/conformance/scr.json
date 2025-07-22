@@ -147,6 +147,8 @@
       "Notes": "",
       "VersionIntroduced": "1.2",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "",
         "Requirement": {
@@ -166,7 +168,8 @@
             }
           ]
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "DateTimeFormat-A-001-M": {
@@ -175,10 +178,13 @@
       "Notes": "",
       "VersionIntroduced": "1.2",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "DateTimeFormat-A-002-M": {
@@ -187,10 +193,13 @@
       "Notes": "",
       "VersionIntroduced": "1.2",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "DateTimeFormat-A-003-M": {
@@ -199,10 +208,13 @@
       "Notes": "",
       "VersionIntroduced": "1.2",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "CurrencyCodeFormat-A-000-M": {
@@ -211,6 +223,8 @@
       "Notes": "",
       "VersionIntroduced": "1.2",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST use Pascal case",
         "Requirement": {
@@ -226,7 +240,8 @@
             }
           ]
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "CurrencyCodeFormat-A-001-M": {
@@ -235,10 +250,13 @@
       "Notes": "",
       "VersionIntroduced": "1.2",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "CurrencyCodeFormat-A-002-M": {
@@ -247,10 +265,13 @@
       "Notes": "",
       "VersionIntroduced": "1.2",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-000-C": {
@@ -306,7 +327,8 @@
             }
           ]
         },
-        "Condition": null
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-001-C": {
@@ -325,7 +347,8 @@
           "CheckFunction": "ColumnPresent",
           "ColumnName": "ListUnitPrice"
         },
-        "Condition": null
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-002-M": {
@@ -344,7 +367,8 @@
           "CheckFunction": "TypeDecimal",
           "ColumnName": "ListUnitPrice"
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-003-M": {
@@ -363,7 +387,8 @@
           "CheckFunction": "FormatNumeric",
           "ColumnName": "ListUnitPrice"
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-004-C": {
@@ -387,7 +412,8 @@
           "CheckFunction": "CheckValue",
           "ColumnName": "ChargeCategory",
           "Value": "Tax"
-        }
+        },
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-005-C": {
@@ -429,7 +455,8 @@
               "Value": "Purchase"
             }
           ]
-        }
+        },
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-006-C": {
@@ -453,7 +480,8 @@
           "CheckFunction": "CheckNotValue",
           "ColumnName": "ChargeClass",
           "Value": "Correction"
-        }
+        },
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-007-O": {
@@ -469,7 +497,8 @@
       "ValidationCriteria": {
         "mustSatisfy": "MAY be null in all other cases",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-008-C": {
@@ -493,7 +522,8 @@
           "CheckFunction": "CheckNotValue",
           "ColumnName": "ListUnitPrice",
           "Value": null
-        }
+        },
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-009-C": {
@@ -509,7 +539,8 @@
       "ValidationCriteria": {
         "mustSatisfy": "MUST be denominated in the BillingCurrency",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-010-M": {
@@ -544,7 +575,8 @@
               "Value": "Correction"
             }
           ]
-        }
+        },
+        "Dependencies": []
       }
     },
     "ListUnitPrice-C-011-C": {
@@ -564,7 +596,8 @@
           "CheckFunction": "CheckValue",
           "ColumnName": "ChargeClass",
           "Value": "Correction"
-        }
+        },
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-000-M": {
@@ -573,6 +606,8 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST use Pascal case",
         "Requirement": {
@@ -632,7 +667,8 @@
             }
           ]
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-001-M": {
@@ -641,10 +677,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST use Pascal case",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-002-M": {
@@ -653,10 +692,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST NOT use abbreviations",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-003-M": {
@@ -665,10 +707,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST be alphanumeric with no special characters",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-004-O": {
@@ -677,10 +722,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs SHOULD NOT use acronyms",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-005-O": {
@@ -689,10 +737,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-006-O": {
@@ -701,10 +752,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-007-O": {
@@ -713,10 +767,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-008-M": {
@@ -725,10 +782,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Columns with the Category suffix MUST be normalized",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-009-M": {
@@ -737,10 +797,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-010-O": {
@@ -749,10 +812,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-011-O": {
@@ -761,10 +827,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-012-O": {
@@ -773,10 +842,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ColumnNamingandOrdering-A-013-O": {
@@ -785,10 +857,13 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "BilledCost-C-000-M": {
@@ -834,7 +909,8 @@
             }
           ]
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "BilledCost-C-001-M": {
@@ -851,7 +927,8 @@
           "CheckFunction": "ColumnPresent",
           "ColumnName": "BilledCost"
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "BilledCost-C-002-M": {
@@ -869,7 +946,8 @@
           "ColumnName": "BilledCost",
           "Value": null
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "BilledCost-C-003-M": {
@@ -886,7 +964,8 @@
           "CheckFunction": "TypeDecimal",
           "ColumnName": "BilledCost"
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "BilledCost-C-004-M": {
@@ -903,7 +982,8 @@
           "CheckFunction": "FormatNumeric",
           "ColumnName": "BilledCost"
         },
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "BilledCost-C-005-M": {
@@ -925,7 +1005,8 @@
           "CheckFunction": "CheckNotSameValue",
           "ColumnAName": "ProviderName",
           "ColumnBName": "InvoiceIssuerName"
-        }
+        },
+        "Dependencies": []
       }
     },
     "BilledCost-C-006-M": {
@@ -939,7 +1020,8 @@
       "ValidationCriteria": {
         "mustSatisfy": "MUST be denominated in the BillingCurrency",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "BilledCost-C-007-M": {
@@ -953,7 +1035,8 @@
       "ValidationCriteria": {
         "mustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
         "Requirement": {},
-        "Condition": {}
+        "Condition": {},
+        "Dependencies": []
       }
     }
   }

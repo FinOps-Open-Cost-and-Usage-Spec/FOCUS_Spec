@@ -5,6 +5,8 @@
     "Notes": "",
     "VersionIntroduced": "1.2",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST use Pascal case",
       "Requirement": {
@@ -20,7 +22,8 @@
           }
         ]
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "CurrencyCodeFormat-A-001-M": {
@@ -29,10 +32,13 @@
     "Notes": "",
     "VersionIntroduced": "1.2",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "CurrencyCodeFormat-A-002-M": {
@@ -41,10 +47,13 @@
     "Notes": "",
     "VersionIntroduced": "1.2",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }

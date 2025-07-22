@@ -5,6 +5,8 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST use Pascal case",
       "Requirement": {
@@ -64,7 +66,8 @@
           }
         ]
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-001-M": {
@@ -73,10 +76,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST use Pascal case",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-002-M": {
@@ -85,10 +91,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST NOT use abbreviations",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-003-M": {
@@ -97,10 +106,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST be alphanumeric with no special characters",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-004-O": {
@@ -109,10 +121,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs SHOULD NOT use acronyms",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-005-O": {
@@ -121,10 +136,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-006-O": {
@@ -133,10 +151,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-007-O": {
@@ -145,10 +166,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-008-M": {
@@ -157,10 +181,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Columns with the Category suffix MUST be normalized",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-009-M": {
@@ -169,10 +196,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-010-O": {
@@ -181,10 +211,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-011-O": {
@@ -193,10 +226,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-012-O": {
@@ -205,10 +241,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ColumnNamingandOrdering-A-013-O": {
@@ -217,10 +256,13 @@
     "Notes": "",
     "VersionIntroduced": "0.5",
     "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }

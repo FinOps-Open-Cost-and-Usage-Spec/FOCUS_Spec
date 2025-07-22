@@ -52,7 +52,8 @@
           }
         ]
       },
-      "Condition": null
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-001-C": {
@@ -71,7 +72,8 @@
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ListUnitPrice"
       },
-      "Condition": null
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-002-M": {
@@ -90,7 +92,8 @@
         "CheckFunction": "TypeDecimal",
         "ColumnName": "ListUnitPrice"
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-003-M": {
@@ -109,7 +112,8 @@
         "CheckFunction": "FormatNumeric",
         "ColumnName": "ListUnitPrice"
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-004-C": {
@@ -133,7 +137,8 @@
         "CheckFunction": "CheckValue",
         "ColumnName": "ChargeCategory",
         "Value": "Tax"
-      }
+      },
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-005-C": {
@@ -175,7 +180,8 @@
             "Value": "Purchase"
           }
         ]
-      }
+      },
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-006-C": {
@@ -199,7 +205,8 @@
         "CheckFunction": "CheckNotValue",
         "ColumnName": "ChargeClass",
         "Value": "Correction"
-      }
+      },
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-007-O": {
@@ -215,7 +222,8 @@
     "ValidationCriteria": {
       "mustSatisfy": "MAY be null in all other cases",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-008-C": {
@@ -239,7 +247,8 @@
         "CheckFunction": "CheckNotValue",
         "ColumnName": "ListUnitPrice",
         "Value": null
-      }
+      },
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-009-C": {
@@ -255,7 +264,8 @@
     "ValidationCriteria": {
       "mustSatisfy": "MUST be denominated in the BillingCurrency",
       "Requirement": {},
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-010-M": {
@@ -290,7 +300,8 @@
             "Value": "Correction"
           }
         ]
-      }
+      },
+      "Dependencies": []
     }
   },
   "ListUnitPrice-C-011-C": {
@@ -310,7 +321,8 @@
         "CheckFunction": "CheckValue",
         "ColumnName": "ChargeClass",
         "Value": "Correction"
-      }
+      },
+      "Dependencies": []
     }
   }
 }
