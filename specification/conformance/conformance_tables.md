@@ -1,4 +1,4 @@
-### Conformance Table: FOCUS
+# Conformance Table: FOCUS
 
 | ConformanceRuleId | Function | Status | ApplicabilityCriteria | Type | mustSatisfy | Requirement | Condition |
 | --- | --- | --- | --- | --- | --- | --- | --- |

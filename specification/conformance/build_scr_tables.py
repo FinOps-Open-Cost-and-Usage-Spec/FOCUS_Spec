@@ -64,7 +64,7 @@ def generate_markdown(data, generate_table_name):
             "Type", "mustSatisfy", "Requirement", "Condition"
         ]
         md = [
-            f"### Conformance Table: {table_name}",
+            f"# Conformance Table: {table_name}",
             "",
             "| " + " | ".join(headers) + " |",
             "| " + " | ".join(["---"] * len(headers)) + " |"
