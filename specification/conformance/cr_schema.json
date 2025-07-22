@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "SCR Schema with Stage 2 Enhancements",
+  "title": "CR Schema with Stage 2 Enhancements",
   "type": "object",
   "properties": {
     "Details": {
       "type": "object",
-      "description": "Metadata about the SCR version and general properties.",
+      "description": "Metadata about the CR version and general properties.",
       "properties": {
         "CRVersion": {
           "type": "string"

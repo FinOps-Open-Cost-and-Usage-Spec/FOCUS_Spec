@@ -15,40 +15,40 @@
         "CheckFunction": "AND",
         "Items": [
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-001-C"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-001-C"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-002-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-002-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-003-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-003-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-004-C"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-004-C"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-005-C"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-005-C"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-008-C"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-008-C"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-009-C"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-009-C"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-010-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-010-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-011-C"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-011-C"
           }
         ]
       },
@@ -159,12 +159,12 @@
         "CheckFunction": "AND",
         "Items": [
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-006-C"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-006-C"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ListUnitPrice-C-007-O"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-007-O"
           }
         ]
       },
@@ -323,7 +323,7 @@
     ],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "mustSatisfy": "Discrepancies MAY exist when ChargeClass is 'Correction'",
+      "mustSatisfy": "DiConformanceRuleIdepancies MAY exist when ChargeClass is 'Correction'",
       "Requirement": {},
       "Condition": {
         "CheckFunction": "CheckValue",

@@ -13,56 +13,56 @@
         "CheckFunction": "AND",
         "Items": [
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-001-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-001-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-002-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-002-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-003-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-003-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-004-O"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-004-O"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-005-O"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-005-O"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-006-O"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-006-O"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-007-O"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-007-O"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-008-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-008-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-009-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-009-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-010-O"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-010-O"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-011-O"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-011-O"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-012-O"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-012-O"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "ColumnNamingandOrdering-A-013-O"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnNamingandOrdering-A-013-O"
           }
         ]
       },

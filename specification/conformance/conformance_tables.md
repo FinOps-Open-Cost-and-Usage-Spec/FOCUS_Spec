@@ -21,4 +21,4 @@
 | ListUnitPrice-C-008-C | Validation | active | PUBLIC_PRICE_LIST_SUPPORTED | Static | MUST be a non-negative decimal value, when ListUnitPrice is not null | CheckGreaterOrEqualThanValue(ListUnitPrice, 0) | CheckNotValue(ListUnitPrice) |
 | ListUnitPrice-C-009-C | Validation | active | PUBLIC_PRICE_LIST_SUPPORTED | Dynamic | MUST be denominated in the BillingCurrency |  |  |
 | ListUnitPrice-C-010-M | Format | active | PUBLIC_PRICE_LIST_SUPPORTED | Static | MUST conform to NumericFormat requirements | ColumnByColumnEqualsColumnValue(ListUnitPrice, PricingQuantity) | AND of [CheckNotValue(ListUnitPrice), CheckNotValue(ChargeClass, Correction)] |
-| ListUnitPrice-C-011-C | Validation | active | PUBLIC_PRICE_LIST_SUPPORTED | Dynamic | Discrepancies MAY exist when ChargeClass is 'Correction' |  | CheckValue(ChargeClass, Correction) |
+| ListUnitPrice-C-011-C | Validation | active | PUBLIC_PRICE_LIST_SUPPORTED | Dynamic | DiConformanceRuleIdepancies MAY exist when ChargeClass is 'Correction' |  | CheckValue(ChargeClass, Correction) |

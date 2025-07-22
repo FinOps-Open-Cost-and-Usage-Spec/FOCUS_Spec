@@ -63,10 +63,10 @@
       ],
       "FormatAttributes": []
     },
-    "CheckSCR": {
-      "Description": "Check another SCR and turn its value",
+    "CheckConformanceRule": {
+      "Description": "Check another ConformanceRule and turn its value",
       "Arguments": [
-        "SCR"
+        "ConformanceRuleId"
       ],
       "FormatAttributes": []
     },

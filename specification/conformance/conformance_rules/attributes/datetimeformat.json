@@ -13,16 +13,16 @@
         "CheckFunction": "AND",
         "Items": [
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "DateTimeFormat-A-001-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "DateTimeFormat-A-001-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "DateTimeFormat-A-002-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "DateTimeFormat-A-002-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "DateTimeFormat-A-003-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "DateTimeFormat-A-003-M"
           }
         ]
       },

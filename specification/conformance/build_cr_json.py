@@ -3,9 +3,9 @@ import json
 from jsonschema import Draft7Validator
 import os
 
-scr = {}
+cr = {}
 files = [
-    'scr_details.json',
+    'cr_details.json',
     'applicability_criteria.json',
     'check_functions.json',
     'conformance_tables.json'
@@ -13,7 +13,7 @@ files = [
 for filename in files:
     with open(filename, 'rb') as f:
         details = json.loads(f.read())
-        scr.update(details)
+        cr.update(details)
 
 # Load conformance rule files
 conformance_rules = {}
@@ -26,24 +26,24 @@ for root, _, filenames in os.walk(rules_dir):
             with open(path, 'rb') as f:
                 rules = json.loads(f.read())
                 conformance_rules.update(rules)
-scr['ConformanceRules'] = conformance_rules
+cr['ConformanceRules'] = conformance_rules
 
-scr_output_file = f'scr-{scr['SCRDetails']['Version']}.json'
+cr_output_file = f'cr-{cr['Details']['CRVersion']}.json'
 try:
-    with open(scr_output_file, 'w', encoding='utf-8') as out_file:
-        json.dump(scr, out_file, indent=2)
-    print("✅ scr.json written")
+    with open(cr_output_file, 'w', encoding='utf-8') as out_file:
+        json.dump(cr, out_file, indent=2)
+    print(f"✅ {cr_output_file} written")
 except Exception as e:
-    print(f"❌ Output of scr.json failed {repr(e)}")
+    print(f"❌ Output of {cr_output_file} failed {repr(e)}")
     exit(1)
 
 # Load schema
-with open('scr_schema.json', 'r', encoding='utf-8') as schema_file:
+with open('cr_schema.json', 'r', encoding='utf-8') as schema_file:
     schema = json.load(schema_file)
 
-# Validate scr.json against the schema and collect all errors
+# Validate json against the schema and collect all errors
 validator = Draft7Validator(schema)
-errors = sorted(validator.iter_errors(scr), key=lambda e: e.path)
+errors = sorted(validator.iter_errors(cr), key=lambda e: e.path)
 
 if errors:
     print("❌ Validation failed with the following issues:")
@@ -52,4 +52,4 @@ if errors:
         print(f" - [{path}] {error.message}")
     exit(1)
 else:
-    print(f"✅ {scr_output_file} is valid according to scr_schema.json")
+    print(f"✅ {cr_output_file} is valid according to cr_schema.json")

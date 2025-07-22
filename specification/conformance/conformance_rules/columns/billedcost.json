@@ -13,32 +13,32 @@
         "CheckFunction": "AND",
         "Items": [
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "BilledCost-C-001-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BilledCost-C-001-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "BilledCost-C-002-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BilledCost-C-002-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "BilledCost-C-003-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BilledCost-C-003-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "BilledCost-C-004-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BilledCost-C-004-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "BilledCost-C-005-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BilledCost-C-005-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "BilledCost-C-006-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BilledCost-C-006-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "BilledCost-C-007-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BilledCost-C-007-M"
           }
         ]
       },

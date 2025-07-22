@@ -1,14 +1,14 @@
-# Static Conformance Requirements (SCR)
+# Conformance Requirements (CR)
 
-Organizations developing technical specifications must adopt a structured, machine-readable approach to defining conformance. **Static Conformance Requirements (SCR)** offer a standardized way to define, evaluate, and enforce specification requirements before formal testing.
+Organizations developing technical specifications must adopt a structured, machine-readable approach to defining conformance. **Conformance Requirements (CR)** offer a standardized way to define, evaluate, and enforce specification requirements before formal testing.
 
-This repository contains modular SCR components and a Python-based build process that assembles them into a validated `scr.json` file using a corresponding JSON Schema (`scr_schema.json`).
+This repository contains modular CR components and a Python-based build process that assembles them into a validated `cr-<version>.json` file using a corresponding JSON Schema (`cr_schema.json`).
 
 ---
 
 ## 🎯 Purpose
 
-The SCR format is designed to help specification authors:
+The CR format is designed to help specification authors:
 
 - Clearly define mandatory and optional requirements
 - Manage dependencies between conditions and validations
@@ -55,7 +55,7 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 ---
 
-## 🧾 SCR Expression Format
+## 🧾 CR Expression Format
 
 ### Full Rule Identifier Format
 
@@ -82,7 +82,7 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 ## 📐 RFC 2119 Keyword Mapping
 
-| Keyword                | Default SCR Classification | Notes                                      |
+| Keyword                | Default CR Classification | Notes                                      |
 |------------------------|----------------------------|--------------------------------------------|
 | **MUST / SHALL**       | Mandatory (M)               | Typically maps to MCF or MAF               |
 | **SHOULD / RECOMMENDED** | Optional (O)              | May be elevated to mandatory in some contexts |
@@ -92,9 +92,9 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 ## Versioning
 
-In general, the version of each Static Conformance Requirement (SCR) is aligned with the version of the FOCUS Specification to which it applies. However, there may be occasions where a correction or clarification is required due to an error or bug in a previously published SCR definition.
+In general, the version of each Conformance Requirement (CR) is aligned with the version of the FOCUS Specification to which it applies. However, there may be occasions where a correction or clarification is required due to an error or bug in a previously published CR definition.
 
-To accommodate these changes without altering the core FOCUS Specification version, the `Version` field of an SCR may differ slightly from the associated FOCUS Specification version. This allows us to make targeted corrections while preserving compatibility and traceability.
+To accommodate these changes without altering the core FOCUS Specification version, the `Version` field of an CR may differ slightly from the associated FOCUS Specification version. This allows us to make targeted corrections while preserving compatibility and traceability.
 
 Versioning Format:
 
@@ -109,18 +109,18 @@ bugfix-num     = 1*DIGIT
 ```
 
 - major and minor represent the FOCUS Specification version (e.g., 1.2, 1.13, 2.01)
-- An optional -Bugfix# suffix identifies a correction to the original SCR version
+- An optional -Bugfix# suffix identifies a correction to the original CR version
 
 Example:
-If the SCR originally aligned with FOCUS Specification version `1.2`, but a correction is later made, the updated SCR version would be `1.2-Bugfix1`, a further correction would end up being `1.2-Bugfix2`
+If the CR originally aligned with FOCUS Specification version `1.2`, but a correction is later made, the updated CR version would be `1.2-Bugfix1`, a further correction would end up being `1.2-Bugfix2`
 
-This approach ensures clear linkage to the original specification version while allowing for transparent and controlled updates to individual SCR definitions.
+This approach ensures clear linkage to the original specification version while allowing for transparent and controlled updates to individual CR definitions.
 
 ## 📁 File & Folder Structure
 
 ### 🔄 Input Files
 
-- `scr_details.json`: Metadata like versioning
+- `cr_details.json`: Metadata like versioning
 - `applicability_criteria.json`: Feature flags controlling rule application
 - `attributes.json`: Format attribute definitions (e.g. date/time, currency)
 - `check_functions.json`: Logical validation functions and their arguments
@@ -129,15 +129,15 @@ This approach ensures clear linkage to the original specification version while 
 
 ### 📤 Output
 
-- `scr.json`: Final merged and validated JSON document
+- `cr-<version>.json`: Final merged and validated JSON document
 
 ### 📏 Schema
 
-- `scr_schema.json`: JSON Schema (Draft 7) for validating `scr.json`
+- `cr_schema.json`: JSON Schema (Draft 7) for validating `cr-<version>.json`
 
 ### 🛠 Build Script
 
-- `build_scr.py`: Python script that builds and validates the final SCR file
+- `build_cr_json.py`: Python script that builds and validates the final CR file
 
 ---
 
@@ -152,20 +152,20 @@ pip install jsonschema
 ### 2. Build and Validate
 
 ```bash
-python build_scr.py
+python build_cr_json.py
 ```
 
 This will:
 
-- Merge all input files into `scr.json`
-- Validate the result against `scr_schema.json`
+- Merge all input files into `cr_json.json`
+- Validate the result against `cr_schema.json`
 - Print success or detailed validation errors
 
 ### 3. Output Example
 
 ```bash
-✅ scr.json written
-✅ scr.json is valid according to scr_schema.json
+✅ cr-<version>.json written
+✅ cr-<version>.json is valid according to cr_schema.json
 ```
 
 Or on error:
@@ -187,7 +187,7 @@ Each JSON file in `conformance_rules/` contains one or more rules structured as:
   "ListUnitPrice-C-001-C": {
     "Function": "Presence",
     "Reference": "ListUnitPrice",
-    "CheckType": "Static",
+    "Type": "Static",
     "ApplicabilityCriteria": ["PUBLIC_PRICE_LIST_SUPPORTED"],
     "ValidationCriteria": {
       "mustSatisfy": "...",
@@ -207,6 +207,6 @@ Each JSON file in `conformance_rules/` contains one or more rules structured as:
 
 The schema enforces:
 
-- Required keys like `SCRDetails`, `ApplicabilityCriteria`, `CheckFunction`, etc.
+- Required keys like `Details`, `ApplicabilityCriteria`, `CheckFunction`, etc.
 - Proper data types (e.g., arrays, strings, objects)
 - Structured `ValidationCriteria` for consistent rule logic

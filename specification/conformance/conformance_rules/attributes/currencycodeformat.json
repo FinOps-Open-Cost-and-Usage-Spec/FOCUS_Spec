@@ -13,12 +13,12 @@
         "CheckFunction": "AND",
         "Items": [
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "CurrencyCodeFormat-A-001-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CurrencyCodeFormat-A-001-M"
           },
           {
-            "CheckFunction": "CheckSCR",
-            "SCR": "CurrencyCodeFormat-A-002-M"
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CurrencyCodeFormat-A-002-M"
           }
         ]
       },

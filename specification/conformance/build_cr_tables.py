@@ -31,9 +31,9 @@ def init_logger(level):
     return logger
 
 def get_args():
-    parser = argparse.ArgumentParser(description='SCR Table Generator.')
-    parser.add_argument('-t', '--table-name', default="FOCUS", help='Table to generate SCR table for')
-    parser.add_argument('-f', '--scr-filename', type=str, default='scr-1.2.json', help='SCR definition filename to load')
+    parser = argparse.ArgumentParser(description='CR Table Generator.')
+    parser.add_argument('-t', '--table-name', default="FOCUS", help='Table to generate CR table for')
+    parser.add_argument('-f', '--cr-filename', type=str, default='cr-1.2.json', help='Conformance definition filename to load')
     parser.add_argument('--logging-level', type=str, default='WARNING', choices={"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}, help='Logging level to use')
     return parser.parse_args()
 
@@ -41,8 +41,8 @@ def summarize_check(node):
     if not node:
         return ""
     func = node.get("CheckFunction")
-    if func == "CheckSCR":
-        return f"Check {node.get('SCR')}"
+    if func == "CheckConformanceRule":
+        return f"Check {node.get('ConformanceRuleId')}"
     elif "ColumnName" in node:
         val = node.get("Value")
         return f"{func}({node['ColumnName']}, {val})" if val is not None else f"{func}({node['ColumnName']})"
@@ -88,9 +88,9 @@ def generate_markdown(data, generate_table_name):
             # Resolve dependencies from Requirement
             deps = []
             if req.get("CheckFunction") == "AND":
-                deps = [i.get("SCR") for i in req.get("Items", []) if i.get("CheckFunction") == "CheckSCR"]
-            elif req.get("CheckFunction") == "CheckSCR":
-                deps = [req.get("SCR")]
+                deps = [i.get("ConformanceRuleId") for i in req.get("Items", []) if i.get("CheckFunction") == "CheckConformanceRule"]
+            elif req.get("CheckFunction") == "CheckConformanceRule":
+                deps = [req.get("ConformanceRuleId")]
             
             for dep in deps:
                 if dep and dep not in visited:
@@ -120,10 +120,10 @@ if __name__ == "__main__":
 
     logger = init_logger(args.logging_level)
 
-    with open(args.scr_filename, "r") as f:
-        scr_data = json.load(f)
+    with open(args.cr_filename, "r") as f:
+        cr_data = json.load(f)
     
-    markdown_output = generate_markdown(scr_data, generate_table_name=args.table_name)
+    markdown_output = generate_markdown(cr_data, generate_table_name=args.table_name)
 
     with open("conformance_tables.md", "w") as f:
         f.write(markdown_output)
