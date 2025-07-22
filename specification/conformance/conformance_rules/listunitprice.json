@@ -138,7 +138,9 @@
         "ColumnName": "ChargeCategory",
         "Value": "Tax"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeCategory-C-000-M"
+      ]
     }
   },
   "ListUnitPrice-C-005-C": {
@@ -181,7 +183,9 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeCategory-C-000-M"
+      ]
     }
   },
   "ListUnitPrice-C-006-C": {
@@ -206,7 +210,9 @@
         "ColumnName": "ChargeClass",
         "Value": "Correction"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeClass-C-000-M"
+      ]
     }
   },
   "ListUnitPrice-C-007-O": {
@@ -301,7 +307,9 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeClass-C-000-M"
+      ]
     }
   },
   "ListUnitPrice-C-011-C": {
@@ -322,7 +330,9 @@
         "ColumnName": "ChargeClass",
         "Value": "Correction"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeClass-C-000-M"
+      ]
     }
   }
 }

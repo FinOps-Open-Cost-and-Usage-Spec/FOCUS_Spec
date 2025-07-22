@@ -139,7 +139,10 @@
         "ColumnAName": "ProviderName",
         "ColumnBName": "InvoiceIssuerName"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ProviderName-C-000-M",
+        "InvoiceIssuerName-C-000-M"
+      ]
     }
   },
   "BilledCost-C-006-M": {

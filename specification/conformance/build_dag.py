@@ -79,16 +79,16 @@ class SCR:
                 self.SCRGraph.add_edge(rule_id, check_function)
                 self.__traverse_check_attributes(check_function)
             else:
-                self.logger.warn(f'Skipping {check_function} checks is disabled') 
+                self.logger.warning(f'Skipping {check_function} checks is disabled') 
 
     def __traverse_check_attributes(self, check_id):
         if not self.include_attributes:
-            self.logger.warn(f'Skipping {check_id} attribute checks is disabled')
+            self.logger.warning(f'Skipping {check_id} attribute checks is disabled')
             return
         
         check_function = self.scr_definition["CheckFunction"].get(check_id, {})
         if not check_function:
-            self.logger.warn(f'Skipping {check_id} check not found')
+            self.logger.warning(f'Skipping {check_id} check not found')
             return
 
         for attribute in check_function.get('FormatAttributes', []):
@@ -104,6 +104,8 @@ class SCR:
             check_function = requirement.get("CheckFunction", None)
             if check_function:
                 self.__add_check_item(requirement, rule_id)
+        for rule_depenency in rule.get("ValidationCriteria", {}).get("Dependencies", []):
+            self.SCRGraph.add_edge(rule_id, rule_depenency)
 
     def load_graph(self):
         self.__load_scr_definition()
