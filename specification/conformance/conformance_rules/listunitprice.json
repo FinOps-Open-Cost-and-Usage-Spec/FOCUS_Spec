@@ -5,7 +5,7 @@
     "Notes": null,
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
@@ -61,12 +61,12 @@
     "Notes": "",
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts",
+      "mustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ListUnitPrice"
@@ -80,7 +80,7 @@
     "Notes": "",
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
@@ -99,7 +99,7 @@
     "Notes": "",
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
@@ -118,7 +118,7 @@
     "Notes": null,
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
@@ -142,7 +142,7 @@
     "Notes": null,
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
@@ -184,7 +184,7 @@
     "Notes": null,
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
@@ -208,7 +208,7 @@
     "Notes": null,
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
@@ -224,7 +224,7 @@
     "Notes": null,
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
@@ -248,7 +248,7 @@
     "Notes": null,
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Dynamic",
@@ -264,7 +264,7 @@
     "Notes": null,
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
@@ -299,7 +299,7 @@
     "Notes": null,
     "VersionIntroduced": "1.0",
     "Status": "active",
-    "PreConditions": [
+    "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Dynamic",

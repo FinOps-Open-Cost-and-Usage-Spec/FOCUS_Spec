@@ -6,7 +6,7 @@ import os
 scr = {}
 files = [
     'scr_details.json',
-    'preconditions.json',
+    'applicability_criteria.json',
     'check_functions.json',
     'conformance_tables.json'
 ]

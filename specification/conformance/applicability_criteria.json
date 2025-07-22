@@ -1,0 +1,10 @@
+{
+  "ApplicabilityCriteria": {
+    "COMMITMENT_DISCOUNT_SUPPORTED": {
+      "Description": "Billing data when the data generator supports commitment based discounts"
+    },
+    "PUBLIC_PRICE_LIST_SUPPORTED": {
+      "Description": "Data generator publishes unit prices exclusive of discounts"
+    }
+  }
+}

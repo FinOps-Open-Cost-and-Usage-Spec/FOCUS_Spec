@@ -14,7 +14,7 @@ The SCR format is designed to help specification authors:
 - Manage dependencies between conditions and validations
 - Maintain backward compatibility across versions
 - Support documentation generation and validation tooling
-- Enable automated testing of provider datasets against the FOCUS specification
+- Enable automated testing of data generator datasets against the FOCUS specification
 
 ---
 
@@ -95,7 +95,7 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 ### 🔄 Input Files
 
 - `scr_details.json`: Metadata like versioning
-- `preconditions.json`: Feature flags controlling rule application
+- `applicability_criteria.json`: Feature flags controlling rule application
 - `attributes.json`: Format attribute definitions (e.g. date/time, currency)
 - `check_functions.json`: Logical validation functions and their arguments
 - `conformance_tables.json`: Maps datasets (e.g. FOCUS) to rule sets
@@ -162,7 +162,7 @@ Each JSON file in `conformance_rules/` contains one or more rules structured as:
     "Function": "Presence",
     "Reference": "ListUnitPrice",
     "CheckType": "Static",
-    "PreConditions": ["PUBLIC_PRICE_LIST_SUPPORTED"],
+    "ApplicabilityCriteria": ["PUBLIC_PRICE_LIST_SUPPORTED"],
     "ValidationCriteria": {
       "mustSatisfy": "...",
       "Requirement": {
@@ -181,6 +181,6 @@ Each JSON file in `conformance_rules/` contains one or more rules structured as:
 
 The schema enforces:
 
-- Required keys like `SCRDetails`, `PreConditions`, `CheckFunction`, etc.
+- Required keys like `SCRDetails`, `ApplicabilityCriteria`, `CheckFunction`, etc.
 - Proper data types (e.g., arrays, strings, objects)
 - Structured `ValidationCriteria` for consistent rule logic

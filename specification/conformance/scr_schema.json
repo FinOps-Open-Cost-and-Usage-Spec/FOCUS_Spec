@@ -16,9 +16,9 @@
       ],
       "additionalProperties": false
     },
-    "PreConditions": {
+    "ApplicabilityCriteria": {
       "type": "object",
-      "description": "A dictionary of precondition flags used to determine rule applicability.",
+      "description": "A dictionary of flags used to determine rule applicability based on the data generators supported features.",
       "patternProperties": {
         "^[A-Z0-9_]+$": {
           "type": "object",
@@ -128,7 +128,7 @@
                   "deprecated"
                 ]
               },
-              "PreConditions": {
+              "ApplicabilityCriteria": {
                 "type": "array",
                 "items": {
                   "type": "string"
@@ -171,7 +171,7 @@
               "Reference",
               "VersionIntroduced",
               "Status",
-              "PreConditions",
+              "ApplicabilityCriteria",
               "CheckType",
               "ValidationCriteria"
             ],
@@ -184,7 +184,7 @@
   },
   "required": [
     "SCRDetails",
-    "PreConditions",
+    "ApplicabilityCriteria",
     "CheckFunction",
     "ConformanceTables",
     "ConformanceRules"

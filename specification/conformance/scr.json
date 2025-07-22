@@ -2,12 +2,12 @@
   "SCRDetails": {
     "Version": "1.2"
   },
-  "PreConditions": {
+  "ApplicabilityCriteria": {
     "COMMITMENT_DISCOUNT_SUPPORTED": {
-      "Description": "Billing data when the provider supports commitment based discounts"
+      "Description": "Billing data when the data generator supports commitment based discounts"
     },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
-      "Description": "Provider publishes unit prices exclusive of discounts"
+      "Description": "Data generator publishes unit prices exclusive of discounts"
     }
   },
   "CheckFunction": {
@@ -259,7 +259,7 @@
       "Notes": null,
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
@@ -315,12 +315,12 @@
       "Notes": "",
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts",
+        "mustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
           "ColumnName": "ListUnitPrice"
@@ -334,7 +334,7 @@
       "Notes": "",
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
@@ -353,7 +353,7 @@
       "Notes": "",
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
@@ -372,7 +372,7 @@
       "Notes": null,
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
@@ -396,7 +396,7 @@
       "Notes": null,
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
@@ -438,7 +438,7 @@
       "Notes": null,
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
@@ -462,7 +462,7 @@
       "Notes": null,
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
@@ -478,7 +478,7 @@
       "Notes": null,
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
@@ -502,7 +502,7 @@
       "Notes": null,
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Dynamic",
@@ -518,7 +518,7 @@
       "Notes": null,
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
@@ -553,7 +553,7 @@
       "Notes": null,
       "VersionIntroduced": "1.0",
       "Status": "active",
-      "PreConditions": [
+      "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Dynamic",
@@ -797,7 +797,7 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
-      "PreConditions": [],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "",
@@ -843,7 +843,7 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
-      "PreConditions": [],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be present in a FOCUS dataset",
@@ -860,7 +860,7 @@
       "Notes": "A null value would invalidate accounting use cases",
       "VersionIntroduced": "0.5",
       "Status": "active",
-      "PreConditions": [],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST NOT be null",
@@ -878,7 +878,7 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
-      "PreConditions": [],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be of type Decimal",
@@ -895,7 +895,7 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
-      "PreConditions": [],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST conform to NumericFormat requirements",
@@ -912,7 +912,7 @@
       "Notes": "Common for marketplace charges paid by customer directly to seller",
       "VersionIntroduced": "0.5",
       "Status": "active",
-      "PreConditions": [],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be 0 for charges where payments are received by a third party",
@@ -934,7 +934,7 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
-      "PreConditions": [],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be denominated in the BillingCurrency",
@@ -948,7 +948,7 @@
       "Notes": "",
       "VersionIntroduced": "0.5",
       "Status": "active",
-      "PreConditions": [],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "mustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
