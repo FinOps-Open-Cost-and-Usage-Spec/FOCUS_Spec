@@ -40,11 +40,12 @@ def get_args():
     parser.add_argument('--dot-filename', type=str, default='scr_graph.dot', help='Output SCR graph dot filename')
     parser.add_argument('--png-filename', type=str, default='scr_graph.png', help='Output SCR graph png filename')
     parser.add_argument('--logging-level', type=str, default='WARNING', choices={"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}, help='Logging level to use')
+    parser.add_argument('--start-at', type=str, default=None, help='Start the graph at a specific item')
     return parser.parse_args()
     
 
 class SCR:
-    def __init__(self, scr_filename, table_name, logger, include_checks=True, include_attributes=False):
+    def __init__(self, scr_filename, table_name, logger, include_checks=True, include_attributes=False, start_at=None):
         self.scr_filename = scr_filename
         self.table_name = table_name
         self.include_checks = include_checks
@@ -52,6 +53,7 @@ class SCR:
         self.scr_definition = {}
         self.SCRGraph = SCRGraph(graph_name=f'{self.table_name} Table Conformance DAG', logger=logger)
         self.logger = logger
+        self.start_at = start_at
 
     def __load_scr_definition(self):
         if not self.scr_definition:
@@ -105,12 +107,20 @@ class SCR:
 
     def load_graph(self):
         self.__load_scr_definition()
-        table_data = self.scr_definition["ConformanceTables"].get(self.table_name, {})
-        self.SCRGraph.add_node(f"Table: {self.table_name}", shape='box', custom_data=table_data)
-        for rule_id in self.scr_definition["ConformanceTables"][self.table_name]["ConformanceRules"]:
-            self.SCRGraph.add_node(rule_id, custom_data=self.scr_definition['ConformanceRules'].get(rule_id, {}))
-            self.SCRGraph.add_edge(self.table_name, rule_id)
-            self.__traverse_dependencies(rule_id)
+        if self.start_at:
+            rule = self.scr_definition["ConformanceRules"].get(self.start_at)
+            if not rule:
+                self.logger.error(f'Provided --start-at rule "{self.start_at}" not found in ConformanceRules')
+                return
+            self.SCRGraph.add_node(self.start_at, custom_data=rule)
+            self.__traverse_dependencies(self.start_at)
+        else:
+            table_data = self.scr_definition["ConformanceTables"].get(self.table_name, {})
+            self.SCRGraph.add_node(f"Table: {self.table_name}", shape='box', custom_data=table_data)
+            for rule_id in self.scr_definition["ConformanceTables"][self.table_name]["ConformanceRules"]:
+                self.SCRGraph.add_node(rule_id, custom_data=self.scr_definition['ConformanceRules'].get(rule_id, {}))
+                self.SCRGraph.add_edge(self.table_name, rule_id)
+                self.__traverse_dependencies(rule_id)
 
     def generate_dot_file(self, dot_filename):
         self.SCRGraph.render(dot_filename, format_type="dot")
@@ -161,6 +171,7 @@ if __name__ == '__main__':
               table_name=args.table_name,
               include_checks=args.include_checks,
               include_attributes=args.include_attributes,
+              start_at=args.start_at,
               logger=logger
             )
     scr.load_graph()
