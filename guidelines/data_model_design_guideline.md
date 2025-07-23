@@ -100,7 +100,7 @@ A table for multi-cloud or hybrid cloud cost data might be added to support orga
 
 ## Compliance with FOCUS Design Goals:
 
-The new table must align with the FOCUS specification’s core design goals, such as simplicity (wink), consistency, and vendor neutrality.
+The new table must align with the FOCUS specification’s [core design goals](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/multiple_table_principles/specification/overview.md#design-principles), such as simplicity (wink), consistency, and vendor neutrality.
 
 ### Rationale:
 
