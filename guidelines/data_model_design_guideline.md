@@ -88,7 +88,7 @@ Instead of adding a table that repeats time-series cost data, consider whether t
 
 ## Future-Proofing and Flexibility:
 
-The addition of a table can be done when needed to accommodate both current and future supported features or data model needs.
+A new dataset should accommodate both current and future supported features or data model needs.
 
 ### Rationale:
 
