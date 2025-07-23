@@ -3,7 +3,7 @@
     "Function": "Composite",
     "Reference": "ListUnitPrice",
     "Notes": null,
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -60,7 +60,7 @@
     "Function": "Presence",
     "Reference": "ListUnitPrice",
     "Notes": "",
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -80,7 +80,7 @@
     "Function": "Type",
     "Reference": "ListUnitPrice",
     "Notes": "",
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -100,7 +100,7 @@
     "Function": "Format",
     "Reference": "ListUnitPrice",
     "Notes": "",
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -120,7 +120,7 @@
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "Notes": null,
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -147,7 +147,7 @@
     "Function": "Composite",
     "Reference": "ListUnitPrice",
     "Notes": null,
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -192,7 +192,7 @@
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "Notes": null,
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -219,7 +219,7 @@
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "Notes": null,
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -236,7 +236,7 @@
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "Notes": null,
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -261,7 +261,7 @@
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "Notes": null,
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -278,7 +278,7 @@
     "Function": "Format",
     "Reference": "ListUnitPrice",
     "Notes": null,
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
@@ -316,7 +316,7 @@
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "Notes": null,
-    "VersionIntroduced": "1.0",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"

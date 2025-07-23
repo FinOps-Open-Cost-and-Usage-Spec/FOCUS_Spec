@@ -116,7 +116,7 @@
                 "null"
               ]
             },
-            "VersionIntroduced": {
+            "CRVersionIntroduced": {
               "type": "string"
             },
             "Status": {
@@ -176,7 +176,7 @@
           "required": [
             "Function",
             "Reference",
-            "VersionIntroduced",
+            "CRVersionIntroduced",
             "Status",
             "ApplicabilityCriteria",
             "Type",

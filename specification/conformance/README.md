@@ -187,6 +187,7 @@ Each JSON file in `conformance_rules/` contains one or more rules structured as:
   "ListUnitPrice-C-001-C": {
     "Function": "Presence",
     "Reference": "ListUnitPrice",
+    "CRVersionIntroduced": "1.2",
     "Type": "Static",
     "ApplicabilityCriteria": ["PUBLIC_PRICE_LIST_SUPPORTED"],
     "ValidationCriteria": {
@@ -210,3 +211,163 @@ The schema enforces:
 - Required keys like `Details`, `ApplicabilityCriteria`, `CheckFunction`, etc.
 - Proper data types (e.g., arrays, strings, objects)
 - Structured `ValidationCriteria` for consistent rule logic
+
+---
+
+## ConformanceRule Templates
+
+### Base column composite rule
+
+Base rule for a column which links all related Conformance Rules for the column.
+
+```json
+  "SampleColumn-C-000-M": {
+    "Function": "Presence",
+    "Reference": "SampleColumn",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SampleColumn-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SampleColumn-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SampleColumn-C-003-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+```
+
+### Presence requirement rule
+
+```json
+  "SampleColumn-C-001-M": {
+    "Function": "Presence",
+    "Reference": "SampleColumn",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST be present in a FOCUS dataset",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SampleColumn"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+```
+
+### Not NULL requirement rule
+
+Common rule for columns with a not NULL requirement. Can also be used when there is a NOT NULL on condition.
+
+```json
+  "SampleColumn-C-002-M": {
+    "Function": "Validation",
+    "Reference": "SampleColumn",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST NOT be null",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SampleColumn",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+```
+
+### Type Decimal requirement rule
+
+```json
+  "SampleColumn-C-003-M": {
+    "Function": "Type",
+    "Reference": "SampleColumn",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST be of type Decimal",
+      "Requirement": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "SampleColumn"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+```
+
+### Format Numeric requirement rule
+
+```json
+  "SampleColumn-C-004-M": {
+    "Function": "Format",
+    "Reference": "SampleColumn",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST conform to NumericFormat requirements",
+      "Requirement": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "SampleColumn"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+```
+
+### Type String requirement rule
+
+```json
+  "SampleColumn-C-003-M": {
+    "Function": "Type",
+    "Reference": "SampleColumn",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "mustSatisfy": "MUST be of type String",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "SampleColumn"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+```
