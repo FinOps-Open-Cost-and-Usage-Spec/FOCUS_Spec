@@ -6,5 +6,5 @@ spec_pdf.html
 *.pyc
 specification/version.md
 .vscode/*
-scr_graph.dot
-scr_graph.png
+cr_graph.dot
+cr_graph.png
