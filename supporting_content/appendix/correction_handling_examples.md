@@ -90,22 +90,23 @@ To address these **gaps** in this scenario, we assume the following:
 ##### Normative Requirements for Post-Invoice Finalization Corrections
 
 > **TODO:** Mention/address in upcoming Correction Handling attribute
+> (Shawn has added numbers to the statements that would become normative requirements in the attribute)
 
 The following applies to all corrections to a previously closed billing period, i.e., correction charge records provisioned after invoice finalization and billing period closure, but which pertain to activity that occurred during that already invoiced and closed period:
 
 - **Legal and Procedural Perspective:**
-  - The invoice is considered legally issued and immutable.
+  - <<1>> The invoice is considered legally issued and immutable.
   - The billing period is considered closed, thereby prohibiting any modifications to or overwriting of the originally invoiced records.
 
 - **Provisioning perspective**: `x_ExportDateTime = T2` (i.e., the date it became available to the consumer)
 
-- **Operational Perspective**: All Correction records (Increments and Decrements in case of the Ledger style, Negations and Corrected records in case of Accounting style) pertain to activity that occurred in **May**, so in case of Usage records `ChargePeriodStart`/`ChargePeriodEnd` **must reflect the actual usage period** (e.g., `ChargePeriodStart = 2025-05-01`)
+- **Operational Perspective**: All Correction records (Increments and Decrements in case of the Ledger style, Negations and Corrected records in case of Accounting style) pertain to activity that occurred in **May**, so in case of Usage records <<2>> `ChargePeriodStart`/`ChargePeriodEnd` **must reflect the actual usage period** (e.g., `ChargePeriodStart = 2025-05-01`)
 
 - **Financial Perspective**: The original invoice (e.g., `INV-20250501-20250601`) has already been finalized (issued and sent e.g., as PDF). The May billing period is **considered closed** therefore
-  - `BillingPeriodStart`/`BillingPeriodEnd` **must be equal to or later than** the first **open** billing period (i.e., June 2025 or later)
-  - `InvoiceId` must not match the original invoice (e.g., `INV-20250501-20250601`).
+  - <<3>> `BillingPeriodStart`/`BillingPeriodEnd` **must be equal to or later than** the first **open** billing period (i.e., June 2025 or later)
+  - <<4>> `InvoiceId` must not match the original invoice (e.g., `INV-20250501-20250601`).
 
-- **Charge Class:** ChargeClass must be set to "Correction".
+- **Charge Class:** <<5>> ChargeClass must be set to "Correction".
 
 ##### S-1: Itemized Correction Scenarios with Cost Calculation Integrity Respected
 
