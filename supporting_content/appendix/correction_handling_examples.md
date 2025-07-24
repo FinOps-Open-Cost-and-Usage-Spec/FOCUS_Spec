@@ -1,5 +1,65 @@
 # Correction Handling Examples
 
+## Proposals
+
+### Prevent Restatement After Invoice Finalization (and Billing Period Closure)
+
+> **TODO:** Mention/address in upcoming Correction Handling attribute
+
+***Note:*** *See S-1: Itemized Correction Scenarios with Cost Calculation Integrity Respected - S-1.1 and S-1.2 in particular*
+
+We should prevent the use of the Restatement provisioning style once an invoice has been finalized and the corresponding billing period closed.
+
+Since Restatement relies on overwriting or replacing previously delivered charge records within the original billing period, it inherently conflicts with the Normative Requirements for Post-Invoice Finalization Corrections — and in particular the Legal and Procedural Perspective, which states that once an invoice has been finalized and the corresponding billing period closed:
+
+- A finalized invoice is considered legally issued and immutable.
+- The associated billing period is closed, prohibiting any modifications or overwriting of previously delivered records.
+
+Therefore, only non-restating provisioning styles (such as ledger-style increments/decrements or accounting-style reversals followed by corrected entries) should be permitted for handling Post-Invoice Finalization Corrections.
+
+### Enforce Nullability When `SkuPriceId` Is Null
+
+> **NOTE:** This applies beyond Correction Handling scenarios and may require a separate FR. It MUST be resolved comprehensively — addressing it solely within correction scenarios is not sufficient.  
+> **TODO:** Address this in the respective Column Definitions (Normative Requirements sections), assuming consensus is reached.
+
+***Note:*** *See S-3: Bulk and Bulk Correction Scenarios with Cost Calculation Integrity Exceptions Allowed - S-3.2 and S-3.3 in particular*
+
+In cases where `SkuPriceId` is null, we should prevent setting non-null values in the following SKU/SKU Price-dependent columns:
+
+- `SKU`
+- `Pricing Quantity`
+- `Pricing Category`
+- `Contracted Unit Price`
+- `List Unit Price`
+- `Pricing Currency Contracted Unit Price`
+- `Pricing Currency List Unit Price`
+- `Consumed Quantity`
+- `Commitment Discount Quantity`
+
+The values in the above columns lack business meaning unless the associated `SkuPriceId` (or `SkuId`) is known. We propose making these columns **strictly null** when the SKU context is missing, to ensure consistency and data integrity.
+
+To achieve this, we suggest updating the **nullability** section of each relevant column as follows:
+
+> - `<ColumnId>` nullability is defined as follows:  
+>   - `<ColumnId>` **MUST be null** when `SkuPriceId` is null.  
+>   - ...
+
+#### Current Nullability Behavior for SKU/SKU Price-dependent columns
+
+Based on the analysis of current nullability requirements, all listed columns (except `Consumed Quantity` and `Commitment Discount Quantity`) currently follow this pattern:
+
+> - `<ColumnId>` nullability is defined as follows:  
+>   - `<ColumnId>` MUST be null when [`ChargeCategory`](#chargecategory) is `"Tax"`.  
+>   - `<ColumnId>` MUST NOT be null when `ChargeCategory` is `"Usage"` or `"Purchase"` and [`ChargeClass`](#chargeclass) is not `"Correction"`.  
+>   - `<ColumnId>` MAY be null in all other cases.
+
+As a result, under the current rules, these columns can be populated even when the corresponding `SkuPriceId` (or `SkuId`) is not known, specifically in the following cases:
+
+- `ChargeCategory: Adjustment` or `Credit`
+- `ChargeCategory: Usage` or `Purchase` with `ChargeClass: Correction`
+
+***Note:*** *Although `Consumed Quantity` and `Commitment Discount Quantity` follow a slightly different nullability pattern, they are also currently allowed to hold values even when `SkuPriceId` is not provided.*
+
 ## Context
 
 ### ChargePeriod and BillingPeriod
@@ -166,9 +226,9 @@ The following applies to all corrections to a previously closed billing period, 
 
 **TODO:**
 
-##### S-2: Bulk and Bulk Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
+##### S-3: Bulk and Bulk Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
 
-**Notes:** In our context, Bulk refers to charge records where SkuPriceId (and SkuId) is null.
+**Note:** In the context of this PR, Bulk refers to charge records where SkuPriceId (and SkuId) is null.
 
 ###### Scenario 3.1 (S-3.1): Post-Invoice Correction – Cost-only Bulk Usage Correction
 
@@ -185,62 +245,6 @@ If a PricingQuantity correction is needed, the associated SkuPriceId **must** be
 ###### Scenario 3.3 (S-3.3): Post-Invoice Correction – Cost and PricingQuantity Bulk Usage Correction
 
 Bulk corrections to `PricingQuantity` (or any other SKU Price-dependent column) **are not (or should not be) allowed** regardless of the timing of the correction timing. (*See Scenario 3.2 for more details.*)
-
-## Proposals
-
-### Prevent Restatement After Invoice Finalization (and Billing Period Closure)
-
-> **TODO:** Mention/address in upcoming Correction Handling attribute
-
-We should prevent the use of the Restatement provisioning style once an invoice has been finalized and the corresponding billing period closed.
-
-Since Restatement relies on overwriting or replacing previously delivered charge records within the original billing period, it inherently conflicts with the Normative Requirements for Post-Invoice Finalization Corrections — and in particular the Legal and Procedural Perspective, which states that once an invoice has been finalized and the corresponding billing period closed:
-
-- A finalized invoice is considered legally issued and immutable.
-- The associated billing period is closed, prohibiting any modifications or overwriting of previously delivered records.
-
-Therefore, only non-restating provisioning styles (such as ledger-style increments/decrements or accounting-style reversals followed by corrected entries) should be permitted for handling Post-Invoice Finalization Corrections.
-
-### Enforce Nullability When `SkuPriceId` Is Null
-
-> **NOTE:** This applies beyond Correction Handling scenarios and may require a separate FR. It MUST be resolved comprehensively — addressing it solely within correction scenarios is not sufficient.  
-> **TODO:** Address this in the respective Column Definitions (Normative Requirements sections), assuming consensus is reached.
-
-In cases where `SkuPriceId` is null, we should prevent setting non-null values in the following SKU/SKU Price-dependent columns:
-
-- `SKU`
-- `Pricing Quantity`
-- `Pricing Category`
-- `Contracted Unit Price`
-- `List Unit Price`
-- `Pricing Currency Contracted Unit Price`
-- `Pricing Currency List Unit Price`
-- `Consumed Quantity`
-- `Commitment Discount Quantity`
-
-The values in the above columns lack business meaning unless the associated `SkuPriceId` (or `SkuId`) is known. We propose making these columns **strictly null** when the SKU context is missing, to ensure consistency and data integrity.
-
-To achieve this, we suggest updating the **nullability** section of each relevant column as follows:
-
-> - `<ColumnId>` nullability is defined as follows:  
->   - `<ColumnId>` **MUST be null** when `SkuPriceId` is null.  
->   - ...
-
-#### Current Nullability Behavior for SKU/SKU Price-dependent columns
-
-Based on the analysis of current nullability requirements, all listed columns (except `Consumed Quantity` and `Commitment Discount Quantity`) currently follow this pattern:
-
-> - `<ColumnId>` nullability is defined as follows:  
->   - `<ColumnId>` MUST be null when [`ChargeCategory`](#chargecategory) is `"Tax"`.  
->   - `<ColumnId>` MUST NOT be null when `ChargeCategory` is `"Usage"` or `"Purchase"` and [`ChargeClass`](#chargeclass) is not `"Correction"`.  
->   - `<ColumnId>` MAY be null in all other cases.
-
-As a result, under the current rules, these columns can be populated even when the corresponding `SkuPriceId` (or `SkuId`) is not known, specifically in the following cases:
-
-- `ChargeCategory: Adjustment` or `Credit`
-- `ChargeCategory: Usage` or `Purchase` with `ChargeClass: Correction`
-
-***Note:*** *Although `Consumed Quantity` and `Commitment Discount Quantity` follow a slightly different nullability pattern, they are also currently allowed to hold values even when `SkuPriceId` is not provided.*
 
 ## References
 
