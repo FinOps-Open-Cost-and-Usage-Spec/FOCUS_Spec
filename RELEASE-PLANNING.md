@@ -6,39 +6,35 @@ This section outlines the planned release schedule and key milestones for the FO
 
 <table>
     <tr>
-        <th>Version</th>
-        <th>Release By</th>
+        <th width="10">Version</th>
+        <th width="10">Release By</th>
         <th>Scope | High-Level System Requirements</th>
-    </tr>
-        <tr>
-        <td>v1.2</td>
-        <td>Jun 2025</td>
-        <td>
-            <strong>Initial Software as a Service (SaaS) Support</strong>
-            <ul>
-                <li>Addition of columns to support SaaS-centric concepts and billing models
-                </li>
-            </ul>
-            <strong>Continued expansion of Cloud Service Provider concepts</strong>
-            <ul>
-                <li>Addition of Invoice ID to support invoice reconciliation use cases
-                </li>
-                <li>Addition of SKU properties that are prominent / common across providers
-                </li>                
-                <li>Addition of Commitment Discount Unit Price and Cost
-                </li>
-            </ul>
-            <strong>Fixes and clarifications</strong>
-            <ul>
-                <li>Revisions of existing specification content to increase consistency and reduce ambiguity</li>
-            </ul>
-        </td>
-    </tr>
     <tr>
         <td>v1.3</td>
-        <td>Late 2025</td>
+        <td>Dec 2025</td>
         <td>
-            TBD
+<strong>Augment support for Public Cloud scope</strong>
+    <ul>
+      <li>Shared cost allocation</li>
+      <li>Coverage eligibility</li>
+      <li>Pre-discount amortized cost</li>
+    </ul>
+  <strong>Augment support for SaaS/PaaS scope</strong>
+    <ul>
+      <li>Host Provider (and clarification of related terms)</li>
+    </ul>
+  <strong>Support for concepts applicable to all scopes</strong>
+    <ul>
+      <li>Contractual commitments</li>
+      <li>Distinguish between vendor and marketplace purchases</li>
+    </ul>
+  <strong>Addition of metadata / non-functional requirements</strong>
+    <ul>
+      <li>Static conformance requirements</li>
+      <li>Conformance program beta</li>
+      <li>Recency and completeness of data</li>  
+    </ul>
+</ul>
         </td>
     </tr>
 </table>
@@ -47,15 +43,18 @@ This section outlines the planned release schedule and key milestones for the FO
 
 <table>
     <tr>
-        <th>Version</th>
-        <th>Release By</th>
+        <th width="10">Version</th>
+        <th width="10">Release By</th>
         <th>Scope | High-Level System Requirements</th>
     </tr>
         <tr>
         <td>v1.0</td>
         <td>Jun 2024</td>
         <td>
-            TBD
+<strong>First production version of specification</strong>
+    <ul>
+      <li>Initial support for Public Cloud concepts, inclusive of beta releases 0.5 and 1.0-preview</li>
+    </ul>
         </td>
     </tr>
     <tr>
@@ -88,17 +87,101 @@ This section outlines the planned release schedule and key milestones for the FO
             </ul>
         </td>
     </tr>
-
+    </tr>
+        <tr>
+        <td>v1.2</td>
+        <td>Jun 2025</td>
+        <td>
+            <strong>Initial Software as a Service (SaaS) / Platform as a Service (PaaS) Support</strong>
+            <ul>
+                <li>Addition of columns to support SaaS/PaaS-centric concepts and billing models
+                </li>
+            </ul>
+            <strong>Continued expansion of Public Cloud concepts</strong>
+            <ul>
+                <li>Addition of Invoice ID to support invoice reconciliation use cases
+                </li>
+                <li>Addition of SKU properties that are prominent / common across providers
+                </li>                
+            </ul>
+            <strong>Fixes and clarifications</strong>
+            <ul>
+                <li>Revisions of existing specification content to increase consistency and reduce ambiguity</li>
+            </ul>
+        </td>
+    </tr>
 </table>
+
+### Estimated Timeline for v1.3
+This table displays key milestones and dates related to the development of FOCUS Release v1.3.
+
+  <table>
+    <thead>
+      <tr>
+        <th width="22%">Date</th>
+        <th width="30%">Milestone</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>24-Apr-25</td>
+        <td>Start IPR Review v1.2</td>
+        <td>The start of Rel v1.2 IPR Review triggers the start of Rel v1.3.</td>
+      </tr>
+      <tr>
+        <td>24-Apr-25 to 17-Jul-25</td>
+        <td>Work Item Creation v1.3</td>
+        <td>12 weeks (vs 6 weeks in v1.2). Define the scope and create Work Items for v1.3.</td>
+      </tr>
+      <tr>
+        <td>17-Jul-25 to 16-Oct-25</td>
+        <td>Development Phase</td>
+        <td>*13 weeks (vs 19 weeks in v1.2). Begin developing the v1.3 specification.<br>
+            <em>* Work Items agreed by the Members Group and ratified by the Steering Committee can start development before the July 17 milestone.</em>
+        </td>
+      </tr>
+      <tr>
+        <td>16-30-Oct-25</td>
+        <td>Final Consistency Review</td>
+        <td>2 weeks. Ensure alignment and consistency of specification.</td>
+      </tr>
+      <tr>
+        <td>30-Oct-25</td>
+        <td>Prepare Baseline for IPR Review</td>
+        <td>6 days. Get ready for the Intellectual Property Rights review.</td>
+      </tr>
+      <tr>
+        <td>5-Nov-25 to 4-Dec-25</td>
+        <td>Start / End IPR Review v1.3</td>
+        <td>30-day IPR review period for essential claims review. Triggers the start of Release v1.4.</td>
+      </tr>
+      <tr>
+        <td>4-Dec-25</td>
+        <td>Working Group (WG) Approval of v1.3</td>
+        <td>WG approves the v1.3 Release Candidate.</td>
+      </tr>
+      <tr>
+        <td>4-Dec-25</td>
+        <td>SC Ratification of v1.3</td>
+        <td>The Steering Committee ratifies the v1.3 release.</td>
+      </tr>
+      <tr>
+        <td>10-Dec-25</td>
+        <td>Announcement</td>
+        <td>FinOps announcement of FOCUS Release v1.3.</td>
+      </tr>
+    </tbody>
+  </table>
 
 ### Estimated Timeline for v1.2
 
-This table displays key milestones and dates related to the development of FOCUS Release v1.2 Specification.
+FOCUS Release V1.2 was announced during the FinOps X event in San Diego on June 3, 2025.
 
 <table>
   <tr>
-    <th>Date</th>
-    <th>Milestone</th>
+    <th width="22%">Date</th>
+    <th width="30%">Milestone</th>
     <th>Comment</th>
   </tr>
   <tr>
@@ -165,8 +248,8 @@ FOCUS Release V1.1 was announced during the FinOps XE event in Barcelona on Nove
 <table>
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Milestone</th>
+            <th width="22%">Date</th>
+            <th width="30%">Milestone</th>
             <th>Comment</th>
         </tr>
     </thead>
@@ -226,8 +309,8 @@ FOCUS Release V1.0 was announced during the FinOpsX event in San Diego on June 2
 <table>
     <thead>
         <tr>
-            <th>Date</th>
-            <th>Tasks</th>
+            <th width="22%">Date</th>
+            <th width="30%">Tasks</th>
             <th>Comments</th>
         </tr>
     </thead>

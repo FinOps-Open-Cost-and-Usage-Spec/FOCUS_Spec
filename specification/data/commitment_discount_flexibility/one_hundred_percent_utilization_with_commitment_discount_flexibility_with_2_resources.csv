@@ -1,0 +1,7 @@
+BillingPeriodStart,BillingPeriodEnd,ChargePeriodStart,ChargePeriodEnd,ChargeCategory,ChargeFrequency,PricingCategory,ResourceId,PricingQuantity,ListUnitPrice,ListCost,x_CommitmentDiscountUnitPrice,BilledCost,EffectiveCost,ConsumedQuantity,ConsumedUnit,SkuId,SkuPriceid,CommitmentDiscountId,CommitmentDiscountCategory,CommitmentDiscountQuantity,CommitmentDiscountStatus,CommitmentDiscountUnit
+2023-01-01T00:00:00Z,2023-02-01T00:00:00Z,2023-01-01T00:00:00Z,2023-01-01T01:00:00Z,Purchase,Recurring,Standard,<my-commitment-discount-id>,1.00,4.00,4.00,2.00,2.00,0.00,null,null,VM_XLARGE,VM_XLARGE_COMMITTED_PURCHASE_NO_UPFRONT,<my-commitment-discount-id>,Usage,4.00,null,Normalized Hour
+
+2023-01-01T00:00:00Z,2023-02-01T00:00:00Z,2023-01-01T00:00:00Z,2023-01-01T01:00:00Z,Usage,Usage-Based,Committed,<my-medium-vm-id>,1.00,2.00,2.00,1.00,0.00,1.00,1.00,Hour,VM_MEDIUM,VM_MEDIUM_COMMITTED_HOUR,<my-commitment-discount-id>,Usage,2.00,Used,Normalized Hour
+
+2023-01-01T00:00:00Z,2023-02-01T00:00:00Z,2023-01-01T00:00:00Z,2023-01-01T01:00:00Z,Usage,Usage-Based,Committed,<my-medium-vm-id>,1.00,2.00,2.00,1.00,0.00,1.00,1.00,Hour,VM_MEDIUM,VM_MEDIUM_COMMITTED_HOUR,<my-commitment-discount-id>,Usage,2.00,Used,Normalized Hour
+

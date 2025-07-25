@@ -14,7 +14,7 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 * Mike Fuller (FinOps Foundation)
 * Riley Jenkins (Domo)
 * Shawn Alpay (FinOps Foundation)
-* Udam Dewaraja (FinOps Foundation)
+* Udam Dewaraja (StitcherAI)
 
 ### Contributors
 
@@ -33,6 +33,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * John Grubb (Platform.sh)
 * Justin Grinstead (MongoDB)
 * Marc Perreaut (Amadeus)
+* Matt Cowsert (FinOps Foundation)
 * Nan Braun (Thavron Solutions)
 * Ramkumar Narla (Adobe)
 * Rob Martin (FinOps Foundation)

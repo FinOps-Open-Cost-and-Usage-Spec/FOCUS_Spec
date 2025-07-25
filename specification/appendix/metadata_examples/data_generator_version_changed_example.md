@@ -1,10 +1,10 @@
-# Data Changed by Provider Using Provider Version
+# Data Changed by Data Generator Using Data Generator Version
 
 ## Scenario
 
-ACME specifies the optional metadata property [Provider Version](#providerversion) in their [Schema](#schema) object. They made a change to the [*FOCUS dataset*](#glossary:FOCUS-dataset) they produce that does not adopt a new FOCUS Version, nor make a change the included columns but does impact values in the data. This example illustrates that Provider Version changes are independent of column changes, however provider version changes may include column changes.
+ACME specifies the optional metadata property [Data Generator Version](#datageneratorversion) in their [Schema](#schema) object. They made a change to the [*FOCUS dataset*](#glossary:FOCUS-dataset) they produce that does not adopt a new FOCUS Version, nor does it make a change the included columns, but does impact values in the data. This example illustrates that Data Generator Version changes are independent of column changes, however data generator version changes may include column changes.
 
-The provider creates a new schema object to represent the new schema. The provider includes both the FOCUS Version and Provider Version in the schema object.
+The data generator creates a new schema object to represent the new schema. The data generator includes both the FOCUS Version and Data Generator Version in the schema object.
 
 ## Supplied Metadata
 
@@ -16,7 +16,7 @@ The updated schema related metadata could look like this:
  {
   "SchemaId": "56789-abcde-56789-abcde-56789",
   "FocusVersion": "1.1",
-  "ProviderVersion": "2.4",
+  "DataGeneratorVersion": "2.4",
   "CreationDate": "2024-05-02T12:01:03.083z",
   "ColumnDefinition": [
     {
@@ -54,7 +54,7 @@ The updated schema related metadata could look like this:
           {
                 "ColumnName": "Tags",
                 "DataType": "JSON",
-                "ProviderTagPrefixes": ["acme", "ac"]
+                "DataGeneratorTagPrefixes": ["acme", "ac"]
           },
           {
                 "ColumnName": "x_awesome_column1",

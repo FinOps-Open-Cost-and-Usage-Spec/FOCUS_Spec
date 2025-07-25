@@ -2,9 +2,9 @@
 
 *This section is non-normative.*
 
-FOCUS aims to establish a community-driven specification for consumption-based billing data. Due to the lack of a broadly adopted specification, infrastructure and services [*providers*](#glossary:provider) have resorted to proprietary billing schemas and terminology. The lack of conformance amongst the billing data generators has forced FinOps practitioners to employ disparate, best-effort schemes which each *practitioner* must develop individually for each *provider* to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
+FOCUS is a standards development organization (SDO) formed to establish an open, consensus-driven standard for billing data. In the absence of a broadly adopted standard, infrastructure and service [*providers*](#glossary:provider) have relied on proprietary billing schemas and inconsistent terminology, making cost data difficult to normalize and act upon across environments. This lack of conformance has forced FinOps [*practitioners*](#glossary:practitioner) to develop best-effort custom normalization schemes for each provider, in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
 
-The FOCUS specification's schema definition and FinOps-aligned terminology provide a clear guide for producing FinOps-serviceable billing datasets. Datasets conforming to FOCUS enable FinOps practitioners to perform common FinOps capabilities, like the ones mentioned above, using a generic set of instructions, regardless of the origin of the dataset.
+The FOCUS Specification, developed by a global community of practitioners and vendors, defines a consistent, vendor-neutral approach to billing data. It is designed to improve interoperability between providers, reduce operational complexity, and enable greater transparency in cloud and SaaS cost management.
 
 ## Background and History
 
@@ -55,9 +55,13 @@ The following principles were considered while building the specification.
 
 ### Extensibility
 
-* The initial specification aims to introduce a common schema and terminology for billing datasets produced by Cloud Service Providers (CSPs).
-* The specification, however, aims to be extensible to SaaS products and other types of cost datasets.
-* Future versions of the specification will look to expand the content to support a broader set of prioritized FinOps capabilities.
+The FOCUS Specification is designed to support evolving FinOps needs across diverse billing models and provider types.
+
+While the initial focus was on billing data from Cloud Service Providers (CSPs), version 1.2 introduces foundational support for Software as a Service (SaaS) platforms, including normative columns for pricing currencies, effective cost, and contracted pricing in non-monetary units such as credits or tokens.
+
+The specification supports extensibility through structured naming conventions (e.g., x_ custom columns), conditional requirements, and a version-aware schema approach.
+
+Future versions of FOCUS will consider including additional FinOps capabilities such as forecasting, exchange rate modeling, and anomaly detection, while continuing to support a broader range of billing and cost datasets — including internal infrastructure platforms and marketplace offerings.
 
 ## Design Notes
 
@@ -70,14 +74,14 @@ The following principles were considered while building the specification.
 ### Consistency helps with clarity
 
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
-* Column naming must strictly follow the [column naming conventions](#columnnamingconvention).
+* Column naming must strictly follow the [column handling](#columnhandling) requirements.
 * Use established standards (e.g., ISO8601 for dates, ISO4217 for currency).
 
 ## Typographic Conventions
 
 The keywords "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this specification are to be interpreted as described in [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)] when, and only when, they appear in all capitals, as shown here.
 
-## FOCUS Feature level
+## FOCUS Feature Level
 
 Under each column defined in the FOCUS specification, there exists a 'Feature level' designation that describes the column as 'Mandatory', 'Conditional', or 'Optional'. Feature level is designated based on the following criteria described in the normative requirements in each column definition:
 
