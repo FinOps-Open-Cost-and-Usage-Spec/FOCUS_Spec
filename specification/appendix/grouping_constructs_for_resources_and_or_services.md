@@ -1,4 +1,4 @@
-# Grouping constructs for resources or services
+# Grouping Constructs for Resources or Services
 
 Providers natively support various constructs for grouping [*resources*](#glossary:resource) or [*services*](#glossary:service). These grouping constructs are often used to mimic organizational structures, technical architectures, cost attribution/allocation and access management boundaries, or other customer-specific structures based on requirements.
 

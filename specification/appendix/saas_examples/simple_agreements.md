@@ -10,9 +10,9 @@ ACME Corp allows its customers to purchase their service for a term (in this cas
 
 Given that ACME does not charge based on or track usage, its usage details are irrelevant to this scenario.
 
-**Example FOCUS dataset:** [Simple invoice up-front for service](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803&range=A8)
+[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_a1.csv)
 
-Note the following details in the dataset:
+Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 - April 1st 2026. The Billing Period is the month of April 2025 (when the licenses were ordered) and therefore will appear in the April invoice.
 * A single charge representing the total payment for the 12-month agreement (&dollar;10,000) is charged in the first invoice. BilledCost and EffectiveCost are realized in the same record since detailed usage records will not be provided during the 12-month period to realize amortized portions of this up-front payment.
@@ -24,9 +24,9 @@ ACME Corp offers its customer the ability to purchase a fixed quantity of licens
 
 On April 1st, 2025, ACME executes a contract and invoices AwesomeCorp &dollar;50,000 (Billed Cost) for a Charge Period of April 1st 2025 to April 1st 2026. As there is no negotiated discount, List Cost of the purchase is also &dollar;50,000.
 
-**Example FOCUS dataset:** [Invoice up-front entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803&range=A11)
+[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_a2.csv)
 
-Note the following details in the dataset:
+Note the following details in the example dataset:
 
 * The Charge Period is April 1st 2025 to April 1st 2026. The Billing Period is the month of April 2025 (when the licenses were ordered) and therefore will appear in the April invoice.
 * A single charge representing the total payment for the 12-month agreement is charged in the first invoice. Billed Cost and Effective Cost are both realized in the same record since detailed usage records will not be provided during the 12-month period to realize amortized portions of this up-front payment.
@@ -36,9 +36,9 @@ Note the following details in the dataset:
 
 On June 1st 2025 ACME provides the following records due to AwesomeCorp's &dollar;1,000 mid-contract purchase of an additional 10 licenses for the same Charge Period (April 1st 2025 to April 1st 2026).
 
-**Example FOCUS dataset:** [Additional license purchase entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803&range=A14)
+[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_a3.csv)
 
-Note the following additional details in the dataset:
+Note the following additional details in the example dataset:
 
 * The Charge Period is still April 1st 2025 to April 1st 2026. The Billing Period is now the month of June 2025 (when the additional licenses were ordered) and therefore will appear in the June 2025 invoice.
 
@@ -48,9 +48,9 @@ Similar to Scenario A above, ACME Corp offers its customer the ability to purcha
 
 On April 1st, 2026, ACME invoices AwesomeCorp &dollar;50,000 (Billed Cost) for the Charge Period of April 1st 2025 to April 1st 2026. As there is no negotiated discount, List Cost of the purchase is also &dollar;50,000.
 
-**Example FOCUS dataset:** [Billed in arrears entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803&range=A17)
+[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_b.csv)
 
-Note the following additional details in the dataset:
+Note the following additional details in the example dataset:
 
 * The Charge Period is April 1st 2025 to April 1st 2026. The Billing Period is now the month of March 2026 (since this charge is invoiced as of the last month of the Charge Period).
 
@@ -68,9 +68,9 @@ AwesomeCorp's consumption looks like this:
 * In May 2025, AwesomeCorp uses 650 licenses
 * In June 2025, AwesomeCorp uses 635 licenses
 
-**Example FOCUS dataset:** [Billed in arrears monthly entries](https://docs.google.com/spreadsheets/d/1kQTDK3Sk9BnNcn6Ovyaa37T1aMaXfHaDahsuk1Notn4/edit?gid=694253803#gid=694253803&range=A20)
+[**CSV Example**](/specification/data/saas_examples/simple_agreements/simple_saas_agreements_c.csv)
 
-Note the following additional details in the dataset:
+Note the following additional details in the example dataset:
 
 * The Charge Period and Billing Period are April 1st, 2025, to May 1st, 2025, for the first month. Subsequent months increment the Charge Period and Billing Period by one month to match the month the charges are incurred.
 * Billed Cost and Effective Cost are the same value since there is no up-front payment to amortize

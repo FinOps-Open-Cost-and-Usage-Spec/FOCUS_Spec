@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME's previous exports used FOCUS version 1.0. They are now going to adopt FOCUS version 1.1.  It is required that they create a new schema metadata object which specifies the new FOCUS version via the [FOCUS Version](#focusversion) property - regardless of schema changes. In this example, the new FOCUS version adoption doesn't include columns changes. This is to illustrate that FOCUS version changes are independent of column changes, however, this scenario is unlikely.
+ACME's previous exports used FOCUS version 1.0. They are now going to adopt FOCUS version 1.1.  It is required that they create a new schema metadata object which specifies the new FOCUS version via the [FOCUS Version](#focusversion) property—regardless of schema changes. In this example, the new FOCUS version adoption doesn't include columns changes. This is to illustrate that FOCUS version changes are independent of column changes, however, this scenario is unlikely.
 
 ## Supplied Metadata
 

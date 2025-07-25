@@ -1,9 +1,5 @@
 # Location
 
-## Introduced Version
-
-1.0
-
 ## Description
 
 FOCUS provides structured location data through region and availability zone information. By documenting geographic deployment locations, practitioners can organize and analyze costs based on where resources and services are deployed. This standardized location data helps practitioners understand the geographical distribution of infrastructure across providers.
@@ -35,3 +31,7 @@ GROUP BY
   RegionName,
   AvailabilityZone
 ``` 
+
+## Introduced (Version)
+
+1.0

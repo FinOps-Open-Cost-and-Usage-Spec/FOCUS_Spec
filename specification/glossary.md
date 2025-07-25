@@ -54,7 +54,7 @@ A customer's agreement to consume a specific quantity of a service or resource o
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e. hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
+A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
@@ -62,7 +62,7 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
-The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
+The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
 
 <a name="glossary:correction"><b>Correction</b></a>
 
@@ -106,7 +106,7 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billingcurrency).
+The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
@@ -126,7 +126,7 @@ A contractual agreement where a customer commits to specific spend or usage goal
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
-A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e. on demand.
+A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
 
 <a name="glossary:pascalcase"><b>Pascal Case</b></a>
 

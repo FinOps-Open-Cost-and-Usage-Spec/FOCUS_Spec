@@ -1,9 +1,5 @@
 # Cost Comparison
 
-## Introduced Version
-
-0.5
-
 ## Description
 
 FOCUS supports the comparison of cost columns in order to identify savings, amortization, or other constructs.
@@ -71,3 +67,7 @@ SELECT ProviderName,
     1 - (TotalEffectiveCost / NULLIF(TotalListCost, 0)) * 100 AS EffectiveDiscount
 FROM AggregatedData
 ```
+
+## Introduced (Version)
+
+0.5

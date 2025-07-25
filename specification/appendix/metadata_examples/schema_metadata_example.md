@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has only provided one [Schema](#schema) for their FOCUS data export. ACME provides a directory of schemas and each schema is a single file. Acme's provides a file representing the schema for the data they provide.
+ACME has only provided one [Schema](#schema) for their FOCUS data export. ACME provides a directory of schemas and each schema is a single file. Acme provides a file representing the schema for the data they provide.
 
 ## Supplied Metadata
 
