@@ -35,6 +35,8 @@ This is a standard GitHub directory that contains GitHub-specific configuration 
 
 A typical FOCUS contributor will not spend much time interacting with this folder, and thus it can be safely ignored.
 
+A typical FOCUS contributor will not spend much time interacting with this folder, and thus it can be safely ignored.
+
 ### 2. `custom_linter_rules` folder
 
 This directory contains custom linting rules specific to the FOCUS specification project. Linting rules help maintain code quality, ensure consistency in documentation, and establish coding best practices.
