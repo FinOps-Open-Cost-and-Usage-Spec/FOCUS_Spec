@@ -70,6 +70,8 @@ The repository provides supporting content that includes example mappings betwee
 
 This directory contains third-party dependencies or external libraries that are directly included in the repository rather than being downloaded at build time.
 
+A typical FOCUS contributor will not spend much time interacting with this folder, and thus it can be safely ignored.
+
 ### 7. Documentation Structure
 
 The repository follows standard documentation patterns with:
