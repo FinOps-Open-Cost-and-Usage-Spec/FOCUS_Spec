@@ -65,7 +65,7 @@ The repository follows standard documentation patterns with:
 - **`README.md`** - Main repository documentation
 - **`CHANGELOG.md`** - Version changes and updates
 - **`CONTRIBUTING.md`** - Overviews development environment for FOCUS specification.
-- ** `RELEASE-PLANNING.md`** - Outlines release planning and schedule information for FOCUS.
+- **`RELEASE-PLANNING.md`** - Outlines release planning and schedule information for FOCUS.
 - Various markdown files for specification details
 
 ## Repository Organization Principles
