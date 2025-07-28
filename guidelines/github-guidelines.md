@@ -33,6 +33,8 @@ FOCUS is designed to address the complexity that FinOps practitioners face when 
 
 This is a standard GitHub directory that contains GitHub-specific configuration files and templates. Typically found at .github/workflows/ for GitHub Actions, .github/linters/ for linter configuration files.
 
+A typical FOCUS contributor will not spend much time interacting with this folder, and thus it can be safely ignored.
+
 ### 2. `custom_linter_rules` folder
 
 This directory contains custom linting rules specific to the FOCUS specification project. Linting rules help maintain code quality, ensure consistency in documentation, and establish coding best practices.
