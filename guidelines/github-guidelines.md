@@ -13,7 +13,8 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on GitH
 7. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
 8. [How to submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
 9. [How to submit changes to an existing PR using GitHub desktop and VS Code](#how-to-submit-changes-to-an-existing-pr-using-github-desktop-and-vscode)
-10. [Tips for Success](#tips-for-success)
+10. [How to Interact (review, comment, participate in, etc.) with a Pull Request via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-a-pull-request-via-web-browser)
+11. [Tips for Success](#tips-for-success)
 
 ---
 
@@ -845,6 +846,146 @@ GitHub Desktop also offers a direct "Create Pull Request" option:
 - Verify you're on the correct branch before making changes
 - Ensure you've committed and pushed your changes
 - Check that you're looking at the right pull request
+
+---
+
+## How to Interact (review, comment, participate in, etc.) with a Pull Request via Web Browser
+
+### Finding the Pull Request
+
+1. Navigate to the [FOCUS repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pulls) on GitHub
+2. Click the "Pull requests" tab
+3. Click on the specific PR you want to comment on
+
+### Making General Comments
+
+**To add a general comment:**
+
+1. Scroll to the bottom of the PR conversation page
+2. In the "Write" tab of the comment box, type your comment
+3. Use the "Preview" tab to see how your comment will look
+4. Click "Comment" to submit
+
+**Comment formatting options:**
+
+- Use Markdown for formatting (bold, italic, code blocks, etc.)
+- Add emoji reactions using `:emoji_name:` syntax
+- Tag people using `@username`
+- Reference issues with `#issue_number`
+
+### Making Line-Specific Comments
+
+**To comment on specific code lines:**
+
+1. Click the "Files changed" tab
+2. Hover over the line number you want to comment on
+3. Click the blue "+" icon that appears
+4. Type your comment in the text box
+5. Choose between:
+   - **"Add single comment"**: Posts immediately
+   - **"Start a review"**: Saves comment for a formal review
+
+**For multi-line comments:**
+
+1. Click and drag from the starting line number to the ending line number
+2. This will select multiple lines for your comment
+3. Add your comment and submit
+
+### Making Code Suggestions
+
+**To suggest specific code changes:**
+
+1. Make a line-specific comment as above
+2. Click the suggestion icon (📝) in the comment toolbar
+3. GitHub will pre-populate with the existing code
+4. Edit the code to show your suggested changes
+5. Add explanation text above or below the suggestion block
+6. Submit the comment
+
+**Example suggestion format:**
+
+```suggestion
+// Your improved code here
+const userName = user.name || 'Anonymous';
+```
+
+### Conducting a Formal Review
+
+**To start a comprehensive review:**
+
+1. Go to "Files changed" tab
+2. Add line-specific comments as needed, choosing "Start a review"
+3. When finished reviewing all files, click "Review changes" (top right)
+4. Choose your review type:
+   - **Comment**: General feedback without approval status
+   - **Approve**: Approve the changes for merging
+   - **Request changes**: Block merging until issues are addressed
+5. Add an overall review summary
+6. Click "Submit review"
+
+### Comment Features and Options
+
+#### Reactions
+
+- Click the emoji icon on any comment to add reactions
+- Common reactions: 👍 👎 😄 🎉 😕 ❤️ 🚀 👀
+
+#### Editing Comments
+
+- Click the "..." menu on your own comments
+- Select "Edit" to modify
+- Comments show "edited" indicator after changes
+
+#### Resolving Conversations
+
+- Click "Resolve conversation" on comment threads once issues are addressed
+- Helps track which feedback has been handled
+
+### Notifications
+
+- Use `@username` to notify specific people
+- Use `@team/teamname` to notify entire teams
+
+### Best Practices for PR Comments
+
+#### Be Constructive
+
+- Focus on the code, not the person
+- Explain the "why" behind your suggestions
+- Offer solutions, not just problems
+
+#### Be Specific
+
+- Quote the exact code you're referencing
+- Provide examples of better approaches
+- Link to documentation or standards when relevant
+
+#### Use Appropriate Comment Types
+
+- **Nitpicks**: Minor style/formatting issues
+- **Suggestions**: Improvement ideas
+- **Questions**: Ask for clarification
+- **Blockers**: Serious issues that prevent merging
+
+#### Sample Comment Templates
+
+**For suggestions:**
+```
+Consider using a more descriptive variable name here. Instead of `data`, 
+maybe `userProfile` would be clearer?
+```
+
+**For questions:**
+```
+Could you explain why we're using this approach instead of the built-in 
+method? I want to make sure I understand the reasoning.
+```
+
+**For approval:**
+```
+Great work! The error handling looks solid and the tests cover the edge cases well. 
+Ready to merge! ✅
+```
 
 ---
 
