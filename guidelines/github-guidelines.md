@@ -29,7 +29,19 @@ FOCUS is designed to address the complexity that FinOps practitioners face when 
 
 ## Main Folders and Their Contents
 
-### 1. `specification` folder
+### 1. `.github` folder
+
+This is a standard GitHub directory that contains GitHub-specific configuration files and templates. Typically found at .github/workflows/ for GitHub Actions, .github/linters/ for linter configuration files.
+
+### 2. `custom_linter_rules` folder
+
+This directory contains custom linting rules specific to the FOCUS specification project. Linting rules help maintain code quality, ensure consistency in documentation, and establish coding best practices.
+
+### 3. `guidelines` folder
+
+This folder contains various guidelines on development, editorial, normative requirements, specification change, and specification design.
+
+### 4. `specification` folder
 
 The core folder containing the specification documentation:
 
@@ -37,7 +49,7 @@ The core folder containing the specification documentation:
 - **`glossary.md`** - Comprehensive glossary of terms and definitions used throughout the specification
 - **`columns/` subfolder** - Contains detailed documentation for individual FOCUS columns like `servicesubcategory.md`
 
-### 2. `supporting_content` folder
+### 5. `supporting_content` folder
 
 The repository provides supporting content that includes example mappings between well-known provider datasets and what's defined in the FOCUS specification. This likely includes mappings for major cloud providers like:
 
@@ -46,16 +58,8 @@ The repository provides supporting content that includes example mappings betwee
 - Azure (Microsoft)
 - Oracle Cloud
 
-### 3. `guidelines` folder
+### 6. `vendored` folder
 
-This folder contains various guidelines on development, editorial, normative requirements, specification change, and specification design.
-### 4. `custom_linter_rules` folder ###
-This directory contains custom linting rules specific to the FOCUS specification project. Linting rules help maintain code quality, ensure consistency in documentation, and establish coding best practices.
-
-### 5. `.github` folder ###
-This is a standard GitHub directory that contains GitHub-specific configuration files and templates. Typically found at .github/workflows/ for GitHub Actions, .github/linters/ for linter configuration files.
-
-### 6. `vendored` folder ###
 This directory contains third-party dependencies or external libraries that are directly included in the repository rather than being downloaded at build time.
 
 ### 7. Documentation Structure
