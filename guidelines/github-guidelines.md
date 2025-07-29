@@ -935,6 +935,7 @@ const userName = user.name || 'Anonymous';
 #### Resolving Conversations
 
 - Click "Resolve conversation" on comment threads once issues are addressed
+  - Typically, the resolution is a partnership between the PR author and the comment author.  The conversation should be resolved by the comment author upon review.  However, the PR author has the license to close the conversation without resolution if they provide sufficient context and/or the comment author does not promptly provide review.
 - Helps track which feedback has been handled
 
 ### Notifications
