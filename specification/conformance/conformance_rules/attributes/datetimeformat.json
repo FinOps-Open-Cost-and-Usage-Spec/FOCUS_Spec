@@ -9,6 +9,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -40,6 +41,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -55,6 +57,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -70,6 +73,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

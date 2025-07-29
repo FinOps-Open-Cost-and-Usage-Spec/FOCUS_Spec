@@ -9,6 +9,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST use Pascal case",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -80,6 +81,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST use Pascal case",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -95,6 +97,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST NOT use abbreviations",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -110,6 +113,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST be alphanumeric with no special characters",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -125,6 +129,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs SHOULD NOT use acronyms",
+      "KeyWord": "SHOULD",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -140,6 +145,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
+      "KeyWord": "SHOULD",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -155,6 +161,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -170,6 +177,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix",
+      "KeyWord": "MAY",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -185,6 +193,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Columns with the Category suffix MUST be normalized",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -200,6 +209,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -215,6 +225,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns",
+      "KeyWord": "SHOULD",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -230,6 +241,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset",
+      "KeyWord": "SHOULD",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -245,6 +257,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed",
+      "KeyWord": "SHOULD",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -260,6 +273,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns",
+      "KeyWord": "MAY",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

@@ -231,6 +231,7 @@ Base rule for a column which links all related Conformance Rules for the column.
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -267,6 +268,7 @@ Base rule for a column which links all related Conformance Rules for the column.
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST be present in a FOCUS dataset",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "SampleColumn"
@@ -292,6 +294,7 @@ Common rule for columns with a not NULL requirement. Can also be used when there
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST NOT be null",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "SampleColumn",
@@ -316,6 +319,7 @@ Common rule for columns with a not NULL requirement. Can also be used when there
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST be of type Decimal",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDecimal",
         "ColumnName": "SampleColumn"
@@ -339,6 +343,7 @@ Common rule for columns with a not NULL requirement. Can also be used when there
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST conform to NumericFormat requirements",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "FormatNumeric",
         "ColumnName": "SampleColumn"
@@ -362,6 +367,7 @@ Common rule for columns with a not NULL requirement. Can also be used when there
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST be of type String",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
         "ColumnName": "SampleColumn"

@@ -9,6 +9,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -56,6 +57,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST be present in a FOCUS dataset",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "BilledCost"
@@ -68,12 +70,13 @@
     "Function": "Validation",
     "Reference": "BilledCost",
     "Notes": "A null value would invalidate accounting use cases",
-    "CRVersionIntroduced": "0.5",
+    "CRVersionIntroduced": "1.2",
     "Status": "active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST NOT be null",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "BilledCost",
@@ -93,6 +96,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST be of type Decimal",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDecimal",
         "ColumnName": "BilledCost"
@@ -111,6 +115,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST conform to NumericFormat requirements",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "FormatNumeric",
         "ColumnName": "BilledCost"
@@ -129,6 +134,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "MUST be 0 for charges where payments are received by a third party",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
         "ColumnName": "BilledCost",
@@ -155,6 +161,7 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "mustSatisfy": "MUST be denominated in the BillingCurrency",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -170,6 +177,7 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "mustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

@@ -145,6 +145,16 @@
                 "mustSatisfy": {
                   "type": "string"
                 },
+                "KeyWord": {
+                  "type": "string",
+                  "enum": [
+                    "MUST",
+                    "SHOULD",
+                    "RECOMMENDED",
+                    "MAY",
+                    "OPTIONAL"
+                  ]
+                },
                 "Requirement": {
                   "type": [
                     "object",
@@ -166,6 +176,7 @@
               },
               "required": [
                 "mustSatisfy",
+                "KeyWord",
                 "Requirement",
                 "Condition",
                 "Dependencies"

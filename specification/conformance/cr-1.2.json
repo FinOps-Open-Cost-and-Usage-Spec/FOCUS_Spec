@@ -151,6 +151,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -182,6 +183,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -197,6 +199,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -212,6 +215,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -227,6 +231,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST use Pascal case",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -254,6 +259,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -269,6 +275,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -284,6 +291,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST use Pascal case",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -355,6 +363,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST use Pascal case",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -370,6 +379,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST NOT use abbreviations",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -385,6 +395,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs MUST be alphanumeric with no special characters",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -400,6 +411,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs SHOULD NOT use acronyms",
+        "KeyWord": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -415,6 +427,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
+        "KeyWord": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -430,6 +443,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -445,6 +459,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix",
+        "KeyWord": "MAY",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -460,6 +475,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Columns with the Category suffix MUST be normalized",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -475,6 +491,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -490,6 +507,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns",
+        "KeyWord": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -505,6 +523,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset",
+        "KeyWord": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -520,6 +539,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed",
+        "KeyWord": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -535,6 +555,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns",
+        "KeyWord": "MAY",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -552,6 +573,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -585,11 +607,15 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ListUnitPrice-C-010-M"
+              "ConformanceRuleId": "ListUnitPrice-C-010-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ListUnitPrice-C-011-C"
+              "ConformanceRuleId": "ListUnitPrice-C-011-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ListUnitPrice-C-012-C"
             }
           ]
         },
@@ -609,6 +635,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
           "ColumnName": "ListUnitPrice"
@@ -629,6 +656,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be of type Decimal",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "TypeDecimal",
           "ColumnName": "ListUnitPrice"
@@ -649,6 +677,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST conform to NumericFormat requirements",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "FormatNumeric",
           "ColumnName": "ListUnitPrice"
@@ -669,6 +698,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "CheckValue",
           "ColumnName": "ListUnitPrice",
@@ -696,6 +726,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "when ChargeCategory is 'Usage' or 'Purchase'",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -741,6 +772,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
           "ColumnName": "ListUnitPrice",
@@ -768,13 +800,16 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MAY be null in all other cases",
-        "Requirement": {},
+        "KeyWord": "MAY",
+        "Requirement": {
+          "CheckFunction": null
+        },
         "Condition": {},
         "Dependencies": []
       }
     },
     "ListUnitPrice-C-008-C": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ListUnitPrice",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
@@ -784,18 +819,33 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be a non-negative decimal value, when ListUnitPrice is not null",
+        "mustSatisfy": "When ListUnitPrice is not null",
+        "KeyWord": "MUST",
         "Requirement": {
-          "CheckFunction": "CheckGreaterOrEqualThanValue",
-          "ColumnName": "ListUnitPrice",
-          "Value": 0
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ListUnitPrice-C-009-C"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ListUnitPrice-C-010-C"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ListUnitPrice-C-011-M"
+            }
+          ]
         },
         "Condition": {
           "CheckFunction": "CheckNotValue",
           "ColumnName": "ListUnitPrice",
           "Value": null
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ChargeCategory-C-000-M"
+        ]
       }
     },
     "ListUnitPrice-C-009-C": {
@@ -807,15 +857,38 @@
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "mustSatisfy": "MUST be a non-negative decimal value",
+        "KeyWord": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckGreaterOrEqualThanValue",
+          "ColumnName": "ListUnitPrice",
+          "Value": 0
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "ListUnitPrice-C-010-C": {
+      "Function": "Validation",
+      "Reference": "ListUnitPrice",
+      "Notes": null,
+      "CRVersionIntroduced": "1.2",
+      "Status": "active",
+      "ApplicabilityCriteria": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be denominated in the BillingCurrency",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
       }
     },
-    "ListUnitPrice-C-010-M": {
+    "ListUnitPrice-C-011-M": {
       "Function": "Format",
       "Reference": "ListUnitPrice",
       "Notes": null,
@@ -826,7 +899,8 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST conform to NumericFormat requirements",
+        "mustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnByColumnEqualsColumnValue",
           "ColumnAName": "ListUnitPrice",
@@ -853,7 +927,7 @@
         ]
       }
     },
-    "ListUnitPrice-C-011-C": {
+    "ListUnitPrice-C-012-C": {
       "Function": "Validation",
       "Reference": "ListUnitPrice",
       "Notes": null,
@@ -864,7 +938,8 @@
       ],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "mustSatisfy": "DiConformanceRuleIdepancies MAY exist when ChargeClass is 'Correction'",
+        "mustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'",
+        "KeyWord": "MAY",
         "Requirement": {},
         "Condition": {
           "CheckFunction": "CheckValue",
@@ -886,6 +961,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -933,6 +1009,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be present in a FOCUS dataset",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
           "ColumnName": "BilledCost"
@@ -951,6 +1028,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST NOT be null",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
           "ColumnName": "BilledCost",
@@ -970,6 +1048,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be of type Decimal",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "TypeDecimal",
           "ColumnName": "BilledCost"
@@ -988,6 +1067,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST conform to NumericFormat requirements",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "FormatNumeric",
           "ColumnName": "BilledCost"
@@ -1006,6 +1086,7 @@
       "Type": "Static",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be 0 for charges where payments are received by a third party",
+        "KeyWord": "MUST",
         "Requirement": {
           "CheckFunction": "CheckValue",
           "ColumnName": "BilledCost",
@@ -1032,6 +1113,7 @@
       "Type": "Dynamic",
       "ValidationCriteria": {
         "mustSatisfy": "MUST be denominated in the BillingCurrency",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -1047,6 +1129,7 @@
       "Type": "Dynamic",
       "ValidationCriteria": {
         "mustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
+        "KeyWord": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []

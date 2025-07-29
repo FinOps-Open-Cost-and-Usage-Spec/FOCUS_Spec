@@ -45,10 +45,14 @@ def summarize_check(node):
         return f"Check {node.get('ConformanceRuleId')}"
     elif "ColumnName" in node:
         val = node.get("Value")
-        return f"{func}({node['ColumnName']}, {val})" if val is not None else f"{func}({node['ColumnName']})"
+        if "Value" in node:
+            return f"{func}({node['ColumnName']}, {val})" if val is not None else f"{func}({node['ColumnName']}, null)"
+        return f"{func}({node['ColumnName']})"
     elif "Items" in node:
         return f"{func} of [" + ", ".join(summarize_check(i) for i in node["Items"]) + "]"
     elif "ColumnAName" in node and "ColumnBName" in node:
+        if "EqualsColumnName" in node:
+            return f"{func}({node['ColumnAName']}, {node['ColumnBName']}) -> {node['EqualsColumnName']}"
         return f"{func}({node['ColumnAName']}, {node['ColumnBName']})"
     return func or ""
 
@@ -60,8 +64,17 @@ def generate_markdown(data, generate_table_name):
             continue
 
         headers = [
-            "ConformanceRuleId", "Function", "Status", "ApplicabilityCriteria",
-            "Type", "mustSatisfy", "Requirement", "Condition"
+            "ConformanceRuleId",
+            "Function",
+            "Reference",
+            "ApplicabilityCriteria",
+            "mustSatisfy",
+            "KeyWord",            
+            "Requirement",
+            "Condition",
+            "Type",
+            "CRVersionIntroduced",
+            "Status"
         ]
         md = [
             f"# Conformance Table: {table_name}",
@@ -99,12 +112,15 @@ def generate_markdown(data, generate_table_name):
             row = [
                 rule_id,
                 rule.get("Function", ""),
-                rule.get("Status", ""),
+                rule.get("Reference", ""),
                 ", ".join(rule.get("ApplicabilityCriteria", [])),
-                rule.get("Type", ""),
                 vc.get("mustSatisfy", ""),
+                vc.get("KeyWord", ""),
                 summarize_check(req),
-                summarize_check(cond)
+                summarize_check(cond),
+                rule.get("Type", ""),
+                rule.get("CRVersionIntroduced", ""),
+                rule.get("Status", "")
             ]
             all_rows[rule_id] = "| " + " | ".join(cell.replace("\n", " ").replace("|", "\\|") for cell in row) + " |"
 
@@ -126,6 +142,6 @@ if __name__ == "__main__":
     markdown_output = generate_markdown(cr_data, generate_table_name=args.table_name)
 
     with open("conformance_tables.md", "w") as f:
-        f.write(markdown_output)
+        f.write(markdown_output + '\n')
     
     print("Markdown table generated: conformance_tables.md")

@@ -9,6 +9,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Column IDs MUST use Pascal case",
+      "KeyWord": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -36,6 +37,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -51,6 +53,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "mustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
+      "KeyWord": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
