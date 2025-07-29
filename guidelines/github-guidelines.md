@@ -892,7 +892,7 @@ GitHub Desktop also offers a direct "Create Pull Request" option:
 **To suggest specific code changes:**
 
 1. Make a line-specific comment as above
-2. Click the suggestion icon (📝) in the comment toolbar
+2. Click the suggestion icon in the comment toolbar (the document icon with a + and -)
 3. GitHub will pre-populate with the existing code
 4. Edit the code to show your suggested changes
 5. Add explanation text above or below the suggestion block
