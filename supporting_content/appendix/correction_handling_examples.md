@@ -309,13 +309,15 @@ The following applies to all corrections to a previously closed billing period, 
 
 ##### Scenario 2.3 (S-2.3): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction without UnitPrice
 
-**TODO:**
+This is not considered a valid use case.
+Refer to the proposals in **Refine Cost Calculation Integrity Norms and Permissible Discrepancies for Correction** for reasonng.
 
 - *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
 
 ##### Scenario 2.4 (S-2.4): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction with UnitPrice
 
-**TODO:**
+This is not considered a valid use case.
+Refer to the proposals in **Refine Cost Calculation Integrity Norms and Permissible Discrepancies for Correction** for reasonng.
 
 - *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
 
