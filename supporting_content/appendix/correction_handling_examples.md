@@ -118,6 +118,26 @@ In FOCUS 1.2, **Cost Calculation Integrity** and associated **discrepancy allowa
   - Pricing Currency List Unit Price  
   - Pricing Currency Contracted Unit Price
 
+#### Proposal: Require Unit Prices When SkuPriceId Is Provided
+
+In addition to enforcing nulls in price-dependent columns when SkuPriceId is null (as suggested and argued in a separate proposal), introduce a new normative requirement for unit price columns, specifying that **unit price (e.g., ListUnitPrice, ContractedUnitPrice) MUST NOT be null if SkuPriceId is not null**.
+
+**Rationale:** A non-null SkuPriceId implies a known pricing context, so the relevant unit prices should always be explicitly provided.
+
+> - `<UnitPriceMetricId>` MUST be present in a FOCUS dataset when the provider ...
+> - ...
+> - `<UnitPriceMetricId>` nullability is defined as follows:  
+>   - `<UnitPriceMetricId>` **MUST be null** if `SkuPriceId` is null.
+>   - `<UnitPriceMetricId>` **MUST NOT be null** if `SkuPriceId` is not null.
+>   - ...
+
+**Note:** Introducing this requirement will also help elegantly prevent unsupported PricingQuantity-only corrections, since such corrections would violate cost calculation integrity (i.e., Cost = UnitPrice × PricingQuantity) when all three values are present.
+
+**Exceptions?**
+
+- At the time of writing, no valid use case has been identified where SkuPriceId is set but the corresponding UnitPrice cannot be provided, assuming the UnitPrice column is present in the dataset.
+- If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule.
+
 #### Proposal: Enforce Cost Calculation Integrity When All Three Metrics Are Provided (regardless of ChargeClass)
 
 In all columns where applicable:
@@ -139,26 +159,6 @@ In all columns where applicable:
 - At the time of writing, no valid use case has been identified where a Cost Calculation Integrity violation should be allowed, even in the case of Corrections.
 - If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule. 
 
-#### Proposal: Require Unit Prices When SkuPriceId Is Provided
-
-In addition to enforcing nulls in price-dependent columns when SkuPriceId is null (as suggested and argued in a separate proposal), introduce a new normative requirement for unit price columns, specifying that **unit price (e.g., ListUnitPrice, ContractedUnitPrice) MUST NOT be null if SkuPriceId is not null**.
-
-**Rationale:** A non-null SkuPriceId implies a known pricing context, so the relevant unit prices should always be explicitly provided.
-
-> - `<UnitPriceMetricId>` MUST be present in a FOCUS dataset when the provider ...
-> - ...
-> - `<UnitPriceMetricId>` nullability is defined as follows:  
->   - `<UnitPriceMetricId>` **MUST be null** if `SkuPriceId` is null.
->   - `<UnitPriceMetricId>` **MUST NOT be null** if `SkuPriceId` is not null.
->   - ...
-
-**Note:** Introducing this requirement will also help elegantly prevent unsupported PricingQuantity-only corrections, since such corrections would violate cost calculation integrity (i.e., Cost = UnitPrice × PricingQuantity) when all three values are present.
-
-**Exceptions?**
-
-- At the time of writing, no valid use case has been identified where SkuPriceId is set but the corresponding UnitPrice cannot be provided, assuming the UnitPrice column is present in the dataset.
-- If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule.
-
 #### Proposal (i.e., Consequence) : Prevent PricingQuantity-only corrections
 
 **Question:** Is it really necessary to allow corrections to Pricing Quantity only, without affecting Cost (ListCost and ContractedCost)?
@@ -170,7 +170,7 @@ Given the formula `Cost = UnitPrice × PricingQuantity`, in the case of itemized
 
 Therefore, when corrections are needed, they should be made either to both `PricingQuantity` and `Cost` together, or solely to `Cost`, depending on the use case — in accordance with Cost Calculation Integrity, which requires consistency with the formula `Cost = UnitPrice × PricingQuantity` when all three metrics are provided (i.e., non-null).
 
-**Note:** If we adopt the two previous proposals — (1) Require Unit Prices when SkuPriceId is provided, and (2) Enforce Cost Calculation Integrity when all three metrics are present (regardless of ChargeClass) — the prevention of PricingQuantity-only correction scenarios will follow as a direct consequence.
+**Note:** If we adopt the two previous proposals — (1) Require Unit Prices when SkuPriceId is provided, and (2) Enforce Cost Calculation Integrity when all three metrics are provided (regardless of ChargeClass) — the prevention of PricingQuantity-only correction scenarios will follow as a direct consequence. However, if we identify an exceptional use case where PricingQuantity-only corrections must be allowed, we will need to revise one of these two proposals.
 
 **Exceptions?**
 
@@ -341,14 +341,14 @@ To address these **gaps** in this scenario, we assume the following:
 
 ##### Scenario 2.3 (S-2.3): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction without UnitPrice
 
-This is not considered a valid use case.
+Assuming we decide to require Unit Prices when SkuPriceId is provided, this would **not be considered a valid use case**.
 Refer to the proposals in **Refine Cost Calculation Integrity Norms and Permissible Discrepancies for Correction** for reasonng.
 
 - *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
 
 ##### Scenario 2.4 (S-2.4): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction with UnitPrice
 
-This is not considered a valid use case.
+Assuming we decide to enforce Cost Calculation Integrity when all three metrics ((`PricingQuantity`, `UnitPrice`, and `Cost`)) are provided (regardless of ChargeClass), this would **not be considered a valid use case**.
 Refer to the proposals in **Refine Cost Calculation Integrity Norms and Permissible Discrepancies for Correction** for reasonng.
 
 - *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
