@@ -21,8 +21,29 @@ Therefore, only non-restating provisioning styles (such as ledger-style incremen
 
 - Contributors are encouraged to document any exception to the general rule.
 
-- **Question:** Should we allow restating in cases where corrections apply to dimensions that were not included in the original invoice?
+- Should we allow restating in cases where corrections apply to dimensions that were not included in the original invoice?
 Personally, I would prefer not to allow this — but this is currently the only scenario where I can see a possible justification.
+
+#### Normative Requirements for Post-Invoice Finalization Corrections
+
+> **TODO:** Mention/address in upcoming Correction Handling attribute
+> (Shawn has added numbers to the statements that would become normative requirements in the attribute)
+
+The following applies to all corrections to a previously closed billing period, i.e., correction charge records provisioned after invoice finalization and billing period closure, but which pertain to activity that occurred during that already invoiced and closed period:
+
+- **Legal and Procedural Perspective:**
+  - <<1>> The invoice is considered legally issued and immutable.
+  - The billing period is considered closed, thereby prohibiting any modifications to or overwriting of the originally invoiced records.
+
+- **Provisioning perspective**: `x_ExportDateTime = T2` (i.e., the date it became available to the consumer)
+
+- **Operational Perspective**: All Correction records (Increments and Decrements in case of the Ledger style, Negations and Corrected records in case of Accounting style) pertain to activity that occurred in **May**, so in case of Usage records <<2>> `ChargePeriodStart`/`ChargePeriodEnd` **must reflect the actual usage period** (e.g., `ChargePeriodStart = 2025-05-01`)
+
+- **Financial Perspective**: The original invoice (e.g., `INV-20250501-20250601`) has already been finalized (issued and sent e.g., as PDF). The May billing period is **considered closed** therefore
+  - <<3>> `BillingPeriodStart`/`BillingPeriodEnd` **must be equal to or later than** the first **open** billing period (i.e., June 2025 or later)
+  - <<4>> `InvoiceId` must not match the original invoice (e.g., `INV-20250501-20250601`).
+
+- **Charge Class:** <<5>> ChargeClass must be set to "Correction".
 
 ### Enforce Nullability When `SkuPriceId` Is Null
 
@@ -97,6 +118,36 @@ In FOCUS 1.2, **Cost Calculation Integrity** and associated **discrepancy allowa
   - Pricing Currency List Unit Price  
   - Pricing Currency Contracted Unit Price
 
+#### Proposal: Enforce Cost Calculation Integrity When All Three Metrics Are Provided (regardless of ChargeClass)
+
+Revise the existing normative requirement to enforce Cost Calculation Integrity on all charge records (regardless of ChargeClass) if all three metrics are non-null.
+
+***Current:***
+
+> *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null, and ChargeClass is not "Correction".*
+
+**Recommended:**
+
+> *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null.*
+
+**Exceptions?**
+
+- At the time of writing, no valid use case has been identified where adjusting PricingQuantity without also adjusting Cost would be appropriate.
+- If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule. 
+
+#### Proposal: Require Unit Prices When SkuPriceId Is Provided
+
+Introduce new normative requirements specifying that Unit prices (e.g., ListUnitPrice, ContractedUnitPrice) MUST NOT be null be non-null If SkuPriceId is not null
+
+**Rationale:** A non-null SkuPriceId implies a known pricing context, so the relevant unit prices should always be explicitly provided.
+
+**Note:** Introducing this requirement will also help elegantly prevent unsupported PricingQuantity-only corrections, since such corrections would violate cost calculation integrity (i.e., Cost = UnitPrice × PricingQuantity) when all three values are present.
+
+**Exceptions?**
+
+- At the time of writing, no valid use case has been identified where adjusting PricingQuantity without also adjusting Cost would be appropriate.
+- If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule.
+
 #### Proposal: Prevent PricingQuantity-only corrections
 
 **Question:** Is it really necessary to allow corrections to Pricing Quantity only, without affecting Cost (ListCost and ContractedCost)?
@@ -108,28 +159,12 @@ Given the formula `Cost = UnitPrice × PricingQuantity`, in the case of itemized
 
 Therefore, when corrections are needed, they should be made either to both `PricingQuantity` and `Cost` together, or solely to `Cost`, depending on the use case — in accordance with Cost Calculation Integrity, which requires consistency with the formula `Cost = UnitPrice × PricingQuantity` when all three metrics are provided (i.e., non-null).
 
-**Recommendation:** This use case should be prevented by design.
+**Note:** If we adopt the two previous proposals — (1) Require Unit Prices when SkuPriceId is provided, and (2) Enforce Cost Calculation Integrity when all three metrics are present (regardless of ChargeClass) — the prevention of PricingQuantity-only correction scenarios will follow as a direct consequence.
 
 **Exceptions?**
 
 - At the time of writing, no valid use case has been identified where adjusting PricingQuantity without also adjusting Cost would be appropriate.
 - If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule. 
-
-#### Proposal: Enforce Cost Calculation Integrity When All Three Metrics Are Provided
-
-Revise the existing normative requirement to enforce Cost Calculation Integrity on all charge records (regardless of ChargeClass) if all three metrics are non-null.
-
-> ***Current:*** *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null, and ChargeClass is not "Correction".*
-
-> ***Recommended:*** *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null.*
-
-#### Proposal: Require Unit Prices When SkuPriceId Is Provided
-
-Introduce new normative requirements specifying that Unit prices (e.g., ListUnitPrice, ContractedUnitPrice) MUST NOT be null be non-null If SkuPriceId is not null
-
-**Rationale:** A non-null SkuPriceId implies a known pricing context, so the relevant unit prices should always be explicitly provided 
-
-**Note:** Introducing this requirement will also help elegantly prevent unsupported PricingQuantity-only corrections, since such corrections would violate cost calculation integrity (i.e., Cost = UnitPrice × PricingQuantity) when all three values are present.
 
 ## Context
 
@@ -218,27 +253,6 @@ To address these **gaps** in this scenario, we assume the following:
 ---
 
 #### T2: 2025-07-12 - Corrections After Invoice Finalization
-
-##### Normative Requirements for Post-Invoice Finalization Corrections
-
-> **TODO:** Mention/address in upcoming Correction Handling attribute
-> (Shawn has added numbers to the statements that would become normative requirements in the attribute)
-
-The following applies to all corrections to a previously closed billing period, i.e., correction charge records provisioned after invoice finalization and billing period closure, but which pertain to activity that occurred during that already invoiced and closed period:
-
-- **Legal and Procedural Perspective:**
-  - <<1>> The invoice is considered legally issued and immutable.
-  - The billing period is considered closed, thereby prohibiting any modifications to or overwriting of the originally invoiced records.
-
-- **Provisioning perspective**: `x_ExportDateTime = T2` (i.e., the date it became available to the consumer)
-
-- **Operational Perspective**: All Correction records (Increments and Decrements in case of the Ledger style, Negations and Corrected records in case of Accounting style) pertain to activity that occurred in **May**, so in case of Usage records <<2>> `ChargePeriodStart`/`ChargePeriodEnd` **must reflect the actual usage period** (e.g., `ChargePeriodStart = 2025-05-01`)
-
-- **Financial Perspective**: The original invoice (e.g., `INV-20250501-20250601`) has already been finalized (issued and sent e.g., as PDF). The May billing period is **considered closed** therefore
-  - <<3>> `BillingPeriodStart`/`BillingPeriodEnd` **must be equal to or later than** the first **open** billing period (i.e., June 2025 or later)
-  - <<4>> `InvoiceId` must not match the original invoice (e.g., `INV-20250501-20250601`).
-
-- **Charge Class:** <<5>> ChargeClass must be set to "Correction".
 
 > **Note:** Detailed correction scenarios related to post-invoice finalization are available in Chapter Post-Invoice Finalization Scenarios.
 
