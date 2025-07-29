@@ -132,7 +132,7 @@ Revise the existing normative requirement to enforce Cost Calculation Integrity 
 
 **Exceptions?**
 
-- At the time of writing, no valid use case has been identified where adjusting PricingQuantity without also adjusting Cost would be appropriate.
+- At the time of writing, no valid use case has been identified where a Cost Calculation Integrity violation should be allowed, even in the case of Corrections.
 - If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule. 
 
 #### Proposal: Require Unit Prices When SkuPriceId Is Provided
@@ -145,7 +145,7 @@ Introduce new normative requirements specifying that Unit prices (e.g., ListUnit
 
 **Exceptions?**
 
-- At the time of writing, no valid use case has been identified where adjusting PricingQuantity without also adjusting Cost would be appropriate.
+- At the time of writing, no valid use case has been identified where SkuPriceId is set but the corresponding UnitPrice cannot be provided, assuming the UnitPrice column is present in the dataset.
 - If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule.
 
 #### Proposal: Prevent PricingQuantity-only corrections
