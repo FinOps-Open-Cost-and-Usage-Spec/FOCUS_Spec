@@ -2,20 +2,20 @@
 
 ## Proposals
 
-### Prevent Restatement After Invoice Finalization (and Billing Period Closure)
+### Prevent Replacement After Invoice Finalization (and Billing Period Closure)
 
 > **TODO:** Mention/address in upcoming Correction Handling attribute
 
 ***Note:*** *See S-1: Itemized Correction Scenarios with Cost Calculation Integrity Respected - S-1.1 and S-1.2 in particular*
 
-We should prevent the use of the Restatement provisioning style once an invoice has been finalized and the corresponding billing period closed.
+We should prevent the use of the Replacement provisioning style once an invoice has been finalized and the corresponding billing period closed.
 
-Since Restatement relies on overwriting or replacing previously delivered charge records within the original billing period, it inherently conflicts with the Normative Requirements for Post-Invoice Finalization Corrections — and in particular the Legal and Procedural Perspective, which states that once an invoice has been finalized and the corresponding billing period closed:
+Since Replacement relies on overwriting or replacing previously delivered charge records within the original billing period, it inherently conflicts with the Normative Requirements for Post-Invoice Finalization Corrections — and in particular the Legal and Procedural Perspective, which states that once an invoice has been finalized and the corresponding billing period closed:
 
 - A finalized invoice is considered legally issued and immutable.
 - The associated billing period is closed, prohibiting any modifications or overwriting of previously delivered records.
 
-Therefore, only non-restating provisioning styles (such as ledger-style increments/decrements or accounting-style reversals followed by corrected entries) should be permitted for handling Post-Invoice Finalization Corrections.
+Therefore, only append-only provisioning styles (such as ledger-style increments/decrements or accounting-style reversals followed by corrected entries) should be permitted for handling Post-Invoice Finalization Corrections.
 
 **Exceptions:**
 
@@ -212,9 +212,9 @@ To address this **gap** in the context of this scenarios, and solely for illustr
 
 Data Generators typically use two main provisioning styles/mechanisms when delivering cost and usage data:
 
-- **Restatement:** Overwrites previously delivered records with updated ones. This approach ensures data accuracy by reflecting corrections directly in place.
+- **Replacement:** Overwrites previously delivered records with updated ones. This approach ensures data accuracy by reflecting corrections directly in place.
 
-- **Non-restating:** Delivers only new records without modifying previously sent data. This approach can be further divided into two subtypes:
+- **Append-only:** Delivers only new records without modifying previously sent data. This approach can be further divided into two subtypes:
   - **Ledger-style:** Adds incremental (or decremental) records over time. Corrections are reflected as additional entries where the cost or quantity metrics are adjusted (+/-), while all other dimensions remain identical to the original record. This supports an append-only model but offers limited auditability, as there is typically no explicit reversal.
   - **Accounting-style:** Tracks changes explicitly via negative (reversal) entries followed by corrected records. This ensures full auditability and provides a clear historical trail of adjustments.
 
@@ -295,8 +295,8 @@ To address these **gaps** in this scenario, we assume the following:
     - One Negation record to fully negate the original incorrect charge attributed to `ResourceId R-111`.  
     - One Corrected record with the remaining cost and usage still attributed to the original resource (`R-111`).
     - One Corrected record with the adjusted cost and usage attributed to the correct resource (`R-222`).
-  - **Restatement Style**
-    Restatement style, which involves overwriting or replacing previously delivered charge records within the original billing period, is not suitable for this scenario. Since the invoice is already finalized and the corresponding billing period is closed, modifying or replacing original records is prohibited due to legal and procedural requirements. Therefore, the Data Generator sends corrections using one of the two non-restatement styles.
+  - **Replacement Style**
+    Replacement style, which involves overwriting or replacing previously delivered charge records within the original billing period, is not suitable for this scenario. Since the invoice is already finalized and the corresponding billing period is closed, modifying or replacing original records is prohibited due to legal and procedural requirements. Therefore, the Data Generator sends corrections using one of the two append-only styles.
 
 - *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
 
@@ -310,8 +310,8 @@ To address these **gaps** in this scenario, we assume the following:
     The Data Generator sends a single Increment record representing the late-arriving usage and associated cost.
   - **Accounting Style:**  
     The Data Generator sends a single Increment record representing the late-arriving usage and associated cost.
-  - **Restatement Style**
-    Restatement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
+  - **Replacement Style**
+    Replacement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
 
 - *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
 
@@ -328,8 +328,8 @@ To address these **gaps** in this scenario, we assume the following:
     The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift, with the relevant `SkuPriceId` specified.
   - **Accounting Style:**  
     The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift.
-  - **Restatement Style**
-    Restatement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
+  - **Replacement Style**
+    Replacement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
 
 - *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
 
@@ -367,8 +367,8 @@ Refer to the proposals in **Refine Cost Calculation Integrity Norms and Permissi
     The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift, without specifying a `SkuPriceId`, as the correction spans multiple SKU Price IDs.
   - **Accounting Style:**  
     The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift.
-  - **Restatement Style**
-    Restatement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
+  - **Replacement Style**
+    Replacement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
 
 - *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
 
