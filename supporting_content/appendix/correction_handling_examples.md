@@ -85,7 +85,7 @@ We propose making these columns **strictly null when the SKU, i.e., SKU Price co
 To achieve this, we suggest updating the **nullability** section of each relevant column as follows:
 
 > - `<ColumnId>` nullability is defined as follows:  
->   - `<ColumnId>` **MUST be null** when `SkuPriceId` is null.  
+>   - `<ColumnId>` **MUST be null** if `SkuPriceId` is null.  
 >   - ...
 
 ***Warning:*** *This applies beyond Correction Handling scenarios and may require a separate FR. It MUST be resolved comprehensively — addressing it solely within correction scenarios is not sufficient.*
@@ -120,15 +120,19 @@ In FOCUS 1.2, **Cost Calculation Integrity** and associated **discrepancy allowa
 
 #### Proposal: Enforce Cost Calculation Integrity When All Three Metrics Are Provided (regardless of ChargeClass)
 
-Revise the existing normative requirement to enforce Cost Calculation Integrity on all charge records (regardless of ChargeClass) if all three metrics are non-null.
+In all columns where applicable:
+
+- Revise the existing normative requirement **to enforce Cost Calculation Integrity** on all charge records — **regardless of `ChargeClass`** — when **all three metrics (`PricingQuantity`, `UnitPrice`, and `Cost`) are non-null**.
+- Additionally, **remove the requirement related to *Permissible Cost Calculation Integrity Discrepancy***, as it provides no added value — the main *Cost Calculation Integrity* requirement already covers/allows such discrepancies.
 
 ***Current:***
 
-> *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null, and ChargeClass is not "Correction".*
+> - *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null, and ChargeClass is not "Correction".*
+> - *Discrepancies in PricingQuantity, unit prices (e.g., ListUnitPrice), or costs (e.g., ListCost) MAY exist (and be handled independently) when ChargeClass is "Correction".*
 
 **Recommended:**
 
-> *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null.*
+> - *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when both PricingQuantity and the unit price are not null.*
 
 **Exceptions?**
 
@@ -137,9 +141,16 @@ Revise the existing normative requirement to enforce Cost Calculation Integrity 
 
 #### Proposal: Require Unit Prices When SkuPriceId Is Provided
 
-Introduce new normative requirements specifying that Unit prices (e.g., ListUnitPrice, ContractedUnitPrice) MUST NOT be null be non-null If SkuPriceId is not null
+In addition to enforcing nulls in price-dependent columns when SkuPriceId is null (as suggested and argued in a separate proposal), introduce a new normative requirement for unit price columns, specifying that **unit price (e.g., ListUnitPrice, ContractedUnitPrice) MUST NOT be null if SkuPriceId is not null**.
 
 **Rationale:** A non-null SkuPriceId implies a known pricing context, so the relevant unit prices should always be explicitly provided.
+
+> - `<UnitPriceMetricId>` MUST be present in a FOCUS dataset when the provider ...
+> - ...
+> - `<UnitPriceMetricId>` nullability is defined as follows:  
+>   - `<UnitPriceMetricId>` **MUST be null** if `SkuPriceId` is null.
+>   - `<UnitPriceMetricId>` **MUST NOT be null** if `SkuPriceId` is not null.
+>   - ...
 
 **Note:** Introducing this requirement will also help elegantly prevent unsupported PricingQuantity-only corrections, since such corrections would violate cost calculation integrity (i.e., Cost = UnitPrice × PricingQuantity) when all three values are present.
 
@@ -148,7 +159,7 @@ Introduce new normative requirements specifying that Unit prices (e.g., ListUnit
 - At the time of writing, no valid use case has been identified where SkuPriceId is set but the corresponding UnitPrice cannot be provided, assuming the UnitPrice column is present in the dataset.
 - If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule.
 
-#### Proposal: Prevent PricingQuantity-only corrections
+#### Proposal (i.e., Consequence) : Prevent PricingQuantity-only corrections
 
 **Question:** Is it really necessary to allow corrections to Pricing Quantity only, without affecting Cost (ListCost and ContractedCost)?
 
