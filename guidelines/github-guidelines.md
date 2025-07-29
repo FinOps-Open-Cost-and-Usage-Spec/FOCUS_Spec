@@ -42,8 +42,6 @@ This directory contains custom linting rules specific to the FOCUS specification
 
 A typical FOCUS contributor will not spend much time interacting with this folder, and thus it can be safely ignored.
 
-A typical FOCUS contributor will not spend much time interacting with this folder, and thus it can be safely ignored.
-
 ### 3. `guidelines` folder
 
 This folder contains various guidelines on development, editorial, normative requirements, specification change, and specification design.
