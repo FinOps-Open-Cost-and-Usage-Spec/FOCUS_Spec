@@ -1,0 +1,5 @@
+# Datasets
+
+FOCUS defines many individual datasets made up of a selected set of Columns which abide by the Attributes outlined in this FOCUS Specification.
+
+!INCLUDE "focus.md",1

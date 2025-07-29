@@ -33,6 +33,8 @@ FOCUS is an open specification for billing data. It defines a common schema for 
 
 <div style="page-break-after: always"></div>
 
+!INCLUDE "datasets/datasets.mdpp",1
+
 !INCLUDE "columns/columns.mdpp",1
 
 !INCLUDE "attributes/attributes.mdpp",1
