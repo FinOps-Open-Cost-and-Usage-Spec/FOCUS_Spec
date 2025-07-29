@@ -884,7 +884,7 @@ GitHub Desktop also offers a direct "Create Pull Request" option:
 **For multi-line comments:**
 
 1. Click and drag from the starting line number to the ending line number
-2. This will select multiple lines for your comment
+2. Click the [+] sign next to the last line number in the series.  This will select multiple lines for your comment
 3. Add your comment and submit
 
 ### Making Code Suggestions
