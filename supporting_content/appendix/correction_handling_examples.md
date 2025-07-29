@@ -17,6 +17,13 @@ Since Restatement relies on overwriting or replacing previously delivered charge
 
 Therefore, only non-restating provisioning styles (such as ledger-style increments/decrements or accounting-style reversals followed by corrected entries) should be permitted for handling Post-Invoice Finalization Corrections.
 
+**Exceptions:**
+
+- Contributors are encouraged to document any exception to the general rule.
+
+- **Question:** Should we allow restating in cases where corrections apply to dimensions that were not included in the original invoice?
+Personally, I would prefer not to allow this — but this is currently the only scenario where I can see a possible justification.
+
 ### Enforce Nullability When `SkuPriceId` Is Null
 
 > **TODO:** Address this in the respective Column Definitions (Normative Requirements sections), assuming consensus is reached.
