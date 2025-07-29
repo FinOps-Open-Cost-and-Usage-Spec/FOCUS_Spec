@@ -116,7 +116,7 @@ Revise the existing normative requirement to enforce Cost Calculation Integrity 
 
 > ***Recommended:*** *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null.*
 
-#### Proposal: Proposal:
+#### Proposal: Require Unit Prices When SkuPriceId Is Provided
 
 Introduce new normative requirements specifying that Unit prices (e.g., ListUnitPrice, ContractedUnitPrice) MUST NOT be null be non-null If SkuPriceId is not null
 
