@@ -19,14 +19,13 @@ Therefore, only non-restating provisioning styles (such as ledger-style incremen
 
 ### Enforce Nullability When `SkuPriceId` Is Null
 
-> **NOTE:** This applies beyond Correction Handling scenarios and may require a separate FR. It MUST be resolved comprehensively — addressing it solely within correction scenarios is not sufficient.  
 > **TODO:** Address this in the respective Column Definitions (Normative Requirements sections), assuming consensus is reached.
 
-***Note:*** *See S-3: Bulk and Bulk Correction Scenarios with Cost Calculation Integrity Exceptions Allowed - S-3.2 and S-3.3 in particular*
+#### Current Nullability Behavior for SKU/SKU Price-dependent columns
 
-In cases where `SkuPriceId` is null, we should prevent setting non-null values in the following SKU/SKU Price-dependent columns:
+The following columns are considered SKU Price-dependent in FOCUS version 1.2:
 
-- `SKU`
+- `SKU ID`
 - `Pricing Quantity`
 - `Pricing Category`
 - `Contracted Unit Price`
@@ -36,17 +35,7 @@ In cases where `SkuPriceId` is null, we should prevent setting non-null values i
 - `Consumed Quantity`
 - `Commitment Discount Quantity`
 
-The values in the above columns lack business meaning unless the associated `SkuPriceId` (or `SkuId`) is known. We propose making these columns **strictly null** when the SKU context is missing, to ensure consistency and data integrity.
-
-To achieve this, we suggest updating the **nullability** section of each relevant column as follows:
-
-> - `<ColumnId>` nullability is defined as follows:  
->   - `<ColumnId>` **MUST be null** when `SkuPriceId` is null.  
->   - ...
-
-#### Current Nullability Behavior for SKU/SKU Price-dependent columns
-
-Based on the analysis of current nullability requirements, all listed columns (except `Consumed Quantity` and `Commitment Discount Quantity`) currently follow this pattern:
+Based on the analysis of current nullability requirements, all listed SKU Price-dependent columns (except `Consumed Quantity` and `Commitment Discount Quantity`) currently follow this pattern:
 
 > - `<ColumnId>` nullability is defined as follows:  
 >   - `<ColumnId>` MUST be null when [`ChargeCategory`](#chargecategory) is `"Tax"`.  
@@ -59,6 +48,81 @@ As a result, under the current rules, these columns can be populated even when t
 - `ChargeCategory: Usage` or `Purchase` with `ChargeClass: Correction`
 
 ***Note:*** *Although `Consumed Quantity` and `Commitment Discount Quantity` follow a slightly different nullability pattern, they are also currently allowed to hold values even when `SkuPriceId` is not provided.*
+
+#### Proposal: Enforce Nulls in Price-Dependent Columns When SkuPriceId Is Null
+
+Values in SKU Price-dependent columns **lack business meaning unless the associated `SkuPriceId` (or `SkuId`) is known**.
+We propose making these columns **strictly null when the SKU, i.e., SKU Price context is missing**, to ensure consistency and data integrity.
+
+To achieve this, we suggest updating the **nullability** section of each relevant column as follows:
+
+> - `<ColumnId>` nullability is defined as follows:  
+>   - `<ColumnId>` **MUST be null** when `SkuPriceId` is null.  
+>   - ...
+
+***Warning:*** *This applies beyond Correction Handling scenarios and may require a separate FR. It MUST be resolved comprehensively — addressing it solely within correction scenarios is not sufficient.*
+
+### Refine Cost Calculation Integrity Norms and Permissible Discrepancies for Correction
+
+In FOCUS 1.2, **Cost Calculation Integrity** and associated **discrepancy allowances for correction records** are addressed through specific normative requirements defined at the column level. While the exact phrasing may vary slightly across columns, the underlying logic is generally captured by the following two formulations:
+
+- **Cost Calculation Integrity Requirement**  
+  *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null, and ChargeClass is not "Correction".*
+
+  Currently specified for the following columns:
+
+  - List Cost  
+  - Contracted Cost  
+  - List Unit Price  
+  - Contracted Unit Price  
+  - Pricing Quantity
+
+- **Permissible Cost Calculation Integrity Discrepancy**  
+  *Discrepancies in PricingQuantity, unit prices (e.g., ListUnitPrice), or costs (e.g., ListCost) MAY exist (and be handled independently) when ChargeClass is "Correction".*
+
+  Currently specified for the following columns:
+
+  - List Cost  
+  - Contracted Cost  
+  - List Unit Price  
+  - Contracted Unit Price  
+  - Pricing Quantity  
+  - Pricing Currency List Unit Price  
+  - Pricing Currency Contracted Unit Price
+
+#### Proposal: Prevent PricingQuantity-only corrections
+
+**Question:** Is it really necessary to allow corrections to Pricing Quantity only, without affecting Cost (ListCost and ContractedCost)?
+
+**Note:** This applies specifically to `PricingQuantity` corrections, not to `ConsumedQuantity` or `CommitmentDiscountQuantity`.
+
+**Explanation:**  
+Given the formula `Cost = UnitPrice × PricingQuantity`, in the case of itemized corrections — where `SkuPriceId` is not null and `UnitPrice` is (or should be) known — adjusting `PricingQuantity` will inherently impact the corresponding `Cost`, since it is a derived value.
+
+Therefore, when corrections are needed, they should be made either to both `PricingQuantity` and `Cost` together, or solely to `Cost`, depending on the use case — in accordance with Cost Calculation Integrity, which requires consistency with the formula `Cost = UnitPrice × PricingQuantity` when all three metrics are provided (i.e., non-null).
+
+**Recommendation:** This use case should be prevented by design.
+
+**Exceptions?**
+
+- At the time of writing, no valid use case has been identified where adjusting PricingQuantity without also adjusting Cost would be appropriate.
+- If such a case exists or emerges, contributors are encouraged to document it explicitly here as an exception to the general rule. 
+
+#### Proposal: Enforce Cost Calculation Integrity When All Three Metrics Are Provided
+
+Revise the existing normative requirement to enforce Cost Calculation Integrity on all charge records (regardless of ChargeClass) if all three metrics are non-null.
+
+> ***Current:*** *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null, and ChargeClass is not "Correction".*
+
+> ***Recommended:*** *The product of PricingQuantity and a unit price (e.g., ListUnitPrice) MUST match the corresponding cost metric (e.g., ListCost) when PricingQuantity is not null, the unit price is not null.*
+
+#### Proposal: Proposal:
+
+Introduce new normative requirements specifying that Unit prices (e.g., ListUnitPrice, ContractedUnitPrice) MUST NOT be null be non-null If SkuPriceId is not null
+
+**Rationale:** A non-null SkuPriceId implies a known pricing context, so the relevant unit prices should always be explicitly provided 
+
+**Note:** Introducing this requirement will also help elegantly prevent unsupported PricingQuantity-only corrections, since such corrections would violate cost calculation integrity (i.e., Cost = UnitPrice × PricingQuantity) when all three values are present.
 
 ## Context
 
@@ -104,6 +168,7 @@ Data Generators typically use two main provisioning styles/mechanisms when deliv
 ### Finalized Invoice and Closed Billing Period
 
 > **TODO:** Mention/address in upcoming Correction Handling attribute
+> See [FR #Add invoice-level correction handling rules](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1013)
 
 While the FOCUS specification mentions closed billing periods, it currently does not define the process for invoice issuance or billing period closure. It also does not define any explicit **“finalized”** status for invoices, nor a **“closed”** status for billing periods, nor the point at which an invoice is considered finalized or a billing period considered closed.
 
@@ -137,7 +202,7 @@ To address these **gaps** in this scenario, we assume the following:
 
 ---
 
-#### T1: 2025-06-13 - Invoice finalization (and Billing Period closure) on Consumen's side
+#### T1: 2025-06-13 - Invoice finalization (and Billing Period closure) on Consumer's side
 
 - Since the Data Generator (Provider) has finalized the invoice and closed the billing period, the **Consumer** performs **final invoice reconciliation**.
 - If the consumer is a **Managed Service Provider (MSP)**, they proceed to **generate downstream invoices** for their own customers based on the finalized May data.
@@ -168,16 +233,22 @@ The following applies to all corrections to a previously closed billing period, 
 
 - **Charge Class:** <<5>> ChargeClass must be set to "Correction".
 
-##### S-1: Itemized Correction Scenarios with Cost Calculation Integrity Respected
+> **Note:** Detailed correction scenarios related to post-invoice finalization are available in Chapter Post-Invoice Finalization Scenarios.
 
-###### REPLACED Scenario 1.1 (S-1.1): Post Invoice Correction - Correction to ResourceId dimension
+---
+
+### Post-Invoice Finalization Scenarios
+
+#### S-1: Itemized Correction Scenarios with Cost Calculation Integrity Respected
+
+##### REPLACED Scenario 1.1 (S-1.1): Post Invoice Correction - Correction to ResourceId dimension
 
 - The Data Generator identifies that a **previously provisioned charge record** (delivered before the billing period was closed) contains an **incorrect `ResourceId`**.
 - This record was part of the **finalized invoice** issued at T0.
 - The **May billing period is already closed**, while the **June 2025 billing period is still open**.
 - The correction requires **reallocating the cost and usage quantity** from the incorrect resource (`R-111`) to the correct one (`R-222`).
 
-###### Scenario 1.1 (S-1.1): Post Invoice Correction – Partial Reallocation to Correct ResourceId
+##### Scenario 1.1 (S-1.1): Post Invoice Correction – Partial Reallocation to Correct ResourceId
 
 - The Data Generator identifies that a **previously provisioned charge record** (delivered before the billing period was closed) was **incorrectly attributed entirely to `ResourceId R-111`**, even though only part of the cost and usage belongs to that resource, with the remainder pertaining to another resource (`ResourceId R-222`).
 - This record was part of the **finalized invoice** issued at T0.
@@ -195,7 +266,9 @@ The following applies to all corrections to a previously closed billing period, 
   - **Restatement Style**
     Restatement style, which involves overwriting or replacing previously delivered charge records within the original billing period, is not suitable for this scenario. Since the invoice is already finalized and the corresponding billing period is closed, modifying or replacing original records is prohibited due to legal and procedural requirements. Therefore, the Data Generator sends corrections using one of the two non-restatement styles.
 
-###### Scenario 1.2 (S-1.2): Post Invoice Correction - Late-arriving Usage
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
+
+##### Scenario 1.2 (S-1.2): Post Invoice Correction - Late-arriving Usage
 
 - The Data Generator identifies a **late-arriving cost** that was **incurred during May** (e.g., `ChargePeriodStart = 2025-05-01`).
 - This cost was not included in the finalized invoice issued at T0.
@@ -204,47 +277,82 @@ The following applies to all corrections to a previously closed billing period, 
   - **Ledger Style:**  
     The Data Generator sends a single Increment record representing the late-arriving usage and associated cost.
   - **Accounting Style:**  
-    The Data Generator sends a single Corrected record representing the late-arriving usage and associated cost.
+    The Data Generator sends a single Increment record representing the late-arriving usage and associated cost.
   - **Restatement Style**
-    Restatement style, which involves overwriting or replacing previously delivered charge records within the original billing period, is not suitable for this scenario. Since the invoice is already finalized and the corresponding billing period is closed, modifying or replacing original records is prohibited due to legal and procedural requirements. Therefore, the Data Generator sends corrections using one of the two non-restatement styles.
+    Restatement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
 
-##### S-2: Itemized Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
 
-###### Scenario 2.1 (S-2.1): Post-Invoice Correction – Cost-only correction
+#### S-2: Itemized Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
+
+##### Scenario 2.1 (S-2.1): Post-Invoice Correction – Cost-only correction
+
+- The Data Generator detects a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records **related to a single `SkuPriceId`**. Although each individual record was correctly rounded, the aggregated cost differs slightly from the precise total, resulting in a small drift.
+- Original records were part of the finalized invoice issued at T0.
+- The original billing period is already closed, while the subsequent billing period (e.g., July 2025) is still open.
+- The correction requires provisioning a cost-only correction record to reconcile the total cost drift and ensure invoice accuracy.
+- The correction requires provisioning an **itemized cost-only correction record** with the relevant `SkuPriceId` to reconcile the total cost drift and ensure invoice accuracy.
+  - **Ledger Style:**  
+    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift, with the relevant `SkuPriceId` specified.
+  - **Accounting Style:**  
+    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift.
+  - **Restatement Style**
+    Restatement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
+
+##### Scenario 2.2 (S-2.2): Post-Invoice Correction – PricingQuantity-only correction
+
+**Recommendation:** This use case should be prevented by design. (See **Proposal: Prevent PricingQuantity-only corrections** chapter for more details)
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
+
+##### Scenario 2.3 (S-2.3): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction without UnitPrice
 
 **TODO:**
 
-###### Scenario 2.2 (S-2.2): Post-Invoice Correction – PricingQuantity-only correction
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
+
+##### Scenario 2.4 (S-2.4): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction with UnitPrice
 
 **TODO:**
 
-###### Scenario 2.3 (S-2.3): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction without UnitPrice
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
 
-**TODO:**
+#### S-3: Bulk and Bulk Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
 
-###### Scenario 2.4 (S-2.4): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction with UnitPrice
+***Note:** In the context of this PR, Bulk refers to charge records where SkuPriceId (and SkuId) is null.*
 
-**TODO:**
+##### Scenario 3.1 (S-3.1): Post-Invoice Correction – Cost-only Bulk Usage Correction
 
-##### S-3: Bulk and Bulk Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
+- The Data Generator detects a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records **spanning several different `SkuPriceId` values**. Although each individual record was correctly rounded, the aggregated cost differs slightly from the precise total, resulting in a small drift.
+- Original records were part of the finalized invoice issued at T0.
+- The original billing period is already closed, while the subsequent billing period (e.g., July 2025) is still open.
+- The correction requires provisioning a **bulk cost-only correction record** (without specifying `SkuPriceId`) to reconcile the total cost drift across multiple items and ensure invoice accuracy.
+  - **Ledger Style:**  
+    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift, without specifying a `SkuPriceId`, as the correction spans multiple SKU Price IDs.
+  - **Accounting Style:**  
+    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift.
+  - **Restatement Style**
+    Restatement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
 
-**Note:** In the context of this PR, Bulk refers to charge records where SkuPriceId (and SkuId) is null.
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
 
-###### Scenario 3.1 (S-3.1): Post-Invoice Correction – Cost-only Bulk Usage Correction
+##### Scenario 3.2 (S-3.2): Post-Invoice Correction – Cost and PricingQuantity Bulk Usage Correction
 
-**TODO:**
-
-###### Scenario 3.2 (S-3.2): Post-Invoice Correction – PricingQuantity-only Bulk Usage Correction
-
-PricingQuantity and several other SKU/SKU Price-dependent columns lack business meaning in such cases, as they cannot be interpreted without a known SkuPriceId.
-
-Therefore, Bulk corrections to `PricingQuantity` (or any other SKU Price-dependent column) **are not (or should not be) allowed** regardless of the timing of the correction timing. This rule applies equally to Adjustments (e.g., rounding errors) occurring in the current or any still open past billing period. 
+Bulk corrections to `PricingQuantity` (or any other SKU Price-dependent column) **are not (or should not be) allowed** regardless of the timing of the correction timing. This rule applies equally to Adjustments (e.g., rounding errors) occurring in the current or any still open past billing period.
 
 If a PricingQuantity correction is needed, the associated SkuPriceId **must** be provided to ensure accurate attribution and interpretation.
 
-###### Scenario 3.3 (S-3.3): Post-Invoice Correction – Cost and PricingQuantity Bulk Usage Correction
+**Reasoning:** PricingQuantity and several other SKU/SKU Price-dependent columns lack business meaning SkuPriceId (and SkuId) is null, as they cannot be interpreted without a known SkuPriceId.
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
+
+##### Scenario 3.3 (S-3.3): Post-Invoice Correction – PricingQuantity-only Bulk Usage Correction
 
 Bulk corrections to `PricingQuantity` (or any other SKU Price-dependent column) **are not (or should not be) allowed** regardless of the timing of the correction timing. (*See Scenario 3.2 for more details.*)
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
 
 ## References
 
