@@ -924,7 +924,7 @@ const userName = user.name || 'Anonymous';
 #### Reactions
 
 - Click the emoji icon on any comment to add reactions
-- Common reactions: 👍 👎 😄 🎉 😕 ❤️ 🚀 👀
+- Possible reactions: 👍 👎 😄 🎉 😕 ❤️ 🚀 👀
 
 #### Editing Comments
 
