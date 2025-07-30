@@ -9,11 +9,11 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on GitH
 3. [Configuring Notifications](#configuring-notifications)
 4. [Installing GitHub Desktop](#installing-github-desktop)
 5. [Installing Visual Studio Code](#installing-visual-studio-code)
-6. [How to Interact (review, comment, participate in, etc.) with an Issue via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-an-issue-via-web-browser)
+6. [Interacting with (e.g., review, comment, participate in) an Issue via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-an-issue-via-web-browser)
 7. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
-8. [How to submit a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
-9. [How to submit changes to an existing PR using GitHub desktop and VS Code](#how-to-submit-changes-to-an-existing-pr-using-github-desktop-and-vscode)
-10. [How to Interact (review, comment, participate in, etc.) with a Pull Request via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-a-pull-request-via-web-browser)
+8. [Submitting a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
+9. [Submitting changes to an existing PR using GitHub desktop and VS Code](#how-to-submit-changes-to-an-existing-pr-using-github-desktop-and-vscode)
+10. [Interacting with (e.g., review, comment, participate in) a PR via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-a-pull-request-via-web-browser)
 11. [Tips for Success](#tips-for-success)
 
 ---
