@@ -56,46 +56,48 @@ Provider -.->|Used in rule conditions| Column
 | `Provider`  | System that generated the data     | Conditional logic in requirements         | Column `CapacityReservationId` MUST be present when the provider supports capacity reservation features |
 
 ## Conformance Requirements Extraction Flow – FOCUS Specification
+### Flow Diagram 
+<img width="812" height="1036" alt="Image" src="https://github.com/user-attachments/assets/cb7c524a-85e6-43e7-bc5e-05125679624e" />
 
 ### High-Level Description of Each Step:
 
-#### Target Entity – Determine the entity
+#### 1. Target Entity – Determine the entity
 Identify the target for the rule: Dataset, Column, Attribute property, Provider, etc. This sets the scope of the conformance requirement.
 
-#### CRID – Apply CRID Naming Rules
+#### 2. CRID – Apply CRID Naming Rules
 Construct a unique identifier for the rule using the format:
 {{ColumnID}}-{{ArtifactType}}-{{NNN}}-{{LEVEL}}
 This ensures traceability and consistency.
 
-#### Function – Classify the rule type
+#### 3. Function – Classify the rule type
 Select from one of several rule types such as `Presence`, `DataType`, `Format`, `NullabilityRules`, `Validation`, or `Composite`. Indicates whether the rule is atomic or composite.
 
-#### Reference – Identify the reference target
+#### 4.Reference – Identify the reference target
 Point to the relevant column or attribute that the rule applies to.
 
-#### Keyword – Extract the normative keyword
+#### 5. Keyword – Extract the normative keyword
 Determine the level of obligation using normative terms such as `MUST`, `SHALL`, `SHOULD`, `MAY`, etc.
 
-#### Applicability Criteria (GATE) – Determine if the rule should be evaluated
+#### 6. Applicability Criteria (GATE) – Determine if the rule should be evaluated
 Specify conditions under which this rule is relevant at a metadata level (e.g., provider supports a specific feature). Helps avoid unnecessary evaluations.
 
-#### Condition (GATE) – Specify when to test
+#### 7. Condition (GATE) – Specify when to test
 Define the row-level or context-level condition that must be true for the rule to apply. This is critical for test selectivity.
 
-#### MustSatisfy – Define how to test the rule
+#### 8. MustSatisfy – Define how to test the rule
 Provide test logic in a machine-readable format such as regex, numeric range, or value list to validate whether the condition is met.
 
-#### Requirement – Identify logical dependencies
+#### 9. Requirement – Identify logical dependencies
 State if this rule enforces or depends on other normative requirements, helping establish rule hierarchies and dependencies.
 
-#### Validation Type – Indicate static vs. dynamic
+#### 10. Validation Type – Indicate static vs. dynamic
 Declare whether the rule can be validated solely with the FOCUS dataset (`static`) or if it requires external data (`dynamic`), such as invoice records.
 
-#### CRVersionIntroduced – Version tracking
+#### 11. CRVersionIntroduced – Version tracking
 Denote the version in which the conformance requirement was introduced. Default: **v1.2**
 
-#### Status – Set rule lifecycle status
+#### 12. Status – Set rule lifecycle status
 Indicates whether the rule is Active or Deprecated. Default: **Active**
 
-#### Notes – Capture comments
+#### 13. Notes – Capture comments
 Add clarifying information, references, or editorial remarks about the rule.
