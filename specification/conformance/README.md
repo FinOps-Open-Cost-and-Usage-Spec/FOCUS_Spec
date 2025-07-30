@@ -36,7 +36,9 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
   _e.g._: `ListUnitPrice-C-001-M`
 - **Attribute** — Semantic labels or metadata affecting formatting, interpretation, or contract-based logic  
   _e.g._: `DateTimeFormat-A-001-M`
-
+- **Dataset** - Requirement affecting the dataset as a whole.
+  _e.g._: `BilledCost-D-001-M`
+- **Other** - There is a possibility we may define other entities such as e.g. `Provider`
 ---
 
 ## 🧩 Feature Types & Grouping
@@ -65,17 +67,16 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 **Example:** `ListUnitPrice-C-001-M`
 
-| Segment         | Meaning                      |
-|-----------------|------------------------------|
-| `ArtifactName`  | Logical name (e.g. ListUnitPrice) |
-| `ArtifactType`  | `C` (Column) or `A` (Attribute) |
-| `NumericId`     | Sequence ID (e.g. 001)        |
-| `ArtifactStatus`| `M`, `O`, or `C`              |
+| Segment         | Meaning                                      |
+|-----------------|----------------------------------------------|
+| `ArtifactName`  | ColumnID (e.g. ListUnitPrice)                |
+| `ArtifactType`  | `C` (Column), `A` (Attribute), `D` (Dataset) |
+| `NumericId`     | Sequence ID (e.g. 001)                       |
+| `ArtifactStatus`| `M`, `O`, or `C`                             |
 
 ### Group Reference Formats
 
 - `ArtifactName:FeatureType` — e.g. `ListUnitPrice:MCF`
-- `GroupName:FeatureType` — e.g. `GRP-1:MCF`
 - `FOCUS:FeatureType` — e.g. `FOCUS:OCF`
 
 ---
