@@ -1,5 +1,5 @@
 {
-  "CheckFunction": {
+  "CheckFunctions": {
     "OR": {
       "Description": "OR check items, will return true on ANY check passing",
       "Arguments": [

@@ -35,7 +35,7 @@
       },
       "additionalProperties": false
     },
-    "CheckFunction": {
+    "CheckFunctions": {
       "type": "object",
       "description": "Reusable check functions used in validation logic (e.g., AND, OR, ColumnPresent).",
       "patternProperties": {
@@ -210,7 +210,7 @@
   "required": [
     "Details",
     "ApplicabilityCriteria",
-    "CheckFunction",
+    "CheckFunctions",
     "ConformanceDatasets",
     "ConformanceRules"
   ],

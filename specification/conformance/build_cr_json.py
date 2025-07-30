@@ -5,7 +5,7 @@ import os
 
 
 def validate_check_functions(spec):
-    valid_functions = set(spec.get("CheckFunction", {}).keys())
+    valid_functions = set(spec.get("CheckFunctions", {}).keys())
     errors = []
 
     def check_function_recurse(obj, path):
@@ -29,7 +29,7 @@ def validate_check_functions(spec):
         for err in errors:
             print("❌", err)
     else:
-        print("✅ All CheckFunction references are valid.")
+        print("✅ All CheckFunctions references are valid.")
 
 cr = {}
 files = [

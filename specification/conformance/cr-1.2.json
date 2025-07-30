@@ -13,7 +13,7 @@
       "Description": "Data generator supports deploying resources or services within an availability zone."
     }
   },
-  "CheckFunction": {
+  "CheckFunctions": {
     "OR": {
       "Description": "OR check items, will return true on ANY check passing",
       "Arguments": [

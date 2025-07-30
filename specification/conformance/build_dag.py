@@ -74,7 +74,7 @@ class ConformanceRequirements:
                 self.__traverse_dependencies(target)
         else:
             if self.include_checks:
-                self.CRGraph.add_node(check_function, custom_data=self.cr_definition['CheckFunction'].get(check_function, {}))
+                self.CRGraph.add_node(check_function, custom_data=self.cr_definition['CheckFunctions'].get(check_function, {}))
                 self.CRGraph.add_edge(rule_id, check_function)
                 self.__traverse_check_attributes(check_function)
             else:
