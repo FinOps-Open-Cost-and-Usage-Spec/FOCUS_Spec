@@ -17,7 +17,7 @@ The SkuPriceDetails column adheres to the following requirements:
 * When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:
   * SkuPriceDetails MUST be associated with a given SkuPriceId.
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
-  * SkuPriceDetails MUST include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
+  * SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
   * SkuPriceDetails SHOULD include all Provider-defined SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
   * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
