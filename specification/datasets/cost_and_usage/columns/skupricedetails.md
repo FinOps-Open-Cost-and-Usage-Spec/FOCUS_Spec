@@ -26,6 +26,7 @@ The SkuPriceDetails column adheres to the following requirements:
     * Existing SkuPriceDetails properties SHOULD NOT be removed.
     * Additional SkuPriceDetails properties MAY be added over time.
   * Property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.
+  * Property key SHOULD remain consistent across comparable *SKUs* having that property, and the values for this key SHOULD remain in a consistent format.
   * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
   * Property value MUST represent the value for a single [PricingUnit](#pricingunit) when the property holds a numeric value.
 * FOCUS-defined SKU Price properties adhere to the following additional requirements:
