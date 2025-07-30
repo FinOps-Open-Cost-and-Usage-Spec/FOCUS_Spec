@@ -2,14 +2,15 @@
   "DateTimeFormat-A-000-M": {
     "Function": "Composite",
     "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "",
-      "KeyWord": "MUST",
+      "MustSatisfy": "",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -34,14 +35,15 @@
   "DateTimeFormat-A-001-M": {
     "Function": "Validation",
     "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
-      "KeyWord": "MUST",
+      "MustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -50,14 +52,15 @@
   "DateTimeFormat-A-002-M": {
     "Function": "Validation",
     "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
-      "KeyWord": "MUST",
+      "MustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -66,14 +69,15 @@
   "DateTimeFormat-A-003-M": {
     "Function": "Validation",
     "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
-      "KeyWord": "MUST",
+      "MustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

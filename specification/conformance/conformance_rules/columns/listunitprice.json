@@ -2,16 +2,17 @@
   "ListUnitPrice-C-000-C": {
     "Function": "Composite",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "",
-      "KeyWord": "MUST",
+      "MustSatisfy": "",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -64,16 +65,17 @@
   "ListUnitPrice-C-001-C": {
     "Function": "Presence",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ListUnitPrice"
@@ -85,16 +87,17 @@
   "ListUnitPrice-C-002-M": {
     "Function": "Type",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST be of type Decimal",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST be of type Decimal",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDecimal",
         "ColumnName": "ListUnitPrice"
@@ -106,16 +109,17 @@
   "ListUnitPrice-C-003-M": {
     "Function": "Format",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST conform to NumericFormat requirements",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST conform to NumericFormat requirements",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatNumeric",
         "ColumnName": "ListUnitPrice"
@@ -127,16 +131,17 @@
   "ListUnitPrice-C-004-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
         "ColumnName": "ListUnitPrice",
@@ -155,16 +160,17 @@
   "ListUnitPrice-C-005-C": {
     "Function": "Composite",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "when ChargeCategory is 'Usage' or 'Purchase'",
-      "KeyWord": "MUST",
+      "MustSatisfy": "when ChargeCategory is 'Usage' or 'Purchase'",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -201,16 +207,17 @@
   "ListUnitPrice-C-006-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "ListUnitPrice",
@@ -229,16 +236,17 @@
   "ListUnitPrice-C-007-O": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MAY be null in all other cases",
-      "KeyWord": "MAY",
+      "MustSatisfy": "MAY be null in all other cases",
+      "Keyword": "MAY",
       "Requirement": {
         "CheckFunction": null
       },
@@ -249,16 +257,17 @@
   "ListUnitPrice-C-008-C": {
     "Function": "Composite",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "When ListUnitPrice is not null",
-      "KeyWord": "MUST",
+      "MustSatisfy": "When ListUnitPrice is not null",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -289,16 +298,17 @@
   "ListUnitPrice-C-009-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST be a non-negative decimal value",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST be a non-negative decimal value",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckGreaterOrEqualThanValue",
         "ColumnName": "ListUnitPrice",
@@ -311,16 +321,17 @@
   "ListUnitPrice-C-010-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST be denominated in the BillingCurrency",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST be denominated in the BillingCurrency",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -329,16 +340,17 @@
   "ListUnitPrice-C-011-M": {
     "Function": "Format",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'",
-      "KeyWord": "MUST",
+      "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnByColumnEqualsColumnValue",
         "ColumnAName": "ListUnitPrice",
@@ -368,16 +380,17 @@
   "ListUnitPrice-C-012-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
+    "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "mustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'",
-      "KeyWord": "MAY",
+      "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'",
+      "Keyword": "MAY",
       "Requirement": {},
       "Condition": {
         "CheckFunction": "CheckValue",

@@ -68,7 +68,7 @@
       },
       "additionalProperties": false
     },
-    "ConformanceTables": {
+    "ConformanceDatasets": {
       "type": "object",
       "description": "Top-level groupings (like FOCUS) mapping to top level rule IDs.",
       "patternProperties": {
@@ -110,6 +110,13 @@
             "Reference": {
               "type": "string"
             },
+            "EntityType": {
+              "type": "string",
+              "enum": [
+                "Column",
+                "Attribute"
+              ]
+            },
             "Notes": {
               "type": [
                 "string",
@@ -122,8 +129,8 @@
             "Status": {
               "type": "string",
               "enum": [
-                "active",
-                "deprecated"
+                "Active",
+                "Deprecated"
               ]
             },
             "ApplicabilityCriteria": {
@@ -142,10 +149,10 @@
             "ValidationCriteria": {
               "type": "object",
               "properties": {
-                "mustSatisfy": {
+                "MustSatisfy": {
                   "type": "string"
                 },
-                "KeyWord": {
+                "Keyword": {
                   "type": "string",
                   "enum": [
                     "MUST",
@@ -175,8 +182,8 @@
                 }
               },
               "required": [
-                "mustSatisfy",
-                "KeyWord",
+                "MustSatisfy",
+                "Keyword",
                 "Requirement",
                 "Condition",
                 "Dependencies"
@@ -187,6 +194,7 @@
           "required": [
             "Function",
             "Reference",
+            "EntityType",
             "CRVersionIntroduced",
             "Status",
             "ApplicabilityCriteria",
@@ -203,7 +211,7 @@
     "Details",
     "ApplicabilityCriteria",
     "CheckFunction",
-    "ConformanceTables",
+    "ConformanceDatasets",
     "ConformanceRules"
   ],
   "additionalProperties": false

@@ -124,7 +124,7 @@ This approach ensures clear linkage to the original specification version while 
 - `applicability_criteria.json`: Feature flags controlling rule application
 - `attributes.json`: Format attribute definitions (e.g. date/time, currency)
 - `check_functions.json`: Logical validation functions and their arguments
-- `conformance_tables.json`: Maps datasets (e.g. FOCUS) to rule sets
+- `conformance_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
 - `conformance_rules/`: JSON files defining multiple `ConformanceRules`
 
 ### 📤 Output
@@ -185,18 +185,24 @@ Each JSON file in `conformance_rules/` contains one or more rules structured as:
 ```json
 {
   "ListUnitPrice-C-001-C": {
-    "Function": "Presence",
-    "Reference": "ListUnitPrice",
+    "Function": "Validation",
+    "Reference": "SampleColumn",
+    "EntityType": "Column",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
     "Type": "Static",
-    "ApplicabilityCriteria": ["PUBLIC_PRICE_LIST_SUPPORTED"],
     "ValidationCriteria": {
-      "mustSatisfy": "...",
+      "MustSatisfy": "MUST NOT be null",
+      "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "ListUnitPrice"
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SampleColumn",
+        "Value": null
       },
-      "Condition": {}
+      "Condition": {},
+      "Dependencies": []
     }
   }
 }
@@ -222,16 +228,17 @@ Base rule for a column which links all related Conformance Rules for the column.
 
 ```json
   "SampleColumn-C-000-M": {
-    "Function": "Presence",
+    "Function": "Composite",
     "Reference": "SampleColumn",
+    "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "",
-      "KeyWord": "MUST",
+      "MustSatisfy": "",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -261,14 +268,15 @@ Base rule for a column which links all related Conformance Rules for the column.
   "SampleColumn-C-001-M": {
     "Function": "Presence",
     "Reference": "SampleColumn",
+    "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST be present in a FOCUS dataset",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "SampleColumn"
@@ -287,14 +295,15 @@ Common rule for columns with a not NULL requirement. Can also be used when there
   "SampleColumn-C-002-M": {
     "Function": "Validation",
     "Reference": "SampleColumn",
+    "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST NOT be null",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST NOT be null",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "SampleColumn",
@@ -312,14 +321,15 @@ Common rule for columns with a not NULL requirement. Can also be used when there
   "SampleColumn-C-003-M": {
     "Function": "Type",
     "Reference": "SampleColumn",
+    "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST be of type Decimal",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST be of type Decimal",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDecimal",
         "ColumnName": "SampleColumn"
@@ -336,14 +346,15 @@ Common rule for columns with a not NULL requirement. Can also be used when there
   "SampleColumn-C-004-M": {
     "Function": "Format",
     "Reference": "SampleColumn",
+    "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST conform to NumericFormat requirements",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST conform to NumericFormat requirements",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatNumeric",
         "ColumnName": "SampleColumn"
@@ -360,16 +371,42 @@ Common rule for columns with a not NULL requirement. Can also be used when there
   "SampleColumn-C-003-M": {
     "Function": "Type",
     "Reference": "SampleColumn",
+    "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "MUST be of type String",
-      "KeyWord": "MUST",
+      "MustSatisfy": "MUST be of type String",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
+        "ColumnName": "SampleColumn"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+```
+
+### Format String Handling rule
+
+```json
+  "SampleColumn-C-003-M": {
+    "Function": "Type",
+    "Reference": "SampleColumn",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST conform to StringHandling requirements",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
         "ColumnName": "SampleColumn"
       },
       "Condition": {},

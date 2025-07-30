@@ -1,0 +1,120 @@
+{
+  "AvailabilityZone-C-000-M": {
+    "Function": "Composite",
+    "Reference": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "AVAILABILITY_ZONE_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "AvailabilityZone-C-001-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "AvailabilityZone-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "AvailabilityZone-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "AvailabilityZone-C-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "AvailabilityZone-C-001-C": {
+    "Function": "Presence",
+    "Reference": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "AVAILABILITY_ZONE_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RECOMMENDED be present in a FOCUS dataset",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SampleColumn"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "AvailabilityZone-C-002-M": {
+    "Function": "Type",
+    "Reference": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be of type String",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "AvailabilityZone"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "AvailabilityZone-C-003-M": {
+    "Function": "Type",
+    "Reference": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST conform to StringHandling requirements",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "AvailabilityZone"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "AvailabilityZone-C-004-M": {
+    "Function": "Validation",
+    "Reference": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be null when a charge is not specific to an availability zone",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

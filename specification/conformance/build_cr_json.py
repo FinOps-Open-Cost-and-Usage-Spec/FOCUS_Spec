@@ -3,12 +3,40 @@ import json
 from jsonschema import Draft7Validator
 import os
 
+
+def validate_check_functions(spec):
+    valid_functions = set(spec.get("CheckFunction", {}).keys())
+    errors = []
+
+    def check_function_recurse(obj, path):
+        if isinstance(obj, dict):
+            if "CheckFunction" in obj:
+                fn_name = obj["CheckFunction"]
+                if fn_name is not None and fn_name not in valid_functions:
+                    errors.append(f"Invalid CheckFunction '{fn_name}' at {path}")
+            for key, val in obj.items():
+                check_function_recurse(val, f"{path}.{key}")
+        elif isinstance(obj, list):
+            for idx, item in enumerate(obj):
+                check_function_recurse(item, f"{path}[{idx}]")
+
+    for rule_id, rule in spec.get("ConformanceRules", {}).items():
+        vc = rule.get("ValidationCriteria", {})
+        check_function_recurse(vc.get("Requirement", {}), f"{rule_id}.ValidationCriteria.Requirement")
+        check_function_recurse(vc.get("Condition", {}), f"{rule_id}.ValidationCriteria.Condition")
+
+    if errors:
+        for err in errors:
+            print("❌", err)
+    else:
+        print("✅ All CheckFunction references are valid.")
+
 cr = {}
 files = [
     'cr_details.json',
     'applicability_criteria.json',
     'check_functions.json',
-    'conformance_tables.json'
+    'conformance_datasets.json'
 ]
 for filename in files:
     with open(filename, 'rb') as f:
@@ -36,6 +64,8 @@ try:
 except Exception as e:
     print(f"❌ Output of {cr_output_file} failed {repr(e)}")
     exit(1)
+
+validate_check_functions(cr)
 
 # Load schema
 with open('cr_schema.json', 'r', encoding='utf-8') as schema_file:

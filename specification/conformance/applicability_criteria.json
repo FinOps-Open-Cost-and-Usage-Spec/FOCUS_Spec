@@ -5,6 +5,9 @@
     },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
       "Description": "Data generator publishes unit prices exclusive of discounts"
+    },
+    "AVAILABILITY_ZONE_SUPPORTED": {
+      "Description": "Data generator supports deploying resources or services within an availability zone."
     }
   }
 }

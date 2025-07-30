@@ -8,6 +8,9 @@
     },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
       "Description": "Data generator publishes unit prices exclusive of discounts"
+    },
+    "AVAILABILITY_ZONE_SUPPORTED": {
+      "Description": "Data generator supports deploying resources or services within an availability zone."
     }
   },
   "CheckFunction": {
@@ -113,6 +116,15 @@
         "NumericFormat-A-000-M"
       ]
     },
+    "FormatString": {
+      "Description": "Check a column has a string format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "StringFormat-A-000-M"
+      ]
+    },
     "FormatBillingCurrencyCode": {
       "Description": "Check a column has a valid country code",
       "Arguments": [
@@ -132,10 +144,12 @@
       "FormatAttributes": []
     }
   },
-  "ConformanceTables": {
+  "ConformanceDatasets": {
     "FOCUS": {
       "ConformanceRules": [
+        "AvailabilityZone-C-000-M",
         "BilledCost-C-000-M",
+        "BillingAccountType-C-000-M",
         "ListUnitPrice-C-000-C"
       ]
     }
@@ -144,14 +158,15 @@
     "DateTimeFormat-A-000-M": {
       "Function": "Composite",
       "Reference": "DateTimeFormat",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "",
-        "KeyWord": "MUST",
+        "MustSatisfy": "",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -176,14 +191,15 @@
     "DateTimeFormat-A-001-M": {
       "Function": "Validation",
       "Reference": "DateTimeFormat",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -192,14 +208,15 @@
     "DateTimeFormat-A-002-M": {
       "Function": "Validation",
       "Reference": "DateTimeFormat",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -208,14 +225,15 @@
     "DateTimeFormat-A-003-M": {
       "Function": "Validation",
       "Reference": "DateTimeFormat",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -224,14 +242,15 @@
     "CurrencyCodeFormat-A-000-M": {
       "Function": "Composite",
       "Reference": "CurrencyFormat",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Column IDs MUST use Pascal case",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Column IDs MUST use Pascal case",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -252,14 +271,15 @@
     "CurrencyCodeFormat-A-001-M": {
       "Function": "Validation",
       "Reference": "CurrencyFormat",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -268,14 +288,15 @@
     "CurrencyCodeFormat-A-002-M": {
       "Function": "Validation",
       "Reference": "CurrencyFormat",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -284,14 +305,15 @@
     "ColumnNamingandOrdering-A-000-M": {
       "Function": "Composite",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Column IDs MUST use Pascal case",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Column IDs MUST use Pascal case",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -356,14 +378,15 @@
     "ColumnNamingandOrdering-A-001-M": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Column IDs MUST use Pascal case",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Column IDs MUST use Pascal case",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -372,14 +395,15 @@
     "ColumnNamingandOrdering-A-002-M": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Column IDs MUST NOT use abbreviations",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Column IDs MUST NOT use abbreviations",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -388,14 +412,15 @@
     "ColumnNamingandOrdering-A-003-M": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Column IDs MUST be alphanumeric with no special characters",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Column IDs MUST be alphanumeric with no special characters",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -404,14 +429,15 @@
     "ColumnNamingandOrdering-A-004-O": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Column IDs SHOULD NOT use acronyms",
-        "KeyWord": "SHOULD",
+        "MustSatisfy": "Column IDs SHOULD NOT use acronyms",
+        "Keyword": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -420,14 +446,15 @@
     "ColumnNamingandOrdering-A-005-O": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
-        "KeyWord": "SHOULD",
+        "MustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
+        "Keyword": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -436,14 +463,15 @@
     "ColumnNamingandOrdering-A-006-O": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -452,14 +480,15 @@
     "ColumnNamingandOrdering-A-007-O": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix",
-        "KeyWord": "MAY",
+        "MustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix",
+        "Keyword": "MAY",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -468,14 +497,15 @@
     "ColumnNamingandOrdering-A-008-M": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Columns with the Category suffix MUST be normalized",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Columns with the Category suffix MUST be normalized",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -484,14 +514,15 @@
     "ColumnNamingandOrdering-A-009-M": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases",
-        "KeyWord": "MUST",
+        "MustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -500,14 +531,15 @@
     "ColumnNamingandOrdering-A-010-O": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns",
-        "KeyWord": "SHOULD",
+        "MustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns",
+        "Keyword": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -516,14 +548,15 @@
     "ColumnNamingandOrdering-A-011-O": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset",
-        "KeyWord": "SHOULD",
+        "MustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset",
+        "Keyword": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -532,14 +565,15 @@
     "ColumnNamingandOrdering-A-012-O": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed",
-        "KeyWord": "SHOULD",
+        "MustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed",
+        "Keyword": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -548,14 +582,133 @@
     "ColumnNamingandOrdering-A-013-O": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
+      "EntityType": "Attribute",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns",
-        "KeyWord": "MAY",
+        "MustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns",
+        "Keyword": "MAY",
+        "Requirement": {},
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "AvailabilityZone-C-000-M": {
+      "Function": "Composite",
+      "Reference": "AvailabilityZone",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [
+        "AVAILABILITY_ZONE_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "AvailabilityZone-C-001-C"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "AvailabilityZone-C-002-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "AvailabilityZone-C-003-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "AvailabilityZone-C-004-M"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "AvailabilityZone-C-001-C": {
+      "Function": "Presence",
+      "Reference": "AvailabilityZone",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [
+        "AVAILABILITY_ZONE_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "RECOMMENDED be present in a FOCUS dataset",
+        "Keyword": "RECOMMENDED",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "SampleColumn"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "AvailabilityZone-C-002-M": {
+      "Function": "Type",
+      "Reference": "AvailabilityZone",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be of type String",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "TypeString",
+          "ColumnName": "AvailabilityZone"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "AvailabilityZone-C-003-M": {
+      "Function": "Type",
+      "Reference": "AvailabilityZone",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST conform to StringHandling requirements",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "FormatString",
+          "ColumnName": "AvailabilityZone"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "AvailabilityZone-C-004-M": {
+      "Function": "Validation",
+      "Reference": "AvailabilityZone",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be null when a charge is not specific to an availability zone",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -564,16 +717,17 @@
     "ListUnitPrice-C-000-C": {
       "Function": "Composite",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "",
-        "KeyWord": "MUST",
+        "MustSatisfy": "",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -626,16 +780,17 @@
     "ListUnitPrice-C-001-C": {
       "Function": "Presence",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
           "ColumnName": "ListUnitPrice"
@@ -647,16 +802,17 @@
     "ListUnitPrice-C-002-M": {
       "Function": "Type",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be of type Decimal",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST be of type Decimal",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "TypeDecimal",
           "ColumnName": "ListUnitPrice"
@@ -668,16 +824,17 @@
     "ListUnitPrice-C-003-M": {
       "Function": "Format",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST conform to NumericFormat requirements",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST conform to NumericFormat requirements",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "FormatNumeric",
           "ColumnName": "ListUnitPrice"
@@ -689,16 +846,17 @@
     "ListUnitPrice-C-004-C": {
       "Function": "Validation",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "CheckValue",
           "ColumnName": "ListUnitPrice",
@@ -717,16 +875,17 @@
     "ListUnitPrice-C-005-C": {
       "Function": "Composite",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "when ChargeCategory is 'Usage' or 'Purchase'",
-        "KeyWord": "MUST",
+        "MustSatisfy": "when ChargeCategory is 'Usage' or 'Purchase'",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -763,16 +922,17 @@
     "ListUnitPrice-C-006-C": {
       "Function": "Validation",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
           "ColumnName": "ListUnitPrice",
@@ -791,16 +951,17 @@
     "ListUnitPrice-C-007-O": {
       "Function": "Validation",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MAY be null in all other cases",
-        "KeyWord": "MAY",
+        "MustSatisfy": "MAY be null in all other cases",
+        "Keyword": "MAY",
         "Requirement": {
           "CheckFunction": null
         },
@@ -811,16 +972,17 @@
     "ListUnitPrice-C-008-C": {
       "Function": "Composite",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "When ListUnitPrice is not null",
-        "KeyWord": "MUST",
+        "MustSatisfy": "When ListUnitPrice is not null",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -851,16 +1013,17 @@
     "ListUnitPrice-C-009-C": {
       "Function": "Validation",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be a non-negative decimal value",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST be a non-negative decimal value",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "CheckGreaterOrEqualThanValue",
           "ColumnName": "ListUnitPrice",
@@ -873,16 +1036,17 @@
     "ListUnitPrice-C-010-C": {
       "Function": "Validation",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be denominated in the BillingCurrency",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST be denominated in the BillingCurrency",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -891,16 +1055,17 @@
     "ListUnitPrice-C-011-M": {
       "Function": "Format",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'",
-        "KeyWord": "MUST",
+        "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnByColumnEqualsColumnValue",
           "ColumnAName": "ListUnitPrice",
@@ -930,16 +1095,17 @@
     "ListUnitPrice-C-012-C": {
       "Function": "Validation",
       "Reference": "ListUnitPrice",
+      "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [
         "PUBLIC_PRICE_LIST_SUPPORTED"
       ],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "mustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'",
-        "KeyWord": "MAY",
+        "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'",
+        "Keyword": "MAY",
         "Requirement": {},
         "Condition": {
           "CheckFunction": "CheckValue",
@@ -951,17 +1117,207 @@
         ]
       }
     },
-    "BilledCost-C-000-M": {
+    "BillingAccountType-C-000-M": {
       "Function": "Composite",
-      "Reference": "BilledCost",
+      "Reference": "BillingAccountType",
+      "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "",
-        "KeyWord": "MUST",
+        "MustSatisfy": "",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountType-C-001-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountType-C-002-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountType-C-003-M"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingAccountType-C-001-C": {
+      "Function": "Presence",
+      "Reference": "BillingAccountType",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be present in a FOCUS dataset",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "BillingAccountType"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingAccountType-C-002-M": {
+      "Function": "Type",
+      "Reference": "BillingAccountType",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be of type String",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "TypeString",
+          "ColumnName": "BillingAccountType"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingAccountType-C-003-M": {
+      "Function": "Type",
+      "Reference": "BillingAccountType",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST conform to StringHandling requirements",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "FormatString",
+          "ColumnName": "BillingAccountType"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingAccountType-C-004-C": {
+      "Function": "Composite",
+      "Reference": "BillingAccountType",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountType-C-005-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountType-C-006-M"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingAccountType-C-005-M": {
+      "Function": "Validation",
+      "Reference": "BillingAccountType",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be null when BillingAccountId is null",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "BillingAccountType",
+          "Value": null
+        },
+        "Condition": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "BillingAccountId",
+          "Value": null
+        },
+        "Dependencies": []
+      }
+    },
+    "BillingAccountType-C-006-M": {
+      "Function": "Validation",
+      "Reference": "BillingAccountType",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST NOT be null when BillingAccountId is not null",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "BillingAccountType",
+          "Value": null
+        },
+        "Condition": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "BillingAccountId",
+          "Value": null
+        },
+        "Dependencies": []
+      }
+    },
+    "BillingAccountType-C-007-M": {
+      "Function": "Validation",
+      "Reference": "BillingAccountType",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be a consistent, readable display value",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BilledCost-C-000-M": {
+      "Function": "Composite",
+      "Reference": "BilledCost",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
@@ -1002,14 +1358,15 @@
     "BilledCost-C-001-M": {
       "Function": "Presence",
       "Reference": "BilledCost",
+      "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be present in a FOCUS dataset",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST be present in a FOCUS dataset",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
           "ColumnName": "BilledCost"
@@ -1021,14 +1378,15 @@
     "BilledCost-C-002-M": {
       "Function": "Validation",
       "Reference": "BilledCost",
+      "EntityType": "Column",
       "Notes": "A null value would invalidate accounting use cases",
-      "CRVersionIntroduced": "0.5",
-      "Status": "active",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST NOT be null",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST NOT be null",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
           "ColumnName": "BilledCost",
@@ -1040,15 +1398,16 @@
     },
     "BilledCost-C-003-M": {
       "Function": "Type",
+      "EntityType": "Column",
       "Reference": "BilledCost",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be of type Decimal",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST be of type Decimal",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "TypeDecimal",
           "ColumnName": "BilledCost"
@@ -1059,15 +1418,16 @@
     },
     "BilledCost-C-004-M": {
       "Function": "Format",
+      "EntityType": "Column",
       "Reference": "BilledCost",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST conform to NumericFormat requirements",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST conform to NumericFormat requirements",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "FormatNumeric",
           "ColumnName": "BilledCost"
@@ -1079,14 +1439,15 @@
     "BilledCost-C-005-M": {
       "Function": "Validation",
       "Reference": "BilledCost",
+      "EntityType": "Column",
       "Notes": "Common for marketplace charges paid by customer directly to seller",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be 0 for charges where payments are received by a third party",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST be 0 for charges where payments are received by a third party",
+        "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "CheckValue",
           "ColumnName": "BilledCost",
@@ -1106,14 +1467,15 @@
     "BilledCost-C-006-M": {
       "Function": "Validation",
       "Reference": "BilledCost",
+      "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "mustSatisfy": "MUST be denominated in the BillingCurrency",
-        "KeyWord": "MUST",
+        "MustSatisfy": "MUST be denominated in the BillingCurrency",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -1122,14 +1484,15 @@
     "BilledCost-C-007-M": {
       "Function": "Validation",
       "Reference": "BilledCost",
+      "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
-      "Status": "active",
+      "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "mustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
-        "KeyWord": "MUST",
+        "MustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
+        "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []

@@ -1,7 +1,7 @@
 {
-  "BilledCost-C-000-M": {
+  "BillingAccountType-C-000-M": {
     "Function": "Composite",
-    "Reference": "BilledCost",
+    "Reference": "BillingAccountType",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
@@ -16,31 +16,15 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-001-M"
+            "ConformanceRuleId": "BillingAccountType-C-001-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-002-M"
+            "ConformanceRuleId": "BillingAccountType-C-002-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-004-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-005-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-006-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-007-M"
+            "ConformanceRuleId": "BillingAccountType-C-003-M"
           }
         ]
       },
@@ -48,9 +32,9 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-001-M": {
+  "BillingAccountType-C-001-C": {
     "Function": "Presence",
-    "Reference": "BilledCost",
+    "Reference": "BillingAccountType",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
@@ -62,121 +46,134 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
-        "ColumnName": "BilledCost"
+        "ColumnName": "BillingAccountType"
       },
       "Condition": {},
       "Dependencies": []
     }
   },
-  "BilledCost-C-002-M": {
-    "Function": "Validation",
-    "Reference": "BilledCost",
-    "EntityType": "Column",
-    "Notes": "A null value would invalidate accounting use cases",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "MUST NOT be null",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "BilledCost",
-        "Value": null
-      },
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "BilledCost-C-003-M": {
+  "BillingAccountType-C-002-M": {
     "Function": "Type",
+    "Reference": "BillingAccountType",
     "EntityType": "Column",
-    "Reference": "BilledCost",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type Decimal",
+      "MustSatisfy": "MUST be of type String",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "TypeDecimal",
-        "ColumnName": "BilledCost"
+        "CheckFunction": "TypeString",
+        "ColumnName": "BillingAccountType"
       },
       "Condition": {},
       "Dependencies": []
     }
   },
-  "BilledCost-C-004-M": {
-    "Function": "Format",
+  "BillingAccountType-C-003-M": {
+    "Function": "Type",
+    "Reference": "BillingAccountType",
     "EntityType": "Column",
-    "Reference": "BilledCost",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to NumericFormat requirements",
+      "MustSatisfy": "MUST conform to StringHandling requirements",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "FormatNumeric",
-        "ColumnName": "BilledCost"
+        "CheckFunction": "FormatString",
+        "ColumnName": "BillingAccountType"
       },
       "Condition": {},
       "Dependencies": []
     }
   },
-  "BilledCost-C-005-M": {
+  "BillingAccountType-C-004-C": {
+    "Function": "Composite",
+    "Reference": "BillingAccountType",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingAccountType-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingAccountType-C-006-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "BillingAccountType-C-005-M": {
     "Function": "Validation",
-    "Reference": "BilledCost",
+    "Reference": "BillingAccountType",
     "EntityType": "Column",
-    "Notes": "Common for marketplace charges paid by customer directly to seller",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be 0 for charges where payments are received by a third party",
+      "MustSatisfy": "MUST be null when BillingAccountId is null",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
-        "ColumnName": "BilledCost",
-        "Value": 0
+        "ColumnName": "BillingAccountType",
+        "Value": null
       },
       "Condition": {
-        "CheckFunction": "CheckNotSameValue",
-        "ColumnAName": "ProviderName",
-        "ColumnBName": "InvoiceIssuerName"
+        "CheckFunction": "CheckValue",
+        "ColumnName": "BillingAccountId",
+        "Value": null
       },
-      "Dependencies": [
-        "ProviderName-C-000-M",
-        "InvoiceIssuerName-C-000-M"
-      ]
-    }
-  },
-  "BilledCost-C-006-M": {
-    "Function": "Validation",
-    "Reference": "BilledCost",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
-    "ValidationCriteria": {
-      "MustSatisfy": "MUST be denominated in the BillingCurrency",
-      "Keyword": "MUST",
-      "Requirement": {},
-      "Condition": {},
       "Dependencies": []
     }
   },
-  "BilledCost-C-007-M": {
+  "BillingAccountType-C-006-M": {
     "Function": "Validation",
-    "Reference": "BilledCost",
+    "Reference": "BillingAccountType",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST NOT be null when BillingAccountId is not null",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "BillingAccountType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "BillingAccountId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "BillingAccountType-C-007-M": {
+    "Function": "Validation",
+    "Reference": "BillingAccountType",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
@@ -184,7 +181,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "SUM(BilledCost) MUST equal payable amount in invoice from InvoiceIssuer",
+      "MustSatisfy": "MUST be a consistent, readable display value",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

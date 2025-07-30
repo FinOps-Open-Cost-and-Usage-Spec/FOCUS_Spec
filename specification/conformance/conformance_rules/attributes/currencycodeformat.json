@@ -2,14 +2,15 @@
   "CurrencyCodeFormat-A-000-M": {
     "Function": "Composite",
     "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "Column IDs MUST use Pascal case",
-      "KeyWord": "MUST",
+      "MustSatisfy": "Column IDs MUST use Pascal case",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
@@ -30,14 +31,15 @@
   "CurrencyCodeFormat-A-001-M": {
     "Function": "Validation",
     "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
-      "KeyWord": "MUST",
+      "MustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -46,14 +48,15 @@
   "CurrencyCodeFormat-A-002-M": {
     "Function": "Validation",
     "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
-    "Status": "active",
+    "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "mustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
-      "KeyWord": "MUST",
+      "MustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

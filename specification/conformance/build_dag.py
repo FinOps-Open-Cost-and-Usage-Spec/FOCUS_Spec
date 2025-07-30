@@ -33,7 +33,7 @@ def init_logger(level):
 
 def get_args():
     parser = argparse.ArgumentParser(description='CR Graph Generator.')
-    parser.add_argument('-t', '--table-name', default="FOCUS", help='Table to generate CR graph for')
+    parser.add_argument('-t', '--dataset-name', default="FOCUS", help='Dataset to generate CR graph for')
     parser.add_argument('--include-checks', action='store_true', help='Add checks to graph')
     parser.add_argument('--include-attributes', action='store_true', help='Add attributes to graph')
     parser.add_argument('-f', '--cr-filename', type=str, default='cr-1.2.json', help='CR definition filename to load')
@@ -45,13 +45,13 @@ def get_args():
     
 
 class ConformanceRequirements:
-    def __init__(self, cr_filename, table_name, logger, include_checks=True, include_attributes=False, start_at=None):
+    def __init__(self, cr_filename, dataset_name, logger, include_checks=True, include_attributes=False, start_at=None):
         self.cr_filename = cr_filename
-        self.table_name = table_name
+        self.dataset_name = dataset_name
         self.include_checks = include_checks
         self.include_attributes = include_attributes
         self.cr_definition = {}
-        self.CRGraph = CRGraph(graph_name=f'{self.table_name} Table Conformance DAG', logger=logger)
+        self.CRGraph = CRGraph(graph_name=f'{self.dataset_name} Dataset Conformance DAG', logger=logger)
         self.logger = logger
         self.start_at = start_at
 
@@ -116,11 +116,11 @@ class ConformanceRequirements:
             self.CRGraph.add_node(self.start_at, custom_data=rule)
             self.__traverse_dependencies(self.start_at)
         else:
-            table_data = self.cr_definition["ConformanceTables"].get(self.table_name, {})
-            self.CRGraph.add_node(f"Table: {self.table_name}", shape='box', custom_data=table_data)
-            for rule_id in self.cr_definition["ConformanceTables"][self.table_name]["ConformanceRules"]:
+            dataset_name = self.cr_definition["ConformanceDatasets"].get(self.dataset_name, {})
+            self.CRGraph.add_node(f"Dataset: {self.dataset_name}", shape='box', custom_data=dataset_name)
+            for rule_id in self.cr_definition["ConformanceDatasets"][self.dataset_name]["ConformanceRules"]:
                 self.CRGraph.add_node(rule_id, custom_data=self.cr_definition['ConformanceRules'].get(rule_id, {}))
-                self.CRGraph.add_edge(self.table_name, rule_id)
+                self.CRGraph.add_edge(self.dataset_name, rule_id)
                 self.__traverse_dependencies(rule_id)
 
     def generate_dot_file(self, dot_filename):
@@ -168,7 +168,7 @@ if __name__ == '__main__':
 
     logger = init_logger(args.logging_level)
     cr = ConformanceRequirements(cr_filename = args.cr_filename,
-              table_name=args.table_name,
+              dataset_name=args.dataset_name,
               include_checks=args.include_checks,
               include_attributes=args.include_attributes,
               start_at=args.start_at,
