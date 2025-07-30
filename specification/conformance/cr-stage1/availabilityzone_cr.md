@@ -18,25 +18,28 @@ This diagram shows the logical structure and composite dependencies for the SCRs
 graph TD
 
 %% Root Composite
-AZ000["AvailabilityZone-C-000-C: Enforce all AvailabilityZone rules"]
-AZ001["AvailabilityZone-D-001-C: Column SHOULD be present if provider supports availability zones"]
-AZ002["AvailabilityZone-C-002-M: Column MUST be of type String"]
-AZ003["AvailabilityZone-C-003-M: Column MUST conform to StringHandling rules"]
-AZ004["AvailabilityZone-C-004-M: Column MUST be null if charge is not tied to a specific availability zone"]
+AZ000["AvailabilityZone-C-000-M<br/>Composite: All rules MUST be enforced"]
+AZ001["AvailabilityZone-D-001-C<br/>Presence: RECOMMENDED if provider supports availability zones"]
+AZ002["AvailabilityZone-C-002-M<br/>DataType: MUST be of type String"]
+AZ003["AvailabilityZone-C-003-M<br/>Validation: MUST conform to StringHandling"]
+AZ004["AvailabilityZone-C-004-M<br/>NullabilityRules: MUST be null when not specific to a zone"]
 
-%% Root connections
+%% Composite connections
 AZ000 --> AZ001
 AZ000 --> AZ002
 AZ000 --> AZ003
 AZ000 --> AZ004
 
-%% Styling by Rule Type
-classDef mandatory fill:#fdd,stroke:#c00,stroke-width:2px;
-classDef conditional fill:#ffd700,stroke:#aa0,stroke-width:1px;
-classDef optional fill:#c0f5c0,stroke:#2c8c2c,stroke-width:1px;
+%% Styling
+classDef mandatory fill:#fdd,stroke:#c00
+classDef conditional fill:#ffd,stroke:#cc0
+classDef composite fill:#eee,stroke:#000
+classDef attribute fill:#dfd,stroke:#090
 
-class AZ000,AZ001 conditional;
-class AZ002,AZ003,AZ004 mandatory;
+class AZ000 composite
+class AZ001 conditional
+class AZ002,AZ004 mandatory
+class AZ003 mandatory,attribute
 ```
 
 | Color      | Rule Type     |
