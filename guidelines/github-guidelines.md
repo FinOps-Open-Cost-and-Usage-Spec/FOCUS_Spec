@@ -52,7 +52,7 @@ The core folder containing the specification documentation:
 
 - **`overview.md`** - Contains the main specification overview, principles, and requirements
 - **`glossary.md`** - Comprehensive glossary of terms and definitions used throughout the specification
-- **`columns/` subfolder** - Contains detailed documentation for individual FOCUS columns like `servicesubcategory.md`
+- **`columns` subfolder** - Contains detailed documentation for individual FOCUS columns like `servicesubcategory.md`
 
 ### 5. `supporting_content` folder
 
