@@ -1,6 +1,6 @@
 # Billed Cost
 
-The [*billed cost*](#glossary:billed-cost) represents a [*charge*](#glossary:charge) serving as the basis for invoicing, inclusive of the impacts of all reduced rates and discounts while excluding the [*amortization*](#glossary:amortization) of relevant purchases (one-time or recurring) paid to cover future eligible *charges*. This cost is denominated in the [Billing Currency](#billingcurrency). The Billed Cost is commonly used to perform FinOps capabilities that require cash-basis accounting such as cost allocation, budgeting, and invoice reconciliation.
+Billed Cost represents the invoiced amount associated with a [*charge*](#glossary:charge), inclusive of all applicable reduced unit prices and discounts, while excluding portions of any relevant purchases (one-time or recurring) that are attributed to and cover that specific *charge*. This cost is denominated in the [Billing Currency](#billingcurrency). The Billed Cost is commonly used to perform FinOps capabilities that require cash-basis accounting such as cost allocation, budgeting, and invoice reconciliation.
 
 The BilledCost column adheres to the following requirements:
 
