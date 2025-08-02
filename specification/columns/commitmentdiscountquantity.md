@@ -10,6 +10,7 @@ The CommitmentDiscountQuantity column adheres to the following requirements:
 * CommitmentDiscountQuantity MUST be of type Decimal.
 * CommitmentDiscountQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * CommitmentDiscountQuantity nullability is defined as follows:
+  * CommitmentDiscountQuantity MUST be null when [SkuPriceId](#skupriceid) is null.
   * When ChargeCategory is "Usage" or "Purchase" and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
     * CommitmentDiscountQuantity MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction".
     * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".

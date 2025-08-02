@@ -12,9 +12,10 @@ The PricingCurrencyListUnitPrice column adheres to the following requirements:
 * PricingCurrencyListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * PricingCurrencyListUnitPrice nullability is defined as follows:
   * PricingCurrencyListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * PricingCurrencyListUnitPrice MUST be null when [SkuPriceId](#skupriceid) is null.
   * PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * PricingCurrencyListUnitPrice MAY be null in all other cases.
-* When PricingCurrencyListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
+* When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice adheres to the following additional requirements:
   * PricingCurrencyListUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency.
   * Discrepancies in PricingCurrencyListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is "Correction".

@@ -8,6 +8,7 @@ The ConsumedQuantity column adheres to the following requirements:
 * ConsumedQuantity MUST be of type Decimal.
 * ConsumedQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * ConsumedQuantity nullability is defined as follows:
+  * ConsumedQuantity MUST be null when [SkuPriceId](#skupriceid) is null.
   * ConsumedQuantity MUST be null when [ChargeCategory](#chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Unused".
   * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity adheres to the following additional requirements:
     * ConsumedQuantity MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction".

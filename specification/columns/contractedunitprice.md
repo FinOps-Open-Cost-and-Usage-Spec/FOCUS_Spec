@@ -9,6 +9,7 @@ The ContractedUnitPrice column adheres to the following requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractedUnitPrice nullability is defined as follows:
+  * ContractedUnitPrice MUST be null when [SkuPriceId](#skupriceid) is null.
   * ContractedUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * ContractedUnitPrice MAY be null in all other cases.

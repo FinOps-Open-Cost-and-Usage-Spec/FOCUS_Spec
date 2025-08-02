@@ -21,6 +21,7 @@ The SkuId column adheres to the following requirements:
 * SkuId MUST be of type String.
 * SkuId MUST conform to [StringHandling](#stringhandling) requirements.
 * SkuId nullability is defined as follows:
+  * SkuId MUST be null when [SkuPriceId](#skupriceid) is null.
   * SkuId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * SkuId MAY be null in all other cases.
@@ -29,7 +30,7 @@ The SkuId column adheres to the following requirements:
   * SkuId MUST remain consistent across [PricingCategory](#pricingcategory) values.
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the *SKU*.
 * SkuId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
-* SkuId MAY equal [SkuPriceId](#SkuPriceId).
+* SkuId MAY equal SkuPriceId.
 
 ## Column ID
 
