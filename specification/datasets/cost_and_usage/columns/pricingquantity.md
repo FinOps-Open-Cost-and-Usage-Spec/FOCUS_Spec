@@ -14,8 +14,7 @@ The PricingQuantity column adheres to the following requirements:
   * PricingQuantity MAY be null in all other cases.
 * When PricingQuantity is not null, PricingQuantity adheres to the following additional requirements:
   * PricingQuantity MUST be a valid decimal value.
-  * The product of PricingQuantity and a unit price (e.g., [ContractedUnitPrice](#contractedunitprice)) MUST match the corresponding cost metric (e.g., [ContractedCost](#contractedcost)) when the unit price is not null and ChargeClass is not "Correction".
-* Discrepancies in PricingQuantity, unit prices (e.g., ContractedUnitPrice), or costs (e.g., ContractedCost) MAY exist when ChargeClass is "Correction".
+  * The product of PricingQuantity and a unit price (e.g., [ContractedUnitPrice](#contractedunitprice)) MUST match the corresponding cost metric (e.g., [ContractedCost](#contractedcost)) when the unit price is not null.
 
 ## Column ID
 
