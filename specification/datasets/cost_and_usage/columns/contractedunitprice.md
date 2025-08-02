@@ -11,6 +11,7 @@ The ContractedUnitPrice column adheres to the following requirements:
 * ContractedUnitPrice nullability is defined as follows:
   * ContractedUnitPrice MUST be null when [SkuPriceId](#skupriceid) is null.
   * ContractedUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * ContractedUnitPrice MUST NOT be null when [SkuPriceId](#skupriceid) is not null.
   * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * ContractedUnitPrice MAY be null in all other cases.
 * When ContractedUnitPrice is not null, ContractedUnitPrice adheres to the following additional requirements:

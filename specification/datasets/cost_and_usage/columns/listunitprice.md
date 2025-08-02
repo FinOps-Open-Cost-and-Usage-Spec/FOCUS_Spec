@@ -10,6 +10,7 @@ The ListUnitPrice column adheres to the following requirements:
 * ListUnitPrice nullability is defined as follows:
   * ListUnitPrice MUST be null when [SkuPriceId](#skupriceid) is null.
   * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * ListUnitPrice MUST NOT be null when [SkuPriceId](#skupriceid) is not null.
   * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * ListUnitPrice MAY be null in all other cases.
 * When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
