@@ -1,31 +1,34 @@
-### Static Conformance Requirements – BillingPeriodStart
+### Conformance Requirements – `BillingPeriodStart`
+
 text: [billingperiodstart-v1_2.md](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/v1.2/specification/columns/billingperiodstart.md)
 
-These requirements define the mandatory structure and validation rules for the `BillingPeriodStart` column in FOCUS version 1.2.
+These requirements define the mandatory structure and validation rules for the `Billing Period Start` column in FOCUS version 1.2.
 
-| SCRIID                    | Function                           | PreCondition | Condition | Requirement                  | Validation Criteria                                                                    | Notes | VersionIntroduced | Status |
-|---------------------------|------------------------------------|---------------|-----------|-------------------------------|-----------------------------------------------------------------------------------------|-------|-------------------|--------|
-| BILLINGPERIODSTART-C-000-M | Summary of all applicable rules    | null          | null      | AND of C-001 to C-005         | BillingPeriodStart MUST satisfy all conformance rules from C-001 to C-005              |       | 0.5               | active |
-| BILLINGPERIODSTART-C-001-M | Define presence in dataset         | null          | null      | null                          | BillingPeriodStart MUST be present in a FOCUS dataset                                  |       | 0.5               | active |
-| BILLINGPERIODSTART-C-002-M | Specify data type                  | null          | null      | null                          | BillingPeriodStart MUST be of type Date/Time                                           |       | 0.5               | active |
-| BILLINGPERIODSTART-C-003-M | Enforce Date/Time format           | null          | null      | null                          | BillingPeriodStart MUST conform to DateTimeFormat requirements                         |       | 0.5               | active |
-| BILLINGPERIODSTART-C-004-M | Disallow null values               | null          | null      | null                          | BillingPeriodStart MUST NOT be null                                                    |       | 0.5               | active |
-| BILLINGPERIODSTART-C-005-M | Enforce inclusive start constraint | null          | null      | null                          | BillingPeriodStart MUST be the inclusive start bound of the billing period             |       | 0.5               | active |
+| CRID                       | Function         | Reference            | Keyword  | ApplicabilityCriteria                      | Condition | MustSatisfy                                             | Requirement                                                                                                                                     | Type   | CRVersionIntroduced | Status | Notes                                         |
+| -------------------------- | ---------------- | -------------------- | -------- | ------------------------------------------ | --------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------------------- | ------ | --------------------------------------------- |
+| BillingPeriodStart-C-000-M | Composite        | Billing Period Start | MUST     | Dataset includes BillingPeriodStart column | All_Rows | All Billing Period Start rules MUST be enforced         | AND(BillingPeriodStart-D-001-M, BillingPeriodStart-C-002-M, BillingPeriodStart-C-003-M, BillingPeriodStart-C-004-M, BillingPeriodStart-C-005-M) | static | 1.2                 | active |                                               |
+| BillingPeriodStart-D-001-M | Presence         | Billing Period Start | MUST     | Dataset includes BillingPeriodStart column | All_Rows | MUST be present in a FOCUS dataset                      | null                                                                                                                                            | static | 1.2                 | active |                                               |
+| BillingPeriodStart-C-002-M | DataType         | Billing Period Start | MUST     | All_Rows                                  | All_Rows | MUST be of type Date/Time                               | null                                                                                                                                            | static | 1.2                 | active |                                               |
+| BillingPeriodStart-C-003-M | Format           | Billing Period Start | MUST     | All_Rows                                  | All_Rows | MUST conform to DateTimeFormat                          | DateTimeFormat\:CR                                                                                                                              | static | 1.2                 | active | Cross-attribute reference: DateTimeFormat\:CR |
+| BillingPeriodStart-C-004-M | NullabilityRules | Billing Period Start | MUST NOT | All_Rows                                  | All_Rows | MUST NOT be null                                        | null                                                                                                                                            | static | 1.2                 | active |                                               |
+| BillingPeriodStart-C-005-M | Validation       | Billing Period Start | MUST     | All_Rows                                  | All_Rows | MUST be the inclusive start bound of the billing period | null                                                                                                                                            | static | 1.2                 | active |                                               |
 
-### DAG of Static Conformance Requirements for `BillingPeriodStart`
+### DAG of Conformance Requirements for `Billing Period Start`
 
-This diagram shows the logical structure and composite dependencies for the SCRs of the `BillingPeriodStart` column in FOCUS v1.2.
+This diagram shows the logical structure and composite dependencies for the CRs of the `Billing Period Start` column in FOCUS v1.2.
 
 ```mermaid
+
 graph TD
 
-%% Root Composite
-BPS000["C-000-M: Summary of all applicable rules"]
-BPS001["C-001-M: Define presence in dataset"]
-BPS002["C-002-M: Specify data type"]
-BPS003["C-003-M: Enforce Date/Time format"]
-BPS004["C-004-M: Disallow null values"]
-BPS005["C-005-M: Enforce inclusive start constraint"]
+%% Nodes
+BPS000["BillingPeriodStart-C-000-M: Enforce all BillingPeriodStart rules"]
+BPS001["BillingPeriodStart-D-001-M: MUST be present in dataset"]
+BPS002["BillingPeriodStart-C-002-M: MUST be of type Date/Time"]
+BPS003["BillingPeriodStart-C-003-M: MUST conform to DateTimeFormat"]
+BPS004["BillingPeriodStart-C-004-M: MUST NOT be null"]
+BPS005["BillingPeriodStart-C-005-M: MUST be inclusive start bound of billing period"]
+DTFCR["DateTimeFormat:CR"]
 
 %% Root connections
 BPS000 --> BPS001
@@ -33,6 +36,9 @@ BPS000 --> BPS002
 BPS000 --> BPS003
 BPS000 --> BPS004
 BPS000 --> BPS005
+
+%% Cross-attribute reference
+BPS003 --> DTFCR
 
 %% Styling by Rule Type
 classDef mandatory fill:#fdd,stroke:#c00,stroke-width:2px;
