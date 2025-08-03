@@ -31,7 +31,7 @@ This stage focuses on interpreting the `Requirement` field of each **CRID** to e
 These three stages form the foundation of the conformance modeling workflow. Once complete, additional outputs will be generated from the JSON representations, including:
 
 - A standardized Markdown table of conformance requirements for each column
-- A visual DAG (Directed Acyclic Graph) diagram that maps CRID dependencies
+- A visual **DAG** _(Directed Acyclic Graph)_ diagram that maps CRID dependencies
 
 This process enables reliable validation, clearer documentation, and easier integration with conformance tooling.
 
@@ -42,7 +42,7 @@ This process enables reliable validation, clearer documentation, and easier inte
 ### High-Level Description of Each Step:
 
 #### 1. Target Entity – Determine the entity
-Identify the target for the rule: Dataset, Column, Attribute property, Provider, etc. This sets the scope of the conformance requirement.
+Identify the target for the rule: **Dataset**, **Column**, **Attribute** property, **Provider**, etc. This sets the scope of the conformance requirement.
 
 #### FOCUS Core Entities
 The following architectural components define the core entities in FOCUS that shape the structure and flow of billing data.
@@ -144,7 +144,7 @@ Categorize the type of logic the rule enforces. This helps determine how it shou
 
 **Example**  
 A rule states: "`BillingPeriodStart` MUST be of type `DateTime`."  
-→ `Function = DataType`
+→ `Function = Format`
 
 #### 4. Reference – Identify the reference target
 Point to the human-readable column or attribute name that the rule applies to, as defined in the FOCUS specification.
