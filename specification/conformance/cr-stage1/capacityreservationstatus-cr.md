@@ -1,40 +1,41 @@
-### Static Conformance Requirements – CapacityReservationStatus
+### Static Conformance Requirements – `Capacity Reservation Status`
+
 text: [capacityreservationstatus-v1_2.md](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/v1.2/specification/columns/capacityreservationstatus.md)
 
-These requirements define the mandatory structure and validation rules for the `CapacityReservationStatus` column in FOCUS version 1.2.
+These requirements define the mandatory structure and validation rules for the `Capacity Reservation Status` column in FOCUS version 1.2.
 
-| SCRIID                               | Function                                      | PreCondition                   | Condition                                                              | Requirement                           | Validation Criteria                                                                                       | Notes                                                                                                   | VersionIntroduced | Status  |
-|--------------------------------------|-----------------------------------------------|--------------------------------|------------------------------------------------------------------------|----------------------------------------|-----------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------|---------|
-| CAPACITYRESERVATIONSTATUS-C-000-M    | Summary of all applicable rules               | SUPPORTS_CAPACITY_RESERVATION | null                                                                   | AND(CAPACITYRESERVATIONSTATUS-C-001-M, CAPACITYRESERVATIONSTATUS-C-002-M, CAPACITYRESERVATIONSTATUS-C-003-C, CAPACITYRESERVATIONSTATUS-C-006-C) | MUST satisfy all applicable conformance rules for Capacity Reservation Status                            | Applies only when the provider supports capacity reservations                                           | 1.1               | active  |
-| CAPACITYRESERVATIONSTATUS-C-001-M    | Define presence in dataset                    | SUPPORTS_CAPACITY_RESERVATION | null                                                                   | null                                   | CapacityReservationStatus MUST be present in the dataset                                                 |                                                                                                         | 1.1               | active  |
-| CAPACITYRESERVATIONSTATUS-C-002-M    | Specify data type                             | null                           | null                                                                   | null                                   | CapacityReservationStatus MUST be of type String                                                         |                                                                                                         | 1.1               | active  |
-| CAPACITYRESERVATIONSTATUS-C-003-C    | Group nullability rules                       | null                           | null                                                                   | AND(CAPACITYRESERVATIONSTATUS-C-004-C, CAPACITYRESERVATIONSTATUS-C-005-C) | MUST satisfy nullability constraints based on CapacityReservationId and ChargeCategory                  | Combines row-level nullability constraints                                                             | 1.1               | active  |
-| CAPACITYRESERVATIONSTATUS-C-004-C    | Allow null when CapacityReservationId is null | null                           | CapacityReservationId is null                                          | null                                   | CapacityReservationStatus MUST be null                                                                  |                                                                                                         | 1.1               | active  |
-| CAPACITYRESERVATIONSTATUS-C-005-C    | Require non-null when reservation is used     | null                           | CapacityReservationId is not null AND ChargeCategory = "Usage"         | null                                   | CapacityReservationStatus MUST NOT be null                                                              |                                                                                                         | 1.1               | active  |
-| CAPACITYRESERVATIONSTATUS-C-006-C    | Group content validation rules                | null                           | CapacityReservationStatus is not null                                  | AND(CAPACITYRESERVATIONSTATUS-C-007-M, CAPACITYRESERVATIONSTATUS-C-008-C, CAPACITYRESERVATIONSTATUS-C-009-C) | MUST satisfy content rules when CapacityReservationStatus is present                                     | Applies only when CapacityReservationStatus is not null                                                | 1.1               | active  |
-| CAPACITYRESERVATIONSTATUS-C-007-M    | Validate allowed values                       | null                           | CapacityReservationStatus is not null                                  | null                                   | CapacityReservationStatus MUST be one of the allowed values: "Used" or "Unused"                          |                                                                                                         | 1.1               | active  |
-| CAPACITYRESERVATIONSTATUS-C-008-C    | Enforce value 'Unused' when charge is unused  | null                           | Charge represents the unused portion of a capacity reservation         | null                                   | CapacityReservationStatus MUST be "Unused"                                                               | Contextual meaning of "unused" must be defined by implementation                                       | 1.1               | active  |
-| CAPACITYRESERVATIONSTATUS-C-009-C    | Enforce value 'Used' when charge is used      | null                           | Charge represents the used portion of a capacity reservation           | null                                   | CapacityReservationStatus MUST be "Used"                                                                 | Contextual meaning of "used" must be defined by implementation                                         | 1.1               | active  |
+| CRID                              | Function         | Reference                   | Keyword  | ApplicabilityCriteria                   | Condition                                                      | MustSatisfy                                                                | Requirement                                                                                                                                     | Type   | CRVersionIntroduced | Status | Notes |
+| --------------------------------- | ---------------- | --------------------------- | -------- | --------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------------------- | ------ | ----- |
+| CapacityReservationStatus-C-000-C | Composite        | Capacity Reservation Status | MUST     | Provider supports capacity reservations | All_Rows                                                      | All CapacityReservationStatus rules MUST be enforced                       | AND(CapacityReservationStatus-D-001-C, CapacityReservationStatus-C-002-M, CapacityReservationStatus-C-003-C, CapacityReservationStatus-C-006-C) | static | 1.2                 | active |       |
+| CapacityReservationStatus-D-001-C | Presence         | Capacity Reservation Status | MUST     | Provider supports capacity reservations | All_Rows                                                      | MUST be present in a FOCUS dataset                                         | null                                                                                                                                            | static | 1.2                 | active |       |
+| CapacityReservationStatus-C-002-M | DataType         | Capacity Reservation Status | MUST     | All_Rows                               | All_Rows                                                      | MUST be of type String                                                     | null                                                                                                                                            | static | 1.2                 | active |       |
+| CapacityReservationStatus-C-003-C | Composite        | Capacity Reservation Status | MUST     | All_Rows                               | All_Rows                                                      | Nullability MUST follow conditional rules                                  | AND(CapacityReservationStatus-C-004-M, CapacityReservationStatus-C-005-M)                                                                       | static | 1.2                 | active |       |
+| CapacityReservationStatus-C-004-M | NullabilityRules | Capacity Reservation Status | MUST     | All_Rows                               | CapacityReservationId IS NULL                                  | MUST be null                                                               | null                                                                                                                                            | static | 1.2                 | active |       |
+| CapacityReservationStatus-C-005-M | NullabilityRules | Capacity Reservation Status | MUST NOT | All_Rows                               | CapacityReservationId IS NOT NULL AND ChargeCategory = "Usage" | MUST NOT be null                                                           | null                                                                                                                                            | static | 1.2                 | active |       |
+| CapacityReservationStatus-C-006-C | Composite        | Capacity Reservation Status | MUST     | All_Rows                               | CapacityReservationStatus IS NOT NULL                          | Rules for interpreting non-null CapacityReservationStatus MUST be enforced | AND(CapacityReservationStatus-C-007-M, CapacityReservationStatus-C-008-M, CapacityReservationStatus-C-009-M)                                    | static | 1.2                 | active |       |
+| CapacityReservationStatus-C-007-M | Validation       | Capacity Reservation Status | MUST     | All_Rows                               | CapacityReservationStatus IS NOT NULL                          | MUST be one of the allowed values ("Used", "Unused")                       | null                                                                                                                                            | static | 1.2                 | active |       |
+| CapacityReservationStatus-C-008-M | Validation       | Capacity Reservation Status | MUST     | All_Rows                               | CapacityReservationStatus = "Unused"                           | MUST indicate charge represents unused portion of a capacity reservation   | null                                                                                                                                            | static | 1.2                 | active |       |
+| CapacityReservationStatus-C-009-M | Validation       | Capacity Reservation Status | MUST     | All_Rows                               | CapacityReservationStatus = "Used"                             | MUST indicate charge represents used portion of a capacity reservation     | null                                                                                                                                            | static | 1.2                 | active |       |
 
+### DAG of Conformance Requirements for `Capacity Reservation Status`
 
-### DAG of Static Conformance Requirements for `CapacityReservationStatus`
-
-This diagram shows the logical structure and composite dependencies for the SCRs of the `CapacityReservationStatus` column in FOCUS v1.2.
+This diagram shows the logical structure and composite dependencies for the CRs of the `Capacity Reservation Status` column in FOCUS v1.2.
 
 ```mermaid
+
 graph TD
 
 %% Root Composite
-CRS000["C-000-M: Summary of all applicable rules"]
-CRS001["C-001-M: Define presence in dataset"]
-CRS002["C-002-M: Specify data type"]
-CRS003["C-003-C: Group nullability rules"]
-CRS004["C-004-C: Allow null when CapResId is null"]
-CRS005["C-005-C: Require non-null when reservation is used"]
-CRS006["C-006-C: Group content validation rules"]
-CRS007["C-007-M: Validate allowed values"]
-CRS008["C-008-C: Value = 'Unused' when charge unused"]
-CRS009["C-009-C: Value = 'Used' when charge used"]
+CRS000["CapacityReservationStatus-C-000-C: Enforce all CapacityReservationStatus rules"]
+CRS001["CapacityReservationStatus-D-001-C: Column MUST be present if provider supports capacity reservations"]
+CRS002["CapacityReservationStatus-C-002-M: Column MUST be of type String"]
+CRS003["CapacityReservationStatus-C-003-C: Nullability rules apply"]
+CRS004["CapacityReservationStatus-C-004-M: MUST be null if CapacityReservationId is null"]
+CRS005["CapacityReservationStatus-C-005-M: MUST NOT be null if CapacityReservationId is not null and ChargeCategory = 'Usage'"]
+CRS006["CapacityReservationStatus-C-006-C: Rules for interpreting non-null values"]
+CRS007["CapacityReservationStatus-C-007-M: MUST be one of 'Used' or 'Unused'"]
+CRS008["CapacityReservationStatus-C-008-M: MUST be 'Unused' if charge represents unused reservation"]
+CRS009["CapacityReservationStatus-C-009-M: MUST be 'Used' if charge represents used reservation"]
 
 %% Root connections
 CRS000 --> CRS001
@@ -42,10 +43,11 @@ CRS000 --> CRS002
 CRS000 --> CRS003
 CRS000 --> CRS006
 
-%% Composite connections
+%% Composite: Nullability rules
 CRS003 --> CRS004
 CRS003 --> CRS005
 
+%% Composite: Non-null interpretation rules
 CRS006 --> CRS007
 CRS006 --> CRS008
 CRS006 --> CRS009
@@ -55,8 +57,8 @@ classDef mandatory fill:#fdd,stroke:#c00,stroke-width:2px;
 classDef conditional fill:#ffd700,stroke:#aa0,stroke-width:1px;
 classDef optional fill:#c0f5c0,stroke:#2c8c2c,stroke-width:1px;
 
-class CRS000,CRS001,CRS002,CRS007 mandatory;
-class CRS003,CRS004,CRS005,CRS006,CRS008,CRS009 conditional;
+class CRS000,CRS001,CRS003,CRS006 conditional;
+class CRS002,CRS004,CRS005,CRS007,CRS008,CRS009 mandatory;
   ```
 
   #### Color Code
@@ -66,4 +68,3 @@ class CRS003,CRS004,CRS005,CRS006,CRS008,CRS009 conditional;
 | 🟥 Red (C-XXX-M)    | **Mandatory (M)**            |
 | 🟨 Yellow (C-XXX-C) | **Conditional (C)**          |
 | 🟩 Green (C-XXX-O)  | **Optional (O)**             |
-| ⬛ Black (C-000-M)   | **Top-level composite**     |
