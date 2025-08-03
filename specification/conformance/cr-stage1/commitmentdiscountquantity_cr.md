@@ -1,76 +1,95 @@
-### Static Conformance Requirements – Commitment Discount Quantity
+### Conformance Requirements – `Commitment Discount Quantity`
+text: [commitmentdiscountquantity-v1_2.md](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/v1.2/specification/columns/commitmentdiscountquantity.md)
 
-| SCRID                                | Function                               | PreCondition                   | Condition                                                                                      | Requirement                     | ValidationCriteria                                                                                         | Notes                                                                                              | VersionIntroduced | Status  |
-|--------------------------------------|----------------------------------------|--------------------------------|--------------------------------------------------------------------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------|-------------------|---------|
-| COMMITMENTDISCOUNTQUANTITY-C-000-M   | Summary of all applicable rules        | null                           | null                                                                                             | AND(C-001 to C-016)              | MUST satisfy all applicable conformance rules from C-001 to C-016                                         | Aggregates all rules for conformance validation                                                    | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-001-C   | Define presence in dataset             | INCLUDES_COMMITMENT_DISCOUNTS | null                                                                                             | null                             | CommitmentDiscountQuantity MUST be present in the dataset                                                 | Applies only when provider supports commitment discounts                                           | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-002-M   | Specify data type                      | null                           | null                                                                                             | null                             | CommitmentDiscountQuantity MUST be of type Decimal                                                        |                                                                                                    | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-003-M   | Ensure numeric format compliance       | null                           | null                                                                                             | null                             | CommitmentDiscountQuantity MUST conform to NumericFormat                                                  |                                                                                                    | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-004-M   | Group nullability logic (primary split)| null                           | null                                                                                             | OR(COMMITMENTDISCOUNTQUANTITY-C-005-C, COMMITMENTDISCOUNTQUANTITY-C-008-C) | null                                                                                                      | Combines valid nullability paths                                                                 | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-005-C   | Conditional nullability logic          | null                           | ChargeCategory ∈ {"Usage", "Purchase"} AND CommitmentDiscountId is not null                     | OR(COMMITMENTDISCOUNTQUANTITY-C-006-M, COMMITMENTDISCOUNTQUANTITY-C-007-O) | null                                                                                                      | Delegates to null rules based on ChargeClass                                                      | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-006-M   | Disallow null when required            | null                           | ChargeClass ≠ "Correction"                                                                       | null                             | CommitmentDiscountQuantity MUST NOT be null                                                               |                                                                                                    | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-007-O   | Allow null for correction charges      | null                           | ChargeClass = "Correction"                                                                       | null                             | CommitmentDiscountQuantity MAY be null                                                                    |                                                                                                    | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-008-C   | Disallow presence in other cases       | null                           | All other cases                                                                                   | null                             | CommitmentDiscountQuantity MUST be null                                                                   | Ensures no leakage of values outside valid context                                                | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-009-C   | Apply value and semantics if present   | null                           | ChargeCategory ∈ {"Usage", "Purchase"} AND CommitmentDiscountId is not null                      | AND(COMMITMENTDISCOUNTQUANTITY-C-010-C, COMMITMENTDISCOUNTQUANTITY-C-011-C, COMMITMENTDISCOUNTQUANTITY-C-014-C) | MUST satisfy all semantic and value conditions if value is present                                      | Composite enforcement of format + semantics                                                       | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-010-C   | Validate decimal values                | null                           | CommitmentDiscountQuantity is not null                                                           | null                             | CommitmentDiscountQuantity MUST be a valid decimal value                                                  |                                                                                                    | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-011-C   | Group purchase logic                   | null                           | ChargeCategory = "Purchase"                                                                      | OR(COMMITMENTDISCOUNTQUANTITY-C-012-C, COMMITMENTDISCOUNTQUANTITY-C-013-C) | null                                                                                                      | Split logic based on one-time vs recurring                                                        | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-012-C   | Purchase - one-time                    | null                           | ChargeFrequency = "One-Time" AND ChargeCategory = "Purchase"                                     | null                             | MUST represent quantity of CommitmentDiscountUnit eligible over the term                                 |                                                                                                    | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-013-C   | Purchase - recurring                   | null                           | ChargeFrequency = "Recurring" AND ChargeCategory = "Purchase"                                    | null                             | MUST represent quantity eligible per charge period                                                        |                                                                                                    | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-014-C   | Group usage logic                      | null                           | ChargeCategory = "Usage"                                                                         | OR(COMMITMENTDISCOUNTQUANTITY-C-015-C, COMMITMENTDISCOUNTQUANTITY-C-016-C) | null                                                                                                      | Dispatches to Used/Unused based on CommitmentDiscountStatus                                     | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-015-C   | Usage - used quantity                  | null                           | CommitmentDiscountStatus = "Used" AND ChargeCategory = "Usage"                                   | null                             | MUST represent metered quantity consumed during the charge period                                         |                                                                                                    | 1.1               | active  |
-| COMMITMENTDISCOUNTQUANTITY-C-016-C   | Usage - unused quantity                | null                           | CommitmentDiscountStatus = "Unused" AND ChargeCategory = "Usage"                                 | null                             | MUST represent remaining, unused quantity during the charge period                                       |                                                                                                    | 1.1               | active  |
+These requirements define the mandatory structure and validation rules for the `Commitment Discount Quantity` column in FOCUS version 1.2.
 
+| CRID                               | Function         | Reference                    | Keyword  | ApplicabilityCriteria                  | Condition                                                                                                   | MustSatisfy                                                                                          | Requirement                                                                                                                                                                             | Type   | CRVersionIntroduced | Status | Notes                                        |
+| ---------------------------------- | ---------------- | ---------------------------- | -------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------ | ------------------- | ------ | -------------------------------------------- |
+| CommitmentDiscountQuantity-C-000-C | Composite        | Commitment Discount Quantity | MUST     | Provider supports commitment discounts | All_Rows                                                                                                   | All CommitmentDiscountQuantity rules MUST be enforced                                                | AND(CommitmentDiscountQuantity-D-001-C, CommitmentDiscountQuantity-C-002-M, CommitmentDiscountQuantity-C-003-M, CommitmentDiscountQuantity-C-004-C, CommitmentDiscountQuantity-C-009-C) | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-D-001-C | Presence         | Commitment Discount Quantity | MUST     | Provider supports commitment discounts | All_Rows                                                                                                   | MUST be present in a FOCUS dataset                                                                   | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-002-M | DataType         | Commitment Discount Quantity | MUST     | All_Rows                              | All_Rows                                                                                                   | MUST be of type Decimal                                                                              | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-003-M | Format           | Commitment Discount Quantity | MUST     | All_Rows                              | All_Rows                                                                                                   | MUST conform to NumericFormat                                                                        | NumericFormat:CR                                                                                                                                                                       | static | 1.2                 | active | Cross-attribute reference: NumericFormat\:CR |
+| CommitmentDiscountQuantity-C-004-C | Composite        | Commitment Discount Quantity | MUST     | All_Rows                              | All_Rows                                                                                                   | Nullability MUST follow conditional rules                                                            | AND(CommitmentDiscountQuantity-C-005-C, CommitmentDiscountQuantity-C-008-M)                                                                                                             | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-005-C | Composite        | Commitment Discount Quantity | MUST     | All_Rows                              | ChargeCategory IN ("Usage", "Purchase") AND CommitmentDiscountId IS NOT NULL                                | Conditional nullability rules for non-Correction charges MUST be enforced                            | AND(CommitmentDiscountQuantity-C-006-M, CommitmentDiscountQuantity-C-007-O)                                                                                                             | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-006-M | NullabilityRules | Commitment Discount Quantity | MUST NOT | All_Rows                              | ChargeCategory IN ("Usage", "Purchase") AND CommitmentDiscountId IS NOT NULL AND ChargeClass ≠ "Correction" | MUST NOT be null                                                                                     | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-007-O | NullabilityRules | Commitment Discount Quantity | MAY      | All_Rows                              | ChargeCategory IN ("Usage", "Purchase") AND CommitmentDiscountId IS NOT NULL AND ChargeClass = "Correction" | MAY be null                                                                                          | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-008-M | NullabilityRules | Commitment Discount Quantity | MUST     | All_Rows                              | All other cases (not matched by above conditions)                                                           | MUST be null                                                                                         | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-009-C | Composite        | Commitment Discount Quantity | MUST     | All_Rows                              | CommitmentDiscountQuantity IS NOT NULL                                                                      | Rules for interpreting non-null CommitmentDiscountQuantity MUST be enforced                          | AND(CommitmentDiscountQuantity-C-010-M, CommitmentDiscountQuantity-C-011-C, CommitmentDiscountQuantity-C-012-C)                                                                         | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-010-M | Validation       | Commitment Discount Quantity | MUST     | All_Rows                              | CommitmentDiscountQuantity IS NOT NULL                                                                      | MUST be a valid decimal value                                                                        | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-011-C | Composite        | Commitment Discount Quantity | MUST     | All_Rows                              | ChargeCategory = "Purchase" AND CommitmentDiscountQuantity IS NOT NULL                                      | Purchase ChargeQuantity interpretation rules MUST be enforced                                        | AND(CommitmentDiscountQuantity-C-013-M, CommitmentDiscountQuantity-C-014-M)                                                                                                             | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-012-C | Composite        | Commitment Discount Quantity | MUST     | All_Rows                              | ChargeCategory = "Usage" AND CommitmentDiscountQuantity IS NOT NULL                                         | Usage ChargeQuantity interpretation rules MUST be enforced                                           | AND(CommitmentDiscountQuantity-C-015-M, CommitmentDiscountQuantity-C-016-M)                                                                                                             | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-013-M | Validation       | Commitment Discount Quantity | MUST     | All_Rows                              | ChargeCategory = "Purchase" AND ChargeFrequency = "One-Time"                                                | MUST be the quantity of CommitmentDiscountUnit, paid upfront, eligible over commitment discount term | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-014-M | Validation       | Commitment Discount Quantity | MUST     | All_Rows                              | ChargeCategory = "Purchase" AND ChargeFrequency = "Recurring"                                               | MUST be the quantity of CommitmentDiscountUnit eligible per charge period                            | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-015-M | Validation       | Commitment Discount Quantity | MUST     | All_Rows                              | ChargeCategory = "Usage" AND CommitmentDiscountStatus = "Used"                                              | MUST be the metered quantity of CommitmentDiscountUnit consumed in the charge period                 | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
+| CommitmentDiscountQuantity-C-016-M | Validation       | Commitment Discount Quantity | MUST     | All_Rows                              | ChargeCategory = "Usage" AND CommitmentDiscountStatus = "Unused"                                            | MUST be the unused quantity of CommitmentDiscountUnit in the charge period                           | null                                                                                                                                                                                    | static | 1.2                 | active |                                              |
 
-### DAG of Static Conformance Requirements for `CommitmentDiscountQuantity`
+### DAG of Conformance Requirements for `Commitment Discount Quantity`
 
-This diagram shows the logical structure and composite dependencies for the SCRs of the `CommitmentDiscountQuantity` column in FOCUS v1.2.
+This diagram shows the logical structure and composite dependencies for the CRs of the `Commitment Discount Quantity` column in FOCUS v1.2.
 
 ```mermaid
+
 graph TD
 
 %% Root Composite
-C000["C-000-M: Summary of all rules"]
-C001["C-001-C: Define presence"]
-C002["C-002-M: Type is Decimal"]
-C003["C-003-M: Numeric format"]
-C004["C-004-M: Nullability grouping"]
-C009["C-009-C: Value+Semantics grouping"]
+CDQ000["CommitmentDiscountQuantity-C-000-C: Enforce all CommitmentDiscountQuantity rules"]
+CDQ001["CommitmentDiscountQuantity-D-001-C: MUST be present in FOCUS dataset"]
+CDQ002["CommitmentDiscountQuantity-C-002-M: MUST be of type Decimal"]
+CDQ003["CommitmentDiscountQuantity-C-003-M: MUST conform to NumericFormat"]
+CDQ004["CommitmentDiscountQuantity-C-004-C: Nullability MUST follow conditional rules"]
+CDQ009["CommitmentDiscountQuantity-C-009-C: Rules for interpreting non-null values MUST be enforced"]
 
-%% Nullability Branch
-C004 --> C005["C-005-C: Conditional nullability"]
-C004 --> C008["C-008-C: Null otherwise"]
+%% Nullability Composites
+CDQ004 --> CDQ005
+CDQ004 --> CDQ008
+CDQ005["CommitmentDiscountQuantity-C-005-C: Nullability for Usage/Purchase with CommitmentDiscountId"]
+CDQ008["CommitmentDiscountQuantity-C-008-M: MUST be null in all other cases"]
 
-C005 --> C006["C-006-M: MUST NOT be null"]
-C005 --> C007["C-007-O: MAY be null (Correction)"]
+CDQ005 --> CDQ006
+CDQ005 --> CDQ007
+CDQ006["CommitmentDiscountQuantity-C-006-M: MUST NOT be null unless ChargeClass = Correction"]
+CDQ007["CommitmentDiscountQuantity-C-007-O: MAY be null when ChargeClass = Correction"]
 
-%% Value + Semantics Branch
-C009 --> C010["C-010-C: Decimal validity"]
-C009 --> C011["C-011-C: Purchase logic group"]
-C009 --> C014["C-014-C: Usage logic group"]
+%% Non-null interpretation composite
+CDQ009 --> CDQ010
+CDQ009 --> CDQ011
+CDQ009 --> CDQ012
 
-%% Purchase Sub-branch
-C011 --> C012["C-012-C: One-Time Purchase"]
-C011 --> C013["C-013-C: Recurring Purchase"]
+CDQ010["CommitmentDiscountQuantity-C-010-M: MUST be a valid decimal value"]
 
-%% Usage Sub-branch
-C014 --> C015["C-015-C: Used Quantity"]
-C014 --> C016["C-016-C: Unused Quantity"]
+%% Purchase case
+CDQ011["CommitmentDiscountQuantity-C-011-C: Purchase interpretation rules"]
+CDQ011 --> CDQ013
+CDQ011 --> CDQ014
+CDQ013["CommitmentDiscountQuantity-C-013-M: One-Time purchase quantity rule"]
+CDQ014["CommitmentDiscountQuantity-C-014-M: Recurring purchase quantity rule"]
+
+%% Usage case
+CDQ012["CommitmentDiscountQuantity-C-012-C: Usage interpretation rules"]
+CDQ012 --> CDQ015
+CDQ012 --> CDQ016
+CDQ015["CommitmentDiscountQuantity-C-015-M: Used commitment discount quantity"]
+CDQ016["CommitmentDiscountQuantity-C-016-M: Unused commitment discount quantity"]
 
 %% Root connections
-C000 --> C001
-C000 --> C002
-C000 --> C003
-C000 --> C004
-C000 --> C009
+CDQ000 --> CDQ001
+CDQ000 --> CDQ002
+CDQ000 --> CDQ003
+CDQ000 --> CDQ004
+CDQ000 --> CDQ009
+
+%% External attribute rule
+CDQ003 --> NF["NumericFormat:CR"]
 
 %% Styling by Rule Type
 classDef mandatory fill:#fdd,stroke:#c00,stroke-width:2px;
 classDef conditional fill:#ffd700,stroke:#aa0,stroke-width:1px;
 classDef optional fill:#c0f5c0,stroke:#2c8c2c,stroke-width:1px;
 
-class C000,C002,C003,C004,C006 mandatory;
-class C001,C005,C008,C009,C010,C011,C012,C013,C014,C015,C016 conditional;
-class C007 optional;
+class CDQ002,CDQ003,CDQ006,CDQ008,CDQ010,CDQ013,CDQ014,CDQ015,CDQ016 mandatory;
+class CDQ000,CDQ001,CDQ004,CDQ005,CDQ009,CDQ011,CDQ012 conditional;
+class CDQ007 optional;
+class NF mandatory;
 ```
 | Color      | Rule Type     |
 |------------|----------------|
