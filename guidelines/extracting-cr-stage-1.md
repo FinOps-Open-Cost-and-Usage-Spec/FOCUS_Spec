@@ -1,9 +1,19 @@
 # Extracting Conformance Requirements - Stage 1
 
-## FOCUS Core Entities
+## Conformance Requirements Extraction Flow – FOCUS Specification
+### Flow Diagram 
+<img width="812" height="1036" alt="Image" src="https://github.com/user-attachments/assets/040ba557-cc42-402b-b52a-742b88e40d54" />
+
+### High-Level Description of Each Step:
+
+#### 1. Target Entity – Determine the entity
+Identify the target for the rule: Dataset, Column, Attribute property, Provider, etc. This sets the scope of the conformance requirement.
+
+##### FOCUS Core Entities
 The following architectural components define the core entities in FOCUS that shape the structure and flow of billing data.
 
-### FOCUS Architectural components
+**FOCUS Architectural components**
+
 ```mermaid
 graph TD
 
@@ -44,7 +54,7 @@ Provider -.->|Used in rule conditions| Column
 
 - **Columns** and **Rows** can conditionally depend on the value of Provider to apply or skip certain validation logic.
 
-### FOCUS Entity Reference Table
+**FOCUS Entity Reference Table**
 
 | Entity      | Description                        | Applies To                                | Example CR Function                                                                                      |
 | ----------- | ---------------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -55,14 +65,6 @@ Provider -.->|Used in rule conditions| Column
 | `Metadata`  | Schema-level dataset descriptors   | Schema versioning, declaration            | Metadata MUST declare `focus_version` as a valid semantic version string (e.g., "1.2.0")                |
 | `Provider`  | System that generated the data     | Conditional logic in requirements         | Column `CapacityReservationId` MUST be present when the provider supports capacity reservation features |
 
-## Conformance Requirements Extraction Flow – FOCUS Specification
-### Flow Diagram 
-<img width="812" height="1036" alt="Image" src="https://github.com/user-attachments/assets/cb7c524a-85e6-43e7-bc5e-05125679624e" />
-
-### High-Level Description of Each Step:
-
-#### 1. Target Entity – Determine the entity
-Identify the target for the rule: Dataset, Column, Attribute property, Provider, etc. This sets the scope of the conformance requirement.
 
 #### 2. CRID – Apply CRID Naming Rules
 Construct a unique identifier for the rule using the format:
