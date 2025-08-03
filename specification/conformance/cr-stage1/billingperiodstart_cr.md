@@ -1,4 +1,4 @@
-### Conformance Requirements – `BillingPeriodStart`
+### Conformance Requirements – `Billing Period Start`
 
 text: [billingperiodstart-v1_2.md](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/v1.2/specification/columns/billingperiodstart.md)
 
