@@ -1,76 +1,59 @@
 # Correction Handling
 
-TODO
+## 1. Attribute Name and Scope
 
-### Prevent Replacement After Invoice Finalization (and Billing Period Closure)
+Correction Handling attribute defines how updates to previously provided charge records are represented in FOCUS datasets.
 
-> **TODO:** Mention/address in upcoming Correction Handling attribute
+Although the FOCUS Glossary currently limits the definition of "Correction" to invoiced billing periods, this attribute broadens the scope to encompass all corrections — independent of billing period or invoice status.
 
-***Note:*** *See S-1: Itemized Correction Scenarios with Cost Calculation Integrity Respected - S-1.1 and S-1.2 in particular*
+This attribute applies to all corrections, whether the original charge was from:
 
-We should prevent the use of the Replacement provisioning style once an invoice has been finalized and the corresponding billing period closed.
+* A previously invoiced and closed billing period
+* A prior billing period that is not yet invoiced
+* The current billing period
 
-Since Replacement relies on overwriting or replacing previously delivered charge records within the original billing period, it inherently conflicts with the Normative Requirements for Post-Invoice Finalization Corrections — and in particular the Legal and Procedural Perspective, which states that once an invoice has been finalized and the corresponding billing period closed:
+Corrections may arise from a variety of operational or technical causes, such as refunds, late-arriving or delayed cost and usage records, rounding errors or post-processing adjustments, etc.
 
-- A finalized invoice is considered legally issued and immutable.
-- The associated billing period is closed, prohibiting any modifications or overwriting of previously delivered records.
+## 3. Business/Operational Motivations
 
-Therefore, only append-only provisioning styles (such as ledger-style increments/decrements or accounting-style reversals followed by corrected entries) should be permitted for handling Post-Invoice Finalization Corrections.
+Correctly modeling corrections is essential for a range of business-critical processes:
 
-**Exceptions:**
+* Auditability: Consumers of cost data must be able to trace the full lifecycle of a charge, including the original record and all related corrections.
+* Legal and Financial Integrity: Since invoices are binding financial documents, post-invoice corrections must preserve original data and record changes separately.
+* Cost Allocation and Chargeback: Corrections must be clearly attributed to the right dimensions (e.g., account, SKU, region) to ensure accurate allocation.
+* Temporal Accuracy: The timing of a correction (when it's recorded) may differ from when the charge was incurred — both must be accurately captured.
 
-- Contributors are encouraged to document any exception to the general rule.
+## 4. Clarifications of Related Concepts
 
-- Should we allow restating in cases where corrections apply to dimensions that were not included in the original invoice?
-Personally, I would prefer not to allow this — but this is currently the only scenario where I can see a possible justification.
+### Provisioning Styles
 
-#### Normative Requirements for Post-Invoice Finalization Corrections
+To ensure consistent interpretation and correct implementation, it's important to clarify how Correction Handling relates to other foundational concepts such as data delivery styles and invoice finalization.
 
-> **TODO:** Mention/address in upcoming Correction Handling attribute
-> (Shawn has added numbers to the statements that would become normative requirements in the attribute)
+Data generators typically deliver cost and usage records using one of two models:
 
-The following applies to all corrections to a previously closed billing period, i.e., correction charge records provisioned after invoice finalization and billing period closure, but which pertain to activity that occurred during that already invoiced and closed period:
+* Replacement — Previously delivered records are overwritten with updated versions. This model assumes consumers will discard prior versions and always use the latest available data.
+* Append-only — To correct the original, one or more new records are added without modifying existing ones. Corrections are represented by adding new rows, and previously delivered rows remain unchanged.
 
-- **Legal and Procedural Perspective:**
-  - <<1>> The invoice is considered legally issued and immutable.
-  - The billing period is considered closed, thereby prohibiting any modifications to or overwriting of the originally invoiced records.
+FOCUS supports both Replacement and Append-only delivery styles for most use cases. However, for corrections to charges originally incurred in previously closed billing periods, only append-only modeling is permitted. This ensures financial integrity and enables accurate audit trails.
 
-- **Provisioning perspective**: `x_ExportDateTime = T2` (i.e., the date it became available to the consumer)
+There are two standard approaches to modeling corrections in append-only delivery systems supported by FOCUS.
 
-- **Operational Perspective**: All Correction records (Increments and Decrements in case of the Ledger style, Negations and Corrected records in case of Accounting style) pertain to activity that occurred in **May**, so in case of Usage records <<2>> `ChargePeriodStart`/`ChargePeriodEnd` **must reflect the actual usage period** (e.g., `ChargePeriodStart = 2025-05-01`)
+In ledger-style correction, adjustments are modeled by adding one or more records that increment or decrement the cost or usage quantity. These records MUST retain all non-numeric fields (e.g., service, region, usage type) identical to the original. There is no explicit reversal of the original record; only the net effect is reflected. This method reduces data volume but provides limited audit transparency.
 
-- **Financial Perspective**: The original invoice (e.g., `INV-20250501-20250601`) has already been finalized (issued and sent e.g., as PDF). The May billing period is **considered closed** therefore
-  - <<3>> `BillingPeriodStart`/`BillingPeriodEnd` **must be equal to or later than** the first **open** billing period (i.e., June 2025 or later)
-  - <<4>> `InvoiceId` must not match the original invoice (e.g., `INV-20250501-20250601`).
+In contrast, accounting-style correction uses a two-step representation: the original record is first reversed using a row with negative values for cost and quantity, and then followed by a new record with the corrected values. The reversal MUST match the original in all fields, except for the negated numeric amounts. This model preserves a full correction history and is RECOMMENDED when transparency and traceability are required.
 
-- **Charge Class:** <<5>> ChargeClass must be set to "Correction".
+### Invoice Finalization
 
-### Cost and Usage data Provisioning Styles
+A billing period is considered closed once all invoices for that period are finalized. After that point, the original invoice and its records must remain immutable. Corrections to such periods must not overwrite existing records and must follow special provisioning rules (see below).
 
-> **TODO:** Mention/address in upcoming Correction Handling attribute
+If a correction is applied to a charge from a closed billing period, the corrected record must:
 
-Data Generators typically use two main provisioning styles/mechanisms when delivering cost and usage data:
+* The correction MUST NOT replace or omitt the original record.
+* Be assigned to a different invoice (i.e., not the one originally associated with the charge).
+* Have BillingPeriodStart and BillingPeriodEnd values that correspond to the open billing period in which the correction is issued.
+* Preserve the original ChargePeriodStart and ChargePeriodEnd values to indicate when the corrected cost was actually incurred.
 
-- **Replacement:** Overwrites previously delivered records with updated ones. This approach ensures data accuracy by reflecting corrections directly in place.
-
-- **Append-only:** Delivers only new records without modifying previously sent data. This approach can be further divided into two subtypes:
-  - **Ledger-style:** Adds incremental (or decremental) records over time. Corrections are reflected as additional entries where the cost or quantity metrics are adjusted (+/-), while all other dimensions remain identical to the original record. This supports an append-only model but offers limited auditability, as there is typically no explicit reversal.
-  - **Accounting-style:** Tracks changes explicitly via negative (reversal) entries followed by corrected records. This ensures full auditability and provides a clear historical trail of adjustments.
-
-### Finalized Invoice and Closed Billing Period
-
-> **TODO:** Mention/address in upcoming Correction Handling attribute
-> See [FR #Add invoice-level correction handling rules](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1013)
-
-While the FOCUS specification mentions closed billing periods, it currently does not define the process for invoice issuance or billing period closure. It also does not define any explicit **“finalized”** status for invoices, nor a **“closed”** status for billing periods, nor the point at which an invoice is considered finalized or a billing period considered closed.
-
-To address these **gaps** in this scenario, we assume the following:
-
-- Data Generator (Providers) finalize invoices at some point, marking them as ready for invoice reconciliation.
-- A billing period is considered closed once all invoices for that period are finalized.
-
-***Note:** These information are assumed to be provided not within the cost and usage dataset itself, but in separate, adjacent datasets (e.g., invoice-related datasets).
-
+This dual treatment—distinguishing the charge period from the billing period—allows cost data consumers to understand both the historical intent and the current accounting context for each correction.
 
 ## Attribute ID
 
@@ -82,15 +65,30 @@ Correction Handling
 
 ## Description
 
-Indicates how corrections to previously issued charges must be represented in a FOCUS dataset.
+Defines how updates to previously provided charge records are represented in FOCUS datasets.
 
 ## Requirements
 
-TODO
+> WORK IN PROGRESS !!!
+
+All corrections/changes to previously provided charge records in FOCUS dataset MUST follow the correction handling requirements listed below.
+
+* Corrections to charges in previously closed billing periods MUST satisfy the following:
+  * The correction MUST NOT replace or omit the original record.
+  * The corrected row(s) MUST be assigned to a different InvoiceId than the one associated with the original record.
+  * The BillingPeriodStart and BillingPeriodEnd MUST reflect the current open billing period in which the correction is being issued.
+  * The ChargePeriodStart and ChargePeriodEnd MUST retain the original time interval in which the charge occurred.
+  * ChargeClass MUSt be set to "Correction".
+* Providers MUST clearly document which provisioning and correction styles are in use (Replacement, Ledger-style, Accounting-style).
+* Etc.
 
 ## Exceptions
 
-None
+Potential exceptions, to be discussed:
+
+* (TODO) Restatement of Dimensions Not on Original Invoice: Determine whether exceptions will be allowed for corrections that modify only non-invoiced dimensions.
+* Technical issues mentioned by Riley.
+* Replacment over Append-only explicitly specified by the end-user.
 
 ## Introduced (version)
 
