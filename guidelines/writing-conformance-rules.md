@@ -1,4 +1,4 @@
-# Guidelines for writing confirmance rules
+# Guidelines for writing conformance rules
 
 As the FOCUS working group moves to introduce a formal conformance rule definition structure the requirement for FOCUS members to understand how to read and write conformance rules will increase. This guide is here to assist those who are starting their journey in writing rules for FOCUS.
 
