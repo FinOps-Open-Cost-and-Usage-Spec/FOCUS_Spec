@@ -103,8 +103,8 @@ class ConformanceRequirements:
             check_function = requirement.get("CheckFunction", None)
             if check_function:
                 self.__add_check_item(requirement, rule_id)
-        for rule_depenency in rule.get("ValidationCriteria", {}).get("Dependencies", []):
-            self.CRGraph.add_edge(rule_id, rule_depenency)
+        for rule_dependency in rule.get("ValidationCriteria", {}).get("Dependencies", []):
+            self.CRGraph.add_edge(rule_id, rule_dependency)
 
     def load_graph(self):
         self.__load_cr_definition()
