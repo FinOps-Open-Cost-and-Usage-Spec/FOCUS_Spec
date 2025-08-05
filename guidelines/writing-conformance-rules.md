@@ -18,7 +18,7 @@ The conformance document for FOCUS contains the following major sections:
 
 ## Steps to apply conformance rules to existing attributes and columns
 
-A Action Item (AI) ticket should be opened to track the progress of implementing the conformance rules for an existing check
+An Action Item (AI) ticket should be opened to track the progress of implementing the conformance rules for an existing check.
 
 ### Stage 1
 
