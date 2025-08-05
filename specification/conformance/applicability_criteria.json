@@ -1,10 +1,10 @@
 {
   "ApplicabilityCriteria": {
     "ACCOUNT_NAMING_SUPPORTED": {
-      "Description": ""
+      "Description": "Data generator supports naming of accounts"
     },
     "AVAILABILITY_ZONE_SUPPORTED": {
-      "Description": "Data generator supports deploying resources or services within an availability zone."
+      "Description": "Data generator supports deploying resources or services within an availability zone"
     },
     "COMMITMENT_DISCOUNT_SUPPORTED": {
       "Description": "Billing data when the data generator supports commitment based discounts"
