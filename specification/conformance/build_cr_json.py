@@ -56,7 +56,7 @@ for root, _, filenames in os.walk(rules_dir):
                 conformance_rules.update(rules)
 cr['ConformanceRules'] = conformance_rules
 
-cr_output_file = f'cr-{cr['Details']['CRVersion']}.json'
+cr_output_file = f"cr-{cr['Details']['CRVersion']}.json"
 try:
     with open(cr_output_file, 'w', encoding='utf-8') as out_file:
         json.dump(cr, out_file, indent=2)
