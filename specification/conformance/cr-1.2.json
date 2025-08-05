@@ -1672,7 +1672,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNTS_SUPPORTED"
+        "COMMITMENT_DISCOUNT_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {

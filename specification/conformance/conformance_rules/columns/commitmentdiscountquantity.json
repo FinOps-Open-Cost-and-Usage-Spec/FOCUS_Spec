@@ -63,7 +63,7 @@
     "Notes": "When the provider supports commitment discounts",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": ["COMMITMENT_DISCOUNTS_SUPPORTED"],
+    "ApplicabilityCriteria": ["COMMITMENT_DISCOUNT_SUPPORTED"],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be present in a FOCUS dataset when the provider supports commitment discounts",
