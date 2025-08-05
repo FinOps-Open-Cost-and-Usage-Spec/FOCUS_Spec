@@ -10,19 +10,7 @@ def init_logger(level):
     logger = logging.getLogger(__name__)
     if (logger.hasHandlers()):
         logger.handlers.clear()
-    match level:
-        case 'DEBUG':
-            logger.setLevel(logging.DEBUG)
-        case 'INFO':
-            logger.setLevel(logging.INFO)
-        case 'WARNING':
-            logger.setLevel(logging.WARNING)
-        case 'ERROR':
-            logger.setLevel(logging.ERROR)
-        case 'CRITICAL':
-            logger.setLevel(logging.CRITICAL)
-        case _:
-            logger.setLevel(logging.INFO)
+    logger.setLevel(getattr(logging, level.upper(), logging.INFO))
 
     console_handler = logging.StreamHandler(sys.stdout)
     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
