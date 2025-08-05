@@ -135,9 +135,9 @@ Base rule for a column which links all related Conformance Rules for the column.
   }
 ```
 
-### Not NULL requirement rule
+### NOT NULL requirement rule
 
-Common rule for columns with a not NULL requirement. Can also be used when there is a NOT NULL on condition.
+Common rule for columns with a NOT NULL requirement. Can also be used when there is a NOT NULL condition.
 
 ```json
   "SampleColumn-C-002-M": {
