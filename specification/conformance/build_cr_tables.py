@@ -132,4 +132,4 @@ if __name__ == "__main__":
     with open("conformance_tables.md", "w") as f:
         f.write(markdown_output + '\n')
     
-    print("Markdown table generated: conformance_tables.md")
+    logger.info("Markdown table generated: conformance_tables.md")
