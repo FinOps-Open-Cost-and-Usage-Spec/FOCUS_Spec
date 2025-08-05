@@ -44,7 +44,7 @@ The first stage of conversion of rules from the normative text to conformance ru
 
 ### Stage 2
 
-The second phase of conversion is to take the table created in Stage 1 and create the entires into the `specification/conformance` folder that adds the rules to the formal json structure.
+The second phase of conversion is to take the table created in Stage 1 and create the entries in the `specification/conformance` folder that adds the rules to the formal JSON structure.
 
 #### Folder structure
 
