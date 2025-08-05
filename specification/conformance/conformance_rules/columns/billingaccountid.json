@@ -33,6 +33,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingAccountId-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingAccountId-C-006-O"
           }
         ]
       },
@@ -133,6 +137,23 @@
     "ValidationCriteria": {
       "MustSatisfy": "MUST be a unique identifier within a provider",
       "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "BillingAccountId-C-006-O": {
+    "Function": "Validation",
+    "Reference": "BillingAccountId",
+    "EntityType": "Column",
+    "Notes": "SHOULD be a fully-qualified identifier",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SHOULD be a fully-qualified identifier",
+      "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

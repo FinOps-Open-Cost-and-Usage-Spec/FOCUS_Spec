@@ -45,6 +45,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CommitmentDiscountQuantity-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CommitmentDiscountQuantity-C-009-O"
           }
         ]
       },
@@ -254,6 +258,33 @@
       "Dependencies": [
         "ChargeCategory-C-000-M",
         "CommitmentDiscountStatus-C-000-M"
+      ]
+    }
+  },
+  "CommitmentDiscountQuantity-C-009-O": {
+    "Function": "Validation",
+    "Reference": "CommitmentDiscountQuantity",
+    "EntityType": "Column",
+    "Notes": "MAY be null when ChargeClass is Correction",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MAY be null when ChargeClass is Correction",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "CommitmentDiscountQuantity",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeClass",
+        "Value": "Correction"
+      },
+      "Dependencies": [
+        "ChargeClass-C-000-M"
       ]
     }
   }

@@ -630,6 +630,10 @@
             {
               "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "BillingAccountId-C-005-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountId-C-006-O"
             }
           ]
         },
@@ -730,6 +734,23 @@
       "ValidationCriteria": {
         "MustSatisfy": "MUST be a unique identifier within a provider",
         "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingAccountId-C-006-O": {
+      "Function": "Validation",
+      "Reference": "BillingAccountId",
+      "EntityType": "Column",
+      "Notes": "SHOULD be a fully-qualified identifier",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "MustSatisfy": "SHOULD be a fully-qualified identifier",
+        "Keyword": "SHOULD",
         "Requirement": {},
         "Condition": {},
         "Dependencies": []
@@ -1282,6 +1303,14 @@
             {
               "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "ChargeDescription-C-003-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ChargeDescription-C-004-O"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ChargeDescription-C-005-O"
             }
           ]
         },
@@ -1349,6 +1378,44 @@
         "Dependencies": [
           "StringHandling-A-000-M"
         ]
+      }
+    },
+    "ChargeDescription-C-004-O": {
+      "Function": "Validation",
+      "Reference": "ChargeDescription",
+      "EntityType": "Column",
+      "Notes": "SHOULD NOT be null",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "SHOULD NOT be null",
+        "Keyword": "SHOULD",
+        "Requirement": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "ChargeDescription",
+          "Value": null
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "ChargeDescription-C-005-O": {
+      "Function": "Validation",
+      "Reference": "ChargeDescription",
+      "EntityType": "Column",
+      "Notes": "Maximum length SHOULD be provided in FOCUS Metadata Schema",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "MustSatisfy": "Maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema",
+        "Keyword": "SHOULD",
+        "Requirement": {},
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "BillingAccountType-C-000-M": {
@@ -1586,6 +1653,10 @@
             {
               "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "CommitmentDiscountQuantity-C-008-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CommitmentDiscountQuantity-C-009-O"
             }
           ]
         },
@@ -1797,6 +1868,33 @@
         "Dependencies": [
           "ChargeCategory-C-000-M",
           "CommitmentDiscountStatus-C-000-M"
+        ]
+      }
+    },
+    "CommitmentDiscountQuantity-C-009-O": {
+      "Function": "Validation",
+      "Reference": "CommitmentDiscountQuantity",
+      "EntityType": "Column",
+      "Notes": "MAY be null when ChargeClass is Correction",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MAY be null when ChargeClass is Correction",
+        "Keyword": "MAY",
+        "Requirement": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "CommitmentDiscountQuantity",
+          "Value": null
+        },
+        "Condition": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "ChargeClass",
+          "Value": "Correction"
+        },
+        "Dependencies": [
+          "ChargeClass-C-000-M"
         ]
       }
     },
