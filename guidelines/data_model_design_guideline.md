@@ -1,6 +1,6 @@
 # FOCUS Data Model Design Guidelines
 
-When considering the addition of a new dataset to the FinOps Foundation’s FOCUS specification, which currently consists of a single time-series dataset, the decision should be guided by clear principles to ensure the specification remains coherent, maintainable, and aligned with its goals. Below are some principles to guide when adding a new dataset is appropriate, tailored to the context of the FOCUS specification and FinOps practices. 
+When considering the addition of a new dataset to the FinOps Foundation’s FOCUS specification, the decision should be guided by clear principles to ensure the specification remains coherent, maintainable, and aligned with its goals. Below are some principles to guide when adding a new dataset is appropriate, tailored to the context of the FOCUS specification and FinOps practices. 
 
 ## Distinct Purpose and Scope
 
@@ -24,11 +24,11 @@ The FOCUS specification is designed to enable FinOps practitioners to manage clo
 
 ### Example
 
-A dataset for anomaly detection (e.g., unexpected cost spikes) or reserved instance utilization might be justified if it supports optimization workflows not adequately addressed by the time-series data.
+A dataset for anomaly detection (e.g., unexpected cost spikes) or reserved instance utilization might be justified if it supports optimization workflows not adequately addressed by the Cost and Usage dataset.
 
 ## Data Granularity and Structure
 
-Datasets should bear the responsibility of representing a specific entity or construct and its data. These entities and therefore their datasets have a distinct represented granularity, structure, or lifecycle that justifies its separation from the <existing time-series name here> dataset.
+Datasets should bear the responsibility of representing a specific entity or construct and its data. These entities and therefore their datasets have a distinct represented granularity, structure, or lifecycle that justifies its separation from the Cost and Usage dataset.
 
 ### Rationale
 
@@ -40,15 +40,15 @@ A dataset representing the overtime charges for a vendor represents a charge ent
 
 ## Interoperability and Integration:
 
-Datasets should integrate seamlessly with the <existing dataset name here>, maintaining consistency in terminology, keys, and standards as defined by the FOCUS specification. Linkages to other datasets in a [primary key](https://en.wikipedia.org/wiki/Primary_key) and [foreign key](https://en.wikipedia.org/wiki/Foreign_key) nature should be identified. Uniqueness scope must be determined and adhered to.
+Datasets should integrate seamlessly with the Cost and Usage dataset, maintaining consistency in terminology, keys, and standards as defined by the FOCUS specification. Linkages to other datasets in a [primary key](https://en.wikipedia.org/wiki/Primary_key) and [foreign key](https://en.wikipedia.org/wiki/Foreign_key) nature should be identified. Uniqueness scope must be determined and adhered to.
 
 ### Rationale
 
-The FOCUS specification emphasizes interoperability across cloud providers and tools. A new dataset should use consistent identifiers (e.g., resource IDs, billing account IDs) and align with the specification’s data model to ensure it can be joined or correlated with the <existing time-series name here> dataset.
+The FOCUS specification emphasizes interoperability across cloud providers and tools. A new dataset should use consistent identifiers (e.g., resource IDs, billing account IDs) and align with the specification’s data model to ensure it can be joined or correlated with the Cost and Usage dataset.
 
 ### Example
 
-A new dataset for vendor-specific pricing data should include standardized keys to link it to the time-series usage data, enabling cross-referencing for cost analysis.
+A new dataset for vendor-specific pricing data should include standardized keys to link it to the Cost and Usage usage dataset, enabling cross-referencing for cost analysis.
 
 ## Scalability and Maintainability
 
@@ -72,7 +72,7 @@ FinOps practitioners rely on FOCUS datasets as sources of truth, should two data
 
 ### Example
 
-A summary dataset for executive dashboards might be justified if it reduces query times for high-level cost reports compared to querying the detailed time-series data.
+A summary dataset for executive dashboards might be justified if it reduces query times for high-level cost reports compared to querying the higly detailed Cost and Usage dataset.
 
 ## Avoid Redundancy
 
@@ -84,7 +84,7 @@ Redundant datasets increase complexity, maintenance overhead, and the risk of in
 
 ### Example
 
-Instead of adding a dataset that repeats time-series cost data, consider whether the existing datasets can be extended with new columns or whether the new dataset addresses a fundamentally different need, like contract or licensing data.
+Instead of adding a dataset that repeats data in the Cost and Usage dataset, consider whether the existing datasets can be extended with new columns or whether the new dataset addresses a fundamentally different need, like contract or licensing data.
 
 ## Future-Proofing and Flexibility
 
