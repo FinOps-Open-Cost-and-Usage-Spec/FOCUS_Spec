@@ -64,7 +64,7 @@ While we could add a tags dataset that provides an overtime history of all tags 
 
 ## Consistency and Conflicting Data:
 
-Datasets should provide a clear and consistent view of data without conflicting information. If a new dataset introduces potential conflicts with existing datasets, it should be avoided or designed to resolve those conflicts. Datasets with linked logic such as over time charges in one and aggregated summations in another dataset should tie out. 
+Datasets should provide a clear and consistent view of data without conflicting information. If a new dataset introduces potential conflicts with existing datasets, it should be avoided or designed to resolve those conflicts. Datasets with related logic, such as charges over time in one and aggregated sums in another, should reconcile with each other. 
 
 ### Rationale:
 
