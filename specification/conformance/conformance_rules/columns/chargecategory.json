@@ -1,0 +1,120 @@
+{"ChargeCategory-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ChargeCategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeCategory-D-001-M" 
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeCategory-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeCategory-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeCategory-C-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeCategory-D-001-M": {
+    "Function": "Presence",
+    "Reference": "ChargeCategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeCategory-C-002-M": {
+    "Function": "Type",
+    "Reference": "ChargeCategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be of type String",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ChargeCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeCategory-C-003-M": {
+    "Function": "NullabilityRules",
+    "Reference": "ChargeCategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST NOT be null",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargeCategory",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeCategory-C-004-M": {
+    "Function": "Validation",
+    "Reference": "ChargeCategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be one of the allowed values",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargeCategory",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
