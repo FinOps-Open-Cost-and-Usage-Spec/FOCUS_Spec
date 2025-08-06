@@ -94,11 +94,19 @@ An open-source specification that defines requirements for billing data.
 
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
+The FOCUS dataset is the primary dataset defined in the specification for capturing cost and usage information. It is one of several dataset types outlined in the FOCUS specification but serves as the central dataset for reporting normalized cost and usage records.
+
 A FOCUS dataset is a structured collection of records that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
 
 In addition to these standardized columns, data generators may include custom provider-specific columns (prefixed with `x_`) where additional context is needed beyond what is captured in the defined FOCUS columns. If such custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
 
-The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness.
+<a name="glossary:FOCUS-adjactent-dataset"><b>FOCUS Adjacent Dataset</b></a>
+
+A FOCUS Adjacent Dataset is any dataset defined within the FOCUS specification that supports or augments the primary FOCUS dataset, but does not itself contain normalized cost and usage records.
+
+These datasets are designed to provide additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness of the FOCUS dataset. Examples include datasets for pricing reference data, commitment discount mapping, or region definitions.
+
+FOCUS Adjacent Datasets follow the same principles of structure and consistency defined by the specification, including column naming conventions and formatting expectations.
 
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
