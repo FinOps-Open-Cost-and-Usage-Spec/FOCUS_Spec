@@ -1,6 +1,6 @@
 # FOCUS Data Model Design Guidelines
 
-When considering the addition of a new dataset to the FinOps Foundation’s FOCUS specification, which currently consists of a single time-series dataset, the decision should be guided by clear principles to ensure the specification remains coherent, maintainable, and aligned with its goals. Below are some principles to guide when adding a new table is appropriate, tailored to the context of the FOCUS specification and FinOps practices. 
+When considering the addition of a new dataset to the FinOps Foundation’s FOCUS specification, which currently consists of a single time-series dataset, the decision should be guided by clear principles to ensure the specification remains coherent, maintainable, and aligned with its goals. Below are some principles to guide when adding a new dataset is appropriate, tailored to the context of the FOCUS specification and FinOps practices. 
 
 ## Distinct Purpose and Scope:
 
