@@ -1,1 +1,0 @@
-The invoice tables is a record of invoice records from the invoice issuer. It is used to track and analyze the financial aspects of invoice records, including totals due, payment status, and currency. 

@@ -21,7 +21,7 @@ FOCUS is an open specification for billing data. It defines a common schema for 
 
 ## Table of Contents
 
-!TOC
+!TOC 2 2 3 2 2 2 2 2
 
 <div style="page-break-after: always"></div>
 
@@ -33,7 +33,7 @@ FOCUS is an open specification for billing data. It defines a common schema for 
 
 <div style="page-break-after: always"></div>
 
-!INCLUDE "columns/columns.mdpp",1
+!INCLUDE "datasets/datasets.mdpp",1
 
 !INCLUDE "attributes/attributes.mdpp",1
 
