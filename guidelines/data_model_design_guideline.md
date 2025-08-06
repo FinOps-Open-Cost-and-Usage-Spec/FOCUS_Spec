@@ -32,7 +32,7 @@ Datasets should bear the responsibility of representing a specific entity or con
 
 ### Rationale:
 
-Different datasets represent different entities and may require different datasets may require different levels of detail, update frequencies, or lifecycle. A new dataset may be appropriate if it captures data at a different granularity (e.g., daily vs. monthly) or has a different temporal nature (e.g., static vs. dynamic). 
+Different datasets represent different entities and may require different levels of detail, update frequencies, or lifecycle. A new dataset may be appropriate if it captures data at a different granularity (e.g., daily vs. monthly) or has a different temporal nature (e.g., static vs. dynamic). 
 
 ### Example:
 
