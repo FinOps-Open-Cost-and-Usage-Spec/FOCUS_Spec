@@ -8,7 +8,7 @@ A dataset should represent a specific entity/s and unique data domain that canno
    
 ### Rationale:
 
-Everything has a place and everything in its place. Datasets should represent distinct entities or constructs that have their own data, metaddata, lifecycle, granularity, and data structure. 
+Everything has a place and everything in its place. Datasets should represent distinct entities or constructs that have their own data, metadata, lifecycle, granularity, and data structure. 
 
 ### Example:
 
