@@ -42,7 +42,7 @@ def generate_markdown(data, dataset_name, logger):
         "Function",
         "Reference",
         "ApplicabilityCriteria",
-        "mustSatisfy",
+        "MustSatisfy",
         "KeyWord",            
         "Requirement",
         "Condition",
