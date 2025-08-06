@@ -40,7 +40,7 @@ A dataset representing the overtime charges for a vendor represents a charge ent
 
 ## Interoperability and Integration:
 
-Datasets should integrate seamlessly with the <existing dataset name here>, maintaining consistency in terminology, keys, and standards as defined by the FOCUS specification. Linkages to other datasets in a [primary key](https://en.wikipedia.org/wiki/Primary_key) and [foreign key](https://en.wikipedia.org/wiki/Foreign_key) nature should be identified. Uniqueness scope must be determined and adhered too.
+Datasets should integrate seamlessly with the <existing dataset name here>, maintaining consistency in terminology, keys, and standards as defined by the FOCUS specification. Linkages to other datasets in a [primary key](https://en.wikipedia.org/wiki/Primary_key) and [foreign key](https://en.wikipedia.org/wiki/Foreign_key) nature should be identified. Uniqueness scope must be determined and adhered to.
 
 ### Rationale:
 
