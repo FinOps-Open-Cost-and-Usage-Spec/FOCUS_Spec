@@ -12,7 +12,7 @@ Everything has a place and everything in its place. Datasets should represent di
 
 ### Example:
 
-If a supported features is added to show invoices and their associated data, a new dataset might be justified to capture invoice information (e.g., invoice number, date, total amount, payment status, finalization status). Because this data is not in alignment with the charge records in the current FOCUS dataset, a new dataset would be appropriate to capture this information.
+If a supported feature is added to show invoices and their associated data, a new dataset might be justified to capture invoice information (e.g., invoice number, date, total amount, payment status, finalization status). Because this data is not in alignment with the charge records in the current FOCUS dataset, a new dataset would be appropriate to capture this information.
 
 ## Alignment with FinOps Use Cases:
 
