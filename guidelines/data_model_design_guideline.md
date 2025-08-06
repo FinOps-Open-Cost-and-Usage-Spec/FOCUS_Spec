@@ -92,7 +92,7 @@ A new dataset should accommodate both current and future supported features or d
 
 ### Rationale:
 
-Cloud environments evolve rapidly, and the FOCUS specification must remain adaptable. A new table should be flexible enough to handle foreseeable changes without requiring frequent restructuring.
+Cloud environments evolve rapidly, and the FOCUS specification must remain adaptable. A new dataset should be flexible enough to handle foreseeable changes without requiring frequent restructuring.
 
 ### Example:
 
