@@ -1,5 +1,6 @@
 # Datasets
 
-FOCUS defines many individual datasets made up of a selected set of columns which abide by the attributes outlined in this FOCUS Specification.
+FOCUS defines many individual datasets made up of a selected set of Columns which abide by the Attributes outlined in this FOCUS Specification.
 
-!INCLUDE "cost_and_usage/cost_and_usage.mdpp",1
+!INCLUDE "focus/focus.mdpp",1
+!INCLUDE "invoices/invoices.mdpp",1
