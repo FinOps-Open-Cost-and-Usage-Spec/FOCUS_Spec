@@ -1,6 +1,40 @@
 # Conformance Requirements (CR)
 
-Organizations developing technical specifications must adopt a structured, machine-readable approach to defining conformance. **Conformance Requirements (CR)** offer a standardized way to define, evaluate, and enforce specification requirements before formal testing.
+Conformance Requirements are structured, testable rules that define how each column in a dataset must behave in order to comply with the FOCUS specification. These rules are extracted from **verbose normative text** and translated into precise **logic statements** that can be programmatically validated. Each requirement includes elements such as _applicability conditions_, _expected behavior_, and _dependencies_ on other rules—enabling both human-readable documentation and automated conformance checking.
+
+## Introduction
+
+This document outlines a structured approach to converting verbose technical requirements from the FOCUS v1.2 specification into precise, programmatically testable conformance requirements. The goal is to enable consistent validation, documentation, and visualization of rules across all dataset columns using structured JSON representations.
+
+The project is divided into three main stages, each with a defined scope and estimated effort:
+
+### Stage 1 – Extract Conformance Requirements from FOCUS v1.2  
+**Estimated Effort: 40% of total project time**
+
+This foundational stage involves analyzing the **FOCUS v1.2** Technical Specification to extract **atomic** and **composite** conformance rules for each dataset column. These are captured in standardized Markdown tables that define logic, applicability, conditions, and dependencies.
+
+The current output for **Stage 1** is **AI-assisted**, with over 85% of rules estimated to be valid. However, member review is critical, as the text of some requirements are complex to formalize in a prompt. The quality and accuracy of this stage directly impact the success of subsequent stages, especially JSON generation and dependency modeling.
+
+### Stage 2 – Convert Extracted Rules into JSON Format  
+**Estimated Effort: 35% of total project time**
+
+This stage translates the structured conformance tables from **Stage 1** into a machine-readable JSON format. Each rule is converted into a defined JSON structure, validated against a shared schema. The conversion process can be largely automated by copying and adapting predefined JSON templates, which are repeated per column.
+
+The JSON output enables programmatic validation and integration into testing workflows, making it a crucial bridge between human-readable requirements and conformance tooling.
+
+### Stage 3 – Model Dependencies Between CRIDs  
+**Estimated Effort: 25% of total project time**
+
+This stage focuses on interpreting the `Requirement` field of each **CRID** to explicitly map dependencies to other **CRIDs** using logical structures such as `AND`, `OR`, and `NOT`. The output is used to construct a dependency graph for each column, enabling accurate validation of composite rules.
+
+**Stage 3** can only be properly completed once both **Stage 1** and **Stage 2** are finalized, as it depends on having both accurate CRID identifiers and their JSON representations available for analysis.
+
+These three stages form the foundation of the conformance modeling workflow. Once complete, additional outputs will be generated from the JSON representations, including:
+
+- A standardized Markdown table of conformance requirements for each column
+- A visual **DAG** _(Directed Acyclic Graph)_ diagram that maps CRID dependencies
+
+This process enables reliable validation, clearer documentation, and easier integration with conformance tooling.
 
 This repository contains modular CR components and a Python-based build process that assembles them into a validated `cr-<version>.json` file using a corresponding JSON Schema (`cr_schema.json`).
 
