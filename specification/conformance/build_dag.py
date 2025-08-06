@@ -1,35 +1,8 @@
 #!/usr/bin/env python3
+import argparse
 import json
 from graphviz import Digraph
-import logging
-import argparse
-import sys
-
-def init_logger(level):
-    # Create a logger instance
-    logger = logging.getLogger(__name__)
-    if (logger.hasHandlers()):
-        logger.handlers.clear()
-    match level:
-        case 'DEBUG':
-            logger.setLevel(logging.DEBUG)
-        case 'INFO':
-            logger.setLevel(logging.INFO)
-        case 'WARNING':
-            logger.setLevel(logging.WARNING)
-        case 'ERROR':
-            logger.setLevel(logging.ERROR)
-        case 'CRITICAL':
-            logger.setLevel(logging.CRITICAL)
-        case _:
-            logger.setLevel(logging.INFO)
-
-    console_handler = logging.StreamHandler(sys.stdout)
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    console_handler.setFormatter(formatter)
-    logger.addHandler(console_handler)
-    return logger
-
+from build_helpers import init_logger
 
 def get_args():
     parser = argparse.ArgumentParser(description='CR Graph Generator.')
