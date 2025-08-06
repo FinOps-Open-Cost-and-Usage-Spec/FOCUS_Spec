@@ -65,8 +65,16 @@ The second phase of conversion is to take the table created in Stage 1 and creat
 - If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` avoiding duplication
 - If you need to add new CheckFunctions add them to `check_functions.json` avoiding duplication
 - Add your top level conformance rule entry into the relevant Dataset entries in the `conformance_datasets.json` file
-
+- Commit your changes to your branch and then move onto raising the PR section
 If you need assistance reach out to Mike Fuller in the FOCUS slack
+
+## Pull Request Workflow
+
+- Navigate to Github and raise a pull request (PR) from your `ai number`-cr-`entity-name`-1121 branch to the `1121-ai-align-on-approach-for-scrs` branch
+- Ensure you link the opened PR to your issue ticket by using the development cog on the right side of the PR page
+- Assign the PR to `mike-finopsorg`
+- Announce your PR in the [#tf-conformance-requirements](https://f2-focus.slack.com/archives/C096UTPE3NF) slack channel for other members to see
+- Once reviewed and the members have had time (5 days) to add any feedback, Mike will merge the PR into the `1121-ai-align-on-approach-for-scrs` branch which will get full review when that branch is reviewed to merge into the `working_draft` branch via the PR [FR #1054: Initial commit with Conformance Data structure](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1209)
 
 ## ConformanceRule Templates
 
