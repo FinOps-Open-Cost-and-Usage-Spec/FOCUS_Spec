@@ -7,7 +7,9 @@ The ContractAppliedCost column adheres to the following requirements:
 * ContractAppliedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *negotiated discounts*.
 * ContractAppliedCost MUST be of type Decimal.
 * ContractAppliedCost MUST conform to [NumericFormat](#numericformat) requirements.
-* ContractAppliedCost MUST NOT be null when [Contract ID](#contractid) is not null.
+* ContractAppliedCost nullability is defined as follows:
+  * ContractAppliedCost MUST be null when [Contract ID](#contractid) is null.
+  * ContractAppliedCost MUST NOT be null when [Contract ID](#contractid) is not null.
 * ContractAppliedCost MUST be a valid decimal value.
 * ContractAppliedCost MUST be denominated in the BillingCurrency.
 
@@ -21,7 +23,7 @@ Contract Applied Cost
 
 ## Description
 
-Cost calculated by multiplying *contracted unit price* and the corresponding Pricing Quantity.
+The cost of the *charge* applied to the contract.
 
 ## Content Constraints
 
