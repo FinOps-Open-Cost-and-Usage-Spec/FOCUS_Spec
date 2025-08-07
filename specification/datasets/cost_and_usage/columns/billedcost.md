@@ -7,6 +7,7 @@ The BilledCost column adheres to the following requirements:
 * BilledCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#numericformat) requirements.
+* BilledCost MUST conform to [InvoiceHandling](#invoicehandling) requirements.
 * BilledCost MUST NOT be null.
 * BilledCost MUST be a valid decimal value.
 * BilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).
