@@ -1,6 +1,6 @@
 # Contract ID
 
-A Contract ID is a provider-assigned identifier for a contract describing the terms of one or more [*negotiated discounts*](#glossary:negotiated-discount) between a provider and a customer. Such discounts are typically the result of a customer committing to a certain amount of spend or usage over an agreed period of time.
+A Contract ID is a provider-assigned identifier for a contract describing the agreed terms of one or more [*negotiated discounts*](#glossary:negotiated-discount) between a provider and a customer. Such discounts are typically the result of a customer committing to a certain amount of spend or usage over an agreed period of time.
 
 The ContractId column adheres to the following requirements:
 
