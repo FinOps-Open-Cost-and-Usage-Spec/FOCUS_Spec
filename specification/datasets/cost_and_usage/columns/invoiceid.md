@@ -7,6 +7,7 @@ The InvoiceId column adheres to the following requirements:
 * InvoiceId is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceId MUST be of type String.
 * InvoiceId MUST conform to [StringHandling](#stringhandling) requirements.
+* The sum of BilledCost values for all rows sharing the same InvoiceId MUST match the total payable amount on the corresponding invoice, unless exceptions defined in the InvoiceHandling attribute apply.
 * InvoiceId nullability is defined as follows:
   * InvoiceId MUST be null when the *charge* is not associated either with an invoice or with a pre-generated provisional invoice.
   * InvoiceId MUST NOT be null when the *charge* is associated with either an issued invoice or a pre-generated provisional invoice.
