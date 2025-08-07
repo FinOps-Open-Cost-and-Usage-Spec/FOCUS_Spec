@@ -1,7 +1,5 @@
 # Correction Handling
 
-## 1. Attribute Name and Scope
-
 Correction Handling attribute defines how updates to previously provided charge records are represented in FOCUS datasets.
 
 Although the FOCUS Glossary currently limits the definition of "Correction" to invoiced billing periods, this attribute broadens the scope to encompass all corrections — independent of billing period or invoice status.
@@ -14,8 +12,6 @@ This attribute applies to all corrections, whether the original charge was from:
 
 Corrections may arise from a variety of operational or technical causes, such as refunds, late-arriving or delayed cost and usage records, rounding errors or post-processing adjustments, etc.
 
-## 3. Business/Operational Motivations
-
 Correctly modeling corrections is essential for a range of business-critical processes:
 
 * Auditability: Consumers of cost data must be able to trace the full lifecycle of a charge, including the original record and all related corrections.
@@ -23,9 +19,7 @@ Correctly modeling corrections is essential for a range of business-critical pro
 * Cost Allocation and Chargeback: Corrections must be clearly attributed to the right dimensions (e.g., account, SKU, region) to ensure accurate allocation.
 * Temporal Accuracy: The timing of a correction (when it's recorded) may differ from when the charge was incurred — both must be accurately captured.
 
-## 4. Clarifications of Related Concepts
-
-### Provisioning Styles
+## Provisioning Styles
 
 To ensure consistent interpretation and correct implementation, it's important to clarify how Correction Handling relates to other foundational concepts such as data delivery styles and invoice finalization.
 
@@ -42,7 +36,7 @@ In ledger-style correction, adjustments are modeled by adding one or more record
 
 In contrast, accounting-style correction uses a two-step representation: the original record is first reversed using a row with negative values for cost and quantity, and then followed by a new record with the corrected values. The reversal MUST match the original in all fields, except for the negated numeric amounts. This model preserves a full correction history and is RECOMMENDED when transparency and traceability are required.
 
-### Invoice Finalization
+## Invoice Finalization
 
 A billing period is considered closed once all invoices for that period are finalized. After that point, the original invoice and its records must remain immutable. Corrections to such periods must not overwrite existing records and must follow special provisioning rules (see below).
 
