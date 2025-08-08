@@ -1,6 +1,6 @@
 # Entity Identification Examples
 
-The following examples show how entity identification columns and metadata differ depending on multiple factors such as purchasing mechanism, hosting transparency, marketplace and reseller scenarios.
+Understanding cost and usage data in billing datasets requires identifying the roles of several participating entities involved in resource or service provisioning, invoicing, and the processing, presentation, and delivery of that data. The key participating entities include:
 
 * [Service Provider](#ServiceProvider): The entity that made the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 * [Invoice Issuer](#invoiceissuer): The entity responsible for invoicing for the *resources* or *services* consumed.
