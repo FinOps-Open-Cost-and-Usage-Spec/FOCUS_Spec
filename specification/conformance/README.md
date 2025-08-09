@@ -39,6 +39,7 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 - **Dataset** - Requirement affecting the dataset as a whole.
   _e.g._: `BilledCost-D-001-M`
 - **Other** - There is a possibility we may define other entities such as e.g. `Provider`
+
 ---
 
 ## 🧩 Feature Types & Grouping
@@ -95,7 +96,7 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 In general, the version of each Conformance Requirement (CR) is aligned with the version of the FOCUS Specification to which it applies. However, there may be occasions where a correction or clarification is required due to an error or bug in a previously published CR definition.
 
-To accommodate these changes without altering the core FOCUS Specification version, the `Version` field of an CR may differ slightly from the associated FOCUS Specification version. This allows us to make targeted corrections while preserving compatibility and traceability.
+To accommodate these changes without altering the core FOCUS Specification version, the `Version` field of a CR may differ slightly from the associated FOCUS Specification version. This allows us to make targeted corrections while preserving compatibility and traceability.
 
 Versioning Format:
 

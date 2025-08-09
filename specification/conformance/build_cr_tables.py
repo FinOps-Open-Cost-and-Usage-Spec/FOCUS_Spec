@@ -1,34 +1,9 @@
 #!/usr/bin/env python3
+import argparse
 import json
 from collections import deque
-import logging
-import argparse
-import sys
+from build_helpers import init_logger
 
-def init_logger(level):
-    # Create a logger instance
-    logger = logging.getLogger(__name__)
-    if (logger.hasHandlers()):
-        logger.handlers.clear()
-    match level:
-        case 'DEBUG':
-            logger.setLevel(logging.DEBUG)
-        case 'INFO':
-            logger.setLevel(logging.INFO)
-        case 'WARNING':
-            logger.setLevel(logging.WARNING)
-        case 'ERROR':
-            logger.setLevel(logging.ERROR)
-        case 'CRITICAL':
-            logger.setLevel(logging.CRITICAL)
-        case _:
-            logger.setLevel(logging.INFO)
-
-    console_handler = logging.StreamHandler(sys.stdout)
-    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-    console_handler.setFormatter(formatter)
-    logger.addHandler(console_handler)
-    return logger
 
 def get_args():
     parser = argparse.ArgumentParser(description='CR Table Generator.')
@@ -67,7 +42,7 @@ def generate_markdown(data, dataset_name, logger):
         "Function",
         "Reference",
         "ApplicabilityCriteria",
-        "mustSatisfy",
+        "MustSatisfy",
         "KeyWord",            
         "Requirement",
         "Condition",
@@ -144,4 +119,4 @@ if __name__ == "__main__":
     with open("conformance_tables.md", "w") as f:
         f.write(markdown_output + '\n')
     
-    print("Markdown table generated: conformance_tables.md")
+    logger.info("Markdown table generated: conformance_tables.md")

@@ -1,5 +1,5 @@
 {
-  "ColumnNamingandOrdering-A-000-M": {
+  "ColumnHandling-A-000-M": {
     "Function": "Composite",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -16,55 +16,55 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-001-M"
+            "ConformanceRuleId": "ColumnHandling-A-001-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-002-M"
+            "ConformanceRuleId": "ColumnHandling-A-002-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-003-M"
+            "ConformanceRuleId": "ColumnHandling-A-003-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-004-O"
+            "ConformanceRuleId": "ColumnHandling-A-004-O"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-005-O"
+            "ConformanceRuleId": "ColumnHandling-A-005-O"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-006-O"
+            "ConformanceRuleId": "ColumnHandling-A-006-O"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-007-O"
+            "ConformanceRuleId": "ColumnHandling-A-007-O"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-008-M"
+            "ConformanceRuleId": "ColumnHandling-A-008-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-009-M"
+            "ConformanceRuleId": "ColumnHandling-A-009-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-010-O"
+            "ConformanceRuleId": "ColumnHandling-A-010-O"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-011-O"
+            "ConformanceRuleId": "ColumnHandling-A-011-O"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-012-O"
+            "ConformanceRuleId": "ColumnHandling-A-012-O"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnNamingandOrdering-A-013-O"
+            "ConformanceRuleId": "ColumnHandling-A-013-O"
           }
         ]
       },
@@ -72,7 +72,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-001-M": {
+  "ColumnHandling-A-001-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -89,7 +89,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-002-M": {
+  "ColumnHandling-A-002-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -106,7 +106,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-003-M": {
+  "ColumnHandling-A-003-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -123,7 +123,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-004-O": {
+  "ColumnHandling-A-004-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -140,7 +140,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-005-O": {
+  "ColumnHandling-A-005-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -157,7 +157,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-006-O": {
+  "ColumnHandling-A-006-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -174,7 +174,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-007-O": {
+  "ColumnHandling-A-007-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -191,7 +191,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-008-M": {
+  "ColumnHandling-A-008-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -208,7 +208,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-009-M": {
+  "ColumnHandling-A-009-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -225,7 +225,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-010-O": {
+  "ColumnHandling-A-010-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -242,7 +242,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-011-O": {
+  "ColumnHandling-A-011-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -259,7 +259,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-012-O": {
+  "ColumnHandling-A-012-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -276,7 +276,7 @@
       "Dependencies": []
     }
   },
-  "ColumnNamingandOrdering-A-013-O": {
+  "ColumnHandling-A-013-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",

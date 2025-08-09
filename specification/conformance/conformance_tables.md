@@ -1,6 +1,6 @@
 # Conformance Dataset: FOCUS
 
-| ConformanceRuleId | Function | Reference | ApplicabilityCriteria | mustSatisfy | KeyWord | Requirement | Condition | Type | CRVersionIntroduced | Status |
+| ConformanceRuleId | Function | Reference | ApplicabilityCriteria | MustSatisfy | KeyWord | Requirement | Condition | Type | CRVersionIntroduced | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | AvailabilityZone-C-000-M | Composite | AvailabilityZone | AVAILABILITY_ZONE_SUPPORTED |  |  | AND of [Check AvailabilityZone-C-001-C, Check AvailabilityZone-C-002-M, Check AvailabilityZone-C-003-M, Check AvailabilityZone-C-004-M] |  | Static | 1.2 | Active |
 | AvailabilityZone-C-001-C | Presence | AvailabilityZone | AVAILABILITY_ZONE_SUPPORTED |  |  | ColumnPresent(SampleColumn) |  | Static | 1.2 | Active |
