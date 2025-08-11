@@ -1,6 +1,6 @@
 # Host Provider
 
-A Host Provider is an entity whose [*resources*](#glossary:resource) are used by the Service Provider to make their [*resources*](#glossary:resource) or [*services*](#glossary:service) available.
+A Host Provider is an entity that provides the underlying infrastructure on which the [*resources*](#glossary:resource) or [*services*](#glossary:service) of one or more Service Providers are deployed.
 
 The HostProvider column adheres to the following requirements:
 
@@ -28,7 +28,7 @@ The name of the entity whose *resources* are used by the Service Provider to mak
 | Constraint      | Value            |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| Feature level   | Recommended      |
+| Feature level   | Mandatory        |
 | Allows nulls    | True             |
 | Data type       | String           |
 | Value format    | \<not specified> |
