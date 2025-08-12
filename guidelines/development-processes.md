@@ -79,6 +79,12 @@ If it is determined that an AI is too large or contains multiple items, it shoul
 
 The Assignee(s) of an AI Issue is ultimately the FOCUS member(s) leading the development of that particular piece of work. If you would like to contribute to an open AI the best first step would be to reach out to the assignee(s) for guidance.
 
+For each Feature Request under development, a single AI must be marked as the `Critical Path` in the project view.  Such an AI has been deemed to have special importance for moving the Feature Request towards the creation of a reviewable, open pull request.  If a `Critical Path` AI is closed, then a new `Critical Path` must be assigned.
+
+If an AI is due or past due, the assignee is expected to record a progress report and a proposed revised due date on the issue within GitHub.
+
+If an AI has been completed, but a follow-on task has been determined, then the AI should not be closed until the follow-on task has been recorded, assigned, and given a due date.
+
 Action Item Issues will have a title that starts with \`\[AI]\`.
 
 
