@@ -39,7 +39,7 @@ A billing period is considered closed once all invoices for that period are fina
 
 If a correction is applied to a charge from a closed billing period, the corrected record must:
 
-* The correction MUST NOT replace or omitt the original record.
+* The correction MUST NOT replace or omit the original record.
 * Be assigned to a different invoice (i.e., not the one originally associated with the charge).
 * Have BillingPeriodStart and BillingPeriodEnd values that correspond to the open billing period in which the correction is issued.
 * Preserve the original ChargePeriodStart and ChargePeriodEnd values to indicate when the corrected cost was actually incurred.
