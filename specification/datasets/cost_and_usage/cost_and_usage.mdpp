@@ -1,0 +1,7 @@
+# Cost and Usage
+
+The Cost and Usage dataset is the primary dataset for FOCUS cost and usage data.
+
+The specification for the Cost and Usage dataset defines a group of columns that provide qualitative values (such as dates, resource, and provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The columns are presented in alphabetical order.
+
+!INCLUDE "columns/columns.mdpp",0
