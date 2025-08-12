@@ -28,6 +28,7 @@ The FOCUS specification defines a group of columns that provide qualitative valu
 !INCLUDE "consumedquantity.md",1
 !INCLUDE "consumedunit.md",1
 !INCLUDE "contractappliedcost.md",1
+!INCLUDE "contractappliedquantity.md",1
 !INCLUDE "contractedcost.md",1
 !INCLUDE "contractedunitprice.md",1
 !INCLUDE "contractid.md",1
