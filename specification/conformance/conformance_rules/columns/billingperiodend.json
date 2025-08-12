@@ -111,7 +111,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
       "CheckFunction": "CheckNotValue",
       "ColumnName": "BillingPeriodEnd",
