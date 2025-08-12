@@ -41,7 +41,6 @@ spec.md: $(SPEC_SOURCE_FILES)
 	fi
 	./validate_includes.py supported_features
 	./validate_includes.py datasets/focus/columns
-	./validate_includes.py datasets/invoices/columns
 	./validate_includes.py attributes
 	./validate_includes.py metadata
 	./validate_includes.py metadata/data_generator
