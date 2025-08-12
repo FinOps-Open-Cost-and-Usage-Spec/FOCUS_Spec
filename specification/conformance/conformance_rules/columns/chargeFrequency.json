@@ -1,0 +1,148 @@
+{
+  "ChargeFrequency-C-000-O": {
+    "Function": "Composite",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "Notes": "Root composite – most restrictive child is Conditional (C)",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All ChargeFrequency rules MUST be enforced",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeFrequency-D-001-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeFrequency-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeFrequency-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeFrequency-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeFrequency-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeFrequency-D-001-O": {
+    "Function": "Presence",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "Notes": "Feature level is Recommended",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency is RECOMMENDED to be present in a FOCUS dataset",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeFrequency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeFrequency-C-002-M": {
+    "Function": "Type",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency MUST be of type String",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ChargeFrequency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeFrequency-C-003-M": {
+    "Function": "Validation",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency MUST NOT be null",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargeFrequency",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeFrequency-C-004-M": {
+    "Function": "Validation",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency MUST be one of the allowed values",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeFrequency-C-005-C": {
+    "Function": "Validation",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Column",
+    "Notes": "Cross-column reference to ChargeCategory",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency MUST NOT be \"Usage-Based\" when ChargeCategory is \"Purchase\"",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargeFrequency",
+        "Value": "Usage-Based"
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Purchase"
+      },
+      "Dependencies": [
+        "ChargeCategory-C-000-M"
+      ]
+    }
+  }
+}
