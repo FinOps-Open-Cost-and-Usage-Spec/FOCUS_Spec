@@ -128,6 +128,16 @@
         "ResultColumnName"
       ],
       "FormatAttributes": []
-    }
+    },
+    "TypeDateTime": {
+      "Description": "Check column has the data type of datetime",
+      "Arguments": ["ColumnName"],
+      "FormatAttributes": []
+    },
+    "CheckExclusiveEndBound": {
+      "Description": "Verify EndColumn is the exclusive end bound of the billing period (i.e., ranges are [Start, End) and never include charges at End).",
+      "Arguments": ["StartColumnName", "EndColumnName"],
+      "FormatAttributes": ["DateTimeFormat-A-000-M"]
+  }
   }
 }
