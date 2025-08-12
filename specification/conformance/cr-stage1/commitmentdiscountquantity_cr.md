@@ -1,4 +1,5 @@
 ### Conformance Requirements – `Commitment Discount Quantity`
+
 text: [commitmentdiscountquantity-v1_2.md](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/v1.2/specification/columns/commitmentdiscountquantity.md)
 
 | CRID                               | Function         | Reference                    | Keyword  | ApplicabilityCriteria                  | Condition                                                                        | MustSatisfy                                                                                                                                                                                                          | Requirement                                                                                                                                                                             | Type   | CRVersionIntroduced | Status | Notes                                    |
