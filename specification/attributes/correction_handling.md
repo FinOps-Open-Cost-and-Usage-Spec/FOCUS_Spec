@@ -2,22 +2,16 @@
 
 Correction Handling attribute defines how updates to previously provided charge records are represented in FOCUS datasets.
 
-Although the FOCUS Glossary currently limits the definition of "Correction" to invoiced billing periods, this attribute broadens the scope to encompass all corrections — independent of billing period or invoice status.
+**Terminology Note:** Correction (uppercase) refers specifically to the allowed value in the Charge Class column, which is limited to corrections to previously invoiced billing periods. In contrast, the Correction Handling attribute covers corrections (lowercase) to all previously provided charge records, including those that occurred in previously invoiced, uninvoiced, or current billing periods.
 
-This attribute applies to all corrections, whether the original charge was from:
+Corrections may arise from a variety of operational or technical causes, such as refunds, delayed or missing usage data, rounding errors or post-processing adjustments, etc.
 
-* A previously invoiced and closed billing period
-* A prior billing period that is not yet invoiced
-* The current billing period
+Accurate correction handling is essential for a range of business-critical processes, including but not limited to:
 
-Corrections may arise from a variety of operational or technical causes, such as refunds, late-arriving or delayed cost and usage records, rounding errors or post-processing adjustments, etc.
-
-Correctly modeling corrections is essential for a range of business-critical processes:
-
-* Auditability: Consumers of cost data must be able to trace the full lifecycle of a charge, including the original record and all related corrections.
-* Legal and Financial Integrity: Since invoices are binding financial documents, post-invoice corrections must preserve original data and record changes separately.
-* Cost Allocation and Chargeback: Corrections must be clearly attributed to the right dimensions (e.g., account, SKU, region) to ensure accurate allocation.
-* Temporal Accuracy: The timing of a correction (when it's recorded) may differ from when the charge was incurred — both must be accurately captured.
+* Temporal accuracy – capturing both when the charge was incurred (reflected in the charge periods, i.e., Charge Period Start and Charge Period End columns) and when the correction was invoiced (reflected in the billing period, i.e., Billing Period Start and Billing Period End columns).
+* Financial and legal integrity – preserving original charge records associated with finalized invoices and recording changes to those records separately, as finalized invoices represent binding financial documents requiring immutability and traceability.
+* Cost allocation and chargeback – attributing corrections to the correct dimensions (e.g., Billing Account, Sub Account, SKU ID, SKU Price ID, Resource ID).
+* Auditability – tracing the full lifecycle of a charge from the original record through all subsequent corrections.
 
 ## Provisioning Styles
 
@@ -25,16 +19,19 @@ To ensure consistent interpretation and correct implementation, it's important t
 
 Data generators typically deliver cost and usage records using one of two models:
 
-* Replacement — Previously delivered records are overwritten with updated versions. This model assumes consumers will discard prior versions and always use the latest available data.
-* Append-only — To correct the original, one or more new records are added without modifying existing ones. Corrections are represented by adding new rows, and previously delivered rows remain unchanged.
+* Replacement:
+  * Previously delivered records are overwritten with updated versions, omitted if obsolete, or supplemented with additional records. This model assumes consumers will discard prior versions and always use the latest available data. 
+  * Previously delivered records may be overwritten with updated versions, omitted when obsolete, or supplemented with additional records to represent related corrections (e.g., refunds). Multiple records for the same dimensions may coexist, so consumers should handle such cases appropriately. This model does not provide a built-in audit trail; consumers must maintain historical snapshots independently to enable auditability.
+* Append-only:
+  * To correct the original, one or more new records are added without modifying existing ones. Corrections are represented by adding new rows, and previously delivered rows remain unchanged.
+  * Corrections are implemented by adding one or more new records without modifying or deleting any previously delivered records. Duplicate records are explicitly disallowed. All original and correction records are preserved as distinct entries, inherently supporting a built-in audit trail.
 
-FOCUS supports both Replacement and Append-only delivery styles for most use cases. However, for corrections to charges originally incurred in previously closed billing periods, only append-only modeling is permitted. This ensures financial integrity and enables accurate audit trails.
+FOCUS supports both Replacement and Append-only delivery styles for most use cases. However, for corrections to charges originally incurred in previously invoiced billing periods, only append-only modeling is permitted. This ensures financial integrity and enables accurate audit trails.
 
-There are two standard approaches to modeling corrections in append-only delivery systems supported by FOCUS.
+There are two standard approaches to modeling corrections in append-only delivery model:
 
-In ledger-style correction, adjustments are modeled by adding one or more records that increment or decrement the cost or usage quantity. These records MUST retain all non-numeric fields (e.g., service, region, usage type) identical to the original. There is no explicit reversal of the original record; only the net effect is reflected. This method reduces data volume but provides limited audit transparency.
-
-In contrast, accounting-style correction uses a two-step representation: the original record is first reversed using a row with negative values for cost and quantity, and then followed by a new record with the corrected values. The reversal MUST match the original in all fields, except for the negated numeric amounts. This model preserves a full correction history and is RECOMMENDED when transparency and traceability are required.
+* In ledger-style correction, adjustments are modeled by adding one or more records that increment or decrement the cost or usage quantity. These records MUST retain all non-numeric fields (e.g., service, region, usage type) identical to the original. There is no explicit reversal of the original record; only the net effect is reflected. This method reduces data volume but provides limited audit transparency.
+* In contrast, accounting-style correction uses a two-step representation: the original record is first reversed using a row with negative values for cost and quantity, and then followed by a new record with the corrected values. The reversal MUST match the original in all fields, except for the negated numeric amounts. This model preserves a full correction history and is RECOMMENDED when transparency and traceability are required.
 
 ## Invoice Finalization
 
@@ -78,9 +75,11 @@ All corrections/changes to previously provided charge records in FOCUS dataset M
 
 ## Exceptions
 
+> WORK IN PROGRESS !!!
+
 Potential exceptions, to be discussed:
 
-* (TODO) Restatement of Dimensions Not on Original Invoice: Determine whether exceptions will be allowed for corrections that modify only non-invoiced dimensions.
+* Restatement of Dimensions Not on Original Invoice: Determine whether exceptions will be allowed for corrections that modify only non-invoiced dimensions.
 * Technical issues mentioned by Riley.
 * Replacment over Append-only explicitly specified by the end-user.
 
