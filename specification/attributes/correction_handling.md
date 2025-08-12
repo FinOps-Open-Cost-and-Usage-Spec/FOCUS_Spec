@@ -8,14 +8,14 @@ Corrections may arise from a variety of operational or technical causes, such as
 
 Accurate correction handling is essential for a range of business-critical processes, including but not limited to:
 
-* Temporal accuracy – capturing both when the charge was incurred (reflected in the charge periods, i.e., Charge Period Start and Charge Period End columns) and when the correction was invoiced (reflected in the billing period, i.e., Billing Period Start and Billing Period End columns).
-* Financial and legal integrity – preserving original charge records associated with finalized invoices and recording changes to those records separately, as finalized invoices represent binding financial documents requiring immutability and traceability.
-* Cost allocation and chargeback – attributing corrections to the correct dimensions (e.g., Billing Account, Sub Account, SKU ID, SKU Price ID, Resource ID).
-* Auditability – tracing the full lifecycle of a charge from the original record through all subsequent corrections.
+* Temporal accuracy - capturing both when the charge was incurred (reflected in the charge periods, i.e., Charge Period Start and Charge Period End columns) and when the correction was invoiced (reflected in the billing period, i.e., Billing Period Start and Billing Period End columns).
+* Financial and legal integrity - preserving original charge records associated with finalized invoices and recording changes to those records separately, as finalized invoices represent binding financial documents requiring immutability and traceability.
+* Cost allocation and chargeback - attributing corrections to the correct dimensions (e.g., Billing Account, Sub Account, SKU ID, SKU Price ID, Resource ID).
+* Auditability - tracing the full lifecycle of a charge from the original record through all subsequent corrections.
 
 ## Provisioning Styles
 
-To ensure consistent interpretation and correct implementation, it's important to clarify how Correction Handling relates to other foundational concepts such as data delivery styles and invoice finalization.
+To ensure consistent interpretation and correct implementation, it is important to clarify how Correction Handling relates to other foundational concepts such as data delivery styles and invoice finalization.
 
 Data generators typically deliver cost and usage records using one of two models:
 
