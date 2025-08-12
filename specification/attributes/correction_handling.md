@@ -20,7 +20,7 @@ To ensure consistent interpretation and correct implementation, it's important t
 Data generators typically deliver cost and usage records using one of two models:
 
 * Replacement:
-  * Previously delivered records are overwritten with updated versions, omitted if obsolete, or supplemented with additional records. This model assumes consumers will discard prior versions and always use the latest available data. 
+  * Previously delivered records are overwritten with updated versions, omitted if obsolete, or supplemented with additional records. This model assumes consumers will discard prior versions and always use the latest available data.
   * Previously delivered records may be overwritten with updated versions, omitted when obsolete, or supplemented with additional records to represent related corrections (e.g., refunds). Multiple records for the same dimensions may coexist, so consumers should handle such cases appropriately. This model does not provide a built-in audit trail; consumers must maintain historical snapshots independently to enable auditability.
 * Append-only:
   * To correct the original, one or more new records are added without modifying existing ones. Corrections are represented by adding new rows, and previously delivered rows remain unchanged.
