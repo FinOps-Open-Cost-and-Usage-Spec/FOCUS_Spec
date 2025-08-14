@@ -1,6 +1,6 @@
 # Contract Period Start
 
-Contract Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a [*contract period*](#glossary:contractperiod). For example, a time period where Contract Period Start is '2024-01-01T00:00:00Z' and [Contract End](#chargeperiodend) is '2025-01-01T00:00:00Z' includes January 1 2024 since Contract Period Start represents the *inclusive start bound*, but does not include *charges* for January 2 2025 since Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
+Contract Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a [*contract period*](#glossary:contractperiod). For example, a time period where Contract Period Start is '2024-01-01T00:00:00Z' and [Contract Period End](#contractperiodend) is '2025-01-01T00:00:00Z' includes January 1 2024 since Contract Period Start represents the *inclusive start bound*, but does not include January 2 2025 since Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
 
 The ContractPeriodStart column adheres to the following requirements:
 
