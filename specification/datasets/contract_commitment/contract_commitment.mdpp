@@ -1,0 +1,7 @@
+# Contract Commitment
+
+The Contract Commitment dataset is a supporting dataset that describes the terms of contracts agreed between a provider and a customer.
+
+The Contract Commitment dataset can be joined to the Cost and Usage dataset through the use of the Contract Commitment ID field.
+
+!INCLUDE "columns/columns.mdpp",0
