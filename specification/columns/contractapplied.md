@@ -20,7 +20,7 @@ The ContractApplied column adheres to the following requirements:
 * When ContractApplied is not null, ContractApplied adheres to the following additional requirements:
   * ContractApplied MUST contain four key-value pairs, representing ContractCommitmentID, ContractCommitmentAppliedCost, ContractCommitmentAppliedQuantity, and ContractCommitmentAppliedUnit.
 
-The next sections describe the four datapoints contained with Contract Applied, each of which have their own requirements.
+The next sections describe the four datapoints contained within Contract Applied, each of which have their own requirements.
 
 ### Contract Commitment ID
 
