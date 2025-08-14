@@ -17,6 +17,8 @@ The ContractApplied column adheres to the following requirements:
 
 The next sections describe the four datapoints contained with Contract Applied, each of which have their own requirements.
 
+## Data Association
+
 ### Contract Commitment ID
 
 The ContractCommitmentID column adheres to the following requirements:
@@ -25,15 +27,32 @@ The ContractCommitmentID column adheres to the following requirements:
 
 ### Contract Commitment Applied Cost
 
+Contract Commitment Applied Cost represents the cost of the charge applied to the contract line item.  Contract Commitment Applied Cost is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Cost is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as negotiated between a provider and a customer.
+
 The ContractCommitmentAppliedCost column adheres to the following requirements:
 
-<<tbd>>
+* ContractCommitmentAppliedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* ContractCommitmentAppliedCost MUST be of type Decimal.
+* ContractCommitmentAppliedCost MUST conform to [NumericFormat](#numericformat) requirements.
+* ContractCommitmentAppliedCost nullability is defined as follows:
+  * ContractCommitmentAppliedCost MUST be null when Contract Commitment ID is null.
+  * ContractCommitmentAppliedCost MUST NOT be null when Contract Commitment ID is not null.
+* ContractCommitmentAppliedCost MUST be a valid decimal value.
+* ContractCommitmentAppliedCost MUST be denominated in the BillingCurrency.
 
 ### Contract Commitment Applied Quantity
 
+Contract Commitment Applied Quantity represents the quantity of the charge applied to the contract line item.  Contract Commitment Applied Quantity is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as negotiated between a provider and a customer.
+
 The ContractCommitmentAppliedQuantity column adheres to the following requirements:
 
-<<tbd>>
+* ContractCommitmentAppliedQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* ContractCommitmentAppliedQuantity MUST be of type Decimal.
+* ContractCommitmentAppliedQuantity MUST conform to [NumericFormat](#numericformat) requirements.
+* ContractCommitmentAppliedQuantity nullability is defined as follows:
+  * ContractCommitmentAppliedQuantity MUST be null when Contract Commitment ID is null.
+  * ContractCommitmentAppliedQuantity MUST NOT be null when Contract Commitment ID is not null.
+* ContractCommitmentAppliedQuantity MUST be a valid decimal value.
 
 ### Contract Commitment Applied Unit
 
