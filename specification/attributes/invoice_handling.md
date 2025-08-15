@@ -1,6 +1,6 @@
 # Invoice Handling
 
-FinOps practitioners must be able to reconcile structured billing data with the invoices they receive from providers. In practice, this means ensuring that all monetary charges that appear on an invoice — including those not tied to metered usage — are represented in the FOCUS dataset. Without this alignment, it becomes difficult to perform accurate invoice reconciliation, financial reporting, and chargeback.
+FinOps practitioners must be able to reconcile FOCUS datasets with the corresponding invoices and usage statements they receive from providers. In practice, this means ensuring that all monetary charges that appear on an invoice or usage statement — including those not tied to metered usage — are represented in the FOCUS dataset. Without this alignment, it becomes difficult to perform accurate invoice reconciliation, financial reporting, and chargeback.
 
 This attribute introduces requirements for how non-usage charges such as taxes, credits, refunds, support, training, and marketplace transactions SHOULD be captured and categorized. It also defines expectations around the completeness and consistency of invoice-level totals within the dataset, enabling FOCUS to serve as a reliable system of record for all invoiced costs.
 
