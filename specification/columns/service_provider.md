@@ -39,4 +39,3 @@ The name of the entity that made the *resources* or *services* available for pur
 
 1.3
 Previous Name: Provider
-
