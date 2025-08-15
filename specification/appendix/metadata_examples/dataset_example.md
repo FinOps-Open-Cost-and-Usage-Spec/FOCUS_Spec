@@ -58,7 +58,7 @@ The schema for the data artifact conforming to the dataset FOCUS Cost and Usage.
 }
 ```
 
-The schema for the data artifact conforming to the dataset FOCUS Contracts 
+The schema for the data artifact conforming to the dataset FOCUS Contracts.
 
 ```json
 {
