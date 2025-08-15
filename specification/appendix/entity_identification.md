@@ -2,10 +2,10 @@
 
 Understanding cost and usage data in billing datasets requires identifying the roles of several participating entities involved in resource or service provisioning, invoicing, and the processing, presentation, and delivery of that data. The key participating entities include:
 
-* [Service Provider](#ServiceProvider): The entity that made the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
-* [Invoice Issuer](#invoiceissuer): The entity responsible for invoicing for the *resources* or *services* consumed.
-* [Host Provider](#HostProvider): The entity whose [*resources*](#glossary:resource) are used by the Service Provider to make their [*resources*](#glossary:resource) or [*services*](#glossary:service) available.
-* [Data Generator](#DataGenerator): The entity that generated the [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* [Service Provider](#ServiceProvider)
+* [Invoice Issuer](#invoiceissuer)
+* [Host Provider](#HostProvider)
+* [Data Generator](#DataGenerator)
 
 The value for each of these may vary depending on how *resources* or *services* are obtained — whether directly from a Cloud Service Provider (CSP) or a SaaS provider, via a Managed Service Provider (MSP), through a cloud marketplace, or from internal service offerings. The table below provides examples that illustrate how the value for each dimension may shift depending on the method of acquisition and other contributing factors.
 
