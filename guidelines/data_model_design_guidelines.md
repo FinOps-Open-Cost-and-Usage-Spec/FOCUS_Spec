@@ -68,7 +68,7 @@ Datasets must provide a clear and consistent view of data without conflicting in
 
 ### Rationale
 
-FinOps practitioners rely on FOCUS datasets as sources of truth, should two datasets provide the same data, there is a risk of introducing inconsistencies or confusion. A new dataset should not contradict existing data unless it provides a clear resolution or additional context.
+FinOps practitioners rely on FOCUS datasets as sources of truth. Should two datasets provide the same data, there is a risk of introducing inconsistencies or confusion. A new dataset should not contradict existing data unless it provides a clear resolution or additional context.
 
 ### Example
 
