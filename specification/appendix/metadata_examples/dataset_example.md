@@ -1,6 +1,4 @@
-ACME provides two FOCUS datasets: Cost and Usage and Contract. Each [Schema](#schema) 
-
-# Schema Metadata
+# Dataset Metadata Example
 
 ## Scenario
 
