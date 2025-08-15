@@ -14,13 +14,13 @@ Everything has a place and everything in its place. Datasets should represent di
 
 If a supported feature is added to show invoices and their associated data, a new dataset might be justified to capture invoice information (e.g., invoice number, date, total amount, payment status, finalization status). Because this data is not in alignment with the charge records in the current FOCUS dataset, a new dataset would be appropriate to capture this information.
 
-## Alignment with FinOps Use Cases
+## Alignment with FOCUS Supported Features
 
-The new dataset should directly support one or more core FinOps practices, such as cost allocation, optimization, forecasting, or reporting, as defined by the FinOps Foundation.
+The new dataset should directly support one or more core FOCUS [*Supported Features*](#Supported Features). These supported features are guided by the Finops Framework.
 
 ### Rationale
 
-The FOCUS specification is designed to enable FinOps practitioners to manage cloud costs effectively. Any new dataset should map to specific entity that is relevant to FinOps.
+The FOCUS specification is designed to enable FinOps practitioners to manage cloud costs effectively. Any new dataset should map to FOCUS Supported Features. These features are driven by the Finops Framework. 
 
 ### Example
 
