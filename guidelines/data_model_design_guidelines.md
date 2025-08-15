@@ -4,7 +4,7 @@ When considering the addition of a new dataset to the FinOps Foundation’s FOCU
 
 ## Distinct Purpose and Scope
 
-A dataset should represent a specific entity/s and unique data domain that cannot be effectively or logically accommodated in other Datasets. Dataset exist as stand alone entities.  
+A dataset should represent a specific entity/s and unique data domain that cannot be effectively or logically accommodated in other Datasets. Datasets exist as stand alone entities.  
    
 ### Rationale
 
