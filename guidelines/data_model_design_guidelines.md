@@ -88,7 +88,7 @@ Instead of adding a dataset that repeats data in the FOCUS Cost and Usage datase
 
 ## Future-Proofing and Flexibility
 
-A new dataset should accommodate both current and future supported features or data model needs.
+A new dataset must accommodate current supported features and should facilitate future supported features or data model needs.
 
 ### Rationale
 
