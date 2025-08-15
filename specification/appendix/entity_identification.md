@@ -1,6 +1,6 @@
 # Entity Identification Examples
 
-Understanding cost and usage data in billing datasets requires identifying the roles of several participating entities involved in resource or service provisioning, invoicing, and the processing, presentation, and delivery of that data. The key participating entities include:
+Understanding cost and usage data in billing datasets requires identifying the roles of several participating entities involved in resource or service provisioning, invoicing, and data generation. The FOCUS Specification includes multiple columns to identify key participating entities, these include:
 
 * [Service Provider](#ServiceProvider)
 * [Invoice Issuer](#invoiceissuer)
