@@ -2,13 +2,13 @@
 
 ## Scenario
 
-ACME provides two FOCUS datasets: Cost and Usage and Contract. Each [Schema](#schema). Each schema metadat object includes the Dataset metadat to indicate which Focus Dataset the Schema conforms with. 
+ACME provides two FOCUS datasets: Cost and Usage and Contract. Each [Schema](#schema). Each schema metadat object includes the Dataset metadat to indicate which Focus Dataset the Schema conforms with.
 
 ## Supplied Metadata
 
 Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-1234-abcde-12345-abcde-12345.json`.
 
-The schema for the data artifact conforming to the dataset FOCUS Cost and Usage 
+The schema for the data artifact conforming to the dataset FOCUS Cost and Usage.
 
 ```json
 {
@@ -82,3 +82,4 @@ The schema for the data artifact conforming to the dataset FOCUS Contracts
       ]
 }
 ```
+
