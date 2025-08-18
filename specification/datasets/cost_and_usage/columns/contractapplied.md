@@ -85,6 +85,34 @@ The ContractCommitmentAppliedUnit column adheres to the following requirements:
   * ContractCommitmentAppliedUnit MUST be null when ContractCommitmentAppliedQuantity is null.
   * ContractCommitmentAppliedUnit MUST NOT be null when ContractCommitmentAppliedQuantity is not null.
 
+# Examples
+
+A single charge has two contractual commitments applied:  
+
+1) Spend a certain amount of money on the relevant service. 
+2) Consume a certain number of compute hours on the relevant resource type.
+
+```json
+{
+     "ContractApplied": {
+      [
+          {
+               "ContractCommitmentID": "12346", 
+               "ContractCommitmentAppliedCost": 100.00, 
+               "ContractCommitmentAppliedQuantity" : 0, 
+               "ContractCommitmentAppliedUnit" : "compute_hours"
+           },
+           {
+               "ContractCommitmentID": "23456", 
+               "ContractCommitmentAppliedCost": 0, 
+               "ContractCommitmentAppliedQuantity" : 10, 
+               "ContractCommitmentAppliedUnit" : "compute_hours"
+           }
+     ]
+     }
+}
+```
+
 ## Column ID
 
 ContractApplied
