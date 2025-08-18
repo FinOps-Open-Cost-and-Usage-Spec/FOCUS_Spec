@@ -87,9 +87,9 @@ The ContractCommitmentAppliedUnit column adheres to the following requirements:
 
 # Examples
 
-A single charge has two contractual commitments applied:  
+A single charge has two contractual commitments applied:
 
-1) Spend a certain amount of money on the relevant service. 
+1) Spend a certain amount of money on the relevant service.
 2) Consume a certain number of compute hours on the relevant resource type.
 
 ```json
