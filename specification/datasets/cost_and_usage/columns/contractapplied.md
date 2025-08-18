@@ -94,8 +94,7 @@ A single charge has two contractual commitments applied:
 
 ```json
 {
-     "ContractApplied": {
-      [
+"ContractApplied": [
           {
                "ContractCommitmentID": "12346",
                "ContractCommitmentAppliedCost": 100.00,
@@ -109,7 +108,6 @@ A single charge has two contractual commitments applied:
                "ContractCommitmentAppliedUnit" : "compute_hours"
            }
      ]
-     }
 }
 ```
 
