@@ -25,7 +25,8 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
 
 ## Exceptions
 
-None
+[ContractApplied](#contractapplied) is allowed to use objects in an array in order to describe its four constitutent elements of ContractCommitmentID, ContractCommitmentAppliedCost, ContractCommitmentAppliedQuantity, and ContractCommitmentAppliedUnit.
+
 
 ## Introduced (version)
 
