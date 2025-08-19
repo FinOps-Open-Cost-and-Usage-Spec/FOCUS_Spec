@@ -520,7 +520,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
 ### Type String requirement rule
 
 ```json
-  "SampleColumn-C-003-M": {
+  "SampleColumn-C-006-M": {
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
