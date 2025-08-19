@@ -13,7 +13,7 @@ The ListCost column adheres to the following requirements:
 * When [ListUnitPrice](#listunitprice) is null, ListCost adheres to the following additional requirements:
   * ListCost of a [*charge*](#glossary:charge) calculated based on other *charges* (e.g., when the [ChargeCategory](#chargecategory) is "Tax") MUST be calculated based on the ListCost of those related *charges*.
   * ListCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
-* The product of ListUnitPrice and PricingQuantity MUST match the ListCost when ListUnitPrice is not null and PricingQuantity is not null.
+* ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.
 
 ## Column ID
 
