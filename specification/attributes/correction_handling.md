@@ -2,14 +2,14 @@
 
 Correction Handling attribute defines how updates to previously provided charge records are represented in FOCUS datasets.
 
-**Terminology Note:** Correction (uppercase) refers specifically to the allowed value in the Charge Class column, which is limited to corrections to previously invoiced billing periods. In contrast, the Correction Handling attribute covers corrections (lowercase) to all previously provided charge records, including those that occurred in previously invoiced, uninvoiced, or current billing periods.
+**Terminology Note:** The term "Correction" (uppercase) refers specifically to the allowed value in the Charge Class column, which is limited to corrections for previously invoiced billing periods. In contrast, the Correction Handling attribute covers corrections (lowercase) to previously provided charge records, including those that occurred in previously invoiced, uninvoiced, or current billing periods.
 
-Corrections may arise from a variety of operational or technical causes, such as refunds, delayed or missing usage data, rounding errors or post-processing adjustments, etc.
+Corrections may arise from a variety of operational or technical causes, such as refunds, delayed or missing usage data, rounding errors, post-processing adjustments, etc.
 
 Accurate correction handling is essential for a range of business-critical processes, including but not limited to:
 
-* Temporal accuracy - capturing both when the charge was incurred (reflected in the charge periods, i.e., Charge Period Start and Charge Period End columns) and when the correction was invoiced (reflected in the billing period, i.e., Billing Period Start and Billing Period End columns).
-* Financial and legal integrity - preserving original charge records associated with finalized invoices and recording changes to those records separately, as finalized invoices represent binding financial documents requiring immutability and traceability.
+* Temporal accuracy - capturing both when the charge was incurred (reflected in charge period columns, i.e., Charge Period Start and Charge Period End) and when the correction was invoiced (reflected in billing period columns, i.e., Billing Period Start and Billing Period End columns).
+* Financial and legal integrity - preserving original charge records associated with finalized invoices while recording changes to those records separately, as finalized invoices represent binding financial documents requiring immutability and traceability.
 * Cost allocation and chargeback - attributing corrections to the correct dimensions (e.g., Billing Account, Sub Account, SKU ID, SKU Price ID, Resource ID).
 * Auditability - tracing the full lifecycle of a charge from the original record through all subsequent corrections.
 
