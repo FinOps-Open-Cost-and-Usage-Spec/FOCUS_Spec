@@ -98,14 +98,14 @@ A single charge has two contractual commitments applied:
           {
                "ContractCommitmentID": "12346",
                "ContractCommitmentAppliedCost": 100.00,
-               "ContractCommitmentAppliedQuantity" : 0,
-               "ContractCommitmentAppliedUnit" : "compute_hours"
+               "ContractCommitmentAppliedQuantity": null,
+               "ContractCommitmentAppliedUnit": null
            },
            {
                "ContractCommitmentID": "23456",
-               "ContractCommitmentAppliedCost": 0,
-               "ContractCommitmentAppliedQuantity" : 10,
-               "ContractCommitmentAppliedUnit" : "compute_hours"
+               "ContractCommitmentAppliedCost": null,
+               "ContractCommitmentAppliedQuantity": 10,
+               "ContractCommitmentAppliedUnit": "compute_hours"
            }
      ]
 }
