@@ -17,7 +17,7 @@ The ContractedUnitPrice column adheres to the following requirements:
 * When ContractedUnitPrice is not null, ContractedUnitPrice adheres to the following additional requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
   * ContractedUnitPrice MUST be denominated in the BillingCurrency.
-  * The product of ContractedUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ContractedCost](#contractedcost) when PricingQuantity is not null.
+* [ContractedCost](#contractedcost) MUST equal the product of ContractedUnitPrice and [PricingQuantity](#pricingquantity) when ContractedUnitPrice is not null and PricingQuantity is not null.
 
 ## Column ID
 
