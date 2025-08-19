@@ -16,7 +16,7 @@ The ListUnitPrice column adheres to the following requirements:
 * When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
-  * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null.
+* [ListCost](#listcost) MUST equal the product of ListUnitPrice and [PricingQuantity](#pricingquantity) when ListUnitPrice is not null and PricingQuantity is not null.
 
 ## Column ID
 
