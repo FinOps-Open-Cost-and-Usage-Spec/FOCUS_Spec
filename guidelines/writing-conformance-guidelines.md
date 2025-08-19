@@ -545,7 +545,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
 ### Format String Handling rule
 
 ```json
-  "SampleColumn-C-003-M": {
+  "SampleColumn-C-007-M": {
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
