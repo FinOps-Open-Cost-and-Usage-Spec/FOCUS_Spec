@@ -495,7 +495,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
 ### Format Numeric requirement rule
 
 ```json
-  "SampleColumn-C-004-M": {
+  "SampleColumn-C-005-M": {
     "Function": "Format",
     "Reference": "SampleColumn",
     "EntityType": "Column",
