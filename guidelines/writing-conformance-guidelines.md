@@ -470,7 +470,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
 ### Type Decimal requirement rule
 
 ```json
-  "SampleColumn-C-003-M": {
+  "SampleColumn-C-004-M": {
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
