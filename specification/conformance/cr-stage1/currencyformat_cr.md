@@ -1,4 +1,4 @@
-Conformance Requirements – `Currency Format`
+## Conformance Requirements – `Currency Format`
 
 text: [Currency Format_v1_2](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/v1.2/specification/attributes/currency_format.md)
 

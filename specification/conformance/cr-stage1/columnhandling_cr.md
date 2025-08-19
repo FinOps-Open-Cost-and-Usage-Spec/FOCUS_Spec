@@ -1,4 +1,4 @@
-Conformance Requirements – `Column Handling`
+## Conformance Requirements – `Column Handling`
 
 text: [ColumnHandling_v1_2](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/v1.2/specification/attributes/column_handling.md)
 
