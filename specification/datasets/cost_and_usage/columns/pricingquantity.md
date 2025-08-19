@@ -12,8 +12,7 @@ The PricingQuantity column adheres to the following requirements:
   * PricingQuantity MUST be null when [ChargeCategory](#chargecategory) is "Tax".
   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * PricingQuantity MAY be null in all other cases.
-* When PricingQuantity is not null, PricingQuantity adheres to the following additional requirements:
-  * PricingQuantity MUST be a valid decimal value.
+* PricingQuantity MUST be a valid decimal value when not null.
   * The product of PricingQuantity and a unit price (e.g., [ContractedUnitPrice](#contractedunitprice)) MUST match the corresponding cost metric (e.g., [ContractedCost](#contractedcost)) when the unit price is not null.
 
 ## Column ID
