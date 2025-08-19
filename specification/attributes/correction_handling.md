@@ -69,7 +69,7 @@ All corrections/changes to previously provided charge records in FOCUS dataset M
   * The corrected row(s) MUST be assigned to a different InvoiceId than the one associated with the original record.
   * The BillingPeriodStart and BillingPeriodEnd MUST reflect the current open billing period in which the correction is being issued.
   * The ChargePeriodStart and ChargePeriodEnd MUST retain the original time interval in which the charge occurred.
-  * ChargeClass MUSt be set to "Correction".
+  * ChargeClass MUST be set to "Correction".
 * Providers MUST clearly document which provisioning and correction styles are in use (Replacement, Ledger-style, Accounting-style).
 * Etc.
 

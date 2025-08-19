@@ -1,5 +1,161 @@
 # Correction Handling Examples
 
+## Use Case Scenarios
+
+### Intro
+
+- During May and early June, the Data Generator (e.g., CSP) delivers cost and usage data for the **May 2025 billing period** (`BillingPeriodStart = 2025-05-01`, `BillingPeriodEnd = 2025-06-01`).
+- All cost records include an `InvoiceId` (e.g., `INV-20250501-20250601`), assigned **prior to invoice issuance**, in accordance with the normative guidance for `InvoiceId`.
+
+---
+
+### Timeline of Events
+
+#### T0: 2025-06-12 - Invoice finalization (and Billing Period closure) on Data Generator's (Provider's) side
+
+- The Data Generator has completed **initial provisioning** of all known cost and usage records that were incurred in May 2025 (`x_IncurredDateTime`), i.e., the working assumption at this point is that **all May costs have been delivered**.
+- All charge records have `x_ExportDateTime` **earlier than T0**.
+- The Data Generator performs internal **invoice reconciliation** and issues final invoices for the account for May 2025 (e.g., `INV-202505-202506`).
+  - All Invoice related issues MUST be resoved at this point!
+- All invoices for May are now finalized, and the Data Generator **closes** the May 2025 billing period.
+- From the Data Generator's (Provider's) **financial perspective**, May 2025 is now complete.
+  - Any charge records **provisioned on or after T0** (i.e., with `x_ExportDateTime ≥ T0`) **must** be assigned to an **open billing period** and therefore the earliest valid `BillingPeriodStart`/`BillingPeriodEnd` for such records is **June 2025**.
+
+---
+
+#### T1: 2025-06-13 - Invoice finalization (and Billing Period closure) on Consumer's side
+
+- Since the Data Generator (Provider) has finalized the invoice and closed the billing period, the **Consumer** performs **final invoice reconciliation**.
+- If the consumer is a **Managed Service Provider (MSP)**, they proceed to **generate downstream invoices** for their own customers based on the finalized May data.
+- From the Consumer’s financial point of view, the **May 2025 billing period is now considered closed**.
+
+---
+
+#### T2: 2025-07-12 - Corrections After Invoice Finalization
+
+> **Note:** Detailed correction scenarios related to post-invoice finalization are available in Chapter Post-Invoice Finalization Scenarios.
+
+---
+
+### Post-Invoice Finalization Scenarios
+
+#### S-1: Itemized Correction Scenarios with Cost Calculation Integrity Respected
+
+##### REPLACED Scenario 1.1 (S-1.1): Post Invoice Correction - Correction to ResourceId dimension
+
+- The Data Generator identifies that a **previously provisioned charge record** (delivered before the billing period was closed) contains an **incorrect `ResourceId`**.
+- This record was part of the **finalized invoice** issued at T0.
+- The **May billing period is already closed**, while the **June 2025 billing period is still open**.
+- The correction requires **reallocating the cost and usage quantity** from the incorrect resource (`R-111`) to the correct one (`R-222`).
+
+##### Scenario 1.1 (S-1.1): Post Invoice Correction – Partial Reallocation to Correct ResourceId
+
+- The Data Generator identifies that a **previously provisioned charge record** (delivered before the billing period was closed) was **incorrectly attributed entirely to `ResourceId R-111`**, even though only part of the cost and usage belongs to that resource, with the remainder pertaining to another resource (`ResourceId R-222`).
+- This record was part of the **finalized invoice** issued at T0.
+- The **May billing period is already closed**, while the **June 2025 billing period is still open**.
+- The correction requires **reallocating part of the cost and usage quantity** from the incorrect resource (`R-111`) to the correct resource (`R-222`), while the remainder stays attributed to the original resource.
+  - **Ledger Style:**  
+    The Data Generator sends two correction records to adjust the original charge:  
+    - A **decrement** record to reduce cost and usage attributed to the `ResourceId R-111`.  
+    - An **increment** record to increase cost and usage attributed to the `ResourceId R-222`.
+  - **Accounting Style:**  
+    The Data Generator sends three correction records:  
+    - One Negation record to fully negate the original incorrect charge attributed to `ResourceId R-111`.  
+    - One Corrected record with the remaining cost and usage still attributed to the original resource (`R-111`).
+    - One Corrected record with the adjusted cost and usage attributed to the correct resource (`R-222`).
+  - **Replacement Style**
+    Replacement style, which involves overwriting or replacing previously delivered charge records within the original billing period, is not suitable for this scenario. Since the invoice is already finalized and the corresponding billing period is closed, modifying or replacing original records is prohibited due to legal and procedural requirements. Therefore, the Data Generator sends corrections using one of the two append-only styles.
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
+
+##### Scenario 1.2 (S-1.2): Post Invoice Correction - Late-arriving Usage
+
+- The Data Generator identifies a **late-arriving cost** that was **incurred during May** (e.g., `ChargePeriodStart = 2025-05-01`).
+- This cost was not included in the finalized invoice issued at T0.
+- The **May billing period is already closed**, while the **June 2025 billing period is still open**.
+- The correction requires provisioning **additional charge record** to represent the late-arriving cost
+  - **Ledger Style:**  
+    The Data Generator sends a single Increment record representing the late-arriving usage and associated cost.
+  - **Accounting Style:**  
+    The Data Generator sends a single Increment record representing the late-arriving usage and associated cost.
+  - **Replacement Style**
+    Replacement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
+
+#### S-2: Itemized Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
+
+##### Scenario 2.1 (S-2.1): Post-Invoice Correction – Cost-only correction
+
+- The Data Generator detects a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records **related to a single `SkuPriceId`**. Although each individual record was correctly rounded, the aggregated cost differs slightly from the precise total, resulting in a small drift.
+- Original records were part of the finalized invoice issued at T0.
+- The original billing period is already closed, while the subsequent billing period (e.g., July 2025) is still open.
+- The correction requires provisioning a cost-only correction record to reconcile the total cost drift and ensure invoice accuracy.
+- The correction requires provisioning an **itemized cost-only correction record** with the relevant `SkuPriceId` to reconcile the total cost drift and ensure invoice accuracy.
+  - **Ledger Style:**  
+    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift, with the relevant `SkuPriceId` specified.
+  - **Accounting Style:**  
+    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift.
+  - **Replacement Style**
+    Replacement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
+
+##### Scenario 2.2 (S-2.2): Post-Invoice Correction – PricingQuantity-only correction
+
+**Recommendation:** This use case should be prevented by design. (See **Proposal: Prevent PricingQuantity-only corrections** chapter for more details)
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
+
+##### Scenario 2.3 (S-2.3): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction without UnitPrice
+
+Assuming we decide to require Unit Prices when SkuPriceId is provided, this would **not be considered a valid use case**.
+Refer to the proposals in **Refine Cost Calculation Integrity Norms and Permissible Discrepancies for Correction** for reasonng.
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
+
+##### Scenario 2.4 (S-2.4): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction with UnitPrice
+
+Assuming we decide to enforce Cost Calculation Integrity when all three metrics ((`PricingQuantity`, `UnitPrice`, and `Cost`)) are provided (regardless of ChargeClass), this would **not be considered a valid use case**.
+Refer to the proposals in **Refine Cost Calculation Integrity Norms and Permissible Discrepancies for Correction** for reasonng.
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
+
+#### S-3: Bulk and Bulk Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
+
+***Note:** In the context of this PR, Bulk refers to charge records where SkuPriceId (and SkuId) is null.*
+
+##### Scenario 3.1 (S-3.1): Post-Invoice Correction – Cost-only Bulk Usage Correction
+
+- The Data Generator detects a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records **spanning several different `SkuPriceId` values**. Although each individual record was correctly rounded, the aggregated cost differs slightly from the precise total, resulting in a small drift.
+- Original records were part of the finalized invoice issued at T0.
+- The original billing period is already closed, while the subsequent billing period (e.g., July 2025) is still open.
+- The correction requires provisioning a **bulk cost-only correction record** (without specifying `SkuPriceId`) to reconcile the total cost drift across multiple items and ensure invoice accuracy.
+  - **Ledger Style:**  
+    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift, without specifying a `SkuPriceId`, as the correction spans multiple SKU Price IDs.
+  - **Accounting Style:**  
+    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift.
+  - **Replacement Style**
+    Replacement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
+
+##### Scenario 3.2 (S-3.2): Post-Invoice Correction – Cost and PricingQuantity Bulk Usage Correction
+
+Bulk corrections to `PricingQuantity` (or any other SKU Price-dependent column) **are not (or should not be) allowed** regardless of the timing of the correction timing. This rule applies equally to Adjustments (e.g., rounding errors) occurring in the current or any still open past billing period.
+
+If a PricingQuantity correction is needed, the associated SkuPriceId **must** be provided to ensure accurate attribution and interpretation.
+
+**Reasoning:** PricingQuantity and several other SKU/SKU Price-dependent columns lack business meaning SkuPriceId (and SkuId) is null, as they cannot be interpreted without a known SkuPriceId.
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
+
+##### Scenario 3.3 (S-3.3): Post-Invoice Correction – PricingQuantity-only Bulk Usage Correction
+
+Bulk corrections to `PricingQuantity` (or any other SKU Price-dependent column) **are not (or should not be) allowed** regardless of the timing of the correction timing. (*See Scenario 3.2 for more details.*)
+
+- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
+
 ## Proposals
 
 ### Prevent Replacement After Invoice Finalization (and Billing Period Closure)
@@ -231,162 +387,6 @@ To address these **gaps** in this scenario, we assume the following:
 - A billing period is considered closed once all invoices for that period are finalized.
 
 ***Note:** These information are assumed to be provided not within the cost and usage dataset itself, but in separate, adjacent datasets (e.g., invoice-related datasets).
-
-## Use Case Scenarios
-
-### Intro
-
-- During May and early June, the Data Generator (e.g., CSP) delivers cost and usage data for the **May 2025 billing period** (`BillingPeriodStart = 2025-05-01`, `BillingPeriodEnd = 2025-06-01`).
-- All cost records include an `InvoiceId` (e.g., `INV-20250501-20250601`), assigned **prior to invoice issuance**, in accordance with the normative guidance for `InvoiceId`.
-
----
-
-### Timeline of Events
-
-#### T0: 2025-06-12 - Invoice finalization (and Billing Period closure) on Data Generator's (Provider's) side
-
-- The Data Generator has completed **initial provisioning** of all known cost and usage records that were incurred in May 2025 (`x_IncurredDateTime`), i.e., the working assumption at this point is that **all May costs have been delivered**.
-- All charge records have `x_ExportDateTime` **earlier than T0**.
-- The Data Generator performs internal **invoice reconciliation** and issues final invoices for the account for May 2025 (e.g., `INV-202505-202506`).
-  - All Invoice related issues MUST be resoved at this point!
-- All invoices for May are now finalized, and the Data Generator **closes** the May 2025 billing period.
-- From the Data Generator's (Provider's) **financial perspective**, May 2025 is now complete.
-  - Any charge records **provisioned on or after T0** (i.e., with `x_ExportDateTime ≥ T0`) **must** be assigned to an **open billing period** and therefore the earliest valid `BillingPeriodStart`/`BillingPeriodEnd` for such records is **June 2025**.
-
----
-
-#### T1: 2025-06-13 - Invoice finalization (and Billing Period closure) on Consumer's side
-
-- Since the Data Generator (Provider) has finalized the invoice and closed the billing period, the **Consumer** performs **final invoice reconciliation**.
-- If the consumer is a **Managed Service Provider (MSP)**, they proceed to **generate downstream invoices** for their own customers based on the finalized May data.
-- From the Consumer’s financial point of view, the **May 2025 billing period is now considered closed**.
-
----
-
-#### T2: 2025-07-12 - Corrections After Invoice Finalization
-
-> **Note:** Detailed correction scenarios related to post-invoice finalization are available in Chapter Post-Invoice Finalization Scenarios.
-
----
-
-### Post-Invoice Finalization Scenarios
-
-#### S-1: Itemized Correction Scenarios with Cost Calculation Integrity Respected
-
-##### REPLACED Scenario 1.1 (S-1.1): Post Invoice Correction - Correction to ResourceId dimension
-
-- The Data Generator identifies that a **previously provisioned charge record** (delivered before the billing period was closed) contains an **incorrect `ResourceId`**.
-- This record was part of the **finalized invoice** issued at T0.
-- The **May billing period is already closed**, while the **June 2025 billing period is still open**.
-- The correction requires **reallocating the cost and usage quantity** from the incorrect resource (`R-111`) to the correct one (`R-222`).
-
-##### Scenario 1.1 (S-1.1): Post Invoice Correction – Partial Reallocation to Correct ResourceId
-
-- The Data Generator identifies that a **previously provisioned charge record** (delivered before the billing period was closed) was **incorrectly attributed entirely to `ResourceId R-111`**, even though only part of the cost and usage belongs to that resource, with the remainder pertaining to another resource (`ResourceId R-222`).
-- This record was part of the **finalized invoice** issued at T0.
-- The **May billing period is already closed**, while the **June 2025 billing period is still open**.
-- The correction requires **reallocating part of the cost and usage quantity** from the incorrect resource (`R-111`) to the correct resource (`R-222`), while the remainder stays attributed to the original resource.
-  - **Ledger Style:**  
-    The Data Generator sends two correction records to adjust the original charge:  
-    - A **decrement** record to reduce cost and usage attributed to the `ResourceId R-111`.  
-    - An **increment** record to increase cost and usage attributed to the `ResourceId R-222`.
-  - **Accounting Style:**  
-    The Data Generator sends three correction records:  
-    - One Negation record to fully negate the original incorrect charge attributed to `ResourceId R-111`.  
-    - One Corrected record with the remaining cost and usage still attributed to the original resource (`R-111`).
-    - One Corrected record with the adjusted cost and usage attributed to the correct resource (`R-222`).
-  - **Replacement Style**
-    Replacement style, which involves overwriting or replacing previously delivered charge records within the original billing period, is not suitable for this scenario. Since the invoice is already finalized and the corresponding billing period is closed, modifying or replacing original records is prohibited due to legal and procedural requirements. Therefore, the Data Generator sends corrections using one of the two append-only styles.
-
-- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
-
-##### Scenario 1.2 (S-1.2): Post Invoice Correction - Late-arriving Usage
-
-- The Data Generator identifies a **late-arriving cost** that was **incurred during May** (e.g., `ChargePeriodStart = 2025-05-01`).
-- This cost was not included in the finalized invoice issued at T0.
-- The **May billing period is already closed**, while the **June 2025 billing period is still open**.
-- The correction requires provisioning **additional charge record** to represent the late-arriving cost
-  - **Ledger Style:**  
-    The Data Generator sends a single Increment record representing the late-arriving usage and associated cost.
-  - **Accounting Style:**  
-    The Data Generator sends a single Increment record representing the late-arriving usage and associated cost.
-  - **Replacement Style**
-    Replacement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
-
-- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
-
-#### S-2: Itemized Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
-
-##### Scenario 2.1 (S-2.1): Post-Invoice Correction – Cost-only correction
-
-- The Data Generator detects a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records **related to a single `SkuPriceId`**. Although each individual record was correctly rounded, the aggregated cost differs slightly from the precise total, resulting in a small drift.
-- Original records were part of the finalized invoice issued at T0.
-- The original billing period is already closed, while the subsequent billing period (e.g., July 2025) is still open.
-- The correction requires provisioning a cost-only correction record to reconcile the total cost drift and ensure invoice accuracy.
-- The correction requires provisioning an **itemized cost-only correction record** with the relevant `SkuPriceId` to reconcile the total cost drift and ensure invoice accuracy.
-  - **Ledger Style:**  
-    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift, with the relevant `SkuPriceId` specified.
-  - **Accounting Style:**  
-    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift.
-  - **Replacement Style**
-    Replacement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
-
-- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
-
-##### Scenario 2.2 (S-2.2): Post-Invoice Correction – PricingQuantity-only correction
-
-**Recommendation:** This use case should be prevented by design. (See **Proposal: Prevent PricingQuantity-only corrections** chapter for more details)
-
-- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
-
-##### Scenario 2.3 (S-2.3): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction without UnitPrice
-
-Assuming we decide to require Unit Prices when SkuPriceId is provided, this would **not be considered a valid use case**.
-Refer to the proposals in **Refine Cost Calculation Integrity Norms and Permissible Discrepancies for Correction** for reasonng.
-
-- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
-
-##### Scenario 2.4 (S-2.4): Post-Invoice Correction – Misaligned Cost and PricingQuantity correction with UnitPrice
-
-Assuming we decide to enforce Cost Calculation Integrity when all three metrics ((`PricingQuantity`, `UnitPrice`, and `Cost`)) are provided (regardless of ChargeClass), this would **not be considered a valid use case**.
-Refer to the proposals in **Refine Cost Calculation Integrity Norms and Permissible Discrepancies for Correction** for reasonng.
-
-- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Cost Calculation Integrity Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=669333874#gid=669333874)*.
-
-#### S-3: Bulk and Bulk Correction Scenarios with Cost Calculation Integrity Exceptions Allowed
-
-***Note:** In the context of this PR, Bulk refers to charge records where SkuPriceId (and SkuId) is null.*
-
-##### Scenario 3.1 (S-3.1): Post-Invoice Correction – Cost-only Bulk Usage Correction
-
-- The Data Generator detects a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records **spanning several different `SkuPriceId` values**. Although each individual record was correctly rounded, the aggregated cost differs slightly from the precise total, resulting in a small drift.
-- Original records were part of the finalized invoice issued at T0.
-- The original billing period is already closed, while the subsequent billing period (e.g., July 2025) is still open.
-- The correction requires provisioning a **bulk cost-only correction record** (without specifying `SkuPriceId`) to reconcile the total cost drift across multiple items and ensure invoice accuracy.
-  - **Ledger Style:**  
-    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift, without specifying a `SkuPriceId`, as the correction spans multiple SKU Price IDs.
-  - **Accounting Style:**  
-    The Data Generator sends a single Increment record representing the cost-only correction required to reconcile the total cost drift.
-  - **Replacement Style**
-    Replacement style is not suitable for this scenario. (*See Scenario 1.1 for more details.*)
-
-- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
-
-##### Scenario 3.2 (S-3.2): Post-Invoice Correction – Cost and PricingQuantity Bulk Usage Correction
-
-Bulk corrections to `PricingQuantity` (or any other SKU Price-dependent column) **are not (or should not be) allowed** regardless of the timing of the correction timing. This rule applies equally to Adjustments (e.g., rounding errors) occurring in the current or any still open past billing period.
-
-If a PricingQuantity correction is needed, the associated SkuPriceId **must** be provided to ensure accurate attribution and interpretation.
-
-**Reasoning:** PricingQuantity and several other SKU/SKU Price-dependent columns lack business meaning SkuPriceId (and SkuId) is null, as they cannot be interpreted without a known SkuPriceId.
-
-- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
-
-##### Scenario 3.3 (S-3.3): Post-Invoice Correction – PricingQuantity-only Bulk Usage Correction
-
-Bulk corrections to `PricingQuantity` (or any other SKU Price-dependent column) **are not (or should not be) allowed** regardless of the timing of the correction timing. (*See Scenario 3.2 for more details.*)
-
-- *For sample data, see the [30.06.25 Correction Handling Use Cases spreadsheet, sheet Problematic Scenarios Examples](https://docs.google.com/spreadsheets/d/1RV2Pb4bSo86L2wOFZm5dK0lYxiac6BfkQK81ivOvhsU/edit?gid=1846137666#gid=1846137666)*.
 
 ## References
 
