@@ -119,7 +119,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be the inclusive start bound of the billing period.",
       "Keyword": "MUST",
