@@ -38,8 +38,7 @@
 | Business             | Uniqueness                         | When applicable                       | BillingAccountId MUST be a unique identifier within a provider.                            |
 | Business             | Fallback/Substitute Values         | When applicable                       | {ColumnId} MUST NOT duplicate {OtherColumnId} when Condition.                              |
 | Business             | Relationships Outside the Spec     | When applicable                       | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
-| Business             | Formula-based Cost Validation      | When applicable                       | The product of Column1 and Column2 MUST match the column3 when Condition.                  |
-| Business             | Cost Correction Discrepancies      | When applicable                       | Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction". |
+| Business             | Formula-based Cost Validation      | When applicable                       | {CostColumnId} MUST equal the product of {UnitPriceColumnId} and PricingQuantity when {UnitPriceColumnId} is not null and PricingQuantity is not null. |
 | Business             | Cost Calculation and Relationships | When applicable                       | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
 | Business             | Other                              | When applicable                       |                                                                                           |
 
@@ -68,6 +67,14 @@
 * **Use {ColumnId} for Column and Value References**: Whenever possible, use {ColumnId} when referring to a column or its values.
 
 * **Default to Singular Form**: Column references should be singular, with the understanding that the requirement applies to all values in the column.
+
+* **Reuse Requirement Text Across Columns**: When a normative requirement applies to multiple columns, the exact same wording should be used for all. This takes precedence over the **Start with the ColumnId** rule to maintain consistency and avoid unnecessary variations in language.
+  
+  **Example Pattern 2**
+
+  ```markdown
+  * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
+  ```  
 
 ### Additional Guidelines for Columns in Simplified JSON Format
 
@@ -277,14 +284,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 ##### Formula-based Cost Validation
 
 ```markdown
-* The product of <PricingQuantity|UnitPriceColumnId> and <UnitPriceColumnId|PricingQuantity> MUST match the <CostColumnId> when <Condition> and ChargeClass is not "Correction".
-* The product of <PricingQuantity|UnitPriceColumnId> and <UnitPriceColumnId|PricingQuantity> MUST match the <CostColumnId> when <Condition1>, <Condition2>, and ChargeClass is not "Correction".
-```
-
-##### Cost Correction Discrepancies
-
-```markdown
-* Discrepancies in <MetricId1>, <MetricId2>, or <MetricId3> MAY exist when ChargeClass is "Correction".
+  * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
 ```
 
 #### Business & Contextual Requirements: Cost Calculation and Relationships
