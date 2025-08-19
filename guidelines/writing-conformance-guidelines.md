@@ -426,6 +426,47 @@ Common rule for columns with a NOT NULL requirement. Can also be used when there
   }
 ```
 
+### Allowed Value requirement rule
+
+Common rule for columns with a MUST be one of the allowed values requirement. 
+
+```json
+  "SampleColumn-C-003-M": {
+    "Function": "Validation",
+    "Reference": "SampleColumn",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be one of the allowed values",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "SampleColumn",
+            "Value": "AllowedValue1"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "SampleColumn",
+            "Value": "AllowedValue2"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "SampleColumn",
+            "Value": "AllowedValue3"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
 ### Type Decimal requirement rule
 
 ```json
