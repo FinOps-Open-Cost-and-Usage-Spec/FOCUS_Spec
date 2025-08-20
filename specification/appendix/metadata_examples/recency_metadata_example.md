@@ -57,8 +57,6 @@ The provided recency metadata for an time series dataset could look like this:
       "complete" : false,
       "last_updated" : "2025-01-29T04:00:00z"
     }
-    
-
   ]
 }
 ```
@@ -73,4 +71,3 @@ The provided recency metadata for non-time series dataset could look like this:
   "complete" : true
 }
 ```
-
