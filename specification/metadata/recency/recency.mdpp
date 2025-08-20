@@ -16,7 +16,6 @@ This includes scenarios include, but are not limited to:
 * [Updating an overtime dataset recency metadata](#addingnewcolumns)
 * [Updating a non over-time dataset recency metadata](#changingcolumnmetadata)
 
-
 ## Recency Example
 
 For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#recencymetadataexample)

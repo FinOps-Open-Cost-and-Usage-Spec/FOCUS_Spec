@@ -7,7 +7,6 @@ ACME provides recency metadata to accompany their FOCUS data export. Acme update
 
 Metadata can be provided at a location such as `/FOCUS/metadata/recency/recency-54321-abcde-12345-abcde-12345.json`.
 
-
 The provided recency metadata for non-time series dataset could look like this:
 
 ```json
