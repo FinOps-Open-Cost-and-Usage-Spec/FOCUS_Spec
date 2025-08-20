@@ -1,5 +1,5 @@
 {
-"BillingPeriodEnd-C-000-M": {
+  "BillingPeriodEnd-C-000-M": {
     "Function": "Composite",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
@@ -16,10 +16,6 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingPeriodEnd-D-001-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingPeriodEnd-C-002-M"
           },
           {
@@ -29,35 +25,17 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingPeriodEnd-C-004-M"
-         },
-         {
+          },
+          {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingPeriodEnd-C-005-M"
-         }
+          }
         ]
       },
       "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "BillingPeriodEnd-D-001-M": {
-    "Function": "Presence",
-    "Reference": "BillingPeriodEnd",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "MUST be present in a FOCUS dataset",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "BillingPeriodEnd"
-      },
-      "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-010-M"
+      ]
     }
   },
   "BillingPeriodEnd-C-002-M": {
@@ -93,8 +71,8 @@
       "MustSatisfy": "MUST conform to DateTimeFormat requirements",
       "Keyword": "MUST",
       "Requirement": {
-      "CheckFunction": "FormatDateTime",
-      "ColumnName": "BillingPeriodEnd"
+        "CheckFunction": "FormatDateTime",
+        "ColumnName": "BillingPeriodEnd"
       },
       "Condition": {},
       "Dependencies": []
@@ -111,17 +89,17 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null",
-      "Keyword": "MUST NOT",
+      "Keyword": "MUST",
       "Requirement": {
-      "CheckFunction": "CheckNotValue",
-      "ColumnName": "BillingPeriodEnd",
-      "Value": null
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "BillingPeriodEnd",
+        "Value": null
       },
       "Condition": {},
       "Dependencies": []
     }
- },
- "BillingPeriodEnd-C-005-M": {
+  },
+  "BillingPeriodEnd-C-005-M": {
     "Function": "Validation",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
