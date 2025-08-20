@@ -18,7 +18,7 @@ The SkuPriceDetails column adheres to the following requirements:
   * SkuPriceDetails MUST be associated with a given SkuPriceId.
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
   * SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
-* SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a custom property.
+  * SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a custom property.
   * SkuPriceDetails SHOULD include all custom SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
   * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
@@ -67,7 +67,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 
 ### FOCUS-Defined Properties
 
-The following keys should be used when applicable to facilitate cross-SKU and cross-provider queries for the same conceptual property. Focus-defined keys will appear in the list below and Provider-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
+The following keys should be used when applicable to facilitate cross-SKU and cross-provider queries for the same conceptual property. FOCUS-defined keys will appear in the list below and custom (e.g., provider-defined) keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
 | Key                      | Description                                                              | Data Type        | Unit of Measure (numeric) or example values (string)  |
 | :----------------------- | :----------------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
