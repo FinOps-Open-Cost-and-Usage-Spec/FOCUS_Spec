@@ -16,11 +16,11 @@ If a supported feature is added to show invoices and their associated data, a ne
 
 ## Alignment with FOCUS Supported Features
 
-The new dataset should directly support one or more core FOCUS [*Supported Features*](#Supported Features). These supported features are guided by the Finops Framework.
+The new dataset should directly support one or more core FOCUS [*Supported Features*](#Supported Features). These supported features are guided by the [FinOps Framework](https://www.finops.org/framework/).
 
 ### Rationale
 
-The FOCUS specification is designed to enable FinOps practitioners to manage cloud costs effectively. Any new dataset should map to FOCUS Supported Features. These features are driven by the Finops Framework. 
+The FOCUS specification is designed to enable FinOps practitioners to manage cloud costs effectively. Any new dataset should map to FOCUS Supported Features. These features are driven by the [FinOps Framework](https://www.finops.org/framework/). 
 
 ### Example
 
@@ -48,7 +48,7 @@ The FOCUS specification emphasizes interoperability across cloud providers and t
 
 ### Example
 
-A new dataset for vendor-specific pricing data should include standardized keys to link it to the FOCUS Cost and Usage usage dataset, enabling cross-referencing for cost analysis.
+A new dataset for vendor-specific pricing data should include standardized keys to link it to the FOCUS Cost and Usage dataset, enabling cross-referencing for cost analysis.
 
 ## Scalability and Maintainability
 
