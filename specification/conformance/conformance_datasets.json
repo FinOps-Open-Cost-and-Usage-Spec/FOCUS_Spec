@@ -1,12 +1,8 @@
 {
   "ConformanceDatasets": {
-    "FOCUS": {
+    "CostAndUsage": {
       "ConformanceRules": [
-        "AvailabilityZone-C-000-M",
-        "BilledCost-C-000-M",
-        "BillingAccountType-C-000-M",
-        "BillingPeriodStart-C-000-M",
-        "ListUnitPrice-C-000-C"
+        "CostAndUsage-D-000-M"
       ]
     }
   }

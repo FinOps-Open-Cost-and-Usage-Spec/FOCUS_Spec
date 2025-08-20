@@ -6,7 +6,7 @@ from build_helpers import init_logger
 
 def get_args():
     parser = argparse.ArgumentParser(description='CR Graph Generator.')
-    parser.add_argument('-t', '--dataset-name', default="FOCUS", help='Dataset to generate CR graph for')
+    parser.add_argument('-t', '--dataset-name', default="CostAndUsage", help='Dataset to generate CR graph for')
     parser.add_argument('--include-checks', action='store_true', help='Add checks to graph')
     parser.add_argument('--include-attributes', action='store_true', help='Add attributes to graph')
     parser.add_argument('-f', '--cr-filename', type=str, default='cr-1.2.json', help='CR definition filename to load')
@@ -57,8 +57,7 @@ class ConformanceRequirements:
         if not self.include_attributes:
             self.logger.warning(f'Skipping {check_id} attribute checks is disabled')
             return
-        
-        check_function = self.cr_definition["CheckFunction"].get(check_id, {})
+        check_function = self.cr_definition["CheckFunctions"].get(check_id, None)
         if not check_function:
             self.logger.warning(f'Skipping {check_id} check not found')
             return

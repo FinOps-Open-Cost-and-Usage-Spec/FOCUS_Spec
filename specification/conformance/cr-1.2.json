@@ -3,14 +3,17 @@
     "CRVersion": "1.2"
   },
   "ApplicabilityCriteria": {
+    "ACCOUNT_NAMING_SUPPORTED": {
+      "Description": "Data generator supports naming of accounts"
+    },
+    "AVAILABILITY_ZONE_SUPPORTED": {
+      "Description": "Data generator supports deploying resources or services within an availability zone"
+    },
     "COMMITMENT_DISCOUNT_SUPPORTED": {
       "Description": "Billing data when the data generator supports commitment based discounts"
     },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
       "Description": "Data generator publishes unit prices exclusive of discounts"
-    },
-    "AVAILABILITY_ZONE_SUPPORTED": {
-      "Description": "Data generator supports deploying resources or services within an availability zone."
     }
   },
   "CheckFunctions": {
@@ -142,19 +145,338 @@
         "ResultColumnName"
       ],
       "FormatAttributes": []
+    },
+    "CheckBillingPeriodStartInclusive": {
+      "Description": "Verify the column value is the inclusive start bound of the billing period (i.e., it is the minimum datetime for all rows sharing the same BillingAccountId+InvoiceId or for the dataset\u2019s billing cycle) and strictly less than BillingPeriodEnd.",
+      "Arguments": [
+        "ColumnName",
+        "EndColumnName"
+      ],
+      "FormatAttributes": [
+        "DateTimeFormat-A-000-M"
+      ]
+    },
+    "TypeDateTime": {
+      "Description": "Check column has the data type of datetime",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckExclusiveEndBound": {
+      "Description": "Verify EndColumn is the exclusive end bound of the billing period (i.e., ranges are [Start, End) and never include charges at End).",
+      "Arguments": [
+        "StartColumnName",
+        "EndColumnName"
+      ],
+      "FormatAttributes": [
+        "DateTimeFormat-A-000-M"
+      ]
     }
   },
   "ConformanceDatasets": {
-    "FOCUS": {
+    "CostAndUsage": {
       "ConformanceRules": [
-        "AvailabilityZone-C-000-M",
-        "BilledCost-C-000-M",
-        "BillingAccountType-C-000-M",
-        "ListUnitPrice-C-000-C"
+        "CostAndUsage-D-000-M"
       ]
     }
   },
   "ConformanceRules": {
+    "CostAndUsage-D-000-M": {
+      "Function": "Composite",
+      "Reference": "CostAndUsage",
+      "EntityType": "Dataset",
+      "Notes": "Main dataset composite rule",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-D-001-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-D-002-M"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-D-001-M": {
+      "Function": "Composite",
+      "Reference": "CostAndUsage",
+      "EntityType": "Dataset",
+      "Notes": "Columns present composite rule",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-D-003-C"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-D-004-C"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-D-005-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-C-006-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-C-007-C"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-D-008-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-D-009-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "CostAndUsage-D-010-M"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-D-002-M": {
+      "Function": "Composite",
+      "Reference": "CostAndUsage",
+      "EntityType": "Dataset",
+      "Notes": "Columns composite rule",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "AvailabilityZone-C-000-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BilledCost-C-000-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountName-C-000-C"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountType-C-000-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodStart-C-000-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodEnd-C-000-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ListUnitPrice-C-000-C"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-D-003-C": {
+      "Function": "Presence",
+      "Reference": "AvailabilityZone",
+      "EntityType": "Dataset",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [
+        "AVAILABILITY_ZONE_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "RECOMMENDED be present in a FOCUS dataset",
+        "Keyword": "RECOMMENDED",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "AvailabilityZone"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-D-004-C": {
+      "Function": "Presence",
+      "Reference": "ListUnitPrice",
+      "EntityType": "Dataset",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "ListUnitPrice"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-D-005-M": {
+      "Function": "Presence",
+      "Reference": "BillingAccountName",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be present in a FOCUS dataset",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "BillingAccountName"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-C-006-M": {
+      "Function": "Presence",
+      "Reference": "BilledCost",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be present in a FOCUS dataset",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "BilledCost"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-C-007-C": {
+      "Function": "Presence",
+      "Reference": "BillingAccountType",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be present in a FOCUS dataset",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "BillingAccountType"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-D-008-M": {
+      "Function": "Presence",
+      "Reference": "ChargeCategory",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be present in a FOCUS dataset",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "ChargeCategory"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-D-009-M": {
+      "Function": "Presence",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be present in a FOCUS dataset.",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "BillingPeriodStart"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "CostAndUsage-D-010-M": {
+      "Function": "Presence",
+      "Reference": "BillingPeriodEnd",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be present in a FOCUS dataset",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "ColumnPresent",
+          "ColumnName": "BillingPeriodEnd"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
     "DateTimeFormat-A-000-M": {
       "Function": "Composite",
       "Reference": "DateTimeFormat",
@@ -596,6 +918,326 @@
         "Dependencies": []
       }
     },
+    "BillingAccountName-C-000-C": {
+      "Function": "Composite",
+      "Reference": "BillingAccountName",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountName-D-001-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountName-C-002-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountName-C-003-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingAccountName-C-004-C"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": [
+          "CostAndUsage-D-005-M"
+        ]
+      }
+    },
+    "BillingAccountName-C-002-M": {
+      "Function": "Type",
+      "Reference": "BillingAccountName",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be of type String",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "TypeString",
+          "ColumnName": "BillingAccountName"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingAccountName-C-003-M": {
+      "Function": "Type",
+      "Reference": "BillingAccountName",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST conform to StringHandling requirements",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "FormatString",
+          "ColumnName": "BillingAccountName"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingAccountName-C-004-C": {
+      "Function": "Validation",
+      "Reference": "BillingAccountName",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [
+        "ACCOUNT_NAMING_SUPPORTED"
+      ],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingAccountName MUST NOT be null when the provider supports assigning a display name for the billing account",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "BillingAccountName",
+          "Value": null
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingPeriodStart-C-000-M": {
+      "Function": "Composite",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodStart-C-002-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodStart-C-003-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodStart-C-004-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodStart-C-005-M"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": [
+          "CostAndUsage-D-009-M"
+        ]
+      }
+    },
+    "BillingPeriodStart-C-002-M": {
+      "Function": "Type",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be of type Date/Time.",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "TypeDateTime",
+          "ColumnName": "BillingPeriodStart"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingPeriodStart-C-003-M": {
+      "Function": "Format",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST conform to DateTimeFormat requirements.",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "FormatDateTime",
+          "ColumnName": "BillingPeriodStart"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingPeriodStart-C-004-M": {
+      "Function": "Validation",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST NOT be null.",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "BillingPeriodStart",
+          "Value": null
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingPeriodStart-C-005-M": {
+      "Function": "Validation",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "Notes": "Inclusive start bound of the billing period",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be the inclusive start bound of the billing period.",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckBillingPeriodStartInclusive",
+          "ColumnName": "BillingPeriodStart",
+          "EndColumnName": "BillingPeriodEnd"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "ChargeCategory-C-000-M": {
+      "Function": "Composite",
+      "Reference": "ChargeCategory",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ChargeCategory-C-002-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ChargeCategory-C-003-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ChargeCategory-C-004-M"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": [
+          "CostAndUsage-D-008-M"
+        ]
+      }
+    },
+    "ChargeCategory-C-002-M": {
+      "Function": "Type",
+      "Reference": "ChargeCategory",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be of type String",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "TypeString",
+          "ColumnName": "ChargeCategory"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "ChargeCategory-C-003-M": {
+      "Function": "Validation",
+      "Reference": "ChargeCategory",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST NOT be null",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "ChargeCategory",
+          "Value": null
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "ChargeCategory-C-004-M": {
+      "Function": "Validation",
+      "Reference": "ChargeCategory",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be one of the allowed values",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "ChargeCategory",
+          "Value": null
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
     "AvailabilityZone-C-000-M": {
       "Function": "Composite",
       "Reference": "AvailabilityZone",
@@ -615,10 +1257,6 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "AvailabilityZone-C-001-C"
-            },
-            {
-              "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "AvailabilityZone-C-002-M"
             },
             {
@@ -632,29 +1270,9 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
-      }
-    },
-    "AvailabilityZone-C-001-C": {
-      "Function": "Presence",
-      "Reference": "AvailabilityZone",
-      "EntityType": "Column",
-      "Notes": "",
-      "CRVersionIntroduced": "1.2",
-      "Status": "Active",
-      "ApplicabilityCriteria": [
-        "AVAILABILITY_ZONE_SUPPORTED"
-      ],
-      "Type": "Static",
-      "ValidationCriteria": {
-        "MustSatisfy": "RECOMMENDED be present in a FOCUS dataset",
-        "Keyword": "RECOMMENDED",
-        "Requirement": {
-          "CheckFunction": "ColumnPresent",
-          "ColumnName": "SampleColumn"
-        },
-        "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CostAndUsage-D-003-C"
+        ]
       }
     },
     "AvailabilityZone-C-002-M": {
@@ -733,10 +1351,6 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ListUnitPrice-C-001-C"
-            },
-            {
-              "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "ListUnitPrice-C-002-M"
             },
             {
@@ -774,29 +1388,9 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
-      }
-    },
-    "ListUnitPrice-C-001-C": {
-      "Function": "Presence",
-      "Reference": "ListUnitPrice",
-      "EntityType": "Column",
-      "Notes": "",
-      "CRVersionIntroduced": "1.2",
-      "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
-      "Type": "Static",
-      "ValidationCriteria": {
-        "MustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
-        "Keyword": "MUST",
-        "Requirement": {
-          "CheckFunction": "ColumnPresent",
-          "ColumnName": "ListUnitPrice"
-        },
-        "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CostAndUsage-D-004-C"
+        ]
       }
     },
     "ListUnitPrice-C-002-M": {
@@ -1147,27 +1741,9 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
-      }
-    },
-    "BillingAccountType-C-001-C": {
-      "Function": "Presence",
-      "Reference": "BillingAccountType",
-      "EntityType": "Column",
-      "Notes": "",
-      "CRVersionIntroduced": "1.2",
-      "Status": "Active",
-      "ApplicabilityCriteria": [],
-      "Type": "Static",
-      "ValidationCriteria": {
-        "MustSatisfy": "MUST be present in a FOCUS dataset",
-        "Keyword": "MUST",
-        "Requirement": {
-          "CheckFunction": "ColumnPresent",
-          "ColumnName": "BillingAccountType"
-        },
-        "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CostAndUsage-C-007-C"
+        ]
       }
     },
     "BillingAccountType-C-002-M": {
@@ -1306,6 +1882,127 @@
         "Dependencies": []
       }
     },
+    "BillingPeriodEnd-C-000-M": {
+      "Function": "Composite",
+      "Reference": "BillingPeriodEnd",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingPeriodEnd column adheres to the following requirements",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "AND",
+          "Items": [
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodEnd-C-002-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodEnd-C-003-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodEnd-C-004-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BillingPeriodEnd-C-005-M"
+            }
+          ]
+        },
+        "Condition": {},
+        "Dependencies": [
+          "CostAndUsage-D-010-M"
+        ]
+      }
+    },
+    "BillingPeriodEnd-C-002-M": {
+      "Function": "Type",
+      "Reference": "BillingPeriodEnd",
+      "EntityType": "Column",
+      "Notes": "Relies on new TypeDateTime check",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be of type Date/Time",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "TypeDateTime",
+          "ColumnName": "BillingPeriodEnd"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingPeriodEnd-C-003-M": {
+      "Function": "Format",
+      "Reference": "BillingPeriodEnd",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST conform to DateTimeFormat requirements",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "FormatDateTime",
+          "ColumnName": "BillingPeriodEnd"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingPeriodEnd-C-004-M": {
+      "Function": "Validation",
+      "Reference": "BillingPeriodEnd",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST NOT be null",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "BillingPeriodEnd",
+          "Value": null
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BillingPeriodEnd-C-005-M": {
+      "Function": "Validation",
+      "Reference": "BillingPeriodEnd",
+      "EntityType": "Column",
+      "Notes": "Validates exclusive end bound of the billing period.",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "MustSatisfy": "MUST be the exclusive end bound of the billing period",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "CheckExclusiveEndBound",
+          "StartColumnName": "BillingPeriodStart",
+          "EndColumnName": "BillingPeriodEnd"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
     "BilledCost-C-000-M": {
       "Function": "Composite",
       "Reference": "BilledCost",
@@ -1321,10 +2018,6 @@
         "Requirement": {
           "CheckFunction": "AND",
           "Items": [
-            {
-              "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "BilledCost-C-001-M"
-            },
             {
               "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "BilledCost-C-002-M"
@@ -1352,27 +2045,9 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
-      }
-    },
-    "BilledCost-C-001-M": {
-      "Function": "Presence",
-      "Reference": "BilledCost",
-      "EntityType": "Column",
-      "Notes": "",
-      "CRVersionIntroduced": "1.2",
-      "Status": "Active",
-      "ApplicabilityCriteria": [],
-      "Type": "Static",
-      "ValidationCriteria": {
-        "MustSatisfy": "MUST be present in a FOCUS dataset",
-        "Keyword": "MUST",
-        "Requirement": {
-          "CheckFunction": "ColumnPresent",
-          "ColumnName": "BilledCost"
-        },
-        "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CostAndUsage-C-006-M"
+        ]
       }
     },
     "BilledCost-C-002-M": {

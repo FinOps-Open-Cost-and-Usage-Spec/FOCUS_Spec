@@ -72,7 +72,7 @@
       "type": "object",
       "description": "Top-level groupings (like FOCUS) mapping to top level rule IDs.",
       "patternProperties": {
-        "^[A-Z0-9_]+$": {
+        "^[a-zA-Z0-9_]+$": {
           "type": "object",
           "properties": {
             "ConformanceRules": {
@@ -94,7 +94,7 @@
       "type": "object",
       "description": "The list of all rules, each containing logic, reference metadata, and criteria.",
       "patternProperties": {
-        "^[A-Za-z0-9]+-[CA]{1}-\\d{3}-[MOC]$": {
+        "^[A-Za-z0-9]+-[CAD]{1}-\\d{3}-[MOC]$": {
           "type": "object",
           "properties": {
             "Function": {
@@ -113,6 +113,7 @@
             "EntityType": {
               "type": "string",
               "enum": [
+                "Dataset",
                 "Column",
                 "Attribute"
               ]

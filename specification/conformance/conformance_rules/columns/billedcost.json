@@ -16,10 +16,6 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-001-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BilledCost-C-002-M"
           },
           {
@@ -45,27 +41,9 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "BilledCost-C-001-M": {
-    "Function": "Presence",
-    "Reference": "BilledCost",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "MUST be present in a FOCUS dataset",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "BilledCost"
-      },
-      "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-C-006-M"
+      ]
     }
   },
   "BilledCost-C-002-M": {

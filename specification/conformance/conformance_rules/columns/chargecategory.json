@@ -1,4 +1,5 @@
-{"ChargeCategory-C-000-M": {
+{
+  "ChargeCategory-C-000-M": {
     "Function": "Composite",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
@@ -15,10 +16,6 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ChargeCategory-D-001-M" 
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ChargeCategory-C-002-M"
           },
           {
@@ -32,27 +29,9 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "ChargeCategory-D-001-M": {
-    "Function": "Presence",
-    "Reference": "ChargeCategory",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "MUST be present in a FOCUS dataset",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "ChargeCategory"
-      },
-      "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-008-M"
+      ]
     }
   },
   "ChargeCategory-C-002-M": {
@@ -76,7 +55,7 @@
     }
   },
   "ChargeCategory-C-003-M": {
-    "Function": "NullabilityRules",
+    "Function": "Validation",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
     "Notes": "",
@@ -86,7 +65,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null",
-      "Keyword": "MUST NOT",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "ChargeCategory",
