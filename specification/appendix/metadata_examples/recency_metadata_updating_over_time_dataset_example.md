@@ -3,6 +3,7 @@
 ## Scenario
 
 ACME provides recency metadata to accompany their FOCUS data export. Acme updates their FOCUS Cost and Usage, data time series dataset, every hour, the data lags by 2 days. In this case the most recent update to the recency data indicates the previously incomplete time sectors are now complete. It also indicates that previous time sectors have been updated in the dataset. New time sectors have also been added.
+
 ## Supplied Metadata
 
 Metadata can be provided at a location such as `/FOCUS/metadata/recency/recency-1234-abcde-12345-abcde-12345.json`.
@@ -80,8 +81,6 @@ The provided recency metadata for time series dataset could look like this:
       "complete" : false,
       "last_updated" : "2025-01-29T11:15:24z"
     }
-    
-
   ]
 }
 ```
