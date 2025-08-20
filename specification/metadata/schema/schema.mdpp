@@ -28,7 +28,7 @@ Should there be an error where the schema metadata object does not match the sch
 
 ## Schema Example
 
-For an example of the FOCUS schema metadata, please refer to: [Schema Metadata Example](#schemametadata)
+For an example of the FOCUS schema metadata, please refer to: [Schema Metadata Example](#schema_metadata_example)
 
 !INCLUDE "schemaid.md",1
 !INCLUDE "creationdate.md",1
