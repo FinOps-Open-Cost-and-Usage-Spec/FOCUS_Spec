@@ -1,6 +1,6 @@
 # Start Time
 
-The start time of the time sector. 
+The start time of the time sector.
 
 The StartTime MUST be present in the metadata. This MUST be of type Date/Time and MUST NOT contain null values. StartTime MUST conform to [DateTimeFormat](#date/timeformat).
 
