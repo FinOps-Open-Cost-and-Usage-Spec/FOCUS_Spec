@@ -1,5 +1,7 @@
 # Correction Handling
 
+Test.
+
 Correction Handling attribute defines how updates to previously provided charge records are represented in FOCUS datasets.
 
 **Terminology Note:** The term "Correction" (capitalized) refers specifically to an allowed value in the [ChargeClass](#chargeclass) column, which designates charge records used to correct cost and usage data from a previously invoiced [*billing period*](#glossary:billing-period). In contrast, the Correction Handling attribute covers the broader concept of "corrections" (lowercase), which includes charge records used to correct cost and usage data originally associated with a previously invoiced billing period, an uninvoiced billing period, or the current billing period, as well as the omission of a previously provisioned charge if it is no longer applicable.
