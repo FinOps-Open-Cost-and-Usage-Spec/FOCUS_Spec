@@ -85,11 +85,15 @@ Defines how updates to previously provided charge records are represented in FOC
 
 > WORK IN PROGRESS !!!
 
+---
+
 Potential exceptions, to be discussed:
 
 * Restatement of Dimensions Not on Original Invoice: Determine whether exceptions will be allowed for corrections that modify only non-invoiced dimensions.
 * Technical issues mentioned by Riley.
 * Replacment over Append-only explicitly specified by the end-user.
+
+---
 
 * Replacement provisioning style MAY be applied, even for charges included in datasets associated with previously invoiced billing periods, when xplicitly requested by the end-user.
 * Providers MAY apply the Replacement provisioning style instead of Append-only, even for charges included in datasets associated with previously invoiced billing periods, provided that updates affect only non-invoiced dimensions and the integrity of finalized invoices is preserved.
