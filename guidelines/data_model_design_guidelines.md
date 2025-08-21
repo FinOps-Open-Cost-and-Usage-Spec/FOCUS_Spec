@@ -38,7 +38,7 @@ Different datasets represent different entities and may require different levels
 
 A dataset representing the overtime charges for a vendor represents a charge entity. A dataset that represents invoices is not the same entity and therefore could be considered appropriate to add as a separate dataset, should invoices need to be represented as a dedicated entity.
 
-## Interoperability and Integration:
+## Interoperability and Integration
 
 Datasets should integrate with one another, maintaining consistency in terminology, keys, and standards as defined by the FOCUS specification. Linkages to other datasets in a [primary key](https://en.wikipedia.org/wiki/Primary_key) and [foreign key](https://en.wikipedia.org/wiki/Foreign_key) nature should be identified. Uniqueness scope must be determined and adhered to.
 
