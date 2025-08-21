@@ -2,9 +2,9 @@
 
 Correction Handling attribute defines how updates to previously provided charge records are represented in FOCUS datasets.
 
-**Terminology Note:** The term "Correction" (uppercase) refers specifically to the allowed value in the Charge Class column, which is limited to corrections for previously invoiced billing periods. In contrast, the Correction Handling attribute covers corrections (lowercase) to previously provided charge records, including those that occurred in previously invoiced, uninvoiced, or current billing periods.
+**Terminology Note:** The term "Correction" (capitalized) refers specifically to an allowed value in the [ChargeClass](#chargeclass) column, which designates charge records used to correct cost and usage data from a previously invoiced [*billing period*](#glossary:billing-period). In contrast, the Correction Handling attribute covers the broader concept of "corrections" (lowercase), which includes charge records used to correct cost and usage data originally associated with a previously invoiced billing period, an uninvoiced billing period, or the current billing period, as well as the omission of a previously provisioned charge if it is no longer applicable.
 
-Corrections may arise from a variety of operational or technical causes, such as refunds, delayed or missing usage data, rounding errors, post-processing adjustments, etc.
+Corrections may arise from a variety of operational or technical causes, such as refunds, delayed or missing cost and usage data, rounding errors, post-processing adjustments, etc.
 
 Accurate correction handling is essential for a range of business-critical processes, including but not limited to:
 
@@ -15,30 +15,31 @@ Accurate correction handling is essential for a range of business-critical proce
 
 Once an invoice is issued, it serves as the authoritative financial document and is considered finalized and immutable. All charge records associated with an issued invoice are also considered finalized and must remain unchanged (i.e., corrections to finalized charge records, whether as updates, deletions or omissions, are not permitted). Furthermore, no additional charge records may be associated with an invoice once it has been issued. This ensures that issued invoices and their underlying charge records remain immutable for financial, auditing, and compliance purposes.
 
-A billing period is considered closed once all invoices for that period have been issued and all charge records for that period are finalized. After a billing period is closed, no new charge records may be associated with it, and all previously finalized charge records remain unchanged. Any necessary corrections to charges originally incurred in a closed billing period must instead be reflected in a subsequent open billing period, with the charge period indicating when the cost was incurred. This provides a clear temporal boundary between billing cycles, preserving immutability while still allowing corrections to be tracked transparently in later billing periods.
+A billing period is considered invoiced (or closed) once all invoices for that period have been issued and all charge records for that period are finalized. After a billing period is invoiced, no new charge records may be associated with it, and all previously finalized charge records remain unchanged. Any necessary corrections to charges originally incurred in an invoiced billing period must instead be reflected in a subsequent open billing period, with the charge period indicating when the cost was  incurred. This provides a clear temporal boundary between billing cycles, preserving immutability while still allowing corrections to be tracked transparently in later billing periods.
 
-FOCUS datasets can be delivered using one of two mechanisms - Replacement or sppend-only.
+FOCUS supports two cost and usage data delivery mechanisms: Replacement and Append-only.
 
-For the Replacement mechanism, the initial and each subsequent dataset for a billing period provide a complete snapshot of cost and usage data collected for that period up to the time of delivery, with each subsequent dataset reflecting any updates, omissions, or additions since the previous one. This mechanism does not provide a built-in audit trail, so historical snapshots must be maintained separately to support traceability.
+In the Replacement mechanism, each dataset provides a complete snapshot of cost and usage data for a billing period, based on the data collected up to the time of delivery. Subsequent datasets typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism lacks a built-in audit trail, and therefore historical snapshots must be retained externally to support traceability.
 
-In the Replacement mechanism, charge records in subsequent datasets are handled as follows:
+Subsequent datasets in the Replacement mechanism may include the following:
 
-* Unchanged charge records – carried over unchanged from the previously delivered dataset.
-* Updated charge records – overwritten with the latest values.
-* Additional charge records – new entries representing either billing period segments not previously reported, or supplements to segments included in the previously delivered dataset (e.g., refunds or delayed cost and usage data).
-* Omitted charge records – removed from the dataset because they are no longer applicable.
+* Unchanged records are carried over.
+* Updated records overwrite previous values.
+* Additional records supplement previously delivered data.
+* Omitted records are removed if no longer applicable.
 
-In the Append-only mechanism, corrections are represented exclusively by appending one or more new records, while previously delivered records remain unchanged. Duplicate records are explicitly disallowed. This mechanism inherently supports a built-in audit trail, since all original and correction records are retained as distinct entries.
+Corrections in the Replacement mechanism are modeled through updates, additions, or omissions relative to the previous snapshot — with the restriction that corrections to charges originally incurred in previously invoiced billing periods must be represented exclusively through the addition of new records. Modifications or deletions of finalized records are not allowed, as they would compromise the immutability of issued invoices and the integrity of audit trails.
 
-When the Append-only delivery mechanism is used, there are two common styles for modeling corrections:
+In the Append-only mechanism, each dataset appends new records without modifying or removing previously delivered ones. This mechanism inherently supports auditability, as all original and correction records are retained.
 
-* In ledger-style correction, corrections are represented by adding one or more records that increment or decrement the cost or usage quantity. These records MUST retain all non-numeric fields (e.g., service, region, usage type) identical to the original. There is no explicit reversal of the original record; only the net effect is reflected. This method reduces data volume but provides limited audit transparency.
+Corrections in the Append-only mechanism are represented exclusively by adding new records, and duplicate entries are explicitly disallowed.
 
-* In contrast, accounting-style correction uses a two-step representation: the original record is first reversed using a charge record that matches all fields of the original except for the numeric values, which are inverted, followed by a new record with the corrected values. This model preserves a full correction history and is preferred when transparency and traceability are required.
+Within the Append-only mechanism, two correction styles are commonly used:
 
-* In contrast, accounting-style correction uses a two-step representation: the original record is first reversed using a row with negative values for cost and quantity, and then followed by a new record with the corrected values. The reversal MUST match the original in all fields, except for the negated numeric amounts. This model preserves a full correction history and is RECOMMENDED when transparency and traceability are required.
+* Ledger-style correction: Adds records that adjust selected cost- and quantity-related columns by incrementing or decrementing their values. All other columns remain unchanged. No explicit reversal is performed. This style offers limited audit transparency.
+* Accounting-style correction: Uses a two-step representation. First, the original record is reversed using a charge, in which all cost- and quantity-related columns carry values with the opposite sign, while all other columns match the original. This reversal charge is typically followed by a new record with the corrected values, although in some cases only the reversal is provided. This style preserves full correction history.
 
-FOCUS supports both Replacement and Append-only cost and usage data delivery mechanisms for most use cases. However, for corrections to charges originally incurred in previously invoiced billing periods, only Append-only delivery mechanism is permitted. This ensures financial integrity and enables accurate audit trails.
+To ensure data integrity, correction records must not result in double counting of any cost- or quantity-related values. This applies regardless of the correction style or delivery mechanism used.
 
 All correction charge records adhere to the correction handling requirements listed below.
 
@@ -58,13 +59,27 @@ Defines how updates to previously provided charge records are represented in FOC
 
 > WORK IN PROGRESS !!!
 
-* Corrections to charges in previously closed billing periods adhere to the following additional requirements:
-  * The correction MUST NOT replace or omit the original record.
-  * The corrected row(s) MUST be assigned to a different InvoiceId than the one associated with the original record.
-  * The BillingPeriodStart and BillingPeriodEnd MUST reflect the current open billing period in which the correction is being issued (correspond to the open billing period in which the correction is issued).
-  * The ChargePeriodStart and ChargePeriodEnd MUST retain the original time window in which the charge occurred (cost was actually incurred).
-  * ChargeClass MUST be set to "Correction".
-* Providers MUST clearly document which provisioning and correction styles are in use (Replacement, Ledger-style, Accounting-style).
+* Data Generator MUST publish the provisioning and correction styles in use (Replacement, Ledger-style, Accounting-style) within their respective documentation.
+* Correction MUST NOT result in double counting of any cost- or quantity-related values.
+
+### Invoice and Billing Period
+
+* Invoice MUST be considered finalized and immutable once issued.
+* Once the associated invoice is issued, each underlying charge record adheres to the following additional requirements:
+  * Charge record MUST be considered finalized and immutable.
+  * Charge record MUST NOT be updated, deleted, or omitted.
+* Additional charge records MUST NOT be associated with an invoice once it is issued.
+* Billing period MUST be considered invoiced and closed once all invoices for that period are issued.
+* Additional charge records MUST NOT be associated with a billing period once it is invoiced and closed.
+
+### Corrections to charges from a previously invoiced and closed billing period
+
+* Corrections to charges from a previously invoiced and closed billing period adhere to the following additional requirements:
+  * ChargeClass MUST be "Correction".
+  * Correction MUST NOT replace or omit the original record.
+  * Corrected row(s) MUST be assigned to a different `InvoiceId` than the original record.
+  * [BillingPeriodStart](#billingperiodstart) and [BillingPeriodEnd](#billingperiodend) MUST equal the [*inclusive start bound*](#glossary:inclusivestartbound) and [*exclusive end bound*](#glossary:exclusiveendbound) of a subsequent open billing period in which the correction is issued.
+  * [ChargePeriodStart](#chargeperiodstart) and [ChargePeriodEnd](#chargeperiodend) MUST equal the *inclusive start bound* and *exclusive end bound* of the period in which the cost was originally incurred.
 
 ## Exceptions
 
@@ -75,6 +90,10 @@ Potential exceptions, to be discussed:
 * Restatement of Dimensions Not on Original Invoice: Determine whether exceptions will be allowed for corrections that modify only non-invoiced dimensions.
 * Technical issues mentioned by Riley.
 * Replacment over Append-only explicitly specified by the end-user.
+
+* Replacement provisioning style MAY be applied, even for charges included in datasets associated with previously invoiced billing periods, when xplicitly requested by the end-user.
+* Providers MAY apply the Replacement provisioning style instead of Append-only, even for charges included in datasets associated with previously invoiced billing periods, provided that updates affect only non-invoiced dimensions and the integrity of finalized invoices is preserved.
+* (TODO) Technical issues mentioned by Riley.
 
 ## Introduced (version)
 
