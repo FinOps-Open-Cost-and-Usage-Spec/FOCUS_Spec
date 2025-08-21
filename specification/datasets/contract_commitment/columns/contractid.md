@@ -24,7 +24,7 @@ Contract ID
 
 ## Description
 
-The identifier assigned to a contract describing the terms of one or more *negotiated discounts* between the provider and the customer.
+The identifier assigned to a contract describing the agreed terms between the provider and the customer.
 
 ## Content constraints
 
