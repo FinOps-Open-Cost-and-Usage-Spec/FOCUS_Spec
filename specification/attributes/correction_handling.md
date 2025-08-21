@@ -23,10 +23,10 @@ For the Replacement mechanism, the initial and each subsequent dataset for a bil
 
 In the Replacement mechanism, charge records in subsequent datasets are handled as follows:
 
-* Unchanged charge records – carried over unchanged from the previously delivered dataset.
-* Updated charge records – overwritten with the latest values.
-* Additional charge records – new entries representing either billing period segments not previously reported, or supplements to segments included in the previously delivered dataset (e.g., refunds or delayed cost and usage data).
-* Omitted charge records – removed from the dataset because they are no longer applicable.
+* Unchanged charge records - carried over unchanged from the previously delivered dataset.
+* Updated charge records - overwritten with the latest values.
+* Additional charge records - new entries representing either billing period segments not previously reported, or supplements to segments included in the previously delivered dataset (e.g., refunds or delayed cost and usage data).
+* Omitted charge records - removed from the dataset because they are no longer applicable.
 
 In the Append-only mechanism, corrections are represented exclusively by appending one or more new records, while previously delivered records remain unchanged. Duplicate records are explicitly disallowed. This mechanism inherently supports a built-in audit trail, since all original and correction records are retained as distinct entries.
 
