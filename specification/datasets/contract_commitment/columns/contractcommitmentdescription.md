@@ -20,7 +20,7 @@ Contract Commitment Description
 
 ## Description
 
-Self-contained summary of the *contract commitment's* terms.
+The self-contained summary of the *contract commitment's* terms.
 
 ## Content Constraints
 
