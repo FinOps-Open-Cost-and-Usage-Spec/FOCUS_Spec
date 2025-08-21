@@ -14,7 +14,7 @@ Invoice Handling
 
 ## Description
 
-Indicates how invoice-level transactions, including those not directly tied to usage, should be represented in a FOCUS dataset. 
+Indicates how invoice-level *charges*, including those not directly tied to usage, should be represented in a FOCUS dataset. 
 
 ## Requirements
 
