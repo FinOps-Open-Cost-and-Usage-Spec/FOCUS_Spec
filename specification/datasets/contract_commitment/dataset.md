@@ -2,8 +2,8 @@
 | ------------------------------------------------------------------ | ----------- | ------------- | ------------ | --------- | ----------------------- |
 | [Contract Commitment ID](#contractcommitmentid-1)                  | Dimension   | Mandatory     | False        | String    | \<not specified>        |
 | [Contract ID](#contractid-1)                                       | Dimension   | Mandatory     | False        | String    | \<not specified>        |
-| [Contract Start](#contractstart)                                   | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
-| [Contract End](#contractend)                                       | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
+| [Contract Period Start](#contractperiodstart)                      | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
+| [Contract Period End](#contractperiodend)                          | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
 | [Contract Commitment Period Start](#contractcommitmentperiodstart) | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
 | [Contract Commitment Period End](#contractcommitmentperiodend)     | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
 | [Contract Commitment Description](#contractcommitmentdescription)  | Dimension   | Mandatory     | True         | String    | \<not specified>        |
