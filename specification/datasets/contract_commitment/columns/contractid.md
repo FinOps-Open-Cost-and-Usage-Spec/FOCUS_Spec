@@ -24,7 +24,7 @@ Contract ID
 
 ## Description
 
-The identifier assigned to a contract describing the agreed terms between the provider and the customer.
+A provider-assigned identifier for a contract describing the agreed terms between a provider and a customer.
 
 ## Content constraints
 
