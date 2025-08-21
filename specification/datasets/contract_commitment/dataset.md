@@ -1,6 +1,6 @@
 | Column                                          | Column Type | Feature Level | Allows Nulls | Data Type | Value Format            |
 | ----------------------------------------------- | ----------- | ------------- | ------------ | --------- | ----------------------- |
-| [Contract Commitment ID](#contractcommitmentid) | Dimension   | Mandatory     | False        | String    | \<not specified>       |
+| [Contract Commitment ID](#contractcommitmentid-1) | Dimension   | Mandatory     | False        | String    | \<not specified>       |
 | Contract ID                                     | Dimension   | Mandatory     | False        | String    | \<not specified>       |
 | Contract Start                                  | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
 | Contract End                                    | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
