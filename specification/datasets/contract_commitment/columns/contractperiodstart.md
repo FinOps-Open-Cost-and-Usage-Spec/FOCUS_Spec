@@ -20,7 +20,7 @@ Contract Period Start
 
 ## Description
 
-The *inclusive start bound* of a *contract* period.
+The *inclusive start bound* of a *contract period*.
 
 ## Content constraints
 
