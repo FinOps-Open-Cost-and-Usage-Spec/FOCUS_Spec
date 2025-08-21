@@ -23,10 +23,10 @@ In the Replacement mechanism, each dataset provides a complete snapshot of cost 
 
 Subsequent datasets in the Replacement mechanism may include the following:
 
-* Unchanged records are carried over.
-* Updated records overwrite previous values.
-* Additional records supplement previously delivered data.
-* Omitted records are removed if no longer applicable.
+* Unchanged charge records - carried over unchanged from the previously delivered dataset.
+* Updated charge records - overwritten with the latest values.
+* Additional charge records - new entries representing either billing period segments not previously reported, or supplements to segments included in the previously delivered dataset (e.g., refunds or delayed cost and usage data).
+* Omitted charge records - removed from the dataset because they are no longer applicable.
 
 Corrections in the Replacement mechanism are modeled through updates, additions, or omissions relative to the previous snapshot — with the restriction that corrections to charges originally incurred in previously invoiced billing periods must be represented exclusively through the addition of new records. Modifications or deletions of finalized records are not allowed, as they would compromise the immutability of issued invoices and the integrity of audit trails.
 
