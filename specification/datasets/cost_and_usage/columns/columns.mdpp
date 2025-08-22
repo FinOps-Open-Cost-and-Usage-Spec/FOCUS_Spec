@@ -26,7 +26,7 @@
 !INCLUDE "contractedcost.md",1
 !INCLUDE "contractedunitprice.md",1
 !INCLUDE "effectivecost.md",1
-!INCLUDE "host_provider.md",1
+!INCLUDE "hostprovider.md",1
 !INCLUDE "invoiceid.md",1
 !INCLUDE "invoiceissuer.md",1
 !INCLUDE "listcost.md",1
