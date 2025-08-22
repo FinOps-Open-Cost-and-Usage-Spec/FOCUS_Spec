@@ -8,6 +8,7 @@ The ChargeCategory column adheres to the following requirements:
 * ChargeCategory MUST be of type String.
 * ChargeCategory MUST NOT be null.
 * ChargeCategory MUST be one of the allowed values.
+* ChargeCategory SHOULD be used to differentiate types of non-usage charges (e.g., "Tax", "Credit", "Purcahse", "Adjustment").
 
 ## Column ID
 

@@ -19,14 +19,13 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 ## Requirements
 
 * All costs that appear on an invoice SHOULD be present in the FOCUS dataset.
-* Invoice-level transactions MAY be expressed as individual rows or as part of aggregated rows, provided they remain distinguishable using existing FOCUS dimensions and metrics.
-* ChargeCategory SHOULD be used to differentiate types of non-usage *charges* (e.g., "Tax", "Credit", "Purchase", "Adjustment").
+* Invoice-level charges MAY be expressed as individual rows or as part of aggregated rows, provided they remain distinguishable and use or closely align with the FOCUS schema.
 * If an invoice-level transaction appears on a customer’s invoice but cannot be fully represented using existing FOCUS columns, providers SHOULD include supplemental columns (e.g., x_ChargeSubType) to ensure that the invoice charge is captured in the FOCUS dataset. 
-* The total cost associated with a given Invoice ID in the FOCUS dataset SHOULD match the total cost presented on the associated invoice.
+
 
 ## Exceptions
 
-* Invoice corrections or adjustments applied outside the represented billing period MAY be excluded from the current dataset if they are expected to appear in a subsequent period’s FOCUS dataset.
+None
 
 ## Introduced (version)
 
