@@ -2,13 +2,11 @@
 
 ## Prevent Replacement After Invoice Finalization (and Billing Period Closure)
 
-> **TODO:** Mention/address in upcoming Correction Handling attribute
-
 ***Note:*** *See S-1: Itemized Correction Scenarios with Cost Calculation Integrity Respected - S-1.1 and S-1.2 in particular*
 
 We should prevent the use of the Replacement provisioning style once an invoice has been finalized and the corresponding billing period closed.
 
-Since Replacement relies on overwriting or replacing previously delivered charge records within the original billing period, it inherently conflicts with the Normative Requirements for Post-Invoice Finalization Corrections — and in particular the Legal and Procedural Perspective, which states that once an invoice has been finalized and the corresponding billing period closed:
+Since Replacement relies on overwriting or replacing previously delivered charge records within the original billing period, it inherently conflicts with the Normative Requirements for Post-Invoice Finalization Corrections - and in particular the Legal and Procedural Perspective, which states that once an invoice has been finalized and the corresponding billing period closed:
 
 - A finalized invoice is considered legally issued and immutable.
 - The associated billing period is closed, prohibiting any modifications or overwriting of previously delivered records.
@@ -20,14 +18,13 @@ Therefore, only append-only provisioning styles (such as ledger-style increments
 - Contributors are encouraged to document any exception to the general rule.
 
 - Should we allow restating in cases where corrections apply to dimensions that were not included in the original invoice?
-Personally, I would prefer not to allow this — but this is currently the only scenario where I can see a possible justification.
+  *Note: Personally, I would prefer not to allow this.*
 - Technical issues mentioned by Riley.
 - Explicitly specified by the end-user.
 
 ### Normative Requirements for Post-Invoice Finalization Corrections
 
-> **TODO:** Mention/address in upcoming Correction Handling attribute
-> (Shawn has added numbers to the statements that would become normative requirements in the attribute)
+> Shawn has added numbers to the statements that would become normative requirements in the attribute
 
 The following applies to all corrections to a previously closed billing period, i.e., correction charge records provisioned after invoice finalization and billing period closure, but which pertain to activity that occurred during that already invoiced and closed period:
 
@@ -47,8 +44,6 @@ The following applies to all corrections to a previously closed billing period, 
 
 ## Cost and Usage data Provisioning Styles
 
-> **TODO:** Mention/address in upcoming Correction Handling attribute
-
 Data Generators typically use two main provisioning styles/mechanisms when delivering cost and usage data:
 
 - **Replacement:** Overwrites previously delivered records with updated ones. This approach ensures data accuracy by reflecting corrections directly in place.
@@ -59,10 +54,9 @@ Data Generators typically use two main provisioning styles/mechanisms when deliv
 
 ## Finalized Invoice and Closed Billing Period
 
-> **TODO:** Mention/address in upcoming Correction Handling attribute
 > See [FR #Add invoice-level correction handling rules](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1013)
 
-While the FOCUS specification mentions closed billing periods, it currently does not define the process for invoice issuance or billing period closure. It also does not define any explicit **“finalized”** status for invoices, nor a **“closed”** status for billing periods, nor the point at which an invoice is considered finalized or a billing period considered closed.
+While the FOCUS specification mentions closed billing periods, it currently does not define the process for invoice issuance or billing period closure. It also does not define any explicit **“finalized”** status for invoices, nor a **"closed"** status for billing periods, nor the point at which an invoice is considered finalized or a billing period considered closed.
 
 To address these **gaps** in this scenario, we assume the following:
 
