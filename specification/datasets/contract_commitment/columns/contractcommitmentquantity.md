@@ -28,7 +28,7 @@ The amount associated with the *contract commitment*.
 
 | Constraint    | Value                              |
 | :------------ | :--------------------------------- |
-| Column type   | Dimension                          |
+| Column type   | Metric                             |
 | Feature level | Conditional                        |
 | Allows nulls  | True                               |
 | Data type     | Decimal                            |
