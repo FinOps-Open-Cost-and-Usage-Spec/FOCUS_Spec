@@ -91,6 +91,8 @@ The ContractCommitmentAppliedUnit column adheres to the following requirements:
 
 # Examples
 
+## Example 1
+
 A single charge has two contractual commitments applied:
 
 1) Spend a certain amount of money on the relevant service.
@@ -110,6 +112,31 @@ A single charge has two contractual commitments applied:
                "ContractCommitmentAppliedCost": null,
                "ContractCommitmentAppliedQuantity": 10,
                "ContractCommitmentAppliedUnit": "compute_hours"
+           }
+     ]
+}
+```
+
+## Example 2
+
+The same as Example 1, except a custom key-value pair `x_ContractCommitmentCostBalance` is provided by the data generator.   This datapoint represents the value remaining on a burndown contract commitment, which started at $500k.
+
+```json
+{
+"ContractApplied": [
+          {
+               "ContractCommitmentID": "12346",
+               "ContractCommitmentAppliedCost": 100.00,
+               "ContractCommitmentAppliedQuantity": null,
+               "ContractCommitmentAppliedUnit": null,
+               "x_ContractCommitmentCostBalance": 499000.00
+           },
+           {
+               "ContractCommitmentID": "23456",
+               "ContractCommitmentAppliedCost": null,
+               "ContractCommitmentAppliedQuantity": 10,
+               "ContractCommitmentAppliedUnit": "compute_hours",
+               "x_ContractCommitmentCostBalance": null
            }
      ]
 }
