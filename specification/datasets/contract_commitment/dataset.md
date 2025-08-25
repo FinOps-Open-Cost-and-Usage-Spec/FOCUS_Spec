@@ -29,7 +29,9 @@ The Contract Commitment dataset can be joined to the Cost and Usage dataset thro
 
 ## Requirements
 
-The Contract Commitment dataset does not adhere to any dataset-level requirements.
+The ContractCommitment dataset adheres to the following requirements:
+
+* ContractCommitment MUST be present when the provider supports *contract commitments*.
 
 ## Dataset ID
 
