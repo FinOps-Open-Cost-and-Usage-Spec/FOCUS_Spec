@@ -19,6 +19,8 @@ The ContractApplied column adheres to the following requirements:
   * ContractApplied MUST NOT be null when ContractID is not null.
 * When ContractApplied is not null, ContractApplied adheres to the following additional requirements:
   * ContractApplied MUST contain four key-value pairs, representing ContractCommitmentID, ContractCommitmentAppliedCost, ContractCommitmentAppliedQuantity, and ContractCommitmentAppliedUnit.
+  * ContractApplied MAY contain further key-value pairs, representing custom datapoints provided by the data generator.
+  * ContractApplied MUST be documented by the data generator when custom key-value pairs are present.
 
 ## JSON Datapoints
 
