@@ -1,3 +1,13 @@
+# Contract Commitment
+
+The Contract Commitment dataset is a supporting dataset that describes the terms of contracts agreed between a provider and a customer.
+
+The Contract Commitment dataset can be joined to the Cost and Usage dataset through the use of the Contract Commitment ID field.
+
+The Contract Commitment dataset does not adhere to any dataset-level requirements.
+
+## Columns
+
 | Column                                                             | Column Type | Feature Level | Allows Nulls | Data Type | Value Format            |
 | ------------------------------------------------------------------ | ----------- | ------------- | ------------ | --------- | ----------------------- |
 | [Contract Commitment ID](#contractcommitmentid-1)                  | Dimension   | Mandatory     | False        | String    | \<not specified>        |
@@ -12,3 +22,19 @@
 | [Contract Commitment Unit](#contractcommitmentunit)                | Dimension   | Mandatory     | True         | String    | \<not specified>        |
 | [Contract Commitment Quantity](#contractcommitmentquantity)        | Metric      | Mandatory     | True         | Numeric   | Any valid decimal value |
 | [Contract Commitment Cost](#contractcommitmentcost)                | Metric      | Mandatory     | True         | Numeric   | Any valid decimal value |
+
+## Dataset ID
+
+ContractCommitment
+
+## Display Name
+
+Contract Commitment
+
+## Description
+
+Describes the terms of contracts agreed between a provider and a customer.
+
+## Introduced (version)
+
+0.5
