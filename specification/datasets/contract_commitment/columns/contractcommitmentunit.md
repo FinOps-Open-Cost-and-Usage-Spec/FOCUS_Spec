@@ -1,16 +1,16 @@
 # Contract Commitment Unit
 
-The Contract Commitment Applied Unit represents a provider-specified measurement unit for the amount declared in Contract Commitment Applied Quantity. Contract Commitment Applied Unit complements the Contract Commitment Applied Quantity metric.
+The Contract Commitment Unit represents a provider-specified measurement unit for the amount declared in Contract Commitment Quantity. Contract Commitment Unit complements the Contract Commitment Quantity metric.
 
-The ContractCommitmentAppliedUnit column adheres to the following requirements:
+The ContractCommitmentUnit column adheres to the following requirements:
 
-* ContractCommitmentAppliedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* ContractCommitmentAppliedUnit MUST be of type String.
-* ContractCommitmentAppliedUnit MUST conform to [StringHandling](#stringhandling) requirements.
-* ContractCommitmentAppliedUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
-* ContractCommitmentAppliedUnit nullability is defined as follows:
-  * ContractCommitmentAppliedUnit MUST be null when ContractCommitmentAppliedQuantity is null.
-  * ContractCommitmentAppliedUnit MUST NOT be null when ContractCommitmentAppliedQuantity is not null.
+* ContractCommitmentUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractCommitmentUnit MUST be of type String.
+* ContractCommitmentUnit MUST conform to [StringHandling](#stringhandling) requirements.
+* ContractCommitmentUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
+* ContractCommitmentUnit nullability is defined as follows:
+  * ContractCommitmentUnit MUST be null when ContractCommitmentQuantity is null.
+  * ContractCommitmentUnit MUST NOT be null when ContractCommitmentQuantity is not null.
 
 ## Column ID
 
@@ -22,7 +22,7 @@ Contract Commitment Unit
 
 ## Description
 
-A provider-specified measurement unit for the amount declared in Contract Commitment Applied Quantity.
+A provider-specified measurement unit for the amount declared in Contract Commitment Quantity.
 
 ## Content Constraints
 
