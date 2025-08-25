@@ -1,6 +1,6 @@
 # Contract Commitment Quantity
 
-Contract Commitment Quantity represents the amount associated with the [*contract commitment*](#glossary:contract-commitment), denominated in a provider-defined [Contract Commitment Unit](#contractcommitmentunit.  Contract Commitment Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as negotiated between a provider and a customer.
+Contract Commitment Quantity represents the amount associated with the [*contract commitment*](#glossary:contract-commitment), denominated in a provider-defined [Contract Commitment Unit](#contractcommitmentunit).  Contract Commitment Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as negotiated between a provider and a customer.
 
 The ContractCommitmentQuantity column adheres to the following requirements:
 
@@ -29,10 +29,11 @@ The amount associated with the *contract commitment*.
 | Constraint    | Value                              |
 | :------------ | :--------------------------------- |
 | Column type   | Dimension                          |
-| Feature level | Mandatory                          |
+| Feature level | Conditional                        |
 | Allows nulls  | True                               |
-| Data type     | String                             |
-| Value format  | \<not specified>                   |
+| Data type     | Decimal                            |
+| Value format  | [Numeric Format](#numericformat)   |
+| Number range  | Any valid decimal value            |
 
 ## Introduced (version)
 
