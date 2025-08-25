@@ -5,6 +5,7 @@
         "AvailabilityZone-C-000-M",
         "BilledCost-C-000-M",
         "BillingAccountType-C-000-M",
+        "ChargeFrequency-C-000-M",
         "ListUnitPrice-C-000-C"
       ]
     }
