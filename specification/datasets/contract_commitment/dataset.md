@@ -15,9 +15,10 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Description](#contractcommitmentdescription)  | Dimension   | Mandatory     | True         | String    | \<not specified>        |
 | [Contract Commitment Type](#contractcommitmenttype)                | Dimension   | Mandatory     | False        | String    | \<not specified>        |
 | [Contract Commitment Category](#contractcommitmentcategory)        | Dimension   | Mandatory     | False        | String    | Allowed Values          |
-| [Contract Commitment Unit](#contractcommitmentunit)                | Dimension   | Conditional   | True         | String    | \<not specified>        |
-| [Contract Commitment Quantity](#contractcommitmentquantity)        | Metric      | Conditional   | True         | Numeric   | Any valid decimal value |
-| [Contract Commitment Cost](#contractcommitmentcost)                | Metric      | Conditional   | True         | Numeric   | Any valid decimal value |
+| [Contract Commitment Unit](#contractcommitmentunit)                | Dimension   | Mandatory     | True         | String    | \<not specified>        |
+| [Contract Commitment Quantity](#contractcommitmentquantity)        | Metric      | Mandatory     | True         | Numeric   | Any valid decimal value |
+| [Contract Commitment Currency](#contractcommitmentcurrency)        | Dimension   | Mandatory     | True         | String    | Currency Format         |
+| [Contract Commitment Cost](#contractcommitmentcost)                | Metric      | Mandatory     | True         | Numeric   | Any valid decimal value |
 
 <div class='h4-nonindex'>Relationships</div>
 
