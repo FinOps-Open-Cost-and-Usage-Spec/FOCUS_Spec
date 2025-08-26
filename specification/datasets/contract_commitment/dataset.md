@@ -2,7 +2,7 @@
 
 The Contract Commitment dataset is a supporting dataset that describes the terms of contracts agreed between a provider and a customer.
 
-## Columns
+<div class='h4-nonindex'>Columns</div>
 
 | Column                                                             | Column Type | Feature Level | Allows Nulls | Data Type | Value Format            |
 | ------------------------------------------------------------------ | ----------- | ------------- | ------------ | --------- | ----------------------- |
@@ -19,7 +19,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Quantity](#contractcommitmentquantity)        | Metric      | Conditional   | True         | Numeric   | Any valid decimal value |
 | [Contract Commitment Cost](#contractcommitmentcost)                | Metric      | Conditional   | True         | Numeric   | Any valid decimal value |
 
-## Relationships
+<div class='h4-nonindex'>Relationships</div>
 
 The Contract Commitment dataset can be joined to the Cost and Usage dataset through the use of the Contract Commitment ID field.
 
@@ -27,24 +27,24 @@ The Contract Commitment dataset can be joined to the Cost and Usage dataset thro
 | ------------------- | ---------------------- | -------------- | ---------------------- |
 | Contract Commitment | Contract Commitment ID | Cost and Usage | Contract Commitment ID |
 
-## Requirements
+<div class='h4-nonindex'>Requirements</div>
 
 The ContractCommitment dataset adheres to the following requirements:
 
 * ContractCommitment MUST be present when the provider supports *contract commitments*.
 
-## Dataset ID
+<div class='h4-nonindex'>Dataset ID</div>
 
 ContractCommitment
 
-## Display Name
+<div class='h4-nonindex'>Display Name</div>
 
 Contract Commitment
 
-## Description
+<div class='h4-nonindex'>Description</div>
 
 Describes the terms of contracts agreed between a provider and a customer.
 
-## Introduced (version)
+<div class='h4-nonindex'>Introduced (version)</div>
 
 1.3
