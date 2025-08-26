@@ -21,6 +21,7 @@ The ContractApplied column adheres to the following requirements:
   * ContractApplied MUST contain four key-value pairs, representing ContractCommitmentID, ContractCommitmentAppliedCost, ContractCommitmentAppliedQuantity, and ContractCommitmentAppliedUnit.
   * ContractApplied MAY contain further key-value pairs, representing custom datapoints provided by the data generator.
   * When ContractApplied custom key-value pairs are present:
+    * ContractApplied custom key-value pairs MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
     * ContractApplied custom key-value pairs MUST be documented by the data generator.
     * ContractApplied custom key-value pairs MUST NOT be nested.
 
