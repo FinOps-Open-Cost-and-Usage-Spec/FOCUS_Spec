@@ -33,9 +33,10 @@ Represents the highest-level classification of a *contract commitment* based on 
 
 Allowed values:
 
-| Value      | Description                                                                                                                                    |
-| :--------- | :----------------------------------------------------------------------------------------------------------------------------------------------|
-| ??      | ?? |
+| Value   | Description                                                              |
+|:--------|:-------------------------------------------------------------------------|
+| Spend   | Contract commitments that require a predetermined amount of spend.       |
+| Usage   | Contract commitments that require a predetermined amount of usage.       |
 
 ## Introduced (version)
 
