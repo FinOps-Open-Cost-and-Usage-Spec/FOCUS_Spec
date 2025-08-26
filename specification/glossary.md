@@ -32,6 +32,14 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
 
+<a name="glossary:build-up-commitment"><b>Build-Up Commitment</b></a>
+
+A commitment model in which a customer gradually contributes ("builds up") toward a predefined commitment amount over a specified [*term*](#glossary:term) (e.g., one or two years). This commitment may be structured either as spend-based, defined by monetary value, or usage-based, defined by the quantity of resources or services. The total committed amount is typically distributed evenly across defined [*commitment intervals*](#glossary:commitment-interval) (such as monthly or yearly), with contributions tracked accordingly. If the target for a given interval is not met, a true-up charge may apply. Commitments are generally made in exchange for commercial benefits, such as discounted pricing. Build-Up Commitments are typically offered as [*Negotiated Build-Up Commitments*](#glossary:negotiated-build-up-commitment), while [*Non-Negotiated Build-Up Commitments*](#glossary:non-negotiated-build-up-commitment) also exist, though they are less common.
+
+<a name="glossary:burn-down-commitment"><b>Burn-Down Commitment</b></a>
+
+A commitment model in which a customer prepays (either All-Upfront, No-Upfront, or Partial Upfront) and gradually consumes ("burns down") a predefined commitment amount over a specified [*term*](#glossary:term) (e.g., one or two years). This commitment may be structured either as spend-based, defined by monetary value, or usage-based, defined by the quantity of resources or services. The total committed amount is typically distributed evenly across defined [*commitment intervals*](#glossary:commitment-interval) (such as hourly, monthly, yearly, or custom), with consumption tracked accordingly. Any unused portion may expire at the end of a *commitment interval* and cannot be carried over. Commitments are generally made in exchange for commercial benefits, such as discounted pricing, and may include provider obligations related to resource availability or service levels. Burn-Down Commitments may be offered as [*Negotiated Burn-Down Commitments*](#glossary:negotiated-burn-down-commitment)] or [*Non-Negotiated Burn-Down Commitments*](#glossary:non-negotiated-burn-down-commitment).
+
 <a name="glossary:capacity-reservation"><b>Capacity Reservation</b></a>
 
 A capacity reservation is an agreement that secures a dedicated amount of resources or services for a specified period. This ensures the reserved capacity is always available and accessible, even if it's not fully utilized. Customers are typically charged for the reserved capacity, regardless of actual consumption.
@@ -50,7 +58,7 @@ A company or organization that provides remote access to computing resources, in
 
 <a name="glossary:commitment"><b>Commitment</b></a>
 
-A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
+A customer's agreement to either spend a defined monetary amount or use a specific quantity of resources or services over a specified [*term*](#glossary:term). Commitments are generally made in exchange for commercial benefits, such as discounted pricing, and may include provider obligations related to resource availability or service levels. Commitment models vary in structure and mechanics, with [*Burn-Down Commitment*](#glossary:burn-down-commitment) and [*Build-Up Commitment*](#glossary:build-up-commitment) being the core types.
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
@@ -59,6 +67,10 @@ A billing discount model that offers reduced rates on preselected SKUs in exchan
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
 A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, provider-specific requirements.
+
+<a name="glossary:commitment-interval"><b>Commitment Interval</b></a>
+
+A discrete unit of time used to measure and track consumption or contribution across various commitment models. Common examples include hourly, monthly, or yearly, and custom intervals may also apply.
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
@@ -120,9 +132,25 @@ A FOCUS-defined column that provides numeric values, allowing for aggregation op
 
 A government-issued currency (e.g., US dollars, Euros).
 
+<a name="glossary:negotiated-build-up-commitment"><b>Negotiated Build-Up Commitment</b></a>
+
+A variant of the [*Build-Up Commitment*](#glossary:build-up-commitment) model in which the terms and conditions, such as spend or usage targets (structured either as spend-based, defined by monetary value, or usage-based, defined by the quantity of resources or services), custom pricing, duration, contribution tracking, true-up mechanisms, and provider obligations, are explicitly negotiated between the customer and the provider. This variant retains all core characteristics of the *Build-Up Commitment*, with added flexibility to align with specific business needs. Negotiated Build-Up Commitments are typically used by large enterprises or strategic partners.
+
+<a name="glossary:negotiated-burn-down-commitment"><b>Negotiated Burn-Down Commitment</b></a>
+
+A variant of the [*Burn-Down Commitment*](#glossary:burn-down-commitment) model in which the terms and conditions, such as monetary amount, resources or services quantity, custom pricing, duration, and consumption tracking, and provider obligations, are explicitly negotiated between the customer and the provider. This variant retains all core characteristics of the *Burn-Down Commitment*, with added flexibility to align with specific business needs.
+
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
 A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
+
+<a name="glossary:non-negotiated-build-up-commitment"><b>Non-Negotiated Build-Up Commitment</b></a>
+
+A less common variant of the [*Build-Up Commitment*](#glossary:build-up-commitment) model offered under standardized terms and conditions, such as commitment amount (structured either as spend-based, defined by monetary value, or usage-based, defined by the quantity of resources or services), pricing, duration, contribution tracking, true-up mechanisms, and provider obligations. This variant retains all core characteristics of the *Build-Up Commitment* but is not subject to individual negotiation.
+
+<a name="glossary:non-negotiated-burn-down-commitment"><b>Non-Negotiated Burn-Down Commitment</b></a>
+
+A variant of the [*Burn-Down Commitment*](#glossary:burn-down-commitment) model offered under standardized terms and conditions, such as commitment amount (structured either as spend-based, defined by monetary value, or usage-based, defined by the quantity of resources or services), pricing, duration, consumption tracking, and provider obligations. This variant retains all core characteristics of the *Burn-Down Commitment* but is not subject to individual negotiation. Non-Negotiated Burn-Down Commitments are typically available through public pricing models or self-service platforms.
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
