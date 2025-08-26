@@ -1,181 +1,64 @@
 {
-    "CommitmentDiscountStatus-C-000-C": {
-        "Function": "Composite",
-        "Reference": "CommitmentDiscountStatus",
-        "EntityType": "Column",
-        "Notes": "",
-        "CRVersionIntroduced": "1.2",
-        "Status": "Active",
-        "ApplicabilityCriteria": [],
-        "Type": "Static",
-        "ValidationCriteria": {
-          "MustSatisfy": "",
-          "Keyword": "MUST",
-          "Requirement": {
-            "CheckFunction": "AND",
-            "Items": [
-              {
-                "CheckFunction": "CheckConformanceRule",
-                "ConformanceRuleId": "CommitmentDiscountStatus-D-001-C"
-              },
-              {
-                "CheckFunction": "CheckConformanceRule",
-                "ConformanceRuleId": "CommitmentDiscountStatus-C-002-M"
-              },
-              {
-                "CheckFunction": "CheckConformanceRule",
-                "ConformanceRuleId": "CommitmentDiscountStatus-C-003-M"
-              },
-              {
-                "CheckFunction": "CheckConformanceRule",
-                "ConformanceRuleId": "CommitmentDiscountStatus-C-006-M"
-              }
-            ]
+  "CommitmentDiscountStatus-C-000-C": {
+    "Function": "Composite",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CommitmentDiscountStatus-D-001-C"
           },
-          "Condition": {},
-          "Dependencies": [
-            "CostAndUsage-D-009-M"
-          ]
-        }
-      },
-      "CommitmentDiscountStatus-D-001-C": {
-        "Function": "Presence",
-        "Reference": "CommitmentDiscountStatus",
-        "EntityType": "Column",
-        "Notes": "",
-        "CRVersionIntroduced": "1.2",
-        "Status": "Active",
-        "ApplicabilityCriteria": [],
-        "Type": "Static",
-        "ValidationCriteria": {
-          "MustSatisfy": "MUST be present in a FOCUS dataset",
-          "Keyword": "MUST",
-          "Requirement": {
-            "CheckFunction": "ColumnPresent",
-            "ColumnName": "CommitmentDiscountStatus"
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CommitmentDiscountStatus-C-002-M"
           },
-          "Condition": {},
-          "Dependencies": [],
-          "Value": null
-        }
-      },
-      "CommitmentDiscountStatus-C-002-M": {
-        "Function": "Type",
-        "Reference": "CommitmentDiscountStatus",
-        "EntityType": "Column",
-        "Notes": "",
-        "CRVersionIntroduced": "1.2",
-        "Status": "Active",
-        "ApplicabilityCriteria": [],
-        "Type": "Static",
-        "ValidationCriteria": {
-          "MustSatisfy": "MUST be of type String",
-          "Keyword": "MUST",
-          "Requirement": {
-            "CheckFunction": "TypeString",
-            "ColumnName": "CommitmentDiscountStatus",
-            "Value": null
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CommitmentDiscountStatus-C-003-M"
           },
-          "Condition": {},
-          "Dependencies": []
-        }
-      },
-      "CommitmentDiscountStatus-C-003-M": {
-        "Function": "Composite",
-        "Reference": "CommitmentDiscountStatus",
-        "EntityType": "Column",
-        "Notes": "",
-        "CRVersionIntroduced": "1.2",
-        "Status": "Active",
-        "ApplicabilityCriteria": [],
-        "Type": "Static",
-        "ValidationCriteria": {
-          "MustSatisfy": "",
-          "Keyword": "MUST",
-          "Requirement": {
-            "CheckFunction": "TypeString", 
-            "CheckFunction": "AND",
-            "Items": [
-              {
-                "CheckFunction": "CheckConformanceRule",
-                "ConformanceRuleId": "CommitmentDiscountStatus-C-004-C"
-              },
-              {
-                "CheckFunction": "CheckConformanceRule",
-                "ConformanceRuleId": "CommitmentDiscountStatus-C-005-C"
-              },
-            ]
-          },
-          "Condition": {},
-          "Dependencies": []
-        }
-      },
-      "CommitmentDiscountStatus-C-004-C": {
-        "Function": "Validation",
-        "Reference": "CommitmentDiscountStatus",
-        "EntityType": "Column",
-        "Notes": "",
-        "CRVersionIntroduced": "1.2",
-        "Status": "Active",
-        "ApplicabilityCriteria": [],
-        "Type": "Static",
-        "ValidationCriteria": {
-          "MustSatisfy": "MUST not be null",
-          "Keyword": "MUST",
-          "Requirement": {
-            "CheckFunction": "CheckNotValue",
-            "ColumnName": "CommitmentDiscountStatus",
-            "Value": null
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CommitmentDiscountStatus-C-006-M"
+          }
+        ]
       },
       "Condition": {},
       "Dependencies": [
-        "CommitmentDiscountId"
-      ],
-      "Value":null
-    },
-      "CommitmentDiscountStatus-C-005-C": {
-        "Function": "Validation",
-        "Reference": "CommitmentDiscountStatus",
-        "EntityType": "Column",
-        "Notes": "",
-        "CRVersionIntroduced": "1.2",
-        "Status": "Active",
-        "ApplicabilityCriteria": [],
-        "Type": "Static",
-        "ValidationCriteria": {
-          "MustSatisfy": "MUST NOT be null",
-          "Keyword": "MUST",
-          "Requirement": {
-            "CheckFunction": "CheckNotValue",
-            "ColumnName": "CommitmentDiscountStatus",
-            "Value": null
+        "CostAndUsage-D-009-M"
+      ]
+    }
+  },
+  "CommitmentDiscountStatus-D-001-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountStatus"
       },
       "Condition": {},
-      "Dependencies": {
-        "CommitmentDiscountId"
-      },
-      "Value":null
-      }
-    },
-    "CommitmentDiscountStatus-C-006-M": {
-        "Function": "Validation",
-        "Reference": "CommitmentDiscountStatus",
-        "EntityType": "Column",
-        "Notes": "",
-        "CRVersionIntroduced": "1.2",
-        "Status": "Active",
-        "ApplicabilityCriteria": [],
-        "Type": "Static",
-        "ValidationCriteria": {
-          "MustSatisfy": "MUST be one of the allowed values",
-          "Keyword": "MUST",
-          "Requirement": {
-            "CheckFunction": "CheckNotValue",
-            "ColumnName": "CommitmentDiscountStatus",
-            "Value": null
-          },
-          "Condition": {},
-          "Dependencies": []
-        }
-      }
-}
+      "Dependencies": [],
+      "Value": null
+    }
+  },
+  "CommitmentDiscountStatus-C-002-M": {
+    "Function": "Type",
+    "Reference": "CommitmentDiscountStatus",
