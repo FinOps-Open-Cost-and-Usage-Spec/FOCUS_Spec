@@ -140,10 +140,6 @@ A variant of the [*Build-Up Commitment*](#glossary:build-up-commitment) model in
 
 A variant of the [*Burn-Down Commitment*](#glossary:burn-down-commitment) model in which the terms and conditions, such as monetary amount, resources or services quantity, custom pricing, duration, and consumption tracking, and provider obligations, are explicitly negotiated between the customer and the provider. This variant retains all core characteristics of the *Burn-Down Commitment*, with added flexibility to align with specific business needs.
 
-<a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
-
-A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
-
 <a name="glossary:non-negotiated-build-up-commitment"><b>Non-Negotiated Build-Up Commitment</b></a>
 
 A less common variant of the [*Build-Up Commitment*](#glossary:build-up-commitment) model offered under standardized terms and conditions, such as commitment amount (structured either as spend-based, defined by monetary value, or usage-based, defined by the quantity of resources or services), pricing, duration, contribution tracking, true-up mechanisms, and provider obligations. This variant retains all core characteristics of the *Build-Up Commitment* but is not subject to individual negotiation.
