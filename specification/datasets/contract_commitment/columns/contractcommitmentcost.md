@@ -29,7 +29,7 @@ The monetary value of the *contract commitment*.
 | Constraint    | Value                              |
 | :------------ | :--------------------------------- |
 | Column type   | Metric                             |
-| Feature level | Conditional                        |
+| Feature level | Mandatory                          |
 | Allows nulls  | True                               |
 | Data type     | Decimal                            |
 | Value format  | [Numeric Format](#numericformat)   |
