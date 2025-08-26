@@ -26,6 +26,7 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
 * Object array elements MUST NOT be repeated.
 * Object array elements MUST NOT be null.
 * Objects MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the Object.
+* Objects included in provider-defined [custom columns](#column_handling:custom-column) MUST have their object schema documented by the provider.
 * Objects are RECOMMENDED to not exceed 3 levels of nesting.
 
 ## Exceptions
