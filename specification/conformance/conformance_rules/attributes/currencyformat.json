@@ -1,5 +1,5 @@
 {
-  "CurrencyCodeFormat-A-000-M": {
+  "CurrencyFormat-A-000-M": {
     "Function": "Composite",
     "Reference": "CurrencyFormat",
     "EntityType": "Attribute",
@@ -16,11 +16,11 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CurrencyCodeFormat-A-001-M"
+            "ConformanceRuleId": "CurrencyFormat-A-001-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CurrencyCodeFormat-A-002-M"
+            "ConformanceRuleId": "CurrencyFormat-A-002-M"
           }
         ]
       },
@@ -28,7 +28,7 @@
       "Dependencies": []
     }
   },
-  "CurrencyCodeFormat-A-001-M": {
+  "CurrencyFormat-A-001-M": {
     "Function": "Validation",
     "Reference": "CurrencyFormat",
     "EntityType": "Attribute",
@@ -45,7 +45,7 @@
       "Dependencies": []
     }
   },
-  "CurrencyCodeFormat-A-002-M": {
+  "CurrencyFormat-A-002-M": {
     "Function": "Validation",
     "Reference": "CurrencyFormat",
     "EntityType": "Attribute",
