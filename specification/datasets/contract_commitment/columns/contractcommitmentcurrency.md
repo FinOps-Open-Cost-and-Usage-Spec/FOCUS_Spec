@@ -36,4 +36,4 @@ Represents the currency of a *contract commitment*.
 
 ## Introduced (version)
 
-1.4
+1.3
