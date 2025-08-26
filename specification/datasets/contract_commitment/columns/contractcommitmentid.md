@@ -4,7 +4,7 @@ Contract Commitment ID is a provider-assigned identifier describing an agreement
 
 The ContractCommitmentID column adheres to the following requirements:
 
-* ContractCommitmentID MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* ContractCommitmentID MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentID MUST be of type String.
 * ContractCommitmentID MUST conform to [StringHandling](#stringhandling) requirements.
 * ContractCommitmentID nullability is defined as follows:
@@ -34,7 +34,7 @@ A provider-assigned identifier describing an agreement negotiated between a prov
 |    Constraint   |      Value       |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| Feature level   | Conditional      |
+| Feature level   | Mandatory        |
 | Allows nulls    | True             |
 | Data type       | String           |
 | Value format    | \<not specified> |
