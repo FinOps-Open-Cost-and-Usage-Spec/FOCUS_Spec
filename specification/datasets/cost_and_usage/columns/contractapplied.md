@@ -4,7 +4,7 @@ Contract Applied is a set of four datapoints that associate a charge to one or m
 
 The datapoints are:
 
-* `Contract Commitment ID`: The unique identifier representing the contract line item.
+* `Contract Commitment ID`: The unique identifier representing a single contract term.
 * `Contract Commitment Applied Cost`: The value of the charge applied to the contract line item.
 * `Contract Commitment Applied Quantity`: The usage of the charge applied to the contract line item.
 * `Contract Commitment Applied Unit`: The unit of measure for the usage of the charge applied to the contract line item.
