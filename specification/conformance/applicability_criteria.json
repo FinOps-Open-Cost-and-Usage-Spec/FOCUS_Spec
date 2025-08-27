@@ -11,6 +11,9 @@
     },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
       "Description": "Data generator publishes unit prices exclusive of discounts"
+    },
+    "USAGE_MEASUREMENT_SUPPORTED": {
+      "Description": "Data generator supports the measurement of usage quantities"
     }
   }
 }

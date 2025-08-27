@@ -16,15 +16,15 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeCategory-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ChargeCategory-C-002-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ChargeCategory-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ChargeCategory-C-004-M"
           }
         ]
       },
@@ -34,7 +34,7 @@
       ]
     }
   },
-  "ChargeCategory-C-002-M": {
+  "ChargeCategory-C-001-M": {
     "Function": "Type",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
@@ -54,7 +54,7 @@
       "Dependencies": []
     }
   },
-  "ChargeCategory-C-003-M": {
+  "ChargeCategory-C-002-M": {
     "Function": "Validation",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
@@ -75,7 +75,7 @@
       "Dependencies": []
     }
   },
-  "ChargeCategory-C-004-M": {
+  "ChargeCategory-C-003-M": {
     "Function": "Validation",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
@@ -88,9 +88,34 @@
       "MustSatisfy": "MUST be one of the allowed values",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "ChargeCategory",
-        "Value": null
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Purchase"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Tax"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Credit"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Adjustment"
+          }
+        ]
       },
       "Condition": {},
       "Dependencies": []

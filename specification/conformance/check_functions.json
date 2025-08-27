@@ -111,6 +111,15 @@
         "StringFormat-A-000-M"
       ]
     },
+    "FormatUnit": {
+      "Description": "Check a column has a unit format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "UnitFormat-A-000-M"
+      ]
+    },
     "FormatBillingCurrencyCode": {
       "Description": "Check a column has a valid country code",
       "Arguments": [
