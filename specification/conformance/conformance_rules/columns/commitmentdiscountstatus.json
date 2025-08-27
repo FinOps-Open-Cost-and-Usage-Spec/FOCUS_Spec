@@ -54,7 +54,7 @@
       "Dependencies": []
     }
   },
-  "CommitmentDiscountStatus-C-003-M": {
+  "CommitmentDiscountStatus-C-002-M": {
     "Function": "Composite",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Column",
