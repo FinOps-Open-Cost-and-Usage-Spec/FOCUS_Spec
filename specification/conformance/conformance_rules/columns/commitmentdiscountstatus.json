@@ -34,7 +34,7 @@
       ]
     }
   },
-  "CommitmentDiscountStatus-C-002-M": {
+  "CommitmentDiscountStatus-C-001-M": {
     "Function": "Type",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Column",
