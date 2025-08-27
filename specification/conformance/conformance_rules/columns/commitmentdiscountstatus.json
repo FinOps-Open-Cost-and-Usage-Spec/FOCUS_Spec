@@ -41,7 +41,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": ["COMMITMENT_DISCOUNT_SUPPORTED"],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type String",
