@@ -44,7 +44,7 @@
     "Function": "Presence",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
-    "Notes": "Feature level is Recommended",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
