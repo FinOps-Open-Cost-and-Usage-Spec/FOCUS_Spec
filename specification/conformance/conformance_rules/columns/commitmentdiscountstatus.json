@@ -48,8 +48,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
-        "ColumnName": "CommitmentDiscountStatus",
-        "Value": null
+        "ColumnName": "CommitmentDiscountStatus"
       },
       "Condition": {},
       "Dependencies": []
