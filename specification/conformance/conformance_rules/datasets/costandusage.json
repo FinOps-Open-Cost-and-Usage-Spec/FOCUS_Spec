@@ -98,6 +98,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-016-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-017-M"
           }
         ]
       },
@@ -155,6 +159,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CommitmentDiscountName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CommitmentDiscountStatus-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -473,6 +481,28 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "CommitmentDiscountCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-017-M": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountStatus"
       },
       "Condition": {},
       "Dependencies": []
