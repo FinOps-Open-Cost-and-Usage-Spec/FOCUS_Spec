@@ -2,7 +2,7 @@
 
 Allocated Resource Details provides information critical in understanding how resources are allocated when using split cost allocation. This information includes: allocation method name, metric used to calculate cost, the usage value/quantity, and the ratio of the cost derived from the method.
 
-| Parent | Key | Type | Extensible | Description | Example | 
+| Parent | Key | Type | Extensible | Description | Example |
 | ------ | --- | ---- | ---------- | ----------- | ------- |
 | null | Method | Key-Value | TRUE | Allocation method used by the provider. | method: methodname |
 | Method | Metric | Key-Value | FALSE | Metric used to calculate allocation. | Metric: CPU |
