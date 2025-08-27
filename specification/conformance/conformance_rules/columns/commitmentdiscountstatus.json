@@ -71,11 +71,11 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountStatus-C-004-C"
+            "ConformanceRuleId": "CommitmentDiscountStatus-C-003-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountStatus-C-005-C"
+            "ConformanceRuleId": "CommitmentDiscountStatus-C-004-C"
           }
         ]
       },
