@@ -11,12 +11,12 @@ Allocated Resource Details provides information critical in understanding how re
 
 The AllocatedResourceDetails column adheres to the following requirements:
 
-* AllocatedResourceDetails SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports provider-calculated split cost allocation.
+* AllocatedResourceDetails SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [provider-calculated split cost allocation](#provider-calculated-split-cost-allocation).
 * AllocatedResourceDetails MUST be of type String.
 * AllocatedResourceDetails MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedResourceDetails nullability is defined as follows:
   * AllocatedResourceDetails MUST be null when a charge is not related to a provider-calculated split cost allocation.
-  * AllocatedResourceDetails MUST NOT be null when a charge is related to a provider-calculated split cost allocation.
+  * AllocatedResourceDetails SHOULD NOT be null when a charge is related to a provider-calculated split cost allocation.
 * AllocatedResourceDetails maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
 
 ## Column ID
@@ -38,8 +38,8 @@ Self-contained summary of the allocated cost's purpose and price.
 | Column type     | Dimension       |
 | Feature level   | Conditional     |
 | Allows nulls    | True            |
-| Data type       | String          |
-| Value format    | JSON           |
+| Data type       | JSON            |
+| Value format    | [Object](#object-format) |
 
 ## Introduced (version)
 
