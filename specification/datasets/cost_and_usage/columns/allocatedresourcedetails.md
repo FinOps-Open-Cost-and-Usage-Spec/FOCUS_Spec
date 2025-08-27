@@ -4,10 +4,10 @@ Allocated Resource Details provides information critical in understanding how re
 
 | Parent | Key | Type | Extensible | Description | Example |
 | ------ | --- | ---- | ---------- | ----------- | ------- |
-| null | Method | Key-Value | TRUE | Allocation method used by the provider. | method: methodname |
+| null | Method | Key-Value | TRUE | Allocation method used by the provider. | Method: methodname |
 | Method | Metric | Key-Value | FALSE | Metric used to calculate allocation. | Metric: CPU |
 | Method | UsageValue | Key-Value | FALSE | Measured units. | UsageValue: 0.5 |
-| Method | RatioValue | Key-Value | FALSE | Ratio of overall cost derived from method. | RatioValue: .05 |
+| Method | RatioValue | Key-Value | FALSE | Ratio of overall cost derived from method. | RatioValue: 0.05 |
 
 The AllocatedResourceDetails column adheres to the following requirements:
 
