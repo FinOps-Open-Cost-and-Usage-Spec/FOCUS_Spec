@@ -182,6 +182,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "InvoiceId-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ListUnitPrice-C-000-C"
           }
         ]
