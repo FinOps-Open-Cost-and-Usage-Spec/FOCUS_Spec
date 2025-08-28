@@ -1,0 +1,405 @@
+{
+  "PricingQuantity-C-000-M": {
+    "Function": "Composite",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "Main composite rule for PricingQuantity column",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-D-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-008-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingQuantity-D-001-M": {
+    "Function": "Presence",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "PricingQuantity must be present in dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingQuantity"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingQuantity-C-002-M": {
+    "Function": "DataType",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "PricingQuantity must be of type Decimal",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity MUST be of type Decimal.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "DataType",
+        "DataType": "Decimal"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingQuantity-C-003-M": {
+    "Function": "Format",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "PricingQuantity must conform to NumericFormat requirements",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity MUST conform to NumericFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "NumericFormat"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "AttributeID:NumericFormat"
+      ]
+    }
+  },
+  "PricingQuantity-C-004-M": {
+    "Function": "Composite",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "PricingQuantity nullability composite rule",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-006-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-007-O"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingQuantity-C-005-C": {
+    "Function": "NullabilityRules",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "PricingQuantity must be null when ChargeCategory is Tax",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity MUST be null when ChargeCategory is \"Tax\".",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "IsNull",
+        "ColumnName": "PricingQuantity"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "ColumnName": "ChargeCategory",
+        "Value": "Tax"
+      },
+      "Dependencies": [
+        "AttributeID:ChargeCategory"
+      ]
+    }
+  },
+  "PricingQuantity-C-006-C": {
+    "Function": "NullabilityRules",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "PricingQuantity must not be null when ChargeCategory is Usage or Purchase and ChargeClass is not Correction",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "IsNotNull",
+        "ColumnName": "PricingQuantity"
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "OR",
+            "Items": [
+              {
+                "CheckFunction": "Equal",
+                "ColumnName": "ChargeCategory",
+                "Value": "Usage"
+              },
+              {
+                "CheckFunction": "Equal",
+                "ColumnName": "ChargeCategory",
+                "Value": "Purchase"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "NotEqual",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          }
+        ]
+      },
+      "Dependencies": [
+        "AttributeID:ChargeCategory",
+        "AttributeID:ChargeClass"
+      ]
+    }
+  },
+  "PricingQuantity-C-007-O": {
+    "Function": "NullabilityRules",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "PricingQuantity may be null in all other cases",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity MAY be null in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "Optional",
+        "ColumnName": "PricingQuantity"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All other cases"
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingQuantity-C-008-C": {
+    "Function": "Composite",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "Additional requirements when PricingQuantity is not null",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When PricingQuantity is not null, PricingQuantity adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-010-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "IsNotNull",
+        "ColumnName": "PricingQuantity"
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingQuantity-C-009-M": {
+    "Function": "Validation",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "PricingQuantity must be a valid decimal value when not null",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity MUST be a valid decimal value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "IsValidDecimal",
+        "ColumnName": "PricingQuantity"
+      },
+      "Condition": {
+        "CheckFunction": "IsNotNull",
+        "ColumnName": "PricingQuantity"
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingQuantity-C-010-C": {
+    "Function": "Validation",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "Product of PricingQuantity and unit price must match corresponding cost metric when unit price is not null and ChargeClass is not Correction",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The product of PricingQuantity and a unit price (e.g., ContractedUnitPrice) MUST match the corresponding cost metric (e.g., ContractedCost) when the unit price is not null and ChargeClass is not \"Correction\".",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ProductMatches",
+        "Items": [
+          {
+            "CheckFunction": "Multiply",
+            "ColumnName1": "PricingQuantity",
+            "ColumnName2": "ContractedUnitPrice"
+          },
+          {
+            "CheckFunction": "Equal",
+            "ColumnName": "ContractedCost"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "IsNotNull",
+            "ColumnName": "ContractedUnitPrice"
+          },
+          {
+            "CheckFunction": "NotEqual",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          }
+        ]
+      },
+      "Dependencies": [
+        "ContractedUnitPrice:CR",
+        "ContractedCost:CR",
+        "AttributeID:ChargeClass"
+      ]
+    }
+  },
+  "PricingQuantity-C-011-C": {
+    "Function": "Validation",
+    "Reference": "Pricing Quantity",
+    "EntityType": "Column",
+    "Notes": "Discrepancies may exist in PricingQuantity, unit prices, or costs when ChargeClass is Correction",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes PricingQuantity column"
+    ],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Discrepancies in PricingQuantity, unit prices (e.g., ContractedUnitPrice), or costs (e.g., ContractedCost) MAY exist when ChargeClass is \"Correction\".",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "Optional",
+        "Items": [
+          "PricingQuantity",
+          "ContractedUnitPrice",
+          "ContractedCost"
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "ColumnName": "ChargeClass",
+        "Value": "Correction"
+      },
+      "Dependencies": [
+        "ContractedUnitPrice:CR",
+        "ContractedCost:CR",
+        "AttributeID:ChargeClass"
+      ]
+    }
+  }
+}
