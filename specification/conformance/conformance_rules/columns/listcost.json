@@ -1,0 +1,343 @@
+{
+  "ListCost-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "Root composite over all CRItems",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-D-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-006-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-007-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-010-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-011-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListCost-D-001-M": {
+    "Function": "Presence",
+    "Reference": "ListCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ListCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListCost-C-002-M": {
+    "Function": "Type",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost MUST be of type Decimal",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "ListCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListCost-C-003-M": {
+    "Function": "Format",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "Cross-attribute reference: NumericFormat",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost MUST conform to NumericFormat requirements",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "ListCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListCost-C-004-M": {
+    "Function": "Validation",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost MUST NOT be null",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ListCost",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListCost-C-005-M": {
+    "Function": "Validation",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost MUST be a valid decimal value",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListCost-C-006-M": {
+    "Function": "Validation",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "Cross-column reference: BillingCurrency",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost MUST be denominated in the BillingCurrency",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "BillingCurrency-C-000-M"
+      ]
+    }
+  },
+  "ListCost-C-007-C": {
+    "Function": "Composite",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "Lead-in composite; children immediately follow",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "When ListUnitPrice is null, ListCost adheres to the following additional requirements",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-008-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListCost-C-009-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": null
+      },
+      "Dependencies": [
+        "ListUnitPrice-C-000-C"
+      ]
+    }
+  },
+  "ListCost-C-008-C": {
+    "Function": "Validation",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "Cross-row dependency on related charges' ListCost (cannot self-reference)",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the ListCost of those related charges",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ListUnitPrice",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Tax"
+          }
+        ]
+      },
+      "Dependencies": [
+        "ChargeCategory-C-000-M",
+        "ListUnitPrice-C-000-C"
+      ]
+    }
+  },
+  "ListCost-C-009-C": {
+    "Function": "Validation",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "Cross-column references: ChargeCategory, BilledCost",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ListUnitPrice",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Credit"
+          }
+        ]
+      },
+      "Dependencies": [
+        "ChargeCategory-C-000-M",
+        "BilledCost-C-000-M",
+        "ListUnitPrice-C-000-C"
+      ]
+    }
+  },
+  "ListCost-C-010-C": {
+    "Function": "Validation",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "Cross-column references: ListUnitPrice, PricingQuantity, ChargeClass",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when ListUnitPrice is not null, PricingQuantity is not null, and ChargeClass is not \"Correction\"",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ListUnitPrice",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "PricingQuantity",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          }
+        ]
+      },
+      "Dependencies": [
+        "ListUnitPrice-C-000-C",
+        "PricingQuantity-C-000-M",
+        "ChargeClass-C-000-M"
+      ]
+    }
+  },
+  "ListCost-C-011-C": {
+    "Function": "Validation",
+    "Reference": "ListCost",
+    "EntityType": "Column",
+    "Notes": "Permissive exception for corrections",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Discrepancies in ListCost, ListUnitPrice, or PricingQuantity MAY exist when ChargeClass is \"Correction\"",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeClass",
+        "Value": "Correction"
+      },
+      "Dependencies": [
+        "ChargeClass-C-000-M"
+      ]
+    }
+  }
+}
