@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME provides two FOCUS datasets: Cost and Usage and Contract. Each [Schema](#schema). Each schema metadat object includes the Dataset metadat to indicate which Focus Dataset the Schema conforms with.
+ACME provides two FOCUS datasets: Cost and Usage and Contract. Each [Schema](#schema) metadata object includes the [Dataset](#dataset) metadata to indicate which FOCUS Dataset the Schema conforms to.
 
 ## Supplied Metadata
 
