@@ -20,7 +20,7 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 
 * All costs that appear on an invoice SHOULD be present in the *FOCUS dataset*.
 * Invoice-level charges MAY be expressed as individual rows or as part of aggregated rows, provided they remain distinguishable and use or closely align with the FOCUS schema.
-* If an invoice-level transaction appears on a customer’s invoice but cannot be fully represented using existing FOCUS columns, providers SHOULD include supplemental columns (e.g., x_ChargeSubType) to ensure that the invoice charge is captured in the FOCUS dataset. 
+* If an invoice-level *charge* appears on a customer’s invoice but cannot be fully represented using existing FOCUS columns, providers SHOULD include supplemental columns (e.g., x_ChargeSubType) to ensure that the details of the invoice *charge* are captured in the *FOCUS dataset*. 
 
 
 ## Exceptions
