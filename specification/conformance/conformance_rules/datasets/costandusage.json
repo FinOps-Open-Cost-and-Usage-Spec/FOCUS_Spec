@@ -178,6 +178,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeClass-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ConsumedQuantity-C-000-C"
           },
           {
