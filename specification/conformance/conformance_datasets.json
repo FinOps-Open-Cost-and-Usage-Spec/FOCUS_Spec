@@ -8,6 +8,7 @@
         "BillingAccountType-C-000-M",
         "BillingPeriodStart-C-000-M",
         "BillingPeriodEnd-C-000-M",
+        "ChargePeriodEnd-C-000-M",
         "ListUnitPrice-C-000-C"
       ]
     }
