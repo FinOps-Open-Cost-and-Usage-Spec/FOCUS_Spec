@@ -1,0 +1,118 @@
+{
+  "InvoiceIssuerName-C-000-M": {
+    "Function": "Composite",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Column",
+    "Notes": "Root composite gating evaluation via the Presence PreCondition",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When the InvoiceIssuerName column is present, each row MUST satisfy the type, StringHandling, and not-null checks",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "InvoiceIssuerName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "InvoiceIssuerName-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "InvoiceIssuerName-C-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "InvoiceIssuerName-D-001-M"
+      ]
+    }
+  },
+  "InvoiceIssuerName-D-001-M": {
+    "Function": "Presence",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Dataset",
+    "Notes": "Presence atomic used as root PreCondition",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssuerName MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "InvoiceIssuerName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceIssuerName-C-002-M": {
+    "Function": "Type",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssuerName MUST be of type String",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "InvoiceIssuerName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceIssuerName-C-003-M": {
+    "Function": "Format",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Column",
+    "Notes": "Cross-attribute reference: StringHandling",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssuerName MUST conform to StringHandling requirements",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "InvoiceIssuerName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceIssuerName-C-004-M": {
+    "Function": "Validation",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Column",
+    "Notes": "Aligns with \"Allows nulls = False\" in Content Constraints",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssuerName MUST NOT be null",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "InvoiceIssuerName",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
