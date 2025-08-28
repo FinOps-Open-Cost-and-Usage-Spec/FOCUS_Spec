@@ -9,6 +9,9 @@
     "COMMITMENT_DISCOUNT_SUPPORTED": {
       "Description": "Billing data when the data generator supports commitment based discounts"
     },
+    "NEGOTIATED_PRICING_SUPPORTED": {
+      "Description": "Data generator supports negotiated pricing concepts"
+    },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
       "Description": "Data generator publishes unit prices exclusive of discounts"
     },
