@@ -319,7 +319,7 @@ The second phase of conversion is to take the table created in Stage 1 and creat
 - Write your rules into this file based on the rules in the Stage 1 table from the AI ticket (See: [ConformanceRule Templates](#conformancerule-templates) for helpers)
 - If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` avoiding duplication
 - If you need to add new CheckFunctions add them to `check_functions.json` avoiding duplication
-- Add your top level conformance rule entry into the relevant Dataset entries in the `conformance_datasets.json` file
+- Add your top level conformance rule entry into the relevant Dataset entries in the `conformance_datasets.json` file, ensuring column references are listed in alphabetical order
 - Commit your changes to your branch and then move onto raising the PR section
 If you need assistance reach out to Mike Fuller in the FOCUS slack
 

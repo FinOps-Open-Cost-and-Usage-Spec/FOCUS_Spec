@@ -150,6 +150,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeCategory-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CommitmentDiscountCategory-C-000-C"
           },
           {
@@ -174,11 +178,11 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ChargeCategory-C-000-M"
+            "ConformanceRuleId": "ConsumedQuantity-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ConsumedQuantity-C-000-C"
+            "ConformanceRuleId": "ContractedCost-C-000-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
