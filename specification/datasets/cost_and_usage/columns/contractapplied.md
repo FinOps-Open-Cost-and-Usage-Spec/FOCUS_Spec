@@ -18,9 +18,8 @@ The ContractApplied column adheres to the following requirements:
   * ContractApplied MUST be null when [ContractID](#contractid) is null.
   * ContractApplied MUST NOT be null when ContractID is not null.
 * When ContractApplied is not null, ContractApplied adheres to the following additional requirements:
-  * The following requirements apply to the objects of the ContractApplied array:
-    * ContractApplied objects MUST contain four key-value pairs, representing ContractCommitmentID, ContractCommitmentAppliedCost, ContractCommitmentAppliedQuantity, and ContractCommitmentAppliedUnit.
-    * ContractApplied objects MAY contain additional key-value pairs, representing custom datapoints provided by the data generator.
+  * ContractApplied objects MUST contain four key-value pairs, representing ContractCommitmentID, ContractCommitmentAppliedCost, ContractCommitmentAppliedQuantity, and ContractCommitmentAppliedUnit.
+  * ContractApplied objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.
   * When ContractApplied custom key-value pairs are present:
     * ContractApplied custom key-value pairs MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
     * ContractApplied custom key-value pairs MUST be documented by the data generator.
