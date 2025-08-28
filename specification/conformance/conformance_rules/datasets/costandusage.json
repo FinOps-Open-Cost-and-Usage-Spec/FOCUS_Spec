@@ -182,6 +182,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "EffectiveCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ListUnitPrice-C-000-C"
           }
         ]
