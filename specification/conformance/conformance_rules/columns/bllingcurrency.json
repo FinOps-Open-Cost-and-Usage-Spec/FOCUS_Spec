@@ -1,0 +1,95 @@
+{
+  "BillingCurrency-C-000-M": {
+    "Function": "Composite",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingCurrency-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingCurrency-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingCurrency-C-003-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "BillingCurrency-C-001-M": {
+    "Function": "Presence",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "BillingCurrency-C-002-M": {
+    "Function": "Type",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be of type String",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "BillingCurrency-C-003-M": {
+    "Function": "Validation",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "Notes": "Cross-attribute reference: StringHandling:CR",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST conform to StringHandling requirements",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
