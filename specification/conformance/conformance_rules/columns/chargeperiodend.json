@@ -9,7 +9,7 @@
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "",
-            "Keyword": "",
+            "Keyword": "MUST",
             "Requirement": {
               "CheckFunction": "AND",
               "Items": [
@@ -35,11 +35,11 @@
                }
               ]
             },
-            "Condition":"All Rows",
+            "Condition": {},
             "Dependencies":[]
         },
         "CRVersionIntroduced": "1.2",
-        "Status": "active",
+        "Status": "Active",
         "Notes": ""
     },
     "ChargePeriodEnd-C-001-M": {
@@ -54,15 +54,15 @@
             "MustSatisfy": "ChargePeriodEnd MUST be present in a FOCUS dataset.",
             "Keyword": "MUST",
             "Requirement": {},
-            "Condition":"All Rows",
+            "Condition": {},
             "Dependencies":[]
         },
         "CRVersionIntroduced": "1.2",
-        "Status": "active",
+        "Status": "Active",
         "Notes": ""
     },
     "ChargePeriodEnd-C-002-M": {
-        "Function": "DataType",
+        "Function": "Format",
         "Reference": "Charge Period End",
         "EntityType": "Column",
         "ApplicabilityCriteria": [
@@ -73,11 +73,11 @@
             "MustSatisfy": "ChargePeriodEnd MUST be of type Data/DateTime.",
             "Keyword": "MUST",
             "Requirement": {},
-            "Condition":"All Rows",
+            "Condition": {},
             "Dependencies":[]
         },
         "CRVersionIntroduced": "1.2",
-        "Status": "active",
+        "Status": "Active",
         "Notes": ""
     },
     "ChargePeriodEnd-C-003-M": {
@@ -90,20 +90,20 @@
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodEnd MUST conform to DateTimeFormat requirements.",
-            "Keyword": "",
+            "Keyword": "MUST",
             "Requirement": {
-              "CheckFunction": "DateTimeFormat:CR",
+              "CheckFunction": "FormatDateTime",
               "ColumnName": "ChargePeriodEnd"
             },
-            "Condition":"All Rows",
+            "Condition": {},
             "Dependencies":[]
         },
         "CRVersionIntroduced": "1.2",
-        "Status": "active",
+        "Status": "Active",
         "Notes": ""
     },
     "ChargePeriodEnd-C-004-M": {
-        "Function": "NullabilityRules",
+        "Function": "Validation",
         "Reference": "Charge Period End",
         "EntityType": "Column",
         "ApplicabilityCriteria": [
@@ -112,13 +112,16 @@
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodEnd MUST NOT be null",
-            "Keyword": "MUST NOT",
-            "Requirement": {},
-            "Condition":"All Rows",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "ChargePeriodEnd"
+            },
+            "Condition":{},
             "Dependencies":[]
         },
         "CRVersionIntroduced": "1.2",
-        "Status": "active",
+        "Status": "Active",
         "Notes": "Cross-column reference: DateTimeFormat"
     },
   "ChargePeriodEnd-C-005-M": {
@@ -133,11 +136,11 @@
             "MustSatisfy": "ChargePeriodEnd MUST be the exclusive end bound of the effective period of the charge.",
             "Keyword": "MUST",
             "Requirement": {},
-            "Condition":"All Rows",
+            "Condition": {},
             "Dependencies":[]
         },
         "CRVersionIntroduced": "1.2",
-        "Status": "active",
+        "Status": "Active",
         "Notes": ""
-    },  
+    }  
 }
