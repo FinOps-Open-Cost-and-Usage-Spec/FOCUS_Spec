@@ -134,7 +134,7 @@ The same as Example 1, except a custom key-value pair `x_ContractCommitmentCostB
                "ContractCommitmentAppliedCost": 100.00,
                "ContractCommitmentAppliedQuantity": null,
                "ContractCommitmentAppliedUnit": null,
-               "x_ContractCommitmentCostBalance": 499000.00
+               "x_ContractCommitmentCostBalance": 499900.00
            },
            {
                "ContractCommitmentID": "23456",
@@ -167,7 +167,7 @@ A set of four datapoints that associate a charge to one or more [*contract commi
 | Feature level | Conditional                        |
 | Allows nulls  | True                               |
 | Data type     | JSON                               |
-| Value format  | [KeyValueFormat](#key-valueformat) |
+| Value format  | [JSONObjectFormat](#jsonobjectformat) |
 
 ## Introduced (version)
 
