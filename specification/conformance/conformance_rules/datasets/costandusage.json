@@ -228,6 +228,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PublisherName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "SubAccountId-C-000-C"
           },
           {
@@ -255,6 +259,7 @@
         "ChargeCategory-C-000-M",
         "ConsumedQuantity-C-000-C",
         "ListUnitPrice-C-000-C",
+        "PublisherName-C-000-M",
         "SubAccountId-C-000-C",
         "SubAccountName-C-000-C"
       ]
