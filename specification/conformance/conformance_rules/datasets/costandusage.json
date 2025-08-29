@@ -187,6 +187,22 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ResourceName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SkuId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SkuMeter-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SkuPriceDetails-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SkuPriceId-C-000-C"
           }
         ]
       },

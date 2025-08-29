@@ -1,0 +1,191 @@
+{
+  "ConformanceRules": {
+    "SkuPriceId-C-000-C": {
+      "RuleID": "SkuPriceId-C-000-C",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "UNIT_PRICING_SUPPORTED",
+      "Requirement": "AND(SkuPriceId-D-001-C, SkuPriceId-C-002-M, SkuPriceId-C-003-M, SkuPriceId-C-004-M, SkuPriceId-C-008-M)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Composite rule for SkuPriceId column validation"
+    },
+    "SkuPriceId-D-001-C": {
+      "RuleID": "SkuPriceId-D-001-C",
+      "Function": "Presence",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "UNIT_PRICING_SUPPORTED",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting"
+    },
+    "SkuPriceId-C-002-M": {
+      "RuleID": "SkuPriceId-C-002-M",
+      "Function": "DataType",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "All Rows",
+      "Requirement": "String",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST be of type String"
+    },
+    "SkuPriceId-C-003-M": {
+      "RuleID": "SkuPriceId-C-003-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "All Rows",
+      "Requirement": "StringHandling:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST conform to String Handling requirements"
+    },
+    "SkuPriceId-C-004-M": {
+      "RuleID": "SkuPriceId-C-004-M",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "All Rows",
+      "Requirement": "AND(SkuPriceId-C-005-C, SkuPriceId-C-006-C, SkuPriceId-C-007-C)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId nullability is defined as follows"
+    },
+    "SkuPriceId-C-005-C": {
+      "RuleID": "SkuPriceId-C-005-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "ChargeCategory is 'Tax'",
+      "Requirement": "ChargeCategory:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST be null when ChargeCategory is 'Tax'"
+    },
+    "SkuPriceId-C-006-C": {
+      "RuleID": "SkuPriceId-C-006-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MUST NOT",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
+      "Requirement": "AND(ChargeCategory:CR, ChargeClass:CR)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'"
+    },
+    "SkuPriceId-C-007-C": {
+      "RuleID": "SkuPriceId-C-007-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MAY",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "All other cases",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "warning",
+      "Description": "SkuPriceId MAY be null in all other cases"
+    },
+    "SkuPriceId-C-008-M": {
+      "RuleID": "SkuPriceId-C-008-M",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "SkuPriceId is not null",
+      "Requirement": "AND(SkuPriceId-C-009-M, SkuPriceId-C-010-M, SkuPriceId-C-011-M, SkuPriceId-C-012-O, SkuPriceId-C-013-C, SkuPriceId-C-014-M, SkuPriceId-C-015-C, SkuPriceId-C-016-C)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "When SkuPriceId is not null, SkuPriceId adheres to the following additional requirements"
+    },
+    "SkuPriceId-C-009-M": {
+      "RuleID": "SkuPriceId-C-009-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "SkuPriceId is not null",
+      "Requirement": "SkuId:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST have one and only one parent SkuId"
+    },
+    "SkuPriceId-C-010-M": {
+      "RuleID": "SkuPriceId-C-010-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "SkuPriceId is not null",
+      "Requirement": null,
+      "Type": "dynamic",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST remain consistent over time"
+    },
+    "SkuPriceId-C-011-M": {
+      "RuleID": "SkuPriceId-C-011-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "SkuPriceId is not null",
+      "Requirement": "BillingAccount:CR",
+      "Type": "dynamic",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST remain consistent across billing accounts or contracts"
+    },
+    "SkuPriceId-C-012-O": {
+      "RuleID": "SkuPriceId-C-012-O",
+      "Function": "Validation",
+      "Keyword": "MAY",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "SkuPriceId is not null",
+      "Requirement": "SkuId:CR",
+      "Type": "static",
+      "Severity": "warning",
+      "Description": "SkuPriceId MAY equal SkuId"
+    },
+    "SkuPriceId-C-013-C": {
+      "RuleID": "SkuPriceId-C-013-C",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "ChargeCategory is 'Usage' or 'Purchase'",
+      "Requirement": "OR(Resource:CR, Service:CR)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST be associated with a given resource or service when ChargeCategory is 'Usage' or 'Purchase'"
+    },
+    "SkuPriceId-C-014-M": {
+      "RuleID": "SkuPriceId-C-014-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "SkuPriceId is not null",
+      "Requirement": "PriceList:CR",
+      "Type": "dynamic",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST reference a SKU Price in a provider-supplied price list, enabling the lookup of detailed information about the SKU Price"
+    },
+    "SkuPriceId-C-015-C": {
+      "RuleID": "SkuPriceId-C-015-C",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "Provider publishes unit prices exclusive of discounts",
+      "Requirement": "ListUnitPrice:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST support the lookup of the ListUnitPrice when the provider publishes unit prices exclusive of discounts"
+    },
+    "SkuPriceId-C-016-C": {
+      "RuleID": "SkuPriceId-C-016-C",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuPriceId column",
+      "Condition": "Provider supports negotiated pricing concepts",
+      "Requirement": "ContractedUnitPrice:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuPriceId MUST support the verification of the given ContractedUnitPrice when the provider supports negotiated pricing concepts"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "ConformanceRules": {
+    "SkuMeter-C-000-O": {
+      "RuleID": "SkuMeter-C-000-O",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "All Rows",
+      "Condition": "All Rows",
+      "Requirement": "AND(SkuMeter-D-001-C, SkuMeter-C-002-M, SkuMeter-C-003-M, SkuMeter-C-004-C, SkuMeter-C-007-O)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Composite rule for SkuMeter column validation"
+    },
+    "SkuMeter-D-001-C": {
+      "RuleID": "SkuMeter-D-001-C",
+      "Function": "Presence",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "UNIT_PRICING_SUPPORTED",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuMeter MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting"
+    },
+    "SkuMeter-C-002-M": {
+      "RuleID": "SkuMeter-C-002-M",
+      "Function": "DataType",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuMeter column",
+      "Condition": "All Rows",
+      "Requirement": "String",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuMeter MUST be of type String"
+    },
+    "SkuMeter-C-003-M": {
+      "RuleID": "SkuMeter-C-003-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuMeter column",
+      "Condition": "All Rows",
+      "Requirement": "StringHandling:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuMeter MUST conform to StringHandling requirements"
+    },
+    "SkuMeter-C-004-C": {
+      "RuleID": "SkuMeter-C-004-C",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes SkuMeter column",
+      "Condition": "All Rows",
+      "Requirement": "AND(SkuMeter-C-005-C, SkuMeter-C-006-C)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuMeter nullability is defined as follows"
+    },
+    "SkuMeter-C-005-C": {
+      "RuleID": "SkuMeter-C-005-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes SkuMeter column",
+      "Condition": "when SkuId is null",
+      "Requirement": "SkuId:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "SkuMeter MUST be null when SkuId is null"
+    },
+    "SkuMeter-C-006-C": {
+      "RuleID": "SkuMeter-C-006-C",
+      "Function": "NullabilityRules",
+      "Keyword": "SHOULD NOT",
+      "ApplicabilityCriteria": "Dataset includes SkuMeter column",
+      "Condition": "when SkuId is not null",
+      "Requirement": "SkuId:CR",
+      "Type": "static",
+      "Severity": "warning",
+      "Description": "SkuMeter SHOULD NOT be null when SkuId is not null"
+    },
+    "SkuMeter-C-007-O": {
+      "RuleID": "SkuMeter-C-007-O",
+      "Function": "Validation",
+      "Keyword": "SHOULD",
+      "ApplicabilityCriteria": "Dataset includes SkuMeter column",
+      "Condition": "All Rows",
+      "Requirement": "SkuId:CR",
+      "Type": "static",
+      "Severity": "warning",
+      "Description": "SkuMeter SHOULD remain consistent over time for a given SkuId"
+    }
+  }
+}
