@@ -1,0 +1,146 @@
+{
+  "ResourceName-C-000-C": {
+    "Function": "Composite",
+    "Reference": "Resource Name",
+    "EntityType": "Column",
+    "Notes": "Main composite rule for ResourceName column",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ResourceName column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceName-D-001-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceName-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceName-C-004-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceName-D-001-C": {
+    "Function": "Presence",
+    "Reference": "Resource Name",
+    "EntityType": "Column",
+    "Notes": "ResourceName presence is conditional on provider capabilities",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Provider supports billing based on provisioned resources and supports assigning names to resources"
+    ],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources and supports assigning names to resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceName"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceName-C-002-M": {
+    "Function": "DataType",
+    "Reference": "Resource Name",
+    "EntityType": "Column",
+    "Notes": "ResourceName must be of type String",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "DataType",
+        "DataType": "String"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceName-C-003-M": {
+    "Function": "Format",
+    "Reference": "Resource Name",
+    "EntityType": "Column",
+    "Notes": "ResourceName must conform to StringHandling requirements",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "StringHandling"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "StringHandling:CR"
+      ]
+    }
+  },
+  "ResourceName-C-004-C": {
+    "Function": "NullabilityRules",
+    "Reference": "Resource Name",
+    "EntityType": "Column",
+    "Notes": "ResourceName may be null",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MAY be null.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "MayBeNull",
+        "ColumnName": "ResourceName"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  }
+}
