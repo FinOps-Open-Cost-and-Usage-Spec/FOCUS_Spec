@@ -1,0 +1,204 @@
+{
+  "ServiceSubcategory-C-000-O": {
+    "Function": "Composite",
+    "Reference": "Service Subcategory",
+    "EntityType": "Column",
+    "Notes": "Main composite rule for ServiceSubcategory column",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ServiceSubcategory column adheres to the following requirements:",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceSubcategory-D-001-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceSubcategory-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceSubcategory-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceSubcategory-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceSubcategory-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceSubcategory-C-006-M"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ServiceSubcategory-D-001-O": {
+    "Function": "Presence",
+    "Reference": "Service Subcategory",
+    "EntityType": "Column",
+    "Notes": "ServiceSubcategory is recommended to be present in dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory is RECOMMENDED to be present in a FOCUS dataset.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceSubcategory"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ServiceSubcategory-C-002-M": {
+    "Function": "DataType",
+    "Reference": "Service Subcategory",
+    "EntityType": "Column",
+    "Notes": "ServiceSubcategory must be of type String",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ServiceSubcategory column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "DataType",
+        "DataType": "String"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ServiceSubcategory-C-003-M": {
+    "Function": "NullabilityRules",
+    "Reference": "Service Subcategory",
+    "EntityType": "Column",
+    "Notes": "ServiceSubcategory must not be null",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ServiceSubcategory column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "IsNotNull",
+        "ColumnName": "ServiceSubcategory"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ServiceSubcategory-C-004-M": {
+    "Function": "Validation",
+    "Reference": "Service Subcategory",
+    "EntityType": "Column",
+    "Notes": "ServiceSubcategory must be one of the allowed values",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ServiceSubcategory column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "AllowedValues"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "AllowedValues:CR"
+      ]
+    }
+  },
+  "ServiceSubcategory-C-005-M": {
+    "Function": "Validation",
+    "Reference": "Service Subcategory",
+    "EntityType": "Column",
+    "Notes": "ServiceSubcategory must have one and only one parent ServiceCategory",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ServiceSubcategory column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory MUST have one and only one parent ServiceCategory as specified in the allowed values below.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "AllowedValues"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "ServiceCategory:CR"
+      ]
+    }
+  },
+  "ServiceSubcategory-C-006-M": {
+    "Function": "Composite",
+    "Reference": "Service Subcategory",
+    "EntityType": "Column",
+    "Notes": "Allowed values composite rule",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ServiceSubcategory column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Allowed values:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "AllowedValues"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "AllowedValues:CR"
+      ]
+    }
+  }
+}
