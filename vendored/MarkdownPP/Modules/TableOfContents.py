@@ -11,7 +11,7 @@ import os
 from MarkdownPP.Module import Module
 from MarkdownPP.Transform import Transform
 
-tocre = re.compile(r"^!TOC(\s+[1-6])?\s*$")
+tocre = re.compile(r"^!TOC(\s+[1-6])*\s*$")
 atxre = re.compile(r"^(#+)\s*(.+)$")
 setextre = re.compile(r"^(=+|-+)\s*$")
 fencedcodere = re.compile(r"^```[ \w]*$")
@@ -38,7 +38,8 @@ class TableOfContents(Module):
 
         tocfound = False
         toclines = []
-        tocdepth = int(os.environ.get("TOCDEPTH", 0))
+        tocdepth = 3
+        tocdepths = []
         if tocdepth == 0:
             tocdepth = 6
         tocdata = ""
@@ -63,10 +64,9 @@ class TableOfContents(Module):
             match = tocre.search(line)
             if match:
                 tocfound = True
-                depth = match.group(1)
-                if depth is not None:
-                    depth = int(depth)
-                    tocdepth = max(depth, tocdepth)
+                tocdepths = re.findall(r'\b[1-6]\b', line)
+                if tocdepths:
+                    tocdepth = int(tocdepths[0])
                 toclines.append(linenum)
 
             # hash headers
@@ -110,6 +110,7 @@ class TableOfContents(Module):
         # interate through the list of headers, generating the nested table
         # of contents data, and creating the appropriate transforms
         tocdata += f'<ul class="toc tocdepth1">\n'
+        current_header_number = -1
         for linenum in keys:
             if linenum < toclines[0]:
                 continue
@@ -141,6 +142,8 @@ class TableOfContents(Module):
             headernum += 1
 
             if depth == 1:
+                current_header_number += 1
+                tocdepth = int(tocdepths[current_header_number]) if current_header_number < len(tocdepths) else 3
                 section = "%d. " % headernum
             else:
                 section = ".".join([str(x) for x in stack]) + ".%d. " % headernum

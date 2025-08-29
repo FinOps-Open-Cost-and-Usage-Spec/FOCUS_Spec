@@ -10,7 +10,7 @@ The data generator creates a new schema object to represent the new schema. The 
 
 Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-45678-abcde-45678-abcde-45678.json`.
 
-The updated schema related metadata could look like this:
+The updated schema-related metadata could look like this:
 
 ```json
  {
@@ -19,6 +19,7 @@ The updated schema related metadata could look like this:
   "DataGeneratorVersion": "2.3",
   "name": "New Columns",
   "CreationDate": "2024-04-02T12:01:03.083z",
+  "Dataset": "FOCUS Cost and Usage",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
@@ -79,6 +80,7 @@ For reference, the prior schema object looked like this:
   "FocusVersion": "1.0",
   "DataGeneratorVersion": "2.2",
   "CreationDate": "2024-04-02T12:01:03.083z",
+  "Dataset": "FOCUS Cost and Usage",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",

@@ -94,7 +94,11 @@ An open-source specification that defines requirements for billing data.
 
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
-A structured collection of cost and usage data that meets the [BCP14](https://tools.ietf.org/html/bcp14) criteria defined by FOCUS. In addition to FOCUS columns, the dataset should include custom provider columns (prefixed with `x_`) when these columns provide additional information not captured by the existing FOCUS columns. If introducing a custom column could result in splitting original charge records into multiple entries, the data generator is responsible for ensuring that the FOCUS dataset fully conforms to all aggregation-related requirements for metric columns, particularly those concerning costs and quantities.
+A FOCUS dataset is a structured collection of records that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
+
+In addition to these standardized columns, data generators may include custom provider-specific columns (prefixed with `x_`) where additional context is needed beyond what is captured in the defined FOCUS columns. If such custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
+
+The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness.
 
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
