@@ -1,0 +1,146 @@
+{
+  "ProviderName-C-000-M": {
+    "Function": "Composite",
+    "Reference": "Provider",
+    "EntityType": "Column",
+    "Notes": "Main composite rule for ProviderName column",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ProviderName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ProviderName column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ProviderName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ProviderName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ProviderName-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ProviderName-C-004-M"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ProviderName-C-001-M": {
+    "Function": "Presence",
+    "Reference": "Provider",
+    "EntityType": "Column",
+    "Notes": "ProviderName must be present in dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ProviderName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ProviderName MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ProviderName"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ProviderName-C-002-M": {
+    "Function": "DataType",
+    "Reference": "Provider",
+    "EntityType": "Column",
+    "Notes": "ProviderName must be of type String",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ProviderName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ProviderName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "DataType",
+        "DataType": "String"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ProviderName-C-003-M": {
+    "Function": "Format",
+    "Reference": "Provider",
+    "EntityType": "Column",
+    "Notes": "ProviderName must conform to StringHandling requirements",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ProviderName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ProviderName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "StringHandling"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "StringHandling:CR"
+      ]
+    }
+  },
+  "ProviderName-C-004-M": {
+    "Function": "NullabilityRules",
+    "Reference": "Provider",
+    "EntityType": "Column",
+    "Notes": "ProviderName must not be null",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ProviderName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ProviderName MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "IsNotNull",
+        "ColumnName": "ProviderName"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  }
+}
