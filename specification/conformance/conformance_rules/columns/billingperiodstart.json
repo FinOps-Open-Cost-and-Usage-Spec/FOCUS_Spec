@@ -14,39 +14,30 @@
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
-          { "CheckFunction": "CheckConformanceRule", "ConformanceRuleId": "BillingPeriodStart-D-001-M" },
-          { "CheckFunction": "CheckConformanceRule", "ConformanceRuleId": "BillingPeriodStart-C-002-M" },
-          { "CheckFunction": "CheckConformanceRule", "ConformanceRuleId": "BillingPeriodStart-C-003-M" },
-          { "CheckFunction": "CheckConformanceRule", "ConformanceRuleId": "BillingPeriodStart-C-004-M" },
-          { "CheckFunction": "CheckConformanceRule", "ConformanceRuleId": "BillingPeriodStart-C-005-M" }
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingPeriodStart-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingPeriodStart-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingPeriodStart-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingPeriodStart-C-005-M"
+          }
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-009-M"
+      ]
     }
   },
-
-  "BillingPeriodStart-D-001-M": {
-    "Function": "Presence",
-    "Reference": "BillingPeriodStart",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "MUST be present in a FOCUS dataset.",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "BillingPeriodStart"
-      },
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-
   "BillingPeriodStart-C-002-M": {
     "Function": "Type",
     "Reference": "BillingPeriodStart",
@@ -67,7 +58,6 @@
       "Dependencies": []
     }
   },
-
   "BillingPeriodStart-C-003-M": {
     "Function": "Format",
     "Reference": "BillingPeriodStart",
@@ -88,7 +78,6 @@
       "Dependencies": []
     }
   },
-
   "BillingPeriodStart-C-004-M": {
     "Function": "Validation",
     "Reference": "BillingPeriodStart",
@@ -100,7 +89,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null.",
-      "Keyword": "MUST NOT",
+      "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "BillingPeriodStart",
@@ -110,7 +99,6 @@
       "Dependencies": []
     }
   },
-
   "BillingPeriodStart-C-005-M": {
     "Function": "Validation",
     "Reference": "BillingPeriodStart",

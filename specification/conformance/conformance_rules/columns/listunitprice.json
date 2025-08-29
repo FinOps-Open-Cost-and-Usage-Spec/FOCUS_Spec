@@ -18,10 +18,6 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-001-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ListUnitPrice-C-002-M"
           },
           {
@@ -59,29 +55,9 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "ListUnitPrice-C-001-C": {
-    "Function": "Presence",
-    "Reference": "ListUnitPrice",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "ListUnitPrice"
-      },
-      "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-004-C"
+      ]
     }
   },
   "ListUnitPrice-C-002-M": {
