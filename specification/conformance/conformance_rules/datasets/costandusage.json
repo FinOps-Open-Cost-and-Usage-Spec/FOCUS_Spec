@@ -102,6 +102,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-017-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-018-C"
           }
         ]
       },
@@ -179,6 +183,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ConsumedQuantity-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ConsumedUnit-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -503,6 +511,28 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "CommitmentDiscountStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-018-C": {
+    "Function": "Presence",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit MUST be present in a FOCUS dataset when the provider supports the measurement of usage",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ConsumedUnit"
       },
       "Condition": {},
       "Dependencies": []
