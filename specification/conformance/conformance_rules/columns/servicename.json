@@ -1,0 +1,320 @@
+{
+  "ServiceName-C-000-M": {
+    "Function": "Composite",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "Main composite rule for ServiceName column",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-D-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-008-O"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ServiceName-D-001-M": {
+    "Function": "Presence",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "ServiceName must be present in dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ServiceName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceName"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ServiceName-C-002-M": {
+    "Function": "DataType",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "ServiceName must be of type String",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ServiceName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "DataType",
+        "DataType": "String"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ServiceName-C-003-M": {
+    "Function": "Format",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "ServiceName must conform to StringHandling requirements",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ServiceName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "StringHandling"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "StringHandling:CR"
+      ]
+    }
+  },
+  "ServiceName-C-004-M": {
+    "Function": "NullabilityRules",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "ServiceName must not be null",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ServiceName column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "IsNotNull",
+        "ColumnName": "ServiceName"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ServiceName-C-005-M": {
+    "Function": "Composite",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "The relationship between ServiceName and ServiceCategory is defined as follows",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The relationship between ServiceName and ServiceCategory is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-006-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-007-M"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "ServiceCategory:CR"
+      ]
+    }
+  },
+  "ServiceName-C-006-M": {
+    "Function": "Validation",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "ServiceName must have one and only one ServiceCategory that best aligns with its primary purpose",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST have one and only one ServiceCategory that best aligns with its primary purpose, except when no suitable ServiceCategory is available.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "ServiceCategory:CR"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "ServiceCategory:CR"
+      ]
+    }
+  },
+  "ServiceName-C-007-M": {
+    "Function": "Validation",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "ServiceName must be associated with ServiceCategory 'Other' when no suitable category is available",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST be associated with the ServiceCategory \"Other\" when no suitable ServiceCategory is available.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "ServiceCategory:CR"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "ServiceCategory:CR"
+      ]
+    }
+  },
+  "ServiceName-C-008-O": {
+    "Function": "Composite",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "The relationship between ServiceName and ServiceSubcategory is defined as follows",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The relationship between ServiceName and ServiceSubcategory is defined as follows:",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-009-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-010-O"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "ServiceSubcategory:CR"
+      ]
+    }
+  },
+  "ServiceName-C-009-O": {
+    "Function": "Validation",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "ServiceName should have one and only one ServiceSubcategory that best aligns with its primary purpose",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName SHOULD have one and only one ServiceSubcategory that best aligns with its primary purpose, except when no suitable ServiceSubcategory is available.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "ServiceSubcategory:CR"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "ServiceSubcategory:CR"
+      ]
+    }
+  },
+  "ServiceName-C-010-O": {
+    "Function": "Validation",
+    "Reference": "Service Name",
+    "EntityType": "Column",
+    "Notes": "ServiceName should be associated with ServiceSubcategory 'Other' when no suitable subcategory is available",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName SHOULD be associated with the ServiceSubcategory \"Other\" when no suitable ServiceSubcategory is available.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "ServiceSubcategory:CR"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "ServiceSubcategory:CR"
+      ]
+    }
+  }
+}
