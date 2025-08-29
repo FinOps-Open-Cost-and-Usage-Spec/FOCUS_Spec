@@ -113,7 +113,26 @@
     "ValidationCriteria": {
       "MustSatisfy": "ChargeFrequency MUST be one of the allowed values",
       "Keyword": "MUST",
-      "Requirement": {},
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeFrequency",
+            "Value": "One-Time"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeFrequency",
+            "Value": "Recurring"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeFrequency",
+            "Value": "Usage-Based"
+          }
+        ]
+      },
       "Condition": {},
       "Dependencies": []
     }
