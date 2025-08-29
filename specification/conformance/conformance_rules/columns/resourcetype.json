@@ -1,0 +1,209 @@
+{
+  "ResourceType-C-000-M": {
+    "Function": "Composite",
+    "Reference": "Resource Type",
+    "EntityType": "Column",
+    "Notes": "Root composite for column",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ResourceType column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-D-001-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-004-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceType-D-001-C": {
+    "Function": "Presence",
+    "Reference": "Resource Type",
+    "EntityType": "Column",
+    "Notes": "Dataset presence is conditional on provider capabilities",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Provider supports billing based on provisioned resources and supports assigning types to resources"
+    ],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources and supports assigning types to resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceType-C-002-M": {
+    "Function": "DataType",
+    "Reference": "Resource Type",
+    "EntityType": "Column",
+    "Notes": "ResourceType must be of type String",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceType column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "DataType",
+        "DataType": "String"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceType-C-003-M": {
+    "Function": "Validation",
+    "Reference": "Resource Type",
+    "EntityType": "Column",
+    "Notes": "ResourceType must conform to StringHandling requirements",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceType column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "StringHandling"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "StringHandling:CR"
+      ]
+    }
+  },
+  "ResourceType-C-004-C": {
+    "Function": "Composite",
+    "Reference": "Resource Type",
+    "EntityType": "Column",
+    "Notes": "Composite status reflects conditional children",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceType column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-006-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "ResourceId:CR"
+      ]
+    }
+  },
+  "ResourceType-C-005-C": {
+    "Function": "NullabilityRules",
+    "Reference": "Resource Type",
+    "EntityType": "Column",
+    "Notes": "ResourceType must be null when ResourceId is null",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceType column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST be null when ResourceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "IsNull",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {
+        "CheckFunction": "IsNull",
+        "CheckCondition": "ResourceId"
+      },
+      "Dependencies": [
+        "ResourceId:CR"
+      ]
+    }
+  },
+  "ResourceType-C-006-C": {
+    "Function": "NullabilityRules",
+    "Reference": "Resource Type",
+    "EntityType": "Column",
+    "Notes": "ResourceType must not be null when ResourceId is not null",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceType column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST NOT be null when ResourceId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "IsNotNull",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {
+        "CheckFunction": "IsNotNull",
+        "CheckCondition": "ResourceId"
+      },
+      "Dependencies": [
+        "ResourceId:CR"
+      ]
+    }
+  }
+}
