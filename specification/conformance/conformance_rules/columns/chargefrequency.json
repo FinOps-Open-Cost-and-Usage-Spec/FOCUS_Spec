@@ -3,7 +3,7 @@
     "Function": "Composite",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
-    "Notes": "Root composite – most restrictive child is Conditional (C)",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
