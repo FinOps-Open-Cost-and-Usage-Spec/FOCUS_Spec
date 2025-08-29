@@ -8,6 +8,7 @@
         "BillingAccountType-C-000-M",
         "BillingPeriodStart-C-000-M",
         "BillingPeriodEnd-C-000-M",
+        "CapacityReservationId-C-000-C",
         "ListUnitPrice-C-000-C"
       ]
     }
