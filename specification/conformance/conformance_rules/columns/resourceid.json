@@ -1,0 +1,294 @@
+{
+  "ResourceId-C-000-C": {
+    "Function": "Composite",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "All requirements for Resource ID column",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All requirements for Resource ID column",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-001-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-007-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceId-C-001-C": {
+    "Function": "Presence",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "ResourceId presence is conditional on provider capabilities",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column",
+      "Provider supports billing based on provisioned resources"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceId"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "Provider supports billing based on provisioned resources"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceId-C-002-M": {
+    "Function": "DataType",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "ResourceId must be of type String",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "DataType",
+        "DataType": "String"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceId-C-003-M": {
+    "Function": "Format",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "ResourceId must conform to StringHandling requirements",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AttributeConformance",
+        "AttributeID": "StringHandling"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": [
+        "StringHandling:CR"
+      ]
+    }
+  },
+  "ResourceId-C-004-C": {
+    "Function": "Composite",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "ResourceId nullability is defined as follows",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-006-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "All Rows"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceId-C-005-C": {
+    "Function": "NullabilityRules",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "ResourceId must be null when charge is not related to a resource",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST be null when a charge is not related to a resource.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "IsNull",
+        "ColumnName": "ResourceId"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "Charge is not related to a resource"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceId-C-006-C": {
+    "Function": "NullabilityRules",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "ResourceId must not be null when charge is related to a resource",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST NOT be null when a charge is related to a resource.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "IsNotNull",
+        "ColumnName": "ResourceId"
+      },
+      "Condition": {
+        "CheckFunction": "Equal",
+        "CheckCondition": "Charge is related to a resource"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceId-C-007-C": {
+    "Function": "Composite",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "When ResourceId is not null, ResourceId adheres to additional requirements",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When ResourceId is not null, ResourceId adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-009-O"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "IsNotNull",
+        "CheckCondition": "ResourceId"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceId-C-008-M": {
+    "Function": "Validation",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "ResourceId must be a unique identifier within the provider",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST be a unique identifier within the provider.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "UniqueIdentifier",
+        "ColumnName": "ResourceId"
+      },
+      "Condition": {
+        "CheckFunction": "IsNotNull",
+        "CheckCondition": "ResourceId"
+      },
+      "Dependencies": []
+    }
+  },
+  "ResourceId-C-009-O": {
+    "Function": "Validation",
+    "Reference": "Resource ID",
+    "EntityType": "Column",
+    "Notes": "ResourceId should be a fully-qualified identifier",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "Dataset includes ResourceId column"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId SHOULD be a fully-qualified identifier.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "FullyQualifiedIdentifier",
+        "ColumnName": "ResourceId"
+      },
+      "Condition": {
+        "CheckFunction": "IsNotNull",
+        "CheckCondition": "ResourceId"
+      },
+      "Dependencies": []
+    }
+  }
+}
