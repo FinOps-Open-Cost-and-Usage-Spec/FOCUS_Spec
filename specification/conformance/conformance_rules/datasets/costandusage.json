@@ -183,6 +183,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ListUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "RegionId-C-000-C"
           }
         ]
       },

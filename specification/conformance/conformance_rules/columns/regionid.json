@@ -1,0 +1,81 @@
+{
+  "ConformanceRules": {
+    "RegionId-C-000-C": {
+      "RuleID": "RegionId-C-000-C",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes RegionId column",
+      "Condition": "All Rows",
+      "Requirement": "AND(RegionId-D-001-C, RegionId-C-002-M, RegionId-C-003-M, RegionId-C-004-M)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "The RegionId column adheres to the following requirements"
+    },
+    "RegionId-D-001-C": {
+      "RuleID": "RegionId-D-001-C",
+      "Function": "Presence",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "REGION_SUPPORTED",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "RegionId MUST be present in a FOCUS dataset when the provider supports deploying resources or services within a region"
+    },
+    "RegionId-C-002-M": {
+      "RuleID": "RegionId-C-002-M",
+      "Function": "DataType",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes RegionId column",
+      "Condition": "All Rows",
+      "Requirement": "String",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "RegionId MUST be of type String"
+    },
+    "RegionId-C-003-M": {
+      "RuleID": "RegionId-C-003-M",
+      "Function": "Format",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes RegionId column",
+      "Condition": "All Rows",
+      "Requirement": "StringHandling:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "RegionId MUST conform to StringHandling requirements"
+    },
+    "RegionId-C-004-M": {
+      "RuleID": "RegionId-C-004-M",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes RegionId column",
+      "Condition": "All Rows",
+      "Requirement": "OR(RegionId-C-005-C, RegionId-C-006-C)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "RegionId nullability is defined as follows"
+    },
+    "RegionId-C-005-C": {
+      "RuleID": "RegionId-C-005-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes RegionId column",
+      "Condition": "Resource or service is operated in or managed from a distinct region",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "RegionId MUST NOT be null when a resource or service is operated in or managed from a distinct region"
+    },
+    "RegionId-C-006-C": {
+      "RuleID": "RegionId-C-006-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MAY",
+      "ApplicabilityCriteria": "Dataset includes RegionId column",
+      "Condition": "Resource or service is not operated in or managed from a distinct region",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "warning",
+      "Description": "RegionId MAY be null when a resource or service is not operated in or managed from a distinct region"
+    }
+  }
+}
