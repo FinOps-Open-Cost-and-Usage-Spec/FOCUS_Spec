@@ -14,6 +14,12 @@
     },
     "USAGE_MEASUREMENT_SUPPORTED": {
       "Description": "Data generator supports the measurement of usage quantities"
+    },
+    "SUB_ACCOUNT_SUPPORTED": {
+      "Description": "Data generator supports sub account construct for resource and service grouping"
+    },
+    "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED": {
+      "Description": "Data generator supports more than one possible SubAccountType value"
     }
   }
 }
