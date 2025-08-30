@@ -1,0 +1,169 @@
+{
+  "ConformanceRules": {
+    "PricingCurrencyListUnitPrice-C-000-M": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-000-M",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "All Rows",
+      "Requirement": "AND(PricingCurrencyListUnitPrice-C-001-M, PricingCurrencyListUnitPrice-C-005-M, PricingCurrencyListUnitPrice-C-006-M, PricingCurrencyListUnitPrice-C-007-M, PricingCurrencyListUnitPrice-C-011-C)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Composite rule for PricingCurrencyListUnitPrice column validation"
+    },
+    "PricingCurrencyListUnitPrice-C-001-M": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-001-M",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "All Rows",
+      "Requirement": "AND(PricingCurrencyListUnitPrice-C-002-C, PricingCurrencyListUnitPrice-C-003-O, PricingCurrencyListUnitPrice-C-004-O)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrencyListUnitPrice presence in a FOCUS dataset is defined as follows"
+    },
+    "PricingCurrencyListUnitPrice-C-002-C": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-002-C",
+      "Function": "Presence",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "VIRTUAL_CURRENCY_PRICING_SUPPORTED",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrencyListUnitPrice MUST be present in a FOCUS dataset when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts"
+    },
+    "PricingCurrencyListUnitPrice-C-003-O": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-003-O",
+      "Function": "Presence",
+      "Keyword": "RECOMMENDED",
+      "ApplicabilityCriteria": "PRICING_CURRENCY_SUPPORTED",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "warning",
+      "Description": "PricingCurrencyListUnitPrice is RECOMMENDED to be present in a FOCUS dataset when the provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts"
+    },
+    "PricingCurrencyListUnitPrice-C-004-O": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-004-O",
+      "Function": "Presence",
+      "Keyword": "MAY",
+      "ApplicabilityCriteria": "All Rows",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "info",
+      "Description": "PricingCurrencyListUnitPrice MAY be present in a FOCUS dataset in all other cases"
+    },
+    "PricingCurrencyListUnitPrice-C-005-M": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-005-M",
+      "Function": "DataType",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "All Rows",
+      "Requirement": "Decimal",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrencyListUnitPrice MUST be of type Decimal"
+    },
+    "PricingCurrencyListUnitPrice-C-006-M": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-006-M",
+      "Function": "Format",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "All Rows",
+      "Requirement": "NumericFormat:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrencyListUnitPrice MUST conform to NumericFormat requirements"
+    },
+    "PricingCurrencyListUnitPrice-C-007-M": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-007-M",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "All Rows",
+      "Requirement": "AND(PricingCurrencyListUnitPrice-C-008-C, PricingCurrencyListUnitPrice-C-009-C, PricingCurrencyListUnitPrice-C-010-O)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrencyListUnitPrice nullability is defined as follows"
+    },
+    "PricingCurrencyListUnitPrice-C-008-C": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-008-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "ChargeCategory is 'Tax'",
+      "Requirement": "ChargeCategory:CR",
+      "Type": "dynamic",
+      "Severity": "error",
+      "Description": "PricingCurrencyListUnitPrice MUST be null when ChargeCategory is 'Tax'"
+    },
+    "PricingCurrencyListUnitPrice-C-009-C": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-009-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MUST NOT",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
+      "Requirement": "AND(ChargeCategory:CR, ChargeClass:CR)",
+      "Type": "dynamic",
+      "Severity": "error",
+      "Description": "PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'"
+    },
+    "PricingCurrencyListUnitPrice-C-010-O": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-010-O",
+      "Function": "NullabilityRules",
+      "Keyword": "MAY",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "warning",
+      "Description": "PricingCurrencyListUnitPrice MAY be null in all other cases"
+    },
+    "PricingCurrencyListUnitPrice-C-011-C": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-011-C",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "PricingCurrencyListUnitPrice is not null",
+      "Requirement": "AND(PricingCurrencyListUnitPrice-C-012-M, PricingCurrencyListUnitPrice-C-013-M, PricingCurrencyListUnitPrice-C-014-C)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "When PricingCurrencyListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements"
+    },
+    "PricingCurrencyListUnitPrice-C-012-M": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-012-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "PricingCurrencyListUnitPrice is not null",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrencyListUnitPrice MUST be a non-negative decimal value"
+    },
+    "PricingCurrencyListUnitPrice-C-013-M": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-013-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "PricingCurrencyListUnitPrice is not null",
+      "Requirement": "PricingCurrency:CR",
+      "Type": "dynamic",
+      "Severity": "error",
+      "Description": "PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency"
+    },
+    "PricingCurrencyListUnitPrice-C-014-C": {
+      "RuleID": "PricingCurrencyListUnitPrice-C-014-C",
+      "Function": "Validation",
+      "Keyword": "MAY",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
+      "Condition": "ChargeClass is 'Correction'",
+      "Requirement": "AND(ListCost:CR, PricingQuantity:CR)",
+      "Type": "dynamic",
+      "Severity": "warning",
+      "Description": "Discrepancies in PricingCurrencyListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is 'Correction'"
+    }
+  }
+}

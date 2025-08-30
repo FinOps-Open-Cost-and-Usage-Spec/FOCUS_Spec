@@ -1,0 +1,70 @@
+{
+  "ConformanceRules": {
+    "PricingCurrency-C-000-C": {
+      "RuleID": "PricingCurrency-C-000-C",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "PRICING_CURRENCY_SUPPORTED",
+      "Condition": "All Rows",
+      "Requirement": "AND(PricingCurrency-D-001-C, PricingCurrency-C-002-M, PricingCurrency-C-003-M, PricingCurrency-C-004-M, PricingCurrency-C-005-M)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "The PricingCurrency column adheres to the following requirements"
+    },
+    "PricingCurrency-D-001-C": {
+      "RuleID": "PricingCurrency-D-001-C",
+      "Function": "Presence",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "PRICING_CURRENCY_SUPPORTED",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrency MUST be present in a FOCUS dataset when the provider supports pricing and billing in different currencies"
+    },
+    "PricingCurrency-C-002-M": {
+      "RuleID": "PricingCurrency-C-002-M",
+      "Function": "DataType",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrency column",
+      "Condition": "All Rows",
+      "Requirement": "String",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrency MUST be of type String"
+    },
+    "PricingCurrency-C-003-M": {
+      "RuleID": "PricingCurrency-C-003-M",
+      "Function": "Format",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrency column",
+      "Condition": "All Rows",
+      "Requirement": "StringHandling:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrency MUST conform to StringHandling requirements"
+    },
+    "PricingCurrency-C-004-M": {
+      "RuleID": "PricingCurrency-C-004-M",
+      "Function": "Format",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrency column",
+      "Condition": "All Rows",
+      "Requirement": "CurrencyFormat:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrency MUST conform to CurrencyFormat requirements"
+    },
+    "PricingCurrency-C-005-M": {
+      "RuleID": "PricingCurrency-C-005-M",
+      "Function": "NullabilityRules",
+      "Keyword": "MUST NOT",
+      "ApplicabilityCriteria": "Dataset includes PricingCurrency column",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "PricingCurrency MUST NOT be null"
+    }
+  }
+}
