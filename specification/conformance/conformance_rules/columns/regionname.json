@@ -1,0 +1,81 @@
+{
+  "ConformanceRules": {
+    "RegionName-C-000-M": {
+      "RuleID": "RegionName-C-000-M",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes RegionName column",
+      "Condition": "All Rows",
+      "Requirement": "AND(RegionName-C-001-C,RegionName-C-002-M,RegionName-C-003-M,RegionName-C-004-M)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Composite rule for RegionName column validation"
+    },
+    "RegionName-C-001-C": {
+      "RuleID": "RegionName-C-001-C",
+      "Function": "Presence",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "REGION_SUPPORTED",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "RegionName MUST be present in a FOCUS dataset when the provider supports deploying resources or services within a region"
+    },
+    "RegionName-C-002-M": {
+      "RuleID": "RegionName-C-002-M",
+      "Function": "DataType",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes RegionName column",
+      "Condition": "All Rows",
+      "Requirement": "String",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "RegionName MUST be of type String"
+    },
+    "RegionName-C-003-M": {
+      "RuleID": "RegionName-C-003-M",
+      "Function": "Format",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes RegionName column",
+      "Condition": "All Rows",
+      "Requirement": "StringHandling:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "RegionName MUST conform to StringHandling requirements"
+    },
+    "RegionName-C-004-M": {
+      "RuleID": "RegionName-C-004-M",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes RegionName column",
+      "Condition": "All Rows",
+      "Requirement": "AND(RegionName-C-005-C,RegionName-C-006-C)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "RegionName nullability is defined as follows"
+    },
+    "RegionName-C-005-C": {
+      "RuleID": "RegionName-C-005-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes RegionName column",
+      "Condition": "RegionId is null",
+      "Requirement": "RegionId:CR",
+      "Type": "dynamic",
+      "Severity": "error",
+      "Description": "RegionName MUST be null when RegionId is null"
+    },
+    "RegionName-C-006-C": {
+      "RuleID": "RegionName-C-006-C",
+      "Function": "NullabilityRules",
+      "Keyword": "MUST NOT",
+      "ApplicabilityCriteria": "Dataset includes RegionName column",
+      "Condition": "RegionId is not null",
+      "Requirement": "RegionId:CR",
+      "Type": "dynamic",
+      "Severity": "error",
+      "Description": "RegionName MUST NOT be null when RegionId is not null"
+    }
+  }
+}
