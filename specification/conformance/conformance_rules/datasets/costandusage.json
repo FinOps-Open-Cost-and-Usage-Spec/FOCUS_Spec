@@ -102,6 +102,14 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-017-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-018-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-019-C"
           }
         ]
       },
@@ -179,6 +187,14 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ConsumedQuantity-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountName-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -503,6 +519,50 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "CommitmentDiscountStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-018-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST be present in a FOCUS dataset when the provider supports a sub account construct",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-019-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountName MUST be present in a FOCUS dataset when the provider supports a sub account construct",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountName"
       },
       "Condition": {},
       "Dependencies": []
