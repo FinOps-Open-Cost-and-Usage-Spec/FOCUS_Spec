@@ -1,0 +1,213 @@
+{
+  "ConformanceRules": {
+    "Tags-C-000-M": {
+      "RuleID": "Tags-C-000-M",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "All Rows",
+      "Condition": "All Rows",
+      "Requirement": "AND(Tags-D-001-C, Tags-C-002-M, Tags-C-003-O, Tags-C-004-C, Tags-C-012-C, Tags-C-015-C)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "The Tags column adheres to the following requirements"
+    },
+    "Tags-D-001-C": {
+      "RuleID": "Tags-D-001-C",
+      "Function": "Presence",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "TAGS_SUPPORTED",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Tags MUST be present in a FOCUS dataset when the provider supports setting user or provider-defined tags"
+    },
+    "Tags-C-002-M": {
+      "RuleID": "Tags-C-002-M",
+      "Function": "Format",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": "KeyValueFormat:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Tags MUST conform to KeyValueFormat requirements"
+    },
+    "Tags-C-003-O": {
+      "RuleID": "Tags-C-003-O",
+      "Function": "NullabilityRules",
+      "Keyword": "MAY",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "info",
+      "Description": "Tags MAY be null"
+    },
+    "Tags-C-004-C": {
+      "RuleID": "Tags-C-004-C",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "Tags is not null",
+      "Requirement": "AND(Tags-C-005-M, Tags-C-006-M, Tags-C-007-O, Tags-C-008-O, Tags-C-009-M, Tags-C-010-O, Tags-C-011-M)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "When Tags is not null, Tags adheres to the following additional requirements"
+    },
+    "Tags-C-005-M": {
+      "RuleID": "Tags-C-005-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Tags MUST include all user-defined and provider-defined tags"
+    },
+    "Tags-C-006-M": {
+      "RuleID": "Tags-C-006-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": "FinalizedTag:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Tags MUST only include finalized tags"
+    },
+    "Tags-C-007-O": {
+      "RuleID": "Tags-C-007-O",
+      "Function": "Validation",
+      "Keyword": "SHOULD",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": "Resource:CR",
+      "Type": "static",
+      "Severity": "warning",
+      "Description": "Tags SHOULD include tag keys with corresponding non-null values for a given resource"
+    },
+    "Tags-C-008-O": {
+      "RuleID": "Tags-C-008-O",
+      "Function": "Validation",
+      "Keyword": "MAY",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": "FinalizedTag:CR",
+      "Type": "static",
+      "Severity": "warning",
+      "Description": "Tags MAY include tag keys with a null value for a given resource depending on the provider's tag finalization process"
+    },
+    "Tags-C-009-M": {
+      "RuleID": "Tags-C-009-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": "BooleanFormat:CR",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Tag keys that do not support corresponding values, MUST have a corresponding true (boolean) value set"
+    },
+    "Tags-C-010-O": {
+      "RuleID": "Tags-C-010-O",
+      "Function": "Validation",
+      "Keyword": "SHOULD",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "dynamic",
+      "Severity": "warning",
+      "Description": "Provider SHOULD publish tag finalization methods and semantics within their respective documentation"
+    },
+    "Tags-C-011-M": {
+      "RuleID": "Tags-C-011-M",
+      "Function": "Validation",
+      "Keyword": "MUST NOT",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Provider MUST NOT alter tag values unless applying true (boolean) to valueless tags"
+    },
+    "Tags-C-012-C": {
+      "RuleID": "Tags-C-012-C",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": "AND(Tags-C-013-M, Tags-C-014-O)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Provider-defined tags adhere to the following additional requirements"
+    },
+    "Tags-C-013-M": {
+      "RuleID": "Tags-C-013-M",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme"
+    },
+    "Tags-C-014-O": {
+      "RuleID": "Tags-C-014-O",
+      "Function": "Validation",
+      "Keyword": "SHOULD",
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "dynamic",
+      "Severity": "warning",
+      "Description": "Provider SHOULD publish all provider-specified tag key prefixes within their respective documentation"
+    },
+    "Tags-C-015-C": {
+      "RuleID": "Tags-C-015-C",
+      "Function": "Composite",
+      "Keyword": null,
+      "ApplicabilityCriteria": "Dataset includes Tags column",
+      "Condition": "All Rows",
+      "Requirement": "AND(Tags-C-016-C, Tags-C-017-C, Tags-C-018-C)",
+      "Type": "static",
+      "Severity": "error",
+      "Description": "User-defined tags adhere to the following additional requirements"
+    },
+    "Tags-C-016-C": {
+      "RuleID": "Tags-C-016-C",
+      "Function": "Validation",
+      "Keyword": "MUST",
+      "ApplicabilityCriteria": "Provider has more than one user-defined tag scheme",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Provider MUST prefix all but one user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the provider has more than one user-defined tag scheme"
+    },
+    "Tags-C-017-C": {
+      "RuleID": "Tags-C-017-C",
+      "Function": "Validation",
+      "Keyword": "MUST NOT",
+      "ApplicabilityCriteria": "Provider has only one user-defined tag scheme",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Provider MUST NOT prefix tag keys when the provider has only one user-defined tag scheme"
+    },
+    "Tags-C-018-C": {
+      "RuleID": "Tags-C-018-C",
+      "Function": "Validation",
+      "Keyword": "MUST NOT",
+      "ApplicabilityCriteria": "Provider has only one user-defined tag scheme",
+      "Condition": "All Rows",
+      "Requirement": null,
+      "Type": "static",
+      "Severity": "error",
+      "Description": "Provider MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme"
+    }
+  }
+}
