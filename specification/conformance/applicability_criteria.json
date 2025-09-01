@@ -14,6 +14,9 @@
     },
     "USAGE_MEASUREMENT_SUPPORTED": {
       "Description": "Data generator supports the measurement of usage quantities"
+    },
+    "CAPACITY_RESERVATION_SUPPORTED": {
+      "Description": "Capacity reservations must be present when the provider supports capacity reservations."
     }
   }
 }

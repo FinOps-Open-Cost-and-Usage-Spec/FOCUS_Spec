@@ -2,7 +2,8 @@
   "ConformanceDatasets": {
     "CostAndUsage": {
       "ConformanceRules": [
-        "CostAndUsage-D-000-M"
+        "CostAndUsage-D-000-M",
+        "CapacityReservationStatus-C-000-M"
       ]
     }
   }
