@@ -59,10 +59,8 @@ The ContractCommitmentAppliedCost column adheres to the following requirements:
 * ContractCommitmentAppliedCost MUST be of type Decimal.
 * ContractCommitmentAppliedCost MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractCommitmentAppliedCost nullability is defined as follows:
-  * ContractCommitmentAppliedCost MUST be null when ContractCommitmentID is null.
-  * ContractCommitmentAppliedCost MUST NOT be null when ContractCommitmentID is not null.
-  * ContractCommitmentAppliedCost MUST NOT be null when ContractCommitmentQuantity is null.
-  * ContractCommitmentAppliedCost MAY be null when ContractCommitmentQuantity is not null.
+  * ContractCommitmentAppliedCost MUST NOT be null when ContractCommitmentAppliedQuantity is null.
+  * ContractCommitmentAppliedCost MAY be null in all other cases.
 * ContractCommitmentAppliedCost MUST be a valid decimal value.
 * ContractCommitmentAppliedCost MUST be denominated in the BillingCurrency.
 
@@ -76,11 +74,10 @@ The ContractCommitmentAppliedQuantity column adheres to the following requiremen
 * ContractCommitmentAppliedQuantity MUST be of type Decimal.
 * ContractCommitmentAppliedQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractCommitmentAppliedQuantity nullability is defined as follows:
-  * ContractCommitmentAppliedQuantity MUST be null when ContractCommitmentID is null.
-  * ContractCommitmentAppliedQuantity MUST NOT be null when ContractCommitmentID is not null.
-  * ContractCommitmentAppliedQuantity MUST NOT be null when ContractCommitmentCost is null.
-  * ContractCommitmentAppliedQuantity MAY be null when ContractCommitmentCost is not null.
+  * ContractCommitmentAppliedQuantity MUST NOT be null when ContractCommitmentAppliedCost is null.
+  * ContractCommitmentAppliedQuantity MAY be null in all other cases.
 * ContractCommitmentAppliedQuantity MUST be a valid decimal value.
+* ContractCommitmentAppliedQuantity MUST be denominated in the ContractCommitmentAppliedUnit.
 
 ### Contract Commitment Applied Unit
 
