@@ -1,6 +1,6 @@
 # Contract Applied
 
-Contract Applied is a set of four datapoints that associate a charge to one or more [*contract commitments*](#glossary:contract-commitment), denoted as key-value pairs in JSON format.  Contract Applied allows the practitioner to track the progress of the commitments to which they have agreed with a provider.
+Contract Applied is a set of datapoints that associate a charge to one or more [*contract commitments*](#glossary:contract-commitment), denoted as key-value pairs in JSON format.  Contract Applied allows the practitioner to track the progress of the commitments to which they have agreed with a provider.
 
 The datapoints are:
 
@@ -8,6 +8,8 @@ The datapoints are:
 * `Contract Commitment Applied Cost`: The value of the charge applied to a single contract term.
 * `Contract Commitment Applied Quantity`: The usage of the charge applied to a single contract term.
 * `Contract Commitment Applied Unit`: The unit of measure for the usage of the charge applied to a single contract term.
+
+In addition to these four datapoints, a data generator may include one or more custom datapoints, also denoted as key-value pairs.
 
 The ContractApplied column adheres to the following requirements:
 
@@ -27,7 +29,7 @@ The ContractApplied column adheres to the following requirements:
 
 ## JSON Datapoints
 
-The next sections describe the four datapoints contained within Contract Applied, each of which have their own requirements.
+The next sections describe the four FOCUS-defined datapoints contained within Contract Applied, each of which have their own requirements.
 
 ### Contract Commitment ID
 
@@ -96,50 +98,112 @@ The ContractCommitmentAppliedUnit column adheres to the following requirements:
 
 # Examples
 
-## Example 1
+## Example 1: Initial contract commitment
 
-A single charge has two contractual commitments applied:
+A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a provider and a customer:
 
-1) Spend a certain amount of money on the relevant service.
-2) Consume a certain number of compute hours on the relevant resource type.
+1) 12345: Spend $500k overall.  (This is the value of the contract, and thus ContractID = ContractCommitmentID.)
+2) 23456: Spend $25k on a particular service.
+3) 34567: Consume 100k compute hours on a particular resource type.
+
+The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, and Contract Commitment ID are all denoted as 12345.
 
 ```json
 {
-"ContractApplied": [
+  "ResourceID": "12345",
+  "ChargeCategory": "Purchase",
+  "ContractID": "12345",
+  "ContractApplied": [
           {
-               "ContractCommitmentID": "12346",
-               "ContractCommitmentAppliedCost": 100.00,
+               "ContractCommitmentID": "12345",
+               "ContractCommitmentAppliedCost": 500000.00,
                "ContractCommitmentAppliedQuantity": null,
                "ContractCommitmentAppliedUnit": null
            },
            {
                "ContractCommitmentID": "23456",
+               "ContractCommitmentAppliedCost": 25000.00,
+               "ContractCommitmentAppliedQuantity": null,
+               "ContractCommitmentAppliedUnit": null
+           },
+           {
+               "ContractCommitmentID": "34567",
                "ContractCommitmentAppliedCost": null,
-               "ContractCommitmentAppliedQuantity": 10,
+               "ContractCommitmentAppliedQuantity": 100000.00,
                "ContractCommitmentAppliedUnit": "compute_hours"
            }
      ]
 }
 ```
 
-## Example 2
+## Example 2: Contract commitment usage with no custom columns
 
-The same as Example 1, except a custom key-value pair `x_ContractCommitmentCostBalance` is provided by the data generator.   This datapoint represents the value remaining on a burndown contract commitment, which started at $500k.
+Assume the contract commitment as described in Example 1.  Assume that only 50% of cost and usage gets applied to the contract commitments, per the contract terms.
+
+A single Cost and Usage charge for `myResource1` carries Effective Cost of 30 (denominated in USD) and Consumed Quantity of 1 (denominated in compute hours).  The Charge Category is denoted as Usage.
+
+This applies to the contract commitments in the following manner:
 
 ```json
 {
-"ContractApplied": [
+  "ResourceID": "myResource1",
+  "ChargeCategory": "Usage",
+  "EffectiveCost": "30.00",
+  "ConsumedQuantity": "1",
+  "ContractID": "12345",
+  "ContractApplied": [
           {
-               "ContractCommitmentID": "12346",
-               "ContractCommitmentAppliedCost": 100.00,
+               "ContractCommitmentID": "12345",
+               "ContractCommitmentAppliedCost": 15.00,
                "ContractCommitmentAppliedQuantity": null,
-               "ContractCommitmentAppliedUnit": null,
-               "x_ContractCommitmentCostBalance": 499900.00
+               "ContractCommitmentAppliedUnit": null
            },
            {
                "ContractCommitmentID": "23456",
+               "ContractCommitmentAppliedCost": 15.00,
+               "ContractCommitmentAppliedQuantity": null,
+               "ContractCommitmentAppliedUnit": null
+           },
+           {
+               "ContractCommitmentID": "34567",
                "ContractCommitmentAppliedCost": null,
-               "ContractCommitmentAppliedQuantity": 10,
+               "ContractCommitmentAppliedQuantity": 0.50,
+               "ContractCommitmentAppliedUnit": "compute_hours"
+           }
+     ]
+}
+```
+
+## Example 3: Contract commitment usage with custom columns
+
+The same as Example 2, except a custom key-value pair `x_ContractCommitmentCostBalance` is provided by the data generator.   This datapoint represents the value remaining on a given contract commitment.
+
+```json
+{
+  "ResourceID": "myResource1",
+  "ChargeCategory": "Usage",
+  "EffectiveCost": "30.00",
+  "ConsumedQuantity": "1",
+  "ContractID": "12345",
+  "ContractApplied": [
+          {
+               "ContractCommitmentID": "12345",
+               "ContractCommitmentAppliedCost": 15.00,
+               "ContractCommitmentAppliedQuantity": null,
+               "ContractCommitmentAppliedUnit": null,
+               "x_ContractCommitmentCostBalance": 499985.00
+           },
+           {
+               "ContractCommitmentID": "23456",
+               "ContractCommitmentAppliedCost": 15.00,
+               "ContractCommitmentAppliedQuantity": null,
+               "ContractCommitmentAppliedUnit": null,
+               "x_ContractCommitmentCostBalance": 24985.00
+           },
+           {
+               "ContractCommitmentID": "34567",
+               "ContractCommitmentAppliedCost": null,
+               "ContractCommitmentAppliedQuantity": 0.50,
                "ContractCommitmentAppliedUnit": "compute_hours",
                "x_ContractCommitmentCostBalance": null
            }
@@ -157,7 +221,7 @@ Contract Applied
 
 ## Description
 
-A set of four datapoints that associate a charge to one or more [*contract commitments*](#glossary:contract-commitment).
+A set of datapoints that associate a charge to one or more [*contract commitments*](#glossary:contract-commitment).
 
 ## Content Constraints
 
