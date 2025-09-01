@@ -47,6 +47,7 @@ The ContractCommitmentID column adheres to the following requirements:
   * ContractCommitmentID MUST be a unique identifier within the provider.
   * ContractCommitmentID SHOULD be a fully-qualified identifier.
 * ContractCommitmentID MUST have one and only one parent [ContractID](#contractid).
+* ContractCommitmentID MUST be equal to ResourceID when ChargeCategory is "Purchase".
 * ContractCommitmentID MAY be equal to ContractID.
 
 ### Contract Commitment Applied Cost
