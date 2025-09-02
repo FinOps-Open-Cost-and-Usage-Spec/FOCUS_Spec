@@ -100,9 +100,7 @@
         "Function": "Validation",
         "Reference": "ChargePeriodEnd",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "All Rows"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodEnd MUST NOT be null",
