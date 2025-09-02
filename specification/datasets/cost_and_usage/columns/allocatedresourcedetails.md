@@ -30,7 +30,7 @@ The following keys should be used when applicable to facilitate querying data ac
 
 | Key | ValueType | Required | Description |
 | ----- | ---- | ---------- | ----------- |
-| RatioValue | [Numeric](#numericformat) | TRUE | Percentage of overall cost derived from corresponding method and metric. |
+| AllocatedRatio | [Numeric](#numericformat) | TRUE | Percentage of overall cost derived from corresponding method and metric. |
 | UsageUnit | [String](#stringhandling) | FALSE | Unit being measured used to calculate allocation. |
 | UsageQuantity | Numeric | FALSE | Volume of UsageUnit consumed or used. |
 
@@ -39,12 +39,12 @@ The following keys should be used when applicable to facilitate querying data ac
 ```json
 [
   {
-    "RatioValue": 0.05,
+    "AllocatedRatio": 0.05,
     "UsageUnit": "CPU",
     "UsageValue": 0.5
   },
   {
-    "RatioValue": 0.1,
+    "AllocatedRatio": 0.1,
     "UsageUnit": "Memory",
     "UsageValue": 4
   }
@@ -57,7 +57,7 @@ The following keys should be used when applicable to facilitate querying data ac
 {
   "elements": {
     "properties": {
-      "RatioValue": { "type": "float64" }
+      "AllocatedRatio": { "type": "float64" }
     },
     "optionalProperties": {
       "UsageUnit": { "type": "string" },
