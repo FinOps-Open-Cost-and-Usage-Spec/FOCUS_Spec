@@ -41,12 +41,12 @@ The following keys should be used when applicable to facilitate querying data ac
   {
     "AllocatedRatio": 0.05,
     "UsageUnit": "CPU",
-    "UsageValue": 0.5
+    "UsageQuantity": 0.5
   },
   {
     "AllocatedRatio": 0.1,
     "UsageUnit": "Memory",
-    "UsageValue": 4
+    "UsageQuantity": 4
   }
 ]
 ```
@@ -61,7 +61,7 @@ The following keys should be used when applicable to facilitate querying data ac
     },
     "optionalProperties": {
       "UsageUnit": { "type": "string" },
-      "UsageValue": { "type": "float64" }
+      "UsageQuantity": { "type": "float64" }
     },
     "additionalProperties": true
   }
