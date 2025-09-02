@@ -51,11 +51,9 @@ Within the Append-only mechanism, two correction styles are commonly used:
 * Ledger-style correction adds records that update or supplement cost and usage data. Updates increment or decrement values in selected cost- and quantity-related columns, while all other columns remain unchanged. In some cases, the correction consists of a new record representing a previously omitted cost. Explicit reversal is not commonly performed, but may be used if the correction itself represents a reversal. This style offers limited audit transparency.
 * Accounting-style correction generally follows a two-step representation. Depending on the nature of the correction, either or both of the following steps may be required: (1) reversal of the original record using a charge in which cost- and quantity-related columns carry values with the opposite sign, while all other columns match the original; and (2) a new record with corrected values. This style preserves full correction history.
 
-### Data Integrity and Auditability
+### Data Integrity
 
 To ensure data integrity, correction records must not result in double counting of any cost- or quantity-related values. This applies regardless of the correction style or delivery mechanism used.
-
-All correction charge records adhere to the correction handling requirements listed below.
 
 ## Attribute ID
 
@@ -70,6 +68,8 @@ Correction Handling
 Defines how updates to previously provided charge records are represented in FOCUS datasets.
 
 ## Requirements
+
+All corrections adhere to the following requirements:
 
 * Invoice MUST be considered finalized and immutable once issued.
 * Once the associated invoice is issued, each underlying charge record adheres to the following additional requirements:
