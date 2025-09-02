@@ -2,7 +2,7 @@
 
 The following examples illustrate how corrections to previously issued billing periods may be represented in FOCUS Cost and Usage datasets, using delivery mechanisms and correction styles that preserve invoice integrity and auditability.
 
-## Scenario 1: Post-Invoice Correction – Partial Reallocation to Correct Resource
+## Scenario 1: Post-Invoice Correction - Partial Reallocation to Correct Resource
 
 On July 12th, 2025, the Data Generator identifies that a charge record previously invoiced for May 2025 was incorrectly attributed entirely to ResourceId R-111. In reality, only part of the cost and usage belongs to that resource, while the remainder pertains to ResourceId R-222.
 
@@ -31,7 +31,7 @@ Note the following details in the example datasets:
   * A corrected record for R-222
 * Replacement-style correction is not permitted, as modifying finalized records would violate audit and legal constraints.
 
-## Scenario 2: Post-Invoice Correction – Late-arriving Usage
+## Scenario 2: Post-Invoice Correction - Late-arriving Usage
 
 On July 12th, 2025, the Data Generator identifies a cost that was incurred during May 2025 (ChargePeriodStart = 2025-05-01) but was not included in the finalized invoice issued on June 12th, 2025. Since the May billing period is closed, the correction is delivered in the next open billing period (e.g., June or July).
 
@@ -55,7 +55,7 @@ Note the following details in the example datasets:
 * Both Ledger-style and Accounting-style corrections use a single increment record to represent the late-arriving usage and associated cost.
 * Replacement-style correction is not permitted, as modifying finalized records would violate audit and legal constraints.
 
-## Scenario 3: Post-Invoice Correction – Itemized Cost-only correction
+## Scenario 3: Post-Invoice Correction - Itemized Cost-only correction
 
 On July 12th, 2025, the Data Generator detects a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records related to a single SkuPriceId. While each individual record was correctly rounded, the aggregated cost differs slightly from the precise total, resulting in a small drift.
 
@@ -80,7 +80,7 @@ Note the following details in the example datasets:
 * Both Ledger-style and Accounting-style corrections use a single increment record to represent the cost-only adjustment.
 * Replacement-style correction is not permitted, as modifying finalized records would violate audit and legal constraints.
 
-## Scenario 4: Post-Invoice Correction – Bulk Cost-only correction
+## Scenario 4: Post-Invoice Correction - Bulk Cost-only correction
 
 On July 12th, 2025, the Data Generator detects a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differs slightly from the precise total, resulting in a small drift.
 
