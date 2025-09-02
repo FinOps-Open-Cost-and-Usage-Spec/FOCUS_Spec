@@ -42,7 +42,7 @@
     },
     "ChargePeriodEnd-C-001-M": {
         "Function": "Presence",
-        "Reference": "Charge Period End",
+        "Reference": "ChargePeriodEnd",
         "EntityType": "Column",
         "ApplicabilityCriteria": [],
         "Type": "Static",
