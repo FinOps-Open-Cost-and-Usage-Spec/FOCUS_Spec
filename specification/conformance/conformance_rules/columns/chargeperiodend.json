@@ -3,9 +3,7 @@
         "Function": "Composite",
         "Reference": "ChargePeriodEnd",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "All Rows"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "",
