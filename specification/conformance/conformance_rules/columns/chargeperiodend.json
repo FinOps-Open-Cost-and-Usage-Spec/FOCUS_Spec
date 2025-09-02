@@ -120,9 +120,7 @@
         "Function": "Validation",
         "Reference": "ChargePeriodEnd",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "All Rows"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodEnd MUST be the exclusive end bound of the effective period of the charge.",
