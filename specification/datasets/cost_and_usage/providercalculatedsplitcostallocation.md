@@ -4,21 +4,24 @@ The provider-calculated split cost allocation for provider-defined services is a
 
 If a provider supports provider-calculated split cost allocation for provider-defined services, a FOCUS dataset MUST adhere to the following requirements:
 
-- The following columns MUST be included in a FOCUS dataset when the provider supports provider-calculated split cost allocation:
-  - [AllocatedResourceDetails](#allocatedresourcedetails)
+- A FOCUS Cost and Usage dataset MUST include the following columns when the provider supports provider-calculated split cost allocation:
+  - [AllocatedMethodId](#allocatedmethodid)
   - [AllocatedResourceId](#allocatedresourceid)
-- The combination of allocated charge records MUST match the origin charge record.
-  - The sum of all allocated charges MUST have the same value as to origin charge for all metric columns.
-    - Dimension columns which describe the unit for metric columns MUST have the same value as the origin charge for all allocated charges.
+  - [AllocatedResourceName](#allocatedresourcename)
+  - [AllocatedResourceTags](#allocatedresourcetags)
+- A FOCUS Cost and Usage dataset SHOULD include the following column when the provider supports provider-calculated split cost allocation:
+  - [AllocatedResourceDetails](#allocatedresourcedetails)
+- Allocated charge records in the FOCUS Cost and Usage dataset MUST sum up to the origin charge record for all aggregatable metric columns.
+- For each allocated charge records in the FOCUS Cost and Usage dataset, all dimension columns and non-aggregatable metric columns MUST match the values of the origin charge record.
+  - Allocated charge records MUST include the same keys and values present in the [Tags](#tags) column for the origin charge.
   - Allocated charges MUST include the tags from the origin charge in the [Tags](#tags) column.
-    - If tags are supported for the AllocatedResourceId, these tags SHOULD be included in the Tags column as a user-defined tag scheme.
-    - The provier MAY include properties of the AllocatedResourceId in the Tags column as a provider-defined tag scheme.
-- The normative requirements for all columns MUST be satisfied for all allocated charges.
+- Allocated charge records MUST satisfy normative requirements for all columns.
 - The method used for allocating origin charges to create allocated charges MUST be documented by the provider and accessible to practitioners.
-- The provider MAY create allocated charges for concepts related to their documented split cost allocation method.
-  - Unused or unallocated usage of the ResourceId MAY be included as separate allocated charges OR MAY be apportioned to the remaining allocated charges, aligning to the provider's documented allocation method.
-- Split-cost allocation SHOULD be offered on an opt-in basis.
+  - The Dataset MAY contain records for concepts not related to resource usage, if documented in the split cost allocation method.
+  - The Dataset MAY contain records for the unused or unallocated usage of the ResourceId as separate allocated charges, if it aligns to the provider's documented allocation method.
+  - Allocated charge records MAY contain approtioned costs for the unused or unallocated usage of the ResourceId, if it aligns to the provider's documented allocation method.
+- Split-cost allocation is RECOMMENDED to be applied to charges on an opt-in basis.
 
 ## Description
 
-Provider-calculated split cost allocation for provider-defined services allows providers to offer more detailed cost and usage information based on a method defined and documented by the provider, including support for allocating costs in cases where the usage of a resrouce might not match the units the resource is measured in.
+Provider-calculated split cost allocation for provider-defined services allows providers to offer more detailed cost and usage information based on a method defined and documented by the provider, including support for allocating costs in cases where the usage of a resource might not match the units the resource is measured in.
