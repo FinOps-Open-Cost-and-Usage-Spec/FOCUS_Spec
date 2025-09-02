@@ -1,6 +1,6 @@
 # Allocated Resource Details
 
-Allocated Resource Details provides information critical in understanding how resources are allocated when using split cost allocation. This information includes: allocation method name, metric used to calculate cost, the usage value/quantity, and the ratio of the cost derived from the method.
+Allocated Resource Details provides information about how resources are allocated when using split cost allocation.
 
 The AllocatedResourceDetails column adheres to the following requirements:
 
@@ -80,7 +80,7 @@ Allocated Resource Details
 
 ## Description
 
-Self-contained summary of the allocated cost's purpose and price.
+Allocated Resource Details provides information about how resources are allocated when using split cost allocation.
 
 ## Content Constraints
 
