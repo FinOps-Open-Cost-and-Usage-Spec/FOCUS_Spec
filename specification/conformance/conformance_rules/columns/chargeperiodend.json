@@ -114,7 +114,7 @@
         },
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "Notes": "Cross-column reference: DateTimeFormat"
+        "Notes": ""
     },
   "ChargePeriodEnd-C-005-M": {
         "Function": "Validation",
