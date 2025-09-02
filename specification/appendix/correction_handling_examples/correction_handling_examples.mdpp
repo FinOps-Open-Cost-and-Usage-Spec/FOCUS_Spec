@@ -1,0 +1,6 @@
+# Examples: Correction Handling
+
+The following section contains examples of how correction handling may be implemented in alignment with the FOCUS specification. These examples cover scenarios involving corrections within open billing periods and to previously invoiced periods, and illustrate various delivery mechanisms and correction styles supported by FOCUS.
+
+!INCLUDE "invoiced_billing_period.md",1
+!INCLUDE "open_billing_period.md",1
