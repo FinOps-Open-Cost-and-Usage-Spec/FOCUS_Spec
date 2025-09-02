@@ -80,9 +80,7 @@
         "Function": "Format",
         "Reference": "Charge Period End",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "All Rows"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodEnd MUST conform to DateTimeFormat requirements.",
