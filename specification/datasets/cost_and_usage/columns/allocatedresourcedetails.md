@@ -30,9 +30,8 @@ The following keys should be used when applicable to facilitate querying data ac
 
 | Key | ValueType | Required | Description |
 | ----- | ---- | ---------- | ----------- |
-| AllocationMethod | [String](#stringhandling) | TRUE | Allocation method used by the provider. |
 | RatioValue | [Numeric](#numericformat) | TRUE | Percentage of overall cost derived from corresponding method and metric. |
-| UsageUnit | String | FALSE | Unit being measured used to calculate allocation. |
+| UsageUnit | [String](#stringhandling) | FALSE | Unit being measured used to calculate allocation. |
 | UsageQuantity | Numeric | FALSE | Volume of UsageUnit consumed or used. |
 
 ### Example
@@ -40,13 +39,11 @@ The following keys should be used when applicable to facilitate querying data ac
 ```json
 [
   {
-    "AllocationMethod": "MethodName",
     "RatioValue": 0.05,
     "UsageUnit": "CPU",
     "UsageValue": 0.5
   },
   {
-    "AllocationMethod": "MethodName",
     "RatioValue": 0.1,
     "UsageUnit": "Memory",
     "UsageValue": 4
@@ -60,7 +57,6 @@ The following keys should be used when applicable to facilitate querying data ac
 {
   "elements": {
     "properties": {
-      "AllocationMethod": { "type": "string" },
       "RatioValue": { "type": "float64" }
     },
     "optionalProperties": {
