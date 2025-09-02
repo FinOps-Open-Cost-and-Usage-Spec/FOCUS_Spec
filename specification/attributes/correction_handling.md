@@ -2,7 +2,7 @@
 
 ## Overview
 
-### Terminology and Purpose
+### Definition and Scope of Corrections
 
 Correction Handling attribute defines how updates to previously provided charge records are represented in FOCUS datasets.
 
@@ -10,7 +10,7 @@ Correction Handling attribute defines how updates to previously provided charge 
 
 Corrections may arise from a variety of operational or technical causes, such as refunds, delayed or missing cost and usage data, rounding errors, post-processing adjustments, etc.
 
-### Business Requirements and Invoice Finalization and Billing Period Closure
+### Business Requirements and Constraints in Invoiced Billing Periods
 
 Accurate correction handling is essential for a range of business-critical processes, including but not limited to:
 
@@ -23,7 +23,7 @@ Once an invoice is issued, it serves as the authoritative financial document and
 
 A billing period is considered invoiced (or closed) once all invoices for that period have been issued and all charge records for that period are finalized. After a billing period is invoiced, no new charge records may be associated with it, and all previously finalized charge records remain unchanged. Any necessary corrections to charges originally incurred in an invoiced billing period must instead be reflected in a subsequent open billing period, with the charge period indicating when the cost was incurred. This provides a clear temporal boundary between billing cycles, preserving immutability while still allowing corrections to be tracked transparently in later billing periods.
 
-### Data Delivery Mechanisms and Correction Styles
+### Delivery Mechanisms and Correction Representation
 
 FOCUS supports two cost and usage data delivery mechanisms: Replacement and Append-only.
 
