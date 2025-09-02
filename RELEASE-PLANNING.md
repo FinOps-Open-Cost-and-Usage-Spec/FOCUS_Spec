@@ -112,6 +112,71 @@ This section outlines the planned release schedule and key milestones for the FO
     </tr>
 </table>
 
+### Estimated Timeline for v1.4
+This table displays key milestones and dates related to the development of FOCUS Release v1.4.
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Milestone</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4-Sep-25 to 30-Oct-25</td>
+      <td>Work Item Creation v1.4</td>
+      <td>8 weeks to define the scope and create Work Items for v1.4</td>
+    </tr>
+    <tr>
+      <td>30-Oct-25</td>
+      <td>Working Group Approval</td>
+      <td>Finalize scope for v1.4</td>
+    </tr>
+    <tr>
+      <td>30-Oct-25</td>
+      <td>Steering Committee Ratification</td>
+      <td>Ratify v1.4 scope</td>
+    </tr>
+    <tr>
+      <td>30-Oct-25 to 16-Apr-26</td>
+      <td>Start Development Phase v1.4</td>
+      <td>24 weeks  (19 weeks in v1.2, and 13 weeks in v1.3, includes 2 week vacation) </td>
+    </tr>
+    <tr>
+      <td>16-Apr-26 to 30-Apr-26</td>
+      <td>Start / End Final Consistency Review v1.4</td>
+      <td>2 weeks. To ensure alignment and consistency of specifications. </td>
+    </tr>
+    <tr>
+      <td>30-Apr-26 to 6-May-26</td>
+      <td>Prepare Baseline for IPR Review v1.4</td>
+      <td>1 week. Getting ready the specifications for the Intellectual Property Rights review.</td>
+    </tr>
+    <tr>
+      <td>6-May-26 to 4-Jun-26</td>
+      <td>Start / End IPR Review v1.4 </td>
+      <td>4 weeks. 30-day IPR review period for essential claims review; triggers the start of Rel v1.5.</td>
+    </tr>
+    <tr>
+      <td>4-Jun-26</td>
+      <td>Working Group (WG) Approval of v1.4</td>
+      <td>WG approves the v1.4 Release Candidate.</td>
+    </tr>
+    <tr>
+      <td>4-Jun-26</td>
+      <td>SC Ratification of v1.4</td>
+      <td>The Steering Committee ratifies the v1.4 release.</td>
+    </tr>
+    <tr>
+      <td>8-11-Jun-26</td>
+      <td>Public Announcement.</td>
+      <td>FinOpsX</td>
+    </tr>
+  </tbody>
+</table>
+
 ### Estimated Timeline for v1.3
 This table displays key milestones and dates related to the development of FOCUS Release v1.3.
 
