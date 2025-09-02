@@ -49,8 +49,11 @@ Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 ### Column Order
 
 * All FOCUS columns SHOULD be first in the provided dataset.
-* Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.
-* Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns.
+* For custom columns the following column order requirements apply:
+  * Custom columns SHOULD be listed after all FOCUS columns.
+  * Custom columns SHOULD NOT be intermixed with FOCUS columns.
+  * Custom columns SHOULD still appear after all FOCUS columns even if alphabetic ordering is applied.
+* Columns MAY be sorted alphabetically,
 
 ## Exceptions
 
