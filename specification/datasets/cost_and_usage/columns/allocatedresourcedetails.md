@@ -37,34 +37,38 @@ The following keys should be used when applicable to facilitate querying data ac
 ### Example
 
 ```json
-[
-  {
-    "AllocatedRatio": 0.05,
-    "UsageUnit": "CPU",
-    "UsageQuantity": 0.5
-  },
-  {
-    "AllocatedRatio": 0.1,
-    "UsageUnit": "Memory",
-    "UsageQuantity": 4
-  }
-]
+{
+  "Elements" : [ {
+    "AllocatedRatio" : 0.05,
+    "UsageUnit" : "CPU",
+    "UsageQuantity" : 0.5
+  }, {
+    "AllocatedRatio" : 0.1,
+    "UsageUnit" : "Memory",
+    "UsageQuantity" : 4
+  } ]
+}
 ```
 
 ### JSON Type Definition
 
 ```json
 {
-  "elements": {
-    "properties": {
-      "AllocatedRatio": { "type": "float64" }
-    },
-    "optionalProperties": {
-      "UsageUnit": { "type": "string" },
-      "UsageQuantity": { "type": "float64" }
-    },
-    "additionalProperties": true
-  }
+  "properties": {
+    "Elements": {
+      "elements": {
+        "properties": {
+          "AllocatedRatio": { "type": "float64" }
+        },
+        "optionalProperties": {
+          "UsageUnit": { "type": "string" },
+          "UsageQuantity": { "type": "float64" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
 }
 ```
 
