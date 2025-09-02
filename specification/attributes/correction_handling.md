@@ -1,10 +1,16 @@
 # Correction Handling
 
+## Overview
+
+### Terminology and Purpose
+
 Correction Handling attribute defines how updates to previously provided charge records are represented in FOCUS datasets.
 
 **Terminology Note:** The term "Correction" (capitalized) refers specifically to an allowed value in the [ChargeClass](#chargeclass) column, which designates charge records used to correct cost and usage data from a previously invoiced [*billing period*](#glossary:billing-period). In contrast, the Correction Handling attribute covers the broader concept of "corrections" (lowercase), which may include charge records used to correct cost and usage data originally associated with a previously invoiced billing period or an uninvoiced billing period (including both previous and current), as well as the omission of a previously provisioned charge if it is no longer applicable, subject to applicable correction handling restrictions.
 
 Corrections may arise from a variety of operational or technical causes, such as refunds, delayed or missing cost and usage data, rounding errors, post-processing adjustments, etc.
+
+### Business Requirements and Invoice Finalization and Billing Period Closure
 
 Accurate correction handling is essential for a range of business-critical processes, including but not limited to:
 
@@ -17,7 +23,11 @@ Once an invoice is issued, it serves as the authoritative financial document and
 
 A billing period is considered invoiced (or closed) once all invoices for that period have been issued and all charge records for that period are finalized. After a billing period is invoiced, no new charge records may be associated with it, and all previously finalized charge records remain unchanged. Any necessary corrections to charges originally incurred in an invoiced billing period must instead be reflected in a subsequent open billing period, with the charge period indicating when the cost was incurred. This provides a clear temporal boundary between billing cycles, preserving immutability while still allowing corrections to be tracked transparently in later billing periods.
 
+### Data Delivery Mechanisms and Correction Styles
+
 FOCUS supports two cost and usage data delivery mechanisms: Replacement and Append-only.
+
+#### Replacement Mechanism
 
 In the Replacement mechanism, each dataset provides a complete snapshot of cost and usage data for a billing period, based on the data collected up to the time of delivery. Subsequent datasets typically reflect updates, additions, or omissions relative to the previous snapshot. Subsequent datasets typically reflect updates, additions, or omissions relative to the previous snapshot. For uninvoiced billing periods (including both previous and current) this mechanism lacks a built-in audit trail, as records may be updated or omitted. To support traceability in uninvoiced billing periods, the Replacement mechanism should support optional external retention of historical snapshots. For invoiced billing periods, auditability is ensured through immutable finalized records and correction handling rules that prohibit updates, deletions, or omissions.
 
@@ -30,6 +40,8 @@ Subsequent datasets in the Replacement mechanism may include the following:
 
 Corrections in the Replacement mechanism are modeled through updates, additions, or omissions relative to the previous snapshot — with the restriction that corrections to charges originally incurred in previously invoiced billing periods must be represented exclusively through the addition of new records. Updated or omissions of finalized records are not allowed, as they would compromise the immutability of issued invoices and the integrity of audit trails.
 
+#### Append-only Mechanism
+
 In the Append-only mechanism, each dataset appends new records without modifying or removing previously delivered ones. This mechanism inherently supports auditability, as all original and correction records are retained.
 
 Corrections in the Append-only mechanism are represented exclusively by adding new records.
@@ -38,6 +50,8 @@ Within the Append-only mechanism, two correction styles are commonly used:
 
 * Ledger-style correction adds records that update or supplement cost and usage data. Updates increment or decrement values in selected cost- and quantity-related columns, while all other columns remain unchanged. In some cases, the correction consists of a new record representing a previously omitted cost. Explicit reversal is not commonly performed, but may be used if the correction itself represents a reversal. This style offers limited audit transparency.
 * Accounting-style correction generally follows a two-step representation. Depending on the nature of the correction, either or both of the following steps may be required: (1) reversal of the original record using a charge in which cost- and quantity-related columns carry values with the opposite sign, while all other columns match the original; and (2) a new record with corrected values. This style preserves full correction history.
+
+### Data Integrity and Auditability
 
 To ensure data integrity, correction records must not result in double counting of any cost- or quantity-related values. This applies regardless of the correction style or delivery mechanism used.
 
