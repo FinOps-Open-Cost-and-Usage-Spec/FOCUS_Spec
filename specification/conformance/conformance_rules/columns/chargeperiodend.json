@@ -44,9 +44,7 @@
         "Function": "Presence",
         "Reference": "Charge Period End",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "Dataset includes ChargePeriodEnd column"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodEnd MUST be present in a FOCUS dataset.",
