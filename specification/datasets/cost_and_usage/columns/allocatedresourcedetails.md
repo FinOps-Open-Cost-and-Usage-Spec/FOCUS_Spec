@@ -68,7 +68,7 @@ The following keys should be used when applicable to facilitate querying data ac
 }
 ```
 
-NOTE: [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified.
+NOTE: [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified. Other numeric data types and precisions allowable under NumericFormat are considered valid.
 
 ## Column ID
 
