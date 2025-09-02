@@ -118,7 +118,7 @@
     },
   "ChargePeriodEnd-C-005-M": {
         "Function": "Validation",
-        "Reference": "Charge Period End",
+        "Reference": "ChargePeriodEnd",
         "EntityType": "Column",
         "ApplicabilityCriteria": [
             "All Rows"
