@@ -1,7 +1,7 @@
 {
     "ChargePeriodEnd-C-000-M": {
         "Function": "Composite",
-        "Reference": "Charge Period End",
+        "Reference": "ChargePeriodEnd",
         "EntityType": "Column",
         "ApplicabilityCriteria": [
             "All Rows"
