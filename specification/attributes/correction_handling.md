@@ -65,23 +65,30 @@ Correction Handling
 
 ## Description
 
-Defines how updates to previously provided charge records are represented in FOCUS datasets.
+Defines how updates to previously provided [*charges*](#glossary:charge) are represented in FOCUS datasets.
 
 ## Requirements
 
 All corrections adhere to the following requirements:
 
+### Invoice and Billing Period Requirements
+
 * Invoice MUST be considered finalized and immutable once issued.
-* Once the associated invoice is issued, each underlying charge record adheres to the following additional requirements:
-  * Charge record MUST be considered finalized and immutable.
-  * Charge record MUST NOT be updated, deleted, or omitted.
+* Once the associated invoice is issued, each underlying *charges* adheres to the following additional requirements:
+  * *Charge* MUST be considered finalized and immutable.
+  * *Charge* MUST NOT be updated, deleted, or omitted.
 * Billing period MUST be considered invoiced and closed once all invoices for that period are issued.
-* Additional charge records MUST NOT be associated with an invoice once it is issued.
-* Additional charge records MUST NOT be associated with a billing period once it is invoiced and closed.
+* Additional *charges* MUST NOT be associated with an invoice once it is issued.
+* Additional *charges* MUST NOT be associated with a billing period once it is invoiced and closed.
+
+### General Requirements for Corrections
 
 * Correction handling implementation MUST support auditability by enabling traceability from the original record through all subsequent corrections for invoiced billing periods.
 * Correction handling implementation MUST ensure that the delivery mechanisms and correction styles in use are documented within the Data Generator documentation.
+* ChargeClass MUST be null when the *charge* does not represent a correction to a previously invoiced *billing period*.
 * Correction MUST NOT result in double counting of any cost- or quantity-related values.
+
+### Constraints in an Invoiced Billing Period
 
 * Corrections to charges from a previously invoiced and closed billing period adhere to the following additional requirements:
   * ChargeClass MUST be "Correction".
@@ -90,10 +97,15 @@ All corrections adhere to the following requirements:
   * [BillingPeriodStart](#billingperiodstart) and [BillingPeriodEnd](#billingperiodend) MUST equal the [*inclusive start bound*](#glossary:inclusivestartbound) and [*exclusive end bound*](#glossary:exclusiveendbound) of a subsequent open billing period in which the correction is issued.
   * [ChargePeriodStart](#chargeperiodstart) and [ChargePeriodEnd](#chargeperiodend) MUST equal the *inclusive start bound* and *exclusive end bound* of the period in which the cost was originally incurred.
 
+### Constraints in the Replacement Mechanism
+
 * Replacement mechanism adheres to the following additional requirements:
   * Correction handling implementation SHOULD support optional external retention of historical snapshots to enable traceability in uninvoiced billing periods (including both previous and current).
   * Corrections for previously invoiced billing periods MUST be represented exclusively through the addition of new records.
   * Corrections for uninvoiced billing periods MAY include updates, additions, or omissions.
+
+### Constraints in the Append-only Mechanism
+
 * Append-only mechanism adheres to the following additional requirements:
   * All previously delivered records MUST be retained without modification or deletion.
   * All corrections MUST be represented exclusively by adding new records.
