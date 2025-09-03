@@ -18,10 +18,6 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "AvailabilityZone-C-001-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "AvailabilityZone-C-002-M"
           },
           {
@@ -35,29 +31,9 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "AvailabilityZone-C-001-C": {
-    "Function": "Presence",
-    "Reference": "AvailabilityZone",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [
-      "AVAILABILITY_ZONE_SUPPORTED"
-    ],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "RECOMMENDED be present in a FOCUS dataset",
-      "Keyword": "RECOMMENDED",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "SampleColumn"
-      },
-      "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-003-C"
+      ]
     }
   },
   "AvailabilityZone-C-002-M": {
