@@ -8,8 +8,8 @@ The AllocatedResourceName column adheres to the following requirements:
 * AllocatedResourceName MUST be of type String.
 * AllocatedResourceName MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedResourceName nullability is defined as follows:
-  * AllocatedResourceName MUST be null when a charge is not related to a provider-calculated split cost allocation.
-  * AllocatedResourceName MUST NOT be null when a charge is related to a provider-calculated split cost allocation.
+  * AllocatedResourceName MUST be null when [AllocatedResourceId](#allocatedresourceid) is null.
+  * AllocatedResourceName MUST NOT be null when AllocatedResourceId is not null.
 * AllocatedResourceName MAY duplicate AllocatedResourceId when a separate display name is not applicable.
 
 ## Column ID
