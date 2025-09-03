@@ -80,14 +80,8 @@ The CostAndUsage dataset adheres to the following requirements:
 
 * CostAndUsage MUST be present.
 * CostAndUsage MUST conform to [ColumnHandling](#columnhandling) requirements.
-* CostAndUsage MUST conform to [CurrencyFormat](#currencyformat) requirements.
-* CostAndUsage MUST conform to [DateTimeFormat](#datetimeformat) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
-* CostAndUsage MUST conform to [KeyValueFormat](#keyvalueformat) requirements.
 * CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
-* CostAndUsage MUST conform to [NumericFormat](#numericformat) requirements.
-* CostAndUsage MUST conform to [StringHandling](#stringhandling) requirements.
-* CostAndUsage MUST conform to [UnitFormat](#unitformat) requirements.
 
 <div class='h4-nonindex'>Dataset ID</div>
 
