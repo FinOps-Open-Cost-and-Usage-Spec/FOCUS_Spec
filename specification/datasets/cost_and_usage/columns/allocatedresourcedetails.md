@@ -40,8 +40,8 @@ FOCUS-defined allocation properties adhere to the following requirements:
   * Values for "AllocatedRatio" MUST be a decimal value compatible with [NumericFormat](#numericformat) representing the allocated charge's percentage of the origin charge.
   * Values for "AllocatedRatio" across all allocated records related to a single origin record MUST sum up to 1 (100%).
 * "UsageUnit" MUST be included inside an "Elements" object if "UsageQuantity" allocation property is included in that "Elements" object, otherwise "UsageUnit" MAY be included in each "Elements" object.
-  * Values for "UsageUnit" SHOULD capture the unit or component of provider's documented [AllocationMethod](#allocationmethod) that was used to determine the "AllocatedRatio" value.
-  * Values for "UsageUnit" are RECOMMENDED to use [UnitFormat](#unitformat).
+  * Values for "UsageUnit" MUST capture the unit or component of provider's documented [AllocationMethod](#allocationmethod) that was used to determine the "AllocatedRatio" value.
+  * Values for "UsageUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
 * "UsageQuantity" MAY be included inside an "Elements" object when that "Elements" object contains a "UsageUnit" allocation property.
   * Values for "UsageQuantity" MUST be compatible with NumericFormat.
   * Values for "UsageQuantity" SHOULD capture the quantity or volume of the "UsageUnit" measured by the provider that was used to determine the "AllocatedRatio" value.
