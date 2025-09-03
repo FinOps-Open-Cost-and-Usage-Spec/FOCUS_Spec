@@ -6,7 +6,9 @@ The AllocatedTags column adheres to the following requirements:
 
 * AllocatedTags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports provider-calculated split cost allocation.
 * AllocatedTags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-* AllocatedTags MAY be null.
+* AllocatedTags nullability is defined as follows:
+  * AllocatedTags MUST be null when a *charge* is not related to a provider-calculated split cost allocation.
+  * AllocatedTags MAY be null in all other cases.
 * When AllocatedTags is not null, AllocatedTags adheres to the following additional requirements:
   * AllocatedTags MUST NOT include resource tags already present in [Tags](#tags).
   * AllocatedTags MUST include all applicable user-defined and provider-defined tags for the [AllocatedResourceId](#allocatedresourceid).
