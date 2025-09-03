@@ -19,7 +19,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Capacity Reservation ID](#capacityreservationid)                             | Dimension   | Conditional   | True         | String    |
 | [Capacity Reservation Status](#capacityreservationstatus)                     | Dimension   | Conditional   | True         | String    |
 | [Charge Category](#chargecategory)                                            | Dimension   | Mandatory     | False        | String    |
-| [Charge Class](#charge class)                                                 | Dimension   | Mandatory     | True         | String    |
+| [Charge Class](#chargeclass)                                                  | Dimension   | Mandatory     | True         | String    |
 | [Charge Description](#chargedescription)                                      | Dimension   | Mandatory     | True         | String    |
 | [Charge Frequency](#chargefrequency)                                          | Dimension   | Recommended   | False        | String    |
 | [Charge Period End](#chargeperiodend)                                         | Dimension   | Mandatory     | False        | Date/Time |
