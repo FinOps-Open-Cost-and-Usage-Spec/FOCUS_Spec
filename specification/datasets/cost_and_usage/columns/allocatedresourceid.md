@@ -11,7 +11,7 @@ The AllocatedResourceId column adheres to the following requirements:
   * AllocatedResourceId MUST be null when a charge is not related to a provider-calculated split cost allocation.
   * AllocatedResourceId MUST NOT be null when a charge is related to a provider-calculated split cost allocation.
 * When AllocatedResourceId is not null, AllocatedResourceId adheres to the following additional requirements:
-  * AllocatedResourceId MUST be a locally unique identifier within the associated ResourceId at a point in time.
+  * AllocatedResourceId SHOULD be a locally unique identifier within the associated ResourceId and ChargePeriod.
   * AllocatedResourceId MAY NOT be unique across ResourceId or time periods.
 
 ## Column ID
