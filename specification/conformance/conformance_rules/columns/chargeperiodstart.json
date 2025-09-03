@@ -1,11 +1,9 @@
 {
     "ChargePeriodStart-C-000-M": {
         "Function": "Composite",
-        "Reference": "Charge Period Start",
+        "Reference": "ChargePeriodStart",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "All Rows"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "All ChargePeriodStart rules MUST be enforced",
@@ -44,11 +42,9 @@
     },
     "ChargePeriodStart-D-001-M": {
         "Function": "Presence",
-        "Reference": "Charge Period Start",
+        "Reference": "ChargePeriodStart",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "Dataset includes ChargePeriodStart column"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodStart MUST be present in a FOCUS dataset.",
@@ -63,11 +59,9 @@
     },
     "ChargePeriodStart-C-002-M": {
         "Function": "Format",
-        "Reference": "Charge Period Start",
+        "Reference": "ChargePeriodStart",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "All Rows"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodStart MUST be of type Date/Time.",
@@ -86,11 +80,9 @@
     },
     "ChargePeriodStart-C-003-M": {
         "Function": "Format",
-        "Reference": "Charge Period Start",
+        "Reference": "ChargePeriodStart",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "All Rows"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodStart MUST conform to DateTimeFormat requirements.",
@@ -104,15 +96,13 @@
         },
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "Notes": "Cross-column reference: DateTimeFormat"
+        "Notes": ""
     },
     "ChargePeriodStart-C-004-M": {
         "Function": "Validation",
-        "Reference": "Charge Period Start",
+        "Reference": "ChargePeriodStart",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "All Rows"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodStart MUST NOT be null.",
@@ -130,11 +120,9 @@
     },
     "ChargePeriodStart-C-005-M": {
         "Function": "Validation",
-        "Reference": "Charge Period Start",
+        "Reference": "ChargePeriodStart",
         "EntityType": "Column",
-        "ApplicabilityCriteria": [
-            "All Rows"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ChargePeriodStart MUST be the inclusive start bound of the effective period of the charge.",
