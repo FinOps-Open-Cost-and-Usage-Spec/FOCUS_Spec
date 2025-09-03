@@ -8,8 +8,9 @@ The AllocatedMethodId column adheres to the following requirements:
 * AllocatedMethodId MUST be of type String.
 * AllocatedMethodId MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedMethodId nullability is defined as follows:
-  * AllocatedMethodId MUST be null when a [*charge*](#glossary:charge) is not related to a provider-calculated split cost allocation.
-  * AllocatedMethodId MUST NOT be null when a *charge* is related to a provider-calculated split cost allocation.
+  * AllocatedResourceId MUST be null when a *charge* is not related to a provider-calculated split cost allocation.
+  * AllocatedResourceId MUST be null when a *charge* represents the unallocated portion of the origin *charge* after split cost allocation.
+  * AllocatedResourceId MUST NOT be null when a *charge* represents the allocated portion of the origin *charge*.
 * AllocatedMethodId MUST uniquely identify the method used to calculate the split cost allocation in the provider's documentation.
 
 ## Column ID
