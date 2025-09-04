@@ -4,12 +4,13 @@ Contract Applied is a set of datapoints that associate a charge to one or more [
 
 The datapoints are:
 
+* `Contract ID`: The unique identifier representing a single contract.
 * `Contract Commitment ID`: The unique identifier representing a single contract term.
 * `Contract Commitment Applied Cost`: The value of the charge applied to a single contract term.
 * `Contract Commitment Applied Quantity`: The usage of the charge applied to a single contract term.
 * `Contract Commitment Applied Unit`: The unit of measure for the usage of the charge applied to a single contract term.
 
-In addition to these four datapoints, a data generator may include one or more custom datapoints, also denoted as key-value pairs.
+In addition to these five datapoints, a data generator may include one or more custom datapoints, also denoted as key-value pairs.
 
 The ContractApplied column adheres to the following requirements:
 
@@ -29,7 +30,31 @@ The ContractApplied column adheres to the following requirements:
 
 ## JSON Datapoints
 
-The next sections describe the four FOCUS-defined datapoints contained within Contract Applied, each of which have their own requirements.
+The next sections describe the five FOCUS-defined datapoints contained within Contract Applied, each of which have their own requirements.
+
+| Datapoint                            | Column Type | Feature Level | Allows Nulls | Data Type |
+| ------------------------------------ | ----------- | ------------- | ------------ | --------- |
+| Contract ID                          | Dimension   | Conditional   | False        | String    |
+| Contract Commitment                  | Dimension   | Conditional   | False        | String    |
+| Contract Commitment Applied Cost     | Dimension   | Conditional   | True         | Numeric   |
+| Contract Commitment Applied Quantity | Dimension   | Conditional   | True         | Numeric   |
+| Contract Commitment Applied Unit     | Dimension   | Conditional   | True         | String    |
+
+### Contract ID
+
+Contract ID is a provider-assigned identifier for a contract describing the agreed terms between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
+
+The ContractId column adheres to the following requirements:
+
+* ContractId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* ContractId MUST be of type String.
+* ContractId MUST conform to [StringHandling](#stringhandling) requirements.
+* ContractId nullability is defined as follows:
+  * ContractId MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
+  * ContractId MUST NOT be null when a *charge* is related to a *contract commitment*.
+* When ContractId is not null, ContractId adheres to the following additional requirements:
+  * ContractId MUST be a unique identifier within the provider.
+  * ContractId SHOULD be a fully-qualified identifier.
 
 ### Contract Commitment ID
 
@@ -46,9 +71,9 @@ The ContractCommitmentID column adheres to the following requirements:
 * When ContractCommitmentID is not null, ContractCommitmentID adheres to the following additional requirements:
   * ContractCommitmentID MUST be a unique identifier within the provider.
   * ContractCommitmentID SHOULD be a fully-qualified identifier.
-* ContractCommitmentID MUST have one and only one parent [ContractID](#contractid).
-* ContractCommitmentID MUST be equal to ResourceID when ChargeCategory is "Purchase".
-* ContractCommitmentID MAY be equal to ContractID.
+  * ContractCommitmentID MUST have one and only one parent ContractID.
+  * ContractCommitmentID MUST be equal to ResourceID when ChargeCategory is "Purchase".
+  * ContractCommitmentID MAY be equal to ContractID.
 
 ### Contract Commitment Applied Cost
 
@@ -110,21 +135,25 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
 {
   "ResourceID": "12345",
   "ChargeCategory": "Purchase",
-  "ContractID": "12345",
+  "BilledCost": 500000.00,
+  "EffectiveCost": 0.00,
   "ContractApplied": [
           {
+               "ContractID": "12345",
                "ContractCommitmentID": "12345",
                "ContractCommitmentAppliedCost": 500000.00,
                "ContractCommitmentAppliedQuantity": null,
                "ContractCommitmentAppliedUnit": null
            },
            {
+               "ContractID": "12345",            
                "ContractCommitmentID": "23456",
                "ContractCommitmentAppliedCost": 25000.00,
                "ContractCommitmentAppliedQuantity": null,
                "ContractCommitmentAppliedUnit": null
            },
            {
+               "ContractID": "12345",
                "ContractCommitmentID": "34567",
                "ContractCommitmentAppliedCost": null,
                "ContractCommitmentAppliedQuantity": 100000.00,
@@ -146,23 +175,27 @@ This applies to the contract commitments in the following manner:
 {
   "ResourceID": "myResource1",
   "ChargeCategory": "Usage",
-  "EffectiveCost": "30.00",
-  "ConsumedQuantity": "1",
+  "BilledCost": 0.00,
+  "EffectiveCost": 30.00,
+  "ConsumedQuantity": 1,
   "ContractID": "12345",
   "ContractApplied": [
           {
+               "ContractID": "12345",
                "ContractCommitmentID": "12345",
                "ContractCommitmentAppliedCost": 15.00,
                "ContractCommitmentAppliedQuantity": null,
                "ContractCommitmentAppliedUnit": null
            },
            {
+               "ContractID": "12345",
                "ContractCommitmentID": "23456",
                "ContractCommitmentAppliedCost": 15.00,
                "ContractCommitmentAppliedQuantity": null,
                "ContractCommitmentAppliedUnit": null
            },
            {
+               "ContractID": "12345",
                "ContractCommitmentID": "34567",
                "ContractCommitmentAppliedCost": null,
                "ContractCommitmentAppliedQuantity": 0.50,
@@ -180,11 +213,12 @@ The same as Example 2, except a custom key-value pair `x_ContractCommitmentCostB
 {
   "ResourceID": "myResource1",
   "ChargeCategory": "Usage",
-  "EffectiveCost": "30.00",
-  "ConsumedQuantity": "1",
-  "ContractID": "12345",
+  "BilledCost": 0.00,
+  "EffectiveCost": 30.00,
+  "ConsumedQuantity": 1,
   "ContractApplied": [
           {
+               "ContractID": "12345",
                "ContractCommitmentID": "12345",
                "ContractCommitmentAppliedCost": 15.00,
                "ContractCommitmentAppliedQuantity": null,
@@ -192,6 +226,7 @@ The same as Example 2, except a custom key-value pair `x_ContractCommitmentCostB
                "x_ContractCommitmentCostBalance": 499985.00
            },
            {
+               "ContractID": "12345",
                "ContractCommitmentID": "23456",
                "ContractCommitmentAppliedCost": 15.00,
                "ContractCommitmentAppliedQuantity": null,
@@ -199,6 +234,7 @@ The same as Example 2, except a custom key-value pair `x_ContractCommitmentCostB
                "x_ContractCommitmentCostBalance": 24985.00
            },
            {
+               "ContractID": "12345",
                "ContractCommitmentID": "34567",
                "ContractCommitmentAppliedCost": null,
                "ContractCommitmentAppliedQuantity": 0.50,
@@ -229,7 +265,7 @@ A set of datapoints that associate a charge to one or more [*contract commitment
 | Feature level | Conditional                        |
 | Allows nulls  | True                               |
 | Data type     | JSON                               |
-| Value format  | [JSONObjectFormat](#jsonobjectformat) |
+| Value format  | [JSONFormat](#jsonformat)          |
 
 ## Introduced (version)
 
