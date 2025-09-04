@@ -11,13 +11,14 @@ The PricingCurrencyContractedUnitPrice column adheres to the following requireme
 * PricingCurrencyContractedUnitPrice MUST be of type Decimal.
 * PricingCurrencyContractedUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * PricingCurrencyContractedUnitPrice nullability is defined as follows:
+  * PricingCurrencyContractedUnitPrice MUST be null when [SkuPriceId](#skupriceid) is null.
   * PricingCurrencyContractedUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
+  * PricingCurrencyContractedUnitPrice MUST NOT be null when [SkuPriceId](#skupriceid) is not null.
   * PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
   * PricingCurrencyContractedUnitPrice MAY be null in all other cases.
 * When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice adheres to the following additional requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.
-* Discrepancies in PricingCurrencyContractedUnitPrice, [ContractedCost](#contractedcost), or [PricingQuantity](#pricingquantity) MAY exist when ChargeClass is "Correction".
 
 ## Column ID
 
