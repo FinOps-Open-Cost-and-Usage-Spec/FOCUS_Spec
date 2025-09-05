@@ -1,6 +1,6 @@
 # Allocated Resource Details
 
-Allocated Resource Details provides information about how resources are allocated when using split cost allocation.
+Allocated Resource Details provides information about how resources are allocated when usage records are split to support cost allocation requirements.
 
 The allocated_resource_details column adheres to the following requirements:
 
