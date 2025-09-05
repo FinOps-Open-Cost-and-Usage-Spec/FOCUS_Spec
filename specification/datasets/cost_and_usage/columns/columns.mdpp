@@ -1,8 +1,8 @@
-!INCLUDE "allocatedmethodid.md",1
-!INCLUDE "allocatedresourcedetails.md",1
-!INCLUDE "allocatedresourceid.md",1
-!INCLUDE "allocatedresourcename.md",1
-!INCLUDE "allocatedtags.md",1
+!INCLUDE "allocated_method_id.md",1
+!INCLUDE "allocated_resource_details.md",1
+!INCLUDE "allocated_resource_id.md",1
+!INCLUDE "allocated_resource_name.md",1
+!INCLUDE "allocated_tags.md",1
 !INCLUDE "availabilityzone.md",1
 !INCLUDE "billedcost.md",1
 !INCLUDE "billingaccountid.md",1

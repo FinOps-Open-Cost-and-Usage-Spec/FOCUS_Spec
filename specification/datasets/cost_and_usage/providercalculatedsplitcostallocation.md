@@ -4,23 +4,23 @@ The provider-calculated split cost allocation for provider-defined services is a
 
 If a provider supports provider-calculated split cost allocation for provider-defined services, a FOCUS dataset MUST adhere to the following requirements:
 
-- A FOCUS Cost and Usage dataset MUST include the following columns when the provider supports provider-calculated split cost allocation:
-  - [AllocatedMethodId](#allocatedmethodid)
-  - [AllocatedResourceId](#allocatedresourceid)
-  - [AllocatedResourceName](#allocatedresourcename)
-  - [AllocatedResourceTags](#allocatedresourcetags)
-- A FOCUS Cost and Usage dataset SHOULD include the following column when the provider supports provider-calculated split cost allocation:
-  - [AllocatedResourceDetails](#allocatedresourcedetails)
-- Allocated charge records in the FOCUS Cost and Usage dataset MUST sum up to the origin charge record for all aggregatable metric columns.
-- For each allocated charge records in the FOCUS Cost and Usage dataset, all dimension columns and non-aggregatable metric columns MUST match the values of the origin charge record.
-  - Allocated charge records MUST include the same keys and values present in the [Tags](#tags) column for the origin charge.
-  - Allocated charges MUST include the tags from the origin charge in the [Tags](#tags) column.
-- Allocated charge records MUST satisfy normative requirements for all columns.
-- The method used for allocating origin charges to create allocated charges MUST be documented by the provider and accessible to practitioners.
-  - The Dataset MAY contain records for concepts not related to resource usage, if documented in the split cost allocation method.
-  - The Dataset MAY contain records for the unused or unallocated usage of the ResourceId as separate allocated charges, if it aligns to the provider's documented allocation method.
-  - Allocated charge records MAY contain approtioned costs for the unused or unallocated usage of the ResourceId, if it aligns to the provider's documented allocation method.
-- Split-cost allocation is RECOMMENDED to be applied to charges on an opt-in basis.
+* A FOCUS Cost and Usage dataset MUST include the following columns when the provider supports provider-calculated split cost allocation:
+  * [allocated_method_id](#allocated_method_id)
+  * [allocated_resource_id](#allocated_resource_id)
+  * [allocated_resource_name](#allocated_resource_name)
+  * [AllocatedResourceTags](#allocatedresourcetags)
+* A FOCUS Cost and Usage dataset SHOULD include the following column when the provider supports provider-calculated split cost allocation:
+  * [allocated_resource_details](#allocated_resource_details)
+* Allocated charge records in the FOCUS Cost and Usage dataset MUST sum up to the origin charge record for all aggregatable metric columns.
+* For each allocated charge records in the FOCUS Cost and Usage dataset, all dimension columns and non-aggregatable metric columns MUST match the values of the origin charge record.
+  * Allocated charge records MUST include the same keys and values present in the [Tags](#tags) column for the origin charge.
+  * Allocated charges MUST include the tags from the origin charge in the [Tags](#tags) column.
+* Allocated charge records MUST satisfy normative requirements for all columns.
+* The method used for allocating origin charges to create allocated charges MUST be documented by the provider and accessible to practitioners.
+  * The Dataset MAY contain records for concepts not related to resource usage, if documented in the split cost allocation method.
+  * The Dataset MAY contain records for the unused or unallocated usage of the ResourceId as separate allocated charges, if it aligns to the provider's documented allocation method.
+  * Allocated charge records MAY contain approtioned costs for the unused or unallocated usage of the ResourceId, if it aligns to the provider's documented allocation method.
+* Split-cost allocation is RECOMMENDED to be applied to charges on an opt-in basis.
 
 ## Description
 

@@ -9,10 +9,10 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 * ResourceId
 * EffectiveCost
 * BilledCost
-* AllocatedResourceId
-* AllocatedResourceName
-* AllocatedResourceDetails
-* AllocatedMethodId
+* allocated_resource_id
+* allocated_resource_name
+* allocated_resource_details
+* allocated_method_id
 
 ## Supporting Columns
 
@@ -30,7 +30,7 @@ SELECT
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND AllocatedMethodId IS NOT NULL
+  AND allocated_method_id IS NOT NULL
 ```
 
 ## Example SQL Query (Get total effective cost by ResourceId (ignore shared cost))
@@ -42,23 +42,23 @@ SELECT
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND AllocatedMethodId IS NOT NULL
+  AND allocated_method_id IS NOT NULL
 GROUP BY
   ResourceId
 ```
 
-## Example SQL Query (Get total effective cost by AllocatedResourceId)
+## Example SQL Query (Get total effective cost by allocated_resource_id)
 
 ```sql
 SELECT
-  AllocatedResourceId
+  allocated_resource_id
   SUM(EffectiveCost) as TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND AllocatedMethodId IS NOT NULL
+  AND allocated_method_id IS NOT NULL
 GROUP BY
-  AllocatedResourceId
+  allocated_resource_id
 ```
 
 ## Example SQL Query (Find total unallocated split costs by resourceId)
@@ -70,7 +70,7 @@ SELECT
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND AllocatedMethodId IS NOT NULL AND AllocatedResourceId IS NULL
+  AND allocated_method_id IS NOT NULL AND allocated_resource_id IS NULL
 GROUP BY
   ResourceId
 ```
@@ -80,15 +80,15 @@ GROUP BY
 ```sql
 SELECT
   ResourceId,
-  COALESCE(AllocatedResourceId, 'Unallocated') AS AllocatedResourceId,
+  COALESCE(allocated_resource_id, 'Unallocated') AS allocated_resource_id,
   SUM(EffectiveCost) as TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND AllocatedResourceId = ?
+  AND allocated_resource_id = ?
 GROUP BY
   ResourceId,
-  COALESCE(AllocatedResourceId, 'Unallocated')
+  COALESCE(allocated_resource_id, 'Unallocated')
 ```
 
 ## Introduced (Version)
