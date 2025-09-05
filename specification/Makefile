@@ -40,7 +40,7 @@ spec.md: $(SPEC_SOURCE_FILES)
 	  cp versions/${STYLE}.md version.md; \
 	fi
 	./validate_includes.py supported_features
-	./validate_includes.py columns
+	./validate_includes.py datasets/cost_and_usage/columns
 	./validate_includes.py attributes
 	./validate_includes.py metadata
 	./validate_includes.py metadata/data_generator
