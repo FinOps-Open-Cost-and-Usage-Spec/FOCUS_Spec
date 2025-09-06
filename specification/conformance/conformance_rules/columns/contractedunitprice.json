@@ -347,7 +347,7 @@
     "Function": "Validation",
     "Reference": "ContractedUnitPrice",
     "EntityType": "Column",
-    "Notes": "Cross-column references: PricingQuantity, ContractedCost, ChargeClass",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
