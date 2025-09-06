@@ -4,7 +4,7 @@
 
 Current values observed in billing data or potential values that should be supplied for various scenarios:
 
-| #  | Scenario                                                                                                                                                                           | Provider                 | Publisher         | Invoice Issuer           |
+| #  | Scenario                                                                                                                                                                           | Provider Name                 | Publisher Name         | Invoice Issuer Name           |
 |----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|-------------------|--------------------------|
 | 1  | Direct cloud usage: You use an instance of CosmosDB (Scenario #1.1)                                                                                                                | Microsoft                | Microsoft         | Microsoft                |
 | 2  | MSP cloud usage: You purchase GCP through SADA (Scenario #2.1)                                                                                                                     | Google                   | Google            | SADA                     |

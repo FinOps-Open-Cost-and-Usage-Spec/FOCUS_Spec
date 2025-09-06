@@ -18,7 +18,7 @@ PublisherName
 
 ## Display Name
 
-Publisher
+Publisher Name
 
 ## Description
 

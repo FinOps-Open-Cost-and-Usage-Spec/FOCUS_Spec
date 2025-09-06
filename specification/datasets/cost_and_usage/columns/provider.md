@@ -18,7 +18,7 @@ ProviderName
 
 ## Display Name
 
-Provider
+Provider Name
 
 ## Description
 

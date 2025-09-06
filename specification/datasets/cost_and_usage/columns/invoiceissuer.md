@@ -18,7 +18,7 @@ InvoiceIssuerName
 
 ## Display Name
 
-Invoice Issuer
+Invoice Issuer Name
 
 ## Description
 
