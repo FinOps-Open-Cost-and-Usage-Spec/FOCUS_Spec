@@ -11,7 +11,7 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 * BilledCost
 * allocated_resource_id
 * allocated_resource_name
-* allocated_resource_details
+* allocated_method_details
 * allocated_method_id
 * allocated_tags
 
@@ -92,7 +92,7 @@ GROUP BY
   COALESCE(allocated_resource_id, 'Unallocated')
 ```
 
-## Example SQL Query (Extract JSON from allocated_resource_details)
+## Example SQL Query (Extract JSON from allocated_method_details)
 ```sql
 SELECT
   resource_id,
@@ -102,7 +102,7 @@ SELECT
 FROM
   focus_data_table,
   JSON_TABLE(
-    allocated_resource_details,
+    allocated_method_details,
     '$.Elements[*]' COLUMNS (
       allocated_ratio DECIMAL(10, 2) PATH '$.AllocatedRatio',
       usage_unit VARCHAR(50) PATH '$.UsageUnit',

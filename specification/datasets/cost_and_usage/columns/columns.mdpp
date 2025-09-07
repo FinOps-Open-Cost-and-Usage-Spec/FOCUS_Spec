@@ -1,5 +1,5 @@
 !INCLUDE "allocated_method_id.md",1
-!INCLUDE "allocated_resource_details.md",1
+!INCLUDE "allocated_method_details.md",1
 !INCLUDE "allocated_resource_id.md",1
 !INCLUDE "allocated_resource_name.md",1
 !INCLUDE "allocated_tags.md",1

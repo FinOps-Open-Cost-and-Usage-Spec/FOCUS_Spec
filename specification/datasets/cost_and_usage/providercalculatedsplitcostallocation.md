@@ -10,7 +10,7 @@ If a provider supports provider-calculated split cost allocation for provider-de
   * [allocated_resource_name](#allocated_resource_name)
   * [AllocatedResourceTags](#allocatedresourcetags)
 * A FOCUS Cost and Usage dataset SHOULD include the following column when the provider supports provider-calculated split cost allocation:
-  * [allocated_resource_details](#allocated_resource_details)
+  * [allocated_method_details](#allocated_method_details)
 * Allocated charge records in the FOCUS Cost and Usage dataset MUST sum up to the origin charge record for all aggregatable metric columns.
 * For each allocated charge records in the FOCUS Cost and Usage dataset, all dimension columns and non-aggregatable metric columns MUST match the values of the origin charge record.
   * Allocated charge records MUST include the same keys and values present in the [Tags](#tags) column for the origin charge.
