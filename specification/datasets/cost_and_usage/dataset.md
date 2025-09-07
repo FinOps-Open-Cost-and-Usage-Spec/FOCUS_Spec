@@ -68,7 +68,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 
 <div class='h4-nonindex'>Relationships</div>
 
-(none)
+None
 
 <div class='h4-nonindex'>Requirements</div>
 
