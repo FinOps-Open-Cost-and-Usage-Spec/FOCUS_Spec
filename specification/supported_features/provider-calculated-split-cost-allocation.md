@@ -93,6 +93,7 @@ GROUP BY
 ```
 
 ## Example SQL Query (Extract JSON from allocated_method_details)
+
 ```sql
 SELECT
   resource_id,
