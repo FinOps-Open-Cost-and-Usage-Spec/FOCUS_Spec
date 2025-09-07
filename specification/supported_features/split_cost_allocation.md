@@ -91,6 +91,26 @@ GROUP BY
   COALESCE(allocated_resource_id, 'Unallocated')
 ```
 
+## Example SQL Query (Extract JSON from allocated_method_details)
+
+```sql
+SELECT
+  resource_id,
+  elements.allocated_ratio,
+  elements.usage_unit,
+  elements.usage_quantity
+FROM
+  focus_data_table,
+  JSON_TABLE(
+    allocated_method_details,
+    '$.Elements[*]' COLUMNS (
+      allocated_ratio DECIMAL(10, 2) PATH '$.AllocatedRatio',
+      usage_unit VARCHAR(50) PATH '$.UsageUnit',
+      usage_quantity DECIMAL(10, 2) PATH '$.UsageQuantity'
+    )
+  ) AS elements;
+  ```
+
 ## Introduced (Version)
 
 1.3
