@@ -1,4 +1,4 @@
-# Provider Calculated Split Cost Allocation
+# Split Cost Allocation
 
 ## Description
 
