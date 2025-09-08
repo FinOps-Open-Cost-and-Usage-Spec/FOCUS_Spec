@@ -3809,14 +3809,14 @@
       "_source": ""
     },
     {
-      "CRID": "Provider-C-000-M",
+      "CRID": "ProviderName-C-000-M",
       "Function": "Composite",
       "Reference": "Provider",
       "Keyword": "—",
       "ApplicabilityCriteria": "Dataset includes Provider column",
       "Condition": "All Rows",
       "MustSatisfy": "—",
-      "Requirement": "AND(Provider-C-001-M, Provider-C-002-M, Provider-C-003-M, Provider-C-004-M)",
+      "Requirement": "AND(ProviderName-C-001-M, ProviderName-C-002-M, ProviderName-C-003-M, ProviderName-C-004-M)",
       "Type": "static",
       "CRVersionIntroduced": "1.2",
       "Status": "active",
@@ -3826,7 +3826,7 @@
       "_source": ""
     },
     {
-      "CRID": "Provider-C-001-M",
+      "CRID": "ProviderName-C-001-M",
       "Function": "Presence",
       "Reference": "Provider",
       "Keyword": "MUST",
@@ -3843,7 +3843,7 @@
       "_source": ""
     },
     {
-      "CRID": "Provider-C-002-M",
+      "CRID": "ProviderName-C-002-M",
       "Function": "DataType",
       "Reference": "Provider",
       "Keyword": "MUST",
@@ -3860,7 +3860,7 @@
       "_source": ""
     },
     {
-      "CRID": "Provider-C-003-M",
+      "CRID": "ProviderName-C-003-M",
       "Function": "Format",
       "Reference": "Provider",
       "Keyword": "MUST",
@@ -3877,7 +3877,7 @@
       "_source": ""
     },
     {
-      "CRID": "Provider-C-004-M",
+      "CRID": "ProviderName-C-004-M",
       "Function": "NullabilityRules",
       "Reference": "Provider",
       "Keyword": "MUST NOT",
