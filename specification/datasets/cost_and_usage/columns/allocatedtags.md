@@ -2,16 +2,16 @@
 
 The Allocated Tags column represents the set of [*tags*](#glossary:tag) assigned to [*tag sources*](#glossary:tag-source) which are specifically applicable to allocated charges resulting from a provider-calculated split cost allocation.
 
-The allocated_tags column adheres to the following requirements:
+The AllocatedTags column adheres to the following requirements:
 
-* allocated_tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports provider-calculated split cost allocation.
-* allocated_tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-* allocated_tags nullability is defined as follows:
-  * allocated_tags MUST be null when a *charge* is not related to a provider-calculated split cost allocation.
-  * allocated_tags MAY be null in all other cases.
-* When allocated_tags is not null, allocated_tags adheres to the following additional requirements:
-  * allocated_tags MUST NOT include resource tags already present in [Tags](#tags).
-  * allocated_tags MUST include all applicable user-defined and provider-defined tags for the [allocated_resource_id](#allocated_resource_id).
+* AllocatedTags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports provider-calculated split cost allocation.
+* AllocatedTags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* AllocatedTags nullability is defined as follows:
+  * AllocatedTags MUST be null when a *charge* is not related to a provider-calculated split cost allocation.
+  * AllocatedTags MAY be null in all other cases.
+* When AllocatedTags is not null, AllocatedTags adheres to the following additional requirements:
+  * AllocatedTags MUST NOT include resource tags already present in [Tags](#tags).
+  * AllocatedTags MUST include all applicable user-defined and provider-defined tags for the [AllocatedResourceId](#AllocatedResourceId).
   * Tag keys that do not support corresponding values, MUST have a corresponding true (boolean) value set.
   * Provider MUST NOT alter tag values unless applying true (boolean) to valueless tags.
 * Provider-defined tags adhere to the following additional requirements:
@@ -37,7 +37,7 @@ The last two tags illustrate examples from two different, provider-defined tag s
 
 ## Column ID
 
-allocated_tags
+AllocatedTags
 
 ## Display Name
 

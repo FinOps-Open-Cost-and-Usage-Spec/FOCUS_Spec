@@ -2,23 +2,23 @@
 
 Allocated Method Details provides information about how resources are allocated when usage records are split to support cost allocation requirements.
 
-The allocated_method_details column adheres to the following requirements:
+The AllocatedMethodDetails column adheres to the following requirements:
 
-* allocated_method_details SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [provider-calculated split cost allocation](#provider-calculated-split-cost-allocation).
-* allocated_method_details MUST be of type String.
-* allocated_method_details MUST conform to [StringHandling](#stringhandling) requirements.
-* allocated_method_details MUST conform to [ObjectFormat](#objectformat) requirements.
-  * allocated_method_details MUST conform to ObjectFormat schema requirements below.
-* allocated_method_details nullability is defined as follows:
-  * allocated_method_details MUST be null when a charge is not related to a provider-calculated split cost allocation.
-  * allocated_method_details SHOULD NOT be null when a charge is related to a provider-calculated split cost allocation.
+* AllocatedMethodDetails SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [provider-calculated split cost allocation](#provider-calculated-split-cost-allocation).
+* AllocatedMethodDetails MUST be of type String.
+* AllocatedMethodDetails MUST conform to [StringHandling](#stringhandling) requirements.
+* AllocatedMethodDetails MUST conform to [ObjectFormat](#objectformat) requirements.
+  * AllocatedMethodDetails MUST conform to ObjectFormat schema requirements below.
+* AllocatedMethodDetails nullability is defined as follows:
+  * AllocatedMethodDetails MUST be null when a charge is not related to a provider-calculated split cost allocation.
+  * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a provider-calculated split cost allocation.
 
 ## Object Schema
 
 Allocated Method Details consists of a valid JSON object which contains an array of key-value objects describing the one or more factors that determined the split cost allocation. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the allocation.
 
-If allocated_method_details is not null, the ObjectFormat for allocated_method_details adheres to the following requirements:
-* allocated_method_details MUST have a top-level key "Elements" which contains an array.
+If AllocatedMethodDetails is not null, the ObjectFormat for AllocatedMethodDetails adheres to the following requirements:
+* AllocatedMethodDetails MUST have a top-level key "Elements" which contains an array.
 * Each item in "Elements" MUST be an object.
   * Objects inside "Elements" MUST conform to [KeyValueFormat](#key-valueformat) requirements.
   * Objects inside "Elements" MUST contain key-value pairs (allocation properties).
@@ -27,7 +27,7 @@ If allocated_method_details is not null, the ObjectFormat for allocated_method_d
       * Allocation property value MUST be of the type specified for that property.
       * Allocation property MUST adhere to additional normative requirements specific to that property.
     * Allocation property keys MUST begin with the string "x_" unless it is a FOCUS-defined allocation property.
-* allocated_method_details root object MAY contain additional items, in addition to "Elements".
+* AllocatedMethodDetails root object MAY contain additional items, in addition to "Elements".
 
 ### FOCUS-Defined Allocation Properties
 
@@ -90,11 +90,11 @@ FOCUS-defined allocation properties adhere to the following requirements:
 }
 ```
 
-NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column but cannot accurately describe the normative requirements for allocated_method_details. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
+NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column but cannot accurately describe the normative requirements for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
 
 ## Column ID
 
-allocated_method_details
+AllocatedMethodDetails
 
 ## Display Name
 

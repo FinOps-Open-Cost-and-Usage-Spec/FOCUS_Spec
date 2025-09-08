@@ -1,4 +1,4 @@
-# Split Cost Allocation
+# Provider-Calculated Split Cost Allocation
 
 ## Description
 
@@ -9,10 +9,10 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 * ResourceId
 * EffectiveCost
 * BilledCost
-* allocated_resource_id
-* allocated_resource_name
-* allocated_resource_details
-* allocated_method_id
+* AllocatedResourceId
+* AllocatedResourceName
+* AllocatedMethodDetails
+* AllocatedMethodId
 
 ## Supporting Columns
 
@@ -30,7 +30,7 @@ SELECT
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND allocated_method_id IS NOT NULL
+  AND AllocatedMethodId IS NOT NULL
 ```
 
 ## Example SQL Query (Get total effective cost by ResourceId (ignore shared cost))
@@ -42,23 +42,23 @@ SELECT
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND allocated_method_id IS NOT NULL
+  AND AllocatedMethodId IS NOT NULL
 GROUP BY
   ResourceId
 ```
 
-## Example SQL Query (Get total effective cost by allocated_resource_id)
+## Example SQL Query (Get total effective cost by AllocatedResourceId)
 
 ```sql
 SELECT
-  allocated_resource_id
+  AllocatedResourceId
   SUM(EffectiveCost) as TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND allocated_method_id IS NOT NULL
+  AND AllocatedMethodId IS NOT NULL
 GROUP BY
-  allocated_resource_id
+  AllocatedResourceId
 ```
 
 ## Example SQL Query (Find total unallocated split costs by resourceId)
@@ -70,7 +70,7 @@ SELECT
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND allocated_method_id IS NOT NULL AND allocated_resource_id IS NULL
+  AND AllocatedMethodId IS NOT NULL AND AllocatedResourceId IS NULL
 GROUP BY
   ResourceId
 ```
@@ -80,18 +80,18 @@ GROUP BY
 ```sql
 SELECT
   ResourceId,
-  COALESCE(allocated_resource_id, 'Unallocated') AS allocated_resource_id,
+  COALESCE(AllocatedResourceId, 'Unallocated') AS AllocatedResourceId,
   SUM(EffectiveCost) as TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
-  AND allocated_resource_id = ?
+  AND AllocatedResourceId = ?
 GROUP BY
   ResourceId,
-  COALESCE(allocated_resource_id, 'Unallocated')
+  COALESCE(AllocatedResourceId, 'Unallocated')
 ```
 
-## Example SQL Query (Extract JSON from allocated_method_details)
+## Example SQL Query (Extract JSON from AllocatedMethodDetails)
 
 ```sql
 SELECT
@@ -102,7 +102,7 @@ SELECT
 FROM
   focus_data_table,
   JSON_TABLE(
-    allocated_method_details,
+    AllocatedMethodDetails,
     '&dollar;.Elements[\*]' COLUMNS (
       allocated_ratio DECIMAL(10, 2) PATH '&dollar;.AllocatedRatio',
       usage_unit VARCHAR(50) PATH '&dollar;.UsageUnit',
