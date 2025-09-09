@@ -94,40 +94,40 @@
   * **Include a [JSON Type Definition](https://www.rfc-editor.org/rfc/rfc8927) (JTD) as an approximation of the expected schema, but clarify that normative requirements take precedence when there is a discrepancy**: JSON Type Definition is a convenient way to visualize the expected shape of JSON data, but it often cannot replicate the JSON schema normative requirements of FOCUS. E.g. [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified.
 
   **Example JSON**
-```json
-{
-  "Elements" : [ {
-    "RequiredKey1" : 0.05,
-    "RecommendedKey2" : "CPU",
-    "RecommendedKey3" : 0.5
-  }, {
-    "RequiredKey1" : 0.1,
-    "RecommendedKey3" : 4,
-    "ProviderDefinedKey4": "SomeString"
-  } ]
-}
-```
+  ```json
+  {
+    "Elements" : [ {
+      "RequiredKey1" : 0.05,
+      "RecommendedKey2" : "CPU",
+      "RecommendedKey3" : 0.5
+    }, {
+      "RequiredKey1" : 0.1,
+      "RecommendedKey3" : 4,
+      "ProviderDefinedKey4": "SomeString"
+    } ]
+  }
+  ```
 
   **Example JTD**
-```json
-{
-  "properties": {
-    "Elements": {
-      "elements": {
-        "properties": {
-          "RequiredKey1": { "type": "float64" }
-        },
-        "optionalProperties": {
-          "RecommendedKey2": { "type": "string" },
-          "RecommendedKey3": { "type": "float64" }
-        },
-        "additionalProperties": true
+  ```json
+  {
+    "properties": {
+      "Elements": {
+        "elements": {
+          "properties": {
+            "RequiredKey1": { "type": "float64" }
+          },
+          "optionalProperties": {
+            "RecommendedKey2": { "type": "string" },
+            "RecommendedKey3": { "type": "float64" }
+          },
+          "additionalProperties": true
+        }
       }
-    }
-  },
-  "additionalProperties": true
-}
-```
+    },
+    "additionalProperties": true
+  }
+  ```
 
 #### Key-Value Pairs
 
