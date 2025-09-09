@@ -4,13 +4,13 @@ The following examples illustrate how corrections within open billing periods, i
 
 ## Scenario 1: Intra-period Correction - Partial Reallocation to Correct Resource
 
-During the current open billing period, the Data Generator identifies that a charge record attributed entirely to ResourceId R-111 was misallocated. In reality, only part of the cost and usage belongs to R-111, while the remainder pertains to ResourceId R-222.
+On July 12th, 2025, ACME Corp identified that a charge record for the current billing period (July 2025) was incorrectly attributed entirely to ResourceId `R-111`. In reality, only part of the cost and usage belonged to that resource, while the remainder pertained to ResourceId `R-222`.
 
-Since the billing period is still open and the invoice has not yet been finalized, the correction can be applied within the same billing period, allowing for more flexible correction mechanisms. The correction may be modeled using one of the following approaches:
+Since the billing period was still open and the invoice had not yet been finalized, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To correct the misattribution, ACME Corp had the option to use any of the following approaches:
 
-* Replacement-style correction, which directly updates or replaces the original record.
-* Ledger-style correction, using increment and decrement records.
-* Accounting-style correction, using negation and corrected records.
+* Replacement-style correction, which replaced the original record attributed to R-111 with a corrected version, and introduced a new record for `R-222` to reflect the accurate resource attribution.
+* Ledger-style correction, which used a decrement to reduce the cost from the incorrectly attributed resource (`R-111`), and an increment to assign the cost to the correct resource (`R-222`).
+* Accounting-style correction, which negated the original charge and introduced two new records (one for each resource) accurately reflecting the corrected cost and usage distribution.
 
 CSV Examples:
 
@@ -21,18 +21,102 @@ CSV Examples:
 
 Note the following details in the example dataset:
 
-* **TOD:** Add notes
-
+* The correction is modeled using either replacement or append-only mechanisms, as the billing period is still open and invoice has not yet been issued.
 * Original Dataset includes:
-  * A charge record attributed entirely to ResourceId R-111.
+  * A charge record attributed entirely to ResourceId `R-111`.
 * Replacement-style correction includes:
-  * A direct update to the original record, redistributing cost between R-111 and R-222.
+  * A replacement of the original record to reflect the corrected portion for `R-111`.
+  * An additional record for `R-222` to account for the remaining portion of the cost and usage.
 * Ledger-style correction includes:
-  * A decrement record for R-111.
-  * An increment record for R-222.
+  * A decrement record for `R-111`, reducing the cost previously misattributed to that resource.
+  * An increment record for `R-222`, assigning the corresponding portion of the cost to the correct resource.
 * Accounting-style correction includes:
   * A negation record for the original charge.
-  * A corrected record for R-111.
-  * A corrected record for R-222.
-  
-**TODO:** Add additional Scenarios
+  * A corrected record for `R-111`.
+  * A corrected record for `R-222`.
+* Each correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously invoiced billing period.
+* Each correction record is assigned to the current billing period (July 2025).
+
+## Scenario 2: Intra-period Correction - Late-arriving Usage
+
+On July 12th, 2025, ACME Corp identified a cost incurred during the current billing period (ChargePeriodStart: `2025-07-01`) that was not included in the initial dataset.
+
+Since the billing period was still open and the invoice had not yet been finalized, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To account for the previously omitted usage, ACME Corp had the option to use either replacement or append-only mechanisms, i.e.:
+
+* Replacement-style correction
+* Ledger-style correction
+* Accounting-style correction
+
+Regardless of the correction style used, the correction was realized by introducing a single increment record representing the late-arriving usage and associated cost.
+
+CSV Examples:
+
+* [Replacement Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Ledger-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Accounting-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+
+Note the following details in the example datasets:
+
+* The original dataset was incomplete and did not capture late-arriving usage and associated cost for July 2025.
+* The correction may be modeled using either replacement or append-only mechanisms, as the billing period is still open.
+* All three correction styles (replacement, ledger-style, and accounting-style) introduce a single increment record representing the previously omitted usage and associated cost.
+* The correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously invoiced billing period.
+* The correction record is assigned to the current billing period (July 2025).
+
+## Scenario 3: Intra-period Correction - Itemized Cost-only Corrections
+
+On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
+
+Since the billing period was still open and the invoice had not yet been finalized, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, ACME Corp had the option to use either replacement or append-only mechanisms, i.e.:
+
+* Replacement-style correction
+* Ledger-style correction
+* Accounting-style correction
+
+Regardless of the correction style used, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected SkuPriceId values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a SkuPriceId, this approach explicitly itemizes the correction per SkuPriceId.
+
+Compared to the bulk correction approach, this method ensures transparency and traceability and is preferred when itemized correction is feasible.
+
+CSV Examples:
+
+* [Original Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Replacement Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Ledger-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Accounting-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+
+Note the following details in the example datasets:
+
+* The original dataset was complete in terms of usage, but a minor cost discrepancy was identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
+* The correction may be modeled using either replacement or append-only mechanisms, as the billing period is still open.
+* All three correction styles (replacement, ledger-style, and accounting-style) introduce two itemized increment records representing cost-only adjustments.
+* Each correction record explicitly references the affected SkuPriceId.
+* Each correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously invoiced billing period.
+* Each correction record is assigned to the current billing period (July 2025).
+
+## Scenario 4: Intra-period Correction - Bulk Cost-only Correction
+
+On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
+
+* Replacement-style correction
+* Ledger-style correction
+* Accounting-style correction
+
+Regardless of the correction style used, the correction was realized by introducing a single increment record representing the bulk cost-only adjustment. Unlike itemized corrections, this record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs.
+
+Compared to the itemized correction approach, this method sacrifices transparency and traceability, but is suitable when itemized correction is not feasible.
+
+CSV Examples:
+
+* [Original Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Replacement Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Ledger-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Accounting-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+
+Note the following details in the example datasets:
+
+* The original dataset was complete in terms of usage, but a minor cost discrepancy was identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
+* The correction may be modeled using either replacement or append-only mechanisms, as the billing period is still open.
+* All three correction styles (replacement, ledger-style, and accounting-style) introduce a single increment record representing the bulk cost-only adjustment to reconcile the total drift.
+* The correction record does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
+* The correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously invoiced billing period.
+* The correction record is assigned to the current billing period (July 2025).
