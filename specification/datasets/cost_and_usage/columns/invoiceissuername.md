@@ -1,6 +1,6 @@
-# Invoice Issuer
+# Invoice Issuer Name
 
-An Invoice Issuer is an entity responsible for issuing payable invoices for the [*resources*](#glossary:resource) or [*services*](#glossary:service) consumed. It is commonly used for cost analysis and reporting scenarios.
+The name of the entity responsible for issuing payable invoices for the [*resources*](#glossary:resource) or [*services*](#glossary:service) consumed. It is commonly used for cost analysis and reporting scenarios.
 
 The InvoiceIssuerName column adheres to the following requirements:
 
@@ -9,7 +9,7 @@ The InvoiceIssuerName column adheres to the following requirements:
 * InvoiceIssuerName MUST conform to [StringHandling](#stringhandling) requirements.
 * InvoiceIssuerName MUST NOT be null.
 
-See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider](#provider), [Publisher](#publisher) and
+See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider Name](#providername), [Publisher Name](#publishername) and
 Invoice Issuer values that can be used for various purchasing scenarios.
 
 ## Column ID

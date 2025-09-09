@@ -1,4 +1,4 @@
-# Column: Provider
+# Column: ProviderName
 
 ## Example provider mappings
 

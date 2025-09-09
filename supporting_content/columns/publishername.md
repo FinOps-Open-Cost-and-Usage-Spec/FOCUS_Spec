@@ -1,4 +1,4 @@
-# Column: Publisher
+# Column: PublisherName
 
 ## Example provider mappings
 

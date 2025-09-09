@@ -1,4 +1,4 @@
-# Column: InvoiceIssuer
+# Column: InvoiceIssuerName
 
 ## Example provider mappings
 
