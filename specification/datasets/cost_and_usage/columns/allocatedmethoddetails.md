@@ -2,6 +2,12 @@
 
 Allocated Method Details provides information about how resources are allocated when usage records are split to support cost allocation requirements.
 
+Allocated Resource Details consists of a valid JSON object which contains an array consisting of key-value objects describing the one or more factors that determined the split cost allocation. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the allocation.
+
+## Requirements
+
+### Column Requirements
+
 The AllocatedMethodDetails column adheres to the following requirements:
 
 * AllocatedMethodDetails SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [provider-calculated split cost allocation](#provider-calculated-split-cost-allocation).
@@ -13,11 +19,11 @@ The AllocatedMethodDetails column adheres to the following requirements:
   * AllocatedMethodDetails MUST be null when a charge is not related to a provider-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a provider-calculated split cost allocation.
 
-## Object Schema
+### Object Schema Requirements
 
 Allocated Method Details consists of a valid JSON object which contains an array of key-value objects describing the one or more factors that determined the split cost allocation. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the allocation.
 
-If AllocatedMethodDetails is not null, the ObjectFormat for AllocatedMethodDetails adheres to the following requirements:
+If AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodDetails adheres to the following requirements:
 * AllocatedMethodDetails MUST have a top-level key "Elements" which contains an array.
 * Each item in "Elements" MUST be an object.
   * Objects inside "Elements" MUST conform to [KeyValueFormat](#key-valueformat) requirements.
@@ -29,28 +35,55 @@ If AllocatedMethodDetails is not null, the ObjectFormat for AllocatedMethodDetai
     * Allocation property keys MUST begin with the string "x_" unless it is a FOCUS-defined allocation property.
 * AllocatedMethodDetails root object MAY contain additional items, in addition to "Elements".
 
-### FOCUS-Defined Allocation Properties
+### Content Requirements
 
 The following keys are used for allocation properties to facilitate querying data across allocations and across providers. Focus-defined keys will appear in the list below and Provider-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
-FOCUS-defined allocation properties adhere to the following requirements:
+**Allocated Ratio**
+
+Percentage of overall cost derived from corresponding method and metric.
+
+The AllocatedRatio property adheres to the following requirements:
 
 * "AllocatedRatio" MUST be included inside each "Elements" object.
-  * Values for "AllocatedRatio" MUST be a decimal value compatible with [NumericFormat](#numericformat) representing the allocated charge's percentage of the origin charge.
-  * Values for "AllocatedRatio" across all allocated records related to a single origin record MUST sum up to 1 (100%).
+* Values for "AllocatedRatio" MUST be a decimal value compatible with [NumericFormat](#numericformat) representing the allocated charge's percentage of the origin charge.
+* Values for "AllocatedRatio" across all allocated records related to a single origin record MUST sum up to 1 (100%).
+
+**Usage Unit**
+
+Unit being measured used to calculate allocation.
+
 * "UsageUnit" MUST be included inside an "Elements" object if "UsageQuantity" allocation property is included in that "Elements" object, otherwise "UsageUnit" MAY be included in each "Elements" object.
-  * Values for "UsageUnit" MUST capture the unit or component of provider's documented [AllocationMethod](#allocationmethod) that was used to determine the "AllocatedRatio" value.
-  * Values for "UsageUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
+* Values for "UsageUnit" MUST capture the unit or component of provider's documented [AllocationMethod](#allocationmethod) that was used to determine the "AllocatedRatio" value.
+* Values for "UsageUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
+
+**Usage Quantity**
+
+Volume of UsageUnit consumed or used.
+
 * "UsageQuantity" MAY be included inside an "Elements" object when that "Elements" object contains a "UsageUnit" allocation property.
-  * Values for "UsageQuantity" MUST be compatible with NumericFormat.
-  * Values for "UsageQuantity" SHOULD capture the quantity or volume of the "UsageUnit" measured by the provider that was used to determine the "AllocatedRatio" value.
+* Values for "UsageQuantity" MUST be compatible with NumericFormat.
+* Values for "UsageQuantity" SHOULD capture the quantity or volume of the "UsageUnit" measured by the provider that was used to determine the "AllocatedRatio" value.
+
+## Overview
+
+### Array of Objects
+
+The parent array is called `Elements` and contains one or more objects which communicate information about how an allocated record was calculated.
 
 | Key | ValueType | Required | Description |
 | ----- | ---- | ---------- | ----------- |
-| Elements | Array | TRUE | The parent array containing one or more objects which communicate information about how an allocated record was calculated. |
-| AllocatedRatio | Numeric | TRUE | Percentage of overall cost derived from corresponding method and meter. |
+| Elements | Array | True | The parent array containing one or more objects which communicate information about how an allocated record was calculated. |
+
+### Object Entries
+
+The `Elements` array contains one or more objects, each of which contains the following entries:
+
+| Key | ValueType | Required | Description |
+| ----- | ---- | ---------- | ----------- |
+| AllocatedRatio | Numeric | True | Percentage of overall cost derived from corresponding method and metric. |
 | UsageUnit | [String](#stringhandling) | Conditional | Unit being measured used to calculate allocation. |
-| UsageQuantity | Numeric | FALSE | Volume of UsageUnit consumed or used. |
+| UsageQuantity | Numeric | False | Volume of UsageUnit consumed or used. |
 
 ### Example
 
@@ -112,7 +145,7 @@ Allocated Method Details provides information about how resources are allocated 
 | Feature level   | Conditional     |
 | Allows nulls    | True            |
 | Data type       | JSON            |
-| Value format    | [Object](#objectformat) |
+| Value format    | [JSON Object Format](#jsonobjectformat) |
 
 ## Introduced (version)
 
