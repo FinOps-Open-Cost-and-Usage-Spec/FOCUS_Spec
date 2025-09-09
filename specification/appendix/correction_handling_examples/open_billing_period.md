@@ -138,31 +138,30 @@ CSV Examples:
 * [Ledger-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
 * [Accounting-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
 
-### Scenario 1: Pre-Invoice Correction – Partial Reallocation to Correct Resource
-
-This scenario is nearly identical to *Scenario 1: Intra-period Correction - Partial Reallocation to Correct Resource*. The only difference is that the original misattributed charge occurred in the previous billing period (June 2025), which has ended but has not yet been invoiced. The correction is applied before invoice issuance, using the same correction styles: replacement, ledger-style, and accounting-style.
-
-CSV Examples:
-
-* [Original Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Replacement Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Ledger-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Accounting-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-
-### Scenario 1: Pre-Invoice Correction – Partial Reallocation to Correct Resource
-
-This scenario is nearly identical to *Scenario 1: Intra-period Correction - Partial Reallocation to Correct Resource*. The only difference is that the original misattributed charge occurred in the previous billing period (June 2025), which has ended but has not yet been invoiced. The correction is applied before invoice issuance, using the same correction styles: replacement, ledger-style, and accounting-style.
-
-CSV Examples:
-
-* [Original Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Replacement Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Ledger-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Accounting-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-
 ### Scenario 2: Pre-Invoice Correction – Late-arriving Usage
 
 This scenario is nearly identical to *Scenario 2: Intra-period Correction - Late-arriving Usage*. The only difference is that the late-arriving usage pertains to the previous billing period (June 2025), which has ended but has not yet been invoiced. The correction is applied before invoice issuance, using the same correction styles: replacement, ledger-style, and accounting-style.
+
+CSV Examples:
+
+* [Replacement Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+* [Ledger-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+* [Accounting-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+
+### Scenario 3: Pre-Invoice Correction – Itemized Cost-only Corrections
+
+This scenario is nearly identical to *Scenario 3: Intra-period Correction - Itemized Cost-only Adjustments*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been invoiced. The correction is applied before invoice issuance, using the same correction styles: replacement, ledger-style, and accounting-style.
+
+CSV Examples:
+
+* [Original Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+* [Replacement Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+* [Ledger-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+* [Accounting-style Append-only Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+
+### Scenario 4: Pre-Invoice Correction – Bulk Cost-only Corrections
+
+This scenario is nearly identical to *Scenario 4: Intra-period Correction - Bulk Cost-only Adjustments*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been invoiced. The correction is applied before invoice issuance, using the same correction styles: replacement, ledger-style, and accounting-style.
 
 CSV Examples:
 
