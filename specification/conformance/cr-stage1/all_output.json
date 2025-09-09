@@ -30,7 +30,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Charge Class",
       "_source": ""
     },
@@ -319,7 +319,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Charge Period End",
       "_source": ""
     },
@@ -489,7 +489,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Root composite capturing all NumericFormat requirements",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -506,7 +506,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -523,7 +523,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -540,7 +540,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -557,7 +557,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -574,7 +574,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -591,7 +591,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -608,7 +608,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -625,7 +625,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -642,7 +642,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -659,7 +659,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -676,7 +676,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -693,7 +693,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -710,7 +710,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Allowed values are **Integer** and **Decimal** per normative text table",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -727,7 +727,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Allowed precision values: Integer (Short, Long, Extended), Decimal (Single, Double, Extended)",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Numeric Format",
       "_source": ""
     },
@@ -761,7 +761,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Commitment Discount Category",
       "_source": ""
     },
@@ -880,7 +880,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Sub Account Name",
       "_source": ""
     },
@@ -999,7 +999,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Effective Cost",
       "_source": ""
     },
@@ -1254,7 +1254,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "SKU Meter",
       "_source": ""
     },
@@ -1390,7 +1390,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Charge Description",
       "_source": ""
     },
@@ -1492,7 +1492,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "List Unit Price",
       "_source": ""
     },
@@ -1713,7 +1713,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Sku Price Details",
       "_source": ""
     },
@@ -2104,7 +2104,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Root composite",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2121,7 +2121,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2138,7 +2138,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2155,7 +2155,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2172,7 +2172,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Composite for formats",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2189,7 +2189,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2206,7 +2206,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2223,7 +2223,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2240,7 +2240,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2257,7 +2257,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2274,7 +2274,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2291,7 +2291,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2308,7 +2308,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2325,7 +2325,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2342,7 +2342,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2359,7 +2359,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Unit Format",
       "_source": ""
     },
@@ -2393,7 +2393,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Consumed Unit",
       "_source": ""
     },
@@ -2529,7 +2529,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Sub Account ID",
       "_source": ""
     },
@@ -2648,7 +2648,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Billing Period Start",
       "_source": ""
     },
@@ -2733,7 +2733,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Root composite, references all immediate children",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2750,7 +2750,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2767,7 +2767,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2784,7 +2784,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2801,7 +2801,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2818,7 +2818,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2835,7 +2835,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2852,7 +2852,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2869,7 +2869,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2886,7 +2886,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2903,7 +2903,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2920,7 +2920,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2937,7 +2937,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2954,7 +2954,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2971,7 +2971,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -2988,7 +2988,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -3005,7 +3005,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -3022,7 +3022,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -3039,7 +3039,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -3056,7 +3056,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -3073,7 +3073,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Discount Handling",
       "_source": ""
     },
@@ -3107,7 +3107,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Commitment Discount Type",
       "_source": ""
     },
@@ -3209,7 +3209,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Null Handling",
       "_source": ""
     },
@@ -3226,7 +3226,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Null Handling",
       "_source": ""
     },
@@ -3243,7 +3243,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Null Handling",
       "_source": ""
     },
@@ -3260,7 +3260,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Null Handling",
       "_source": ""
     },
@@ -3277,7 +3277,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Null Handling",
       "_source": ""
     },
@@ -3294,7 +3294,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Root composite gating evaluation via the Presence PreCondition.",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Invoice Issuer",
       "_source": ""
     },
@@ -3311,7 +3311,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Presence atomic used as root PreCondition.",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Invoice Issuer",
       "_source": ""
     },
@@ -3396,7 +3396,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Commitment Discount Id",
       "_source": ""
     },
@@ -3566,7 +3566,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Billing Currency",
       "_source": ""
     },
@@ -3702,7 +3702,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Resource Name",
       "_source": ""
     },
@@ -3923,7 +3923,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Consumed Quantity",
       "_source": ""
     },
@@ -4076,7 +4076,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Root composite aggregating all rules",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "String Handling",
       "_source": ""
     },
@@ -4093,7 +4093,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "String Handling",
       "_source": ""
     },
@@ -4110,7 +4110,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "String Handling",
       "_source": ""
     },
@@ -4127,7 +4127,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "String Handling",
       "_source": ""
     },
@@ -4144,7 +4144,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "String Handling",
       "_source": ""
     },
@@ -4161,7 +4161,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "String Handling",
       "_source": ""
     },
@@ -4178,7 +4178,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "String Handling",
       "_source": ""
     },
@@ -4195,7 +4195,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "String Handling",
       "_source": ""
     },
@@ -4212,7 +4212,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "String Handling",
       "_source": ""
     },
@@ -4246,7 +4246,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Pricing Category",
       "_source": ""
     },
@@ -4467,7 +4467,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Commitment Discount Unit",
       "_source": ""
     },
@@ -4671,7 +4671,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Billing Account ID",
       "_source": ""
     },
@@ -4790,7 +4790,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Billing Account Name",
       "_source": ""
     },
@@ -4875,7 +4875,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Charge Period Start",
       "_source": ""
     },
@@ -4977,7 +4977,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Service Subcategory",
       "_source": ""
     },
@@ -5079,7 +5079,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Key-Value Format",
       "_source": ""
     },
@@ -5096,7 +5096,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Key-Value Format",
       "_source": ""
     },
@@ -5113,7 +5113,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Key-Value Format",
       "_source": ""
     },
@@ -5130,7 +5130,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Key-Value Format",
       "_source": ""
     },
@@ -5147,7 +5147,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Key-Value Format",
       "_source": ""
     },
@@ -5368,7 +5368,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Feature level is Recommended",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Charge Frequency",
       "_source": ""
     },
@@ -5470,7 +5470,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Commitment Discount Name",
       "_source": ""
     },
@@ -5623,7 +5623,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Pricing Currency",
       "_source": ""
     },
@@ -5725,7 +5725,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Service Category",
       "_source": ""
     },
@@ -5810,7 +5810,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Tags",
       "_source": ""
     },
@@ -6133,7 +6133,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Tags",
       "_source": ""
     },
@@ -6456,7 +6456,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Tags",
       "_source": ""
     },
@@ -6779,7 +6779,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Pricing Quantity",
       "_source": ""
     },
@@ -6983,7 +6983,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Capacity Reservation Status",
       "_source": ""
     },
@@ -7153,7 +7153,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Dataset presence is conditional on provider capabilities.",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Resource Type",
       "_source": ""
     },
@@ -7272,7 +7272,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Pricing Unit",
       "_source": ""
     },
@@ -7459,7 +7459,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Billed Cost",
       "_source": ""
     },
@@ -7952,7 +7952,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Currency Format",
       "_source": ""
     },
@@ -7969,7 +7969,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Currency Format",
       "_source": ""
     },
@@ -7986,7 +7986,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Currency Format",
       "_source": ""
     },
@@ -8003,7 +8003,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Currency Format",
       "_source": ""
     },
@@ -8020,7 +8020,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-attribute reference: StringHandling",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Currency Format",
       "_source": ""
     },
@@ -8054,7 +8054,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "List Cost",
       "_source": ""
     },
@@ -8258,7 +8258,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Contracted Cost",
       "_source": ""
     },
@@ -8462,7 +8462,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Billing Account Type",
       "_source": ""
     },
@@ -8581,7 +8581,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Root composite",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Date/Time Format",
       "_source": ""
     },
@@ -8598,7 +8598,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Date/Time Format",
       "_source": ""
     },
@@ -8615,7 +8615,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Date/Time Format",
       "_source": ""
     },
@@ -8632,7 +8632,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Date/Time Format",
       "_source": ""
     },
@@ -8649,7 +8649,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Date/Time Format",
       "_source": ""
     },
@@ -8666,7 +8666,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Date/Time Format",
       "_source": ""
     },
@@ -8683,7 +8683,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Child of A-005",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Date/Time Format",
       "_source": ""
     },
@@ -8700,7 +8700,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Child of A-005",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Date/Time Format",
       "_source": ""
     },
@@ -8717,7 +8717,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Child of A-005",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Date/Time Format",
       "_source": ""
     },
@@ -8751,7 +8751,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Presence rule",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Contracted Unit Price",
       "_source": ""
     },
@@ -9244,7 +9244,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Charge Category",
       "_source": ""
     },
@@ -9329,7 +9329,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "SKU Price ID",
       "_source": ""
     },
@@ -9618,7 +9618,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Region ID",
       "_source": ""
     },
@@ -9737,7 +9737,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "SKU ID",
       "_source": ""
     },
@@ -9958,7 +9958,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Root composite",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -9975,7 +9975,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -9992,7 +9992,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10009,7 +10009,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10026,7 +10026,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10043,7 +10043,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10060,7 +10060,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10077,7 +10077,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10094,7 +10094,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10111,7 +10111,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10128,7 +10128,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10145,7 +10145,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10162,7 +10162,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10179,7 +10179,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10196,7 +10196,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10213,7 +10213,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10230,7 +10230,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10247,7 +10247,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10264,7 +10264,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10281,7 +10281,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10298,7 +10298,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Attribute",
       "EntityName": "Column Handling",
       "_source": ""
     },
@@ -10332,7 +10332,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Service Name",
       "_source": ""
     },
@@ -10519,7 +10519,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Invoice ID",
       "_source": ""
     },
@@ -10856,7 +10856,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Commitment Discount Status",
       "_source": ""
     },
@@ -10975,7 +10975,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Billing Period End",
       "_source": ""
     },
@@ -11077,7 +11077,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Availability Zone",
       "_source": ""
     },
@@ -11162,7 +11162,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Commitment Discount Quantity",
       "_source": ""
     },
@@ -11451,7 +11451,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
+      "Entity": "Dataset",
       "EntityName": "Capacity Reservation ID",
       "_source": ""
     },
