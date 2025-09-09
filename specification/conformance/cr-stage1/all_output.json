@@ -9103,9 +9103,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "ServiceName-D-001-M",
@@ -9120,9 +9118,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Dataset",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Dataset"
     },
     {
       "CRID": "ServiceName-C-002-M",
@@ -9137,9 +9133,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "ServiceName-C-003-M",
@@ -9154,9 +9148,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-attribute reference: StringHandling",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "ServiceName-C-004-M",
@@ -9171,9 +9163,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "ServiceName-C-005-M",
@@ -9188,9 +9178,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: ServiceCategory",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "ServiceName-C-006-M",
@@ -9205,9 +9193,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: ServiceCategory",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "ServiceName-C-007-M",
@@ -9222,9 +9208,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: ServiceCategory",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "ServiceName-C-008-O",
@@ -9239,9 +9223,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: ServiceSubcategory",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "ServiceName-C-009-O",
@@ -9256,9 +9238,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: ServiceSubcategory",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "ServiceName-C-010-O",
@@ -9273,9 +9253,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: ServiceSubcategory",
-      "Entity": "Column",
-      "EntityName": "Service Name",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "InvoiceID-C-000-O",
@@ -9290,9 +9268,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Root composite for column",
-      "Entity": "Column",
-      "EntityName": "Invoice ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "InvoiceID-D-001-O",
@@ -9307,9 +9283,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Dataset",
-      "EntityName": "Invoice ID",
-      "_source": ""
+      "Entity": "Dataset"
     },
     {
       "CRID": "InvoiceID-C-002-M",
@@ -9324,9 +9298,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Invoice ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "InvoiceID-C-003-M",
@@ -9341,9 +9313,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-attribute reference: StringHandling",
-      "Entity": "Column",
-      "EntityName": "Invoice ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "InvoiceID-C-004-C",
@@ -9358,9 +9328,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Composite for nullability rules",
-      "Entity": "Column",
-      "EntityName": "Invoice ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "InvoiceID-C-005-C",
@@ -9375,9 +9343,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Invoice ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "InvoiceID-C-006-C",
@@ -9392,9 +9358,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Invoice ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "InvoiceID-C-007-O",
@@ -9409,9 +9373,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Invoice ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "InvoiceID-C-008-C",
@@ -9426,9 +9388,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: BillingAccountId",
-      "Entity": "Column",
-      "EntityName": "Invoice ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "SubAccountType-C-000-C",
@@ -9443,9 +9403,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Sub Account Type",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "SubAccountType-C-001-C",
@@ -9460,9 +9418,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Sub Account Type",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "SubAccountType-C-002-M",
@@ -9477,9 +9433,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Sub Account Type",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "SubAccountType-C-003-M",
@@ -9494,9 +9448,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-attribute reference: StringHandling",
-      "Entity": "Column",
-      "EntityName": "Sub Account Type",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "SubAccountType-C-004-M",
@@ -9511,9 +9463,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Sub Account Type",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "SubAccountType-C-005-M",
@@ -9528,9 +9478,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: SubAccountId",
-      "Entity": "Column",
-      "EntityName": "Sub Account Type",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "SubAccountType-C-006-M",
@@ -9545,9 +9493,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: SubAccountId",
-      "Entity": "Column",
-      "EntityName": "Sub Account Type",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "SubAccountType-C-007-M",
@@ -9562,9 +9508,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Sub Account Type",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "Entity": "Column",
@@ -9627,9 +9571,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Status",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountStatus-D-001-C",
@@ -9644,9 +9586,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Dataset",
-      "EntityName": "Commitment Discount Status",
-      "_source": ""
+      "Entity": "Dataset"
     },
     {
       "CRID": "CommitmentDiscountStatus-C-002-M",
@@ -9661,9 +9601,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Status",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountStatus-C-003-M",
@@ -9678,9 +9616,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Status",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountStatus-C-004-C",
@@ -9695,9 +9631,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: CommitmentDiscountId",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Status",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountStatus-C-005-C",
@@ -9712,9 +9646,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column references: CommitmentDiscountId, ChargeCategory",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Status",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountStatus-C-006-M",
@@ -9729,9 +9661,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "—",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Status",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "BillingPeriodEnd-C-000-M",
@@ -9746,9 +9676,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Billing Period End",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "BillingPeriodEnd-D-001-M",
@@ -9763,9 +9691,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Dataset",
-      "EntityName": "Billing Period End",
-      "_source": ""
+      "Entity": "Dataset"
     },
     {
       "CRID": "BillingPeriodEnd-C-002-M",
@@ -9780,9 +9706,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Billing Period End",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "BillingPeriodEnd-C-003-M",
@@ -9797,9 +9721,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: DateTimeFormat",
-      "Entity": "Column",
-      "EntityName": "Billing Period End",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "BillingPeriodEnd-C-004-M",
@@ -9814,9 +9736,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Billing Period End",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "BillingPeriodEnd-C-005-M",
@@ -9831,9 +9751,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Billing Period End",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "AvailabilityZone-C-000-M",
@@ -9848,9 +9766,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Availability Zone",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "AvailabilityZone-D-001-C",
@@ -9865,9 +9781,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Dataset",
-      "EntityName": "Availability Zone",
-      "_source": ""
+      "Entity": "Dataset"
     },
     {
       "CRID": "AvailabilityZone-C-002-M",
@@ -9882,9 +9796,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Availability Zone",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "AvailabilityZone-C-003-M",
@@ -9899,9 +9811,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: StringHandling",
-      "Entity": "Column",
-      "EntityName": "Availability Zone",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "AvailabilityZone-C-004-C",
@@ -9916,9 +9826,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Availability Zone",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-000-C",
@@ -9933,9 +9841,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-D-001-C",
@@ -9950,9 +9856,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Dataset",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Dataset"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-002-M",
@@ -9967,9 +9871,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-003-M",
@@ -9984,9 +9886,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-attribute reference: NumericFormat",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-004-C",
@@ -10001,9 +9901,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-005-C",
@@ -10018,9 +9916,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-006-C",
@@ -10035,9 +9931,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-007-C",
@@ -10052,9 +9946,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-008-C",
@@ -10069,9 +9961,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-009-C",
@@ -10086,9 +9976,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-010-M",
@@ -10103,9 +9991,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-011-C",
@@ -10120,9 +10006,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-012-C",
@@ -10137,9 +10021,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-013-C",
@@ -10154,9 +10036,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-014-C",
@@ -10171,9 +10051,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-015-C",
@@ -10188,9 +10066,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CommitmentDiscountQuantity-C-016-C",
@@ -10205,9 +10081,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Commitment Discount Quantity",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-C-000-C",
@@ -10222,9 +10096,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-D-001-C",
@@ -10239,9 +10111,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Dataset",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Dataset"
     },
     {
       "CRID": "CapacityReservationId-C-002-M",
@@ -10256,9 +10126,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-C-003-M",
@@ -10273,9 +10141,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "Cross-column reference: StringHandling",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-C-004-C",
@@ -10290,9 +10156,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-C-005-C",
@@ -10307,9 +10171,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-C-006-C",
@@ -10324,9 +10186,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-C-007-O",
@@ -10341,9 +10201,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-C-008-C",
@@ -10358,9 +10216,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-C-009-M",
@@ -10375,9 +10231,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     },
     {
       "CRID": "CapacityReservationId-C-010-O",
@@ -10392,9 +10246,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "active",
       "Notes": "",
-      "Entity": "Column",
-      "EntityName": "Capacity Reservation ID",
-      "_source": ""
+      "Entity": "Column"
     }
   ],
   "meta": {
