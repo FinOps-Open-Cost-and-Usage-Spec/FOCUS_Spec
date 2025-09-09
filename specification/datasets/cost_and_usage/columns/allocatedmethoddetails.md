@@ -39,7 +39,7 @@ If AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodD
 
 The following keys are used for allocation properties to facilitate querying data across allocations and across providers. Focus-defined keys will appear in the list below and Provider-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
-**Allocated Ratio**
+<b>Allocated Ratio</b>
 
 Percentage of overall cost derived from corresponding method and metric.
 
@@ -49,7 +49,7 @@ The AllocatedRatio property adheres to the following requirements:
 * Values for "AllocatedRatio" MUST be a decimal value compatible with [NumericFormat](#numericformat) representing the allocated charge's percentage of the origin charge.
 * Values for "AllocatedRatio" across all allocated records related to a single origin record MUST sum up to 1 (100%).
 
-**Usage Unit**
+<b>Usage Unit</b>
 
 Unit being measured used to calculate allocation.
 
@@ -57,7 +57,7 @@ Unit being measured used to calculate allocation.
 * Values for "UsageUnit" MUST capture the unit or component of provider's documented [AllocationMethod](#allocationmethod) that was used to determine the "AllocatedRatio" value.
 * Values for "UsageUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
 
-**Usage Quantity**
+<b>Usage Quantity</b>
 
 Volume of UsageUnit consumed or used.
 
