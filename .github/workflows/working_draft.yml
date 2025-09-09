@@ -2,8 +2,8 @@ name: generate_draft_spec
 on:
   push:
     branches-ignore:
-      - main
-      - candidate_release
+      - "main"
+      - "candidate_release"
 
 jobs:
   # The job that will use the container image you just pushed to ghcr.io
