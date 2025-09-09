@@ -19,7 +19,7 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
 ## Requirements
 
 * JsonObjectFormat columns MUST contain a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
-* Objects used within ObjectFormat adhere to the following additional requirements:
+* Objects used within JsonObjectFormat adhere to the following additional requirements:
   * Object keys MUST be unique within an object.
   * Object values MUST be one of the following types: number, string, `true`, `false`, array, object, or `null`.
 * Arrays used within JsonObjectFormat adhere to the following additional requirements:
@@ -28,7 +28,7 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
   * Array elements MUST NOT be null.
 * JsonObjectFormat columns MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the Object.
 * Provider-defined [custom columns](#column_handling:custom-column) whose contents contain a JSON object MUST have their object schema documented by the provider.
-* Objects SHOULD NOT exceed 3 levels of nesting.
+* JsonObjectFormat objects SHOULD NOT exceed 3 levels of nesting.
 
 ## Exceptions
 
