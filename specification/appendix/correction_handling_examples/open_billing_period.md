@@ -127,7 +127,7 @@ Note the following details in the example datasets:
 
 ## Pre-Invoice Correction Scenarios
 
-### Scenario 1: Pre-Invoice Correction – Partial Reallocation to Correct Resource
+### Scenario 1: Pre-Invoice Correction - Partial Reallocation to Correct Resource
 
 This scenario is nearly identical to *Scenario 1: Intra-period Correction - Partial Reallocation to Correct Resource*. The only difference is that the original misattributed charge occurred in the previous billing period (June 2025), which has ended but has not yet been invoiced. The correction is applied before invoice issuance, using the same correction styles: replacement, ledger-style, and accounting-style.
 
