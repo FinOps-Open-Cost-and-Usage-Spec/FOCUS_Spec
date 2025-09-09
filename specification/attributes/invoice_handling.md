@@ -14,12 +14,12 @@ Invoice Handling
 
 ## Description
 
-Indicates how invoice-level *charges*, including those not directly tied to usage, should be represented in a FOCUS dataset. 
+Indicates how invoice-level *charges*, including those not directly tied to usage, should be represented in a FOCUS dataset.
 
 ## Requirements
 
 * All costs that appear on an invoice MUST be present in the *FOCUS dataset*.
-* If an invoice-level *charge* appears on a customer’s invoice but cannot be fully represented using existing FOCUS columns, providers SHOULD include supplemental columns (e.g., x_ChargeSubType) to ensure that the details of the invoice *charge* are captured in the *FOCUS dataset*. 
+* If an invoice-level *charge* appears on a customer's invoice but cannot be fully represented using existing FOCUS columns, providers SHOULD include supplemental columns (e.g., x_ChargeSubType) to ensure that the details of the invoice *charge* are captured in the *FOCUS dataset*.
 
 ## Exceptions
 
