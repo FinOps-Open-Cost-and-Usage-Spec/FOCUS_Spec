@@ -49,6 +49,13 @@ spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py appendix
 	./validate_includes.py appendix/metadata_examples
 	./validate_includes.py appendix/saas_examples
+	
+	@echo "Checking for misaligned code block markers (\`\`\`)..."
+	@find . -type f \( -name "*.md" -o -name "*.mdpp" \) \
+		-exec grep -nH '^[[:space:]][[:space:]]*```$$' {} + 2>/dev/null | \
+	while IFS=: read -r file line _; do \
+		echo "WARNING: Found code block escape that is not aligned to the start of the line in file $$file on line $$line"; \
+	done || true
 	PYTHONPATH=../vendored/ $(MARKDOWNPP) spec.mdpp -o $@
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $(SPEC_SOURCE_MDFILES)
 	$(PYMARKDOWNLNT) --config markdownlnt.cfg scan $@
