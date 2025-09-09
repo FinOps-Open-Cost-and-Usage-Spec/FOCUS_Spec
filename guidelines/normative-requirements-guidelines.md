@@ -93,7 +93,7 @@
   * A recommended pattern is an Object containing a collection whose key is "Elements" containing one or more objects in the Key-Value format.
   * **Include a [JSON Type Definition](https://www.rfc-editor.org/rfc/rfc8927) (JTD) as an approximation of the expected schema, but clarify that normative requirements take precedence when there is a discrepancy**: JSON Type Definition is a convenient way to visualize the expected shape of JSON data, but it often cannot replicate the JSON schema normative requirements of FOCUS. E.g. [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified.
 
-  **Example JSON 
+  **Example JSON**
 ```json
 {
   "Elements" : [ {
