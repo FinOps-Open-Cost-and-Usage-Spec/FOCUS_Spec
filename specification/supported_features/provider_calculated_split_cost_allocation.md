@@ -103,13 +103,13 @@ FROM
   focus_data_table,
   JSON_TABLE(
     AllocatedMethodDetails,
-    '&dollar;.Elements[\*]' COLUMNS (
-      allocated_ratio DECIMAL(10, 2) PATH '&dollar;.AllocatedRatio',
-      usage_unit VARCHAR(50) PATH '&dollar;.UsageUnit',
-      usage_quantity DECIMAL(10, 2) PATH '&dollar;.UsageQuantity'
+    '$.Elements[*]' COLUMNS (
+      allocated_ratio DECIMAL(10, 2) PATH '$.AllocatedRatio',
+      usage_unit VARCHAR(50) PATH '$.UsageUnit',
+      usage_quantity DECIMAL(10, 2) PATH '$.UsageQuantity'
     )
   ) AS elements;
-  ```
+```
 
 ## Introduced (Version)
 
