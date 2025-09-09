@@ -31,9 +31,9 @@ spec.md: $(SPEC_SOURCE_FILES)
 	  echo "working draft"; \
 	  if [ "$(OS)" = "Darwin" ]; then \
 	    echo "osx";\
-	    sed -i '' 's/Working Draft (Unversioned)/Offline Build (Unversioned)/' version.md; \
+	    sed -i '' 's~Working Draft (Unversioned)~Offline Build (Unversioned)~' version.md; \
 	  elif [ "$(OS)" = "Linux" ]; then \
-	    sed -i "s/Working Draft (Unversioned)/Branch: ${GITHUB_REF_NAME} (Unversioned)/" version.md; \
+	    sed -i "s~Working Draft (Unversioned)~Branch: ${GITHUB_REF_NAME} (Unversioned)~" version.md; \
 	  fi; \
 	else \
 	  echo "foo ${STYLE} s";\
