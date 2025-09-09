@@ -76,7 +76,58 @@
   * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
   ```  
 
-### Additional Guidelines for Columns in Simplified JSON Format
+### Additional Guidelines for Columns in JSON Format
+
+#### Column Definition Structure
+
+* **Separate normative requirements into sections for column, JSON schema, and contents**: Communicating the normative requirements for a column, JSON schema, and the contents can be convoluted. Separating these requirements provides better clarity.
+  * Column normative requirements specify requirements of the column such as nullability.
+  * JSON schema normative requirements specify the shape of the JSON.
+  * Contents normative requirements usually specify the expected Keys, the format of the Values, and the expected contents of the Values.
+
+#### JSON Schema
+
+* **Omit JSON schema normative requirements for Key-Value Format columns**: The Key-Value Format definition is sufficient to define the expected JSON schema.
+
+* **Include JSON schema normative requirements for JSON Object Format columns**: The JSON Object Format specifies that the format is subject to the requirement of the column and that provider-defined columns must have documented schema.
+  * A recommended pattern is an Object containing a collection whose key is "Elements" containing one or more objects in the Key-Value format.
+  * **Include a [JSON Type Definition](https://www.rfc-editor.org/rfc/rfc8927) (JTD) as an approximation of the expected schema, but clarify that normative requirements take precedence when there is a discrepancy**: JSON Type Definition is a convenient way to visualize the expected shape of JSON data, but it often cannot replicate the JSON schema normative requirements of FOCUS. E.g. [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified.
+
+  **Example JSON 
+```json
+{
+  "Elements" : [ {
+    "RequiredKey1" : 0.05,
+    "RecommendedKey2" : "CPU",
+    "RecommendedKey3" : 0.5
+  }, {
+    "RequiredKey1" : 0.1,
+    "RecommendedKey3" : 4,
+    "ProviderDefinedKey4": "SomeString"
+  } ]
+}
+```
+
+  **Example JTD**
+```json
+{
+  "properties": {
+    "Elements": {
+      "elements": {
+        "properties": {
+          "RequiredKey1": { "type": "float64" }
+        },
+        "optionalProperties": {
+          "RecommendedKey2": { "type": "string" },
+          "RecommendedKey3": { "type": "float64" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
+```
 
 #### Key-Value Pairs
 
