@@ -36,7 +36,7 @@ Current values observed in billing data for various scenarios:
 | GCP       | ?                                                          |                                                                                                                                                             |
 | Microsoft | ?                                                          |                                                                                                                                                             |
 
-See [Appendix: Origination of cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Publisher dimension.
+See [Appendix: Origination of cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Publisher Name dimension.
 
 ## Discussion / Scratch space
 
