@@ -8941,54 +8941,6 @@
       "Entity": "Column"
     },
     {
-      "Entity": "Column",
-      "Description": "Whole billing dataset",
-      "Applies To": "Structural presence, versioning, coverage",
-      "Example CR Function": "Dataset MUST include all columns required by the declared FOCUS version",
-      "EntityName": "",
-      "_source": ""
-    },
-    {
-      "Entity": "Column",
-      "Description": "Individual line item in dataset",
-      "Applies To": "Logic conditions, nullability, alignment",
-      "Example CR Function": "Rows with `ChargeCategory = Purchase` MUST contain a `SkuId`",
-      "EntityName": "",
-      "_source": ""
-    },
-    {
-      "Entity": "Column",
-      "Description": "Named field across rows",
-      "Applies To": "Data type, format, constraints",
-      "Example CR Function": "Column `BillingPeriodStart` MUST be of type `DateTime`",
-      "EntityName": "",
-      "_source": ""
-    },
-    {
-      "Entity": "Column",
-      "Description": "Shared formatting/logic constraint",
-      "Applies To": "Formatting consistency across columns",
-      "Example CR Function": "All `String` columns MUST conform to `StringHandling` requirements",
-      "EntityName": "",
-      "_source": ""
-    },
-    {
-      "Entity": "Column",
-      "Description": "Schema-level dataset descriptors",
-      "Applies To": "Schema versioning, declaration",
-      "Example CR Function": "Metadata MUST declare `focus_version` as a valid semantic version string (e.g., \"1.2.0\")",
-      "EntityName": "",
-      "_source": ""
-    },
-    {
-      "Entity": "Column",
-      "Description": "System that generated the data",
-      "Applies To": "Conditional logic in requirements",
-      "Example CR Function": "Column `CapacityReservationId` MUST be present when the provider supports capacity reservation features",
-      "EntityName": "",
-      "_source": ""
-    },
-    {
       "CRID": "CommitmentDiscountStatus-C-000-C",
       "Function": "Composite",
       "Reference": "Commitment Discount Status",
