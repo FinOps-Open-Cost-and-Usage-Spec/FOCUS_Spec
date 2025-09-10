@@ -41,7 +41,9 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": ["COMMITMENT_DISCOUNT_SUPPORTED"],
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type String",
@@ -90,7 +92,9 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": ["COMMITMENT_DISCOUNT_SUPPORTED"],
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST not be null",
@@ -103,8 +107,7 @@
       "Condition": {},
       "Dependencies": [
         "CommitmentDiscountId"
-      ],
-      "Value": null
+      ]
     }
   },
   "CommitmentDiscountStatus-C-005-C": {
@@ -127,8 +130,7 @@
       "Condition": {},
       "Dependencies": [
         "CommitmentDiscountId"
-      ],
-      "Value": null
+      ]
     }
   },
   "CommitmentDiscountStatus-C-006-M": {
@@ -138,15 +140,32 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": ["COMMITMENT_DISCOUNT_SUPPORTED"],
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be one of the allowed values",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "CheckAllowedValues",
-        "ColumnName": "CommitmentDiscountStatus",
-        "AllowedValues": ["Active", "Expired", "Pending"]
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Active"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Expired"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Pending"
+          }
+        ]
       },
       "Condition": {},
       "Dependencies": []
