@@ -30,7 +30,7 @@ jobs:
           make STYLE=working_draft BRANCH=${GITHUB_REF_NAME}
       - name: Build Conformance Requirements
         shell: bash
-        working-directory: ./specification
+        working-directory: ./specification/conformance
         run: |
           /usr/bin/pip3 install --break-system-packages -r requirements.txt
           ./build_cr_json.py
