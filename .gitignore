@@ -8,3 +8,4 @@ specification/version.md
 .vscode/*
 cr_graph.dot
 cr_graph.png
+specification/conformance/build/*

@@ -24,7 +24,7 @@ def cr_json():
         details = json.load(f)
     assert isinstance(details, dict), f"Expected dict, got {type(details)}"
     assert "CRVersion" in details['Details'], "Missing Details.CRVersion"
-    OUTPUT_JSON = CONFORMANCE / f"cr-{details['Details']['CRVersion']}.json"
+    OUTPUT_JSON = CONFORMANCE / f"build/cr-{details['Details']['CRVersion']}.json"
     with OUTPUT_JSON.open(encoding="utf-8") as f:
         doc = json.load(f)
     assert isinstance(doc, dict), f"Expected dict, got {type(doc)}"
