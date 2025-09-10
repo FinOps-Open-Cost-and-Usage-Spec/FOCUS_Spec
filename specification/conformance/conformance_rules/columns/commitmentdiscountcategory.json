@@ -32,7 +32,10 @@
             },
             "Condition": {},
             "Dependencies": [
-                "CostAndUsage-D-016-M"
+                "CostAndUsage-D-016-M",
+                "CommitmentDiscountCategory-C-001-M",
+                "CommitmentDiscountCategory-C-002-M",
+                "CommitmentDiscountCategory-C-005-M"
             ]
         }
     },
@@ -86,7 +89,10 @@
                 ]
             },
             "Condition": {},
-            "Dependencies": []
+            "Dependencies": [
+                "CommitmentDiscountCategory-C-003-C",
+                "CommitmentDiscountCategory-C-004-C"
+            ]
         }
     },
     "CommitmentDiscountCategory-C-003-C": {
@@ -99,7 +105,7 @@
         "ApplicabilityCriteria": [
             "COMMITMENT_DISCOUNT_SUPPORTED"
         ],
-        "Type": "Dynamic",
+        "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountCategory MUST be null when CommitmentDiscountId is null.",
             "Keyword": "MUST",
@@ -128,7 +134,7 @@
         "ApplicabilityCriteria": [
             "COMMITMENT_DISCOUNT_SUPPORTED"
         ],
-        "Type": "Dynamic",
+        "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.",
             "Keyword": "MUST",

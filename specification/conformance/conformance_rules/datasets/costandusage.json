@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "CostAndUsage dataset adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -25,7 +25,10 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-001-M",
+        "CostAndUsage-D-002-M"
+      ]
     }
   },
   "CostAndUsage-D-001-M": {
@@ -38,7 +41,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "The dataset adheres to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -110,7 +113,23 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-003-C",
+        "CostAndUsage-D-004-C",
+        "CostAndUsage-D-005-M",
+        "CostAndUsage-C-006-M",
+        "CostAndUsage-C-007-C",
+        "CostAndUsage-D-008-M",
+        "CostAndUsage-D-009-M",
+        "CostAndUsage-D-010-M",
+        "CostAndUsage-D-011-C",
+        "CostAndUsage-D-012-M",
+        "CostAndUsage-D-013-M",
+        "CostAndUsage-D-014-M",
+        "CostAndUsage-D-015-M",
+        "CostAndUsage-D-016-M",
+        "CostAndUsage-D-017-M"
+      ]
     }
   },
   "CostAndUsage-D-002-M": {
@@ -123,7 +142,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "The dataset adheres to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -195,7 +214,23 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "AvailabilityZone-C-000-M",
+        "BilledCost-C-000-M",
+        "BillingAccountName-C-000-C",
+        "BillingAccountType-C-000-M",
+        "BillingPeriodEnd-C-000-M",
+        "BillingPeriodStart-C-000-M",
+        "CommitmentDiscountCategory-C-000-C",
+        "CommitmentDiscountId-C-000-C",
+        "CommitmentDiscountName-C-000-M",
+        "CommitmentDiscountStatus-C-000-C",
+        "CommitmentDiscountType-C-000-M",
+        "CommitmentDiscountUnit-C-000-M",
+        "ChargeCategory-C-000-M",
+        "ConsumedQuantity-C-000-C",
+        "ListUnitPrice-C-000-C"
+      ]
     }
   },
   "CostAndUsage-D-003-C": {
@@ -245,7 +280,7 @@
   "CostAndUsage-D-005-M": {
     "Function": "Presence",
     "Reference": "BillingAccountName",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -265,7 +300,7 @@
   "CostAndUsage-C-006-M": {
     "Function": "Presence",
     "Reference": "BilledCost",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -285,7 +320,7 @@
   "CostAndUsage-C-007-C": {
     "Function": "Presence",
     "Reference": "BillingAccountType",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -305,7 +340,7 @@
   "CostAndUsage-D-008-M": {
     "Function": "Presence",
     "Reference": "ChargeCategory",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -325,7 +360,7 @@
   "CostAndUsage-D-009-M": {
     "Function": "Presence",
     "Reference": "BillingPeriodStart",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -345,7 +380,7 @@
   "CostAndUsage-D-010-M": {
     "Function": "Presence",
     "Reference": "BillingPeriodEnd",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -365,7 +400,7 @@
   "CostAndUsage-D-011-C": {
     "Function": "Presence",
     "Reference": "ConsumedQuantity",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -387,7 +422,7 @@
   "CostAndUsage-D-012-M": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountName",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -409,7 +444,7 @@
   "CostAndUsage-D-013-M": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountId",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -431,7 +466,7 @@
   "CostAndUsage-D-014-M": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountType",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -453,7 +488,7 @@
   "CostAndUsage-D-015-M": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountUnit",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -475,7 +510,7 @@
   "CostAndUsage-D-016-M": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountCategory",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
@@ -497,7 +532,7 @@
   "CostAndUsage-D-017-M": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountStatus",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
