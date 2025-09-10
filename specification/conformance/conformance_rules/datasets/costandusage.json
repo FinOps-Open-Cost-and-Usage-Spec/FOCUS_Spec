@@ -128,7 +128,8 @@
         "CostAndUsage-D-014-M",
         "CostAndUsage-D-015-M",
         "CostAndUsage-D-016-M",
-        "CostAndUsage-D-017-M"
+        "CostAndUsage-D-017-M",
+        "CostAndUsage-D-018-M"
       ]
     }
   },
@@ -229,7 +230,8 @@
         "CommitmentDiscountUnit-C-000-M",
         "ChargeCategory-C-000-M",
         "ConsumedQuantity-C-000-C",
-        "ListUnitPrice-C-000-C"
+        "ListUnitPrice-C-000-C",
+        "CommitmentDiscountQuantity-C-000-C"
       ]
     }
   },
@@ -554,7 +556,7 @@
   "CostAndUsage-D-018-M": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountQuantity",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
