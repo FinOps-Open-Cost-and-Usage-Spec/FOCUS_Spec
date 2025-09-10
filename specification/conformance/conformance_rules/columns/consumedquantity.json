@@ -129,7 +129,11 @@
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not 'Usage', or when ChargeCategory is 'Usage' and CommitmentDiscountStatus is 'Unused'",
             "Keyword": "MUST",
-            "Requirement": {},
+            "Requirement": {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ConsumedQuantity",
+                "Value": null
+            },
             "Condition": {
                 "CheckFunction": "OR",
                 "Items": [
@@ -219,7 +223,7 @@
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "CheckNotValue",
-                "ColumnName": "ChargeClass",
+                "ColumnName": "ConsumedQuantity",
                 "Value": null
             },
             "Condition": {
@@ -244,7 +248,11 @@
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is 'Correction'",
             "Keyword": "MAY",
-            "Requirement": {},
+            "Requirement": {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ConsumedQuantity",
+                "Value": null
+            },
             "Condition": {
                 "CheckFunction": "CheckValue",
                 "ColumnName": "ChargeClass",
@@ -263,12 +271,16 @@
         "ApplicabilityCriteria": [
             "USAGE_MEASUREMENT_SUPPORTED"
         ],
-        "Type": "Static",
+        "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MUST be a valid decimal value when not null",
             "Keyword": "MUST",
             "Requirement": {},
-            "Condition": {},
+            "Condition": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "ConsumedQuantity",
+                "Value": null
+            },
             "Dependencies": []
         }
     }

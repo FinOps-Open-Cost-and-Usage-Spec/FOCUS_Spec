@@ -744,7 +744,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
         "Keyword": "MUST",
@@ -761,7 +761,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
         "Keyword": "MUST",
@@ -778,7 +778,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
         "Keyword": "MUST",
@@ -824,7 +824,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
         "Keyword": "MUST",
@@ -841,7 +841,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
         "Keyword": "MUST",
@@ -931,7 +931,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Column IDs MUST use Pascal case",
         "Keyword": "MUST",
@@ -948,7 +948,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Column IDs MUST NOT use abbreviations",
         "Keyword": "MUST",
@@ -965,7 +965,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Column IDs MUST be alphanumeric with no special characters",
         "Keyword": "MUST",
@@ -982,7 +982,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Column IDs SHOULD NOT use acronyms",
         "Keyword": "SHOULD",
@@ -999,7 +999,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
         "Keyword": "SHOULD",
@@ -1016,7 +1016,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID",
         "Keyword": "MUST",
@@ -1033,7 +1033,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix",
         "Keyword": "MAY",
@@ -1050,7 +1050,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Columns with the Category suffix MUST be normalized",
         "Keyword": "MUST",
@@ -1067,7 +1067,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases",
         "Keyword": "MUST",
@@ -1084,7 +1084,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns",
         "Keyword": "SHOULD",
@@ -1101,7 +1101,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset",
         "Keyword": "SHOULD",
@@ -1118,7 +1118,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed",
         "Keyword": "SHOULD",
@@ -1135,7 +1135,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns",
         "Keyword": "MAY",
@@ -2009,7 +2009,11 @@
       "ValidationCriteria": {
         "MustSatisfy": "MAY be null in all other cases",
         "Keyword": "MAY",
-        "Requirement": {},
+        "Requirement": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "ListUnitPrice",
+          "Value": null
+        },
         "Condition": {},
         "Dependencies": []
       }
@@ -2523,7 +2527,11 @@
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not 'Usage', or when ChargeCategory is 'Usage' and CommitmentDiscountStatus is 'Unused'",
         "Keyword": "MUST",
-        "Requirement": {},
+        "Requirement": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "ConsumedQuantity",
+          "Value": null
+        },
         "Condition": {
           "CheckFunction": "OR",
           "Items": [
@@ -2613,7 +2621,7 @@
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
-          "ColumnName": "ChargeClass",
+          "ColumnName": "ConsumedQuantity",
           "Value": null
         },
         "Condition": {
@@ -2638,7 +2646,11 @@
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is 'Correction'",
         "Keyword": "MAY",
-        "Requirement": {},
+        "Requirement": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "ConsumedQuantity",
+          "Value": null
+        },
         "Condition": {
           "CheckFunction": "CheckValue",
           "ColumnName": "ChargeClass",
@@ -2657,12 +2669,16 @@
       "ApplicabilityCriteria": [
         "USAGE_MEASUREMENT_SUPPORTED"
       ],
-      "Type": "Static",
+      "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity MUST be a valid decimal value when not null",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {},
+        "Condition": {
+          "CheckFunction": "CheckNotValue",
+          "ColumnName": "ConsumedQuantity",
+          "Value": null
+        },
         "Dependencies": []
       }
     },
