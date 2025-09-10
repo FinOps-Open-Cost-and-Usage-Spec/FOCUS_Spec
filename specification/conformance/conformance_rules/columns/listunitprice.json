@@ -213,7 +213,11 @@
     "ValidationCriteria": {
       "MustSatisfy": "MAY be null in all other cases",
       "Keyword": "MAY",
-      "Requirement": {},
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": null
+      },
       "Condition": {},
       "Dependencies": []
     }

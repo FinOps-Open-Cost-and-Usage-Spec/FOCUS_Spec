@@ -1,6 +1,3 @@
-import pytest
-
-@pytest.mark.xfail(reason="Known issue, fix pending")
 def test_static_rules_have_non_empty_requirement(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []
