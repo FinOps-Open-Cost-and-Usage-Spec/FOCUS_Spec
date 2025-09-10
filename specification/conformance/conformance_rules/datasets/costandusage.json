@@ -25,7 +25,10 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-001-M",
+        "CostAndUsage-D-002-M"
+      ]
     }
   },
   "CostAndUsage-D-001-M": {
@@ -106,7 +109,23 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-003-C",
+        "CostAndUsage-D-004-C",
+        "CostAndUsage-D-005-M",
+        "CostAndUsage-C-006-M",
+        "CostAndUsage-C-007-C",
+        "CostAndUsage-D-008-M",
+        "CostAndUsage-D-009-M",
+        "CostAndUsage-D-010-M",
+        "CostAndUsage-D-011-C",
+        "CostAndUsage-D-012-M",
+        "CostAndUsage-D-013-M",
+        "CostAndUsage-D-014-M",
+        "CostAndUsage-D-015-M",
+        "CostAndUsage-D-016-M",
+        "CostAndUsage-D-017-M"
+      ]
     }
   },
   "CostAndUsage-D-002-M": {
@@ -187,7 +206,23 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "AvailabilityZone-C-000-M",
+        "BilledCost-C-000-M",
+        "BillingAccountName-C-000-C",
+        "BillingAccountType-C-000-M",
+        "BillingPeriodEnd-C-000-M",
+        "BillingPeriodStart-C-000-M",
+        "CommitmentDiscountCategory-C-000-C",
+        "CommitmentDiscountId-C-000-C",
+        "CommitmentDiscountName-C-000-M",
+        "CommitmentDiscountStatus-C-000-C",
+        "CommitmentDiscountType-C-000-M",
+        "CommitmentDiscountUnit-C-000-M",
+        "ChargeCategory-C-000-M",
+        "ConsumedQuantity-C-000-C",
+        "ListUnitPrice-C-000-C"
+      ]
     }
   },
   "CostAndUsage-D-003-C": {

@@ -36,7 +36,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-004-C"
+        "CostAndUsage-D-004-C",
+        "ListUnitPrice-C-002-M",
+        "ListUnitPrice-C-003-M",
+        "ListUnitPrice-C-004-C",
+        "ListUnitPrice-C-008-C"
       ]
     }
   },
@@ -117,7 +121,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "ChargeCategory-C-000-M"
+        "ChargeCategory-C-000-M",
+        "ListUnitPrice-C-005-C",
+        "ListUnitPrice-C-006-C",
+        "ListUnitPrice-C-007-O"
       ]
     }
   },
@@ -263,7 +270,11 @@
         "Value": null
       },
       "Dependencies": [
-        "ChargeCategory-C-000-M"
+        "ChargeCategory-C-000-M",
+        "ListUnitPrice-C-009-C",
+        "ListUnitPrice-C-010-C",
+        "ListUnitPrice-C-011-M",
+        "ListUnitPrice-C-012-C"
       ]
     }
   },

@@ -30,7 +30,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-C-007-C"
+        "CostAndUsage-C-007-C",
+        "BillingAccountType-C-001-M",
+        "BillingAccountType-C-002-M",
+        "BillingAccountType-C-003-M"
       ]
     }
   },
@@ -100,7 +103,10 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "BillingAccountType-C-005-M",
+        "BillingAccountType-C-006-M"
+      ]
     }
   },
   "BillingAccountType-C-005-M": {

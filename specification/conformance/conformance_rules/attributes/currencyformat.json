@@ -25,7 +25,10 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CurrencyFormat-A-001-M",
+        "CurrencyFormat-A-002-M"
+      ]
     }
   },
   "CurrencyFormat-A-001-M": {

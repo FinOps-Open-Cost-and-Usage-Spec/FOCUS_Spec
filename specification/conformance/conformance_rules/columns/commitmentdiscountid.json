@@ -36,7 +36,11 @@
             },
             "Condition": {},
             "Dependencies": [
-                "CostAndUsage-D-013-M"
+                "CostAndUsage-D-013-M",
+                "CommitmentDiscountId-C-001-M",
+                "CommitmentDiscountId-C-002-M",
+                "CommitmentDiscountId-C-003-M",
+                "CommitmentDiscountId-C-006-C"
             ]
         }
     },
@@ -112,7 +116,10 @@
                 ]
             },
             "Condition": {},
-            "Dependencies": []
+            "Dependencies": [
+                "CommitmentDiscountId-C-004-C",
+                "CommitmentDiscountId-C-005-C"
+            ]
         }
     },
     "CommitmentDiscountId-C-004-C": {
@@ -185,7 +192,10 @@
                 "ColumnName": "CommitmentDiscountId",
                 "Value": null
             },
-            "Dependencies": []
+            "Dependencies": [
+                "CommitmentDiscountId-C-007-C",
+                "CommitmentDiscountId-C-008-C"
+            ]
         }
     },
     "CommitmentDiscountId-C-007-C": {

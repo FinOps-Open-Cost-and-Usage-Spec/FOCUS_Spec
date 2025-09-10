@@ -220,7 +220,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CostAndUsage-D-001-M",
+          "CostAndUsage-D-002-M"
+        ]
       }
     },
     "CostAndUsage-D-001-M": {
@@ -301,7 +304,23 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CostAndUsage-D-003-C",
+          "CostAndUsage-D-004-C",
+          "CostAndUsage-D-005-M",
+          "CostAndUsage-C-006-M",
+          "CostAndUsage-C-007-C",
+          "CostAndUsage-D-008-M",
+          "CostAndUsage-D-009-M",
+          "CostAndUsage-D-010-M",
+          "CostAndUsage-D-011-C",
+          "CostAndUsage-D-012-M",
+          "CostAndUsage-D-013-M",
+          "CostAndUsage-D-014-M",
+          "CostAndUsage-D-015-M",
+          "CostAndUsage-D-016-M",
+          "CostAndUsage-D-017-M"
+        ]
       }
     },
     "CostAndUsage-D-002-M": {
@@ -382,7 +401,23 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "AvailabilityZone-C-000-M",
+          "BilledCost-C-000-M",
+          "BillingAccountName-C-000-C",
+          "BillingAccountType-C-000-M",
+          "BillingPeriodEnd-C-000-M",
+          "BillingPeriodStart-C-000-M",
+          "CommitmentDiscountCategory-C-000-C",
+          "CommitmentDiscountId-C-000-C",
+          "CommitmentDiscountName-C-000-M",
+          "CommitmentDiscountStatus-C-000-C",
+          "CommitmentDiscountType-C-000-M",
+          "CommitmentDiscountUnit-C-000-M",
+          "ChargeCategory-C-000-M",
+          "ConsumedQuantity-C-000-C",
+          "ListUnitPrice-C-000-C"
+        ]
       }
     },
     "CostAndUsage-D-003-C": {
@@ -733,7 +768,11 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "DateTimeFormat-A-001-M",
+          "DateTimeFormat-A-002-M",
+          "DateTimeFormat-A-003-M"
+        ]
       }
     },
     "DateTimeFormat-A-001-M": {
@@ -813,7 +852,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CurrencyFormat-A-001-M",
+          "CurrencyFormat-A-002-M"
+        ]
       }
     },
     "CurrencyFormat-A-001-M": {
@@ -920,7 +962,21 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "ColumnHandling-A-001-M",
+          "ColumnHandling-A-002-M",
+          "ColumnHandling-A-003-M",
+          "ColumnHandling-A-004-O",
+          "ColumnHandling-A-005-O",
+          "ColumnHandling-A-006-O",
+          "ColumnHandling-A-007-O",
+          "ColumnHandling-A-008-M",
+          "ColumnHandling-A-009-M",
+          "ColumnHandling-A-010-O",
+          "ColumnHandling-A-011-O",
+          "ColumnHandling-A-012-O",
+          "ColumnHandling-A-013-O"
+        ]
       }
     },
     "ColumnHandling-A-001-M": {
@@ -1181,7 +1237,11 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-012-M"
+          "CostAndUsage-D-012-M",
+          "CommitmentDiscountName-C-001-M",
+          "CommitmentDiscountName-C-002-M",
+          "CommitmentDiscountName-C-003-M",
+          "CommitmentDiscountName-C-004-M"
         ]
       }
     },
@@ -1257,7 +1317,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CommitmentDiscountName-C-004-C",
+          "CommitmentDiscountName-C-005-C"
+        ]
       }
     },
     "CommitmentDiscountName-C-004-C": {
@@ -1319,7 +1382,10 @@
           "ColumnName": "CommitmentDiscountId",
           "Value": null
         },
-        "Dependencies": []
+        "Dependencies": [
+          "CommitmentDiscountName-C-006-C",
+          "CommitmentDiscountName-C-007-C"
+        ]
       }
     },
     "CommitmentDiscountName-C-006-C": {
@@ -1377,10 +1443,6 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "BillingAccountName-D-001-M"
-            },
-            {
-              "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "BillingAccountName-C-002-M"
             },
             {
@@ -1395,7 +1457,10 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-005-M"
+          "CostAndUsage-D-005-M",
+          "BillingAccountName-C-002-M",
+          "BillingAccountName-C-003-M",
+          "BillingAccountName-C-004-C"
         ]
       }
     },
@@ -1497,7 +1562,11 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-009-M"
+          "CostAndUsage-D-009-M",
+          "BillingPeriodStart-C-002-M",
+          "BillingPeriodStart-C-003-M",
+          "BillingPeriodStart-C-004-M",
+          "BillingPeriodStart-C-005-M"
         ]
       }
     },
@@ -1610,7 +1679,10 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-008-M"
+          "CostAndUsage-D-008-M",
+          "ChargeCategory-C-001-M",
+          "ChargeCategory-C-002-M",
+          "ChargeCategory-C-003-M"
         ]
       }
     },
@@ -1734,7 +1806,10 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-003-C"
+          "CostAndUsage-D-003-C",
+          "AvailabilityZone-C-002-M",
+          "AvailabilityZone-C-003-M",
+          "AvailabilityZone-C-004-M"
         ]
       }
     },
@@ -1832,7 +1907,11 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-004-C"
+          "CostAndUsage-D-004-C",
+          "ListUnitPrice-C-002-M",
+          "ListUnitPrice-C-003-M",
+          "ListUnitPrice-C-004-C",
+          "ListUnitPrice-C-008-C"
         ]
       }
     },
@@ -1913,7 +1992,10 @@
         },
         "Condition": {},
         "Dependencies": [
-          "ChargeCategory-C-000-M"
+          "ChargeCategory-C-000-M",
+          "ListUnitPrice-C-005-C",
+          "ListUnitPrice-C-006-C",
+          "ListUnitPrice-C-007-O"
         ]
       }
     },
@@ -2059,7 +2141,11 @@
           "Value": null
         },
         "Dependencies": [
-          "ChargeCategory-C-000-M"
+          "ChargeCategory-C-000-M",
+          "ListUnitPrice-C-009-C",
+          "ListUnitPrice-C-010-C",
+          "ListUnitPrice-C-011-M",
+          "ListUnitPrice-C-012-C"
         ]
       }
     },
@@ -2207,7 +2293,11 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-013-M"
+          "CostAndUsage-D-013-M",
+          "CommitmentDiscountId-C-001-M",
+          "CommitmentDiscountId-C-002-M",
+          "CommitmentDiscountId-C-003-M",
+          "CommitmentDiscountId-C-006-C"
         ]
       }
     },
@@ -2283,7 +2373,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CommitmentDiscountId-C-004-C",
+          "CommitmentDiscountId-C-005-C"
+        ]
       }
     },
     "CommitmentDiscountId-C-004-C": {
@@ -2356,7 +2449,10 @@
           "ColumnName": "CommitmentDiscountId",
           "Value": null
         },
-        "Dependencies": []
+        "Dependencies": [
+          "CommitmentDiscountId-C-007-C",
+          "CommitmentDiscountId-C-008-C"
+        ]
       }
     },
     "CommitmentDiscountId-C-007-C": {
@@ -2434,7 +2530,11 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-011-C"
+          "CostAndUsage-D-011-C",
+          "ConsumedQuantity-C-001-M",
+          "ConsumedQuantity-C-002-M",
+          "ConsumedQuantity-C-003-M",
+          "ConsumedQuantity-C-008-M"
         ]
       }
     },
@@ -2510,7 +2610,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "ConsumedQuantity-C-004-C",
+          "ConsumedQuantity-C-005-C"
+        ]
       }
     },
     "ConsumedQuantity-C-004-C": {
@@ -2602,7 +2705,10 @@
             }
           ]
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ConsumedQuantity-C-006-C",
+          "ConsumedQuantity-C-007-C"
+        ]
       }
     },
     "ConsumedQuantity-C-006-C": {
@@ -2723,7 +2829,12 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-015-M"
+          "CostAndUsage-D-015-M",
+          "CommitmentDiscountUnit-C-001-M",
+          "CommitmentDiscountUnit-C-002-M",
+          "CommitmentDiscountUnit-C-003-M",
+          "CommitmentDiscountUnit-C-004-O",
+          "CommitmentDiscountUnit-C-007-C"
         ]
       }
     },
@@ -2821,7 +2932,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CommitmentDiscountUnit-C-005-C",
+          "CommitmentDiscountUnit-C-006-C"
+        ]
       }
     },
     "CommitmentDiscountUnit-C-005-M": {
@@ -2918,7 +3032,11 @@
           "ColumnName": "CommitmentDiscountUnit",
           "Value": null
         },
-        "Dependencies": []
+        "Dependencies": [
+          "CommitmentDiscountUnit-C-008-C",
+          "CommitmentDiscountUnit-C-009-C",
+          "CommitmentDiscountUnit-C-010-C"
+        ]
       }
     },
     "CommitmentDiscountUnit-C-008-M": {
@@ -3009,7 +3127,10 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-C-007-C"
+          "CostAndUsage-C-007-C",
+          "BillingAccountType-C-001-M",
+          "BillingAccountType-C-002-M",
+          "BillingAccountType-C-003-M"
         ]
       }
     },
@@ -3079,7 +3200,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "BillingAccountType-C-005-M",
+          "BillingAccountType-C-006-M"
+        ]
       }
     },
     "BillingAccountType-C-005-M": {
@@ -3182,7 +3306,10 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-016-M"
+          "CostAndUsage-D-016-M",
+          "CommitmentDiscountCategory-C-001-M",
+          "CommitmentDiscountCategory-C-002-M",
+          "CommitmentDiscountCategory-C-005-M"
         ]
       }
     },
@@ -3236,7 +3363,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CommitmentDiscountCategory-C-003-C",
+          "CommitmentDiscountCategory-C-004-C"
+        ]
       }
     },
     "CommitmentDiscountCategory-C-003-C": {
@@ -3358,16 +3488,15 @@
             {
               "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "CommitmentDiscountType-C-003-M"
-            },
-            {
-              "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountType-C-004-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-014-M"
+          "CostAndUsage-D-014-M",
+          "CommitmentDiscountType-C-001-M",
+          "CommitmentDiscountType-C-002-M",
+          "CommitmentDiscountType-C-003-M"
         ]
       }
     },
@@ -3443,7 +3572,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CommitmentDiscountType-C-004-C",
+          "CommitmentDiscountType-C-005-C"
+        ]
       }
     },
     "CommitmentDiscountType-C-004-C": {
@@ -3539,7 +3671,11 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-010-M"
+          "CostAndUsage-D-010-M",
+          "BillingPeriodEnd-C-002-M",
+          "BillingPeriodEnd-C-003-M",
+          "BillingPeriodEnd-C-004-M",
+          "BillingPeriodEnd-C-005-M"
         ]
       }
     },
@@ -3652,7 +3788,10 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-009-M"
+          "CostAndUsage-D-009-M",
+          "CommitmentDiscountStatus-C-001-M",
+          "CommitmentDiscountStatus-C-002-M",
+          "CommitmentDiscountStatus-C-005-M"
         ]
       }
     },
@@ -3704,7 +3843,10 @@
           ]
         },
         "Condition": {},
-        "Dependencies": []
+        "Dependencies": [
+          "CommitmentDiscountStatus-C-003-C",
+          "CommitmentDiscountStatus-C-004-C"
+        ]
       }
     },
     "CommitmentDiscountStatus-C-004-C": {
@@ -3836,7 +3978,13 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-C-006-M"
+          "CostAndUsage-C-006-M",
+          "BilledCost-C-002-M",
+          "BilledCost-C-003-M",
+          "BilledCost-C-004-M",
+          "BilledCost-C-005-M",
+          "BilledCost-C-006-M",
+          "BilledCost-C-007-M"
         ]
       }
     },

@@ -36,7 +36,11 @@
             },
             "Condition": {},
             "Dependencies": [
-                "CostAndUsage-D-011-C"
+                "CostAndUsage-D-011-C",
+                "ConsumedQuantity-C-001-M",
+                "ConsumedQuantity-C-002-M",
+                "ConsumedQuantity-C-003-M",
+                "ConsumedQuantity-C-008-M"
             ]
         }
     },
@@ -112,7 +116,10 @@
                 ]
             },
             "Condition": {},
-            "Dependencies": []
+            "Dependencies": [
+                "ConsumedQuantity-C-004-C",
+                "ConsumedQuantity-C-005-C"
+            ]
         }
     },
     "ConsumedQuantity-C-004-C": {
@@ -204,7 +211,10 @@
                     }
                 ]
             },
-            "Dependencies": []
+            "Dependencies": [
+                "ConsumedQuantity-C-006-C",
+                "ConsumedQuantity-C-007-C"
+            ]
         }
     },
     "ConsumedQuantity-C-006-C": {

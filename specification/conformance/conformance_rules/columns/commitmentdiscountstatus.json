@@ -30,7 +30,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-009-M"
+        "CostAndUsage-D-009-M",
+        "CommitmentDiscountStatus-C-001-M",
+        "CommitmentDiscountStatus-C-002-M",
+        "CommitmentDiscountStatus-C-005-M"
       ]
     }
   },
@@ -82,7 +85,10 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CommitmentDiscountStatus-C-003-C",
+        "CommitmentDiscountStatus-C-004-C"
+      ]
     }
   },
   "CommitmentDiscountStatus-C-004-C": {

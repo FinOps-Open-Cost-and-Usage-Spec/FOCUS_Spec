@@ -1,5 +1,3 @@
-import pytest
-
 def _iter_values_for_key(node, target_key):
     """Yield all string values for a given key found anywhere under node."""
     if node is None:
@@ -14,7 +12,7 @@ def _iter_values_for_key(node, target_key):
         for item in node:
             yield from _iter_values_for_key(item, target_key)
 
-@pytest.mark.xfail(reason="Known issue, fix pending")
+
 def test_conformance_ruleid_refs_listed_in_dependencies(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []
