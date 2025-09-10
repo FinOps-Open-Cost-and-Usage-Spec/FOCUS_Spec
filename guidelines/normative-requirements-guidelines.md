@@ -91,7 +91,6 @@
 
 * **Include JSON schema normative requirements for JSON Object Format columns**: The JSON Object Format specifies that the format is subject to the requirement of the column and that provider-defined columns must have documented schema.
   * A recommended pattern is an Object containing a collection whose key is "Elements" containing one or more objects in the Key-Value format.
-  * **Include a [JSON Type Definition](https://www.rfc-editor.org/rfc/rfc8927) (JTD) as an approximation of the expected schema, but clarify that normative requirements take precedence when there is a discrepancy**: JSON Type Definition is a convenient way to visualize the expected shape of JSON data, but it often cannot replicate the JSON schema normative requirements of FOCUS. E.g. [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified.
 
   **Example JSON**
   ```json
@@ -107,6 +106,8 @@
     } ]
   }
   ```
+
+* **Include a [JSON Type Definition](https://www.rfc-editor.org/rfc/rfc8927) (JTD) as an approximation of the expected schema, but clarify that normative requirements take precedence when there is a discrepancy**: JSON Type Definition is a convenient way to visualize the expected shape of JSON data, but it often cannot replicate the JSON schema normative requirements of FOCUS. E.g. [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified.
 
   **Example JTD**
   ```json
@@ -141,7 +142,9 @@
   * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
   * In **SkuPriceDetails**, refer to **property key** when addressing only the key, and **property value** when addressing only the value.
   * When linking a key to its value, use **corresponding value**.
-  
+
+* **Put references to a specific key in double quotes**: In the case of AllocatedMethodDetails, normative requirements are applied to specific keys. To delineate for example that the object with the key "Elements" is being referred, the key should be used in its exact casing inside of double quotation marks `"`. This may result in situations that are traditionally gramatically incorrect where the period resides outside the qutations when the sentence ends in a reference to a specific key.
+
 * **First Mention and Context**: In the case of SkuPriceDetails property key, the first mention explicitly uses "SkuPriceDetails property key" to establish the context. Subsequent references to "property key" and "property value" omit "SkuPriceDetails" as the context is already understood. In contrast, for Tags, this is not necessary, as the context is inherently clear from the column name.
 
 * **Start Key-Specific Requirements with the Key Term**: When a requirement applies to a key, it SHOULD begin with **tag key**, **property key**, or the applicable term for that column.
