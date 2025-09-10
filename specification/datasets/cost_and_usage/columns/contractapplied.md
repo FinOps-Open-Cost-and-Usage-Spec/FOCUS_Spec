@@ -1,8 +1,8 @@
 # Contract Applied
 
-Contract Applied is a set of datapoints that associate a charge to one or more [*contract commitments*](#glossary:contract-commitment), denoted as key-value pairs in JSON format.  Contract Applied allows the practitioner to track the progress of the commitments to which they have agreed with a provider.
+Contract Applied is a set of properties that associate a charge with one or more [*contract commitments*](#glossary:contract-commitment), denoted as key-value pairs in a JSON object.  Contract Applied allows the practitioner to track the progress of the commitments to which they have agreed with a provider.
 
-The datapoints are:
+The FOCUS-defined properties are:
 
 * `Contract ID`: The unique identifier representing a single contract.
 * `Contract Commitment ID`: The unique identifier representing a single contract term.
@@ -10,16 +10,18 @@ The datapoints are:
 * `Contract Commitment Applied Quantity`: The usage of the charge applied to a single contract term.
 * `Contract Commitment Applied Unit`: The unit of measure for the usage of the charge applied to a single contract term.
 
-In addition to these five datapoints, a data generator may include one or more custom datapoints, also denoted as key-value pairs.
+In addition to these, a data generator may include one or more custom properties, also denoted as key-value pairs.
+
+## Requirements
+
+### Column Requirements
 
 The ContractApplied column adheres to the following requirements:
 
 * ContractApplied MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
 * ContractApplied MUST conform to [KeyValueFormat](#key-valueformat) requirements.
 * ContractApplied property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
-* ContractApplied nullability is defined as follows:
-  * ContractApplied MUST be null when [ContractID](#contractid) is null.
-  * ContractApplied MUST NOT be null when ContractID is not null.
+* ContractApplied MUST NOT be null when a contract is applied to the charge.
 * When ContractApplied is not null, ContractApplied adheres to the following additional requirements:
   * ContractApplied objects MUST contain four key-value pairs, representing ContractCommitmentID, ContractCommitmentAppliedCost, ContractCommitmentAppliedQuantity, and ContractCommitmentAppliedUnit.
   * ContractApplied objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.
@@ -28,9 +30,25 @@ The ContractApplied column adheres to the following requirements:
     * ContractApplied custom key-value pairs MUST be documented by the data generator.
     * ContractApplied custom key-value pairs MUST NOT be nested.
 
-## JSON Datapoints
+### Object Schema Requirements
 
-The next sections describe the five FOCUS-defined datapoints contained within Contract Applied, each of which have their own requirements.
+Allocated Method Details consists of a valid JSON object which contains an array of key-value objects describing the one or more contract commitments applied to the charge. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the contract application.
+
+* If ContractApplied is not null, ContractApplied adheres to the following requirements:
+  * ContractApplied MUST have a top-level key "Elements" which contains an array.
+  * Each item in "Elements" MUST be an object.
+    * Objects inside "Elements" MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+    * Objects inside "Elements" MUST contain key-value pairs (contract applications).
+      * FOCUS-defined contract application properties adhere to the following additional requirements:
+        * Contract application property key MUST match the spelling and casing specified for the FOCUS-defined property.
+        * Contract application property value MUST be of the type specified for that property.
+        * Contract application property MUST adhere to additional normative requirements specific to that property.
+      * Contract application property keys MUST begin with the string "x_" unless it is a FOCUS-defined allocation property.
+  * ContractApplied root object MAY contain custom properties, in addition to "Elements".
+
+### Content Requirements
+
+The following keys are used for contract application properties to facilitate querying data across allocations and across providers. FOCUS-defined keys will appear in the list below, and custom keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
 | Datapoint                            | Column Type | Feature Level | Allows Nulls | Data Type |
 | ------------------------------------ | ----------- | ------------- | ------------ | --------- |
@@ -40,7 +58,7 @@ The next sections describe the five FOCUS-defined datapoints contained within Co
 | Contract Commitment Applied Quantity | Dimension   | Conditional   | True         | Numeric   |
 | Contract Commitment Applied Unit     | Dimension   | Conditional   | True         | String    |
 
-### Contract ID
+<b>Contract ID</b>
 
 Contract ID is a provider-assigned identifier for a contract describing the agreed terms between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
@@ -56,7 +74,7 @@ The ContractId column adheres to the following requirements:
   * ContractId MUST be a unique identifier within the provider.
   * ContractId SHOULD be a fully-qualified identifier.
 
-### Contract Commitment ID
+<b>Contract Commitment ID</b>
 
 A Contract Commitment ID is a provider-assigned identifier describing an agreement negotiated between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
@@ -75,7 +93,7 @@ The ContractCommitmentID column adheres to the following requirements:
   * ContractCommitmentID MUST be equal to ResourceID when ChargeCategory is "Purchase".
   * ContractCommitmentID MAY be equal to ContractID.
 
-### Contract Commitment Applied Cost
+<b>Contract Commitment Applied Cost</b>
 
 Contract Commitment Applied Cost represents the cost of the charge applied to the contract line item.  Contract Commitment Applied Cost is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Cost is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as negotiated between a provider and a customer.
 
@@ -90,7 +108,7 @@ The ContractCommitmentAppliedCost column adheres to the following requirements:
 * ContractCommitmentAppliedCost MUST be a valid decimal value.
 * ContractCommitmentAppliedCost MUST be denominated in the BillingCurrency.
 
-### Contract Commitment Applied Quantity
+<b>Contract Commitment Applied Quantity</b>
 
 Contract Commitment Applied Quantity represents the quantity of the charge applied to the contract line item.  Contract Commitment Applied Quantity is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as negotiated between a provider and a customer.
 
@@ -105,7 +123,7 @@ The ContractCommitmentAppliedQuantity column adheres to the following requiremen
 * ContractCommitmentAppliedQuantity MUST be a valid decimal value.
 * ContractCommitmentAppliedQuantity MUST be denominated in the ContractCommitmentAppliedUnit.
 
-### Contract Commitment Applied Unit
+<b>Contract Commitment Applied Unit</b>
 
 The Contract Commitment Applied Unit represents a provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. Contract Commitment Applied Unit complements the Contract Commitment Applied Quantity metric.
 
@@ -119,9 +137,77 @@ The ContractCommitmentAppliedUnit column adheres to the following requirements:
   * ContractCommitmentAppliedUnit MUST be null when ContractCommitmentAppliedQuantity is null.
   * ContractCommitmentAppliedUnit MUST NOT be null when ContractCommitmentAppliedQuantity is not null.
 
-# Examples
+## Overview
 
-## Example 1: Initial contract commitment
+### Array of Objects
+
+The parent array is called `Elements` and contains one or more objects which communicate information about how an allocated record was calculated.
+
+| Key | ValueType | Required | Description |
+| ----- | ---- | ---------- | ----------- |
+| Elements | Array | True | The parent array containing one or more objects which communicate information about how contract commitments were applied to the charge. |
+
+### Object Entries
+
+The `Elements` array contains one or more objects, each of which contains the following entries:
+
+| Key                                  | Column Type | Feature Level | Allows Nulls | Data Type |
+| ------------------------------------ | ----------- | ------------- | ------------ | --------- |
+| Contract ID                          | Dimension   | Conditional   | False        | String    |
+| Contract Commitment ID               | Dimension   | Conditional   | False        | String    |
+| Contract Commitment Applied Cost     | Dimension   | Conditional   | True         | Numeric   |
+| Contract Commitment Applied Quantity | Dimension   | Conditional   | True         | Numeric   |
+| Contract Commitment Applied Unit     | Dimension   | Conditional   | True         | String    |
+
+### Example
+
+```json
+{
+  "Elements" : [ {
+    "ContractID" : "12345",
+    "ContractCommitmentID" : "23456",
+    "ContractCommitmentAppliedCost" : 500000.00,
+    "ContractCommitmentAppliedQuantity" : null,
+    "ContractCommitmentAppliedUnit" : null
+  }, {
+    "ContractID" : "12345",
+    "ContractCommitmentID" : "34567",
+    "ContractCommitmentAppliedCost" : null,
+    "ContractCommitmentAppliedQuantity" : 10000.00,
+    "ContractCommitmentAppliedUnit" : "compute_hours"
+  } ]
+}
+```
+
+### JSON Type Definition
+
+```json
+{
+  "properties": {
+    "Elements": {
+      "elements": {
+        "properties": {
+          "ContractID": { "type": "string" },
+          "ContractCommitmentID": { "type": "string" }
+        },
+        "optionalProperties": {
+          "ContractCommitmentAppliedCost": { "type": "float64" },
+          "ContractCommitmentAppliedQuantity": { "type": "float64" },
+          "ContractCommitmentAppliedUnit": { "type": "float64" }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}
+```
+
+NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column but cannot accurately describe the normative requirements for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
+
+## Example Scenarios
+
+### Scenario 1: Initial contract commitment
 
 A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a provider and a customer:
 
@@ -137,35 +223,33 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
   "ChargeCategory": "Purchase",
   "BilledCost": 500000.00,
   "EffectiveCost": 0.00,
-  "ContractApplied": [
-          {
-               "ContractID": "12345",
-               "ContractCommitmentID": "12345",
-               "ContractCommitmentAppliedCost": 500000.00,
-               "ContractCommitmentAppliedQuantity": null,
-               "ContractCommitmentAppliedUnit": null
-           },
-           {
-               "ContractID": "12345",            
-               "ContractCommitmentID": "23456",
-               "ContractCommitmentAppliedCost": 25000.00,
-               "ContractCommitmentAppliedQuantity": null,
-               "ContractCommitmentAppliedUnit": null
-           },
-           {
-               "ContractID": "12345",
-               "ContractCommitmentID": "34567",
-               "ContractCommitmentAppliedCost": null,
-               "ContractCommitmentAppliedQuantity": 100000.00,
-               "ContractCommitmentAppliedUnit": "compute_hours"
-           }
-     ]
-}
+  "ContractApplied":
+    {
+      "Elements": [ {
+        "ContractID": "12345",
+        "ContractCommitmentID": "12345",
+        "ContractCommitmentAppliedCost": 500000.00,
+        "ContractCommitmentAppliedQuantity": null,
+        "ContractCommitmentAppliedUnit": null
+      }, {
+        "ContractID": "12345",
+        "ContractCommitmentID": "23456",
+        "ContractCommitmentAppliedCost": 25000.00,
+        "ContractCommitmentAppliedQuantity": null,
+        "ContractCommitmentAppliedUnit": null
+      }, {
+        "ContractID": "12345",
+        "ContractCommitmentID": "34567",
+        "ContractCommitmentAppliedCost": null,
+        "ContractCommitmentAppliedQuantity": 100000.00,
+        "ContractCommitmentAppliedUnit": "compute_hours"
+      } ]
+    }
 ```
 
-## Example 2: Contract commitment usage with no custom columns
+### Scenario 2: Contract commitment usage with no custom columns
 
-Assume the contract commitment as described in Example 1.  Assume that only 50% of cost and usage gets applied to the contract commitments, per the contract terms.
+Assume the contract commitment as described in Scenario 1.  Assume that only 50% of cost and usage gets applied to the contract commitments, per the contract terms.
 
 A single Cost and Usage charge for `myResource1` carries Effective Cost of 30 (denominated in USD) and Consumed Quantity of 1 (denominated in compute hours).  The Charge Category is denoted as Usage.
 
@@ -178,36 +262,33 @@ This applies to the contract commitments in the following manner:
   "BilledCost": 0.00,
   "EffectiveCost": 30.00,
   "ConsumedQuantity": 1,
-  "ContractID": "12345",
-  "ContractApplied": [
-          {
-               "ContractID": "12345",
-               "ContractCommitmentID": "12345",
-               "ContractCommitmentAppliedCost": 15.00,
-               "ContractCommitmentAppliedQuantity": null,
-               "ContractCommitmentAppliedUnit": null
-           },
-           {
-               "ContractID": "12345",
-               "ContractCommitmentID": "23456",
-               "ContractCommitmentAppliedCost": 15.00,
-               "ContractCommitmentAppliedQuantity": null,
-               "ContractCommitmentAppliedUnit": null
-           },
-           {
-               "ContractID": "12345",
-               "ContractCommitmentID": "34567",
-               "ContractCommitmentAppliedCost": null,
-               "ContractCommitmentAppliedQuantity": 0.50,
-               "ContractCommitmentAppliedUnit": "compute_hours"
-           }
-     ]
-}
+  "ContractApplied":
+    {
+      "Elements": [ {
+        "ContractID": "12345",
+        "ContractCommitmentID": "12345",
+        "ContractCommitmentAppliedCost": 15.00,
+        "ContractCommitmentAppliedQuantity": null,
+        "ContractCommitmentAppliedUnit": null
+      }, {
+        "ContractID": "12345",
+        "ContractCommitmentID": "23456",
+        "ContractCommitmentAppliedCost": 15.00,
+        "ContractCommitmentAppliedQuantity": null,
+        "ContractCommitmentAppliedUnit": null
+      }, {
+        "ContractID": "12345",
+        "ContractCommitmentID": "34567",
+        "ContractCommitmentAppliedCost": null,
+        "ContractCommitmentAppliedQuantity": 0.50,
+        "ContractCommitmentAppliedUnit": "compute_hours"
+      } ]
+    }
 ```
 
-## Example 3: Contract commitment usage with custom columns
+### Scenario 3: Contract commitment usage with custom columns
 
-The same as Example 2, except a custom key-value pair `x_ContractCommitmentCostBalance` is provided by the data generator.   This datapoint represents the value remaining on a given contract commitment.
+The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCostBalance` is provided by the data generator.   This datapoint represents the value remaining on a given contract commitment.
 
 ```json
 {
@@ -216,33 +297,31 @@ The same as Example 2, except a custom key-value pair `x_ContractCommitmentCostB
   "BilledCost": 0.00,
   "EffectiveCost": 30.00,
   "ConsumedQuantity": 1,
-  "ContractApplied": [
-          {
-               "ContractID": "12345",
-               "ContractCommitmentID": "12345",
-               "ContractCommitmentAppliedCost": 15.00,
-               "ContractCommitmentAppliedQuantity": null,
-               "ContractCommitmentAppliedUnit": null,
-               "x_ContractCommitmentCostBalance": 499985.00
-           },
-           {
-               "ContractID": "12345",
-               "ContractCommitmentID": "23456",
-               "ContractCommitmentAppliedCost": 15.00,
-               "ContractCommitmentAppliedQuantity": null,
-               "ContractCommitmentAppliedUnit": null,
-               "x_ContractCommitmentCostBalance": 24985.00
-           },
-           {
-               "ContractID": "12345",
-               "ContractCommitmentID": "34567",
-               "ContractCommitmentAppliedCost": null,
-               "ContractCommitmentAppliedQuantity": 0.50,
-               "ContractCommitmentAppliedUnit": "compute_hours",
-               "x_ContractCommitmentCostBalance": null
-           }
-     ]
-}
+  "ContractApplied":
+    {
+      "Elements": [ {
+        "ContractID": "12345",
+        "ContractCommitmentID": "12345",
+        "ContractCommitmentAppliedCost": 15.00,
+        "ContractCommitmentAppliedQuantity": null,
+        "ContractCommitmentAppliedUnit": null,
+        "x_ContractCommitmentCostBalance": 499985.00
+      }, {
+        "ContractID": "12345",
+        "ContractCommitmentID": "23456",
+        "ContractCommitmentAppliedCost": 15.00,
+        "ContractCommitmentAppliedQuantity": null,
+        "ContractCommitmentAppliedUnit": null,
+        "x_ContractCommitmentCostBalance": 24985.00
+      }, {
+        "ContractID": "12345",
+        "ContractCommitmentID": "34567",
+        "ContractCommitmentAppliedCost": null,
+        "ContractCommitmentAppliedQuantity": 0.50,
+        "ContractCommitmentAppliedUnit": "compute_hours",
+        "x_ContractCommitmentCostBalance": null
+      } ]
+    }
 ```
 
 ## Column ID
@@ -255,7 +334,7 @@ Contract Applied
 
 ## Description
 
-A set of datapoints that associate a charge to one or more [*contract commitments*](#glossary:contract-commitment).
+A set of properties that associate a charge with one or more [*contract commitments*](#glossary:contract-commitment).
 
 ## Content Constraints
 
@@ -265,7 +344,7 @@ A set of datapoints that associate a charge to one or more [*contract commitment
 | Feature level | Conditional                        |
 | Allows nulls  | True                               |
 | Data type     | JSON                               |
-| Value format  | [JSONFormat](#jsonformat)          |
+| Value format  | [JSON Object Format](#jsonobjectformat) |
 
 ## Introduced (version)
 
