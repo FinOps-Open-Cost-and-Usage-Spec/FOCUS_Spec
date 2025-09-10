@@ -6,46 +6,17 @@ from json.decoder import JSONDecodeError
 from jsonschema import Draft7Validator
 from jsonschema.exceptions import ValidationError, SchemaError 
 from build_helpers import init_logger
-
+import sys
+import subprocess
+from pathlib import Path
 
 def get_args():
     parser = argparse.ArgumentParser(description='CR JSON Generator.')
     parser.add_argument('--logging-level', type=str, default='INFO', choices={"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}, help='Logging level to use')
-    parser.add_argument('--write-on-check-failure', action='store_true', help='Write out JSON file even on failure to verify')
+    parser.add_argument('--build-only', action='store_true', help='Write out JSON file instead of running the test process')
     return parser.parse_args()
 
-def validate_check_functions(spec, logger):
-    valid_functions = set(spec.get("CheckFunctions", {}).keys())
-    errors = []
-
-    def check_function_recurse(obj, path):
-        if isinstance(obj, dict):
-            if "CheckFunction" in obj:
-                fn_name = obj["CheckFunction"]
-                if fn_name is not None and fn_name not in valid_functions:
-                    errors.append(f"Invalid CheckFunction '{fn_name}' at {path}")
-            for key, val in obj.items():
-                check_function_recurse(val, f"{path}.{key}")
-        elif isinstance(obj, list):
-            for idx, item in enumerate(obj):
-                check_function_recurse(item, f"{path}[{idx}]")
-
-    for rule_id, rule in spec.get("ConformanceRules", {}).items():
-        vc = rule.get("ValidationCriteria", {})
-        check_function_recurse(vc.get("Requirement", {}), f"{rule_id}.ValidationCriteria.Requirement")
-        check_function_recurse(vc.get("Condition", {}), f"{rule_id}.ValidationCriteria.Condition")
-
-    if errors:
-        for err in errors:
-            logger.error(f"❌ - {err}")
-    else:
-        logger.info("✅ All CheckFunctions references are valid.")
-    return errors
-
-if __name__ == "__main__":
-    args = get_args()
-    logger = init_logger(args.logging_level)
-
+def build():
     cr = {}
     files = [
         'cr_details.json',
@@ -76,42 +47,21 @@ if __name__ == "__main__":
                     conformance_rules.update(rules)
     cr['ConformanceRules'] = conformance_rules
 
-    errors = validate_check_functions(cr, logger)
-    if errors and not args.write_on_check_failure:
-        logger.warning('Exiting as --write-on-check-failure is not flagged')
-        exit(1)
-    # Load schema
-    with open('cr_schema.json', 'r', encoding='utf-8') as schema_file:
-        schema = json.load(schema_file)
-
-    # Validate json against the schema and collect all errors
-    try:
-      validator = Draft7Validator(schema)
-      errors = sorted(validator.iter_errors(cr), key=lambda e: e.path)
-    except ValidationError as e:
-      logger.error(f'Validation error {repr(e)}')
-      exit(1)
-    except SchemaError as e:
-      logger.error(f'Schema error {repr(e)}')
-      exit(1)
-
-    if errors:
-        logger.error("❌ Validation failed with the following issues:")
-        for error in errors:
-            path = ".".join(str(p) for p in error.path)
-            logger.error(f" - [{path}] {error.message}")
-        if not args.write_on_check_failure:
-          logger.warning('Exiting as --write-on-check-failure is not flagged')
-          exit(1)
-
-    else:
-        logger.info("✅ JSON is valid according to cr_schema.json")
-
-    cr_output_file = f'cr-{cr['Details']['CRVersion']}.json'
+    cr_output_file = f"cr-{cr['Details']['CRVersion']}.json"
     try:
         with open(cr_output_file, 'w', encoding='utf-8') as out_file:
             json.dump(cr, out_file, indent=2)
         logger.info(f"✅ {cr_output_file} written")
     except Exception as e:
         logger.error(f"❌ Output of {cr_output_file} failed {repr(e)}")
-        exit(1)
+        exit(1) 
+
+if __name__ == "__main__":
+    args = get_args()
+    logger = init_logger(args.logging_level)
+    if args.build_only:
+        build()
+        sys.exit(0)
+    else:
+        tests_dir = Path(__file__).parent / "tests"
+        sys.exit(subprocess.call(["pytest", str(tests_dir)]))
