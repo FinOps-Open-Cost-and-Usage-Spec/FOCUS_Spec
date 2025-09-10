@@ -88,7 +88,7 @@ Cost and Usage
 
 <div class='h4-nonindex'>Description</div>
 
-Describes the cost and usage incurred by consuming a provider's resources and services.
+Describes the cost and usage incurred through using or purchasing a provider’s [*resources*](#glossary:resource) or [*services*](#glossary:service).
 
 <div class='h4-nonindex'>Introduced (version)</div>
 
