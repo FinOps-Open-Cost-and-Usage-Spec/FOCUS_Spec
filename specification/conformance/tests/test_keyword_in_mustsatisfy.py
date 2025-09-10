@@ -1,6 +1,4 @@
-import pytest
 
-#@pytest.mark.xfail(reason="Known issue, fix pending")
 def test_keyword_present_in_mustsatisfy(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []
