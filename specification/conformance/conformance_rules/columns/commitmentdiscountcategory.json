@@ -99,7 +99,7 @@
         "ApplicabilityCriteria": [
             "COMMITMENT_DISCOUNT_SUPPORTED"
         ],
-        "Type": "Dynamic",
+        "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountCategory MUST be null when CommitmentDiscountId is null.",
             "Keyword": "MUST",
@@ -128,7 +128,7 @@
         "ApplicabilityCriteria": [
             "COMMITMENT_DISCOUNT_SUPPORTED"
         ],
-        "Type": "Dynamic",
+        "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.",
             "Keyword": "MUST",

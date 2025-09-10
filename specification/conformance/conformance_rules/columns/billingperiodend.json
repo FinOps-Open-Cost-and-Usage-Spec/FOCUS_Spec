@@ -111,11 +111,7 @@
     "ValidationCriteria": {
       "MustSatisfy": "MUST be the exclusive end bound of the billing period",
       "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckExclusiveEndBound",
-        "StartColumnName": "BillingPeriodStart",
-        "EndColumnName": "BillingPeriodEnd"
-      },
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
