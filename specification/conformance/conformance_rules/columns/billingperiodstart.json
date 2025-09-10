@@ -34,7 +34,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-009-M"
+        "CostAndUsage-D-009-M",
+        "BillingPeriodStart-C-002-M",
+        "BillingPeriodStart-C-003-M",
+        "BillingPeriodStart-C-004-M",
+        "BillingPeriodStart-C-005-M"
       ]
     }
   },

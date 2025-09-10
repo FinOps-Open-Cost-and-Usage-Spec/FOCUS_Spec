@@ -32,7 +32,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-003-C"
+        "CostAndUsage-D-003-C",
+        "AvailabilityZone-C-002-M",
+        "AvailabilityZone-C-003-M",
+        "AvailabilityZone-C-004-M"
       ]
     }
   },

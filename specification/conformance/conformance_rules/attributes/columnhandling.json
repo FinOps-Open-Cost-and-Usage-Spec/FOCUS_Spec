@@ -69,7 +69,21 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ColumnHandling-A-001-M",
+        "ColumnHandling-A-002-M",
+        "ColumnHandling-A-003-M",
+        "ColumnHandling-A-004-O",
+        "ColumnHandling-A-005-O",
+        "ColumnHandling-A-006-O",
+        "ColumnHandling-A-007-O",
+        "ColumnHandling-A-008-M",
+        "ColumnHandling-A-009-M",
+        "ColumnHandling-A-010-O",
+        "ColumnHandling-A-011-O",
+        "ColumnHandling-A-012-O",
+        "ColumnHandling-A-013-O"
+      ]
     }
   },
   "ColumnHandling-A-001-M": {

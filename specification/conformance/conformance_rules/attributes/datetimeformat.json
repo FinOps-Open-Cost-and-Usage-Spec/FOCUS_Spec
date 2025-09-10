@@ -29,7 +29,11 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "DateTimeFormat-A-001-M",
+        "DateTimeFormat-A-002-M",
+        "DateTimeFormat-A-003-M"
+      ]
     }
   },
   "DateTimeFormat-A-001-M": {

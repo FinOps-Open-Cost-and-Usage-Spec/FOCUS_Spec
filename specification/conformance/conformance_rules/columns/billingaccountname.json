@@ -16,10 +16,6 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountName-D-001-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingAccountName-C-002-M"
           },
           {
@@ -34,7 +30,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-005-M"
+        "CostAndUsage-D-005-M",
+        "BillingAccountName-C-002-M",
+        "BillingAccountName-C-003-M",
+        "BillingAccountName-C-004-C"
       ]
     }
   },
