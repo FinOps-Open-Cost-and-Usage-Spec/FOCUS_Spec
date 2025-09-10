@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "CommitmentDiscountStatus column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -24,7 +24,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountStatus-C-005-M"
+            "ConformanceRuleId": "CommitmentDiscountStatus-C-003-M"
           }
         ]
       },
@@ -33,7 +33,7 @@
         "CostAndUsage-D-009-M",
         "CommitmentDiscountStatus-C-001-M",
         "CommitmentDiscountStatus-C-002-M",
-        "CommitmentDiscountStatus-C-005-M"
+        "CommitmentDiscountStatus-C-003-M"
       ]
     }
   },
@@ -60,38 +60,6 @@
     }
   },
   "CommitmentDiscountStatus-C-002-M": {
-    "Function": "Composite",
-    "Reference": "CommitmentDiscountStatus",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountStatus-C-003-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountStatus-C-004-C"
-          }
-        ]
-      },
-      "Condition": {},
-      "Dependencies": [
-        "CommitmentDiscountStatus-C-003-C",
-        "CommitmentDiscountStatus-C-004-C"
-      ]
-    }
-  },
-  "CommitmentDiscountStatus-C-004-C": {
     "Function": "Validation",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Column",
@@ -116,30 +84,7 @@
       ]
     }
   },
-  "CommitmentDiscountStatus-C-005-C": {
-    "Function": "Validation",
-    "Reference": "CommitmentDiscountStatus",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "MUST NOT be null",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "CommitmentDiscountStatus",
-        "Value": null
-      },
-      "Condition": {},
-      "Dependencies": [
-        "CommitmentDiscountId"
-      ]
-    }
-  },
-  "CommitmentDiscountStatus-C-006-M": {
+  "CommitmentDiscountStatus-C-003-M": {
     "Function": "Validation",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Column",
