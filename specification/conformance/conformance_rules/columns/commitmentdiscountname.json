@@ -94,7 +94,7 @@
         "ApplicabilityCriteria": [
             "COMMITMENT_DISCOUNT_SUPPORTED"
         ],
-        "Type": "Dynamic",
+        "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountName nullability is defined as follows:",
             "Keyword": "MUST",

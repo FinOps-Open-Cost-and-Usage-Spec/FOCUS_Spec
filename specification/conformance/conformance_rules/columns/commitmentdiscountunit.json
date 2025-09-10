@@ -151,7 +151,7 @@
         "ApplicabilityCriteria": [
             "COMMITMENT_DISCOUNT_SUPPORTED"
         ],
-        "Type": "Dynamic",
+        "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit MUST be null when CommitmentDiscountQuantity is null.",
             "Keyword": "MUST",
@@ -180,7 +180,7 @@
         "ApplicabilityCriteria": [
             "COMMITMENT_DISCOUNT_SUPPORTED"
         ],
-        "Type": "Dynamic",
+        "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountQuantity is not null.",
             "Keyword": "MUST",
