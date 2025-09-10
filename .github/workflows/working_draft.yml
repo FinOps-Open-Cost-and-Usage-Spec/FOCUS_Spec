@@ -49,4 +49,4 @@ jobs:
             specification/spec.pdf
             specification/images/*
             specification/styles/*
-            specification/conformance/cr*.json
+            specification/conformance/build/*.json
