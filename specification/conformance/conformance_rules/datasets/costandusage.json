@@ -121,6 +121,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-021-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-022-C"
           }
         ]
       },
@@ -144,7 +148,8 @@
         "CostAndUsage-D-018-M",
         "CostAndUsage-D-019-C",
         "CostAndUsage-D-020-C",
-        "CostAndUsage-D-021-M"
+        "CostAndUsage-D-021-M",
+        "CostAndUsage-D-022-C"
       ]
     }
   },
@@ -674,6 +679,28 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "PublisherName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-022-C": {
+    "Function": "Presence",
+    "Reference": "PricingCategory",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_PRICING_CATEGORIES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be present in a FOCUS dataset when the provider supports more than one pricing category across all SKUs",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCategory"
       },
       "Condition": {},
       "Dependencies": []
