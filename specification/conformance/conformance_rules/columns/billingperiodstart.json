@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "BillingPeriodStart column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -34,7 +34,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-009-M"
+        "CostAndUsage-D-009-M",
+        "BillingPeriodStart-C-002-M",
+        "BillingPeriodStart-C-003-M",
+        "BillingPeriodStart-C-004-M",
+        "BillingPeriodStart-C-005-M"
       ]
     }
   },
@@ -111,11 +115,7 @@
     "ValidationCriteria": {
       "MustSatisfy": "MUST be the inclusive start bound of the billing period.",
       "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckBillingPeriodStartInclusive",
-        "ColumnName": "BillingPeriodStart",
-        "EndColumnName": "BillingPeriodEnd"
-      },
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
