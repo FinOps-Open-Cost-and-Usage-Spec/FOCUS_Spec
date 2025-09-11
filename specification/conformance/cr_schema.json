@@ -104,7 +104,8 @@
                 "Presence",
                 "Validation",
                 "Type",
-                "Composite"
+                "Composite",
+                "Nullability"
               ]
             },
             "Reference": {
@@ -157,8 +158,11 @@
                   "type": "string",
                   "enum": [
                     "MUST",
+                    "MUST NOT",
                     "SHOULD",
+                    "SHOULD NOT",
                     "RECOMMENDED",
+                    "NOT RECOMMENDED",
                     "MAY",
                     "OPTIONAL"
                   ]
