@@ -6,9 +6,7 @@
     "Notes": "Main composite rule for PublisherName column",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "Dataset includes PublisherName column"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The PublisherName column adheres to the following requirements:",
@@ -34,11 +32,13 @@
           }
         ]
       },
-      "Condition": {
-        "CheckFunction": "Equal",
-        "CheckCondition": "All Rows"
-      },
-      "Dependencies": []
+      "Condition": {},
+      "Dependencies": [
+        "PublisherName-C-001-M",
+        "PublisherName-C-002-M",
+        "PublisherName-C-003-M",
+        "PublisherName-C-004-M"
+      ]
     }
   },
   "PublisherName-C-001-M": {
