@@ -6,6 +6,9 @@ The FOCUS specification is designed to be updated over time to support new use c
 
 The FOCUS specification is released periodically. For each release a version number is assigned. Version numbers at this time are not strictly representative of compatibility. The version number is used to identify the release and to provide a reference point for changes. 
 
+### Supported Release Cadence
+For planning and conformance purposes, FOCUS may identify certain MINOR releases as officially‑supported for broad adoption and conformance evaluation. Deprecation retention requirements reference these officially‑supported releases. The set of officially‑supported releases is recorded in the release notes and/or conformance program documentation.
+
 ## Version Changelog
 
 A changelog is provided specifying helpful information to consumers of the FOCUS specification. The changelog for each version identifies the following:
@@ -13,7 +16,8 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 * The version number
 * Impact Classification
 * Change Type Classification 
-* Designation of deprecation of a feature or column
+* Deprecation designation of a feature or column to include the version where deprecation occured.
+   * any exception rationale if removal precedes the retention period
 * Designation of the addition of a new feature or column
 * Description of the change
 * Examples of the change, if needed
@@ -44,6 +48,15 @@ The FOCUS specification requires that removal actions are preceded with a deprec
   * If the removal version is not yet determined, the change log MUST state, "This column will be removed at a future FOCUS version."
   * If the removal version has already been determined, the change log MUST state, "This column will be removed in version 2.1."
 * Prior to removal, the FOCUS specification MUST be updated to include the version that will remove the deprecated column/metadata
+
+#### Deprecation Retention Period
+Once a capability or column is designated as deprecated in a published version of the FOCUS specification:
+* It MUST remain in the specification for a minimum of 3 releases (inclusive of the version where the deprecation is announced) before it is eligible for removal.
+* Exceptions (e.g., legal, security, or privacy requirements) MAY justify earlier removal; such exceptions MUST be explicitly documented in the changelog with rationale.
+
+Removal of a deprecated feature or column is classified as:
+* Migration Compatible if the same supported feature is fully supported by another feature or column in the specification.
+* Incompatible if removal results in the loss of support for a supported feature.
 
 ## Change Type Classification
 
@@ -82,20 +95,20 @@ The FOCUS specification is designed to be updated overtime to increase use and t
 Any change in the specification that does not require modification by the consumer to continue using the specification for published use cases. 
 
 Examples: 
-  - Adding a new column for a new use case or 
-  - Adding a new category for an existing that does not require splitting or re-categorization.
+  * Adding a new column for a new supported feature 
+  * Adding a new category for an existing column that does not require splitting or re-categorization.
 
 ### Migration Compatible Change
 
 Any change that still supports the Published Supported Features, but may require modification to query or ingestion by consumers of a FOCUS dataset.
 
 Examples: 
-   - An existing categorization column is changed to split a category into two different categories
-   - An existing column that contains a numerical value is has its units changed, requiring a modification to queries using the column. The ability to use the column is preserved but a new query must be written
+   * An existing categorization column is changed to split a category into two different categories
+   * An existing column that contains a numerical value is has its units changed, requiring a modification to queries using the column. The ability to use the column is preserved but a new query must be written
 
 ### Incompatible Change
 
-Any change to the spec that ends the support of a Published Use Case. The removal of a Use Case or a column without an alternative source for the data supplied by the column. Incompatible Changes, require prior notification and  
+The removal of a supported feature or column without an alternative feature or column that fully supports the same use case. Removals MUST observe the Deprecation Retention Period requirements prior to removal.
 
 Examples:
-   - Removing a column
+   - Removing a column without introducing a replacement column
