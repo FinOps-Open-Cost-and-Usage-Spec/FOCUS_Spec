@@ -80,7 +80,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CommitmentDiscountId"
+        "CommitmentDiscountId-C-000-C"
       ]
     }
   },

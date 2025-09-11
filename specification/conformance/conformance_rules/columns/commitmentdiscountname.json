@@ -30,7 +30,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountName-C-004-M"
+                        "ConformanceRuleId": "CommitmentDiscountName-C-004-C"
                     }
                 ]
             },
@@ -40,7 +40,7 @@
                 "CommitmentDiscountName-C-001-M",
                 "CommitmentDiscountName-C-002-M",
                 "CommitmentDiscountName-C-003-M",
-                "CommitmentDiscountName-C-004-M"
+                "CommitmentDiscountName-C-004-C"
             ]
         }
     },

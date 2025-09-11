@@ -12,7 +12,6 @@ def _iter_values_for_key(node, target_key):
         for item in node:
             yield from _iter_values_for_key(item, target_key)
 
-
 def test_conformance_ruleid_refs_listed_in_dependencies(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []
@@ -32,4 +31,4 @@ def test_conformance_ruleid_refs_listed_in_dependencies(cr_json):
     assert not violations, (
         "Any ConformanceRuleId referenced in Requirement/Condition must be listed in ValidationCriteria.Dependencies:\n"
         + "\n".join(f"- Rule {rid}: missing deps {missing}" for rid, missing in violations)
-    )
+    ) 
