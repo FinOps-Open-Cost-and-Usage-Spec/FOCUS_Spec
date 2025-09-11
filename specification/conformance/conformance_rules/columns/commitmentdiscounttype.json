@@ -159,7 +159,7 @@
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.",
-            "Keyword": "MUST",
+            "Keyword": "MUST NOT",
             "Requirement": {
                 "CheckFunction": "CheckNotValue",
                 "ColumnName": "CommitmentDiscountType",

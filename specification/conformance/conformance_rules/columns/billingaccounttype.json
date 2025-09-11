@@ -150,7 +150,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null when BillingAccountId is not null",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "BillingAccountType",

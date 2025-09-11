@@ -154,7 +154,7 @@
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountId MUST NOT be null when a charge is related to a commitment discount.",
-            "Keyword": "MUST",
+            "Keyword": "MUST NOT",
             "Requirement": {},
             "Condition": {},
             "Dependencies": []

@@ -149,7 +149,7 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountId MUST NOT be null when a charge is related to a sub account",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

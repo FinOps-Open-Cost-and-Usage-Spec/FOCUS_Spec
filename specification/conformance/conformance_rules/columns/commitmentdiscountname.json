@@ -200,7 +200,7 @@
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountName MUST NOT be null when a display name can be assigned to a commitment discount.",
-            "Keyword": "MUST",
+            "Keyword": "MUST NOT",
             "Requirement": {},
             "Condition": {},
             "Dependencies": []

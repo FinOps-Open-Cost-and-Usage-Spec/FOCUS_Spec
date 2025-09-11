@@ -90,7 +90,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountName MUST NOT be null when the provider supports assigning a display name for the billing account",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "BillingAccountName",

@@ -191,7 +191,7 @@
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountQuantity is not null.",
-            "Keyword": "MUST",
+            "Keyword": "MUST NOT",
             "Requirement": {
                 "CheckFunction": "CheckNotValue",
                 "ColumnName": "CommitmentDiscountUnit",
