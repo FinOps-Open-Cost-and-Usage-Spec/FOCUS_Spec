@@ -1,7 +1,7 @@
 {
   "PublisherName-C-000-M": {
     "Function": "Composite",
-    "Reference": "Publisher Name",
+    "Reference": "PublisherName",
     "EntityType": "Column",
     "Notes": "Main composite rule for PublisherName column",
     "CRVersionIntroduced": "1.2",
@@ -25,121 +25,76 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "PublisherName-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PublisherName-C-004-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
+        "CostAndUsage-D-021-M",
         "PublisherName-C-001-M",
         "PublisherName-C-002-M",
-        "PublisherName-C-003-M",
-        "PublisherName-C-004-M"
+        "PublisherName-C-003-M"
       ]
     }
   },
   "PublisherName-C-001-M": {
-    "Function": "Presence",
-    "Reference": "Publisher Name",
+    "Function": "Type",
+    "Reference": "PublisherName",
     "EntityType": "Column",
-    "Notes": "PublisherName must be present in dataset",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "Dataset includes PublisherName column"
-    ],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "PublisherName MUST be present in a FOCUS dataset.",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "PublisherName"
-      },
-      "Condition": {
-        "CheckFunction": "Equal",
-        "CheckCondition": "All Rows"
-      },
-      "Dependencies": []
-    }
-  },
-  "PublisherName-C-002-M": {
-    "Function": "DataType",
-    "Reference": "Publisher Name",
-    "EntityType": "Column",
-    "Notes": "PublisherName must be of type String",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [
-      "Dataset includes PublisherName column"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PublisherName MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "DataType",
-        "DataType": "String"
+        "CheckFunction": "TypeString",
+        "ColumnName": "PublisherName"
       },
-      "Condition": {
-        "CheckFunction": "Equal",
-        "CheckCondition": "All Rows"
-      },
+      "Condition": {},
       "Dependencies": []
     }
   },
-  "PublisherName-C-003-M": {
+  "PublisherName-C-002-M": {
     "Function": "Format",
-    "Reference": "Publisher Name",
+    "Reference": "PublisherName",
     "EntityType": "Column",
-    "Notes": "PublisherName must conform to StringHandling requirements",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "Dataset includes PublisherName column"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PublisherName MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "AttributeConformance",
-        "AttributeID": "StringHandling"
+        "CheckFunction": "FormatString",
+        "ColumnName": "PublisherName"
       },
-      "Condition": {
-        "CheckFunction": "Equal",
-        "CheckCondition": "All Rows"
-      },
-      "Dependencies": [
-        "StringHandling:CR"
-      ]
+      "Condition": {},
+      "Dependencies": []
     }
   },
-  "PublisherName-C-004-M": {
-    "Function": "NullabilityRules",
-    "Reference": "Publisher Name",
+  "PublisherName-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "PublisherName",
     "EntityType": "Column",
-    "Notes": "PublisherName must not be null",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "Dataset includes PublisherName column"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PublisherName MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
-        "CheckFunction": "IsNotNull",
-        "ColumnName": "PublisherName"
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PublisherName",
+        "Value": null
       },
-      "Condition": {
-        "CheckFunction": "Equal",
-        "CheckCondition": "All Rows"
-      },
+      "Condition": {},
       "Dependencies": []
     }
   }
