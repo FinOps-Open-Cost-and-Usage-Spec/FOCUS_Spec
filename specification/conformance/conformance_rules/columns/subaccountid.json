@@ -1,0 +1,158 @@
+{
+  "SubAccountId-C-000-C": {
+    "Function": "Composite",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All SubAccountId rules MUST be enforced",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountId-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountId-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountId-C-003-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-018-C",
+        "SubAccountId-C-001-M",
+        "SubAccountId-C-002-M",
+        "SubAccountId-C-003-M"
+      ]
+    }
+  },
+  "SubAccountId-C-001-M": {
+    "Function": "Type",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST be of type String",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "SubAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountId-C-002-M": {
+    "Function": "Format",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST conform to StringHandling requirements",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "SubAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountId-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountId-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountId-C-005-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "SubAccountId-C-004-M",
+        "SubAccountId-C-005-M"
+      ]
+    }
+  },
+  "SubAccountId-C-004-M": {
+    "Function": "Validation",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST be null when a charge is not related to a sub account",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountId-C-005-M": {
+    "Function": "Validation",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST NOT be null when a charge is related to a sub account",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
