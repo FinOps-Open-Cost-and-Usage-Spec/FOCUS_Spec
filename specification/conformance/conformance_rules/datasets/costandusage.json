@@ -113,6 +113,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-019-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-020-C"
           }
         ]
       },
@@ -134,7 +138,8 @@
         "CostAndUsage-D-016-M",
         "CostAndUsage-D-017-M",
         "CostAndUsage-D-018-M",
-        "CostAndUsage-D-019-C"
+        "CostAndUsage-D-019-C",
+        "CostAndUsage-D-020-C"
       ]
     }
   },
@@ -176,6 +181,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingPeriodStart-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CapacityReservationStatus-C-000-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -235,6 +244,7 @@
         "BillingAccountType-C-000-M",
         "BillingPeriodEnd-C-000-M",
         "BillingPeriodStart-C-000-M",
+        "CapacityReservationStatus-C-000-M",
         "CommitmentDiscountCategory-C-000-C",
         "CommitmentDiscountId-C-000-C",
         "CommitmentDiscountName-C-000-M",
@@ -611,5 +621,27 @@
       "Condition": {},
       "Dependencies": []
     }
+  },
+  "CostAndUsage-D-020-C": {
+    "Function": "Presence",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Dataset",
+    "ApplicabilityCriteria": [
+      "CAPACITY_RESERVATION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationStatus MUST be present in a FOCUS dataset when the provider supports capacity reservations.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CapacityReservationStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    },
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": ""
   }
 }
