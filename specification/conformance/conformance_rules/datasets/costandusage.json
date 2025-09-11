@@ -112,7 +112,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-019-C" 
+            "ConformanceRuleId": "CostAndUsage-D-019-C"
           }
         ]
       },
@@ -135,7 +135,6 @@
         "CostAndUsage-D-017-M",
         "CostAndUsage-D-018-M",
         "CostAndUsage-D-019-C"
-        
       ]
     }
   },
@@ -584,6 +583,7 @@
       },
       "Condition": {},
       "Dependencies": []
+    }
   },
   "CostAndUsage-D-019-C": {
     "Function": "Presence",
