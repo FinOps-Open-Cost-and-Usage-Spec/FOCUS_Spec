@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingPeriodEnd column adheres to the following requirements",
+      "MustSatisfy": "BillingPeriodEnd column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -34,7 +34,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-010-M"
+        "CostAndUsage-D-010-M",
+        "BillingPeriodEnd-C-002-M",
+        "BillingPeriodEnd-C-003-M",
+        "BillingPeriodEnd-C-004-M",
+        "BillingPeriodEnd-C-005-M"
       ]
     }
   },
@@ -111,11 +115,7 @@
     "ValidationCriteria": {
       "MustSatisfy": "MUST be the exclusive end bound of the billing period",
       "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckExclusiveEndBound",
-        "StartColumnName": "BillingPeriodStart",
-        "EndColumnName": "BillingPeriodEnd"
-      },
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }

@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "BilledCost column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -42,7 +42,13 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-C-006-M"
+        "CostAndUsage-C-006-M",
+        "BilledCost-C-002-M",
+        "BilledCost-C-003-M",
+        "BilledCost-C-004-M",
+        "BilledCost-C-005-M",
+        "BilledCost-C-006-M",
+        "BilledCost-C-007-M"
       ]
     }
   },

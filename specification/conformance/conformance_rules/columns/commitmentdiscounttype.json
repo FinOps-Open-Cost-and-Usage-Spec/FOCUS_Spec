@@ -27,16 +27,15 @@
                     {
                         "CheckFunction": "CheckConformanceRule",
                         "ConformanceRuleId": "CommitmentDiscountType-C-003-M"
-                    },
-                    {
-                        "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountType-C-004-C"
                     }
                 ]
             },
             "Condition": {},
             "Dependencies": [
-                "CostAndUsage-D-014-M"
+                "CostAndUsage-D-014-M",
+                "CommitmentDiscountType-C-001-M",
+                "CommitmentDiscountType-C-002-M",
+                "CommitmentDiscountType-C-003-M"
             ]
         }
     },
@@ -112,7 +111,10 @@
                 ]
             },
             "Condition": {},
-            "Dependencies": []
+            "Dependencies": [
+                "CommitmentDiscountType-C-004-C",
+                "CommitmentDiscountType-C-005-C"
+            ]
         }
     },
     "CommitmentDiscountType-C-004-C": {
