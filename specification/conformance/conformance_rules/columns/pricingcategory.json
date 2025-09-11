@@ -9,14 +9,14 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "The PricingCategory column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-D-001-C"
+            "ConformanceRuleId": "PricingCategory-C-001-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -24,41 +24,20 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-C-007-C"
+            "ConformanceRuleId": "PricingCategory-C-006-C"
           }
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CostAndUsage-D-022-C",
+        "PricingCategory-C-001-M",
+        "PricingCategory-C-002-M",
+        "PricingCategory-C-006-C"
+      ]
     }
   },
-  "PricingCategory-D-001-C": {
-    "Function": "Presence",
-    "Reference": "PricingCategory",
-    "EntityType": "Dataset",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [
-      "MULTIPLE_PRICING_CATEGORIES_SUPPORTED"
-    ],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be present in a FOCUS dataset when the provider supports more than one pricing category across all SKUs",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "ColumnPresent",
-        "ColumnName": "PricingCategory"
-      },
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "PricingCategory-C-002-M": {
+  "PricingCategory-C-001-M": {
     "Function": "Type",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -78,7 +57,7 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-003-M": {
+  "PricingCategory-C-002-M": {
     "Function": "Composite",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -88,30 +67,34 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory nullability is defined as follows",
+      "MustSatisfy": "PricingCategory nullability is defined as follows:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingCategory-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "PricingCategory-C-004-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-C-005-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-C-006-O"
+            "ConformanceRuleId": "PricingCategory-C-005-O"
           }
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "PricingCategory-C-003-C",
+        "PricingCategory-C-004-C",
+        "PricingCategory-C-005-O"
+      ]
     }
   },
-  "PricingCategory-C-004-C": {
+  "PricingCategory-C-003-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -119,7 +102,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCategory MUST be null when ChargeCategory is \"Tax\"",
       "Keyword": "MUST",
@@ -138,15 +121,15 @@
       ]
     }
   },
-  "PricingCategory-C-005-C": {
+  "PricingCategory-C-004-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
-    "Notes": "Cross-column reference: ChargeCategory, ChargeClass",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Dynamic",
+    "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCategory MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\"",
       "Keyword": "MUST",
@@ -186,7 +169,7 @@
       ]
     }
   },
-  "PricingCategory-C-006-O": {
+  "PricingCategory-C-005-O": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -194,7 +177,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCategory MAY be null in all other cases",
       "Keyword": "MAY",
@@ -203,7 +186,7 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-007-C": {
+  "PricingCategory-C-006-C": {
     "Function": "Composite",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -213,11 +196,15 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When PricingCategory is not null, PricingCategory adheres to the following additional requirements",
+      "MustSatisfy": "When PricingCategory is not null, PricingCategory adheres to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingCategory-C-007-M"
+          },
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "PricingCategory-C-008-M"
@@ -233,10 +220,6 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "PricingCategory-C-011-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-C-012-M"
           }
         ]
       },
@@ -245,10 +228,16 @@
         "ColumnName": "PricingCategory",
         "Value": null
       },
-      "Dependencies": []
+      "Dependencies": [
+        "PricingCategory-C-007-M",
+        "PricingCategory-C-008-M",
+        "PricingCategory-C-009-M",
+        "PricingCategory-C-010-M",
+        "PricingCategory-C-011-M"
+      ]
     }
   },
-  "PricingCategory-C-008-M": {
+  "PricingCategory-C-007-M": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -293,11 +282,11 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-009-M": {
+  "PricingCategory-C-008-M": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
-    "Notes": "Cross-attribute reference: BillingAccount",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
@@ -305,26 +294,20 @@
     "ValidationCriteria": {
       "MustSatisfy": "PricingCategory MUST be \"Standard\" when pricing is predetermined at the agreed upon rate for the billing account",
       "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "PricingCategory",
-        "Value": "Standard"
-      },
+      "Requirement": {},
       "Condition": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "PricingCategory",
         "Value": null
       },
-      "Dependencies": [
-        "BillingAccountId-C-000-M"
-      ]
+      "Dependencies": []
     }
   },
-  "PricingCategory-C-010-M": {
+  "PricingCategory-C-009-M": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
-    "Notes": "Cross-column reference: CommitmentDiscountId",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
@@ -332,19 +315,34 @@
     "ValidationCriteria": {
       "MustSatisfy": "PricingCategory MUST be \"Committed\" when the charge is subject to an existing commitment discount and is not the purchase of the commitment discount",
       "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "PricingCategory",
-        "Value": "Committed"
-      },
+      "Requirement": {},
       "Condition": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "PricingCategory",
         "Value": null
       },
-      "Dependencies": [
-        "CommitmentDiscountId-C-000-C"
-      ]
+      "Dependencies": []
+    }
+  },
+  "PricingCategory-C-010-M": {
+    "Function": "Validation",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be \"Dynamic\" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCategory",
+        "Value": null
+      },
+      "Dependencies": []
     }
   },
   "PricingCategory-C-011-M": {
@@ -357,38 +355,9 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be \"Dynamic\" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "PricingCategory",
-        "Value": "Dynamic"
-      },
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "PricingCategory",
-        "Value": null
-      },
-      "Dependencies": []
-    }
-  },
-  "PricingCategory-C-012-M": {
-    "Function": "Validation",
-    "Reference": "PricingCategory",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
       "MustSatisfy": "PricingCategory MUST be \"Other\" when there is a pricing model but none of the allowed values apply",
       "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "PricingCategory",
-        "Value": "Other"
-      },
+      "Requirement": {},
       "Condition": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "PricingCategory",
