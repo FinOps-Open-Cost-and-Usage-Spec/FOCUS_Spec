@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "CommitmentDiscountStatus column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -24,13 +24,16 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountStatus-C-005-M"
+            "ConformanceRuleId": "CommitmentDiscountStatus-C-003-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-009-M"
+        "CostAndUsage-D-009-M",
+        "CommitmentDiscountStatus-C-001-M",
+        "CommitmentDiscountStatus-C-002-M",
+        "CommitmentDiscountStatus-C-003-M"
       ]
     }
   },
@@ -41,7 +44,9 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": ["COMMITMENT_DISCOUNT_SUPPORTED"],
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type String",
@@ -55,42 +60,15 @@
     }
   },
   "CommitmentDiscountStatus-C-002-M": {
-    "Function": "Composite",
-    "Reference": "CommitmentDiscountStatus",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountStatus-C-003-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountStatus-C-004-C"
-          }
-        ]
-      },
-      "Condition": {},
-      "Dependencies": []
-    }
-  },
-  "CommitmentDiscountStatus-C-004-C": {
     "Function": "Validation",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": ["COMMITMENT_DISCOUNT_SUPPORTED"],
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST not be null",
@@ -102,51 +80,43 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CommitmentDiscountId"
-      ],
-      "Value": null
+        "CommitmentDiscountId-C-000-C"
+      ]
     }
   },
-  "CommitmentDiscountStatus-C-005-C": {
+  "CommitmentDiscountStatus-C-003-M": {
     "Function": "Validation",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "MUST NOT be null",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "CommitmentDiscountStatus",
-        "Value": null
-      },
-      "Condition": {},
-      "Dependencies": [
-        "CommitmentDiscountId"
-      ],
-      "Value": null
-    }
-  },
-  "CommitmentDiscountStatus-C-006-M": {
-    "Function": "Validation",
-    "Reference": "CommitmentDiscountStatus",
-    "EntityType": "Column",
-    "Notes": "",
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": ["COMMITMENT_DISCOUNT_SUPPORTED"],
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be one of the allowed values",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "CheckAllowedValues",
-        "ColumnName": "CommitmentDiscountStatus",
-        "AllowedValues": ["Active", "Expired", "Pending"]
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Active"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Expired"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Pending"
+          }
+        ]
       },
       "Condition": {},
       "Dependencies": []

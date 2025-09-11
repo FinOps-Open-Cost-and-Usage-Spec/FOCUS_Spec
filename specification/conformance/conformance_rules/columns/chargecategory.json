@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "ChargeCategory column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -30,7 +30,10 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-008-M"
+        "CostAndUsage-D-008-M",
+        "ChargeCategory-C-001-M",
+        "ChargeCategory-C-002-M",
+        "ChargeCategory-C-003-M"
       ]
     }
   },

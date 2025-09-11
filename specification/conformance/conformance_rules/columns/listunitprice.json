@@ -11,7 +11,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "ListUnitPrice column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -30,33 +30,17 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-005-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ListUnitPrice-C-008-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-009-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-010-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-011-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-012-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-004-C"
+        "CostAndUsage-D-004-C",
+        "ListUnitPrice-C-002-M",
+        "ListUnitPrice-C-003-M",
+        "ListUnitPrice-C-004-C",
+        "ListUnitPrice-C-008-C"
       ]
     }
   },
@@ -105,6 +89,46 @@
     }
   },
   "ListUnitPrice-C-004-C": {
+    "Function": "Composite",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-006-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-007-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ChargeCategory-C-000-M",
+        "ListUnitPrice-C-005-C",
+        "ListUnitPrice-C-006-C",
+        "ListUnitPrice-C-007-O"
+      ]
+    }
+  },
+  "ListUnitPrice-C-005-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -133,53 +157,6 @@
       ]
     }
   },
-  "ListUnitPrice-C-005-C": {
-    "Function": "Composite",
-    "Reference": "ListUnitPrice",
-    "EntityType": "Column",
-    "Notes": null,
-    "CRVersionIntroduced": "1.2",
-    "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
-    "Type": "Static",
-    "ValidationCriteria": {
-      "MustSatisfy": "when ChargeCategory is 'Usage' or 'Purchase'",
-      "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-006-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-007-O"
-          }
-        ]
-      },
-      "Condition": {
-        "CheckFunction": "OR",
-        "Items": [
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ChargeCategory",
-            "Value": "Usage"
-          },
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ChargeCategory",
-            "Value": "Purchase"
-          }
-        ]
-      },
-      "Dependencies": [
-        "ChargeCategory-C-000-M"
-      ]
-    }
-  },
   "ListUnitPrice-C-006-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
@@ -200,9 +177,29 @@
         "Value": null
       },
       "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "ChargeClass",
-        "Value": "Correction"
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          },
+          {
+            "CheckFunction": "OR",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Usage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Purchase"
+              }
+            ]
+          }
+        ]
       },
       "Dependencies": [
         "ChargeClass-C-000-M"
@@ -224,7 +221,9 @@
       "MustSatisfy": "MAY be null in all other cases",
       "Keyword": "MAY",
       "Requirement": {
-        "CheckFunction": null
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": null
       },
       "Condition": {},
       "Dependencies": []
@@ -242,7 +241,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When ListUnitPrice is not null",
+      "MustSatisfy": "When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -258,6 +257,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ListUnitPrice-C-011-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-012-C"
           }
         ]
       },
@@ -267,7 +270,11 @@
         "Value": null
       },
       "Dependencies": [
-        "ChargeCategory-C-000-M"
+        "ChargeCategory-C-000-M",
+        "ListUnitPrice-C-009-C",
+        "ListUnitPrice-C-010-C",
+        "ListUnitPrice-C-011-M",
+        "ListUnitPrice-C-012-C"
       ]
     }
   },
