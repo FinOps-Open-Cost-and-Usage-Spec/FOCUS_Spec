@@ -113,13 +113,14 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-019-C"
-<<<<<<< HEAD
           },
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-020-C"
-=======
->>>>>>> f91e554a (AI #1267: Add SubAccountId conformance rules (#1423))
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-021-M"
           }
         ]
       },
@@ -141,12 +142,9 @@
         "CostAndUsage-D-016-M",
         "CostAndUsage-D-017-M",
         "CostAndUsage-D-018-M",
-<<<<<<< HEAD
         "CostAndUsage-D-019-C",
-        "CostAndUsage-D-020-C"
-=======
-        "CostAndUsage-D-019-C"
->>>>>>> f91e554a (AI #1267: Add SubAccountId conformance rules (#1423))
+        "CostAndUsage-D-020-C",
+        "CostAndUsage-D-021-M"
       ]
     }
   },
@@ -633,12 +631,14 @@
       "Condition": {},
       "Dependencies": []
     }
-<<<<<<< HEAD
   },
   "CostAndUsage-D-020-C": {
     "Function": "Presence",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
     "ApplicabilityCriteria": [
       "CAPACITY_RESERVATION_SUPPORTED"
     ],
@@ -652,11 +652,26 @@
       },
       "Condition": {},
       "Dependencies": []
-    },
+    }
+  },
+  "CostAndUsage-D-021-M": {
+    "Function": "Presence",
+    "Reference": "PublisherName",
+    "EntityType": "Dataset",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "Notes": ""
-=======
->>>>>>> f91e554a (AI #1267: Add SubAccountId conformance rules (#1423))
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PublisherName MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PublisherName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
   }
 }
