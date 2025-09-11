@@ -220,6 +220,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "SubAccountId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountName-C-000-C"
           }
         ]
       },
@@ -241,7 +245,8 @@
         "ChargeCategory-C-000-M",
         "ConsumedQuantity-C-000-C",
         "ListUnitPrice-C-000-C",
-        "SubAccountId-C-000-C"
+        "SubAccountId-C-000-C",
+        "SubAccountName-C-000-C"
       ]
     }
   },
