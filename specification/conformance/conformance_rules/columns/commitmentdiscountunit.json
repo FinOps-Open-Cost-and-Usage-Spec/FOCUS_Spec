@@ -149,7 +149,7 @@
             ]
         }
     },
-    "CommitmentDiscountUnit-C-005-M": {
+    "CommitmentDiscountUnit-C-005-C": {
         "Function": "Validation",
         "Reference": "CommitmentDiscountUnit",
         "EntityType": "Column",
@@ -226,7 +226,7 @@
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountUnit-C-008-C"
+                        "ConformanceRuleId": "CommitmentDiscountUnit-C-008-M"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
@@ -244,7 +244,7 @@
                 "Value": null
             },
             "Dependencies": [
-                "CommitmentDiscountUnit-C-008-C",
+                "CommitmentDiscountUnit-C-008-M",
                 "CommitmentDiscountUnit-C-009-C",
                 "CommitmentDiscountUnit-C-010-C"
             ]

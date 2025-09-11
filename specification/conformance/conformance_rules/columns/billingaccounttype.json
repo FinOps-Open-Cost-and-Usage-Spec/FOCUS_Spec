@@ -24,7 +24,11 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountType-C-003-M"
+            "ConformanceRuleId": "BillingAccountType-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingAccountType-C-006-M"
           }
         ]
       },
@@ -33,11 +37,12 @@
         "CostAndUsage-C-007-C",
         "BillingAccountType-C-001-M",
         "BillingAccountType-C-002-M",
-        "BillingAccountType-C-003-M"
+        "BillingAccountType-C-003-C",
+        "BillingAccountType-C-006-M"
       ]
     }
   },
-  "BillingAccountType-C-002-M": {
+  "BillingAccountType-C-001-M": {
     "Function": "Type",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -57,7 +62,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountType-C-003-M": {
+  "BillingAccountType-C-002-M": {
     "Function": "Type",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -77,7 +82,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountType-C-004-C": {
+  "BillingAccountType-C-003-C": {
     "Function": "Composite",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -94,22 +99,22 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountType-C-005-M"
+            "ConformanceRuleId": "BillingAccountType-C-004-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountType-C-006-M"
+            "ConformanceRuleId": "BillingAccountType-C-005-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "BillingAccountType-C-005-M",
-        "BillingAccountType-C-006-M"
+        "BillingAccountType-C-004-M",
+        "BillingAccountType-C-005-M"
       ]
     }
   },
-  "BillingAccountType-C-005-M": {
+  "BillingAccountType-C-004-M": {
     "Function": "Validation",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -134,7 +139,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountType-C-006-M": {
+  "BillingAccountType-C-005-M": {
     "Function": "Validation",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -159,7 +164,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountType-C-007-M": {
+  "BillingAccountType-C-006-M": {
     "Function": "Validation",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
