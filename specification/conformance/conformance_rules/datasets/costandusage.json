@@ -108,7 +108,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-018-C"
+            "ConformanceRuleId": "CostAndUsage-D-019-C"
           }
         ]
       },
@@ -128,7 +128,8 @@
         "CostAndUsage-D-014-M",
         "CostAndUsage-D-015-M",
         "CostAndUsage-D-016-M",
-        "CostAndUsage-D-017-M"
+        "CostAndUsage-D-017-M",
+        "CostAndUsage-D-019-C"
       ]
     }
   },
@@ -205,11 +206,11 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SubAccountId-C-000-C"
+            "ConformanceRuleId": "ListUnitPrice-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-000-C"
+            "ConformanceRuleId": "SubAccountId-C-000-C"
           }
         ]
       },
@@ -229,7 +230,8 @@
         "CommitmentDiscountUnit-C-000-M",
         "ChargeCategory-C-000-M",
         "ConsumedQuantity-C-000-C",
-        "ListUnitPrice-C-000-C"
+        "ListUnitPrice-C-000-C",
+        "SubAccountId-C-000-C"
       ]
     }
   },
@@ -551,10 +553,10 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-018-C": {
+  "CostAndUsage-D-019-C": {
     "Function": "Presence",
     "Reference": "SubAccountId",
-    "EntityType": "Column",
+    "EntityType": "Dataset",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
