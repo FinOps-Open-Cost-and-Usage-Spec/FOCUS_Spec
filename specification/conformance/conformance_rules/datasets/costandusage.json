@@ -105,6 +105,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-017-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-018-M"
           }
         ]
       },
@@ -124,7 +128,8 @@
         "CostAndUsage-D-014-M",
         "CostAndUsage-D-015-M",
         "CostAndUsage-D-016-M",
-        "CostAndUsage-D-017-M"
+        "CostAndUsage-D-017-M",
+        "CostAndUsage-D-018-M"
       ]
     }
   },
@@ -197,6 +202,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CommitmentDiscountQuantity-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ConsumedQuantity-C-000-C"
           },
           {
@@ -221,7 +230,8 @@
         "CommitmentDiscountUnit-C-000-M",
         "ChargeCategory-C-000-M",
         "ConsumedQuantity-C-000-C",
-        "ListUnitPrice-C-000-C"
+        "ListUnitPrice-C-000-C",
+        "CommitmentDiscountQuantity-C-000-C"
       ]
     }
   },
@@ -538,6 +548,28 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "CommitmentDiscountStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-018-M": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountQuantity",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountQuantity MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountQuantity"
       },
       "Condition": {},
       "Dependencies": []
