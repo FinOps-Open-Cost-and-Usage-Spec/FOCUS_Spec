@@ -113,10 +113,13 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-019-C"
+<<<<<<< HEAD
           },
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-020-C"
+=======
+>>>>>>> f91e554a (AI #1267: Add SubAccountId conformance rules (#1423))
           }
         ]
       },
@@ -138,8 +141,12 @@
         "CostAndUsage-D-016-M",
         "CostAndUsage-D-017-M",
         "CostAndUsage-D-018-M",
+<<<<<<< HEAD
         "CostAndUsage-D-019-C",
         "CostAndUsage-D-020-C"
+=======
+        "CostAndUsage-D-019-C"
+>>>>>>> f91e554a (AI #1267: Add SubAccountId conformance rules (#1423))
       ]
     }
   },
@@ -626,6 +633,7 @@
       "Condition": {},
       "Dependencies": []
     }
+<<<<<<< HEAD
   },
   "CostAndUsage-D-020-C": {
     "Function": "Presence",
@@ -648,5 +656,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": ""
+=======
+>>>>>>> f91e554a (AI #1267: Add SubAccountId conformance rules (#1423))
   }
 }
