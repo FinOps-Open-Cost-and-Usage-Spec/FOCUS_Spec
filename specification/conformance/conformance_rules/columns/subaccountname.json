@@ -130,7 +130,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST NOT be null when SubAccountId is not null",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "SubAccountName",

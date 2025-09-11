@@ -132,7 +132,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCategory MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\"",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "PricingCategory",

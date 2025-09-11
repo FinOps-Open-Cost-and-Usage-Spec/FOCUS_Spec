@@ -114,7 +114,7 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST NOT use abbreviations",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -148,7 +148,7 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT use acronyms",
-      "Keyword": "SHOULD",
+      "Keyword": "SHOULD NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -165,7 +165,7 @@
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
-      "Keyword": "SHOULD",
+      "Keyword": "SHOULD NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

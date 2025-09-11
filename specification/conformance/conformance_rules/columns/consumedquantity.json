@@ -230,7 +230,7 @@
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MUST NOT be null when ChargeClass is not 'Correction'",
-            "Keyword": "MUST",
+            "Keyword": "MUST NOT",
             "Requirement": {
                 "CheckFunction": "CheckNotValue",
                 "ColumnName": "ConsumedQuantity",
