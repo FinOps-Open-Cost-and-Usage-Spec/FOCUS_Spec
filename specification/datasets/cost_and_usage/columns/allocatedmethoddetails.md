@@ -4,6 +4,14 @@ Allocated Method Details provides information about how resources are allocated 
 
 Allocated Resource Details consists of a valid JSON object which contains an array consisting of key-value objects describing the one or more factors that determined the split cost allocation. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the allocation.
 
+The FOCUS-defined properties are:
+
+* `AllocatedRatio`: The ratio of a [*charge*](#glossary:charge) that this allocation represents.
+* `UsageUnit`: Unit being measured used to calculate this allocation.
+* `UsageQuantity`: The value of the charge applied to a single contract term.
+
+In addition to these, a provider may include one or more custom properties, also denoted as key-value pairs.
+
 ## Requirements
 
 ### Column Requirements
@@ -39,6 +47,12 @@ If AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodD
 ### Content Requirements
 
 The following keys are used for allocation properties to facilitate querying data across allocations and across providers. Focus-defined keys will appear in the list below and Provider-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
+
+| Key | ValueType | Required | Description |
+| ----- | ---- | ---------- | ----------- |
+| AllocatedRatio | Numeric | True | Percentage of overall cost derived from corresponding method and metric. |
+| UsageUnit | [String](#stringhandling) | Conditional | Unit being measured used to calculate allocation. |
+| UsageQuantity | Numeric | False | Volume of UsageUnit consumed or used. |
 
 <b>Allocated Ratio</b>
 
@@ -130,6 +144,53 @@ The `Elements` array contains one or more objects, each of which contains the fo
 
 NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column but cannot accurately describe the normative requirements for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
 
+### Scenario 1: Single "UsageUnit" value used for allocation
+
+When only a single "UsageUnit" is used to calculate the allaction.
+
+```json
+{
+  "Elements" : [ {
+    "AllocatedRatio" : 0.1,
+    "UsageUnit" : "Hours",
+    "UsageQuantity" : 300
+  }
+}
+```
+### Scenario 2: Multiple "UsageUnit" values used for allocation
+
+When multiple "UsageUnit" values are used to calculate the allaction, another object is added to the "Elements" collection.
+
+```json
+{
+  "Elements" : [ {
+    "AllocatedRatio" : 0.05,
+    "UsageUnit" : "CPU",
+    "UsageQuantity" : 0.5
+  }, {
+    "AllocatedRatio" : 0.1,
+    "UsageUnit" : "Memory",
+    "UsageQuantity" : 4
+  } ]
+}
+```
+### Scenario 3: Additional non-FOCUS specified properties
+
+A provider can add additional properties if they feel more context is helpful or neccessary to the practitioner. In this scenario,the provider is supplying additional context that shows only 0.5 of a unit was used. However, since 1 unit 
+was requested by the service this allocation represents, the allocation is being charged at 1 regardless.
+
+```json
+{
+  "Elements" : [ {
+    "AllocatedRatio" : 0.6,
+    "UsageUnit" : "vCPU",
+    "UsageQuantity" : 1,
+    "x_ReservedVCPU" : "1",
+    "x_UsedVCPU" : 0.5,
+    "x_AllocatedVCPU" : 1
+  }
+}
+```
 ## Column ID
 
 AllocatedMethodDetails
