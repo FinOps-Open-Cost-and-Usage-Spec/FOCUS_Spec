@@ -14,12 +14,12 @@ Invoice Handling
 
 ## Description
 
-Indicates how invoice-level *charges*, including those not directly tied to usage, should be represented in a FOCUS dataset.
+Indicates how invoice-level *charges*, including those not directly tied to usage, should be represented in a FOCUS Cost and Usage dataset.
 
 ## Requirements
 
-* When an InvoiceId appears in the *FOCUS dataset*, all costs from that invoice MUST be included in the dataset.
-* If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the *FOCUS dataset*.
+* All costs that appear on an invoice MUST be included in the FOCUS Cost and Usage dataset.
+* If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage dataset.
 
 ## Exceptions
 
