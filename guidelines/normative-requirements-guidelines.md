@@ -90,7 +90,7 @@
 * **Omit JSON schema normative requirements for Key-Value Format columns**: The Key-Value Format definition is sufficient to define the expected JSON schema.
 
 * **Include JSON schema normative requirements for JSON Object Format columns**: The JSON Object Format specifies that the format is subject to the requirement of the column and that provider-defined columns must have documented schema.
-  * A recommended pattern is an Object containing a collection whose key is "Elements" containing one or more objects in the Key-Value format.
+  * The pattern used in [AllocatedMethodDetails](#allocatedmethoddetails) and [ContractApplied](#contractapplied) consists of Object containing a collection whose key is "Elements" which contains one or more objects in the Key-Value format.
 
   **Example JSON**
   ```json
