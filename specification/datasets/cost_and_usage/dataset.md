@@ -68,7 +68,11 @@ The specification for the Cost and Usage dataset defines a group of columns that
 
 <div class='h4-nonindex'>Relationships</div>
 
-None
+The Cost and Usage dataset can be joined to the Contract Commitment dataset through the use of the Contract Commitment ID field.
+
+| Dataset A           | Dataset A Column       | Dataset B           | Dataset B Column       |
+| ------------------- | ---------------------- | ------------------- | ---------------------- |
+| Cost and Usage      | Contract Commitment ID | Contract Commitment | Contract Commitment ID |
 
 <div class='h4-nonindex'>Requirements</div>
 
