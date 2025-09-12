@@ -39,7 +39,7 @@ If AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodD
     * FOCUS-defined allocation properties adhere to the following additional requirements:
       * Allocation property key MUST match the spelling and casing specified for the FOCUS-defined property.
       * Allocation property value MUST be of the type specified for that property.
-      * Allocation property MUST adhere to additional normative requirements specific to that property.
+      * Allocation properties MUST adhere to additional normative requirements specific to that property.
     * Provider-defined allocation properties MAY be included in "Elements".
       * Allocation property keys MUST begin with the string "x_" unless it is a FOCUS-defined allocation property.
 * AllocatedMethodDetails root object MAY contain additional provider-defined items, in addition to "Elements".
