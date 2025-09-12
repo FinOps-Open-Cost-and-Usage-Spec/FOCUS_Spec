@@ -1,6 +1,6 @@
 # JSON Object Format
 
-Columns that provide complex, hierarchical information can be used in place of separate columns to support more dynamic structures that may change across rows, but where the simpler [*Key-Value Format*](#key-valueformat) may not be sufficient. JSON Objects extend key-value pairs to add support for complex data types like arrays and nested key-value pairs. JSON Objects are also referred to as maps, trees, or hashtables.
+JSON Objects extend the [Key-Value Format](#keyvalueformat) to add support for complex data types like arrays and nested key-value pairs. This format is used when the Key-Value Format is insufficient to represent the complexity, such as when multiple sets of key-value pairs apply to the same charge record. JSON Objects are also referred to as maps, trees, or hashtables.
 
 All complex JSON Object columns defined in the FOCUS specification MUST follow the object formatting requirements listed below.
 
