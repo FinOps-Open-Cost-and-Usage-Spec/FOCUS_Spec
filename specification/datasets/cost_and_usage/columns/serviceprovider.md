@@ -1,6 +1,6 @@
 # Service Provider
 
-A Service Provider is the entity that provides the  [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase. These services can be built on top of infrastructure provided by a [Host Provider](#hostprovider), offered as fully integrated solutions, or include complementary offerings such as support, licensing, or consulting. It is commonly used for cost analysis and reporting scenarios. In marketplace scenarios, the Service Provider is not the entity operating the marketplace, as marketplace is providing a mechanism for purchase, not independently providing the resources or services independently for purchase or usage. 
+A Service Provider is the entity that provides the  [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase. These services can be built on top of infrastructure provided by a [Host Provider](#hostprovider), offered as fully integrated solutions, or include complementary offerings such as support, licensing, or consulting. It is commonly used for cost analysis and reporting scenarios. In marketplace scenarios, the Service Provider is not the entity operating the marketplace, as marketplace is providing a mechanism for purchase, not independently providing the resources or services independently for purchase or usage.
 
 The Service Provider column adheres to the following requirements:
 
