@@ -56,13 +56,13 @@ The following keys are used for allocation properties to facilitate querying dat
 
 <b>Allocated Ratio</b>
 
-Allocated Ratio communicates the percentage of the Origin Record that this Allocated Record derived from the corresponding [Allocated Method Id](#allocatedmethodid) and Usage Unit property.
+Allocated Ratio communicates the percentage of the [*Origin Charge*](#glossary:origin-charge) that this [*Allocated Charge*](#glossary:allocated-charge) derived from the corresponding [Allocated Method Id](#allocatedmethodid) and Usage Unit property.
 
 The "AllocatedRatio" property adheres to the following requirements:
 
 * "AllocatedRatio" MUST be included inside each "Elements" object.
 * Values for "AllocatedRatio" MUST be a decimal value compatible with [NumericFormat](#numericformat) representing the allocated charge's percentage of the origin charge.
-* Values for "AllocatedRatio" across all allocated records related to a single origin record MUST sum up to 1 (100%).
+* Values for all "AllocatedRatio" properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).
 
 <b>Usage Unit</b>
 
@@ -142,7 +142,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 }
 ```
 
-NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column but cannot accurately describe the normative requirements for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
+NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
 
 ### Scenario 1: Single "UsageUnit" value used for allocation
 
@@ -184,7 +184,7 @@ A provider can add additional properties if they feel more context is helpful or
     "AllocatedRatio" : 0.6,
     "UsageUnit" : "vCPU",
     "UsageQuantity" : 1,
-    "x_ReservedVCPU" : "1",
+    "x_ReservedVCPU" : 1,
     "x_UsedVCPU" : 0.5,
     "x_AllocatedVCPU" : 1
   }
