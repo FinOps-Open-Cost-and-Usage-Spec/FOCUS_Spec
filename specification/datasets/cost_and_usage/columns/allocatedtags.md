@@ -1,10 +1,10 @@
 # Allocated Tags
 
-The Allocated Tags column represents the set of [*tags*](#glossary:tag) assigned to [*tag sources*](#glossary:tag-source) which are specifically applicable to allocated charges resulting from a provider-calculated split cost allocation.
+The Allocated Tags column represents the set of [*tags*](#glossary:tag) assigned to [*tag sources*](#glossary:tag-source) which are specifically applicable to [*allocated charges*](#glossary:allocated-charge) resulting from a provider-calculated split cost allocation.
 
 The AllocatedTags column adheres to the following requirements:
 
-* AllocatedTags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports provider-calculated split cost allocation.
+* AllocatedTags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling).
 * AllocatedTags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
 * AllocatedTags nullability is defined as follows:
   * AllocatedTags MUST be null when a *charge* is not related to a provider-calculated split cost allocation.
@@ -12,7 +12,7 @@ The AllocatedTags column adheres to the following requirements:
 * When AllocatedTags is not null, AllocatedTags adheres to the following additional requirements:
   * AllocatedTags MUST NOT include resource tags already present in [Tags](#tags).
   * AllocatedTags MUST include all applicable user-defined and provider-defined tags for the [AllocatedResourceId](#AllocatedResourceId).
-  * Tag keys that do not support corresponding values, MUST have a corresponding true (boolean) value set.
+  * Tag keys that do not support corresponding values MUST have a corresponding true (boolean) value set.
   * Provider MUST NOT alter tag values unless applying true (boolean) to valueless tags.
 * Provider-defined tags adhere to the following additional requirements:
   * Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
@@ -45,7 +45,7 @@ Allocated Tags
 
 ## Description
 
-The Allocated Tags column represents the set of tags assigned to tag sources which are specifically applicable to allocated charges that have been calculated and allocated by the provider.
+The Allocated Tags column represents the set of tags assigned to tag sources which are specifically applicable to *allocated charges* that have been calculated and allocated by the provider.
 
 ## Content Constraints
 
