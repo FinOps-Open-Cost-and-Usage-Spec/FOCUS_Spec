@@ -19,11 +19,11 @@ In addition to these, a data generator may include one or more custom properties
 The ContractApplied column adheres to the following requirements:
 
 * ContractApplied MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
-* ContractApplied MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* ContractApplied MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
 * ContractApplied property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * ContractApplied MUST NOT be null when a contract is applied to the charge.
 * When ContractApplied is not null, ContractApplied adheres to the following additional requirements:
-  * ContractApplied objects MUST contain four key-value pairs, representing ContractCommitmentID, ContractCommitmentAppliedCost, ContractCommitmentAppliedQuantity, and ContractCommitmentAppliedUnit.
+  * ContractApplied objects MUST contain four key-value pairs, representing "ContractCommitmentID", "ContractCommitmentAppliedCost", "ContractCommitmentAppliedQuantity", and "ContractCommitmentAppliedUnit".
   * ContractApplied objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.
   * When ContractApplied custom key-value pairs are present:
     * ContractApplied custom key-value pairs MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
@@ -53,7 +53,7 @@ The following keys are used for contract application properties to facilitate qu
 | Datapoint                            | Column Type | Feature Level | Allows Nulls | Data Type |
 | ------------------------------------ | ----------- | ------------- | ------------ | --------- |
 | Contract ID                          | Dimension   | Conditional   | False        | String    |
-| Contract Commitment                  | Dimension   | Conditional   | False        | String    |
+| Contract Commitment ID               | Dimension   | Conditional   | False        | String    |
 | Contract Commitment Applied Cost     | Dimension   | Conditional   | True         | Numeric   |
 | Contract Commitment Applied Quantity | Dimension   | Conditional   | True         | Numeric   |
 | Contract Commitment Applied Unit     | Dimension   | Conditional   | True         | String    |
@@ -62,36 +62,36 @@ The following keys are used for contract application properties to facilitate qu
 
 Contract ID is a provider-assigned identifier for a contract describing the agreed terms between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
-The ContractId column adheres to the following requirements:
+The "ContractId" property adheres to the following requirements:
 
-* ContractId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
-* ContractId MUST be of type String.
-* ContractId MUST conform to [StringHandling](#stringhandling) requirements.
-* ContractId nullability is defined as follows:
-  * ContractId MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
-  * ContractId MUST NOT be null when a *charge* is related to a *contract commitment*.
-* When ContractId is not null, ContractId adheres to the following additional requirements:
-  * ContractId MUST be a unique identifier within the provider.
-  * ContractId SHOULD be a fully-qualified identifier.
+* "ContractId" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractId" MUST be of type String.
+* "ContractId" MUST conform to [StringHandling](#stringhandling) requirements.
+* "ContractId" nullability is defined as follows:
+  * "ContractId" MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
+  * "ContractId" MUST NOT be null when a *charge* is related to a *contract commitment*.
+* When "ContractId" is not null, "ContractId" adheres to the following additional requirements:
+  * "ContractId" MUST be a unique identifier within the provider.
+  * "ContractId" SHOULD be a fully-qualified identifier.
 
 <b>Contract Commitment ID</b>
 
 A Contract Commitment ID is a provider-assigned identifier describing an agreement negotiated between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
-The ContractCommitmentID column adheres to the following requirements:
+The "ContractCommitmentID" property adheres to the following requirements:
 
-* ContractCommitmentID MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
-* ContractCommitmentID MUST be of type String.
-* ContractCommitmentID MUST conform to [StringHandling](#stringhandling) requirements.
-* ContractCommitmentID nullability is defined as follows:
-  * ContractCommitmentID MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
-  * ContractCommitmentID MUST NOT be null when a *charge* is related to a *contract commitment*.
-* When ContractCommitmentID is not null, ContractCommitmentID adheres to the following additional requirements:
-  * ContractCommitmentID MUST be a unique identifier within the provider.
-  * ContractCommitmentID SHOULD be a fully-qualified identifier.
-  * ContractCommitmentID MUST have one and only one parent ContractID.
-  * ContractCommitmentID MUST be equal to ResourceID when ChargeCategory is "Purchase".
-  * ContractCommitmentID MAY be equal to ContractID.
+* "ContractCommitmentID" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractCommitmentID" MUST be of type String.
+* "ContractCommitmentID" MUST conform to [StringHandling](#stringhandling) requirements.
+* "ContractCommitmentID" nullability is defined as follows:
+  * "ContractCommitmentID" MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
+  * "ContractCommitmentID" MUST NOT be null when a *charge* is related to a *contract commitment*.
+* When "ContractCommitmentID" is not null, "ContractCommitmentID" adheres to the following additional requirements:
+  * "ContractCommitmentID" MUST be a unique identifier within the provider.
+  * "ContractCommitmentID" SHOULD be a fully-qualified identifier.
+  * "ContractCommitmentID" MUST have one and only one parent "ContractID".
+  * "ContractCommitmentID" MUST be equal to ResourceID when ChargeCategory is "Purchase".
+  * "ContractCommitmentID" MAY be equal to "ContractID".
 
 <b>Contract Commitment Applied Cost</b>
 
@@ -99,43 +99,43 @@ Contract Commitment Applied Cost represents the cost of the charge applied to th
 
 The ContractCommitmentAppliedCost column adheres to the following requirements:
 
-* ContractCommitmentAppliedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
-* ContractCommitmentAppliedCost MUST be of type Decimal.
-* ContractCommitmentAppliedCost MUST conform to [NumericFormat](#numericformat) requirements.
-* ContractCommitmentAppliedCost nullability is defined as follows:
-  * ContractCommitmentAppliedCost MUST NOT be null when ContractCommitmentAppliedQuantity is null.
-  * ContractCommitmentAppliedCost MAY be null in all other cases.
-* ContractCommitmentAppliedCost MUST be a valid decimal value.
-* ContractCommitmentAppliedCost MUST be denominated in the BillingCurrency.
+* "ContractCommitmentAppliedCost" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractCommitmentAppliedCost" MUST be of type Decimal.
+* "ContractCommitmentAppliedCost" MUST conform to [NumericFormat](#numericformat) requirements.
+* "ContractCommitmentAppliedCost" nullability is defined as follows:
+  * "ContractCommitmentAppliedCost" MUST NOT be null when "ContractCommitmentAppliedQuantity" is null.
+  * "ContractCommitmentAppliedCost" MAY be null in all other cases.
+* "ContractCommitmentAppliedCost" MUST be a valid decimal value.
+* "ContractCommitmentAppliedCost" MUST be denominated in the BillingCurrency.
 
 <b>Contract Commitment Applied Quantity</b>
 
 Contract Commitment Applied Quantity represents the quantity of the charge applied to the contract line item.  Contract Commitment Applied Quantity is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as negotiated between a provider and a customer.
 
-The ContractCommitmentAppliedQuantity column adheres to the following requirements:
+The "ContractCommitmentAppliedQuantity" property adheres to the following requirements:
 
-* ContractCommitmentAppliedQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
-* ContractCommitmentAppliedQuantity MUST be of type Decimal.
-* ContractCommitmentAppliedQuantity MUST conform to [NumericFormat](#numericformat) requirements.
-* ContractCommitmentAppliedQuantity nullability is defined as follows:
-  * ContractCommitmentAppliedQuantity MUST NOT be null when ContractCommitmentAppliedCost is null.
-  * ContractCommitmentAppliedQuantity MAY be null in all other cases.
-* ContractCommitmentAppliedQuantity MUST be a valid decimal value.
-* ContractCommitmentAppliedQuantity MUST be denominated in the ContractCommitmentAppliedUnit.
+* "ContractCommitmentAppliedQuantity" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractCommitmentAppliedQuantity" MUST be of type Decimal.
+* "ContractCommitmentAppliedQuantity" MUST conform to [NumericFormat](#numericformat) requirements.
+* "ContractCommitmentAppliedQuantity" nullability is defined as follows:
+  * "ContractCommitmentAppliedQuantity" MUST NOT be null when "ContractCommitmentAppliedCost" is null.
+  * "ContractCommitmentAppliedQuantity" MAY be null in all other cases.
+* "ContractCommitmentAppliedQuantity" MUST be a valid decimal value.
+* "ContractCommitmentAppliedQuantity" MUST be denominated in the "ContractCommitmentAppliedUnit".
 
 <b>Contract Commitment Applied Unit</b>
 
 The Contract Commitment Applied Unit represents a provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. Contract Commitment Applied Unit complements the Contract Commitment Applied Quantity metric.
 
-The ContractCommitmentAppliedUnit column adheres to the following requirements:
+The "ContractCommitmentAppliedUnit" property adheres to the following requirements:
 
-* ContractCommitmentAppliedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
-* ContractCommitmentAppliedUnit MUST be of type String.
-* ContractCommitmentAppliedUnit MUST conform to [StringHandling](#stringhandling) requirements.
-* ContractCommitmentAppliedUnit SHOULD conform to [UnitFormat](#unitformat) requirements.
-* ContractCommitmentAppliedUnit nullability is defined as follows:
-  * ContractCommitmentAppliedUnit MUST be null when ContractCommitmentAppliedQuantity is null.
-  * ContractCommitmentAppliedUnit MUST NOT be null when ContractCommitmentAppliedQuantity is not null.
+* "ContractCommitmentAppliedUnit" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractCommitmentAppliedUnit" MUST be of type String.
+* "ContractCommitmentAppliedUnit" MUST conform to [StringHandling](#stringhandling) requirements.
+* "ContractCommitmentAppliedUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
+* "ContractCommitmentAppliedUnit" nullability is defined as follows:
+  * "ContractCommitmentAppliedUnit" MUST be null when "ContractCommitmentAppliedQuantity" is null.
+  * "ContractCommitmentAppliedUnit" MUST NOT be null when "ContractCommitmentAppliedQuantity" is not null.
 
 ## Overview
 
@@ -153,11 +153,11 @@ The `Elements` array contains one or more objects, each of which contains the fo
 
 | Key                                  | Column Type | Feature Level | Allows Nulls | Data Type |
 | ------------------------------------ | ----------- | ------------- | ------------ | --------- |
-| Contract ID                          | Dimension   | Conditional   | False        | String    |
-| Contract Commitment ID               | Dimension   | Conditional   | False        | String    |
-| Contract Commitment Applied Cost     | Dimension   | Conditional   | True         | Numeric   |
-| Contract Commitment Applied Quantity | Dimension   | Conditional   | True         | Numeric   |
-| Contract Commitment Applied Unit     | Dimension   | Conditional   | True         | String    |
+| ContractID                          | Dimension   | Conditional   | False        | String    |
+| ContractCommitmentID               | Dimension   | Conditional   | False        | String    |
+| ContractCommitmentAppliedCost     | Dimension   | Conditional   | True         | Numeric   |
+| ContractCommitmentAppliedQuantity | Dimension   | Conditional   | True         | Numeric   |
+| ContractCommitmentAppliedUnit     | Dimension   | Conditional   | True         | String    |
 
 ### Example
 
@@ -203,7 +203,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 }
 ```
 
-NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column but cannot accurately describe the normative requirements for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
+NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for ContractApplied. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
 
 ## Example Scenarios
 
