@@ -1,6 +1,6 @@
 # Allocated Resource ID
 
-An Allocated Resource ID is an identifier assigned by the provider which cost is being allocated to in a provider-calculated split cost allocation. The Allocated Resource ID is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the provider is allocating costs to something other than the *charge's* [ResourceID](#ResourceId).
+An Allocated Resource ID is an identifier assigned by the provider which cost is being allocated to in a [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling). The Allocated Resource ID is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the provider is allocating costs to something other than the *charge's* [ResourceID](#ResourceId), as is the case for [allocated charges](#glossary:allocated-charge).
 
 The AllocatedResourceId column adheres to the following requirements:
 
