@@ -1,6 +1,6 @@
 # Allocated Method Details
 
-Allocated Method Details provides information about how resources are allocated under the corresponding [Allocated Method ID](#allocatedmethodid) when usage records are split to support cost allocation requirements.
+Allocated Method Details provides information about how resources are allocated when usage records are split to support cost allocation requirements.
 
 Allocated Resource Details consists of a valid JSON object which contains an array consisting of key-value objects describing the one or more factors that determined the split cost allocation. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the allocation.
 
