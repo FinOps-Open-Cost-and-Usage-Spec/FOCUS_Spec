@@ -32,7 +32,7 @@ The ContractApplied column adheres to the following requirements:
 
 ### Object Schema Requirements
 
-Allocated Method Details consists of a valid JSON object which contains an array of key-value objects describing the one or more contract commitments applied to the charge. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the contract application.
+Contract Applied consists of a valid JSON object which contains an array of key-value objects describing the one or more contract commitments applied to the charge. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the contract application.
 
 * If ContractApplied is not null, ContractApplied adheres to the following requirements:
   * ContractApplied MUST have a top-level key "Elements" which contains an array.
