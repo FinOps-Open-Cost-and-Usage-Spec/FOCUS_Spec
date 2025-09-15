@@ -18,7 +18,7 @@ The updated schema-related metadata could look like this:
   "FocusVersion": "1.1",
   "DataGeneratorVersion": "2.4",
   "CreationDate": "2024-05-02T12:01:03.083z",
-  "Dataset": "FOCUS Cost and Usage",
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
