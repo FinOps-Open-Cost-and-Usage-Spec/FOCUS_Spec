@@ -50,14 +50,6 @@ Allocated Method Details consists of a valid JSON object which contains an array
 
 The following keys are used for contract application properties to facilitate querying data across allocations and across providers. FOCUS-defined keys will appear in the list below, and custom keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
-| Datapoint                            | Column Type | Feature Level | Allows Nulls | Data Type |
-| ------------------------------------ | ----------- | ------------- | ------------ | --------- |
-| Contract ID                          | Dimension   | Conditional   | False        | String    |
-| Contract Commitment ID               | Dimension   | Conditional   | False        | String    |
-| Contract Commitment Applied Cost     | Dimension   | Conditional   | True         | Numeric   |
-| Contract Commitment Applied Quantity | Dimension   | Conditional   | True         | Numeric   |
-| Contract Commitment Applied Unit     | Dimension   | Conditional   | True         | String    |
-
 <b>Contract ID</b>
 
 Contract ID is a provider-assigned identifier for a contract describing the agreed terms between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
@@ -151,7 +143,7 @@ The parent array is called `Elements` and contains one or more objects which com
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
-| Key                                  | Column Type | Feature Level | Allows Nulls | Data Type |
+| Key                                  | Key Type    | Feature Level | Allows Nulls | Data Type |
 | ------------------------------------ | ----------- | ------------- | ------------ | --------- |
 | ContractID                          | Dimension   | Conditional   | False        | String    |
 | ContractCommitmentID               | Dimension   | Conditional   | False        | String    |
