@@ -27,7 +27,7 @@ Contract Commitment ID
 
 ## Description
 
-A provider-assigned identifier describing an agreement negotiated between a provider and a customer.
+A provider-assigned identifier describing a single contract term agreed between a provider and a customer.
 
 ## Content Constraints
 
