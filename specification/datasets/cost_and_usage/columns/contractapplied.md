@@ -38,7 +38,7 @@ Contract Applied consists of a valid JSON object which contains an array of key-
   * ContractApplied MUST have a top-level key "Elements" which contains an array.
   * Each item in "Elements" MUST be an object.
     * Objects inside "Elements" MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-    * Objects inside "Elements" MUST contain key-value pairs (contract applications).
+    * Objects inside "Elements" MUST contain key-value pairs (contract application properties).
       * FOCUS-defined contract application properties adhere to the following additional requirements:
         * Contract application property key MUST match the spelling and casing specified for the FOCUS-defined property.
         * Contract application property value MUST be of the type specified for that property.
