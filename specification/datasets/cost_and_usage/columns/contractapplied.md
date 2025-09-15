@@ -22,13 +22,6 @@ The ContractApplied column adheres to the following requirements:
 * ContractApplied MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
 * ContractApplied property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
-* When ContractApplied is not null, ContractApplied adheres to the following additional requirements:
-  * ContractApplied objects MUST contain four key-value pairs, representing "ContractCommitmentID", "ContractCommitmentAppliedCost", "ContractCommitmentAppliedQuantity", and "ContractCommitmentAppliedUnit".
-  * ContractApplied objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.
-  * When ContractApplied custom key-value pairs are present:
-    * ContractApplied custom key-value pairs MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
-    * ContractApplied custom key-value pairs MUST be documented by the data generator.
-    * ContractApplied custom key-value pairs MUST NOT be nested.
 
 ### Object Schema Requirements
 
@@ -36,15 +29,21 @@ Contract Applied consists of a valid JSON object which contains an array of key-
 
 * If ContractApplied is not null, ContractApplied adheres to the following requirements:
   * ContractApplied MUST have a top-level key "Elements" which contains an array.
+  * ContractApplied root object MAY contain custom objects, in addition to "Elements".
   * Each item in "Elements" MUST be an object.
-    * Objects inside "Elements" MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-    * Objects inside "Elements" MUST contain key-value pairs (contract application properties).
-      * FOCUS-defined contract application properties adhere to the following additional requirements:
-        * Contract application property key MUST match the spelling and casing specified for the FOCUS-defined property.
-        * Contract application property value MUST be of the type specified for that property.
-        * Contract application property MUST adhere to additional normative requirements specific to that property.
-      * Contract application property keys MUST begin with the string "x_" unless it is a FOCUS-defined allocation property.
-  * ContractApplied root object MAY contain custom properties, in addition to "Elements".
+  * "Elements" objects MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+  * "Elements" objects MUST contain key-value pairs (contract application properties).
+  * "Elements" objects MUST contain four key-value pairs, representing "ContractCommitmentID", "ContractCommitmentAppliedCost", "ContractCommitmentAppliedQuantity", and "ContractCommitmentAppliedUnit".
+  * "Elements" objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.
+  * When custom key-value pairs within "Elements" objects are present:
+    * Contract application property custom key-value pairs MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
+    * Contract application property custom key-value pairs MUST be documented by the data generator.
+    * Contract application property custom key-value pairs MUST NOT be nested.
+  * FOCUS-defined contract application properties adhere to the following additional requirements:
+     * Contract application property key MUST match the spelling and casing specified for the FOCUS-defined property.
+    * Contract application property value MUST be of the type specified for that property.
+    * Contract application property MUST adhere to additional normative requirements specific to that property.
+  * Contract application property keys MUST begin with the string "x_" unless it is a FOCUS-defined allocation property.
 
 ### Content Requirements
 
