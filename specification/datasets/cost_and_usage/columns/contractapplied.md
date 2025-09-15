@@ -21,7 +21,7 @@ The ContractApplied column adheres to the following requirements:
 * ContractApplied MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
 * ContractApplied MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
 * ContractApplied property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
-* ContractApplied MUST NOT be null when a contract is applied to the charge.
+* ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
 * When ContractApplied is not null, ContractApplied adheres to the following additional requirements:
   * ContractApplied objects MUST contain four key-value pairs, representing "ContractCommitmentID", "ContractCommitmentAppliedCost", "ContractCommitmentAppliedQuantity", and "ContractCommitmentAppliedUnit".
   * ContractApplied objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.
@@ -91,7 +91,7 @@ Contract Commitment Applied Cost represents the cost of the charge applied to th
 
 The "ContractCommitmentAppliedCost" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedCost" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractCommitmentAppliedCost" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* value with one or more *contract commitments*.
 * "ContractCommitmentAppliedCost" MUST be of type Decimal.
 * "ContractCommitmentAppliedCost" MUST conform to [NumericFormat](#numericformat) requirements.
 * "ContractCommitmentAppliedCost" nullability is defined as follows:
@@ -106,7 +106,7 @@ Contract Commitment Applied Quantity represents the quantity of the charge appli
 
 The "ContractCommitmentAppliedQuantity" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedQuantity" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractCommitmentAppliedQuantity" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedQuantity" MUST be of type Decimal.
 * "ContractCommitmentAppliedQuantity" MUST conform to [NumericFormat](#numericformat) requirements.
 * "ContractCommitmentAppliedQuantity" nullability is defined as follows:
@@ -121,7 +121,7 @@ The Contract Commitment Applied Unit represents a provider-specified measurement
 
 The "ContractCommitmentAppliedUnit" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedUnit" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractCommitmentAppliedUnit" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedUnit" MUST be of type String.
 * "ContractCommitmentAppliedUnit" MUST conform to [StringHandling](#stringhandling) requirements.
 * "ContractCommitmentAppliedUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
@@ -143,10 +143,10 @@ The parent array is called `Elements` and contains one or more objects which com
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
-| Key                                  | Key Type    | Feature Level | Allows Nulls | Data Type |
-| ------------------------------------ | ----------- | ------------- | ------------ | --------- |
-| ContractID                          | Dimension   | Conditional   | False        | String    |
-| ContractCommitmentID               | Dimension   | Conditional   | False        | String    |
+| Key                               | Key Type    | Feature Level | Allows Nulls | Data Type |
+| --------------------------------- | ----------- | ------------- | ------------ | --------- |
+| ContractID                        | Dimension   | Conditional   | False        | String    |
+| ContractCommitmentID              | Dimension   | Conditional   | False        | String    |
 | ContractCommitmentAppliedCost     | Dimension   | Conditional   | True         | Numeric   |
 | ContractCommitmentAppliedQuantity | Dimension   | Conditional   | True         | Numeric   |
 | ContractCommitmentAppliedUnit     | Dimension   | Conditional   | True         | String    |
@@ -158,13 +158,10 @@ The `Elements` array contains one or more objects, each of which contains the fo
   "Elements" : [ {
     "ContractID" : "12345",
     "ContractCommitmentID" : "23456",
-    "ContractCommitmentAppliedCost" : 500000.00,
-    "ContractCommitmentAppliedQuantity" : null,
-    "ContractCommitmentAppliedUnit" : null
+    "ContractCommitmentAppliedCost" : 500000.00
   }, {
     "ContractID" : "12345",
     "ContractCommitmentID" : "34567",
-    "ContractCommitmentAppliedCost" : null,
     "ContractCommitmentAppliedQuantity" : 10000.00,
     "ContractCommitmentAppliedUnit" : "compute_hours"
   } ]
@@ -220,19 +217,14 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
       "Elements": [ {
         "ContractID": "12345",
         "ContractCommitmentID": "12345",
-        "ContractCommitmentAppliedCost": 500000.00,
-        "ContractCommitmentAppliedQuantity": null,
-        "ContractCommitmentAppliedUnit": null
+        "ContractCommitmentAppliedCost": 500000.00
       }, {
         "ContractID": "12345",
         "ContractCommitmentID": "23456",
-        "ContractCommitmentAppliedCost": 25000.00,
-        "ContractCommitmentAppliedQuantity": null,
-        "ContractCommitmentAppliedUnit": null
+        "ContractCommitmentAppliedCost": 25000.00
       }, {
         "ContractID": "12345",
         "ContractCommitmentID": "34567",
-        "ContractCommitmentAppliedCost": null,
         "ContractCommitmentAppliedQuantity": 100000.00,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
@@ -259,19 +251,14 @@ This applies to the contract commitments in the following manner:
       "Elements": [ {
         "ContractID": "12345",
         "ContractCommitmentID": "12345",
-        "ContractCommitmentAppliedCost": 15.00,
-        "ContractCommitmentAppliedQuantity": null,
-        "ContractCommitmentAppliedUnit": null
+        "ContractCommitmentAppliedCost": 15.00
       }, {
         "ContractID": "12345",
         "ContractCommitmentID": "23456",
-        "ContractCommitmentAppliedCost": 15.00,
-        "ContractCommitmentAppliedQuantity": null,
-        "ContractCommitmentAppliedUnit": null
+        "ContractCommitmentAppliedCost": 15.00
       }, {
         "ContractID": "12345",
         "ContractCommitmentID": "34567",
-        "ContractCommitmentAppliedCost": null,
         "ContractCommitmentAppliedQuantity": 0.50,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
@@ -295,23 +282,17 @@ The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCost
         "ContractID": "12345",
         "ContractCommitmentID": "12345",
         "ContractCommitmentAppliedCost": 15.00,
-        "ContractCommitmentAppliedQuantity": null,
-        "ContractCommitmentAppliedUnit": null,
         "x_ContractCommitmentCostBalance": 499985.00
       }, {
         "ContractID": "12345",
         "ContractCommitmentID": "23456",
         "ContractCommitmentAppliedCost": 15.00,
-        "ContractCommitmentAppliedQuantity": null,
-        "ContractCommitmentAppliedUnit": null,
         "x_ContractCommitmentCostBalance": 24985.00
       }, {
         "ContractID": "12345",
         "ContractCommitmentID": "34567",
-        "ContractCommitmentAppliedCost": null,
         "ContractCommitmentAppliedQuantity": 0.50,
-        "ContractCommitmentAppliedUnit": "compute_hours",
-        "x_ContractCommitmentCostBalance": null
+        "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
     }
 ```
