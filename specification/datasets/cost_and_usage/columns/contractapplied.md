@@ -97,7 +97,7 @@ The "ContractCommitmentID" property adheres to the following requirements:
 
 Contract Commitment Applied Cost represents the cost of the charge applied to the contract line item.  Contract Commitment Applied Cost is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Cost is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as negotiated between a provider and a customer.
 
-The ContractCommitmentAppliedCost column adheres to the following requirements:
+The "ContractCommitmentAppliedCost" property adheres to the following requirements:
 
 * "ContractCommitmentAppliedCost" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
 * "ContractCommitmentAppliedCost" MUST be of type Decimal.
