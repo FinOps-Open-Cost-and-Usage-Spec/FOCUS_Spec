@@ -1,7 +1,7 @@
 {
-  "BillingAccountName-C-000-C": {
+  "InvoiceIssuerName-C-000-M": {
     "Function": "Composite",
-    "Reference": "BillingAccountName",
+    "Reference": "InvoiceIssuerName",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
@@ -9,37 +9,37 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingAccountName column adheres to the following requirements:",
+      "MustSatisfy": "When the InvoiceIssuerName column is present, each row MUST satisfy the type, StringHandling, and not-null checks",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountName-C-002-M"
+            "ConformanceRuleId": "InvoiceIssuerName-C-001-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountName-C-003-M"
+            "ConformanceRuleId": "InvoiceIssuerName-C-002-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountName-C-004-C"
+            "ConformanceRuleId": "InvoiceIssuerName-C-003-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-005-M",
-        "BillingAccountName-C-002-M",
-        "BillingAccountName-C-003-M",
-        "BillingAccountName-C-004-C"
+        "CostAndUsage-D-018-M",
+        "InvoiceIssuerName-C-001-M",
+        "InvoiceIssuerName-C-002-M",
+        "InvoiceIssuerName-C-003-M"
       ]
     }
   },
-  "BillingAccountName-C-002-M": {
+  "InvoiceIssuerName-C-001-M": {
     "Function": "Type",
-    "Reference": "BillingAccountName",
+    "Reference": "InvoiceIssuerName",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
@@ -47,19 +47,19 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type String",
+      "MustSatisfy": "InvoiceIssuerName MUST be of type String",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
-        "ColumnName": "BillingAccountName"
+        "ColumnName": "InvoiceIssuerName"
       },
       "Condition": {},
       "Dependencies": []
     }
   },
-  "BillingAccountName-C-003-M": {
-    "Function": "Type",
-    "Reference": "BillingAccountName",
+  "InvoiceIssuerName-C-002-M": {
+    "Function": "Format",
+    "Reference": "InvoiceIssuerName",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
@@ -67,33 +67,31 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to StringHandling requirements",
+      "MustSatisfy": "InvoiceIssuerName MUST conform to StringHandling requirements",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
-        "ColumnName": "BillingAccountName"
+        "ColumnName": "InvoiceIssuerName"
       },
       "Condition": {},
       "Dependencies": []
     }
   },
-  "BillingAccountName-C-004-C": {
+  "InvoiceIssuerName-C-003-M": {
     "Function": "Validation",
-    "Reference": "BillingAccountName",
+    "Reference": "InvoiceIssuerName",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "ACCOUNT_NAMING_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingAccountName MUST NOT be null when the provider supports assigning a display name for the billing account",
+      "MustSatisfy": "InvoiceIssuerName MUST NOT be null",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
-        "ColumnName": "BillingAccountName",
+        "ColumnName": "InvoiceIssuerName",
         "Value": null
       },
       "Condition": {},

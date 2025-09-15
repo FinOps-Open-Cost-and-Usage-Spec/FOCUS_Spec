@@ -6,14 +6,23 @@
     "AVAILABILITY_ZONE_SUPPORTED": {
       "Description": "Data generator supports deploying resources or services within an availability zone"
     },
+    "CAPACITY_RESERVATION_SUPPORTED": {
+      "Description": "Capacity reservations must be present when the provider supports capacity reservations."
+    },
     "COMMITMENT_DISCOUNT_SUPPORTED": {
       "Description": "Billing data when the data generator supports commitment based discounts"
+    },
+    "MULTIPLE_PRICING_CATEGORIES_SUPPORTED": {
+      "Description": "Provider supports more than one pricing category across all SKUs"
     },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
       "Description": "Data generator publishes unit prices exclusive of discounts"
     },
     "USAGE_MEASUREMENT_SUPPORTED": {
       "Description": "Data generator supports the measurement of usage quantities"
+    },
+    "SUB_ACCOUNT_SUPPORTED": {
+      "Description": "Data generator supports sub account construct for resource and service grouping"
     }
   }
 }
