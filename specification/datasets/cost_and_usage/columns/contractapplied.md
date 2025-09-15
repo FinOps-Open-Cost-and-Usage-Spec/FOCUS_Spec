@@ -68,7 +68,7 @@ The "ContractId" property adheres to the following requirements:
 
 <b>Contract Commitment ID</b>
 
-A Contract Commitment ID is a provider-assigned identifier describing an agreement negotiated between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
+A Contract Commitment ID is a provider-assigned identifier describing an agreement agreed between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
 The "ContractCommitmentID" property adheres to the following requirements:
 
