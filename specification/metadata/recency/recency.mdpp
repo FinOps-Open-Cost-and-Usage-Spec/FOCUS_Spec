@@ -20,9 +20,9 @@ This includes scenarios include, but are not limited to:
 
 For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#recencymetadataexample)
 
-!INCLUDE "schemaid.md",1
-!INCLUDE "creationdate.md",1
-!INCLUDE "focusversion.md",1
-!INCLUDE "datageneratorversion.md",1
-!INCLUDE "column_definition/column_definition.mdpp",1
+!INCLUDE "dataset_instance_id",1
+!INCLUDE "dataset_instance_complete.md",1
+!INCLUDE "dataset_instance_last_updated.md",1
+!INCLUDE "recencylastupdatedate.md",1
+!INCLUDE "time_sectors/time_sectors.mdpp",1
 

@@ -12,9 +12,9 @@ The provided recency metadata for non-time series dataset could look like this:
 
 ```json
 {
-  "Dataset": "54321-abcde-12345-abcde-12345",
-  "RecencyLastUpdateDate": "2025-01-291T15:01:03.083z",
-  "last_updated" : "2025-01-29T010:00:00z",
-  "complete" : true
+  "DatasetInstanceId": "54321-abcde-12345-abcde-12345",
+  "RecencyLastUpdate": "2025-01-291T15:01:03.083z",
+  "DatasetInstanceLastUpdated" : "2025-01-29T010:00:00z",
+  "DatasetInstanceComplete" : true
 }
 ```
