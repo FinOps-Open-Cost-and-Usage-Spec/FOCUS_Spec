@@ -1,6 +1,6 @@
 # Contract Commitment ID
 
-Contract Commitment ID is a provider-assigned identifier describing an agreement negotiated between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
+Contract Commitment ID is a provider-assigned identifier describing a single contract term agreed between a provider and a customer.  Contracts can include commitments to a certain amount of spend or usage over an agreed period of time.
 
 The ContractCommitmentID column adheres to the following requirements:
 
