@@ -6,9 +6,9 @@ Allocated Resource Details consists of a valid JSON object which contains an arr
 
 The FOCUS-defined properties are:
 
-* `AllocatedRatio`: The ratio of a [*charge*](#glossary:charge) that this allocation represents.
-* `UsageUnit`: Unit being measured used to calculate this allocation.
-* `UsageQuantity`: The value of the charge applied to a single contract term.
+* `Allocated Ratio`: The ratio of a [*charge*](#glossary:charge) that this allocation represents.
+* `Usage Unit`: Unit being measured used to calculate this allocation.
+* `Usage Quantity`: The value of the charge applied to a single contract term.
 
 In addition to these, a provider may include one or more custom properties, also denoted as key-value pairs.
 
@@ -47,12 +47,6 @@ If AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodD
 ### Content Requirements
 
 The following keys are used for allocation properties to facilitate querying data across allocations and across providers. Focus-defined keys will appear in the list below and Provider-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
-
-| Key | ValueType | Required | Description |
-| ----- | ---- | ---------- | ----------- |
-| AllocatedRatio | Numeric | True | Percentage of overall cost derived from corresponding method and metric. |
-| UsageUnit | [String](#stringhandling) | Conditional | Unit being measured used to calculate allocation. |
-| UsageQuantity | Numeric | False | Volume of UsageUnit consumed or used. |
 
 <b>Allocated Ratio</b>
 
