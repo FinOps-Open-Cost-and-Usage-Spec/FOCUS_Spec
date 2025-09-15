@@ -40,7 +40,7 @@ Contract Applied consists of a valid JSON object which contains an array of key-
     * Contract application property custom key-value pairs MUST be documented by the data generator.
     * Contract application property custom key-value pairs MUST NOT be nested.
   * FOCUS-defined contract application properties adhere to the following additional requirements:
-     * Contract application property key MUST match the spelling and casing specified for the FOCUS-defined property.
+    * Contract application property key MUST match the spelling and casing specified for the FOCUS-defined property.
     * Contract application property value MUST be of the type specified for that property.
     * Contract application property MUST adhere to additional normative requirements specific to that property.
   * Contract application property keys MUST begin with the string "x_" unless it is a FOCUS-defined allocation property.
