@@ -2,7 +2,19 @@
 
 The provider-calculated split cost allocation for provider-defined services is a capability that can be offered by providers which allocates (or in some cases provides more granular detail about) a charge to a more granular level. This is accomplished by taking a charge record present in a FOCUS dataset (origin charge) and splitting it into multiple charge records (allocated charges) to reflect the more granular detail, while ensuring the origin charge can be derived from the combination of allocated charges. This feature is used by practitioners to conduct chargebacks and better understand the usage of resources.
 
-If a provider supports provider-calculated split cost allocation for provider-defined services, a FOCUS dataset MUST adhere to the following requirements:
+## Attribute ID
+
+ProviderCalculatedSplitCostAllocation
+
+## Attribute Name
+
+Provider-Calculated Split Cost Allocation
+
+## Description
+
+Provider-calculated split cost allocation for provider-defined services allows providers to offer more detailed cost and usage information based on a method defined and documented by the provider, including support for allocating costs in cases where the usage of a resource might not match the units the resource is measured in.
+
+## Requirements
 
 * A FOCUS Cost and Usage dataset MUST include the following columns when the provider supports provider-calculated split cost allocation:
   * [AllocatedMethodId](#allocatedmethodid)
@@ -21,6 +33,10 @@ If a provider supports provider-calculated split cost allocation for provider-de
   * Allocated charge records MAY contain approtioned costs for the unused or unallocated usage of the ResourceId, if it aligns to the provider's documented allocation method.
 * Split-cost allocation is RECOMMENDED to be applied to charges on an opt-in basis.
 
-## Description
+## Exceptions
 
-Provider-calculated split cost allocation for provider-defined services allows providers to offer more detailed cost and usage information based on a method defined and documented by the provider, including support for allocating costs in cases where the usage of a resource might not match the units the resource is measured in.
+None
+
+## Introduced (version)
+
+1.3
