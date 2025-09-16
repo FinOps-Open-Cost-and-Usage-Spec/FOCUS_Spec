@@ -34,7 +34,9 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 
 ## Exceptions
 
-None
+* Exceptions to the restrictions on issued invoices, invoiced billing periods, and finalized charge records MAY apply in the following cases:
+  * Upon explicit request from the end-user (subject to validation and approval processes).
+  * Due to technical issues encountered during or after invoice issuance or billing period closure.
 
 ## Introduced (version)
 

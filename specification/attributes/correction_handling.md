@@ -87,9 +87,7 @@ All corrections adhere to the following requirements:
 
 ## Exceptions
 
-* Exceptions to the restrictions on issued invoices, invoiced billing periods, and finalized charge records MAY apply in the following cases:
-  * Upon explicit request from the end-user (subject to validation and approval processes).
-  * Due to technical issues encountered during or after invoice issuance or billing period closure.
+None
 
 ## Introduced (version)
 
