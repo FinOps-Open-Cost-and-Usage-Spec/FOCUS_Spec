@@ -2,5 +2,13 @@
 
 The following section contains examples of how correction handling may be implemented in alignment with the FOCUS specification. These examples cover scenarios involving corrections within open billing periods and to previously invoiced periods, and illustrate various delivery mechanisms and correction styles supported by FOCUS.
 
+The examples that follow are organized into sections based on billing period status:
+
+* Corrections to Invoiced Billing Period
+  * Post-Invoice Correction Scenarios: Examples of corrections to previously invoiced billing periods.
+* Corrections within Open Billing Period
+  * Intra-Period Correction Scenarios: Examples of corrections within the current open billing period.
+  * Pre-Invoice Correction Scenarios: Examples of corrections within previous open billing periods that have not yet been invoiced.
+
 !INCLUDE "invoiced_billing_period.md",1
 !INCLUDE "open_billing_period.md",1
