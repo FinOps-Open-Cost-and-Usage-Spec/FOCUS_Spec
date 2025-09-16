@@ -20,7 +20,6 @@ The ContractApplied column adheres to the following requirements:
 
 * ContractApplied MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
 * ContractApplied MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
-* ContractApplied property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
 
 ### Object Schema Requirements
@@ -35,7 +34,8 @@ Contract Applied consists of a valid JSON object which contains an array of key-
   * "Elements" objects MUST contain key-value pairs (contract application properties).
   * "Elements" objects MUST contain four key-value pairs, representing "ContractCommitmentID", "ContractCommitmentAppliedCost", "ContractCommitmentAppliedQuantity", and "ContractCommitmentAppliedUnit".
   * "Elements" objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.
-  * When custom key-value pairs within "Elements" objects are present:
+  * Contract application property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
+   * When custom key-value pairs within "Elements" objects are present:
     * Contract application property custom key-value pairs MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
     * Contract application property custom key-value pairs MUST be documented by the data generator.
     * Contract application property custom key-value pairs MUST NOT be nested.
