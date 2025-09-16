@@ -21,7 +21,7 @@ The AllocatedMethodDetails column adheres to the following requirements:
 * AllocatedMethodDetails SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling).
 * AllocatedMethodDetails MUST be of type String.
 * AllocatedMethodDetails MUST conform to [StringHandling](#stringhandling) requirements.
-* AllocatedMethodDetails MUST conform to [ObjectFormat](#objectformat) requirements.
+* AllocatedMethodDetails MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
   * AllocatedMethodDetails MUST conform to ObjectFormat schema requirements below.
 * AllocatedMethodDetails nullability is defined as follows:
   * AllocatedMethodDetails MUST be null when a charge is not related to a provider-calculated split cost allocation.
