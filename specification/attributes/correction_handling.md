@@ -21,13 +21,13 @@ Accurate correction handling is essential for a range of business-critical proce
 
 ### Delivery Mechanisms and Correction Representation
 
-FOCUS supports two cost and usage data delivery mechanisms: Replacement and Append-only.
+FOCUS supports two cost and usage data delivery mechanisms: Replacement and Append-only. These mechanisms are not mutually exclusive and hybrid implementations are common, allowing Data Generators to meet specific delivery and auditability requirements.
 
 #### Replacement Mechanism
 
-In the Replacement mechanism, each dataset provides a complete snapshot of cost and usage data for a billing period, based on the data collected up to the time of delivery. Subsequent datasets typically reflect updates, additions, or omissions relative to the previous snapshot. Subsequent datasets typically reflect updates, additions, or omissions relative to the previous snapshot. For uninvoiced billing periods (including both previous and current) this mechanism lacks a built-in audit trail, as records may be updated or omitted. To support traceability in uninvoiced billing periods, the Replacement mechanism should support optional external retention of historical snapshots. For invoiced billing periods, auditability is ensured through immutable finalized records and correction handling rules that prohibit updates, deletions, or omissions.
+In the Replacement mechanism, each dataset artifact provides a complete snapshot of cost and usage data for a billing period, based on the data collected up to the time of delivery. Subsequent dataset artifacts typically reflect updates, additions, or omissions relative to the previous snapshot. For uninvoiced billing periods (including both previous and current) this mechanism lacks a built-in audit trail, as records may be updated or omitted. To support traceability in uninvoiced billing periods, the Replacement mechanism should support optional external retention of historical snapshots. For invoiced billing periods, auditability is ensured through immutable finalized records and correction handling rules that prohibit updates, deletions, or omissions.
 
-Subsequent datasets in the Replacement mechanism may include the following:
+Subsequent dataset artifacts in the Replacement mechanism may include the following:
 
 * Unchanged records are carried over.
 * Updated records overwrite previous values.
@@ -38,7 +38,7 @@ Corrections in the Replacement mechanism are modeled through updates, additions,
 
 #### Append-only Mechanism
 
-In the Append-only mechanism, each dataset appends new records without modifying or removing previously delivered ones. This mechanism inherently supports auditability, as all original and correction records are retained.
+In the Append-only mechanism, each dataset artifact appends new records without modifying or removing previously delivered ones. This mechanism inherently supports auditability, as all original and correction records are retained.
 
 Corrections in the Append-only mechanism are represented exclusively by adding new records.
 
