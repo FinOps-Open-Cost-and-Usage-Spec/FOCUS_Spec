@@ -1,0 +1,155 @@
+{
+    "ChargeClass-C-000-M": {
+        "Function": "Composite",
+        "Reference": "ChargeClass",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "ChargeClass column adheres to the following requirements:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "ChargeClass-D-001-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "ChargeClass-C-001-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "ChargeClass-C-002-C"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "ChargeClass-C-005-C"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "ChargeClass-D-001-M",
+                "ChargeClass-C-001-M",
+                "ChargeClass-C-002-C",
+                "ChargeClass-C-005-C"
+            ]
+        }
+    },
+    "ChargeClass-C-001-M": {
+        "Function": "Type",
+        "Reference": "ChargeClass",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "MUST be of type String",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "TypeString",
+                "ColumnName": "ChargeClass"
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ChargeClass-C-002-C": {
+        "Function": "Composite",
+        "Reference": "ChargeClass",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "ChargeClass nullability is defined as follows:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "ChargeClass-C-003-C"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "ChargeClass-C-004-C"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "ChargeClass-C-003-C",
+                "ChargeClass-C-004-C"
+            ]
+        }
+    },
+    "ChargeClass-C-003-C": {
+        "Function": "Nullability",
+        "Reference": "ChargeClass",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "MUST be null when the row does not represent a correction or when it represents a correction within the current billing period",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ChargeClass-C-004-C": {
+        "Function": "Nullability",
+        "Reference": "ChargeClass",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "MUST NOT be null when the row represents a correction to a previously invoiced billing period",
+            "Keyword": "MUST NOT",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "ChargeClass-C-005-C": {
+        "Function": "Validation",
+        "Reference": "ChargeClass",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "MUST be \"Correction\" when ChargeClass is not null",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeClass",
+                "Value": "Correction"
+            },
+            "Condition": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "ChargeClass",
+                "Value": null
+            },
+            "Dependencies": []
+        }
+    }
+}
