@@ -34,4 +34,4 @@ The *exclusive end bound* of a *contract period*.
 
 ## Introduced (version)
 
-0.5
+1.3

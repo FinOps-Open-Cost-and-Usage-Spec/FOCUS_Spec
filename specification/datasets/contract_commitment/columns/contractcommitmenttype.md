@@ -34,4 +34,4 @@ A provider-assigned name to identify the type of *contract commitment*.
 
 ## Introduced (version)
 
-1.2
+1.3
