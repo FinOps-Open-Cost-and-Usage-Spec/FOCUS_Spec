@@ -165,6 +165,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-032-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-033-O"
           }
         ]
       },
@@ -199,7 +203,8 @@
         "CostAndUsage-D-029-C",
         "CostAndUsage-D-030-M",
         "CostAndUsage-D-031-M",
-        "CostAndUsage-D-032-M"
+        "CostAndUsage-D-032-M",
+        "CostAndUsage-D-033-O"
       ]
     }
   },
@@ -308,6 +313,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "InvoiceId-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "InvoiceIssuerName-C-000-M"
           },
           {
@@ -365,6 +374,7 @@
         "ConsumedQuantity-C-000-C",
         "ContractedCost-C-000-M",
         "EffectiveCost-C-000-M",
+        "InvoiceId-C-000-O",
         "InvoiceIssuerName-C-000-M",
         "ListCost-C-000-M",
         "ListUnitPrice-C-000-C",
@@ -996,6 +1006,26 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ListCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-033-O": {
+    "Function": "Presence",
+    "Reference": "InvoiceId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId is RECOMMENDED to be present in a FOCUS dataset",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "InvoiceId"
       },
       "Condition": {},
       "Dependencies": []
