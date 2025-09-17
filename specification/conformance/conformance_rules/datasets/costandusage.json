@@ -173,6 +173,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-034-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-035-M"
           }
         ]
       },
@@ -209,7 +213,8 @@
         "CostAndUsage-D-031-M",
         "CostAndUsage-D-032-M",
         "CostAndUsage-D-033-O",
-        "CostAndUsage-D-034-C"
+        "CostAndUsage-D-034-C",
+        "CostAndUsage-D-035-M"
       ]
     }
   },
@@ -247,6 +252,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingAccountType-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingCurrency-C-000-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -365,6 +374,7 @@
         "BillingAccountId-C-000-M",
         "BillingAccountName-C-000-C",
         "BillingAccountType-C-000-M",
+        "BillingCurrency-C-000-M",
         "BillingPeriodEnd-C-000-M",
         "BillingPeriodStart-C-000-M",
         "CapacityReservationStatus-C-000-M",
@@ -1058,6 +1068,26 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-035-M": {
+    "Function": "Presence",
+    "Reference": "BillingCurrency",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingCurrency"
       },
       "Condition": {},
       "Dependencies": []
