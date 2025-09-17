@@ -157,6 +157,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-030-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-031-M"
           }
         ]
       },
@@ -189,7 +193,8 @@
         "CostAndUsage-D-027-O",
         "CostAndUsage-D-028-M",
         "CostAndUsage-D-029-C",
-        "CostAndUsage-D-030-M"
+        "CostAndUsage-D-030-M",
+        "CostAndUsage-D-031-M"
       ]
     }
   },
@@ -319,6 +324,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "SubAccountName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "EffectiveCost-C-000-M"
           }
         ]
       },
@@ -346,6 +355,7 @@
         "CommitmentDiscountQuantity-C-000-C",
         "ConsumedQuantity-C-000-C",
         "ContractedCost-C-000-M",
+        "EffectiveCost-C-000-M",
         "InvoiceIssuerName-C-000-M",
         "ListUnitPrice-C-000-C",
         "PricingCategory-C-000-M",
@@ -936,6 +946,26 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ContractedCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-031-M": {
+    "Function": "Presence",
+    "Reference": "EffectiveCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "EffectiveCost"
       },
       "Condition": {},
       "Dependencies": []
