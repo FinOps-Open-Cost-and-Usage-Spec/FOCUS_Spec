@@ -32,6 +32,12 @@
     },
     "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED": {
       "Description": "Data generator supports assigning types to resources"
+    },
+    "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED": {
+      "Description": "provider supports pricing and billing in different currencies"
+    },
+    "VIRTUAL_CURRENCY_SUPPORTED": {
+      "Description": "Data generator supports virtual currency concepts"
     }
   }
 }
