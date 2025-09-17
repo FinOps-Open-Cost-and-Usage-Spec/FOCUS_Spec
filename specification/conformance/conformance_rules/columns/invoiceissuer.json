@@ -78,7 +78,7 @@
     }
   },
   "InvoiceIssuerName-C-003-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "InvoiceIssuerName",
     "EntityType": "Column",
     "Notes": "",

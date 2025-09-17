@@ -123,7 +123,7 @@
         }
     },
     "CommitmentDiscountName-C-004-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountName",
         "EntityType": "Column",
         "Notes": "",
@@ -188,7 +188,7 @@
         }
     },
     "CommitmentDiscountName-C-006-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountName",
         "EntityType": "Column",
         "Notes": "",
@@ -207,7 +207,7 @@
         }
     },
     "CommitmentDiscountName-C-007-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountName",
         "EntityType": "Column",
         "Notes": "",

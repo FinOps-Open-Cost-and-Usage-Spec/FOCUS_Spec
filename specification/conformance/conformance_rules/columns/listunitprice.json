@@ -129,7 +129,7 @@
     }
   },
   "ListUnitPrice-C-004-C": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
     "Notes": null,
@@ -158,7 +158,7 @@
     }
   },
   "ListUnitPrice-C-005-C": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
     "Notes": null,
@@ -207,7 +207,7 @@
     }
   },
   "ListUnitPrice-C-006-O": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
     "Notes": null,

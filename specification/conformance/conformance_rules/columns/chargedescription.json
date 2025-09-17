@@ -85,7 +85,7 @@
     }
   },
   "ChargeDescription-C-003-O": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "ChargeDescription",
     "EntityType": "Column",
     "Notes": "",

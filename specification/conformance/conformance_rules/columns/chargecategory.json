@@ -58,7 +58,7 @@
     }
   },
   "ChargeCategory-C-002-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
     "Notes": "",

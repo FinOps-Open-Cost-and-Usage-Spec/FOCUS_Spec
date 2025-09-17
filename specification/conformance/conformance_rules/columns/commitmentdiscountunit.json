@@ -150,7 +150,7 @@
         }
     },
     "CommitmentDiscountUnit-C-005-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountUnit",
         "EntityType": "Column",
         "Notes": "",
@@ -179,7 +179,7 @@
         }
     },
     "CommitmentDiscountUnit-C-006-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountUnit",
         "EntityType": "Column",
         "Notes": "",

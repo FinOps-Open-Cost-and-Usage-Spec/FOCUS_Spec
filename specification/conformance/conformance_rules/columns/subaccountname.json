@@ -89,7 +89,7 @@
     }
   },
   "SubAccountName-C-003-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "SubAccountName",
     "EntityType": "Column",
     "Notes": "",
@@ -118,7 +118,7 @@
     }
   },
   "SubAccountName-C-004-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "SubAccountName",
     "EntityType": "Column",
     "Notes": "",

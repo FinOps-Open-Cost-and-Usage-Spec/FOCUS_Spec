@@ -60,7 +60,7 @@
     }
   },
   "CommitmentDiscountStatus-C-002-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Column",
     "Notes": "",

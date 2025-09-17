@@ -80,7 +80,7 @@
     }
   },
   "AvailabilityZone-C-003-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",
     "Notes": "",

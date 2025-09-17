@@ -63,7 +63,7 @@
     }
   },
   "BillingAccountType-C-002-M": {
-    "Function": "Type",
+    "Function": "Format",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
     "Notes": "",
@@ -115,7 +115,7 @@
     }
   },
   "BillingAccountType-C-004-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
     "Notes": "",
@@ -140,7 +140,7 @@
     }
   },
   "BillingAccountType-C-005-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
     "Notes": "",

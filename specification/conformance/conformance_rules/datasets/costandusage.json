@@ -153,6 +153,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-029-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-030-M"
           }
         ]
       },
@@ -184,7 +188,8 @@
         "CostAndUsage-D-026-M",
         "CostAndUsage-D-027-O",
         "CostAndUsage-D-028-M",
-        "CostAndUsage-D-029-C"
+        "CostAndUsage-D-029-C",
+        "CostAndUsage-D-030-M"
       ]
     }
   },
@@ -289,6 +294,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ContractedCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "InvoiceIssuerName-C-000-M"
           },
           {
@@ -336,6 +345,7 @@
         "CommitmentDiscountUnit-C-000-M",
         "CommitmentDiscountQuantity-C-000-C",
         "ConsumedQuantity-C-000-C",
+        "ContractedCost-C-000-M",
         "InvoiceIssuerName-C-000-M",
         "ListUnitPrice-C-000-C",
         "PricingCategory-C-000-M",
@@ -906,6 +916,26 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "SubAccountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-030-M": {
+    "Function": "Presence",
+    "Reference": "ContractedCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractedCost MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractedCost"
       },
       "Condition": {},
       "Dependencies": []

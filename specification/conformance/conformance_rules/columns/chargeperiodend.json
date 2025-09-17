@@ -83,7 +83,7 @@
     }
   },
   "ChargePeriodEnd-C-003-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "ChargePeriodEnd",
     "EntityType": "Column",
     "CRVersionIntroduced": "1.2",

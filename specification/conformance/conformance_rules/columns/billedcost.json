@@ -53,7 +53,7 @@
     }
   },
   "BilledCost-C-001-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "BilledCost",
     "EntityType": "Column",
     "Notes": "A null value would invalidate accounting use cases",

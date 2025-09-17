@@ -84,7 +84,7 @@
     }
   },
   "SubAccountId-C-003-M": {
-    "Function": "Nullability",
+    "Function": "Composite",
     "Reference": "SubAccountId",
     "EntityType": "Column",
     "Notes": "",
@@ -118,7 +118,7 @@
     }
   },
   "SubAccountId-C-004-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "SubAccountId",
     "EntityType": "Column",
     "Notes": "",
@@ -137,7 +137,7 @@
     }
   },
   "SubAccountId-C-005-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "SubAccountId",
     "EntityType": "Column",
     "Notes": "",

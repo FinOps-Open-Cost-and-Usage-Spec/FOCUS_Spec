@@ -78,7 +78,7 @@
     }
   },
   "BillingAccountName-C-003-C": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "BillingAccountName",
     "EntityType": "Column",
     "Notes": "",
