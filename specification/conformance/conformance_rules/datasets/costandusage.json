@@ -181,6 +181,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-036-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-037-M"
           }
         ]
       },
@@ -219,7 +223,8 @@
         "CostAndUsage-D-033-O",
         "CostAndUsage-D-034-C",
         "CostAndUsage-D-035-M",
-        "CostAndUsage-D-036-M"
+        "CostAndUsage-D-036-M",
+        "CostAndUsage-D-037-M"
       ]
     }
   },
@@ -293,6 +298,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ChargePeriodEnd-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargePeriodStart-C-000-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -392,6 +401,7 @@
         "ChargeFrequency-C-000-O",
         "ChargeDescription-C-000-M",
         "ChargePeriodEnd-C-000-M",
+        "ChargePeriodStart-C-000-M",
         "CommitmentDiscountCategory-C-000-C",
         "CommitmentDiscountId-C-000-C",
         "CommitmentDiscountName-C-000-M",
@@ -1118,6 +1128,26 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "PricingQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-037-M": {
+    "Function": "Presence",
+    "Reference": "ChargePeriodStart",
+    "EntityType": "Dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodStart MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargePeriodStart"
       },
       "Condition": {},
       "Dependencies": []
