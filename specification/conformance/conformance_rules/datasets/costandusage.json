@@ -141,6 +141,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-026-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-027-O"
           }
         ]
       },
@@ -169,7 +173,8 @@
         "CostAndUsage-D-023-M",
         "CostAndUsage-D-024-M",
         "CostAndUsage-D-025-M",
-        "CostAndUsage-D-026-M"
+        "CostAndUsage-D-026-M",
+        "CostAndUsage-D-027-O"
       ]
     }
   },
@@ -227,6 +232,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ChargeClass-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeFrequency-C-000-O"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -302,6 +311,7 @@
         "CapacityReservationStatus-C-000-M",
         "ChargeCategory-C-000-M",
         "ChargeClass-C-000-M",
+        "ChargeFrequency-C-000-O",
         "ChargeDescription-C-000-M",
         "CommitmentDiscountCategory-C-000-C",
         "CommitmentDiscountId-C-000-C",
@@ -821,6 +831,26 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ChargeClass"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-027-O": {
+    "Function": "Presence",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency is RECOMMENDED to be present in a FOCUS dataset",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeFrequency"
       },
       "Condition": {},
       "Dependencies": []
