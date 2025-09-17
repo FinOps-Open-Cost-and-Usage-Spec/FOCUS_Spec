@@ -4,6 +4,7 @@ _SKIP_SUFFIXES = (
     "nullability is defined as follows:",
     "adheres to the following requirements:",
     "adheres to the following additional requirements:",
+    "is defined as follows:",
 )
 
 def _keyword_matches_text(keyword: str, text: str) -> bool:

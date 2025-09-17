@@ -26,6 +26,12 @@
     },
     "SUB_ACCOUNT_SUPPORTED": {
       "Description": "Data generator supports sub account construct for resource and service grouping"
+    },
+    "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED": {
+      "Description": "Data generator supports billing based on provisioned resources"
+    },
+    "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED": {
+      "Description": "Data generator supports assigning types to resources"
     }
   }
 }
