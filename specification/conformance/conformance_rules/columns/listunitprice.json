@@ -18,33 +18,33 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ListUnitPrice-C-002-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-003-M"
+            "ConformanceRuleId": "ListUnitPrice-C-003-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-004-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-008-C"
+            "ConformanceRuleId": "ListUnitPrice-C-007-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "CostAndUsage-D-004-C",
+        "ListUnitPrice-C-001-M",
         "ListUnitPrice-C-002-M",
-        "ListUnitPrice-C-003-M",
-        "ListUnitPrice-C-004-C",
-        "ListUnitPrice-C-008-C"
+        "ListUnitPrice-C-003-C",
+        "ListUnitPrice-C-007-C"
       ]
     }
   },
-  "ListUnitPrice-C-002-M": {
+  "ListUnitPrice-C-001-M": {
     "Function": "Type",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -66,7 +66,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-003-M": {
+  "ListUnitPrice-C-002-M": {
     "Function": "Format",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -88,7 +88,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-004-C": {
+  "ListUnitPrice-C-003-C": {
     "Function": "Composite",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -107,28 +107,28 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ListUnitPrice-C-005-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-006-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-007-O"
+            "ConformanceRuleId": "ListUnitPrice-C-006-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "ChargeCategory-C-000-M",
+        "ListUnitPrice-C-004-C",
         "ListUnitPrice-C-005-C",
-        "ListUnitPrice-C-006-C",
-        "ListUnitPrice-C-007-O"
+        "ListUnitPrice-C-006-O"
       ]
     }
   },
-  "ListUnitPrice-C-005-C": {
+  "ListUnitPrice-C-004-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -157,7 +157,7 @@
       ]
     }
   },
-  "ListUnitPrice-C-006-C": {
+  "ListUnitPrice-C-005-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -206,7 +206,7 @@
       ]
     }
   },
-  "ListUnitPrice-C-007-O": {
+  "ListUnitPrice-C-006-O": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -229,7 +229,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-008-C": {
+  "ListUnitPrice-C-007-C": {
     "Function": "Composite",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -248,19 +248,19 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ListUnitPrice-C-008-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ListUnitPrice-C-009-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-010-C"
+            "ConformanceRuleId": "ListUnitPrice-C-010-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-011-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-012-C"
+            "ConformanceRuleId": "ListUnitPrice-C-011-C"
           }
         ]
       },
@@ -271,14 +271,14 @@
       },
       "Dependencies": [
         "ChargeCategory-C-000-M",
+        "ListUnitPrice-C-008-C",
         "ListUnitPrice-C-009-C",
-        "ListUnitPrice-C-010-C",
-        "ListUnitPrice-C-011-M",
-        "ListUnitPrice-C-012-C"
+        "ListUnitPrice-C-010-M",
+        "ListUnitPrice-C-011-C"
       ]
     }
   },
-  "ListUnitPrice-C-009-C": {
+  "ListUnitPrice-C-008-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -301,7 +301,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-010-C": {
+  "ListUnitPrice-C-009-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -320,7 +320,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-011-M": {
+  "ListUnitPrice-C-010-M": {
     "Function": "Format",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -360,7 +360,7 @@
       ]
     }
   },
-  "ListUnitPrice-C-012-C": {
+  "ListUnitPrice-C-011-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",

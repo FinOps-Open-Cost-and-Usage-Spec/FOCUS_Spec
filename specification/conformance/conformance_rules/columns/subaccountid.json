@@ -32,7 +32,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-018-C",
+        "CostAndUsage-D-019-C",
         "SubAccountId-C-001-M",
         "SubAccountId-C-002-M",
         "SubAccountId-C-003-M"

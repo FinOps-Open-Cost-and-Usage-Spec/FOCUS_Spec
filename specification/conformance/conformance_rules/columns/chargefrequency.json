@@ -16,7 +16,7 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ChargeFrequency-D-001-O"
+            "ConformanceRuleId": "ChargeFrequency-C-001-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -28,25 +28,22 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ChargeFrequency-C-004-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ChargeFrequency-C-005-C"
+            "ConformanceRuleId": "ChargeFrequency-C-004-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
+        "CostAndUsage-D-027-O",
         "ChargeFrequency-D-001-O",
+        "ChargeFrequency-C-001-M",
         "ChargeFrequency-C-002-M",
         "ChargeFrequency-C-003-M",
-        "ChargeFrequency-C-004-M",
-        "ChargeFrequency-C-005-C"
+        "ChargeFrequency-C-004-C"
       ]
     }
   },
-  "ChargeFrequency-C-002-M": {
+  "ChargeFrequency-C-001-M": {
     "Function": "Type",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
@@ -66,7 +63,7 @@
       "Dependencies": []
     }
   },
-  "ChargeFrequency-C-003-M": {
+  "ChargeFrequency-C-002-M": {
     "Function": "Nullability",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
@@ -87,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "ChargeFrequency-C-004-M": {
+  "ChargeFrequency-C-003-M": {
     "Function": "Validation",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
@@ -123,7 +120,7 @@
       "Dependencies": []
     }
   },
-  "ChargeFrequency-C-005-C": {
+  "ChargeFrequency-C-004-C": {
     "Function": "Validation",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",

@@ -18,28 +18,28 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "AvailabilityZone-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "AvailabilityZone-C-002-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "AvailabilityZone-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "AvailabilityZone-C-004-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "CostAndUsage-D-003-C",
+        "AvailabilityZone-C-001-M",
         "AvailabilityZone-C-002-M",
-        "AvailabilityZone-C-003-M",
-        "AvailabilityZone-C-004-M"
+        "AvailabilityZone-C-003-M"
       ]
     }
   },
-  "AvailabilityZone-C-002-M": {
+  "AvailabilityZone-C-001-M": {
     "Function": "Type",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",
@@ -59,7 +59,7 @@
       "Dependencies": []
     }
   },
-  "AvailabilityZone-C-003-M": {
+  "AvailabilityZone-C-002-M": {
     "Function": "Type",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",
@@ -79,7 +79,7 @@
       "Dependencies": []
     }
   },
-  "AvailabilityZone-C-004-M": {
+  "AvailabilityZone-C-003-M": {
     "Function": "Validation",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",

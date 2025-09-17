@@ -16,10 +16,6 @@
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "ChargeClass-D-001-M"
-                    },
-                    {
-                        "CheckFunction": "CheckConformanceRule",
                         "ConformanceRuleId": "ChargeClass-C-001-M"
                     },
                     {
@@ -34,7 +30,7 @@
             },
             "Condition": {},
             "Dependencies": [
-                "ChargeClass-D-001-M",
+                "CostAndUsage-D-026-M",
                 "ChargeClass-C-001-M",
                 "ChargeClass-C-002-C",
                 "ChargeClass-C-005-C"

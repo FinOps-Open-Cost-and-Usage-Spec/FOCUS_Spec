@@ -38,6 +38,7 @@
             },
             "Condition": {},
             "Dependencies": [
+                "CostAndUsage-D-024-M",
                 "BillingAccountId-C-001-M",
                 "BillingAccountId-C-002-M",
                 "BillingAccountId-C-003-M",

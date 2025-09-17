@@ -145,6 +145,14 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-027-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-028-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-029-C"
           }
         ]
       },
@@ -174,7 +182,9 @@
         "CostAndUsage-D-024-M",
         "CostAndUsage-D-025-M",
         "CostAndUsage-D-026-M",
-        "CostAndUsage-D-027-O"
+        "CostAndUsage-D-027-O",
+        "CostAndUsage-D-028-M",
+        "CostAndUsage-D-029-C"
       ]
     }
   },
@@ -240,6 +250,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ChargeDescription-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargePeriodEnd-C-000-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -313,6 +327,7 @@
         "ChargeClass-C-000-M",
         "ChargeFrequency-C-000-O",
         "ChargeDescription-C-000-M",
+        "ChargePeriodEnd-C-000-M",
         "CommitmentDiscountCategory-C-000-C",
         "CommitmentDiscountId-C-000-C",
         "CommitmentDiscountName-C-000-M",
@@ -851,6 +866,46 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ChargeFrequency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-028-M": {
+    "Function": "Presence",
+    "Reference": "ChargePeriodEnd",
+    "EntityType": "Dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodEnd MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargePeriodEnd"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-029-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountName",
+    "EntityType": "Dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountName MUST be present in a FOCUS dataset when the provider supports a sub account construct.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountName"
       },
       "Condition": {},
       "Dependencies": []

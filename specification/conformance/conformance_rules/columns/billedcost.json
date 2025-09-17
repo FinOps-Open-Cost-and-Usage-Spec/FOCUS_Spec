@@ -16,6 +16,10 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BilledCost-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BilledCost-C-002-M"
           },
           {
@@ -33,26 +37,22 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BilledCost-C-006-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-007-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-C-006-M",
+        "CostAndUsage-D-006-M",
+        "BilledCost-C-001-M",
         "BilledCost-C-002-M",
         "BilledCost-C-003-M",
         "BilledCost-C-004-M",
         "BilledCost-C-005-M",
-        "BilledCost-C-006-M",
-        "BilledCost-C-007-M"
+        "BilledCost-C-006-M"
       ]
     }
   },
-  "BilledCost-C-002-M": {
+  "BilledCost-C-001-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -73,7 +73,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-003-M": {
+  "BilledCost-C-002-M": {
     "Function": "Type",
     "EntityType": "Column",
     "Reference": "BilledCost",
@@ -93,7 +93,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-004-M": {
+  "BilledCost-C-003-M": {
     "Function": "Format",
     "EntityType": "Column",
     "Reference": "BilledCost",
@@ -113,7 +113,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-005-M": {
+  "BilledCost-C-004-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -141,7 +141,7 @@
       ]
     }
   },
-  "BilledCost-C-006-M": {
+  "BilledCost-C-005-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -158,7 +158,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-007-M": {
+  "BilledCost-C-006-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",
