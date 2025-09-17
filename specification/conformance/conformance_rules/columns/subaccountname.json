@@ -1,0 +1,149 @@
+{
+  "SubAccountName-C-000-C": {
+    "Function": "Composite",
+    "Reference": "SubAccountName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All SubAccountName rules MUST be enforced",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountName-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountName-C-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-029-C",
+        "SubAccountName-C-001-M",
+        "SubAccountName-C-002-M",
+        "SubAccountName-C-003-M",
+        "SubAccountName-C-004-M"
+      ]
+    }
+  },
+  "SubAccountName-C-001-M": {
+    "Function": "Type",
+    "Reference": "SubAccountName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountName MUST be of type String",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "SubAccountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountName-C-002-M": {
+    "Function": "Format",
+    "Reference": "SubAccountName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountName MUST conform to StringHandling requirements",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "SubAccountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountName-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "SubAccountName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountName MUST be null when SubAccountId is null",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SubAccountName",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SubAccountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "SubAccountId-C-000-C"
+      ]
+    }
+  },
+  "SubAccountName-C-004-M": {
+    "Function": "Nullability",
+    "Reference": "SubAccountName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountName MUST NOT be null when SubAccountId is not null",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SubAccountName",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SubAccountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "SubAccountId-C-000-C"
+      ]
+    }
+  }
+}

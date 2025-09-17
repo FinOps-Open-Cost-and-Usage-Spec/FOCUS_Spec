@@ -39,14 +39,6 @@
       ],
       "FormatAttributes": []
     },
-    "CheckSameValue": {
-      "Description": "Check if column has a the same value as another column",
-      "Arguments": [
-        "ColumnAName",
-        "ColumnBName"
-      ],
-      "FormatAttributes": []
-    },
     "CheckNotSameValue": {
       "Description": "Check if column does not have the same value as another column",
       "Arguments": [
@@ -111,17 +103,17 @@
         "StringFormat-A-000-M"
       ]
     },
-    "FormatBillingCurrencyCode": {
-      "Description": "Check a column has a valid country code",
+    "FormatUnit": {
+      "Description": "Check a column has a unit format",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyFormat-A-000-M"
+        "UnitFormat-A-000-M"
       ]
     },
     "ColumnByColumnEqualsColumnValue": {
-      "Description": "Check the result of a column value times by another column value and confrm if it matches the value of third column",
+      "Description": "Check the result of a column value times by another column value and confirm if it matches the value of third column",
       "Arguments": [
         "ColumnAName",
         "ColumnBName",
@@ -129,32 +121,12 @@
       ],
       "FormatAttributes": []
     },
-    "CheckBillingPeriodStartInclusive": {
-      "Description": "Verify the column value is the inclusive start bound of the billing period (i.e., it is the minimum datetime for all rows sharing the same BillingAccountId+InvoiceId or for the dataset’s billing cycle) and strictly less than BillingPeriodEnd.",
-      "Arguments": [
-        "ColumnName",
-        "EndColumnName"
-      ],
-      "FormatAttributes": [
-        "DateTimeFormat-A-000-M"
-      ]
-    },
     "TypeDateTime": {
       "Description": "Check column has the data type of datetime",
       "Arguments": [
         "ColumnName"
       ],
       "FormatAttributes": []
-    },
-    "CheckExclusiveEndBound": {
-      "Description": "Verify EndColumn is the exclusive end bound of the billing period (i.e., ranges are [Start, End) and never include charges at End).",
-      "Arguments": [
-        "StartColumnName",
-        "EndColumnName"
-      ],
-      "FormatAttributes": [
-        "DateTimeFormat-A-000-M"
-      ]
     }
   }
 }

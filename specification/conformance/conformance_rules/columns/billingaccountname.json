@@ -9,14 +9,14 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "BillingAccountName column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountName-D-001-M"
+            "ConformanceRuleId": "BillingAccountName-C-001-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -24,21 +24,20 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountName-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountName-C-004-C"
+            "ConformanceRuleId": "BillingAccountName-C-003-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-005-M"
+        "CostAndUsage-D-005-M",
+        "BillingAccountName-C-001-M",
+        "BillingAccountName-C-002-M",
+        "BillingAccountName-C-003-C"
       ]
     }
   },
-  "BillingAccountName-C-002-M": {
+  "BillingAccountName-C-001-M": {
     "Function": "Type",
     "Reference": "BillingAccountName",
     "EntityType": "Column",
@@ -58,7 +57,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountName-C-003-M": {
+  "BillingAccountName-C-002-M": {
     "Function": "Type",
     "Reference": "BillingAccountName",
     "EntityType": "Column",
@@ -78,8 +77,8 @@
       "Dependencies": []
     }
   },
-  "BillingAccountName-C-004-C": {
-    "Function": "Validation",
+  "BillingAccountName-C-003-C": {
+    "Function": "Nullability",
     "Reference": "BillingAccountName",
     "EntityType": "Column",
     "Notes": "",
@@ -91,7 +90,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountName MUST NOT be null when the provider supports assigning a display name for the billing account",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "BillingAccountName",

@@ -9,11 +9,15 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingPeriodEnd column adheres to the following requirements",
+      "MustSatisfy": "BillingPeriodEnd column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingPeriodEnd-C-001-M"
+          },
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingPeriodEnd-C-002-M"
@@ -25,20 +29,20 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingPeriodEnd-C-004-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingPeriodEnd-C-005-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-010-M"
+        "CostAndUsage-D-010-M",
+        "BillingPeriodEnd-C-001-M",
+        "BillingPeriodEnd-C-002-M",
+        "BillingPeriodEnd-C-003-M",
+        "BillingPeriodEnd-C-004-M"
       ]
     }
   },
-  "BillingPeriodEnd-C-002-M": {
+  "BillingPeriodEnd-C-001-M": {
     "Function": "Type",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
@@ -58,7 +62,7 @@
       "Dependencies": []
     }
   },
-  "BillingPeriodEnd-C-003-M": {
+  "BillingPeriodEnd-C-002-M": {
     "Function": "Format",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
@@ -78,8 +82,8 @@
       "Dependencies": []
     }
   },
-  "BillingPeriodEnd-C-004-M": {
-    "Function": "Validation",
+  "BillingPeriodEnd-C-003-M": {
+    "Function": "Nullability",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
     "Notes": "",
@@ -89,7 +93,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "BillingPeriodEnd",
@@ -99,7 +103,7 @@
       "Dependencies": []
     }
   },
-  "BillingPeriodEnd-C-005-M": {
+  "BillingPeriodEnd-C-004-M": {
     "Function": "Validation",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
@@ -111,11 +115,7 @@
     "ValidationCriteria": {
       "MustSatisfy": "MUST be the exclusive end bound of the billing period",
       "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckExclusiveEndBound",
-        "StartColumnName": "BillingPeriodStart",
-        "EndColumnName": "BillingPeriodEnd"
-      },
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }

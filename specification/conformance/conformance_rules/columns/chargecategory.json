@@ -9,11 +9,15 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "ChargeCategory column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeCategory-C-001-M"
+          },
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ChargeCategory-C-002-M"
@@ -21,20 +25,19 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ChargeCategory-C-003-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ChargeCategory-C-004-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-008-M"
+        "CostAndUsage-D-008-M",
+        "ChargeCategory-C-001-M",
+        "ChargeCategory-C-002-M",
+        "ChargeCategory-C-003-M"
       ]
     }
   },
-  "ChargeCategory-C-002-M": {
+  "ChargeCategory-C-001-M": {
     "Function": "Type",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
@@ -54,8 +57,8 @@
       "Dependencies": []
     }
   },
-  "ChargeCategory-C-003-M": {
-    "Function": "Validation",
+  "ChargeCategory-C-002-M": {
+    "Function": "Nullability",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
     "Notes": "",
@@ -65,7 +68,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "ChargeCategory",
@@ -75,7 +78,7 @@
       "Dependencies": []
     }
   },
-  "ChargeCategory-C-004-M": {
+  "ChargeCategory-C-003-M": {
     "Function": "Validation",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
@@ -88,9 +91,34 @@
       "MustSatisfy": "MUST be one of the allowed values",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "ChargeCategory",
-        "Value": null
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Purchase"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Tax"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Credit"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Adjustment"
+          }
+        ]
       },
       "Condition": {},
       "Dependencies": []

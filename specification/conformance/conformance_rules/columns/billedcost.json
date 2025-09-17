@@ -9,11 +9,15 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "BilledCost column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BilledCost-C-001-M"
+          },
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BilledCost-C-002-M"
@@ -33,21 +37,23 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BilledCost-C-006-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-007-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-C-006-M"
+        "CostAndUsage-D-006-M",
+        "BilledCost-C-001-M",
+        "BilledCost-C-002-M",
+        "BilledCost-C-003-M",
+        "BilledCost-C-004-M",
+        "BilledCost-C-005-M",
+        "BilledCost-C-006-M"
       ]
     }
   },
-  "BilledCost-C-002-M": {
-    "Function": "Validation",
+  "BilledCost-C-001-M": {
+    "Function": "Nullability",
     "Reference": "BilledCost",
     "EntityType": "Column",
     "Notes": "A null value would invalidate accounting use cases",
@@ -57,7 +63,7 @@
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "BilledCost",
@@ -67,7 +73,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-003-M": {
+  "BilledCost-C-002-M": {
     "Function": "Type",
     "EntityType": "Column",
     "Reference": "BilledCost",
@@ -87,7 +93,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-004-M": {
+  "BilledCost-C-003-M": {
     "Function": "Format",
     "EntityType": "Column",
     "Reference": "BilledCost",
@@ -107,7 +113,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-005-M": {
+  "BilledCost-C-004-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -135,7 +141,7 @@
       ]
     }
   },
-  "BilledCost-C-006-M": {
+  "BilledCost-C-005-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -152,7 +158,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-007-M": {
+  "BilledCost-C-006-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",

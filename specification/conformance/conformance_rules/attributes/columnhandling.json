@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "Column IDs MUST use Pascal case",
+      "MustSatisfy": "The attribute adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -69,7 +69,21 @@
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "ColumnHandling-A-001-M",
+        "ColumnHandling-A-002-M",
+        "ColumnHandling-A-003-M",
+        "ColumnHandling-A-004-O",
+        "ColumnHandling-A-005-O",
+        "ColumnHandling-A-006-O",
+        "ColumnHandling-A-007-O",
+        "ColumnHandling-A-008-M",
+        "ColumnHandling-A-009-M",
+        "ColumnHandling-A-010-O",
+        "ColumnHandling-A-011-O",
+        "ColumnHandling-A-012-O",
+        "ColumnHandling-A-013-O"
+      ]
     }
   },
   "ColumnHandling-A-001-M": {
@@ -80,7 +94,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST use Pascal case",
       "Keyword": "MUST",
@@ -97,10 +111,10 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST NOT use abbreviations",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -114,7 +128,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST be alphanumeric with no special characters",
       "Keyword": "MUST",
@@ -131,10 +145,10 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT use acronyms",
-      "Keyword": "SHOULD",
+      "Keyword": "SHOULD NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -148,10 +162,10 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories",
-      "Keyword": "SHOULD",
+      "Keyword": "SHOULD NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
@@ -165,7 +179,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID",
       "Keyword": "MUST",
@@ -182,7 +196,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix",
       "Keyword": "MAY",
@@ -199,7 +213,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Columns with the Category suffix MUST be normalized",
       "Keyword": "MUST",
@@ -216,7 +230,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases",
       "Keyword": "MUST",
@@ -233,7 +247,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns",
       "Keyword": "SHOULD",
@@ -250,7 +264,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset",
       "Keyword": "SHOULD",
@@ -267,7 +281,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed",
       "Keyword": "SHOULD",
@@ -284,7 +298,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns",
       "Keyword": "MAY",

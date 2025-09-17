@@ -1,0 +1,178 @@
+{
+    "CommitmentDiscountType-C-000-M": {
+        "Function": "Composite",
+        "Reference": "CommitmentDiscountType",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "COMMITMENT_DISCOUNT_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "All CommitmentDiscountType rules MUST be enforced.",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "CommitmentDiscountType-C-001-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "CommitmentDiscountType-C-002-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "CommitmentDiscountType-C-003-M"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "CostAndUsage-D-014-M",
+                "CommitmentDiscountType-C-001-M",
+                "CommitmentDiscountType-C-002-M",
+                "CommitmentDiscountType-C-003-M"
+            ]
+        }
+    },
+    "CommitmentDiscountType-C-001-M": {
+        "Function": "Type",
+        "Reference": "CommitmentDiscountType",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "COMMITMENT_DISCOUNT_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "CommitmentDiscountType MUST be of type String.",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "TypeString",
+                "ColumnName": "CommitmentDiscountType"
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "CommitmentDiscountType-C-002-M": {
+        "Function": "Format",
+        "Reference": "CommitmentDiscountType",
+        "EntityType": "Column",
+        "Notes": "Cross-column reference: StringHandling",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "COMMITMENT_DISCOUNT_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "CommitmentDiscountType MUST conform to StringHandling requirements.",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "FormatString",
+                "ColumnName": "CommitmentDiscountType"
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "CommitmentDiscountType-C-003-M": {
+        "Function": "Composite",
+        "Reference": "CommitmentDiscountType",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "COMMITMENT_DISCOUNT_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "CommitmentDiscountType nullability is defined as follows:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "CommitmentDiscountType-C-004-C"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "CommitmentDiscountType-C-005-C"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "CommitmentDiscountType-C-004-C",
+                "CommitmentDiscountType-C-005-C"
+            ]
+        }
+    },
+    "CommitmentDiscountType-C-004-C": {
+        "Function": "Nullability",
+        "Reference": "CommitmentDiscountType",
+        "EntityType": "Column",
+        "Notes": "Cross-column reference: CommitmentDiscountId",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "COMMITMENT_DISCOUNT_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "CommitmentDiscountType MUST be null when CommitmentDiscountId is null.",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "CommitmentDiscountType",
+                "Value": null
+            },
+            "Condition": {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "CommitmentDiscountId",
+                "Value": null
+            },
+            "Dependencies": [
+                "CommitmentDiscountId-C-000-M"
+            ]
+        }
+    },
+    "CommitmentDiscountType-C-005-C": {
+        "Function": "Nullability",
+        "Reference": "CommitmentDiscountType",
+        "EntityType": "Column",
+        "Notes": "Cross-column reference: CommitmentDiscountId",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "COMMITMENT_DISCOUNT_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.",
+            "Keyword": "MUST NOT",
+            "Requirement": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "CommitmentDiscountType",
+                "Value": null
+            },
+            "Condition": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "CommitmentDiscountId",
+                "Value": null
+            },
+            "Dependencies": [
+                "CommitmentDiscountId-C-000-M"
+            ]
+        }
+    }
+}
