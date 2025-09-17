@@ -6,18 +6,18 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 
 | Column                                                             | Column Type | Feature Level | Allows Nulls | Data Type | Value Format            |
 | ------------------------------------------------------------------ | ----------- | ------------- | ------------ | --------- | ----------------------- |
-| [Contract Commitment ID](#contractcommitmentid-1)                  | Dimension   | Mandatory     | False        | String    | \<not specified>        |
-| [Contract ID](#contractid-1)                                       | Dimension   | Mandatory     | False        | String    | \<not specified>        |
+| [Contract Commitment ID](#contractcommitmentid-1)                  | Dimension   | Mandatory     | False        | String    | \<not specified>       |
+| [Contract ID](#contractid-1)                                       | Dimension   | Mandatory     | False        | String    | \<not specified>       |
 | [Contract Period Start](#contractperiodstart)                      | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
 | [Contract Period End](#contractperiodend)                          | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
 | [Contract Commitment Period Start](#contractcommitmentperiodstart) | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
 | [Contract Commitment Period End](#contractcommitmentperiodend)     | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
-| [Contract Commitment Description](#contractcommitmentdescription)  | Dimension   | Mandatory     | True         | String    | \<not specified>        |
-| [Contract Commitment Type](#contractcommitmenttype)                | Dimension   | Mandatory     | False        | String    | \<not specified>        |
+| [Contract Commitment Description](#contractcommitmentdescription)  | Dimension   | Mandatory     | True         | String    | \<not specified>       |
+| [Contract Commitment Type](#contractcommitmenttype)                | Dimension   | Mandatory     | False        | String    | \<not specified>       |
 | [Contract Commitment Category](#contractcommitmentcategory)        | Dimension   | Mandatory     | False        | String    | Allowed Values          |
-| [Contract Commitment Unit](#contractcommitmentunit)                | Dimension   | Mandatory     | True         | String    | \<not specified>        |
+| [Contract Commitment Unit](#contractcommitmentunit)                | Dimension   | Mandatory     | True         | String    | \<not specified>       |
 | [Contract Commitment Quantity](#contractcommitmentquantity)        | Metric      | Mandatory     | True         | Numeric   | Any valid decimal value |
-| [Contract Commitment Currency](#contractcommitmentcurrency)        | Dimension   | Mandatory     | True         | String    | Currency Format         |
+| [Billing Currency](#billingcurrency-1)                             | Dimension   | Mandatory     | True         | String    | Currency Format         |
 | [Contract Commitment Cost](#contractcommitmentcost)                | Metric      | Mandatory     | True         | Numeric   | Any valid decimal value |
 
 <div class='h4-nonindex'>Relationships</div>

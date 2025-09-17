@@ -11,6 +11,7 @@ The ContractCommitmentCost column adheres to the following requirements:
   * ContractCommitmentCost MUST NOT be null when ContractCommitmentQuantity is null.
   * ContractCommitmentCost MAY be null when ContractCommitmentQuantity is not null.
 * ContractCommitmentCost MUST be a valid decimal value.
+* ContractCommitmentCost MUST be denominated in the [BillingCurrency](#billingcurrency-1).
 
 ## Column ID
 
