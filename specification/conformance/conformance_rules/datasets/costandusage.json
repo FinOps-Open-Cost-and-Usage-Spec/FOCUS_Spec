@@ -189,6 +189,22 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-038-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-039-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-040-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-041-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-042-O"
           }
         ]
       },
@@ -229,7 +245,11 @@
         "CostAndUsage-D-035-M",
         "CostAndUsage-D-036-M",
         "CostAndUsage-D-037-M",
-        "CostAndUsage-D-038-M"
+        "CostAndUsage-D-038-M",
+        "CostAndUsage-D-039-C",
+        "CostAndUsage-D-040-M",
+        "CostAndUsage-D-041-M",
+        "CostAndUsage-D-042-O"
       ]
     }
   },
@@ -350,6 +370,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "EffectiveCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "InvoiceId-C-000-O"
           },
           {
@@ -382,6 +406,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "SubAccountId-C-000-C"
           },
           {
@@ -390,7 +418,15 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "EffectiveCost-C-000-M"
+            "ConformanceRuleId": "ServiceCategory-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ServiceSubcategory-C-000-O"
           }
         ]
       },
@@ -429,9 +465,13 @@
         "PricingCategory-C-000-M",
         "PricingQuantity-C-000-M",
         "ProviderName-C-000-M",
+        "ResourceType-C-000-M",
         "PublisherName-C-000-M",
         "SubAccountId-C-000-C",
-        "SubAccountName-C-000-C"
+        "SubAccountName-C-000-C",
+        "ServiceCategory-C-000-M",
+        "ServiceName-C-000-M",
+        "ServiceSubcategory-C-000-O"
       ]
     }
   },
@@ -1178,6 +1218,89 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-039-C": {
+    "Function": "Presence",
+    "Reference": "ResourceType",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources and supports assigning types to resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-040-M": {
+    "Function": "Presence",
+    "Reference": "ServiceCategory",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceCategory MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-041-M": {
+    "Function": "Presence",
+    "Reference": "ServiceName",
+    "EntityType": "Dataset",
+    "Notes": "ServiceName must be present in dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-042-O": {
+    "Function": "Presence",
+    "Reference": "ServiceSubcategory",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory is RECOMMENDED to be present in a FOCUS dataset.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceSubcategory"
       },
       "Condition": {},
       "Dependencies": []

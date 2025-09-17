@@ -1,0 +1,184 @@
+{
+  "ResourceType-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ResourceType column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-003-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-039-C",
+        "ResourceType-C-001-M",
+        "ResourceType-C-002-M",
+        "ResourceType-C-003-C"
+      ]
+    }
+  },
+  "ResourceType-C-001-M": {
+    "Function": "Type",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ResourceType-C-002-M": {
+    "Function": "Validation",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ResourceType-C-003-C": {
+    "Function": "Composite",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceType-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ResourceType-C-004-C",
+        "ResourceType-C-005-C"
+      ]
+    }
+  },
+  "ResourceType-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST be null when ResourceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ResourceType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ResourceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "ResourceId-C-000-M"
+      ]
+    }
+  },
+  "ResourceType-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST NOT be null when ResourceId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ResourceType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "CheckCondition": "ResourceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "ResourceId-C-000-M"
+      ]
+    }
+  }
+}

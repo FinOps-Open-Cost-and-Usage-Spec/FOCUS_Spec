@@ -23,6 +23,15 @@
         "ColumnHandling-A-000-M"
       ]
     },
+    "CheckDistinctCount": {
+      "Description": "Check if two columns have a distinct count equal to a value",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName",
+        "ExpectedCount"
+      ],
+      "FormatAttributes": []
+    },
     "CheckValue": {
       "Description": "Check if column has a particular value",
       "Arguments": [
