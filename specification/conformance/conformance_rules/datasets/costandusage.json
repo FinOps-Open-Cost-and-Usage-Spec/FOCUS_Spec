@@ -105,6 +105,22 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-017-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-C-031-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-C-032-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-C-033-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-C-034-C"
           }
         ]
       },
@@ -124,7 +140,11 @@
         "CostAndUsage-D-014-M",
         "CostAndUsage-D-015-M",
         "CostAndUsage-D-016-M",
-        "CostAndUsage-D-017-M"
+        "CostAndUsage-D-017-M",
+        "CostAndUsage-C-031-C",
+        "CostAndUsage-C-032-C",
+        "CostAndUsage-C-033-C",
+        "CostAndUsage-C-034-C"
       ]
     }
   },
@@ -237,7 +257,11 @@
         "CommitmentDiscountUnit-C-000-M",
         "ChargeCategory-C-000-M",
         "ConsumedQuantity-C-000-C",
-        "ListUnitPrice-C-000-C"
+        "ListUnitPrice-C-000-C",
+        "PricingCurrency-C-000-C",
+        "PricingCurrencyContractedUnitPrice-C-000-C",
+        "PricingCurrencyEffectiveCost-C-000-M",
+        "PricingCurrencyListUnitPrice-C-000-M"
       ]
     }
   },
@@ -554,6 +578,94 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "CommitmentDiscountStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-C-031-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrency",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_CURRENCY_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrency MUST be present in a FOCUS dataset when the provider supports pricing and billing in different currencies",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-C-032-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_CURRENCY_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be present in a FOCUS dataset when the provider supports pricing and billing in different currencies",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyEffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-C-033-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_CURRENCY_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST be present in a FOCUS dataset when the provider supports pricing and billing in different currencies",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-C-034-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_CURRENCY_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be present in a FOCUS dataset when the provider supports pricing and billing in different currencies",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyContractedUnitPrice"
       },
       "Condition": {},
       "Dependencies": []

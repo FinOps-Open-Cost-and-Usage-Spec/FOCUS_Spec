@@ -1,125 +1,180 @@
 {
-  "ConformanceRules": {
     "PricingCurrencyEffectiveCost-C-000-M": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-000-M",
-      "Function": "Composite",
-      "Keyword": null,
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyEffectiveCost column",
-      "Condition": "All Rows",
-      "Requirement": "AND(PricingCurrencyEffectiveCost-C-001-C, PricingCurrencyEffectiveCost-C-005-M, PricingCurrencyEffectiveCost-C-006-M, PricingCurrencyEffectiveCost-C-007-M, PricingCurrencyEffectiveCost-C-008-M, PricingCurrencyEffectiveCost-C-009-C, PricingCurrencyEffectiveCost-C-010-M)",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "The PricingCurrencyEffectiveCost column adheres to the following requirements"
-    },
-    "PricingCurrencyEffectiveCost-C-001-C": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-001-C",
-      "Function": "Composite",
-      "Keyword": null,
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyEffectiveCost column",
-      "Condition": "All Rows",
-      "Requirement": "OR(PricingCurrencyEffectiveCost-C-002-C, PricingCurrencyEffectiveCost-C-003-O, PricingCurrencyEffectiveCost-C-004-O)",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyEffectiveCost presence in a FOCUS dataset is defined as follows"
-    },
-    "PricingCurrencyEffectiveCost-C-002-C": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-002-C",
-      "Function": "Presence",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "VIRTUAL_CURRENCY_PRICING_SUPPORTED",
-      "Condition": "All Rows",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyEffectiveCost MUST be present in a FOCUS dataset when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts"
-    },
-    "PricingCurrencyEffectiveCost-C-003-O": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-003-O",
-      "Function": "Presence",
-      "Keyword": "RECOMMENDED",
-      "ApplicabilityCriteria": "PRICING_CURRENCY_SUPPORTED",
-      "Condition": "All Rows",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "warning",
-      "Description": "PricingCurrencyEffectiveCost is RECOMMENDED to be present in a FOCUS dataset when the provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts"
-    },
-    "PricingCurrencyEffectiveCost-C-004-O": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-004-O",
-      "Function": "Presence",
-      "Keyword": "MAY",
-      "ApplicabilityCriteria": "All Rows",
-      "Condition": "All Rows",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "info",
-      "Description": "PricingCurrencyEffectiveCost MAY be present in a FOCUS dataset in all other cases"
+        "Function": "Composite",
+        "Reference": "PricingCurrencyEffectiveCost",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "The PricingCurrencyEffectiveCost column adheres to the following requirements:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-005-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-006-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-007-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-008-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-009-C"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-010-M"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "PricingCurrencyEffectiveCost-C-005-M",
+                "PricingCurrencyEffectiveCost-C-006-M",
+                "PricingCurrencyEffectiveCost-C-007-M",
+                "PricingCurrencyEffectiveCost-C-008-M",
+                "PricingCurrencyEffectiveCost-C-009-C",
+                "PricingCurrencyEffectiveCost-C-010-M"
+            ]
+        }
     },
     "PricingCurrencyEffectiveCost-C-005-M": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-005-M",
-      "Function": "DataType",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyEffectiveCost column",
-      "Condition": "All Rows",
-      "Requirement": "Decimal",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyEffectiveCost MUST be of type Decimal"
+        "Function": "Type",
+        "Reference": "PricingCurrencyEffectiveCost",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyEffectiveCost MUST be of type Decimal",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "TypeDecimal",
+                "ColumnName": "PricingCurrencyEffectiveCost"
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
     },
     "PricingCurrencyEffectiveCost-C-006-M": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-006-M",
-      "Function": "Format",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyEffectiveCost column",
-      "Condition": "All Rows",
-      "Requirement": "NumericFormat:CR",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyEffectiveCost MUST conform to NumericFormat requirements"
+        "Function": "Format",
+        "Reference": "PricingCurrencyEffectiveCost",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyEffectiveCost MUST conform to NumericFormat requirements",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "FormatNumeric",
+                "ColumnName": "PricingCurrencyEffectiveCost"
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
     },
     "PricingCurrencyEffectiveCost-C-007-M": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-007-M",
-      "Function": "NullabilityRules",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyEffectiveCost column",
-      "Condition": "All Rows",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyEffectiveCost MUST NOT be null"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyEffectiveCost",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyEffectiveCost MUST NOT be null",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "PricingCurrencyEffectiveCost",
+                "Value": null
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
     },
     "PricingCurrencyEffectiveCost-C-008-M": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-008-M",
-      "Function": "Validation",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyEffectiveCost column",
-      "Condition": "All Rows",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyEffectiveCost MUST be a valid decimal value"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyEffectiveCost",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyEffectiveCost MUST be a valid decimal value",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
     },
     "PricingCurrencyEffectiveCost-C-009-C": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-009-C",
-      "Function": "Validation",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyEffectiveCost column",
-      "Condition": "in the event of prepaid purchases or purchases that are applicable to previous usage",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyEffectiveCost",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
     },
     "PricingCurrencyEffectiveCost-C-010-M": {
-      "RuleID": "PricingCurrencyEffectiveCost-C-010-M",
-      "Function": "Validation",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyEffectiveCost column",
-      "Condition": "All Rows",
-      "Requirement": "PricingCurrency:CR",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyEffectiveCost",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
     }
-  }
 }

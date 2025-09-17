@@ -1,169 +1,326 @@
 {
-  "ConformanceRules": {
     "PricingCurrencyListUnitPrice-C-000-M": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-000-M",
-      "Function": "Composite",
-      "Keyword": null,
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "All Rows",
-      "Requirement": "AND(PricingCurrencyListUnitPrice-C-001-M, PricingCurrencyListUnitPrice-C-005-M, PricingCurrencyListUnitPrice-C-006-M, PricingCurrencyListUnitPrice-C-007-M, PricingCurrencyListUnitPrice-C-011-C)",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "Composite rule for PricingCurrencyListUnitPrice column validation"
-    },
-    "PricingCurrencyListUnitPrice-C-001-M": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-001-M",
-      "Function": "Composite",
-      "Keyword": null,
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "All Rows",
-      "Requirement": "AND(PricingCurrencyListUnitPrice-C-002-C, PricingCurrencyListUnitPrice-C-003-O, PricingCurrencyListUnitPrice-C-004-O)",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyListUnitPrice presence in a FOCUS dataset is defined as follows"
-    },
-    "PricingCurrencyListUnitPrice-C-002-C": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-002-C",
-      "Function": "Presence",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "VIRTUAL_CURRENCY_PRICING_SUPPORTED",
-      "Condition": "All Rows",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyListUnitPrice MUST be present in a FOCUS dataset when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts"
-    },
-    "PricingCurrencyListUnitPrice-C-003-O": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-003-O",
-      "Function": "Presence",
-      "Keyword": "RECOMMENDED",
-      "ApplicabilityCriteria": "PRICING_CURRENCY_SUPPORTED",
-      "Condition": "All Rows",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "warning",
-      "Description": "PricingCurrencyListUnitPrice is RECOMMENDED to be present in a FOCUS dataset when the provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts"
-    },
-    "PricingCurrencyListUnitPrice-C-004-O": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-004-O",
-      "Function": "Presence",
-      "Keyword": "MAY",
-      "ApplicabilityCriteria": "All Rows",
-      "Condition": "All Rows",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "info",
-      "Description": "PricingCurrencyListUnitPrice MAY be present in a FOCUS dataset in all other cases"
+        "Function": "Composite",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "The PricingCurrencyListUnitPrice column adheres to the following requirements:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-005-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-006-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-007-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-011-C"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "PricingCurrencyListUnitPrice-C-005-M",
+                "PricingCurrencyListUnitPrice-C-006-M",
+                "PricingCurrencyListUnitPrice-C-007-M",
+                "PricingCurrencyListUnitPrice-C-011-C"
+            ]
+        }
     },
     "PricingCurrencyListUnitPrice-C-005-M": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-005-M",
-      "Function": "DataType",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "All Rows",
-      "Requirement": "Decimal",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyListUnitPrice MUST be of type Decimal"
+        "Function": "Type",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyListUnitPrice MUST be of type Decimal",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "TypeDecimal",
+                "ColumnName": "PricingCurrencyListUnitPrice"
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
     },
     "PricingCurrencyListUnitPrice-C-006-M": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-006-M",
-      "Function": "Format",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "All Rows",
-      "Requirement": "NumericFormat:CR",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyListUnitPrice MUST conform to NumericFormat requirements"
+        "Function": "Format",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyListUnitPrice MUST conform to NumericFormat requirements",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "FormatNumeric",
+                "ColumnName": "PricingCurrencyListUnitPrice"
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
     },
     "PricingCurrencyListUnitPrice-C-007-M": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-007-M",
-      "Function": "Composite",
-      "Keyword": null,
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "All Rows",
-      "Requirement": "AND(PricingCurrencyListUnitPrice-C-008-C, PricingCurrencyListUnitPrice-C-009-C, PricingCurrencyListUnitPrice-C-010-O)",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyListUnitPrice nullability is defined as follows"
+        "Function": "Composite",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyListUnitPrice nullability is defined as follows:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-008-C"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-009-C"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-010-O"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "PricingCurrencyListUnitPrice-C-008-C",
+                "PricingCurrencyListUnitPrice-C-009-C",
+                "PricingCurrencyListUnitPrice-C-010-O"
+            ]
+        }
     },
     "PricingCurrencyListUnitPrice-C-008-C": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-008-C",
-      "Function": "NullabilityRules",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "ChargeCategory is 'Tax'",
-      "Requirement": "ChargeCategory:CR",
-      "Type": "dynamic",
-      "Severity": "error",
-      "Description": "PricingCurrencyListUnitPrice MUST be null when ChargeCategory is 'Tax'"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyListUnitPrice MUST be null when ChargeCategory is 'Tax'",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Tax"
+            },
+            "Dependencies": []
+        }
     },
     "PricingCurrencyListUnitPrice-C-009-C": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-009-C",
-      "Function": "NullabilityRules",
-      "Keyword": "MUST NOT",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
-      "Requirement": "AND(ChargeCategory:CR, ChargeClass:CR)",
-      "Type": "dynamic",
-      "Severity": "error",
-      "Description": "PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "OR",
+                        "Items": [
+                            {
+                                "CheckFunction": "CheckValue",
+                                "ColumnName": "ChargeCategory",
+                                "Value": "Usage"
+                            },
+                            {
+                                "CheckFunction": "CheckValue",
+                                "ColumnName": "ChargeCategory",
+                                "Value": "Purchase"
+                            }
+                        ]
+                    },
+                    {
+                        "CheckFunction": "CheckNotValue",
+                        "ColumnName": "ChargeClass",
+                        "Value": "Correction"
+                    }
+                ]
+            },
+            "Dependencies": []
+        }
     },
     "PricingCurrencyListUnitPrice-C-010-O": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-010-O",
-      "Function": "NullabilityRules",
-      "Keyword": "MAY",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "All Rows",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "warning",
-      "Description": "PricingCurrencyListUnitPrice MAY be null in all other cases"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyListUnitPrice MAY be null in all other cases",
+            "Keyword": "MAY",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
     },
     "PricingCurrencyListUnitPrice-C-011-C": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-011-C",
-      "Function": "Composite",
-      "Keyword": null,
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "PricingCurrencyListUnitPrice is not null",
-      "Requirement": "AND(PricingCurrencyListUnitPrice-C-012-M, PricingCurrencyListUnitPrice-C-013-M, PricingCurrencyListUnitPrice-C-014-C)",
-      "Type": "static",
-      "Severity": "error",
-      "Description": "When PricingCurrencyListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements"
+        "Function": "Composite",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice adheres to the following additional requirements:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-012-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-013-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-014-C"
+                    }
+                ]
+            },
+            "Condition": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "PricingCurrencyListUnitPrice",
+                "Value": null
+            },
+            "Dependencies": [
+                "PricingCurrencyListUnitPrice-C-012-M",
+                "PricingCurrencyListUnitPrice-C-013-M",
+                "PricingCurrencyListUnitPrice-C-014-C"
+            ]
+        }
     },
     "PricingCurrencyListUnitPrice-C-012-M": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-012-M",
-      "Function": "Validation",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "PricingCurrencyListUnitPrice is not null",
-      "Requirement": null,
-      "Type": "static",
-      "Severity": "error",
-      "Description": "PricingCurrencyListUnitPrice MUST be a non-negative decimal value"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyListUnitPrice MUST be a non-negative decimal value",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "PricingCurrencyListUnitPrice",
+                "Value": null
+            },
+            "Dependencies": []
+        }
     },
     "PricingCurrencyListUnitPrice-C-013-M": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-013-M",
-      "Function": "Validation",
-      "Keyword": "MUST",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "PricingCurrencyListUnitPrice is not null",
-      "Requirement": "PricingCurrency:CR",
-      "Type": "dynamic",
-      "Severity": "error",
-      "Description": "PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "PricingCurrencyListUnitPrice",
+                "Value": null
+            },
+            "Dependencies": []
+        }
     },
     "PricingCurrencyListUnitPrice-C-014-C": {
-      "RuleID": "PricingCurrencyListUnitPrice-C-014-C",
-      "Function": "Validation",
-      "Keyword": "MAY",
-      "ApplicabilityCriteria": "Dataset includes PricingCurrencyListUnitPrice column",
-      "Condition": "ChargeClass is 'Correction'",
-      "Requirement": "AND(ListCost:CR, PricingQuantity:CR)",
-      "Type": "dynamic",
-      "Severity": "warning",
-      "Description": "Discrepancies in PricingCurrencyListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is 'Correction'"
+        "Function": "Validation",
+        "Reference": "PricingCurrencyListUnitPrice",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "PRICING_CURRENCY_SUPPORTED"
+        ],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Discrepancies in PricingCurrencyListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is 'Correction'",
+            "Keyword": "MAY",
+            "Requirement": {},
+            "Condition": {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeClass",
+                "Value": "Correction"
+            },
+            "Dependencies": []
+        }
     }
-  }
 }
