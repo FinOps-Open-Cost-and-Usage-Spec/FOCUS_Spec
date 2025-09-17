@@ -30,7 +30,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-018-M",
+        "CostAndUsage-D-023-M",
         "InvoiceIssuerName-C-001-M",
         "InvoiceIssuerName-C-002-M",
         "InvoiceIssuerName-C-003-M"

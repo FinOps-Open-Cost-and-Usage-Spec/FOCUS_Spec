@@ -30,7 +30,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-009-M",
+        "CostAndUsage-D-017-M",
         "CommitmentDiscountStatus-C-001-M",
         "CommitmentDiscountStatus-C-002-M",
         "CommitmentDiscountStatus-C-003-M"

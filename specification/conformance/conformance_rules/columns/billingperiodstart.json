@@ -16,6 +16,10 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingPeriodStart-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingPeriodStart-C-002-M"
           },
           {
@@ -25,24 +29,20 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingPeriodStart-C-004-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingPeriodStart-C-005-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "CostAndUsage-D-009-M",
+        "BillingPeriodStart-C-001-M",
         "BillingPeriodStart-C-002-M",
         "BillingPeriodStart-C-003-M",
-        "BillingPeriodStart-C-004-M",
-        "BillingPeriodStart-C-005-M"
+        "BillingPeriodStart-C-004-M"
       ]
     }
   },
-  "BillingPeriodStart-C-002-M": {
+  "BillingPeriodStart-C-001-M": {
     "Function": "Type",
     "Reference": "BillingPeriodStart",
     "EntityType": "Column",
@@ -62,7 +62,7 @@
       "Dependencies": []
     }
   },
-  "BillingPeriodStart-C-003-M": {
+  "BillingPeriodStart-C-002-M": {
     "Function": "Format",
     "Reference": "BillingPeriodStart",
     "EntityType": "Column",
@@ -82,7 +82,7 @@
       "Dependencies": []
     }
   },
-  "BillingPeriodStart-C-004-M": {
+  "BillingPeriodStart-C-003-M": {
     "Function": "Validation",
     "Reference": "BillingPeriodStart",
     "EntityType": "Column",
@@ -103,7 +103,7 @@
       "Dependencies": []
     }
   },
-  "BillingPeriodStart-C-005-M": {
+  "BillingPeriodStart-C-004-M": {
     "Function": "Validation",
     "Reference": "BillingPeriodStart",
     "EntityType": "Column",
