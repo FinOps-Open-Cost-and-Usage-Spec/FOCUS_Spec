@@ -83,7 +83,7 @@
     }
   },
   "BillingPeriodEnd-C-003-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
     "Notes": "",

@@ -54,7 +54,7 @@
     }
   },
   "DateTimeFormat-A-002-M": {
-    "Function": "Validation",
+    "Function": "Format",
     "Reference": "DateTimeFormat",
     "EntityType": "Attribute",
     "Notes": "",
@@ -71,7 +71,7 @@
     }
   },
   "DateTimeFormat-A-003-M": {
-    "Function": "Validation",
+    "Function": "Format",
     "Reference": "DateTimeFormat",
     "EntityType": "Attribute",
     "Notes": "",

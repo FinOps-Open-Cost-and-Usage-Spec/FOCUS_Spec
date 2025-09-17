@@ -96,7 +96,7 @@
         }
     },
     "CommitmentDiscountCategory-C-003-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountCategory",
         "EntityType": "Column",
         "Notes": "",
@@ -125,7 +125,7 @@
         }
     },
     "CommitmentDiscountCategory-C-004-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountCategory",
         "EntityType": "Column",
         "Notes": "",

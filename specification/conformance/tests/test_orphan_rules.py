@@ -1,84 +1,56 @@
-# tests/test_orphan_rules.py
+# tests/test_orphan_rules_same_type_deps_c000_exception.py
+import re
 
-def _iter_values_for_key(node, target_key):
-    """Yield all string values for a given key found anywhere under node."""
-    if node is None:
-        return
-    if isinstance(node, dict):
-        for k, v in node.items():
-            if k == target_key and isinstance(v, str):
-                yield v
-            yield from _iter_values_for_key(v, target_key)
-    elif isinstance(node, list):
-        for item in node:
-            yield from _iter_values_for_key(item, target_key)
+_C000_RE = re.compile(r"-C-000-")
+_D000_RE = re.compile(r"-D-000-")
 
+_ALLOWED_TYPES = {"Column", "Dataset"}  # Attributes not included at this stage
 
-def _iter_strings_under_arrays(node):
-    """
-    Yield all string values that appear inside any list under `node`.
-    Used to collect rule IDs from CheckFunctions.FormatAttributes.
-    """
-    if node is None:
-        return
-    if isinstance(node, list):
-        for item in node:
-            if isinstance(item, str):
-                yield item
-            else:
-                yield from _iter_strings_under_arrays(item)
-    elif isinstance(node, dict):
-        for v in node.values():
-            yield from _iter_strings_under_arrays(v)
-
-
-def test_no_orphan_conformance_rules_except_deprecated(cr_json):
+def test_no_orphans_deps_only_same_type_with_c000_dataset_exception(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
-    all_rule_ids = set(rules.keys())
 
-    # Only ACTIVE rules must not be orphaned
-    active_rule_ids = {
+    # Build rule -> type map (normalized strings)
+    rtype = {rid: (rule.get("EntityType") or "").strip() for rid, rule in rules.items()}
+
+    # ACTIVE rules to check (exclude Deprecated, Attributes, and *-D-000-)
+    active = {
         rid for rid, rule in rules.items()
         if (rule.get("Status") or "").strip() != "Deprecated"
+        and rtype.get(rid) in _ALLOWED_TYPES
+        and not _D000_RE.search(rid)
     }
 
-    # References from other rules (Dependencies + nested ConformanceRuleId)
-    referenced_by_rules = set()
-    for _, rule in rules.items():
-        vc = rule.get("ValidationCriteria") or {}
-        referenced_by_rules.update(vc.get("Dependencies") or [])
-        for root_key in ("Requirement", "Condition"):
-            referenced_by_rules.update(_iter_values_for_key(vc.get(root_key), "ConformanceRuleId"))
-    referenced_by_rules = {r for r in referenced_by_rules if r in all_rule_ids}
+    # Collect references via Dependencies only
+    referenced_same_type = set()
+    c000_referenced_by_dataset = set()
 
-    # References from datasets
-    datasets = cr_json.get("ConformanceDatasets") or {}
-    referenced_by_datasets = set()
-    for ds in datasets.values():
-        for rid in ds.get("ConformanceRules") or []:
-            if isinstance(rid, str):
-                referenced_by_datasets.add(rid)
-    referenced_by_datasets &= all_rule_ids
+    for src_id, src_rule in rules.items():
+        src_type = rtype.get(src_id)
+        if src_type not in _ALLOWED_TYPES:
+            continue  # ignore Attributes and anything else as referrers
 
-    # References from CheckFunctions.FormatAttributes (strings inside arrays)
-    check_funcs = cr_json.get("CheckFunctions") or {}
-    referenced_by_checkfuncs = set()
-    for fdef in check_funcs.values():
-        fmt = fdef.get("FormatAttributes")
-        if fmt is None:
+        deps = (src_rule.get("ValidationCriteria") or {}).get("Dependencies") or []
+        if not isinstance(deps, list):
             continue
-        for s in _iter_strings_under_arrays(fmt):
-            if s in all_rule_ids:
-                referenced_by_checkfuncs.add(s)
 
-    # Rules are considered referenced if they appear in any of the above
-    referenced = referenced_by_rules | referenced_by_datasets | referenced_by_checkfuncs
+        for dep in deps:
+            if not isinstance(dep, str) or dep not in rules or dep == src_id:
+                continue
+            dep_type = rtype.get(dep)
 
-    # Orphans are ACTIVE rules not referenced anywhere
-    orphans = sorted(active_rule_ids - referenced)
+            # same-EntityType de-orphaning
+            if dep_type == src_type:
+                referenced_same_type.add(dep)
+
+            # exception: if a Dataset depends on a *-C-000-* rule, de-orphan that column
+            if src_type == "Dataset" and _C000_RE.search(dep):
+                c000_referenced_by_dataset.add(dep)
+
+    referenced = referenced_same_type | c000_referenced_by_dataset
+    orphans = sorted(active - referenced)
 
     assert not orphans, (
-        "Active ConformanceRules (Status != 'Deprecated') not referenced by any rule, dataset, "
-        "or CheckFunctions.FormatAttributes:\n"
-        + "\n".join(f"- {rid}" for rid in orphans)
+        "Active ConformanceRules must be referenced via Dependencies by another rule of the SAME EntityType "
+        "(Attributes ignored; *-D-000-* excluded; exception: *-C-000-* may be referenced by a Dataset):\n"
+        + "\n".join(f"- {rid} (EntityType={rtype.get(rid)})" for rid in orphans)
     )

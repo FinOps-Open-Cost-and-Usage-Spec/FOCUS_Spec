@@ -209,7 +209,7 @@
         }
     },
     "CommitmentDiscountQuantity-C-006-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountQuantity",
         "EntityType": "Column",
         "Notes": "",
@@ -261,7 +261,7 @@
         }
     },
     "CommitmentDiscountQuantity-C-007-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountQuantity",
         "EntityType": "Column",
         "Notes": "",
@@ -288,7 +288,7 @@
         }
     },
     "CommitmentDiscountQuantity-C-008-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountQuantity",
         "EntityType": "Column",
         "Notes": "",

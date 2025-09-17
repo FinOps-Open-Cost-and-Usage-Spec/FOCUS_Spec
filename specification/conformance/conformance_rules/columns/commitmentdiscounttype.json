@@ -118,7 +118,7 @@
         }
     },
     "CommitmentDiscountType-C-004-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountType",
         "EntityType": "Column",
         "Notes": "Cross-column reference: CommitmentDiscountId",
@@ -147,7 +147,7 @@
         }
     },
     "CommitmentDiscountType-C-005-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountType",
         "EntityType": "Column",
         "Notes": "Cross-column reference: CommitmentDiscountId",

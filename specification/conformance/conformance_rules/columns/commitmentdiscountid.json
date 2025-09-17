@@ -123,7 +123,7 @@
         }
     },
     "CommitmentDiscountId-C-004-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountId",
         "EntityType": "Column",
         "Notes": "",
@@ -142,7 +142,7 @@
         }
     },
     "CommitmentDiscountId-C-005-C": {
-        "Function": "Validation",
+        "Function": "Nullability",
         "Reference": "CommitmentDiscountId",
         "EntityType": "Column",
         "Notes": "",

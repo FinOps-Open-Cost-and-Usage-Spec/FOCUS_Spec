@@ -83,7 +83,7 @@
     }
   },
   "BillingPeriodStart-C-003-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "BillingPeriodStart",
     "EntityType": "Column",
     "Notes": "",

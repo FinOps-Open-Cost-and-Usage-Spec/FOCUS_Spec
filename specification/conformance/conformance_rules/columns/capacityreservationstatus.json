@@ -127,7 +127,7 @@
     "Notes": "Cross-column reference: CapacityReservationId"
   },
   "CapacityReservationStatus-C-004-C": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
     "CRVersionIntroduced": "1.2",

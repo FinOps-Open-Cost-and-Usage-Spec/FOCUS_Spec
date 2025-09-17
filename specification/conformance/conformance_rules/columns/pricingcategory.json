@@ -95,7 +95,7 @@
     }
   },
   "PricingCategory-C-003-C": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "PricingCategory",
     "EntityType": "Column",
     "Notes": "Cross-column reference: ChargeCategory",
@@ -122,7 +122,7 @@
     }
   },
   "PricingCategory-C-004-C": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "PricingCategory",
     "EntityType": "Column",
     "Notes": "",
@@ -170,7 +170,7 @@
     }
   },
   "PricingCategory-C-005-O": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "PricingCategory",
     "EntityType": "Column",
     "Notes": "",
