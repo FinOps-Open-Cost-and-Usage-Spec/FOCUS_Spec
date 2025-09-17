@@ -129,6 +129,14 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-023-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-C-024-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-C-025-M"
           }
         ]
       },
@@ -154,7 +162,9 @@
         "CostAndUsage-D-020-C",
         "CostAndUsage-D-021-M",
         "CostAndUsage-D-022-C",
-        "CostAndUsage-D-023-M"
+        "CostAndUsage-D-023-M",
+        "CostAndUsage-C-024-M",
+        "CostAndUsage-C-025-M"
       ]
     }
   },
@@ -183,6 +193,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "BillingAccountId-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingAccountName-C-000-C"
           },
           {
@@ -200,6 +214,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CapacityReservationStatus-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ChargeDescription-C-000-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -267,11 +285,13 @@
       "Dependencies": [
         "AvailabilityZone-C-000-M",
         "BilledCost-C-000-M",
+        "BillingAccountId-C-000-M",
         "BillingAccountName-C-000-C",
         "BillingAccountType-C-000-M",
         "BillingPeriodEnd-C-000-M",
         "BillingPeriodStart-C-000-M",
         "CapacityReservationStatus-C-000-M",
+        "ChargeDescription-C-000-M",
         "CommitmentDiscountCategory-C-000-C",
         "CommitmentDiscountId-C-000-C",
         "CommitmentDiscountName-C-000-M",
@@ -731,6 +751,46 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "PublisherName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-C-024-M": {
+    "Function": "Presence",
+    "Reference": "BillingAccountId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-C-025-M": {
+    "Function": "Presence",
+    "Reference": "ChargeDescription",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST be present in a FOCUS dataset",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeDescription"
       },
       "Condition": {},
       "Dependencies": []
