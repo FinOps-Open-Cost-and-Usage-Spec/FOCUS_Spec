@@ -4,7 +4,7 @@ SKU Price Details represent a list of [*SKU Price*](#glossary:sku-price) propert
 
 The composition of properties associated with a specific *SKU Price* may differ across providers and across *SKUs* within the same provider. However, the exclusion of dynamic or negotiable pricing properties should ensure that all [*charges*](#glossary:charge) with the same SKU Price ID share the same SKU Price Details, i.e., that SKU Price Details remains consistent across different [*billing periods*](#glossary:billing-period) and [*billing accounts*](#glossary:billing-account) within a provider.
 
-SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also help determine the quantity of units for a property when it holds a numeric value (e.g., CoreCount), even when its unit differs from the one in which the *SKU* is priced and charged, thus supporting FinOps capabilities like unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as terms and tiers.
+SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also help determine the quantity of units for a property when it holds a numeric value (e.g., CoreCount), even when its unit differs from the one in which the *SKU* is priced and charged, thus supporting FinOps capabilities such as unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as terms and tiers.
 
 The SkuPriceDetails column adheres to the following requirements:
 
@@ -16,9 +16,10 @@ The SkuPriceDetails column adheres to the following requirements:
   * SkuPriceDetails MAY be null when SkuPriceId is not null.
 * When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:
   * SkuPriceDetails MUST be associated with a given SkuPriceId.
+  * SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a custom property.
   * SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.
   * SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.
-  * SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a Provider-defined property.
+  * SkuPriceDetails SHOULD include all custom SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.
   * SkuPriceDetails MAY include properties that are already captured in other dedicated columns.
   * SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:
     * Existing SkuPriceDetails properties SHOULD remain consistent over time.
@@ -38,7 +39,7 @@ The SkuPriceDetails column adheres to the following requirements:
 {
     "StorageClass": "Archive",
     "CoreCount": 4,
-    "x_PremiumProcessing": true,
+    "x_PremiumProcessing": true
 }
 ```
 
@@ -66,7 +67,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 
 ### FOCUS-Defined Properties
 
-The following keys should be used when applicable to facilitate cross-SKU and cross-provider queries for the same conceptual property. Focus-defined keys will appear in the list below and Provider-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
+The following keys should be used when applicable to facilitate cross-SKU and cross-provider queries for the same conceptual property. FOCUS-defined keys will appear in the list below and custom (e.g., provider-defined) keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
 | Key                      | Description                                                              | Data Type        | Unit of Measure (numeric) or example values (string)  |
 | :----------------------- | :----------------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
