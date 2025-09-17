@@ -205,6 +205,14 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-042-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-043-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-044-C"
           }
         ]
       },
@@ -249,7 +257,9 @@
         "CostAndUsage-D-039-C",
         "CostAndUsage-D-040-M",
         "CostAndUsage-D-041-M",
-        "CostAndUsage-D-042-O"
+        "CostAndUsage-D-042-O",
+        "CostAndUsage-D-043-C",
+        "CostAndUsage-D-044-C"
       ]
     }
   },
@@ -406,6 +416,14 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ResourceType-C-000-M"
           },
           {
@@ -465,6 +483,8 @@
         "PricingCategory-C-000-M",
         "PricingQuantity-C-000-M",
         "ProviderName-C-000-M",
+        "ResourceId-C-000-C",
+        "ResourceName-C-000-C",
         "ResourceType-C-000-M",
         "PublisherName-C-000-M",
         "SubAccountId-C-000-C",
@@ -1301,6 +1321,52 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ServiceSubcategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-043-C": {
+    "Function": "Presence",
+    "Reference": "ResourceId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-044-C": {
+    "Function": "Presence",
+    "Reference": "ResourceName",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources and supports assigning names to resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceName"
       },
       "Condition": {},
       "Dependencies": []
