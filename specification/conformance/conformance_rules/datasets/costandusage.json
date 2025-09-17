@@ -177,6 +177,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-035-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-036-M"
           }
         ]
       },
@@ -214,7 +218,8 @@
         "CostAndUsage-D-032-M",
         "CostAndUsage-D-033-O",
         "CostAndUsage-D-034-C",
-        "CostAndUsage-D-035-M"
+        "CostAndUsage-D-035-M",
+        "CostAndUsage-D-036-M"
       ]
     }
   },
@@ -351,6 +356,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingQuantity-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "PublisherName-C-000-M"
           },
           {
@@ -399,6 +408,7 @@
         "ListCost-C-000-M",
         "ListUnitPrice-C-000-C",
         "PricingCategory-C-000-M",
+        "PricingQuantity-C-000-M",
         "PublisherName-C-000-M",
         "SubAccountId-C-000-C",
         "SubAccountName-C-000-C"
@@ -1088,6 +1098,26 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-036-M": {
+    "Function": "Presence",
+    "Reference": "PricingQuantity",
+    "EntityType": "Dataset",
+    "Notes": "PricingQuantity must be present in dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingQuantity"
       },
       "Condition": {},
       "Dependencies": []
