@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME provides two dataset instances, "Cost and Usage Daily" and "Commitments", each corresponding to the respective FOCUS datasets: Cost and Usage and Contract Commitment. ACME also provides a directory of datasets metadata containing a single file with metadata for each dataset instance.
+ACME provides three dataset instances, "Cost and Usage Daily," "Cost and Usage Hourly," and "Commitments", each corresponding to the respective FOCUS datasets: Cost and Usage and Contract Commitment. ACME also provides a directory of datasets metadata containing a single file with metadata for each dataset instance.
 
 ## Supplied Metadata
 
@@ -15,13 +15,17 @@ The updated schema-related metadata could look like this:
   {
     "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-246811",
     "DatasetInstanceName": "Contract Commitments Report",
-    "FOCUSDataset": "ContractCommitment"
+    "FOCUSDatasetId": "ContractCommitment"
   },
   {
     "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
-    "DatasetInstanceName": "COST_AND_USAGE_DAILY",
-    "FOCUSDataset": "CostAndUsage"
-    
+    "DatasetInstanceName": "Cost and Usage Daily",
+    "FOCUSDatasetId": "CostAndUsage"
+  },
+  {
+    "DatasetInstanceId": "178151-ja23h1287-387151-dbad145e-134657",
+    "DatasetInstanceName": "Cost and Usage Hourly",
+    "FOCUSDatasetId": "CostAndUsage"
   }
 ]
 ```
