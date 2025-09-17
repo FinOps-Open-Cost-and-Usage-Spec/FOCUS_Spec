@@ -169,6 +169,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-033-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-034-C"
           }
         ]
       },
@@ -204,7 +208,8 @@
         "CostAndUsage-D-030-M",
         "CostAndUsage-D-031-M",
         "CostAndUsage-D-032-M",
-        "CostAndUsage-D-033-O"
+        "CostAndUsage-D-033-O",
+        "CostAndUsage-D-034-C"
       ]
     }
   },
@@ -313,6 +318,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ContractedUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "InvoiceId-C-000-O"
           },
           {
@@ -373,6 +382,7 @@
         "CommitmentDiscountQuantity-C-000-C",
         "ConsumedQuantity-C-000-C",
         "ContractedCost-C-000-M",
+        "ContractedUnitPrice-C-000-C",
         "EffectiveCost-C-000-M",
         "InvoiceId-C-000-O",
         "InvoiceIssuerName-C-000-M",
@@ -1026,6 +1036,28 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "InvoiceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-034-C": {
+    "Function": "Presence",
+    "Reference": "ContractedUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "Presence rule",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "NEGOTIATED_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractedUnitPrice MUST be present in a FOCUS dataset when the provider supports negotiated pricing concepts",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractedUnitPrice"
       },
       "Condition": {},
       "Dependencies": []

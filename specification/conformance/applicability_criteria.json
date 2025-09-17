@@ -15,6 +15,9 @@
     "MULTIPLE_PRICING_CATEGORIES_SUPPORTED": {
       "Description": "Provider supports more than one pricing category across all SKUs"
     },
+    "NEGOTIATED_PRICING_SUPPORTED": {
+      "Description": "Data generator supports negotiated pricing concepts"
+    },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
       "Description": "Data generator publishes unit prices exclusive of discounts"
     },
