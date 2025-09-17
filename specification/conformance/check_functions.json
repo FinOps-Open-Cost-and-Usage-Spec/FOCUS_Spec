@@ -62,6 +62,15 @@
       ],
       "FormatAttributes": []
     },
+    "CheckNationalCurrency": {
+      "Description": "Check column has a valid national currency code",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "CurrencyFormat-A-000-M"
+      ]
+    },
     "TypeDecimal": {
       "Description": "Check column has the data type of decimal",
       "Arguments": [
@@ -110,6 +119,15 @@
       ],
       "FormatAttributes": [
         "UnitFormat-A-000-M"
+      ]
+    },
+    "FormatCurrency": {
+      "Description": "Check a column has a currency format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "CurrencyFormat-A-000-M"
       ]
     },
     "ColumnByColumnEqualsColumnValue": {
