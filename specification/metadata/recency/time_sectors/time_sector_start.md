@@ -1,16 +1,16 @@
-# Start Time
+# Time Sector Start
 
-The start time of the time sector.
+The Time Sector Start is the datetime of the start of the time sector.
 
-The StartTime MUST be present in the metadata. This MUST be of type Date/Time and MUST NOT contain null values. StartTime MUST conform to [DateTimeFormat](#date/timeformat).
+The TimeSectorStart MUST be present in the metadata. This MUST be of type Date/Time and MUST NOT contain null values. TimeSectorStart MUST conform to [DateTimeFormat](#date/timeformat).
 
 ## Metadata ID
 
-StartTime
+TimeSectorStart
 
 ## Metadata Name
 
-Start Time
+Time Sector Start
 
 ## Content constraints
 

@@ -1,16 +1,16 @@
-# Dataset Instance Complete
+# Time Sector Complete
 
-Complete provides a boolean value to indicate that the time sector is considered complete by the DataGenerator.  The definition of complete is determined by the DataGenerator and should be provided in documentation provided by the DataGenerator. For Datasets that are time series, the Complete value indicates that the time sector is complete and therefore is located in as key value in a time sector.
+Time Sector Complete provides a boolean value to indicate that the time sector is considered complete by the DataGenerator.  The definition of complete is determined by the DataGenerator and should be provided in documentation provided by the DataGenerator.
 
-The Complete MUST be present in the recency metadata. The Complete MUST be of type Boolean.
+The Time Sector Complete MUST be present in the recency metadata. The Complete MUST be of type Boolean.
 
 ## Metadata ID
 
-Complete
+TimeSectorComplete
 
 ## Metadata Name
 
-Complete
+Time Sector Complete
 
 ## Content constraints
 
