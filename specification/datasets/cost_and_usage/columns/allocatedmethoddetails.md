@@ -217,7 +217,7 @@ Allocated Method Details provides information about how resources are allocated 
 | Constraint      | Value           |
 |:----------------|:----------------|
 | Column type     | Dimension       |
-| Feature level   | Conditional     |
+| Feature level   | Recommended     |
 | Allows nulls    | True            |
 | Data type       | JSON            |
 | Value format    | [JSON Object Format](#jsonobjectformat) |
