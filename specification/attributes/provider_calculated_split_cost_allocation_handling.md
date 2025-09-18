@@ -16,7 +16,7 @@ Provider-calculated split cost allocation for provider-defined services allows p
 
 ## Requirements
 
-* A FOCUS Cost and Usage dataset MUST include the following columns when the provider supports provider-calculated split cost allocation:
+* A FOCUS dataset MUST include the following columns when the provider supports provider-calculated split cost allocation:
   * [AllocatedMethodId](#allocatedmethodid)
   * [AllocatedResourceId](#allocatedresourceid)
   * [AllocatedResourceName](#allocatedresourcename)
