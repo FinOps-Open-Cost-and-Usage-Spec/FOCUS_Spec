@@ -18,11 +18,10 @@ In addition to these, a provider may include one or more custom properties, also
 
 The AllocatedMethodDetails column adheres to the following requirements:
 
-* AllocatedMethodDetails SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling).
+* AllocatedMethodDetails SHOULD be present in a cost and usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling).
 * AllocatedMethodDetails MUST be of type String.
 * AllocatedMethodDetails MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedMethodDetails MUST conform to [ObjectFormat](#objectformat) requirements.
-  * AllocatedMethodDetails MUST conform to ObjectFormat schema requirements below.
 * AllocatedMethodDetails nullability is defined as follows:
   * AllocatedMethodDetails MUST be null when a charge is not related to a provider-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a provider-calculated split cost allocation.
@@ -31,7 +30,7 @@ The AllocatedMethodDetails column adheres to the following requirements:
 
 Allocated Method Details consists of a valid JSON object which contains an array of key-value objects describing the one or more factors (allocation properties) that determined the split cost allocation. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the allocation.
 
-If AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodDetails adheres to the following requirements:
+When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodDetails adheres to the following requirements:
 * AllocatedMethodDetails MUST have a top-level key "Elements" which contains an array.
 * Each item in "Elements" MUST be an object.
   * Objects inside "Elements" MUST conform to [KeyValueFormat](#key-valueformat) requirements.
@@ -148,7 +147,8 @@ When only a single "UsageUnit" is used to calculate the allaction.
     "AllocatedRatio" : 0.1,
     "UsageUnit" : "Hours",
     "UsageQuantity" : 300
-  }
+    }
+  ]
 }
 ```
 ### Scenario 2: Multiple "UsageUnit" values used for allocation
@@ -157,15 +157,30 @@ When multiple "UsageUnit" values are used to calculate the allaction, another ob
 
 ```json
 {
+  "Elements": [
+    {
+      "AllocatedRatio": 0.05,
+      "UsageUnit": "CPU",
+      "UsageQuantity": 0.5
+    },
+    {
+      "AllocatedRatio": 0.1,
+      "UsageUnit": "Memory",
+      "UsageQuantity": 4
+    }
+  ]
+}
+```
+### Scenario 3: Provider omits key that is not required
+
+This provider does not wish to supply the "UsageUnit" or "UsageQuantity" keys but still provides cost allocation with some additional allocation method details. In this case, "UsageUnit" and "UsageQuantity" are omitted, and only the "AllocatedRatio" is supplied.
+
+```json
+{
   "Elements" : [ {
-    "AllocatedRatio" : 0.05,
-    "UsageUnit" : "CPU",
-    "UsageQuantity" : 0.5
-  }, {
-    "AllocatedRatio" : 0.1,
-    "UsageUnit" : "Memory",
-    "UsageQuantity" : 4
-  } ]
+    "AllocatedRatio" : 0.45
+    }
+  ]
 }
 ```
 ### Scenario 3: Additional non-FOCUS specified properties
@@ -174,14 +189,16 @@ A provider can add additional properties if they feel more context is helpful or
 
 ```json
 {
-  "Elements" : [ {
-    "AllocatedRatio" : 0.6,
-    "UsageUnit" : "vCPU",
-    "UsageQuantity" : 1,
-    "x_ReservedVCPU" : 1,
-    "x_UsedVCPU" : 0.5,
-    "x_AllocatedVCPU" : 1
-  }
+  "Elements": [
+    {
+      "AllocatedRatio": 0.6,
+      "UsageUnit": "vCPU",
+      "UsageQuantity": 1,
+      "x_ReservedVCPU": 1,
+      "x_UsedVCPU": 0.5,
+      "x_AllocatedVCPU": 1
+    }
+  ]
 }
 ```
 ## Column ID
