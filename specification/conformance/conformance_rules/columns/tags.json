@@ -1,0 +1,100 @@
+{
+    "Tags-C-000-C": {
+        "Function": "Composite",
+        "Reference": "Tags",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [
+            "TAGGING_SUPPORTED"
+        ],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "The Tags column adheres to the following requirements:",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "AND",
+                "Items": [
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "Tags-C-001-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "Tags-C-002-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "Tags-C-003-O"
+                    }
+                ]
+            },
+            "Condition": {},
+            "Dependencies": [
+                "CostAndUsage-D-061-C",
+                "Tags-C-001-M",
+                "Tags-C-002-M",
+                "Tags-C-003-O"
+            ]
+        }
+    },
+    "Tags-C-001-M": {
+        "Function": "Type",
+        "Reference": "Tags",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "Tags MUST be of type KeyValueFormat.",
+            "Keyword": "MUST",
+            "Requirement": {
+                "CheckFunction": "FormatKeyValue",
+                "ColumnName": "Tags"
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "Tags-C-002-M": {
+        "Function": "Format",
+        "Reference": "Tags",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "Tags MUST conform to StringHandling requirements for both keys and values.",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
+        }
+    },
+    "Tags-C-003-O": {
+        "Function": "Nullability",
+        "Reference": "Tags",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "Tags MAY be null when no tags are associated with the resource.",
+            "Keyword": "MAY",
+            "Requirement": {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "Tags",
+                "Value": null
+            },
+            "Condition": {},
+            "Dependencies": []
+        }
+    }
+}

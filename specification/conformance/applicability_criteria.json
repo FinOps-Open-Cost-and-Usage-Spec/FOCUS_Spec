@@ -41,6 +41,12 @@
     },
     "VIRTUAL_CURRENCY_SUPPORTED": {
       "Description": "Data generator supports virtual currency concepts"
+    },
+    "REGION_SUPPORTED": {
+      "Description": "Data generator supports geographic regions"
+    },
+    "TAGGING_SUPPORTED": {
+      "Description": "Data generator supports tagging of resources and services"
     }
   }
 }

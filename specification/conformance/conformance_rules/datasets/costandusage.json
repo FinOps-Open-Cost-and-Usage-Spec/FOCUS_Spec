@@ -245,6 +245,18 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-058-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-059-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-060-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-061-C"
           }
         ]
       },
@@ -299,7 +311,10 @@
         "CostAndUsage-D-055-C",
         "CostAndUsage-D-056-C",
         "CostAndUsage-D-057-C",
-        "CostAndUsage-D-058-C"
+        "CostAndUsage-D-058-C",
+        "CostAndUsage-D-059-C",
+        "CostAndUsage-D-060-C",
+        "CostAndUsage-D-061-C"
       ]
     }
   },
@@ -472,6 +487,14 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "RegionId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "RegionName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ResourceId-C-000-C"
           },
           {
@@ -517,6 +540,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "SkuPriceId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "Tags-C-000-C"
           }
         ]
       },
@@ -559,6 +586,8 @@
         "PricingCurrencyListUnitPrice-C-000-M",
         "PricingQuantity-C-000-M",
         "ProviderName-C-000-M",
+        "RegionId-C-000-C",
+        "RegionName-C-000-C",
         "ResourceId-C-000-C",
         "ResourceName-C-000-C",
         "ResourceType-C-000-M",
@@ -571,7 +600,8 @@
         "SkuId-C-000-C",
         "SkuMeter-C-000-O",
         "SkuPriceDetails-C-000-M",
-        "SkuPriceId-C-000-C"
+        "SkuPriceId-C-000-C",
+        "Tags-C-000-C"
       ]
     }
   },
@@ -1795,6 +1825,72 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "SkuPriceDetails"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-059-C": {
+    "Function": "Presence",
+    "Reference": "RegionName",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "REGION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionName MUST be present in a FOCUS dataset when the provider supports regional concepts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "RegionName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-060-C": {
+    "Function": "Presence",
+    "Reference": "RegionId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "REGION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionId MUST be present in a FOCUS dataset when the provider supports regional concepts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "RegionId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-061-C": {
+    "Function": "Presence",
+    "Reference": "Tags",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "TAGGING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags MUST be present in a FOCUS dataset when the provider supports resource tagging.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "Tags"
       },
       "Condition": {},
       "Dependencies": []

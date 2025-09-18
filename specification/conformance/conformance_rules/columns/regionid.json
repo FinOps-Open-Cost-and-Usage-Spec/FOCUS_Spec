@@ -1,0 +1,103 @@
+{
+  "RegionId-C-000-C": {
+    "Function": "Composite",
+    "Reference": "RegionId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "REGION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The RegionId column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "RegionId-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "RegionId-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "RegionId-C-003-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-060-C",
+        "RegionId-C-001-M",
+        "RegionId-C-002-M",
+        "RegionId-C-003-C"
+      ]
+    }
+  },
+  "RegionId-C-001-M": {
+    "Function": "Type",
+    "Reference": "RegionId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "RegionId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "RegionId-C-002-M": {
+    "Function": "Format",
+    "Reference": "RegionId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionId MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "RegionId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "RegionId-C-003-C": {
+    "Function": "Nullability",
+    "Reference": "RegionId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionId MAY be null when the resource or service is not associated with a region.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "RegionId",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
