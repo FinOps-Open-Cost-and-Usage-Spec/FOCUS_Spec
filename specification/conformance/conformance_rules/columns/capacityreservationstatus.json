@@ -119,7 +119,7 @@
         }
       },
       "Dependencies": [
-        "CapacityReservationId-C-000-M"
+        "CapacityReservationId-C-000-C"
       ]
     },
     "CRVersionIntroduced": "1.2",
@@ -160,7 +160,7 @@
         ]
       },
       "Dependencies": [
-        "CapacityReservationId-C-000-M",
+        "CapacityReservationId-C-000-C",
         "ChargeCategory-C-000-M"
       ]
     }

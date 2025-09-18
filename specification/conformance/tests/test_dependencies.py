@@ -1,6 +1,6 @@
 import pytest
 
-@pytest.mark.xfail(reason="Known issue, fix pending")
+#@pytest.mark.xfail(reason="Known issue, fix pending")
 def test_all_dependencies_reference_existing_rules(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     rule_ids = set(rules.keys())

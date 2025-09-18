@@ -35,7 +35,6 @@
       "Condition": {},
       "Dependencies": [
         "CostAndUsage-D-027-O",
-        "ChargeFrequency-D-001-O",
         "ChargeFrequency-C-001-M",
         "ChargeFrequency-C-002-M",
         "ChargeFrequency-C-003-M",

@@ -19,10 +19,6 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SkuId-D-001-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "SkuId-C-001-M"
           },
           {
@@ -50,7 +46,6 @@
       "Condition": {},
       "Dependencies": [
         "CostAndUsage-D-057-C",
-        "SkuId-D-001-C",
         "SkuId-C-001-M",
         "SkuId-C-002-M",
         "SkuId-C-003-M",

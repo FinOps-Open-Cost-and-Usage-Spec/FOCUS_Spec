@@ -207,7 +207,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "ServiceSubcategory-C-000-M",
+        "ServiceSubcategory-C-000-O",
         "ServiceName-C-008-O",
         "ServiceName-C-009-O"
       ]

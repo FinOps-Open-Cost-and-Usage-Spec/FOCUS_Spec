@@ -29,10 +29,6 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ServiceSubcategory-C-004-M"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ServiceSubcategory-C-005-M"
           }
         ]
       },
@@ -42,8 +38,7 @@
         "ServiceSubcategory-C-001-M",
         "ServiceSubcategory-C-002-M",
         "ServiceSubcategory-C-003-M",
-        "ServiceSubcategory-C-004-M",
-        "ServiceSubcategory-C-005-M"
+        "ServiceSubcategory-C-004-M"
       ]
     }
   },
