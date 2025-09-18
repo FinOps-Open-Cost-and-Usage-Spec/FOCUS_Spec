@@ -265,6 +265,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-063-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-064-C"
           }
         ]
       },
@@ -324,7 +328,8 @@
         "CostAndUsage-D-060-C",
         "CostAndUsage-D-061-C",
         "CostAndUsage-D-062-C",
-        "CostAndUsage-D-063-C"
+        "CostAndUsage-D-063-C",
+        "CostAndUsage-D-064-C"
       ]
     }
   },
@@ -561,6 +566,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SubAccountType-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "Tags-C-000-C"
           }
         ]
@@ -621,6 +630,7 @@
         "SkuMeter-C-000-O",
         "SkuPriceDetails-C-000-M",
         "SkuPriceId-C-000-C",
+        "SubAccountType-C-000-C",
         "Tags-C-000-C"
       ]
     }
@@ -1955,6 +1965,28 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ConsumedUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-064-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountType",
+    "EntityType": "Dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountType MUST be present in a FOCUS dataset when the provider supports more than one possible SubAccountType value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountType"
       },
       "Condition": {},
       "Dependencies": []
