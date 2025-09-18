@@ -182,7 +182,7 @@ This provider does not wish to supply the "UsageUnit" or "UsageQuantity" keys bu
   ]
 }
 ```
-### Scenario 3: Additional non-FOCUS specified properties
+### Scenario 4: Additional non-FOCUS specified properties
 
 A provider can add additional properties if they feel more context is helpful or neccessary to the practitioner. In this scenario,the provider is supplying additional context that shows only 0.5 of a unit was used. However, since 1 unit was requested by the service this allocation represents, the allocation is being charged at 1 regardless.
 
