@@ -1,6 +1,19 @@
 # Billed Cost
 
-Billed Cost represents the invoiced cost amount associated with a [*charge*](#glossary:charge) (cash-basis cost), inclusive of all applicable reduced unit prices and discounts, while excluding any portions of cost that are invoiced as part of related purchases (e.g., commitment purchases or marketplace offerings purchases) and attributed to cover this *charge*. Each *charge* is treated as a whole, with all applicable discounts applied uniformly to the entire *charge*. It may be independent, covered by other *charges*, designated to cover other eligible *charges*, or both. In all cases, these relationships apply to the *charge* in its entirety. For independent *charges*, the Billed Cost equals the [Effective Cost](#effectivecost). If the *charge* is covered, its Billed Cost is zero, as the attributed portions are invoiced through the original one-time or recurring purchases that provide the coverage. This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used in FinOps activities that rely on cash-basis accounting, such as cost allocation, budgeting, invoice reconciliation, and reporting of actual invoiced amounts.
+Billed Cost represents the invoiced cost amount associated with a [*charge*](#glossary:charge) (cash-basis cost), inclusive of all applicable reduced unit prices and discounts, while excluding any portions of cost that are invoiced as part of related purchases (e.g., commitment purchases or marketplace offerings purchases) and attributed to cover this charge. Each charge is treated as a whole, with all applicable discounts applied uniformly to the entire *charge*. This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used in FinOps activities that rely on cash-basis accounting, such as cost allocation, budgeting, invoice reconciliation, and reporting of actual invoiced amounts.
+
+From the perspective of cost coverage, a *charge* may be:
+
+* Independent: not covered by or designated to cover other *charges*; its total cost is both recognized and directly invoiced on the *charge* itself.
+* Covered by other *charges*: its cost is recognized on the *charge* itself, but may be fully or partially invoiced on other *charges*.
+* Designated to cover other eligible *charges*: its cost is not recognized on the *charge* itself, but is designated to offset the invoiced cost of other eligible *charges*.
+* Both: a *charge* may be simultaneously covered by other *charges* and designated to cover other eligible *charges*.
+
+While coverage by other *charges* may be partial or full, designation to cover other eligible *charges* applies to the *charge* in its entirety. A *charge* may be covered by multiple related purchase records, but the coverage must not "blend" costs from mutually unrelated purchases (e.g., purchases for different commitments or marketplace offerings).
+
+For independent *charges*, the Billed Cost equals the [Effective Cost](#effectivecost).
+
+If a *charge* is fully covered by other *charges*, its Billed Cost is zero, as the entire cost is invoiced through original one-time or recurring purchases that provide the coverage. If a *charge* is partially covered, its Billed Cost reflects only the portion that is directly invoiced on the *charge* itself, while the remaining amount is invoiced through related purchases that provide the coverage.
 
 The BilledCost column adheres to the following requirements:
 
