@@ -24,6 +24,9 @@
     "USAGE_MEASUREMENT_SUPPORTED": {
       "Description": "Data generator supports the measurement of usage quantities"
     },
+    "UNIT_PRICING_SUPPORTED": {
+      "Description": "Data generator supports unit pricing concepts"
+    },
     "SUB_ACCOUNT_SUPPORTED": {
       "Description": "Data generator supports sub account construct for resource and service grouping"
     },

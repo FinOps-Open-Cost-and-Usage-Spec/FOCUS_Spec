@@ -32,6 +32,15 @@
       ],
       "FormatAttributes": []
     },
+    "FormatKeyValue": {
+      "Description": "Check a column has a key value format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "KeyValueFormat-A-000-M"
+      ]
+    },
     "CheckValue": {
       "Description": "Check if column has a particular value",
       "Arguments": [
@@ -50,6 +59,14 @@
     },
     "CheckNotSameValue": {
       "Description": "Check if column does not have the same value as another column",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckSameValue": {
+      "Description": "Check if column does have the same value as another column",
       "Arguments": [
         "ColumnAName",
         "ColumnBName"

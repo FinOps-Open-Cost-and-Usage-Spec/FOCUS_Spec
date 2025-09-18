@@ -1,3 +1,6 @@
+import re
+
+
 def test_mustsatisfy_format_requires_function_format(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []
@@ -10,9 +13,10 @@ def test_mustsatisfy_format_requires_function_format(cr_json):
         vc = rule.get("ValidationCriteria") or {}
         mustsatisfy = vc.get("MustSatisfy")
 
-        if isinstance(mustsatisfy, str) and "format" in mustsatisfy.lower():
+        if isinstance(mustsatisfy, str) and re.search(r"\bformat\b", mustsatisfy, re.IGNORECASE):
             if func != "Format":
                 violations.append((rid, func, mustsatisfy))
+
 
     assert not violations, (
         "Any non-Composite rule whose MustSatisfy contains 'format' must have Function='Format':\n"

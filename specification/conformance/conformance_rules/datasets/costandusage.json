@@ -229,6 +229,22 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-052-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-055-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-056-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-057-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-058-C"
           }
         ]
       },
@@ -279,7 +295,11 @@
         "CostAndUsage-D-045-C",
         "CostAndUsage-D-046-C",
         "CostAndUsage-D-049-C",
-        "CostAndUsage-D-052-C"
+        "CostAndUsage-D-052-C",
+        "CostAndUsage-D-055-C",
+        "CostAndUsage-D-056-C",
+        "CostAndUsage-D-057-C",
+        "CostAndUsage-D-058-C"
       ]
     }
   },
@@ -481,6 +501,22 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ServiceSubcategory-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SkuId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SkuMeter-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SkuPriceDetails-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "SkuPriceId-C-000-C"
           }
         ]
       },
@@ -531,7 +567,11 @@
         "SubAccountName-C-000-C",
         "ServiceCategory-C-000-M",
         "ServiceName-C-000-M",
-        "ServiceSubcategory-C-000-O"
+        "ServiceSubcategory-C-000-O",
+        "SkuId-C-000-C",
+        "SkuMeter-C-000-O",
+        "SkuPriceDetails-C-000-M",
+        "SkuPriceId-C-000-C"
       ]
     }
   },
@@ -1663,6 +1703,98 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "PricingCurrencyListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-055-C": {
+    "Function": "Presence",
+    "Reference": "SkuPriceId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuPriceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-056-C": {
+    "Function": "Presence",
+    "Reference": "SkuMeter",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuMeter MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuMeter"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-057-C": {
+    "Function": "Presence",
+    "Reference": "SkuId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-058-C": {
+    "Function": "Presence",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuPriceDetails"
       },
       "Condition": {},
       "Dependencies": []
