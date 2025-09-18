@@ -11,9 +11,7 @@ From the perspective of cost coverage, a *charge* may be:
 
 While coverage by other *charges* may be partial or full, designation to cover other eligible *charges* applies to the *charge* in its entirety. A *charge* may be covered by multiple related purchase records, but the coverage must not "blend" costs from mutually unrelated purchases (e.g., purchases for different commitments or marketplace offerings).
 
-For independent *charges*, the Billed Cost equals the [Effective Cost](#effectivecost).
-
-If a *charge* is fully covered by other *charges*, its Billed Cost is zero, as the entire cost is invoiced through original one-time or recurring purchases that provide the coverage. If a *charge* is partially covered, its Billed Cost reflects only the portion that is directly invoiced on the *charge* itself, while the remaining amount is invoiced through related purchases that provide the coverage.
+For independent *charges*, the Billed Cost equals the [Effective Cost](#effectivecost). If a *charge* is fully covered by other *charges*, its Billed Cost is zero, as the entire cost is invoiced through original one-time or recurring purchases that provide the coverage. If a *charge* is partially covered, its Billed Cost reflects only the portion that is directly invoiced on the *charge* itself, while the remaining amount is invoiced through related purchases that provide the coverage.
 
 The BilledCost column adheres to the following requirements:
 
