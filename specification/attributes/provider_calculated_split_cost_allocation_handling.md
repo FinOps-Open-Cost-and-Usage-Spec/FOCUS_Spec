@@ -4,7 +4,7 @@ The provider-calculated split cost allocation for provider-defined services is a
 
 ## Attribute ID
 
-ProviderCalculatedSplitCostAllocation
+ProviderCalculatedSplitCostAllocationHandling
 
 ## Attribute Name
 
