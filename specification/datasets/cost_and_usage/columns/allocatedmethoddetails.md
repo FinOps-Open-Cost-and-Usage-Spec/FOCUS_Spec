@@ -22,7 +22,6 @@ The AllocatedMethodDetails column adheres to the following requirements:
 * AllocatedMethodDetails MUST be of type String.
 * AllocatedMethodDetails MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedMethodDetails MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
-  * AllocatedMethodDetails MUST conform to ObjectFormat schema requirements below.
 * AllocatedMethodDetails nullability is defined as follows:
   * AllocatedMethodDetails MUST be null when a charge is not related to a provider-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a provider-calculated split cost allocation.
