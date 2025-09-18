@@ -139,7 +139,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "Changes to mutable entities MUST NOT alter charges incurred before the change, preserving data integrity and auditability for all charge records.",
+            "MustSatisfy": "Charges to mutable entities MUST NOT alter charges incurred before the change, preserving data integrity and auditability for all charge records.",
             "Keyword": "MUST NOT",
             "Requirement": {},
             "Condition": {},

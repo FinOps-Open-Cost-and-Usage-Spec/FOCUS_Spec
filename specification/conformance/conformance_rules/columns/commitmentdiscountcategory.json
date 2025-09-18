@@ -46,9 +46,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountCategory MUST be of type String.",
@@ -68,9 +66,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountCategory nullability is defined as follows:",
@@ -102,9 +98,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountCategory MUST be null when CommitmentDiscountId is null.",
@@ -131,9 +125,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.",
@@ -160,9 +152,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountCategory MUST be one of the allowed values.",
