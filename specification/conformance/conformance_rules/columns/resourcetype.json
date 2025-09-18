@@ -147,7 +147,7 @@
         "Value": null
       },
       "Dependencies": [
-        "ResourceId-C-000-M"
+        "ResourceId-C-000-C"
       ]
     }
   },
@@ -177,7 +177,7 @@
         "Value": null
       },
       "Dependencies": [
-        "ResourceId-C-000-M"
+        "ResourceId-C-000-C"
       ]
     }
   }

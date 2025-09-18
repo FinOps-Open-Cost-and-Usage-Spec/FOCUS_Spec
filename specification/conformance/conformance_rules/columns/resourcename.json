@@ -83,9 +83,7 @@
         "Column": "ResourceName"
       },
       "Condition": {},
-      "Dependencies": [
-        "StringHandling:CR"
-      ]
+      "Dependencies": []
     }
   },
   "ResourceName-C-003-C": {

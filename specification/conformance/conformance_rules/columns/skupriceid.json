@@ -190,8 +190,8 @@
         ]
       },
       "Dependencies": [
-        "ChargeClass-C-000-C",
-        "ChargeCategory-C-000-C"
+        "ChargeClass-C-000-M",
+        "ChargeCategory-C-000-M"
       ]
     }
   },

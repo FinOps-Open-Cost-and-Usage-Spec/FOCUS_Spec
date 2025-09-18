@@ -194,7 +194,7 @@
         "Value": null
       },
       "Dependencies": [
-        "ContractedUnitPrice-C-000-M",
+        "ContractedUnitPrice-C-000-C",
         "ContractedCost-C-007-C",
         "ContractedCost-C-008-C"
       ]
@@ -229,7 +229,7 @@
         ]
       },
       "Dependencies": [
-        "ContractedUnitPrice-C-000-M",
+        "ContractedUnitPrice-C-000-C",
         "ChargeCategory-C-000-M"
       ]
     }
@@ -263,7 +263,7 @@
         ]
       },
       "Dependencies": [
-        "ContractedUnitPrice-C-000-M",
+        "ContractedUnitPrice-C-000-C",
         "ChargeCategory-C-000-M",
         "BilledCost-C-000-M"
       ]
@@ -303,7 +303,7 @@
         ]
       },
       "Dependencies": [
-        "ContractedUnitPrice-C-000-M",
+        "ContractedUnitPrice-C-000-C",
         "PricingQuantity-C-000-M",
         "ChargeClass-C-000-M"
       ]
@@ -328,7 +328,7 @@
         "Value": "Correction"
       },
       "Dependencies": [
-        "ContractedUnitPrice-C-000-M",
+        "ContractedUnitPrice-C-000-C",
         "PricingQuantity-C-000-M",
         "ChargeClass-C-000-M"
       ]

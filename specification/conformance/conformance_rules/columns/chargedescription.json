@@ -79,9 +79,7 @@
         "ColumnName": "ChargeDescription"
       },
       "Condition": {},
-      "Dependencies": [
-        "StringHandling-A-000-M"
-      ]
+      "Dependencies": []
     }
   },
   "ChargeDescription-C-003-O": {
