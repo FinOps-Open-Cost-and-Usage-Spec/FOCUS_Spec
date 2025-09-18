@@ -269,6 +269,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-064-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-065-M"
           }
         ]
       },
@@ -329,7 +333,8 @@
         "CostAndUsage-D-061-C",
         "CostAndUsage-D-062-C",
         "CostAndUsage-D-063-C",
-        "CostAndUsage-D-064-C"
+        "CostAndUsage-D-064-C",
+        "CostAndUsage-D-065-M"
       ]
     }
   },
@@ -502,6 +507,10 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "PricingUnit-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ProviderName-C-000-M"
           },
           {
@@ -614,6 +623,7 @@
         "PricingCurrencyEffectiveCost-C-000-M",
         "PricingCurrencyListUnitPrice-C-000-M",
         "PricingQuantity-C-000-M",
+        "PricingUnit-C-000-M",
         "ProviderName-C-000-M",
         "RegionId-C-000-C",
         "RegionName-C-000-C",
@@ -1987,6 +1997,26 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "SubAccountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-065-M": {
+    "Function": "Presence",
+    "Reference": "PricingUnit",
+    "EntityType": "Dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingUnit"
       },
       "Condition": {},
       "Dependencies": []
