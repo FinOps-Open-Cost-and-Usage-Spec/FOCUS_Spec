@@ -9,6 +9,7 @@ This section outlines the planned release schedule and key milestones for the FO
         <th width="10">Version</th>
         <th width="10">Release By</th>
         <th>Scope | High-Level System Requirements</th>
+    </tr>
     <tr>
         <td>v1.3</td>
         <td>Dec 2025</td>
@@ -34,7 +35,31 @@ This section outlines the planned release schedule and key milestones for the FO
       <li>Conformance program beta</li>
       <li>Recency and completeness of data</li>  
     </ul>
-</ul>
+        </td>
+    </tr>
+    <tr>
+        <td>v1.4</td>
+        <td>Jun 2026</td>
+        <td>
+<strong>Unified financial reconciliation</strong>
+    <ul>
+      <li>Extend support for contract commitment dataset</li>
+      <li>Enable linkage of purchase and usage records across providers</li>
+    </ul>
+  <strong>Improving FOCUS adoption and implementation</strong>
+    <ul>
+      <li>Add FOCUS column to provider column mappings as a non-functional requirement</li>
+      <li>Add output formats as a non-functional requirement</li>
+      <li>Add commitment eligibility indicator for on-demand charges</li>
+      <li>Add the ability to understand provider resource tagging eligibility</li>
+      <li>Augment account and resource categorizations / hierarchy</li>
+      <li>Provide default name values derived from ID columns</li>
+      <li>Add non-FOCUS columns to FOCUS datasets as a non-functional requirement</li>
+    </ul>
+  <strong>Safe Innovation Framework and Guidelines</strong>
+    <ul>
+      <li>Provide experimental-columns mechanism in FOCUS schema</li>
+    </ul>
         </td>
     </tr>
 </table>
