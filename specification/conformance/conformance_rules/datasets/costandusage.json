@@ -257,6 +257,14 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CostAndUsage-D-061-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-062-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CostAndUsage-D-063-C"
           }
         ]
       },
@@ -314,7 +322,9 @@
         "CostAndUsage-D-058-C",
         "CostAndUsage-D-059-C",
         "CostAndUsage-D-060-C",
-        "CostAndUsage-D-061-C"
+        "CostAndUsage-D-061-C",
+        "CostAndUsage-D-062-C",
+        "CostAndUsage-D-063-C"
       ]
     }
   },
@@ -364,6 +374,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "BillingPeriodStart-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "CapacityReservationId-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -420,6 +434,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "CommitmentDiscountQuantity-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ConsumedUnit-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -557,6 +575,7 @@
         "BillingCurrency-C-000-M",
         "BillingPeriodEnd-C-000-M",
         "BillingPeriodStart-C-000-M",
+        "CapacityReservationId-C-000-C",
         "CapacityReservationStatus-C-000-M",
         "ChargeCategory-C-000-M",
         "ChargeClass-C-000-M",
@@ -571,6 +590,7 @@
         "CommitmentDiscountType-C-000-M",
         "CommitmentDiscountUnit-C-000-M",
         "CommitmentDiscountQuantity-C-000-C",
+        "ConsumedUnit-C-000-C",
         "ConsumedQuantity-C-000-C",
         "ContractedCost-C-000-M",
         "ContractedUnitPrice-C-000-C",
@@ -1891,6 +1911,50 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "Tags"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-062-C": {
+    "Function": "Presence",
+    "Reference": "CapacityReservationId",
+    "EntityType": "Dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "CAPACITY_RESERVATION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationId MUST be present in a FOCUS dataset when the provider supports capacity reservations.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CapacityReservationId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-063-C": {
+    "Function": "Presence",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Dataset",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit MUST be present in a FOCUS dataset when the provider supports the measurement of usage.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ConsumedUnit"
       },
       "Condition": {},
       "Dependencies": []
