@@ -43,7 +43,7 @@
     }
   },
   "ChargePeriodStart-C-001-M": {
-    "Function": "Format",
+    "Function": "Type",
     "Reference": "ChargePeriodStart",
     "EntityType": "Column",
     "CRVersionIntroduced": "1.2",

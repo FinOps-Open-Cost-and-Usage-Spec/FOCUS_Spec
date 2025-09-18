@@ -43,7 +43,7 @@
     }
   },
   "ChargePeriodEnd-C-001-M": {
-    "Function": "Format",
+    "Function": "Type",
     "Reference": "ChargePeriodEnd",
     "EntityType": "Column",
     "CRVersionIntroduced": "1.2",

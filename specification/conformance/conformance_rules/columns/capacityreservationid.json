@@ -160,7 +160,9 @@
         "ColumnName": "CapacityReservationStatus",
         "Value": "Unused"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CapacityReservationStatus-C-000-M"
+      ]
     }
   },
   "CapacityReservationId-C-006-O": {
