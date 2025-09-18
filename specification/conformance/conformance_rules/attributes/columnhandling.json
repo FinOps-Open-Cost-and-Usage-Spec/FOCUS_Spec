@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The attribute adheres to the following requirements:",
+      "MustSatisfy": "All columns defined by FOCUS MUST follow the following rules:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -52,19 +52,15 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnHandling-A-010-O"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnHandling-A-011-O"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ColumnHandling-A-012-O"
           },
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ColumnHandling-A-013-O"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnHandling-A-014-O"
           }
         ]
       },
@@ -79,10 +75,9 @@
         "ColumnHandling-A-007-O",
         "ColumnHandling-A-008-M",
         "ColumnHandling-A-009-M",
-        "ColumnHandling-A-010-O",
-        "ColumnHandling-A-011-O",
         "ColumnHandling-A-012-O",
-        "ColumnHandling-A-013-O"
+        "ColumnHandling-A-013-O",
+        "ColumnHandling-A-014-O"
       ]
     }
   },
@@ -223,6 +218,38 @@
     }
   },
   "ColumnHandling-A-009-M": {
+    "Function": "Composite",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom (e.g., provider-defined) columns that are not defined by FOCUS but included in a FOCUS dataset MUST follow the following rules:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnHandling-A-010-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ColumnHandling-A-011-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ColumnHandling-A-010-M",
+        "ColumnHandling-A-011-O"
+      ]
+    }
+  },
+  "ColumnHandling-A-010-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -239,7 +266,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-010-O": {
+  "ColumnHandling-A-011-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -256,7 +283,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-011-O": {
+  "ColumnHandling-A-012-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -273,7 +300,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-012-O": {
+  "ColumnHandling-A-013-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
@@ -290,7 +317,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-013-O": {
+  "ColumnHandling-A-014-O": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",

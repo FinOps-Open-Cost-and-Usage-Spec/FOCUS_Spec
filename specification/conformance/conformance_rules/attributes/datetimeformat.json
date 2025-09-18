@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The attribute adheres to the following requirements:",
+      "MustSatisfy": "The DateTimeFormat attribute adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -71,7 +71,44 @@
     }
   },
   "DateTimeFormat-A-003-M": {
-    "Function": "Format",
+    "Function": "Composite",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ') and conform to the following guidelines:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "DateTimeFormat-A-004-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "DateTimeFormat-A-005-M"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "DateTimeFormat-A-006-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "DateTimeFormat-A-004-M",
+        "DateTimeFormat-A-005-M",
+        "DateTimeFormat-A-006-M"
+      ]
+    }
+  },
+  "DateTimeFormat-A-004-M": {
+    "Function": "Validation",
     "Reference": "DateTimeFormat",
     "EntityType": "Attribute",
     "Notes": "",
@@ -80,7 +117,41 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ')",
+      "MustSatisfy": "MUST Include the date and time components, separated with the letter ‘T’",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DateTimeFormat-A-005-M": {
+    "Function": "Validation",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST Use two-digit hours (HH), minutes (mm), and seconds (ss)",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DateTimeFormat-A-006-M": {
+    "Function": "Validation",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST End with the ‘Z’ indicator to denote UTC (Coordinated Universal Time)",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
