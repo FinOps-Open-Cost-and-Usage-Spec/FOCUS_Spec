@@ -1,65 +1,65 @@
 {
-  "CurrencyFormat-A-000-M": {
+  "NullHandling-A-000-M": {
     "Function": "Composite",
-    "Reference": "CurrencyFormat",
+    "Reference": "NullHandling",
     "EntityType": "Attribute",
-    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
+    "Notes": "",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The CurrencyFormat attribute adheres to the following requirements:",
+      "MustSatisfy": "All columns defined in the FOCUS specification MUST follow the null handling requirements listed below.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CurrencyFormat-A-001-M"
+            "ConformanceRuleId": "NullHandling-A-001-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CurrencyFormat-A-002-M"
+            "ConformanceRuleId": "NullHandling-A-002-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CurrencyFormat-A-001-M",
-        "CurrencyFormat-A-002-M"
+        "NullHandling-A-001-M",
+        "NullHandling-A-002-M"
       ]
     }
   },
-  "CurrencyFormat-A-001-M": {
+  "NullHandling-A-001-M": {
     "Function": "Validation",
-    "Reference": "CurrencyFormat",
+    "Reference": "NullHandling",
     "EntityType": "Attribute",
-    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
+    "Notes": "",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR)",
+      "MustSatisfy": "Columns MUST use NULL when there isn’t a value that can be specified for a nullable column.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
   },
-  "CurrencyFormat-A-002-M": {
+  "NullHandling-A-002-M": {
     "Function": "Validation",
-    "Reference": "CurrencyFormat",
+    "Reference": "NullHandling",
     "EntityType": "Attribute",
-    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
+    "Notes": "",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens)",
-      "Keyword": "MUST",
+      "MustSatisfy": "Columns MUST NOT use empty strings or placeholder values such as 0 for numeric columns or “Not Applicable” for string columns to represent a null or not having a value, regardless of whether the column allows nulls or not.",
+      "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

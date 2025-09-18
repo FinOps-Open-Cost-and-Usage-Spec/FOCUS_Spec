@@ -1,6 +1,3 @@
-import pytest
-
-@pytest.mark.xfail(reason="Known issue, fix pending")
 def test_dependencies_reference_existing_rules(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     defined_ids = set(rules.keys())
