@@ -1,4 +1,4 @@
-# Provider-Calculated Split Cost Allocation
+# Provider-Calculated Split Cost Allocation Handling
 
 The provider-calculated split cost allocation for provider-defined services is a capability that can be offered by providers which allocates (or in some cases provides more granular detail about) a charge to a more granular level. This is accomplished by taking a charge record present in a FOCUS dataset (origin charge) and splitting it into multiple charge records (allocated charges) to reflect the more granular detail, while ensuring the origin charge can be derived from the combination of allocated charges. This feature is used by practitioners to conduct chargebacks and better understand the usage of resources.
 
