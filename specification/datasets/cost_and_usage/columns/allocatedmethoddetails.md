@@ -171,7 +171,7 @@ When multiple "UsageUnit" values are used to calculate the allaction, another ob
   ]
 }
 ```
-### Scenario 3: Provider omits key that is not required
+### Scenario 3: Provider omits keys that are not required
 
 This provider does not wish to supply the "UsageUnit" or "UsageQuantity" keys but still provides cost allocation with some additional allocation method details. In this case, "UsageUnit" and "UsageQuantity" are omitted, and only the "AllocatedRatio" is supplied.
 
