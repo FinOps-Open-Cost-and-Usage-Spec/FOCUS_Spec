@@ -33,6 +33,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Commitment Discount Unit](#commitmentdiscountunit)                           | Dimension   | Conditional   | True         | String    |
 | [Consumed Quantity](#consumedquantity)                                        | Metric      | Conditional   | True         | Decimal   |
 | [Consumed Unit](#consumedunit)                                                | Dimension   | Conditional   | True         | String    |
+| [Contract Applied](#contractapplied)                                          | Dimension / Metric | Conditional   | True         | JSON      |
 | [Contracted Cost](#contractedcost)                                            | Metric      | Mandatory     | False        | Decimal   |
 | [Contracted Unit Price](#contractedunitprice)                                 | Metric      | Conditional   | True         | Decimal   |
 | [Effective Cost](#effectivecost)                                              | Metric      | Mandatory     | False        | Decimal   |
