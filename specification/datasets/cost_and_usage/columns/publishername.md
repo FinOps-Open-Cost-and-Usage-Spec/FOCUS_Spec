@@ -1,6 +1,6 @@
 # Publisher Name
 
-The name of the entity that produces the [*resources*](#glossary:resource) or [*services*](#glossary:service) that were purchased. It is commonly used for cost analysis and reporting scenarios.
+Publisher Name is the name of the entity that produces the [*resources*](#glossary:resource) or [*services*](#glossary:service) that were purchased. It is commonly used for cost analysis and reporting scenarios.
 
 The PublisherName column adheres to the following requirements:
 
