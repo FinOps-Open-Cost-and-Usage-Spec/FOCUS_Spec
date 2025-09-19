@@ -10,7 +10,7 @@ The AllocatedMethodId column adheres to the following requirements:
 * AllocatedMethodId nullability is defined as follows:
   * AllocatedMethodId MUST be null when a [*charge*](#glossary:charge) is not related to a provider-calculated split cost allocation.
   * AllocatedMethodId MUST NOT be null when a *charge* is related to a provider-calculated split cost allocation.
-* AllocatedMethodId MUST uniquely identify the method used to calculate the split cost allocation in the provider's documentation.
+* Provider documentation of a split cost allocation method MUST make reference to a single AllocatedMethodId value.
 
 ## Column ID
 
