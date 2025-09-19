@@ -108,6 +108,9 @@ A Date/Time Format value that is contained within the beginning bound of a time 
 
 A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
 
+<a name="glossary:json"><b>JSON</b></a>
+A common acronym for JavaScript Object Notation, a data format codified in [ECMA-404](https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) as a standard for human-readable, serializable data objects. This data format is used in FOCUS to communicate multiple pieces of information about a charge (tags, properties, etc.) in a single column.
+
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
 The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
