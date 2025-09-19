@@ -1,6 +1,6 @@
 # Allocated Method ID
 
-Allocated Method ID is the identifier for the [allocated method](#glossary:allocated-method) defined by the provider which was used for the [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling). This identifier can be used to find more information about how the [allocated charge](#glossary:allocated-charge) was calculated in the provider's documentation.
+Allocated Method ID is the unique identifier for the [allocated method](#glossary:allocated-method) defined by the provider which was used for the [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling). This unique identifier can be used to find how the [allocated charge](#glossary:allocated-charge) was calculated in the provider's documentation.
 
 The AllocatedMethodId column adheres to the following requirements:
 
@@ -22,7 +22,7 @@ Allocated Method ID
 
 ## Description
 
-Allocated Method ID is the identifier for the method defined by the provider which was used for the provider-calculated split cost allocation.
+Allocated Method ID is the unique identifier for the method defined by the provider which was used to calculate the provider-calculated split cost allocation.
 
 ## Content constraints
 
