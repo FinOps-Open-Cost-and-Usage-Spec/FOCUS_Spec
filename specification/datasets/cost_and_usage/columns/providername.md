@@ -1,6 +1,6 @@
 # Provider Name
 
-The name of the entity that makes the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for purchase. It is commonly used for cost analysis and reporting scenarios.
+Provider Name is the name of the entity that makes the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for purchase. It is commonly used for cost analysis and reporting scenarios.
 
 The ProviderName column adheres to the following requirements:
 
