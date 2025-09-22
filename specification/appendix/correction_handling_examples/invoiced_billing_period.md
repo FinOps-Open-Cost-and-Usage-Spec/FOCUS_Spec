@@ -60,11 +60,11 @@ Note the following details in the example datasets:
 
 ### Scenario 3: Post-Invoice Correction - Itemized Cost-only Correction
 
-On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records related to a single SkuPriceId. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
+On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
-To reconcile this discrepancy, ACME Corp provisioned a cost-only correction using append-only mechanisms. The correction was realized by introducing a single increment record in both ledger-style and accounting-style formats, representing the cost-only adjustment.
+To reconcile this discrepancy, ACME Corp provisioned a cost-only correction using append-only mechanisms. In both ledger-style and accounting-style formats, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected SkuPriceId values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a SkuPriceId, this approach explicitly itemizes the correction per SkuPriceId. Compared to the bulk correction approach, this method ensures transparency and traceability and is preferred when itemized correction is feasible.
 
-This record was assigned to the next open billing period to preserve invoice immutability and ensure completeness of cost reporting.
+These correction records were assigned to the next open billing period to preserve invoice immutability and ensure completeness of cost reporting.
 
 CSV Examples:
 
@@ -74,21 +74,21 @@ CSV Examples:
 Note the following details in the example datasets:
 
 * The original dataset was delivered before the billing period was invoiced.
-* The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records related to a single SkuPriceId.
-* The discrepancy was not captured in the original dataset and was therefore not reflected in the invoice for May 2025, issued on June 12th, 2025.
-* The correction introduces a cost-only record to reconcile the total drift and ensure invoice accuracy.
+* The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
+* The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 12th, 2025.
 * The correction is modeled using append-only mechanisms, as the original billing period is closed and invoice immutability must be preserved.
-* The correction record is assigned to the next open billing period (e.g., July 2025).
-* The correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously invoiced billing period.
-* The correction is itemized and explicitly references the relevant SkuPriceId.
-* Both Ledger-style and Accounting-style corrections use a single increment record to represent the cost-only adjustment.
+* Both Ledger-style and Accounting-style corrections introduce two itemized increment records representing cost-only adjustments.
+* Each correction record is assigned to the next open billing period (e.g., July 2025).
+* Each correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously invoiced billing period.
+* Each correction record is itemized and explicitly references the relevant SkuPriceId.
+* Each correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
 * Replacement-style correction is not permitted, as modifying finalized records would violate audit and legal constraints.
 
 ### Scenario 4: Post-Invoice Correction - Bulk Cost-only Correction
 
 On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
-To reconcile this discrepancy, ACME Corp provisioned a bulk cost-only correction using append-only mechanisms. The correction was realized by introducing a single increment record in both ledger-style and accounting-style formats, representing the cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs.
+To reconcile this discrepancy, ACME Corp provisioned a bulk cost-only correction using append-only mechanisms. The correction was realized by introducing a single increment record in both ledger-style and accounting-style formats, representing the bulk cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs.
 
 This record was assigned to the next open billing period to preserve invoice immutability and ensure completeness of cost reporting.
 
@@ -101,12 +101,12 @@ CSV Examples:
 Note the following details in the example datasets:
 
 * The original dataset was delivered before the billing period was invoiced.
-* The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records spanning several SkuPriceId values.
-* The discrepancy was not captured in the original dataset and was therefore not reflected in the invoice for May 2025, issued on June 12th, 2025.
-* The correction introduces a bulk cost-only record to reconcile the total drift and ensure invoice accuracy.
+* The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
+* The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 12th, 2025.
 * The correction is modeled using append-only mechanisms, as the original billing period is closed and invoice immutability must be preserved.
+* Both Ledger-style and Accounting-style corrections introduce a bulk cost-only record to reconcile the total drift and ensure invoice accuracy.
 * The correction record is assigned to the next open billing period (e.g., July 2025).
 * The correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously invoiced billing period.
-* The correction does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
-* Both Ledger-style and Accounting-style corrections use a single increment record to represent the cost-only adjustment.
+* The correction record does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
+* The correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
 * Replacement-style correction is not permitted, as modifying finalized records would violate audit and legal constraints.
