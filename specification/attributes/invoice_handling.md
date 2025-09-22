@@ -22,6 +22,7 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 * If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage dataset.
 
 ## Exceptions
+
 * Informational line items that have zero monetary impact and are included solely for transparency MAY be excluded. Examples include:
   - Free tier usage tracking with $0.00 charges
   - Breakdowns of bundled services where only the bundle total is billed
