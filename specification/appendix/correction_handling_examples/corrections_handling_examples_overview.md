@@ -1,0 +1,17 @@
+# Correction Handling Examples Overview
+
+The following section contains examples of how correction handling may be implemented in alignment with the FOCUS specification. These examples cover scenarios involving corrections within open billing periods and to previously invoiced periods, and illustrate various delivery mechanisms and correction styles supported by FOCUS.
+
+The examples that follow are organized into sections based on billing period status:
+
+* Corrections to Invoiced Billing Period
+  * Post-Invoice Correction Scenarios: Examples of corrections to previously invoiced billing periods.
+* Corrections within Open Billing Period
+  * Intra-Period Correction Scenarios: Examples of corrections within the current open billing period.
+  * Pre-Invoice Correction Scenarios: Examples of corrections within previous open billing periods that have not yet been invoiced.
+
+The example dataset artifacts provided in these scenarios demonstrate three distinct correction styles, each aligned with one of the supported delivery mechanisms:
+
+* Replacement-style correction (used with the Replacement mechanism): Corrections are modeled through updates, additions, or omissions relative to the previous snapshot. This style reflects the latest state of data and does not retain historical correction records unless externally preserved.
+* Ledger-style correction (used with the Append-only mechanism): Corrections are represented by additive records that increment or decrement selected cost and quantity values. Original records remain unchanged, and reversals are optional. This style offers limited audit transparency.
+* Accounting-style correction (used with the Append-only mechanism): Corrections typically follow a two-step approach: reversal of the original record (if needed), and addition of a corrected record. Reversal is performed by creating a record with opposite cost and quantity values, while all other columns match the original. This style preserves full correction history and supports comprehensive auditability.
