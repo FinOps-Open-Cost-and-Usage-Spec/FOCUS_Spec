@@ -35,6 +35,7 @@ This report documents the suite of automated tests validating the ConformanceRul
 #### test_rule_id_duplicates_in_sources.py
 
 *Purpose*: Detect duplicate IDs at source.
+
 *Description*: Checks all individual JSON source files in conformance_rules for duplicate keys. Fails early before merge, so no silent overwriting occurs.
 
 #### test_rule_number_sequences.py
