@@ -104,6 +104,10 @@ The collection of datasets are designed to provide billing insight, additional c
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
 
+<a name="glossary:invoicereconciliation"><b>Invoice Reconciliation</b></a>
+
+The process of ensuring that all financial metrics and dimensions presented on an invoice are fully aligned with the underlying cost and usage data associated with that invoice.
+
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
 A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
