@@ -28,9 +28,9 @@ Provider-calculated split cost allocation for provider-defined services allows p
   * Allocated charge records MUST include the same keys and values present in the [Tags](#tags) column for the origin charge.
 * Allocated charge records MUST satisfy normative requirements for all columns.
 * The method used for allocating origin charges to create allocated charges MUST be documented by the provider and accessible to practitioners.
-  * The Dataset MAY contain records for concepts not related to resource usage, if documented in the split cost allocation method.
-  * The Dataset MAY contain records for the unused or unallocated usage of the ResourceId as separate allocated charges, if it aligns to the provider's documented allocation method.
-  * Allocated charge records MAY contain approtioned costs for the unused or unallocated usage of the ResourceId, if it aligns to the provider's documented allocation method.
+* A FOCUS dataset MAY contain records for concepts not related to resource usage, if documented in the split cost allocation method.
+ * A FOCUS dataset MAY contain records for the unused or unallocated usage of the ResourceId as separate allocated charges, if it aligns to the provider's documented allocation method.
+* Allocated charge records MAY contain apportioned costs for the unused or unallocated usage of the ResourceId, if it aligns to the provider's documented allocation method.
 * Split-cost allocation is RECOMMENDED to be applied to charges on an opt-in basis.
 
 ## Exceptions
