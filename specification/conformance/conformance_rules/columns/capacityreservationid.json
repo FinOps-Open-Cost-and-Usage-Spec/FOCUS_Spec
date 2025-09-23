@@ -109,7 +109,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CapacityReservationId-C-006-O"
+            "ConformanceRuleId": "CapacityReservationId-C-006-C"
           }
         ]
       },
@@ -117,7 +117,7 @@
       "Dependencies": [
         "CapacityReservationId-C-004-C",
         "CapacityReservationId-C-005-C",
-        "CapacityReservationId-C-006-O"
+        "CapacityReservationId-C-006-C"
       ]
     }
   },
@@ -161,11 +161,11 @@
         "Value": "Unused"
       },
       "Dependencies": [
-        "CapacityReservationStatus-C-000-M"
+        "CapacityReservationStatus-C-000-C"
       ]
     }
   },
-  "CapacityReservationId-C-006-O": {
+  "CapacityReservationId-C-006-C": {
     "Function": "Nullability",
     "Reference": "CapacityReservationId",
     "EntityType": "Column",

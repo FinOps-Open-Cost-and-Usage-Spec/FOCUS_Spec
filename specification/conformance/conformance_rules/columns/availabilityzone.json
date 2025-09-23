@@ -1,5 +1,5 @@
 {
-  "AvailabilityZone-C-000-M": {
+  "AvailabilityZone-C-000-C": {
     "Function": "Composite",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",
@@ -26,7 +26,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "AvailabilityZone-C-003-M"
+            "ConformanceRuleId": "AvailabilityZone-C-003-C"
           }
         ]
       },
@@ -35,7 +35,7 @@
         "CostAndUsage-D-003-C",
         "AvailabilityZone-C-001-M",
         "AvailabilityZone-C-002-M",
-        "AvailabilityZone-C-003-M"
+        "AvailabilityZone-C-003-C"
       ]
     }
   },
@@ -79,7 +79,7 @@
       "Dependencies": []
     }
   },
-  "AvailabilityZone-C-003-M": {
+  "AvailabilityZone-C-003-C": {
     "Function": "Nullability",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",

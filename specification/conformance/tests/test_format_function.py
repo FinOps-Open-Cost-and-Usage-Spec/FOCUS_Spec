@@ -1,6 +1,7 @@
 import re
+import pytest
 
-
+@pytest.mark.dependency(name="mustsatisfy_format_requires_function_format", scope="session")
 def test_mustsatisfy_format_requires_function_format(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

@@ -1,5 +1,5 @@
 {
-    "CommitmentDiscountType-C-000-M": {
+    "CommitmentDiscountType-C-000-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountType",
         "EntityType": "Column",
@@ -26,16 +26,16 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountType-C-003-M"
+                        "ConformanceRuleId": "CommitmentDiscountType-C-003-C"
                     }
                 ]
             },
             "Condition": {},
             "Dependencies": [
-                "CostAndUsage-D-014-M",
+                "CostAndUsage-D-014-C",
                 "CommitmentDiscountType-C-001-M",
                 "CommitmentDiscountType-C-002-M",
-                "CommitmentDiscountType-C-003-M"
+                "CommitmentDiscountType-C-003-C"
             ]
         }
     },
@@ -46,9 +46,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountType MUST be of type String.",
@@ -68,9 +66,7 @@
         "Notes": "Cross-column reference: StringHandling",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountType MUST conform to StringHandling requirements.",
@@ -83,16 +79,14 @@
             "Dependencies": []
         }
     },
-    "CommitmentDiscountType-C-003-M": {
+    "CommitmentDiscountType-C-003-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountType",
         "EntityType": "Column",
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountType nullability is defined as follows:",
@@ -124,9 +118,7 @@
         "Notes": "Cross-column reference: CommitmentDiscountId",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountType MUST be null when CommitmentDiscountId is null.",
@@ -153,9 +145,7 @@
         "Notes": "Cross-column reference: CommitmentDiscountId",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.",

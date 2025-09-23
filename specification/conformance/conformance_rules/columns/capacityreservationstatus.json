@@ -1,5 +1,5 @@
 {
-  "CapacityReservationStatus-C-000-M": {
+  "CapacityReservationStatus-C-000-C": {
     "Function": "Composite",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
@@ -46,9 +46,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "CapacityReservationStatus MUST be of type String.",
@@ -68,9 +66,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "CapacityReservationStatus nullability is defined as follows:",
@@ -99,9 +95,7 @@
     "Function": "Nullability",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "CapacityReservationStatus MUST be null when CapacityReservationId is null.",
@@ -124,7 +118,7 @@
     },
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "Notes": "Cross-column reference: CapacityReservationId"
+    "Notes": ""
   },
   "CapacityReservationStatus-C-004-C": {
     "Function": "Nullability",
@@ -133,9 +127,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and ChargeCategory is \"Usage\".",
@@ -172,9 +164,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When CapacityReservationStatus is not null, CapacityReservationStatus adheres to the following additional requirements:",
@@ -215,9 +205,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "CapacityReservationStatus MUST be one of the allowed values.",
@@ -237,11 +225,7 @@
           }
         ]
       },
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "CapacityReservationStatus",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": []
     }
   },
@@ -252,9 +236,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CapacityReservationStatus MUST be \"Unused\" when the charge represents the unused portion of a capacity reservation.",
@@ -271,9 +253,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [
-      "CAPACITY_RESERVATION_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CapacityReservationStatus MUST be \"Used\" when the charge represents the used portion of a capacity reservation.",

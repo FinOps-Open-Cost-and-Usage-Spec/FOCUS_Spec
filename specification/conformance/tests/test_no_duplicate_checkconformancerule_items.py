@@ -1,4 +1,5 @@
 # tests/test_no_duplicate_checkconformancerule_items.py
+import pytest
 
 def _find_dups(strings):
     seen, dups = set(), set()
@@ -43,7 +44,7 @@ def _scan_and_or_items_for_dups(node, rule_id, path_prefix, violations):
         for i, item in enumerate(node):
             _scan_and_or_items_for_dups(item, rule_id, path_prefix + [str(i)], violations)
 
-
+@pytest.mark.dependency(name="no_duplicate_checkconformancerule_in_and_or_items", scope="session")
 def test_no_duplicate_checkconformancerule_in_and_or_items(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

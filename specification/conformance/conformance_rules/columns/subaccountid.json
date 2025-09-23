@@ -26,7 +26,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SubAccountId-C-003-M"
+            "ConformanceRuleId": "SubAccountId-C-003-C"
           }
         ]
       },
@@ -35,7 +35,7 @@
         "CostAndUsage-D-019-C",
         "SubAccountId-C-001-M",
         "SubAccountId-C-002-M",
-        "SubAccountId-C-003-M"
+        "SubAccountId-C-003-C"
       ]
     }
   },
@@ -46,9 +46,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountId MUST be of type String",
@@ -68,9 +66,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountId MUST conform to StringHandling requirements",
@@ -83,16 +79,14 @@
       "Dependencies": []
     }
   },
-  "SubAccountId-C-003-M": {
+  "SubAccountId-C-003-C": {
     "Function": "Composite",
     "Reference": "SubAccountId",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountId nullability is defined as follows:",
@@ -102,31 +96,29 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SubAccountId-C-004-M"
+            "ConformanceRuleId": "SubAccountId-C-004-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SubAccountId-C-005-M"
+            "ConformanceRuleId": "SubAccountId-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "SubAccountId-C-004-M",
-        "SubAccountId-C-005-M"
+        "SubAccountId-C-004-C",
+        "SubAccountId-C-005-C"
       ]
     }
   },
-  "SubAccountId-C-004-M": {
+  "SubAccountId-C-004-C": {
     "Function": "Nullability",
     "Reference": "SubAccountId",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountId MUST be null when a charge is not related to a sub account",
@@ -136,16 +128,14 @@
       "Dependencies": []
     }
   },
-  "SubAccountId-C-005-M": {
+  "SubAccountId-C-005-C": {
     "Function": "Nullability",
     "Reference": "SubAccountId",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountId MUST NOT be null when a charge is related to a sub account",

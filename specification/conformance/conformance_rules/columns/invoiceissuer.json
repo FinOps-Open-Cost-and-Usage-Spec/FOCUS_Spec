@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When the InvoiceIssuerName column is present, each row MUST satisfy the type, StringHandling, and not-null checks",
+      "MustSatisfy": "The InvoiceIssuerName column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

@@ -1,11 +1,14 @@
 # tests/test_orphan_rules_same_type_deps_c000_exception.py
 import re
+import pytest
+
 
 _C000_RE = re.compile(r"-C-000-")
 _D000_RE = re.compile(r"-D-000-")
 
 _ALLOWED_TYPES = {"Column", "Dataset"}  # Attributes not included at this stage
 
+@pytest.mark.dependency(name="no_orphans_deps_only_same_type_with_c000_dataset_exception", scope="session")
 def test_no_orphans_deps_only_same_type_with_c000_dataset_exception(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
 

@@ -207,19 +207,19 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-C-008-M"
+            "ConformanceRuleId": "PricingCategory-C-008-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-C-009-M"
+            "ConformanceRuleId": "PricingCategory-C-009-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-C-010-M"
+            "ConformanceRuleId": "PricingCategory-C-010-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCategory-C-011-M"
+            "ConformanceRuleId": "PricingCategory-C-011-C"
           }
         ]
       },
@@ -230,10 +230,10 @@
       },
       "Dependencies": [
         "PricingCategory-C-007-M",
-        "PricingCategory-C-008-M",
-        "PricingCategory-C-009-M",
-        "PricingCategory-C-010-M",
-        "PricingCategory-C-011-M"
+        "PricingCategory-C-008-C",
+        "PricingCategory-C-009-C",
+        "PricingCategory-C-010-C",
+        "PricingCategory-C-011-C"
       ]
     }
   },
@@ -274,15 +274,11 @@
           }
         ]
       },
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "PricingCategory",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": []
     }
   },
-  "PricingCategory-C-008-M": {
+  "PricingCategory-C-008-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -303,7 +299,7 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-009-M": {
+  "PricingCategory-C-009-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -316,15 +312,11 @@
       "MustSatisfy": "PricingCategory MUST be \"Committed\" when the charge is subject to an existing commitment discount and is not the purchase of the commitment discount",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "PricingCategory",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": []
     }
   },
-  "PricingCategory-C-010-M": {
+  "PricingCategory-C-010-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -337,15 +329,11 @@
       "MustSatisfy": "PricingCategory MUST be \"Dynamic\" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "PricingCategory",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": []
     }
   },
-  "PricingCategory-C-011-M": {
+  "PricingCategory-C-011-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -358,11 +346,7 @@
       "MustSatisfy": "PricingCategory MUST be \"Other\" when there is a pricing model but none of the allowed values apply",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "PricingCategory",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": []
     }
   }

@@ -1,5 +1,5 @@
 {
-  "PricingCurrencyEffectiveCost-C-000-M": {
+  "PricingCurrencyEffectiveCost-C-000-C": {
     "Function": "Composite",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Column",
@@ -34,7 +34,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-005-C"
+            "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-005-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -49,7 +49,7 @@
         "PricingCurrencyEffectiveCost-C-002-M",
         "PricingCurrencyEffectiveCost-C-003-M",
         "PricingCurrencyEffectiveCost-C-004-M",
-        "PricingCurrencyEffectiveCost-C-005-C",
+        "PricingCurrencyEffectiveCost-C-005-M",
         "PricingCurrencyEffectiveCost-C-006-M"
       ]
     }
@@ -61,9 +61,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST be of type Decimal",
@@ -83,9 +81,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST conform to NumericFormat requirements",
@@ -105,9 +101,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST NOT be null",
@@ -128,9 +122,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST be a valid decimal value",
@@ -144,16 +136,14 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyEffectiveCost-C-005-C": {
+  "PricingCurrencyEffectiveCost-C-005-M": {
     "Function": "Validation",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage",
@@ -170,9 +160,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency",

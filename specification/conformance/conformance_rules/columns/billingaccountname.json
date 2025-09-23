@@ -1,5 +1,5 @@
 {
-  "BillingAccountName-C-000-C": {
+  "BillingAccountName-C-000-M": {
     "Function": "Composite",
     "Reference": "BillingAccountName",
     "EntityType": "Column",

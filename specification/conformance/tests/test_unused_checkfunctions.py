@@ -1,4 +1,5 @@
-# tests/test_unused_checkfunctions.py
+import pytest
+
 
 def _iter_checkfunction_refs(node):
     """
@@ -25,7 +26,7 @@ def _iter_checkfunction_refs(node):
         for item in node:
             yield from _iter_checkfunction_refs(item)
 
-
+@pytest.mark.dependency(name="no_unused_checkfunctions", scope="session")
 def test_no_unused_checkfunctions(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     defined = set((cr_json.get("CheckFunctions") or {}).keys())

@@ -27,7 +27,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ResourceName-C-003-C"
+            "ConformanceRuleId": "ResourceName-C-003-O"
           }
         ]
       },
@@ -36,7 +36,7 @@
         "CostAndUsage-D-044-C",
         "ResourceName-C-001-M",
         "ResourceName-C-002-M",
-        "ResourceName-C-003-C"
+        "ResourceName-C-003-O"
       ]
     }
   },
@@ -47,10 +47,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceName MUST be of type String.",
@@ -70,10 +67,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceName MUST conform to StringHandling requirements.",
@@ -86,17 +80,14 @@
       "Dependencies": []
     }
   },
-  "ResourceName-C-003-C": {
+  "ResourceName-C-003-O": {
     "Function": "Nullability",
     "Reference": "ResourceName",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceName MAY be null.",

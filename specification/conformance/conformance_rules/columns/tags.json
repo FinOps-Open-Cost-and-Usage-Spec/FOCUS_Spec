@@ -26,7 +26,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "Tags-C-003-O"
+                        "ConformanceRuleId": "Tags-C-003-C"
                     }
                 ]
             },
@@ -35,7 +35,7 @@
                 "CostAndUsage-D-061-C",
                 "Tags-C-001-M",
                 "Tags-C-002-M",
-                "Tags-C-003-O"
+                "Tags-C-003-C"
             ]
         }
     },
@@ -76,7 +76,7 @@
             "Dependencies": []
         }
     },
-    "Tags-C-003-O": {
+    "Tags-C-003-C": {
         "Function": "Nullability",
         "Reference": "Tags",
         "EntityType": "Column",

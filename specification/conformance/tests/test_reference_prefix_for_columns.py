@@ -1,3 +1,6 @@
+import pytest
+
+@pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns", scope="session")
 def test_reference_matches_rule_key_prefix_for_columns(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

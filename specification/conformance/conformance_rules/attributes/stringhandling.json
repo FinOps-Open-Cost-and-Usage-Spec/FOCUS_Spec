@@ -44,7 +44,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "StringHandling-A-008-O"
+                        "ConformanceRuleId": "StringHandling-A-008-C"
                     }
                 ]
             },
@@ -57,7 +57,7 @@
                 "StringHandling-A-005-M",
                 "StringHandling-A-006-M",
                 "StringHandling-A-007-M",
-                "StringHandling-A-008-O"
+                "StringHandling-A-008-C"
             ]
         }
     },
@@ -180,7 +180,7 @@
             "Dependencies": []
         }
     },
-    "StringHandling-A-008-O": {
+    "StringHandling-A-008-C": {
         "Function": "Format",
         "Reference": "StringHandling",
         "EntityType": "Attribute",

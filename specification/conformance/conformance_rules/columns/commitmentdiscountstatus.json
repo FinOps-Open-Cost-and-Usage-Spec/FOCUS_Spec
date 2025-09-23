@@ -6,7 +6,9 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountStatus column adheres to the following requirements:",
@@ -30,7 +32,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-017-M",
+        "CostAndUsage-D-017-C",
         "CommitmentDiscountStatus-C-001-M",
         "CommitmentDiscountStatus-C-002-M",
         "CommitmentDiscountStatus-C-003-M"
@@ -44,9 +46,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type String",
@@ -66,9 +66,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST not be null",
@@ -91,9 +89,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "COMMITMENT_DISCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be one of the allowed values",

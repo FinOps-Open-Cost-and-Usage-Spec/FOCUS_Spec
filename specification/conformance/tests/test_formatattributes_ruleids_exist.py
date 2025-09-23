@@ -1,5 +1,6 @@
 import pytest
 
+@pytest.mark.dependency(name="formatattributes_rule_ids_exist", scope="session")
 def _iter_strings_under_arrays(node):
     """
     Yield all string values that appear inside any list under `node`.

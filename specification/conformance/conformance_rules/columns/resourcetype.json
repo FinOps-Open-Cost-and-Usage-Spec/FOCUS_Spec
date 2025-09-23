@@ -1,5 +1,5 @@
 {
-  "ResourceType-C-000-M": {
+  "ResourceType-C-000-C": {
     "Function": "Composite",
     "Reference": "ResourceType",
     "EntityType": "Column",
@@ -47,10 +47,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType MUST be of type String.",
@@ -70,10 +67,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType MUST conform to StringHandling requirements.",
@@ -93,10 +87,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType nullability is defined as follows:",
@@ -128,10 +119,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType MUST be null when ResourceId is null.",
@@ -158,10 +146,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType MUST NOT be null when ResourceId is not null.",

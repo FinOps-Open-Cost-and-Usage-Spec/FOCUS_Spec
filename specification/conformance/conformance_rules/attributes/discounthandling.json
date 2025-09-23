@@ -1,5 +1,5 @@
 {
-    "DiscountHandling-A-000-M": {
+    "DiscountHandling-A-000-C": {
         "Function": "Composite",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -18,37 +18,37 @@
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-001-O"
+                        "ConformanceRuleId": "DiscountHandling-A-001-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-002-M"
+                        "ConformanceRuleId": "DiscountHandling-A-002-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-005-M"
+                        "ConformanceRuleId": "DiscountHandling-A-005-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-008-M"
+                        "ConformanceRuleId": "DiscountHandling-A-008-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-020-M"
+                        "ConformanceRuleId": "DiscountHandling-A-020-C"
                     }
                 ]
             },
             "Condition": {},
             "Dependencies": [
-                "DiscountHandling-A-001-O",
-                "DiscountHandling-A-002-M",
-                "DiscountHandling-A-005-M",
-                "DiscountHandling-A-008-M",
-                "DiscountHandling-A-020-M"
+                "DiscountHandling-A-001-C",
+                "DiscountHandling-A-002-C",
+                "DiscountHandling-A-005-C",
+                "DiscountHandling-A-008-C",
+                "DiscountHandling-A-020-C"
             ]
         }
     },
-    "DiscountHandling-A-001-O": {
+    "DiscountHandling-A-001-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -67,7 +67,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-002-M": {
+    "DiscountHandling-A-002-C": {
         "Function": "Composite",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -86,22 +86,22 @@
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-003-M"
+                        "ConformanceRuleId": "DiscountHandling-A-003-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-004-M"
+                        "ConformanceRuleId": "DiscountHandling-A-004-C"
                     }
                 ]
             },
             "Condition": {},
             "Dependencies": [
-                "DiscountHandling-A-003-M",
-                "DiscountHandling-A-004-M"
+                "DiscountHandling-A-003-C",
+                "DiscountHandling-A-004-C"
             ]
         }
     },
-    "DiscountHandling-A-003-M": {
+    "DiscountHandling-A-003-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -120,7 +120,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-004-M": {
+    "DiscountHandling-A-004-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -139,7 +139,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-005-M": {
+    "DiscountHandling-A-005-C": {
         "Function": "Composite",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -158,22 +158,22 @@
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-006-M"
+                        "ConformanceRuleId": "DiscountHandling-A-006-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-007-O"
+                        "ConformanceRuleId": "DiscountHandling-A-007-C"
                     }
                 ]
             },
             "Condition": {},
             "Dependencies": [
-                "DiscountHandling-A-006-M",
-                "DiscountHandling-A-007-O"
+                "DiscountHandling-A-006-C",
+                "DiscountHandling-A-007-C"
             ]
         }
     },
-    "DiscountHandling-A-006-M": {
+    "DiscountHandling-A-006-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -192,7 +192,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-007-O": {
+    "DiscountHandling-A-007-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -211,7 +211,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-008-M": {
+    "DiscountHandling-A-008-C": {
         "Function": "Composite",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -230,35 +230,35 @@
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-009-M"
+                        "ConformanceRuleId": "DiscountHandling-A-009-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-010-M"
+                        "ConformanceRuleId": "DiscountHandling-A-010-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-011-M"
+                        "ConformanceRuleId": "DiscountHandling-A-011-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-012-M"
+                        "ConformanceRuleId": "DiscountHandling-A-012-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-013-M"
+                        "ConformanceRuleId": "DiscountHandling-A-013-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-014-M"
+                        "ConformanceRuleId": "DiscountHandling-A-014-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-015-M"
+                        "ConformanceRuleId": "DiscountHandling-A-015-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-016-M"
+                        "ConformanceRuleId": "DiscountHandling-A-016-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
@@ -266,31 +266,31 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-018-M"
+                        "ConformanceRuleId": "DiscountHandling-A-018-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "DiscountHandling-A-019-M"
+                        "ConformanceRuleId": "DiscountHandling-A-019-C"
                     }
                 ]
             },
             "Condition": {},
             "Dependencies": [
-                "DiscountHandling-A-009-M",
-                "DiscountHandling-A-010-M",
-                "DiscountHandling-A-011-M",
-                "DiscountHandling-A-012-M",
-                "DiscountHandling-A-013-M",
-                "DiscountHandling-A-014-M",
-                "DiscountHandling-A-015-M",
-                "DiscountHandling-A-016-M",
+                "DiscountHandling-A-009-C",
+                "DiscountHandling-A-010-C",
+                "DiscountHandling-A-011-C",
+                "DiscountHandling-A-012-C",
+                "DiscountHandling-A-013-C",
+                "DiscountHandling-A-014-C",
+                "DiscountHandling-A-015-C",
+                "DiscountHandling-A-016-C",
                 "DiscountHandling-A-017-C",
-                "DiscountHandling-A-018-M",
-                "DiscountHandling-A-019-M"
+                "DiscountHandling-A-018-C",
+                "DiscountHandling-A-019-C"
             ]
         }
     },
-    "DiscountHandling-A-009-M": {
+    "DiscountHandling-A-009-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -309,7 +309,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-010-M": {
+    "DiscountHandling-A-010-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -328,7 +328,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-011-M": {
+    "DiscountHandling-A-011-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -347,7 +347,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-012-M": {
+    "DiscountHandling-A-012-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -366,7 +366,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-013-M": {
+    "DiscountHandling-A-013-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -385,7 +385,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-014-M": {
+    "DiscountHandling-A-014-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -404,7 +404,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-015-M": {
+    "DiscountHandling-A-015-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -423,7 +423,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-016-M": {
+    "DiscountHandling-A-016-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -461,7 +461,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-018-M": {
+    "DiscountHandling-A-018-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -480,7 +480,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-019-M": {
+    "DiscountHandling-A-019-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",
@@ -499,7 +499,7 @@
             "Dependencies": []
         }
     },
-    "DiscountHandling-A-020-M": {
+    "DiscountHandling-A-020-C": {
         "Function": "Validation",
         "Reference": "DiscountHandling",
         "EntityType": "Attribute",

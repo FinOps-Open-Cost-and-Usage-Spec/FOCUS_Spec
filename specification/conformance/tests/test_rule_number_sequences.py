@@ -1,9 +1,12 @@
 # tests/test_rule_number_sequences.py
 import re
+import pytest
+
 
 # Regex to capture: prefix (up to and incl. -A- / -C- / -D-) and the numeric segment
 ID_RE = re.compile(r'^(?P<prefix>.+-(?:A|C|D)-)(?P<num>\d+)-')
 
+@pytest.mark.dependency(name="rule_numbers_start_at_000_and_are_consecutive", scope="session")
 def test_rule_numbers_start_at_000_and_are_consecutive(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     by_prefix = {}

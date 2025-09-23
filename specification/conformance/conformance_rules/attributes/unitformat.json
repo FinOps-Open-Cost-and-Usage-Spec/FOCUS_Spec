@@ -28,7 +28,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "UnitFormat-A-004-M"
+                        "ConformanceRuleId": "UnitFormat-A-004-C"
                     }
                 ]
             },
@@ -37,7 +37,7 @@
                 "UnitFormat-A-001-M",
                 "UnitFormat-A-002-O",
                 "UnitFormat-A-003-M",
-                "UnitFormat-A-004-M"
+                "UnitFormat-A-004-C"
             ]
         }
     },
@@ -92,7 +92,7 @@
             "Dependencies": []
         }
     },
-    "UnitFormat-A-004-M": {
+    "UnitFormat-A-004-C": {
         "Function": "Format",
         "Reference": "UnitFormat",
         "EntityType": "Attribute",

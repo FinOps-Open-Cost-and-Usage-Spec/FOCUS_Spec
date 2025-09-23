@@ -1,3 +1,6 @@
+import pytest
+
+@pytest.mark.dependency(name="static_rules_have_non_empty_requirement", scope="session")
 def test_static_rules_have_non_empty_requirement(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

@@ -1,5 +1,5 @@
 {
-    "CommitmentDiscountUnit-C-000-M": {
+    "CommitmentDiscountUnit-C-000-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountUnit",
         "EntityType": "Column",
@@ -30,7 +30,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountUnit-C-004-O"
+                        "ConformanceRuleId": "CommitmentDiscountUnit-C-004-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
@@ -40,11 +40,11 @@
             },
             "Condition": {},
             "Dependencies": [
-                "CostAndUsage-D-015-M",
+                "CostAndUsage-D-015-C",
                 "CommitmentDiscountUnit-C-001-M",
                 "CommitmentDiscountUnit-C-002-M",
                 "CommitmentDiscountUnit-C-003-M",
-                "CommitmentDiscountUnit-C-004-O",
+                "CommitmentDiscountUnit-C-004-C",
                 "CommitmentDiscountUnit-C-007-C"
             ]
         }
@@ -56,9 +56,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit MUST be of type String.",
@@ -78,9 +76,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit MUST conform to StringHandling requirements.",
@@ -100,9 +96,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit SHOULD conform to UnitFormat requirements.",
@@ -115,16 +109,14 @@
             "Dependencies": []
         }
     },
-    "CommitmentDiscountUnit-C-004-O": {
+    "CommitmentDiscountUnit-C-004-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountUnit",
         "EntityType": "Column",
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit nullability is defined as follows:",
@@ -156,9 +148,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit MUST be null when CommitmentDiscountQuantity is null.",
@@ -185,9 +175,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountQuantity is not null.",
@@ -214,9 +202,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "When CommitmentDiscountUnit is not null, CommitmentDiscountUnit adheres to the following additional requirements:",
@@ -230,7 +216,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountUnit-C-009-C"
+                        "ConformanceRuleId": "CommitmentDiscountUnit-C-009-M"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
@@ -245,7 +231,7 @@
             },
             "Dependencies": [
                 "CommitmentDiscountUnit-C-008-M",
-                "CommitmentDiscountUnit-C-009-C",
+                "CommitmentDiscountUnit-C-009-M",
                 "CommitmentDiscountUnit-C-010-C"
             ]
         }
@@ -257,9 +243,7 @@
         "Notes": "Mirrors cross-column dependency on CommitmentDiscountId",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.",
@@ -269,16 +253,14 @@
             "Dependencies": []
         }
     },
-    "CommitmentDiscountUnit-C-009-C": {
+    "CommitmentDiscountUnit-C-009-M": {
         "Function": "Validation",
         "Reference": "CommitmentDiscountUnit",
         "EntityType": "Column",
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountUnit MUST represent the unit used to measure the commitment discount.",
@@ -295,9 +277,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "When accounting for commitment discount flexibility, the CommitmentDiscountUnit value SHOULD reflect this consideration.",

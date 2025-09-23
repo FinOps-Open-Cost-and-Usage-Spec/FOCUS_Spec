@@ -1,4 +1,7 @@
 # tests/test_no_spurious_composite.py
+import pytest
+
+@pytest.mark.dependency(name="no_composite_without_and_or_with_rule_item", scope="session")
 def test_no_composite_without_and_or_with_rule_item(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

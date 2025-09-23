@@ -31,7 +31,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SkuPriceId-C-007-M"
+            "ConformanceRuleId": "SkuPriceId-C-007-C"
           }
         ]
       },
@@ -41,7 +41,7 @@
         "SkuPriceId-C-001-M",
         "SkuPriceId-C-002-M",
         "SkuPriceId-C-003-M",
-        "SkuPriceId-C-007-M"
+        "SkuPriceId-C-007-C"
       ]
     }
   },
@@ -110,7 +110,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SkuPriceId-C-006-C"
+            "ConformanceRuleId": "SkuPriceId-C-006-O"
           }
         ]
       },
@@ -118,7 +118,7 @@
       "Dependencies": [
         "SkuPriceId-C-004-C",
         "SkuPriceId-C-005-C",
-        "SkuPriceId-C-006-C"
+        "SkuPriceId-C-006-O"
       ]
     }
   },
@@ -195,7 +195,7 @@
       ]
     }
   },
-  "SkuPriceId-C-006-C": {
+  "SkuPriceId-C-006-O": {
     "Function": "Nullability",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -212,7 +212,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-007-M": {
+  "SkuPriceId-C-007-C": {
     "Function": "Composite",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -410,7 +410,9 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceId MUST support the lookup of the ListUnitPrice when the provider publishes unit prices exclusive of discounts.",
@@ -427,7 +429,9 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "NEGOTIATED_PRICING_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceId MUST support the verification of the given ContractedUnitPrice when the provider supports negotiated pricing concepts.",

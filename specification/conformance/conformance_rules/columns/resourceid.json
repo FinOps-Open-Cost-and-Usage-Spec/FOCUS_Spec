@@ -72,10 +72,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceId MUST conform to StringHandling requirements.",
@@ -95,10 +92,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceId nullability is defined as follows:",
@@ -130,10 +124,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceId MUST be null when a charge is not related to a resource.",
@@ -150,10 +141,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceId MUST NOT be null when a charge is related to a resource.",
@@ -170,10 +158,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When ResourceId is not null, ResourceId adheres to the following additional requirements:",
@@ -209,20 +194,13 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceId MUST be a unique identifier within the provider.",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "CheckCondition": "ResourceId",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": []
     }
   },
@@ -233,10 +211,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceId SHOULD be a fully-qualified identifier.",

@@ -1,4 +1,6 @@
 import re
+import pytest
+
 
 _SKIP_SUFFIXES = (
     "nullability is defined as follows:",
@@ -30,7 +32,7 @@ def _keyword_matches_text(keyword: str, text: str) -> bool:
     # Fallback: strict substring check
     return k in t
 
-
+@pytest.mark.dependency(name="keyword_present_in_mustsatisfy", scope="session")
 def test_keyword_present_in_mustsatisfy(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

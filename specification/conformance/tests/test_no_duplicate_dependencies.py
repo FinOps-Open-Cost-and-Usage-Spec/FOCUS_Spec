@@ -1,4 +1,5 @@
 # tests/test_no_duplicate_dependencies.py
+import pytest
 
 def _find_dups(strings):
     seen, dups = set(), set()
@@ -9,6 +10,7 @@ def _find_dups(strings):
             seen.add(s)
     return sorted(dups)
 
+@pytest.mark.dependency(name="no_duplicate_dependencies", scope="session")
 def test_no_duplicate_dependencies(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []  # (rule_id, duplicates)

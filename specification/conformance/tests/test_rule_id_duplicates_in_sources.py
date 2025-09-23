@@ -1,7 +1,9 @@
 # tests/test_rule_id_duplicates_in_sources.py
 import json
 from pathlib import Path
+import pytest
 
+@pytest.mark.dependency(name="no_duplicate_rule_ids_in_source_files", scope="session")
 def test_no_duplicate_rule_ids_in_source_files():
     # tests/.../this_file.py -> .../specification/conformance
     CONFORMANCE = Path(__file__).resolve().parents[1]

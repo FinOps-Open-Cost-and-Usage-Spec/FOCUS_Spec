@@ -1,3 +1,6 @@
+import pytest
+
+@pytest.mark.dependency(name="all_applicability_criteria_refs_exist", scope="session")
 def test_all_applicability_criteria_refs_exist(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     criteria_defs = set((cr_json.get("ApplicabilityCriteria") or {}).keys())

@@ -36,7 +36,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ColumnHandling-A-006-O"
+            "ConformanceRuleId": "ColumnHandling-A-006-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -71,7 +71,7 @@
         "ColumnHandling-A-003-M",
         "ColumnHandling-A-004-O",
         "ColumnHandling-A-005-O",
-        "ColumnHandling-A-006-O",
+        "ColumnHandling-A-006-M",
         "ColumnHandling-A-007-O",
         "ColumnHandling-A-008-M",
         "ColumnHandling-A-009-M",
@@ -166,7 +166,7 @@
       "Dependencies": []
     }
   },
-  "ColumnHandling-A-006-O": {
+  "ColumnHandling-A-006-M": {
     "Function": "Validation",
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",

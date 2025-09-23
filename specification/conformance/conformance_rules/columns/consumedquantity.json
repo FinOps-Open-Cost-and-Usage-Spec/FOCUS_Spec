@@ -26,11 +26,11 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "ConsumedQuantity-C-003-M"
+                        "ConformanceRuleId": "ConsumedQuantity-C-003-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "ConsumedQuantity-C-008-M"
+                        "ConformanceRuleId": "ConsumedQuantity-C-008-C"
                     }
                 ]
             },
@@ -39,8 +39,8 @@
                 "CostAndUsage-D-011-C",
                 "ConsumedQuantity-C-001-M",
                 "ConsumedQuantity-C-002-M",
-                "ConsumedQuantity-C-003-M",
-                "ConsumedQuantity-C-008-M"
+                "ConsumedQuantity-C-003-C",
+                "ConsumedQuantity-C-008-C"
             ]
         }
     },
@@ -51,9 +51,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "USAGE_MEASUREMENT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MUST be of type Decimal",
@@ -73,9 +71,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "USAGE_MEASUREMENT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MUST conform to NumericFormat requirements",
@@ -88,16 +84,14 @@
             "Dependencies": []
         }
     },
-    "ConsumedQuantity-C-003-M": {
+    "ConsumedQuantity-C-003-C": {
         "Function": "Composite",
         "Reference": "ConsumedQuantity",
         "EntityType": "Column",
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "USAGE_MEASUREMENT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity nullability is defined as follows:",
@@ -129,9 +123,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "USAGE_MEASUREMENT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not 'Usage', or when ChargeCategory is 'Usage' and CommitmentDiscountStatus is 'Unused'",
@@ -176,9 +168,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "USAGE_MEASUREMENT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "When ChargeCategory is 'Usage' and CommitmentDiscountStatus is not 'Unused', ConsumedQuantity adheres to the following additional requirements:",
@@ -224,9 +214,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "USAGE_MEASUREMENT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MUST NOT be null when ChargeClass is not 'Correction'",
@@ -251,9 +239,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "USAGE_MEASUREMENT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is 'Correction'",
@@ -271,16 +257,14 @@
             "Dependencies": []
         }
     },
-    "ConsumedQuantity-C-008-M": {
+    "ConsumedQuantity-C-008-C": {
         "Function": "Validation",
         "Reference": "ConsumedQuantity",
         "EntityType": "Column",
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "USAGE_MEASUREMENT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "ConsumedQuantity MUST be a valid decimal value when not null",

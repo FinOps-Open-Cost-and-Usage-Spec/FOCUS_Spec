@@ -22,7 +22,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountCategory-C-002-M"
+                        "ConformanceRuleId": "CommitmentDiscountCategory-C-002-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
@@ -32,9 +32,9 @@
             },
             "Condition": {},
             "Dependencies": [
-                "CostAndUsage-D-016-M",
+                "CostAndUsage-D-016-C",
                 "CommitmentDiscountCategory-C-001-M",
-                "CommitmentDiscountCategory-C-002-M",
+                "CommitmentDiscountCategory-C-002-C",
                 "CommitmentDiscountCategory-C-005-M"
             ]
         }
@@ -59,7 +59,7 @@
             "Dependencies": []
         }
     },
-    "CommitmentDiscountCategory-C-002-M": {
+    "CommitmentDiscountCategory-C-002-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountCategory",
         "EntityType": "Column",

@@ -26,11 +26,11 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SubAccountName-C-003-M"
+            "ConformanceRuleId": "SubAccountName-C-003-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SubAccountName-C-004-M"
+            "ConformanceRuleId": "SubAccountName-C-004-C"
           }
         ]
       },
@@ -39,8 +39,8 @@
         "CostAndUsage-D-029-C",
         "SubAccountName-C-001-M",
         "SubAccountName-C-002-M",
-        "SubAccountName-C-003-M",
-        "SubAccountName-C-004-M"
+        "SubAccountName-C-003-C",
+        "SubAccountName-C-004-C"
       ]
     }
   },
@@ -51,9 +51,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST be of type String",
@@ -73,9 +71,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST conform to StringHandling requirements",
@@ -88,16 +84,14 @@
       "Dependencies": []
     }
   },
-  "SubAccountName-C-003-M": {
+  "SubAccountName-C-003-C": {
     "Function": "Nullability",
     "Reference": "SubAccountName",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST be null when SubAccountId is null",
@@ -117,16 +111,14 @@
       ]
     }
   },
-  "SubAccountName-C-004-M": {
+  "SubAccountName-C-004-C": {
     "Function": "Nullability",
     "Reference": "SubAccountName",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "SUB_ACCOUNT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST NOT be null when SubAccountId is not null",

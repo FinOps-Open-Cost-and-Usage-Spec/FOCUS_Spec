@@ -34,7 +34,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-007-C",
+        "CostAndUsage-D-007-M",
         "BillingAccountType-C-001-M",
         "BillingAccountType-C-002-M",
         "BillingAccountType-C-003-C",
@@ -99,22 +99,22 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountType-C-004-M"
+            "ConformanceRuleId": "BillingAccountType-C-004-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountType-C-005-M"
+            "ConformanceRuleId": "BillingAccountType-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "BillingAccountType-C-004-M",
-        "BillingAccountType-C-005-M"
+        "BillingAccountType-C-004-C",
+        "BillingAccountType-C-005-C"
       ]
     }
   },
-  "BillingAccountType-C-004-M": {
+  "BillingAccountType-C-004-C": {
     "Function": "Nullability",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -139,7 +139,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountType-C-005-M": {
+  "BillingAccountType-C-005-C": {
     "Function": "Nullability",
     "Reference": "BillingAccountType",
     "EntityType": "Column",

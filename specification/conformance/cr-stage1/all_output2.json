@@ -9341,7 +9341,7 @@
       "ApplicabilityCriteria": "All Rows",
       "Condition": "All Rows",
       "MustSatisfy": "All columns defined by FOCUS MUST follow the following rules:",
-      "Requirement": "AND(ColumnHandling-A-002-M, ColumnHandling-A-003-M, ColumnHandling-A-004-M, ColumnHandling-A-005-O, ColumnHandling-A-006-O, ColumnHandling-A-007-M, ColumnHandling-A-008-C, ColumnHandling-A-009-M)",
+      "Requirement": "AND(ColumnHandling-A-002-M, ColumnHandling-A-003-M, ColumnHandling-A-004-M, ColumnHandling-A-005-O, ColumnHandling-A-006-M, ColumnHandling-A-007-M, ColumnHandling-A-008-C, ColumnHandling-A-009-M)",
       "Type": "static",
       "CRVersionIntroduced": "1.2",
       "Status": "active",
@@ -9419,7 +9419,7 @@
       "_source": ""
     },
     {
-      "CRID": "ColumnHandling-A-006-O",
+      "CRID": "ColumnHandling-A-006-M",
       "Function": "Format",
       "Reference": "Column Handling",
       "Keyword": "SHOULD NOT",

@@ -1,5 +1,5 @@
 {
-  "SkuPriceDetails-C-000-M": {
+  "SkuPriceDetails-C-000-C": {
     "Function": "Composite",
     "Reference": "SkuPriceDetails",
     "EntityType": "Column",
@@ -31,7 +31,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SkuPriceDetails-C-006-M"
+            "ConformanceRuleId": "SkuPriceDetails-C-006-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -45,7 +45,7 @@
         "SkuPriceDetails-C-001-M",
         "SkuPriceDetails-C-002-O",
         "SkuPriceDetails-C-003-C",
-        "SkuPriceDetails-C-006-M",
+        "SkuPriceDetails-C-006-C",
         "SkuPriceDetails-C-019-M"
       ]
     }
@@ -169,7 +169,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceDetails-C-006-M": {
+  "SkuPriceDetails-C-006-C": {
     "Function": "Composite",
     "Reference": "SkuPriceDetails",
     "EntityType": "Column",

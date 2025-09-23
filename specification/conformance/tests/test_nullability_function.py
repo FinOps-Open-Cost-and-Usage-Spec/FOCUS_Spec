@@ -1,3 +1,6 @@
+import pytest
+
+@pytest.mark.dependency(name="mustsatisfy_null_requires_function_nullability", scope="session")
 def test_mustsatisfy_null_requires_function_nullability(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

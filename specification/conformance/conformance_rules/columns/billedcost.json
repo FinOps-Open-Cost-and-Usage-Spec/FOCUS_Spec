@@ -28,7 +28,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BilledCost-C-004-M"
+            "ConformanceRuleId": "BilledCost-C-004-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -46,7 +46,7 @@
         "BilledCost-C-001-M",
         "BilledCost-C-002-M",
         "BilledCost-C-003-M",
-        "BilledCost-C-004-M",
+        "BilledCost-C-004-C",
         "BilledCost-C-005-M",
         "BilledCost-C-006-M"
       ]
@@ -113,7 +113,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-004-M": {
+  "BilledCost-C-004-C": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",

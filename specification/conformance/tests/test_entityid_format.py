@@ -1,5 +1,7 @@
 # tests/test_entityid_format.py
 import re
+import pytest
+
 
 # Map EntityType -> expected marker
 _EXPECTED_MARKER = {
@@ -17,6 +19,7 @@ def _marker_ok(entity_id: str, expected_letter: str) -> bool:
     pat = re.compile(rf"-{re.escape(expected_letter)}-\d+-")
     return bool(pat.search(entity_id))
 
+@pytest.mark.dependency(name="entityid_marker_matches_entitytype", scope="session")
 def test_entityid_marker_matches_entitytype(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

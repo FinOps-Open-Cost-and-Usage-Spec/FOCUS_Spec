@@ -30,11 +30,11 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ConsumedUnit-C-004-M"
+            "ConformanceRuleId": "ConsumedUnit-C-004-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ConsumedUnit-C-005-M"
+            "ConformanceRuleId": "ConsumedUnit-C-005-C"
           }
         ]
       },
@@ -44,8 +44,8 @@
         "ConsumedUnit-C-001-M",
         "ConsumedUnit-C-002-M",
         "ConsumedUnit-C-003-O",
-        "ConsumedUnit-C-004-M",
-        "ConsumedUnit-C-005-M"
+        "ConsumedUnit-C-004-C",
+        "ConsumedUnit-C-005-C"
       ]
     }
   },
@@ -56,9 +56,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "USAGE_MEASUREMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedUnit MUST be of type String",
@@ -78,9 +76,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "USAGE_MEASUREMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedUnit MUST conform to StringHandling requirements",
@@ -100,9 +96,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "USAGE_MEASUREMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedUnit SHOULD conform to UnitFormat requirements",
@@ -115,16 +109,14 @@
       "Dependencies": []
     }
   },
-  "ConsumedUnit-C-004-M": {
+  "ConsumedUnit-C-004-C": {
     "Function": "Nullability",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "USAGE_MEASUREMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedUnit MUST be null when ConsumedQuantity is null",
@@ -144,16 +136,14 @@
       ]
     }
   },
-  "ConsumedUnit-C-005-M": {
+  "ConsumedUnit-C-005-C": {
     "Function": "Nullability",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "USAGE_MEASUREMENT_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ConsumedUnit MUST NOT be null when ConsumedQuantity is not null",

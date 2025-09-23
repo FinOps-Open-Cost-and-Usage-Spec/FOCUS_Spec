@@ -94,7 +94,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyFormat-A-000-M"
+        "CurrencyFormat-A-000-C"
       ]
     },
     "TypeDecimal": {
@@ -153,7 +153,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyFormat-A-000-M"
+        "CurrencyFormat-A-000-C"
       ]
     },
     "ColumnByColumnEqualsColumnValue": {

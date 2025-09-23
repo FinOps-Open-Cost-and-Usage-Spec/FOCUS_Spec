@@ -269,11 +269,7 @@
         "ColumnName": "PricingQuantity",
         "Value": null
       },
-      "Condition": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "PricingQuantity",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": []
     }
   },

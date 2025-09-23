@@ -1,3 +1,6 @@
+import pytest
+
+
 def _walk_checkfunctions(node, path=None):
     """
     Yield (json_path, value) for every key == 'CheckFunction' found anywhere
@@ -17,7 +20,7 @@ def _walk_checkfunctions(node, path=None):
         for i, item in enumerate(node):
             yield from _walk_checkfunctions(item, path + [str(i)])
 
-
+@pytest.mark.dependency(name="all_checkfunction_refs_exist", scope="session")
 def test_all_checkfunction_refs_exist(cr_json):
     # All defined function names
     defined = set((cr_json.get("CheckFunctions")).keys())

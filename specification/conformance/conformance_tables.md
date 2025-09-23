@@ -13,7 +13,7 @@
 | BilledCost-C-005-M | Validation | BilledCost |  |  |  | CheckValue(BilledCost, 0) | CheckNotSameValue(ProviderName, InvoiceIssuerName) | Static | 1.2 | Active |
 | BilledCost-C-006-M | Validation | BilledCost |  |  |  |  |  | Dynamic | 1.2 | Active |
 | BilledCost-C-007-M | Validation | BilledCost |  |  |  |  |  | Dynamic | 1.2 | Active |
-| BillingAccountName-C-000-C | Composite | BillingAccountName |  |  |  | AND of [Check BillingAccountName-D-001-M, Check BillingAccountName-C-002-M, Check BillingAccountName-C-003-M, Check BillingAccountName-C-004-C] |  | Static | 1.2 | Active |
+| BillingAccountName-C-000-M | Composite | BillingAccountName |  |  |  | AND of [Check BillingAccountName-D-001-M, Check BillingAccountName-C-002-M, Check BillingAccountName-C-003-M, Check BillingAccountName-C-004-C] |  | Static | 1.2 | Active |
 | BillingAccountName-C-002-M | Type | BillingAccountName |  |  |  | TypeString(BillingAccountName) |  | Static | 1.2 | Active |
 | BillingAccountName-C-003-M | Type | BillingAccountName |  |  |  | FormatString(BillingAccountName) |  | Static | 1.2 | Active |
 | BillingAccountName-C-004-C | Validation | BillingAccountName | ACCOUNT_NAMING_SUPPORTED |  |  | CheckNotValue(BillingAccountName, null) |  | Static | 1.2 | Active |
@@ -34,7 +34,7 @@
 | CostAndUsage-C-007-C | Presence | BillingAccountType |  |  |  | ColumnPresent(BillingAccountType) |  | Static | 1.2 | Active |
 | CostAndUsage-D-000-M | Composite | CostAndUsage |  |  |  | AND of [Check CostAndUsage-D-001-M, Check CostAndUsage-D-002-M] |  | Static | 1.2 | Active |
 | CostAndUsage-D-001-M | Composite | CostAndUsage |  |  |  | AND of [Check CostAndUsage-D-003-C, Check CostAndUsage-D-004-C, Check CostAndUsage-D-005-M, Check CostAndUsage-C-006-M, Check CostAndUsage-C-007-C, Check CostAndUsage-D-008-M, Check CostAndUsage-D-009-M, Check CostAndUsage-D-010-M] |  | Static | 1.2 | Active |
-| CostAndUsage-D-002-M | Composite | CostAndUsage |  |  |  | AND of [Check AvailabilityZone-C-000-M, Check BilledCost-C-000-M, Check BillingAccountName-C-000-C, Check BillingAccountType-C-000-M, Check BillingPeriodStart-C-000-M, Check BillingPeriodEnd-C-000-M, Check ListUnitPrice-C-000-C] |  | Static | 1.2 | Active |
+| CostAndUsage-D-002-M | Composite | CostAndUsage |  |  |  | AND of [Check AvailabilityZone-C-000-M, Check BilledCost-C-000-M, Check BillingAccountName-C-000-M, Check BillingAccountType-C-000-M, Check BillingPeriodStart-C-000-M, Check BillingPeriodEnd-C-000-M, Check ListUnitPrice-C-000-C] |  | Static | 1.2 | Active |
 | CostAndUsage-D-003-C | Presence | AvailabilityZone | AVAILABILITY_ZONE_SUPPORTED |  |  | ColumnPresent(AvailabilityZone) |  | Static | 1.2 | Active |
 | CostAndUsage-D-004-C | Presence | ListUnitPrice | PUBLIC_PRICE_LIST_SUPPORTED |  |  | ColumnPresent(ListUnitPrice) |  | Static | 1.2 | Active |
 | CostAndUsage-D-005-M | Presence | BillingAccountName |  |  |  | ColumnPresent(BillingAccountName) |  | Static | 1.2 | Active |

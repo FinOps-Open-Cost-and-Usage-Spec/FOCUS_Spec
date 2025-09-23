@@ -26,7 +26,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountId-C-003-M"
+                        "ConformanceRuleId": "CommitmentDiscountId-C-003-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
@@ -36,10 +36,10 @@
             },
             "Condition": {},
             "Dependencies": [
-                "CostAndUsage-D-013-M",
+                "CostAndUsage-D-013-C",
                 "CommitmentDiscountId-C-001-M",
                 "CommitmentDiscountId-C-002-M",
-                "CommitmentDiscountId-C-003-M",
+                "CommitmentDiscountId-C-003-C",
                 "CommitmentDiscountId-C-006-C"
             ]
         }
@@ -51,9 +51,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountId MUST be of type String.",
@@ -73,9 +71,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountId MUST conform to StringHandling requirements.",
@@ -88,16 +84,14 @@
             "Dependencies": []
         }
     },
-    "CommitmentDiscountId-C-003-M": {
+    "CommitmentDiscountId-C-003-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountId",
         "EntityType": "Column",
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountId nullability is defined as follows:",
@@ -129,9 +123,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountId MUST be null when a charge is not related to a commitment discount.",
@@ -148,9 +140,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountId MUST NOT be null when a charge is related to a commitment discount.",
@@ -167,9 +157,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "When CommitmentDiscountId is not null, CommitmentDiscountId adheres to the following additional requirements:",
@@ -179,7 +167,7 @@
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountId-C-007-C"
+                        "ConformanceRuleId": "CommitmentDiscountId-C-007-M"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
@@ -193,21 +181,19 @@
                 "Value": null
             },
             "Dependencies": [
-                "CommitmentDiscountId-C-007-C",
+                "CommitmentDiscountId-C-007-M",
                 "CommitmentDiscountId-C-008-C"
             ]
         }
     },
-    "CommitmentDiscountId-C-007-C": {
+    "CommitmentDiscountId-C-007-M": {
         "Function": "Validation",
         "Reference": "CommitmentDiscountId",
         "EntityType": "Column",
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountId MUST be a unique identifier within the provider.",
@@ -224,9 +210,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountId SHOULD be a fully-qualified identifier.",

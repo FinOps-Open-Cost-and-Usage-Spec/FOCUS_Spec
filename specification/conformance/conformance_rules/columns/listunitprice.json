@@ -26,7 +26,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-003-C"
+            "ConformanceRuleId": "ListUnitPrice-C-003-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -39,7 +39,7 @@
         "CostAndUsage-D-004-C",
         "ListUnitPrice-C-001-M",
         "ListUnitPrice-C-002-M",
-        "ListUnitPrice-C-003-C",
+        "ListUnitPrice-C-003-M",
         "ListUnitPrice-C-007-C"
       ]
     }
@@ -51,9 +51,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type Decimal",
@@ -73,9 +71,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST conform to NumericFormat requirements",
@@ -88,16 +84,14 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-003-C": {
+  "ListUnitPrice-C-003-M": {
     "Function": "Composite",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice nullability is defined as follows:",
@@ -135,9 +129,7 @@
     "Notes": null,
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
@@ -164,9 +156,7 @@
     "Notes": null,
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
@@ -213,9 +203,7 @@
     "Notes": null,
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MAY be null in all other cases",
@@ -236,9 +224,7 @@
     "Notes": null,
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:",
@@ -248,15 +234,15 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-008-C"
+            "ConformanceRuleId": "ListUnitPrice-C-008-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-009-C"
+            "ConformanceRuleId": "ListUnitPrice-C-009-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ListUnitPrice-C-010-M"
+            "ConformanceRuleId": "ListUnitPrice-C-010-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -271,23 +257,21 @@
       },
       "Dependencies": [
         "ChargeCategory-C-000-M",
-        "ListUnitPrice-C-008-C",
-        "ListUnitPrice-C-009-C",
-        "ListUnitPrice-C-010-M",
+        "ListUnitPrice-C-008-M",
+        "ListUnitPrice-C-009-M",
+        "ListUnitPrice-C-010-C",
         "ListUnitPrice-C-011-C"
       ]
     }
   },
-  "ListUnitPrice-C-008-C": {
+  "ListUnitPrice-C-008-M": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be a non-negative decimal value",
@@ -301,16 +285,14 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-009-C": {
+  "ListUnitPrice-C-009-M": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be denominated in the BillingCurrency",
@@ -320,16 +302,14 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-010-M": {
+  "ListUnitPrice-C-010-C": {
     "Function": "Format",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
     "Notes": null,
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'",
@@ -367,9 +347,7 @@
     "Notes": null,
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PUBLIC_PRICE_LIST_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'",

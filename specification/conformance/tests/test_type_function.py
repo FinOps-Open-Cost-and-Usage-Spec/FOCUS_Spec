@@ -1,5 +1,6 @@
-# tests/test_type_function.py
+import pytest
 
+@pytest.mark.dependency(name="mustsatisfy_of_type_requires_function_type", scope="session")
 def test_mustsatisfy_of_type_requires_function_type(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

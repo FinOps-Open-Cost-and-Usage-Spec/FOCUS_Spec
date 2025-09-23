@@ -1,5 +1,5 @@
 {
-    "CommitmentDiscountName-C-000-M": {
+    "CommitmentDiscountName-C-000-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountName",
         "EntityType": "Column",
@@ -26,7 +26,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountName-C-003-M"
+                        "ConformanceRuleId": "CommitmentDiscountName-C-003-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
@@ -36,10 +36,10 @@
             },
             "Condition": {},
             "Dependencies": [
-                "CostAndUsage-D-012-M",
+                "CostAndUsage-D-012-C",
                 "CommitmentDiscountName-C-001-M",
                 "CommitmentDiscountName-C-002-M",
-                "CommitmentDiscountName-C-003-M",
+                "CommitmentDiscountName-C-003-C",
                 "CommitmentDiscountName-C-004-C"
             ]
         }
@@ -51,9 +51,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountName MUST be of type String.",
@@ -73,9 +71,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountName MUST conform to StringHandling requirements.",
@@ -88,16 +84,14 @@
             "Dependencies": []
         }
     },
-    "CommitmentDiscountName-C-003-M": {
+    "CommitmentDiscountName-C-003-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountName",
         "EntityType": "Column",
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountName nullability is defined as follows:",
@@ -129,9 +123,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountName MUST be null when CommitmentDiscountId is null.",
@@ -156,9 +148,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
             "MustSatisfy": "When CommitmentDiscountId is not null, CommitmentDiscountName adheres to the following additional requirements:",
@@ -194,9 +184,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountName MUST NOT be null when a display name can be assigned to a commitment discount.",
@@ -213,9 +201,7 @@
         "Notes": "",
         "CRVersionIntroduced": "1.2",
         "Status": "Active",
-        "ApplicabilityCriteria": [
-            "COMMITMENT_DISCOUNT_SUPPORTED"
-        ],
+        "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
             "MustSatisfy": "CommitmentDiscountName MAY be null when a display name cannot be assigned to a commitment discount.",

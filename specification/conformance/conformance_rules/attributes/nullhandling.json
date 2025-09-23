@@ -16,7 +16,7 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "NullHandling-A-001-M"
+            "ConformanceRuleId": "NullHandling-A-001-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -26,12 +26,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "NullHandling-A-001-M",
+        "NullHandling-A-001-C",
         "NullHandling-A-002-M"
       ]
     }
   },
-  "NullHandling-A-001-M": {
+  "NullHandling-A-001-C": {
     "Function": "Validation",
     "Reference": "NullHandling",
     "EntityType": "Attribute",

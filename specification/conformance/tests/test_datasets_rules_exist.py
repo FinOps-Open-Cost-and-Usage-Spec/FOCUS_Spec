@@ -1,3 +1,7 @@
+import pytest
+
+@pytest.mark.order(4)
+@pytest.mark.dependency(name="dataset_conformance_rules_exist", scope="session")
 def test_dataset_conformance_rules_exist(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     defined_ids = set(rules.keys())

@@ -1,7 +1,10 @@
 # tests/test_c000_d_deps_presence_or_composite_reference.py
 import re
+import pytest
+
 
 _C000_RE = re.compile(r"-C-000-")
+
 
 def _iter_values_for_key(node, target_key):
     """Yield all string values for a given key (e.g., 'ConformanceRuleId') anywhere under node."""
@@ -44,6 +47,7 @@ def _collect_nested_d_rules(root_rule_id, rules, visited=None):
     out.discard(root_rule_id)
     return out
 
+@pytest.mark.dependency(name="c000_rules_d_deps_presence_or_composite_refs_match", scope="session")
 def test_c000_rules_d_deps_presence_or_composite_refs_match(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     missing_any_d = []         # *-C-000-* with no -D- deps at all

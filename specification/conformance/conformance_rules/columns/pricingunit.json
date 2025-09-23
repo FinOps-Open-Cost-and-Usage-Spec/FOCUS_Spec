@@ -28,11 +28,11 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingUnit-C-004-M"
+            "ConformanceRuleId": "PricingUnit-C-004-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingUnit-C-007-M"
+            "ConformanceRuleId": "PricingUnit-C-007-C"
           }
         ]
       },
@@ -42,8 +42,8 @@
         "PricingUnit-C-001-M",
         "PricingUnit-C-002-M",
         "PricingUnit-C-003-O",
-        "PricingUnit-C-004-M",
-        "PricingUnit-C-007-M"
+        "PricingUnit-C-004-C",
+        "PricingUnit-C-007-C"
       ]
     }
   },
@@ -107,7 +107,7 @@
       "Dependencies": []
     }
   },
-  "PricingUnit-C-004-M": {
+  "PricingUnit-C-004-C": {
     "Function": "Composite",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -189,7 +189,7 @@
       "Dependencies": []
     }
   },
-  "PricingUnit-C-007-M": {
+  "PricingUnit-C-007-C": {
     "Function": "Composite",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -210,7 +210,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingUnit-C-009-M"
+            "ConformanceRuleId": "PricingUnit-C-009-C"
           }
         ]
       },
@@ -221,7 +221,7 @@
       },
       "Dependencies": [
         "PricingUnit-C-008-M",
-        "PricingUnit-C-009-M"
+        "PricingUnit-C-009-C"
       ]
     }
   },
@@ -242,7 +242,7 @@
       "Dependencies": []
     }
   },
-  "PricingUnit-C-009-M": {
+  "PricingUnit-C-009-C": {
     "Function": "Validation",
     "Reference": "PricingUnit",
     "EntityType": "Column",

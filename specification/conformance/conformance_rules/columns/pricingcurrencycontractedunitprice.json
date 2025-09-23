@@ -26,7 +26,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCurrencyContractedUnitPrice-C-003-C"
+            "ConformanceRuleId": "PricingCurrencyContractedUnitPrice-C-003-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -39,7 +39,7 @@
         "CostAndUsage-D-046-C",
         "PricingCurrencyContractedUnitPrice-C-001-M",
         "PricingCurrencyContractedUnitPrice-C-002-M",
-        "PricingCurrencyContractedUnitPrice-C-003-C",
+        "PricingCurrencyContractedUnitPrice-C-003-M",
         "PricingCurrencyContractedUnitPrice-C-007-C"
       ]
     }
@@ -51,9 +51,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be of type Decimal",
@@ -73,9 +71,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST conform to NumericFormat requirements",
@@ -88,16 +84,14 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-003-C": {
+  "PricingCurrencyContractedUnitPrice-C-003-M": {
     "Function": "Composite",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyContractedUnitPrice nullability is defined as follows:",
@@ -134,9 +128,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be null when ChargeCategory is 'Tax'",
@@ -157,9 +149,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
@@ -200,9 +190,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyContractedUnitPrice MAY be null in all other cases",
@@ -219,9 +207,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice adheres to the following additional requirements:",
@@ -262,9 +248,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value",
@@ -285,9 +269,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency",
@@ -308,9 +290,7 @@
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [
-      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-    ],
+    "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Discrepancies in PricingCurrencyContractedUnitPrice, ContractedCost, or PricingQuantity MAY exist when ChargeClass is 'Correction'",

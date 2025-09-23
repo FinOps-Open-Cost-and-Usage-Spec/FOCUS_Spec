@@ -1,3 +1,6 @@
+import pytest
+
+@pytest.mark.dependency(name="dynamic_rules_have_empty_requirement", scope="session")
 def test_dynamic_rules_have_empty_requirement(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

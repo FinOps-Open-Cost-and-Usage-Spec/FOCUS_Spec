@@ -1,4 +1,7 @@
 
+import pytest
+
+@pytest.mark.dependency(name="requirement_and_or_with_rule_items_requires_function_composite", scope="session")
 def test_requirement_and_or_with_rule_items_requires_function_composite(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     violations = []

@@ -64,7 +64,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-007-C"
+            "ConformanceRuleId": "CostAndUsage-D-007-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -84,31 +84,31 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-012-M"
+            "ConformanceRuleId": "CostAndUsage-D-012-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-013-M"
+            "ConformanceRuleId": "CostAndUsage-D-013-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-014-M"
+            "ConformanceRuleId": "CostAndUsage-D-014-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-015-M"
+            "ConformanceRuleId": "CostAndUsage-D-015-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-016-M"
+            "ConformanceRuleId": "CostAndUsage-D-016-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-017-M"
+            "ConformanceRuleId": "CostAndUsage-D-017-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CostAndUsage-D-018-M"
+            "ConformanceRuleId": "CostAndUsage-D-018-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -282,18 +282,18 @@
         "CostAndUsage-D-004-C",
         "CostAndUsage-D-005-M",
         "CostAndUsage-D-006-M",
-        "CostAndUsage-D-007-C",
+        "CostAndUsage-D-007-M",
         "CostAndUsage-D-008-M",
         "CostAndUsage-D-009-M",
         "CostAndUsage-D-010-M",
         "CostAndUsage-D-011-C",
-        "CostAndUsage-D-012-M",
-        "CostAndUsage-D-013-M",
-        "CostAndUsage-D-014-M",
-        "CostAndUsage-D-015-M",
-        "CostAndUsage-D-016-M",
-        "CostAndUsage-D-017-M",
-        "CostAndUsage-D-018-M",
+        "CostAndUsage-D-012-C",
+        "CostAndUsage-D-013-C",
+        "CostAndUsage-D-014-C",
+        "CostAndUsage-D-015-C",
+        "CostAndUsage-D-016-C",
+        "CostAndUsage-D-017-C",
+        "CostAndUsage-D-018-C",
         "CostAndUsage-D-019-C",
         "CostAndUsage-D-020-C",
         "CostAndUsage-D-021-M",
@@ -355,7 +355,7 @@
         "Items": [
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "AvailabilityZone-C-000-M"
+            "ConformanceRuleId": "AvailabilityZone-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -367,7 +367,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "BillingAccountName-C-000-C"
+            "ConformanceRuleId": "BillingAccountName-C-000-M"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -391,7 +391,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CapacityReservationStatus-C-000-M"
+            "ConformanceRuleId": "CapacityReservationStatus-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -427,7 +427,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountName-C-000-M"
+            "ConformanceRuleId": "CommitmentDiscountName-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -435,11 +435,11 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountType-C-000-M"
+            "ConformanceRuleId": "CommitmentDiscountType-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "CommitmentDiscountUnit-C-000-M"
+            "ConformanceRuleId": "CommitmentDiscountUnit-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -495,11 +495,11 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-000-M"
+            "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-000-M"
+            "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -535,7 +535,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ResourceType-C-000-M"
+            "ConformanceRuleId": "ResourceType-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -563,11 +563,11 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SkuMeter-C-000-O"
+            "ConformanceRuleId": "SkuMeter-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "SkuPriceDetails-C-000-M"
+            "ConformanceRuleId": "SkuPriceDetails-C-000-C"
           },
           {
             "CheckFunction": "CheckConformanceRule",
@@ -585,16 +585,16 @@
       },
       "Condition": {},
       "Dependencies": [
-        "AvailabilityZone-C-000-M",
+        "AvailabilityZone-C-000-C",
         "BilledCost-C-000-M",
         "BillingAccountId-C-000-M",
-        "BillingAccountName-C-000-C",
+        "BillingAccountName-C-000-M",
         "BillingAccountType-C-000-M",
         "BillingCurrency-C-000-M",
         "BillingPeriodEnd-C-000-M",
         "BillingPeriodStart-C-000-M",
         "CapacityReservationId-C-000-C",
-        "CapacityReservationStatus-C-000-M",
+        "CapacityReservationStatus-C-000-C",
         "ChargeCategory-C-000-M",
         "ChargeClass-C-000-M",
         "ChargeFrequency-C-000-O",
@@ -603,10 +603,10 @@
         "ChargePeriodStart-C-000-M",
         "CommitmentDiscountCategory-C-000-C",
         "CommitmentDiscountId-C-000-C",
-        "CommitmentDiscountName-C-000-M",
+        "CommitmentDiscountName-C-000-C",
         "CommitmentDiscountStatus-C-000-C",
-        "CommitmentDiscountType-C-000-M",
-        "CommitmentDiscountUnit-C-000-M",
+        "CommitmentDiscountType-C-000-C",
+        "CommitmentDiscountUnit-C-000-C",
         "CommitmentDiscountQuantity-C-000-C",
         "ConsumedUnit-C-000-C",
         "ConsumedQuantity-C-000-C",
@@ -620,8 +620,8 @@
         "PricingCategory-C-000-M",
         "PricingCurrency-C-000-C",
         "PricingCurrencyContractedUnitPrice-C-000-C",
-        "PricingCurrencyEffectiveCost-C-000-M",
-        "PricingCurrencyListUnitPrice-C-000-M",
+        "PricingCurrencyEffectiveCost-C-000-C",
+        "PricingCurrencyListUnitPrice-C-000-C",
         "PricingQuantity-C-000-M",
         "PricingUnit-C-000-M",
         "ProviderName-C-000-M",
@@ -629,7 +629,7 @@
         "RegionName-C-000-C",
         "ResourceId-C-000-C",
         "ResourceName-C-000-C",
-        "ResourceType-C-000-M",
+        "ResourceType-C-000-C",
         "PublisherName-C-000-M",
         "SubAccountId-C-000-C",
         "SubAccountName-C-000-C",
@@ -637,8 +637,8 @@
         "ServiceName-C-000-M",
         "ServiceSubcategory-C-000-O",
         "SkuId-C-000-C",
-        "SkuMeter-C-000-O",
-        "SkuPriceDetails-C-000-M",
+        "SkuMeter-C-000-C",
+        "SkuPriceDetails-C-000-C",
         "SkuPriceId-C-000-C",
         "SubAccountType-C-000-C",
         "Tags-C-000-C"
@@ -729,7 +729,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-007-C": {
+  "CostAndUsage-D-007-M": {
     "Function": "Presence",
     "Reference": "BillingAccountType",
     "EntityType": "Dataset",
@@ -831,7 +831,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-012-M": {
+  "CostAndUsage-D-012-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountName",
     "EntityType": "Dataset",
@@ -853,7 +853,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-013-M": {
+  "CostAndUsage-D-013-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Dataset",
@@ -875,7 +875,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-014-M": {
+  "CostAndUsage-D-014-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountType",
     "EntityType": "Dataset",
@@ -897,7 +897,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-015-M": {
+  "CostAndUsage-D-015-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountUnit",
     "EntityType": "Dataset",
@@ -919,7 +919,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-016-M": {
+  "CostAndUsage-D-016-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountCategory",
     "EntityType": "Dataset",
@@ -941,7 +941,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-017-M": {
+  "CostAndUsage-D-017-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Dataset",
@@ -963,7 +963,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-018-M": {
+  "CostAndUsage-D-018-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountQuantity",
     "EntityType": "Dataset",
@@ -1198,7 +1198,9 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST be present in a FOCUS dataset when the provider supports a sub account construct.",
