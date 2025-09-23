@@ -1,6 +1,6 @@
 import pytest
 
-@pytest.mark.dependency(name="formatattributes_rule_ids_exist", scope="session")
+
 def _iter_strings_under_arrays(node):
     """
     Yield all string values that appear inside any list under `node`.
@@ -18,7 +18,7 @@ def _iter_strings_under_arrays(node):
         for v in node.values():
             yield from _iter_strings_under_arrays(v)
 
-@pytest.mark.xfail(reason="Known issue, fix pending")
+@pytest.mark.dependency(name="formatattributes_rule_ids_exist", scope="session")
 def test_formatattributes_rule_ids_exist(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
     defined_rule_ids = set(rules.keys())

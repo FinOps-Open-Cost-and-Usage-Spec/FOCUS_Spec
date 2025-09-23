@@ -135,7 +135,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "StringFormat-A-000-M"
+        "StringHandling-A-000-M"
       ]
     },
     "FormatUnit": {
