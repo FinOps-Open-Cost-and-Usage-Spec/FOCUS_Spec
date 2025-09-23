@@ -25,7 +25,6 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 
 * Informational line items that have zero monetary impact and are included solely for transparency MAY be excluded. Examples include:
   * Free tier usage tracking with $0.00 charges
-  * Breakdowns of bundled services where only the bundle total is billed
   * Tax exemption notifications
   * SLA credit details when the credit is already applied to the charged amount
 * If such informational items are excluded, providers MUST document this in their FOCUS implementation guide and ensure the sum of included charges still equals the invoice total.
