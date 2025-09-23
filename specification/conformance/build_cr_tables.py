@@ -90,13 +90,13 @@ def generate_markdown(data, dataset_name, logger):
             rule.get("Function", ""),
             rule.get("Reference", ""),
             ", ".join(rule.get("ApplicabilityCriteria", [])),
-            vc.get("mustSatisfy", ""),
+            vc.get("MustSatisfy", ""),
             vc.get("KeyWord", ""),
             summarize_check(req),
             summarize_check(cond),
             rule.get("Type", ""),
             rule.get("CRVersionIntroduced", ""),
-            rule.get("Status", "")
+            rule.get("Status", ""),
         ]
         all_rows[rule_id] = "| " + " | ".join(cell.replace("\n", " ").replace("|", "\\|") for cell in row) + " |"
 
