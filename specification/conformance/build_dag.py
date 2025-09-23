@@ -9,7 +9,7 @@ def get_args():
     parser.add_argument('-t', '--dataset-name', default="CostAndUsage", help='Dataset to generate CR graph for')
     parser.add_argument('--include-checks', action='store_true', help='Add checks to graph')
     parser.add_argument('--include-attributes', action='store_true', help='Add attributes to graph')
-    parser.add_argument('-f', '--cr-filename', type=str, default='cr-1.2.json', help='CR definition filename to load')
+    parser.add_argument('-f', '--cr-filename', type=str, default='build/cr-1.2.json', help='CR definition filename to load')
     parser.add_argument('--dot-filename', type=str, default='cr_graph.dot', help='Output CR graph dot filename')
     parser.add_argument('--png-filename', type=str, default='cr_graph.png', help='Output CR graph png filename')
     parser.add_argument('--logging-level', type=str, default='WARNING', choices={"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}, help='Logging level to use')

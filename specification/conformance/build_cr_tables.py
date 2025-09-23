@@ -8,7 +8,7 @@ from build_helpers import init_logger
 def get_args():
     parser = argparse.ArgumentParser(description='CR Table Generator.')
     parser.add_argument('-t', '--dataset-name', default="CostAndUsage", help='Dataset to generate CR table for')
-    parser.add_argument('-f', '--cr-filename', type=str, default='cr-1.2.json', help='Conformance definition filename to load')
+    parser.add_argument('-f', '--cr-filename', type=str, default='build/cr-1.2.json', help='Conformance definition filename to load')
     parser.add_argument('--logging-level', type=str, default='INFO', choices={"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}, help='Logging level to use')
     return parser.parse_args()
 
