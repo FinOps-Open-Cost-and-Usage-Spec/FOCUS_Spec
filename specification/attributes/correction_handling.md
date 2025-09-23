@@ -25,7 +25,7 @@ FOCUS supports two cost and usage data delivery mechanisms: Replacement and Appe
 
 #### Replacement Mechanism
 
-In the Replacement mechanism, each dataset artifact provides a complete snapshot of cost and usage data for a billing period, based on the data collected up to the time of delivery. Subsequent dataset artifacts typically reflect updates, additions, or omissions relative to the previous snapshot. For uninvoiced billing periods (including both previous and current) this mechanism lacks a built-in audit trail, as records may be updated or omitted. To support traceability in uninvoiced billing periods, the Replacement mechanism should support optional external retention of historical snapshots. For invoiced billing periods, auditability is ensured through immutable finalized records and correction handling rules that prohibit updates, deletions, or omissions.
+In the Replacement mechanism, each dataset artifact provides a complete snapshot of cost and usage data for a billing period, based on the data collected up to the time of delivery. Subsequent dataset artifacts typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism lacks a built-in audit trail, as records may be updated or omitted. The Replacement mechanism should support external retention of historical snapshots as an optional capability, allowing end-users to enable traceability. For invoiced billing periods, auditability is ensured through correction handling rules that prohibit updates, deletions, or omissions to charges associated with an issued invoice if they would impact reconciled invoice data.
 
 Subsequent dataset artifacts in the Replacement mechanism may include the following:
 
@@ -34,7 +34,7 @@ Subsequent dataset artifacts in the Replacement mechanism may include the follow
 * Additional records supplement previously delivered data.
 * Omitted records are removed if no longer applicable.
 
-Corrections in the Replacement mechanism are modeled through updates, additions, or omissions relative to the previous snapshot — with the restriction that corrections to charges originally incurred in previously invoiced billing periods must be represented exclusively through the addition of new records. Updated or omissions of finalized records are not allowed, as they would compromise the immutability of issued invoices and the integrity of audit trails.
+Corrections to charges associated with an issued invoice that impact reconciled invoice data must be represented exclusively through the addition of new records associated with a subsequent open billing period, with the charge period indicating when the cost was incurred.
 
 #### Append-only Mechanism
 
@@ -71,15 +71,17 @@ All corrections adhere to the following requirements:
 * Correction handling implementation MUST ensure that the delivery mechanisms and correction styles in use are documented within the Data Generator documentation.
 * ChargeClass MUST be null when the *charge* does not represent a correction to a previously invoiced *billing period*.
 * Correction MUST NOT result in double counting of any cost- or quantity-related values.
-* Corrections to charges from a previously invoiced and closed billing period adhere to the following additional requirements:
+* Corrections to charges associated with an issued invoice that impact *reconciled invoice* data adhere to the following additional requirements:
   * ChargeClass MUST be "Correction".
   * Correction MUST NOT replace or omit the original record.
   * Corrected row(s) MUST be assigned to a different InvoiceId than the original record.
   * [BillingPeriodStart](#billingperiodstart) and [BillingPeriodEnd](#billingperiodend) MUST equal the [*inclusive start bound*](#glossary:inclusivestartbound) and [*exclusive end bound*](#glossary:exclusiveendbound) of a subsequent open billing period in which the correction is issued.
   * [ChargePeriodStart](#chargeperiodstart) and [ChargePeriodEnd](#chargeperiodend) MUST equal the *inclusive start bound* and *exclusive end bound* of the period in which the cost was originally incurred.
+* Corrections to charges associated with an issued invoice that do not impact *reconciled invoice* data but do affect dimensions and metrics used in downstream FinOps capabilities subject to financial data, such as chargeback, SHOULD adhere to the same requirements as corrections that impact *reconciled invoice* data, unless explicitly requested by the end-user.
 * Replacement mechanism adheres to the following additional requirements:
-  * Correction handling implementation SHOULD support optional external retention of historical snapshots to enable traceability in uninvoiced billing periods (including both previous and current).
-  * Corrections for previously invoiced billing periods MUST be represented exclusively through the addition of new records.
+  * Corrections for previously invoiced billing periods that impact *reconciled invoice* data MUST be represented exclusively through the addition of new records.
+  * Corrections for previously invoiced billing periods that do not impact *reconciled invoice* data but affect dimensions and metrics used in downstream FinOps capabilities (e.g., chargeback) SHOULD be represented exclusively through the addition of new records, unless explicitly requested otherwise by the end-user.
+  * Correction handling implementation SHOULD support external retention of historical snapshots as an optional capability, allowing end-users to enable traceability.
   * Corrections for uninvoiced billing periods MAY include updates, additions, or omissions.
 * Append-only mechanism adheres to the following additional requirements:
   * All previously delivered records MUST be retained without modification or deletion.
