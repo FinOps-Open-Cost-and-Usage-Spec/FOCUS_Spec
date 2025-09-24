@@ -7,7 +7,7 @@
       "Keyword": "—",
       "ApplicabilityCriteria": "All Rows",
       "Condition": "All Rows",
-      "MustSatisfy": "—",
+      "MustSatisfy": "The ChargeClass column adheres to the following requirements:",
       "Requirement": "AND(ChargeClass-D-001-M, ChargeClass-C-002-M, ChargeClass-C-003-C, ChargeClass-C-006-C)",
       "Type": "static",
       "CRVersionIntroduced": "1.2",
