@@ -150,7 +150,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyFormat-A-000-M"
+        "CurrencyFormat-A-000-C"
       ]
     },
     "TypeDecimal": {
@@ -191,7 +191,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "StringFormat-A-000-M"
+        "StringHandling-A-000-M"
       ]
     },
     "FormatUnit": {
@@ -209,7 +209,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyFormat-A-000-M"
+        "CurrencyFormat-A-000-C"
       ]
     },
     "ColumnByColumnEqualsColumnValue": {
@@ -237,7 +237,7 @@
     }
   },
   "ConformanceRules": {
-    "CurrencyFormat-A-000-M": {
+    "CurrencyFormat-A-000-C": {
       "Function": "Composite",
       "Reference": "CurrencyFormat",
       "EntityType": "Attribute",
@@ -254,22 +254,22 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CurrencyFormat-A-001-M"
+              "ConformanceRuleId": "CurrencyFormat-A-001-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CurrencyFormat-A-002-M"
+              "ConformanceRuleId": "CurrencyFormat-A-002-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "CurrencyFormat-A-001-M",
-          "CurrencyFormat-A-002-M"
+          "CurrencyFormat-A-001-C",
+          "CurrencyFormat-A-002-C"
         ]
       }
     },
-    "CurrencyFormat-A-001-M": {
+    "CurrencyFormat-A-001-C": {
       "Function": "Validation",
       "Reference": "CurrencyFormat",
       "EntityType": "Attribute",
@@ -286,7 +286,7 @@
         "Dependencies": []
       }
     },
-    "CurrencyFormat-A-002-M": {
+    "CurrencyFormat-A-002-C": {
       "Function": "Validation",
       "Reference": "CurrencyFormat",
       "EntityType": "Attribute",
@@ -348,7 +348,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "StringHandling-A-008-O"
+              "ConformanceRuleId": "StringHandling-A-008-C"
             }
           ]
         },
@@ -361,7 +361,7 @@
           "StringHandling-A-005-M",
           "StringHandling-A-006-M",
           "StringHandling-A-007-M",
-          "StringHandling-A-008-O"
+          "StringHandling-A-008-C"
         ]
       }
     },
@@ -484,7 +484,7 @@
         "Dependencies": []
       }
     },
-    "StringHandling-A-008-O": {
+    "StringHandling-A-008-C": {
       "Function": "Format",
       "Reference": "StringHandling",
       "EntityType": "Attribute",
@@ -787,7 +787,7 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "NullHandling-A-001-M"
+              "ConformanceRuleId": "NullHandling-A-001-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -797,12 +797,12 @@
         },
         "Condition": {},
         "Dependencies": [
-          "NullHandling-A-001-M",
+          "NullHandling-A-001-C",
           "NullHandling-A-002-M"
         ]
       }
     },
-    "NullHandling-A-001-M": {
+    "NullHandling-A-001-C": {
       "Function": "Validation",
       "Reference": "NullHandling",
       "EntityType": "Attribute",
@@ -865,7 +865,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "UnitFormat-A-004-M"
+              "ConformanceRuleId": "UnitFormat-A-004-C"
             }
           ]
         },
@@ -874,7 +874,7 @@
           "UnitFormat-A-001-M",
           "UnitFormat-A-002-O",
           "UnitFormat-A-003-M",
-          "UnitFormat-A-004-M"
+          "UnitFormat-A-004-C"
         ]
       }
     },
@@ -929,7 +929,7 @@
         "Dependencies": []
       }
     },
-    "UnitFormat-A-004-M": {
+    "UnitFormat-A-004-C": {
       "Function": "Format",
       "Reference": "UnitFormat",
       "EntityType": "Attribute",
@@ -946,7 +946,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-000-M": {
+    "DiscountHandling-A-000-C": {
       "Function": "Composite",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -965,37 +965,37 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-001-O"
+              "ConformanceRuleId": "DiscountHandling-A-001-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-002-M"
+              "ConformanceRuleId": "DiscountHandling-A-002-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-005-M"
+              "ConformanceRuleId": "DiscountHandling-A-005-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-008-M"
+              "ConformanceRuleId": "DiscountHandling-A-008-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-020-M"
+              "ConformanceRuleId": "DiscountHandling-A-020-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "DiscountHandling-A-001-O",
-          "DiscountHandling-A-002-M",
-          "DiscountHandling-A-005-M",
-          "DiscountHandling-A-008-M",
-          "DiscountHandling-A-020-M"
+          "DiscountHandling-A-001-C",
+          "DiscountHandling-A-002-C",
+          "DiscountHandling-A-005-C",
+          "DiscountHandling-A-008-C",
+          "DiscountHandling-A-020-C"
         ]
       }
     },
-    "DiscountHandling-A-001-O": {
+    "DiscountHandling-A-001-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1014,7 +1014,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-002-M": {
+    "DiscountHandling-A-002-C": {
       "Function": "Composite",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1033,22 +1033,22 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-003-M"
+              "ConformanceRuleId": "DiscountHandling-A-003-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-004-M"
+              "ConformanceRuleId": "DiscountHandling-A-004-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "DiscountHandling-A-003-M",
-          "DiscountHandling-A-004-M"
+          "DiscountHandling-A-003-C",
+          "DiscountHandling-A-004-C"
         ]
       }
     },
-    "DiscountHandling-A-003-M": {
+    "DiscountHandling-A-003-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1067,7 +1067,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-004-M": {
+    "DiscountHandling-A-004-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1086,7 +1086,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-005-M": {
+    "DiscountHandling-A-005-C": {
       "Function": "Composite",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1105,22 +1105,22 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-006-M"
+              "ConformanceRuleId": "DiscountHandling-A-006-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-007-O"
+              "ConformanceRuleId": "DiscountHandling-A-007-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "DiscountHandling-A-006-M",
-          "DiscountHandling-A-007-O"
+          "DiscountHandling-A-006-C",
+          "DiscountHandling-A-007-C"
         ]
       }
     },
-    "DiscountHandling-A-006-M": {
+    "DiscountHandling-A-006-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1139,7 +1139,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-007-O": {
+    "DiscountHandling-A-007-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1158,7 +1158,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-008-M": {
+    "DiscountHandling-A-008-C": {
       "Function": "Composite",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1177,35 +1177,35 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-009-M"
+              "ConformanceRuleId": "DiscountHandling-A-009-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-010-M"
+              "ConformanceRuleId": "DiscountHandling-A-010-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-011-M"
+              "ConformanceRuleId": "DiscountHandling-A-011-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-012-M"
+              "ConformanceRuleId": "DiscountHandling-A-012-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-013-M"
+              "ConformanceRuleId": "DiscountHandling-A-013-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-014-M"
+              "ConformanceRuleId": "DiscountHandling-A-014-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-015-M"
+              "ConformanceRuleId": "DiscountHandling-A-015-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-016-M"
+              "ConformanceRuleId": "DiscountHandling-A-016-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -1213,31 +1213,31 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-018-M"
+              "ConformanceRuleId": "DiscountHandling-A-018-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "DiscountHandling-A-019-M"
+              "ConformanceRuleId": "DiscountHandling-A-019-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "DiscountHandling-A-009-M",
-          "DiscountHandling-A-010-M",
-          "DiscountHandling-A-011-M",
-          "DiscountHandling-A-012-M",
-          "DiscountHandling-A-013-M",
-          "DiscountHandling-A-014-M",
-          "DiscountHandling-A-015-M",
-          "DiscountHandling-A-016-M",
+          "DiscountHandling-A-009-C",
+          "DiscountHandling-A-010-C",
+          "DiscountHandling-A-011-C",
+          "DiscountHandling-A-012-C",
+          "DiscountHandling-A-013-C",
+          "DiscountHandling-A-014-C",
+          "DiscountHandling-A-015-C",
+          "DiscountHandling-A-016-C",
           "DiscountHandling-A-017-C",
-          "DiscountHandling-A-018-M",
-          "DiscountHandling-A-019-M"
+          "DiscountHandling-A-018-C",
+          "DiscountHandling-A-019-C"
         ]
       }
     },
-    "DiscountHandling-A-009-M": {
+    "DiscountHandling-A-009-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1256,7 +1256,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-010-M": {
+    "DiscountHandling-A-010-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1275,7 +1275,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-011-M": {
+    "DiscountHandling-A-011-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1294,7 +1294,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-012-M": {
+    "DiscountHandling-A-012-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1313,7 +1313,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-013-M": {
+    "DiscountHandling-A-013-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1332,7 +1332,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-014-M": {
+    "DiscountHandling-A-014-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1351,7 +1351,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-015-M": {
+    "DiscountHandling-A-015-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1370,7 +1370,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-016-M": {
+    "DiscountHandling-A-016-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1408,7 +1408,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-018-M": {
+    "DiscountHandling-A-018-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1427,7 +1427,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-019-M": {
+    "DiscountHandling-A-019-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1446,7 +1446,7 @@
         "Dependencies": []
       }
     },
-    "DiscountHandling-A-020-M": {
+    "DiscountHandling-A-020-C": {
       "Function": "Validation",
       "Reference": "DiscountHandling",
       "EntityType": "Attribute",
@@ -1810,7 +1810,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ColumnHandling-A-006-O"
+              "ConformanceRuleId": "ColumnHandling-A-006-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -1845,7 +1845,7 @@
           "ColumnHandling-A-003-M",
           "ColumnHandling-A-004-O",
           "ColumnHandling-A-005-O",
-          "ColumnHandling-A-006-O",
+          "ColumnHandling-A-006-M",
           "ColumnHandling-A-007-O",
           "ColumnHandling-A-008-M",
           "ColumnHandling-A-009-M",
@@ -1940,7 +1940,7 @@
         "Dependencies": []
       }
     },
-    "ColumnHandling-A-006-O": {
+    "ColumnHandling-A-006-M": {
       "Function": "Validation",
       "Reference": "ColumnHandling",
       "EntityType": "Attribute",
@@ -2136,7 +2136,9 @@
         "Condition": {},
         "Dependencies": [
           "CostAndUsage-D-001-M",
-          "CostAndUsage-D-002-M"
+          "CostAndUsage-D-002-M",
+          "DiscountHandling-A-000-C",
+          "NullHandling-A-000-M"
         ]
       }
     },
@@ -2173,7 +2175,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CostAndUsage-D-007-C"
+              "ConformanceRuleId": "CostAndUsage-D-007-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2193,31 +2195,31 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CostAndUsage-D-012-M"
+              "ConformanceRuleId": "CostAndUsage-D-012-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CostAndUsage-D-013-M"
+              "ConformanceRuleId": "CostAndUsage-D-013-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CostAndUsage-D-014-M"
+              "ConformanceRuleId": "CostAndUsage-D-014-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CostAndUsage-D-015-M"
+              "ConformanceRuleId": "CostAndUsage-D-015-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CostAndUsage-D-016-M"
+              "ConformanceRuleId": "CostAndUsage-D-016-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CostAndUsage-D-017-M"
+              "ConformanceRuleId": "CostAndUsage-D-017-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CostAndUsage-D-018-M"
+              "ConformanceRuleId": "CostAndUsage-D-018-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2391,18 +2393,18 @@
           "CostAndUsage-D-004-C",
           "CostAndUsage-D-005-M",
           "CostAndUsage-D-006-M",
-          "CostAndUsage-D-007-C",
+          "CostAndUsage-D-007-M",
           "CostAndUsage-D-008-M",
           "CostAndUsage-D-009-M",
           "CostAndUsage-D-010-M",
           "CostAndUsage-D-011-C",
-          "CostAndUsage-D-012-M",
-          "CostAndUsage-D-013-M",
-          "CostAndUsage-D-014-M",
-          "CostAndUsage-D-015-M",
-          "CostAndUsage-D-016-M",
-          "CostAndUsage-D-017-M",
-          "CostAndUsage-D-018-M",
+          "CostAndUsage-D-012-C",
+          "CostAndUsage-D-013-C",
+          "CostAndUsage-D-014-C",
+          "CostAndUsage-D-015-C",
+          "CostAndUsage-D-016-C",
+          "CostAndUsage-D-017-C",
+          "CostAndUsage-D-018-C",
           "CostAndUsage-D-019-C",
           "CostAndUsage-D-020-C",
           "CostAndUsage-D-021-M",
@@ -2464,7 +2466,7 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "AvailabilityZone-C-000-M"
+              "ConformanceRuleId": "AvailabilityZone-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2476,7 +2478,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "BillingAccountName-C-000-C"
+              "ConformanceRuleId": "BillingAccountName-C-000-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2500,7 +2502,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CapacityReservationStatus-C-000-M"
+              "ConformanceRuleId": "CapacityReservationStatus-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2536,7 +2538,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountName-C-000-M"
+              "ConformanceRuleId": "CommitmentDiscountName-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2544,11 +2546,11 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountType-C-000-M"
+              "ConformanceRuleId": "CommitmentDiscountType-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountUnit-C-000-M"
+              "ConformanceRuleId": "CommitmentDiscountUnit-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2604,11 +2606,11 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-000-M"
+              "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-000-M"
+              "ConformanceRuleId": "PricingCurrencyListUnitPrice-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2644,7 +2646,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ResourceType-C-000-M"
+              "ConformanceRuleId": "ResourceType-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2672,11 +2674,11 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SkuMeter-C-000-O"
+              "ConformanceRuleId": "SkuMeter-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SkuPriceDetails-C-000-M"
+              "ConformanceRuleId": "SkuPriceDetails-C-000-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -2694,16 +2696,16 @@
         },
         "Condition": {},
         "Dependencies": [
-          "AvailabilityZone-C-000-M",
+          "AvailabilityZone-C-000-C",
           "BilledCost-C-000-M",
           "BillingAccountId-C-000-M",
-          "BillingAccountName-C-000-C",
+          "BillingAccountName-C-000-M",
           "BillingAccountType-C-000-M",
           "BillingCurrency-C-000-M",
           "BillingPeriodEnd-C-000-M",
           "BillingPeriodStart-C-000-M",
           "CapacityReservationId-C-000-C",
-          "CapacityReservationStatus-C-000-M",
+          "CapacityReservationStatus-C-000-C",
           "ChargeCategory-C-000-M",
           "ChargeClass-C-000-M",
           "ChargeFrequency-C-000-O",
@@ -2712,10 +2714,10 @@
           "ChargePeriodStart-C-000-M",
           "CommitmentDiscountCategory-C-000-C",
           "CommitmentDiscountId-C-000-C",
-          "CommitmentDiscountName-C-000-M",
+          "CommitmentDiscountName-C-000-C",
           "CommitmentDiscountStatus-C-000-C",
-          "CommitmentDiscountType-C-000-M",
-          "CommitmentDiscountUnit-C-000-M",
+          "CommitmentDiscountType-C-000-C",
+          "CommitmentDiscountUnit-C-000-C",
           "CommitmentDiscountQuantity-C-000-C",
           "ConsumedUnit-C-000-C",
           "ConsumedQuantity-C-000-C",
@@ -2729,8 +2731,8 @@
           "PricingCategory-C-000-M",
           "PricingCurrency-C-000-C",
           "PricingCurrencyContractedUnitPrice-C-000-C",
-          "PricingCurrencyEffectiveCost-C-000-M",
-          "PricingCurrencyListUnitPrice-C-000-M",
+          "PricingCurrencyEffectiveCost-C-000-C",
+          "PricingCurrencyListUnitPrice-C-000-C",
           "PricingQuantity-C-000-M",
           "PricingUnit-C-000-M",
           "ProviderName-C-000-M",
@@ -2738,7 +2740,7 @@
           "RegionName-C-000-C",
           "ResourceId-C-000-C",
           "ResourceName-C-000-C",
-          "ResourceType-C-000-M",
+          "ResourceType-C-000-C",
           "PublisherName-C-000-M",
           "SubAccountId-C-000-C",
           "SubAccountName-C-000-C",
@@ -2746,8 +2748,8 @@
           "ServiceName-C-000-M",
           "ServiceSubcategory-C-000-O",
           "SkuId-C-000-C",
-          "SkuMeter-C-000-O",
-          "SkuPriceDetails-C-000-M",
+          "SkuMeter-C-000-C",
+          "SkuPriceDetails-C-000-C",
           "SkuPriceId-C-000-C",
           "SubAccountType-C-000-C",
           "Tags-C-000-C"
@@ -2838,7 +2840,7 @@
         "Dependencies": []
       }
     },
-    "CostAndUsage-D-007-C": {
+    "CostAndUsage-D-007-M": {
       "Function": "Presence",
       "Reference": "BillingAccountType",
       "EntityType": "Dataset",
@@ -2940,7 +2942,7 @@
         "Dependencies": []
       }
     },
-    "CostAndUsage-D-012-M": {
+    "CostAndUsage-D-012-C": {
       "Function": "Presence",
       "Reference": "CommitmentDiscountName",
       "EntityType": "Dataset",
@@ -2962,7 +2964,7 @@
         "Dependencies": []
       }
     },
-    "CostAndUsage-D-013-M": {
+    "CostAndUsage-D-013-C": {
       "Function": "Presence",
       "Reference": "CommitmentDiscountId",
       "EntityType": "Dataset",
@@ -2984,7 +2986,7 @@
         "Dependencies": []
       }
     },
-    "CostAndUsage-D-014-M": {
+    "CostAndUsage-D-014-C": {
       "Function": "Presence",
       "Reference": "CommitmentDiscountType",
       "EntityType": "Dataset",
@@ -3006,7 +3008,7 @@
         "Dependencies": []
       }
     },
-    "CostAndUsage-D-015-M": {
+    "CostAndUsage-D-015-C": {
       "Function": "Presence",
       "Reference": "CommitmentDiscountUnit",
       "EntityType": "Dataset",
@@ -3028,7 +3030,7 @@
         "Dependencies": []
       }
     },
-    "CostAndUsage-D-016-M": {
+    "CostAndUsage-D-016-C": {
       "Function": "Presence",
       "Reference": "CommitmentDiscountCategory",
       "EntityType": "Dataset",
@@ -3050,7 +3052,7 @@
         "Dependencies": []
       }
     },
-    "CostAndUsage-D-017-M": {
+    "CostAndUsage-D-017-C": {
       "Function": "Presence",
       "Reference": "CommitmentDiscountStatus",
       "EntityType": "Dataset",
@@ -3072,7 +3074,7 @@
         "Dependencies": []
       }
     },
-    "CostAndUsage-D-018-M": {
+    "CostAndUsage-D-018-C": {
       "Function": "Presence",
       "Reference": "CommitmentDiscountQuantity",
       "EntityType": "Dataset",
@@ -3307,7 +3309,9 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "Notes": "",
-      "ApplicabilityCriteria": [],
+      "ApplicabilityCriteria": [
+        "SUB_ACCOUNT_SUPPORTED"
+      ],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountName MUST be present in a FOCUS dataset when the provider supports a sub account construct.",
@@ -4477,7 +4481,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "Tags-C-003-O"
+              "ConformanceRuleId": "Tags-C-003-C"
             }
           ]
         },
@@ -4486,7 +4490,7 @@
           "CostAndUsage-D-061-C",
           "Tags-C-001-M",
           "Tags-C-002-M",
-          "Tags-C-003-O"
+          "Tags-C-003-C"
         ]
       }
     },
@@ -4527,7 +4531,7 @@
         "Dependencies": []
       }
     },
-    "Tags-C-003-O": {
+    "Tags-C-003-C": {
       "Function": "Nullability",
       "Reference": "Tags",
       "EntityType": "Column",
@@ -4571,7 +4575,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountCategory-C-002-M"
+              "ConformanceRuleId": "CommitmentDiscountCategory-C-002-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -4581,9 +4585,9 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-016-M",
+          "CostAndUsage-D-016-C",
           "CommitmentDiscountCategory-C-001-M",
-          "CommitmentDiscountCategory-C-002-M",
+          "CommitmentDiscountCategory-C-002-C",
           "CommitmentDiscountCategory-C-005-M"
         ]
       }
@@ -4608,7 +4612,7 @@
         "Dependencies": []
       }
     },
-    "CommitmentDiscountCategory-C-002-M": {
+    "CommitmentDiscountCategory-C-002-C": {
       "Function": "Composite",
       "Reference": "CommitmentDiscountCategory",
       "EntityType": "Column",
@@ -4874,7 +4878,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ResourceName-C-003-C"
+              "ConformanceRuleId": "ResourceName-C-003-O"
             }
           ]
         },
@@ -4883,7 +4887,7 @@
           "CostAndUsage-D-044-C",
           "ResourceName-C-001-M",
           "ResourceName-C-002-M",
-          "ResourceName-C-003-C"
+          "ResourceName-C-003-O"
         ]
       }
     },
@@ -4894,10 +4898,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceName MUST be of type String.",
@@ -4917,10 +4918,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceName MUST conform to StringHandling requirements.",
@@ -4933,17 +4931,14 @@
         "Dependencies": []
       }
     },
-    "ResourceName-C-003-C": {
+    "ResourceName-C-003-O": {
       "Function": "Nullability",
       "Reference": "ResourceName",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceName MAY be null.",
@@ -5101,7 +5096,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingCurrencyContractedUnitPrice-C-003-C"
+              "ConformanceRuleId": "PricingCurrencyContractedUnitPrice-C-003-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -5114,7 +5109,7 @@
           "CostAndUsage-D-046-C",
           "PricingCurrencyContractedUnitPrice-C-001-M",
           "PricingCurrencyContractedUnitPrice-C-002-M",
-          "PricingCurrencyContractedUnitPrice-C-003-C",
+          "PricingCurrencyContractedUnitPrice-C-003-M",
           "PricingCurrencyContractedUnitPrice-C-007-C"
         ]
       }
@@ -5126,9 +5121,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be of type Decimal",
@@ -5148,9 +5141,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST conform to NumericFormat requirements",
@@ -5163,16 +5154,14 @@
         "Dependencies": []
       }
     },
-    "PricingCurrencyContractedUnitPrice-C-003-C": {
+    "PricingCurrencyContractedUnitPrice-C-003-M": {
       "Function": "Composite",
       "Reference": "PricingCurrencyContractedUnitPrice",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyContractedUnitPrice nullability is defined as follows:",
@@ -5209,9 +5198,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be null when ChargeCategory is 'Tax'",
@@ -5232,9 +5219,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
@@ -5275,9 +5260,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyContractedUnitPrice MAY be null in all other cases",
@@ -5294,9 +5277,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice adheres to the following additional requirements:",
@@ -5337,9 +5318,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value",
@@ -5360,9 +5339,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency",
@@ -5383,9 +5360,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Discrepancies in PricingCurrencyContractedUnitPrice, ContractedCost, or PricingQuantity MAY exist when ChargeClass is 'Correction'",
@@ -5426,7 +5401,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ListUnitPrice-C-003-C"
+              "ConformanceRuleId": "ListUnitPrice-C-003-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -5439,7 +5414,7 @@
           "CostAndUsage-D-004-C",
           "ListUnitPrice-C-001-M",
           "ListUnitPrice-C-002-M",
-          "ListUnitPrice-C-003-C",
+          "ListUnitPrice-C-003-M",
           "ListUnitPrice-C-007-C"
         ]
       }
@@ -5451,9 +5426,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "MUST be of type Decimal",
@@ -5473,9 +5446,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "MUST conform to NumericFormat requirements",
@@ -5488,16 +5459,14 @@
         "Dependencies": []
       }
     },
-    "ListUnitPrice-C-003-C": {
+    "ListUnitPrice-C-003-M": {
       "Function": "Composite",
       "Reference": "ListUnitPrice",
       "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ListUnitPrice nullability is defined as follows:",
@@ -5535,9 +5504,7 @@
       "Notes": null,
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
@@ -5564,9 +5531,7 @@
       "Notes": null,
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
@@ -5613,9 +5578,7 @@
       "Notes": null,
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "MAY be null in all other cases",
@@ -5636,9 +5599,7 @@
       "Notes": null,
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:",
@@ -5648,15 +5609,15 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ListUnitPrice-C-008-C"
+              "ConformanceRuleId": "ListUnitPrice-C-008-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ListUnitPrice-C-009-C"
+              "ConformanceRuleId": "ListUnitPrice-C-009-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ListUnitPrice-C-010-M"
+              "ConformanceRuleId": "ListUnitPrice-C-010-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -5671,23 +5632,21 @@
         },
         "Dependencies": [
           "ChargeCategory-C-000-M",
-          "ListUnitPrice-C-008-C",
-          "ListUnitPrice-C-009-C",
-          "ListUnitPrice-C-010-M",
+          "ListUnitPrice-C-008-M",
+          "ListUnitPrice-C-009-M",
+          "ListUnitPrice-C-010-C",
           "ListUnitPrice-C-011-C"
         ]
       }
     },
-    "ListUnitPrice-C-008-C": {
+    "ListUnitPrice-C-008-M": {
       "Function": "Validation",
       "Reference": "ListUnitPrice",
       "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "MUST be a non-negative decimal value",
@@ -5701,16 +5660,14 @@
         "Dependencies": []
       }
     },
-    "ListUnitPrice-C-009-C": {
+    "ListUnitPrice-C-009-M": {
       "Function": "Validation",
       "Reference": "ListUnitPrice",
       "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "MUST be denominated in the BillingCurrency",
@@ -5720,16 +5677,14 @@
         "Dependencies": []
       }
     },
-    "ListUnitPrice-C-010-M": {
+    "ListUnitPrice-C-010-C": {
       "Function": "Format",
       "Reference": "ListUnitPrice",
       "EntityType": "Column",
       "Notes": null,
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'",
@@ -5767,9 +5722,7 @@
       "Notes": null,
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PUBLIC_PRICE_LIST_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'",
@@ -6055,11 +6008,7 @@
           "ColumnName": "PricingQuantity",
           "Value": null
         },
-        "Condition": {
-          "CheckFunction": "CheckValue",
-          "ColumnName": "PricingQuantity",
-          "Value": null
-        },
+        "Condition": {},
         "Dependencies": []
       }
     },
@@ -6146,7 +6095,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SubAccountId-C-003-M"
+              "ConformanceRuleId": "SubAccountId-C-003-C"
             }
           ]
         },
@@ -6155,7 +6104,7 @@
           "CostAndUsage-D-019-C",
           "SubAccountId-C-001-M",
           "SubAccountId-C-002-M",
-          "SubAccountId-C-003-M"
+          "SubAccountId-C-003-C"
         ]
       }
     },
@@ -6166,9 +6115,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "SUB_ACCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountId MUST be of type String",
@@ -6188,9 +6135,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "SUB_ACCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountId MUST conform to StringHandling requirements",
@@ -6203,16 +6148,14 @@
         "Dependencies": []
       }
     },
-    "SubAccountId-C-003-M": {
+    "SubAccountId-C-003-C": {
       "Function": "Composite",
       "Reference": "SubAccountId",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "SUB_ACCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountId nullability is defined as follows:",
@@ -6222,31 +6165,29 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SubAccountId-C-004-M"
+              "ConformanceRuleId": "SubAccountId-C-004-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SubAccountId-C-005-M"
+              "ConformanceRuleId": "SubAccountId-C-005-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "SubAccountId-C-004-M",
-          "SubAccountId-C-005-M"
+          "SubAccountId-C-004-C",
+          "SubAccountId-C-005-C"
         ]
       }
     },
-    "SubAccountId-C-004-M": {
+    "SubAccountId-C-004-C": {
       "Function": "Nullability",
       "Reference": "SubAccountId",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "SUB_ACCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountId MUST be null when a charge is not related to a sub account",
@@ -6256,16 +6197,14 @@
         "Dependencies": []
       }
     },
-    "SubAccountId-C-005-M": {
+    "SubAccountId-C-005-C": {
       "Function": "Nullability",
       "Reference": "SubAccountId",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "SUB_ACCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountId MUST NOT be null when a charge is related to a sub account",
@@ -6275,7 +6214,7 @@
         "Dependencies": []
       }
     },
-    "ResourceType-C-000-M": {
+    "ResourceType-C-000-C": {
       "Function": "Composite",
       "Reference": "ResourceType",
       "EntityType": "Column",
@@ -6323,10 +6262,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceType MUST be of type String.",
@@ -6346,10 +6282,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceType MUST conform to StringHandling requirements.",
@@ -6369,10 +6302,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceType nullability is defined as follows:",
@@ -6404,10 +6334,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceType MUST be null when ResourceId is null.",
@@ -6434,10 +6361,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceType MUST NOT be null when ResourceId is not null.",
@@ -6457,7 +6381,7 @@
         ]
       }
     },
-    "PricingCurrencyEffectiveCost-C-000-M": {
+    "PricingCurrencyEffectiveCost-C-000-C": {
       "Function": "Composite",
       "Reference": "PricingCurrencyEffectiveCost",
       "EntityType": "Column",
@@ -6492,7 +6416,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-005-C"
+              "ConformanceRuleId": "PricingCurrencyEffectiveCost-C-005-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -6507,7 +6431,7 @@
           "PricingCurrencyEffectiveCost-C-002-M",
           "PricingCurrencyEffectiveCost-C-003-M",
           "PricingCurrencyEffectiveCost-C-004-M",
-          "PricingCurrencyEffectiveCost-C-005-C",
+          "PricingCurrencyEffectiveCost-C-005-M",
           "PricingCurrencyEffectiveCost-C-006-M"
         ]
       }
@@ -6519,9 +6443,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyEffectiveCost MUST be of type Decimal",
@@ -6541,9 +6463,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyEffectiveCost MUST conform to NumericFormat requirements",
@@ -6563,9 +6483,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyEffectiveCost MUST NOT be null",
@@ -6586,9 +6504,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyEffectiveCost MUST be a valid decimal value",
@@ -6602,16 +6518,14 @@
         "Dependencies": []
       }
     },
-    "PricingCurrencyEffectiveCost-C-005-C": {
+    "PricingCurrencyEffectiveCost-C-005-M": {
       "Function": "Validation",
       "Reference": "PricingCurrencyEffectiveCost",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage",
@@ -6628,9 +6542,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency",
@@ -8406,7 +8318,7 @@
         "Dependencies": []
       }
     },
-    "CommitmentDiscountName-C-000-M": {
+    "CommitmentDiscountName-C-000-C": {
       "Function": "Composite",
       "Reference": "CommitmentDiscountName",
       "EntityType": "Column",
@@ -8433,7 +8345,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountName-C-003-M"
+              "ConformanceRuleId": "CommitmentDiscountName-C-003-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -8443,10 +8355,10 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-012-M",
+          "CostAndUsage-D-012-C",
           "CommitmentDiscountName-C-001-M",
           "CommitmentDiscountName-C-002-M",
-          "CommitmentDiscountName-C-003-M",
+          "CommitmentDiscountName-C-003-C",
           "CommitmentDiscountName-C-004-C"
         ]
       }
@@ -8458,9 +8370,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountName MUST be of type String.",
@@ -8480,9 +8390,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountName MUST conform to StringHandling requirements.",
@@ -8495,16 +8403,14 @@
         "Dependencies": []
       }
     },
-    "CommitmentDiscountName-C-003-M": {
+    "CommitmentDiscountName-C-003-C": {
       "Function": "Composite",
       "Reference": "CommitmentDiscountName",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountName nullability is defined as follows:",
@@ -8536,9 +8442,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountName MUST be null when CommitmentDiscountId is null.",
@@ -8563,9 +8467,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When CommitmentDiscountId is not null, CommitmentDiscountName adheres to the following additional requirements:",
@@ -8601,9 +8503,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountName MUST NOT be null when a display name can be assigned to a commitment discount.",
@@ -8620,9 +8520,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountName MAY be null when a display name cannot be assigned to a commitment discount.",
@@ -8758,7 +8656,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountId-C-003-M"
+              "ConformanceRuleId": "CommitmentDiscountId-C-003-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -8768,10 +8666,10 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-013-M",
+          "CostAndUsage-D-013-C",
           "CommitmentDiscountId-C-001-M",
           "CommitmentDiscountId-C-002-M",
-          "CommitmentDiscountId-C-003-M",
+          "CommitmentDiscountId-C-003-C",
           "CommitmentDiscountId-C-006-C"
         ]
       }
@@ -8783,9 +8681,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountId MUST be of type String.",
@@ -8805,9 +8701,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountId MUST conform to StringHandling requirements.",
@@ -8820,16 +8714,14 @@
         "Dependencies": []
       }
     },
-    "CommitmentDiscountId-C-003-M": {
+    "CommitmentDiscountId-C-003-C": {
       "Function": "Composite",
       "Reference": "CommitmentDiscountId",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountId nullability is defined as follows:",
@@ -8861,9 +8753,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountId MUST be null when a charge is not related to a commitment discount.",
@@ -8880,9 +8770,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountId MUST NOT be null when a charge is related to a commitment discount.",
@@ -8899,9 +8787,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When CommitmentDiscountId is not null, CommitmentDiscountId adheres to the following additional requirements:",
@@ -8911,7 +8797,7 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountId-C-007-C"
+              "ConformanceRuleId": "CommitmentDiscountId-C-007-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -8925,21 +8811,19 @@
           "Value": null
         },
         "Dependencies": [
-          "CommitmentDiscountId-C-007-C",
+          "CommitmentDiscountId-C-007-M",
           "CommitmentDiscountId-C-008-C"
         ]
       }
     },
-    "CommitmentDiscountId-C-007-C": {
+    "CommitmentDiscountId-C-007-M": {
       "Function": "Validation",
       "Reference": "CommitmentDiscountId",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountId MUST be a unique identifier within the provider.",
@@ -8956,9 +8840,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountId SHOULD be a fully-qualified identifier.",
@@ -8978,7 +8860,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "When the InvoiceIssuerName column is present, each row MUST satisfy the type, StringHandling, and not-null checks",
+        "MustSatisfy": "The InvoiceIssuerName column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -9096,11 +8978,11 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ServiceName-C-004-M"
+              "ConformanceRuleId": "ServiceName-C-004-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ServiceName-C-007-O"
+              "ConformanceRuleId": "ServiceName-C-007-C"
             }
           ]
         },
@@ -9110,8 +8992,8 @@
           "ServiceName-C-001-M",
           "ServiceName-C-002-M",
           "ServiceName-C-003-M",
-          "ServiceName-C-004-M",
-          "ServiceName-C-007-O"
+          "ServiceName-C-004-C",
+          "ServiceName-C-007-C"
         ]
       }
     },
@@ -9176,7 +9058,7 @@
         "Dependencies": []
       }
     },
-    "ServiceName-C-004-M": {
+    "ServiceName-C-004-C": {
       "Function": "Composite",
       "Reference": "ServiceName",
       "EntityType": "Column",
@@ -9193,23 +9075,23 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ServiceName-C-005-M"
+              "ConformanceRuleId": "ServiceName-C-005-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ServiceName-C-006-M"
+              "ConformanceRuleId": "ServiceName-C-006-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
           "ServiceCategory-C-000-M",
-          "ServiceName-C-005-M",
-          "ServiceName-C-006-M"
+          "ServiceName-C-005-C",
+          "ServiceName-C-006-C"
         ]
       }
     },
-    "ServiceName-C-005-M": {
+    "ServiceName-C-005-C": {
       "Function": "Validation",
       "Reference": "ServiceName",
       "EntityType": "Column",
@@ -9231,7 +9113,7 @@
         "Dependencies": []
       }
     },
-    "ServiceName-C-006-M": {
+    "ServiceName-C-006-C": {
       "Function": "Validation",
       "Reference": "ServiceName",
       "EntityType": "Column",
@@ -9248,7 +9130,7 @@
         "Dependencies": []
       }
     },
-    "ServiceName-C-007-O": {
+    "ServiceName-C-007-C": {
       "Function": "Composite",
       "Reference": "ServiceName",
       "EntityType": "Column",
@@ -9265,23 +9147,23 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ServiceName-C-008-O"
+              "ConformanceRuleId": "ServiceName-C-008-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ServiceName-C-009-O"
+              "ConformanceRuleId": "ServiceName-C-009-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
           "ServiceSubcategory-C-000-O",
-          "ServiceName-C-008-O",
-          "ServiceName-C-009-O"
+          "ServiceName-C-008-C",
+          "ServiceName-C-009-C"
         ]
       }
     },
-    "ServiceName-C-008-O": {
+    "ServiceName-C-008-C": {
       "Function": "Validation",
       "Reference": "ServiceName",
       "EntityType": "Column",
@@ -9303,7 +9185,7 @@
         "Dependencies": []
       }
     },
-    "ServiceName-C-009-O": {
+    "ServiceName-C-009-C": {
       "Function": "Validation",
       "Reference": "ServiceName",
       "EntityType": "Column",
@@ -9528,19 +9410,19 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingCategory-C-008-M"
+              "ConformanceRuleId": "PricingCategory-C-008-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingCategory-C-009-M"
+              "ConformanceRuleId": "PricingCategory-C-009-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingCategory-C-010-M"
+              "ConformanceRuleId": "PricingCategory-C-010-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingCategory-C-011-M"
+              "ConformanceRuleId": "PricingCategory-C-011-C"
             }
           ]
         },
@@ -9551,10 +9433,10 @@
         },
         "Dependencies": [
           "PricingCategory-C-007-M",
-          "PricingCategory-C-008-M",
-          "PricingCategory-C-009-M",
-          "PricingCategory-C-010-M",
-          "PricingCategory-C-011-M"
+          "PricingCategory-C-008-C",
+          "PricingCategory-C-009-C",
+          "PricingCategory-C-010-C",
+          "PricingCategory-C-011-C"
         ]
       }
     },
@@ -9595,15 +9477,11 @@
             }
           ]
         },
-        "Condition": {
-          "CheckFunction": "CheckNotValue",
-          "ColumnName": "PricingCategory",
-          "Value": null
-        },
+        "Condition": {},
         "Dependencies": []
       }
     },
-    "PricingCategory-C-008-M": {
+    "PricingCategory-C-008-C": {
       "Function": "Validation",
       "Reference": "PricingCategory",
       "EntityType": "Column",
@@ -9624,7 +9502,7 @@
         "Dependencies": []
       }
     },
-    "PricingCategory-C-009-M": {
+    "PricingCategory-C-009-C": {
       "Function": "Validation",
       "Reference": "PricingCategory",
       "EntityType": "Column",
@@ -9637,15 +9515,11 @@
         "MustSatisfy": "PricingCategory MUST be \"Committed\" when the charge is subject to an existing commitment discount and is not the purchase of the commitment discount",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "CheckNotValue",
-          "ColumnName": "PricingCategory",
-          "Value": null
-        },
+        "Condition": {},
         "Dependencies": []
       }
     },
-    "PricingCategory-C-010-M": {
+    "PricingCategory-C-010-C": {
       "Function": "Validation",
       "Reference": "PricingCategory",
       "EntityType": "Column",
@@ -9658,15 +9532,11 @@
         "MustSatisfy": "PricingCategory MUST be \"Dynamic\" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "CheckNotValue",
-          "ColumnName": "PricingCategory",
-          "Value": null
-        },
+        "Condition": {},
         "Dependencies": []
       }
     },
-    "PricingCategory-C-011-M": {
+    "PricingCategory-C-011-C": {
       "Function": "Validation",
       "Reference": "PricingCategory",
       "EntityType": "Column",
@@ -9679,11 +9549,7 @@
         "MustSatisfy": "PricingCategory MUST be \"Other\" when there is a pricing model but none of the allowed values apply",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "CheckNotValue",
-          "ColumnName": "PricingCategory",
-          "Value": null
-        },
+        "Condition": {},
         "Dependencies": []
       }
     },
@@ -9714,11 +9580,11 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SubAccountName-C-003-M"
+              "ConformanceRuleId": "SubAccountName-C-003-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SubAccountName-C-004-M"
+              "ConformanceRuleId": "SubAccountName-C-004-C"
             }
           ]
         },
@@ -9727,8 +9593,8 @@
           "CostAndUsage-D-029-C",
           "SubAccountName-C-001-M",
           "SubAccountName-C-002-M",
-          "SubAccountName-C-003-M",
-          "SubAccountName-C-004-M"
+          "SubAccountName-C-003-C",
+          "SubAccountName-C-004-C"
         ]
       }
     },
@@ -9739,9 +9605,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "SUB_ACCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountName MUST be of type String",
@@ -9761,9 +9625,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "SUB_ACCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountName MUST conform to StringHandling requirements",
@@ -9776,16 +9638,14 @@
         "Dependencies": []
       }
     },
-    "SubAccountName-C-003-M": {
+    "SubAccountName-C-003-C": {
       "Function": "Nullability",
       "Reference": "SubAccountName",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "SUB_ACCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountName MUST be null when SubAccountId is null",
@@ -9805,16 +9665,14 @@
         ]
       }
     },
-    "SubAccountName-C-004-M": {
+    "SubAccountName-C-004-C": {
       "Function": "Nullability",
       "Reference": "SubAccountName",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "SUB_ACCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountName MUST NOT be null when SubAccountId is not null",
@@ -9861,7 +9719,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SubAccountType-C-003-M"
+              "ConformanceRuleId": "SubAccountType-C-003-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -9874,7 +9732,7 @@
           "CostAndUsage-D-064-C",
           "SubAccountType-C-001-M",
           "SubAccountType-C-002-M",
-          "SubAccountType-C-003-M",
+          "SubAccountType-C-003-C",
           "SubAccountType-C-006-M"
         ]
       }
@@ -9886,9 +9744,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountType MUST be of type String",
@@ -9908,9 +9764,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountType MUST conform to StringHandling requirements",
@@ -9923,16 +9777,14 @@
         "Dependencies": []
       }
     },
-    "SubAccountType-C-003-M": {
+    "SubAccountType-C-003-C": {
       "Function": "Composite",
       "Reference": "SubAccountType",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountType nullability is defined as follows:",
@@ -9942,31 +9794,29 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SubAccountType-C-004-M"
+              "ConformanceRuleId": "SubAccountType-C-004-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SubAccountType-C-005-M"
+              "ConformanceRuleId": "SubAccountType-C-005-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "SubAccountType-C-004-M",
-          "SubAccountType-C-005-M"
+          "SubAccountType-C-004-C",
+          "SubAccountType-C-005-C"
         ]
       }
     },
-    "SubAccountType-C-004-M": {
+    "SubAccountType-C-004-C": {
       "Function": "Nullability",
       "Reference": "SubAccountType",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountType MUST be null when SubAccountId is null",
@@ -9986,16 +9836,14 @@
         ]
       }
     },
-    "SubAccountType-C-005-M": {
+    "SubAccountType-C-005-C": {
       "Function": "Nullability",
       "Reference": "SubAccountType",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountType MUST NOT be null when SubAccountId is not null",
@@ -10022,9 +9870,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "SubAccountType MUST be a consistent, readable display value",
@@ -10034,7 +9880,7 @@
         "Dependencies": []
       }
     },
-    "AvailabilityZone-C-000-M": {
+    "AvailabilityZone-C-000-C": {
       "Function": "Composite",
       "Reference": "AvailabilityZone",
       "EntityType": "Column",
@@ -10061,7 +9907,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "AvailabilityZone-C-003-M"
+              "ConformanceRuleId": "AvailabilityZone-C-003-C"
             }
           ]
         },
@@ -10070,7 +9916,7 @@
           "CostAndUsage-D-003-C",
           "AvailabilityZone-C-001-M",
           "AvailabilityZone-C-002-M",
-          "AvailabilityZone-C-003-M"
+          "AvailabilityZone-C-003-C"
         ]
       }
     },
@@ -10114,7 +9960,7 @@
         "Dependencies": []
       }
     },
-    "AvailabilityZone-C-003-M": {
+    "AvailabilityZone-C-003-C": {
       "Function": "Nullability",
       "Reference": "AvailabilityZone",
       "EntityType": "Column",
@@ -10131,7 +9977,7 @@
         "Dependencies": []
       }
     },
-    "PricingCurrencyListUnitPrice-C-000-M": {
+    "PricingCurrencyListUnitPrice-C-000-C": {
       "Function": "Composite",
       "Reference": "PricingCurrencyListUnitPrice",
       "EntityType": "Column",
@@ -10183,9 +10029,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyListUnitPrice MUST be of type Decimal",
@@ -10205,9 +10049,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyListUnitPrice MUST conform to NumericFormat requirements",
@@ -10227,9 +10069,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyListUnitPrice nullability is defined as follows:",
@@ -10266,9 +10106,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyListUnitPrice MUST be null when ChargeCategory is 'Tax'",
@@ -10293,9 +10131,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
@@ -10340,9 +10176,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyListUnitPrice MAY be null in all other cases",
@@ -10359,9 +10193,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice adheres to the following additional requirements:",
@@ -10402,9 +10234,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyListUnitPrice MUST be a non-negative decimal value",
@@ -10414,11 +10244,7 @@
           "ColumnName": "PricingCurrencyListUnitPrice",
           "Value": 0
         },
-        "Condition": {
-          "CheckFunction": "CheckNotValue",
-          "ColumnName": "PricingCurrencyListUnitPrice",
-          "Value": null
-        },
+        "Condition": {},
         "Dependencies": []
       }
     },
@@ -10429,9 +10255,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency",
@@ -10448,9 +10272,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "Discrepancies in PricingCurrencyListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is 'Correction'",
@@ -10464,7 +10286,7 @@
         "Dependencies": []
       }
     },
-    "SkuPriceDetails-C-000-M": {
+    "SkuPriceDetails-C-000-C": {
       "Function": "Composite",
       "Reference": "SkuPriceDetails",
       "EntityType": "Column",
@@ -10496,7 +10318,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SkuPriceDetails-C-006-M"
+              "ConformanceRuleId": "SkuPriceDetails-C-006-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -10510,7 +10332,7 @@
           "SkuPriceDetails-C-001-M",
           "SkuPriceDetails-C-002-O",
           "SkuPriceDetails-C-003-C",
-          "SkuPriceDetails-C-006-M",
+          "SkuPriceDetails-C-006-C",
           "SkuPriceDetails-C-019-M"
         ]
       }
@@ -10634,7 +10456,7 @@
         "Dependencies": []
       }
     },
-    "SkuPriceDetails-C-006-M": {
+    "SkuPriceDetails-C-006-C": {
       "Function": "Composite",
       "Reference": "SkuPriceDetails",
       "EntityType": "Column",
@@ -11658,7 +11480,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CapacityReservationId-C-006-O"
+              "ConformanceRuleId": "CapacityReservationId-C-006-C"
             }
           ]
         },
@@ -11666,7 +11488,7 @@
         "Dependencies": [
           "CapacityReservationId-C-004-C",
           "CapacityReservationId-C-005-C",
-          "CapacityReservationId-C-006-O"
+          "CapacityReservationId-C-006-C"
         ]
       }
     },
@@ -11710,11 +11532,11 @@
           "Value": "Unused"
         },
         "Dependencies": [
-          "CapacityReservationStatus-C-000-M"
+          "CapacityReservationStatus-C-000-C"
         ]
       }
     },
-    "CapacityReservationId-C-006-O": {
+    "CapacityReservationId-C-006-C": {
       "Function": "Nullability",
       "Reference": "CapacityReservationId",
       "EntityType": "Column",
@@ -11833,7 +11655,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SkuPriceId-C-007-M"
+              "ConformanceRuleId": "SkuPriceId-C-007-C"
             }
           ]
         },
@@ -11843,7 +11665,7 @@
           "SkuPriceId-C-001-M",
           "SkuPriceId-C-002-M",
           "SkuPriceId-C-003-M",
-          "SkuPriceId-C-007-M"
+          "SkuPriceId-C-007-C"
         ]
       }
     },
@@ -11912,7 +11734,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SkuPriceId-C-006-C"
+              "ConformanceRuleId": "SkuPriceId-C-006-O"
             }
           ]
         },
@@ -11920,7 +11742,7 @@
         "Dependencies": [
           "SkuPriceId-C-004-C",
           "SkuPriceId-C-005-C",
-          "SkuPriceId-C-006-C"
+          "SkuPriceId-C-006-O"
         ]
       }
     },
@@ -11997,7 +11819,7 @@
         ]
       }
     },
-    "SkuPriceId-C-006-C": {
+    "SkuPriceId-C-006-O": {
       "Function": "Nullability",
       "Reference": "SkuPriceId",
       "EntityType": "Column",
@@ -12014,7 +11836,7 @@
         "Dependencies": []
       }
     },
-    "SkuPriceId-C-007-M": {
+    "SkuPriceId-C-007-C": {
       "Function": "Composite",
       "Reference": "SkuPriceId",
       "EntityType": "Column",
@@ -12212,7 +12034,9 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [],
+      "ApplicabilityCriteria": [
+        "PUBLIC_PRICE_LIST_SUPPORTED"
+      ],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "SkuPriceId MUST support the lookup of the ListUnitPrice when the provider publishes unit prices exclusive of discounts.",
@@ -12229,7 +12053,9 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [],
+      "ApplicabilityCriteria": [
+        "NEGOTIATED_PRICING_SUPPORTED"
+      ],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "SkuPriceId MUST support the verification of the given ContractedUnitPrice when the provider supports negotiated pricing concepts.",
@@ -13092,11 +12918,11 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ConsumedQuantity-C-003-M"
+              "ConformanceRuleId": "ConsumedQuantity-C-003-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ConsumedQuantity-C-008-M"
+              "ConformanceRuleId": "ConsumedQuantity-C-008-C"
             }
           ]
         },
@@ -13105,8 +12931,8 @@
           "CostAndUsage-D-011-C",
           "ConsumedQuantity-C-001-M",
           "ConsumedQuantity-C-002-M",
-          "ConsumedQuantity-C-003-M",
-          "ConsumedQuantity-C-008-M"
+          "ConsumedQuantity-C-003-C",
+          "ConsumedQuantity-C-008-C"
         ]
       }
     },
@@ -13117,9 +12943,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity MUST be of type Decimal",
@@ -13139,9 +12963,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity MUST conform to NumericFormat requirements",
@@ -13154,16 +12976,14 @@
         "Dependencies": []
       }
     },
-    "ConsumedQuantity-C-003-M": {
+    "ConsumedQuantity-C-003-C": {
       "Function": "Composite",
       "Reference": "ConsumedQuantity",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity nullability is defined as follows:",
@@ -13195,9 +13015,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not 'Usage', or when ChargeCategory is 'Usage' and CommitmentDiscountStatus is 'Unused'",
@@ -13242,9 +13060,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When ChargeCategory is 'Usage' and CommitmentDiscountStatus is not 'Unused', ConsumedQuantity adheres to the following additional requirements:",
@@ -13290,9 +13106,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity MUST NOT be null when ChargeClass is not 'Correction'",
@@ -13317,9 +13131,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is 'Correction'",
@@ -13337,16 +13149,14 @@
         "Dependencies": []
       }
     },
-    "ConsumedQuantity-C-008-M": {
+    "ConsumedQuantity-C-008-C": {
       "Function": "Validation",
       "Reference": "ConsumedQuantity",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedQuantity MUST be a valid decimal value when not null",
@@ -13412,9 +13222,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrency MUST be of type String",
@@ -13434,9 +13242,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrency MUST conform to StringHandling requirements",
@@ -13456,9 +13262,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrency MUST conform to CurrencyFormat requirements",
@@ -13478,9 +13282,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "PricingCurrency MUST NOT be null",
@@ -13523,7 +13325,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "BilledCost-C-004-M"
+              "ConformanceRuleId": "BilledCost-C-004-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -13541,7 +13343,7 @@
           "BilledCost-C-001-M",
           "BilledCost-C-002-M",
           "BilledCost-C-003-M",
-          "BilledCost-C-004-M",
+          "BilledCost-C-004-C",
           "BilledCost-C-005-M",
           "BilledCost-C-006-M"
         ]
@@ -13608,7 +13410,7 @@
         "Dependencies": []
       }
     },
-    "BilledCost-C-004-M": {
+    "BilledCost-C-004-C": {
       "Function": "Validation",
       "Reference": "BilledCost",
       "EntityType": "Column",
@@ -13791,7 +13593,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "SkuId-C-006-C"
+              "ConformanceRuleId": "SkuId-C-006-O"
             }
           ]
         },
@@ -13799,7 +13601,7 @@
         "Dependencies": [
           "SkuId-C-004-C",
           "SkuId-C-005-C",
-          "SkuId-C-006-C"
+          "SkuId-C-006-O"
         ]
       }
     },
@@ -13873,7 +13675,7 @@
         "Dependencies": []
       }
     },
-    "SkuId-C-006-C": {
+    "SkuId-C-006-O": {
       "Function": "Nullability",
       "Reference": "SkuId",
       "EntityType": "Column",
@@ -14026,7 +13828,7 @@
         "Dependencies": []
       }
     },
-    "SkuMeter-C-000-O": {
+    "SkuMeter-C-000-C": {
       "Function": "Composite",
       "Reference": "SkuMeter",
       "EntityType": "Column",
@@ -14562,7 +14364,7 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-007-C",
+          "CostAndUsage-D-007-M",
           "BillingAccountType-C-001-M",
           "BillingAccountType-C-002-M",
           "BillingAccountType-C-003-C",
@@ -14627,22 +14429,22 @@
           "Items": [
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "BillingAccountType-C-004-M"
+              "ConformanceRuleId": "BillingAccountType-C-004-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "BillingAccountType-C-005-M"
+              "ConformanceRuleId": "BillingAccountType-C-005-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "BillingAccountType-C-004-M",
-          "BillingAccountType-C-005-M"
+          "BillingAccountType-C-004-C",
+          "BillingAccountType-C-005-C"
         ]
       }
     },
-    "BillingAccountType-C-004-M": {
+    "BillingAccountType-C-004-C": {
       "Function": "Nullability",
       "Reference": "BillingAccountType",
       "EntityType": "Column",
@@ -14667,7 +14469,7 @@
         "Dependencies": []
       }
     },
-    "BillingAccountType-C-005-M": {
+    "BillingAccountType-C-005-C": {
       "Function": "Nullability",
       "Reference": "BillingAccountType",
       "EntityType": "Column",
@@ -14810,7 +14612,7 @@
         "Dependencies": []
       }
     },
-    "CommitmentDiscountType-C-000-M": {
+    "CommitmentDiscountType-C-000-C": {
       "Function": "Composite",
       "Reference": "CommitmentDiscountType",
       "EntityType": "Column",
@@ -14837,16 +14639,16 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountType-C-003-M"
+              "ConformanceRuleId": "CommitmentDiscountType-C-003-C"
             }
           ]
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-014-M",
+          "CostAndUsage-D-014-C",
           "CommitmentDiscountType-C-001-M",
           "CommitmentDiscountType-C-002-M",
-          "CommitmentDiscountType-C-003-M"
+          "CommitmentDiscountType-C-003-C"
         ]
       }
     },
@@ -14857,9 +14659,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountType MUST be of type String.",
@@ -14879,9 +14679,7 @@
       "Notes": "Cross-column reference: StringHandling",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountType MUST conform to StringHandling requirements.",
@@ -14894,16 +14692,14 @@
         "Dependencies": []
       }
     },
-    "CommitmentDiscountType-C-003-M": {
+    "CommitmentDiscountType-C-003-C": {
       "Function": "Composite",
       "Reference": "CommitmentDiscountType",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountType nullability is defined as follows:",
@@ -14935,9 +14731,7 @@
       "Notes": "Cross-column reference: CommitmentDiscountId",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountType MUST be null when CommitmentDiscountId is null.",
@@ -14964,9 +14758,7 @@
       "Notes": "Cross-column reference: CommitmentDiscountId",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.",
@@ -15129,7 +14921,7 @@
         "Dependencies": []
       }
     },
-    "CapacityReservationStatus-C-000-M": {
+    "CapacityReservationStatus-C-000-C": {
       "Function": "Composite",
       "Reference": "CapacityReservationStatus",
       "EntityType": "Column",
@@ -15176,9 +14968,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "Notes": "",
-      "ApplicabilityCriteria": [
-        "CAPACITY_RESERVATION_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CapacityReservationStatus MUST be of type String.",
@@ -15198,9 +14988,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "Notes": "",
-      "ApplicabilityCriteria": [
-        "CAPACITY_RESERVATION_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CapacityReservationStatus nullability is defined as follows:",
@@ -15229,9 +15017,7 @@
       "Function": "Nullability",
       "Reference": "CapacityReservationStatus",
       "EntityType": "Column",
-      "ApplicabilityCriteria": [
-        "CAPACITY_RESERVATION_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CapacityReservationStatus MUST be null when CapacityReservationId is null.",
@@ -15254,7 +15040,7 @@
       },
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "Notes": "Cross-column reference: CapacityReservationId"
+      "Notes": ""
     },
     "CapacityReservationStatus-C-004-C": {
       "Function": "Nullability",
@@ -15263,9 +15049,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "Notes": "",
-      "ApplicabilityCriteria": [
-        "CAPACITY_RESERVATION_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and ChargeCategory is \"Usage\".",
@@ -15302,9 +15086,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "Notes": "",
-      "ApplicabilityCriteria": [
-        "CAPACITY_RESERVATION_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When CapacityReservationStatus is not null, CapacityReservationStatus adheres to the following additional requirements:",
@@ -15345,9 +15127,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "Notes": "",
-      "ApplicabilityCriteria": [
-        "CAPACITY_RESERVATION_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CapacityReservationStatus MUST be one of the allowed values.",
@@ -15367,11 +15147,7 @@
             }
           ]
         },
-        "Condition": {
-          "CheckFunction": "CheckNotValue",
-          "ColumnName": "CapacityReservationStatus",
-          "Value": null
-        },
+        "Condition": {},
         "Dependencies": []
       }
     },
@@ -15382,9 +15158,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "Notes": "",
-      "ApplicabilityCriteria": [
-        "CAPACITY_RESERVATION_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CapacityReservationStatus MUST be \"Unused\" when the charge represents the unused portion of a capacity reservation.",
@@ -15401,9 +15175,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "Notes": "",
-      "ApplicabilityCriteria": [
-        "CAPACITY_RESERVATION_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CapacityReservationStatus MUST be \"Used\" when the charge represents the used portion of a capacity reservation.",
@@ -15891,7 +15663,7 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-018-M",
+          "CostAndUsage-D-018-C",
           "CommitmentDiscountQuantity-C-001-M",
           "CommitmentDiscountQuantity-C-002-M",
           "CommitmentDiscountQuantity-C-003-M",
@@ -15907,9 +15679,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MUST be of type Decimal",
@@ -15929,9 +15699,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MUST conform to NumericFormat requirements",
@@ -15951,19 +15719,13 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MUST be a valid decimal value",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "CheckNotValue",
-          "ColumnName": "CommitmentDiscountQuantity",
-          "Value": null
-        },
+        "Condition": {},
         "Dependencies": []
       }
     },
@@ -15974,9 +15736,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity nullability is defined as follows:",
@@ -16008,9 +15768,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When ChargeCategory is 'Usage' or 'Purchase' and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
@@ -16066,9 +15824,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not 'Correction'",
@@ -16118,9 +15874,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MAY be null when ChargeClass is 'Correction'",
@@ -16145,9 +15899,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MUST be null in all other cases",
@@ -16197,9 +15949,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
@@ -16235,9 +15985,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When ChargeCategory is 'Purchase' adheres to the following additional requirements:",
@@ -16273,9 +16021,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the commitment discount's term when ChargeFrequency is 'One-Time'",
@@ -16306,9 +16052,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each charge period that corresponds with the purchase when ChargeFrequency is 'Recurring'",
@@ -16339,9 +16083,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When ChargeCategory is 'Usage' adheres to the following additional requirements:",
@@ -16377,9 +16119,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given charge period when CommitmentDiscountStatus is 'Used'",
@@ -16410,9 +16150,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given charge period when CommitmentDiscountStatus is 'Unused'",
@@ -16844,10 +16582,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceId MUST conform to StringHandling requirements.",
@@ -16867,10 +16602,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceId nullability is defined as follows:",
@@ -16902,10 +16634,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceId MUST be null when a charge is not related to a resource.",
@@ -16922,10 +16651,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceId MUST NOT be null when a charge is related to a resource.",
@@ -16942,10 +16668,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When ResourceId is not null, ResourceId adheres to the following additional requirements:",
@@ -16981,20 +16704,13 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceId MUST be a unique identifier within the provider.",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "CheckNotValue",
-          "CheckCondition": "ResourceId",
-          "Value": null
-        },
+        "Condition": {},
         "Dependencies": []
       }
     },
@@ -17005,10 +16721,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "ResourceId SHOULD be a fully-qualified identifier.",
@@ -17018,7 +16731,7 @@
         "Dependencies": []
       }
     },
-    "BillingAccountName-C-000-C": {
+    "BillingAccountName-C-000-M": {
       "Function": "Composite",
       "Reference": "BillingAccountName",
       "EntityType": "Column",
@@ -17150,11 +16863,11 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ConsumedUnit-C-004-M"
+              "ConformanceRuleId": "ConsumedUnit-C-004-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "ConsumedUnit-C-005-M"
+              "ConformanceRuleId": "ConsumedUnit-C-005-C"
             }
           ]
         },
@@ -17164,8 +16877,8 @@
           "ConsumedUnit-C-001-M",
           "ConsumedUnit-C-002-M",
           "ConsumedUnit-C-003-O",
-          "ConsumedUnit-C-004-M",
-          "ConsumedUnit-C-005-M"
+          "ConsumedUnit-C-004-C",
+          "ConsumedUnit-C-005-C"
         ]
       }
     },
@@ -17176,9 +16889,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedUnit MUST be of type String",
@@ -17198,9 +16909,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedUnit MUST conform to StringHandling requirements",
@@ -17220,9 +16929,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedUnit SHOULD conform to UnitFormat requirements",
@@ -17235,16 +16942,14 @@
         "Dependencies": []
       }
     },
-    "ConsumedUnit-C-004-M": {
+    "ConsumedUnit-C-004-C": {
       "Function": "Nullability",
       "Reference": "ConsumedUnit",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedUnit MUST be null when ConsumedQuantity is null",
@@ -17264,16 +16969,14 @@
         ]
       }
     },
-    "ConsumedUnit-C-005-M": {
+    "ConsumedUnit-C-005-C": {
       "Function": "Nullability",
       "Reference": "ConsumedUnit",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "ConsumedUnit MUST NOT be null when ConsumedQuantity is not null",
@@ -17399,7 +17102,9 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [],
+      "ApplicabilityCriteria": [
+        "COMMITMENT_DISCOUNT_SUPPORTED"
+      ],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountStatus column adheres to the following requirements:",
@@ -17423,7 +17128,7 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-017-M",
+          "CostAndUsage-D-017-C",
           "CommitmentDiscountStatus-C-001-M",
           "CommitmentDiscountStatus-C-002-M",
           "CommitmentDiscountStatus-C-003-M"
@@ -17437,9 +17142,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "MUST be of type String",
@@ -17459,9 +17162,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "MUST not be null",
@@ -17484,9 +17185,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "MUST be one of the allowed values",
@@ -17515,7 +17214,7 @@
         "Dependencies": []
       }
     },
-    "CommitmentDiscountUnit-C-000-M": {
+    "CommitmentDiscountUnit-C-000-C": {
       "Function": "Composite",
       "Reference": "CommitmentDiscountUnit",
       "EntityType": "Column",
@@ -17546,7 +17245,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountUnit-C-004-O"
+              "ConformanceRuleId": "CommitmentDiscountUnit-C-004-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -17556,11 +17255,11 @@
         },
         "Condition": {},
         "Dependencies": [
-          "CostAndUsage-D-015-M",
+          "CostAndUsage-D-015-C",
           "CommitmentDiscountUnit-C-001-M",
           "CommitmentDiscountUnit-C-002-M",
           "CommitmentDiscountUnit-C-003-M",
-          "CommitmentDiscountUnit-C-004-O",
+          "CommitmentDiscountUnit-C-004-C",
           "CommitmentDiscountUnit-C-007-C"
         ]
       }
@@ -17572,9 +17271,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountUnit MUST be of type String.",
@@ -17594,9 +17291,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountUnit MUST conform to StringHandling requirements.",
@@ -17616,9 +17311,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountUnit SHOULD conform to UnitFormat requirements.",
@@ -17631,16 +17324,14 @@
         "Dependencies": []
       }
     },
-    "CommitmentDiscountUnit-C-004-O": {
+    "CommitmentDiscountUnit-C-004-C": {
       "Function": "Composite",
       "Reference": "CommitmentDiscountUnit",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountUnit nullability is defined as follows:",
@@ -17672,9 +17363,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountUnit MUST be null when CommitmentDiscountQuantity is null.",
@@ -17701,9 +17390,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountQuantity is not null.",
@@ -17730,9 +17417,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
         "MustSatisfy": "When CommitmentDiscountUnit is not null, CommitmentDiscountUnit adheres to the following additional requirements:",
@@ -17746,7 +17431,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "CommitmentDiscountUnit-C-009-C"
+              "ConformanceRuleId": "CommitmentDiscountUnit-C-009-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
@@ -17761,7 +17446,7 @@
         },
         "Dependencies": [
           "CommitmentDiscountUnit-C-008-M",
-          "CommitmentDiscountUnit-C-009-C",
+          "CommitmentDiscountUnit-C-009-M",
           "CommitmentDiscountUnit-C-010-C"
         ]
       }
@@ -17773,9 +17458,7 @@
       "Notes": "Mirrors cross-column dependency on CommitmentDiscountId",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.",
@@ -17785,16 +17468,14 @@
         "Dependencies": []
       }
     },
-    "CommitmentDiscountUnit-C-009-C": {
+    "CommitmentDiscountUnit-C-009-M": {
       "Function": "Validation",
       "Reference": "CommitmentDiscountUnit",
       "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "CommitmentDiscountUnit MUST represent the unit used to measure the commitment discount.",
@@ -17811,9 +17492,7 @@
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
-      "ApplicabilityCriteria": [
-        "COMMITMENT_DISCOUNT_SUPPORTED"
-      ],
+      "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
         "MustSatisfy": "When accounting for commitment discount flexibility, the CommitmentDiscountUnit value SHOULD reflect this consideration.",
@@ -17852,11 +17531,11 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingUnit-C-004-M"
+              "ConformanceRuleId": "PricingUnit-C-004-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingUnit-C-007-M"
+              "ConformanceRuleId": "PricingUnit-C-007-C"
             }
           ]
         },
@@ -17866,8 +17545,8 @@
           "PricingUnit-C-001-M",
           "PricingUnit-C-002-M",
           "PricingUnit-C-003-O",
-          "PricingUnit-C-004-M",
-          "PricingUnit-C-007-M"
+          "PricingUnit-C-004-C",
+          "PricingUnit-C-007-C"
         ]
       }
     },
@@ -17931,7 +17610,7 @@
         "Dependencies": []
       }
     },
-    "PricingUnit-C-004-M": {
+    "PricingUnit-C-004-C": {
       "Function": "Composite",
       "Reference": "PricingUnit",
       "EntityType": "Column",
@@ -18013,7 +17692,7 @@
         "Dependencies": []
       }
     },
-    "PricingUnit-C-007-M": {
+    "PricingUnit-C-007-C": {
       "Function": "Composite",
       "Reference": "PricingUnit",
       "EntityType": "Column",
@@ -18034,7 +17713,7 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "PricingUnit-C-009-M"
+              "ConformanceRuleId": "PricingUnit-C-009-C"
             }
           ]
         },
@@ -18045,7 +17724,7 @@
         },
         "Dependencies": [
           "PricingUnit-C-008-M",
-          "PricingUnit-C-009-M"
+          "PricingUnit-C-009-C"
         ]
       }
     },
@@ -18066,7 +17745,7 @@
         "Dependencies": []
       }
     },
-    "PricingUnit-C-009-M": {
+    "PricingUnit-C-009-C": {
       "Function": "Validation",
       "Reference": "PricingUnit",
       "EntityType": "Column",
