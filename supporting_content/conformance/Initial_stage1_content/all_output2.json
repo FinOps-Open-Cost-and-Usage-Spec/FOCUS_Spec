@@ -3034,7 +3034,7 @@
       "Entity": "Column"},
     {
       "CRID": "BillingCurrency-C-003-M",
-      "Function": "Validation",
+      "Function": "Format",
       "Reference": "Billing Currency",
       "Keyword": "MUST",
       "ApplicabilityCriteria": "All Rows",
@@ -3048,7 +3048,7 @@
       "Entity": "Column"},
     {
       "CRID": "BillingCurrency-C-004-M",
-      "Function": "Validation",
+      "Function": "Format",
       "Reference": "Billing Currency",
       "Keyword": "MUST",
       "ApplicabilityCriteria": "All Rows",
