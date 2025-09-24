@@ -4091,7 +4091,7 @@
       "Keyword": "—",
       "ApplicabilityCriteria": "All Rows",
       "Condition": "All Rows",
-      "MustSatisfy": "All ChargePeriodStart rules MUST be enforced",
+      "MustSatisfy": "The ChargePeriodStart column adheres to the following requirements:",
       "Requirement": "AND(ChargePeriodStart-D-001-M, ChargePeriodStart-C-002-M, ChargePeriodStart-C-003-M, ChargePeriodStart-C-004-M, ChargePeriodStart-C-005-M)",
       "Type": "static",
       "CRVersionIntroduced": "1.2",
