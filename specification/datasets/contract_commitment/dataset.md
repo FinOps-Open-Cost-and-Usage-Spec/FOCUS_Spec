@@ -6,6 +6,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 
 | Column                                                             | Column Type | Feature Level | Allows Nulls | Data Type | Value Format            |
 | ------------------------------------------------------------------ | ----------- | ------------- | ------------ | --------- | ----------------------- |
+| [Billing Currency](#billingcurrency-1)                             | Dimension   | Mandatory     | True         | String    | Currency Format         |
 | [Contract Commitment ID](#contractcommitmentid-1)                  | Dimension   | Mandatory     | False        | String    | \<not specified>       |
 | [Contract ID](#contractid-1)                                       | Dimension   | Mandatory     | False        | String    | \<not specified>       |
 | [Contract Period Start](#contractperiodstart)                      | Dimension   | Mandatory     | False        | Date/Time | Date/Time Format        |
@@ -17,7 +18,6 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Category](#contractcommitmentcategory)        | Dimension   | Mandatory     | False        | String    | Allowed Values          |
 | [Contract Commitment Unit](#contractcommitmentunit)                | Dimension   | Mandatory     | True         | String    | \<not specified>       |
 | [Contract Commitment Quantity](#contractcommitmentquantity)        | Metric      | Mandatory     | True         | Numeric   | Any valid decimal value |
-| [Billing Currency](#billingcurrency-1)                             | Dimension   | Mandatory     | True         | String    | Currency Format         |
 | [Contract Commitment Cost](#contractcommitmentcost)                | Metric      | Mandatory     | True         | Numeric   | Any valid decimal value |
 
 <div class='h4-nonindex'>Relationships</div>

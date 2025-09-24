@@ -8,8 +8,8 @@ The ContractCommitmentQuantity column adheres to the following requirements:
 * ContractCommitmentQuantity MUST be of type Decimal.
 * ContractCommitmentQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractCommitmentQuantity nullability is defined as follows:
-  * ContractCommitmentQuantity MUST NOT be null when ContractCommitmentCost is null.
-  * ContractCommitmentQuantity MAY be null when ContractCommitmentCost is not null.
+  * ContractCommitmentQuantity MUST NOT be null when [ContractCommitmentCategory](#contractcommitmentcategory) is "Usage".
+  * ContractCommitmentQuantity MAY be null when ContractCommitmentCategory is "Spend".
 * ContractCommitmentQuantity MUST be a valid decimal value.
 
 ## Column ID

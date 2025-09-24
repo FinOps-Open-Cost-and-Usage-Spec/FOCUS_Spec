@@ -8,8 +8,8 @@ The ContractCommitmentCost column adheres to the following requirements:
 * ContractCommitmentCost MUST be of type Decimal.
 * ContractCommitmentCost MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractCommitmentCost nullability is defined as follows:
-  * ContractCommitmentCost MUST NOT be null when ContractCommitmentQuantity is null.
-  * ContractCommitmentCost MAY be null when ContractCommitmentQuantity is not null.
+  * ContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#contractcommitmentcategory) is "Spend".
+  * ContractCommitmentCost MAY be null when ContractCommitmentCategory is "Usage".
 * ContractCommitmentCost MUST be a valid decimal value.
 * ContractCommitmentCost MUST be denominated in the [BillingCurrency](#billingcurrency-1).
 

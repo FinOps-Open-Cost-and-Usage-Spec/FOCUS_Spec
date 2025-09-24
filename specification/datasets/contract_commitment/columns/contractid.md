@@ -7,9 +7,7 @@ The ContractId column adheres to the following requirements:
 * ContractId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractId MUST be of type String.
 * ContractId MUST conform to [StringHandling](#stringhandling) requirements.
-* ContractId nullability is defined as follows:
-  * ContractId MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
-  * ContractId MUST NOT be null when a *charge* is related to a *contract commitment*.
+* ContractId MUST NOT be null.
 * When ContractId is not null, ContractId adheres to the following additional requirements:
   * ContractId MUST be a unique identifier within the provider.
   * ContractId SHOULD be a fully-qualified identifier.
