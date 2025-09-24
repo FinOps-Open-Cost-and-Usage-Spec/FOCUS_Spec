@@ -22,7 +22,7 @@ Allocated Resource Name
 
 ## Description
 
-The Allocated Resource Name is a display name which cost is being allocated to in a provider-calculated split cost allocation.
+The display name of the object to which cost is allocated in provider-calculated split cost allocation.
 
 ## Content Constraints
 

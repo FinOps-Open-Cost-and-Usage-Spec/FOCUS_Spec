@@ -45,7 +45,7 @@ Allocated Tags
 
 ## Description
 
-The Allocated Tags column represents the set of tags assigned to tag sources which are specifically applicable to *allocated charges* that have been calculated and allocated by the provider.
+A set of tags assigned to tag sources that are applicable to *allocated charges* in provider-defined split cost allocation.
 
 ## Content Constraints
 

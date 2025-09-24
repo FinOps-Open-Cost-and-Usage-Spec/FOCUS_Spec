@@ -210,7 +210,7 @@ Allocated Method Details
 
 ## Description
 
-Allocated Method Details provides information about how resources are allocated when using split cost allocation.
+A set of properties describing how resources are allocated in provider-defined split cost allocation.
 
 ## Content Constraints
 

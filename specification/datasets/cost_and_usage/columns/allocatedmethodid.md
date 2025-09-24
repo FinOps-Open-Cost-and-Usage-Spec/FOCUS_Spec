@@ -22,7 +22,7 @@ Allocated Method ID
 
 ## Description
 
-Allocated Method ID is the unique identifier for the method defined by the provider which was used to calculate the provider-calculated split cost allocation.
+A unique identifier defining the method of provider-calculated split cost allocation.
 
 ## Content constraints
 

@@ -25,7 +25,7 @@ Allocated Resource ID
 
 ## Description
 
-Identifier assigned by the provider which cost will be allocated to in a provider-calculated split cost allocation.
+The identifier of the object to which cost is allocated in provider-calculated split cost allocation.
 
 ## Content Constraints
 
