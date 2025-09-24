@@ -6598,7 +6598,7 @@
       "Entity": "Column"},
     {
       "CRID": "BillingAccountType-C-003-M",
-      "Function": "Validation",
+      "Function": "Format",
       "Reference": "Billing Account Type",
       "Keyword": "MUST",
       "ApplicabilityCriteria": "All Rows",
