@@ -5760,7 +5760,7 @@
       "CRID": "BilledCost-C-005-M",
       "Function": "NullabilityRules",
       "Reference": "Billed Cost",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "ApplicabilityCriteria": "All Rows",
       "Condition": "All Rows",
       "MustSatisfy": "BilledCost MUST NOT be null.",
