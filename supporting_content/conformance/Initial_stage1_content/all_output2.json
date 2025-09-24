@@ -8729,7 +8729,7 @@
       "CRID": "AvailabilityZone-D-001-C",
       "Function": "Presence",
       "Reference": "Availability Zone",
-      "Keyword": "SHOULD",
+      "Keyword": "RECOMMENDED",
       "ApplicabilityCriteria": "Provider supports deploying resources or services within an availability zone",
       "Condition": "All Rows",
       "MustSatisfy": "AvailabilityZone is RECOMMENDED to be present in a FOCUS dataset when the provider supports deploying resources or services within an availability zone.",
