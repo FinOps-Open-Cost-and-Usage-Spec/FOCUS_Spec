@@ -1,6 +1,6 @@
 # Data Generator
 
-Human-readable name of the entity responsible for producing the FOCUS dataset, typically based on data provided by the [*Service Provider*](#serviceprovider). The Data Generator ensures the technical accuracy and delivery of the data.
+Human-readable name of the entity that generated the dataset instance, typically based on data provided by the [*Service Provider*](#serviceprovider). The Data Generator ensures the technical accuracy and delivery of the data.
 
 The DataGenerator MUST be provided in the metadata. DataGenerator MUST be of type String and MUST NOT be null. The DataGenerator SHOULD be easily associated with the provider who generated the [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
