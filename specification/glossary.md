@@ -72,6 +72,10 @@ A charge to correct cost or usage data in a previously invoiced [*billing period
 
 A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
 
+<a name="glossary:dimension"><b>Dataset Instance</b></a>
+
+A specific occurrence of a dataset provided by a data generator. This is distinct from a FOCUS dataset. A datagenerator may provide multiple dataset instances of the same FOCUS dataset, each with different properties such as time granularity or differing custom column inclusions.  
+
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
