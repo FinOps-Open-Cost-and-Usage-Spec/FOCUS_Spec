@@ -6559,7 +6559,7 @@
       "Keyword": "—",
       "ApplicabilityCriteria": "Provider supports more than one possible BillingAccountType value",
       "Condition": "All Rows",
-      "MustSatisfy": "—",
+      "MustSatisfy": "The BillingAccountType column adheres to the following requirements:",
       "Requirement": "AND(BillingAccountType-D-001-C, BillingAccountType-C-002-M, BillingAccountType-C-003-M, BillingAccountType-C-004-C, BillingAccountType-C-007-M)",
       "Type": "static",
       "CRVersionIntroduced": "1.2",
