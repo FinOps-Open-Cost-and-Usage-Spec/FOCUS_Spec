@@ -203,6 +203,14 @@ Ensures suffix semantics align with scope and intent.
 
 *Description*: Ensures all *-C-000-* Column rules depend on at least one -D- Dataset rule. If the Dataset dep is Presence, its Reference must match the Column’s. For Composite Datasets, all nested -D- rules must also share the same Reference. Guarantees column base rules are anchored to dataset presence definitions.
 
+### Other Tests
+
+#### test_mustsatisfy_ends_with_colon_or_period
+
+*Purpose*: Validate MustSatisfy punctuation.
+
+*Description*: Ensures all MustSatisfy lines end with either a '.' or ':'
+
 ### Summary Table
 
 | Test File                                                | Purpose                                | Description                                                                                                                                                     |
@@ -238,3 +246,4 @@ Ensures suffix semantics align with scope and intent.
 | **test\_formatattributes\_ruleids\_exist.py**            | Validate FormatAttributes              | Ensures IDs listed in `CheckFunctions.FormatAttributes` exist in `ConformanceRules`.                                                                            |
 | **test\_unused\_checkfunctions.py**                      | Eliminate unused CheckFunctions        | Ensures every defined CheckFunction is used at least once.                                                                                                      |
 | **test\_c000\_d\_deps\_presence\_reference.py**          | Validate Column-000 dependencies       | Ensures all `*-C-000-*` rules depend on at least one `-D-` rule; if Presence, the `Reference` must match. Composite D rules must also share the same reference. |
+| **test_mustsatisfy_ends_with_colon_or_period.py**.       | Validate MustSatisfy punctuation       | Ensures all MustSatisfy lines end with `.` or `:`. |
