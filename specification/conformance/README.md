@@ -9,6 +9,7 @@ This document outlines a structured approach to converting verbose technical req
 The project is divided into three main stages, each with a defined scope and estimated effort:
 
 ### Stage 1 – Extract Conformance Requirements from FOCUS v1.2  
+
 **Estimated Effort: 40% of total project time**
 
 This foundational stage involves analyzing the **FOCUS v1.2** Technical Specification to extract **atomic** and **composite** conformance rules for each dataset column. These are captured in standardized Markdown tables that define logic, applicability, conditions, and dependencies.
@@ -16,6 +17,7 @@ This foundational stage involves analyzing the **FOCUS v1.2** Technical Specific
 The current output for **Stage 1** is **AI-assisted**, with over 85% of rules estimated to be valid. However, member review is critical, as the text of some requirements are complex to formalize in a prompt. The quality and accuracy of this stage directly impact the success of subsequent stages, especially JSON generation and dependency modeling.
 
 ### Stage 2 – Convert Extracted Rules into JSON Format  
+
 **Estimated Effort: 35% of total project time**
 
 This stage translates the structured conformance tables from **Stage 1** into a machine-readable JSON format. Each rule is converted into a defined JSON structure, validated against a shared schema. The conversion process can be largely automated by copying and adapting predefined JSON templates, which are repeated per column.
@@ -23,6 +25,7 @@ This stage translates the structured conformance tables from **Stage 1** into a 
 The JSON output enables programmatic validation and integration into testing workflows, making it a crucial bridge between human-readable requirements and conformance tooling.
 
 ### Stage 3 – Model Dependencies Between CRIDs  
+
 **Estimated Effort: 25% of total project time**
 
 This stage focuses on interpreting the `Requirement` field of each **CRID** to explicitly map dependencies to other **CRIDs** using logical structures such as `AND`, `OR`, and `NOT`. The output is used to construct a dependency graph for each column, enabling accurate validation of composite rules.
@@ -90,6 +93,11 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 - `ListUnitPrice:MCF` → All mandatory column features for `ListUnitPrice`
 - `FOCUS:MCF` → All mandatory column features across the entire specification
 
+### Group Reference Formats
+
+- `ArtifactName:FeatureType` — e.g. `ListUnitPrice:MCF`
+- `FOCUS:FeatureType` — e.g. `FOCUS:OCF`
+
 ---
 
 ## 🧾 CR Expression Format
@@ -108,11 +116,6 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 | `ArtifactType`  | `C` (Column), `A` (Attribute), `D` (Dataset) |
 | `NumericId`     | Sequence ID (e.g. 001)                       |
 | `ArtifactStatus`| `M`, `O`, or `C`                             |
-
-### Group Reference Formats
-
-- `ArtifactName:FeatureType` — e.g. `ListUnitPrice:MCF`
-- `FOCUS:FeatureType` — e.g. `FOCUS:OCF`
 
 ---
 
