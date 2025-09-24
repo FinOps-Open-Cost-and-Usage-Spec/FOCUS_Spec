@@ -27,7 +27,9 @@
       "Condition": {},
       "Dependencies": [
         "CostAndUsage-D-001-M",
-        "CostAndUsage-D-002-M"
+        "CostAndUsage-D-002-M",
+        "DiscountHandling-A-000-C",
+        "NullHandling-A-000-M"
       ]
     }
   },

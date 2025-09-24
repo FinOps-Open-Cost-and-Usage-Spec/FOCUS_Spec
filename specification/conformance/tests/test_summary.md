@@ -100,6 +100,12 @@ This report documents the suite of automated tests validating the ConformanceRul
 
 *Description*: Finds rules not referenced by other rules or datasets. Allows exceptions for deprecated rules, base rules (-D-000-*), and specific column-to-dataset dependencies. Ensures no “dead” rules remain active.
 
+#### test_orphan_attributes.py
+
+*Purpose*: Detect orphaned attributes.
+
+*Description*: Finds attributes not referenced by other check functions, rules or datasets. Allows exceptions for deprecated rules. Ensures no “dead” attributes remain active.
+
 ### Suffix, Scope & Keyword Alignment
 
 #### test_suffix_by_keyword_and_scope.py
@@ -216,6 +222,9 @@ Ensures suffix semantics align with scope and intent.
 | **test\_no\_duplicate\_checkconformancerule\_items.py**  | Prevent duplicate Items                | Ensures Composite `AND/OR` lists don’t include the same `CheckConformanceRule` twice.                                                                           |
 | **test\_datasets\_rules\_exist.py**                      | Validate dataset references            | Ensures all rule IDs listed in `ConformanceDatasets` are present in `ConformanceRules`.                                                                         |
 | **test\_orphan\_rules.py**                               | Detect orphaned rules                  | Flags rules not referenced elsewhere, allowing exceptions for deprecations and base rules.                                                                      |
+
+| **test\_orphan\_attributes.py**                           | Detect orphaned attributes            | Flags attributes not referenced elsewhere, allowing exceptions for deprecations.                                                                      |
+
 | **test\_suffix\_by\_keyword\_and\_scope.py**             | Enforce suffix rules                   | Applies unified precedence: scope ⇒ `-C`; otherwise, MUST ⇒ `-M`, MAY/RECOMMENDED ⇒ `-O`, with Composite dependency logic.                                      |
 | **test\_keyword\_in\_mustsatisfy.py**                    | Keyword must match text                | Ensures `Keyword` (MUST, SHOULD, RECOMMENDED) is explicitly in `MustSatisfy` without false matches (e.g., “MUST NOT” ≠ “MUST”).                                 |
 | **test\_provider\_supports\_requires\_applicability.py** | Require applicability                  | Rules mentioning “provider supports” must include explicit `ApplicabilityCriteria`.                                                                             |
