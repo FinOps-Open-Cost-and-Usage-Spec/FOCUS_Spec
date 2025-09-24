@@ -26,9 +26,9 @@
 !INCLUDE "contractedcost.md",1
 !INCLUDE "contractedunitprice.md",1
 !INCLUDE "effectivecost.md",1
-!INCLUDE "hostprovider.md",1
+!INCLUDE "hostprovidername.md",1
 !INCLUDE "invoiceid.md",1
-!INCLUDE "invoiceissuer.md",1
+!INCLUDE "invoiceissuername.md",1
 !INCLUDE "listcost.md",1
 !INCLUDE "listunitprice.md",1
 !INCLUDE "pricingcategory.md",1
@@ -38,13 +38,13 @@
 !INCLUDE "pricingcurrencylistunitprice.md",1
 !INCLUDE "pricingquantity.md",1
 !INCLUDE "pricingunit.md",1
-!INCLUDE "publisher.md",1
+!INCLUDE "publishername.md",1
 !INCLUDE "regionid.md",1
 !INCLUDE "regionname.md",1
 !INCLUDE "resourceid.md",1
 !INCLUDE "resourcename.md",1
 !INCLUDE "resourcetype.md",1
-!INCLUDE "serviceprovider.md",1
+!INCLUDE "serviceprovidername.md",1
 !INCLUDE "servicecategory.md",1
 !INCLUDE "servicename.md",1
 !INCLUDE "servicesubcategory.md",1

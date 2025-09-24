@@ -1,4 +1,4 @@
-# Invoice Issuer
+# Invoice Issuer Name
 
 An Invoice Issuer is an entity responsible for issuing payable invoices for the [*resources*](#glossary:resource) or [*services*](#glossary:service) consumed. It is commonly used for cost analysis and reporting scenarios.
 
@@ -17,7 +17,7 @@ InvoiceIssuerName
 
 ## Display Name
 
-Invoice Issuer
+Invoice Issuer Name
 
 ## Description
 

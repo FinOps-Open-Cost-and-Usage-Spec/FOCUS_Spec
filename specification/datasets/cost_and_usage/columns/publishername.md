@@ -1,4 +1,4 @@
-# Publisher - DEPRECATED
+# Publisher Name - DEPRECATED
 
 A Publisher is an entity that produces the [*resources*](#glossary:resource) or [*services*](#glossary:service) that were purchased. It is commonly used for cost analysis and reporting scenarios.
 
@@ -18,7 +18,7 @@ PublisherName
 
 ## Display Name
 
-Publisher
+Publisher Name
 
 ## Description
 
