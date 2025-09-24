@@ -1,12 +1,14 @@
 {
-  "BillingAccountType-C-000-M": {
+  "BillingAccountType-C-000-C": {
     "Function": "Composite",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
     "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountType column adheres to the following requirements:",
@@ -34,7 +36,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-007-M",
+        "CostAndUsage-D-007-C",
         "BillingAccountType-C-001-M",
         "BillingAccountType-C-002-M",
         "BillingAccountType-C-003-C",
@@ -52,7 +54,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type String",
+      "MustSatisfy": "BillingAccountType MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -72,7 +74,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to StringHandling requirements",
+      "MustSatisfy": "BillingAccountType MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
@@ -124,7 +126,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be null when BillingAccountId is null",
+      "MustSatisfy": "BillingAccountType MUST be null when BillingAccountId is null.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -149,7 +151,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST NOT be null when BillingAccountId is not null",
+      "MustSatisfy": "BillingAccountType MUST NOT be null when BillingAccountId is not null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -174,7 +176,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be a consistent, readable display value",
+      "MustSatisfy": "BillingAccountType MUST be a consistent, readable display value.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

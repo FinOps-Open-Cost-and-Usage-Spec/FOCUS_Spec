@@ -18,6 +18,9 @@
     "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED": {
       "Description": "Data generator supports multiple sub account types"
     },
+    "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED": {
+      "Description": "Data generator supports multiple billing account types"
+    },
     "NEGOTIATED_PRICING_SUPPORTED": {
       "Description": "Data generator supports negotiated pricing concepts"
     },

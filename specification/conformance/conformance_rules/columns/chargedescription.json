@@ -52,7 +52,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type String",
+      "MustSatisfy": "ChargeDescription MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -72,7 +72,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to StringHandling requirements",
+      "MustSatisfy": "ChargeDescription MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
@@ -92,7 +92,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SHOULD NOT be null",
+      "MustSatisfy": "ChargeDescription SHOULD NOT be null.",
       "Keyword": "SHOULD NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -113,7 +113,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema",
+      "MustSatisfy": "ChargeDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},

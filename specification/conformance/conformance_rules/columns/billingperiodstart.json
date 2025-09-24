@@ -52,7 +52,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type Date/Time.",
+      "MustSatisfy": "BillingPeriodStart MUST be of type Date/Time.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDateTime",
@@ -72,7 +72,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to DateTimeFormat requirements.",
+      "MustSatisfy": "BillingPeriodStart MUST conform to DateTimeFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatDateTime",
@@ -92,7 +92,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST NOT be null.",
+      "MustSatisfy": "BillingPeriodStart MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -113,7 +113,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be the inclusive start bound of the billing period.",
+      "MustSatisfy": "BillingPeriodStart MUST be the inclusive start bound of the billing period.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

@@ -11,7 +11,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "All ContractedUnitPrice rules MUST be enforced when the provider supports negotiated pricing concepts",
+      "MustSatisfy": "The ContractedUnitPrice column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -86,7 +86,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice MUST be of type Decimal",
+      "MustSatisfy": "ContractedUnitPrice MUST be of type Decimal.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDecimal",
@@ -106,7 +106,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice MUST conform to NumericFormat requirements",
+      "MustSatisfy": "ContractedUnitPrice MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatNumeric",
@@ -163,7 +163,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice MUST be null when ChargeCategory is \"Tax\"",
+      "MustSatisfy": "ContractedUnitPrice MUST be null when ChargeCategory is \"Tax\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -190,7 +190,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\"",
+      "MustSatisfy": "ContractedUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -238,7 +238,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice MAY be null in all other cases",
+      "MustSatisfy": "ContractedUnitPrice MAY be null in all other cases.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -296,7 +296,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice MUST be a non-negative decimal value",
+      "MustSatisfy": "ContractedUnitPrice MUST be a non-negative decimal value.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckGreaterOrEqualThanValue",
@@ -321,7 +321,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice MUST be denominated in the BillingCurrency",
+      "MustSatisfy": "ContractedUnitPrice MUST be denominated in the BillingCurrency.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {
@@ -344,7 +344,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The product of ContractedUnitPrice and PricingQuantity MUST match the ContractedCost when PricingQuantity is not null and ChargeClass is not \"Correction\"",
+      "MustSatisfy": "The product of ContractedUnitPrice and PricingQuantity MUST match the ContractedCost when PricingQuantity is not null and ChargeClass is not \"Correction\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnByColumnEqualsColumnValue",
@@ -389,7 +389,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Discrepancies in ContractedUnitPrice, ContractedCost, or PricingQuantity MAY exist when ChargeClass is \"Correction\"",
+      "MustSatisfy": "Discrepancies in ContractedUnitPrice, ContractedCost, or PricingQuantity MAY exist when ChargeClass is \"Correction\".",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {

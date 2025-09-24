@@ -31,21 +31,16 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ConsumedUnit-C-004-C"
-          },
-          {
-            "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ConsumedUnit-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-063-C",
+        "CostAndUsage-D-066-C",
         "ConsumedUnit-C-001-M",
         "ConsumedUnit-C-002-M",
         "ConsumedUnit-C-003-O",
-        "ConsumedUnit-C-004-C",
-        "ConsumedUnit-C-005-C"
+        "ConsumedUnit-C-004-C"
       ]
     }
   },
@@ -59,7 +54,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedUnit MUST be of type String",
+      "MustSatisfy": "ConsumedUnit MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -79,7 +74,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedUnit MUST conform to StringHandling requirements",
+      "MustSatisfy": "ConsumedUnit MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
@@ -99,7 +94,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedUnit SHOULD conform to UnitFormat requirements",
+      "MustSatisfy": "ConsumedUnit SHOULD conform to UnitFormat requirements.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "FormatUnit",
@@ -110,6 +105,40 @@
     }
   },
   "ConsumedUnit-C-004-C": {
+    "Function": "Composite",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ConsumedUnit column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ConsumedUnit-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ConsumedUnit-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ConsumedUnit-C-005-C",
+        "ConsumedUnit-C-006-C"
+      ]
+    }
+  },
+  "ConsumedUnit-C-005-C": {
     "Function": "Nullability",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
@@ -119,7 +148,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedUnit MUST be null when ConsumedQuantity is null",
+      "MustSatisfy": "ConsumedUnit MUST be null when ConsumedQuantity is null.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -136,7 +165,7 @@
       ]
     }
   },
-  "ConsumedUnit-C-005-C": {
+  "ConsumedUnit-C-006-C": {
     "Function": "Nullability",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
@@ -146,7 +175,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedUnit MUST NOT be null when ConsumedQuantity is not null",
+      "MustSatisfy": "ConsumedUnit MUST NOT be null when ConsumedQuantity is not null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",

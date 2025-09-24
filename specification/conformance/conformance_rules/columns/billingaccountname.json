@@ -47,7 +47,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type String",
+      "MustSatisfy": "BillingAccountName MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -67,7 +67,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to StringHandling requirements",
+      "MustSatisfy": "BillingAccountName MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
@@ -89,7 +89,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingAccountName MUST NOT be null when the provider supports assigning a display name for the billing account",
+      "MustSatisfy": "BillingAccountName MUST NOT be null when the provider supports assigning a display name for the billing account.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",

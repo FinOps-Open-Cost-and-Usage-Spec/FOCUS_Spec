@@ -47,7 +47,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be of type String",
+      "MustSatisfy": "PricingCategory MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -104,7 +104,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be null when ChargeCategory is \"Tax\"",
+      "MustSatisfy": "PricingCategory MUST be null when ChargeCategory is \"Tax\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -131,7 +131,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\"",
+      "MustSatisfy": "PricingCategory MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -179,7 +179,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MAY be null in all other cases",
+      "MustSatisfy": "PricingCategory MAY be null in all other cases.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -247,7 +247,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be one of the allowed values",
+      "MustSatisfy": "PricingCategory MUST be one of the allowed values.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "OR",
@@ -288,7 +288,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be \"Standard\" when pricing is predetermined at the agreed upon rate for the billing account",
+      "MustSatisfy": "PricingCategory MUST be \"Standard\" when pricing is predetermined at the agreed upon rate for the billing account.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {
@@ -309,7 +309,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be \"Committed\" when the charge is subject to an existing commitment discount and is not the purchase of the commitment discount",
+      "MustSatisfy": "PricingCategory MUST be \"Committed\" when the charge is subject to an existing commitment discount and is not the purchase of the commitment discount.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -326,7 +326,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be \"Dynamic\" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing",
+      "MustSatisfy": "PricingCategory MUST be \"Dynamic\" when pricing is determined by the provider and may change over time, regardless of predetermined agreement pricing.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -343,7 +343,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be \"Other\" when there is a pricing model but none of the allowed values apply",
+      "MustSatisfy": "PricingCategory MUST be \"Other\" when there is a pricing model but none of the allowed values apply.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

@@ -45,7 +45,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-057-C",
+        "CostAndUsage-D-060-C",
         "SkuId-C-001-M",
         "SkuId-C-002-M",
         "SkuId-C-003-M",

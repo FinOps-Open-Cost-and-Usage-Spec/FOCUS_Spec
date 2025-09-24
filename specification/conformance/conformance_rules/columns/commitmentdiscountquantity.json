@@ -26,7 +26,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-003-M"
+                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-003-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
@@ -34,7 +34,7 @@
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-009-C"
+                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-008-C"
                     }
                 ]
             },
@@ -43,9 +43,9 @@
                 "CostAndUsage-D-018-C",
                 "CommitmentDiscountQuantity-C-001-M",
                 "CommitmentDiscountQuantity-C-002-M",
-                "CommitmentDiscountQuantity-C-003-M",
+                "CommitmentDiscountQuantity-C-003-C",
                 "CommitmentDiscountQuantity-C-004-C",
-                "CommitmentDiscountQuantity-C-009-C"
+                "CommitmentDiscountQuantity-C-008-C"
             ]
         }
     },
@@ -59,7 +59,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be of type Decimal",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be of type Decimal.",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "TypeDecimal",
@@ -79,7 +79,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST conform to NumericFormat requirements",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST conform to NumericFormat requirements.",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "FormatNumeric",
@@ -89,24 +89,7 @@
             "Dependencies": []
         }
     },
-    "CommitmentDiscountQuantity-C-003-M": {
-        "Function": "Validation",
-        "Reference": "CommitmentDiscountQuantity",
-        "EntityType": "Column",
-        "Notes": "",
-        "CRVersionIntroduced": "1.2",
-        "Status": "Active",
-        "ApplicabilityCriteria": [],
-        "Type": "Dynamic",
-        "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be a valid decimal value",
-            "Keyword": "MUST",
-            "Requirement": {},
-            "Condition": {},
-            "Dependencies": []
-        }
-    },
-    "CommitmentDiscountQuantity-C-004-C": {
+    "CommitmentDiscountQuantity-C-003-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountQuantity",
         "EntityType": "Column",
@@ -123,22 +106,22 @@
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-005-C"
+                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-004-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-008-C"
+                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-007-C"
                     }
                 ]
             },
             "Condition": {},
             "Dependencies": [
-                "CommitmentDiscountQuantity-C-005-C",
-                "CommitmentDiscountQuantity-C-008-C"
+                "CommitmentDiscountQuantity-C-004-C",
+                "CommitmentDiscountQuantity-C-007-C"
             ]
         }
     },
-    "CommitmentDiscountQuantity-C-005-C": {
+    "CommitmentDiscountQuantity-C-004-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountQuantity",
         "EntityType": "Column",
@@ -148,18 +131,18 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "When ChargeCategory is 'Usage' or 'Purchase' and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
+            "MustSatisfy": "When ChargeCategory is “Usage” or “Purchase” and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "AND",
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-006-C"
+                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-005-C"
                     },
                     {
                         "CheckFunction": "CheckConformanceRule",
-                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-007-C"
+                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-006-C"
                     }
                 ]
             },
@@ -189,9 +172,36 @@
                 ]
             },
             "Dependencies": [
-                "CommitmentDiscountQuantity-C-006-C",
-                "CommitmentDiscountQuantity-C-007-C"
+                "CommitmentDiscountId-C-000-C",
+                "ChargeCategory-C-000-M",
+                "CommitmentDiscountQuantity-C-005-C",
+                "CommitmentDiscountQuantity-C-006-C"
             ]
+        }
+    },
+    "CommitmentDiscountQuantity-C-005-C": {
+        "Function": "Nullability",
+        "Reference": "CommitmentDiscountQuantity",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Static",
+        "ValidationCriteria": {
+            "MustSatisfy": "CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not 'Correction'.",
+            "Keyword": "MUST NOT",
+            "Requirement": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "CommitmentDiscountQuantity",
+                "Value": null
+            },
+            "Condition": {
+                "CheckFunction": "CheckNotValue",
+                "ColumnName": "ChargeClass",
+                "Value": "Correction"
+            },
+            "Dependencies": []
         }
     },
     "CommitmentDiscountQuantity-C-006-C": {
@@ -204,57 +214,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not 'Correction'",
-            "Keyword": "MUST NOT",
-            "Requirement": {
-                "CheckFunction": "CheckNotValue",
-                "ColumnName": "CommitmentDiscountQuantity",
-                "Value": null
-            },
-            "Condition": {
-                "CheckFunction": "AND",
-                "Items": [
-                    {
-                        "CheckFunction": "OR",
-                        "Items": [
-                            {
-                                "CheckFunction": "CheckValue",
-                                "ColumnName": "ChargeCategory",
-                                "Value": "Usage"
-                            },
-                            {
-                                "CheckFunction": "CheckValue",
-                                "ColumnName": "ChargeCategory",
-                                "Value": "Purchase"
-                            }
-                        ]
-                    },
-                    {
-                        "CheckFunction": "CheckNotValue",
-                        "ColumnName": "CommitmentDiscountId",
-                        "Value": null
-                    },
-                    {
-                        "CheckFunction": "CheckNotValue",
-                        "ColumnName": "ChargeClass",
-                        "Value": "Correction"
-                    }
-                ]
-            },
-            "Dependencies": []
-        }
-    },
-    "CommitmentDiscountQuantity-C-007-C": {
-        "Function": "Nullability",
-        "Reference": "CommitmentDiscountQuantity",
-        "EntityType": "Column",
-        "Notes": "",
-        "CRVersionIntroduced": "1.2",
-        "Status": "Active",
-        "ApplicabilityCriteria": [],
-        "Type": "Static",
-        "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MAY be null when ChargeClass is 'Correction'",
+            "MustSatisfy": "CommitmentDiscountQuantity MAY be null when ChargeClass is 'Correction'.",
             "Keyword": "MAY",
             "Requirement": {
                 "CheckFunction": "CheckValue",
@@ -269,7 +229,7 @@
             "Dependencies": []
         }
     },
-    "CommitmentDiscountQuantity-C-008-C": {
+    "CommitmentDiscountQuantity-C-007-C": {
         "Function": "Nullability",
         "Reference": "CommitmentDiscountQuantity",
         "EntityType": "Column",
@@ -279,7 +239,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be null in all other cases",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be null in all other cases.",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "CheckValue",
@@ -319,7 +279,7 @@
             "Dependencies": []
         }
     },
-    "CommitmentDiscountQuantity-C-009-C": {
+    "CommitmentDiscountQuantity-C-008-C": {
         "Function": "Composite",
         "Reference": "CommitmentDiscountQuantity",
         "EntityType": "Column",
@@ -336,6 +296,10 @@
                 "Items": [
                     {
                         "CheckFunction": "CheckConformanceRule",
+                        "ConformanceRuleId": "CommitmentDiscountQuantity-C-009-M"
+                    },
+                    {
+                        "CheckFunction": "CheckConformanceRule",
                         "ConformanceRuleId": "CommitmentDiscountQuantity-C-010-C"
                     },
                     {
@@ -344,15 +308,29 @@
                     }
                 ]
             },
-            "Condition": {
-                "CheckFunction": "CheckNotValue",
-                "ColumnName": "CommitmentDiscountQuantity",
-                "Value": null
-            },
+            "Condition": {},
             "Dependencies": [
+                "CommitmentDiscountQuantity-C-009-M",
                 "CommitmentDiscountQuantity-C-010-C",
                 "CommitmentDiscountQuantity-C-013-C"
             ]
+        }
+    },
+    "CommitmentDiscountQuantity-C-009-M": {
+        "Function": "Validation",
+        "Reference": "CommitmentDiscountQuantity",
+        "EntityType": "Column",
+        "Notes": "",
+        "CRVersionIntroduced": "1.2",
+        "Status": "Active",
+        "ApplicabilityCriteria": [],
+        "Type": "Dynamic",
+        "ValidationCriteria": {
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be a valid decimal value.",
+            "Keyword": "MUST",
+            "Requirement": {},
+            "Condition": {},
+            "Dependencies": []
         }
     },
     "CommitmentDiscountQuantity-C-010-C": {
@@ -365,7 +343,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "When ChargeCategory is 'Purchase' adheres to the following additional requirements:",
+            "MustSatisfy": "When ChargeCategory is “Purchase” adheres to the following additional requirements:",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "AND",
@@ -383,7 +361,7 @@
             "Condition": {
                 "CheckFunction": "CheckValue",
                 "ColumnName": "ChargeCategory",
-                "Value": "Purchase"
+                "Value": null
             },
             "Dependencies": [
                 "CommitmentDiscountQuantity-C-011-C",
@@ -401,23 +379,13 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the commitment discount's term when ChargeFrequency is 'One-Time'",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the commitment discount's term when ChargeFrequency is 'One-Time'.",
             "Keyword": "MUST",
             "Requirement": {},
             "Condition": {
-                "CheckFunction": "AND",
-                "Items": [
-                    {
-                        "CheckFunction": "CheckValue",
-                        "ColumnName": "ChargeCategory",
-                        "Value": "Purchase"
-                    },
-                    {
-                        "CheckFunction": "CheckValue",
-                        "ColumnName": "ChargeFrequency",
-                        "Value": "One-Time"
-                    }
-                ]
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeFrequency",
+                "Value": "One-Time"
             },
             "Dependencies": []
         }
@@ -432,23 +400,13 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each charge period that corresponds with the purchase when ChargeFrequency is 'Recurring'",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each charge period that corresponds with the purchase when ChargeFrequency is 'Recurring'.",
             "Keyword": "MUST",
             "Requirement": {},
             "Condition": {
-                "CheckFunction": "AND",
-                "Items": [
-                    {
-                        "CheckFunction": "CheckValue",
-                        "ColumnName": "ChargeCategory",
-                        "Value": "Purchase"
-                    },
-                    {
-                        "CheckFunction": "CheckValue",
-                        "ColumnName": "ChargeFrequency",
-                        "Value": "Recurring"
-                    }
-                ]
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeFrequency",
+                "Value": "Recurring"
             },
             "Dependencies": []
         }
@@ -499,7 +457,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given charge period when CommitmentDiscountStatus is 'Used'",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given charge period when CommitmentDiscountStatus is 'Used'.",
             "Keyword": "MUST",
             "Requirement": {},
             "Condition": {
@@ -530,7 +488,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given charge period when CommitmentDiscountStatus is 'Unused'",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given charge period when CommitmentDiscountStatus is 'Unused'.",
             "Keyword": "MUST",
             "Requirement": {},
             "Condition": {

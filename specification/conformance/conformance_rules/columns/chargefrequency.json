@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "All ChargeFrequency rules MUST be enforced",
+      "MustSatisfy": "The ChargeFrequency column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -52,7 +52,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargeFrequency MUST be of type String",
+      "MustSatisfy": "ChargeFrequency MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -72,7 +72,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargeFrequency MUST NOT be null",
+      "MustSatisfy": "ChargeFrequency MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -93,7 +93,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargeFrequency MUST be one of the allowed values",
+      "MustSatisfy": "ChargeFrequency MUST be one of the allowed values.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "OR",
@@ -129,7 +129,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargeFrequency MUST NOT be \"Usage-Based\" when ChargeCategory is \"Purchase\"",
+      "MustSatisfy": "ChargeFrequency MUST NOT be \"Usage-Based\" when ChargeCategory is \"Purchase\".",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",

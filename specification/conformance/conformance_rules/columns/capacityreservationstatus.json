@@ -11,7 +11,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CapacityReservationStatus MUST be present.",
+      "MustSatisfy": "The CapacityReservationStatus column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",

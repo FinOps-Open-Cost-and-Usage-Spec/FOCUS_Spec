@@ -47,7 +47,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type String",
+      "MustSatisfy": "ChargeCategory MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -67,7 +67,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST NOT be null",
+      "MustSatisfy": "ChargeCategory MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -88,7 +88,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be one of the allowed values",
+      "MustSatisfy": "ChargeCategory MUST be one of the allowed values.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "OR",

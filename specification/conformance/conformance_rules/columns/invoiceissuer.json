@@ -47,7 +47,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceIssuerName MUST be of type String",
+      "MustSatisfy": "InvoiceIssuerName MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -67,7 +67,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceIssuerName MUST conform to StringHandling requirements",
+      "MustSatisfy": "InvoiceIssuerName MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
@@ -87,7 +87,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceIssuerName MUST NOT be null",
+      "MustSatisfy": "InvoiceIssuerName MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",

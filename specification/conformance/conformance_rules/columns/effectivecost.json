@@ -77,7 +77,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost MUST be of type Decimal",
+      "MustSatisfy": "EffectiveCost MUST be of type Decimal.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDecimal",
@@ -97,7 +97,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost MUST conform to NumericFormat requirements",
+      "MustSatisfy": "EffectiveCost MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatNumeric",
@@ -117,7 +117,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost MUST NOT be null",
+      "MustSatisfy": "EffectiveCost MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -138,7 +138,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost MUST be a valid decimal value",
+      "MustSatisfy": "EffectiveCost MUST be a valid decimal value.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -159,7 +159,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost MUST be 0 when ChargeCategory is \"Purchase\" and the purchase is intended to cover future eligible charges",
+      "MustSatisfy": "EffectiveCost MUST be 0 when ChargeCategory is \"Purchase\" and the purchase is intended to cover future eligible charges.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -186,7 +186,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost MUST be denominated in the BillingCurrency",
+      "MustSatisfy": "EffectiveCost MUST be denominated in the BillingCurrency.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -205,7 +205,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "The sum of EffectiveCost in a given billing period MAY not match the sum of the invoices received for the same billing period for a billing account",
+      "MustSatisfy": "The sum of EffectiveCost in a given billing period MAY not match the sum of the invoices received for the same billing period for a billing account.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -269,7 +269,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the EffectiveCost of those related charges",
+      "MustSatisfy": "EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the EffectiveCost of those related charges.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {
@@ -292,7 +292,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost",
+      "MustSatisfy": "EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -349,7 +349,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of BilledCost where ChargeCategory is \"Purchase\"",
+      "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of BilledCost where ChargeCategory is \"Purchase\".",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {
@@ -384,7 +384,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Used\", plus the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Unused\"",
+      "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Used\", plus the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Unused\".",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {

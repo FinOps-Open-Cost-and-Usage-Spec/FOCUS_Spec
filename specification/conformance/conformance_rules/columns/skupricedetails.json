@@ -41,7 +41,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-058-C",
+        "CostAndUsage-D-061-C",
         "SkuPriceDetails-C-001-M",
         "SkuPriceDetails-C-002-O",
         "SkuPriceDetails-C-003-C",

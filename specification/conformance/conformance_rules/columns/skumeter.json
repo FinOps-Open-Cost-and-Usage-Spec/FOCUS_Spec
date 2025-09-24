@@ -37,7 +37,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-056-C",
+        "CostAndUsage-D-059-C",
         "SkuMeter-C-001-M",
         "SkuMeter-C-002-M",
         "SkuMeter-C-003-C",

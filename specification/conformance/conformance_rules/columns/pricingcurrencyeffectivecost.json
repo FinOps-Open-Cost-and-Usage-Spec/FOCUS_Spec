@@ -44,7 +44,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-049-C",
+        "CostAndUsage-D-050-C",
         "PricingCurrencyEffectiveCost-C-001-M",
         "PricingCurrencyEffectiveCost-C-002-M",
         "PricingCurrencyEffectiveCost-C-003-M",
@@ -64,7 +64,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be of type Decimal",
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be of type Decimal.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDecimal",
@@ -84,7 +84,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost MUST conform to NumericFormat requirements",
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatNumeric",
@@ -104,7 +104,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost MUST NOT be null",
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -125,7 +125,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be a valid decimal value",
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be a valid decimal value.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckGreaterOrEqualThanValue",
@@ -146,7 +146,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage",
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -163,7 +163,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency",
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

@@ -27,7 +27,7 @@
           },
           {
             "CheckFunction": "CheckConformanceRule",
-            "ConformanceRuleId": "ResourceName-C-003-O"
+            "ConformanceRuleId": "ResourceName-C-003-C"
           }
         ]
       },
@@ -36,7 +36,7 @@
         "CostAndUsage-D-044-C",
         "ResourceName-C-001-M",
         "ResourceName-C-002-M",
-        "ResourceName-C-003-O"
+        "ResourceName-C-003-C"
       ]
     }
   },
@@ -80,7 +80,39 @@
       "Dependencies": []
     }
   },
-  "ResourceName-C-003-O": {
+  "ResourceName-C-003-C": {
+    "Function": "Composite",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceName-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceName-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ResourceName-C-004-C",
+        "ResourceName-C-005-C"
+      ]
+    }
+  },
+  "ResourceName-C-004-C": {
     "Function": "Nullability",
     "Reference": "ResourceName",
     "EntityType": "Column",
@@ -90,11 +122,40 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ResourceName MAY be null.",
-      "Keyword": "MAY",
+      "MustSatisfy": "ResourceName MUST be null when ResourceId is null or when the resource does not have an assigned display name.",
+      "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {},
-      "Dependencies": []
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "Column": "ResourceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "ResourceId-C-000-C"
+      ]
+    }
+  },
+  "ResourceName-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST NOT be null when ResourceId is not null and the resource has an assigned display name.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "Column": "ResourceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "ResourceId-C-000-C"
+      ]
     }
   }
 }

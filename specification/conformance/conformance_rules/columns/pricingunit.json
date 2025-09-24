@@ -38,7 +38,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-065-M",
+        "CostAndUsage-D-068-M",
         "PricingUnit-C-001-M",
         "PricingUnit-C-002-M",
         "PricingUnit-C-003-O",

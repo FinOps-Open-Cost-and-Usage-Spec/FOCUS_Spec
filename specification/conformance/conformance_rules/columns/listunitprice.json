@@ -54,7 +54,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type Decimal",
+      "MustSatisfy": "ListUnitPrice MUST be of type Decimal.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDecimal",
@@ -74,7 +74,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to NumericFormat requirements",
+      "MustSatisfy": "ListUnitPrice MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatNumeric",
@@ -132,7 +132,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be null when ChargeCategory is 'Tax'",
+      "MustSatisfy": "ListUnitPrice MUST be null when ChargeCategory is 'Tax'.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -159,7 +159,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'",
+      "MustSatisfy": "ListUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -206,7 +206,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MAY be null in all other cases",
+      "MustSatisfy": "ListUnitPrice MAY be null in all other cases.",
       "Keyword": "MAY",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -274,7 +274,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be a non-negative decimal value",
+      "MustSatisfy": "ListUnitPrice MUST be a non-negative decimal value.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckGreaterOrEqualThanValue",
@@ -295,7 +295,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be denominated in the BillingCurrency",
+      "MustSatisfy": "ListUnitPrice MUST be denominated in the BillingCurrency.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -312,7 +312,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'",
+      "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnByColumnEqualsColumnValue",
@@ -350,7 +350,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'",
+      "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {

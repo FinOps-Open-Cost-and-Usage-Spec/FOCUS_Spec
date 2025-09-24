@@ -36,7 +36,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-064-C",
+        "CostAndUsage-D-067-C",
         "SubAccountType-C-001-M",
         "SubAccountType-C-002-M",
         "SubAccountType-C-003-C",
@@ -54,7 +54,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SubAccountType MUST be of type String",
+      "MustSatisfy": "SubAccountType MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -74,7 +74,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SubAccountType MUST conform to StringHandling requirements",
+      "MustSatisfy": "SubAccountType MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
@@ -126,7 +126,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SubAccountType MUST be null when SubAccountId is null",
+      "MustSatisfy": "SubAccountType MUST be null when SubAccountId is null.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -153,7 +153,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SubAccountType MUST NOT be null when SubAccountId is not null",
+      "MustSatisfy": "SubAccountType MUST NOT be null when SubAccountId is not null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -180,7 +180,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "SubAccountType MUST be a consistent, readable display value",
+      "MustSatisfy": "SubAccountType MUST be a consistent, readable display value.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

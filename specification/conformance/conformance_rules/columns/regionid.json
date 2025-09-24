@@ -32,7 +32,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-060-C",
+        "CostAndUsage-D-063-C",
         "RegionId-C-001-M",
         "RegionId-C-002-M",
         "RegionId-C-003-C"
@@ -80,7 +80,7 @@
     }
   },
   "RegionId-C-003-C": {
-    "Function": "Nullability",
+    "Function": "Composite",
     "Reference": "RegionId",
     "EntityType": "Column",
     "Notes": "",
@@ -89,13 +89,58 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "RegionId MAY be null when the resource or service is not associated with a region.",
-      "Keyword": "MAY",
+      "MustSatisfy": "RegionId nullability is defined as follows:",
+      "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "RegionId",
-        "Value": null
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "RegionId-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "RegionId-C-005-C"
+          }
+        ]
       },
+      "Condition": {},
+      "Dependencies": [
+        "RegionId-C-004-C",
+        "RegionId-C-005-C"
+      ]
+    }
+  },
+  "RegionId-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "RegionId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionId MUST NOT be null when a resource or service is operated in or managed from a distinct region.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "RegionId-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "RegionId",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionId MAY be null when a resource or service is not operated in or managed from a distinct region.",
+      "Keyword": "MAY",
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }

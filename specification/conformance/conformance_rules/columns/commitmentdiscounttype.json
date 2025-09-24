@@ -11,7 +11,7 @@
         ],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "All CommitmentDiscountType rules MUST be enforced.",
+            "MustSatisfy": "The CommitmentDiscountType column adheres to the following requirements:",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "AND",

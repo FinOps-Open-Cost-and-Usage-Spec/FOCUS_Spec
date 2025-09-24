@@ -46,13 +46,13 @@
     "Function": "Type",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
-    "Notes": "Relies on new TypeDateTime check",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type Date/Time",
+      "MustSatisfy": "BillingPeriodEnd MUST be of type Date/Time.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDateTime",
@@ -72,7 +72,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to DateTimeFormat requirements",
+      "MustSatisfy": "BillingPeriodEnd MUST conform to DateTimeFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatDateTime",
@@ -92,7 +92,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST NOT be null",
+      "MustSatisfy": "BillingPeriodEnd MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -107,13 +107,13 @@
     "Function": "Validation",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
-    "Notes": "Validates exclusive end bound of the billing period.",
+    "Notes": "",
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be the exclusive end bound of the billing period",
+      "MustSatisfy": "BillingPeriodEnd MUST be the exclusive end bound of the billing period.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

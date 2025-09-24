@@ -92,7 +92,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargePeriodEnd MUST NOT be null",
+      "MustSatisfy": "ChargePeriodEnd MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",

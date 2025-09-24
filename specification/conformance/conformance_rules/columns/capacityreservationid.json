@@ -36,7 +36,7 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-062-C",
+        "CostAndUsage-D-065-C",
         "CapacityReservationId-C-001-M",
         "CapacityReservationId-C-002-M",
         "CapacityReservationId-C-003-C",

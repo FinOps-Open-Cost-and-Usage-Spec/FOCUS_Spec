@@ -46,7 +46,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.",
+      "MustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -63,7 +63,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details).",
+      "MustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details)",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -117,7 +117,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST Include the date and time components, separated with the letter ‘T’.",
+      "MustSatisfy": "MUST Include the date and time components, separated with the letter ‘T’",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -134,7 +134,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST Use two-digit hours (HH), minutes (mm), and seconds (ss).",
+      "MustSatisfy": "MUST Use two-digit hours (HH), minutes (mm), and seconds (ss)",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -151,7 +151,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST End with the ‘Z’ indicator to denote UTC (Coordinated Universal Time).",
+      "MustSatisfy": "MUST End with the ‘Z’ indicator to denote UTC (Coordinated Universal Time)",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

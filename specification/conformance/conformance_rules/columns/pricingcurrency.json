@@ -11,7 +11,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The PricingCurrency column MUST adhere to the following requirements",
+      "MustSatisfy": "The PricingCurrency column MUST adhere to the following requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -54,7 +54,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrency MUST be of type String",
+      "MustSatisfy": "PricingCurrency MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -74,7 +74,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrency MUST conform to StringHandling requirements",
+      "MustSatisfy": "PricingCurrency MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
@@ -94,7 +94,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrency MUST conform to CurrencyFormat requirements",
+      "MustSatisfy": "PricingCurrency MUST conform to CurrencyFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNationalCurrency",
@@ -114,7 +114,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrency MUST NOT be null",
+      "MustSatisfy": "PricingCurrency MUST NOT be null.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",

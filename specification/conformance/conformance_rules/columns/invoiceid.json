@@ -57,7 +57,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId MUST be of type String",
+      "MustSatisfy": "InvoiceId MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -77,7 +77,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId MUST conform to StringHandling requirements",
+      "MustSatisfy": "InvoiceId MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
@@ -129,7 +129,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId MUST be null when the charge is not associated either with an invoice or with a pre-generated provisional invoice",
+      "MustSatisfy": "InvoiceId MUST be null when the charge is not associated either with an invoice or with a pre-generated provisional invoice.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -150,7 +150,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId MUST NOT be null when the charge is associated with either an issued invoice or a pre-generated provisional invoice",
+      "MustSatisfy": "InvoiceId MUST NOT be null when the charge is associated with either an issued invoice or a pre-generated provisional invoice.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -171,7 +171,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId MAY be generated prior to an invoice being issued",
+      "MustSatisfy": "InvoiceId MAY be generated prior to an invoice being issued.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -188,7 +188,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId MUST be associated with the related charge and BillingAccountId when a pre-generated invoice or provisional invoice exists",
+      "MustSatisfy": "InvoiceId MUST be associated with the related charge and BillingAccountId when a pre-generated invoice or provisional invoice exists.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
