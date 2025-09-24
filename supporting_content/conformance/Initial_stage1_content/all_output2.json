@@ -2868,7 +2868,7 @@
       "Reference": "Commitment Discount Id",
       "Keyword": "MUST",
       "ApplicabilityCriteria": "Provider supports commitment discounts",
-      "Condition": "All Rows",
+      "Condition": "When the provider supports commitment discounts",
       "MustSatisfy": "CommitmentDiscountId MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
       "Requirement": "null",
       "Type": "static",
