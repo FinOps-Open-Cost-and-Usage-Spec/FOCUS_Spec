@@ -25,7 +25,7 @@ An attribute that allows providers to offer more detailed cost and usage informa
   * [AllocatedMethodDetails](#allocatedmethoddetails)
 * Allocated charge records in a FOCUS dataset MUST sum up to the origin charge record for all aggregatable metric columns.
 * For each allocated charge records in a FOCUS dataset, all dimension columns and non-aggregatable metric columns MUST match the values of the origin charge record.
-  * Allocated charge records MUST include the same keys and values present in the [Tags](#tags) column for the origin charge.
+* Allocated charge records MUST include the same keys and values present in the [Tags](#tags) column for the origin charge.
 * Allocated charge records MUST satisfy normative requirements for all columns.
 * The method used for allocating origin charges to create allocated charges MUST be documented by the provider and accessible to practitioners.
 * A FOCUS dataset MAY contain records for concepts not related to resource usage, if documented in the split cost allocation method.
