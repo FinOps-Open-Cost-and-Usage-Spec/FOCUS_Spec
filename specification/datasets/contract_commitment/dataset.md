@@ -22,11 +22,14 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 
 <div class='h4-nonindex'>Relationships</div>
 
-The Contract Commitment dataset can be joined to the Cost and Usage dataset through the use of the Contract Commitment ID field.
+The Contract Commitment dataset can be joined to the Cost and Usage dataset through the use of Contract Commitment ID.
 
-| Dataset A           | Dataset A Column       | Dataset B      | Dataset B Column       |
-| ------------------- | ---------------------- | -------------- | ---------------------- |
-| Contract Commitment | Contract Commitment ID | Cost and Usage | Contract Commitment ID |
+* In the Contract Commitment dataset, Contract Commitment ID is a column.
+* In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array.
+
+| Dataset A           | Dataset A Column       | Dataset B      | Dataset B Column |
+| ------------------- | ---------------------- | -------------- | -----------------|
+| Contract Commitment | Contract Commitment ID | Cost and Usage | Contract Applied |
 
 <div class='h4-nonindex'>Requirements</div>
 
