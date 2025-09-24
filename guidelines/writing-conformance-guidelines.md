@@ -467,6 +467,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
       "Dependencies": []
     }
   }
+  
 ### Type Decimal requirement rule
 
 ```json
