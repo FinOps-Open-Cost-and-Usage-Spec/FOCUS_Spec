@@ -45,7 +45,7 @@ Allocated Tags
 
 ## Description
 
-A set of tags assigned to tag sources that are applicable to *allocated charges* in provider-defined split cost allocation.
+A set of tags assigned to tag sources that are applicable to *allocated charges* in provider-calculated split cost allocation.
 
 ## Content Constraints
 

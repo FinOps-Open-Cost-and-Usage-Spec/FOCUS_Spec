@@ -2,7 +2,7 @@
 
 Allocated Method Details provides information about how resources are allocated when usage records are split to support cost allocation requirements.
 
-Allocated Resource Details consists of a valid JSON object which contains an array consisting of key-value objects describing the one or more factors that determined the split cost allocation. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the allocation.
+Allocated Method Details consists of a valid JSON object which contains an array consisting of key-value objects describing the one or more factors that determined the split cost allocation. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the allocation.
 
 The FOCUS-defined properties are:
 
@@ -63,7 +63,7 @@ Usage Unit communicates the aspect of the documented Allocation Method Id being 
 The "UsageUnit" property adheres to the following requirements:
 
 * "UsageUnit" MUST be included inside an "Elements" object if "UsageQuantity" allocation property is included in that "Elements" object, otherwise "UsageUnit" MAY be included in each "Elements" object.
-* Values for "UsageUnit" MUST capture the unit or component of provider's documented [AllocationMethod](#allocationmethod) that was used to determine the "AllocatedRatio" value.
+* Values for "UsageUnit" MUST capture the unit or component of provider's documented [AllocationMethod](#allocationmethodid) that was used to determine the "AllocatedRatio" value.
 * Values for "UsageUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
 
 <b>Usage Quantity</b>
