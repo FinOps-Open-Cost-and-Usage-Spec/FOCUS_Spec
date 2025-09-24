@@ -248,7 +248,7 @@
       "Keyword": "—",
       "ApplicabilityCriteria": "All Rows",
       "Condition": "All Rows",
-      "MustSatisfy": "—",
+      "MustSatisfy": "The ChargeFrequency column adheres to the following requirements:",
       "Requirement": "AND(ChargePeriodEnd-D-001-M, ChargePeriodEnd-C-002-M, ChargePeriodEnd-C-003-M, ChargePeriodEnd-C-004-M, ChargePeriodEnd-C-005-M)",
       "Type": "static",
       "CRVersionIntroduced": "1.2",
