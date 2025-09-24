@@ -72,7 +72,7 @@ A charge to correct cost or usage data in a previously invoiced [*billing period
 
 A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
 
-<a name="glossary:datasetinstnce"><b>Dataset Instance</b></a>
+<a name="glossary:datasetinstance"><b>Dataset Instance</b></a>
 
 A specific implementation of a FOCUS dataset provided by a data generator. This is distinct from a FOCUS dataset. A datagenerator may provide multiple dataset instances of the same FOCUS dataset, each with different properties such as time granularity or differing custom column inclusions.  For examples, see the [*Dataset Instance Metadata*](#dataset_instance_metadata) example section.
 
