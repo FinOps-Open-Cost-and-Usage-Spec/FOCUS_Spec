@@ -2210,7 +2210,7 @@
       "Keyword": "—",
       "ApplicabilityCriteria": "All Rows",
       "Condition": "All Rows",
-      "MustSatisfy": "—",
+      "MustSatisfy": "The BillingPeriodStart column adheres to the following requirements:",
       "Requirement": "AND(BillingPeriodStart-D-001-M, BillingPeriodStart-C-002-M, BillingPeriodStart-C-003-M, BillingPeriodStart-C-004-M, BillingPeriodStart-C-005-M)",
       "Type": "static",
       "CRVersionIntroduced": "1.2",
