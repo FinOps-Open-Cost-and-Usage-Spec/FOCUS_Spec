@@ -74,7 +74,15 @@ A discrete unit of time used to measure and track consumption or contribution ac
 
 <a name="glossary:commitment-model"><b>Commitment Model</b></a>
 
-A framework that defines the structure and mechanics of a customer's commitment to either spend a defined monetary amount or consume a specific quantity of resources or services over time, typically in exchange for commercial or operational benefits, such as discounted pricing, guaranteed resource availability, or enhanced service levels. Commitment Models specify how the commitment is fulfilled, either through gradual contribution to target amount(s) (see [*Build-Up Commitment*](#glossary:build-up-commitment)), or through gradual consumption of available amount(s) (see [*Burn-Down Commitment*](#glossary:burn-down-commitment)). They include, but are not limited to, parameters such as commitment amount, commitment term, [*commitment interval*](#glossary:commitment-interval), and payment model. Commitments may be structured as spend-based or usage-based, and offered as Negotiated or Non-Negotiated variants.
+A framework that defines the structure and mechanics of a customer's commitment to either spend a defined monetary amount or consume a specific quantity of resources or services over time, typically in exchange for commercial or operational benefits, such as discounted pricing, guaranteed resource availability, or enhanced service levels. Commitment Models specify how the commitment is fulfilled, either through gradual contribution to target amount(s), where invoicing aligns with actual consumption (see [*Build-Up Commitment*](#glossary:build-up-commitment)), or through gradual consumption of available amount(s), where invoicing follows a predefined payment schedule (see [*Burn-Down Commitment*](#glossary:burn-down-commitment)). They include, but are not limited to, parameters such as commitment amount, commitment [*term*](#glossary:term), [*commitment interval*](#glossary:commitment-interval), and payment model. Commitments may be structured as spend-based or usage-based, and offered as Negotiated or Non-Negotiated variants.
+
+<a name="glossary:contract"><b>Contract</b></a>
+
+A collection of agreed terms between a provider and a customer.
+
+<a name="glossary:contract-commitment"><b>Contract Commitment</b></a>
+
+A specific term within a [*contract*](#glossary:contract) that defines a measurable obligation agreed upon by a provider and a customer, such as a minimum spend or usage over an agreed period of time.
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
