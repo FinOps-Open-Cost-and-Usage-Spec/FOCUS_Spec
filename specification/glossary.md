@@ -58,7 +58,7 @@ A company or organization that provides remote access to computing resources, in
 
 <a name="glossary:commitment"><b>Commitment</b></a>
 
-A customer's agreement to either spend a defined monetary amount or use a specific quantity of resources or services over a specified [*term*](#glossary:term). Commitments are generally made in exchange for commercial benefits, such as discounted pricing, and may include provider obligations related to resource availability or service levels. Commitment models vary in structure and mechanics, with [*Burn-Down Commitment*](#glossary:burn-down-commitment) and [*Build-Up Commitment*](#glossary:build-up-commitment) being the core types.
+A customer's agreement to either spend a defined monetary amount or consume a specific quantity of resources or services over a specified [*term*](#glossary:term). Commitments are generally made in exchange for commercial benefits, such as discounted pricing, and may include provider obligations related to resource availability or service levels. Commitment models vary in structure and mechanics, with [*Burn-Down Commitment*](#glossary:burn-down-commitment) and [*Build-Up Commitment*](#glossary:build-up-commitment) being the core types.
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
@@ -71,6 +71,10 @@ A feature of [*commitment discounts*](#glossary:commitment-discount) that may fu
 <a name="glossary:commitment-interval"><b>Commitment Interval</b></a>
 
 A discrete unit of time used to measure and track consumption or contribution across various commitment models. Common examples include hourly, monthly, or yearly, and custom intervals may also apply.
+
+<a name="glossary:commitment-model"><b>Commitment Model</b></a>
+
+A framework that defines the structure and mechanics of a customer's commitment to either spend a defined monetary amount or consume a specific quantity of resources or services over time, typically in exchange for commercial or operational benefits, such as discounted pricing, guaranteed resource availability, or enhanced service levels. Commitment Models specify how the commitment is fulfilled, either through gradual contribution to target amount(s) (see [*Build-Up Commitment*](#glossary:build-up-commitment)), or through gradual consumption of available amount(s) (see [*Burn-Down Commitment*](#glossary:burn-down-commitment)). They include, but are not limited to, parameters such as commitment amount, commitment term, [*commitment interval*](#glossary:commitment-interval), and payment model. Commitments may be structured as spend-based or usage-based, and offered as Negotiated or Non-Negotiated variants.
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
