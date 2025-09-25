@@ -32,7 +32,6 @@ Note the following details in the example datasets:
   * A negation record for the original charge.
   * A corrected record for `R-111`.
   * A corrected record for `R-222`.
-* Replacement-style correction is not permitted, as modifying finalized records would violate audit and legal constraints.
 
 ### Scenario 2: Post-Invoice Correction - Late-arriving Usage
 
@@ -56,7 +55,6 @@ Note the following details in the example datasets:
 * The correction record is assigned to the next open billing period (e.g., June 2025).
 * The correction record has ChargeClass set to "Correction", indicating it accounts for usage from a previously invoiced billing period.
 * Both Ledger-style and Accounting-style corrections use a single increment record to represent the late-arriving usage and associated cost.
-* Replacement-style correction is not permitted, as modifying finalized records would violate audit and legal constraints.
 
 ### Scenario 3: Post-Invoice Correction - Itemized Cost-only Correction
 
@@ -82,7 +80,6 @@ Note the following details in the example datasets:
 * Each correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously invoiced billing period.
 * Each correction record is itemized and explicitly references the relevant SkuPriceId.
 * Each correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
-* Replacement-style correction is not permitted, as modifying finalized records would violate audit and legal constraints.
 
 ### Scenario 4: Post-Invoice Correction - Bulk Cost-only Correction
 
@@ -109,4 +106,3 @@ Note the following details in the example datasets:
 * The correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously invoiced billing period.
 * The correction record does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
 * The correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
-* Replacement-style correction is not permitted, as modifying finalized records would violate audit and legal constraints.
