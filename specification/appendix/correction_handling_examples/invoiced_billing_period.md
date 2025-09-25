@@ -1,6 +1,6 @@
 # Corrections to Invoiced Billing Period
 
-The following examples illustrate how corrections to previously issued billing periods may be represented in FOCUS Cost and Usage datasets, using delivery mechanisms and correction styles that preserve invoice integrity and auditability.
+The following examples illustrate how corrections to previously issued billing periods may be represented in FOCUS Cost and Usage dataset artifacts, using delivery mechanisms and correction styles that preserve invoice integrity and auditability.
 
 ## Post-Invoice Correction Scenarios
 
@@ -10,7 +10,7 @@ On July 12th, 2025, ACME Corp identified that a charge record previously invoice
 
 To correct this misattribution, ACME Corp provisioned a reallocation correction using append-only mechanisms. The correction was realized either through a ledger-style adjustment, which redistributed the cost between resources using increment and decrement records, or through an accounting-style adjustment, which negated the original charge and introduced corrected records for each resource.
 
-Correction records were assigned to the next open billing period to preserve invoice immutability and ensure completeness of cost reporting.
+Correction records were assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 
 CSV Examples:
 
@@ -39,7 +39,7 @@ On July 12th, 2025, ACME Corp identified a cost that was incurred during May 202
 
 To account for the previously omitted usage, ACME Corp provisioned a correction using append-only mechanisms. The correction was realized by introducing a single increment record in both ledger-style and accounting-style formats, representing the late-arriving cost and usage.
 
-This record was assigned to the next open billing period to preserve invoice immutability and ensure completeness of cost reporting.
+This record was assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 
 CSV Examples:
 
@@ -62,7 +62,7 @@ On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumu
 
 To reconcile this discrepancy, ACME Corp provisioned a cost-only correction using append-only mechanisms. In both ledger-style and accounting-style formats, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected SkuPriceId values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a SkuPriceId, this approach explicitly itemizes the correction per SkuPriceId. Compared to the bulk correction approach, this method ensures transparency and traceability and is preferred when itemized correction is feasible.
 
-These correction records were assigned to the next open billing period to preserve invoice immutability and ensure completeness of cost reporting.
+These correction records were assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 
 CSV Examples:
 
@@ -87,7 +87,7 @@ On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumu
 
 To reconcile this discrepancy, ACME Corp provisioned a bulk cost-only correction using append-only mechanisms. The correction was realized by introducing a single increment record in both ledger-style and accounting-style formats, representing the bulk cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs.
 
-This record was assigned to the next open billing period to preserve invoice immutability and ensure completeness of cost reporting.
+This record was assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 
 CSV Examples:
 
