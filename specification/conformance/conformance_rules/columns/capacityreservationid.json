@@ -161,7 +161,7 @@
         "Value": "Unused"
       },
       "Dependencies": [
-        "CapacityReservationStatus-C-000-C"
+        "CapacityReservationStatus-C-006-M"
       ]
     }
   },

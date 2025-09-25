@@ -302,8 +302,7 @@
         ]
       },
       "Dependencies": [
-        "ContractedUnitPrice-C-000-C",
-        "ContractedCost-C-000-M",
+        "ContractedUnitPrice-C-004-M",
         "ChargeClass-C-000-M"
       ]
     }
