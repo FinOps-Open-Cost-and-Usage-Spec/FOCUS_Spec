@@ -1,6 +1,6 @@
 # Host Provider Name
 
-A Host Provider is an entity that provides the underlying infrastructure on which the [*resources*](#glossary:resource) or [*services*](#glossary:service) of one or more Service Providers are deployed.
+Host Provider Name is the name of the entity that provides the underlying infrastructure on which the [*resources*](#glossary:resource) or [*services*](#glossary:service) of one or more Service Providers are deployed.
 
 The HostProviderName column adheres to the following requirements:
 
