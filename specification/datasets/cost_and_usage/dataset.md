@@ -38,6 +38,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Commitment Discount Unit](#commitmentdiscountunit)                           | Dimension   | Conditional   | True         | String    |
 | [Consumed Quantity](#consumedquantity)                                        | Metric      | Conditional   | True         | Decimal   |
 | [Consumed Unit](#consumedunit)                                                | Dimension   | Conditional   | True         | String    |
+| [Contract Applied](#contractapplied)                                          | Dimension / Metric | Conditional   | True         | JSON      |
 | [Contracted Cost](#contractedcost)                                            | Metric      | Mandatory     | False        | Decimal   |
 | [Contracted Unit Price](#contractedunitprice)                                 | Metric      | Conditional   | True         | Decimal   |
 | [Effective Cost](#effectivecost)                                              | Metric      | Mandatory     | False        | Decimal   |
@@ -73,7 +74,11 @@ The specification for the Cost and Usage dataset defines a group of columns that
 
 <div class='h4-nonindex'>Relationships</div>
 
-None
+The Cost and Usage dataset can be joined to the Contract Commitment dataset through the use of the Contract Commitment ID field.
+
+| Dataset A           | Dataset A Column       | Dataset B           | Dataset B Column       |
+| ------------------- | ---------------------- | ------------------- | ---------------------- |
+| Cost and Usage      | Contract Commitment ID | Contract Commitment | Contract Commitment ID |
 
 <div class='h4-nonindex'>Requirements</div>
 

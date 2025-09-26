@@ -68,6 +68,14 @@ A billing discount model that offers reduced rates on preselected SKUs in exchan
 
 A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, provider-specific requirements.
 
+<a name="glossary:contract"><b>Contract</b></a>
+
+A collection of agreed terms between a provider and a customer.
+
+<a name="glossary:contract-commitment"><b>Contract Commitment</b></a>
+
+A specific term within a [*contract*](#glossary:contract) that defines a measurable obligation agreed upon by a provider and a customer, such as a minimum spend or usage over an agreed period of time.
+
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
 The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
