@@ -4,6 +4,14 @@
 
 A charge representing a modification to billing data to account for certain events or circumstances not previously captured, or captured incorrectly. Examples include billing errors, service disruptions, or pricing changes.
 
+<a name="glossary:allocated-charge"><b>Allocated Charge</b></a>
+
+The [charge](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) to identify the charges that were created from the [origin charge](#glossary:origin-charge) resulting from the application of Provider-Calculated Split Cost Allocation.
+
+<a name="glossary:allocated-method"><b>Allocated Method</b></a>
+
+The process or formula by which cost is being allocated from an [origin charge](#glossary:origin-charge) to produce [allocated charges](#glossary:allocated-charge). This is used in the context of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) which requires documentation of the method to be provided for any and all allocated methods used. May also be colloquially referred to as allocation method.
+
 <a name="glossary:amortization"><b>Amortization</b></a>
 
 The distribution of upfront costs over time to accurately reflect the consumption or benefit derived from the associated resources or services. Amortization is valuable when the commitment period (time duration of the cost) extends beyond the granularity of the source report.
@@ -60,6 +68,14 @@ A billing discount model that offers reduced rates on preselected SKUs in exchan
 
 A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, provider-specific requirements.
 
+<a name="glossary:contract"><b>Contract</b></a>
+
+A collection of agreed terms between a provider and a customer.
+
+<a name="glossary:contract-commitment"><b>Contract Commitment</b></a>
+
+A specific term within a [*contract*](#glossary:contract) that defines a measurable obligation agreed upon by a provider and a customer, such as a minimum spend or usage over an agreed period of time.
+
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
 The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
@@ -112,6 +128,9 @@ The process of ensuring that all financial metrics and dimensions presented on a
 
 A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
 
+<a name="glossary:json"><b>JSON</b></a>
+A common acronym for JavaScript Object Notation, a data format codified in [ECMA-404](https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) as a standard for human-readable, serializable data objects. This data format is used in FOCUS to communicate multiple pieces of information about a charge (tags, properties, etc.) in a single column.
+
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
 The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
@@ -135,6 +154,10 @@ A contractual agreement where a customer commits to specific spend or usage goal
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
 A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
+
+<a name="glossary:origin-charge"><b>Origin Charge</b></a>
+
+The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of Provider-Calculated Split Cost Allocation to identify the charge that existed prior to the application of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) to produce [allocated charges](#glossary:allocated-charge).
 
 <a name="glossary:pascalcase"><b>Pascal Case</b></a>
 
