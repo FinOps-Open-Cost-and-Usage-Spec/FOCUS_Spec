@@ -42,7 +42,7 @@ Naming and ordering convention for columns appearing in a *FOCUS dataset*.
   * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID.
   * Column display names MAY avoid the `Name` suffix if there are no other columns with the same name prefix.
   * Columns with the `Category` suffix MUST be normalized.
-* Custom (e.g., provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
+* <a name="column_handling:custom-column"></a>Custom (e.g., provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
   * Custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
   * Custom columns SHOULD follow the same rules listed above for FOCUS columns.
 
