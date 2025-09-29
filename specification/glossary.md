@@ -120,13 +120,21 @@ The collection of datasets are designed to provide billing insight, additional c
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
 
-<a name="glossary:invoicereconciliation"><b>Invoice Reconciliation</b></a>
+<a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
 The process of ensuring that all financial metrics and dimensions presented on an invoice are fully aligned with the underlying cost and usage data associated with that invoice.
 
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
 A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
+
+<a name="glossary:invoiced-billing-period"><b>Invoiced Billing Period</b></a>
+
+A billing period for which all planned invoices have been successfully issued by the designated Invoice Issuer. This status indicates that the billing period is financially closed, and no additional invoices will be associated with that timeframe. The "invoiced" designation is established once invoice issuance is confirmed as complete by the responsible Invoice Issuer entity. Exceptionally, additional invoices may be associated with an invoiced (closed) billing period if explicitly requested by the end-user, and in such cases the associated charges must have ChargeClass explicitly set to "Correction".
+
+<a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
+
+An invoice that has been formally generated and released by the designated Invoice Issuer. Prior to issuance, the invoice must be reconciled with the underlying charges provided in the FOCUS Cost and Usage dataset artifacts, ensuring alignment between invoice content and charge records. Once issued, the invoice becomes the authoritative financial document and is considered finalized and immutable (i.e., the data presented on the invoice cannot be changed). While modifications (including updates, additions, or omissions) of underlaying cost and usage charges may be permitted, they must not compromise the integrity of the issued invoice. Only modifications that maintain alignment with the invoice content are acceptable, as any misalignment would invalidate the prior reconciliation.
 
 <a name="glossary:json"><b>JSON</b></a>
 A common acronym for JavaScript Object Notation, a data format codified in [ECMA-404](https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) as a standard for human-readable, serializable data objects. This data format is used in FOCUS to communicate multiple pieces of information about a charge (tags, properties, etc.) in a single column.
