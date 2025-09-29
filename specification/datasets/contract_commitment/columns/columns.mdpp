@@ -1,0 +1,13 @@
+!INCLUDE "billingcurrency.md",1
+!INCLUDE "contractcommitmentcost.md",1
+!INCLUDE "contractcommitmentid.md",1
+!INCLUDE "contractcommitmentcategory.md",1
+!INCLUDE "contractcommitmentdescription.md",1
+!INCLUDE "contractcommitmentperiodend.md",1
+!INCLUDE "contractcommitmentperiodstart.md",1
+!INCLUDE "contractcommitmentquantity.md",1
+!INCLUDE "contractcommitmenttype.md",1
+!INCLUDE "contractcommitmentunit.md",1
+!INCLUDE "contractid.md",1
+!INCLUDE "contractperiodend.md",1
+!INCLUDE "contractperiodstart.md",1

@@ -113,3 +113,43 @@ ul.toc.tocdepth2 li.toc.item a {
   font-size: 14px;
   text-decoration: none;
 }
+
+.h2-nonindex {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: #111;
+  line-height: 125%;
+  margin-top: 2em;
+}
+
+.h3-nonindex {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #111;
+  line-height: 125%;
+  margin-top: 2em;
+}
+
+.h4-nonindex {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #111;
+  line-height: 125%;
+  margin-top: 2em;
+}
+
+.h5-nonindex {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #111;
+  line-height: 125%;
+  margin-top: 2em;
+}
+
+.h6-nonindex {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #111;
+  line-height: 125%;
+  margin-top: 2em;
+}
