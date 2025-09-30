@@ -122,7 +122,7 @@ A Date/Time Format value that is contained within the beginning bound of a time 
 
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
-The process of ensuring that all financial metrics and dimensions presented on an invoice are fully aligned with the underlying cost and usage data associated with that invoice.
+The process of reconciling the invoice (i.e., the metrics and dimensions presented on an invoice) with the underlying charges provided in the FOCUS Cost and Usage dataset artifacts, ensuring alignment between invoice content and associated charges. Data presented on an invoice is typically derived through aggregation of cost and usage charges. The aggregation set and the scope of reconciliation are defined by a subset of metrics and dimensions present in the FOCUS cost and usage charges, including but not limited to: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd.
 
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
@@ -134,7 +134,7 @@ A billing period for which all planned invoices have been successfully issued by
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
-An invoice that has been formally generated and released by the designated Invoice Issuer. Prior to issuance, the invoice must be reconciled with the underlying charges provided in the FOCUS Cost and Usage dataset artifacts, ensuring alignment between invoice content and charge records. Once issued, the invoice becomes the authoritative financial document and is considered finalized and immutable (i.e., the data presented on the invoice cannot be changed). While modifications (including updates, additions, or omissions) of underlaying cost and usage charges may be permitted, they must not compromise the integrity of the issued invoice. Only modifications that maintain alignment with the invoice content are acceptable, as any misalignment would invalidate the prior reconciliation.
+An invoice that has been formally generated and released by the designated Invoice Issuer. Prior to issuance, the invoice must be reconciled with the underlying charges provided in the FOCUS Cost and Usage dataset artifacts, ensuring alignment between invoice content and associated charges. Once issued, the invoice becomes the authoritative financial document and is considered finalized and immutable (i.e., the data presented on the invoice cannot be changed). While modifications (including updates, additions, or omissions) of underlaying cost and usage charges may be permitted, they must not compromise the integrity of the issued invoice. Only modifications that maintain alignment with the invoice content are acceptable, as any misalignment would invalidate the prior reconciliation.
 
 <a name="glossary:json"><b>JSON</b></a>
 A common acronym for JavaScript Object Notation, a data format codified in [ECMA-404](https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) as a standard for human-readable, serializable data objects. This data format is used in FOCUS to communicate multiple pieces of information about a charge (tags, properties, etc.) in a single column.
