@@ -1,12 +1,30 @@
 # Invoice Handling
 
-FinOps practitioners must be able to reconcile FOCUS datasets with the corresponding invoices and usage statements they receive from [*Invoice Issuers*](#glossary:InvoiceIssuer). In practice, this means ensuring that all monetary [*charges*](#glossary:charge) that appear on an invoice or usage statement — including those not tied to metered usage — are represented in the [*FOCUS dataset*](#glossary:FOCUS-dataset). Without this alignment, it becomes difficult to perform accurate invoice reconciliation, financial reporting, and chargeback.
+## Overview
+
+FinOps practitioners must be able to reconcile FOCUS datasets with the corresponding invoices and usage statements they receive from [*Invoice Issuers*](#glossary:InvoiceIssuer). In practice, this means ensuring that all monetary [*charges*](#glossary:charge) that appear on an invoice or usage statement — including those not tied to metered usage — are represented in the [*FOCUS dataset*](#glossary:FOCUS-dataset). Without this alignment, it becomes difficult to perform accurate [*invoice reconciliation*](#glossary:invoice-reconciliation), financial reporting, and chargeback.
 
 This attribute introduces requirements for how charges such as usage, taxes, credits, refunds, etc, inclusive of support, training, and marketplace transactions, and any other type of charge should be captured and categorized. It also defines expectations around the completeness and consistency of invoice-level totals within the dataset, enabling FOCUS datasets to be used in a system of record for all invoiced costs.
 
-Prior to invoice issuance, all charges in FOCUS Cost and Usage dataset artifacts associated with the invoice must be aligned and [*reconciled*](#glossary:invoice-reconciliation) with the financial values presented on the invoice. Once an invoice is issued, it serves as the authoritative financial document and is considered finalized and immutable. Modifications to charges associated with an issued invoice (whether as updates, additions, or omissions) are not permitted if they would change reconciled invoice data. The scope of *invoice reconciliation* includes (but is not limited to) the following metrics and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, BillingPeriodEnd. Depending on the Invoice Issuer, these restrictions may extend to additional metrics and dimensions included on the invoice. These constraints ensure the integrity of issued invoices and their supporting data for financial, audit, and compliance purposes. Modifications (including updates, additions, or omissions) that do not impact any invoice-presented financial data are allowed but must be applied with care to preserve traceability. This is particularly important for dimensions and metrics used in essential downstream FinOps capabilities subject to financial data, such as chargeback.
+### Invoice Reconciliation and Issuance
 
-For an invoiced (closed) billing period, it is understood that all invoices for that period have been issued, and no new invoices may be associated with it unless explicitly requested by the end-user. The Invoice Issuer must publish in their respective documentation how to identify an invoiced (closed) billing period. Any necessary corrections to charges originally incurred in an invoiced billing period that have financial impact and require issuing additional invoices must instead be reflected in a subsequent open billing period, with the charge period indicating when the cost was incurred. This establishes a clear temporal boundary between billing cycles, preserving the historical accuracy and integrity of closed billing periods, while enabling transparent and auditable tracking of any necessary corrections in subsequent open billing periods.
+Prior to invoice issuance, all charges in the FOCUS Cost and Usage dataset artifacts that are associated with the invoice must be reconciled with the metrics and dimensions presented on the invoice. This reconciliation ensures alignment between invoice content and the underlying cost and usage data.
+
+Invoice data is typically derived through aggregation of individual cost and usage charges. The aggregation set and the scope of reconciliation are defined by a subset of metrics and dimensions present in the FOCUS cost and usage charges, including but not limited to: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd. Depending on the invoice issuer, reconciliation may also extend to additional metrics and dimensions included on the invoice.
+
+Once an invoice is issued, it becomes the authoritative financial document and is considered finalized and immutable. This means that the financial data presented on an issued invoice must not be changed. While modifications to the underlying cost and usage charges associated with an issued invoice (e.g., updates, additions, or omissions) may be permitted, they must not compromise the integrity of the issued invoice. Only modifications that maintain alignment with the invoice content are acceptable. Any misalignment would invalidate the prior reconciliation and undermine the invoice’s financial validity.
+
+Modifications to the underlying cost and usage charges associated with an issued invoice that do not impact data presented on the invoice are allowed. However, although these modifications do not affect invoice reconciliation, they can still result in loss of auditability and traceability, which in turn complicates corrections and mappings required in downstream FinOps activities, such as cost allocation, chargeback, or budgeting. For this reason, such modifications are not preferred and should only be applied when explicitly requested by the end-user.
+
+### Handling Invoiced Billing Periods
+
+An invoiced billing period represents a billing period for which all planned invoices have been successfully issued by the designated invoice issuer. This status indicates that the billing period is financially closed, and no additional invoices will be associated with that timeframe. The ability to identify an invoiced billing period must be documented by the invoice issuer and made accessible to practitioners.
+
+Any necessary corrections to previously invoiced billing period that have financial impact and require issuing additional invoices must instead be reflected in a subsequent open billing period, with the charge period indicating when the cost was incurred.
+
+This approach establishes a clear temporal boundary between billing cycles, preserving the historical financial accuracy and integrity of closed billing periods while enabling transparent and auditable tracking of corrections in future periods.
+
+Exceptionally, additional invoices may be issued for a closed billing period only if explicitly requested by the end-user.
 
 ## Attribute ID
 
@@ -23,16 +41,17 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 ## Requirements
 
 * All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in the FOCUS Cost and Usage dataset.
-* Invoice Issuer MUST document all metrics and dimensions presented on the invoice and included in Invoice Reconciliation.
-* Invoice Reconciliation MUST include (but is not limited to) the following metrics and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, BillingPeriodEnd, and ChargeCategory.
-* Invoice Issuer MUST perform internal invoice reconciliation before invoice issuance.
-* Invoice MUST be considered finalized and immutable once issued.
-* Modifications to charges associated with an issued invoice (including updates, additions, deletions, or omissions) MUST NOT be applied if they would impact reconciled invoice data.
-* Modifications to charges associated with an issued invoice (including updates, additions, deletions, or omissions) that do not impact reconciled invoice data SHOULD NOT be applied if they affect dimensions and metrics used in downstream FinOps capabilities subject to financial data, such as chargeback, unless explicitly requested by the end-user.
+* If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage dataset.
+* All metrics and dimensions presented on the invoice and included in *invoice reconciliation* MUST be documented by the invoice issuer and accessible to practitioners.
+* *Invoice reconciliation* MUST include (but is not limited to) the following metrics and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, BillingPeriodEnd, and ChargeCategory.
+* Invoice Issuer MUST perform internal *invoice reconciliation* before invoice issuance.
+* Issued invoice MUST be considered finalized and immutable (i.e., the data presented on the invoice cannot be changed).
+* Modifications (e.g., updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice that affect data presented on the invoice MUST NOT be applied.
+* Modifications (e.g., updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice that affect data presented on the invoice SHOULD NOT be applied, unless explicitly requested by the end-user.
+* Ability to identify an invoiced billing period MUST be documented by the invoice issuer and accessible to practitioners.
 * Invoice Issuer MUST document how to identify an invoiced (closed) billing period.
 * Billing period MUST be considered invoiced (closed) only if all invoices for that billing period have been issued.
-* Additional invoices MUST NOT be associated with a billing period once it is invoiced and closed, unless explicitly requested by the end-user.
-* If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage dataset.
+* Additional invoices MUST NOT be associated with an invoiced billing period, unless explicitly requested by the end-user.
 
 ## Exceptions
 

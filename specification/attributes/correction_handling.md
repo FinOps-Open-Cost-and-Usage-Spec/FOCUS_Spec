@@ -15,8 +15,8 @@ Corrections may arise from a variety of operational or technical causes, such as
 Accurate correction handling is essential for a range of business-critical processes, including but not limited to:
 
 * Temporal accuracy - capturing both when the charge was incurred (reflected in charge period columns, i.e., Charge Period Start and Charge Period End) and when the correction was invoiced (reflected in billing period columns, i.e., Billing Period Start and Billing Period End columns).
-* Financial and legal integrity - preserving original charge records associated with finalized invoices while recording changes to those records separately, as finalized invoices represent binding financial documents requiring immutability and traceability.
-* Cost allocation and chargeback - attributing corrections to the correct dimensions (e.g., Billing Account, Sub Account, SKU ID, SKU Price ID, Resource ID).
+* Financial and legal integrity - ensuring that data presented on issued invoices remains unchanged and aligned with associated underlying charges provided in the FOCUS Cost and Usage dataset artifacts, while any related corrections do not compromise invoice reconciliation.
+* Cost allocation and chargeback - attributing corrections to the correct dimensions (e.g., Billing Account, Sub Account, SKU ID, SKU Price ID, Resource ID) to ensure accurate downstream processing.
 * Auditability - tracing the full lifecycle of a charge from the original record through all subsequent corrections.
 
 ### Delivery Mechanisms and Correction Representation
@@ -79,10 +79,10 @@ All corrections adhere to the following requirements:
   * [ChargePeriodStart](#chargeperiodstart) and [ChargePeriodEnd](#chargeperiodend) MUST equal the *inclusive start bound* and *exclusive end bound* of the period in which the cost was originally incurred.
 * Corrections to charges associated with an issued invoice that do not impact *reconciled invoice* data but do affect dimensions and metrics used in downstream FinOps capabilities subject to financial data, such as chargeback, SHOULD adhere to the same requirements as corrections that impact *reconciled invoice* data, unless explicitly requested by the end-user.
 * Replacement mechanism adheres to the following additional requirements:
-  * Corrections for previously invoiced billing periods that impact *reconciled invoice* data MUST be represented exclusively through the addition of new records.
-  * Corrections for previously invoiced billing periods that do not impact *reconciled invoice* data but affect dimensions and metrics used in downstream FinOps capabilities (e.g., chargeback) SHOULD be represented exclusively through the addition of new records, unless explicitly requested otherwise by the end-user.
+  * Corrections to previously invoiced billing periods that impact *reconciled invoice* data MUST be represented exclusively through the addition of new records.
+  * Corrections to previously invoiced billing periods that do not impact *reconciled invoice* data but affect dimensions and metrics used in downstream FinOps capabilities (e.g., chargeback) SHOULD be represented exclusively through the addition of new records, unless explicitly requested otherwise by the end-user.
   * Correction handling implementation SHOULD support external retention of historical snapshots as an optional capability, allowing end-users to enable traceability.
-  * Corrections for uninvoiced billing periods MAY include updates, additions, or omissions.
+  * Corrections to uninvoiced billing periods MAY include updates, additions, or omissions.
 * Append-only mechanism adheres to the following additional requirements:
   * All previously delivered records MUST be retained without modification or deletion.
   * All corrections MUST be represented exclusively by adding new records.
