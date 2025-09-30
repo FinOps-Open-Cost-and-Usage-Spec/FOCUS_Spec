@@ -215,21 +215,7 @@
       "MustSatisfy": "ListCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the ListCost of those related charges.",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ListUnitPrice",
-            "Value": null
-          },
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ChargeCategory",
-            "Value": "Tax"
-          }
-        ]
-      },
+      "Condition": {},
       "Dependencies": [
         "ChargeCategory-C-000-M",
         "ListUnitPrice-C-000-C"
