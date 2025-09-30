@@ -4,6 +4,91 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## v1.3
+
+<sup>Announced December 2025</sup>
+
+### Added
+
+#### New datasets
+
+- `CostAndUsage`
+  - FOCUS had only one dataset prior to 1.3, and thus it did not have a name.
+- `ContractCommitment`
+
+#### New columns
+
+- `CostAndUsage`
+  - `AllocatedMethodDetails`
+  - `AllocatedMethodId`
+  - `AllocatedResourceId`
+  - `AllocatedResourceName`
+  - `AllocatedTags`
+  - `ContractApplied`
+  - `HostProvider`
+  - `ServiceProvider`
+- `ContractCommitment`
+  - `BillingCurrency`
+  - `ContractCommitmentCategory`
+  - `ContractCommitmentCost`
+  - `ContractCommitmentId`
+  - `ContractCommitmentPeriodEnd`
+  - `ContractCommitmentPeriodStart`
+  - `ContractCommitmentQuantity`
+  - `ContractCommitmentType`
+  - `ContractCommitmentUnit`
+  - `ContractId`
+  - `ContractPeriodEnd`
+  - `ContractPeriodStart`
+
+#### New attributes
+
+- `InvoiceHandling`
+- `ProviderCalculatedSplitCostAllocationHandling`
+
+#### New appendix entries
+
+- TBD
+
+#### New supported features
+
+- Provider-calculated split cost allocation
+
+#### New metadata column definition properties
+
+- TBD
+
+### Changed
+
+#### Changed columns
+
+- TBD
+
+#### Changed attributes
+
+- TBD
+
+#### Changed appendix entries
+
+- TBD
+
+#### Changed metadata
+
+##### Changed metadata properties
+
+- TBD
+
+### Deprecated
+
+#### Deprecated columns
+This functionality will be removed in a future release of FOCUS.
+
+- `CostAndUsage`
+  - `ProviderName`
+  - `PublisherName`
+
+<br>
+
 ## v1.2
 
 <sup>Announced June 2025</sup>
