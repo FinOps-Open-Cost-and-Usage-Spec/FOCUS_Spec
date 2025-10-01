@@ -12,7 +12,7 @@ Prior to invoice issuance, all charges in the FOCUS Cost and Usage dataset artif
 
 Invoice data is typically derived through aggregation of individual cost and usage charges. The aggregation set and the scope of reconciliation are defined by a subset of metrics and dimensions present in the FOCUS cost and usage charges, including but not limited to: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd. Depending on the invoice issuer, reconciliation may also extend to additional metrics and dimensions included on the invoice.
 
-Once an invoice is issued, it becomes the authoritative financial document and is considered finalized and immutable. This means that the financial data presented on an issued invoice must not be changed. While modifications to the underlying cost and usage charges associated with an issued invoice (e.g., updates, additions, or omissions) may be permitted, they must not compromise the integrity of the issued invoice. Only modifications that maintain alignment with the invoice content are acceptable. Any misalignment would invalidate the prior reconciliation and undermine the invoice's financial validity.
+Once an invoice is issued, it becomes the authoritative financial document. Issued invoice is considered finalized, and the financial data it contains must not be altered. While modifications to the underlying cost and usage charges associated with an issued invoice (e.g., updates, additions, or omissions) may be permitted, they must not compromise the integrity of the issued invoice. Only modifications that maintain alignment with the invoice content are acceptable. Any misalignment would invalidate the prior reconciliation and undermine the invoice's financial validity.
 
 Modifications to the underlying cost and usage charges associated with an issued invoice that do not impact data presented on the invoice are allowed. However, although these modifications do not affect invoice reconciliation, they can still result in loss of auditability and traceability, which in turn complicates corrections and mappings required in downstream FinOps activities, such as cost allocation, chargeback, or budgeting. For this reason, such modifications are not preferred and should only be applied when explicitly requested by the end-user.
 
@@ -42,14 +42,15 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 
 * All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in the FOCUS Cost and Usage dataset.
 * If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage dataset.
-* All metrics and dimensions presented on the invoice and included in *invoice reconciliation* MUST be documented by the invoice issuer and accessible to practitioners.
 * *Invoice reconciliation* MUST include (but is not limited to) the following metrics and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, BillingPeriodEnd, and ChargeCategory.
-* Invoice Issuer MUST perform internal *invoice reconciliation* before invoice issuance.
-* Issued invoice MUST be considered finalized and immutable (i.e., the data presented on the invoice cannot be changed).
+* *Invoice reconciliation* MUST be performed by the invoice issuer before issuing an invoice.
+* Financial data presented on an invoice and included in *invoice reconciliation* MUST be documented by the invoice issuer and accessible to practitioners.
+* Financial data presented on an *issued invoice* MUST NOT be altered.
 * Modifications (e.g., updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice that affect data presented on the invoice MUST NOT be applied.
 * Modifications (e.g., updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice that affect data presented on the invoice SHOULD NOT be applied, unless explicitly requested by the end-user.
-* Ability to identify a *closed billing period* MUST be documented by the invoice issuer and accessible to practitioners.
-* Billing period MUST be considered closed only if all invoices for that billing period have been issued.
+* Billing period MUST be considered "open" until all planned invoices for that period have been issued.
+* Billing period MUST be considered "closed" when all planned invoices for that period have been issued.
+* Ability to determine whether a billing period is "open" or "closed" MUST be documented by the invoice issuer and accessible to practitioners.
 * Additional invoices MUST NOT be associated with a *closed billing period*, unless explicitly requested by the end-user.
 
 ## Exceptions
