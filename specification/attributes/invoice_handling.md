@@ -16,11 +16,11 @@ Once an invoice is issued, it becomes the authoritative financial document and i
 
 Modifications to the underlying cost and usage charges associated with an issued invoice that do not impact data presented on the invoice are allowed. However, although these modifications do not affect invoice reconciliation, they can still result in loss of auditability and traceability, which in turn complicates corrections and mappings required in downstream FinOps activities, such as cost allocation, chargeback, or budgeting. For this reason, such modifications are not preferred and should only be applied when explicitly requested by the end-user.
 
-### Handling Invoiced Billing Periods
+### Handling Closed Billing Periods
 
-An invoiced billing period represents a billing period for which all planned invoices have been successfully issued by the designated invoice issuer. This status indicates that the billing period is financially closed, and no additional invoices will be associated with that timeframe. The ability to identify an invoiced billing period must be documented by the invoice issuer and made accessible to practitioners.
+A [*closed billing period*](#glossary:closed-billing-period) represents a billing period for which all planned invoices have been successfully issued by the designated invoice issuer. This status indicates that the billing period is financially closed, and no additional invoices will be associated with that timeframe. The ability to identify a *closed billing period* must be documented by the invoice issuer and made accessible to practitioners.
 
-Any necessary corrections to previously invoiced billing period that have financial impact and require issuing additional invoices must instead be reflected in a subsequent open billing period, with the charge period indicating when the cost was incurred.
+Any necessary corrections to previously *closed billing period* that have financial impact and require issuing additional invoices must instead be reflected in a subsequent open billing period, with the charge period indicating when the cost was incurred.
 
 This approach establishes a clear temporal boundary between billing cycles, preserving the historical financial accuracy and integrity of closed billing periods while enabling transparent and auditable tracking of corrections in future periods.
 
@@ -48,10 +48,9 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 * Issued invoice MUST be considered finalized and immutable (i.e., the data presented on the invoice cannot be changed).
 * Modifications (e.g., updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice that affect data presented on the invoice MUST NOT be applied.
 * Modifications (e.g., updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice that affect data presented on the invoice SHOULD NOT be applied, unless explicitly requested by the end-user.
-* Ability to identify an invoiced billing period MUST be documented by the invoice issuer and accessible to practitioners.
-* Invoice Issuer MUST document how to identify an invoiced (closed) billing period.
-* Billing period MUST be considered invoiced (closed) only if all invoices for that billing period have been issued.
-* Additional invoices MUST NOT be associated with an invoiced billing period, unless explicitly requested by the end-user.
+* Ability to identify a *closed billing period* MUST be documented by the invoice issuer and accessible to practitioners.
+* Billing period MUST be considered closed only if all invoices for that billing period have been issued.
+* Additional invoices MUST NOT be associated with a *closed billing period*, unless explicitly requested by the end-user.
 
 ## Exceptions
 
@@ -59,7 +58,7 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
   * Tax exemption notifications
   * SLA credit details when the credit is already applied to the charged amount
 * If such informational items are excluded, providers MUST document this in their FOCUS implementation guide and ensure the sum of included charges still equals the invoice total.
-* Exceptions to the restrictions on issued invoices and invoiced billing periods MAY apply in the following cases:
+* Exceptions to the restrictions on issued invoices and *closed billing period* MAY apply in the following cases:
   * Upon explicit request from the end-user (subject to validation and approval processes).
   * Due to technical issues encountered during or after invoice issuance or billing period closure.
 
