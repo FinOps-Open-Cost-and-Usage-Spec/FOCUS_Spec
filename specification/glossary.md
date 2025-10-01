@@ -163,6 +163,10 @@ A contractual agreement where a customer commits to specific spend or usage goal
 
 A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
 
+<a name="glossary:open-billing-period"><b>Open Billing Period</b></a>
+
+A [*billing period*](glossary:billing-period) that has not yet been financially closed, regardless of whether it refers to the current or a past timeframe. The "open" status indicates that billing activities are ongoing and the period remains subject to updates until formally closed.
+
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
 The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of Provider-Calculated Split Cost Allocation to identify the charge that existed prior to the application of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) to produce [allocated charges](#glossary:allocated-charge).
