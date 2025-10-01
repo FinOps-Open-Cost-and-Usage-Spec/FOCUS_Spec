@@ -1,8 +1,8 @@
 # Dataset Instance ID
 
-The Dataset Instance Id of the FOCUS dataset for which the schema and its data conform to. This indicates which dataset instance the data artifact aligns with.
+The Dataset Instance Id of the FOCUS dataset for which the schema and its data conform. This indicates which dataset instance the data artifact aligns with.
 
-Dataset MUST be provided in the metadata. Dataset MUST be of type String and MUST NOT contain null values.
+Dataset Instance ID MUST be provided in the schema metadata. Dataset Instance ID MUST be of type String and MUST NOT contain null values. Dataset Instance ID MUST be a unique identifier within a data generator.
 
 ## Metadata ID
 

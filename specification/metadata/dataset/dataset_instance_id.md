@@ -6,7 +6,7 @@ Dataset Instance ID MUST be provided in the metadata. Dataset Instance ID MUST b
 
 ## Metadata ID
 
-DatasetInstanceID
+DatasetInstanceId
 
 ## Metadata Name
 

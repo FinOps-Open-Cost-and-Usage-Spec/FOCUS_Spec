@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME provides three dataset instances, "Cost and Usage Daily," "Cost and Usage Hourly," and "Commitments", each corresponding to the respective FOCUS datasets: Cost and Usage and Contract Commitment. ACME also provides a directory of datasets metadata containing a single file with metadata for each dataset instance.
+ACME provides three dataset instances: "Cost and Usage Daily," "Cost and Usage Hourly," and "Contract Commitments," corresponding to the FOCUS datasets Cost and Usage and Contract Commitment. ACME also provides a metadata directory containing a single file with metadata for each dataset instance.
 
 ## Supplied Metadata
 

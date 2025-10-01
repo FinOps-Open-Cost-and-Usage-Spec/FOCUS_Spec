@@ -1,16 +1,16 @@
 # FOCUS Dataset Id
 
-The name of the FOCUS dataset for which the schema and its data conform to. This indicates which FOCUS dataset the data artifact aligns with, such as "FOCUS Cost and Usage" or "FOCUS Contract."
+The identifier of the FOCUS dataset for which the schema and its data conform to. This indicates which FOCUS dataset the data artifact aligns with, such as "FOCUS Cost and Usage" or "FOCUS Contract."
 
-FOCUS Dataset MUST be provided in the metadata. FOCUS Dataset MUST be of type String and MUST NOT contain null values. FOCUS Dataset MUST match the DatasetId of one of the [*FOCUS datasets*](#glossary:FOCUS-dataset) defined in the FOCUS specification.
+FOCUS Dataset ID MUST be provided in the metadata. FOCUS Dataset ID MUST be of type String and MUST NOT contain null values. FOCUS Dataset ID MUST match the Dataset ID of one of the [*FOCUS datasets*](#glossary:FOCUS-dataset) defined in the FOCUS specification.
 
-## Metadata Id
+## Metadata ID
 
-FOCUSDataset
+FocusDatasetId
 
 ## Metadata Name
 
-FOCUS Dataset Id
+FOCUS Dataset ID
 
 ## Content constraints
 

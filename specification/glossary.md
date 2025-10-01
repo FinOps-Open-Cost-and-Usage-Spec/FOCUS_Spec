@@ -90,7 +90,7 @@ A financial incentive or allowance granted by a provider unrelated to other past
 
 <a name="glossary:datasetinstance"><b>Dataset Instance</b></a>
 
-A specific implementation of a FOCUS dataset provided by a data generator. This is distinct from a FOCUS dataset. A datagenerator may provide multiple dataset instances of the same FOCUS dataset, each with different properties such as time granularity or differing custom column inclusions.  For examples, see the [*Dataset Instance Metadata*](#datasetinstancemetadata) example section.
+A specific implementation of a FOCUS dataset provided by a data generator. A Data Generator may provide multiple dataset instances of the same FOCUS dataset, each with different properties such as time granularity or differing custom column inclusions.  For example, the same 'FOCUS Cost and Usage' *FOCUS Dataset* may be provided at an hourly or daily time granularity by a Data Generator. Each would be a distinct Dataset Instance.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 

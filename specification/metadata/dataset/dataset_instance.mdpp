@@ -1,6 +1,6 @@
 # Dataset Instance
 
-The dataset instance metadata object and its content provide information about the dataset instances provided by the data generator. While Datasets as defined in focus are specific tables, dataset instances are Data Generator delivered instances of those datasets. For example, a Data Generator may provide multiple datasets utilizing the FOCUS spec, including multiple instances of the FOCUS Cost and Usage dataset, each representing a different time granularity.
+The Dataset Instance metadata object provided by a Data Generator provides information about the dataset instance and its content. Dataset Instances are a Data Generator-delivered instance of a FOCUS Dataset. For example, a Data Generator may provide multiple datasets utilizing the FOCUS spec, including multiple instances of the FOCUS Cost and Usage dataset, each representing a different time granularity.
 
 ## Requirements
 
@@ -15,7 +15,7 @@ For every dataset instance provided by the Data Generator, a dataset instance me
 
 ### Dataset Instance Metadata Updates
 
-Should a property of the dataset instance be updated the expectation is that the dataset instance metadata object is updated to reflect the change. This is to ensure that the dataset instance metadata object is always accurate.
+Should a property of the dataset instance be updated, the expectation is that the dataset instance metadata object is updated to reflect the change. This ensures that the dataset instance metadata object is always accurate.
 
 ## Dataset Instance Example
 
