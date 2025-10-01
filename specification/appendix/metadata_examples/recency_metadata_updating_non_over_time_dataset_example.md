@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME provides recency metadata to accompany their FOCUS data export. Acme updates their FOCUS Contracts dataset, a non time-series dataset, every hour. In this case the most recent update to the recency data indicates the dataset and associated data artifact has been updated and is considered complete.
+ACME provides recency metadata to accompany their FOCUS data export. ACME updates their FOCUS Contracts dataset, a non time-series dataset, every day. In this case, the most recent update to the recency data indicates the dataset and associated data artifact has been updated and is considered complete.
 
 ## Supplied Metadata
 

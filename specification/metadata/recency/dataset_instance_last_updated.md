@@ -1,6 +1,6 @@
 # Dataset Instance Last Updated
 
-Date time when the data present in the Dataset Instance was updated.
+Datetime when the data present in the Dataset Instance was updated.
 
 The LastUpdated MUST be present in the metadata. This MUST be of type Date/Time and MUST NOT contain null values. LastUpdated MUST conform to [DateTimeFormat](#date/timeformat).
 

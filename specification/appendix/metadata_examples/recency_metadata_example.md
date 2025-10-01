@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has elected to recency metadata to accompany their FOCUS data export. ACME provides a directory of recency metadata for each dataset they provide and each recency object is a single file.
+ACME has elected to add recency metadata to its FOCUS data export. ACME provides a directory of recency metadata for each dataset they provide and each recency object is a single file.
 
 ## Supplied Metadata
 

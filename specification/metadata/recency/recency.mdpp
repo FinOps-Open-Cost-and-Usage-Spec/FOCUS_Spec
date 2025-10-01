@@ -11,7 +11,7 @@ FOCUS datasets, regardless of delivery mechanism, MAY provide metadata indicatin
 ### Dataset Updates
 
 When a dataset is updated by the [Data Generator](#datagenerator) the supplied recency metadata corresponding to the dataset should be updated to indicate that the dataset has been updated.
-This includes scenarios include, but are not limited to:
+Example scenarios include but are not limited to:
 
 * [Updating an overtime dataset recency metadata](#addingnewcolumns)
 * [Updating a non over-time dataset recency metadata](#changingcolumnmetadata)
