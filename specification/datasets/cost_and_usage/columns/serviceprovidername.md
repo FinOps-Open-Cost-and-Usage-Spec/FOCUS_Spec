@@ -4,8 +4,10 @@ Service Provider Name is the name of the entity that provides the [*resources*](
 
 The Service Provider Name column adheres to the following requirements:
 
-* The Service Provider column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* This column MUST be of type String and MUST NOT contain null values.
+* ServiceProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ServiceProviderName MUST be of type String.
+* ServiceProviderName MUST conform to [StringHandling](#stringhandling) requirements.
+* ServiceProviderName MUST NOT be null.
 
 See [Appendix: Entity Identification Examples](#entityidentification) section for examples of Service Provider values for various use case scenarios.
 
