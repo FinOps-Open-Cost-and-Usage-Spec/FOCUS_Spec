@@ -46,12 +46,12 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 * *Invoice reconciliation* MUST be performed by the invoice issuer before issuing an invoice.
 * Financial data presented on an invoice and included in *invoice reconciliation* MUST be documented by the invoice issuer and accessible to practitioners.
 * Financial data presented on an *issued invoice* MUST NOT be altered.
-* Modifications (e.g., updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice that affect data presented on the invoice MUST NOT be applied.
-* Modifications (e.g., updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice that affect data presented on the invoice SHOULD NOT be applied, unless explicitly requested by the end-user.
+* Modifications (including updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice MUST NOT be applied when they affect the financial data presented on the invoice.
+* Modifications (including updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice SHOULD NOT be applied when they do not affect the financial data presented on the invoice.
 * Billing period MUST be considered "open" until all planned invoices for that period have been issued.
 * Billing period MUST be considered "closed" when all planned invoices for that period have been issued.
 * Ability to determine whether a billing period is "open" or "closed" MUST be documented by the invoice issuer and accessible to practitioners.
-* Additional invoices MUST NOT be associated with a *closed billing period*, unless explicitly requested by the end-user.
+* Additional invoices MUST NOT be associated with a *closed billing period*.
 
 ## Exceptions
 
