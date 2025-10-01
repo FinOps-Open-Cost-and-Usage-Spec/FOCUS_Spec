@@ -79,7 +79,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
-        "ColumnAName": "SkuPriceId"
+        "ColumnName": "SkuPriceId"
       },
       "Condition": {},
       "Dependencies": []

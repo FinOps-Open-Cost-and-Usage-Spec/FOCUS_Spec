@@ -97,7 +97,8 @@
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
-        "ColumnName": "ChargePeriodStart"
+        "ColumnName": "ChargePeriodStart",
+        "Value": null
       },
       "Condition": {},
       "Dependencies": []

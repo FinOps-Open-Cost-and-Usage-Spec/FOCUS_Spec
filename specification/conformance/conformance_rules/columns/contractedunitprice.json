@@ -348,8 +348,8 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnByColumnEqualsColumnValue",
-        "ColumnNameA": "ContractedUnitPrice",
-        "ColumnNameB": "PricingQuantity",
+        "ColumnAName": "ContractedUnitPrice",
+        "ColumnBName": "PricingQuantity",
         "ResultColumnName": "ContractedCost"
       },
       "Condition": {

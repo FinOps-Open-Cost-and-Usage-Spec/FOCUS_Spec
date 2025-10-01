@@ -318,7 +318,7 @@
         "CheckFunction": "ColumnByColumnEqualsColumnValue",
         "ColumnAName": "ListUnitPrice",
         "ColumnBName": "PricingQuantity",
-        "EqualsColumnName": "ListCost"
+        "ResultColumnName": "ListCost"
       },
       "Condition": {
         "CheckFunction": "AND",
