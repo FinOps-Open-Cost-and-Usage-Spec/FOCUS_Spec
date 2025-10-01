@@ -79,13 +79,13 @@ All corrections adhere to the following requirements:
   * ChargePeriodStart and ChargePeriodEnd MUST equal the *inclusive start bound* and *exclusive end bound* of the period in which the cost was originally incurred.
 * Corrections to charges associated with an issued invoice that do not impact *reconciled invoice* data but do affect dimensions and metrics used in downstream FinOps capabilities subject to financial data, such as chargeback, SHOULD adhere to the same requirements as corrections that impact *reconciled invoice* data, unless explicitly requested by the end-user.
 * Replacement mechanism adheres to the following additional requirements:
-  * Corrections to previously *closed billing periods* that impact *reconciled invoice* data MUST be represented exclusively through the addition of new records.
-  * Corrections to previously *closed billing periods* that do not impact *reconciled invoice* data but affect dimensions and metrics used in downstream FinOps capabilities (e.g., chargeback) SHOULD be represented exclusively through the addition of new records, unless explicitly requested otherwise by the end-user.
+  * Corrections to previously *closed billing periods* that impact *reconciled invoice* data MUST be represented exclusively through the addition of new charges.
+  * Corrections to previously *closed billing periods* that do not impact *reconciled invoice* data but affect dimensions and metrics used in downstream FinOps capabilities (e.g., chargeback) SHOULD be represented exclusively through the addition of new charges, unless explicitly requested otherwise by the end-user.
   * Correction handling implementation SHOULD support external retention of historical snapshots as an optional capability, allowing end-users to enable traceability.
   * Corrections to *open billing periods* MAY include updates, additions, or omissions.
 * Append-only mechanism adheres to the following additional requirements:
-  * All previously delivered records MUST be retained without modification or deletion.
-  * All corrections MUST be represented exclusively by adding new records.
+  * All previously delivered charges MUST be retained without modification or deletion.
+  * All corrections MUST be represented exclusively by adding new charges.
 
 ## Exceptions
 

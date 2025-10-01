@@ -12,15 +12,17 @@ Prior to invoice issuance, all charges in the FOCUS Cost and Usage dataset artif
 
 Invoice data is typically derived through aggregation of individual cost and usage charges. The aggregation set and the scope of reconciliation are defined by a subset of metrics and dimensions present in the FOCUS cost and usage charges, including but not limited to: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd. Depending on the invoice issuer, reconciliation may also extend to additional metrics and dimensions included on the invoice.
 
-Once an invoice is issued, it becomes the authoritative financial document. Issued invoice is considered finalized, and the financial data it contains must not be altered. While modifications to the underlying cost and usage charges associated with an issued invoice (e.g., updates, additions, or omissions) may be permitted, they must not compromise the integrity of the issued invoice. Only modifications that maintain alignment with the invoice content are acceptable. Any misalignment would invalidate the prior reconciliation and undermine the invoice's financial validity.
+Once an invoice is issued, it becomes the authoritative financial document. Issued invoice is considered finalized, and the financial data it contains must not be altered. While corrections to the underlying cost and usage charges associated with an issued invoice (e.g., updates, additions, or omissions) may be permitted, they must not compromise the integrity of the issued invoice. Only corrections that maintain alignment with the invoice content are acceptable. Any misalignment would invalidate the prior reconciliation and undermine the invoice's financial validity.
 
-Modifications to the underlying cost and usage charges associated with an issued invoice that do not impact data presented on the invoice are allowed. However, although these modifications do not affect invoice reconciliation, they can still result in loss of auditability and traceability, which in turn complicates corrections and mappings required in downstream FinOps activities, such as cost allocation, chargeback, or budgeting. For this reason, such modifications are not preferred and should only be applied when explicitly requested by the end-user.
+Corrections to the underlying cost and usage charges associated with an issued invoice that do not impact data presented on the invoice are allowed. However, although these corrections do not affect invoice reconciliation, they can still result in loss of auditability and traceability, which in turn complicates corrections and mappings required in downstream FinOps activities, such as cost allocation, chargeback, or budgeting. For this reason, such corrections are not preferred and should only be applied when explicitly requested by the end-user.
 
 ### Handling Closed Billing Periods
 
-A [*closed billing period*](#glossary:closed-billing-period) represents a billing period for which all planned invoices have been successfully issued by the designated invoice issuer. This status indicates that the billing period is financially closed, and no additional invoices will be associated with that timeframe. The ability to identify a *closed billing period* must be documented by the invoice issuer and made accessible to practitioners.
+A [*closed billing period*](#glossary:closed-billing-period) represents a billing period for which all planned invoices have been successfully issued by the designated invoice issuer. This status indicates that the billing period is financially closed, and no additional invoices will be associated with that timeframe.
 
-Any necessary corrections to previously *closed billing period* that have financial impact and require issuing additional invoices must instead be reflected in a subsequent open billing period, with the charge period indicating when the cost was incurred.
+Any necessary corrections to previously *closed billing period* that have financial impact and require issuing additional invoices must instead be reflected in a subsequent [*open billing period*](#glossary:open-billing-period), with the charge period indicating when the cost was incurred.
+
+The ability to determine whether a billing period is "open" or "closed" must be documented by the invoice issuer and made accessible to practitioners.
 
 This approach establishes a clear temporal boundary between billing cycles, preserving the historical financial accuracy and integrity of closed billing periods while enabling transparent and auditable tracking of corrections in future periods.
 
@@ -46,8 +48,8 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 * *Invoice reconciliation* MUST be performed by the invoice issuer before issuing an invoice.
 * Financial data presented on an invoice and included in *invoice reconciliation* MUST be documented by the invoice issuer and accessible to practitioners.
 * Financial data presented on an *issued invoice* MUST NOT be altered.
-* Modifications (including updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice MUST NOT be applied when they affect the financial data presented on the invoice.
-* Modifications (including updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice SHOULD NOT be applied when they do not affect the financial data presented on the invoice.
+* Corrections (including updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice MUST NOT be applied when they affect the financial data presented on the invoice.
+* Corrections (including updates, additions, or omissions) to the underlying cost and usage charges associated with an issued invoice SHOULD NOT be applied when they do not affect the financial data presented on the invoice.
 * Billing period MUST be considered "open" until all planned invoices for that period have been issued.
 * Billing period MUST be considered "closed" when all planned invoices for that period have been issued.
 * Ability to determine whether a billing period is "open" or "closed" MUST be documented by the invoice issuer and accessible to practitioners.
