@@ -1090,7 +1090,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
-        "ColumnName": "PublisherName"
+        "ColumnName": "InvoiceIssuerName"
       },
       "Condition": {},
       "Dependencies": []
