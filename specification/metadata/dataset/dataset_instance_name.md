@@ -2,7 +2,7 @@
 
 The human-readable name of the dataset instance as provided by the data generator.
 
-Dataset Instance Name MUST be provided in the dataset metadata. Dataset Instance Name MUST be of type String and MUST NOT contain null values.
+Dataset Instance Name MUST be provided in the dataset instance metadata. Dataset Instance Name MUST be of type String and MUST NOT contain null values.
 
 ## Metadata ID
 

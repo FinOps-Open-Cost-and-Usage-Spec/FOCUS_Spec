@@ -15,17 +15,17 @@ The updated schema-related metadata could look like this:
   {
     "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-246811",
     "DatasetInstanceName": "Contract Commitments Report",
-    "FOCUSDatasetId": "ContractCommitment"
+    "FocusDatasetId": "ContractCommitment"
   },
   {
     "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
     "DatasetInstanceName": "Cost and Usage Daily",
-    "FOCUSDatasetId": "CostAndUsage"
+    "FocusDatasetId": "CostAndUsage"
   },
   {
     "DatasetInstanceId": "178151-ja23h1287-387151-dbad145e-134657",
     "DatasetInstanceName": "Cost and Usage Hourly",
-    "FOCUSDatasetId": "CostAndUsage"
+    "FocusDatasetId": "CostAndUsage"
   }
 ]
 ```
