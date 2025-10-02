@@ -6,3 +6,4 @@ FOCUS Metadata SHOULD be provided in a format that is accessible programmaticall
 
 !INCLUDE "data_generator/data_generator.mdpp",1
 !INCLUDE "schema/schema.mdpp",1
+!INCLUDE "recency/recency.mdpp",1
