@@ -54,7 +54,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 <a name="glossary:closed-billing-period"><b>Closed Billing Period</b></a>
 
-A [*billing period*](glossary:billing-period) that has been financially closed following the successful issuance of all planned invoices by the designated invoice issuer for that period. Upon assigning the "closed" status, the responsible invoice issuer entity confirms that no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested by the end-user.
+A [*billing period*](glossary:billing-period) that has been financially closed following the successful issuance of all planned invoices by the designated Invoice Issuer for that period. Upon assigning the "closed" status, the responsible Invoice Issuer entity confirms that no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested by the end-user.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 

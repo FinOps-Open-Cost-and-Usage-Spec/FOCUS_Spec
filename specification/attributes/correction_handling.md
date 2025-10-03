@@ -4,7 +4,7 @@
 
 ### Definition and Scope of Corrections
 
-Correction Handling attribute defines how updates to previously provided charge records are represented in FOCUS datasets.
+Correction Handling attribute defines how modifications (including updates, additions, or omissions) to previously provided [*charges*](#glossary:charge), whether from closed or open billing periods, are represented in FOCUS Cost and Usage dataset artifacts.
 
 **Terminology Note:** The term "Correction" (capitalized) refers specifically to an allowed value in the [ChargeClass](#chargeclass) column, which designates charge records used to correct cost and usage data from a previously [*closed billing period*](#glossary:closed-billing-period). In contrast, the Correction Handling attribute covers the broader concept of "corrections" (lowercase), which may include charge records used to correct cost and usage data originally associated with a previously *closed billing period* or an [*open billing period*](#glossary:open-billing-period) (including both previous and current), as well as the omission of a previously provisioned charge if it is no longer applicable, subject to applicable correction handling restrictions.
 
@@ -61,7 +61,7 @@ Correction Handling
 
 ## Description
 
-Defines how updates to previously provided [*charges*](#glossary:charge) are represented in FOCUS datasets.
+Defines how modifications (including updates, additions, or omissions) to previously provided *charges*, whether from closed or open billing periods, are represented in FOCUS Cost and Usage dataset artifacts.
 
 ## Requirements
 
