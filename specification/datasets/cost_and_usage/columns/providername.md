@@ -1,4 +1,4 @@
-# Provider
+# Provider - DEPRECATED
 
 A Provider is an entity that makes the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for purchase. It is commonly used for cost analysis and reporting scenarios.
 
