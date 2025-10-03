@@ -12,21 +12,19 @@ Prior to invoice issuance, all charges in the FOCUS Cost and Usage dataset artif
 
 Invoice data is typically derived through aggregation of individual cost and usage charges. The aggregation set and the scope of reconciliation are defined by a subset of metrics and dimensions present in the FOCUS cost and usage charges, including but not limited to: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd. Depending on the Invoice Issuer, reconciliation may also extend to additional metrics and dimensions included on the invoice.
 
-Once an invoice is issued, it becomes the authoritative financial document. Issued invoice is considered finalized, and the cost and usage data it contains must not be altered. While corrections to the underlying [*issued charges*](#glossary:issued-charge) (including updates, additions, or omissions) may be permitted, they must not compromise the integrity of the associated *issued invoice*. Only corrections that maintain alignment with the invoice content are acceptable. Any misalignment would invalidate the prior *invoice reconciliation* and undermine the invoice's financial validity.
+Once an invoice is issued, it becomes the authoritative financial document. Issued invoice is considered finalized, and the cost and usage data it contains must not be altered.
 
-Corrections to the underlying *issued charges* that do not impact data presented on the associated *issued invoice* are allowed. However, although these corrections do not affect *invoice reconciliation*, they can still result in loss of auditability and traceability, which in turn complicates modifications and mappings required in downstream FinOps activities, such as cost allocation, chargeback, or budgeting. For this reason, such corrections are not preferred and should only be applied when explicitly requested by the end-user.
+[*Corrections*](#glossary:correction) to *issued charges* (including updates, additions, or omissions) may be permitted under certain conditions. However, such corrections must not compromise the integrity of the associated *issued invoice*. Only corrections that maintain alignment with the invoice content are acceptable. 
+
+For more information on *corrections* to *issued charges*, refer to the [Correction Handling](#correctionhandling) section.
 
 ### Handling Closed Billing Periods
 
-A [*closed billing period*](#glossary:closed-billing-period) represents a billing period for which all planned invoices have been successfully issued by the designated Invoice Issuer. This status indicates that the billing period is financially closed, and no additional invoices will be associated with that timeframe.
-
-Any necessary corrections to previously *closed billing period* that require issuing additional invoices must instead be reflected in a subsequent [*open billing period*](#glossary:open-billing-period), with the charge period of the underlying cost and usage charges indicating when the cost was incurred.
+A [*closed billing period*](#glossary:closed-billing-period) represents a billing period for which all planned invoices have been successfully issued by the designated Invoice Issuer. This status indicates that the billing period is financially closed, and no additional invoices will be associated with that timeframe. This approach establishes a clear temporal boundary between billing cycles. Exceptionally, additional invoices may be issued for a closed billing period only if explicitly requested by the end-user.
 
 The ability to determine whether a billing period is "open" or "closed" must be documented by the Invoice Issuer and made accessible to practitioners.
 
-This approach establishes a clear temporal boundary between billing cycles, preserving the historical financial accuracy and integrity of closed billing periods while enabling transparent and auditable tracking of corrections in future periods.
-
-Exceptionally, additional invoices may be issued for a closed billing period only if explicitly requested by the end-user.
+For information on *corrections* to *closed billing periods*, refer to the [Correction Handling](#correctionhandling) section.
 
 ## Attribute ID
 
@@ -48,8 +46,6 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 * *Invoice reconciliation* MUST be performed by the Invoice Issuer before issuing an invoice.
 * Cost and usage data presented on an invoice and included in *invoice reconciliation* MUST be documented by the Invoice Issuer and accessible to practitioners.
 * Cost and usage data presented on an *issued invoice* MUST NOT be altered.
-* Corrections (including updates, additions, or omissions) to the underlying *issued charges* MUST NOT be applied when they affect the cost and usage data presented on the associated *issued invoice*.
-* Corrections (including updates, additions, or omissions) to the underlying *issued charges* SHOULD NOT be applied when they do not affect the cost and usage data presented on the associated *issued invoice*.
 * Billing period MUST be considered "open" until all planned invoices for that period have been issued.
 * Billing period MUST be considered "closed" when all planned invoices for that period have been issued.
 * Ability to determine whether a billing period is "open" or "closed" MUST be documented by the Invoice Issuer and accessible to practitioners.
@@ -61,7 +57,7 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
   * Tax exemption notifications
   * SLA credit details when the credit is already applied to the charged amount
 * If such informational items are excluded, providers MUST document this in their FOCUS implementation guide and ensure the sum of included charges still equals the invoice total.
-* Exceptions to the restrictions on *issued invoices* and *closed billing period* MAY apply in the following cases:
+* Exceptions to the restrictions on *issued invoices* and *closed billing periods* MAY apply in the following cases:
   * Upon explicit request from the end-user (subject to validation and approval processes).
   * Due to technical issues encountered during or after invoice issuance or billing period closure.
 

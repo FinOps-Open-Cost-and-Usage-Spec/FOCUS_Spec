@@ -2,9 +2,9 @@
 
 ## Overview
 
-Correction Handling attribute defines how modifications (including updates, additions, or omissions) to previously provided [*charges*](#glossary:charge), whether from closed or open billing periods, are represented in FOCUS Cost and Usage dataset artifacts.
+Correction Handling attribute defines how [*corrections*](#glossary:correction), i.e., modifications (including updates, additions, or omissions) to previously provided [*charges*](#glossary:charge), whether from an [*open billing period*](#glossary:open-billing-period) or a [*closed billing period*](#glossary:closed-billing-period), are represented in FOCUS Cost and Usage dataset artifacts.
 
-**Terminology Note:** The term "Correction" (capitalized) refers specifically to an allowed value in the [ChargeClass](#chargeclass) column, which designates charge records used to correct cost and usage data from a previously [*closed billing period*](#glossary:closed-billing-period). In contrast, the Correction Handling attribute covers the broader concept of "corrections" (lowercase), which may include charge records used to correct cost and usage data originally associated with a previously *closed billing period* or an [*open billing period*](#glossary:open-billing-period) (including both previous and current), as well as the omission of a previously provisioned charge if it is no longer applicable.
+**Terminology Note:** The term "Correction" (capitalized) refers specifically to an allowed value in the [ChargeClass](#chargeclass) column, which designates charge records used to correct cost and usage data from a previously *closed billing period*. In contrast, the Correction Handling attribute covers the broader concept of "corrections" (lowercase), which may include charge records used to correct cost and usage data originally associated with a previously *closed billing period* or an *open billing period* (including both previous and current), as well as the omission of a previously provisioned charge if it is no longer applicable.
 
 Corrections may arise from a variety of operational or technical causes, such as refunds, delayed or missing cost and usage data, rounding errors, post-processing adjustments, etc.
 
@@ -32,8 +32,6 @@ Subsequent dataset artifacts in the Replacement mechanism may include the follow
 * Additional records supplement previously delivered data.
 * Omitted records are removed if no longer applicable.
 
-Corrections to charges associated with an issued invoice that impact reconciled invoice data must be represented exclusively through the addition of new records associated with a subsequent *open billing period*, with the *charge period* indicating when the cost was incurred.
-
 #### Append-only Mechanism
 
 In the Append-only mechanism, each dataset artifact appends new records without modifying or removing previously delivered ones. This mechanism inherently supports auditability, as all original and correction records are retained.
@@ -49,6 +47,18 @@ Within the Append-only mechanism, two correction styles are commonly used:
 
 To ensure data integrity, correction records must not result in double counting of any cost- or quantity-related values. This applies regardless of the correction style or delivery mechanism used.
 
+### Corrections to Issued Charges
+
+While corrections to the [*issued charges*](#glossary:issued-charge) (including updates, additions, or omissions) may be permitted, they must not compromise the integrity of the associated *issued invoice*. Only corrections that maintain alignment with the invoice content are acceptable. Any misalignment would invalidate the prior *invoice reconciliation* and undermine the invoice's financial validity.
+
+Corrections to the underlying *issued charges* that do not impact data presented on the associated *issued invoice* are allowed. However, although these corrections do not affect *invoice reconciliation*, they can still result in loss of auditability and traceability, which in turn complicates modifications and mappings required in downstream FinOps activities, such as cost allocation, chargeback, or budgeting. For this reason, such corrections are not preferred and should only be applied when explicitly requested by the end-user.
+
+### Corrections to Closed Billing Periods
+
+Any necessary corrections to previously *closed billing period* that require issuing additional invoices must be result in additional charge(s) associated with a subsequent *open billing period*, with the charge period indicating when the cost was incurred. (An exception to this rule may apply if explicitly requested by the end-user.)
+
+This approach establishes a clear temporal boundary between billing cycles, preserving the historical financial accuracy and integrity of closed billing periods while enabling transparent and auditable tracking of corrections in future periods.
+
 ## Attribute ID
 
 CorrectionHandling
@@ -59,35 +69,31 @@ Correction Handling
 
 ## Description
 
-Defines how modifications (including updates, additions, or omissions) to previously provided *charges*, whether from closed or open billing periods, are represented in FOCUS Cost and Usage dataset artifacts.
+Defines how modifications (including updates, additions, or omissions) to previously provided *charges*, whether from an *open billing period* or a *closed billing period*, are represented in FOCUS Cost and Usage dataset artifacts.
 
 ## Requirements
 
 All corrections adhere to the following requirements:
 
-* Correction handling implementation MUST support auditability by enabling traceability from the original record through all subsequent corrections for *closed billing periods*.
-* Correction handling implementation MUST ensure that the delivery mechanisms and correction styles in use are documented within the Data Generator documentation.
-* ChargeClass MUST be null when the *charge* does not represent a correction to a previously *closed billing period*.
+* Correction handling implementation MUST ensure that the delivery mechanisms and correction styles in use are documented by the Data Generator.
+* Correction handling implementation SHOULD support external retention of historical snapshots as an optional capability when Replacement mechanism is used, allowing end-users to enable traceability.
 * Correction MUST NOT result in double counting of any cost- or quantity-related values.
-* Corrections to charges associated with an issued invoice that impact *reconciled invoice* data adhere to the following additional requirements:
-  * ChargeClass MUST be "Correction".
-  * Correction MUST NOT replace or omit the original record.
-  * Corrected row(s) MUST be assigned to a different InvoiceId than the original record.
-  * BillingPeriodStart and BillingPeriodEnd MUST equal the [*inclusive start bound*](#glossary:inclusivestartbound) and [*exclusive end bound*](#glossary:exclusiveendbound) of a subsequent *open billing period* in which the correction is issued.
-  * ChargePeriodStart and ChargePeriodEnd MUST equal the *inclusive start bound* and *exclusive end bound* of the period in which the cost was originally incurred.
-* Corrections to charges associated with an issued invoice that do not impact *reconciled invoice* data but do affect dimensions and metrics used in downstream FinOps capabilities subject to financial data, such as chargeback, SHOULD adhere to the same requirements as corrections that impact *reconciled invoice* data, unless explicitly requested by the end-user.
-* Replacement mechanism adheres to the following additional requirements:
-  * Corrections to previously *closed billing periods* that impact *reconciled invoice* data MUST be represented exclusively through the addition of new charges.
-  * Corrections to previously *closed billing periods* that do not impact *reconciled invoice* data but affect dimensions and metrics used in downstream FinOps capabilities (e.g., chargeback) SHOULD be represented exclusively through the addition of new charges, unless explicitly requested otherwise by the end-user.
-  * Correction handling implementation SHOULD support external retention of historical snapshots as an optional capability, allowing end-users to enable traceability.
-  * Corrections to *open billing periods* MAY include updates, additions, or omissions.
-* Append-only mechanism adheres to the following additional requirements:
-  * All previously delivered charges MUST be retained without modification or deletion.
-  * All corrections MUST be represented exclusively by adding new charges.
+* Correction MAY consist of multiple simultaneous modifications, each representing an update or omission of a previously delivered charge, or the addition of a new charge.
+* Correction to *issued charges* adheres to the following additional requirements:
+  * Correction MUST NOT be applied when it results in discrepancies with the cost and usage data presented on the associated *issued invoice*.
+  * Correction SHOULD NOT be applied when it does not results in discrepancies with the cost and usage data presented on the associated *issued invoice*, but still affects downstream FinOps capabilities (e.g., chargeback).
+  * Correction MAY include additional charges associated with a different InvoiceId than the original charges.
+  * Correction MAY include additional charges associated with a different billing period than the original charges.
+* Correction to previously *closed billing period* that requires issuing additional invoices MUST result in additional charge(s) associated with a subsequent *open billing period*, with the charge period indicating when the cost was incurred.
+* Correction delivered using the Append-only mechanism adheres to the following additional requirements:
+  * Correction MUST include exclusively additional charges.
+  * Correction MUST NOT include updates or omissions of previously delivered charges.
 
 ## Exceptions
 
-None
+* Exceptions to the restrictions on *issued charges*, *issued invoices*, and *closed billing periods* and MAY apply in the following cases:
+  * Upon explicit request from the end-user (subject to validation and approval processes).
+  * Due to technical issues encountered during or after invoice issuance or billing period closure.
 
 ## Introduced (version)
 
