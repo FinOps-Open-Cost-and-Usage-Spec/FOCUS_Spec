@@ -4,7 +4,7 @@
 
 Current values observed in billing data or potential values that should be supplied for various scenarios:
 
-| #  | Scenario                                                                                                                                                                           | Provider                 | Publisher         | Invoice Issuer           |
+| #  | Scenario                                                                                                                                                                           | Provider Name                 | Publisher Name         | Invoice Issuer Name           |
 |----|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------|-------------------|--------------------------|
 | 1  | Direct cloud usage: You use an instance of CosmosDB (Scenario #1.1)                                                                                                                | Microsoft                | Microsoft         | Microsoft                |
 | 2  | MSP cloud usage: You purchase GCP through SADA (Scenario #2.1)                                                                                                                     | Google                   | Google            | SADA                     |
@@ -25,8 +25,8 @@ Current values observed in billing data or potential values that should be suppl
 
 ## Discussion / Scratch space
 
-- Provider is the entity through which you're purchasing the products regardless of the purchasing mechanism
-- Publisher value matches who developed or produced the customer-facing infrastructure, software or services regardless of the purchasing mechanism. Where the resources and/or services are provided as a 'managed' offering, the branded name of the managed offering may be used as the publisher. E.g. If managed Kubernetes was provided via EKS / AKS / GKE / Internal cloud, the publisher would be the cloud providers, not the Kubernetes project or the CNCF.
+- ProviderName is the entity through which you're purchasing the products regardless of the purchasing mechanism
+- PublisherName value matches who developed or produced the customer-facing infrastructure, software or services regardless of the purchasing mechanism. Where the resources and/or services are provided as a 'managed' offering, the branded name of the managed offering may be used as the publisher. E.g. If managed Kubernetes was provided via EKS / AKS / GKE / Internal cloud, the publisher would be the cloud providers, not the Kubernetes project or the CNCF.
 - Invoice Issuer always matches who did the billing for the transaction regardless of the purchasing mechanism.
   - Invoice Issuer oddities:
     - There would be differentiation between (e.g.) Google France SarL and Google, Inc. USA even though it's really "one Google"

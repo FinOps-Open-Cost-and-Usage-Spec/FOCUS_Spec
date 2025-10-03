@@ -1,6 +1,6 @@
-# Publisher
+# Publisher Name
 
-A Publisher is an entity that produces the [*resources*](#glossary:resource) or [*services*](#glossary:service) that were purchased. It is commonly used for cost analysis and reporting scenarios.
+Publisher Name is the name of the entity that produces the [*resources*](#glossary:resource) or [*services*](#glossary:service) that were purchased. It is commonly used for cost analysis and reporting scenarios.
 
 The PublisherName column adheres to the following requirements:
 
@@ -9,8 +9,8 @@ The PublisherName column adheres to the following requirements:
 * PublisherName MUST conform to [StringHandling](#stringhandling) requirements.
 * PublisherName MUST NOT be null.
 
-See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider](#provider), Publisher and
-[Invoice Issuer](#invoiceissuer) values that can be used for various purchasing scenarios.
+See [Appendix: Origination of cost data](#originationofcostdata) section for examples of [Provider Name](#providername), Publisher Name and
+[Invoice Issuer Name](#invoiceissuername) values that can be used for various purchasing scenarios.
 
 ## Column ID
 
@@ -18,7 +18,7 @@ PublisherName
 
 ## Display Name
 
-Publisher
+Publisher Name
 
 ## Description
 
