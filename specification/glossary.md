@@ -126,9 +126,13 @@ The collection of datasets are designed to provide billing insight, additional c
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
 
+<a name="glossary:invoice"><b>Invoice</b></a>
+
+A formal document that reflects the charges for resources or services consumed by a customer.
+
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
-The process of reconciling the invoice (i.e., the metrics and dimensions presented on an invoice) with the underlying [*charges*](#glossary:charge) provided in the FOCUS Cost and Usage dataset artifacts, ensuring alignment between invoice content and associated charges. Data presented on an invoice is typically derived through aggregation of cost and usage charges. The aggregation set and the scope of reconciliation are defined by a subset of metrics and dimensions present in the FOCUS cost and usage charges, including but not limited to: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuer, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd.
+The process of ensuring that the aggregated cost and usage information presented on an [*invoice*](#glossary:invoice) matches the detailed cost and usage [*charges*](#glossary:charge) presented in a [*FOCUS dataset](#glossary:FOCUS-dataset).
 
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
