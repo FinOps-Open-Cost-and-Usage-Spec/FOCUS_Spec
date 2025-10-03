@@ -14,7 +14,7 @@ Invoice data is typically derived through aggregation of individual cost and usa
 
 Once an invoice is issued, it becomes the authoritative financial document. Issued invoice is considered finalized, and the cost and usage data it contains must not be altered.
 
-[*Corrections*](#glossary:correction) to *issued charges* (including updates, additions, or omissions) may be permitted under certain conditions. However, such corrections must not compromise the integrity of the associated *issued invoice*. Only corrections that maintain alignment with the invoice content are acceptable. 
+[*Corrections*](#glossary:correction) to *issued charges* (including updates, additions, or omissions) may be permitted under certain conditions. However, such corrections must not compromise the integrity of the associated *issued invoice*. Only corrections that maintain alignment with the invoice content are acceptable.
 
 For more information on *corrections* to *issued charges*, refer to the [Correction Handling](#correctionhandling) section.
 
