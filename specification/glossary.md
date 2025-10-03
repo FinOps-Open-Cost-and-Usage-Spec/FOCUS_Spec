@@ -86,7 +86,7 @@ The agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the asso
 
 <a name="glossary:correction"><b>Correction</b></a>
 
-Any modification (update, addition, or omission) to previously provided [*charges*](#glossary:charge), whether from an [*open billing period*](#glossary:open-billing-period) or a [*closed billing period*](#glossary:closed-billing-period).
+Any modification (including updates, additions, or omissions) to previously provided [*charges*](#glossary:charge), whether from an [*open billing period*](#glossary:open-billing-period) or a [*closed billing period*](#glossary:closed-billing-period). A correction may consist of multiple simultaneous modifications, each representing an update or omission of a previously delivered charge, or the addition of a new charge, collectively forming the correction.
 
 The term "Correction" (capitalized) refers specifically to an allowed value in the [Charge Class](#chargeclass) column, designating charges used to correct cost or usage data from a previously closed billing period. In contrast, the broader concept of "corrections" (lowercase) includes all types of modifications, regardless of the [*billing period*](#glossary:billing-period) status.
 
