@@ -6,7 +6,7 @@ The Delivery Handling attribute defines how a data generator delivers a *dataset
 
 ### Delivery Mechanisms
 
-FOCUS supports two delivery mechanisms: 
+FOCUS supports two delivery mechanisms:
 
 * Overwrite. Existing rows are replaced.
 * Append. Existing rows are preserved.
@@ -17,7 +17,7 @@ For more information on corrections, see the [Correction Handling attribute](*co
 
 #### Overwrite Delivery
 
-In the Overwrite delivery mechanism, each *dataset artifact* provides a complete snapshot of data for a given [*billing period*](#glossary:billing-period), based on the data available at the time of delivery. Subsequent dataset artifacts typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism provides delivery simplicity, but it lacks inherent auditability. 
+In the Overwrite delivery mechanism, each *dataset artifact* provides a complete snapshot of data for a given [*billing period*](#glossary:billing-period), based on the data available at the time of delivery. Subsequent dataset artifacts typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism provides delivery simplicity, but it lacks inherent auditability.
 
 Subsequent dataset artifacts using the Overwrite mechanism may include the following:
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Invoice Handling attribute defines how a [*FOCUS dataset*](#glossary:FOCUS-dataset) should reflect details for the information presented on an [*invoice*](#glossary:invoice). 
+The Invoice Handling attribute defines how a [*FOCUS dataset*](#glossary:FOCUS-dataset) should reflect details for the information presented on an [*invoice*](#glossary:invoice).
 
 This attribute introduces requirements for how monetary [*charges*](#glossary:charge) such as usage, taxes, credits, refunds, etc, inclusive of support, training, and marketplace transactions, and any other type of charge should be captured and categorized. It also defines expectations around the completeness and consistency of invoice-level totals within a FOCUS dataset, enabling FOCUS [*dataset artifacts*](#glossary:dataset-artifact) to be used in a system of record for all invoiced costs.
 
@@ -12,7 +12,7 @@ FinOps practitioners must be able to reconcile *FOCUS datasets* with the corresp
 
 Prior to [*invoice issuance*](#glossary:issued-invoice), the invoice must undergo a reconciliation process.  In this process, the *invoice issuer* ensures that the aggregated cost and usage information presented on the *invoice* matches the detailed cost and usage *charges* presented in a *FOCUS dataset*.
 
-At the conclusion of this process, the total monetary value presented on an invoice must match the total monetary value presented in the [*Billed Cost*](#billedcost) metric of a FOCUS dataset.  Further, the detail presented on an invoice must match the values of Billed Cost when aggregated by the related combination of the following FOCUS dataset dimensions: 
+At the conclusion of this process, the total monetary value presented on an invoice must match the total monetary value presented in the [*Billed Cost*](#billedcost) metric of a FOCUS dataset.  Further, the detail presented on an invoice must match the values of Billed Cost when aggregated by the related combination of the following FOCUS dataset dimensions:
 
 * [*Billing Account ID*](#billingaccountid)
 * [*Billing Currency*](#billingcurrency)
