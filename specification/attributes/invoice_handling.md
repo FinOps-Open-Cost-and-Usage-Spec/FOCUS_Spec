@@ -51,8 +51,9 @@ Defines how a *FOCUS dataset* should reflect details for the information present
 
 * All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in a FOCUS dataset.
 * If cost or usage appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage dataset artifacts.
-* An invoice issuer MUST reconcile an invoice with its associated FOCUS dataset artifacts before issuing an invoice. The scope of that reconciliation includes (but is not limited to) the following metrics and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuerName, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd.
-* The contents of a FOCUS dataset associated with an *issued invoice* MUST NOT be altered after final delivery, except in the cases of explicit user request or the resolution of technical issues.
+* An invoice issuer MUST reconcile an invoice with its associated FOCUS dataset artifacts before issuing an invoice. The scope of that reconciliation includes (but is not limited to) the following metrics and dimensions: *BilledCost*, *BillingCurrency*, *InvoiceId*, *InvoiceIssuerName*, *BillingAccountId*, *BillingPeriodStart*, and *BillingPeriodEnd*.
+* Values presented on an *issued invoice* MUST match [*BilledCost*](#billedcost) when aggregated by the relevant combination of the following dimensions: *BillingCurrency*, *InvoiceId*, *InvoiceIssuerName*, *BillingAccountId*, *BillingPeriodStart*, and *BillingPeriodEnd*.
+* The data generator MUST notify the customer if the contents of a *dataset artifact* associated with an *issued invoice* are altered after final delivery.
 
 ## Exceptions
 

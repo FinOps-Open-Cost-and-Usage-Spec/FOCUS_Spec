@@ -17,9 +17,9 @@ For more information on corrections, see the [Correction Handling attribute](*co
 
 #### Overwrite Delivery
 
-In the Overwrite delivery mechanism, each *dataset artifact* provides a complete snapshot of data for a given [*billing period*](#glossary:billing-period), based on the data available at the time of delivery. Subsequent dataset artifacts typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism provides delivery simplicity, but it lacks inherent auditability.
+In the Overwrite delivery mechanism, each *dataset artifact* provides a complete snapshot of data for a given [*billing period*](#glossary:billing-period), based on the data available at the time of delivery. Subsequent *dataset artifacts* typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism provides delivery simplicity, but it lacks inherent auditability.
 
-Subsequent dataset artifacts using the Overwrite mechanism may include the following:
+Subsequent *dataset artifacts* using the Overwrite mechanism may include the following:
 
 * Unchanged records are carried over.
 * Updated records overwrite previous values.
@@ -28,9 +28,9 @@ Subsequent dataset artifacts using the Overwrite mechanism may include the follo
 
 #### Append Delivery
 
-In the Append delivery mechanism, a subsequent dataset artifact appends new records without modifying or removing previously delivered ones. This mechanism inherently supports auditability, as all original and correction records are retained.
+In the Append delivery mechanism, a subsequent *dataset artifact* appends new records without modifying or removing previously delivered ones. This mechanism inherently supports auditability, as all original and correction records are retained.
 
-Subsequent dataset artifacts using the Replace mechanism may include the following:
+Subsequent *dataset artifacts* using the Append mechanism may include the following:
 
 * Unchanged recorded are not included.
 * Updated records are recorded as new entries, representing the difference.
@@ -54,7 +54,7 @@ Defines how a data generator delivers a *dataset artifact* to a customer.
 The delivery of a *dataset artifact* adheres to the following requirements:
 
 * A FOCUS *dataset artifact* SHOULD be delivered using either the Overwrite or Append delivery mechanism.
-* The delivery mechanism(s) used to correct FOCUS dataset artifacts MUST be documented by the data generator.
+* The delivery mechanism(s) used to deliver FOCUS *dataset artifacts* MUST be documented by the data generator.
 
 ## Exceptions
 
