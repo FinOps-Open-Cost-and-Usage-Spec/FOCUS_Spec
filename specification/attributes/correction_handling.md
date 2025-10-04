@@ -15,13 +15,13 @@ Accurate correction handling is essential for a range of business-critical proce
 
 ### Correction Styles
 
-FOCUS supports three correction styles:
+FOCUS supports three styles for correcting original records:
 
 | Correction Style | Delivery Mechanism | Correction Style Description                                                                         |
 | ---------------- | ------------------ | ---------------------------------------------------------------------------------------------------- |
-| Replacement      | Overwrite          | Existing records are replaced by new records.                                                        |
-| Delta            | Append             | Existing records are preserved, modified by new records.                                             |
-| Ledger           | Append             | Existing records are preserved, fully debited by new records, and then credited by more new records. |
+| Replacement      | Overwrite          | Original records are ignored and replaced by correction records.                                                        |
+| Delta            | Append             | Original records are preserved and modified by correction records.                                             |
+| Ledger           | Append             | Original records are preserved and decremented/incremented by correction records. |
 
 For more information on delivery mechanisms for *dataset artifacts*, see the [Delivery Handling attribute](#deliveryhandling).
 
@@ -31,25 +31,25 @@ In the Replacement correction style, a given *dataset artifact* uses the Overwri
 
 Any given *dataset artifact* completely replaces all previous *dataset artifacts* to reflect updates, additions, or omissions relative to the previous snapshot. Therefore, the practitioner only needs to reference the most recent *dataset artifact* for a given *billing period* in order to tell a complete story of *charges*; all previous dataset artifacts for that *billing period* are considered obsolete and can be safely ignored.
 
-Given that previous versions of *charges* are discarded, this style lacks inherent auditability.
+Given that changes are not presented as separate entries, this style lacks inherent auditability.
 
 #### Delta Corrections
 
 In the Delta correction style, a given *dataset artifact* uses the Append delivery mechanism to add records that revise or supplement previous *dataset artifacts* within a *billing period*.
 
-Updates increment or decrement values in selected cost- and quantity-related columns, while all other columns remain unchanged. Therefore, the practitioner must combine all *dataset artifacts* for a given *billing period* in order to tell a complete story of *charges*.
-
 In some cases, the correction consists of a new record representing a previously omitted cost. Explicit reversal is not commonly performed, but may be used if the correction itself represents a reversal.
 
-This style offers limited inherent auditability.
+Updates increment or decrement values in selected cost- and quantity-related columns, while all other columns remain unchanged. Therefore, the practitioner must combine all *dataset artifacts* for a given *billing period* in order to tell a complete story of *charges*.
+
+Given that only net changes are presented, this style offers limited inherent auditability.
 
 #### Ledger Corrections
 
-In the Ledger correction style, a given *dataset artifact* uses the Append delivery mechanism in combination with a double-entry bookkeeping method of debits and credits to represent changes within a *billing period*.  Depending on the nature of the correction, either or both of the following steps may be required: (1) reversal of the original record using a charge in which cost- and quantity-related columns carry values with the opposite sign, while all other columns match the original; and (2) a new record with corrected values.
+In the Ledger correction style, a given *dataset artifact* uses the Append delivery mechanism in combination with a double-entry bookkeeping method of decrements and increments to represent changes within a *billing period*.  Depending on the nature of the correction, either or both of the following steps may be required: (1) reversal of the original record using a charge in which cost- and quantity-related columns carry values with the opposite sign, while all other columns match the original; and (2) a new record with corrected values.
 
 Updates increment or decrement values in selected cost- and quantity-related columns, while all other columns remain unchanged. Therefore, the practitioner must combine all *dataset artifacts* for a given *billing period* in order to tell a complete story of *charges*.
 
-This style offers full inherent auditability.
+Given that the entire change history is presented, this style offers full inherent auditability.
 
 ### Corrections to Issued Charges
 
