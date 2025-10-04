@@ -35,7 +35,7 @@ Subsequent *dataset artifacts* using the Append mechanism may include the follow
 * Unchanged recorded are not included.
 * Updated records are recorded as new entries, representing the difference.
 * Additional records supplement previously delivered data.
-* Ommitted records are recorded as new entries, representing the reversal.
+* Omitted records are recorded as new entries, representing the reversal.
 
 ## Attribute ID
 

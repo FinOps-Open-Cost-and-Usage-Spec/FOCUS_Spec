@@ -81,8 +81,8 @@ Defines how *corrections* to a previously delivered FOCUS *dataset artifact* are
 
 All corrections adhere to the following requirements:
 
-* The correction style(s) used to correct FOCUS dataset artifacts MUST be documented by the data generator.
-* Correction MUST NOT introduce a discrepancy between an *issued invoice* and its associated FOCUS dataset artifacts.
+* The correction style(s) used to correct FOCUS *dataset artifacts* MUST be documented by the data generator.
+* Correction MUST NOT introduce a discrepancy between an *issued invoice* and its associated FOCUS *dataset artifacts*.
 * Correction to a previously *closed billing period* that requires issuing additional invoices MUST result in additional charge(s) associated with a subsequent *open billing period*, with the charge period indicating when the cost was incurred.
 * Correction delivered using the Append delivery mechanism adheres to the following additional requirements:
   * Correction MUST include exclusively additional charges.
