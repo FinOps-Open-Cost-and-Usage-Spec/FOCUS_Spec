@@ -136,7 +136,7 @@ A document that summarizes the charges for resources or services consumed by a c
 
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
-The process of ensuring that the aggregated cost and usage information presented on an [*invoice*](#glossary:invoice) matches the detailed cost and usage [*charges*](#glossary:charge) presented in a [*FOCUS dataset](#glossary:FOCUS-dataset).
+The process of ensuring that the aggregated cost and usage information presented on an [*invoice*](#glossary:invoice) matches the detailed cost and usage [*charges*](#glossary:charge) presented in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
