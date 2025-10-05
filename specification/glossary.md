@@ -132,7 +132,7 @@ A Date/Time Format value that is contained within the beginning bound of a time 
 
 <a name="glossary:invoice"><b>Invoice</b></a>
 
-A formal document that reflects the charges for resources or services consumed by a customer.
+A document that summarizes the charges for resources or services consumed by a customer.
 
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
