@@ -53,7 +53,6 @@ Defines how a data generator delivers a *dataset artifact* to a customer.
 
 The delivery of a *dataset artifact* adheres to the following requirements:
 
-* A FOCUS *dataset artifact* SHOULD be delivered using either the Overwrite or Append delivery mechanism.
 * The delivery mechanism(s) used to deliver FOCUS *dataset artifacts* MUST be documented by the data generator.
 
 ## Exceptions

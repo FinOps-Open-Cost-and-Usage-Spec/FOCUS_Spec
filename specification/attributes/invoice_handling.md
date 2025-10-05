@@ -12,14 +12,14 @@ FinOps practitioners must be able to reconcile *FOCUS datasets* with the corresp
 
 Prior to [*invoice issuance*](#glossary:issued-invoice), the invoice must undergo a reconciliation process.  In this process, the *invoice issuer* ensures that the aggregated cost and usage information presented on the *invoice* matches the detailed cost and usage *charges* presented in a *FOCUS dataset*.
 
-At the conclusion of this process, the total monetary value presented on an invoice must match the total monetary value presented in the [*Billed Cost*](#billedcost) metric of a FOCUS dataset.  Further, the detail presented on an invoice must match the values of Billed Cost when aggregated by the related combination of the following FOCUS dataset dimensions:
+At the conclusion of this process, the total monetary value presented on an invoice must match the total monetary value presented in the [Billed Cost](#billedcost) metric of a FOCUS dataset.  Further, the detail presented on an invoice must match the values of Billed Cost when aggregated by the related combination of the following FOCUS dataset dimensions:
 
-* [*Billing Account ID*](#billingaccountid)
-* [*Billing Currency*](#billingcurrency)
-* [*Billing Period Start*](#billingperiodstart)
-* [*Billing Period End*](#billingperiodend)
-* [*Invoice ID*](#invoiceid)
-* [*Invoice Issuer Name*](#invoiceissuername)
+* [Billing Account ID](#billingaccountid)
+* [Billing Currency](#billingcurrency)
+* [Billing Period Start](#billingperiodstart)
+* [Billing Period End](#billingperiodend)
+* [Invoice ID](#invoiceid)
+* [Invoice Issuer Name](#invoiceissuername)
 
 Depending on the invoice issuer, reconciliation may also extend to additional metrics and dimensions.
 
@@ -49,11 +49,14 @@ Defines how a *FOCUS dataset* should reflect details for the information present
 
 ## Requirements
 
-* All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in a FOCUS dataset.
+* All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in one or more FOCUS *dataset artifacts*.
 * If cost or usage appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage dataset artifacts.
-* An invoice issuer MUST reconcile an invoice with its associated FOCUS dataset artifacts before issuing an invoice. The scope of that reconciliation includes (but is not limited to) the following metrics and dimensions: *BilledCost*, *BillingCurrency*, *InvoiceId*, *InvoiceIssuerName*, *BillingAccountId*, *BillingPeriodStart*, and *BillingPeriodEnd*.
-* Values presented on an *issued invoice* MUST match [*BilledCost*](#billedcost) when aggregated by the relevant combination of the following dimensions: *BillingCurrency*, *InvoiceId*, *InvoiceIssuerName*, *BillingAccountId*, *BillingPeriodStart*, and *BillingPeriodEnd*.
+* *Invoice reconciliation* adheres to the following additional requirements:
+  * Invoice issuer MUST perform *Invoice reconciliation* between an *invoice* and its associated FOCUS *dataset artifacts* before issuing the invoice.
+  * *Invoice reconciliation* process MUST include (but is not limited to) the following metric and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuerName, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd.
+  * Invoice issuer MUST document which FOCUS dataset columns are included in the *invoice reconciliation* process.
 * The data generator MUST notify the customer if the contents of a *dataset artifact* associated with an *issued invoice* are altered after final delivery.
+* The *billing period* (i.e., the timeframe from BillingPeriodStart to BillingPeriodEnd) of a charge MUST match the *billing period* of its associated [*InvoiceId*](#invoiceid).
 
 ## Exceptions
 
