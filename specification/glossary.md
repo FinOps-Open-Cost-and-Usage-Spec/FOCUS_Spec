@@ -94,6 +94,10 @@ The term "Correction" (capitalized) refers specifically to an allowed value in t
 
 A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
 
+<a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
+
+A physical representation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) delivered by a data generator.
+
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
@@ -116,9 +120,9 @@ An open-source specification that defines requirements for billing data.
 
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
-A FOCUS dataset is a structured collection of records that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
+A structured collection of columns that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
 
-In addition to these standardized columns, data generators may include custom provider-specific columns (prefixed with `x_`) where additional context is needed beyond what is captured in the defined FOCUS columns. If such custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
+In addition to these standardized columns, data generators may include custom provider-specific columns (prefixed with `x_`) where additional context is needed beyond what is captured in the defined FOCUS columns. If custom provider-specific columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
 
 The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness.
 
