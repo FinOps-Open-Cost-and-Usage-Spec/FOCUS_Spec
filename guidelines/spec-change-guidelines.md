@@ -51,12 +51,15 @@ The FOCUS specification requires that removal actions are preceded with a deprec
 
 #### Deprecation Retention Period
 Once a capability or column is designated as deprecated in a published version of the FOCUS specification:
-* It MUST remain in the specification for a minimum of 3 releases (inclusive of the version where the deprecation is announced) before it is eligible for removal.
+* It MUST remain in the specification for a minimum of 2 releases (inclusive of the version where the deprecation is announced; e.g., announced in 1.3 and removed in 1.4) before it is eligible for removal.
 * Exceptions (e.g., legal, security, or privacy requirements) MAY justify earlier removal; such exceptions MUST be explicitly documented in the changelog with rationale.
 
 Removal of a deprecated feature or column is classified as:
 * Migration Compatible if the same supported feature is fully supported by another feature or column in the specification.
 * Incompatible if removal results in the loss of support for a supported feature.
+
+#### Expected Behavior for Deprecated Capabilities
+Providers are expected to remove deprecated capabilities at the same time that the FOCUS specification does. If providers choose to retain a capability (e.g., column) after its been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). 
 
 ## Change Type Classification
 
