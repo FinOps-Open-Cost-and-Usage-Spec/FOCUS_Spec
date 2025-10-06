@@ -12,7 +12,7 @@ FOCUS supports providers specifying the services and product offerings that they
 
 ## Supporting Columns
 
-* Provider
+* ProviderName
 * SkuId
 
 ## Example SQL Query
