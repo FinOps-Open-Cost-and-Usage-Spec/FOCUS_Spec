@@ -165,7 +165,7 @@ Pascal Case (PascalCase, also known as UpperCamelCase) is a format for identifie
 
 <a name="glossary:period"><b>Period</b></a>
 
-A length of time.
+A time window, with a specifically defined start and end date/time.
 
 <a name="glossary:potato"><b>Potato</b></a>
 
@@ -218,7 +218,9 @@ A metadata label assigned to a resource to provide information about it or to ca
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
 A Resource or Provider-defined construct for grouping resources and/or other Provider-defined construct that a Tag can be assigned to.
+<a name="glossary:term"><b>Term</b></a>
 
+A condition of a [*contract*](#glossary:contract).
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
 A proprietary currency (e.g., credits, tokens) issued by providers and independent of government regulation.
