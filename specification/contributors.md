@@ -31,6 +31,7 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Greg Kroleski (Databricks)
 * James Deloid (Oracle)
 * Jason Wu (Amazon Web Services)
+* Justin Marks (Amazon Web Services)
 * Marc Perreaut (Amadeus)
 * Matt Cowsert (FinOps Foundation)
 * Nan Braun (Thavron Solutions)
