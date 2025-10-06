@@ -6,7 +6,7 @@ Human-readable name of the entity that generated the dataset instance, typically
 * DataGenerator MUST be of type String.
 * DataGenerator MUST conform to [StringHandling](#stringhandling) requirements.
 * DataGenerator MUST NOT be null.
-* DataGenerator MUST be provided in the metadata. 
+* DataGenerator MUST be provided in the metadata.
 * DataGenerator SHOULD reflect the entity that generated the [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Metadata ID

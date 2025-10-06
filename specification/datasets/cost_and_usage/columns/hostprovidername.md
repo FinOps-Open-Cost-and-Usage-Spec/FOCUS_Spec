@@ -7,7 +7,7 @@ The HostProviderName column adheres to the following requirements:
 * HostProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * HostProviderName MUST be of type String.
 * HostProviderName MUST conform to [StringHandling](#stringhandling) requirements.
-* HostProviderName MUST NOT be null when a *charge* pertains to *resources* or *services*. 
+* HostProviderName MUST NOT be null when a *charge* pertains to *resources* or *services*.
 * HostProviderName values are defined as follows:
   * HostProviderName SHOULD reflect the name of the [*host provider*](#glossary:host-provider) of deployed *resources* or *services* when this information is available to customers.
   * HostProviderName MAY be "Not Applicable" for *charges* that are not relevant to a hosting scenario (e.g., professional services, licenses, taxes, refunds).
