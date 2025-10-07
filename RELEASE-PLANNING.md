@@ -151,20 +151,20 @@ This table displays key milestones and dates related to the development of FOCUS
   </thead>
   <tbody>
       <tr>
-        <td rowspan="11"><strong>30-Oct-25 to 9-Apr-26</strong></td>
+        <td rowspan="10"><strong>30-Oct-25 to 9-Apr-26</strong></td>
         <td><strong>1.4 Development Starts</strong><br/><ul><li><strong>Thu Oct 30:</strong> (21 weeks + 2-week EOY break)</li></ul></td>
-        <td rowspan="11">Start Development Phase v1.4</td>
-        <td rowspan="11">21 weeks (19 weeks in v1.2, and 13 weeks in v1.3)</td>
+        <td rowspan="10">Start Development Phase v1.4</td>
+        <td rowspan="10">21 weeks (19 weeks in v1.2, and 13 weeks in v1.3)</td>
       </tr>
-    <tr><td><strong>Feature Request Review</strong><br><ul><li><strong>Thu Oct 30:</strong> (2 weeks)</li></ul></td></tr>
-    <tr><td><strong>Discovery &amp; Development</strong><br><ul><li><strong>Thu Nov 13:</strong> (5 weeks)</li></ul></td></tr>
-    <tr><td><strong>End-of-year break</strong><br><ul><li><strong>Mon Dec 22:</strong> (2 weeks)</li></ul></td></tr>
-    <tr><td><strong>Resume Discovery &amp; Development</strong><br><ul><li><strong>Mon Jan 5:</strong> (8 weeks)</li></ul></td></tr>
-    <tr><td><strong>Deadline to start PR Drafts</strong><br><ul><li><strong>Thu Feb 26:</strong> (3-week window)</li></ul></td></tr>
-    <tr><td><strong>Deadline to complete PR Drafts</strong><br><ul><li><strong>Thu Mar 19:</strong> (1-week window)</li></ul></td></tr>
-    <tr><td><strong>Deadline to start TF Review</strong><br><ul><li><strong>Thu Mar 26:</strong> (1 week)</li></ul></td></tr>
-    <tr><td><strong>Deadline to start Member Review</strong><br><ul><li><strong>Thu Apr 2:</strong> (1 week)</li></ul></td></tr>
-    <tr><td><strong>Deadline to complete Member Approval</strong><br><ul><li><strong>Thu Apr 9:</strong> end of 1.4 dev</li></ul></td></tr>
+      <tr><td><strong>Feature Request Review</strong><br><ul><li><strong>Thu Oct 30:</strong> (2 weeks)</li></ul></td></tr>
+      <tr><td><strong>Discovery &amp; Development</strong><br><ul><li><strong>Thu Nov 13:</strong> (5 weeks)</li></ul></td></tr>
+      <tr><td><strong>End-of-year break</strong><br><ul><li><strong>Mon Dec 22:</strong> (2 weeks)</li></ul></td></tr>
+      <tr><td><strong>Resume Discovery &amp; Development</strong><br><ul><li><strong>Mon Jan 5:</strong> (8 weeks)</li></ul></td></tr>
+      <tr><td><strong>Deadline to start PR Drafts</strong><br><ul><li><strong>Thu Feb 26:</strong> (3-week window)</li></ul></td></tr>
+      <tr><td><strong>Deadline to complete PR Drafts</strong><br><ul><li><strong>Thu Mar 19:</strong> (1-week window)</li></ul></td></tr>
+      <tr><td><strong>Deadline to start TF Review</strong><br><ul><li><strong>Thu Mar 26:</strong> (1 week)</li></ul></td></tr>
+      <tr><td><strong>Deadline to start Member Review</strong><br><ul><li><strong>Thu Apr 2:</strong> (1 week)</li></ul></td></tr>
+      <tr><td><strong>Deadline to complete Member Approval</strong><br><ul><li><strong>Thu Apr 9:</strong> end of 1.4 dev</li></ul></td></tr>
     <tr>
       <td><strong>9-Apr-26 to 30-Apr-26</strong></td>
       <td>
