@@ -1,4 +1,4 @@
-# Column: Publisher
+# Column: PublisherName
 
 ## Example provider mappings
 
@@ -36,13 +36,13 @@ Current values observed in billing data for various scenarios:
 | GCP       | ?                                                          |                                                                                                                                                             |
 | Microsoft | ?                                                          |                                                                                                                                                             |
 
-See [Appendix: Origination of cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Publisher dimension.
+See [Appendix: Origination of cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Publisher Name dimension.
 
 ## Discussion / Scratch space
 
 ### Naming Pros/Cons
 
-- Publisher is used by Microsoft because it's used to identify companies who "publish" services to the marketplace. This is synonymous with companies who publish books that are available for purchase at a bookstore. The company who created the book is known as the "publisher".
+- "Publisher" is used by Microsoft because it's used to identify companies who "publish" services to the marketplace. This is synonymous with companies who publish books that are available for purchase at a bookstore. The company who created the book is known as the "publisher".
 - ~~Service provider (instead of Publisher):~~
   - ~~Q&A:~~
     - ~~Who built, published and is providing the thing that I'm paying for? Service provider~~

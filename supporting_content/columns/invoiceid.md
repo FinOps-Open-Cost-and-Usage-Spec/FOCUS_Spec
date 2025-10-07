@@ -12,9 +12,9 @@ Another important use case are Credit Memos (Refund Invoices): AWS creates Credi
 
 ## Use Cases
 
-We need to distribute all cost back to each cost center and then group cost by Billing Account ID, Invoice Issuer and Invoice ID so that our finance department can charge back the business units and pay the invoices.
+We need to distribute all cost back to each cost center and then group cost by Billing Account ID, Invoice Issuer Name and Invoice ID so that our finance department can charge back the business units and pay the invoices.
 
-The sum of the invoices for a given Billing Account ID and Invoice Issuer must match to the cent the sum of the chargeback per business unit for that same perimeter.
+The sum of the invoices for a given Billing Account ID and Invoice Issuer Name must match to the cent the sum of the chargeback per business unit for that same perimeter.
 
 # Options
 ## Option 1 - Add InvoiceID column to FOCUS table
