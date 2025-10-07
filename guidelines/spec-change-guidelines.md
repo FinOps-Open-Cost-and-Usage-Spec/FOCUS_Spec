@@ -77,6 +77,10 @@ A feature or column from the FOCUS specification is moving to deprecated status,
 
 The removal of a feature or column from the FOCUS specification.
 
+### Dropped
+
+The status for capabilities no longer present in the specification after completing the required deprecation retention period. Dropped capabilities are listed in the changelog of the version where removal occurred.
+
 ### Improvement
 
 Modification to improve or refine a feature or column in the FOCUS specification that was not considered broken. 
