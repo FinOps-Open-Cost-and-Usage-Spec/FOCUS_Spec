@@ -59,7 +59,7 @@ Removal of a deprecated feature or column is classified as:
 * Incompatible if removal results in the loss of support for a supported feature.
 
 #### Expected Behavior for Deprecated Capabilities
-Data generators are expected to remove dropped capabilities at the same time that the FOCUS specification does. If a data generator chooses to retain a capability (e.g., column) after it has been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). 
+Data generators are expected to remove capabilities at the same time that the FOCUS specification does. If a data generator chooses to retain a capability (e.g., column) after it has been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). 
 
 ## Change Type Classification
 
@@ -75,11 +75,7 @@ A feature or column from the FOCUS specification is moving to deprecated status,
 
 ### Removal
 
-The removal of a feature or column from the FOCUS specification.
-
-### Dropped
-
-The status for capabilities no longer present in the specification after completing the required deprecation retention period. Dropped capabilities are listed in the changelog of the version where removal occurred.
+A feature or column removed from the specification after completing deprecation requirements or with documented exception rationale. The changelog specifies the removal version, deprecation timeline, and compatibility classification.
 
 ### Improvement
 
