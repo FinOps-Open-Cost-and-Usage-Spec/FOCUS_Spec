@@ -9,8 +9,7 @@ The ProviderName column adheres to the following requirements:
 * ProviderName MUST conform to [StringHandling](#stringhandling) requirements.
 * ProviderName MUST NOT be null.
 
-See [Appendix: Origination of cost data](#originationofcostdata) section for examples of Provider Name, Publisher Name and
-Invoice Issuer Name values that can be used for various purchasing scenarios.
+See [Appendix: Entity Identification Examples](#entityidentification) section for examples of [Service Provider Name](#serviceprovidername), [Host Provider Name](#hostprovidername) and [Invoice Issuer Name](#invoiceissuername) values that can be used for various purchasing scenarios.
 
 ## Column ID
 
