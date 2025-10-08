@@ -39,4 +39,4 @@ The name of the entity that made the *resources* or *services* available for pur
 
 ## Deprecated (version)
 
-1.3
+1.3 Replaced by [ServiceProviderName](#serviceprovidername)
