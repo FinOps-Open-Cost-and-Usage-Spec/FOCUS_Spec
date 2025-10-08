@@ -157,44 +157,44 @@ This table displays key milestones and dates related to the development of FOCUS
         <td rowspan="10">21 weeks (19 weeks in v1.2, and 13 weeks in v1.3)</td>
       </tr>
       <tr>
-        <td>Thu Oct 30: (2 weeks)</td>
+        <td>Thu Oct 30 </br> (2 weeks)</td>
         <td>Feature Request Review</td>
       </tr>
       <tr>
-        <td>Thu Nov 13: (5 weeks)</td>
+        <td>Thu Nov 13 </br> (5 weeks)</td>
         <td>Discovery &amp; Development</td>
       </tr>
       <tr>
-        <td>Mon Dec 22: (2 weeks)</td>
+        <td>Mon Dec 22 </br> (2 weeks)</td>
         <td>End-of-year break</td>
       </tr>
       <tr>
-        <td>Development Mon Jan 5: (8 weeks)</td>
+        <td>Development Mon Jan 5 </br> (8 weeks)</td>
         <td>Resume Discovery &amp; Development</td>
       </tr>
       <tr>
-        <td>Thu Feb 26: (3-weeks)</td>
+        <td>Thu Feb 26 </br> (3-weeks)</td>
         <td>Deadline to start PR Drafts</td>
       </tr>
       <tr>
-        <td>Thu Mar 19: (1-week)</td>
+        <td>Thu Mar 19 </br> (1-week)</td>
         <td>Deadline to complete PR Drafts</td>
       </tr>
       <tr>
-        <td>Thu Mar 26:  (1 week)</td>
+        <td>Thu Mar 26 </br>  (1 week)</td>
         <td>Deadline to start TF Review</td>
       </tr>
       <tr>
-        <td>Thu Apr 2: (1 week)</td>
+        <td>Thu Apr 2 </br> (1 week)</td>
         <td>Deadline to start Member Review</td>
       </tr>
       <tr>
-        <td>Thu Apr 9: end of 1.4 dev</td>
+        <td>Thu Apr 9 </br> end of 1.4 dev</td>
         <td>Deadline to complete Member Approval</td>
       </tr>
     <tr>
       <td><strong>9-Apr-26 to 30-Apr-26</strong></td>
-      <td>Thu Apr 9 </br>  - (3 weeks)</td>
+      <td>Thu Apr 9 </br>  (3 weeks)</td>
       <td>Start / End Final Consistency Review v1.4</td>
       <td>3 weeks. To ensure alignment and consistency of specifications.</td>
     </tr>
