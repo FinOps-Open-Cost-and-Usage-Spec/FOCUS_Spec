@@ -9,7 +9,7 @@ The Service Provider Name column adheres to the following requirements:
 * ServiceProviderName MUST conform to [StringHandling](#stringhandling) requirements.
 * ServiceProviderName MUST NOT be null.
 
-See [Appendix: Entity Identification Examples](#entityidentification) section for examples of Service Provider values for various use case scenarios.
+See [Appendix: Entity Identification Examples](#entityidentification) section for examples of Service Provider Name values for various use case scenarios.
 
 ## Column ID
 
