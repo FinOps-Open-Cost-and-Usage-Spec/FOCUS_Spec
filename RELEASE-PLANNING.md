@@ -177,7 +177,7 @@ This table displays key milestones and dates related to the development of FOCUS
         <td>Deadline to start PR Drafts</td>
       </tr>
       <tr>
-        <td><strong>Thu Mar 19</strong> </br> (1-week)</td>
+        <td><strong>Thu Mar 19</strong> </br> (1 week)</td>
         <td>Deadline to complete PR Drafts</td>
       </tr>
       <tr>
