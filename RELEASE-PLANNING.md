@@ -150,28 +150,51 @@ This table displays key milestones and dates related to the development of FOCUS
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td><strong>30-Oct-25 to 9-Apr-26</strong></td>
-      <td>
-          <strong>1.4 Development Starts</strong><br/><ul><li><strong>Thu Oct 30:</strong> (21 weeks + 2-week EOY break)</li></ul>
-          <strong>Feature Request Review</strong><br><ul><li><strong>Thu Oct 30:</strong> (2 weeks)</li></ul>
-          <strong>Discovery &amp, Development</strong><br><ul><li><strong>Thu Nov 13:</strong> (5 weeks)</li></ul>
-          <strong>End-of-year break</strong><br><ul><li><strong>Mon Dec 22:</strong> (2 weeks)</li></ul>
-          <strong>Resume Discovery &amp; Development</strong><br><ul><li><strong>Mon Jan 5:</strong> (8 weeks)</li></ul>
-          <strong>Deadline to start PR Drafts</strong><br><ul><li><strong>Thu Feb 26:</strong> (3-week window)</li></ul>
-          <strong>Deadline to complete PR Drafts</strong><br><ul><li><strong>Thu Mar 19:</strong> (1-week window)</li></ul>
-          <strong>Deadline to start TF Review</strong><br><ul><li><strong>Thu Mar 26:</strong> (1 week)</li></ul>
-          <strong>Deadline to start Member Review</strong><br><ul><li><strong>Thu Apr 2:</strong> (1 week)</li></ul>
-          <strong>Deadline to complete Member Approval</strong><br><ul><li><strong>Thu Apr 9:</strong> end of 1.4 dev</li></ul>
-      </td>
-      <td>Start Development Phase v1.4</td>
-      <td>21 weeks (19 weeks in v1.2, and 13 weeks in v1.3)</td>
-    </tr>
+      <tr>
+        <td rowspan="10"><strong>30-Oct-25 to 9-Apr-26</strong></td>
+        <td><strong>Thu Oct 30</strong> </br> (21 weeks + 2 week EOY break)</td>
+        <td>1.4 Development Starts</td>
+        <td rowspan="10">21 weeks (19 weeks in v1.2, and 13 weeks in v1.3)</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Oct 30</strong> </br> (2 weeks)</td>
+        <td>Feature Request Review</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Nov 13</strong> </br> (5 weeks)</td>
+        <td>Discovery &amp; Development</td>
+      </tr>
+      <tr>
+        <td><strong>Mon Dec 22</strong> </br> (2 weeks)</td>
+        <td>End-of-year break</td>
+      </tr>
+      <tr>
+        <td><strong>Development Mon Jan 5</strong> </br> (8 weeks)</td>
+        <td>Resume Discovery &amp; Development</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Feb 26</strong> </br> (3 weeks)</td>
+        <td>Deadline to start PR Drafts</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Mar 19</strong> </br> (1 week)</td>
+        <td>Deadline to complete PR Drafts</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Mar 26</strong> </br>  (1 week)</td>
+        <td>Deadline to start TF Review</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Apr 2</strong> </br> (1 week)</td>
+        <td>Deadline to start Member Review</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Apr 9</strong> </br> end of 1.4 dev</td>
+        <td>Deadline to complete Member Approval</td>
+      </tr>
     <tr>
       <td><strong>9-Apr-26 to 30-Apr-26</strong></td>
-      <td>
-          <strong>Consistency Review Begins</strong><br/><ul><li><strong>Thu Apr 9:</strong> (3 weeks)</li></ul>
-      </td>
+      <td>Thu Apr 9 </br>  (3 weeks)</td>
       <td>Start / End Final Consistency Review v1.4</td>
       <td>3 weeks. To ensure alignment and consistency of specifications.</td>
     </tr>
