@@ -56,10 +56,11 @@ Once a capability or column is designated as deprecated in a published version o
 * It MUST remain in the specification for a minimum of one release before removal (e.g., deprecated in v1.3, removed in v1.4).
 * Exceptions (e.g., legal, security, or privacy requirements) MAY justify immediate removal with documented rationale in the changelog.
 
-Removal of a deprecated feature or column is classified as:
-
+When a feature or column is deprecated, it MUST be classified as:
 * Migration Compatible if the same supported feature is fully supported by another feature or column in the specification.
-* Incompatible if removal results in the loss of support for a supported feature.
+* Incompatible if deprecation signals planned loss of support for a supported feature.
+
+The deprecation notice in the changelog MUST include this classification. If circumstances change during the retention period, the updated classification MUST be documented in the removal version's changelog.
 
 #### Expected Behavior for Removed Capabilities
 
