@@ -1,6 +1,8 @@
 # Service Provider Name
 
-Service Provider Name is the name of the entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase. These services can be built on top of infrastructure provided by a [Host Provider](#hostprovider), offered as fully integrated solutions, or include complementary offerings such as support, licensing, or consulting. It is commonly used for cost analysis and reporting scenarios. In marketplace scenarios, the Service Provider is the seller, not the entity operating the marketplace, as marketplace is providing a mechanism for purchase, not independently providing the resources or services independently for purchase or usage.
+Service Provider Name is the name of the entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase. These services can be built on top of infrastructure provided by a [Host Provider](#hostprovidername), offered as fully integrated solutions, or include complementary offerings such as support, licensing, or consulting. It is commonly used for cost analysis and reporting scenarios. 
+
+**Note:** In marketplace scenarios, the Service Provider represents the seller rather than the marketplace operator, as the marketplace operator merely provides a purchasing mechanism and does not itself provide the *resources* or *services* being consumed.
 
 The Service Provider Name column adheres to the following requirements:
 
@@ -9,7 +11,7 @@ The Service Provider Name column adheres to the following requirements:
 * ServiceProviderName MUST conform to [StringHandling](#stringhandling) requirements.
 * ServiceProviderName MUST NOT be null.
 
-See [Appendix: Entity Identification Examples](#entityidentification) section for examples of Service Provider Name values for various use case scenarios.
+See [Appendix: Participating Entity Identification Examples](#participatingentityidentificationexamples) section for examples of Service Provider Name values across various use case scenarios.
 
 ## Column ID
 

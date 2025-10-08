@@ -14,7 +14,7 @@ The HostProviderName column adheres to the following requirements:
   * HostProviderName MAY equal [ServiceProviderName](#serviceprovidername) when the service provider does not provide visibility into the underlying hosting provider.
   * HostProviderName MAY be "Not Applicable" when the information about the entity providing the underlying infrastructure cannot be uniquely determined (e.g., when the [ChargeCategory](#chargecategory) is "Tax" or "Adjustment").
 
-See [Appendix: Entity Identification Examples](#entityidentification) section for examples of Host Provider values for various use case scenarios.
+See [Appendix: Participating Entity Identification Examples](#participatingentityidentificationexamples) section for examples of Host Provider values across various use case scenarios.
 
 ## Column ID
 

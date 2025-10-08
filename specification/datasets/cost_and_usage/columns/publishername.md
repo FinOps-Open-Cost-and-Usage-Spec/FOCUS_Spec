@@ -9,7 +9,7 @@ The PublisherName column adheres to the following requirements:
 * PublisherName MUST conform to [StringHandling](#stringhandling) requirements.
 * PublisherName MUST NOT be null.
 
-See [Appendix: Entity Identification Examples](#entityidentification) section for examples of [Service Provider Name](#serviceprovidername), [Host Provider Name](#hostprovidername) and [Invoice Issuer Name](#invoiceissuername) values that can be used for various purchasing scenarios.
+See [Appendix: Participating Entity Identification Examples](#participatingentityidentificationexamples) section for examples of [Service Provider Name](#serviceprovidername), [Host Provider Name](#hostprovidername) and [Invoice Issuer Name](#invoiceissuername) values across various use case scenarios.
 
 ## Column ID
 
