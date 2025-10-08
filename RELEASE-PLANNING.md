@@ -152,7 +152,7 @@ This table displays key milestones and dates related to the development of FOCUS
   <tbody>
       <tr>
         <td rowspan="10"><strong>30-Oct-25 to 9-Apr-26</strong></td>
-        <td><strong>Thu Oct 30</strong> </br> (21 weeks + 2-week EOY break)</td>
+        <td><strong>Thu Oct 30</strong> </br> (21 weeks + 2 week EOY break)</td>
         <td>1.4 Development Starts</td>
         <td rowspan="10">21 weeks (19 weeks in v1.2, and 13 weeks in v1.3)</td>
       </tr>
