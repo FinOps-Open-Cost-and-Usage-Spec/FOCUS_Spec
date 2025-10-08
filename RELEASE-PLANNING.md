@@ -189,7 +189,7 @@ This table displays key milestones and dates related to the development of FOCUS
         <td>Deadline to start Member Review</td>
       </tr>
       <tr>
-        <td>Thu Apr 9</strong> </br> end of 1.4 dev</td>
+        <td><strong>Thu Apr 9</strong> </br> end of 1.4 dev</td>
         <td>Deadline to complete Member Approval</td>
       </tr>
     <tr>
