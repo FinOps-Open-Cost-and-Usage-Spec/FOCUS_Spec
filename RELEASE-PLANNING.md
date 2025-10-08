@@ -173,7 +173,7 @@ This table displays key milestones and dates related to the development of FOCUS
         <td>Resume Discovery &amp; Development</td>
       </tr>
       <tr>
-        <td><strong>Thu Feb 26</strong> </br> (3-weeks)</td>
+        <td><strong>Thu Feb 26</strong> </br> (3 weeks)</td>
         <td>Deadline to start PR Drafts</td>
       </tr>
       <tr>
