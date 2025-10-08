@@ -61,7 +61,7 @@ Removal of a deprecated feature or column is classified as:
 * Migration Compatible if the same supported feature is fully supported by another feature or column in the specification.
 * Incompatible if removal results in the loss of support for a supported feature.
 
-#### Expected Behavior for Deprecated Capabilities
+#### Expected Behavior for Removed Capabilities
 
 Data generators are expected to remove capabilities at the same time that the FOCUS specification does. If a data generator chooses to retain a capability (e.g., column) after it has been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). 
 
