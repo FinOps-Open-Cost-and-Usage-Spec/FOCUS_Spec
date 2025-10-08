@@ -194,7 +194,7 @@ This table displays key milestones and dates related to the development of FOCUS
       </tr>
     <tr>
       <td><strong>9-Apr-26 to 30-Apr-26</strong></td>
-      <td>Thu Apr 9: </br> (3 weeks)</td>
+      <td>Thu Apr 9 </br>  - (3 weeks)</td>
       <td>Start / End Final Consistency Review v1.4</td>
       <td>3 weeks. To ensure alignment and consistency of specifications.</td>
     </tr>
