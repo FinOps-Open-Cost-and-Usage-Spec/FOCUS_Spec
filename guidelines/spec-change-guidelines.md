@@ -76,7 +76,7 @@ The addition of a new feature or column to the FOCUS specification.
 
 ### Deprecation
 
-A feature or column from the FOCUS specification is moving to deprecated status, discouraging use and indicating that the same will be removed in a future version 
+A feature or column from the FOCUS specification is moving to deprecated status, discouraging use and indicating that the same will be removed in a future version.
 
 ### Removal
 
