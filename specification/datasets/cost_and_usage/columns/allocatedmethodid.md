@@ -2,7 +2,7 @@
 
 Allocated Method ID is the unique identifier for the [allocated method](#glossary:allocated-method) defined by the provider which was used for the [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling). This unique identifier can be used to find how the [allocated charge](#glossary:allocated-charge) was calculated in the provider's documentation.
 
-The AllocatedMethodId column adheres to the following requirements:
+## Requirements
 
 * AllocatedMethodId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports provider-calculated split cost allocation.
 * AllocatedMethodId MUST be of type String.
