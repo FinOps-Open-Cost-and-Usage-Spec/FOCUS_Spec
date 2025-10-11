@@ -14,12 +14,12 @@ Dataset Instance Name
 
 ## Content constraints
 
-| Constraint    | Value                                     |
-|:--------------|:------------------------------------------|
-| Feature level | Mandatory                                 |
-| Allows nulls  | False                                     |
-| Data type     | String                                    |
-| Value format  | Must align with a published FOCUS Dataset |
+| Constraint    | Value            |
+|:--------------|:-----------------|
+| Feature level | Mandatory        |
+| Allows nulls  | False            |
+| Data type     | String           |
+| Value format  | \<not specified> |
 
 ## Introduced (version)
 

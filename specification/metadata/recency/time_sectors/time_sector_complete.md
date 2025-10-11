@@ -18,7 +18,7 @@ Time Sector Complete
 |:--------------|:------------------|
 | Feature level | Mandatory         |
 | Allows nulls  | False             |
-| Data type     | BOOLEAN           |
+| Data type     | Boolean           |
 | Value format  | \<not specified>  |
 
 ## Introduced (version)

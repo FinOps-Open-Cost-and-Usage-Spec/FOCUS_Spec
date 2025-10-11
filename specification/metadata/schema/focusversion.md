@@ -14,12 +14,12 @@ FOCUS Version
 
 ## Content constraints
 
-| Constraint    | Value                                    |
-|:--------------|:-----------------------------------------|
-| Feature level | Mandatory                                |
-| Allows nulls  | False                                    |
-| Data type     | STRING                                   |
-| Value format  | Must align with a published FocusVersion |
+| Constraint    | Value            |
+|:--------------|:-----------------|
+| Feature level | Mandatory        |
+| Allows nulls  | False            |
+| Data type     | String           |
+| Value format  | \<not specified> |
 
 ## Introduced (version)
 

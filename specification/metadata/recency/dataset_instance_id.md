@@ -14,12 +14,12 @@ Dataset Instance ID
 
 ## Content constraints
 
-| Constraint    | Value                 |
-|:--------------|:----------------------|
-| Feature level | Mandatory             |
-| Allows nulls  | False                 |
-| Data type     | STRING                |
-| Value format  | Recommend GUID String |
+| Constraint    | Value              |
+|:--------------|:-------------------|
+| Feature level | Mandatory          |
+| Allows nulls  | False              |
+| Data type     | String             |
+| Value format  | GUID (recommended) |
 
 ## Introduced (version)
 
