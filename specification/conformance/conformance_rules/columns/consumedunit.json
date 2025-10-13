@@ -116,7 +116,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The ConsumedUnit column adheres to the following requirements:",
+      "MustSatisfy": "ConsumedUnit nullability is defined as follows:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
