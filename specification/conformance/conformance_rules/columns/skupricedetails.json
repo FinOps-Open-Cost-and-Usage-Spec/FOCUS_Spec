@@ -335,7 +335,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId adheres to the following additional requirements:",
+      "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "AND",
