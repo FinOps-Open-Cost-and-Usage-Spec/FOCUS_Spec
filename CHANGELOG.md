@@ -57,9 +57,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### New metadata column definition properties
 
 - dataset
-  - dataset_instance_id
-  - dataset_instance_name
-  - focus_dataset
+  - DatasetInstanceId
+  - DatasetInstanceName
+  - FocusDatasetId
 - recency
   - DatasetInstanceId
   - DatasetInstanceLastUpdated
