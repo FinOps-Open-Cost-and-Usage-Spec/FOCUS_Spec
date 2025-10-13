@@ -1,8 +1,8 @@
 # Host Provider Name
 
-Host Provider Name is the name of the entity that provides the underlying infrastructure on which the [*resources*](#glossary:resource) or [*services*](#glossary:service) of the Service Provider are deployed.
+Host Provider Name is the name of the entity that provides the underlying infrastructure on which the [*resources*](#glossary:resource) or [*services*](#glossary:service) of the [Service Provider](#serviceprovidername) are deployed.
 
-In some instances, the host provider and the service provider are the same entity, and the provider hosts their own services.  In other instances, the host provider and the service provider are separate entities, and the service provider may allow the customer to select the host provider.
+In some instances, the host provider and the service provider are the same entity: the provider hosts their own services.  In other instances, the host provider and the service provider are separate entities, though the service provider may or may not expose the host provider and/or allow the customer to select the host provider.
 
 The HostProviderName column adheres to the following requirements:
 
@@ -37,7 +37,7 @@ The name of the entity whose *resources* are used by the Service Provider to mak
 | Constraint      | Value            |
 |:----------------|:-----------------|
 | Column type     | Dimension        |
-| Feature level   | Conditional      |
+| Feature level   | Mandatory        |
 | Allows nulls    | True             |
 | Data type       | String           |
 | Value format    | \<not specified> |
