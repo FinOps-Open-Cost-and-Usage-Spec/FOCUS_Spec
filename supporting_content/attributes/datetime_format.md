@@ -36,5 +36,5 @@ Current values observed in billing data for various scenarios:
 * Oddities in date/time/timezone
   * Azure currently provides daily-level data without hourly granularity.
   * GCP uses PST for timezone.
-* All date/time columns currently defined in the FOCUS specification (scope of FOCUS v0.5) provide information about a specific point in time. For this purpose, the extended format with separators (hyphens and colons) was chosen (provides consistency and improved readability). When and if the need arises, additional formats will be specified (e.g., for date/time intervals, duration, etc.).
+* All date/time columns currently defined in the FOCUS specification (scope of FOCUS v0.5) provide information about a specific point in time. For this purpose, the extended format with separators (hyphens and colons) was chosen (provides consistency and improved readability). When and if the need arises, additional formats will be specified (e.g., for date/time intervals, [*period*](#glossary:period), etc.).
 * The ISO 8601 format supports various precision levels. Since it is most commonly used, FOCUS specification opted for the seconds precision level ('YYYY-MM-DDTHH:mm:ssZ'). If required, other precision levels (e.g., minutes, milliseconds, or microseconds) can also be introduced.
