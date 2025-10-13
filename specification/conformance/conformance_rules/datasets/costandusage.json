@@ -1491,8 +1491,7 @@
     "CRVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [
-      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
