@@ -52,7 +52,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargePeriodEnd MUST be of type Data/Time.",
+      "MustSatisfy": "ChargePeriodEnd MUST be of type Date/Time.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDateTime",
