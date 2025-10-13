@@ -212,7 +212,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "Tags MAY include tag keys with a null value for a given resource depending on the provider’s tag finalization process.",
+            "MustSatisfy": "Tags MAY include tag keys with a null value for a given resource depending on the provider's tag finalization process.",
             "Keyword": "MAY",
             "Requirement": {},
             "Condition": {},
