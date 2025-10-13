@@ -379,7 +379,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the commitment discount's term when ChargeFrequency is 'One-Time'.",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the commitment discount's term when ChargeFrequency is \"One-Time\".",
             "Keyword": "MUST",
             "Requirement": {},
             "Condition": {
