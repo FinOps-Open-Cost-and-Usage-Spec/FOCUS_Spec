@@ -343,7 +343,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "When ChargeCategory is “Purchase” adheres to the following additional requirements:",
+            "MustSatisfy": "When ChargeCategory is \"Purchase\", CommitmentDiscountQuantity adheres to the following additional requirements:",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "AND",
