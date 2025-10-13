@@ -85,7 +85,9 @@ This functionality will be removed in a future release of FOCUS.
 
 - `CostAndUsage`
   - `ProviderName`
+    - Due to definitional conflicts between the Provider column and Publisher, this column is deprecated and will be removed in a future release. This column was replaced with the new ServiceProviderName column.  
   - `PublisherName`
+  -   Due to definitional conflicts between the Provider column and Publisher, this column is deprecated and will be removed in a future release.
 
 <br>
 
