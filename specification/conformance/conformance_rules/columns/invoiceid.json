@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId column adheres to the following requirements:",
+      "MustSatisfy": "The InvoiceId column adheres to the following requirements:",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "AND",
