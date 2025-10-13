@@ -60,6 +60,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - dataset_instance_id
   - dataset_instance_name
   - focus_dataset
+- recency
+  - DatasetInstanceId
+  - DatasetInstanceLastUpdated
+  - RecencyLastUpdateDate
+  - Time Sectors
+    - TimeSectorComplete
+    - TimeSectorEnd
+    - TimeSectorLastUpdated
+    - TimeSectorStart 
 
 ### Changed
 
