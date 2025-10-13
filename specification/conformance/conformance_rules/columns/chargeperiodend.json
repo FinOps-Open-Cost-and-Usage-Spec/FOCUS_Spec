@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargePeriodEnd column adheres to the following requirements:",
+      "MustSatisfy": "The ChargePeriodEnd column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
