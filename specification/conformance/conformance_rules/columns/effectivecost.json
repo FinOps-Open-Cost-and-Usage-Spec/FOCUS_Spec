@@ -312,7 +312,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "Charges for a given CommitmentDiscountId adheres to the following additional requirements:",
+      "MustSatisfy": "Charges for a given CommitmentDiscountId adhere to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
