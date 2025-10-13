@@ -1995,7 +1995,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "RegionId MUST be present in a FOCUS dataset when the provider supports regional concepts.",
+      "MustSatisfy": "RegionId MUST be present in a FOCUS dataset when the provider supports deploying resources or services within a region.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
