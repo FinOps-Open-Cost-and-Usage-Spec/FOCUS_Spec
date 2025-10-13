@@ -11,7 +11,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The PricingCurrency column MUST adhere to the following requirements.",
+      "MustSatisfy": "The PricingCurrency column adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
