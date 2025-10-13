@@ -474,7 +474,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS-defined SKU Price properties adheres to the following additional requirements:",
+      "MustSatisfy": "FOCUS-defined SKU Price properties adhere to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
