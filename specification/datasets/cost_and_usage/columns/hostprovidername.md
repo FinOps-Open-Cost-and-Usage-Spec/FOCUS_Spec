@@ -13,7 +13,7 @@ The HostProviderName column adheres to the following requirements:
   * HostProviderName MAY be NULL when the associated [ServiceName](#servicename) does not involve deployment on any underlying infrastructure (e.g., professional services, software licenses).
   * HostProviderName MAY be NULL when the information about the entity providing the underlying infrastructure cannot be uniquely determined (e.g., when the [ChargeCategory](#chargecategory) is "Tax" or "Adjustment").
   * HostProviderName MUST NOT be null in all other cases.
-* HostProviderName values are defined as follows:
+* When HostProviderName is not null, HostProviderName values are defined as follows:
   * HostProviderName MUST reflect the name of the host provider when explicitly selected by the customer.
   * HostProviderName MUST reflect the name of the host provider when the service provider exposes the underlying hosting provider.
   * HostProviderName MUST equal [ServiceProviderName](#serviceprovidername) in all other cases.
