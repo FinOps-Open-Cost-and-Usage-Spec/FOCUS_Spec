@@ -214,7 +214,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MAY be null when ChargeClass is 'Correction'.",
+            "MustSatisfy": "CommitmentDiscountQuantity MAY be null when ChargeClass is \"Correction\".",
             "Keyword": "MAY",
             "Requirement": {
                 "CheckFunction": "CheckValue",
