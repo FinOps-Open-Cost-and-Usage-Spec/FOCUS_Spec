@@ -2,7 +2,11 @@
 
 Date the schema was created.
 
-The CreationDate MUST be present in the metadata. This MUST be of type Date/Time and MUST NOT contain null values. CreationDate MUST conform to [DateTimeFormat](#date/timeformat).
+The CreationDate property adheres to the following requirements:
+
+* The CreationDate MUST be present in the metadata.
+* This MUST be of type Date/Time and MUST NOT contain null values.
+* CreationDate MUST conform to [DateTimeFormat](#date/timeformat).
 
 ## Metadata ID
 

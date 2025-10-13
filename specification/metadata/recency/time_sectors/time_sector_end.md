@@ -2,7 +2,13 @@
 
 The Time Sector End is the datetime of the end of the time sector. The EndTime MUST be later than the StartTime.
 
-The Time Sector End MUST be present in the metadata. This MUST be of type Date/Time and MUST NOT contain null values. The Time Sector End must be exclusive of the end time of the subsequent time sector. The Time Sector End MUST be later than the StartTime. EndTime MUST conform to [DateTimeFormat](#date/timeformat).
+The TimeSectorEnd property adheres to the following requirements:
+
+* The Time Sector End MUST be present in the metadata.
+* This MUST be of type Date/Time and MUST NOT contain null values.
+* The Time Sector End must be exclusive of the end time of the subsequent time sector.
+* The Time Sector End MUST be later than the StartTime.
+* EndTime MUST conform to [DateTimeFormat](#date/timeformat).
 
 ## Metadata ID
 

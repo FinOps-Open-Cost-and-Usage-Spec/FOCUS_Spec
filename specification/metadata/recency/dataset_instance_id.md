@@ -2,7 +2,11 @@
 
 The Dataset Instance ID provides the reference item to associate which Dataset Instance the recency metadata is for.
 
-The DatasetId MUST be present in the metadata. The DatasetId MUST be of String. It is RECOMMENDED for DatasetId to be a Globally Unique Identifier (GUID).
+The DatasetInstanceId property adheres to the following requirements:
+
+* The DatasetId MUST be present in the metadata.
+* The DatasetId MUST be of String.
+* It is RECOMMENDED for DatasetId to be a Globally Unique Identifier (GUID).
 
 ## Metadata ID
 
