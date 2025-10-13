@@ -189,7 +189,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not 'Correction'.",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not \"Correction\".",
             "Keyword": "MUST NOT",
             "Requirement": {
                 "CheckFunction": "CheckNotValue",
