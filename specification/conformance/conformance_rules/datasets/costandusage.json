@@ -682,7 +682,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ListUnitPrice MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "ListUnitPrice MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
