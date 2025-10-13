@@ -303,7 +303,7 @@
     }
   },
   "ListUnitPrice-C-010-C": {
-    "Function": "Format",
+    "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
     "Notes": null,
