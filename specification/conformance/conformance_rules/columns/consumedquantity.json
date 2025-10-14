@@ -126,7 +126,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not 'Usage', or when ChargeCategory is 'Usage' and CommitmentDiscountStatus is 'Unused'.",
+      "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not \"Usage\", or when ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Unused\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckValue",
@@ -171,7 +171,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When ChargeCategory is 'Usage' and CommitmentDiscountStatus is not 'Unused', ConsumedQuantity adheres to the following additional requirements:",
+      "MustSatisfy": "When ChargeCategory is \"Usage\" and CommitmentDiscountStatus is not \"Unused\", ConsumedQuantity adheres to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -217,7 +217,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedQuantity MUST NOT be null when ChargeClass is not 'Correction'.",
+      "MustSatisfy": "ConsumedQuantity MUST NOT be null when ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
@@ -242,7 +242,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is 'Correction'.",
+      "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is \"Correction\".",
       "Keyword": "MAY",
       "Requirement": {
         "CheckFunction": "CheckValue",

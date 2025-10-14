@@ -400,7 +400,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each charge period that corresponds with the purchase when ChargeFrequency is 'Recurring'.",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each charge period that corresponds with the purchase when ChargeFrequency is \"Recurring\".",
             "Keyword": "MUST",
             "Requirement": {},
             "Condition": {
@@ -457,7 +457,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given charge period when CommitmentDiscountStatus is 'Used'.",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given charge period when CommitmentDiscountStatus is \"Used\".",
             "Keyword": "MUST",
             "Requirement": {},
             "Condition": {
@@ -488,7 +488,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Dynamic",
         "ValidationCriteria": {
-            "MustSatisfy": "CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given charge period when CommitmentDiscountStatus is 'Unused'.",
+            "MustSatisfy": "CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given charge period when CommitmentDiscountStatus is \"Unused\".",
             "Keyword": "MUST",
             "Requirement": {},
             "Condition": {
