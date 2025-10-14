@@ -1,58 +1,58 @@
 {
   "ApplicabilityCriteria": {
     "ACCOUNT_NAMING_SUPPORTED": {
-      "Description": "Data generator supports naming of accounts"
+      "Description": "Provider supports assigning a display name for the billing account"
     },
     "AVAILABILITY_ZONE_SUPPORTED": {
-      "Description": "Data generator supports deploying resources or services within an availability zone"
+      "Description": "Provider supports deploying resources or services within an availability zone"
     },
     "CAPACITY_RESERVATION_SUPPORTED": {
-      "Description": "Capacity reservations must be present when the provider supports capacity reservations."
+      "Description": "Provider supports capacity reservations"
     },
     "COMMITMENT_DISCOUNT_SUPPORTED": {
-      "Description": "Billing data when the data generator supports commitment based discounts"
+      "Description": "Provider supports commitment discounts"
     },
     "MULTIPLE_PRICING_CATEGORIES_SUPPORTED": {
       "Description": "Provider supports more than one pricing category across all SKUs"
     },
     "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED": {
-      "Description": "Data generator supports multiple sub account types"
+      "Description": "Provider supports more than one possible SubAccountType value"
     },
     "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED": {
-      "Description": "Data generator supports multiple billing account types"
+      "Description": "Provider supports more than one possible BillingAccountType value"
     },
     "NEGOTIATED_PRICING_SUPPORTED": {
-      "Description": "Data generator supports negotiated pricing concepts"
+      "Description": "Provider supports negotiated pricing concepts"
     },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
-      "Description": "Data generator publishes unit prices exclusive of discounts"
+      "Description": "Provider publishes public price lists"
     },
     "USAGE_MEASUREMENT_SUPPORTED": {
-      "Description": "Data generator supports the measurement of usage quantities"
+      "Description": "Provider supports the measurement of usage"
     },
     "UNIT_PRICING_SUPPORTED": {
-      "Description": "Data generator supports unit pricing concepts"
+      "Description": "Provider supports unit pricing concepts"
     },
     "SUB_ACCOUNT_SUPPORTED": {
-      "Description": "Data generator supports sub account construct for resource and service grouping"
+      "Description": "Provider supports a sub account construct"
     },
     "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED": {
-      "Description": "Data generator supports billing based on provisioned resources"
+      "Description": "Provider supports billing based on provisioned resources"
     },
     "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED": {
-      "Description": "Data generator supports assigning types to resources"
+      "Description": "Provider supports assigning types to resources"
     },
     "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED": {
-      "Description": "provider supports pricing and billing in different currencies"
+      "Description": "Provider supports pricing and billing in different currencies"
     },
     "VIRTUAL_CURRENCY_SUPPORTED": {
-      "Description": "Data generator supports virtual currency concepts"
+      "Description": "Provider supports prices in virtual currency"
     },
     "REGION_SUPPORTED": {
-      "Description": "Data generator supports geographic regions"
+      "Description": "Provider supports deploying resources or services within a region"
     },
     "TAGGING_SUPPORTED": {
-      "Description": "Data generator supports tagging of resources and services"
+      "Description": "Provider supports setting user or provider-defined tags"
     }
   }
 }

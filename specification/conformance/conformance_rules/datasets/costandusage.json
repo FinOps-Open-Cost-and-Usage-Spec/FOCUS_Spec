@@ -2077,7 +2077,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
-      "USAGE_MEASUREMENT_SUPPORTED"
+      "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
     ],
     "Type": "Static",
     "ValidationCriteria": {
