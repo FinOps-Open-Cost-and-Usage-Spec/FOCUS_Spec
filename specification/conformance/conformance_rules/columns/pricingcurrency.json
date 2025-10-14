@@ -97,7 +97,7 @@
       "MustSatisfy": "PricingCurrency MUST conform to CurrencyFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "CheckNationalCurrency",
+        "CheckFunction": "FormatCurrency",
         "ColumnName": "PricingCurrency"
       },
       "Condition": {},
