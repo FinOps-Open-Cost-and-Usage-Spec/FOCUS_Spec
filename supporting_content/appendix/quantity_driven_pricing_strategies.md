@@ -55,7 +55,7 @@ For better comprehension, please refer to the sample price-tiers configuration a
 
 ### Current values observed in billing data for various scenarios
 
-| Provider  | Scenario                                                                           | ListUnitPrice Pattern                                                 |
+| ProviderName | Scenario                                                                           | ListUnitPrice Pattern                                                 |
 | :-------- |:---------------------------------------------------------------------------------- | :-------------------------------------------------------------------- |
 | AWS       | Flat-rate based pricing<br>SKU: E9YHNFENF4XQBZR6                                   | pricing/publicOnDemandRate: 0.000005                                  |
 | AWS       | Quantity-dependent pricing<br> ??? _TODO: look for a higher tier sample_           | pricing/publicOnDemandRate: ??? _TODO: look for a higher tier sample_ |

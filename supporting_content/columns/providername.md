@@ -1,4 +1,4 @@
-# Column: Provider
+# Column: ProviderName
 
 ## Example provider mappings
 
@@ -33,24 +33,24 @@ Current values observed in billing data for various scenarios:
 | GCP       | Not available |                              |
 | Microsoft | Cost details  | Management group: Azure, AWS |
 
-See [Appendix: Origination of cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Provider dimension.
+See [Appendix: Origination of cost data](../appendix/origination_of_cost_data.md) section for potential scenarios and proposed values for the Provider Name dimension.
 
 ## Discussion / Scratch space
 
 - What about marketplace type cases where you're buying through a CSP?
-  - Provider vs Publisher?
-  - You buy DataDog on marketplace, the publisher would be Datadog and Provider would be CSP
+  - ProviderName vs PublisherName?
+  - You buy DataDog on marketplace, the publisher would be Datadog and ProviderName would be CSP
   - Split to 3:
     - Who made it available for purchase - provider
     - who did I pay - Invoicing Entity (who's billing you)
-    - who built the thing that I bought - Publisher
+    - who built the thing that I bought - PublisherName
 - Are we referring to these as 'Vendors' or 'Providers'? Would 'vendor' be confused with cost management vendors?
   - Use provider
-- Regarding Provider support/mappings:
+- Regarding ProviderName support/mappings:
   - AWS bill_billing_entity (supported values: AWS, AWS Marketplace) is more similar to Microsoft publisherType (supported values: Microsoft/Azure, Marketplace, AWS)?
 - Need to determine what field we use to differentiate branded services (e.g. GCP vs. Google Workspace or Microsoft Azure vs. Microsoft 365)
-  - Should Publisher only be a Company name?
-  - Discussion: it should be based on how massive the product lines are - the columns more detailed than Publisher would guide whether you might do something like split Microsoft into Microsoft Azure and Microsoft 365.
+  - Should PublisherName only be a Company name?
+  - Discussion: it should be based on how massive the product lines are - the columns more detailed than PublisherName would guide whether you might do something like split Microsoft into Microsoft Azure and Microsoft 365.
   - To be revisited in governance pass. Also, ultimately, this is up to each provider/publisher/Invoice Entity to decide how they want their naming to appear (not a normalized field).
 - Need to determine what field we use to differentiate native services from third-party marketplace services.
 

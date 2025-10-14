@@ -4,9 +4,17 @@
 
 A charge representing a modification to billing data to account for certain events or circumstances not previously captured, or captured incorrectly. Examples include billing errors, service disruptions, or pricing changes.
 
+<a name="glossary:allocated-charge"><b>Allocated Charge</b></a>
+
+The [charge](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) to identify the charges that were created from the [origin charge](#glossary:origin-charge) resulting from the application of Provider-Calculated Split Cost Allocation.
+
+<a name="glossary:allocated-method"><b>Allocated Method</b></a>
+
+The process or formula by which cost is being allocated from an [origin charge](#glossary:origin-charge) to produce [allocated charges](#glossary:allocated-charge). This is used in the context of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) which requires documentation of the method to be provided for any and all allocated methods used. May also be colloquially referred to as allocation method.
+
 <a name="glossary:amortization"><b>Amortization</b></a>
 
-The distribution of upfront costs over time to accurately reflect the consumption or benefit derived from the associated resources or services. Amortization is valuable when the commitment period (time duration of the cost) extends beyond the granularity of the source report.
+The distribution of upfront costs over time to accurately reflect the consumption or benefit derived from the associated resources or services. Amortization is valuable when the commitment [*period*](#glossary:period) extends beyond the granularity of the source report.
 
 <a name="glossary:availability-zone"><b>Availability Zone</b></a>
 
@@ -42,7 +50,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:chargeperiod"><b>Charge Period</b></a>
 
-The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the duration of eligibility.
+The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the period of eligibility.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -50,15 +58,23 @@ A company or organization that provides remote access to computing resources, in
 
 <a name="glossary:commitment"><b>Commitment</b></a>
 
-A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
+A customer's agreement to either spend a defined monetary amount or consume a specific quantity of resources or services over a specified [*period*](#glossary:period).
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
+A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period).  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
 A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, provider-specific requirements.
+
+<a name="glossary:contract"><b>Contract</b></a>
+
+A collection of agreed terms between a provider and a customer.
+
+<a name="glossary:contract-commitment"><b>Contract Commitment</b></a>
+
+A specific term within a [*contract*](#glossary:contract) that defines a measurable obligation agreed upon by a provider and a customer, such as a minimum spend or usage over an agreed period of time.
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
@@ -71,6 +87,10 @@ A charge to correct cost or usage data in a previously invoiced [*billing period
 <a name="glossary:credit"><b>Credit</b></a>
 
 A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
+
+<a name="glossary:datasetinstance"><b>Dataset Instance</b></a>
+
+A specific implementation of a FOCUS dataset provided by a data generator. A Data Generator may provide multiple dataset instances of the same FOCUS dataset, each with different properties such as time granularity or differing custom column inclusions.  For example, the same 'FOCUS Cost and Usage' *FOCUS Dataset* may be provided at an hourly or daily time granularity by a Data Generator. Each would be a distinct Dataset Instance.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
@@ -129,15 +149,23 @@ A government-issued currency (e.g., US dollars, Euros).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
-A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
+A contractual agreement where a customer commits to specific spend or usage goals over a specified [*period*](#glossary:period) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
-A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
+A service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
+
+<a name="glossary:origin-charge"><b>Origin Charge</b></a>
+
+The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of Provider-Calculated Split Cost Allocation to identify the charge that existed prior to the application of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) to produce [allocated charges](#glossary:allocated-charge).
 
 <a name="glossary:pascalcase"><b>Pascal Case</b></a>
 
 Pascal Case (PascalCase, also known as UpperCamelCase) is a format for identifiers which contain one or more words meaning the words are concatenated together with no delimiter and the first letter of each word is capitalized.
+
+<a name="glossary:period"><b>Period</b></a>
+
+A time window, with a specifically defined start and end date/time.
 
 <a name="glossary:potato"><b>Potato</b></a>
 
@@ -190,11 +218,9 @@ A metadata label assigned to a resource to provide information about it or to ca
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
 A Resource or Provider-defined construct for grouping resources and/or other Provider-defined construct that a Tag can be assigned to.
-
 <a name="glossary:term"><b>Term</b></a>
 
-A duration of a contractual agreement like with a [*commitment discount*](#glossary:commitment-discount) or [*negotiated discount*](#glossary:negotiated-discount).
-
+An agreement specified on a [*contract*](#glossary:contract).
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
 A proprietary currency (e.g., credits, tokens) issued by providers and independent of government regulation.
