@@ -4,58 +4,58 @@
   },
   "ApplicabilityCriteria": {
     "ACCOUNT_NAMING_SUPPORTED": {
-      "Description": "Data generator supports naming of accounts"
+      "Description": "Provider supports assigning a display name for the billing account"
     },
     "AVAILABILITY_ZONE_SUPPORTED": {
-      "Description": "Data generator supports deploying resources or services within an availability zone"
+      "Description": "Provider supports deploying resources or services within an availability zone"
     },
     "CAPACITY_RESERVATION_SUPPORTED": {
-      "Description": "Capacity reservations must be present when the provider supports capacity reservations."
+      "Description": "Provider supports capacity reservations"
     },
     "COMMITMENT_DISCOUNT_SUPPORTED": {
-      "Description": "Billing data when the data generator supports commitment based discounts"
+      "Description": "Provider supports commitment discounts"
     },
     "MULTIPLE_PRICING_CATEGORIES_SUPPORTED": {
       "Description": "Provider supports more than one pricing category across all SKUs"
     },
     "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED": {
-      "Description": "Data generator supports multiple sub account types"
+      "Description": "Provider supports more than one possible SubAccountType value"
     },
     "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED": {
-      "Description": "Data generator supports multiple billing account types"
+      "Description": "Provider supports more than one possible BillingAccountType value"
     },
     "NEGOTIATED_PRICING_SUPPORTED": {
-      "Description": "Data generator supports negotiated pricing concepts"
+      "Description": "Provider supports negotiated pricing concepts"
     },
     "PUBLIC_PRICE_LIST_SUPPORTED": {
-      "Description": "Data generator publishes unit prices exclusive of discounts"
+      "Description": "Provider publishes public price lists"
     },
     "USAGE_MEASUREMENT_SUPPORTED": {
-      "Description": "Data generator supports the measurement of usage quantities"
+      "Description": "Provider supports the measurement of usage"
     },
     "UNIT_PRICING_SUPPORTED": {
-      "Description": "Data generator supports unit pricing concepts"
+      "Description": "Provider supports unit pricing concepts"
     },
     "SUB_ACCOUNT_SUPPORTED": {
-      "Description": "Data generator supports sub account construct for resource and service grouping"
+      "Description": "Provider supports a sub account construct"
     },
     "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED": {
-      "Description": "Data generator supports billing based on provisioned resources"
+      "Description": "Provider supports billing based on provisioned resources"
     },
     "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED": {
-      "Description": "Data generator supports assigning types to resources"
+      "Description": "Provider supports assigning types to resources"
     },
     "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED": {
-      "Description": "provider supports pricing and billing in different currencies"
+      "Description": "Provider supports pricing and billing in different currencies"
     },
     "VIRTUAL_CURRENCY_SUPPORTED": {
-      "Description": "Data generator supports virtual currency concepts"
+      "Description": "Provider supports prices in virtual currency"
     },
     "REGION_SUPPORTED": {
-      "Description": "Data generator supports geographic regions"
+      "Description": "Provider supports deploying resources or services within a region"
     },
     "TAGGING_SUPPORTED": {
-      "Description": "Data generator supports tagging of resources and services"
+      "Description": "Provider supports setting user or provider-defined tags"
     }
   },
   "CheckFunctions": {
@@ -129,6 +129,13 @@
       "Arguments": [
         "ColumnAName",
         "ColumnBName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckDecimalValue": {
+      "Description": "Check if column has a valid decimal value",
+      "Arguments": [
+        "ColumnName"
       ],
       "FormatAttributes": []
     },
@@ -2309,7 +2316,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingCurrency column adheres to the following requirements:",
+        "MustSatisfy": "The BillingCurrency column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -2373,7 +2380,7 @@
       }
     },
     "BillingCurrency-C-002-M": {
-      "Function": "Validation",
+      "Function": "Format",
       "Reference": "BillingCurrency",
       "EntityType": "Column",
       "Notes": "",
@@ -2550,7 +2557,7 @@
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "FormatString",
-          "ColumnAName": "SkuPriceId"
+          "ColumnName": "SkuPriceId"
         },
         "Condition": {},
         "Dependencies": []
@@ -2922,7 +2929,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "BilledCost column adheres to the following requirements:",
+        "MustSatisfy": "The BilledCost column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -2941,15 +2948,19 @@
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "BilledCost-C-004-C"
+              "ConformanceRuleId": "BilledCost-C-004-M"
             },
             {
               "CheckFunction": "CheckConformanceRule",
-              "ConformanceRuleId": "BilledCost-C-005-M"
+              "ConformanceRuleId": "BilledCost-C-005-C"
             },
             {
               "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "BilledCost-C-006-M"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "BilledCost-C-007-M"
             }
           ]
         },
@@ -2959,13 +2970,54 @@
           "BilledCost-C-001-M",
           "BilledCost-C-002-M",
           "BilledCost-C-003-M",
-          "BilledCost-C-004-C",
-          "BilledCost-C-005-M",
-          "BilledCost-C-006-M"
+          "BilledCost-C-004-M",
+          "BilledCost-C-005-C",
+          "BilledCost-C-006-M",
+          "BilledCost-C-007-M"
         ]
       }
     },
     "BilledCost-C-001-M": {
+      "Function": "Type",
+      "EntityType": "Column",
+      "Reference": "BilledCost",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "BilledCost MUST be of type Decimal.",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "TypeDecimal",
+          "ColumnName": "BilledCost"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BilledCost-C-002-M": {
+      "Function": "Format",
+      "EntityType": "Column",
+      "Reference": "BilledCost",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "ValidationCriteria": {
+        "MustSatisfy": "BilledCost MUST conform to NumericFormat requirements.",
+        "Keyword": "MUST",
+        "Requirement": {
+          "CheckFunction": "FormatNumeric",
+          "ColumnName": "BilledCost"
+        },
+        "Condition": {},
+        "Dependencies": []
+      }
+    },
+    "BilledCost-C-003-M": {
       "Function": "Nullability",
       "Reference": "BilledCost",
       "EntityType": "Column",
@@ -2986,47 +3038,27 @@
         "Dependencies": []
       }
     },
-    "BilledCost-C-002-M": {
-      "Function": "Type",
-      "EntityType": "Column",
+    "BilledCost-C-004-M": {
+      "Function": "Validation",
       "Reference": "BilledCost",
+      "EntityType": "Column",
       "Notes": "",
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "BilledCost MUST be of type Decimal.",
+        "MustSatisfy": "BilledCost MUST be a valid decimal value.",
         "Keyword": "MUST",
         "Requirement": {
-          "CheckFunction": "TypeDecimal",
+          "CheckFunction": "CheckDecimalValue",
           "ColumnName": "BilledCost"
         },
         "Condition": {},
         "Dependencies": []
       }
     },
-    "BilledCost-C-003-M": {
-      "Function": "Format",
-      "EntityType": "Column",
-      "Reference": "BilledCost",
-      "Notes": "",
-      "CRVersionIntroduced": "1.2",
-      "Status": "Active",
-      "ApplicabilityCriteria": [],
-      "Type": "Static",
-      "ValidationCriteria": {
-        "MustSatisfy": "BilledCost MUST conform to NumericFormat requirements.",
-        "Keyword": "MUST",
-        "Requirement": {
-          "CheckFunction": "FormatNumeric",
-          "ColumnName": "BilledCost"
-        },
-        "Condition": {},
-        "Dependencies": []
-      }
-    },
-    "BilledCost-C-004-C": {
+    "BilledCost-C-005-C": {
       "Function": "Validation",
       "Reference": "BilledCost",
       "EntityType": "Column",
@@ -3054,7 +3086,7 @@
         ]
       }
     },
-    "BilledCost-C-005-M": {
+    "BilledCost-C-006-M": {
       "Function": "Validation",
       "Reference": "BilledCost",
       "EntityType": "Column",
@@ -3071,7 +3103,7 @@
         "Dependencies": []
       }
     },
-    "BilledCost-C-006-M": {
+    "BilledCost-C-007-M": {
       "Function": "Validation",
       "Reference": "BilledCost",
       "EntityType": "Column",
@@ -3081,7 +3113,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "BilledCost for a given InvoiceId MUST match the sum of the payable amount provided in the corresponding invoice with the same id generated by the InvoiceIssuer.",
+        "MustSatisfy": "The sum of the BilledCost for a given InvoiceId MUST match the sum of the payable amount provided in the corresponding invoice with the same id generated by the InvoiceIssuer.",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
@@ -3433,7 +3465,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingAccountName column adheres to the following requirements:",
+        "MustSatisfy": "The BillingAccountName column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -3482,7 +3514,7 @@
       }
     },
     "BillingAccountName-C-002-M": {
-      "Function": "Type",
+      "Function": "Format",
       "Reference": "BillingAccountName",
       "EntityType": "Column",
       "Notes": "",
@@ -5302,7 +5334,7 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingAccountType column adheres to the following requirements:",
+        "MustSatisfy": "The BillingAccountType column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -5591,7 +5623,7 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "The ConsumedUnit column adheres to the following requirements:",
+        "MustSatisfy": "ConsumedUnit nullability is defined as follows:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -5796,7 +5828,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and Charge Category is \u201cUsage\u201d.",
+        "MustSatisfy": "CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and Charge Category is \"Usage\".",
         "Keyword": "MUST NOT",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
@@ -6057,7 +6089,7 @@
       }
     },
     "ResourceType-C-002-M": {
-      "Function": "Validation",
+      "Function": "Format",
       "Reference": "ResourceType",
       "EntityType": "Column",
       "Notes": "",
@@ -6174,7 +6206,7 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "AvailabilityZone column adheres to the following requirements:",
+        "MustSatisfy": "The AvailabilityZone column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -6223,7 +6255,7 @@
       }
     },
     "AvailabilityZone-C-002-M": {
-      "Function": "Type",
+      "Function": "Format",
       "Reference": "AvailabilityZone",
       "EntityType": "Column",
       "Notes": "",
@@ -6269,7 +6301,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingPeriodStart column adheres to the following requirements:",
+        "MustSatisfy": "The BillingPeriodStart column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -6923,7 +6955,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ListCost column adheres to the following requirements:",
+        "MustSatisfy": "The ListCost column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -7129,21 +7161,7 @@
         "MustSatisfy": "ListCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the ListCost of those related charges.",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "AND",
-          "Items": [
-            {
-              "CheckFunction": "CheckValue",
-              "ColumnName": "ListUnitPrice",
-              "Value": null
-            },
-            {
-              "CheckFunction": "CheckValue",
-              "ColumnName": "ChargeCategory",
-              "Value": "Tax"
-            }
-          ]
-        },
+        "Condition": {},
         "Dependencies": [
           "ChargeCategory-C-000-M",
           "ListUnitPrice-C-000-C"
@@ -7163,21 +7181,7 @@
         "MustSatisfy": "ListCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "AND",
-          "Items": [
-            {
-              "CheckFunction": "CheckValue",
-              "ColumnName": "ListUnitPrice",
-              "Value": null
-            },
-            {
-              "CheckFunction": "CheckValue",
-              "ColumnName": "ChargeCategory",
-              "Value": "Credit"
-            }
-          ]
-        },
+        "Condition": {},
         "Dependencies": [
           "ChargeCategory-C-000-M",
           "BilledCost-C-000-M",
@@ -7425,7 +7429,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ChargePeriodEnd column adheres to the following requirements:",
+        "MustSatisfy": "The ChargePeriodEnd column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -7468,7 +7472,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ChargePeriodEnd MUST be of type Data/Time.",
+        "MustSatisfy": "ChargePeriodEnd MUST be of type Date/Time.",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "TypeDateTime",
@@ -7712,7 +7716,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ChargePeriodStart column adheres to the following requirements:",
+        "MustSatisfy": "The ChargePeriodStart column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -7800,7 +7804,8 @@
         "Keyword": "MUST NOT",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
-          "ColumnName": "ChargePeriodStart"
+          "ColumnName": "ChargePeriodStart",
+          "Value": null
         },
         "Condition": {},
         "Dependencies": []
@@ -7835,7 +7840,7 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "The PricingCurrency column MUST adhere to the following requirements.",
+        "MustSatisfy": "The PricingCurrency column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -7959,7 +7964,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "EffectiveCost column adheres to the following requirements:",
+        "MustSatisfy": "The EffectiveCost column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -8262,7 +8267,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "Charges for a given CommitmentDiscountId adheres to the following additional requirements:",
+        "MustSatisfy": "Charges for a given CommitmentDiscountId adhere to the following additional requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -8388,6 +8393,10 @@
             {
               "CheckFunction": "CheckConformanceRule",
               "ConformanceRuleId": "ResourceName-C-003-C"
+            },
+            {
+              "CheckFunction": "CheckConformanceRule",
+              "ConformanceRuleId": "ResourceName-C-006-C"
             }
           ]
         },
@@ -8396,7 +8405,8 @@
           "CostAndUsage-D-044-C",
           "ResourceName-C-001-M",
           "ResourceName-C-002-M",
-          "ResourceName-C-003-C"
+          "ResourceName-C-003-C",
+          "ResourceName-C-006-C"
         ]
       }
     },
@@ -8414,7 +8424,7 @@
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "TypeString",
-          "Column": "ResourceName"
+          "ColumnName": "ResourceName"
         },
         "Condition": {},
         "Dependencies": []
@@ -8434,7 +8444,7 @@
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "FormatString",
-          "Column": "ResourceName"
+          "ColumnName": "ResourceName"
         },
         "Condition": {},
         "Dependencies": []
@@ -8487,7 +8497,7 @@
         "Requirement": {},
         "Condition": {
           "CheckFunction": "CheckValue",
-          "Column": "ResourceId",
+          "ColumnName": "ResourceId",
           "Value": null
         },
         "Dependencies": [
@@ -8510,9 +8520,28 @@
         "Requirement": {},
         "Condition": {
           "CheckFunction": "CheckValue",
-          "Column": "ResourceId",
+          "ColumnName": "ResourceId",
           "Value": null
         },
+        "Dependencies": [
+          "ResourceId-C-000-C"
+        ]
+      }
+    },
+    "ResourceName-C-006-C": {
+      "Function": "Validation",
+      "Reference": "ResourceName",
+      "EntityType": "Column",
+      "Notes": "",
+      "CRVersionIntroduced": "1.2",
+      "Status": "Active",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "ValidationCriteria": {
+        "MustSatisfy": "ResourceName MUST NOT duplicate ResourceId when the resource is not provisioned interactively or only has a system-generated ResourceId.",
+        "Keyword": "MUST NOT",
+        "Requirement": {},
+        "Condition": {},
         "Dependencies": [
           "ResourceId-C-000-C"
         ]
@@ -8645,7 +8674,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not 'Usage', or when ChargeCategory is 'Usage' and CommitmentDiscountStatus is 'Unused'.",
+        "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not \"Usage\", or when ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Unused\".",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "CheckValue",
@@ -8690,7 +8719,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "When ChargeCategory is 'Usage' and CommitmentDiscountStatus is not 'Unused', ConsumedQuantity adheres to the following additional requirements:",
+        "MustSatisfy": "When ChargeCategory is \"Usage\" and CommitmentDiscountStatus is not \"Unused\", ConsumedQuantity adheres to the following additional requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -8736,7 +8765,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ConsumedQuantity MUST NOT be null when ChargeClass is not 'Correction'.",
+        "MustSatisfy": "ConsumedQuantity MUST NOT be null when ChargeClass is not \"Correction\".",
         "Keyword": "MUST NOT",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
@@ -8761,7 +8790,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is 'Correction'.",
+        "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is \"Correction\".",
         "Keyword": "MAY",
         "Requirement": {
           "CheckFunction": "CheckValue",
@@ -9028,7 +9057,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "When ChargeCategory is \u201cUsage\u201d or \u201cPurchase\u201d and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
+        "MustSatisfy": "When ChargeCategory is \"Usage\" or \"Purchase\" and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -9086,7 +9115,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not 'Correction'.",
+        "MustSatisfy": "CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not \"Correction\".",
         "Keyword": "MUST NOT",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
@@ -9111,7 +9140,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "CommitmentDiscountQuantity MAY be null when ChargeClass is 'Correction'.",
+        "MustSatisfy": "CommitmentDiscountQuantity MAY be null when ChargeClass is \"Correction\".",
         "Keyword": "MAY",
         "Requirement": {
           "CheckFunction": "CheckValue",
@@ -9240,7 +9269,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "When ChargeCategory is \u201cPurchase\u201d adheres to the following additional requirements:",
+        "MustSatisfy": "When ChargeCategory is \"Purchase\", CommitmentDiscountQuantity adheres to the following additional requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -9276,7 +9305,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the commitment discount's term when ChargeFrequency is 'One-Time'.",
+        "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the commitment discount's term when ChargeFrequency is \"One-Time\".",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": {
@@ -9297,7 +9326,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each charge period that corresponds with the purchase when ChargeFrequency is 'Recurring'.",
+        "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each charge period that corresponds with the purchase when ChargeFrequency is \"Recurring\".",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": {
@@ -9318,7 +9347,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "When ChargeCategory is 'Usage' adheres to the following additional requirements:",
+        "MustSatisfy": "When ChargeCategory is \"Usage\", CommitmentDiscountQuantity adheres to the following additional requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -9354,7 +9383,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given charge period when CommitmentDiscountStatus is 'Used'.",
+        "MustSatisfy": "CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given charge period when CommitmentDiscountStatus is \"Used\".",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": {
@@ -9385,7 +9414,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given charge period when CommitmentDiscountStatus is 'Unused'.",
+        "MustSatisfy": "CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given charge period when CommitmentDiscountStatus is \"Unused\".",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": {
@@ -9538,7 +9567,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "PricingCurrencyListUnitPrice MUST be null when ChargeCategory is 'Tax'.",
+        "MustSatisfy": "PricingCurrencyListUnitPrice MUST be null when ChargeCategory is \"Tax\".",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "CheckValue",
@@ -9563,7 +9592,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'.",
+        "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
         "Keyword": "MUST NOT",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
@@ -9704,7 +9733,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "Discrepancies in PricingCurrencyListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is 'Correction'.",
+        "MustSatisfy": "Discrepancies in PricingCurrencyListUnitPrice, ListCost, or PricingQuantity MAY be addressed independently when ChargeClass is \"Correction\".",
         "Keyword": "MAY",
         "Requirement": {},
         "Condition": {
@@ -10054,7 +10083,7 @@
       }
     },
     "Tags-C-001-M": {
-      "Function": "Type",
+      "Function": "Format",
       "Reference": "Tags",
       "EntityType": "Column",
       "Notes": "",
@@ -10063,7 +10092,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "Tags MUST be of type KeyValueFormat.",
+        "MustSatisfy": "Tags MUST conform to KeyValueFormat requirements.",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "FormatKeyValue",
@@ -10216,7 +10245,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "Tags MAY include tag keys with a null value for a given resource depending on the provider\u2019s tag finalization process.",
+        "MustSatisfy": "Tags MAY include tag keys with a null value for a given resource depending on the provider's tag finalization process.",
         "Keyword": "MAY",
         "Requirement": {},
         "Condition": {},
@@ -10780,7 +10809,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingPeriodEnd column adheres to the following requirements:",
+        "MustSatisfy": "The BillingPeriodEnd column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -10901,7 +10930,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ChargeDescription column adheres to the following requirements:",
+        "MustSatisfy": "The ChargeDescription column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -11626,7 +11655,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "InvoiceId column adheres to the following requirements:",
+        "MustSatisfy": "The InvoiceId column adheres to the following requirements:",
         "Keyword": "SHOULD",
         "Requirement": {
           "CheckFunction": "AND",
@@ -12133,7 +12162,7 @@
       }
     },
     "CommitmentDiscountName-C-002-M": {
-      "Function": "Validation",
+      "Function": "Format",
       "Reference": "CommitmentDiscountName",
       "EntityType": "Column",
       "Notes": "",
@@ -12553,7 +12582,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "BillingAccountId column adheres to the following requirements:",
+        "MustSatisfy": "The BillingAccountId column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -13147,7 +13176,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be null when ChargeCategory is 'Tax'.",
+        "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be null when ChargeCategory is \"Tax\".",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": {
@@ -13168,7 +13197,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'.",
+        "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
         "Keyword": "MUST NOT",
         "Requirement": {},
         "Condition": {
@@ -13309,7 +13338,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "Discrepancies in PricingCurrencyContractedUnitPrice, ContractedCost, or PricingQuantity MAY exist when ChargeClass is 'Correction'.",
+        "MustSatisfy": "Discrepancies in PricingCurrencyContractedUnitPrice, ContractedCost, or PricingQuantity MAY exist when ChargeClass is \"Correction\".",
         "Keyword": "MAY",
         "Requirement": {},
         "Condition": {
@@ -14714,7 +14743,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ChargeClass column adheres to the following requirements:",
+        "MustSatisfy": "The ChargeClass column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -15202,8 +15231,8 @@
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnByColumnEqualsColumnValue",
-          "ColumnNameA": "ContractedUnitPrice",
-          "ColumnNameB": "PricingQuantity",
+          "ColumnAName": "ContractedUnitPrice",
+          "ColumnBName": "PricingQuantity",
           "ResultColumnName": "ContractedCost"
         },
         "Condition": {
@@ -15268,7 +15297,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ChargeCategory column adheres to the following requirements:",
+        "MustSatisfy": "The ChargeCategory column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -15719,7 +15748,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId adheres to the following additional requirements:",
+        "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:",
         "Keyword": "SHOULD",
         "Requirement": {
           "CheckFunction": "AND",
@@ -15858,7 +15887,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "FOCUS-defined SKU Price properties adheres to the following additional requirements:",
+        "MustSatisfy": "FOCUS-defined SKU Price properties adhere to the following additional requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -16133,7 +16162,7 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ListUnitPrice column adheres to the following requirements:",
+        "MustSatisfy": "The ListUnitPrice column adheres to the following requirements:",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "AND",
@@ -16254,7 +16283,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ListUnitPrice MUST be null when ChargeCategory is 'Tax'.",
+        "MustSatisfy": "ListUnitPrice MUST be null when ChargeCategory is \"Tax\".",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "CheckValue",
@@ -16281,7 +16310,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ListUnitPrice MUST NOT be null when ChargeCategory is 'Usage' or 'Purchase' and ChargeClass is not 'Correction'.",
+        "MustSatisfy": "ListUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
         "Keyword": "MUST NOT",
         "Requirement": {
           "CheckFunction": "CheckNotValue",
@@ -16425,7 +16454,7 @@
       }
     },
     "ListUnitPrice-C-010-C": {
-      "Function": "Format",
+      "Function": "Validation",
       "Reference": "ListUnitPrice",
       "EntityType": "Column",
       "Notes": null,
@@ -16434,13 +16463,13 @@
       "ApplicabilityCriteria": [],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not 'Correction'.",
+        "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not \"Correction\".",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnByColumnEqualsColumnValue",
           "ColumnAName": "ListUnitPrice",
           "ColumnBName": "PricingQuantity",
-          "EqualsColumnName": "ListCost"
+          "ResultColumnName": "ListCost"
         },
         "Condition": {
           "CheckFunction": "AND",
@@ -16472,7 +16501,7 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "ValidationCriteria": {
-        "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass 'Correction'.",
+        "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is \"Correction\".",
         "Keyword": "MAY",
         "Requirement": {},
         "Condition": {
@@ -17168,7 +17197,7 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ListUnitPrice MUST be present in a FOCUS dataset when the data generator publishes unit prices exclusive of discounts.",
+        "MustSatisfy": "ListUnitPrice MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts.",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
@@ -17576,7 +17605,7 @@
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
-          "ColumnName": "PublisherName"
+          "ColumnName": "InvoiceIssuerName"
         },
         "Condition": {},
         "Dependencies": []
@@ -17977,8 +18006,7 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
@@ -18000,12 +18028,11 @@
       "CRVersionIntroduced": "1.2",
       "Status": "Active",
       "ApplicabilityCriteria": [
-        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
-        "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+        "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "ResourceName MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources and supports assigning names to resources.",
+        "MustSatisfy": "ResourceName MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources.",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
@@ -18459,7 +18486,7 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "RegionName MUST be present in a FOCUS dataset when the provider supports regional concepts.",
+        "MustSatisfy": "RegionName MUST be present in a FOCUS dataset when the provider supports deploying resources or services within a region.",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
@@ -18481,7 +18508,7 @@
       ],
       "Type": "Static",
       "ValidationCriteria": {
-        "MustSatisfy": "RegionId MUST be present in a FOCUS dataset when the provider supports regional concepts.",
+        "MustSatisfy": "RegionId MUST be present in a FOCUS dataset when the provider supports deploying resources or services within a region.",
         "Keyword": "MUST",
         "Requirement": {
           "CheckFunction": "ColumnPresent",
@@ -18565,7 +18592,7 @@
       "Status": "Active",
       "Notes": "",
       "ApplicabilityCriteria": [
-        "USAGE_MEASUREMENT_SUPPORTED"
+        "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
       ],
       "Type": "Static",
       "ValidationCriteria": {
