@@ -398,9 +398,7 @@
         "Value": "Correction"
       },
       "Dependencies": [
-        "ContractedCost-C-000-M",
-        "PricingQuantity-C-000-M",
-        "ChargeClass-C-000-M"
+        "ChargeClass-C-005-C"
       ]
     }
   }

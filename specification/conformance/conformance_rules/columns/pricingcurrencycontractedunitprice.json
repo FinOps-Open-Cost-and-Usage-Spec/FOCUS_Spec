@@ -139,7 +139,9 @@
         "ColumnName": "ChargeCategory",
         "Value": "Tax"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeCategory-C-003-M"
+      ]
     }
   },
   "PricingCurrencyContractedUnitPrice-C-005-C": {
@@ -301,7 +303,9 @@
         "ColumnName": "ChargeClass",
         "Value": "Correction"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeClass-C-005-C"
+      ]
     }
   }
 }

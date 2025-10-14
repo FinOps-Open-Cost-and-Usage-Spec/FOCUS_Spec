@@ -216,10 +216,7 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": [
-        "ChargeCategory-C-000-M",
-        "ListUnitPrice-C-000-C"
-      ]
+      "Dependencies": []
     }
   },
   "ListCost-C-008-C": {
@@ -236,11 +233,7 @@
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
-      "Dependencies": [
-        "ChargeCategory-C-000-M",
-        "BilledCost-C-000-M",
-        "ListUnitPrice-C-000-C"
-      ]
+      "Dependencies": []
     }
   },
   "ListCost-C-009-C": {

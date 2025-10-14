@@ -286,25 +286,8 @@
       "MustSatisfy": "The product of PricingQuantity and a unit price (e.g., ContractedUnitPrice) MUST match the corresponding cost metric (e.g., ContractedCost) when the unit price is not null and ChargeClass is not \"Correction\".",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckNotValue",
-            "ColumnName": "ContractedUnitPrice",
-            "Value": null
-          },
-          {
-            "CheckFunction": "CheckNotValue",
-            "ColumnName": "ChargeClass",
-            "Value": "Correction"
-          }
-        ]
-      },
-      "Dependencies": [
-        "ContractedUnitPrice-C-004-M",
-        "ChargeClass-C-000-M"
-      ]
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "PricingQuantity-C-010-C": {
@@ -325,7 +308,9 @@
         "ColumnName": "ChargeClass",
         "Value": "Correction"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeClass-C-005-C"
+      ]
     }
   }
 }

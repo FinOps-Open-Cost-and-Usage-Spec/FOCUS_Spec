@@ -387,7 +387,9 @@
                 "ColumnName": "ChargeFrequency",
                 "Value": "One-Time"
             },
-            "Dependencies": []
+            "Dependencies": [
+                "ChargeFrequency-C-003-M"
+            ]
         }
     },
     "CommitmentDiscountQuantity-C-012-C": {
@@ -408,7 +410,9 @@
                 "ColumnName": "ChargeFrequency",
                 "Value": "Recurring"
             },
-            "Dependencies": []
+            "Dependencies": [
+                "ChargeFrequency-C-003-M"
+            ]
         }
     },
     "CommitmentDiscountQuantity-C-013-C": {

@@ -305,7 +305,9 @@
         "ColumnName": "ChargeClass",
         "Value": "Correction"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeClass-C-005-C"
+      ]
     }
   }
 }

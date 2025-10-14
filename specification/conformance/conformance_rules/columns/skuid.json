@@ -335,7 +335,9 @@
           }
         ]
       },
-      "Dependencies": []
+      "Dependencies": [
+        "ChargeCategory-C-003-M"
+      ]
     }
   },
   "SkuId-C-012-O": {

@@ -213,25 +213,8 @@
       "MustSatisfy": "ContractedCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the ContractedCost of those related charges.",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ContractedUnitPrice",
-            "Value": null
-          },
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ChargeCategory",
-            "Value": "Tax"
-          }
-        ]
-      },
-      "Dependencies": [
-        "ContractedUnitPrice-C-004-M",
-        "ChargeCategory-C-000-M"
-      ]
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ContractedCost-C-008-C": {
@@ -247,26 +230,8 @@
       "MustSatisfy": "ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {
-        "CheckFunction": "AND",
-        "Items": [
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ContractedUnitPrice",
-            "Value": null
-          },
-          {
-            "CheckFunction": "CheckValue",
-            "ColumnName": "ChargeCategory",
-            "Value": "Credit"
-          }
-        ]
-      },
-      "Dependencies": [
-        "ContractedUnitPrice-C-004-M",
-        "ChargeCategory-C-000-M",
-        "BilledCost-C-000-M"
-      ]
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "ContractedCost-C-009-C": {
@@ -328,9 +293,7 @@
         "Value": "Correction"
       },
       "Dependencies": [
-        "ContractedUnitPrice-C-004-M",
-        "PricingQuantity-C-000-M",
-        "ChargeClass-C-000-M"
+        "ChargeClass-C-005-C"
       ]
     }
   }
