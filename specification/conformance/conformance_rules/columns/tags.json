@@ -59,7 +59,7 @@
         "ApplicabilityCriteria": [],
         "Type": "Static",
         "ValidationCriteria": {
-            "MustSatisfy": "Tags MUST be of type KeyValueFormat.",
+            "MustSatisfy": "Tags MUST conform to KeyValueFormat requirements.",
             "Keyword": "MUST",
             "Requirement": {
                 "CheckFunction": "FormatKeyValue",
