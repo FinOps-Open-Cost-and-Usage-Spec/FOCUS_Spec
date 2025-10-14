@@ -28,6 +28,10 @@
           {
             "CheckFunction": "CheckConformanceRule",
             "ConformanceRuleId": "ResourceName-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckConformanceRule",
+            "ConformanceRuleId": "ResourceName-C-006-C"
           }
         ]
       },
@@ -36,7 +40,8 @@
         "CostAndUsage-D-044-C",
         "ResourceName-C-001-M",
         "ResourceName-C-002-M",
-        "ResourceName-C-003-C"
+        "ResourceName-C-003-C",
+        "ResourceName-C-006-C"
       ]
     }
   },
@@ -153,6 +158,25 @@
         "ColumnName": "ResourceId",
         "Value": null
       },
+      "Dependencies": [
+        "ResourceId-C-000-C"
+      ]
+    }
+  },
+  "ResourceName-C-006-C": {
+    "Function": "Validation",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "CRVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST NOT duplicate ResourceId when the resource is not provisioned interactively or only has a system-generated ResourceId.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
       "Dependencies": [
         "ResourceId-C-000-C"
       ]

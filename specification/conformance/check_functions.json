@@ -73,6 +73,13 @@
       ],
       "FormatAttributes": []
     },
+    "CheckDecimalValue": {
+      "Description": "Check if column has a valid decimal value",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
     "CheckGreaterOrEqualThanValue": {
       "Description": "Check if column has value equal or greater than a value",
       "Arguments": [
