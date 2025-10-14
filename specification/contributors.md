@@ -47,12 +47,13 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 
 Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS specification.
 
+* Ben Olson (Adobe)
 * Christopher Harris (Datadog)
 * Jerzy Grzywinski (Capital One)
 * Letian Feng (Amazon Web Services)
 * Michael Flanakin (Microsoft) (term ended 2025/08/01)
 * Mike Fuller (FinOps Foundation)
-* Richard Steck (Adobe)
+* Richard Steck (Adobe) (term ended 2025/10/03)
 * Sarah McMullin (Google)
 * Tim O'Brien (Walmart)
 * Vikram Desai (Microsoft)
