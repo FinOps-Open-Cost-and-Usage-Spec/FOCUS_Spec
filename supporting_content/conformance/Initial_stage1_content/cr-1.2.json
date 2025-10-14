@@ -2861,7 +2861,9 @@
             }
           ]
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ChargeCategory-C-003-M"
+        ]
       }
     },
     "SkuPriceId-C-013-M": {
@@ -3334,25 +3336,8 @@
         "MustSatisfy": "ContractedCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the ContractedCost of those related charges.",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "AND",
-          "Items": [
-            {
-              "CheckFunction": "CheckValue",
-              "ColumnName": "ContractedUnitPrice",
-              "Value": null
-            },
-            {
-              "CheckFunction": "CheckValue",
-              "ColumnName": "ChargeCategory",
-              "Value": "Tax"
-            }
-          ]
-        },
-        "Dependencies": [
-          "ContractedUnitPrice-C-004-M",
-          "ChargeCategory-C-000-M"
-        ]
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ContractedCost-C-008-C": {
@@ -3368,26 +3353,8 @@
         "MustSatisfy": "ContractedCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "AND",
-          "Items": [
-            {
-              "CheckFunction": "CheckValue",
-              "ColumnName": "ContractedUnitPrice",
-              "Value": null
-            },
-            {
-              "CheckFunction": "CheckValue",
-              "ColumnName": "ChargeCategory",
-              "Value": "Credit"
-            }
-          ]
-        },
-        "Dependencies": [
-          "ContractedUnitPrice-C-004-M",
-          "ChargeCategory-C-000-M",
-          "BilledCost-C-000-M"
-        ]
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "ContractedCost-C-009-C": {
@@ -3449,9 +3416,7 @@
           "Value": "Correction"
         },
         "Dependencies": [
-          "ContractedUnitPrice-C-004-M",
-          "PricingQuantity-C-000-M",
-          "ChargeClass-C-000-M"
+          "ChargeClass-C-005-C"
         ]
       }
     },
@@ -6748,7 +6713,9 @@
             }
           ]
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ChargeCategory-C-003-M"
+        ]
       }
     },
     "SkuId-C-012-O": {
@@ -7162,10 +7129,7 @@
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
-        "Dependencies": [
-          "ChargeCategory-C-000-M",
-          "ListUnitPrice-C-000-C"
-        ]
+        "Dependencies": []
       }
     },
     "ListCost-C-008-C": {
@@ -7182,11 +7146,7 @@
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": {},
-        "Dependencies": [
-          "ChargeCategory-C-000-M",
-          "BilledCost-C-000-M",
-          "ListUnitPrice-C-000-C"
-        ]
+        "Dependencies": []
       }
     },
     "ListCost-C-009-C": {
@@ -8227,14 +8187,8 @@
         "MustSatisfy": "EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the EffectiveCost of those related charges.",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "CheckValue",
-          "ColumnName": "ChargeCategory",
-          "Value": "Tax"
-        },
-        "Dependencies": [
-          "ChargeCategory-C-000-M"
-        ]
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "EffectiveCost-C-010-C": {
@@ -9313,7 +9267,9 @@
           "ColumnName": "ChargeFrequency",
           "Value": "One-Time"
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ChargeFrequency-C-003-M"
+        ]
       }
     },
     "CommitmentDiscountQuantity-C-012-C": {
@@ -9334,7 +9290,9 @@
           "ColumnName": "ChargeFrequency",
           "Value": "Recurring"
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ChargeFrequency-C-003-M"
+        ]
       }
     },
     "CommitmentDiscountQuantity-C-013-C": {
@@ -9741,7 +9699,9 @@
           "ColumnName": "ChargeClass",
           "Value": "Correction"
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ChargeClass-C-005-C"
+        ]
       }
     },
     "CommitmentDiscountUnit-C-000-C": {
@@ -13002,25 +12962,8 @@
         "MustSatisfy": "The product of PricingQuantity and a unit price (e.g., ContractedUnitPrice) MUST match the corresponding cost metric (e.g., ContractedCost) when the unit price is not null and ChargeClass is not \"Correction\".",
         "Keyword": "MUST",
         "Requirement": {},
-        "Condition": {
-          "CheckFunction": "AND",
-          "Items": [
-            {
-              "CheckFunction": "CheckNotValue",
-              "ColumnName": "ContractedUnitPrice",
-              "Value": null
-            },
-            {
-              "CheckFunction": "CheckNotValue",
-              "ColumnName": "ChargeClass",
-              "Value": "Correction"
-            }
-          ]
-        },
-        "Dependencies": [
-          "ContractedUnitPrice-C-004-M",
-          "ChargeClass-C-000-M"
-        ]
+        "Condition": {},
+        "Dependencies": []
       }
     },
     "PricingQuantity-C-010-C": {
@@ -13041,7 +12984,9 @@
           "ColumnName": "ChargeClass",
           "Value": "Correction"
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ChargeClass-C-005-C"
+        ]
       }
     },
     "PricingCurrencyContractedUnitPrice-C-000-C": {
@@ -13184,7 +13129,9 @@
           "ColumnName": "ChargeCategory",
           "Value": "Tax"
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ChargeCategory-C-003-M"
+        ]
       }
     },
     "PricingCurrencyContractedUnitPrice-C-005-C": {
@@ -13346,7 +13293,9 @@
           "ColumnName": "ChargeClass",
           "Value": "Correction"
         },
-        "Dependencies": []
+        "Dependencies": [
+          "ChargeClass-C-005-C"
+        ]
       }
     },
     "PricingCurrencyEffectiveCost-C-000-C": {
@@ -15281,9 +15230,7 @@
           "Value": "Correction"
         },
         "Dependencies": [
-          "ContractedCost-C-000-M",
-          "PricingQuantity-C-000-M",
-          "ChargeClass-C-000-M"
+          "ChargeClass-C-005-C"
         ]
       }
     },
