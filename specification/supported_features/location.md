@@ -30,7 +30,7 @@ GROUP BY
   RegionId,
   RegionName,
   AvailabilityZone
-``` 
+```
 
 ## Introduced (Version)
 
