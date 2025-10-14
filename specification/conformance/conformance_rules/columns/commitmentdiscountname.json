@@ -65,7 +65,7 @@
         }
     },
     "CommitmentDiscountName-C-002-M": {
-        "Function": "Validation",
+        "Function": "Format",
         "Reference": "CommitmentDiscountName",
         "EntityType": "Column",
         "Notes": "",

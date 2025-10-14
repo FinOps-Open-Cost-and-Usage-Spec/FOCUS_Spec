@@ -58,7 +58,7 @@
     }
   },
   "BillingAccountName-C-002-M": {
-    "Function": "Type",
+    "Function": "Format",
     "Reference": "BillingAccountName",
     "EntityType": "Column",
     "Notes": "",

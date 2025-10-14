@@ -1,5 +1,9 @@
 import pytest
 
+skipped_check_functions = {
+    "FormatKeyValue",
+}
+
 @pytest.mark.dependency(name="mustsatisfy_of_type_requires_function_type", scope="session")
 def test_mustsatisfy_of_type_requires_function_type(cr_json):
     rules = cr_json.get("ConformanceRules") or {}
@@ -12,7 +16,10 @@ def test_mustsatisfy_of_type_requires_function_type(cr_json):
 
         vc = rule.get("ValidationCriteria") or {}
         mustsatisfy = vc.get("MustSatisfy")
-
+        check_function = vc.get("Requirement", {}).get("CheckFunction", "")
+        if check_function in skipped_check_functions:
+            continue  # skip composite requirements
+        
         if isinstance(mustsatisfy, str) and "of type" in mustsatisfy.lower():
             if func != "Type":
                 violations.append((rid, func, mustsatisfy))

@@ -60,7 +60,7 @@
     }
   },
   "AvailabilityZone-C-002-M": {
-    "Function": "Type",
+    "Function": "Format",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",
     "Notes": "",

@@ -50,7 +50,7 @@
         }
     },
     "Tags-C-001-M": {
-        "Function": "Type",
+        "Function": "Format",
         "Reference": "Tags",
         "EntityType": "Column",
         "Notes": "",

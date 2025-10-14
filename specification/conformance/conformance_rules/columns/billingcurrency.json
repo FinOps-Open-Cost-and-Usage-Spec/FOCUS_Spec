@@ -73,7 +73,7 @@
     }
   },
   "BillingCurrency-C-002-M": {
-    "Function": "Validation",
+    "Function": "Format",
     "Reference": "BillingCurrency",
     "EntityType": "Column",
     "Notes": "",

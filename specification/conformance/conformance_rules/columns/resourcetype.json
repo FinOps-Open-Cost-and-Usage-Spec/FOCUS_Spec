@@ -61,7 +61,7 @@
     }
   },
   "ResourceType-C-002-M": {
-    "Function": "Validation",
+    "Function": "Format",
     "Reference": "ResourceType",
     "EntityType": "Column",
     "Notes": "",
