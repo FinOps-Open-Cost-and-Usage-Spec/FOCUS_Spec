@@ -74,11 +74,14 @@ The specification for the Cost and Usage dataset defines a group of columns that
 
 <div class='h4-nonindex'>Relationships</div>
 
-The Cost and Usage dataset can be joined to the Contract Commitment dataset through the use of the Contract Commitment ID field.
+The Cost and Usage dataset can be joined to the Contract Commitment dataset through the use of the Contract Commitment ID.
 
-| Dataset A           | Dataset A Column       | Dataset B           | Dataset B Column       |
-| ------------------- | ---------------------- | ------------------- | ---------------------- |
-| Cost and Usage      | Contract Commitment ID | Contract Commitment | Contract Commitment ID |
+* In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array provided in Contract Applied column.
+* In the Contract Commitment dataset, Contract Commitment ID is a column.
+
+| Dataset A           | Dataset A Column  | Dataset B           | Dataset B Column       |
+| ------------------- | ----------------- | ------------------- | ---------------------- |
+| Cost and Usage      | Contract Applied  | Contract Commitment | Contract Commitment ID |
 
 <div class='h4-nonindex'>Requirements</div>
 

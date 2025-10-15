@@ -25,7 +25,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 The Contract Commitment dataset can be joined to the Cost and Usage dataset through the use of Contract Commitment ID.
 
 * In the Contract Commitment dataset, Contract Commitment ID is a column.
-* In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array.
+* In the Cost and Usage dataset, Contract Commitment ID is a property within a JSON object array provided in Contract Applied column.
 
 | Dataset A           | Dataset A Column       | Dataset B      | Dataset B Column |
 | ------------------- | ---------------------- | -------------- | -----------------|
