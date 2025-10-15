@@ -1,0 +1,9 @@
+{
+  "ModelDatasets": {
+    "CostAndUsage": {
+      "ModelRules": [
+        "CostAndUsage-D-000-M"
+      ]
+    }
+  }
+}

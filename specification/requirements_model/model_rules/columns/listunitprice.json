@@ -1,0 +1,366 @@
+{
+  "ListUnitPrice-C-000-C": {
+    "Function": "Composite",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ListUnitPrice column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-007-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-004-C",
+        "ListUnitPrice-C-001-M",
+        "ListUnitPrice-C-002-M",
+        "ListUnitPrice-C-003-M",
+        "ListUnitPrice-C-007-C"
+      ]
+    }
+  },
+  "ListUnitPrice-C-001-M": {
+    "Function": "Type",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST be of type Decimal.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "ListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListUnitPrice-C-002-M": {
+    "Function": "Format",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST conform to NumericFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "ListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListUnitPrice-C-003-M": {
+    "Function": "Composite",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-006-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ChargeCategory-C-000-M",
+        "ListUnitPrice-C-004-C",
+        "ListUnitPrice-C-005-C",
+        "ListUnitPrice-C-006-O"
+      ]
+    }
+  },
+  "ListUnitPrice-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST be null when ChargeCategory is \"Tax\".",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Tax"
+      },
+      "Dependencies": [
+        "ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "ListUnitPrice-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          },
+          {
+            "CheckFunction": "OR",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Usage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Purchase"
+              }
+            ]
+          }
+        ]
+      },
+      "Dependencies": [
+        "ChargeClass-C-000-M"
+      ]
+    }
+  },
+  "ListUnitPrice-C-006-O": {
+    "Function": "Nullability",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MAY be null in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListUnitPrice-C-007-C": {
+    "Function": "Composite",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-010-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-011-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": null
+      },
+      "Dependencies": [
+        "ChargeCategory-C-000-M",
+        "ListUnitPrice-C-008-M",
+        "ListUnitPrice-C-009-M",
+        "ListUnitPrice-C-010-C",
+        "ListUnitPrice-C-011-C"
+      ]
+    }
+  },
+  "ListUnitPrice-C-008-M": {
+    "Function": "Validation",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST be a non-negative decimal value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckGreaterOrEqualThanValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": 0
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListUnitPrice-C-009-M": {
+    "Function": "Validation",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST be denominated in the BillingCurrency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ListUnitPrice-C-010-C": {
+    "Function": "Validation",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The product of ListUnitPrice and PricingQuantity MUST match the ListCost when PricingQuantity is not null and ChargeClass is not \"Correction\".",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnByColumnEqualsColumnValue",
+        "ColumnAName": "ListUnitPrice",
+        "ColumnBName": "PricingQuantity",
+        "ResultColumnName": "ListCost"
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ListUnitPrice",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          }
+        ]
+      },
+      "Dependencies": [
+        "ChargeClass-C-000-M"
+      ]
+    }
+  },
+  "ListUnitPrice-C-011-C": {
+    "Function": "Validation",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is \"Correction\".",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeClass",
+        "Value": "Correction"
+      },
+      "Dependencies": [
+        "ChargeClass-C-000-M"
+      ]
+    }
+  }
+}
