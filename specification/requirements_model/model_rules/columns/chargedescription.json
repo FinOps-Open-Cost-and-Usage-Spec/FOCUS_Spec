@@ -1,0 +1,123 @@
+{
+  "ChargeDescription-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ChargeDescription",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ChargeDescription column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargeDescription-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargeDescription-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargeDescription-C-003-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargeDescription-C-004-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-025-M",
+        "ChargeDescription-C-001-M",
+        "ChargeDescription-C-002-M",
+        "ChargeDescription-C-003-O",
+        "ChargeDescription-C-004-O"
+      ]
+    }
+  },
+  "ChargeDescription-C-001-M": {
+    "Function": "Type",
+    "EntityType": "Column",
+    "Reference": "ChargeDescription",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ChargeDescription"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeDescription-C-002-M": {
+    "Function": "Format",
+    "EntityType": "Column",
+    "Reference": "ChargeDescription",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ChargeDescription"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeDescription-C-003-O": {
+    "Function": "Nullability",
+    "Reference": "ChargeDescription",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription SHOULD NOT be null.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargeDescription",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargeDescription-C-004-O": {
+    "Function": "Validation",
+    "Reference": "ChargeDescription",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

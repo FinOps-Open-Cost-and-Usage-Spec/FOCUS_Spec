@@ -1,0 +1,200 @@
+{
+  "InvoiceId-C-000-O": {
+    "Function": "Composite",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "Notes": "Root composite for column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The InvoiceId column adheres to the following requirements:",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceId-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceId-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceId-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceId-C-006-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceId-C-007-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-033-O",
+        "InvoiceId-C-001-M",
+        "InvoiceId-C-002-M",
+        "InvoiceId-C-003-C",
+        "InvoiceId-C-006-O",
+        "InvoiceId-C-007-C"
+      ]
+    }
+  },
+  "InvoiceId-C-001-M": {
+    "Function": "Type",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "InvoiceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceId-C-002-M": {
+    "Function": "Format",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "Notes": "Cross-attribute reference: StringHandling",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "InvoiceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceId-C-003-C": {
+    "Function": "Composite",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "Notes": "Composite for nullability rules",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceId-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceId-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "InvoiceId-C-004-C",
+        "InvoiceId-C-005-C"
+      ]
+    }
+  },
+  "InvoiceId-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST be null when the charge is not associated either with an invoice or with a pre-generated provisional invoice.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "InvoiceId",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceId-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST NOT be null when the charge is associated with either an issued invoice or a pre-generated provisional invoice.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "InvoiceId",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceId-C-006-O": {
+    "Function": "Validation",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MAY be generated prior to an invoice being issued.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceId-C-007-C": {
+    "Function": "Validation",
+    "Reference": "InvoiceId",
+    "EntityType": "Column",
+    "Notes": "Cross-column reference: BillingAccountId",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId MUST be associated with the related charge and BillingAccountId when a pre-generated invoice or provisional invoice exists.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "BillingAccountId-C-000-M"
+      ]
+    }
+  }
+}

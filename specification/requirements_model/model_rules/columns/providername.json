@@ -1,0 +1,101 @@
+{
+  "ProviderName-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ProviderName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ProviderName column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ProviderName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ProviderName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ProviderName-C-003-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-038-M",
+        "ProviderName-C-001-M",
+        "ProviderName-C-002-M",
+        "ProviderName-C-003-M"
+      ]
+    }
+  },
+  "ProviderName-C-001-M": {
+    "Function": "Type",
+    "Reference": "ProviderName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ProviderName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ProviderName-C-002-M": {
+    "Function": "Format",
+    "Reference": "ProviderName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ProviderName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ProviderName-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "ProviderName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ProviderName MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ProviderName",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
