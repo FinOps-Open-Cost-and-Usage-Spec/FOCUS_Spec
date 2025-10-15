@@ -1,10 +1,66 @@
-# Column Normative Requirements Guidelines
+# Normative Requirements Guidelines
 
-## Grouping and Ordering of Requirements Groups
+## Dataset Requirements
 
-* Grouping and ordering of requirements ensure clarity, logical flow, and consistency across all columns, making related requirements easy to identify and follow. This structure should be maintained for consistency across the specification.
+### Logical Grouping of Dataset Requirements
 
-* **Note**: This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
+TODO
+
+### Ordering of Dataset Requirements Within Groups
+
+* Within each group of requirements, order individual requirements as follows:
+  * **MUST** – an absolute requirement
+  * **MUST NOT** – a prohibition
+  * **SHOULD** – recommended but not mandatory
+  * **RECOMMENDED** - recommended but not mandatory (currently used only for presence-related normative requirements, as specified in the [FOCUS Feature Level](#focusfeaturelevel) section)
+  * **SHOULD NOT** – discouraged but not strictly prohibited
+  * **MAY** – optional
+
+* For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
+
+### Structuring Individual Dataset Requirements
+
+TODO
+
+### Dataset Examples
+
+TODO
+
+#### **Contract Commitment**
+
+##### **Contract Commitment v.1.3 (Refinement)**
+
+TODO
+
+##### **Contract Commitment v.1.3 (Original)**
+
+The ContractCommitment dataset adheres to the following requirements:
+
+* ContractCommitment MUST be present when the provider supports *contract commitments*.
+
+#### **Cost and Usage**
+
+##### **Cost and Usage v.1.3 (Refinement)**
+
+TODO
+
+##### **Cost and Usage v.1.3 (Original)**
+
+The CostAndUsage dataset adheres to the following requirements:
+
+* CostAndUsage MUST conform to [ColumnHandling](#columnhandling) requirements.
+* CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
+* CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
+* CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
+* CostAndUsage MUST conform to [ProviderCalculatedSplitCostAllocationHandling](#provider-calculatedsplitcostallocationhandling) requirements.
+
+## Column Requrements
+
+### Logical Grouping of Column Requirements
+
+Grouping and ordering of requirements ensure clarity, logical flow, and consistency across all columns, making related requirements easy to identify and follow. This structure should be maintained for consistency across the specification.
+
+**Note**: This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
   1. **Technical Requirements**
      1. **Presence**: Defines whether this column must exist in the dataset.
@@ -24,7 +80,7 @@
      6. **Cost Calculation and Relationships**: Defines how costs are calculated in specific use cases, including dependencies on related charges and alignment with other cost values.
      7. **Other**: Requirements that do not fall into one of the previous categories.
 
-### Tabular Overview of Requirement Grouping and Specifications
+#### Tabular Overview of Column Normative Requirement Grouping and Specifications
 
 | **Requirement Type** | **Requirement Group**              | **When required?**                    | **Example**                                                                                |
 |----------------------|------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------|
@@ -42,7 +98,7 @@
 | Business             | Cost Calculation and Relationships | When applicable                       | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
 | Business             | Other                              | When applicable                       |                                                                                           |
 
-## Ordering of Requirements Within Groups
+### Ordering of Column Requirements Within Groups
 
 * Within each group of requirements, order individual requirements as follows:
   * **MUST** – an absolute requirement
@@ -54,7 +110,7 @@
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
-## Guidelines for Structuring Individual Requirements
+### Structuring Individual Column Requirements
 
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
 
@@ -78,14 +134,14 @@
 
 ### Additional Guidelines for Columns in JSON Format
 
-#### Column Definition Structure
+### Column Definition Structure
 
 * **Separate normative requirements into sections for column, JSON schema, and contents**: Communicating the normative requirements for a column, JSON schema, and the contents can be convoluted. Separating these requirements provides better clarity.
   * Column normative requirements specify requirements of the column such as nullability.
   * JSON schema normative requirements specify the shape of the JSON.
   * Contents normative requirements usually specify the expected Keys, the format of the Values, and the expected contents of the Values.
 
-#### JSON Schema
+### JSON Schema
 
 * **Omit JSON schema normative requirements for Key-Value Format columns**: The Key-Value Format definition is sufficient to define the expected JSON schema.
 
@@ -130,13 +186,13 @@
   }
   ```
 
-#### Key-Value Pairs
+### Key-Value Pairs
 
 * **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **provider-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
 
 * **Default to Plural for Key-Value Pairs**: When referring to key-value pairs, **tags** and **properties** should be used in the plural form to reflect the fact that the column may contain multiple key-value pairs.
 
-#### Keys and Values
+### Keys and Values
 
 * **Refer to Key and Values Explicitly**: When specifying normative requirements for key and value, use precise terminology based on the column type. For instance:
   * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
@@ -155,7 +211,7 @@
   * Use plural when referring to keys or values to reflect the fact that the column may contain multiple keys/values (e.g., "property keys", "tag values").
   * Use singular when referring to the key or value of a single tag or property (e.g., "property key", "tag value"), with the understanding that the requirement applies to all occurrences.
 
-## Grouping of Nullability-Related and Subsequent Normative Requirements
+### Grouping of Nullability-Related and Subsequent Column Requirements
 
 * When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
 
@@ -188,7 +244,7 @@
       * <ColumnId> MAY be null when <Condition>.
   ```
 
-## Grouping of Requirements Based on Specific Conditions
+### Grouping of Column Requirements Based on Specific Conditions
 
 * **Parent Condition**
   * When a specific condition (or set of conditions) applies to a subset of requirements, you may group them under that condition.
@@ -220,16 +276,16 @@
       * <ColumnId> MUST be <SpecificRequirement>.
   ```
 
-## Consistent Wording and Patterns in Requirements
+### Consistent Wording and Patterns in Column Requirements
 
-To ensure clarity and consistency across columns and requirements, it is important to:
+To ensure clarity and consistency across columns and corresponding requirements, it is important to:
 
-* **Follow common requirement patterns where applicable**
-* **Use standardized phrasing and terminology**
+* Follow common requirement patterns where applicable
+* Use standardized phrasing and terminology
 
-### Requirement Patterns
+#### Column Requirement Patterns
 
-#### Technical Requirements: Presence
+##### Technical Requirements: Presence
 
 ```markdown
 * <ColumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
@@ -237,7 +293,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 * <ColumnId> is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
 ```
 
-#### Technical Requirements: Data Type
+##### Technical Requirements: Data Type
 
 ```markdown
 * <ColumnId> MUST be of type String.
@@ -245,7 +301,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 * <ColumnId> MUST be of type Date/Time.
 ```
 
-#### Technical Requirements: Value Format
+##### Technical Requirements: Value Format
 
 ```markdown
 * <ColumnId> MUST conform to [StringHandling](#stringhandling) requirements.
@@ -256,7 +312,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 * <ColumnId> MUST conform to [CurrencyCodeFormat](#currencycodeformat) requirements.
 ```
 
-#### Technical Requirements: Nullability
+##### Technical Requirements: Nullability
 
 ```markdown
 * <ColumnId> MUST NOT be null.
@@ -295,53 +351,51 @@ To ensure clarity and consistency across columns and requirements, it is importa
   * <ColumnId> MUST be null in all other cases.
 ```
 
-#### Technical Requirements: Values and Value Ranges
+##### Technical Requirements: Values and Value Ranges
 
 ```markdown
 * <ColumnId> MUST be a valid decimal value.
 * <ColumnId> MUST be a non-negative decimal value.
 ```
 
-#### Technical Requirements: Column-to-Column Relationships
+##### Technical Requirements: Column-to-Column Relationships
 
 ```markdown
 * <ColumnId> SHOULD/MUST remain consistent over time for a given <OtherColumnId>.
 ```
 
-#### Business & Contextual Requirements: Unit/Denomination
+##### Business & Contextual Requirements: Unit/Denomination
 
 ```markdown
 * <ColumnId> MUST be denominated in the BillingCurrency.
 * <ColumnId> MUST be expressed in the <OtherColumnId>.
 ```
 
-#### Business & Contextual Requirements: Uniqueness
+##### Business & Contextual Requirements: Uniqueness
 
 ```markdown
 * <ColumnId> MUST be a unique identifier within <Scope>.
 ```
 
-#### Business & Contextual Requirements: Fallback/Substitute Values
+##### Business & Contextual Requirements: Fallback/Substitute Values
 
 ```markdown
 * <ColumnId> MUST NOT duplicate <OtherColumnId> when <Condition>
 ```
 
-#### Business & Contextual Requirements: Relationships Outside the Spec
+##### Business & Contextual Requirements: Relationships Outside the Spec
 
 ```markdown
 * The sum of <ColumnId> in a given billing period MUST/MAY NOT match the sum of the invoices received for that billing period for a billing account.
 ```
 
-#### Business & Contextual Requirements: Cost Validation Rules
-
-##### Formula-based Cost Validation
+##### Business & Contextual Requirements: Cost Validation Rules
 
 ```markdown
   * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
 ```
 
-#### Business & Contextual Requirements: Cost Calculation and Relationships
+##### Business & Contextual Requirements: Cost Calculation and Relationships
 
 ```markdown
 * When <Condition>, <CostColumnId> adheres to the following additional requirements:
@@ -349,9 +403,9 @@ To ensure clarity and consistency across columns and requirements, it is importa
   * <CostColumnId> of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost.
 ```
 
-### Standardized Terminology
+#### Column Requirement Standardized Terminology
 
-#### Identifiers and Uniqueness within Scope
+##### Identifiers and Uniqueness within Scope
 
 * Patterns:
   * {ColumnId} MUST be a unique identifier within {Scope}.
@@ -360,12 +414,12 @@ To ensure clarity and consistency across columns and requirements, it is importa
   * BillingAccountId MUST be a unique identifier within a provider.
   * ResourceId SHOULD be a fully-qualified identifier.
 
-#### Column Aggregation
+##### Column Aggregation
 
 * Pattern: The sum of {ColumnId} in a given billing period...
 * Example: The sum of BilledCost in a given billing period...
 
-#### Column value Consistency
+##### Column value Consistency
 
 * Patterns:
   * {ColumnId} MUST/SHOULD remain consistent over time for a given {OtherColumnId}.
@@ -373,13 +427,13 @@ To ensure clarity and consistency across columns and requirements, it is importa
   * SkuMeter SHOULD remain consistent over time for a given SkuId.
   * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
 
-#### References to charge and billing periods
+##### References to charge and billing periods
 
 * Patterns:
   * in a given billing period
   * in a given charge period
 
-#### Preferred Terminology for Numerical References
+##### Preferred Terminology for Numerical References
 
 * Patterns: When specifying quantities in normative requirements, follow these conventions:
   * Use "one" instead of "1".
@@ -388,11 +442,11 @@ To ensure clarity and consistency across columns and requirements, it is importa
   * When the provider has only one user-defined tag scheme. (instead of: When the provider has only 1 user-defined tag scheme.)
   * When the provider has more than one user-defined tag scheme. (instead of: When the provider has 2 or more user-defined tag schemes.)
 
-## Examples
+### Column Examples
 
-### **List Unit Price**
+#### **List Unit Price**
 
-#### **List Unit Price v.1.2 (Simplified Refinement)**
+##### **List Unit Price v.1.2 (Simplified Refinement)**
 
 The ListUnitPrice column adheres to the following requirements:
 
@@ -425,7 +479,7 @@ The ListUnitPrice column adheres to the following requirements:
   * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
   * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
 
-#### **List Unit Price v.1.1 (Original)**
+##### **List Unit Price v.1.1 (Original)**
 
 The ListUnitPrice column adheres to the following requirements:
 
@@ -434,9 +488,9 @@ The ListUnitPrice column adheres to the following requirements:
 * It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
 * When ListUnitPrice is present and is not null, multiplying ListUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ListCost](#listcost), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
 
-### **Billed Cost**
+#### **Billed Cost**
 
-#### **Billed Cost v.1.2 (Simplified Refinement)**
+##### **Billed Cost v.1.2 (Simplified Refinement)**
 
 The BilledCost column adheres to the following requirements:
 
@@ -448,7 +502,7 @@ The BilledCost column adheres to the following requirements:
 * BilledCost MUST be denominated in the BillingCurrency.
 * The sum of BilledCost in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
-#### **Billed Cost v.1.1 (Original)**
+##### **Billed Cost v.1.1 (Original)**
 
 The BilledCost column adheres to the following requirements:
 
@@ -456,9 +510,9 @@ The BilledCost column adheres to the following requirements:
 * This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency.
 * The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
-### **CommitmentDiscountQuantity**
+#### **CommitmentDiscountQuantity**
 
-#### **CommitmentDiscountQuantity v.1.2 (Simplified Refinement)**
+##### **CommitmentDiscountQuantity v.1.2 (Simplified Refinement)**
 
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
@@ -479,7 +533,7 @@ The CommitmentDiscountQuantity column adheres to the following requirements:
     * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
     * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given *charge period* when CommitmentDiscountStatus is "Unused".
 
-#### **CommitmentDiscountQuantity v.1.1 (Original)**
+##### **CommitmentDiscountQuantity v.1.1 (Original)**
 
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
