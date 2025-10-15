@@ -12,7 +12,7 @@ The project is divided into three main stages, each with a defined scope and est
 
 **Estimated Effort: 40% of total project time**
 
-This foundational stage involves analyzing the **FOCUS v1.2** Technical Specification to extract **atomic** and **composite**  Model Rule s for each dataset column. These are captured in standardized Markdown tables that define logic, applicability, conditions, and dependencies.
+This foundational stage involves analyzing the **FOCUS v1.2** Technical Specification to extract **atomic** and **composite**  normative requirements for each attribute and dataset column. These are captured in standardized Markdown tables that define logic, applicability, conditions, and dependencies.
 
 The current output for **Stage 1** is **AI-assisted**, with over 85% of rules estimated to be valid. However, member review is critical, as the text of some requirements are complex to formalize in a prompt. The quality and accuracy of this stage directly impact the success of subsequent stages, especially JSON generation and dependency modeling.
 
@@ -34,7 +34,7 @@ This stage focuses on interpreting the `Requirement` field of each **RuleId** to
 
 These three stages form the foundation of the modeling workflow. Once complete, additional outputs will be generated from the JSON representations, including:
 
-- A standardized Markdown table of Requirements Model for each column
+- A standardized Markdown table of normative requirements for each column
 - A visual **DAG** _(Directed Acyclic Graph)_ diagram that maps ModelId dependencies
 
 This process enables reliable validation, clearer documentation, and easier integration with tooling.
@@ -100,7 +100,7 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 ---
 
-## 🧾 model Expression Format
+## 🧾 Model Expression Format
 
 ### Full Rule Identifier Format
 
@@ -121,7 +121,7 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 ## 📐 RFC 2119 Keyword Mapping
 
-| Keyword                | Default model Classification | Notes                                      |
+| Keyword                | Default Model Classification | Notes                                      |
 |------------------------|----------------------------|--------------------------------------------|
 | **MUST / SHALL**       | Mandatory (M)               | Typically maps to MCF or MAF               |
 | **SHOULD / RECOMMENDED** | Optional (O)              | May be elevated to mandatory in some contexts |
@@ -131,9 +131,9 @@ In FOCUS, artifacts refer to either **columns** or **attributes**:
 
 ## Versioning
 
-In general, the version of each Requirement Model (RM) is aligned with the version of the FOCUS Specification to which it applies. However, there may be occasions where a correction or clarification is required due to an error or bug in a previously published model definition.
+In general, the version of each FOCUS Requirement Model (RM) is aligned with the version of the FOCUS Specification to which it applies. However, there may be occasions where a correction or clarification is required due to an error or bug in a previously published model definition.
 
-To accommodate these changes without altering the core FOCUS Specification version, the `Version` field of a model may differ slightly from the associated FOCUS Specification version. This allows us to make targeted corrections while preserving compatibility and traceability.
+To accommodate these changes without altering the core FOCUS Specification version, the `Version` field of a FOCUS Requirements Model may differ slightly from the associated FOCUS Specification version. This allows us to make targeted corrections while preserving compatibility and traceability.
 
 Versioning Format:
 
