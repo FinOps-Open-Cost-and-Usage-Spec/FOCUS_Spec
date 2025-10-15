@@ -8,7 +8,7 @@ This document outlines a structured approach to converting verbose technical req
 
 The project is divided into three main stages, each with a defined scope and estimated effort:
 
-### Stage 1 – Extract Requirements Model from FOCUS v1.2  
+### Stage 1 – Extract Normative Requirements from FOCUS v1.2  
 
 **Estimated Effort: 40% of total project time**
 
