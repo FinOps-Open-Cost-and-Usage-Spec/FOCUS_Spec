@@ -47,4 +47,4 @@ jobs:
             specification/spec.pdf
             specification/images/*
             specification/styles/*
-            specification/conformance/build/*.json
+            specification/requirements_model/build/*.json
