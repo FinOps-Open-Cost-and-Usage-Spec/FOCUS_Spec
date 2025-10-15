@@ -1,4 +1,4 @@
-!INCLUDE "supported_features_overview.md",1
+!INCLUDE "supported_features_overview.md",0
 !INCLUDE "account_structures.md",1
 !INCLUDE "billed_cost_and_invoice_alignment.md",1
 !INCLUDE "charge_categorization.md",1
