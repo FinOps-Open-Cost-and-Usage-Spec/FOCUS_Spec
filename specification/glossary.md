@@ -98,7 +98,7 @@ A specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) provid
 
 <a name="glossary:dataset-instance-artifact"><b>Dataset Instance Artifact</b></a>
 
-A physical representation of a specific [dataset instance](#glossary:dataset-instance) delivered by a data generator.
+A physical representation of a specific [*dataset instance*](#glossary:dataset-instance) delivered by a data generator.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
