@@ -94,7 +94,7 @@ An abbreviated term for [*dataset instance artifact*](#glossary:dataset-instance
 
 <a name="glossary:dataset-instance"><b>Dataset Instance</b></a>
 
-A specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) provided by a data generator. A Data Generator may provide multiple dataset instances of the same *FOCUS dataset*, each with different properties such as time granularity or differing custom column inclusions.  For example, the same 'FOCUS Cost and Usage' *FOCUS Dataset* may be provided at an hourly or daily time granularity by a Data Generator. Each would be a distinct Dataset Instance.
+A specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) provided by a data generator. A Data Generator may provide multiple dataset instances of the same *FOCUS dataset*, each with different properties such as time granularity or differing custom column inclusions.  For example, the same 'FOCUS Cost and Usage' *FOCUS dataset* may be provided at an hourly or daily time granularity by a Data Generator. Each would be a distinct Dataset Instance.
 
 <a name="glossary:dataset-instance-artifact"><b>Dataset Instance Artifact</b></a>
 
