@@ -4,9 +4,9 @@ The Dataset Instance ID is a data generator-specified unique identifier that rep
 
 The DatasetInstanceId property adheres to the following requirements:
 
-* Dataset Instance ID MUST be provided in the dataset instance metadata.
-* Dataset Instance ID MUST be of type String and MUST NOT contain null values.
-* Dataset Instance ID MUST be a unique identifier within a data generator.
+* DatasetInstanceId MUST be provided in the dataset instance metadata.
+* DatasetInstanceId MUST be of type String and MUST NOT contain null values.
+* DatasetInstanceId MUST be a unique identifier within a data generator.
 
 ## Metadata ID
 
