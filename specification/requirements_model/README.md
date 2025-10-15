@@ -4,7 +4,7 @@ The FOCUS Requirements Model is a structured, testable set of rules that define 
 
 ## Introduction
 
-This document outlines a structured approach to converting verbose technical requirements from the FOCUS v1.2 specification into precise, programmatically testable Requirements Model. The goal is to enable consistent validation, documentation, and visualization of rules across all dataset columns using structured JSON representations.
+This document outlines a structured approach to converting verbose technical requirements from the FOCUS v1.2 specification into precise, programmatically testable rules. The goal is to enable consistent validation, documentation, and visualization of rules across all dataset columns using structured JSON representations.
 
 The project is divided into three main stages, each with a defined scope and estimated effort:
 
