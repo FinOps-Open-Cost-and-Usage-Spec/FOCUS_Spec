@@ -1,4 +1,4 @@
-!INCLUDE "commitment_discount_flexibility_examples_overview.md",1
+!INCLUDE "commitment_discount_flexibility_examples_overview.md",0
 !INCLUDE "one_hundred_percent_utilization_without_commitment_discount_flexibility.md",1
 !INCLUDE "zero_percent_utilization_without_commitment_discount_flexibility.md",1
 !INCLUDE "one_hundred_percent_utilization_with_commitment_discount_flexibility_with_1_resource.md",1

@@ -1,4 +1,4 @@
-!INCLUDE "metadata_examples_overview.md",1
+!INCLUDE "metadata_examples_overview.md",0
 !INCLUDE "data_generator_example.md",1
 !INCLUDE "schema_dataset_instance_id_example.md",1
 !INCLUDE "deprecating_columns_example.md",1
