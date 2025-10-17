@@ -34,18 +34,18 @@ WITH AggregatedData AS (
     ServiceName,
     SUM(EffectiveCost) AS TotalEffectiveCost,
     SUM(BilledCost) AS TotalBilledCost,
-    SUM(CASE 
+    SUM(CASE
           WHEN ChargeCategory = 'Usage' AND BilledCost = 0 AND EffectiveCost != 0
-          THEN 0 
+          THEN 0
           ELSE ContractedCost
         END) AS TotalContractedCost,
-    SUM(CASE 
+    SUM(CASE
           WHEN ChargeCategory = 'Usage' AND BilledCost = 0 AND EffectiveCost != 0
-          THEN 0 
+          THEN 0
           ELSE ListCost
         END) AS TotalListCost
   FROM focus_data_table
-  WHERE BillingPeriodStart >= ? 
+  WHERE BillingPeriodStart >= ?
     AND BillingPeriodEnd < ?
     AND ChargeClass IS NULL
   GROUP BY

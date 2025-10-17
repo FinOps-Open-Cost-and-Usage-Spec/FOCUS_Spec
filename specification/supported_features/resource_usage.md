@@ -38,7 +38,7 @@ GROUP BY
   ResourceId,
   SkuId,
   ConsumedUnit
-``` 
+```
 
 ## Introduced (Version)
 

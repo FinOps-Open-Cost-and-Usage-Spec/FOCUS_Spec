@@ -1,0 +1,68 @@
+{
+  "CurrencyFormat-A-000-C": {
+    "Function": "Composite",
+    "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The CurrencyFormat attribute adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CurrencyFormat-A-001-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CurrencyFormat-A-002-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CurrencyFormat-A-001-C",
+        "CurrencyFormat-A-002-C"
+      ]
+    }
+  },
+  "CurrencyFormat-A-001-C": {
+    "Function": "Validation",
+    "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document ISO 4217:2015 when the value is presented in national currency (e.g., USD, EUR).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CurrencyFormat-A-002-C": {
+    "Function": "Validation",
+    "Reference": "CurrencyFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Currency-related columns MUST conform to StringHandling requirements when the value is presented in virtual currency (e.g., credits, tokens).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
