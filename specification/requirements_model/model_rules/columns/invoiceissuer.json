@@ -1,0 +1,101 @@
+{
+  "InvoiceIssuerName-C-000-M": {
+    "Function": "Composite",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The InvoiceIssuerName column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceIssuerName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceIssuerName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceIssuerName-C-003-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-023-M",
+        "InvoiceIssuerName-C-001-M",
+        "InvoiceIssuerName-C-002-M",
+        "InvoiceIssuerName-C-003-M"
+      ]
+    }
+  },
+  "InvoiceIssuerName-C-001-M": {
+    "Function": "Type",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssuerName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "InvoiceIssuerName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceIssuerName-C-002-M": {
+    "Function": "Format",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssuerName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "InvoiceIssuerName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceIssuerName-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssuerName MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "InvoiceIssuerName",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
