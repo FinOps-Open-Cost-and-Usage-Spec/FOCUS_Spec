@@ -10,7 +10,7 @@ RecencyLastUpdated
 
 ## Metadata Name
 
-Recency Last Update Date
+Recency Last Updated
 
 ## Content constraints
 
