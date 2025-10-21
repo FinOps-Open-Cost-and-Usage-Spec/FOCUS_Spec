@@ -2,7 +2,7 @@
 
 The Allocated Resource Name is a display name which cost is being allocated to in a [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling). The Allocated Resource Name is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the provider is allocating costs to something other than the charge's [ResourceID](#ResourceId), as is the case for [allocated charges](#glossary:allocated-charge).
 
-The AllocatedResourceName column adheres to the following requirements:
+## Requirements:
 
 * AllocatedResourceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports provider-calculated split cost allocation.
 * AllocatedResourceName MUST be of type String.
