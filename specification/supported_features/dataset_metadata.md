@@ -6,10 +6,10 @@ FOCUS supports the ability for data generators to provide metadata about the dat
 
 ## Applicable Metadata
 
-* Daataset
-    * Dataset Instance ID
-    * Dataset Instance Name
-    * FOCUS Dataset ID
+* Dataset
+  * Dataset Instance ID
+  * Dataset Instance Name
+  * FOCUS Dataset ID
 
 ## Introduced (Version)
 
