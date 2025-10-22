@@ -11,6 +11,7 @@ FOCUS allows practitioners to identify the several participating entities involv
 * HostProviderName
 
 ## Applicable Metadata
+
 * DataGenerator
 
 ## Example SQL Query
@@ -43,4 +44,4 @@ GROUP BY
 
 ## Update (Version)
 
-1.3 
+1.3
