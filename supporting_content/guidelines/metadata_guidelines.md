@@ -42,16 +42,16 @@ Notes:
 
 Note: The following metadata property categories are intended to **support understanding and naming conventions** of metadata properties within the FOCUS specification. These categories serve as **conceptual guidance** and are not meant to be explicitly declared or enforced within individual property definitions.
 
-1. Unique Identifier (Primary): Uniquely identifies and distinguishes an object within its own domain or context (e.g., `Dataset Instance ID`).
-2. Unique Identifier (Foreign): Uniquely references an external or related object, enabling linkage across domains or systems (e.g., `FOCUS Dataset ID`, `Dataset Instance ID`).
-3. Descriptive Identifier (Current): A human-readable label or name that describes the object in its version (e.g., `Column Name`).
-4. Descriptive Identifier (Previous): A human-readable label or name that refers to a prior version of the object (e.g., `Previous Column Name`).
-5. Version Identifier: Indicates the version of the object, supporting version control (e.g., `Data Generator`, `FOCUS Version`).
-6. State Indicator: Boolean values indicating state/status, i.e. whether an event occurred or a condition is met (e.g., `Time Sector Completed`).
-7. Timestamp: Date/Time values indicating a specific point in time, i.e. when the event occurred (e.g., `Time Sector Last Updated At`).
-8. Period Boundary: Defines the start or end of a time period during which the object is valid or relevant (e.g., `Time Sector Start`, `Time Sector End`).
-9. Technical Property: Describes technical aspects of the object, such as format, encoding, or system-level attributes .
-10. Other: Covers properties that do not fit into the predefined categories (e.g., `Provider Tag Prefixes`).
+1. **Unique Identifier (Primary):** Uniquely identifies and distinguishes an object within its own domain or context (e.g., `Dataset Instance ID`).
+2. **Unique Identifier (Foreign):** Uniquely references an external or related object, enabling linkage across domains or systems (e.g., `FOCUS Dataset ID`, `Dataset Instance ID`).
+3. **Descriptive Identifier (Current):** Provides a human-readable identifier of the object (e.g., `Column Name`).
+4. **Descriptive Identifier (Previous):** Provides a prior version of the human-readable identifier of the object, if applicable (e.g., `Previous Column Name`).
+5. **Version Identifier:** Indicates the version of the object, supporting version control (e.g., `Data Generator`, `FOCUS Version`).
+6. **State Indicator:** Indicates whether a specific condition is met or an event has occurred, using boolean values. Often used in combination with a timestamp to express both the occurrence and timing of an event (e.g., `Time Sector Completed`).
+7. **Timestamp:** Captures the point in time when a specific condition is met or an event has occurred, using date/time values. Often complements a state indicator to provide temporal context (e.g., `Time Sector Last Updated At`).
+8. **Period Boundary:** Defines the start or end of a time period during which the object is valid or relevant (e.g., `Time Sector Start`, `Time Sector End`).
+9. **Technical Property:** Describes technical aspects of the object, such as format, encoding, or system-level attributes .
+10. **Other:** Covers properties that do not fit into the predefined categories (e.g., `Provider Tag Prefixes`).
 
 ## Metadata Naming Convention
 
@@ -86,8 +86,7 @@ Note: The following metadata property categories are intended to **support under
   * **Other**
     * Examples: `Provider Tag Prefixes`
 
-* For lifecycle events or status changes, we should anticipate two complementary properties - Boolean State Indicator + Timestamp Pairing. 
-  Note: Even if only one is currently used, always name with future extensibility in mind.
+* Note: For lifecycle events or status changes, we should anticipate two complementary properties - State Indicator + Timestamp Pairing. Even if only one is currently used, always name with future extensibility in mind.
 
 ## Tabular Overviews
 
