@@ -50,7 +50,7 @@ Note: The following metadata property categories are intended to **support under
 6. **State Indicator:** Indicates whether a specific condition is met or an event has occurred, using boolean values. Often used in combination with a timestamp to express both the occurrence and timing of an event (e.g., `Time Sector Completed`).
 7. **Timestamp:** Captures the point in time when a specific condition is met or an event has occurred, using date/time values. Often complements a state indicator to provide temporal context (e.g., `Time Sector Last Updated At`).
 8. **Period Boundary:** Defines the start or end of a time period during which the object is valid or relevant (e.g., `Time Sector Start`, `Time Sector End`).
-9. **Technical Property:** Describes technical aspects of the object, such as format, encoding, or system-level attributes .
+9. **Technical Property:** Describes technical aspects of the object, such as format, encoding, etc.
 10. **Other:** Covers properties that do not fit into the predefined categories (e.g., `Provider Tag Prefixes`).
 
 ## Metadata Naming Convention
@@ -66,22 +66,21 @@ Note: The following metadata property categories are intended to **support under
 * Metadata Property Suffixes describe the nature of the property.
 * Metadata Property Suffixes based on Property Categories:
   * **Unique Identifier**
-    * Notes: For primary or foreign unique identifiers use `ID`.
+    * For primary and foreign unique identifiers use `ID`.
   * **Descriptive Identifier**
-    * Notes: For descriptive identifiers use suffix `Name`.
+    * For descriptive identifiers use suffix `Name`.
   * **Versioning Identifier**
-    * Notes: For tracking versions use suffix `Version`.
+    * For tracking versions use suffix `Version`.
   * **State Indicator**
-    * Notes: Boolean values indicating state/status, i.e. whether an event occurred.
+    * Boolean values indicating state/status, i.e. whether an event occurred.
     * Examples: `Completed`, `Deprecated`
   * **Timestamp**
-    * Use suffix `At` to indicate a specific point in time, i.e., when the event occurred.
+    * To indicate a specific point in time, i.e., when the event occurred and add suffix `At`.
     * Examples: `CreatedAt`, `LastUpdatedAt`
   * **Period Boundary**
     * For time period boundaries use suffixes `Start` and `End` to denote beginning and end of the period.
     * Note: These are not suffixed with `At`, as they represent boundaries rather than discrete points in time.
   * **Technical Property**
-    * Notes: Use for technical details
     * Examples: `DataType`, `StringEncoding`, `NumericPrecision`
   * **Other**
     * Examples: `Provider Tag Prefixes`
