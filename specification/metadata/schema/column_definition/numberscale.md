@@ -5,7 +5,8 @@ The number scale of the data provides the maximum number of digits after the dec
 The NumberScale property adheres to the following requirements:
 
 * NumberScale SHOULD be provided in the FOCUS Metadata schema for Decimal columns.
-* NumberScale MUST be of type Integer and MUST NOT contain null values.
+* NumberScale MUST be of type Integer.
+* NumberScale MUST NOT contain null values.
 
 ## Metadata ID
 

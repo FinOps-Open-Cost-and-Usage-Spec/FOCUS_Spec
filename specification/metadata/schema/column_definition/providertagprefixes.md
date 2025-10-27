@@ -4,9 +4,9 @@ The Provider Tag Prefixes define the list of prefixes used in the tag name of pr
 
 The ProviderTagPrefixes property adheres to the following requirements:
 
-* The ProviderTagPrefixes MUST be provided when ColumnName is equal to Tags.
-* The ProviderTagPrefix MUST be of type Array of Strings.
-* The ProviderTagPrefixes SHOULD be easily associated with the provider who generated the [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ProviderTagPrefixes MUST be provided when ColumnName is equal to Tags.
+* ProviderTagPrefixes MUST be of type Array of Strings.
+* ProviderTagPrefixes SHOULD be easily associated with the provider who generated the [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Metadata ID
 
