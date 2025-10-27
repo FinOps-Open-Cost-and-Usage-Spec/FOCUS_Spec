@@ -4,19 +4,15 @@ The recency metadata object and its contents provide information about how up-to
 
 ## Requirements
 
-### FOCUS Datasets
+* Recency metadata MAY be provided.
+* Recency metadata MUST be retrievable without inspection of the contents of the FOCUS data within the data artifact.
+* Recency metadata SHOULD be updated when a data generator updates the corresponding dataset artifact.
 
-FOCUS datasets, regardless of delivery mechanism, MAY provide metadata indicating the recency of the data. This metadata MUST be retrievable without inspection of the contents of the FOCUS data within the data artifact.
-
-### Dataset Updates
-
-When a dataset is updated by the [Data Generator](#datagenerator) the supplied recency metadata corresponding to the dataset should be updated to indicate that the dataset has been updated.
+## Examples
 
 Example scenarios include but are not limited to:
 
 * [Updating an over-time dataset recency metadata](#addingnewcolumns)
 * [Updating a non over-time dataset recency metadata](#changingcolumnmetadata)
-
-## Recency Example
 
 For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#recencymetadataexample).
