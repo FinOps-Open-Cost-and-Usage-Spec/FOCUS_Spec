@@ -4,9 +4,10 @@ The identifier of the FOCUS dataset for which the schema and its data conform to
 
 The FocusDatasetId property adheres to the following requirements:
 
-* FOCUS Dataset ID MUST be provided in the dataset instance metadata.
-* FOCUS Dataset ID MUST be of type String and MUST NOT contain null values.
-* FOCUS Dataset ID MUST match the Dataset ID of one of the [*FOCUS datasets*](#glossary:FOCUS-dataset) defined in the FOCUS specification.
+* FocusDatasetId MUST be present in the dataset instance metadata.
+* FocusDatasetId MUST be of type String.
+* FocusDatasetId MUST NOT contain null values.
+* FocusDatasetId MUST match the Dataset ID of one of the [*FOCUS datasets*](#glossary:FOCUS-dataset) defined in the FOCUS specification.
 
 ## Metadata ID
 

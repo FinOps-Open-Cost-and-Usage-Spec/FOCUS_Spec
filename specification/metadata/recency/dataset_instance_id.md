@@ -4,9 +4,10 @@ The Dataset Instance ID provides the reference item to associate which Dataset I
 
 The DatasetInstanceId property adheres to the following requirements:
 
-* The DatasetId MUST be present in the metadata.
-* The DatasetId MUST be of String.
-* It is RECOMMENDED for DatasetId to be a Globally Unique Identifier (GUID).
+* DatasetInstanceId MUST be present in the metadata.
+* DatasetInstanceId MUST be of type String.
+* DatasetInstanceId MUST NOT contain null values.
+* DatasetInstanceId SHOULD be a Globally Unique Identifier (GUID).
 
 ## Metadata ID
 

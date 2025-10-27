@@ -4,9 +4,10 @@ Datetime when the data present in the Dataset Instance was updated.
 
 The DatasetInstanceLastUpdated property adheres to the following requirements:
 
-* The LastUpdated MUST be present in the metadata.
-* This MUST be of type Date/Time and MUST NOT contain null values.
-* LastUpdated MUST conform to [DateTimeFormat](#date/timeformat).
+* DatasetInstanceLastUpdated MUST be present in the metadata.
+* DatasetInstanceLastUpdated MUST be of type Date/Time.
+* DatasetInstanceLastUpdated MUST conform to [DateTimeFormat](#date/timeformat) requirements.
+* DatasetInstanceLastUpdated MUST NOT contain null values.
 
 ## Metadata ID
 
