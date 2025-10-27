@@ -8,6 +8,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <sup>Announced December 2025</sup>
 
+### Changes by Classification:
+#### Compatible Changes
+- Column additions to support Split Cost Allocation
+- New Dataset for Contract Commitments
+- New Column to support Host Provider Identification
+- New Metadata to support Dataset Metadata
+- New Metadata to support Dataset Recency
+
+#### Migration Compatible Changes
+- Replacement of Provider and Publisher Columns
+
+#### Incompatible Changes
+**None**
+
 ### Added
 
 #### New datasets
