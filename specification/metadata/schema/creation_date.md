@@ -9,7 +9,6 @@ The CreationDate property adheres to the following requirements:
 * CreationDate MUST conform to [DateTimeFormat](#date/timeformat).
 * CreationDate MUST NOT contain null values.
 
-
 ## Metadata ID
 
 CreationDate
