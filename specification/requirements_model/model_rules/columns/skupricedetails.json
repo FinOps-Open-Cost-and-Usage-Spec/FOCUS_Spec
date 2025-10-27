@@ -1,0 +1,555 @@
+{
+  "SkuPriceDetails-C-000-C": {
+    "Function": "Composite",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The SkuPriceDetails column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-002-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-006-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-019-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-061-C",
+        "SkuPriceDetails-C-001-M",
+        "SkuPriceDetails-C-002-O",
+        "SkuPriceDetails-C-003-C",
+        "SkuPriceDetails-C-006-C",
+        "SkuPriceDetails-C-019-M"
+      ]
+    }
+  },
+  "SkuPriceDetails-C-001-M": {
+    "Function": "Format",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MUST conform to KeyValueFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatKeyValue",
+        "ColumnName": "SkuPriceDetails"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-002-O": {
+    "Function": "Format",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails property keys SHOULD conform to PascalCase format.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-003-C": {
+    "Function": "Composite",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "SkuPriceDetails-C-004-C",
+        "SkuPriceDetails-C-005-C"
+      ]
+    }
+  },
+  "SkuPriceDetails-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MUST be null when SkuPriceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuPriceDetails",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MAY be null when SkuPriceId is not null.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuPriceDetails",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-006-C": {
+    "Function": "Composite",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-010-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-011-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-012-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-016-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-017-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-018-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SkuPriceDetails",
+        "Value": null
+      },
+      "Dependencies": [
+        "SkuPriceDetails-C-007-M",
+        "SkuPriceDetails-C-008-M",
+        "SkuPriceDetails-C-009-C",
+        "SkuPriceDetails-C-010-C",
+        "SkuPriceDetails-C-011-O",
+        "SkuPriceDetails-C-012-O",
+        "SkuPriceDetails-C-016-O",
+        "SkuPriceDetails-C-017-C",
+        "SkuPriceDetails-C-018-C"
+      ]
+    }
+  },
+  "SkuPriceDetails-C-007-M": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MUST be associated with a given SkuPriceId.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-008-M": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-009-C": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-010-C": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a Provider-defined property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-011-O": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MAY include properties that are already captured in other dedicated columns.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-012-O": {
+    "Function": "Composite",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-013-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-014-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-015-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "SkuPriceDetails-C-013-O",
+        "SkuPriceDetails-C-014-O",
+        "SkuPriceDetails-C-015-O"
+      ]
+    }
+  },
+  "SkuPriceDetails-C-013-O": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Existing SkuPriceDetails properties SHOULD remain consistent over time.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-014-O": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Existing SkuPriceDetails properties SHOULD NOT be removed.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-015-O": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Additional SkuPriceDetails properties MAY be added over time.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-016-O": {
+    "Function": "Format",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-017-C": {
+    "Function": "Format",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Property key MUST begin with the string \"x_\" unless it is a FOCUS-defined property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-018-C": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Property value MUST represent the value for a single PricingUnit when the property holds a numeric value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-019-M": {
+    "Function": "Composite",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS-defined SKU Price properties adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-020-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-021-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-022-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "SkuPriceDetails-C-020-M",
+        "SkuPriceDetails-C-021-M",
+        "SkuPriceDetails-C-022-C"
+      ]
+    }
+  },
+  "SkuPriceDetails-C-020-M": {
+    "Function": "Format",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Property key MUST match the spelling and casing specified for the FOCUS-defined property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-021-M": {
+    "Function": "Type",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Property value MUST be of the type specified for that property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuPriceDetails-C-022-C": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

@@ -1,4 +1,6 @@
-# Examples: Commitment Discount Scenarios
+# Commitment Discounts
+
+## Examples: Commitment Discount Scenarios
 
 A [*commitment discount*](#glossary:commitment-discount) is a billing discount model that offers reduced rates on preselected [*SKUs*](#glossary:sku) in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period). *Commitment discounts* typically consist of purchase and usage records within cost and usage datasets.
 
