@@ -18,8 +18,4 @@ Should a property of the dataset instance be updated, the expectation is that th
 
 ## Dataset Instance Example
 
-For an example of the FOCUS dataset instance metadata, please refer to: [Dataset Instance Metadata Example](#datasetinstancemedataexample)
-
-!INCLUDE "focus_dataset.md",1
-!INCLUDE "dataset_instance_id.md",1
-!INCLUDE "dataset_instance_name.md",1
+For an example of the FOCUS dataset instance metadata, please refer to: [Dataset Instance Metadata Example](#datasetinstancemedataexample).

@@ -4,9 +4,9 @@ The Schema ID provides the reference item to associate which Schema was used for
 
 The SchemaId property adheres to the following requirements:
 
-* The SchemaId MUST be present in the metadata.
-* The SchemaId MUST be of String.
-* It is RECOMMENDED for SchemaId to be a Globally Unique Identifier (GUID).
+* SchemaId MUST be present in the metadata.
+* SchemaId MUST be of String.
+* SchemaId SHOULD be a Globally Unique Identifier (GUID).
 
 ## Metadata ID
 

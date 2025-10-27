@@ -8,7 +8,7 @@ The DataGeneratorVersion property adheres to the following requirements:
 * DataGeneratorVersion MUST be of type String.
 * DataGeneratorVersion MUST conform to [StringHandling](#stringhandling) requirements.
 * DataGeneratorVersion MUST NOT be null.
-* When FocusVersion is changed, a new DataGeneratorVersion MUST be also changed.
+* DataGeneratorVersion MUST be changed when FocusVersion is changed.
 * Data generators MUST document what changes are present in the DataGeneratorVersion.
 
 ## Metadata ID
