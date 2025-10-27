@@ -1,0 +1,2114 @@
+{
+  "CostAndUsage-D-000-M": {
+    "Function": "Composite",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "Notes": "Main dataset composite rule",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The CostAndUsage dataset adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-002-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-001-M",
+        "CostAndUsage-D-002-M",
+        "DiscountHandling-A-000-C",
+        "NullHandling-A-000-M",
+        "ColumnHandling-A-000-M"
+      ]
+    }
+  },
+  "CostAndUsage-D-001-M": {
+    "Function": "Composite",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "Notes": "Columns present composite rule",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The CostAndUsage dataset adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-007-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-011-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-012-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-013-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-014-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-015-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-016-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-017-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-018-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-019-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-020-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-021-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-022-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-023-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-024-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-025-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-026-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-027-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-028-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-029-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-030-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-031-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-032-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-033-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-034-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-035-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-036-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-037-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-038-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-039-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-040-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-041-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-042-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-043-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-044-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-045-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-046-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-050-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-054-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-058-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-059-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-060-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-061-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-062-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-063-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-064-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-065-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-066-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-067-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-068-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-003-C",
+        "CostAndUsage-D-004-C",
+        "CostAndUsage-D-005-M",
+        "CostAndUsage-D-006-M",
+        "CostAndUsage-D-007-C",
+        "CostAndUsage-D-008-M",
+        "CostAndUsage-D-009-M",
+        "CostAndUsage-D-010-M",
+        "CostAndUsage-D-011-C",
+        "CostAndUsage-D-012-C",
+        "CostAndUsage-D-013-C",
+        "CostAndUsage-D-014-C",
+        "CostAndUsage-D-015-C",
+        "CostAndUsage-D-016-C",
+        "CostAndUsage-D-017-C",
+        "CostAndUsage-D-018-C",
+        "CostAndUsage-D-019-C",
+        "CostAndUsage-D-020-C",
+        "CostAndUsage-D-021-M",
+        "CostAndUsage-D-022-C",
+        "CostAndUsage-D-023-M",
+        "CostAndUsage-D-024-M",
+        "CostAndUsage-D-025-M",
+        "CostAndUsage-D-026-M",
+        "CostAndUsage-D-027-O",
+        "CostAndUsage-D-028-M",
+        "CostAndUsage-D-029-C",
+        "CostAndUsage-D-030-M",
+        "CostAndUsage-D-031-M",
+        "CostAndUsage-D-032-M",
+        "CostAndUsage-D-033-O",
+        "CostAndUsage-D-034-C",
+        "CostAndUsage-D-035-M",
+        "CostAndUsage-D-036-M",
+        "CostAndUsage-D-037-M",
+        "CostAndUsage-D-038-M",
+        "CostAndUsage-D-039-C",
+        "CostAndUsage-D-040-M",
+        "CostAndUsage-D-041-M",
+        "CostAndUsage-D-042-O",
+        "CostAndUsage-D-043-C",
+        "CostAndUsage-D-044-C",
+        "CostAndUsage-D-045-C",
+        "CostAndUsage-D-046-C",
+        "CostAndUsage-D-050-C",
+        "CostAndUsage-D-054-C",
+        "CostAndUsage-D-058-C",
+        "CostAndUsage-D-059-C",
+        "CostAndUsage-D-060-C",
+        "CostAndUsage-D-061-C",
+        "CostAndUsage-D-062-C",
+        "CostAndUsage-D-063-C",
+        "CostAndUsage-D-064-C",
+        "CostAndUsage-D-065-C",
+        "CostAndUsage-D-066-C",
+        "CostAndUsage-D-067-C",
+        "CostAndUsage-D-068-M"
+      ]
+    }
+  },
+  "CostAndUsage-D-002-M": {
+    "Function": "Composite",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "Notes": "Columns composite rule",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The CostAndUsage dataset adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "AvailabilityZone-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BilledCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingAccountId-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingAccountName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingAccountType-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingCurrency-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingPeriodEnd-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingPeriodStart-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationStatus-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargeCategory-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargeClass-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargeFrequency-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargeDescription-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodEnd-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodStart-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CommitmentDiscountCategory-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CommitmentDiscountId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CommitmentDiscountName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CommitmentDiscountStatus-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CommitmentDiscountType-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CommitmentDiscountUnit-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CommitmentDiscountQuantity-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedUnit-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedQuantity-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ContractedCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ContractedUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceId-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "InvoiceIssuerName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListCost-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ListUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCategory-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrency-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyEffectiveCost-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyListUnitPrice-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingQuantity-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ProviderName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PublisherName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "RegionId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "RegionName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ResourceId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ResourceName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ResourceType-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceCategory-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceSubcategory-C-000-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuMeter-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceDetails-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuPriceId-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountType-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-000-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "AvailabilityZone-C-000-C",
+        "BilledCost-C-000-M",
+        "BillingAccountId-C-000-M",
+        "BillingAccountName-C-000-M",
+        "BillingAccountType-C-000-C",
+        "BillingCurrency-C-000-M",
+        "BillingPeriodEnd-C-000-M",
+        "BillingPeriodStart-C-000-M",
+        "CapacityReservationId-C-000-C",
+        "CapacityReservationStatus-C-000-C",
+        "ChargeCategory-C-000-M",
+        "ChargeClass-C-000-M",
+        "ChargeFrequency-C-000-O",
+        "ChargeDescription-C-000-M",
+        "ChargePeriodEnd-C-000-M",
+        "ChargePeriodStart-C-000-M",
+        "CommitmentDiscountCategory-C-000-C",
+        "CommitmentDiscountId-C-000-C",
+        "CommitmentDiscountName-C-000-C",
+        "CommitmentDiscountStatus-C-000-C",
+        "CommitmentDiscountType-C-000-C",
+        "CommitmentDiscountUnit-C-000-C",
+        "CommitmentDiscountQuantity-C-000-C",
+        "ConsumedUnit-C-000-C",
+        "ConsumedQuantity-C-000-C",
+        "ContractedCost-C-000-M",
+        "ContractedUnitPrice-C-000-C",
+        "EffectiveCost-C-000-M",
+        "InvoiceId-C-000-O",
+        "InvoiceIssuerName-C-000-M",
+        "ListCost-C-000-M",
+        "ListUnitPrice-C-000-C",
+        "PricingCategory-C-000-M",
+        "PricingCurrency-C-000-C",
+        "PricingCurrencyContractedUnitPrice-C-000-C",
+        "PricingCurrencyEffectiveCost-C-000-C",
+        "PricingCurrencyListUnitPrice-C-000-C",
+        "PricingQuantity-C-000-M",
+        "PricingUnit-C-000-M",
+        "ProviderName-C-000-M",
+        "RegionId-C-000-C",
+        "RegionName-C-000-C",
+        "ResourceId-C-000-C",
+        "ResourceName-C-000-C",
+        "ResourceType-C-000-C",
+        "PublisherName-C-000-M",
+        "SubAccountId-C-000-C",
+        "SubAccountName-C-000-C",
+        "ServiceCategory-C-000-M",
+        "ServiceName-C-000-M",
+        "ServiceSubcategory-C-000-O",
+        "SkuId-C-000-C",
+        "SkuMeter-C-000-C",
+        "SkuPriceDetails-C-000-C",
+        "SkuPriceId-C-000-C",
+        "SubAccountType-C-000-C",
+        "Tags-C-000-C"
+      ]
+    }
+  },
+  "CostAndUsage-D-003-C": {
+    "Function": "Presence",
+    "Reference": "AvailabilityZone",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "AVAILABILITY_ZONE_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AvailabilityZone is RECOMMENDED to be present in a FOCUS dataset when the provider supports deploying resources or services within an availability zone.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "AvailabilityZone"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-004-C": {
+    "Function": "Presence",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-005-M": {
+    "Function": "Presence",
+    "Reference": "BillingAccountName",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountName MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingAccountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-006-M": {
+    "Function": "Presence",
+    "Reference": "BilledCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BilledCost MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BilledCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-007-C": {
+    "Function": "Presence",
+    "Reference": "BillingAccountType",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountType MUST be present in a FOCUS dataset when the provider supports more than one possible BillingAccountType value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingAccountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-008-M": {
+    "Function": "Presence",
+    "Reference": "ChargeCategory",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeCategory MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-009-M": {
+    "Function": "Presence",
+    "Reference": "BillingPeriodStart",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingPeriodStart MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingPeriodStart"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-010-M": {
+    "Function": "Presence",
+    "Reference": "BillingPeriodEnd",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingPeriodEnd MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingPeriodEnd"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-011-C": {
+    "Function": "Presence",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity MUST be present in a FOCUS dataset when the provider supports the measurement of usage.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ConsumedQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-012-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountName",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountName MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-013-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountId MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-014-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountType",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountType MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-015-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountUnit",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountUnit MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-016-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountCategory",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountCategory MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-017-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountStatus",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-018-C": {
+    "Function": "Presence",
+    "Reference": "CommitmentDiscountQuantity",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountQuantity MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CommitmentDiscountQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-019-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST be present in a FOCUS dataset when the provider supports a sub account construct.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-020-C": {
+    "Function": "Presence",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "CAPACITY_RESERVATION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationStatus MUST be present in a FOCUS dataset when the provider supports capacity reservations.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CapacityReservationStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-021-M": {
+    "Function": "Presence",
+    "Reference": "PublisherName",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PublisherName MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PublisherName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-022-C": {
+    "Function": "Presence",
+    "Reference": "PricingCategory",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_PRICING_CATEGORIES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be present in a FOCUS dataset when the provider supports more than one pricing category across all SKUs.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-023-M": {
+    "Function": "Presence",
+    "Reference": "InvoiceIssuerName",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceIssuerName MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "InvoiceIssuerName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-024-M": {
+    "Function": "Presence",
+    "Reference": "BillingAccountId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountId MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-025-M": {
+    "Function": "Presence",
+    "Reference": "ChargeDescription",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeDescription"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-026-M": {
+    "Function": "Presence",
+    "Reference": "ChargeClass",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeClass MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeClass"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-027-O": {
+    "Function": "Presence",
+    "Reference": "ChargeFrequency",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeFrequency is RECOMMENDED to be present in a FOCUS dataset.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargeFrequency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-028-M": {
+    "Function": "Presence",
+    "Reference": "ChargePeriodEnd",
+    "EntityType": "Dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodEnd MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargePeriodEnd"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-029-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountName",
+    "EntityType": "Dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountName MUST be present in a FOCUS dataset when the provider supports a sub account construct.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-030-M": {
+    "Function": "Presence",
+    "Reference": "ContractedCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractedCost MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractedCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-031-M": {
+    "Function": "Presence",
+    "Reference": "EffectiveCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "EffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-032-M": {
+    "Function": "Presence",
+    "Reference": "ListCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ListCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-033-O": {
+    "Function": "Presence",
+    "Reference": "InvoiceId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceId is RECOMMENDED to be present in a FOCUS dataset.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "InvoiceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-034-C": {
+    "Function": "Presence",
+    "Reference": "ContractedUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "Presence rule",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "NEGOTIATED_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractedUnitPrice MUST be present in a FOCUS dataset when the provider supports negotiated pricing concepts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-035-M": {
+    "Function": "Presence",
+    "Reference": "BillingCurrency",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingCurrency MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-036-M": {
+    "Function": "Presence",
+    "Reference": "PricingQuantity",
+    "EntityType": "Dataset",
+    "Notes": "PricingQuantity must be present in dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingQuantity MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-037-M": {
+    "Function": "Presence",
+    "Reference": "ChargePeriodStart",
+    "EntityType": "Dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodStart MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ChargePeriodStart"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-038-M": {
+    "Function": "Presence",
+    "Reference": "ProviderName",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ProviderName MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-039-C": {
+    "Function": "Presence",
+    "Reference": "ResourceType",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources and supports assigning types to resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-040-M": {
+    "Function": "Presence",
+    "Reference": "ServiceCategory",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceCategory MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-041-M": {
+    "Function": "Presence",
+    "Reference": "ServiceName",
+    "EntityType": "Dataset",
+    "Notes": "ServiceName must be present in dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-042-O": {
+    "Function": "Presence",
+    "Reference": "ServiceSubcategory",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory is RECOMMENDED to be present in a FOCUS dataset.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceSubcategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-043-C": {
+    "Function": "Presence",
+    "Reference": "ResourceId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-044-C": {
+    "Function": "Presence",
+    "Reference": "ResourceName",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ResourceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-045-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrency",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrency MUST be present in a FOCUS dataset when the provider supports pricing and billing in different currencies.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-046-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice presence in a FOCUS dataset is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-047-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-048-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-049-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-047-C",
+        "CostAndUsage-D-048-C",
+        "CostAndUsage-D-049-C"
+      ]
+    }
+  },
+  "CostAndUsage-D-047-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be present in a FOCUS dataset when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-048-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice is RECOMMENDED to be present in a FOCUS dataset when the provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-049-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MAY be present in a FOCUS dataset in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-050-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost presence in a FOCUS dataset is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-051-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-052-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-053-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-051-C",
+        "CostAndUsage-D-052-C",
+        "CostAndUsage-D-053-C"
+      ]
+    }
+  },
+  "CostAndUsage-D-051-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be present in a FOCUS dataset when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyEffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-052-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost is RECOMMENDED to be present in a FOCUS dataset when the provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyEffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-053-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MAY be present in a FOCUS dataset in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyEffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-054-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice presence in a FOCUS dataset is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-055-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-056-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CostAndUsage-D-057-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-055-C",
+        "CostAndUsage-D-056-C",
+        "CostAndUsage-D-057-C"
+      ]
+    }
+  },
+  "CostAndUsage-D-055-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "VIRTUAL_CURRENCY_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST be present in a FOCUS dataset when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-056-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice is RECOMMENDED to be present in a FOCUS dataset when the provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-057-C": {
+    "Function": "Presence",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice MAY be present in a FOCUS dataset in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingCurrencyListUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-058-C": {
+    "Function": "Presence",
+    "Reference": "SkuPriceId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceId MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuPriceId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-059-C": {
+    "Function": "Presence",
+    "Reference": "SkuMeter",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuMeter MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuMeter"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-060-C": {
+    "Function": "Presence",
+    "Reference": "SkuId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-061-C": {
+    "Function": "Presence",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SkuPriceDetails"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-062-C": {
+    "Function": "Presence",
+    "Reference": "RegionName",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "REGION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionName MUST be present in a FOCUS dataset when the provider supports deploying resources or services within a region.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "RegionName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-063-C": {
+    "Function": "Presence",
+    "Reference": "RegionId",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "REGION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionId MUST be present in a FOCUS dataset when the provider supports deploying resources or services within a region.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "RegionId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-064-C": {
+    "Function": "Presence",
+    "Reference": "Tags",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "TAGGING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags MUST be present in a FOCUS dataset when the provider supports setting user or provider-defined tags.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "Tags"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-065-C": {
+    "Function": "Presence",
+    "Reference": "CapacityReservationId",
+    "EntityType": "Dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "CAPACITY_RESERVATION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationId MUST be present in a FOCUS dataset when the provider supports capacity reservations.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "CapacityReservationId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-066-C": {
+    "Function": "Presence",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit MUST be present in a FOCUS dataset when the provider supports the measurement of usage.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ConsumedUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-067-C": {
+    "Function": "Presence",
+    "Reference": "SubAccountType",
+    "EntityType": "Dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountType MUST be present in a FOCUS dataset when the provider supports more than one possible SubAccountType value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "SubAccountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CostAndUsage-D-068-M": {
+    "Function": "Presence",
+    "Reference": "PricingUnit",
+    "EntityType": "Dataset",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit MUST be present in a FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "PricingUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

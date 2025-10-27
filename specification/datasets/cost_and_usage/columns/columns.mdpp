@@ -32,6 +32,7 @@
 !INCLUDE "contractedcost.md",1
 !INCLUDE "contractedunitprice.md",1
 !INCLUDE "effectivecost.md",1
+!INCLUDE "hostprovidername.md",1
 !INCLUDE "invoiceid.md",1
 !INCLUDE "invoiceissuername.md",1
 !INCLUDE "listcost.md",1
@@ -50,6 +51,7 @@
 !INCLUDE "resourceid.md",1
 !INCLUDE "resourcename.md",1
 !INCLUDE "resourcetype.md",1
+!INCLUDE "serviceprovidername.md",1
 !INCLUDE "servicecategory.md",1
 !INCLUDE "servicename.md",1
 !INCLUDE "servicesubcategory.md",1

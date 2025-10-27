@@ -31,7 +31,7 @@ GROUP BY
   InvoiceIssuerName,
   BillingPeriodStart,
   BillingPeriodEnd
-``` 
+```
 
 ## Example SQL Query on a Provider FOCUS Dataset
 
@@ -47,7 +47,7 @@ GROUP BY
   ChargePeriodStart,
   ChargePeriodEnd,
   ResourceId
-``` 
+```
 
 ## Introduced (Version)
 

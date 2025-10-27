@@ -1,0 +1,183 @@
+{
+  "CheckFunctions": {
+    "OR": {
+      "Description": "OR check items, will return true on ANY check passing",
+      "Arguments": [
+        "Items"
+      ],
+      "FormatAttributes": []
+    },
+    "AND": {
+      "Description": "AND check items, will return true on ALL checks passing",
+      "Arguments": [
+        "Items"
+      ],
+      "FormatAttributes": []
+    },
+    "ColumnPresent": {
+      "Description": "Check if column is present in the dataset",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "ColumnHandling-A-000-M"
+      ]
+    },
+    "CheckDistinctCount": {
+      "Description": "Check if two columns have a distinct count equal to a value",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName",
+        "ExpectedCount"
+      ],
+      "FormatAttributes": []
+    },
+    "FormatKeyValue": {
+      "Description": "Check a column has a key value format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "KeyValueFormat-A-000-M"
+      ]
+    },
+    "CheckValue": {
+      "Description": "Check if column has a particular value",
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckNotValue": {
+      "Description": "Check if column does not have a particular value",
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckNotSameValue": {
+      "Description": "Check if column does not have the same value as another column",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckSameValue": {
+      "Description": "Check if column does have the same value as another column",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckDecimalValue": {
+      "Description": "Check if column has a valid decimal value",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckGreaterOrEqualThanValue": {
+      "Description": "Check if column has value equal or greater than a value",
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckModelRule": {
+      "Description": "Check another ModelRule and turn its value",
+      "Arguments": [
+        "ModelRuleId"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckNationalCurrency": {
+      "Description": "Check column has a valid national currency code",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "CurrencyFormat-A-000-C"
+      ]
+    },
+    "TypeDecimal": {
+      "Description": "Check column has the data type of decimal",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "TypeString": {
+      "Description": "Check column has the data type of string",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "FormatDateTime": {
+      "Description": "Check column has the format of datetime",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "DateTimeFormat-A-000-M"
+      ]
+    },
+    "FormatNumeric": {
+      "Description": "Check a column has a numeric format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "NumericFormat-A-000-M"
+      ]
+    },
+    "FormatString": {
+      "Description": "Check a column has a string format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "StringHandling-A-000-M"
+      ]
+    },
+    "FormatUnit": {
+      "Description": "Check a column has a unit format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "UnitFormat-A-000-M"
+      ]
+    },
+    "FormatCurrency": {
+      "Description": "Check a column has a currency format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "CurrencyFormat-A-000-C"
+      ]
+    },
+    "ColumnByColumnEqualsColumnValue": {
+      "Description": "Check the result of a column value times by another column value and confirm if it matches the value of third column",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName",
+        "ResultColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "TypeDateTime": {
+      "Description": "Check column has the data type of datetime",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    }
+  }
+}

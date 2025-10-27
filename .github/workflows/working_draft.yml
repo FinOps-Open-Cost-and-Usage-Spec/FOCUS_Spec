@@ -27,6 +27,12 @@ jobs:
         working-directory: ./specification
         run: |
           make STYLE=working_draft BRANCH=${GITHUB_REF_NAME}
+      - name: Build Requirements Model JSON
+        shell: bash
+        working-directory: ./specification/requirements_model
+        run: |
+          /usr/bin/pip3 install --break-system-packages -r requirements.txt
+          ./build_json.py
       - name: Upload on failure
         uses: actions/upload-artifact@v4
         if: ${{ failure()}}
@@ -42,3 +48,4 @@ jobs:
             specification/spec.pdf
             specification/images/*
             specification/styles/*
+            specification/requirements_model/build/*.json
