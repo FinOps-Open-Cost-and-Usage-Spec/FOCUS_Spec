@@ -4,6 +4,8 @@ A Sub Account ID is a provider-assigned identifier assigned to a [*sub account*]
 
 ## Requirements
 
+SubAccountId adheres to the following requirements:
+
 * SubAccountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
 * SubAccountId MUST be of type String.
 * SubAccountId MUST conform to [StringHandling](#stringhandling) requirements.
