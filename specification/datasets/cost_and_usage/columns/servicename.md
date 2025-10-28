@@ -4,7 +4,7 @@ A [*service*](#glossary:service) represents an offering that can be purchased fr
 
 The Service Name is a display name for the offering that was purchased. The Service Name is commonly used for scenarios like analyzing aggregate cost trends over time and filtering data to investigate anomalies.
 
-The ServiceName column adheres to the following requirements:
+## Requirements
 
 * ServiceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceName MUST be of type String.
