@@ -4,6 +4,8 @@ Commitment Discount Category indicates whether the [*commitment discount*](#glos
 
 ## Requirements
 
+CommitmentDiscountCategory adheres to the following requirements:
+
 * CommitmentDiscountCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountCategory MUST be of type String.
 * CommitmentDiscountCategory nullability is defined as follows:
