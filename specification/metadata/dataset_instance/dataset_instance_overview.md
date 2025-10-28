@@ -4,17 +4,11 @@ The Dataset Instance metadata object provided by a Data Generator provides infor
 
 ## Requirements
 
-### Reference to FOCUS Data
-
-FOCUS data artifacts, whether they are data files, data streams, or data tables, MUST provide a clear reference to the dataset instance of the data. This reference MUST be retrievable without inspection of the contents of the FOCUS data within the data artifact. For some delivery mechanisms such as database tables, the provider may rely on the schema functionality of the providing system.
-
-### Dataset Instance Metadata Creation
-
-For every dataset instance provided by the Data Generator, a dataset instance metadata object MUST be supplied.
-
-### Dataset Instance Metadata Updates
-
-Should a property of the dataset instance be updated, the expectation is that the dataset instance metadata object is updated to reflect the change. This ensures that the dataset instance metadata object is always accurate.
+* Dataset Instance metadata MUST be provided for every dataset instance provided by the data generator.
+* Dataset Instance metadata MUST provide a reference to the dataset instance of the dataset artifact.
+* Dataset Instance metadata MUST be retrievable independently from the dataset artifact it describes. 
+* Dataset Instance metadata MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
+* Dataset Instance metadata SHOULD be updated when a data generator updates the corresponding dataset artifact.
 
 ## Dataset Instance Example
 
