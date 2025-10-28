@@ -4,6 +4,8 @@ Commitment Discount Type is a provider-assigned name to identify the type of [*c
 
 ## Requirements
 
+CommitmentDiscountType adheres to the following requirements:
+
 * CommitmentDiscountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountType MUST be of type String.
 * CommitmentDiscountType MUST conform to [StringHandling](#stringhandling) requirements.
