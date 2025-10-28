@@ -2,7 +2,7 @@
 
 A Capacity Reservation ID is the identifier assigned to a [*capacity reservation*](#glossary:capacity-reservation) by the provider. Capacity Reservation ID is commonly used for scenarios to allocate [*charges*](#glossary:charge) for capacity reservation usage.
 
-## Requirements:
+## Requirements
 
 * CapacityReservationId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *capacity reservations*.
 * CapacityReservationId MUST be of type String.
