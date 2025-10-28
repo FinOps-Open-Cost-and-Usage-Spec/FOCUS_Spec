@@ -15,7 +15,9 @@ specification/
 ├── markdownlnt.cfg              # Markdown linting configuration
 ├── datasets/                    # Dataset-specific content
 ├── attributes/                  # Attribute specifications
+├── metadata/                    # Metadata specifications
 ├── appendix/                    # Appendix materials
+├── supported_features/          # Features enabled by FOCUS
 └── requirements_model/          # Validation rules and models
 ```
 
@@ -23,15 +25,20 @@ specification/
 
 ### Main Specification File (`spec.mdpp`)
 
-The root specification file uses MarkdownPP directives to compose the complete document:
+The root specification file `spec.mdpp` uses MarkdownPP directives to compose the complete document.  After specifying some administrative pieces, the following statements reflect the core of the specification.  Each `INCLUDE` corresponds to a section of the document; for example, the second entry for `supported_features` corresponds to Section 2 of the spec.
 
 ```markdown
-!INCLUDE "overview.md"
-!INCLUDE "datasets/datasets.mdpp"
-!INCLUDE "attributes/attributes.mdpp"
-!INCLUDE "metadata/metadata.mdpp"
-!INCLUDE "appendix/appendix.mdpp"
+!INCLUDE "overview.md",1
+!INCLUDE "supported_features/supported_features.mdpp",1
+!INCLUDE "datasets/datasets.mdpp",1
+!INCLUDE "attributes/attributes.mdpp",1
+!INCLUDE "metadata/metadata.mdpp",1
+!INCLUDE "use_case_library.md",1
+!INCLUDE "glossary.md",1
+!INCLUDE "appendix/appendix.mdpp",1
 ```
+
+The number after any `!INCLUDE` statement is a shift parameter that adds the specified number of subheaders to the included file.  We typically use 0 or 1, but larger numbers are technically allowed.
 
 ### Multi-Dataset Table of Contents
 
@@ -43,7 +50,7 @@ Our enhanced MarkdownPP supports different TOC depths for different specificatio
 !TOC 2 2 3 2 2 2 2 2
 ```
 
-This will set the table of contents depth based on the header order. Depth of 2 for the first two sections, 3 for the third, and 2 for the remaining.
+This will set the table of contents depth based on the header order. Depth of 2 for the first two sections (Overview and Supported Features), 3 for the third (Datasets), and 2 for the remaining (Attributes, Metadata, Use Case Library, Glossary, and Appendix).
 
 ## Makefile Integration
 
@@ -81,7 +88,7 @@ If we add new locations the build system should include in the build the source 
 
 ## Local MarkdownPP Modifications
 
-We have tailored Markdown-PP to work best for FOCUS and using the vendored version of the package is critical to create an artifact that matches the expectations of the FOCUS project output.
+We have tailored MarkdownPP to work best for FOCUS, and using the vendored version of the package is critical to create an artifact that matches the expectations of the FOCUS project output.
 
 ### Vendored Package Location
 
@@ -100,7 +107,7 @@ vendored/MarkdownPP/
 
 ### Key Modifications
 
-To see the actual code modifications made in this project use the following command
+To see the actual code modifications made in this project, use the following command:
 
 ```bash
 curl -s https://raw.githubusercontent.com/amyreese/markdown-pp/refs/heads/master/MarkdownPP/Modules/TableOfContents.py | diff -y --side-by-side - vendored/MarkdownPP/Modules/TableOfContents.py
@@ -149,6 +156,10 @@ if short in anchor_names:
 
 ## Best Practices
 
+### File Content
+
+While markdown can be included in a .mdpp, but the FOCUS project discourages this behavior, as the markdown will not natively render in GitHub and development environments such as VS Code, thereby making spec maintenance more difficult.  Therefore, we encourage the use of overview .md files, limiting the use of .mdpp files to `!INCLUDE` statements only.
+
 ### File Organization
 
 ```markdown
@@ -182,6 +193,8 @@ if short in anchor_names:
 # - Header level consistency
 python validate_includes.py spec.mdpp
 ```
+
+If any new sections are added to the spec that require such validation, they need to be added to `validate_includes.py`.
 
 ## Styling Integration
 
@@ -245,4 +258,4 @@ make clean
 make
 ```
 
-Most build failures are from linting issues with Markdown, and addressing these should be the first point of call. Remember that HTML and Markdown only supports 7 levels of headings and at some points of the specification we are already close to or at this limit, adding headings under these sections can cause issues.
+Most build failures are from [linting](https://pymarkdown.readthedocs.io/) issues with Markdown, and addressing these should be the first point of call. Remember that HTML and Markdown only supports six levels of headings, and many sections of the specification are already at this limit; adding headings under these sections can therefore cause issues.
