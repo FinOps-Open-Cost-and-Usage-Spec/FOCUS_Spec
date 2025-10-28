@@ -6,6 +6,8 @@ When [CommitmentDiscountCategory](#commitmentdiscountcategory) is "Usage" (usage
 
 ## Requirements
 
+CommitmentDiscountQuantity adheres to the following requirements:
+
 * CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal.
 * CommitmentDiscountQuantity MUST conform to [NumericFormat](#numericformat) requirements.
