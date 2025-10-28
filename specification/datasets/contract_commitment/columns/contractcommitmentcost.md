@@ -4,6 +4,8 @@ Contract Commitment Cost represents the monetary value of the [*contract commitm
 
 ## Requirements
 
+ContractCommitmentCost adheres to the following requirements:
+
 * ContractCommitmentCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentCost MUST be of type Decimal.
 * ContractCommitmentCost MUST conform to [NumericFormat](#numericformat) requirements.
