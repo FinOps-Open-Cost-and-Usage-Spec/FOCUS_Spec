@@ -4,6 +4,8 @@ Charge Class indicates whether the [*row*](#glossary:row) represents a correctio
 
 ## Requirements
 
+ChargeClass adheres to the following requirements:
+
 * ChargeClass MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeClass MUST be of type String.
 * ChargeClass nullability is defined as follows:
@@ -42,3 +44,4 @@ Allowed values:
 ## Introduced (version)
 
 1.0
+
