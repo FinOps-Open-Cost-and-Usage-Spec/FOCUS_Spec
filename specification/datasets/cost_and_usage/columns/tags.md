@@ -6,6 +6,8 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 
 ## Requirements
 
+Tags adheres to the following requirements:
+
 * Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
 * Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
 * Tags MAY be null.
