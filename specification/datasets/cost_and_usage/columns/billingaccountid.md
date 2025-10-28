@@ -4,6 +4,8 @@ A Billing Account ID is a provider-assigned identifier for a [*billing account*]
 
 ## Requirements
 
+BillingAccountId adheres to the following requirements:
+
 * BillingAccountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingAccountId MUST be of type String.
 * BillingAccountId MUST conform to [StringHandling](#stringhandling) requirements.
