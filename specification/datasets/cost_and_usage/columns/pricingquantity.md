@@ -4,6 +4,8 @@ The Pricing Quantity represents the volume of a given [*SKU*](#glossary:sku) ass
 
 ## Requirements
 
+PricingQuantity adheres to the following requirements:
+
 * PricingQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PricingQuantity MUST be of type Decimal.
 * PricingQuantity MUST conform to [NumericFormat](#numericformat) requirements.
