@@ -4,7 +4,7 @@ Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveend
 
 ## Requirements
 
-BillingPeriodEnd adheres to the following requirements.
+BillingPeriodEnd adheres to the following requirements:
 
 * BillingPeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingPeriodEnd MUST be of type Date/Time.
