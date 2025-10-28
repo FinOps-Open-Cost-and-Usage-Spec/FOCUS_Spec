@@ -99,6 +99,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - DatasetInstanceName
   - FocusDatasetId
 - Recency
+  - DatasetInstanceComplete
   - DatasetInstanceId
   - DatasetInstanceLastUpdated
   - RecencyLastUpdated
@@ -106,8 +107,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
     - TimeSectorComplete
     - TimeSectorEnd
     - TimeSectorLastUpdated
-    - TimeSectorStart 
-
+    - TimeSectorStart
 
 #### New glossary entries
 
@@ -121,6 +121,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `JSON`
 - `Origin Charge`
 - `Period`
+
+#### New requirements model
+
+The specification's normative requirements are now maintained in a structured, graph-based collection of rules.  Version 1.2 of the requirements model is available as of this writing; 1.3 will be released during the 1.4 development cycle.
 
 ### Changed
 
@@ -163,11 +167,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Changed attributes
 
-- TBD
+- None
 
 #### Changed appendix entries
 
-- Metadata examples now include use of DatasetInstanceId.
+- Metadata examples now include use of `DatasetInstanceId`.
 - [Participating Entity Identification](/specification/appendix/participating_entity_identification.md) replaces Origination of Cost Data.  
   - The layout and functionality is the same, but the entities have been renamed, and new entries have been included.
 
@@ -175,7 +179,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ##### Changed metadata properties
 
-- TBD
+- None
 
 #### Changed glossary entries
 
