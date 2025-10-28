@@ -4,6 +4,8 @@ A Charge Description provides a high-level context of a [*row*](#glossary:row) w
 
 ## Requirements
 
+ChargeDescription adheres to the following requirements:
+
 * ChargeDescription MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeDescription MUST be of type String.
 * ChargeDescription MUST conform to [StringHandling](#stringhandling) requirements.
