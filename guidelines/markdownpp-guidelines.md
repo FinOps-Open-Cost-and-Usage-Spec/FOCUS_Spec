@@ -4,7 +4,7 @@ This document outlines the use of MarkdownPP in the FOCUS Specification reposito
 
 ## Overview
 
-The FOCUS Specification uses MarkdownPP (Markdown Preprocessor) to build the complete specification document from modular markdown files. We use a locally modified version of MarkdownPP that includes enhancements specifically designed for multi-dataset technical documentation.
+The FOCUS Specification uses [MarkdownPP](https://github.com/amyreese/markdown-pp) (Markdown Preprocessor) to build the complete specification document from modular markdown files. The original instance of MarkdownPP is no longer actively maintained, and we use a locally modified version that includes enhancements specifically designed for multi-dataset technical documentation.
 
 ## Repository Structure
 
