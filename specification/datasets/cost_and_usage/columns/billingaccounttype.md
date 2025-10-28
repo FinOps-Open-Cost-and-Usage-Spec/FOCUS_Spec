@@ -2,7 +2,7 @@
 
 Billing Account Type is a provider-assigned name to identify the type of [*billing account*](#glossary:billing-account). Billing Account Type is a readable display name and not a code. Billing Account Type is commonly used for scenarios like mapping FOCUS and provider constructs, summarizing costs across providers, or invoicing and chargeback.
 
-## Requirements:
+## Requirements
 
 * BillingAccountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one possible BillingAccountType value.
 * BillingAccountType MUST be of type String.
