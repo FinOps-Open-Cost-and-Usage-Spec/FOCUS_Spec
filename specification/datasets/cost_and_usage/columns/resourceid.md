@@ -2,7 +2,7 @@
 
 A Resource ID is an identifier assigned to a [*resource*](#glossary:resource) by the provider. The Resource ID is commonly used for cost reporting, analysis, and allocation scenarios.
 
-The ResourceId column adheres to the following requirements:
+## Requirements
 
 * ResourceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned *resources*.
 * ResourceId MUST be of type String.
