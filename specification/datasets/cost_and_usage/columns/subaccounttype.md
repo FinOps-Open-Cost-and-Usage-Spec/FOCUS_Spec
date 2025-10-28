@@ -4,6 +4,8 @@ Sub Account Type is a provider-assigned name to identify the type of [*sub accou
 
 ## Requirements
 
+SubAccountType adheres to the following requirements:
+
 * SubAccountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one possible SubAccountType value.
 * SubAccountType MUST be of type String.
 * SubAccountType MUST conform to [StringHandling](#stringhandling) requirements.
