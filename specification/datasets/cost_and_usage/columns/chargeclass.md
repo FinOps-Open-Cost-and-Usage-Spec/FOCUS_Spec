@@ -42,5 +42,3 @@ Allowed values:
 ## Introduced (version)
 
 1.0
-
-
