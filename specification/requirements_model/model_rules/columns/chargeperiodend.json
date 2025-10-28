@@ -1,0 +1,123 @@
+{
+  "ChargePeriodEnd-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ChargePeriodEnd",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ChargePeriodEnd column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodEnd-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodEnd-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodEnd-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodEnd-C-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-028-M",
+        "ChargePeriodEnd-C-001-M",
+        "ChargePeriodEnd-C-002-M",
+        "ChargePeriodEnd-C-003-M",
+        "ChargePeriodEnd-C-004-M"
+      ]
+    }
+  },
+  "ChargePeriodEnd-C-001-M": {
+    "Function": "Type",
+    "Reference": "ChargePeriodEnd",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodEnd MUST be of type Date/Time.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDateTime",
+        "ColumnName": "ChargePeriodEnd"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargePeriodEnd-C-002-M": {
+    "Function": "Format",
+    "Reference": "ChargePeriodEnd",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodEnd MUST conform to DateTimeFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatDateTime",
+        "ColumnName": "ChargePeriodEnd"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargePeriodEnd-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "ChargePeriodEnd",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodEnd MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargePeriodEnd",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargePeriodEnd-C-004-M": {
+    "Function": "Validation",
+    "Reference": "ChargePeriodEnd",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodEnd MUST be the exclusive end bound of the effective period of the charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

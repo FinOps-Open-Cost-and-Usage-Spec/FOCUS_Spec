@@ -1,0 +1,227 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Model Schema with Stage 2 Enhancements",
+  "type": "object",
+  "properties": {
+    "Details": {
+      "type": "object",
+      "description": "Metadata about the model and general properties.",
+      "properties": {
+        "ModelVersion": {
+          "type": "string"
+        },
+        "FOCUSVersion": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ModelVersion",
+        "FOCUSVersion"
+      ],
+      "additionalProperties": false
+    },
+    "ApplicabilityCriteria": {
+      "type": "object",
+      "description": "A dictionary of flags used to determine rule applicability based on the data generators supported features.",
+      "patternProperties": {
+        "^[A-Z0-9_]+$": {
+          "type": "object",
+          "properties": {
+            "Description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "Description"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "CheckFunctions": {
+      "type": "object",
+      "description": "Reusable check functions used in validation logic (e.g., AND, OR, ColumnPresent).",
+      "patternProperties": {
+        "^[A-Za-z0-9_]+$": {
+          "type": "object",
+          "properties": {
+            "Description": {
+              "type": "string"
+            },
+            "Arguments": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "FormatAttributes": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "Description",
+            "Arguments",
+            "FormatAttributes"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "ModelDatasets": {
+      "type": "object",
+      "description": "Top-level groupings (like FOCUS) mapping to top level rule IDs.",
+      "patternProperties": {
+        "^[a-zA-Z0-9_]+$": {
+          "type": "object",
+          "properties": {
+            "ModelRules": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "ModelRules"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "ModelRules": {
+      "type": "object",
+      "description": "The list of all rules, each containing logic, reference metadata, and criteria.",
+      "patternProperties": {
+        "^[A-Za-z0-9]+-[CAD]{1}-\\d{3}-[MOC]$": {
+          "type": "object",
+          "properties": {
+            "Function": {
+              "type": "string",
+              "enum": [
+                "Format",
+                "Presence",
+                "Validation",
+                "Type",
+                "Composite",
+                "Nullability"
+              ]
+            },
+            "Reference": {
+              "type": "string"
+            },
+            "EntityType": {
+              "type": "string",
+              "enum": [
+                "Dataset",
+                "Column",
+                "Attribute"
+              ]
+            },
+            "Notes": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "ModelVersionIntroduced": {
+              "type": "string"
+            },
+            "Status": {
+              "type": "string",
+              "enum": [
+                "Active",
+                "Deprecated"
+              ]
+            },
+            "ApplicabilityCriteria": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "Type": {
+              "type": "string",
+              "enum": [
+                "Static",
+                "Dynamic"
+              ]
+            },
+            "ValidationCriteria": {
+              "type": "object",
+              "properties": {
+                "MustSatisfy": {
+                  "type": "string"
+                },
+                "Keyword": {
+                  "type": "string",
+                  "enum": [
+                    "MUST",
+                    "MUST NOT",
+                    "SHOULD",
+                    "SHOULD NOT",
+                    "RECOMMENDED",
+                    "NOT RECOMMENDED",
+                    "MAY",
+                    "OPTIONAL"
+                  ]
+                },
+                "Requirement": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                },
+                "Condition": {
+                  "type": [
+                    "object",
+                    "null"
+                  ]
+                },
+                "Dependencies": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "MustSatisfy",
+                "Keyword",
+                "Requirement",
+                "Condition",
+                "Dependencies"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "Function",
+            "Reference",
+            "EntityType",
+            "ModelVersionIntroduced",
+            "Status",
+            "ApplicabilityCriteria",
+            "Type",
+            "ValidationCriteria"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "Details",
+    "ApplicabilityCriteria",
+    "CheckFunctions",
+    "ModelDatasets",
+    "ModelRules"
+  ],
+  "additionalProperties": false
+}

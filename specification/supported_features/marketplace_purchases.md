@@ -6,8 +6,8 @@ FOCUS supports the analysis of cost and usage data for marketplace purchases and
 
 ## Directly Dependent Columns
 
-* InvoiceIssuer
-* Provider
+* InvoiceIssuerName
+* ProviderName
 
 ## Supporting Columns
 
@@ -18,20 +18,20 @@ FOCUS supports the analysis of cost and usage data for marketplace purchases and
 
 ```sql
 SELECT
-  Provider,
-  InvoiceIssuer,
+  ProviderName,
+  InvoiceIssuerName,
   BillingPeriodStart,
   BillingPeriodEnd,
   SUM(BilledCost) AS TotalBilledCost
 FROM focus_data_table
-WHERE Provider = '<Example SaaS Provider>'
-  AND InvoiceIssuer = '<Example CSP Marketplace>'
+WHERE ProviderName = '<Example SaaS Provider>'
+  AND InvoiceIssuerName = '<Example CSP Marketplace>'
 GROUP BY
-  Provider,
-  InvoiceIssuer,
+  ProviderName,
+  InvoiceIssuerName,
   BillingPeriodStart,
   BillingPeriodEnd
-``` 
+```
 
 ## Example SQL Query on a Provider FOCUS Dataset
 
@@ -42,12 +42,12 @@ SELECT
   ResourceId,
   SUM(EffectiveCost) AS TotalEffectiveCost
 FROM focus_data_table
-WHERE InvoiceIssuer = '<Example CSP Marketplace>'
+WHERE InvoiceIssuerName = '<Example CSP Marketplace>'
 GROUP BY
   ChargePeriodStart,
   ChargePeriodEnd,
   ResourceId
-``` 
+```
 
 ## Introduced (Version)
 

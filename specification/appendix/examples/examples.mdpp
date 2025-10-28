@@ -1,6 +1,3 @@
-# Examples
-
-*This section is non-normative.*
-
+!INCLUDE "metadata_examples/examples_overview.md",1
 !INCLUDE "metadata_examples/metadata_examples.mdpp",1
 !INCLUDE "commitment_discount_flexibility_examples/commitment_discount_flexibility_examples.mdpp",1

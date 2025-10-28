@@ -15,7 +15,7 @@ The updated schema related metadata for the schema where the rename took place c
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
   "CreationDate": "2024-03-02T12:01:03.083z",
-  "Dataset": "FOCUS Cost and Usage",
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
@@ -130,7 +130,7 @@ The subsequent new schema metadata after the rename could look like this:
           {
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
-          }, 
+          },
           {
                 "ColumnName": "x_awesome_column3",
                 "DataType": "STRING",

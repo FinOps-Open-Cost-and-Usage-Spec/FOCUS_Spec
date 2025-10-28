@@ -14,7 +14,7 @@ The process or formula by which cost is being allocated from an [origin charge](
 
 <a name="glossary:amortization"><b>Amortization</b></a>
 
-The distribution of upfront costs over time to accurately reflect the consumption or benefit derived from the associated resources or services. Amortization is valuable when the commitment period (time duration of the cost) extends beyond the granularity of the source report.
+The distribution of upfront costs over time to accurately reflect the consumption or benefit derived from the associated resources or services. Amortization is valuable when the commitment [*period*](#glossary:period) extends beyond the granularity of the source report.
 
 <a name="glossary:availability-zone"><b>Availability Zone</b></a>
 
@@ -50,7 +50,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:chargeperiod"><b>Charge Period</b></a>
 
-The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the duration of eligibility.
+The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the period of eligibility.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -58,11 +58,11 @@ A company or organization that provides remote access to computing resources, in
 
 <a name="glossary:commitment"><b>Commitment</b></a>
 
-A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
+A customer's agreement to either spend a defined monetary amount or consume a specific quantity of resources or services over a specified [*period*](#glossary:period).
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
+A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period).  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
@@ -88,6 +88,18 @@ A charge to correct cost or usage data in a previously invoiced [*billing period
 
 A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
 
+<a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
+
+An abbreviated term for [*dataset instance artifact*](#glossary:dataset-instance-artifact).
+
+<a name="glossary:dataset-instance"><b>Dataset Instance</b></a>
+
+A specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) provided by a [data generator](#datagenerator). A Data Generator may provide multiple dataset instances of the same *FOCUS dataset*, each with different properties such as time granularity or differing custom column inclusions.  For example, the same 'FOCUS Cost and Usage' *FOCUS dataset* may be provided at an hourly or daily time granularity by a Data Generator. Each would be a distinct Dataset Instance.
+
+<a name="glossary:dataset-instance-artifact"><b>Dataset Instance Artifact</b></a>
+
+A physical representation of a specific [*dataset instance*](#glossary:dataset-instance) delivered by a [data generator](#datagenerator).
+
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
@@ -110,9 +122,9 @@ An open-source specification that defines requirements for billing data.
 
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
-A FOCUS dataset is a structured collection of records that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
+A structured collection of columns that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
 
-In addition to these standardized columns, data generators may include custom provider-specific columns (prefixed with `x_`) where additional context is needed beyond what is captured in the defined FOCUS columns. If such custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
+In addition to these standardized columns, [data generators](#datagenerator) may include custom columns (prefixed with `x_`) where additional context is needed beyond what is captured in the defined FOCUS columns. If custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
 
 The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness.
 
@@ -145,11 +157,11 @@ A government-issued currency (e.g., US dollars, Euros).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
-A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
+A contractual agreement where a customer commits to specific spend or usage goals over a specified [*period*](#glossary:period) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
-A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
+A service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
 
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
@@ -158,6 +170,10 @@ The [charge](#glossary:charge) that existed prior to an operation. This is used 
 <a name="glossary:pascalcase"><b>Pascal Case</b></a>
 
 Pascal Case (PascalCase, also known as UpperCamelCase) is a format for identifiers which contain one or more words meaning the words are concatenated together with no delimiter and the first letter of each word is capitalized.
+
+<a name="glossary:period"><b>Period</b></a>
+
+A time window, with a specifically defined start and end date/time.
 
 <a name="glossary:potato"><b>Potato</b></a>
 
@@ -210,11 +226,9 @@ A metadata label assigned to a resource to provide information about it or to ca
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
 A Resource or Provider-defined construct for grouping resources and/or other Provider-defined construct that a Tag can be assigned to.
-
 <a name="glossary:term"><b>Term</b></a>
 
-A duration of a contractual agreement like with a [*commitment discount*](#glossary:commitment-discount) or [*negotiated discount*](#glossary:negotiated-discount).
-
+An agreement specified on a [*contract*](#glossary:contract).
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
 A proprietary currency (e.g., credits, tokens) issued by providers and independent of government regulation.
