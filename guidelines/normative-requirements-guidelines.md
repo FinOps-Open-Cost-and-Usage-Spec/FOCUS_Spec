@@ -6,11 +6,13 @@
 
 Grouping and ordering of dataset-level normative requirements ensures clarity, consistency, and maintainability across all FOCUS datasets, making related or similar requirements easy to identify and follow.
 
-1. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
-2. **Column Presence in Dataset (*FOR FUTURE USE*):** Intended to define which columns must or are recommended to be present within a dataset, and under which conditions. Currently managed under column-level requirements, but may be elevated to the dataset level in future iterations.
-3. **Technical Attributes Conformance:** Captures technical requirements that apply to all (or most) columns within the dataset (e.g., column handling, null handling). These requirements reflect general technical rules rather than rules for individual columns.
-4. **Business/Contextual Attributes Conformance:** Captures business logic and contextual requirements that span multiple columns within the dataset (e.g., discount handling, invoice handling). These rules are not tied to a single column but define broader dataset behavior.
-5. **Other Business/Contextual Requirements (*FOR FUTURE USE*):** Captures additional dataset-level rules that do not fall into the above categories but are relevant for interpretation, validation, or integration.
+  1. **Technical Requirements**
+     1. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
+     2. **Column Presence in Dataset (*FOR FUTURE USE*):** Intended to define which columns must or are recommended to be present within a dataset, and under which conditions. Currently managed under column-level requirements, but may be elevated to the dataset level in future iterations.
+     3. **Technical Attributes Conformance:** Captures technical requirements that apply to all (or most) columns within the dataset (e.g., column handling, null handling). These requirements reflect general technical rules rather than rules for individual columns.
+  2. **Business & Contextual Requirements**
+     1. **Business/Contextual Attributes Conformance:** Captures business logic and contextual requirements that span multiple columns within the dataset (e.g., discount handling, invoice handling). These rules are not tied to a single column but define broader dataset behavior.
+     2. **Other Business/Contextual Requirements (*FOR FUTURE USE*):** Captures additional dataset-level rules that do not fall into the above categories but are relevant for interpretation, validation, or integration.
 
 #### Tabular Overview of Dataset Normative Requirement Grouping and Specifications
 
@@ -36,13 +38,43 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 
 ### Structuring Individual Dataset Requirements
 
-TODO
+* **Start with the DatasetId**: Whenever possible, begin each requirement with the DatasetId to make the requirement clear and focused.
 
-### Dataset Examples
+  **Example Pattern 1**
+
+  *Note: Text in square brackets [ ] indicates optional elements that apply only under certain conditions.*
+
+  ```markdown
+  * <DatasetId> MUST be present[ when <Condition>].
+  ```
+
+### Consistent Wording and Patterns in Dataset Requirements
+
+Use standardized phrasing and terminology, and apply common requirement patterns where applicable to ensure clarity and consistency across datasets and corresponding requirements.
+
+#### Dataset Requirement Patterns
+
+##### Technical Requirements: Dataset Presence
+
+```markdown
+* <DatasetId> MUST be present[ when <Condition>].
+```
+
+##### Technical Requirements: Technical Attributes Conformance
+
+```markdown
+* <DatasetId> MUST conform to <TechnicalAttributeId> requirements.
+```
+
+##### Business Requirements: Business/Contextual Attributes Conformance
+
+```markdown
+* <DatasetId> MUST conform to <BusinessAttributeId> requirements.
+```
+
+### Dataset Normative Requirements Examples
 
 #### **Contract Commitment**
-
-##### **Contract Commitment v.1.3 (Refinement)**
 
 The ContractCommitment dataset adheres to the following requirements:
 
@@ -50,15 +82,7 @@ The ContractCommitment dataset adheres to the following requirements:
 * ContractCommitment MUST conform to [ColumnHandling](#columnhandling) requirements.
 * CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
 
-##### **Contract Commitment v.1.3 (Original)**
-
-The ContractCommitment dataset adheres to the following requirements:
-
-* ContractCommitment MUST be present when the provider supports *contract commitments*.
-
 #### **Cost and Usage**
-
-##### **Cost and Usage v.1.3 (Refinement)**
 
 The CostAndUsage dataset adheres to the following requirements:
 
@@ -66,16 +90,6 @@ The CostAndUsage dataset adheres to the following requirements:
 * CostAndUsage MUST conform to [ColumnHandling](#columnhandling) requirements.
 * CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
-* CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
-* CostAndUsage MUST conform to [ProviderCalculatedSplitCostAllocationHandling](#provider-calculatedsplitcostallocationhandling) requirements.
-
-##### **Cost and Usage v.1.3 (Original)**
-
-The CostAndUsage dataset adheres to the following requirements:
-
-* CostAndUsage MUST conform to [ColumnHandling](#columnhandling) requirements.
-* CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
-* CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
 * CostAndUsage MUST conform to [ProviderCalculatedSplitCostAllocationHandling](#provider-calculatedsplitcostallocationhandling) requirements.
 
@@ -159,14 +173,14 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 ### Additional Guidelines for Columns in JSON Format
 
-### Column Definition Structure
+#### Column Definition Structure
 
 * **Separate normative requirements into sections for column, JSON schema, and contents**: Communicating the normative requirements for a column, JSON schema, and the contents can be convoluted. Separating these requirements provides better clarity.
   * Column normative requirements specify requirements of the column such as nullability.
   * JSON schema normative requirements specify the shape of the JSON.
   * Contents normative requirements usually specify the expected Keys, the format of the Values, and the expected contents of the Values.
 
-### JSON Schema
+#### JSON Schema
 
 * **Omit JSON schema normative requirements for Key-Value Format columns**: The Key-Value Format definition is sufficient to define the expected JSON schema.
 
@@ -211,13 +225,13 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   }
   ```
 
-### Key-Value Pairs
+#### Key-Value Pairs
 
 * **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **provider-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
 
 * **Default to Plural for Key-Value Pairs**: When referring to key-value pairs, **tags** and **properties** should be used in the plural form to reflect the fact that the column may contain multiple key-value pairs.
 
-### Keys and Values
+#### Keys and Values
 
 * **Refer to Key and Values Explicitly**: When specifying normative requirements for key and value, use precise terminology based on the column type. For instance:
   * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
@@ -467,28 +481,10 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * When the provider has only one user-defined tag scheme. (instead of: When the provider has only 1 user-defined tag scheme.)
   * When the provider has more than one user-defined tag scheme. (instead of: When the provider has 2 or more user-defined tag schemes.)
 
-### Column Examples
+### Column Normative Requirements Examples
 
 #### **List Unit Price**
 
-##### **List Unit Price v.1.2 (Simplified Refinement)**
-
-The ListUnitPrice column adheres to the following requirements:
-
-* **(Presence)** ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
-* **(Data Type)** ListUnitPrice MUST be of type Decimal.
-* **(Value Format)** ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
-* **(Nullability - Definition)** ListUnitPrice nullability is defined as follows:
-  * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
-  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
-  * ListUnitPrice MAY be null in all other cases.
-* **(Nullability - Conditional)** When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
-  * **(Values and Value Ranges)** ListUnitPrice MUST be a non-negative decimal value.
-  * **(Unit/Denomination)** ListUnitPrice MUST be denominated in the BillingCurrency.
-  * **(Formula-based Cost Validation)** The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
-  * **(Cost Correction Discrepancies)** Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
-
----
 The ListUnitPrice column adheres to the following requirements:
 
 * ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
@@ -504,18 +500,7 @@ The ListUnitPrice column adheres to the following requirements:
   * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
   * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
 
-##### **List Unit Price v.1.1 (Original)**
-
-The ListUnitPrice column adheres to the following requirements:
-
-* The ListUnitPrice column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
-* This column MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency.
-* It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
-* When ListUnitPrice is present and is not null, multiplying ListUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ListCost](#listcost), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
-
 #### **Billed Cost**
-
-##### **Billed Cost v.1.2 (Simplified Refinement)**
 
 The BilledCost column adheres to the following requirements:
 
@@ -527,17 +512,7 @@ The BilledCost column adheres to the following requirements:
 * BilledCost MUST be denominated in the BillingCurrency.
 * The sum of BilledCost in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
-##### **Billed Cost v.1.1 (Original)**
-
-The BilledCost column adheres to the following requirements:
-
-* The BilledCost column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) and MUST NOT be null.
-* This column MUST be of type Decimal, MUST conform to [Numeric Format](#numericformat), and be denominated in the BillingCurrency.
-* The sum of the BilledCost for [*rows*](#glossary:row) in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
-
 #### **CommitmentDiscountQuantity**
-
-##### **CommitmentDiscountQuantity v.1.2 (Simplified Refinement)**
 
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
@@ -557,23 +532,3 @@ The CommitmentDiscountQuantity column adheres to the following requirements:
   * When ChargeCategory is "Usage":
     * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
     * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given *charge period* when CommitmentDiscountStatus is "Unused".
-
-##### **CommitmentDiscountQuantity v.1.1 (Original)**
-
-The CommitmentDiscountQuantity column adheres to the following requirements:
-
-* CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
-* CommitmentDiscountQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
-* CommitmentDiscountQuantity MAY be null or any valid decimal value if [*CommitmentDiscountId*](#commitmentdiscountid) is not null and [*ChargeClass*](#chargeclass) is "Correction".
-
-In cases where the ChargeCategory is "Purchase", CommitmentDiscountId is not null, and ChargeClass is not "Correction", the following applies:
-
-* When [ChargeFrequency](#chargefrequency) is "One-Time", and CommitmentDiscountId is not null, CommitmentDiscountQuantity MUST be the positive quantity of CommitmentDiscountUnits, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* [*period*](#glossary:period).
-* When ChargeFrequency is "Recurring", and CommitmentDiscountId is not null, CommitmentDiscountQuantity MUST be the positive quantity of CommitmentDiscountUnits that is eligible for consumption for each *charge period* that corresponds with the purchase.
-
-In cases where the ChargeCategory is "Usage", CommitmentDiscountId is not null, and ChargeClass is not "Correction", the following applies:
-
-* When [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used", CommitmentDiscountQuantity MUST be the positive, metered quantity of CommitmentDiscountUnits that is consumed over the *row's* *charge period*.
-* When CommitmentDiscountStatus is "Unused", CommitmentDiscountQuantity MUST be the remaining, positive, unused quantity of CommitmentDiscountUnits for the *row's* *charge period*.
-
-CommitmentDiscountQuantity MUST be null in all other cases.
