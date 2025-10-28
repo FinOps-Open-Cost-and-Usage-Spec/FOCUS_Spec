@@ -4,16 +4,16 @@ The schema metadata object and its content provide information about the structu
 
 ## Requirements
 
-### Reference to FOCUS Data
+* Schema metadata MUST be provided for every FOCUS dataset provided by the data generator.
+* Schema metadata MUST provide a reference to the FOCUS dataset of the dataset artifact.
+* Schema metadata MUST be retrievable independently from the dataset it describes. 
+* Schema metadata MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
+* Schema metadata SHOULD be provided separately from the dataset artifact it describes.
+* Schema metadata MUST be updated via a new metadata object when a data generator changes the structure of a FOCUS dataset.
 
-FOCUS data artifacts, whether they are data files, data streams, or data tables, MUST provide a clear reference to the schema of the data. This reference MUST be retrievable without inspection of the contents of the FOCUS data within the data artifact. For some delivery mechanisms such as database tables, the provider may rely on the schema functionality of the providing system.
+## Examples
 
-It is recommended that the schema reference be provided as an external reference rather than included in full as metadata accompanying the data artifact. This allows for easier understanding of when changes to the schema of the [*FOCUS datasets*](#glossary:FOCUS-dataset) occurs.
-
-### Schema Metadata Creation
-
-Should the provider change the structure of the supplied FOCUS data artifact, a new schema metadata object MUST be supplied.
-These scenarios include but are not limited to:
+There are many scenarios that would result in an update to the Schema metadata.  These scenarios include but are not limited to:
 
 * [Adding a new column](#addingnewcolumns)
 * [Removing a column](#removingcolumns)
@@ -21,11 +21,5 @@ These scenarios include but are not limited to:
 * [FOCUS Version has changed](#focusversionchanged)
 * [Data Generator Version has changed](#schemametadatatofocusdatareference)
 * [Correcting schema metadata errors](#providermetadataerrorcorrection)
-
-### Schema Metadata Updates
-
-Should there be an error where the schema metadata object does not match the schema of the FOCUS data artifact, the provider MUST update the schema metadata object to match the schema of the FOCUS data artifact. This is to ensure that the schema metadata object is always accurate.
-
-## Schema Example
 
 For an example of the FOCUS schema metadata, please refer to: [Schema Metadata Example](#schemametadata).
