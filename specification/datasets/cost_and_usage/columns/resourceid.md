@@ -4,6 +4,8 @@ A Resource ID is an identifier assigned to a [*resource*](#glossary:resource) by
 
 ## Requirements
 
+ResourceId adheres to the following requirements:
+
 * ResourceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned *resources*.
 * ResourceId MUST be of type String.
 * ResourceId MUST conform to [StringHandling](#stringhandling) requirements.
