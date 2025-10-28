@@ -4,6 +4,8 @@ Publisher is the name of the entity that produces the [*resources*](#glossary:re
 
 ## Requirements
 
+PublisherName adheres to the following requirements:
+
 * PublisherName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PublisherName MUST be of type String.
 * PublisherName MUST conform to [StringHandling](#stringhandling) requirements.
