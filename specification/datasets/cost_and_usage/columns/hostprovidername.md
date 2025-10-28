@@ -6,6 +6,8 @@ In some instances, the host provider and the service provider are the same entit
 
 ## Requirements
 
+HostProviderName adheres to the following requirements:
+
 * HostProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * HostProviderName MUST be of type String.
 * HostProviderName MUST conform to [StringHandling](#stringhandling) requirements.
