@@ -4,7 +4,7 @@ An Allocated Resource ID is an identifier assigned by the provider which cost is
 
 ## Requirements
 
-AllocatedResourceId adheres to the following requirements.
+AllocatedResourceId adheres to the following requirements:
 
 * AllocatedResourceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports provider-calculated split cost allocation.
 * AllocatedResourceId MUST be of type String.
