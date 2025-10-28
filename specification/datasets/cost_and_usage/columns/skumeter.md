@@ -6,6 +6,8 @@ Providers often have billing models in which multiple SKUs exist for a given ser
 
 ## Requirements
 
+SkuMeter adheres to the following requirements:
+
 * SkuMeter MUST be present in a *FOCUS dataset* when the provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
 * SkuMeter MUST be of type String.
 * SkuMeter MUST conform to [StringHandling](#stringhandling) requirements.
