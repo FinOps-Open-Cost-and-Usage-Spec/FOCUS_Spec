@@ -4,7 +4,23 @@
 
 ### Logical Grouping of Dataset Requirements
 
-TODO
+Grouping and ordering of dataset-level normative requirements ensures clarity, consistency, and maintainability across all FOCUS datasets, making related or similar requirements easy to identify and follow.
+
+1. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
+2. **Column Presence in Dataset (*FOR FUTURE USE*):** Intended to define which columns must or are recommended to be present within a dataset, and under which conditions. Currently managed under column-level requirements, but may be elevated to the dataset level in future iterations.
+3. **Technical Attributes Conformance:** Captures technical requirements that apply to all (or most) columns within the dataset (e.g., column handling, null handling). These requirements reflect general technical rules rather than rules for individual columns.
+4. **Business/Contextual Attributes Conformance:** Captures business logic and contextual requirements that span multiple columns within the dataset (e.g., discount handling, invoice handling). These rules are not tied to a single column but define broader dataset behavior.
+5. **Other Business/Contextual Requirements (*FOR FUTURE USE*):** Captures additional dataset-level rules that do not fall into the above categories but are relevant for interpretation, validation, or integration.
+
+#### Tabular Overview of Dataset Normative Requirement Grouping and Specifications
+
+| Requirement Type | Requirement Group                                      | When Required?                               | Example                                                    |
+|------------------|--------------------------------------------------------|----------------------------------------------|------------------------------------------------------------|
+| Technical        | Dataset Presence                                       | Always                                       | {DatasetId} MUST be present when {Condition}.              |
+| Technical        | Column Presence in Dataset (FOR FUTURE USE)            | For future use; currently managed per column | N/A                                                        |
+| Technical        | Technical Attributes Conformance                       | Always or when applicable                    | {DatasetId} MUST conform to ColumnHandling requirements.   |
+| Business         | Business/Contextual Attributes Conformance             | When applicable                              | {DatasetId} MUST conform to DiscountHandling requirements. |
+| Business         | Other Business/Contextual Requirements (FOR FUTURE USE)| For future use                               | N/A                                                        |
 
 ### Ordering of Dataset Requirements Within Groups
 
@@ -24,13 +40,15 @@ TODO
 
 ### Dataset Examples
 
-TODO
-
 #### **Contract Commitment**
 
 ##### **Contract Commitment v.1.3 (Refinement)**
 
-TODO
+The ContractCommitment dataset adheres to the following requirements:
+
+* ContractCommitment MUST be present when the provider supports *contract commitments*.
+* ContractCommitment MUST conform to [ColumnHandling](#columnhandling) requirements.
+* CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
 
 ##### **Contract Commitment v.1.3 (Original)**
 
@@ -42,7 +60,14 @@ The ContractCommitment dataset adheres to the following requirements:
 
 ##### **Cost and Usage v.1.3 (Refinement)**
 
-TODO
+The CostAndUsage dataset adheres to the following requirements:
+
+* CostAndUsage MUST be present.
+* CostAndUsage MUST conform to [ColumnHandling](#columnhandling) requirements.
+* CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
+* CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
+* CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
+* CostAndUsage MUST conform to [ProviderCalculatedSplitCostAllocationHandling](#provider-calculatedsplitcostallocationhandling) requirements.
 
 ##### **Cost and Usage v.1.3 (Original)**
 
@@ -84,18 +109,18 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 | **Requirement Type** | **Requirement Group**              | **When required?**                    | **Example**                                                                                |
 |----------------------|------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------|
-| Technical            | Presence                           | Always                                | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when Condition. |
+| Technical            | Presence                           | Always                                | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when {Condition}. |
 | Technical            | Data Type                          | Always                                | {ColumnId} MUST be of type String.                                                         |
 | Technical            | Value Format                       | Always (except normalized dimensions) | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                 |
-| Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when Condition.                     |
+| Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when {Condition}.                     |
 | Technical            | Values and Value Ranges            | Metrics and normalized dimensions     | {ColumnId} MUST be a valid decimal value.<br/>{ColumnId} MUST be one of the allowed values. |
 | Technical            | Column to column Relationships     | When applicable                       | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
 | Business             | Unit/Denomination                  | When applicable                       | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
 | Business             | Uniqueness                         | When applicable                       | BillingAccountId MUST be a unique identifier within a provider.                            |
-| Business             | Fallback/Substitute Values         | When applicable                       | {ColumnId} MUST NOT duplicate {OtherColumnId} when Condition.                              |
+| Business             | Fallback/Substitute Values         | When applicable                       | {ColumnId} MUST NOT duplicate {OtherColumnId} when {Condition}.                              |
 | Business             | Relationships Outside the Spec     | When applicable                       | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
 | Business             | Formula-based Cost Validation      | When applicable                       | {CostColumnId} MUST equal the product of {UnitPriceColumnId} and PricingQuantity when {UnitPriceColumnId} is not null and PricingQuantity is not null. |
-| Business             | Cost Calculation and Relationships | When applicable                       | When Condition, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
+| Business             | Cost Calculation and Relationships | When applicable                       | When {Condition}, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
 | Business             | Other                              | When applicable                       |                                                                                           |
 
 ### Ordering of Column Requirements Within Groups
