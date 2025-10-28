@@ -4,6 +4,8 @@ Provider is the name of the entity that makes the [*resources*](#glossary:resour
 
 ## Requirements
 
+ProviderName adheres to the following requirements:
+
 * ProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ProviderName MUST be of type String.
 * ProviderName MUST conform to [StringHandling](#stringhandling) requirements.
