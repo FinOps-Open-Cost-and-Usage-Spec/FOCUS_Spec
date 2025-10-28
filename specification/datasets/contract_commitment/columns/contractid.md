@@ -4,6 +4,8 @@ Contract ID is a provider-assigned identifier for a contract describing the agre
 
 ## Requirements
 
+ContractId adheres to the following requirements:
+
 * ContractId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractId MUST be of type String.
 * ContractId MUST conform to [StringHandling](#stringhandling) requirements.
