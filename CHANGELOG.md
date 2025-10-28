@@ -45,7 +45,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New columns
 
-- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+- [`CostAndUsage`](specification/datasets/cost_and_usage/dataset.md)
   - [`AllocatedMethodDetails`](/specification/datasets/cost_and_usage/columns/allocatedmethoddetails.md)
   - [`AllocatedMethodId`](/specification/datasets/cost_and_usage/columns/allocatedmethodid.md)
   - [`AllocatedResourceId`](/specification/datasets/cost_and_usage/columns/allocatedresourceid.md)
@@ -55,18 +55,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   - [`HostProviderName`](/specification/datasets/cost_and_usage/columns/hostprovidername.md)
   - [`ServiceProviderName`](/specification/datasets/cost_and_usage/columns/serviceprovidername.md)
 - [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md)
-  - `BillingCurrency`
-  - `ContractCommitmentCategory`
-  - `ContractCommitmentCost`
-  - `ContractCommitmentId`
-  - `ContractCommitmentPeriodEnd`
-  - `ContractCommitmentPeriodStart`
-  - `ContractCommitmentQuantity`
-  - `ContractCommitmentType`
-  - `ContractCommitmentUnit`
-  - `ContractId`
-  - `ContractPeriodEnd`
-  - `ContractPeriodStart`
+  - [`BillingCurrency`](/specification/datasets/contract_commitment/columns/billingcurrency.md)
+  - [`ContractCommitmentCategory`](/specification/datasets/contract_commitment/columns/contractcommitmentcategory.md)
+  - [`ContractCommitmentCost`](/specification/datasets/contract_commitment/columns/contractcommitmentcost.md)
+  - [`ContractCommitmentId`](/specification/datasets/contract_commitment/columns/contractcommitmentid.md)
+  - [`ContractCommitmentPeriodEnd`](/specification/datasets/contract_commitment/columns/contractcommitmentperiodend.md)
+  - [`ContractCommitmentPeriodStart`](/specification/datasets/contract_commitment/columns/contractcommitmentperiodstart.md)
+  - [`ContractCommitmentQuantity`](/specification/datasets/contract_commitment/columns/contractcommitmentquantity.md)
+  - [`ContractCommitmentType`](/specification/datasets/contract_commitment/columns/contractcommitmenttype.md)
+  - [`ContractCommitmentUnit`](/specification/datasets/contract_commitment/columns/contractcommitmentunit.md)
+  - [`ContractId`](/specification/datasets/contract_commitment/columns/contractid.md)
+  - [`ContractPeriodEnd`](/specification/datasets/contract_commitment/columns/contractperiodend.md)
+  - [`ContractPeriodStart`](/specification/datasets/contract_commitment/columns/contractperiodstart.md)
 
 #### New attributes
 
