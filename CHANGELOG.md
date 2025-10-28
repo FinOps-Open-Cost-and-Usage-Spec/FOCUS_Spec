@@ -92,22 +92,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New metadata column definition properties
 
-(TODO: add relative links for all of these once they have been approved and merged into `working_draft`)
-
-- DatasetInstance
-  - DatasetInstanceId
-  - DatasetInstanceName
-  - FocusDatasetId
-- Recency
-  - DatasetInstanceComplete
-  - DatasetInstanceId
-  - DatasetInstanceLastUpdated
-  - RecencyLastUpdated
-  - TimeSectors
-    - TimeSectorComplete
-    - TimeSectorEnd
-    - TimeSectorLastUpdated
-    - TimeSectorStart
+- [`DatasetInstance`](/specification/metadata/dataset_instance/dataset_instance_overview.md)
+  - [`DatasetInstanceId`](/specification/metadata/dataset_instance/dataset_instance_id.md)
+  - [`DatasetInstanceName`](/specification/metadata/dataset_instance/dataset_instance_name.md)
+  - [`FocusDatasetId`](/specification/metadata/dataset_instance/focus_dataset_id.md)
+- [`Recency`](/specification/metadata/recency/recency_overview.md)
+  - [`DatasetInstanceComplete`](/specification/metadata/recency/dataset_instance_complete.md)
+  - [`DatasetInstanceId`](/specification/metadata/recency/dataset_instance_id.md)
+  - [`DatasetInstanceLastUpdated`](/specification/metadata/recency/dataset_instance_last_updated.md)
+  - [`RecencyLastUpdated`](/specification/metadata/recency/recency_last_updated.md)
+  - [`TimeSectors`](/specification/metadata/recency/time_sectors/time_sectors_overview.md)
+    - [`TimeSectorComplete`](/specification/metadata/recency/time_sectors/time_sector_complete.md)
+    - [`TimeSectorEnd`](/specification/metadata/recency/time_sectors/time_sector_end.md)
+    - [`TimeSectorLastUpdated`](/specification/metadata/recency/time_sectors/time_sector_last_updated.md)
+    - [`TimeSectorStart`](/specification/metadata/recency/time_sectors/time_sector_start.md)
 
 #### New glossary entries
 
