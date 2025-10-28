@@ -4,6 +4,8 @@ The Service Category is the highest-level classification of a [*service*](#gloss
 
 ## Requirements
 
+ServiceCategory adheres to the following requirements:
+
 * ServiceCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceCategory MUST be of type String.
 * ServiceCategory MUST NOT be null.
