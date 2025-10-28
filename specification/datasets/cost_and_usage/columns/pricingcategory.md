@@ -4,6 +4,8 @@ Pricing Category describes the pricing model used for a [*charge*](#glossary:cha
 
 ## Requirements
 
+PricingCategory adheres to the following requirements:
+
 * PricingCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all [*SKUs*](#glossary:sku).
 * PricingCategory MUST be of type String.
 * PricingCategory nullability is defined as follows:
