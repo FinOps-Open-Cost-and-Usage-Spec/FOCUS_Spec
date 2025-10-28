@@ -4,6 +4,8 @@ Commitment Discount Status indicates whether the [*charge*](#glossary:charge) co
 
 ## Requirements
 
+CommitmentDiscountStatus adheres to the following requirements:
+
 * CommitmentDiscountStatus MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountStatus MUST be of type String.
 * CommitmentDiscountStatus nullability is defined as follows:
