@@ -2,7 +2,7 @@
 
 A Region ID is a provider-assigned identifier for an isolated geographic area where a [*resource*](#glossary:resource) is provisioned or a [*service*](#glossary:service) is provided. The region is commonly used for scenarios like analyzing cost and unit prices based on where *resources* are deployed.
 
-The RegionId column adheres to the following requirements:
+## Requirements
 
 * RegionId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
 * RegionId MUST be of type String.
