@@ -4,6 +4,8 @@ Allocated Method ID is the unique identifier for the [allocated method](#glossar
 
 ## Requirements
 
+AllocatedMethodId adheres to the following requirements:
+
 * AllocatedMethodId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports provider-calculated split cost allocation.
 * AllocatedMethodId MUST be of type String.
 * AllocatedMethodId MUST conform to [StringHandling](#stringhandling) requirements.
