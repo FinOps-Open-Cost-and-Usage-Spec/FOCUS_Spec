@@ -4,6 +4,8 @@ The Allocated Tags column represents the set of [*tags*](#glossary:tag) assigned
 
 ## Requirements
 
+AllocatedTags adheres to the following requirements:
+
 * AllocatedTags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling).
 * AllocatedTags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
 * AllocatedTags nullability is defined as follows:
