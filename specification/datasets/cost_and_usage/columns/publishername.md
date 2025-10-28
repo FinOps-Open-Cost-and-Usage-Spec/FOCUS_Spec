@@ -2,7 +2,7 @@
 
 Publisher is the name of the entity that produces the [*resources*](#glossary:resource) or [*services*](#glossary:service) that were purchased. It is commonly used for cost analysis and reporting scenarios.
 
-The PublisherName column adheres to the following requirements:
+## Requirements
 
 * PublisherName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PublisherName MUST be of type String.
