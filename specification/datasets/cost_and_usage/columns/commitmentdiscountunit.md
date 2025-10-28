@@ -4,6 +4,8 @@ Commitment Discount Unit represents the provider-specified measurement unit indi
 
 ## Requirements
 
+CommitmentDiscountUnit adheres to the following requirements:
+
 * CommitmentDiscountUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountUnit MUST be of type String.
 * CommitmentDiscountUnit MUST conform to [StringHandling](#stringhandling) requirements.
