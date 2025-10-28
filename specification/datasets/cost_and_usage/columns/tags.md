@@ -4,7 +4,7 @@ The Tags column represents the set of [*tags*](#glossary:tag) assigned to [*tag 
 
 A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is selected from a set of possible tag values assigned to the tag key.  When supported by a provider, this can occur when a tag value is set by provider-defined or user-defined rules.
 
-The Tags column adheres to the following requirements:
+## Requirements
 
 * Tags MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports setting user or provider-defined tags.
 * Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
