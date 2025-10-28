@@ -6,7 +6,7 @@ The schema metadata object and its content provide information about the structu
 
 * Schema metadata MUST be provided for every FOCUS dataset provided by the data generator.
 * Schema metadata MUST provide a reference to the FOCUS dataset of the dataset artifact.
-* Schema metadata MUST be retrievable independently from the dataset it describes. 
+* Schema metadata MUST be retrievable independently from the dataset it describes.
 * Schema metadata MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
 * Schema metadata SHOULD be provided separately from the dataset artifact it describes.
 * Schema metadata MUST be updated via a new metadata object when a data generator changes the structure of a FOCUS dataset.
