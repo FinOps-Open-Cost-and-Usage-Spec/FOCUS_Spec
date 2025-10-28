@@ -8,19 +8,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <sup>Announced December 2025</sup>
 
-### Changes by Classification:
+### Changes to Supported Features by [Change Impact Classification](/guidelines/spec-change-guidelines.md)
+
 #### Compatible Changes
-- Column additions to support Split Cost Allocation
-- New Dataset for Contract Commitments
-- New Column to support Host Provider Identification
-- New Metadata to support Dataset Metadata
-- New Metadata to support Dataset Recency
+
+- New Columns to support [Provider-Calculated Split Cost Allocation](/specification/supported_features/provider_calculated_split_cost_allocation.md)
+- New Dataset to support Contract Commitments
+- New Columns to support [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
+- New Metadata to support [Dataset Instance Metadata](/specification/supported_features/dataset_instance_metadata.md)
+- New Metadata to support [Recency Metadata](/specification/supported_features/recency_metadata.md)
 
 #### Migration Compatible Changes
-- Replacement of Provider and Publisher Columns
+
+- Replacement of Provider and Publisher Columns to support [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
 
 #### Incompatible Changes
-**None**
+
+- None
 
 ### Added
 
