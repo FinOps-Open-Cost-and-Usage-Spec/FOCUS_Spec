@@ -45,7 +45,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New columns
 
-- [`CostAndUsage`](specification/datasets/cost_and_usage/dataset.md)
+- [`CostAndUsage`](./specification/datasets/cost_and_usage/dataset.md)
   - [`AllocatedMethodDetails`](/specification/datasets/cost_and_usage/columns/allocatedmethoddetails.md)
   - [`AllocatedMethodId`](/specification/datasets/cost_and_usage/columns/allocatedmethodid.md)
   - [`AllocatedResourceId`](/specification/datasets/cost_and_usage/columns/allocatedresourceid.md)
