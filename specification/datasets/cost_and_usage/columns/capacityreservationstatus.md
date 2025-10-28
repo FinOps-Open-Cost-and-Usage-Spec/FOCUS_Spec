@@ -2,7 +2,7 @@
 
 Capacity Reservation Status indicates whether the [*charge*](#glossary:charge) represents either the consumption of the [*capacity reservation*](#glossary:capacity-reservation) identified in the CapacityReservationId column or when the *capacity reservation* is unused.
 
-## Requirements:
+## Requirements
 
 * CapacityReservationStatus MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *capacity reservations*.
 * CapacityReservationStatus MUST be of type String.
