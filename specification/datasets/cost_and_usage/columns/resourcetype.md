@@ -4,6 +4,8 @@ Resource Type describes the kind of [*resource*](#glossary:resource) the [*charg
 
 ## Requirements
 
+ResourceType adheres to the following requirements:
+
 * ResourceType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned *resources* and supports assigning types to *resources*.
 * ResourceType MUST be of type String.
 * ResourceType MUST conform to [StringHandling](#stringhandling) requirements.
