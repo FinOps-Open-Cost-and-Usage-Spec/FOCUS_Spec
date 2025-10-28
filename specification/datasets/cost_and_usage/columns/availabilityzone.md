@@ -4,6 +4,8 @@ An [*availability zone*](#glossary:availability-zone) is a provider-assigned ide
 
 ## Requirements
 
+AvailabilityZone adheres to the following requirements:
+
 * AvailabilityZone is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within an *availability zone*.
 * AvailabilityZone MUST be of type String.
 * AvailabilityZone MUST conform to [StringHandling](#stringhandling) requirements.
