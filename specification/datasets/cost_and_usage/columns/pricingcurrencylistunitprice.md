@@ -2,7 +2,7 @@
 
 The Pricing Currency List Unit Price represents the suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [*SKU*](#glossary:sku), exclusive of any discounts. This price is denominated in the [Pricing Currency](#pricingcurrency). The Pricing Currency List Unit Price is commonly used for calculating savings based on various rate optimization activities.
 
-The PricingCurrencyListUnitPrice column adheres to the following requirements:
+## Requirements
 
 * PricingCurrencyListUnitPrice presence in a [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
   * PricingCurrencyListUnitPrice MUST be present in a *FOCUS dataset* when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
