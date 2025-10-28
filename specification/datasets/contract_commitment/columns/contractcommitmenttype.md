@@ -4,6 +4,8 @@ Contract Commitment Type is a provider-assigned name to identify the type of [*c
 
 ## Requirements
 
+ContractCommitmentType adheres to the following requirements:
+
 * ContractCommitmentType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentType MUST be of type String.
 * ContractCommitmentType MUST conform to [StringHandling](#stringhandling) requirements.
