@@ -2,7 +2,7 @@
 
 Region Name is a provider-assigned display name for an isolated geographic area where a [*resource*](#glossary:resource) is provisioned or a [*service*](#glossary:service) is provided. Region Name is commonly used for scenarios like analyzing cost and unit prices based on where *resources* are deployed.
 
-The RegionName column adheres to the following requirements:
+## Requirements
 
 * RegionName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
 * RegionName MUST be of type String.
