@@ -4,6 +4,8 @@ The Consumed Unit represents a provider-specified measurement unit indicating ho
 
 ## Requirements
 
+ConsumedUnit adheres to the following requirements:
+
 * ConsumedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
 * ConsumedUnit MUST be of type String.
 * ConsumedUnit MUST conform to [StringHandling](#stringhandling) requirements.
