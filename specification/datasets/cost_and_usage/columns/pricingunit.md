@@ -4,6 +4,8 @@ The Pricing Unit represents a provider-specified measurement unit for determinin
 
 ## Requirements
 
+PricingUnit adheres to the following requirements:
+
 * PricingUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PricingUnit MUST be of type String.
 * PricingUnit MUST conform to [StringHandling](#stringhandling) requirements.
