@@ -2,7 +2,7 @@
 
 A Sub Account ID is a provider-assigned identifier assigned to a [*sub account*](#glossary:sub-account). Sub Account ID is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
 
-The SubAccountId column adheres to the following requirements:
+## Requirements
 
 * SubAccountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
 * SubAccountId MUST be of type String.
