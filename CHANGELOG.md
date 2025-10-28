@@ -13,14 +13,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Compatible Changes
 
 - New Columns to support [Provider-Calculated Split Cost Allocation](/specification/supported_features/provider_calculated_split_cost_allocation.md)
-- New Dataset to support Contract Commitments
+- New Dataset and Columns to support [Contract Commitments](/specification/supported_features/contract_commitments.md)
 - New Columns to support [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
 - New Metadata to support [Dataset Instance Metadata](/specification/supported_features/dataset_instance_metadata.md)
 - New Metadata to support [Recency Metadata](/specification/supported_features/recency_metadata.md)
 
 #### Migration Compatible Changes
 
-- Replacement of Provider and Publisher Columns to support [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
+- Replacement of Provider and Publisher Columns, affecting:
+  - [Charge Categorization](/specification/supported_features/charge_categorization.md)
+  - [Commit Usage and Under Usage](/specification/supported_features/commit_usage_and_under_usage.md)
+  - [Cost Comparison](/specification/supported_features/cost_comparison.md)
+  - [Effective Cost](/specification/supported_features/effective_cost.md)
+  - [Marketplace Purchases](/specification/supported_features/marketplace_purchases.md)
+  - [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
+  - [Provider Services](/specification/supported_features/provider_services.md)
+  - [Resource Usage](/specification/supported_features/resource_usage.md)
+  - [Service Categorization](/specification/supported_features/service_categorization.md)
 
 #### Incompatible Changes
 
@@ -30,22 +39,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New datasets
 
-- `CostAndUsage`
+- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
   - FOCUS had only one dataset prior to 1.3, and thus it did not have a name.
-- `ContractCommitment`
+- [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md)
 
 #### New columns
 
-- `CostAndUsage`
-  - `AllocatedMethodDetails`
-  - `AllocatedMethodId`
-  - `AllocatedResourceId`
-  - `AllocatedResourceName`
-  - `AllocatedTags`
-  - `ContractApplied`
-  - `HostProvider`
-  - `ServiceProvider`
-- `ContractCommitment`
+- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  - [`AllocatedMethodDetails`](/specification/datasets/cost_and_usage/columns/allocatedmethoddetails.md)
+  - [`AllocatedMethodId`](/specification/datasets/cost_and_usage/columns/allocatedmethodid.md)
+  - [`AllocatedResourceId`](/specification/datasets/cost_and_usage/columns/allocatedresourceid.md)
+  - [`AllocatedResourceName`](/specification/datasets/cost_and_usage/columns/allocatedresourcename.md)
+  - [`AllocatedTags`](/specification/datasets/cost_and_usage/columns/allocatedtags.md)
+  - [`ContractApplied`](/specification/datasets/cost_and_usage/columns/contractapplied.md)
+  - [`HostProviderName`](/specification/datasets/cost_and_usage/columns/hostprovidername.md)
+  - [`ServiceProviderName`](/specification/datasets/cost_and_usage/columns/serviceprovidername.md)
+- [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md)
   - `BillingCurrency`
   - `ContractCommitmentCategory`
   - `ContractCommitmentCost`
