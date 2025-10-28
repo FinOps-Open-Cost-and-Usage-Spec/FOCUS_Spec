@@ -4,6 +4,8 @@ A Commitment Discount Name is the display name assigned to a [*commitment discou
 
 ## Requirements
 
+CommitmentDiscountName adheres to the following requirements:
+
 * CommitmentDiscountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountName MUST be of type String.
 * CommitmentDiscountName MUST conform to [StringHandling](#stringhandling) requirements.
