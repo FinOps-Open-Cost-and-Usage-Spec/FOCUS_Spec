@@ -6,7 +6,7 @@ The composition of properties associated with a specific *SKU Price* may differ 
 
 SKU Price Details helps practitioners understand and distinguish *SKU Prices*, each identified by a SKU Price ID and associated with a used or purchased [*resource*](#glossary:resource) or [*service*](#glossary:service). It can also help determine the quantity of units for a property when it holds a numeric value (e.g., CoreCount), even when its unit differs from the one in which the *SKU* is priced and charged, thus supporting FinOps capabilities such as unit economics. Additionally, the SKU Price Details may be used to analyze costs based on pricing properties such as *periods* and tiers.
 
-The SkuPriceDetails column adheres to the following requirements:
+## Requirements
 
 * SkuPriceDetails MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
 * SkuPriceDetails MUST conform to [KeyValueFormat](#key-valueformat) requirements.
