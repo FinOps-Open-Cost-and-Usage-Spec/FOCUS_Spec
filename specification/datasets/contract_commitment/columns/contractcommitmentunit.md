@@ -2,7 +2,7 @@
 
 The Contract Commitment Unit represents a provider-specified measurement unit for the amount declared in Contract Commitment Quantity. Contract Commitment Unit complements the Contract Commitment Quantity metric.
 
-The ContractCommitmentUnit column adheres to the following requirements:
+## Requirements
 
 * ContractCommitmentUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentUnit MUST be of type String.
