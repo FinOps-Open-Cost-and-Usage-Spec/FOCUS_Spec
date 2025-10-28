@@ -2,7 +2,7 @@
 
 Contract Commitment Cost represents the monetary value of the [*contract commitment*](#glossary:contract-commitment).  Contract Commitment Cost is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a provider and a customer.
 
-The ContractCommitmentCost column adheres to the following requirements:
+## Requirements
 
 * ContractCommitmentCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentCost MUST be of type Decimal.
