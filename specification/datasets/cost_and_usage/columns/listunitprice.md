@@ -4,6 +4,8 @@ The List Unit Price represents the suggested provider-published unit price for a
 
 ## Requirements
 
+ListUnitPrice adheres to the following requirements:
+
 * ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be of type Decimal.
 * ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
