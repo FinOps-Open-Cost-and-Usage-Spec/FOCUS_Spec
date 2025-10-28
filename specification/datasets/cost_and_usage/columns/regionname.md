@@ -4,6 +4,8 @@ Region Name is a provider-assigned display name for an isolated geographic area 
 
 ## Requirements
 
+RegionName adheres to the following requirements:
+
 * RegionName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
 * RegionName MUST be of type String.
 * RegionName MUST conform to [StringHandling](#stringhandling) requirements.
