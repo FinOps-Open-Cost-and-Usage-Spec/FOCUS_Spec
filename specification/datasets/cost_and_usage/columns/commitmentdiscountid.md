@@ -2,7 +2,7 @@
 
 A Commitment Discount ID is the identifier assigned to a [*commitment discount*](#glossary:commitment-discount) by the provider. Commitment Discount ID is commonly used for scenarios like chargeback for *commitments* and savings per *commitment discount*. The CommitmentDiscountId column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
-The CommitmentDiscountId column adheres to the following requirements:
+## Requirements
 
 * CommitmentDiscountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountId MUST be of type String.
