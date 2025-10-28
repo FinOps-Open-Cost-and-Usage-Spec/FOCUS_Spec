@@ -4,6 +4,8 @@ Contract Commitment Category represents the highest-level classification of a [*
 
 ## Requirements
 
+ContractCommitmentCategory adheres to the following requirements:
+
 * ContractCommitmentCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentCategory MUST be of type String.
 * ContractCommitmentCategory MUST NOT be null.
