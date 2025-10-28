@@ -2,7 +2,7 @@
 
 The Pricing Unit represents a provider-specified measurement unit for determining unit prices, indicating how the provider rates measured usage and purchase quantities after applying pricing rules like [*block pricing*](#glossary:block-pricing). Common examples include the number of hours for compute appliance runtime (e.g., `Hours`), gigabyte-hours for a storage appliance (e.g., `GB-Hours`), or an accumulated count of requests for a network appliance or API service (e.g., `1000 Requests`). Pricing Unit complements the [Pricing Quantity](#pricingquantity) metric. Distinct from the [Consumed Unit](#consumedunit), it focuses on pricing and cost, not [*resource*](#glossary:resource) and [*service*](#glossary:service) consumption, often at a coarser granularity.
 
-The PricingUnit column adheres to the following requirements:
+## Requirements
 
 * PricingUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PricingUnit MUST be of type String.
