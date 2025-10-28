@@ -4,6 +4,8 @@ Billing Account Type is a provider-assigned name to identify the type of [*billi
 
 ## Requirements
 
+BillingAccountType adheres to the following requirements:
+
 * BillingAccountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one possible BillingAccountType value.
 * BillingAccountType MUST be of type String.
 * BillingAccountType MUST conform to [StringHandling](#stringhandling) requirements.
