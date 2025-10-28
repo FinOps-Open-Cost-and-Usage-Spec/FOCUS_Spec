@@ -6,6 +6,8 @@ The composition of properties associated with the SKU Price ID may differ across
 
 ## Requirements
 
+SkuPriceId adheres to the following requirements:
+
 * SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
 * SkuPriceId MUST be of type String.
 * SkuPriceId MUST conform to [String Handling](#stringhandling) requirements.
