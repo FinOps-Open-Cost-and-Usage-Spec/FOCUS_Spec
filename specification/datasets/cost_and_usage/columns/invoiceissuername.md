@@ -2,7 +2,7 @@
 
 Invoice Issuer Name is the name of the entity responsible for issuing payable invoices for the [*resources*](#glossary:resource) or [*services*](#glossary:service) consumed. It is commonly used for cost analysis and reporting scenarios.
 
-The InvoiceIssuerName column adheres to the following requirements:
+## Requirements
 
 * InvoiceIssuerName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceIssuerName MUST be of type String.
