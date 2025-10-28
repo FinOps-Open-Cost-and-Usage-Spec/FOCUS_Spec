@@ -4,6 +4,8 @@ Contract Period Start represents the [*inclusive start bound*](#glossary:inclusi
 
 ## Requirements
 
+ContractPeriodStart adheres to the following requirements:
+
 * ContractPeriodStart MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractPeriodStart MUST be of type Date/Time.
 * ContractPeriodStart MUST conform to [DateTimeFormat](#date/timeformat) requirements.
