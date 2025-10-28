@@ -84,7 +84,7 @@ SPEC_SOURCE_FILES=$(filter-out spec.md, $(wildcard *.md*)) $(wildcard supported_
 SPEC_SOURCE_MDFILES=$(filter-out %.mdpp, $(SPEC_SOURCE_FILES))
 ```
 
-If new folder paths with markdown/markdown-PP files are added to the FOCUS repository, the build system will need to be updated to include these paths in the SPEC_SOURCE_FILES argument.
+If new folder paths with Markdown and/or MarkdownPP files are added to the FOCUS repository, the build system will need to be updated to include these paths in the SPEC_SOURCE_FILES argument.
 
 ## Local MarkdownPP Modifications
 
