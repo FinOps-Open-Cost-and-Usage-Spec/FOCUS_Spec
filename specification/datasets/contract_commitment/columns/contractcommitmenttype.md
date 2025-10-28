@@ -2,7 +2,7 @@
 
 Contract Commitment Type is a provider-assigned name to identify the type of [*contract commitment*](#glossary:contract-commitment). Contract Commitment Type is a readable display name and not a code. Contract Commitment Type is commonly used for displaying and aggregating the types of commitments the practitioner has made, stated in provider-specific terms.
 
-The ContractCommitmentType column adheres to the following requirements:
+## Requirements
 
 * ContractCommitmentType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentType MUST be of type String.
