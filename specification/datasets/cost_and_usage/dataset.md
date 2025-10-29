@@ -90,7 +90,7 @@ The CostAndUsage dataset adheres to the following requirements:
 * CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
 * CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
-* CostAndUsage MUST conform to [ServiceProviderCalculatedSplitCostAllocationHandling](#service-provider-calculatedsplitcostallocationhandling) requirements.
+* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling) requirements.
 
 <div class='h4-nonindex'>Dataset ID</div>
 

@@ -1,4 +1,4 @@
-# Service-Provider-Calculated Split Cost Allocation
+# Data Generator-Calculated Split Cost Allocation
 
 ## Description
 
