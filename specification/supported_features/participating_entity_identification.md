@@ -42,6 +42,6 @@ GROUP BY
 
 1.1
 
-## Update (Version)
+## Updated (Version)
 
 1.3
