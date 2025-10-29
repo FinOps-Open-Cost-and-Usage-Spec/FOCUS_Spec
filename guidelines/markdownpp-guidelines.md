@@ -158,7 +158,7 @@ if short in anchor_names:
 
 ### File Content
 
-While markdown can be included in a .mdpp, but the FOCUS project discourages this behavior, as the markdown will not natively render in GitHub and development environments such as VS Code, thereby making spec maintenance more difficult.  Therefore, we encourage the use of overview .md files, limiting the use of .mdpp files to `!INCLUDE` statements only.
+While markdown can be included in a .mdpp, the FOCUS project discourages this behavior, as the markdown will not natively render in GitHub and development environments such as VS Code, thereby making spec maintenance more difficult.  Therefore, we encourage the use of overview .md files, limiting the use of .mdpp files to `!INCLUDE` statements only.
 
 ### File Organization
 
