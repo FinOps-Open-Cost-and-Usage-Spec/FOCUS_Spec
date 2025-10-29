@@ -4,7 +4,7 @@ Provider is the name of the entity that makes the [*resources*](#glossary:resour
 
 The ProviderName column adheres to the following requirements:
 
-* ProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ProviderName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ProviderName MUST be of type String.
 * ProviderName MUST conform to [StringHandling](#stringhandling) requirements.
 * ProviderName MUST NOT be null.

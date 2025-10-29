@@ -4,7 +4,7 @@ The Consumed Unit represents a provider-specified measurement unit indicating ho
 
 The ConsumedUnit column adheres to the following requirements:
 
-* ConsumedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
+* ConsumedUnit MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
 * ConsumedUnit MUST be of type String.
 * ConsumedUnit MUST conform to [StringHandling](#stringhandling) requirements.
 * ConsumedUnit SHOULD conform to [UnitFormat](#unitformat) requirements.

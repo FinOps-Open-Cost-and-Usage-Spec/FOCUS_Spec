@@ -4,7 +4,7 @@ Charge Class indicates whether the [*row*](#glossary:row) represents a correctio
 
 The ChargeClass column adheres to the following requirements:
 
-* ChargeClass MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargeClass MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeClass MUST be of type String.
 * ChargeClass nullability is defined as follows:
   * ChargeClass MUST be null when the *row* does not represent a correction or when it represents a correction within the current *billing period*.

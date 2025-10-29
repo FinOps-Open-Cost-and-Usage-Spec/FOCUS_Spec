@@ -4,7 +4,7 @@ Commitment Discount Type is a provider-assigned name to identify the type of [*c
 
 The CommitmentDiscountType column adheres to the following requirements:
 
-* CommitmentDiscountType MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountType MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountType MUST be of type String.
 * CommitmentDiscountType MUST conform to [StringHandling](#stringhandling) requirements.
 * CommitmentDiscountType nullability is defined as follows:

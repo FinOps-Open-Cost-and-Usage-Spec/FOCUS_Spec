@@ -4,7 +4,7 @@ List Cost represents the cost calculated by multiplying the [*list unit price*](
 
 The ListCost column adheres to the following requirements:
 
-* ListCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ListCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ListCost MUST be of type Decimal.
 * ListCost MUST conform to [NumericFormat](#numericformat) requirements.
 * ListCost MUST NOT be null.

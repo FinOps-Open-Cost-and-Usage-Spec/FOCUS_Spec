@@ -4,7 +4,7 @@ A Billing Account Name is a display name assigned to a [*billing account*](#glos
 
 The BillingAccountName column adheres to the following requirements:
 
-* BillingAccountName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BillingAccountName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingAccountName MUST be of type String.
 * BillingAccountName MUST conform to [StringHandling](#stringhandling) requirements.
 * BillingAccountName MUST NOT be null when the provider supports assigning a display name for the *billing account*.

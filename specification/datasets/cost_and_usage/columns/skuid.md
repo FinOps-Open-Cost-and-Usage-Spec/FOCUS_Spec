@@ -1,6 +1,6 @@
 # SKU ID
 
-A SKU ID is a provider-specified unique identifier that represents a specific [*SKU*](#glossary:sku). *SKUs* are quantifiable goods or service offerings in a [*FOCUS dataset*](#glossary:FOCUS-dataset) that represent specific functionality and technical specifications. Examples of *SKUs* include but are not limited to:
+A SKU ID is a provider-specified unique identifier that represents a specific [*SKU*](#glossary:sku). *SKUs* are quantifiable goods or service offerings in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) that represent specific functionality and technical specifications. Examples of *SKUs* include but are not limited to:
 
 * A product license that is purchased or subscribed to.
 * Usage of a deployed resource from direct user interaction (e.g., request count).
@@ -17,7 +17,7 @@ SKU ID should be consistent across pricing variations of a good or service to fa
 
 The SkuId column adheres to the following requirements:
 
-* SkuId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
+* SkuId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
 * SkuId MUST be of type String.
 * SkuId MUST conform to [StringHandling](#stringhandling) requirements.
 * SkuId nullability is defined as follows:

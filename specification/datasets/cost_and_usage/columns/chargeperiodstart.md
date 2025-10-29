@@ -4,7 +4,7 @@ Charge Period Start represents the [*inclusive start bound*](#glossary:inclusive
 
 The ChargePeriodStart column adheres to the following requirements:
 
-* ChargePeriodStart MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ChargePeriodStart MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargePeriodStart MUST be of type Date/Time.
 * ChargePeriodStart MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * ChargePeriodStart MUST NOT be null.

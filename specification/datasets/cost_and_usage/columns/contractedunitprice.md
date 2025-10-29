@@ -4,7 +4,7 @@ The Contracted Unit Price represents the agreed-upon unit price for a single [Pr
 
 The ContractedUnitPrice column adheres to the following requirements:
 
-* ContractedUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports negotiated pricing concepts.
+* ContractedUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports negotiated pricing concepts.
 * ContractedUnitPrice adheres to the following additional requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.

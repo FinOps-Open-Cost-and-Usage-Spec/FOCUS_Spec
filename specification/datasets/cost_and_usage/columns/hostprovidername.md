@@ -6,7 +6,7 @@ In some instances, the host provider and the service provider are the same entit
 
 The HostProviderName column adheres to the following requirements:
 
-* HostProviderName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* HostProviderName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * HostProviderName MUST be of type String.
 * HostProviderName MUST conform to [StringHandling](#stringhandling) requirements.
 * HostProviderName nullability is defined as follows:

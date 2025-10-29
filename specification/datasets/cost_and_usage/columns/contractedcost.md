@@ -4,7 +4,7 @@ Contracted Cost represents the cost calculated by multiplying [*contracted unit 
 
 The ContractedCost column adheres to the following requirements:
 
-* ContractedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractedCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractedCost MUST be of type Decimal.
 * ContractedCost MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractedCost MUST NOT be null.

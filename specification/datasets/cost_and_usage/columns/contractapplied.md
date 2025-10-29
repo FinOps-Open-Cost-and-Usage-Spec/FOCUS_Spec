@@ -18,7 +18,7 @@ In addition to these, a data generator may include one or more custom properties
 
 The ContractApplied column adheres to the following requirements:
 
-* ContractApplied MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* ContractApplied MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
 * ContractApplied MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
 

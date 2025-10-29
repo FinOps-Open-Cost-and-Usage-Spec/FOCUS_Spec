@@ -4,7 +4,7 @@ Region Name is a provider-assigned display name for an isolated geographic area 
 
 The RegionName column adheres to the following requirements:
 
-* RegionName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
+* RegionName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
 * RegionName MUST be of type String.
 * RegionName MUST conform to [StringHandling](#stringhandling) requirements.
 * RegionName nullability is defined as follows:
