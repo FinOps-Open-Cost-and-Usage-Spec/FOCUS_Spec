@@ -169,7 +169,7 @@ This table displays key milestones and dates related to the development of FOCUS
         <td>End-of-year break</td>
       </tr>
       <tr>
-        <td><strong>Development Mon Jan 5</strong> </br> (8 weeks)</td>
+        <td><strong>Mon Jan 5</strong> </br> (8 weeks)</td>
         <td>Resume Discovery &amp; Development</td>
       </tr>
       <tr>
