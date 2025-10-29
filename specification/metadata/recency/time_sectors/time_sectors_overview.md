@@ -1,17 +1,17 @@
 # Time Sectors
 
-The FOCUS recency metadata's Time Sectors provide a list of time periods and metadata about them. Time Sectors are used when the associated FOCUS dataset is defined as a time series dataset (i.e., its dataset artifacts represent data distributed over time). Each time sector represents a single time period and the completeness of that time period as it pertains to the dataset artifact. Time sectors do not represent start and end dates of the dataset artifact but rather periods of time relative to the datasets Charge Period Start and Charge Period End. Length of time sectors can be determined by the Data Generator, though it is suggested to align time sector periods to the reports time granularity (Hourly cost reports = hourly time sectors).
+The FOCUS recency metadata's Time Sectors provide a list of time periods and metadata about them. Time Sectors are used when the associated [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as a time series dataset (i.e., its dataset artifacts represent data distributed over time). Each time sector represents a single time period and the completeness of that time period as it pertains to the dataset artifact. Time sectors do not represent start and end dates of the dataset artifact but rather periods of time relative to the datasets Charge Period Start and Charge Period End. Length of time sectors can be determined by the Data Generator, though it is suggested to align time sector periods to the reports time granularity (Hourly cost reports = hourly time sectors).
 
 ## Requirements
 
 TimeSectors adheres to the following requirements:
 
-* TimeSectors MUST be present in Recency when the the associated FOCUS dataset is defined as a time series dataset.
+* TimeSectors MUST be present in [Recency](#recency) object when the the associated *FOCUS dataset* is defined as a time series dataset.
 * TimeSectors MUST be structured as a collection of objects.
 * TimeSectors MUST NOT be null.
 * TimeSectors collection MUST contain at least one object.
 * TimeSectors object MUST NOT be null.
-* TimeSectors objects MUST be updated, if already present, or added to the collection whenever Data Generator updates or provides new dataset artifacts.
+* TimeSectors objects MUST be updated, if already present, or added to the collection whenever data generator updates or provides new dataset artifacts.
 
 ## Metadata ID
 
