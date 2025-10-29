@@ -47,8 +47,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New datasets
 
-- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
-  - FOCUS had only one dataset prior to 1.3, and thus it did not have a name.
 - [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md)
 
 #### New columns
@@ -128,6 +126,8 @@ The specification's normative requirements are now maintained in a structured, g
 
 #### Changed datasets
 
+- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  - FOCUS had only one dataset prior to 1.3, and thus it did not have a name.  See below for a list of changed columns.
 - Datasets are now explicitly associated with attributes via normative requirements; this was previously implied.
 - Datasets now have their column set laid out in tabular format within their respective entries.
 
