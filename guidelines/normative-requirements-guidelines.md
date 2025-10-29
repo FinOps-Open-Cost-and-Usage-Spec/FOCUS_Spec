@@ -485,7 +485,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 #### **List Unit Price**
 
-The ListUnitPrice column adheres to the following requirements:
+ListUnitPrice adheres to the following requirements:
 
 * ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be of type Decimal.
