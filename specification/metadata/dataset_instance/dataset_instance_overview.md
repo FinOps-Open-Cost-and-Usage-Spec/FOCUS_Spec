@@ -12,4 +12,4 @@ The Dataset Instance metadata object provided by a Data Generator provides infor
 
 ## Examples
 
-For an example of the FOCUS dataset instance metadata, please refer to: [Dataset Instance Metadata Example](#datasetinstancemedataexample).
+For an example of the FOCUS dataset instance metadata, please refer to: [Dataset Instance Metadata Example](#datasetinstancemetadata).

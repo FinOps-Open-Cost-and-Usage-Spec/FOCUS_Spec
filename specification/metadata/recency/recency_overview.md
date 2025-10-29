@@ -15,4 +15,4 @@ Example scenarios include but are not limited to:
 * [Updating an over-time dataset recency metadata](#addingnewcolumns)
 * [Updating a non over-time dataset recency metadata](#changingcolumnmetadata)
 
-For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#recencymetadataexample).
+For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#recencymetadata).
