@@ -16,8 +16,8 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 * The version number
 * Impact Classification
 * Change Type Classification 
-* Deprecation designation of a feature or column to include the version where deprecation occured.
-   * any exception rationale if removal precedes the retention period
+* Deprecation designation of a feature or column to include the version where deprecation occured
+   * Any exception rationale if removal precedes the retention period
 * Designation of the addition of a new feature or column
 * Description of the change
 * Examples of the change, if needed
@@ -28,9 +28,9 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 
 When a new feature or column is introduced to the FOCUS specification, depending on the circumstances of the change, its support may be initially optional. This allows providers that support it to adopt the new feature or column without restricting other adopters from using newer versions of the specification. 
 
-* The feature or item addition proposed and the specification is modified. Within the columns contsraints section, feature level indicates if the column is recommended, meaning that is not required.
+* Within the Content Constraints section, Feature Level indicates whether the column is Mandatory (i.e., required), Conditional (i.e., required under certain circumstances), or Recommended (i.e., not required).
    *  Example: Feature level is specified: "Recommended"    
-* Change log indicates that the new feature/column has been added.
+* Changelog indicates that the new feature/column has been added.
     * Example: "Column 1 has been added in version 2.0."
 
 ### Renaming a Column or Metadata 
@@ -38,25 +38,33 @@ When a new feature or column is introduced to the FOCUS specification, depending
 The FOCUS specification requires the renaming of a column or metadata to be declared in the specification.
 
 * The column or metdata specification is to include a section that indicates the previous name and the version in which it was changed
-* example: "Example1 column was renamed Example2 in FOCUS version 2.1"
+* Example: "Example1 column was renamed Example2 in FOCUS version 2.1"
 
 ### Deprecation and Removal of a Feature or Column
     
 The FOCUS specification requires that removal actions are preceded with a deprecation notice.
 
 * The feature or item removal is proposed, which must designate the column or metadata as deprecated.
-  * If the removal version is not yet determined, the change log MUST state, "This column will be removed at a future FOCUS version."
-  * If the removal version has already been determined, the change log MUST state, "This column will be removed in version 2.1."
-* Prior to removal, the FOCUS specification MUST be updated to include the version that will remove the deprecated column/metadata
+  * If the removal version is not yet determined, the changelog MUST state, "This column will be removed at a future FOCUS version."
+  * If the removal version has already been determined, the changelog MUST state, "This column will be removed in version 2.1."
+* Prior to removal, the FOCUS specification MUST be updated to include the version that will remove the deprecated column/metadata.
 
 #### Deprecation Retention Period
-Once a capability or column is designated as deprecated in a published version of the FOCUS specification:
-* It MUST remain in the specification for a minimum of 3 releases (inclusive of the version where the deprecation is announced) before it is eligible for removal.
-* Exceptions (e.g., legal, security, or privacy requirements) MAY justify earlier removal; such exceptions MUST be explicitly documented in the changelog with rationale.
 
-Removal of a deprecated feature or column is classified as:
+Once a capability or column is designated as deprecated in a published version of the FOCUS specification:
+
+* It MUST remain in the specification for a minimum of one release before removal (e.g., deprecated in v1.3, removed in v1.4).
+* Exceptions (e.g., legal, security, or privacy requirements) MAY justify immediate removal with documented rationale in the changelog.
+
+When a feature or column is deprecated, it MUST be classified as:
 * Migration Compatible if the same supported feature is fully supported by another feature or column in the specification.
-* Incompatible if removal results in the loss of support for a supported feature.
+* Incompatible if deprecation signals planned loss of support for a supported feature.
+
+The deprecation notice in the changelog MUST include this classification. If circumstances change during the retention period, the updated classification MUST be documented in the removal version's changelog.
+
+#### Expected Behavior for Removed Capabilities
+
+Data generators are expected to remove capabilities at the same time that the FOCUS specification does. If a data generator chooses to retain a capability (e.g., column) after it has been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). 
 
 ## Change Type Classification
 
@@ -68,11 +76,11 @@ The addition of a new feature or column to the FOCUS specification.
 
 ### Deprecation
 
-A feature or column from the FOCUS specification is moving to deprecated status, discouraging use and indicating that the same will be removed in a future version 
+A feature or column from the FOCUS specification is moving to deprecated status, discouraging use and indicating that the same will be removed in a future version.
 
 ### Removal
 
-The removal of a feature or column from the FOCUS specification.
+A feature or column removed from the specification after completing deprecation requirements or with documented exception rationale. The changelog specifies the removal version, deprecation timeline, and compatibility classification.
 
 ### Improvement
 

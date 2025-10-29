@@ -6,3 +6,7 @@ spec_pdf.html
 *.pyc
 specification/version.md
 .vscode/*
+model_graph.dot
+model_graph.png
+model-*.json
+specification/requirements_model/build/*

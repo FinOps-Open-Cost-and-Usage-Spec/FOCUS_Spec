@@ -63,7 +63,7 @@ The updated schema-related metadata could look like this:
           {
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
-          }, 
+          },
           {
                 "ColumnName": "x_awesome_column3",
                 "DataType": "STRING",

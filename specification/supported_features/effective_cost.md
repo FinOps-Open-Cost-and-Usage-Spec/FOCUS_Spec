@@ -47,7 +47,7 @@ GROUP BY
   RegionId,
   RegionName,
   PricingUnit
-``` 
+```
 
 ## Introduced (Version)
 

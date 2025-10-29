@@ -1,8 +1,13 @@
 # Data Generator
 
-Human-readable name of the entity that is generating the data.
+Human-readable name of the entity that generated the dataset instance, typically based on data provided by the [*Service Provider*](#serviceprovidername). The Data Generator ensures the technical accuracy and delivery of the data.
 
-The DataGenerator MUST be provided in the metadata. DataGenerator MUST be of type String and MUST NOT be null. The DataGenerator SHOULD be easily associated with the provider who generated the [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* DataGenerator MUST be present in the metadata.
+* DataGenerator MUST be of type String.
+* DataGenerator MUST conform to [StringHandling](#stringhandling) requirements.
+* DataGenerator MUST NOT be null.
+* DataGenerator MUST be provided in the metadata.
+* DataGenerator SHOULD reflect the entity that generated the [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Metadata ID
 
