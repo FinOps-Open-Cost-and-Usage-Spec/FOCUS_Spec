@@ -84,7 +84,7 @@ The ContractCommitment dataset adheres to the following requirements:
 
 #### **Cost and Usage**
 
-The CostAndUsage dataset adheres to the following requirements:
+CostAndUsage adheres to the following requirements:
 
 * CostAndUsage MUST be present.
 * CostAndUsage MUST conform to [ColumnHandling](#columnhandling) requirements.
