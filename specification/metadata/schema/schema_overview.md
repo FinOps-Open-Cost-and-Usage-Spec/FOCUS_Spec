@@ -2,7 +2,7 @@
 
 The schema metadata object and its content provide information about the structure of the data provided.
 
-## Requirements
+<div class='h4-nonindex'>Requirements<div>
 
 * Schema metadata MUST be provided for every FOCUS dataset provided by the data generator.
 * Schema metadata MUST provide a reference to the FOCUS dataset of the dataset artifact.
@@ -11,7 +11,7 @@ The schema metadata object and its content provide information about the structu
 * Schema metadata SHOULD be provided separately from the dataset artifact it describes.
 * Schema metadata MUST be updated via a new metadata object when a data generator changes the structure of a FOCUS dataset.
 
-## Examples
+<div class='h4-nonindex'>Examples<div>
 
 There are many scenarios that would result in an update to the Schema metadata.  These scenarios include but are not limited to:
 

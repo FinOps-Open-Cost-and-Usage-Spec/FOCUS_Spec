@@ -18,12 +18,12 @@ Provider Tag Prefixes
 
 ## Content constraints
 
-| Constraint    | Value                   |
-|:--------------|:------------------------|
-| Feature level | Conditional             |
-| Allows nulls  | False                   |
-| Data type     | String                  |
-| Value format  | Multiple values allowed |
+| Constraint    | Value                 |
+|:--------------|:----------------------|
+| Feature level | Conditional           |
+| Allows nulls  | False                 |
+| Data type     | Collection of Strings |
+| Value format  | \<not specified>      |
 
 ## Introduced (version)
 
