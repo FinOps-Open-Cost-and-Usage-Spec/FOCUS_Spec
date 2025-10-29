@@ -514,7 +514,7 @@ The BilledCost column adheres to the following requirements:
 
 #### **CommitmentDiscountQuantity**
 
-The CommitmentDiscountQuantity column adheres to the following requirements:
+CommitmentDiscountQuantity adheres to the following requirements:
 
 * CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal.
