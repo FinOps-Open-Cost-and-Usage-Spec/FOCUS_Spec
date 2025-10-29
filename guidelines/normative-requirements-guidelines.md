@@ -80,7 +80,7 @@ The ContractCommitment dataset adheres to the following requirements:
 
 * ContractCommitment MUST be present when the provider supports *contract commitments*.
 * ContractCommitment MUST conform to [ColumnHandling](#columnhandling) requirements.
-* CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
+* ContractCommitment MUST conform to [NullHandling](#nullhandling) requirements.
 
 #### **Cost and Usage**
 
