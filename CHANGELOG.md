@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Compatible Changes
 
-- New Columns to support [Provider-Calculated Split Cost Allocation](/specification/supported_features/provider_calculated_split_cost_allocation.md)
+- New Columns to support [Data Generator-Calculated Split Cost Allocation](/specification/supported_features/data_generator_calculated_split_cost_allocation.md)
 - New Dataset and Columns to support [Contract Commitments](/specification/supported_features/contract_commitments.md)
 - New Columns to support [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
 - New Metadata to support [Dataset Instance Metadata](/specification/supported_features/dataset_instance_metadata.md)
@@ -42,7 +42,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - [Contract Commitments](/specification/supported_features/contract_commitments.md)
 - [Dataset Instance Metadata](/specification/supported_features/dataset_instance_metadata.md)
 - [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
-- [Provider-Calculated Split Cost Allocation](/specification/supported_features/provider_calculated_split_cost_allocation.md)
+- [Data Generator-Calculated Split Cost Allocation](/specification/supported_features/data_generator_calculated_split_cost_allocation.md)
 - [Recency Metadata](/specification/supported_features/recency_metadata.md)
 
 #### New datasets
@@ -78,7 +78,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 - [`InvoiceHandling`](/specification/attributes/invoice_handling.md)
 - [`JsonObjectFormat`](/specification/attributes/json_object_format.md)
-- [`ProviderCalculatedSplitCostAllocationHandling`](/specification/attributes/provider_calculated_split_cost_allocation_handling.md)
+- [`DataGeneratorCalculatedSplitCostAllocationHandling`](/specification/attributes/data_generator_calculated_split_cost_allocation_handling.md)
 
 #### New appendix entries
 
