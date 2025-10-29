@@ -33,7 +33,7 @@ The Contract Commitment dataset can be joined to the Cost and Usage dataset thro
 
 <div class='h4-nonindex'>Requirements</div>
 
-The ContractCommitment dataset adheres to the following requirements:
+ContractCommitment adheres to the following requirements:
 
 * ContractCommitment MUST be present when the provider supports *contract commitments*.
 * ContractCommitment MUST conform to [ColumnHandling](#columnhandling) requirements.
