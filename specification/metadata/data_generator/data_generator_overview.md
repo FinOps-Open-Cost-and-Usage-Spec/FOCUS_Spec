@@ -6,6 +6,6 @@ The FOCUS metadata about the generator of the FOCUS data.
 
 The FOCUS Data Generator metadata MUST be provided. This metadata MUST be of type Object and MUST NOT contain null values.
 
-## Schema Example
+## Examples
 
 For an example of the FOCUS Data Generator metadata please refer to: [Data Generator Example](#datageneratormetadata).

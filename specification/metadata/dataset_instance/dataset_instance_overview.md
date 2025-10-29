@@ -10,6 +10,6 @@ The Dataset Instance metadata object provided by a Data Generator provides infor
 * Dataset Instance metadata MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
 * Dataset Instance metadata SHOULD be updated when a data generator updates the corresponding dataset artifact.
 
-## Dataset Instance Example
+## Examples
 
 For an example of the FOCUS dataset instance metadata, please refer to: [Dataset Instance Metadata Example](#datasetinstancemedataexample).
