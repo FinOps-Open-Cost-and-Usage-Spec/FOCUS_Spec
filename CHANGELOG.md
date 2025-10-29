@@ -140,7 +140,7 @@ The specification's normative requirements are now maintained in a structured, g
   `- [`InvoiceIssuerName`](/specification/datasets/cost_and_usage/columns/invoiceissuername.md)
     - The display name has changed from `Invoice Issuer` to `Invoice Issuer Name`. The column ID and definition remains the same.
   - [`CommitmentDiscountQuantity`](/specification/datasets/cost_and_usage/columns/commitmentdiscountquantity.md)
-    - CommitmentDiscountQuantity MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.`
+    - CommitmentDiscountQuantity MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
   - [`ConsumedQuantity`](/specification/datasets/cost_and_usage/columns/consumedquantity.md)
     - ConsumedQuantity MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
   - [`ContractedCost`](/specification/datasets/cost_and_usage/columns/contractedcost.md)
