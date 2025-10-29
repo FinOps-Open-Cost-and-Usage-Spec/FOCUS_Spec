@@ -6,7 +6,7 @@ The FOCUS metadata schema column definition provides a list of the columns prese
 
 ColumnDefinition adheres to the following requirements:
 
-* ColumnDefinition MUST be present in the FOCUS metadata schema.
+* ColumnDefinition MUST be present in Schema.
 * ColumnDefinition MUST be of type Object.
 * ColumnDefinition MUST NOT contain null values.
 

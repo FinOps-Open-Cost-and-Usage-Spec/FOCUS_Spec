@@ -6,7 +6,7 @@ The recency metadata object and its contents provide information about how up-to
 
 Recency adheres to the following requirements:
 
-* Recency MAY be provided.
+* Recency MAY be present in Metadata.
 * Recency MUST be retrievable without inspection of the contents of the FOCUS data within the data artifact.
 * Recency SHOULD be updated when a data generator updates the corresponding dataset artifact.
 
