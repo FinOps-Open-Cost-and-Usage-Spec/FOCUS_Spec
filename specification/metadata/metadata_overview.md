@@ -11,6 +11,8 @@ The metadata includes the following sections:
 | [Recency](#recency)                  | Describes the recency and completeness of data within the artifact. |
 | [Schema](#schema)                    | Describes the schema of data within the artifact.                   |
 
+<div class='h4-nonindex'>Requirements</div>
+
 Metadata adheres to the following requirements:
 
 * Data generators SHOULD provide FOCUS metadata in a format that is accessible programmatically, such as a file, website, API, or table.
