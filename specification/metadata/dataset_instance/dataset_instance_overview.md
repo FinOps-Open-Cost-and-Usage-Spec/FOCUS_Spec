@@ -4,12 +4,26 @@ The Dataset Instance metadata object provided by a Data Generator provides infor
 
 ## Requirements
 
-* Dataset Instance metadata MUST be provided for every dataset instance provided by the data generator.
-* Dataset Instance metadata MUST provide a reference to the dataset instance of the dataset artifact.
-* Dataset Instance metadata MUST be retrievable independently from the dataset artifact it describes.
-* Dataset Instance metadata MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
-* Dataset Instance metadata SHOULD be updated when a data generator updates the corresponding dataset artifact.
+DatasetInstance adheres to the following requirements:
+
+* DatasetInstance MUST be provided for every dataset instance provided by the data generator.
+* DatasetInstance MUST provide a reference to the dataset instance of the dataset artifact.
+* DatasetInstance MUST be retrievable independently from the dataset artifact it describes.
+* DatasetInstance MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
+* DatasetInstance SHOULD be updated when a data generator updates the corresponding dataset artifact.
+
+## Metadata ID
+
+DatasetInstance
+
+## Metadata Name
+
+Dataset Instance
 
 ## Examples
 
 For an example of the FOCUS dataset instance metadata, please refer to: [Dataset Instance Metadata Example](#datasetinstancemedataexample).
+
+## Introduced (version)
+
+1.3

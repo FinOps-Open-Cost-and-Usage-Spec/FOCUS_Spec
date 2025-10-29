@@ -4,12 +4,14 @@ The schema metadata object and its content provide information about the structu
 
 ## Requirements
 
-* Schema metadata MUST be provided for every FOCUS dataset provided by the data generator.
-* Schema metadata MUST provide a reference to the FOCUS dataset of the dataset artifact.
-* Schema metadata MUST be retrievable independently from the dataset it describes.
-* Schema metadata MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
-* Schema metadata SHOULD be provided separately from the dataset artifact it describes.
-* Schema metadata MUST be updated via a new metadata object when a data generator changes the structure of a FOCUS dataset.
+Schema adheres to the following requirements:
+
+* Schema MUST be provided for every FOCUS dataset provided by the data generator.
+* Schema MUST provide a reference to the FOCUS dataset of the dataset artifact.
+* Schema MUST be retrievable independently from the dataset it describes.
+* Schema MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
+* Schema SHOULD be provided separately from the dataset artifact it describes.
+* Schema MUST be updated via a new metadata object when a data generator changes the structure of a FOCUS dataset.
 
 ## Examples
 
@@ -23,3 +25,15 @@ There are many scenarios that would result in an update to the Schema metadata. 
 * [Correcting schema metadata errors](#providermetadataerrorcorrection)
 
 For an example of the FOCUS schema metadata, please refer to: [Schema Metadata Example](#schemametadata).
+
+## Metadata ID
+
+Schema
+
+## Metadata Name
+
+Schema
+
+## Introduced (version)
+
+1.0

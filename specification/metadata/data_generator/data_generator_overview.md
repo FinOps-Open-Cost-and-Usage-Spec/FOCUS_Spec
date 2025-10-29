@@ -4,10 +4,24 @@ The FOCUS metadata about the generator of the FOCUS data.
 
 ## Requirements
 
-* Data Generator metadata MUST be provided.
-* Data Generator metadata MUST be of type Object.
-* Data Generator metadata MUST NOT be null.
+DataGenerator adheres to the following requirements:
+
+* DataGenerator MUST be present in Metadata.
+* DataGenerator MUST be of type Object.
+* DataGenerator MUST NOT be null.
+
+## Metadata ID
+
+DataGenerator
+
+## Metadata Name
+
+Data Generator
 
 ## Examples
 
 For an example of the FOCUS Data Generator metadata please refer to: [Data Generator Example](#datageneratormetadata).
+
+## Introduced (version)
+
+1.0
