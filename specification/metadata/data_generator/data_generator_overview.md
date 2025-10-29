@@ -2,10 +2,12 @@
 
 The FOCUS metadata about the generator of the FOCUS data.
 
-## Requirements
+<div class='h4-nonindex'>Requirements<div>
 
-The FOCUS Data Generator metadata MUST be provided. This metadata MUST be of type Object and MUST NOT contain null values.
+* Data Generator metadata MUST be provided.
+* Data Generator metadata MUST be of type Object.
+* Data Generator metadata MUST NOT be null.
 
-## Examples
+<div class='h4-nonindex'>Examples<div>
 
 For an example of the FOCUS Data Generator metadata please refer to: [Data Generator Example](#datageneratormetadata).
