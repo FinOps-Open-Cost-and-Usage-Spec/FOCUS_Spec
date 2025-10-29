@@ -18,7 +18,7 @@ Example scenarios include but are not limited to:
 
 ## Recency Example
 
-For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#recencymetadataexample)
+For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#recencymetadata)
 
 !INCLUDE "dataset_instance_id",1
 !INCLUDE "dataset_instance_complete.md",1
