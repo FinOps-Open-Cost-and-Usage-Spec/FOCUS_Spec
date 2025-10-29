@@ -2,7 +2,7 @@
 
 Datetime the recency metadata object was updated.
 
-* RecencyLastUpdated MUST be present in the metadata. 
+* RecencyLastUpdated MUST be present in the metadata.
 * RecencyLastUpdated MUST be of type Date/Time.
 * RecencyLastUpdated MUST NOT be null.
 * RecencyLastUpdated MUST conform to [DateTimeFormat](#datetimeformat).
