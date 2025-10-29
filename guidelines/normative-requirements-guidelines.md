@@ -76,7 +76,7 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 
 #### **Contract Commitment**
 
-The ContractCommitment dataset adheres to the following requirements:
+ContractCommitment adheres to the following requirements:
 
 * ContractCommitment MUST be present when the provider supports *contract commitments*.
 * ContractCommitment MUST conform to [ColumnHandling](#columnhandling) requirements.
