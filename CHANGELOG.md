@@ -120,7 +120,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New requirements model
 
-The specification's normative requirements are now maintained in a structured, graph-based collection of rules.  Version 1.2 of the requirements model is available as of this writing; 1.3 will be released during the 1.4 development cycle.
+The specification's normative requirements are now maintained in a structured, graph-based collection of rules.  Version 1.2 of the requirements model is available as of this writing; 1.3 will be released during the 1.4 development cycle.  This requirements model is designed to be leveraged by a conformance validator, maintained [here](https://github.com/finopsfoundation/focus_validator).  For more information on the requirements model, see [here](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/specification/requirements_model/README.md).
 
 ### Changed
 
