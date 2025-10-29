@@ -7,7 +7,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 <div class='h4-nonindex'>Columns</div>
 
 | Column                                                                        | Column Type | Feature Level | Allows Nulls | Data Type |
-|-------------------------------------------------------------------------------| ----------- | ------------- | ------------ | --------- |
+|-------------------------------------------------------------------------------| ----------- | ------------- |--------------| --------- |
 | [Allocated Method ID](#allocatedmethodid)                                     | Dimension   | Conditional   | True         | String    |
 | [Allocated Method Details](#allocatedmethoddetails)                           | Dimension   | Recommended   | True         | JSON      |
 | [Allocated Resource ID](#allocatedresourceid)                                 | Dimension   | Conditional   | True         | String    |
@@ -44,6 +44,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Effective Cost](#effectivecost)                                              | Metric      | Mandatory     | False        | Decimal   |
 | [Invoice ID](#invoiceid)                                                      | Dimension   | Recommended   | True         | String    |
 | [Invoice Issuer](#invoiceissuername)                                          | Dimension   | Mandatory     | False        | String    |
+| [Host Provider](#hostprovidername)                                            | Dimension   | Mandatory     | True         | String    |
 | [List Cost](#listcost)                                                        | Metric      | Mandatory     | False        | Decimal   |
 | [List Unit Price](#listunitprice)                                             | Metric      | Conditional   | True         | Decimal   |
 | [Pricing Category](#pricingcategory)                                          | Dimension   | Conditional   | True         | String    |
@@ -52,14 +53,15 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Pricing Currency List Unit Price](#pricingcurrencylistunitprice)             | Metric      | Conditional   | True         | Decimal   |
 | [Pricing Currency](#pricingcurrency)                                          | Dimension   | Conditional   | True         | String    |
 | [Pricing Quantity](#pricingquantity)                                          | Metric      | Mandatory     | True         | Decimal   |
-| [Pricing Unit](#pricingunit)                                                  | Dimension   | Mandatory     | True         | String    |
-| [ServiceProviderName](#serviceprovidername)                                   | Dimension   | Mandatory     | False        | String    |
-| [Publisher](#publishername)                                                   | Dimension   | Mandatory     | False        | String    |
+| [Pricing Unit](#pricingunit)                                                  | Dimension   | Mandatory     | True         | String    | 
+| [ProviderName - DEPRECATED](#providername)                                    | Dimension   | Mandatory     | False        | String    |
+| [Publisher - DEPRECATED](#publishername)                                      | Dimension   | Mandatory     | False        | String    |
 | [Region ID](#regionid)                                                        | Dimension   | Conditional   | True         | String    |
 | [Region Name](#regionname)                                                    | Dimension   | Conditional   | True         | String    |
 | [Resource ID](#resourceid)                                                    | Dimension   | Conditional   | True         | String    |
 | [Resource Name](#resourcename)                                                | Dimension   | Conditional   | True         | String    |
 | [Resource Type](#resourcetype)                                                | Dimension   | Conditional   | True         | String    |
+| [ServiceProviderName](#serviceprovidername)                                   | Dimension   | Mandatory     | False        | String    |
 | [Service Category](#servicecategory)                                          | Dimension   | Mandatory     | False        | String    |
 | [Service Name](#servicename)                                                  | Dimension   | Mandatory     | False        | String    |
 | [Service Subcategory](#servicesubcategory)                                    | Dimension   | Recommended   | False        | String    |
