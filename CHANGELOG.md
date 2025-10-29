@@ -107,16 +107,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### New glossary entries
 
-- `Allocated Charge`
-- `Allocated Method`
-- `Contract`
-- `Contract Commitment`
-- `Dataset Artifact`
-- `Dataset Instance`
-- `Dataset Instance Artifact`
-- `JSON`
-- `Origin Charge`
-- `Period`
+- [Glossary](/specification/glossary.md)
+  - `Allocated Charge`
+  - `Allocated Method`
+  - `Contract`
+  - `Contract Commitment`
+  - `Dataset Artifact`
+  - `Dataset Instance`
+  - `Dataset Instance Artifact`
+  - `JSON`
+  - `Origin Charge`
+  - `Period`
 
 #### New requirements model
 
@@ -182,9 +183,10 @@ The specification's normative requirements are now maintained in a structured, g
 
 #### Changed glossary entries
 
-- `Commitment` has been changed to include both spend and usage, not just usage.
-- `FOCUS Dataset` is now more narrowly defined alongside `Dataset Artifact` and `Dataset Instance`.
-- `Term` is now strictly associated with agreements specified on a contract.  Some legacy use of that term was associated with length of time, and that use has now been replaced by `Period`.
+- [Glossary](/specification/glossary.md)
+  - `Commitment` has been changed to include both spend and usage, not just usage.
+  - `FOCUS Dataset` is now more narrowly defined alongside `Dataset Artifact` and `Dataset Instance`.
+  - `Term` is now strictly associated with agreements specified on a contract.  Some legacy use of that term was associated with length of time, and that use has now been replaced by `Period`.
 
 ### Deprecated
 
