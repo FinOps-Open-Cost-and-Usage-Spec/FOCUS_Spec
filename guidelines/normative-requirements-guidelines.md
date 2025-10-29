@@ -502,7 +502,7 @@ The ListUnitPrice column adheres to the following requirements:
 
 #### **Billed Cost**
 
-The BilledCost column adheres to the following requirements:
+BilledCost adheres to the following requirements:
 
 * BilledCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BilledCost MUST be of type Decimal.
