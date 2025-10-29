@@ -89,7 +89,7 @@
 
 * **Omit JSON schema normative requirements for Key-Value Format columns**: The Key-Value Format definition is sufficient to define the expected JSON schema.
 
-* **Include JSON schema normative requirements for JSON Object Format columns**: The JSON Object Format specifies that the format is subject to the requirement of the column and that provider-defined columns must have documented schema.
+* **Include JSON schema normative requirements for JSON Object Format columns**: The JSON Object Format specifies that the format is subject to the requirement of the column and that data generator-defined columns must have documented schema.
   * The pattern used in [AllocatedMethodDetails](#allocatedmethoddetails) and [ContractApplied](#contractapplied) consists of Object containing a collection whose key is "Elements" which contains one or more objects in the Key-Value format.
 
   **Example JSON**
@@ -132,7 +132,7 @@
 
 #### Key-Value Pairs
 
-* **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **provider-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
+* **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **data generator-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
 
 * **Default to Plural for Key-Value Pairs**: When referring to key-value pairs, **tags** and **properties** should be used in the plural form to reflect the fact that the column may contain multiple key-value pairs.
 
@@ -357,7 +357,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
   * {ColumnId} MUST be a unique identifier within {Scope}.
   * {ColumnId} SHOULD be a fully-qualified identifier.
 * Examples:
-  * BillingAccountId MUST be a unique identifier within a provider.
+  * BillingAccountId MUST be a unique identifier within a service provider.
   * ResourceId SHOULD be a fully-qualified identifier.
 
 #### Column Aggregation
@@ -385,8 +385,8 @@ To ensure clarity and consistency across columns and requirements, it is importa
   * Use "one" instead of "1".
   * Use "more than one" instead of "2 or more".
 * Examples:
-  * When the provider has only one user-defined tag scheme. (instead of: When the provider has only 1 user-defined tag scheme.)
-  * When the provider has more than one user-defined tag scheme. (instead of: When the provider has 2 or more user-defined tag schemes.)
+  * When the service provider has only one user-defined tag scheme. (instead of: When the service provider has only 1 user-defined tag scheme.)
+  * When the service provider has more than one user-defined tag scheme. (instead of: When the service provider has 2 or more user-defined tag schemes.)
 
 ## Examples
 
@@ -396,7 +396,7 @@ To ensure clarity and consistency across columns and requirements, it is importa
 
 The ListUnitPrice column adheres to the following requirements:
 
-* **(Presence)** ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
+* **(Presence)** ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider publishes unit prices exclusive of discounts.
 * **(Data Type)** ListUnitPrice MUST be of type Decimal.
 * **(Value Format)** ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * **(Nullability - Definition)** ListUnitPrice nullability is defined as follows:
@@ -412,7 +412,7 @@ The ListUnitPrice column adheres to the following requirements:
 ---
 The ListUnitPrice column adheres to the following requirements:
 
-* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
+* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be of type Decimal.
 * ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * ListUnitPrice nullability is defined as follows:
@@ -429,7 +429,7 @@ The ListUnitPrice column adheres to the following requirements:
 
 The ListUnitPrice column adheres to the following requirements:
 
-* The ListUnitPrice column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
+* The ListUnitPrice column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider publishes unit prices exclusive of discounts.
 * This column MUST be a Decimal within the range of non-negative decimal values, MUST conform to [Numeric Format](#numericformat) requirements, and be denominated in the BillingCurrency.
 * It MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction" and [ChargeCategory](#chargecategory) is "Usage" or "Purchase", MUST be null when ChargeCategory is "Tax", and MAY be null for all other combinations of ChargeClass and ChargeCategory.
 * When ListUnitPrice is present and is not null, multiplying ListUnitPrice by [PricingQuantity](#pricingquantity) MUST equal [ListCost](#listcost), except in cases of ChargeClass "Correction", which may address PricingQuantity or any cost discrepancies independently.
@@ -462,7 +462,7 @@ The BilledCost column adheres to the following requirements:
 
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
-* CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal.
 * CommitmentDiscountQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * CommitmentDiscountQuantity nullability is defined as follows:
@@ -483,7 +483,7 @@ The CommitmentDiscountQuantity column adheres to the following requirements:
 
 The CommitmentDiscountQuantity column adheres to the following requirements:
 
-* CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements.
 * CommitmentDiscountQuantity MAY be null or any valid decimal value if [*CommitmentDiscountId*](#commitmentdiscountid) is not null and [*ChargeClass*](#chargeclass) is "Correction".
 

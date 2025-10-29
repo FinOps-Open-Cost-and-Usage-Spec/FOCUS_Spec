@@ -1,6 +1,6 @@
 # Service Category
 
-The Service Category is the highest-level classification of a [*service*](#glossary:service) based on the core function of the *service*. Each *service* should have one and only one category that best aligns with its primary purpose. The Service Category is commonly used for scenarios like analyzing costs across providers and tracking the migration of workloads across fundamentally different architectures.
+The Service Category is the highest-level classification of a [*service*](#glossary:service) based on the core function of the *service*. Each *service* should have one and only one category that best aligns with its primary purpose. The Service Category is commonly used for scenarios like analyzing costs across service providers and tracking the migration of workloads across fundamentally different architectures.
 
 The ServiceCategory column adheres to the following requirements:
 

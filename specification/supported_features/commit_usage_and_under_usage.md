@@ -25,7 +25,7 @@ FOCUS supports the tracking of commitment discounts usage and under usage, which
 
 ```sql
 SELECT
-  ProviderName,
+  ServiceProviderName,
   BillingAccountId,
   CommitmentDiscountId,
   CommitmentDiscountType,
@@ -36,7 +36,7 @@ FROM focus_data_table
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND CommitmentDiscountStatus = 'Unused'
 GROUP BY
-  ProviderName,
+  ServiceProviderName,
   BillingAccountId,
   CommitmentDiscountId,
   CommitmentDiscountType

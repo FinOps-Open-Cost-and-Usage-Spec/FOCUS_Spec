@@ -1,14 +1,14 @@
 # Virtual Currency Pricing Model
 
-Many SaaS providers support pricing models that utilize virtual currencies such as credits, tokens, or points. Charges may be provided using a virtual currency, which can subsequently be converted to a national currency such as USD or EUR at an advertised or agreed-upon conversion rate.
+Many SaaS service providers support pricing models that utilize virtual currencies such as credits, tokens, or points. Charges may be provided using a virtual currency, which can subsequently be converted to a national currency such as USD or EUR at an advertised or agreed-upon conversion rate.
 
-The scenarios described below illustrate how a FOCUS-compliant dataset should look for various scenarios where a provider utilizes this pricing model.
+The scenarios described below illustrate how a FOCUS-compliant dataset should look for various scenarios where a service provider utilizes this pricing model.
 
 ## Baseline Scenario
 
 The following baseline conditions apply to the scenarios described below:
 
-* AwesomeCorp has signed an agreement with SaaS provider Acme Co to use their services.
+* AwesomeCorp has signed an agreement with SaaS servie provider Acme Co to use their services.
 * Acme Co offers a virtual currency pricing model for their services and requires a purchase of virtual currency in advance of usage. Their denomination of virtual currency is called "tokens".
 * Acme Co requires purchase of additional tokens in the event of usage exceeding purchased tokens.
 * Acme Co publicly lists the cost of their tokens at &dollar;2 per token.

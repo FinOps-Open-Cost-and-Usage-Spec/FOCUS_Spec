@@ -10,7 +10,7 @@ Spend-based commitment discounts obligate a customer to a predetermined amount o
 
 ## Purchasing
 
-While customers are bound to the [*period*](#glossary:period) of a *commitment discount*, providers offer some or all of the following payment options before and/or during the *period*:
+While customers are bound to the [*period*](#glossary:period) of a *commitment discount*, service providers offer some or all of the following payment options before and/or during the *period*:
 
 * *All Upfront* - The *commitment discount* is paid in full before the *period* begins.
 * *No Upfront* - The *commitment discount* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *period*.

@@ -14,7 +14,7 @@ FOCUS data should be consistent with the costs indicated on payable invoices. Th
 
 ## Supporting Columns
 
-* ProviderName
+* ServiceProviderName
 * ServiceName
 
 ## Example SQL Query

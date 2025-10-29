@@ -27,7 +27,7 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
   * Array elements MUST NOT be repeated.
   * Array elements MUST NOT be null.
 * JsonObjectFormat columns MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the Object.
-* Provider-defined [custom columns](#column_handling:custom-column) whose contents contain a JSON object MUST have their object schema documented by the provider.
+* Data Generator-defined [custom columns](#column_handling:custom-column) whose contents contain a JSON object MUST have their object schema documented by the data generator.
 * JsonObjectFormat objects SHOULD NOT exceed 3 levels of nesting.
 
 ## Exceptions

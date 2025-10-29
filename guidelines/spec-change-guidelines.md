@@ -26,7 +26,7 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 
 ### Addition of a New Feature or Column
 
-When a new feature or column is introduced to the FOCUS specification, depending on the circumstances of the change, its support may be initially optional. This allows providers that support it to adopt the new feature or column without restricting other adopters from using newer versions of the specification. 
+When a new feature or column is introduced to the FOCUS specification, depending on the circumstances of the change, its support may be initially optional. This allows data generators that support it to adopt the new feature or column without restricting other adopters from using newer versions of the specification. 
 
 * Within the Content Constraints section, Feature Level indicates whether the column is Mandatory (i.e., required), Conditional (i.e., required under certain circumstances), or Recommended (i.e., not required).
    *  Example: Feature level is specified: "Recommended"    

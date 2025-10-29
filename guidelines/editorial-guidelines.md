@@ -16,7 +16,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
             <strong>Column Names</strong>:<br>
             - Pricing Quantity<br>
             - Pricing Unit<br>
-            - Provider Name<br><br>
+            - Service Provider Name<br><br>
             <strong>Attribute Names</strong>:<br>
             - Currency Code Format<br>
             - Date/Time Format
@@ -25,7 +25,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
             <strong>Column Names:</strong><br>
             &nbsp;&nbsp; Pricing Quantity<br>
             &nbsp;&nbsp; Pricing Unit<br>
-            &nbsp;&nbsp; Provider Name<br><br>
+            &nbsp;&nbsp; Service Provider Name<br><br>
             <strong>Attribute Names</strong>:<br>
             &nbsp;&nbsp; Currency Code Format<br>
             &nbsp;&nbsp; Date/Time Format<br>
@@ -41,7 +41,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
            <strong>Columns IDs</strong>:<br>
             - PricingQuantity<br> 
             - PricingUnit<br> 
-            - ProviderName<br><br>
+            - ServiceProviderName<br><br>
           <strong>Attributes IDs</strong>:<br>
             - CurrencyCodeFormat <br> 
             - DateTimeFormat <br>
@@ -50,7 +50,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
           <strong>Columns IDs:</strong><br>
           &nbsp;&nbsp; PricingQuantity <br>
           &nbsp;&nbsp; PricingUnit<br>
-          &nbsp;&nbsp; ProviderName <br><br>
+          &nbsp;&nbsp; ServiceProviderName <br><br>
           <strong>Attributes IDs:</strong> </br>
           &nbsp;&nbsp; CurrencyCodeFormat </br>
           &nbsp;&nbsp; DateTimeFormat <br>

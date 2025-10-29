@@ -18,7 +18,7 @@ FOCUS supports the categorization of charges including purchases, usage, tax, cr
 * BillingPeriodStart
 * CommitmentDiscountId
 * CommitmentDiscountType
-* ProviderName
+* ServiceProviderName
 * ServiceCategory
 
 ## Example SQL Query
@@ -29,7 +29,7 @@ FOCUS supports the categorization of charges including purchases, usage, tax, cr
 SELECT
   MIN(ChargePeriodStart) AS ChargePeriodStart,
   MAX(ChargePeriodEnd) AS ChargePeriodEnd,
-  ProviderName,
+  ServiceProviderName,
   BillingAccountId,
   CommitmentDiscountId,
   CommitmentDiscountType,
@@ -42,7 +42,7 @@ WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Purchase'
   AND CommitmentDiscountId IS NOT NULL
 GROUP BY
-  ProviderName,
+  ServiceProviderName,
   BillingAccountId,
   CommitmentDiscountId,
   CommitmentDiscountType,

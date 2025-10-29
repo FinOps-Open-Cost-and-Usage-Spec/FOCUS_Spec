@@ -1,6 +1,6 @@
 # Contract Commitment
 
-The Contract Commitment dataset is a supporting dataset that describes the terms of contracts agreed between a provider and a customer.
+The Contract Commitment dataset is a supporting dataset that describes the terms of contracts agreed between a service provider and a customer.
 
 <div class='h4-nonindex'>Columns</div>
 
@@ -35,7 +35,7 @@ The Contract Commitment dataset can be joined to the Cost and Usage dataset thro
 
 The ContractCommitment dataset adheres to the following requirements:
 
-* ContractCommitment MUST be present when the provider supports *contract commitments*.
+* ContractCommitment MUST be present when the service provider supports *contract commitments*.
 
 <div class='h4-nonindex'>Dataset ID</div>
 
@@ -47,7 +47,7 @@ Contract Commitment
 
 <div class='h4-nonindex'>Description</div>
 
-Describes the terms of contracts agreed between a provider and a customer.
+Describes the terms of contracts agreed between a service provider and a customer.
 
 <div class='h4-nonindex'>Introduced (version)</div>
 
