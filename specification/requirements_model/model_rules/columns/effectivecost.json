@@ -1,0 +1,406 @@
+{
+  "EffectiveCost-C-000-M": {
+    "Function": "Composite",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The EffectiveCost column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-007-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-008-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-011-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-031-M",
+        "EffectiveCost-C-001-M",
+        "EffectiveCost-C-002-M",
+        "EffectiveCost-C-003-M",
+        "EffectiveCost-C-004-M",
+        "EffectiveCost-C-005-C",
+        "EffectiveCost-C-006-M",
+        "EffectiveCost-C-007-O",
+        "EffectiveCost-C-008-C",
+        "EffectiveCost-C-011-C"
+      ]
+    }
+  },
+  "EffectiveCost-C-001-M": {
+    "Function": "Type",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be of type Decimal.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "EffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "EffectiveCost-C-002-M": {
+    "Function": "Format",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "Cross-attribute reference: NumericFormat",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST conform to NumericFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "EffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "EffectiveCost-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "EffectiveCost",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "EffectiveCost-C-004-M": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be a valid decimal value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ConsumedQuantity",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "EffectiveCost-C-005-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be 0 when ChargeCategory is \"Purchase\" and the purchase is intended to cover future eligible charges.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "EffectiveCost",
+        "Value": 0
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Purchase"
+      },
+      "Dependencies": [
+        "ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "EffectiveCost-C-006-M": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "Cross-column reference: BillingCurrency",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost MUST be denominated in the BillingCurrency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "BillingCurrency-C-000-M"
+      ]
+    }
+  },
+  "EffectiveCost-C-007-O": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of EffectiveCost in a given billing period MAY not match the sum of the invoices received for the same billing period for a billing account.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "EffectiveCost-C-008-C": {
+    "Function": "Composite",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When ChargeCategory is not \"Usage\" or \"Purchase\", EffectiveCost adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-010-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Purchase"
+          }
+        ]
+      },
+      "Dependencies": [
+        "ChargeCategory-C-000-M",
+        "EffectiveCost-C-009-C",
+        "EffectiveCost-C-010-C"
+      ]
+    }
+  },
+  "EffectiveCost-C-009-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the EffectiveCost of those related charges.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "EffectiveCost-C-010-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "ChargeCategory-C-000-M",
+        "BilledCost-C-000-M"
+      ]
+    }
+  },
+  "EffectiveCost-C-011-C": {
+    "Function": "Composite",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Charges for a given CommitmentDiscountId adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-012-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "EffectiveCost-C-013-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CommitmentDiscountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CommitmentDiscountId-C-000-C",
+        "EffectiveCost-C-012-C",
+        "EffectiveCost-C-013-C"
+      ]
+    }
+  },
+  "EffectiveCost-C-012-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "Scope alignment by CommitmentDiscountId",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of BilledCost where ChargeCategory is \"Purchase\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CommitmentDiscountId",
+            "Value": null
+          }
+        ]
+      },
+      "Dependencies": [
+        "BilledCost-C-000-M",
+        "ChargeCategory-C-000-M",
+        "CommitmentDiscountId-C-000-C"
+      ]
+    }
+  },
+  "EffectiveCost-C-013-C": {
+    "Function": "Validation",
+    "Reference": "EffectiveCost",
+    "EntityType": "Column",
+    "Notes": "Scope alignment by CommitmentDiscountId; no external CR dependency on EffectiveCost",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Used\", plus the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Unused\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CommitmentDiscountId",
+            "Value": null
+          }
+        ]
+      },
+      "Dependencies": [
+        "CommitmentDiscountStatus-C-000-C",
+        "ChargeCategory-C-000-M",
+        "CommitmentDiscountId-C-000-C"
+      ]
+    }
+  }
+}
