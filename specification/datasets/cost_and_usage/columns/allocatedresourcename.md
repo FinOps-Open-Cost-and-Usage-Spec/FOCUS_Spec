@@ -4,7 +4,7 @@ The Allocated Resource Name is a display name which cost is being allocated to i
 
 The AllocatedResourceName column adheres to the following requirements:
 
-* AllocatedResourceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports service-provider-calculated split cost allocation.
+* AllocatedResourceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports data generator-calculated split cost allocation.
 * AllocatedResourceName MUST be of type String.
 * AllocatedResourceName MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedResourceName nullability is defined as follows:
@@ -22,7 +22,7 @@ Allocated Resource Name
 
 ## Description
 
-The display name of the object to which cost is allocated in service-provider-calculated split cost allocation.
+The display name of the object to which cost is allocated in data generator-calculated split cost allocation.
 
 ## Content Constraints
 

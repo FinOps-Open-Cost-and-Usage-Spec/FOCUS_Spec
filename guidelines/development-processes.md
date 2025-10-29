@@ -44,7 +44,7 @@ All suggestions and feature requests should be introduced to the FOCUS project v
 _Normative guidelines to develop high-quality feature request titles_:
 - **Start with a standard verb**. Choose one or use a verb similar to: Add, Clarify, Standardize, Enable, Define, Remove, Rename
 - **Use correct sentence structure**. Pick whichever reads best between: Verb + Target + Qualifier OR Verb + Qualifier + Target
-(e.g. “Add service-provider-calculated shared cost allocation” vs “Standardize tag export across clouds”)
+(e.g. “Add data generator-calculated shared cost allocation” vs “Standardize tag export across clouds”)
 - **Describe the outcome, not the implementation**. “Add daily amortized cost” > “Create SQL to amortize daily”
 - **Sentence case; acronyms uppercase; no ALL-CAPS words**. “Add RI coverage metric” not “ADD RI COVERAGE METRIC”
 - **Use canonical FOCUS terminology; stay service-provider-agnostic**. Vendor specifics belong in examples, not the title
