@@ -7,7 +7,7 @@ DatasetInstanceLastUpdated adheres to the following requirements:
 * DatasetInstanceLastUpdated MUST be present in an object within the [Recency](#recency) collection.
 * DatasetInstanceLastUpdated MUST be of type Date/Time.
 * DatasetInstanceLastUpdated MUST conform to [DateTimeFormat](#date/timeformat) requirements.
-* DatasetInstanceLastUpdated MUST NOT contain null values.
+* DatasetInstanceLastUpdated MUST NOT be null.
 
 ## Metadata ID
 

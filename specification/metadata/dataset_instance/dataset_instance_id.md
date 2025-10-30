@@ -8,6 +8,7 @@ DatasetInstanceId adheres to the following requirements:
 * DatasetInstanceId MUST be of type String.
 * DatasetInstanceId MUST NOT contain null values.
 * DatasetInstanceId MUST be a unique identifier within a data generator.
+* DatasetInstanceId SHOULD be a Globally Unique Identifier (GUID).
 
 ## Metadata ID
 

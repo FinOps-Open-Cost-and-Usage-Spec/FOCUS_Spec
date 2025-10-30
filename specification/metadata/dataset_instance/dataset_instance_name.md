@@ -6,7 +6,7 @@ DatasetInstanceName adheres to the following requirements:
 
 * DatasetInstanceName MUST be present in an object within the [DatasetInstance](#datasetinstance) collection.
 * DatasetInstanceName MUST be of type String.
-* DatasetInstanceName MUST NOT contain null values.
+* DatasetInstanceName MUST NOT be null.
 
 ## Metadata ID
 

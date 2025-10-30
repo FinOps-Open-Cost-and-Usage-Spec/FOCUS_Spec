@@ -7,7 +7,7 @@ RecencyLastUpdateDate adheres to the following requirements:
 * RecencyLastUpdateDate MUST be present in an object within the [Recency](#recency) collection.
 * RecencyLastUpdateDate MUST be of type Date/Time.
 * RecencyLastUpdateDate MUST conform to [DateTimeFormat](#date/timeformat) requirements.
-* RecencyLastUpdateDate MUST NOT contain null values.
+* RecencyLastUpdateDate MUST NOT be null.
 
 ## Metadata ID
 

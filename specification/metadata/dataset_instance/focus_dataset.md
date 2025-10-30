@@ -6,7 +6,7 @@ The FocusDatasetId property adheres to the following requirements:
 
 * FocusDatasetId MUST be present in an object within the [DatasetInstance](#datasetinstance) collection.
 * FocusDatasetId MUST be of type String.
-* FocusDatasetId MUST NOT contain null values.
+* FocusDatasetId MUST NOT be null.
 * FocusDatasetId MUST match the Dataset ID of one of the [*FOCUS datasets*](#glossary:FOCUS-dataset) defined in the FOCUS specification.
 
 ## Metadata ID
@@ -19,12 +19,12 @@ FOCUS Dataset ID
 
 ## Content constraints
 
-| Constraint    | Value                                     |
-|:--------------|:------------------------------------------|
-| Feature level | Mandatory                                 |
-| Allows nulls  | False                                     |
-| Data type     | String                                    |
-| Value format  | Must align with a published FOCUS Dataset |
+| Constraint    | Value            |
+|:--------------|:-----------------|
+| Feature level | Mandatory        |
+| Allows nulls  | False            |
+| Data type     | String           |
+| Value format  | \<not specified> |
 
 ## Introduced (version)
 

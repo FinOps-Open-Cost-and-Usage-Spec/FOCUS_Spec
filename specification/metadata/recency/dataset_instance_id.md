@@ -6,7 +6,7 @@ DatasetInstanceId adheres to the following requirements:
 
 * DatasetInstanceId MUST be present in an object within the [Recency](#recency) collection.
 * DatasetInstanceId MUST be of type String.
-* DatasetInstanceId MUST NOT contain null values.
+* DatasetInstanceId MUST NOT be null.
 * DatasetInstanceId SHOULD be a Globally Unique Identifier (GUID).
 
 ## Metadata ID
