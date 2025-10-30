@@ -2,9 +2,11 @@
 
 The List Unit Price represents the suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts. This price is denominated in the [Billing Currency](#billingcurrency). The List Unit Price is commonly used for calculating savings based on various rate optimization activities.
 
-The ListUnitPrice column adheres to the following requirements:
+## Requirements
 
-* ListUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
+ListUnitPrice adheres to the following requirements:
+
+* ListUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be of type Decimal.
 * ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * ListUnitPrice nullability is defined as follows:

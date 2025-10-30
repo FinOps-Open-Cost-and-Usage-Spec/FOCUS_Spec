@@ -2,7 +2,12 @@
 
 The Dataset Instance ID is a unique identifier for the specific dataset instance provided by the data generator. It identifies the dataset instance that this schema and the corresponding dataset artifacts are aligned with.
 
-Dataset Instance ID MUST be provided in the schema metadata. Dataset Instance ID MUST be of type String and MUST NOT contain null values. Dataset Instance ID MUST be a unique identifier within a data generator.
+DatasetInstanceId adheres to the following requirements:
+
+* DatasetInstanceId MUST be present in an object within the [Schema](#schema) collection.
+* DatasetInstanceID MUST be of type String.
+* DatasetInstanceID MUST NOT be null.
+* DatasetInstanceID MUST be a unique identifier within a data generator.
 
 ## Metadata ID
 
@@ -14,12 +19,12 @@ Dataset Instance ID
 
 ## Content constraints
 
-| Constraint    | Value                                     |
-|:--------------|:------------------------------------------|
-| Feature level | Mandatory                                 |
-| Allows nulls  | False                                     |
-| Data type     | String                                    |
-| Value format  | Must align with a published FOCUS Dataset |
+| Constraint    | Value              |
+|:--------------|:-------------------|
+| Feature level | Mandatory          |
+| Allows nulls  | False              |
+| Data type     | String             |
+| Value format  | GUID (recommended) |
 
 ## Introduced (version)
 
