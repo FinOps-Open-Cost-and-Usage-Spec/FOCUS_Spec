@@ -2,7 +2,12 @@
 
 The number scale of the data provides the maximum number of digits after the decimal point in decimal numbers.
 
-NumberScale SHOULD be provided in the FOCUS Metadata schema for Decimal columns. NumberScale MUST be of type Integer and MUST NOT contain null values.
+NumberScale adheres to the following requirements:
+
+* NumberScale SHOULD be present in an object within the [ColumnDefinition](#columndefinition) collection when the column is of Decimal data type.
+* NumberScale MUST be of type Integer.
+* NumberScale MUST conform to [NumericFormat](#numericformat) requirements.
+* NumberScale MUST NOT be null.
 
 ## Metadata ID
 
@@ -16,7 +21,7 @@ Number Scale
 
 | Constraint    | Value                            |
 |:--------------|:---------------------------------|
-| Feature level | Conditional                      |
+| Feature level | Recommended                      |
 | Allows nulls  | False                            |
 | Data type     | Integer                          |
 | Value format  | [Numeric Format](#numericformat) |

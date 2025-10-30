@@ -2,9 +2,11 @@
 
 The [*billed cost*](#glossary:billed-cost) represents a [*charge*](#glossary:charge) serving as the basis for invoicing, inclusive of the impacts of all reduced rates and discounts while excluding the [*amortization*](#glossary:amortization) of relevant purchases (one-time or recurring) paid to cover future eligible *charges*. This cost is denominated in the [Billing Currency](#billingcurrency). The Billed Cost is commonly used to perform FinOps capabilities that require cash-basis accounting such as cost allocation, budgeting, and invoice reconciliation.
 
-The BilledCost column adheres to the following requirements:
+## Requirements
 
-* BilledCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+BilledCost adheres to the following requirements:
+
+* BilledCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#numericformat) requirements.
 * BilledCost MUST NOT be null.

@@ -2,9 +2,11 @@
 
 Pricing Category describes the pricing model used for a [*charge*](#glossary:charge) at the time of use or purchase. It can be useful for distinguishing between *charges* incurred at the [*list unit price*](#glossary:list-unit-price) or a reduced price and exposing optimization opportunities, like increasing [*commitment discount*](#glossary:commitment-discount) coverage.
 
-The PricingCategory column adheres to the following requirements:
+## Requirements
 
-* PricingCategory MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all [*SKUs*](#glossary:sku).
+PricingCategory adheres to the following requirements:
+
+* PricingCategory MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports more than one pricing category across all [*SKUs*](#glossary:sku).
 * PricingCategory MUST be of type String.
 * PricingCategory nullability is defined as follows:
   * PricingCategory MUST be null when [SkuPriceId](#skupriceid) is null.

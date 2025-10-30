@@ -2,9 +2,11 @@
 
 Contract Commitment ID is a provider-assigned identifier describing a single contract term agreed between a provider and a customer.  Contracts can include commitments to a certain amount of spend or usage over an agreed period of time.
 
-The ContractCommitmentId column adheres to the following requirements:
+## Requirements
 
-* ContractCommitmentId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ContractCommitmentId adheres to the following requirements:
+
+* ContractCommitmentId MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentId MUST be of type String.
 * ContractCommitmentId MUST conform to [StringHandling](#stringhandling) requirements.
 * ContractCommitmentId MUST NOT be null.
