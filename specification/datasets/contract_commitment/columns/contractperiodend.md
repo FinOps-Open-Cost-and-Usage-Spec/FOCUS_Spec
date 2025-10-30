@@ -4,7 +4,7 @@ Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveen
 
 The ContractPeriodEnd column adheres to the following requirements:
 
-* ContractPeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractPeriodEnd MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractPeriodEnd MUST be of type Date/Time.
 * ContractPeriodEnd MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * ContractPeriodEnd MUST NOT be null.

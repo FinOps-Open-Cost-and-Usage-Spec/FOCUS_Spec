@@ -4,7 +4,7 @@ Contract Commitment Quantity represents the amount associated with the [*contrac
 
 The ContractCommitmentQuantity column adheres to the following requirements:
 
-* ContractCommitmentQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractCommitmentQuantity MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentQuantity MUST be of type Decimal.
 * ContractCommitmentQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractCommitmentQuantity nullability is defined as follows:

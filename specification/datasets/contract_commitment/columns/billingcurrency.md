@@ -4,7 +4,7 @@
 
 The BillingCurrency column adheres to the following requirements:
 
-* BillingCurrency MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BillingCurrency MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingCurrency MUST be of type String.
 * BillingCurrency MUST conform to [StringHandling](#stringhandling) requirements.
 * BillingCurrency MUST conform to [CurrencyFormat](#currencyformat) requirements.
