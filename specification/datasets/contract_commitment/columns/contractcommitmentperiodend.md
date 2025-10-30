@@ -2,9 +2,11 @@
 
 Contract Commitment Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*contract commitment period*](#glossary:contractcommitmentperiod). For example, a time period where [Contract Commitment Period Start](#contractperiodstart) is '2024-01-01T00:00:00Z' and Contract Commitment Period End is '2024-01-02T00:00:00Z' includes January 1 2024 since Contract Commitment Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include January 1 2025 since Contract Commitment Period End represents the *exclusive end bound*.
 
-The ContractCommitmentPeriodEnd column adheres to the following requirements:
+## Requirements
 
-* ContractCommitmentPeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ContractCommitmentPeriodEnd adheres to the following requirements:
+
+* ContractCommitmentPeriodEnd MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentPeriodEnd MUST be of type Date/Time.
 * ContractCommitmentPeriodEnd MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * ContractCommitmentPeriodEnd MUST NOT be null.

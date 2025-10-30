@@ -2,9 +2,11 @@
 
 Contracted Cost represents the cost calculated by multiplying [*contracted unit price*](#glossary:contracted-unit-price) and the corresponding [Pricing Quantity](#pricingquantity). Contracted Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on negotiation activities, by comparing it with [List Cost](#listcost). If [*negotiated discounts*](#glossary:negotiated-discount) are not applicable, the Contracted Cost defaults to the List Cost.
 
-The ContractedCost column adheres to the following requirements:
+## Requirements
 
-* ContractedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ContractedCost adheres to the following requirements:
+
+* ContractedCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractedCost MUST be of type Decimal.
 * ContractedCost MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractedCost MUST NOT be null.

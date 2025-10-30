@@ -2,7 +2,12 @@
 
 Datetime the data in the time sector was last updated.
 
-The TimeSectorLastUpdated MUST be present in time sector recency metadata. This MUST be of type Date/Time and MUST NOT contain null values. RecencyLastUpdateDate MUST conform to [DateTimeFormat](#date/timeformat).
+TimeSectorLastUpdated adheres to the following requirements:
+
+* TimeSectorLastUpdated MUST be present in [TimeSectors](#timesectors) subsection of the [Recency](#recency) metadata section.
+* TimeSectorLastUpdated MUST be of type Date/Time.
+* TimeSectorLastUpdated MUST NOT be null.
+* TimeSectorLastUpdated MUST conform to [DateTimeFormat](#date/timeformat).
 
 ## Metadata ID
 
@@ -14,12 +19,12 @@ Time Sector Last Updated
 
 ## Content constraints
 
-| Constraint    | Value                                     |
-|:--------------|:------------------------------------------|
-| Feature level | Mandatory                                 |
-| Allows nulls  | False                                     |
-| Data type       | Date/Time                            |
-| Value format    | [Date/Time Format](#date/timeformat) |
+| Constraint    | Value                                |
+|:--------------|:-------------------------------------|
+| Feature level | Mandatory                            |
+| Allows nulls  | False                                |
+| Data type     | Date/Time                            |
+| Value format  | [Date/Time Format](#date/timeformat) |
 
 ## Introduced (version)
 

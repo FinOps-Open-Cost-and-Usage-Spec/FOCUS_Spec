@@ -18,7 +18,7 @@ In addition to these, a data generator may include one or more custom properties
 
 The ContractApplied column adheres to the following requirements:
 
-* ContractApplied MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* ContractApplied MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
 * ContractApplied MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
 
@@ -55,7 +55,7 @@ Contract ID is a provider-assigned identifier for a contract describing the agre
 
 The "ContractId" property adheres to the following requirements:
 
-* "ContractId" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractId" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
 * "ContractId" MUST be of type String.
 * "ContractId" MUST conform to [StringHandling](#stringhandling) requirements.
 * "ContractId" nullability is defined as follows:
@@ -71,7 +71,7 @@ A Contract Commitment ID is a provider-assigned identifier describing an agreeme
 
 The "ContractCommitmentID" property adheres to the following requirements:
 
-* "ContractCommitmentID" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractCommitmentID" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
 * "ContractCommitmentID" MUST be of type String.
 * "ContractCommitmentID" MUST conform to [StringHandling](#stringhandling) requirements.
 * "ContractCommitmentID" nullability is defined as follows:
@@ -90,7 +90,7 @@ Contract Commitment Applied Cost represents the cost of the charge applied to th
 
 The "ContractCommitmentAppliedCost" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedCost" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* value with one or more *contract commitments*.
+* "ContractCommitmentAppliedCost" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* value with one or more *contract commitments*.
 * "ContractCommitmentAppliedCost" MUST be of type Decimal.
 * "ContractCommitmentAppliedCost" MUST conform to [NumericFormat](#numericformat) requirements.
 * "ContractCommitmentAppliedCost" nullability is defined as follows:
@@ -105,7 +105,7 @@ Contract Commitment Applied Quantity represents the quantity of the charge appli
 
 The "ContractCommitmentAppliedQuantity" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedQuantity" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* quantity with one or more *contract commitments*.
+* "ContractCommitmentAppliedQuantity" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedQuantity" MUST be of type Decimal.
 * "ContractCommitmentAppliedQuantity" MUST conform to [NumericFormat](#numericformat) requirements.
 * "ContractCommitmentAppliedQuantity" nullability is defined as follows:
@@ -120,7 +120,7 @@ The Contract Commitment Applied Unit represents a provider-specified measurement
 
 The "ContractCommitmentAppliedUnit" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedUnit" MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* quantity with one or more *contract commitments*.
+* "ContractCommitmentAppliedUnit" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedUnit" MUST be of type String.
 * "ContractCommitmentAppliedUnit" MUST conform to [StringHandling](#stringhandling) requirements.
 * "ContractCommitmentAppliedUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.

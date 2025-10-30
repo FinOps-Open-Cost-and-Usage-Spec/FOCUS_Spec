@@ -2,7 +2,11 @@
 
 Numeric Precision is the maximum number of digits for the values in the column.
 
-NumericPrecision SHOULD be provided in the FOCUS Metadata schema for Numeric Format columns. NumericPrecision MUST be of type Integer and MUST NOT contain null values.
+NumericPrecision adheres to the following requirements:
+
+* NumberPrecision SHOULD be present in an object within the [ColumnDefinition](#columndefinition) collection when the column is of Decimal data type.
+* NumericPrecision MUST be of type Integer.
+* NumericPrecision MUST NOT contain null values.
 
 ## Metadata ID
 
@@ -16,7 +20,7 @@ Numeric Precision
 
 | Constraint    | Value                            |
 |:--------------|:---------------------------------|
-| Feature level | Conditional                      |
+| Feature level | Recommended                      |
 | Allows nulls  | False                            |
 | Data type     | Integer                          |
 | Value format  | [Numeric Format](#numericformat) |

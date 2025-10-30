@@ -12,7 +12,7 @@ The project is divided into three main stages, each with a defined scope and est
 
 **Estimated Effort: 40% of total project time**
 
-This foundational stage involves analyzing the **FOCUS v1.2** Technical Specification to extract **atomic** and **composite**  normative requirements for each attribute and dataset column. These are captured in standardized Markdown tables that define logic, applicability, conditions, and dependencies.
+This foundational stage involves analyzing the **FOCUS v1.2** Technical Specification to extract **atomic** and **composite**  normative requirements for each attribute and dataset column. These requirements are now captured in a **structured JSON format** that define logic, applicability, conditions, and dependencies.
 
 The current output for **Stage 1** is **AI-assisted**, with over 85% of rules estimated to be valid. However, member review is critical, as the text of some requirements are complex to formalize in a prompt. The quality and accuracy of this stage directly impact the success of subsequent stages, especially JSON generation and dependency modeling.
 
@@ -20,9 +20,9 @@ The current output for **Stage 1** is **AI-assisted**, with over 85% of rules es
 
 **Estimated Effort: 35% of total project time**
 
-This stage translates the structured tables from **Stage 1** into a machine-readable JSON format. Each rule is converted into a defined JSON structure, validated against a shared schema. The conversion process can be largely automated by copying and adapting predefined JSON templates, which are repeated per column.
+This stage focuses on refining and validating the **JSON structures** generated in **Stage 1**. Each rule is reviewed, updated, and validated against a shared schema. The refinement process can be largely automated by copying and adapting predefined JSON templates, which are repeated per column.
 
-The JSON output enables programmatic validation and integration into testing workflows, making it a crucial bridge between human-readable requirements and tooling.
+The validated JSON output enables programmatic testing, integration into tooling, and long-term maintainability, making it a crucial bridge between human-readable requirements and automated validation workflows.
 
 ### Stage 3 – Model Dependencies Between ModelIds  
 

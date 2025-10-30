@@ -14,5 +14,5 @@
 !INCLUDE "focus_version_changed_with_data_generator_version_used_example.md",1
 !INCLUDE "dataset_instance_metadata_example.md",1
 !INCLUDE "recency_metadata_example.md",1
-!INCLUDE "recency_metadata_updating_non_over_time_dataset_example.md",1
-!INCLUDE "recency_metadata_updating_over_time_dataset_example.md",1
+!INCLUDE "recency_metadata_update_non_time_series_example.md",1
+!INCLUDE "recency_metadata_update_time_series_example.md",1

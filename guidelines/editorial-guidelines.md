@@ -155,7 +155,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 >
 > The Pricing Quantity represents the volume of a given SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Pricing Unit](#pricingunit). Distinct from [Consumed Quantity](#consumedquantity) (complementary to [Consumed Unit](#consumedunit)), it focuses on pricing and cost, not *resource* and *service* consumption.
 >
->  * The PricingQuantity column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset). 
+>  * The PricingQuantity column MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset). 
 >  * This column MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements 
 >  * The value MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction".
 > 

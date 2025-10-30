@@ -1,27 +1,6 @@
-# Recency
-
-The recency metadata object and its contents provide information about how up-to-date FOCUS datasets are and when they have been updated.
-
-## Requirements
-
-### FOCUS Datasets
-
-FOCUS datasets, regardless of delivery mechanism, MAY provide metadata indicating the recency of the data. This metadata MUST be retrievable without inspection of the contents of the FOCUS data within the data artifact.
-
-### Dataset Updates
-
-When a dataset is updated by the [Data Generator](#datagenerator) the supplied recency metadata corresponding to the dataset should be updated to indicate that the dataset has been updated.
-Example scenarios include but are not limited to:
-
-* [Updating an overtime dataset recency metadata](#addingnewcolumns)
-* [Updating a non over-time dataset recency metadata](#changingcolumnmetadata)
-
-## Recency Example
-
-For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#recencymetadataexample)
-
-!INCLUDE "dataset_instance_id",1
+!INCLUDE "recency_overview.md",0
+!INCLUDE "dataset_instance_id.md",1
 !INCLUDE "dataset_instance_complete.md",1
 !INCLUDE "dataset_instance_last_updated.md",1
-!INCLUDE "recencylastupdatedate.md",1
+!INCLUDE "recency_last_updated.md",1
 !INCLUDE "time_sectors/time_sectors.mdpp",1
