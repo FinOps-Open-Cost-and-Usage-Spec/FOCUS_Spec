@@ -4,11 +4,11 @@ The DataGeneratorVersion MAY be supplied to declare the version of logic by whic
 
 DataGeneratorVersion adheres to the following requirements:
 
-* DataGeneratorVersion MAY be present in [Schema](#schema) object.
+* DataGeneratorVersion MAY be present in an object within the [Schema](#schema) collection.
 * DataGeneratorVersion MUST be of type String.
 * DataGeneratorVersion MUST conform to [StringHandling](#stringhandling) requirements.
 * DataGeneratorVersion MUST NOT be null.
-* DataGeneratorVersion MUST be changed when FocusVersion is changed.
+* DataGeneratorVersion MUST be changed when [FocusVersion](#focusversion) is changed.
 * Data generators MUST document what changes are present in the DataGeneratorVersion.
 
 ## Metadata ID

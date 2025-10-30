@@ -6,7 +6,7 @@ The FOCUS metadata about the generator of the FOCUS data.
 
 DataGenerator adheres to the following requirements:
 
-* DataGenerator MUST be present in [Metadata](#metadata).
+* DataGenerator MUST be present in the [Metadata](#metadata).
 * DataGenerator MUST be of type Object.
 * DataGenerator MUST NOT be null.
 

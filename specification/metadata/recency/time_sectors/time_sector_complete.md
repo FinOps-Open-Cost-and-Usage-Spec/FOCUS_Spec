@@ -4,8 +4,8 @@ Time Sector Complete provides a boolean value to indicate that the time sector i
 
 The TimeSectorComplete property adheres to the following requirements:
 
-* The Time Sector Complete MUST be present in the recency metadata.
-* The Complete MUST be of type Boolean.
+* TimeSectorComplete MUST be present in the [TimeSectors](#timesectors) subsection of the [Recency](#recency) metadata section.
+* TimeSectorComplete MUST be of type Boolean.
 
 ## Metadata ID
 

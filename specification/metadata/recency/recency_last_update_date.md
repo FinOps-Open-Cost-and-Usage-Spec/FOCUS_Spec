@@ -4,7 +4,7 @@ Datetime the recency metadata object was updated.
 
 The RecencyLastUpdateDate property adheres to the following requirements:
 
-* RecencyLastUpdateDate MUST be present in the metadata.
+* RecencyLastUpdateDate MUST be present in the [Recency](#recency) metadata section.
 * RecencyLastUpdateDate MUST be of type Date/Time.
 * RecencyLastUpdateDate MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * RecencyLastUpdateDate MUST NOT contain null values.

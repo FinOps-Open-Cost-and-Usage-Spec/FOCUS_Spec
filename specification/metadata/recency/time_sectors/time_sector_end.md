@@ -4,11 +4,12 @@ The Time Sector End is the datetime of the end of the time sector. The EndTime M
 
 The TimeSectorEnd property adheres to the following requirements:
 
-* The Time Sector End MUST be present in the metadata.
-* This MUST be of type Date/Time and MUST NOT contain null values.
-* The Time Sector End must be exclusive of the end time of the subsequent time sector.
-* The Time Sector End MUST be later than the StartTime.
-* EndTime MUST conform to [DateTimeFormat](#date/timeformat).
+* TimeSectorEnd MUST be present in the [TimeSectors](#timesectors) subsection of the [Recency](#recency) metadata section.
+* TimeSectorEnd MUST be of type Date/Time.
+* TimeSectorEnd MUST NOT contain null values.
+* TimeSectorEnd MUST conform to [DateTimeFormat](#date/timeformat).
+* TimeSectorEnd must be exclusive of the end time of the subsequent time sector.
+* TimeSectorEnd MUST be later than TimeSectorStart.
 
 ## Metadata ID
 

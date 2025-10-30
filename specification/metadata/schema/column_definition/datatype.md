@@ -2,9 +2,9 @@
 
 The data type of the column provided in the [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-The DataType property adheres to the following requirements:
+DataType adheres to the following requirements:
 
-* DataType MUST be present in [ColumnDefinition](#columndefinition) object.
+* DataType MUST be present in an object within the [ColumnDefinition](#columndefinition) collection.
 * DataType MUST be of type String.
 * DataType MUST NOT contain null values.
 

@@ -4,7 +4,7 @@ Human-readable name of the entity that generated the dataset instance, typically
 
 DataGenerator property adheres to the following requirements:
 
-* DataGenerator MUST be present in the metadata.
+* DataGenerator MUST be present in the [Data Generator](#datagenerator) metadata section.
 * DataGenerator MUST be of type String.
 * DataGenerator MUST conform to [StringHandling](#stringhandling) requirements.
 * DataGenerator MUST NOT be null.

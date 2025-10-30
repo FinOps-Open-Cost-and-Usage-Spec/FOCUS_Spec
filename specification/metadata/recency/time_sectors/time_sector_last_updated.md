@@ -4,9 +4,10 @@ Datetime the data in the time sector was last updated.
 
 The TimeSectorLastUpdated property adheres to the following requirements:
 
-* The TimeSectorLastUpdated MUST be present in time sector recency metadata.
-* This MUST be of type Date/Time and MUST NOT contain null values.
-* RecencyLastUpdateDate MUST conform to [DateTimeFormat](#date/timeformat).
+* TimeSectorLastUpdated MUST be present in [TimeSectors](#timesectors) subsection of the [Recency](#recency) metadata section.
+* TimeSectorLastUpdated MUST be of type Date/Time.
+* TimeSectorLastUpdated MUST NOT contain null values.
+* TimeSectorLastUpdated MUST conform to [DateTimeFormat](#date/timeformat).
 
 ## Metadata ID
 

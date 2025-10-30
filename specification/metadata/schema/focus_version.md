@@ -4,7 +4,7 @@ The version of FOCUS utilized for building the dataset.
 
 FocusVersion adheres to the following requirements:
 
-* FocusVersion MUST be present in [Schema](#schema) object.
+* FocusVersion MUST be present in an object within the [Schema](#schema) collection.
 * FocusVersion MUST be of type String.
 * FocusVersion MUST NOT be null.
 * FocusVersion MUST match one of the published versions of the FOCUS specification.

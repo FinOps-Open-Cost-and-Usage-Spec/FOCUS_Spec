@@ -4,7 +4,7 @@ The human-readable name of the dataset instance as provided by the data generato
 
 The DatasetInstanceName property adheres to the following requirements:
 
-* DatasetInstanceName MUST be present in the dataset instance metadata.
+* DatasetInstanceName MUST be present in the [Dataset Instance](#datasetinstance) metadata section.
 * DatasetInstanceName MUST be of type String.
 * DatasetInstanceName MUST NOT contain null values.
 

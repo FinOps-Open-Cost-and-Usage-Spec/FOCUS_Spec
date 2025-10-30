@@ -4,7 +4,7 @@ Date the schema was created.
 
 CreationDate adheres to the following requirements:
 
-* CreationDate MUST be present in [Schema](#schema) object.
+* CreationDate MUST be present in an object within the [Schema](#schema) collection.
 * CreationDate MUST be of type Date/Time.
 * CreationDate MUST conform to [DateTimeFormat](#date/timeformat).
 * CreationDate MUST NOT be null.

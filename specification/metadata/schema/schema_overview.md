@@ -6,7 +6,7 @@ The schema metadata object and its content provide information about the structu
 
 Schema adheres to the following requirements:
 
-* Schema MUST be present in [Metadata](#metadata).
+* Schema MUST be present in the [Metadata](#metadata).
 * Schema MUST be structured as a collection of objects.
 * Schema MUST NOT be null.
 * Schema collection MUST contain at least one object for every [DatasetInstance](#datasetinstance) object.

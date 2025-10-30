@@ -4,7 +4,7 @@ Dataset Instance Complete provides a boolean value to indicate that the dataset 
 
 The DatasetInstanceComplete property adheres to the following requirements:
 
-* DatasetInstanceComplete MUST be present in the metadata if the the dataset instance is not a time-series dataset.
+* DatasetInstanceComplete MUST be present in the [Recency](#recency) metadata section if the the dataset instance is not a time-series dataset.
 * DatasetInstanceComplete MUST be of type Boolean.
 * DatasetInstanceComplete MUST NOT contain null values.
 

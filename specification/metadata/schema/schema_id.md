@@ -4,7 +4,7 @@ The Schema ID provides the reference item to associate which Schema was used for
 
 SchemaId adheres to the following requirements:
 
-* SchemaId MUST be present in [Schema](#schema) object.
+* SchemaId MUST be present in an object within the [Schema](#schema) collection.
 * SchemaId MUST be of type String.
 * SchemaID MUST NOT be null.
 * SchemaId SHOULD be a Globally Unique Identifier (GUID).
