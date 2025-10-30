@@ -6,7 +6,7 @@ An Allocated Resource ID is an identifier assigned by the data generator which c
 
 AllocatedResourceId adheres to the following requirements:
 
-* AllocatedResourceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports provider-calculated split cost allocation.
+* AllocatedResourceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports data generator-calculated split cost allocation.
 * AllocatedResourceId MUST be of type String.
 * AllocatedResourceId MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedResourceId nullability is defined as follows:
