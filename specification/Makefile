@@ -44,12 +44,17 @@ spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py attributes
 	./validate_includes.py metadata
 	./validate_includes.py metadata/data_generator
+	./validate_includes.py metadata/dataset_instance
+	./validate_includes.py metadata/recency
 	./validate_includes.py metadata/schema
 	./validate_includes.py metadata/schema/column_definition
 	./validate_includes.py appendix
 	./validate_includes.py appendix/metadata_examples
 	./validate_includes.py appendix/saas_examples
-	
+	./validate_includes.py appendix/commitment_discounts
+	./validate_includes.py appendix/examples/commitment_discount_flexibility_examples
+	./validate_includes.py appendix/saas_examples
+
 	@echo "Checking for misaligned code block markers (\`\`\`)..."
 	@find . -type f \( -name "*.md" -o -name "*.mdpp" \) \
 		-exec grep -nH '^[[:space:]][[:space:]]*```$$' {} + 2>/dev/null | \

@@ -2,6 +2,6 @@
 !INCLUDE "commitment_discounts/commitment_discounts.mdpp",1
 !INCLUDE "examples/commitment_discount_flexibility_examples/commitment_discount_flexibility_examples.mdpp",1
 !INCLUDE "metadata_examples/metadata_examples.mdpp",1
+!INCLUDE "participating_entity_identification.md",1
 !INCLUDE "saas_examples/saas_examples.mdpp",1
 !INCLUDE "grouping_constructs_for_resources_and_or_services.md",1
-!INCLUDE "participating_entity_identification.md",1
