@@ -2,45 +2,39 @@
 
 ## Metadata structure overview
 
-Metadata
-
-Metadata -> DataGenerator
-Metadata -> DataGenerator -> DataGenerator
-
-Metadata -> DatasetInstance
-Metadata -> DatasetInstance -> FocusDatasetId
-Metadata -> DatasetInstance -> DatasetInstanceId
-Metadata -> DatasetInstance -> DatasetInstanceName
-
-Metadata -> Schema
-Metadata -> Schema -> SchemaId
-Metadata -> Schema -> CreationDate
-Metadata -> Schema -> FocusVersion
-Metadata -> Schema -> DataGeneratorVersion
-Metadata -> Schema -> DatasetInstanceId
-
-Metadata -> Schema -> ColumnDefinition
-Metadata -> Schema -> ColumnDefinition -> ColumnName
-Metadata -> Schema -> ColumnDefinition -> DataType
-Metadata -> Schema -> ColumnDefinition -> Deprecated
-Metadata -> Schema -> ColumnDefinition -> NumericPrecision
-Metadata -> Schema -> ColumnDefinition -> NumberScale
-Metadata -> Schema -> ColumnDefinition -> PreviousColumnName
-Metadata -> Schema -> ColumnDefinition -> ProviderTagPrefixes
-Metadata -> Schema -> ColumnDefinition -> StringEncoding
-Metadata -> Schema -> ColumnDefinition -> StringMaxLength
-
-Metadata -> Recency
-Metadata -> Recency -> DatasetInstanceId
-Metadata -> Recency -> DatasetInstanceComplete
-Metadata -> Recency -> DatasetInstanceLastUpdated
-Metadata -> Recency -> RecencyLastUpdated
-
-Metadata -> Recency -> TimeSectors
-Metadata -> Recency -> TimeSectors -> TimeSectorComplete
-Metadata -> Recency -> TimeSectors -> TimeSectorLast Updated
-Metadata -> Recency -> TimeSectors -> TimeSectorStart
-Metadata -> Recency -> TimeSectors -> TimeSectorEnd
+- Metadata - **object**
+  - DataGenerator - **object**
+    - DataGenerator - *property*
+  - DatasetInstance - **collection of objects**
+    - FocusDatasetId - *property*
+    - DatasetInstanceId - *property*
+    - DatasetInstanceName - *property*
+  - Schema - **collection of objects**
+    - SchemaId - *property*
+    - CreationDate - *property*
+    - FocusVersion - *property*
+    - DataGeneratorVersion - *property*
+    - DatasetInstanceId - *property*
+    - ColumnDefinition - **collection of objects**
+      - ColumnName - *property*
+      - DataType - *property*
+      - Deprecated - *property*
+      - NumericPrecision - *property*
+      - NumberScale - *property*
+      - PreviousColumnName - *property*
+      - ProviderTagPrefixes - *property*
+      - StringEncoding - *property*
+      - StringMaxLength - *property*
+  - Recency - **collection of objects**
+    - DatasetInstanceId - *property*
+    - DatasetInstanceComplete - *property*
+    - DatasetInstanceLastUpdated - *property*
+    - RecencyLastUpdated - *property*
+    - TimeSectors - **collection of objects**
+      - TimeSectorComplete - *property*
+      - TimeSectorLast Updated - *property*
+      - TimeSectorStart - *property*
+      - TimeSectorEnd - *property*
 
 ## Metadata
 
@@ -84,7 +78,7 @@ DataGenerator adheres to the following requirements:
 * Dataset Instance Metadata Updates:
   * Should a property of the dataset instance be updated, the expectation is that the dataset instance metadata object is updated to reflect the change. This ensures that the dataset instance metadata object is always accurate.
 
-### Dataset Instance - Refinement V2
+### Dataset Instance - Refinement
 
 DatasetInstance adheres to the following requirements:
 
@@ -94,16 +88,6 @@ DatasetInstance adheres to the following requirements:
 * DatasetInstance collection MUST contain at least one object for every [*FOCUS dataset*](#glossary:FOCUS-dataset) supported by the data generator.
 * DatasetInstance object MUST NOT be null.
 * DatasetInstance object MUST be associated with one and only one *FOCUS dataset*.
-
-### Dataset Instance - Refinement V1
-
-DatasetInstance adheres to the following requirements:
-
-* DatasetInstance MUST be provided for every dataset instance provided by the data generator.
-* DatasetInstance MUST provide a reference to the dataset instance of the dataset artifact.
-* DatasetInstance MUST be retrievable independently from the dataset artifact it describes.
-* DatasetInstance MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
-* DatasetInstance SHOULD be updated when a data generator updates the corresponding dataset artifact.
 
 ## Recency
 
@@ -118,7 +102,7 @@ DatasetInstance adheres to the following requirements:
     * [Updating an overtime dataset recency metadata](#addingnewcolumns)
     * [Updating a non over-time dataset recency metadata](#changingcolumnmetadata)
 
-### Recency - Refinement V2
+### Recency - Refinement
 
 Recency adheres to the following requirements:
 
@@ -130,14 +114,6 @@ Recency adheres to the following requirements:
 * Recency object MUST be associated with one and only one DatasetInstance object.
 * Recency object MUST be retrievable without inspection of the contents of [*dataset instance artifacts*](#glossary:dataset-instance-artifact).
 * Recency object SHOULD be updated when the data generator updates the corresponding *dataset instance artifact*.
-
-### Recency - Refinement V1
-
-Recency adheres to the following requirements:
-
-* Recency MAY be present in Metadata.
-* Recency MUST be retrievable without inspection of the contents of the FOCUS data within the data artifact.
-* Recency SHOULD be updated when a data generator updates the corresponding dataset artifact.
 
 ## Time Sectors
 
@@ -178,7 +154,7 @@ TimeSectors adheres to the following requirements:
 * Schema Metadata Updates:
   * Should there be an error where the schema metadata object does not match the schema of the FOCUS dataset instance artifact, the provider MUST update the schema metadata object to match the schema of the FOCUS dataset instance artifact. This is to ensure that the schema metadata object is always accurate.
 
-### Schema - Refinement V2
+### Schema - Refinement
 
 Schema adheres to the following requirements:
 
@@ -195,17 +171,6 @@ Schema adheres to the following requirements:
 * Schema object SHOULD be provided separately from the *dataset instance artifacts* that conform to the structure defined by that Schema object.
 * Schema object MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
 
-### Schema - Refinement V1
-
-Schema adheres to the following requirements:
-
-* Schema MUST be provided for every FOCUS dataset provided by the data generator.
-* Schema MUST provide a reference to the FOCUS dataset of the dataset artifact.
-* Schema MUST be retrievable independently from the dataset it describes.
-* Schema MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
-* Schema SHOULD be provided separately from the dataset artifact it describes.
-* Schema MUST be updated via a new metadata object when a data generator changes the structure of a FOCUS dataset.
-
 ## Column Definition
 
 ### Column Definition - Orig
@@ -213,7 +178,7 @@ Schema adheres to the following requirements:
 * This metadata MUST be present in the FOCUS metadata schema.
 * This metadata MUST be of type Object and MUST NOT contain null values.
 
-### Column Definition - Refinement V2
+### Column Definition - Refinement
 
 ColumnDefinition adheres to the following requirements:
 
@@ -222,11 +187,3 @@ ColumnDefinition adheres to the following requirements:
 * ColumnDefinition MUST NOT be null.
 * ColumnDefinition collection MUST contain one and only one object for every column provided in *dataset instance artifacts* that reference the parent Schema object.
 * ColumnDefinition object MUST NOT be null.
-
-### Column Definition - Refinement V1
-
-ColumnDefinition adheres to the following requirements:
-
-* ColumnDefinition MUST be present in Schema.
-* ColumnDefinition MUST be of type Object.
-* ColumnDefinition MUST NOT contain null values.
