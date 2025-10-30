@@ -27,8 +27,8 @@ Recency
 
 Example scenarios include but are not limited to:
 
-* [Updating an over-time dataset recency metadata](#addingnewcolumns)
-* [Updating a non over-time dataset recency metadata](#changingcolumnmetadata)
+* [Updating Recency metadata for a time series dataset](#recencymetadataupdatenontimeseries)
+* [Updating Recency metadata for a non time series dataset](#recencymetadataupdatetimeseries)
 
 For an example of the FOCUS recency metadata, please refer to: [Recency Metadata Example](#recencymetadata).
 

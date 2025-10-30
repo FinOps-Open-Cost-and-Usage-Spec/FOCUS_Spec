@@ -1,4 +1,4 @@
-# Recency Metadata
+# Recency Metadata Update (Non Time Series)
 
 ## Scenario
 
