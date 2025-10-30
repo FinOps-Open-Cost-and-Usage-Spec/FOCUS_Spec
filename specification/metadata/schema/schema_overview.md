@@ -6,12 +6,18 @@ The schema metadata object and its content provide information about the structu
 
 Schema adheres to the following requirements:
 
-* Schema MUST be provided for every FOCUS dataset provided by the data generator.
-* Schema MUST provide a reference to the FOCUS dataset of the dataset artifact.
-* Schema MUST be retrievable independently from the dataset it describes.
-* Schema MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
-* Schema SHOULD be provided separately from the dataset artifact it describes.
-* Schema MUST be updated via a new metadata object when a data generator changes the structure of a FOCUS dataset.
+* Schema MUST be present in [Metadata](#metadata).
+* Schema MUST be structured as a collection of objects.
+* Schema MUST NOT be null.
+* Schema collection MUST contain at least one object for every [DatasetInstance](#datasetinstance) object.
+* Schema object MUST NOT be null.
+* Schema object MUST be associated with one and only one DatasetInstance object.
+* Schema object MUST be added to the collection whenever the structure of the [*dataset instance artifacts*](#glossary:dataset-instance-artifact) changes (including, but not limited to, additions or removals of columns, modifications to any ColumnDefinition, or updates to the FOCUSVersion or DataGeneratorVersion).
+* Schema object MUST be referenced by *dataset instance artifacts* that conform to the structure defined by that Schema object.
+* Schema object MUST define the exact structure of the *dataset instance artifacts* that reference it.
+* Schema object MUST be retrievable independently from the *dataset instance artifacts* that conform to the structure defined by that Schema object.
+* Schema object SHOULD be provided separately from the *dataset instance artifacts* that conform to the structure defined by that Schema object.
+* Schema object MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
 
 ## Examples
 
