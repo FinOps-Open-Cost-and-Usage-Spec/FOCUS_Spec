@@ -6,12 +6,12 @@ The FOCUS recency metadata's Time Sectors provide a list of time periods and met
 
 TimeSectors adheres to the following requirements:
 
-* TimeSectors MUST be present in the [Recency](#recency) metadata section when the the associated *FOCUS dataset* is defined as a time series dataset.
+* TimeSectors MUST be present in an object within the [Recency](#recency) collection when the the associated *FOCUS dataset* is defined as a time series dataset.
 * TimeSectors MUST be structured as a collection of objects.
 * TimeSectors MUST NOT be null.
 * TimeSectors collection MUST contain at least one object.
-* TimeSectors object MUST NOT be null.
-* TimeSectors objects MUST be updated, if already present, or added to the collection whenever data generator updates or provides new dataset artifacts.
+* TimeSectors collection MUST NOT contain null objects.
+* TimeSectors collection object MUST be updated, if already present, or added to the collection whenever the data generator updates or provides new dataset artifacts.
 
 ## Metadata ID
 

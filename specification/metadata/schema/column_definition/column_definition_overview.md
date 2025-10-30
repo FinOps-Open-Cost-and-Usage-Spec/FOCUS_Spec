@@ -10,7 +10,7 @@ ColumnDefinition adheres to the following requirements:
 * ColumnDefinition MUST be structured as a collection of objects.
 * ColumnDefinition MUST NOT be null.
 * ColumnDefinition collection MUST contain one and only one object for every column provided in *dataset instance artifacts* that reference the parent Schema object.
-* ColumnDefinition object MUST NOT be null.
+* ColumnDefinition collection MUST NOT contain null objects.
 
 ## Metadata ID
 
