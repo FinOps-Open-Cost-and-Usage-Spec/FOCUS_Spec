@@ -10,8 +10,8 @@ DatasetInstance adheres to the following requirements:
 * DatasetInstance MUST be structured as a collection of objects.
 * DatasetInstance MUST NOT be null.
 * DatasetInstance collection MUST contain at least one object for every [*FOCUS dataset*](#glossary:FOCUS-dataset) supported by the data generator.
-* DatasetInstance object MUST NOT be null.
-* DatasetInstance object MUST be associated with one and only one *FOCUS dataset*.
+* DatasetInstance collection object MUST NOT be null.
+* DatasetInstance collection object MUST be associated with one and only one *FOCUS dataset*.
 
 ## Metadata ID
 

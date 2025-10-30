@@ -13,10 +13,10 @@ Schema adheres to the following requirements:
 * Schema collection MUST NOT contain null objects.
 * Schema collection object MUST be associated with one and only one DatasetInstance object.
 * Schema collection object MUST be added to the collection whenever the structure of the [*dataset instance artifacts*](#glossary:dataset-instance-artifact) changes (including, but not limited to, additions or removals of columns, modifications to any ColumnDefinition, or updates to the FOCUSVersion or DataGeneratorVersion).
-* Schema collection object MUST be referenced by *dataset instance artifacts* that conform to the structure defined by that Schema object.
+* Schema collection object MUST be referenced by *dataset instance artifacts* that conform to the structure defined by that Schema collection object.
 * Schema collection object MUST define the exact structure of the *dataset instance artifacts* that reference it.
 * Schema collection object MUST be retrievable independently from the *dataset instance artifacts* that conform to the structure defined by that Schema collection object.
-* Schema collection object SHOULD be provided separately from the *dataset instance artifacts* that conform to the structure defined by that Schema object.
+* Schema collection object SHOULD be provided separately from the *dataset instance artifacts* that conform to the structure defined by that Schema collection object.
 * Schema collection object MAY be provided through the structure and/or schema of the delivery mechanism (e.g., database tables).
 
 ## Examples
