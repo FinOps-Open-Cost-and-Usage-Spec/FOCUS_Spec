@@ -6,9 +6,11 @@ The FOCUS metadata schema column definition provides a list of the columns prese
 
 ColumnDefinition adheres to the following requirements:
 
-* ColumnDefinition MUST be present in Schema.
-* ColumnDefinition MUST be of type Object.
-* ColumnDefinition MUST NOT contain null values.
+* ColumnDefinition MUST be present in [Schema](#schema) object.
+* ColumnDefinition MUST be structured as a collection of objects.
+* ColumnDefinition MUST NOT be null.
+* ColumnDefinition collection MUST contain one and only one object for every column provided in *dataset instance artifacts* that reference the parent Schema object.
+* ColumnDefinition object MUST NOT be null.
 
 ## Metadata ID
 
