@@ -4,7 +4,7 @@ An [*availability zone*](#glossary:availability-zone) is a host-provider-assigne
 
 The AvailabilityZone column adheres to the following requirements:
 
-* AvailabilityZone is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports deploying resources or services within an *availability zone*.
+* AvailabilityZone is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the host provider supports deploying resources or services within an *availability zone*.
 * AvailabilityZone MUST be of type String.
 * AvailabilityZone MUST conform to [StringHandling](#stringhandling) requirements.
 * AvailabilityZone MUST be null when a [*charge*](#glossary:charge) is not specific to an *availability zone*.
