@@ -2,11 +2,11 @@
 
 The Schema ID provides the reference item to associate which Schema was used for the generation of a FOCUS Dataset.
 
-The SchemaId property adheres to the following requirements:
+SchemaId adheres to the following requirements:
 
-* SchemaId MUST be present in the metadata.
+* SchemaId MUST be present in [Schema](#schema) object.
 * SchemaId MUST be of type String.
-* SchemaID MUST NOT contain null values.
+* SchemaID MUST NOT be null.
 * SchemaId SHOULD be a Globally Unique Identifier (GUID).
 
 ## Metadata ID

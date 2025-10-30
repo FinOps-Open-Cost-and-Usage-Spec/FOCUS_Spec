@@ -2,9 +2,9 @@
 
 The PreviousColumnName field indicates that on that schema the column where the key is included was renamed.
 
-The PreviousColumnName property adheres to the following requirements:
+PreviousColumnName adheres to the following requirements:
 
-* In cases where the PreviousColumnName is present, the following applies:
+* In cases where the PreviousColumnName is present in [ColumnDefinition](#columndefinition) object, the following applies:
   * PreviousColumnName MUST be of type String.
   * PreviousColumnName MUST not be null.
   * PreviousColumnName MUST be the name used in previous versions of the schema.

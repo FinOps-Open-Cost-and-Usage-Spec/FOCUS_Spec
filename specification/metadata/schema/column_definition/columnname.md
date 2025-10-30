@@ -4,9 +4,9 @@ The name of the column provided in the [*FOCUS dataset*](#glossary:FOCUS-dataset
 
 The ColumnName property adheres to the following requirements:
 
-* ColumnName MUST be provided in the FOCUS Metadata schema.
+* ColumnName MUST be present in [ColumnDefinition](#columndefinition) object.
 * ColumnName MUST be of type String.
-* ColumnName MUST NOT contain null values.
+* ColumnName MUST NOT be null.
 
 ## Metadata ID
 

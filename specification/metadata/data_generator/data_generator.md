@@ -2,7 +2,7 @@
 
 Human-readable name of the entity that generated the dataset instance, typically based on data provided by the [*Service Provider*](#serviceprovidername). The Data Generator ensures the technical accuracy and delivery of the data.
 
-The DataGenerator property adheres to the following requirements:
+DataGenerator property adheres to the following requirements:
 
 * DataGenerator MUST be present in the metadata.
 * DataGenerator MUST be of type String.

@@ -2,13 +2,13 @@
 
 The version of FOCUS utilized for building the dataset.
 
-The FocusVersion property adheres to the following requirements:
+FocusVersion adheres to the following requirements:
 
-* FocusVersion MUST be provided in the metadata.
+* FocusVersion MUST be present in [Schema](#schema) object.
 * FocusVersion MUST be of type String.
-* FocusVersion MUST NOT contain null values.
+* FocusVersion MUST NOT be null.
 * FocusVersion MUST match one of the published versions of the FOCUS specification.
-* FocusVersion MUST match the version of the FOCUS specification that the [*FOCUS dataset*](#glossary:FOCUS-dataset) conforms to.
+* FocusVersion MUST match the version of the FOCUS specification that the [*dataset instance artifact*](#glossary:dataset-instance-artifact) conforms to.
 
 ## Metadata ID
 

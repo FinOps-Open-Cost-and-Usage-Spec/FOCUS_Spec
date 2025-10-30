@@ -4,7 +4,7 @@ The data type of the column provided in the [*FOCUS dataset*](#glossary:FOCUS-da
 
 The DataType property adheres to the following requirements:
 
-* DataType MUST be provided in the FOCUS Metadata schema.
+* DataType MUST be present in [ColumnDefinition](#columndefinition) object.
 * DataType MUST be of type String.
 * DataType MUST NOT contain null values.
 
