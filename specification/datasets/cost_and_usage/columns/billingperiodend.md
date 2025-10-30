@@ -2,9 +2,11 @@
 
 Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*billing period*](#glossary:billing-period). For example, a time period where [Billing Period Start](#billingperiodstart) is '2024-01-01T00:00:00Z' and Billing Period End is '2024-02-01T00:00:00Z' includes [*charges*](#glossary:charge) for January since Billing Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include *charges* for February since Billing Period End represents the *exclusive end bound*.
 
-The BillingPeriodEnd column adheres to the following requirements:
+## Requirements
 
-* BillingPeriodEnd MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+BillingPeriodEnd adheres to the following requirements:
+
+* BillingPeriodEnd MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingPeriodEnd MUST be of type Date/Time.
 * BillingPeriodEnd MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * BillingPeriodEnd MUST NOT be null.

@@ -2,7 +2,11 @@
 
 The name of the column provided in the [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-The ColumnName MUST be provided in the FOCUS Metadata schema. ColumnName MUST be of type String and MUST NOT contain null values.
+ColumnName adheres to the following requirements:
+
+* ColumnName MUST be present in an object within the [ColumnDefinition](#columndefinition) collection.
+* ColumnName MUST be of type String.
+* ColumnName MUST NOT be null.
 
 ## Metadata ID
 

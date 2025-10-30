@@ -18,8 +18,8 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 
 ## Requirements
 
-* All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in the FOCUS Cost and Usage dataset.
-* If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage dataset.
+* All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in the *FOCUS dataset*.
+* If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the *FOCUS dataset*.
 
 ## Exceptions
 

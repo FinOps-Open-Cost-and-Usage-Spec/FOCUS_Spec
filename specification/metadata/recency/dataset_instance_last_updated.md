@@ -2,7 +2,12 @@
 
 Datetime when the data present in the Dataset Instance was updated.
 
-The LastUpdated MUST be present in the metadata. This MUST be of type Date/Time and MUST NOT contain null values. LastUpdated MUST conform to [DateTimeFormat](#date/timeformat).
+DatasetInstanceLastUpdated adheres to the following requirements:
+
+* DatasetInstanceLastUpdated MUST be present in an object within the [Recency](#recency) collection.
+* DatasetInstanceLastUpdated MUST be of type Date/Time.
+* DatasetInstanceLastUpdated MUST conform to [DateTimeFormat](#date/timeformat) requirements.
+* DatasetInstanceLastUpdated MUST NOT be null.
 
 ## Metadata ID
 
@@ -14,12 +19,12 @@ Dataset Instance Last Updated
 
 ## Content constraints
 
-| Constraint    | Value                                     |
-|:--------------|:------------------------------------------|
-| Feature level | Mandatory                                 |
-| Allows nulls  | False                                     |
-| Data type       | Date/Time                            |
-| Value format    | [Date/Time Format](#date/timeformat) |
+| Constraint    | Value                                |
+|:--------------|:-------------------------------------|
+| Feature level | Mandatory                            |
+| Allows nulls  | False                                |
+| Data type     | Date/Time                            |
+| Value format  | [Date/Time Format](#date/timeformat) |
 
 ## Introduced (version)
 
