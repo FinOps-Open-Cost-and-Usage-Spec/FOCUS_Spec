@@ -1,6 +1,6 @@
 # Schema ID
 
-The Schema ID provides the reference item to associate which Schema was used for the generation of a FOCUS Dataset.
+The Schema ID provides the reference item to associate which Schema was used for the generation of a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 SchemaId adheres to the following requirements:
 
