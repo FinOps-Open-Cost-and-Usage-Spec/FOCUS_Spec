@@ -1,6 +1,6 @@
 # SKU ID
 
-A SKU ID is a service-provider-specified unique identifier that represents a specific [*SKU*](#glossary:sku). *SKUs* are quantifiable goods or service offerings in a [*FOCUS dataset*](#glossary:FOCUS-dataset) that represent specific functionality and technical specifications. Examples of *SKUs* include but are not limited to:
+A SKU ID is a service-provider-specified unique identifier that represents a specific [*SKU*](#glossary:sku). *SKUs* are quantifiable goods or service offerings in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) that represent specific functionality and technical specifications. Examples of *SKUs* include but are not limited to:
 
 * A product license that is purchased or subscribed to.
 * Usage of a deployed resource from direct user interaction (e.g., request count).
@@ -15,9 +15,11 @@ Each SKU ID represents a unique set of features that can be sold at different pr
 
 SKU ID should be consistent across pricing variations of a good or service to facilitate price comparisons for the same functionality, like where the functionality is provided or how it's paid for. SKU ID can be referenced on a catalog or [*price list*](#glossary:price-list) published by a service provider to look up detailed information about the *SKU*. The composition of the properties associated with the SKU ID may differ across service providers. SKU ID is commonly used for analyzing and comparing costs for the same SKU across different price details (e.g., *period*, tier, location).
 
-The SkuId column adheres to the following requirements:
+## Requirements
 
-* SkuId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
+SkuId adheres to the following requirements:
+
+* SkuId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
 * SkuId MUST be of type String.
 * SkuId MUST conform to [StringHandling](#stringhandling) requirements.
 * SkuId nullability is defined as follows:

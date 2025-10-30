@@ -4,9 +4,11 @@ SKU Price ID is a service-provider-specified unique identifier that represents a
 
 The composition of properties associated with the SKU Price ID may differ across service providers and across *SKUs* within the same service provider. However, the exclusion of dynamic or negotiable pricing properties, such as unit price amount, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific elements (e.g., contract or account identifiers, and negotiable discounts), ensures that the SKU Price ID remains consistent across different billing periods and billing accounts within a service provider. This consistency enables efficient filtering of [*charges*](#glossary:charge) to track price fluctuations (e.g., changes in unit price amounts) over time and across billing accounts, for both list and contracted unit prices. Additionally, the SKU Price ID is commonly used to analyze costs based on pricing properties such as [*periods*](#glossary:period) and tiers.
 
-The SkuPriceId column adheres to the following requirements:
+## Requirements
 
-* SkuPriceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
+SkuPriceId adheres to the following requirements:
+
+* SkuPriceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
 * SkuPriceId MUST be of type String.
 * SkuPriceId MUST conform to [String Handling](#stringhandling) requirements.
 * SkuPriceId nullability is defined as follows:

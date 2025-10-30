@@ -4,6 +4,203 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## v1.3
+
+<sup>Announced December 2025</sup>
+
+### Changes to Supported Features by [Change Impact Classification](/guidelines/spec-change-guidelines.md)
+
+#### Compatible Changes
+
+- New Columns to support [Data Generator-Calculated Split Cost Allocation](/specification/supported_features/data_generator_calculated_split_cost_allocation.md)
+- New Dataset and Columns to support [Contract Commitments](/specification/supported_features/contract_commitments.md)
+- New Columns to support [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
+- New Metadata to support [Dataset Instance Metadata](/specification/supported_features/dataset_instance_metadata.md)
+- New Metadata to support [Recency Metadata](/specification/supported_features/recency_metadata.md)
+
+#### Migration Compatible Changes
+
+- Replacement of Provider and Publisher Columns, affecting:
+  - [Charge Categorization](/specification/supported_features/charge_categorization.md)
+  - [Commit Usage and Under Usage](/specification/supported_features/commit_usage_and_under_usage.md)
+  - [Cost Comparison](/specification/supported_features/cost_comparison.md)
+  - [Effective Cost](/specification/supported_features/effective_cost.md)
+  - [Marketplace Purchases](/specification/supported_features/marketplace_purchases.md)
+  - [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
+  - [Provider Services](/specification/supported_features/provider_services.md)
+  - [Resource Usage](/specification/supported_features/resource_usage.md)
+  - [Service Categorization](/specification/supported_features/service_categorization.md)
+
+#### Incompatible Changes
+
+- None
+
+### Added
+
+#### New supported features
+
+- [Contract Commitments](/specification/supported_features/contract_commitments.md)
+- [Dataset Instance Metadata](/specification/supported_features/dataset_instance_metadata.md)
+- [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
+- [Data Generator-Calculated Split Cost Allocation](/specification/supported_features/data_generator_calculated_split_cost_allocation.md)
+- [Recency Metadata](/specification/supported_features/recency_metadata.md)
+
+#### New datasets
+
+- [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md)
+
+#### New columns
+
+- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  - [`AllocatedMethodDetails`](/specification/datasets/cost_and_usage/columns/allocatedmethoddetails.md)
+  - [`AllocatedMethodId`](/specification/datasets/cost_and_usage/columns/allocatedmethodid.md)
+  - [`AllocatedResourceId`](/specification/datasets/cost_and_usage/columns/allocatedresourceid.md)
+  - [`AllocatedResourceName`](/specification/datasets/cost_and_usage/columns/allocatedresourcename.md)
+  - [`AllocatedTags`](/specification/datasets/cost_and_usage/columns/allocatedtags.md)
+  - [`ContractApplied`](/specification/datasets/cost_and_usage/columns/contractapplied.md)
+  - [`HostProviderName`](/specification/datasets/cost_and_usage/columns/hostprovidername.md)
+  - [`ServiceProviderName`](/specification/datasets/cost_and_usage/columns/serviceprovidername.md)
+- [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md)
+  - [`BillingCurrency`](/specification/datasets/contract_commitment/columns/billingcurrency.md)
+  - [`ContractCommitmentCategory`](/specification/datasets/contract_commitment/columns/contractcommitmentcategory.md)
+  - [`ContractCommitmentCost`](/specification/datasets/contract_commitment/columns/contractcommitmentcost.md)
+  - [`ContractCommitmentId`](/specification/datasets/contract_commitment/columns/contractcommitmentid.md)
+  - [`ContractCommitmentPeriodEnd`](/specification/datasets/contract_commitment/columns/contractcommitmentperiodend.md)
+  - [`ContractCommitmentPeriodStart`](/specification/datasets/contract_commitment/columns/contractcommitmentperiodstart.md)
+  - [`ContractCommitmentQuantity`](/specification/datasets/contract_commitment/columns/contractcommitmentquantity.md)
+  - [`ContractCommitmentType`](/specification/datasets/contract_commitment/columns/contractcommitmenttype.md)
+  - [`ContractCommitmentUnit`](/specification/datasets/contract_commitment/columns/contractcommitmentunit.md)
+  - [`ContractId`](/specification/datasets/contract_commitment/columns/contractid.md)
+  - [`ContractPeriodEnd`](/specification/datasets/contract_commitment/columns/contractperiodend.md)
+  - [`ContractPeriodStart`](/specification/datasets/contract_commitment/columns/contractperiodstart.md)
+
+#### New attributes
+
+- [`InvoiceHandling`](/specification/attributes/invoice_handling.md)
+- [`JsonObjectFormat`](/specification/attributes/json_object_format.md)
+- [`DataGeneratorCalculatedSplitCostAllocationHandling`](/specification/attributes/data_generator_calculated_split_cost_allocation_handling.md)
+
+#### New appendix entries
+
+- [Dataset Instance metadata example](/specification/appendix/metadata_examples/dataset_instance_metadata_example.md)
+- [Recency metadata example](/specification/appendix/metadata_examples/recency_metadata_example.md)
+- [Recency metadata updating over time](/specification/appendix/metadata_examples/recency_metadata_updating_over_time_dataset_example.md)
+- [Recency metadata updating not over time](/specification/appendix/metadata_examples/recency_metadata_updating_non_over_time_dataset_example.md)
+- [Schema Dataset Instance ID example](/specification/appendix/metadata_examples/schema_dataset_instance_id_example.md)
+
+#### New metadata column definition properties
+
+- [`DatasetInstance`](/specification/metadata/dataset_instance/dataset_instance_overview.md)
+  - [`DatasetInstanceId`](/specification/metadata/dataset_instance/dataset_instance_id.md)
+  - [`DatasetInstanceName`](/specification/metadata/dataset_instance/dataset_instance_name.md)
+  - [`FocusDatasetId`](/specification/metadata/dataset_instance/focus_dataset_id.md)
+- [`Recency`](/specification/metadata/recency/recency_overview.md)
+  - [`DatasetInstanceComplete`](/specification/metadata/recency/dataset_instance_complete.md)
+  - [`DatasetInstanceId`](/specification/metadata/recency/dataset_instance_id.md)
+  - [`DatasetInstanceLastUpdated`](/specification/metadata/recency/dataset_instance_last_updated.md)
+  - [`RecencyLastUpdated`](/specification/metadata/recency/recency_last_updated.md)
+  - [`TimeSectors`](/specification/metadata/recency/time_sectors/time_sectors_overview.md)
+    - [`TimeSectorComplete`](/specification/metadata/recency/time_sectors/time_sector_complete.md)
+    - [`TimeSectorEnd`](/specification/metadata/recency/time_sectors/time_sector_end.md)
+    - [`TimeSectorLastUpdated`](/specification/metadata/recency/time_sectors/time_sector_last_updated.md)
+    - [`TimeSectorStart`](/specification/metadata/recency/time_sectors/time_sector_start.md)
+
+#### New glossary entries
+
+- [Glossary](/specification/glossary.md)
+  - `Allocated Charge`
+  - `Allocated Method`
+  - `Contract`
+  - `Contract Commitment`
+  - `Dataset Artifact`
+  - `Dataset Instance`
+  - `Dataset Instance Artifact`
+  - `JSON`
+  - `Origin Charge`
+  - `Period`
+
+#### New requirements model
+
+The specification's normative requirements are now maintained in a structured, graph-based collection of rules.  Version 1.2 of the requirements model is available as of this writing; 1.3 will be released during the 1.4 development cycle.  This requirements model is designed to be leveraged by a conformance validator, maintained [here](https://github.com/finopsfoundation/focus_validator).  For more information on the requirements model, see [here](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/specification/requirements_model/README.md).
+
+### Changed
+
+#### Changed datasets
+
+- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  - FOCUS had only one dataset prior to 1.3, and thus it did not have a name.  See below for a list of changed columns.
+- Datasets are now explicitly associated with attributes via normative requirements; this was previously implied.
+- Datasets now have their column set laid out in tabular format within their respective entries.
+
+#### Changed columns
+
+- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  - [`CommitmentDiscountQuantity`](/specification/datasets/cost_and_usage/columns/commitmentdiscountquantity.md)
+    - CommitmentDiscountQuantity MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
+  - [`ConsumedQuantity`](/specification/datasets/cost_and_usage/columns/consumedquantity.md)
+    - ConsumedQuantity MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
+  - [`ContractedCost`](/specification/datasets/cost_and_usage/columns/contractedcost.md)
+    - ContractedCost MUST equal the product of ContractedUnitPrice and PricingQuantity when ContractedUnitPrice is not null and PricingQuantity is not null.  This requirement was previously implied, but not directly stated.
+  - [`ContractedUnitPrice`](/specification/datasets/cost_and_usage/columns/contractedunitprice.md)
+    - ContractedUnitPrice MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
+    - ContractedUnitPrice MUST NOT be null when SkuPriceId is not null.  This requirement was previously implied, but not directly stated.
+  - [`InvoiceId`](/specification/datasets/cost_and_usage/columns/invoiceid.md)
+    - The sum of BilledCost for a given InvoiceId MUST match the sum of the payable amount provided in the corresponding invoice with the same id generated by the InvoiceIssuerName.  This requirement was previously implied, but not directly stated.
+  - [`InvoiceIssuerName`](/specification/datasets/cost_and_usage/columns/invoiceissuername.md)
+    - The display name has changed from `Invoice Issuer` to `Invoice Issuer Name`. The column ID and definition remains the same.
+  - [`ListCost`](/specification/datasets/cost_and_usage/columns/listcost.md)
+    - Discrepancies are no longer allowed for corrections.  Now, in all cases, ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.
+  - [`ListUnitPrice`](/specification/datasets/cost_and_usage/columns/listunitprice.md)
+    - ListUnitPrice MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
+    - ListUnitPrice MUST NOT be null when SkuPriceId is not null.  This requirement was previously implied, but not directly stated.
+  - [`PricingCategory`](/specification/datasets/cost_and_usage/columns/pricingcategory.md)
+    -  PricingCategory MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
+  - [`PricingCurrencyContractedUnitPrice`](/specification/datasets/cost_and_usage/columns/pricingcurrencycontractedunitprice.md)
+    - PricingCurrencyContractedUnitPrice MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
+    - PricingCurrencyContractedUnitPrice MUST NOT be null when SkuPriceId is not null.  This requirement was previously implied, but not directly stated.
+  - [`PricingCurrencyListUnitPrice`](/specification/datasets/cost_and_usage/columns/pricingcurrencylistunitprice.md)
+    - PricingCurrencyListUnitPrice MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
+    - PricingCurrencyListUnitPrice MUST NOT be null when SkuPriceId is not null.  This requirement was previously implied, but not directly stated.
+  - [`PricingQuantity`](/specification/datasets/cost_and_usage/columns/pricingquantity.md)
+    - PricingQuantity MUST be null when SkuPriceId is null.  This requirement was previously implied, but not directly stated.
+    - PricingQuantity MUST be a valid decimal value when not null.  This requirement was previously implied, but not directly stated.
+
+#### Changed attributes
+
+- None
+
+#### Changed appendix entries
+
+- Metadata examples now include use of `DatasetInstanceId`.
+- [Participating Entity Identification](/specification/appendix/participating_entity_identification.md) replaces Origination of Cost Data.  
+  - The layout and functionality is the same, but the entities have been renamed, and new entries have been included.
+
+#### Changed metadata
+
+##### Changed metadata properties
+
+- None
+
+#### Changed glossary entries
+
+- [Glossary](/specification/glossary.md)
+  - `Commitment` has been changed to include both spend and usage, not just usage.
+  - `FOCUS Dataset` is now more narrowly defined alongside `Dataset Artifact` and `Dataset Instance`.
+  - `Term` is now strictly associated with agreements specified on a contract.  Some legacy use of that term was associated with length of time, and that use has now been replaced by `Period`.
+
+### Deprecated
+
+#### Deprecated columns
+This functionality will be removed in a future release of FOCUS.
+
+- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  - [`ProviderName`](/specification/datasets/cost_and_usage/columns/providername.md)
+    - Due to definitional conflicts between the Provider and Publisher columns, this column is deprecated and will be removed in a future release. This column was replaced with the new ServiceProviderName column.  
+  - [`PublisherName`](/specification/datasets/cost_and_usage/columns/publishername.md)
+    - Due to definitional conflicts between the Provider and Publisher columns, this column is deprecated and will be removed in a future release.
+
+<br>
+
 ## v1.2
 
 <sup>Announced June 2025</sup>

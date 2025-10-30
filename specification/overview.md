@@ -92,7 +92,11 @@ Under each column defined in the FOCUS specification, there exists a 'Feature le
 
 ## Conformance Checkers and Validators
 
-There are no current resources available to test for specification conformance or validators to run on sample data. When one becomes available, this section of the specification will be updated with details.
+Validation tools may be employed to determine conformance of data and implementations per this specification.
+
+The FinOps Foundation maintains a validator called the [FOCUS Validator](https://github.com/finopsfoundation/focus_validator) which it uses for its own conformance assessments and as serves as a reference implementation to support validation activities.
+
+Other validation tools may be developed and made available by third parties. The FOCUS specification does not mandate the use of any particular tool, nor does it maintain a registry of available validators.
 
 [FODO]: https://www.finops.org
 [FODOF]: https://www.finops.org/framework/

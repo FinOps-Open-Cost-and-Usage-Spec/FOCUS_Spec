@@ -9,12 +9,13 @@ Guidelines, recommendations, and instructions for how to work with FOCUS on GitH
 3. [Configuring Notifications](#configuring-notifications)
 4. [Installing GitHub Desktop](#installing-github-desktop)
 5. [Installing Visual Studio Code](#installing-visual-studio-code)
-6. [Interacting with (e.g., review, comment, participate in) an Issue via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-an-issue-via-web-browser)
-7. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
-8. [Submitting a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
-9. [Submitting changes to an existing PR using GitHub desktop and VS Code](#how-to-submit-changes-to-an-existing-pr-using-github-desktop-and-vscode)
-10. [Interacting with (e.g., review, comment, participate in) a PR via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-a-pull-request-via-web-browser)
-11. [Tips for Success](#tips-for-success)
+6. [Configuring Local Spec Build](#configuring-local-spec-build)
+7. [Interacting with (e.g., review, comment, participate in) an Issue via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-an-issue-via-web-browser)
+8. [Cloning a Repository with GitHub Desktop](#cloning-a-repository-with-github-desktop)
+9. [Submitting a Pull Request (PR) using GitHub Desktop and VSCode](#how-to-submit-a-pull-request-pr-using-github-desktop-and-vscode)
+10. [Submitting changes to an existing PR using GitHub desktop and VS Code](#how-to-submit-changes-to-an-existing-pr-using-github-desktop-and-vscode)
+11. [Interacting with (e.g., review, comment, participate in) a PR via Web Browser](#how-to-interact-review-comment-participate-in-etc-with-a-pull-request-via-web-browser)
+12. [Tips for Success](#tips-for-success)
 
 ---
 
@@ -377,6 +378,57 @@ See [Reviewing and Commenting on GitHub Issues](#reviewing-and-commenting-on-git
 2. Review changes with inline comments
 3. Suggest changes directly in the editor
 4. Approve or request changes
+
+---
+
+## How to Configure Local Spec Build
+
+### FOCUS Specification Development Environment
+
+The Specification is built in markdown, HTML, and PDF formats via a set of Python scripts.  This build pipeline automatically runs as a GitHub docker job in GitHub after every commit.  However, it can also be run locally to test changes as they are performed.  This functionality is therefore only needed by FinOps Foundation staff and core contributors, but any contributor can benefit from its use.
+
+Currently, the only tested/supported environment is MacOS; however, the build pipeline in GitHub uses Ubuntu, so use of a Linux environment is theoretically possible.
+
+The following setup steps are a rough guideline.  Your specific environment may require more and/or different specific steps, based on previous/legacy configurations.
+
+### Setup Steps
+
+1. Install homebrew (as per: https://brew.sh)
+2. Setup cask
+
+	`brew install cask`
+
+3. Install python
+
+	`brew install python`
+
+4. Add packages for python
+
+	`pip3 install -r requirements.txt`
+
+5. Install pandoc
+
+	`brew install pandoc`
+
+6. Install HTML to PDF helper tool
+
+	~~`brew install --cask wkhtmltopdf`~~
+
+   UPDATE: WKHTMLTOPDF has been disabled in Homebrew as of late 2024.  The following commands can be run instead (or alternatively, it can be downloaded and installed from the [wkhtmltopdf website](https://wkhtmltopdf.org/downloads.html)):
+
+   `curl -L https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-2/wkhtmltox-0.12.6-2.macos-cocoa.pkg -O`
+
+   `installer -pkg wkhtmltox-0.12.6-2.macos-cocoa.pkg -target ~`
+
+7. If your machine does not have git/make etc, you might run the following: Install developer command line tools for MacOS
+
+	`xcode-select --install`
+
+### Assembling the specification locally
+
+1. Move into the `specification` folder
+2. Use `make clean` to strike the output artifacts
+3. Use `make` to generate the spec, which generates `spec.md`, `spec.html`, and `spec.pdf` in the `specification` folder
 
 ---
 

@@ -2,9 +2,11 @@
 
 An Allocated Resource ID is an identifier assigned by the data generator which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#serviceprovidercalculatedsplitcosthandling). The Allocated Resource ID is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the data generator is allocating costs to something other than the *charge's* [ResourceID](#ResourceId), as is the case for [allocated charges](#glossary:allocated-charge).
 
-The AllocatedResourceId column adheres to the following requirements:
+## Requirements
 
-* AllocatedResourceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports data generator-calculated split cost allocation.
+AllocatedResourceId adheres to the following requirements:
+
+* AllocatedResourceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports provider-calculated split cost allocation.
 * AllocatedResourceId MUST be of type String.
 * AllocatedResourceId MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedResourceId nullability is defined as follows:

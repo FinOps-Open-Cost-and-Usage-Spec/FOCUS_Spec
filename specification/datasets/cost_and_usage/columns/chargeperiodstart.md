@@ -2,9 +2,11 @@
 
 Charge Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound) of a [*charge period*](#glossary:chargeperiod). For example, a time period where Charge Period Start is '2024-01-01T00:00:00Z' and [Charge Period End](#chargeperiodend) is '2024-01-02T00:00:00Z' includes [*charges*](#glossary:charge) for January 1 since Charge Period Start represents the *inclusive start bound*, but does not include *charges* for January 2 since Charge Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound).
 
-The ChargePeriodStart column adheres to the following requirements:
+## Requirements
 
-* ChargePeriodStart MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ChargePeriodStart adheres to the following requirements:
+
+* ChargePeriodStart MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargePeriodStart MUST be of type Date/Time.
 * ChargePeriodStart MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * ChargePeriodStart MUST NOT be null.

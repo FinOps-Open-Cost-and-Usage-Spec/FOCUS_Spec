@@ -2,9 +2,11 @@
 
 Contract ID is a service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
-The ContractId column adheres to the following requirements:
+## Requirements
 
-* ContractId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ContractId adheres to the following requirements:
+
+* ContractId MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractId MUST be of type String.
 * ContractId MUST conform to [StringHandling](#stringhandling) requirements.
 * ContractId MUST NOT be null.

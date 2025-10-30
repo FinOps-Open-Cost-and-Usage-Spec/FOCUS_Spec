@@ -18,7 +18,7 @@ In addition to these, a service provider may include one or more custom properti
 
 The AllocatedMethodDetails column adheres to the following requirements:
 
-* AllocatedMethodDetails SHOULD be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#DataGenerator-CalculatedSplitCostAllocation).
+* AllocatedMethodDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Provider-Calculated Split Cost Allocation](#ProviderCalculatedSplitCostAllocation).
 * AllocatedMethodDetails MUST be of type String.
 * AllocatedMethodDetails MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedMethodDetails MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.

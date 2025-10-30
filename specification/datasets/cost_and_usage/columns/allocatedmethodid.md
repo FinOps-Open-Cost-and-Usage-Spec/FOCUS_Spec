@@ -2,9 +2,11 @@
 
 Allocated Method ID is the unique identifier for the [allocated method](#glossary:allocated-method) defined by the service provider which was used for the [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcosthandling). This unique identifier can be used to find how the [allocated charge](#glossary:allocated-charge) was calculated in the provider's documentation.
 
-The AllocatedMethodId column adheres to the following requirements:
+## Requirements
 
-* AllocatedMethodId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports data generator-calculated split cost allocation.
+AllocatedMethodId adheres to the following requirements:
+
+* AllocatedMethodId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports provider-calculated split cost allocation.
 * AllocatedMethodId MUST be of type String.
 * AllocatedMethodId MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedMethodId nullability is defined as follows:

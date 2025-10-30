@@ -2,9 +2,11 @@
 
 The Consumed Unit represents a service-provider-specified measurement unit indicating how a service provider measures usage of a metered SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service). Consumed Unit complements the [Consumed Quantity](#consumedquantity) metric. It is often listed at a finer granularity or over a different time interval when compared to [Pricing Unit](#pricingunit) (complementary to [Pricing Quantity](#pricingquantity)), and focuses on *resource* and *service* consumption, not pricing and cost.
 
-The ConsumedUnit column adheres to the following requirements:
+## Requirements
 
-* ConsumedUnit MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports the measurement of usage.
+ConsumedUnit adheres to the following requirements:
+
+* ConsumedUnit MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports the measurement of usage.
 * ConsumedUnit MUST be of type String.
 * ConsumedUnit MUST conform to [StringHandling](#stringhandling) requirements.
 * ConsumedUnit SHOULD conform to [UnitFormat](#unitformat) requirements.

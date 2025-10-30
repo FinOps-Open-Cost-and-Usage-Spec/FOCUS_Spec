@@ -14,7 +14,7 @@ FOCUS supports the analysis of cost and usage data for marketplace purchases and
 * BilledCost
 * EffectiveCost
 
-## Example SQL Query on a CSP Marketplace FOCUS Dataset
+## Example SQL Query on a CSP Marketplace using the Cost and Usage FOCUS Dataset
 
 ```sql
 SELECT
@@ -33,7 +33,7 @@ GROUP BY
   BillingPeriodEnd
 ```
 
-## Example SQL Query on a Provider FOCUS Dataset
+## Example SQL Query on a Provider using the Cost and Usage FOCUS Dataset
 
 ```sql
 SELECT

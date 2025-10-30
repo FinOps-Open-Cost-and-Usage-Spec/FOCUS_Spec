@@ -2,9 +2,11 @@
 
 A Resource ID is an identifier assigned to a [*resource*](#glossary:resource) by the service provider. The Resource ID is commonly used for cost reporting, analysis, and allocation scenarios.
 
-The ResourceId column adheres to the following requirements:
+## Requirements
 
-* ResourceId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports billing based on provisioned *resources*.
+ResourceId adheres to the following requirements:
+
+* ResourceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports billing based on provisioned *resources*.
 * ResourceId MUST be of type String.
 * ResourceId MUST conform to [StringHandling](#stringhandling) requirements.
 * ResourceId nullability is defined as follows:

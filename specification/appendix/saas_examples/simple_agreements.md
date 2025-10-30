@@ -2,7 +2,7 @@
 
 Many SaaS providers provide simple contract terms, therefore don't need to support complex scenarios like spend commitments or pricing strategies in their billing data.
 
-The scenarios described below illustrate how a FOCUS-compliant dataset should look for simple SaaS agreement scenarios (these scenarios may not be specific to SaaS agreements only).
+The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) should look for simple SaaS agreement scenarios (these scenarios may not be specific to SaaS agreements only).
 
 ## Scenario A1: Invoice Up-front for a Purchase of a Service
 
