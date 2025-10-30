@@ -227,9 +227,11 @@ A metadata label assigned to a resource to provide information about it or to ca
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
 A Resource or Provider-defined construct for grouping resources and/or other Provider-defined construct that a Tag can be assigned to.
+
 <a name="glossary:term"><b>Term</b></a>
 
 An agreement specified on a [*contract*](#glossary:contract).
+
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
 A proprietary currency (e.g., credits, tokens) issued by providers and independent of government regulation.
