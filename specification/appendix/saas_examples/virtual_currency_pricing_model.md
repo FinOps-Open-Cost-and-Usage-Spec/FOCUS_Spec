@@ -8,7 +8,7 @@ The scenarios described below illustrate how a FOCUS-compliant dataset should lo
 
 The following baseline conditions apply to the scenarios described below:
 
-* AwesomeCorp has signed an agreement with SaaS servie provider Acme Co to use their services.
+* AwesomeCorp has signed an agreement with SaaS service provider Acme Co to use their services.
 * Acme Co offers a virtual currency pricing model for their services and requires a purchase of virtual currency in advance of usage. Their denomination of virtual currency is called "tokens".
 * Acme Co requires purchase of additional tokens in the event of usage exceeding purchased tokens.
 * Acme Co publicly lists the cost of their tokens at &dollar;2 per token.

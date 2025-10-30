@@ -11,20 +11,20 @@ The AllocatedTags column adheres to the following requirements:
   * AllocatedTags MAY be null in all other cases.
 * When AllocatedTags is not null, AllocatedTags adheres to the following additional requirements:
   * AllocatedTags MUST NOT include resource tags already present in [Tags](#tags).
-  * AllocatedTags MUST include all applicable user-defined and service-provider-defined tags for the [AllocatedResourceId](#AllocatedResourceId).
+  * AllocatedTags MUST include all applicable user-defined and data generator-defined tags for the [AllocatedResourceId](#AllocatedResourceId).
   * Tag keys that do not support corresponding values MUST have a corresponding true (boolean) value set.
-  * Service provider MUST NOT alter tag values unless applying true (boolean) to valueless tags.
-* Service-provider-defined tags adhere to the following additional requirements:
-  * Service-provider-defined tag keys MUST be prefixed with a predetermined, service-provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
-  * Service provider SHOULD publish all service-provider-specified tag key prefixes within their respective documentation.
+  * Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
+* Data generator-defined tags adhere to the following additional requirements:
+  * Data generator-defined tag keys MUST be prefixed with a predetermined, data generator-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
+  * Data generator SHOULD publish all data generator-specified tag key prefixes within their respective documentation.
 * User-defined tags adhere to the following additional requirements:
-  * Service provider MUST prefix all user-defined tags scheme with a predetermined, service-provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the service-provider has more than one user-defined tag scheme.
+  * Data generator MUST prefix all user-defined tags scheme with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.
 
-## Service-Provider-Defined vs. User-Defined Tags
+## Data Generator-Defined vs. User-Defined Tags
 
-This example illustrates various tags produced from multiple user-defined and service-provider-defined tag schemes. The first two tags illustrate examples from two different, user-defined tag schemes. The second tag is produced from a valueless, user-defined tag scheme, so the service provider also applies `true` as its default value.
+This example illustrates various tags produced from multiple user-defined and data generator-defined tag schemes. The first two tags illustrate examples from two different, user-defined tag schemes. The second tag is produced from a valueless, user-defined tag scheme, so the data generator also applies `true` as its default value.
 
-The last two tags illustrate examples from two different, service-provider-defined tag schemes.
+The last two tags illustrate examples from two different, data generator-defined tag schemes.
 
 ```json
     {

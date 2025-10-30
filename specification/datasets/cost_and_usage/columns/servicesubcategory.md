@@ -85,7 +85,7 @@ Allowed values:
 | Management and Governance | Disaster Recovery                     | Plans and procedures that ensure systems and services can recover from disruptions.                           |
 | Management and Governance | Endpoint Management                   | Tools that configure and secure access to devices.                                                            |
 | Management and Governance | Observability                         | Monitoring, logging, and tracing of data to track the performance and health of systems.                      |
-| Management and Governance | Support                               | Assistance and expertise supplied by service providers.                                                               |
+| Management and Governance | Support                               | Assistance and expertise supplied by service providers.                                                       |
 | Management and Governance | Other (Management and Governance)     | Management and governance services that do not fall into one of the defined subcategories.                    |
 | Media                     | Content Creation                      | Production of media content.                                                                                  |
 | Media                     | Gaming                                | Development and delivery of gaming services.                                                                  |
@@ -96,7 +96,7 @@ Allowed values:
 | Migration                 | Resource Migration                    | Movement of resources from one location to another.                                                           |
 | Migration                 | Other (Migration)                     | Migration services that do not fall into one of the defined subcategories.                                    |
 | Mobile                    | Other (Mobile)                        | All Mobile services.                                                                                          |
-| Multicloud                | Multicloud Integration                | Environments that facilitate consumption of services from multiple cloud service providers.                           |
+| Multicloud                | Multicloud Integration                | Environments that facilitate consumption of services from multiple cloud service providers.                   |
 | Multicloud                | Other (Multicloud)                    | Multicloud services that do not fall into one of the defined subcategories.                                   |
 | Networking                | Application Networking                | Distribution of incoming network traffic across application-based workloads.                                  |
 | Networking                | Content Delivery                      | Distribution of digital content using a network of servers (CDNs).                                            |

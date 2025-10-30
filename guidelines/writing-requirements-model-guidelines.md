@@ -43,14 +43,14 @@ The first stage of conversion of rules from the normative text to model rules is
 
 #### Flow Diagram
 
-The **Flow Diagram** in Stage 1 illustrates the end-to-end process used to extract Requirements Model from the FOCUS Specification. It begins by identifying the structural or conceptual entity to which each rule applies—such as Dataset, Row, Column, Attribute, or Metadata—and then guides users through a standardized sequence of steps to assign a unique identifier, classify the rule type, determine conditional logic, and express validation criteria. This structured workflow ensures that all normative requirements from the specification are captured in a consistent, testable, and programmatically analyzable format. The diagram also reflects the relationships between FOCUS architectural components and highlights how entities like Servie Provider influence rule applicability.
+The **Flow Diagram** in Stage 1 illustrates the end-to-end process used to extract Requirements Model from the FOCUS Specification. It begins by identifying the structural or conceptual entity to which each rule applies—such as Dataset, Row, Column, Attribute, or Metadata—and then guides users through a standardized sequence of steps to assign a unique identifier, classify the rule type, determine conditional logic, and express validation criteria. This structured workflow ensures that all normative requirements from the specification are captured in a consistent, testable, and programmatically analyzable format. The diagram also reflects the relationships between FOCUS architectural components and highlights how entities like Service Provider Name influence rule applicability.
 <img width="812" height="1036" alt="Image" src="https://github.com/user-attachments/assets/040ba557-cc42-402b-b52a-742b88e40d54" />
 
 #### High-Level Description of Each Step
 
 #### 1. Target Entity – Determine the entity
 
-Identify the target for the rule: **Dataset**, **Column**, **Attribute** property, **Service Provider**, etc. This sets the scope of the model requirement.
+Identify the target for the rule: **Dataset**, **Column**, **Attribute** property, **Service Provider Name**, etc. This sets the scope of the model requirement.
 
 #### FOCUS Core Entities
 
@@ -107,7 +107,7 @@ Provider -.->|Used in rule conditions| Column
 | `Column`           | Named field across rows                             | Data type, format, constraints            | Column `BillingPeriodStart` MUST be of type `DateTime`                                                          |
 | `Attribute`        | Shared formatting/logic constraint                  | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                              |
 | `Metadata`         | Schema-level dataset descriptors                    | Schema versioning, declaration            | Metadata MUST declare `focus_version` as a valid semantic version string (e.g., "1.2.0")                        |
-| `Service Provider` | Entity that made the resource availabel for purchase | Conditional logic in requirements         | Column `CapacityReservationId` MUST be present when the service provider supports capacity reservation features |
+| `Service Provider` | Entity that made the resource available for purchase | Conditional logic in requirements         | Column `CapacityReservationId` MUST be present when the service provider supports capacity reservation features |
 
 #### 2. CRID – Apply CRID Naming Rules
 
