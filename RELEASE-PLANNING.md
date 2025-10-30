@@ -41,24 +41,40 @@ This section outlines the planned release schedule and key milestones for the FO
         <td>v1.4</td>
         <td>Jun 2026</td>
         <td>
-<strong>Unified financial reconciliation</strong>
+<strong>Multi-dataset FOCUS Standardization</strong>
     <ul>
       <li>Extend support for contract commitment dataset</li>
-      <li>Enable linkage of purchase and usage records across providers</li>
+      <li>Add FOCUS Invoice Dataset</li>
     </ul>
   <strong>Improving FOCUS adoption and implementation</strong>
     <ul>
-      <li>Add FOCUS column to provider column mappings as a non-functional requirement</li>
+      <li>Add column selection as a non-functional requirement</li>
+      <li>Add non-FOCUS columns to FOCUS datasets as a non-functional requirement</li>
+      <li>Add the ability to understand provider resource tagging eligibility</li>
+      <li>Add granularity level between sub account and resource</li>    
+      <li>Add provider column mappings as a non-functional requirement</li>  
       <li>Add output formats as a non-functional requirement</li>
       <li>Add commitment eligibility indicator for on-demand charges</li>
-      <li>Add the ability to understand provider resource tagging eligibility</li>
-      <li>Augment account and resource categorizations / hierarchy</li>
-      <li>Provide default name values derived from ID columns</li>
-      <li>Add non-FOCUS columns to FOCUS datasets as a non-functional requirement</li>
+      <li>Use adoption to prioritize the working group's efforts</li>  
+      <li>Add non-negotiated discount eligibility indicator for on-demand charges</li>  
     </ul>
-  <strong>Safe Innovation Framework and Guidelines</strong>
+  <strong>Carry-over from 1.3</strong>
     <ul>
-      <li>Provide experimental-columns mechanism in FOCUS schema</li>
+      <li>Augment requirements for correction-handling scenarios</li>
+      <li>Clarify definitions of EffectiveCost vs BilledCost across providers</li>
+      <li>Clarify commitment concepts and glossary entries</li>    
+    </ul>
+ <strong>Other Important Improvements</strong>
+    <ul>
+      <li>Provide guidance for generating data center / on-prem FOCUS datasets</li>
+      <li>Establish FOCUS attribute-specification guidelines</li>
+      <li>Establish FOCUS metadata-specification guidelines</li>
+      <li>Handle for HTML/PDF anchor links for columns used in multiple datasets</li>
+      <li>Revise the table of contents generator to handle for dataset-level headers</li>
+      <li>Relocate all normative requirements that apply to the dataset level to the dataset section of the document</li> 
+      <li>Add 1.3 Specification revisions to Requirements Model</li>
+      <li>Add 1.4 Specification revisions to Requirements Model</li>
+      <li>Add Line-Item Examples for Non-Negotiated Commitment Scenarios</li> 
     </ul>
         </td>
     </tr>
