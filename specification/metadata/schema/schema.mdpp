@@ -24,7 +24,7 @@ These scenarios include but are not limited to:
 
 ### Schema Metadata Updates
 
-Should there be an error where the schema metadata object does not match the schema of the FOCUS dataset instance artifact, the provider MUST update the schema metadata object to match the schema of the FOCUS dataset instance artifact. This is to ensure that the schema metadata object is always accurate.
+Should there be an error where the schema metadata object does not match the schema of the FOCUS *dataset instance artifact*, the provider MUST update the schema metadata object to match the schema of the FOCUS *dataset instance artifact*. This is to ensure that the schema metadata object is always accurate.
 
 ## Schema Example
 
