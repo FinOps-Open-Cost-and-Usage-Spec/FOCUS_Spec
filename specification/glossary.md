@@ -98,7 +98,7 @@ A specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) provid
 
 <a name="glossary:dataset-instance-artifact"><b>Dataset Instance Artifact</b></a>
 
-A physical representation of a specific [*dataset instance*](#glossary:dataset-instance) delivered by a [data generator](#datagenerator). For example, in the case of a [data generator](#datagenerator) that provides data via a database, their [*dataset instance*](#glossary:dataset-instance) and their dataset instance artifact are the same thing. For a [data generator] that delivers there data via a series of csv files, there could be many artifacts for one dataset-instance. Each of these files is a dataset-instance-artifact.
+A physical representation of a specific [*dataset instance*](#glossary:dataset-instance) delivered by a [data generator](#datagenerator).
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
