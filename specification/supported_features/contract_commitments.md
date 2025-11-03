@@ -52,7 +52,7 @@ WHERE JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') IS NOT NULL
   AND ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Purchase'
 GROUP BY ServiceProviderName, ContractCommitmentId
-ORDER BY ServiceProviderName, ContractCommitmentId;
+ORDER BY ServiceProviderName, ContractCommitmentId
 ```
 
 ### Report on Usage Against Contract Commitment
@@ -73,7 +73,7 @@ WHERE JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') IS NOT NULL
   AND ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Usage'
 GROUP BY ServiceProviderName, ContractCommitmentId
-ORDER BY ServiceProviderName, ContractCommitmentId;
+ORDER BY ServiceProviderName, ContractCommitmentId
 ```
 
 ### Report on Usage Against Contract Commitment by Category
@@ -100,7 +100,7 @@ WHERE JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') IS NOT NULL
   AND ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Usage'
 GROUP BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStart, ContractCommitmentPeriodEnd
-ORDER BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStart, ContractCommitmentPeriodEnd;
+ORDER BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStart, ContractCommitmentPeriodEnd
 ```
 
 ## Introduced (Version)
