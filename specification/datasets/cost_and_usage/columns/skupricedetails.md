@@ -69,7 +69,7 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 
 ### FOCUS-Defined Properties
 
-The following keys should be used when applicable to facilitate cross-SKU and cross-service -provider queries for the same conceptual property. FOCUS-defined keys will appear in the list below and custom (e.g., service-provider-defined) keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
+The following keys should be used when applicable to facilitate cross-SKU and cross-service-provider queries for the same conceptual property. FOCUS-defined keys will appear in the list below and custom (e.g., service-provider-defined) keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
 | Key                      | Description                                                              | Data Type        | Unit of Measure (numeric) or example values (string)  |
 | :----------------------- | :----------------------------------------------------------------------- | :--------------- | :---------------------------------------------------- |
