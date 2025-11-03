@@ -37,8 +37,8 @@ WHERE ChargeCategory='Usage'
 
 ```sql
 SELECT
-  ResourceId
-  SUM(EffectiveCost) as TotalEffectiveCost
+  ResourceId,
+  SUM(EffectiveCost) AS TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
@@ -51,8 +51,8 @@ GROUP BY
 
 ```sql
 SELECT
-  AllocatedResourceId
-  SUM(EffectiveCost) as TotalEffectiveCost
+  AllocatedResourceId,
+  SUM(EffectiveCost) AS TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
@@ -66,7 +66,7 @@ GROUP BY
 ```sql
 SELECT
   ResourceId,
-  SUM(EffectiveCost) as TotalEffectiveCost
+  SUM(EffectiveCost) AS TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
@@ -81,7 +81,7 @@ GROUP BY
 SELECT
   ResourceId,
   COALESCE(AllocatedResourceId, 'Unallocated') AS AllocatedResourceId,
-  SUM(EffectiveCost) as TotalEffectiveCost
+  SUM(EffectiveCost) AS TotalEffectiveCost
 FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
@@ -108,7 +108,7 @@ FROM
       usage_unit VARCHAR(50) PATH '$.UsageUnit',
       usage_quantity DECIMAL(10, 2) PATH '$.UsageQuantity'
     )
-  ) AS elements;
+  ) AS elements
 ```
 
 ## Introduced (Version)
