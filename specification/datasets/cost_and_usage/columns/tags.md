@@ -23,8 +23,8 @@ Tags adheres to the following requirements:
   * Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.
   * Service provider SHOULD publish all provider-specified tag key prefixes within their respective documentation.
 * User-defined tags adhere to the following additional requirements:
-  * Service Provider MUST prefix all but one user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the service provider has more than one user-defined tag scheme.
-  * Service Provider MUST NOT prefix tag keys when the service provider has only one user-defined tag scheme.
+  * Service provider MUST prefix all but one user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the service provider has more than one user-defined tag scheme.
+  * Service provider MUST NOT prefix tag keys when the service provider has only one user-defined tag scheme.
   * Service provider MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.
 
 ## Provider-Defined vs. User-Defined Tags
