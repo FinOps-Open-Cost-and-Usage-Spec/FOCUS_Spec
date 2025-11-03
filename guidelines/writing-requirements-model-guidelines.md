@@ -69,7 +69,7 @@ Attribute["⚙️ Attribute"]
 Metadata["📝 Metadata"]
 
 %% Conceptual non-structural entity
-Service_Provider["🌐 Service Provider (Value in Column)"]
+Provider["🌐 Service Provider (Value in Column)"]
 
 %% Relationships
 Dataset -->|"contains many"| Row
@@ -88,8 +88,8 @@ Column -.->|Model applies to| Column
 Attribute -.->|Model applies to| Attribute
 
 %% Conditional trigger
-Service_Provider -.->|Used in rule conditions| Row
-Service_Provider -.->|Used in rule conditions| Column
+Provider -.->|Used in rule conditions| Row
+Provider -.->|Used in rule conditions| Column
 ```
 
 - **Dataset, Row, Column, Attribute, Metadata** are the **core structural entities** where model requirements are directly assigned.
