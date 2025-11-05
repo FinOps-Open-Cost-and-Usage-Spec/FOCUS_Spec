@@ -46,7 +46,7 @@ GROUP BY
 
 ```sql
 SELECT
-  ProviderName,
+  ServiceProviderName,
   BillingAccountId,
   CapacityReservationId,
   CapacityReservationStatus,
@@ -56,7 +56,7 @@ FROM focus_data_table
 WHERE ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND CapacityReservationStatus = 'Unused'
 GROUP BY
-  ProviderName,
+  ServiceProviderName,
   BillingAccountId,
   CapacityReservationId,
   CapacityReservationStatus
