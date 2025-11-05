@@ -190,7 +190,7 @@ A comprehensive list of prices offered by a service provider.
 
 <a name="glossary:service provider"><b>Service Provider</b></a>
 
-An entity that made internal or 3rd party resources and/or services available for purchase.
+An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 
 <a name="glossary:refund"><b>Refund</b></a>
 
