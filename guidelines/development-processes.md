@@ -105,6 +105,7 @@ Each issue carries one of the following Status values, which represent the overa
 - Under Consideration: being actively evaluated for upcoming spec work
 - Accepted in Scope: will be developed in next release
 - Ready for Dev: not started
+- In Evaluation: Review of the Feature Request via Task Force
 - In Discovery: defining the concepts that this issue will entail via Task Force
 - In Development: discussing solution for how to solve for the concept / design via Task Force
 - PR Needed: TF requires a concrete proposal to move forward
