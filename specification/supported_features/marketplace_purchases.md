@@ -24,7 +24,7 @@ SELECT
   BillingPeriodEnd,
   SUM(BilledCost) AS TotalBilledCost
 FROM focus_data_table
-WHERE ProviderName = '<Example SaaS Provider>'
+WHERE ServiceProviderName = '<Example SaaS Provider>'
   AND InvoiceIssuerName = '<Example CSP Marketplace>'
 GROUP BY
   ServiceProviderName,

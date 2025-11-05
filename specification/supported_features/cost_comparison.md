@@ -55,7 +55,7 @@ WITH AggregatedData AS (
     BillingCurrency,
     ServiceName
 )
-SELECT ProviderName,
+SELECT ServiceProviderName,
     BillingAccountId,
     BillingAccountName,
     BillingCurrency,
