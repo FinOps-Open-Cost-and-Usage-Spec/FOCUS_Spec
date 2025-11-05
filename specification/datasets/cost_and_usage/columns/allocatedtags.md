@@ -6,7 +6,7 @@ The Allocated Tags column represents the set of [*tags*](#glossary:tag) assigned
 
 AllocatedTags adheres to the following requirements:
 
-* AllocatedTags MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcosthandling).
+* AllocatedTags MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
 * AllocatedTags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
 * AllocatedTags nullability is defined as follows:
   * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.

@@ -10,7 +10,7 @@ The FOCUS-defined properties are:
 * `Usage Unit`: Unit being measured used to calculate this allocation.
 * `Usage Quantity`: The value of the charge applied to a single contract term.
 
-In addition to these, a service provider may include one or more custom properties, also denoted as key-value pairs.
+In addition to these, a data generator may include one or more custom properties, also denoted as key-value pairs.
 
 ## Requirements
 
@@ -18,7 +18,7 @@ In addition to these, a service provider may include one or more custom properti
 
 The AllocatedMethodDetails column adheres to the following requirements:
 
-* AllocatedMethodDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Provider-Calculated Split Cost Allocation](#ProviderCalculatedSplitCostAllocation).
+* AllocatedMethodDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
 * AllocatedMethodDetails MUST be of type String.
 * AllocatedMethodDetails MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedMethodDetails MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.

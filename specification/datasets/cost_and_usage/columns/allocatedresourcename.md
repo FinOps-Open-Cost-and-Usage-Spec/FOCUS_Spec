@@ -1,6 +1,6 @@
 # Allocated Resource Name
 
-The Allocated Resource Name is a display name which cost is being allocated to in a [Servcice-Provider-Calculated Split Cost Allocation](#serviceprovidercalculatedsplitcosthandling). The Allocated Resource Name is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the service provider is allocating costs to something other than the charge's [ResourceID](#ResourceId), as is the case for [allocated charges](#glossary:allocated-charge).
+The Allocated Resource Name is a display name which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling). The Allocated Resource Name is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the service provider is allocating costs to something other than the charge's [ResourceID](#ResourceId), as is the case for [allocated charges](#glossary:allocated-charge).
 
 ## Requirements
 
