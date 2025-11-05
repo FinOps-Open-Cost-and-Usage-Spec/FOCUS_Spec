@@ -55,7 +55,7 @@ GROUP BY
 
 ```sql
 SELECT
-  ProviderName,
+  ServiceProviderName,
   BillingAccountId,
   ChargeCategory,
   ServiceCategory,
@@ -65,7 +65,7 @@ FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
   AND ChargeClass = 'Correction'
 GROUP BY
-  ProviderName,
+  ServiceProviderName,
   BillingAccountId,
   ChargeCategory,
   ServiceCategory,
