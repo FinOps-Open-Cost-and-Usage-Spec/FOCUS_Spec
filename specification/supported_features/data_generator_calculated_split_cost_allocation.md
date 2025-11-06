@@ -1,4 +1,4 @@
-# Provider-Calculated Split Cost Allocation
+# Data Generator-Calculated Split Cost Allocation
 
 ## Description
 
@@ -19,7 +19,7 @@ FOCUS enables tracking of resources split by some internal consumption metrics. 
 * ChargeCategory
 * ChargePeriodEnd
 * ChargePeriodStart
-* ProviderName
+* ServiceProviderName
 * ServiceName
 
 ## Example SQL Query (Find resources with a shared cost)

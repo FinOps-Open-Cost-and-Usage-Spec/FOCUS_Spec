@@ -1,14 +1,14 @@
 # SKU Price ID
 
-SKU Price ID is a provider-specified unique identifier that represents a specific [*SKU Price*](#glossary:sku-price) associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased. It serves as a key reference for a *SKU Price* in a [*price list*](#glossary:price-list) published by a provider, allowing practitioners to look up detailed information about the *SKU Price*.
+SKU Price ID is a service-provider-specified unique identifier that represents a specific [*SKU Price*](#glossary:sku-price) associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased. It serves as a key reference for a *SKU Price* in a [*price list*](#glossary:price-list) published by a service provider, allowing practitioners to look up detailed information about the *SKU Price*.
 
-The composition of properties associated with the SKU Price ID may differ across providers and across *SKUs* within the same provider. However, the exclusion of dynamic or negotiable pricing properties, such as unit price amount, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific elements (e.g., contract or account identifiers, and negotiable discounts), ensures that the SKU Price ID remains consistent across different billing periods and billing accounts within a provider. This consistency enables efficient filtering of [*charges*](#glossary:charge) to track price fluctuations (e.g., changes in unit price amounts) over time and across billing accounts, for both list and contracted unit prices. Additionally, the SKU Price ID is commonly used to analyze costs based on pricing properties such as [*periods*](#glossary:period) and tiers.
+The composition of properties associated with the SKU Price ID may differ across service providers and across *SKUs* within the same service provider. However, the exclusion of dynamic or negotiable pricing properties, such as unit price amount, currency (and related exchange rates), temporal validity (e.g., effective dates), and contract- or negotiation-specific elements (e.g., contract or account identifiers, and negotiable discounts), ensures that the SKU Price ID remains consistent across different billing periods and billing accounts within a service provider. This consistency enables efficient filtering of [*charges*](#glossary:charge) to track price fluctuations (e.g., changes in unit price amounts) over time and across billing accounts, for both list and contracted unit prices. Additionally, the SKU Price ID is commonly used to analyze costs based on pricing properties such as [*periods*](#glossary:period) and tiers.
 
 ## Requirements
 
 SkuPriceId adheres to the following requirements:
 
-* SkuPriceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
+* SkuPriceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
 * SkuPriceId MUST be of type String.
 * SkuPriceId MUST conform to [String Handling](#stringhandling) requirements.
 * SkuPriceId nullability is defined as follows:
@@ -21,9 +21,9 @@ SkuPriceId adheres to the following requirements:
   * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
   * SkuPriceId MAY equal SkuId.
   * SkuPriceId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
-  * SkuPriceId MUST reference a *SKU Price* in a provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
-  * SkuPriceId MUST support the lookup of the [ListUnitPrice](#listunitprice) when the provider publishes unit prices exclusive of discounts.
-  * SkuPriceId MUST support the verification of the given [ContractedUnitPrice](#contractedunitprice) when the provider supports negotiated pricing concepts.
+  * SkuPriceId MUST reference a *SKU Price* in a service-provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
+  * SkuPriceId MUST support the lookup of the [ListUnitPrice](#listunitprice) when the service provider publishes unit prices exclusive of discounts.
+  * SkuPriceId MUST support the verification of the given [ContractedUnitPrice](#contractedunitprice) when the service provider supports negotiated pricing concepts.
 
 See [Examples: Commitment Discount Flexibility](#commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
 
@@ -37,7 +37,7 @@ SKU Price ID
 
 ## Description
 
-A provider-specified unique identifier that represents a specific *SKU Price* associated with a *resource* or *service* used or purchased.
+A service-provider-specified unique identifier that represents a specific *SKU Price* associated with a *resource* or *service* used or purchased.
 
 ## Content constraints
 

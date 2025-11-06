@@ -8,7 +8,7 @@ Deprecated adheres to the following requirements:
 * Deprecated MUST be of type Boolean.
 * Deprecated MUST NOT contain null values.
 * Deprecated SHOULD only be "true" if the column is deprecated.
-* Deprecated MUST be "true" when the provider removes a column at a future date, or the column has been identified for deprecation for the FOCUS version identified in the schema definition.
+* Deprecated MUST be "true" when the data generator removes a column at a future date, or the column has been identified for deprecation for the FOCUS version identified in the schema definition.
 
 ## Metadata ID
 

@@ -1,6 +1,6 @@
 # SaaS Spend Agreements
 
-Many SaaS providers support billing models that allow (or in some cases require) consumers to agree to an amount to spend over a period. In some cases, customers receive a negotiated discount for usage during that period in exchange for the spend agreement. Spend agreements can have different payment models like billing in arrears or pre-paid contracts and may impose minimum spend requirements for parts of the agreement.
+Many SaaS service providers support billing models that allow (or in some cases require) consumers to agree to an amount to spend over a period. In some cases, customers receive a negotiated discount for usage during that period in exchange for the spend agreement. Spend agreements can have different payment models like billing in arrears or pre-paid contracts and may impose minimum spend requirements for parts of the agreement.
 
 The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) should look for various spend agreement scenarios.
 
@@ -8,10 +8,10 @@ The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](
 
 The following baseline conditions apply to the scenarios described below:
 
-* AwesomeCorp has signed an agreement with SaaS provider Acme Co to use their database services
+* AwesomeCorp has signed an agreement with SaaS service provider Acme Co to use their database services
 * On April 1 2025, AwesomeCorp agrees to spend &dollar;1200 (post-discounts) in the upcoming 12-months
 * AwesomeCorp receives a 20% negotiated discount in return for the commitment
-* Acme Co calculates the spend counted against the agreements after discounts (like the negotiated discounts). Other providers may use the cost after discounts i.e., using List Cost for calculating the spend commitment.
+* Acme Co calculates the spend counted against the agreements after discounts (like the negotiated discounts). Other service providers may use the cost after discounts i.e., using List Cost for calculating the spend commitment.
 
 ## Scenario A: Billed in arrears
 

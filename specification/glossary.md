@@ -6,11 +6,11 @@ A charge representing a modification to billing data to account for certain even
 
 <a name="glossary:allocated-charge"><b>Allocated Charge</b></a>
 
-The [charge](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) to identify the charges that were created from the [origin charge](#glossary:origin-charge) resulting from the application of Provider-Calculated Split Cost Allocation.
+The [charge](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocation) to identify the charges that were created from the [origin charge](#glossary:origin-charge) resulting from the application of Data Generator-Calculated Split Cost Allocation.
 
 <a name="glossary:allocated-method"><b>Allocated Method</b></a>
 
-The process or formula by which cost is being allocated from an [origin charge](#glossary:origin-charge) to produce [allocated charges](#glossary:allocated-charge). This is used in the context of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) which requires documentation of the method to be provided for any and all allocated methods used. May also be colloquially referred to as allocation method.
+The process or formula by which cost is being allocated from an [origin charge](#glossary:origin-charge) to produce [allocated charges](#glossary:allocated-charge). This is used in the context of [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocation) which requires documentation of the method to be provided for any and all allocated methods used. May also be colloquially referred to as allocation method.
 
 <a name="glossary:amortization"><b>Amortization</b></a>
 
@@ -66,11 +66,11 @@ A billing discount model that offers reduced rates on preselected SKUs in exchan
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
-A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, provider-specific requirements.
+A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, service-provider-specific requirements.
 
 <a name="glossary:contract"><b>Contract</b></a>
 
-A collection of agreed terms between a provider and a customer.
+A collection of agreed terms between a service provider and a customer.
 
 <a name="glossary:contract-commitment"><b>Contract Commitment</b></a>
 
@@ -86,7 +86,7 @@ A charge to correct cost or usage data in a previously invoiced [*billing period
 
 <a name="glossary:credit"><b>Credit</b></a>
 
-A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
+A financial incentive or allowance granted by a service provider unrelated to other past/current/future charges.
 
 <a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
 
@@ -114,7 +114,7 @@ A Date/Time Format value that is not contained within the ending bound of a time
 
 <a name="glossary:finalized-tag"><b>Finalized Tag</b></a>
 
-A tag with one tag value chosen from a set of possible tag values after being processed by a set of provider-defined or user-defined rules.
+A tag with one tag value chosen from a set of possible tag values after being processed by a set of service-provider-defined or user-defined rules.
 
 <a name="glossary:finops-cost-and-usage-specification"><b>FinOps Cost and Usage Specification (FOCUS)</b></a>
 
@@ -142,7 +142,7 @@ A common acronym for JavaScript Object Notation, a data format codified in [ECMA
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The suggested service-provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
@@ -166,7 +166,7 @@ A service that is available and provided immediately or as needed, without requi
 
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
-The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of Provider-Calculated Split Cost Allocation to identify the charge that existed prior to the application of [Provider-Calculated Split Cost Allocation](#providercalculatedsplitcosthandling) to produce [allocated charges](#glossary:allocated-charge).
+The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocation) to identify the charge that existed prior to the application of Data Generator-Calculated Split Cost Allocation to produce [allocated charges](#glossary:allocated-charge).
 
 <a name="glossary:pascalcase"><b>Pascal Case</b></a>
 
@@ -186,11 +186,11 @@ An individual who performs FinOps within an organization to maximize the busines
 
 <a name="glossary:price-list"><b>Price List</b></a>
 
-A comprehensive list of prices offered by a provider.
+A comprehensive list of prices offered by a service provider.
 
-<a name="glossary:provider"><b>Provider</b></a>
+<a name="glossary:service provider"><b>Service Provider</b></a>
 
-An entity that made internal or 3rd party resources and/or services available for purchase.
+An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 
 <a name="glossary:refund"><b>Refund</b></a>
 
@@ -206,7 +206,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:service"><b>Service</b></a>
 
-An offering that can be purchased from a provider, and can include many types of usage or other charges; eg., a cloud database service may include compute, storage, and networking charges.
+An offering that can be purchased from a service provider, and can include many types of usage or other charges; eg., a cloud database service may include compute, storage, and networking charges.
 
 <a name="glossary:sku"><b>SKU</b></a>
 
@@ -218,7 +218,7 @@ A pricing construct that encompasses SKU properties (e.g., functionality and tec
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
-A sub account is an optional provider-supported construct for organizing resources and/or services connected to a billing account. Sub accounts must be associated with a billing account as they do not receive invoices.
+A sub account is an optional service-provider-supported construct for organizing resources and/or services connected to a billing account. Sub accounts must be associated with a billing account as they do not receive invoices.
 
 <a name="glossary:tag"><b>Tag</b></a>
 
@@ -226,7 +226,7 @@ A metadata label assigned to a resource to provide information about it or to ca
 
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
-A Resource or Provider-defined construct for grouping resources and/or other Provider-defined construct that a Tag can be assigned to.
+A Resource or Service-Provider-defined construct for grouping resources and/or other Service-Provider-defined construct that a Tag can be assigned to.
 
 <a name="glossary:term"><b>Term</b></a>
 
@@ -234,4 +234,4 @@ An agreement specified on a [*contract*](#glossary:contract).
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
-A proprietary currency (e.g., credits, tokens) issued by providers and independent of government regulation.
+A proprietary currency (e.g., credits, tokens) issued by service providers and independent of government regulation.
