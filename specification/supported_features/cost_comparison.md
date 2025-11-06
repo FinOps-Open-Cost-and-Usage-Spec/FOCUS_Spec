@@ -27,7 +27,7 @@ FOCUS supports the comparison of cost columns in order to identify savings, amor
 ```sql
 WITH AggregatedData AS (
   SELECT
-    ProviderName,
+    ServiceProviderName,
     BillingAccountId,
     BillingAccountName,
     BillingCurrency,
@@ -49,13 +49,13 @@ WITH AggregatedData AS (
     AND BillingPeriodEnd < ?
     AND ChargeClass IS NULL
   GROUP BY
-    ProviderName,
+    ServiceProviderName,
     BillingAccountId,
     BillingAccountName,
     BillingCurrency,
     ServiceName
 )
-SELECT ProviderName,
+SELECT ServiceProviderName,
     BillingAccountId,
     BillingAccountName,
     BillingCurrency,

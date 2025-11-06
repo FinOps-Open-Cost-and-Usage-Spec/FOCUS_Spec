@@ -18,7 +18,7 @@ FOCUS enables practitioners to analyze costs without having to distribute upfron
 * ConsumedQuantity
 * ConsumedUnit
 * PricingQuantity
-* ProviderName
+* ServiceProviderName
 * RegionName
 * ServiceName
 
@@ -26,7 +26,7 @@ FOCUS enables practitioners to analyze costs without having to distribute upfron
 
 ```sql
 SELECT
-  ProviderName,
+  ServiceProviderName,
   BillingPeriodStart,
   BillingPeriodEnd,
   ServiceCategory,
@@ -39,7 +39,7 @@ SELECT
 FROM focus_data_table
 WHERE BillingPeriodStart >= ? AND BillingPeriodEnd <= ?
 GROUP BY
-  ProviderName,
+  ServiceProviderName,
   BillingPeriodStart,
   BillingPeriodEnd,
   ServiceCategory,

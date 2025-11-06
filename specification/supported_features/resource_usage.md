@@ -16,14 +16,14 @@ FOCUS enables tracking of resource consumption by providing information about wh
 * ChargeCategory
 * ChargePeriodEnd
 * ChargePeriodStart
-* ProviderName
+* ServiceProviderName
 * ServiceName
 
 ## Example SQL Query
 
 ```sql
 SELECT
-  ProviderName,
+  ServiceProviderName,
   ServiceName,
   ResourceId,
   SkuId,
@@ -33,7 +33,7 @@ FROM focus_data_table
 WHERE ChargeCategory='Usage'
   AND ChargePeriodStart >= ? AND ChargePeriodEnd <= ?
 GROUP BY
-  ProviderName,
+  ServiceProviderName,
   ServiceName,
   ResourceId,
   SkuId,

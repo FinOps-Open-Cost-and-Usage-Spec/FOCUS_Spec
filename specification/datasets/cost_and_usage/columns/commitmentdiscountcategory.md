@@ -6,7 +6,7 @@ Commitment Discount Category indicates whether the [*commitment discount*](#glos
 
 CommitmentDiscountCategory adheres to the following requirements:
 
-* CommitmentDiscountCategory MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountCategory MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountCategory MUST be of type String.
 * CommitmentDiscountCategory nullability is defined as follows:
   * CommitmentDiscountCategory MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
