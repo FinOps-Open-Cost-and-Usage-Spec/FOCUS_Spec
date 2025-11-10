@@ -6,7 +6,7 @@ v1.3 Candidate Release
 |:-------------------------------------------------------------------------------|
 | This version is a candidate release but not an official publication            |
 
-Copyright © 2023-2026 - FinOps Open Cost and Usage Specification (FOCUS) a Series of the Joint Development Foundation Projects, LLC. Joint Development Foundation [trademark](https://jointdevelopment.org/policies/trademark-policy/), and document use rules apply.
+Copyright © 2023-2025 - FinOps Open Cost and Usage Specification (FOCUS) a Series of the Joint Development Foundation Projects, LLC. Joint Development Foundation [trademark](https://jointdevelopment.org/policies/trademark-policy/), and document use rules apply.
 
 ## Status of This Document
 
