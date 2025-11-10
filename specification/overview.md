@@ -2,9 +2,9 @@
 
 *This section is non-normative.*
 
-FOCUS is a standards development organization (SDO) formed to establish an open, consensus-driven standard for billing data. In the absence of a broadly adopted standard, infrastructure and service [*providers*](#glossary:provider) have relied on proprietary billing schemas and inconsistent terminology, making cost data difficult to normalize and act upon across environments. This lack of conformance has forced FinOps [*practitioners*](#glossary:practitioner) to develop best-effort custom normalization schemes for each provider, in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
+FOCUS is a standards development organization (SDO) formed to establish an open, consensus-driven standard for billing data. In the absence of a broadly adopted standard, infrastructure and service [*service providers*](#glossary:service provider) have relied on proprietary billing schemas and inconsistent terminology, making cost data difficult to normalize and act upon across environments. This lack of conformance has forced FinOps [*practitioners*](#glossary:practitioner) to develop best-effort custom normalization schemes for each provider, in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
 
-The FOCUS Specification, developed by a global community of practitioners and vendors, defines a consistent, vendor-neutral approach to billing data. It is designed to improve interoperability between providers, reduce operational complexity, and enable greater transparency in cloud and SaaS cost management.
+The FOCUS Specification, developed by a global community of practitioners and vendors, defines a consistent, vendor-neutral approach to billing data. It is designed to improve interoperability between service providers, reduce operational complexity, and enable greater transparency in cloud and SaaS cost management.
 
 ## Background and History
 
@@ -14,7 +14,7 @@ This project is supported by the [FinOps Foundation][FODO]. This work initially 
 
 This specification is designed to be used by three major groups:
 
-* Billing data generators: Infrastructure and services *providers* that bill based on consumption, such as (but not limited to):
+* Billing data generators: Entities that present consumption-based billing information related to infrastructure and *service providers*, such as (but not limited to):
   * [Cloud Service Providers (CSPs)](#glossary:cloud-service-provider)
   * Software as a Service (SaaS) platforms
   * [Managed Service Providers (MSPs)](#glossary:managed-service-provider)
@@ -39,8 +39,8 @@ The following principles were considered while building the specification.
 * Aim to work backward from essential FinOps capabilities that practitioners need to perform to prioritize the dimensions, metrics and attributes of the cost and usage data that should be defined in the specification to fulfill that capability.
 * Be FinOps scenario-driven. Define columns that answer scenario questions; don't look for scenarios to fit a column, each column must have a use case.
 * Don't add dimensions or metrics to the specification just because it can be added.
-* When defining the specification, consideration should be made to existing data already in the major providers' (AWS, GCP, Azure, OCI) datasets.
-* As long as it solves the FinOps use case, there should be a preference to align with data that is already present in a majority of the major providers.
+* When defining the specification, consideration should be made to existing data already in the major cloud service providers' (AWS, GCP, Azure, OCI) datasets.
+* As long as it solves the FinOps use case, there should be a preference to align with data that is already present in a majority of the major data generators.
 * Strive for simplicity. However, prioritize accuracy, clarity, and consistency.
 * Strive to build columns that serve a single purpose, with clear and concise names and values.
 * The specification should allow data to be presented free from jargon, using simple understandable terms, and be approachable.
@@ -49,13 +49,13 @@ The following principles were considered while building the specification.
 
 ### Provider-neutral approach by default
 
-* While the schema, naming, terminology, and attributes of many providers are reviewed during development, this specification aims to be provider-neutral.
-* Contributors must take care to ensure the specification examines how each decision relates to each of the major cloud providers and SaaS vendors, not favoring any single one.
-* In some cases, the approach may closely resemble one or more provider's implementations, while in other cases, the approach might be new. In all cases, the FOCUS group (community composed of FinOps practitioners, Cloud and SaaS providers and FinOps vendors) will attempt to prioritize enabling FinOps [Capabilities][FODOFC] and alignment with the FinOps [Framework][FODOF].
+* While the schema, naming, terminology, and attributes of many service providers are reviewed during development, this specification aims to be service-provider-neutral.
+* Contributors must take care to ensure the specification examines how each decision relates to each of the major cloud service providers and SaaS vendors, not favoring any single one.
+* In some cases, the approach may closely resemble one or more service provider's implementations, while in other cases, the approach might be new. In all cases, the FOCUS group (community composed of FinOps practitioners, Cloud and SaaS providers and FinOps vendors) will attempt to prioritize enabling FinOps [Capabilities][FODOFC] and alignment with the FinOps [Framework][FODOF].
 
 ### Extensibility
 
-The FOCUS Specification is designed to support evolving FinOps needs across diverse billing models and provider types.
+The FOCUS Specification is designed to support evolving FinOps needs across diverse billing models and service provider types.
 
 While the initial focus was on billing data from Cloud Service Providers (CSPs), version 1.2 introduces foundational support for Software as a Service (SaaS) platforms, including normative columns for pricing currencies, effective cost, and contracted pricing in non-monetary units such as credits or tokens.
 

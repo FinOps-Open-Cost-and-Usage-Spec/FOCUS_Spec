@@ -1,8 +1,8 @@
-# Provider Metadata Error Correction
+# Data Generator Metadata Error Correction
 
 ## Scenario
 
-ACME has discovered that while their export includes the column x_awesome_column3, the [Schema](#schema) metadata does not include this column. In this case, the provider fixes the metadata in the existing schema object and does not need to create a new schema object. Reference metadata remains the same.
+ACME has discovered that while their export includes the column x_awesome_column3, the [Schema](#schema) metadata does not include this column. In this case, the data generator fixes the metadata in the existing schema object and does not need to create a new schema object. Reference metadata remains the same.
 
 ## Supplied Metadata
 

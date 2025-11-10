@@ -2,7 +2,7 @@
 
 The Cost and Usage dataset is the primary dataset for FOCUS cost and usage data.
 
-The specification for the Cost and Usage dataset defines a group of columns that provide qualitative values (such as dates, resource, and provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The columns are presented in alphabetical order.
+The specification for the Cost and Usage dataset defines a group of columns that provide qualitative values (such as dates, resource, and service provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The columns are presented in alphabetical order.
 
 <div class='h4-nonindex'>Columns</div>
 
@@ -54,8 +54,8 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Pricing Currency List Unit Price](#pricingcurrencylistunitprice)             | Metric             | Conditional   | True         | Decimal   |
 | [Pricing Quantity](#pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
-| [Provider](#providername)                                                     | Dimension          | Mandatory     | False        | String    |
-| [Publisher](#publishername)                                                   | Dimension          | Mandatory     | False        | String    |
+| [Provider - DEPRECATED](#providername)                                        | Dimension          | Mandatory     | False        | String    |
+| [Publisher - DEPRECATED](#publishername)                                      | Dimension          | Mandatory     | False        | String    |
 | [Region ID](#regionid)                                                        | Dimension          | Conditional   | True         | String    |
 | [Region Name](#regionname)                                                    | Dimension          | Conditional   | True         | String    |
 | [Resource ID](#resourceid)                                                    | Dimension          | Conditional   | True         | String    |
@@ -94,7 +94,7 @@ CostAndUsage adheres to the following requirements:
 * CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
-* CostAndUsage MUST conform to [ProviderCalculatedSplitCostAllocationHandling](#provider-calculatedsplitcostallocationhandling) requirements.
+* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling) requirements.
 
 <div class='h4-nonindex'>Dataset ID</div>
 
@@ -106,7 +106,7 @@ Cost and Usage
 
 <div class='h4-nonindex'>Description</div>
 
-Describes the cost and usage incurred through using or purchasing a provider's [*resources*](#glossary:resource) or [*services*](#glossary:service).
+Describes the cost and usage incurred through using or purchasing a service provider's [*resources*](#glossary:resource) or [*services*](#glossary:service).
 
 <div class='h4-nonindex'>Introduced (version)</div>
 

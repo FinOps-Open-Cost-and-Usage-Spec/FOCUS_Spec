@@ -1,6 +1,6 @@
 # Contract Applied
 
-Contract Applied is a set of properties that associate a charge with one or more [*contract commitments*](#glossary:contract-commitment), denoted as key-value pairs in a JSON object.  Contract Applied allows the practitioner to track the progress of the commitments to which they have agreed with a provider.
+Contract Applied is a set of properties that associate a charge with one or more [*contract commitments*](#glossary:contract-commitment), denoted as key-value pairs in a JSON object.  Contract Applied allows the practitioner to track the progress of the commitments to which they have agreed with a service provider.
 
 The FOCUS-defined properties are:
 
@@ -18,7 +18,7 @@ In addition to these, a data generator may include one or more custom properties
 
 The ContractApplied column adheres to the following requirements:
 
-* ContractApplied MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* ContractApplied MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *contract commitments*.
 * ContractApplied MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
 
@@ -47,38 +47,38 @@ Contract Applied consists of a valid JSON object which contains an array of key-
 
 ### Content Requirements
 
-The following keys are used for contract application properties to facilitate querying data across allocations and across providers. FOCUS-defined keys will appear in the list below, and custom keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
+The following keys are used for contract application properties to facilitate querying data across allocations and across service providers. FOCUS-defined keys will appear in the list below, and custom keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
 <b>Contract ID</b>
 
-Contract ID is a provider-assigned identifier for a contract describing the agreed terms between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
+Contract ID is a service-provider-assigned identifier for a contract describing the agreed terms between a service provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
 The "ContractId" property adheres to the following requirements:
 
-* "ContractId" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractId" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *contract commitments*.
 * "ContractId" MUST be of type String.
 * "ContractId" MUST conform to [StringHandling](#stringhandling) requirements.
 * "ContractId" nullability is defined as follows:
   * "ContractId" MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
   * "ContractId" MUST NOT be null when a *charge* is related to a *contract commitment*.
 * When "ContractId" is not null, "ContractId" adheres to the following additional requirements:
-  * "ContractId" MUST be a unique identifier within the provider.
+  * "ContractId" MUST be a unique identifier within the service provider.
   * "ContractId" SHOULD be a fully-qualified identifier.
 
 <b>Contract Commitment ID</b>
 
-A Contract Commitment ID is a provider-assigned identifier describing an agreement agreed between a provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
+A Contract Commitment ID is a service-provider-assigned identifier describing an agreement agreed between a service provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
 The "ContractCommitmentID" property adheres to the following requirements:
 
-* "ContractCommitmentID" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *contract commitments*.
+* "ContractCommitmentID" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *contract commitments*.
 * "ContractCommitmentID" MUST be of type String.
 * "ContractCommitmentID" MUST conform to [StringHandling](#stringhandling) requirements.
 * "ContractCommitmentID" nullability is defined as follows:
   * "ContractCommitmentID" MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
   * "ContractCommitmentID" MUST NOT be null when a *charge* is related to a *contract commitment*.
 * When "ContractCommitmentID" is not null, "ContractCommitmentID" adheres to the following additional requirements:
-  * "ContractCommitmentID" MUST be a unique identifier within the provider.
+  * "ContractCommitmentID" MUST be a unique identifier within the service provider.
   * "ContractCommitmentID" SHOULD be a fully-qualified identifier.
   * "ContractCommitmentID" MUST have one and only one parent "ContractID".
   * "ContractCommitmentID" MUST be equal to ResourceID when ChargeCategory is "Purchase".
@@ -86,11 +86,11 @@ The "ContractCommitmentID" property adheres to the following requirements:
 
 <b>Contract Commitment Applied Cost</b>
 
-Contract Commitment Applied Cost represents the cost of the charge applied to the contract line item.  Contract Commitment Applied Cost is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Cost is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a provider and a customer.
+Contract Commitment Applied Cost represents the cost of the charge applied to the contract line item.  Contract Commitment Applied Cost is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Cost is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer.
 
 The "ContractCommitmentAppliedCost" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedCost" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* value with one or more *contract commitments*.
+* "ContractCommitmentAppliedCost" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider associates the *charge's* value with one or more *contract commitments*.
 * "ContractCommitmentAppliedCost" MUST be of type Decimal.
 * "ContractCommitmentAppliedCost" MUST conform to [NumericFormat](#numericformat) requirements.
 * "ContractCommitmentAppliedCost" nullability is defined as follows:
@@ -101,11 +101,11 @@ The "ContractCommitmentAppliedCost" property adheres to the following requiremen
 
 <b>Contract Commitment Applied Quantity</b>
 
-Contract Commitment Applied Quantity represents the quantity of the charge applied to the contract line item.  Contract Commitment Applied Quantity is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a provider and a customer.
+Contract Commitment Applied Quantity represents the quantity of the charge applied to the contract line item.  Contract Commitment Applied Quantity is associated with the contract line item via Contract Commitment ID.  Contract Commitment Applied Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a service provider and a customer.
 
 The "ContractCommitmentAppliedQuantity" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedQuantity" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* quantity with one or more *contract commitments*.
+* "ContractCommitmentAppliedQuantity" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedQuantity" MUST be of type Decimal.
 * "ContractCommitmentAppliedQuantity" MUST conform to [NumericFormat](#numericformat) requirements.
 * "ContractCommitmentAppliedQuantity" nullability is defined as follows:
@@ -116,11 +116,11 @@ The "ContractCommitmentAppliedQuantity" property adheres to the following requir
 
 <b>Contract Commitment Applied Unit</b>
 
-The Contract Commitment Applied Unit represents a provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. Contract Commitment Applied Unit complements the Contract Commitment Applied Quantity metric.
+The Contract Commitment Applied Unit represents a service-provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. Contract Commitment Applied Unit complements the Contract Commitment Applied Quantity metric.
 
 The "ContractCommitmentAppliedUnit" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedUnit" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider associates the *charge's* quantity with one or more *contract commitments*.
+* "ContractCommitmentAppliedUnit" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedUnit" MUST be of type String.
 * "ContractCommitmentAppliedUnit" MUST conform to [StringHandling](#stringhandling) requirements.
 * "ContractCommitmentAppliedUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
@@ -197,7 +197,7 @@ NOTE: The above JSON Type Definition (JTD) is an approximation of the expected c
 
 ### Scenario 1: Initial contract commitment
 
-A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a provider and a customer:
+A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a service provider and a customer:
 
 1) 12345: Spend $500k overall.  (This is the value of the contract, and thus ContractID = ContractCommitmentID.)
 2) 23456: Spend $25k on a particular service.

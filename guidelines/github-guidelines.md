@@ -27,7 +27,7 @@ The [FOCUS_Spec repository](https://github.com/FinOps-Open-Cost-and-Usage-Spec/F
 
 ## Repository Purpose
 
-FOCUS is designed to address the complexity that FinOps practitioners face when dealing with disparate billing data formats from different cloud, software, and other providers. Without a standard, each provider generates unique billing data files with their terminology, forcing practitioners to develop custom normalization schemes for each provider.
+FOCUS is designed to address the complexity that FinOps practitioners face when dealing with disparate billing data formats from different cloud, software, and other service providers. Without a standard, each provider generates unique billing data files with their terminology, forcing practitioners to develop custom normalization schemes for each provider.
 
 ## Main Folders and Their Contents
 
@@ -57,7 +57,7 @@ The core folder containing the specification documentation:
 
 ### 5. `supporting_content` folder
 
-The repository provides supporting content that includes example mappings between well-known provider datasets and what's defined in the FOCUS specification. This likely includes mappings for major cloud providers like:
+The repository provides supporting content that includes example mappings between well-known service provider datasets and what's defined in the FOCUS specification. This likely includes mappings for major cloud providers like:
 
 - AWS (Amazon Web Services)
 - GCP (Google Cloud Platform)
@@ -98,8 +98,8 @@ The repository is organized around several key principles:
 
 ### Provider Neutrality
 
-- Contributors must ensure the specification examines how each decision relates to each of the major cloud, SaaS, and other providers
-- Does not favor any single provider's implementation
+- Contributors must ensure the specification examines how each decision relates to each of the major cloud, SaaS, and other service providers
+- Does not favor any single data generator's implementation
 - Prioritizes enabling FinOps capabilities and alignment with the FinOps Framework
 
 ## Target Audience
@@ -115,12 +115,12 @@ The specification is designed to be used by three major groups:
 The repository is actively maintained and represents a collaborative effort between:
 
 - FinOps practitioners
-- Cloud and SaaS providers
+- Cloud and SaaS service providers
 - FinOps vendors
 - The FinOps Foundation (supporting organization)
 - Linux Foundation (hosting the specification project)
 
-The repository is well-structured for both specification development and practical implementation, supporting the goal of creating a vendor-neutral standard for cloud billing data that can be adopted across different cloud providers and FinOps tools.
+The repository is well-structured for both specification development and practical implementation, supporting the goal of creating a vendor-neutral standard for cloud billing data that can be adopted across different cloud service providers and FinOps tools.
 
 ---
 
