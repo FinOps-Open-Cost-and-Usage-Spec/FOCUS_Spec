@@ -2,9 +2,11 @@
 
 [*Pricing Currency*](#glossary:pricing-currency) is the national or virtual currency denomination that a [*resource*](#glossary:resource) or [*service*](#glossary:service) was priced in. Pricing Currency is commonly used in scenarios where different currencies are used for pricing and billing.
 
-The PricingCurrency column adheres to the following requirements:
+## Requirements
 
-* PricingCurrency MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports pricing and billing in different currencies.
+PricingCurrency adheres to the following requirements:
+
+* PricingCurrency MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports pricing and billing in different currencies.
 * PricingCurrency MUST be of type String.
 * PricingCurrency MUST conform to [StringHandling](#stringhandling) requirements.
 * PricingCurrency MUST conform to [CurrencyFormat](#currencyformat) requirements.

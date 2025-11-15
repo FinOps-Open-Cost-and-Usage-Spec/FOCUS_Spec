@@ -2,9 +2,11 @@
 
 Charge Class indicates whether a [*charge*](#glossary:charge) represents a [*correction](#glossary:correction) to a previously [*closed billing period*](#glossary:closed-billing-period). Charge Class is commonly used to differentiate such corrections from all other charges, including both regularly incurred *charges* and *corrections* to [*open billing periods*](#glossary:open-billing-period).
 
-The ChargeClass column adheres to the following requirements:
+## Requirements
 
-* ChargeClass MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ChargeClass adheres to the following requirements:
+
+* ChargeClass MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeClass MUST be of type String.
 * ChargeClass nullability is defined as follows:
   * ChargeClass MUST be null when the *charge* does not represent a correction to a previously *closed billing period*.
@@ -42,3 +44,4 @@ Allowed values:
 ## Introduced (version)
 
 1.0
+

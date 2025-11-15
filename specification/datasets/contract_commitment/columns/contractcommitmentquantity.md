@@ -1,10 +1,12 @@
 # Contract Commitment Quantity
 
-Contract Commitment Quantity represents the amount associated with the [*contract commitment*](#glossary:contract-commitment), denominated in a provider-defined [Contract Commitment Unit](#contractcommitmentunit).  Contract Commitment Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a provider and a customer.
+Contract Commitment Quantity represents the amount associated with the [*contract commitment*](#glossary:contract-commitment), denominated in a service-provider-defined [Contract Commitment Unit](#contractcommitmentunit).  Contract Commitment Quantity is commonly used for monitoring the progress towards fulfilling contractual commitments that may facilitate discounts for [*resources*](#glossary:resource) or [*services*](#glossary:service) as agreed between a provider and a customer.
 
-The ContractCommitmentQuantity column adheres to the following requirements:
+## Requirements
 
-* ContractCommitmentQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ContractCommitmentQuantity adheres to the following requirements:
+
+* ContractCommitmentQuantity MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentQuantity MUST be of type Decimal.
 * ContractCommitmentQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractCommitmentQuantity nullability is defined as follows:

@@ -2,9 +2,11 @@
 
 The Consumed Quantity represents the volume of a metered SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used, based on the [Consumed Unit](#consumedunit). Consumed Quantity is often derived at a finer granularity or over a different time interval when compared to the [Pricing Quantity](#pricingquantity) (complementary to [Pricing Unit](#pricingunit)) and focuses on *resource* and *service* consumption, not pricing and cost.
 
-The ConsumedQuantity column adheres to the following requirements:
+## Requirements
 
-* ConsumedQuantity MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports the measurement of usage.
+ConsumedQuantity adheres to the following requirements:
+
+* ConsumedQuantity MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports the measurement of usage.
 * ConsumedQuantity MUST be of type Decimal.
 * ConsumedQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * ConsumedQuantity nullability is defined as follows:

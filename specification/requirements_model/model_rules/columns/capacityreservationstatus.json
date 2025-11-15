@@ -1,0 +1,266 @@
+{
+  "CapacityReservationStatus-C-000-C": {
+    "Function": "Composite",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [
+      "CAPACITY_RESERVATION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The CapacityReservationStatus column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationStatus-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationStatus-C-002-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationStatus-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-020-C",
+        "CapacityReservationStatus-C-001-M",
+        "CapacityReservationStatus-C-002-C",
+        "CapacityReservationStatus-C-005-C"
+      ]
+    }
+  },
+  "CapacityReservationStatus-C-001-M": {
+    "Function": "Type",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationStatus MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "CapacityReservationStatus"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CapacityReservationStatus-C-002-C": {
+    "Function": "Composite",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationStatus nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationStatus-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationStatus-C-004-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CapacityReservationStatus-C-003-C",
+        "CapacityReservationStatus-C-004-C"
+      ]
+    }
+  },
+  "CapacityReservationStatus-C-003-C": {
+    "Function": "Nullability",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Column",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationStatus MUST be null when CapacityReservationId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "CapacityReservationStatus",
+        "Value": null
+      },
+      "Condition": {
+        "AND": {
+          "CheckFunction": "CheckValue",
+          "ColumnName": "CapacityReservationId",
+          "Value": null
+        }
+      },
+      "Dependencies": [
+        "CapacityReservationId-C-003-C"
+      ]
+    },
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": ""
+  },
+  "CapacityReservationStatus-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and ChargeCategory is \"Usage\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CapacityReservationStatus",
+        "Value": null
+      },
+      "Condition": {
+        "AND": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CapacityReservationId",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          }
+        ]
+      },
+      "Dependencies": [
+        "CapacityReservationId-C-003-C",
+        "ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CapacityReservationStatus-C-005-C": {
+    "Function": "Composite",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When CapacityReservationStatus is not null, CapacityReservationStatus adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationStatus-C-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationStatus-C-007-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CapacityReservationStatus-C-008-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CapacityReservationStatus",
+        "Value": null
+      },
+      "Dependencies": [
+        "CapacityReservationStatus-C-006-M",
+        "CapacityReservationStatus-C-007-C",
+        "CapacityReservationStatus-C-008-C"
+      ]
+    }
+  },
+  "CapacityReservationStatus-C-006-M": {
+    "Function": "Validation",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationStatus MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CapacityReservationStatus",
+            "Value": "Used"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "CapacityReservationStatus",
+            "Value": "Unused"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CapacityReservationStatus-C-007-C": {
+    "Function": "Validation",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationStatus MUST be \"Unused\" when the charge represents the unused portion of a capacity reservation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CapacityReservationStatus-C-008-C": {
+    "Function": "Validation",
+    "Reference": "CapacityReservationStatus",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "CapacityReservationStatus MUST be \"Used\" when the charge represents the used portion of a capacity reservation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

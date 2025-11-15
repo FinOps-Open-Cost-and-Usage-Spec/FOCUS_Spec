@@ -2,9 +2,11 @@
 
 The Contracted Unit Price represents the agreed-upon unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, inclusive of [*negotiated discounts*](#glossary:negotiated-discount), if present, while excluding negotiated [*commitment discounts*](#glossary:commitment-discount) or any other discounts. This price is denominated in the [Billing Currency](#billingcurrency). The Contracted Unit Price is commonly used for calculating savings based on negotiation activities. If negotiated discounts are not applicable, the Contracted Unit Price defaults to the [List Unit Price](#listunitprice).
 
-The ContractedUnitPrice column adheres to the following requirements:
+## Requirements
 
-* ContractedUnitPrice MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports negotiated pricing concepts.
+ContractedUnitPrice adheres to the following requirements:
+
+* ContractedUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports negotiated pricing concepts.
 * ContractedUnitPrice adheres to the following additional requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.

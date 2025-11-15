@@ -1,0 +1,112 @@
+{
+  "UnitFormat-A-000-M": {
+    "Function": "Composite",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "Root composite capturing all UnitFormat requirements",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All columns defined in FOCUS specifying Unit Format as a value format MUST follow the requirements listed below.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "UnitFormat-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "UnitFormat-A-002-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "UnitFormat-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "UnitFormat-A-004-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "UnitFormat-A-001-M",
+        "UnitFormat-A-002-O",
+        "UnitFormat-A-003-M",
+        "UnitFormat-A-004-C"
+      ]
+    }
+  },
+  "UnitFormat-A-001-M": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Units SHOULD be expressed as a single unit of measure adhering to one of the following three formats.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "UnitFormat-A-002-O": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Units MAY be expressed with a unit quantity or time interval. If a unit quantity or time interval is used, the unit quantity or time interval MUST be expressed as a whole number.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "UnitFormat-A-003-M": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Unit values and components of columns using the Unit Format MUST use a capitalization scheme that is consistent with the capitalization scheme used in this attribute if that term is listed in this section.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "UnitFormat-A-004-C": {
+    "Function": "Format",
+    "Reference": "UnitFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Units SHOULD be composed of the list of recommended units listed in this section unless the unit value covers a dimension not listed in the recommended unit set, or if the unit covers a count-based unit distinct from recommended values in the count dimension listed in this section.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

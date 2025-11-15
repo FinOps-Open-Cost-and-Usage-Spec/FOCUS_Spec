@@ -2,9 +2,11 @@
 
 The Resource Name is a display name assigned to a [*resource*](#glossary:resource). It is commonly used for cost analysis, reporting, and allocation scenarios.
 
-The ResourceName column adheres to the following requirements:
+## Requirements
 
-* ResourceName MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports billing based on provisioned resources.
+ResourceName adheres to the following requirements:
+
+* ResourceName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports billing based on provisioned resources.
 * ResourceName MUST be of type String.
 * ResourceName MUST conform to [StringHandling](#stringhandling) requirements.
 * ResourceName nullability is defined as follows:

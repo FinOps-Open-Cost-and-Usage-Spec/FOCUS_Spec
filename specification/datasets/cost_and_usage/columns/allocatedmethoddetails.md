@@ -10,7 +10,7 @@ The FOCUS-defined properties are:
 * `Usage Unit`: Unit being measured used to calculate this allocation.
 * `Usage Quantity`: The value of the charge applied to a single contract term.
 
-In addition to these, a provider may include one or more custom properties, also denoted as key-value pairs.
+In addition to these, a data generator may include one or more custom properties, also denoted as key-value pairs.
 
 ## Requirements
 
@@ -18,13 +18,13 @@ In addition to these, a provider may include one or more custom properties, also
 
 The AllocatedMethodDetails column adheres to the following requirements:
 
-* AllocatedMethodDetails SHOULD be present in a cost and usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports [Provider-Calculated Split Cost Allocation](#ProviderCalculatedSplitCostAllocation).
+* AllocatedMethodDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
 * AllocatedMethodDetails MUST be of type String.
 * AllocatedMethodDetails MUST conform to [StringHandling](#stringhandling) requirements.
 * AllocatedMethodDetails MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
 * AllocatedMethodDetails nullability is defined as follows:
-  * AllocatedMethodDetails MUST be null when a charge is not related to a provider-calculated split cost allocation.
-  * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a provider-calculated split cost allocation.
+  * AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.
+  * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
 
 ### Object Schema Requirements
 
@@ -38,13 +38,13 @@ When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMetho
       * Allocation property key MUST match the spelling and casing specified for the FOCUS-defined property.
       * Allocation property value MUST be of the type specified for that property.
       * Allocation properties MUST adhere to additional normative requirements specific to that property.
-    * Provider-defined allocation properties MAY be included in "Elements".
+    * Data generator-defined allocation properties MAY be included in "Elements".
       * Allocation property keys MUST begin with the string "x_" unless it is a FOCUS-defined allocation property.
-* AllocatedMethodDetails root object MAY contain additional provider-defined items, in addition to "Elements".
+* AllocatedMethodDetails root object MAY contain additional data generator-defined items, in addition to "Elements".
 
 ### Content Requirements
 
-The following keys are used for allocation properties to facilitate querying data across allocations and across providers. Focus-defined keys will appear in the list below and Provider-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
+The following keys are used for allocation properties to facilitate querying data across allocations and across data generators. Focus-defined keys will appear in the list below and data generator-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
 <b>Allocated Ratio</b>
 
@@ -63,7 +63,7 @@ Usage Unit communicates the aspect of the documented Allocation Method Id being 
 The "UsageUnit" property adheres to the following requirements:
 
 * "UsageUnit" MUST be included inside an "Elements" object if "UsageQuantity" allocation property is included in that "Elements" object, otherwise "UsageUnit" MAY be included in each "Elements" object.
-* Values for "UsageUnit" MUST capture the unit or component of provider's documented [AllocationMethod](#allocationmethodid) that was used to determine the "AllocatedRatio" value.
+* Values for "UsageUnit" MUST capture the unit or component of data generator's documented [AllocationMethod](#allocationmethodid) that was used to determine the "AllocatedRatio" value.
 * Values for "UsageUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
 
 <b>Usage Quantity</b>
@@ -74,7 +74,7 @@ The "UsageQuantity" property adheres to the following requirements:
 
 * "UsageQuantity" MAY be included inside an "Elements" object when that "Elements" object contains a "UsageUnit" allocation property.
 * Values for "UsageQuantity" MUST be compatible with NumericFormat.
-* Values for "UsageQuantity" SHOULD capture the quantity or volume of the "UsageUnit" measured by the provider that was used to determine the "AllocatedRatio" value.
+* Values for "UsageQuantity" SHOULD capture the quantity or volume of the "UsageUnit" measured by the data generator that was used to determine the "AllocatedRatio" value.
 
 ## Overview
 
@@ -170,9 +170,9 @@ When multiple "UsageUnit" values are used to calculate the allaction, another ob
   ]
 }
 ```
-### Scenario 3: Provider omits keys that are not required
+### Scenario 3: Data generator omits keys that are not required
 
-This provider does not wish to supply the "UsageUnit" or "UsageQuantity" keys but still provides cost allocation with some additional allocation method details. In this case, "UsageUnit" and "UsageQuantity" are omitted, and only the "AllocatedRatio" is supplied.
+This data generator does not wish to supply the "UsageUnit" or "UsageQuantity" keys but still provides cost allocation with some additional allocation method details. In this case, "UsageUnit" and "UsageQuantity" are omitted, and only the "AllocatedRatio" is supplied.
 
 ```json
 {
@@ -184,7 +184,7 @@ This provider does not wish to supply the "UsageUnit" or "UsageQuantity" keys bu
 ```
 ### Scenario 4: Additional non-FOCUS specified properties
 
-A provider can add additional properties if they feel more context is helpful or neccessary to the practitioner. In this scenario,the provider is supplying additional context that shows only 0.5 of a unit was used. However, since 1 unit was requested by the service this allocation represents, the allocation is being charged at 1 regardless.
+A data generator can add additional properties if they feel more context is helpful or necessary to the practitioner. In this scenario, the data generator is supplying additional context that shows only 0.5 of a unit was used. However, since 1 unit was requested by the service this allocation represents, the allocation is being charged at 1 regardless.
 
 ```json
 {
@@ -210,7 +210,7 @@ Allocated Method Details
 
 ## Description
 
-A set of properties describing how resources are allocated in provider-defined split cost allocation.
+A set of properties describing how resources are allocated in data generator-defined split cost allocation.
 
 ## Content Constraints
 

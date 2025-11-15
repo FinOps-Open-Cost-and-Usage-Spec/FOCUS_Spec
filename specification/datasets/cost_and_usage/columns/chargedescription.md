@@ -2,9 +2,11 @@
 
 A Charge Description provides a high-level context of a [*row*](#glossary:row) without requiring additional discovery. This column is a self-contained summary of the [*charge's*](#glossary:charge) purpose and price. It typically covers a select group of corresponding details across a billing dataset or provides information not otherwise available.
 
-The ChargeDescription column adheres to the following requirements:
+## Requirements
 
-* ChargeDescription MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ChargeDescription adheres to the following requirements:
+
+* ChargeDescription MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeDescription MUST be of type String.
 * ChargeDescription MUST conform to [StringHandling](#stringhandling) requirements.
 * ChargeDescription SHOULD NOT be null.

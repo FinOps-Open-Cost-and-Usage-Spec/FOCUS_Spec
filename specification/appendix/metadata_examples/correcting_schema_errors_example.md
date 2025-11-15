@@ -1,8 +1,8 @@
-# Provider Metadata Error Correction
+# Data Generator Metadata Error Correction
 
 ## Scenario
 
-ACME has discovered that while their export includes the column x_awesome_column3, the [Schema](#schema) metadata does not include this column. In this case, the provider fixes the metadata in the existing schema object and does not need to create a new schema object. Reference metadata remains the same.
+ACME has discovered that while their export includes the column x_awesome_column3, the [Schema](#schema) metadata does not include this column. In this case, the data generator fixes the metadata in the existing schema object and does not need to create a new schema object. Reference metadata remains the same.
 
 ## Supplied Metadata
 
@@ -15,7 +15,7 @@ The updated schema-related metadata could look like this:
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
   "CreationDate": "2024-03-02T12:01:03.083z",
-  "Dataset": "FOCUS Cost and Usage",
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",

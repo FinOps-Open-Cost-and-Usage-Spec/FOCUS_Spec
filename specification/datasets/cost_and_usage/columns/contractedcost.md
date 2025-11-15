@@ -2,9 +2,11 @@
 
 Contracted Cost represents the cost calculated by multiplying [*contracted unit price*](#glossary:contracted-unit-price) and the corresponding [Pricing Quantity](#pricingquantity). Contracted Cost is denominated in the [Billing Currency](#billingcurrency) and is commonly used for calculating savings based on negotiation activities, by comparing it with [List Cost](#listcost). If [*negotiated discounts*](#glossary:negotiated-discount) are not applicable, the Contracted Cost defaults to the List Cost.
 
-The ContractedCost column adheres to the following requirements:
+## Requirements
 
-* ContractedCost MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ContractedCost adheres to the following requirements:
+
+* ContractedCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractedCost MUST be of type Decimal.
 * ContractedCost MUST conform to [NumericFormat](#numericformat) requirements.
 * ContractedCost MUST NOT be null.
@@ -29,7 +31,7 @@ Cost calculated by multiplying *contracted unit price* and the corresponding Pri
 
 ## Usability Constraints
 
-**Aggregation:** When aggregating Contracted Cost for savings calculations, it's important to exclude either [Charge Category](#chargecategory) "Purchase" *charges* (one-time and recurring) that are paid to cover future eligible *charges* (e.g., [commitment discount](#glossary:commitment-discount)) or the covered [Charge Category](#chargecategory) "Usage" *charges* themselves. This exclusion helps prevent double counting of these *charges* in the aggregation. Which set of *charges* to exclude depends on whether cost are aggregated on a billed basis (exclude covered *charges*) or accrual basis (exclude Purchases for future *charges*). For instance, *charges* categorized as [Charge Category](#chargecategory) "Purchase" and their related [Charge Category](#chargecategory) "Tax" *charges* for a Commitment Discount might be excluded from an accrual basis cost aggregation of Contracted Cost. This is because the "Usage" and "Tax" charge records provided during the term of the commitment discount already specify the Contracted Cost. Purchase *charges* that cover future eligible *charges* can be identified by filtering for [Charge Category](#chargecategory) "Purchase" records with a [Billed Cost](#billedcost) greater than 0 and an [Effective Cost](#effectivecost) equal to 0.
+**Aggregation:** When aggregating Contracted Cost for savings calculations, it's important to exclude either [Charge Category](#chargecategory) "Purchase" *charges* (one-time and recurring) that are paid to cover future eligible *charges* (e.g., [commitment discount](#glossary:commitment-discount)) or the covered [Charge Category](#chargecategory) "Usage" *charges* themselves. This exclusion helps prevent double counting of these *charges* in the aggregation. Which set of *charges* to exclude depends on whether cost are aggregated on a billed basis (exclude covered *charges*) or accrual basis (exclude Purchases for future *charges*). For instance, *charges* categorized as [Charge Category](#chargecategory) "Purchase" and their related [Charge Category](#chargecategory) "Tax" *charges* for a Commitment Discount might be excluded from an accrual basis cost aggregation of Contracted Cost. This is because the "Usage" and "Tax" charge records provided during the commitment [*period*](#glossary:period) already specify the Contracted Cost. Purchase *charges* that cover future eligible *charges* can be identified by filtering for [Charge Category](#chargecategory) "Purchase" records with a [Billed Cost](#billedcost) greater than 0 and an [Effective Cost](#effectivecost) equal to 0.
 
 ## Content Constraints
 

@@ -27,35 +27,35 @@ FOCUS supports the comparison of cost columns in order to identify savings, amor
 ```sql
 WITH AggregatedData AS (
   SELECT
-    ProviderName,
+    ServiceProviderName,
     BillingAccountId,
     BillingAccountName,
     BillingCurrency,
     ServiceName,
     SUM(EffectiveCost) AS TotalEffectiveCost,
     SUM(BilledCost) AS TotalBilledCost,
-    SUM(CASE 
+    SUM(CASE
           WHEN ChargeCategory = 'Usage' AND BilledCost = 0 AND EffectiveCost != 0
-          THEN 0 
+          THEN 0
           ELSE ContractedCost
         END) AS TotalContractedCost,
-    SUM(CASE 
+    SUM(CASE
           WHEN ChargeCategory = 'Usage' AND BilledCost = 0 AND EffectiveCost != 0
-          THEN 0 
+          THEN 0
           ELSE ListCost
         END) AS TotalListCost
   FROM focus_data_table
-  WHERE BillingPeriodStart >= ? 
+  WHERE BillingPeriodStart >= ?
     AND BillingPeriodEnd < ?
     AND ChargeClass IS NULL
   GROUP BY
-    ProviderName,
+    ServiceProviderName,
     BillingAccountId,
     BillingAccountName,
     BillingCurrency,
     ServiceName
 )
-SELECT ProviderName,
+SELECT ServiceProviderName,
     BillingAccountId,
     BillingAccountName,
     BillingCurrency,
@@ -63,7 +63,7 @@ SELECT ProviderName,
     TotalEffectiveCost,
     TotalBilledCost,
     TotalListCost,
-    1 - (TotalContractedCost / NULLIF(TotalListCost, 0)) * 100 AS ContractedDiscount
+    1 - (TotalContractedCost / NULLIF(TotalListCost, 0)) * 100 AS ContractedDiscount,
     1 - (TotalEffectiveCost / NULLIF(TotalListCost, 0)) * 100 AS EffectiveDiscount
 FROM AggregatedData
 ```

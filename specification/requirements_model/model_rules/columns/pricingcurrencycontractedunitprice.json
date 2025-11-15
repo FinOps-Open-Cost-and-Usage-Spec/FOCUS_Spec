@@ -1,0 +1,311 @@
+{
+  "PricingCurrencyContractedUnitPrice-C-000-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The PricingCurrencyContractedUnitPrice column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-007-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-046-C",
+        "PricingCurrencyContractedUnitPrice-C-001-M",
+        "PricingCurrencyContractedUnitPrice-C-002-M",
+        "PricingCurrencyContractedUnitPrice-C-003-M",
+        "PricingCurrencyContractedUnitPrice-C-007-C"
+      ]
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-001-M": {
+    "Function": "Type",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be of type Decimal.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "PricingCurrencyContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-002-M": {
+    "Function": "Format",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST conform to NumericFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "PricingCurrencyContractedUnitPrice"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-003-M": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-006-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "PricingCurrencyContractedUnitPrice-C-004-C",
+        "PricingCurrencyContractedUnitPrice-C-005-C",
+        "PricingCurrencyContractedUnitPrice-C-006-O"
+      ]
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be null when ChargeCategory is \"Tax\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Tax"
+      },
+      "Dependencies": [
+        "ChargeCategory-C-003-M"
+      ]
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "OR",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Usage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Purchase"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          }
+        ]
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-006-O": {
+    "Function": "Nullability",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MAY be null in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-007-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-008-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-010-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCurrencyContractedUnitPrice",
+        "Value": null
+      },
+      "Dependencies": [
+        "PricingCurrencyContractedUnitPrice-C-008-C",
+        "PricingCurrencyContractedUnitPrice-C-009-C",
+        "PricingCurrencyContractedUnitPrice-C-010-C"
+      ]
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-008-C": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCurrencyContractedUnitPrice",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-009-C": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be denominated in the PricingCurrency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCurrencyContractedUnitPrice",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyContractedUnitPrice-C-010-C": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyContractedUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Discrepancies in PricingCurrencyContractedUnitPrice, ContractedCost, or PricingQuantity MAY exist when ChargeClass is \"Correction\".",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeClass",
+        "Value": "Correction"
+      },
+      "Dependencies": [
+        "ChargeClass-C-005-C"
+      ]
+    }
+  }
+}

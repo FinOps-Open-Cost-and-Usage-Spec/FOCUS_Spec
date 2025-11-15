@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has decided to deprecate columns prior to removal from their FOCUS data export. The column for deprecation is x_awesome_column3. The provider creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid).
+ACME has decided to deprecate columns prior to removal from their FOCUS data export. The column for deprecation is x_awesome_column3. The data generator creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid).
 
 ## Supplied Metadata
 
@@ -15,7 +15,7 @@ The updated schema-related metadata could look like this:
   "SchemaId": "34567-abcde-34567-abcde-34567",
   "FocusVersion": "1.0",
   "CreationDate": "2024-03-02T12:01:03.083z",
-  "Dataset": "FOCUS Cost and Usage",
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
@@ -63,7 +63,7 @@ The updated schema-related metadata could look like this:
           {
                 "ColumnName": "x_awesome_column2",
                 "DataType": "DATETIME"
-          }, 
+          },
           {
                 "ColumnName": "x_awesome_column3",
                 "DataType": "STRING",
