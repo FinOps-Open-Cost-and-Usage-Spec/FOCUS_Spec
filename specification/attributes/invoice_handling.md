@@ -49,8 +49,8 @@ Defines how a *FOCUS dataset* should reflect details for the information present
 
 ## Requirements
 
-* All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in one or more FOCUS *dataset artifacts*.
-* If cost or usage appears on a customer invoice but cannot be expressed using existing FOCUS columns, providers MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage dataset artifacts.
+* All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in the *FOCUS dataset*.
+* If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, data generators MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the *FOCUS dataset*.
 * *Invoice reconciliation* adheres to the following additional requirements:
   * Invoice issuer MUST perform *Invoice reconciliation* between an *invoice* and its associated FOCUS *dataset artifacts* before issuing the invoice.
   * *Invoice reconciliation* process MUST include (but is not limited to) the following metric and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuerName, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd.
