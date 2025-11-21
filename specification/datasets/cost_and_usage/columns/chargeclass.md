@@ -1,6 +1,6 @@
 # Charge Class
 
-Charge Class indicates whether the [*row*](#glossary:row) represents a correction to a previously invoiced [*billing period*](#glossary:billing-period). Charge Class is commonly used to differentiate [*corrections](#glossary:correction) from regularly incurred [*charges*](#glossary:charge).
+Charge Class indicates whether the [*row*](#glossary:row) represents a correction to a previously invoiced [*billing period*](#glossary:billing-period). Charge Class is commonly used to differentiate [*corrections*](#glossary:correction) from regularly incurred [*charges*](#glossary:charge).
 
 ## Requirements
 

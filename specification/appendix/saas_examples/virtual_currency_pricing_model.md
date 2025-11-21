@@ -113,7 +113,7 @@ Additionally, Acme Co offers a modified usage to token ratio for one of their se
 Note the following details in the example dataset:
 
 * Because of the modified rate for Workflow Operations, the PricingCurrencyContractedUnitPrice and PricingCurrencyListUnitPrice are different for this charge. The ContractedUnitPrice is set to &dollar;1 and the ListUnitPrice is set to &dollar;2.
-* The PricingCurrencyEffectiveCost is 240 tokens for this charge, which is less that example B2 above due to the modified rate.
+* The PricingCurrencyEffectiveCost is 240 tokens for this charge, which is less than example B2 above due to the modified rate.
 * ListCost reflects the cost of the charge at both the list cost of the tokens and the list rate for which the usage consumes tokens.
 
 ## Scenario C: Handling Virtual Currency Usage Overages
