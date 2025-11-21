@@ -28,8 +28,6 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
   * SLA credit details when the credit is already applied to the charged amount
 * If such informational items are excluded, data generators MUST document this in their FOCUS implementation guide and ensure the sum of included charges still equals the invoice total.
 
-None
-
 ## Introduced (version)
 
 1.3
