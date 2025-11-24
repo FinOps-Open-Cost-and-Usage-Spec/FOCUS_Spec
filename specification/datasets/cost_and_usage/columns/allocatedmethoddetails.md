@@ -152,9 +152,7 @@ When only a single "UsageUnit" is used to calculate the allaction.
 ```
 ### Scenario 2: Multiple "UsageUnit" values used for allocation
 
-When multiple "UsageUnit" values are used to calculate the allaction, another object is added to the "Elements" collection. This 
-example illustrates what the AllocatedMethodDetails column might look like in a single charge from a group of records that would 
-make up the entire split cost of an allocated resource.
+When multiple "UsageUnit" values are used to calculate the allaction, another object is added to the "Elements" collection. This example illustrates what the AllocatedMethodDetails column might look like in a single charge from a group of records that would make up the entire split cost of an allocated resource.
 
 ```json
 {
