@@ -8,7 +8,7 @@ The FOCUS-defined properties are:
 
 * `Allocated Ratio`: The ratio of a [*charge*](#glossary:charge) that this allocation represents.
 * `Usage Unit`: Unit being measured used to calculate this allocation.
-* `Usage Quantity`: The value of the charge applied to a single contract term.
+* `Usage Quantity`: The quantity of units used denominated by the defined usage unit.
 
 In addition to these, a data generator may include one or more custom properties, also denoted as key-value pairs.
 
@@ -152,7 +152,9 @@ When only a single "UsageUnit" is used to calculate the allaction.
 ```
 ### Scenario 2: Multiple "UsageUnit" values used for allocation
 
-When multiple "UsageUnit" values are used to calculate the allaction, another object is added to the "Elements" collection.
+When multiple "UsageUnit" values are used to calculate the allaction, another object is added to the "Elements" collection. This 
+example illustrates what the AllocatedMethodDetails column might look like in a single charge from a group of records that would 
+make up the entire split cost of an allocated resource.
 
 ```json
 {
