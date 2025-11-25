@@ -118,7 +118,8 @@ This ensures traceability, uniqueness, and clarity.
 
 **Reasoning Rules**
 
-- Use the format: `ColumnID-EntityType-NNN-Level`
+- Use the format: `DatasetAbbreviation-ColumnID-EntityType-NNN-Level`
+- `DatasetAbbreviation`: Short identifier for the dataset (e.g., `CAU`, `CC`, `META`)
 - `ColumnID`: UpperCamelCase (e.g., `ListUnitPrice`)
 - `EntityType:`
   - `D` = Dataset  
@@ -127,7 +128,7 @@ This ensures traceability, uniqueness, and clarity.
   - `P` = Service Provider  
   - `R` = Row  
   - `M` = Metadata
-- `NNN:`  
+- `NNN:` (unique only within the dataset namespace)
   - `000` for root composite  
   - `0NN` for intermediate composites  
   - `001+` for single atomic rules
@@ -137,8 +138,49 @@ This ensures traceability, uniqueness, and clarity.
   - `O` = Optional (from MAY or unconditional SHOULD)
 
 **Example**  
-A rule states: “`ListUnitPrice` MUST conform to `NumericFormat`.”  
-→ `CRID = ListUnitPrice-C-003-M`
+A rule states: "`ListUnitPrice` MUST conform to `NumericFormat`." (in Cost and Usage dataset)
+→ `CRID = CAU-ListUnitPrice-C-003-M`
+
+#### Multi-Dataset Entity Structure and Naming
+
+The FOCUS specification supports multiple datasets, each with their own requirements. The following decisions have been made regarding entity structure and naming:
+
+##### Dataset-Specific Requirement Entities
+
+Each dataset will reference their own set of Requirement Entities. A single requirement item should not be referenced by multiple datasets - they should have their own entry. This ensures:
+
+- Clear separation of concerns between datasets
+- Independent evolution of dataset requirements
+- Simplified validation and testing per dataset
+- Reduced complexity in rule dependencies
+
+##### Dataset-Namespaced Naming Convention
+
+Column entities are now namespaced by the dataset they belong to. The CRID format has been updated to:
+
+`DatasetAbbreviation-ColumnID-EntityType-NNN-Level`
+
+Where:
+
+- `DatasetAbbreviation`: Short identifier for the dataset (e.g., `CAU` for Cost and Usage)
+- `ColumnID`: The column identifier in UpperCamelCase
+- `EntityType`, `NNN`, `Level`: Same as previously defined
+
+The `NNN` numbering is only unique within each dataset namespace. For example, `CAU-ListPrice-C-000-M` and `CC-ListPrice-C-000-M` can both exist independently - the `000` is reused and only needs to be unique within that specific dataset abbreviation.
+
+##### Examples
+
+- Cost and Usage dataset: `CAU-BillingAccountName-C-000-M`
+- Contract Commitment dataset: `CC-CommitmentDiscountId-C-001-M`
+
+##### Dataset Abbreviations
+
+| Dataset | Abbreviation | Description |
+|---------|--------------|-------------|
+| Cost and Usage | CAU | Primary billing data with usage and cost information |
+| Contract Commitment | CC | Commitment discount and reservation data |
+
+This namespacing approach prevents naming conflicts between datasets and provides clear traceability of which dataset a requirement belongs to.
 
 #### 3. Function – Classify the rule type
 
@@ -365,7 +407,7 @@ If you need assistance reach out to Mike Fuller in the FOCUS slack
 Base rule for a column which links all related Model Rules for the column.
 
 ```json
-  "SampleColumn-C-000-M": {
+  "CAU-SampleColumn-C-000-M": {
     "Function": "Composite",
     "Reference": "SampleColumn",
     "EntityType": "Column",
@@ -382,15 +424,15 @@ Base rule for a column which links all related Model Rules for the column.
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SampleColumn-C-001-M"
+            "ModelRuleId": "CAU-SampleColumn-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SampleColumn-C-002-M"
+            "ModelRuleId": "CAU-SampleColumn-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SampleColumn-C-003-M"
+            "ModelRuleId": "CAU-SampleColumn-C-003-M"
           }
         ]
       },
@@ -403,7 +445,7 @@ Base rule for a column which links all related Model Rules for the column.
 ### Presence requirement rule
 
 ```json
-  "SampleColumn-C-001-M": {
+  "CAU-SampleColumn-C-001-M": {
     "Function": "Presence",
     "Reference": "SampleColumn",
     "EntityType": "Column",
@@ -430,7 +472,7 @@ Base rule for a column which links all related Model Rules for the column.
 Common rule for columns with a NOT NULL requirement. Can also be used when there is a NOT NULL condition.
 
 ```json
-  "SampleColumn-C-002-M": {
+  "CAU-SampleColumn-C-002-M": {
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",
@@ -458,7 +500,7 @@ Common rule for columns with a NOT NULL requirement. Can also be used when there
 Common rule for columns with a MUST be one of the allowed values requirement.
 
 ```json
-  "SampleColumn-C-003-M": {
+  "CAU-SampleColumn-C-003-M": {
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",
@@ -498,7 +540,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
 ### Type Decimal requirement rule
 
 ```json
-  "SampleColumn-C-004-M": {
+  "CAU-SampleColumn-C-004-M": {
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
@@ -523,7 +565,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
 ### Format Numeric requirement rule
 
 ```json
-  "SampleColumn-C-005-M": {
+  "CAU-SampleColumn-C-005-M": {
     "Function": "Format",
     "Reference": "SampleColumn",
     "EntityType": "Column",
@@ -548,7 +590,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
 ### Type String requirement rule
 
 ```json
-  "SampleColumn-C-006-M": {
+  "CAU-SampleColumn-C-006-M": {
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
@@ -573,7 +615,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
 ### Format String Handling rule
 
 ```json
-  "SampleColumn-C-007-M": {
+  "CAU-SampleColumn-C-007-M": {
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
