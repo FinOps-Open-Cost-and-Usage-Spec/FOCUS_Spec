@@ -127,11 +127,11 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-PricingCurrencyListUnitPrice-C-004-C",
-        "CAU-PricingCurrencyListUnitPrice-C-005-C",
-        "CAU-PricingCurrencyListUnitPrice-C-006-O",
         "CAU-PricingCurrencyListUnitPrice-C-011-C",
-        "CAU-PricingCurrencyListUnitPrice-C-012-C"
+        "CAU-PricingCurrencyListUnitPrice-C-004-C",
+        "CAU-PricingCurrencyListUnitPrice-C-012-C",
+        "CAU-PricingCurrencyListUnitPrice-C-005-C",
+        "CAU-PricingCurrencyListUnitPrice-C-006-O"
       ]
     }
   },
