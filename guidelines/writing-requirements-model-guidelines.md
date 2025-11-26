@@ -56,8 +56,6 @@ Identify the target for the rule: **Dataset**, **Column**, **Attribute** propert
 
 The following architectural components define the core entities in FOCUS that shape the structure and flow of billing data.
 
-**FOCUS Architectural components**
-
 ```mermaid
 graph TD
 
@@ -98,7 +96,7 @@ Provider -.->|Used in rule conditions| Column
 
 - **Columns** and **Rows** can conditionally depend on the value of Service Provider to apply or skip certain validation logic.
 
-**FOCUS Entity Reference Table**
+##### FOCUS Entity Reference Table
 
 | Entity             | Description                                         | Applies To                                | Example CR Function                                                                                             |
 |--------------------|-----------------------------------------------------| ----------------------------------------- |-----------------------------------------------------------------------------------------------------------------|
@@ -115,8 +113,6 @@ Construct a unique identifier for the rule using the format:
 `{{ColumnID}}-{{EntityType}}-{{NNN}}-{{Level}}`
 
 This ensures traceability, uniqueness, and clarity.
-
-**Reasoning Rules**
 
 - Use the format: `DatasetAbbreviation-ColumnID-EntityType-NNN-Level`
 - `DatasetAbbreviation`: Short identifier for the dataset (e.g., `CAU`, `CC`, `META`)
@@ -186,8 +182,6 @@ This namespacing approach prevents naming conflicts between datasets and provide
 
 Categorize the type of logic the rule enforces. This helps determine how it should be validated.
 
-**Reasoning Rules**
-
 - Use `Presence` for rules requiring the column’s inclusion in the dataset.
 - Use `DataType` to enforce primitive types like `Decimal`, `String`, `Boolean`.
 - Use `Format` for pattern-based constraints (e.g., `DateTimeFormat`, `UUID`, `NumericFormat`).
@@ -204,8 +198,6 @@ A rule states: "`BillingPeriodStart` MUST be of type `DateTime`."
 
 Point to the human-readable column or attribute name that the rule applies to, as defined in the FOCUS specification.
 
-**Reasoning Rules**
-
 - Use the `display_name` for the column as written in the spec.
 - For rules related to attribute-level constraints (e.g., `NumericFormat`), use the attribute name.
 - This field should exactly match the title of the column or attribute from the normative requirements.
@@ -217,8 +209,6 @@ If the rule applies to the column `CommitmentDiscountQuantity`, set:
 #### 5. Keyword – Extract the normative keyword
 
 Determine the obligation level using the normative keyword from the source text, such as `MUST`, `SHALL`, `SHOULD`, or `MAY`.
-
-**Reasoning Rules**
 
 - Identify the first normative keyword present in the requirement:
   - `MUST`, `MUST NOT` → Mandatory
@@ -238,8 +228,6 @@ A rule states: “Rows SHOULD include `SkuId` when `ChargeCategory = Purchase`.�
 
 Define the dataset-level or service-provider-level condition that determines when the rule is relevant for evaluation.
 
-**Reasoning Rules**
-
 - Use `"All_Rows"` when no structural gating is defined.
 - Use a dataset-level statement (e.g., `"Dataset includes ChargeCategory column"`) for presence rules.
 - Use a service provider or environment condition if the rule depends on system capabilities  
@@ -254,8 +242,6 @@ A presence rule states: “Column `CapacityReservationId` MUST be present when t
 #### 7. Condition (GATE) – Specify when to test
 
 Define the row-level logic that determines whether the rule should be applied to a given record in the dataset.
-
-**Reasoning Rules**
 
 - Use `"All_Rows"` if the rule applies to every row in the dataset.
 - If the rule applies conditionally, extract the condition from the normative text using simple boolean logic.
@@ -276,8 +262,6 @@ A rule states: “`SkuId` MUST be present when `ChargeCategory = Purchase`.”
 
 State the actual behavior or constraint being enforced by the rule in a testable format, using the original normative keyword.
 
-**Reasoning Rules**
-
 - Express the rule in clear, declarative language.
 - Use the same keyword (`MUST`, `SHOULD`, `MAY`) as in the normative requirement.
 - Keep the logic atomic — this field should describe only the rule itself, not any dependencies or logical groupings.
@@ -290,8 +274,6 @@ A rule states: “`BillingPeriodStart` MUST be of type `DateTime`.”
 #### 9. Requirement – Identify logical dependencies
 
 Define whether the rule groups or depends on other CRIDs or attribute rule sets.
-
-**Reasoning Rules**
 
 - Use a logical expression (`AND()`, `OR()`, `NOT()`) to group CRIDs in composite rules.
 - If the rule refers to a shared attribute rule set (e.g., `NumericFormat`, `StringHandling`), use:  
@@ -306,8 +288,6 @@ A rule states: “The following rules MUST be enforced for `CommitmentDiscountQu
 #### 10. Validation Type – Indicate static vs. dynamic
 
 Specify whether the rule can be validated using only the dataset itself or if it depends on external systems or metadata.
-
-**Reasoning Rules**
 
 - Use `static` if the rule can be enforced by examining the dataset alone:  
   Example: value types, nullability, formatting, or schema presence.
@@ -325,8 +305,6 @@ A rule states: “`BillingAccountType` MUST align with the service provider’s 
 
 Record the version of the FOCUS specification in which this rule was introduced.
 
-**Reasoning Rules**
-
 - For all rules generated from FOCUS v1.2, set this field to `"1.2"`.
 - Do not infer or omit — this value is fixed for each release of the specification.
 - This field enables forward/backward compatibility during conformance testing.
@@ -337,8 +315,6 @@ Record the version of the FOCUS specification in which this rule was introduced.
 #### 12. Status – Set rule lifecycle status
 
 Indicate whether the rule is `active`, `deprecated`, or `reserved` for future use.
-
-**Reasoning Rules**
 
 - Default to `active` unless the normative text explicitly states otherwise.
 - Use `deprecated` if the rule is marked for removal or obsolescence.
@@ -352,8 +328,6 @@ A rule marked in the spec as legacy:
 #### 13. Notes – Capture comments
 
 Use this field to add clarifying comments, editorial notes, or cross-references to other CRItems or attributes.
-
-**Reasoning Rules**
 
 - Add contextual information for better understanding of the rule.
 - For attribute-based dependencies, always include a note like:  
@@ -400,6 +374,55 @@ If you need assistance reach out to Mike Fuller in the FOCUS slack
 - Announce your PR in the [#tf-conformance-requirements](https://f2-focus.slack.com/archives/C096UTPE3NF) slack channel for other members to see
 - Once reviewed and the members have had time (5 days) to add any feedback, Mike will merge the PR into the `1121-ai-align-on-approach-for-scrs` branch which will get full review when that branch is reviewed to merge into the `working_draft` branch via the PR [FR #1054: Initial commit with Model Data structure](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1209)
 
+## Order Field Usage
+
+The `Order` field is used to specify the sequence in which rules should be processed or displayed. This field provides explicit control over rule ordering within the requirements model.
+
+### Purpose and Usage
+
+The `Order` field serves several important functions:
+
+1. **Rule Presentation Order**: Controls the sequence in which rules appear in generated documentation and summaries
+2. **Logical Processing Sequence**: Ensures rules are evaluated in the correct order when dependencies exist
+3. **Dependency Ordering**: Dependencies arrays must be ordered according to the `Order` field values of the referenced rules
+
+### Order Field Guidelines
+
+**Assignment Rules:**
+
+- Use incremental values (e.g., 10, 20, 30) to allow for future insertions
+- Lower values indicate higher priority/earlier processing
+- Rules without an `Order` field are ignored for ordering purposes
+- The `Order` field is optional but recommended for rules that need explicit sequencing
+
+**Dependency Array Ordering:**
+
+- All dependencies in the `Dependencies` array must be listed in ascending order by their `Order` field values
+- This ensures consistent processing and validation of rule dependencies
+
+**Example Order Values:**
+
+```json
+{
+  "CAU-SampleColumn-C-001-M": {
+    "Order": 10,
+    "ValidationCriteria": {
+      "Dependencies": [
+        "CAU-OtherRule-C-001-M",    // Order: 5
+        "CAU-AnotherRule-C-002-M"   // Order: 15
+      ]
+    }
+  }
+}
+```
+
+**Best Practices:**
+
+- Use multiples of 10 (10, 20, 30...) to allow for future rule insertion
+- Maintain consistent ordering within related rule groups
+- Document the rationale for specific ordering decisions in rule notes
+- Validate dependency ordering using automated tests
+
 ## ModelRule Templates
 
 ### Base column composite rule
@@ -416,6 +439,7 @@ Base rule for a column which links all related Model Rules for the column.
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 0,
     "ValidationCriteria": {
       "MustSatisfy": "",
       "Keyword": "MUST",
@@ -454,6 +478,7 @@ Base rule for a column which links all related Model Rules for the column.
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 10,
     "ValidationCriteria": {
       "MustSatisfy": "MUST be present in a FOCUS dataset",
       "Keyword": "MUST",
@@ -481,6 +506,7 @@ Common rule for columns with a NOT NULL requirement. Can also be used when there
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 10,
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null",
       "Keyword": "MUST",
@@ -509,6 +535,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 10,
     "ValidationCriteria": {
       "MustSatisfy": "MUST be one of the allowed values",
       "Keyword": "MUST",
@@ -536,7 +563,8 @@ Common rule for columns with a MUST be one of the allowed values requirement.
       "Dependencies": []
     }
   }
-  
+```
+
 ### Type Decimal requirement rule
 
 ```json
@@ -549,6 +577,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 10,
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type Decimal",
       "Keyword": "MUST",
@@ -574,6 +603,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 10,
     "ValidationCriteria": {
       "MustSatisfy": "MUST conform to NumericFormat requirements",
       "Keyword": "MUST",
@@ -599,6 +629,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 10,
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type String",
       "Keyword": "MUST",
@@ -624,6 +655,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 10,
     "ValidationCriteria": {
       "MustSatisfy": "MUST conform to StringHandling requirements",
       "Keyword": "MUST",
