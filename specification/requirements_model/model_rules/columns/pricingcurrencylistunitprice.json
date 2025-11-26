@@ -11,6 +11,8 @@
     ],
     "Type": "Static",
     "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice adheres to the following requirements:",
       "Keyword": "MUST",
@@ -55,6 +57,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST be of type Decimal.",
       "Keyword": "MUST",
@@ -76,6 +80,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
@@ -97,6 +103,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 70,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice nullability is defined as follows:",
       "Keyword": "MUST",
@@ -145,6 +153,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 90,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST be null when ChargeCategory is \"Tax\".",
       "Keyword": "MUST",
@@ -171,6 +181,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 120,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
@@ -217,6 +229,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 130,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MAY be null in all other cases.",
       "Keyword": "MAY",
@@ -235,6 +249,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 140,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice adheres to the following additional requirements:",
       "Keyword": "MUST",
@@ -272,6 +288,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 150,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST be a non-negative decimal value.",
       "Keyword": "MUST",
@@ -294,6 +312,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 160,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency.",
       "Keyword": "MUST",
@@ -335,6 +355,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 80,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST be null when SkuPriceId is null.",
       "Keyword": "MUST",
@@ -361,6 +383,8 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 110,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT be null when SkuPriceId is not null.",
       "Keyword": "MUST NOT",

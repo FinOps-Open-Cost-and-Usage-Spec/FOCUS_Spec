@@ -132,6 +132,12 @@
             "Order": {
               "type": "number"
             },
+            "DatasetId": {
+              "type": "string"
+            },
+            "DatasetName": {
+              "type": "string"
+            },
             "ModelVersionIntroduced": {
               "type": "string"
             },
