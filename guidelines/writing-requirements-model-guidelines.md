@@ -40,6 +40,8 @@ The first stage of conversion of rules from the normative text to model rules is
 - `Notes` - Free form notes (short) included in the model rule document
 - `ModelVersionIntroduced` - CR Version this rule was added to the Model Rules (See: [Model Versioning](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1121-ai-align-on-approach-for-scrs/specification/requirements_model/README.md#versioning))
 - `Status` - Status of the rule (Valid values: Active, Depreciated)
+- `DatasetId` - The identifier of the dataset this rule belongs to (Required for Column and Dataset entity types)
+- `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Column and Dataset entity types)
 
 #### Flow Diagram
 
@@ -174,7 +176,7 @@ The `NNN` numbering is only unique within each dataset namespace. For example, `
 | Dataset | Abbreviation | Description |
 |---------|--------------|-------------|
 | Cost and Usage | CAU | Primary billing data with usage and cost information |
-| Contract Commitment | CC | Commitment discount and reservation data |
+| Contract Commitment | CCT | Commitment discount and reservation data |
 
 This namespacing approach prevents naming conflicts between datasets and provides clear traceability of which dataset a requirement belongs to.
 
@@ -340,6 +342,24 @@ Use this field to add clarifying comments, editorial notes, or cross-references 
 A rule that delegates to `NumericFormat`  
 → `Notes = Cross-attribute reference: NumericFormat:CR`
 
+#### 14. DatasetId and DatasetName – Dataset Association
+
+For Column and Dataset entity types, these fields establish the relationship between the rule and its parent dataset.
+
+**Reasoning Rules**
+
+- `DatasetId` must match the identifier of the dataset the entity belongs to
+- `DatasetName` must match the human-readable name of the dataset
+- Both fields are required for all Column and Dataset entity types
+- For Cost and Usage dataset: `DatasetId = "CostAndUsage"`, `DatasetName = "Cost and Usage"`
+- For Contract Commitment dataset: `DatasetId = "ContractCommitment"`, `DatasetName = "Contract Commitment"`
+- These fields ensure proper dataset-rule association and enable dataset-specific validation
+
+**Example**  
+For a rule applying to a column in the Cost and Usage dataset:  
+→ `DatasetId = CostAndUsage`  
+→ `DatasetName = Cost and Usage`
+
 ### Stage 2
 
 The second phase of conversion is to take the table created in Stage 1 and create the entries in the `specification/requirements_model` folder that adds the rules to the formal JSON structure.
@@ -434,6 +454,8 @@ Base rule for a column which links all related Model Rules for the column.
     "Function": "Composite",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
@@ -473,6 +495,8 @@ Base rule for a column which links all related Model Rules for the column.
     "Function": "Presence",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
@@ -501,6 +525,8 @@ Common rule for columns with a NOT NULL requirement. Can also be used when there
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
@@ -530,6 +556,8 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
@@ -572,6 +600,8 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
@@ -598,6 +628,8 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Format",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
@@ -624,6 +656,8 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
@@ -650,6 +684,8 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
