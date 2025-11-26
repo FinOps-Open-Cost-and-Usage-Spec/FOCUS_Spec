@@ -21,11 +21,13 @@ Other behavior:
       3) 'Other'
 
 Usage:
-  python summary.py /path/to/model-1.2.json /path/to/out.md
+  python output_normative_text_from_model.py /path/to/model-1.2.json --filename /path/to/out.md
+  python output_normative_text_from_model.py /path/to/model-1.2.json --reference "BilledCost"
+  python output_normative_text_from_model.py --reference "BilledCost" --exclude-rmids
 
 Defaults (if no args):
-  input:  ./model-1.2.json
-  output: ./model_reference_entity_musts.md
+  input:  ./build/model-1.2.json
+  output: console (unless --filename specified)
 """
 
 import sys
@@ -140,11 +142,24 @@ def build_markdown(grouped, exclude_rmids=False):
     return ("\n".join(lines)).rstrip() + "\n"
 
 
-def main(in_path: Path, out_path: Path, exclude_rmids: bool = False) -> None:
+def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None) -> None:
     spec = json.loads(in_path.read_text(encoding="utf-8"))
     grouped = collect(spec)
+    
+    # Filter by reference if specified
+    if reference_filter:
+        filtered_grouped = OrderedDict()
+        for ref, items in grouped.items():
+            if ref.lower() == reference_filter.lower():
+                filtered_grouped[ref] = items
+        grouped = filtered_grouped
+    
     md = build_markdown(grouped, exclude_rmids=exclude_rmids)
-    out_path.write_text(md, encoding="utf-8")
+    
+    if out_path:
+        out_path.write_text(md, encoding="utf-8")
+    else:
+        print(md, end="")
 
 
 if __name__ == "__main__":
@@ -153,13 +168,18 @@ if __name__ == "__main__":
     )
     parser.add_argument("input", nargs="?", default="build/model-1.2.json", 
                        help="Path to input JSON file (default: build/model-1.2.json)")
-    parser.add_argument("output", nargs="?", default="model_reference_entity_musts.md",
-                       help="Path to output Markdown file (default: model_reference_entity_musts.md)")
     parser.add_argument("--exclude-rmids", "--no-rmids", action="store_true",
                        help="Exclude Rule Model IDs from the output (only show MustSatisfy text)")
+    parser.add_argument("--filename", type=str, help="Save output to specified filename instead of printing to console")
+    parser.add_argument("--reference", type=str, help="Only display the normative text for the specified reference entity")
     
     args = parser.parse_args()
     
     in_path = Path(args.input)
-    out_path = Path(args.output)
-    main(in_path, out_path, exclude_rmids=args.exclude_rmids)
+
+    out_path = None
+    if args.filename:
+        out_path = Path(args.filename)
+
+    
+    main(in_path, out_path, exclude_rmids=args.exclude_rmids, reference_filter=args.reference)
