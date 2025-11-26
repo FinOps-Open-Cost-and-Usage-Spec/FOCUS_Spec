@@ -1,5 +1,5 @@
 {
-  "Tags-C-000-C": {
+  "CAU-Tags-C-000-C": {
     "Function": "Composite",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -18,38 +18,38 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-001-M"
+            "ModelRuleId": "CAU-Tags-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-002-O"
+            "ModelRuleId": "CAU-Tags-C-002-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-003-C"
+            "ModelRuleId": "CAU-Tags-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-011-M"
+            "ModelRuleId": "CAU-Tags-C-011-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-014-M"
+            "ModelRuleId": "CAU-Tags-C-014-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-064-C",
-        "Tags-C-001-M",
-        "Tags-C-002-O",
-        "Tags-C-003-C",
-        "Tags-C-011-M",
-        "Tags-C-014-M"
+        "CAU-CostAndUsage-D-064-C",
+        "CAU-Tags-C-001-M",
+        "CAU-Tags-C-002-O",
+        "CAU-Tags-C-003-C",
+        "CAU-Tags-C-011-M",
+        "CAU-Tags-C-014-M"
       ]
     }
   },
-  "Tags-C-001-M": {
+  "CAU-Tags-C-001-M": {
     "Function": "Format",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -69,7 +69,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-002-O": {
+  "CAU-Tags-C-002-O": {
     "Function": "Nullability",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -90,7 +90,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-003-C": {
+  "CAU-Tags-C-003-C": {
     "Function": "Composite",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -107,31 +107,31 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-004-M"
+            "ModelRuleId": "CAU-Tags-C-004-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-005-M"
+            "ModelRuleId": "CAU-Tags-C-005-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-006-M"
+            "ModelRuleId": "CAU-Tags-C-006-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-007-O"
+            "ModelRuleId": "CAU-Tags-C-007-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-008-M"
+            "ModelRuleId": "CAU-Tags-C-008-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-009-M"
+            "ModelRuleId": "CAU-Tags-C-009-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-010-C"
+            "ModelRuleId": "CAU-Tags-C-010-C"
           }
         ]
       },
@@ -141,17 +141,17 @@
         "Value": null
       },
       "Dependencies": [
-        "Tags-C-004-M",
-        "Tags-C-005-M",
-        "Tags-C-006-M",
-        "Tags-C-007-O",
-        "Tags-C-008-M",
-        "Tags-C-009-M",
-        "Tags-C-010-C"
+        "CAU-Tags-C-004-M",
+        "CAU-Tags-C-005-M",
+        "CAU-Tags-C-006-M",
+        "CAU-Tags-C-007-O",
+        "CAU-Tags-C-008-M",
+        "CAU-Tags-C-009-M",
+        "CAU-Tags-C-010-C"
       ]
     }
   },
-  "Tags-C-004-M": {
+  "CAU-Tags-C-004-M": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -168,7 +168,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-005-M": {
+  "CAU-Tags-C-005-M": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -185,7 +185,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-006-M": {
+  "CAU-Tags-C-006-M": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -202,7 +202,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-007-O": {
+  "CAU-Tags-C-007-O": {
     "Function": "Nullability",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -219,7 +219,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-008-M": {
+  "CAU-Tags-C-008-M": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -236,7 +236,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-009-M": {
+  "CAU-Tags-C-009-M": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -253,7 +253,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-010-C": {
+  "CAU-Tags-C-010-C": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -270,7 +270,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-011-M": {
+  "CAU-Tags-C-011-M": {
     "Function": "Composite",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -287,22 +287,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-012-M"
+            "ModelRuleId": "CAU-Tags-C-012-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-013-M"
+            "ModelRuleId": "CAU-Tags-C-013-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "Tags-C-012-M",
-        "Tags-C-013-M"
+        "CAU-Tags-C-012-M",
+        "CAU-Tags-C-013-M"
       ]
     }
   },
-  "Tags-C-012-M": {
+  "CAU-Tags-C-012-M": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -319,7 +319,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-013-M": {
+  "CAU-Tags-C-013-M": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -336,7 +336,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-014-M": {
+  "CAU-Tags-C-014-M": {
     "Function": "Composite",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -353,27 +353,27 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-015-C"
+            "ModelRuleId": "CAU-Tags-C-015-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-016-C"
+            "ModelRuleId": "CAU-Tags-C-016-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-017-M"
+            "ModelRuleId": "CAU-Tags-C-017-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "Tags-C-015-C",
-        "Tags-C-016-C",
-        "Tags-C-017-M"
+        "CAU-Tags-C-015-C",
+        "CAU-Tags-C-016-C",
+        "CAU-Tags-C-017-M"
       ]
     }
   },
-  "Tags-C-015-C": {
+  "CAU-Tags-C-015-C": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -390,7 +390,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-016-C": {
+  "CAU-Tags-C-016-C": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",
@@ -407,7 +407,7 @@
       "Dependencies": []
     }
   },
-  "Tags-C-017-M": {
+  "CAU-Tags-C-017-M": {
     "Function": "Validation",
     "Reference": "Tags",
     "EntityType": "Column",

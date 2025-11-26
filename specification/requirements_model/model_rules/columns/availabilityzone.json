@@ -1,5 +1,5 @@
 {
-  "AvailabilityZone-C-000-C": {
+  "CAU-AvailabilityZone-C-000-C": {
     "Function": "Composite",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",
@@ -18,28 +18,28 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "AvailabilityZone-C-001-M"
+            "ModelRuleId": "CAU-AvailabilityZone-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "AvailabilityZone-C-002-M"
+            "ModelRuleId": "CAU-AvailabilityZone-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "AvailabilityZone-C-003-C"
+            "ModelRuleId": "CAU-AvailabilityZone-C-003-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-003-C",
-        "AvailabilityZone-C-001-M",
-        "AvailabilityZone-C-002-M",
-        "AvailabilityZone-C-003-C"
+        "CAU-CostAndUsage-D-003-C",
+        "CAU-AvailabilityZone-C-001-M",
+        "CAU-AvailabilityZone-C-002-M",
+        "CAU-AvailabilityZone-C-003-C"
       ]
     }
   },
-  "AvailabilityZone-C-001-M": {
+  "CAU-AvailabilityZone-C-001-M": {
     "Function": "Type",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",
@@ -59,7 +59,7 @@
       "Dependencies": []
     }
   },
-  "AvailabilityZone-C-002-M": {
+  "CAU-AvailabilityZone-C-002-M": {
     "Function": "Format",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",
@@ -79,7 +79,7 @@
       "Dependencies": []
     }
   },
-  "AvailabilityZone-C-003-C": {
+  "CAU-AvailabilityZone-C-003-C": {
     "Function": "Nullability",
     "Reference": "AvailabilityZone",
     "EntityType": "Column",

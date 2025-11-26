@@ -1,5 +1,5 @@
 {
-  "PricingCurrencyContractedUnitPrice-C-000-C": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-000-C": {
     "Function": "Composite",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -18,33 +18,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-001-M"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-002-M"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-003-M"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-007-C"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-007-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-046-C",
-        "PricingCurrencyContractedUnitPrice-C-001-M",
-        "PricingCurrencyContractedUnitPrice-C-002-M",
-        "PricingCurrencyContractedUnitPrice-C-003-M",
-        "PricingCurrencyContractedUnitPrice-C-007-C"
+        "CAU-CostAndUsage-D-046-C",
+        "CAU-PricingCurrencyContractedUnitPrice-C-001-M",
+        "CAU-PricingCurrencyContractedUnitPrice-C-002-M",
+        "CAU-PricingCurrencyContractedUnitPrice-C-003-M",
+        "CAU-PricingCurrencyContractedUnitPrice-C-007-C"
       ]
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-001-M": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-001-M": {
     "Function": "Type",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -64,7 +64,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-002-M": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-002-M": {
     "Function": "Format",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -84,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-003-M": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-003-M": {
     "Function": "Composite",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -101,27 +101,27 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-004-C"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-005-C"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-006-O"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-006-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "PricingCurrencyContractedUnitPrice-C-004-C",
-        "PricingCurrencyContractedUnitPrice-C-005-C",
-        "PricingCurrencyContractedUnitPrice-C-006-O"
+        "CAU-PricingCurrencyContractedUnitPrice-C-004-C",
+        "CAU-PricingCurrencyContractedUnitPrice-C-005-C",
+        "CAU-PricingCurrencyContractedUnitPrice-C-006-O"
       ]
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-004-C": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-004-C": {
     "Function": "Nullability",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -140,11 +140,11 @@
         "Value": "Tax"
       },
       "Dependencies": [
-        "ChargeCategory-C-003-M"
+        "CAU-ChargeCategory-C-003-M"
       ]
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-005-C": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-005-C": {
     "Function": "Nullability",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -185,7 +185,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-006-O": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-006-O": {
     "Function": "Nullability",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -202,7 +202,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-007-C": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-007-C": {
     "Function": "Composite",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -219,15 +219,15 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-008-C"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-008-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-009-C"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-009-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-010-C"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-010-C"
           }
         ]
       },
@@ -237,13 +237,13 @@
         "Value": null
       },
       "Dependencies": [
-        "PricingCurrencyContractedUnitPrice-C-008-C",
-        "PricingCurrencyContractedUnitPrice-C-009-C",
-        "PricingCurrencyContractedUnitPrice-C-010-C"
+        "CAU-PricingCurrencyContractedUnitPrice-C-008-C",
+        "CAU-PricingCurrencyContractedUnitPrice-C-009-C",
+        "CAU-PricingCurrencyContractedUnitPrice-C-010-C"
       ]
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-008-C": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-008-C": {
     "Function": "Validation",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -264,7 +264,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-009-C": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-009-C": {
     "Function": "Validation",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -285,7 +285,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyContractedUnitPrice-C-010-C": {
+  "CAU-PricingCurrencyContractedUnitPrice-C-010-C": {
     "Function": "Validation",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Column",
@@ -304,7 +304,7 @@
         "Value": "Correction"
       },
       "Dependencies": [
-        "ChargeClass-C-005-C"
+        "CAU-ChargeClass-C-005-C"
       ]
     }
   }

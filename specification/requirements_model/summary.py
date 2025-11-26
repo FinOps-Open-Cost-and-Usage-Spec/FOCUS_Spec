@@ -31,6 +31,7 @@ Defaults (if no args):
 import sys
 import json
 import re
+import argparse
 from pathlib import Path
 from collections import defaultdict, OrderedDict
 
@@ -76,6 +77,11 @@ def collect(spec: dict):
     by_ref = defaultdict(list)  # ref -> list of dicts with eid, num, etype, must
 
     for model_key, model in rules.items():
+        # Skip deprecated entities
+        status = model.get("Status", "").strip()
+        if status == "Deprecated":
+            continue
+            
         ref = model.get("Reference")
         vc = model.get("ValidationCriteria") or {}
         must = vc.get("MustSatisfy")
@@ -84,7 +90,8 @@ def collect(spec: dict):
 
         eid, num = extract_entity_from_ids(model_key, model.get("EntityId"), must)
         etype = infer_entity_type(model_key, model.get("EntityType"))
-        by_ref[ref.strip()].append({"ruleid": model_key, "eid": eid, "num": num, "etype": etype, "must": must.strip()})
+        order = model.get("Order")  # Extract Order field
+        by_ref[ref.strip()].append({"ruleid": model_key, "eid": eid, "num": num, "etype": etype, "must": must.strip(), "order": order})
 
     # Deduplicate by (eid, etype) within a reference (keep first occurrence)
     deduped = {}
@@ -105,33 +112,54 @@ def collect(spec: dict):
             return 0
         return 1 if it["etype"] == "Dataset" else 2
 
+    def sort_key(it):
+        # If Order field exists and is a number, use it as primary sort key
+        if it.get("order") is not None and isinstance(it["order"], (int, float)):
+            return (it["order"], group_priority(it), it["num"], it["eid"].lower())
+        # Otherwise use the original sorting logic
+        return (float('inf'), group_priority(it), it["num"], it["eid"].lower())
+
     ordered = OrderedDict()
     for ref, items in sorted(deduped.items(), key=lambda kv: kv[0].lower()):
-        items_sorted = sorted(items, key=lambda it: (group_priority(it), it["num"], it["eid"].lower()))
+        items_sorted = sorted(items, key=sort_key)
         ordered[ref] = items_sorted
     return ordered
 
 
-def build_markdown(grouped):
+def build_markdown(grouped, exclude_rmids=False):
     lines = []
     for ref, items in grouped.items():
         lines.append(f"# {ref}")
         lines.append("")
         for it in items:
-            lines.append(f'{it["ruleid"]} – {it["must"]}')
+            if exclude_rmids:
+                lines.append(f'{it["must"]}')
+            else:
+                lines.append(f'{it["ruleid"]} – {it["must"]}')
         lines.append("")
     return ("\n".join(lines)).rstrip() + "\n"
 
 
-def main(in_path: Path, out_path: Path) -> None:
+def main(in_path: Path, out_path: Path, exclude_rmids: bool = False) -> None:
     spec = json.loads(in_path.read_text(encoding="utf-8"))
     grouped = collect(spec)
-    print(grouped)
-    md = build_markdown(grouped)
+    md = build_markdown(grouped, exclude_rmids=exclude_rmids)
     out_path.write_text(md, encoding="utf-8")
 
 
 if __name__ == "__main__":
-    in_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("build/model-1.2.json")
-    out_path = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("model_reference_entity_musts.md")
-    main(in_path, out_path)
+    parser = argparse.ArgumentParser(
+        description="Generate a Markdown summary grouped by Reference, listing 'EntityId – MustSatisfy' lines."
+    )
+    parser.add_argument("input", nargs="?", default="build/model-1.2.json", 
+                       help="Path to input JSON file (default: build/model-1.2.json)")
+    parser.add_argument("output", nargs="?", default="model_reference_entity_musts.md",
+                       help="Path to output Markdown file (default: model_reference_entity_musts.md)")
+    parser.add_argument("--exclude-rmids", "--no-rmids", action="store_true",
+                       help="Exclude Rule Model IDs from the output (only show MustSatisfy text)")
+    
+    args = parser.parse_args()
+    
+    in_path = Path(args.input)
+    out_path = Path(args.output)
+    main(in_path, out_path, exclude_rmids=args.exclude_rmids)

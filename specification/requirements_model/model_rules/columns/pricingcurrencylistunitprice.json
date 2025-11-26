@@ -1,5 +1,5 @@
 {
-  "PricingCurrencyListUnitPrice-C-000-C": {
+  "CAU-PricingCurrencyListUnitPrice-C-000-C": {
     "Function": "Composite",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -10,41 +10,42 @@
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
     "Type": "Static",
+    "Order": 0,
     "ValidationCriteria": {
-      "MustSatisfy": "The PricingCurrencyListUnitPrice column adheres to the following requirements:",
+      "MustSatisfy": "PricingCurrencyListUnitPrice adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-001-M"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-002-M"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-003-M"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-007-C"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-007-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-054-C",
-        "PricingCurrencyListUnitPrice-C-001-M",
-        "PricingCurrencyListUnitPrice-C-002-M",
-        "PricingCurrencyListUnitPrice-C-003-M",
-        "PricingCurrencyListUnitPrice-C-007-C"
+        "CAU-CostAndUsage-D-054-C",
+        "CAU-PricingCurrencyListUnitPrice-C-001-M",
+        "CAU-PricingCurrencyListUnitPrice-C-002-M",
+        "CAU-PricingCurrencyListUnitPrice-C-003-M",
+        "CAU-PricingCurrencyListUnitPrice-C-007-C"
       ]
     }
   },
-  "PricingCurrencyListUnitPrice-C-001-M": {
+  "CAU-PricingCurrencyListUnitPrice-C-001-M": {
     "Function": "Type",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -53,6 +54,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 50,
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST be of type Decimal.",
       "Keyword": "MUST",
@@ -64,7 +66,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyListUnitPrice-C-002-M": {
+  "CAU-PricingCurrencyListUnitPrice-C-002-M": {
     "Function": "Format",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -73,6 +75,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 60,
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
@@ -84,7 +87,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyListUnitPrice-C-003-M": {
+  "CAU-PricingCurrencyListUnitPrice-C-003-M": {
     "Function": "Composite",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -93,6 +96,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 70,
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice nullability is defined as follows:",
       "Keyword": "MUST",
@@ -101,27 +105,37 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-004-C"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-005-C"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-006-O"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-006-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-011-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-012-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "PricingCurrencyListUnitPrice-C-004-C",
-        "PricingCurrencyListUnitPrice-C-005-C",
-        "PricingCurrencyListUnitPrice-C-006-O"
+        "CAU-PricingCurrencyListUnitPrice-C-004-C",
+        "CAU-PricingCurrencyListUnitPrice-C-005-C",
+        "CAU-PricingCurrencyListUnitPrice-C-006-O",
+        "CAU-PricingCurrencyListUnitPrice-C-011-C",
+        "CAU-PricingCurrencyListUnitPrice-C-012-C"
       ]
     }
   },
-  "PricingCurrencyListUnitPrice-C-004-C": {
+  "CAU-PricingCurrencyListUnitPrice-C-004-C": {
     "Function": "Nullability",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -130,6 +144,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 90,
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST be null when ChargeCategory is \"Tax\".",
       "Keyword": "MUST",
@@ -146,7 +161,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyListUnitPrice-C-005-C": {
+  "CAU-PricingCurrencyListUnitPrice-C-005-C": {
     "Function": "Nullability",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -155,6 +170,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 120,
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
@@ -191,7 +207,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyListUnitPrice-C-006-O": {
+  "CAU-PricingCurrencyListUnitPrice-C-006-O": {
     "Function": "Nullability",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -200,6 +216,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 130,
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MAY be null in all other cases.",
       "Keyword": "MAY",
@@ -208,7 +225,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyListUnitPrice-C-007-C": {
+  "CAU-PricingCurrencyListUnitPrice-C-007-C": {
     "Function": "Composite",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -217,6 +234,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 140,
     "ValidationCriteria": {
       "MustSatisfy": "When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice adheres to the following additional requirements:",
       "Keyword": "MUST",
@@ -225,15 +243,11 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-008-M"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-008-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-009-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-010-C"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-009-M"
           }
         ]
       },
@@ -243,13 +257,12 @@
         "Value": null
       },
       "Dependencies": [
-        "PricingCurrencyListUnitPrice-C-008-M",
-        "PricingCurrencyListUnitPrice-C-009-M",
-        "PricingCurrencyListUnitPrice-C-010-C"
+        "CAU-PricingCurrencyListUnitPrice-C-008-M",
+        "CAU-PricingCurrencyListUnitPrice-C-009-M"
       ]
     }
   },
-  "PricingCurrencyListUnitPrice-C-008-M": {
+  "CAU-PricingCurrencyListUnitPrice-C-008-M": {
     "Function": "Validation",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -258,6 +271,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 150,
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST be a non-negative decimal value.",
       "Keyword": "MUST",
@@ -270,7 +284,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyListUnitPrice-C-009-M": {
+  "CAU-PricingCurrencyListUnitPrice-C-009-M": {
     "Function": "Validation",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
@@ -279,6 +293,7 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 160,
     "ValidationCriteria": {
       "MustSatisfy": "PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency.",
       "Keyword": "MUST",
@@ -287,13 +302,13 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyListUnitPrice-C-010-C": {
+  "CAU-PricingCurrencyListUnitPrice-C-010-C": {
     "Function": "Validation",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -306,8 +321,60 @@
         "Value": "Correction"
       },
       "Dependencies": [
-        "ChargeClass-C-005-C"
+        "CAU-ChargeClass-C-005-C"
       ]
+    }
+  },
+  "CAU-PricingCurrencyListUnitPrice-C-011-C": {
+    "Function": "Nullability",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 80,
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST be null when SkuPriceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "PricingCurrencyListUnitPrice",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCurrencyListUnitPrice-C-012-C": {
+    "Function": "Nullability",
+    "Reference": "PricingCurrencyListUnitPrice",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 110,
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST NOT be null when SkuPriceId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCurrencyListUnitPrice",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Dependencies": []
     }
   }
 }

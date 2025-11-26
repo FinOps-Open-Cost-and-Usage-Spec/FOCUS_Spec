@@ -1,5 +1,5 @@
 {
-  "BillingAccountType-C-000-C": {
+  "CAU-BillingAccountType-C-000-C": {
     "Function": "Composite",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -18,33 +18,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingAccountType-C-001-M"
+            "ModelRuleId": "CAU-BillingAccountType-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingAccountType-C-002-M"
+            "ModelRuleId": "CAU-BillingAccountType-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingAccountType-C-003-C"
+            "ModelRuleId": "CAU-BillingAccountType-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingAccountType-C-006-M"
+            "ModelRuleId": "CAU-BillingAccountType-C-006-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-007-C",
-        "BillingAccountType-C-001-M",
-        "BillingAccountType-C-002-M",
-        "BillingAccountType-C-003-C",
-        "BillingAccountType-C-006-M"
+        "CAU-CostAndUsage-D-007-C",
+        "CAU-BillingAccountType-C-001-M",
+        "CAU-BillingAccountType-C-002-M",
+        "CAU-BillingAccountType-C-003-C",
+        "CAU-BillingAccountType-C-006-M"
       ]
     }
   },
-  "BillingAccountType-C-001-M": {
+  "CAU-BillingAccountType-C-001-M": {
     "Function": "Type",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -64,7 +64,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountType-C-002-M": {
+  "CAU-BillingAccountType-C-002-M": {
     "Function": "Format",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -84,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountType-C-003-C": {
+  "CAU-BillingAccountType-C-003-C": {
     "Function": "Composite",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -101,22 +101,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingAccountType-C-004-C"
+            "ModelRuleId": "CAU-BillingAccountType-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingAccountType-C-005-C"
+            "ModelRuleId": "CAU-BillingAccountType-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "BillingAccountType-C-004-C",
-        "BillingAccountType-C-005-C"
+        "CAU-BillingAccountType-C-004-C",
+        "CAU-BillingAccountType-C-005-C"
       ]
     }
   },
-  "BillingAccountType-C-004-C": {
+  "CAU-BillingAccountType-C-004-C": {
     "Function": "Nullability",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -141,7 +141,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountType-C-005-C": {
+  "CAU-BillingAccountType-C-005-C": {
     "Function": "Nullability",
     "Reference": "BillingAccountType",
     "EntityType": "Column",
@@ -166,7 +166,7 @@
       "Dependencies": []
     }
   },
-  "BillingAccountType-C-006-M": {
+  "CAU-BillingAccountType-C-006-M": {
     "Function": "Validation",
     "Reference": "BillingAccountType",
     "EntityType": "Column",

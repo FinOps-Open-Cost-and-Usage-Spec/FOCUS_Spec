@@ -1,5 +1,5 @@
 {
-  "ServiceCategory-C-000-M": {
+  "CAU-ServiceCategory-C-000-M": {
     "Function": "Composite",
     "Reference": "ServiceCategory",
     "EntityType": "Column",
@@ -16,28 +16,28 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceCategory-C-001-M"
+            "ModelRuleId": "CAU-ServiceCategory-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceCategory-C-002-M"
+            "ModelRuleId": "CAU-ServiceCategory-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceCategory-C-003-M"
+            "ModelRuleId": "CAU-ServiceCategory-C-003-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-040-M",
-        "ServiceCategory-C-001-M",
-        "ServiceCategory-C-002-M",
-        "ServiceCategory-C-003-M"
+        "CAU-CostAndUsage-D-040-M",
+        "CAU-ServiceCategory-C-001-M",
+        "CAU-ServiceCategory-C-002-M",
+        "CAU-ServiceCategory-C-003-M"
       ]
     }
   },
-  "ServiceCategory-C-001-M": {
+  "CAU-ServiceCategory-C-001-M": {
     "Function": "Type",
     "Reference": "ServiceCategory",
     "EntityType": "Column",
@@ -57,7 +57,7 @@
       "Dependencies": []
     }
   },
-  "ServiceCategory-C-002-M": {
+  "CAU-ServiceCategory-C-002-M": {
     "Function": "Nullability",
     "Reference": "ServiceCategory",
     "EntityType": "Column",
@@ -78,7 +78,7 @@
       "Dependencies": []
     }
   },
-  "ServiceCategory-C-003-M": {
+  "CAU-ServiceCategory-C-003-M": {
     "Function": "Validation",
     "Reference": "ServiceCategory",
     "EntityType": "Column",

@@ -1,5 +1,5 @@
 {
-  "ConsumedQuantity-C-000-C": {
+  "CAU-ConsumedQuantity-C-000-C": {
     "Function": "Composite",
     "Reference": "ConsumedQuantity",
     "EntityType": "Column",
@@ -18,33 +18,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedQuantity-C-001-M"
+            "ModelRuleId": "CAU-ConsumedQuantity-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedQuantity-C-002-M"
+            "ModelRuleId": "CAU-ConsumedQuantity-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedQuantity-C-003-C"
+            "ModelRuleId": "CAU-ConsumedQuantity-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedQuantity-C-008-C"
+            "ModelRuleId": "CAU-ConsumedQuantity-C-008-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-011-C",
-        "ConsumedQuantity-C-001-M",
-        "ConsumedQuantity-C-002-M",
-        "ConsumedQuantity-C-003-C",
-        "ConsumedQuantity-C-008-C"
+        "CAU-CostAndUsage-D-011-C",
+        "CAU-ConsumedQuantity-C-001-M",
+        "CAU-ConsumedQuantity-C-002-M",
+        "CAU-ConsumedQuantity-C-003-C",
+        "CAU-ConsumedQuantity-C-008-C"
       ]
     }
   },
-  "ConsumedQuantity-C-001-M": {
+  "CAU-ConsumedQuantity-C-001-M": {
     "Function": "Type",
     "Reference": "ConsumedQuantity",
     "EntityType": "Column",
@@ -64,7 +64,7 @@
       "Dependencies": []
     }
   },
-  "ConsumedQuantity-C-002-M": {
+  "CAU-ConsumedQuantity-C-002-M": {
     "Function": "Format",
     "Reference": "ConsumedQuantity",
     "EntityType": "Column",
@@ -84,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "ConsumedQuantity-C-003-C": {
+  "CAU-ConsumedQuantity-C-003-C": {
     "Function": "Composite",
     "Reference": "ConsumedQuantity",
     "EntityType": "Column",
@@ -101,22 +101,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedQuantity-C-004-C"
+            "ModelRuleId": "CAU-ConsumedQuantity-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedQuantity-C-005-C"
+            "ModelRuleId": "CAU-ConsumedQuantity-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "ConsumedQuantity-C-004-C",
-        "ConsumedQuantity-C-005-C"
+        "CAU-ConsumedQuantity-C-004-C",
+        "CAU-ConsumedQuantity-C-005-C"
       ]
     }
   },
-  "ConsumedQuantity-C-004-C": {
+  "CAU-ConsumedQuantity-C-004-C": {
     "Function": "Nullability",
     "Reference": "ConsumedQuantity",
     "EntityType": "Column",
@@ -161,7 +161,7 @@
       "Dependencies": []
     }
   },
-  "ConsumedQuantity-C-005-C": {
+  "CAU-ConsumedQuantity-C-005-C": {
     "Function": "Composite",
     "Reference": "ConsumedQuantity",
     "EntityType": "Column",
@@ -178,11 +178,11 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedQuantity-C-006-C"
+            "ModelRuleId": "CAU-ConsumedQuantity-C-006-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedQuantity-C-007-C"
+            "ModelRuleId": "CAU-ConsumedQuantity-C-007-C"
           }
         ]
       },
@@ -202,12 +202,12 @@
         ]
       },
       "Dependencies": [
-        "ConsumedQuantity-C-006-C",
-        "ConsumedQuantity-C-007-C"
+        "CAU-ConsumedQuantity-C-006-C",
+        "CAU-ConsumedQuantity-C-007-C"
       ]
     }
   },
-  "ConsumedQuantity-C-006-C": {
+  "CAU-ConsumedQuantity-C-006-C": {
     "Function": "Nullability",
     "Reference": "ConsumedQuantity",
     "EntityType": "Column",
@@ -232,7 +232,7 @@
       "Dependencies": []
     }
   },
-  "ConsumedQuantity-C-007-C": {
+  "CAU-ConsumedQuantity-C-007-C": {
     "Function": "Nullability",
     "Reference": "ConsumedQuantity",
     "EntityType": "Column",
@@ -257,7 +257,7 @@
       "Dependencies": []
     }
   },
-  "ConsumedQuantity-C-008-C": {
+  "CAU-ConsumedQuantity-C-008-C": {
     "Function": "Validation",
     "Reference": "ConsumedQuantity",
     "EntityType": "Column",

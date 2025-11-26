@@ -1,5 +1,5 @@
 {
-  "CapacityReservationStatus-C-000-C": {
+  "CAU-CapacityReservationStatus-C-000-C": {
     "Function": "Composite",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
@@ -18,28 +18,28 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationStatus-C-001-M"
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationStatus-C-002-C"
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-002-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationStatus-C-005-C"
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-020-C",
-        "CapacityReservationStatus-C-001-M",
-        "CapacityReservationStatus-C-002-C",
-        "CapacityReservationStatus-C-005-C"
+        "CAU-CostAndUsage-D-020-C",
+        "CAU-CapacityReservationStatus-C-001-M",
+        "CAU-CapacityReservationStatus-C-002-C",
+        "CAU-CapacityReservationStatus-C-005-C"
       ]
     }
   },
-  "CapacityReservationStatus-C-001-M": {
+  "CAU-CapacityReservationStatus-C-001-M": {
     "Function": "Type",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
@@ -59,7 +59,7 @@
       "Dependencies": []
     }
   },
-  "CapacityReservationStatus-C-002-C": {
+  "CAU-CapacityReservationStatus-C-002-C": {
     "Function": "Composite",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
@@ -76,22 +76,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationStatus-C-003-C"
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationStatus-C-004-C"
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-004-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CapacityReservationStatus-C-003-C",
-        "CapacityReservationStatus-C-004-C"
+        "CAU-CapacityReservationStatus-C-003-C",
+        "CAU-CapacityReservationStatus-C-004-C"
       ]
     }
   },
-  "CapacityReservationStatus-C-003-C": {
+  "CAU-CapacityReservationStatus-C-003-C": {
     "Function": "Nullability",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
@@ -113,14 +113,14 @@
         }
       },
       "Dependencies": [
-        "CapacityReservationId-C-003-C"
+        "CAU-CapacityReservationId-C-003-C"
       ]
     },
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": ""
   },
-  "CapacityReservationStatus-C-004-C": {
+  "CAU-CapacityReservationStatus-C-004-C": {
     "Function": "Nullability",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
@@ -152,12 +152,12 @@
         ]
       },
       "Dependencies": [
-        "CapacityReservationId-C-003-C",
-        "ChargeCategory-C-000-M"
+        "CAU-CapacityReservationId-C-003-C",
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   },
-  "CapacityReservationStatus-C-005-C": {
+  "CAU-CapacityReservationStatus-C-005-C": {
     "Function": "Composite",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
@@ -174,15 +174,15 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationStatus-C-006-M"
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-006-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationStatus-C-007-C"
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-007-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationStatus-C-008-C"
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-008-C"
           }
         ]
       },
@@ -192,13 +192,13 @@
         "Value": null
       },
       "Dependencies": [
-        "CapacityReservationStatus-C-006-M",
-        "CapacityReservationStatus-C-007-C",
-        "CapacityReservationStatus-C-008-C"
+        "CAU-CapacityReservationStatus-C-006-M",
+        "CAU-CapacityReservationStatus-C-007-C",
+        "CAU-CapacityReservationStatus-C-008-C"
       ]
     }
   },
-  "CapacityReservationStatus-C-006-M": {
+  "CAU-CapacityReservationStatus-C-006-M": {
     "Function": "Validation",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
@@ -229,7 +229,7 @@
       "Dependencies": []
     }
   },
-  "CapacityReservationStatus-C-007-C": {
+  "CAU-CapacityReservationStatus-C-007-C": {
     "Function": "Validation",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",
@@ -246,7 +246,7 @@
       "Dependencies": []
     }
   },
-  "CapacityReservationStatus-C-008-C": {
+  "CAU-CapacityReservationStatus-C-008-C": {
     "Function": "Validation",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Column",

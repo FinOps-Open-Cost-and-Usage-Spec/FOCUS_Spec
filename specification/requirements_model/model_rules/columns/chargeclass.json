@@ -1,5 +1,5 @@
 {
-  "ChargeClass-C-000-M": {
+  "CAU-ChargeClass-C-000-M": {
     "Function": "Composite",
     "Reference": "ChargeClass",
     "EntityType": "Column",
@@ -16,28 +16,28 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeClass-C-001-M"
+            "ModelRuleId": "CAU-ChargeClass-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeClass-C-002-C"
+            "ModelRuleId": "CAU-ChargeClass-C-002-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeClass-C-005-C"
+            "ModelRuleId": "CAU-ChargeClass-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-026-M",
-        "ChargeClass-C-001-M",
-        "ChargeClass-C-002-C",
-        "ChargeClass-C-005-C"
+        "CAU-CostAndUsage-D-026-M",
+        "CAU-ChargeClass-C-001-M",
+        "CAU-ChargeClass-C-002-C",
+        "CAU-ChargeClass-C-005-C"
       ]
     }
   },
-  "ChargeClass-C-001-M": {
+  "CAU-ChargeClass-C-001-M": {
     "Function": "Type",
     "Reference": "ChargeClass",
     "EntityType": "Column",
@@ -57,7 +57,7 @@
       "Dependencies": []
     }
   },
-  "ChargeClass-C-002-C": {
+  "CAU-ChargeClass-C-002-C": {
     "Function": "Composite",
     "Reference": "ChargeClass",
     "EntityType": "Column",
@@ -74,22 +74,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeClass-C-003-C"
+            "ModelRuleId": "CAU-ChargeClass-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeClass-C-004-C"
+            "ModelRuleId": "CAU-ChargeClass-C-004-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "ChargeClass-C-003-C",
-        "ChargeClass-C-004-C"
+        "CAU-ChargeClass-C-003-C",
+        "CAU-ChargeClass-C-004-C"
       ]
     }
   },
-  "ChargeClass-C-003-C": {
+  "CAU-ChargeClass-C-003-C": {
     "Function": "Nullability",
     "Reference": "ChargeClass",
     "EntityType": "Column",
@@ -106,7 +106,7 @@
       "Dependencies": []
     }
   },
-  "ChargeClass-C-004-C": {
+  "CAU-ChargeClass-C-004-C": {
     "Function": "Nullability",
     "Reference": "ChargeClass",
     "EntityType": "Column",
@@ -123,7 +123,7 @@
       "Dependencies": []
     }
   },
-  "ChargeClass-C-005-C": {
+  "CAU-ChargeClass-C-005-C": {
     "Function": "Validation",
     "Reference": "ChargeClass",
     "EntityType": "Column",

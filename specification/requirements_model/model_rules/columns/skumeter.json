@@ -1,5 +1,5 @@
 {
-  "SkuMeter-C-000-C": {
+  "CAU-SkuMeter-C-000-C": {
     "Function": "Composite",
     "Reference": "SkuMeter",
     "EntityType": "Column",
@@ -19,33 +19,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuMeter-C-001-M"
+            "ModelRuleId": "CAU-SkuMeter-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuMeter-C-002-M"
+            "ModelRuleId": "CAU-SkuMeter-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuMeter-C-003-C"
+            "ModelRuleId": "CAU-SkuMeter-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuMeter-C-006-O"
+            "ModelRuleId": "CAU-SkuMeter-C-006-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-059-C",
-        "SkuMeter-C-001-M",
-        "SkuMeter-C-002-M",
-        "SkuMeter-C-003-C",
-        "SkuMeter-C-006-O"
+        "CAU-CostAndUsage-D-059-C",
+        "CAU-SkuMeter-C-001-M",
+        "CAU-SkuMeter-C-002-M",
+        "CAU-SkuMeter-C-003-C",
+        "CAU-SkuMeter-C-006-O"
       ]
     }
   },
-  "SkuMeter-C-001-M": {
+  "CAU-SkuMeter-C-001-M": {
     "Function": "Type",
     "Reference": "SkuMeter",
     "EntityType": "Column",
@@ -65,7 +65,7 @@
       "Dependencies": []
     }
   },
-  "SkuMeter-C-002-M": {
+  "CAU-SkuMeter-C-002-M": {
     "Function": "Format",
     "Reference": "SkuMeter",
     "EntityType": "Column",
@@ -85,7 +85,7 @@
       "Dependencies": []
     }
   },
-  "SkuMeter-C-003-C": {
+  "CAU-SkuMeter-C-003-C": {
     "Function": "Composite",
     "Reference": "SkuMeter",
     "EntityType": "Column",
@@ -102,22 +102,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuMeter-C-004-C"
+            "ModelRuleId": "CAU-SkuMeter-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuMeter-C-005-C"
+            "ModelRuleId": "CAU-SkuMeter-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "SkuMeter-C-004-C",
-        "SkuMeter-C-005-C"
+        "CAU-SkuMeter-C-004-C",
+        "CAU-SkuMeter-C-005-C"
       ]
     }
   },
-  "SkuMeter-C-004-C": {
+  "CAU-SkuMeter-C-004-C": {
     "Function": "Nullability",
     "Reference": "SkuMeter",
     "EntityType": "Column",
@@ -142,7 +142,7 @@
       "Dependencies": []
     }
   },
-  "SkuMeter-C-005-C": {
+  "CAU-SkuMeter-C-005-C": {
     "Function": "Nullability",
     "Reference": "SkuMeter",
     "EntityType": "Column",
@@ -167,7 +167,7 @@
       "Dependencies": []
     }
   },
-  "SkuMeter-C-006-O": {
+  "CAU-SkuMeter-C-006-O": {
     "Function": "Validation",
     "Reference": "SkuMeter",
     "EntityType": "Column",

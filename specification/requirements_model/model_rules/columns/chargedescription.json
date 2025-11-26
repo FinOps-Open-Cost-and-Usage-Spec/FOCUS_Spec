@@ -1,5 +1,5 @@
 {
-  "ChargeDescription-C-000-M": {
+  "CAU-ChargeDescription-C-000-M": {
     "Function": "Composite",
     "Reference": "ChargeDescription",
     "EntityType": "Column",
@@ -16,33 +16,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeDescription-C-001-M"
+            "ModelRuleId": "CAU-ChargeDescription-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeDescription-C-002-M"
+            "ModelRuleId": "CAU-ChargeDescription-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeDescription-C-003-O"
+            "ModelRuleId": "CAU-ChargeDescription-C-003-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeDescription-C-004-O"
+            "ModelRuleId": "CAU-ChargeDescription-C-004-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-025-M",
-        "ChargeDescription-C-001-M",
-        "ChargeDescription-C-002-M",
-        "ChargeDescription-C-003-O",
-        "ChargeDescription-C-004-O"
+        "CAU-CostAndUsage-D-025-M",
+        "CAU-ChargeDescription-C-001-M",
+        "CAU-ChargeDescription-C-002-M",
+        "CAU-ChargeDescription-C-003-O",
+        "CAU-ChargeDescription-C-004-O"
       ]
     }
   },
-  "ChargeDescription-C-001-M": {
+  "CAU-ChargeDescription-C-001-M": {
     "Function": "Type",
     "EntityType": "Column",
     "Reference": "ChargeDescription",
@@ -62,7 +62,7 @@
       "Dependencies": []
     }
   },
-  "ChargeDescription-C-002-M": {
+  "CAU-ChargeDescription-C-002-M": {
     "Function": "Format",
     "EntityType": "Column",
     "Reference": "ChargeDescription",
@@ -82,7 +82,7 @@
       "Dependencies": []
     }
   },
-  "ChargeDescription-C-003-O": {
+  "CAU-ChargeDescription-C-003-O": {
     "Function": "Nullability",
     "Reference": "ChargeDescription",
     "EntityType": "Column",
@@ -103,7 +103,7 @@
       "Dependencies": []
     }
   },
-  "ChargeDescription-C-004-O": {
+  "CAU-ChargeDescription-C-004-O": {
     "Function": "Validation",
     "Reference": "ChargeDescription",
     "EntityType": "Column",

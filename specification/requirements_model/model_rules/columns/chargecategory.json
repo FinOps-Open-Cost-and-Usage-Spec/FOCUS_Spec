@@ -1,5 +1,5 @@
 {
-  "ChargeCategory-C-000-M": {
+  "CAU-ChargeCategory-C-000-M": {
     "Function": "Composite",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
@@ -16,28 +16,28 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeCategory-C-001-M"
+            "ModelRuleId": "CAU-ChargeCategory-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeCategory-C-002-M"
+            "ModelRuleId": "CAU-ChargeCategory-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeCategory-C-003-M"
+            "ModelRuleId": "CAU-ChargeCategory-C-003-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-008-M",
-        "ChargeCategory-C-001-M",
-        "ChargeCategory-C-002-M",
-        "ChargeCategory-C-003-M"
+        "CAU-CostAndUsage-D-008-M",
+        "CAU-ChargeCategory-C-001-M",
+        "CAU-ChargeCategory-C-002-M",
+        "CAU-ChargeCategory-C-003-M"
       ]
     }
   },
-  "ChargeCategory-C-001-M": {
+  "CAU-ChargeCategory-C-001-M": {
     "Function": "Type",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
@@ -57,7 +57,7 @@
       "Dependencies": []
     }
   },
-  "ChargeCategory-C-002-M": {
+  "CAU-ChargeCategory-C-002-M": {
     "Function": "Nullability",
     "Reference": "ChargeCategory",
     "EntityType": "Column",
@@ -78,7 +78,7 @@
       "Dependencies": []
     }
   },
-  "ChargeCategory-C-003-M": {
+  "CAU-ChargeCategory-C-003-M": {
     "Function": "Validation",
     "Reference": "ChargeCategory",
     "EntityType": "Column",

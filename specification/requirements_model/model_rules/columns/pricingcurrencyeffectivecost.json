@@ -1,5 +1,5 @@
 {
-  "PricingCurrencyEffectiveCost-C-000-C": {
+  "CAU-PricingCurrencyEffectiveCost-C-000-C": {
     "Function": "Composite",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Column",
@@ -18,43 +18,43 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyEffectiveCost-C-001-M"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyEffectiveCost-C-002-M"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyEffectiveCost-C-003-M"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyEffectiveCost-C-004-M"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-004-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyEffectiveCost-C-005-M"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-005-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyEffectiveCost-C-006-M"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-006-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-050-C",
-        "PricingCurrencyEffectiveCost-C-001-M",
-        "PricingCurrencyEffectiveCost-C-002-M",
-        "PricingCurrencyEffectiveCost-C-003-M",
-        "PricingCurrencyEffectiveCost-C-004-M",
-        "PricingCurrencyEffectiveCost-C-005-M",
-        "PricingCurrencyEffectiveCost-C-006-M"
+        "CAU-CostAndUsage-D-050-C",
+        "CAU-PricingCurrencyEffectiveCost-C-001-M",
+        "CAU-PricingCurrencyEffectiveCost-C-002-M",
+        "CAU-PricingCurrencyEffectiveCost-C-003-M",
+        "CAU-PricingCurrencyEffectiveCost-C-004-M",
+        "CAU-PricingCurrencyEffectiveCost-C-005-M",
+        "CAU-PricingCurrencyEffectiveCost-C-006-M"
       ]
     }
   },
-  "PricingCurrencyEffectiveCost-C-001-M": {
+  "CAU-PricingCurrencyEffectiveCost-C-001-M": {
     "Function": "Type",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Column",
@@ -74,7 +74,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyEffectiveCost-C-002-M": {
+  "CAU-PricingCurrencyEffectiveCost-C-002-M": {
     "Function": "Format",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Column",
@@ -94,7 +94,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyEffectiveCost-C-003-M": {
+  "CAU-PricingCurrencyEffectiveCost-C-003-M": {
     "Function": "Nullability",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Column",
@@ -115,7 +115,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyEffectiveCost-C-004-M": {
+  "CAU-PricingCurrencyEffectiveCost-C-004-M": {
     "Function": "Validation",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Column",
@@ -136,7 +136,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyEffectiveCost-C-005-M": {
+  "CAU-PricingCurrencyEffectiveCost-C-005-M": {
     "Function": "Validation",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Column",
@@ -153,7 +153,7 @@
       "Dependencies": []
     }
   },
-  "PricingCurrencyEffectiveCost-C-006-M": {
+  "CAU-PricingCurrencyEffectiveCost-C-006-M": {
     "Function": "Validation",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Column",

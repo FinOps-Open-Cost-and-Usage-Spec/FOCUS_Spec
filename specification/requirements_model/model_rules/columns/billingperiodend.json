@@ -1,5 +1,5 @@
 {
-  "BillingPeriodEnd-C-000-M": {
+  "CAU-BillingPeriodEnd-C-000-M": {
     "Function": "Composite",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
@@ -16,33 +16,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingPeriodEnd-C-001-M"
+            "ModelRuleId": "CAU-BillingPeriodEnd-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingPeriodEnd-C-002-M"
+            "ModelRuleId": "CAU-BillingPeriodEnd-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingPeriodEnd-C-003-M"
+            "ModelRuleId": "CAU-BillingPeriodEnd-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingPeriodEnd-C-004-M"
+            "ModelRuleId": "CAU-BillingPeriodEnd-C-004-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-010-M",
-        "BillingPeriodEnd-C-001-M",
-        "BillingPeriodEnd-C-002-M",
-        "BillingPeriodEnd-C-003-M",
-        "BillingPeriodEnd-C-004-M"
+        "CAU-CostAndUsage-D-010-M",
+        "CAU-BillingPeriodEnd-C-001-M",
+        "CAU-BillingPeriodEnd-C-002-M",
+        "CAU-BillingPeriodEnd-C-003-M",
+        "CAU-BillingPeriodEnd-C-004-M"
       ]
     }
   },
-  "BillingPeriodEnd-C-001-M": {
+  "CAU-BillingPeriodEnd-C-001-M": {
     "Function": "Type",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
@@ -62,7 +62,7 @@
       "Dependencies": []
     }
   },
-  "BillingPeriodEnd-C-002-M": {
+  "CAU-BillingPeriodEnd-C-002-M": {
     "Function": "Format",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
@@ -82,7 +82,7 @@
       "Dependencies": []
     }
   },
-  "BillingPeriodEnd-C-003-M": {
+  "CAU-BillingPeriodEnd-C-003-M": {
     "Function": "Nullability",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",
@@ -103,7 +103,7 @@
       "Dependencies": []
     }
   },
-  "BillingPeriodEnd-C-004-M": {
+  "CAU-BillingPeriodEnd-C-004-M": {
     "Function": "Validation",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Column",

@@ -1,5 +1,5 @@
 {
-  "ConsumedUnit-C-000-C": {
+  "CAU-ConsumedUnit-C-000-C": {
     "Function": "Composite",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
@@ -18,33 +18,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedUnit-C-001-M"
+            "ModelRuleId": "CAU-ConsumedUnit-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedUnit-C-002-M"
+            "ModelRuleId": "CAU-ConsumedUnit-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedUnit-C-003-O"
+            "ModelRuleId": "CAU-ConsumedUnit-C-003-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedUnit-C-004-C"
+            "ModelRuleId": "CAU-ConsumedUnit-C-004-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-066-C",
-        "ConsumedUnit-C-001-M",
-        "ConsumedUnit-C-002-M",
-        "ConsumedUnit-C-003-O",
-        "ConsumedUnit-C-004-C"
+        "CAU-CostAndUsage-D-066-C",
+        "CAU-ConsumedUnit-C-001-M",
+        "CAU-ConsumedUnit-C-002-M",
+        "CAU-ConsumedUnit-C-003-O",
+        "CAU-ConsumedUnit-C-004-C"
       ]
     }
   },
-  "ConsumedUnit-C-001-M": {
+  "CAU-ConsumedUnit-C-001-M": {
     "Function": "Type",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
@@ -64,7 +64,7 @@
       "Dependencies": []
     }
   },
-  "ConsumedUnit-C-002-M": {
+  "CAU-ConsumedUnit-C-002-M": {
     "Function": "Format",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
@@ -84,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "ConsumedUnit-C-003-O": {
+  "CAU-ConsumedUnit-C-003-O": {
     "Function": "Format",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
@@ -104,7 +104,7 @@
       "Dependencies": []
     }
   },
-  "ConsumedUnit-C-004-C": {
+  "CAU-ConsumedUnit-C-004-C": {
     "Function": "Composite",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
@@ -123,22 +123,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedUnit-C-005-C"
+            "ModelRuleId": "CAU-ConsumedUnit-C-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedUnit-C-006-C"
+            "ModelRuleId": "CAU-ConsumedUnit-C-006-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "ConsumedUnit-C-005-C",
-        "ConsumedUnit-C-006-C"
+        "CAU-ConsumedUnit-C-005-C",
+        "CAU-ConsumedUnit-C-006-C"
       ]
     }
   },
-  "ConsumedUnit-C-005-C": {
+  "CAU-ConsumedUnit-C-005-C": {
     "Function": "Nullability",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
@@ -161,11 +161,11 @@
         "Value": null
       },
       "Dependencies": [
-        "ConsumedQuantity-C-000-C"
+        "CAU-ConsumedQuantity-C-000-C"
       ]
     }
   },
-  "ConsumedUnit-C-006-C": {
+  "CAU-ConsumedUnit-C-006-C": {
     "Function": "Nullability",
     "Reference": "ConsumedUnit",
     "EntityType": "Column",
@@ -188,7 +188,7 @@
         "Value": null
       },
       "Dependencies": [
-        "ConsumedQuantity-C-000-C"
+        "CAU-ConsumedQuantity-C-000-C"
       ]
     }
   }

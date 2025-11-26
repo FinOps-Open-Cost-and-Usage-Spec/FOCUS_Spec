@@ -1,5 +1,5 @@
 {
-  "ServiceSubcategory-C-000-O": {
+  "CAU-ServiceSubcategory-C-000-O": {
     "Function": "Composite",
     "Reference": "ServiceSubcategory",
     "EntityType": "Column",
@@ -16,33 +16,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceSubcategory-C-001-M"
+            "ModelRuleId": "CAU-ServiceSubcategory-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceSubcategory-C-002-M"
+            "ModelRuleId": "CAU-ServiceSubcategory-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceSubcategory-C-003-M"
+            "ModelRuleId": "CAU-ServiceSubcategory-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceSubcategory-C-004-M"
+            "ModelRuleId": "CAU-ServiceSubcategory-C-004-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-042-O",
-        "ServiceSubcategory-C-001-M",
-        "ServiceSubcategory-C-002-M",
-        "ServiceSubcategory-C-003-M",
-        "ServiceSubcategory-C-004-M"
+        "CAU-CostAndUsage-D-042-O",
+        "CAU-ServiceSubcategory-C-001-M",
+        "CAU-ServiceSubcategory-C-002-M",
+        "CAU-ServiceSubcategory-C-003-M",
+        "CAU-ServiceSubcategory-C-004-M"
       ]
     }
   },
-  "ServiceSubcategory-C-001-M": {
+  "CAU-ServiceSubcategory-C-001-M": {
     "Function": "Type",
     "Reference": "ServiceSubcategory",
     "EntityType": "Column",
@@ -62,7 +62,7 @@
       "Dependencies": []
     }
   },
-  "ServiceSubcategory-C-002-M": {
+  "CAU-ServiceSubcategory-C-002-M": {
     "Function": "Nullability",
     "Reference": "ServiceSubcategory",
     "EntityType": "Column",
@@ -83,7 +83,7 @@
       "Dependencies": []
     }
   },
-  "ServiceSubcategory-C-003-M": {
+  "CAU-ServiceSubcategory-C-003-M": {
     "Function": "Validation",
     "Reference": "ServiceSubcategory",
     "EntityType": "Column",
@@ -514,7 +514,7 @@
       "Dependencies": []
     }
   },
-  "ServiceSubcategory-C-004-M": {
+  "CAU-ServiceSubcategory-C-004-M": {
     "Function": "Validation",
     "Reference": "ServiceSubcategory",
     "EntityType": "Column",

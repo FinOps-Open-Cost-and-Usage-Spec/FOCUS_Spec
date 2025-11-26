@@ -1,5 +1,5 @@
 {
-  "ProviderName-C-000-M": {
+  "CAU-ProviderName-C-000-M": {
     "Function": "Composite",
     "Reference": "ProviderName",
     "EntityType": "Column",
@@ -16,28 +16,28 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ProviderName-C-001-M"
+            "ModelRuleId": "CAU-ProviderName-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ProviderName-C-002-M"
+            "ModelRuleId": "CAU-ProviderName-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ProviderName-C-003-M"
+            "ModelRuleId": "CAU-ProviderName-C-003-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-038-M",
-        "ProviderName-C-001-M",
-        "ProviderName-C-002-M",
-        "ProviderName-C-003-M"
+        "CAU-CostAndUsage-D-038-M",
+        "CAU-ProviderName-C-001-M",
+        "CAU-ProviderName-C-002-M",
+        "CAU-ProviderName-C-003-M"
       ]
     }
   },
-  "ProviderName-C-001-M": {
+  "CAU-ProviderName-C-001-M": {
     "Function": "Type",
     "Reference": "ProviderName",
     "EntityType": "Column",
@@ -57,7 +57,7 @@
       "Dependencies": []
     }
   },
-  "ProviderName-C-002-M": {
+  "CAU-ProviderName-C-002-M": {
     "Function": "Format",
     "Reference": "ProviderName",
     "EntityType": "Column",
@@ -77,7 +77,7 @@
       "Dependencies": []
     }
   },
-  "ProviderName-C-003-M": {
+  "CAU-ProviderName-C-003-M": {
     "Function": "Nullability",
     "Reference": "ProviderName",
     "EntityType": "Column",

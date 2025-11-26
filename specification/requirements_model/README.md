@@ -222,7 +222,7 @@ Each JSON file in `model_rules/` contains one or more rules structured as:
 
 ```json
 {
-  "ListUnitPrice-C-001-C": {
+  "CAU-ListUnitPrice-C-001-C": {
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",

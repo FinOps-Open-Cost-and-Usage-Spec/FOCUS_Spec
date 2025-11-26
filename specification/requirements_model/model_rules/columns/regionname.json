@@ -1,5 +1,5 @@
 {
-  "RegionName-C-000-C": {
+  "CAU-RegionName-C-000-C": {
     "Function": "Composite",
     "Reference": "RegionName",
     "EntityType": "Column",
@@ -18,28 +18,28 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "RegionName-C-001-M"
+            "ModelRuleId": "CAU-RegionName-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "RegionName-C-002-M"
+            "ModelRuleId": "CAU-RegionName-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "RegionName-C-003-C"
+            "ModelRuleId": "CAU-RegionName-C-003-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-062-C",
-        "RegionName-C-001-M",
-        "RegionName-C-002-M",
-        "RegionName-C-003-C"
+        "CAU-CostAndUsage-D-062-C",
+        "CAU-RegionName-C-001-M",
+        "CAU-RegionName-C-002-M",
+        "CAU-RegionName-C-003-C"
       ]
     }
   },
-  "RegionName-C-001-M": {
+  "CAU-RegionName-C-001-M": {
     "Function": "Type",
     "Reference": "RegionName",
     "EntityType": "Column",
@@ -59,7 +59,7 @@
       "Dependencies": []
     }
   },
-  "RegionName-C-002-M": {
+  "CAU-RegionName-C-002-M": {
     "Function": "Format",
     "Reference": "RegionName",
     "EntityType": "Column",
@@ -79,7 +79,7 @@
       "Dependencies": []
     }
   },
-  "RegionName-C-003-C": {
+  "CAU-RegionName-C-003-C": {
     "Function": "Composite",
     "Reference": "RegionName",
     "EntityType": "Column",
@@ -96,22 +96,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "RegionName-C-004-C"
+            "ModelRuleId": "CAU-RegionName-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "RegionName-C-005-C"
+            "ModelRuleId": "CAU-RegionName-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "RegionName-C-004-C",
-        "RegionName-C-005-C"
+        "CAU-RegionName-C-004-C",
+        "CAU-RegionName-C-005-C"
       ]
     }
   },
-  "RegionName-C-004-C": {
+  "CAU-RegionName-C-004-C": {
     "Function": "Nullability",
     "Reference": "RegionName",
     "EntityType": "Column",
@@ -134,11 +134,11 @@
         "Value": null
       },
       "Dependencies": [
-        "RegionId-C-000-C"
+        "CAU-RegionId-C-000-C"
       ]
     }
   },
-  "RegionName-C-005-C": {
+  "CAU-RegionName-C-005-C": {
     "Function": "Nullability",
     "Reference": "RegionName",
     "EntityType": "Column",
@@ -161,7 +161,7 @@
         "Value": null
       },
       "Dependencies": [
-        "RegionId-C-000-C"
+        "CAU-RegionId-C-000-C"
       ]
     }
   }

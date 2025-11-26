@@ -1,5 +1,5 @@
 {
-  "SkuPriceId-C-000-C": {
+  "CAU-SkuPriceId-C-000-C": {
     "Function": "Composite",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -19,33 +19,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-001-M"
+            "ModelRuleId": "CAU-SkuPriceId-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-002-M"
+            "ModelRuleId": "CAU-SkuPriceId-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-003-M"
+            "ModelRuleId": "CAU-SkuPriceId-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-007-C"
+            "ModelRuleId": "CAU-SkuPriceId-C-007-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-058-C",
-        "SkuPriceId-C-001-M",
-        "SkuPriceId-C-002-M",
-        "SkuPriceId-C-003-M",
-        "SkuPriceId-C-007-C"
+        "CAU-CostAndUsage-D-058-C",
+        "CAU-SkuPriceId-C-001-M",
+        "CAU-SkuPriceId-C-002-M",
+        "CAU-SkuPriceId-C-003-M",
+        "CAU-SkuPriceId-C-007-C"
       ]
     }
   },
-  "SkuPriceId-C-001-M": {
+  "CAU-SkuPriceId-C-001-M": {
     "Function": "Type",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -65,7 +65,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-002-M": {
+  "CAU-SkuPriceId-C-002-M": {
     "Function": "Format",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -85,7 +85,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-003-M": {
+  "CAU-SkuPriceId-C-003-M": {
     "Function": "Composite",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -102,27 +102,27 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-004-C"
+            "ModelRuleId": "CAU-SkuPriceId-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-005-C"
+            "ModelRuleId": "CAU-SkuPriceId-C-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-006-O"
+            "ModelRuleId": "CAU-SkuPriceId-C-006-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "SkuPriceId-C-004-C",
-        "SkuPriceId-C-005-C",
-        "SkuPriceId-C-006-O"
+        "CAU-SkuPriceId-C-004-C",
+        "CAU-SkuPriceId-C-005-C",
+        "CAU-SkuPriceId-C-006-O"
       ]
     }
   },
-  "SkuPriceId-C-004-C": {
+  "CAU-SkuPriceId-C-004-C": {
     "Function": "Nullability",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -147,7 +147,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-005-C": {
+  "CAU-SkuPriceId-C-005-C": {
     "Function": "Nullability",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -190,12 +190,12 @@
         ]
       },
       "Dependencies": [
-        "ChargeClass-C-000-M",
-        "ChargeCategory-C-000-M"
+        "CAU-ChargeClass-C-000-M",
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   },
-  "SkuPriceId-C-006-O": {
+  "CAU-SkuPriceId-C-006-O": {
     "Function": "Nullability",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -212,7 +212,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-007-C": {
+  "CAU-SkuPriceId-C-007-C": {
     "Function": "Composite",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -229,35 +229,35 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-008-M"
+            "ModelRuleId": "CAU-SkuPriceId-C-008-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-009-M"
+            "ModelRuleId": "CAU-SkuPriceId-C-009-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-010-M"
+            "ModelRuleId": "CAU-SkuPriceId-C-010-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-011-O"
+            "ModelRuleId": "CAU-SkuPriceId-C-011-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-012-C"
+            "ModelRuleId": "CAU-SkuPriceId-C-012-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-013-M"
+            "ModelRuleId": "CAU-SkuPriceId-C-013-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-014-C"
+            "ModelRuleId": "CAU-SkuPriceId-C-014-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-015-C"
+            "ModelRuleId": "CAU-SkuPriceId-C-015-C"
           }
         ]
       },
@@ -267,18 +267,18 @@
         "Value": null
       },
       "Dependencies": [
-        "SkuPriceId-C-008-M",
-        "SkuPriceId-C-009-M",
-        "SkuPriceId-C-010-M",
-        "SkuPriceId-C-011-O",
-        "SkuPriceId-C-012-C",
-        "SkuPriceId-C-013-M",
-        "SkuPriceId-C-014-C",
-        "SkuPriceId-C-015-C"
+        "CAU-SkuPriceId-C-008-M",
+        "CAU-SkuPriceId-C-009-M",
+        "CAU-SkuPriceId-C-010-M",
+        "CAU-SkuPriceId-C-011-O",
+        "CAU-SkuPriceId-C-012-C",
+        "CAU-SkuPriceId-C-013-M",
+        "CAU-SkuPriceId-C-014-C",
+        "CAU-SkuPriceId-C-015-C"
       ]
     }
   },
-  "SkuPriceId-C-008-M": {
+  "CAU-SkuPriceId-C-008-M": {
     "Function": "Validation",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -300,7 +300,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-009-M": {
+  "CAU-SkuPriceId-C-009-M": {
     "Function": "Validation",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -317,7 +317,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-010-M": {
+  "CAU-SkuPriceId-C-010-M": {
     "Function": "Validation",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -334,7 +334,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-011-O": {
+  "CAU-SkuPriceId-C-011-O": {
     "Function": "Validation",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -355,7 +355,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-012-C": {
+  "CAU-SkuPriceId-C-012-C": {
     "Function": "Validation",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -384,11 +384,11 @@
         ]
       },
       "Dependencies": [
-        "ChargeCategory-C-003-M"
+        "CAU-ChargeCategory-C-003-M"
       ]
     }
   },
-  "SkuPriceId-C-013-M": {
+  "CAU-SkuPriceId-C-013-M": {
     "Function": "Validation",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -405,7 +405,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-014-C": {
+  "CAU-SkuPriceId-C-014-C": {
     "Function": "Validation",
     "Reference": "SkuPriceId",
     "EntityType": "Column",
@@ -424,7 +424,7 @@
       "Dependencies": []
     }
   },
-  "SkuPriceId-C-015-C": {
+  "CAU-SkuPriceId-C-015-C": {
     "Function": "Validation",
     "Reference": "SkuPriceId",
     "EntityType": "Column",

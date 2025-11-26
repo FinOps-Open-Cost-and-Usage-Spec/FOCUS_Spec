@@ -1,5 +1,5 @@
 {
-  "CostAndUsage-D-000-M": {
+  "CAU-CostAndUsage-D-000-M": {
     "Function": "Composite",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
@@ -16,25 +16,25 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-001-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-002-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-002-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-001-M",
-        "CostAndUsage-D-002-M",
+        "CAU-CostAndUsage-D-001-M",
+        "CAU-CostAndUsage-D-002-M",
         "DiscountHandling-A-000-C",
         "NullHandling-A-000-M",
         "ColumnHandling-A-000-M"
       ]
     }
   },
-  "CostAndUsage-D-001-M": {
+  "CAU-CostAndUsage-D-001-M": {
     "Function": "Composite",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
@@ -51,297 +51,297 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-003-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-004-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-005-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-005-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-006-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-006-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-007-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-007-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-008-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-008-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-009-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-009-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-010-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-010-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-011-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-011-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-012-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-012-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-013-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-013-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-014-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-014-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-015-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-015-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-016-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-016-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-017-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-017-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-018-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-018-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-019-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-019-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-020-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-020-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-021-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-021-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-022-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-022-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-023-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-023-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-024-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-024-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-025-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-025-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-026-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-026-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-027-O"
+            "ModelRuleId": "CAU-CostAndUsage-D-027-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-028-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-028-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-029-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-029-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-030-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-030-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-031-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-031-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-032-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-032-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-033-O"
+            "ModelRuleId": "CAU-CostAndUsage-D-033-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-034-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-034-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-035-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-035-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-036-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-036-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-037-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-037-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-038-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-038-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-039-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-039-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-040-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-040-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-041-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-041-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-042-O"
+            "ModelRuleId": "CAU-CostAndUsage-D-042-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-043-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-043-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-044-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-044-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-045-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-045-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-046-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-046-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-050-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-050-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-054-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-054-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-058-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-058-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-059-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-059-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-060-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-060-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-061-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-061-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-062-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-062-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-063-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-063-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-064-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-064-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-065-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-065-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-066-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-066-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-067-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-067-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-068-M"
+            "ModelRuleId": "CAU-CostAndUsage-D-068-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-003-C",
-        "CostAndUsage-D-004-C",
-        "CostAndUsage-D-005-M",
-        "CostAndUsage-D-006-M",
-        "CostAndUsage-D-007-C",
-        "CostAndUsage-D-008-M",
-        "CostAndUsage-D-009-M",
-        "CostAndUsage-D-010-M",
-        "CostAndUsage-D-011-C",
-        "CostAndUsage-D-012-C",
-        "CostAndUsage-D-013-C",
-        "CostAndUsage-D-014-C",
-        "CostAndUsage-D-015-C",
-        "CostAndUsage-D-016-C",
-        "CostAndUsage-D-017-C",
-        "CostAndUsage-D-018-C",
-        "CostAndUsage-D-019-C",
-        "CostAndUsage-D-020-C",
-        "CostAndUsage-D-021-M",
-        "CostAndUsage-D-022-C",
-        "CostAndUsage-D-023-M",
-        "CostAndUsage-D-024-M",
-        "CostAndUsage-D-025-M",
-        "CostAndUsage-D-026-M",
-        "CostAndUsage-D-027-O",
-        "CostAndUsage-D-028-M",
-        "CostAndUsage-D-029-C",
-        "CostAndUsage-D-030-M",
-        "CostAndUsage-D-031-M",
-        "CostAndUsage-D-032-M",
-        "CostAndUsage-D-033-O",
-        "CostAndUsage-D-034-C",
-        "CostAndUsage-D-035-M",
-        "CostAndUsage-D-036-M",
-        "CostAndUsage-D-037-M",
-        "CostAndUsage-D-038-M",
-        "CostAndUsage-D-039-C",
-        "CostAndUsage-D-040-M",
-        "CostAndUsage-D-041-M",
-        "CostAndUsage-D-042-O",
-        "CostAndUsage-D-043-C",
-        "CostAndUsage-D-044-C",
-        "CostAndUsage-D-045-C",
-        "CostAndUsage-D-046-C",
-        "CostAndUsage-D-050-C",
-        "CostAndUsage-D-054-C",
-        "CostAndUsage-D-058-C",
-        "CostAndUsage-D-059-C",
-        "CostAndUsage-D-060-C",
-        "CostAndUsage-D-061-C",
-        "CostAndUsage-D-062-C",
-        "CostAndUsage-D-063-C",
-        "CostAndUsage-D-064-C",
-        "CostAndUsage-D-065-C",
-        "CostAndUsage-D-066-C",
-        "CostAndUsage-D-067-C",
-        "CostAndUsage-D-068-M"
+        "CAU-CostAndUsage-D-003-C",
+        "CAU-CostAndUsage-D-004-C",
+        "CAU-CostAndUsage-D-005-M",
+        "CAU-CostAndUsage-D-006-M",
+        "CAU-CostAndUsage-D-007-C",
+        "CAU-CostAndUsage-D-008-M",
+        "CAU-CostAndUsage-D-009-M",
+        "CAU-CostAndUsage-D-010-M",
+        "CAU-CostAndUsage-D-011-C",
+        "CAU-CostAndUsage-D-012-C",
+        "CAU-CostAndUsage-D-013-C",
+        "CAU-CostAndUsage-D-014-C",
+        "CAU-CostAndUsage-D-015-C",
+        "CAU-CostAndUsage-D-016-C",
+        "CAU-CostAndUsage-D-017-C",
+        "CAU-CostAndUsage-D-018-C",
+        "CAU-CostAndUsage-D-019-C",
+        "CAU-CostAndUsage-D-020-C",
+        "CAU-CostAndUsage-D-021-M",
+        "CAU-CostAndUsage-D-022-C",
+        "CAU-CostAndUsage-D-023-M",
+        "CAU-CostAndUsage-D-024-M",
+        "CAU-CostAndUsage-D-025-M",
+        "CAU-CostAndUsage-D-026-M",
+        "CAU-CostAndUsage-D-027-O",
+        "CAU-CostAndUsage-D-028-M",
+        "CAU-CostAndUsage-D-029-C",
+        "CAU-CostAndUsage-D-030-M",
+        "CAU-CostAndUsage-D-031-M",
+        "CAU-CostAndUsage-D-032-M",
+        "CAU-CostAndUsage-D-033-O",
+        "CAU-CostAndUsage-D-034-C",
+        "CAU-CostAndUsage-D-035-M",
+        "CAU-CostAndUsage-D-036-M",
+        "CAU-CostAndUsage-D-037-M",
+        "CAU-CostAndUsage-D-038-M",
+        "CAU-CostAndUsage-D-039-C",
+        "CAU-CostAndUsage-D-040-M",
+        "CAU-CostAndUsage-D-041-M",
+        "CAU-CostAndUsage-D-042-O",
+        "CAU-CostAndUsage-D-043-C",
+        "CAU-CostAndUsage-D-044-C",
+        "CAU-CostAndUsage-D-045-C",
+        "CAU-CostAndUsage-D-046-C",
+        "CAU-CostAndUsage-D-050-C",
+        "CAU-CostAndUsage-D-054-C",
+        "CAU-CostAndUsage-D-058-C",
+        "CAU-CostAndUsage-D-059-C",
+        "CAU-CostAndUsage-D-060-C",
+        "CAU-CostAndUsage-D-061-C",
+        "CAU-CostAndUsage-D-062-C",
+        "CAU-CostAndUsage-D-063-C",
+        "CAU-CostAndUsage-D-064-C",
+        "CAU-CostAndUsage-D-065-C",
+        "CAU-CostAndUsage-D-066-C",
+        "CAU-CostAndUsage-D-067-C",
+        "CAU-CostAndUsage-D-068-M"
       ]
     }
   },
-  "CostAndUsage-D-002-M": {
+  "CAU-CostAndUsage-D-002-M": {
     "Function": "Composite",
     "Reference": "CostAndUsage",
     "EntityType": "Dataset",
@@ -358,297 +358,297 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "AvailabilityZone-C-000-C"
+            "ModelRuleId": "CAU-AvailabilityZone-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BilledCost-C-000-M"
+            "ModelRuleId": "CAU-BilledCost-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingAccountId-C-000-M"
+            "ModelRuleId": "CAU-BillingAccountId-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingAccountName-C-000-M"
+            "ModelRuleId": "CAU-BillingAccountName-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingAccountType-C-000-C"
+            "ModelRuleId": "CAU-BillingAccountType-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingCurrency-C-000-M"
+            "ModelRuleId": "CAU-BillingCurrency-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingPeriodEnd-C-000-M"
+            "ModelRuleId": "CAU-BillingPeriodEnd-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BillingPeriodStart-C-000-M"
+            "ModelRuleId": "CAU-BillingPeriodStart-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationId-C-000-C"
+            "ModelRuleId": "CAU-CapacityReservationId-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CapacityReservationStatus-C-000-C"
+            "ModelRuleId": "CAU-CapacityReservationStatus-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeCategory-C-000-M"
+            "ModelRuleId": "CAU-ChargeCategory-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeClass-C-000-M"
+            "ModelRuleId": "CAU-ChargeClass-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeFrequency-C-000-O"
+            "ModelRuleId": "CAU-ChargeFrequency-C-000-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeDescription-C-000-M"
+            "ModelRuleId": "CAU-ChargeDescription-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargePeriodEnd-C-000-M"
+            "ModelRuleId": "CAU-ChargePeriodEnd-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargePeriodStart-C-000-M"
+            "ModelRuleId": "CAU-ChargePeriodStart-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountCategory-C-000-C"
+            "ModelRuleId": "CAU-CommitmentDiscountCategory-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountId-C-000-C"
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountName-C-000-C"
+            "ModelRuleId": "CAU-CommitmentDiscountName-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountStatus-C-000-C"
+            "ModelRuleId": "CAU-CommitmentDiscountStatus-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountType-C-000-C"
+            "ModelRuleId": "CAU-CommitmentDiscountType-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountUnit-C-000-C"
+            "ModelRuleId": "CAU-CommitmentDiscountUnit-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountQuantity-C-000-C"
+            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedUnit-C-000-C"
+            "ModelRuleId": "CAU-ConsumedUnit-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ConsumedQuantity-C-000-C"
+            "ModelRuleId": "CAU-ConsumedQuantity-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ContractedCost-C-000-M"
+            "ModelRuleId": "CAU-ContractedCost-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ContractedUnitPrice-C-000-C"
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "EffectiveCost-C-000-M"
+            "ModelRuleId": "CAU-EffectiveCost-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceId-C-000-O"
+            "ModelRuleId": "CAU-InvoiceId-C-000-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceIssuerName-C-000-M"
+            "ModelRuleId": "CAU-InvoiceIssuerName-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-000-M"
+            "ModelRuleId": "CAU-ListCost-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-000-C"
+            "ModelRuleId": "CAU-ListUnitPrice-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-000-M"
+            "ModelRuleId": "CAU-PricingCategory-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrency-C-000-C"
+            "ModelRuleId": "CAU-PricingCurrency-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyContractedUnitPrice-C-000-C"
+            "ModelRuleId": "CAU-PricingCurrencyContractedUnitPrice-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyEffectiveCost-C-000-C"
+            "ModelRuleId": "CAU-PricingCurrencyEffectiveCost-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCurrencyListUnitPrice-C-000-C"
+            "ModelRuleId": "CAU-PricingCurrencyListUnitPrice-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingQuantity-C-000-M"
+            "ModelRuleId": "CAU-PricingQuantity-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-000-M"
+            "ModelRuleId": "CAU-PricingUnit-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ProviderName-C-000-M"
+            "ModelRuleId": "CAU-ProviderName-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PublisherName-C-000-M"
+            "ModelRuleId": "CAU-PublisherName-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "RegionId-C-000-C"
+            "ModelRuleId": "CAU-RegionId-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "RegionName-C-000-C"
+            "ModelRuleId": "CAU-RegionName-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceId-C-000-C"
+            "ModelRuleId": "CAU-ResourceId-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceName-C-000-C"
+            "ModelRuleId": "CAU-ResourceName-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceType-C-000-C"
+            "ModelRuleId": "CAU-ResourceType-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SubAccountId-C-000-C"
+            "ModelRuleId": "CAU-SubAccountId-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SubAccountName-C-000-C"
+            "ModelRuleId": "CAU-SubAccountName-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceCategory-C-000-M"
+            "ModelRuleId": "CAU-ServiceCategory-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceName-C-000-M"
+            "ModelRuleId": "CAU-ServiceName-C-000-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ServiceSubcategory-C-000-O"
+            "ModelRuleId": "CAU-ServiceSubcategory-C-000-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuId-C-000-C"
+            "ModelRuleId": "CAU-SkuId-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuMeter-C-000-C"
+            "ModelRuleId": "CAU-SkuMeter-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceDetails-C-000-C"
+            "ModelRuleId": "CAU-SkuPriceDetails-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SkuPriceId-C-000-C"
+            "ModelRuleId": "CAU-SkuPriceId-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SubAccountType-C-000-C"
+            "ModelRuleId": "CAU-SubAccountType-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "Tags-C-000-C"
+            "ModelRuleId": "CAU-Tags-C-000-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "AvailabilityZone-C-000-C",
-        "BilledCost-C-000-M",
-        "BillingAccountId-C-000-M",
-        "BillingAccountName-C-000-M",
-        "BillingAccountType-C-000-C",
-        "BillingCurrency-C-000-M",
-        "BillingPeriodEnd-C-000-M",
-        "BillingPeriodStart-C-000-M",
-        "CapacityReservationId-C-000-C",
-        "CapacityReservationStatus-C-000-C",
-        "ChargeCategory-C-000-M",
-        "ChargeClass-C-000-M",
-        "ChargeFrequency-C-000-O",
-        "ChargeDescription-C-000-M",
-        "ChargePeriodEnd-C-000-M",
-        "ChargePeriodStart-C-000-M",
-        "CommitmentDiscountCategory-C-000-C",
-        "CommitmentDiscountId-C-000-C",
-        "CommitmentDiscountName-C-000-C",
-        "CommitmentDiscountStatus-C-000-C",
-        "CommitmentDiscountType-C-000-C",
-        "CommitmentDiscountUnit-C-000-C",
-        "CommitmentDiscountQuantity-C-000-C",
-        "ConsumedUnit-C-000-C",
-        "ConsumedQuantity-C-000-C",
-        "ContractedCost-C-000-M",
-        "ContractedUnitPrice-C-000-C",
-        "EffectiveCost-C-000-M",
-        "InvoiceId-C-000-O",
-        "InvoiceIssuerName-C-000-M",
-        "ListCost-C-000-M",
-        "ListUnitPrice-C-000-C",
-        "PricingCategory-C-000-M",
-        "PricingCurrency-C-000-C",
-        "PricingCurrencyContractedUnitPrice-C-000-C",
-        "PricingCurrencyEffectiveCost-C-000-C",
-        "PricingCurrencyListUnitPrice-C-000-C",
-        "PricingQuantity-C-000-M",
-        "PricingUnit-C-000-M",
-        "ProviderName-C-000-M",
-        "RegionId-C-000-C",
-        "RegionName-C-000-C",
-        "ResourceId-C-000-C",
-        "ResourceName-C-000-C",
-        "ResourceType-C-000-C",
-        "PublisherName-C-000-M",
-        "SubAccountId-C-000-C",
-        "SubAccountName-C-000-C",
-        "ServiceCategory-C-000-M",
-        "ServiceName-C-000-M",
-        "ServiceSubcategory-C-000-O",
-        "SkuId-C-000-C",
-        "SkuMeter-C-000-C",
-        "SkuPriceDetails-C-000-C",
-        "SkuPriceId-C-000-C",
-        "SubAccountType-C-000-C",
-        "Tags-C-000-C"
+        "CAU-AvailabilityZone-C-000-C",
+        "CAU-BilledCost-C-000-M",
+        "CAU-BillingAccountId-C-000-M",
+        "CAU-BillingAccountName-C-000-M",
+        "CAU-BillingAccountType-C-000-C",
+        "CAU-BillingCurrency-C-000-M",
+        "CAU-BillingPeriodEnd-C-000-M",
+        "CAU-BillingPeriodStart-C-000-M",
+        "CAU-CapacityReservationId-C-000-C",
+        "CAU-CapacityReservationStatus-C-000-C",
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-ChargeClass-C-000-M",
+        "CAU-ChargeFrequency-C-000-O",
+        "CAU-ChargeDescription-C-000-M",
+        "CAU-ChargePeriodEnd-C-000-M",
+        "CAU-ChargePeriodStart-C-000-M",
+        "CAU-CommitmentDiscountCategory-C-000-C",
+        "CAU-CommitmentDiscountId-C-000-C",
+        "CAU-CommitmentDiscountName-C-000-C",
+        "CAU-CommitmentDiscountStatus-C-000-C",
+        "CAU-CommitmentDiscountType-C-000-C",
+        "CAU-CommitmentDiscountUnit-C-000-C",
+        "CAU-CommitmentDiscountQuantity-C-000-C",
+        "CAU-ConsumedUnit-C-000-C",
+        "CAU-ConsumedQuantity-C-000-C",
+        "CAU-ContractedCost-C-000-M",
+        "CAU-ContractedUnitPrice-C-000-C",
+        "CAU-EffectiveCost-C-000-M",
+        "CAU-InvoiceId-C-000-O",
+        "CAU-InvoiceIssuerName-C-000-M",
+        "CAU-ListCost-C-000-M",
+        "CAU-ListUnitPrice-C-000-C",
+        "CAU-PricingCategory-C-000-M",
+        "CAU-PricingCurrency-C-000-C",
+        "CAU-PricingCurrencyContractedUnitPrice-C-000-C",
+        "CAU-PricingCurrencyEffectiveCost-C-000-C",
+        "CAU-PricingCurrencyListUnitPrice-C-000-C",
+        "CAU-PricingQuantity-C-000-M",
+        "CAU-PricingUnit-C-000-M",
+        "CAU-ProviderName-C-000-M",
+        "CAU-RegionId-C-000-C",
+        "CAU-RegionName-C-000-C",
+        "CAU-ResourceId-C-000-C",
+        "CAU-ResourceName-C-000-C",
+        "CAU-ResourceType-C-000-C",
+        "CAU-PublisherName-C-000-M",
+        "CAU-SubAccountId-C-000-C",
+        "CAU-SubAccountName-C-000-C",
+        "CAU-ServiceCategory-C-000-M",
+        "CAU-ServiceName-C-000-M",
+        "CAU-ServiceSubcategory-C-000-O",
+        "CAU-SkuId-C-000-C",
+        "CAU-SkuMeter-C-000-C",
+        "CAU-SkuPriceDetails-C-000-C",
+        "CAU-SkuPriceId-C-000-C",
+        "CAU-SubAccountType-C-000-C",
+        "CAU-Tags-C-000-C"
       ]
     }
   },
-  "CostAndUsage-D-003-C": {
+  "CAU-CostAndUsage-D-003-C": {
     "Function": "Presence",
     "Reference": "AvailabilityZone",
     "EntityType": "Dataset",
@@ -670,7 +670,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-004-C": {
+  "CAU-CostAndUsage-D-004-C": {
     "Function": "Presence",
     "Reference": "ListUnitPrice",
     "EntityType": "Dataset",
@@ -692,7 +692,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-005-M": {
+  "CAU-CostAndUsage-D-005-M": {
     "Function": "Presence",
     "Reference": "BillingAccountName",
     "EntityType": "Dataset",
@@ -712,7 +712,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-006-M": {
+  "CAU-CostAndUsage-D-006-M": {
     "Function": "Presence",
     "Reference": "BilledCost",
     "EntityType": "Dataset",
@@ -732,7 +732,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-007-C": {
+  "CAU-CostAndUsage-D-007-C": {
     "Function": "Presence",
     "Reference": "BillingAccountType",
     "EntityType": "Dataset",
@@ -754,7 +754,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-008-M": {
+  "CAU-CostAndUsage-D-008-M": {
     "Function": "Presence",
     "Reference": "ChargeCategory",
     "EntityType": "Dataset",
@@ -774,7 +774,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-009-M": {
+  "CAU-CostAndUsage-D-009-M": {
     "Function": "Presence",
     "Reference": "BillingPeriodStart",
     "EntityType": "Dataset",
@@ -794,7 +794,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-010-M": {
+  "CAU-CostAndUsage-D-010-M": {
     "Function": "Presence",
     "Reference": "BillingPeriodEnd",
     "EntityType": "Dataset",
@@ -814,7 +814,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-011-C": {
+  "CAU-CostAndUsage-D-011-C": {
     "Function": "Presence",
     "Reference": "ConsumedQuantity",
     "EntityType": "Dataset",
@@ -836,7 +836,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-012-C": {
+  "CAU-CostAndUsage-D-012-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountName",
     "EntityType": "Dataset",
@@ -858,7 +858,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-013-C": {
+  "CAU-CostAndUsage-D-013-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Dataset",
@@ -880,7 +880,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-014-C": {
+  "CAU-CostAndUsage-D-014-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountType",
     "EntityType": "Dataset",
@@ -902,7 +902,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-015-C": {
+  "CAU-CostAndUsage-D-015-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountUnit",
     "EntityType": "Dataset",
@@ -924,7 +924,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-016-C": {
+  "CAU-CostAndUsage-D-016-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountCategory",
     "EntityType": "Dataset",
@@ -946,7 +946,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-017-C": {
+  "CAU-CostAndUsage-D-017-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountStatus",
     "EntityType": "Dataset",
@@ -968,7 +968,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-018-C": {
+  "CAU-CostAndUsage-D-018-C": {
     "Function": "Presence",
     "Reference": "CommitmentDiscountQuantity",
     "EntityType": "Dataset",
@@ -990,7 +990,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-019-C": {
+  "CAU-CostAndUsage-D-019-C": {
     "Function": "Presence",
     "Reference": "SubAccountId",
     "EntityType": "Dataset",
@@ -1012,7 +1012,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-020-C": {
+  "CAU-CostAndUsage-D-020-C": {
     "Function": "Presence",
     "Reference": "CapacityReservationStatus",
     "EntityType": "Dataset",
@@ -1034,7 +1034,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-021-M": {
+  "CAU-CostAndUsage-D-021-M": {
     "Function": "Presence",
     "Reference": "PublisherName",
     "EntityType": "Dataset",
@@ -1054,7 +1054,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-022-C": {
+  "CAU-CostAndUsage-D-022-C": {
     "Function": "Presence",
     "Reference": "PricingCategory",
     "EntityType": "Dataset",
@@ -1076,7 +1076,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-023-M": {
+  "CAU-CostAndUsage-D-023-M": {
     "Function": "Presence",
     "Reference": "InvoiceIssuerName",
     "EntityType": "Dataset",
@@ -1096,7 +1096,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-024-M": {
+  "CAU-CostAndUsage-D-024-M": {
     "Function": "Presence",
     "Reference": "BillingAccountId",
     "EntityType": "Dataset",
@@ -1116,7 +1116,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-025-M": {
+  "CAU-CostAndUsage-D-025-M": {
     "Function": "Presence",
     "Reference": "ChargeDescription",
     "EntityType": "Dataset",
@@ -1136,7 +1136,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-026-M": {
+  "CAU-CostAndUsage-D-026-M": {
     "Function": "Presence",
     "Reference": "ChargeClass",
     "EntityType": "Dataset",
@@ -1156,7 +1156,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-027-O": {
+  "CAU-CostAndUsage-D-027-O": {
     "Function": "Presence",
     "Reference": "ChargeFrequency",
     "EntityType": "Dataset",
@@ -1176,7 +1176,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-028-M": {
+  "CAU-CostAndUsage-D-028-M": {
     "Function": "Presence",
     "Reference": "ChargePeriodEnd",
     "EntityType": "Dataset",
@@ -1196,7 +1196,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-029-C": {
+  "CAU-CostAndUsage-D-029-C": {
     "Function": "Presence",
     "Reference": "SubAccountName",
     "EntityType": "Dataset",
@@ -1218,7 +1218,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-030-M": {
+  "CAU-CostAndUsage-D-030-M": {
     "Function": "Presence",
     "Reference": "ContractedCost",
     "EntityType": "Dataset",
@@ -1238,7 +1238,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-031-M": {
+  "CAU-CostAndUsage-D-031-M": {
     "Function": "Presence",
     "Reference": "EffectiveCost",
     "EntityType": "Dataset",
@@ -1258,7 +1258,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-032-M": {
+  "CAU-CostAndUsage-D-032-M": {
     "Function": "Presence",
     "Reference": "ListCost",
     "EntityType": "Dataset",
@@ -1278,7 +1278,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-033-O": {
+  "CAU-CostAndUsage-D-033-O": {
     "Function": "Presence",
     "Reference": "InvoiceId",
     "EntityType": "Dataset",
@@ -1298,7 +1298,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-034-C": {
+  "CAU-CostAndUsage-D-034-C": {
     "Function": "Presence",
     "Reference": "ContractedUnitPrice",
     "EntityType": "Dataset",
@@ -1320,7 +1320,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-035-M": {
+  "CAU-CostAndUsage-D-035-M": {
     "Function": "Presence",
     "Reference": "BillingCurrency",
     "EntityType": "Dataset",
@@ -1340,7 +1340,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-036-M": {
+  "CAU-CostAndUsage-D-036-M": {
     "Function": "Presence",
     "Reference": "PricingQuantity",
     "EntityType": "Dataset",
@@ -1360,7 +1360,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-037-M": {
+  "CAU-CostAndUsage-D-037-M": {
     "Function": "Presence",
     "Reference": "ChargePeriodStart",
     "EntityType": "Dataset",
@@ -1380,7 +1380,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-038-M": {
+  "CAU-CostAndUsage-D-038-M": {
     "Function": "Presence",
     "Reference": "ProviderName",
     "EntityType": "Dataset",
@@ -1400,7 +1400,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-039-C": {
+  "CAU-CostAndUsage-D-039-C": {
     "Function": "Presence",
     "Reference": "ResourceType",
     "EntityType": "Dataset",
@@ -1423,7 +1423,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-040-M": {
+  "CAU-CostAndUsage-D-040-M": {
     "Function": "Presence",
     "Reference": "ServiceCategory",
     "EntityType": "Dataset",
@@ -1443,7 +1443,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-041-M": {
+  "CAU-CostAndUsage-D-041-M": {
     "Function": "Presence",
     "Reference": "ServiceName",
     "EntityType": "Dataset",
@@ -1463,7 +1463,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-042-O": {
+  "CAU-CostAndUsage-D-042-O": {
     "Function": "Presence",
     "Reference": "ServiceSubcategory",
     "EntityType": "Dataset",
@@ -1483,7 +1483,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-043-C": {
+  "CAU-CostAndUsage-D-043-C": {
     "Function": "Presence",
     "Reference": "ResourceId",
     "EntityType": "Dataset",
@@ -1505,7 +1505,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-044-C": {
+  "CAU-CostAndUsage-D-044-C": {
     "Function": "Presence",
     "Reference": "ResourceName",
     "EntityType": "Dataset",
@@ -1527,7 +1527,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-045-C": {
+  "CAU-CostAndUsage-D-045-C": {
     "Function": "Presence",
     "Reference": "PricingCurrency",
     "EntityType": "Dataset",
@@ -1549,7 +1549,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-046-C": {
+  "CAU-CostAndUsage-D-046-C": {
     "Function": "Composite",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Dataset",
@@ -1566,27 +1566,27 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-047-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-047-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-048-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-048-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-049-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-049-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-047-C",
-        "CostAndUsage-D-048-C",
-        "CostAndUsage-D-049-C"
+        "CAU-CostAndUsage-D-047-C",
+        "CAU-CostAndUsage-D-048-C",
+        "CAU-CostAndUsage-D-049-C"
       ]
     }
   },
-  "CostAndUsage-D-047-C": {
+  "CAU-CostAndUsage-D-047-C": {
     "Function": "Presence",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Dataset",
@@ -1609,7 +1609,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-048-C": {
+  "CAU-CostAndUsage-D-048-C": {
     "Function": "Presence",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Dataset",
@@ -1632,7 +1632,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-049-C": {
+  "CAU-CostAndUsage-D-049-C": {
     "Function": "Presence",
     "Reference": "PricingCurrencyContractedUnitPrice",
     "EntityType": "Dataset",
@@ -1655,7 +1655,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-050-C": {
+  "CAU-CostAndUsage-D-050-C": {
     "Function": "Composite",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Dataset",
@@ -1672,27 +1672,27 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-051-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-051-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-052-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-052-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-053-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-053-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-051-C",
-        "CostAndUsage-D-052-C",
-        "CostAndUsage-D-053-C"
+        "CAU-CostAndUsage-D-051-C",
+        "CAU-CostAndUsage-D-052-C",
+        "CAU-CostAndUsage-D-053-C"
       ]
     }
   },
-  "CostAndUsage-D-051-C": {
+  "CAU-CostAndUsage-D-051-C": {
     "Function": "Presence",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Dataset",
@@ -1715,7 +1715,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-052-C": {
+  "CAU-CostAndUsage-D-052-C": {
     "Function": "Presence",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Dataset",
@@ -1738,7 +1738,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-053-C": {
+  "CAU-CostAndUsage-D-053-C": {
     "Function": "Presence",
     "Reference": "PricingCurrencyEffectiveCost",
     "EntityType": "Dataset",
@@ -1761,7 +1761,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-054-C": {
+  "CAU-CostAndUsage-D-054-C": {
     "Function": "Composite",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Dataset",
@@ -1770,35 +1770,36 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 10,
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyListUnitPrice presence in a FOCUS dataset is defined as follows:",
+      "MustSatisfy": "PricingCurrencyListUnitPrice presence in a Cost and Usage FOCUS dataset is defined as follows:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-055-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-055-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-056-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-056-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CostAndUsage-D-057-C"
+            "ModelRuleId": "CAU-CostAndUsage-D-057-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-055-C",
-        "CostAndUsage-D-056-C",
-        "CostAndUsage-D-057-C"
+        "CAU-CostAndUsage-D-055-C",
+        "CAU-CostAndUsage-D-056-C",
+        "CAU-CostAndUsage-D-057-C"
       ]
     }
   },
-  "CostAndUsage-D-055-C": {
+  "CAU-CostAndUsage-D-055-C": {
     "Function": "Presence",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Dataset",
@@ -1810,8 +1811,9 @@
       "VIRTUAL_CURRENCY_SUPPORTED"
     ],
     "Type": "Static",
+    "Order": 20,
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyListUnitPrice MUST be present in a FOCUS dataset when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "PricingCurrencyListUnitPrice MUST be present in a Cost and Usage FOCUS dataset when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1821,7 +1823,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-056-C": {
+  "CAU-CostAndUsage-D-056-C": {
     "Function": "Presence",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Dataset",
@@ -1833,8 +1835,9 @@
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
     "Type": "Static",
+    "Order": 30,
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyListUnitPrice is RECOMMENDED to be present in a FOCUS dataset when the provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "PricingCurrencyListUnitPrice is RECOMMENDED to be present in a Cost and Usage FOCUS dataset when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
       "Keyword": "RECOMMENDED",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1844,7 +1847,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-057-C": {
+  "CAU-CostAndUsage-D-057-C": {
     "Function": "Presence",
     "Reference": "PricingCurrencyListUnitPrice",
     "EntityType": "Dataset",
@@ -1856,8 +1859,9 @@
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
     "Type": "Static",
+    "Order": 40,
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyListUnitPrice MAY be present in a FOCUS dataset in all other cases.",
+      "MustSatisfy": "PricingCurrencyListUnitPrice MAY be present in a Cost and Usage FOCUS dataset in all other cases.",
       "Keyword": "MAY",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1867,7 +1871,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-058-C": {
+  "CAU-CostAndUsage-D-058-C": {
     "Function": "Presence",
     "Reference": "SkuPriceId",
     "EntityType": "Dataset",
@@ -1890,7 +1894,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-059-C": {
+  "CAU-CostAndUsage-D-059-C": {
     "Function": "Presence",
     "Reference": "SkuMeter",
     "EntityType": "Dataset",
@@ -1913,7 +1917,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-060-C": {
+  "CAU-CostAndUsage-D-060-C": {
     "Function": "Presence",
     "Reference": "SkuId",
     "EntityType": "Dataset",
@@ -1936,7 +1940,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-061-C": {
+  "CAU-CostAndUsage-D-061-C": {
     "Function": "Presence",
     "Reference": "SkuPriceDetails",
     "EntityType": "Dataset",
@@ -1959,7 +1963,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-062-C": {
+  "CAU-CostAndUsage-D-062-C": {
     "Function": "Presence",
     "Reference": "RegionName",
     "EntityType": "Dataset",
@@ -1981,7 +1985,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-063-C": {
+  "CAU-CostAndUsage-D-063-C": {
     "Function": "Presence",
     "Reference": "RegionId",
     "EntityType": "Dataset",
@@ -2003,7 +2007,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-064-C": {
+  "CAU-CostAndUsage-D-064-C": {
     "Function": "Presence",
     "Reference": "Tags",
     "EntityType": "Dataset",
@@ -2025,7 +2029,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-065-C": {
+  "CAU-CostAndUsage-D-065-C": {
     "Function": "Presence",
     "Reference": "CapacityReservationId",
     "EntityType": "Dataset",
@@ -2047,7 +2051,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-066-C": {
+  "CAU-CostAndUsage-D-066-C": {
     "Function": "Presence",
     "Reference": "ConsumedUnit",
     "EntityType": "Dataset",
@@ -2069,7 +2073,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-067-C": {
+  "CAU-CostAndUsage-D-067-C": {
     "Function": "Presence",
     "Reference": "SubAccountType",
     "EntityType": "Dataset",
@@ -2091,7 +2095,7 @@
       "Dependencies": []
     }
   },
-  "CostAndUsage-D-068-M": {
+  "CAU-CostAndUsage-D-068-M": {
     "Function": "Presence",
     "Reference": "PricingUnit",
     "EntityType": "Dataset",

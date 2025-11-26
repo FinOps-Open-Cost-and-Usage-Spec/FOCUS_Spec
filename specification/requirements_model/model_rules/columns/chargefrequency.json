@@ -1,5 +1,5 @@
 {
-  "ChargeFrequency-C-000-O": {
+  "CAU-ChargeFrequency-C-000-O": {
     "Function": "Composite",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
@@ -16,33 +16,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeFrequency-C-001-M"
+            "ModelRuleId": "CAU-ChargeFrequency-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeFrequency-C-002-M"
+            "ModelRuleId": "CAU-ChargeFrequency-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeFrequency-C-003-M"
+            "ModelRuleId": "CAU-ChargeFrequency-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ChargeFrequency-C-004-C"
+            "ModelRuleId": "CAU-ChargeFrequency-C-004-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-027-O",
-        "ChargeFrequency-C-001-M",
-        "ChargeFrequency-C-002-M",
-        "ChargeFrequency-C-003-M",
-        "ChargeFrequency-C-004-C"
+        "CAU-CostAndUsage-D-027-O",
+        "CAU-ChargeFrequency-C-001-M",
+        "CAU-ChargeFrequency-C-002-M",
+        "CAU-ChargeFrequency-C-003-M",
+        "CAU-ChargeFrequency-C-004-C"
       ]
     }
   },
-  "ChargeFrequency-C-001-M": {
+  "CAU-ChargeFrequency-C-001-M": {
     "Function": "Type",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
@@ -62,7 +62,7 @@
       "Dependencies": []
     }
   },
-  "ChargeFrequency-C-002-M": {
+  "CAU-ChargeFrequency-C-002-M": {
     "Function": "Nullability",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
@@ -83,7 +83,7 @@
       "Dependencies": []
     }
   },
-  "ChargeFrequency-C-003-M": {
+  "CAU-ChargeFrequency-C-003-M": {
     "Function": "Validation",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
@@ -119,7 +119,7 @@
       "Dependencies": []
     }
   },
-  "ChargeFrequency-C-004-C": {
+  "CAU-ChargeFrequency-C-004-C": {
     "Function": "Validation",
     "Reference": "ChargeFrequency",
     "EntityType": "Column",
@@ -142,7 +142,7 @@
         "Value": "Purchase"
       },
       "Dependencies": [
-        "ChargeCategory-C-000-M"
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   }

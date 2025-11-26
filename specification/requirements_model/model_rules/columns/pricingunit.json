@@ -1,5 +1,5 @@
 {
-  "PricingUnit-C-000-M": {
+  "CAU-PricingUnit-C-000-M": {
     "Function": "Composite",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -16,38 +16,38 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-001-M"
+            "ModelRuleId": "CAU-PricingUnit-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-002-M"
+            "ModelRuleId": "CAU-PricingUnit-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-003-O"
+            "ModelRuleId": "CAU-PricingUnit-C-003-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-004-C"
+            "ModelRuleId": "CAU-PricingUnit-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-007-C"
+            "ModelRuleId": "CAU-PricingUnit-C-007-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-068-M",
-        "PricingUnit-C-001-M",
-        "PricingUnit-C-002-M",
-        "PricingUnit-C-003-O",
-        "PricingUnit-C-004-C",
-        "PricingUnit-C-007-C"
+        "CAU-CostAndUsage-D-068-M",
+        "CAU-PricingUnit-C-001-M",
+        "CAU-PricingUnit-C-002-M",
+        "CAU-PricingUnit-C-003-O",
+        "CAU-PricingUnit-C-004-C",
+        "CAU-PricingUnit-C-007-C"
       ]
     }
   },
-  "PricingUnit-C-001-M": {
+  "CAU-PricingUnit-C-001-M": {
     "Function": "Type",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -67,7 +67,7 @@
       "Dependencies": []
     }
   },
-  "PricingUnit-C-002-M": {
+  "CAU-PricingUnit-C-002-M": {
     "Function": "Format",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -87,7 +87,7 @@
       "Dependencies": []
     }
   },
-  "PricingUnit-C-003-O": {
+  "CAU-PricingUnit-C-003-O": {
     "Function": "Format",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -107,7 +107,7 @@
       "Dependencies": []
     }
   },
-  "PricingUnit-C-004-C": {
+  "CAU-PricingUnit-C-004-C": {
     "Function": "Composite",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -124,22 +124,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-005-C"
+            "ModelRuleId": "CAU-PricingUnit-C-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-006-C"
+            "ModelRuleId": "CAU-PricingUnit-C-006-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "PricingUnit-C-005-C",
-        "PricingUnit-C-006-C"
+        "CAU-PricingUnit-C-005-C",
+        "CAU-PricingUnit-C-006-C"
       ]
     }
   },
-  "PricingUnit-C-005-C": {
+  "CAU-PricingUnit-C-005-C": {
     "Function": "Nullability",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -164,7 +164,7 @@
       "Dependencies": []
     }
   },
-  "PricingUnit-C-006-C": {
+  "CAU-PricingUnit-C-006-C": {
     "Function": "Nullability",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -189,7 +189,7 @@
       "Dependencies": []
     }
   },
-  "PricingUnit-C-007-C": {
+  "CAU-PricingUnit-C-007-C": {
     "Function": "Composite",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -206,11 +206,11 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-008-M"
+            "ModelRuleId": "CAU-PricingUnit-C-008-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingUnit-C-009-C"
+            "ModelRuleId": "CAU-PricingUnit-C-009-C"
           }
         ]
       },
@@ -220,12 +220,12 @@
         "Value": null
       },
       "Dependencies": [
-        "PricingUnit-C-008-M",
-        "PricingUnit-C-009-C"
+        "CAU-PricingUnit-C-008-M",
+        "CAU-PricingUnit-C-009-C"
       ]
     }
   },
-  "PricingUnit-C-008-M": {
+  "CAU-PricingUnit-C-008-M": {
     "Function": "Validation",
     "Reference": "PricingUnit",
     "EntityType": "Column",
@@ -242,7 +242,7 @@
       "Dependencies": []
     }
   },
-  "PricingUnit-C-009-C": {
+  "CAU-PricingUnit-C-009-C": {
     "Function": "Validation",
     "Reference": "PricingUnit",
     "EntityType": "Column",

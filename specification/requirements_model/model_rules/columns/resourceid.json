@@ -1,5 +1,5 @@
 {
-  "ResourceId-C-000-C": {
+  "CAU-ResourceId-C-000-C": {
     "Function": "Composite",
     "Reference": "ResourceId",
     "EntityType": "Column",
@@ -19,33 +19,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceId-C-001-M"
+            "ModelRuleId": "CAU-ResourceId-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceId-C-002-M"
+            "ModelRuleId": "CAU-ResourceId-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceId-C-003-C"
+            "ModelRuleId": "CAU-ResourceId-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceId-C-006-C"
+            "ModelRuleId": "CAU-ResourceId-C-006-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-043-C",
-        "ResourceId-C-001-M",
-        "ResourceId-C-002-M",
-        "ResourceId-C-003-C",
-        "ResourceId-C-006-C"
+        "CAU-CostAndUsage-D-043-C",
+        "CAU-ResourceId-C-001-M",
+        "CAU-ResourceId-C-002-M",
+        "CAU-ResourceId-C-003-C",
+        "CAU-ResourceId-C-006-C"
       ]
     }
   },
-  "ResourceId-C-001-M": {
+  "CAU-ResourceId-C-001-M": {
     "Function": "Type",
     "Reference": "ResourceId",
     "EntityType": "Column",
@@ -65,7 +65,7 @@
       "Dependencies": []
     }
   },
-  "ResourceId-C-002-M": {
+  "CAU-ResourceId-C-002-M": {
     "Function": "Format",
     "Reference": "ResourceId",
     "EntityType": "Column",
@@ -85,7 +85,7 @@
       "Dependencies": []
     }
   },
-  "ResourceId-C-003-C": {
+  "CAU-ResourceId-C-003-C": {
     "Function": "Composite",
     "Reference": "ResourceId",
     "EntityType": "Column",
@@ -102,22 +102,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceId-C-004-C"
+            "ModelRuleId": "CAU-ResourceId-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceId-C-005-C"
+            "ModelRuleId": "CAU-ResourceId-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "ResourceId-C-004-C",
-        "ResourceId-C-005-C"
+        "CAU-ResourceId-C-004-C",
+        "CAU-ResourceId-C-005-C"
       ]
     }
   },
-  "ResourceId-C-004-C": {
+  "CAU-ResourceId-C-004-C": {
     "Function": "Nullability",
     "Reference": "ResourceId",
     "EntityType": "Column",
@@ -134,7 +134,7 @@
       "Dependencies": []
     }
   },
-  "ResourceId-C-005-C": {
+  "CAU-ResourceId-C-005-C": {
     "Function": "Nullability",
     "Reference": "ResourceId",
     "EntityType": "Column",
@@ -151,7 +151,7 @@
       "Dependencies": []
     }
   },
-  "ResourceId-C-006-C": {
+  "CAU-ResourceId-C-006-C": {
     "Function": "Composite",
     "Reference": "ResourceId",
     "EntityType": "Column",
@@ -168,11 +168,11 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceId-C-007-M"
+            "ModelRuleId": "CAU-ResourceId-C-007-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ResourceId-C-008-O"
+            "ModelRuleId": "CAU-ResourceId-C-008-O"
           }
         ]
       },
@@ -182,12 +182,12 @@
         "Value": null
       },
       "Dependencies": [
-        "ResourceId-C-007-M",
-        "ResourceId-C-008-O"
+        "CAU-ResourceId-C-007-M",
+        "CAU-ResourceId-C-008-O"
       ]
     }
   },
-  "ResourceId-C-007-M": {
+  "CAU-ResourceId-C-007-M": {
     "Function": "Validation",
     "Reference": "ResourceId",
     "EntityType": "Column",
@@ -204,7 +204,7 @@
       "Dependencies": []
     }
   },
-  "ResourceId-C-008-O": {
+  "CAU-ResourceId-C-008-O": {
     "Function": "Validation",
     "Reference": "ResourceId",
     "EntityType": "Column",

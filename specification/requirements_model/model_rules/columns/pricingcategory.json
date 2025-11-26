@@ -1,5 +1,5 @@
 {
-  "PricingCategory-C-000-M": {
+  "CAU-PricingCategory-C-000-M": {
     "Function": "Composite",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -16,28 +16,28 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-001-M"
+            "ModelRuleId": "CAU-PricingCategory-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-002-M"
+            "ModelRuleId": "CAU-PricingCategory-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-006-C"
+            "ModelRuleId": "CAU-PricingCategory-C-006-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-022-C",
-        "PricingCategory-C-001-M",
-        "PricingCategory-C-002-M",
-        "PricingCategory-C-006-C"
+        "CAU-CostAndUsage-D-022-C",
+        "CAU-PricingCategory-C-001-M",
+        "CAU-PricingCategory-C-002-M",
+        "CAU-PricingCategory-C-006-C"
       ]
     }
   },
-  "PricingCategory-C-001-M": {
+  "CAU-PricingCategory-C-001-M": {
     "Function": "Type",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -57,7 +57,7 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-002-M": {
+  "CAU-PricingCategory-C-002-M": {
     "Function": "Composite",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -74,27 +74,27 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-003-C"
+            "ModelRuleId": "CAU-PricingCategory-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-004-C"
+            "ModelRuleId": "CAU-PricingCategory-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-005-O"
+            "ModelRuleId": "CAU-PricingCategory-C-005-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "PricingCategory-C-003-C",
-        "PricingCategory-C-004-C",
-        "PricingCategory-C-005-O"
+        "CAU-PricingCategory-C-003-C",
+        "CAU-PricingCategory-C-004-C",
+        "CAU-PricingCategory-C-005-O"
       ]
     }
   },
-  "PricingCategory-C-003-C": {
+  "CAU-PricingCategory-C-003-C": {
     "Function": "Nullability",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -117,11 +117,11 @@
         "Value": "Tax"
       },
       "Dependencies": [
-        "ChargeCategory-C-000-M"
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   },
-  "PricingCategory-C-004-C": {
+  "CAU-PricingCategory-C-004-C": {
     "Function": "Nullability",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -164,12 +164,12 @@
         ]
       },
       "Dependencies": [
-        "ChargeCategory-C-000-M",
-        "ChargeClass-C-000-M"
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-ChargeClass-C-000-M"
       ]
     }
   },
-  "PricingCategory-C-005-O": {
+  "CAU-PricingCategory-C-005-O": {
     "Function": "Nullability",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -186,7 +186,7 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-006-C": {
+  "CAU-PricingCategory-C-006-C": {
     "Function": "Composite",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -203,23 +203,23 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-007-M"
+            "ModelRuleId": "CAU-PricingCategory-C-007-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-008-C"
+            "ModelRuleId": "CAU-PricingCategory-C-008-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-009-C"
+            "ModelRuleId": "CAU-PricingCategory-C-009-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-010-C"
+            "ModelRuleId": "CAU-PricingCategory-C-010-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "PricingCategory-C-011-C"
+            "ModelRuleId": "CAU-PricingCategory-C-011-C"
           }
         ]
       },
@@ -229,15 +229,15 @@
         "Value": null
       },
       "Dependencies": [
-        "PricingCategory-C-007-M",
-        "PricingCategory-C-008-C",
-        "PricingCategory-C-009-C",
-        "PricingCategory-C-010-C",
-        "PricingCategory-C-011-C"
+        "CAU-PricingCategory-C-007-M",
+        "CAU-PricingCategory-C-008-C",
+        "CAU-PricingCategory-C-009-C",
+        "CAU-PricingCategory-C-010-C",
+        "CAU-PricingCategory-C-011-C"
       ]
     }
   },
-  "PricingCategory-C-007-M": {
+  "CAU-PricingCategory-C-007-M": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -278,7 +278,7 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-008-C": {
+  "CAU-PricingCategory-C-008-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -299,7 +299,7 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-009-C": {
+  "CAU-PricingCategory-C-009-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -316,7 +316,7 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-010-C": {
+  "CAU-PricingCategory-C-010-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -333,7 +333,7 @@
       "Dependencies": []
     }
   },
-  "PricingCategory-C-011-C": {
+  "CAU-PricingCategory-C-011-C": {
     "Function": "Validation",
     "Reference": "PricingCategory",
     "EntityType": "Column",

@@ -1,5 +1,5 @@
 {
-  "InvoiceId-C-000-O": {
+  "CAU-InvoiceId-C-000-O": {
     "Function": "Composite",
     "Reference": "InvoiceId",
     "EntityType": "Column",
@@ -16,38 +16,38 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceId-C-001-M"
+            "ModelRuleId": "CAU-InvoiceId-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceId-C-002-M"
+            "ModelRuleId": "CAU-InvoiceId-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceId-C-003-C"
+            "ModelRuleId": "CAU-InvoiceId-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceId-C-006-O"
+            "ModelRuleId": "CAU-InvoiceId-C-006-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceId-C-007-C"
+            "ModelRuleId": "CAU-InvoiceId-C-007-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-033-O",
-        "InvoiceId-C-001-M",
-        "InvoiceId-C-002-M",
-        "InvoiceId-C-003-C",
-        "InvoiceId-C-006-O",
-        "InvoiceId-C-007-C"
+        "CAU-CostAndUsage-D-033-O",
+        "CAU-InvoiceId-C-001-M",
+        "CAU-InvoiceId-C-002-M",
+        "CAU-InvoiceId-C-003-C",
+        "CAU-InvoiceId-C-006-O",
+        "CAU-InvoiceId-C-007-C"
       ]
     }
   },
-  "InvoiceId-C-001-M": {
+  "CAU-InvoiceId-C-001-M": {
     "Function": "Type",
     "Reference": "InvoiceId",
     "EntityType": "Column",
@@ -67,7 +67,7 @@
       "Dependencies": []
     }
   },
-  "InvoiceId-C-002-M": {
+  "CAU-InvoiceId-C-002-M": {
     "Function": "Format",
     "Reference": "InvoiceId",
     "EntityType": "Column",
@@ -87,7 +87,7 @@
       "Dependencies": []
     }
   },
-  "InvoiceId-C-003-C": {
+  "CAU-InvoiceId-C-003-C": {
     "Function": "Composite",
     "Reference": "InvoiceId",
     "EntityType": "Column",
@@ -104,22 +104,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceId-C-004-C"
+            "ModelRuleId": "CAU-InvoiceId-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceId-C-005-C"
+            "ModelRuleId": "CAU-InvoiceId-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "InvoiceId-C-004-C",
-        "InvoiceId-C-005-C"
+        "CAU-InvoiceId-C-004-C",
+        "CAU-InvoiceId-C-005-C"
       ]
     }
   },
-  "InvoiceId-C-004-C": {
+  "CAU-InvoiceId-C-004-C": {
     "Function": "Nullability",
     "Reference": "InvoiceId",
     "EntityType": "Column",
@@ -140,7 +140,7 @@
       "Dependencies": []
     }
   },
-  "InvoiceId-C-005-C": {
+  "CAU-InvoiceId-C-005-C": {
     "Function": "Nullability",
     "Reference": "InvoiceId",
     "EntityType": "Column",
@@ -161,7 +161,7 @@
       "Dependencies": []
     }
   },
-  "InvoiceId-C-006-O": {
+  "CAU-InvoiceId-C-006-O": {
     "Function": "Validation",
     "Reference": "InvoiceId",
     "EntityType": "Column",
@@ -178,7 +178,7 @@
       "Dependencies": []
     }
   },
-  "InvoiceId-C-007-C": {
+  "CAU-InvoiceId-C-007-C": {
     "Function": "Validation",
     "Reference": "InvoiceId",
     "EntityType": "Column",
@@ -193,7 +193,7 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": [
-        "BillingAccountId-C-000-M"
+        "CAU-BillingAccountId-C-000-M"
       ]
     }
   }

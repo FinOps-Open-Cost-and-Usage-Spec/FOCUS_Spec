@@ -1,5 +1,5 @@
 {
-  "ListCost-C-000-M": {
+  "CAU-ListCost-C-000-M": {
     "Function": "Composite",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -16,55 +16,55 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-001-M"
+            "ModelRuleId": "CAU-ListCost-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-002-M"
+            "ModelRuleId": "CAU-ListCost-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-003-M"
+            "ModelRuleId": "CAU-ListCost-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-004-M"
+            "ModelRuleId": "CAU-ListCost-C-004-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-005-M"
+            "ModelRuleId": "CAU-ListCost-C-005-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-006-C"
+            "ModelRuleId": "CAU-ListCost-C-006-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-009-C"
+            "ModelRuleId": "CAU-ListCost-C-009-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-010-C"
+            "ModelRuleId": "CAU-ListCost-C-010-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-032-M",
-        "ListCost-C-001-M",
-        "ListCost-C-002-M",
-        "ListCost-C-003-M",
-        "ListCost-C-004-M",
-        "ListCost-C-005-M",
-        "ListCost-C-006-C",
-        "ListCost-C-007-C",
-        "ListCost-C-008-C",
-        "ListCost-C-009-C",
-        "ListCost-C-010-C"
+        "CAU-CostAndUsage-D-032-M",
+        "CAU-ListCost-C-001-M",
+        "CAU-ListCost-C-002-M",
+        "CAU-ListCost-C-003-M",
+        "CAU-ListCost-C-004-M",
+        "CAU-ListCost-C-005-M",
+        "CAU-ListCost-C-006-C",
+        "CAU-ListCost-C-007-C",
+        "CAU-ListCost-C-008-C",
+        "CAU-ListCost-C-009-C",
+        "CAU-ListCost-C-010-C"
       ]
     }
   },
-  "ListCost-C-001-M": {
+  "CAU-ListCost-C-001-M": {
     "Function": "Type",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -84,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "ListCost-C-002-M": {
+  "CAU-ListCost-C-002-M": {
     "Function": "Format",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -104,7 +104,7 @@
       "Dependencies": []
     }
   },
-  "ListCost-C-003-M": {
+  "CAU-ListCost-C-003-M": {
     "Function": "Nullability",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -125,7 +125,7 @@
       "Dependencies": []
     }
   },
-  "ListCost-C-004-M": {
+  "CAU-ListCost-C-004-M": {
     "Function": "Validation",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -146,7 +146,7 @@
       "Dependencies": []
     }
   },
-  "ListCost-C-005-M": {
+  "CAU-ListCost-C-005-M": {
     "Function": "Validation",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -161,11 +161,11 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": [
-        "BillingCurrency-C-000-M"
+        "CAU-BillingCurrency-C-000-M"
       ]
     }
   },
-  "ListCost-C-006-C": {
+  "CAU-ListCost-C-006-C": {
     "Function": "Composite",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -182,11 +182,11 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-007-C"
+            "ModelRuleId": "CAU-ListCost-C-007-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListCost-C-008-C"
+            "ModelRuleId": "CAU-ListCost-C-008-C"
           }
         ]
       },
@@ -196,13 +196,13 @@
         "Value": null
       },
       "Dependencies": [
-        "ListUnitPrice-C-000-C",
-        "ListCost-C-007-C",
-        "ListCost-C-008-C"
+        "CAU-ListUnitPrice-C-000-C",
+        "CAU-ListCost-C-007-C",
+        "CAU-ListCost-C-008-C"
       ]
     }
   },
-  "ListCost-C-007-C": {
+  "CAU-ListCost-C-007-C": {
     "Function": "Validation",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -219,7 +219,7 @@
       "Dependencies": []
     }
   },
-  "ListCost-C-008-C": {
+  "CAU-ListCost-C-008-C": {
     "Function": "Validation",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -236,7 +236,7 @@
       "Dependencies": []
     }
   },
-  "ListCost-C-009-C": {
+  "CAU-ListCost-C-009-C": {
     "Function": "Validation",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -275,13 +275,13 @@
         ]
       },
       "Dependencies": [
-        "ListUnitPrice-C-000-C",
-        "PricingQuantity-C-000-M",
-        "ChargeClass-C-000-M"
+        "CAU-ListUnitPrice-C-000-C",
+        "CAU-PricingQuantity-C-000-M",
+        "CAU-ChargeClass-C-000-M"
       ]
     }
   },
-  "ListCost-C-010-C": {
+  "CAU-ListCost-C-010-C": {
     "Function": "Validation",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -296,7 +296,7 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": [
-        "ChargeClass-C-000-M"
+        "CAU-ChargeClass-C-000-M"
       ]
     }
   }

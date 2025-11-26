@@ -1,5 +1,5 @@
 {
-  "CommitmentDiscountId-C-000-C": {
+  "CAU-CommitmentDiscountId-C-000-C": {
     "Function": "Composite",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Column",
@@ -18,33 +18,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountId-C-001-M"
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountId-C-002-M"
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountId-C-003-C"
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountId-C-006-C"
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-006-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-013-C",
-        "CommitmentDiscountId-C-001-M",
-        "CommitmentDiscountId-C-002-M",
-        "CommitmentDiscountId-C-003-C",
-        "CommitmentDiscountId-C-006-C"
+        "CAU-CostAndUsage-D-013-C",
+        "CAU-CommitmentDiscountId-C-001-M",
+        "CAU-CommitmentDiscountId-C-002-M",
+        "CAU-CommitmentDiscountId-C-003-C",
+        "CAU-CommitmentDiscountId-C-006-C"
       ]
     }
   },
-  "CommitmentDiscountId-C-001-M": {
+  "CAU-CommitmentDiscountId-C-001-M": {
     "Function": "Type",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Column",
@@ -64,7 +64,7 @@
       "Dependencies": []
     }
   },
-  "CommitmentDiscountId-C-002-M": {
+  "CAU-CommitmentDiscountId-C-002-M": {
     "Function": "Format",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Column",
@@ -84,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "CommitmentDiscountId-C-003-C": {
+  "CAU-CommitmentDiscountId-C-003-C": {
     "Function": "Composite",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Column",
@@ -101,22 +101,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountId-C-004-C"
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountId-C-005-C"
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CommitmentDiscountId-C-004-C",
-        "CommitmentDiscountId-C-005-C"
+        "CAU-CommitmentDiscountId-C-004-C",
+        "CAU-CommitmentDiscountId-C-005-C"
       ]
     }
   },
-  "CommitmentDiscountId-C-004-C": {
+  "CAU-CommitmentDiscountId-C-004-C": {
     "Function": "Nullability",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Column",
@@ -133,7 +133,7 @@
       "Dependencies": []
     }
   },
-  "CommitmentDiscountId-C-005-C": {
+  "CAU-CommitmentDiscountId-C-005-C": {
     "Function": "Nullability",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Column",
@@ -150,7 +150,7 @@
       "Dependencies": []
     }
   },
-  "CommitmentDiscountId-C-006-C": {
+  "CAU-CommitmentDiscountId-C-006-C": {
     "Function": "Composite",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Column",
@@ -167,11 +167,11 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountId-C-007-M"
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-007-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CommitmentDiscountId-C-008-C"
+            "ModelRuleId": "CAU-CommitmentDiscountId-C-008-C"
           }
         ]
       },
@@ -181,12 +181,12 @@
         "Value": null
       },
       "Dependencies": [
-        "CommitmentDiscountId-C-007-M",
-        "CommitmentDiscountId-C-008-C"
+        "CAU-CommitmentDiscountId-C-007-M",
+        "CAU-CommitmentDiscountId-C-008-C"
       ]
     }
   },
-  "CommitmentDiscountId-C-007-M": {
+  "CAU-CommitmentDiscountId-C-007-M": {
     "Function": "Validation",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Column",
@@ -203,7 +203,7 @@
       "Dependencies": []
     }
   },
-  "CommitmentDiscountId-C-008-C": {
+  "CAU-CommitmentDiscountId-C-008-C": {
     "Function": "Validation",
     "Reference": "CommitmentDiscountId",
     "EntityType": "Column",

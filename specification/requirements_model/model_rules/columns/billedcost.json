@@ -1,5 +1,5 @@
 {
-  "BilledCost-C-000-M": {
+  "CAU-BilledCost-C-000-M": {
     "Function": "Composite",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -16,48 +16,48 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BilledCost-C-001-M"
+            "ModelRuleId": "CAU-BilledCost-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BilledCost-C-002-M"
+            "ModelRuleId": "CAU-BilledCost-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BilledCost-C-003-M"
+            "ModelRuleId": "CAU-BilledCost-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BilledCost-C-004-M"
+            "ModelRuleId": "CAU-BilledCost-C-004-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BilledCost-C-005-C"
+            "ModelRuleId": "CAU-BilledCost-C-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BilledCost-C-006-M"
+            "ModelRuleId": "CAU-BilledCost-C-006-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "BilledCost-C-007-M"
+            "ModelRuleId": "CAU-BilledCost-C-007-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-006-M",
-        "BilledCost-C-001-M",
-        "BilledCost-C-002-M",
-        "BilledCost-C-003-M",
-        "BilledCost-C-004-M",
-        "BilledCost-C-005-C",
-        "BilledCost-C-006-M",
-        "BilledCost-C-007-M"
+        "CAU-CostAndUsage-D-006-M",
+        "CAU-BilledCost-C-001-M",
+        "CAU-BilledCost-C-002-M",
+        "CAU-BilledCost-C-003-M",
+        "CAU-BilledCost-C-004-M",
+        "CAU-BilledCost-C-005-C",
+        "CAU-BilledCost-C-006-M",
+        "CAU-BilledCost-C-007-M"
       ]
     }
   },
-  "BilledCost-C-001-M": {
+  "CAU-BilledCost-C-001-M": {
     "Function": "Type",
     "EntityType": "Column",
     "Reference": "BilledCost",
@@ -77,7 +77,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-002-M": {
+  "CAU-BilledCost-C-002-M": {
     "Function": "Format",
     "EntityType": "Column",
     "Reference": "BilledCost",
@@ -97,7 +97,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-003-M": {
+  "CAU-BilledCost-C-003-M": {
     "Function": "Nullability",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -118,7 +118,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-004-M": {
+  "CAU-BilledCost-C-004-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -138,7 +138,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-005-C": {
+  "CAU-BilledCost-C-005-C": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -161,12 +161,12 @@
         "ColumnBName": "InvoiceIssuerName"
       },
       "Dependencies": [
-        "ProviderName-C-000-M",
-        "InvoiceIssuerName-C-000-M"
+        "CAU-ProviderName-C-000-M",
+        "CAU-InvoiceIssuerName-C-000-M"
       ]
     }
   },
-  "BilledCost-C-006-M": {
+  "CAU-BilledCost-C-006-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",
@@ -183,7 +183,7 @@
       "Dependencies": []
     }
   },
-  "BilledCost-C-007-M": {
+  "CAU-BilledCost-C-007-M": {
     "Function": "Validation",
     "Reference": "BilledCost",
     "EntityType": "Column",

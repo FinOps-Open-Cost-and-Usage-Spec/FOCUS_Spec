@@ -1,5 +1,5 @@
 {
-  "SubAccountType-C-000-C": {
+  "CAU-SubAccountType-C-000-C": {
     "Function": "Composite",
     "Reference": "SubAccountType",
     "EntityType": "Column",
@@ -18,33 +18,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SubAccountType-C-001-M"
+            "ModelRuleId": "CAU-SubAccountType-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SubAccountType-C-002-M"
+            "ModelRuleId": "CAU-SubAccountType-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SubAccountType-C-003-C"
+            "ModelRuleId": "CAU-SubAccountType-C-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SubAccountType-C-006-M"
+            "ModelRuleId": "CAU-SubAccountType-C-006-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-067-C",
-        "SubAccountType-C-001-M",
-        "SubAccountType-C-002-M",
-        "SubAccountType-C-003-C",
-        "SubAccountType-C-006-M"
+        "CAU-CostAndUsage-D-067-C",
+        "CAU-SubAccountType-C-001-M",
+        "CAU-SubAccountType-C-002-M",
+        "CAU-SubAccountType-C-003-C",
+        "CAU-SubAccountType-C-006-M"
       ]
     }
   },
-  "SubAccountType-C-001-M": {
+  "CAU-SubAccountType-C-001-M": {
     "Function": "Type",
     "Reference": "SubAccountType",
     "EntityType": "Column",
@@ -64,7 +64,7 @@
       "Dependencies": []
     }
   },
-  "SubAccountType-C-002-M": {
+  "CAU-SubAccountType-C-002-M": {
     "Function": "Format",
     "Reference": "SubAccountType",
     "EntityType": "Column",
@@ -84,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "SubAccountType-C-003-C": {
+  "CAU-SubAccountType-C-003-C": {
     "Function": "Composite",
     "Reference": "SubAccountType",
     "EntityType": "Column",
@@ -101,22 +101,22 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SubAccountType-C-004-C"
+            "ModelRuleId": "CAU-SubAccountType-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "SubAccountType-C-005-C"
+            "ModelRuleId": "CAU-SubAccountType-C-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "SubAccountType-C-004-C",
-        "SubAccountType-C-005-C"
+        "CAU-SubAccountType-C-004-C",
+        "CAU-SubAccountType-C-005-C"
       ]
     }
   },
-  "SubAccountType-C-004-C": {
+  "CAU-SubAccountType-C-004-C": {
     "Function": "Nullability",
     "Reference": "SubAccountType",
     "EntityType": "Column",
@@ -139,11 +139,11 @@
         "Value": null
       },
       "Dependencies": [
-        "SubAccountId-C-000-C"
+        "CAU-SubAccountId-C-000-C"
       ]
     }
   },
-  "SubAccountType-C-005-C": {
+  "CAU-SubAccountType-C-005-C": {
     "Function": "Nullability",
     "Reference": "SubAccountType",
     "EntityType": "Column",
@@ -166,11 +166,11 @@
         "Value": null
       },
       "Dependencies": [
-        "SubAccountId-C-000-C"
+        "CAU-SubAccountId-C-000-C"
       ]
     }
   },
-  "SubAccountType-C-006-M": {
+  "CAU-SubAccountType-C-006-M": {
     "Function": "Validation",
     "Reference": "SubAccountType",
     "EntityType": "Column",

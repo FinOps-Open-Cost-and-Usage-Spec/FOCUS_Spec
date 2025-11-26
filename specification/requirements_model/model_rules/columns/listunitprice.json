@@ -1,5 +1,5 @@
 {
-  "ListUnitPrice-C-000-C": {
+  "CAU-ListUnitPrice-C-000-C": {
     "Function": "Composite",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -18,33 +18,33 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-001-M"
+            "ModelRuleId": "CAU-ListUnitPrice-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-002-M"
+            "ModelRuleId": "CAU-ListUnitPrice-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-003-M"
+            "ModelRuleId": "CAU-ListUnitPrice-C-003-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-007-C"
+            "ModelRuleId": "CAU-ListUnitPrice-C-007-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CostAndUsage-D-004-C",
-        "ListUnitPrice-C-001-M",
-        "ListUnitPrice-C-002-M",
-        "ListUnitPrice-C-003-M",
-        "ListUnitPrice-C-007-C"
+        "CAU-CostAndUsage-D-004-C",
+        "CAU-ListUnitPrice-C-001-M",
+        "CAU-ListUnitPrice-C-002-M",
+        "CAU-ListUnitPrice-C-003-M",
+        "CAU-ListUnitPrice-C-007-C"
       ]
     }
   },
-  "ListUnitPrice-C-001-M": {
+  "CAU-ListUnitPrice-C-001-M": {
     "Function": "Type",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -64,7 +64,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-002-M": {
+  "CAU-ListUnitPrice-C-002-M": {
     "Function": "Format",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -84,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-003-M": {
+  "CAU-ListUnitPrice-C-003-M": {
     "Function": "Composite",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -101,28 +101,28 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-004-C"
+            "ModelRuleId": "CAU-ListUnitPrice-C-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-005-C"
+            "ModelRuleId": "CAU-ListUnitPrice-C-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-006-O"
+            "ModelRuleId": "CAU-ListUnitPrice-C-006-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "ChargeCategory-C-000-M",
-        "ListUnitPrice-C-004-C",
-        "ListUnitPrice-C-005-C",
-        "ListUnitPrice-C-006-O"
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-ListUnitPrice-C-004-C",
+        "CAU-ListUnitPrice-C-005-C",
+        "CAU-ListUnitPrice-C-006-O"
       ]
     }
   },
-  "ListUnitPrice-C-004-C": {
+  "CAU-ListUnitPrice-C-004-C": {
     "Function": "Nullability",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -145,11 +145,11 @@
         "Value": "Tax"
       },
       "Dependencies": [
-        "ChargeCategory-C-000-M"
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   },
-  "ListUnitPrice-C-005-C": {
+  "CAU-ListUnitPrice-C-005-C": {
     "Function": "Nullability",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -192,11 +192,11 @@
         ]
       },
       "Dependencies": [
-        "ChargeClass-C-000-M"
+        "CAU-ChargeClass-C-000-M"
       ]
     }
   },
-  "ListUnitPrice-C-006-O": {
+  "CAU-ListUnitPrice-C-006-O": {
     "Function": "Nullability",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -217,7 +217,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-007-C": {
+  "CAU-ListUnitPrice-C-007-C": {
     "Function": "Composite",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -234,19 +234,19 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-008-M"
+            "ModelRuleId": "CAU-ListUnitPrice-C-008-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-009-M"
+            "ModelRuleId": "CAU-ListUnitPrice-C-009-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-010-C"
+            "ModelRuleId": "CAU-ListUnitPrice-C-010-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ListUnitPrice-C-011-C"
+            "ModelRuleId": "CAU-ListUnitPrice-C-011-C"
           }
         ]
       },
@@ -256,15 +256,15 @@
         "Value": null
       },
       "Dependencies": [
-        "ChargeCategory-C-000-M",
-        "ListUnitPrice-C-008-M",
-        "ListUnitPrice-C-009-M",
-        "ListUnitPrice-C-010-C",
-        "ListUnitPrice-C-011-C"
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-ListUnitPrice-C-008-M",
+        "CAU-ListUnitPrice-C-009-M",
+        "CAU-ListUnitPrice-C-010-C",
+        "CAU-ListUnitPrice-C-011-C"
       ]
     }
   },
-  "ListUnitPrice-C-008-M": {
+  "CAU-ListUnitPrice-C-008-M": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -285,7 +285,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-009-M": {
+  "CAU-ListUnitPrice-C-009-M": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -302,7 +302,7 @@
       "Dependencies": []
     }
   },
-  "ListUnitPrice-C-010-C": {
+  "CAU-ListUnitPrice-C-010-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -336,11 +336,11 @@
         ]
       },
       "Dependencies": [
-        "ChargeClass-C-000-M"
+        "CAU-ChargeClass-C-000-M"
       ]
     }
   },
-  "ListUnitPrice-C-011-C": {
+  "CAU-ListUnitPrice-C-011-C": {
     "Function": "Validation",
     "Reference": "ListUnitPrice",
     "EntityType": "Column",
@@ -359,7 +359,7 @@
         "Value": "Correction"
       },
       "Dependencies": [
-        "ChargeClass-C-000-M"
+        "CAU-ChargeClass-C-000-M"
       ]
     }
   }

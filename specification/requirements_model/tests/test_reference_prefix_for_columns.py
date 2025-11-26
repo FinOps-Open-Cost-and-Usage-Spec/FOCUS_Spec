@@ -1,4 +1,5 @@
 import pytest
+import re
 
 @pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns", scope="session")
 def test_reference_matches_rule_key_prefix_for_columns(cr_json):
@@ -6,17 +7,51 @@ def test_reference_matches_rule_key_prefix_for_columns(cr_json):
     violations = []
 
     for rid, rule in rules.items():
-        if rule.get("EntityType") != "Column":
-            continue  # only enforce for Column rules
-        
+        entity_type = rule.get("EntityType")
         ref = rule.get("Reference")
-        if isinstance(ref, str):
-            if not rid.startswith(ref):
-                violations.append((rid, ref))
+
+        if not isinstance(ref, str):
+            violations.append((rid, f"<missing or non-str: {ref}>", "Missing or invalid Reference field"))
+            continue
+
+        # Check if rule ID follows the new 3-letter-prefix pattern
+        # Pattern: <3-letter-prefix>-<Reference>-<EntityType>-<Number>-<Severity>
+        new_pattern_match = re.match(r'^([A-Z]{3})-(.+?)-([CAD])-\d+-[A-Z]$', rid)
+
+        if new_pattern_match:
+            # Rule uses new format - validate it properly
+            prefix, reference_part, entity_letter = new_pattern_match.groups()
+
+            # Validate entity type is Dataset or Column for new format
+            if entity_type not in ["Dataset", "Column"]:
+                violations.append((rid, ref, f"{entity_type} rules should not use 3-letter prefix format"))
+                continue
+
+            # Special handling for Dataset rules
+            if entity_type == "Dataset":
+                # For Dataset rules, Reference can be either the dataset name (main rules)
+                # or a column name (column requirement rules)
+                # Both patterns are valid for dataset rules
+                pass  # No validation needed for Dataset rules
+            else:
+                # For Column rules, reference part should match Reference field
+                if reference_part != ref:
+                    violations.append((rid, ref, f"Expected reference '{reference_part}' to match Reference field"))
+
+            # Validate entity type letter matches
+            expected_letter = "D" if entity_type == "Dataset" else "C"
+            if entity_letter != expected_letter:
+                violations.append((rid, ref, f"Expected entity letter '{expected_letter}' for {entity_type}, got '{entity_letter}'"))
         else:
-            violations.append((rid, f"<missing or non-str: {ref}>"))
+            # Rule does not use new format - this is now an error for Dataset/Column rules
+            if entity_type in ["Dataset", "Column"]:
+                violations.append((rid, ref, f"{entity_type} rules must use 3-letter prefix format: <PREFIX>-<Reference>-{entity_type[0]}-<Number>-<Severity>"))
+            else:
+                # For non-Dataset/Column rules, validate old format
+                if not rid.startswith(ref):
+                    violations.append((rid, ref, "Rule ID should start with Reference"))
 
     assert not violations, (
-        "ModelRules.Reference must match the prefix of the rule key:\n"
-        + "\n".join(f"- Rule {rid}: Reference='{ref}'" for rid, ref in violations)
+        "ModelRules.Reference must match the expected pattern in the rule key:\n"
+        + "\n".join(f"- Rule {rid}: Reference='{ref}' - {issue}" for rid, ref, issue in violations)
     )
