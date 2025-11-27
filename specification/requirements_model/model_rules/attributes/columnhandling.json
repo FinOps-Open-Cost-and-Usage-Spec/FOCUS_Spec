@@ -8,6 +8,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "All columns defined by FOCUS MUST follow the following rules:",
       "Keyword": "MUST",
@@ -40,10 +43,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ColumnHandling-A-007-O"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "ColumnHandling-A-008-M"
           },
           {
@@ -72,7 +71,7 @@
         "ColumnHandling-A-004-O",
         "ColumnHandling-A-005-O",
         "ColumnHandling-A-006-M",
-        "ColumnHandling-A-007-O",
+        "ColumnHandling-A-015-M",
         "ColumnHandling-A-008-M",
         "ColumnHandling-A-009-M",
         "ColumnHandling-A-012-O",
@@ -90,6 +89,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST use Pascal case.",
       "Keyword": "MUST",
@@ -107,6 +109,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST NOT use abbreviations.",
       "Keyword": "MUST NOT",
@@ -124,6 +129,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST be alphanumeric with no special characters.",
       "Keyword": "MUST",
@@ -141,6 +149,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT use acronyms.",
       "Keyword": "SHOULD NOT",
@@ -158,6 +169,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories.",
       "Keyword": "SHOULD NOT",
@@ -175,6 +189,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID.",
       "Keyword": "MUST",
@@ -189,7 +206,7 @@
     "EntityType": "Attribute",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -209,6 +226,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 80,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Columns with the Category suffix MUST be normalized.",
       "Keyword": "MUST",
@@ -226,8 +246,11 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 90,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "Custom (e.g., provider-defined) columns that are not defined by FOCUS but included in a FOCUS dataset MUST follow the following rules:",
+      "MustSatisfy": "Custom (e.g., service-provider-defined) columns that are not defined by FOCUS but included in a FOCUS dataset MUST follow the following rules:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -258,6 +281,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 100,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.",
       "Keyword": "MUST",
@@ -275,6 +301,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 110,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns.",
       "Keyword": "SHOULD",
@@ -292,6 +321,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 120,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset.",
       "Keyword": "SHOULD",
@@ -309,6 +341,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 130,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.",
       "Keyword": "SHOULD",
@@ -326,9 +361,32 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 130,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns.",
       "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-015-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 70,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Column display names MUST be consistent with their Column IDs, with spaces inserted between words (e.g., Column ID \"BillingAccountName\" and display name \"Billing Account Name\").",
+      "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []
