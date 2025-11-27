@@ -30,8 +30,8 @@ The above SKU catalog shows that this service provider only has 1 service that o
 
 ## Outcome
 
-* 1 recurring, purchase record exists for 1 eligible "Normalized Hour" of the no upfront, *commitment discount* and incurs a $0.50 [*BilledCost*](#billedcost).
-* The VM_SMALL *commitment discount* is fully utilized within the corresponding [*charge period*](#glossary:chargeperiod), covers 25% of the VM_LARGE resource, and incurs a $0.50 [*EffectiveCost*](#effectivecost).
+* 1 recurring, purchase record exists for 1 eligible "Normalized Hour" of the no upfront, *commitment discount* and incurs a $0.50 [*BilledCost*](#datasets.costandusage.billedcost).
+* The VM_SMALL *commitment discount* is fully utilized within the corresponding [*charge period*](#glossary:chargeperiod), covers 25% of the VM_LARGE resource, and incurs a $0.50 [*EffectiveCost*](#datasets.costandusage.effectivecost).
 * The VM_LARGE resource incurs an additional, on-demand $2.25 *BilledCost* and *EffectiveCost*.
 
 [CSV Example](/specification/data/commitment_discount_flexibility/one_hundred_percent_utilization_with_commitment_discount_flexibility_with_1_resource.csv)

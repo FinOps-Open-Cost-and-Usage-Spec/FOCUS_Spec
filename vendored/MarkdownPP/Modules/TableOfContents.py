@@ -105,7 +105,8 @@ class TableOfContents(Module):
 
         keys = sorted(headers.keys())
 
-        short_titles = []
+        # Track the hierarchy for full path anchor generation
+        hierarchy_stack = []
 
         # interate through the list of headers, generating the nested table
         # of contents data, and creating the appropriate transforms
@@ -117,18 +118,19 @@ class TableOfContents(Module):
 
             (depth, title) = headers[linenum]
             depth += depthoffset
-            short = re.sub(
+            clean_title = re.sub(
                 r"([\s,-,\(,\)]+)", "", TableOfContents.clean_title(title)
             ).lower()
 
-            if short in short_titles:
-                i = 1
-                short_i = short
-                while short_i in short_titles:
-                    short_i = short + "-" + str(i)
-                    i += 1
-                short = short_i
-            short_titles.append(short)
+            # Adjust hierarchy stack based on current depth
+            while len(hierarchy_stack) >= depth:
+                hierarchy_stack.pop()
+            
+            # Add current title to hierarchy
+            hierarchy_stack.append(clean_title)
+            
+            # Generate full path anchor using the hierarchy
+            short = ".".join(hierarchy_stack)
 
             while depth > lastdepth:
                 stack.append(headernum)

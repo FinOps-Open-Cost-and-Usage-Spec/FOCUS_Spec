@@ -4,7 +4,7 @@
 
 FOCUS supports the tracking of commitments made via contractual agreements between a service provider and a customer. Each row in the Cost and Usage dataset is associated with one or more unique identifiers representing those contracts and contract commitments, stored in a JSON column called Contract Applied. A richer amount of detail that describes those commitments is carried in a separate Contract Commitment dataset, which can be joined to the Cost and Usage datset to facilitate various queries involving filtering and aggregation.
 
-The Contract Applied column contains several FOCUS-defined properties.  For more information, see the definition of Contract Applied [here](#contractapplied).
+The Contract Applied column contains several FOCUS-defined properties.  For more information, see the definition of Contract Applied [here](#datasets.costandusage.contractapplied).
 
 ## Directly Dependent Columns
 
@@ -30,7 +30,7 @@ The Contract Applied column contains several FOCUS-defined properties.  For more
 
 ## Example SQL Queries
 
-The FOCUS specification implements the application of contract commitments to cost and usage via the [*ContractApplied*](#contractapplied) column, which is defined in [*JSON object format*](#jsonobjectformat).
+The FOCUS specification implements the application of contract commitments to cost and usage via the [*ContractApplied*](#datasets.costandusage.contractapplied) column, which is defined in [*JSON object format*](#attributes.jsonobjectformat).
 
 Because ANSI SQL does not inherently support the parsing of JSON, the following queries leverage the JSON functions found in BigQuery Standard SQL in order to demonstrate this feature's functionality.  Similar JSON functions are available in all major SQL engines; thus, the below examples can be slightly modified to accommodate any particular database instance.
 

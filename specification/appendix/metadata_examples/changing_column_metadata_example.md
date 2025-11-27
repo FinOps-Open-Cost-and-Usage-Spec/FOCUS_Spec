@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has decided to change the datatype of column x_awesome_column1 from a string to a number. ACME creates a new [Schema](#schema) object with the modification to x_awesome_column2.
+ACME has decided to change the datatype of column x_awesome_column1 from a string to a number. ACME creates a new [Schema](#metadata.schema) object with the modification to x_awesome_column2.
 
 ## Supplied Metadata
 

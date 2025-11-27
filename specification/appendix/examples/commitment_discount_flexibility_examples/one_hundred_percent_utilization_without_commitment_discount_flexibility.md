@@ -30,7 +30,7 @@ The above SKU Catalog shows that this service provider only has 1 service that o
 
 ## Outcome
 
-* 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, *commitment discount* and incurs a $1.50 [*BilledCost*](#billedcost).
-* The *commitment discount* covers the first [*charge period*](#glossary:chargeperiod) for 1 VM_LARGE resource incurring a $1.50 [*EffectiveCost*](#effectivecost).
+* 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, *commitment discount* and incurs a $1.50 [*BilledCost*](#datasets.costandusage.billedcost).
+* The *commitment discount* covers the first [*charge period*](#glossary:chargeperiod) for 1 VM_LARGE resource incurring a $1.50 [*EffectiveCost*](#datasets.costandusage.effectivecost).
 
 [CSV Example](/specification/data/commitment_discount_flexibility/one_hundred_percent_utilization_without_commitment_discount_flexibility.csv)

@@ -18,10 +18,10 @@ In addition to these, a data generator may include one or more custom properties
 
 The AllocatedMethodDetails column adheres to the following requirements:
 
-* AllocatedMethodDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
+* AllocatedMethodDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
 * AllocatedMethodDetails MUST be of type String.
-* AllocatedMethodDetails MUST conform to [StringHandling](#stringhandling) requirements.
-* AllocatedMethodDetails MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
+* AllocatedMethodDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* AllocatedMethodDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * AllocatedMethodDetails nullability is defined as follows:
   * AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
@@ -33,7 +33,7 @@ Allocated Method Details consists of a valid JSON object which contains an array
 When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodDetails adheres to the following requirements:
 * AllocatedMethodDetails MUST have a top-level key "Elements" which contains an array.
 * Each item in "Elements" MUST be an object.
-  * Objects inside "Elements" MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+  * Objects inside "Elements" MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
     * FOCUS-defined allocation properties adhere to the following additional requirements:
       * Allocation property key MUST match the spelling and casing specified for the FOCUS-defined property.
       * Allocation property value MUST be of the type specified for that property.
@@ -48,12 +48,12 @@ The following keys are used for allocation properties to facilitate querying dat
 
 <b>Allocated Ratio</b>
 
-Allocated Ratio communicates the percentage of the [*Origin Charge*](#glossary:origin-charge) that this [*Allocated Charge*](#glossary:allocated-charge) derived from the corresponding [Allocated Method Id](#allocatedmethodid) and Usage Unit property.
+Allocated Ratio communicates the percentage of the [*Origin Charge*](#glossary:origin-charge) that this [*Allocated Charge*](#glossary:allocated-charge) derived from the corresponding [Allocated Method Id](#datasets.costandusage.allocatedmethodid) and Usage Unit property.
 
 The "AllocatedRatio" property adheres to the following requirements:
 
 * "AllocatedRatio" MUST be included inside each "Elements" object.
-* Values for "AllocatedRatio" MUST be a decimal value compatible with [NumericFormat](#numericformat) representing the allocated charge's percentage of the origin charge.
+* Values for "AllocatedRatio" MUST be a decimal value compatible with [NumericFormat](#attributes.numericformat) representing the allocated charge's percentage of the origin charge.
 * Values for all "AllocatedRatio" properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).
 
 <b>Usage Unit</b>
@@ -64,7 +64,7 @@ The "UsageUnit" property adheres to the following requirements:
 
 * "UsageUnit" MUST be included inside an "Elements" object if "UsageQuantity" allocation property is included in that "Elements" object, otherwise "UsageUnit" MAY be included in each "Elements" object.
 * Values for "UsageUnit" MUST capture the unit or component of data generator's documented [AllocationMethod](#allocationmethodid) that was used to determine the "AllocatedRatio" value.
-* Values for "UsageUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
+* Values for "UsageUnit" SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 
 <b>Usage Quantity</b>
 
@@ -93,7 +93,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | Key | ValueType | Required | Description |
 | ----- | ---- | ---------- | ----------- |
 | AllocatedRatio | Numeric | True | Percentage of overall cost derived from corresponding method and metric. |
-| UsageUnit | [String](#stringhandling) | Conditional | Unit being measured used to calculate allocation. |
+| UsageUnit | [String](#attributes.stringhandling) | Conditional | Unit being measured used to calculate allocation. |
 | UsageQuantity | Numeric | False | Volume of UsageUnit consumed or used. |
 
 ### Example
@@ -134,7 +134,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 }
 ```
 
-NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
+NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#attributes.numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
 
 ### Scenario 1: Single "UsageUnit" value used for allocation
 
@@ -220,7 +220,7 @@ A set of properties describing how resources are allocated in data generator-def
 | Feature level   | Recommended     |
 | Allows nulls    | True            |
 | Data type       | JSON            |
-| Value format    | [JSON Object Format](#jsonobjectformat) |
+| Value format    | [JSON Object Format](#attributes.jsonobjectformat) |
 
 ## Introduced (version)
 
