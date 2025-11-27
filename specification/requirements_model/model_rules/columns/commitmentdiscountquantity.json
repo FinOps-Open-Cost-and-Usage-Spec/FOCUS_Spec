@@ -10,8 +10,11 @@
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
     "Type": "Static",
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "The CommitmentDiscountQuantity column adheres to the following requirements:",
+      "MustSatisfy": "CommitmentDiscountQuantity adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -30,11 +33,15 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-004-C"
+            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-009-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-008-C"
+            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-010-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-013-C"
           }
         ]
       },
@@ -44,8 +51,9 @@
         "CAU-CommitmentDiscountQuantity-C-001-M",
         "CAU-CommitmentDiscountQuantity-C-002-M",
         "CAU-CommitmentDiscountQuantity-C-003-C",
-        "CAU-CommitmentDiscountQuantity-C-004-C",
-        "CAU-CommitmentDiscountQuantity-C-008-C"
+        "CAU-CommitmentDiscountQuantity-C-009-C",
+        "CAU-CommitmentDiscountQuantity-C-010-C",
+        "CAU-CommitmentDiscountQuantity-C-013-C"
       ]
     }
   },
@@ -58,6 +66,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity MUST be of type Decimal.",
       "Keyword": "MUST",
@@ -78,6 +89,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity MUST conform to NumericFormat requirements.",
       "Keyword": "MUST",
@@ -98,12 +112,19 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity nullability is defined as follows:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-016-C"
+          },
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-004-C"
@@ -116,6 +137,7 @@
       },
       "Condition": {},
       "Dependencies": [
+        "CAU-CommitmentDiscountQuantity-C-016-C",
         "CAU-CommitmentDiscountQuantity-C-004-C",
         "CAU-CommitmentDiscountQuantity-C-007-C"
       ]
@@ -130,6 +152,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "When ChargeCategory is \"Usage\" or \"Purchase\" and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
       "Keyword": "MUST",
@@ -188,6 +213,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 70,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity MUST NOT be null when ChargeClass is not \"Correction\".",
       "Keyword": "MUST NOT",
@@ -213,6 +241,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 80,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity MAY be null when ChargeClass is \"Correction\".",
       "Keyword": "MAY",
@@ -238,6 +269,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 90,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity MUST be null in all other cases.",
       "Keyword": "MUST",
@@ -285,19 +319,17 @@
     "EntityType": "Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-009-M"
-          },
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-010-C"
@@ -310,13 +342,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-CommitmentDiscountQuantity-C-009-M",
         "CAU-CommitmentDiscountQuantity-C-010-C",
         "CAU-CommitmentDiscountQuantity-C-013-C"
       ]
     }
   },
-  "CAU-CommitmentDiscountQuantity-C-009-M": {
+  "CAU-CommitmentDiscountQuantity-C-009-C": {
     "Function": "Validation",
     "Reference": "CommitmentDiscountQuantity",
     "EntityType": "Column",
@@ -325,11 +356,18 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 100,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountQuantity MUST be a valid decimal value.",
+      "MustSatisfy": "CommitmentDiscountQuantity MUST be a valid decimal value when not null.",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CommitmentDiscountQuantity",
+        "Value": null
+      },
       "Dependencies": []
     }
   },
@@ -342,8 +380,11 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 120,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "When ChargeCategory is \"Purchase\", CommitmentDiscountQuantity adheres to the following additional requirements:",
+      "MustSatisfy": "When CommitmentDiscountQuantity is not null and ChargeCategory is \"Purchase\", CommitmentDiscountQuantity adheres to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -359,9 +400,19 @@
         ]
       },
       "Condition": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "ChargeCategory",
-        "Value": null
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CommitmentDiscountQuantity",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Purchase"
+          }
+        ]
       },
       "Dependencies": [
         "CAU-CommitmentDiscountQuantity-C-011-C",
@@ -378,6 +429,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 130,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the commitment discount's term when ChargeFrequency is \"One-Time\".",
       "Keyword": "MUST",
@@ -401,6 +455,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 140,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each charge period that corresponds with the purchase when ChargeFrequency is \"Recurring\".",
       "Keyword": "MUST",
@@ -424,8 +481,11 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 150,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "When ChargeCategory is \"Usage\", CommitmentDiscountQuantity adheres to the following additional requirements:",
+      "MustSatisfy": "When CommitmentDiscountQuantity is not null and ChargeCategory is \"Usage\", CommitmentDiscountQuantity adheres to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -441,9 +501,19 @@
         ]
       },
       "Condition": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "ChargeCategory",
-        "Value": "Usage"
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CommitmentDiscountQuantity",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          }
+        ]
       },
       "Dependencies": [
         "CAU-CommitmentDiscountQuantity-C-014-C",
@@ -460,6 +530,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 160,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given charge period when CommitmentDiscountStatus is \"Used\".",
       "Keyword": "MUST",
@@ -491,6 +564,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 170,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given charge period when CommitmentDiscountStatus is \"Unused\".",
       "Keyword": "MUST",
@@ -511,6 +587,36 @@
         ]
       },
       "Dependencies": []
+    }
+  },
+  "CAU-CommitmentDiscountQuantity-C-016-C": {
+    "Function": "Nullability",
+    "Reference": "CommitmentDiscountQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountQuantity MUST be null when SkuPriceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "CommitmentDiscountQuantity",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
     }
   }
 }

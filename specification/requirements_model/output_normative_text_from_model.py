@@ -93,7 +93,18 @@ def collect(spec: dict):
         eid, num = extract_entity_from_ids(model_key, model.get("EntityId"), must)
         etype = infer_entity_type(model_key, model.get("EntityType"))
         order = model.get("Order")  # Extract Order field
-        by_ref[ref.strip()].append({"ruleid": model_key, "eid": eid, "num": num, "etype": etype, "must": must.strip(), "order": order})
+        function = model.get("Function")  # Extract Function field
+        dependencies = vc.get("Dependencies", [])  # Extract Dependencies
+        by_ref[ref.strip()].append({
+            "ruleid": model_key, 
+            "eid": eid, 
+            "num": num, 
+            "etype": etype, 
+            "must": must.strip(), 
+            "order": order,
+            "function": function,
+            "dependencies": dependencies
+        })
 
     # Deduplicate by (eid, etype) within a reference (keep first occurrence)
     deduped = {}
@@ -133,11 +144,84 @@ def build_markdown(grouped, exclude_rmids=False):
     for ref, items in grouped.items():
         lines.append(f"# {ref}")
         lines.append("")
-        for it in items:
+        
+        # Build dependency tree to determine proper nesting
+        def build_dependency_map(items):
+            """Build a map of rule ID -> list of dependent rule IDs"""
+            dependency_map = {}
+            rule_map = {}  # rule_id -> item
+            
+            for item in items:
+                rule_id = item["ruleid"]
+                rule_map[rule_id] = item
+                
+                # If this is a composite rule, its dependencies are its children
+                if item.get("function") == "Composite":
+                    dependency_map[rule_id] = item.get("dependencies", [])
+                else:
+                    dependency_map[rule_id] = []
+            
+            return dependency_map, rule_map
+        
+        def get_rule_level(rule_id, dependency_map, rule_map, visited=None):
+            """Recursively determine the nesting level of a rule"""
+            if visited is None:
+                visited = set()
+            
+            if rule_id in visited:
+                return 0  # Avoid infinite recursion
+            
+            visited.add(rule_id)
+            
+            # Find ALL composite rules that contain this rule as a dependency
+            parent_composites = []
+            for parent_id, deps in dependency_map.items():
+                if rule_id in deps:
+                    parent_composites.append(parent_id)
+            
+            if parent_composites:
+                # If multiple parents, choose the one that is itself a dependency (most specific)
+                # This handles cases where a rule appears in both root and sub-composite dependencies
+                specific_parent = None
+                for parent_id in parent_composites:
+                    # Check if this parent is itself a dependency of another composite
+                    is_nested = any(parent_id in deps for other_id, deps in dependency_map.items() if other_id != parent_id)
+                    if is_nested:
+                        specific_parent = parent_id
+                        break
+                
+                # If no nested parent found, use the first one (likely root)
+                chosen_parent = specific_parent if specific_parent else parent_composites[0]
+                parent_level = get_rule_level(chosen_parent, dependency_map, rule_map, visited.copy())
+                return parent_level + 1
+            
+            # If not found as a dependency, it's a root-level rule
+            # Check if this is the main composite rule for this Reference
+            if rule_id in rule_map:
+                rule = rule_map[rule_id]
+                # The main composite is either Order 0 OR the composite that contains all other rules
+                if rule.get("order") == 0:
+                    return 0
+                elif (rule.get("function") == "Composite" and 
+                      rule.get("eid") == "-000-" and
+                      not any(rule_id in deps for deps in dependency_map.values())):
+                    # This composite is not a dependency of any other composite, so it's root
+                    return 0
+                
+            return 1  # Default level for non-composite root rules
+        
+        dependency_map, rule_map = build_dependency_map(items)
+        
+        # Generate output with proper indentation based on dependency structure
+        for item in items:
+            rule_id = item["ruleid"]
+            level = get_rule_level(rule_id, dependency_map, rule_map)
+            indent = "  " * level
+            
             if exclude_rmids:
-                lines.append(f'{it["must"]}')
+                lines.append(f'{indent}{item["must"]}')
             else:
-                lines.append(f'{it["ruleid"]} – {it["must"]}')
+                lines.append(f'{indent}{item["ruleid"]} – {item["must"]}')
         lines.append("")
     return ("\n".join(lines)).rstrip() + "\n"
 

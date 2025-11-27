@@ -985,8 +985,11 @@
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
     "Type": "Static",
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountQuantity MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "MustSatisfy": "CommitmentDiscountQuantity MUST be present in a Cost and Usage FOCUS dataset when the service provider supports commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
