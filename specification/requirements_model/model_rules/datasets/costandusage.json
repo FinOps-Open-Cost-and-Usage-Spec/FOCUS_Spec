@@ -8,6 +8,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "The CostAndUsage dataset adheres to the following requirements:",
       "Keyword": "MUST",
@@ -659,8 +662,11 @@
       "AVAILABILITY_ZONE_SUPPORTED"
     ],
     "Type": "Static",
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AvailabilityZone is RECOMMENDED to be present in a FOCUS dataset when the provider supports deploying resources or services within an availability zone.",
+      "MustSatisfy": "AvailabilityZone is RECOMMENDED to be present in a Cost and Usage FOCUS dataset when the host provider supports deploying resources or services within an availability zone.",
       "Keyword": "RECOMMENDED",
       "Requirement": {
         "CheckFunction": "ColumnPresent",

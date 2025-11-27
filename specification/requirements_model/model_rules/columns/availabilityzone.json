@@ -10,8 +10,11 @@
       "AVAILABILITY_ZONE_SUPPORTED"
     ],
     "Type": "Static",
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "The AvailabilityZone column adheres to the following requirements:",
+      "MustSatisfy": "AvailabilityZone adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -48,6 +51,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AvailabilityZone MUST be of type String.",
       "Keyword": "MUST",
@@ -68,6 +74,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Static",
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AvailabilityZone MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
@@ -88,6 +97,9 @@
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AvailabilityZone MUST be null when a charge is not specific to an availability zone.",
       "Keyword": "MUST",
