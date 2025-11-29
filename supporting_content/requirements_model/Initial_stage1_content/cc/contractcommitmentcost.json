@@ -1,0 +1,142 @@
+{
+  "CCT-contractcommitmentcost-C-000-M": {
+    "Order": "0",
+    "Function": "Presence",
+    "Reference": "ContractCommitmentCost",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCost MUST be present in a Contract Commitment FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-contractcommitmentcost-C-001-M": {
+    "Order": "10",
+    "Function": "DataType",
+    "Reference": "ContractCommitmentCost",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCost MUST be of type Decimal.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-contractcommitmentcost-C-002-M": {
+    "Order": "20",
+    "Function": "Format",
+    "Reference": "ContractCommitmentCost",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCost MUST conform to NumericFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-contractcommitmentcost-C-003-M": {
+    "Order": "30",
+    "Function": "NullabilityRules",
+    "Reference": "ContractCommitmentCost",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCost MUST NOT be null when ContractCommitmentCategory is \"Spend\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-contractcommitmentcost-C-004-O": {
+    "Order": "40",
+    "Function": "NullabilityRules",
+    "Reference": "ContractCommitmentCost",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCost MAY be null when ContractCommitmentCategory is \"Usage\".",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-contractcommitmentcost-C-005-M": {
+    "Order": "50",
+    "Function": "Validation",
+    "Reference": "ContractCommitmentCost",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCost MUST be a valid decimal value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-contractcommitmentcost-C-006-M": {
+    "Order": "60",
+    "Function": "Validation",
+    "Reference": "ContractCommitmentCost",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCost MUST be denominated in the BillingCurrency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
