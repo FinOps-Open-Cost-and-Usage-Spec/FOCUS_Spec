@@ -110,7 +110,7 @@
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentId-C-005-O": {
+  "CCT-ContractCommitmentId-C-005-C": {
     "Order": 50,
     "Function": "Composite",
     "Reference": "ContractCommitmentId",
