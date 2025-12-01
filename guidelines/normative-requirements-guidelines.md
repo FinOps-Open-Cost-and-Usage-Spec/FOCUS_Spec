@@ -30,7 +30,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
   * **MUST** – an absolute requirement
   * **MUST NOT** – a prohibition
   * **SHOULD** – recommended but not mandatory
-  * **RECOMMENDED** - recommended but not mandatory (currently used only for presence-related normative requirements, as specified in the [FOCUS Feature Level](#focusfeaturelevel) section)
+  * **RECOMMENDED** - recommended but not mandatory (no longer allowed for use in normative requirements from Dec 2025 onwards; refer to editorial guidelines)
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
 
