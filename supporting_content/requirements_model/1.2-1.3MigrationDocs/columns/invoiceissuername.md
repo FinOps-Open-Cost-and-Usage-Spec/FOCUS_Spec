@@ -1,4 +1,4 @@
-# InvoiceIssuer
+# InvoiceIssuerName
 
 ## Normative Text v1.2
 
