@@ -1,0 +1,240 @@
+{
+  "CAU-AllocatedResourceId-C-000-C": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedResourceId-C-001-C",
+        "CAU-AllocatedResourceId-C-002-M",
+        "CAU-AllocatedResourceId-C-003-M",
+        "CAU-AllocatedResourceId-C-004-C",
+        "CAU-AllocatedResourceId-C-005-C",
+        "CAU-AllocatedResourceId-C-006-C",
+        "CAU-AllocatedResourceId-C-007-C",
+        "CAU-AllocatedResourceId-C-008-O",
+        "CAU-AllocatedResourceId-C-009-O",
+        "CAU-AllocatedResourceId-C-010-O"
+      ]
+    }
+  },
+  "CAU-AllocatedResourceId-C-001-C": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "Revise the value assigned to the Applicability Criteria",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": ["DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceId-C-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceId-C-003-M": {
+    "Order": 30,
+    "Function": "Format",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId MUST conform to [StringHandling](#stringhandling) requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceId-C-004-C": {
+    "Order": 40,
+    "Function": "Composite",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedResourceId-C-005-C",
+        "CAU-AllocatedResourceId-C-006-C",
+        "CAU-AllocatedResourceId-C-007-C"
+      ]
+    }
+  },
+  "CAU-AllocatedResourceId-C-005-C": {
+    "Order": 50,
+    "Function": "NullabilityRules",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceId-C-006-C": {
+    "Order": 60,
+    "Function": "NullabilityRules",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId MUST be null when a *charge* represents the unallocated portion of the origin *charge* after split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceId-C-007-C": {
+    "Order": 70,
+    "Function": "NullabilityRules",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId MUST NOT be null when a *charge* represents the allocated portion of the origin *charge*.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceId-C-008-O": {
+    "Order": 80,
+    "Function": "Composite",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When AllocatedResourceId is not null, AllocatedResourceId adheres to the following additional requirements:",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedResourceId-C-009-O",
+        "CAU-AllocatedResourceId-C-010-O"
+      ]
+    }
+  },
+  "CAU-AllocatedResourceId-C-009-O": {
+    "Order": 90,
+    "Function": "Validation",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId SHOULD be a locally unique identifier within the associated ResourceId and ChargePeriod.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceId-C-010-O": {
+    "Order": 100,
+    "Function": "Validation",
+    "Reference": "AllocatedResourceId",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceId MAY NOT be unique across ResourceId or ChargePeriod values.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
