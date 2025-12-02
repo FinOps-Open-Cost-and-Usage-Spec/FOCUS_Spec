@@ -1,0 +1,680 @@
+{
+  "CAU-AllocatedMethodDetails-C-000-C": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The AllocatedMethodDetails column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetails-C-001-C",
+        "CAU-AllocatedMethodDetails-C-002-M",
+        "CAU-AllocatedMethodDetails-C-003-M",
+        "CAU-AllocatedMethodDetails-C-004-M",
+        "CAU-AllocatedMethodDetails-C-005-C",
+        "CAU-AllocatedMethodDetails-C-006-C",
+        "CAU-AllocatedMethodDetails-C-007-C",
+        "CAU-AllocatedMethodDetails-C-008-C",
+        "CAU-AllocatedMethodDetails-C-009-M",
+        "CAU-AllocatedMethodDetails-C-010-M",
+        "CAU-AllocatedMethodDetails-C-011-M",
+        "CAU-AllocatedMethodDetails-C-012-M",
+        "CAU-AllocatedMethodDetails-C-013-M",
+        "CAU-AllocatedMethodDetails-C-014-M",
+        "CAU-AllocatedMethodDetails-C-015-M",
+        "CAU-AllocatedMethodDetails-C-016-O",
+        "CAU-AllocatedMethodDetails-C-017-C",
+        "CAU-AllocatedMethodDetails-C-018-O",
+        "CAU-AllocatedMethodDetails-C-019-M",
+        "CAU-AllocatedMethodDetails-C-020-M",
+        "CAU-AllocatedMethodDetails-C-021-M",
+        "CAU-AllocatedMethodDetails-C-022-M",
+        "CAU-AllocatedMethodDetails-C-023-C",
+        "CAU-AllocatedMethodDetails-C-024-C",
+        "CAU-AllocatedMethodDetails-C-025-M",
+        "CAU-AllocatedMethodDetails-C-026-O",
+        "CAU-AllocatedMethodDetails-C-027-C",
+        "CAU-AllocatedMethodDetails-C-028-C",
+        "CAU-AllocatedMethodDetails-C-029-M",
+        "CAU-AllocatedMethodDetails-C-030-O"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-001-C": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": ["DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-003-M": {
+    "Order": 30,
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails MUST conform to [StringHandling](#stringhandling) requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-004-M": {
+    "Order": 40,
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-005-C": {
+    "Order": 50,
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetails-C-006-C",
+        "CAU-AllocatedMethodDetails-C-007-C"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-006-C": {
+    "Order": 60,
+    "Function": "NullabilityRules",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-007-C": {
+    "Order": 70,
+    "Function": "NullabilityRules",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-008-C": {
+    "Order": 80,
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodDetails adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetails-C-009-M",
+        "CAU-AllocatedMethodDetails-C-010-M",
+        "CAU-AllocatedMethodDetails-C-011-M",
+        "CAU-AllocatedMethodDetails-C-012-M",
+        "CAU-AllocatedMethodDetails-C-016-O",
+        "CAU-AllocatedMethodDetails-C-017-C",
+        "CAU-AllocatedMethodDetails-C-018-O"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-009-M": {
+    "Order": 90,
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails MUST have a top-level key \"Elements\" which contains an array.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-010-M": {
+    "Order": 100,
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Each item in \"Elements\" MUST be an object.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-011-M": {
+    "Order": 110,
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Objects inside \"Elements\" MUST conform to [KeyValueFormat](#key-valueformat) requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-012-M": {
+    "Order": 120,
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS-defined allocation properties adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetails-C-013-M",
+        "CAU-AllocatedMethodDetails-C-014-M",
+        "CAU-AllocatedMethodDetails-C-015-M"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-013-M": {
+    "Order": 130,
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Allocation property key MUST match the spelling and casing specified for the FOCUS-defined property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-014-M": {
+    "Order": 140,
+    "Function": "DataType",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Allocation property value MUST be of the type specified for that property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-015-M": {
+    "Order": 150,
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Allocation properties MUST adhere to additional normative requirements specific to that property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-016-O": {
+    "Order": 160,
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generator-defined allocation properties MAY be included in \"Elements\".",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-017-C": {
+    "Order": 170,
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Allocation property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined allocation property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-018-O": {
+    "Order": 180,
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails root object MAY contain additional data generator-defined items, in addition to \"Elements\".",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-019-M": {
+    "Order": 190,
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The \"AllocatedRatio\" property adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetails-C-020-M",
+        "CAU-AllocatedMethodDetails-C-021-M",
+        "CAU-AllocatedMethodDetails-C-022-M"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-020-M": {
+    "Order": 200,
+    "Function": "Presence",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "\"AllocatedRatio\" MUST be included inside each \"Elements\" object.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-021-M": {
+    "Order": 210,
+    "Function": "DataType",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"AllocatedRatio\" MUST be a decimal value compatible with [NumericFormat](#numericformat) representing the allocated charge's percentage of the origin charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-022-M": {
+    "Order": 220,
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for all \"AllocatedRatio\" properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-023-C": {
+    "Order": 230,
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The \"UsageUnit\" property adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetails-C-024-C",
+        "CAU-AllocatedMethodDetails-C-025-M",
+        "CAU-AllocatedMethodDetails-C-026-O"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-024-C": {
+    "Order": 240,
+    "Function": "Presence",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "\"UsageUnit\" MUST be included inside an \"Elements\" object if \"UsageQuantity\" allocation property is included in that \"Elements\" object, otherwise \"UsageUnit\" MAY be included in each \"Elements\" object.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-025-M": {
+    "Order": 250,
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"UsageUnit\" MUST capture the unit or component of data generator's documented [AllocationMethod](#allocationmethodid) that was used to determine the \"AllocatedRatio\" value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-026-O": {
+    "Order": 260,
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"UsageUnit\" SHOULD conform to [UnitFormat](#unitformat) requirements.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-027-C": {
+    "Order": 270,
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The \"UsageQuantity\" property adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetails-C-028-C",
+        "CAU-AllocatedMethodDetails-C-029-M",
+        "CAU-AllocatedMethodDetails-C-030-O"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-028-C": {
+    "Order": 280,
+    "Function": "Presence",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "\"UsageQuantity\" MAY be included inside an \"Elements\" object when that \"Elements\" object contains a \"UsageUnit\" allocation property.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-029-M": {
+    "Order": 290,
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"UsageQuantity\" MUST be compatible with NumericFormat.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetails-C-030-O": {
+    "Order": 300,
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetails",
+    "EntityType": "Column",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"UsageQuantity\" SHOULD capture the quantity or volume of the \"UsageUnit\" measured by the data generator that was used to determine the \"AllocatedRatio\" value.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
