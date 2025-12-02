@@ -1,5 +1,5 @@
 {
-  "CAU-allocatedmethodid-C-000-C": {
+  "CAU-AllocatedMethodId-C-000-C": {
     "Order": "0",
     "Function": "Composite",
     "Reference": "AllocatedMethodId",
@@ -17,18 +17,18 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": [
-        "CAU-allocatedmethodid-C-001-C",
-        "CAU-allocatedmethodid-C-002-M",
-        "CAU-allocatedmethodid-C-003-M",
-        "CAU-allocatedmethodid-C-004-C",
-        "CAU-allocatedmethodid-C-005-C",
-        "CAU-allocatedmethodid-C-006-C",
-        "CAU-allocatedmethodid-C-007-M"
+        "CAU-AllocatedMethodId-C-001-C",
+        "CAU-AllocatedMethodId-C-002-M",
+        "CAU-AllocatedMethodId-C-003-M",
+        "CAU-AllocatedMethodId-C-004-C",
+        "CAU-AllocatedMethodId-C-005-C",
+        "CAU-AllocatedMethodId-C-006-C",
+        "CAU-AllocatedMethodId-C-007-M"
       ]
     }
   },
 
-  "CAU-allocatedmethodid-C-001-C": {
+  "CAU-AllocatedMethodId-C-001-C": {
     "Order": "10",
     "Function": "Presence",
     "Reference": "AllocatedMethodId",
@@ -49,7 +49,7 @@
     }
   },
 
-  "CAU-allocatedmethodid-C-002-M": {
+  "CAU-AllocatedMethodId-C-002-M": {
     "Order": "20",
     "Function": "DataType",
     "Reference": "AllocatedMethodId",
@@ -70,7 +70,7 @@
     }
   },
 
-  "CAU-allocatedmethodid-C-003-M": {
+  "CAU-AllocatedMethodId-C-003-M": {
     "Order": "30",
     "Function": "Format",
     "Reference": "AllocatedMethodId",
@@ -91,7 +91,7 @@
     }
   },
 
-  "CAU-allocatedmethodid-C-004-C": {
+  "CAU-AllocatedMethodId-C-004-C": {
     "Order": "40",
     "Function": "Composite",
     "Reference": "AllocatedMethodId",
@@ -109,13 +109,13 @@
       "Requirement": {},
       "Condition": {},
       "Dependencies": [
-        "CAU-allocatedmethodid-C-005-C",
-        "CAU-allocatedmethodid-C-006-C"
+        "CAU-AllocatedMethodId-C-005-C",
+        "CAU-AllocatedMethodId-C-006-C"
       ]
     }
   },
 
-  "CAU-allocatedmethodid-C-005-C": {
+  "CAU-AllocatedMethodId-C-005-C": {
     "Order": "50",
     "Function": "NullabilityRules",
     "Reference": "AllocatedMethodId",
@@ -136,7 +136,7 @@
     }
   },
 
-  "CAU-allocatedmethodid-C-006-C": {
+  "CAU-AllocatedMethodId-C-006-C": {
     "Order": "60",
     "Function": "NullabilityRules",
     "Reference": "AllocatedMethodId",
@@ -157,7 +157,7 @@
     }
   },
 
-  "CAU-allocatedmethodid-C-007-M": {
+  "CAU-AllocatedMethodId-C-007-M": {
     "Order": "70",
     "Function": "Validation",
     "Reference": "AllocatedMethodId",
