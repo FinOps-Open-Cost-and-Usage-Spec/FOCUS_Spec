@@ -57,7 +57,7 @@
     "EntityType": "Column",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost And Usage",
-    "Notes": "",
+    "Notes": "Note: Review Applicability Criteria",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": ["DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"],
