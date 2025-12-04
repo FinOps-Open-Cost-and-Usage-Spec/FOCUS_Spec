@@ -1,0 +1,86 @@
+{
+  "MTD-DataGenerator-O-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "DataGenerator",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DataGenerator adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "MTD-DataGenerator-O-001-M",
+        "MTD-DataGenerator-O-002-M",
+        "MTD-DataGenerator-O-003-M"
+      ]
+    }
+  },
+  "MTD-DataGenerator-O-001-M": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "DataGenerator",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DataGenerator MUST be present in the Metadata.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-DataGenerator-O-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "DataGenerator",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DataGenerator MUST be of type Object.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-DataGenerator-O-003-M": {
+    "Order": 30,
+    "Function": "NullabilityRules",
+    "Reference": "DataGenerator",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DataGenerator MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
