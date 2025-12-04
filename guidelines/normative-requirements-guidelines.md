@@ -30,9 +30,10 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
   * **MUST** – an absolute requirement
   * **MUST NOT** – a prohibition
   * **SHOULD** – recommended but not mandatory
-  * **RECOMMENDED** - recommended but not mandatory (no longer allowed for use in normative requirements from Dec 2025 onwards; refer to editorial guidelines)
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
+
+  > ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -123,7 +124,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 | **Requirement Type** | **Requirement Group**              | **When required?**                    | **Example**                                                                                |
 |----------------------|------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------|
-| Technical            | Presence                           | Always                                | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when {Condition}. |
+| Technical            | Presence                           | Always                                | {ColumnId} MUST be present in a {DatasetName} [*FOCUS dataset*](#glossary:FOCUS-dataset) when {Condition}. |
 | Technical            | Data Type                          | Always                                | {ColumnId} MUST be of type String.                                                         |
 | Technical            | Value Format                       | Always (except normalized dimensions) | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                 |
 | Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when {Condition}.                     |
@@ -143,9 +144,10 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   * **MUST** – an absolute requirement
   * **MUST NOT** – a prohibition
   * **SHOULD** – recommended but not mandatory
-  * **RECOMMENDED** - recommended but not mandatory (currently used only for presence-related normative requirements, as specified in the [FOCUS Feature Level](#focusfeaturelevel) section)
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
+
+  > ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -327,9 +329,10 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### Technical Requirements: Presence
 
 ```markdown
-* <ColumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* <CoumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
-* <ColumnId> is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
+* <ColumnId> MUST be present in a <DatasetName> [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* <CoumnId> MUST be present in a <DatasetName> [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
+* <ColumnId> SHOULD be present in a <DatasetName> [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* <ColumnId> SHOULD be present in a <DatasetName> [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
 ```
 
 ##### Technical Requirements: Data Type
