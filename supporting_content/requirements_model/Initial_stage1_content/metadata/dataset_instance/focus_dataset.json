@@ -1,0 +1,107 @@
+{
+  "MTD-FocusDatasetId-O-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "FocusDatasetId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The FocusDatasetId property adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "MTD-FocusDatasetId-O-001-M",
+        "MTD-FocusDatasetId-O-002-M",
+        "MTD-FocusDatasetId-O-003-M",
+        "MTD-FocusDatasetId-O-004-M"
+      ]
+    }
+  },
+  "MTD-FocusDatasetId-O-001-M": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "FocusDatasetId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "FocusDatasetId MUST be present in an object within the DatasetInstance collection.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-FocusDatasetId-O-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "FocusDatasetId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "FocusDatasetId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-FocusDatasetId-O-003-M": {
+    "Order": 30,
+    "Function": "NullabilityRules",
+    "Reference": "FocusDatasetId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "FocusDatasetId MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-FocusDatasetId-O-004-M": {
+    "Order": 40,
+    "Function": "Validation",
+    "Reference": "FocusDatasetId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "FocusDatasetId MUST match the Dataset ID of one of the FOCUS datasets defined in the FOCUS specification.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
