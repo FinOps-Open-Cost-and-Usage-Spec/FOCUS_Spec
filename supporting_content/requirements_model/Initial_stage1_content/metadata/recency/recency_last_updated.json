@@ -1,0 +1,107 @@
+{
+  "MTD-RecencyLastUpdated-O-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "RecencyLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RecencyLastUpdated adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "MTD-RecencyLastUpdated-O-001-M",
+        "MTD-RecencyLastUpdated-O-002-M",
+        "MTD-RecencyLastUpdated-O-003-M",
+        "MTD-RecencyLastUpdated-O-004-M"
+      ]
+    }
+  },
+  "MTD-RecencyLastUpdated-O-001-M": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "RecencyLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RecencyLastUpdated MUST be present in the metadata.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-RecencyLastUpdated-O-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "RecencyLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RecencyLastUpdated MUST be of type Date/Time.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-RecencyLastUpdated-O-003-M": {
+    "Order": 30,
+    "Function": "NullabilityRules",
+    "Reference": "RecencyLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RecencyLastUpdated MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-RecencyLastUpdated-O-004-M": {
+    "Order": 40,
+    "Function": "Format",
+    "Reference": "RecencyLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RecencyLastUpdated MUST conform to DateTimeFormat.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
