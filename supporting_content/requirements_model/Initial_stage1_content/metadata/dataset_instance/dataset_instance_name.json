@@ -1,0 +1,86 @@
+{
+  "MTD-DatasetInstanceName-O-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "DatasetInstanceName",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DatasetInstanceName adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "MTD-DatasetInstanceName-O-001-M",
+        "MTD-DatasetInstanceName-O-002-M",
+        "MTD-DatasetInstanceName-O-003-M"
+      ]
+    }
+  },
+  "MTD-DatasetInstanceName-O-001-M": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "DatasetInstanceName",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DatasetInstanceName MUST be present in an object within the DatasetInstance collection.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-DatasetInstanceName-O-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "DatasetInstanceName",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DatasetInstanceName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-DatasetInstanceName-O-003-M": {
+    "Order": 30,
+    "Function": "NullabilityRules",
+    "Reference": "DatasetInstanceName",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DatasetInstanceName MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
