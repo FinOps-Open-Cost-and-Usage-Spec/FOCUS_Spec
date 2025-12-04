@@ -148,7 +148,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Display Names:** They SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. In these sections, display names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
-* **Normative Keyword Standardization:** To ensure consistency in the specification, normative language MUST use only the BCP-14 keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY. The group agreed the term "RECOMMENDED" MUST NOT be used as a normative keyword. Where legacy text uses RECOMMENDED, it MUST be replaced with SHOULD.
+* **Normative Keyword Standardization:** To ensure consistency in the specification, normative language MUST use only the BCP-14 keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY. The term "RECOMMENDED" MUST NOT be used as a normative keyword. Where legacy text uses RECOMMENDED, it MUST be replaced with SHOULD.
 
 * **Non-Normative Use of “recommended”:** The lowercase word “recommended” may still be used in non-normative, descriptive text (e.g., “Feature level: Recommended”) provided it does not express a normative requirement on implementers.
 
