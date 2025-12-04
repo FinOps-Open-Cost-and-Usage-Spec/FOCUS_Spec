@@ -1,0 +1,107 @@
+{
+  "MTD-DatasetInstanceId-O-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "DatasetInstanceId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DatasetInstanceId adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "MTD-DatasetInstanceId-O-001-M",
+        "MTD-DatasetInstanceId-O-002-M",
+        "MTD-DatasetInstanceId-O-003-M",
+        "MTD-DatasetInstanceId-O-004-O"
+      ]
+    }
+  },
+  "MTD-DatasetInstanceId-O-001-M": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "DatasetInstanceId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DatasetInstanceId MUST be present in an object within the Recency collection.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-DatasetInstanceId-O-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "DatasetInstanceId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DatasetInstanceId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-DatasetInstanceId-O-003-M": {
+    "Order": 30,
+    "Function": "NullabilityRules",
+    "Reference": "DatasetInstanceId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DatasetInstanceId MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-DatasetInstanceId-O-004-O": {
+    "Order": 40,
+    "Function": "Format",
+    "Reference": "DatasetInstanceId",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "DatasetInstanceId SHOULD be a Globally Unique Identifier (GUID).",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
