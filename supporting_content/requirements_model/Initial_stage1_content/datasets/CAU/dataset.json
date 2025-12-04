@@ -1,0 +1,149 @@
+{
+  "CAU-CostAndUsage-D-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-001-M",
+        "CAU-CostAndUsage-D-002-M",
+        "CAU-CostAndUsage-D-003-M",
+        "CAU-CostAndUsage-D-004-M",
+        "CAU-CostAndUsage-D-005-M",
+        "CAU-CostAndUsage-D-006-M"
+      ]
+    }
+  },
+  "CAU-CostAndUsage-D-001-M": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST be present.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-002-M": {
+    "Order": 20,
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST conform to ColumnHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-003-M": {
+    "Order": 30,
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST conform to NullHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-004-M": {
+    "Order": 40,
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST conform to DiscountHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-005-M": {
+    "Order": 50,
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST conform to InvoiceHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-006-M": {
+    "Order": 60,
+    "Function": "Validation",
+    "Reference": "CostAndUsage",
+    "EntityType": "Dataset",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CostAndUsage MUST conform to DataGeneratorCalculatedSplitCostAllocationHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
