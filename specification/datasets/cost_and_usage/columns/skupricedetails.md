@@ -59,13 +59,13 @@ A set of properties of a SKU Price ID which are meaningful and common to all ins
 
 ## Content Constraints
 
-| Constraint    | Value                              |
-| :------------ | :--------------------------------- |
-| Column type   | Dimension                          |
-| Feature level | Conditional                        |
-| Allows nulls  | True                               |
-| Data type     | JSON                               |
-| Value format  | [KeyValueFormat](#key-valueformat) |
+| Constraint    | Value                                |
+| :------------ | :----------------------------------- |
+| Column type   | Dimension                            |
+| Feature level | Conditional                          |
+| Allows nulls  | True                                 |
+| Data type     | JSON                                 |
+| Value format  | [Key-Value Format](#key-valueformat) |
 
 ### FOCUS-Defined Properties
 

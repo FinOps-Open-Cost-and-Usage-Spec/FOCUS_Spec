@@ -3,7 +3,7 @@ on:
   push:
     branches-ignore:
       - "main"
-      - "candidate_release"
+      - "candidate_recommendation"
 
 jobs:
   # The job that will use the container image you just pushed to ghcr.io
