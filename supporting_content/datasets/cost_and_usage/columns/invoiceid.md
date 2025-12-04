@@ -34,7 +34,7 @@ Examples of this can be found here: https://docs.google.com/spreadsheets/d/1fzLu
 # Provider information on invoice handling
 ## Google
 Invoices do not contain any row level details or product details; they only contain a link to the cost table in the billing console which is linked to the invoice.month column.
-Invoices may show different totals to finops dashboards as an invoice month may be calculated differently to a calendar month, practitioner would need to understand this difference and how to map the data in Finops reports to calendar month and invoice month, they would require a report in their finops reporting tools that showed the detailed report for invoice month and calendar month: https://cloud.google.com/billing/docs/how-to/cost-table.
+Invoices may show different totals to finops dashboards as an invoice month may be calculated differently to a calendar month, practitioner would need to understand this difference and how to map the data in FinOps reports to calendar month and invoice month, they would require a report in their finops reporting tools that showed the detailed report for invoice month and calendar month: https://cloud.google.com/billing/docs/how-to/cost-table.
 Google invoices are issued on the last day of the month and contain a document number which is the invoice ID. Depending on your google structure you have one primary billing accounts and invoices would be issued against the primary billing account ID. Generally, non service provider cloud users will have one billing account, SaaS providers or service providers may have sub billing account id's to separate out charges for customers but are all rolled up to the primary billing account id.
 
 ## Microsoft

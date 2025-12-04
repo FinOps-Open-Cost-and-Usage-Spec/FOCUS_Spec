@@ -1,6 +1,6 @@
 # Metadata
 
-The FOCUS specification defines a metadata structure to be supplied by data providers to facilitate practitioners' use of FOCUS data. This metadata includes general information the [*dataset artifact*](#glossary:dataset-artifact).
+The FOCUS specification defines a metadata structure to be supplied by data providers to facilitate practitioners' use of FOCUS data. This metadata includes general information about the [*dataset artifact*](#glossary:dataset-artifact).
 
 The metadata includes the following sections:
 
