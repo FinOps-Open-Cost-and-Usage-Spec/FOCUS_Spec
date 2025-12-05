@@ -87,7 +87,7 @@ Under each column defined in the FOCUS specification, there exists a 'Feature le
 
 * If the existence of a column is described with MUST with no conditions of when it applies, then the feature level is designated as 'Mandatory'.
 * If the existence of a column is described as MUST with conditions of when it applies, then the feature level is designated as 'Conditional'.
-* If the existence of a column is described as RECOMMENDED, then the feature level is designated as 'Recommended'.
+* If the existence of a column is described as SHOULD, then the feature level is designated as 'Recommended'.
 * If the existence of a column is described as MAY, then the feature level is designated as 'Optional'.
 
 ## Conformance Checkers and Validators
