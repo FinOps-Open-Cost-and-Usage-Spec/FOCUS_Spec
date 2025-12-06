@@ -11,7 +11,7 @@ The SubAccountName column adheres to the following requirements:
   * SubAccountName MUST be null when [SubAccountId](#subaccountid) is null.
   * SubAccountName MUST NOT be null when SubAccountId is not null.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

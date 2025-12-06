@@ -10,7 +10,7 @@ The RegionId column adheres to the following requirements:
   * RegionId MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region.
   * RegionId MAY be null when a *resource* or *service* is not operated in or managed from a distinct region.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 ## Requirements
 
 RegionId adheres to the following requirements:

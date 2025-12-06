@@ -11,7 +11,7 @@ The CommitmentDiscountType column adheres to the following requirements:
   * CommitmentDiscountType MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
   * CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

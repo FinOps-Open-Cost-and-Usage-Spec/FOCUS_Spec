@@ -13,7 +13,7 @@ The CommitmentDiscountName column adheres to the following requirements:
     * CommitmentDiscountName MUST NOT be null when a display name can be assigned to a *commitment discount*.
     * CommitmentDiscountName MAY be null when a display name cannot be assigned to a *commitment discount*.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

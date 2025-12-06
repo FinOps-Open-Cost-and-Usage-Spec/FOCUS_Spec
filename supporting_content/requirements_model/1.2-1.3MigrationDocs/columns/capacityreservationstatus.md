@@ -14,7 +14,7 @@ The CapacityReservationStatus column adheres to the following requirements:
   * CapacityReservationStatus MUST be "Unused" when the *charge* represents the unused portion of a *capacity reservation*.
   * CapacityReservationStatus MUST be "Used" when the *charge* represents the used portion of a *capacity reservation*.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

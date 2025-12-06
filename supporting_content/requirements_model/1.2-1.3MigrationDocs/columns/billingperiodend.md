@@ -10,7 +10,7 @@ The BillingPeriodEnd column adheres to the following requirements:
 * BillingPeriodEnd MUST NOT be null.
 * BillingPeriodEnd MUST be the *exclusive end bound* of the *billing period*.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

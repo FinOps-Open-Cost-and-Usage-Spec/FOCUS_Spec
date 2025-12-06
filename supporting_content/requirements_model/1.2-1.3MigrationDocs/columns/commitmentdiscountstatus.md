@@ -11,7 +11,7 @@ The CommitmentDiscountStatus column adheres to the following requirements:
   * CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and [Charge Category](#chargecategory) is "Usage".
 * CommitmentDiscountStatus MUST be one of the allowed values.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

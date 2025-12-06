@@ -10,7 +10,7 @@ The InvoiceIssuerName column adheres to the following requirements:
 * InvoiceIssuerName MUST NOT be null.
 
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

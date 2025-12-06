@@ -13,7 +13,7 @@ The InvoiceId column adheres to the following requirements:
 * InvoiceId MAY be generated prior to an invoice being issued.
 * InvoiceId MUST be associated with the related *charge* and BillingAccountId when a pre-generated invoice or provisional invoice exists.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

@@ -11,7 +11,7 @@ The RegionName column adheres to the following requirements:
   * RegionName MUST be null when [RegionId](#regionid) is null.
   * RegionName MUST NOT be null when RegionId is not null.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

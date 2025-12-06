@@ -11,7 +11,7 @@ The CommitmentDiscountCategory column adheres to the following requirements:
   * CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.
 * CommitmentDiscountCategory MUST be one of the allowed values.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

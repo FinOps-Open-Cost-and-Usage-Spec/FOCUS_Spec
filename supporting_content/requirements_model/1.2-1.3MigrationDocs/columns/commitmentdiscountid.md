@@ -14,7 +14,7 @@ The CommitmentDiscountId column adheres to the following requirements:
   * CommitmentDiscountId MUST be a unique identifier within the provider.
   * CommitmentDiscountId SHOULD be a fully-qualified identifier.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

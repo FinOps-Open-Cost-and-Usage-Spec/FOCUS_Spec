@@ -10,7 +10,7 @@ The BillingPeriodStart column adheres to the following requirements:
 * BillingPeriodStart MUST NOT be null.
 * BillingPeriodStart MUST be the *inclusive start bound* of the *billing period*.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 

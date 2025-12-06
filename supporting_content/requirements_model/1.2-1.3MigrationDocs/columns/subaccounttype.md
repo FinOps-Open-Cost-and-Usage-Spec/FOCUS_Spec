@@ -12,7 +12,7 @@ The SubAccountType column adheres to the following requirements:
   * SubAccountType MUST NOT be null when SubAccountId is not null.
 * SubAccountType MUST be a consistent, readable display value.
 
-## Normative Text v1.3-cr
+## Normative Text v1.3
 
 ## Requirements
 
