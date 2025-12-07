@@ -21,7 +21,7 @@
         "MTD-TimeSectorEnd-O-002-M",
         "MTD-TimeSectorEnd-O-003-M",
         "MTD-TimeSectorEnd-O-004-M",
-        "MTD-TimeSectorEnd-O-005-O",
+        "MTD-TimeSectorEnd-O-005-M",
         "MTD-TimeSectorEnd-O-006-M"
       ]
     }
@@ -106,7 +106,7 @@
       "Dependencies": []
     }
   },
-  "MTD-TimeSectorEnd-O-005-O": {
+  "MTD-TimeSectorEnd-O-005-M": {
     "Order": 50,
     "Function": "Validation",
     "Reference": "TimeSectorEnd",
