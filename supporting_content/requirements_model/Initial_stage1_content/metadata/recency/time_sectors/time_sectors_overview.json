@@ -1,0 +1,155 @@
+{
+  "MTD-TimeSectors-O-000-C": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "TimeSectors",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectors adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "MTD-TimeSectors-O-001-C",
+        "MTD-TimeSectors-O-002-M",
+        "MTD-TimeSectors-O-003-M",
+        "MTD-TimeSectors-O-004-M",
+        "MTD-TimeSectors-O-005-M",
+        "MTD-TimeSectors-O-006-C"
+      ]
+    }
+  },
+
+  "MTD-TimeSectors-O-001-C": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "TimeSectors",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "Review ApplicabilityCriteria, missing option",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectors MUST be present in an object within the [Recency](#recency) collection when the the associated *FOCUS dataset* is defined as a time series dataset.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+
+  "MTD-TimeSectors-O-002-M": {
+    "Order": 20,
+    "Function": "Validation",
+    "Reference": "TimeSectors",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectors MUST be structured as a collection of objects.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+
+  "MTD-TimeSectors-O-003-M": {
+    "Order": 30,
+    "Function": "NullabilityRules",
+    "Reference": "TimeSectors",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectors MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+
+  "MTD-TimeSectors-O-004-M": {
+    "Order": 40,
+    "Function": "Validation",
+    "Reference": "TimeSectors",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectors collection MUST contain at least one object.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+
+  "MTD-TimeSectors-O-005-M": {
+    "Order": 50,
+    "Function": "NullabilityRules",
+    "Reference": "TimeSectors",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectors collection MUST NOT contain null objects.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+
+  "MTD-TimeSectors-O-006-C": {
+    "Order": 60,
+    "Function": "Validation",
+    "Reference": "TimeSectors",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectors collection object MUST be updated, if already present, or added to the collection whenever the data generator updates or provides new dataset artifacts.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
