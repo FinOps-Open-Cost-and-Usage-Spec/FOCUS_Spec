@@ -1,0 +1,86 @@
+{
+  "MTD-TimeSectorComplete-O-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "TimeSectorComplete",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectorComplete adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "MTD-TimeSectorComplete-O-001-M",
+        "MTD-TimeSectorComplete-O-002-M",
+        "MTD-TimeSectorComplete-O-003-M"
+      ]
+    }
+  },
+  "MTD-TimeSectorComplete-O-001-M": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "TimeSectorComplete",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectorComplete MUST be present in the [TimeSectors](#timesectors) subsection of the [Recency](#recency) metadata section.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-TimeSectorComplete-O-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "TimeSectorComplete",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectorComplete MUST be of type Boolean.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-TimeSectorComplete-O-003-M": {
+    "Order": 30,
+    "Function": "NullabilityRules",
+    "Reference": "TimeSectorComplete",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectorComplete MUST not be null.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
