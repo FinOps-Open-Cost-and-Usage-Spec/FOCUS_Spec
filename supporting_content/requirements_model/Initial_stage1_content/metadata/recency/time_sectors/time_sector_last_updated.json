@@ -1,0 +1,107 @@
+{
+  "MTD-TimeSectorLastUpdated-O-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "TimeSectorLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectorLastUpdated adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "MTD-TimeSectorLastUpdated-O-001-M",
+        "MTD-TimeSectorLastUpdated-O-002-M",
+        "MTD-TimeSectorLastUpdated-O-003-M",
+        "MTD-TimeSectorLastUpdated-O-004-M"
+      ]
+    }
+  },
+  "MTD-TimeSectorLastUpdated-O-001-M": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "TimeSectorLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectorLastUpdated MUST be present in [TimeSectors](#timesectors) subsection of the [Recency](#recency) metadata section.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-TimeSectorLastUpdated-O-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "TimeSectorLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectorLastUpdated MUST be of type Date/Time.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-TimeSectorLastUpdated-O-003-M": {
+    "Order": 30,
+    "Function": "NullabilityRules",
+    "Reference": "TimeSectorLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectorLastUpdated MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "MTD-TimeSectorLastUpdated-O-004-M": {
+    "Order": 40,
+    "Function": "Format",
+    "Reference": "TimeSectorLastUpdated",
+    "EntityType": "Object",
+    "DatasetId": "Metadata",
+    "DatasetName": "Metadata",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "TimeSectorLastUpdated MUST conform to [DateTimeFormat](#date/timeformat).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
