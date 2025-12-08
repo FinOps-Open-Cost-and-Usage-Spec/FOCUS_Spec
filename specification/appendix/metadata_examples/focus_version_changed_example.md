@@ -8,13 +8,14 @@ ACME's previous exports used FOCUS version 1.0. They are now going to adopt FOCU
 
 Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-45678-abcde-45678-abcde-45678.json`.
 
-The updated schema related metadata could look like this:
+The updated schema-related metadata could look like this:
 
 ```json
  {
   "SchemaId": "45678-abcde-45678-abcde-45678",
   "FocusVersion": "1.1",
   "CreationDate": "2024-04-02T12:01:03.083z",
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",

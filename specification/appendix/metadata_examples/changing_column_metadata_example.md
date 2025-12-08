@@ -8,13 +8,14 @@ ACME has decided to change the datatype of column x_awesome_column1 from a strin
 
 Metadata can be provided at a location such as `/FOCUS/metadata/schemas/schema-67891-abcde-67891-abcde-67891.json`.
 
-The updated schema related metadata could look like this:
+The updated schema-related metadata could look like this:
 
 ```json
  {
   "SchemaId": "67891-abcde-67891-abcde-67891",
   "FocusVersion": "1.0",
   "CreationDate": "2024-06-02T12:01:03.083z",
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",

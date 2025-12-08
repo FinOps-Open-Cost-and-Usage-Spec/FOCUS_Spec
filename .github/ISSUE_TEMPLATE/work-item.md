@@ -1,6 +1,6 @@
-# Work Item Issue Template
+# Work Item
 description:
-title: "[Work_Item]"
+title: "[WI]"
 labels: ["work item"]
 assignees: [shawnalpay, jpradocueva]
 
@@ -15,7 +15,6 @@ assignees: [shawnalpay, jpradocueva]
 Describe the problem, issue, use case, or opportunity that this work item addresses.
 Include practitioner quotes illustrating real examples a) of questions being asked by practitioners and b) value unlocked by answering these questions, if available.
 - **What is the problem?**: Explain the context and why it needs resolution.
-- **What is the use case?**: Write the use case(s) this provides using the format "As a <FinOps persona> I want to <elaborate on the use case>" OR a 1 to 2 sentences detailing the use case(s).
 - **Impact**: Describe how the problem affects users, systems, or the project.
 
 Your input ...
@@ -48,13 +47,3 @@ Outline any proposed solutions, approaches, or potential paths forward.  Do not 
 - **Benchmarks**: Are there established best practices for solving this problem available to practitioners today (e.g. mappings from existing CSP exports that are widely used)?
 
 Your input ...
-
-## 6. **Epic or Theme Association**
-> This section will be completed by the Maintainers.
-> - **Epic**: [Epic Name]
-> - **Theme**: [Theme Name, if applicable]
-
-## 7. **Stakeholders** *
-List the main stakeholders for this issue.
-- **Primary Stakeholders**: [Name/Role]
-- **Other Involved Parties**: [Names/Roles]

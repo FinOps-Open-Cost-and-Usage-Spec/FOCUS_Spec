@@ -1,0 +1,112 @@
+{
+  "KeyValueFormat-A-000-M": {
+    "Function": "Composite",
+    "Reference": "KeyValueFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All key-value related columns defined in the FOCUS specification MUST follow the key-value formatting requirements listed below.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "KeyValueFormat-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "KeyValueFormat-A-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "KeyValueFormat-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "KeyValueFormat-A-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "KeyValueFormat-A-001-M",
+        "KeyValueFormat-A-002-M",
+        "KeyValueFormat-A-003-M",
+        "KeyValueFormat-A-004-M"
+      ]
+    }
+  },
+  "KeyValueFormat-A-001-M": {
+    "Function": "Format",
+    "Reference": "KeyValueFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Key-Value Format columns MUST contain a serialized JSON string, consistent with the ECMA 404 definition of an object.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "KeyValueFormat-A-002-M": {
+    "Function": "Validation",
+    "Reference": "KeyValueFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Keys in a key-value pair MUST be unique within an object.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "KeyValueFormat-A-003-M": {
+    "Function": "Validation",
+    "Reference": "KeyValueFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values in a key-value pair MUST be one of the following types: number, string, true, false, or null.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "KeyValueFormat-A-004-M": {
+    "Function": "Validation",
+    "Reference": "KeyValueFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values in a key-value pair MUST NOT be an object or an array.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

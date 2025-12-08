@@ -2,7 +2,7 @@
 
 Many SaaS providers provide simple contract terms, therefore don't need to support complex scenarios like spend commitments or pricing strategies in their billing data.
 
-The scenarios described below illustrate how a FOCUS-compliant dataset should look for simple SaaS agreement scenarios (these scenarios may not be specific to SaaS agreements only).
+The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) should look for simple SaaS agreement scenarios (these scenarios may not be specific to SaaS agreements only).
 
 ## Scenario A1: Invoice Up-front for a Purchase of a Service
 
@@ -32,7 +32,7 @@ Note the following details in the example dataset:
 * A single charge representing the total payment for the 12-month agreement is charged in the first invoice. Billed Cost and Effective Cost are both realized in the same record since detailed usage records will not be provided during the 12-month period to realize amortized portions of this up-front payment.
 * The single charge provided includes a ListUnitPrice for the licenses and a Pricing Quantity.
 
-## Scenario A3: Additional Purchase Records Provided in the SaaS Provider's FOCUS Data
+## Scenario A3: Additional Purchase Records Provided in the SaaS Data Generator's FOCUS Dataset
 
 On June 1st 2025 ACME provides the following records due to AwesomeCorp's &dollar;1,000 mid-contract purchase of an additional 10 licenses for the same Charge Period (April 1st 2025 to April 1st 2026).
 

@@ -1,10 +1,9 @@
 name: generate_draft_spec
 on:
   push:
-    branches:
-      - "*"
-      - "!main"
-      - "!candidate_release"
+    branches-ignore:
+      - "main"
+      - "candidate_recommendation"
 
 jobs:
   # The job that will use the container image you just pushed to ghcr.io
@@ -28,14 +27,20 @@ jobs:
         working-directory: ./specification
         run: |
           make STYLE=working_draft BRANCH=${GITHUB_REF_NAME}
+      - name: Build Requirements Model JSON
+        shell: bash
+        working-directory: ./specification/requirements_model
+        run: |
+          /usr/bin/pip3 install --break-system-packages -r requirements.txt
+          ./build_json.py
       - name: Upload on failure
-        uses: actions/upload-artifact@4.5.0
+        uses: actions/upload-artifact@v4
         if: ${{ failure()}}
         with:
           name: spec.md
           path: specification/spec.md
       - name: Upload Spec
-        uses: actions/upload-artifact@v4.5.0
+        uses: actions/upload-artifact@v4
         with:
           name: FOCUS_specification
           path: |
@@ -43,3 +48,4 @@ jobs:
             specification/spec.pdf
             specification/images/*
             specification/styles/*
+            specification/requirements_model/build/*.json

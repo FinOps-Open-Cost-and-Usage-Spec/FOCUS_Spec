@@ -1,0 +1,68 @@
+{
+  "NullHandling-A-000-M": {
+    "Function": "Composite",
+    "Reference": "NullHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All columns defined in the FOCUS specification MUST follow the null handling requirements listed below.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NullHandling-A-001-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NullHandling-A-002-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "NullHandling-A-001-C",
+        "NullHandling-A-002-M"
+      ]
+    }
+  },
+  "NullHandling-A-001-C": {
+    "Function": "Validation",
+    "Reference": "NullHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Columns MUST use NULL when there isn’t a value that can be specified for a nullable column.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NullHandling-A-002-M": {
+    "Function": "Validation",
+    "Reference": "NullHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Columns MUST NOT use empty strings or placeholder values such as 0 for numeric columns or “Not Applicable” for string columns to represent a null or not having a value, regardless of whether the column allows nulls or not.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

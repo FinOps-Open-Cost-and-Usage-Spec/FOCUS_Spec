@@ -1,0 +1,200 @@
+{
+  "StringHandling-A-000-M": {
+    "Function": "Composite",
+    "Reference": "StringHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "Root composite capturing all StringHandling requirements",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All columns of type String defined in the FOCUS specification MUST follow the string handling requirements listed below.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "StringHandling-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "StringHandling-A-002-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "StringHandling-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "StringHandling-A-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "StringHandling-A-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "StringHandling-A-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "StringHandling-A-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "StringHandling-A-008-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "StringHandling-A-001-M",
+        "StringHandling-A-002-O",
+        "StringHandling-A-003-M",
+        "StringHandling-A-004-M",
+        "StringHandling-A-005-M",
+        "StringHandling-A-006-M",
+        "StringHandling-A-007-M",
+        "StringHandling-A-008-C"
+      ]
+    }
+  },
+  "StringHandling-A-001-M": {
+    "Function": "Format",
+    "Reference": "StringHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "String values MUST be valid Unicode strings.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "StringHandling-A-002-O": {
+    "Function": "Format",
+    "Reference": "StringHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom string value capturing columns SHOULD adopt the same requirements over time.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "StringHandling-A-003-M": {
+    "Function": "Format",
+    "Reference": "StringHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by providers and end-users.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "StringHandling-A-004-M": {
+    "Function": "Format",
+    "Reference": "StringHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Charges to mutable entities (e.g., resource names) MUST be accurately reflected in corresponding charges incurred after the change.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "StringHandling-A-005-M": {
+    "Function": "Format",
+    "Reference": "StringHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Charges to mutable entities MUST NOT alter charges incurred before the change, preserving data integrity and auditability for all charge records.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "StringHandling-A-006-M": {
+    "Function": "Format",
+    "Reference": "StringHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Immutable string values that refer to the same entity (e.g., resource identifiers, region identifiers, etc.) MUST remain consistent and unchanged across all billing periods.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "StringHandling-A-007-M": {
+    "Function": "Format",
+    "Reference": "StringHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Empty strings and strings consisting solely of spaces SHOULD NOT be used in not-nullable string columns.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "StringHandling-A-008-C": {
+    "Function": "Format",
+    "Reference": "StringHandling",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "When a record is provided after a change to a mutable string value and the ChargeClass is “Correction”, the record MAY contain the altered value.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

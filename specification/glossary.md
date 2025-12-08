@@ -4,9 +4,17 @@
 
 A charge representing a modification to billing data to account for certain events or circumstances not previously captured, or captured incorrectly. Examples include billing errors, service disruptions, or pricing changes.
 
+<a name="glossary:allocated-charge"><b>Allocated Charge</b></a>
+
+The [charge](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocation) to identify the charges that were created from the [origin charge](#glossary:origin-charge) resulting from the application of Data Generator-Calculated Split Cost Allocation.
+
+<a name="glossary:allocated-method"><b>Allocated Method</b></a>
+
+The process or formula by which cost is being allocated from an [origin charge](#glossary:origin-charge) to produce [allocated charges](#glossary:allocated-charge). This is used in the context of [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocation) which requires documentation of the method to be provided for any and all allocated methods used. May also be colloquially referred to as allocation method.
+
 <a name="glossary:amortization"><b>Amortization</b></a>
 
-The distribution of upfront costs over time to accurately reflect the consumption or benefit derived from the associated resources or services. Amortization is valuable when the commitment period (time duration of the cost) extends beyond the granularity of the source report.
+The distribution of upfront costs over time to accurately reflect the consumption or benefit derived from the associated resources or services. Amortization is valuable when the commitment [*period*](#glossary:period) extends beyond the granularity of the source report.
 
 <a name="glossary:availability-zone"><b>Availability Zone</b></a>
 
@@ -42,7 +50,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:chargeperiod"><b>Charge Period</b></a>
 
-The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the duration of eligibility.
+The time window for which a charge is effective, inclusive of the start date and exclusive of the end date. The charge period for continuous usage should match the time granularity of the dataset (e.g., 1 hour for hourly, 1 day for daily). The charge period for a non-usage charge with time boundaries should match the period of eligibility.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -50,15 +58,23 @@ A company or organization that provides remote access to computing resources, in
 
 <a name="glossary:commitment"><b>Commitment</b></a>
 
-A customer's agreement to consume a specific quantity of a service or resource over a defined period, usually also creating a financial commitment throughout the entirety of the commitment period. Some commitments also hold Providers to certain assurance levels of resource availability.
+A customer's agreement to either spend a defined monetary amount or consume a specific quantity of resources or services over a specified [*period*](#glossary:period).
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a predefined term.  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
+A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period).  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
-A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, provider-specific requirements.
+A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, service-provider-specific requirements.
+
+<a name="glossary:contract"><b>Contract</b></a>
+
+A collection of agreed terms between a service provider and a customer.
+
+<a name="glossary:contract-commitment"><b>Contract Commitment</b></a>
+
+A specific term within a [*contract*](#glossary:contract) that defines a measurable obligation agreed upon by a provider and a customer, such as a minimum spend or usage over an agreed period of time.
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
@@ -70,7 +86,19 @@ A charge to correct cost or usage data in a previously invoiced [*billing period
 
 <a name="glossary:credit"><b>Credit</b></a>
 
-A financial incentive or allowance granted by a provider unrelated to other past/current/future charges.
+A financial incentive or allowance granted by a service provider unrelated to other past/current/future charges.
+
+<a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
+
+An abbreviated term for [*dataset instance artifact*](#glossary:dataset-instance-artifact).
+
+<a name="glossary:dataset-instance"><b>Dataset Instance</b></a>
+
+A specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) provided by a [data generator](#datagenerator). A Data Generator may provide multiple dataset instances of the same *FOCUS dataset*, each with different properties such as time granularity or differing custom column inclusions.  For example, the same 'FOCUS Cost and Usage' *FOCUS dataset* may be provided at an hourly or daily time granularity by a Data Generator. Each would be a distinct Dataset Instance.
+
+<a name="glossary:dataset-instance-artifact"><b>Dataset Instance Artifact</b></a>
+
+A physical representation of a specific [*dataset instance*](#glossary:dataset-instance) delivered by a [data generator](#datagenerator).
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
@@ -86,7 +114,7 @@ A Date/Time Format value that is not contained within the ending bound of a time
 
 <a name="glossary:finalized-tag"><b>Finalized Tag</b></a>
 
-A tag with one tag value chosen from a set of possible tag values after being processed by a set of provider-defined or user-defined rules.
+A tag with one tag value chosen from a set of possible tag values after being processed by a set of service-provider-defined or user-defined rules.
 
 <a name="glossary:finops-cost-and-usage-specification"><b>FinOps Cost and Usage Specification (FOCUS)</b></a>
 
@@ -94,7 +122,11 @@ An open-source specification that defines requirements for billing data.
 
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
-A structured collection of cost and usage data that meets the [BCP14](https://tools.ietf.org/html/bcp14) criteria defined by FOCUS. In addition to FOCUS columns, the dataset should include custom provider columns (prefixed with `x_`) when these columns provide additional information not captured by the existing FOCUS columns. If introducing a custom column could result in splitting original charge records into multiple entries, the data generator is responsible for ensuring that the FOCUS dataset fully conforms to all aggregation-related requirements for metric columns, particularly those concerning costs and quantities.
+A structured collection of columns that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
+
+In addition to these standardized columns, [data generators](#datagenerator) may include custom columns (prefixed with `x_`) where additional context is needed beyond what is captured in the defined FOCUS columns. If custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
+
+The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness.
 
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
@@ -104,9 +136,13 @@ A Date/Time Format value that is contained within the beginning bound of a time 
 
 A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
 
+<a name="glossary:json"><b>JSON</b></a>
+
+A common acronym for JavaScript Object Notation, a data format codified in [ECMA-404](https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) as a standard for human-readable, serializable data objects. This data format is used in FOCUS to communicate multiple pieces of information about a charge (tags, properties, etc.) in a single column.
+
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The suggested provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The suggested service-provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
@@ -122,15 +158,23 @@ A government-issued currency (e.g., US dollars, Euros).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
-A contractual agreement where a customer commits to specific spend or usage goals over a [*term*](#glossary:term) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
+A contractual agreement where a customer commits to specific spend or usage goals over a specified [*period*](#glossary:period) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
-A term that describes a service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
+A service that is available and provided immediately or as needed, without requiring a pre-scheduled appointment or prior arrangement. In cloud computing, virtual machines can be created and terminated as needed, i.e., on demand.
+
+<a name="glossary:origin-charge"><b>Origin Charge</b></a>
+
+The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocation) to identify the charge that existed prior to the application of Data Generator-Calculated Split Cost Allocation to produce [allocated charges](#glossary:allocated-charge).
 
 <a name="glossary:pascalcase"><b>Pascal Case</b></a>
 
 Pascal Case (PascalCase, also known as UpperCamelCase) is a format for identifiers which contain one or more words meaning the words are concatenated together with no delimiter and the first letter of each word is capitalized.
+
+<a name="glossary:period"><b>Period</b></a>
+
+A time window, with a specifically defined start and end date/time.
 
 <a name="glossary:potato"><b>Potato</b></a>
 
@@ -142,11 +186,11 @@ An individual who performs FinOps within an organization to maximize the busines
 
 <a name="glossary:price-list"><b>Price List</b></a>
 
-A comprehensive list of prices offered by a provider.
+A comprehensive list of prices offered by a service provider.
 
-<a name="glossary:provider"><b>Provider</b></a>
+<a name="glossary:service provider"><b>Service Provider</b></a>
 
-An entity that made internal or 3rd party resources and/or services available for purchase.
+An entity that provides the [*resources*](#glossary:resource) or [*services*](#glossary:service) available for usage or purchase.
 
 <a name="glossary:refund"><b>Refund</b></a>
 
@@ -162,7 +206,7 @@ A row in a FOCUS-compatible cost and usage dataset.
 
 <a name="glossary:service"><b>Service</b></a>
 
-An offering that can be purchased from a provider, and can include many types of usage or other charges; eg., a cloud database service may include compute, storage, and networking charges.
+An offering that can be purchased from a service provider, and can include many types of usage or other charges; eg., a cloud database service may include compute, storage, and networking charges.
 
 <a name="glossary:sku"><b>SKU</b></a>
 
@@ -174,7 +218,7 @@ A pricing construct that encompasses SKU properties (e.g., functionality and tec
 
 <a name="glossary:sub-account"><b>Sub Account</b></a>
 
-A sub account is an optional provider-supported construct for organizing resources and/or services connected to a billing account. Sub accounts must be associated with a billing account as they do not receive invoices.
+A sub account is an optional service-provider-supported construct for organizing resources and/or services connected to a billing account. Sub accounts must be associated with a billing account as they do not receive invoices.
 
 <a name="glossary:tag"><b>Tag</b></a>
 
@@ -182,12 +226,12 @@ A metadata label assigned to a resource to provide information about it or to ca
 
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
-A Resource or Provider-defined construct for grouping resources and/or other Provider-defined construct that a Tag can be assigned to.
+A Resource or Service-Provider-defined construct for grouping resources and/or other Service-Provider-defined construct that a Tag can be assigned to.
 
 <a name="glossary:term"><b>Term</b></a>
 
-A duration of a contractual agreement like with a [*commitment discount*](#glossary:commitment-discount) or [*negotiated discount*](#glossary:negotiated-discount).
+An agreement specified on a [*contract*](#glossary:contract).
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 
-A proprietary currency (e.g., credits, tokens) issued by providers and independent of government regulation.
+A proprietary currency (e.g., credits, tokens) issued by service providers and independent of government regulation.
