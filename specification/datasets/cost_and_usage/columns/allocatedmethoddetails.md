@@ -134,7 +134,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 }
 ```
 
-NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
+NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JTD requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
 
 ## Example Scenarios
 
@@ -142,7 +142,7 @@ The JSON samples in the scenarios below each represent a single allocated record
 
 ### Scenario 1: Single "UsageUnit" value used for allocation
 
-When only a single "UsageUnit" is used to calculate the allaction.
+When only a single "UsageUnit" is used to calculate the allocation.
 
 ```json
 {
@@ -156,7 +156,7 @@ When only a single "UsageUnit" is used to calculate the allaction.
 ```
 ### Scenario 2: Multiple "UsageUnit" values used for allocation
 
-When multiple "UsageUnit" values are used to calculate the allaction, another object is added to the "Elements" collection.
+When multiple "UsageUnit" values are used to calculate the allocation, another object is added to the "Elements" collection.
 
 ```json
 {

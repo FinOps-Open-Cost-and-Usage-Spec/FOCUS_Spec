@@ -45,7 +45,7 @@ The last two tags illustrate examples from two different, provider-defined tag s
 
 ## Finalized Tags
 
-Within a data generator, tag keys may be associated with multiple values, and potentially defined at different levels within the data generator, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, *data generator* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each data generatorder but must be documented within their respective documentation.
+Within a data generator, tag keys may be associated with multiple values, and potentially defined at different levels within the data generator, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, *data generator* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each data generator but must be documented within their respective documentation.
 
 As an example, let's assume 1 [*sub account*](#glossary:sub-account) exists with 1 virtual machine with the following details, and tag inheritance favors Resources over *Sub Accounts*.
 
