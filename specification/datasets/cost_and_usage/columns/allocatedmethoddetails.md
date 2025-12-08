@@ -8,7 +8,7 @@ The FOCUS-defined properties are:
 
 * `Allocated Ratio`: The ratio of a [*charge*](#glossary:charge) that this allocation represents.
 * `Usage Unit`: Unit being measured used to calculate this allocation.
-* `Usage Quantity`: The value of the charge applied to a single contract term.
+* `Usage Quantity`: The quantity of units used denominated by the defined usage unit.
 
 In addition to these, a data generator may include one or more custom properties, also denoted as key-value pairs.
 
@@ -135,6 +135,10 @@ The `Elements` array contains one or more objects, each of which contains the fo
 ```
 
 NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JTD requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
+
+## Example Scenarios
+
+The JSON samples in the scenarios below each represent a single allocated record out of the multiple records derived from an origin record for that scenario. The sum AllocatedRatio will add up to 1 (100%) across all allocated records for an origin record, with the AllocatedRatio (or sum of AllocatedRatio) representing the allocated record's portion of the overall origin record.
 
 ### Scenario 1: Single "UsageUnit" value used for allocation
 
