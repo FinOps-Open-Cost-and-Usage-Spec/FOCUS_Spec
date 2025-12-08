@@ -142,7 +142,7 @@
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
-        "ColumnName": "ConsumedQuantity",
+        "ColumnName": "EffectiveCost",
         "Value": null
       },
       "Condition": {},
