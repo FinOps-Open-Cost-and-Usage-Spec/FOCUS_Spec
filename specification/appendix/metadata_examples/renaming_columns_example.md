@@ -70,7 +70,7 @@ The updated schema related metadata for the schema where the rename took place c
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8",
-                "Deprecation": true
+                "Deprecated": true
             }
       ]
 }
@@ -136,7 +136,7 @@ The subsequent new schema metadata after the rename could look like this:
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8",
-                "Deprecation": true
+                "Deprecated": true
             }
       ]
 }

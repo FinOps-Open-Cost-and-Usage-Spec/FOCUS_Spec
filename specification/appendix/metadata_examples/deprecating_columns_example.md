@@ -69,7 +69,7 @@ The updated schema-related metadata could look like this:
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8",
-                "Deprecation": true
+                "Deprecated": true
             }
       ]
 }

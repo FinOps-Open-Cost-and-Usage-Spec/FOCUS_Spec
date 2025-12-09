@@ -94,7 +94,7 @@ Under each column defined in the FOCUS specification, there exists a 'Feature le
 
 Validation tools may be employed to determine conformance of data and implementations per this specification.
 
-The FinOps Foundation maintains a validator called the [FOCUS Validator](https://github.com/finopsfoundation/focus_validator) which it uses for its own conformance assessments and as serves as a reference implementation to support validation activities.
+The FinOps Foundation maintains a validator called the [FOCUS Validator](https://github.com/finopsfoundation/focus_validator) which it uses for its own conformance assessments and serves as a reference implementation to support validation activities.
 
 Other validation tools may be developed and made available by third parties. The FOCUS specification does not mandate the use of any particular tool, nor does it maintain a registry of available validators.
 
