@@ -1,0 +1,107 @@
+{
+  "InvoiceHandling-A-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "InvoiceHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "InvoiceHandling adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "InvoiceHandling-A-001-M",
+        "InvoiceHandling-A-002-C",
+        "InvoiceHandling-A-003-O",
+        "InvoiceHandling-A-004-C"
+      ]
+    }
+  },
+  "InvoiceHandling-A-001-M": {
+    "Order": 10,
+    "Function": "Validation",
+    "Reference": "InvoiceHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All costs that appear on any invoice issued to a [*BillingAccountId*](#billingaccountid) MUST be included in the *FOCUS dataset*.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceHandling-A-002-C": {
+    "Order": 20,
+    "Function": "Presence",
+    "Reference": "InvoiceHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, data generators MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the *FOCUS dataset*.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceHandling-A-003-O": {
+    "Order": 30,
+    "Function": "Validation",
+    "Reference": "InvoiceHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Informational line items that have zero monetary impact and are included solely for transparency MAY be excluded. Examples include:\n  * Tax exemption notifications\n  * SLA credit details when the credit is already applied to the charged amount",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "InvoiceHandling-A-004-C": {
+    "Order": 40,
+    "Function": "Validation",
+    "Reference": "InvoiceHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "If such informational items are excluded, data generators MUST document this in their FOCUS implementation guide and ensure the sum of included charges still equals the invoice total.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
