@@ -1,0 +1,464 @@
+{
+  "DiscountHandling-A-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All rows defined in FOCUS MUST follow the discount handling requirements listed below.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "DiscountHandling-A-001-O",
+        "DiscountHandling-A-002-O",
+        "DiscountHandling-A-003-M",
+        "DiscountHandling-A-004-M",
+        "DiscountHandling-A-005-C",
+        "DiscountHandling-A-006-M",
+        "DiscountHandling-A-007-M",
+        "DiscountHandling-A-008-C",
+        "DiscountHandling-A-009-M",
+        "DiscountHandling-A-010-M",
+        "DiscountHandling-A-011-M",
+        "DiscountHandling-A-012-M",
+        "DiscountHandling-A-013-M",
+        "DiscountHandling-A-014-M",
+        "DiscountHandling-A-015-M",
+        "DiscountHandling-A-016-M",
+        "DiscountHandling-A-017-M",
+        "DiscountHandling-A-018-C",
+        "DiscountHandling-A-019-M",
+        "DiscountHandling-A-020-M",
+        "DiscountHandling-A-021-M"
+      ]
+    }
+  },
+  "DiscountHandling-A-001-O": {
+    "Order": 10,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All applicable discounts SHOULD be applied to each row they pertain to and SHOULD NOT be negated in a separate row.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-002-O": {
+    "Order": 20,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All applicable discounts SHOULD be applied to each row they pertain to and SHOULD NOT be negated in a separate row.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-003-M": {
+    "Order": 40,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All discounts applied to a row MUST apply to the entire charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-004-M": {
+    "Order": 50,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Multiple discounts MAY apply to a row, but they MUST apply to the entire charge covered by that row.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-005-C": {
+    "Order": 60,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "If a discount only applies to a portion of a charge, then the discounted portion of the charge MUST be split into a separate row.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-006-M": {
+    "Order": 70,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Each discount MUST be identifiable using existing FOCUS columns.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-007-M": {
+    "Order": 80,
+    "Function": "Presence",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Rows with a *commitment discount* applied to them MUST include a CommitmentDiscountId.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-008-C": {
+    "Order": 90,
+    "Function": "Presence",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "If a service provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-009-M": {
+    "Order": 100,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Purchased discounts (e.g., *commitment discounts*) MUST be amortized.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-010-M": {
+    "Order": 110,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The BilledCost MUST be 0 for any row where the commitment covers the entire cost for the charge period.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-011-M": {
+    "Order": 120,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The EffectiveCost MUST include the portion of the amortized purchase cost that applies to this row.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-012-M": {
+    "Order": 130,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sum of the EffectiveCost for all rows where CommitmentDiscountStatus is \"Used\" or \"Unused\" for each CommitmentDiscountId over the entire commitment [*period*](#glossary:period) MUST be the same as the total BilledCost of the *commitment discount*.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-013-M": {
+    "Order": 140,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The CommitmentDiscountId and ResourceId MUST be set to the ID assigned to the *commitment discount*.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-014-M": {
+    "Order": 150,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeCategory MUST be set to \"Purchase\" on rows that represent a purchase of a *commitment discount*.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-015-M": {
+    "Order": 160,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountStatus MUST be \"Used\" for ChargeCategory \"Usage\" rows that received a reduced price from a commitment.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-016-M": {
+    "Order": 170,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountId MUST be set to the ID assigned to the discount.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-017-M": {
+    "Order": 180,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceId MUST be set to the ID of the resource that received the discount.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-018-C": {
+    "Order": 190,
+    "Function": "Presence",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "If a commitment is not fully utilized, the service provider MUST include a row that represents the unused portion of the commitment for that *charge period*.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-019-M": {
+    "Order": 200,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "These rows MUST be represented with CommitmentDiscountStatus set to \"Unused\" and ChargeCategory set to \"Usage\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-020-M": {
+    "Order": 210,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Such rows MUST have their CommitmentDiscountId and ResourceId set to the ID assigned to the *commitment discount*.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DiscountHandling-A-021-M": {
+    "Order": 220,
+    "Function": "Validation",
+    "Reference": "DiscountHandling",
+    "EntityType": "Attribute",
+    "DatasetId": "",
+    "DatasetName": "",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Credits that are applied after the fact MUST use a ChargeCategory of \"Credit\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
