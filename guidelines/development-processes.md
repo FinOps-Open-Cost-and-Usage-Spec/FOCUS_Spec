@@ -148,7 +148,7 @@ This diagram illustrates how the **Scope Definition** phase is practically imple
     <figcaption>Scope Definition Phase</figcaption>
 </figure>
 
-Once an issue is **Accepted in Scope**, it is tagged for inclusion in a specific version (e.g., `vX.Y`). Stakeholders then review the proposed Reature Requests for alignment with strategic priorities. Upon approval, the Feature Request concept is incorporated into the [`RELEASE_PLANNING`](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/main/RELEASE-PLANNING.md) document, and the item officially enters the **Development Phase**.
+Once an issue is **Accepted in Scope**, it is tagged for inclusion in a specific version (e.g., `vX.Y`). Stakeholders then review the proposed Feature Requests for alignment with strategic priorities. Upon approval, the Feature Request concept is incorporated into the [`RELEASE_PLANNING`](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/main/RELEASE-PLANNING.md) document, and the item officially enters the **Development Phase**.
 
 This process ensures that all proposed features and improvements are traceable and categorized consistently through issue labels.
 
