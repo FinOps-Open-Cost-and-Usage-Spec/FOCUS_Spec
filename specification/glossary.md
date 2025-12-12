@@ -20,10 +20,6 @@ The distribution of upfront costs over time to accurately reflect the consumptio
 
 A collection of geographically separated locations containing a data center or cluster of data centers. Each availability zone (AZ) should have its own power, cooling, and networking, to provide redundancy and fault tolerance.
 
-<a name="glossary:billed-cost"><b>Billed Cost</b></a>
-
-A charge that serves as the basis for invoicing. It includes the total amount of fees and discounts, signifying a monetary obligation. Valuable when reconciling cash outlay with incurred expenses is required, such as cost allocation, budgeting, and invoice reconciliation.
-
 <a name="glossary:billing-account"><b>Billing Account</b></a>
 
 A container for resources and/or services that are billed together in an invoice. A billing account may have sub accounts, all of whose costs are consolidated and invoiced to the billing account.
@@ -103,10 +99,6 @@ A physical representation of a specific [*dataset instance*](#glossary:dataset-i
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
-
-<a name="glossary:effective-cost"><b>Effective Cost</b></a>
-
-The amortized cost of the charge after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
 
 <a name="glossary:exclusiveendbound"><b>Exclusive End Bound</b></a>
 
