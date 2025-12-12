@@ -1,6 +1,6 @@
 # Effective Cost
 
-Effective Cost represents the cost of a charge recognized in the specified [*charge period*](#glossary:charge-period), based on accrual-based accounting principles. Unlike [Billed Cost](#billedcost), which reflects invoiced amounts in a [*billing period*](#glossary:billing-period), Effective Cost reflects the value of usage or entitlements consumed during a *charge period*, regardless of when (or whether) those costs were invoiced. Effective Cost is inclusive of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used to support FinOps capabilities, such as accrual-based reporting, cost forecasting, chargebacks, and usage-driven cost allocation.
+Effective Cost represents the cost of a [*charge*](#glossary:charge) recognized in the specified [*charge period*](#glossary:charge-period), based on accrual-based accounting principles. Unlike [Billed Cost](#billedcost), which reflects invoiced amounts in a [*billing period*](#glossary:billing-period), Effective Cost reflects the value of usage or entitlements consumed during a *charge period*, regardless of when (or whether) those costs were invoiced. Effective Cost is inclusive of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used to support FinOps capabilities, such as accrual-based reporting, cost forecasting, chargebacks, and usage-driven cost allocation.
 
 This column resolves two challenges that are faced by practitioners:
 
@@ -36,7 +36,7 @@ Effective Cost
 
 ## Description
 
-Effective Cost represents the cost of a charge recognized in the specified *charge period*, based on accrual-based accounting principles.
+Cost of a *charge* recognized in the specified *charge period*, based on accrual-based accounting principles.
 
 ### Concerning Granularity and Distribution of Recurring Fee
 
