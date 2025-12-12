@@ -1,6 +1,6 @@
 # Effective Cost
 
-Effective Cost represents the [*amortized*](#glossary:amortization) cost of the [*charge*](#glossary:charge) after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this *charge*. The *amortized* portion included should be proportional to the [Pricing Quantity](#pricingquantity) and the time granularity of the data. Since amortization breaks down and spreads the cost of a prepaid purchase, to subsequent eligible *charges*, the Effective Cost of the original prepaid *charge* is set to 0. Effective Cost does not mix or "blend" costs across multiple *charges* of the same [*service*](#glossary:service). This cost is denominated in the [Billing Currency](#billingcurrency). The Effective Cost is commonly utilized to track and analyze spending trends.
+Effective Cost represents the cost of a charge recognized in the specified [*charge period*](#glossary:charge-period), based on accrual-based accounting principles. Unlike [Billed Cost](#billedcost), which reflects invoiced amounts in a [*billing period*](#glossary:billing-period), Effective Cost reflects the value of usage or entitlements consumed during a *charge period*, regardless of when (or whether) those costs were invoiced. Effective Cost is inclusive of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used to support FinOps capabilities, such as accrual-based reporting, cost forecasting, chargebacks, and usage-driven cost allocation.
 
 This column resolves two challenges that are faced by practitioners:
 
@@ -36,7 +36,7 @@ Effective Cost
 
 ## Description
 
-The *amortized* cost of the *charge* after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this *charge*.
+Effective Cost represents the cost of a charge recognized in the specified *charge period*, based on accrual-based accounting principles.
 
 ### Concerning Granularity and Distribution of Recurring Fee
 
