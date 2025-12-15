@@ -30,7 +30,6 @@ FOCUS 1.3 resolves this by introducing two purpose-specific columns that align w
 | Display Name | Provider Name | Service Provider Name |
 | Feature Level | Mandatory | Mandatory |
 | Allows Nulls | False | False |
-| Status in 1.3 | Deprecated | Active |
 
 **Migration action:** Replace all references to `ProviderName` with `ServiceProviderName` in queries and ingestion logic. The semantic intent is preserved: both columns identify the entity that makes resources or services available for purchase.
 
@@ -41,7 +40,6 @@ FOCUS 1.3 resolves this by introducing two purpose-specific columns that align w
 | Column ID | `PublisherName` | *Deprecated, no replacement* |
 | Display Name | Publisher Name | — |
 | Feature Level | Mandatory | — |
-| Status in 1.3 | Deprecated | — |
 
 **Migration action:** Evaluate what business question your `PublisherName` queries were answering, then select the appropriate 1.3 column:
 
