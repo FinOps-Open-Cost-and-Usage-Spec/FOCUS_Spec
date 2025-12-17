@@ -46,11 +46,62 @@ Comprehensive audit of all 53 supporting content column files. Key findings:
 
 ---
 
+## Google Drive Research
+
+### GDrive Sources Index
+
+| Document | Type | Relevance |
+|----------|------|-----------|
+| [FOCUS Task Force 1 - Agenda & Minutes (v1.2)](https://docs.google.com/document/d/1I0cTiEuJuaLPohZgG73-fOSDQTD_h_xyHbgstoPdy6A/edit) | Meeting minutes | Issue #617 / PR #838 discussions |
+
+### TF-1 Meeting Minutes (FOCUS 1.2)
+
+The 1.2 discussions on **Issue #617 / PR #838** are the direct precursor to the current #1094 initiative.
+
+#### Key Historical Context
+
+| Fact | Detail |
+|------|--------|
+| Original proposal | Required providers to include ALL columns from native datasets |
+| Outcome | Normative requirements **removed** due to lack of consensus |
+| What remained | "Should include" (non-normative) in glossary definition |
+| Microsoft success | FOCUS implementation includes all columns → **greater adoption** cited as evidence |
+
+#### Provider Concerns Raised (1.2)
+
+1. **Backwards Compatibility**
+   - What happens when a custom column gets standardized into FOCUS?
+   - If retained: data duplication
+   - If removed: breaks existing workflows
+   - **AWS position:** Does not remove columns to avoid breaking changes
+
+2. **Split Cost Allocation (AWS-specific)**
+   - SCA adds **rows**, not just columns
+   - Causes aggregation issues with effective cost calculations
+   - Unresolved whether SCA data belongs in FOCUS dataset
+
+3. **Dataset Size**
+   - All columns = dataset too large
+   - Practitioners split: some want all, others want minimal
+   - Led to **column selection** proposal (Issue #1091)
+
+4. **Scope Creep**
+   - FOCUS defines schema/data, not application-level features
+   - Column selection = functional requirement = precedent concern
+
+#### Outcome
+
+- Broad support for including provider columns, but **no consensus on normative requirements**
+- Deferred to future release with more discussion
+- Column selection decision also deferred
+
+---
+
 ## Pending Research
 
-### Google Drive Content
-- [ ] Search for related docs/sheets in GDrive
-- [ ] Document any relevant historical discussions or decisions
+### Additional Google Drive Content
+- [ ] Search for other related docs/sheets in GDrive (spreadsheets, provider mappings)
+- [ ] Check TF-2 meeting minutes for 1.3 discussions
 
 ### Provider Objections
 - [ ] Document AWS concerns and objections
