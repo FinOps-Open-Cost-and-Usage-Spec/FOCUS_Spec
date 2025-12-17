@@ -16,8 +16,44 @@
 - [x] Search supporting_content folder for relevant content
 - [x] Document findings in audit-1634-spec-analysis.md
 - [x] Consolidate list of all provider columns referenced (see provider-columns-referenced.md)
-- [ ] Search Google Drive for related docs/sheets (identify, don't deep-dive)
-- [ ] List any GDrive docs found that need review (note: may be out of scope)
+- [x] Search Google Drive for related docs/sheets (identify, don't deep-dive)
+  - [x] "custom column" OR "x_" FOCUS
+  - [x] "native column" OR "provider column"
+  - [x] "AWS CUR" FOCUS
+  - [x] "GCP billing" OR "BigQuery billing" FOCUS
+  - [x] "data completeness" FOCUS
+  - [x] "non-FOCUS" OR "non FOCUS"
+  - [x] "column mapping" provider
+  - [x] "Azure cost" FOCUS column
+  - [x] "OCI" FOCUS column
+  - [x] 1094 OR "dataset completeness"
+  - [x] Squad minutes
+- [x] Review Google Drive files for potential native columns:
+  - [x] Squad 1 Meeting Minutes - No new columns found
+  - [x] Squad 2 Meeting Minutes - No new columns found
+  - [x] VS2 - Meeting Notes - No new columns found
+  - [x] VS4 - Meeting Notes - Azure hierarchy columns (BillingProfile, InvoiceSection, ResourceGroup)
+  - [x] HS_Practitioners - Meeting Notes - No new columns found
+  - [x] FOCUS Maintainers - Agenda & Minutes (v1.0 & v1.1) - No new columns found
+  - [x] FOCUS Members WG - Agenda & Minutes (v1.0 & v1.1) - Not downloaded
+  - [x] FOCUS Task Force 1 - Agenda & Minutes (v1.0, v1.1) - Custom columns appendix discussion
+  - [x] FOCUS Task Force 2 - Agenda & Minutes (v1.0, v1.1) - No new columns found
+  - [x] FOCUS Task Force 3 - Agenda & Minutes (v1.0 & v1.1) - PR #474 native column discussions
+  - [x] FOCUS Maintainers - Agenda & Minutes (v1.2) - No new columns found
+  - [x] FOCUS Task Force 1 - Agenda & Minutes (v1.2) - #617/#838 native column requirement removed
+  - [x] FOCUS Task Force 2 - Agenda & Minutes (v1.2) - No new columns found
+  - [x] FOCUS Task Force 3 - Agenda & Minutes (v1.2) - Not downloaded
+  - [x] FOCUS Members WG - Agenda & Minutes - (v1.2) - Not downloaded
+  - [x] FOCUS Maintainers - Agenda & Minutes (v1.3) - No new columns found
+  - [x] FOCUS Task Force 1 - Agenda & Minutes (v1.3) - Not downloaded
+  - [x] FOCUS Task Force 2 - Agenda & Minutes (v1.3) - #1094/#1030 discussions
+  - [x] FOCUS Task Force 3 - Agenda & Minutes (v1.3) - #1094 strong support (Irena, Larry/Twilio, MS)
+  - [x] GMT20250513-145716_RecordingnewChat (TF-1-13-May-25) - #963 SKU categorization, service subcategory
+  - [x] FOCUS Potato Summary, Decisions, and Proposals 🥔 - Native column discussions (PR #474)
+  - [x] 24.05.14 FOCUS Spec Items for v1.1 - Open Issues - 24.05.14 - Historical context, SKU/pricing issues
+  - [x] SKU properties survey - Practitioner column parsing (AHBinfo, PEC, MPC data)
+- [ ] Review: https://docs.google.com/spreadsheets/d/1HgtynMXWElhjektKT2I0U3c83TsemqTknYbSsaAQNdE/edit?gid=0#gid=0 (provider column mapping)
+- [x] List any GDrive docs found that need review (captured in GDrive Docs to Review)
 
 #### Synthesis Tasks
 - [x] Summarize all locations where custom column requirements exist

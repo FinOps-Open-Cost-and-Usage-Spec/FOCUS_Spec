@@ -11,7 +11,7 @@ This document captures provider columns **explicitly referenced in the FOCUS rep
 
 | Category | Count |
 |----------|-------|
-| Native columns referenced WITHOUT direct FOCUS mapping | ~20 |
+| Native columns referenced WITHOUT direct FOCUS mapping | ~45 |
 | FOCUS columns providers CAN'T populate | ~15 |
 | Native columns referenced that MAP to FOCUS | ~100 |
 
@@ -32,6 +32,14 @@ These columns ARE in provider billing exports but do NOT have a 1:1 FOCUS equiva
 | `savingsPlan/UsedCommitment` | For Savings Plan utilization | commitmentdiscountquantity.md |
 | `savingsPlan/TotalCommitmentToDate` | For Savings Plan utilization | commitmentdiscountquantity.md |
 | `costCategories/*` | Custom cost groupings | tags.md, #1030 |
+| `product_group` | SKU hierarchy/categorization | #963 |
+| `product_family` | SKU hierarchy/categorization | #963 |
+| Usage Type | Function/operation of SKU | SKU survey |
+| Operation | Function/operation of SKU | SKU survey |
+| Instance Type | Size/configuration of resource | SKU survey |
+| Effective Date | When price became effective | SKU survey |
+| Term (Type/Length) | Commitment term details | SKU survey |
+| Tier (Min/Max Units) | Tiered pricing thresholds | SKU survey |
 | `commitment_quantity` | Amount committed (proposed, not in CUR today) | #1041 |
 | `commitment_start_time` | When commitment begins (proposed) | #1041 |
 | `commitment_end_time` | When commitment expires (proposed) | #1041 |
@@ -48,14 +56,32 @@ These columns ARE in provider billing exports but do NOT have a 1:1 FOCUS equiva
 | `business_entity_name` | Requires join with pricing export on `sku.id` for ProviderName | providername.md |
 | `credit.type` | Values: COMMITTED_USAGE_DISCOUNT, COMMITTED_USAGE_DISCOUNT_DOLLAR_BASE | commitmentdiscountcategory.md |
 | `system_labels` | System-defined labels | tags.md |
+| Folder | Organizational hierarchy between billing account and project | #970 |
+| SKU group | SKU categorization (concept, not a column in export) | #963 |
+| Tier (Min Units) | Tiered pricing thresholds | SKU survey |
+
+> **Note:** GCP lacks native columns for: Product, Region (insufficient), Function, Size, Effective Date, Term, Consumption Type
 
 ### Microsoft Azure Cost Details
+
+> **Note:** Microsoft's FOCUS dataset already includes many native columns as x_ prefixed columns.
 
 | Native Column | Context | Source |
 |---------------|---------|--------|
 | `PublisherType` / `x_PublisherCategory` | Related to ProviderName but not equivalent | providername.md |
 | `Provider` | Only available in Management group data | providername.md |
 | `ServiceFamily` / `x_SkuServiceFamily` | Close to ServiceCategory but based on usage | servicecategory.md |
+| `MeterCategory` / `x_SkuMeterCategory` | SKU hierarchy; already in MS FOCUS as x_ column | #963 |
+| `MeterSubcategory` / `x_SkuMeterSubcategory` | SKU hierarchy; already in MS FOCUS as x_ column | #963 |
+| `ResourceGroupName` / `x_ResourceGroupName` | Resource grouping; already in MS FOCUS as x_ column | #970 |
+| `BillingProfileId` / `BillingProfileName` | Billing hierarchy level | VS4 notes |
+| `InvoiceSectionId` / `InvoiceSectionName` | Billing hierarchy level | VS4 notes |
+| Product (ID, Name) | Product hierarchy level | SKU survey |
+| Meter (ID, Name) | Function/operation of SKU | SKU survey |
+| Effective Date | When price became effective | SKU survey |
+| Term (Type/Length) | Commitment term details | SKU survey |
+| Tier (Min Units) | Tiered pricing thresholds | SKU survey |
+| Consumption Type | Type of consumption | SKU survey |
 
 ### OCI Cost Reports
 
@@ -220,9 +246,43 @@ These are documented mappings - native columns that ARE covered by FOCUS:
 
 - `supporting_content/datasets/cost_and_usage/columns/*.md` (53 files)
 - `supporting_content/attributes/*.md`
-- GitHub issues: #1030 (JSON column), #1041 (commitment columns), #1094 (completeness FR)
+- GitHub issues reviewed for column references:
+  - #1030 (JSON column) - AWS costCategories, Billing Conductor
+  - #1041 (commitment columns) - proposed commitment dimension columns
+  - #1094 (completeness FR) - main feature request
+  - #1129 (non-FOCUS columns) - closed, duplicate of #1094
+  - #963 (SKU hierarchy) - product_group, product_family, MeterCategory
+  - #970 (account/resource hierarchy) - ResourceGroup, Folder
+  - #1040, #1045, #1024, #1075, #1136, #1124, #984 - reviewed, no specific columns
 
-## Not Yet Searched
+## GDrive Docs Reviewed
 
-- [ ] Google Drive documents
-- [ ] Deep dive into all GitHub issues for specific column mentions
+### Meeting Minutes
+- [x] FOCUS Task Force 1 - Agenda & Minutes (v1.0, v1.1) - custom columns appendix
+- [x] FOCUS Task Force 1 - Agenda & Minutes (v1.2) - #617/#838 native column requirement
+- [x] FOCUS Task Force 2 - Agenda & Minutes (v1.0, v1.1) - no new columns
+- [x] FOCUS Task Force 2 - Agenda & Minutes (v1.3) - #1094/#1030 discussions
+- [x] FOCUS Task Force 3 - Agenda & Minutes (v1.0 & v1.1) - PR #474 native column glossary
+- [x] FOCUS Task Force 3 - Agenda & Minutes (v1.3) - #1094 strong support
+- [x] FOCUS Maintainers - Agenda & Minutes (v1.0 & v1.1) - no new columns
+- [x] FOCUS Maintainers - Agenda & Minutes (v1.2) - no new columns
+- [x] FOCUS Maintainers - Agenda & Minutes (v1.3) - no new columns
+- [x] GMT20250513 Chat (TF-1 May 2025) - #963 SKU categorization
+
+### Squad/Workstream Notes
+- [x] VS4 - Meeting Notes - Azure hierarchy columns (BillingProfile, InvoiceSection)
+- [x] VS2 - Meeting Notes - no new columns
+- [x] Squad 1 Meeting Minutes - no new columns
+- [x] Squad 2 Meeting Minutes - no new columns
+- [x] HS_Practitioners - Meeting Notes - data completeness discussions
+
+### Surveys & Spreadsheets
+- [x] SKU Properties Survey - practitioner column parsing (AHBinfo, PEC, MPC data)
+- [x] SKU Items Overview spreadsheet - cross-provider capability matrix
+- [x] 24.05.14 FOCUS Spec Items v1.1 - historical issue tracker
+- [x] FOCUS Potato Summary - PR #474 native column decisions
+
+## GDrive Docs to Review
+
+- [ ] [Provider column mapping spreadsheet](https://docs.google.com/spreadsheets/d/1HgtynMXWElhjektKT2I0U3c83TsemqTknYbSsaAQNdE/edit?gid=0#gid=0) - all provider columns
+- [ ] [Account/Resource Hierarchy spreadsheet](https://docs.google.com/spreadsheets/d/1b9QMRv9OtzWnjUtHOpqsHh8TMIiNbQTFlaDK_IKZFVg) - cross-provider mappings

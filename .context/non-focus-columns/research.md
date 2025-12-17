@@ -50,9 +50,46 @@ Comprehensive audit of all 53 supporting content column files. Key findings:
 
 ### GDrive Sources Index
 
-| Document | Type | Relevance |
-|----------|------|-----------|
-| [FOCUS Task Force 1 - Agenda & Minutes (v1.2)](https://docs.google.com/document/d/1I0cTiEuJuaLPohZgG73-fOSDQTD_h_xyHbgstoPdy6A/edit) | Meeting minutes | Issue #617 / PR #838 discussions |
+| Document | Type | Key Findings |
+|----------|------|--------------|
+| FOCUS Task Force 1 - Agenda & Minutes (v1.2) | Meeting minutes | Issue #617 / PR #838 - native column requirement removed |
+| FOCUS Task Force 3 - Agenda & Minutes (v1.0 & v1.1) | Meeting minutes | PR #474 - native column glossary discussions |
+| FOCUS Task Force 2 - Agenda & Minutes (v1.3) | Meeting minutes | #1094/#1030 overlap discussions |
+| FOCUS Task Force 3 - Agenda & Minutes (v1.3) | Meeting minutes | #1094 strong support (Irena, Larry/Twilio, Microsoft) |
+| VS4 - Meeting Notes | Squad notes | Azure hierarchy columns |
+| SKU properties survey | Survey responses | Practitioner column parsing (AHBinfo, PEC, MPC) |
+| GMT20250513 Chat (TF-1 May 2025) | Chat transcript | #963 SKU categorization, service subcategory |
+| 24.05.14 FOCUS Spec Items v1.1 | Issue tracker | Historical context - SKU/pricing issues |
+| FOCUS Potato Summary | Decisions log | PR #474 native column discussions |
+
+### TF-3 Meeting Minutes (v1.0 & v1.1) - PR #474
+
+**Topic:** FOCUS Dataset Consistency Review - defining native provider columns in glossary
+
+**Key Quotes:**
+- Q: "Should we specify that native columns must be included?" A: "Yes, to provide complete information."
+- "Irena highlighted the absence of a definition for native provider columns within the FOCUS dataset in the current specification."
+- Action: "Discuss and finalize the inclusion of native provider columns in the FOCUS dataset definition in the glossary."
+
+### TF-2 Meeting Minutes (v1.3) - #1094
+
+**Topic:** #1030 (JSON column for provider-native attributes)
+
+**Key Findings:**
+- "This topic overlaps with #1094, which outlines how custom or extended columns should be managed using the `x_` prefix."
+- "Irena confirmed the FOCUS spec already allows for extensions, and 1094 formalizes that guidance."
+- "The group agreed that this request is redundant if 1094 is implemented and communicated clearly."
+
+### TF-3 Meeting Minutes (v1.3) - #1094
+
+**Topic:** Define approach for adding non-FOCUS columns as NFR
+
+**Strong Support From:**
+- **Irena (Neos):** Guidance would enhance adoption and clarify expected behavior
+- **Larry (Twilio):** Adoption is key motivation
+- **Microsoft:** Prior efforts to include mappings in v1.2
+
+**Key Insight:** Challenge of correlating two datasets (FOCUS + provider native) when unique record identifiers are missing. Providers like OCI already use internal IDs to link data sources.
 
 ### TF-1 Meeting Minutes (FOCUS 1.2)
 
@@ -97,20 +134,50 @@ The 1.2 discussions on **Issue #617 / PR #838** are the direct precursor to the 
 
 ---
 
+### VS4 Meeting Notes - Azure Hierarchy Columns
+
+**Native Azure columns discussed for FOCUS inclusion:**
+- BillingProfile
+- InvoiceSection  
+- Subscription
+- ResourceGroup
+
+**Quote:** "Provider columns - BillingAccount, BillingProfile, InvoiceSection, Subscription, ResourceGroup. Should we have a column that includes the full hierarchy path?"
+
+### SKU Properties Survey
+
+**Practitioners are parsing these native columns:**
+- ProductName / ServiceType → Resource Type
+- Tags / ResourceId → Role or Purpose
+- UsageAmount, Performance Metrics → Usage
+- Region → Location
+- PricingPlanId → Pricing Model
+- AHBinfo (Azure Hybrid Benefit info)
+- PEC eligibility from Partner Center
+- MPC data (not FOCUS aligned)
+
+### Chat Transcript (TF-1 May 2025)
+
+**Issue #963 (SKU hierarchy)** was discussed with strong practitioner interest in:
+- SKU categorization columns
+- Service subcategory
+
+---
+
 ## Pending Research
 
-### Additional Google Drive Content
-- [ ] Search for other related docs/sheets in GDrive (spreadsheets, provider mappings)
-- [ ] Check TF-2 meeting minutes for 1.3 discussions
-
 ### Provider Objections
-- [ ] Document AWS concerns and objections
+- [ ] Document AWS concerns and objections (partially captured from 1.2 discussions)
 - [ ] Document GCP concerns and objections
 - [ ] Identify addressable vs fundamental blockers
 
 ### Supporting Content Location
 - [ ] Determine where audit/analysis should live in `supporting_content/`
 - [ ] Identify if new folder structure is needed
+
+### Additional GDrive Content
+- [ ] Provider column mapping spreadsheet: https://docs.google.com/spreadsheets/d/1HgtynMXWElhjektKT2I0U3c83TsemqTknYbSsaAQNdE/edit?gid=0#gid=0
+- [ ] Account/Resource Hierarchy spreadsheet
 
 ---
 
