@@ -1,12 +1,56 @@
-# Version Migration Guidance 
+# Version Migration Guidance
 
-## Migrating from FOCUS 1.2 to FOCUS 1.3: Provider and Publisher Column Changes
+This appendix provides guidance for practitioners and data generators migrating between FOCUS specification versions. Migration guidance is organized in reverse chronological order, with the most recent migration listed first.
+
+## Migrating from FOCUS 1.2 to FOCUS 1.3
 
 ### Overview
 
-FOCUS 1.3 introduces a **migration compatible change** affecting how participating entities are identified in the Cost and Usage dataset. This change deprecates the `ProviderName` and `PublisherName` columns and replaces them with `ServiceProviderName` and `HostProviderName`.
+FOCUS 1.3 introduces changes across three categories defined by the [Change Impact Classification](/guidelines/spec-change-guidelines.md):
 
-Practitioners and data generators consuming or producing FOCUS 1.2 data will need to update queries and mappings when adopting FOCUS 1.3.
+| Classification | Summary |
+|----------------|---------|
+| **Compatible** | New columns, new dataset, and new metadata. No changes required to existing queries. |
+| **Migration Compatible** | Deprecated `ProviderName` and `PublisherName` columns replaced by `ServiceProviderName` and `HostProviderName`. Queries referencing deprecated columns require updates. |
+| **Incompatible** | None |
+
+Most practitioners can adopt FOCUS 1.3 without changes. Only queries referencing `ProviderName` or `PublisherName` require migration.
+
+### What's Unchanged
+
+All columns, attributes, and behaviors from FOCUS 1.2 remain compatible in FOCUS 1.3 except for the deprecated columns noted below. Existing queries that do not reference `ProviderName` or `PublisherName` will continue to work without modification.
+
+### What's New in FOCUS 1.3
+
+The following additive changes do not require migration but may affect data pipelines expecting a fixed schema:
+
+| Change Type | Summary |
+|-------------|---------|
+| **New Dataset** | [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md) — 13 columns tracking contract and commitment details separately from usage rows |
+| **Split Cost Allocation** | 5 new columns (`AllocatedMethodId`, `AllocatedMethodDetails`, `AllocatedResourceId`, `AllocatedResourceName`, `AllocatedTags`) enabling data generator-calculated cost allocation |
+| **Contract Tracking** | [`ContractApplied`](/specification/datasets/cost_and_usage/columns/contractapplied.md) column links usage rows to contract commitments via JSON object references |
+| **Entity Identification** | [`ServiceProviderName`](/specification/datasets/cost_and_usage/columns/serviceprovidername.md) and [`HostProviderName`](/specification/datasets/cost_and_usage/columns/hostprovidername.md) provide explicit entity role identification |
+| **New Metadata** | [Dataset Instance](/specification/metadata/dataset_instance/dataset_instance_overview.md) and [Recency](/specification/metadata/recency/recency_overview.md) metadata for tracking data identity and freshness |
+| **New Attributes** | `InvoiceHandling`, `JsonObjectFormat`, and `DataGeneratorCalculatedSplitCostAllocationHandling` |
+
+See the [CHANGELOG](/CHANGELOG.md) for complete details.
+
+### What Requires Migration
+
+Only the `ProviderName` and `PublisherName` columns are deprecated in FOCUS 1.3. These columns will be removed in FOCUS 1.4.
+
+---
+
+## Provider and Publisher Column Changes
+
+### Before You Begin
+
+Complete this assessment before migrating:
+
+- [ ] Identify all queries, reports, and dashboards that reference `ProviderName` or `PublisherName`
+- [ ] For each usage, determine what business question the column was answering
+- [ ] Review [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md) for scenarios matching your acquisition methods
+- [ ] Plan migration timeline (deprecated columns will be removed in FOCUS 1.4+)
 
 ### Why This Change Was Made
 
@@ -14,45 +58,48 @@ The original `ProviderName` and `PublisherName` columns suffered from definition
 
 | Problem | Impact |
 |---------|--------|
-| **ProviderName** lacked specificity about *which* provider role was being described | Data generators inconsistently populated values, making cross-provider analysis unreliable |
-| **PublisherName** overlapped conceptually with Provider and Invoice Issuer | The column was often left null, duplicated ProviderName, or populated inconsistently across data generators |
-| Neither column distinguished between the entity selling a service and the entity hosting the underlying infrastructure | Practitioners couldn't determine who to contact for support vs. billing inquiries |
+| `ProviderName` lacked specificity about which provider role was being described | Data generators inconsistently populated values, making cross-provider analysis unreliable |
+| `PublisherName` overlapped conceptually with Provider and Invoice Issuer | The column was often null, duplicated `ProviderName`, or populated inconsistently |
+| Neither column distinguished between the entity selling a service and the entity hosting the infrastructure | Practitioners couldn't determine who to contact for support vs. billing inquiries |
 
-FOCUS 1.3 resolves this by introducing two purpose-specific columns that align with the distinct entity roles documented in [Participating Entity Identification](participating_entity_identification.md).
+FOCUS 1.3 resolves this by introducing two purpose-specific columns that align with the distinct entity roles documented in [Participating Entity Identification](/specification/appendix/participating_entity_identification.md).
 
-### Column Mapping
+### Migration Decision Tree
 
-#### ProviderName → ServiceProviderName
+The correct mapping from deprecated columns depends on what business question your queries were answering, not a simple column rename.
 
-| Attribute | FOCUS 1.2 | FOCUS 1.3 |
-|-----------|-----------|-----------|
-| Column ID | `ProviderName` | `ServiceProviderName` |
-| Display Name | Provider Name | Service Provider Name |
-| Feature Level | Mandatory | Mandatory |
-| Allows Nulls | False | False |
+#### Migrating ProviderName
 
-**Migration action:** Replace all references to `ProviderName` with `ServiceProviderName` in queries and ingestion logic. The semantic intent is preserved: both columns identify the entity that makes resources or services available for purchase.
+| If you used ProviderName to identify... | Use this column in 1.3 | Notes |
+|-----------------------------------------|------------------------|-------|
+| Who sells the service you're consuming | `ServiceProviderName` | Most common case for direct CSP purchases |
+| The cloud platform hosting marketplace purchases | `HostProviderName` | Marketplace scenarios where ProviderName held the CSP |
+| The entity for billing inquiries | `InvoiceIssuerName` | Already existed in 1.2 |
 
-#### PublisherName → No Direct Replacement
+#### Migrating PublisherName
 
-| Attribute | FOCUS 1.2 | FOCUS 1.3 |
-|-----------|-----------|-----------|
-| Column ID | `PublisherName` | *Deprecated, no replacement* |
-| Display Name | Publisher Name | — |
-| Feature Level | Mandatory | — |
+| If you used PublisherName to identify... | Use this column in 1.3 | Notes |
+|------------------------------------------|------------------------|-------|
+| Who sells the service (e.g., SaaS vendor in marketplace) | `ServiceProviderName` | Primary intended use |
+| Who hosts the underlying infrastructure | `HostProviderName` | Rare; usually null or duplicated ProviderName |
+| Who issues the invoice | `InvoiceIssuerName` | Already existed in 1.2 |
+| Who generates the billing data | `DataGenerator` (metadata) | Metadata property, not a column |
 
-**Migration action:** Evaluate what business question your `PublisherName` queries were answering, then select the appropriate 1.3 column:
+#### Key Insight: Acquisition Method Matters
 
-| If you used PublisherName to identify... | Use this column in 1.3 |
-|------------------------------------------|------------------------|
-| Who sells the service | `ServiceProviderName` |
-| Who hosts the underlying infrastructure | `HostProviderName` |
-| Who issues the invoice | `InvoiceIssuerName` |
-| Who generates the billing data | `DataGenerator` (metadata) |
+The mapping varies by how resources or services were acquired. Review these common scenarios:
 
-The ambiguity that `PublisherName` attempted to address is now resolved by the explicit separation of these four entity roles.
+| Scenario | Old ProviderName | Old PublisherName | New ServiceProviderName | New HostProviderName |
+|----------|------------------|-------------------|-------------------------|----------------------|
+| Direct CSP purchase | CSP | CSP (or null) | CSP | CSP |
+| Marketplace: SaaS on CSP infrastructure | CSP | SaaS Vendor | SaaS Vendor | CSP |
+| Marketplace: SaaS on vendor infrastructure | CSP | SaaS Vendor | SaaS Vendor | SaaS Vendor |
+| MSP-managed services | MSP | MSP | MSP | CSP (if visible) or MSP |
+| Direct SaaS purchase | SaaS Vendor | SaaS Vendor | SaaS Vendor | CSP (if visible) or SaaS Vendor |
 
-#### New Column: HostProviderName
+For the complete scenario matrix, see [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md).
+
+### New Column: HostProviderName
 
 | Attribute | Value |
 |-----------|-------|
@@ -69,7 +116,7 @@ The ambiguity that `PublisherName` attempted to address is now resolved by the e
 - MAY be null when the hosting provider cannot be uniquely determined (e.g., Tax or Adjustment charges)
 - MUST equal `ServiceProviderName` when the service provider hosts their own services and does not expose the underlying host
 
-## Query Migration Examples
+### Query Migration Examples
 
 #### Basic Provider Query
 
@@ -91,31 +138,76 @@ GROUP BY ServiceProviderName
 
 **FOCUS 1.2:**
 ```sql
-SELECT ProviderName, PublisherName, InvoiceIssuerName, SUM(BilledCost)
+SELECT 
+    ProviderName, 
+    PublisherName, 
+    InvoiceIssuerName, 
+    SUM(BilledCost) AS TotalCost
 FROM focus_data
 GROUP BY ProviderName, PublisherName, InvoiceIssuerName
 ```
 
 **FOCUS 1.3:**
 ```sql
-SELECT ServiceProviderName, HostProviderName, InvoiceIssuerName, SUM(BilledCost)
+SELECT 
+    ServiceProviderName, 
+    HostProviderName, 
+    InvoiceIssuerName, 
+    SUM(BilledCost) AS TotalCost
 FROM focus_data
 GROUP BY ServiceProviderName, HostProviderName, InvoiceIssuerName
 ```
 
-### Affected Supported Features
+#### Marketplace Cost Analysis
 
-The following supported features reference the deprecated columns and should be reviewed when migrating:
+**FOCUS 1.2** (common pattern to find marketplace purchases):
+```sql
+SELECT 
+    ProviderName,
+    PublisherName, 
+    SUM(BilledCost) AS TotalCost
+FROM focus_data
+WHERE ProviderName != PublisherName
+GROUP BY ProviderName, PublisherName
+```
 
-- Charge Categorization
-- Commit Usage and Under Usage
-- Cost Comparison
-- Effective Cost
-- Marketplace Purchases
-- Participating Entity Identification
-- Provider Services
-- Resource Usage
-- Service Categorization
+**FOCUS 1.3** (more precise):
+```sql
+SELECT 
+    ServiceProviderName,
+    HostProviderName, 
+    SUM(BilledCost) AS TotalCost
+FROM focus_data
+WHERE ServiceProviderName != HostProviderName
+GROUP BY ServiceProviderName, HostProviderName
+```
+
+### Verification
+
+After migrating queries, verify results:
+
+1. **Direct CSP purchases:** Query results should match pre-migration outputs when grouping by `ServiceProviderName` instead of `ProviderName`
+2. **Marketplace scenarios:** Results may show different groupings than before—this is intentional and reflects the corrected entity identification
+3. **Null handling:** `HostProviderName` may be null for charges that don't involve infrastructure (licenses, professional services, adjustments)
+
+---
+
+## Guidance for Data Generators
+
+### Dual-Column Support During Transition
+
+Data generators SHOULD include both deprecated and new columns in FOCUS 1.3 datasets to support practitioners transitioning their queries. This allows practitioners to:
+- Continue using existing queries during migration
+- Validate new queries against old results
+- Transition at their own pace before FOCUS 1.4
+
+### Deprecation Metadata
+
+FOCUS 1.2 introduced metadata properties to signal column deprecation:
+- `Deprecated`: Boolean indicating whether a column is deprecated
+- `PreviousColumnName`: References the column this one replaces (if applicable)
+
+Data generators SHOULD populate these properties in their metadata schema to help practitioners identify deprecated columns programmatically.
 
 ### Deprecation Timeline
 
@@ -125,11 +217,27 @@ The following supported features reference the deprecated columns and should be 
 | 1.3 | Deprecated | Deprecated |
 | 1.4+ | Removed | Removed |
 
-Data generators should include both deprecated and new columns in FOCUS 1.3 datasets to support practitioners transitioning their queries.
+---
 
-### Additional Resources
+## Affected Supported Features
 
-- [Participating Entity Identification Examples](participating_entity_identification.md) — Scenarios showing how Service Provider, Host Provider, Invoice Issuer, and Data Generator values vary by acquisition method
-- [ServiceProviderName Column Specification](columns/serviceprovidername.md)
-- [HostProviderName Column Specification](columns/hostprovidername.md)
-- [FOCUS 1.3 Changelog](../CHANGELOG.md)
+The following supported features reference participating entity columns and may require documentation or query updates:
+
+- [Charge Categorization](/specification/supported_features/charge_categorization.md)
+- [Commit Usage and Under Usage](/specification/supported_features/commit_usage_and_under_usage.md)
+- [Cost Comparison](/specification/supported_features/cost_comparison.md)
+- [Effective Cost](/specification/supported_features/effective_cost.md)
+- [Marketplace Purchases](/specification/supported_features/marketplace_purchases.md)
+- [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
+- [Provider Services](/specification/supported_features/provider_services.md)
+- [Resource Usage](/specification/supported_features/resource_usage.md)
+- [Service Categorization](/specification/supported_features/service_categorization.md)
+
+---
+
+## Additional Resources
+
+- [Participating Entity Identification Examples](/specification/appendix/participating_entity_identification.md) — Scenarios showing how entity values vary by acquisition method
+- [ServiceProviderName Column Specification](/specification/datasets/cost_and_usage/columns/serviceprovidername.md)
+- [HostProviderName Column Specification](/specification/datasets/cost_and_usage/columns/hostprovidername.md)
+- [FOCUS 1.3 Changelog](/CHANGELOG.md)
