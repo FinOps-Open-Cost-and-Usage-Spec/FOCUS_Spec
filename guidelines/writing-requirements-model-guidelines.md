@@ -34,7 +34,7 @@ The first stage of conversion of rules from the normative text to model rules is
 - `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
 - `Condition` - The definition of conditions under which this rule applies
 - `Requirement` - The definition of what is required for model
-- `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `SHOULD`, `MAY`, `OPTIONAL`)
+- `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `SHOULD`, `MAY`)
 - `MustSatisfy` - The normative text that this rule defines
 - `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
 - `Notes` - Free form notes (short) included in the model rule document
