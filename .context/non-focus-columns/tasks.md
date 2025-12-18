@@ -1,23 +1,23 @@
 # Tasks: Non-FOCUS Columns Initiative
 
 > **Target Release:** 1.4  
-> **Immediate Priority:** Complete #1634 and #1635 by 2025-12-17
 
 ---
 
-## Phase 0: Immediate Deliverables (Due Tomorrow)
+## Phase 0: Immediate Deliverables ✅ COMPLETE
 
 ### #1634 - Audit spec for existing mentions of non-focus column requirements
 
 #### Research Tasks
+
 - [x] Search specification folder for custom column mentions
-- [x] Search specification folder for x_ prefix mentions  
+- [x] Search specification folder for x\_ prefix mentions
 - [x] Search specification folder for provider column mentions
 - [x] Search supporting_content folder for relevant content
 - [x] Document findings in audit-1634-spec-analysis.md
 - [x] Consolidate list of all provider columns referenced (see provider-columns-referenced.md)
 - [x] Search Google Drive for related docs/sheets (identify, don't deep-dive)
-  - [x] "custom column" OR "x_" FOCUS
+  - [x] "custom column" OR "x\_" FOCUS
   - [x] "native column" OR "provider column"
   - [x] "AWS CUR" FOCUS
   - [x] "GCP billing" OR "BigQuery billing" FOCUS
@@ -56,48 +56,53 @@
 - [x] List any GDrive docs found that need review (captured in GDrive Docs to Review)
 
 #### Synthesis Tasks
+
 - [x] Summarize all locations where custom column requirements exist
 - [x] Identify inconsistencies or gaps in current requirements
 - [x] Document deferred proposals from 1.2
-- [ ] Write recommendation for where consolidated requirements should live
+- [x] Write recommendation for where consolidated requirements should live
 
 #### Deliverable Tasks
-- [ ] Review audit-1634-spec-analysis.md for completeness
-- [ ] Draft comment for issue #1634 summarizing findings
-- [ ] Post comment to #1634
+
+- [x] Review audit-1634-spec-analysis.md for completeness
+- [x] Draft comment for issue #1634 summarizing findings
+- [x] Post comment to #1634 ✅ https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1634#issuecomment-3665386261
 
 ---
 
-### #1635 - Review supported features section for #1094
+### #1635 - Review supported features section for #1094 ✅ CLOSED
 
-#### Prep Tasks
-- [ ] Read "Enhancement to Existing Supported Feature" section in feature-request.md
-- [ ] Compare proposed changes against current supported_features/custom_columns.md
-
-#### Analysis Tasks
-- [ ] Assess: Does the proposed description align with the new attribute vision?
-- [ ] Assess: Are the "when to include / when not to include" guidelines clear?
-- [ ] Assess: Is the completeness principle (MUST for all native data) the right scope?
-- [ ] Identify any gaps or concerns
-
-#### Deliverable Tasks
-- [ ] Document feedback/alignment in this repo (for AI context)
-- [ ] Draft comment for issue #1635 with alignment confirmation or suggested edits
-- [ ] Post comment to #1635
+- [x] Reviewed supported features content
+- [x] Posted comment confirming alignment
+- [x] Detailed feedback posted to #1094 directly
+- [x] Closed issue
 
 ---
 
 ## Phase 1: Foundation & Planning
 
-### Attribute Location Decision
-- [ ] Document pros/cons: extend column_handling.md vs new attribute
-- [ ] Draft strawman for each option (outline only)
-- [ ] Get TF-2 input on preferred approach
-- [ ] Finalize decision
+### Attribute Location Decision ✅ DECIDED
 
-### Plan Refinement  
-- [ ] Update plan.md with finalized approach
-- [ ] Define specific normative requirements to propose
+**Decision:** New attribute called **"Scenario Completeness"**
+
+**Rationale:**
+- 10-12 potential requirements - too many to add to Column Handling
+- Column Handling is about format (naming, ordering); this is about content (what to include)
+- "Scenario Completeness" aligns to goal: "achieve the same analysis and reporting scenarios"
+- Avoids overloaded terms like "provider" and "native"
+
+**Attribute details:**
+- Attribute ID: `ScenarioCompleteness`
+- Attribute Name: `Scenario Completeness`
+
+### Plan Refinement
+
+- [x] Decide attribute location (new attribute: Scenario Completeness)
+- [x] Decide requirement strength (MUST, let TF-2 discuss)
+- [x] Define scope criteria (use goal statement as objective test)
+- [x] Confirm column selection is not a blocker
+- [x] Update plan.md with finalized approach
+- [x] Define specific normative requirements (see plan.md § Proposed Requirements)
 - [ ] Identify what evidence/examples are needed to support proposal
 
 ---
@@ -105,16 +110,19 @@
 ## Phase 2: Provider Engagement Prep
 
 ### Understand Objections
+
 - [ ] Document known AWS concerns and objections
 - [ ] Document known GCP concerns and objections
 - [ ] Identify which objections are addressable vs fundamental blockers
 
 ### Build Evidence
-- [ ] Gather examples of native columns that should become x_ columns (per provider)
+
+- [ ] Gather examples of native columns that should become x\_ columns (per provider)
 - [ ] Document practitioner pain points from not having completeness
 - [ ] Identify any providers already doing this well (positive examples)
 
 ### Pre-Socialize
+
 - [ ] Identify specific people to engage at AWS and GCP
 - [ ] Schedule or async outreach to discuss concerns before TF-2 proposal
 - [ ] Document feedback and adjust proposal as needed
@@ -124,11 +132,13 @@
 ## Phase 3: Proposal & Approval
 
 ### TF-2 Proposal
+
 - [ ] Draft formal proposal with normative requirements
 - [ ] Present to TF-2 for refinement
 - [ ] Incorporate feedback
 
 ### Broader Approval
+
 - [ ] Present to maintainers/members for approval
 - [ ] Handle objections (with pre-socialized provider buy-in)
 - [ ] Get formal approval to proceed
@@ -137,14 +147,60 @@
 
 ## Phase 4: Implementation
 
-### Spec Changes
-- [ ] Draft attribute content (new or extended column_handling)
-- [ ] Update cross-references in other files
-- [ ] Update supported features content
-- [ ] Update glossary if needed
+> **References:** `plan.md` § Deliverables for requirements, `guidelines/` for conventions
+
+### Deliverable 1: Attribute File (CREATE)
+
+- [ ] Create `specification/attributes/scenario_completeness.md`
+- [ ] Follow `guidelines/normative-requirements-guidelines.md` for structure
+- [ ] Use `invoice_handling.md` as reference
+- [ ] Include 8 requirements from plan.md (MUST/MUST NOT first, then SHOULD)
+
+### Deliverable 2: Attributes Index (UPDATE)
+
+- [ ] Add `!INCLUDE "scenario_completeness.md",1` to `specification/attributes/attributes.mdpp`
+
+### Deliverable 3: Dataset Reference (UPDATE)
+
+- [ ] Add conformance line to `specification/datasets/cost_and_usage/dataset.md`
+
+### Deliverable 4: Requirements Model - Attribute Rules (CREATE)
+
+- [ ] Create `specification/requirements_model/model_rules/attributes/scenariocompleteness.json`
+- [ ] Follow `guidelines/writing-requirements-model-guidelines.md`
+- [ ] Use `columnhandling.json` as reference
+
+### Deliverable 5: Requirements Model - Dataset Rules (UPDATE)
+
+- [ ] Add `ScenarioCompleteness-A-000-M` to Dependencies in `costandusage.json`
+
+### Deliverable 6: Supporting Content (CREATE)
+
+- [ ] Create `supporting_content/attributes/scenario_completeness.md`
+- [ ] Include 6 sections from plan.md
+- [ ] Follow `guidelines/editorial-guidelines.md`
+
+### Deliverable 7: Supported Features (UPDATE - if needed)
+
+- [ ] Review `specification/supported_features/custom_columns.md`
+- [ ] Add reference to Scenario Completeness if appropriate
+
+### Validation
+
+```bash
+cd specification
+python validate_includes.py spec.mdpp        # Verify includes
+make clean && make                            # Build + lint
+cd requirements_model && python -m pytest tests/  # Test model
+```
+
+- [ ] Build succeeds, no linting errors
+- [ ] Requirements model tests pass
+- [ ] Manual review: matches existing attribute patterns
 
 ### Review & Merge
-- [ ] PR for spec changes
+
+- [ ] Create PR, link to #1094
 - [ ] Review cycle
 - [ ] Merge to working draft
 
@@ -160,8 +216,7 @@
 
 ## Notes
 
-- **Phase 0** is the immediate focus - everything else can wait
-- **Phases 1-4** are rough sequencing, will refine after Phase 0 complete
+- **Phase 0** complete - #1634 and #1635 closed
 - Provider engagement (Phase 2) is critical path - don't skip pre-socialization
 - `.context/` is working space; final content goes to `supporting_content/`
-
+- **plan.md § Deliverables** contains complete specs for each file - use as primary reference for implementation
