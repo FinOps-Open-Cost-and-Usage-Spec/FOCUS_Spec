@@ -22,7 +22,7 @@ Current values observed in billing data for various scenarios:
 
 ## Example Usecases
 
-- Finops team identify and handle large one-time purchases to avoid (or educate on) large scary spikes in cloud monitoring tools/platforms.
+- FinOps team identify and handle large one-time purchases to avoid (or educate on) large scary spikes in cloud monitoring tools/platforms.
 - Finance teams identify and allocate one-time purchases either by amortization or cost recovery from the right entity.
 - Engineering managers are able to identify usage-based charges to include in their budget or forecasting processes.
 

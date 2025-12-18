@@ -44,12 +44,12 @@ Current scenarios considered include:
 | Value      | Description                          |
 | :--------- | :------------------------------------|
 | Refund     | Any adjustments that are applied after the original usage or purchase row. Adjustments may be related to multiple charges. (NOTE: Tax excluded)   |
-| Credit     | Credits assoicated with promotional usage or incentives   |
+| Credit     | Credits associated with promotional usage or incentives   |
 | Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
 | Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
 
-ISSUE: Tax cannot be classified correctly, assuming refunds and purchases have a tax implication then we would need to look for negative tax values matching the refund line in order ot acertain the total value of the refund.
+ISSUE: Tax cannot be classified correctly, assuming refunds and purchases have a tax implication then we would need to look for negative tax values matching the refund line in order to ascertain the total value of the refund.
 
 ### Option 2:
 
@@ -64,7 +64,7 @@ New Column: Adjustment Category
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| NULL       | Default value for all incomming charges.             |
+| NULL       | Default value for all incoming charges.             |
 | Refund     | Refunded related to usage or purchase specific activities (expects a matching 'tax' transaction) |
 | Credit     | Promotional / negotiated / incentive credits provided at providers discression (does NOT expect a matching 'tax' transaction)       |
 
@@ -86,7 +86,7 @@ Permutations:
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| Credit     | Credits assoicated with promotional usage or incentives   |
+| Credit     | Credits associated with promotional usage or incentives   |
 | Purchase   | Charges for the acquisition of a service or resource bought upfront or on a recurring basis.              |
 | Tax        | Applicable taxes that are levied by the relevant authorities. Tax charges may vary depending on factors such as the location, jurisdiction, and local or federal regulations. |
 | Usage      | Charges based on the quantity of a service or resource that was consumed over a given period of time.     |
@@ -95,7 +95,7 @@ New Column: Adjustment Category
 
 | Value      | Description                          |
 | :--------- | :------------------------------------|
-| NULL       | Default value for all incomming charges.             |
+| NULL       | Default value for all incoming charges.             |
 | Refund     | Refunded related to usage or purchase specific activities (expects a matching 'tax' transaction) |
 | Bulk Refund     | General refund (expects a matching 'tax' transaction) |
 | Rounding Error     | Small corrections - Applicable to current billing period only |
