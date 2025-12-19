@@ -1,5 +1,9 @@
 # Glossary
 
+<a name="glossary:accrual-based-accounting"><b>Accrual-Based Accounting</b></a>
+
+Accrual-based accounting records technology costs in the period when resources are utilized or services are delivered. This ensures expenses are recognized in the same timeframe as the value they provide, independent of when billing or payment occurs.
+
 <a name="glossary:adjustment"><b>Adjustment</b></a>
 
 A charge representing a modification to billing data to account for certain events or circumstances not previously captured, or captured incorrectly. Examples include billing errors, service disruptions, or pricing changes.
