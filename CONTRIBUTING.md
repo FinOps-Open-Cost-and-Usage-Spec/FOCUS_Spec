@@ -12,7 +12,7 @@ Before contributing, please review the following guidelines carefully to ensure 
 ## 1. Before You Start
 
 1. **Join the FOCUS Project**
-   - If you’re not already a participant, visit the [FOCUS Enrolment](https://enrollment.lfx.linuxfoundation.org/?project=finopsopenbillingspec) for instructions on how **your company** can join the FOCUS Open Standards Project. In addition, you must be approved by your company as a contributor to this project. You are required to complete the steps indicated in the [README of the EasyCLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA/blob/main/README.md) repository.
+   - If you’re not already a participant, visit [FOCUS Enrollment](https://enrollment.lfx.linuxfoundation.org/?project=finopsopenbillingspec) for instructions on how **your company** can join the FOCUS Open Standards Project. In addition, you must be approved by your company as a contributor to this project. You are required to complete the steps indicated in the [README of the EasyCLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA/blob/main/README.md) repository.
    - Only authorized contributors can submit or review Pull Requests.
 
 2. **Get Familiar with the Project**
