@@ -94,7 +94,7 @@ CostAndUsage adheres to the following requirements:
 * CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling) requirements.
 
-## Column Requrements
+## Column Requirements
 
 ### Logical Grouping of Column Requirements
 

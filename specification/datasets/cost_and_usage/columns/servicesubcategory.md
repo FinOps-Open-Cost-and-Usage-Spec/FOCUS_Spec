@@ -81,7 +81,7 @@ Allowed values:
 | Internet of Things        | IoT Platforms                         | Unified solution that combines IoT data collection, processing, visualization, and device management.         |
 | Internet of Things        | Other (Internet of Things)            | Internet of Things (IoT) services that do not fall into one of the defined subcategories.                     |
 | Management and Governance | Architecture                          | Planning, design, and construction of software systems.                                                       |
-| Management and Governance | Compliance                            | Adherance to regulatory standards and industry best practices.                                                |
+| Management and Governance | Compliance                            | Adherence to regulatory standards and industry best practices.                                                |
 | Management and Governance | Cost Management                       | Monitoring and controlling expenses of systems and services.                                                  |
 | Management and Governance | Data Governance                       | Management of the availability, usability, integrity, and security of data.                                   |
 | Management and Governance | Disaster Recovery                     | Plans and procedures that ensure systems and services can recover from disruptions.                           |
