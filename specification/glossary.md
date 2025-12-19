@@ -2,7 +2,7 @@
 
 <a name="glossary:accrual-based-accounting"><b>Accrual-Based Accounting</b></a>
 
-Accrual-based accounting records technology costs in the period when resources are utilized or services are delivered. This ensures expenses are recognized in the same timeframe as the value they provide, independent of when billing or payment occurs.
+Accrual-based accounting records technology costs in the period when resources are utilized or services are delivered. This ensures expenses are recognized in the same timeframe as the value they provide, independent of when billing or invoicing occurs.
 
 <a name="glossary:adjustment"><b>Adjustment</b></a>
 
