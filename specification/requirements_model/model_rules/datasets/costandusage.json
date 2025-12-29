@@ -2034,9 +2034,12 @@
     "ApplicabilityCriteria": [
       "TAGGING_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "Tags MUST be present in a FOCUS dataset when the provider supports setting user or provider-defined tags.",
+      "MustSatisfy": "Tags MUST be present in a Cost and Usage FOCUS dataset when the data generator supports setting user or provider-defined tags.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
