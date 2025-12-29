@@ -2103,9 +2103,12 @@
     "ApplicabilityCriteria": [
       "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SubAccountType MUST be present in a FOCUS dataset when the provider supports more than one possible SubAccountType value.",
+      "MustSatisfy": "SubAccountType MUST be present in a Cost and Usage FOCUS dataset when the service provider supports more than one possible SubAccountType value.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
