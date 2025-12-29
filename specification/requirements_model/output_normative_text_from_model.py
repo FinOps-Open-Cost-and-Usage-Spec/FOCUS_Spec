@@ -24,6 +24,7 @@ Usage:
   python output_normative_text_from_model.py /path/to/model-1.2.json --filename /path/to/out.md
   python output_normative_text_from_model.py /path/to/model-1.2.json --reference "BilledCost"
   python output_normative_text_from_model.py --reference "BilledCost" --exclude-rmids
+  python output_normative_text_from_model.py --reference "BilledCost" --include-order
 
 Defaults (if no args):
   input:  ./build/model-1.2.json
@@ -139,7 +140,7 @@ def collect(spec: dict):
     return ordered
 
 
-def build_markdown(grouped, exclude_rmids=False):
+def build_markdown(grouped, exclude_rmids=False, include_order=False):
     lines = []
     for ref, items in grouped.items():
         lines.append(f"# {ref}")
@@ -218,15 +219,18 @@ def build_markdown(grouped, exclude_rmids=False):
             level = get_rule_level(rule_id, dependency_map, rule_map)
             indent = "  " * level
             
+            # Build the line with optional order prefix
+            order_prefix = f'{item.get("order", "")}\t' if include_order else ""
+            
             if exclude_rmids:
-                lines.append(f'{indent}{item["must"]}')
+                lines.append(f'{order_prefix}{indent}{item["must"]}')
             else:
-                lines.append(f'{indent}{item["ruleid"]} – {item["must"]}')
+                lines.append(f'{order_prefix}{indent}{item["must"]} ({item["ruleid"]})')
         lines.append("")
     return ("\n".join(lines)).rstrip() + "\n"
 
 
-def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None) -> None:
+def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False) -> None:
     spec = json.loads(in_path.read_text(encoding="utf-8"))
     grouped = collect(spec)
     
@@ -238,7 +242,7 @@ def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = Fals
                 filtered_grouped[ref] = items
         grouped = filtered_grouped
     
-    md = build_markdown(grouped, exclude_rmids=exclude_rmids)
+    md = build_markdown(grouped, exclude_rmids=exclude_rmids, include_order=include_order)
     
     if out_path:
         out_path.write_text(md, encoding="utf-8")
@@ -254,6 +258,8 @@ if __name__ == "__main__":
                        help="Path to input JSON file (default: build/model-1.2.json)")
     parser.add_argument("--exclude-rmids", "--no-rmids", action="store_true",
                        help="Exclude Rule Model IDs from the output (only show MustSatisfy text)")
+    parser.add_argument("--include-order", action="store_true",
+                       help="Include Order field at the start of each line (tab-separated)")
     parser.add_argument("--filename", type=str, help="Save output to specified filename instead of printing to console")
     parser.add_argument("--reference", type=str, help="Only display the normative text for the specified reference entity")
     
@@ -266,4 +272,4 @@ if __name__ == "__main__":
         out_path = Path(args.filename)
 
     
-    main(in_path, out_path, exclude_rmids=args.exclude_rmids, reference_filter=args.reference)
+    main(in_path, out_path, exclude_rmids=args.exclude_rmids, reference_filter=args.reference, include_order=args.include_order)

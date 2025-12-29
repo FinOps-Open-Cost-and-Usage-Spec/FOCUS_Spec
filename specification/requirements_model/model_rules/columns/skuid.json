@@ -10,9 +10,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "UNIT_PRICING_SUPPORTED"
     ],
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The SkuId column adheres to the following requirements:",
+      "MustSatisfy": "SkuId adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -63,6 +66,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST be of type String.",
@@ -83,6 +89,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST conform to StringHandling requirements.",
@@ -103,6 +112,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId nullability is defined as follows:",
@@ -140,6 +152,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST be null when ChargeCategory is \"Tax\".",
@@ -165,6 +180,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
@@ -210,6 +228,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MAY be null in all other cases.",
@@ -227,6 +248,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId for a given SKU adheres to the following additional requirements:",
@@ -264,6 +288,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST remain consistent across billing accounts or contracts.",
@@ -281,6 +308,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST remain consistent across PricingCategory values.",
@@ -298,6 +328,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the SKU.",
@@ -315,6 +348,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 120,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MUST be associated with a given resource or service when ChargeCategory is \"Usage\" or \"Purchase\".",
@@ -348,6 +384,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuId MAY equal SkuPriceId.",

@@ -9,9 +9,12 @@
     "ApplicabilityCriteria": [
       "SUB_ACCOUNT_SUPPORTED"
     ],
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The SubAccountName column adheres to the following requirements:",
+      "MustSatisfy": "SubAccountName adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -47,6 +50,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST be of type String.",
@@ -67,6 +73,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST conform to StringHandling requirements.",
@@ -87,6 +96,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName nullability is defined as follows:",
@@ -119,6 +131,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST be null when SubAccountId is null.",
@@ -146,6 +161,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SubAccountName MUST NOT be null when SubAccountId is not null.",

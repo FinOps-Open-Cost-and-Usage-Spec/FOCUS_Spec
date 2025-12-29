@@ -10,9 +10,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "UNIT_PRICING_SUPPORTED"
     ],
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The SkuPriceDetails column adheres to the following requirements:",
+      "MustSatisfy": "SkuPriceDetails adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -58,6 +61,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails MUST conform to KeyValueFormat requirements.",
@@ -78,6 +84,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails property keys SHOULD conform to PascalCase format.",
@@ -95,6 +104,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails nullability is defined as follows:",
@@ -127,6 +139,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails MUST be null when SkuPriceId is null.",
@@ -152,6 +167,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails MAY be null when SkuPriceId is not null.",
@@ -177,6 +195,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When SkuPriceDetails is not null, SkuPriceDetails adheres to the following additional requirements:",
@@ -229,9 +250,10 @@
       },
       "Dependencies": [
         "CAU-SkuPriceDetails-C-007-M",
+        "CAU-SkuPriceDetails-C-010-C",
         "CAU-SkuPriceDetails-C-008-M",
         "CAU-SkuPriceDetails-C-009-C",
-        "CAU-SkuPriceDetails-C-010-C",
+        "CAU-SkuPriceDetails-C-023-C",
         "CAU-SkuPriceDetails-C-011-O",
         "CAU-SkuPriceDetails-C-012-O",
         "CAU-SkuPriceDetails-C-016-O",
@@ -248,6 +270,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails MUST be associated with a given SkuPriceId.",
@@ -265,6 +290,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails MUST NOT include properties that are not applicable to the corresponding SkuPriceId.",
@@ -282,6 +310,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails SHOULD include all FOCUS-defined SKU Price properties listed below that are applicable to the corresponding SkuPriceId.",
@@ -299,9 +330,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a Provider-defined property.",
+      "MustSatisfy": "SkuPriceDetails MUST include the FOCUS-defined SKU Price property when an equivalent property is included as a custom property.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -316,6 +350,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails MAY include properties that are already captured in other dedicated columns.",
@@ -333,6 +370,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 140,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "SkuPriceDetails properties for a given SkuPriceId adhere to the following additional requirements:",
@@ -370,6 +410,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 150,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Existing SkuPriceDetails properties SHOULD remain consistent over time.",
@@ -387,6 +430,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 160,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Existing SkuPriceDetails properties SHOULD NOT be removed.",
@@ -404,6 +450,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 170,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Additional SkuPriceDetails properties MAY be added over time.",
@@ -421,6 +470,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 180,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Property key SHOULD remain consistent across comparable SKUs having that property, and the values for this key SHOULD remain in a consistent format.",
@@ -438,6 +490,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 190,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Property key MUST begin with the string \"x_\" unless it is a FOCUS-defined property.",
@@ -455,6 +510,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 200,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Property value MUST represent the value for a single PricingUnit when the property holds a numeric value.",
@@ -472,6 +530,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 210,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "FOCUS-defined SKU Price properties adhere to the following additional requirements:",
@@ -509,6 +570,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 220,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Property key MUST match the spelling and casing specified for the FOCUS-defined property.",
@@ -526,6 +590,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 230,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Property value MUST be of the type specified for that property.",
@@ -543,10 +610,33 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 240,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.",
       "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-SkuPriceDetails-C-023-C": {
+    "Function": "Validation",
+    "Reference": "SkuPriceDetails",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 120,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuPriceDetails SHOULD include all custom SKU Price properties that are applicable to the corresponding SkuPriceId when there is no equivalent FOCUS-defined property.",
+      "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

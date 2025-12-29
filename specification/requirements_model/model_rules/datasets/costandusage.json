@@ -1009,9 +1009,12 @@
     "ApplicabilityCriteria": [
       "SUB_ACCOUNT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SubAccountId MUST be present in a FOCUS dataset when the provider supports a sub account construct.",
+      "MustSatisfy": "SubAccountId MUST be present in a Cost and Usage FOCUS dataset when the service provider supports a sub account construct.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1215,9 +1218,12 @@
     "ApplicabilityCriteria": [
       "SUB_ACCOUNT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SubAccountName MUST be present in a FOCUS dataset when the provider supports a sub account construct.",
+      "MustSatisfy": "SubAccountName MUST be present in a Cost and Usage FOCUS dataset when the service provider supports a sub account construct.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1922,9 +1928,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "UNIT_PRICING_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuMeter MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "MustSatisfy": "SkuMeter MUST be present in a Cost and Usage FOCUS dataset when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1945,9 +1954,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "UNIT_PRICING_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuId MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "MustSatisfy": "SkuId MUST be present in a Cost and Usage FOCUS dataset when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1968,9 +1980,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "UNIT_PRICING_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceDetails MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "MustSatisfy": "SkuPriceDetails MUST be present in a Cost and Usage FOCUS dataset when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",

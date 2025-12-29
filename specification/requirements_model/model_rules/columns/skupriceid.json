@@ -12,7 +12,7 @@
     ],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The SkuPriceId column adheres to the following requirements:",
+      "MustSatisfy": "SkuPriceId adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
