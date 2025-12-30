@@ -150,9 +150,9 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-ServiceCategory-C-000-M",
         "CAU-ServiceName-C-005-C",
-        "CAU-ServiceName-C-006-C"
+        "CAU-ServiceName-C-006-C",
+        "CAU-ServiceCategory-C-000-M"
       ]
     }
   },
@@ -231,9 +231,9 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-ServiceSubcategory-C-000-O",
         "CAU-ServiceName-C-008-C",
-        "CAU-ServiceName-C-009-C"
+        "CAU-ServiceName-C-009-C",
+        "CAU-ServiceSubcategory-C-000-O"
       ]
     }
   },

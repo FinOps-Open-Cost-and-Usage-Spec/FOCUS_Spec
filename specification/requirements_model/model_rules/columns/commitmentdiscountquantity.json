@@ -197,10 +197,10 @@
         ]
       },
       "Dependencies": [
-        "CAU-CommitmentDiscountId-C-000-C",
-        "CAU-ChargeCategory-C-000-M",
         "CAU-CommitmentDiscountQuantity-C-005-C",
-        "CAU-CommitmentDiscountQuantity-C-006-C"
+        "CAU-CommitmentDiscountQuantity-C-006-C",
+        "CAU-CommitmentDiscountId-C-000-C",
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   },

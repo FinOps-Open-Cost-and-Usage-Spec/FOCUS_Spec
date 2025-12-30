@@ -777,9 +777,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargeCategory MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ChargeCategory MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1049,9 +1052,12 @@
     "ApplicabilityCriteria": [
       "CAPACITY_RESERVATION_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CapacityReservationStatus MUST be present in a FOCUS dataset when the provider supports capacity reservations.",
+      "MustSatisfy": "CapacityReservationStatus MUST be present in a Cost and Usage FOCUS dataset when the service provider supports capacity reservations.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1154,9 +1160,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargeDescription MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ChargeDescription MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1174,9 +1183,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargeClass MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ChargeClass MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1194,9 +1206,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargeFrequency is RECOMMENDED to be present in a FOCUS dataset.",
+      "MustSatisfy": "ChargeFrequency is RECOMMENDED to be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "RECOMMENDED",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1214,9 +1229,12 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargePeriodEnd MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ChargePeriodEnd MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1404,9 +1422,12 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ChargePeriodStart MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ChargePeriodStart MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2119,9 +2140,12 @@
     "ApplicabilityCriteria": [
       "CAPACITY_RESERVATION_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CapacityReservationId MUST be present in a FOCUS dataset when the provider supports capacity reservations.",
+      "MustSatisfy": "CapacityReservationId MUST be present in a Cost and Usage FOCUS dataset when the service provider supports capacity reservations.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
