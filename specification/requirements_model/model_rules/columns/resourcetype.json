@@ -10,9 +10,12 @@
       "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
       "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
     ],
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The ResourceType column adheres to the following requirements:",
+      "MustSatisfy": "ResourceType adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -48,6 +51,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType MUST be of type String.",
@@ -68,6 +74,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType MUST conform to StringHandling requirements.",
@@ -88,6 +97,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType nullability is defined as follows:",
@@ -120,6 +132,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType MUST be null when ResourceId is null.",
@@ -147,6 +162,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceType MUST NOT be null when ResourceId is not null.",

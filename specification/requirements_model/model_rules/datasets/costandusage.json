@@ -1426,9 +1426,12 @@
       "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
       "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ResourceType MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources and supports assigning types to resources.",
+      "MustSatisfy": "ResourceType MUST be present in a Cost and Usage FOCUS dataset when the service provider supports billing based on provisioned resources and supports assigning types to resources.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1451,7 +1454,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ServiceCategory MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ServiceCategory MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1474,7 +1477,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ServiceName MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ServiceName MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1497,7 +1500,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ServiceSubcategory is RECOMMENDED to be present in a FOCUS dataset.",
+      "MustSatisfy": "ServiceSubcategory is RECOMMENDED to be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "RECOMMENDED",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1517,9 +1520,12 @@
     "ApplicabilityCriteria": [
       "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ResourceId MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources.",
+      "MustSatisfy": "ResourceId MUST be present in a Cost and Usage FOCUS dataset when the service provider supports billing based on provisioned resources.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1539,9 +1545,12 @@
     "ApplicabilityCriteria": [
       "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ResourceName MUST be present in a FOCUS dataset when the provider supports billing based on provisioned resources.",
+      "MustSatisfy": "ResourceName MUST be present in a Cost and Usage FOCUS dataset when the service provider supports billing based on provisioned resources.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",

@@ -10,9 +10,12 @@
       "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
       "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
     ],
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The ResourceName column adheres to the following requirements:",
+      "MustSatisfy": "ResourceName adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -53,6 +56,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceName MUST be of type String.",
@@ -73,6 +79,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceName MUST conform to StringHandling requirements.",
@@ -93,6 +102,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceName nullability is defined as follows:",
@@ -125,6 +137,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceName MUST be null when ResourceId is null or when the resource does not have an assigned display name.",
@@ -148,6 +163,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceName MUST NOT be null when ResourceId is not null and the resource has an assigned display name.",
@@ -171,6 +189,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceName MUST NOT duplicate ResourceId when the resource is not provisioned interactively or only has a system-generated ResourceId.",
