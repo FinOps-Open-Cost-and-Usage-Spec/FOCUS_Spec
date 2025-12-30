@@ -179,7 +179,6 @@
         "ColumnBName": "InvoiceIssuerName"
       },
       "Dependencies": [
-        "CAU-ProviderName-C-000-M",
         "CAU-InvoiceIssuerName-C-000-M"
       ]
     }

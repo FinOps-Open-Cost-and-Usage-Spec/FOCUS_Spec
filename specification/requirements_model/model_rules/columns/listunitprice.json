@@ -9,9 +9,12 @@
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The ListUnitPrice column adheres to the following requirements:",
+      "MustSatisfy": "ListUnitPrice adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -31,6 +34,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ListUnitPrice-C-007-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ListUnitPrice-C-014-C"
           }
         ]
       },
@@ -40,7 +47,8 @@
         "CAU-ListUnitPrice-C-001-M",
         "CAU-ListUnitPrice-C-002-M",
         "CAU-ListUnitPrice-C-003-M",
-        "CAU-ListUnitPrice-C-007-C"
+        "CAU-ListUnitPrice-C-007-C",
+        "CAU-ListUnitPrice-C-014-C"
       ]
     }
   },
@@ -52,6 +60,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST be of type Decimal.",
@@ -72,6 +83,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST conform to NumericFormat requirements.",
@@ -92,6 +106,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice nullability is defined as follows:",
@@ -101,7 +118,15 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ListUnitPrice-C-012-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ListUnitPrice-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ListUnitPrice-C-013-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -115,10 +140,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-ChargeCategory-C-000-M",
+        "CAU-ListUnitPrice-C-012-C",
         "CAU-ListUnitPrice-C-004-C",
+        "CAU-ListUnitPrice-C-013-C",
         "CAU-ListUnitPrice-C-005-C",
-        "CAU-ListUnitPrice-C-006-O"
+        "CAU-ListUnitPrice-C-006-O",
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   },
@@ -130,6 +157,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST be null when ChargeCategory is \"Tax\".",
@@ -157,6 +187,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
@@ -204,6 +237,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MAY be null in all other cases.",
@@ -225,6 +261,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:",
@@ -239,14 +278,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ListUnitPrice-C-009-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ListUnitPrice-C-010-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ListUnitPrice-C-011-C"
           }
         ]
       },
@@ -256,11 +287,9 @@
         "Value": null
       },
       "Dependencies": [
-        "CAU-ChargeCategory-C-000-M",
         "CAU-ListUnitPrice-C-008-M",
         "CAU-ListUnitPrice-C-009-M",
-        "CAU-ListUnitPrice-C-010-C",
-        "CAU-ListUnitPrice-C-011-C"
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   },
@@ -272,6 +301,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST be a non-negative decimal value.",
@@ -293,6 +325,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 120,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ListUnitPrice MUST be denominated in the BillingCurrency.",
@@ -308,7 +343,7 @@
     "EntityType": "Column",
     "Notes": null,
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
@@ -346,7 +381,7 @@
     "EntityType": "Column",
     "Notes": null,
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
@@ -360,6 +395,108 @@
       },
       "Dependencies": [
         "CAU-ChargeClass-C-000-M"
+      ]
+    }
+  },
+  "CAU-ListUnitPrice-C-012-C": {
+    "Function": "Nullability",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST be null when SkuPriceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
+    }
+  },
+  "CAU-ListUnitPrice-C-013-C": {
+    "Function": "Nullability",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListUnitPrice MUST NOT be null when SkuPriceId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ListUnitPrice",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
+    }
+  },
+  "CAU-ListUnitPrice-C-014-C": {
+    "Function": "Nullability",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnByColumnEqualsColumnValue",
+        "ColumnAName": "ListUnitPrice",
+        "ColumnBName": "PricingQuantity",
+        "ResultColumnName": "ListCost"
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ListUnitPrice",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "PricingQuantity",
+            "Value": null
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-ListUnitPrice-C-000-C",
+        "CAU-PricingQuantity-C-000-M"
       ]
     }
   }

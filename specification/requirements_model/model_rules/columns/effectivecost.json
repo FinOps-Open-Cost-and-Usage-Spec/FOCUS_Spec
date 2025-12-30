@@ -7,9 +7,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The EffectiveCost column adheres to the following requirements:",
+      "MustSatisfy": "EffectiveCost adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -75,6 +78,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "EffectiveCost MUST be of type Decimal.",
@@ -95,6 +101,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "EffectiveCost MUST conform to NumericFormat requirements.",
@@ -115,6 +124,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "EffectiveCost MUST NOT be null.",
@@ -136,6 +148,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "EffectiveCost MUST be a valid decimal value.",
@@ -157,6 +172,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "EffectiveCost MUST be 0 when ChargeCategory is \"Purchase\" and the purchase is intended to cover future eligible charges.",
@@ -184,6 +202,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "EffectiveCost MUST be denominated in the BillingCurrency.",
@@ -203,9 +224,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "The sum of EffectiveCost in a given billing period MAY not match the sum of the invoices received for the same billing period for a billing account.",
+      "MustSatisfy": "The sum of EffectiveCost in a given billing period MAY differ from the sum of the invoices received for the same billing period for a billing account.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -220,6 +244,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When ChargeCategory is not \"Usage\" or \"Purchase\", EffectiveCost adheres to the following additional requirements:",
@@ -253,9 +280,9 @@
         ]
       },
       "Dependencies": [
-        "CAU-ChargeCategory-C-000-M",
         "CAU-EffectiveCost-C-009-C",
-        "CAU-EffectiveCost-C-010-C"
+        "CAU-EffectiveCost-C-010-C",
+        "CAU-ChargeCategory-C-000-M"
       ]
     }
   },
@@ -267,6 +294,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "EffectiveCost of a charge calculated based on other charges (e.g., when the ChargeCategory is \"Tax\") MUST be calculated based on the EffectiveCost of those related charges.",
@@ -284,6 +314,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "EffectiveCost of a charge unrelated to other charges (e.g., when the ChargeCategory is \"Credit\") MUST match the BilledCost.",
@@ -304,6 +337,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 120,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "Charges for a given CommitmentDiscountId adhere to the following additional requirements:",
@@ -327,9 +363,9 @@
         "Value": null
       },
       "Dependencies": [
-        "CAU-CommitmentDiscountId-C-000-C",
         "CAU-EffectiveCost-C-012-C",
-        "CAU-EffectiveCost-C-013-C"
+        "CAU-EffectiveCost-C-013-C",
+        "CAU-CommitmentDiscountId-C-000-C"
       ]
     }
   },
@@ -341,6 +377,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of BilledCost where ChargeCategory is \"Purchase\".",
@@ -376,6 +415,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 140,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The sum of EffectiveCost where ChargeCategory is \"Usage\" MUST equal the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Used\", plus the sum of EffectiveCost where ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Unused\".",

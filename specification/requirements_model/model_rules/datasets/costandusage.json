@@ -126,10 +126,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-021-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-022-C"
           },
           {
@@ -191,10 +187,6 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-037-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-CostAndUsage-D-038-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -302,7 +294,6 @@
         "CAU-CostAndUsage-D-018-C",
         "CAU-CostAndUsage-D-019-C",
         "CAU-CostAndUsage-D-020-C",
-        "CAU-CostAndUsage-D-021-M",
         "CAU-CostAndUsage-D-022-C",
         "CAU-CostAndUsage-D-023-M",
         "CAU-CostAndUsage-D-024-M",
@@ -319,7 +310,6 @@
         "CAU-CostAndUsage-D-035-M",
         "CAU-CostAndUsage-D-036-M",
         "CAU-CostAndUsage-D-037-M",
-        "CAU-CostAndUsage-D-038-M",
         "CAU-CostAndUsage-D-039-C",
         "CAU-CostAndUsage-D-040-M",
         "CAU-CostAndUsage-D-041-M",
@@ -517,14 +507,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ProviderName-C-000-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PublisherName-C-000-M"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-RegionId-C-000-C"
           },
           {
@@ -630,13 +612,11 @@
         "CAU-PricingCurrencyListUnitPrice-C-000-C",
         "CAU-PricingQuantity-C-000-M",
         "CAU-PricingUnit-C-000-M",
-        "CAU-ProviderName-C-000-M",
         "CAU-RegionId-C-000-C",
         "CAU-RegionName-C-000-C",
         "CAU-ResourceId-C-000-C",
         "CAU-ResourceName-C-000-C",
         "CAU-ResourceType-C-000-C",
-        "CAU-PublisherName-C-000-M",
         "CAU-SubAccountId-C-000-C",
         "CAU-SubAccountName-C-000-C",
         "CAU-ServiceCategory-C-000-M",
@@ -686,9 +666,12 @@
     "ApplicabilityCriteria": [
       "PUBLIC_PRICE_LIST_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ListUnitPrice MUST be present in a FOCUS dataset when the provider publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "ListUnitPrice MUST be present in a Cost and Usage FOCUS dataset when the service provider publishes unit prices exclusive of discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1073,7 +1056,7 @@
     "EntityType": "Dataset",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
@@ -1097,9 +1080,12 @@
     "ApplicabilityCriteria": [
       "MULTIPLE_PRICING_CATEGORIES_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCategory MUST be present in a FOCUS dataset when the provider supports more than one pricing category across all SKUs.",
+      "MustSatisfy": "PricingCategory MUST be present in a Cost and Usage FOCUS dataset when the service provider supports more than one pricing category across all SKUs.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1297,9 +1283,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "EffectiveCost MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "EffectiveCost MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1317,9 +1306,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ListCost MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ListCost MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1337,9 +1329,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceId is RECOMMENDED to be present in a FOCUS dataset.",
+      "MustSatisfy": "InvoiceId is RECOMMENDED to be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "RECOMMENDED",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1402,9 +1397,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingQuantity MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "PricingQuantity MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1443,7 +1441,7 @@
     "EntityType": "Dataset",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
@@ -1612,9 +1610,12 @@
     "ApplicabilityCriteria": [
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrency MUST be present in a FOCUS dataset when the provider supports pricing and billing in different currencies.",
+      "MustSatisfy": "PricingCurrency MUST be present in a Cost and Usage FOCUS dataset when the service provider supports pricing and billing in different currencies.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1632,9 +1633,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyContractedUnitPrice presence in a FOCUS dataset is defined as follows:",
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice presence in a Cost and Usage FOCUS dataset is defined as follows:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -1672,9 +1676,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "VIRTUAL_CURRENCY_SUPPORTED"
     ],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be present in a FOCUS dataset when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MUST be present in a Cost and Usage FOCUS dataset when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1695,9 +1702,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyContractedUnitPrice is RECOMMENDED to be present in a FOCUS dataset when the provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice is RECOMMENDED to be present in a Cost and Usage FOCUS dataset when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
       "Keyword": "RECOMMENDED",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1718,9 +1728,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyContractedUnitPrice MAY be present in a FOCUS dataset in all other cases.",
+      "MustSatisfy": "PricingCurrencyContractedUnitPrice MAY be present in a Cost and Usage FOCUS dataset in all other cases.",
       "Keyword": "MAY",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1738,9 +1751,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost presence in a FOCUS dataset is defined as follows:",
+      "MustSatisfy": "PricingCurrencyEffectiveCost presence in a Cost and Usage FOCUS dataset is defined as follows:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -1778,9 +1794,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "VIRTUAL_CURRENCY_SUPPORTED"
     ],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be present in a FOCUS dataset when the provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be present in a Cost and Usage FOCUS dataset when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1801,9 +1820,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost is RECOMMENDED to be present in a FOCUS dataset when the provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
+      "MustSatisfy": "PricingCurrencyEffectiveCost is RECOMMENDED to be present in a Cost and Usage FOCUS dataset when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.",
       "Keyword": "RECOMMENDED",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1824,9 +1846,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
     ],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingCurrencyEffectiveCost MAY be present in a FOCUS dataset in all other cases.",
+      "MustSatisfy": "PricingCurrencyEffectiveCost MAY be present in a Cost and Usage FOCUS dataset in all other cases.",
       "Keyword": "MAY",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2210,9 +2235,12 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PricingUnit MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "PricingUnit MUST be present in a Cost and Usage dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",

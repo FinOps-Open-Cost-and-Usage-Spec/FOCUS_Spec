@@ -5,7 +5,7 @@
     "EntityType": "Column",
     "Notes": "Main composite rule for PublisherName column",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
@@ -43,7 +43,7 @@
     "EntityType": "Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
@@ -63,7 +63,7 @@
     "EntityType": "Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
@@ -83,7 +83,7 @@
     "EntityType": "Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "Status": "Deprecated",
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {

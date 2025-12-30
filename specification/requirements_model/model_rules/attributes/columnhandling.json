@@ -377,7 +377,7 @@
     "Reference": "ColumnHandling",
     "EntityType": "Attribute",
     "Notes": "",
-    "ModelVersionIntroduced": "1.2",
+    "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
