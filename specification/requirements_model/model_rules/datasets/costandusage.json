@@ -2023,9 +2023,12 @@
     "ApplicabilityCriteria": [
       "REGION_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "RegionName MUST be present in a FOCUS dataset when the provider supports deploying resources or services within a region.",
+      "MustSatisfy": "RegionName MUST be present in a Cost and Usage FOCUS dataset when the host provider supports deploying resources or services within a region.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2045,9 +2048,12 @@
     "ApplicabilityCriteria": [
       "REGION_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "RegionId MUST be present in a FOCUS dataset when the provider supports deploying resources or services within a region.",
+      "MustSatisfy": "RegionId MUST be present in a Cost and Usage FOCUS dataset when the host provider supports deploying resources or services within a region.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
