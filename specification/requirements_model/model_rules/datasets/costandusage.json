@@ -706,9 +706,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingAccountName MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "BillingAccountName MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -726,9 +729,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BilledCost MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "BilledCost MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -748,9 +754,12 @@
     "ApplicabilityCriteria": [
       "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingAccountType MUST be present in a FOCUS dataset when the provider supports more than one possible BillingAccountType value.",
+      "MustSatisfy": "BillingAccountType MUST be present in a Cost and Usage FOCUS dataset when the invoice issuer supports more than one possible BillingAccountType value.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -788,9 +797,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingPeriodStart MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "BillingPeriodStart MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -808,9 +820,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingPeriodEnd MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "BillingPeriodEnd MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1116,9 +1131,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingAccountId MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "BillingAccountId MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1343,9 +1361,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingCurrency MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "BillingCurrency MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",

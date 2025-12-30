@@ -7,9 +7,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The BillingAccountName column adheres to the following requirements:",
+      "MustSatisfy": "BillingAccountName adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -45,6 +48,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountName MUST be of type String.",
@@ -65,6 +71,9 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "BillingAccountName MUST conform to StringHandling requirements.",
@@ -87,9 +96,12 @@
     "ApplicabilityCriteria": [
       "ACCOUNT_NAMING_SUPPORTED"
     ],
+    "Order": 40,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingAccountName MUST NOT be null when the provider supports assigning a display name for the billing account.",
+      "MustSatisfy": "BillingAccountName MUST NOT be null when the invoice issuer supports assigning a display name for the billing account.",
       "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
