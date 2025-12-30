@@ -23,7 +23,7 @@ Dataset Instance
 
 ## Examples
 
-For an example of the FOCUS dataset instance metadata, please refer to: [Dataset Instance Metadata Example](#datasetinstancemetadata).
+For an example of the FOCUS dataset instance metadata, please refer to: [Dataset Instance Metadata Example](#supportedfeatures.datasetinstancemetadata).
 
 ## Introduced (version)
 

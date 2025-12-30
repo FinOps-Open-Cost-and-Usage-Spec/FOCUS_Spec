@@ -63,7 +63,7 @@ Usage Unit communicates the aspect of the documented Allocation Method Id being 
 The "UsageUnit" property adheres to the following requirements:
 
 * "UsageUnit" MUST be included inside an "Elements" object if "UsageQuantity" allocation property is included in that "Elements" object, otherwise "UsageUnit" MAY be included in each "Elements" object.
-* Values for "UsageUnit" MUST capture the unit or component of data generator's documented [AllocationMethod](#allocationmethodid) that was used to determine the "AllocatedRatio" value.
+* Values for "UsageUnit" MUST capture the unit or component of data generator's documented [AllocationMethod](#datasets.costandusage.allocatedmethodid) that was used to determine the "AllocatedRatio" value.
 * Values for "UsageUnit" SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 
 <b>Usage Quantity</b>

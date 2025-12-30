@@ -11,7 +11,7 @@ InvoiceIssuerName adheres to the following requirements:
 * InvoiceIssuerName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceIssuerName MUST NOT be null.
 
-See [Appendix: Participating Entity Identification Examples](#participatingentityidentificationexamples) section for examples of Invoice Issuer Name values across various use case scenarios.
+See [Appendix: Participating Entity Identification Examples](#appendix.examples:participatingentityidentification) section for examples of Invoice Issuer Name values across various use case scenarios.
 
 ## Column ID
 

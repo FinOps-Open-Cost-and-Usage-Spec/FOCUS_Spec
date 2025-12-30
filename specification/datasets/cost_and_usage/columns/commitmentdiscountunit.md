@@ -18,7 +18,7 @@ CommitmentDiscountUnit adheres to the following requirements:
   * CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
   * When accounting for [*commitment discount flexibility*](#glossary:commitment-discount-flexibility), the CommitmentDiscountUnit value SHOULD reflect this consideration.
 
-See [Examples: Commitment Discount Flexibility](#commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
+See [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
 
 ## Column ID
 

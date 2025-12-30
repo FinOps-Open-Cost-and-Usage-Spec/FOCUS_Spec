@@ -20,7 +20,7 @@ HostProviderName adheres to the following requirements:
   * HostProviderName MUST reflect the name of the host provider when the service provider exposes the underlying hosting provider.
   * HostProviderName MUST equal [ServiceProviderName](#datasets.costandusage.serviceprovidername) in all other cases.
 
-See [Appendix: Participating Entity Identification Examples](#participatingentityidentificationexamples) section for examples of Host Provider values across various use case scenarios.
+See [Appendix: Participating Entity Identification Examples](#appendix.examples:participatingentityidentification) section for examples of Host Provider values across various use case scenarios.
 
 ## Column ID
 
