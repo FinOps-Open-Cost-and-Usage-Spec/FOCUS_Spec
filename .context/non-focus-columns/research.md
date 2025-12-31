@@ -198,6 +198,198 @@ The 1.2 discussions on **Issue #617 / PR #838** are the direct precursor to the 
 
 ---
 
+## Implementation Gap Analysis
+
+### Feature Request vs. Implementation Comparison
+
+Systematic review of feature-request.md acceptance criteria against implemented Scenario Completeness attribute.
+
+#### Completeness Requirements - ✅ ADDRESSED
+
+| Criterion | Status | Implementation |
+|-----------|--------|----------------|
+| Include custom columns for info not in FOCUS | ✅ | MUST requirement (A-001-M) |
+| No native dataset information lost | ✅ | Core attribute purpose |
+| Maintain granularity and accuracy | ✅ | SHOULD requirement (A-003-O) |
+| Achieve parity between FOCUS and native | ✅ | Core attribute purpose |
+
+#### Data Integrity & Consistency - ⚠️ GAPS IDENTIFIED
+
+| Criterion | Status | Notes |
+|-----------|--------|-------|
+| Custom columns do NOT duplicate FOCUS columns | ❌ GAP | Was in plan.md, removed during refinement |
+| When transformed, don't add custom for native | ❌ GAP | Was in plan.md, removed during refinement |
+| FOCUS metrics integrity maintained | ⚠️ Implicit | Covered by row handling |
+| Row aggregation/splitting preserves accuracy | ✅ | MUST requirement (A-007-M) |
+| Correlation columns included | ✅ | SHOULD requirement (A-005-O) |
+
+**Analysis of Removed Requirements:**
+
+The "MUST NOT duplicate" and "MUST NOT add transformed native" requirements were removed during user refinement. The user specifically identified these as conflicting with the "MAY preserve for migration" requirement.
+
+**Decision:** The current framing is intentional. The user removed explicit anti-duplication requirements to avoid conflict with the migration preservation MAY. The supporting content's "When NOT to Include Custom Columns" section provides non-normative guidance covering these scenarios. This is acceptable because:
+1. The user explicitly made this decision during refinement
+2. Supporting content covers the anti-patterns
+3. The migration use case (AWS column stability) takes priority
+
+#### Naming & Documentation - ⚠️ PARTIAL
+
+| Criterion | Status | Notes |
+|-----------|--------|-------|
+| Follow x_ prefix convention | ⚠️ Implicit | Mentioned in intro, not explicit requirement |
+| Avoid conflicts with FOCUS columns | ❌ GAP | Not addressed anywhere |
+| Documentation of custom columns | ✅ | SHOULD requirement (A-006-O) |
+| Documentation clarifies mappings | ⚠️ | Related to separate FR #1098 |
+
+**Analysis:** The x_ prefix is already required by Column Handling attribute, so adding it here would be redundant. Conflict avoidance is also implicit in the x_ prefix convention. No changes needed.
+
+#### Practitioner Impact - ✅ ADDRESSED
+
+All practitioner impact criteria are covered by the core attribute design.
+
+### Proposed Solution Requirements Analysis
+
+The feature-request.md "Proposed Solution" section lists 4 normative requirements:
+
+| Requirement | Status | Decision |
+|-------------|--------|----------|
+| MUST include custom columns | ✅ Implemented | A-001-M |
+| SHOULD allow column selection | ❌ Not in attribute | See analysis below |
+| SHOULD provide conformance documentation | ❌ Not in attribute | See analysis below |
+| SHOULD include explanations for non-conformance | ❌ Not in attribute | See analysis below |
+
+---
+
+## Column Selection Decision
+
+### The Question
+Should column selection be part of Scenario Completeness attribute, a separate attribute, or excluded entirely?
+
+### Analysis
+
+**Issue #1091 Context:**
+- Column selection is a separate, open feature request with its own acceptance criteria
+- It focuses on allowing practitioners to select subsets of columns before/during export
+- It's categorized as "Supporting Content" not an attribute refinement
+- Has its own set of supporting organizations (FinOps Foundation, Caligo)
+- Level of ambiguity rated 4/5 (high complexity)
+
+**Feature Request #1094 Reference:**
+- feature-request.md lists column selection as a SHOULD, not MUST
+- Lists #1091 as "Blocking dependency" in Related Work section
+- plan.md explicitly states "Column selection: NOT a blocker; keep separate from this work"
+
+**Key Considerations:**
+1. **Scope Creep Risk:** FOCUS defines schema/data, not application-level features. Column selection is a functional/application requirement.
+2. **Complexity:** #1091 has extensive acceptance criteria around UI, API, configuration, column groups, presets - far beyond Scenario Completeness scope.
+3. **Independence:** Column selection applies to ALL columns (FOCUS + custom), not just custom columns.
+4. **Separate Governance:** #1091 has its own supporting organizations and review process.
+
+### Decision: EXCLUDE from Scenario Completeness
+
+**Rationale:**
+1. Column selection is explicitly tracked as separate issue #1091
+2. plan.md explicitly excludes it: "Column selection: NOT a blocker; keep separate from this work"
+3. Adding it to Scenario Completeness would conflate data completeness (what columns exist) with data access (which columns practitioners receive)
+4. The feature request's SHOULD for column selection references #1091, indicating it should be addressed there
+5. Column selection applies to all columns, not just custom columns from Scenario Completeness
+
+**No changes to attribute needed.**
+
+---
+
+## Conformance Documentation Decision
+
+### The Question
+Should conformance documentation requirements be part of Scenario Completeness attribute?
+
+### Analysis
+
+**Feature Request Reference:**
+- SHOULD provide conformance documentation indicating full/partial/non-conformance
+- SHOULD include explanations for partial or non-conformance
+
+**Related Issues:**
+- #1098 covers provider column mappings as a separate NFR
+- #1098 is explicitly about mapping documentation between native and FOCUS columns
+- Has its own supporting organizations (Twilio, Caterpillar, American Express, Caligo, FinOps Foundation)
+
+**Key Considerations:**
+1. **Current Documentation Requirement:** Scenario Completeness already has A-006-O: "SHOULD provide documentation describing custom columns, their purpose, and relationship to native columns"
+2. **Overlap with #1098:** Conformance documentation about column mappings is the core focus of #1098
+3. **Scope:** Conformance documentation is broader than just custom columns - it covers all column mappings
+4. **Existing Mechanism:** FOCUS has a separate Conformance Certification program
+
+### Decision: PARTIALLY ADDRESSED, Remainder Deferred to #1098
+
+**What's already covered:**
+- A-006-O requires documentation of custom columns
+
+**What should NOT be added to Scenario Completeness:**
+- Full/partial/non-conformance indicators → This is conformance program scope
+- Detailed column mapping documentation → This is #1098 scope
+
+**Rationale:**
+1. The feature request's conformance documentation SHOULD relates more to #1098's comprehensive mapping requirements
+2. Adding conformance level indicators (full/partial/non-conformance) to an attribute is unusual - conformance is typically assessed at the certification level
+3. Scenario Completeness focuses on what columns to include, not how to document compliance status
+4. #1098 has strong organizational support and is the appropriate place for mapping documentation requirements
+
+**No changes to attribute needed.** Add note to supporting content clarifying relationship to #1098.
+
+---
+
+## Missing Anti-Duplication Requirements
+
+### The Question
+Should explicit MUST NOT duplication requirements be added?
+
+### Analysis
+
+**Original plan.md requirements removed:**
+- "Custom columns MUST NOT duplicate information already captured in FOCUS columns"
+- "When native data is transformed into FOCUS columns, data generators MUST NOT add custom columns for the original native representation"
+
+**User's Explicit Decision:**
+During refinement, the user identified these as conflicting with "MAY preserve non-FOCUS versions for migration" and explicitly removed them.
+
+**Current Coverage:**
+- Supporting content "When NOT to Include Custom Columns" covers:
+  1. Duplication anti-pattern
+  2. Transformed data anti-pattern
+  3. Data integrity violation anti-pattern
+
+### Decision: NO CHANGES - User Decision Was Intentional
+
+**Rationale:**
+1. The user explicitly removed these after identifying the conflict with migration preservation
+2. Supporting content provides non-normative guidance
+3. The MAY for migration preservation is essential for addressing AWS column stability concerns
+4. Making both MUST NOT (no duplication) and MAY (preserve old columns) would be contradictory
+
+**No changes to attribute needed.**
+
+---
+
+## Summary of Decisions
+
+| Gap | Decision | Rationale |
+|-----|----------|-----------|
+| Column Selection | Exclude | Separate issue #1091, explicitly excluded in plan.md |
+| Conformance Documentation | Defer to #1098 | Separate issue with broader scope |
+| Anti-Duplication Requirements | Keep removed | User decision to resolve conflict with migration MAY |
+| x_ Prefix Requirement | No change | Already covered by Column Handling attribute |
+| Conflict Avoidance | No change | Implicit in x_ prefix convention |
+
+**Conclusion:** The Scenario Completeness attribute as implemented aligns with the feature request's core requirements. The gaps identified are either:
+1. Intentionally excluded per user direction
+2. Covered by separate issues (#1091, #1098)
+3. Already addressed by other mechanisms (Column Handling, Conformance Certification)
+
+No changes to the attribute are recommended.
+
+---
+
 ## Pending Research
 
 ### Provider Objections
