@@ -831,9 +831,12 @@
     "ApplicabilityCriteria": [
       "USAGE_MEASUREMENT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedQuantity MUST be present in a FOCUS dataset when the provider supports the measurement of usage.",
+      "MustSatisfy": "ConsumedQuantity MUST be present in a Cost and Usage FOCUS dataset when the service provider supports the measurement of usage.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -853,9 +856,12 @@
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountName MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "MustSatisfy": "CommitmentDiscountName MUST be present in a Cost and Usage FOCUS dataset when the service provider supports commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -875,9 +881,12 @@
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountId MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "MustSatisfy": "CommitmentDiscountId MUST be present in a Cost and Usage FOCUS dataset when the service provider supports commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -897,9 +906,12 @@
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountType MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "MustSatisfy": "CommitmentDiscountType MUST be present in a Cost and Usage FOCUS dataset when the service provider supports commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -919,9 +931,12 @@
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountUnit MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "MustSatisfy": "CommitmentDiscountUnit MUST be present in a Cost and Usage FOCUS dataset when the service provider supports commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -941,9 +956,12 @@
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountCategory MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "MustSatisfy": "CommitmentDiscountCategory MUST be present in a Cost and Usage FOCUS dataset when the service provider supports commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -963,9 +981,12 @@
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "CommitmentDiscountStatus MUST be present in a FOCUS dataset when the provider supports commitment discounts.",
+      "MustSatisfy": "CommitmentDiscountStatus MUST be present in a Cost and Usage FOCUS dataset when the service provider supports commitment discounts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1103,9 +1124,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "InvoiceIssuerName MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "InvoiceIssuerName MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1263,9 +1287,12 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedCost MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ContractedCost MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1354,9 +1381,12 @@
     "ApplicabilityCriteria": [
       "NEGOTIATED_PRICING_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractedUnitPrice MUST be present in a FOCUS dataset when the provider supports negotiated pricing concepts.",
+      "MustSatisfy": "ContractedUnitPrice MUST be present in a Cost and Usage FOCUS dataset when the service provider supports negotiated pricing concepts.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1990,9 +2020,12 @@
       "PUBLIC_PRICE_LIST_SUPPORTED",
       "UNIT_PRICING_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "SkuPriceId MUST be present in a FOCUS dataset when the provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
+      "MustSatisfy": "SkuPriceId MUST be present in a Cost and Usage FOCUS dataset when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -2190,9 +2223,12 @@
     "ApplicabilityCriteria": [
       "USAGE_MEASUREMENT_SUPPORTED"
     ],
+    "Order": 10,
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ConsumedUnit MUST be present in a FOCUS dataset when the provider supports the measurement of usage.",
+      "MustSatisfy": "ConsumedUnit MUST be present in a Cost and Usage FOCUS dataset when the service provider supports the measurement of usage.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
