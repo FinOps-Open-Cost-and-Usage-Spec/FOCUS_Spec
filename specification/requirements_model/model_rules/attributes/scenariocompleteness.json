@@ -1,0 +1,178 @@
+{
+  "ScenarioCompleteness-A-000-M": {
+    "Function": "Composite",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generators MUST include custom columns to ensure FOCUS datasets enable the same analysis and reporting scenarios available in native datasets.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ScenarioCompleteness-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ScenarioCompleteness-A-002-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ScenarioCompleteness-A-003-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ScenarioCompleteness-A-004-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ScenarioCompleteness-A-005-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ScenarioCompleteness-A-006-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ScenarioCompleteness-A-007-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ScenarioCompleteness-A-001-M",
+        "ScenarioCompleteness-A-002-O",
+        "ScenarioCompleteness-A-003-O",
+        "ScenarioCompleteness-A-004-O",
+        "ScenarioCompleteness-A-005-O",
+        "ScenarioCompleteness-A-006-O",
+        "ScenarioCompleteness-A-007-M"
+      ]
+    }
+  },
+  "ScenarioCompleteness-A-001-M": {
+    "Function": "Validation",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generators MUST include custom columns necessary to achieve the same analysis and reporting scenarios with FOCUS datasets that are available with their native cost and usage datasets.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ScenarioCompleteness-A-002-O": {
+    "Function": "Validation",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generators MAY exclude native columns that do not support any analysis or reporting scenarios.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ScenarioCompleteness-A-003-O": {
+    "Function": "Validation",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom columns SHOULD maintain the same granularity and accuracy as their native dataset equivalents.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ScenarioCompleteness-A-004-O": {
+    "Function": "Validation",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generators MAY preserve non-FOCUS versions of custom columns even after FOCUS equivalents are introduced to enable migration without breaking changes.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ScenarioCompleteness-A-005-O": {
+    "Function": "Validation",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generators SHOULD include custom columns that enable correlation between FOCUS datasets and native datasets (e.g., native charge identifiers).",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ScenarioCompleteness-A-006-O": {
+    "Function": "Validation",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generators SHOULD provide documentation describing custom columns, their purpose, and relationship to native columns.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ScenarioCompleteness-A-007-M": {
+    "Function": "Validation",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "When rows are split or aggregated to conform to FOCUS requirements, custom column values MUST be handled consistently to preserve data integrity.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
