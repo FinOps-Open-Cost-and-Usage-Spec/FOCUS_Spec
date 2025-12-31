@@ -7,9 +7,10 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The DateTimeFormat attribute adheres to the following requirements:",
+      "MustSatisfy": "DateTimeFormat adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -44,6 +45,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.",
@@ -61,6 +63,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details).",
@@ -78,6 +81,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 30,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ') and conform to the following guidelines:",
@@ -115,6 +119,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "MUST Include the date and time components, separated with the letter ‘T’.",
@@ -132,6 +137,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 50,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "MUST Use two-digit hours (HH), minutes (mm), and seconds (ss).",
@@ -149,6 +155,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 60,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "MUST End with the ‘Z’ indicator to denote UTC (Coordinated Universal Time).",

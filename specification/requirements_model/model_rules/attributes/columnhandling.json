@@ -9,8 +9,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 0,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "All columns defined by FOCUS MUST follow the following rules:",
       "Keyword": "MUST",
@@ -90,8 +88,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 10,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST use Pascal case.",
       "Keyword": "MUST",
@@ -110,8 +106,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 20,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST NOT use abbreviations.",
       "Keyword": "MUST NOT",
@@ -130,8 +124,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 30,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs MUST be alphanumeric with no special characters.",
       "Keyword": "MUST",
@@ -150,8 +142,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 40,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT use acronyms.",
       "Keyword": "SHOULD NOT",
@@ -170,8 +160,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 50,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories.",
       "Keyword": "SHOULD NOT",
@@ -190,8 +178,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 60,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID.",
       "Keyword": "MUST",
@@ -227,8 +213,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 80,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Columns with the Category suffix MUST be normalized.",
       "Keyword": "MUST",
@@ -247,8 +231,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "Order": 90,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Custom (e.g., service-provider-defined) columns that are not defined by FOCUS but included in a FOCUS dataset MUST follow the following rules:",
       "Keyword": "MUST",
@@ -282,8 +264,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 100,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.",
       "Keyword": "MUST",
@@ -302,8 +282,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 110,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns.",
       "Keyword": "SHOULD",
@@ -322,8 +300,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 120,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset.",
       "Keyword": "SHOULD",
@@ -342,8 +318,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 130,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.",
       "Keyword": "SHOULD",
@@ -362,8 +336,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 130,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns.",
       "Keyword": "MAY",
@@ -382,8 +354,6 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "Order": 70,
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Column display names MUST be consistent with their Column IDs, with spaces inserted between words (e.g., Column ID \"BillingAccountName\" and display name \"Billing Account Name\").",
       "Keyword": "MUST",

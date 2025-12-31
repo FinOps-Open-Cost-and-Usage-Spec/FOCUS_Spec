@@ -7,6 +7,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "All key-value related columns defined in the FOCUS specification MUST follow the key-value formatting requirements listed below.",
@@ -49,6 +50,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Key-Value Format columns MUST contain a serialized JSON string, consistent with the ECMA 404 definition of an object.",
@@ -66,6 +68,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Keys in a key-value pair MUST be unique within an object.",
@@ -83,6 +86,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Values in a key-value pair MUST be one of the following types: number, string, true, false, or null.",
@@ -100,6 +104,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Values in a key-value pair MUST NOT be an object or an array.",

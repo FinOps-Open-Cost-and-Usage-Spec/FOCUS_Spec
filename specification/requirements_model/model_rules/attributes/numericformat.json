@@ -5,8 +5,9 @@
     "EntityType": "Attribute",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "Notes": "Root composite capturing all NumericFormat requirements",
+    "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "All columns capturing a numeric value, defined in the FOCUS specification, MUST follow the formatting requirements listed below.",
@@ -94,6 +95,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Custom numeric value capturing columns SHOULD adopt the same format requirements over time.",
@@ -111,6 +113,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Columns with a Numeric value format MUST contain a single numeric value.",
@@ -128,6 +131,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Numeric values MUST be expressed as an integer value, a decimal value, or a value expressed in scientific notation.",
@@ -145,6 +149,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Fractional notation MUST NOT be used.",
@@ -162,6 +167,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 50,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Numeric values expressed using scientific notation MUST be expressed using E notation \"mEn\" with a real number m and an integer n indicating a value of \"m x 10^n\".",
@@ -179,6 +185,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 60,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The sign of the exponent MUST only be expressed as part of the exponent value if n is negative.",
@@ -196,6 +203,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 70,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Numeric values MUST NOT be expressed with mathematical symbols, functions, or operators.",
@@ -213,6 +221,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 80,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Numeric values MUST NOT contain qualifiers or additional characters (e.g., currency symbols, units of measure, etc.).",
@@ -230,6 +239,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 90,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (\".\") if required to express a decimal value.",
@@ -247,6 +257,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 100,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Numeric values MUST NOT include a character to represent a sign for a positive value.",
@@ -264,6 +275,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 110,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "A negative sign (-) MUST indicate a negative value.",
@@ -281,6 +293,7 @@
     "Status": "Active",
     "Notes": "Allowed values are Integer and Decimal per normative text table",
     "ApplicabilityCriteria": [],
+    "Order": 120,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Columns with a Numeric value format MUST present one of the following values as the \"Data type\" in the column definition.",
@@ -298,6 +311,7 @@
     "Status": "Active",
     "Notes": "Allowed precision values: Integer (Short, Long, Extended), Decimal (Single, Double, Extended)",
     "ApplicabilityCriteria": [],
+    "Order": 130,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Providers SHOULD define precision and scale for Numeric Format columns using one of the following precision values in a data definition document that providers publish.",

@@ -7,6 +7,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "All columns defined in the FOCUS specification MUST follow the null handling requirements listed below.",
@@ -39,6 +40,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Columns MUST use NULL when there isn’t a value that can be specified for a nullable column.",
@@ -56,6 +58,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Columns MUST NOT use empty strings or placeholder values such as 0 for numeric columns or “Not Applicable” for string columns to represent a null or not having a value, regardless of whether the column allows nulls or not.",

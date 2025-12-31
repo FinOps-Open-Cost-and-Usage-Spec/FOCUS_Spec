@@ -7,6 +7,7 @@
     "Status": "Active",
     "Notes": "Root composite capturing all StringHandling requirements",
     "ApplicabilityCriteria": [],
+    "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "All columns of type String defined in the FOCUS specification MUST follow the string handling requirements listed below.",
@@ -69,6 +70,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "String values MUST be valid Unicode strings.",
@@ -86,6 +88,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Custom string value capturing columns SHOULD adopt the same requirements over time.",
@@ -103,9 +106,10 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by providers and end-users.",
+      "MustSatisfy": "String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by data generators and end-users.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -120,6 +124,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Charges to mutable entities (e.g., resource names) MUST be accurately reflected in corresponding charges incurred after the change.",
@@ -137,6 +142,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 50,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Charges to mutable entities MUST NOT alter charges incurred before the change, preserving data integrity and auditability for all charge records.",
@@ -154,6 +160,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 60,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Immutable string values that refer to the same entity (e.g., resource identifiers, region identifiers, etc.) MUST remain consistent and unchanged across all billing periods.",
@@ -171,6 +178,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 70,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Empty strings and strings consisting solely of spaces SHOULD NOT be used in not-nullable string columns.",
@@ -188,6 +196,7 @@
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 80,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "When a record is provided after a change to a mutable string value and the ChargeClass is “Correction”, the record MAY contain the altered value.",
