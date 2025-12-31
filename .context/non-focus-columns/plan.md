@@ -13,8 +13,24 @@ Gather evidence and confirm alignment before drafting.
 - **Spec audit:** Identify all existing mentions of custom column requirements across the specification
 - **Alignment review:** Confirm the proposed supported features content aligns with the new attribute vision
 - Define precise normative requirements to propose
+- **Evidence collection:** Document missing columns and the scenarios they enable
 
 **Purpose:** Build the foundation and evidence needed for drafting.
+
+#### Evidence Needed
+To support the proposal, we need to demonstrate:
+1. **Scenario Gap Examples** - What analyses/workflows require native columns that aren't in FOCUS?
+   - Document specific scenarios enabled by missing columns
+   - Example: "Azure Resource Group analysis requires x_ResourceGroup column"
+2. **Missing Column Inventory** - What columns from provider docs should become x_ columns?
+   - Copy columns and descriptions from AWS, Azure, GCP documentation
+   - Focus on columns referenced in practitioner discussions (see `provider-columns-referenced.md`)
+   - Not exhaustive - just enough to show scope
+3. **Practitioner Column Usage** - What columns does your company use vs. what FOCUS provides?
+   - Compare your company's native dataset columns with FOCUS columns
+   - Identify gaps that block adoption
+4. **Positive Example** - Microsoft already provides comprehensive x_ columns
+   - Document Microsoft as model implementation
 
 ### Phase 2: Draft & TF Approval
 - Consolidate research notes into single location
@@ -52,22 +68,42 @@ Member Review & Merge
 ## Provider Engagement Strategy
 
 ### The Challenge
-AWS and GCP are the key providers to convince. Expected pushback areas:
-- Additional implementation effort
-- Scope concerns (what counts as "all" native data?)
-- Potential performance/size implications
+AWS is the primary provider to convince. GCP concerns are unknown (awaiting Sarah McMullin's response).
+
+**AWS Core Objection:**
+- **"Columns should NEVER change"** - If AWS adds non-FOCUS columns that later become FOCUS columns, those columns would need to change names, breaking customers.
+
+**AWS Contact:** Letian Feng
+
+**Historical Context:**
+- This concern led to removal of native column requirement (#617/#838) in v1.2
+- AWS hasn't engaged in solution discussions yet
+
+### Proposed Solutions for AWS
+1. **Column Preservation Approach:**
+   - Keep non-FOCUS versions of columns available even after FOCUS equivalents are introduced
+   - Provide column selection capability so practitioners can choose old, new, or both columns
+   - Enables migration on practitioners' own terms without breaking changes
+   - Could add as SHOULD requirements or appendix guidance
+
+2. **Practitioner Survey:**
+   - Survey practitioners on importance of this capability
+   - Gather input on how they'd like to see it addressed
+   - Use results to inform requirement strength and implementation approach
 
 ### The Approach
-1. **Be evidence-based** - Use audit findings and practitioner use cases to justify the requirement
-2. **Understand concerns individually** - Don't assume; document actual objections
-3. **Address concerns directly** - Propose solutions or scope adjustments where reasonable
-4. **Pre-socialize** - Engage provider representatives before formal proposals
+1. **Be evidence-based** - Use audit findings, scenario gaps, and practitioner use cases
+2. **Address AWS concern directly** - Propose column preservation approach
+3. **Pre-socialize with Letian Feng** - Engage before formal TF-2 proposal
+4. **Gather GCP input** - Wait for Sarah's response, then adapt strategy
 
 ### Evidence to Collect
-- Specific AWS objections and concerns
-- Specific GCP objections and concerns
-- Examples of native columns that should/shouldn't become `x_` columns
-- Practitioner pain points from incomplete FOCUS datasets
+- AWS objection documented (column stability concern)
+- AWS solution approach documented (column preservation)
+- GCP concerns (awaiting Sarah's response)
+- Examples of native columns that should become `x_` columns (from provider docs)
+- Practitioner column usage comparison (your company's dataset vs FOCUS)
+- Scenario gap examples (what analyses require missing columns)
 
 ---
 
@@ -99,6 +135,7 @@ Create attribute following structure in `guidelines/normative-requirements-guide
 | 6 | Data generators SHOULD include custom columns that enable correlation between FOCUS and native datasets (e.g., native charge identifiers) | SHOULD |
 | 7 | Data generators SHOULD provide documentation describing custom columns, their purpose, and relationship to native columns | SHOULD |
 | 8 | Data generators SHOULD provide conformance documentation indicating full, partial, or non-conformance with explanations | SHOULD |
+| 9 | Data generators MAY preserve non-FOCUS versions of custom columns even after FOCUS equivalents are introduced to enable migration without breaking changes | MAY |
 
 **Reference:** `guidelines/editorial-guidelines.md` for formatting conventions.
 

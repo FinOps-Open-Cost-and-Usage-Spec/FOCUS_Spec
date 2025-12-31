@@ -103,44 +103,55 @@
 - [x] Confirm column selection is not a blocker
 - [x] Update plan.md with finalized approach
 - [x] Define specific normative requirements (see plan.md § Proposed Requirements)
-- [ ] Identify what evidence/examples are needed to support proposal
+- [x] Identify what evidence/examples are needed to support proposal (see plan.md § Evidence Needed)
 
 ---
 
-## Phase 2: Provider Engagement Prep
+## Phase 2: Attribute Design & Supporting Content
 
-### Understand Objections
+### Design Attribute Requirements
 
-- [ ] Document known AWS concerns and objections
-- [ ] Document known GCP concerns and objections
+- [x] Document known AWS concerns and objections (see research.md § Concerns)
+- [x] Document known GCP concerns and objections (see research.md § Concerns)
+- [ ] Incorporate solutions into attribute requirements where appropriate:
+  - [ ] Add column preservation approach as MAY requirement (addresses AWS column stability)
+  - [ ] Ensure requirements address data quality concerns (addresses GCP "junk drawer" concern)
+- [ ] Review 8 requirements from plan.md and refine based on concerns/solutions
+- [ ] Validate requirements align with attribute purpose (formatting, naming, data types, granularity, etc.)
+
+### Create Supporting Content
+
+- [ ] Draft `supporting_content/attributes/scenario_completeness.md` with:
+  - [ ] Design rationale (why attribute exists, relationship to Column Handling)
+  - [ ] How concerns are addressed (AWS column stability, GCP data quality)
+  - [ ] When to include custom columns (4 scenarios from plan.md)
+  - [ ] When NOT to include custom columns (3 anti-patterns from plan.md)
+  - [ ] Correlation guidance (FOCUS-to-native dataset joins)
+  - [ ] Aggregation/splitting examples
+  - [ ] Provider-specific examples (AWS, Azure, GCP, OCI)
+
+---
+
+## Phase 3: Provider Engagement & Refinement
+
+### Pre-Socialize with Providers
+
+- [x] Identify specific people to engage at AWS (Letian Feng) and GCP (Sarah McMullin)
+- [ ] Share draft attribute and supporting content with AWS (Letian Feng) for feedback
+- [ ] Share draft attribute and supporting content with GCP (Sarah McMullin) for feedback
+- [ ] Document feedback and adjust attribute/supporting content as needed
 - [ ] Identify which objections are addressable vs fundamental blockers
-
-### Build Evidence
-
-- [ ] Gather examples of native columns that should become x\_ columns (per provider)
-- [ ] Document practitioner pain points from not having completeness
-- [ ] Identify any providers already doing this well (positive examples)
-
-### Pre-Socialize
-
-- [ ] Identify specific people to engage at AWS and GCP
-- [ ] Schedule or async outreach to discuss concerns before TF-2 proposal
-- [ ] Document feedback and adjust proposal as needed
-
----
-
-## Phase 3: Proposal & Approval
 
 ### TF-2 Proposal
 
-- [ ] Draft formal proposal with normative requirements
-- [ ] Present to TF-2 for refinement
-- [ ] Incorporate feedback
+- [ ] Present refined proposal to TF-2 with attribute requirements and supporting content
+- [ ] Incorporate TF-2 feedback
+- [ ] Get TF-2 approval to proceed
 
 ### Broader Approval
 
 - [ ] Present to maintainers/members for approval
-- [ ] Handle objections (with pre-socialized provider buy-in)
+- [ ] Handle any remaining objections
 - [ ] Get formal approval to proceed
 
 ---

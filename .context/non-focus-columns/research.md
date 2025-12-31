@@ -104,28 +104,6 @@ The 1.2 discussions on **Issue #617 / PR #838** are the direct precursor to the 
 | What remained | "Should include" (non-normative) in glossary definition |
 | Microsoft success | FOCUS implementation includes all columns → **greater adoption** cited as evidence |
 
-#### Provider Concerns Raised (1.2)
-
-1. **Backwards Compatibility**
-   - What happens when a custom column gets standardized into FOCUS?
-   - If retained: data duplication
-   - If removed: breaks existing workflows
-   - **AWS position:** Does not remove columns to avoid breaking changes
-
-2. **Split Cost Allocation (AWS-specific)**
-   - SCA adds **rows**, not just columns
-   - Causes aggregation issues with effective cost calculations
-   - Unresolved whether SCA data belongs in FOCUS dataset
-
-3. **Dataset Size**
-   - All columns = dataset too large
-   - Practitioners split: some want all, others want minimal
-   - Led to **column selection** proposal (Issue #1091)
-
-4. **Scope Creep**
-   - FOCUS defines schema/data, not application-level features
-   - Column selection = functional requirement = precedent concern
-
 #### Outcome
 
 - Broad support for including provider columns, but **no consensus on normative requirements**
@@ -138,7 +116,7 @@ The 1.2 discussions on **Issue #617 / PR #838** are the direct precursor to the 
 
 **Native Azure columns discussed for FOCUS inclusion:**
 - BillingProfile
-- InvoiceSection  
+- InvoiceSection
 - Subscription
 - ResourceGroup
 
@@ -164,11 +142,65 @@ The 1.2 discussions on **Issue #617 / PR #838** are the direct precursor to the 
 
 ---
 
+## Concerns
+
+### AWS: Column Stability
+
+**Contact:** Letian Feng (AWS)
+
+**Concern:** AWS believes columns should NEVER change. If they add non-FOCUS columns (e.g., `x_ColumnName`) that later become FOCUS columns, those columns would need to change names, breaking customers who built workflows around the custom column names. Their policy is to not remove columns to avoid breaking changes.
+
+**Counter-Argument:** Column Preservation Approach - Keep non-FOCUS versions of columns available even after FOCUS equivalents are introduced. Provide column selection capability so practitioners can choose old, new, or both columns. This enables migration on practitioners' own terms without breaking changes. Proposed as a MAY requirement in the attribute.
+
+**Historical Context:** This concern led to removal of native column requirement (#617/#838) in v1.2.
+
+---
+
+### GCP: "Junk Drawer" Risk
+
+**Contact:** Sarah McMullin (GCP)
+
+**Concern:** Concern that requiring providers to include all native dataset information as custom columns could cause FOCUS to become a "junk drawer" - accumulating unnecessary, low-quality, or unfocused data that dilutes the specification's purpose and clarity.
+
+**Counter-Argument:** Since FOCUS only asks providers to include data they already have in their native datasets, the only way FOCUS would become a "junk drawer" is if their existing dataset already is one. If providers are proud of their existing data quality and structure, this shouldn't be an issue. If providers feel their current native dataset contains unnecessary data or is poorly organized, they can opt to leave unnecessary datapoints out, choosing to provide a cleaner version that still meets their critical scenarios while maintaining data quality standards.
+
+**Key Points:**
+- FOCUS doesn't require providers to create new data - only to include what already exists
+- Providers maintain control over what they include in their FOCUS datasets
+- Quality standards are preserved by allowing providers to curate their data appropriately
+- The specification's cleanliness depends on provider data quality, not on FOCUS requirements themselves
+
+**Related Context:** This concern relates to the broader discussion about whether completeness requirements should be normative (MUST) versus recommended (SHOULD), and how to balance data completeness with specification clarity and purpose.
+
+---
+
+### General: Backwards Compatibility
+
+**Concern:** What happens when a custom column gets standardized into FOCUS? If retained, there's data duplication. If removed, it breaks existing workflows.
+
+**Context:** This general concern overlaps with AWS's specific column stability concern. The column preservation approach addresses both.
+
+---
+
+### General: Dataset Size
+
+**Concern:** Including all columns makes datasets too large. Practitioners are split: some want all columns, others want minimal datasets. This led to the **column selection** proposal (Issue #1091).
+
+**Context:** Column selection capability (allowing practitioners to choose which columns to include) could address this concern while still requiring providers to make all columns available.
+
+---
+
+### General: Scope Creep
+
+**Concern:** FOCUS defines schema/data, not application-level features. Column selection represents a functional requirement, which could set a precedent for adding more application-level features to the specification.
+
+**Context:** Column selection is being considered separately from this initiative and may be addressed as a separate feature or requirement.
+
+---
+
 ## Pending Research
 
 ### Provider Objections
-- [ ] Document AWS concerns and objections (partially captured from 1.2 discussions)
-- [ ] Document GCP concerns and objections
 - [ ] Identify addressable vs fundamental blockers
 
 ### Supporting Content Location
