@@ -40,7 +40,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ScenarioCompleteness-A-007-M"
+            "ModelRuleId": "ScenarioCompleteness-A-007-C"
           }
         ]
       },
@@ -52,7 +52,7 @@
         "ScenarioCompleteness-A-004-O",
         "ScenarioCompleteness-A-005-O",
         "ScenarioCompleteness-A-006-O",
-        "ScenarioCompleteness-A-007-M"
+        "ScenarioCompleteness-A-007-C"
       ]
     }
   },
@@ -158,7 +158,7 @@
       "Dependencies": []
     }
   },
-  "ScenarioCompleteness-A-007-M": {
+  "ScenarioCompleteness-A-007-C": {
     "Function": "Validation",
     "Reference": "ScenarioCompleteness",
     "EntityType": "Attribute",
