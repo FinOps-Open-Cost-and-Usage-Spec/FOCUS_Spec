@@ -1,6 +1,6 @@
 ## Version
 
-Publication version 1.2
+Publication version 1.3
 
 Copyright © 2023-2025 - FinOps Open Cost and Usage Specification (FOCUS) a Series of the Joint Development Foundation Projects, LLC. Joint Development Foundation [trademark](https://jointdevelopment.org/policies/trademark-policy/), and document use rules apply.
 

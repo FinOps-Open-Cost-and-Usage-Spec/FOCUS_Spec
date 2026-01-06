@@ -30,9 +30,10 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
   * **MUST** – an absolute requirement
   * **MUST NOT** – a prohibition
   * **SHOULD** – recommended but not mandatory
-  * **RECOMMENDED** - recommended but not mandatory (currently used only for presence-related normative requirements, as specified in the [FOCUS Feature Level](#focusfeaturelevel) section)
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
+
+  > ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -91,9 +92,9 @@ CostAndUsage adheres to the following requirements:
 * CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
-* CostAndUsage MUST conform to [ProviderCalculatedSplitCostAllocationHandling](#provider-calculatedsplitcostallocationhandling) requirements.
+* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling) requirements.
 
-## Column Requrements
+## Column Requirements
 
 ### Logical Grouping of Column Requirements
 
@@ -123,7 +124,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 | **Requirement Type** | **Requirement Group**              | **When required?**                    | **Example**                                                                                |
 |----------------------|------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------|
-| Technical            | Presence                           | Always                                | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when {Condition}. |
+| Technical            | Presence                           | Always                                | {ColumnId} MUST be present in a {DatasetName} [*FOCUS dataset*](#glossary:FOCUS-dataset) when {Condition}. |
 | Technical            | Data Type                          | Always                                | {ColumnId} MUST be of type String.                                                         |
 | Technical            | Value Format                       | Always (except normalized dimensions) | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                 |
 | Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when {Condition}.                     |
@@ -143,9 +144,10 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   * **MUST** – an absolute requirement
   * **MUST NOT** – a prohibition
   * **SHOULD** – recommended but not mandatory
-  * **RECOMMENDED** - recommended but not mandatory (currently used only for presence-related normative requirements, as specified in the [FOCUS Feature Level](#focusfeaturelevel) section)
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
+
+  > ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -184,7 +186,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 * **Omit JSON schema normative requirements for Key-Value Format columns**: The Key-Value Format definition is sufficient to define the expected JSON schema.
 
-* **Include JSON schema normative requirements for JSON Object Format columns**: The JSON Object Format specifies that the format is subject to the requirement of the column and that provider-defined columns must have documented schema.
+* **Include JSON schema normative requirements for JSON Object Format columns**: The JSON Object Format specifies that the format is subject to the requirement of the column and that data generator-defined columns must have documented schema.
   * The pattern used in [AllocatedMethodDetails](#allocatedmethoddetails) and [ContractApplied](#contractapplied) consists of Object containing a collection whose key is "Elements" which contains one or more objects in the Key-Value format.
 
   **Example JSON**
@@ -227,7 +229,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 #### Key-Value Pairs
 
-* **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **provider-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
+* **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **data generator-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
 
 * **Default to Plural for Key-Value Pairs**: When referring to key-value pairs, **tags** and **properties** should be used in the plural form to reflect the fact that the column may contain multiple key-value pairs.
 
@@ -327,9 +329,10 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### Technical Requirements: Presence
 
 ```markdown
-* <ColumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* <CoumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
-* <ColumnId> is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
+* <ColumnId> MUST be present in a <DatasetName> [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* <CoumnId> MUST be present in a <DatasetName> [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
+* <ColumnId> SHOULD be present in a <DatasetName> [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* <ColumnId> SHOULD be present in a <DatasetName> [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
 ```
 
 ##### Technical Requirements: Data Type
@@ -450,7 +453,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * {ColumnId} MUST be a unique identifier within {Scope}.
   * {ColumnId} SHOULD be a fully-qualified identifier.
 * Examples:
-  * BillingAccountId MUST be a unique identifier within a provider.
+  * BillingAccountId MUST be a unique identifier within a service provider.
   * ResourceId SHOULD be a fully-qualified identifier.
 
 ##### Column Aggregation
@@ -478,8 +481,8 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * Use "one" instead of "1".
   * Use "more than one" instead of "2 or more".
 * Examples:
-  * When the provider has only one user-defined tag scheme. (instead of: When the provider has only 1 user-defined tag scheme.)
-  * When the provider has more than one user-defined tag scheme. (instead of: When the provider has 2 or more user-defined tag schemes.)
+  * When the service provider has only one user-defined tag scheme. (instead of: When the service provider has only 1 user-defined tag scheme.)
+  * When the service provider has more than one user-defined tag scheme. (instead of: When the service provider has 2 or more user-defined tag schemes.)
 
 ### Column Normative Requirements Examples
 
@@ -487,7 +490,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ListUnitPrice adheres to the following requirements:
 
-* ListUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider publishes unit prices exclusive of discounts.
+* ListUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be of type Decimal.
 * ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * ListUnitPrice nullability is defined as follows:
@@ -516,7 +519,7 @@ BilledCost adheres to the following requirements:
 
 CommitmentDiscountQuantity adheres to the following requirements:
 
-* CommitmentDiscountQuantity MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports *commitment discounts*.
+* CommitmentDiscountQuantity MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal.
 * CommitmentDiscountQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * CommitmentDiscountQuantity nullability is defined as follows:

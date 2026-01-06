@@ -14,7 +14,7 @@ The model document for FOCUS contains the following major sections:
 | ApplicabilityCriteria | Key flags used to define attributes about the data generator that need to be true for some model rules to apply |
 | CheckFunctions | Method definitions to describe the actual check needed to conform to a rule |
 | ModelDatasets | List of datasets defined by FOCUS and the related top level model rules associated with the dataset |
-| ModelRules | Individual model rule definitions that are linked together by requirements and dependancies to form the full model ruleset |
+| ModelRules | Individual model rule definitions that are linked together by requirements and dependencies to form the full model ruleset |
 
 ## Steps to apply model rules to existing attributes and columns
 
@@ -34,7 +34,7 @@ The first stage of conversion of rules from the normative text to model rules is
 - `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
 - `Condition` - The definition of conditions under which this rule applies
 - `Requirement` - The definition of what is required for model
-- `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `RECOMMENDED`, `SHOULD`, `MAY`, `OPTIONAL`)
+- `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `SHOULD`, `MAY`)
 - `MustSatisfy` - The normative text that this rule defines
 - `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
 - `Notes` - Free form notes (short) included in the model rule document
@@ -43,14 +43,14 @@ The first stage of conversion of rules from the normative text to model rules is
 
 #### Flow Diagram
 
-The **Flow Diagram** in Stage 1 illustrates the end-to-end process used to extract Requirements Model from the FOCUS Specification. It begins by identifying the structural or conceptual entity to which each rule applies—such as Dataset, Row, Column, Attribute, or Metadata—and then guides users through a standardized sequence of steps to assign a unique identifier, classify the rule type, determine conditional logic, and express validation criteria. This structured workflow ensures that all normative requirements from the specification are captured in a consistent, testable, and programmatically analyzable format. The diagram also reflects the relationships between FOCUS architectural components and highlights how entities like Provider influence rule applicability.
+The **Flow Diagram** in Stage 1 illustrates the end-to-end process used to extract Requirements Model from the FOCUS Specification. It begins by identifying the structural or conceptual entity to which each rule applies—such as Dataset, Row, Column, Attribute, or Metadata—and then guides users through a standardized sequence of steps to assign a unique identifier, classify the rule type, determine conditional logic, and express validation criteria. This structured workflow ensures that all normative requirements from the specification are captured in a consistent, testable, and programmatically analyzable format. The diagram also reflects the relationships between FOCUS architectural components and highlights how entities like Service Provider Name influence rule applicability.
 <img width="812" height="1036" alt="Image" src="https://github.com/user-attachments/assets/040ba557-cc42-402b-b52a-742b88e40d54" />
 
 #### High-Level Description of Each Step
 
 #### 1. Target Entity – Determine the entity
 
-Identify the target for the rule: **Dataset**, **Column**, **Attribute** property, **Provider**, etc. This sets the scope of the model requirement.
+Identify the target for the rule: **Dataset**, **Column**, **Attribute** property, **Service Provider Name**, etc. This sets the scope of the model requirement.
 
 #### FOCUS Core Entities
 
@@ -69,7 +69,7 @@ Attribute["⚙️ Attribute"]
 Metadata["📝 Metadata"]
 
 %% Conceptual non-structural entity
-Provider["🌐 Provider (Value in Column)"]
+Provider["🌐 Service Provider (Value in Column)"]
 
 %% Relationships
 Dataset -->|"contains many"| Row
@@ -94,20 +94,20 @@ Provider -.->|Used in rule conditions| Column
 
 - **Dataset, Row, Column, Attribute, Metadata** are the **core structural entities** where model requirements are directly assigned.
 
-- **Provider** is not a structural entity but is frequently used as a c**onditional input** to determine when a requirement applies.
+- **Service Provider** is not a structural entity but is frequently used as a **conditional input** to determine when a requirement applies.
 
-- **Columns** and **Rows** can conditionally depend on the value of Provider to apply or skip certain validation logic.
+- **Columns** and **Rows** can conditionally depend on the value of Service Provider to apply or skip certain validation logic.
 
 **FOCUS Entity Reference Table**
 
-| Entity      | Description                        | Applies To                                | Example CR Function                                                                                      |
-| ----------- | ---------------------------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| `Dataset`   | Whole billing dataset              | Structural presence, versioning, coverage | Dataset MUST include all columns required by the declared FOCUS version                                 |
-| `Row`       | Individual line item in dataset    | Logic conditions, nullability, alignment  | Rows with `ChargeCategory = Purchase` MUST contain a `SkuId`                                            |
-| `Column`    | Named field across rows            | Data type, format, constraints            | Column `BillingPeriodStart` MUST be of type `DateTime`                                                  |
-| `Attribute` | Shared formatting/logic constraint | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                      |
-| `Metadata`  | Schema-level dataset descriptors   | Schema versioning, declaration            | Metadata MUST declare `focus_version` as a valid semantic version string (e.g., "1.2.0")                |
-| `Provider`  | System that generated the data     | Conditional logic in requirements         | Column `CapacityReservationId` MUST be present when the provider supports capacity reservation features |
+| Entity             | Description                                         | Applies To                                | Example CR Function                                                                                             |
+|--------------------|-----------------------------------------------------| ----------------------------------------- |-----------------------------------------------------------------------------------------------------------------|
+| `Dataset`          | Whole billing dataset                               | Structural presence, versioning, coverage | Dataset MUST include all columns required by the declared FOCUS version                                         |
+| `Row`              | Individual line item in dataset                     | Logic conditions, nullability, alignment  | Rows with `ChargeCategory = Purchase` MUST contain a `SkuId`                                                    |
+| `Column`           | Named field across rows                             | Data type, format, constraints            | Column `BillingPeriodStart` MUST be of type `DateTime`                                                          |
+| `Attribute`        | Shared formatting/logic constraint                  | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                              |
+| `Metadata`         | Schema-level dataset descriptors                    | Schema versioning, declaration            | Metadata MUST declare `focus_version` as a valid semantic version string (e.g., "1.2.0")                        |
+| `Service Provider` | Entity that made the resource available for purchase | Conditional logic in requirements         | Column `CapacityReservationId` MUST be present when the service provider supports capacity reservation features |
 
 #### 2. CRID – Apply CRID Naming Rules
 
@@ -124,7 +124,7 @@ This ensures traceability, uniqueness, and clarity.
   - `D` = Dataset  
   - `C` = Column  
   - `A` = Attribute  
-  - `P` = Provider  
+  - `P` = Service Provider  
   - `R` = Row  
   - `M` = Metadata
 - `NNN:`  
@@ -194,20 +194,20 @@ A rule states: “Rows SHOULD include `SkuId` when `ChargeCategory = Purchase`.�
 
 #### 6. Applicability Criteria (GATE) – Determine if the rule should be evaluated
 
-Define the dataset-level or provider-level condition that determines when the rule is relevant for evaluation.
+Define the dataset-level or service-provider-level condition that determines when the rule is relevant for evaluation.
 
 **Reasoning Rules**
 
 - Use `"All_Rows"` when no structural gating is defined.
 - Use a dataset-level statement (e.g., `"Dataset includes ChargeCategory column"`) for presence rules.
-- Use a provider or environment condition if the rule depends on system capabilities  
-  (e.g., `"Provider supports capacity reservation"`).
+- Use a service provider or environment condition if the rule depends on system capabilities  
+  (e.g., `"Service Provider supports capacity reservation"`).
 - For composite rules, inherit the most restrictive gating condition from child CRItems.
 - Do not leave this field blank. Only omit if the applicability is inherited from a parent composite.
 
 **Example**  
-A presence rule states: “Column `CapacityReservationId` MUST be present when the provider supports capacity reservation.”  
-→ `ApplicabilityCriteria = Provider supports capacity reservation`
+A presence rule states: “Column `CapacityReservationId` MUST be present when the service provider supports capacity reservation.”  
+→ `ApplicabilityCriteria = Service Provider supports capacity reservation`
 
 #### 7. Condition (GATE) – Specify when to test
 
@@ -272,11 +272,11 @@ Specify whether the rule can be validated using only the dataset itself or if it
 - Use `dynamic` if validation depends on:
   - External invoice records  
   - Catalog metadata  
-  - Provider configuration or billing systems
+  - Service Provider configuration or billing systems
 - For composite rules, set to `dynamic` if any child CRItem is dynamic.
 
 **Example**  
-A rule states: “`BillingAccountType` MUST align with the provider’s contractual agreement.”  
+A rule states: “`BillingAccountType` MUST align with the service provider’s contractual agreement.”  
 → `Validation Type = dynamic`
 
 #### 11. ModelVersionIntroduced – Version tracking
@@ -335,14 +335,14 @@ The second phase of conversion is to take the table created in Stage 1 and creat
 - `check_functions.json`: Logical validation functions and their arguments
 - `model_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
 - `model_rules/attributes/`: JSON files defining multiple `ModelRules` for a single attribute
-- `model_rules/colunns/`: JSON files defining multiple `ModelRules` for a single column
+- `model_rules/columns/`: JSON files defining multiple `ModelRules` for a single column
 
 #### Steps
 
 - Assign the Action Item (AI) to yourself to signal that you are working on the item (See: [GitHub Issues](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues))
 - Open a branch with the source of git branch `1121-ai-align-on-approach-for-scrs` for your development work with the naming format as follows `ai number`-cr-`entity-name`-1121. (example: 1255-cr-AvailabilityZone-1121)
 - Pull your branch to your development environment and perform all work specific to this AI in this branch.
-- Add a file into the relevant folder `model_rules/attributes/` or `model_rules/colunns/` with name `entity-name`.json (example: availabilityzone.json)
+- Add a file into the relevant folder `model_rules/attributes/` or `model_rules/columns/` with name `entity-name`.json (example: availabilityzone.json)
 - Write your rules into this file based on the rules in the Stage 1 table from the AI ticket (See: [ModelRule Templates](#modelrule-templates) for helpers)
 - If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` avoiding duplication
 - If you need to add new CheckFunctions add them to `check_functions.json` avoiding duplication

@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports the tracking of commitments made via contractual agreements between a provider and a customer. Each row in the Cost and Usage dataset is associated with one or more unique identifiers representing those contracts and contract commitments, stored in a JSON column called Contract Applied. A richer amount of detail that describes those commitments is carried in a separate Contract Commitment dataset, which can be joined to the Cost and Usage datset to facilitate various queries involving filtering and aggregation.
+FOCUS supports the tracking of commitments made via contractual agreements between a service provider and a customer. Each row in the Cost and Usage dataset is associated with one or more unique identifiers representing those contracts and contract commitments, stored in a JSON column called Contract Applied. A richer amount of detail that describes those commitments is carried in a separate Contract Commitment dataset, which can be joined to the Cost and Usage dataset to facilitate various queries involving filtering and aggregation.
 
 The Contract Applied column contains several FOCUS-defined properties.  For more information, see the definition of Contract Applied [here](#contractapplied).
 
@@ -52,7 +52,7 @@ WHERE JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') IS NOT NULL
   AND ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Purchase'
 GROUP BY ServiceProviderName, ContractCommitmentId
-ORDER BY ServiceProviderName, ContractCommitmentId;
+ORDER BY ServiceProviderName, ContractCommitmentId
 ```
 
 ### Report on Usage Against Contract Commitment
@@ -73,7 +73,7 @@ WHERE JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') IS NOT NULL
   AND ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Usage'
 GROUP BY ServiceProviderName, ContractCommitmentId
-ORDER BY ServiceProviderName, ContractCommitmentId;
+ORDER BY ServiceProviderName, ContractCommitmentId
 ```
 
 ### Report on Usage Against Contract Commitment by Category
@@ -100,7 +100,7 @@ WHERE JSON_VALUE(CA, '$.ContractCommitmentAppliedCost') IS NOT NULL
   AND ChargePeriodStart >= ? AND ChargePeriodEnd < ?
   AND ChargeCategory = 'Usage'
 GROUP BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStart, ContractCommitmentPeriodEnd
-ORDER BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStart, ContractCommitmentPeriodEnd;
+ORDER BY ServiceProviderName, ContractCommitmentId, ContractCommitmentPeriodStart, ContractCommitmentPeriodEnd
 ```
 
 ## Introduced (Version)

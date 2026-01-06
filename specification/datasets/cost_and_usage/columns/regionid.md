@@ -1,12 +1,12 @@
 # Region ID
 
-A Region ID is a provider-assigned identifier for an isolated geographic area where a [*resource*](#glossary:resource) is provisioned or a [*service*](#glossary:service) is provided. The region is commonly used for scenarios like analyzing cost and unit prices based on where *resources* are deployed.
+A Region ID is a host-provider-assigned identifier for an isolated geographic area where a [*resource*](#glossary:resource) is provisioned or a [*service*](#glossary:service) is provided. The region is commonly used for scenarios like analyzing cost and unit prices based on where *resources* are deployed.
 
 ## Requirements
 
 RegionId adheres to the following requirements:
 
-* RegionId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports deploying resources or services within a region.
+* RegionId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the host provider supports deploying resources or services within a region.
 * RegionId MUST be of type String.
 * RegionId MUST conform to [StringHandling](#stringhandling) requirements.
 * RegionId nullability is defined as follows:
@@ -23,7 +23,7 @@ Region ID
 
 ## Description
 
-Provider-assigned identifier for an isolated geographic area where a *resource* is provisioned or a *service* is provided.
+Host-provider-assigned identifier for an isolated geographic area where a *resource* is provisioned or a *service* is provided.
 
 ## Content constraints
 

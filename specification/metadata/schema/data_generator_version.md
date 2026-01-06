@@ -1,6 +1,6 @@
 # Data Generator Version
 
-The DataGeneratorVersion MAY be supplied to declare the version of logic by which the [*FOCUS dataset*](#glossary:FOCUS-dataset) was generated and is separate from FOCUS Version. DataGeneratorVersion allows for the provider to specify changes that may not result in a structural change in the data. It is suggested that the DataGeneratorVersion use a versioning approach such as [SemVer](https://semver.org) version.
+The DataGeneratorVersion may be supplied to declare the version of logic by which the [*dataset instance artifact*](#glossary:dataset-instance-artifact) was generated and is separate from FOCUS Version. DataGeneratorVersion allows for the provider to specify changes that may not result in a structural change in the data. It is suggested that the DataGeneratorVersion use a versioning approach such as [SemVer](https://semver.org) version.
 
 DataGeneratorVersion adheres to the following requirements:
 

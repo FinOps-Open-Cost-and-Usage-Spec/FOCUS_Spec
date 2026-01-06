@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has decided to deprecate columns prior to removal from their FOCUS data export. The column for deprecation is x_awesome_column3. The provider creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid).
+ACME has decided to deprecate columns prior to removal from their FOCUS data export. The column for deprecation is x_awesome_column3. The data generator creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid).
 
 ## Supplied Metadata
 
@@ -69,7 +69,7 @@ The updated schema-related metadata could look like this:
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8",
-                "Deprecation": true
+                "Deprecated": true
             }
       ]
 }

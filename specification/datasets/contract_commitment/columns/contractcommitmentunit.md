@@ -1,6 +1,6 @@
 # Contract Commitment Unit
 
-The Contract Commitment Unit represents a provider-specified measurement unit for the amount declared in Contract Commitment Quantity. Contract Commitment Unit complements the Contract Commitment Quantity metric.
+The Contract Commitment Unit represents a service-provider-specified measurement unit for the amount declared in Contract Commitment Quantity. Contract Commitment Unit complements the Contract Commitment Quantity metric.
 
 ## Requirements
 
@@ -24,7 +24,7 @@ Contract Commitment Unit
 
 ## Description
 
-A provider-specified measurement unit for the amount declared in Contract Commitment Quantity.
+A service-provider-specified measurement unit for the amount declared in Contract Commitment Quantity.
 
 ## Content Constraints
 
@@ -34,7 +34,7 @@ A provider-specified measurement unit for the amount declared in Contract Commit
 | Feature level | Mandatory                          |
 | Allows nulls  | True                               |
 | Data type     | String                             |
-| Value format  | \<not specified>                   |
+| Value format  | [Unit Format](#unitformat) recommended |
 
 ## Introduced (version)
 

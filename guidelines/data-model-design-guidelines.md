@@ -72,7 +72,7 @@ FinOps practitioners rely on FOCUS datasets as sources of truth. Should two data
 
 ### Example
 
-A summary dataset for executive dashboards might be justified if it reduces query times for high-level cost reports compared to querying the higly detailed FOCUS Cost and Usage dataset.
+A summary dataset for executive dashboards might be justified if it reduces query times for high-level cost reports compared to querying the highly detailed FOCUS Cost and Usage dataset.
 
 ## Avoid Redundancy
 
@@ -108,4 +108,4 @@ The FOCUS specification aims “‘to create a standardized schema for cloud bil
 
 ### Example
 
-A new dataset for usage metadata should use vendor-neutral terminology and avoid provider-specific fields that could fragment the standard.
+A new dataset for usage metadata should use vendor-neutral terminology and avoid fields specific to a given service provider or data generator that could fragment the standard.
