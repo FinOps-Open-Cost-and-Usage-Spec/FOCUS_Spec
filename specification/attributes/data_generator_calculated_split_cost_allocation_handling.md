@@ -31,7 +31,7 @@ An attribute that allows data generators to offer more detailed cost and usage i
 * A FOCUS dataset MAY contain records for concepts not related to resource usage, if documented in the split cost allocation method.
 * A FOCUS dataset MAY contain records for the unused or unallocated usage from the origin charge as separate allocated charges, if it aligns to the data generator's documented allocation method.
 * Allocated charge records MAY contain apportioned costs for the unused or unallocated usage from the origin charge, if it aligns to the data generator's documented allocation method.
-* Split cost allocation is RECOMMENDED to be applied to charges on an opt-in basis.
+* Split cost allocation SHOULD be applied to charges on an opt-in basis.
 
 ## Exceptions
 

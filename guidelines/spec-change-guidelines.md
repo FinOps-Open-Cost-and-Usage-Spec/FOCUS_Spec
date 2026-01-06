@@ -16,7 +16,7 @@ A changelog is provided specifying helpful information to consumers of the FOCUS
 * The version number
 * Impact Classification
 * Change Type Classification 
-* Deprecation designation of a feature or column to include the version where deprecation occured
+* Deprecation designation of a feature or column to include the version where deprecation occurred
    * Any exception rationale if removal precedes the retention period
 * Designation of the addition of a new feature or column
 * Description of the change
@@ -37,7 +37,7 @@ When a new feature or column is introduced to the FOCUS specification, depending
     
 The FOCUS specification requires the renaming of a column or metadata to be declared in the specification.
 
-* The column or metdata specification is to include a section that indicates the previous name and the version in which it was changed
+* The column or metadata specification is to include a section that indicates the previous name and the version in which it was changed
 * Example: "Example1 column was renamed Example2 in FOCUS version 2.1"
 
 ### Deprecation and Removal of a Feature or Column
