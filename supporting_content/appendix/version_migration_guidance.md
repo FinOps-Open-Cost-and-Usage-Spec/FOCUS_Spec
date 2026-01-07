@@ -171,7 +171,7 @@ WHERE ProviderName != PublisherName
 GROUP BY ProviderName, PublisherName
 ```
 
-**FOCUS 1.3** (more precise):
+**FOCUS 1.3** (different semantics):
 ```sql
 SELECT 
     ServiceProviderName,
@@ -229,7 +229,7 @@ The following supported features reference participating entity columns and may 
 - [Effective Cost](/specification/supported_features/effective_cost.md)
 - [Marketplace Purchases](/specification/supported_features/marketplace_purchases.md)
 - [Participating Entity Identification](/specification/supported_features/participating_entity_identification.md)
-- [Provider Services](/specification/supported_features/provider_services.md)
+- [Service Provider Services](/specification/supported_features/service_provider_services.md)
 - [Resource Usage](/specification/supported_features/resource_usage.md)
 - [Service Categorization](/specification/supported_features/service_categorization.md)
 
