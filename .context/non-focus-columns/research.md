@@ -280,21 +280,40 @@ Should column selection be part of Scenario Completeness attribute, a separate a
 - plan.md explicitly states "Column selection: NOT a blocker; keep separate from this work"
 
 **Key Considerations:**
-1. **Scope Creep Risk:** FOCUS defines schema/data, not application-level features. Column selection is a functional/application requirement.
-2. **Complexity:** #1091 has extensive acceptance criteria around UI, API, configuration, column groups, presets - far beyond Scenario Completeness scope.
-3. **Independence:** Column selection applies to ALL columns (FOCUS + custom), not just custom columns.
-4. **Separate Governance:** #1091 has its own supporting organizations and review process.
+1. **Scope Mixing:** Scenario Completeness defines what data generators must produce; column selection defines what practitioners can request. These are different actors and different directions of requirement.
+2. **Broader Scope:** Column selection applies to ALL columns (FOCUS + custom), not just custom columns.
+3. **Discoverability:** "Scenario Completeness" doesn't suggest column selection capability; practitioners wouldn't find it there.
+4. **Conceptual Gap:** The spec currently has no concept for "how practitioners configure what they receive" - this is a new category.
 
-### Decision: EXCLUDE from Scenario Completeness
+### FOCUS Spec Conceptual Layers
+
+| Layer | Purpose | Direction | Examples |
+|-------|---------|-----------|----------|
+| Columns | WHAT data fields exist | Generator → Practitioner | BilledCost, ResourceId |
+| Attributes | HOW columns behave | Generator → Practitioner | ColumnHandling, NullHandling |
+| Metadata | WHAT describes the dataset | Generator → Practitioner | DatasetInstanceMetadata |
+| Supported Features | WHAT you can do with it | Practitioner → Data | CostComparison, EffectiveCost |
+| **??? (new)** | **HOW you receive the dataset** | **Practitioner → Generator** | **Column selection** |
+
+Column selection is the first **practitioner-to-generator** requirement. Everything else flows the other direction.
+
+### Decision: SEPARATE ATTRIBUTE - "Dataset Delivery"
 
 **Rationale:**
-1. Column selection is explicitly tracked as separate issue #1091
-2. plan.md explicitly excludes it: "Column selection: NOT a blocker; keep separate from this work"
-3. Adding it to Scenario Completeness would conflate data completeness (what columns exist) with data access (which columns practitioners receive)
-4. The feature request's SHOULD for column selection references #1091, indicating it should be addressed there
-5. Column selection applies to all columns, not just custom columns from Scenario Completeness
 
-**No changes to attribute needed.**
+1. Column selection doesn't fit in Scenario Completeness conceptually (different actors, different direction)
+2. Naming it clearly ("Dataset Delivery") makes it discoverable
+3. Separates concerns: Scenario Completeness = what must be available; Dataset Delivery = how practitioners access it
+4. Allows future expansion (format selection, etc.) without renaming
+5. Follows the narrow-scope, single-concern attribute pattern
+
+**Relationship to Scenario Completeness:**
+
+- Scenario Completeness ensures all scenario-enabling columns **exist**
+- Dataset Delivery ensures practitioners can **choose which ones to receive**
+- Together they address: "Include everything needed, but let me pick what I want"
+
+**Implementation:** See `.context/dataset-delivery/` for full planning and implementation details.
 
 ---
 
