@@ -2,6 +2,18 @@
 
 This appendix provides guidance for practitioners and data generators migrating between FOCUS specification versions. Migration guidance is organized in reverse chronological order, with the most recent migration listed first.
 
+### Document Structure
+
+This guide serves two audiences:
+
+| Audience | Relevant Sections |
+|----------|-------------------|
+| **All readers** | Overview, What's Unchanged, What's New, What Requires Migration |
+| **Practitioners** | Provider and Publisher Column Changes, including migration decision tree, query examples, and verification checklist |
+| **Data Generators** | Guidance for Data Generators, including dual-column support, deprecation metadata, and deprecation timeline |
+
+Practitioners updating queries should focus on the migration decision tree and query examples. Data generators implementing FOCUS 1.3 should review the dual-column support recommendations.
+
 ## Migrating from FOCUS 1.2 to FOCUS 1.3
 
 ### Overview
@@ -43,9 +55,9 @@ Only the `ProviderName` and `PublisherName` columns are deprecated in FOCUS 1.3.
 
 ## Provider and Publisher Column Changes
 
-### Before You Begin
+### Before You Begin (Practitioners)
 
-Complete this assessment before migrating:
+Practitioners should complete this assessment before migrating queries:
 
 - [ ] Identify all queries, reports, and dashboards that reference `ProviderName` or `PublisherName`
 - [ ] For each usage, determine what business question the column was answering
@@ -64,7 +76,7 @@ The original `ProviderName` and `PublisherName` columns suffered from definition
 
 FOCUS 1.3 resolves this by introducing two purpose-specific columns that align with the distinct entity roles documented in [Participating Entity Identification](/specification/appendix/participating_entity_identification.md).
 
-### Migration Decision Tree
+### Migration Decision Tree (Practitioners)
 
 The correct mapping from deprecated columns depends on what business question your queries were answering, not a simple column rename.
 
@@ -116,7 +128,7 @@ For the complete scenario matrix, see [Participating Entity Identification Examp
 - MAY be null when the hosting provider cannot be uniquely determined (e.g., Tax or Adjustment charges)
 - MUST equal `ServiceProviderName` when the service provider hosts their own services and does not expose the underlying host
 
-### Query Migration Examples
+### Query Migration Examples (Practitioners)
 
 #### Basic Provider Query
 
@@ -182,9 +194,9 @@ WHERE ServiceProviderName != HostProviderName
 GROUP BY ServiceProviderName, HostProviderName
 ```
 
-### Verification
+### Verification (Practitioners)
 
-After migrating queries, verify results:
+After migrating queries, practitioners should verify results:
 
 1. **Direct CSP purchases:** Query results should match pre-migration outputs when grouping by `ServiceProviderName` instead of `ProviderName`
 2. **Marketplace scenarios:** Results may show different groupings than before—this is intentional and reflects the corrected entity identification
