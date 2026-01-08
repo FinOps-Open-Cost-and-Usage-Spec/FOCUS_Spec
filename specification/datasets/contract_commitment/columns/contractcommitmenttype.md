@@ -8,7 +8,7 @@ ContractCommitmentType adheres to the following requirements:
 
 * ContractCommitmentType MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentType MUST be of type String.
-* ContractCommitmentType MUST conform to [StringHandling](#stringhandling) requirements.
+* ContractCommitmentType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentType MUST NOT be null.
 * ContractCommitmentType MUST be a consistent, readable display value.
 

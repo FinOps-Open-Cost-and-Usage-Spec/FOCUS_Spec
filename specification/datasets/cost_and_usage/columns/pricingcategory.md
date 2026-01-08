@@ -9,9 +9,9 @@ PricingCategory adheres to the following requirements:
 * PricingCategory MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports more than one pricing category across all [*SKUs*](#glossary:sku).
 * PricingCategory MUST be of type String.
 * PricingCategory nullability is defined as follows:
-  * PricingCategory MUST be null when [SkuPriceId](#skupriceid) is null.
-  * PricingCategory MUST be null when [ChargeCategory](#chargecategory) is "Tax".
-  * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * PricingCategory MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
+  * PricingCategory MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+  * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * PricingCategory MAY be null in all other cases.
 * When PricingCategory is not null, PricingCategory adheres to the following additional requirements:
   * PricingCategory MUST be one of the allowed values.

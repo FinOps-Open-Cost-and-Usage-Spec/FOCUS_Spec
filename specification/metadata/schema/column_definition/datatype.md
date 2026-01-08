@@ -4,7 +4,7 @@ The data type of the column provided in the [*FOCUS dataset*](#glossary:FOCUS-da
 
 DataType adheres to the following requirements:
 
-* DataType MUST be present in an object within the [ColumnDefinition](#columndefinition) collection.
+* DataType MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection.
 * DataType MUST be of type String.
 * DataType MUST NOT contain null values.
 

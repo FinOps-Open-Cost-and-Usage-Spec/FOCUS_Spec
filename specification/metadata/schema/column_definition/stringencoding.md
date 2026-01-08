@@ -4,7 +4,7 @@ The string encoding scheme of the column provided in the [*FOCUS dataset*](#glos
 
 StringEncoding adheres to the following requirements:
 
-* StringEncoding MUST be present in an object within the [ColumnDefinition](#columndefinition) collection when this information is required in order to successfully read the data.
+* StringEncoding MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection when this information is required in order to successfully read the data.
 * StringEncoding MUST be of type String.
 * StringEncoding MUST NOT be null.
 
