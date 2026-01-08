@@ -4,7 +4,7 @@ The Cost and Usage dataset is the primary dataset for FOCUS cost and usage data.
 
 The specification for the Cost and Usage dataset defines a group of columns that provide qualitative values (such as dates, resource, and service provider information) categorized as "dimensions" and quantitative values (numeric values) categorized as "metrics" that can be used for performing various [FinOps capabilities][FODOFC]. Metrics are commonly used for aggregations (sum, multiplication, averaging etc.) and statistical operations within the dataset. Dimensions are commonly used to categorize, filter, and reveal details in your data when combined with metrics. The columns are presented in alphabetical order.
 
-<div class='h4-nonindex'>Columns</div>
+## Columns<!--SkipTOC-->
 
 | Column                                                                        | Column Type        | Feature Level | Allows Nulls | Data Type |
 | ----------------------------------------------------------------------------- | ------------------ | ------------- | ------------ | --------- |
@@ -74,7 +74,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Sub Account Type](#datasets.costandusage.subaccounttype)                                           | Dimension          | Conditional   | True         | String    |
 | [Tags](#datasets.costandusage.tags)                                                                 | Dimension          | Conditional   | True         | JSON      |
 
-<div class='h4-nonindex'>Relationships</div>
+## Relationships<!--SkipTOC-->
 
 The Cost and Usage dataset can be joined to the Contract Commitment dataset through the use of the Contract Commitment ID.
 
@@ -85,7 +85,7 @@ The Cost and Usage dataset can be joined to the Contract Commitment dataset thro
 | ------------------- | ----------------- | ------------------- | ---------------------- |
 | Cost and Usage      | Contract Applied  | Contract Commitment | Contract Commitment ID |
 
-<div class='h4-nonindex'>Requirements</div>
+## Requirements<!--SkipTOC-->
 
 CostAndUsage adheres to the following requirements:
 
@@ -96,18 +96,18 @@ CostAndUsage adheres to the following requirements:
 * CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
 
-<div class='h4-nonindex'>Dataset ID</div>
+## Dataset ID<!--SkipTOC-->
 
 CostAndUsage
 
-<div class='h4-nonindex'>Display Name</div>
+## Display Name<!--SkipTOC-->
 
 Cost and Usage
 
-<div class='h4-nonindex'>Description</div>
+## Description<!--SkipTOC-->
 
 Describes the cost and usage incurred through using or purchasing a service provider's [*resources*](#glossary:resource) or [*services*](#glossary:service).
 
-<div class='h4-nonindex'>Introduced (version)</div>
+## Introduced (version)<!--SkipTOC-->
 
 0.5

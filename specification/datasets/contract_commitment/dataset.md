@@ -2,7 +2,7 @@
 
 The Contract Commitment dataset is a supporting dataset that describes the terms of contracts agreed between a service provider and a customer.
 
-<div class='h4-nonindex'>Columns</div>
+## Columns<!--SkipTOC-->
 
 | Column                                                             | Column Type | Feature Level | Allows Nulls | Data Type |
 | ------------------------------------------------------------------ | ----------- | ------------- | ------------ | --------- |
@@ -20,7 +20,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Period End](#datasets.contractcommitment.contractperiodend)                          | Dimension   | Mandatory     | False        | Date/Time |
 | [Contract Period Start](#datasets.contractcommitment.contractperiodstart)                      | Dimension   | Mandatory     | False        | Date/Time |
 
-<div class='h4-nonindex'>Relationships</div>
+## Relationships<!--SkipTOC-->
 
 The Contract Commitment dataset can be joined to the Cost and Usage dataset through the use of Contract Commitment ID.
 
@@ -31,7 +31,7 @@ The Contract Commitment dataset can be joined to the Cost and Usage dataset thro
 | ------------------- | ---------------------- | -------------- | -----------------|
 | Contract Commitment | Contract Commitment ID | Cost and Usage | Contract Applied |
 
-<div class='h4-nonindex'>Requirements</div>
+## Requirements<!--SkipTOC-->
 
 ContractCommitment adheres to the following requirements:
 
@@ -39,18 +39,18 @@ ContractCommitment adheres to the following requirements:
 * ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 
-<div class='h4-nonindex'>Dataset ID</div>
+## Dataset ID<!--SkipTOC-->
 
 ContractCommitment
 
-<div class='h4-nonindex'>Display Name</div>
+## Display Name<!--SkipTOC-->
 
 Contract Commitment
 
-<div class='h4-nonindex'>Description</div>
+## Description<!--SkipTOC-->
 
 Describes the terms of contracts agreed between a service provider and a customer.
 
-<div class='h4-nonindex'>Introduced (version)</div>
+## Introduced (version)<!--SkipTOC-->
 
 1.3
