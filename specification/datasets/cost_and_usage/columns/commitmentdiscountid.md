@@ -8,7 +8,7 @@ CommitmentDiscountId adheres to the following requirements:
 
 * CommitmentDiscountId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountId MUST be of type String.
-* CommitmentDiscountId MUST conform to [StringHandling](#stringhandling) requirements.
+* CommitmentDiscountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentDiscountId nullability is defined as follows:
   * CommitmentDiscountId MUST be null when a [*charge*](#glossary:charge) is not related to a *commitment discount*.
   * CommitmentDiscountId MUST NOT be null when a *charge* is related to a *commitment discount*.

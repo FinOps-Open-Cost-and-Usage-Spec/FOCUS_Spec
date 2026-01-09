@@ -8,7 +8,7 @@ ChargeDescription adheres to the following requirements:
 
 * ChargeDescription MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeDescription MUST be of type String.
-* ChargeDescription MUST conform to [StringHandling](#stringhandling) requirements.
+* ChargeDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ChargeDescription SHOULD NOT be null.
 * ChargeDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
 

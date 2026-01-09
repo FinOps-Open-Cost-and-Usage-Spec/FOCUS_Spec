@@ -8,9 +8,9 @@ SubAccountType adheres to the following requirements:
 
 * SubAccountType MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports more than one possible SubAccountType value.
 * SubAccountType MUST be of type String.
-* SubAccountType MUST conform to [StringHandling](#stringhandling) requirements.
+* SubAccountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SubAccountType nullability is defined as follows:
-  * SubAccountType MUST be null when [SubAccountId](#subaccountid) is null.
+  * SubAccountType MUST be null when [SubAccountId](#datasets.costandusage.subaccountid) is null.
   * SubAccountType MUST NOT be null when SubAccountId is not null.
 * SubAccountType MUST be a consistent, readable display value.
 
