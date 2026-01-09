@@ -167,7 +167,7 @@ This table displays key milestones and dates related to the development of FOCUS
   </thead>
   <tbody>
     <tr>
-      <td rowspan="2"><strong>Thu Oct 30, 2025 to Thu Apr 30, 2026</strong></td>
+      <td rowspan="2"><strong>30-Oct-25 to 30-Apr-26</strong></td>
       <td><strong>Thu Oct 30</strong></td>
       <td>1.5 Scope Starts</td>
       <td rowspan="2">
@@ -180,7 +180,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <td>1.5 Scope Ends</td>
     </tr>
     <tr>
-      <td rowspan="8"><strong>Thu Apr 30, 2026 to Thu Sep 24, 2026</strong></td>
+      <td rowspan="8"><strong>30-Apr-26 to 24-Sep-26</strong></td>
       <td><strong>Thu Apr 30</strong></td>
       <td>1.5 Development Starts</td>
       <td rowspan="8">
@@ -218,7 +218,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <td>Deadline to Complete Member Approval</td>
     </tr>
     <tr>
-      <td><strong>Thu Oct 1, 2026 to Thu Oct 22, 2026</strong></td>
+      <td><strong>1-22-Oct-26</strong></td>
       <td></td>
       <td>Start / End Final Consistency Review v1.5</td>
       <td>
@@ -227,7 +227,7 @@ This table displays key milestones and dates related to the development of FOCUS
       </td>
     </tr>
     <tr>
-      <td><strong>Thu Oct 25, 2026 to Sun Nov 23, 2026</strong></td>
+      <td><strong>25-Oct-26 to 23-Nov-26</strong></td>
       <td></td>
       <td>Start / End IPR Review v1.5</td>
       <td>
@@ -237,19 +237,19 @@ This table displays key milestones and dates related to the development of FOCUS
       </td>
     </tr>
     <tr>
-      <td><strong>Thu Nov 26, 2026</strong></td>
+      <td><strong>26-Nov-26</strong></td>
       <td></td>
       <td>Working Group (WG) Approval of v1.5</td>
       <td>WG approves the v1.5 Release Candidate.</td>
     </tr>
     <tr>
-      <td><strong>Thu Nov 26, 2026</strong></td>
+      <td><strong>26-Nov-26</strong></td>
       <td></td>
       <td>SC Ratification of v1.5</td>
       <td>Steering Committee ratifies the v1.5 release on the same day.</td>
     </tr>
     <tr>
-      <td><strong>Dec 2026</strong></td>
+      <td><strong>XX-Dec-26</strong></td>
       <td></td>
       <td>Public Announcement</td>
       <td>Final publication date to be confirmed in December.</td>
