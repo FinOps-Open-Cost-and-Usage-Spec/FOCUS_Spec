@@ -180,7 +180,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <td>1.5 Scope Ends</td>
     </tr>
     <tr>
-      <td rowspan="8"><strong>30-Apr-26 to 24-Sep-26</strong></td>
+      <td rowspan="8"><strong>30-Apr-26 to 1-Oct-26</strong></td>
       <td><strong>Thu Apr 30</strong></td>
       <td>1.5 Development Starts</td>
       <td rowspan="8">
