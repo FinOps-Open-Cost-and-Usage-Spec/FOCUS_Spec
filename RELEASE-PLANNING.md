@@ -184,7 +184,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <td><strong>Thu Apr 30</strong></td>
       <td>1.5 Development Starts</td>
       <td rowspan="8">
-        Development begins immediately after v1.4 Final Consistency Review.<br/>
+        Development begins immediately after v1.4 Final Consistency Review (30 Apr 2026).<br/>
         Interim milestones occur on Thursdays (Members meeting cadence).<br/>
         Feature Request Review counts toward the minimum Discovery &amp; Development window.
       </td>
@@ -194,7 +194,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <td>Feature Request Review</td>
     </tr>
     <tr>
-      <td><strong>Thu May 14</strong><br/>(≥15 weeks, incl. FR review)</td>
+      <td><strong>Thu May 14</strong><br/>(15 weeks, incl. FR review)</td>
       <td>Discovery &amp; Development</td>
     </tr>
     <tr>
@@ -231,9 +231,9 @@ This table displays key milestones and dates related to the development of FOCUS
       <td></td>
       <td>Start / End IPR Review v1.5</td>
       <td>
-        Start of IPR Review begins at least 4 days after end of Consistency Review (baseline prep).<br/>
+        Start of IPR Review begins at least 3 days after end of Consistency Review (baseline prep).<br/>
         IPR Review duration is at least 30 days.<br/>
-        End of IPR Review completes at least 4 days before Final Approval (approval package preparation).
+        End of IPR Review completes at least 3 days before Final Approval (approval package preparation).
       </td>
     </tr>
     <tr>
