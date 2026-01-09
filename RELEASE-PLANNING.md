@@ -194,27 +194,27 @@ This table displays key milestones and dates related to the development of FOCUS
       <td>Feature Request Review</td>
     </tr>
     <tr>
-      <td><strong>Thu May 14</strong><br/>(15 weeks, incl. FR review)</td>
+      <td><strong>Thu May 14</strong><br/>(16 weeks, incl. FR review)</td>
       <td>Discovery &amp; Development</td>
     </tr>
     <tr>
-      <td><strong>Thu Aug 13</strong><br/>(3 weeks)</td>
+      <td><strong>Thu Aug 20</strong><br/>(3 weeks)</td>
       <td>Deadline to Start PR Drafts</td>
     </tr>
     <tr>
-      <td><strong>Thu Sep 3</strong><br/>(1 week)</td>
+      <td><strong>Thu Sep 10</strong><br/>(1 week)</td>
       <td>Deadline to Complete PR Drafts</td>
     </tr>
     <tr>
-      <td><strong>Thu Sep 10</strong><br/>(1 week)</td>
+      <td><strong>Thu Sep 17</strong><br/>(1 week)</td>
       <td>Deadline to Start TF Review</td>
     </tr>
     <tr>
-      <td><strong>Thu Sep 17</strong><br/>(1 week)</td>
+      <td><strong>Thu Sep 24</strong><br/>(1 week)</td>
       <td>Deadline to Start Member Review</td>
     </tr>
     <tr>
-      <td><strong>Thu Sep 24</strong><br/>(1 week)</td>
+      <td><strong>Thu Oct 1</strong><br/>(1 week)</td>
       <td>Deadline to Complete Member Approval</td>
     </tr>
     <tr>
