@@ -104,6 +104,10 @@ A physical representation of a specific [*dataset instance*](#glossary:dataset-i
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
 
+<a name="glossary:entitlement"><b>Entitlement</b></a>
+
+A quantifiable right to receive financial value from a provider, arising from a contract, purchase, or grant. Entitlements define benefits a customer can access or apply, independent of whether resources have been consumed.
+
 <a name="glossary:exclusiveendbound"><b>Exclusive End Bound</b></a>
 
 A Date/Time Format value that is not contained within the ending bound of a time period.
