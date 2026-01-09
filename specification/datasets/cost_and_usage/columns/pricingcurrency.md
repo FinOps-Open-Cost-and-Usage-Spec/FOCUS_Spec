@@ -8,8 +8,8 @@ PricingCurrency adheres to the following requirements:
 
 * PricingCurrency MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports pricing and billing in different currencies.
 * PricingCurrency MUST be of type String.
-* PricingCurrency MUST conform to [StringHandling](#stringhandling) requirements.
-* PricingCurrency MUST conform to [CurrencyFormat](#currencyformat) requirements.
+* PricingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* PricingCurrency MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements.
 * PricingCurrency MUST NOT be null.
 
 ## Column ID
@@ -32,7 +32,7 @@ The national or virtual currency denomination that a *resource* or *service* was
 | Feature level   | Conditional                         |
 | Allows nulls    | True                                |
 | Data type       | String                              |
-| Value format    | [Currency Format](#currencyformat) |
+| Value format    | [Currency Format](#attributes.currencyformat) |
 
 ## Introduced (version)
 

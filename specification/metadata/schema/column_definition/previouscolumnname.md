@@ -4,7 +4,7 @@ The PreviousColumnName field indicates that on that schema the column where the 
 
 PreviousColumnName adheres to the following requirements:
 
-* PreviousColumnName MUST be present in an object within the [ColumnDefinition](#columndefinition) collection when the column was renamed.
+* PreviousColumnName MUST be present in an object within the [ColumnDefinition](#metadata.schema.columndefinition) collection when the column was renamed.
 * When PreviousColumnName is present, PreviousColumnName adheres to the following normative requirements:
   * PreviousColumnName MUST be of type String.
   * PreviousColumnName MUST not be null.

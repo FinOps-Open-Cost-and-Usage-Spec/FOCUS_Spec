@@ -1,6 +1,6 @@
 # Contract Period End
 
-Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*contract period*](#glossary:contractperiod). For example, a time period where [Contract Period Start](#contractperiodstart) is '2024-01-01T00:00:00Z' and Contract Period End is '2024-01-02T00:00:00Z' includes January 1 2024 since Contract Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include January 1 2025 since Contract Period End represents the *exclusive end bound*.
+Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*contract period*](#glossary:contractperiod). For example, a time period where [Contract Period Start](#datasets.contractcommitment.contractperiodstart) is '2024-01-01T00:00:00Z' and Contract Period End is '2024-01-02T00:00:00Z' includes January 1 2024 since Contract Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include January 1 2025 since Contract Period End represents the *exclusive end bound*.
 
 ## Requirements
 
@@ -8,7 +8,7 @@ ContractPeriodEnd adheres to the following requirements:
 
 * ContractPeriodEnd MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractPeriodEnd MUST be of type Date/Time.
-* ContractPeriodEnd MUST conform to [DateTimeFormat](#date/timeformat) requirements.
+* ContractPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ContractPeriodEnd MUST NOT be null.
 * ContractPeriodEnd MUST be the *exclusive end bound* of the effective period of the *contract*.
 
@@ -32,7 +32,7 @@ The *exclusive end bound* of a *contract period*.
 | Feature level   | Mandatory                            |
 | Allows nulls    | False                                |
 | Data type       | Date/Time                            |
-| Value format    | [Date/Time Format](#date/timeformat) |
+| Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Introduced (version)
 
