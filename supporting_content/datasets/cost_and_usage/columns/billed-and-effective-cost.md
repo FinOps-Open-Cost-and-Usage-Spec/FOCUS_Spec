@@ -6,11 +6,12 @@ The [*billed cost*](#glossary:billed-cost) represents a [*charge*](#glossary:cha
 
 ## OPTION 1:
 
-Billed Cost represents the amount to be invoiced for a [*charge*](#glossary:charge) by the [invoice issuer](#invoiceissuername) for the specified [*billing period*](#glossary:billing-period). This cost metric enables cash-basis accounting by aligning [*charge-level*](#glossary:charge) costs with the actual amounts invoiced or to be invoiced at the end of the *billing period*. Billed Cost is inclusive of the effects of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used to support FinOps capabilities, such as invoice reconciliation, cash-flow-based forecasting, budgeting, and cost allocation.
+Billed Cost represents the amount to be invoiced for a [*charge*](#glossary:charge) by the [invoice issuer](#invoiceissuername) for a given [*billing period*](#glossary:billing-period). It is inclusive of the effects of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment*](#glossary:commitment-discount) discounts. It is exclusive of any prepaid portion of the charge. This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used for activities such as invoice reconciliation, budgeting, and forecasting and cost allocation based on invoiced amounts.
 
-## OPTION 2:
+## OPTION 1':
 
-Billed Cost represents the amount to be invoiced for a [*charge*](#glossary:charge) by the [invoice issuer](#invoiceissuername) for a given [*billing period*](#glossary:billing-period). It is inclusive of the effects of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used for activities such as invoice reconciliation, budgeting, and forecasting and cost allocation based on invoiced amounts.
+Billed Cost represents the amount to be invoiced for a [*charge*](#glossary:charge) by the [invoice issuer](#invoiceissuername) for a given [*billing period*](#glossary:billing-period). It is inclusive of the effects of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment*](#glossary:commitment-discount) discounts. It is exclusive of any prepaid portion of the charge. This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used to support FinOps activities such as invoice reconciliation, and cash-flow-based forecasting, budgeting, and cost allocation.
+
 
 ## Requirements
 
@@ -75,19 +76,11 @@ This column resolves two challenges that are faced by practitioners:
 
 ## OPTION 1:
 
-Effective Cost represents the cost of a [*charge*](#glossary:charge) recognized in the specified [*charge period*](#glossary:charge-period), based on accrual-based accounting principles. Unlike [Billed Cost](#billedcost), which reflects invoiced amounts in a [*billing period*](#glossary:billing-period), Effective Cost reflects the value of usage or entitlements consumed during a *charge period*, regardless of when (or whether) those costs were invoiced. Effective Cost is inclusive of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used to support FinOps capabilities, such as accrual-based reporting, cost forecasting, chargebacks, and usage-driven cost allocation.
+Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the actual [*resource*](#glossary:resource) or [*service*](#glossary:service) usage or applicable [*contract commitments*](...) during a given [*charge period*](#glossary:charge-period), regardless of when those costs are invoiced. It is inclusive of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used for FinOps activities such as reporting, cost forecasting, cost allocation, and chargeback based on actual usage and consumption.
 
-## OPTION 2:
+## OPTION 1':
 
-Effective Cost represents the cost of a [*charge*](#glossary:charge) recognized in the [*charge period*](#glossary:charge-period) when resources are used or services delivered. Unlike [Billed Cost](#billedcost), it reflects the value of consumption independent of invoicing, inclusive of all [*negotiated*](#glossary:negotiated-discount) and [*commitment discounts*](#glossary:commitment-discount) terms. This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used to support FinOps activities such as profitability analysis, unit economics, and accrual-based chargeback.
-
-## OPTION 3:
-
-Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the actual [*resource*](#glossary:resource) or [*service*](#glossary:service) usage or entitlements consumption during a given [*charge period*](#glossary:charge-period), regardless of when those costs are invoiced. It is inclusive of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used for FinOps activities such as reporting, cost forecasting, cost allocation, and chargeback based on actual usage and consumption.
-
-## OPTION 4:
-
-Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the actual [*resource*](#glossary:resource) or [*service*](#glossary:service) usage or entitlements consumption during a given [*charge period*](#glossary:charge-period), recognized in the same timeframe as the value it provides, independent of when that cost is invoiced. It is inclusive of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used for FinOps activities such as reporting, cost forecasting, cost allocation, and chargeback based on actual usage and consumption.
+Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the actual [*resource*](#glossary:resource) or [*service*](#glossary:service) usage or applicable [*contract commitments*](...) during a given [*charge period*](#glossary:charge-period), regardless of when those costs are invoiced. It is inclusive of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used to support FinOps activites such as accrual-based reporting, forecasting, and cost allocation.
 
 ## Requirements
 
