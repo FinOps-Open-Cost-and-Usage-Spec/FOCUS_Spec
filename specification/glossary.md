@@ -40,6 +40,10 @@ The time window that an organization receives an invoice for, inclusive of the s
 
 A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
 
+<a name="glossary:cash-based-accounting"><b>Cash-Based Accounting</b></a>
+
+In technology cost management, cash-based accounting records costs in the period when charges are invoiced. This aligns expenses with billing cycles, independent of when resources are utilized or services are delivered.
+
 <a name="glossary:capacity-reservation"><b>Capacity Reservation</b></a>
 
 A capacity reservation is an agreement that secures a dedicated amount of resources or services for a specified period. This ensures the reserved capacity is always available and accessible, even if it's not fully utilized. Customers are typically charged for the reserved capacity, regardless of actual consumption.
