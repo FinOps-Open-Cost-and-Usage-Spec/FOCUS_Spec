@@ -1,0 +1,122 @@
+{
+  "CatalogVersion": "1.3",
+  "EntityType": "Column",
+  "DatasetId": "CCT",
+  "DatasetName": "Contract Commitment",
+  "ArtifactID": "ContractCommitmentCategory",
+  "Filename": "contractcommitmentcategory",
+  "SourcePath": "specification/datasets/contract_commitment/columns/contractcommitmentcategory.md",
+  "readRef": "v1.3",
+  "extractedCounts": {
+    "total": 5,
+    "bcp14": 4,
+    "composite": 1
+  },
+  "Phase1": {
+    "ArtifactID": "ContractCommitmentCategory",
+    "DatasetId": "CCT",
+    "DatasetName": "Contract Commitment",
+    "Filename": "contractcommitmentcategory",
+    "TotalSentencesToExtract": 5,
+    "BCP14Sentences": 4,
+    "CompositeSentences": 1,
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "gateCandidateText": "* ContractCommitmentCategory MUST NOT be null."
+  },
+  "Requirements": {
+    "CCT-ContractCommitmentCategory-C-000-O": {
+      "RequirementKey": "CCT-ContractCommitmentCategory-C-000-O",
+      "DatasetId": "CCT",
+      "ArtifactID": "ContractCommitmentCategory",
+      "X": "C",
+      "zzz": "000",
+      "Y": "O",
+      "Order": 0,
+      "SourceIndex": 1,
+      "Kind": "CompositeLeadIn",
+      "MustSatisfy": "ContractCommitmentCategory adheres to the following requirements:",
+      "Keyword": "",
+      "Function": "Composite",
+      "Type": "Static",
+      "ApplicabilityCriteria": [],
+      "Dependencies": []
+    },
+    "CCT-ContractCommitmentCategory-C-001-M": {
+      "RequirementKey": "CCT-ContractCommitmentCategory-C-001-M",
+      "DatasetId": "CCT",
+      "ArtifactID": "ContractCommitmentCategory",
+      "X": "C",
+      "zzz": "001",
+      "Y": "M",
+      "Order": 10,
+      "SourceIndex": 2,
+      "Kind": "Atomic",
+      "MustSatisfy": "* ContractCommitmentCategory MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).",
+      "Keyword": "MUST",
+      "Function": "Presence",
+      "Type": "Static",
+      "ApplicabilityCriteria": [],
+      "Dependencies": []
+    },
+    "CCT-ContractCommitmentCategory-C-002-M": {
+      "RequirementKey": "CCT-ContractCommitmentCategory-C-002-M",
+      "DatasetId": "CCT",
+      "ArtifactID": "ContractCommitmentCategory",
+      "X": "C",
+      "zzz": "002",
+      "Y": "M",
+      "Order": 20,
+      "SourceIndex": 3,
+      "Kind": "Atomic",
+      "MustSatisfy": "* ContractCommitmentCategory MUST be of type String.",
+      "Keyword": "MUST",
+      "Function": "DataType",
+      "Type": "Static",
+      "ApplicabilityCriteria": [],
+      "Dependencies": []
+    },
+    "CCT-ContractCommitmentCategory-C-003-M": {
+      "RequirementKey": "CCT-ContractCommitmentCategory-C-003-M",
+      "DatasetId": "CCT",
+      "ArtifactID": "ContractCommitmentCategory",
+      "X": "C",
+      "zzz": "003",
+      "Y": "M",
+      "Order": 30,
+      "SourceIndex": 4,
+      "Kind": "Atomic",
+      "MustSatisfy": "* ContractCommitmentCategory MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Function": "Nullability",
+      "Type": "Static",
+      "ApplicabilityCriteria": [],
+      "Dependencies": []
+    },
+    "CCT-ContractCommitmentCategory-C-004-M": {
+      "RequirementKey": "CCT-ContractCommitmentCategory-C-004-M",
+      "DatasetId": "CCT",
+      "ArtifactID": "ContractCommitmentCategory",
+      "X": "C",
+      "zzz": "004",
+      "Y": "M",
+      "Order": 40,
+      "SourceIndex": 5,
+      "Kind": "Atomic",
+      "MustSatisfy": "* ContractCommitmentCategory MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Function": "Validation",
+      "Type": "Static",
+      "ApplicabilityCriteria": [],
+      "Dependencies": []
+    }
+  },
+  "RequirementOrder": [
+    "CCT-ContractCommitmentCategory-C-000-O",
+    "CCT-ContractCommitmentCategory-C-001-M",
+    "CCT-ContractCommitmentCategory-C-002-M",
+    "CCT-ContractCommitmentCategory-C-003-M",
+    "CCT-ContractCommitmentCategory-C-004-M"
+  ]
+}
