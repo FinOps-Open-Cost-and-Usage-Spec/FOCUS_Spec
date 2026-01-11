@@ -157,7 +157,7 @@
       "Kind": "Atomic",
       "MustSatisfy": "* BillingCurrency MUST be expressed in [*national currency*](#glossary:national-currency) (e.g., USD, EUR).",
       "Keyword": "MUST",
-      "Function": "Validation",
+      "Function": "Format",
       "Type": "Static",
       "ApplicabilityCriteria": [],
       "Dependencies": []
