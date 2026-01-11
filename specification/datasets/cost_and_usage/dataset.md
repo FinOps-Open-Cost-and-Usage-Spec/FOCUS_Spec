@@ -91,8 +91,9 @@ CostAndUsage adheres to the following requirements:
 
 * CostAndUsage MUST be present.
 * CostAndUsage MUST conform to [ColumnHandling](#columnhandling) requirements.
-* CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
+* CostAndUsage MUST conform to [DatasetConfiguration](#datasetconfiguration) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
+* CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling) requirements.
 
