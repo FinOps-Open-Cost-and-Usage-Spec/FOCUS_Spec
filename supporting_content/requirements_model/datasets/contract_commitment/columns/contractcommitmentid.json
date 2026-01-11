@@ -26,13 +26,13 @@
     "gateCandidateText": "* ContractCommitmentId MUST NOT be null."
   },
   "Requirements": {
-    "CCT-ContractCommitmentId-C-000-O": {
-      "RequirementKey": "CCT-ContractCommitmentId-C-000-O",
+    "CCT-ContractCommitmentId-C-000-M": {
+      "RequirementKey": "CCT-ContractCommitmentId-C-000-M",
       "DatasetId": "CCT",
       "ArtifactID": "ContractCommitmentId",
       "X": "C",
       "zzz": "000",
-      "Y": "O",
+      "Y": "M",
       "Order": 0,
       "SourceIndex": 1,
       "Kind": "CompositeLeadIn",
@@ -198,7 +198,7 @@
     }
   },
   "RequirementOrder": [
-    "CCT-ContractCommitmentId-C-000-O",
+    "CCT-ContractCommitmentId-C-000-M",
     "CCT-ContractCommitmentId-C-001-M",
     "CCT-ContractCommitmentId-C-002-M",
     "CCT-ContractCommitmentId-C-003-M",
