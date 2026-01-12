@@ -194,32 +194,32 @@ This table displays key milestones and dates related to the development of FOCUS
       <td>Feature Request Review</td>
     </tr>
     <tr>
-      <td><strong>Thu May 14</strong><br/>(16 weeks, incl. FR review)</td>
+      <td><strong>Thu May 14</strong><br/>(17 weeks, incl. FR review)</td>
       <td>Discovery &amp; Development</td>
     </tr>
     <tr>
-      <td><strong>Thu Aug 20</strong><br/>(3 weeks)</td>
+      <td><strong>Thu Aug 27</strong><br/>(3 weeks)</td>
       <td>Deadline to Start PR Drafts</td>
     </tr>
     <tr>
-      <td><strong>Thu Sep 10</strong><br/>(1 week)</td>
+      <td><strong>Thu Sep 17</strong><br/>(1 week)</td>
       <td>Deadline to Complete PR Drafts</td>
     </tr>
     <tr>
-      <td><strong>Thu Sep 17</strong><br/>(1 week)</td>
+      <td><strong>Thu Sep 24</strong><br/>(1 week)</td>
       <td>Deadline to Start TF Review</td>
     </tr>
     <tr>
-      <td><strong>Thu Sep 24</strong><br/>(1 week)</td>
+      <td><strong>Thu Oct 1</strong><br/>(1 week)</td>
       <td>Deadline to Start Member Review</td>
     </tr>
     <tr>
-      <td><strong>Thu Oct 1</strong><br/>(1 week)</td>
+      <td><strong>Thu Oct 8</strong><br/>end of 1.5 dev</td>
       <td>Deadline to Complete Member Approval</td>
     </tr>
     <tr>
       <td><strong>8-29-Oct-26</strong></td>
-      <td></td>
+      <td>(3 weeks)</td>
       <td>Start / End Final Consistency Review v1.5</td>
       <td>
         Fixed three-week consistency review period (Thursday-to-Thursday).<br/>
