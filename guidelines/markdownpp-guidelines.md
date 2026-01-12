@@ -193,6 +193,35 @@ While markdown can be included in a .mdpp, the FOCUS project discourages this be
 !INCLUDE "attributes/numeric_format.md"
 ```
 
+### File Naming Conventions
+
+To ensure consistency, ease of maintenance, and portability, all Markdown and MarkdownPP file names in the FOCUS Specification repository SHOULD follow these conventions:
+
+- File names MUST use lowercase characters.
+- Spaces or camelCase MUST NOT be used.
+- File names SHOULD remain stable after publication to maintain repository consistency and predictability.
+  - If a file must be renamed, all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
+- File names SHOULD be descriptive and reflect the primary content of the file.
+- Words in file names SHOULD be separated using underscores (`_`) or joined without any separator.
+- Words in file names MAY be separated using hyphens (`-`).
+
+**Preferred file name examples:**
+
+```text
+numeric_format.md
+supported_features.mdpp
+cost_and_usage.md
+pricingquantity.md
+```
+
+**Forbidden file name examples:**
+
+```text
+PricingQuantity.md
+Pricing Quantity.md
+pricingQuantity.md
+```
+
 ### Header Level Management
 
 ```markdown
