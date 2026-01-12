@@ -1,0 +1,141 @@
+# AGENTS.md
+
+This file provides guidance to AI coding assistants when working with this repository.
+
+## Project Overview
+
+This is the FinOps Open Cost and Usage Specification (FOCUS) repository - a technical specification for standardizing cloud, SaaS, and billing data schemas. The repository contains both human-readable specification documents (Markdown to HTML/PDF) and machine-readable validation rules (JSON).
+
+## Build Commands
+
+### Build the Specification (from `specification/` directory)
+
+```bash
+cd specification
+make                          # Builds spec.md, spec.html, spec.pdf
+make STYLE=working_draft      # Build as working draft (default)
+make STYLE=main               # Build as publication version
+make STYLE=candidate_release  # Build as candidate release
+make clean                    # Clean generated files
+```
+
+### Build Requirements Model JSON
+
+```bash
+cd specification/requirements_model
+./build_json.py --build-only  # Generate model JSON only
+./build_json.py               # Run tests then generate JSON
+```
+
+### Run Tests
+
+```bash
+cd specification/requirements_model
+pytest tests/                 # Run all requirements model tests
+pytest tests/test_schema.py   # Run a single test file
+```
+
+### Lint Markdown
+
+```bash
+pymarkdownlnt --config specification/markdownlnt.cfg scan <file.md>
+```
+
+## Architecture
+
+### Document Build Pipeline
+
+1. **Source files**: `*.md` and `*.mdpp` files in `specification/` subdirectories
+2. **markdown-pp**: Processes `spec.mdpp` template, resolving `!INCLUDE` directives to assemble the full spec
+3. **validate_includes.py**: Ensures all `.md` files in each directory are included in corresponding `.mdpp` templates
+4. **pymarkdownlnt**: Lints all markdown files
+5. **Pandoc**: Converts assembled markdown to HTML with custom filters
+6. **wkhtmltopdf**: Generates PDF from HTML
+
+### Specification Structure
+
+- `specification/spec.mdpp` - Main template that includes all sections
+- `specification/datasets/` - Supported datasets
+- `specification/datasets/{dataset}/columns/` - Column definitions per dataset
+- `specification/attributes/` - Rules that govern datasets, rows, columns, and values
+- `specification/metadata/` - Dataset metadata schemas
+- `specification/supported_features/` - Catalog of FinOps capabilities enabled by FOCUS datasets
+- `specification/appendix/` - Examples and supplementary content
+- `supporting_content/` - Background info from spec development
+
+### Requirements Model (JSON Validation Rules)
+
+The `specification/requirements_model/` directory contains a machine-readable representation of spec requirements:
+
+- `model_rules/` - JSON files defining validation rules (organized by attributes/, columns/, datasets/)
+- `build_json.py` - Merges all JSON into `build/model-<version>.json`
+- `tests/` - 32+ pytest tests validating rule structure and dependencies
+
+**Rule ID Format**: `<ArtifactName>-<Type>-<NumericId>-<Status>`
+
+- Types: C (Column), A (Attribute), D (Dataset)
+- Status: M (Mandatory), O (Optional), C (Conditional)
+- Example: `ListUnitPrice-C-001-M`
+
+## Writing Specification Content
+
+### Normative Language
+
+- Use BCP-14 keywords: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (all uppercase)
+- "RECOMMENDED" is deprecated; use SHOULD instead
+- Write normative statements as bullet lists, not lengthy sentences
+
+### Editorial Conventions
+
+- Column/Attribute IDs: PascalCase without spaces (e.g., `PricingQuantity`)
+- Column/Attribute Display Names: Normal text with spaces (e.g., "Pricing Quantity")
+- Column values: Enclosed in double quotes (e.g., `"Usage"`, `"Tax"`)
+- Glossary terms: Link with `[*term*](#glossary:term)` format (first occurrence per section)
+- First mention of Column/Attribute names should link to their definition section
+
+### File Organization
+
+- Each section has a `.mdpp` template that includes individual `.md` files
+- All `.md` files in a directory must be included in the corresponding `.mdpp`
+- Code blocks must be aligned to start of line (not indented)
+
+## Context Files
+
+### Working Files
+
+Per-issue working files are stored in `.ai/<branch-name>/`:
+
+- `research.md` - Investigation findings and synthesized issue requirements
+- `plan.md` - Implementation approach
+- `tasks.md` - Execution tracking
+
+Fetch issue details from GitHub (`gh issue view`) rather than saving locally. Summarize relevant requirements into research.md.
+
+Context folder names match branch names for consistency. These files are committed during active work and must be deleted as part of the PR before merging. Migrate valuable research to `supporting_content/` as part of the PR.
+
+### Memory Files
+
+Persistent learnings are stored in `.ai/memory/` and are not deleted.
+
+## Reference Files
+
+- `.ai/memory/` - Saved context and memory across sessions
+- `specification/glossary.md` - FOCUS terminology definitions
+- `guidelines/` - Development processes and conventions
+
+## Dependencies
+
+**Python packages** (in requirements.txt):
+
+- pymarkdownlnt, panflute, watchdog
+- pytest, jsonschema (for requirements model tests)
+
+**System tools**:
+
+- Pandoc (markdown processing)
+- wkhtmltopdf (PDF generation)
+- GNU Make
+
+## AI Usage Policy
+
+AI-assisted contributions are permitted and follow the same review standards as human-authored content. See [AI Usage Guidelines](guidelines/ai-usage-guidelines.md) for details.

@@ -1,0 +1,59 @@
+name: Check Working Folder Cleanup
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-working-folders:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract issue number from branch
+        id: branch
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          # Extract issue number if branch starts with a number
+          BRANCH_ISSUE=$(echo "$BRANCH_NAME" | grep -oE '^[0-9]+' || true)
+          echo "issue=$BRANCH_ISSUE" >> $GITHUB_OUTPUT
+          echo "Branch: $BRANCH_NAME, Issue: $BRANCH_ISSUE"
+
+      - name: Check for working folders
+        id: check
+        run: |
+          BRANCH_ISSUE="${{ steps.branch.outputs.issue }}"
+          FOUND=""
+
+          # Only check if we found an issue number in the branch name
+          if [ -n "$BRANCH_ISSUE" ]; then
+            # Look for working folders matching this issue
+            for FOLDER in .ai/${BRANCH_ISSUE}-*/; do
+              if [ -d "$FOLDER" ]; then
+                FOUND="$FOUND $FOLDER"
+              fi
+            done
+          fi
+
+          if [ -n "$FOUND" ]; then
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "folders=$FOUND" >> $GITHUB_OUTPUT
+            echo "::warning::Working folders found:$FOUND"
+          else
+            echo "found=false" >> $GITHUB_OUTPUT
+            echo "No working folders found for this PR"
+          fi
+
+      - name: Fail if working folders exist
+        if: steps.check.outputs.found == 'true'
+        run: |
+          echo "❌ Working folders must be cleaned up before merging:"
+          echo "${{ steps.check.outputs.folders }}"
+          echo ""
+          echo "Before merging this PR:"
+          echo "1. Migrate valuable research to supporting_content/ (include in PR)"
+          echo "2. Add relevant implementation notes to PR description or linked issue"
+          echo "3. Delete the working folder(s) listed above"
+          exit 1

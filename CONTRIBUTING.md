@@ -40,7 +40,22 @@ If you are not sure where your contribution fits, open a **Blank Issue** first a
 
 ---
 
-## 3. Contribution Process
+## 3. AI-Assisted Contributions
+
+AI tools (such as GitHub Copilot, Claude Code, Cursor, and similar coding assistants) may be used to assist with FOCUS contributions. AI-generated content follows the same review standards as human-authored content.
+
+**Key requirements:**
+
+- A CLA-covered human MUST take responsibility for all contributions
+- AI agents MAY create PRs on behalf of a human who requested the work
+- The responsible human reviews and approves AI-generated contributions
+- AI-assisted contributions follow the same review process as other contributions
+
+For complete guidance, see [AI Usage Guidelines](guidelines/ai-usage-guidelines.md).
+
+---
+
+## 4. Contribution Process
 
 1. **Fork this repository** and create a branch for your work:
 ```bash
