@@ -243,7 +243,7 @@ All headers appearing after the !TOC directive automatically receive an HTML anc
 - Whitespace and the following characters are removed: `,` `-` `(` `)`.
 - Other special characters such as `/`, `:`, `%`, `&`, `@` are preserved.
 - Dots (.) are inserted between header levels to represent the full hierarchy of document sections.
-- Headers marked with `<!--SkipTOC-->` MAY appear in the document but will not be included in the Table of Contents, and no anchor will be created.
+- Headers marked with `<!--SkipTOC-->` will appear in the document but will not be included in the Table of Contents, and no anchor will be created.
 
 #### File-Level Header Structure
 
