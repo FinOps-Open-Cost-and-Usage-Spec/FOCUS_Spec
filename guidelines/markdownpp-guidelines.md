@@ -195,10 +195,10 @@ While markdown can be included in a .mdpp, the FOCUS project discourages this be
 
 ### File Naming Conventions
 
-To ensure consistency, ease of maintenance, and portability, all Markdown and MarkdownPP file names in the FOCUS Specification repository SHOULD follow these conventions:
+To ensure consistency, ease of maintenance, and portability, all Markdown and MarkdownPP files in the FOCUS Specification repository, except key repository files, SHOULD follow these naming conventions:
 
 - File names MUST use lowercase characters.
-- Spaces or camelCase MUST NOT be used.
+- Spaces MUST NOT be used.
 - File names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
   - If a file requires a rename:
     - all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.  
@@ -206,6 +206,8 @@ To ensure consistency, ease of maintenance, and portability, all Markdown and Ma
 - File names SHOULD be descriptive and reflect the primary content of the file.
 - Words in file names SHOULD be separated using underscores (`_`) or joined without any separator.
 - Words in file names MAY be separated using hyphens (`-`).
+
+Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) SHOULD follow common GitHub naming conventions.
 
 **Preferred file name examples:**
 
