@@ -106,10 +106,6 @@ A specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) provid
 
 A physical representation of a specific [*dataset instance*](#glossary:dataset-instance) delivered by a [data generator](#metadata.datagenerator).
 
-<a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
-
-A physical representation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) delivered by a data generator.
-
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
