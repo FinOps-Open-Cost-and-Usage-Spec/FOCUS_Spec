@@ -237,7 +237,7 @@ FOCUS Specification relies on Markdown headers to define document structure, sec
 
 #### Automatic Anchor Generation
 
-All headers appearing after the !TOC directive automatically receive an HTML anchor generated from the header text whereby the following applies
+All headers appearing after the !TOC directive automatically receive an HTML anchor generated from the header text whereby the following applies:
 
 - Anchor text is normalized to lowercase.
 - Whitespace and the following characters are removed: `,` `-` `(` `)`.
