@@ -103,15 +103,17 @@ The `specification/requirements_model/` directory contains a machine-readable re
 
 ### Working Files
 
-Per-issue working files are stored in `.ai/<branch-name>/`:
+Per-issue working files are stored in `.ai/work/<issue-number>-<kebab-case-name>/`:
 
 - `research.md` - Investigation findings and synthesized issue requirements
 - `plan.md` - Implementation approach
 - `tasks.md` - Execution tracking
 
+**Naming convention**: Use `<issue-number>-<kebab-case-name>` matching your branch name (e.g., branch `1805-ai-usage-policy` → folder `.ai/work/1805-ai-usage-policy/`).
+
 Fetch issue details from GitHub (`gh issue view`) rather than saving locally. Summarize relevant requirements into research.md.
 
-Context folder names match branch names for consistency. These files are committed during active work and must be deleted as part of the PR before merging. Migrate valuable research to `supporting_content/` as part of the PR.
+These files are committed during active work. After the PR is approved but before merging, delete the working folder. This is a manual step - do not delete working files until final approval is received. Valuable research should be moved to `supporting_content/` before approval.
 
 ### Memory Files
 

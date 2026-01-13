@@ -64,13 +64,15 @@ Tool-specific wrapper files reference the centralized configuration:
 
 ### Working File Lifecycle
 
-Working folders (`.ai/<branch-name>/`) contain research, plans, and task tracking for active issues. Before a PR merges:
+Working folders (`.ai/work/<issue-number>-<kebab-case-name>/`) contain research, plans, and task tracking for active issues. Use the same naming convention as your branch.
 
-1. **Migrate valuable content**: Include broadly useful research in `supporting_content/` as part of the PR
+After a PR is approved but before merging:
+
+1. **Migrate valuable content**: Include broadly useful research in `supporting_content/`
 2. **Capture execution details**: Add relevant implementation notes to the PR description or linked issue
-3. **Delete the working folder**: Remove the `.ai/<branch-name>/` folder as part of the PR
+3. **Delete the working folder**: Remove the `.ai/work/` folder in a final commit
 
-A PR health check confirms no working folders remain before the PR can merge.
+**Important**: Do not delete working files until final approval is received. A PR readiness check will remind you when cleanup is needed.
 
 These configuration files help AI tools work effectively within the repository, producing consistent content that aligns with project goals and conventions.
 

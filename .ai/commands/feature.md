@@ -7,7 +7,7 @@
 ### Phase 1: Setup
 
 1. Fetch issue: `gh issue view $ISSUE --json title,body,labels,comments`
-2. Create `.ai/<issue>-<kebab-name>/` working directory (name matches branch)
+2. Create `.ai/work/<issue>-<kebab-name>/` working directory (name matches branch)
 
 ### Phase 2: Research
 
@@ -39,12 +39,12 @@
 3. Validate: `python validate_includes.py <folder>` and `pytest tests/`
 4. Commit, push, create draft PR
 
-## Context File Naming
+## Working Folder Naming
 
-Context folders match branch names for consistency:
+Use `<issue-number>-<kebab-case-name>` matching your branch:
 
 - Branch: `1805-ai-usage-policy`
-- Context: `.ai/1805-ai-usage-policy/`
+- Folder: `.ai/work/1805-ai-usage-policy/`
 
 ## Working File Purposes
 
@@ -58,13 +58,19 @@ Note: Fetch issue details from GitHub rather than saving locally. This ensures c
 
 ## Cleanup
 
-Before a PR merges, delete the `.ai/<branch-name>/` folder as part of the PR:
+**During the PR** (before final approval):
 
-1. Migrate valuable research to `supporting_content/` (include in PR)
-2. Add relevant implementation notes to PR description or linked issue
-3. Delete the working folder
+- Migrate valuable research to `supporting_content/`
+- Add relevant implementation notes to PR description or linked issue
 
-A PR health check will fail if working folders still exist. Memory files in `.ai/memory/` are permanent and should not be deleted.
+**After approval, before merge**:
+
+- Delete only the `.ai/work/<issue-number>-<name>/` folder for this PR
+- Do not delete working files until final approval is received
+
+After creating the PR, add this comment on `research.md` to remind reviewers:
+
+> ⚠️ **Cleanup required before merge**: After final approval, delete `.ai/work/<folder-name>/` before merging.
 
 ## File Matrix
 

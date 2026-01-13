@@ -46,7 +46,8 @@ FOCUS_Spec/
 │   ├── commands/
 │   │   └── feature.md           # Centralized command logic
 │   ├── memory/                  # Permanent
-│   └── <branch-name>/           # Delete before PR merge
+│   └── work/
+│       └── <branch-name>/       # Delete after approval, before merge
 ├── .claude/
 │   └── commands/
 │       └── feature.md           # Claude wrapper

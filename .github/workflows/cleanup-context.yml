@@ -1,4 +1,4 @@
-name: Check Working Folder Cleanup
+name: PR Readiness
 
 on:
   pull_request:
@@ -6,6 +6,7 @@ on:
 
 jobs:
   check-working-folders:
+    name: Working folder cleanup
     runs-on: ubuntu-latest
 
     steps:
@@ -16,44 +17,47 @@ jobs:
         id: branch
         run: |
           BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
-          # Extract issue number if branch starts with a number
-          BRANCH_ISSUE=$(echo "$BRANCH_NAME" | grep -oE '^[0-9]+' || true)
-          echo "issue=$BRANCH_ISSUE" >> $GITHUB_OUTPUT
-          echo "Branch: $BRANCH_NAME, Issue: $BRANCH_ISSUE"
+          # Extract issue number if branch starts with a number (e.g., 1805-ai-usage-policy)
+          ISSUE_NUMBER=$(echo "$BRANCH_NAME" | grep -oE '^[0-9]+' || true)
+          echo "issue=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "Branch: $BRANCH_NAME, Issue: $ISSUE_NUMBER"
 
-      - name: Check for working folders
+      - name: Check for working folder
         id: check
         run: |
-          BRANCH_ISSUE="${{ steps.branch.outputs.issue }}"
+          ISSUE_NUMBER="${{ steps.branch.outputs.issue }}"
+          BRANCH_NAME="${{ steps.branch.outputs.branch }}"
           FOUND=""
 
-          # Only check if we found an issue number in the branch name
-          if [ -n "$BRANCH_ISSUE" ]; then
-            # Look for working folders matching this issue
-            for FOLDER in .ai/${BRANCH_ISSUE}-*/; do
-              if [ -d "$FOLDER" ]; then
-                FOUND="$FOUND $FOLDER"
-              fi
-            done
+          if [ -n "$ISSUE_NUMBER" ]; then
+            # Look for folder matching this PR's branch name
+            FOLDER=".ai/work/${BRANCH_NAME}"
+            if [ -d "$FOLDER" ]; then
+              FOUND="$FOLDER"
+            fi
           fi
 
           if [ -n "$FOUND" ]; then
             echo "found=true" >> $GITHUB_OUTPUT
-            echo "folders=$FOUND" >> $GITHUB_OUTPUT
-            echo "::warning::Working folders found:$FOUND"
+            echo "folder=$FOUND" >> $GITHUB_OUTPUT
           else
             echo "found=false" >> $GITHUB_OUTPUT
-            echo "No working folders found for this PR"
           fi
 
-      - name: Fail if working folders exist
-        if: steps.check.outputs.found == 'true'
+      - name: Report status
         run: |
-          echo "❌ Working folders must be cleaned up before merging:"
-          echo "${{ steps.check.outputs.folders }}"
-          echo ""
-          echo "Before merging this PR:"
-          echo "1. Migrate valuable research to supporting_content/ (include in PR)"
-          echo "2. Add relevant implementation notes to PR description or linked issue"
-          echo "3. Delete the working folder(s) listed above"
-          exit 1
+          if [ "${{ steps.check.outputs.found }}" == "true" ]; then
+            echo "::notice title=Cleanup needed before merge::Working folder found: ${{ steps.check.outputs.folder }}. After final approval, delete this folder before merging."
+            echo ""
+            echo "📋 Working folder for this PR:"
+            echo "   ${{ steps.check.outputs.folder }}"
+            echo ""
+            echo "After final approval, before merging:"
+            echo "   Delete the folder: ${{ steps.check.outputs.folder }}"
+            echo ""
+            echo "This check will pass once the folder is removed."
+            exit 1
+          else
+            echo "✅ No working folder found for this PR - ready for merge"
+          fi
