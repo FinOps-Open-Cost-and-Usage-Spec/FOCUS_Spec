@@ -1,6 +1,6 @@
 # Charge Class
 
-Charge Class indicates whether a [*charge*](#glossary:charge) represents a [*correction](#glossary:correction) to a previously [*closed billing period*](#glossary:closed-billing-period). Charge Class is commonly used to differentiate such corrections from all other charges, including both regularly incurred *charges* and *corrections* to [*open billing periods*](#glossary:open-billing-period).
+Charge Class indicates whether a [*charge*](#glossary:charge) represents a [*correction*](#glossary:correction) to a previously [*closed billing period*](#glossary:closed-billing-period). Charge Class is commonly used to differentiate such corrections from all other charges, including both regularly incurred *charges* and *corrections* to [*open billing periods*](#glossary:open-billing-period).
 
 ## Requirements
 

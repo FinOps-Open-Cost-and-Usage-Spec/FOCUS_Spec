@@ -19,7 +19,7 @@ In addition to these, a data generator may include one or more custom properties
 The ContractApplied column adheres to the following requirements:
 
 * ContractApplied MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *contract commitments*.
-* ContractApplied MUST conform to [JsonObjectFormat](#jsonobjectformat) requirements.
+* ContractApplied MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
 
 ### Object Schema Requirements
@@ -30,7 +30,7 @@ Contract Applied consists of a valid JSON object which contains an array of key-
   * ContractApplied MUST have a top-level key "Elements" which contains an array.
   * ContractApplied root object MAY contain custom objects, in addition to "Elements".
   * Each item in "Elements" MUST be an object.
-  * "Elements" objects MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+  * "Elements" objects MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
   * "Elements" objects MUST contain key-value pairs (contract application properties).
   * Contract application property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
   * "Elements" objects MUST contain four key-value pairs, representing "ContractCommitmentID", "ContractCommitmentAppliedCost", "ContractCommitmentAppliedQuantity", and "ContractCommitmentAppliedUnit".
@@ -57,7 +57,7 @@ The "ContractId" property adheres to the following requirements:
 
 * "ContractId" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *contract commitments*.
 * "ContractId" MUST be of type String.
-* "ContractId" MUST conform to [StringHandling](#stringhandling) requirements.
+* "ContractId" MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * "ContractId" nullability is defined as follows:
   * "ContractId" MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
   * "ContractId" MUST NOT be null when a *charge* is related to a *contract commitment*.
@@ -73,7 +73,7 @@ The "ContractCommitmentID" property adheres to the following requirements:
 
 * "ContractCommitmentID" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *contract commitments*.
 * "ContractCommitmentID" MUST be of type String.
-* "ContractCommitmentID" MUST conform to [StringHandling](#stringhandling) requirements.
+* "ContractCommitmentID" MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * "ContractCommitmentID" nullability is defined as follows:
   * "ContractCommitmentID" MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
   * "ContractCommitmentID" MUST NOT be null when a *charge* is related to a *contract commitment*.
@@ -92,7 +92,7 @@ The "ContractCommitmentAppliedCost" property adheres to the following requiremen
 
 * "ContractCommitmentAppliedCost" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider associates the *charge's* value with one or more *contract commitments*.
 * "ContractCommitmentAppliedCost" MUST be of type Decimal.
-* "ContractCommitmentAppliedCost" MUST conform to [NumericFormat](#numericformat) requirements.
+* "ContractCommitmentAppliedCost" MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * "ContractCommitmentAppliedCost" nullability is defined as follows:
   * "ContractCommitmentAppliedCost" MUST NOT be null when "ContractCommitmentAppliedQuantity" is null.
   * "ContractCommitmentAppliedCost" MAY be null in all other cases.
@@ -107,7 +107,7 @@ The "ContractCommitmentAppliedQuantity" property adheres to the following requir
 
 * "ContractCommitmentAppliedQuantity" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedQuantity" MUST be of type Decimal.
-* "ContractCommitmentAppliedQuantity" MUST conform to [NumericFormat](#numericformat) requirements.
+* "ContractCommitmentAppliedQuantity" MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * "ContractCommitmentAppliedQuantity" nullability is defined as follows:
   * "ContractCommitmentAppliedQuantity" MUST NOT be null when "ContractCommitmentAppliedCost" is null.
   * "ContractCommitmentAppliedQuantity" MAY be null in all other cases.
@@ -122,8 +122,8 @@ The "ContractCommitmentAppliedUnit" property adheres to the following requiremen
 
 * "ContractCommitmentAppliedUnit" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedUnit" MUST be of type String.
-* "ContractCommitmentAppliedUnit" MUST conform to [StringHandling](#stringhandling) requirements.
-* "ContractCommitmentAppliedUnit" SHOULD conform to [UnitFormat](#unitformat) requirements.
+* "ContractCommitmentAppliedUnit" MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* "ContractCommitmentAppliedUnit" SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * "ContractCommitmentAppliedUnit" nullability is defined as follows:
   * "ContractCommitmentAppliedUnit" MUST be null when "ContractCommitmentAppliedQuantity" is null.
   * "ContractCommitmentAppliedUnit" MUST NOT be null when "ContractCommitmentAppliedQuantity" is not null.
@@ -191,7 +191,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 }
 ```
 
-NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for ContractApplied. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#numericformat) allows for multiple numeric data types and precisions, but JDT requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
+NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for ContractApplied. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#attributes.numericformat) allows for multiple numeric data types and precisions, but JTD requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
 
 ## Example Scenarios
 
@@ -316,7 +316,7 @@ A set of properties that associate a charge with one or more [*contract commitme
 | Feature level | Conditional                        |
 | Allows nulls  | True                               |
 | Data type     | JSON                               |
-| Value format  | [JSON Object Format](#jsonobjectformat) |
+| Value format  | [JSON Object Format](#attributes.jsonobjectformat) |
 
 ## Introduced (version)
 

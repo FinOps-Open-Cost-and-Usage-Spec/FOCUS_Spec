@@ -1,6 +1,6 @@
 # Allocated Resource ID
 
-An Allocated Resource ID is an identifier assigned by the data generator which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling). The Allocated Resource ID is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the data generator is allocating costs to something other than the *charge's* [ResourceID](#ResourceId), as is the case for [allocated charges](#glossary:allocated-charge).
+An Allocated Resource ID is an identifier assigned by the data generator which cost is being allocated to in a [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling). The Allocated Resource ID is used to understand what the cost is being allocated to in [*charges*](#glossary:charge) where the data generator is allocating costs to something other than the *charge's* [ResourceID](#datasets.costandusage.resourceid), as is the case for [allocated charges](#glossary:allocated-charge).
 
 ## Requirements
 
@@ -8,7 +8,7 @@ AllocatedResourceId adheres to the following requirements:
 
 * AllocatedResourceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports data generator-calculated split cost allocation.
 * AllocatedResourceId MUST be of type String.
-* AllocatedResourceId MUST conform to [StringHandling](#stringhandling) requirements.
+* AllocatedResourceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedResourceId nullability is defined as follows:
   * AllocatedResourceId MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
   * AllocatedResourceId MUST be null when a *charge* represents the unallocated portion of the origin *charge* after split cost allocation.

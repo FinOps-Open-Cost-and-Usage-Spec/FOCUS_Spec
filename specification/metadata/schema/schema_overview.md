@@ -9,7 +9,7 @@ Schema adheres to the following requirements:
 * Schema MUST be present in the [Metadata](#metadata).
 * Schema MUST be structured as a collection of objects.
 * Schema MUST NOT be null.
-* Schema collection MUST contain at least one object for every [DatasetInstance](#datasetinstance) object.
+* Schema collection MUST contain at least one object for every [DatasetInstance](#metadata.datasetinstance) object.
 * Schema collection MUST NOT contain null objects.
 * Schema collection object MUST be associated with one and only one DatasetInstance object.
 * Schema collection object MUST be added to the collection whenever the structure of the [*dataset instance artifacts*](#glossary:dataset-instance-artifact) changes (including, but not limited to, additions or removals of columns, modifications to any ColumnDefinition, or updates to the FOCUSVersion or DataGeneratorVersion).
@@ -23,14 +23,14 @@ Schema adheres to the following requirements:
 
 There are many scenarios that would result in an update to the Schema metadata.  These scenarios include but are not limited to:
 
-* [Adding a new column](#addingnewcolumns)
-* [Removing a column](#removingcolumns)
-* [Changing column metadata](#changingcolumnmetadata)
-* [FOCUS Version has changed](#focusversionchanged)
-* [Data Generator Version has changed](#schemametadatatofocusdatareference)
-* [Correcting schema metadata errors](#providermetadataerrorcorrection)
+* [Adding a new column](#appendix.examples:metadata.addingnewcolumns)
+* [Removing a column](#appendix.examples:metadata.removingcolumns)
+* [Changing column metadata](#appendix.examples:metadata.changingcolumnmetadata)
+* [FOCUS Version has changed](#appendix.examples:metadata.focusversionchanged)
+* [Data Generator Version has changed](#appendix.examples:metadata.schemametadatatofocusdatareference)
+* [Correcting schema metadata errors](#appendix.examples:metadata.providermetadataerrorcorrection)
 
-For an example of the FOCUS schema metadata, please refer to: [Schema Metadata Example](#schemametadata).
+For an example of the FOCUS schema metadata, please refer to: [Schema Metadata Example](#supportedfeatures.schemametadata).
 
 ## Metadata ID
 

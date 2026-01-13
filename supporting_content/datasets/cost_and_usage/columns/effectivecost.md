@@ -28,7 +28,7 @@ ___
 
 | Charge period           | Billing period           | Charge Category     | Units | Billed Cost | Effective Cost |
 | ----------------------- | ------------------------ | --------------- | ----- | ----------- | -------------- |
-| Jan 4 2023 - Jan 5 2023 | Jan 1 2023 - Jan 31 2023 | OD Usag         | 3     | 5.544       | 5.544          |
+| Jan 4 2023 - Jan 5 2023 | Jan 1 2023 - Jan 31 2023 | OD Usage         | 3     | 5.544       | 5.544          |
 | Jan 4 2023 - Jan 5 2023 | Jan 1 2023 - Jan 31 2023 | Unused RI Usage | 3     | 0           | 3.81369863     |
 
 *Note: For the On Demand usage the Billed cost and Effective cost are the same with an Amortization of Zero. Since the RI went completely unused during the period there is an unused RI usage row with the an amortization equal to (Upfront fee / (number of normalized units reserved x periods) x normalized units.*
