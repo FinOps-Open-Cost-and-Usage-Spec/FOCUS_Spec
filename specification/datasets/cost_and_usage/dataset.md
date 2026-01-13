@@ -91,8 +91,8 @@ CostAndUsage adheres to the following requirements:
 
 * CostAndUsage MUST be present.
 * CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
-* CostAndUsage MUST conform to [CorrectionHandling](#correctionhandling) requirements.
-* CostAndUsage MUST conform to [DeliveryHandling](#deliveryhandling) requirements.
+* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
+* CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
 
