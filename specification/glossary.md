@@ -6,11 +6,11 @@ A charge representing a modification to billing data to account for certain even
 
 <a name="glossary:allocated-charge"><b>Allocated Charge</b></a>
 
-The [charge](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charges that were created from the [origin charge](#glossary:origin-charge) resulting from the application of Data Generator-Calculated Split Cost Allocation.
+The [*charge*](#glossary:charge) that was created as the result of an allocation operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charges that were created from the [*origin charge*](#glossary:origin-charge) resulting from the application of Data Generator-Calculated Split Cost Allocation.
 
 <a name="glossary:allocated-method"><b>Allocated Method</b></a>
 
-The process or formula by which cost is being allocated from an [origin charge](#glossary:origin-charge) to produce [allocated charges](#glossary:allocated-charge). This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) which requires documentation of the method to be provided for any and all allocated methods used. May also be colloquially referred to as allocation method.
+The process or formula by which cost is being allocated from an [*origin charge*](#glossary:origin-charge) to produce [*allocated charges*](#glossary:allocated-charge). This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) which requires documentation of the method to be provided for any and all allocated methods used. May also be colloquially referred to as allocation method.
 
 <a name="glossary:amortization"><b>Amortization</b></a>
 
@@ -54,7 +54,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 <a name="glossary:closed-billing-period"><b>Closed Billing Period</b></a>
 
-A [*billing period*](glossary:billing-period) that has been financially closed following the successful issuance of all planned invoices by the designated Invoice Issuer for that period. Upon assigning the "closed" status, the responsible Invoice Issuer entity confirms that no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested by the end-user.
+A [*billing period*](#glossary:billing-period) that has been financially closed following the successful issuance of all planned invoices by the designated Invoice Issuer for that period. Upon assigning the "closed" status, the responsible Invoice Issuer entity confirms that no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested by the end-user.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -82,13 +82,13 @@ A specific term within a [*contract*](#glossary:contract) that defines a measura
 
 <a name="glossary:contracted-unit-price"><b>Contracted Unit Price</b></a>
 
-The agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, inclusive of negotiated discounts, if present, and exclusive of any other discounts. This price is denominated in the [*Billing Currency*](#glossary:billing-currency).
 
 <a name="glossary:correction"><b>Correction</b></a>
 
 Any modification (including updates, additions, or omissions) to previously provided [*charges*](#glossary:charge), whether from an [*open billing period*](#glossary:open-billing-period) or a [*closed billing period*](#glossary:closed-billing-period). A correction may consist of multiple simultaneous modifications, each representing an update or omission of a previously delivered charge, or the addition of a new charge, collectively forming the correction.
 
-The term "Correction" (capitalized) refers specifically to an allowed value in the [Charge Class](#chargeclass) column, designating charges used to correct cost or usage data from a previously closed billing period. In contrast, the broader concept of "corrections" (lowercase) includes all types of modifications, regardless of the [*billing period*](#glossary:billing-period) status.
+The term "Correction" (capitalized) refers specifically to an allowed value in the [Charge Class](#datasets.costandusage.chargeclass) column, designating charges used to correct cost or usage data from a previously closed billing period. In contrast, the broader concept of "corrections" (lowercase) includes all types of modifications, regardless of the [*billing period*](#glossary:billing-period) status.
 
 <a name="glossary:credit"><b>Credit</b></a>
 
@@ -160,7 +160,7 @@ An invoice that has been formally generated and released by the designated invoi
 
 <a name="glossary:issued-charge"><b>Issued Charge</b></a>
 
-A [*charge*](#glossary:charge) associated with an [*issued invoice*](glossary:issued-invoice).
+A [*charge*](#glossary:charge) associated with an [*issued invoice*](#glossary:issued-invoice).
 
 <a name="glossary:json"><b>JSON</b></a>
 
@@ -168,7 +168,7 @@ A common acronym for JavaScript Object Notation, a data format codified in [ECMA
 
 <a name="glossary:list-unit-price"><b>List Unit Price</b></a>
 
-The suggested service-provider-published unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated [SKU](#glossary:sku), exclusive of any discounts. This price is denominated in the [Billing Currency](#glossary:billing-currency).
+The suggested service-provider-published unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated [*SKU*](#glossary:sku), exclusive of any discounts. This price is denominated in the [*Billing Currency*](#glossary:billing-currency).
 
 <a name="glossary:managed-service-provider"><b>Managed Service Provider (MSP)</b></a>
 
@@ -192,11 +192,11 @@ A service that is available and provided immediately or as needed, without requi
 
 <a name="glossary:open-billing-period"><b>Open Billing Period</b></a>
 
-A [*billing period*](glossary:billing-period) that has not yet been financially closed, regardless of whether it refers to the current or a past timeframe. The "open" status indicates that billing activities are ongoing and the period remains subject to updates until formally closed.
+A [*billing period*](#glossary:billing-period) that has not yet been financially closed, regardless of whether it refers to the current or a past timeframe. The "open" status indicates that billing activities are ongoing and the period remains subject to updates until formally closed.
 
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
-The [charge](#glossary:charge) that existed prior to an operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charge that existed prior to the application of Data Generator-Calculated Split Cost Allocation to produce [allocated charges](#glossary:allocated-charge).
+The [*charge*](#glossary:charge) that existed prior to an operation. This is used in the context of [Data Generator-Calculated Split Cost Allocation](#supportedfeatures.datagenerator-calculatedsplitcostallocation) to identify the charge that existed prior to the application of Data Generator-Calculated Split Cost Allocation to produce [*allocated charges*](#glossary:allocated-charge).
 
 <a name="glossary:pascalcase"><b>Pascal Case</b></a>
 
