@@ -199,7 +199,7 @@ To ensure consistency, ease of maintenance, and portability, all Markdown and Ma
 
 - File names MUST use lowercase characters.
 - Spaces or camelCase MUST NOT be used.
-- File names SHOULD remain stable after publication to maintain repository consistency and predictability.
+- File names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
   - If a file must be renamed, all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
 - File names SHOULD be descriptive and reflect the primary content of the file.
 - Words in file names SHOULD be separated using underscores (`_`) or joined without any separator.
