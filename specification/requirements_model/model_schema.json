@@ -145,7 +145,8 @@
               "type": "string",
               "enum": [
                 "Active",
-                "Deprecated"
+                "Deprecated",
+                "Removed"
               ]
             },
             "ApplicabilityCriteria": {

@@ -126,6 +126,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-021-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-022-C"
           },
           {
@@ -187,6 +191,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-037-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-038-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -294,6 +302,7 @@
         "CAU-CostAndUsage-D-018-C",
         "CAU-CostAndUsage-D-019-C",
         "CAU-CostAndUsage-D-020-C",
+        "CAU-CostAndUsage-D-021-M",
         "CAU-CostAndUsage-D-022-C",
         "CAU-CostAndUsage-D-023-M",
         "CAU-CostAndUsage-D-024-M",
@@ -310,6 +319,7 @@
         "CAU-CostAndUsage-D-035-M",
         "CAU-CostAndUsage-D-036-M",
         "CAU-CostAndUsage-D-037-M",
+        "CAU-CostAndUsage-D-038-M",
         "CAU-CostAndUsage-D-039-C",
         "CAU-CostAndUsage-D-040-M",
         "CAU-CostAndUsage-D-041-M",
@@ -507,6 +517,14 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ProviderName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PublisherName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-RegionId-C-000-C"
           },
           {
@@ -612,11 +630,13 @@
         "CAU-PricingCurrencyListUnitPrice-C-000-C",
         "CAU-PricingQuantity-C-000-M",
         "CAU-PricingUnit-C-000-M",
+        "CAU-ProviderName-C-000-M",
         "CAU-RegionId-C-000-C",
         "CAU-RegionName-C-000-C",
         "CAU-ResourceId-C-000-C",
         "CAU-ResourceName-C-000-C",
         "CAU-ResourceType-C-000-C",
+        "CAU-PublisherName-C-000-M",
         "CAU-SubAccountId-C-000-C",
         "CAU-SubAccountName-C-000-C",
         "CAU-ServiceCategory-C-000-M",
