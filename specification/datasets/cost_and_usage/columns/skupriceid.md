@@ -10,22 +10,22 @@ SkuPriceId adheres to the following requirements:
 
 * SkuPriceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
 * SkuPriceId MUST be of type String.
-* SkuPriceId MUST conform to [String Handling](#stringhandling) requirements.
+* SkuPriceId MUST conform to [String Handling](#attributes.stringhandling) requirements.
 * SkuPriceId nullability is defined as follows:
-  * SkuPriceId MUST be null when [ChargeCategory](#chargecategory) is "Tax".
-  * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * SkuPriceId MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+  * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * SkuPriceId MAY be null in all other cases.
 * When SkuPriceId is not null, SkuPriceId adheres to the following additional requirements:
-  * SkuPriceId MUST have one and only one parent [SkuId](#skuid).
+  * SkuPriceId MUST have one and only one parent [SkuId](#datasets.costandusage.skuid).
   * SkuPriceId MUST remain consistent over time.
   * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
   * SkuPriceId MAY equal SkuId.
   * SkuPriceId MUST be associated with a given [*resource*](#glossary:resource) or [*service*](#glossary:service) when ChargeCategory is "Usage" or "Purchase".
   * SkuPriceId MUST reference a *SKU Price* in a service-provider-supplied *price list*, enabling the lookup of detailed information about the *SKU Price*.
-  * SkuPriceId MUST support the lookup of the [ListUnitPrice](#listunitprice) when the service provider publishes unit prices exclusive of discounts.
-  * SkuPriceId MUST support the verification of the given [ContractedUnitPrice](#contractedunitprice) when the service provider supports negotiated pricing concepts.
+  * SkuPriceId MUST support the lookup of the [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
+  * SkuPriceId MUST support the verification of the given [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
 
-See [Examples: Commitment Discount Flexibility](#commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
+See [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility) for more details around *commitment discount flexibility*.
 
 ## Column ID
 
