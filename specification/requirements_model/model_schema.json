@@ -120,7 +120,8 @@
               "enum": [
                 "Dataset",
                 "Column",
-                "Attribute"
+                "Attribute",
+                "Object"
               ]
             },
             "Notes": {
@@ -139,6 +140,9 @@
               "type": "string"
             },
             "ModelVersionIntroduced": {
+              "type": "string"
+            },
+            "ModelVersionRemoved": {
               "type": "string"
             },
             "Status": {
@@ -219,6 +223,41 @@
             "ApplicabilityCriteria",
             "Type",
             "ValidationCriteria"
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "Status": {
+                    "const": "Removed"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "ModelVersionRemoved"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "Status": {
+                    "enum": [
+                      "Active",
+                      "Deprecated"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "not": {
+                  "required": [
+                    "ModelVersionRemoved"
+                  ]
+                }
+              }
+            }
           ],
           "additionalProperties": false
         }
