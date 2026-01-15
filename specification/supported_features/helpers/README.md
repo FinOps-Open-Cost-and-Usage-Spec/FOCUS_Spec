@@ -30,18 +30,6 @@ A Python script that finds SQL code blocks in Markdown files and transpiles them
 
 #### Usage
 
-```bash
-# Transpile all SQL blocks in markdown files to T-SQL
-./sql_transpile.py ../*.md --to tsql
-
-# List all SQL blocks without transpiling
-./sql_transpile.py ../*.md --list
-
-# Transpile with dialect preference for detection
-./sql_transpile.py ../*.md --to bigquery --prefer trino
-
-# Process specific files
-./sql_transpile.py ../file1.md ../file2.md --to postgres
 #### Usage
 
 ##### Linux / macOS (Bash)
