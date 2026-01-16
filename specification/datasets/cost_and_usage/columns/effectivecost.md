@@ -1,6 +1,6 @@
 # Effective Cost
 
-Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the actual [*resource*](#glossary:resource) or [*service*](#glossary:service) usage or applicable [*contract commitments*](#glossary:contract-commitment) during a given [*charge period*](#glossary:charge-period), regardless of when those costs are invoiced. It is inclusive of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used for FinOps activities such as reporting, cost forecasting, cost allocation, and chargeback based on actual usage and consumption.
+Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the actual [*resource*](#glossary:resource) or [*service*](#glossary:service) usage or applicable [*contract commitments*](#glossary:contract-commitment) during a given [*charge period*](#glossary:charge-period), regardless of when those costs are invoiced. It is inclusive of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Effective Cost is commonly used for FinOps activities such as reporting, cost forecasting, cost allocation, and chargeback based on actual usage and consumption.
 
 ## Requirements
 
