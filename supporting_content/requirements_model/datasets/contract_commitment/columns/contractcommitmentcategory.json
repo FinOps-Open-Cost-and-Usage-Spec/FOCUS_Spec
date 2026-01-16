@@ -1,0 +1,107 @@
+{
+  "CCT-ContractCommitmentCategory-C-000-M": {
+    "Order": 0,
+    "Function": "Composite",
+    "Reference": "ContractCommitmentCategory",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCategory adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CCT-ContractCommitmentCategory-C-001-M",
+        "CCT-ContractCommitmentCategory-C-002-M",
+        "CCT-ContractCommitmentCategory-C-003-M",
+        "CCT-ContractCommitmentCategory-C-004-M"
+      ]
+    }
+  },
+  "CCT-ContractCommitmentCategory-C-001-M": {
+    "Order": 10,
+    "Function": "Presence",
+    "Reference": "ContractCommitmentCategory",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCategory MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentCategory-C-002-M": {
+    "Order": 20,
+    "Function": "DataType",
+    "Reference": "ContractCommitmentCategory",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCategory MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentCategory-C-003-M": {
+    "Order": 30,
+    "Function": "NullabilityRules",
+    "Reference": "ContractCommitmentCategory",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCategory MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitmentCategory-C-004-M": {
+    "Order": 40,
+    "Function": "Validation",
+    "Reference": "ContractCommitmentCategory",
+    "EntityType": "Column",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentCategory MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
