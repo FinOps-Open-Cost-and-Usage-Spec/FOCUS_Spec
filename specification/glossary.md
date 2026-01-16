@@ -2,7 +2,7 @@
 
 <a name="glossary:accrual-based-accounting"><b>Accrual-Based Accounting</b></a>
 
-Accrual-based accounting records technology costs in the period when resources are utilized or services are delivered. This ensures expenses are recognized in the same timeframe as the value they provide, independent of when billing or invoicing occurs.
+An accounting method used in technology cost management to record costs in the period when resources are utilized, services are delivered, or entitlements are available for or actually consumed (including unused or expired entitlements). This approach ensures that expenses are recognized in the same timeframe as the value they provide, independent of when charges are invoiced.
 
 <a name="glossary:adjustment"><b>Adjustment</b></a>
 
@@ -42,7 +42,7 @@ A pricing approach where the cost of a particular resource or service is determi
 
 <a name="glossary:cash-based-accounting"><b>Cash-Based Accounting</b></a>
 
-In technology cost management, cash-based accounting records costs in the period when charges are invoiced. This aligns expenses with billing cycles, independent of when resources are utilized or services are delivered.
+An accounting method used in technology cost management to record costs in the period when charges are invoiced. This approach aligns expenses with billing cycles, independent of when resources are utilized, services are delivered, or entitlements are available for or actually consumed (including unused or expired entitlements).
 
 <a name="glossary:capacity-reservation"><b>Capacity Reservation</b></a>
 
