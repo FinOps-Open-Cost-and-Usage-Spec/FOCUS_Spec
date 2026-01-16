@@ -1,6 +1,6 @@
 # Effective Cost
 
-Effective Cost represents the cost of a [*charge*](#glossary:charge) recognized in the specified [*charge period*](#glossary:charge-period), based on [*accrual-based accounting*](#glossary:accrual-based-accounting) principles. Unlike [Billed Cost](#billedcost), which reflects invoiced amounts in a [*billing period*](#glossary:billing-period), Effective Cost reflects the value of usage or [*entitlements*](#glossary:entitlement) consumed during a *charge period*, regardless of when (or whether) those costs were invoiced. Effective Cost is inclusive of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used to support FinOps capabilities, such as accrual-based reporting, cost forecasting, chargebacks, and usage-driven cost allocation.
+Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the actual [*resource*](#glossary:resource) or [*service*](#glossary:service) usage or applicable [*contract commitments*](#glossary:contract-commitment) during a given [*charge period*](#glossary:charge-period), regardless of when those costs are invoiced. It is inclusive of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Effective Cost is commonly used for FinOps activities such as reporting, cost forecasting, cost allocation, and chargeback based on actual usage and consumption.
 
 ## Requirements
 
@@ -31,7 +31,7 @@ Effective Cost
 
 ## Description
 
-Cost of a *charge* recognized in the specified *charge period*, based on accrual-based accounting principles.
+Cost of a *charge* based on the actual *resource* or *service* usage or applicable *contract commitments* during a given *charge period*, regardless of when those costs are invoiced.
 
 ## Content constraints
 

@@ -1,6 +1,6 @@
 # Billed Cost
 
-Billed Cost represents the amount to be invoiced for a [*charge*](#glossary:charge) by the [invoice issuer](#invoiceissuername) for the specified [*billing period*](#glossary:billing-period). This cost metric enables cash-basis accounting by aligning [*charge-level*](#glossary:charge) costs with the actual amounts invoiced or to be invoiced at the end of the *billing period*. Billed Cost is inclusive of the effects of all applicable pricing adjustments, such as reduced unit prices resulting from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used to support FinOps capabilities, such as invoice reconciliation, cash-flow-based forecasting, budgeting, and cost allocation.
+Billed Cost represents the amount to be invoiced for a [*charge*](#glossary:charge) by the [invoice issuer](#invoiceissuername) for a given [*billing period*](#glossary:billing-period). It is inclusive of the effects of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment*](#glossary:commitment-discount) discounts. It is exclusive of any prepaid portion of the charge. This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used for activities such as invoice reconciliation, budgeting, and forecasting and cost allocation based on invoiced amounts.
 
 ## Requirements
 
@@ -25,7 +25,7 @@ Billed Cost
 
 ## Description
 
-Amount to be invoiced for a *charge* by the invoice issuer for the specified *billing period*.
+Amount to be invoiced for a *charge* by the invoice issuer for a given *billing period*.
 
 ## Content constraints
 
