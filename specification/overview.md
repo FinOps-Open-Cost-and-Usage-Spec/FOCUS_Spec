@@ -74,7 +74,7 @@ Future versions of FOCUS will consider including additional FinOps capabilities 
 ### Consistency helps with clarity
 
 * Where possible, use consistent names that will naturally create associations between related columns in the specification.
-* Column naming must strictly follow the [column handling](#columnhandling) requirements.
+* Column naming must strictly follow the [column handling](#attributes.columnhandling) requirements.
 * Use established standards (e.g., ISO8601 for dates, ISO4217 for currency).
 
 ## Typographic Conventions
@@ -87,7 +87,7 @@ Under each column defined in the FOCUS specification, there exists a 'Feature le
 
 * If the existence of a column is described with MUST with no conditions of when it applies, then the feature level is designated as 'Mandatory'.
 * If the existence of a column is described as MUST with conditions of when it applies, then the feature level is designated as 'Conditional'.
-* If the existence of a column is described as RECOMMENDED, then the feature level is designated as 'Recommended'.
+* If the existence of a column is described as SHOULD, then the feature level is designated as 'Recommended'.
 * If the existence of a column is described as MAY, then the feature level is designated as 'Optional'.
 
 ## Conformance Checkers and Validators

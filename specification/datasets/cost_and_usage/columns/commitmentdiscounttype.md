@@ -8,9 +8,9 @@ CommitmentDiscountType adheres to the following requirements:
 
 * CommitmentDiscountType MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountType MUST be of type String.
-* CommitmentDiscountType MUST conform to [StringHandling](#stringhandling) requirements.
+* CommitmentDiscountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentDiscountType nullability is defined as follows:
-  * CommitmentDiscountType MUST be null when [CommitmentDiscountId](#commitmentdiscountid) is null.
+  * CommitmentDiscountType MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
   * CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
 
 ## Column ID
