@@ -1,6 +1,10 @@
 # Effective Cost
 
-Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the actual [*resource*](#glossary:resource) or [*service*](#glossary:service) usage or applicable [*contract commitments*](#glossary:contract-commitment) during a given [*charge period*](#glossary:charge-period), regardless of when those costs are invoiced. It is inclusive of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). This cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Effective Cost is commonly used for FinOps activities such as reporting, cost forecasting, cost allocation, and chargeback based on actual usage and consumption.
+Effective Cost represents the cost of a [*charge*](#glossary:charge) based on the [*resources*](#glossary:resource) or [*services*](#glossary:service) used or [*contract commitments*](#glossary:contract-commitment) consumed in a given [*charge period*](#glossary:charge-period). Effective Cost differs from [Billed Cost](#datasets.costandusage.billedcost) when pre-payment or post-payment *charges* are invoiced separately from usage.
+
+For all *charges*, Effective Cost reflects all applicable pricing adjustments, such as reduced pricing from [*negotiated discounts*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount). For usage *charges*, Effective Cost includes the consumed or recognized portion of *Billed Cost* from a related purchase charge. For purchase *charges*, Effective Cost excludes any amounts recognized or will be recognized in related usage *charges* (e.g., usage covered by *commitments*, pre-payments, or marketplace purchases), regardless of when those related *charges* are invoiced.
+
+Effective Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Effective Cost is commonly used to support FinOps activities, including [*accrual-based*](#glossary:accrual-based-accounting) reporting, forecasting, and cost allocation.
 
 ## Requirements
 
@@ -31,7 +35,7 @@ Effective Cost
 
 ## Description
 
-Cost of a *charge* based on the actual *resource* or *service* usage or applicable *contract commitments* during a given *charge period*, regardless of when those costs are invoiced.
+Cost of a *charge* based on the *resources* or *services* used or *contract commitments* consumed in a given *charge period*.
 
 ## Content constraints
 

@@ -1,6 +1,10 @@
 # Billed Cost
 
-Billed Cost represents the amount to be invoiced for a [*charge*](#glossary:charge) by the [invoice issuer](#invoiceissuername) for a given [*billing period*](#glossary:billing-period). It is inclusive of the effects of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment*](#glossary:commitment-discount) discounts. It is exclusive of any prepaid portion of the charge. This cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Billed Cost is commonly used for activities such as invoice reconciliation, budgeting, and forecasting and cost allocation based on invoiced amounts.
+Billed Cost represents the cost of a [*charge*](#glossary:charge) invoiced (or to be invoiced) by the [invoice issuer](##datasets.costandusage.invoiceissuername) in a given [*billing period*](#glossary:billing-period). Billed Cost differs from [Effective Cost](#datasets.costandusage.effectivecost) when pre-paid or post-paid charges are invoiced separately from usage.
+
+For all *charges*, Billed Cost reflects all applicable pricing adjustments, such as reduced pricing from negotiated or [*commitment discounts*](#glossary:commitment-discount). For purchase *charges*, Billed Cost includes any amounts invoiced in the given *billing period*. For usage *charges*, Billed Cost excludes any amounts that are or will be covered by related purchase *charges* (e.g., *commitment* purchases, pre-paid contracts, or marketplace purchases), regardless of when those related charges are invoiced.
+
+Billed Cost is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). Billed Cost is commonly used to support FinOps activities, including invoice reconciliation, [*cash-flow-based*](#glossary:cash-based-accounting) forecasting, budgeting, and cost allocation.
 
 ## Requirements
 
@@ -25,7 +29,7 @@ Billed Cost
 
 ## Description
 
-Amount to be invoiced for a *charge* by the invoice issuer for a given *billing period*.
+Cost of a *charge* invoiced (or to be invoiced) by the *invoice issuer* in a given *billing period*.
 
 ## Content constraints
 
