@@ -102,13 +102,14 @@ def collect(spec: dict):
             "dependencies": dependencies
         })
 
-    # Deduplicate by (eid, etype) within a reference (keep first occurrence)
+    # Deduplicate by rule ID within a reference (keep first occurrence)
+    # Each rule ID should be unique, so this mainly handles any data issues
     deduped = {}
     for ref, items in by_ref.items():
         seen = set()
         out = []
         for it in items:
-            key = (it["eid"], it["etype"])
+            key = it["ruleid"]  # Use rule ID as the unique key
             if key in seen:
                 continue
             seen.add(key)

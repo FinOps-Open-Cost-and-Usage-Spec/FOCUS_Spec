@@ -210,6 +210,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Deprecated",
     "ApplicabilityCriteria": [],
+    "Order": 70,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix.",

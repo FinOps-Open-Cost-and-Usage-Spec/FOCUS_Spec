@@ -548,6 +548,7 @@
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Order": 50,
     "Type": "Static",
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
