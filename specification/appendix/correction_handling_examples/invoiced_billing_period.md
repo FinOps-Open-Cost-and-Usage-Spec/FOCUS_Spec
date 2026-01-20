@@ -1,4 +1,4 @@
-# Corrections to Invoiced Billing Period
+# Corrections to Closed Billing Period
 
 The following examples illustrate how corrections to previously issued billing periods may be represented in FOCUS Cost and Usage dataset artifacts, using delivery mechanisms and correction styles that preserve invoice integrity and auditability.
 
@@ -20,9 +20,9 @@ CSV Examples:
 
 Note the following details in the example datasets:
 
-* The original dataset was delivered before the billing period was invoiced and includes a charge record that was part of the finalized invoice for May 2025.
+* The original dataset was delivered before the billing period was closed and includes a charge record that was part of the finalized invoice for May 2025.
 * The correction is modeled using Append mechanisms, as the May billing period is closed and invoice immutability must be preserved.
-* Correction records have ChargeClass set to "Correction", indicating they reallocate cost from a previously invoiced billing period.
+* Correction records have ChargeClass set to "Correction", indicating they reallocate cost from a previously closed billing period.
 * Original Dataset includes:
   * A charge record attributed entirely to ResourceId `R-111`.
 * Delta style correction includes:
@@ -48,12 +48,12 @@ CSV Examples:
 
 Note the following details in the example datasets:
 
-* The original dataset was delivered before the billing period was invoiced.
+* The original dataset was delivered before the billing period was closed.
 * The late-arriving cost was incurred during May 2025 but was not captured in the original dataset and was therefore not reflected in the invoice for May 2025, issued on June 12th, 2025.
 * The correction introduces a new charge record to account for this previously omitted cost.
 * The correction is modeled using Append mechanism, as the original billing period is closed and invoice immutability must be preserved.
 * The correction record is assigned to the next open billing period (e.g., June 2025).
-* The correction record has ChargeClass set to "Correction", indicating it accounts for usage from a previously invoiced billing period.
+* The correction record has ChargeClass set to "Correction", indicating it accounts for usage from a previously closed billing period.
 * Both Delta style and Ledger style corrections use a single increment record to represent the late-arriving usage and associated cost.
 
 ### Scenario 3: Post-Invoice Correction - Itemized Cost-only Correction
@@ -71,13 +71,13 @@ CSV Examples:
 
 Note the following details in the example datasets:
 
-* The original dataset was delivered before the billing period was invoiced.
+* The original dataset was delivered before the billing period was closec.
 * The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
 * The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 12th, 2025.
 * The correction is modeled using Append mechanism, as the original billing period is closed and invoice immutability must be preserved.
 * Both Delta style and Ledger style corrections introduce two itemized increment records representing cost-only adjustments.
 * Each correction record is assigned to the next open billing period (e.g., July 2025).
-* Each correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously invoiced billing period.
+* Each correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously closed billing period.
 * Each correction record is itemized and explicitly references the relevant SkuPriceId.
 * Each correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
 
@@ -97,12 +97,12 @@ CSV Examples:
 
 Note the following details in the example datasets:
 
-* The original dataset was delivered before the billing period was invoiced.
+* The original dataset was delivered before the billing period was closed.
 * The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
 * The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 12th, 2025.
 * The correction is modeled using Append mechanism, as the original billing period is closed and invoice immutability must be preserved.
 * Both Delta style and Ledger style corrections introduce a bulk cost-only record to reconcile the total drift and ensure invoice accuracy.
 * The correction record is assigned to the next open billing period (e.g., July 2025).
-* The correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously invoiced billing period.
+* The correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously closed billing period.
 * The correction record does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
 * The correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
