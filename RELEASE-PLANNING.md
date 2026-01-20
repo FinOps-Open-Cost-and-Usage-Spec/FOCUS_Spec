@@ -9,6 +9,7 @@ This section outlines the planned release schedule and key milestones for the FO
         <th width="10">Version</th>
         <th width="10">Release By</th>
         <th>Scope | High-Level System Requirements</th>
+    </tr>
     <tr>
         <td>v1.3</td>
         <td>Dec 2025</td>
@@ -34,7 +35,47 @@ This section outlines the planned release schedule and key milestones for the FO
       <li>Conformance program beta</li>
       <li>Recency and completeness of data</li>  
     </ul>
-</ul>
+        </td>
+    </tr>
+    <tr>
+        <td>v1.4</td>
+        <td>Jun 2026</td>
+        <td>
+<strong>Multi-dataset FOCUS Standardization</strong>
+    <ul>
+      <li>Extend support for contract commitment dataset</li>
+      <li>Add FOCUS Invoice Dataset</li>
+    </ul>
+  <strong>Improving FOCUS adoption and implementation</strong>
+    <ul>
+      <li>Add column selection as a non-functional requirement</li>
+      <li>Add non-FOCUS columns to FOCUS datasets as a non-functional requirement</li>
+      <li>Add the ability to understand provider resource tagging eligibility</li>
+      <li>Add granularity level between sub account and resource</li>    
+      <li>Add provider column mappings as a non-functional requirement</li>  
+      <li>Add output formats as a non-functional requirement</li>
+      <li>Add commitment eligibility indicator for on-demand charges</li>
+      <li>Use adoption to prioritize the working group's efforts</li>  
+      <li>Add non-negotiated discount eligibility indicator for on-demand charges</li>  
+    </ul>
+  <strong>Carry-over from 1.3</strong>
+    <ul>
+      <li>Augment requirements for correction-handling scenarios</li>
+      <li>Clarify definitions of EffectiveCost vs BilledCost across providers</li>
+      <li>Clarify commitment concepts and glossary entries</li>    
+    </ul>
+ <strong>Other Important Improvements</strong>
+    <ul>
+      <li>Provide guidance for generating data center / on-prem FOCUS datasets</li>
+      <li>Establish FOCUS attribute-specification guidelines</li>
+      <li>Establish FOCUS metadata-specification guidelines</li>
+      <li>Handle for HTML/PDF anchor links for columns used in multiple datasets</li>
+      <li>Revise the table of contents generator to handle for dataset-level headers</li>
+      <li>Relocate all normative requirements that apply to the dataset level to the dataset section of the document</li> 
+      <li>Add 1.3 Specification revisions to Requirements Model</li>
+      <li>Add 1.4 Specification revisions to Requirements Model</li>
+      <li>Add Line-Item Examples for Non-Negotiated Commitment Scenarios</li> 
+    </ul>
         </td>
     </tr>
 </table>
@@ -110,6 +151,100 @@ This section outlines the planned release schedule and key milestones for the FO
             </ul>
         </td>
     </tr>
+</table>
+
+### Estimated Timeline for v1.4
+This table displays key milestones and dates related to the development of FOCUS Release v1.4.
+
+<table>
+  <thead>
+    <tr>
+      <th>Final Date</th>
+      <th>Interim Date</th>
+      <th>Milestone</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td rowspan="10"><strong>30-Oct-25 to 9-Apr-26</strong></td>
+        <td><strong>Thu Oct 30</strong> </br> (21 weeks + 2 week EOY break)</td>
+        <td>1.4 Development Starts</td>
+        <td rowspan="10">21 weeks (19 weeks in v1.2, and 13 weeks in v1.3)</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Oct 30</strong> </br> (2 weeks)</td>
+        <td>Feature Request Review</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Nov 13</strong> </br> (5 weeks)</td>
+        <td>Discovery &amp; Development</td>
+      </tr>
+      <tr>
+        <td><strong>Mon Dec 22</strong> </br> (2 weeks)</td>
+        <td>End-of-year break</td>
+      </tr>
+      <tr>
+        <td><strong>Mon Jan 5</strong> </br> (8 weeks)</td>
+        <td>Resume Discovery &amp; Development</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Feb 26</strong> </br> (3 weeks)</td>
+        <td>Deadline to start PR Drafts</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Mar 19</strong> </br> (1 week)</td>
+        <td>Deadline to complete PR Drafts</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Mar 26</strong> </br>  (1 week)</td>
+        <td>Deadline to start TF Review</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Apr 2</strong> </br> (1 week)</td>
+        <td>Deadline to start Member Review</td>
+      </tr>
+      <tr>
+        <td><strong>Thu Apr 9</strong> </br> end of 1.4 dev</td>
+        <td>Deadline to complete Member Approval</td>
+      </tr>
+    <tr>
+      <td><strong>9-Apr-26 to 30-Apr-26</strong></td>
+      <td>Thu Apr 9 </br>  (3 weeks)</td>
+      <td>Start / End Final Consistency Review v1.4</td>
+      <td>3 weeks. To ensure alignment and consistency of specifications.</td>
+    </tr>
+    <tr>
+      <td><strong>30-Apr-26 to 6-May-26</strong></td>
+      <td></td>
+      <td>Prepare Baseline for IPR Review v1.4</td>
+      <td>1 week. Getting specifications ready for the Intellectual Property Rights review.</td>
+    </tr>
+    <tr>
+      <td><strong>6-May-26 to 4-Jun-26</strong></td>
+      <td></td>
+      <td>Start / End IPR Review v1.4</td>
+      <td>4 weeks. 30-day IPR review period for essential claims; triggers the start of Rel v1.5.</td>
+    </tr>
+    <tr>
+      <td><strong>4-Jun-26</strong></td>
+      <td></td>
+      <td>Working Group (WG) Approval of v1.4</td>
+      <td>WG approves the v1.4 Release Candidate.</td>
+    </tr>
+    <tr>
+      <td><strong>4-Jun-26</strong></td>
+      <td></td>
+      <td>SC Ratification of v1.4</td>
+      <td>The Steering Committee ratifies the v1.4 release.</td>
+    </tr>
+    <tr>
+      <td><strong>8-11-Jun-26</strong></td>
+      <td></td>
+      <td>Public Announcement</td>
+      <td>FinOpsX</td>
+    </tr>
+  </tbody>
 </table>
 
 ### Estimated Timeline for v1.3

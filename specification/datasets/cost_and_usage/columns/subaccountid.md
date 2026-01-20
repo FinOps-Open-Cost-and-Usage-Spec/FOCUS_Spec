@@ -1,17 +1,19 @@
 # Sub Account ID
 
-A Sub Account ID is a provider-assigned identifier assigned to a [*sub account*](#glossary:sub-account). Sub Account ID is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
+A Sub Account ID is a service-provider-assigned identifier assigned to a [*sub account*](#glossary:sub-account). Sub Account ID is commonly used for scenarios like grouping based on organizational constructs, access management needs, and cost allocation strategies.
 
-The SubAccountId column adheres to the following requirements:
+## Requirements
 
-* SubAccountId MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports a *sub account* construct.
+SubAccountId adheres to the following requirements:
+
+* SubAccountId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports a *sub account* construct.
 * SubAccountId MUST be of type String.
-* SubAccountId MUST conform to [StringHandling](#stringhandling) requirements.
+* SubAccountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SubAccountId nullability is defined as follows:
   * SubAccountId MUST be null when a [*charge*](#glossary:charge) is not related to a *sub account*.
   * SubAccountId MUST NOT be null when a *charge* is related to a *sub account*.
 
-See [Appendix: Grouping constructs for resources or services](#groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
+See [Appendix: Grouping constructs for resources or services](#appendix.groupingconstructsforresourcesorservices) for details and examples of the different grouping constructs supported by FOCUS.
 
 ## Column ID
 

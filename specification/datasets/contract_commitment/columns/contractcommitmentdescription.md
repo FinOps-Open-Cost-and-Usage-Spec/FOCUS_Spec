@@ -2,11 +2,13 @@
 
 Contract Commitment Description provides a high-level context of a [*contract commitment*](#glossary:contractcommitment) without requiring additional discovery. Contract Commitment Description is a self-contained summary of the contract commitment's terms, which may not be sufficiently described by the other columns of the Contract Commitment dataset.
 
-The ContractCommitmentDescription column adheres to the following requirements:
+## Requirements
 
-* ContractCommitmentDescription MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ContractCommitmentDescription adheres to the following requirements:
+
+* ContractCommitmentDescription MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentDescription MUST be of type String.
-* ContractCommitmentDescription MUST conform to [StringHandling](#stringhandling) requirements.
+* ContractCommitmentDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentDescription SHOULD NOT be null.
 * ContractCommitmentDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
 

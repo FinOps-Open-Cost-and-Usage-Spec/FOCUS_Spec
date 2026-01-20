@@ -2,13 +2,15 @@
 
 Charge Frequency indicates how often a [*charge*](#glossary:charge) will occur. Along with the [charge period](#glossary:chargeperiod) related columns, the Charge Frequency is commonly used to understand recurrence periods (e.g., monthly, yearly), forecast upcoming *charges*, and differentiate between one-time and recurring fees for purchases.
 
-The ChargeFrequency column adheres to the following requirements:
+## Requirements
 
-* ChargeFrequency is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+ChargeFrequency adheres to the following requirements:
+
+* ChargeFrequency SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeFrequency MUST be of type String.
 * ChargeFrequency MUST NOT be null.
 * ChargeFrequency MUST be one of the allowed values.
-* ChargeFrequency MUST NOT be "Usage-Based" when [ChargeCategory](#chargecategory) is "Purchase".
+* ChargeFrequency MUST NOT be "Usage-Based" when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase".
 
 ## Column ID
 

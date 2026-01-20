@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME specifies the optional metadata property [Data Generator Version](#datageneratorversion) in their [Schema](#schema) object. Their data generator version 2.2 supported FOCUS version 1.0. They are now going to adopt FOCUS Version 1.1 which requires that they update their Data Generator Version when updating the FOCUS Version. They create a new schema object designating that both properties have changed. In this example, the adoption of the new FOCUS version doesn't include additional columns. This is to illustrate that Data Generator Version can change independent of column changes; however, this scenario is unlikely.
+ACME specifies the optional metadata property [Data Generator Version](#metadata.schema.datageneratorversion) in their [Schema](#metadata.schema) object. Their data generator version 2.2 supported FOCUS version 1.0. They are now going to adopt FOCUS Version 1.1 which requires that they update their Data Generator Version when updating the FOCUS Version. They create a new schema object designating that both properties have changed. In this example, the adoption of the new FOCUS version doesn't include additional columns. This is to illustrate that Data Generator Version can change independent of column changes; however, this scenario is unlikely.
 
 The data generator creates a new schema object to represent the new schema. The data generator includes both the new FOCUS Version and Data Generator Version in the schema object.
 
@@ -19,7 +19,7 @@ The updated schema-related metadata could look like this:
   "DataGeneratorVersion": "2.3",
   "name": "New Columns",
   "CreationDate": "2024-04-02T12:01:03.083z",
-  "Dataset": "FOCUS Cost and Usage",
+  "DatasetInstanceId": "178151-dbad145e-178151-dbad145e-178151",
   "ColumnDefinition": [
     {
       "ColumnName": "BillingAccountId",
@@ -133,4 +133,4 @@ For reference, the prior schema object looked like this:
 }
 ```
 
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#schemametadatatofocusdatareference)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)

@@ -16,7 +16,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
             <strong>Column Names</strong>:<br>
             - Pricing Quantity<br>
             - Pricing Unit<br>
-            - Provider <br><br>
+            - Service Provider Name<br><br>
             <strong>Attribute Names</strong>:<br>
             - Currency Code Format<br>
             - Date/Time Format
@@ -25,7 +25,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
             <strong>Column Names:</strong><br>
             &nbsp;&nbsp; Pricing Quantity<br>
             &nbsp;&nbsp; Pricing Unit<br>
-            &nbsp;&nbsp; Provider<br><br>
+            &nbsp;&nbsp; Service Provider Name<br><br>
             <strong>Attribute Names</strong>:<br>
             &nbsp;&nbsp; Currency Code Format<br>
             &nbsp;&nbsp; Date/Time Format<br>
@@ -41,7 +41,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
            <strong>Columns IDs</strong>:<br>
             - PricingQuantity<br> 
             - PricingUnit<br> 
-            - ProviderName<br><br>
+            - ServiceProviderName<br><br>
           <strong>Attributes IDs</strong>:<br>
             - CurrencyCodeFormat <br> 
             - DateTimeFormat <br>
@@ -50,7 +50,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
           <strong>Columns IDs:</strong><br>
           &nbsp;&nbsp; PricingQuantity <br>
           &nbsp;&nbsp; PricingUnit<br>
-          &nbsp;&nbsp; ProviderName <br><br>
+          &nbsp;&nbsp; ServiceProviderName <br><br>
           <strong>Attributes IDs:</strong> </br>
           &nbsp;&nbsp; CurrencyCodeFormat </br>
           &nbsp;&nbsp; DateTimeFormat <br>
@@ -135,7 +135,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
       <td><strong>Tables</strong></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8"></td>
       <td><img width="492" alt="image" src="https://github.com/user-attachments/assets/83d0977f-a731-4def-93e3-b3e5f5dedb72"></td>
-      <td> - Tables: Simple tables can be created using markdown, but for more complex tables, it is RECOMMENDED to use HTML elements. See the example below. </td>
+      <td> - Tables: Simple tables can be created using markdown, but for more complex tables, it is recommended to use HTML elements. See the example below. </td>
     </tr>
 </table>
 
@@ -148,6 +148,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Display Names:** They SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. In these sections, display names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
+* **Normative Keyword Standardization:** To ensure consistency in the specification, normative language MUST use only the BCP-14 keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY. The term "RECOMMENDED" as a normative keyword is deprecated starting December 2025. Where legacy text uses RECOMMENDED, it MUST be replaced with SHOULD.
+
+* **Non-Normative Use of “recommended”:** The lowercase word “recommended” may still be used in non-normative, descriptive text (e.g., “Feature level: Recommended”) provided it does not express a normative requirement on implementers.
 
 ### Example
 
@@ -155,7 +158,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 >
 > The Pricing Quantity represents the volume of a given SKU associated with a [*resource*](#glossary:resource) or [*service*](#glossary:service) used or purchased, based on the [Pricing Unit](#pricingunit). Distinct from [Consumed Quantity](#consumedquantity) (complementary to [Consumed Unit](#consumedunit)), it focuses on pricing and cost, not *resource* and *service* consumption.
 >
->  * The PricingQuantity column MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset). 
+>  * The PricingQuantity column MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset). 
 >  * This column MUST be of type Decimal and MUST conform to [Numeric Format](#numericformat) requirements 
 >  * The value MAY be negative in cases where [ChargeClass](#chargeclass) is "Correction".
 > 

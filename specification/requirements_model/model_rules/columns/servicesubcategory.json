@@ -1,0 +1,1768 @@
+{
+  "ServiceSubcategory-C-000-O": {
+    "Function": "Composite",
+    "Reference": "ServiceSubcategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ServiceSubcategory column adheres to the following requirements:",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceSubcategory-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceSubcategory-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceSubcategory-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceSubcategory-C-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-042-O",
+        "ServiceSubcategory-C-001-M",
+        "ServiceSubcategory-C-002-M",
+        "ServiceSubcategory-C-003-M",
+        "ServiceSubcategory-C-004-M"
+      ]
+    }
+  },
+  "ServiceSubcategory-C-001-M": {
+    "Function": "Type",
+    "Reference": "ServiceSubcategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ServiceSubcategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ServiceSubcategory-C-002-M": {
+    "Function": "Nullability",
+    "Reference": "ServiceSubcategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ServiceSubcategory",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ServiceSubcategory-C-003-M": {
+    "Function": "Validation",
+    "Reference": "ServiceSubcategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "AI Platforms"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Bots"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Generative AI"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Machine Learning"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Natural Language Processing"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (AI and Machine Learning)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Analytics Platforms"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Business Intelligence"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Data Processing"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Search"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Streaming Analytics"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Analytics)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Productivity and Collaboration"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Business Applications)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Containers"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "End User Computing"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Quantum Compute"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Serverless Compute"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Virtual Machines"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Compute)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Caching"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Data Warehouses"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Ledger Databases"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "NoSQL Databases"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Relational Databases"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Time Series Databases"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Databases)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Developer Platforms"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Continuous Integration and Deployment"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Development Environments"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Source Code Management"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Quality Assurance"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Developer Tools)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Identity and Access Management"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Identity)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "API Management"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Messaging"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Workflow Orchestration"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Integration)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "IoT Analytics"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "IoT Platforms"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Internet of Things)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Architecture"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Compliance"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Cost Management"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Data Governance"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Disaster Recovery"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Endpoint Management"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Observability"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Support"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Management and Governance)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Content Creation"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Gaming"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Media Streaming"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Mixed Reality"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Media)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Data Migration"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Resource Migration"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Migration)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Mobile)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Multicloud Integration"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Multicloud)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Application Networking"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Content Delivery"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Network Connectivity"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Network Infrastructure"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Network Routing"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Network Security"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Networking)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Secret Management"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Security Posture Management"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Threat Detection and Response"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Security)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Backup Storage"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Block Storage"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "File Storage"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Object Storage"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Storage Platforms"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Storage)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Application Platforms"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Web)"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ServiceSubcategory",
+            "Value": "Other (Other)"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ServiceSubcategory-C-004-M": {
+    "Function": "Validation",
+    "Reference": "ServiceSubcategory",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceSubcategory MUST have one and only one parent ServiceCategory as specified in the allowed values below.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "AI Platforms"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "AI and Machine Learning"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Bots"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "AI and Machine Learning"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Generative AI"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "AI and Machine Learning"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Machine Learning"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "AI and Machine Learning"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Natural Language Processing"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "AI and Machine Learning"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (AI and Machine Learning)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "AI and Machine Learning"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Analytics Platforms"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Analytics"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Business Intelligence"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Analytics"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Data Processing"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Analytics"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Search"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Analytics"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Streaming Analytics"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Analytics"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Analytics)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Analytics"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Productivity and Collaboration"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Business Applications"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Business Applications)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Business Applications"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Containers"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Compute"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "End User Computing"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Compute"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Quantum Compute"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Compute"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Serverless Compute"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Compute"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Virtual Machines"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Compute"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Compute)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Compute"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Caching"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Databases"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Data Warehouses"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Databases"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Ledger Databases"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Databases"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "NoSQL Databases"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Databases"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Relational Databases"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Databases"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Time Series Databases"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Databases"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Databases)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Databases"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Developer Platforms"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Developer Tools"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Continuous Integration and Deployment"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Developer Tools"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Development Environments"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Developer Tools"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Source Code Management"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Developer Tools"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Quality Assurance"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Developer Tools"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Developer Tools)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Developer Tools"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Identity and Access Management"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Identity"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Identity)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Identity"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "API Management"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Integration"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Messaging"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Integration"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Workflow Orchestration"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Integration"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Integration)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Integration"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "IoT Analytics"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Internet of Things"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "IoT Platforms"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Internet of Things"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Internet of Things)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Internet of Things"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Architecture"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Management and Governance"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Compliance"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Management and Governance"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Cost Management"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Management and Governance"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Data Governance"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Management and Governance"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Disaster Recovery"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Management and Governance"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Endpoint Management"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Management and Governance"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Observability"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Management and Governance"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Support"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Management and Governance"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Management and Governance)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Management and Governance"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Content Creation"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Media"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Gaming"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Media"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Media Streaming"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Media"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Mixed Reality"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Media"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Media)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Media"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Data Migration"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Migration"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Resource Migration"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Migration"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Migration)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Migration"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Mobile)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Mobile"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Multicloud Integration"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Multicloud"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Multicloud)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Multicloud"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Application Networking"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Networking"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Content Delivery"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Networking"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Network Connectivity"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Networking"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Network Infrastructure"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Networking"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Network Routing"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Networking"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Network Security"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Networking"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Networking)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Networking"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Secret Management"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Security"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Security Posture Management"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Security"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Threat Detection and Response"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Security"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Security)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Security"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Backup Storage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Storage"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Block Storage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Storage"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "File Storage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Storage"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Object Storage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Storage"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Storage Platforms"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Storage"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Storage)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Storage"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Application Platforms"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Web"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Web)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Web"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceSubcategory",
+                "Value": "Other (Other)"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ServiceCategory",
+                "Value": "Other"
+              }
+            ]
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
