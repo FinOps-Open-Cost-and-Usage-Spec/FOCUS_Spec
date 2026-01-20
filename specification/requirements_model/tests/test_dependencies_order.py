@@ -1,4 +1,5 @@
 import pytest
+from collections import defaultdict
 
 @pytest.mark.dependency(name="dependencies_order", scope="session")
 def test_dependencies_order(cr_json):
@@ -69,15 +70,68 @@ def test_dependencies_order(cr_json):
             for diff_ref_id in diff_ref_deps:
                 diff_ref_pos = dependencies.index(diff_ref_id)
                 if diff_ref_pos < last_same_ref_pos:
-                    dep_reference = rule_info_map[diff_ref_id]["reference"]
+                    dep_reference = rule_info_map[diff_ref_id]["entity_id"]
                     violations.append({
                         "rule_id": rule_id,
-                        "dependency_pair": f"{diff_ref_id} (Reference: {dep_reference})",
-                        "issue": f"Dependency {diff_ref_id} with different Reference '{dep_reference}' should appear after all same-Reference dependencies"
+                        "dependency_pair": f"{diff_ref_id} (EntityId: {dep_reference})",
+                        "issue": f"Dependency {diff_ref_id} with different EntityId '{dep_reference}' should appear after all same-EntityId dependencies"
                     })
 
     assert not violations, (
-        "Dependencies arrays must be ordered according to the Order field of referenced rules with the same Reference:\n" +
+        "Dependencies arrays must be ordered according to the Order field of referenced rules with the same EntityId:\n" +
         "\n".join(f"- Rule {v['rule_id']}: {v['issue']}" 
                  for v in violations)
+    )
+
+
+@pytest.mark.dependency(name="no_duplicate_orders", scope="session")
+def test_no_duplicate_order_values(cr_json):
+    """
+    Test that rules with the same EntityId and EntityType do not have duplicate Order values.
+    Rules without an Order field are ignored.
+    """
+    rules = cr_json.get("ModelRules") or {}
+    violations = []
+    
+    # Group rules by (EntityId, EntityType)
+    entity_groups = defaultdict(list)
+    
+    for rule_id, rule in rules.items():
+        entity_id = rule.get("EntityId")
+        entity_type = rule.get("EntityType")
+        order = rule.get("Order")
+        
+        # Skip rules without Order field or missing EntityId/EntityType
+        if order is None or not entity_id or not entity_type:
+            continue
+            
+        entity_groups[(entity_id, entity_type)].append({
+            "rule_id": rule_id,
+            "order": order
+        })
+    
+    # Check for duplicate Order values within each group
+    for (entity_id, entity_type), group_rules in entity_groups.items():
+        # Build a map of order -> list of rule IDs
+        order_map = defaultdict(list)
+        for rule_info in group_rules:
+            order_map[rule_info["order"]].append(rule_info["rule_id"])
+        
+        # Find duplicates
+        for order_value, rule_ids in order_map.items():
+            if len(rule_ids) > 1:
+                violations.append({
+                    "entity_id": entity_id,
+                    "entity_type": entity_type,
+                    "order": order_value,
+                    "rule_ids": rule_ids
+                })
+    
+    assert not violations, (
+        "Rules with the same EntityId and EntityType must not have duplicate Order values:\n" +
+        "\n".join(
+            f"- EntityId='{v['entity_id']}', EntityType='{v['entity_type']}', Order={v['order']}: "
+            f"duplicate in rules {', '.join(v['rule_ids'])}"
+            for v in violations
+        )
     )
