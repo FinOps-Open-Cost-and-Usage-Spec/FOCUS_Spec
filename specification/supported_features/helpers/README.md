@@ -4,7 +4,7 @@ This directory contains utility scripts that assist with maintaining and process
 
 ## Requirements
 
-- Python 3.7+
+- Python 3.13
 - Dependencies listed in `requirements.txt`
 
 ### Installation
