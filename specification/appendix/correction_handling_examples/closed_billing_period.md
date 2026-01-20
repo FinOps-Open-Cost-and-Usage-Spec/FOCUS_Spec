@@ -1,10 +1,10 @@
 # Corrections to Closed Billing Period
 
-The following examples illustrate how corrections to previously issued billing periods may be represented in FOCUS Cost and Usage dataset artifacts, using delivery mechanisms and correction styles that preserve invoice integrity and auditability.
+The following examples illustrate how corrections to previously closed billing periods may be represented in FOCUS Cost and Usage dataset artifacts, using delivery mechanisms and correction styles that preserve invoice integrity and auditability.
 
-## Post-Invoice Correction Scenarios
+## Closed-Period Correction Scenarios
 
-### Scenario 1: Post-Invoice Correction - Partial Reallocation to Correct Resource
+### Scenario 1: Closed-Period Correction - Partial Reallocation to Correct Resource
 
 On July 12th, 2025, ACME Corp identified that a charge record previously invoiced for May 2025 was incorrectly attributed entirely to ResourceId `R-111`. In reality, only part of the cost and usage belonged to that resource, while the remainder pertained to ResourceId `R-222`.
 
@@ -33,7 +33,7 @@ Note the following details in the example datasets:
   * A corrected record for `R-111`.
   * A corrected record for `R-222`.
 
-### Scenario 2: Post-Invoice Correction - Late-arriving Usage
+### Scenario 2: Closed-Period Correction - Late-arriving Usage
 
 On July 12th, 2025, ACME Corp identified a cost that was incurred during May 2025 (ChargePeriodStart: `2025-05-01`) but was not included in the finalized invoice issued on June 12th, 2025. Since the May billing period was closed, the correction was delivered in the next open billing period (e.g., June or July).
 
@@ -56,7 +56,7 @@ Note the following details in the example datasets:
 * The correction record has ChargeClass set to "Correction", indicating it accounts for usage from a previously closed billing period.
 * Both Delta style and Ledger style corrections use a single increment record to represent the late-arriving usage and associated cost.
 
-### Scenario 3: Post-Invoice Correction - Itemized Cost-only Correction
+### Scenario 3: Closed-Period Correction - Itemized Cost-only Correction
 
 On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
@@ -81,7 +81,7 @@ Note the following details in the example datasets:
 * Each correction record is itemized and explicitly references the relevant SkuPriceId.
 * Each correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
 
-### Scenario 4: Post-Invoice Correction - Bulk Cost-only Correction
+### Scenario 4: Closed-Period Correction - Bulk Cost-only Correction
 
 On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 

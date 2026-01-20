@@ -2,11 +2,11 @@
 
 The following examples illustrate how corrections to open billing periods, including both current and previous open periods, may be represented in FOCUS Cost and Usage datasets, using various delivery mechanisms and correction styles.
 
-Note: Corrections in this section apply to billing periods that are still open, whether current (Intra-Period Correction scenarios) or previous (Pre-Invoice Correction scenarios). In the examples that follow, the InvoiceId column contains a provisional or placeholder value, even though the invoice has not yet been issued.
+Note: Corrections in this section apply to billing periods that are still open, whether current (Current Open-Period Correction Scenarios) or previous (Previous Open-Period Correction Scenarios). In the examples that follow, the InvoiceId column contains a provisional or placeholder value, even though the invoice has not yet been issued.
 
-## Intra-Period Correction Scenarios
+## Current Open-Period Correction Scenarios
 
-### Scenario 1: Intra-Period Correction - Partial Reallocation to Correct Resource
+### Scenario 1: Current Open-Period Correction - Partial Reallocation to Correct Resource
 
 On July 12th, 2025, ACME Corp identified that a charge record for the current billing period (July 2025) was incorrectly attributed entirely to ResourceId `R-111`. In reality, only part of the cost and usage belonged to that resource, while the remainder pertained to ResourceId `R-222`.
 
@@ -41,7 +41,7 @@ Note the following details in the example dataset:
 * Each correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
 * Each correction record is assigned to the current billing period (July 2025).
 
-### Scenario 2: Intra-Period Correction - Late-arriving Usage
+### Scenario 2: Current Open-Period Correction - Late-arriving Usage
 
 On July 12th, 2025, ACME Corp identified a cost incurred during the current billing period (ChargePeriodStart: `2025-07-01`) that was not included in the initial dataset.
 
@@ -67,7 +67,7 @@ Note the following details in the example datasets:
 * The correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
 * The correction record is assigned to the current billing period (July 2025).
 
-### Scenario 3: Intra-Period Correction - Itemized Cost-only Corrections
+### Scenario 3: Current Open-Period Correction - Itemized Cost-only Corrections
 
 On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
@@ -98,7 +98,7 @@ Note the following details in the example datasets:
 * Each correction record has ChargeCategory set to "Adjustment", which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
 * Each correction record is assigned to the current billing period (July 2025).
 
-### Scenario 4: Intra-Period Correction - Bulk Cost-only Correction
+### Scenario 4: Current Open-Period Correction - Bulk Cost-only Correction
 
 On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
@@ -129,11 +129,11 @@ Note the following details in the example datasets:
 * The correction record has ChargeCategory set to "Adjustment", which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
 * The correction record is assigned to the current billing period (July 2025).
 
-## Pre-Invoice Correction Scenarios
+## Previous Open-Period Correction Scenarios
 
-### Scenario 1: Pre-Invoice Correction - Partial Reallocation to Correct Resource
+### Scenario 1: Previous Open-Period Correction - Partial Reallocation to Correct Resource
 
-This scenario is nearly identical to *Scenario 1: Intra-Period Correction - Partial Reallocation to Correct Resource*. The only difference is that the original misattributed charge occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 1: Current Open-Period Correction - Partial Reallocation to Correct Resource*. The only difference is that the original misattributed charge occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 
@@ -142,9 +142,9 @@ CSV Examples:
 * [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
 * [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
 
-### Scenario 2: Pre-Invoice Correction - Late-arriving Usage
+### Scenario 2: Previous Open-Period Correction - Late-arriving Usage
 
-This scenario is nearly identical to *Scenario 2: Intra-Period Correction - Late-arriving Usage*. The only difference is that the late-arriving usage pertains to the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 2: Current Open-Period Correction - Late-arriving Usage*. The only difference is that the late-arriving usage pertains to the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 
@@ -152,9 +152,9 @@ CSV Examples:
 * [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
 * [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
 
-### Scenario 3: Pre-Invoice Correction - Itemized Cost-only Corrections
+### Scenario 3: Previous Open-Period Correction - Itemized Cost-only Corrections
 
-This scenario is nearly identical to *Scenario 3: Intra-Period Correction - Itemized Cost-only Adjustments*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 3: Current Open-Period Correction - Itemized Cost-only Adjustments*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 
@@ -163,9 +163,9 @@ CSV Examples:
 * [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
 * [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
 
-### Scenario 4: Pre-Invoice Correction - Bulk Cost-only Corrections
+### Scenario 4: Previous Open-Period Correction - Bulk Cost-only Corrections
 
-This scenario is nearly identical to *Scenario 4: Intra-Period Correction - Bulk Cost-only Adjustments*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 4: Current Open-Period Correction - Bulk Cost-only Adjustments*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 
