@@ -11,25 +11,25 @@ def test_dependencies_order(cr_json):
     rules = cr_json.get("ModelRules") or {}
     violations = []
 
-    # Build maps of rule ID to Order value and Reference
+    # Build maps of rule ID to Order value and EntityId
     rule_info_map = {}
     for rule_id, rule in rules.items():
         order = rule.get("Order")
-        reference = rule.get("Reference")
+        entity_id = rule.get("EntityId")
         rule_info_map[rule_id] = {
             "order": order,
-            "reference": reference
+            "entity_id": entity_id
         }
 
     # Check each rule's Dependencies array for proper ordering
     for rule_id, rule in rules.items():
         dependencies = rule.get("ValidationCriteria", {}).get("Dependencies", [])
-        parent_reference = rule.get("Reference")
+        parent_entity_id = rule.get("EntityId")
         
         if not dependencies or len(dependencies) <= 1:
             continue  # Nothing to order
 
-        # Separate dependencies into same-reference and different-reference groups
+        # Separate dependencies into same-entity_id and different-entity_id groups
         same_ref_deps = []
         diff_ref_deps = []
         
@@ -38,15 +38,15 @@ def test_dependencies_order(cr_json):
                 continue  # Skip dependencies not in the model
             
             dep_info = rule_info_map[dep_id]
-            dep_reference = dep_info["reference"]
+            dep_entity_id = dep_info["entity_id"]
             dep_order = dep_info["order"]
             
-            if dep_reference == parent_reference and dep_order is not None:
+            if dep_entity_id == parent_entity_id and dep_order is not None:
                 same_ref_deps.append((dep_id, dep_order))
             else:
                 diff_ref_deps.append(dep_id)
 
-        # Check that same-reference dependencies are ordered correctly
+        # Check that same-entity_id dependencies are ordered correctly
         if len(same_ref_deps) > 1:
             for i in range(1, len(same_ref_deps)):
                 prev_dep_id, prev_order = same_ref_deps[i-1]

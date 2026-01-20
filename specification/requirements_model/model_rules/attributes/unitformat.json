@@ -3,6 +3,8 @@
     "Function": "Composite",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "Root composite capturing all UnitFormat requirements",
@@ -17,7 +19,7 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "UnitFormat-A-001-M"
+            "ModelRuleId": "UnitFormat-A-001-O"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -35,17 +37,19 @@
       },
       "Condition": {},
       "Dependencies": [
-        "UnitFormat-A-001-M",
+        "UnitFormat-A-001-O",
         "UnitFormat-A-002-O",
         "UnitFormat-A-003-M",
         "UnitFormat-A-004-C"
       ]
     }
   },
-  "UnitFormat-A-001-M": {
+  "UnitFormat-A-001-O": {
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -64,6 +68,8 @@
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -82,6 +88,8 @@
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -100,6 +108,8 @@
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",

@@ -1,0 +1,707 @@
+{
+  "CAU-AllocatedMethodDetailsObject-O-000-C": {
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodDetails adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-007-M"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "AllocatedMethodDetails",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-AllocatedMethodDetailsObject-O-001-M",
+        "CAU-AllocatedMethodDetailsObject-O-002-M",
+        "CAU-AllocatedMethodDetailsObject-O-003-M",
+        "CAU-AllocatedMethodDetailsObject-O-004-M",
+        "CAU-AllocatedMethodDetailsObject-O-005-M",
+        "CAU-AllocatedMethodDetailsObject-O-006-M",
+        "CAU-AllocatedMethodDetailsObject-O-007-M"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-001-M": {
+    "Function": "Type",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails MUST have a top-level key \"Elements\" which contains an array.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathType",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements",
+        "ExpectedType": "Array"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-002-M": {
+    "Function": "Type",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Each item in \"Elements\" MUST be an object.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathType",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*]",
+        "ExpectedType": "Object"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-003-M": {
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Objects inside \"Elements\" MUST conform to KeyValueFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathKeyValueFormat",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*]"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-004-M": {
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 120,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "FOCUS-defined allocation properties adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-012-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-013-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-014-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetailsObject-O-012-M",
+        "CAU-AllocatedMethodDetailsObject-O-013-M",
+        "CAU-AllocatedMethodDetailsObject-O-014-M"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-005-M": {
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 130,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Allocation property key MUST match the spelling and casing specified for the FOCUS-defined property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-006-M": {
+    "Function": "Type",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 140,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Allocation property value MUST be of the type specified for that property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-007-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 150,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Allocation properties MUST adhere to additional normative requirements specific to that property.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-008-O": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 160,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generator-defined allocation properties MAY be included in \"Elements\".",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-009-C": {
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 170,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Allocation property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined allocation property.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathKeyStartsWith",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*]",
+        "Prefix": "x_"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-010-O": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 180,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodDetails root object MAY contain additional data generator-defined items, in addition to \"Elements\".",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-011-M": {
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 190,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "The \"AllocatedRatio\" property adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-012-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-013-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-014-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetailsObject-O-012-M",
+        "CAU-AllocatedMethodDetailsObject-O-013-M",
+        "CAU-AllocatedMethodDetailsObject-O-014-M"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-012-M": {
+    "Function": "Presence",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 200,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "\"AllocatedRatio\" MUST be included inside each \"Elements\" object.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathKeyExists",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*].AllocatedRatio"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-013-M": {
+    "Function": "Type",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 210,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"AllocatedRatio\" MUST be a decimal value compatible with NumericFormat representing the allocated charge's percentage of the origin charge.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathType",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*].AllocatedRatio",
+        "ExpectedType": "Decimal"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-014-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 220,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for all \"AllocatedRatio\" properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-015-M": {
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 230,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "The \"UsageUnit\" property adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-016-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-017-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-018-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetailsObject-O-016-C",
+        "CAU-AllocatedMethodDetailsObject-O-017-M",
+        "CAU-AllocatedMethodDetailsObject-O-018-O"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-016-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 240,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "\"UsageUnit\" MUST be included inside an \"Elements\" object if \"UsageQuantity\" allocation property is included in that \"Elements\" object, otherwise \"UsageUnit\" MAY be included in each \"Elements\" object.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathKeyExists",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*].UsageUnit"
+      },
+      "Condition": {
+        "CheckFunction": "JSONCheckPathKeyExists",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*].UsageQuantity"
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-017-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 250,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"UsageUnit\" MUST capture the unit or component of data generator's documented AllocationMethod that was used to determine the \"AllocatedRatio\" value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-018-O": {
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 260,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"UsageUnit\" SHOULD conform to UnitFormat requirements.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathUnitFormat",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*].UsageUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-019-O": {
+    "Function": "Composite",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 270,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "The \"UsageQuantity\" property adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-020-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-021-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-022-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodDetailsObject-O-020-C",
+        "CAU-AllocatedMethodDetailsObject-O-021-M",
+        "CAU-AllocatedMethodDetailsObject-O-022-O"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-020-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 280,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "\"UsageQuantity\" MAY be included inside an \"Elements\" object when that \"Elements\" object contains a \"UsageUnit\" allocation property.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathKeyExists",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*].UsageQuantity"
+      },
+      "Condition": {
+        "CheckFunction": "JSONCheckPathKeyExists",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*].UsageUnit"
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-021-M": {
+    "Function": "Format",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 290,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"UsageQuantity\" MUST be compatible with NumericFormat.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "JSONCheckPathNumericFormat",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$.Elements[*].UsageQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodDetailsObject-O-022-O": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodDetailsObject",
+    "EntityType": "Object",
+    "EntityName": "Allocated Method Details Object",
+    "EntityId": "AllocatedMethodDetailsObject",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 300,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values for \"UsageQuantity\" SHOULD capture the quantity or volume of the \"UsageUnit\" measured by the data generator that was used to determine the \"AllocatedRatio\" value.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

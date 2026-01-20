@@ -17,6 +17,8 @@ def test_dependencies_not_removed(cr_json):
 
     # Check each rule's Dependencies array for removed dependencies
     for rule_id, rule in rules.items():
+        if rule.get("Status") == "Removed":
+            continue  # Skip removed rules themselves
         dependencies = rule.get("ValidationCriteria", {}).get("Dependencies", [])
         
         if not dependencies:

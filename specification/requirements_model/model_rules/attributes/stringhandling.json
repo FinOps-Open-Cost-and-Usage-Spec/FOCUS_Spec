@@ -3,6 +3,8 @@
     "Function": "Composite",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "Root composite capturing all StringHandling requirements",
@@ -41,7 +43,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "StringHandling-A-007-M"
+            "ModelRuleId": "StringHandling-A-007-O"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -57,7 +59,7 @@
         "StringHandling-A-004-M",
         "StringHandling-A-005-M",
         "StringHandling-A-006-M",
-        "StringHandling-A-007-M",
+        "StringHandling-A-007-O",
         "StringHandling-A-008-C"
       ]
     }
@@ -66,6 +68,8 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -84,6 +88,8 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -102,6 +108,8 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -120,6 +128,8 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -138,6 +148,8 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -156,6 +168,8 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -170,10 +184,12 @@
       "Dependencies": []
     }
   },
-  "StringHandling-A-007-M": {
+  "StringHandling-A-007-O": {
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -192,6 +208,8 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
@@ -199,7 +217,7 @@
     "Order": 80,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "When a record is provided after a change to a mutable string value and the ChargeClass is “Correction”, the record MAY contain the altered value.",
+      "MustSatisfy": "When a record is provided after a change to a mutable string value and the ChargeClass is \u201cCorrection\u201d, the record MAY contain the altered value.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},

@@ -22,21 +22,21 @@ def test_reference_matches_rule_key_prefix_for_columns_and_objects(cr_json):
             # Rule uses new format - validate it properly
             prefix, reference_part, entity_letter = new_pattern_match.groups()
 
-            # Validate entity type is Dataset, Column or Object for new format
+            # Validate entity type is Dataset, Column, or Object for new format
             if entity_type not in ["Dataset", "Column", "Object"]:
                 violations.append((rid, ref, f"{entity_type} rules should not use 3-letter prefix format"))
                 continue
 
             # Special handling for Dataset rules
             if entity_type == "Dataset":
-                # For Dataset rules, Reference can be either the dataset name (main rules)
+                # For Dataset rules, EntityId can be either the dataset name (main rules)
                 # or a column name (column requirement rules)
                 # Both patterns are valid for dataset rules
                 pass  # No validation needed for Dataset rules
             else:
-                # For Column and Object rules, reference part should match Reference field
+                # For Column and Object rules, reference part should match EntityId field
                 if reference_part != ref:
-                    violations.append((rid, ref, f"Expected reference '{reference_part}' to match Reference field"))
+                    violations.append((rid, ref, f"Expected reference '{reference_part}' to match EntityId field"))
 
             # Validate entity type letter matches
             expected_letter = "D" if entity_type == "Dataset" else ("C" if entity_type == "Column" else "O")
@@ -47,7 +47,7 @@ def test_reference_matches_rule_key_prefix_for_columns_and_objects(cr_json):
             if entity_type in ["Dataset", "Column", "Object"]:
                 violations.append((rid, ref, f"{entity_type} rules must use 3-letter prefix format: <PREFIX>-<Reference>-{entity_type[0]}-<Number>-<Severity>"))
             else:
-                # For non-Dataset/Column/Object rules, validate old format
+                # For non-Dataset/Column rules, validate old format
                 if not rid.startswith(ref):
                     violations.append((rid, ref, "Rule ID should start with Reference"))
 

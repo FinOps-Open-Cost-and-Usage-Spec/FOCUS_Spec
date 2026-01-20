@@ -80,11 +80,6 @@ def collect(spec: dict):
     by_ref = defaultdict(list)  # ref -> list of dicts with eid, num, etype, must
 
     for model_key, model in rules.items():
-        # Skip deprecated entities
-        status = model.get("Status", "").strip()
-        if status == "Deprecated":
-            continue
-            
         ref = model.get("Reference")
         vc = model.get("ValidationCriteria") or {}
         must = vc.get("MustSatisfy")
