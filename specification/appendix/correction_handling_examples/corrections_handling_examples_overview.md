@@ -6,9 +6,9 @@ The examples that follow are organized into sections based on billing period sta
 
 * Corrections to Closed Billing Period
   * Post-Invoice Correction Scenarios: Examples of corrections to previously closed billing periods.
-* Corrections within Open Billing Period
-  * Intra-Period Correction Scenarios: Examples of corrections within the current open billing period.
-  * Pre-Invoice Correction Scenarios: Examples of corrections within previous open billing periods that have not yet been closed.
+* Corrections to Open Billing Period
+  * Intra-Period Correction Scenarios: Examples of corrections to the current open billing period.
+  * Pre-Invoice Correction Scenarios: Examples of corrections to previous open billing periods that have not yet been closed.
 
 The example dataset artifacts provided in these scenarios demonstrate three distinct correction styles, each aligned with one of the supported delivery mechanisms:
 
