@@ -12,6 +12,7 @@ This directory contains utility scripts that assist with maintaining and process
 Before using any helper scripts, install the required dependencies:
 
 ```bash
+within this `helpers` folder run the following:
 pip install -r requirements.txt
 ```
 
