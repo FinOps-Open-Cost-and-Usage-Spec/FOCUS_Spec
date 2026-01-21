@@ -6,7 +6,6 @@ The [*billed cost*](#glossary:billed-cost) represents a [*charge*](#glossary:cha
 
 BilledCost adheres to the following requirements:
 
-* BilledCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * BilledCost MUST NOT be null.

@@ -11,7 +11,6 @@ This column resolves two challenges that are faced by practitioners:
 
 EffectiveCost adheres to the following requirements:
 
-* EffectiveCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * EffectiveCost MUST be of type Decimal.
 * EffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * EffectiveCost MUST NOT be null.

@@ -6,7 +6,6 @@ A Region ID is a host-provider-assigned identifier for an isolated geographic ar
 
 RegionId adheres to the following requirements:
 
-* RegionId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the host provider supports deploying resources or services within a region.
 * RegionId MUST be of type String.
 * RegionId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * RegionId nullability is defined as follows:

@@ -6,7 +6,6 @@ A Billing Account ID is an invoice-issuer-assigned identifier for a [*billing ac
 
 BillingAccountId adheres to the following requirements:
 
-* BillingAccountId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingAccountId MUST be of type String.
 * BillingAccountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingAccountId MUST NOT be null.

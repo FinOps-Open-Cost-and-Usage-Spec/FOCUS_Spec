@@ -19,7 +19,6 @@ SKU ID should be consistent across pricing variations of a good or service to fa
 
 SkuId adheres to the following requirements:
 
-* SkuId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
 * SkuId MUST be of type String.
 * SkuId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuId nullability is defined as follows:

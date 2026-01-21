@@ -11,7 +11,6 @@ Service Provider Name is the name of the entity that provides the [*resources*](
 
 ServiceProviderName adheres to the following requirements:
 
-* ServiceProviderName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceProviderName MUST be of type String.
 * ServiceProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ServiceProviderName MUST NOT be null.

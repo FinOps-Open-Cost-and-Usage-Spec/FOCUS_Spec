@@ -6,7 +6,6 @@ Contract Commitment Description provides a high-level context of a [*contract co
 
 ContractCommitmentDescription adheres to the following requirements:
 
-* ContractCommitmentDescription MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentDescription MUST be of type String.
 * ContractCommitmentDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentDescription SHOULD NOT be null.

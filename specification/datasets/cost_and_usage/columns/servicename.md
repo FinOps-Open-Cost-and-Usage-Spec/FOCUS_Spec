@@ -8,7 +8,6 @@ The Service Name is a display name for the offering that was purchased. The Serv
 
 ServiceName adheres to the following requirements:
 
-* ServiceName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceName MUST be of type String.
 * ServiceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ServiceName MUST NOT be null.

@@ -6,7 +6,6 @@ Contract Commitment ID is a service-provider-assigned identifier describing a si
 
 ContractCommitmentId adheres to the following requirements:
 
-* ContractCommitmentId MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentId MUST be of type String.
 * ContractCommitmentId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentId MUST NOT be null.

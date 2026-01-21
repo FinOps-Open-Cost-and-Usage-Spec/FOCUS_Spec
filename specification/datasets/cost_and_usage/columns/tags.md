@@ -8,7 +8,6 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 
 Tags adheres to the following requirements:
 
-* Tags MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports setting user or provider-defined tags.
 * Tags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * Tags MAY be null.
 * When Tags is not null, Tags adheres to the following additional requirements:

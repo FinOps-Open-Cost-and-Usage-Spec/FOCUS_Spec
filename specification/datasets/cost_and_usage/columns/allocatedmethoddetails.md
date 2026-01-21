@@ -18,7 +18,6 @@ In addition to these, a data generator may include one or more custom properties
 
 The AllocatedMethodDetails column adheres to the following requirements:
 
-* AllocatedMethodDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
 * AllocatedMethodDetails MUST be of type String.
 * AllocatedMethodDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedMethodDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
@@ -31,6 +30,7 @@ The AllocatedMethodDetails column adheres to the following requirements:
 Allocated Method Details consists of a valid JSON object which contains an array of key-value objects describing the one or more factors (allocation properties) that determined the split cost allocation. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the allocation.
 
 When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodDetails adheres to the following requirements:
+
 * AllocatedMethodDetails MUST have a top-level key "Elements" which contains an array.
 * Each item in "Elements" MUST be an object.
   * Objects inside "Elements" MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
@@ -154,6 +154,7 @@ When only a single "UsageUnit" is used to calculate the allocation.
   ]
 }
 ```
+
 ### Scenario 2: Multiple "UsageUnit" values used for allocation
 
 When multiple "UsageUnit" values are used to calculate the allocation, another object is added to the "Elements" collection.
@@ -174,6 +175,7 @@ When multiple "UsageUnit" values are used to calculate the allocation, another o
   ]
 }
 ```
+
 ### Scenario 3: Data generator omits keys that are not required
 
 This data generator does not wish to supply the "UsageUnit" or "UsageQuantity" keys but still provides cost allocation with some additional allocation method details. In this case, "UsageUnit" and "UsageQuantity" are omitted, and only the "AllocatedRatio" is supplied.
@@ -186,6 +188,7 @@ This data generator does not wish to supply the "UsageUnit" or "UsageQuantity" k
   ]
 }
 ```
+
 ### Scenario 4: Additional non-FOCUS specified properties
 
 A data generator can add additional properties if they feel more context is helpful or necessary to the practitioner. In this scenario, the data generator is supplying additional context that shows only 0.5 of a unit was used. However, since 1 unit was requested by the service this allocation represents, the allocation is being charged at 1 regardless.
@@ -204,6 +207,7 @@ A data generator can add additional properties if they feel more context is help
   ]
 }
 ```
+
 ## Column ID
 
 AllocatedMethodDetails

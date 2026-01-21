@@ -38,6 +38,20 @@ ContractCommitment adheres to the following requirements:
 * ContractCommitment MUST be present when the service provider supports *contract commitments*.
 * ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* The schema of the ContractCommitment [*FOCUS dataset*](#glossary:FOCUS-dataset) MUST adhere to the following requirements:
+  * ContractCommitment FOCUS dataset MUST contain the BillingCurrency column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractCommitmentCategory column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractCommitmentCost column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractCommitmentDescription column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractCommitmentId column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractCommitmentPeriodEnd column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractCommitmentPeriodStart column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractCommitmentQuantity column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractCommitmentType column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractCommitmentUnit column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractId column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractPeriodEnd column.
+  * ContractCommitment FOCUS dataset MUST contain the ContractPeriodStart column.
 
 ## Dataset ID<!--SkipTOC-->
 

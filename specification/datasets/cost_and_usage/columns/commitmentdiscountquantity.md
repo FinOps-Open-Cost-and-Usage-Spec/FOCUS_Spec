@@ -8,7 +8,6 @@ When [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcateg
 
 CommitmentDiscountQuantity adheres to the following requirements:
 
-* CommitmentDiscountQuantity MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal.
 * CommitmentDiscountQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * CommitmentDiscountQuantity nullability is defined as follows:

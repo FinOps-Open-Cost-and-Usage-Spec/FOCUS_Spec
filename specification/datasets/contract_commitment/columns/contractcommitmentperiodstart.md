@@ -6,7 +6,6 @@ Contract Commitment Period Start represents the [*inclusive start bound*](#gloss
 
 ContractCommitmentPeriodStart adheres to the following requirements:
 
-* ContractCommitmentPeriodStart MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentPeriodStart MUST be of type Date/Time.
 * ContractCommitmentPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ContractCommitmentPeriodStart MUST NOT be null.

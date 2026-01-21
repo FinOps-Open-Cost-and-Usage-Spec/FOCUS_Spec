@@ -6,7 +6,6 @@ A Sub Account ID is a service-provider-assigned identifier assigned to a [*sub a
 
 SubAccountId adheres to the following requirements:
 
-* SubAccountId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports a *sub account* construct.
 * SubAccountId MUST be of type String.
 * SubAccountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SubAccountId nullability is defined as follows:

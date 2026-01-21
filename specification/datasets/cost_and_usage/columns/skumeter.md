@@ -8,7 +8,6 @@ Service providers often have billing models in which multiple SKUs exist for a g
 
 SkuMeter adheres to the following requirements:
 
-* SkuMeter MUST be present in a Cost and Usage *FOCUS dataset* when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
 * SkuMeter MUST be of type String.
 * SkuMeter MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuMeter nullability is defined as follows:

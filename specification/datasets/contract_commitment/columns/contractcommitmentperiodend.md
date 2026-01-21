@@ -6,7 +6,6 @@ Contract Commitment Period End represents the [*exclusive end bound*](#glossary:
 
 ContractCommitmentPeriodEnd adheres to the following requirements:
 
-* ContractCommitmentPeriodEnd MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentPeriodEnd MUST be of type Date/Time.
 * ContractCommitmentPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ContractCommitmentPeriodEnd MUST NOT be null.
