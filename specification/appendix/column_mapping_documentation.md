@@ -63,18 +63,18 @@ The following examples illustrate mapping documentation for common scenarios.
 
 Data generators should document variations in mapping logic that depend on:
 
-- Billing account type or agreement structure
-- Product line or service family
-- FOCUS version, when mappings change across versions
-- Edge cases where native columns map to different FOCUS columns based on context
+* Billing account type or agreement structure
+* Product line or service family
+* FOCUS version, when mappings change across versions
+* Edge cases where native columns map to different FOCUS columns based on context
 
 ## Accessibility
 
 Data generators publishing mapping documentation should:
 
-- Make documentation publicly accessible without authentication
-- Version documentation to align with supported FOCUS versions
-- Provide clear guidance on where practitioners can locate the documentation
+* Make documentation publicly accessible without authentication
+* Version documentation to align with supported FOCUS versions
+* Provide clear guidance on where practitioners can locate the documentation
 
 ## Reference Template
 
