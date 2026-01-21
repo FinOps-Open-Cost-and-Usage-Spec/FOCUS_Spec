@@ -5,7 +5,6 @@ The Allocated Tags column represents the set of [*tags*](#glossary:tag) assigned
 ## Requirements
 
 AllocatedTags adheres to the following requirements:
-datagenerator-calculatedsplitcostallocationhandling).
 
 * AllocatedTags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * AllocatedTags nullability is defined as follows:
