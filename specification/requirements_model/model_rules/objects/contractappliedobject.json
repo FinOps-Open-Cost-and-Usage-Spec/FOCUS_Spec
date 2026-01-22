@@ -351,7 +351,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When custom key-value pairs within \"Elements\" objects are present, ContractAppliedObject adheres to the following requirements:",
+      "MustSatisfy": "When custom key-value pairs within \"Elements\" objects are present:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -673,7 +673,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractId\" MUST be present in a Cost and Usage *FOCUS typeset* when the service provider supports *contract commitments*.",
+      "MustSatisfy": "\"ContractId\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider supports *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
@@ -976,7 +976,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MUST be present in a Cost and Usage *FOCUS typeset* when the service provider supports *contract commitments*.",
+      "MustSatisfy": "\"ContractCommitmentID\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider supports *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
@@ -1384,7 +1384,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST be present in a Cost and Usage *FOCUS typeset* when the service provider associates the *charge's* value with one or more *contract commitments*.",
+      "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider associates the *charge's* value with one or more *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
@@ -1669,7 +1669,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST be present in a Cost and Usage [*FOCUS typeset*](#glossary:FOCUS-typeset) when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
+      "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
@@ -1949,7 +1949,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentAppliedUnit\" MUST be present in a Cost and Usage *FOCUS typeset* when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
+      "MustSatisfy": "\"ContractCommitmentAppliedUnit\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",

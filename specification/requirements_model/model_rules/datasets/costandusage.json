@@ -312,6 +312,14 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-074-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-075-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-076-M"
           }
         ]
       },
@@ -379,7 +387,9 @@
         "CAU-CostAndUsage-D-071-C",
         "CAU-CostAndUsage-D-072-C",
         "CAU-CostAndUsage-D-073-C",
-        "CAU-CostAndUsage-D-074-C"
+        "CAU-CostAndUsage-D-074-C",
+        "CAU-CostAndUsage-D-075-M",
+        "CAU-CostAndUsage-D-076-M"
       ]
     }
   },
@@ -542,6 +552,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-InvoiceId-C-000-O"
           },
           {
@@ -622,6 +636,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ServiceProviderName-C-000-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ServiceCategory-C-000-M"
           },
           {
@@ -694,6 +712,7 @@
         "CAU-ContractedCost-C-000-M",
         "CAU-ContractedUnitPrice-C-000-C",
         "CAU-EffectiveCost-C-000-M",
+        "CAU-HostProviderName-C-000-M",
         "CAU-InvoiceId-C-000-O",
         "CAU-InvoiceIssuerName-C-000-M",
         "CAU-ListCost-C-000-M",
@@ -714,6 +733,7 @@
         "CAU-PublisherName-C-000-M",
         "CAU-SubAccountId-C-000-C",
         "CAU-SubAccountName-C-000-C",
+        "CAU-ServiceProviderName-C-000-M",
         "CAU-ServiceCategory-C-000-M",
         "CAU-ServiceName-C-000-M",
         "CAU-ServiceSubcategory-C-000-O",
@@ -2748,6 +2768,58 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "ContractApplied"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-075-M": {
+    "Function": "Presence",
+    "Reference": "HostProviderName",
+    "EntityType": "Dataset",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 10,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName MUST be present in a Cost and Usage FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "HostProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-076-M": {
+    "Function": "Presence",
+    "Reference": "ServiceProviderName",
+    "EntityType": "Dataset",
+    "EntityName": "Service Provider Name",
+    "EntityId": "ServiceProviderName",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 10,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceProviderName MUST be present in a Cost and Usage FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ServiceProviderName"
       },
       "Condition": {},
       "Dependencies": []
