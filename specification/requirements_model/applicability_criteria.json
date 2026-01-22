@@ -12,6 +12,9 @@
     "COMMITMENT_DISCOUNT_SUPPORTED": {
       "Description": "Provider supports commitment discounts"
     },
+    "CONTRACT_COMMITMENTS_SUPPORTED": {
+      "Description": "Provider supports contract commitments"
+    },
     "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED": {
       "Description": "Data generator supports split cost allocation"
     },

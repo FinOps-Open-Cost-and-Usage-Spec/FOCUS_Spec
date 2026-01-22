@@ -304,6 +304,14 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-CostAndUsage-D-072-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-073-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CostAndUsage-D-074-C"
           }
         ]
       },
@@ -369,7 +377,9 @@
         "CAU-CostAndUsage-D-069-C",
         "CAU-CostAndUsage-D-070-C",
         "CAU-CostAndUsage-D-071-C",
-        "CAU-CostAndUsage-D-072-C"
+        "CAU-CostAndUsage-D-072-C",
+        "CAU-CostAndUsage-D-073-C",
+        "CAU-CostAndUsage-D-074-C"
       ]
     }
   },
@@ -409,6 +419,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-AllocatedResourceName-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -509,6 +523,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ConsumedQuantity-C-000-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ContractApplied-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -646,6 +664,7 @@
         "CAU-AllocatedMethodDetails-C-000-C",
         "CAU-AllocatedResourceId-C-000-C",
         "CAU-AllocatedResourceName-C-000-C",
+        "CAU-AllocatedTags-C-000-C",
         "CAU-AvailabilityZone-C-000-C",
         "CAU-BilledCost-C-000-M",
         "CAU-BillingAccountId-C-000-M",
@@ -671,6 +690,7 @@
         "CAU-CommitmentDiscountQuantity-C-000-C",
         "CAU-ConsumedUnit-C-000-C",
         "CAU-ConsumedQuantity-C-000-C",
+        "CAU-ContractApplied-C-000-C",
         "CAU-ContractedCost-C-000-M",
         "CAU-ContractedUnitPrice-C-000-C",
         "CAU-EffectiveCost-C-000-M",
@@ -2672,6 +2692,62 @@
       "Requirement": {
         "CheckFunction": "ColumnPresent",
         "ColumnName": "AllocatedResourceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-073-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedTags",
+    "EntityType": "Dataset",
+    "EntityName": "Allocated Tags",
+    "EntityId": "AllocatedTags",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 10,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedTags MUST be present in a Cost and Usage *FOCUS dataset* when the data generator supports data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "AllocatedTags"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CostAndUsage-D-074-C": {
+    "Function": "Presence",
+    "Reference": "ContractApplied",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Applied",
+    "EntityId": "ContractApplied",
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "CONTRACT_COMMITMENTS_SUPPORTED"
+    ],
+    "Order": 10,
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractApplied MUST be present in a Cost and Usage *FOCUS dataset* when the service provider supports contractcommitments.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractApplied"
       },
       "Condition": {},
       "Dependencies": []
