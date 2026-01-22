@@ -90,77 +90,77 @@ The Cost and Usage dataset can be joined to the Contract Commitment dataset thro
 CostAndUsage adheres to the following requirements:
 
 * CostAndUsage MUST be present.
+* The presence of columns in CostAndUsage MUST adhere to the following requirements:
+  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the host provider supports deploying resources or services within an *availability zone*.
+  * CostAndUsage MUST include [BilledCost](#datasets.costandusage.billedcost).
+  * CostAndUsage MUST include [BillingAccountId](#datasets.costandusage.billingaccountid).
+  * CostAndUsage MUST include [BillingAccountName](#datasets.costandusage.billingaccountname).
+  * CostAndUsage MUST include [BillingAccountType](#datasets.costandusage.billingaccounttype) when the invoice issuer supports more than one possible BillingAccountType value.
+  * CostAndUsage MUST include [BillingCurrency](#datasets.costandusage.billingcurrency).
+  * CostAndUsage MUST include [BillingPeriodEnd](#datasets.costandusage.billingperiodend).
+  * CostAndUsage MUST include [BillingPeriodStart](#datasets.costandusage.billingperiodstart).
+  * CostAndUsage MUST include [CapacityReservationId](#datasets.costandusage.capacityreservationid) when the service provider supports *capacity reservations*.
+  * CostAndUsage MUST include [CapacityReservationStatus](#datasets.costandusage.capacityreservationstatus) when the service provider supports *capacity reservations*.
+  * CostAndUsage MUST include [ChargeCategory](#datasets.costandusage.chargecategory).
+  * CostAndUsage MUST include [ChargeClass](#datasets.costandusage.chargeclass).
+  * CostAndUsage MUST include [ChargeDescription](#datasets.costandusage.chargedescription).
+  * CostAndUsage SHOULD include [ChargeFrequency](#datasets.costandusage.chargefrequency).
+  * CostAndUsage MUST include [ChargePeriodEnd](#datasets.costandusage.chargeperiodend).
+  * CostAndUsage MUST include [ChargePeriodStart](#datasets.costandusage.chargeperiodstart).
+  * CostAndUsage MUST include [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) when the service provider supports *commitment discounts*.
+  * CostAndUsage MUST include [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) when the service provider supports *commitment discounts*.
+  * CostAndUsage MUST include [CommitmentDiscountName](#datasets.costandusage.commitmentdiscountname) when the service provider supports *commitment discounts*.
+  * CostAndUsage MUST include [CommitmentDiscountQuantity](#datasets.costandusage.commitmentdiscountquantity) when the service provider supports *commitment discounts*.
+  * CostAndUsage MUST include [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) when the service provider supports *commitment discounts*.
+  * CostAndUsage MUST include [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when the service provider supports *commitment discounts*.
+  * CostAndUsage MUST include [CommitmentDiscountUnit](#datasets.costandusage.commitmentdiscountunit) when the service provider supports *commitment discounts*.
+  * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the service provider supports the measurement of usage.
+  * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the service provider supports the measurement of usage.
+  * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the service provider supports *contract commitments*.
+  * CostAndUsage MUST include [ContractedCost](#datasets.costandusage.contractedcost).
+  * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
+  * CostAndUsage MUST include [EffectiveCost](#datasets.costandusage.effectivecost).
+  * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).
+  * CostAndUsage SHOULD include [InvoiceId](#datasets.costandusage.invoiceid).
+  * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
+  * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).
+  * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
+  * CostAndUsage MUST include [PricingCategory](#datasets.costandusage.pricingcategory) when the service provider supports more than one pricing category across all [*SKUs*](#glossary:sku).
+  * CostAndUsage MUST include [PricingCurrency](#datasets.costandusage.pricingcurrency) when the service provider supports pricing and billing in different currencies.
+  * CostAndUsage MUST include [PricingCurrencyContractedUnitPrice](#datasets.costandusage.pricingcurrencycontractedunitprice) when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
+  * CostAndUsage MUST include [PricingCurrencyEffectiveCost](#datasets.costandusage.pricingcurrencyeffectivecost) when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
+  * CostAndUsage MUST include [PricingCurrencyListUnitPrice](#datasets.costandusage.pricingcurrencylistunitprice) when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
+  * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
+  * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
+  * CostAndUsage MUST include [ProviderName](#datasets.costandusage.provider-deprecated).
+  * CostAndUsage MUST include [PublisherName](#datasets.costandusage.publisher-deprecated).
+  * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the host provider supports deploying resources or services within a region.
+  * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the host provider supports deploying resources or services within a region.
+  * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the service provider supports billing based on provisioned *resources*.
+  * CostAndUsage MUST include [ResourceName](#datasets.costandusage.resourcename) when the service provider supports billing based on provisioned resources.
+  * CostAndUsage MUST include [ResourceType](#datasets.costandusage.resourcetype) when the service provider supports billing based on provisioned *resources* and supports assigning types to *resources*.
+  * CostAndUsage MUST include [ServiceCategory](#datasets.costandusage.servicecategory).
+  * CostAndUsage MUST include [ServiceName](#datasets.costandusage.servicename).
+  * CostAndUsage MUST include [ServiceProviderName](#datasets.costandusage.serviceprovidername).
+  * CostAndUsage SHOULD include [ServiceSubcategory](#datasets.costandusage.servicesubcategory).
+  * CostAndUsage MUST include [SkuId](#datasets.costandusage.skuid) when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
+  * CostAndUsage MUST include [SkuMeter](#datasets.costandusage.skumeter) when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
+  * CostAndUsage MUST include [SkuPriceDetails](#datasets.costandusage.skupricedetails) when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
+  * CostAndUsage MUST include [SkuPriceId](#datasets.costandusage.skupriceid) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
+  * CostAndUsage MUST include [SubAccountId](#datasets.costandusage.subaccountid) when the service provider supports a *sub account* construct.
+  * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the service provider supports a *sub account* construct.
+  * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.
+  * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.
 * CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
-* The schema of the CostAndUsage FOCUS dataset MUST adhere to the following requirements:
-  * CostAndUsage FOCUS dataset SHOULD contain the AllocatedMethodDetails column when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
-  * CostAndUsage FOCUS dataset MUST contain the AllocatedMethodId column when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
-  * CostAndUsage FOCUS dataset MUST contain the AllocatedResourceId column when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
-  * CostAndUsage FOCUS dataset MUST contain the AllocatedResourceName column when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
-  * CostAndUsage FOCUS dataset MUST contain the AllocatedTags column when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
-  * CostAndUsage FOCUS dataset SHOULD contain the AvailabilityZone column when the host provider supports deploying resources or services within an *availability zone*.
-  * CostAndUsage FOCUS dataset MUST contain the BilledCost column.
-  * CostAndUsage FOCUS dataset MUST contain the BillingAccountId column.
-  * CostAndUsage FOCUS dataset MUST contain the BillingAccountName column.
-  * CostAndUsage FOCUS dataset MUST contain the BillingAccountType column when the invoice issuer supports more than one possible BillingAccountType value.
-  * CostAndUsage FOCUS dataset MUST contain the BillingCurrency column.
-  * CostAndUsage FOCUS dataset MUST contain the BillingPeriodEnd column.
-  * CostAndUsage FOCUS dataset MUST contain the BillingPeriodStart column.
-  * CostAndUsage FOCUS dataset MUST contain the CapacityReservationId column when the service provider supports *capacity reservations*.
-  * CostAndUsage FOCUS dataset MUST contain the CapacityReservationStatus column when the service provider supports *capacity reservations*.
-  * CostAndUsage FOCUS dataset MUST contain the ChargeCategory column.
-  * CostAndUsage FOCUS dataset MUST contain the ChargeClass column.
-  * CostAndUsage FOCUS dataset MUST contain the ChargeDescription column.
-  * CostAndUsage FOCUS dataset SHOULD contain the ChargeFrequency column.
-  * CostAndUsage FOCUS dataset MUST contain the ChargePeriodEnd column.
-  * CostAndUsage FOCUS dataset MUST contain the ChargePeriodStart column.
-  * CostAndUsage FOCUS dataset MUST contain the CommitmentDiscountCategory column when the service provider supports *commitment discounts*.
-  * CostAndUsage FOCUS dataset MUST contain the CommitmentDiscountId column when the service provider supports *commitment discounts*.
-  * CostAndUsage FOCUS dataset MUST contain the CommitmentDiscountName column when the service provider supports *commitment discounts*.
-  * CostAndUsage FOCUS dataset MUST contain the CommitmentDiscountQuantity column when the service provider supports *commitment discounts*.
-  * CostAndUsage FOCUS dataset MUST contain the CommitmentDiscountStatus column when the service provider supports *commitment discounts*.
-  * CostAndUsage FOCUS dataset MUST contain the CommitmentDiscountType column when the service provider supports *commitment discounts*.
-  * CostAndUsage FOCUS dataset MUST contain the CommitmentDiscountUnit column when the service provider supports *commitment discounts*.
-  * CostAndUsage FOCUS dataset MUST contain the ConsumedQuantity column when the service provider supports the measurement of usage.
-  * CostAndUsage FOCUS dataset MUST contain the ConsumedUnit column when the service provider supports the measurement of usage.
-  * CostAndUsage FOCUS dataset MUST contain the ContractApplied column when the service provider supports *contract commitments*.
-  * CostAndUsage FOCUS dataset MUST contain the ContractedCost column.
-  * CostAndUsage FOCUS dataset MUST contain the ContractedUnitPrice column when the service provider supports negotiated pricing concepts.
-  * CostAndUsage FOCUS dataset MUST contain the EffectiveCost column.
-  * CostAndUsage FOCUS dataset MUST contain the HostProviderName column.
-  * CostAndUsage FOCUS dataset SHOULD contain the InvoiceId column.
-  * CostAndUsage FOCUS dataset MUST contain the InvoiceIssuerName column.
-  * CostAndUsage FOCUS dataset MUST contain the ListCost column.
-  * CostAndUsage FOCUS dataset MUST contain the ListUnitPrice column when the service provider publishes unit prices exclusive of discounts.
-  * CostAndUsage FOCUS dataset MUST contain the PricingCategory column when the service provider supports more than one pricing category across all [*SKUs*](#glossary:sku).
-  * CostAndUsage FOCUS dataset MUST contain the PricingCurrency column when the service provider supports pricing and billing in different currencies.
-  * CostAndUsage FOCUS dataset MUST contain the PricingCurrencyContractedUnitPrice column when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
-  * CostAndUsage FOCUS dataset MUST contain the PricingCurrencyEffectiveCost column when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
-  * CostAndUsage FOCUS dataset MUST contain the PricingCurrencyListUnitPrice column when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
-  * CostAndUsage FOCUS dataset MUST contain the PricingQuantity column.
-  * CostAndUsage FOCUS dataset MUST contain the PricingUnit column.
-  * CostAndUsage FOCUS dataset MUST contain the ProviderName column.
-  * CostAndUsage FOCUS dataset MUST contain the PublisherName column.
-  * CostAndUsage FOCUS dataset MUST contain the RegionId column when the host provider supports deploying resources or services within a region.
-  * CostAndUsage FOCUS dataset MUST contain the RegionName column when the host provider supports deploying resources or services within a region.
-  * CostAndUsage FOCUS dataset MUST contain the ResourceId column when the service provider supports billing based on provisioned *resources*.
-  * CostAndUsage FOCUS dataset MUST contain the ResourceName column when the service provider supports billing based on provisioned resources.
-  * CostAndUsage FOCUS dataset MUST contain the ResourceType column when the service provider supports billing based on provisioned *resources* and supports assigning types to *resources*.
-  * CostAndUsage FOCUS dataset MUST contain the ServiceCategory column.
-  * CostAndUsage FOCUS dataset MUST contain the ServiceName column.
-  * CostAndUsage FOCUS dataset MUST contain the ServiceProviderName column.
-  * CostAndUsage FOCUS dataset SHOULD contain the ServiceSubcategory column.
-  * CostAndUsage FOCUS dataset MUST contain the SkuId column when the service provider supports unit pricing concepts and publishes price lists, publicly or as part of contracting.
-  * CostAndUsage FOCUS dataset MUST contain the SkuMeter column when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
-  * CostAndUsage FOCUS dataset MUST contain the SkuPriceDetails column when the service provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
-  * CostAndUsage FOCUS dataset MUST contain the SkuPriceId column when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
-  * CostAndUsage FOCUS dataset MUST contain the SubAccountId column when the service provider supports a *sub account* construct.
-  * CostAndUsage FOCUS dataset MUST contain the SubAccountName column when the service provider supports a *sub account* construct.
-  * CostAndUsage FOCUS dataset MUST contain the SubAccountType column when the service provider supports more than one possible SubAccountType value.
-  * CostAndUsage FOCUS dataset MUST contain the Tags column when the data generator supports setting user or provider-defined tags.
 
 ## Dataset ID<!--SkipTOC-->
 
