@@ -193,11 +193,12 @@
       },
       "Condition": {
         "CheckFunction": "CheckNotSameValue",
-        "ColumnAName": "ProviderName",
+        "ColumnAName": "ServiceProviderName",
         "ColumnBName": "InvoiceIssuerName"
       },
       "Dependencies": [
-        "CAU-InvoiceIssuerName-C-000-M"
+        "CAU-InvoiceIssuerName-C-000-M",
+        "CAU-ServiceProviderName-C-000-M"
       ]
     }
   },
