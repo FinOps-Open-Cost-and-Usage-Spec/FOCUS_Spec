@@ -1,0 +1,124 @@
+{
+  "ChargePeriodStart-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ChargePeriodStart",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ChargePeriodStart column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodStart-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodStart-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodStart-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ChargePeriodStart-C-004-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-037-M",
+        "ChargePeriodStart-C-001-M",
+        "ChargePeriodStart-C-002-M",
+        "ChargePeriodStart-C-003-M",
+        "ChargePeriodStart-C-004-M"
+      ]
+    }
+  },
+  "ChargePeriodStart-C-001-M": {
+    "Function": "Type",
+    "Reference": "ChargePeriodStart",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodStart MUST be of type Date/Time.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDateTime",
+        "ColumnName": "ChargePeriodStart",
+        "ExpectedType": "DateTime"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargePeriodStart-C-002-M": {
+    "Function": "Format",
+    "Reference": "ChargePeriodStart",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodStart MUST conform to DateTimeFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatDateTime",
+        "ColumnName": "ChargePeriodStart"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargePeriodStart-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "ChargePeriodStart",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodStart MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargePeriodStart",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ChargePeriodStart-C-004-M": {
+    "Function": "Validation",
+    "Reference": "ChargePeriodStart",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargePeriodStart MUST be the inclusive start bound of the effective period of the charge.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

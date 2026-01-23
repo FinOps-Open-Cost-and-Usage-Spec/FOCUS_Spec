@@ -1,0 +1,187 @@
+{
+  "SkuMeter-C-000-C": {
+    "Function": "Composite",
+    "Reference": "SkuMeter",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The SkuMeter column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuMeter-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuMeter-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuMeter-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuMeter-C-006-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-059-C",
+        "SkuMeter-C-001-M",
+        "SkuMeter-C-002-M",
+        "SkuMeter-C-003-C",
+        "SkuMeter-C-006-O"
+      ]
+    }
+  },
+  "SkuMeter-C-001-M": {
+    "Function": "Type",
+    "Reference": "SkuMeter",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuMeter MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "SkuMeter"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuMeter-C-002-M": {
+    "Function": "Format",
+    "Reference": "SkuMeter",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuMeter MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "SkuMeter"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuMeter-C-003-C": {
+    "Function": "Composite",
+    "Reference": "SkuMeter",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuMeter nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuMeter-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuMeter-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "SkuMeter-C-004-C",
+        "SkuMeter-C-005-C"
+      ]
+    }
+  },
+  "SkuMeter-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "SkuMeter",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuMeter MUST be null when SkuId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuMeter",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "SkuMeter-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "SkuMeter",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuMeter SHOULD NOT be null when SkuId is not null.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SkuMeter",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SkuId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "SkuMeter-C-006-O": {
+    "Function": "Validation",
+    "Reference": "SkuMeter",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuMeter SHOULD remain consistent over time for a given SkuId.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
