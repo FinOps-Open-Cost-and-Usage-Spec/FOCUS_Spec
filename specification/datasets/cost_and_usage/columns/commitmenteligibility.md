@@ -37,7 +37,6 @@ The types of non-negotiated *commitment programs* available for the specific usa
 | Data type       | String        |
 | Value format    | [JsonObjectFormat](#attributes.jsonobjectformat) |
 
-
 ## Introduced (version)
 
 1.4
