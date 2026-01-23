@@ -41,6 +41,3 @@ The types of non-negotiated *commitment programs* available for the specific usa
 ## Introduced (version)
 
 1.4
-
-
-
