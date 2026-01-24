@@ -47,9 +47,9 @@ AI tools (such as GitHub Copilot, Claude Code, Cursor, and similar coding assist
 **Key requirements:**
 
 - A CLA-covered human MUST take responsibility for all contributions
-- AI agents MAY create PRs on behalf of a human who requested the work
+- Approved AI agents MAY create PRs on behalf of a human who requested the work
 - The responsible human reviews and approves AI-generated contributions
-- AI-assisted contributions follow the same review process as other contributions
+- AI-assisted contributions follow the same review process as other contributions, including peer review and consensus approval
 
 For complete guidance, see [AI Usage Guidelines](guidelines/ai-usage-guidelines.md).
 

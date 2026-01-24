@@ -6,20 +6,20 @@ This document defines the FOCUS Working Group's policy for using AI tools in spe
 
 AI tools may be used to assist with FOCUS contributions. AI-generated content is permitted and follows the same intellectual property, licensing, and review standards as human-authored content.
 
-## Permitted Use
+## Usage Modes
 
-AI tools (such as GitHub Copilot, Claude Code, Cursor, and similar coding assistants) may be used in two modes:
+AI tools (such as GitHub Copilot, Claude Code, Cursor, and similar coding assistants) are typically used in two modes:
 
 - **Interactive**: A human contributor works with AI assistance in real-time. The human reviews, edits, and submits the contribution.
-- **Autonomous**: A human requests AI to work independently. The AI creates a PR and assigns it to the human for review. The PR serves as the human review checkpoint.
-
-In both modes, the human contributor takes responsibility for the submitted content.
+- **Autonomous**: A human requests AI to work independently. The AI creates a PR, comments, or suggestions and assigns them to the human for review. The PR serves as the human review checkpoint.
 
 ## Contribution Requirements
 
 ### Human Responsibility
 
-A CLA-covered human contributor MUST take responsibility for all contributions. AI agents MAY create PRs on behalf of a human who requested the work. The responsible human is accountable for:
+- A human contributor covered by a [Contributor License Agreement](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA) (CLA) MUST take responsibility for all contributions.
+- AI agents MAY create PRs on behalf of a human who requested the work.
+- The CLA-covered human MUST be accountable for:
 
 - Reviewing AI-generated output for correctness and quality
 - Ensuring compliance with FOCUS normative requirements and editorial conventions
@@ -38,13 +38,13 @@ AI-generated content does not bypass any approval workflow or receive different 
 
 ### CLA Coverage
 
-**Interactive mode**: The human contributor's existing CLA coverage applies. No separate CLA is required for AI tools used interactively where the human controls orchestration and PR submittal.
+**Interactive mode**: The human contributor's existing CLA coverage applies. No separate CLA is required for AI tools used interactively where the human controls orchestration and PR submittal. Per the [Linux Foundation Generative AI Policy](https://www.linuxfoundation.org/legal/generative-ai), the contributor MUST ensure that the terms and conditions of the AI tool do not place any contractual restrictions on its output that are inconsistent with FOCUS' [open source software license](https://creativecommons.org/licenses/by/4.0/) and [intellectual property policies](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#514-consistency--ipr-reviews).
 
-**Autonomous mode**: AI agents that create PRs directly MUST be onboarded through the Linux Foundation CLA process. To onboard an AI agent, submit a [Maintenance Task](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/new?template=maintenance.md) issue.
+**Autonomous mode**: AI agents that create PRs directly MUST be onboarded through the Linux Foundation CLA process. To onboard an AI agent, submit a [Maintenance Task](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/new?template=maintenance.yml) issue.
 
 ## Attribution
 
-Attribution for AI assistance is optional. Contributors may note AI tool usage in pull request descriptions if they choose, but this is not required.
+The contributor MAY attribute AI assistance and/or tool usage in pull request descriptions, but this is not required.
 
 The FOCUS project does not mandate a specific attribution format. This aligns with the Linux Foundation policy, which focuses on human responsibility rather than disclosure requirements.
 

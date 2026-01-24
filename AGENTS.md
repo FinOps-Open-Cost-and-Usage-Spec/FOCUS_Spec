@@ -82,7 +82,12 @@ The `specification/requirements_model/` directory contains a machine-readable re
 ### Normative Language
 
 - Use BCP-14 keywords: MUST, MUST NOT, SHOULD, SHOULD NOT, MAY (all uppercase)
+- "REQUIRED" is deprecated; use MUST instead
+- "SHALL" is deprecated; use MUST instead
+- "SHALL NOT" is deprecated; use MUST NOT instead
 - "RECOMMENDED" is deprecated; use SHOULD instead
+- "NOT RECOMMENDED" is deprecated; use SHOULD NOT instead
+- "OPTIONAL" is deprecated; use MAY instead
 - Write normative statements as bullet lists, not lengthy sentences
 
 ### Editorial Conventions
