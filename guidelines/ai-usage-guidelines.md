@@ -62,6 +62,21 @@ Tool-specific wrapper files reference the centralized configuration:
 - `CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md` - Symlinks to `AGENTS.md`
 - `.claude/commands/`, `.cursor/commands/`, `.github/prompts/` - Tool-specific wrappers for interactive use
 
+### Creating Shared Commands
+
+To create a new shared command available across all supported AI tools:
+
+1. **Create the main workflow** in `.ai/commands/<name>.md` with full process documentation
+2. **Create tool-specific wrappers** that reference the main workflow:
+
+| Tool | File | Format |
+| --- | --- | --- |
+| Claude Code | `.claude/commands/<name>.md` | YAML frontmatter with `allowed-tools`, then reference |
+| Cursor | `.cursor/commands/<name>.md` | Simple reference to `.ai/commands/<name>.md` |
+| GitHub Copilot | `.github/prompts/<name>.prompt.md` | Simple reference to `.ai/commands/<name>.md` |
+
+See existing commands (e.g., `feature`, `pr-update`) for examples.
+
 ### Working File Lifecycle
 
 Working folders (`.ai/work/<issue-number>-<kebab-case-name>/`) contain research, plans, and task tracking for active issues. Use the same naming convention as your branch.

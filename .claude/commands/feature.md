@@ -1,6 +1,7 @@
 ---
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch, TodoWrite
 description: Implement a GitHub feature request for the FOCUS spec
+argument-hint: "<issue-number>"
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebSearch, WebFetch, TodoWrite
 ---
 
 # Implement Feature Request
