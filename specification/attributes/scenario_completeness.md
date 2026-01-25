@@ -14,17 +14,17 @@ Scenario Completeness
 
 ## Description
 
-Indicates how *data generators* should include custom columns to ensure *FOCUS datasets* enable the same analysis and reporting scenarios available in native datasets.
+Defines requirements for a *FOCUS dataset* to include custom columns that enable the same analysis and reporting scenarios available in native datasets.
 
 ## Requirements
 
-* *Data generators* MUST include custom columns necessary to achieve the same analysis and reporting scenarios with *FOCUS datasets* that are available with their native cost and usage datasets.
-  * *Data generators* MAY exclude native columns that do not support any analysis or reporting scenarios.
-  * Custom columns SHOULD maintain the same granularity and accuracy as their native dataset equivalents.
-  * *Data generators* MAY preserve non-FOCUS versions of custom columns even after FOCUS equivalents are introduced to enable migration without breaking changes.
-* *Data generators* SHOULD include custom columns that enable correlation between *FOCUS datasets* and native datasets (e.g., native [*charge*](#glossary:charge) identifiers).
-* *Data generators* SHOULD provide documentation describing custom columns, their purpose, and relationship to native columns.
-* When rows are split or aggregated to conform to FOCUS requirements, custom column values MUST be handled consistently to preserve data integrity.
+* A *FOCUS dataset* MUST include custom columns necessary to achieve the same analysis and reporting scenarios that are available with native cost and usage datasets.
+  * A *FOCUS dataset* MAY exclude columns from the native dataset that do not support any analysis or reporting scenarios.
+  * A *FOCUS dataset* SHOULD maintain the same data fidelity for custom columns as their native dataset equivalents.
+  * A *FOCUS dataset* MAY preserve non-FOCUS versions of custom columns even after FOCUS equivalents are introduced to enable migration without breaking changes.
+* A *FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS datasets* and native datasets (e.g., native [*charge*](#glossary:charge) identifiers).
+* A *FOCUS dataset* SHOULD provide documentation describing custom columns, their purpose, and relationship to native columns.
+* A *FOCUS dataset* MUST handle custom column values consistently to preserve data integrity when rows are split or aggregated to conform to other FOCUS requirements.
 
 ## Exceptions
 

@@ -213,19 +213,18 @@ cd requirements_model && python -m pytest tests/  # Test model
 
 - [x] Create PR, link to #1094 ✅ [PR #1800](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1800)
 - [ ] Review cycle
+- [ ] Rename attribute to "Dataset Completeness" (use `git mv` to preserve history; do last before merge)
 - [ ] Merge to working draft
 
----
+### Before PR Merge Checklist
 
-## Ongoing: Documentation & Housekeeping
-
-- [ ] Determine where analysis should live in `supporting_content/` (or if new structure needed)
-- [ ] Move/copy finalized content to appropriate `supporting_content/` location
-- [x] Update research.md with new findings as work progresses
-  - [x] Added Implementation Gap Analysis section
-  - [x] Documented Column Selection decision (exclude, defer to #1091)
-  - [x] Documented Conformance Documentation decision (defer to #1098)
-  - [x] Documented Anti-Duplication Requirements decision (intentionally removed)
+- [ ] Review Future Considerations in `supporting_content/attributes/scenario_completeness.md`:
+  - [ ] Glossary entry for "native dataset" - decide if needed for 1.4
+  - [ ] Clarify "data generator" scope - decide if needed for 1.4
+  - [ ] GA dataset qualifier - hold for negotiation if needed
+- [ ] Resolve or close all PR review threads
+- [ ] Move any valuable content from `.context/non-focus-columns/` to `supporting_content/` or related issues
+- [ ] Delete `.context/non-focus-columns/` working folder
 
 ---
 

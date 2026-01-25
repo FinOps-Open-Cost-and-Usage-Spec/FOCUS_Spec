@@ -22,7 +22,7 @@ Without this attribute, practitioners adopting FOCUS datasets may lose access to
 
 ## When to Include Custom Columns
 
-Data generators SHOULD include custom columns in the following scenarios:
+Custom columns should be included in the following scenarios:
 
 1. **Provider-Specific Attributes:** When native datasets contain attributes not represented in FOCUS columns (e.g., Azure Resource Group, GCP project hierarchy, AWS account organizational units).
 
@@ -34,7 +34,7 @@ Data generators SHOULD include custom columns in the following scenarios:
 
 ## When NOT to Include Custom Columns
 
-Data generators should avoid including custom columns in the following scenarios:
+Custom columns should be avoided in the following scenarios:
 
 1. **Duplication:** When information is already captured in FOCUS standard columns. Custom columns should not duplicate data already represented in FOCUS columns.
 
@@ -52,26 +52,30 @@ To enable reliable correlation between FOCUS and native datasets:
 
 ## Aggregation and Splitting Examples
 
-When rows are split or aggregated to conform to FOCUS requirements (e.g., Discount Handling), custom column values MUST be handled consistently:
+Custom column values must be handled consistently when rows are split or aggregated to conform to other FOCUS requirements (e.g., Discount Handling):
 
 ### Example: Row Splitting
 
 **Native Dataset:**
-- Single row with `ResourceId = "vm-123"`, `Cost = $100`, `x_ResourceGroup = "production"`
+
+* Single row with `ResourceId = "vm-123"`, `Cost = $100`, `x_ResourceGroup = "production"`
 
 **FOCUS Dataset (after discount handling split):**
-- Row 1: `ResourceId = "vm-123"`, `BilledCost = $90`, `x_ResourceGroup = "production"`
-- Row 2: `ResourceId = "vm-123"`, `BilledCost = $10`, `x_ResourceGroup = "production"` (discount row)
+
+* Row 1: `ResourceId = "vm-123"`, `BilledCost = $90`, `x_ResourceGroup = "production"`
+* Row 2: `ResourceId = "vm-123"`, `BilledCost = $10`, `x_ResourceGroup = "production"` (discount row)
 
 **Note:** `x_ResourceGroup` is preserved on both rows to maintain correlation.
 
 ### Example: Row Aggregation
 
 **Native Dataset:**
-- Multiple rows with different `x_Tags` values but same `ResourceId`
+
+* Multiple rows with different `x_Tags` values but same `ResourceId`
 
 **FOCUS Dataset (after aggregation):**
-- Single row with `ResourceId`, aggregated costs, and `x_Tags` containing all tag values (as JSON or delimited string)
+
+* Single row with `ResourceId`, aggregated costs, and `x_Tags` containing all tag values (as JSON or delimited string)
 
 **Note:** Custom column values are aggregated appropriately to preserve data integrity.
 
@@ -81,10 +85,10 @@ When rows are split or aggregated to conform to FOCUS requirements (e.g., Discou
 
 **Custom columns to include:**
 
-- `x_LineItemId` (for correlation with CUR)
-- `x_ReservationArn` (for Reserved Instance tracking)
-- `x_SavingsPlanArn` (for Savings Plan tracking)
-- `x_LegalEntity` (billing entity information)
+* `x_LineItemId` (for correlation with CUR)
+* `x_ReservationArn` (for Reserved Instance tracking)
+* `x_SavingsPlanArn` (for Savings Plan tracking)
+* `x_LegalEntity` (billing entity information)
 
 **Example:** AWS CUR includes `lineItem/LineItemId` which should be included as `x_LineItemId` to enable correlation.
 
@@ -92,9 +96,9 @@ When rows are split or aggregated to conform to FOCUS requirements (e.g., Discou
 
 **Custom columns to include:**
 
-- `x_ResourceGroup` (for resource group attribution)
-- `x_BillingProfileId` (for billing profile hierarchy)
-- `x_InvoiceSectionId` (for invoice section attribution)
+* `x_ResourceGroup` (for resource group attribution)
+* `x_BillingProfileId` (for billing profile hierarchy)
+* `x_InvoiceSectionId` (for invoice section attribution)
 
 **Example:** Azure Cost Details include `ResourceGroup` which should be included as `x_ResourceGroup` to enable resource group analysis.
 
@@ -102,8 +106,8 @@ When rows are split or aggregated to conform to FOCUS requirements (e.g., Discou
 
 **Custom columns to include:**
 
-- `x_ProjectNumber` (if different from SubAccountId)
-- `x_BillingAccountId` (GCP's native billing account identifier)
+* `x_ProjectNumber` (if different from SubAccountId)
+* `x_BillingAccountId` (GCP's native billing account identifier)
 
 **Example:** GCP BigQuery Billing Export includes project-level identifiers which should be included to enable correlation.
 
@@ -111,8 +115,8 @@ When rows are split or aggregated to conform to FOCUS requirements (e.g., Discou
 
 **Custom columns to include:**
 
-- `x_CompartmentId` (for compartment hierarchy)
-- `x_CompartmentName` (for compartment display names)
+* `x_CompartmentId` (for compartment hierarchy)
+* `x_CompartmentName` (for compartment display names)
 
 **Example:** OCI Cost Reports include compartment information which should be included as custom columns to enable compartment-based analysis.
 
@@ -125,3 +129,33 @@ The Column Handling attribute defines *how* custom columns should be named and f
 ### Provider Column Mappings (FR #1098)
 
 For comprehensive documentation of how native columns map to FOCUS columns (both standard and custom), see the provider column mappings feature request (#1098). While Scenario Completeness requires documentation of custom columns, #1098 addresses the broader need for complete native-to-FOCUS column mapping documentation across all column types.
+
+## Design Decisions
+
+### Scope Clarification: Aggregation and Granularity (PR #1800)
+
+During review, concerns were raised about whether this attribute introduces aggregation or time granularity requirements that overlap with FR #1091 (column selection) and FR #1093 (data granularity).
+
+**Clarification:** This attribute does NOT:
+
+* Require column selection to trigger row aggregation
+* Mandate specific time granularities (hourly, daily, monthly)
+* Introduce new aggregation mechanisms
+
+The requirements in this attribute address different concerns:
+
+* **Data fidelity requirement:** Custom columns should preserve the fidelity of their native equivalents. This means "don't degrade the data you already have" - not "you must provide data at specific granularities."
+
+* **Row split/aggregation handling:** When *other* FOCUS requirements (such as Discount Handling) cause rows to be split or aggregated, custom column values must be handled consistently. This addresses data integrity during transformations required by existing FOCUS attributes, not new aggregation requirements.
+
+These clarifications were incorporated into the normative text to avoid confusion with FR #1091 and FR #1093, which address column selection and data granularity respectively.
+
+## Future Considerations
+
+The following items were identified during development but deferred for future work:
+
+1. **Glossary entry for "native dataset":** The term is used throughout this attribute but not formally defined. Proposed definition: A cost and usage dataset provided by a data generator in a format other than FOCUS. For providers, this typically refers to their proprietary billing export (e.g., AWS Cost and Usage Report, Azure Cost Details, GCP BigQuery Billing Export). For FinOps tool vendors, this refers to any non-FOCUS dataset they offer to practitioners.
+
+2. **Clarify "data generator" scope:** The glossary should explicitly note that data generators include both providers (cloud, SaaS) and FinOps tool vendors who aggregate or transform billing data.
+
+3. **GA dataset qualifier (potential):** Consider whether to limit requirements to generally available (GA) native datasets only, excluding preview/beta datasets. This could address provider concerns about matching experimental features.
