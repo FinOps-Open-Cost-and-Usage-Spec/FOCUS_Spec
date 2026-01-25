@@ -1,0 +1,262 @@
+{
+  "PricingUnit-C-000-M": {
+    "Function": "Composite",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The PricingUnit column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-003-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-007-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-068-M",
+        "PricingUnit-C-001-M",
+        "PricingUnit-C-002-M",
+        "PricingUnit-C-003-O",
+        "PricingUnit-C-004-C",
+        "PricingUnit-C-007-C"
+      ]
+    }
+  },
+  "PricingUnit-C-001-M": {
+    "Function": "Type",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "PricingUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingUnit-C-002-M": {
+    "Function": "Format",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "PricingUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingUnit-C-003-O": {
+    "Function": "Format",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit SHOULD conform to UnitFormat requirements.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "FormatUnit",
+        "ColumnName": "PricingUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingUnit-C-004-C": {
+    "Function": "Composite",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "PricingUnit-C-005-C",
+        "PricingUnit-C-006-C"
+      ]
+    }
+  },
+  "PricingUnit-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit MUST be null when PricingQuantity is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "PricingUnit",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "PricingQuantity",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingUnit-C-006-C": {
+    "Function": "Nullability",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit MUST NOT be null when PricingQuantity is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingUnit",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingQuantity",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "PricingUnit-C-007-C": {
+    "Function": "Composite",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When PricingUnit is not null, PricingUnit adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingUnit-C-009-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingUnit",
+        "Value": null
+      },
+      "Dependencies": [
+        "PricingUnit-C-008-M",
+        "PricingUnit-C-009-C"
+      ]
+    }
+  },
+  "PricingUnit-C-008-M": {
+    "Function": "Validation",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "Cross-attribute reference: PriceList",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in provider-published price list.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingUnit-C-009-C": {
+    "Function": "Validation",
+    "Reference": "PricingUnit",
+    "EntityType": "Column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "Cross-attribute reference: Invoice",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in invoice, when the invoice includes a pricing measurement unit.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
