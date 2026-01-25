@@ -30,9 +30,10 @@ AI tools (such as GitHub Copilot, Claude Code, Cursor, and similar coding assist
 
 AI-assisted contributions follow the same review process as human-authored contributions:
 
-1. Task Force review for technical accuracy
-2. Member review for broader alignment
-3. Standard approval workflow per [Development Processes](development-processes.md)
+1. **Responsible human self-review**: The CLA-covered human responsible for an AI-generated PR MUST review and approve the contribution before requesting peer review.
+2. Task Force review for technical accuracy
+3. Member review for broader alignment
+4. Standard approval workflow per [Development Processes](development-processes.md)
 
 AI-generated content does not bypass any approval workflow or receive different treatment during review.
 
