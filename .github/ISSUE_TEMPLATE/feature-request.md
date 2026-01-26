@@ -10,9 +10,7 @@ about: Propose a new feature or enhancement to the FOCUS specification
 ### 🧠 Problem Statement
 Describe the problem, issue, or opportunity this feature addresses. Include practitioner quotes or real-world examples if available.
 
-```
 [Write your problem statement here.]
-```
 
 ---
 
@@ -26,9 +24,7 @@ Provide a clear, specific user story or set of user stories:
 **Example:**
 > As a FinOps practitioner, I need to group costs by resource groupings within my Sub Account, so that I can align cost reporting with my organization's structure without post-processing.
 
-```
 [Write your user story here.]
-```
 
 ---
 
@@ -40,12 +36,10 @@ Describe 2-4 specific criteria that would indicate this feature is working corre
 - The data is consistently available across all data generators that support this concept
 - Missing or unavailable data is handled in a clear, standardized way
 
-```
 - [ ] [Criterion 1]
 - [ ] [Criterion 2]
 - [ ] [Criterion 3]
 - [ ] [Criterion 4]
-```
 
 ---
 
@@ -62,9 +56,7 @@ Describe 2-4 specific criteria that would indicate this feature is working corre
 ### 🏛️ Organizations Requesting This Feature
 List one or more organizations who have requested or explicitly supported this request (including your own, if applicable).
 
-```
 [e.g., BigCloud Inc, Acme Corp]
-```
 
 ---
 
@@ -77,9 +69,8 @@ Do data generators already support this concept in their native billing data?
 - [ ] **Unknown** - Not sure about data generator support
 
 **If yes or partially, please provide links to documentation:**
-```
+
 [Links to data generator documentation]
-```
 
 ---
 
@@ -88,18 +79,14 @@ Include links to data samples, relevant PRs, GitHub discussions, or implementati
 
 > 🔐 **Reminder:** Please ensure any linked documents are accessible to maintainers and collaborators. If access is restricted, your request may be delayed.
 
-```
 [Paste links here.]
-```
 
 ---
 
 ### 🛠️ Proposed Solution / Approach (Optional)
 Share initial ideas, constraints, and feasibility considerations if you have them.
 
-```
 [Your proposal goes here.]
-```
 
 ---
 
@@ -110,9 +97,7 @@ Add any other context that might be helpful:
 **Urgency/Timeline:** [Is there a specific timeframe when your organization needs this?]
 **Related Requests:** [Links to similar or related feature requests]
 
-```
 [Additional context here.]
-```
 
 ---
 
@@ -128,9 +113,8 @@ Which category best describes this feature's impact on FOCUS adoption?
 - [ ] **Technical Improvement** – Internal specification refinement
 
 **Justification:**
-```
+
 [FOCUS Staff completes during triage]
-```
 
 ---
 
@@ -147,27 +131,23 @@ Which existing or new [FOCUS Supported Features](https://focus.finops.org/#suppo
 - [ ] [Describe new supported feature this would enable]
 
 **Feature Description:**
-```
+
 [FOCUS Team describes how this request advances FinOps capabilities]
-```
 
 ---
 
 ### 🎯 Implementation Scope
 **MVP Definition:**
-```
+
 [FOCUS Team defines minimum implementation that provides value]
-```
 
 **North Star Vision:**
-```
+
 [FOCUS Team describes ideal complete solution]
-```
 
 **Phasing Strategy:**
-```
+
 [FOCUS Team determines if/how this should be implemented in phases]
-```
 
 ---
 
@@ -185,9 +165,8 @@ Rate from 1 to 5:
 - 3 = moderately scoped, some ambiguity
 - 5 = vague, high complexity or conceptual
 
-```
+
 [Rating and reasoning]
-```
 
 ---
 
