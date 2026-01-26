@@ -1,0 +1,58 @@
+{
+  "ApplicabilityCriteria": {
+    "ACCOUNT_NAMING_SUPPORTED": {
+      "Description": "Provider supports assigning a display name for the billing account"
+    },
+    "AVAILABILITY_ZONE_SUPPORTED": {
+      "Description": "Provider supports deploying resources or services within an availability zone"
+    },
+    "CAPACITY_RESERVATION_SUPPORTED": {
+      "Description": "Provider supports capacity reservations"
+    },
+    "COMMITMENT_DISCOUNT_SUPPORTED": {
+      "Description": "Provider supports commitment discounts"
+    },
+    "MULTIPLE_PRICING_CATEGORIES_SUPPORTED": {
+      "Description": "Provider supports more than one pricing category across all SKUs"
+    },
+    "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED": {
+      "Description": "Provider supports more than one possible SubAccountType value"
+    },
+    "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED": {
+      "Description": "Provider supports more than one possible BillingAccountType value"
+    },
+    "NEGOTIATED_PRICING_SUPPORTED": {
+      "Description": "Provider supports negotiated pricing concepts"
+    },
+    "PUBLIC_PRICE_LIST_SUPPORTED": {
+      "Description": "Provider publishes public price lists"
+    },
+    "USAGE_MEASUREMENT_SUPPORTED": {
+      "Description": "Provider supports the measurement of usage"
+    },
+    "UNIT_PRICING_SUPPORTED": {
+      "Description": "Provider supports unit pricing concepts"
+    },
+    "SUB_ACCOUNT_SUPPORTED": {
+      "Description": "Provider supports a sub account construct"
+    },
+    "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED": {
+      "Description": "Provider supports billing based on provisioned resources"
+    },
+    "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED": {
+      "Description": "Provider supports assigning types to resources"
+    },
+    "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED": {
+      "Description": "Provider supports pricing and billing in different currencies"
+    },
+    "VIRTUAL_CURRENCY_SUPPORTED": {
+      "Description": "Provider supports prices in virtual currency"
+    },
+    "REGION_SUPPORTED": {
+      "Description": "Provider supports deploying resources or services within a region"
+    },
+    "TAGGING_SUPPORTED": {
+      "Description": "Provider supports setting user or provider-defined tags"
+    }
+  }
+}
