@@ -1,6 +1,6 @@
 # Billed Cost
 
-Billed Cost represents the cost of a [*charge*](#glossary:charge) as invoiced by the [invoice issuer](#datasets.costandusage.invoiceissuername) in a given [*billing period*](#glossary:billing-period). Billed Cost differs from [Effective Cost](#datasets.costandusage.effectivecost) when *charges* are invoiced separately from usage.
+Billed Cost represents the cost of a [*charge*](#glossary:charge) as invoiced by the [invoice issuer](#datasets.costandusage.invoiceissuername) in a given [*billing period*](#glossary:billing-period). Billed Cost differs from [Effective Cost](#datasets.costandusage.effectivecost) when *charges* (both pre-paid and post-paid) are invoiced separately from usage.
 
 For all *charges*, Billed Cost reflects all applicable pricing adjustments (e.g., reduced pricing from [*negotiated discounts*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount)). For purchase *charges*, Billed Cost includes any portion invoiced in the given *billing period*. For usage *charges*, Billed Cost excludes any portion covered by related purchase *charges* (e.g., *commitments*, pre-payments, or marketplace purchases), regardless of when those related charges are invoiced.
 
