@@ -1,8 +1,6 @@
 # Billing Period
 
-The Billing Period dataset defines the time intervals used by an invoice issuer for the purpose of grouping charges into a billing cycle.
-
-The specification for the Billing Period dataset defines a group of columns that provide qualitative values (dimensions) used to categorize and filter cost data based on financial cycles rather than strictly by consumption dates. This ensures that FinOps practitioners can align their reporting with organizational fiscal calendars and invoicing cycles.
+The Billing Period dataset is a supporting dataset that defines the time intervals and statuses associated with an invoice issuer's billing cycles for grouping and presenting [*charges](#glossary:charge) on invoices.  This dataset helps FinOps practitioners better understand how and when they can leverage [Cost and Usage](#dataset.costandusage) and [Invoice Detail](#datasets.invoicedetail) data for formal financial reporting and showback/chargeback processes.
 
 ## Columns<!--SkipTOC-->
 
