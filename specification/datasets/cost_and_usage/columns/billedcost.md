@@ -29,7 +29,7 @@ Billed Cost
 
 ## Description
 
-Cost of a *charge* invoiced (or to be invoiced) by the *invoice issuer* in a given *billing period*.
+Cost of a *charge* as invoiced by the *invoice issuer* in a given *billing period*.
 
 ## Content constraints
 
