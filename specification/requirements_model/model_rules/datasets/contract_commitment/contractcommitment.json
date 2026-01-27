@@ -1,0 +1,134 @@
+{
+  "CCT-ContractCommitment-D-000-M": {
+    "Function": "Composite",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "Main dataset composite rule",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ContractCommitment dataset adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-002-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-ContractCommitment-D-001-M",
+        "CCT-ContractCommitment-D-002-M",
+        "NullHandling-A-000-M",
+        "ColumnHandling-A-000-M"
+      ]
+    }
+  },
+  "CCT-ContractCommitment-D-001-M": {
+    "Function": "Composite",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "Columns present composite rule",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ContractCommitment dataset adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitment-D-003-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-ContractCommitment-D-003-M"
+      ]
+    }
+  },
+  "CCT-ContractCommitment-D-002-M": {
+    "Function": "Composite",
+    "Reference": "ContractCommitment",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "Notes": "Columns composite rule",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ContractCommitment dataset adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CCT-ContractCommitmentPeriodEnd-C-000-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CCT-ContractCommitmentPeriodEnd-C-000-M"
+      ]
+    }
+  },
+  "CCT-ContractCommitment-D-003-M": {
+    "Function": "Presence",
+    "Reference": "ContractCommitmentPeriodEnd",
+    "EntityType": "Dataset",
+    "EntityName": "Contract Commitment Period End",
+    "EntityId": "ContractCommitmentPeriodEnd",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 10,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitmentPeriodEnd MUST be present in a Contract Commitment FOCUS dataset.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnPresent",
+        "ColumnName": "ContractCommitmentPeriodEnd"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
