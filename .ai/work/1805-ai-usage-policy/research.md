@@ -537,6 +537,14 @@ Example from `development-processes.md`:
 
 ---
 
+## AI Tool Terms of Service Review
+
+Per PR #1823 review feedback, @shawnalpay asked whether mainstream AI tools place contractual restrictions on output that would conflict with FOCUS' open source license or IP policies. @mike-finopsorg researched the major tools and confirmed no conflicts exist.
+
+Full validated review documented in [supporting_content/guidelines/ai-usage-guidelines.md](../../supporting_content/guidelines/ai-usage-guidelines.md).
+
+---
+
 ## Next Steps
 
 1. Present research findings and options to working group
