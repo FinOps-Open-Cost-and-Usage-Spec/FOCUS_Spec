@@ -8,8 +8,8 @@ The Delivery Handling attribute defines how a data generator delivers a *dataset
 
 FOCUS supports two delivery mechanisms:
 
-* Overwrite. Existing rows are replaced.
-* Append. Existing rows are preserved.
+* Overwrite: Each delivery provides a complete snapshot, replacing any previously delivered dataset artifact for the same period.
+* Append: Each delivery adds new data, while previously delivered dataset artifacts are preserved.
 
 These mechanisms are not mutually exclusive, and hybrid implementations are common, allowing data generators to meet specific technical and auditability requirements.
 
@@ -17,7 +17,7 @@ For more information on corrections, see the [Correction Handling attribute](*co
 
 #### Overwrite Delivery
 
-In the Overwrite delivery mechanism, each *dataset artifact* provides a complete snapshot of data for a given [*billing period*](#glossary:billing-period), based on the data available at the time of delivery. Subsequent *dataset artifacts* typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism provides delivery simplicity, but it lacks inherent auditability.
+In the Overwrite delivery mechanism, each *dataset artifact* provides a complete snapshot of data for a predefined period (e.g., a day, a month, or a [*billing period*](#glossary:billing-period)), based on the data available at the time of delivery. Subsequent *dataset artifacts* typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism provides delivery simplicity, but it lacks inherent auditability.
 
 Subsequent *dataset artifacts* using the Overwrite mechanism may include the following:
 
@@ -32,7 +32,7 @@ In the Append delivery mechanism, a subsequent *dataset artifact* appends new re
 
 Subsequent *dataset artifacts* using the Append mechanism may include the following:
 
-* Unchanged recorded are not included.
+* Unchanged records are not included.
 * Updated records are recorded as new entries, representing the difference.
 * Additional records supplement previously delivered data.
 * Omitted records are recorded as new entries, representing the reversal.
@@ -54,6 +54,7 @@ Defines how a data generator delivers a *dataset artifact* to a customer.
 The delivery of a *dataset artifact* adheres to the following requirements:
 
 * The delivery mechanism(s) used to deliver FOCUS *dataset artifacts* MUST be documented by the data generator.
+* The delivery handling MUST ensure that the information in the corresponding FOCUS Metadata [Recency](#metadata.recency) and [TimeSectors](#metadata.recency.timesectors) accurately reflect the data in the delivered *dataset artifacts*.
 
 ## Exceptions
 

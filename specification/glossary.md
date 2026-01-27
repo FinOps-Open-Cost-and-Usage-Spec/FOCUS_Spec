@@ -86,9 +86,9 @@ The agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pr
 
 <a name="glossary:correction"><b>Correction</b></a>
 
-Any modification (including updates, additions, or omissions) to previously provided [*charges*](#glossary:charge), whether from an [*open billing period*](#glossary:open-billing-period) or a [*closed billing period*](#glossary:closed-billing-period). A correction may consist of multiple simultaneous modifications, each representing an update or omission of a previously delivered charge, or the addition of a new charge, collectively forming the correction.
+Any modification (including updates, additions, or omissions) to previously provided [*charges*](#glossary:charge) for a [*period*](#glossary:period) that has already been reported, regardless of whether the corresponding [*billing period*](#glossary:billing-period) is open or closed. A correction (lowercase) may consist of one or more simultaneous changes, including updates to existing charges, the omission of previously delivered charges, or the addition of new charges that supplement previously reported data for that period.
 
-The term "Correction" (capitalized) refers specifically to an allowed value in the [Charge Class](#datasets.costandusage.chargeclass) column, designating charges used to correct cost or usage data from a previously closed billing period. In contrast, the broader concept of "corrections" (lowercase) includes all types of modifications, regardless of the [*billing period*](#glossary:billing-period) status.
+The term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datasets.costandusage.chargeclass) column and designates *charges* used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period). In contrast, the broader concept of correction (lowercase) represents all modifications to previously reported charges, resulting in adjustments to previously reported cost and usage data for the affected *period*.
 
 <a name="glossary:credit"><b>Credit</b></a>
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Invoice Handling attribute defines how a [*FOCUS dataset*](#glossary:FOCUS-dataset) should reflect details for the information presented on an [*invoice*](#glossary:invoice).
+The Invoice Handling attribute defines how [*FOCUS datasets*](#glossary:FOCUS-dataset) and corresponding [*FOCUS dataset artifacts*](#glossary:dataset-artifact) should reflect details for the information presented on an [*invoice*](#glossary:invoice).
 
 This attribute introduces requirements for how monetary [*charges*](#glossary:charge) such as usage, taxes, credits, refunds, etc, inclusive of support, training, and marketplace transactions, and any other type of charge should be captured and categorized. It also defines expectations around the completeness and consistency of invoice-level totals within a FOCUS dataset, enabling FOCUS [*dataset artifacts*](#glossary:dataset-artifact) to be used in a system of record for all invoiced costs.
 
@@ -10,7 +10,7 @@ FinOps practitioners must be able to reconcile *FOCUS datasets* with the corresp
 
 ### Invoice Reconciliation and Issuance
 
-Prior to [*invoice issuance*](#glossary:issued-invoice), the invoice must undergo a reconciliation process. In this process, the *invoice issuer* ensures that the aggregated cost and usage information presented on the *invoice* matches the detailed cost and usage *charges* presented in a *FOCUS dataset*.
+Prior to [*invoice issuance*](#glossary:issued-invoice), the invoice must undergo a reconciliation process. In this process, the *invoice issuer* ensures that the aggregated cost and usage information presented on the *invoice* matches the aggregated data provided *FOCUS dataset artifacts*.
 
 At the conclusion of this process, the total monetary value presented on an invoice must match the total monetary value presented in the [Billed Cost](#datasets.costandusage.billedcost) metric of a FOCUS dataset. Further, the detail presented on an invoice must match the values of Billed Cost when aggregated by the related combination of the following FOCUS dataset dimensions:
 
@@ -29,7 +29,7 @@ This information then allows FinOps practitioners to perform their own *invoice 
 
 ### Open and Closed Billing Periods
 
-While a billing period is open, one or more FOCUS dataset artifacts may be generated to represent that timeframe. At some point, the billing period will be closed.
+While a billing period is open, one or more *FOCUS dataset artifacts* may be generated to represent that timeframe. At some point, the billing period will be closed.
 
 A [*closed billing period*](#glossary:closed-billing-period) represents a billing period for which all expected invoices have been successfully issued by an invoice issuer. Once a billing period is financially closed, no additional invoices are expected to be associated with that timeframe.
 
@@ -51,11 +51,10 @@ Defines how a *FOCUS dataset* should reflect details for the information present
 
 * All costs that appear on any invoice issued to a [*BillingAccountId*](#datasets.costandusage.billingaccountid) MUST be included in one or more FOCUS Cost and Usage *dataset artifacts*.
 * If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, data generators MUST include custom columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the FOCUS Cost and Usage *dataset artifacts*.
-* *Invoice reconciliation* adheres to the following additional requirements:
-  * Invoice issuer MUST perform *Invoice reconciliation* between an *invoice* and its associated FOCUS *dataset artifacts* before issuing the invoice.
-  * *Invoice reconciliation* process MUST include (but is not limited to) the following metric and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuerName, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd.
-  * Invoice issuer MUST document which FOCUS dataset columns are included in the *invoice reconciliation* process.
-* The data generator MUST notify the customer if the contents of a *dataset artifact* associated with an *issued invoice* are altered after final delivery.
+* *Invoice reconciliation* process adheres to the following additional requirements:
+  * *Invoice reconciliation* between an *invoice* and its associated FOCUS *dataset artifacts* MUST be performed by *invoice issuer*  before [InvoiceStatus](##datasets.invoicedetail.invoicestatus) is set to "Closed".
+  * *Invoice reconciliation* MUST include (but is not limited to) the following metric and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuerName, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd.
+  * *Invoice reconciliation* process MUST be documented by the invoice issuer, including a list of columns from both FOCUS CostAndUsage and InvoiceDetails dataset instances that are included in the reconciliation.
 * The *billing period* (i.e., the timeframe from BillingPeriodStart to BillingPeriodEnd) of a charge MUST match the *billing period* of its associated [*InvoiceId*](#datasets.costandusage.invoiceid).
 
 ## Exceptions
@@ -64,6 +63,12 @@ Defines how a *FOCUS dataset* should reflect details for the information present
   * Tax exemption notifications
   * SLA credit details when the credit is already applied to the charged amount
 * If such informational items are excluded, data generators MUST document this in their FOCUS implementation guide and ensure the sum of included charges still equals the invoice total.
+* Exceptions to the restrictions on *closed billing periods* MAY apply in the following cases:
+  * Upon explicit request from the end-user (subject to validation and approval processes).
+  * Due to technical issues encountered during billing period closure.
+* Exceptions to the restrictions on *issued invoices* MAY apply in the following cases:
+  * Upon explicit request from the end-user (subject to validation and approval processes).
+  * Due to technical issues encountered during or after invoice issuance.
 
 ## Introduced (version)
 

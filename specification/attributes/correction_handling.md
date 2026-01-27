@@ -17,11 +17,11 @@ Accurate correction handling is essential for a range of business-critical proce
 
 FOCUS supports three styles for correcting original records:
 
-| Correction Style | Delivery Mechanism | Correction Style Description                                                                         |
-| ---------------- | ------------------ | ---------------------------------------------------------------------------------------------------- |
-| Replacement      | Overwrite          | Original records are ignored and replaced by correction records.                                                        |
-| Delta            | Append             | Original records are preserved and modified by correction records.                                             |
-| Ledger           | Append             | Original records are preserved and decremented/incremented by correction records. |
+| Correction Style | Delivery Mechanism | Correction Style Description                                                                                        |
+| ---------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| Replacement      | Overwrite          | Original records are not corrected individually; each delivery supersedes all previously delivered dataset artifacts for the period with a new snapshot. |
+| Delta            | Append             | Original records are preserved; corrections are appended as additive adjustment records applied during aggregation. |
+| Ledger           | Append             | Original records are preserved; corrections are modeled as explicit reversal and re-entry records.                  |
 
 For more information on delivery mechanisms for *dataset artifacts*, see the [Delivery Handling attribute](#deliveryhandling).
 
