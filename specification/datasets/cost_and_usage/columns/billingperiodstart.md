@@ -8,7 +8,7 @@ BillingPeriodStart adheres to the following requirements:
 
 * BillingPeriodStart MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingPeriodStart MUST be of type Date/Time.
-* BillingPeriodStart MUST conform to [Date/TimeFormat](#attributes.date/timeformat) requirements.
+* BillingPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodStart MUST NOT be null.
 * BillingPeriodStart MUST be the *inclusive start bound* of the *billing period*.
 
@@ -32,7 +32,7 @@ The *inclusive start bound* of a *billing period*.
 | Feature level   | Mandatory                            |
 | Allows nulls    | False                                |
 | Data type       | Date/Time                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Value format    | [DateTime Format](#attributes.date/timeformat) |
 
 ## Introduced (version)
 

@@ -8,7 +8,7 @@ BillingPeriodEnd adheres to the following requirements:
 
 * BillingPeriodEnd MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingPeriodEnd MUST be of type Date/Time.
-* BillingPeriodEnd MUST conform to [Date/TimeFormat](#attributes.date/timeformat) requirements.
+* BillingPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodEnd MUST NOT be null.
 * BillingPeriodEnd MUST be the *exclusive end bound* of the *billing period*.
 
@@ -32,7 +32,7 @@ The *exclusive end bound* of a *billing period*.
 | Feature level   | Mandatory                            |
 | Allows nulls    | False                                |
 | Data type       | Date/Time                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Value format    | [DateTime Format](#attributes.date/timeformat) |
 
 ## Introduced (version)
 

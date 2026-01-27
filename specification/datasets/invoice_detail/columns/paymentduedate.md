@@ -8,7 +8,7 @@ PaymentDueDate adheres to the following requirements:
 
 * PaymentDueDate MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PaymentDueDate MUST be of type Date/Time.
-* PaymentDueDate MUST conform to [Date/TimeFormat](#attributes.datetimeformat) requirements.
+* PaymentDueDate MUST conform to [DateTimeFormat](#attributes.datetimeformat) requirements.
 * PaymentDueDate MUST be the date specified by the [*invoice issuer*](#glossary:invoice-issuer) as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).
 
 ## Column ID
@@ -31,7 +31,7 @@ The date by which the payment for an invoice is expected to be received by the i
 | Feature level   | Mandatory                       |
 | Allows nulls    | True                            |
 | Data type       | Date/Time                       |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Value format    | [DateTime Format](#attributes.date/timeformat) |
 
 ## Introduced (version)
 

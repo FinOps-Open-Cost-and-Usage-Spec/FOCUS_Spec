@@ -8,7 +8,7 @@ InvoiceDetailLastUpdated adheres to the following requirements:
 
 * InvoiceDetailLastUpdated MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceDetailLastUpdated MUST be of type Date/Time.
-* InvoiceDetailLastUpdated MUST conform to [Date/TimeFormat](#attributes.date/timeformat) requirements.
+* InvoiceDetailLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * InvoiceDetailLastUpdated MUST represent the most recent moment in time when any column value of the record identified by [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) was created or modified.
 * InvoiceDetailLastUpdated MUST be greater than or equal to [InvoiceDetailCreated](#datasets.invoicedetail.invoicedetailcreated).
 
@@ -32,7 +32,7 @@ The timestamp when the Invoice Detail record was last updated.
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | Date/Time                        |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Value format    | [DateTime Format](#attributes.date/timeformat) |
 
 ## Introduced (version)
 

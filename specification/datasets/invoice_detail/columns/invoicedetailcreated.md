@@ -8,7 +8,7 @@ InvoiceDetailCreated adheres to the following requirements:
 
 * InvoiceDetailCreated MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceDetailCreated MUST be of type Date/Time.
-* InvoiceDetailCreated MUST conform to [Date/TimeFormat](#attributes.date/timeformat) requirements.
+* InvoiceDetailCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * InvoiceDetailCreated MUST represent the moment in time the Invoice Detail record was instantiated.
 
 ## Column ID
