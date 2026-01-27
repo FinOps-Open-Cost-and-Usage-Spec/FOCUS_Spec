@@ -1,6 +1,6 @@
 # Billing Period Created
 
-Billing Period Created is the timestamp when the [Billing Period](#datasets.billingperiod) record was first created. This timestamp facilitates auditiability of the charge and invoice lifecycle, allowing the FinOps practitioner to distinguish betwee the time between the time of service consumption and the time of financial record generation.
+Billing Period Created is the timestamp when the [Billing Period](#datasets.billingperiod) record was first created. This timestamp facilitates auditability of the charge and invoice lifecycle, allowing the FinOps practitioner to distinguish between the time of service consumption and the time of financial record generation.
 
 ## Requirements
 
