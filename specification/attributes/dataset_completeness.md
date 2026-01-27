@@ -1,4 +1,4 @@
-# Scenario Completeness
+# Dataset Completeness
 
 FinOps practitioners need [*FOCUS datasets*](#glossary:FOCUS-dataset) to include the same information available in [*native datasets*](#glossary:native-dataset). When *FOCUS datasets* lack columns needed for critical scenarios, like organizational hierarchy attribution, commitment discount tracking, or provider-specific optimizations, practitioners cannot adopt FOCUS. Missing columns force practitioners to use proprietary *native datasets*, making FOCUS an added overhead rather than an open, provider-agnostic alternative.
 
@@ -6,11 +6,11 @@ This attribute ensures [*data generators*](#glossary:data-generator) provide com
 
 ## Attribute ID
 
-ScenarioCompleteness
+DatasetCompleteness
 
 ## Attribute Name
 
-Scenario Completeness
+Dataset Completeness
 
 ## Description
 
@@ -18,7 +18,7 @@ Defines requirements for a *FOCUS dataset* to include custom columns for *native
 
 ## Requirements
 
-* A *FOCUS dataset* MUST include custom columns for [*native dataset*](#glossary:native-dataset) columns not represented in FOCUS columns.
+* A *FOCUS dataset* MUST include custom columns for *native dataset* columns not represented in FOCUS columns.
   * A *FOCUS dataset* MAY exclude *native dataset* columns that do not support any analysis or reporting scenarios.
   * A *FOCUS dataset* SHOULD NOT include custom columns that duplicate information already captured in FOCUS columns.
   * A *FOCUS dataset* SHOULD maintain the same data fidelity for custom columns as their *native dataset* equivalents.

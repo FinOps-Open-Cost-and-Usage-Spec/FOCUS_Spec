@@ -1,8 +1,8 @@
-# Scenario Completeness
+# Dataset Completeness
 
 ## Design Rationale
 
-The Scenario Completeness attribute ensures that FOCUS datasets include custom columns for native dataset columns not represented in FOCUS columns. This attribute complements Column Handling by addressing *what* custom columns should be included, while Column Handling addresses *how* custom columns should be named and formatted.
+The Dataset Completeness attribute ensures that FOCUS datasets include custom columns for native dataset columns not represented in FOCUS columns. This attribute complements Column Handling by addressing *what* custom columns should be included, while Column Handling addresses *how* custom columns should be named and formatted.
 
 Without this attribute, practitioners adopting FOCUS datasets may lose access to provider-specific information needed for critical analyses, forcing them to maintain parallel native dataset workflows. This attribute establishes clear expectations for data completeness while maintaining data quality.
 
@@ -124,11 +124,11 @@ Custom column values must be handled consistently when rows are split or aggrega
 
 ### Column Handling
 
-The Column Handling attribute defines *how* custom columns should be named and formatted (using the `x_` prefix convention). Scenario Completeness defines *what* custom columns should be included to ensure complete coverage of native dataset columns. These attributes work together to ensure custom columns are both properly formatted and comprehensively included.
+The Column Handling attribute defines *how* custom columns should be named and formatted (using the `x_` prefix convention). Dataset Completeness defines *what* custom columns should be included to ensure complete coverage of native dataset columns. These attributes work together to ensure custom columns are both properly formatted and comprehensively included.
 
 ### Provider Column Mappings (FR #1098)
 
-For comprehensive documentation of how native columns map to FOCUS columns (both standard and custom), see the provider column mappings feature request (#1098). While Scenario Completeness requires documentation of custom columns, #1098 addresses the broader need for complete native-to-FOCUS column mapping documentation across all column types.
+For comprehensive documentation of how native columns map to FOCUS columns (both standard and custom), see the provider column mappings feature request (#1098). While Dataset Completeness requires documentation of custom columns, #1098 addresses the broader need for complete native-to-FOCUS column mapping documentation across all column types.
 
 ## Design Decisions
 

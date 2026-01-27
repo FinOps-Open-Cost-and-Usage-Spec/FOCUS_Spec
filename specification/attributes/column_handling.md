@@ -9,7 +9,7 @@ A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that c
 * Why the charge was incurred for a specific price.
 * How much the charge is and how that cost is calculated.
 
-While FOCUS establishes the core structure and standardizes columns for consistent reporting of cost and usage data, the diverse and evolving landscape of service providers and service offerings may require [*data generators*](#metadata.datagenerator) to include custom columns in a *FOCUS dataset*. These additional columns enable deeper analysis and provide more detailed descriptions of usage that may not be fully captured by standard FOCUS columns. See the [Scenario Completeness](#attributes.scenariocompleteness) attribute for requirements on what custom columns to include.
+While FOCUS establishes the core structure and standardizes columns for consistent reporting of cost and usage data, the diverse and evolving landscape of service providers and service offerings may require [*data generators*](#metadata.datagenerator) to include custom columns in a *FOCUS dataset*. These additional columns enable deeper analysis and provide more detailed descriptions of usage that may not be fully captured by standard FOCUS columns. See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what custom columns to include.
 
 Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming and ordering conventions for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
