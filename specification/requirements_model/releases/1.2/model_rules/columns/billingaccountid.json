@@ -1,0 +1,145 @@
+{
+  "BillingAccountId-C-000-M": {
+    "Function": "Composite",
+    "Reference": "BillingAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The BillingAccountId column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingAccountId-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingAccountId-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingAccountId-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingAccountId-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "BillingAccountId-C-005-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-024-M",
+        "BillingAccountId-C-001-M",
+        "BillingAccountId-C-002-M",
+        "BillingAccountId-C-003-M",
+        "BillingAccountId-C-004-M",
+        "BillingAccountId-C-005-O"
+      ]
+    }
+  },
+  "BillingAccountId-C-001-M": {
+    "Function": "Nullability",
+    "Reference": "BillingAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountId MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "BillingAccountId",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "BillingAccountId-C-002-M": {
+    "Function": "Type",
+    "EntityType": "Column",
+    "Reference": "BillingAccountId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "BillingAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "BillingAccountId-C-003-M": {
+    "Function": "Format",
+    "EntityType": "Column",
+    "Reference": "BillingAccountId",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountId MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "BillingAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "BillingAccountId-C-004-M": {
+    "Function": "Validation",
+    "Reference": "BillingAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountId MUST be a unique identifier within a provider.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "BillingAccountId-C-005-O": {
+    "Function": "Validation",
+    "Reference": "BillingAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountId SHOULD be a fully-qualified identifier.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
