@@ -8,7 +8,9 @@ InvoiceDetailId adheres to the following requirements:
 
 * InvoiceDetailId MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceDetailId MUST be of type String.
-* InvoiceDetailId MUST uniquely identify a specific record within a given [InvoiceId](#datasets.invoicedetail.invoiceid).
+* InvoiceDetailId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* InvoiceDetailId MUST NOT be null.
+* InvoiceDetailId MUST uniquely identify a record within a given [InvoiceId](#datasets.invoicedetail.invoiceid).
 
 ## Column ID
 
@@ -24,13 +26,13 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 
 ## Content constraints
 
-|    Constraint    |              Value              |
+|    Constraint    |              Value             |
 |:----------------|:--------------------------------|
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | <unspecified>                   |
+| Value format    | \<unspecified>                  |
 
 ## Introduced (version)
 

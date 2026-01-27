@@ -8,6 +8,8 @@ PaymentTerms adheres to the following requirements:
 
 * PaymentTerms MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PaymentTerms MUST be of type String.
+* PaymentTerms MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* PaymentTerms MUST NOT be null.
 * PaymentTerms MUST represent the payment terms (e.g., "Net 30") as defined on the corresponding invoice.
 
 ## Column ID
@@ -24,13 +26,13 @@ The terms (typically focused on timeframe) by which the invoice issuer expects t
 
 ## Content constraints
 
-|    Constraint    |              Value              |
+|    Constraint   |              Value              |
 |:----------------|:--------------------------------|
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | \<unspecified>                   |
+| Value format    | \<unspecified>                  |
 
 ## Introduced (version)
 

@@ -8,8 +8,10 @@ InvoiceStatus adheres to the following requirements:
 
 * InvoiceStatus MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceStatus MUST be of type String.
+* InvoiceStatus MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* InvoiceStatus MUST NOT be null.
 * InvoiceStatus MUST be one of the allowed values defined in the [Allowed Values](#datasets.invoicedetail.invoicestatus.allowed-values) section.
-* InvoiceStatus MUST represent the current state of the invoice as defined by the [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
+* InvoiceStatus MUST represent the current state of the invoice.
 
 ## Column ID
 

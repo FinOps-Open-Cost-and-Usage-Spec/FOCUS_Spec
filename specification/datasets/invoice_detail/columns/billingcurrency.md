@@ -1,12 +1,12 @@
 # Billing Currency
 
-[*Billing currency*](#glossary:billing-currency) is an identifier that represents the currency that a [*charge*](#glossary:charge) for [*resources*](#glossary:resource) or [*services*](#glossary:service) was billed in. Billing Currency is commonly used in scenarios where costs need to be grouped or aggregated.
+[*Billing Currency*](#glossary:billing-currency) is an identifier that represents the currency that a [*charge*](#glossary:charge) for [*resources*](#glossary:resource) or [*services*](#glossary:service) was billed in. Billing Currency is commonly used in scenarios where costs need to be grouped or aggregated.
 
 ## Requirements
 
 BillingCurrency adheres to the following requirements:
 
-* BillingCurrency MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* BillingCurrency MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingCurrency MUST be of type String.
 * BillingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingCurrency MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements.

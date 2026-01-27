@@ -6,10 +6,11 @@ Invoice Issuer Name is the name of the entity responsible for issuing payable in
 
 InvoiceIssuerName adheres to the following requirements:
 
-* InvoiceIssuerName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* InvoiceIssuerName MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceIssuerName MUST be of type String.
 * InvoiceIssuerName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceIssuerName MUST NOT be null.
+* InvoiceIssuerName MUST represent the entity that issued the invoice.
 
 See [Appendix: Participating Entity Identification Examples](#appendix.examples:participatingentityidentification) section for examples of Invoice Issuer Name values across various use case scenarios.
 

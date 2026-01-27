@@ -6,11 +6,12 @@ A Reference Invoice ID is an invoice-issuer-assigned identifier for an invoice t
 
 ReferenceInvoiceId adheres to the following requirements:
 
-* ReferenceInvoiceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) if the provider supports linking adjustments to original invoices.
+* ReferenceInvoiceId MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ReferenceInvoiceId MUST be of type String.
-* ReferenceInvoiceId MUST be the same as the [InvoiceId](#datasets.costandusage.invoiceid) of the original [*invoice*](#glossary:invoice) to which the current adjustment applies.
-* ReferenceInvoiceId MUST NOT be null for *charges* where [ChargeCategory](#datasets.costandusage.chargecategory) is 'Credit' or 'Refund' and a specific original invoice is identified.
-* ReferenceInvoiceId MUST be null for *charges* that do not reference a specific previous [*invoice*](#glossary:invoice).
+* ReferenceInvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* ReferenceInvoiceId MUST NOT be null.
+* ReferenceInvoiceId MUST equal the [InvoiceId](#datasets.costandusage.invoiceid) of the original [*invoice*](#glossary:invoice) this invoice adjusts.
+* ReferenceInvoiceId MUST equal the InvoiceId of the current invoice if it does not adjust another invoice.
 
 ## Column ID
 
@@ -26,7 +27,7 @@ The invoice-issuer-assigned identifier for an invoice that affects charges as st
 
 ## Content constraints
 
-|    Constraint    |              Value              |
+|    Constraint    |              Value             |
 |:----------------|:--------------------------------|
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |

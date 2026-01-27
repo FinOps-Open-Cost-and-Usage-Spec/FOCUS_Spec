@@ -8,7 +8,10 @@ InvoiceDetailDescription adheres to the following requirements:
 
 * InvoiceDetailDescription MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceDetailDescription MUST be of type String.
-* InvoiceDetailDescription MUST be the description of the cost represented by the [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid).
+* InvoiceDetailDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* InvoiceDetailDescription SHOULD NOT be null.
+* InvoiceDetailDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
+* InvoiceDetailDescription MUST describe the [*charges*](#glossary:charge) represented by the [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid).
 
 ## Column ID
 
@@ -28,9 +31,9 @@ The invoice-issuer-provided description of an invoice line item.
 |:----------------|:--------------------------------|
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
-| Allows nulls    | False                           |
+| Allows nulls    | True                            |
 | Data type       | String                          |
-| Value format    | <unspecified>                   |
+| Value format    | \<unspecified>                   |
 
 ## Introduced (version)
 
