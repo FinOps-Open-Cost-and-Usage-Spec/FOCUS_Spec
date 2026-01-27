@@ -3,3 +3,4 @@
 !INCLUDE "billingperiodlastupdated.md",1
 !INCLUDE "billingperiodstart.md",1
 !INCLUDE "billingperiodstatus.md",1
+!INCLUDE "invoiceissuername.md",1
