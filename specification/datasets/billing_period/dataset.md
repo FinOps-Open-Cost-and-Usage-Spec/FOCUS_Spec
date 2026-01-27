@@ -11,7 +11,7 @@ The Billing Period dataset is a supporting dataset that defines the time interva
 | [Billing Period Last Updated](#datasets.billingperiod.billingperiodlastupdated) | Dimension | Mandatory | False        | Date/Time |
 | [Billing Period Start](#datasets.billingperiod.billingperiodstart)       | Dimension   | Mandatory     | False        | Date/Time |
 | [Billing Period Status](#datasets.billingperiod.billingperiodstatus)     | Dimension   | Mandatory     | False        | String    |
-[Invoice Issuer Name](#datasets.billingperiod.invoiceissuername)     | Dimension   | Mandatory     | False        | String    |
+| [Invoice Issuer Name](#datasets.billingperiod.invoiceissuername)     | Dimension   | Mandatory     | False        | String    |
 
 ## Relationships<!--SkipTOC-->
 
