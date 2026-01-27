@@ -156,6 +156,10 @@ A FOCUS-defined column that provides numeric values, allowing for aggregation op
 
 A government-issued currency (e.g., US dollars, Euros).
 
+<a name="glossary:native-dataset"><b>Native Dataset</b></a>
+
+A dataset provided by a [*data generator*](#metadata.datagenerator) in a format other than FOCUS. For [*service providers*](#glossary:service provider), this typically refers to their proprietary billing export (e.g., AWS Cost and Usage Report, Azure Cost Details, GCP BigQuery Billing Export). For FinOps tool vendors, this refers to any non-FOCUS dataset they offer to [*practitioners*](#glossary:practitioner).
+
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
 A contractual agreement where a customer commits to specific spend or usage goals over a specified [*period*](#glossary:period) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.

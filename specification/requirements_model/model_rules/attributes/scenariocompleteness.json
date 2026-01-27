@@ -9,7 +9,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "A FOCUS dataset MUST include custom columns to enable the same analysis and reporting scenarios available in native datasets.",
+      "MustSatisfy": "A FOCUS dataset MUST include custom columns for native dataset columns not represented in FOCUS columns.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -40,7 +40,15 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "ScenarioCompleteness-A-007-M"
+            "ModelRuleId": "ScenarioCompleteness-A-007-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ScenarioCompleteness-A-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ScenarioCompleteness-A-009-M"
           }
         ]
       },
@@ -52,7 +60,9 @@
         "ScenarioCompleteness-A-004-O",
         "ScenarioCompleteness-A-005-O",
         "ScenarioCompleteness-A-006-O",
-        "ScenarioCompleteness-A-007-M"
+        "ScenarioCompleteness-A-007-O",
+        "ScenarioCompleteness-A-008-M",
+        "ScenarioCompleteness-A-009-M"
       ]
     }
   },
@@ -66,7 +76,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "A FOCUS dataset MUST include custom columns necessary to achieve the same analysis and reporting scenarios that are available with native cost and usage datasets.",
+      "MustSatisfy": "A FOCUS dataset MUST include custom columns for native dataset columns not represented in FOCUS columns.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -83,7 +93,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "A FOCUS dataset MAY exclude columns from the native dataset that do not support any analysis or reporting scenarios.",
+      "MustSatisfy": "A FOCUS dataset MAY exclude native dataset columns that do not support any analysis or reporting scenarios.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -100,6 +110,23 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
+      "MustSatisfy": "A FOCUS dataset SHOULD NOT include custom columns that duplicate information already captured in FOCUS columns.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ScenarioCompleteness-A-004-O": {
+    "Function": "Validation",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
       "MustSatisfy": "A FOCUS dataset SHOULD maintain the same data fidelity for custom columns as their native dataset equivalents.",
       "Keyword": "SHOULD",
       "Requirement": {},
@@ -107,7 +134,7 @@
       "Dependencies": []
     }
   },
-  "ScenarioCompleteness-A-004-O": {
+  "ScenarioCompleteness-A-005-O": {
     "Function": "Validation",
     "Reference": "ScenarioCompleteness",
     "EntityType": "Attribute",
@@ -124,7 +151,7 @@
       "Dependencies": []
     }
   },
-  "ScenarioCompleteness-A-005-O": {
+  "ScenarioCompleteness-A-006-O": {
     "Function": "Validation",
     "Reference": "ScenarioCompleteness",
     "EntityType": "Attribute",
@@ -141,7 +168,7 @@
       "Dependencies": []
     }
   },
-  "ScenarioCompleteness-A-006-O": {
+  "ScenarioCompleteness-A-007-O": {
     "Function": "Validation",
     "Reference": "ScenarioCompleteness",
     "EntityType": "Attribute",
@@ -158,7 +185,7 @@
       "Dependencies": []
     }
   },
-  "ScenarioCompleteness-A-007-M": {
+  "ScenarioCompleteness-A-008-M": {
     "Function": "Validation",
     "Reference": "ScenarioCompleteness",
     "EntityType": "Attribute",
@@ -170,6 +197,23 @@
     "ValidationCriteria": {
       "MustSatisfy": "A FOCUS dataset MUST handle custom column values consistently to preserve data integrity when rows are split or aggregated to conform to other FOCUS requirements.",
       "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ScenarioCompleteness-A-009-M": {
+    "Function": "Validation",
+    "Reference": "ScenarioCompleteness",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.4",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom columns MUST NOT introduce values that would violate the integrity of FOCUS-defined dimensions and metrics, particularly summable values such as costs and quantities.",
+      "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

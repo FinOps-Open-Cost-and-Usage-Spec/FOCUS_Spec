@@ -2,7 +2,7 @@
 
 ## Design Rationale
 
-The Scenario Completeness attribute ensures that FOCUS datasets enable practitioners to achieve the same analysis and reporting scenarios available in native datasets. This attribute complements Column Handling by addressing *what* custom columns should be included, while Column Handling addresses *how* custom columns should be named and formatted.
+The Scenario Completeness attribute ensures that FOCUS datasets include custom columns for native dataset columns not represented in FOCUS columns. This attribute complements Column Handling by addressing *what* custom columns should be included, while Column Handling addresses *how* custom columns should be named and formatted.
 
 Without this attribute, practitioners adopting FOCUS datasets may lose access to provider-specific information needed for critical analyses, forcing them to maintain parallel native dataset workflows. This attribute establishes clear expectations for data completeness while maintaining data quality.
 
@@ -124,7 +124,7 @@ Custom column values must be handled consistently when rows are split or aggrega
 
 ### Column Handling
 
-The Column Handling attribute defines *how* custom columns should be named and formatted (using the `x_` prefix convention). Scenario Completeness defines *what* custom columns should be included to ensure complete scenario coverage. These attributes work together to ensure custom columns are both properly formatted and comprehensively included.
+The Column Handling attribute defines *how* custom columns should be named and formatted (using the `x_` prefix convention). Scenario Completeness defines *what* custom columns should be included to ensure complete coverage of native dataset columns. These attributes work together to ensure custom columns are both properly formatted and comprehensively included.
 
 ### Provider Column Mappings (FR #1098)
 
@@ -150,12 +150,56 @@ The requirements in this attribute address different concerns:
 
 These clarifications were incorporated into the normative text to avoid confusion with FR #1091 and FR #1093, which address column selection and data granularity respectively.
 
+### Scenario-Based vs Column-Based Framing (PR #1800)
+
+During review, feedback suggested the requirement be more concrete and enforceable. Two framing approaches were considered:
+
+#### Option A: Scenario-based (original approach)
+
+* Requirement: Include custom columns to achieve the same analysis and reporting *scenarios*
+* Pros: Flexible, accommodates provider differences, focuses on practitioner outcomes
+* Cons: Scenarios are subjective and harder to validate objectively
+
+#### Option B: Column-based (adopted approach)
+
+* Requirement: Include custom columns for all native dataset *columns* not represented in FOCUS
+* Pros: More concrete, easier to validate against native dataset documentation
+* Cons: May require columns that don't support meaningful scenarios ("junk drawer" concern)
+
+#### Decision
+
+The attribute was initially drafted with scenario-based framing but switched to column-based framing during PR review because:
+
+1. Scenario-based requirements are difficult to validate objectively - "same analysis and reporting scenarios" is subjective
+2. Column-based framing is concrete and enforceable - native dataset documentation provides a clear reference point
+3. The MAY requirement allowing exclusion of columns that don't support analysis or reporting scenarios addresses the "junk drawer" concern, preserving the practical benefits of scenario-based thinking within a column-based framework
+4. Provider column mappings (FR #1098) will provide additional concrete column-level documentation
+
+### Terminology: "Native Dataset" (PR #1800)
+
+During review, the need for a formal term to describe provider-specific, non-FOCUS cost and usage datasets was identified. Several alternatives were considered:
+
+* **Native dataset** - Implies the dataset that is "native to" the provider's platform
+  * Pros: Intuitive, directive, implies the provider's primary dataset
+  * Cons: "Native" has varied connotations in tech contexts
+* **Non-FOCUS dataset** - Defines by exclusion (anything not conforming to FOCUS)
+  * Pros: Neutral, precise
+  * Cons: Too broad - includes any arbitrary dataset, not just the provider's primary billing export
+* **Proprietary dataset** - Emphasizes the closed/vendor-specific nature
+  * Pros: Accurate for provider datasets
+  * Cons: Carries negative connotation ("proprietary = bad"), could be seen as adversarial
+* **Source dataset** / **Provider dataset** - Describes origin
+  * Pros: Simple, descriptive
+  * Cons: "Source" implies FOCUS is derived; "Provider" excludes FinOps tool vendors
+
+#### Outcome
+
+"Native dataset" was chosen because it most precisely conveys the intended meaning: the provider's own cost and usage dataset in their own format. Unlike "non-FOCUS," which could refer to any arbitrary dataset, "native" implies the dataset that belongs to and originates from the provider's platform. A glossary entry was added to formalize the definition.
+
 ## Future Considerations
 
 The following items were identified during development but deferred for future work:
 
-1. **Glossary entry for "native dataset":** The term is used throughout this attribute but not formally defined. Proposed definition: A cost and usage dataset provided by a data generator in a format other than FOCUS. For providers, this typically refers to their proprietary billing export (e.g., AWS Cost and Usage Report, Azure Cost Details, GCP BigQuery Billing Export). For FinOps tool vendors, this refers to any non-FOCUS dataset they offer to practitioners.
+1. **Clarify "data generator" scope:** The glossary should explicitly note that data generators include both providers (cloud, SaaS) and FinOps tool vendors who aggregate or transform billing data.
 
-2. **Clarify "data generator" scope:** The glossary should explicitly note that data generators include both providers (cloud, SaaS) and FinOps tool vendors who aggregate or transform billing data.
-
-3. **GA dataset qualifier (potential):** Consider whether to limit requirements to generally available (GA) native datasets only, excluding preview/beta datasets. This could address provider concerns about matching experimental features.
+2. **GA dataset qualifier (potential):** Consider whether to limit requirements to generally available (GA) native datasets only, excluding preview/beta datasets. This could address provider concerns about matching experimental features.

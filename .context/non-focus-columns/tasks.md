@@ -223,6 +223,8 @@ cd requirements_model && python -m pytest tests/  # Test model
   - [ ] Clarify "data generator" scope - decide if needed for 1.4
   - [ ] GA dataset qualifier - hold for negotiation if needed
 - [ ] Resolve or close all PR review threads
+- [ ] Contract Commitment dataset: Decide if this PR should add conformance or defer to separate PR (see PR discussion #2692032328)
+- [ ] Column Handling cleanup: Decide if descriptive paragraph (lines 12-14) should be simplified now that Scenario Completeness formalizes those requirements (see PR discussion #2691961973)
 - [ ] Move any valuable content from `.context/non-focus-columns/` to `supporting_content/` or related issues
 - [ ] Delete `.context/non-focus-columns/` working folder
 
