@@ -42,7 +42,7 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
-| Column type     | Metric                               |
+| Column type     | Dimension                            |
 | Feature level   | Conditional                          |
 | Allows nulls    | True                                 |
 | Data type       | Decimal                              |

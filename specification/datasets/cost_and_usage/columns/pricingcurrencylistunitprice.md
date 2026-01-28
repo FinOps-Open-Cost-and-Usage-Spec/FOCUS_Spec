@@ -42,7 +42,7 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 
 | Constraint      | Value                                |
 |:----------------|:-------------------------------------|
-| Column type     | Metric                               |
+| Column type     | Dimension                            |
 | Feature level   | Conditional                          |
 | Allows nulls    | True                                 |
 | Data type       | Decimal                              |
