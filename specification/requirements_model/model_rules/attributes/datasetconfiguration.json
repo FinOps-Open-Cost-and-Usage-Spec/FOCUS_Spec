@@ -71,7 +71,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST allow selecting which columns to include.",
+      "MustSatisfy": "A FOCUS dataset MUST allow selecting which columns to include.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -88,7 +88,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST produce conformant column values regardless of which columns are included.",
+      "MustSatisfy": "A FOCUS dataset MUST produce conformant column values regardless of which columns are included.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -105,7 +105,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets SHOULD sum metric columns by default when the selected dimension columns result in rows with identical values.",
+      "MustSatisfy": "A FOCUS dataset SHOULD sum metric columns by default when the selected dimension columns result in rows with identical values.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -122,7 +122,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST allow selecting the time granularity based on ChargePeriodStart, when available.",
+      "MustSatisfy": "A FOCUS dataset MUST allow selecting the time granularity based on ChargePeriodStart, when available.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -164,7 +164,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST allow selecting daily granularity.",
+      "MustSatisfy": "A FOCUS dataset MUST allow selecting daily granularity.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -181,7 +181,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST allow selecting hourly granularity when the dataset includes costs priced at an hourly or lower grain.",
+      "MustSatisfy": "A FOCUS dataset MUST allow selecting hourly granularity when the dataset includes costs priced at an hourly or lower grain.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -198,7 +198,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets SHOULD allow selecting monthly granularity.",
+      "MustSatisfy": "A FOCUS dataset SHOULD allow selecting monthly granularity.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -215,7 +215,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST sum metric columns based on selected dimension columns with identical values when time granularity is changed.",
+      "MustSatisfy": "A FOCUS dataset MUST sum metric columns based on selected dimension columns with identical values when time granularity is changed.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -232,7 +232,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets SHOULD allow opting in or out of row aggregation (summing metrics).",
+      "MustSatisfy": "A FOCUS dataset SHOULD allow opting in or out of row aggregation (summing metrics).",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "AND",
@@ -264,7 +264,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST sum metric column values when rows are aggregated.",
+      "MustSatisfy": "A FOCUS dataset MUST sum metric column values when rows are aggregated.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -281,7 +281,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets SHOULD use case-insensitive matching when aggregating rows.",
+      "MustSatisfy": "A FOCUS dataset SHOULD use case-insensitive matching when aggregating rows.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -298,7 +298,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets SHOULD allow selecting the FOCUS version.",
+      "MustSatisfy": "A FOCUS dataset SHOULD allow selecting the FOCUS version.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "AND",
@@ -325,7 +325,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST NOT add or remove columns when a specific FOCUS version is selected.",
+      "MustSatisfy": "A FOCUS dataset MUST NOT add or remove columns when a specific FOCUS version is selected.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
@@ -342,7 +342,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets SHOULD allow filtering rows by column values.",
+      "MustSatisfy": "A FOCUS dataset SHOULD allow filtering rows by column values.",
       "Keyword": "SHOULD",
       "Requirement": {
         "CheckFunction": "AND",
@@ -369,7 +369,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST use case-insensitive matching when filtering rows.",
+      "MustSatisfy": "A FOCUS dataset MUST use case-insensitive matching when filtering rows.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -386,7 +386,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "FOCUS datasets MUST include metadata describing the selected configuration options.",
+      "MustSatisfy": "A FOCUS dataset MUST include metadata describing the selected configuration options.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
