@@ -285,7 +285,9 @@
         "ColumnName",
         "Path"
       ],
-      "FormatAttributes": []
+      "FormatAttributes": [
+        "JsonObjectFormat-A-000-M"
+      ]
     },
     "JSONFormatString": {
       "Description": "Check a JSON path in column has a string format",
