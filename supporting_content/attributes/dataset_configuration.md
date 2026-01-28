@@ -1,5 +1,34 @@
 # Dataset Configuration
 
+## Deferred Requirements
+
+The following requirements were developed as part of the Dataset Configuration attribute but deferred from the initial specification to keep the scope focused on column selection (#1091). These are expected to be integrated as normative requirements in a separate change.
+
+### Row aggregation
+
+* A FOCUS dataset SHOULD sum metric columns by default when the selected dimension columns result in rows with identical values.
+* A FOCUS dataset SHOULD allow opting in or out of row aggregation (summing metrics).
+  * A FOCUS dataset MUST sum metric column values when rows are aggregated.
+  * A FOCUS dataset SHOULD use case-insensitive matching when aggregating rows.
+
+### Time granularity
+
+* A FOCUS dataset MUST allow selecting the time granularity based on ChargePeriodStart, when available.
+  * A FOCUS dataset MUST allow selecting daily granularity.
+  * A FOCUS dataset MUST allow selecting hourly granularity when the dataset includes costs priced at an hourly or lower grain.
+  * A FOCUS dataset SHOULD allow selecting monthly granularity.
+  * A FOCUS dataset MUST sum metric columns based on selected dimension columns with identical values when time granularity is changed.
+
+### FOCUS version selection
+
+* A FOCUS dataset SHOULD allow selecting the FOCUS version.
+  * A FOCUS dataset MUST NOT add or remove columns when a specific FOCUS version is selected.
+
+### Row filtering
+
+* A FOCUS dataset SHOULD allow filtering rows by column values.
+  * A FOCUS dataset MUST use case-insensitive matching when filtering rows.
+
 ## Dataset Access Mechanisms
 
 FOCUS datasets can be made available through various mechanisms:
@@ -228,7 +257,7 @@ Major cloud providers support various configuration options:
 
 ## Configuration Metadata
 
-The Dataset Configuration attribute requires that FOCUS datasets include metadata describing the selected configuration options (`DatasetConfiguration-A-016-M`). This section evaluates what changes would be needed to support this requirement within the existing metadata structure.
+The Dataset Configuration attribute requires that FOCUS datasets include metadata describing the selected configuration options (`DatasetConfiguration-A-003-M`). This section evaluates what changes would be needed to support this requirement within the existing metadata structure.
 
 ### Current Metadata Structure
 
