@@ -86,15 +86,17 @@ Based on applicability, configuration options may be split into separate attribu
 | **DatasetDelivery** | Scheduling, incremental refresh, overwrite vs append, partitioning | Files or Tables |
 | **DatasetFileHandling** | File format, compression | Files only |
 
-### Current Scope (1.4)
+### Developed for 1.4
 
-| Option            | Status | Description                                         |
-|-------------------|--------|-----------------------------------------------------|
-| Column selection  | 1.4    | Choose which columns to include                     |
-| Row aggregation   | 1.4    | Sum metric columns when dimensions are identical    |
-| Time granularity  | 1.4    | Choose temporal resolution (daily, monthly, hourly) |
-| Schema versioning | 1.4    | Select which schema version to use                  |
-| Row filtering     | 1.4    | Filter rows by column values                        |
+The following options were developed for the Dataset Configuration attribute. Column selection is included in the initial specification. The remaining options are deferred to a separate change.
+
+| Option            | Status   | Description                                         |
+|-------------------|----------|-----------------------------------------------------|
+| Column selection  | Included | Choose which columns to include                     |
+| Row aggregation   | Deferred | Sum metric columns when dimensions are identical    |
+| Time granularity  | Deferred | Choose temporal resolution (daily, monthly, hourly) |
+| Schema versioning | Deferred | Select which schema version to use                  |
+| Row filtering     | Deferred | Filter rows by column values                        |
 
 ### Future Options
 
@@ -187,29 +189,29 @@ Case sensitivity affects both filtering and aggregation operations.
 
 ### Filtering (Case-Insensitive)
 
-FOCUS requires case-insensitive matching when filtering rows. This is practitioner-friendly:
+When row filtering is introduced, FOCUS will require case-insensitive matching. This is practitioner-friendly:
 
-- Practitioners shouldn't need to know exact casing to find their data
-- "prod" should match "Prod", "PROD", and "prod"
-- Reduces friction and improves usability
+* Practitioners shouldn't need to know exact casing to find their data
+* "prod" should match "Prod", "PROD", and "prod"
+* Reduces friction and improves usability
 
 ### Aggregation (Case-Insensitive Recommended)
 
-FOCUS recommends case-insensitive matching when aggregating rows. From a practitioner perspective, case-insensitive grouping is ideal:
+When row aggregation is introduced, FOCUS will recommend case-insensitive matching. From a practitioner perspective, case-insensitive grouping is ideal:
 
-- "Prod" and "prod" likely represent the same environment
-- Inconsistent casing is usually a data quality issue, not intentional differentiation
+* "Prod" and "prod" likely represent the same environment
+* Inconsistent casing is usually a data quality issue, not intentional differentiation
 
 However, case-insensitive aggregation presents implementation challenges:
 
-- When "Prod" and "prod" are merged, which value should be returned?
-- Different systems handle this differently (first value, alphabetical, etc.)
+* When "Prod" and "prod" are merged, which value should be returned?
+* Different systems handle this differently (first value, alphabetical, etc.)
 
-Due to these implementation complexities, case-insensitive aggregation is a SHOULD rather than a MUST. Providers that cannot implement case-insensitive aggregation should use case-sensitive matching and document this behavior.
+Due to these implementation complexities, case-insensitive aggregation will be a SHOULD rather than a MUST. Providers that cannot implement case-insensitive aggregation should use case-sensitive matching and document this behavior.
 
-## Time Granularity
+## Time Granularity (Deferred)
 
-Allows practitioners to choose temporal resolution:
+When introduced, time granularity will allow practitioners to choose temporal resolution:
 
 | Granularity | Use Case                                    | Data Volume Impact           |
 |-------------|---------------------------------------------|------------------------------|
@@ -217,11 +219,11 @@ Allows practitioners to choose temporal resolution:
 | Daily       | Standard reporting, cost allocation         | ~30x more rows than monthly  |
 | Monthly     | Executive reporting, billing reconciliation | Minimum data volume          |
 
-### Required Granularities
+### Planned Granularity Requirements
 
-- **Daily**: Required (MUST) - the most common granularity for cost analysis
-- **Monthly**: Recommended (SHOULD) - useful for executive reporting and billing reconciliation
-- **Hourly**: Required when applicable (MUST) - when the dataset includes costs priced at an hourly or lower grain, hourly granularity must be available to preserve pricing accuracy
+* **Daily**: Will be required (MUST) - the most common granularity for cost analysis
+* **Monthly**: Will be recommended (SHOULD) - useful for executive reporting and billing reconciliation
+* **Hourly**: Will be required when applicable (MUST) - when the dataset includes costs priced at an hourly or lower grain, hourly granularity will need to be available to preserve pricing accuracy
 
 ## Future Configuration Options
 
@@ -318,6 +320,9 @@ This is a significant change that warrants a separate PR to keep the Dataset Con
 When practitioners configure their dataset:
 
 1. **Selected columns remain conformant**: Each included column still follows all FOCUS requirements for that column, including requirements that reference columns not included in the dataset
-2. **Aggregated data remains conformant**: Summed metric values are mathematically correct representations of the underlying data
-3. **Dataset completeness changes**: A configured dataset may not support all analysis scenarios
-4. **Filtering affects completeness**: Filtered datasets may not reconcile with invoices or support full cost allocation
+2. **Dataset completeness changes**: A configured dataset may not support all analysis scenarios
+
+When deferred features (row aggregation, row filtering) are introduced:
+
+1. **Aggregated data remains conformant**: Summed metric values are mathematically correct representations of the underlying data
+2. **Filtering affects completeness**: Filtered datasets may not reconcile with invoices or support full cost allocation

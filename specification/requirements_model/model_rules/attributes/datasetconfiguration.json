@@ -80,7 +80,7 @@
     "ApplicabilityCriteria": [],
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "A FOCUS dataset MUST include metadata describing the selected configuration options.",
+      "MustSatisfy": "A FOCUS dataset MUST include metadata describing the column selection applied to the dataset.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
