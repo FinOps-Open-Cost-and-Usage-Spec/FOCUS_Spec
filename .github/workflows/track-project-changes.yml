@@ -1,3 +1,5 @@
+# This file is dependent on a webhook currently maintained in the vercel repo.
+# We will deprecate this functionality once GitHub natively supports project field change events. 
 name: Log Project Field Change
 on:
   repository_dispatch:
