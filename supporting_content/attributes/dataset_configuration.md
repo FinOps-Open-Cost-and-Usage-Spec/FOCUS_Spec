@@ -226,6 +226,64 @@ Major cloud providers support various configuration options:
 | GCP       | BigQuery queries | Parquet, CSV     | N/A (raw data)   | Various     |
 | Microsoft | Limited          | CSV              | Daily            | None        |
 
+## Configuration Metadata
+
+The Dataset Configuration attribute requires that FOCUS datasets include metadata describing the selected configuration options (`DatasetConfiguration-A-016-M`). This section evaluates what changes would be needed to support this requirement within the existing metadata structure.
+
+### Current Metadata Structure
+
+The FOCUS metadata system has four sections:
+
+| Section              | Purpose                                        |
+|----------------------|------------------------------------------------|
+| **Data Generator** | Describes the entity delivering the dataset |
+| **Dataset Instance** | Describes the nature of the dataset artifact |
+| **Recency** | Describes the recency and completeness of data |
+| **Schema** | Describes the schema of data within the artifact |
+
+None of these sections currently capture dataset configuration selections.
+
+### What Needs to be Tracked
+
+Configuration metadata should describe the options applied when generating a dataset artifact:
+
+| Configuration Option | Metadata Needed                                                |
+|----------------------|----------------------------------------------------------------|
+| Column selection | List of included columns (or excluded columns) |
+| Row aggregation | Whether aggregation is enabled |
+| Time granularity | Selected granularity (hourly, daily, monthly) |
+| FOCUS version | Selected version (already captured in Schema as FocusVersion) |
+| Row filtering | Applied filter criteria |
+
+### Possible Approaches
+
+#### Option A: Extend Dataset Instance metadata
+
+Add a `Configuration` object to DatasetInstance containing the selected options. This is the most natural fit since DatasetInstance already describes the nature of the dataset artifact, and configuration options directly shape what the artifact contains.
+
+#### Option B: New metadata section
+
+Create a dedicated `Configuration` metadata section alongside Data Generator, Dataset Instance, Recency, and Schema. This provides clear separation but adds a new top-level concept.
+
+#### Option C: Extend Schema metadata
+
+Since Schema already tracks structural information (columns, data types) and triggers a new entry when the dataset structure changes, configuration changes could be captured alongside. However, Schema is focused on the data structure, not on what subset was selected.
+
+### Recommendation
+
+Option A (extending Dataset Instance) is the most natural fit. The configuration options describe how a specific dataset artifact was shaped, which aligns with Dataset Instance's purpose. FOCUS version selection is already partially addressed by Schema's `FocusVersion` property.
+
+### Estimated Scope
+
+This change would require:
+
+- New metadata property definitions in `specification/metadata/dataset_instance/` (5-8 new `.md` files)
+- Updates to `dataset_instance.mdpp` template
+- New requirements model rules in `specification/requirements_model/model_rules/`
+- Updates to `supporting_content/metadata/` for examples
+
+This is a significant change that warrants a separate PR to keep the Dataset Configuration attribute focused on its core requirements.
+
 ## Conformance Notes
 
 When practitioners configure their dataset:
