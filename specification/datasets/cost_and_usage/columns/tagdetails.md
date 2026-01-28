@@ -48,17 +48,60 @@ The following keys are used for tag properties to facilitate standardized extrac
 
 "TagValue" represents the tag value associated with the tag key for the corresponding tag scheme and *tag source*.
 
+The "TagValue" property adheres to the following requirements:
 
+* TagValue MUST be present in each tag key object in the Tags object.
+* When TagValue is directly contained in the tag key object, TagValue MUST represent the *finalized tag*.
+* TagValue MUST be present in each tag source object in the AncestorTaggedSources object.
+* TagValue MUST have the value of true (boolean) when the TagScheme does not support values.
+* Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
+* TagValue MAY be null when the the data generator supports setting a null value for a key-value pair type tag.
 
 <b>TagSource</b>
 
-"TagSource" denotes the type of [*tag source*] where the corresponding  value was set.
-  * "TagSourceId" denotes the specific [*tag source*] where the [*finalized tag*] value was set.
-  * "TagValue" represents the *finalized tag* value associated with the tag key for the corresponding tag scheme and *tag source*
+"TagSource" denotes the type of *tag source* where the tag key is present.
+
+The "TagSource" property adheres to the following requirements:
+
+* TagSource MUST be present in each tag key object in the Tags object.
+* TagSource MUST be present in each tag source object in the AncestorTaggedSources object.
+* TagSourceId MUST contain the type of *tag source* where the tag key is present.
+
+<b>TagSourceId</b>
+
+"TagSourceId" denotes the identifier of the specific *tag source* where the tag key is present.
+
+The "TagSourceId" property adheres to the following requirements:
+
+* TagSourceId MUST be present in each tag key object in the Tags object.
+* TagSourceId MUST be present in each tag source object in the AncestorTaggedSources object.
+* TagSourceId MUST contain the identifier of the TagSource.
 
 ## Overview
 
+### Object Scheme
+
+The object contains an object for each tag scheme present in the Tags column.
+
+| Key | Parent | ValueType | Required | Description |
+| ----- | ---- | ---- | ---------- | ----------- |
+| Default | _root object_ | Object | TRUE | The object containing information about the unprefixed tag scheme in the Tags column. |
+| _TagScheme_ | _root object_ | Object | TRUE | One or more objects containing information about a prefixed tag scheme in the Tags column. |
+| Tags | _tag scheme object_ | Object | TRUE | An object containing all tag keys present in the Tags column. |
+| UntaggedSources | _tag scheme object_ | Array | TRUE | A list of sources which support this tag scheme (i.e. are taggable) that had no tags applied. |
+| _TagKey_ | Tags | Object | TRUE | An object containing the properties of the *finalized tag* as well as other *tag sources* where this key was present. |
+| AncestorTaggedSources | _TagKey_ | Object | TRUE | An object containing all *tag sources* where the corresponding tag key was present which did not result in the *finalized tag*. |
+| _AncestorTaggedSource_ | AncestorTaggedSources | Object | Conditional | An object containing the the properties of the tag present in the *tag source*. |
+
 ### Object Entries
+
+The tag key object and tag source objects contain the following properties:
+
+| Key | ValueType | Required | Description |
+| ----- | ---- | ---------- | ----------- |
+| TagValue | String | TRUE |  The value of the tag key. |
+| TagSource | String | TRUE | The type of *tag source* where the tag key is present. |
+| TagSourceId | String | TRUE | The identifier of the *tag source* where the tag key is present. |
 
 ### Example
 
@@ -136,7 +179,17 @@ The following keys are used for tag properties to facilitate standardized extrac
     "UntaggedSources": null
   }
 }
+```
 
+The corresponding Tags column would be:
+```json
+{
+  "foo":"baz", 
+  "userDefinedTagScheme2/foo":"bar",
+  "userDefinedTagScheme3/foo":"bar",
+  "providerDefinedTagScheme1/foo":"bar",
+  "providerDefinedTagScheme2/foo":"bar"
+}
 ```
 
 ### JSON Type Definition
