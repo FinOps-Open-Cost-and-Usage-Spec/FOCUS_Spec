@@ -14,7 +14,7 @@ The model document for FOCUS contains the following major sections:
 | ApplicabilityCriteria | Key flags used to define attributes about the data generator that need to be true for some model rules to apply |
 | CheckFunctions | Method definitions to describe the actual check needed to conform to a rule |
 | ModelDatasets | List of datasets defined by FOCUS and the related top level model rules associated with the dataset |
-| ModelRules | Individual model rule definitions that are linked together by requirements and dependancies to form the full model ruleset |
+| ModelRules | Individual model rule definitions that are linked together by requirements and dependencies to form the full model ruleset |
 
 ## Steps to apply model rules to existing attributes and columns
 
@@ -40,7 +40,7 @@ The first stage of conversion of rules from the normative text to model rules is
 - `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
 - `Condition` - The definition of conditions under which this rule applies
 - `Requirement` - The definition of what is required for model
-- `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `RECOMMENDED`, `SHOULD`, `MAY`, `OPTIONAL`)
+- `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `SHOULD`, `MAY`)
 - `MustSatisfy` - The normative text that this rule defines
 - `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
 - `Notes` - Free form notes (short) included in the model rule document
@@ -343,14 +343,14 @@ The second phase of conversion is to take the table created in Stage 1 and creat
 - `check_functions.json`: Logical validation functions and their arguments
 - `model_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
 - `model_rules/attributes/`: JSON files defining multiple `ModelRules` for a single attribute
-- `model_rules/colunns/`: JSON files defining multiple `ModelRules` for a single column
+- `model_rules/columns/`: JSON files defining multiple `ModelRules` for a single column
 
 #### Steps
 
 - Assign the Action Item (AI) to yourself to signal that you are working on the item (See: [GitHub Issues](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues))
 - Open a branch with the source of git branch `1121-ai-align-on-approach-for-scrs` for your development work with the naming format as follows `ai number`-cr-`entity-name`-1121. (example: 1255-cr-AvailabilityZone-1121)
 - Pull your branch to your development environment and perform all work specific to this AI in this branch.
-- Add a file into the relevant folder `model_rules/attributes/` or `model_rules/colunns/` with name `entity-name`.json (example: availabilityzone.json)
+- Add a file into the relevant folder `model_rules/attributes/` or `model_rules/columns/` with name `entity-name`.json (example: availabilityzone.json)
 - Write your rules into this file based on the rules in the Stage 1 table from the AI ticket (See: [ModelRule Templates](#modelrule-templates) for helpers)
 - If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` avoiding duplication
 - If you need to add new CheckFunctions add them to `check_functions.json` avoiding duplication

@@ -1,0 +1,310 @@
+{
+  "NumericFormat-A-000-M": {
+    "Function": "Composite",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "Root composite capturing all NumericFormat requirements",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All columns capturing a numeric value, defined in the FOCUS specification, MUST follow the formatting requirements listed below.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-001-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-011-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-012-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "NumericFormat-A-013-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "NumericFormat-A-001-O",
+        "NumericFormat-A-002-M",
+        "NumericFormat-A-003-M",
+        "NumericFormat-A-004-M",
+        "NumericFormat-A-005-M",
+        "NumericFormat-A-006-M",
+        "NumericFormat-A-007-M",
+        "NumericFormat-A-008-M",
+        "NumericFormat-A-009-M",
+        "NumericFormat-A-010-M",
+        "NumericFormat-A-011-M",
+        "NumericFormat-A-012-M",
+        "NumericFormat-A-013-O"
+      ]
+    }
+  },
+  "NumericFormat-A-001-O": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom numeric value capturing columns SHOULD adopt the same format requirements over time.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-002-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Columns with a Numeric value format MUST contain a single numeric value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-003-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Numeric values MUST be expressed as an integer value, a decimal value, or a value expressed in scientific notation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-004-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Fractional notation MUST NOT be used.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-005-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Numeric values expressed using scientific notation MUST be expressed using E notation \"mEn\" with a real number m and an integer n indicating a value of \"m x 10^n\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-006-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "The sign of the exponent MUST only be expressed as part of the exponent value if n is negative.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-007-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Numeric values MUST NOT be expressed with mathematical symbols, functions, or operators.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-008-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Numeric values MUST NOT contain qualifiers or additional characters (e.g., currency symbols, units of measure, etc.).",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-009-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (\".\") if required to express a decimal value.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-010-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Numeric values MUST NOT include a character to represent a sign for a positive value.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-011-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "A negative sign (-) MUST indicate a negative value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-012-M": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "Allowed values are Integer and Decimal per normative text table",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Columns with a Numeric value format MUST present one of the following values as the \"Data type\" in the column definition.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "NumericFormat-A-013-O": {
+    "Function": "Format",
+    "Reference": "NumericFormat",
+    "EntityType": "Attribute",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "Notes": "Allowed precision values: Integer (Short, Long, Extended), Decimal (Single, Double, Extended)",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Providers SHOULD define precision and scale for Numeric Format columns using one of the following precision values in a data definition document that providers publish.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
