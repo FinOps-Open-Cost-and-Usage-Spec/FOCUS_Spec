@@ -185,7 +185,7 @@ The corresponding Tags column would be:
 
 ```json
 {
-  "foo":"baz", 
+  "foo":"baz",
   "userDefinedTagScheme2/foo":"bar",
   "userDefinedTagScheme3/foo":"bar",
   "providerDefinedTagScheme1/foo":"bar",
