@@ -1,0 +1,173 @@
+{
+  "PricingCurrencyEffectiveCost-C-000-C": {
+    "Function": "Composite",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The PricingCurrencyEffectiveCost column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyEffectiveCost-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyEffectiveCost-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyEffectiveCost-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyEffectiveCost-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyEffectiveCost-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "PricingCurrencyEffectiveCost-C-006-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-050-C",
+        "PricingCurrencyEffectiveCost-C-001-M",
+        "PricingCurrencyEffectiveCost-C-002-M",
+        "PricingCurrencyEffectiveCost-C-003-M",
+        "PricingCurrencyEffectiveCost-C-004-M",
+        "PricingCurrencyEffectiveCost-C-005-M",
+        "PricingCurrencyEffectiveCost-C-006-M"
+      ]
+    }
+  },
+  "PricingCurrencyEffectiveCost-C-001-M": {
+    "Function": "Type",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be of type Decimal.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "PricingCurrencyEffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyEffectiveCost-C-002-M": {
+    "Function": "Format",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST conform to NumericFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "PricingCurrencyEffectiveCost"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyEffectiveCost-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCurrencyEffectiveCost",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyEffectiveCost-C-004-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be a valid decimal value.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckGreaterOrEqualThanValue",
+        "ColumnName": "PricingCurrencyListUnitPrice",
+        "Value": 0
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyEffectiveCost-C-005-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "PricingCurrencyEffectiveCost-C-006-M": {
+    "Function": "Validation",
+    "Reference": "PricingCurrencyEffectiveCost",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCurrencyEffectiveCost MUST be denominated in the PricingCurrency.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

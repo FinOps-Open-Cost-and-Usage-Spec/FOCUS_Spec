@@ -1,0 +1,185 @@
+{
+  "ResourceName-C-000-C": {
+    "Function": "Composite",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "Main composite rule for ResourceName column",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ResourceName column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ResourceName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ResourceName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ResourceName-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ResourceName-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-044-C",
+        "ResourceName-C-001-M",
+        "ResourceName-C-002-M",
+        "ResourceName-C-003-C",
+        "ResourceName-C-006-C"
+      ]
+    }
+  },
+  "ResourceName-C-001-M": {
+    "Function": "Type",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ResourceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ResourceName-C-002-M": {
+    "Function": "Format",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ResourceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ResourceName-C-003-C": {
+    "Function": "Composite",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ResourceName-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ResourceName-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ResourceName-C-004-C",
+        "ResourceName-C-005-C"
+      ]
+    }
+  },
+  "ResourceName-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST be null when ResourceId is null or when the resource does not have an assigned display name.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ResourceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "ResourceId-C-000-C"
+      ]
+    }
+  },
+  "ResourceName-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST NOT be null when ResourceId is not null and the resource has an assigned display name.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ResourceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "ResourceId-C-000-C"
+      ]
+    }
+  },
+  "ResourceName-C-006-C": {
+    "Function": "Validation",
+    "Reference": "ResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceName MUST NOT duplicate ResourceId when the resource is not provisioned interactively or only has a system-generated ResourceId.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "ResourceId-C-000-C"
+      ]
+    }
+  }
+}
