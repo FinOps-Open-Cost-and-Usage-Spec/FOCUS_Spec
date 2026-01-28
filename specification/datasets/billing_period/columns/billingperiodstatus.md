@@ -6,7 +6,6 @@ A Billing Period Status represents the state of the billing period (i.e., open o
 
 BillingPeriodStatus adheres to the following requirements:
 
-* BillingPeriodStatus MUST be present in a Billing Period [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingPeriodStatus MUST be of type String.
 * BillingPeriodStatus MUST not be null.
 * BillingPeriodStatus MUST be one of the [allowed values](#datasets.billingperiod.billingperiodstatus.allowed-values).

@@ -6,7 +6,6 @@ A Reference Invoice ID is an invoice-issuer-assigned identifier for an invoice t
 
 ReferenceInvoiceId adheres to the following requirements:
 
-* ReferenceInvoiceId MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ReferenceInvoiceId MUST be of type String.
 * ReferenceInvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ReferenceInvoiceId MUST NOT be null.

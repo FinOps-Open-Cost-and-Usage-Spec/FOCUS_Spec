@@ -6,7 +6,6 @@ Invoice Detail Created is the timestamp when the [Invoice Detail](#datasets.invo
 
 InvoiceDetailLastUpdated adheres to the following requirements:
 
-* InvoiceDetailLastUpdated MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceDetailLastUpdated MUST be of type Date/Time.
 * InvoiceDetailLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * InvoiceDetailLastUpdated MUST represent the most recent moment in time when any column value of the record identified by [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) was created or modified.

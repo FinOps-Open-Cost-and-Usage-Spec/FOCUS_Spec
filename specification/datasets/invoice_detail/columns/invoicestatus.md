@@ -6,7 +6,6 @@ An Invoice Status represents the status of an invoice at the time the dataset wa
 
 InvoiceStatus adheres to the following requirements:
 
-* InvoiceStatus MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceStatus MUST be of type String.
 * InvoiceStatus MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceStatus MUST NOT be null.

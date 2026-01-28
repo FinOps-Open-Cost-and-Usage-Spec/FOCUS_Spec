@@ -10,7 +10,6 @@ TODO: Apply the results of the work from FR #982.
 
 BilledCost adheres to the following requirements:
 
-* BilledCost MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * BilledCost MUST NOT be null.

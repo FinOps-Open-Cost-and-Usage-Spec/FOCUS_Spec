@@ -6,7 +6,6 @@ An Payment Due Date is the date by which the payment for an invoice is expected 
 
 PaymentDueDate adheres to the following requirements:
 
-* PaymentDueDate MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PaymentDueDate MUST be of type Date/Time.
 * PaymentDueDate MUST conform to [DateTimeFormat](#attributes.datetimeformat) requirements.
 * PaymentDueDate MUST be the date specified by the [*invoice issuer*](#glossary:invoice-issuer) as the deadline for payment for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).

@@ -6,7 +6,6 @@ Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveend
 
 BillingPeriodEnd adheres to the following requirements:
 
-* BillingPeriodEnd MUST be present in a Billing Period [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingPeriodEnd MUST be of type Date/Time.
 * BillingPeriodEnd MUST conform to [Date/TimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodEnd MUST NOT be null.

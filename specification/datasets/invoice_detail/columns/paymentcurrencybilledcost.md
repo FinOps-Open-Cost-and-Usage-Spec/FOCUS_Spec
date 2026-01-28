@@ -6,7 +6,6 @@ A Payment Currency Billed Cost represents the [Billed Cost](#datasets.invoicedet
 
 PaymentCurrencyBilledCost adheres to the following requirements:
 
-* PaymentCurrencyBilledCost MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PaymentCurrencyBilledCost MUST be of type Decimal.
 * PaymentCurrencyBilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PaymentCurrencyBilledCost MUST NOT be null.
@@ -31,7 +30,7 @@ The [Billed Cost](#datasets.invoicedetail.billedcost) as expressed in [Payment C
 |    Constraint   |      Value              |
 |:----------------|:------------------------|
 | Column type     | Metric                  |
-| Feature level   | Mandatory               |
+| Feature level   | Conditional             |
 | Allows nulls    | False                   |
 | Data type       | Decimal                 |
 | Value format    | [Numeric Format](#attributes.numericformat) |

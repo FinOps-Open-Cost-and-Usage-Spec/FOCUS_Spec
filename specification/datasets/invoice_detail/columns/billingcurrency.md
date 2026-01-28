@@ -6,7 +6,6 @@
 
 BillingCurrency adheres to the following requirements:
 
-* BillingCurrency MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingCurrency MUST be of type String.
 * BillingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingCurrency MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements.

@@ -6,10 +6,9 @@ An Invoice Issue Date is the date the invoice was issued by the invoice issuer. 
 
 InvoiceIssueDate adheres to the following requirements:
 
-* InvoiceIssueDate MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceIssueDate MUST be of type Date/Time.
-* InvoiceIssueDate MAY be null.
 * InvoiceIssueDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
+* InvoiceIssueDate MAY be null.
 * InvoiceIssueDate MUST represent the official date of issuance for the corresponding [InvoiceId](#datasets.invoicedetail.invoiceid).
 
 ## Column ID

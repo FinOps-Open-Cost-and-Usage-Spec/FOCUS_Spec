@@ -6,7 +6,6 @@ An Invoice ID is an invoice-issuer-assigned identifier for an invoice encapsulat
 
 InvoiceId adheres to the following requirements:
 
-* InvoiceId SHOULD be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceId MUST be of type String.
 * InvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceId MUST NOT be null.

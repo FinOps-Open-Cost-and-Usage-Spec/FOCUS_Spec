@@ -41,6 +41,28 @@ The Invoice Detail dataset can be joined to the [Cost and Usage](#dataset.costan
 InvoiceDetail adheres to the following requirements:
 
 * InvoiceDetail MUST be present if the invoice issuer supports payable invoices.
+* The presence of columns in InvoiceDetail MUST adhere to the following requirements:
+  * InvoiceDetail MUST include [BilledCost](#datasets.billingperiod.billedcost).
+  * InvoiceDetail MUST include [BillingAccountId](#datasets.billingperiod.billingaccountid).
+  * InvoiceDetail MUST include [BillingCurrency](#datasets.billingperiod.billingcurrency).
+  * InvoiceDetail MUST include [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).
+  * InvoiceDetail MUST include [BillingPeriodStart](#datasets.billingperiod.billingperiodstart).
+  * InvoiceDetail MUST include [ChargeCategory](#datasets.billingperiod.chargecategory).
+  * InvoiceDetail MUST include [InvoiceDetailCreated](#datasets.billingperiod.invoicedetailcreated).
+  * InvoiceDetail MUST include [InvoiceDetailDescription](#datasets.billingperiod.invoicedetaildescription).
+  * InvoiceDetail MUST include [InvoiceDetailGrain](#datasets.billingperiod.invoicedetailgrain).
+  * InvoiceDetail MUST include [InvoiceDetailId](#datasets.billingperiod.invoicedetailid).
+  * InvoiceDetail MUST include [InvoiceDetailLastUpdated](#datasets.billingperiod.invoicedetaillastupdated).
+  * InvoiceDetail MUST include [InvoiceId](#datasets.billingperiod.invoiceid).
+  * InvoiceDetail MUST include [InvoiceIssueDate](#datasets.billingperiod.invoiceissuerdate).
+  * InvoiceDetail MUST include [InvoiceIssuerName](#datasets.billingperiod.invoiceissuername).
+  * InvoiceDetail MUST include [InvoiceStatus](#datasets.billingperiod.invoicestatus).
+  * InvoiceDetail MUST include [PaymentCurrency](#datasets.billingperiod.paymentcurrency) if the invoice issuer supports billing and payment in different currencies.
+  * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datasets.billingperiod.paymentcurrencybilledcost) if the invoice issuer supports billing and payment in different currencies.
+  * InvoiceDetail MUST include [PaymentDueDate](#datasets.billingperiod.paymentduedate).
+  * InvoiceDetail MUST include [PaymentTerms](#datasets.billingperiod.paymentterms).
+  * InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.billingperiod.purchaseordernumber) if the invoice issuer supports customer input of purchase order numbers.
+  * InvoiceDetail MUST include [ReferenceInvoiceId](#datasets.billingperiod.referenceinvoiceid).
 * InvoiceDetail MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * InvoiceDetail MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.

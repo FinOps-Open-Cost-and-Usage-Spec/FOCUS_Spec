@@ -6,7 +6,6 @@ Invoice Detail Grain represents the set of key-value pairs that defines the gran
 
 InvoiceDetailGrain adheres to the following requirements:
 
-* InvoiceDetailGrain MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceDetailGrain MUST be of type JSON.
 * InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.

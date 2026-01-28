@@ -6,7 +6,6 @@ An Invoice Detail Description is the invoice-issuer-provided description of an i
 
 InvoiceDetailDescription adheres to the following requirements:
 
-* InvoiceDetailDescription MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceDetailDescription MUST be of type String.
 * InvoiceDetailDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceDetailDescription SHOULD NOT be null.

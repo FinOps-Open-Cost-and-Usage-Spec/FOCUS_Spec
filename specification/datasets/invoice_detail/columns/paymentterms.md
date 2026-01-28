@@ -6,7 +6,6 @@ A Payment Terms represents the [*terms*](#glossary:term) (typically focused on t
 
 PaymentTerms adheres to the following requirements:
 
-* PaymentTerms MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PaymentTerms MUST be of type String.
 * PaymentTerms MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PaymentTerms MUST NOT be null.

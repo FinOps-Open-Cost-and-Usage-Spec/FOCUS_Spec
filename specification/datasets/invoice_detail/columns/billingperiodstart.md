@@ -6,7 +6,6 @@ Billing Period Start represents the [*inclusive start bound*](#glossary:inclusiv
 
 BillingPeriodStart adheres to the following requirements:
 
-* BillingPeriodStart MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingPeriodStart MUST be of type Date/Time.
 * BillingPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodStart MUST NOT be null.

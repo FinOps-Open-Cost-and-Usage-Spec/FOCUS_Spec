@@ -6,7 +6,6 @@ A Payment Currency represents the currency in which an invoice is paid, as deter
 
 PaymentCurrency adheres to the following requirements:
 
-* PaymentCurrency MUST be present in an Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PaymentCurrency MUST be of type String.
 * PaymentCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PaymentCurrency MUST NOT be null.
@@ -30,7 +29,7 @@ The currency in which the invoice is paid.
 |    Constraint    |              Value             |
 |:----------------|:--------------------------------|
 | Column type     | Dimension                       |
-| Feature level   | Mandatory                       |
+| Feature level   | Conditional                     |
 | Allows nulls    | False                           |
 | Data type       | String                          |
 | Value format    | [Currency Format](#attributes.currencyformat) |

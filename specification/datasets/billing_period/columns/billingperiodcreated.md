@@ -6,7 +6,6 @@ Billing Period Created is the timestamp when the [Billing Period](#datasets.bill
 
 BillingPeriodCreated adheres to the following requirements:
 
-* BillingPeriodCreated MUST be present in a Billing Period [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingPeriodCreated MUST be of type Date/Time.
 * BillingPeriodCreated MUST conform to [Date/TimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodCreated MUST NOT be null.
