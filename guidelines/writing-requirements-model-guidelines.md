@@ -24,90 +24,61 @@ An Action Item (AI) ticket should be opened to track the progress of implementin
 
 The first stage of conversion of rules from the normative text to model rules is for a table to be generated with the format as follows:
 
-| ModelRuleId | Function | Reference | ApplicabilityCriteria | Condition | Requirement | Keyword | MustSatisfy | Type | Notes | ModelVersionIntroduced | Status |
-|-------------------|----------|-----------|-----------------------|-----------|-------------|---------|-------------|------|-------|-----|----|
-| | | | | | | | | | | | |
-
 - `ModelRuleId` - Is the formal Id given to this entry in the model rules (See: [CR Expression Format](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1121-ai-align-on-approach-for-scrs/specification/requirements_model/README.md#-cr-expression-format))
 - `Function` - The type of rule to be defined (Valid types: `Composite`, `Presence`, `Type`, `Format`, `Validation`)
 - `Reference` - The Column/Attribute Id this rule applies to
-- `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
-- `Condition` - The definition of conditions under which this rule applies
-- `Requirement` - The definition of what is required for model
-- `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `RECOMMENDED`, `SHOULD`, `MAY`, `OPTIONAL`)
-- `MustSatisfy` - The normative text that this rule defines
-- `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
+- `EntityType` - The type of entity this rule applies to (Valid types: `Dataset`, `Column`, `Attribute`, `Object`, `Metadata`)
+- `EntityName` - The human-readable name of the entity this rule applies to
+- `EntityId` - The unique identifier of the entity this rule applies to
 - `Notes` - Free form notes (short) included in the model rule document
-- `ModelVersionIntroduced` - CR Version this rule was added to the Model Rules (See: [Model Versioning](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1121-ai-align-on-approach-for-scrs/specification/requirements_model/README.md#versioning))
-- `Status` - Status of the rule (Valid values: Active, Depreciated)
-- `DatasetId` - The identifier of the dataset this rule belongs to (Required for Column and Dataset entity types)
-- `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Column and Dataset entity types)
+- `ModelVersionIntroduced` - Requirement Model Version this rule was added to the Model Rules (See: [Model Versioning](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1121-ai-align-on-approach-for-scrs/specification/requirements_model/README.md#versioning))
+- `Status` - Status of the rule (Valid values: Active, Deprecated, Removed)
+- `ModelVersionRemoved` - Requirement Model Version this rule was removed from the Model Rules
+- `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
+- `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
+- `Order` - The order in which this rule should be processed or displayed
+- `DatasetType` - The dataset type this rule applies to (e.g. "CAU" for Cost and Usage, "CCT" for Contract Commitment)
+- `DatasetId` - The identifier of the dataset this rule belongs to (Required for Column and Dataset entity types, e.g. "CostAndUsage" for Cost and Usage, "ContractCommitment" for Contract Commitment)
+- `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Column and Dataset entity types, e.g. "Cost and Usage" for Cost and Usage,
+- `ValidationCriteria` - The detailed criteria that defines how this rule is to be validated,
+  - `MustSatisfy` - The normative text that this rule defines
+  - `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `RECOMMENDED`, `SHOULD`, `MAY`, `OPTIONAL`)
+  - `Requirement` - The definition of what is required for model
+  - `Condition` - The definition of conditions under which this rule applies
 
-#### Flow Diagram
 
-The **Flow Diagram** in Stage 1 illustrates the end-to-end process used to extract Requirements Model from the FOCUS Specification. It begins by identifying the structural or conceptual entity to which each rule applies—such as Dataset, Row, Column, Attribute, or Metadata—and then guides users through a standardized sequence of steps to assign a unique identifier, classify the rule type, determine conditional logic, and express validation criteria. This structured workflow ensures that all normative requirements from the specification are captured in a consistent, testable, and programmatically analyzable format. The diagram also reflects the relationships between FOCUS architectural components and highlights how entities like Service Provider Name influence rule applicability.
-<img width="812" height="1036" alt="Image" src="https://github.com/user-attachments/assets/040ba557-cc42-402b-b52a-742b88e40d54" />
+#### Stage 1: Rule-Based Extraction of Normative Requirements
 
-#### High-Level Description of Each Step
+Stage 1 defines a rule-based extraction process for converting normative requirements from FOCUS Releases into a structured, machine-readable JSON representation. The objective of this stage is not to model the extraction visually, but to ensure that each normative statement in the specification is deterministically identified, classified, and represented using the set of JSON properties defined in the previous section.
+
+During Stage 1, normative requirements are extracted by applying a fixed set of authoring and interpretation rules that govern how requirements are detected, how scope and applicability are determined, and how each requirement is expressed without inference or reinterpretation. The resulting JSON output must strictly conform to the required property structure, enabling consistency across releases and supporting downstream automation, validation, and analysis workflows.
+
+This stage intentionally avoids diagrammatic representations, as the extraction logic is entirely driven by the prescribed rules and constraints. The focus is on accuracy, repeatability, and structural alignment with the defined JSON model, ensuring that Stage 1 produces a faithful and complete representation of the normative requirements as written in the FOCUS specification.
+
+#### High-Level Description of the Model Rule Properties
 
 #### 1. Target Entity – Determine the entity
 
-Identify the target for the rule: **Dataset**, **Column**, **Attribute** property, **Service Provider Name**, etc. This sets the scope of the model requirement.
+Identify the target for the rule: **Dataset**, **Column**, **Attribute** property, **Metadata**, **Object**etc. This sets the scope of the model requirement.
 
 #### FOCUS Core Entities
 
 The following architectural components define the core entities in FOCUS that shape the structure and flow of billing data.
 
-```mermaid
-graph TD
+<img width="491" height="491" alt="Image" src="https://github.com/user-attachments/assets/edf052d2-669a-4baf-a8a2-ae4b92651d9f" />
 
-%% Core structural entities
-Dataset["📦 Dataset"]
-Row["📄 Row"]
-Column["📊 Column"]
-Attribute["⚙️ Attribute"]
-Metadata["📝 Metadata"]
+- **Dataset, Column, Attribute, Metadata** are the **core structural entities** where model requirements are directly assigned.
 
-%% Conceptual non-structural entity
-Provider["🌐 Service Provider (Value in Column)"]
-
-%% Relationships
-Dataset -->|"contains many"| Row
-Dataset --> Metadata
-Row -->|has many| Column
-Column -->|uses| Attribute
-
-%% Provider as conditional logic input
-Row -->|includes value of| Provider
-Column -->|may be required when| Provider
-
-%% Model allocation targets
-Dataset -.->|Model applies to| Dataset
-Row -.->|Model applies to| Row
-Column -.->|Model applies to| Column
-Attribute -.->|Model applies to| Attribute
-
-%% Conditional trigger
-Provider -.->|Used in rule conditions| Row
-Provider -.->|Used in rule conditions| Column
-```
-
-- **Dataset, Row, Column, Attribute, Metadata** are the **core structural entities** where model requirements are directly assigned.
-
-- **Service Provider** is not a structural entity but is frequently used as a **conditional input** to determine when a requirement applies.
-
-- **Columns** and **Rows** can conditionally depend on the value of Service Provider to apply or skip certain validation logic.
 
 ##### FOCUS Entity Reference Table
 
 | Entity             | Description                                         | Applies To                                | Example CR Function                                                                                             |
 |--------------------|-----------------------------------------------------| ----------------------------------------- |-----------------------------------------------------------------------------------------------------------------|
 | `Dataset`          | Whole billing dataset                               | Structural presence, versioning, coverage | Dataset MUST include all columns required by the declared FOCUS version                                         |
-| `Row`              | Individual line item in dataset                     | Logic conditions, nullability, alignment  | Rows with `ChargeCategory = Purchase` MUST contain a `SkuId`                                                    |
 | `Column`           | Named field across rows                             | Data type, format, constraints            | Column `BillingPeriodStart` MUST be of type `DateTime`                                                          |
 | `Attribute`        | Shared formatting/logic constraint                  | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                              |
 | `Metadata`         | Schema-level dataset descriptors                    | Schema versioning, declaration            | Metadata MUST declare `focus_version` as a valid semantic version string (e.g., "1.2.0")                        |
-| `Service Provider` | Entity that made the resource available for purchase | Conditional logic in requirements         | Column `CapacityReservationId` MUST be present when the service provider supports capacity reservation features |
+| `Object`           | TBD                                                 | TBD                                       | TBD                                                                                                             |
 
 #### 2. CRID – Apply CRID Naming Rules
 
@@ -116,16 +87,15 @@ Construct a unique identifier for the rule using the format:
 
 This ensures traceability, uniqueness, and clarity.
 
-- Use the format: `DatasetAbbreviation-ColumnID-EntityType-NNN-Level`
-- `DatasetAbbreviation`: Short identifier for the dataset (e.g., `CAU`, `CC`, `META`)
+- Use the format: `DatasetType-ColumnID-EntityType-NNN-Level`
+- `DatasetType`: Short identifier for the dataset (e.g., `CAU`, `CC`, `META`)
 - `ColumnID`: UpperCamelCase (e.g., `ListUnitPrice`)
 - `EntityType:`
   - `D` = Dataset  
   - `C` = Column  
   - `A` = Attribute  
-  - `P` = Service Provider  
-  - `R` = Row  
   - `M` = Metadata
+  - `O` = Object
 - `NNN:` (unique only within the dataset namespace)
   - `000` for root composite  
   - `0NN` for intermediate composites  
@@ -156,11 +126,11 @@ Each dataset will reference their own set of Requirement Entities. A single requ
 
 Column entities are now namespaced by the dataset they belong to. The CRID format has been updated to:
 
-`DatasetAbbreviation-ColumnID-EntityType-NNN-Level`
+`DatasetType-ColumnID-EntityType-NNN-Level`
 
 Where:
 
-- `DatasetAbbreviation`: Short identifier for the dataset (e.g., `CAU` for Cost and Usage)
+- `DatasetType`: Short identifier for the dataset (e.g., `CAU` for Cost and Usage)
 - `ColumnID`: The column identifier in UpperCamelCase
 - `EntityType`, `NNN`, `Level`: Same as previously defined
 
@@ -316,11 +286,11 @@ Record the version of the FOCUS specification in which this rule was introduced.
 
 #### 12. Status – Set rule lifecycle status
 
-Indicate whether the rule is `active`, `deprecated`, or `reserved` for future use.
+Indicate whether the rule is `active`, `deprecated`, or `removed` for future use.
 
 - Default to `active` unless the normative text explicitly states otherwise.
 - Use `deprecated` if the rule is marked for removal or obsolescence.
-- Use `reserved` if the rule is included for future development or placeholder purposes.
+- Use `removed` if the rule is removed from the model.
 
 **Example**  
 A rule marked in the spec as legacy:  
