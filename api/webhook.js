@@ -25,7 +25,7 @@ export default async function handler(req, res) {
     return res.status(200).send('Action ignored: Status field excluded.');
   }
 
-  // 4. Detect "Cleared" state (Missing 'to' key)
+  // 4. Detect Cleared state (Missing 'to' key)
   const isCleared = changes?.field_value && !('to' in changes.field_value);
 
   // 5. Value Parsing Helper
