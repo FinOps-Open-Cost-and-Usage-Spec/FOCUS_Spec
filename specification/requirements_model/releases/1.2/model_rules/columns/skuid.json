@@ -1,0 +1,360 @@
+{
+  "SkuId-C-000-C": {
+    "Function": "Composite",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "PUBLIC_PRICE_LIST_SUPPORTED",
+      "UNIT_PRICING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The SkuId column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-011-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-012-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-060-C",
+        "SkuId-C-001-M",
+        "SkuId-C-002-M",
+        "SkuId-C-003-M",
+        "SkuId-C-007-M",
+        "SkuId-C-011-C",
+        "SkuId-C-012-O"
+      ]
+    }
+  },
+  "SkuId-C-001-M": {
+    "Function": "Type",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "SkuId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuId-C-002-M": {
+    "Function": "Format",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "SkuId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuId-C-003-M": {
+    "Function": "Composite",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-006-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "SkuId-C-004-C",
+        "SkuId-C-005-C",
+        "SkuId-C-006-O"
+      ]
+    }
+  },
+  "SkuId-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST be null when ChargeCategory is \"Tax\".",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuId",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Tax"
+      },
+      "Dependencies": []
+    }
+  },
+  "SkuId-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SkuId",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "OR",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Usage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Purchase"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          }
+        ]
+      },
+      "Dependencies": []
+    }
+  },
+  "SkuId-C-006-O": {
+    "Function": "Nullability",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MAY be null in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuId-C-007-M": {
+    "Function": "Composite",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId for a given SKU adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SkuId-C-010-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "SkuId-C-008-M",
+        "SkuId-C-009-M",
+        "SkuId-C-010-M"
+      ]
+    }
+  },
+  "SkuId-C-008-M": {
+    "Function": "Validation",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST remain consistent across billing accounts or contracts.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuId-C-009-M": {
+    "Function": "Validation",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST remain consistent across PricingCategory values.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuId-C-010-M": {
+    "Function": "Validation",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the SKU.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SkuId-C-011-C": {
+    "Function": "Validation",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MUST be associated with a given resource or service when ChargeCategory is \"Usage\" or \"Purchase\".",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Purchase"
+          }
+        ]
+      },
+      "Dependencies": [
+        "ChargeCategory-C-003-M"
+      ]
+    }
+  },
+  "SkuId-C-012-O": {
+    "Function": "Validation",
+    "Reference": "SkuId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SkuId MAY equal SkuPriceId.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
