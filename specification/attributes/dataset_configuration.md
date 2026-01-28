@@ -12,7 +12,7 @@ Dataset Configuration
 
 ## Description
 
-Indicates how practitioners can configure the structure and content of a FOCUS dataset.
+Defines configuration options for controlling the structure and content of a FOCUS dataset.
 
 ## Requirements
 
