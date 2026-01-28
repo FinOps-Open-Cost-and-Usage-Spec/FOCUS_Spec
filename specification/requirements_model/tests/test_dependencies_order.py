@@ -87,31 +87,32 @@ def test_dependencies_order(cr_json):
 @pytest.mark.dependency(name="no_duplicate_orders", scope="session")
 def test_no_duplicate_order_values(cr_json):
     """
-    Test that rules with the same EntityId and EntityType do not have duplicate Order values.
+    Test that rules with the same EntityId, EntityType, and DatasetId do not have duplicate Order values.
     Rules without an Order field are ignored.
     """
     rules = cr_json.get("ModelRules") or {}
     violations = []
     
-    # Group rules by (EntityId, EntityType)
+    # Group rules by (EntityId, EntityType, DatasetId)
     entity_groups = defaultdict(list)
     
     for rule_id, rule in rules.items():
         entity_id = rule.get("EntityId")
         entity_type = rule.get("EntityType")
+        dataset_id = rule.get("DatasetId")
         order = rule.get("Order")
         
         # Skip rules without Order field or missing EntityId/EntityType
         if order is None or not entity_id or not entity_type:
             continue
             
-        entity_groups[(entity_id, entity_type)].append({
+        entity_groups[(entity_id, entity_type, dataset_id)].append({
             "rule_id": rule_id,
             "order": order
         })
     
     # Check for duplicate Order values within each group
-    for (entity_id, entity_type), group_rules in entity_groups.items():
+    for (entity_id, entity_type, dataset_id), group_rules in entity_groups.items():
         # Build a map of order -> list of rule IDs
         order_map = defaultdict(list)
         for rule_info in group_rules:
@@ -123,14 +124,15 @@ def test_no_duplicate_order_values(cr_json):
                 violations.append({
                     "entity_id": entity_id,
                     "entity_type": entity_type,
+                    "dataset_id": dataset_id,
                     "order": order_value,
                     "rule_ids": rule_ids
                 })
     
     assert not violations, (
-        "Rules with the same EntityId and EntityType must not have duplicate Order values:\n" +
+        "Rules with the same EntityId, EntityType, and DatasetId must not have duplicate Order values:\n" +
         "\n".join(
-            f"- EntityId='{v['entity_id']}', EntityType='{v['entity_type']}', Order={v['order']}: "
+            f"- EntityId='{v['entity_id']}', EntityType='{v['entity_type']}', DatasetId='{v['dataset_id']}', Order={v['order']}: "
             f"duplicate in rules {', '.join(v['rule_ids'])}"
             for v in violations
         )

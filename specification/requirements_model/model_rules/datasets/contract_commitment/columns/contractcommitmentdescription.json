@@ -1,10 +1,10 @@
 {
-  "CCT-ContractCommitmentPeriodEnd-C-000-M": {
+  "CCT-ContractCommitmentDescription-C-000-M": {
     "Function": "Composite",
-    "Reference": "ContractCommitmentPeriodEnd",
+    "Reference": "ContractCommitmentDescription",
     "EntityType": "Column",
-    "EntityName": "Contract Commitment Period End",
-    "EntityId": "ContractCommitmentPeriodEnd",
+    "EntityName": "Contract Commitment Description",
+    "EntityId": "ContractCommitmentDescription",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
@@ -15,136 +15,136 @@
     "DatasetName": "Contract Commitment",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentPeriodEnd adheres to the following requirements:",
+      "MustSatisfy": "ContractCommitmentDescription adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentPeriodEnd-C-001-M"
+            "ModelRuleId": "CCT-ContractCommitmentDescription-C-001-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentPeriodEnd-C-002-M"
+            "ModelRuleId": "CCT-ContractCommitmentDescription-C-002-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentPeriodEnd-C-003-M"
+            "ModelRuleId": "CCT-ContractCommitmentDescription-C-003-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CCT-ContractCommitmentPeriodEnd-C-004-M"
+            "ModelRuleId": "CCT-ContractCommitmentDescription-C-004-O"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CCT-ContractCommitment-D-008-M",
-        "CCT-ContractCommitmentPeriodEnd-C-001-M",
-        "CCT-ContractCommitmentPeriodEnd-C-002-M",
-        "CCT-ContractCommitmentPeriodEnd-C-003-M",
-        "CCT-ContractCommitmentPeriodEnd-C-004-M"
+        "CCT-ContractCommitment-D-007-M",
+        "CCT-ContractCommitmentDescription-C-001-M",
+        "CCT-ContractCommitmentDescription-C-002-M",
+        "CCT-ContractCommitmentDescription-C-003-O",
+        "CCT-ContractCommitmentDescription-C-004-O"
       ]
     }
   },
-  "CCT-ContractCommitmentPeriodEnd-C-001-M": {
+  "CCT-ContractCommitmentDescription-C-001-M": {
     "Function": "Type",
-    "Reference": "ContractCommitmentPeriodEnd",
+    "Reference": "ContractCommitmentDescription",
+    "EntityName": "Contract Commitment Description",
+    "EntityId": "ContractCommitmentDescription",
     "EntityType": "Column",
-    "EntityName": "Contract Commitment Period End",
-    "EntityId": "ContractCommitmentPeriodEnd",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Type": "Static",
     "Order": 20,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
-    "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentPeriodEnd MUST be of type Date/Time.",
+      "MustSatisfy": "ContractCommitmentDescription MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "TypeDateTime",
-        "ColumnName": "ContractCommitmentPeriodEnd"
+        "CheckFunction": "TypeString",
+        "ColumnName": "ContractCommitmentDescription"
       },
       "Condition": {},
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentPeriodEnd-C-002-M": {
+  "CCT-ContractCommitmentDescription-C-002-M": {
     "Function": "Format",
-    "Reference": "ContractCommitmentPeriodEnd",
+    "Reference": "ContractCommitmentDescription",
+    "EntityName": "Contract Commitment Description",
+    "EntityId": "ContractCommitmentDescription",
     "EntityType": "Column",
-    "EntityName": "Contract Commitment Period End",
-    "EntityId": "ContractCommitmentPeriodEnd",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Type": "Static",
     "Order": 30,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
-    "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentPeriodEnd MUST conform to DateTimeFormat requirements.",
+      "MustSatisfy": "ContractCommitmentDescription MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "FormatDateTime",
-        "ColumnName": "ContractCommitmentPeriodEnd"
+        "CheckFunction": "FormatString",
+        "ColumnName": "ContractCommitmentDescription"
       },
       "Condition": {},
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentPeriodEnd-C-003-M": {
+  "CCT-ContractCommitmentDescription-C-003-O": {
     "Function": "Nullability",
-    "Reference": "ContractCommitmentPeriodEnd",
+    "Reference": "ContractCommitmentDescription",
+    "EntityName": "Contract Commitment Description",
+    "EntityId": "ContractCommitmentDescription",
     "EntityType": "Column",
-    "EntityName": "Contract Commitment Period End",
-    "EntityId": "ContractCommitmentPeriodEnd",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Type": "Static",
     "Order": 40,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
-    "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentPeriodEnd MUST NOT be null.",
-      "Keyword": "MUST NOT",
+      "MustSatisfy": "ContractCommitmentDescription SHOULD NOT be null.",
+      "Keyword": "SHOULD NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
-        "ColumnName": "ContractCommitmentPeriodEnd",
+        "ColumnName": "ContractCommitmentDescription",
         "Value": null
       },
       "Condition": {},
       "Dependencies": []
     }
   },
-  "CCT-ContractCommitmentPeriodEnd-C-004-M": {
+  "CCT-ContractCommitmentDescription-C-004-O": {
     "Function": "Validation",
-    "Reference": "ContractCommitmentPeriodEnd",
+    "Reference": "ContractCommitmentDescription",
+    "EntityName": "Contract Commitment Description",
+    "EntityId": "ContractCommitmentDescription",
     "EntityType": "Column",
-    "EntityName": "Contract Commitment Period End",
-    "EntityId": "ContractCommitmentPeriodEnd",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
     "Order": 50,
     "DatasetType": "CCT",
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
-    "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentPeriodEnd MUST be the exclusive end bound of the effective period of the contract commitment.",
-      "Keyword": "MUST",
+      "MustSatisfy": "ContractCommitmentDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.",
+      "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
       "Dependencies": []

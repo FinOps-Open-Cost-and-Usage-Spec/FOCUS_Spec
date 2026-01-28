@@ -32,6 +32,13 @@
       ],
       "FormatAttributes": []
     },
+    "CheckNoDuplicates": {
+      "Description": "Check if column has duplicate values",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
     "FormatKeyValue": {
       "Description": "Check a column has a key value format",
       "Arguments": [

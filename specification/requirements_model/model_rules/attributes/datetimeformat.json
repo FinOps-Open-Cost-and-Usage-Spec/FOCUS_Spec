@@ -132,7 +132,7 @@
     "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST Include the date and time components, separated with the letter \u2018T\u2019.",
+      "MustSatisfy": "MUST Include the date and time components, separated with the letter ‘T’.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -172,7 +172,7 @@
     "Order": 60,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST End with the \u2018Z\u2019 indicator to denote UTC (Coordinated Universal Time).",
+      "MustSatisfy": "MUST End with the ‘Z’ indicator to denote UTC (Coordinated Universal Time).",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

@@ -217,7 +217,7 @@
     "Order": 80,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "When a record is provided after a change to a mutable string value and the ChargeClass is \u201cCorrection\u201d, the record MAY contain the altered value.",
+      "MustSatisfy": "When a record is provided after a change to a mutable string value and the ChargeClass is “Correction”, the record MAY contain the altered value.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},

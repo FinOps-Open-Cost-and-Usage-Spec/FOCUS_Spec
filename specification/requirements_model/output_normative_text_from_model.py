@@ -91,6 +91,7 @@ def collect(spec: dict):
         order = model.get("Order")  # Extract Order field
         function = model.get("Function")  # Extract Function field
         dependencies = vc.get("Dependencies", [])  # Extract Dependencies
+        dataset_id = model.get("DatasetId")  # Extract DatasetId field
         by_ref[ref.strip()].append({
             "ruleid": model_key, 
             "eid": eid, 
@@ -99,7 +100,8 @@ def collect(spec: dict):
             "must": must.strip(), 
             "order": order,
             "function": function,
-            "dependencies": dependencies
+            "dependencies": dependencies,
+            "dataset_id": dataset_id
         })
 
     # Deduplicate by rule ID within a reference (keep first occurrence)
@@ -226,7 +228,7 @@ def build_markdown(grouped, exclude_rmids=False, include_order=False):
     return ("\n".join(lines)).rstrip() + "\n"
 
 
-def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False) -> None:
+def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False, dataset_filter: str = "CostAndUsage") -> None:
     spec = json.loads(in_path.read_text(encoding="utf-8"))
     grouped = collect(spec)
     
@@ -236,6 +238,16 @@ def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = Fals
         for ref, items in grouped.items():
             if ref.lower() == reference_filter.lower():
                 filtered_grouped[ref] = items
+        grouped = filtered_grouped
+    
+    # Filter by dataset if specified
+    if dataset_filter:
+        filtered_grouped = OrderedDict()
+        for ref, items in grouped.items():
+            filtered_items = [item for item in items 
+                            if item.get("dataset_id") and item.get("dataset_id").lower() == dataset_filter.lower()]
+            if filtered_items:
+                filtered_grouped[ref] = filtered_items
         grouped = filtered_grouped
     
     md = build_markdown(grouped, exclude_rmids=exclude_rmids, include_order=include_order)
@@ -258,6 +270,8 @@ if __name__ == "__main__":
                        help="Include Order field at the start of each line (tab-separated)")
     parser.add_argument("--filename", type=str, help="Save output to specified filename instead of printing to console")
     parser.add_argument("--reference", type=str, help="Only display the normative text for the specified reference entity")
+    parser.add_argument("--datasetid", type=str, default="CostAndUsage",
+                       help="Filter entities by DatasetId (default: CostAndUsage)")
     
     args = parser.parse_args()
     
@@ -268,4 +282,4 @@ if __name__ == "__main__":
         out_path = Path(args.filename)
 
     
-    main(in_path, out_path, exclude_rmids=args.exclude_rmids, reference_filter=args.reference, include_order=args.include_order)
+    main(in_path, out_path, exclude_rmids=args.exclude_rmids, reference_filter=args.reference, include_order=args.include_order, dataset_filter=args.datasetid)

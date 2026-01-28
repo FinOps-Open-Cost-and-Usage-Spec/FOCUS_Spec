@@ -302,7 +302,9 @@
         "ColumnName": "ChargeClass",
         "Value": "Correction"
       },
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-ChargeClass-C-000-M"
+      ]
     }
   },
   "CAU-ConsumedQuantity-C-008-C": {
