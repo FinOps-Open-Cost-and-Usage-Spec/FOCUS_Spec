@@ -1,0 +1,281 @@
+{
+  "ConsumedQuantity-C-000-C": {
+    "Function": "Composite",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ConsumedQuantity column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedQuantity-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedQuantity-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedQuantity-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedQuantity-C-008-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-011-C",
+        "ConsumedQuantity-C-001-M",
+        "ConsumedQuantity-C-002-M",
+        "ConsumedQuantity-C-003-C",
+        "ConsumedQuantity-C-008-C"
+      ]
+    }
+  },
+  "ConsumedQuantity-C-001-M": {
+    "Function": "Type",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity MUST be of type Decimal.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeDecimal",
+        "ColumnName": "ConsumedQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ConsumedQuantity-C-002-M": {
+    "Function": "Format",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity MUST conform to NumericFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatNumeric",
+        "ColumnName": "ConsumedQuantity"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ConsumedQuantity-C-003-C": {
+    "Function": "Composite",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedQuantity-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedQuantity-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ConsumedQuantity-C-004-C",
+        "ConsumedQuantity-C-005-C"
+      ]
+    }
+  },
+  "ConsumedQuantity-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not \"Usage\", or when ChargeCategory is \"Usage\" and CommitmentDiscountStatus is \"Unused\".",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ConsumedQuantity",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "AND",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Usage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "CommitmentDiscountStatus",
+                "Value": "Unused"
+              }
+            ]
+          }
+        ]
+      },
+      "Dependencies": []
+    }
+  },
+  "ConsumedQuantity-C-005-C": {
+    "Function": "Composite",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When ChargeCategory is \"Usage\" and CommitmentDiscountStatus is not \"Unused\", ConsumedQuantity adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedQuantity-C-006-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ConsumedQuantity-C-007-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "ChargeCategory",
+            "Value": "Usage"
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "CommitmentDiscountStatus",
+            "Value": "Unused"
+          }
+        ]
+      },
+      "Dependencies": [
+        "ConsumedQuantity-C-006-C",
+        "ConsumedQuantity-C-007-C"
+      ]
+    }
+  },
+  "ConsumedQuantity-C-006-C": {
+    "Function": "Nullability",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity MUST NOT be null when ChargeClass is not \"Correction\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ConsumedQuantity",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeClass",
+        "Value": "Correction"
+      },
+      "Dependencies": []
+    }
+  },
+  "ConsumedQuantity-C-007-C": {
+    "Function": "Nullability",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity MAY be null when ChargeClass is \"Correction\".",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ConsumedQuantity",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeClass",
+        "Value": "Correction"
+      },
+      "Dependencies": []
+    }
+  },
+  "ConsumedQuantity-C-008-C": {
+    "Function": "Validation",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity MUST be a valid decimal value when not null.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ConsumedQuantity",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  }
+}
