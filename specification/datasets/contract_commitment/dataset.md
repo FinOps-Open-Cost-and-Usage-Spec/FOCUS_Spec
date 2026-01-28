@@ -35,6 +35,7 @@ The Contract Commitment dataset can be joined to the Cost and Usage dataset thro
 
 ContractCommitment adheres to the following requirements:
 
+* ContractCommitment MUST be present when the service provider supports *contract commitments*.
 * The presence of columns in ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [BillingCurrency](#datasets.contractcommitment.billingcurrency).
   * ContractCommitment MUST include [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory).
@@ -49,7 +50,6 @@ ContractCommitment adheres to the following requirements:
   * ContractCommitment MUST include [ContractId](#datasets.contractcommitment.contractid).
   * ContractCommitment MUST include [ContractPeriodEnd](#datasets.contractcommitment.contractperiodend).
   * ContractCommitment MUST include [ContractPeriodStart](#datasets.contractcommitment.contractperiodstart).
-* ContractCommitment MUST be present when the service provider supports *contract commitments*.
 * ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 
