@@ -1,0 +1,148 @@
+{
+  "SubAccountId-C-000-C": {
+    "Function": "Composite",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "SUB_ACCOUNT_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The SubAccountId column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountId-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountId-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountId-C-003-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-019-C",
+        "SubAccountId-C-001-M",
+        "SubAccountId-C-002-M",
+        "SubAccountId-C-003-C"
+      ]
+    }
+  },
+  "SubAccountId-C-001-M": {
+    "Function": "Type",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "SubAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountId-C-002-M": {
+    "Function": "Format",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "SubAccountId"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountId-C-003-C": {
+    "Function": "Composite",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountId-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountId-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "SubAccountId-C-004-C",
+        "SubAccountId-C-005-C"
+      ]
+    }
+  },
+  "SubAccountId-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST be null when a charge is not related to a sub account.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountId-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "SubAccountId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountId MUST NOT be null when a charge is related to a sub account.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
