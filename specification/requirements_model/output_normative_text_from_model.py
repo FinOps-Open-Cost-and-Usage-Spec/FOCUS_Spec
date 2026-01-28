@@ -83,6 +83,12 @@ def collect(spec: dict):
         ref = model.get("Reference")
         vc = model.get("ValidationCriteria") or {}
         must = vc.get("MustSatisfy")
+        status = model.get("Status")
+        
+        # Skip rules with Status "Removed"
+        if status == "Removed":
+            continue
+        
         if not (isinstance(ref, str) and ref.strip() and isinstance(must, str) and must.strip()):
             continue
 
@@ -221,14 +227,14 @@ def build_markdown(grouped, exclude_rmids=False, include_order=False):
             order_prefix = f'{item.get("order", "")}\t' if include_order else ""
             
             if exclude_rmids:
-                lines.append(f'{order_prefix}{indent}{item["must"]}')
+                lines.append(f'{order_prefix}{indent}* {item["must"]}')
             else:
-                lines.append(f'{order_prefix}{indent}{item["must"]} ({item["ruleid"]})')
+                lines.append(f'{order_prefix}{indent}* {item["must"]} ({item["ruleid"]})')
         lines.append("")
     return ("\n".join(lines)).rstrip() + "\n"
 
 
-def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False, dataset_filter: str = "CostAndUsage") -> None:
+def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = False, reference_filter: str | None = None, include_order: bool = False, dataset_filter: str = "CostAndUsage", attribute_filter: bool = False) -> None:
     spec = json.loads(in_path.read_text(encoding="utf-8"))
     grouped = collect(spec)
     
@@ -240,8 +246,16 @@ def main(in_path: Path, out_path: Path | None = None, exclude_rmids: bool = Fals
                 filtered_grouped[ref] = items
         grouped = filtered_grouped
     
-    # Filter by dataset if specified
-    if dataset_filter:
+    # Filter by attribute if specified (disregards dataset filter)
+    if attribute_filter:
+        filtered_grouped = OrderedDict()
+        for ref, items in grouped.items():
+            filtered_items = [item for item in items if item.get("etype") == "Attribute"]
+            if filtered_items:
+                filtered_grouped[ref] = filtered_items
+        grouped = filtered_grouped
+    # Filter by dataset if not filtering by attribute
+    elif dataset_filter:
         filtered_grouped = OrderedDict()
         for ref, items in grouped.items():
             filtered_items = [item for item in items 
@@ -272,6 +286,8 @@ if __name__ == "__main__":
     parser.add_argument("--reference", type=str, help="Only display the normative text for the specified reference entity")
     parser.add_argument("--datasetid", type=str, default="CostAndUsage",
                        help="Filter entities by DatasetId (default: CostAndUsage)")
+    parser.add_argument("--attribute", action="store_true",
+                       help="Filter for Attribute entities only (disregards --datasetid)")
     
     args = parser.parse_args()
     
@@ -282,4 +298,4 @@ if __name__ == "__main__":
         out_path = Path(args.filename)
 
     
-    main(in_path, out_path, exclude_rmids=args.exclude_rmids, reference_filter=args.reference, include_order=args.include_order, dataset_filter=args.datasetid)
+    main(in_path, out_path, exclude_rmids=args.exclude_rmids, reference_filter=args.reference, include_order=args.include_order, dataset_filter=args.datasetid, attribute_filter=args.attribute)
