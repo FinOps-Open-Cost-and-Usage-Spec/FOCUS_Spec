@@ -36,7 +36,7 @@ When TagDetails is not null, the JsonObjectFormat for TagDetails adheres to the 
     * When the value of AncestorTaggedSources is not null, each object in AncestorTaggedSources MUST have a key denoting the *tag source*.
       * Each tag source object MUST contain FOCUS-defined tag properties.
     * AncestorTaggedSources SHOULD contain objects for *tag sources* which did not result in the *finalized tag*.
-* Each tag scheme object MUST contain an array with the key "UntaggedSources"
+* Each tag scheme object MUST contain an array with the key "UntaggedSources".
   * Untagged Sources array MUST contain all *tag sources* for the corresponding tag scheme which are eligible to be tagged for the *charge*.
   * The value of Untagged Sources MUST be null when there are no eligible *tag sources* which contain no tags.
 
@@ -182,6 +182,7 @@ The tag key object and tag source objects contain the following properties:
 ```
 
 The corresponding Tags column would be:
+
 ```json
 {
   "foo":"baz", 
@@ -195,12 +196,9 @@ The corresponding Tags column would be:
 ### JSON Type Definition
 
 ```json
-
 ```
 
 ## Example Scenarios
-
-
 
 ## Column ID
 
