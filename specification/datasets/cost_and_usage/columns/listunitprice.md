@@ -1,6 +1,6 @@
 # List Unit Price
 
-The List Unit Price represents the suggested service-provider-published unit price for a single [Pricing Unit](#pricingunit) of the associated SKU, exclusive of any discounts. This price is denominated in the [Billing Currency](#billingcurrency). The List Unit Price is commonly used for calculating savings based on various rate optimization activities.
+The List Unit Price represents the suggested service-provider-published unit price for a single [Pricing Unit](#datasets.costandusage.pricingunit) of the associated SKU, exclusive of any discounts. This price is denominated in the [Billing Currency](#datasets.costandusage.billingcurrency). The List Unit Price is commonly used for calculating savings based on various rate optimization activities.
 
 ## Requirements
 
@@ -8,17 +8,17 @@ ListUnitPrice adheres to the following requirements:
 
 * ListUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be of type Decimal.
-* ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
+* ListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListUnitPrice nullability is defined as follows:
-  * ListUnitPrice MUST be null when [SkuPriceId](#skupriceid) is null.
-  * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
-  * ListUnitPrice MUST NOT be null when [SkuPriceId](#skupriceid) is not null.
-  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * ListUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
+  * ListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+  * ListUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.
+  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * ListUnitPrice MAY be null in all other cases.
 * When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
-* [ListCost](#listcost) MUST equal the product of ListUnitPrice and [PricingQuantity](#pricingquantity) when ListUnitPrice is not null and PricingQuantity is not null.
+* [ListCost](#datasets.costandusage.listcost) MUST equal the product of ListUnitPrice and [PricingQuantity](#datasets.costandusage.pricingquantity) when ListUnitPrice is not null and PricingQuantity is not null.
 
 ## Column ID
 
@@ -44,7 +44,7 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 | Feature level   | Conditional                          |
 | Allows nulls    | True                                 |
 | Data type       | Decimal                              |
-| Value format    | [Numeric Format](#numericformat)     |
+| Value format    | [Numeric Format](#attributes.numericformat)     |
 | Number range    | Any valid non-negative decimal value |
 
 ## Introduced (version)

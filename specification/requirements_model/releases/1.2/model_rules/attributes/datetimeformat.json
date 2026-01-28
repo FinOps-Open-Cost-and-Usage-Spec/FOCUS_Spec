@@ -1,0 +1,161 @@
+{
+  "DateTimeFormat-A-000-M": {
+    "Function": "Composite",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The DateTimeFormat attribute adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DateTimeFormat-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DateTimeFormat-A-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DateTimeFormat-A-003-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "DateTimeFormat-A-001-M",
+        "DateTimeFormat-A-002-M",
+        "DateTimeFormat-A-003-M"
+      ]
+    }
+  },
+  "DateTimeFormat-A-001-M": {
+    "Function": "Validation",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Date/time values MUST be in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DateTimeFormat-A-002-M": {
+    "Function": "Format",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Date/time values format MUST be aligned with ISO 8601 standard, which provides a globally recognized format for representing dates and times (see ISO 8601-1:2019 governing document for details).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DateTimeFormat-A-003-M": {
+    "Function": "Composite",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Values providing information about a specific moment in time MUST be represented in the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ') and conform to the following guidelines:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DateTimeFormat-A-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DateTimeFormat-A-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DateTimeFormat-A-006-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "DateTimeFormat-A-004-M",
+        "DateTimeFormat-A-005-M",
+        "DateTimeFormat-A-006-M"
+      ]
+    }
+  },
+  "DateTimeFormat-A-004-M": {
+    "Function": "Validation",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST Include the date and time components, separated with the letter ‘T’.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DateTimeFormat-A-005-M": {
+    "Function": "Validation",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST Use two-digit hours (HH), minutes (mm), and seconds (ss).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "DateTimeFormat-A-006-M": {
+    "Function": "Validation",
+    "Reference": "DateTimeFormat",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "MUST End with the ‘Z’ indicator to denote UTC (Coordinated Universal Time).",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
