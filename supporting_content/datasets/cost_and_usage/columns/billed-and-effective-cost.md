@@ -127,11 +127,11 @@ Eligible purchases should be *amortized* using a methodology determined by the s
 
 Cost of a *charge* recognized in the specified *charge period*, based on accrual-based accounting principles.
 
-## OPTION 3:
+## OPTION 2:
 
 Cost of a *charge* based on the actual *resource* or *service* usage or entitlements consumption during a given *charge period*, regardless of when those cost is invoiced.
 
-## OPTION 4:
+## OPTION 3:
 
 Cost of a *charge* based on the actual *resource* or *service* usage or entitlements consumption during a given *charge period*, recognized in the same timeframe as the value it provides, independent of when that cost is invoiced
 
