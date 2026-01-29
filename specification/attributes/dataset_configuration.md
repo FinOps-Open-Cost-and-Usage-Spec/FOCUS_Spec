@@ -18,6 +18,7 @@ Defines configuration options for controlling the structure and content of a FOC
 
 * A *FOCUS dataset* MUST allow selecting which columns to include.
   * A *FOCUS dataset* MUST produce conformant column values regardless of which columns are included.
+* A *FOCUS dataset* MUST include [Metadata](#metadata) describing the column selection applied to the dataset.
 
 ## Exceptions
 
