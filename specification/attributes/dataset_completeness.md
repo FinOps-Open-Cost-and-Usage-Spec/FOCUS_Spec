@@ -1,6 +1,6 @@
 # Dataset Completeness
 
-FinOps practitioners need [*FOCUS datasets*](#glossary:FOCUS-dataset) to include the same information available in [*native datasets*](#glossary:native-dataset). When *FOCUS datasets* lack columns needed for critical scenarios, like organizational hierarchy attribution, commitment discount tracking, or provider-specific optimizations, practitioners cannot adopt FOCUS. Missing columns force practitioners to use proprietary *native datasets*, making FOCUS an added overhead rather than an open, provider-agnostic alternative.
+FinOps practitioners need [*FOCUS datasets*](#glossary:FOCUS-dataset) to include the same information available in [*native datasets*](#glossary:native-dataset). When *FOCUS datasets* lack columns needed for critical scenarios, like organizational hierarchy attribution, commitment discount tracking, invoice reconciliation, or provider-specific optimizations, practitioners cannot rely on *FOCUS datasets* as a primary data source. Missing columns force practitioners to use proprietary *native datasets*, making FOCUS an added overhead rather than a provider-agnostic alternative that supports essential FinOps activities.
 
 This attribute ensures [*data generators*](#glossary:data-generator) provide complete coverage by including custom columns (prefixed with `x_`) for *native dataset* columns not represented in FOCUS columns. Custom columns bridge the gap between FOCUS standardization and provider-specific capabilities, allowing practitioners to adopt *FOCUS datasets* without losing analytical capabilities.
 

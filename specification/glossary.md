@@ -158,7 +158,7 @@ A government-issued currency (e.g., US dollars, Euros).
 
 <a name="glossary:native-dataset"><b>Native Dataset</b></a>
 
-A dataset provided by a [*data generator*](#metadata.datagenerator) in a format other than FOCUS. For [*service providers*](#glossary:service provider), this typically refers to their proprietary billing export (e.g., AWS Cost and Usage Report, Azure Cost Details, GCP BigQuery Billing Export). For FinOps tool vendors, this refers to any non-FOCUS dataset they offer to [*practitioners*](#glossary:practitioner).
+A dataset provided by a [*data generator*](#metadata.datagenerator) in a format other than FOCUS. For [*service providers*](#glossary:service-provider), this typically refers to their proprietary data exports (e.g., billing exports, contract details, or other FinOps-related datasets). For FinOps tool vendors, this refers to any non-FOCUS dataset they offer to [*practitioners*](#glossary:practitioner).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
