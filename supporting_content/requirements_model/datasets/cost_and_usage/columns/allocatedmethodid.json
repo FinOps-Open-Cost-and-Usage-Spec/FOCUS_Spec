@@ -1,0 +1,205 @@
+{
+  "CAU-AllocatedMethodId-C-000-M": {
+    "Function": "Composite",
+    "Reference": "AllocatedMethodId",
+    "EntityName": "Allocated Method ID",
+    "EntityId": "AllocatedMethodId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodId adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodId-C-001-C",
+        "CAU-AllocatedMethodId-C-002-M",
+        "CAU-AllocatedMethodId-C-003-M",
+        "CAU-AllocatedMethodId-C-004-M",
+        "CAU-AllocatedMethodId-C-007-M"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodId-C-001-C": {
+    "Function": "Presence",
+    "Reference": "AllocatedMethodId",
+    "EntityName": "Allocated Method ID",
+    "EntityId": "AllocatedMethodId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Order": 10,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodId-C-002-M": {
+    "Function": "DataType",
+    "Reference": "AllocatedMethodId",
+    "EntityName": "Allocated Method ID",
+    "EntityId": "AllocatedMethodId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodId MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodId-C-003-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodId",
+    "EntityName": "Allocated Method ID",
+    "EntityId": "AllocatedMethodId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodId MUST conform to [StringHandling](#stringhandling) requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodId-C-004-M": {
+    "Function": "Composite",
+    "Reference": "AllocatedMethodId",
+    "EntityName": "Allocated Method ID",
+    "EntityId": "AllocatedMethodId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodId nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedMethodId-C-005-C",
+        "CAU-AllocatedMethodId-C-006-M"
+      ]
+    }
+  },
+  "CAU-AllocatedMethodId-C-005-C": {
+    "Function": "NullabilityRules",
+    "Reference": "AllocatedMethodId",
+    "EntityName": "Allocated Method ID",
+    "EntityId": "AllocatedMethodId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodId MUST be null when a [*charge*](#glossary:charge) is not related to a data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodId-C-006-M": {
+    "Function": "NullabilityRules",
+    "Reference": "AllocatedMethodId",
+    "EntityName": "Allocated Method ID",
+    "EntityId": "AllocatedMethodId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedMethodId MUST NOT be null when a *charge* is related to a data generator-calculated split cost allocation.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedMethodId-C-007-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedMethodId",
+    "EntityName": "Allocated Method ID",
+    "EntityId": "AllocatedMethodId",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generator documentation of a split cost allocation method MUST make reference to a single AllocatedMethodId value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
