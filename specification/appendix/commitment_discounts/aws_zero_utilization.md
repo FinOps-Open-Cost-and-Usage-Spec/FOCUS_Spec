@@ -67,10 +67,10 @@ These three quantity columns serve different purposes and must be understood in 
 
 **Critical Rules:**
 
-- **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-- **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-- **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
-- **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
+* **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
+* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
+* **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
+* **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
@@ -118,7 +118,7 @@ Use these rules to validate FOCUS commitment data.
 
 ### Rule 1: Purchase Row Effective Cost
 
-```
+```text
 FOR ALL rows WHERE ChargeCategory = 'Purchase':
     ASSERT EffectiveCost = 0
 ```
@@ -127,7 +127,7 @@ FOR ALL rows WHERE ChargeCategory = 'Purchase':
 
 ### Rule 2: Commitment-Covered Usage Has Zero Billed Cost
 
-```
+```text
 FOR ALL rows WHERE CommitmentDiscountStatus IN ('Used', 'Unused'):
     ASSERT BilledCost = 0
 ```
@@ -136,7 +136,7 @@ FOR ALL rows WHERE CommitmentDiscountStatus IN ('Used', 'Unused'):
 
 ### Rule 3: On-Demand Cost Equality
 
-```
+```text
 FOR ALL rows WHERE PricingCategory = 'Standard' AND ChargeCategory = 'Usage':
     ASSERT BilledCost = EffectiveCost
     ASSERT BilledCost = ListCost
@@ -146,7 +146,7 @@ FOR ALL rows WHERE PricingCategory = 'Standard' AND ChargeCategory = 'Usage':
 
 ### Rule 4: Commitment Link Integrity
 
-```
+```text
 FOR ALL rows WHERE CommitmentDiscountStatus IS NOT NULL:
     ASSERT CommitmentDiscountId IS NOT EMPTY
     ASSERT CommitmentDiscountId matches a Purchase row ResourceId
@@ -156,7 +156,7 @@ FOR ALL rows WHERE CommitmentDiscountStatus IS NOT NULL:
 
 ### Rule 5: Amortization Balance
 
-```
+```text
 FOR commitment period:
     ASSERT Sum(Purchase.BilledCost) = Sum(Usage.EffectiveCost WHERE CommitmentDiscountStatus IS NOT NULL)
 ```
@@ -167,11 +167,11 @@ FOR commitment period:
 
 **All-Upfront Payment Validation:**
 
-- Annual commitment: $353,000.00
-- Hours in term: 24
-- Hourly amortization: $353,000.00 / 24 = $14,708.33/hour
-- Daily amortization (365 days): $353,000.00 / 365 = $967.12/day
-- Sum(Usage EffectiveCost): $0.00
+* Annual commitment: $353,000.00
+* Hours in term: 24
+* Hourly amortization: $353,000.00 / 24 = $14,708.33/hour
+* Daily amortization (365 days): $353,000.00 / 365 = $967.12/day
+* Sum(Usage EffectiveCost): $0.00
 
 **Check:** $0.00 should approach $353,000.00 over the full term.
 
