@@ -73,7 +73,7 @@ Note the following details in the example dataset:
 * A purchase record for the initial &dollar;1200 payment is present representing List, Billed, and Contracted cost of the purchase
 * The charge for the unused amount has a &dollar;0 BilledCost (since the total amount was billed with the prepayment). However, the charge captures the unused portion as an EffectiveCost.
 * The unused charge rows apply to the entire Charge Period the contract was signed for.
-* This scenario shows List Cost and Contracted Cost column double counting dynamic (described here in [ListCost](#listcost) and [ContractedCost](#contractedcost)) where either the [ChargeType](#chargetype) Purchase or Usage rows need to be excluded depending on the reporting scenario.
+* This scenario shows List Cost and Contracted Cost column double counting dynamic (described here in [ListCost](#datasets.costandusage.listcost) and [ContractedCost](#datasets.costandusage.contractedcost)) where either the [ChargeCategory](#datasets.costandusage.chargecategory) Purchase or Usage rows need to be excluded depending on the reporting scenario.
 
 ### Scenario B2: Prepaid with a minimum spend requirement per month
 
@@ -86,4 +86,4 @@ Note the following details in the example dataset:
 * A purchase record for the initial &dollar;1200 payment is present representing List, Billed, and Contracted cost of the purchase
 * The monthly charge for the unused amount has a &dollar;0 BilledCost (since the total amount was billed with the prepayment). However, the charge captures the unused portion as an EffectiveCost.
 * The final month has a charge that captures the overall unmet spend requirement for the 12-month contract. Alternatively, this could be provided as two charges, one for the unused portion of the final month, and one to capture the overall unmet spend requirement.
-* This scenario shows List Cost and Contracted Cost column double counting dynamic (described here in [ListCost](#listcost) and [ContractedCost](#contractedcost)) where either the Purchase or Usage rows need to be excluded depending on the reporting scenario.
+* This scenario shows List Cost and Contracted Cost column double counting dynamic (described here in [ListCost](#datasets.costandusage.listcost) and [ContractedCost](#datasets.costandusage.contractedcost)) where either the Purchase or Usage rows need to be excluded depending on the reporting scenario.

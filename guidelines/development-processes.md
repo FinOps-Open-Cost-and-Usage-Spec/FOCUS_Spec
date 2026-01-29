@@ -19,7 +19,7 @@ Naming for all Issues should aim to be short, but remain clear and descriptive. 
 
 ### Issue Types
 
-Issues should be created via the use of issue templates that adhere to Issue Types. The Working Group uses five Issue Types: Feedback, Feature Request, Work Items, Action Items, and Maintenance Tasks.
+Issues should be created via the use of issue templates that adhere to Issue Types. The Working Group uses four Issue Types: Feedback, Feature Request, Action Items, and Maintenance Tasks.
 
 <figure>
     <img src="images/FOCUS-Process-labels-issue-templates.drawio.png" alt="Issue Templates & Labels">
@@ -55,25 +55,13 @@ _Normative guidelines to develop high-quality feature request titles_:
 
 Feature Request Issues will have the Type: "Feature" and Label: "feature", and be associated with the FOCUS WG project.
 
-Everyone is welcome to add comments to further define the feature request item, add concerns and/or considerations you would like to see taken into account when developing a solution for the feature request. Support for a feature request item can also be shown in the form of reactions on the Issue ticket.
+Everyone is welcome to add comments to further define the Feature Request item, add concerns and/or considerations you would like to see taken into account when developing a solution for the Feature Request. Support for a Feature Request item can also be shown in the form of reactions on the Issue ticket.
 
 Feature Request Issues will have a title that starts with \`\[FR]\`.
 
-
-#### Work Items
-
-Once a Feedback Issue has been accepted into scope for a release, a Work Item (WI) Issue will be created to describe the work, define the scope, and set the definition of done.
-
-Work Items are parent issues that describe a larger piece of work for the FOCUS specification development and should be associated with many children Action Item Issues which outline individual pieces of work needed to conclude work on the Work Item.
-
-The Assignee(s) of a Work Item Issue is ultimately the FOCUS member(s) leading the development of that particular piece of work. If you would like to contribute to an open Work Item, the best first step would be to reach out to the Assignee(s) for guidance.
-
-Work Item Issues will have a title that starts with \`\[WI]\`.
-
-
 #### Action Items
 
-Action Item (AI) Issues are used to track the concrete steps necessary for developing a Work Item.  An AI should be granular: ideally a single action with a simple definition of done. This makes Action Items easier to understand and for asynchronous work to be performed on them.
+Action Item (AI) Issues are used to track the concrete steps necessary for developing a Feature Request.  An AI should be granular: ideally a single action with a simple definition of done. This makes Action Items easier to understand and for asynchronous work to be performed on them.
 
 If it is determined that an AI is too large or contains multiple items, it should be split into multiple AI Issues to assist in keeping them as atomic as possible.
 
@@ -100,22 +88,25 @@ The working group oversees the scope of the next release via a GitHub project.
 
 Each issue carries one of the following Status values, which represent the overall working group workflow from ideation to completion.
 
-- Submitted: newly filed, awaiting triage
-- Needs More Info: triaged; needs more clarification or detail before prioritization can begin
-- Under Consideration: being actively evaluated for upcoming spec work
-- Accepted in Scope: will be developed in next release
-- Ready for Dev: not started
-- In Discovery: defining the concepts that this issue will entail via Task Force
-- In Development: discussing solution for how to solve for the concept / design via Task Force
-- PR Needed: TF requires a concrete proposal to move forward
-- PR In Draft: PR being authored
-- PR TF Review: PR issued and in review with Task Force
-- PR Member Review: TF approved, in review with Members
-- PR Ready for Approval: all threads resolved, ready for approval
-- PR Approved: PR approved by Members
-- Implemented: done and dusted
-- Blocked: cannot move forward
-- Closed: out of scope, not feasible, or duplicative
+- **Submitted:** newly filed, awaiting triage
+- **Needs More Info:** triaged; needs more clarification or detail before prioritization can begin
+- **Under Consideration:** being actively evaluated for upcoming spec work
+- **Provisional Scope:** provisionally added to next release
+- **Accepted in Scope:** will be developed in next release
+- **Ready for Dev:** not started
+- **In Evaluation:** Review of the Feature Request via Task Force
+- **In Discovery:** defining the concepts that this issue will entail via Task Force
+- **In Development:** discussing solution for how to solve for the concept / design via Task Force
+- **PR Needed:** TF requires a concrete proposal to move forward
+- **PR In Draft:** PR being authored
+- **PR TF Review:** PR issued and in review with Task Force
+- **PR Member Review:** TF approved, in review with Members
+- **PR Ready for Approval:** all threads resolved, ready for approval
+- **PR Approved:** PR approved by Members
+- **Implemented:** done and dusted
+- **Blocked:** cannot move forward
+- **Postponed:** removed from scope for this release; to be considered in the next release
+- **Closed:** out of scope, not feasible, or duplicative
 
 Some notes about the use of Status values:
 
@@ -135,6 +126,7 @@ Action Items carry a separate custom field called `AI Status` that carries a sma
 - Blocked
 - On Hold
 - Closed
+- In Review
 - Completed
 - Postponed
 
@@ -156,7 +148,7 @@ This diagram illustrates how the **Scope Definition** phase is practically imple
     <figcaption>Scope Definition Phase</figcaption>
 </figure>
 
-Once an issue is **Accepted in Scope**, it may lead to the creation of a **Work Item** (WI), tagged for inclusion in a specific version (e.g., `vX.Y`). Stakeholders then review the proposed work items for alignment with strategic priorities. Upon approval, the work item concept is incorporated into the [`RELEASE_PLANNING`](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/main/RELEASE-PLANNING.md) document, and the item officially enters the **Development Phase**.
+Once an issue is **Accepted in Scope**, it is tagged for inclusion in a specific version (e.g., `vX.Y`). Stakeholders then review the proposed Feature Requests for alignment with strategic priorities. Upon approval, the Feature Request concept is incorporated into the [`RELEASE_PLANNING`](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/main/RELEASE-PLANNING.md) document, and the item officially enters the **Development Phase**.
 
 This process ensures that all proposed features and improvements are traceable and categorized consistently through issue labels.
 
@@ -176,7 +168,7 @@ This system of labeled pull requests provides clear visibility into the status o
 
 ### Use of Google Drive During Active Development
 
-During active development, it is common practice for each Work Item to have a dedicated Google Drive folder shared internally among FOCUS members. These folders typically follow a consistent naming convention that includes the Work Item number and a brief, human-readable description. This approach ensures easy access, efficient navigation, and smooth collaboration when working with shared materials.
+During active development, it is common practice for each Feature Request to have a dedicated Google Drive folder shared internally among FOCUS members. These folders typically follow a consistent naming convention that includes the Feature Request number and a brief, human-readable description. This approach ensures easy access, efficient navigation, and smooth collaboration when working with shared materials.
 
 ### Table Conversion for Markdown
 
@@ -214,12 +206,12 @@ Development work contributing a change to the FOCUS specification is performed v
 
 ### Feature Branches
 
-Each Task Force (TF) group in the FOCUS Working Group is able to have a Maintainer open a feature branch on behalf of the Task Force either for a single Work Item or a group of related items. This will be the recommended method of organizing work in progress on Work Items over individuals creating working branches themselves and pushing them into the project.
+Each Task Force (TF) group in the FOCUS Working Group is able to have a Maintainer open a feature branch on behalf of the Task Force either for a single Feature Request or a group of related items. This will be the recommended method of organizing work in progress on Feature Requests over individuals creating working branches themselves and pushing them into the project.
 
 
 ### Branch Management
 
-Members of the FOCUS project need to be aware that all branches in the [FOCUS\_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) repository are owned by the project and that frequent cleanups of stale branches will be performed by the \`Admins\`. This means that any scratch/WIP/ideation work which is not part of any open Action Items/Work Items should be moved out to a [fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) in the individual members own GitHub repository. 
+Members of the FOCUS project need to be aware that all branches in the [FOCUS\_Spec](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec) repository are owned by the project and that frequent cleanups of stale branches will be performed by the \`Admins\`. This means that any scratch/WIP/ideation work which is not part of any open Action Items/Feature Requests should be moved out to a [fork of the repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) in the individual members own GitHub repository. 
 
 When Pull Requests are merged the option to delete the working branch should always be used, with a preference for a new branch to be created for further work.
 
@@ -229,7 +221,7 @@ When Pull Requests are merged the option to delete the working branch should alw
 As members of FOCUS you are able to open branches in the GitHub repository. The naming convention of branches must follow one of the following patterns:
 
 1. Start with your name (e.g. flanakin/skuterm)
-2. Start with the Work Item number (e.g. 636-clarify-guidance-around-refunds)
+2. Start with the Feature Request number (e.g. 636-clarify-guidance-around-refunds)
 
 Branches not following this naming convention may be closed without notice.
 
@@ -247,7 +239,7 @@ Pull Requests (PRs) are used to promote development work through our branch pipe
 
 The _name_ of a Pull Request should be short but also clearly describe what the pull request is doing. The name should start with a verb in order to describe the action that has taken place (e.g., “Reorganize metadata appendix”, “Correct typos in Section 1.2”).  The reference to the parent issue should be included in the title also (e.g. #628) as often lists of Pull Request titles are made and this helps keep the reference to the related issue (see: Related to Issues).
 
-- Pull requests related directly to Work Items should have a title starting with \`WI #\<number of the WI ticket>:\` followed by a short description
+- Pull requests related directly to Feature Requests should have a title starting with \`FR #\<number of the FR ticket>:\` followed by a short description
 - Pull requests related directly to Action Items should have a title starting with \`AI #\<number of the AI ticket>:\` followed by a short description
 
 The _description_ of a Pull Request should be as detailed as possible to help other members better understand the PRs content. Descriptions should consider the following:
@@ -361,7 +353,7 @@ Responding to notifications is important as this enables the group to know that 
 
 ## Slack
 
-The FOCUS project has its own Slack workspace for members to communicate. As the FOCUS Slack is limited to only members of the Project all decisions, summaries of conversations, and updates about the development of the Specification should always be echoed back into the relevant Pull Request, Work Item, and Action Item tickets in GitHub for the general public to see and the Project to track. All decisions must be documented in the related GitHub Issue or PR within 48 hours.
+The FOCUS project has its own Slack workspace for members to communicate. As the FOCUS Slack is limited to only members of the Project all decisions, summaries of conversations, and updates about the development of the Specification should always be echoed back into the relevant Pull Request, Feature Request, and Action Item tickets in GitHub for the general public to see and the Project to track. All decisions must be documented in the related GitHub Issue or PR within 48 hours.
 
 
 ### Channels
@@ -381,7 +373,7 @@ Main channel for members to communicate and share information. Remember to updat
 
 #### #task-force-\#
 
-Sub group specific channels for targeted conversations about work items/action items. Remember to update GitHub where relevant.
+Sub group specific channels for targeted conversations about feature requests/action items. Remember to update GitHub where relevant.
 
 ##### #tf-<name>
 Further subgroups are created for larger items like SaaS, sku properties, etc.
@@ -394,13 +386,12 @@ Channel for maintainers to communicate and update each other about activities.
 
 ## Glossary
 
-- CLA = Contributor License Agreement
-- WG = Working Group
-- TF = Task Force
-- DoD = Definition of Done
-- PR = Pull Request
-- FR = Feature Request
-- WI = Work Item
 - AI = Action Item
+- CLA = Contributor License Agreement
+- DoD = Definition of Done
 - FOCUS member = Individuals contributing after their Organization signs the [CLA](https://github.com/FinOps-Open-Cost-and-Usage-Spec/EasyCLA).
+- FR = Feature Request
+- PR = Pull Request
+- TF = Task Force
+- WG = Working Group
 
