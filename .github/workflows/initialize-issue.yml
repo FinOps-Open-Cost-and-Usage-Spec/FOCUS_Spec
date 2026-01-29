@@ -11,7 +11,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PROJECT_PAT }}
           ORG: "FinOps-Open-Cost-and-Usage-Spec"
-          PRJ_NUM: 7
+          PRJ_NUM: 5
           ISSUE_NODE_ID: ${{ github.event.issue.node_id }}
         run: |
           set -e
