@@ -44,7 +44,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
 
-**Key Relationships:**
+#### Key Relationships
 
 1. **Used Rows:** All three quantities are typically equal (1) because one hour of usage consumes one pricing unit and applies one commitment unit.
 
@@ -70,7 +70,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **Unused Row**    | $0.00       | $79.11        | null        |
 | **On-Demand Row** | $10.14      | $10.14        | $10.14      |
 
-**Critical Rules:**
+#### Critical Rules
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
 * **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
@@ -185,7 +185,7 @@ FOR commitment period:
 
 ### Validation for This Scenario
 
-**All-Upfront Payment Validation:**
+#### All-Upfront Payment Validation
 
 * Annual commitment: $693,000.00
 * Hours in term: 24
