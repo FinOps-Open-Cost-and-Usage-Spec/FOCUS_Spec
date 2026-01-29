@@ -5,9 +5,9 @@
 **Category:** Spend-based
 **Utilization:** 100%
 **Hours Generated:** 24
-**Annual Commitment:** $200,416.67
-**Committed Rate:** $42.24/hour
-**On-Demand Rate:** $63.36/hour
+**Annual Commitment:** &dollar;200,416.67
+**Committed Rate:** &dollar;42.24/hour
+**On-Demand Rate:** &dollar;63.36/hour
 **Savings:** 33%
 
 [CSV Example](/specification/data/commitment_discount_scenarios/gcp_flex_cud_partial_upfront.csv)
@@ -24,10 +24,10 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 | Row Type          | Count | Total BilledCost | Total EffectiveCost |
 | ----------------- | ----- | ---------------- | ------------------- |
-| Purchase          | 2     | $200,416.67      | $0.00               |
-| Usage (Used)      | 24    | $0.00            | $1,013.76           |
-| Usage (On-Demand) | 12    | $12.16           | $12.16              |
-| **Total**         | 38    | **$200,428.83**  | **$1,025.92**       |
+| Purchase          | 2     | &dollar;200,416.67      | &dollar;0.00               |
+| Usage (Used)      | 24    | &dollar;0.00            | &dollar;1,013.76           |
+| Usage (On-Demand) | 12    | &dollar;12.16           | &dollar;12.16              |
+| **Total**         | 38    | **&dollar;200,428.83**  | **&dollar;1,025.92**       |
 
 ## Column Interactions
 
@@ -53,8 +53,8 @@ The following key relationships apply between quantity columns:
 
 | Column                  | Purpose                    | Commitment-Covered | On-Demand |
 | ----------------------- | -------------------------- | ------------------ | --------- |
-| **ListUnitPrice**       | On-demand (public) price   | $63.36             | $63.36    |
-| **ContractedUnitPrice** | Negotiated/committed price | $42.24             | null      |
+| **ListUnitPrice**       | On-demand (public) price   | &dollar;63.36             | &dollar;63.36    |
+| **ContractedUnitPrice** | Negotiated/committed price | &dollar;42.24             | null      |
 
 **Why this matters:** The difference between ListUnitPrice and ContractedUnitPrice represents your savings from the commitment. On-demand rows have no ContractedUnitPrice because they aren't covered by a commitment.
 
@@ -62,9 +62,9 @@ The following key relationships apply between quantity columns:
 
 | Scenario          | BilledCost  | EffectiveCost | ListCost    |
 | ----------------- | ----------- | ------------- | ----------- |
-| **Purchase Row**  | $200,416.67 | $0.00         | $200,416.67 |
-| **Used Row**      | $0.00       | $42.24        | $63.36      |
-| **On-Demand Row** | $1.30       | $1.30         | $1.30       |
+| **Purchase Row**  | &dollar;200,416.67 | &dollar;0.00         | &dollar;200,416.67 |
+| **Used Row**      | &dollar;0.00       | &dollar;42.24        | &dollar;63.36      |
+| **On-Demand Row** | &dollar;1.30       | &dollar;1.30         | &dollar;1.30       |
 
 The following critical rules apply to commitment discount data:
 
@@ -79,8 +79,8 @@ The following critical rules apply to commitment discount data:
 | ------------------------ | ----------- | ----------------------------------------------- |
 | ChargeCategory           | Purchase    | Commitment purchase transaction                 |
 | ChargeFrequency          | One-Time    | One-time upfront payment                        |
-| BilledCost               | $185,000.00 | Portion of commitment payment                   |
-| EffectiveCost            | $0.00       | **MUST be 0** - cost is amortized to usage rows |
+| BilledCost               | &dollar;185,000.00 | Portion of commitment payment                   |
+| EffectiveCost            | &dollar;0.00       | **MUST be 0** - cost is amortized to usage rows |
 | PricingQuantity          | 1           | One commitment unit purchased                   |
 | CommitmentDiscountStatus | null        | Status only applies to usage rows               |
 
@@ -90,9 +90,9 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ----------------------------------------------------- | ------------------------------------- |
 | ChargeCategory             | Usage                                                 | Compute resource consumption          |
 | PricingCategory            | Committed                                             | Priced at committed rate              |
-| BilledCost                 | $0.00                                                 | **MUST be 0** - covered by commitment |
-| EffectiveCost              | $42.24                                                | Amortized cost (annual / hours)       |
-| ListCost                   | $63.36                                                | What you would have paid on-demand    |
+| BilledCost                 | &dollar;0.00                                                 | **MUST be 0** - covered by commitment |
+| EffectiveCost              | &dollar;42.24                                                | Amortized cost (annual / hours)       |
+| ListCost                   | &dollar;63.36                                                | What you would have paid on-demand    |
 | PricingQuantity            | 1                                                     | Units priced                          |
 | ConsumedQuantity           | 1                                                     | Hours used                            |
 | CommitmentDiscountQuantity | 42.24                                                 | Units applied                         |
@@ -105,9 +105,9 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | -------- | ----------------------------- |
 | ChargeCategory             | Usage    | On-demand compute consumption |
 | PricingCategory            | Standard | No discount applied           |
-| BilledCost                 | $1.30    | On-demand price               |
-| EffectiveCost              | $1.30    | = BilledCost                  |
-| ListCost                   | $1.30    | Same as BilledCost            |
+| BilledCost                 | &dollar;1.30    | On-demand price               |
+| EffectiveCost              | &dollar;1.30    | = BilledCost                  |
+| ListCost                   | &dollar;1.30    | Same as BilledCost            |
 | PricingQuantity            | 65       | Units priced                  |
 | ConsumedQuantity           | 65       | Hours used                    |
 | CommitmentDiscountQuantity | null     | **No commitment applied**     |
@@ -170,13 +170,14 @@ FOR commitment period:
 
 Validation for Partial-Upfront payment option:
 
-* Upfront payment: $185,000.00
-* Monthly fee: $15,416.67
-* Annual total: $185,000.00 + ($15,416.67 × 12) = $370,000.04
-* Hourly amortization: $370,000.04 / 24 = $15,416.67/hour
+* Upfront payment: &dollar;185,000.00
+* Monthly fee: &dollar;15,416.67
+* Annual total: &dollar;185,000.00 + (&dollar;15,416.67 × 12) = &dollar;370,000.04
+* Hourly amortization: &dollar;370,000.04 / 24 = &dollar;15,416.67/hour
 
 **Check:** Sum(Usage EffectiveCost) should equal upfront + accumulated monthly fees.
 
 ### All Validation Rules Passed
 
 This example data is valid according to FOCUS commitment discount rules.
+
