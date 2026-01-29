@@ -1,0 +1,190 @@
+{
+  "SubAccountType-C-000-C": {
+    "Function": "Composite",
+    "Reference": "SubAccountType",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The SubAccountType column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountType-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountType-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountType-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountType-C-006-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-067-C",
+        "SubAccountType-C-001-M",
+        "SubAccountType-C-002-M",
+        "SubAccountType-C-003-C",
+        "SubAccountType-C-006-M"
+      ]
+    }
+  },
+  "SubAccountType-C-001-M": {
+    "Function": "Type",
+    "Reference": "SubAccountType",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountType MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "SubAccountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountType-C-002-M": {
+    "Function": "Format",
+    "Reference": "SubAccountType",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountType MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "SubAccountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "SubAccountType-C-003-C": {
+    "Function": "Composite",
+    "Reference": "SubAccountType",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountType nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountType-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "SubAccountType-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "SubAccountType-C-004-C",
+        "SubAccountType-C-005-C"
+      ]
+    }
+  },
+  "SubAccountType-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "SubAccountType",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountType MUST be null when SubAccountId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SubAccountType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SubAccountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "SubAccountId-C-000-C"
+      ]
+    }
+  },
+  "SubAccountType-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "SubAccountType",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountType MUST NOT be null when SubAccountId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SubAccountType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SubAccountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "SubAccountId-C-000-C"
+      ]
+    }
+  },
+  "SubAccountType-C-006-M": {
+    "Function": "Validation",
+    "Reference": "SubAccountType",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "SubAccountType MUST be a consistent, readable display value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
