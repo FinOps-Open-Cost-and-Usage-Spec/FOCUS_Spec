@@ -44,9 +44,7 @@ These three quantity columns serve different purposes and must be understood in 
 The following key relationships apply between quantity columns:
 
 1. **Used Rows:** All three quantities are typically equal (1) because one hour of usage consumes one pricing unit and applies one commitment unit.
-
 2. **Unused Rows:** `PricingQuantity=1` and `CommitmentDiscountQuantity=1` but `ConsumedQuantity=null` because no resource was actually consumed (the commitment capacity is wasted).
-
 3. **On-Demand Rows:** `PricingQuantity=1` and `ConsumedQuantity=1` but `CommitmentDiscountQuantity=null` because no commitment applies.
 
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
