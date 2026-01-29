@@ -8,7 +8,7 @@ The [*billed cost*](#glossary:billed-cost) represents a [*charge*](#glossary:cha
 
 Billed Cost represents the amount to be invoiced for a [*charge*](#glossary:charge) by the [invoice issuer](#invoiceissuername) for a given [*billing period*](#glossary:billing-period). It is inclusive of the effects of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment*](#glossary:commitment-discount) discounts. It is exclusive of any prepaid portion of the charge. This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used for activities such as invoice reconciliation, budgeting, and forecasting and cost allocation based on invoiced amounts.
 
-## OPTION 1':
+## OPTION 2:
 
 Billed Cost represents the amount to be invoiced for a [*charge*](#glossary:charge) by the [invoice issuer](#invoiceissuername) for a given [*billing period*](#glossary:billing-period). It is inclusive of the effects of all applicable pricing adjustments, such as reduced pricing from [*negotiated*](#glossary:negotiated-discount) or [*commitment*](#glossary:commitment-discount) discounts. It is exclusive of any prepaid portion of the charge. This cost is denominated in the [Billing Currency](#billingcurrency). Billed Cost is commonly used to support FinOps activities such as invoice reconciliation, and cash-flow-based forecasting, budgeting, and cost allocation.
 
