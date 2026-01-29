@@ -35,7 +35,7 @@ Effective Cost
 
 ## Description
 
-Cost of a *charge* based on the *resources* used, *services* used, or *contract commitments* consumed in a given *charge period*.
+Cost of a *charge* based on the *resources* used, *services* used, or *contract commitments* recognized in a given *charge period*.
 
 ## Content constraints
 
