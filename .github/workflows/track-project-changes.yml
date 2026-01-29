@@ -1,0 +1,93 @@
+# This file is dependent on a webhook currently maintained in the vercel repo.
+# We will swap out the repository_dispatch event with project_v2_item once GitHub natively supports project field change events. 
+name: Log Project Field Change
+on:
+  repository_dispatch:
+    types: [project_field_updated]
+
+jobs:
+  comment_change:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update or Create Comment
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_ID: ${{ github.event.client_payload.content_node_id }}
+          FIELD: ${{ github.event.client_payload.field_name }}
+          OLD_VAL: ${{ github.event.client_payload.old_value }}
+          NEW_VAL: ${{ github.event.client_payload.new_value }}
+          USER_LOGIN: ${{ github.event.client_payload.changed_by }}
+          ACTION_TYPE: ${{ github.event.client_payload.action_type }}
+        run: |
+          set -e
+
+          # 1. Define the new log line based on the action
+          if [ "$ACTION_TYPE" == "cleared" ]; then
+            NEW_LINE="* **$USER_LOGIN** cleared **$FIELD**"
+          else
+            # Skip if no meaningful change (Safety Check)
+            if [ "$OLD_VAL" == "$NEW_VAL" ]; then
+              echo "No change detected. Skipping."
+              exit 0
+            fi
+            NEW_LINE="* **$USER_LOGIN** updated **$FIELD**: $OLD_VAL → **$NEW_VAL**"
+          fi
+
+          # 2. Query for existing bot comments
+          # We check the last 20 comments to find the most recent one authored by this bot
+          QUERY_LATEST='query($id: ID!) { 
+            node(id: $id) { 
+              ... on Issue { 
+                comments(last: 20) { 
+                  nodes { 
+                    id 
+                    body 
+                    createdAt 
+                    viewerDidAuthor 
+                  } 
+                } 
+              } 
+            } 
+          }'
+          
+          # Fetch comments and filter for the bot's own recent activity
+          ALL_COMMENTS=$(gh api graphql -f query="$QUERY_LATEST" -f id="$ISSUE_ID" --jq '.data.node.comments.nodes // []')
+          
+          # 3. Identify a 'recent' bot comment (within 300 seconds / 5 minutes)
+          # We use 'now' to compare against the 'createdAt' timestamp
+          RECENT_COMMENT=$(echo "$ALL_COMMENTS" | jq -c 'reverse | .[] | select(.viewerDidAuthor == true) | select((now - (.createdAt | fromdateiso8601)) < 300)' | head -n 1 || echo "")
+
+          if [ -n "$RECENT_COMMENT" ]; then
+            COMMENT_ID=$(echo "$RECENT_COMMENT" | jq -r '.id')
+            EXISTING_BODY=$(echo "$RECENT_COMMENT" | jq -r '.body')
+            
+            echo "Found recent bot comment ($COMMENT_ID). Appending update..."
+            
+            UPDATED_BODY=$(cat <<EOF
+          $EXISTING_BODY
+          $NEW_LINE
+          EOF
+          )
+            # Mutation to UPDATE the comment
+            gh api graphql -f query='
+              mutation($id: ID!, $body: String!) { 
+                updateIssueComment(input: { id: $id, body: $body }) { 
+                  clientMutationId 
+                } 
+              }' -f id="$COMMENT_ID" -f body="$UPDATED_BODY"
+          else
+            echo "No recent bot comment found. Creating a new one..."
+            
+            NEW_BODY=$(cat <<EOF
+          🔄 **Project Update**
+          $NEW_LINE
+          EOF
+          )
+            # Mutation to CREATE a new comment
+            gh api graphql -f query='
+              mutation($id: ID!, $body: String!) { 
+                addComment(input: { subjectId: $id, body: $body }) { 
+                  clientMutationId 
+                } 
+              }' -f id="$ISSUE_ID" -f body="$NEW_BODY"
+          fi
