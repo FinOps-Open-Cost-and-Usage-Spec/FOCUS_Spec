@@ -1,5 +1,3 @@
-# This file is dependent on a webhook currently maintained in the vercel repo.
-# We will swap out the repository_dispatch event with project_v2_item once GitHub natively supports project field change events. 
 name: Log Project Field Change
 on:
   repository_dispatch:
@@ -21,73 +19,80 @@ jobs:
         run: |
           set -e
 
-          # 1. Define the new log line based on the action
-          if [ "$ACTION_TYPE" == "cleared" ]; then
-            NEW_LINE="* **$USER_LOGIN** cleared **$FIELD**"
+          # 1. Fetch Issue Metadata to check age
+          QUERY_INFO=$(gh api graphql -f query='
+            query($id: ID!) {
+              node(id: $id) {
+                ... on Issue { createdAt }
+              }
+            }' -f id="$ISSUE_ID")
+
+          CREATED_AT=$(echo "$QUERY_INFO" | jq -r '.data.node.createdAt')
+          
+          # Calculate age in seconds
+          CREATE_TS=$(date -d "$CREATED_AT" +%s)
+          NOW_TS=$(date +%s)
+          AGE_SECONDS=$(( NOW_TS - CREATE_TS ))
+
+          # 2. Determine if this is an Initialization or a Manual Update
+          if [ "$AGE_SECONDS" -lt 60 ]; then
+            PREFIX="**Initialized**"
           else
-            # Skip if no meaningful change (Safety Check)
+            PREFIX="**$USER_LOGIN** updated"
+          fi
+
+          # 3. Define the new log line
+          if [ "$ACTION_TYPE" == "cleared" ]; then
+             [ "$AGE_SECONDS" -lt 60 ] && PREFIX="**Cleared**"
+             NEW_LINE="* $PREFIX **$FIELD**"
+          else
             if [ "$OLD_VAL" == "$NEW_VAL" ]; then
               echo "No change detected. Skipping."
               exit 0
             fi
-            NEW_LINE="* **$USER_LOGIN** updated **$FIELD**: $OLD_VAL → **$NEW_VAL**"
+            NEW_LINE="* $PREFIX **$FIELD**: $OLD_VAL → **$NEW_VAL**"
           fi
 
-          # 2. Query for existing bot comments
-          # We check the last 20 comments to find the most recent one authored by this bot
+          # 4. Query for existing bot comments (last 20)
           QUERY_LATEST='query($id: ID!) { 
             node(id: $id) { 
               ... on Issue { 
                 comments(last: 20) { 
-                  nodes { 
-                    id 
-                    body 
-                    createdAt 
-                    viewerDidAuthor 
-                  } 
+                  nodes { id body createdAt viewerDidAuthor } 
                 } 
               } 
             } 
           }'
           
-          # Fetch comments and filter for the bot's own recent activity
           ALL_COMMENTS=$(gh api graphql -f query="$QUERY_LATEST" -f id="$ISSUE_ID" --jq '.data.node.comments.nodes // []')
           
-          # 3. Identify a 'recent' bot comment (within 300 seconds / 5 minutes)
-          # We use 'now' to compare against the 'createdAt' timestamp
+          # 5. Identify a 'recent' bot comment (within 5 minutes)
           RECENT_COMMENT=$(echo "$ALL_COMMENTS" | jq -c 'reverse | .[] | select(.viewerDidAuthor == true) | select((now - (.createdAt | fromdateiso8601)) < 300)' | head -n 1 || echo "")
 
           if [ -n "$RECENT_COMMENT" ]; then
             COMMENT_ID=$(echo "$RECENT_COMMENT" | jq -r '.id')
             EXISTING_BODY=$(echo "$RECENT_COMMENT" | jq -r '.body')
             
-            echo "Found recent bot comment ($COMMENT_ID). Appending update..."
+            echo "Found recent bot comment ($COMMENT_ID). Appending..."
             
             UPDATED_BODY=$(cat <<EOF
           $EXISTING_BODY
           $NEW_LINE
           EOF
           )
-            # Mutation to UPDATE the comment
             gh api graphql -f query='
               mutation($id: ID!, $body: String!) { 
-                updateIssueComment(input: { id: $id, body: $body }) { 
-                  clientMutationId 
-                } 
+                updateIssueComment(input: { id: $id, body: $body }) { clientMutationId } 
               }' -f id="$COMMENT_ID" -f body="$UPDATED_BODY"
           else
-            echo "No recent bot comment found. Creating a new one..."
-            
+            echo "Creating new comment..."
             NEW_BODY=$(cat <<EOF
           🔄 **Project Update**
           $NEW_LINE
           EOF
           )
-            # Mutation to CREATE a new comment
             gh api graphql -f query='
               mutation($id: ID!, $body: String!) { 
-                addComment(input: { subjectId: $id, body: $body }) { 
-                  clientMutationId 
-                } 
+                addComment(input: { subjectId: $id, body: $body }) { clientMutationId } 
               }' -f id="$ISSUE_ID" -f body="$NEW_BODY"
           fi
