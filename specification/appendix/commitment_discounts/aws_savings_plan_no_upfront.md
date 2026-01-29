@@ -43,7 +43,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
 
-#### Key Relationships
+The following key relationships apply between quantity columns:
 
 1. **Used Rows:** All three quantities are typically equal (1) because one hour of usage consumes one pricing unit and applies one commitment unit.
 
@@ -68,7 +68,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **Used Row**      | $0.00      | $52.85        | $79.28     |
 | **On-Demand Row** | $6.10      | $6.10         | $6.10      |
 
-#### Critical Rules
+The following critical rules apply to commitment discount data:
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
 * **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
@@ -170,7 +170,7 @@ FOR commitment period:
 
 ### Validation for This Scenario
 
-#### No-Upfront Payment Validation
+Validation for No-Upfront payment option:
 
 * Monthly fee (BilledCost): $38,583.33
 * Hours generated: 24
@@ -178,6 +178,6 @@ FOR commitment period:
 
 **Check:** Sum(Usage EffectiveCost) per month should equal the monthly fee.
 
-### ✅ All Validation Rules Passed
+### All Validation Rules Passed
 
 This example data is valid according to FOCUS commitment discount rules.
