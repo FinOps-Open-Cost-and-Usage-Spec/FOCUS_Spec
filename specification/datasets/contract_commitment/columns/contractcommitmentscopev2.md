@@ -52,8 +52,17 @@ When specified as an object, `Applicability` allows for independent percentages 
 
 The following examples demonstrate how to model common contract commitment scenarios using ContractCommitmentScope.
 
-### Global Applicability
+### Global Scope and Applicability
 An Enterprise Discount Program (EDP) or a global Savings Plan that applies to all resources across the entire provider footprint.  100% of activity is applicable, regardless of cost or usage.
+
+```json
+{
+  "IsGlobalScope": true,
+  "Applicability": 1.0
+}
+```
+
+The inclusion of Applicability is optional, given that the default is 1.0.  It could thus be delivered even simpler, as:
 
 ```json
 {
@@ -61,7 +70,7 @@ An Enterprise Discount Program (EDP) or a global Savings Plan that applies to al
 }
 ```
 
-### Global Applicability with Specific Exceptions
+### Global Scope with Specific Exceptions
 Organization-wide coverage EXCEPT for Database services running in BillingAccountId 123456789012.
 
 ```json
@@ -128,7 +137,7 @@ Applies to Compute in `us-east-1` and `us-west-2`, excluding any resources or se
 }
 ```
 
-### Shorthand Applicability
+### Shorthand Applicability (Decimal)
 A commitment that applies fully to `us-east-1` but only 50% of cost and usage in `us-west-2` is eligible.
 
 ```json
@@ -151,7 +160,7 @@ A commitment that applies fully to `us-east-1` but only 50% of cost and usage in
 }
 ```
 
-### Granular Applicability
+### Granular Applicability (Object)
 A scenario where 100% of Marketplace **Usage** counts toward a volume commitment, but only 50% of the **Cost** is applicable for financial credit.
 
 ```json
