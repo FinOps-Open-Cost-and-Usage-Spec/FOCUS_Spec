@@ -45,8 +45,6 @@ spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py datasets/cost_and_usage/columns
 	./validate_includes.py datasets/contract_commitment
 	./validate_includes.py datasets/contract_commitment/columns
-	./validate_includes.py datasets/invoice_detail
-	./validate_includes.py datasets/invoice_detail/columns
 	./validate_includes.py attributes
 	./validate_includes.py metadata
 	./validate_includes.py metadata/data_generator
