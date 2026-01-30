@@ -10,7 +10,9 @@ CommitmentEligibilityDetails adheres to the following requirements:
 * CommitmentEligibilityDetails MUST be of type String.
 * CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* CommitmentEligibilityDetails MUST be null if the usage is not eligible for any non-negotiated commitment.
+* CommitmentEligibilityDetails nullability is defined as follows:
+  * CommitmentEligibilityDetails MUST be null if the usage is not eligible for any non-negotiated commitment.
+  * CommitmentEligibilityDetails MUST NOT be null if the usage is eligible for any non-negotiated commitment.
 * CommitmentEligibilityDetails MUST correspond to defined [commitment](#glossary:commitment) program types (e.g., "SavingsPlan", "ReservedInstance", "CUD") or vendor-specific pricing tiers (e.g., "MonthlyCommitment").
 * The values in CommitmentEligibilityDetails MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for the provider.
 * CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
@@ -32,7 +34,7 @@ The types of non-negotiated *commitment* programs available for the specific usa
 | Constraint      | Value         |
 |:----------------|:--------------|
 | Column type     | Dimension     |
-| Feature level   | Recommended   |
+| Feature level   | Conditional   |
 | Allows nulls    | True          |
 | Data type       | String        |
 | Value format    | [JsonObjectFormat](#attributes.jsonobjectformat) |
