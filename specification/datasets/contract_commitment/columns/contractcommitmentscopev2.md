@@ -43,8 +43,8 @@ When specified as an object, `Applicability` allows for independent percentages 
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `Cost` | Decimal | Percentage applicable to `BilledCost` and `AmortizedCost`. |
-| `Usage` | Decimal | Percentage applicable to `UsageQuantity`. |
+| `Cost` | Decimal | Percentage applicable to `ContractCommitmentCost`. |
+| `Usage` | Decimal | Percentage applicable to `ContractCommitmentQuantity`. |
 
 ---
 
