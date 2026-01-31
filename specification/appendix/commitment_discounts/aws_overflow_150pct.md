@@ -4,7 +4,7 @@
 **Payment Type:** All-Upfront
 **Category:** Spend-based
 **Utilization:** 150%
-**Hours Generated:** 24
+**Hours Generated:** 48 (24 committed + 24 overflow to on-demand)
 **Annual Commitment:** &dollar;212,000.00
 **Committed Rate:** &dollar;24.20/hour
 **On-Demand Rate:** &dollar;36.30/hour
