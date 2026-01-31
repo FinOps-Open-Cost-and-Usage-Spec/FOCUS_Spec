@@ -93,4 +93,3 @@ In this scenario, one eligible *resource* runs for the full hour and consumes &d
 In this scenario, one eligible *resource* runs for the full hour and is charged &dollar;1.50. One *row* shows that &dollar;1.00 was *amortized* from the *commitment discount*, and the other shows that &dollar;0.50 was charged as standard, on-demand spend.
 
 [CSV Example](/specification/data/commitment_discount_scenarios/commitment_discount_usage_scenario_4.csv)
-
