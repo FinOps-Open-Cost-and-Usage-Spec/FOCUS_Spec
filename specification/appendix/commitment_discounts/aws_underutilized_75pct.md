@@ -67,7 +67,8 @@ The following key relationships apply between quantity columns:
 | **Used Row**      | &dollar;0.00       | &dollar;52.40        | &dollar;78.60      |
 | **Unused Row**    | &dollar;0.00       | &dollar;52.40        | null        |
 | **On-Demand Row** | &dollar;3.96       | &dollar;3.96         | &dollar;3.96       |
-
+ListCost is null for unused rows because no resource was consumed. 
+The opportunity cost is reflected in EffectiveCost.
 The following critical rules apply to commitment discount data:
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
