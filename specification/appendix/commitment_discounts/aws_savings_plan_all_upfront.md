@@ -42,7 +42,11 @@ These three quantity columns serve different purposes and must be understood in 
 | **PricingQuantity**            | Quantity used for pricing calculation | All priced rows               | 1 (per hour/unit)    |
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
+**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, 
+not a count of resources. For a $24.20/hour commitment, this value is $24.20.
 
+**For usage-based commitments:** CommitmentDiscountQuantity represents the quantity of resources 
+(e.g., 1 instance hour).
 The following key relationships apply between quantity columns:
 
 1. **Used Rows:** All three quantities are typically equal (1) because one hour of usage consumes one pricing unit and applies one commitment unit.
