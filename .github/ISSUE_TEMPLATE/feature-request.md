@@ -5,6 +5,14 @@ about: Propose a new feature or enhancement to the FOCUS specification
 
 # Feature Request
 
+> **For Requesters:** Complete only the "Requester Information" section below (estimated time: 10-15 minutes). The "Maintainer Assessment" section will be completed by FOCUS Maintainers during triage.
+>
+> **Required fields:** Problem Statement, Use Case / User Story, Success Criteria, Type of Request, Organizations Requesting This Feature
+>
+> **Optional but helpful:** Data Generator Support, Supporting Documentation, Proposed Solution / Approach, Additional Context
+
+---
+
 ## Requester Information
 
 ### Problem Statement
@@ -82,7 +90,7 @@ Do data generators already support this concept in their native billing data?
 
 ---
 
-### 📂 Supporting Documentation (Optional)
+### Supporting Documentation (Optional)
 Include links to data samples, relevant PRs, GitHub discussions, or implementation references.
 
 > **Reminder:** Please ensure any linked documents are accessible to maintainers and collaborators. If access is restricted, your request may be delayed.
@@ -106,6 +114,12 @@ Add any other context that might be helpful:
 **Related Requests:** [Links to similar or related feature requests or scopes of work]
 
 [Additional context here.]
+
+---
+
+<!-- ====================================================================================================== -->
+<!-- STOP: The sections below are for FOCUS Maintainers only. Requesters do not need to fill these out.   -->
+<!-- ====================================================================================================== -->
 
 ---
 
