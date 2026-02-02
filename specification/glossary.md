@@ -90,9 +90,11 @@ The agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pr
 
 <a name="glossary:correction"><b>Correction</b></a>
 
-Any modification (including updates, additions, or omissions) to previously provided [*charges*](#glossary:charge) for a [*period*](#glossary:period) that has already been reported, regardless of whether the corresponding [*billing period*](#glossary:billing-period) is open or closed. A correction (lowercase) may consist of one or more simultaneous changes, including updates to existing charges, the omission of previously delivered charges, or the addition of new charges that supplement previously reported data for that period.
+Any modification (including updates, additions, or omissions) to previously delivered records within a defined [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)).
 
-The term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datasets.costandusage.chargeclass) column and designates *charges* used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period). In contrast, the broader concept of correction (lowercase) represents all modifications to previously reported charges, resulting in adjustments to previously reported cost and usage data for the affected *period*.
+A correction (lowercase) may consist of one or more simultaneous changes, including updates to or omission of previously delivered records, or the addition of new records that supplement previously delivered data within the affected *delivery scope*. This concept applies across all FOCUS datasets.
+
+In contrast to the broader concept of correction (lowercase), the term "Correction" (capitalized) refers to a specific allowed value in the [Charge Class](#datasets.costandusage.chargeclass) column in Cost and Usage datasets. It designates [*charges*](#glossary:charge) used to correct cost or usage data from a previously [*closed billing period*](#glossary:closed-billing-period).
 
 <a name="glossary:credit"><b>Credit</b></a>
 
@@ -109,6 +111,10 @@ A specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset) provid
 <a name="glossary:dataset-instance-artifact"><b>Dataset Instance Artifact</b></a>
 
 A physical representation of a specific [*dataset instance*](#glossary:dataset-instance) delivered by a [data generator](#metadata.datagenerator).
+
+<a name="glossary:delivery-scope"><b>Delivery Scope</b></a>
+
+A dataset-specific boundary or set of boundaries that determines which records are included in a [*dataset artifact*](#glossary:dataset-instance-artifact) delivery. Scopes can be temporal (e.g., a [*billing period*](#glossary:billing-period) or non-temporal (e.g., a [*contract*]((#glossary:contract)) or other logical grouping), and multiple scopes may be applicable for a single dataset depending on use case or delivery configuration. Scopes determine how Overwrite and Append *dataset artifact* deliveries, as well as corrections, are applied.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
