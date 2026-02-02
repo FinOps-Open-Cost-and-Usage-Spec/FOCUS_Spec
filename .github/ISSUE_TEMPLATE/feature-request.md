@@ -14,8 +14,8 @@ Describe the problem, issue, or opportunity this feature addresses. Include prac
 
 ---
 
-### 📖 User Story
-Provide a clear, specific user story or set of user stories:
+### 📖 Use Case / User Story
+Provide a clear, specific use case that defines what is being provided to the practitioner or persona:
 
 **As a** [specific role - e.g., FinOps Practitioner, Data Engineer, Procurement/Finance, Tooling Vendor]
 **I need to** [specific capability in FOCUS data]
@@ -24,12 +24,12 @@ Provide a clear, specific user story or set of user stories:
 **Example:**
 > As a FinOps practitioner, I need to group costs by resource groupings within my Sub Account, so that I can align cost reporting with my organization's structure without post-processing.
 
-[Write your user story here.]
+[Write your use case here.]
 
 ---
 
-### ✅ What Success Looks Like
-Describe 2-4 specific criteria that would indicate this feature is working correctly. Focus on what you need to be able to DO with the data, not implementation details.
+### ✅ Success Criteria
+What needs to be true when we deliver this capability for it to be meaningful? Describe 2-4 specific criteria. Focus on what you need to be able to DO with the data, not implementation details.
 
 **Example:**
 - I can perform cost allocation using this data without additional processing
@@ -46,10 +46,11 @@ Describe 2-4 specific criteria that would indicate this feature is working corre
 ### 📨 Type of Request
 **Select the option that best describes this request:**
 
-- [ ] **Standardization** - Data generators already support this; FOCUS needs to standardize how it's represented
-- [ ] **Enhancement** - Refining or extending existing FOCUS columns, attributes, metadata, or supported features
-- [ ] **New Capability** - Introduces something data generators don't currently expose or FOCUS doesn't currently address
-- [ ] **Supporting Content** - Examples, appendices, or explanatory material (not normative spec changes)
+- [ ] **Standardization** - Data is already available but dispersed across providers
+- [ ] **Enhancement** - Refinement or extension of an existing concept or capability
+- [ ] **Net New** - Breaking new ground (e.g., net new datasets or capabilities)
+- [ ] **Enablement/Supporting Content** - Non-normative items like appendix explanations, examples, or supporting documentation
+- [ ] **Tech Debt** - Addressing technical debt or maintenance items *(Note: For Tech Debt items, feel free to liberally delete sections of this template that aren't relevant)*
 
 ---
 
@@ -93,16 +94,16 @@ Share initial ideas, constraints, and feasibility considerations if you have the
 ### 💭 Additional Context (Optional)
 Add any other context that might be helpful:
 
-**Current Workaround:** [What do you do today without this feature?]
+**Current Workaround:** [What do you do today without this feature? Is this a heavy workaround or a slight inconvenience?]
 **Urgency/Timeline:** [Is there a specific timeframe when your organization needs this?]
-**Related Requests:** [Links to similar or related feature requests]
+**Related Requests:** [Links to similar or related feature requests or scopes of work]
 
 [Additional context here.]
 
 ---
 
-## FOCUS Staff Assessment
-*This section will be completed by FOCUS Staff during triage.*
+## Maintainer Assessment
+*This section will be completed by FOCUS Maintainers during triage.*
 
 ### 🚀 Adoption Impact
 Which category best describes this feature's impact on FOCUS adoption?
@@ -114,40 +115,36 @@ Which category best describes this feature's impact on FOCUS adoption?
 
 **Justification:**
 
-[FOCUS Staff completes during triage]
+[FOCUS Maintainers complete during triage]
 
 ---
 
 ### 🔧 Supported Features Alignment
-Which existing or new [FOCUS Supported Features](https://focus.finops.org/#supported-features) does this request enable or enhance?
-
-**Existing Features Enhanced:**
-- [ ] Cost and Usage Attribution
-- [ ] Charge Categorization
-- [ ] Effective Cost
-- [ ] [Other - specify]
-
-**New Features Enabled:**
-- [ ] [Describe new supported feature this would enable]
+Which [FOCUS Supported Features](https://focus.finops.org/#supported-features) does this request enable or enhance? If you know which supported feature this relates to, please specify. If this enables a new supported feature, describe it below.
 
 **Feature Description:**
 
-[FOCUS Team describes how this request advances FinOps capabilities]
+[FOCUS Maintainers describes how this request advances FinOps capabilities or defines new supported features]
 
 ---
 
 ### 🎯 Implementation Scope
+*Note: This section should not block the creation of the feature request. If the scope isn't clear yet, it can be filled in during the discovery/development phase.*
+
+**Phasing/Sequencing:**
+What is the minimum we can deliver (MVP) vs. the long-term state?
+
 **MVP Definition:**
 
-[FOCUS Team defines minimum implementation that provides value]
+[FOCUS Maintainers defines minimum implementation that provides value]
 
 **North Star Vision:**
 
-[FOCUS Team describes ideal complete solution]
+[FOCUS Maintainers describes ideal complete solution]
 
 **Phasing Strategy:**
 
-[FOCUS Team determines if/how this should be implemented in phases]
+[FOCUS Maintainers determines if/how this should be implemented in phases]
 
 ---
 
@@ -160,6 +157,8 @@ Which existing or new [FOCUS Supported Features](https://focus.finops.org/#suppo
 - [ ] Other: [specify]
 
 **Level of Ambiguity:**
+*Note: This is for maintainers to assess, not for requesters to estimate.*
+
 Rate from 1 to 5:
 - 1 = very well-defined, low complexity
 - 3 = moderately scoped, some ambiguity
