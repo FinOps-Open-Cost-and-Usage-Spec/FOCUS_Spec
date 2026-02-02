@@ -7,14 +7,14 @@ about: Propose a new feature or enhancement to the FOCUS specification
 
 ## Requester Information
 
-### 🧠 Problem Statement
+### Problem Statement
 Describe the problem, issue, or opportunity this feature addresses. Include practitioner quotes or real-world examples if available.
 
 [Write your problem statement here.]
 
 ---
 
-### 📖 Use Case / User Story
+### Use Case / User Story
 Provide a clear, specific use case that defines what is being provided to the practitioner or persona:
 
 **As a** [specific role - e.g., FinOps Practitioner, Data Engineer, Procurement/Finance, Tooling Vendor]
@@ -28,7 +28,7 @@ Provide a clear, specific use case that defines what is being provided to the pr
 
 ---
 
-### ✅ Success Criteria
+### Success Criteria
 What needs to be true when we deliver this capability for it to be meaningful? Describe 2-4 specific criteria. Focus on what you need to be able to DO with the data, not implementation details.
 
 **Example:**
@@ -43,7 +43,7 @@ What needs to be true when we deliver this capability for it to be meaningful? D
 
 ---
 
-### 📨 Type of Request
+### Type of Request
 **Select the option that best describes this request:**
 
 - [ ] **Standardization** - Data is already available but dispersed across providers
@@ -54,14 +54,14 @@ What needs to be true when we deliver this capability for it to be meaningful? D
 
 ---
 
-### 🏛️ Organizations Requesting This Feature
+### Organizations Requesting This Feature
 List one or more organizations who have requested or explicitly supported this request (including your own, if applicable).
 
 [e.g., BigCloud Inc, Acme Corp]
 
 ---
 
-### 🏗️ Data Generator Support (Optional)
+### Data Generator Support (Optional)
 Do data generators already support this concept in their native billing data?
 
 - [ ] **Yes** - Widely available across data generators
@@ -78,20 +78,20 @@ Do data generators already support this concept in their native billing data?
 ### 📂 Supporting Documentation (Optional)
 Include links to data samples, relevant PRs, GitHub discussions, or implementation references.
 
-> 🔐 **Reminder:** Please ensure any linked documents are accessible to maintainers and collaborators. If access is restricted, your request may be delayed.
+> **Reminder:** Please ensure any linked documents are accessible to maintainers and collaborators. If access is restricted, your request may be delayed.
 
 [Paste links here.]
 
 ---
 
-### 🛠️ Proposed Solution / Approach (Optional)
+### Proposed Solution / Approach (Optional)
 Share initial ideas, constraints, and feasibility considerations if you have them.
 
 [Your proposal goes here.]
 
 ---
 
-### 💭 Additional Context (Optional)
+### Additional Context (Optional)
 Add any other context that might be helpful:
 
 **Current Workaround:** [What do you do today without this feature? Is this a heavy workaround or a slight inconvenience?]
@@ -105,7 +105,7 @@ Add any other context that might be helpful:
 ## Maintainer Assessment
 *This section will be completed by FOCUS Maintainers during triage.*
 
-### 🚀 Adoption Impact
+### Adoption Impact
 Which category best describes this feature's impact on FOCUS adoption?
 
 - [ ] **Adoption Blocker** – Organizations cannot adopt FOCUS without this feature
@@ -119,7 +119,7 @@ Which category best describes this feature's impact on FOCUS adoption?
 
 ---
 
-### 🔧 Supported Features Alignment
+### Supported Features Alignment
 Which [FOCUS Supported Features](https://focus.finops.org/#supported-features) does this request enable or enhance? If you know which supported feature this relates to, please specify. If this enables a new supported feature, describe it below.
 
 **Feature Description:**
@@ -128,7 +128,7 @@ Which [FOCUS Supported Features](https://focus.finops.org/#supported-features) d
 
 ---
 
-### 🎯 Implementation Scope
+### Implementation Scope
 *Note: This section should not block the creation of the feature request. If the scope isn't clear yet, it can be filled in during the discovery/development phase.*
 
 **Phasing/Sequencing:**
@@ -148,7 +148,7 @@ What is the minimum we can deliver (MVP) vs. the long-term state?
 
 ---
 
-### 📊 Specification Impact
+### Specification Impact
 
 **Impacted Parties:**
 - [ ] FinOps Practitioner – end users who analyze or act on the data
@@ -169,7 +169,7 @@ Rate from 1 to 5:
 
 ---
 
-### 🌐 FinOps Scope Alignment
+### FinOps Scope Alignment
 Does this request align with one or more of the following [FinOps Scopes](https://www.finops.org/framework/scopes/)?
 
 - [ ] Public Cloud – e.g., AWS, Azure, GCP, OCI
@@ -178,8 +178,6 @@ Does this request align with one or more of the following [FinOps Scopes](https:
 - [ ] Licensing – subscription or usage-based licensing models *(under development)*
 - [ ] AI – cost and usage for AI models and platforms *(under development)*
 - [ ] Custom – internal tooling, specialized infra *(under development)*
-
----
 
 ## Community Support
 If your organization supports this request or has a similar use case:
