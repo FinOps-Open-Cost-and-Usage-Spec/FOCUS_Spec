@@ -1,8 +1,8 @@
 # Contract Commitment Interval
 
-Contract Commitment Interval represents the time boundary or "reset window" of a [*contract commitment*](#glossary:contract-commitment). This defines the period over which usage is aggregated or measured before the terms of the [contract commitment model](#datasets.contractcommitment.contractcommitmentmodel) (i.e., a Continuous model "use-it-or-lose-it", or a Discontinuous model's "true-up")  are applied.
+Contract Commitment Interval represents the specific [*period*](#glossary:period) used to measure and reset the fulfillment of a [*contract commitment*](#glossary:contract-commitment). It establishes the window during which usage is aggregated to determine if commitment obligations have been met. At the end of each interval, the [contract commitment model](#datasets.contractcommitment.contractcommitmentmodel) logic is applied, either resulting in the expiration of unused capacity (Continuous) or the calculation of a balance or true-up (Discontinuous).
 
-Contract Commitment Interval has a series of possible values that represent a length of time, typically recurring over the [contract commitment duration](#datasets.contractcommitment.contractcommitmentduration).  Discontinuous models are typically Hourly, whereas Continuous models are typically Daily or greater.
+Contract Commitment Interval has a series of possible values that represent a length of time, typically recurring over the [contract commitment duration](#datasets.contractcommitment.contractcommitmentduration).  Continuous models are typically Hourly, whereas Discontinuous models are typically Daily or greater.
 
 ## Requirements
 
@@ -23,7 +23,7 @@ Contract Commitment Interval
 
 ## Description
 
-Represents the time boundary or "reset window" of a [*contract commitment*](#glossary:contract-commitment).
+Represents the specific [*period*](#glossary:period) used to measure and reset the fulfillment of a [*contract commitment*](#glossary:contract-commitment).
 
 ## Content Constraints
 

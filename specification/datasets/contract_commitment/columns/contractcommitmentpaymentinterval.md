@@ -1,0 +1,52 @@
+# Contract Commitment Payment Interval
+
+Contract Commitment Payment Interval represents the frequency by which a [*contract commitment*](#glossary:contract-commitment) is invoiced. For [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel) involving deferred financial obligations, the Payment Interval denotes the ongoing billing cycle. For models paid upfront, the Payment Interval denotes the single settlement event.
+
+Note: Do not confuse the Payment Interval with the [Commitment Interval](#datasets.contractcommitment.commitmentinterval). For example, a spend-based commitment discount may have an Hourly Commitment Interval (usage reset) but a Monthly Payment Interval (billing cycle).
+
+## Requirements
+
+ContractCommitmentPaymentInterval adheres to the following requirements:
+
+* ContractCommitmentPaymentInterval MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractCommitmentPaymentInterval MUST be of type String.
+* ContractCommitmentPaymentInterval MUST NOT be null.
+* ContractCommitmentPaymentInterval MUST be one of the allowed values.
+* ContractCommitmentPaymentInterval MUST be "One-Time" if [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is "All Upfront".
+
+## Column ID
+
+ContractCommitmentPaymentInterval
+
+## Display Name
+
+Contract Commitment Payment Interval
+
+## Description
+
+Represents the frequency by which a [*contract commitment*](#glossary:contract-commitment) is invoiced.
+
+## Content Constraints
+
+| Constraint      | Value          |
+| :-------------- | :------------- |
+| Column type     | Dimension      |
+| Feature level   | Mandatory      |
+| Allows nulls    | False          |
+| Data type       | String         |
+| Value format    | Allowed values |
+
+Allowed values:
+
+| Value       | Sort Order | Description                                                         | Typical Use Case                                  |
+| ----------- | ---------- | ------------------------------------------------------------------- | ------------------------------------------------- |
+| One-Time    | 10         | A single invoice is generated for the entire obligation.            | All Upfront models (e.g., 3yr All-Upfront RI).    |
+| Monthly     | 20         | Invoices for the deferred balance are generated once per month.     | No Upfront Savings Plans or Monthly SaaS.         |
+| Quarterly   | 30         | Invoices for the deferred balance are generated every three months. | Partial Upfront deals with 90-day true-ups.       |
+| Semi-Annual | 40         | Invoices for the deferred balance are generated every six months.   | Split-payment agreements.                         |
+| Annual      | 50         | Invoices for the deferred balance are generated once per year.      | Partial Upfront EAs billed yearly.                |
+| Custom      | 60         | Hourly/Daily or other irregular cycles.                             | Irregular bridge contracts or non-standard terms. |
+
+## Introduced (version)
+
+1.4

@@ -205,6 +205,13 @@ The evaluation of a resource against a commitment scope MUST follow a strict lin
     * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `OR`, the engine MUST use the highest percentage for each respective metric.
     * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
 
+### Integration with Commitment Logic
+
+The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Interval](#datasets.contractcommitment.contractcommitmentinterval):
+
+* **Continuous Models:** The `Applicability` percentages (Cost/Usage) MUST be applied to each discrete unit of activity within the **Interval** (e.g., every hour). If the commitment is not fully utilized by the applicable resources within that specific hour, the remaining capacity expires.
+* **Discontinuous Models:** The `Applicability` percentages determine the portion of aggregate activity that counts toward the commitment fulfillment over the entire **Interval** (e.g., the full year). True-up or balance calculations are only performed on the qualified, applicable totals.
+
 ### Dependency Logic
 
 1. **Polymorphic Handling:** Engines MUST check the type of the `Applicability` field. If a metric key (e.g., `Cost`) is missing from an `Applicability` object, the engine SHOULD assume `0.0` for that specific metric.
