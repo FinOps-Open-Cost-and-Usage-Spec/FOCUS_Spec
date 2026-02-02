@@ -46,6 +46,34 @@ When specified as an object, `Applicability` allows for independent percentages 
 | `Cost` | Decimal | Percentage applicable to `ContractCommitmentCost`. |
 | `Usage` | Decimal | Percentage applicable to `ContractCommitmentQuantity`. |
 
+### Supported Operators
+
+| Operator | Logic | Usage Example |
+| :--- | :--- | :--- |
+| `In` | Exact match against any item in the list. | `["us-east-1", "us-west-2"]` |
+| `NotIn` | Does not match any item in the list. | `["123456789"]` |
+| `StartsWith` | String prefix match. | `["prod-"]` |
+| `NotStartsWith` | Does not begin with the specified prefix. | `["test-"]` |
+| `Contains` | Substring match anywhere in the value. | `["database"]` |
+| `NotContains` | Substring is not present in the value. | `["sandbox"]` |
+| `EndsWith` | String suffix match. | `["-temp"]` |
+| `Exists` | Checks if the dimension is present and not null. | `Values` can be `["*"]` |
+| `DoesNotExist` | Checks if the dimension is missing or null. | `Values` can be `["*"]` |
+
+### Wildcard Handling
+
+ContractCommitmentScope uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
+
+| Reserved Value | Description | Supported Operators |
+| :--- | :--- | :--- |
+| `"*"` | Represents all possible values for the specified Dimension. | `In`, `Contains` |
+
+#### Wildcard Behavior Rules
+
+1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every resource, effectively making the commitment "Organization-wide" for that specific Dimension.
+2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every resource, effectively excluding all resources (this is typically used only in combination with `ExclusionOperator: "AND"` for surgical filtering).
+3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted) unless the `InclusionOperator` is set to `AND`.
+
 ---
 
 ## Examples
