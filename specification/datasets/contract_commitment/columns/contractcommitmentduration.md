@@ -30,6 +30,7 @@ ContractCommitmentDuration adheres to the following requirements:
 * ContractCommitmentDuration MUST be of type String.
 * ContractCommitmentDuration MUST NOT be null.
 * ContractCommitmentDuration MUST adhere to the expected format of "[Numeric Value] [Unit]", where [Numeric Value] is a positive integer, and [Unit] is a standardized unit of time, either singular or plural (e.g., Hour, Year, Years).
+* ContractCommitmentDuration MUST be calculated as the time elapsed between ContractCommitmentPeriodStart and ContractCommitmentPeriodEnd.
 
 ## Column ID
 

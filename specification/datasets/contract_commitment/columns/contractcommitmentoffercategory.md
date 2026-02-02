@@ -1,8 +1,8 @@
-# Contract Commitment Availability
+# Contract Commitment Offer Category
 
-Contract Commitment Availiability indicates whether the pricing and terms of a [*contract commitment*](#glossary:contract-commitment) are based on a standard, publicly accessible offering or have been specifically brokered through private negotiation.
+Contract Commitment Offer Category indicates whether the pricing and terms of a [*contract commitment*](#glossary:contract-commitment) are based on a standard, publicly accessible offering or have been specifically brokered through private negotiation.
 
-Contract Commitment Availiability has two possible values: **Public** and **Negotiated**.  Public availability denotes terms and pricing that are generally available to all customers via a provider’s standard rate card or portal.  Negotiated availability denotes terms and pricing that have been specifically modified through an agreement between the customer and the service provider.
+Contract Commitment Offer Category has two possible values: **Public** and **Negotiated**.  _Public_ denotes terms and pricing that are generally available to all customers via a provider’s standard rate card or portal.  _Negotiated_ denotes terms and pricing that have been specifically modified through an agreement between the customer and the service provider.
 
 ## Implementation Context
 
@@ -13,20 +13,20 @@ Sensitivity Note: Records marked as Negotiated often fall under non-disclosure a
 
 ## Requirements
 
-ContractCommitmentAvailability adheres to the following requirements:
+ContractCommitmentOfferCategory adheres to the following requirements:
 
-* ContractCommitmentAvailability MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* ContractCommitmentAvailability MUST be of type String.
-* ContractCommitmentAvailability MUST NOT be null.
-* ContractCommitmentAvailability MUST be one of the allowed values.
+* ContractCommitmentOfferCategory MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
+* ContractCommitmentOfferCategory MUST be of type String.
+* ContractCommitmentOfferCategory MUST NOT be null.
+* ContractCommitmentOfferCategory MUST be one of the allowed values.
 
 ## Column ID
 
-ContractCommitmentAvailability
+ContractCommitmentOfferCategory
 
 ## Display Name
 
-Contract Commitment Availability
+Contract Commitment Offer Category
 
 ## Description
 
