@@ -1,5 +1,9 @@
 # Glossary
 
+<a name="glossary:accrual-based-accounting"><b>Accrual-Based Accounting</b></a>
+
+An accounting method used in technology cost management to record costs in the period when resources are utilized, services are delivered, or entitlements are available for or actually consumed (including unused or expired entitlements). This approach ensures that expenses are recognized in the same timeframe as the value they provide, independent of when charges are invoiced.
+
 <a name="glossary:adjustment"><b>Adjustment</b></a>
 
 A charge representing a modification to billing data to account for certain events or circumstances not previously captured, or captured incorrectly. Examples include billing errors, service disruptions, or pricing changes.
@@ -20,10 +24,6 @@ The distribution of upfront costs over time to accurately reflect the consumptio
 
 A collection of geographically separated locations containing a data center or cluster of data centers. Each availability zone (AZ) should have its own power, cooling, and networking, to provide redundancy and fault tolerance.
 
-<a name="glossary:billed-cost"><b>Billed Cost</b></a>
-
-A charge that serves as the basis for invoicing. It includes the total amount of fees and discounts, signifying a monetary obligation. Valuable when reconciling cash outlay with incurred expenses is required, such as cost allocation, budgeting, and invoice reconciliation.
-
 <a name="glossary:billing-account"><b>Billing Account</b></a>
 
 A container for resources and/or services that are billed together in an invoice. A billing account may have sub accounts, all of whose costs are consolidated and invoiced to the billing account.
@@ -39,6 +39,10 @@ The time window that an organization receives an invoice for, inclusive of the s
 <a name="glossary:block-pricing"><b>Block Pricing</b></a>
 
 A pricing approach where the cost of a particular resource or service is determined based on predefined quantities or tiers of usage. In these scenarios, the Pricing Unit and the corresponding Pricing Quantity can be different from the Consumed Unit and Consumed Quantity.
+
+<a name="glossary:cash-based-accounting"><b>Cash-Based Accounting</b></a>
+
+An accounting method used in technology cost management to record costs in the period when charges are invoiced. This approach aligns expenses with billing cycles, independent of when resources are utilized, services are delivered, or entitlements are available for or actually consumed (including unused or expired entitlements).
 
 <a name="glossary:capacity-reservation"><b>Capacity Reservation</b></a>
 
@@ -109,10 +113,6 @@ A physical representation of a specific [*dataset instance*](#glossary:dataset-i
 <a name="glossary:dimension"><b>Dimension</b></a>
 
 A specification-defined categorical attribute that provides context or categorization to billing data.
-
-<a name="glossary:effective-cost"><b>Effective Cost</b></a>
-
-The amortized cost of the charge after applying all reduced rates, discounts, and the applicable portion of relevant, prepaid purchases (one-time or recurring) that covered this charge.
 
 <a name="glossary:exclusiveendbound"><b>Exclusive End Bound</b></a>
 
