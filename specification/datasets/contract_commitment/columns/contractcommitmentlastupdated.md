@@ -22,7 +22,7 @@ Contract Commitment Last Updated
 
 ## Description
 
-The timestamp when the Contract Commitment record was last updated.
+The timestamp when the contract commitment record was last updated.
 
 ## Content constraints
 

@@ -21,7 +21,7 @@ Contract Commitment Created
 
 ## Description
 
-The timestamp when the *contract commitment* record was first created.
+The timestamp when the contract commitment record was first created.
 
 ## Content constraints
 
