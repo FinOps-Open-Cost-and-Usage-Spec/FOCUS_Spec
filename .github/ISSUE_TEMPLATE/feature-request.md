@@ -55,9 +55,16 @@ What needs to be true when we deliver this capability for it to be meaningful? D
 ---
 
 ### Organizations Requesting This Feature
-List one or more organizations who have requested or explicitly supported this request (including your own, if applicable).
+List one or more organizations who have requested or explicitly supported this request. For each organization, indicate whether this feature blocks their adoption of FOCUS or is a nice-to-have enhancement.
 
-[e.g., BigCloud Inc, Acme Corp]
+**Format:**
+- **[Organization Name]** - [Adoption Blocker / Nice to Have] - [Brief explanation]
+
+**Example:**
+- **Acme Corp** - Adoption Blocker - Cannot implement FOCUS without multi-cloud tagging support
+- **BigCloud Inc** - Nice to Have - Would streamline our reporting process
+
+[List organizations here]
 
 ---
 
