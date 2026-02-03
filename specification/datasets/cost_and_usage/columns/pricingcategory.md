@@ -33,13 +33,14 @@ Describes the pricing model used for a *charge* at the time of use or purchase.
 
 ## Content constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Conditional    |
-| Allows nulls    | True           |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | Allowed values                                       |
 
 Allowed values:
 

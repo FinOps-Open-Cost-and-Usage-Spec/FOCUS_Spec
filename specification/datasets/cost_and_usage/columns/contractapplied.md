@@ -309,13 +309,14 @@ A set of properties that associate a charge with one or more [*contract commitme
 
 ## Content Constraints
 
-| Constraint    | Value                              |
-| :------------ | :--------------------------------- |
-| Column type   | Dimension and Metric               |
-| Feature level | Conditional                        |
-| Allows nulls  | True                               |
-| Data type     | JSON                               |
-| Value format  | [JSON Object Format](#attributes.jsonobjectformat) |
+| Constraint      | Value                                                |
+| :-------------- | :----------------------------------------------------|
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension and Metric                                 |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | JSON                                                 |
+| Value format    | [JSON Object Format](#attributes.jsonobjectformat)   |
 
 ## Introduced (version)
 

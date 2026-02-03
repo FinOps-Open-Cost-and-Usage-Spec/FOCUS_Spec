@@ -25,13 +25,14 @@ A service-provider-assigned name to identify the type of *contract commitment*.
 
 ## Content Constraints
 
-| Constraint      | Value            |
-| :-------------- | :--------------- |
-| Column type     | Dimension        |
-| Feature level   | Mandatory        |
-| Allows nulls    | False            |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

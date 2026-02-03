@@ -26,13 +26,14 @@ Indicates whether the *row* represents a correction to a previously invoiced *bi
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | True           |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | Allowed values                                       |
 
 Allowed values:
 

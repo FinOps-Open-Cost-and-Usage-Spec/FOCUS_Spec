@@ -38,14 +38,15 @@ Cost of a *charge* based on the *resources* used, *services* used, or *contract 
 
 ## Content constraints
 
-|    Constraint   |      Value              |
-|:----------------|:------------------------|
-| Column type     | Metric                  |
-| Feature level   | Mandatory               |
-| Allows nulls    | False                   |
-| Data type       | Decimal                 |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

@@ -26,13 +26,14 @@ The name of the entity responsible for invoicing for the *resources* or *service
 
 ## Content Constraints
 
-| Constraint      | Value           |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Mandatory       |
-| Allows nulls    | False           |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

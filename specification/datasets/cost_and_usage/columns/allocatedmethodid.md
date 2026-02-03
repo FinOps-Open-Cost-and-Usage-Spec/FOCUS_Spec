@@ -27,13 +27,14 @@ A unique identifier defining the method of data generator-calculated split cost 
 
 ## Content constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

@@ -24,13 +24,14 @@ Represents the highest-level classification of a *charge* based on the nature of
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | Allowed values                                       |
 
 Allowed values:
 

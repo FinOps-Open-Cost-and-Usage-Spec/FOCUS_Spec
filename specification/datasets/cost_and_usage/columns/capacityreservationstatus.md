@@ -29,13 +29,14 @@ Indicates whether the *charge* represents either the consumption of a *capacity 
 
 ## Content constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Conditional    |
-| Allows nulls    | True           |
-| Data type       | String         |
-| Value format    | Allowed Values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | Allowed Values                                       |
 
 Allowed values:
 

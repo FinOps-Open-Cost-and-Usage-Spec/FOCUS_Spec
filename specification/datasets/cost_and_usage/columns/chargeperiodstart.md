@@ -25,13 +25,14 @@ The *inclusive start bound* of a *charge period*.
 
 ## Content constraints
 
-| Constraint      | Value                                |
-|:----------------|:-------------------------------------|
-| Column type     | Dimension                            |
-| Feature level   | Mandatory                            |
-| Allows nulls    | False                                |
-| Data type       | Date/Time                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | Date/Time                                            |
+| Value format    | [Date/Time Format](#attributes.date/timeformat)      |
 
 ## Introduced (version)
 

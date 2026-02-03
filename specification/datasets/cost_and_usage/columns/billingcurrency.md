@@ -27,13 +27,14 @@ Represents the currency that a *charge* was billed in.
 
 ## Content Constraints
 
-| Constraint      | Value                               |
-|:----------------|:------------------------------------|
-| Column type     | Dimension                           |
-| Feature level   | Mandatory                           |
-| Allows nulls    | False                               |
-| Data type       | String                              |
-| Value format    | [Currency Format](#attributes.currencyformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | [Currency Format](#attributes.currencyformat)        |
 
 ## Introduced (version)
 

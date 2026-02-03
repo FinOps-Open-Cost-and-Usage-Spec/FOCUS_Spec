@@ -26,13 +26,14 @@ Indicates whether the *commitment discount* identified in the CommitmentDiscount
 
 ## Content constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | Allowed Values   |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | Allowed Values                                       |
 
 Allowed values:
 

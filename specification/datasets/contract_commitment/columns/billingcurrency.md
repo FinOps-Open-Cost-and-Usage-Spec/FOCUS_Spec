@@ -27,13 +27,14 @@ Represents the currency of a *contract commitment*.
 
 ## Content Constraints
 
-| Constraint      | Value                               |
-|:----------------|:------------------------------------|
-| Column type     | Dimension                           |
-| Feature level   | Mandatory                           |
-| Allows nulls    | True                                |
-| Data type       | String                              |
-| Value format    | [Currency Format](#attributes.currencyformat)  |
+| Constraint      | Value                                                |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment). |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | [Currency Format](#attributes.currencyformat)        |
 
 ## Introduced (version)
 

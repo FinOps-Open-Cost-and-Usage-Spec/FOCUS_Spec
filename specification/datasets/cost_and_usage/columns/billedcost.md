@@ -32,14 +32,15 @@ Cost of a *charge* as invoiced by the *invoice issuer* in a given *billing perio
 
 ## Content constraints
 
-|    Constraint   |      Value              |
-|:----------------|:------------------------|
-| Column type     | Metric                  |
-| Feature level   | Mandatory               |
-| Allows nulls    | False                   |
-| Data type       | Decimal                 |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

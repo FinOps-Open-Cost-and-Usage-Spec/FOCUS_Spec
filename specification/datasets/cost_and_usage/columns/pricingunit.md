@@ -30,13 +30,14 @@ Service-provider-specified measurement unit for determining unit prices, indicat
 
 ## Content constraints
 
-| Constraint      | Value                   |
-|-----------------|-------------------------|
-| Column type     | Dimension               |
-| Feature level   | Mandatory               |
-| Allows nulls    | True                    |
-| Data type       | String                  |
-| Value format    | [Unit Format](#attributes.unitformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | [Unit Format](#attributes.unitformat)                |
 
 ## Introduced (version)
 

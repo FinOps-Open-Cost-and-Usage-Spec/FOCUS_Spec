@@ -25,13 +25,14 @@ The self-contained summary of the *contract commitment's* terms.
 
 ## Content Constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Mandatory        |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+|    Constraint   |      Value                                           |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

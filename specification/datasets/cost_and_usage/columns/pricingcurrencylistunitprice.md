@@ -39,14 +39,15 @@ The suggested service-provider-published unit price for a single Pricing Unit of
 
 ## Content Constraints
 
-| Constraint      | Value                                |
-|:----------------|:-------------------------------------|
-| Column type     | Metric                               |
-| Feature level   | Conditional                          |
-| Allows nulls    | True                                 |
-| Data type       | Decimal                              |
-| Value format    | [Numeric Format](#attributes.numericformat)     |
-| Number range    | Any valid non-negative decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid non-negative decimal value                 |
 
 ## Introduced (version)
 

@@ -42,14 +42,15 @@ The amount of a *commitment discount* purchased or accounted for in *commitment 
 
 ## Content constraints
 
-| Constraint      | Value            |
-|:----------------|:-----------------|
-| Column type     | Metric           |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | Decimal          |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

@@ -222,13 +222,14 @@ A set of properties describing how resources are allocated in data generator-def
 
 ## Content Constraints
 
-| Constraint      | Value           |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Recommended     |
-| Allows nulls    | True            |
-| Data type       | JSON            |
-| Value format    | [JSON Object Format](#attributes.jsonobjectformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Recommended                                          |
+| Allows nulls    | True                                                 |
+| Data type       | JSON                                                 |
+| Value format    | [JSON Object Format](#attributes.jsonobjectformat)   |
 
 ## Introduced (version)
 

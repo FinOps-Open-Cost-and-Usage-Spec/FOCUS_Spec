@@ -25,13 +25,14 @@ Secondary classification of the Service Category for a *service* based on its co
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Recommended    |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed Values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Recommended                                          |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | Allowed Values                                       |
 
 Allowed values:
 

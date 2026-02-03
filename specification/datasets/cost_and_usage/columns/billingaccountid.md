@@ -28,13 +28,14 @@ The identifier assigned to a *billing account* by the invoice issuer.
 
 ## Content constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Mandatory        |
-| Allows nulls    | False            |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

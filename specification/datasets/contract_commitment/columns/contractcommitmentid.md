@@ -30,13 +30,14 @@ A service-provider-assigned identifier describing a single contract term agreed 
 
 ## Content Constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Mandatory        |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+|    Constraint   |      Value                                           |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

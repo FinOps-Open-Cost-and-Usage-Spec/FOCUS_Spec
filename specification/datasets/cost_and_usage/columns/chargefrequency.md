@@ -25,13 +25,14 @@ Indicates how often a *charge* will occur.
 
 ## Content Constraints
 
-| Constraint      | Value          |
-|:----------------|:---------------|
-| Column type     | Dimension      |
-| Feature level   | Recommended    |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Recommended                                          |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | Allowed values                                       |
 
 Allowed values:
 

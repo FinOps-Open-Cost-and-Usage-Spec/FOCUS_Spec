@@ -27,14 +27,15 @@ The amount associated with the *contract commitment*.
 
 ## Content Constraints
 
-| Constraint    | Value                              |
-| :------------ | :--------------------------------- |
-| Column type   | Metric                             |
-| Feature level | Mandatory                          |
-| Allows nulls  | True                               |
-| Data type     | Decimal                            |
-| Value format  | [Numeric Format](#attributes.numericformat)   |
-| Number range  | Any valid decimal value            |
+| Constraint      | Value                                                |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Metric                                               |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

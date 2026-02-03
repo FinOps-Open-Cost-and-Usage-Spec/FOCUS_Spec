@@ -34,14 +34,15 @@ Cost calculated by multiplying *contracted unit price* and the corresponding Pri
 
 ## Content Constraints
 
-| Constraint      | Value                   |
-|:----------------|:------------------------|
-| Column type     | Metric                  |
-| Feature level   | Mandatory               |
-| Allows nulls    | False                   |
-| Data type       | Decimal                 |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

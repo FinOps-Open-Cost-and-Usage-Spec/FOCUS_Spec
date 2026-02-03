@@ -27,13 +27,14 @@ A service-provider-assigned identifier for a contract describing the agreed term
 
 ## Content constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Mandatory        |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

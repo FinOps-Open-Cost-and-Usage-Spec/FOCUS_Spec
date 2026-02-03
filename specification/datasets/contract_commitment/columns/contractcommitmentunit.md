@@ -27,13 +27,14 @@ A service-provider-specified measurement unit for the amount declared in Contrac
 
 ## Content Constraints
 
-| Constraint    | Value                              |
-| :------------ | :--------------------------------- |
-| Column type   | Dimension                          |
-| Feature level | Mandatory                          |
-| Allows nulls  | True                               |
-| Data type     | String                             |
-| Value format  | [Unit Format](#attributes.unitformat) recommended |
+| Constraint      | Value                                                |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | [Unit Format](#attributes.unitformat) recommended    |
 
 ## Introduced (version)
 

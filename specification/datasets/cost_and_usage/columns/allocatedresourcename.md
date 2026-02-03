@@ -27,13 +27,14 @@ The display name of the object to which cost is allocated in data generator-calc
 
 ## Content Constraints
 
-| Constraint      | Value           |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Conditional     |
-| Allows nulls    | True            |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

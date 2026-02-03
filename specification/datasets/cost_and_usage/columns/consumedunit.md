@@ -27,13 +27,14 @@ Service-provider-specified measurement unit indicating how a service provider me
 
 ## Content constraints
 
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Conditional     |
-| Allows nulls    | True            |
-| Data type       | String          |
-| Value format    | [Unit Format](#attributes.unitformat) recommended |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | [Unit Format](#attributes.unitformat) recommended    |
 
 ## Introduced (version)
 

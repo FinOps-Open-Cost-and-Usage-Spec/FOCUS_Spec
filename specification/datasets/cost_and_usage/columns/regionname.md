@@ -26,13 +26,14 @@ The name of an isolated geographic area where a *resource* is provisioned or a *
 
 ## Content constraints
 
-| Constraint      | Value           |
-|-----------------|-----------------|
-| Column type     | Dimension       |
-| Feature level   | Conditional     |
-| Allows nulls    | True            |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

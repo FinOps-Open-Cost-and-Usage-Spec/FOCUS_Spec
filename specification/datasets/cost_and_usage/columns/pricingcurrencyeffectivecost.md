@@ -30,14 +30,15 @@ The cost of the *charge* after applying all reduced rates, discounts, and the ap
 
 ## Content Constraints
 
-|    Constraint   |      Value              |
-|:----------------|:------------------------|
-| Column type     | Metric                  |
-| Feature level   | Conditional             |
-| Allows nulls    | True                    |
-| Data type       | Decimal                 |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 
