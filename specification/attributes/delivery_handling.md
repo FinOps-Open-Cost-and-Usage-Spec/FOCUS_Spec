@@ -61,6 +61,9 @@ Dataset Instance delivered by a data generator MUST adhere to the following Deli
 * Dataset Instance MUST have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
 * Dataset Instance MUST have its mechanism for correlating *dataset artifact* with the corresponding [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners.
 * Dataset Instance MUST have information contained in the delivered *dataset artifacts* accurately reflected in corresponding Metadata elements.
+* When using Append delivery mechanism, Dataset instance adheres to the following additional requirements:
+  * Dataset instance MUST NOT include updates to previously delivered records.
+  * Dataset instance MUST NOT include omissions of previously delivered records.
 
 ## Exceptions
 

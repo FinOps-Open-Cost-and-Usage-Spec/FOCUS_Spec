@@ -58,7 +58,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 <a name="glossary:closed-billing-period"><b>Closed Billing Period</b></a>
 
-A [*billing period*](#glossary:billing-period) that has been financially closed following the successful issuance of all planned invoices by the designated Invoice Issuer for that period. Upon assigning the "closed" status, the responsible Invoice Issuer entity confirms that no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested by the end-user.
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all planned invoices for the period have been [*issued*](#glossary:issued-invoice) by designated [*invoice issuers*](#glossary:invoice-issuer) and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested by the end-user.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -150,7 +150,7 @@ A document that summarizes the charges for resources or services consumed by a c
 
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
-The process of ensuring that the aggregated cost and usage information presented on an [*invoice*](#glossary:invoice) matches the detailed cost and usage [*charges*](#glossary:charge) presented in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
+The process of ensuring that aggregated Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) records match the corresponding Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset) records, and that both align with the associated cost and usage information presented on an [*invoice*](#glossary:invoice).
 
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
@@ -158,11 +158,8 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
-An invoice that has been formally generated and released by the designated invoice issuer. Prior to issuance, the invoice must be reconciled with the underlying [*charges*](#glossary:charge) provided in the FOCUS Cost and Usage dataset artifacts, ensuring alignment between invoice content and associated charges. Once issued, the invoice becomes the authoritative financial document and is considered finalized and the financial data presented on the invoice must not be altered. While modifications (including updates, additions, or omissions) of underlaying cost and usage charges may be permitted, they must not compromise the integrity of the issued invoice. Only modifications that maintain alignment with the invoice content are acceptable, as any misalignment would invalidate the prior reconciliation.
+An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [invoice issuer](#glossary:invoice-issuer) ([Invoice Status](#datasets.invoicedetail.invoicestatus) set to "Closed"). Once issued, the invoice becomes the authoritative financial document and is considered finalized and the financial data presented on the invoice must not be altered.
 
-<a name="glossary:issued-charge"><b>Issued Charge</b></a>
-
-A [*charge*](#glossary:charge) associated with an [*issued invoice*](#glossary:issued-invoice).
 
 <a name="glossary:json"><b>JSON</b></a>
 
@@ -194,7 +191,7 @@ A service that is available and provided immediately or as needed, without requi
 
 <a name="glossary:open-billing-period"><b>Open Billing Period</b></a>
 
-A [*billing period*](#glossary:billing-period) that has not yet been financially closed, regardless of whether it refers to the current or a past timeframe. The "open" status indicates that billing activities are ongoing and the period remains subject to updates until formally closed.
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Open". Billing activities are ongoing, and the period remains subject to updates until formally closed.
 
 <a name="glossary:origin-charge"><b>Origin Charge</b></a>
 
