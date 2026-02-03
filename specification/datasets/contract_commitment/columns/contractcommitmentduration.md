@@ -31,6 +31,7 @@ ContractCommitmentDuration adheres to the following requirements:
 * ContractCommitmentDuration MUST NOT be null.
 * ContractCommitmentDuration MUST adhere to the expected format of "[Numeric Value] [Unit]", where [Numeric Value] is a positive integer, and [Unit] is a standardized unit of time, either singular or plural (e.g., Hour, Year, Years).
 * ContractCommitmentDuration MUST be calculated as the time elapsed between ContractCommitmentPeriodStart and ContractCommitmentPeriodEnd.
+* ContractCommitmentDuration SHOULD present the largest relevant unit of time (e.g., "1 Year" instead of "12 Months").
 
 ## Column ID
 
