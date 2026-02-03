@@ -8,7 +8,7 @@ The following examples illustrate how corrections to previously closed billing p
 
 On July 12th, 2025, ACME Corp identified that a charge record previously invoiced for May 2025 was incorrectly attributed entirely to ResourceId `R-111`. In reality, only part of the cost and usage belonged to that resource, while the remainder pertained to ResourceId `R-222`.
 
-To correct this misattribution, ACME Corp provisioned a reallocation correction using Append mechanisms. The correction was realized either through a ledger-style adjustment, which redistributed the cost between resources using increment and decrement records, or through an accounting-style adjustment, which negated the original charge and introduced corrected records for each resource.
+To correct this misattribution, ACME Corp provisioned a reallocation correction using Append mechanisms. The correction was realized either through a Delta corrections style, which redistributed the cost between resources using increment and decrement records, or through a Ledger corrections style, which negated the original charge and introduced corrected records for each resource.
 
 Correction records were assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 
@@ -37,7 +37,7 @@ Note the following details in the example datasets:
 
 On July 12th, 2025, ACME Corp identified a cost that was incurred during May 2025 (ChargePeriodStart: `2025-05-01`) but was not included in the finalized invoice issued on June 12th, 2025. Since the May billing period was closed, the correction was delivered in the next open billing period (e.g., June or July).
 
-To account for the previously omitted usage, ACME Corp provisioned a correction using Append mechanisms. The correction was realized by introducing a single increment record in both ledger-style and accounting-style formats, representing the late-arriving cost and usage.
+To account for the previously omitted usage, ACME Corp provisioned a correction using Append mechanisms. The correction was realized by introducing a single increment record in both Delta corrections style and Ledger corrections style formats, representing the late-arriving cost and usage.
 
 This record was assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 
@@ -60,7 +60,7 @@ Note the following details in the example datasets:
 
 On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
-To reconcile this discrepancy, ACME Corp provisioned a cost-only correction using Append mechanism. In both ledger-style and accounting-style formats, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected SkuPriceId values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a SkuPriceId, this approach explicitly itemizes the correction per SkuPriceId. Compared to the bulk correction approach, this method ensures transparency and traceability and is preferred when itemized correction is feasible.
+To reconcile this discrepancy, ACME Corp provisioned a cost-only correction using Append mechanism. In both Delta corrections style and Ledger corrections style formats, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected SkuPriceId values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a SkuPriceId, this approach explicitly itemizes the correction per SkuPriceId. Compared to the bulk correction approach, this method ensures transparency and traceability and is preferred when itemized correction is feasible.
 
 These correction records were assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 
@@ -85,7 +85,7 @@ Note the following details in the example datasets:
 
 On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
-To reconcile this discrepancy, ACME Corp provisioned a bulk cost-only correction using Append mechanism. The correction was realized by introducing a single increment record in both ledger-style and accounting-style formats, representing the bulk cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs.
+To reconcile this discrepancy, ACME Corp provisioned a bulk cost-only correction using Append mechanism. The correction was realized by introducing a single increment record in both Delta corrections style and Ledger corrections style formats, representing the bulk cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs.
 
 This record was assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 
