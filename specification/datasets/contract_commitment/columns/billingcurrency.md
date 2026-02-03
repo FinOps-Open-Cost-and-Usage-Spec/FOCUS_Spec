@@ -29,7 +29,7 @@ Represents the currency of a *contract commitment*.
 
 | Constraint      | Value                                                |
 |:----------------|:-----------------------------------------------------|
-| Dataset         | [Contract Commitment](#datasets.contractcommitment). |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
 | Allows nulls    | True                                                 |
