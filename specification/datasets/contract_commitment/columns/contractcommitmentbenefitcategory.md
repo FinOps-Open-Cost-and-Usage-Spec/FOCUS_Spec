@@ -10,7 +10,7 @@ Contract Commitment Benefit Category defines the primary value or advantage rece
 
 ### Primary Benefit Logic
 
-In cases where a commitment provides multiple benefits (e.g., a Discount and an Availability Guarantee), the value should reflect the **primary commercial driver** of the agreement as defined by the procurement or FinOps team.
+In cases where a commitment provides multiple benefits (e.g., a Discount and an Availability), the value should reflect the **primary commercial driver** of the agreement as defined by the procurement or FinOps team.
 
 ## Requirements
 
@@ -50,8 +50,7 @@ Allowed values:
 | Discount      | 10         | Direct reduction in the unit price or list rate applied from the start.   | Flat rate negotiated reductions or Savings Plans.                |
 | Monetary Pool | 20         | A shared reservoir of value or credits used to offset costs.              | Credit drawdown agreements or prepaid balances.                  |
 | Availability  | 30         | A contractual assurance of resource access and physical capacity.         | Capacity reservations or dedicated host guarantees.              |
-| Conditional   | 40         | A benefit that is triggered or scales based on meeting specific criteria. | Volume-tiered discounts, growth rebates, or performance credits. |
-| Other         | 50         | Benefits not captured by standard categories.                             | Support access, training, or professional services.              |
+| Other         | 40         | Benefits not captured by standard categories.                             | Support access, training, or professional services.              |
 
 ## Introduced (version)
 

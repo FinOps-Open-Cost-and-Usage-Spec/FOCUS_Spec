@@ -4,10 +4,10 @@ The **Contract Commitment** dataset provides a structured representation of the 
 
 ### Core Logical Pillars
 
-To ensure interoperability across different cloud and SaaS providers, the dataset relies on three core logical pillars:
+To ensure interoperability across different data generators, the dataset relies on three core logical pillars:
 
-1. **Commitment Categorization:** Distinguishes between obligations based on **Spend** (e.g., "I will spend 1M") vs. **Usage** (e.g., "I will use 500 vCPUs"). This determines which metrics—Cost or Quantity—are used to measure fulfillment.
-2. **Fulfillment Modeling:** Defines the "reset" behavior of a benefit.
+1. **Commitment Categorization:** Distinguishes between obligations based on **Spend** (e.g., "I will spend 1M") vs. **Usage** (e.g., "I will use 500 vCPUs"). This determines which metrics —- Cost or Quantity —- are used to measure fulfillment.
+2. **Fulfillment Modeling:** Defines the operational behavior and consumption flexibility of a commitment.
    * **Continuous** models (like Reserved Instances) are typically "use-it-or-lose-it" within short windows (e.g., Hourly).
    * **Discontinuous** models (like Enterprise Agreements) allow consumption to be aggregated over a longer duration (e.g., Total Term).
 3. **Eligibility Boundaries:** Using a structured JSON format, the dataset defines the logical perimeter of a commitment, specifying exactly which accounts, regions, or services are eligible to receive the negotiated benefit.
@@ -18,9 +18,9 @@ The following table defines the high-level expectations for key categorical colu
 
 | Attribute | Expected Value Logic | Example Values |
 | :--- | :--- | :--- |
-| **Benefit Category** | The primary commercial advantage provided. | `Discount`, `Monetary Pool`, `Availability` |
-| **Model** | How the benefit expires or resets. | `Continuous`, `Discontinuous` |
-| **Interval** | The time window for measurement/reset. | `Hourly`, `Monthly`, `Annual`, `Total Term` |
+| **Benefit Category** | The primary economic advantage provided. | `Discount`, `Monetary Pool`, `Availability`, `Other` |
+| **Model** | How the commitment is consumed. | `Continuous`, `Discontinuous` |
+| **Fulfillment Interval** | The "Use-it-or-lose-it" or "Goal" window for reset. | `Hourly`, `Monthly`, `Annual`, `Total Term` |
 | **Status** | The current lifecycle state of the record. | `Active`, `Pending`, `Expired`, `Canceled` |
 | **Offer Category** | The "privacy" or source level of the pricing. | `Public`, `Negotiated` |
 | **Payment Model** | The cash-flow timing for the commitment. | `No Upfront`, `Partial Upfront`, `All Upfront` |
@@ -29,7 +29,7 @@ The following table defines the high-level expectations for key categorical colu
 
 By standardizing these values, organizations can move from manual spreadsheet tracking to **Automated FinOps Governance**.
 
-For example, a **Discontinuous** model with an **Annual** interval tells a reporting engine to look for a "True-up" event at the end of the year. Conversely, a **Continuous** model with an **Hourly** interval tells the engine to calculate "Waste" (unused capacity) for every individual hour of the billing period.
+For example, a **Discontinuous** model with an **Annual Fulfillment Interval** tells a reporting engine to look for a "True-up" event at the end of the year. Conversely, a **Continuous** model with an **Hourly Fulfillment Interval** tells the engine to calculate "Waste" (unused capacity) for every individual hour of the billing period.
 
 ### Scenario 1: Strategic Cloud Transformation Agreement
 
@@ -50,7 +50,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 #### Commitment 3: Marketplace SaaS Add-on
 
 * **Context:** A specialized analytics tool, **DataStreamer**, purchased through the Acme marketplace.
-* **Commercial Logic:** A **Spend-based** "pass-through" for financial tracking.
+* **Commercial Logic:** A **Spend-based** "pass-through" for financial tracking with an **Annual Fulfillment Interval**.
 * **The Issuer/Provider Split:** The **Service Provider** is **DataStreamer**, but the **Invoice Issuer** remains **Acme Co**, showing how the model tracks third-party spend in a unified ecosystem.
 
 ### Data Example: AGR-99-BETA
@@ -66,8 +66,8 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 | **CC Discount %** | `0.15` | `0.40` | `0.10` |
 | **CC Duration** | `3 Years` | `1 Year` | `1 Year` |
 | **CC Eligibility** | `{"IsGlobalScope": true}` | `{"Inclusions": [{"Dimension": "RegionId", "Operator": "In", "Values": ["us-east-1"]}]}` | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Analytics"]}]}` |
+| **CC Fulfillment Interval** | `Total Term` | `Hourly` | `Annual` |
 | **CC ID** | `CMT-SPEND-001` | `CMT-RI-002` | `CMT-SaaS-003` |
-| **CC Interval** | `Total Term` | `Hourly` | `Annual` |
 | **CC Last Updated** | `2026-02-01T10:00:00Z` | `2025-12-01T09:00:00Z` | `2026-01-15T14:30:00Z` |
 | **CC Model** | `Discontinuous` | `Continuous` | `Discontinuous` |
 | **CC Offer Category** | `Negotiated` | `Public` | `Negotiated` |
@@ -107,7 +107,7 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 #### Commitment 3: Cross-Cloud Data Connector (Tiered Usage)
 
 * **Context:** A commitment based on **Data Volume (TB)** specifically for egress traffic between cloud providers.
-* **Commercial Logic:** A **Usage-based**, **Continuous** model tracked on a **Monthly** interval.
+* **Commercial Logic:** A **Usage-based**, **Continuous** model tracked on a **Monthly Fulfillment Interval**.
 * **Eligibility:** Targeted specifically at `Egress` usage types via string-match logic in the Eligibility JSON.
 
 ### Data Example: AGR-44-GAMMA
@@ -123,8 +123,8 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 | **CC Discount %** | `0.30` | `null` | `0.50` |
 | **CC Duration** | `3 Months` | `1 Year` | `1 Year` |
 | **CC Eligibility** | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["AI/ML"]}]}` | `{"IsGlobalScope": true}` | `{"Inclusions": [{"Dimension": "UsageType", "Operator": "Contains", "Values": ["Egress"]}]}` |
+| **CC Fulfillment Interval** | `Monthly` | `Annual` | `Monthly` |
 | **CC ID** | `CMT-AI-888` | `CMT-SEC-999` | `CMT-DATA-111` |
-| **CC Interval** | `Monthly` | `Annual` | `Monthly` |
 | **CC Last Updated** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
 | **CC Model** | `Continuous` | `Discontinuous` | `Continuous` |
 | **CC Offer Category** | `Negotiated` | `Negotiated` | `Public` |
@@ -158,7 +158,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 #### Commitment 3: CDN Annual (Volume Exhaustion)
 
 * **Context:** An annual volume commitment of 1PB (1,000TB) for Content Delivery Network services.
-* **Commercial Logic:** This is a **Discontinuous** model with an **Annual** interval.
+* **Commercial Logic:** This is a **Discontinuous** model with an **Annual Fulfillment Interval**.
 * **Overage Status:** Because the customer has already consumed their allotted volume before the `CC Period End`, the **CC Status** has shifted to `Overage`. This signals that the pool is empty and subsequent usage will be handled according to the contract's true-up or on-demand terms.
 
 ### Data Example: AGR-11-DELTA
@@ -168,14 +168,14 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **Billing Currency** | `USD` | `USD` | `USD` |
 | **CC Benefit Category** | `Discount` | `Discount` | `Monetary Pool` |
 | **CC Category** | `Usage` | `Usage` | `Usage` |
-| **CC Cost** | `50000.00` | `null` | `100000.00` |
+| **CC Cost** | `50000.00` | `0.00` | `100000.00` |
 | **CC Created** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
 | **CC Description** | `Base 100TB DB Storage` | `Tier 2 Storage Overage` | `1PB Annual CDN Volume` |
 | **CC Discount %** | `0.20` | `0.10` | `0.25` |
 | **CC Duration** | `1 Year` | `1 Year` | `1 Year` |
 | **CC Eligibility** | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Database"]}]}` | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Database"]}]}` | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["CDN"]}]}` |
+| **CC Fulfillment Interval** | `Monthly` | `Monthly` | `Annual` |
 | **CC ID** | `CMT-STR-BASE` | `CMT-STR-OVER` | `CMT-CDN-VOL` |
-| **CC Interval** | `Monthly` | `Monthly` | `Annual` |
 | **CC Last Updated** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
 | **CC Model** | `Continuous` | `Continuous` | `Discontinuous` |
 | **CC Offer Category** | `Negotiated` | `Negotiated` | `Negotiated` |

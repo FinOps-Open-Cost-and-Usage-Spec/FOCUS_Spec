@@ -7,8 +7,8 @@
 !INCLUDE "contractcommitmentdiscountpercentage.md",1
 !INCLUDE "contractcommitmentduration.md",1
 !INCLUDE "contractcommitmenteligibility.md",1
+!INCLUDE "contractcommitmentfulfillmentinterval.md",1
 !INCLUDE "contractcommitmentid.md",1
-!INCLUDE "contractcommitmentinterval.md",1
 !INCLUDE "contractcommitmentlastupdated.md",1
 !INCLUDE "contractcommitmentmodel.md",1
 !INCLUDE "contractcommitmentoffercategory.md",1

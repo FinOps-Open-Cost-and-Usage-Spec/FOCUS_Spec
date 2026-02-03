@@ -15,8 +15,8 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Discount Percentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage) | Dimension | Mandatory | True | Decimal |
 | [Contract Commitment Duration](#datasets.contractcommitment.contractcommitmentduration) | Dimension | Mandatory | False | String |
 | [Contract Commitment Eligibility](#datasets.contractcommitment.contractcommitmenteligibility) | Dimension | Mandatory | False | JSON |
+| [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) | Dimension | Mandatory | False | String |
 | [Contract Commitment ID](#datasets.contractcommitment.contractcommitmentid) | Dimension | Mandatory | False | String |
-| [Contract Commitment Interval](#datasets.contractcommitment.contractcommitmentinterval) | Dimension | Mandatory | False | String |
 | [Contract Commitment Last Updated](#datasets.contractcommitment.contractcommitmentlastupdated) | Dimension | Mandatory | False | Date/Time |
 | [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) | Dimension | Mandatory | False | String |
 | [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory) | Dimension | Mandatory | False | String |
@@ -29,9 +29,9 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Status](#datasets.contractcommitment.contractcommitmentstatus) | Dimension | Mandatory | False | String |
 | [Contract Commitment Type](#datasets.contractcommitment.contractcommitmenttype) | Dimension | Mandatory | False | String |
 | [Contract Commitment Unit](#datasets.contractcommitment.contractcommitmentunit) | Dimension | Mandatory | True | String |
-| [Contract ID](#datasets.contractcommitment.contractid) | Dimension | Mandatory | False | String |
-| [Contract Period End](#datasets.contractcommitment.contractperiodend) | Dimension | Mandatory | False | Date/Time |
-| [Contract Period Start](#datasets.contractcommitment.contractperiodstart) | Dimension | Mandatory | False | Date/Time |
+| [Contract ID](#datasets.contractid) | Dimension | Mandatory | False | String |
+| [Contract Period End](#datasets.contractperiodend) | Dimension | Mandatory | False | Date/Time |
+| [Contract Period Start](#datasets.contractperiodstart) | Dimension | Mandatory | False | Date/Time |
 | [Invoice Issuer Name](#datasets.contractcommitment.invoiceissuername) | Dimension | Mandatory | False | String |
 | [Pricing Currency](#datasets.contractcommitment.pricingcurrency) | Dimension | Conditional | False | String |
 
