@@ -6,11 +6,11 @@ The **Contract Commitment** dataset provides a structured representation of the 
 
 To ensure interoperability across different cloud and SaaS providers, the dataset relies on three core logical pillars:
 
-1.  **Commitment Categorization:** Distinguishes between obligations based on **Spend** (e.g., "I will spend $1M") vs. **Usage** (e.g., "I will use 500 vCPUs"). This determines which metrics—Cost or Quantity—are used to measure fulfillment.
-2.  **Fulfillment Modeling:** Defines the "reset" behavior of a benefit. 
-    * **Continuous** models (like Reserved Instances) are typically "use-it-or-lose-it" within short windows (e.g., Hourly).
-    * **Discontinuous** models (like Enterprise Agreements) allow consumption to be aggregated over a longer duration (e.g., Total Term).
-3.  **Eligibility Boundaries:** Using a structured JSON format, the dataset defines the logical perimeter of a commitment, specifying exactly which accounts, regions, or services are eligible to receive the negotiated benefit.
+1. **Commitment Categorization:** Distinguishes between obligations based on **Spend** (e.g., "I will spend 1M") vs. **Usage** (e.g., "I will use 500 vCPUs"). This determines which metrics—Cost or Quantity—are used to measure fulfillment.
+2. **Fulfillment Modeling:** Defines the "reset" behavior of a benefit.
+   * **Continuous** models (like Reserved Instances) are typically "use-it-or-lose-it" within short windows (e.g., Hourly).
+   * **Discontinuous** models (like Enterprise Agreements) allow consumption to be aggregated over a longer duration (e.g., Total Term).
+3. **Eligibility Boundaries:** Using a structured JSON format, the dataset defines the logical perimeter of a commitment, specifying exactly which accounts, regions, or services are eligible to receive the negotiated benefit.
 
 ### Expected Value Taxonomy
 
@@ -27,7 +27,7 @@ The following table defines the high-level expectations for key categorical colu
 
 ### Why the Values Matter
 
-By standardizing these values, organizations can move from manual spreadsheet tracking to **Automated FinOps Governance**. 
+By standardizing these values, organizations can move from manual spreadsheet tracking to **Automated FinOps Governance**.
 
 For example, a **Discontinuous** model with an **Annual** interval tells a reporting engine to look for a "True-up" event at the end of the year. Conversely, a **Continuous** model with an **Hourly** interval tells the engine to calculate "Waste" (unused capacity) for every individual hour of the billing period.
 
@@ -37,7 +37,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 
 #### Commitment 1: The Global Spend Pool
 
-* **Context:** A high-level Enterprise Agreement (EA) where the customer commits to spending **1M USD** over three years. 
+* **Context:** A high-level Enterprise Agreement (EA) where the customer commits to spending **1M USD** over three years.
 * **Commercial Logic:** A **Spend-based**, **Discontinuous** model. Every dollar spent within the three-year window fulfills the commitment.
 * **Eligibility:** **Global**. Applies to any service or region.
 
@@ -49,7 +49,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 
 #### Commitment 3: Marketplace SaaS Add-on
 
-* **Context:** A specialized analytics tool, **DataStreamer**, purchased through the Acme marketplace. 
+* **Context:** A specialized analytics tool, **DataStreamer**, purchased through the Acme marketplace.
 * **Commercial Logic:** A **Spend-based** "pass-through" for financial tracking.
 * **The Issuer/Provider Split:** The **Service Provider** is **DataStreamer**, but the **Invoice Issuer** remains **Acme Co**, showing how the model tracks third-party spend in a unified ecosystem.
 
@@ -93,16 +93,19 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 In this scenario, an enterprise with an existing master agreement with **Acme Co** (`AGR-44-GAMMA`) expands its footprint to include specialized AI training and security licensing. This example highlights how the model handles non-financial units (Seats) and project-based burst windows.
 
 #### Commitment 1: AI Model Training (Usage-based Burst)
+
 * **Context:** A short-term, intensive commitment to a specific number of GPU-Hours for a specialized AI training run.
 * **Commercial Logic:** A **Usage-based**, **Continuous** model with a short **3-Month** duration. It is paid **All Upfront** to secure priority capacity.
 * **Eligibility:** Restricted to the `AI/ML` service category.
 
 #### Commitment 2: Security Seat License (Quantity-based)
+
 * **Context:** A commitment to **500 Seats** of an endpoint security platform.
 * **Commercial Logic:** A **Quantity-based**, **Discontinuous** model. The unit of measure is **Seats** rather than a currency value.
 * **Invoice/Provider Alignment:** Unlike the Marketplace example, this is billed directly by the vendor (**CyberGuard Inc**), yet remains logically associated with the broader Cloud Transformation contract.
 
 #### Commitment 3: Cross-Cloud Data Connector (Tiered Usage)
+
 * **Context:** A commitment based on **Data Volume (TB)** specifically for egress traffic between cloud providers.
 * **Commercial Logic:** A **Usage-based**, **Continuous** model tracked on a **Monthly** interval.
 * **Eligibility:** Targeted specifically at `Egress` usage types via string-match logic in the Eligibility JSON.
@@ -147,13 +150,15 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 This scenario focuses on how the model handles growth beyond initial estimates. In the master agreement `AGR-11-DELTA`, the customer has established "safety nets" and tiered pricing to ensure that scale-out events are still covered by negotiated rates, even after a primary pool is exhausted.
 
 #### Commitment 1 & 2: Database Storage Tiers (Base + Overage)
+
 * **Context:** The customer commits to a base of 100TB of Database storage. To avoid "sticker shock" if they grow to 150TB, they have a pre-negotiated **Overage Tier**.
 * **Commercial Logic:** Commitment 1 is the paid floor (`CC Cost: 50000.00`). Commitment 2 is a "Zero-Cost" commitment that exists solely to define the **CC Discount %** (10%) applied to any usage exceeding the first 100TB.
 * **Eligibility:** Both rows target the same `Database` service category.
 
 #### Commitment 3: CDN Annual (Volume Exhaustion)
+
 * **Context:** An annual volume commitment of 1PB (1,000TB) for Content Delivery Network services.
-* **Commercial Logic:** This is a **Discontinuous** model with an **Annual** interval. 
+* **Commercial Logic:** This is a **Discontinuous** model with an **Annual** interval.
 * **Overage Status:** Because the customer has already consumed their allotted volume before the `CC Period End`, the **CC Status** has shifted to `Overage`. This signals that the pool is empty and subsequent usage will be handled according to the contract's true-up or on-demand terms.
 
 ### Data Example: AGR-11-DELTA
