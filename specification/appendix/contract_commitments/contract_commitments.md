@@ -1,4 +1,6 @@
-## Contract Commitments
+# Contract Commitments
+
+## Overview
 
 The **Contract Commitment** dataset provides a structured representation of the commercial agreements between a customer and their service providers. While the [Cost and Usage](#datasets.costandusage) dataset tracks the results of consumption, the Contract Commitment dataset tracks the intent and constraints of the relationship.
 
@@ -30,6 +32,29 @@ The following table defines the high-level expectations for key categorical colu
 By standardizing these values, organizations can move from manual spreadsheet tracking to **Automated FinOps Governance**.
 
 For example, a **Discontinuous** model with an **Annual Fulfillment Interval** tells a reporting engine to look for a "True-up" event at the end of the year. Conversely, a **Continuous** model with an **Hourly Fulfillment Interval** tells the engine to calculate "Waste" (unused capacity) for every individual hour of the billing period.
+
+## Examples
+
+### Common Offering Examples
+
+The following table provides a reference for how common cloud and SaaS commercial offerings theoretically map to the Contract Commitment schema. (This table is provided for demonstration purposes only.  Actual value assignments are left to the data generators upon the creation of dataset artifacts.)
+
+| Offering Example | CC Category | CC Model | CC Offer Category | CC Benefit Category | CC Fulfillment Interval | CC Duration | CC Payment Model | CC Payment Interval |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **AWS Savings Plan** | Spend | Continuous | Public | Discount | Hourly | 1 Year | Partial Upfront | Monthly |
+| **Azure Reservation** | Usage | Continuous | Public | Discount | Hourly | 3 Years | All Upfront | One-Time |
+| **GCP Flex CUD** | Spend | Continuous | Public | Discount | Hourly | 3 Years | No Upfront | Monthly |
+| **Azure ODCR** | Usage | Continuous | Public | Availability | Hourly | 1 Month | No Upfront | Monthly |
+| **AWS EDP / MACC** | Spend | Discontinuous | Negotiated | Discount | Annual | 3 Years | No Upfront | Monthly |
+| **Snowflake (EA)** | Spend | Discontinuous | Negotiated | Monetary Pool | Annual | 1 Year | All Upfront | Annual |
+| **Datadog (Public)** | Spend | Discontinuous | Public | Monetary Pool | Annual | 1 Year | No Upfront | Monthly |
+| **SaaS Seats (CRM)** | Usage | Continuous | Negotiated | Discount | Monthly | 1 Year | No Upfront | Monthly |
+| **Multi-Year Pool** | Spend | Discontinuous | Negotiated | Monetary Pool | Total Term | 3 Years | All Upfront | One-Time |
+| **Growth Rebate** | Spend | Discontinuous | Negotiated | Monetary Pool | Annual | 2 Years | No Upfront | Annual |
+| **API Credit Pack** | Usage | Discontinuous | Public | Monetary Pool | Transactional | 2 Years | All Upfront | One-Time |
+| **Marketplace SaaS** | Spend | Discontinuous | Negotiated | Monetary Pool | Annual | 1 Year | All Upfront | One-Time |
+| **90-Day POC** | Spend | Discontinuous | Negotiated | Monetary Pool | Custom | 90 Days | No Upfront | Custom |
+| **Enterprise Support** | Usage | Continuous | Negotiated | Other | Monthly | 1 Year | No Upfront | Monthly |
 
 ### Scenario 1: Strategic Cloud Transformation Agreement
 
