@@ -76,13 +76,6 @@ Defines how *corrections* to previously delivered FOCUS *dataset artifacts* are 
 
 All corrections adhere to the following requirements:
 
-* The correction style(s) used to correct FOCUS *dataset artifacts* MUST be documented by the data generator.
-* Correction MUST NOT introduce a discrepancy between an *issued invoice* and its associated FOCUS *dataset artifacts*.
-* Correction to a previously *closed billing period* that requires issuing additional invoices MUST result in additional charge(s) associated with a subsequent *open billing period*, with the charge period indicating when the cost was incurred.
-* Correction delivered using the Append delivery mechanism adheres to the following additional requirements:
-  * Correction MUST include exclusively additional charges.
-  * Correction MUST NOT include updates or omissions of previously delivered charges.
-
 * Dataset instance MUST have its styles for representing corrections in Dataset Instance Artifacts documented and accessible to practitioners (including whether Replacement, Delta or Ledger is used and under which conditions).
 * Dataset Instance MUST NOT deliver correction that invalidates the *invoice reconciliation* when [InvoiceStatus]((#datasets.invoicedetail.invoicestatus)) is "Closed" for a given InvoiceId.
 * When including correction acssociated to *closed billing period* Dataset instance adheres to the following additional requirements:
