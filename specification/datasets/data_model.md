@@ -1,3 +1,3 @@
-This document is where we declare the overall data model of the various tables in FOCUS.
+# Datasets
 
-It provides a high-level overview of the data model, including the relationships between different tables and the key attributes of each table.
+FOCUS defines many individual datasets made up of a selected set of columns which abide by the attributes outlined in this FOCUS Specification.
