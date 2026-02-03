@@ -160,7 +160,6 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [invoice issuer](#glossary:invoice-issuer) ([Invoice Status](#datasets.invoicedetail.invoicestatus) set to "Closed"). Once issued, the invoice becomes the authoritative financial document and is considered finalized and the financial data presented on the invoice must not be altered.
 
-
 <a name="glossary:json"><b>JSON</b></a>
 
 A common acronym for JavaScript Object Notation, a data format codified in [ECMA-404](https://ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) as a standard for human-readable, serializable data objects. This data format is used in FOCUS to communicate multiple pieces of information about a charge (tags, properties, etc.) in a single column.
