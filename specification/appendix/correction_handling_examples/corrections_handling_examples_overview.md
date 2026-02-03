@@ -1,6 +1,6 @@
 # Correction Handling Examples Overview
 
-This section provides examples of how correction handling may be implemented in alignment with the FOCUS specification. The examples cover scenarios involving corrections to open and closed billing periods, and illustrate the various delivery mechanisms and correction styles supported by FOCUS.
+This section provides examples of how correction handling may be implemented in alignment with the FOCUS specification. The examples are limited to illustrating correction handling for the Cost and Usage FOCUS dataset, and cover scenarios involving corrections to open and closed billing periods, as well as the various delivery mechanisms and correction styles supported by FOCUS.
 
 The examples that follow are organized into sections based on billing period status:
 
