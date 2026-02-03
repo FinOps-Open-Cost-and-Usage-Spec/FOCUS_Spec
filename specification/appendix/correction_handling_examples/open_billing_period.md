@@ -35,7 +35,7 @@ Note the following details in the example dataset:
   * A decrement record for `R-111`, reducing the cost previously misattributed to that resource.
   * An increment record for `R-222`, assigning the corresponding portion of the cost to the correct resource.
 * Ledger style correction includes:
-  * A negation record for the original charge.
+  * A reversal record for the original charge.
   * A corrected record for `R-111`.
   * A corrected record for `R-222`.
 * Each correction record has ChargeClass set to null, indicating that it pertains to an open billing period and is not a retroactive correction to a previously closed billing period.
