@@ -1,5 +1,6 @@
 !INCLUDE "appendix_overview.md",0
 !INCLUDE "commitment_discounts/commitment_discounts.mdpp",1
+!INCLUDE "contract_commitments/contract_commitments.mdpp",1
 !INCLUDE "examples/commitment_discount_flexibility_examples/commitment_discount_flexibility_examples.mdpp",1
 !INCLUDE "metadata_examples/metadata_examples.mdpp",1
 !INCLUDE "participating_entity_identification.md",1
