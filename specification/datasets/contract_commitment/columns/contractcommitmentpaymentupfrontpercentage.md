@@ -15,12 +15,15 @@ This column allows for precise financial modeling of "Partial Upfront" [payment 
 * ContractCommitmentPaymentUpfrontPercentage MUST be 0.0 when [ContractCommitmentPaymentModel] is "No Upfront".
 
 ## Column ID
+
 ContractCommitmentPaymentUpfrontPercentage
 
 ## Display Name
+
 Contract Commitment Payment Upfront Percentage
 
 ## Description
+
 Represents the portion of the total [Contract Commitment Cost](#datasets.contractcommitment.contractcommitmentcost) paid at the start of the duration of a [*contract commitment*](#glossary:contract-commitment).
 
 ## Content Constraints

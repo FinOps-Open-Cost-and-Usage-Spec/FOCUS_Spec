@@ -15,12 +15,15 @@ Service Provider Name is the name of the entity that provides the [*contract com
 * ServiceProviderName MUST NOT be null.
 
 ## Column ID
+
 ServiceProviderName
 
 ## Display Name
+
 Service Provider Name
 
 ## Description
+
 The name of the entity that provides the [*contract commitment*](#glossary:contract-commitment).
 
 ## Content Constraints
@@ -34,4 +37,5 @@ The name of the entity that provides the [*contract commitment*](#glossary:contr
 | Value format    | \<not specified> |
 
 ## Introduced (version)
+
 1.4

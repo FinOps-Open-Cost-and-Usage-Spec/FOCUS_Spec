@@ -5,9 +5,11 @@ Contract Commitment Benefit Category defines the primary value or advantage rece
 ## Implementation Context
 
 ### Distinguishing from Technical IDs
+
 **Availability** represents the contractual right to access resources. It must not be confused with technical fields like `CapacityReservationId`. A single **Availability** within a contract may encompass multiple technical reservations across various regions or accounts.
 
 ### Primary Benefit Logic
+
 In cases where a commitment provides multiple benefits (e.g., a Discount and an Availability Guarantee), the value should reflect the **primary commercial driver** of the agreement as defined by the procurement or FinOps team.
 
 ## Requirements

@@ -68,19 +68,18 @@ ContractCommitmentEligibility uses a reserved string to represent global or unre
 | :--- | :--- | :--- |
 | `"*"` | Represents all possible values for the specified Dimension. | `In`, `Contains` |
 
-#### Wildcard Behavior Rules
+### Wildcard Behavior Rules
 
 1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every resource, effectively making the commitment "Organization-wide" for that specific Dimension.
 2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every resource, effectively excluding all resources (this is typically used only in combination with `ExclusionOperator: "AND"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted) unless the `InclusionOperator` is set to `AND`.
-
----
 
 ## Examples
 
 The following examples demonstrate how to model common contract commitment scenarios using ContractCommitmentEligibility.
 
 ### Global Scope and Applicability
+
 An Enterprise Discount Program (EDP) or a global Savings Plan that applies to all resources across the entire provider footprint.  100% of activity is applicable, regardless of cost or usage.
 
 ```json
@@ -99,6 +98,7 @@ The inclusion of Applicability is optional, given that the default is 1.0.  It c
 ```
 
 ### Global Scope with Specific Exceptions
+
 Organization-wide coverage EXCEPT for Database services running in BillingAccountId 123456789012.
 
 ```json
@@ -121,6 +121,7 @@ Organization-wide coverage EXCEPT for Database services running in BillingAccoun
 ```
 
 ### Regional Scope
+
 A commitment purchased for a specific region (e.g., `us-east-1`). Since `IsGlobalScope` and `IsComplexScope` are omitted, they default to `false`, requiring the inclusion block.
 
 ```json
@@ -137,6 +138,7 @@ A commitment purchased for a specific region (e.g., `us-east-1`). Since `IsGloba
 ```
 
 ### Regional Compute Commitment with Exceptions
+
 Applies to Compute in `us-east-1` and `us-west-2`, excluding any resources or services tagged with an `Environment` of `Sandbox`.
 
 ```json
@@ -166,6 +168,7 @@ Applies to Compute in `us-east-1` and `us-west-2`, excluding any resources or se
 ```
 
 ### Shorthand Applicability (Decimal)
+
 A commitment that applies fully to `us-east-1` but only 50% of cost and usage in `us-west-2` is eligible.
 
 ```json
@@ -189,6 +192,7 @@ A commitment that applies fully to `us-east-1` but only 50% of cost and usage in
 ```
 
 ### Granular Applicability (Object)
+
 A scenario where 100% of Marketplace **Usage** counts toward a volume commitment, but only 50% of the **Cost** is applicable for financial credit.
 
 ```json
@@ -209,6 +213,7 @@ A scenario where 100% of Marketplace **Usage** counts toward a volume commitment
 ```
 
 ### Complex Fallback
+
 A commitment with dynamic or conditional logic that requires calculation against the total aggregate of cost or usage (e.g., 'Applies to the top 10% of compute spend by volume'). While the intent can be described in ContractCommitmentDescription, the IsComplexScope flag signals that the scope and applicability cannot be described in isolation for a subset of included or excluded values.
 
 ```json
@@ -217,23 +222,19 @@ A commitment with dynamic or conditional logic that requires calculation against
 }
 ```
 
----
-
 ## Implementation Guidance
 
 ### Processing Workflow
 
-
-
 The evaluation of a resource against a commitment eligibility MUST follow a strict linear progression:
 
-1.  **Normalization:** Convert the resource attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
-2.  **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
-3.  **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, terminate evaluation.
-4.  **Applicability Resolution:**
-    * **Resolution Logic:** If `Applicability` is a Decimal, the value is applied to both Cost and Usage. If it is an Object, the engine MUST use the specific metric key.
-    * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `OR`, the engine MUST use the highest percentage for each respective metric.
-    * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
+1. **Normalization:** Convert the resource attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
+2. **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
+3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, terminate evaluation.
+4. **Applicability Resolution:**
+   * **Resolution Logic:** If `Applicability` is a Decimal, the value is applied to both Cost and Usage. If it is an Object, the engine MUST use the specific metric key.
+   * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `OR`, the engine MUST use the highest percentage for each respective metric.
+   * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
 
 ### Integration with Commitment Logic
 
@@ -248,12 +249,15 @@ The evaluation of **Applicability** percentages must be contextually aligned wit
 2. **Conflict Resolution:** If `IsGlobalScope` is `true`, rule-level applicability in the `Inclusions` array is ignored in favor of the top-level `Applicability` attribute.
 
 ## Column ID
+
 ContractCommitmentEligibility
 
 ## Display Name
+
 Contract Commitment Eligibility
 
 ## Description
+
 A structured definition of the specific entities to which a contract commitment applies, including inclusion/exclusion logic and applicability percentages.
 
 ## Content Constraints

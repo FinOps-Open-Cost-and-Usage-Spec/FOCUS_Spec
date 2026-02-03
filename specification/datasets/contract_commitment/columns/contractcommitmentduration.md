@@ -1,6 +1,6 @@
 # Contract Commitment Duration
 
-Contract Commitment Duration represents the total calendar length of a [*contract commitment*](#glossary:contract-commitment), from [start date](#datasets.contractcommitment.datestart) to [end date](#datasets.contractcommitment.contractcommitmentdateend). 
+Contract Commitment Duration represents the total calendar length of a [*contract commitment*](#glossary:contract-commitment), from [start date](#datasets.contractcommitment.datestart) to [end date](#datasets.contractcommitment.contractcommitmentdateend).
 
 The value follows a structured format of [Numeric Value] [Unit], representing the full lifespan of the agreement; see below for more information.
 
