@@ -13,6 +13,7 @@ ContractCommitmentPaymentInterval adheres to the following requirements:
 * ContractCommitmentPaymentInterval MUST NOT be null.
 * ContractCommitmentPaymentInterval MUST be one of the allowed values.
 * ContractCommitmentPaymentInterval MUST be "One-Time" if [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is "All Upfront".
+* ContractCommitmentPaymentInterval SHOULD represent a time granularity equal to or lesser than the time granularity represented by [ContractCommitmentDuration](#datasets.contractcommitment.contractcommitmentduration).
 
 ## Column ID
 
