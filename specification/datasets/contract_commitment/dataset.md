@@ -41,7 +41,6 @@ ContractCommitment adheres to the following requirements:
 * ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * ContractCommitment MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 
-
 ## Dataset ID<!--SkipTOC-->
 
 ContractCommitment
