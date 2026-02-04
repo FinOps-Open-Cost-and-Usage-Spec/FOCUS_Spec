@@ -1,0 +1,102 @@
+{
+  "CCT-ContractCommitment-D-000-M": {
+    "Function": "Composite",
+    "Reference": "ContractCommitment",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CCT-ContractCommitment-D-001-C",
+        "CCT-ContractCommitment-D-002-M",
+        "CCT-ContractCommitment-D-003-M"
+      ]
+    }
+  },
+  "CCT-ContractCommitment-D-001-C": {
+    "Function": "Presence",
+    "Reference": "ContractCommitment",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 10,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST be present when the service provider supports *contract commitments*.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-002-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitment",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST conform to [ColumnHandling](#columnhandling) requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CCT-ContractCommitment-D-003-M": {
+    "Function": "Validation",
+    "Reference": "ContractCommitment",
+    "EntityName": "Contract Commitment",
+    "EntityId": "ContractCommitment",
+    "EntityType": "Dataset",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CCT",
+    "DatasetId": "ContractCommitment",
+    "DatasetName": "Contract Commitment",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ContractCommitment MUST conform to [NullHandling](#nullhandling) requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
