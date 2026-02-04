@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## v1.4
+
+<sup>Announced February 2026</sup>
+
+### Changes to Supported Features by [Change Impact Classification](/guidelines/spec-change-guidelines.md)
+
+#### Compatible Changes
+
+- None
+
+#### Migration Compatible Changes
+
+- None
+
+#### Incompatible Changes
+
+- Removal of deprecated ProviderName and PublisherName columns
+
+### Removed
+
+- [ProviderName](/specification/datasets/cost_and_usage/columns/providername.md) column (deprecated in v1.3)
+- [PublisherName](/specification/datasets/cost_and_usage/columns/publishername.md) column (deprecated in v1.3)
+
 ## v1.3
 
 <sup>Announced December 2025</sup>
