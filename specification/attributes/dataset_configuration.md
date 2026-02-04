@@ -4,10 +4,10 @@ Dataset Configuration allows FinOps practitioners to tailor the structure and co
 
 Common scenarios where dataset configuration is valuable include:
 
-* Reducing dataset size for cost optimization when working with large exports
-* Creating focused datasets for specific workflows (cost allocation, commitment analysis)
-* Simplifying data for non-technical users with spreadsheet tools
-* Excluding custom (x_) columns for standardized cross-provider reporting
+* **Managing Scale**: Trim large exports to reduce time and cost of data preparation
+* **Reducing Noise**: Tailor datasets for specific workflows (e.g., cost allocation, commitment analysis)
+* **Lowering Barriers**: Strip away technical complexity for spreadsheet users
+* **Enabling Comparison**: Remove custom (`x_`) columns for standardized cross-provider reporting
 
 ## Attribute ID
 
@@ -23,13 +23,13 @@ Defines configuration options for controlling the structure and content of a FOC
 
 ## Requirements
 
-* A *FOCUS dataset* MUST allow selecting which columns to include.
-  * A *FOCUS dataset* MUST produce conformant column values regardless of which columns are included.
+* A *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
+* A *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).
 * A *FOCUS dataset* SHOULD include [Metadata](#metadata) describing the column selection applied to the dataset.
 
 ## Example
 
-A practitioner configures their dataset to include only these columns:
+A practitioner configures their FOCUS Cost and Usage dataset to include only these columns:
 
 * BillingAccountId
 * ServiceName
@@ -37,7 +37,7 @@ A practitioner configures their dataset to include only these columns:
 * EffectiveCost
 * Tags
 
-Even though columns like `CommitmentDiscountId` and `ResourceId` are excluded, the included cost columns (`BilledCost`, `EffectiveCost`) still reflect commitment discounts correctly. The dataset remains conformant because each included column follows all FOCUS requirements for that column, including requirements that reference columns not in the dataset.
+Even though columns like `CommitmentDiscountId` and `ResourceId` are excluded, the included cost columns (`BilledCost`, `EffectiveCost`) still reflect commitment discounts correctly. The dataset remains conformant to the FOCUS specification because each included column follows all requirements for that column, including requirements that reference columns not in the dataset.
 
 ## Exceptions
 

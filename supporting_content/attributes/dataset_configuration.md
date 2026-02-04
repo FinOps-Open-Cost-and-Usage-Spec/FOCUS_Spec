@@ -2,7 +2,7 @@
 
 ## Deferred Requirements
 
-The following requirements were developed as part of the Dataset Configuration attribute but deferred from the initial specification to keep the scope focused on column selection (#1091). These are expected to be integrated as normative requirements in a separate change.
+The following requirements were developed as part of the Dataset Configuration attribute but deferred from the initial specification to keep the scope focused on column selection (#1091). These may be integrated as normative requirements in a separate change.
 
 ### Row aggregation
 
