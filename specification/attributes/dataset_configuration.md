@@ -23,8 +23,8 @@ Defines configuration options for controlling the structure and content of a FOC
 
 ## Requirements
 
-* A *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
-* A *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).
+* *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
+* *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).
 
 ## Example
 
