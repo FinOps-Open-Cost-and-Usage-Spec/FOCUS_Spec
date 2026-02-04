@@ -92,6 +92,10 @@ A charge to correct cost or usage data in a previously invoiced [*billing period
 
 A financial incentive or allowance granted by a service provider unrelated to other past/current/future charges.
 
+<a name="glossary:custom-column"><b>Custom Column</b></a>
+
+A column in a [*FOCUS dataset*](#glossary:FOCUS-dataset) that is not defined by FOCUS. Custom columns are prefixed with `x_` and provide additional context from [*native datasets*](#glossary:native-dataset) beyond what is captured in FOCUS columns.
+
 <a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
 
 An abbreviated term for [*dataset instance artifact*](#glossary:dataset-instance-artifact).
