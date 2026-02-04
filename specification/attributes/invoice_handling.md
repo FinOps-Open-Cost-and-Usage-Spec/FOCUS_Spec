@@ -54,7 +54,7 @@ Defines how a *FOCUS dataset* should reflect details for the information present
 * *Invoice reconciliation* process adheres to the following additional requirements:
   * *Invoice reconciliation* between an *invoice* and its associated FOCUS *dataset artifacts* MUST be performed by *invoice issuer*  before [InvoiceStatus](##datasets.invoicedetail.invoicestatus) is set to "Closed".
   * *Invoice reconciliation* MUST include (but is not limited to) the following metric and dimensions: BilledCost, BillingCurrency, InvoiceId, InvoiceIssuerName, BillingAccountId, BillingPeriodStart, and BillingPeriodEnd.
-  * *Invoice reconciliation* process MUST be documented by the invoice issuer, including a list of columns from both FOCUS CostAndUsage and InvoiceDetails dataset instances that are included in the reconciliation.
+  * *Invoice reconciliation* process MUST be documented by the invoice issuer, including a list of columns from both FOCUS CostAndUsage and InvoiceDetails datasets that are included in the reconciliation.
 * The *billing period* (i.e., the timeframe from BillingPeriodStart to BillingPeriodEnd) of a charge MUST match the *billing period* of its associated [*InvoiceId*](#datasets.costandusage.invoiceid).
 
 ## Exceptions

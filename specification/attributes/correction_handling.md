@@ -4,19 +4,19 @@
 
 The Correction Handling attribute defines how [*corrections*](#glossary:correction) to previously delivered FOCUS [*dataset artifacts*](#glossary:dataset-artifact) are represented in subsequent deliveries.
 
-*Corrections* may consist of one or more simultaneous changes, including updates to or omission of previously delivered records, or the addition of new records that supplement previously delivered data within the affected [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)). This concept applies across all FOCUS datasets.
+*Corrections* may consist of one or more simultaneous changes, including updates to or omission of previously delivered records, or the addition of new records that supplement previously delivered data within the affected [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)). This concept applies across all [*FOCUS datasets*](#glossary:FOCUS-dataset).
 
 Corrections may address a variety of operational or technical causes, such as refunds, late-arriving data, rounding errors, delivery errors, and other post-processing adjustments.
 
-Accurate correction handling is essential to ensure the consistency, integrity, and usability of FOCUS datasets over time. Depending on the dataset and delivery configuration, it supports a range of key outcomes, including but not limited to:
+Accurate correction handling is essential to ensure the consistency, integrity, and usability of *FOCUS datasets* over time. Depending on the dataset and delivery configuration, it supports a range of key outcomes, including but not limited to:
 
-* Consistency of delivered data - ensuring that delivered data remains consistent and reliable over time, where applicable, including alignment between related FOCUS datasets (e.g., Invoice Detail records and the underlying Cost and Usage records).
+* Consistency of delivered data - ensuring that delivered data remains consistent and reliable over time, where applicable, including alignment between related *FOCUS datasets* (e.g., Invoice Detail records and the underlying Cost and Usage records).
 * Data integrity and [*invoice reconciliation*](#glossary:invoice-reconciliation) - ensuring that corrections do not compromise records associated with issued invoices and that alignment is maintained in accordance with defined *invoice reconciliation* requirements.
 * Auditability and traceability - enabling the tracking of delivered data and applied corrections over time, so that changes and their effects can be understood, verified, and correctly reflected in downstream processes (e.g., cost allocation, chargeback, reporting).
 
 ### Correction Styles
 
-FOCUS recognizes three styles for handling corrections within subsequent dataset artifacts:
+FOCUS recognizes three styles for handling corrections within subsequent *dataset artifacts*:
 
 | Correction Style | Delivery Mechanism | Correction Style Description                                                                                                                                              |
 | ---------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -46,13 +46,13 @@ Given that only net changes are presented and previously delivered records are n
 
 In the Ledger correction style, a *dataset artifact* uses the Append delivery mechanism in combination with a double-entry bookkeeping method to provide detailed updates for a given delivery scope, based on the data available at the time of delivery. Depending on the nature of the correction, either or both of the following steps may be required: (1) reversal of the original record using a record in which additive metrics (e.g., cost- and quantity-related columns) carry values with the opposite sign, while all other columns match the original; and (2) a new record with corrected values.
 
-All previously delivered dataset artifacts are preserved, and corrections are expressed as incremental records that reflect explicit reversals and re-entries, applied during aggregation. These records effectively increase or decrease values in selected additive metrics (e.g., cost- and quantity-related columns) of previously delivered records, or supplement previously delivered records, all within the same delivery scope. The practitioner must reference all *dataset artifacts* delivered for a given *delivery scope* in order to see a complete and accurate view.
+All previously delivered *dataset artifacts* are preserved, and corrections are expressed as incremental records that reflect explicit reversals and re-entries, applied during aggregation. These records effectively increase or decrease values in selected additive metrics (e.g., cost- and quantity-related columns) of previously delivered records, or supplement previously delivered records, all within the same delivery scope. The practitioner must reference all *dataset artifacts* delivered for a given *delivery scope* in order to see a complete and accurate view.
 
 Given that the entire change history is presented, the Ledger correction style provides full inherent auditability.
 
 ### Corrections to Issued Invoices
 
-While corrections to data in FOCUS Invoice Detail and Cost and Usage dataset artifacts associated with an [*issued invoice*](#glossary:issued-invoice) may be permitted, they must not compromise the integrity of the *issued invoice* representation. Any correction that invalidates the *invoice reconciliation* performed by the [*invoice issuer*](#glossary:invoice-issuer) prior to invoice issuance would undermine the consistency and integrity of delivered FOCUS dataset artifacts. Corrections that would have this effect are therefore prohibited for *issued invoices*, unless explicitly requested by the end-user.
+While corrections to data in FOCUS Invoice Detail and Cost and Usage *dataset artifacts* associated with an [*issued invoice*](#glossary:issued-invoice) may be permitted, they must not compromise the integrity of the *issued invoice* representation. Any correction that invalidates the *invoice reconciliation* performed by the [*invoice issuer*](#glossary:invoice-issuer) prior to invoice issuance would undermine the consistency and integrity of delivered *FOCUS dataset artifacts*. Corrections that would have this effect are therefore prohibited for *issued invoices*, unless explicitly requested by the end-user.
 
 Corrections to underlying records that do not impact the *invoice reconciliation* are permitted. However, even when *invoice reconciliation* remains intact, such corrections can reduce auditability and traceability and may affect downstream processes (e.g., cost allocation, chargeback, reporting), with more significant implications for closed billing periods.
 
@@ -76,11 +76,11 @@ Defines how *corrections* to previously delivered FOCUS *dataset artifacts* are 
 
 All corrections adhere to the following requirements:
 
-* Dataset instance MUST have its styles for representing corrections in Dataset Instance Artifacts documented and accessible to practitioners (including whether Replacement, Delta or Ledger is used and under which conditions).
-* Dataset Instance MUST NOT deliver correction that invalidates the *invoice reconciliation* when [InvoiceStatus]((#datasets.invoicedetail.invoicestatus)) is "Closed" for a given InvoiceId.
-* When including correction acssociated to *closed billing period* Dataset instance adheres to the following additional requirements:
-  * Dataset instance MUST NOT deliver records that results in issuing additional invoices for the given billing period.
-  * Dataset instance MAY deliver one or more records that results in issuing additional invoices for subsequent *open billing period*.
+* *FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta or Ledger is used and under which conditions).
+* *FOCUS dataset* MUST NOT deliver correction that invalidates the *invoice reconciliation* when [InvoiceDetail.InvoiceStatus]((#datasets.invoicedetail.invoicestatus)) is "Closed" for a given InvoiceId.
+* When including correction acssociated to *closed billing period* *FOCUS dataset* adheres to the following additional requirements:
+  * *FOCUS dataset* MUST NOT deliver records that results in issuing additional invoices for the given billing period.
+  * *FOCUS dataset* MAY deliver one or more records that results in issuing additional invoices for subsequent *open billing period*.
 
 ## Exceptions
 

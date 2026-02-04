@@ -2,20 +2,20 @@
 
 ## Overview
 
-A [*dataset instance*](#glossary:dataset-instance) represents a specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset). A [*dataset instance artifact*](#glossary:dataset-instance-artifact) is the physical delivery of that instance, representing one or more records, independent of storage or transport boundaries (e.g., files, batches, or responses).
+The Delivery Handling attribute defines how data generator delivers [*FOCUS dataset*](#glossary:FOCUS-dataset) to customer.
 
-The Delivery Handling attribute defines how a data generator delivers *dataset artifacts* to a customer.
+A [*dataset instance*](#glossary:dataset-instance) represents a specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset). A [*dataset instance artifact*](#glossary:dataset-instance-artifact) is the physical delivery of that instance, representing one or more records, independent of storage or transport boundaries (e.g., files, batches, or responses).
 
 ### Delivery Mechanisms
 
-FOCUS recognizes two delivery mechanisms:
+FOCUS recognizes two *FOCUS datasets* delivery mechanisms:
 
 * Overwrite: Each delivery provides a complete snapshot, superseding any previously delivered *dataset artifact* for the same [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)).
 * Append: Each delivery adds new data, while previously delivered dataset artifacts are preserved.
 
 Overwrite and Append mechanisms are not mutually exclusive, and hybrid implementations are common in practice, allowing data generators to meet specific technical and auditability requirements.
 
-For example, for Cost and Usage [*FOCUS dataset instances*](#glossary:FOCUS-dataset-instance), a data generator may use Overwrite mechanism for *dataset artifacts* corresponding to an [*open billing period*](#closed-billing-period), ensuring the snapshot reflects the most recent state, while using Append mechanism for [*closed billing periods*](#glossary:closed-billing-period) to preserve historical data and support auditing of corrections to previously *closed billing periods* (i.e., [*charges*](#glossary:charge) with Charge Class set to "Correction").
+For example, for Cost and Usage *FOCUS datasets*, a data generator may use Overwrite mechanism for *dataset artifacts* corresponding to an [*open billing period*](#closed-billing-period), ensuring the snapshot reflects the most recent state, while using Append mechanism for [*closed billing periods*](#glossary:closed-billing-period) to preserve historical data and support auditing of corrections to previously *closed billing periods* (i.e., [*charges*](#glossary:charge) with Charge Class set to "Correction").
 
 For more information on corrections, see the [Correction Handling attribute](*correctionhandling).
 
@@ -51,19 +51,19 @@ Delivery Handling
 
 ## Description
 
-Defines how a data generator delivers a *dataset artifact* to a customer.
+Defines how data generator delivers *FOCUS dataset* to customer.
 
 ## Requirements
 
-Dataset Instance delivered by a data generator MUST adhere to the following Delivery Handling requirements:
+*FOCUS dataset* delivered by a data generator MUST adhere to the following Delivery Handling requirements:
 
-* Dataset Instance MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).
-* Dataset Instance MUST have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
-* Dataset Instance MUST have its mechanism for correlating *dataset artifact* with the corresponding [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners.
-* Dataset Instance MUST have information contained in the delivered *dataset artifacts* accurately reflected in corresponding Metadata elements.
-* When using Append delivery mechanism, Dataset instance adheres to the following additional requirements:
-  * Dataset instance MUST NOT include updates to previously delivered records.
-  * Dataset instance MUST NOT include omissions of previously delivered records.
+* *FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).
+* *FOCUS dataset* MUST have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
+* *FOCUS dataset* MUST have its mechanism for correlating *dataset artifact* with the corresponding [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners.
+* *FOCUS dataset* MUST have information contained in the delivered *dataset artifacts* accurately reflected in corresponding Metadata elements.
+* When using Append delivery mechanism, *FOCUS dataset* adheres to the following additional requirements:
+  * *FOCUS dataset* MUST NOT include updates to previously delivered records.
+  * *FOCUS dataset* MUST NOT include omissions of previously delivered records.
 
 ## Exceptions
 
