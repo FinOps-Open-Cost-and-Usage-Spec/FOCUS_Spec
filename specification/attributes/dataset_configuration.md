@@ -1,6 +1,6 @@
 # Dataset Configuration
 
-FinOps practitioners often need to configure the data in a [*FOCUS dataset*](#glossary:FOCUS-dataset) to optimize cost, storage, and performance. FOCUS datasets can include many columns, some of which may be static for a given provider, very large, or simply not needed for specific scenarios. Dataset Configuration defines options that allow practitioners to control the structure and content of the data included in the dataset.
+Dataset Configuration allows FinOps practitioners to tailor the structure and content of a [*FOCUS dataset*](#glossary:FOCUS-dataset). Datasets provided by data generators are often massive, and their ingestion can lead to excessive storage costs and slow processing times. By removing large, static, or irrelevant columns, FinOps practitioners can optimize the dataset for better performance and lower storage costs.
 
 Common scenarios where dataset configuration is valuable include:
 
