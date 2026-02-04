@@ -25,7 +25,6 @@ Defines configuration options for controlling the structure and content of a FOC
 
 * A *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
 * A *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).
-* A *FOCUS dataset* SHOULD include [Metadata](#metadata) describing the column selection applied to the dataset.
 
 ## Example
 
