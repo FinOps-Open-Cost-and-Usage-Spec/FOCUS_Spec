@@ -2,10 +2,10 @@
 
 Understanding cost and usage data in billing datasets requires identifying the roles of several participating entities involved in resource or service provisioning, invoicing, and data generation. The FOCUS Specification includes multiple columns to identify key participating entities, these include:
 
-* [Service Provider Name](#serviceprovidername)
-* [Invoice Issuer Name](#invoiceissuername)
-* [Host Provider Name](#hostprovidername)
-* [Data Generator](#datagenerator)
+* [Service Provider Name](#datasets.costandusage.serviceprovidername)
+* [Invoice Issuer Name](#datasets.costandusage.invoiceissuername)
+* [Host Provider Name](#datasets.costandusage.hostprovidername)
+* [Data Generator](#metadata.datagenerator)
 
 The value for each of these may vary depending on how *resources* or *services* are obtained — whether directly from a Cloud Service Provider (CSP) or a SaaS provider, via a Managed Service Provider (MSP), through a cloud marketplace, or from internal service offerings. The table below provides examples that illustrate how the value for each dimension may shift depending on the method of acquisition and other contributing factors.
 
@@ -29,7 +29,7 @@ The value for each of these may vary depending on how *resources* or *services* 
 | 3.5.1 | Purchase records for SaaS products not running on your cloud infrastructure, purchased via a reseller. Reseller does not issue payable invoices.                               | SaaS Provider                | SaaS Provider  | SaaS Provider                           | SaaS Provider      |
 | 3.5.2 | Usage records for SaaS products not running on your cloud infrastructure, purchased via a reseller. Reseller does not issue payable invoices.                                  | SaaS Provider                | SaaS Provider  | SaaS Provider                           | SaaS Provider      |
 | 3.6.1 | Purchase records for SaaS products that have been white-labeled and sold by a reseller, not running on your cloud infrastructure. Reseller issues payable invoices.            | Reseller                     | Reseller       | Reseller                                | Reseller           |
-| 3.6.2 | Usage records for SaaS products products that have been white-labeled and sold by a reseller, not running on your cloud infrastructure. Reseller issues payable invoices.      | Reseller                     | Reseller       | Reseller                                | Reseller           |
+| 3.6.2 | Usage records for SaaS products that have been white-labeled and sold by a reseller, not running on your cloud infrastructure. Reseller issues payable invoices.      | Reseller                     | Reseller       | Reseller                                | Reseller           |
 | 4.1   | Purchasing SaaS products directly from a SaaS provider, with visibility into the underlying hosting provider.                                                                  | SaaS Provider                | SaaS Provider  | CSP                                     | SaaS Provider      |
 | 4.2   | Purchasing SaaS products directly from a SaaS provider, without visibility into the underlying hosting provider.                                                               | SaaS Provider                | SaaS Provider  | SaaS Provider                           | SaaS Provider      |
 | 4.3.1 | Purchasing SaaS products running on your cloud infrastructure, purchased directly from a SaaS provider (see 4.3.2 for charges related to the underlying cloud infrastructure). | SaaS Provider                | SaaS Provider  |                                      | SaaS Provider      |

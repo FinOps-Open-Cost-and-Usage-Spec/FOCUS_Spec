@@ -1,0 +1,427 @@
+{
+  "Tags-C-000-C": {
+    "Function": "Composite",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "TAGGING_SUPPORTED"
+    ],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The Tags column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-002-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-011-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-014-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-064-C",
+        "Tags-C-001-M",
+        "Tags-C-002-O",
+        "Tags-C-003-C",
+        "Tags-C-011-M",
+        "Tags-C-014-M"
+      ]
+    }
+  },
+  "Tags-C-001-M": {
+    "Function": "Format",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags MUST conform to KeyValueFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatKeyValue",
+        "ColumnName": "Tags"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-002-O": {
+    "Function": "Nullability",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags MAY be null.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "Tags",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-003-C": {
+    "Function": "Composite",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When Tags is not null, Tags adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-007-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-010-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "Tags",
+        "Value": null
+      },
+      "Dependencies": [
+        "Tags-C-004-M",
+        "Tags-C-005-M",
+        "Tags-C-006-M",
+        "Tags-C-007-O",
+        "Tags-C-008-M",
+        "Tags-C-009-M",
+        "Tags-C-010-C"
+      ]
+    }
+  },
+  "Tags-C-004-M": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags MUST include all user-defined and provider-defined tags.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-005-M": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags MUST only include finalized tags.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-006-M": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags SHOULD include tag keys with corresponding non-null values for a given resource.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-007-O": {
+    "Function": "Nullability",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tags MAY include tag keys with a null value for a given resource depending on the provider's tag finalization process.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-008-M": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tag keys that do not support corresponding values, MUST have a corresponding true (boolean) value set.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-009-M": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Provider SHOULD publish tag finalization methods and semantics within their respective documentation.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-010-C": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Provider MUST NOT alter tag values unless applying true (boolean) to valueless tags.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-011-M": {
+    "Function": "Composite",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Provider-defined tags adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-012-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-013-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "Tags-C-012-M",
+        "Tags-C-013-M"
+      ]
+    }
+  },
+  "Tags-C-012-M": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Provider-defined tag keys MUST be prefixed with a predetermined, provider-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-013-M": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Provider SHOULD publish all provider-specified tag key prefixes within their respective documentation.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-014-M": {
+    "Function": "Composite",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "User-defined tags adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-015-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-016-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "Tags-C-017-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "Tags-C-015-C",
+        "Tags-C-016-C",
+        "Tags-C-017-M"
+      ]
+    }
+  },
+  "Tags-C-015-C": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Provider MUST prefix all but one user-defined tag scheme with a predetermined, provider-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the provider has more than one user-defined tag scheme.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-016-C": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Provider MUST NOT prefix tag keys when the provider has only one user-defined tag scheme.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "Tags-C-017-M": {
+    "Function": "Validation",
+    "Reference": "Tags",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Provider MUST NOT allow reserved tag key prefixes to be used as prefixes for any user-defined tag keys within a prefixless user-defined tag scheme.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "ServiceName-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The ServiceName column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-007-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CostAndUsage-D-041-M",
+        "ServiceName-C-001-M",
+        "ServiceName-C-002-M",
+        "ServiceName-C-003-M",
+        "ServiceName-C-004-C",
+        "ServiceName-C-007-C"
+      ]
+    }
+  },
+  "ServiceName-C-001-M": {
+    "Function": "Type",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "ServiceName must be of type String",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ServiceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ServiceName-C-002-M": {
+    "Function": "Format",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ServiceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ServiceName-C-003-M": {
+    "Function": "Nullability",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ServiceName",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ServiceName-C-004-C": {
+    "Function": "Composite",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The relationship between ServiceName and ServiceCategory is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ServiceCategory-C-000-M",
+        "ServiceName-C-005-C",
+        "ServiceName-C-006-C"
+      ]
+    }
+  },
+  "ServiceName-C-005-C": {
+    "Function": "Validation",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST have one and only one ServiceCategory that best aligns with its primary purpose, except when no suitable ServiceCategory is available.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckDistinctCount",
+        "ColumnAName": "ServiceName",
+        "ColumnBName": "ServiceCategory",
+        "ExpectedCount": 1
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ServiceName-C-006-C": {
+    "Function": "Validation",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName MUST be associated with the ServiceCategory \"Other\" when no suitable ServiceCategory is available.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ServiceName-C-007-C": {
+    "Function": "Composite",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "The relationship between ServiceName and ServiceSubcategory is defined as follows:",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-008-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ServiceName-C-009-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ServiceSubcategory-C-000-O",
+        "ServiceName-C-008-C",
+        "ServiceName-C-009-C"
+      ]
+    }
+  },
+  "ServiceName-C-008-C": {
+    "Function": "Validation",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName SHOULD have one and only one ServiceSubcategory that best aligns with its primary purpose, except when no suitable ServiceSubcategory is available.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "CheckDistinctCount",
+        "ColumnAName": "ServiceName",
+        "ColumnBName": "ServiceSubcategory",
+        "ExpectedCount": 1
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ServiceName-C-009-C": {
+    "Function": "Validation",
+    "Reference": "ServiceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ServiceName SHOULD be associated with the ServiceSubcategory \"Other\" when no suitable ServiceSubcategory is available.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

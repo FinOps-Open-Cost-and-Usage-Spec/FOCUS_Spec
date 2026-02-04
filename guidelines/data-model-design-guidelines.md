@@ -72,7 +72,7 @@ FinOps practitioners rely on FOCUS datasets as sources of truth. Should two data
 
 ### Example
 
-A summary dataset for executive dashboards might be justified if it reduces query times for high-level cost reports compared to querying the higly detailed FOCUS Cost and Usage dataset.
+A summary dataset for executive dashboards might be justified if it reduces query times for high-level cost reports compared to querying the highly detailed FOCUS Cost and Usage dataset.
 
 ## Avoid Redundancy
 
