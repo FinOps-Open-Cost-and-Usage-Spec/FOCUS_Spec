@@ -6,7 +6,6 @@ A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub
 
 SubAccountName adheres to the following requirements:
 
-* SubAccountName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports a *sub account* construct.
 * SubAccountName MUST be of type String.
 * SubAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SubAccountName nullability is defined as follows:
@@ -29,13 +28,14 @@ A name assigned to a grouping of [*resources*](#glossary:resource) or [*services
 
 ## Content constraints
 
-| Constraint      | Value           |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Conditional     |
-| Allows nulls    | True            |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

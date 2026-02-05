@@ -6,7 +6,6 @@ Provider is the name of the entity that makes the [*resources*](#glossary:resour
 
 ProviderName adheres to the following requirements:
 
-* ProviderName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ProviderName MUST be of type String.
 * ProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ProviderName MUST NOT be null.
@@ -27,13 +26,14 @@ The name of the entity that made the *resources* or *services* available for pur
 
 ## Content Constraints
 
-| Constraint      | Value           |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Mandatory       |
-| Allows nulls    | False           |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

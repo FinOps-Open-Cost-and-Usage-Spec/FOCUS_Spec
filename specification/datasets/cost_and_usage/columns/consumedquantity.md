@@ -6,7 +6,6 @@ The Consumed Quantity represents the volume of a metered SKU associated with a [
 
 ConsumedQuantity adheres to the following requirements:
 
-* ConsumedQuantity MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports the measurement of usage.
 * ConsumedQuantity MUST be of type Decimal.
 * ConsumedQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ConsumedQuantity nullability is defined as follows:
@@ -31,14 +30,15 @@ The volume of a metered SKU associated with a *resource* or *service* used, base
 
 ## Content constraints
 
-| Constraint      | Value         |
-|:----------------|:--------------|
-| Column type     | Metric        |
-| Feature level   | Conditional   |
-| Allows nulls    | True          |
-| Data type       | Decimal       |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 
