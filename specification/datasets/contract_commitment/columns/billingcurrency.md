@@ -6,7 +6,6 @@
 
 BillingCurrency adheres to the following requirements:
 
-* BillingCurrency MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BillingCurrency MUST be of type String.
 * BillingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingCurrency MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements.
@@ -28,13 +27,14 @@ Represents the currency of a *contract commitment*.
 
 ## Content Constraints
 
-| Constraint      | Value                               |
-|:----------------|:------------------------------------|
-| Column type     | Dimension                           |
-| Feature level   | Mandatory                           |
-| Allows nulls    | True                                |
-| Data type       | String                              |
-| Value format    | [Currency Format](#attributes.currencyformat)  |
+| Constraint      | Value                                                |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | [Currency Format](#attributes.currencyformat)        |
 
 ## Introduced (version)
 
