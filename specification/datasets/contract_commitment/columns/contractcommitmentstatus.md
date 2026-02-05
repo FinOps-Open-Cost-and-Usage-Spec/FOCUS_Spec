@@ -41,9 +41,9 @@ The current lifecycle state of a [*contract commitment*](#glossary:contract-comm
 | Proposed | 10 | The commitment is being negotiated or modeled; it has no legal or financial impact on current data. |
 | Pending | 20 | The commitment is finalized or signed, but the effective start date is in the future. |
 | Active | 30 | The commitment is currently in effect and its terms should be applied to applicable activity. |
-| Expired | 40 | The commitment reached its scheduled end date and is no longer providing benefits. |
-| Canceled | 50 | The commitment was terminated by either party prior to its scheduled end date. |
-| Superseded | 60 | The commitment has been replaced by a newer version of the record or a successor agreement. |
+| Expired | 40 | The commitment is no longer active because it reached its scheduled end date. |
+| Canceled | 50 | The commitment is no longer active because it was terminated by either party prior to its scheduled end date. |
+| Superseded | 60 | The commitment is no longer active because it was replaced by a newer version prior to its scheduled end date. |
 
 ## Introduced (version)
 
