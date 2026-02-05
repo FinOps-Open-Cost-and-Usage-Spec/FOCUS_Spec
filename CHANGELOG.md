@@ -24,8 +24,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Removed
 
-- [ProviderName](/specification/datasets/cost_and_usage/columns/providername.md) column (deprecated in v1.3)
-- [PublisherName](/specification/datasets/cost_and_usage/columns/publishername.md) column (deprecated in v1.3)
+- ProviderName column (deprecated in v1.3)
+- PublisherName column (deprecated in v1.3)
 
 ## v1.3
 
