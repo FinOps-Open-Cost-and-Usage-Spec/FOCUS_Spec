@@ -66,7 +66,7 @@ A customer's agreement to either spend a defined monetary amount or consume a sp
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period).  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
+Legacy term referring to [*public commitment discount (no carry-over)*](#glossary:public-commitment-discount-no-carry-over).
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
@@ -187,6 +187,10 @@ An individual who performs FinOps within an organization to maximize the busines
 <a name="glossary:price-list"><b>Price List</b></a>
 
 A comprehensive list of prices offered by a service provider.
+
+<a name="glossary:public-commitment-discount-no-carry-over)"><b>Public Commitment Discount (no carry-over)</b></a>
+
+A discount program that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period). Purchases in this program, made upfront and/or with recurring monthly payments, are amortized evenly across predefined charge periods (e.g., hourly), and unused amounts do not carry over to subsequent charge periods. This program is publicly available to customers without special contract arrangements.
 
 <a name="glossary:service provider"><b>Service Provider</b></a>
 
