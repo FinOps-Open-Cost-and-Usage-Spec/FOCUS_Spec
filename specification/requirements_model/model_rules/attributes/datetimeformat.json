@@ -132,7 +132,7 @@
     "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST Include the date and time components, separated with the letter ‘T’.",
+      "MustSatisfy": "Date/time values MUST Include the date and time components, separated with the letter ‘T’.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -152,7 +152,7 @@
     "Order": 50,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST Use two-digit hours (HH), minutes (mm), and seconds (ss).",
+      "MustSatisfy": "Date/time values MUST Use two-digit hours (HH), minutes (mm), and seconds (ss).",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -172,7 +172,7 @@
     "Order": 60,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "MUST End with the ‘Z’ indicator to denote UTC (Coordinated Universal Time).",
+      "MustSatisfy": "Date/time values MUST End with the ‘Z’ indicator to denote UTC (Coordinated Universal Time).",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

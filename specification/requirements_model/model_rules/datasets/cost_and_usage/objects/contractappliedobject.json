@@ -17,7 +17,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "If ContractAppliedObject is not null, ContractAppliedObject adheres to the following requirements:",
+      "MustSatisfy": "If ContractApplied is not null, ContractApplied adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -90,7 +90,7 @@
       },
       "Condition": {
         "CheckFunction": "CheckValue",
-        "ColumnName": "ContractAppliedObject",
+        "ColumnName": "ContractApplied",
         "Value": null
       },
       "Dependencies": [
@@ -129,7 +129,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractAppliedObject MUST have a top-level key \"Elements\" which contains an array.",
+      "MustSatisfy": "ContractApplied MUST have a top-level key \"Elements\" which contains an array.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathType",
@@ -157,7 +157,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractAppliedObject root object MAY contain custom objects, in addition to \"Elements\".",
+      "MustSatisfy": "ContractApplied root object MAY contain custom objects, in addition to \"Elements\".",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},

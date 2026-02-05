@@ -1258,7 +1258,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "PublisherName MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "PublisherName MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1706,7 +1706,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ProviderName MUST be present in a FOCUS dataset.",
+      "MustSatisfy": "ProviderName MUST be present in a Cost and Usage FOCUS dataset.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
