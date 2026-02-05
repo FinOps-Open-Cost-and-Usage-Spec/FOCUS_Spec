@@ -52,6 +52,7 @@ ContractCommitment adheres to the following requirements:
   * ContractCommitment MUST include [ContractPeriodStart](#datasets.contractcommitment.contractperiodstart).
 * ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 
 ## Dataset ID<!--SkipTOC-->
 
