@@ -39,7 +39,7 @@ Allowed values:
 
 | Value         | Sort Order | Description                                                                            | Typical Use Case                                                           |
 | ------------- | ---------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| Hourly        | 10         | Resets every 60 minutes; unused commitment is lost immediately.                        | Continuous Model: Cloud-native RIs and Savings Plans.                      |
+| Hourly        | 10         | Resets every 60 minutes.                        | Continuous Model: Cloud-native RIs and Savings Plans.                      |
 | Daily         | 20         | Resets at the end of each calendar day.                                                | Daily active user (DAU) caps or daily license minimums.                    |
 | Weekly        | 30         | Measured over a rolling or fixed 7-day period.                                         | Burstable bandwidth or weekly sprint-based SaaS usage.                     |
 | Monthly       | 40         | Resets at the end of the calendar month.                                               | Discontinuous Model: SaaS MRR minimums or tiered discounts.                |
