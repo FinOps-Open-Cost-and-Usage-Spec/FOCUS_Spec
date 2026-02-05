@@ -16,7 +16,6 @@ In cases where a commitment provides multiple benefits (e.g., a Discount and an 
 
 ContractCommitmentBenefitCategory adheres to the following requirements:
 
-* ContractCommitmentBenefitCategory MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentBenefitCategory MUST be of type String.
 * ContractCommitmentBenefitCategory MUST NOT be null.
 * ContractCommitmentBenefitCategory MUST be one of the allowed values.
@@ -37,6 +36,7 @@ Defines the primary value or advantage received for a [*contract commitment*](#g
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

@@ -4,7 +4,6 @@ Pricing Currency is the national or virtual currency denomination that a [*contr
 
 ## Requirements
 
-* PricingCurrency MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports pricing and billing in different currencies.
 * PricingCurrency MUST be of type String.
 * PricingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingCurrency MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements.
@@ -26,6 +25,7 @@ The national or virtual currency denomination that the [Contract Commitment Cost
 
 | Constraint      | Value                               |
 |:----------------|:------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension                           |
 | Feature level   | Conditional                         |
 | Allows nulls    | False                               |

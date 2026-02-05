@@ -4,7 +4,6 @@ Invoice Issuer Name is the name of the entity responsible for issuing payable in
 
 ## Requirements
 
-* InvoiceIssuerName MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceIssuerName MUST be of type String.
 * InvoiceIssuerName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceIssuerName MUST NOT be null.
@@ -25,6 +24,7 @@ The name of the entity responsible for invoicing for the [*contract commitment*]
 
 | Constraint      | Value           |
 |:----------------|:----------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension       |
 | Feature level   | Mandatory       |
 | Allows nulls    | False           |

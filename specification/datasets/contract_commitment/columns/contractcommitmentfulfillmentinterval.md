@@ -8,7 +8,6 @@ Contract Commitment Fulfillment Interval has a series of possible values that re
 
 ContractCommitmentFulfillmentInterval adheres to the following requirements:
 
-* ContractCommitmentFulfillmentInterval MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentFulfillmentInterval MUST be of type String.
 * ContractCommitmentFulfillmentInterval MUST NOT be null.
 * ContractCommitmentFulfillmentInterval MUST be one of the allowed values.
@@ -29,6 +28,7 @@ Represents the specific [*period*](#glossary:period) used to measure and reset t
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

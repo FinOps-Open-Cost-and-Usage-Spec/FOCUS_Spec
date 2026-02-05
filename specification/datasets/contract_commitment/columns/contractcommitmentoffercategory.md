@@ -15,7 +15,6 @@ Sensitivity Note: Records marked as Negotiated often fall under non-disclosure a
 
 ContractCommitmentOfferCategory adheres to the following requirements:
 
-* ContractCommitmentOfferCategory MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentOfferCategory MUST be of type String.
 * ContractCommitmentOfferCategory MUST NOT be null.
 * ContractCommitmentOfferCategory MUST be one of the allowed values.
@@ -36,6 +35,7 @@ Indicates whether the pricing and terms of a [*contract commitment*](#glossary:c
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

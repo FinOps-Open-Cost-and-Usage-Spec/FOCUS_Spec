@@ -17,7 +17,6 @@ Contract Commitment Payment Model has three possible values: **No Upfront**, **P
 
 ContractCommitmentPaymentModel adheres to the following requirements:
 
-* ContractCommitmentPaymentModel MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentPaymentModel MUST be of type String.
 * ContractCommitmentPaymentModel MUST NOT be null.
 * ContractCommitmentPaymentModel MUST be one of the allowed values.
@@ -38,6 +37,7 @@ Defines the financial settlement structure of a [*contract commitment*](#glossar
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

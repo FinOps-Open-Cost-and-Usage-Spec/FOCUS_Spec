@@ -4,7 +4,6 @@ Pricing Currency Contract Commitment Cost represents the monetary value of the [
 
 ## Requirements
 
-* PricingCurrencyContractCommitmentCost MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports pricing and billing in different currencies.
 * PricingCurrencyContractCommitmentCost MUST be of type Decimal.
 * PricingCurrencyContractCommitmentCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyContractCommitmentCost nullability is defined as follows:
@@ -27,8 +26,9 @@ The monetary value of the *contract commitment* in the [Pricing Currency](#datas
 
 ## Content Constraints
 
-| Constraint    | Value                               |
+| Constraint    | Value                              |
 | :------------ | :--------------------------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type   | Metric                             |
 | Feature level | Conditional                        |
 | Allows nulls  | True                               |

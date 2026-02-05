@@ -22,7 +22,6 @@ For commitments with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), 
 
 ContractCommitmentDiscountPercentage adheres to the following requirements:
 
-* ContractCommitmentDiscountPercentage MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentDiscountPercentage MUST be of type Decimal.
 * ContractCommitmentDiscountPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentDiscountPercentage MUST NOT be null if [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory) is "Discount".
@@ -47,11 +46,13 @@ The effective percentage reduction applied to the list price of resources or ser
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | True           |
 | Data type       | Decimal        |
-| Value format    | 0.0 to 1.0     |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

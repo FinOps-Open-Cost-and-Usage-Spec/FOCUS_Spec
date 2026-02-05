@@ -6,7 +6,6 @@ Contract Commitment Eligibility is a structured definition of the specific entit
 
 ContractCommitmentEligibility adheres to the following requirements:
 
-* ContractCommitmentEligibility MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentEligibility MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractCommitmentEligibility MUST NOT be null.
 
@@ -264,6 +263,7 @@ A structured definition of the specific entities to which a contract commitment 
 
 | Constraint | Value |
 | :--- | :--- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type | Dimension |
 | Feature level | Mandatory |
 | Allows nulls | False |

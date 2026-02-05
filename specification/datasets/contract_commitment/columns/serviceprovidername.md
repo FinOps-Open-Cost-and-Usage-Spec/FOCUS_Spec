@@ -9,7 +9,6 @@ Service Provider Name is the name of the entity that provides the [*contract com
 
 ## Requirements
 
-* ServiceProviderName MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceProviderName MUST be of type String.
 * ServiceProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ServiceProviderName MUST NOT be null.
@@ -30,6 +29,7 @@ The name of the entity that provides the [*contract commitment*](#glossary:contr
 
 | Constraint      | Value           |
 |:----------------|:----------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension       |
 | Feature level   | Mandatory       |
 | Allows nulls    | False           |

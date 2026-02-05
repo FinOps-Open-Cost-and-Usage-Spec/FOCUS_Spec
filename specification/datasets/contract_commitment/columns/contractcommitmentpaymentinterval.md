@@ -8,7 +8,6 @@ Note: Do not confuse the Payment Interval with the [Commitment Interval](#datase
 
 ContractCommitmentPaymentInterval adheres to the following requirements:
 
-* ContractCommitmentPaymentInterval MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentPaymentInterval MUST be of type String.
 * ContractCommitmentPaymentInterval MUST NOT be null.
 * ContractCommitmentPaymentInterval MUST be one of the allowed values.
@@ -31,6 +30,7 @@ Represents the frequency by which a [*contract commitment*](#glossary:contract-c
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

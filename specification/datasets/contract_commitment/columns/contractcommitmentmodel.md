@@ -13,7 +13,6 @@ Contract Commitment Model has two possible values: **Continuous** and **Disconti
 
 ContractCommitmentModel adheres to the following requirements:
 
-* ContractCommitmentModel MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentModel MUST be of type String.
 * ContractCommitmentModel MUST NOT be null.
 * ContractCommitmentModel MUST be one of the allowed values.
@@ -34,6 +33,7 @@ Represents the operational behavior and consumption flexibility of a [*contract 
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

@@ -6,7 +6,6 @@ Contract Commitment Status represents the current lifecycle state of a [*contrac
 
 ContractCommitmentStatus adheres to the following requirements:
 
-* ContractCommitmentStatus MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentStatus MUST be of type String.
 * ContractCommitmentStatus MUST NOT be null.
 * ContractCommitmentStatus MUST be one of the allowed values.
@@ -28,6 +27,7 @@ The current lifecycle state of a [*contract commitment*](#glossary:contract-comm
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |

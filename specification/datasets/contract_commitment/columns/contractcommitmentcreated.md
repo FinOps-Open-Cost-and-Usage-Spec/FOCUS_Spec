@@ -27,6 +27,7 @@ The timestamp when the contract commitment record was first created.
 
 |    Constraint   |              Value              |
 |:----------------|:--------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |

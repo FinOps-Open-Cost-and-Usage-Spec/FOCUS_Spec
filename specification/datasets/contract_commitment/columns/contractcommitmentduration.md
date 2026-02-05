@@ -10,26 +10,15 @@ The value follows a structured format of [Numeric Value] [Unit], representing th
 * [Numeric Value]: A positive integer.
 * [Unit]: A standardized unit of time, singular or plural (e.g., Hour, Year, Years).
 
-## Standard Units
-
-The following units should be used for the representation of time:
-
-* Minute(s)
-* Hour(s)
-* Day(s)
-* Week(s)
-* Month(s)
-* Quarter(s)
-* Year(s)
-
 ## Requirements
 
 ContractCommitmentDuration adheres to the following requirements:
 
-* ContractCommitmentDuration MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentDuration MUST be of type String.
+* ContractCommitmentDuration MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentDuration MUST NOT be null.
 * ContractCommitmentDuration MUST adhere to the expected format of "[Numeric Value] [Unit]", where [Numeric Value] is a positive integer, and [Unit] is a standardized unit of time, either singular or plural (e.g., Hour, Year, Years).
+* ContractCommitmentDuration SHOULD present the unit of time as one of the allowed values.
 * ContractCommitmentDuration MUST be calculated as the time elapsed between ContractCommitmentPeriodStart and ContractCommitmentPeriodEnd.
 * ContractCommitmentDuration SHOULD present the largest relevant unit of time (e.g., "1 Year" instead of "12 Months").
 
@@ -49,11 +38,26 @@ Represents the total calendar length of a [*contract commitment*](#glossary:cont
 
 | Constraint      | Value          |
 | :-------------- | :------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension      |
 | Feature level   | Mandatory      |
 | Allows nulls    | False          |
 | Data type       | String         |
 | Value format    | Expected format |
+
+Allowed values:
+
+The following units (either singular or plural) should be used for the representation of time:
+
+| Duration Unit |
+| :--- |
+| Minute(s) |
+| Hour(s) |
+| Day(s) |
+| Week(s) |
+| Month(s) |
+| Quarter(s) |
+| Year(s) |
 
 ## Introduced (version)
 

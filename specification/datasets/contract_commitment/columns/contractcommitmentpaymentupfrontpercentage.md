@@ -6,7 +6,6 @@ This column allows for precise financial modeling of "Partial Upfront" [payment 
 
 ## Requirements
 
-* ContractCommitmentPaymentUpfrontPercentage MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset) if the service provider offers "Partial Upfront" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).
 * ContractCommitmentPaymentUpfrontPercentage MUST be of type Decimal.
 * ContractCommitmentPaymentUpfrontPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentPaymentUpfrontPercentage MUST NOT be null.
@@ -30,8 +29,10 @@ Represents the portion of the total [Contract Commitment Cost](#datasets.contrac
 
 | Constraint    | Value            |
 | :------------ | :--------------- |
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type   | Dimension        |
 | Feature level | Conditional      |
 | Allows nulls  | False            |
 | Data type     | Decimal          |
-| Value format  | 0.0 to 1.0       |
+| Value format  | [Numeric Format](#attributes.numericformat)  |
+| Number range  | Any valid decimal value |
