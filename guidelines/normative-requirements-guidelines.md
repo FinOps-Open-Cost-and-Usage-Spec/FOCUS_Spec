@@ -1,8 +1,129 @@
 # Normative Requirements Guidelines
 
+This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** normative requirements must be written to ensure clarity, consistency, and testability. It does not define the requirements themselves (the “what”) but focuses on their **structure, subjects, and verifiability**.
+
+The guidelines cover normative requirements applicable to:
+
+* **FOCUS Datasets** — the primary containers of structured data as defined in FOCUS.
+* **Columns** — individual columns within datasets (may contain nested Elements and ElementProperties, which can have additional normative rules))
+* **Attributes** — schema-level rules that datasets, columns, or element properties must conform to.
+
+The diagram below illustrates the relationships among these entities and shows where normative requirements apply:
+
+```mermaid
+erDiagram
+Dataset ||--o{ Column : has
+Column ||--o{ Element : contains
+Element ||--o{ ElementProperty : has
+Dataset }o..|| Attribute : conforms-to
+Column }o..|| Attribute : conforms-to
+ElementProperty }o..|| Attribute : conforms-to
+
+%% Attribute
+style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
+
+%% Schema-level entities
+style Dataset fill:#d4edda,stroke:#666,stroke-width:1px
+style Column fill:#d4edda,stroke:#666,stroke-width:1px
+style Element fill:#d4edda,stroke:#666,stroke-width:1px
+style ElementProperty fill:#d4edda,stroke:#666,stroke-width:1px
+```
+
+## Core Normative Authoring Rules
+
+### 1. Normative Requirement Structure
+
+Each normative requirement MUST:
+
+* identify exactly one **normative subject**
+* contain exactly one **BCP 14 keyword**
+* express exactly one **verifiable constraint**
+
+A single bullet MUST NOT encode multiple obligations.
+
+### 2. Normative Subject
+
+#### 2.1 Allowed Subjects
+
+The normative subject MUST be a schema-level entity, such as:
+
+* **FOCUS Dataset**  
+  (used as the canonical normative subject for dataset-level requirements, including cases where the constraint applies to a dataset specification, a dataset instance, or a dataset artifact; the intended level is inferred from context)
+* Column
+* Column with a qualifier (e.g. column representing numeric values)
+* Schema-defined object, attribute, or property
+
+The subject SHOULD be explicit and unambiguous.
+
+#### 2.2 Disallowed Subjects
+
+The following MUST NOT be used as normative subjects:
+
+* Actors (e.g. data generator, service provider, consumer)
+* Processes or mechanisms (e.g. Delivery Handling, Correction Handling, etc.)
+
+### 3. State, Not Behavior
+
+Normative requirements MUST describe a **verifiable state**, not an operational process or behavior.
+
+Specifically:
+
+* Process-oriented verbs such as *ensure*, *handle*, *support*, or *provide* MUST NOT be used.
+* If a requirement refers to actor behavior, it MUST be reformulated as:
+  * a constraint on the resulting dataset state, or
+  * a constraint on a schema-defined artifact.
+
+### 4. Use of BCP 14 Keywords
+
+* Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT).
+* A bullet containing more than one normative keyword MUST be split.
+
+### 5. Splitting Requirements
+
+A requirement MUST be split into multiple bullets if it:
+
+* combines multiple obligations,
+* combines a rule and an exception,
+* mixes a definition with a constraint,
+* applies different constraints to different subjects.
+
+### 6. Composite Requirements
+
+Composite (parent + nested) requirements MAY be used when strictly controlled.
+
+They are allowed only when:
+
+* the parent bullet introduces exactly one normative subject, and
+* all nested bullets:
+  * apply to that same subject,
+  * do not introduce a new normative context.
+
+Nested bullets MUST NOT introduce a different subject.
+
+### 7. Definitions vs. Normative Requirements
+
+* Definitions, explanations, rationale, and examples MUST NOT be expressed as normative requirements.
+* Definitions SHOULD be written as plain declarative statements without BCP 14 keywords.
+* Normative bullets SHOULD be reduced to the enforceable constraint only.
+
+### Mental Model (Non-Normative)
+
+The recommended pattern for a normative requirement is:
+
+> **Subject (+ qualifier) + Normative Verb + Verifiable State**
+
+Helpful self-check questions:
+
+* Can I underline exactly one subject?
+* Is there exactly one MUST / SHOULD / MAY?
+* Can I imagine an automated test for this statement?
+* Does this describe a state rather than behavior?
+
+If any answer is “no”, the requirement likely needs refactoring.
+
 ## Dataset Requirements
 
-### Logical Grouping of Dataset Requirements
+### 1. Logical Grouping of Dataset Requirements
 
 Grouping and ordering of dataset-level normative requirements ensures clarity, consistency, and maintainability across all FOCUS datasets, making related or similar requirements easy to identify and follow.
 
@@ -24,7 +145,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 | Business         | Business/Contextual Attributes Conformance             | When applicable                              | {DatasetId} MUST conform to DiscountHandling requirements. |
 | Business         | Other Business/Contextual Requirements (FOR FUTURE USE)| For future use                               | N/A                                                        |
 
-### Ordering of Dataset Requirements Within Groups
+### 2. Ordering of Dataset Requirements Within Groups
 
 * Within each group of requirements, order individual requirements as follows:
   * **MUST** – an absolute requirement
@@ -37,7 +158,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
-### Structuring Individual Dataset Requirements
+### 3. Structuring Individual Dataset Requirements
 
 * **Start with the DatasetId**: Whenever possible, begin each requirement with the DatasetId to make the requirement clear and focused.
 
@@ -49,19 +170,19 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
   * <DatasetId> MUST be present[ when <Condition>].
   ```
 
-### Consistent Wording and Patterns in Dataset Requirements
+### 4. Consistent Wording and Patterns in Dataset Requirements
 
 Use standardized phrasing and terminology, and apply common requirement patterns where applicable to ensure clarity and consistency across datasets and corresponding requirements.
 
-#### Dataset Requirement Patterns
+#### 4.1. Dataset Requirement Patterns
 
-##### Technical Requirements: Dataset Presence
+##### 4.1.1. Technical Requirements: Dataset Presence
 
 ```markdown
 * <DatasetId> MUST be present[ when <Condition>].
 ```
 
-##### Technical Requirements: Column Presence
+##### 4.1.2. Technical Requirements: Column Presence
 
 ```markdown
 * <DatasetId> MUST include <ColumnId>.
@@ -70,19 +191,19 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 * <DatasetId> SHOULD include <ColumnId> when <Condition>.
 ```
 
-##### Technical Requirements: Technical Attributes Conformance
+##### 4.1.3. Technical Requirements: Technical Attributes Conformance
 
 ```markdown
 * <DatasetId> MUST conform to <TechnicalAttributeId> requirements.
 ```
 
-##### Business Requirements: Business/Contextual Attributes Conformance
+##### 4.1.3. Business Requirements: Business/Contextual Attributes Conformance
 
 ```markdown
 * <DatasetId> MUST conform to <BusinessAttributeId> requirements.
 ```
 
-### Dataset Normative Requirements Examples
+### 5. Dataset Normative Requirements Examples
 
 #### **Contract Commitment**
 
@@ -105,7 +226,7 @@ CostAndUsage adheres to the following requirements:
 
 ## Column Requirements
 
-### Logical Grouping of Column Requirements
+### 1. Logical Grouping of Column Requirements
 
 Grouping and ordering of requirements ensure clarity, logical flow, and consistency across all columns, making related requirements easy to identify and follow. This structure should be maintained for consistency across the specification.
 
@@ -145,7 +266,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 | Business             | Cost Calculation and Relationships | When applicable                       | When {Condition}, {ColumnId} adheres to the following additional requirements:<br>  *{ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>* {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
 | Business             | Other                              | When applicable                       |                                                                                           |
 
-### Ordering of Column Requirements Within Groups
+### 2. Ordering of Column Requirements Within Groups
 
 * Within each group of requirements, order individual requirements as follows:
   * **MUST** – an absolute requirement
@@ -158,7 +279,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
-### Structuring Individual Column Requirements
+### 3. Structuring Individual Column Requirements
 
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
 
@@ -180,16 +301,16 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
   ```  
 
-### Additional Guidelines for Columns in JSON Format
+### 4. Additional Guidelines for Columns in JSON Format
 
-#### Column Definition Structure
+#### 4.1. Column Definition Structure
 
 * **Separate normative requirements into sections for column, JSON schema, and contents**: Communicating the normative requirements for a column, JSON schema, and the contents can be convoluted. Separating these requirements provides better clarity.
   * Column normative requirements specify requirements of the column such as nullability.
   * JSON schema normative requirements specify the shape of the JSON.
   * Contents normative requirements usually specify the expected Keys, the format of the Values, and the expected contents of the Values.
 
-#### JSON Schema
+#### 4.2. JSON Schema
 
 * **Omit JSON schema normative requirements for Key-Value Format columns**: The Key-Value Format definition is sufficient to define the expected JSON schema.
 
@@ -197,6 +318,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   * The pattern used in [AllocatedMethodDetails](#allocatedmethoddetails) and [ContractApplied](#contractapplied) consists of Object containing a collection whose key is "Elements" which contains one or more objects in the Key-Value format.
 
   **Example JSON**
+
   ```json
   {
     "Elements" : [ {
@@ -234,13 +356,13 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   }
   ```
 
-#### Key-Value Pairs
+#### 4.3. Key-Value Pairs
 
 * **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **data generator-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
 
 * **Default to Plural for Key-Value Pairs**: When referring to key-value pairs, **tags** and **properties** should be used in the plural form to reflect the fact that the column may contain multiple key-value pairs.
 
-#### Keys and Values
+#### 4.4. Keys and Values
 
 * **Refer to Key and Values Explicitly**: When specifying normative requirements for key and value, use precise terminology based on the column type. For instance:
   * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
@@ -259,7 +381,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   * Use plural when referring to keys or values to reflect the fact that the column may contain multiple keys/values (e.g., "property keys", "tag values").
   * Use singular when referring to the key or value of a single tag or property (e.g., "property key", "tag value"), with the understanding that the requirement applies to all occurrences.
 
-### Grouping of Nullability-Related and Subsequent Column Requirements
+### 5. Grouping of Nullability-Related and Subsequent Column Requirements
 
 * When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
 
@@ -292,7 +414,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
       * <ColumnId> MAY be null when <Condition>.
   ```
 
-### Grouping of Column Requirements Based on Specific Conditions
+### 6. Grouping of Column Requirements Based on Specific Conditions
 
 * **Parent Condition**
   * When a specific condition (or set of conditions) applies to a subset of requirements, you may group them under that condition.
@@ -324,16 +446,16 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
       * <ColumnId> MUST be <SpecificRequirement>.
   ```
 
-### Consistent Wording and Patterns in Column Requirements
+### 7. Consistent Wording and Patterns in Column Requirements
 
 To ensure clarity and consistency across columns and corresponding requirements, it is important to:
 
 * Follow common requirement patterns where applicable
 * Use standardized phrasing and terminology
 
-#### Column Requirement Patterns
+#### 7.1. Column Requirement Patterns
 
-##### Technical Requirements: Data Type
+##### 7.1.1. Technical Requirements: Data Type
 
 ```markdown
 * <ColumnId> MUST be of type String.
@@ -341,7 +463,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * <ColumnId> MUST be of type Date/Time.
 ```
 
-##### Technical Requirements: Value Format
+##### 7.1.2. Technical Requirements: Value Format
 
 ```markdown
 * <ColumnId> MUST conform to [StringHandling](#stringhandling) requirements.
@@ -352,7 +474,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * <ColumnId> MUST conform to [CurrencyCodeFormat](#currencycodeformat) requirements.
 ```
 
-##### Technical Requirements: Nullability
+##### 7.1.3. Technical Requirements: Nullability
 
 ```markdown
 * <ColumnId> MUST NOT be null.
@@ -391,51 +513,51 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * <ColumnId> MUST be null in all other cases.
 ```
 
-##### Technical Requirements: Values and Value Ranges
+##### 7.1.4. Technical Requirements: Values and Value Ranges
 
 ```markdown
 * <ColumnId> MUST be a valid decimal value.
 * <ColumnId> MUST be a non-negative decimal value.
 ```
 
-##### Technical Requirements: Column-to-Column Relationships
+##### 7.1.5. Technical Requirements: Column-to-Column Relationships
 
 ```markdown
 * <ColumnId> SHOULD/MUST remain consistent over time for a given <OtherColumnId>.
 ```
 
-##### Business & Contextual Requirements: Unit/Denomination
+##### 7.1.6. Business & Contextual Requirements: Unit/Denomination
 
 ```markdown
 * <ColumnId> MUST be denominated in the BillingCurrency.
 * <ColumnId> MUST be expressed in the <OtherColumnId>.
 ```
 
-##### Business & Contextual Requirements: Uniqueness
+##### 7.1.7. Business & Contextual Requirements: Uniqueness
 
 ```markdown
 * <ColumnId> MUST be a unique identifier within <Scope>.
 ```
 
-##### Business & Contextual Requirements: Fallback/Substitute Values
+##### 7.1.8. Business & Contextual Requirements: Fallback/Substitute Values
 
 ```markdown
 * <ColumnId> MUST NOT duplicate <OtherColumnId> when <Condition>
 ```
 
-##### Business & Contextual Requirements: Relationships Outside the Spec
+##### 7.1.9. Business & Contextual Requirements: Relationships Outside the Spec
 
 ```markdown
 * The sum of <ColumnId> in a given billing period MUST/MAY NOT match the sum of the invoices received for that billing period for a billing account.
 ```
 
-##### Business & Contextual Requirements: Cost Validation Rules
+##### 7.1.10. Business & Contextual Requirements: Cost Validation Rules
 
 ```markdown
   * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
 ```
 
-##### Business & Contextual Requirements: Cost Calculation and Relationships
+##### 7.1.11. Business & Contextual Requirements: Cost Calculation and Relationships
 
 ```markdown
 * When <Condition>, <CostColumnId> adheres to the following additional requirements:
@@ -443,9 +565,9 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * <CostColumnId> of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost.
 ```
 
-#### Column Requirement Standardized Terminology
+#### 7.2. Column Requirement Standardized Terminology
 
-##### Identifiers and Uniqueness within Scope
+##### 7.2.1. Identifiers and Uniqueness within Scope
 
 * Patterns:
   * {ColumnId} MUST be a unique identifier within {Scope}.
@@ -454,12 +576,12 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * BillingAccountId MUST be a unique identifier within a service provider.
   * ResourceId SHOULD be a fully-qualified identifier.
 
-##### Column Aggregation
+##### 7.2.2. Column Aggregation
 
 * Pattern: The sum of {ColumnId} in a given billing period...
 * Example: The sum of BilledCost in a given billing period...
 
-##### Column value Consistency
+##### 7.2.3. Column value Consistency
 
 * Patterns:
   * {ColumnId} MUST/SHOULD remain consistent over time for a given {OtherColumnId}.
@@ -467,13 +589,13 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * SkuMeter SHOULD remain consistent over time for a given SkuId.
   * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
 
-##### References to charge and billing periods
+##### 7.2.4. References to charge and billing periods
 
 * Patterns:
   * in a given billing period
   * in a given charge period
 
-##### Preferred Terminology for Numerical References
+##### 7.2.5. Preferred Terminology for Numerical References
 
 * Patterns: When specifying quantities in normative requirements, follow these conventions:
   * Use "one" instead of "1".
@@ -482,7 +604,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * When the service provider has only one user-defined tag scheme. (instead of: When the service provider has only 1 user-defined tag scheme.)
   * When the service provider has more than one user-defined tag scheme. (instead of: When the service provider has 2 or more user-defined tag schemes.)
 
-### Column Normative Requirements Examples
+### 8. Column Normative Requirements Examples
 
 #### **List Unit Price**
 
@@ -530,3 +652,35 @@ CommitmentDiscountQuantity adheres to the following requirements:
   * When ChargeCategory is "Usage":
     * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
     * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given *charge period* when CommitmentDiscountStatus is "Unused".
+
+## Attribute Requirements (Placeholder)
+
+> This section is **Work In Progress**.
+
+### Note on FOCUS Dataset, Dataset Instance, and Glossary Alignment
+
+> **Important clarification**
+
+By glossary definition, the following concepts are used:
+
+* **FOCUS Dataset** — the primary dataset concept defined by the FOCUS specification.
+* **Dataset Instance** — represents a concrete instantiation of a **FOCUS Dataset Instance**.
+* **Dataset Artifact** — represents a physical or delivered form of a **FOCUS Dataset Instance Artifact**.
+
+However, by design decision, the specification adopts the following normative conventions:
+
+* **FOCUS Dataset is used as the canonical normative subject** for dataset-level requirements.
+* Normative requirements are intentionally written against **FOCUS Dataset**, even when the constraint applies to:
+  * a dataset specification,
+  * a dataset instance, or
+  * a dataset instance artifact.
+* The intended level of application (specification vs. instance vs. artifact) is inferred from context rather than encoded in the subject name.
+
+This choice is intentional and overrides interpretations based solely on abstraction level.
+
+> To support this approach and avoid ambiguity:
+>
+> * The **FOCUS Dataset** glossary definition SHOULD be refined so that it is no longer interpreted as purely abstract, but as a normative anchor that may represent the dataset specification and its specific implementations.
+> * Glossary entries for **Dataset Instance** and **Dataset Artifact** SHOULD explicitly reflect that they represent **FOCUS Dataset Instance** and **FOCUS Dataset Instance Artifact**, respectively (important with the planned **Native Dataset** entry in version 1.4).
+
+Etc.
