@@ -11,6 +11,189 @@ The Metadata (root object), as well as any underlying metadata object, may conta
 * Nested (sub-)objects: metadata objects that represent structured components associated within parent object.
   * Note: The `Metadata` (root) and `Data Generator` objects are defined as single-entry structures, whereas most other metadata objects support multiple entries (e.g., `Schema`, `Dataset Instance`); in some cases, multiple entries are expected (e.g., `Time Sectors`).
 
+### FOCUS Metadata – Specific Elements
+
+This diagram illustrates the specific Sections, Items, and Properties within the FOCUS Metadata hierarchy, while also providing a preview of other schema-level entities from the FOCUS specification in parallel.
+
+```mermaid
+erDiagram
+
+%% =====================
+%% Relations
+%% =====================
+
+FOCUS_SPEC ||..o{ CONTRACT_COMMITMENT : nested
+FOCUS_SPEC ||..|{ COST_AND_USAGE : nested
+
+CONTRACT_COMMITMENT ||--o{ COST_AND_USAGE : ContractCommitmentId
+
+METADATA ||..|| DATA_GENERATOR : nested 
+METADATA ||..|{ DATASET_INSTANCE : nested
+
+METADATA ||..|{ SCHEMA : nested
+METADATA ||..o{ RECENCY : nested
+
+SCHEMA ||--|{ COLUMN_DEFINITION : nested
+RECENCY ||--|{ TIME_SECTOR : nested
+
+DATASET_INSTANCE ||--|| SCHEMA : DatasetInstanceId
+DATASET_INSTANCE ||--o| RECENCY : DatasetInstanceId
+
+
+
+%% CONTRACT_COMMITMENT }|--|| DATASET_INSTANCE : DatasetInstanceId
+%% COST_AND_USAGE }|--|| DATASET_INSTANCE : DatasetInstanceId
+
+
+%% =====================
+%% FOCUS METADATA Sections
+%% =====================
+
+METADATA {
+  %%string MetadataId PK
+}
+
+DATA_GENERATOR {
+  string DataGeneratorId PK
+  string DataGeneratorName
+}
+
+DATASET_INSTANCE {
+  string DatasetInstanceId PK
+  string FocusDatasetId
+  string DatasetInstanceName
+  string SomeOtherProperty
+}
+
+SCHEMA {
+  string SchemaId PK
+  string DatasetInstanceId FK
+  string FocusVersion
+  string DataGeneratorVersion
+  string SchemaProperty1
+  string SchemaProperty2
+}
+
+COLUMN_DEFINITION {
+  string ColumnName PK
+  string DataType
+  boolean Deprecated
+  string ProviderTagPrefixes
+  string StringEncoding
+  integer StringMaxLength
+  string PreviousColumnName
+  integer NumericPrecision
+  integer NumberScale
+}
+
+RECENCY {
+  string RecencyId PK
+  string DatasetInstanceId FK
+  boolean DatasetInstanceComplete
+  date-time DatasetInstanceLastUpdated
+  date-time RecencyLastUpdated
+}
+
+TIME_SECTOR {
+  string TimeSectorId PK
+  string RecencyId FK
+  boolean TimeSectorComplete
+  date-time TimeSectorStart 
+  date-time TimeSectorEnd 
+  date-time TimeSectorLastUpdated 
+}
+
+%% =====================
+%% FOCUS SPEC Datasets
+%% =====================
+
+%%FOCUS_SPEC {
+%%  string FocusVersion PK
+%%}
+
+COST_AND_USAGE {
+  string ContractApplied_ContractCommitmentId FK
+  string ChargeDescription
+  string ChargeCategory
+}
+
+CONTRACT_COMMITMENT {
+  string ContractCommitmentId PK
+  string ContractCommitmentCategory
+}
+
+%% =====================
+%% Colors
+%% =====================
+
+classDef metadataRoot fill:#cce5ff,stroke:#3399ff;
+classDef dgSection fill:#cce5ff,stroke:#3399ff;
+classDef diSection fill:#1e88e5,stroke:#0d47a1;
+classDef schemaSection fill:#ffb74d,stroke:#e65100;
+classDef schemaLight fill:#fff3e0,stroke:#e65100;
+classDef recencySection fill:#66bb6a,stroke:#1b5e20;
+classDef recencyLight fill:#e8f5e9,stroke:#1b5e20;
+classDef focus fill:#fdd835,stroke:#f9a825;
+
+%% =====================
+%% Colors Application
+%% =====================
+
+class METADATA metadataRoot
+class DATA_GENERATOR,DATASET_INSTANCE dgSection
+class SCHEMA schemaSection
+class COLUMN_DEFINITION schemaLight
+class RECENCY recencySection
+class TIME_SECTOR recencyLight
+class FOCUS_SPEC,COST_AND_USAGE,CONTRACT_COMMITMENT focus
+
+```
+
+### FOCUS Metadata – Abstract Entities
+
+This diagram presents the abstract structure of the FOCUS Metadata model, highlighting the relationships between high-level entities such as Sections, Subsections, Items (Objects) within Sections or Subsections, and their Properties, alongside a parallel view of schema-level constructs defined in the FOCUS specification.
+
+``` mermaid
+
+erDiagram
+Metadata ||--o{ Section : has
+Section ||--o{ Item : contains
+Item ||--o{ Property : has
+
+Item ||--o{ Subsection : has
+Subsection ||--o{ Item : contains
+
+Property }o..|| Item : references
+
+Dataset ||--o{ Column : has
+
+Column ||--o{ Element : contains
+Element ||--o{ ElementProperty : has
+
+Dataset }o..|| Attribute : conforms-to
+Column }o..|| Attribute : conforms-to
+ElementProperty }o..|| Attribute : conforms-to
+
+%% =====================
+%% Boje (pastel)
+%% =====================
+
+%% Atributi – pastelno crveno
+style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
+
+%% Sve ostalo – pastelno zeleno
+style Metadata fill:#d4edda,stroke:#666,stroke-width:1px
+style Section fill:#d4edda,stroke:#666,stroke-width:1px
+style Item fill:#d4edda,stroke:#666,stroke-width:1px
+style Property fill:#d4edda,stroke:#666,stroke-width:1px
+style Subsection fill:#d4edda,stroke:#666,stroke-width:1px
+style Dataset fill:#d4edda,stroke:#666,stroke-width:1px
+style Column fill:#d4edda,stroke:#666,stroke-width:1px
+style Element fill:#d4edda,stroke:#666,stroke-width:1px
+style ElementProperty fill:#d4edda,stroke:#666,stroke-width:1px
+
+```
+
 ### Direct vs. Referential Nesting of Metadata Objects
 
 Some metadata objects are directly nested under a parent object (e.g., `Data Generator`, `Schema`, `Dataset Instance`, `Recency`).
