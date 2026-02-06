@@ -1,0 +1,129 @@
+{
+  "CAU-AvailabilityZone-C-000-M": {
+    "Function": "Composite",
+    "Reference": "AvailabilityZone",
+    "EntityName": "Availability Zone",
+    "EntityId": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AvailabilityZone adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AvailabilityZone-C-001-C",
+        "CAU-AvailabilityZone-C-002-M",
+        "CAU-AvailabilityZone-C-003-M",
+        "CAU-AvailabilityZone-C-004-C"
+      ]
+    }
+  },
+  "CAU-AvailabilityZone-C-001-C": {
+    "Function": "Presence",
+    "Reference": "AvailabilityZone",
+    "EntityName": "Availability Zone",
+    "EntityId": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [
+      "AVAILABILITY_ZONE_SUPPORTED"
+    ],
+    "Order": 10,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AvailabilityZone is RECOMMENDED to be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the host provider supports deploying resources or services within an *availability zone*.",
+      "Keyword": "RECOMMENDED",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AvailabilityZone-C-002-M": {
+    "Function": "DataType",
+    "Reference": "AvailabilityZone",
+    "EntityName": "Availability Zone",
+    "EntityId": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AvailabilityZone MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AvailabilityZone-C-003-M": {
+    "Function": "Validation",
+    "Reference": "AvailabilityZone",
+    "EntityName": "Availability Zone",
+    "EntityId": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AvailabilityZone MUST conform to [StringHandling](#stringhandling) requirements.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AvailabilityZone-C-004-C": {
+    "Function": "NullabilityRules",
+    "Reference": "AvailabilityZone",
+    "EntityName": "Availability Zone",
+    "EntityId": "AvailabilityZone",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "TBD",
+    "Status": "Active",
+    "ModelVersionRemoved": "",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AvailabilityZone MUST be null when a [*charge*](#glossary:charge) is not specific to an *availability zone*.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
