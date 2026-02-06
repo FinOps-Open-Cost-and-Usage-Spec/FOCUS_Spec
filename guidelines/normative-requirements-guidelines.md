@@ -653,9 +653,16 @@ CommitmentDiscountQuantity adheres to the following requirements:
     * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
     * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given *charge period* when CommitmentDiscountStatus is "Unused".
 
-## Attribute Requirements (Placeholder)
+## Attribute Requirements
 
 > This section is **Work In Progress**.
+
+This section defines guidelines for authoring **Attribute-level normative requirements**.
+
+Attributes are **not normative subjects**.  
+They define reusable sets of normative constraints that apply to Datasets, Columns, or ElementProperties that declare conformance to the Attribute.
+
+As a result, normative requirements defined for an Attribute are enforced on the conforming schema-level entities, not on the Attribute itself.
 
 ### Note on FOCUS Dataset, Dataset Instance, and Glossary Alignment
 
