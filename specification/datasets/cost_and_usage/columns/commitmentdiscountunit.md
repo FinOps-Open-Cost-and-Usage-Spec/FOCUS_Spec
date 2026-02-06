@@ -1,6 +1,6 @@
 # Commitment Discount Unit
 
-Commitment Discount Unit represents the service-provider-specified measurement unit indicating how a service provider measures the [Commitment Discount Quantity](#datasets.costandusage.commitmentdiscountquantity) of a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountUnit column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Unit represents the service-provider-specified measurement unit indicating how a service provider measures the [Commitment Discount Quantity](#datasets.costandusage.commitmentdiscountquantity) of a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountUnit column is only applicable to *commitment discounts*, i.e., [*public commitment discounts (no carry-over)*](#glossary:public-commitment-discount-no-carry-over).
 
 ## Requirements
 

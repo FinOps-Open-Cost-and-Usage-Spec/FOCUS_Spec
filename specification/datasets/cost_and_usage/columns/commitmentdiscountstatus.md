@@ -1,6 +1,6 @@
 # Commitment Discount Status
 
-Commitment Discount Status indicates whether the [*charge*](#glossary:charge) corresponds with the consumption of a [*commitment discount*](#glossary:commitment-discount) identified in the CommitmentDiscountId column or the unused portion of the committed amount. The CommitmentDiscountStatus column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+Commitment Discount Status indicates whether the [*charge*](#glossary:charge) corresponds with the consumption of a [*commitment discount*](#glossary:commitment-discount) identified in the CommitmentDiscountId column or the unused portion of the committed amount. The CommitmentDiscountStatus column is only applicable to *commitment discounts*, i.e., [*public commitment discounts (no carry-over)*](#glossary:public-commitment-discount-no-carry-over).
 
 ## Requirements
 

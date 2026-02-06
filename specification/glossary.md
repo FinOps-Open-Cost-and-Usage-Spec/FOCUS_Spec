@@ -66,11 +66,11 @@ A customer's agreement to either spend a defined monetary amount or consume a sp
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-Legacy term referring to [*public commitment discount (no carry-over)*](#glossary:public-commitment-discount-no-carry-over).
+A legacy term referring to [*public commitment discount (no carry-over)*](#glossary:public-commitment-discount-no-carry-over).
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
-A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, service-provider-specific requirements.
+A legacy term referring to [*public commitment discount (no carry-over) flexibility*](#glossary:public-commitment-discount-no-carry-over-flexibility)..
 
 <a name="glossary:contract"><b>Contract</b></a>
 
@@ -188,9 +188,13 @@ An individual who performs FinOps within an organization to maximize the busines
 
 A comprehensive list of prices offered by a service provider.
 
-<a name="glossary:public-commitment-discount-no-carry-over)"><b>Public Commitment Discount (no carry-over)</b></a>
+<a name="glossary:public-commitment-discount-no-carry-over"><b>Public Commitment Discount (No Carry-Over)</b></a>
 
 A discount program that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period). Purchases in this program, made upfront and/or with recurring monthly payments, are amortized evenly across predefined charge periods (e.g., hourly), and unused amounts do not carry over to subsequent charge periods. This program is publicly available to customers without special contract arrangements.
+
+<a name="glossary:public-commitment-discount-no-carry-over-flexibility"><b>Public Commitment Discount (No Carry-Over) Flexibility</b></a>
+
+A feature of [*public commitment discount (no carry-over)*](#glossary:public-commitment-discount-no-carry-over) that may further transform the predetermined amount of usage purchased or consumed based on additional, service-provider-specific requirements.
 
 <a name="glossary:service provider"><b>Service Provider</b></a>
 

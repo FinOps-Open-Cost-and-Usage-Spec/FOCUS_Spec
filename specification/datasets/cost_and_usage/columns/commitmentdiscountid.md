@@ -1,6 +1,6 @@
 # Commitment Discount ID
 
-A Commitment Discount ID is the identifier assigned to a [*commitment discount*](#glossary:commitment-discount) by the service provider. Commitment Discount ID is commonly used for scenarios like chargeback for *commitments* and savings per *commitment discount*. The CommitmentDiscountId column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+A Commitment Discount ID is the identifier assigned to a [*commitment discount*](#glossary:commitment-discount) by the service provider. Commitment Discount ID is commonly used for scenarios like chargeback for *commitments* and savings per *commitment discount*. The CommitmentDiscountId column is only applicable to *commitment discounts*, i.e., [*public commitment discounts (no carry-over)*](#glossary:public-commitment-discount-no-carry-over).
 
 ## Requirements
 

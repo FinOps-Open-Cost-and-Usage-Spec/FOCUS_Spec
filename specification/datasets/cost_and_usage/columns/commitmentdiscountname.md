@@ -1,6 +1,6 @@
 # Commitment Discount Name
 
-A Commitment Discount Name is the display name assigned to a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountName column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
+A Commitment Discount Name is the display name assigned to a [*commitment discount*](#glossary:commitment-discount). The CommitmentDiscountName column is only applicable to *commitment discounts*, i.e., [*public commitment discounts (no carry-over)*](#glossary:public-commitment-discount-no-carry-over).
 
 ## Requirements
 
