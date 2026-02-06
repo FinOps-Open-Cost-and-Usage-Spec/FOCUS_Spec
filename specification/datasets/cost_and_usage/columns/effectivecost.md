@@ -14,6 +14,7 @@ EffectiveCost adheres to the following requirements:
 * EffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * EffectiveCost MUST NOT be null.
 * EffectiveCost MUST be a valid decimal value.
+* EffectiveCost MUST be based on actual usage data, service consumption data, or contract commitment recognition data. Data generators MUST NOT populate EffectiveCost with estimated, interpolated, or inferred values.
 * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover future eligible *charges*.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
@@ -23,6 +24,8 @@ EffectiveCost adheres to the following requirements:
 * *Charges* for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) adhere to the following additional requirements:
   * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".
   * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".
+  * When CommitmentDiscountStatus is "Used", EffectiveCost MUST represent the portion of the amortized *commitment discount* allocated to eligible *resources* or *services* consumed during the *charge period*.
+  * When CommitmentDiscountStatus is "Unused", EffectiveCost MUST represent the portion of the amortized *commitment discount* that was not allocated to any *resources* or *services* during the *charge period*.
 
 ## Column ID
 
