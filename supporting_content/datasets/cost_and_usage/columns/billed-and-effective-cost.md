@@ -179,3 +179,68 @@ Note: In this context, accrual-based accounting refers to a FinOps-specific cost
 An accounting method used in technology cost management to record costs in the period when charges are invoiced. This approach aligns expenses with billing cycles, independent of when resources are utilized, services are delivered, or entitlements are available for or actually consumed (including unused or expired entitlements).
 
 Note: In this context, cash-based accounting refers to a FinOps-specific cost recognition method and not a formal accounting principle.
+
+---
+
+# Billed Cost and Effective Cost Normative Requirements Discussion
+
+## BilledCost Marketplace Requirement
+
+* Current (FOCUS 1.3) Normative requirement:
+
+> * BilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).
+
+### Suggestion
+
+* Consider introducing an additional participating entity to explicitly represent the **source/origin of the information**, distinct from the Data Generator and Invoice Issuer.
+
+**Use cases:**
+
+* **UC-1:** Marketplace purchase (CSP) with corresponding usage (SaaS)
+* **UC-2:** Marketplace purchase (CSP) without corresponding usage (SaaS)
+
+| Data Generator | Source      | Use case | Charge Category | Billed Cost | Effective Cost | Service Provider | Invoice Issuer |
+|----------------|-------------|----------|-----------------|-------------|----------------|------------------|----------------|
+| CSP            | CSP         | UC-1     | Purchase        | 10          | 0              | SaaS             | CSP            |
+| CSP            | SaaS        | UC-1     | Usage           | 0           | 10             | SaaS             | CSP            |
+| SaaS           | CSP         | UC-1     | Purchase        | 10          | 0              | SaaS             | CSP            |
+| SaaS           | SaaS        | UC-1     | Usage           | 0           | 10             | SaaS             | CSP            |
+| FinOps Tool    | CSP         | UC-1     | Purchase        | 10          | 0              | SaaS             | CSP            |
+| FinOps Tool    | SaaS        | UC-1     | Usage           | 0           | 10             | SaaS             | CSP            |
+| FinOps Tool    | CSP         | UC-1     | Purchase        | 10          | 0              | SaaS             | CSP            |
+| FinOps Tool    | SaaS        | UC-1     | Usage           | 0           | 10             | SaaS             | CSP            |
+| CSP            | CSP         | UC-2     | Purchase        | 10          | 10             | SaaS             | CSP            |
+| SaaS           | CSP         | UC-2     | Purchase        | 10          | 10             | SaaS             | CSP            |
+| FinOps Tool    | CSP         | UC-2     | Purchase        | 10          | 10             | SaaS             | CSP            |
+
+### **Data/Record Originator Name (NEW Participating Entity)**
+
+**Definition:**
+Data Originator Name is the name of the entity that is the originator of the information in the record. The Data Originator reflects where the information was initially produced, regardless of which entity generated, transformed, enriched, or delivered the record. It is commonly used for data lineage, auditing, and tracking purposes.
+
+**Notes:**
+
+* Data Generator may be a CSP, a SaaS provider, a FinOps tool or any intermediary that processes and republishes the data
+* Data Originator is **operational origin of the record**, not necessarily the invoicing entity.
+* In Marketplace scenarios:
+  * Purchase charges typically originate from the **CSP**, even if reported via the SaaS provider
+  * Usage charges typically originate from the **SaaS provider**, even if reported via the CSP
+* Multiple Data Generators may exist in sequence, but each dataset instance has **exactly one** Data Generator.
+* Data transformations or re-emissions by downstream tools **does not change** the Data Originator.
+
+## Revised Definition: Data Generator
+
+### **DataGeneratorName**
+
+**Updated definition (proposed):**
+
+Human-readable name of the entity that generated the dataset instance. The Data Generator ensures the technical accuracy and delivery of the data, but is not necessarily the originator of the information.
+
+## Mental Model
+
+| Entity Role | Answers the question |
+|------|--------------------|
+| **Data Originator** | *Where did this record originate?* |
+| **Service Provider** | *Who provides the service being consumed?* |
+| **Invoice Issuer** | *Who issues the invoice?* |
+| **Data Generator** | *Who produced and delivered the dataset?* |
