@@ -2,7 +2,7 @@
 
 ## Scenario
 
-ACME has decided to rename a column in their FOCUS data export. The column for rename is x_awesome_column1 and will be renamed to x_awesome_column_one. The provider creates a new [Schema](#schema) object to represent the new schema, with a unique [SchemaId](#schemaid). After this schema definition is created if the data generator creates another schema, the PreviousColumnName is removed.
+ACME has decided to rename a column in their FOCUS data export. The column for rename is x_awesome_column1 and will be renamed to x_awesome_column_one. The data generator creates a new [Schema](#metadata.schema) object to represent the new schema, with a unique [SchemaId](#metadata.schema.schemaid). After this schema definition is created if the data generator creates another schema, the PreviousColumnName is removed.
 
 ## Supplied Metadata
 
@@ -70,7 +70,7 @@ The updated schema related metadata for the schema where the rename took place c
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8",
-                "Deprecation": true
+                "Deprecated": true
             }
       ]
 }
@@ -136,9 +136,9 @@ The subsequent new schema metadata after the rename could look like this:
                 "DataType": "STRING",
                 "StringMaxLength": 64,
                 "StringEncoding": "UTF-8",
-                "Deprecation": true
+                "Deprecated": true
             }
       ]
 }
 ```
-For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#schemametadatatofocusdatareference)
+For an example of how ACME ensures the schema metadata reference requirement is met see: [Schema Metadata to FOCUS Data Reference](#appendix.examples:metadata.schemametadatatofocusdatareference)

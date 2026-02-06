@@ -1,8 +1,8 @@
-# Provider Services
+# Service Provider Services
 
 ## Description
 
-FOCUS supports providers specifying the services and product offerings that they provide their customers that align with the names practitioners are familiar with. This empowers practitioners to analyze cost by service, report service costs by subaccount, forecast based on historical trends by service, and verify accuracy of services charged across providers.
+FOCUS supports service providers specifying the services and product offerings that they provide their customers that align with the names practitioners are familiar with. This empowers practitioners to analyze cost by service, report service costs by subaccount, forecast based on historical trends by service, and verify accuracy of services charged across service providers.
 
 ## Directly Dependent Columns
 
@@ -12,7 +12,7 @@ FOCUS supports providers specifying the services and product offerings that they
 
 ## Supporting Columns
 
-* ProviderName
+* ServiceProviderName
 * SkuId
 
 ## Example SQL Query
@@ -20,7 +20,7 @@ FOCUS supports providers specifying the services and product offerings that they
 ```sql
 SELECT
   BillingPeriodStart,
-  ProviderName,
+  ServiceProviderName,
   SubAccountId,
   SubAccountName,
   ServiceName,
@@ -31,7 +31,7 @@ WHERE ServiceName = ?
   AND BillingPeriodStart >= ? AND BillingPeriodStart < ?
 GROUP BY
   BillingPeriodStart,
-  ProviderName,
+  ServiceProviderName,
   SubAccountId,
   SubAccountName,
   ServiceName

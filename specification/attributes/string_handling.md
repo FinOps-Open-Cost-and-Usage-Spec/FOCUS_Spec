@@ -18,14 +18,14 @@ Requirements for string-capturing columns appearing in a [*FOCUS dataset*](#glos
 
 ## Requirements
 
-* String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by providers and end-users.
+* String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by data generators and end-users.
 * [*Charges*](#glossary:charge) to mutable entities (e.g., resource names) MUST be accurately reflected in corresponding *charges* incurred after the change and MUST NOT alter *charges* incurred before the change, preserving data integrity and auditability for all *charge* records.
 * Immutable string values that refer to the same entity (e.g., resource identifiers, region identifiers, etc.) MUST remain consistent and unchanged across all [*billing periods*](#glossary:billing-period).
 * Empty strings and strings consisting solely of spaces SHOULD NOT be used in not-nullable string columns.
 
 ## Exceptions
 
-* When a record is provided after a change to a mutable string value and the [ChargeClass](#chargeclass) is "Correction", the record MAY contain the altered value.
+* When a record is provided after a change to a mutable string value and the [ChargeClass](#datasets.costandusage.chargeclass) is "Correction", the record MAY contain the altered value.
 
 ## Introduced (version)
 

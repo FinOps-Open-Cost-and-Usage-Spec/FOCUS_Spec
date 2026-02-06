@@ -154,6 +154,26 @@ if short in anchor_names:
     short = f"{short}-{counter}"
 ```
 
+**SkipTOC Header Support**:
+
+Headers can be excluded from table of contents generation while maintaining proper document formatting:
+
+```markdown
+<!-- Header appears in document but not in TOC -->
+## My Header<!--SkipTOC-->
+
+<!-- Also works with other header levels -->
+### Another Header<!--SkipTOC-->
+```
+
+This feature automatically:
+
+- Excludes marked headers from TOC generation
+- Prevents section numbering for these headers
+- Skips anchor link creation
+- Ensures proper spacing around headers to meet markdown linting requirements
+- Maintains document readability and structure
+
 ## Best Practices
 
 ### File Content

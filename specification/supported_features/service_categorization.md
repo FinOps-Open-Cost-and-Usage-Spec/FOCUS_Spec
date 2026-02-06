@@ -16,7 +16,7 @@ FOCUS provides a structure for categorizing services based on their core functio
 * BillingCurrency
 * BillingPeriodEnd
 * BillingPeriodStart
-* ProviderName
+* ServiceProviderName
 
 ## Example SQL Query
 
@@ -24,7 +24,7 @@ FOCUS provides a structure for categorizing services based on their core functio
 SELECT
   BillingPeriodStart,
   BillingPeriodEnd,
-  ProviderName,
+  ServiceProviderName,
   ServiceCategory,
   ServiceSubcategory,
   ServiceName,
@@ -35,7 +35,7 @@ WHERE BillingPeriodStart >= ? and BillingPeriodEnd < ?
 GROUP BY
   BillingPeriodStart,
   BillingPeriodEnd,
-  ProviderName,
+  ServiceProviderName,
   ServiceCategory,
   ServiceSubcategory,
   ServiceName,

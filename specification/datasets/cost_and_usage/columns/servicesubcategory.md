@@ -1,12 +1,11 @@
 # Service Subcategory
 
-The Service Subcategory is a secondary classification of the [Service Category](#servicecategory) for a [*service*](#glossary:service) based on its core function. The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing spend and usage for specific workload types across providers and tracking the migration of workloads across fundamentally different architectures.  
+The Service Subcategory is a secondary classification of the [Service Category](#datasets.costandusage.servicecategory) for a [*service*](#glossary:service) based on its core function. The Service Subcategory (in conjunction with the Service Category) is commonly used for scenarios like analyzing spend and usage for specific workload types across service providers and tracking the migration of workloads across fundamentally different architectures.  
 
 ## Requirements
 
 ServiceSubcategory adheres to the following requirements:
 
-* ServiceSubcategory is RECOMMENDED to be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceSubcategory MUST be of type String.
 * ServiceSubcategory MUST NOT be null.
 * ServiceSubcategory MUST be one of the allowed values.
@@ -26,13 +25,14 @@ Secondary classification of the Service Category for a *service* based on its co
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Recommended    |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed Values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Recommended                                          |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | Allowed Values                                       |
 
 Allowed values:
 
@@ -81,13 +81,13 @@ Allowed values:
 | Internet of Things        | IoT Platforms                         | Unified solution that combines IoT data collection, processing, visualization, and device management.         |
 | Internet of Things        | Other (Internet of Things)            | Internet of Things (IoT) services that do not fall into one of the defined subcategories.                     |
 | Management and Governance | Architecture                          | Planning, design, and construction of software systems.                                                       |
-| Management and Governance | Compliance                            | Adherance to regulatory standards and industry best practices.                                                |
+| Management and Governance | Compliance                            | Adherence to regulatory standards and industry best practices.                                                |
 | Management and Governance | Cost Management                       | Monitoring and controlling expenses of systems and services.                                                  |
 | Management and Governance | Data Governance                       | Management of the availability, usability, integrity, and security of data.                                   |
 | Management and Governance | Disaster Recovery                     | Plans and procedures that ensure systems and services can recover from disruptions.                           |
 | Management and Governance | Endpoint Management                   | Tools that configure and secure access to devices.                                                            |
 | Management and Governance | Observability                         | Monitoring, logging, and tracing of data to track the performance and health of systems.                      |
-| Management and Governance | Support                               | Assistance and expertise supplied by providers.                                                               |
+| Management and Governance | Support                               | Assistance and expertise supplied by service providers.                                                       |
 | Management and Governance | Other (Management and Governance)     | Management and governance services that do not fall into one of the defined subcategories.                    |
 | Media                     | Content Creation                      | Production of media content.                                                                                  |
 | Media                     | Gaming                                | Development and delivery of gaming services.                                                                  |
@@ -98,7 +98,7 @@ Allowed values:
 | Migration                 | Resource Migration                    | Movement of resources from one location to another.                                                           |
 | Migration                 | Other (Migration)                     | Migration services that do not fall into one of the defined subcategories.                                    |
 | Mobile                    | Other (Mobile)                        | All Mobile services.                                                                                          |
-| Multicloud                | Multicloud Integration                | Environments that facilitate consumption of services from multiple cloud providers.                           |
+| Multicloud                | Multicloud Integration                | Environments that facilitate consumption of services from multiple cloud service providers.                   |
 | Multicloud                | Other (Multicloud)                    | Multicloud services that do not fall into one of the defined subcategories.                                   |
 | Networking                | Application Networking                | Distribution of incoming network traffic across application-based workloads.                                  |
 | Networking                | Content Delivery                      | Distribution of digital content using a network of servers (CDNs).                                            |

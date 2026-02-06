@@ -2,17 +2,16 @@
 
 SKU Meter describes the functionality being metered or measured by a particular SKU in a [*charge*](#glossary:charge).
 
-Providers often have billing models in which multiple SKUs exist for a given service to describe and bill for different functionalities for that service. For example, an object storage service may have separate SKUs for functionalities such as object storage, API requests, data transfer, encryption, and object management. This field helps practitioners understand which functionalities are being metered by the different SKUs that appear in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
+Service providers often have billing models in which multiple SKUs exist for a given service to describe and bill for different functionalities for that service. For example, an object storage service may have separate SKUs for functionalities such as object storage, API requests, data transfer, encryption, and object management. This field helps practitioners understand which functionalities are being metered by the different SKUs that appear in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Requirements
 
 SkuMeter adheres to the following requirements:
 
-* SkuMeter MUST be present in a Cost and Usage *FOCUS dataset* when the provider supports unit pricing concepts and publishes [*price lists*](#glossary:price-list), publicly or as part of contracting.
 * SkuMeter MUST be of type String.
-* SkuMeter MUST conform to [StringHandling](#stringhandling) requirements.
+* SkuMeter MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuMeter nullability is defined as follows:
-  * SkuMeter MUST be null when [SkuId](#skuid) is null.
+  * SkuMeter MUST be null when [SkuId](#datasets.costandusage.skuid) is null.
   * SkuMeter SHOULD NOT be null when SkuId is not null.
 * SkuMeter SHOULD remain consistent over time for a given SkuId.
 
@@ -34,13 +33,14 @@ Describes the functionality being metered or measured by a particular SKU in a *
 
 ## Content Constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

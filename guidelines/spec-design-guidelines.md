@@ -7,8 +7,8 @@ Specification Content
 ---------------------
 
 The specification:
-* must not specify that a specific technology, software package/library, or cloud provider must be (or is recommended to be) used
-* can use examples that show a specific technology, software package/library, or cloud provider to demonstrate a concept
+* must not specify that a specific technology, software package/library, or service provider must be (or is recommended to be) used
+* can use examples that show a specific technology, software package/library, or service provider to demonstrate a concept
 * should use lots of figures and examples to help visualize the content of the specification
 * must keep figures and examples close to the normative prose
 * must not rely on figures to define the specification, normative prose is always required to make precise specifications
