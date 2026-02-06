@@ -194,6 +194,8 @@ Note: In this context, cash-based accounting refers to a FinOps-specific cost re
 
 * Consider introducing an additional participating entity to explicitly represent the **source/origin of the information**, distinct from the Data Generator and Invoice Issuer.
 
+> * BilledCost MUST be 0 when InvoiceIssuerName does not match the DataOriginatorName.
+
 **Use cases:**
 
 * **UC-1:** Marketplace purchase (CSP) with corresponding usage (SaaS)
@@ -238,9 +240,9 @@ Human-readable name of the entity that generated the dataset instance. The Data 
 
 ## Mental Model
 
-| Entity Role | Answers the question |
-|------|--------------------|
-| **Data Originator** | *Where did this record originate?* |
+| Entity Role          | Answers the question                       |
+|----------------------|--------------------------------------------|
+| **Data Originator**  | *Where did this record originate?*         |
 | **Service Provider** | *Who provides the service being consumed?* |
-| **Invoice Issuer** | *Who issues the invoice?* |
-| **Data Generator** | *Who produced and delivered the dataset?* |
+| **Invoice Issuer**   | *Who issues the invoice?*                  |
+| **Data Generator**   | *Who produced and delivered the dataset?*  |
