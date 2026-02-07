@@ -17,6 +17,7 @@ PaymentCurrencyBilledCost adheres to the following requirements:
 ## Examples
 
 ### Example 1: Consistent Grain
+
 In this scenario, the invoice issuer performs currency conversion at the individual line-item level. The grain of the payment currency matches the grain of the billing currency exactly.
 
 * **Billing Currency:** USD
@@ -28,6 +29,7 @@ In this scenario, the invoice issuer performs currency conversion at the individ
 | Usage | Compute Instance A | USD | 100.00 | EUR | 92.00 |
 
 ### Example 2: Divergent Grain
+
 In this scenario, the invoice issuer tracks usage in the billing currency at a granular level but represents that cost in the payment currency as a separate aggregate record. This is often done to maintain precision and avoid rounding discrepancies.
 
 * **Billing Currency:** USD
