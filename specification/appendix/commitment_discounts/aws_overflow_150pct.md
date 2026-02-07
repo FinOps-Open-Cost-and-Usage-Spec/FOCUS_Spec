@@ -64,10 +64,10 @@ These three quantity columns serve different purposes and must be understood in 
 
 The following critical rules apply to commitment discount data:
 
-- **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-- **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-- **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
-- **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
+* **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
+* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
+* **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
+* **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
@@ -166,11 +166,11 @@ FOR commitment period:
 
 Validation for All-Upfront payment option:
 
-- Annual commitment: &dollar;212,000.00
-- Hours in term: 24
-- Hourly amortization: &dollar;212,000.00 / 24 = &dollar;8,833.33/hour
-- Daily amortization (365 days): &dollar;212,000.00 / 365 = &dollar;580.82/day
-- Sum(Usage EffectiveCost): &dollar;580.80
+* Annual commitment: &dollar;212,000.00
+* Hours in term: 24
+* Hourly amortization: &dollar;212,000.00 / 24 = &dollar;8,833.33/hour
+* Daily amortization (365 days): &dollar;212,000.00 / 365 = &dollar;580.82/day
+* Sum(Usage EffectiveCost): &dollar;580.80
 
 **Check:** &dollar;580.80 should approach &dollar;212,000.00 over the full term.
 

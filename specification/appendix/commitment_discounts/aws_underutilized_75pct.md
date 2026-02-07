@@ -68,10 +68,10 @@ ListCost is null for unused rows because no resource was consumed.
 The opportunity cost is reflected in EffectiveCost.
 The following critical rules apply to commitment discount data:
 
-- **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-- **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-- **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
-- **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
+* **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
+* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
+* **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
+* **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
@@ -183,11 +183,11 @@ FOR commitment period:
 
 Validation for All-Upfront payment option:
 
-- Annual commitment: &dollar;459,000.00
-- Hours in term: 24
-- Hourly amortization: &dollar;459,000.00 / 24 = &dollar;19,125.00/hour
-- Daily amortization (365 days): &dollar;459,000.00 / 365 = &dollar;1,257.53/day
-- Sum(Usage EffectiveCost): &dollar;943.20
+* Annual commitment: &dollar;459,000.00
+* Hours in term: 24
+* Hourly amortization: &dollar;459,000.00 / 24 = &dollar;19,125.00/hour
+* Daily amortization (365 days): &dollar;459,000.00 / 365 = &dollar;1,257.53/day
+* Sum(Usage EffectiveCost): &dollar;943.20
 
 **Check:** &dollar;943.20 should approach &dollar;459,000.00 over the full term.
 

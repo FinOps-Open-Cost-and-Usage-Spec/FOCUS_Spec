@@ -64,10 +64,10 @@ These three quantity columns serve different purposes and must be understood in 
 
 The following critical rules apply to commitment discount data:
 
-- **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-- **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-- **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
-- **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
+* **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
+* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
+* **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
+* **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
@@ -166,9 +166,9 @@ FOR commitment period:
 
 Validation for No-Upfront payment option:
 
-- Monthly fee (BilledCost): &dollar;38,583.33
-- Hours generated: 24
-- Hourly amortization: &dollar;38,583.33 / 24 = &dollar;1,607.64/hour
+* Monthly fee (BilledCost): &dollar;38,583.33
+* Hours generated: 24
+* Hourly amortization: &dollar;38,583.33 / 24 = &dollar;1,607.64/hour
 
 **Check:** Sum(Usage EffectiveCost) per month should equal the monthly fee.
 
