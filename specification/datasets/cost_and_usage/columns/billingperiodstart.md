@@ -25,7 +25,6 @@ The *inclusive start bound* of a *billing period*.
 
 ## Content Constraints
 
-=======
 | Constraint      | Value                                                |
 | :-------------- | :--------------------------------------------------- |
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
