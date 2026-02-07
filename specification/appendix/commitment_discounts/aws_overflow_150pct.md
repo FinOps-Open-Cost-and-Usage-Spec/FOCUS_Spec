@@ -5,7 +5,8 @@
 | Scenario Type     | commitment                                   |
 | Payment Type      | All-Upfront                                  |
 | Category          | Spend-based                                  |
-| Utilization       | 150%                                         |
+| Utilization       | 150% (100% committed + 50% overflow to on-demand) |
+
 | Hours Generated   | 48 (24 committed + 24 overflow to on-demand) |
 | Annual Commitment | &dollar;212,000.00                           |
 | Committed Rate    | &dollar;24.20/hour                           |
@@ -20,7 +21,7 @@ This example shows a **Amazon Web Services EC2 Instance Savings Plan** (Savings 
 
 The **All-Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
 
-This scenario demonstrates **overflow** at 150% utilization where demand exceeds commitment capacity. The first 24 hours are covered by the commitment (CommitmentDiscountStatus='Used'), while the additional 12 hours spill over to on-demand pricing. On-demand rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
+This scenario demonstrates **overflow** at 150% utilization where demand exceeds commitment capacity by 50%. The first 24 hours represent 100% utilization of the commitment, while the additional 12 hours represent 50% overflow that spills to on-demand pricing. On-demand rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
 
 ## Row Summary
 
