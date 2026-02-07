@@ -12,12 +12,12 @@ The diagram below illustrates the relationships among these entities and shows w
 
 ```mermaid
 erDiagram
-Dataset ||--o{ Column : has
+Dataset ||--|{ Column : has
 Column ||--o{ Element : contains
-Element ||--o{ ElementProperty : has
-Dataset }o..|| Attribute : conforms-to
-Column }o..|| Attribute : conforms-to
-ElementProperty }o..|| Attribute : conforms-to
+Element ||--|{ ElementProperty : has
+Dataset }|..|| Attribute : conforms-to
+Column }|..|| Attribute : conforms-to
+ElementProperty }|..|| Attribute : conforms-to
 
 %% Attribute
 style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
@@ -28,6 +28,17 @@ style Column fill:#d4edda,stroke:#666,stroke-width:1px
 style Element fill:#d4edda,stroke:#666,stroke-width:1px
 style ElementProperty fill:#d4edda,stroke:#666,stroke-width:1px
 ```
+
+**Nodes:**
+
+* 🟩 FOCUS schema-level entity (normative subject)
+* 🟥 FOCUS normative rule set (not a normative subject)
+
+**Relationships:**
+
+* `|| -- has -- |{` : one parent to one-or-more enumerated structural members
+* `|| -- contains -- o{` : one parent to zero-or-more child entities (array of objects)
+* `}| .. conforms-to .. ||` : many children to one parent conformance relationship
 
 ## Core Normative Authoring Rules
 
@@ -41,28 +52,48 @@ Each normative requirement MUST:
 
 A single bullet MUST NOT encode multiple obligations.
 
-### 2. Normative Subject
+### 2. Structural Anchor Requirement
 
-#### 2.1 Allowed Subjects
+Each Requirements section for a schema-level construct MUST begin with a single **structural anchor requirement**.
+
+The structural anchor requirement:
+
+* introduces the scope of the subsequent normative requirements,
+* MUST appear as the first normative statement in the section,
+* exists to support automated parsing and validation, and
+* is non-verifiable and does not introduce an enforceable constraint.
+
+The canonical form of a structural anchor requirement is:
+
+> `<Entity> MUST adhere to the following normative requirements:`
+
+For **Attribute Requirements** sections, the Attribute ID MAY be used as the subject of the structural anchor requirement.
+This usage is a structural exception only and MUST NOT be interpreted as implying that Attributes are normative subjects or independently enforceable schema entities.
+
+### 3. Normative Subject
+
+#### 3.1 Allowed Subjects
 
 The normative subject MUST be a schema-level entity, such as:
 
-* **FOCUS Dataset**  
-  (used as the canonical normative subject for dataset-level requirements, including cases where the constraint applies to a dataset specification, a dataset instance, or a dataset artifact; the intended level is inferred from context)
+* FOCUS Dataset
+  *Note: used as the canonical normative subject for dataset-level requirements, including cases where the constraint applies to a dataset specification, a dataset instance, or a dataset artifact; the intended level is inferred from context.*
 * Column
 * Column with a qualifier (e.g. column representing numeric values)
-* Schema-defined object, attribute, or property
+* Schema-defined object or property
 
 The subject SHOULD be explicit and unambiguous.
 
-#### 2.2 Disallowed Subjects
+A structural anchor requirement MAY use the ID of the enclosing schema construct as its subject, even if that construct is not otherwise an allowed normative subject. This exception applies only to structural anchor requirements.
+
+#### 3.2 Disallowed Subjects
 
 The following MUST NOT be used as normative subjects:
 
 * Actors (e.g. data generator, service provider, consumer)
 * Processes or mechanisms (e.g. Delivery Handling, Correction Handling, etc.)
 
-### 3. State, Not Behavior
+### 4. State, Not Behavior
 
 Normative requirements MUST describe a **verifiable state**, not an operational process or behavior.
 
@@ -73,12 +104,12 @@ Specifically:
   * a constraint on the resulting dataset state, or
   * a constraint on a schema-defined artifact.
 
-### 4. Use of BCP 14 Keywords
+### 5. Use of BCP 14 Keywords
 
 * Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT).
 * A bullet containing more than one normative keyword MUST be split.
 
-### 5. Splitting Requirements
+### 6. Splitting Requirements
 
 A requirement MUST be split into multiple bullets if it:
 
@@ -87,7 +118,7 @@ A requirement MUST be split into multiple bullets if it:
 * mixes a definition with a constraint,
 * applies different constraints to different subjects.
 
-### 6. Composite Requirements
+### 7. Composite Requirements
 
 Composite (parent + nested) requirements MAY be used when strictly controlled.
 
@@ -100,7 +131,7 @@ They are allowed only when:
 
 Nested bullets MUST NOT introduce a different subject.
 
-### 7. Definitions vs. Normative Requirements
+### 8. Definitions vs. Normative Requirements
 
 * Definitions, explanations, rationale, and examples MUST NOT be expressed as normative requirements.
 * Definitions SHOULD be written as plain declarative statements without BCP 14 keywords.
@@ -659,8 +690,9 @@ CommitmentDiscountQuantity adheres to the following requirements:
 
 This section defines guidelines for authoring **Attribute-level normative requirements**.
 
-Attributes are **not normative subjects**.  
-They define reusable sets of normative constraints that apply to Datasets, Columns, or ElementProperties that declare conformance to the Attribute.
+Attributes are **not normative subjects**, **except** that the Attribute ID is used as **the subject of the structural anchor requirement** for automated validation consistency.
+
+They define reusable sets of normative constraints applied to Datasets, Columns, or ElementProperties that declare conformance to the Attribute.
 
 As a result, normative requirements defined for an Attribute are enforced on the conforming schema-level entities, not on the Attribute itself.
 
@@ -681,7 +713,7 @@ However, by design decision, the specification adopts the following normative co
   * a dataset specification,
   * a dataset instance, or
   * a dataset instance artifact.
-* The intended level of application (specification vs. instance vs. artifact) is inferred from context rather than encoded in the subject name.
+* The intended level of application (specification vs. instance vs. artifact) is inferred from context rather than encoded in the normative subject.
 
 This choice is intentional and overrides interpretations based solely on abstraction level.
 
