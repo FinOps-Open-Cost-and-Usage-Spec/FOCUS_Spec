@@ -1,16 +1,16 @@
 # Amazon Web Services EC2 Instance Savings Plan (All-Upfront)
 
-| Parameter         | Value                                        |
-| ----------------- | -------------------------------------------- |
-| Scenario Type     | commitment                                   |
-| Payment Type      | All-Upfront                                  |
-| Category          | Spend-based                                  |
-| Utilization       | 150%                                         |
-| Hours Generated   | 48 (24 committed + 24 overflow to on-demand) |
-| Annual Commitment | &dollar;212,000.00                           |
-| Committed Rate    | &dollar;24.20/hour                           |
-| On-Demand Rate    | &dollar;36.30/hour                           |
-| Savings           | 33%                                          |
+| Parameter         | Value                                             |
+| ----------------- | ------------------------------------------------- |
+| Scenario Type     | commitment                                        |
+| Payment Type      | All-Upfront                                       |
+| Category          | Spend-based                                       |
+| Utilization       | 150% (100% committed + 50% overflow to on-demand) |
+| Hours Generated   | 48 (24 committed + 24 overflow to on-demand)      |
+| Annual Commitment | &dollar;212,000.00                                |
+| Committed Rate    | &dollar;24.20/hour                                |
+| On-Demand Rate    | &dollar;36.30/hour                                |
+| Savings           | 33%                                               |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aws_overflow_150pct.csv)
 
@@ -20,7 +20,7 @@ This example shows a **Amazon Web Services EC2 Instance Savings Plan** (Savings 
 
 The **All-Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
 
-This scenario demonstrates **overflow** at 150% utilization where demand exceeds commitment capacity. The first 24 hours are covered by the commitment (CommitmentDiscountStatus='Used'), while the additional 12 hours spill over to on-demand pricing. On-demand rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
+This scenario demonstrates **overflow** at 150% utilization where demand exceeds commitment capacity by 50%. The first 24 hours represent 100% utilization of the commitment, while the additional 12 hours represent 50% overflow that spills to on-demand pricing. On-demand rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
 
 ## Row Summary
 
@@ -45,12 +45,6 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
 
-The following key relationships apply between quantity columns:
-
-1. **Used Rows:** All three quantities are typically equal (1) because one hour of usage consumes one pricing unit and applies one commitment unit.
-2. **Unused Rows:** `PricingQuantity=1` and `CommitmentDiscountQuantity=1` but `ConsumedQuantity=null` because no resource was actually consumed (the commitment capacity is wasted).
-3. **On-Demand Rows:** `PricingQuantity=1` and `ConsumedQuantity=1` but `CommitmentDiscountQuantity=null` because no commitment applies.
-
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
 | Column                  | Purpose                    | Commitment-Covered | On-Demand     |
@@ -70,10 +64,10 @@ The following key relationships apply between quantity columns:
 
 The following critical rules apply to commitment discount data:
 
-* **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-* **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
-* **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
+- **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
+- **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
+- **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
+- **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
@@ -172,11 +166,11 @@ FOR commitment period:
 
 Validation for All-Upfront payment option:
 
-* Annual commitment: &dollar;212,000.00
-* Hours in term: 24
-* Hourly amortization: &dollar;212,000.00 / 24 = &dollar;8,833.33/hour
-* Daily amortization (365 days): &dollar;212,000.00 / 365 = &dollar;580.82/day
-* Sum(Usage EffectiveCost): &dollar;580.80
+- Annual commitment: &dollar;212,000.00
+- Hours in term: 24
+- Hourly amortization: &dollar;212,000.00 / 24 = &dollar;8,833.33/hour
+- Daily amortization (365 days): &dollar;212,000.00 / 365 = &dollar;580.82/day
+- Sum(Usage EffectiveCost): &dollar;580.80
 
 **Check:** &dollar;580.80 should approach &dollar;212,000.00 over the full term.
 

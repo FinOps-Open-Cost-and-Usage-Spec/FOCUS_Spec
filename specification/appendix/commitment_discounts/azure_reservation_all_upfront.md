@@ -45,12 +45,6 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
 
-The following key relationships apply between quantity columns:
-
-1. **Used Rows:** All three quantities are typically equal (1) because one hour of usage consumes one pricing unit and applies one commitment unit.
-2. **Unused Rows:** `PricingQuantity=1` and `CommitmentDiscountQuantity=1` but `ConsumedQuantity=null` because no resource was actually consumed (the commitment capacity is wasted).
-3. **On-Demand Rows:** `PricingQuantity=1` and `ConsumedQuantity=1` but `CommitmentDiscountQuantity=null` because no commitment applies.
-
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
 | Column                  | Purpose                    | Commitment-Covered | On-Demand     |
@@ -70,10 +64,10 @@ The following key relationships apply between quantity columns:
 
 The following critical rules apply to commitment discount data:
 
-* **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-* **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
-* **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
+- **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
+- **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
+- **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
+- **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
@@ -172,11 +166,11 @@ FOR commitment period:
 
 Validation for All-Upfront payment option:
 
-* Annual commitment: &dollar;358,000.00
-* Hours in term: 24
-* Hourly amortization: &dollar;358,000.00 / 24 = &dollar;14,916.67/hour
-* Daily amortization (365 days): &dollar;358,000.00 / 365 = &dollar;980.82/day
-* Sum(Usage EffectiveCost): &dollar;980.88
+- Annual commitment: &dollar;358,000.00
+- Hours in term: 24
+- Hourly amortization: &dollar;358,000.00 / 24 = &dollar;14,916.67/hour
+- Daily amortization (365 days): &dollar;358,000.00 / 365 = &dollar;980.82/day
+- Sum(Usage EffectiveCost): &dollar;980.88
 
 **Check:** &dollar;980.88 should approach &dollar;358,000.00 over the full term.
 
