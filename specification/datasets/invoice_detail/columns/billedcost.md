@@ -37,8 +37,6 @@ Billed Cost
 
 ## Description
 
-TODO: Apply the results of the work from PR #1678.
-
 Cost of a *charge* as invoiced by the *invoice issuer* in a given *billing period*.
 
 ## Content constraints
