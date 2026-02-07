@@ -47,6 +47,16 @@ These three quantity columns serve different purposes and must be understood in 
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a $24.20/hour commitment, this value is $24.20.
 
+not a count of resources. For a $24.20/hour commitment, this value is $24.20.
+
+**For usage-based commitments:** CommitmentDiscountQuantity represents the quantity of resources
+(e.g., 1 instance hour).
+The following key relationships apply between quantity columns:
+
+1. **Used Rows:** All three quantities are typically equal (1) because one hour of usage consumes one pricing unit and applies one commitment unit.
+2. **Unused Rows:** `PricingQuantity=1` and `CommitmentDiscountQuantity=1` but `ConsumedQuantity=null` because no resource was actually consumed (the commitment capacity is wasted).
+3. **On-Demand Rows:** `PricingQuantity=1` and `ConsumedQuantity=1` but `CommitmentDiscountQuantity=null` because no commitment applies.
+
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
 | Column                  | Purpose                    | Commitment-Covered | On-Demand      |
@@ -166,7 +176,14 @@ FOR commitment period:
 
 ### Validation for This Scenario
 
-Validation for All-Upfront payment option:
+**For this 24-hour sample:**
+* Annual commitment: $628,000.00
+* Daily amortization (365 days): $628,000.00 / 365 = $1,720.55/day
+* Sum(Usage EffectiveCost) for 24 hours: $1,720.56
+
+**Validation:** The daily EffectiveCost sum ($1,720.56) matches the expected daily amortization ($1,720.55) within rounding tolerance ($0.01).
+
+**Full-Term Check:** Over the complete 365-day commitment term, the sum of all EffectiveCost for Used and Unused rows MUST equal $628,000.00 (the total BilledCost of the Purchase row).
 
 - Annual commitment: &dollar;628,000.00
 - Hours in term: 24
