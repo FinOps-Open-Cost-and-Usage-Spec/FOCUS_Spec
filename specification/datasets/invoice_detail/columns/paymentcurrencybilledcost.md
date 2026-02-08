@@ -32,7 +32,7 @@ In this scenario, the invoice issuer performs currency conversion at the individ
 
 ### Example 2: Divergent Grain
 
-In this scenario, the invoice issuer tracks usage in the billing currency at a granular level but represents that cost in the payment currency as a separate aggregate record. 
+In this scenario, the invoice issuer tracks usage in the billing currency at a granular level but represents that cost in the payment currency as a separate aggregate record.
 
 * **Billing Currency:** USD
 * **Payment Currency:** EUR
