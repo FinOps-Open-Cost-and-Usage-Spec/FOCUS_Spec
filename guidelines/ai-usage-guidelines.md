@@ -6,6 +6,7 @@ This document defines the FOCUS Working Group's policy for using AI tools in spe
 
 AI tools may be used to assist with FOCUS contributions. AI-generated content is permitted and follows the same intellectual property, licensing, and review standards as human-authored content.
 
+The use of AI in specification development is still evolving, and this is therefore a living document that will shift as AI usage patterns mature.
 ## Usage Modes
 
 AI tools (such as GitHub Copilot, Claude Code, Cursor, and similar coding assistants) are typically used in two modes:
