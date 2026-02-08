@@ -15,7 +15,8 @@
 2. Search spec: `rg "<keywords>" specification/ supporting_content/`
 3. Identify change type and files needed (see File Matrix below)
 4. Read 1-2 similar implementations as patterns
-5. Synthesize findings into `research.md` (include key issue requirements)
+5. Think about conflicts, risks, gaps, dependencies, etc. this issue has with the existing specification (cascading impacts) or with issues actively being worked.
+6. Synthesize findings into `research.md` (include key issue requirements)```
 6. **CHECKPOINT:** Ask user to review before planning
 
 ### Phase 3: Plan
