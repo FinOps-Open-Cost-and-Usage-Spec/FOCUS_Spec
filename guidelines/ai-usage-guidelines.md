@@ -30,7 +30,7 @@ AI tools (e.g., GitHub Copilot, Claude Code, Cursor, and similar coding assistan
 
 AI-assisted contributions follow the same review process as human-authored contributions:
 
-1. **Human Self-Review**: The CLA-covered contributor MUST thoroughly review and validate all AI-generated content before requesting peer review.
+1. **Human Self-Review**: The CLA-covered contributor MUST thoroughly review and validate all AI-generated content before requesting peer review. When possible, the responsible human SHOULD provide an approving review as sign-off.
 2. **Technical Validation**: The relevant Task Force MUST review the contribution for technical accuracy and schema compliance.
 3. **Strategic Alignment**: WG Members MUST review the contribution to ensure it aligns with broader community goals and the FOCUS roadmap.
 4. **Standard Approval**: All contributions MUST follow the established workflow per [Development Processes](development-processes.md).
