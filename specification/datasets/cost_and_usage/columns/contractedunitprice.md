@@ -6,7 +6,6 @@ The Contracted Unit Price represents the agreed-upon unit price for a single [Pr
 
 ContractedUnitPrice adheres to the following requirements:
 
-* ContractedUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports negotiated pricing concepts.
 * ContractedUnitPrice adheres to the following additional requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
@@ -39,14 +38,15 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 
 ## Content Constraints
 
-| Constraint      | Value                                |
-|:----------------|:-------------------------------------|
-| Column type     | Metric                               |
-| Feature level   | Conditional                          |
-| Allows nulls    | True                                 |
-| Data type       | Decimal                              |
-| Value format    | [Numeric Format](#attributes.numericformat)     |
-| Number range    | Any valid non-negative decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid non-negative decimal value                 |
 
 ## Introduced (version)
 
