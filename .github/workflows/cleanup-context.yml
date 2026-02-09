@@ -6,7 +6,7 @@ on:
 
 jobs:
   check-working-folders:
-    name: Working folder cleanup
+    name: Delete AI working folder before merge
     runs-on: ubuntu-latest
 
     steps:
@@ -48,16 +48,19 @@ jobs:
       - name: Report status
         run: |
           if [ "${{ steps.check.outputs.found }}" == "true" ]; then
-            echo "::notice title=Cleanup needed before merge::Working folder found: ${{ steps.check.outputs.folder }}. After final approval, delete this folder before merging."
+            echo "::error title=Delete AI working folder before merge::Found: ${{ steps.check.outputs.folder }}"
             echo ""
-            echo "📋 Working folder for this PR:"
-            echo "   ${{ steps.check.outputs.folder }}"
+            echo "❌ BLOCKING: AI working folder must be deleted before merging"
             echo ""
-            echo "After final approval, before merging:"
-            echo "   Delete the folder: ${{ steps.check.outputs.folder }}"
+            echo "   Found: ${{ steps.check.outputs.folder }}"
             echo ""
-            echo "This check will pass once the folder is removed."
+            echo "   To resolve:"
+            echo "   1. Wait for final PR approval"
+            echo "   2. Delete the folder: git rm -r ${{ steps.check.outputs.folder }}"
+            echo "   3. Commit and push: git commit -m 'Delete AI working folder' && git push"
+            echo ""
+            echo "   See: guidelines/ai-usage-guidelines.md#working-file-lifecycle"
             exit 1
           else
-            echo "✅ No working folder found for this PR - ready for merge"
+            echo "✅ No AI working folder found - ready for merge"
           fi
