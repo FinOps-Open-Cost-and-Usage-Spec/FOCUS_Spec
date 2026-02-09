@@ -197,7 +197,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 | Requirement Type | Requirement Group                                      | When Required?                               | Example                                                    |
 |------------------|--------------------------------------------------------|----------------------------------------------|------------------------------------------------------------|
 | Technical        | Dataset Presence                                       | Always                                       | {DatasetId} MUST be present when {Condition}.              |
-| Technical        | Column Presence in Dataset            | {DatasetId} MUST include {ColumnId} | N/A                                                        |
+| Technical        | Column Presence in Dataset                             | {DatasetId} MUST include {ColumnId} | N/A                                                        |
 | Technical        | Technical Attributes Conformance                       | Always or when applicable                    | {DatasetId} MUST conform to ColumnHandling requirements.   |
 | Business         | Business/Contextual Attributes Conformance             | When applicable                              | {DatasetId} MUST conform to DiscountHandling requirements. |
 | Business         | Other Business/Contextual Requirements (FOR FUTURE USE)| For future use                               | N/A                                                        |
@@ -763,12 +763,68 @@ The following table lists commonly used intended subjects.
 
 ***Note:** This list is non-exhaustive and will be extended over time.*
 
-> TODO: Add tabular overview
+| Subject (Core) | Distinct Subjects with Qualifiers | Description/Note |
+|----------------|-----------------------------------|------------------|
+| Attribute      | <Attribute ID> | Specific Attribute identified by Dataset ID |
+| FOCUS Dataset  | FOCUS dataset | |
+| FOCUS Dataset  | <FOCUS Dataset ID> | Specific FOCUS dataset identified by Dataset ID |
+| Native dataset | Native dataset | |
+| Native column  | Native column | |
+| Column         | FOCUS column | Column defined by FOCUS and included in a FOCUS dataset |
+| Column         | Custom column | Column not defined by FOCUS and included in a FOCUS dataset |
+| Column         | FOCUS/Custom column representing national currency | |
+| Column         | FOCUS/Custom column representing virtual currency | |
+| Column         | FOCUS/Custom column representing an identifier | |
+| Column         | FOCUS/Custom column representing a name | |
+| Column         | FOCUS/Custom column representing a product offering that incurred the charge | |
+| Column         | FOCUS column with `Category` suffix | |
+| Column         | FOCUS/Custom column containing numeric values | |
+| Column         | FOCUS/Custom column containing date/time values | |
+| Column         | FOCUS/Custom column containing string values | |
+| Column         | FOCUS/Custom column containing immutable string values | |
+| Column         | FOCUS/Custom column containing not-nullable string values | |
+| Column         | FOCUS/Custom column representing charges to mutable entities?? | |
+| Column         | FOCUS/Custom column containing values in JsonObjectFormat format | |
+| Column         | FOCUS/Custom column containing values in key-value pair format | |
+| Column         | <FOCUS Column ID> | Specific column included in a FOCUS dataset, identified by Column ID |
+| Object/Element | Object/Element in array in FOCUS/Custom column containing JsonObjectFormat values | |
+| Object         | Object in FOCUS/Custom column containing JsonObjectFormat values | |
+| Key            | Key in Object in FOCUS/Custom column containing JsonObjectFormat values | |
+| Key value      | Key value in Object in FOCUS/Custom column containing JsonObjectFormat values | |
+| Key            | Key in FOCUS FOCUS/Custom column containing values in key-value pair format | |
+| Key value      | Key value in FOCUS/Custom column containing values in key-value pair format | |
 
 ### 4. Grouping of Attribute Requirements
 
-> TODO:
+Grouping and ordering of Attribute requirements ensure clarity, consistency, and maintainability across the specification, making related requirements easy to identify and follow.
+
+Attributes may include requirements that apply to one or more intended normative subjects. To make the applicability of each Attribute, and each of its individual requirements, as transparent as possible, intended normative subjects serve as the basis for grouping. This ensures that readers can readily determine whether a requirement applies to a dataset, a subset of datasets, FOCUS columns, or custom columns.
+
+This structured grouping improves clarity, consistency, and maintainability across the specification by making related requirements easier to locate and understand, without introducing any additional normative meaning.
+
+0. **Structural Attribute Anchor Requirement:** Introduces the scope of the Attribute and provides a stable parsing entry point; it does not introduce a verifiable constraint.
+1. **FOCUS Dataset-level Attribute Requirements:**
+   1. **Global FOCUS Dataset Requirements:** Applicable to all FOCUS datasets that declare conformance to the Attribute, regardless of their structure, specific role or context.
+   2. **Qualified FOCUS Dataset Requirements:** Applicable to a subset of FOCUS datasets that declare conformance to the Attribute and are identified through a qualifier.
+   3. **Specific FOCUS Dataset Requirements:** Applicable to a specific FOCUS dataset, identified explicitly by Dataset ID.
+2. **FOCUS Column-level Attribute Requirements:** Applicable to FOCUS columns that declare conformance to the Attribute.
+   1. **Global FOCUS Column Requirements:** Applicable to all FOCUS columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
+   2. **Qualified FOCUS Column Requirements:** Applicable to a subset of FOCUS columns that declare conformance to the Attribute and are identified through a qualifier
+   3. **Specific FOCUS Column Requirements:** Applicable to a specific FOCUS column, identified explicitly by Column ID.
+3. **Custom Column Attribute Requirements:**
+   1. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
+   2. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
+4. **Sub-element Attribute Requirements:** Applicable to structural sub-elements within Columns that declare conformance to the Attribute.
+   1. **Elements (Objects) in Columns containing JsonObjectFormat values**
+   2. **Keys in Objects in Columns containing JsonObjectFormat values**
+   3. **Key values in Objects in Columns containing JsonObjectFormat values**
+   4. **Keys in Columns containing Key-Value pair format values**
+   5. **Key values in Columns containing Key-Value pair format values**
 
 ### 5. Ordering of Attribute Requirements within Groups
+
+> TODO:
+
+### 6. Attribute Normative Requirements Examples
 
 > TODO:
