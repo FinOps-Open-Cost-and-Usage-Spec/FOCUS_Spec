@@ -280,7 +280,7 @@ While draft status generally discourages async feedback, authors MAY explicitly 
 
 #### Feedback Expectations
 
-- **Draft PRs:** Reviewers should not expect immediate responses to feedback. Authors may defer addressing comments until the PR moves to open status.
+- **Draft PRs:** Reviewers should not expect immediate responses to feedback. Authors may defer and/or resolve comments until the PR moves to open status.
 - **Open PRs:** Authors are expected to be responsive to reviewer feedback in a timely manner.
 
 When in doubt, respect the draft status and wait for the author to mark the PR as ready for review, or communicate directly with the author to ask if feedback would be helpful.
