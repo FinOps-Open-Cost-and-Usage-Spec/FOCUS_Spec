@@ -102,15 +102,29 @@ This usage is a structural exception only and MUST NOT be interpreted as implyin
 
 The normative subject MUST be a schema-level entity, such as:
 
-* FOCUS Dataset
-  *Note: used as the canonical normative subject for dataset-level requirements, including cases where the constraint applies to a dataset specification, a dataset instance, or a dataset artifact; the intended level is inferred from context.*
-* Column
-* Column with a qualifier (e.g. column representing numeric values)
-* Schema-defined object or property
+* **FOCUS Dataset**, whereby use of:  
+  * `FOCUS dataset` keyword represents any FOCUS dataset  
+  * `FOCUS dataset` keyword with a qualifier represents a qualified subset of FOCUS datasets  
+  * A single FOCUS dataset explicitly identified by `<FOCUS Dataset ID>` (e.g., `CostAndUsage`)
+
+* **FOCUS Column**, whereby use of:  
+  * `FOCUS column` keyword represents any FOCUS column  
+  * `FOCUS column` keyword with a qualifier represents a qualified subset of FOCUS columns (e.g., `FOCUS column containing numeric values`)  
+  * A single FOCUS column explicitly identified by `<FOCUS Column ID>` (e.g., `BilledCost`)
+
+* **Custom Column**, whereby use of:  
+  * `Custom column` keyword represents any custom column  
+  * `Custom column` keyword with a qualifier represents a qualified subset of custom columns (e.g., `Custom column containing numeric values`)
+
+* **Structural sub-elements within Columns** (objects, keys, key values):  
+  *Note: Do not use `object`, `key`, or `value` keywords alone. Always reference them in context, e.g.:*  
+  * `Object in Columns containing JsonObjectFormat values`  
+  * `Key in Object in FOCUS/Custom column containing JsonObjectFormat values`  
+  * `Key value in Object in FOCUS/Custom column containing key-value pairs`
 
 The subject SHOULD be explicit and unambiguous.
 
-A structural anchor requirement MAY use the ID of the enclosing schema construct as its subject, even if that construct is not otherwise an allowed normative subject. This exception applies only to structural anchor requirements.
+**Exception:** A structural anchor requirement MAY use the ID of the enclosing schema construct as its subject, even if that construct is not otherwise an allowed normative subject (e.g., `<FOCUS Attribute  ID>`). This exception applies only to structural anchor requirements.
 
 #### 3.2 Disallowed Subjects
 
