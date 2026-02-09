@@ -44,7 +44,9 @@ AI-generated content does not bypass any approval workflow or receive different 
 * Per the [Linux Foundation Generative AI Policy](https://www.linuxfoundation.org/legal/generative-ai), the contributor MUST ensure that the terms and conditions of the AI tool do not place any contractual restrictions on its output that are inconsistent with FOCUS' [open source software license](https://creativecommons.org/licenses/by/4.0/) and [intellectual property policies](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/operating_procedures.md#514-consistency--ipr-reviews).
 * The contributor MUST assume full responsibility for ensuring the AI-generated content adheres to all project standards and legal requirements.
 
-**Autonomous mode**: AI agents that create PRs directly MUST be onboarded through the Linux Foundation CLA process. To onboard an AI agent, submit a [Maintenance Task](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/new?template=maintenance.yml) issue.
+**Autonomous mode**: 
+* AI agents that create PRs directly MUST be onboarded through the Linux Foundation CLA process. 
+* To onboard an AI agent, a contributor MUST submit a [Maintenance Task](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/new?template=maintenance.yml) issue.
 
 ## Attribution
 
