@@ -270,7 +270,7 @@ Draft status signals that the author is still actively working on the pull reque
 
 While draft status generally discourages async feedback, authors MAY explicitly invite feedback on specific aspects of a draft PR:
 
-1. **Whitelist/Blacklist Approach:** Authors can leave PR comments indicating which sections are ready for feedback (whitelist) or which sections are not ready (blacklist):
+1. **Allowlist/Denylist Approach:** Authors can leave PR comments indicating which sections are ready for feedback (allowlist) or which sections are not ready (denylist):
    - **More draft than open:** Keep as draft and comment on specific sections ready for feedback
    - **More open than draft:** Mark as open and comment on specific sections not ready for feedback
 
