@@ -42,6 +42,32 @@ style ElementProperty fill:#d4edda,stroke:#666,stroke-width:1px
 
 ## Core Normative Authoring Rules
 
+### Note on FOCUS Dataset, Dataset Instance, and Glossary Alignment
+
+> **Important clarification**
+
+By glossary definition, the following concepts are used:
+
+* **FOCUS Dataset** — the primary dataset concept defined by the FOCUS specification.
+* **Dataset Instance** — represents a concrete instantiation of a **FOCUS Dataset Instance**.
+* **Dataset Artifact** — represents a physical or delivered form of a **FOCUS Dataset Instance Artifact**.
+
+However, by design decision, the specification adopts the following normative conventions:
+
+* **FOCUS Dataset is used as the canonical normative subject** for dataset-level requirements.
+* Normative requirements are intentionally written against **FOCUS Dataset**, even when the constraint applies to:
+  * a dataset specification,
+  * a dataset instance, or
+  * a dataset instance artifact.
+* The intended level of application (specification vs. instance vs. artifact) is inferred from context rather than encoded in the normative subject.
+
+This choice is intentional and overrides interpretations based solely on abstraction level.
+
+> To support this approach and avoid ambiguity:
+>
+> * The **FOCUS Dataset** glossary definition SHOULD be refined so that it is no longer interpreted as purely abstract, but as a normative anchor that may represent the dataset specification and its specific implementations.
+> * Glossary entries for **Dataset Instance** and **Dataset Artifact** SHOULD explicitly reflect that they represent **FOCUS Dataset Instance** and **FOCUS Dataset Instance Artifact**, respectively (important with the planned **Native Dataset** entry in version 1.4).
+
 ### 1. Normative Requirement Structure
 
 Each normative requirement MUST:
@@ -65,7 +91,7 @@ The structural anchor requirement:
 
 The canonical form of a structural anchor requirement is:
 
-> `<Entity> MUST adhere to the following normative requirements:`
+> `<Entity> MUST adhere to the following requirements:`
 
 For **Attribute Requirements** sections, the Attribute ID MAY be used as the subject of the structural anchor requirement.
 This usage is a structural exception only and MUST NOT be interpreted as implying that Attributes are normative subjects or independently enforceable schema entities.
@@ -694,32 +720,55 @@ Attributes are **not normative subjects**, **except** that the Attribute ID is u
 
 They define reusable sets of normative constraints applied to Datasets, Columns, or ElementProperties that declare conformance to the Attribute.
 
-As a result, normative requirements defined for an Attribute are enforced on the conforming schema-level entities, not on the Attribute itself.
+### 1. Role of Attributes in the Specification
 
-### Note on FOCUS Dataset, Dataset Instance, and Glossary Alignment
+Attributes serve as:
 
-> **Important clarification**
+* reusable rule sets that avoid duplication across Datasets and Columns,
+* a mechanism for expressing cross-cutting technical or business constraints,
+* a conformance target for schema-level entities.
 
-By glossary definition, the following concepts are used:
+Normative requirements defined in an Attribute section are enforced on the conforming schema-level entity, not on the Attribute itself.
 
-* **FOCUS Dataset** — the primary dataset concept defined by the FOCUS specification.
-* **Dataset Instance** — represents a concrete instantiation of a **FOCUS Dataset Instance**.
-* **Dataset Artifact** — represents a physical or delivered form of a **FOCUS Dataset Instance Artifact**.
+### 2. Structural Anchor Requirement for Attributes
 
-However, by design decision, the specification adopts the following normative conventions:
+Each Attribute Requirements section MUST begin with a structural anchor requirement.
 
-* **FOCUS Dataset is used as the canonical normative subject** for dataset-level requirements.
-* Normative requirements are intentionally written against **FOCUS Dataset**, even when the constraint applies to:
-  * a dataset specification,
-  * a dataset instance, or
-  * a dataset instance artifact.
-* The intended level of application (specification vs. instance vs. artifact) is inferred from context rather than encoded in the normative subject.
+The structural anchor requirement:
 
-This choice is intentional and overrides interpretations based solely on abstraction level.
+* uses the Attribute ID as the subject,
+* introduces the scope of the requirements,
+* is non-verifiable and non-enforceable,
+* exists solely for structural consistency and automated parsing.
 
-> To support this approach and avoid ambiguity:
->
-> * The **FOCUS Dataset** glossary definition SHOULD be refined so that it is no longer interpreted as purely abstract, but as a normative anchor that may represent the dataset specification and its specific implementations.
-> * Glossary entries for **Dataset Instance** and **Dataset Artifact** SHOULD explicitly reflect that they represent **FOCUS Dataset Instance** and **FOCUS Dataset Instance Artifact**, respectively (important with the planned **Native Dataset** entry in version 1.4).
+Canonical form:
 
-Etc.
+``` markdown
+<AttributeId> MUST adhere to the following requirements:
+```
+
+This is the only case in which an Attribute ID may appear as a normative subject.
+
+### 3. Normative Subjects in Attribute Requirements
+
+All enforceable normative requirements within an Attribute section MUST target schema-level entities that conform to the Attribute.
+
+The Attribute itself MUST NOT be treated as an enforceable subject beyond the structural anchor requirement.
+
+Each Attribute implicitly assumes one or more intended normative subjects.
+
+These intended subjects define which kinds of schema-level entities the Attribute’s requirements are written for.
+
+The following table lists commonly used intended subjects.
+
+***Note:** This list is non-exhaustive and will be extended over time.*
+
+> TODO: Add tabular overview
+
+### 4. Grouping of Attribute Requirements
+
+> TODO:
+
+### 5. Ordering of Attribute Requirements within Groups
+
+> TODO:
