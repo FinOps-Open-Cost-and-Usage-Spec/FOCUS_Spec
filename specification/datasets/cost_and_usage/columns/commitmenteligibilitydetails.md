@@ -1,6 +1,6 @@
 # Commitment Eligibility Details
 
-Commitment Eligibility Details presents all types of usage based [*commitment*](#glossary:commitment) programs available for a specific usage line item. This column allows practitioners to distinguish between usage that is or in the past has been eligible for a [*commitment discount*](#glossary:commitment-discount) and usage that lacks such an option, enabling the calculation of true coverage.
+Commitment Eligibility Details presents all types of usage based [*commitment*](#glossary:commitment) programs available for a specific usage line item. This column allows practitioners to which [*commitment discount*](#glossary:commitment-discount) program are available for a usage line item, enabling the calculation of true coverage and uncovered spend.
 
 ## Requirements
 
