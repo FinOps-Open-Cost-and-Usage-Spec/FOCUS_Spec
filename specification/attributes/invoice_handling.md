@@ -18,15 +18,11 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 
 ## Requirements
 
-* All costs that appear on any invoice issued to a [*BillingAccountId*](#datasets.costandusage.billingaccountid) MUST be included in the *FOCUS dataset*.
-* If an invoice-level *charge* appears on a customer invoice but cannot be expressed using existing FOCUS columns, data generators MUST include provider-defined columns (e.g., x_ChargeSubType) to capture the non-FOCUS-defined details needed to support invoice *charges* reconciliation using the *FOCUS dataset*.
+InvoiceHandling MUST adhere to the following requirements:
 
-## Exceptions
-
-* Informational line items that have zero monetary impact and are included solely for transparency MAY be excluded. Examples include:
-  * Tax exemption notifications
-  * SLA credit details when the credit is already applied to the charged amount
-* If such informational items are excluded, data generators MUST document this in their FOCUS implementation guide and ensure the sum of included charges still equals the invoice total.
+* CostAndUsage *FOCUS dataset* MUST account for all monetary line items included on any invoice issued to a BillingAccountId.
+* CostAndUsage *FOCUS dataset* MAY omit informational line items with zero monetary impact included on invoice only for transparency (e.g., tax exemption notifications, SLA credit details when the credit is already applied to the charged amount).
+* CostAndUsage *FOCUS dataset* MUST include Custom columns (e.g., x_ChargeSubType) needed to support invoice reconciliation when FOCUS columns are not sufficient.
 
 ## Introduced (version)
 
