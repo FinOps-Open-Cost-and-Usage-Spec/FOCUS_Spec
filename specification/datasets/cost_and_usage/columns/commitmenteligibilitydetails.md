@@ -17,7 +17,8 @@ CommitmentEligibilityDetails adheres to the following requirements:
 * The values in CommitmentEligibilityDetails MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for the provider.
 * CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
 * CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment discount was actually applied to the line item (i.e., even if CommitmentDiscountType is present, this column must still list the eligible programs).
-* CommitmentEligibilityDetails MUST reflect eligibility based on the inherent nature of the Service, Category, and SKU (e.g., "Standard" vs "Spot"). It MUST NOT be influenced by transient account configurations or quotas that might temporarily prevent a purchase.
+* CommitmentEligibilityDetails MUST reflect eligibility based on the inherent nature of the Service, Category, and SKU (e.g., "Standard" vs "Spot"). 
+* CommitmentEligibilityDetails SHOULD reflect inherent eligibility, but MAY include provider-specific constraints that affect purchase ability.
 * CommitmentEligibilityDetails MUST exclude custom, negotiated, or private pricing agreements (e.g., Private Pricing Addenda or Enterprise Agreements). It refers strictly to publicly available commitment constructs.
 
 ### Object Schema Requirements
