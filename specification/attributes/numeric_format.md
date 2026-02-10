@@ -18,13 +18,18 @@ Rules and formatting requirements for numeric columns appearing in a [*FOCUS dat
 
 ## Requirements
 
-* Columns with a Numeric value format MUST contain a single numeric value.
-* Numeric values MUST be expressed as an integer value, a decimal value, or a value expressed in scientific notation. Fractional notation MUST NOT be used.
-* Numeric values expressed using scientific notation MUST be expressed using E notation "mEn" with a real number m and an integer n indicating a value of "m x 10^n".   The sign of the exponent MUST only be expressed as part of the exponent value if n is negative.
-* Numeric values MUST NOT be expressed with mathematical symbols, functions, or operators.
-* Numeric values MUST NOT contain qualifiers or additional characters (e.g., currency symbols, units of measure, etc.).
-* Numeric values MUST NOT contain commas or punctuation marks except for a single decimal point (".") if required to express a decimal value.
-* Numeric values MUST NOT include a character to represent a sign for a positive value. A negative sign (-) MUST indicate a negative value.
+NumericValueFormat MUST adhere to the following requirements:
+
+* FOCUS column containing numeric values MUST contain a single numeric value.
+* FOCUS column containing numeric values MUST have values of type integer, decimal, or scientific notation.
+* FOCUS column containing numeric values expressed in scientific notation MUST use E notation "mEn", where m is a real number and n is an integer exponent.
+* FOCUS column containing numeric values expressed in scientific notation MUST use a negative sign (-) to indicate a negative exponent.
+* FOCUS column containing numeric values expressed in scientific notation MUST NOT include a positive sign (+) for a positive exponent.
+* FOCUS column containing numeric values MUST NOT use mathematical symbols, functions, or operators.
+* FOCUS column containing numeric values MUST NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
+* FOCUS column containing numeric values MUST NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
+* FOCUS column containing numeric values MUST use a negative sign (-) to indicate a negative value.
+* FOCUS column containing numeric values MUST NOT include a positive sign (+) for a positive value.
 * Columns with a Numeric value format MUST present one of the following values as the "Data type" in the column definition.
   * Allowed values:
 
