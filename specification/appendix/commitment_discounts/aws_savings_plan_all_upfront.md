@@ -7,7 +7,7 @@
 | Category          | Spend-based         |
 | Utilization       | 100%                |
 | Hours Generated   | 24                  |
-| Annual Commitment | &dollar;628,000.00  |
+| Annual Commitment | &dollar;628,000     |
 | Committed Rate    | &dollar;71.69/hour  |
 | On-Demand Rate    | &dollar;107.54/hour |
 | Savings           | 33%                 |
