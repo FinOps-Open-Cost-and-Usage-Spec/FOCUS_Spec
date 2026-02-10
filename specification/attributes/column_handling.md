@@ -29,25 +29,6 @@ Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 
 ## Requirements
 
-### Column Names
-
-> Original
-
-* All columns defined by FOCUS MUST follow the following rules:
-  * Column IDs MUST use [Pascal case](#glossary:pascalcase).
-  * Column IDs MUST NOT use abbreviations.
-  * Column IDs MUST be alphanumeric with no special characters.
-  * Column IDs SHOULD NOT use acronyms.
-  * Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories.
-  * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID.
-  * Column display names MUST be consistent with their Column IDs, with spaces inserted between words (e.g., Column ID "BillingAccountName" and display name "Billing Account Name").
-  * Columns with the `Category` suffix MUST be normalized.
-* <a name="column_handling:custom-column"></a>Custom (e.g., service-provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
-  * Custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
-  * Custom columns SHOULD follow the same rules listed above for FOCUS columns.
-
----
-
 > Alternative:
 
 ColumnHandling MUST adhere to the following requirements:
@@ -62,7 +43,7 @@ ColumnHandling MUST adhere to the following requirements:
   * FOCUS column representing an identifier MUST include the `Id` suffix in the Column ID.
   * FOCUS column representing a name MUST include the `Name` suffix in the Column ID.
   * FOCUS column representing a product offerings that incured the charge MUST include the `Sku` prefix in the Column ID.
-  * FOCUS column MUST use a Display Name consistent with the Column ID, with spaces inserted between words  (e.g., Column ID "BillingAccountName" and Display Name "Billing Account Name").
+  * FOCUS column MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID "BillingAccountName" and Display Name "Billing Account Name").
   * FOCUS column with `Category` suffix MUST be normalized.
 * Custom column (e.g., service-provider-defined column included in FOCUS dataset) MUST adhere to the following requirements:
   * Custom column MUST include the `x_` prefix in the Column ID to identify it as an external, custom column and to distinguish it from FOCUS columns to avoid conflicts in future releases.
@@ -79,6 +60,25 @@ ColumnHandling MUST adhere to the following requirements:
   * FOCUS dataset SHOULD sort FOCUS columns alphabetically by their Column ID within the FOCUS columns group.
   * FOCUS dataset SHOULD sort Custom columns alphabetically by their Column ID within the Custom columns group.
   * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns.
+
+## Requirements
+
+> Original:
+
+### Column Names
+
+* All columns defined by FOCUS MUST follow the following rules:
+  * Column IDs MUST use [Pascal case](#glossary:pascalcase).
+  * Column IDs MUST NOT use abbreviations.
+  * Column IDs MUST be alphanumeric with no special characters.
+  * Column IDs SHOULD NOT use acronyms.
+  * Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories.
+  * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID.
+  * Column display names MUST be consistent with their Column IDs, with spaces inserted between words (e.g., Column ID "BillingAccountName" and display name "Billing Account Name").
+  * Columns with the `Category` suffix MUST be normalized.
+* <a name="column_handling:custom-column"></a>Custom (e.g., service-provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
+  * Custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
+  * Custom columns SHOULD follow the same rules listed above for FOCUS columns.
 
 ### Column Order
 
