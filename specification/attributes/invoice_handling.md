@@ -14,14 +14,14 @@ This enables FinOps practitioners to perform [*invoice reconciliation*](#glossar
 
 Before an [*invoice is issued*](#glossary:issued-invoice) ([Invoice Status](#datasets.invoicedetail.invoicestatus) within Invoice Detail is set to "Closed"), the [data generator](#metadata.datagenerator) must perform a reconciliation to ensure that the aggregated cost and usage information presented on the invoice matches the aggregated data in FOCUS datasets.
 
-At the conclusion of this process, the total monetary value presented on an invoice must match the total monetary value presented in the [Billed Cost](#datasets.costandusage.billedcost) metric of FOCUS datasets. Further, the detail presented on an invoice must match the values of Billed Cost when aggregated by the related combination of the following FOCUS dataset dimensions:
+At the conclusion of this process, the total monetary value presented on an invoice must match the total monetary value presented in the [Billed Cost](#datasets.costandusage.billedcost) metric of FOCUS datasets for a given Invoice ID. Further, the detail presented on an invoice must match the values of Billed Cost when aggregated by the related combination of the following Invoice Detail FOCUS dataset dimensions:
 
-* [Billing Account ID](#datasets.costandusage.billingaccountid)
-* [Billing Currency](#datasets.costandusage.billingcurrency)
-* [Billing Period Start](#datasets.costandusage.billingperiodstart)
-* [Billing Period End](#datasets.costandusage.billingperiodend)
-* [Invoice ID](#datasets.costandusage.invoiceid)
-* [Invoice Issuer Name](#datasets.costandusage.invoiceissuername)
+* [Billing Account ID](#datasets.invoicedetail.billingaccountid)
+* [Billing Currency](#datasets.invoicedetail.billingcurrency)
+* [Billing Period Start](#datasets.invoicedetail.billingperiodstart)
+* [Billing Period End](#datasets.invoicedetail.billingperiodend)
+* [Invoice ID](#datasets.invoicedetail.invoiceid)
+* [Invoice Issuer Name](#datasets.invoicedetail.invoiceissuername)
 
 Depending on the invoice issuer, reconciliation may also extend to additional metrics and dimensions.
 
@@ -57,7 +57,7 @@ Defines how a *FOCUS dataset* should reflect details for the information present
 * CostAndUsage FOCUS dataset MUST account for all monetary line items included on any invoice issued to a BillingAccountId.
 * CostAndUsage FOCUS dataset MAY omit informational line items with zero monetary impact included on invoice only for transparency (e.g., tax exemption notifications, SLA credit details when the credit is already applied to the charged amount).
 * CostAndUsage FOCUS dataset MUST include Custom columns (e.g., x_ChargeSubType) needed to support invoice reconciliation when FOCUS columns are not sufficient.
-* The sum of InvoiceDetail.BilledCost aggregated by InvoiceDetail.BillingAccountId, InvoiceDetail.BillingCurrency, InvoiceDetail.InvoiceId, InvoiceDetail.InvoiceIssuerName, InvoiceDetail.BillingPeriodStart, and InvoiceDetail.BillingPeriodEnd MUST match the sum of CostAndUsage.BilledCost aggregated by CostAndUsage.BillingAccountId, CostAndUsage.BillingCurrency, CostAndUsage.InvoiceId, CostAndUsage.InvoiceIssuerName, CostAndUsage.BillingPeriodStart, and CostAndUsage.BillingPeriodEnd.
+* The sum of InvoiceDetail.BilledCost for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) MUST match the sum of CostAndUsage.BilledCost for a given [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid).
 * CostAndUsage.BillingPeriodStart MUST match InvoiceDetail.BillingPeriodStart for a given InvoiceId (CostAndUsage.InvoiceId / InvoiceDetail.InvoiceId).
 * CostAndUsage.BillingPeriodEnd MUST match InvoiceDetail.BillingPeriodEnd for a given InvoiceId (CostAndUsage.InvoiceId / InvoiceDetail.InvoiceId).
 
