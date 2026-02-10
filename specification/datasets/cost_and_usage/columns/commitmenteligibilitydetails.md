@@ -16,6 +16,9 @@ CommitmentEligibilityDetails adheres to the following requirements:
 * CommitmentEligibilityDetails MUST correspond to defined [commitment](#glossary:commitment) program types (e.g., "SavingsPlan", "ReservedInstance", "CUD") or vendor-specific pricing tiers (e.g., "MonthlyCommitment").
 * The values in CommitmentEligibilityDetails MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for the provider.
 * CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
+* CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment discount was actually applied to the line item (i.e., even if CommitmentDiscountType is present, this column must still list the eligible programs).
+* CommitmentEligibilityDetails MUST reflect eligibility based on the inherent nature of the Service, Category, and SKU (e.g., "Standard" vs "Spot"). It MUST NOT be influenced by transient account configurations or quotas that might temporarily prevent a purchase.
+* CommitmentEligibilityDetails MUST exclude custom, negotiated, or private pricing agreements (e.g., Private Pricing Addenda or Enterprise Agreements). It refers strictly to publicly available commitment constructs.
 
 ### Object Schema Requirements
 
@@ -25,7 +28,7 @@ When CommitmentEligibilityDetails is not null, the JsonObjectFormat for Commitme
 
 * CommitmentEligibilityDetails MUST have a top-level key "EligibleCommitmentTypes" which contains an array.
 * The "EligibleCommitmentTypes" array MUST contain one or more strings.
-* Each string in the "EligibleCommitmentTypes" array MUST correspond to a valid commitment discount program type supported by the provider (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount").
+* Each string in the "EligibleCommitmentTypes" array MUST correspond to a valid commitment discount program type supported by the provider (e.g., "SavingsPlan", "ReservedInstance", "ResourceBasedCommittedUseDiscount").
 * Where possible, values in "EligibleCommitmentTypes" SHOULD correspond to values used in the [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) column for consistency.
 * CommitmentEligibilityDetails root object MAY contain additional data generator-defined keys (e.g., vendor-specific eligibility constraints), provided they do not conflict with FOCUS-defined keys.
 
@@ -39,7 +42,7 @@ Array contains one or more strings, representing the specific commitment program
 
 | Value | ValueType | Required | Description |
 | ----- | ---- | ---------- | ----------- |
-| [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) | [String](#attributes.stringhandling) | True | The specific type of commitment discount (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount") or vendor-specific pricing model (e.g., "MonthlyCommitment") available for this usage. |
+| [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) | [String](#attributes.stringhandling) | True | The specific type of commitment discount (e.g., "SavingsPlan", "ReservedInstance", "ResourceBasedCommittedUseDiscount") or vendor-specific pricing model (e.g., "MonthlyCommitment") available for this usage. |
 
 ### Example
 
@@ -47,7 +50,9 @@ Array contains one or more strings, representing the specific commitment program
 {
   "EligibleCommitmentTypes": [
     "SavingsPlan",
-    "ReservedInstance"
+    "ReservedInstance,
+    "ComputeFlexibleCommittedUseDiscount",
+    "UniversalCredits"
   ]
 }
 ```
