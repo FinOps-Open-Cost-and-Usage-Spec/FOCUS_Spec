@@ -6,7 +6,6 @@ The Contract Commitment Unit represents a service-provider-specified measurement
 
 ContractCommitmentUnit adheres to the following requirements:
 
-* ContractCommitmentUnit MUST be present in a Contract Commitment [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractCommitmentUnit MUST be of type String.
 * ContractCommitmentUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
@@ -28,13 +27,14 @@ A service-provider-specified measurement unit for the amount declared in Contrac
 
 ## Content Constraints
 
-| Constraint    | Value                              |
-| :------------ | :--------------------------------- |
-| Column type   | Dimension                          |
-| Feature level | Mandatory                          |
-| Allows nulls  | True                               |
-| Data type     | String                             |
-| Value format  | [Unit Format](#attributes.unitformat) recommended |
+| Constraint      | Value                                                |
+|:----------------|:-----------------------------------------------------|
+| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | [Unit Format](#attributes.unitformat) recommended    |
 
 ## Introduced (version)
 
