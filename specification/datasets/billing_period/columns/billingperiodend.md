@@ -1,6 +1,6 @@
 # Billing Period End
 
-Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*billing period*](#glossary:billing-period). For example, a time period where [Billing Period Start](#datasets.costandusage.billingperiodstart) is '2024-01-01T00:00:00Z' and Billing Period End is '2024-02-01T00:00:00Z' includes January since Billing Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include February since Billing Period End represents the *exclusive end bound*.
+Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveendbound) of a [*billing period*](#glossary:billing-period). For example, a time period where [Billing Period Start](#datasets.billingperiod.billingperiodstart) is '2024-01-01T00:00:00Z' and Billing Period End is '2024-02-01T00:00:00Z' includes January since Billing Period Start represents the [*inclusive start bound*](#glossary:inclusivestartbound), but does not include February since Billing Period End represents the *exclusive end bound*.
 
 ## Requirements
 

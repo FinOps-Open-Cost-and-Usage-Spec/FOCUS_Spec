@@ -1,6 +1,6 @@
 # Payment Due Date
 
-An Payment Due Date is the date by which the payment for an invoice is expected to be received by the invoice issuer. This date is used by FinOps practitioners and finance teams to manage cash flow, prioritize payments, and avoid late fees or service interruptions.
+A Payment Due Date is the date by which the payment for an invoice is expected to be received by the invoice issuer. This date is used by FinOps practitioners and finance teams to manage cash flow, prioritize payments, and avoid late fees or service interruptions.
 
 ## Requirements
 

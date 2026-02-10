@@ -7,7 +7,7 @@ A Billing Period Status represents the state of the billing period (i.e., open o
 BillingPeriodStatus adheres to the following requirements:
 
 * BillingPeriodStatus MUST be of type String.
-* BillingPeriodStatus MUST not be null.
+* BillingPeriodStatus MUST NOT be null.
 * BillingPeriodStatus MUST be one of the [allowed values](#datasets.billingperiod.billingperiodstatus.allowed-values).
 * BillingPeriodStatus MUST represent the state of the billing period identified by [BillingPeriodStart](#datasets.billingperiod.billingperiodstart) and [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).
 
