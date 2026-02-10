@@ -20,16 +20,28 @@ Rules and formatting requirements for numeric columns appearing in a [*FOCUS dat
 
 NumericValueFormat MUST adhere to the following requirements:
 
-* FOCUS column containing numeric values MUST contain a single numeric value.
-* FOCUS column containing numeric values MUST have values of type integer, decimal, or scientific notation.
-* FOCUS column containing numeric values expressed in scientific notation MUST use E notation "mEn", where m is a real number and n is an integer exponent.
-* FOCUS column containing numeric values expressed in scientific notation MUST use a negative sign (-) to indicate a negative exponent.
-* FOCUS column containing numeric values expressed in scientific notation MUST NOT include a positive sign (+) for a positive exponent.
-* FOCUS column containing numeric values MUST NOT use mathematical symbols, functions, or operators.
-* FOCUS column containing numeric values MUST NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
-* FOCUS column containing numeric values MUST NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
-* FOCUS column containing numeric values MUST use a negative sign (-) to indicate a negative value.
-* FOCUS column containing numeric values MUST NOT include a positive sign (+) for a positive value.
+* FOCUS column containing numeric values MUST adhere to the following requirements:
+  * FOCUS column containing numeric values MUST contain a single numeric value.
+  * FOCUS column containing numeric values MUST have values of type integer, decimal, or scientific notation.
+  * FOCUS column containing numeric values expressed in scientific notation MUST use E notation "mEn", where m is a real number and n is an integer exponent.
+  * FOCUS column containing numeric values expressed in scientific notation MUST use a negative sign (-) to indicate a negative exponent.
+  * FOCUS column containing numeric values expressed in scientific notation MUST NOT include a positive sign (+) for a positive exponent.
+  * FOCUS column containing numeric values MUST NOT use mathematical symbols, functions, or operators.
+  * FOCUS column containing numeric values MUST NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
+  * FOCUS column containing numeric values MUST NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
+  * FOCUS column containing numeric values MUST use a negative sign (-) to indicate a negative value.
+  * FOCUS column containing numeric values MUST NOT include a positive sign (+) for a positive value.
+* Custom column containing numeric values MUST adhere to the following requirements:
+  * Custom column containing numeric values SHOULD contain a single numeric value.
+  * Custom column containing numeric values SHOULD have values of type integer, decimal, or scientific notation.
+  * Custom column containing numeric values expressed in scientific notation SHOULD use E notation "mEn", where m is a real number and n is an integer exponent.
+  * Custom column containing numeric values expressed in scientific notation SHOULD use a negative sign (-) to indicate a negative exponent.
+  * Custom column containing numeric values expressed in scientific notation SHOULD NOT include a positive sign (+) for a positive exponent.
+  * Custom column containing numeric values SHOULD NOT use mathematical symbols, functions, or operators.
+  * Custom column containing numeric values SHOULD NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
+  * Custom column containing numeric values SHOULD NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
+  * Custom column containing numeric values SHOULD use a negative sign (-) to indicate a negative value.
+  * Custom column containing numeric values SHOULD NOT include a positive sign (+) for a positive value.
 * Columns with a Numeric value format MUST present one of the following values as the "Data type" in the column definition.
   * Allowed values:
 
