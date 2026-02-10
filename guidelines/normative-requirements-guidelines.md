@@ -779,7 +779,7 @@ The following table lists commonly used intended subjects.
 
 | Subject (Core) | Distinct Subjects with Qualifiers | Description/Note |
 |----------------|-----------------------------------|------------------|
-| Attribute      | <Attribute ID> | Specific Attribute identified by Dataset ID |
+| Attribute      | `<Attribute ID>` | Specific Attribute identified by Dataset ID |
 | FOCUS Dataset  | FOCUS dataset | |
 | FOCUS Dataset  | <FOCUS Dataset ID> FOCUS dataset | Specific FOCUS dataset identified by Dataset ID |
 | Native dataset | Native dataset | |
