@@ -27,7 +27,7 @@ Column Handling
 
 Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 
-## Requirements (FOCUS 1.4)
+## Requirements
 
 ColumnHandling MUST adhere to the following requirements:
 
@@ -58,34 +58,6 @@ ColumnHandling MUST adhere to the following requirements:
   * FOCUS dataset SHOULD sort FOCUS columns alphabetically by their Column ID within the FOCUS columns group.
   * FOCUS dataset SHOULD sort Custom columns alphabetically by their Column ID within the Custom columns group.
   * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns.
-
-## Requirements
-
-### Column Names
-
-* All columns defined by FOCUS MUST follow the following rules:
-  * Column IDs MUST use [Pascal case](#glossary:pascalcase).
-  * Column IDs MUST NOT use abbreviations.
-  * Column IDs MUST be alphanumeric with no special characters.
-  * Column IDs SHOULD NOT use acronyms.
-  * Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories.
-  * Columns that have an ID and a Name MUST have the `Id` or `Name` suffix in the Column ID.
-  * Column display names MUST be consistent with their Column IDs, with spaces inserted between words (e.g., Column ID "BillingAccountName" and display name "Billing Account Name").
-  * Columns with the `Category` suffix MUST be normalized.
-* <a name="column_handling:custom-column"></a>Custom (e.g., service-provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
-  * Custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
-  * Custom columns SHOULD follow the same rules listed above for FOCUS columns.
-
-### Column Order
-
-* All FOCUS columns SHOULD be first in the provided dataset.
-* Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.
-* Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns.
-
-## Exceptions
-
-* Identifiers will use the "Id" abbreviation since this is a standard pattern across the industry.
-* Product offerings that incur charges will use the "Sku" abbreviation because it is a well-understood term both within and outside the industry.
 
 ## Introduced (version)
 

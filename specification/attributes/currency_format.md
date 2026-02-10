@@ -19,7 +19,7 @@ Currency Format
 
 Formatting for currency columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-## Requirements (FOCUS 1.4)
+## Requirements
 
 CurrencyFormat MUST adhere to the following requirements:
 
@@ -30,15 +30,6 @@ CurrencyFormat MUST adhere to the following requirements:
 * Custom column representing national currency MUST adhere to the following requirements:
   * Custom column representing national currency SHOULD conform to ISO 4217:2015 standard.
   * Custom column representing national currency SHOULD use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
-
-## Requirements
-
-* Currency-related columns MUST be represented as a three-letter alphabetic code as dictated in the governing document [ISO 4217:2015](https://www.iso.org/standard/64758.html) when the value is presented in national currency (e.g., USD, EUR).
-* Currency-related columns MUST conform to [StringHandling](#attributes.stringhandling) requirements when the value is presented in virtual currency (e.g., credits, tokens).
-
-## Exceptions
-
-None
 
 ## Introduced (version)
 
