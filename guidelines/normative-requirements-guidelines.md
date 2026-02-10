@@ -803,10 +803,10 @@ The following table lists commonly used intended subjects.
 | Column         | <FOCUS Column ID> | Specific column included in a FOCUS dataset, identified by Column ID |
 | Object/Element | Object/Element in array in FOCUS/Custom column containing JsonObjectFormat values | |
 | Object         | Object in FOCUS/Custom column containing JsonObjectFormat values | |
-| Key            | Key in Object in FOCUS/Custom column containing JsonObjectFormat values | |
-| Key value      | Key value in Object in FOCUS/Custom column containing JsonObjectFormat values | |
-| Key            | Key in FOCUS FOCUS/Custom column containing values in key-value pair format | |
-| Key value      | Key value in FOCUS/Custom column containing values in key-value pair format | |
+| Key            | Keys in Object in FOCUS/Custom column containing JsonObjectFormat values | |
+| Key value      | Key values in Object in FOCUS/Custom column containing JsonObjectFormat values | |
+| Key            | Keys in FOCUS/Custom column containing values in key-value pair format | |
+| Key value      | Key values in FOCUS/Custom column containing values in key-value pair format | |
 
 ### 4. Grouping of Attribute Requirements
 
