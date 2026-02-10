@@ -50,7 +50,7 @@ Array contains one or more strings, representing the specific commitment program
 {
   "EligibleCommitmentTypes": [
     "SavingsPlan",
-    "ReservedInstance,
+    "ReservedInstance",
     "ComputeFlexibleCommittedUseDiscount",
     "UniversalCredits"
   ]
