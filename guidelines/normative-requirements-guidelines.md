@@ -800,7 +800,7 @@ The following table lists commonly used intended subjects.
 | Column         | FOCUS/Custom column representing charges to mutable entities?? | |
 | Column         | FOCUS/Custom column containing values in JsonObjectFormat format | |
 | Column         | FOCUS/Custom column containing values in key-value pair format | |
-| Column         | <FOCUS Column ID> | Specific column included in a FOCUS dataset, identified by Column ID |
+| Column         | <FOCUS Dataset ID>.<FOCUS Column ID> | Specific column included in a FOCUS dataset, identified by Column ID |
 | Object/Element | Object/Element in array in FOCUS/Custom column containing JsonObjectFormat values | |
 | Object         | Object in FOCUS/Custom column containing JsonObjectFormat values | |
 | Key            | Keys in Object in FOCUS/Custom column containing JsonObjectFormat values | |
