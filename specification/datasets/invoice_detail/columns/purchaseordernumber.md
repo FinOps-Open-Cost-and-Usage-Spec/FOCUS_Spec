@@ -8,6 +8,7 @@ PurchaseOrderNumber adheres to the following requirements:
 
 * PurchaseOrderNumber MUST be of type String.
 * PurchaseOrderNumber MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* PurchaseOrderNumber MAY be null.
 * PurchaseOrderNumber MUST represent the identifier used by the customer to unique identify the purchase order responsible for the charge.
 
 ## Column ID
@@ -28,7 +29,7 @@ The unique customer-issued identifier for tracking the lifecycle of a purchase.
 |:----------------|:--------------------------------|
 | Column type     | Dimension                       |
 | Feature level   | Conditional                     |
-| Allows nulls    | False                           |
+| Allows nulls    | True                            |
 | Data type       | String                          |
 | Value format    | <unspecified>                   |
 
