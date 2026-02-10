@@ -6,7 +6,7 @@ Commitment Eligibility Details presents all types of usage based [*commitment*](
 
 CommitmentEligibilityDetails adheres to the following requirements:
 
-* CommitmentEligibilityDetailsDetails MUST be present in Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports at least one type of [*commitment discount*](#glossary:commitment-discount) program.
+* CommitmentEligibilityDetails MUST be present in Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports at least one type of [*commitment discount*](#glossary:commitment-discount) program.
 * CommitmentEligibilityDetails MUST be of type String.
 * CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
