@@ -171,8 +171,6 @@ Validation for Partial-Upfront payment option:
 * Annual total: &dollar;185,000.00 + (&dollar;15,416.67 × 12) = &dollar;370,000.04
 * Hourly amortization: &dollar;370,000.04 / 24 = &dollar;15,416.67/hour
 
-**Check:** Sum(Usage EffectiveCost) should equal upfront + accumulated monthly fees.
-
 ### All Validation Rules Passed
 
 This example data is valid according to FOCUS commitment discount rules.

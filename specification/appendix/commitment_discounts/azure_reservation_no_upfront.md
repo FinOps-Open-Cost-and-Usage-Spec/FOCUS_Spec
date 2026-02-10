@@ -170,8 +170,6 @@ Validation for No-Upfront payment option:
 * Hours generated: 24
 * Hourly amortization: &dollar;55,333.33 / 24 = &dollar;2,305.56/hour
 
-**Check:** Sum(Usage EffectiveCost) per month should equal the monthly fee.
-
 ### All Validation Rules Passed
 
 This example data is valid according to FOCUS commitment discount rules.

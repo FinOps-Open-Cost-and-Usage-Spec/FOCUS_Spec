@@ -167,8 +167,6 @@ Validation for All-Upfront payment option:
 * Daily amortization (365 days): &dollar;353,000.00 / 365 = &dollar;967.12/day
 * Sum(Usage EffectiveCost): &dollar;0.00
 
-**Check:** &dollar;0.00 should approach &dollar;353,000.00 over the full term.
-
 ### All Validation Rules Passed
 
 This example data is valid according to FOCUS commitment discount rules.
