@@ -38,7 +38,7 @@ In this scenario, the invoice issuer tracks usage in the billing currency at a g
 * **Payment Currency:** EUR
 * **Effective Exchange Rate:** 1.00 USD = 0.92 EUR
 
-| InvoiceDetailId | ChargeDescription | BilledCost | PaymentCurrencyBilledCost | PaymentCurrencyInvoiceDetailId |
+| InvoiceDetailId | InvoiceDetailDescription | BilledCost | PaymentCurrencyBilledCost | PaymentCurrencyInvoiceDetailId |
 | :--- | :--- | :--- | :--- | :--- |
 | A-101 | Compute Instance A | 45.00 | 0.00 | Z-999 |
 | A-102 | Compute Instance B | 55.00 | 0.00 | Z-999 |
