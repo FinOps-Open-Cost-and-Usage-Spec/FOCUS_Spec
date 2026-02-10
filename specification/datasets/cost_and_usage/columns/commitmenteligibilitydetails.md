@@ -16,7 +16,7 @@ CommitmentEligibilityDetails adheres to the following requirements:
 * CommitmentEligibilityDetails MUST correspond to defined [commitment](#glossary:commitment) program types (e.g., "SavingsPlan", "ReservedInstance", "CUD") or vendor-specific pricing tiers (e.g., "MonthlyCommitment").
 * The values in CommitmentEligibilityDetails MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for the provider.
 * CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
-* CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment discount was actually applied to the line item (i.e., even if CommitmentDiscountType is present, this column must still list the eligible programs).
+* CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment discount was actually applied to the line item. For example, if CommitmentDiscountType = 'SavingsPlan' and CommitmentEligibilityDetails = '["SavingsPlan", "ReservedInstance"]', this indicates the usage was covered by a Savings Plan but could also have been covered by Reserved Instance. 
 * CommitmentEligibilityDetails MUST reflect eligibility based on the inherent nature of the Service, Category, and SKU (e.g., "Standard" vs "Spot"). 
 * CommitmentEligibilityDetails SHOULD reflect inherent eligibility, but MAY include provider-specific constraints that affect purchase ability.
 * CommitmentEligibilityDetails MUST exclude custom, negotiated, or private pricing agreements (e.g., Private Pricing Addenda or Enterprise Agreements). It refers strictly to publicly available commitment constructs.
