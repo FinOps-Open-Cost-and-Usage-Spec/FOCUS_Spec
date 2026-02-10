@@ -781,7 +781,7 @@ The following table lists commonly used intended subjects.
 |----------------|-----------------------------------|------------------|
 | Attribute      | <Attribute ID> | Specific Attribute identified by Dataset ID |
 | FOCUS Dataset  | FOCUS dataset | |
-| FOCUS Dataset  | <FOCUS Dataset ID> | Specific FOCUS dataset identified by Dataset ID |
+| FOCUS Dataset  | <FOCUS Dataset ID> FOCUS dataset | Specific FOCUS dataset identified by Dataset ID |
 | Native dataset | Native dataset | |
 | Native column  | Native column | |
 | Column         | FOCUS column | Column defined by FOCUS and included in a FOCUS dataset |
