@@ -27,9 +27,7 @@ Column Handling
 
 Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 
-## Requirements
-
-> Alternative:
+## Requirements (FOCUS 1.4)
 
 ColumnHandling MUST adhere to the following requirements:
 
@@ -62,8 +60,6 @@ ColumnHandling MUST adhere to the following requirements:
   * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns.
 
 ## Requirements
-
-> Original:
 
 ### Column Names
 
