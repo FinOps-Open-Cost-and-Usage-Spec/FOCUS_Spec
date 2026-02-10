@@ -8,6 +8,7 @@ InvoiceDetailGrain adheres to the following requirements:
 
 * InvoiceDetailGrain MUST be of type JSON.
 * InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
+* InvoiceDetailGrain property keys SHOULD conform to PascalCase format.
 * InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.
 * InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.
 * InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.
