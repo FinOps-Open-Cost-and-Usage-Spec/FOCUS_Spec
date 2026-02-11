@@ -18,7 +18,7 @@ Defines requirements for a *FOCUS dataset* to include custom columns for *native
 
 ## Requirements
 
-* *FOCUS dataset* MUST include custom column corresponding to *native dataset* that supports analysis or reporting scenarios and does not duplicate information already captured in FOCUS columns.
+* *FOCUS dataset* MUST include custom column corresponding to *native dataset* column that supports analysis or reporting scenarios and does not duplicate information already captured in FOCUS columns.
 * *FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers).
 * *FOCUS dataset* SHOULD NOT include custom column that duplicates information already captured in FOCUS columns.
 * *FOCUS dataset* MAY omit column that does not support any analysis or reporting scenarios.
