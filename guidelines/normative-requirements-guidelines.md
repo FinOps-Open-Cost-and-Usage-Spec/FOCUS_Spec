@@ -40,9 +40,7 @@ style ElementProperty fill:#d4edda,stroke:#666,stroke-width:1px
 * `|| -- contains -- o{` : one parent to zero-or-more child entities (array of objects)
 * `}| .. conforms-to .. ||` : many children to one parent conformance relationship
 
-## Core Normative Authoring Rules
-
-### Note on FOCUS Dataset, Dataset Instance, and Glossary Alignment
+## Note on FOCUS Dataset, Dataset Instance, and Glossary Alignment
 
 > **Important clarification**
 
@@ -68,15 +66,22 @@ This choice is intentional and overrides interpretations based solely on abstrac
 > * The **FOCUS Dataset** glossary definition SHOULD be refined so that it is no longer interpreted as purely abstract, but as a normative anchor that may represent the dataset specification and its specific implementations.
 > * Glossary entries for **Dataset Instance** and **Dataset Artifact** SHOULD explicitly reflect that they represent **FOCUS Dataset Instance** and **FOCUS Dataset Instance Artifact**, respectively (important with the planned **Native Dataset** entry in version 1.4).
 
+## Core Normative Authoring Rules
+
 ### 1. Normative Requirement Structure
 
-Each normative requirement MUST:
+The recommended pattern for a normative requirement is:
 
-* identify exactly one **normative subject**
-* contain exactly one **BCP 14 keyword**
-* express exactly one **verifiable constraint**
+``` markdown
+<Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
 
-A single bullet MUST NOT encode multiple obligations.
+```
+
+* Each normative requirement MUST:
+  * identify exactly one **normative subject** to which the requirement applies
+  * contain exactly one **BCP 14 keyword** (MUST, SHOULD, MAY, MUST NOT, etc.), indicating the obligation level
+  * express exactly one **verifiable constraint**
+* Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
 
 ### 2. Structural Anchor Requirement
 
@@ -176,21 +181,6 @@ Nested bullets MUST NOT introduce a different subject.
 * Definitions, explanations, rationale, and examples MUST NOT be expressed as normative requirements.
 * Definitions SHOULD be written as plain declarative statements without BCP 14 keywords.
 * Normative bullets SHOULD be reduced to the enforceable constraint only.
-
-### Mental Model (Non-Normative)
-
-The recommended pattern for a normative requirement is:
-
-> **Subject (+ qualifier) + Normative Verb + Verifiable State**
-
-Helpful self-check questions:
-
-* Can I underline exactly one subject?
-* Is there exactly one MUST / SHOULD / MAY?
-* Can I imagine an automated test for this statement?
-* Does this describe a state rather than behavior?
-
-If any answer is “no”, the requirement likely needs refactoring.
 
 ## Dataset Requirements
 
