@@ -8,7 +8,7 @@ Its purpose is to ensure that all monetary [*charges*](#glossary:charge) (includ
 
 FOCUS datasets (including [Cost and Usage](#datasets.costandusage), [Invoice Detail](#datasets.invoicedetail), and [Billing Period](#datasets.billingperiod) *FOCUS datasets*) must provide consistent and complete representations of all invoiced charges to facilitate alignment with the corresponding *invoices* and usage statements they receive from [*invoice issuers*](#datasets.costandusage.invoiceissuername). In practice, this means ensuring that all cost and usage data that appear on an invoice or usage statement, including those not tied to metered usage, are represented in *FOCUS datasets*.
 
-This enables FinOps practitioners to perform [*invoice reconciliation*](#glossary:invoice-reconciliation), financial reporting, and chargeback.  
+This enables FinOps practitioners to perform [*invoice reconciliation*](#glossary:invoice-reconciliation), financial reporting, and chargeback.
 
 ### Invoice Reconciliation and Issuance
 
@@ -54,8 +54,8 @@ Defines how a *FOCUS dataset* should reflect details for the information present
   * CostAndUsage *FOCUS dataset* MUST include Custom columns (e.g., x_ChargeSubType) needed to support invoice reconciliation when FOCUS columns are not sufficient.
 * CostAndUsage.BillingPeriodStart for a given CostAndUsage.InvoiceId MUST match InvoiceDetail.BillingPeriodStart for the same InvoiceDetail.InvoiceId.
 * CostAndUsage.BillingPeriodEnd for a given CostAndUsage.InvoiceId MUST match InvoiceDetail.BillingPeriodEnd for the same InvoiceDetail.InvoiceId.
-* The sum of InvoiceDetail.BilledCost for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) MUST match the payable amount provided in the corresponding invoice line items.
-* The sum of InvoiceDetail.BilledCost for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) MUST match the sum of CostAndUsage.BilledCost for a given [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid).
+* The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the payable amount provided in the corresponding invoice line items.
+* The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the sum of CostAndUsage.BilledCost for a given CostAndUsage.InvoiceDetailId.
 
 ## Introduced (version)
 
