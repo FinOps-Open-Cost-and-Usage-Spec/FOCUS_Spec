@@ -55,7 +55,7 @@ Defines how data generator delivers *FOCUS dataset* to customer.
 
 ## Requirements
 
-*FOCUS dataset* delivered by a data generator MUST adhere to the following Delivery Handling requirements:
+DeliveryHandling MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).
 * *FOCUS dataset* MUST have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
