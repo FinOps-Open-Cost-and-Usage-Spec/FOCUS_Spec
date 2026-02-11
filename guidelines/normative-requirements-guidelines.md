@@ -769,9 +769,9 @@ The following table lists commonly used intended subjects.
 
 | Subject (Core) | Distinct Subjects with Qualifiers | Description/Note |
 |----------------|-----------------------------------|------------------|
-| Attribute      | <Attribute ID> | Specific Attribute identified by Dataset ID |
+| Attribute      | `<Attribute ID>` | Specific Attribute identified by Dataset ID |
 | FOCUS Dataset  | FOCUS dataset | |
-| FOCUS Dataset  | <FOCUS Dataset ID> | Specific FOCUS dataset identified by Dataset ID |
+| FOCUS Dataset  | `<FOCUS Dataset ID>` FOCUS dataset | Specific FOCUS dataset identified by Dataset ID |
 | Native dataset | Native dataset | |
 | Native column  | Native column | |
 | Column         | FOCUS column | Column defined by FOCUS and included in a FOCUS dataset |
@@ -790,7 +790,7 @@ The following table lists commonly used intended subjects.
 | Column         | FOCUS/Custom column representing charges to mutable entities?? | |
 | Column         | FOCUS/Custom column containing values in JsonObjectFormat format | |
 | Column         | FOCUS/Custom column containing values in key-value pair format | |
-| Column         | <FOCUS Column ID> | Specific column included in a FOCUS dataset, identified by Column ID |
+| Column         | `<FOCUS Dataset ID>.<FOCUS Column ID>` | Specific column included in a FOCUS dataset, identified by Column ID |
 | Object/Element | Object/Element in array in FOCUS/Custom column containing JsonObjectFormat values | |
 | Object         | Object in FOCUS/Custom column containing JsonObjectFormat values | |
 | Key            | Keys in Object in FOCUS/Custom column containing JsonObjectFormat values | |
