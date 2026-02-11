@@ -14,9 +14,9 @@ This enables FinOps practitioners to perform [*invoice reconciliation*](#glossar
 
 Before an [*invoice is issued*](#glossary:issued-invoice), i.e., the [Invoice Status](#datasets.invoicedetail.invoicestatus) (within Invoice Detail *FOCUS dataset*) is set to "Closed", the [data generator](#metadata.datagenerator) must perform a reconciliation to ensure consistency between the invoice, Invoice Detail FOCUS dataset, and Cost and Usage FOCUS dataset.
 
-At the conclusion of this process, the aggregated Billed Costs in the Invoice Detail *FOCUS dataset* for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) are expected to match the payable amounts presented on the corresponding invoice line items.
+At the conclusion of this process, the aggregated [Billed Costs](#datasets.invoicedetail.billedcost) in the Invoice Detail *FOCUS dataset* for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) are expected to match the payable amounts presented on the corresponding invoice line items.
 
-Similarly, the aggregated Billed Cost in the Invoice Detail *FOCUS dataset* for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) is expected to match the corresponding aggregated Billed Cost in the Cost and Usage *FOCUS dataset* for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid).
+Similarly, the aggregated Billed Cost in the Invoice Detail *FOCUS dataset* for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) is expected to match the corresponding aggregated [Billed Costs](#datasets.costandusage.billedcost) in the Cost and Usage *FOCUS dataset* for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid).
 
 Practitioners may independently perform *invoice reconciliation* by verifying that invoice line items are aligned with data provided in the FOCUS datasets, particularly Cost and Usage, Invoice Detail, and Billing Period.
 
@@ -44,6 +44,8 @@ Defines how a *FOCUS dataset* should reflect details for the information present
 
 ## Requirements
 
+InvoiceHandling MUST adhere to the following requirements:
+
 * InvoiceDetail *FOCUS dataset* MUST adhere to the following requirements:
   * InvoiceDetail *FOCUS dataset* MUST have its invoice reconciliation process documented and accessible to practitioners, including a list of columns from both CostAndUsage and InvoiceDetail FOCUS datasets used in reconciliation.
   * InvoiceDetail *FOCUS dataset* MUST account for all monetary charges included on any invoice issued to a BillingAccountId.
@@ -56,6 +58,10 @@ Defines how a *FOCUS dataset* should reflect details for the information present
 * CostAndUsage.BillingPeriodEnd for a given CostAndUsage.InvoiceId MUST match InvoiceDetail.BillingPeriodEnd for the same InvoiceDetail.InvoiceId.
 * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the payable amount provided in the corresponding invoice line items.
 * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the sum of CostAndUsage.BilledCost for a given CostAndUsage.InvoiceDetailId.
+
+## Exceptions
+
+None
 
 ## Introduced (version)
 

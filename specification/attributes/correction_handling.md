@@ -74,19 +74,21 @@ Defines how *corrections* to previously delivered FOCUS *dataset artifacts* are 
 
 ## Requirements
 
-All corrections adhere to the following requirements:
+CorrectionHandling MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta or Ledger is used and under which conditions).
-* *FOCUS dataset* MUST NOT deliver correction that invalidates the *invoice reconciliation* when [InvoiceDetail.InvoiceStatus]((#datasets.invoicedetail.invoicestatus)) is "Closed" for a given InvoiceId.
-* When including correction acssociated to *closed billing period* *FOCUS dataset* adheres to the following additional requirements:
-  * *FOCUS dataset* MUST NOT deliver records that results in issuing additional invoices for the given billing period.
-  * *FOCUS dataset* MAY deliver one or more records that results in issuing additional invoices for subsequent *open billing period*.
+* When using Delta or Ledger correction styles, FOCUS dataset MUST preserve all previously delivered records to maintain a complete and auditable correction history.
+* When [InvoiceDetail.InvoiceStatus](#datasets.invoicedetail.invoicestatus) is "Closed" for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceDetail.BilledCost](#datasets.invoicedetail.billedcost) MUST adhere to the following requirements:
+  * The sum of InvoiceDetail.BilledCost MUST match the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the correction to the *issued invoice* is not explicitly requested or approved by the end-user.
+  * The sum of InvoiceDetail.BilledCost MAY differ from the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId when the correction to the *issued invoice* is explicitly requested or approved by the end-user.
+* The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MAY differ from the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId when InvoiceDetail.InvoiceStatus is "Open".
+* When including corrections associated to *closed billing period* *FOCUS dataset* adheres to the following additional requirements:
+  * *FOCUS dataset* MUST NOT deliver records that result in issuing additional invoices for the given billing period.
+  * *FOCUS dataset* MAY deliver one or more records that result in issuing additional invoices for subsequent *open billing period*.
 
 ## Exceptions
 
-* Exceptions to the restrictions on *issued charges*, *issued invoices*, and *closed billing periods* and MAY apply in the following cases:
-  * Upon explicit request from the end-user (subject to validation and approval processes).
-  * Due to technical issues encountered during or after invoice issuance or billing period closure.
+None
 
 ## Introduced (version)
 
