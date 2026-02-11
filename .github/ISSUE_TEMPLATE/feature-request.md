@@ -169,6 +169,29 @@ What is the minimum we can deliver (MVP) vs. the long-term state?
 
 ---
 
+### Re-Queue Path
+*This section is completed by FOCUS Maintainers only when a feature request is descoped from a release.*
+
+When an FR is removed from a planned release, document the path to success in a future release:
+
+**Reason for Descope:**
+
+[Why was this FR removed from the release? e.g., scope too large, dependencies unresolved, insufficient consensus]
+
+**Outstanding Work:**
+
+[What specific work items, decisions, or dependencies must be resolved before this FR can be re-queued?]
+
+**Recommended Next Release:**
+
+[Target release version, or "TBD" if timing is unclear]
+
+**Owner for Re-Queue:**
+
+[Who is responsible for shepherding this FR back into scope?]
+
+---
+
 ### Specification Impact
 
 **Impacted Parties:**
