@@ -122,7 +122,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | UsageUnit | [String](#attributes.stringhandling) | Conditional | Unit being measured used to calculate allocation. |
 | UsageQuantity | Numeric | False | Volume of UsageUnit consumed or used. |
 
-#### Descriptions
+### Descriptions
 
 The following property keys are used for allocation properties to facilitate querying data across allocations and across data generators. Focus-defined property keys will appear in the list below and data generator-defined property keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 

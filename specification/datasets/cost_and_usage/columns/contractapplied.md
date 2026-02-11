@@ -134,9 +134,9 @@ ContractAppliedObject
 
 Contract Applied Object
 
-### Overview
+## Overview
 
-#### Array of Objects
+### Array of Objects
 
 The parent array is called `Elements` and contains one or more objects which communicate information about how an allocated record was calculated.
 
@@ -144,7 +144,7 @@ The parent array is called `Elements` and contains one or more objects which com
 | ----- | ---- | ---------- | ----------- |
 | Elements | Array | True | The parent array containing one or more objects which communicate information about how contract commitments were applied to the charge. |
 
-#### Object Entries
+### Object Entries
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
@@ -186,11 +186,11 @@ The Contract Commitment Applied Unit represents a service-provider-specified mea
 {
   "Elements" : [ {
     "ContractID" : "12345",
-    ContractAppliedObject.Elements[\*].ContractCommitmentID : "23456",
+    "ContractCommitmentID" : "23456",
     "ContractCommitmentAppliedCost" : 500000.00
   }, {
     "ContractID" : "12345",
-    ContractAppliedObject.Elements[\*].ContractCommitmentID : "34567",
+    "ContractCommitmentID" : "34567",
     "ContractCommitmentAppliedQuantity" : 10000.00,
     "ContractCommitmentAppliedUnit" : "compute_hours"
   } ]
@@ -206,7 +206,7 @@ The Contract Commitment Applied Unit represents a service-provider-specified mea
       "elements": {
         "properties": {
           "ContractID": { "type": "string" },
-          ContractAppliedObject.Elements[\*].ContractCommitmentID: { "type": "string" }
+          "ContractCommitmentID": { "type": "string" }
         },
         "optionalProperties": {
           "ContractCommitmentAppliedCost": { "type": "float64" },
@@ -245,15 +245,15 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
     {
       "Elements": [ {
         "ContractID": "12345",
-        ContractAppliedObject.Elements[\*].ContractCommitmentID: "12345",
+        "ContractCommitmentID": "12345",
         "ContractCommitmentAppliedCost": 500000.00
       }, {
         "ContractID": "12345",
-        ContractAppliedObject.Elements[\*].ContractCommitmentID: "23456",
+        "ContractCommitmentID": "23456",
         "ContractCommitmentAppliedCost": 25000.00
       }, {
         "ContractID": "12345",
-        ContractAppliedObject.Elements[\*].ContractCommitmentID: "34567",
+        "ContractCommitmentID": "34567",
         "ContractCommitmentAppliedQuantity": 100000.00,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
@@ -279,15 +279,15 @@ This applies to the contract commitments in the following manner:
     {
       "Elements": [ {
         "ContractID": "12345",
-        ContractAppliedObject.Elements[\*].ContractCommitmentID: "12345",
+        "ContractCommitmentID": "12345",
         "ContractCommitmentAppliedCost": 15.00
       }, {
         "ContractID": "12345",
-        ContractAppliedObject.Elements[\*].ContractCommitmentID: "23456",
+        "ContractCommitmentID": "23456",
         "ContractCommitmentAppliedCost": 15.00
       }, {
         "ContractID": "12345",
-        ContractAppliedObject.Elements[\*].ContractCommitmentID: "34567",
+        "ContractCommitmentID": "34567",
         "ContractCommitmentAppliedQuantity": 0.50,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
@@ -309,17 +309,17 @@ The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCost
     {
       "Elements": [ {
         "ContractID": "12345",
-        ContractAppliedObject.Elements[\*].ContractCommitmentID: "12345",
+        "ContractCommitmentID": "12345",
         "ContractCommitmentAppliedCost": 15.00,
         "x_ContractCommitmentCostBalance": 499985.00
       }, {
         "ContractID": "12345",
-        ContractAppliedObject.Elements[\*].ContractCommitmentID: "23456",
+        "ContractCommitmentID": "23456",
         "ContractCommitmentAppliedCost": 15.00,
         "x_ContractCommitmentCostBalance": 24985.00
       }, {
         "ContractID": "12345",
-        ContractAppliedObject.Elements[\*].ContractCommitmentID: "34567",
+        "ContractCommitmentID": "34567",
         "ContractCommitmentAppliedQuantity": 0.50,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
