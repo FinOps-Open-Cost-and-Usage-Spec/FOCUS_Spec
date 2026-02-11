@@ -60,7 +60,6 @@ DeliveryHandling MUST adhere to the following requirements:
 * *FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).
 * *FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
 * *FOCUS dataset* MUST have its mechanism for correlating *dataset artifact* with the [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners when the Metadata is delivered.
-* *FOCUS dataset* MUST have information contained in the delivered *dataset artifacts* accurately reflected in corresponding Metadata elements.
 * When using Append delivery mechanism, *FOCUS dataset* adheres to the following additional requirements:
   * *FOCUS dataset* MUST NOT include updates to previously delivered records.
   * *FOCUS dataset* MUST NOT include omissions of previously delivered records.
