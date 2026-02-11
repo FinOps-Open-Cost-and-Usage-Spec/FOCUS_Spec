@@ -720,9 +720,7 @@ CommitmentDiscountQuantity adheres to the following requirements:
 
 This section defines guidelines for authoring **Attribute-level normative requirements**.
 
-Attributes are **not normative subjects**, **except** that the Attribute ID is used as **the subject of the structural anchor requirement** for automated validation consistency.
-
-They define reusable sets of normative constraints applied to Datasets, Columns, or ElementProperties that declare conformance to the Attribute.
+Attributes are **not normative subjects**, **except** that the Attribute ID is used as **the subject of the structural anchor requirement** for automated validation consistency. They define reusable sets of normative constraints applied to Datasets, Columns, or ElementProperties that declare conformance to the Attribute.
 
 ### 1. Role of Attributes in the Specification
 
@@ -755,13 +753,9 @@ This is the only case in which an Attribute ID may appear as a normative subject
 
 ### 3. Normative Subjects in Attribute Requirements
 
-All enforceable normative requirements within an Attribute section MUST target schema-level entities that conform to the Attribute.
+All enforceable normative requirements within an Attribute section MUST target schema-level entities that conform to the Attribute. The Attribute itself MUST NOT be treated as an enforceable subject beyond the structural anchor requirement.
 
-The Attribute itself MUST NOT be treated as an enforceable subject beyond the structural anchor requirement.
-
-Each Attribute implicitly assumes one or more intended normative subjects.
-
-These intended subjects define which kinds of schema-level entities the Attribute’s requirements are written for.
+Each Attribute implicitly assumes one or more intended normative subjects. These subjects determine which schema-level entities the Attribute’s requirements apply to.
 
 The following table lists commonly used intended subjects.
 
@@ -773,7 +767,7 @@ The following table lists commonly used intended subjects.
 | FOCUS Dataset  | FOCUS dataset | |
 | FOCUS Dataset  | `<FOCUS Dataset ID>` FOCUS dataset | Specific FOCUS dataset identified by Dataset ID |
 | Native dataset | Native dataset | |
-| Native column  | Native column | |
+| Native column  | Native dataset column | |
 | Column         | FOCUS column | Column defined by FOCUS and included in a FOCUS dataset |
 | Column         | Custom column | Column not defined by FOCUS and included in a FOCUS dataset |
 | Column         | FOCUS/Custom column representing national currency | |
