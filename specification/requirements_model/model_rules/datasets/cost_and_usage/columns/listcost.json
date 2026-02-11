@@ -399,8 +399,8 @@
         ]
       },
       "Dependencies": [
-        "CAU-ListUnitPrice-C-000-C",
-        "CAU-PricingQuantity-C-000-M"
+        "CAU-ListUnitPrice-C-003-M",
+        "CAU-PricingQuantity-C-003-M"
       ]
     }
   }

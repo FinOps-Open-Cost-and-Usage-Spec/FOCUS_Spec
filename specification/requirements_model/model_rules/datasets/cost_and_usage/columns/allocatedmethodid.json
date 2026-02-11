@@ -1,5 +1,5 @@
 {
-  "CAU-AllocatedMethodID-C-000-C": {
+  "CAU-AllocatedMethodId-C-000-C": {
     "Function": "Composite",
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
