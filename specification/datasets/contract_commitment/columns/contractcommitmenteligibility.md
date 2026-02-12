@@ -17,11 +17,11 @@ ContractCommitmentEligibility contains a structured JSON object defining the log
 
 | Attribute | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `IsGlobalScope` | Boolean | No | If `true`, the commitment applies to all resources. Defaults to `false`. Exclusions are still processed if present. |
+| `IsGlobalScope` | Boolean | No | If `true`, the commitment applies to all resources. Defaults to `false`. |
 | `IsComplexScope` | Boolean | No | If `true`, indicates logic exceeds schema capabilities. Defaults to `false`. |
-| `Applicability` | Decimal OR Object | No | The fraction of the identified cost or usage to which terms apply. A **Decimal** applies to both Cost and Usage. An **Object** (see below) allows for divergence. Defaults to `1.0`. |
-| `InclusionOperator` | String | Conditional | **Required** only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `AND`, `OR`. Defaults to `OR`. |
-| `Inclusions` | Array | Conditional | **Required** only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. List of `Rule` objects defining the boundary. |
+| `Applicability` | Object | No | The fractional mapping for metrics. If omitted, both `Cost` and `Usage` keys default to `1.0`. |
+| `InclusionOperator` | String | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `AND`, `OR`. |
+| `Inclusions` | Array | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. List of `Rule` objects defining the boundary. |
 | `ExclusionOperator` | String | No | Defines the relationship for `Exclusions`. Valid values: `AND`, `OR`. Defaults to `OR`. |
 | `Exclusions` | Array | No | List of `Rule` objects defining entities to be removed from the boundary. |
 
@@ -34,16 +34,16 @@ Rules are evaluated against the column values of the resource being analyzed.
 | `Dimension` | String | A valid FOCUS Column Name (e.g., `ProviderAccountId`, `RegionId`). |
 | `Operator` | String | The comparison logic to apply. Must be one of the Supported Operators. |
 | `Values` | Array | A list of strings to compare. A value of `["*"]` acts as a global wildcard. |
-| `Applicability` | Decimal OR Object | **Optional.** The specific fraction of applicability for resources matching this rule. Overrides the top-level `Applicability`. |
+| `Applicability` | Object | Optional. The specific fraction of applicability for resources matching this rule. Overrides the top-level `Applicability`. |
 
 ### Applicability Object
 
-When specified as an object, `Applicability` allows for independent percentages for different metrics.
+To ensure schema stability and avoid polymorphic type-checking, `Applicability` MUST be an object. If a key is omitted, it is assumed to be `1.0`.
 
-| Key | Type | Description |
-| :--- | :--- | :--- |
-| `Cost` | Decimal | Percentage applicable to `ContractCommitmentCost`. |
-| `Usage` | Decimal | Percentage applicable to `ContractCommitmentQuantity`. |
+| Key | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `Cost` | Decimal | 1.0 | Percentage applicable to `ContractCommitmentCost`. |
+| `Usage` | Decimal | 1.0 | Percentage applicable to `ContractCommitmentQuantity`. |
 
 ### Supported Operators
 
@@ -75,20 +75,9 @@ ContractCommitmentEligibility uses a reserved string to represent global or unre
 
 ## Examples
 
-The following examples demonstrate how to model common contract commitment scenarios using ContractCommitmentEligibility.
-
 ### Global Scope and Applicability
 
-An Enterprise Discount Program (EDP) or a global Savings Plan that applies to all resources across the entire provider footprint.  100% of activity is applicable, regardless of cost or usage.
-
-```json
-{
-  "IsGlobalScope": true,
-  "Applicability": 1.0
-}
-```
-
-The inclusion of Applicability is optional, given that the default is 1.0.  It could thus be delivered even simpler, as:
+If the commitment is 100% applicable to all resources, the `Applicability` object can be omitted entirely.
 
 ```json
 {
@@ -166,9 +155,9 @@ Applies to Compute in `us-east-1` and `us-west-2`, excluding any resources or se
 }
 ```
 
-### Shorthand Applicability (Decimal)
+### Regional Applicability
 
-A commitment that applies fully to `us-east-1` but only 50% of cost and usage in `us-west-2` is eligible.
+A commitment that applies fully to `us-east-1` but only 50% of cost and usage in `us-west-2` is eligible. Note the use of the object even for symmetrical applicability.
 
 ```json
 {
@@ -177,22 +166,24 @@ A commitment that applies fully to `us-east-1` but only 50% of cost and usage in
     {
       "Dimension": "RegionId",
       "Operator": "In",
-      "Values": ["us-east-1"],
-      "Applicability": 1.0
+      "Values": ["us-east-1"]
     },
     {
       "Dimension": "RegionId",
       "Operator": "In",
       "Values": ["us-west-2"],
-      "Applicability": 0.5
+      "Applicability": {
+        "Cost": 0.5,
+        "Usage": 0.5
+      }
     }
   ]
 }
 ```
 
-### Granular Applicability (Object)
+### Granular Applicability (Partial Object)
 
-A scenario where 100% of Marketplace **Usage** counts toward a volume commitment, but only 50% of the **Cost** is applicable for financial credit.
+A scenario where 100% of Marketplace **Usage** counts toward a volume commitment, but only 50% of the **Cost** is applicable for financial credit. The engine defaults the missing `Usage` key to `1.0`.
 
 ```json
 {
@@ -203,8 +194,7 @@ A scenario where 100% of Marketplace **Usage** counts toward a volume commitment
       "Operator": "In",
       "Values": ["Cloud Marketplace"],
       "Applicability": {
-        "Cost": 0.5,
-        "Usage": 1.0
+        "Cost": 0.5
       }
     }
   ]
@@ -213,11 +203,48 @@ A scenario where 100% of Marketplace **Usage** counts toward a volume commitment
 
 ### Complex Fallback
 
-A commitment with dynamic or conditional logic that requires calculation against the total aggregate of cost or usage (e.g., 'Applies to the top 10% of compute spend by volume'). While the intent can be described in ContractCommitmentDescription, the IsComplexScope flag signals that the scope and applicability cannot be described in isolation for a subset of included or excluded values.
+A commitment with dynamic or conditional logic that requires calculation against the total aggregate of cost or usage.
 
 ```json
 {
   "IsComplexScope": true
+}
+```
+
+### JTD
+
+```json
+{
+  "definitions": {
+    "applicability": {
+      "properties": {},
+      "optionalProperties": {
+        "Cost": { "type": "float64" },
+        "Usage": { "type": "float64" }
+      },
+      "additionalProperties": false
+    },
+    "rule": {
+      "properties": {
+        "Dimension": { "type": "string" },
+        "Operator": { "type": "string" },
+        "Values": { "elements": { "type": "string" } }
+      },
+      "optionalProperties": {
+        "Applicability": { "ref": "applicability" }
+      }
+    }
+  },
+  "properties": {},
+  "optionalProperties": {
+    "IsGlobalScope": { "type": "boolean" },
+    "IsComplexScope": { "type": "boolean" },
+    "Applicability": { "ref": "applicability" },
+    "InclusionOperator": { "enum": ["AND", "OR"] },
+    "Inclusions": { "elements": { "ref": "rule" } },
+    "ExclusionOperator": { "enum": ["AND", "OR"] },
+    "Exclusions": { "elements": { "ref": "rule" } }
+  }
 }
 ```
 
@@ -231,7 +258,8 @@ The evaluation of a resource against a commitment eligibility MUST follow a stri
 2. **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
 3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, terminate evaluation.
 4. **Applicability Resolution:**
-   * **Resolution Logic:** If `Applicability` is a Decimal, the value is applied to both Cost and Usage. If it is an Object, the engine MUST use the specific metric key.
+   * **Inheritance:** A matching rule's `Applicability` object takes precedence over the top-level object.
+   * **Defaulting:** If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine MUST default that specific value to `1.0`.
    * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `OR`, the engine MUST use the highest percentage for each respective metric.
    * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
 
@@ -240,11 +268,11 @@ The evaluation of a resource against a commitment eligibility MUST follow a stri
 The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Interval](#datasets.contractcommitment.contractcommitmentinterval):
 
 * **Continuous Models:** The `Applicability` percentages (Cost/Usage) MUST be applied to each discrete unit of activity within the **Interval** (e.g., every hour). If the commitment is not fully utilized by the applicable resources within that specific hour, the remaining capacity expires.
-* **Discontinuous Models:** The `Applicability` percentages determine the portion of aggregate activity that counts toward the commitment fulfillment over the entire **Interval** (e.g., the full year). True-up or balance calculations are only performed on the qualified, applicable totals.
+* **Discontinuous Models:** The `Applicability` percentages determine the portion of aggregate activity that counts toward the commitment fulfillment over the entire **Interval** (e.g., the full year).
 
 ### Dependency Logic
 
-1. **Polymorphic Handling:** Engines MUST check the type of the `Applicability` field. If a metric key (e.g., `Cost`) is missing from an `Applicability` object, the engine SHOULD assume `0.0` for that specific metric.
+1. **Consistency:** Engines SHOULD expect an object and SHOULD NOT support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
 2. **Conflict Resolution:** If `IsGlobalScope` is `true`, rule-level applicability in the `Inclusions` array is ignored in favor of the top-level `Applicability` attribute.
 
 ## Column ID
@@ -263,7 +291,7 @@ A structured definition of the specific entities to which a contract commitment 
 
 | Constraint | Value |
 | :--- | :--- |
-| Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
+| Dataset | [Contract Commitment](#datasets.contractcommitment) |
 | Column type | Dimension |
 | Feature level | Mandatory |
 | Allows nulls | False |
