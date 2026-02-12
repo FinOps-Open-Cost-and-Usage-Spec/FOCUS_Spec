@@ -52,7 +52,7 @@ Given that the entire change history is presented, the Ledger correction style p
 
 ### Corrections to Issued Invoices
 
-While corrections to data in FOCUS Invoice Detail and Cost and Usage *dataset artifacts* associated with an [*issued invoice*](#glossary:issued-invoice) may be permitted, they must not compromise the integrity of the *issued invoice* representation. Any correction that invalidates the *invoice reconciliation* performed by the [*invoice issuer*](#glossary:invoice-issuer) prior to invoice issuance would undermine the consistency and integrity of delivered *FOCUS dataset artifacts*. Corrections that would have this effect are therefore prohibited for *issued invoices*, unless explicitly requested by the end-user.
+While corrections to data in FOCUS Invoice Detail and Cost and Usage *dataset artifacts* associated with an [*issued invoice*](#glossary:issued-invoice) may be permitted, they must not compromise the integrity of the *issued invoice* representation. Any correction that invalidates the *invoice reconciliation* performed by the [*invoice issuer*](#glossary:invoice-issuer) prior to invoice issuance would undermine the consistency and integrity of delivered *FOCUS dataset artifacts*. Corrections that would have this effect are therefore prohibited for *issued invoices*, unless explicitly requested or approved by the end-user.
 
 Corrections to underlying records that do not impact the *invoice reconciliation* are permitted. However, even when *invoice reconciliation* remains intact, such corrections can reduce auditability and traceability and may affect downstream processes (e.g., cost allocation, chargeback, reporting), with more significant implications for closed billing periods.
 
@@ -77,14 +77,9 @@ Defines how *corrections* to previously delivered FOCUS *dataset artifacts* are 
 CorrectionHandling MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta or Ledger is used and under which conditions).
-* When using Delta or Ledger correction styles, FOCUS dataset MUST preserve all previously delivered records to maintain a complete and auditable correction history.
-* When [InvoiceDetail.InvoiceStatus](#datasets.invoicedetail.invoicestatus) is "Closed" for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceDetail.BilledCost](#datasets.invoicedetail.billedcost) MUST adhere to the following requirements:
-  * The sum of InvoiceDetail.BilledCost MUST match the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid) when the correction to the *issued invoice* is not explicitly requested or approved by the end-user.
-  * The sum of InvoiceDetail.BilledCost MAY differ from the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId when the correction to the *issued invoice* is explicitly requested or approved by the end-user.
-* The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MAY differ from the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId when InvoiceDetail.InvoiceStatus is "Open".
-* When including corrections associated to *closed billing period* *FOCUS dataset* adheres to the following additional requirements:
-  * *FOCUS dataset* MUST NOT deliver records that result in issuing additional invoices for the given billing period.
-  * *FOCUS dataset* MAY deliver one or more records that result in issuing additional invoices for subsequent *open billing period*.
+* *FOCUS dataset* MUST represent a complete snapshot for a given delivery scope when using Replacement correction style.
+* *FOCUS dataset* MUST supersede all previously delivered dataset artifacts for the same delivery scope when using Replacement correction style.
+* *FOCUS dataset* MUST preserve all previously delivered records when using Delta or Ledger correction styles.
 
 ## Exceptions
 

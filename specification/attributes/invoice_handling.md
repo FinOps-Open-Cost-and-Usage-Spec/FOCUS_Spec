@@ -16,11 +16,11 @@ Before an [*invoice is issued*](#glossary:issued-invoice), i.e., the [Invoice St
 
 At the conclusion of this process, the aggregated [Billed Costs](#datasets.invoicedetail.billedcost) in the Invoice Detail *FOCUS dataset* for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) are expected to match the payable amounts presented on the corresponding invoice line items.
 
-Similarly, the aggregated Billed Cost in the Invoice Detail *FOCUS dataset* for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) is expected to match the corresponding aggregated [Billed Costs](#datasets.costandusage.billedcost) in the Cost and Usage *FOCUS dataset* for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid).
+Similarly, the aggregated Billed Cost in the Invoice Detail *FOCUS dataset* for a given InvoiceDetail.InvoiceDetailId is expected to match the corresponding aggregated [Billed Costs](#datasets.costandusage.billedcost) in the Cost and Usage *FOCUS dataset* for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid).
 
 Practitioners may independently perform *invoice reconciliation* by verifying that invoice line items are aligned with data provided in the FOCUS datasets, particularly Cost and Usage, Invoice Detail, and Billing Period.
 
-Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is expected not to change, except where explicitly requested by the end-user. [*Corrections*](#glossary:correction) to *issued charges* (including updates, additions, or omissions) may be permitted under certain conditions. However, such corrections must not compromise the integrity of the associated *issued invoice*. For more information on *corrections* to *issued invoices* refer to the [Correction Handling attribute](#attributes.correctionhandling).
+Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is expected not to change, except where explicitly requested by the end-user. [*Corrections*](#glossary:correction) to *issued invoice* (including updates, additions, or omissions of underlaying records in Cost and Usage, Invoice Detail, and Billing Period *FOCUS datasets*) may be permitted under certain conditions. However, such corrections must not compromise the integrity of the associated *issued invoice*. For more information on *corrections* to *issued invoices* refer to the [Correction Handling attribute](#attributes.correctionhandling).
 
 ### Open and Closed Billing Periods
 
@@ -56,8 +56,13 @@ InvoiceHandling MUST adhere to the following requirements:
   * CostAndUsage *FOCUS dataset* MUST include Custom columns (e.g., x_ChargeSubType) needed to support invoice reconciliation when FOCUS columns are not sufficient.
 * CostAndUsage.BillingPeriodStart for a given CostAndUsage.InvoiceId MUST match InvoiceDetail.BillingPeriodStart for the same InvoiceDetail.InvoiceId.
 * CostAndUsage.BillingPeriodEnd for a given CostAndUsage.InvoiceId MUST match InvoiceDetail.BillingPeriodEnd for the same InvoiceDetail.InvoiceId.
-* The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the payable amount provided in the corresponding invoice line items.
-* The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the sum of CostAndUsage.BilledCost for a given CostAndUsage.InvoiceDetailId.
+* The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the payable amount provided in the corresponding invoice line items when InvoiceDetail.InvoiceStatus is "Closed".
+* The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId when InvoiceDetail.InvoiceStatus is "Closed".
+* The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MAY differ from the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId when InvoiceDetail.InvoiceStatus is "Open".
+* [InvoiceDetail.InvoiceDetailCreated](#datasets.invoicedetail.invoicedetailcreated) MUST be earlier than or equal to [BillingPeriod.BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated) when the following conditions are met:
+  * [BillingPeriod.BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus) is "Closed",
+  * given [InvoiceDetail.InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) matches BillingPeriod.InvoiceIssuerName,
+  * and given [InvoiceDetail.BillingPeriodStart](#datasets.invoicedetail.billingperiodstart) matches [BillingPeriod.BillingPeriodStart](#datasets.billingperiod.billingperiodstart).
 
 ## Exceptions
 
