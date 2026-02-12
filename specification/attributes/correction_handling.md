@@ -11,7 +11,7 @@ Corrections may address a variety of operational or technical causes, such as re
 Accurate correction handling is essential to ensure the consistency, integrity, and usability of *FOCUS datasets* over time. Depending on the dataset and delivery configuration, it supports a range of key outcomes, including but not limited to:
 
 * Consistency of delivered data - ensuring that delivered data remains consistent and reliable over time, where applicable, including alignment between related *FOCUS datasets* (e.g., [Invoice Detail](#datasets.invoicedetail) records and the underlying [Cost and Usage](#datasets.costandusage) records).
-* Data integrity and [*invoice reconciliation*](#glossary:invoice-reconciliation) - ensuring that corrections do not compromise records associated with issued invoices and that alignment is maintained in accordance with defined *invoice reconciliation* requirements.
+* Data integrity and [*invoice reconciliation*](#glossary:invoice-reconciliation) - ensuring that corrections do not compromise records associated with [*issued invoices*](#glossary:issued-invoice) and that alignment is maintained in accordance with defined *invoice reconciliation* requirements.
 * Auditability and traceability - enabling the tracking of delivered data and applied corrections over time, so that changes and their effects can be understood, verified, and correctly reflected in downstream processes (e.g., cost allocation, chargeback, reporting).
 
 ### Correction Styles
@@ -52,17 +52,23 @@ Given that the entire change history is presented, the Ledger correction style p
 
 ### Corrections to Issued Invoices
 
-Corrections to data in FOCUS Invoice Detail and Cost and Usage *dataset artifacts* associated with an [*issued invoice*](#glossary:issued-invoice) may be permitted under certain conditions. However, any correction that would compromise the integrity of the *issued invoice* representation or invalidate the *invoice reconciliation* performed by the [*invoice issuer*](#glossary:invoice-issuer) prior to invoice issuance is prohibited, unless explicitly requested or approved by the customer.
+Corrections to data in FOCUS Invoice Detail and Cost and Usage *dataset artifacts* associated with an *issued invoice* that would affect the integrity of the *issued invoice* representation or invalidate the *invoice reconciliation* performed by the [*invoice issuer*](#glossary:invoice-issuer) prior to invoice issuance may only be applied if the corresponding [Invoice Status](#datasets.invoicedetail.invoicestatus) (within Invoice Detail *FOCUS dataset*) transitions from "Closed" to "Open". Such a transition must be explicitly requested or approved by the customer to ensure auditability, traceability, and the integrity of *invoice reconciliation*.
 
-Corrections to underlying records that do not impact *invoice reconciliation* are allowed, but even in this case they may reduce auditability and traceability or affect downstream processes (e.g., cost allocation, chargeback, reporting).  
+Corrections to underlying records that do not impact *invoice reconciliation* are allowed regardless of Invoice Status, but even in this case they may reduce auditability and traceability or affect downstream processes (e.g., cost allocation, chargeback, reporting).
 
 For more details and requirements regarding consistency and integrity of delivered Invoice Detail and Cost and Usage *dataset artifacts* for *issued invoices*, see the [Invoice Handling attribute](#invoicehandling).
 
 ### Corrections to Closed Billing Periods
 
-Corrections to a previously *closed billing period* that require issuing additional invoices must be handled in the context of a subsequent *open billing period*. This approach preserves the historical financial accuracy and integrity of closed billing periods, establishes a clear temporal boundary between billing cycles, and ensures that such corrections are transparently tracked and auditable in future periods.
+Corrections to previously *closed billing periods* that would require issuing additional [*invoices*](#glossary:invoice) may only be applied if the corresponding [BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus) (within [Billing Period](#datasets.billingperiod) *FOCUS dataset*) transitions from "Closed" to "Open". Such a transition must be explicitly requested or approved by the customer to ensure auditability, traceability, and the integrity of financial reporting.
 
-For more details and requirements regarding consistency and integrity of delivered [Billing Period](#datasets.billingperiod), Invoice Detail and Cost and Usage *dataset artifacts* for *closed billing periods*, see the [Invoice Handling attribute](#invoicehandling).
+Corrections that do not impact the integrity of the closed billing period, such as informational or metadata updates, are allowed regardless of BillingPeriodStatus.
+
+If the original closed period is not reopened, corrections that require issuing additional invoices must always be represented in the context of a subsequent *open billing period*, in accordance with the [Invoice Handling attribute](#invoicehandling).
+
+This approach preserves historical financial accuracy, ensures clear temporal boundaries between billing cycles, and guarantees that all corrections are transparently tracked and auditable in future periods.
+
+For more details and requirements regarding consistency and integrity of delivered Billing Period, Invoice Detail and Cost and Usage *dataset artifacts* for *closed billing periods*, see the [Invoice Handling attribute](#invoicehandling).
 
 ## Attribute ID
 
@@ -84,6 +90,8 @@ CorrectionHandling MUST adhere to the following requirements:
 * *FOCUS dataset* MUST represent a complete snapshot of data for the affected *delivery scope* when using Replacement correction style.
 * *FOCUS dataset* MUST include additive records representing corrections within the same *delivery scope* when using Delta correction style.
 * *FOCUS dataset* MUST include explicit reversal and re-entry additive records representing corrections within the same *delivery scope* when using Ledger correction style.
+* *FOCUS dataset* MUST ensure that InvoiceDetail.InvoiceStatus for an *issued invoice* transitions from "Closed" to "Open" only if explicitly requested or approved by the customer.
+* *FOCUS dataset* MUST ensure that BillingPeriod.BillingPeriodStatus for a *closed billing period* transitions from "Closed" to "Open" only if explicitly requested or approved by the customer.
 
 ## Exceptions
 
