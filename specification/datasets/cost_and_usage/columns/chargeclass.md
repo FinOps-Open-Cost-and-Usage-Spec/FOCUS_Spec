@@ -6,7 +6,6 @@ Charge Class indicates whether a [*charge*](#glossary:charge) represents a [*cor
 
 ChargeClass adheres to the following requirements:
 
-* ChargeClass MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeClass MUST be of type String.
 * ChargeClass nullability is defined as follows:
   * ChargeClass MUST be null when the *charge* does not represent a correction to a previously *closed billing period*.
@@ -27,13 +26,14 @@ Indicates whether a *charge* represents a correction to a previously *closed bil
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | True           |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | Allowed values                                       |
 
 Allowed values:
 
@@ -44,4 +44,3 @@ Allowed values:
 ## Introduced (version)
 
 1.0
-
