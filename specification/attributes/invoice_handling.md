@@ -20,7 +20,7 @@ Similarly, the aggregated Billed Cost in the Invoice Detail *FOCUS dataset* for 
 
 Practitioners may independently perform *invoice reconciliation* by verifying that invoice line items are aligned with data provided in the FOCUS datasets, particularly Cost and Usage, Invoice Detail, and Billing Period.
 
-Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is expected not to change, except where explicitly requested by the customer. [*Corrections*](#glossary:correction) to *issued invoice* (including updates, additions, or omissions of underlaying records in Cost and Usage, Invoice Detail, and Billing Period *FOCUS datasets*) may be permitted under certain conditions. However, such corrections must not compromise the integrity of the associated *issued invoice*. For more information on *corrections* to *issued invoices* refer to the [Correction Handling attribute](#attributes.correctionhandling).
+Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is expected not to change. [*Corrections*](#glossary:correction) to *issued invoice* (including updates, additions, or omissions of underlying records in Cost and Usage, Invoice Detail, and Billing Period *FOCUS datasets*) may be permitted only in accordance with the [Correction Handling attribute](#attributes.correctionhandling) and must not compromise the integrity of the *issued invoice*.
 
 ### Open and Closed Billing Periods
 
@@ -28,7 +28,7 @@ A [*closed billing period*](#glossary:closed-billing-period) represents a billin
 
 The Billing Period *FOCUS dataset* provides the necessary context to identify the status of each billing period for a specific [Invoice Issuer Name](#datasets.billingperiod.invoiceissuername). Since both the Cost and Usage and Invoice Detail *FOCUS datasets* include this same column, their records can be associated with the corresponding billing cycles.
 
-For a *closed billing period*, the data presented in *FOCUS dataset* artifacts is considered final. Any subsequent updates or adjustments must be delivered in the context of a subsequent billing period. For information on *corrections* to *closed billing periods*, refer to the Correction Handling attribute.
+For a *closed billing period*, the data presented in *FOCUS dataset* artifacts is expected not to change. Corrections to *closed billing periods* (including updates, additions, or omissions of underlying records in Cost and Usage, Invoice Detail, and Billing Period *FOCUS datasets*) may be permitted only in accordance with the [Correction Handling attribute](#attributes.correctionhandling) and must not compromise the integrity of the *closed billing period*.
 
 ## Attribute ID
 
