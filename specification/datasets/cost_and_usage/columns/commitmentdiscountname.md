@@ -6,7 +6,6 @@ A Commitment Discount Name is the display name assigned to a [*commitment discou
 
 CommitmentDiscountName adheres to the following requirements:
 
-* CommitmentDiscountName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountName MUST be of type String.
 * CommitmentDiscountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentDiscountName nullability is defined as follows:
@@ -29,13 +28,14 @@ The display name assigned to a *commitment discount*.
 
 ## Content constraints
 
-| Constraint      | Value            |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 
