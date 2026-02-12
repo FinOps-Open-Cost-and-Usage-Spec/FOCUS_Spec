@@ -13,34 +13,7 @@ The ContractApplied column adheres to the following requirements:
 * ContractApplied MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractApplied nullability is defined as follows:
   * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
-* ContractApplied MUST conform to [AllocatedMethodDetailsObject](#datasets.costandusage.contractappliedobject) requirements when ContractApplied is not null.
-
-## Column ID
-
-ContractApplied
-
-## Display Name
-
-Contract Applied
-
-## Description
-
-A set of properties that associate a charge with one or more [*contract commitments*](#glossary:contract-commitment).
-
-## Content Constraints
-
-| Constraint      | Value                                                |
-| :-------------- | :----------------------------------------------------|
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension and Metric                                 |
-| Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
-| Data type       | JSON                                                 |
-| Value format    | [JSON Object Format](#attributes.jsonobjectformat)   |
-
-## Introduced (version)
-
-1.3
+* ContractApplied MUST conform to [AllocatedMethodDetailsObject](#datasets.costandusage.contractapplied.contractappliedobject) requirements when ContractApplied is not null.
 
 ## Contract Applied Object
 
@@ -126,16 +99,6 @@ The ContractAppliedObject adheres to the following requirements:
       * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit MUST be null when ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity is null.
       * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit MUST NOT be null when ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity is not null.
 
-## Object ID
-
-ContractAppliedObject
-
-## Object Display Name
-
-Contract Applied Object
-
-## Overview
-
 ### Array of Objects
 
 The parent array is called `Elements` and contains one or more objects which communicate information about how an allocated record was calculated.
@@ -180,7 +143,7 @@ Contract Commitment Applied Quantity represents the quantity of the charge appli
 
 The Contract Commitment Applied Unit represents a service-provider-specified measurement unit for the usage declared in Contract Commitment Applied Quantity. Contract Commitment Applied Unit complements the Contract Commitment Applied Quantity metric.
 
-### Example
+### Object Example
 
 ```json
 {
@@ -223,105 +186,37 @@ The Contract Commitment Applied Unit represents a service-provider-specified mea
 
 NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for ContractApplied. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#attributes.numericformat) allows for multiple numeric data types and precisions, but JTD requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
 
-## Example Scenarios
+### Object ID
 
-### Scenario 1: Initial contract commitment
+ContractAppliedObject
 
-A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a service provider and a customer:
+### Object Display Name
 
-1) 12345: Spend $500k overall.  (This is the value of the contract, and thus ContractID = ContractCommitmentID.)
-2) 23456: Spend $25k on a particular service.
-3) 34567: Consume 100k compute hours on a particular resource type.
+Contract Applied Object
 
-The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, and Contract Commitment ID are all denoted as 12345.
+## Column ID
 
-```json
-{
-  "ResourceID": "12345",
-  "ChargeCategory": "Purchase",
-  "BilledCost": 500000.00,
-  "EffectiveCost": 0.00,
-  "ContractApplied":
-    {
-      "Elements": [ {
-        "ContractID": "12345",
-        "ContractCommitmentID": "12345",
-        "ContractCommitmentAppliedCost": 500000.00
-      }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "23456",
-        "ContractCommitmentAppliedCost": 25000.00
-      }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "34567",
-        "ContractCommitmentAppliedQuantity": 100000.00,
-        "ContractCommitmentAppliedUnit": "compute_hours"
-      } ]
-    }
-```
+ContractApplied
 
-### Scenario 2: Contract commitment usage with no custom columns
+## Display Name
 
-Assume the contract commitment as described in Scenario 1.  Assume that only 50% of cost and usage gets applied to the contract commitments, per the contract terms.
+Contract Applied
 
-A single Cost and Usage charge for `myResource1` carries Effective Cost of 30 (denominated in USD) and Consumed Quantity of 1 (denominated in compute hours).  The Charge Category is denoted as Usage.
+## Description
 
-This applies to the contract commitments in the following manner:
+A set of properties that associate a charge with one or more [*contract commitments*](#glossary:contract-commitment).
 
-```json
-{
-  "ResourceID": "myResource1",
-  "ChargeCategory": "Usage",
-  "BilledCost": 0.00,
-  "EffectiveCost": 30.00,
-  "ConsumedQuantity": 1,
-  "ContractApplied":
-    {
-      "Elements": [ {
-        "ContractID": "12345",
-        "ContractCommitmentID": "12345",
-        "ContractCommitmentAppliedCost": 15.00
-      }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "23456",
-        "ContractCommitmentAppliedCost": 15.00
-      }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "34567",
-        "ContractCommitmentAppliedQuantity": 0.50,
-        "ContractCommitmentAppliedUnit": "compute_hours"
-      } ]
-    }
-```
+## Content Constraints
 
-### Scenario 3: Contract commitment usage with custom columns
+| Constraint      | Value                                                |
+| :-------------- | :----------------------------------------------------|
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension and Metric                                 |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | JSON                                                 |
+| Value format    | [JSON Object Format](#attributes.jsonobjectformat)   |
 
-The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCostBalance` is provided by the data generator.   This datapoint represents the value remaining on a given contract commitment.
+## Introduced (version)
 
-```json
-{
-  "ResourceID": "myResource1",
-  "ChargeCategory": "Usage",
-  "BilledCost": 0.00,
-  "EffectiveCost": 30.00,
-  "ConsumedQuantity": 1,
-  "ContractApplied":
-    {
-      "Elements": [ {
-        "ContractID": "12345",
-        "ContractCommitmentID": "12345",
-        "ContractCommitmentAppliedCost": 15.00,
-        "x_ContractCommitmentCostBalance": 499985.00
-      }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "23456",
-        "ContractCommitmentAppliedCost": 15.00,
-        "x_ContractCommitmentCostBalance": 24985.00
-      }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "34567",
-        "ContractCommitmentAppliedQuantity": 0.50,
-        "ContractCommitmentAppliedUnit": "compute_hours"
-      } ]
-    }
-```
+1.3

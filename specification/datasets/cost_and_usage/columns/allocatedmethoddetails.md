@@ -16,35 +16,7 @@ The AllocatedMethodDetails column adheres to the following requirements:
 * AllocatedMethodDetails nullability is defined as follows:
   * AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
-* AllocatedMethodDetails MUST conform to [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetailsobject) requirements when AllocatedMethodDetails is not null.
-
-## Column ID
-
-AllocatedMethodDetails
-
-## Display Name
-
-Allocated Method Details
-
-## Description
-
-A set of properties describing how resources are allocated in data generator-defined split cost allocation.
-
-## Content Constraints
-
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Recommended                                          |
-| Allows nulls    | True                                                 |
-| Data type       | JSON                                                 |
-| Value format    | [JSON Object Format](#attributes.jsonobjectformat)   |
-| Object          | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject)
-
-## Introduced (version)
-
-1.3
+* AllocatedMethodDetails MUST conform to [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) requirements when AllocatedMethodDetails is not null.
 
 ## Allocated Method Details Object
 
@@ -94,15 +66,13 @@ The AllocatedMethodDetailsObject adheres to the following requirements:
     * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
     * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity SHOULD capture the quantity or volume of the AllocatedMethodDetailsObject.Elements[\*].UsageUnit measured by the data generator that was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 
-## Object ID
+### Object ID
 
 AllocatedMethodDetailsObject
 
-## Object Display Name
+### Object Display Name
 
 Allocated Method Details Object
-
-## Overview
 
 ### Array of Objects
 
@@ -138,7 +108,7 @@ Usage Unit communicates the aspect of the documented Allocation Method Id being 
 
 Usage Quantity communicates the volume that was consumed or used, denominated in the Usage Unit property value.
 
-### Example
+### Object Example
 
 ```json
 {
@@ -178,74 +148,30 @@ Usage Quantity communicates the volume that was consumed or used, denominated in
 
 NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#attributes.numericformat) allows for multiple numeric data types and precisions, but JTD requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
 
-## Example Scenarios
+## Column ID
 
-The JSON samples in the scenarios below each represent a single allocated record out of the multiple records derived from an origin record for that scenario. The sum AllocatedRatio will add up to 1 (100%) across all allocated records for an origin record, with the AllocatedRatio (or sum of AllocatedRatio) representing the allocated record's portion of the overall origin record.
+AllocatedMethodDetails
 
-### Scenario 1: Single "UsageUnit" value used for allocation
+## Display Name
 
-When only a single "UsageUnit" is used to calculate the allocation.
+Allocated Method Details
 
-```json
-{
-  "Elements" : [ {
-    "AllocatedRatio" : 0.1,
-    "UsageUnit" : "Hours",
-    "UsageQuantity" : 300
-    }
-  ]
-}
-```
+## Description
 
-### Scenario 2: Multiple "UsageUnit" values used for allocation
+A set of properties describing how resources are allocated in data generator-defined split cost allocation.
 
-When multiple "UsageUnit" values are used to calculate the allocation, another object is added to the "Elements" collection.
+## Content Constraints
 
-```json
-{
-  "Elements": [
-    {
-      "AllocatedRatio": 0.05,
-      "UsageUnit": "CPU",
-      "UsageQuantity": 0.5
-    },
-    {
-      "AllocatedRatio": 0.1,
-      "UsageUnit": "Memory",
-      "UsageQuantity": 4
-    }
-  ]
-}
-```
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Recommended                                          |
+| Allows nulls    | True                                                 |
+| Data type       | JSON                                                 |
+| Value format    | [JSON Object Format](#attributes.jsonobjectformat)   |
+| Object          | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject)
 
-### Scenario 3: Data generator omits keys that are not required
+## Introduced (version)
 
-This data generator does not wish to supply the "UsageUnit" or "UsageQuantity" keys but still provides cost allocation with some additional allocation method details. In this case, "UsageUnit" and "UsageQuantity" are omitted, and only the "AllocatedRatio" is supplied.
-
-```json
-{
-  "Elements" : [ {
-    "AllocatedRatio" : 0.45
-    }
-  ]
-}
-```
-
-### Scenario 4: Additional non-FOCUS specified properties
-
-A data generator can add additional properties if they feel more context is helpful or necessary to the practitioner. In this scenario, the data generator is supplying additional context that shows only 0.5 of a unit was used. However, since 1 unit was requested by the service this allocation represents, the allocation is being charged at 1 regardless.
-
-```json
-{
-  "Elements": [
-    {
-      "AllocatedRatio": 0.6,
-      "UsageUnit": "vCPU",
-      "UsageQuantity": 1,
-      "x_ReservedVCPU": 1,
-      "x_UsedVCPU": 0.5,
-      "x_AllocatedVCPU": 1
-    }
-  ]
-}
-```
+1.3
