@@ -21,8 +21,8 @@ FOCUS recognizes three styles for handling corrections within subsequent *datase
 | Correction Style | Delivery Mechanism | Correction Style Description                                                                                                                                              |
 | ---------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Replacement      | Overwrite          | Previously delivered records are not corrected individually; each delivery provides a complete snapshot and supersedes any previously delivered data within the affected [*delivery scope*](#glossary:delivery-scope). |
-| Delta            | Append             | Previously delivered records are preserved; corrections are appended as additive adjustment records applied during aggregation and may include supplemental records as needed. |
-| Ledger           | Append             | Previously delivered records are preserved; corrections are appended as explicit reversal and re-entry records applied during aggregation and may include supplemental records as needed. |
+| Delta            | Append             | Previously delivered records are preserved; corrections are appended as additive records applied during aggregation and may include supplemental records as needed. |
+| Ledger           | Append             | Previously delivered records are preserved; corrections are appended as additive records representing explicit reversals and re-entries, applied during aggregation, and may include supplemental records as needed. |
 
 For more information on delivery mechanisms for *dataset artifacts*, see the [Delivery Handling attribute](#deliveryhandling).
 
@@ -36,17 +36,17 @@ Given that changes are not presented as separate entries, this style lacks inher
 
 #### Delta Corrections
 
-In the Delta correction style, a *dataset artifact* uses the Append delivery mechanism to provide incremental updates to data for a given delivery scope, based on the data available at the time of delivery.
+In the Delta correction style, a *dataset artifact* uses the Append delivery mechanism to provide additive records for a given *delivery scope*, based on the data available at the time of delivery.
 
-All previously delivered *dataset artifacts* are preserved, and corrections are expressed as incremental adjustment records that are applied during aggregation. These records effectively increase or decrease values in selected additive metrics (e.g., cost- and quantity-related columns) of previously delivered records, or supplement previously delivered records, all within the same *delivery scope*. The practitioner must reference all *dataset artifacts* delivered for a given *delivery scope* in order to see a complete and accurate view.
+All previously delivered *dataset artifacts* are preserved, and corrections are expressed as additive records that are applied during aggregation. These records effectively increase or decrease values in selected additive metrics (e.g., cost- and quantity-related columns) of previously delivered records, or supplement previously delivered records, all within the same *delivery scope*. The practitioner must reference all *dataset artifacts* delivered for a given *delivery scope* in order to see a complete and accurate view.
 
 Given that only net changes are presented and previously delivered records are not explicitly reversed, the Delta correction style provides limited inherent auditability compared to Ledger corrections.
 
 #### Ledger Corrections
 
-In the Ledger correction style, a *dataset artifact* uses the Append delivery mechanism in combination with a double-entry bookkeeping method to provide detailed updates for a given delivery scope, based on the data available at the time of delivery. Depending on the nature of the correction, either or both of the following steps may be required: (1) reversal of the original record using a record in which additive metrics (e.g., cost- and quantity-related columns) carry values with the opposite sign, while all other columns match the original; and (2) a new record with corrected values.
+In the Ledger correction style, a *dataset artifact* uses the Append delivery mechanism in combination with a double-entry bookkeeping method to provide detailed updates for a given *delivery scope*, based on the data available at the time of delivery. Depending on the nature of the correction, either or both of the following steps may be required: (1) reversal of the original record using a record in which additive metrics (e.g., cost- and quantity-related columns) carry values with the opposite sign, while all other columns match the original; and (2) a new record with corrected values.
 
-All previously delivered *dataset artifacts* are preserved, and corrections are expressed as incremental records that reflect explicit reversals and re-entries, applied during aggregation. These records effectively increase or decrease values in selected additive metrics (e.g., cost- and quantity-related columns) of previously delivered records, or supplement previously delivered records, all within the same delivery scope. The practitioner must reference all *dataset artifacts* delivered for a given *delivery scope* in order to see a complete and accurate view.
+All previously delivered *dataset artifacts* are preserved, and corrections are expressed as additive records that reflect explicit reversals and re-entries, applied during aggregation. These records effectively increase or decrease values in selected additive metrics (e.g., cost- and quantity-related columns) of previously delivered records, or supplement previously delivered records, all within the same *delivery scope*. The practitioner must reference all *dataset artifacts* delivered for a given *delivery scope* in order to see a complete and accurate view.
 
 Given that the entire change history is presented, the Ledger correction style provides full inherent auditability.
 
@@ -76,10 +76,10 @@ Defines how *corrections* to previously delivered FOCUS *dataset artifacts* are 
 
 CorrectionHandling MUST adhere to the following requirements:
 
-* *FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta or Ledger is used and under which conditions).
-* *FOCUS dataset* MUST represent a complete snapshot for a given delivery scope when using Replacement correction style.
-* *FOCUS dataset* MUST supersede all previously delivered dataset artifacts for the same delivery scope when using Replacement correction style.
-* *FOCUS dataset* MUST preserve all previously delivered records when using Delta or Ledger correction styles.
+* *FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta, or Ledger style is used and under which conditions each style applies).
+* *FOCUS dataset* MUST represent a complete snapshot of data for the affected *delivery scope* when using Replacement correction style.
+* *FOCUS dataset* MUST include additive records representing corrections within the same *delivery scope* when using Delta correction style.
+* *FOCUS dataset* MUST include explicit reversal and re-entry additive records representing corrections within the same *delivery scope* when using Ledger correction style.
 
 ## Exceptions
 

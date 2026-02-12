@@ -11,7 +11,7 @@ A [*dataset instance*](#glossary:dataset-instance) represents a specific impleme
 FOCUS recognizes two *FOCUS datasets* delivery mechanisms:
 
 * Overwrite: Each delivery provides a complete snapshot, superseding any previously delivered *dataset artifact* for the same [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)).
-* Append: Each delivery adds new data, while previously delivered dataset artifacts are preserved.
+* Append: Each delivery adds new data, while previously delivered *dataset artifacts* are preserved.
 
 Overwrite and Append mechanisms are not mutually exclusive, and hybrid implementations are common in practice, allowing data generators to meet specific technical and auditability requirements.
 
@@ -58,11 +58,12 @@ Defines how data generator delivers *FOCUS dataset* to customer.
 DeliveryHandling MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).
+* When using Overwrite delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:
+  * *FOCUS dataset* MUST represent a complete snapshot for a given *delivery scope*.
+  * *FOCUS dataset* MUST supersede all previously delivered *dataset artifacts* for the same *delivery scope*.
+* *FOCUS dataset* MUST preserve all previously delivered *dataset artifacts* when using Append delivery mechanism.
 * *FOCUS dataset* SHOULD have delivered *dataset artifacts* accompanied by corresponding [FOCUS Metadata](#metadata).
 * *FOCUS dataset* MUST have its mechanism for correlating *dataset artifact* with the [FOCUS Metadata Schema object](#metadata.schema) documented and accessible to practitioners when the Metadata is delivered.
-* When using Append delivery mechanism, *FOCUS dataset* adheres to the following additional requirements:
-  * *FOCUS dataset* MUST NOT include updates to previously delivered records.
-  * *FOCUS dataset* MUST NOT include omissions of previously delivered records.
 
 ## Exceptions
 
