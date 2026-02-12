@@ -10,7 +10,7 @@ Corrections may address a variety of operational or technical causes, such as re
 
 Accurate correction handling is essential to ensure the consistency, integrity, and usability of *FOCUS datasets* over time. Depending on the dataset and delivery configuration, it supports a range of key outcomes, including but not limited to:
 
-* Consistency of delivered data - ensuring that delivered data remains consistent and reliable over time, where applicable, including alignment between related *FOCUS datasets* (e.g., Invoice Detail records and the underlying Cost and Usage records).
+* Consistency of delivered data - ensuring that delivered data remains consistent and reliable over time, where applicable, including alignment between related *FOCUS datasets* (e.g., [Invoice Detail](#datasets.invoicedetail) records and the underlying [Cost and Usage](#datasets.costandusage) records).
 * Data integrity and [*invoice reconciliation*](#glossary:invoice-reconciliation) - ensuring that corrections do not compromise records associated with issued invoices and that alignment is maintained in accordance with defined *invoice reconciliation* requirements.
 * Auditability and traceability - enabling the tracking of delivered data and applied corrections over time, so that changes and their effects can be understood, verified, and correctly reflected in downstream processes (e.g., cost allocation, chargeback, reporting).
 
@@ -52,13 +52,17 @@ Given that the entire change history is presented, the Ledger correction style p
 
 ### Corrections to Issued Invoices
 
-While corrections to data in FOCUS Invoice Detail and Cost and Usage *dataset artifacts* associated with an [*issued invoice*](#glossary:issued-invoice) may be permitted, they must not compromise the integrity of the *issued invoice* representation. Any correction that invalidates the *invoice reconciliation* performed by the [*invoice issuer*](#glossary:invoice-issuer) prior to invoice issuance would undermine the consistency and integrity of delivered *FOCUS dataset artifacts*. Corrections that would have this effect are therefore prohibited for *issued invoices*, unless explicitly requested or approved by the end-user.
+Corrections to data in FOCUS Invoice Detail and Cost and Usage *dataset artifacts* associated with an [*issued invoice*](#glossary:issued-invoice) may be permitted under certain conditions. However, any correction that would compromise the integrity of the *issued invoice* representation or invalidate the *invoice reconciliation* performed by the [*invoice issuer*](#glossary:invoice-issuer) prior to invoice issuance is prohibited, unless explicitly requested or approved by the customer.
 
-Corrections to underlying records that do not impact the *invoice reconciliation* are permitted. However, even when *invoice reconciliation* remains intact, such corrections can reduce auditability and traceability and may affect downstream processes (e.g., cost allocation, chargeback, reporting), with more significant implications for closed billing periods.
+Corrections to underlying records that do not impact *invoice reconciliation* are allowed, but even in this case they may reduce auditability and traceability or affect downstream processes (e.g., cost allocation, chargeback, reporting).  
+
+For more details and requirements regarding consistency and integrity of delivered Invoice Detail and Cost and Usage *dataset artifacts* for *issued invoices*, see the [Invoice Handling attribute](#invoicehandling).
 
 ### Corrections to Closed Billing Periods
 
 Corrections to a previously *closed billing period* that require issuing additional invoices must be handled in the context of a subsequent *open billing period*. This approach preserves the historical financial accuracy and integrity of closed billing periods, establishes a clear temporal boundary between billing cycles, and ensures that such corrections are transparently tracked and auditable in future periods.
+
+For more details and requirements regarding consistency and integrity of delivered [Billing Period](#datasets.billingperiod), Invoice Detail and Cost and Usage *dataset artifacts* for *closed billing periods*, see the [Invoice Handling attribute](#invoicehandling).
 
 ## Attribute ID
 
