@@ -19,14 +19,13 @@ Defines requirements for a *FOCUS dataset* to include custom columns for *native
 ## Requirements
 
 * *FOCUS dataset* MUST include custom columns corresponding to *native dataset* columns that support analysis or reporting scenarios and does not duplicate information already captured in FOCUS columns.
+* *FOCUS dataset* MUST preserve the semantic integrity of all columns (particularly summable [*metrics*](#glossary:metric) such as costs and quantities) when records are split or aggregated or when *custom columns* are added.
 * *FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers).
 * *FOCUS dataset* SHOULD NOT include custom columns that duplicate information already captured in FOCUS columns.
 * *FOCUS dataset* MAY omit columns that do not support any analysis or reporting scenarios.
-* *FOCUS dataset* MAY provide a recommended subset of FOCUS and *custom columns* by default when column selection is supported via [*Dataset Configuration*](#attribute.datasetconfiguration).
+* *FOCUS dataset* MAY offer a default column set when column selection is enabled (per [Dataset Configuration](#datasetconfiguration)).
 * *FOCUS dataset* MAY preserve custom columns even after one or more equivalent FOCUS columns are introduced, to enable migration without breaking changes.
-* Custom columns MUST be handled consistently to preserve data integrity when rows are split or aggregated to conform to other FOCUS requirements.
 * Custom columns MUST be documented, including description, purpose, and relationship to native columns.
-* Custom columns MUST NOT introduce values that would violate the integrity of FOCUS [*dimensions*](#glossary:dimension) and [*metrics*](#glossary:metric), particularly summable values such as costs and quantities.
 * Custom columns SHOULD preserve the same fidelity as their equivalent columns in the *native dataset*.
 
 ## Exceptions
