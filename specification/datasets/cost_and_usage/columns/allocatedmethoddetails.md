@@ -66,14 +66,6 @@ The AllocatedMethodDetailsObject adheres to the following requirements:
     * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
     * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity SHOULD capture the quantity or volume of the AllocatedMethodDetailsObject.Elements[\*].UsageUnit measured by the data generator that was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 
-### Object ID
-
-AllocatedMethodDetailsObject
-
-### Object Display Name
-
-Allocated Method Details Object
-
 ### Array of Objects
 
 The parent array is called `Elements` and contains one or more objects which communicate information about how an allocated record was calculated.
@@ -147,6 +139,14 @@ Usage Quantity communicates the volume that was consumed or used, denominated in
 ```
 
 NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for AllocatedMethodDetails. Where there are discrepancies, deference will be given to the normative requirements. For example, [NumericFormat](#attributes.numericformat) allows for multiple numeric data types and precisions, but JTD requires both to be specified; other numeric data types and precisions allowable under NumericFormat are considered valid.
+
+### Object ID
+
+AllocatedMethodDetailsObject
+
+### Object Display Name
+
+Allocated Method Details Object
 
 ## Column ID
 
