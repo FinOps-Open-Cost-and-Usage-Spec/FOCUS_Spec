@@ -61,11 +61,6 @@ However, by design decision, the specification adopts the following normative co
 
 This choice is intentional and overrides interpretations based solely on abstraction level.
 
-> To support this approach and avoid ambiguity:
->
-> * The **FOCUS Dataset** glossary definition SHOULD be refined so that it is no longer interpreted as purely abstract, but as a normative anchor that may represent the dataset specification and its specific implementations.
-> * Glossary entries for **Dataset Instance** and **Dataset Artifact** SHOULD explicitly reflect that they represent **FOCUS Dataset Instance** and **FOCUS Dataset Instance Artifact**, respectively (important with the planned **Native Dataset** entry in version 1.4).
-
 ## Core Normative Authoring Rules
 
 ### 1. Normative Requirement Structure
