@@ -211,39 +211,37 @@ A commitment with dynamic or conditional logic that requires calculation against
 }
 ```
 
-### JTD
+### JTD Schema
 
 ```json
 {
   "definitions": {
-    "applicability": {
-      "properties": {},
+    "applicabilityObject": {
       "optionalProperties": {
         "Cost": { "type": "float64" },
         "Usage": { "type": "float64" }
       },
       "additionalProperties": false
     },
-    "rule": {
+    "eligibilityRule": {
       "properties": {
         "Dimension": { "type": "string" },
         "Operator": { "type": "string" },
         "Values": { "elements": { "type": "string" } }
       },
       "optionalProperties": {
-        "Applicability": { "ref": "applicability" }
+        "Applicability": { "ref": "applicabilityObject" }
       }
     }
   },
-  "properties": {},
   "optionalProperties": {
     "IsGlobalScope": { "type": "boolean" },
     "IsComplexScope": { "type": "boolean" },
-    "Applicability": { "ref": "applicability" },
+    "Applicability": { "ref": "applicabilityObject" },
     "InclusionOperator": { "enum": ["AND", "OR"] },
-    "Inclusions": { "elements": { "ref": "rule" } },
+    "Inclusions": { "elements": { "ref": "eligibilityRule" } },
     "ExclusionOperator": { "enum": ["AND", "OR"] },
-    "Exclusions": { "elements": { "ref": "rule" } }
+    "Exclusions": { "elements": { "ref": "eligibilityRule" } }
   }
 }
 ```
