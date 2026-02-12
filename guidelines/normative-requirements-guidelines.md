@@ -253,7 +253,7 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 * <DatasetId> MUST conform to <TechnicalAttributeId> requirements.
 ```
 
-##### 4.1.3. Business Requirements: Business/Contextual Attributes Conformance
+##### 4.1.4. Business Requirements: Business/Contextual Attributes Conformance
 
 ```markdown
 * <DatasetId> MUST conform to <BusinessAttributeId> requirements.
