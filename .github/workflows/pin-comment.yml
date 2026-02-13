@@ -10,7 +10,7 @@ jobs:
     # 1. Matches the specific header and emoji
     # 2. Ensures it only runs on Issues (since PRs don't support pinning)
     if: |
-      startsWith(github.event.comment.body, '## 🔄 Status Update') && 
+      startsWith(github.event.comment.body, '## Status Update') && 
       github.event.issue.pull_request == null
     
     runs-on: ubuntu-latest
