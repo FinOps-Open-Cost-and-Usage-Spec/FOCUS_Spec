@@ -14,7 +14,7 @@ Mapping documentation should include the following information for each FOCUS co
 |----------|-------------|
 | FOCUS Column | The FOCUS column identifier (e.g., `BilledCost`) |
 | Source Field(s) | Native billing column name(s) that map to this FOCUS column |
-| Transform Logic | Description of transformation applied |
+| Transform Logic | How the native field value is converted to the FOCUS column value |
 | Feature Level | Mandatory, Conditional, or Recommended |
 | Notes | Additional context, edge cases, or variations |
 
@@ -27,10 +27,10 @@ The following patterns describe common transformation scenarios:
 | Direct | 1:1 mapping with no transformation | `line_item_cost` → `BilledCost` |
 | Formula | Calculation or derivation | `UnitPrice * Quantity` |
 | Conditional | Logic-based mapping | `If charge_type='RI' then 'Purchase' else 'Usage'` |
-| Lookup | Reference to external mapping | `See ServiceCategory mapping table` |
+| Lookup | Reference to external mapping (include location or link) | `See ServiceCategory mapping table` |
 | Not Available | No native equivalent exists | Column populated as null |
 | Constant | Fixed value assignment | `ServiceProviderName = 'ACME Cloud'` |
-
+| Composite | Multiple source fields or rows combined | `Sum of line_item_cost where usage_type matches` |
 ## Example Mapping Entries
 
 The following examples illustrate mapping documentation for common scenarios.
@@ -45,7 +45,7 @@ The following examples illustrate mapping documentation for common scenarios.
 
 | FOCUS Column | Source Field(s) | Transform Logic | Feature Level | Notes |
 |--------------|-----------------|-----------------|---------------|-------|
-| ChargeCategory | `lineItem/LineItemType` | Conditional: `Usage` → Usage, `Fee` → Purchase, `Tax` → Tax, `Credit` → Adjustment | Mandatory | See ChargeCategory mapping table for complete logic |
+| ChargeCategory | `lineItem/LineItemType` | Conditional: `Usage` → Usage, `Fee` → Purchase, `Tax` → Tax, `Credit` → Adjustment | Mandatory | Native terminology may differ from FOCUS terminology. See ChargeCategory mapping table for complete logic |
 
 ### Formula Mapping
 
@@ -65,6 +65,7 @@ Data generators should document variations in mapping logic that depend on:
 
 * Billing account type or agreement structure
 * Product line or service family
+* Pricing model or commitment type (e.g., on-demand, reserved, spot)
 * FOCUS version, when mappings change across versions
 * Edge cases where native columns map to different FOCUS columns based on context
 
@@ -74,8 +75,8 @@ Data generators publishing mapping documentation should:
 
 * Make documentation publicly accessible without authentication
 * Version documentation to align with supported FOCUS versions
-* Provide clear guidance on where practitioners can locate the documentation
+* Provide clear guidance on where practitioners can locate the documentation (e.g., include a URL in FOCUS dataset metadata or reference it from the provider's FOCUS data export documentation)
 
 ## Reference Template
 
-The [FOCUS Conformance Submission Workbook](https://docs.google.com/spreadsheets/d/11s3xr1gUlJt6isrhuYGgaTU7XE5ZPTek/edit?usp=sharing&ouid=105511592610552198421&rtpof=true&sd=true) provides a reference template for mapping documentation. Data generators may use this template or provide equivalent documentation in their preferred format, provided the documentation addresses the recommended content described above.
+The [FOCUS Conformance Submission Workbook](https://docs.google.com/spreadsheets/d/11s3xr1gUlJt6isrhuYGgaTU7XE5ZPTek/edit?usp=sharing&ouid=105511592610552198421&rtpof=true&sd=true) provides a reference template for mapping documentation. Data generators may use this template or provide equivalent documentation in their preferred format, provided the documentation addresses the recommended content described above. Where feasible, data generators are encouraged to provide mapping documentation in both human-readable and machine-readable formats (e.g., JSON, YAML, CSV).
