@@ -15,8 +15,6 @@ EffectiveCost adheres to the following requirements:
 * EffectiveCost MUST NOT be null.
 * EffectiveCost MUST be a valid decimal value.
 * EffectiveCost MUST be denominated in the BillingCurrency.
-* EffectiveCost MUST be based on actual usage data, service consumption data, or contract commitment recognition data.
-* EffectiveCost MUST NOT be populated with estimated, interpolated, or inferred values.
 * EffectiveCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
 * EffectiveCost MUST equal BilledCost when the *charge* is unrelated to other *charges*.
 * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover related eligible *charges*.
