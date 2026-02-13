@@ -42,4 +42,4 @@ The name of the entity that made the *resources* or *services* available for pur
 
 ## Introduced (version)
 
-1.3 Introduced as a replacement for the deprecated ProviderName column
+1.3 Introduced as a replacement for the removed ProviderName column
