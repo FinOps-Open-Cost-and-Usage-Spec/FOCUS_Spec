@@ -32,7 +32,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PROJECT_PAT }}
           ORG: "FinOps-Open-Cost-and-Usage-Spec"
-          PROJECT_NUM: 5
+          PROJECT_NUM: 7
           FIELD_NAME: "PR Open Threads"
           SINGLE_PR: ${{ github.event.pull_request.number || github.event.inputs.pr_number }}
         run: |
