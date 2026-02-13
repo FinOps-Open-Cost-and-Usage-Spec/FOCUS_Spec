@@ -29,7 +29,7 @@ The following patterns describe common transformation scenarios:
 | Conditional | Logic-based mapping | `If charge_type='RI' then 'Purchase' else 'Usage'` |
 | Lookup | Reference to external mapping | `See ServiceCategory mapping table` |
 | Not Available | No native equivalent exists | Column populated as null |
-| Constant | Fixed value assignment | `ProviderName = 'ACME Cloud'` |
+| Constant | Fixed value assignment | `ServiceProviderName = 'ACME Cloud'` |
 
 ## Example Mapping Entries
 
