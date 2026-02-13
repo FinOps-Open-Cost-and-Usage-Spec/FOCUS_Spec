@@ -18,9 +18,11 @@ EffectiveCost adheres to the following requirements:
 * EffectiveCost MUST be based on actual usage data, service consumption data, or contract commitment recognition data.
 * EffectiveCost MUST NOT be populated with estimated, interpolated, or inferred values.
 * EffectiveCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
-* EffectiveCost MUST match the BilledCost when the *charge* is unrelated to other *charges*.
+* EffectiveCost MUST equal BilledCost when the *charge* is unrelated to other *charges*.
 * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover related eligible *charges*.
-* EffectiveCost MUST be derived from the EffectiveCost of underlying charges when ChargeCategory is "Tax" or "Adjustment".
+* EffectiveCost MUST be derived from the EffectiveCost of underlying *charges* when ChargeCategory is "Tax" or "Adjustment".
+* The sum of EffectiveCost MUST equal the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when those *dataset artifacts* include both purchase *charges* (ChargeCategory is "Purchase") and the related eligible *charges* they are intended to cover from the same source, or when the artifact contains neither purchase nor covered charges.
+* The sum of EffectiveCost MAY differ from the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when the artifact contains only purchase *charges* (ChargeCategory is "Purchase") or only the related eligible *charges* they are intended to cover, and those *charges* originate from different data sources (e.g., marketplace scenarios).
 * The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the payable amounts provided in the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
 * *Charges* for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) adhere to the following additional requirements:
   * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".
