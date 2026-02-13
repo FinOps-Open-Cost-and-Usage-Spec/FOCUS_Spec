@@ -38,7 +38,7 @@ jobs:
         run: |
           set -e
 
-          # 1. Identify which PRs to process
+          # 1. Identify PRs
           if [ "${{ github.event_name }}" == "workflow_dispatch" ] && [ -n "${{ github.event.inputs.pr_number }}" ]; then
             PR_LIST=("${{ github.event.inputs.pr_number }}")
           elif [ "${{ github.event_name }}" == "workflow_dispatch" ] || [ "${{ github.event_name }}" == "schedule" ]; then
@@ -51,8 +51,8 @@ jobs:
             exit 0
           fi
 
-          # 2. Get Project Metadata
-          PROJECT_QUERY=$(gh api graphql -f query='
+          # 2. Fetch Project Metadata
+          PROJ_DATA=$(gh api graphql -f query='
             query($org: String!, $num: Int!) {
               organization(login: $org) {
                 projectV2(number: $num) {
@@ -62,29 +62,24 @@ jobs:
               }
             }' -f org="$ORG" -F num=$PROJECT_NUM)
 
-          PROJECT_ID=$(echo "$PROJECT_QUERY" | jq -r '.data.organization.projectV2.id')
-          APP_FIELD_ID=$(echo "$PROJECT_QUERY" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Approvals") | .id')
-          REQ_FIELD_ID=$(echo "$PROJECT_QUERY" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Change Requests") | .id')
+          PROJECT_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.id')
+          APP_FIELD_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Approvals") | .id')
+          REQ_FIELD_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Change Requests") | .id')
 
-          # 3. Loop through identified PRs
+          # 3. Loop PRs
           for PR_NUM in "${PR_LIST[@]}"; do
             echo "--- Processing PR #$PR_NUM ---"
 
-            PR_DATA=$(gh pr view "$PR_NUM" --json id,createdAt,reviews)
-            PR_NODE_ID=$(echo "$PR_DATA" | jq -r '.id')
-            CREATED_AT=$(echo "$PR_DATA" | jq -r '.createdAt')
-            
-            REVIEWS_JSON=$(echo "$PR_DATA" | jq -c '.reviews | group_by(.author.login) | map(sort_by(.submittedAt) | .[-1])')
-            APP_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "APPROVED")) | length')
-            REQ_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "CHANGES_REQUESTED")) | length')
-
-            # 4. TARGETED ITEM QUERY: Bypasses 100-item pagination limits
-            ITEM_QUERY=$(gh api graphql -f query='
-              query($org: String!, $num: Int!, $pr_node_id: ID!) {
-                organization(login: $org) {
-                  projectV2(number: $num) {
-                    items(first: 100, filterBy: {contentId: $pr_node_id}) {
+            PR_QUERY=$(gh api graphql -f query='
+              query($org: String!, $repo: String!, $num: Int!, $proj_id: ID!) {
+                repository(owner: $org, name: $repo) {
+                  pullRequest(number: $num) {
+                    id
+                    createdAt
+                    reviews(first: 100) { nodes { state author { login } submittedAt } }
+                    projectItems(first: 10) {
                       nodes {
+                        project { id }
                         id
                         app_val: fieldValueByName(name: "PR Approvals") { ... on ProjectV2ItemFieldNumberValue { number } }
                         req_val: fieldValueByName(name: "PR Change Requests") { ... on ProjectV2ItemFieldNumberValue { number } }
@@ -92,16 +87,22 @@ jobs:
                     }
                   }
                 }
-              }' -f org="$ORG" -F num=$PROJECT_NUM -f pr_node_id="$PR_NODE_ID")
+              }' -f org="$ORG" -f repo="${{ github.event.repository.name }}" -F num=$PR_NUM -f proj_id="$PROJECT_ID")
 
-            ITEM_DATA=$(echo "$ITEM_QUERY" | jq -r '.data.organization.projectV2.items.nodes[0] // empty')
+            PR_NODE_ID=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.id')
+            CREATED_AT=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.createdAt')
+            
+            REVIEWS_JSON=$(echo "$PR_QUERY" | jq -c '.data.repository.pullRequest.reviews.nodes | group_by(.author.login) | map(sort_by(.submittedAt) | .[-1])')
+            APP_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "APPROVED")) | length')
+            REQ_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "CHANGES_REQUESTED")) | length')
+
+            ITEM_DATA=$(echo "$PR_QUERY" | jq -r --arg PROJ "$PROJECT_ID" '.data.repository.pullRequest.projectItems.nodes[] | select(.project.id == $PROJ)')
             ITEM_ID=$(echo "$ITEM_DATA" | jq -r '.id // empty')
             OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number // 0 | floor')
             OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number // 0 | floor')
 
             echo "Debug PR #$PR_NUM: Board[App:$OLD_APP, Req:$OLD_REQ] -> Actual[App:$APP_COUNT, Req:$REQ_COUNT]"
 
-            # 5. Add/Update Project Item if missing
             if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" == "null" ]; then
               ITEM_ID=$(gh api graphql -f query='
                 mutation($project: ID!, $content: ID!) {
@@ -109,7 +110,6 @@ jobs:
                 }' -f project="$PROJECT_ID" -f content="$PR_NODE_ID" | jq -r '.data.addProjectV2ItemById.item.id')
             fi
 
-            # 6. Update Board Fields (only if different)
             if [ "$OLD_APP" != "$APP_COUNT" ] || [ "$OLD_REQ" != "$REQ_COUNT" ]; then
               gh api graphql -f query='
                 mutation($p: ID!, $i: ID!, $f: ID!, $v: Float!) {
@@ -122,8 +122,10 @@ jobs:
                 }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$REQ_FIELD_ID" -F v=$REQ_COUNT
             fi
 
-            # 7. Dispatches (Only on change)
+            # 6. Dispatches with conditional sleep
+            # We sleep 6 seconds ONLY if both are changing to separate the events.
             if [ "$OLD_APP" != "$APP_COUNT" ]; then
+              echo "Dispatching PR Approvals update for #$PR_NUM..."
               gh api /repos/${{ github.repository }}/dispatches \
                 -f event_type="project_field_updated" \
                 -f client_payload[field_name]="PR Approvals" \
@@ -132,9 +134,15 @@ jobs:
                 -f client_payload[content_node_id]="$PR_NODE_ID" \
                 -f client_payload[created_at]="$CREATED_AT" \
                 -f client_payload[changed_by]="Review Bot"
+              
+              if [ "$OLD_REQ" != "$REQ_COUNT" ]; then
+                echo "Sleeping 6s before next dispatch..."
+                sleep 6
+              fi
             fi
-
+            
             if [ "$OLD_REQ" != "$REQ_COUNT" ]; then
+              echo "Dispatching PR Change Requests update for #$PR_NUM..."
               gh api /repos/${{ github.repository }}/dispatches \
                 -f event_type="project_field_updated" \
                 -f client_payload[field_name]="PR Change Requests" \
@@ -144,4 +152,7 @@ jobs:
                 -f client_payload[created_at]="$CREATED_AT" \
                 -f client_payload[changed_by]="Review Bot"
             fi
+            
+            # Tiny 1s breather between different PRs
+            sleep 1
           done
