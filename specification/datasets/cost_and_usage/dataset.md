@@ -135,8 +135,6 @@ CostAndUsage adheres to the following requirements:
   * CostAndUsage MUST include [PricingCurrencyListUnitPrice](#datasets.costandusage.pricingcurrencylistunitprice) when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
   * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
-  * CostAndUsage MUST include [ProviderName](#datasets.costandusage.provider-deprecated).
-  * CostAndUsage MUST include [PublisherName](#datasets.costandusage.publisher-deprecated).
   * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the host provider supports deploying resources or services within a region.
   * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the host provider supports deploying resources or services within a region.
   * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the service provider supports billing based on provisioned *resources*.
