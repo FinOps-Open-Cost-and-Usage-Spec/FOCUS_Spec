@@ -5,7 +5,7 @@ on:
   pull_request_review_comment:
     types: [created, deleted]
   pull_request:
-    types: [ready_for_review] # Only trigger once it's out of draft; removed opened/synchronize to reduce noise
+    types: [ready_for_review]
   workflow_dispatch:
     inputs:
       pr_number:
@@ -15,9 +15,6 @@ on:
 jobs:
   sync:
     name: Sync PR Open Thread Counts
-    # UPDATED LOGIC:
-    # 1. Run on schedule, manual dispatch, or review comments
-    # 2. For pull_request events, only run if action is 'ready_for_review'
     if: >
       github.event_name == 'schedule' ||
       github.event_name == 'workflow_dispatch' ||
@@ -35,7 +32,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PROJECT_PAT }}
           ORG: "FinOps-Open-Cost-and-Usage-Spec"
-          PROJECT_NUM: 5
+          PROJECT_NUM: 7
           FIELD_NAME: "PR Open Threads"
           SINGLE_PR: ${{ github.event.pull_request.number || github.event.inputs.pr_number }}
         run: |
@@ -71,36 +68,40 @@ jobs:
           for NUM in "${PR_LIST[@]}"; do
             echo "--- Processing PR #$NUM ---"
             
-            # Fetch Threads and Node ID
+            # Fetch Threads and Node ID via GraphQL (Native API call)
             PR_DATA=$(gh api graphql -f query='
               query($org: String!, $repo: String!, $num: Int!) {
                 repository(owner: $org, name: $repo) {
                   pullRequest(number: $num) {
                     id
-                    reviewThreads(last: 100) { nodes { isResolved } }
+                    reviewThreads(first: 100) {
+                      nodes { isResolved }
+                    }
                   }
                 }
               }' -f org="$ORG" -f repo="${{ github.event.repository.name }}" -F num=$NUM)
 
             PR_NODE_ID=$(echo "$PR_DATA" | jq -r '.data.repository.pullRequest.id')
+            COUNT=$(echo "$PR_DATA" | jq -r '[.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false)] | length // 0')
+
             if [ -z "$PR_NODE_ID" ] || [ "$PR_NODE_ID" == "null" ]; then 
               echo "PR #$NUM not found. Skipping."
               continue
             fi
 
-            COUNT=$(echo "$PR_DATA" | jq -r '[.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false)] | length // 0')
+            # DEBUG OUTPUT
+            echo "Debug: PR #$NUM Summary - Open Threads found: $COUNT"
 
-            # Find Project Item ID
+            # 4. Resolve Item ID (The Fix for PR #1882)
             ITEM_ID=$(gh api graphql -f query='
-              query($project: ID!) {
-                node(id: $project) {
-                  ... on ProjectV2 {
-                    items(last: 100) { nodes { id content { ... on PullRequest { id } } } }
-                  }
+              mutation($project: ID!, $content: ID!) {
+                addProjectV2ItemById(input: {projectId: $project, contentId: $content}) { 
+                  item { id } 
                 }
-              }' -f project="$PROJECT_ID" --jq ".data.node.items.nodes[] | select(.content.id == \"$PR_NODE_ID\") | .id")
+              }' -f project="$PROJECT_ID" -f content="$PR_NODE_ID" --jq '.data.addProjectV2ItemById.item.id')
 
             if [ -n "$ITEM_ID" ] && [ "$ITEM_ID" != "null" ]; then
+              # 5. Update the Field
               gh api graphql -f query='
                 mutation($project: ID!, $item: ID!, $field: ID!, $value: Float!) {
                   updateProjectV2ItemFieldValue(input: {
@@ -109,6 +110,7 @@ jobs:
                 }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$FIELD_ID" -F value=$COUNT
               echo "Updated PR #$NUM: $COUNT threads."
             else
-              echo "PR #$NUM not in project. Skipping."
+              echo "Error: Could not resolve Item ID for PR #$NUM."
             fi
+            sleep 1
           done
