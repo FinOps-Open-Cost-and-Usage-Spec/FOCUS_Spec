@@ -19,7 +19,6 @@ on:
 jobs:
   sync_reviews:
     name: Sync PR Review Counts
-    # Logic: Always run if manual or scheduled; if automated, skip neutral comments.
     if: >
       github.event_name == 'workflow_dispatch' ||
       github.event_name == 'schedule' ||
@@ -39,24 +38,21 @@ jobs:
         run: |
           set -e
 
-          # 1. Identify which PRs to process
+          # 1. Identify PRs
           if [ "${{ github.event_name }}" == "workflow_dispatch" ] && [ -n "${{ github.event.inputs.pr_number }}" ]; then
-            echo "Manual trigger for single PR: #${{ github.event.inputs.pr_number }}"
             PR_LIST=("${{ github.event.inputs.pr_number }}")
           elif [ "${{ github.event_name }}" == "workflow_dispatch" ] || [ "${{ github.event_name }}" == "schedule" ]; then
-            echo "Trigger (${{ github.event_name }}): Syncing all currently OPEN PRs..."
             PR_LIST=($(gh pr list --state open --json number --jq '.[].number'))
           else
             PR_LIST=("${{ github.event.pull_request.number }}")
           fi
 
           if [ ${#PR_LIST[@]} -eq 0 ]; then
-            echo "No open PRs found to sync. Exiting."
             exit 0
           fi
 
-          # 2. Get Project Metadata (IDs)
-          PROJECT_QUERY=$(gh api graphql -f query='
+          # 2. Fetch Project Metadata
+          PROJ_DATA=$(gh api graphql -f query='
             query($org: String!, $num: Int!) {
               organization(login: $org) {
                 projectV2(number: $num) {
@@ -66,80 +62,108 @@ jobs:
               }
             }' -f org="$ORG" -F num=$PROJECT_NUM)
 
-          PROJECT_ID=$(echo "$PROJECT_QUERY" | jq -r '.data.organization.projectV2.id')
-          APP_FIELD_ID=$(echo "$PROJECT_QUERY" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Approvals") | .id')
-          REQ_FIELD_ID=$(echo "$PROJECT_QUERY" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Change Requests") | .id')
+          PROJECT_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.id')
+          APP_FIELD_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Approvals") | .id')
+          REQ_FIELD_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Change Requests") | .id')
 
-          # 3. Loop through identified PRs
+          # 3. Loop PRs
           for PR_NUM in "${PR_LIST[@]}"; do
             echo "--- Processing PR #$PR_NUM ---"
 
-            # Fetch PR Metadata
-            PR_DATA=$(gh pr view "$PR_NUM" --json id,createdAt,url,reviews)
-            PR_NODE_ID=$(echo "$PR_DATA" | jq -r '.id')
-            CREATED_AT=$(echo "$PR_DATA" | jq -r '.createdAt')
-            
-            # Calculate Counts
-            REVIEWS_JSON=$(echo "$PR_DATA" | jq -c '.reviews | group_by(.author.login) | map(sort_by(.submittedAt) | .[-1])')
-            APP_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "APPROVED")) | length')
-            REQ_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "CHANGES_REQUESTED")) | length')
-
-            # DEBUG OUTPUT
-            echo "Debug: PR #$PR_NUM Review Summary"
-            echo "  - Approvals: $APP_COUNT"
-            echo "  - Changes Requested: $REQ_COUNT"
-
-            # Get current board values
-            ITEM_QUERY=$(gh api graphql -f query='
-              query($org: String!, $num: Int!) {
-                organization(login: $org) {
-                  projectV2(number: $num) {
-                    items(first: 100) {
+            PR_QUERY=$(gh api graphql -f query='
+              query($org: String!, $repo: String!, $num: Int!) {
+                repository(owner: $org, name: $repo) {
+                  pullRequest(number: $num) {
+                    id
+                    createdAt
+                    reviews(first: 100) { nodes { state author { login } submittedAt } }
+                    projectItems(first: 10) {
                       nodes {
+                        project { id }
                         id
-                        content { ... on PullRequest { id } }
                         app_val: fieldValueByName(name: "PR Approvals") { ... on ProjectV2ItemFieldNumberValue { number } }
                         req_val: fieldValueByName(name: "PR Change Requests") { ... on ProjectV2ItemFieldNumberValue { number } }
                       }
                     }
                   }
                 }
-              }' -f org="$ORG" -F num=$PROJECT_NUM)
+              }' -f org="$ORG" -f repo="${{ github.event.repository.name }}" -F num=$PR_NUM)
 
-            ITEM_DATA=$(echo "$ITEM_QUERY" | jq -r --arg PR_ID "$PR_NODE_ID" '.data.organization.projectV2.items.nodes[] | select(.content.id == $PR_ID)')
-            ITEM_ID=$(echo "$ITEM_DATA" | jq -r '.id')
+            PR_NODE_ID=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.id')
+            CREATED_AT=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.createdAt')
+            
+            REVIEWS_JSON=$(echo "$PR_QUERY" | jq -c '.data.repository.pullRequest.reviews.nodes | group_by(.author.login) | map(sort_by(.submittedAt) | .[-1])')
+            APP_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "APPROVED")) | length')
+            REQ_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "CHANGES_REQUESTED")) | length')
+
+            ITEM_DATA=$(echo "$PR_QUERY" | jq -r --arg PROJ "$PROJECT_ID" '.data.repository.pullRequest.projectItems.nodes[] | select(.project.id == $PROJ)')
+            ITEM_ID=$(echo "$ITEM_DATA" | jq -r '.id // empty')
+            
+            # Detect if fields are truly null/blank
+            RAW_OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number')
+            RAW_OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number')
+
             OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number // 0 | floor')
             OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number // 0 | floor')
 
-            # Add/Update Project Item if missing
+            echo "Debug PR #$PR_NUM: Board[App:$RAW_OLD_APP, Req:$RAW_OLD_REQ] -> Actual[App:$APP_COUNT, Req:$REQ_COUNT]"
+
+            # 4. Add/Update Item if missing
             if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" == "null" ]; then
               ITEM_ID=$(gh api graphql -f query='
                 mutation($project: ID!, $content: ID!) {
                   addProjectV2ItemById(input: {projectId: $project, contentId: $content}) { item { id } }
                 }' -f project="$PROJECT_ID" -f content="$PR_NODE_ID" | jq -r '.data.addProjectV2ItemById.item.id')
+              # Since it was just added, we force update
+              IS_NEW_ITEM=true
+            else
+              IS_NEW_ITEM=false
             fi
 
-            # Update Board Fields
-            gh api graphql -f query='
-              mutation($p: ID!, $i: ID!, $f: ID!, $v: Float!) {
-                updateProjectV2ItemFieldValue(input: { projectId: $p, itemId: $i, fieldId: $f, value: { number: $v } }) { clientMutationId }
-              }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$APP_FIELD_ID" -F v=$APP_COUNT
+            # 5. Sync Fields (Force update if blank or count changed)
+            if [ "$IS_NEW_ITEM" = true ] || [ "$RAW_OLD_APP" = "null" ] || [ "$RAW_OLD_REQ" = "null" ] || [ "$OLD_APP" != "$APP_COUNT" ] || [ "$OLD_REQ" != "$REQ_COUNT" ]; then
+              gh api graphql -f query='
+                mutation($p: ID!, $i: ID!, $f: ID!, $v: Float!) {
+                  updateProjectV2ItemFieldValue(input: { projectId: $p, itemId: $i, fieldId: $f, value: { number: $v } }) { clientMutationId }
+                }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$APP_FIELD_ID" -F v=$APP_COUNT
 
-            gh api graphql -f query='
-              mutation($p: ID!, $i: ID!, $f: ID!, $v: Float!) {
-                updateProjectV2ItemFieldValue(input: { projectId: $p, itemId: $i, fieldId: $f, value: { number: $v } }) { clientMutationId }
-              }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$REQ_FIELD_ID" -F v=$REQ_COUNT
+              gh api graphql -f query='
+                mutation($p: ID!, $i: ID!, $f: ID!, $v: Float!) {
+                  updateProjectV2ItemFieldValue(input: { projectId: $p, itemId: $i, fieldId: $f, value: { number: $v } }) { clientMutationId }
+                }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$REQ_FIELD_ID" -F v=$REQ_COUNT
+            fi
 
-            # Log/Dispatch if changed
-            if [ "$OLD_APP" != "$APP_COUNT" ]; then
+            # 6. Dispatches (Trigger if count changed OR if we are initializing from blank to 0)
+            HAS_DISPATCHED=false
+
+            if [ "$RAW_OLD_APP" = "null" ] || [ "$OLD_APP" != "$APP_COUNT" ]; then
               echo "Dispatching PR Approvals update for #$PR_NUM..."
               gh api /repos/${{ github.repository }}/dispatches \
                 -f event_type="project_field_updated" \
                 -f client_payload[field_name]="PR Approvals" \
-                -f client_payload[old_value]="$OLD_APP" \
+                -f client_payload[old_value]="${RAW_OLD_APP:-null}" \
                 -f client_payload[new_value]="$APP_COUNT" \
                 -f client_payload[content_node_id]="$PR_NODE_ID" \
                 -f client_payload[created_at]="$CREATED_AT" \
                 -f client_payload[changed_by]="Review Bot"
+              HAS_DISPATCHED=true
             fi
+            
+            if [ "$RAW_OLD_REQ" = "null" ] || [ "$OLD_REQ" != "$REQ_COUNT" ]; then
+              if [ "$HAS_DISPATCHED" = true ]; then
+                sleep 6
+              fi
+
+              echo "Dispatching PR Change Requests update for #$PR_NUM..."
+              gh api /repos/${{ github.repository }}/dispatches \
+                -f event_type="project_field_updated" \
+                -f client_payload[field_name]="PR Change Requests" \
+                -f client_payload[old_value]="${RAW_OLD_REQ:-null}" \
+                -f client_payload[new_value]="$REQ_COUNT" \
+                -f client_payload[content_node_id]="$PR_NODE_ID" \
+                -f client_payload[created_at]="$CREATED_AT" \
+                -f client_payload[changed_by]="Review Bot"
+            fi
+            
+            sleep 1
           done
