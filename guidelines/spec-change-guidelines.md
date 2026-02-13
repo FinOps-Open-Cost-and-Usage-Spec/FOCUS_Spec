@@ -77,6 +77,7 @@ To ensure complete and error-free removal of deprecated columns from the FOCUS s
    - Remove the supporting content file from `supporting_content/datasets/*/columns/`
    - Remove the column entry from the dataset table in `specification/datasets/*/dataset.md`
 - Remove the column's "MUST include" requirement from the dataset requirements list.
+  
 3. **Update References**:
    - Search for and update or remove all links to the deprecated column
    - Update migration guidance documents to reflect removal
