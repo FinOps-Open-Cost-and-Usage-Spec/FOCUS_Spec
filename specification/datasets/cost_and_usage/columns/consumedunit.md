@@ -6,7 +6,6 @@ The Consumed Unit represents a service-provider-specified measurement unit indic
 
 ConsumedUnit adheres to the following requirements:
 
-* ConsumedUnit MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports the measurement of usage.
 * ConsumedUnit MUST be of type String.
 * ConsumedUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ConsumedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
@@ -28,13 +27,14 @@ Service-provider-specified measurement unit indicating how a service provider me
 
 ## Content constraints
 
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Conditional     |
-| Allows nulls    | True            |
-| Data type       | String          |
-| Value format    | [Unit Format](#attributes.unitformat) recommended |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | [Unit Format](#attributes.unitformat) recommended    |
 
 ## Introduced (version)
 

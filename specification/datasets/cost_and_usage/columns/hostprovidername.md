@@ -8,7 +8,6 @@ In some instances, the host provider and the service provider are the same entit
 
 HostProviderName adheres to the following requirements:
 
-* HostProviderName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * HostProviderName MUST be of type String.
 * HostProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * HostProviderName nullability is defined as follows:
@@ -36,13 +35,14 @@ The name of the entity whose *resources* are used by the Service Provider to mak
 
 ## Content Constraints
 
-| Constraint      | Value            |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Mandatory        |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 
