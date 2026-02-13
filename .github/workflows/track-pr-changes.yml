@@ -3,9 +3,6 @@ name: Sync Review Counts to Project
 on:
   pull_request:
     types: 
-      - opened            # PR created: Initialize counts at 0
-      - synchronize       # New code pushed: Reviews often become stale
-      - reopened          # PR reopened: Refresh project state
       - review_requested  # Reviewer invited: Signals state reset
   pull_request_review:
     types: 
@@ -14,13 +11,10 @@ on:
 
 jobs:
   sync_reviews:
-    # UPDATED LOGIC: 
-    # 1. Always run for standard PR events (opened, synchronize, etc.)
-    # 2. For reviews, ONLY run if the state is 'approved' or 'changes_requested'
-    # This prevents the script from running on neutral "Comment" reviews.
-    if: |
-      github.event_name == 'pull_request' || 
-      (github.event.review && github.event.review.state != 'commented')
+    # Only run for specific review-related actions
+    if: >
+      (github.event_name == 'pull_request' && github.event.action == 'review_requested') || 
+      (github.event_name == 'pull_request_review' && github.event.review.state != 'commented')
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ secrets.PROJECT_PAT }}
@@ -77,13 +71,7 @@ jobs:
           OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number // 0 | floor')
           OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number // 0 | floor')
 
-          # 4. CONSTRAINT: Skip only if both counts are unchanged AND it is not a manual/review event
-          if [ "$OLD_APP" == "$APP_COUNT" ] && [ "$OLD_REQ" == "$REQ_COUNT" ] && [ -n "$ITEM_ID" ] && [ "${{ github.event_name }}" == "pull_request" ]; then
-            echo "No changes detected. Exiting."
-            exit 0
-          fi
-
-          # 5. Add/Update Project Item
+          # 4. Add/Update Project Item
           if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" == "null" ]; then
             ITEM_ID=$(gh api graphql -f query='
               mutation($project: ID!, $content: ID!) {
@@ -102,7 +90,7 @@ jobs:
               updateProjectV2ItemFieldValue(input: { projectId: $p, itemId: $i, fieldId: $f, value: { number: $v } }) { clientMutationId }
             }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$REQ_FIELD_ID" -F v=$REQ_COUNT
 
-          # 6. TRIGGER THE LOGGER
+          # 5. TRIGGER THE LOGGER
           if [ "$OLD_APP" != "$APP_COUNT" ]; then
             echo "Dispatching PR Approvals ($OLD_APP -> $APP_COUNT)..."
             gh api /repos/${{ github.repository }}/dispatches \
