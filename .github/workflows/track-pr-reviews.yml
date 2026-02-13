@@ -70,7 +70,6 @@ jobs:
           for PR_NUM in "${PR_LIST[@]}"; do
             echo "--- Processing PR #$PR_NUM ---"
 
-            # FIXED: Removed unused $proj_id variable from GraphQL definition
             PR_QUERY=$(gh api graphql -f query='
               query($org: String!, $repo: String!, $num: Int!) {
                 repository(owner: $org, name: $repo) {
@@ -99,19 +98,30 @@ jobs:
 
             ITEM_DATA=$(echo "$PR_QUERY" | jq -r --arg PROJ "$PROJECT_ID" '.data.repository.pullRequest.projectItems.nodes[] | select(.project.id == $PROJ)')
             ITEM_ID=$(echo "$ITEM_DATA" | jq -r '.id // empty')
+            
+            # Detect if fields are truly null/blank
+            RAW_OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number')
+            RAW_OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number')
+
             OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number // 0 | floor')
             OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number // 0 | floor')
 
-            echo "Debug PR #$PR_NUM: Board[App:$OLD_APP, Req:$OLD_REQ] -> Actual[App:$APP_COUNT, Req:$REQ_COUNT]"
+            echo "Debug PR #$PR_NUM: Board[App:$RAW_OLD_APP, Req:$RAW_OLD_REQ] -> Actual[App:$APP_COUNT, Req:$REQ_COUNT]"
 
+            # 4. Add/Update Item if missing
             if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" == "null" ]; then
               ITEM_ID=$(gh api graphql -f query='
                 mutation($project: ID!, $content: ID!) {
                   addProjectV2ItemById(input: {projectId: $project, contentId: $content}) { item { id } }
                 }' -f project="$PROJECT_ID" -f content="$PR_NODE_ID" | jq -r '.data.addProjectV2ItemById.item.id')
+              # Since it was just added, we force update
+              IS_NEW_ITEM=true
+            else
+              IS_NEW_ITEM=false
             fi
 
-            if [ "$OLD_APP" != "$APP_COUNT" ] || [ "$OLD_REQ" != "$REQ_COUNT" ]; then
+            # 5. Sync Fields (Force update if blank or count changed)
+            if [ "$IS_NEW_ITEM" = true ] || [ "$RAW_OLD_APP" = "null" ] || [ "$RAW_OLD_REQ" = "null" ] || [ "$OLD_APP" != "$APP_COUNT" ] || [ "$OLD_REQ" != "$REQ_COUNT" ]; then
               gh api graphql -f query='
                 mutation($p: ID!, $i: ID!, $f: ID!, $v: Float!) {
                   updateProjectV2ItemFieldValue(input: { projectId: $p, itemId: $i, fieldId: $f, value: { number: $v } }) { clientMutationId }
@@ -123,15 +133,15 @@ jobs:
                 }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$REQ_FIELD_ID" -F v=$REQ_COUNT
             fi
 
-            # 6. Dispatches with Logic-Safe Sleep
+            # 6. Dispatches (Trigger if count changed OR if we are initializing from blank to 0)
             HAS_DISPATCHED=false
 
-            if [ "$OLD_APP" != "$APP_COUNT" ]; then
+            if [ "$RAW_OLD_APP" = "null" ] || [ "$OLD_APP" != "$APP_COUNT" ]; then
               echo "Dispatching PR Approvals update for #$PR_NUM..."
               gh api /repos/${{ github.repository }}/dispatches \
                 -f event_type="project_field_updated" \
                 -f client_payload[field_name]="PR Approvals" \
-                -f client_payload[old_value]="$OLD_APP" \
+                -f client_payload[old_value]="${RAW_OLD_APP:-null}" \
                 -f client_payload[new_value]="$APP_COUNT" \
                 -f client_payload[content_node_id]="$PR_NODE_ID" \
                 -f client_payload[created_at]="$CREATED_AT" \
@@ -139,9 +149,8 @@ jobs:
               HAS_DISPATCHED=true
             fi
             
-            if [ "$OLD_REQ" != "$REQ_COUNT" ]; then
+            if [ "$RAW_OLD_REQ" = "null" ] || [ "$OLD_REQ" != "$REQ_COUNT" ]; then
               if [ "$HAS_DISPATCHED" = true ]; then
-                echo "Sleeping 6s to throttle dispatches..."
                 sleep 6
               fi
 
@@ -149,7 +158,7 @@ jobs:
               gh api /repos/${{ github.repository }}/dispatches \
                 -f event_type="project_field_updated" \
                 -f client_payload[field_name]="PR Change Requests" \
-                -f client_payload[old_value]="$OLD_REQ" \
+                -f client_payload[old_value]="${RAW_OLD_REQ:-null}" \
                 -f client_payload[new_value]="$REQ_COUNT" \
                 -f client_payload[content_node_id]="$PR_NODE_ID" \
                 -f client_payload[created_at]="$CREATED_AT" \
