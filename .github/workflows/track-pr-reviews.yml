@@ -70,8 +70,9 @@ jobs:
           for PR_NUM in "${PR_LIST[@]}"; do
             echo "--- Processing PR #$PR_NUM ---"
 
+            # FIXED: Removed unused $proj_id variable from GraphQL definition
             PR_QUERY=$(gh api graphql -f query='
-              query($org: String!, $repo: String!, $num: Int!, $proj_id: ID!) {
+              query($org: String!, $repo: String!, $num: Int!) {
                 repository(owner: $org, name: $repo) {
                   pullRequest(number: $num) {
                     id
@@ -87,7 +88,7 @@ jobs:
                     }
                   }
                 }
-              }' -f org="$ORG" -f repo="${{ github.event.repository.name }}" -F num=$PR_NUM -f proj_id="$PROJECT_ID")
+              }' -f org="$ORG" -f repo="${{ github.event.repository.name }}" -F num=$PR_NUM)
 
             PR_NODE_ID=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.id')
             CREATED_AT=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.createdAt')
@@ -122,8 +123,9 @@ jobs:
                 }' -f p="$PROJECT_ID" -f i="$ITEM_ID" -f f="$REQ_FIELD_ID" -F v=$REQ_COUNT
             fi
 
-            # 6. Dispatches with conditional sleep
-            # We sleep 6 seconds ONLY if both are changing to separate the events.
+            # 6. Dispatches with Logic-Safe Sleep
+            HAS_DISPATCHED=false
+
             if [ "$OLD_APP" != "$APP_COUNT" ]; then
               echo "Dispatching PR Approvals update for #$PR_NUM..."
               gh api /repos/${{ github.repository }}/dispatches \
@@ -134,14 +136,15 @@ jobs:
                 -f client_payload[content_node_id]="$PR_NODE_ID" \
                 -f client_payload[created_at]="$CREATED_AT" \
                 -f client_payload[changed_by]="Review Bot"
-              
-              if [ "$OLD_REQ" != "$REQ_COUNT" ]; then
-                echo "Sleeping 6s before next dispatch..."
-                sleep 6
-              fi
+              HAS_DISPATCHED=true
             fi
             
             if [ "$OLD_REQ" != "$REQ_COUNT" ]; then
+              if [ "$HAS_DISPATCHED" = true ]; then
+                echo "Sleeping 6s to throttle dispatches..."
+                sleep 6
+              fi
+
               echo "Dispatching PR Change Requests update for #$PR_NUM..."
               gh api /repos/${{ github.repository }}/dispatches \
                 -f event_type="project_field_updated" \
@@ -153,6 +156,5 @@ jobs:
                 -f client_payload[changed_by]="Review Bot"
             fi
             
-            # Tiny 1s breather between different PRs
             sleep 1
           done
