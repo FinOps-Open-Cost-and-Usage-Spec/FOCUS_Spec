@@ -68,10 +68,21 @@ jobs:
           for NUM in "${PR_LIST[@]}"; do
             echo "--- Processing PR #$NUM ---"
             
-            # Fetch Threads and Node ID
-            PR_DATA=$(gh pr view "$NUM" --json id,reviewThreads --jq '{id: .id, count: [.reviewThreads[] | select(.isResolved == false)] | length}')
-            PR_NODE_ID=$(echo "$PR_DATA" | jq -r '.id')
-            COUNT=$(echo "$PR_DATA" | jq -r '.count')
+            # Fetch Threads and Node ID via GraphQL (Native API call)
+            PR_DATA=$(gh api graphql -f query='
+              query($org: String!, $repo: String!, $num: Int!) {
+                repository(owner: $org, name: $repo) {
+                  pullRequest(number: $num) {
+                    id
+                    reviewThreads(first: 100) {
+                      nodes { isResolved }
+                    }
+                  }
+                }
+              }' -f org="$ORG" -f repo="${{ github.event.repository.name }}" -F num=$NUM)
+
+            PR_NODE_ID=$(echo "$PR_DATA" | jq -r '.data.repository.pullRequest.id')
+            COUNT=$(echo "$PR_DATA" | jq -r '[.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false)] | length // 0')
 
             if [ -z "$PR_NODE_ID" ] || [ "$PR_NODE_ID" == "null" ]; then 
               echo "PR #$NUM not found. Skipping."
@@ -81,7 +92,7 @@ jobs:
             # DEBUG OUTPUT
             echo "Debug: PR #$NUM Summary - Open Threads found: $COUNT"
 
-            # 4. Resolve Item ID using the mutation (avoids 100-item pagination limit)
+            # 4. Resolve Item ID (The Fix for PR #1882)
             ITEM_ID=$(gh api graphql -f query='
               mutation($project: ID!, $content: ID!) {
                 addProjectV2ItemById(input: {projectId: $project, contentId: $content}) { 
@@ -90,15 +101,16 @@ jobs:
               }' -f project="$PROJECT_ID" -f content="$PR_NODE_ID" --jq '.data.addProjectV2ItemById.item.id')
 
             if [ -n "$ITEM_ID" ] && [ "$ITEM_ID" != "null" ]; then
-              # 5. Perform the Update
+              # 5. Update the Field
               gh api graphql -f query='
                 mutation($project: ID!, $item: ID!, $field: ID!, $value: Float!) {
                   updateProjectV2ItemFieldValue(input: {
-                    projectId: $project, itemId: $item, fieldId: $f, value: { number: $v }
+                    projectId: $project, itemId: $item, fieldId: $field, value: { number: $value }
                   }) { clientMutationId }
-                }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f f="$FIELD_ID" -F v=$COUNT
-              echo "Updated PR #$NUM: $COUNT open threads."
+                }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$FIELD_ID" -F value=$COUNT
+              echo "Updated PR #$NUM: $COUNT threads."
             else
-              echo "Error: Could not resolve Project Item ID for PR #$NUM."
+              echo "Error: Could not resolve Item ID for PR #$NUM."
             fi
+            sleep 1
           done
