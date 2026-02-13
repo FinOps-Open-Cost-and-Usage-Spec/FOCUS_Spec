@@ -31,6 +31,7 @@ The following patterns describe common transformation scenarios:
 | Not Available | No native equivalent exists | Column populated as null |
 | Constant | Fixed value assignment | `ServiceProviderName = 'ACME Cloud'` |
 | Composite | Multiple source fields or rows combined | `Sum of line_item_cost where usage_type matches` |
+
 ## Example Mapping Entries
 
 The following examples illustrate mapping documentation for common scenarios.
