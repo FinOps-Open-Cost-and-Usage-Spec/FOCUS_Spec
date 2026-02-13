@@ -246,3 +246,49 @@ Human-readable name of the entity that generated the dataset instance. The Data 
 | **Service Provider** | *Who provides the service being consumed?* |
 | **Invoice Issuer**   | *Who issues the invoice?*                  |
 | **Data Generator**   | *Who produced and delivered the dataset?*  |
+
+---
+
+## Draft normative requirements for single-provider matching
+
+BEFORE:
+
+> * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover related eligible *charges*.
+> ...
+> * When ChargeCategory is not "Usage" or "Purchase", EffectiveCost adheres to the following additional requirements:
+>   * EffectiveCost of a *charge* calculated based on other *charges* (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related *charges*.
+>   * EffectiveCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#datasets.costandusage.billedcost).
+> 
+
+AFTER:
+
+> * EffectiveCost MUST match the BilledCost when the *charge* is unrelated to other *charges*.
+> * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover related eligible *charges*.
+> * EffectiveCost MUST be derived from the EffectiveCost of underlying charges when ChargeCategory is "Tax" or "Adjustment".
+
+---
+
+## Add cross-provider marketplace guidance (aggregations will not match)
+
+NEW Draft!!!:
+
+> * The sum of EffectiveCost MUST equal the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when those *dataset artifacts* include both purchase *charges* (ChargeCategory is "Purchase") and the related eligible *charges* they are intended to cover from the same source, or when the artifact contains neither purchase nor covered charges.
+> * The sum of EffectiveCost MAY differ from the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when the artifact contains only purchase *charges* (ChargeCategory is "Purchase") or only the related eligible *charges* they are intended to cover, and those *charges* originate from different data sources (e.g., marketplace scenarios).
+
+---
+
+## Document expected divergence scenarios with clear conditions
+
+See [this spreadsheet](https://docs.google.com/spreadsheets/d/1fPS_3F-plLkb0sFVdonO17VhwRdJWUbA/edit?gid=1732814441#gid=1732814441).
+
+### Resources
+
+* FOCUS 1.3:
+  * [Commitment Discount Handling Requirements](https://focus.finops.org/focus-specification/v1-3/#discounthandling)
+  * [Commitment Discounts Appendix](https://focus.finops.org/focus-specification/v1-3/#commitmentdiscounts)
+    * [Commitment Discount Partial-Upfront Purchase example (CSV)](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/main/specification/data/commitment_discount_scenarios/commitment_discount_purchase_scenario_3.csv)
+* FOCUS 1.4 - [PR #1877](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1877): FR #1488: Add Line-Item Examples for Non-Negotiated Commitment Scenarios
+  * [AWS Savings Plan - No Upfront - 100% Utilization](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1488-line-item-examples-for-non-negotiated-commitment-scenarios/specification/appendix/commitment_discounts/aws_savings_plan_no_upfront_100pct.md#aws-savings-plan---no-upfront---100-utilization)
+    * [AWS Savings Plan - No Upfront - 100% Utilization (CSV)](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1488-line-item-examples-for-non-negotiated-commitment-scenarios/specification/data/commitment_discount_scenarios/aws_savings_plan_no_upfront_100pct.csv)
+* 
+
