@@ -92,7 +92,7 @@ jobs:
             PR_NODE_ID=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.id')
             CREATED_AT=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.createdAt')
             
-            REVIEWS_JSON=$(echo "$PR_QUERY" | jq -c '.data.repository.pullRequest.reviews.nodes | group_by(.author.login) | map(sort_by(.submittedAt) | .[-1])')
+            REVIEWS_JSON=$(echo "$PR_QUERY" | jq -c '.data.repository.pullRequest.reviews.nodes | map(select(.state != "COMMENTED")) | group_by(.author.login) | map(sort_by(.submittedAt) | .[-1])')
             APP_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "APPROVED")) | length')
             REQ_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "CHANGES_REQUESTED")) | length')
 
