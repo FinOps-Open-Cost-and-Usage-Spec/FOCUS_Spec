@@ -4,29 +4,117 @@ Contract Commitment Eligibility is a structured definition of the specific entit
 
 ## Requirements
 
-ContractCommitmentEligibility adheres to the following requirements:
+### Column Requirements
+
+The ContractCommitmentEligibility column adheres to the following requirements:
 
 * ContractCommitmentEligibility MUST be of type String.
 * ContractCommitmentEligibility MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentEligibility MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractCommitmentEligibility MUST NOT be null.
-* ContractCommitmentEligibility MUST conform to [ContractCommitmentEligibilityObject](#datasets.costandusage.contractcommitmenteligibility.contractcommitmenteligibilityobject) requirements.
+* ContractCommitmentEligibility MUST conform to [ContractCommitmentEligibilityObject](#datasets.contractcommitment.contractcommitmenteligibility.contractcommitmenteligibilityobject) requirements.
 
 ## Contract Commitment Eligibility Object
 
-Contract Commitment Eligibility consists of a valid JSON object which contains a set of top-level property keys.  These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
+Contract Commitment Eligibility consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
+
+The following sub-sections detail the normative requirements for the overall Eligiblity Object and its children Applicability Object and Rule Object.  For a logical overview of the expected content for the Eligiblity Object, see the [Schema Structure](#datasets.contractcommitment.contractcommitmenteligibility.schemastructure) and [Examples](#datasets.contractcommitment.contractcommitmenteligibility.examples sections.
 
 ### Object Requirements
 
 The ContractCommitmentEligibilityObject adheres to the following requirements:
 
-TODO
+* ContractCommitmentEligibilityObject top-level property keys adhere to the following requirements:
+  * ContractCommitmentEligibilityObject MAY have a top-level property key "IsGlobalScope".
+  * ContractCommitmentEligibilityObject MAY have a top-level property key "IsComplexScope".
+  * ContractCommitmentEligibilityObject MAY have a top-level property key "Applicability".
+  * ContractCommitmentEligibilityObject MUST have a top-level property key "InclusionOperator" if ContractCommitmentEligibilityObject.IsGlobalScope and ContractCommitmentEligibilityObject.IsComplexScope are both `false` or null.
+  * ContractCommitmentEligibilityObject MUSt have a top-level property key "Inclusions" if ContractCommitmentEligibilityObject.IsGlobalScope and ContractCommitmentEligibilityObject.IsComplexScope are both `false` or null.
+  * ContractCommitmentEligibilityObject MAY have a top-level property key "ExclusionOperator".
+  * ContractCommitmentEligibilityObject MAY have a top-level property key "Exclusions".
+  * ContractCommitmentEligibilityObject MAY contain additional data generator-defined top-level property keys.
+  * ContractCommitmentEligibilityObject property keys MUST begin with the string "x_" unless it is a FOCUS-defined property key.
+* ContractCommitmentEligibilityObject.IsGlobalScope adheres to the following requirements:
+  * ContractCommitmentEligibilityObject.IsGlobalScope MUST be of type Boolean.
+  * ContractCommitmentEligibilityObject.IsGlobalScope MUST NOT be null.
+  * ContractCommitmentEligibilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all resources.
+* ContractCommitmentEligibilityObject.IsComplexScope adheres to the following requirements:
+  * ContractCommitmentEligibilityObject.IsComplexScope MUST be of type Boolean.
+  * ContractCommitmentEligibilityObject.IsComplexScope MUST NOT be null.
+  * ContractCommitmentEligibilityObject.IsComplexScope MUST be `true` if the *contract commitment's* eligibility logic exceeds schema capabilities.
+* ContractCommitmentEligibilityObject.Applicability adheres to the following requirements:
+  * ContractCommitmentEligibilityObject.Applicability MUST be of type JSON Object.
+  * ContractCommitmentEligibilityObject.Applicability MUST NOT be null.
+  * ContractCommitmentEligibilityObject.Applicability MUST conform to [ContractCommitmentEligibilityApplicabilityObject](#datasets.contractcommitment.contractcommitmenteligibility.contractcommitmenteligibilityapplicabilityobject) requirements.
+* ContractCommitmentEligibilityObject.InclusionOperator adheres to the following requirements:
+  * ContractCommitmentEligibilityObject.InclusionOperator MUST be of type String.
+  * ContractCommitmentEligibilityObject.InclusionOperator MUST NOT be null.
+  * ContractCommitmentEligibilityObject.InclusionOperator MUST be either "AND" or "OR".
+  * ContractCommitmentEligibilityObject.InclusionOperator MUST be present if ContractCommitmentEligibilityObject.Inclusions is present.
+* ContractCommitmentEligibilityObject.Inclusions adheres to the following requirements:
+  * ContractCommitmentEligibilityObject.Inclusions MUST be of type Array.
+  * ContractCommitmentEligibilityObject.Inclusions MUST NOT be null.
+  * ContractCommitmentEligibilityObject.Inclusions MUST NOT be present if ContractCommitmentEligibilityObject.IsGlobalScope is `true`.
+  * ContractCommitmentEligibilityObject.Inclusions[\*] MUST be of type JSON Object.
+  * ContractCommitmentEligibilityObject.Inclusions[\*] MUST conform to [ContractCommitmentEligibilityRuleObject](#datasets.contractcommitment.contractcommitmenteligibility.contractcommitmenteligibilityruleobject) requirements.
+* ContractCommitmentEligibilityObject.ExclusionOperator adheres to the following requirements:
+  * ContractCommitmentEligibilityObject.ExclusionOperator MUST be of type String.
+  * ContractCommitmentEligibilityObject.ExclusionOperator MUST NOT be null.
+  * ContractCommitmentEligibilityObject.ExclusionOperator MUST be either "AND" or "OR".
+* ContractCommitmentEligibilityObject.Exclusions adheres to the following requirements:
+  * ContractCommitmentEligibilityObject.Exclusions MUST be of type Array.
+  * ContractCommitmentEligibilityObject.Exclusions MUST NOT be null.
+  * ContractCommitmentEligibilityObject.Exclusions[\*] MUST be of type JSON Object.
+  * ContractCommitmentEligibilityObject.Exclusions[\*] MUST conform to [ContractCommitmentEligibilityRuleObject](#datasets.contractcommitment.contractcommitmenteligibility.contractcommitmenteligibilityruleobject) requirements.  
 
-### Schema Structure
+### Applicability Object Requirements
+
+The ContractCommitmentEligibilityApplicabilityObject adheres to the following requirements:
+
+* ContractCommitmentEligibilityApplicabilityObject property keys adhere to the following requirements:
+  * ContractCommitmentEligibilityApplicabilityObject MAY have a property key "Cost".
+  * ContractCommitmentEligibilityApplicabilityObject MAY have a property key "Usage".
+* ContractCommitmentEligibilityApplicabilityObject.Cost adheres to the following requirements:
+  * ContractCommitmentEligibilityApplicabilityObject.Cost MUST be of type Decimal.
+  * ContractCommitmentEligibilityApplicabilityObject.Cost MUST NOT be null.
+  * ContractCommitmentEligibilityApplicabilityObject.Cost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
+  * ContractCommitmentEligibilityApplicabilityObject.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
+* ContractCommitmentEligibilityApplicabilityObject.Usage adheres to the following requirements:
+  * ContractCommitmentEligibilityApplicabilityObject.Usage MUST be of type Decimal.
+  * ContractCommitmentEligibilityApplicabilityObject.Usage MUST NOT be null.
+  * ContractCommitmentEligibilityApplicabilityObject.Usage MUST conform to [NumericFormat](#attributes.numericformat) requirements.
+  * ContractCommitmentEligibilityApplicabilityObject.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
+
+### Rule Object Requirements
+
+The ContractCommitmentEligibilityRuleObject adheres to the following requirements:
+
+* ContractCommitmentEligibilityRuleObject property keys adhere to the following requirements:
+  * ContractCommitmentEligibilityRuleObject MUST have a property key "Dimension".
+  * ContractCommitmentEligibilityRuleObject MUST have a property key "Operator".
+  * ContractCommitmentEligibilityRuleObject MUST have a property key "Values".
+  * ContractCommitmentEligibilityRuleObject MAY have a property key "Applicability".
+* ContractCommitmentEligibilityRuleObject.Dimension adheres to the following requirements:
+  * ContractCommitmentEligibilityRuleObject.Dimension MUST be of type String.
+  * ContractCommitmentEligibilityRuleObject.Dimension MUST NOT be null.
+  * ContractCommitmentEligibilityRuleObject.Dimension SHOULD represent a column in the FOCUS [Cost and Usage dataset](#datasets.costandusage).
+* ContractCommitmentEligibilityRuleObject.Operator adheres to the following requirements:
+  * ContractCommitmentEligibilityRuleObject.Operator MUST be of type String.
+  * ContractCommitmentEligibilityRuleObject.Operator MUST NOT be null.
+  * ContractCommitmentEligibilityRuleObject.Operator MUST be one of the [Supported Operators](#datasets.contractcommitment.contractcommitmenteligibility.supported-operators).
+* ContractCommitmentEligibilityRuleObject.Values adheres to the following requirements:
+  * ContractCommitmentEligibilityRuleObject.Values MUST be of type Array.
+  * ContractCommitmentEligibilityRuleObject.Values MUST NOT be null.
+  * ContractCommitmentEligibilityRuleObject.Values[\*] MUST be of type String.
+* ContractCommitmentEligibilityRuleObject.Applicability adheres to the following requirements:
+  * ContractCommitmentEligibilityRuleObject.Applicability MUST be of type JSON Object.
+  * ContractCommitmentEligibilityRuleObject.Applicability MUST conform to [ContractCommitmentEligibilityApplicabilityObject](#datasets.contractcommitment.contractcommitmenteligibility.contractcommitmenteligibilityapplicabilityobject) requirements.
+
+## Schema Structure
 
 ContractCommitmentEligibility contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
 
-#### Top-Level Properties
+### Top-Level Properties
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
@@ -38,9 +126,7 @@ ContractCommitmentEligibility contains a structured JSON object defining the log
 | `ExclusionOperator` | String | No | Defines the relationship for `Exclusions`. Valid values: `AND`, `OR`. Defaults to `OR`. |
 | `Exclusions` | Array | No | List of `Rule` objects defining entities to be removed from the boundary. |
 
-#### Rule Object
-
-Rules are evaluated against the column values of the resource being analyzed.
+### Rule Object
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
@@ -49,16 +135,14 @@ Rules are evaluated against the column values of the resource being analyzed.
 | `Values` | Array | A list of strings to compare. A value of `["*"]` acts as a global wildcard. |
 | `Applicability` | Object | Optional. The specific fraction of applicability for resources matching this rule. Overrides the top-level `Applicability`. |
 
-#### Applicability Object
-
-To ensure schema stability and avoid polymorphic type-checking, `Applicability` MUST be an object. If a key is omitted, it is assumed to be `1.0`.
+### Applicability Object
 
 | Key | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
 | `Cost` | Decimal | 1.0 | Percentage applicable to `ContractCommitmentCost`. |
 | `Usage` | Decimal | 1.0 | Percentage applicable to `ContractCommitmentQuantity`. |
 
-#### Supported Operators
+### Supported Operators
 
 | Operator | Logic | Usage Example |
 | :--- | :--- | :--- |
@@ -72,7 +156,7 @@ To ensure schema stability and avoid polymorphic type-checking, `Applicability` 
 | `Exists` | Checks if the dimension is present and not null. | `Values` can be `["*"]` |
 | `DoesNotExist` | Checks if the dimension is missing or null. | `Values` can be `["*"]` |
 
-#### Wildcard Handling
+### Wildcard Handling
 
 ContractCommitmentEligibility uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
 
@@ -80,15 +164,15 @@ ContractCommitmentEligibility uses a reserved string to represent global or unre
 | :--- | :--- | :--- |
 | `"*"` | Represents all possible values for the specified Dimension. | `In`, `Contains` |
 
-#### Wildcard Behavior Rules
+### Wildcard Behavior Rules
 
 1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every resource, effectively making the commitment "Organization-wide" for that specific Dimension.
 2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every resource, effectively excluding all resources (this is typically used only in combination with `ExclusionOperator: "AND"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted) unless the `InclusionOperator` is set to `AND`.
 
-### Examples
+## Examples
 
-#### Global Scope and Applicability
+### Global Scope and Applicability
 
 If the commitment is 100% applicable to all resources, the `Applicability` object can be omitted entirely.
 
@@ -98,7 +182,7 @@ If the commitment is 100% applicable to all resources, the `Applicability` objec
 }
 ```
 
-#### Global Scope with Specific Exceptions
+### Global Scope with Specific Exceptions
 
 Organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.
 
@@ -121,7 +205,7 @@ Organization-wide coverage **except** for Database services running in BillingAc
 }
 ```
 
-#### Regional Scope
+### Regional Scope
 
 A commitment purchased for a specific region (e.g., `us-east-1`). Since `IsGlobalScope` and `IsComplexScope` are omitted, they default to `false`, requiring the inclusion block.
 
@@ -138,7 +222,7 @@ A commitment purchased for a specific region (e.g., `us-east-1`). Since `IsGloba
 }
 ```
 
-#### Regional Compute Commitment with Exceptions
+### Regional Compute Commitment with Exceptions
 
 Applies to Compute in `us-east-1` and `us-west-2`, excluding any resources or services tagged with an `Environment` of `Sandbox`.
 
@@ -168,7 +252,7 @@ Applies to Compute in `us-east-1` and `us-west-2`, excluding any resources or se
 }
 ```
 
-#### Regional Applicability
+### Regional Applicability
 
 A commitment that applies fully to `us-east-1` but only 50% of cost and usage in `us-west-2` is eligible. Note the use of the object even for symmetrical applicability.
 
@@ -194,7 +278,7 @@ A commitment that applies fully to `us-east-1` but only 50% of cost and usage in
 }
 ```
 
-#### Granular Applicability (Partial Object)
+### Granular Applicability (Partial Object)
 
 A scenario where 100% of Marketplace **Usage** counts toward a volume commitment, but only 50% of the **Cost** is applicable for financial credit. The engine defaults the missing `Usage` key to `1.0`.
 
@@ -214,7 +298,7 @@ A scenario where 100% of Marketplace **Usage** counts toward a volume commitment
 }
 ```
 
-#### Complex Fallback
+### Complex Fallback
 
 A commitment with dynamic or conditional logic that requires calculation against the total aggregate of cost or usage.
 
@@ -224,7 +308,7 @@ A commitment with dynamic or conditional logic that requires calculation against
 }
 ```
 
-#### JTD Schema
+### JTD Schema
 
 ```json
 {
@@ -259,9 +343,9 @@ A commitment with dynamic or conditional logic that requires calculation against
 }
 ```
 
-### Implementation Guidance
+## Implementation Guidance
 
-#### Processing Workflow
+### Processing Workflow
 
 The evaluation of a resource against a commitment eligibility MUST follow a strict linear progression:
 
@@ -274,25 +358,25 @@ The evaluation of a resource against a commitment eligibility MUST follow a stri
    * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `OR`, the engine MUST use the highest percentage for each respective metric.
    * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
 
-#### Integration with Commitment Logic
+### Integration with Commitment Logic
 
 The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Interval](#datasets.contractcommitment.contractcommitmentinterval):
 
 * **Continuous Models:** The `Applicability` percentages (Cost/Usage) MUST be applied to each discrete unit of activity within the **Interval** (e.g., every hour). If the commitment is not fully utilized by the applicable resources within that specific hour, the remaining capacity expires.
 * **Discontinuous Models:** The `Applicability` percentages determine the portion of aggregate activity that counts toward the commitment fulfillment over the entire **Interval** (e.g., the full year).
 
-#### Dependency Logic
+### Dependency Logic
 
 1. **Consistency:** Engines SHOULD expect an object and SHOULD NOT support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
 2. **Conflict Resolution:** If `IsGlobalScope` is `true`, rule-level applicability in the `Inclusions` array is ignored in favor of the top-level `Applicability` attribute.
 
 ### Object ID
 
-AllocatedMethodDetailsObject
+ContractCommitmentEligibilityObject
 
 ### Object Display Name
 
-Allocated Method Details Object
+Contract Commitment Eligibility Object
 
 ## Column ID
 
@@ -316,6 +400,7 @@ A structured definition of the specific entities to which a contract commitment 
 | Allows nulls | False |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object          | [ContractCommitmentEligibilityObject](#datasets.contractcommitment.contractcommitmenteligibility.contractcommitmenteligibilityobject)
 
 ## Introduced (version)
 
