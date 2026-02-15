@@ -1,11 +1,19 @@
 name: Sync PR Open Thread Counts
+
 on:
   schedule:
-    - cron: '0 */4 * * *'
+    - cron: '0 */4 * * *'  # Catch silent "Resolve" clicks
   pull_request_review_comment:
-    types: [created, deleted]
+    types: 
+      - created
+      - deleted
+  pull_request_review:
+    types:
+      - submitted
   pull_request:
-    types: [ready_for_review]
+    types: 
+      - opened
+      - reopened
   workflow_dispatch:
     inputs:
       pr_number:
@@ -19,7 +27,8 @@ jobs:
       github.event_name == 'schedule' ||
       github.event_name == 'workflow_dispatch' ||
       github.event_name == 'pull_request_review_comment' ||
-      (github.event_name == 'pull_request' && github.event.action == 'ready_for_review')
+      github.event_name == 'pull_request_review' ||
+      (github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened'))
     concurrency:
       group: sync-threads-${{ github.event.pull_request.id || 'bulk' }}
       cancel-in-progress: true
@@ -36,6 +45,8 @@ jobs:
           FIELD_NAME: "PR Open Threads"
           SINGLE_PR: ${{ github.event.pull_request.number || github.event.inputs.pr_number }}
         run: |
+          set -e
+
           # 1. Fetch Project and Field IDs
           PROJ_DATA=$(gh api graphql -f query='
             query($org: String!, $p_num: Int!) {
@@ -58,7 +69,7 @@ jobs:
           # 2. Identify PRs
           if [ -n "$SINGLE_PR" ]; then
             echo "Processing single PR: #$SINGLE_PR"
-            PR_LIST=($SINGLE_PR)
+            PR_LIST=("$SINGLE_PR")
           else
             echo "Running bulk sync for all open PRs..."
             PR_LIST=($(gh pr list --state open --json number --jq '.[].number'))
@@ -68,31 +79,36 @@ jobs:
           for NUM in "${PR_LIST[@]}"; do
             echo "--- Processing PR #$NUM ---"
             
-            # Fetch Threads and Node ID via GraphQL (Native API call)
-            PR_DATA=$(gh api graphql -f query='
-              query($org: String!, $repo: String!, $num: Int!) {
+            # Fetch ALL threads using GraphQL + Auto-Pagination
+            # We must include $endCursor in the query so the CLI knows how to paginate.
+            PR_DATA_FULL=$(gh api graphql --paginate -f query='
+              query($org: String!, $repo: String!, $num: Int!, $endCursor: String) {
                 repository(owner: $org, name: $repo) {
                   pullRequest(number: $num) {
                     id
-                    reviewThreads(first: 100) {
+                    reviewThreads(first: 100, after: $endCursor) {
+                      pageInfo { hasNextPage endCursor }
                       nodes { isResolved }
                     }
                   }
                 }
               }' -f org="$ORG" -f repo="${{ github.event.repository.name }}" -F num=$NUM)
 
-            PR_NODE_ID=$(echo "$PR_DATA" | jq -r '.data.repository.pullRequest.id')
-            COUNT=$(echo "$PR_DATA" | jq -r '[.data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false)] | length // 0')
+            # Extract Node ID (safe to take from the first page of results)
+            # We use `jq -s` to handle the stream of JSON pages
+            PR_NODE_ID=$(echo "$PR_DATA_FULL" | jq -s -r '.[0].data.repository.pullRequest.id')
+            
+            # Count ALL unresolved threads across ALL pages
+            COUNT=$(echo "$PR_DATA_FULL" | jq -s '[.[].data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false)] | length')
 
             if [ -z "$PR_NODE_ID" ] || [ "$PR_NODE_ID" == "null" ]; then 
               echo "PR #$NUM not found. Skipping."
               continue
             fi
 
-            # DEBUG OUTPUT
             echo "Debug: PR #$NUM Summary - Open Threads found: $COUNT"
 
-            # 4. Resolve Item ID (The Fix for PR #1882)
+            # 4. Resolve Item ID
             ITEM_ID=$(gh api graphql -f query='
               mutation($project: ID!, $content: ID!) {
                 addProjectV2ItemById(input: {projectId: $project, contentId: $content}) { 

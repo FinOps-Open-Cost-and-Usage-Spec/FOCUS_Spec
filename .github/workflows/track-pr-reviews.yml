@@ -5,7 +5,8 @@ on:
     - cron: '0 */4 * * *'  # Runs every 4 hours
   pull_request:
     types: 
-      - review_requested
+      - opened
+      - reopened
   pull_request_review:
     types: 
       - submitted
@@ -22,7 +23,7 @@ jobs:
     if: >
       github.event_name == 'workflow_dispatch' ||
       github.event_name == 'schedule' ||
-      (github.event_name == 'pull_request' && github.event.action == 'review_requested') || 
+      (github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened')) || 
       (github.event_name == 'pull_request_review' && github.event.review.state != 'commented')
     runs-on: ubuntu-latest
     env:
