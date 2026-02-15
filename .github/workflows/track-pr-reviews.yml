@@ -105,8 +105,9 @@ jobs:
             ITEM_DATA=$(echo "$ITEM_QUERY" | jq -r --arg PROJ "$PROJECT_ID" '.data.node.projectItems.nodes[] | select(.project.id == $PROJ)')
             ITEM_ID=$(echo "$ITEM_DATA" | jq -r '.id // empty')
             
-            RAW_OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number')
-            RAW_OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number')
+            # Use jq conditional to floor the number if it exists, otherwise return "null" string
+            RAW_OLD_APP=$(echo "$ITEM_DATA" | jq -r 'if .app_val.number != null then (.app_val.number | floor) else "null" end')
+            RAW_OLD_REQ=$(echo "$ITEM_DATA" | jq -r 'if .req_val.number != null then (.req_val.number | floor) else "null" end')
 
             OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number // 0 | floor')
             OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number // 0 | floor')
