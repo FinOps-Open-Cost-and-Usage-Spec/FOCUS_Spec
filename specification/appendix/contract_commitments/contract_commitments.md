@@ -31,7 +31,9 @@ The following table defines the high-level expectations for key categorical colu
 
 By standardizing these values, organizations can move from manual spreadsheet tracking to **Automated FinOps Governance**.
 
-For example, a **Discontinuous** model with an **Annual Fulfillment Interval** tells a reporting engine to look for a "True-up" event at the end of the year. Conversely, a **Continuous** model with an **Hourly Fulfillment Interval** tells the engine to calculate "Waste" (unused capacity) for every individual hour of the billing period.
+For example, in a Discontinuous model with an Annual Fulfillment Interval, a reporting engine does not evaluate the commitment hour-by-hour. Instead, it accumulates usage across the full year and waits until the end of that annual interval to determine whether the contractual threshold has been met. At that point, it looks for a “True-up” event — the reconciliation step that settles any difference between the committed amount and actual consumption.
+
+By contrast, in a Continuous model with an Hourly Fulfillment Interval, an engine evaluates the commitment during every hour of the billing period. For each individual hour, it compares committed capacity to actual usage. If usage falls short during a given interval, the engine calculates “Waste”, representing the unused portion of the commitment for that specific hour. That unused capacity is measured and reported as it occurs rather than deferred for end-of-term reconciliation.
 
 ## Examples
 
