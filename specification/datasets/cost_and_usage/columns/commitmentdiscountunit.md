@@ -6,7 +6,6 @@ Commitment Discount Unit represents the service-provider-specified measurement u
 
 CommitmentDiscountUnit adheres to the following requirements:
 
-* CommitmentDiscountUnit MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountUnit MUST be of type String.
 * CommitmentDiscountUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentDiscountUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
@@ -34,13 +33,14 @@ The service-provider-specified measurement unit indicating how a service provide
 
 ## Content constraints
 
-| Constraint      | Value            |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | [Unit Format](#attributes.unitformat)|
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | [Unit Format](#attributes.unitformat)                |
 
 ## Introduced (version)
 
