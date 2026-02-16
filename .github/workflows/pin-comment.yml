@@ -1,0 +1,32 @@
+name: Auto-Pin Status Update
+
+on:
+  issue_comment:
+    # Trigger on both new posts and edits
+    types: [created, edited]
+
+jobs:
+  pin-status:
+    # 1. Matches the specific header and emoji
+    # 2. Ensures it only runs on Issues (since PRs don't support pinning)
+    if: |
+      startsWith(github.event.comment.body, '## Status Update') && 
+      github.event.issue.pull_request == null
+    
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pin the Status Update
+        env:
+          # Using GH_TOKEN so the GitHub CLI can authenticate
+          # Using your bot's PAT so it has 'Member' status
+          GH_TOKEN: ${{ secrets.FOCUS_AUTOMATION_PAT }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+        run: |
+          echo "Attempting to pin comment $COMMENT_ID as focus-automation..."
+          gh api \
+            --method PUT \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            /repos/${{ github.repository }}/issues/comments/$COMMENT_ID/pin
+          echo "Pin successful!"
