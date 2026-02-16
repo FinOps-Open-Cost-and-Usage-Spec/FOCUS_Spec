@@ -4,8 +4,6 @@ Contract Applied is a set of properties that associate a charge with one or more
 
 ## Requirements
 
-### Column Requirements
-
 The ContractApplied column adheres to the following requirements:
 
 * ContractApplied MUST be of type String.
@@ -44,7 +42,6 @@ The ContractAppliedObject adheres to the following requirements:
   * ContractAppliedObject.Elements[\*] MAY contain data generator-defined allocation properties.
   * ContractAppliedObject.Elements[\*] MUST have property keys that begin with the string "x_" unless it is a FOCUS-defined allocation property.
   * ContractAppliedObject.Elements[\*] MUST have custom key-value pairs documented by the data generator.
-
   * The ContractAppliedObject.Elements[\*].ContractId property key adheres to the following requirements:
     * ContractAppliedObject.Elements[\*].ContractId MUST be present inside each ContractAppliedObject.Elements object.
     * ContractAppliedObject.Elements[\*].ContractId MUST be of type String.
@@ -55,7 +52,6 @@ The ContractAppliedObject adheres to the following requirements:
     * When ContractAppliedObject.Elements[\*].ContractId is not null, ContractAppliedObject.Elements[\*].ContractId adheres to the following additional requirements:
       * ContractAppliedObject.Elements[\*].ContractId MUST be a unique identifier within the service provider.
       * ContractAppliedObject.Elements[\*].ContractId SHOULD be a fully-qualified identifier.
-
   * The ContractAppliedObject.Elements[\*].ContractCommitmentID property key adheres to the following requirements:
     * ContractAppliedObject.Elements[\*].ContractCommitmentID MUST be present inside each ContractAppliedObject.Elements object.
     * ContractAppliedObject.Elements[\*].ContractCommitmentID MUST be of type String.
@@ -69,7 +65,6 @@ The ContractAppliedObject adheres to the following requirements:
       * ContractAppliedObject.Elements[\*].ContractCommitmentID MUST have one and only one parent ContractAppliedObject.Elements[\*].ContractID.
       * ContractAppliedObject.Elements[\*].ContractCommitmentID MUST be equal to ResourceID when ChargeCategory is "Purchase".
       * ContractAppliedObject.Elements[\*].ContractCommitmentID MAY be equal to ContractAppliedObject.Elements[\*].ContractID.
-
   * The ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost property key adheres to the following requirements:
     * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MUST be present inside each ContractAppliedObject.Elements object.
     * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MUST be of type Decimal.
@@ -79,7 +74,6 @@ The ContractAppliedObject adheres to the following requirements:
     * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost nullability is defined as follows:
       * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MUST NOT be null when ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity is null.
       * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MAY be null in all other cases.
-
   * The ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity property key adheres to the following requirements:
     * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be present inside each ContractAppliedObject.Elements object.
     * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be of type Decimal.
@@ -89,7 +83,6 @@ The ContractAppliedObject adheres to the following requirements:
     * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity nullability is defined as follows:
       * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST NOT be null when ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost is null.
       * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MAY be null in all other cases.
-
   * The ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit property key adheres to the following requirements:
     * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit MUST be present inside each ContractAppliedObject.Elements object.
     * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit MUST be of type String.
@@ -118,8 +111,6 @@ The `Elements` array contains one or more objects, each of which contains the fo
 | ContractCommitmentAppliedCost     | Dimension   | Conditional   | True         | Numeric   |
 | ContractCommitmentAppliedQuantity | Dimension   | Conditional   | True         | Numeric   |
 | ContractCommitmentAppliedUnit     | Dimension   | Conditional   | True         | String    |
-
-### Descriptions
 
 The following keys are used for contract application properties to facilitate querying data across allocations and across service providers. FOCUS-defined keys will appear in the list below, and custom keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
