@@ -22,80 +22,94 @@ jobs:
         run: |
           set -e
 
-          # 1. Fetch Issue Metadata to check age
+          # 0. GATEKEEPER: Prevent the logger from spamming thread count updates
+          if [ "$FIELD" == "PR Open Threads" ]; then
+            echo "Field '$FIELD' updated by automation. Skipping log entry to prevent spam."
+            exit 0
+          fi
+
+          # 1. Fetch Metadata (Handles Project Item, Issue, or PR)
           QUERY_INFO=$(gh api graphql -f query='
             query($id: ID!) {
               node(id: $id) {
-                ... on Issue { createdAt }
+                ... on ProjectV2Item {
+                  content {
+                    ... on Issue { id createdAt }
+                    ... on PullRequest { id createdAt }
+                  }
+                }
+                ... on Issue { id createdAt }
+                ... on PullRequest { id createdAt }
               }
             }' -f id="$ISSUE_ID")
 
-          CREATED_AT=$(echo "$QUERY_INFO" | jq -r '.data.node.createdAt')
+          # 2. Extract Data Safely
+          CREATED_AT=$(echo "$QUERY_INFO" | jq -r '.data.node.content.createdAt // .data.node.createdAt // ""')
+          SUBJECT_ID=$(echo "$QUERY_INFO" | jq -r '.data.node.content.id // .data.node.id // ""')
           
-          # Calculate age in seconds
-          CREATE_TS=$(date -d "$CREATED_AT" +%s)
-          NOW_TS=$(date +%s)
-          AGE_SECONDS=$(( NOW_TS - CREATE_TS ))
-
-          # 2. Determine if this is an Initialization or a Manual Update
-          if [ "$AGE_SECONDS" -lt 60 ]; then
-            PREFIX="**Initialized**"
+          # Fallback to the original ID if GraphQL couldn't resolve a subject
+          if [ -z "$SUBJECT_ID" ] || [ "$SUBJECT_ID" == "null" ]; then
+            SUBJECT_ID="$ISSUE_ID"
+          fi
+          
+          # 3. Calculate Age
+          if [ -z "$CREATED_AT" ] || [ "$CREATED_AT" == "null" ]; then
+            AGE_SECONDS=3600
           else
-            PREFIX="**$USER_LOGIN** updated"
+            CREATE_TS=$(date -d "$CREATED_AT" +%s)
+            NOW_TS=$(date +%s)
+            AGE_SECONDS=$(( NOW_TS - CREATE_TS ))
           fi
 
-          # 3. Define the new log line
+          # 4. Normalize Values
+          NORM_OLD=$(echo "$OLD_VAL" | sed 's/null//g; s/None//g')
+          ACTOR="${USER_LOGIN:-Automation}"
+
+          # 5. Determine the Log Line
           if [ "$ACTION_TYPE" == "cleared" ]; then
-             [ "$AGE_SECONDS" -lt 60 ] && PREFIX="**Cleared**"
-             NEW_LINE="* $PREFIX **$FIELD**"
+              PREFIX="**$ACTOR** cleared"
+              [ "$AGE_SECONDS" -lt 60 ] && PREFIX="**Cleared**"
+              NEW_LINE="* $PREFIX **$FIELD**"
           else
-            if [ "$OLD_VAL" == "$NEW_VAL" ]; then
+            if [ "$NORM_OLD" == "$NEW_VAL" ]; then
               echo "No change detected. Skipping."
               exit 0
             fi
-            NEW_LINE="* $PREFIX **$FIELD**: $OLD_VAL → **$NEW_VAL**"
+
+            # IF Item is brand new (< 60s), use "Initialized"
+            if [ "$AGE_SECONDS" -lt 60 ]; then
+               NEW_LINE="* **Initialized** **$FIELD**: **$NEW_VAL**"
+            else
+               # If it's an old item but the field was empty, show clean update
+               if [ -z "$NORM_OLD" ]; then
+                  NEW_LINE="* **$ACTOR** updated **$FIELD**: **$NEW_VAL**"
+               else
+                  NEW_LINE="* **$ACTOR** updated **$FIELD**: $OLD_VAL → **$NEW_VAL**"
+               fi
+            fi
           fi
 
-          # 4. Query for existing bot comments (last 20)
+          # 6. Query for existing bot comments (last 20)
           QUERY_LATEST='query($id: ID!) { 
             node(id: $id) { 
-              ... on Issue { 
-                comments(last: 20) { 
-                  nodes { id body createdAt viewerDidAuthor } 
-                } 
-              } 
+              ... on Issue { comments(last: 20) { nodes { id body createdAt viewerDidAuthor } } }
+              ... on PullRequest { comments(last: 20) { nodes { id body createdAt viewerDidAuthor } } }
             } 
           }'
           
-          ALL_COMMENTS=$(gh api graphql -f query="$QUERY_LATEST" -f id="$ISSUE_ID" --jq '.data.node.comments.nodes // []')
+          ALL_COMMENTS=$(gh api graphql -f query="$QUERY_LATEST" -f id="$SUBJECT_ID" --jq '.data.node.comments.nodes // []')
           
-          # 5. Identify a 'recent' bot comment (within 5 minutes)
+          # Look for a comment made by the bot in the last 5 minutes (300 seconds)
           RECENT_COMMENT=$(echo "$ALL_COMMENTS" | jq -c 'reverse | .[] | select(.viewerDidAuthor == true) | select((now - (.createdAt | fromdateiso8601)) < 300)' | head -n 1 || echo "")
 
+          # 7. Append or Create Comment
           if [ -n "$RECENT_COMMENT" ]; then
             COMMENT_ID=$(echo "$RECENT_COMMENT" | jq -r '.id')
             EXISTING_BODY=$(echo "$RECENT_COMMENT" | jq -r '.body')
+            UPDATED_BODY=$(printf "%s\n%s" "$EXISTING_BODY" "$NEW_LINE")
             
-            echo "Found recent bot comment ($COMMENT_ID). Appending..."
-            
-            UPDATED_BODY=$(cat <<EOF
-          $EXISTING_BODY
-          $NEW_LINE
-          EOF
-          )
-            gh api graphql -f query='
-              mutation($id: ID!, $body: String!) { 
-                updateIssueComment(input: { id: $id, body: $body }) { clientMutationId } 
-              }' -f id="$COMMENT_ID" -f body="$UPDATED_BODY"
+            gh api graphql -f query='mutation($id: ID!, $body: String!) { updateIssueComment(input: { id: $id, body: $body }) { clientMutationId } }' -f id="$COMMENT_ID" -f body="$UPDATED_BODY"
           else
-            echo "Creating new comment..."
-            NEW_BODY=$(cat <<EOF
-          🔄 **Project Update**
-          $NEW_LINE
-          EOF
-          )
-            gh api graphql -f query='
-              mutation($id: ID!, $body: String!) { 
-                addComment(input: { subjectId: $id, body: $body }) { clientMutationId } 
-              }' -f id="$ISSUE_ID" -f body="$NEW_BODY"
+            NEW_BODY=$(printf "🔄 **Project Update**\n%s" "$NEW_LINE")
+            gh api graphql -f query='mutation($subject: ID!, $body: String!) { addComment(input: { subjectId: $subject, body: $body }) { clientMutationId } }' -f subject="$SUBJECT_ID" -f body="$NEW_BODY"
           fi

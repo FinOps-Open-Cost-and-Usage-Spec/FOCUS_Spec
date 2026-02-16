@@ -104,7 +104,7 @@
       "MustSatisfy": "CommitmentDiscountStatus MUST be null when CommitmentDiscountId is null.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "CheckNotValue",
+        "CheckFunction": "CheckValue",
         "ColumnName": "CommitmentDiscountStatus",
         "Value": null
       },
