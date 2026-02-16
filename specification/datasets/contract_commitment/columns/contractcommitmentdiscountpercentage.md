@@ -12,8 +12,8 @@ Discount Percentage = 1 - (Contracted Unit Price / List Unit Price)
 
 For example, consider usage that yields a cost for which the following discounts are applicable:
 
- * Commitment discount: 20% applied to the on-demand cost
- * Negotiated discount: 10% applied to the post-commitment discount cost
+* Commitment discount: 20% applied to the on-demand cost
+* Negotiated discount: 10% applied to the post-commitment discount cost
 
 The effective discount is not 30%.
 It is:
