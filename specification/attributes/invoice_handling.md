@@ -50,8 +50,8 @@ InvoiceHandling MUST adhere to the following requirements:
 * *FOCUS dataset* MAY omit informational line items with zero monetary impact included on invoice only for transparency (e.g., tax exemption notifications, SLA credit details when the credit is already applied to the charged amount).
 * InvoiceDetail *FOCUS dataset* MUST have its invoice reconciliation process documented and accessible to practitioners, including a list of columns from both CostAndUsage and InvoiceDetail FOCUS datasets used in reconciliation.
 * CostAndUsage *FOCUS dataset* MUST include Custom columns (e.g., x_ChargeSubType) needed to support invoice reconciliation when FOCUS columns are not sufficient.
-* CostAndUsage.BillingPeriodStart for a given CostAndUsage.InvoiceId MUST match InvoiceDetail.BillingPeriodStart for the same InvoiceDetail.InvoiceId.
-* CostAndUsage.BillingPeriodEnd for a given CostAndUsage.InvoiceId MUST match InvoiceDetail.BillingPeriodEnd for the same InvoiceDetail.InvoiceId.
+* CostAndUsage.BillingPeriodStart for a given CostAndUsage.InvoiceId and CostAndUsage.InvoiceIssuerName MUST match InvoiceDetail.BillingPeriodStart for the same InvoiceDetail.InvoiceId and InvoiceDetail.InvoiceIssuerName.
+* CostAndUsage.BillingPeriodEnd for a given CostAndUsage.InvoiceId and CostAndUsage.InvoiceIssuerName MUST match InvoiceDetail.BillingPeriodEnd for the same InvoiceDetail.InvoiceId and InvoiceDetail.InvoiceIssuerName.
 * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the payable amount provided in the corresponding invoice line items when InvoiceDetail.InvoiceStatus is "Closed".
 * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MUST match the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId when InvoiceDetail.InvoiceStatus is "Closed".
 * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId MAY differ from the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId when InvoiceDetail.InvoiceStatus is "Open".
