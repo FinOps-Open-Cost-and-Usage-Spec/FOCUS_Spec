@@ -3,20 +3,20 @@
 | Parameter         | Value              |
 | ----------------- | ------------------ |
 | Scenario Type     | commitment         |
-| Payment Type      | All-Upfront        |
-| Category          | Usage-based        |
+| Payment Model     | All-Upfront        |
+| CommitmentDiscountCategory | Usage        |
 | Utilization       | 100%               |
 | Hours Generated   | 24                 |
 | Annual Commitment | &dollar;258,000.00 |
-| Committed Rate    | &dollar;29.45/hour |
-| On-Demand Rate    | &dollar;44.18/hour |
+| Effective Unit Price | &dollar;29.45/hour |
+| List Unit Price   | &dollar;44.18/hour |
 | Savings           | 33%                |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/gcp_resource_cud_all_upfront_100pct.csv)
 
 ## Scenario Description
 
-This example shows a **Google Cloud Platform Resource-based CUD** (Committed Use Discount (Resource)), which is a usage-based commitment where you commit to a specific quantity of resource capacity (e.g., instance hours).
+This example shows a **Google Cloud Platform Resource-based CUD** (Committed Use Discount (Resource)), which is a commitment (CommitmentDiscountCategory: Usage) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
 The **All-Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
 
@@ -28,7 +28,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 | ----------------- | ----- | ---------------------- | ------------------- |
 | Purchase          | 1     | &dollar;258,000.00     | &dollar;0.00        |
 | Usage (Used)      | 24    | &dollar;0.00           | &dollar;706.80      |
-| Usage (On-Demand) | 12    | &dollar;19.14          | &dollar;19.14       |
+| Usage (Standard) | 12    | &dollar;19.14          | &dollar;19.14       |
 | **Total**         | 37    | **&dollar;258,019.14** | **&dollar;725.94**  |
 
 ## Column Interactions
@@ -47,12 +47,12 @@ These three quantity columns serve different purposes and must be understood in 
 
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
-| Column                  | Purpose                    | Commitment-Covered | On-Demand     |
+| Column                  | Purpose                    | Commitment-Covered | Standard     |
 | ----------------------- | -------------------------- | ------------------ | ------------- |
-| **ListUnitPrice**       | On-demand (public) price   | &dollar;44.18      | &dollar;44.18 |
-| **ContractedUnitPrice** | Negotiated/committed price | &dollar;29.45      | null          |
+| **ListUnitPrice**       | List (public) unit price   | &dollar;44.18      | &dollar;44.18 |
+| **ContractedUnitPrice** | Negotiated unit price | &dollar;29.45      | null          |
 
-**Why this matters:** The difference between ListUnitPrice and ContractedUnitPrice represents your savings from the commitment. On-demand rows have no ContractedUnitPrice because they aren't covered by a commitment.
+**Why this matters:** The difference between ListUnitPrice and ContractedUnitPrice represents your savings from the contract. Standard pricing rows have no ContractedUnitPrice because they aren't covered by a commitment.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
@@ -60,14 +60,14 @@ These three quantity columns serve different purposes and must be understood in 
 | ----------------- | ------------------ | ------------- | ------------------ |
 | **Purchase Row**  | &dollar;258,000.00 | &dollar;0.00  | &dollar;258,000.00 |
 | **Used Row**      | &dollar;0.00       | &dollar;29.45 | &dollar;44.18      |
-| **On-Demand Row** | &dollar;5.98       | &dollar;5.98  | &dollar;5.98       |
+| **Standard Row** | &dollar;5.98       | &dollar;5.98  | &dollar;5.98       |
 
 The following critical rules apply to commitment discount data:
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
 * **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
 * **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
-* **On-demand rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
+* **Standard pricing rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
@@ -85,23 +85,23 @@ The following critical rules apply to commitment discount data:
 | Column                     | Value                                                 | Explanation                           |
 | -------------------------- | ----------------------------------------------------- | ------------------------------------- |
 | ChargeCategory             | Usage                                                 | Compute resource consumption          |
-| PricingCategory            | Committed                                             | Priced at committed rate              |
+| PricingCategory            | Committed                                             | Priced under commitment discount              |
 | BilledCost                 | &dollar;0.00                                          | **MUST be 0** - covered by commitment |
 | EffectiveCost              | &dollar;29.45                                         | Amortized cost (annual / hours)       |
-| ListCost                   | &dollar;44.18                                         | What you would have paid on-demand    |
+| ListCost                   | &dollar;44.18                                         | What you would have paid at list price    |
 | PricingQuantity            | 1                                                     | Units priced                          |
 | ConsumedQuantity           | 1                                                     | Hours used                            |
 | CommitmentDiscountQuantity | 1                                                     | Units applied                         |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                    |
 | CommitmentDiscountId       | projects/my-project-123456/locations/us-central1/c... | Links usage to purchase               |
 
-## On-Demand Usage Row Details
+## Standard Pricing Usage Row Details
 
 | Column                     | Value        | Explanation                   |
 | -------------------------- | ------------ | ----------------------------- |
-| ChargeCategory             | Usage        | On-demand compute consumption |
+| ChargeCategory             | Usage        | Compute consumption (standard pricing) |
 | PricingCategory            | Standard     | No discount applied           |
-| BilledCost                 | &dollar;5.98 | On-demand price               |
+| BilledCost                 | &dollar;5.98 | List unit price               |
 | EffectiveCost              | &dollar;5.98 | = BilledCost                  |
 | ListCost                   | &dollar;5.98 | Same as BilledCost            |
 | PricingQuantity            | 299          | Units priced                  |
@@ -109,7 +109,7 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountQuantity | null         | **No commitment applied**     |
 | CommitmentDiscountStatus   | null         | No commitment                 |
 | CommitmentDiscountId       | (empty)      | No associated commitment      |
-| ContractedUnitPrice        | null         | No contracted rate            |
+| ContractedUnitPrice        | null         | No contracted unit price            |
 
 ## Validation Rules
 
@@ -133,7 +133,7 @@ FOR ALL rows WHERE CommitmentDiscountStatus IN ('Used', 'Unused'):
 
 **Rationale:** Usage covered by a commitment has already been paid for through the purchase transaction.
 
-### Rule 3: On-Demand Cost Equality
+### Rule 3: Standard Pricing Cost Equality
 
 ```text
 FOR ALL rows WHERE PricingCategory = 'Standard' AND ChargeCategory = 'Usage':
@@ -141,7 +141,7 @@ FOR ALL rows WHERE PricingCategory = 'Standard' AND ChargeCategory = 'Usage':
     ASSERT BilledCost = ListCost
 ```
 
-**Rationale:** On-demand usage has no discount or amortization. All cost columns should be equal.
+**Rationale:** Standard pricing usage has no discount or amortization. All cost columns should be equal.
 
 ### Rule 4: Commitment Link Integrity
 
