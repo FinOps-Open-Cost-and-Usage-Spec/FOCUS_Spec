@@ -55,10 +55,7 @@ InvoiceHandling MUST adhere to the following requirements:
 * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId, InvoiceDetail.InvoiceId, and InvoiceDetail.InvoiceIssuerName MUST match the payable amount provided in the corresponding invoice line items when InvoiceDetail.InvoiceStatus is "Closed".
 * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId, InvoiceDetail.InvoiceId, and InvoiceDetail.InvoiceIssuerName MUST match the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId, CostAndUsage.InvoiceId, and CostAndUsage.InvoiceIssuerName when InvoiceDetail.InvoiceStatus is "Closed".
 * The sum of InvoiceDetail.BilledCost for a given InvoiceDetail.InvoiceDetailId, InvoiceDetail.InvoiceId, and InvoiceDetail.InvoiceIssuerName MAY differ from the sum of CostAndUsage.BilledCost for the same CostAndUsage.InvoiceDetailId, CostAndUsage.InvoiceId, and CostAndUsage.InvoiceIssuerName when InvoiceDetail.InvoiceStatus is "Open".
-* [InvoiceDetail.InvoiceDetailCreated](#datasets.invoicedetail.invoicedetailcreated) MUST be earlier than or equal to [BillingPeriod.BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated) when the following conditions are met:
-  * [BillingPeriod.BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus) is "Closed",
-  * given [InvoiceDetail.InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) matches BillingPeriod.InvoiceIssuerName,
-  * and given [InvoiceDetail.BillingPeriodStart](#datasets.invoicedetail.billingperiodstart) matches [BillingPeriod.BillingPeriodStart](#datasets.billingperiod.billingperiodstart).
+* [InvoiceDetail.InvoiceDetailCreated](#datasets.invoicedetail.invoicedetailcreated) for the given InvoiceDetail.BillingPeriodStart and InvoiceDetail.InvoiceIssuerName MUST be earlier than or equal to [BillingPeriod.BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated) for the same BillingPeriod.BillingPeriodStart and BillingPeriod.InvoiceIssuerName when [BillingPeriod.BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus) is "Closed".
 
 ## Exceptions
 
