@@ -10,6 +10,17 @@ In scenarios where a commitment has "stacked" or "nested" discounts, this field 
 
 Discount Percentage = 1 - (Contracted Unit Price / List Unit Price)
 
+For example, consider usage that yields a cost for which the following discounts are applicable:
+
+ * Commitment discount: 20% applied to the on-demand cost
+ * Negotiated discount: 10% applied to the post-commitment discount cost
+
+The effective discount is not 30%.
+It is:
+1 - (0.8 × 0.9) = 28%
+
+In this scenario, ContractCommitmentDiscountPercentage should be reported as 28%.
+
 ### Relationship to Benefit Category
 
 This field provides the magnitude for the **Discount** category. While `ContractCommitmentCost` tracks the financial obligation (what you pay), `ContractCommitmentDiscountPercentage` tracks the benefit rate (what you save).
