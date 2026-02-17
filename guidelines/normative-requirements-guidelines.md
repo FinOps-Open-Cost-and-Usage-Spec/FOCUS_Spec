@@ -609,7 +609,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### 7.1.10. Business & Contextual Requirements: Cost Validation Rules
 
 ```markdown
-  * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
+* <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
 ```
 
 ##### 7.1.11. Business & Contextual Requirements: Cost Calculation and Relationships
