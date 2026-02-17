@@ -17,10 +17,12 @@ ContractCommitmentDuration adheres to the following requirements:
 * ContractCommitmentDuration MUST be of type String.
 * ContractCommitmentDuration MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentDuration MUST NOT be null.
-* ContractCommitmentDuration MUST adhere to the expected format of "[Numeric Value] [Unit]", where [Numeric Value] is a positive integer, and [Unit] is a standardized unit of time, either singular or plural (e.g., Hour, Year, Years).
+* ContractCommitmentDuration MUST be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., Hour, Year, Years). The following formats are valid:
+  * <quantity> <singular-time-unit> - "1 Day", "1 Year"
+  * <quantity> <plural-time-units> - "3 Months", "3 Years"
 * ContractCommitmentDuration SHOULD present the unit of time as one of the allowed values.
 * ContractCommitmentDuration MUST be calculated as the time elapsed between ContractCommitmentPeriodStart and ContractCommitmentPeriodEnd.
-* ContractCommitmentDuration SHOULD present the largest relevant unit of time (e.g., "1 Year" instead of "12 Months").
+* ContractCommitmentDuration SHOULD represent the contract term using the largest non-fractional time unit (e.g., “1 Year” instead of “12 Months”; "14 Months" instead of "1.16 Years").
 
 ## Column ID
 

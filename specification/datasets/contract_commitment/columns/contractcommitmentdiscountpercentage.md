@@ -36,7 +36,7 @@ ContractCommitmentDiscountPercentage adheres to the following requirements:
 * ContractCommitmentDiscountPercentage MUST be of type Decimal.
 * ContractCommitmentDiscountPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentDiscountPercentage MUST NOT be null if [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory) is "Discount".
-* ContractCommitmentDiscountPercentage MUST be null if ContractCommitmentBenefitCategory is "Credit" or "Availability Guarantee" and no secondary discount is applied.
+* ContractCommitmentDiscountPercentage MUST be null if ContractCommitmentBenefitCategory is "Credit" or "Availability".
 * ContractCommitmentDiscountPercentage MUST be a value between 0.0 and 1.0.
 * For contracts with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), ContractCommitmentDiscountPercentage MUST represent the discount percentage applicable to the current contract commitment.
 * ContractCommitmentDiscountPercentage SHOULD represent the net effective discount if multiple contractual layers are applicable (e.g., a negotiated discount on top of a standard commitment).
