@@ -128,7 +128,7 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountQuantity | null          | **No commitment applied**     |
 | CommitmentDiscountStatus   | null          | No commitment                 |
 | CommitmentDiscountId       | (empty)       | No associated commitment      |
-| ContractedUnitPrice        | null          | No contracted unit price            |
+| ContractedUnitPrice        | &dollar;118.67 | Equals ListUnitPrice (no negotiated discount) |
 
 ## Validation Rules
 
