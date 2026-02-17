@@ -69,7 +69,6 @@ The recommended pattern for a normative requirement is:
 
 ``` markdown
 <Subject (+qualifier)> + <BCP 14 Keyword> + <Verifiable State Descriptor> + <Object (+qualifier)> [+ Conditions]
-
 ```
 
 * Each normative requirement MUST:
