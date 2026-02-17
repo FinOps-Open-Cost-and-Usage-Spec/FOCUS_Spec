@@ -1,6 +1,6 @@
 # Normative Requirements Guidelines
 
-This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** to write normative requirements to ensure clarity, consistency, and testability. It does not define the requirements themselves (the "what") but focuses on their **structure, subjects, and verifiability**.
+This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** to write normative requirements to ensure clarity, consistency, and testability. It does not define the requirements themselves (the "what") but concentrates on their **structure, subjects, and verifiability**.
 
 The guidelines cover normative requirements applicable to:
 
