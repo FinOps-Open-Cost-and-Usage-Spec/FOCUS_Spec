@@ -7,6 +7,8 @@ about: Propose a new feature or enhancement to the FOCUS specification
 
 > **For Requesters:** Complete only the "Requester Information" section below (estimated time: 10-15 minutes). The "Maintainer Assessment" section will be completed by FOCUS Maintainers during triage.
 >
+> Brief, clear responses are fine. Maintainers will follow up if more detail is needed.
+>
 > **Required fields:** Problem Statement, Use Case / User Story, Success Criteria, Type of Request, Organizations Requesting This Feature
 >
 > **Optional but helpful:** Data Generator Support, Supporting Documentation, Proposed Solution / Approach, Additional Context
@@ -16,7 +18,7 @@ about: Propose a new feature or enhancement to the FOCUS specification
 ## Requester Information
 
 ### Problem Statement
-Describe the problem, issue, or opportunity this feature addresses. Include practitioner quotes or real-world examples if available.
+Describe the problem, issue, or opportunity this feature addresses. What is FOCUS unable to do today that creates this problem? Include practitioner quotes or real-world examples if available.
 
 [Write your problem statement here.]
 
@@ -39,7 +41,7 @@ Provide a clear, specific use case that defines what is being provided to the pr
 ### Success Criteria
 What needs to be true when we deliver this capability for it to be meaningful? Describe 2-4 specific criteria. Focus on what you need to be able to DO with the data, not implementation details.
 
-**Example:**
+**Example** *(describe what you can DO, not structural changes like "add column X"):*
 - I can perform cost allocation using this data without additional processing
 - The data is consistently available across all data generators that support this concept
 - Missing or unavailable data is handled in a clear, standardized way
@@ -52,7 +54,7 @@ What needs to be true when we deliver this capability for it to be meaningful? D
 ---
 
 ### Type of Request
-**Select the option that best describes this request:**
+**Select the option that best describes this request.** Maintainers may reclassify during triage.
 
 - [ ] **Standardization** - Data is already available but dispersed across providers
 - [ ] **Enhancement** - Refinement or extension of an existing concept or capability
@@ -77,7 +79,7 @@ List one or more organizations who have requested or explicitly supported this r
 ---
 
 ### Data Generator Support (Optional)
-Do data generators already support this concept in their native billing data?
+Do data generators already support this concept in their native billing data? It's OK to select "Unknown." Maintainers will validate during triage.
 
 - [ ] **Yes** - Widely available across data generators
 - [ ] **Partially** - Some data generators support this, others don't
@@ -100,7 +102,7 @@ Include links to data samples, relevant PRs, GitHub discussions, or implementati
 ---
 
 ### Proposed Solution / Approach (Optional)
-Share initial ideas, constraints, and feasibility considerations if you have them.
+Share initial ideas, constraints, and feasibility considerations if you have them. Solutions are welcome but not required. Maintainers may explore alternative approaches during discovery.
 
 [Your proposal goes here.]
 
