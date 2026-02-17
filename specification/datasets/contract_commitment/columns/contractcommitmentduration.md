@@ -22,7 +22,7 @@ ContractCommitmentDuration adheres to the following requirements:
   * <quantity> <plural-time-units> - "3 Months", "3 Years"
 * ContractCommitmentDuration SHOULD present the unit of time as one of the allowed values.
 * ContractCommitmentDuration MUST be calculated as the time elapsed between ContractCommitmentPeriodStart and ContractCommitmentPeriodEnd.
-* ContractCommitmentDuration SHOULD represent the contract term using the largest non-fractional time unit (e.g., “1 Year” instead of “12 Months”; "14 Months" instead of "1.16 Years").
+* ContractCommitmentDuration SHOULD represent the contract term using the largest non-fractional time unit (e.g., "1 Year" instead of "12 Months"; "14 Months" instead of "1.16 Years").
 
 ## Column ID
 
