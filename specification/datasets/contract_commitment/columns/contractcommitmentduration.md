@@ -47,17 +47,24 @@ Represents the total calendar length of a [*contract commitment*](#glossary:cont
 
 Allowed values:
 
-The following units (either singular or plural) should be used for the representation of time:
+The following units should be used for the representation of time:
 
-| Duration Unit |
+| Time Unit |
 | :--- |
-| Minute(s) |
-| Hour(s) |
-| Day(s) |
-| Week(s) |
-| Month(s) |
-| Quarter(s) |
-| Year(s) |
+| Minute |
+| Minutes |
+| Hour |
+| Hours |
+| Day |
+| Days |
+| Week |
+| Weeks |
+| Month |
+| Months |
+| Quarter |
+| Quarters |
+| Year |
+| Years |
 
 ## Introduced (version)
 
