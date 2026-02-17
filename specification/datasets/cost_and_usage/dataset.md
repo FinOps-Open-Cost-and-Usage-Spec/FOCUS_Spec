@@ -161,7 +161,6 @@ CostAndUsage adheres to the following requirements:
 * CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
-* CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 

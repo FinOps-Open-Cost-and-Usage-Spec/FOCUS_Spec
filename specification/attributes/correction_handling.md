@@ -56,7 +56,7 @@ Corrections to data in FOCUS Invoice Detail and Cost and Usage *dataset artifact
 
 Corrections to underlying records that do not impact *invoice reconciliation* are allowed regardless of Invoice Status, but even in this case they may reduce auditability and traceability or affect downstream processes (e.g., cost allocation, chargeback, reporting).
 
-For more details and requirements regarding consistency and integrity of delivered Invoice Detail and Cost and Usage *dataset artifacts* for *issued invoices*, see the [Invoice Handling attribute](#invoicehandling).
+See [Appendix: Invoice Handling](#appendix.invoicehandling) for more details regarding consistency and integrity of delivered Invoice Detail and Cost and Usage *dataset artifacts* for *issued invoices*.
 
 ### Corrections to Closed Billing Periods
 
@@ -64,11 +64,11 @@ Corrections to previously *closed billing periods* that would require issuing ad
 
 Corrections that do not impact the integrity of the closed billing period, such as informational or metadata updates, are allowed regardless of BillingPeriodStatus.
 
-If the original closed period is not reopened, corrections that require issuing additional invoices must always be represented in the context of a subsequent *open billing period*, in accordance with the [Invoice Handling attribute](#invoicehandling).
+If the original closed period is not reopened, corrections that require issuing additional invoices must always be represented in the context of a subsequent *open billing period*.
 
 This approach preserves historical financial accuracy, ensures clear temporal boundaries between billing cycles, and guarantees that all corrections are transparently tracked and auditable in future periods.
 
-For more details and requirements regarding consistency and integrity of delivered Billing Period, Invoice Detail and Cost and Usage *dataset artifacts* for *closed billing periods*, see the [Invoice Handling attribute](#invoicehandling).
+See [Appendix: Invoice Handling](#appendix.invoicehandling) for more details regarding consistency and integrity of delivered Billing Period, Invoice Detail and Cost and Usage *dataset artifacts* for *closed billing periods*.
 
 ## Attribute ID
 
