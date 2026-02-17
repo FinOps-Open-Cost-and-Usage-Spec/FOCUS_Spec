@@ -116,7 +116,7 @@ The normative subject MUST be a schema-level entity, such as:
   * `Custom column` keyword with a qualifier represents a qualified subset of custom columns (e.g., `Custom column containing numeric values`)
 
 * **Structural sub-elements within Columns** (objects, keys, key values):  
-  *Note: Do not use `object`, `key`, or `value` keywords alone. Always reference them in context, e.g.:*  
+  *Note: MUST NOT use `object`, `key`, or `value` keywords alone. Always reference them in context, e.g.:*  
   * `Object in Columns containing JsonObjectFormat values`  
   * `Key in Object in FOCUS/Custom column containing JsonObjectFormat values`  
   * `Key value in Object in FOCUS/Custom column containing key-value pairs`
