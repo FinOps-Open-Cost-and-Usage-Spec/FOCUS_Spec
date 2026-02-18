@@ -10,6 +10,7 @@
 !INCLUDE "contractcommitmentfulfillmentinterval.md",1
 !INCLUDE "contractcommitmentid.md",1
 !INCLUDE "contractcommitmentlastupdated.md",1
+!INCLUDE "contractcommitmentlifecyclestatus.md",1
 !INCLUDE "contractcommitmentmodel.md",1
 !INCLUDE "contractcommitmentoffercategory.md",1
 !INCLUDE "contractcommitmentpaymentinterval.md",1
@@ -18,7 +19,6 @@
 !INCLUDE "contractcommitmentperiodend.md",1
 !INCLUDE "contractcommitmentperiodstart.md",1
 !INCLUDE "contractcommitmentquantity.md",1
-!INCLUDE "contractcommitmentstatus.md",1
 !INCLUDE "contractcommitmenttype.md",1
 !INCLUDE "contractcommitmentunit.md",1
 !INCLUDE "contractid.md",1

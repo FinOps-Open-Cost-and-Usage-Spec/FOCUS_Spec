@@ -61,8 +61,8 @@ ContractCommitment adheres to the following requirements:
   * ContractCommitment MUST include [ContractCommitmentDiscountPercentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage).
   * ContractCommitment MUST include [ContractCommitmentDuration](#datasets.contractcommitment.contractcommitmentduration).
   * ContractCommitment MUST include [ContractCommitmentEligibility](#datasets.contractcommitment.contractcommitmenteligibility).
+  * ContractCommitment MUST include [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval).
   * ContractCommitment MUST include [ContractCommitmentId](#datasets.contractcommitment.contractcommitmentid).
-  * ContractCommitment MUST include [ContractCommitmentInterval](#datasets.contractcommitment.contractcommitmentinterval).
   * ContractCommitment MUST include [ContractCommitmentLastUpdated](#datasets.contractcommitment.contractcommitmentlastupdated).
   * ContractCommitment MUST include [ContractCommitmentModel](#datasets.contractcommitment.contractcommitmentmodel).
   * ContractCommitment MUST include [ContractCommitmentOfferCategory](#datasets.contractcommitment.contractcommitmentoffercategory).

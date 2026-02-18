@@ -1,23 +1,23 @@
-# Contract Commitment Status
+# Contract Commitment Lifecycle Status
 
-Contract Commitment Status represents the current lifecycle state of a [*contract commitment*](#glossary:contract-commitment). The Status determines the applicability of the commitment to a specific period of [Cost and Usage](#datasets.costandusage) data.
+Contract Commitment Lifecycle Status represents the current lifecycle state of a [*contract commitment*](#glossary:contract-commitment). The Status determines the applicability of the commitment to a specific period of [Cost and Usage](#datasets.costandusage) data.
 
 ## Requirements
 
-ContractCommitmentStatus adheres to the following requirements:
+ContractCommitmentLifecycleStatus adheres to the following requirements:
 
-* ContractCommitmentStatus MUST be of type String.
-* ContractCommitmentStatus MUST NOT be null.
-* ContractCommitmentStatus MUST be one of the allowed values.
-* When a contract commitment record is modified in a way that requires a new [ContractCommitmentID](#datasets.contractcommitment.contractcommitmentid), ContractCommitmentStatus for the previous record MUST be "Superseded".
+* ContractCommitmentLifecycleStatus MUST be of type String.
+* ContractCommitmentLifecycleStatus MUST NOT be null.
+* ContractCommitmentLifecycleStatus MUST be one of the allowed values.
+* When a contract commitment record is modified in a way that requires a new [ContractCommitmentID](#datasets.contractcommitment.contractcommitmentid), ContractCommitmentLifecycleStatus for the previous record MUST be "Superseded".
 
 ## Column ID
 
-ContractCommitmentStatus
+ContractCommitmentLifecycleStatus
 
 ## Display Name
 
-Contract Commitment Status
+Contract Commitment Lifecycle Status
 
 ## Description
 

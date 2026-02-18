@@ -2,7 +2,7 @@
 
 Contract Commitment Payment Interval represents the frequency by which a [*contract commitment*](#glossary:contract-commitment) is invoiced. For [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel) involving deferred financial obligations, the Payment Interval denotes the ongoing billing cycle. For models paid upfront, the Payment Interval denotes the single settlement event.
 
-Note: Do not confuse the Payment Interval with the [Commitment Interval](#datasets.contractcommitment.commitmentinterval). For example, a spend-based commitment discount may have an Hourly Commitment Interval (usage reset) but a Monthly Payment Interval (billing cycle).
+Note: Do not confuse the Contract Commitment Payment Interval with the [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval). For example, a spend-based commitment discount may have an Hourly Fulfillment Interval (usage reset) but a Monthly Payment Interval (billing cycle).
 
 ## Requirements
 
