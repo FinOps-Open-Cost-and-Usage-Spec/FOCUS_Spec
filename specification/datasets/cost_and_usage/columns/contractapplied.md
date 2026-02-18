@@ -11,7 +11,7 @@ The ContractApplied column adheres to the following requirements:
 * ContractApplied MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractApplied nullability is defined as follows:
   * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
-* ContractApplied MUST conform to [AllocatedMethodDetailsObject](#datasets.costandusage.contractapplied.contractappliedobject) requirements when ContractApplied is not null.
+* ContractApplied MUST conform to [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) requirements when ContractApplied is not null.
 
 ## Contract Applied Object
 
@@ -33,14 +33,13 @@ The ContractAppliedObject adheres to the following requirements:
 
 * ContractAppliedObject MUST conform to the [ContractAppliedObjectSchema](#schemas.datasets.costandusage.contractappliedobjectschema) JSON Schema.
 * ContractAppliedObject.Elements[\*] MUST NOT have nested property key-value pairs.
-* ContractAppliedObject.Elements[\*] MUST have custom key-value pairs documented by the data generator.
 * ContractAppliedObject.Elements[\*].ContractId MUST be a unique identifier within the service provider.
 * ContractAppliedObject.Elements[\*].ContractId SHOULD be a fully-qualified identifier.
-* ContractAppliedObject.Elements[\*].ContractCommitmentID MUST be a unique identifier within the service provider.
-* ContractAppliedObject.Elements[\*].ContractCommitmentID SHOULD be a fully-qualified identifier.
-* ContractAppliedObject.Elements[\*].ContractCommitmentID MUST have one and only one parent ContractAppliedObject.Elements[\*].ContractID.
-* ContractAppliedObject.Elements[\*].ContractCommitmentID MUST be equal to ResourceID when ChargeCategory is "Purchase".
-* ContractAppliedObject.Elements[\*].ContractCommitmentID MAY be equal to ContractAppliedObject.Elements[\*].ContractID.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be a unique identifier within the service provider.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId SHOULD be a fully-qualified identifier.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST have one and only one parent ContractAppliedObject.Elements[\*].ContractId.
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MUST be equal to ResourceID when ChargeCategory is "Purchase".
+* ContractAppliedObject.Elements[\*].ContractCommitmentId MAY be equal to ContractAppliedObject.Elements[\*].ContractId.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedCost MUST be denominated in the BillingCurrency.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedQuantity MUST be denominated in the ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit.
 * ContractAppliedObject.Elements[\*].ContractCommitmentAppliedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
@@ -57,13 +56,13 @@ The parent array is called `Elements` and contains one or more objects which com
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
-| Key                               | Key Type    | Feature Level | Allows Nulls | Data Type |
-| --------------------------------- | ----------- | ------------- | ------------ | --------- |
-| ContractID                        | Dimension   | Conditional   | False        | String    |
-| ContractCommitmentID              | Dimension   | Conditional   | False        | String    |
-| ContractCommitmentAppliedCost     | Dimension   | Conditional   | True         | Numeric   |
-| ContractCommitmentAppliedQuantity | Dimension   | Conditional   | True         | Numeric   |
-| ContractCommitmentAppliedUnit     | Dimension   | Conditional   | True         | String    |
+| Key | ValueType | Required | Description |
+| ----- | ---- | ---------- | ----------- |
+| ContractId | String | True | Unique identifier for the contract. |
+| ContractCommitmentId | String | True | Unique identifier for the contract commitment term. |
+| ContractCommitmentAppliedCost | Metric | Conditional | Cost value of the charge applied to the contract commitment. |
+| ContractCommitmentAppliedQuantity | Metric | Conditional | Quantity of usage applied to the contract commitment. |
+| ContractCommitmentAppliedUnit | String | Conditional | Unit of measure for the applied quantity. Required if Quantity is present. |
 
 The following keys are used for contract application properties to facilitate querying data across allocations and across service providers. FOCUS-defined keys will appear in the list below, and custom keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
 
@@ -92,12 +91,12 @@ The Contract Commitment Applied Unit represents a service-provider-specified mea
 ```json
 {
   "Elements" : [ {
-    "ContractID" : "12345",
-    "ContractCommitmentID" : "23456",
+    "ContractId" : "12345",
+    "ContractCommitmentId" : "23456",
     "ContractCommitmentAppliedCost" : 500000.00
   }, {
-    "ContractID" : "12345",
-    "ContractCommitmentID" : "34567",
+    "ContractId" : "12345",
+    "ContractCommitmentId" : "34567",
     "ContractCommitmentAppliedQuantity" : 10000.00,
     "ContractCommitmentAppliedUnit" : "compute_hours"
   } ]

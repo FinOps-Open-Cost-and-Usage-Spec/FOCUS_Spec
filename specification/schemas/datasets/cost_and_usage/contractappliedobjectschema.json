@@ -16,17 +16,14 @@
                 "type": "object",
                 "required": [
                     "ContractId",
-                    "ContractCommitmentID",
-                    "ContractCommitmentAppliedCost",
-                    "ContractCommitmentAppliedQuantity",
-                    "ContractCommitmentAppliedUnit"
+                    "ContractCommitmentId"
                 ],
                 "properties": {
                     "ContractId": {
                         "type": "string",
                         "description": "Unique identifier for the contract"
                     },
-                    "ContractCommitmentID": {
+                    "ContractCommitmentId": {
                         "type": "string",
                         "description": "Unique identifier for the contract commitment term"
                     },
@@ -54,36 +51,37 @@
                 },
                 "allOf": [
                     {
-                        "if": {
-                            "properties": {
-                                "ContractCommitmentAppliedQuantity": {
-                                    "type": "null"
-                                }
-                            }
-                        },
-                        "then": {
-                            "properties": {
-                                "ContractCommitmentAppliedUnit": {
-                                    "type": "null"
-                                }
-                            }
-                        }
-                    },
-                    {
+                        "description": "Unit is required if Quantity is present and not null",
                         "if": {
                             "properties": {
                                 "ContractCommitmentAppliedQuantity": {
                                     "type": "number"
                                 }
-                            }
+                            },
+                            "required": [
+                                "ContractCommitmentAppliedQuantity"
+                            ]
                         },
                         "then": {
-                            "properties": {
-                                "ContractCommitmentAppliedUnit": {
-                                    "type": "string"
-                                }
-                            }
+                            "required": [
+                                "ContractCommitmentAppliedUnit"
+                            ]
                         }
+                    },
+                    {
+                        "description": "At least one metric (Cost or Quantity) must be present",
+                        "anyOf": [
+                            {
+                                "required": [
+                                    "ContractCommitmentAppliedCost"
+                                ]
+                            },
+                            {
+                                "required": [
+                                    "ContractCommitmentAppliedQuantity"
+                                ]
+                            }
+                        ]
                     }
                 ],
                 "patternProperties": {

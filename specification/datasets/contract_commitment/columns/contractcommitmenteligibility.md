@@ -33,7 +33,6 @@ The ContractCommitmentEligibilityObject adheres to the following requirements:
 * ContractCommitmentEligibilityObject.Inclusions[*].Applicability.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
 * ContractCommitmentEligibilityObject.Inclusions[\*].Dimension SHOULD represent a column in the FOCUS [Cost and Usage dataset](#datasets.costandusage).
 * ContractCommitmentEligibilityObject.Exclusions[\*].Dimension SHOULD represent a column in the FOCUS [Cost and Usage dataset](#datasets.costandusage).
-* ContractCommitmentEligibilityObject MAY contain additional properties prefixed with x_ (PascalCase) to support vendor-specific extensions.
 * ContractCommitmentEligibilityObject.Inclusions[*].Values MUST contain only the single string "*" if the wildcard is present.
 * ContractCommitmentEligibilityObject.Exclusions[*].Values MUST contain only the single string "*" if the wildcard is present.
 
