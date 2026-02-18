@@ -66,26 +66,26 @@ The deprecation notice in the changelog MUST include this classification. If cir
 
 Data generators are expected to remove capabilities at the same time that the FOCUS specification does. If a data generator chooses to retain a capability (e.g., column) after it has been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). See the [Requirements Model Guidelines](guidelines/writing-requirements-model-guidelines.md) for additional information. 
 
-### Column Removal Process
+### Entry Removal Process
 
-To ensure complete and error-free removal of deprecated columns from the FOCUS specification, follow this checklist:
+To ensure complete and error-free removal of deprecated entries from the FOCUS specification, follow this checklist:
 
-1. **Confirm Deprecation Status**: Verify the column has been deprecated for at least one release cycle and meets retention period requirements.
+1. **Confirm Deprecation Status**: Verify the entry has been deprecated for at least one release cycle and meets retention period requirements.
 
-2. **Identify All Files Containing the Column**:
-   - Remove the column definition file from `specification/datasets/*/columns/`
-   - Remove the supporting content file from `supporting_content/datasets/*/columns/`
-   - Remove the column entry from the dataset table in `specification/datasets/*/dataset.md`
-- Remove the column's "MUST include" requirement from the dataset requirements list.
+2. **Identify All Files Related to the Component**:
+   - Remove definition files from specification paths (for example: `specification/datasets/*/columns/`, or other relevant subfolders)
+   - Remove any applicable supporting content files from `supporting_content/`
+   - Remove the entry from any tables or listings that include it (for example: dataset tables in `specification/datasets/*/dataset.md`)
   
 3. **Update References**:
-   - Search for and update or remove all links to the deprecated column
+   - Remove any associated normative requirements (for example: “MUST” entries in dataset or requirement documentation)
+   - Search for and update or remove all links to and mentions of the removed entry
    - Update migration guidance documents to reflect removal
-   - Review and update any examples or tables using the deprecated column
+   - Review and update any examples or tables referencing the removed entry
 
 4. **Update Version Information**:
    - Update changelog to document the removal
-   - Update version migration guidance to indicate columns have been removed
+   - Update version migration guidance to indicate entries have been removed
 
 5. **Validate Removal**:
    - Ensure no broken links remain in the specification
@@ -95,7 +95,7 @@ To ensure complete and error-free removal of deprecated columns from the FOCUS s
 6. **Communicate Changes**:
    - Update release notes with removal details
    - Notify stakeholders of the removal
-
+   
 ## Change Type Classification
 
 Changes to the FOCUS specification are classified into one of the following types:
