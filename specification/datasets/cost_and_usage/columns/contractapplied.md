@@ -48,7 +48,7 @@ The ContractAppliedObject adheres to the following requirements:
 
 The parent array is called `Elements` and contains one or more objects which communicate information about how an allocated record was calculated.
 
-| Key | ValueType | Required | Description |
+| Key | Value Type | Required | Description |
 | ----- | ---- | ---------- | ----------- |
 | Elements | Array | True | The parent array containing one or more objects which communicate information about how contract commitments were applied to the charge. |
 
@@ -56,10 +56,10 @@ The parent array is called `Elements` and contains one or more objects which com
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
-| Key | ValueType | Required | Description |
+| Key | Value Type | Feature Level | Description |
 | ----- | ---- | ---------- | ----------- |
-| ContractId | String | True | Unique identifier for the contract. |
-| ContractCommitmentId | String | True | Unique identifier for the contract commitment term. |
+| ContractId | String | Required | Unique identifier for the contract. |
+| ContractCommitmentId | String | Required | Unique identifier for the contract commitment term. |
 | ContractCommitmentAppliedCost | Metric | Conditional | Cost value of the charge applied to the contract commitment. |
 | ContractCommitmentAppliedQuantity | Metric | Conditional | Quantity of usage applied to the contract commitment. |
 | ContractCommitmentAppliedUnit | String | Conditional | Unit of measure for the applied quantity. Required if Quantity is present. |
