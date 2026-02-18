@@ -29,8 +29,13 @@ The ContractCommitmentEligibilityObject adheres to the following requirements:
 * ContractCommitmentEligibilityObject.IsComplexScope MUST be `true` if the *contract commitment's* eligibility logic exceeds schema capabilities.
 * ContractCommitmentEligibilityObject.Applicability.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
 * ContractCommitmentEligibilityObject.Applicability.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
+* ContractCommitmentEligibilityObject.Inclusions[*].Applicability.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
+* ContractCommitmentEligibilityObject.Inclusions[*].Applicability.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
 * ContractCommitmentEligibilityObject.Inclusions[\*].Dimension SHOULD represent a column in the FOCUS [Cost and Usage dataset](#datasets.costandusage).
 * ContractCommitmentEligibilityObject.Exclusions[\*].Dimension SHOULD represent a column in the FOCUS [Cost and Usage dataset](#datasets.costandusage).
+* ContractCommitmentEligibilityObject MAY contain additional properties prefixed with x_ (PascalCase) to support vendor-specific extensions.
+* ContractCommitmentEligibilityObject.Inclusions[*].Values MUST contain only the single string "*" if the wildcard is present.
+* ContractCommitmentEligibilityObject.Exclusions[*].Values MUST contain only the single string "*" if the wildcard is present.
 
 ## Schema Structure
 
@@ -84,7 +89,7 @@ ContractCommitmentEligibility uses a reserved string to represent global or unre
 
 | Reserved Value | Description | Supported Operators |
 | :--- | :--- | :--- |
-| `"*"` | Represents all possible values for the specified Dimension. | `In`, `Contains` |
+| `"*"` | Represents all possible values for the specified Dimension. | `In`, `Contains`, `Exists`, `DoesNotExist` |
 
 ### Wildcard Behavior Rules
 
@@ -139,6 +144,28 @@ A commitment purchased for a specific region (e.g., `us-east-1`). Since `IsGloba
       "Dimension": "RegionId",
       "Operator": "In",
       "Values": ["us-east-1"]
+    }
+  ]
+}
+```
+
+### Custom Scope
+
+A commitment that is only applicable to a specific value (Pay-As-You-Go) for a custom entity (x_BillingModel) in the `us-east-1` region.
+
+```json
+{
+  "InclusionOperator": "OR",
+  "Inclusions": [
+    {
+      "Dimension": "RegionId",
+      "Operator": "In",
+      "Values": ["us-east-1"]
+    },
+    {
+      "Dimension": "x_BillingModel",
+      "Operator": "In",
+      "Values": ["Pay-As-You-Go"]
     }
   ]
 }

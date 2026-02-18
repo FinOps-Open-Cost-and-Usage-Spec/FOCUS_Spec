@@ -63,6 +63,35 @@
                     "description": "Optional rule-level applicability that overrides top-level"
                 }
             },
+            "allOf": [
+                {
+                    "description": "Wildcard constraint: If '*' is used, it must be the only value and Operator must be compatible.",
+                    "if": {
+                        "properties": {
+                            "Values": {
+                                "contains": {
+                                    "const": "*"
+                                }
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "Values": {
+                                "maxItems": 1
+                            },
+                            "Operator": {
+                                "enum": [
+                                    "In",
+                                    "Contains",
+                                    "Exists",
+                                    "DoesNotExist"
+                                ]
+                            }
+                        }
+                    }
+                }
+            ],
             "additionalProperties": false
         }
     },
@@ -114,37 +143,32 @@
     },
     "allOf": [
         {
+            "description": "If neither Global nor Complex scope is active, Inclusions are required.",
             "if": {
-                "anyOf": [
-                    {
-                        "properties": {
-                            "IsGlobalScope": {
-                                "const": false
-                            }
-                        }
-                    },
-                    {
-                        "properties": {
-                            "IsComplexScope": {
-                                "const": false
-                            }
-                        }
-                    },
-                    {
-                        "not": {
+                "not": {
+                    "anyOf": [
+                        {
+                            "properties": {
+                                "IsGlobalScope": {
+                                    "const": true
+                                }
+                            },
                             "required": [
                                 "IsGlobalScope"
                             ]
-                        }
-                    },
-                    {
-                        "not": {
+                        },
+                        {
+                            "properties": {
+                                "IsComplexScope": {
+                                    "const": true
+                                }
+                            },
                             "required": [
                                 "IsComplexScope"
                             ]
                         }
-                    }
-                ]
+                    ]
+                }
             },
             "then": {
                 "required": [
@@ -154,12 +178,16 @@
             }
         },
         {
+            "description": "If IsGlobalScope is true, Inclusions must be empty or omitted.",
             "if": {
                 "properties": {
                     "IsGlobalScope": {
                         "const": true
                     }
-                }
+                },
+                "required": [
+                    "IsGlobalScope"
+                ]
             },
             "then": {
                 "not": {
