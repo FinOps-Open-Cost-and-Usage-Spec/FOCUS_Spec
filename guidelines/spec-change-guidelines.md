@@ -68,7 +68,7 @@ Data generators are expected to remove capabilities at the same time that the FO
 
 ### Entry Removal Process
 
-To ensure complete and error-free removal of deprecated entries from the FOCUS specification, follow this checklist:
+To ensure complete and error-free removal of deprecated entities from the FOCUS specification, follow this checklist:
 
 1. **Confirm Deprecation Status**: Verify the entry has been deprecated for at least one release cycle and meets retention period requirements.
 
