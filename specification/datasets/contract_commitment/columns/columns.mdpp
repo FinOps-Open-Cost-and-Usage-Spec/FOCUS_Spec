@@ -3,6 +3,7 @@
 !INCLUDE "contractcommitmentid.md",1
 !INCLUDE "contractcommitmentcategory.md",1
 !INCLUDE "contractcommitmentdescription.md",1
+!INCLUDE "contractcommitmenteligibility.md",1
 !INCLUDE "contractcommitmentperiodend.md",1
 !INCLUDE "contractcommitmentperiodstart.md",1
 !INCLUDE "contractcommitmentquantity.md",1

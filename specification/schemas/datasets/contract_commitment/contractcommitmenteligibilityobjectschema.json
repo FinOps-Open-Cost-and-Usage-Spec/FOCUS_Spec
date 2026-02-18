@@ -1,0 +1,179 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://focus.finops.org/schemas/contractcommitmenteligibilityobject.json",
+    "title": "Contract Commitment Eligibility Object",
+    "description": "Schema for validating the Contract Commitment Eligibility column JSON object structure in FOCUS datasets",
+    "type": "object",
+    "$defs": {
+        "applicabilityObject": {
+            "type": "object",
+            "properties": {
+                "Cost": {
+                    "type": "number",
+                    "description": "Percentage applicable to ContractCommitmentCost",
+                    "minimum": 0,
+                    "maximum": 1
+                },
+                "Usage": {
+                    "type": "number",
+                    "description": "Percentage applicable to ContractCommitmentQuantity",
+                    "minimum": 0,
+                    "maximum": 1
+                }
+            },
+            "additionalProperties": false
+        },
+        "eligibilityRule": {
+            "type": "object",
+            "required": [
+                "Dimension",
+                "Operator",
+                "Values"
+            ],
+            "properties": {
+                "Dimension": {
+                    "type": "string",
+                    "description": "A valid FOCUS Column Name"
+                },
+                "Operator": {
+                    "type": "string",
+                    "description": "The comparison logic to apply",
+                    "enum": [
+                        "In",
+                        "NotIn",
+                        "StartsWith",
+                        "NotStartsWith",
+                        "Contains",
+                        "NotContains",
+                        "EndsWith",
+                        "Exists",
+                        "DoesNotExist"
+                    ]
+                },
+                "Values": {
+                    "type": "array",
+                    "description": "List of strings to compare",
+                    "items": {
+                        "type": "string"
+                    },
+                    "minItems": 1
+                },
+                "Applicability": {
+                    "$ref": "#/$defs/applicabilityObject",
+                    "description": "Optional rule-level applicability that overrides top-level"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "properties": {
+        "IsGlobalScope": {
+            "type": "boolean",
+            "description": "If true, commitment applies to all resources"
+        },
+        "IsComplexScope": {
+            "type": "boolean",
+            "description": "If true, eligibility logic exceeds schema capabilities"
+        },
+        "Applicability": {
+            "$ref": "#/$defs/applicabilityObject",
+            "description": "Top-level fractional mapping for metrics"
+        },
+        "InclusionOperator": {
+            "type": "string",
+            "description": "Logical operator for Inclusions array",
+            "enum": [
+                "AND",
+                "OR"
+            ]
+        },
+        "Inclusions": {
+            "type": "array",
+            "description": "List of rules defining the eligibility boundary",
+            "items": {
+                "$ref": "#/$defs/eligibilityRule"
+            },
+            "minItems": 1
+        },
+        "ExclusionOperator": {
+            "type": "string",
+            "description": "Logical operator for Exclusions array",
+            "enum": [
+                "AND",
+                "OR"
+            ]
+        },
+        "Exclusions": {
+            "type": "array",
+            "description": "List of rules defining entities to exclude",
+            "items": {
+                "$ref": "#/$defs/eligibilityRule"
+            },
+            "minItems": 1
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "anyOf": [
+                    {
+                        "properties": {
+                            "IsGlobalScope": {
+                                "const": false
+                            }
+                        }
+                    },
+                    {
+                        "properties": {
+                            "IsComplexScope": {
+                                "const": false
+                            }
+                        }
+                    },
+                    {
+                        "not": {
+                            "required": [
+                                "IsGlobalScope"
+                            ]
+                        }
+                    },
+                    {
+                        "not": {
+                            "required": [
+                                "IsComplexScope"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "then": {
+                "required": [
+                    "InclusionOperator",
+                    "Inclusions"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "IsGlobalScope": {
+                        "const": true
+                    }
+                }
+            },
+            "then": {
+                "not": {
+                    "required": [
+                        "Inclusions"
+                    ]
+                }
+            }
+        }
+    ],
+    "patternProperties": {
+        "^x_[A-Z][a-zA-Z0-9]*$": {
+            "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+        }
+    },
+    "additionalProperties": false
+}
