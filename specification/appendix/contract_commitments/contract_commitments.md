@@ -41,6 +41,8 @@ By contrast, in a Continuous model with an Hourly Fulfillment Interval, an engin
 
 The following table provides a reference for how common cloud and SaaS commercial offerings theoretically map to the Contract Commitment schema. (This table is provided for demonstration purposes only.  Actual value assignments are left to the data generators upon the creation of dataset artifacts.)
 
+*(In the below table, CC represents Contract Commitment.)*
+
 | Offering Example | CC Category | CC Model | CC Offer Category | CC Benefit Category | CC Fulfillment Interval | CC Duration | CC Payment Model | CC Payment Interval |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **AWS Savings Plan** | Spend | Continuous | Public | Discount | Hourly | 1 Year | Partial Upfront | Monthly |
