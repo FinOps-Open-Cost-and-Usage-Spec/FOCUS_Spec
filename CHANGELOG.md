@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## v1.4
 
-<sup>Announced February 2026</sup>
+<sup>Announced June 2026</sup>
 
 ### Changes to Supported Features by [Change Impact Classification](/guidelines/spec-change-guidelines.md)
 
