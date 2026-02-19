@@ -36,22 +36,3 @@ These are full 41-column FOCUS datasets showing realistic billing data with a 24
 | Flex CUD - All Upfront     | [gcp_flex_cud_all_upfront_100pct](gcp_flex_cud_all_upfront_100pct.md)         | GCP's spend-based commitment: `CommitmentDiscountCategory=Spend`, quantities in `USD`. Uses `//compute.googleapis.com/` resource ID format.                     |
 | Flex CUD - Partial Upfront | [gcp_flex_cud_partial_upfront_100pct](gcp_flex_cud_partial_upfront_100pct.md) | Partial upfront payment model applied to GCP CUDs. One-time + recurring purchase rows, same pattern as AWS and Azure partial upfront models.                    |
 
-## Generic Reference Scenarios
-
-Minimal examples using placeholder IDs that isolate the core FOCUS patterns without provider-specific details. Ideal for learning the fundamental row structures.
-
-### Purchase Patterns
-
-| Scenario                 | File                                                                                  | What You'll Learn                                                                                                                                 |
-| ------------------------ | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| All Upfront Purchase     | [commitment_discount_purchase_scenario_1](commitment_discount_purchase_scenario_1.md) | Single `Purchase/One-Time` row. Full cost in BilledCost, EffectiveCost=$0 (amortized to usage rows). ChargePeriod spans the full commitment term. |
-| No Upfront Purchase      | [commitment_discount_purchase_scenario_2](commitment_discount_purchase_scenario_2.md) | Multiple `Purchase/Recurring` rows within a billing period. No one-time payment - all cost flows through periodic charges.                        |
-| Partial Upfront Purchase | [commitment_discount_purchase_scenario_3](commitment_discount_purchase_scenario_3.md) | Hybrid model: one `One-Time` row plus multiple `Recurring` rows. Shows how cost splits between immediate capital and ongoing operational expense. |
-
-### Usage Patterns
-
-| Scenario           | File                                                                            | What You'll Learn                                                                                                                                                           |
-| ------------------ | ------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Fully Utilized     | [commitment_discount_usage_scenario_1](commitment_discount_usage_scenario_1.md) | Single `Used` row: BilledCost=$0, EffectiveCost reflects amortized commitment value. The simplest happy-path usage pattern.                                                 |
-| Fully Unused       | [commitment_discount_usage_scenario_2](commitment_discount_usage_scenario_2.md) | Single `Unused` row: ResourceId points to the commitment itself (not a resource), ConsumedQuantity is null. EffectiveCost still accrues - pure waste.                       |
-| Partially Utilized | [commitment_discount_usage_scenario_3](commitment_discount_usage_scenario_3.md) | Two rows for one hour: a `Used` portion and an `Unused` portion. CommitmentDiscountQuantity values sum to the full hourly commitment. The most nuanced utilization pattern. |
