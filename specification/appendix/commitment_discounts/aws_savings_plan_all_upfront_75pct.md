@@ -191,7 +191,7 @@ Validation for All-Upfront payment option:
 * Hours in term: 24
 * Hourly amortization: &dollar;459,000.00 / 24 = &dollar;19,125.00/hour
 * Daily amortization (365 days): &dollar;459,000.00 / 365 = &dollar;1,257.53/day
-* Sum(Usage EffectiveCost): &dollar;943.20
+* Sum(Usage EffectiveCost where CommitmentDiscountStatus IS NOT NULL): $1,257.60 (18 Used × $52.40 + 6 Unused × $52.40)
 
 ### All Validation Rules Passed
 
