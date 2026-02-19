@@ -95,7 +95,7 @@ The following critical rules apply to commitment discount data:
 | ListCost                   | &dollar;36.30                                         | What you would have paid at list price    |
 | PricingQuantity            | 1                                                     | Units priced                          |
 | ConsumedQuantity           | 1                                                     | Hours used                            |
-| CommitmentDiscountQuantity | 24.20                                                 | Units applied                         |
+| CommitmentDiscountQuantity | 24.20                                                 | Commitment dollars applied            |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                    |
 | CommitmentDiscountId       | arn:aws:savingsplans::123456789012:savingsplan/sp-... | Links usage to purchase               |
 
