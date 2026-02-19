@@ -88,7 +88,10 @@ The Contract Commitment Applied Unit represents a service-provider-specified mea
 
 ### Object Example
 
-Here is a basic example of the object format.  For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractapplied).
+Here is a basic example of the object format.
+
+* For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractapplied).
+* For the JSON schema, please see [Contract Applied Object Schema](#schemas.datasets.contractcommitment.contractappliedobjectschema).
 
 ```json
 {

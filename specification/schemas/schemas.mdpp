@@ -4,7 +4,11 @@ This section provides machine-readable JSON Schema definitions for validating th
 
 ## Contract Commitment
 
-### TBC
+### Contract Commitment Eligibility Object Schema
+
+The Contract Commitment Eligibility Object Schema defines the structure for the [Contract Commitment Eligibility](#datasets.costandusage.contractcommitmenteligibility) column.
+
+!INCLUDECODE "schemas/datasets/cost_and_usage/allocatedmethoddetailsobject.json" (json)
 
 ## Cost And Usage
 

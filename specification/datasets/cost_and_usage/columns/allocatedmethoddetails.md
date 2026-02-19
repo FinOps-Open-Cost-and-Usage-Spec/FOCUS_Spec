@@ -73,7 +73,10 @@ Usage Quantity communicates the volume that was consumed or used, denominated in
 
 ### Object Example
 
-Here is a basic example of the object format.  For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:allocatedmethoddetails).
+Here is a basic example of the object format.
+
+* For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:allocatedmethoddetails).
+* For the JSON schema, please see [Allocated Method Details Object Schema](#schemas.datasets.contractcommitment.allocatedmethoddetailsobjectschema).
 
 ```json
 {

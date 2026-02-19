@@ -98,7 +98,10 @@ ContractCommitmentEligibility uses a reserved string to represent global or unre
 
 ## Object Example
 
-Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.  For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmenteligibility).
+Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.  
+
+* For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmenteligibility).
+* For the JSON schema, please see [Contract Commitment Eligibility Object Schema](#schemas.datasets.contractcommitment.contractcommitmenteligibilityobjectschema).
 
 ```json
 {
