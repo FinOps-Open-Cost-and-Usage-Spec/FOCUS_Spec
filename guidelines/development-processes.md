@@ -262,9 +262,9 @@ When a pull request is first opened and still being edited and contributed to by
 
 #### Understanding Draft Status
 
-Draft status signals that the author is still actively working on the pull request and would generally prefer direct conversations about their work-in-progress rather than asynchronous review comments. Adding comments to a draft pull request can be disruptive as the author is forced to stop and respond to your comment vs work on getting the PR completed. It would be best to talk directly with the author and especially important that you involve the author if you are having conversations about the pull request with others.
+Draft status signals that the author is still actively working on the pull request. Early feedback is welcome in open-source development, but reviewers should understand that the author may not respond immediately while the work is still in progress. Adding comments to a draft pull request can create a context-switching cost as the author is pulled between responding and completing the draft. It would be best to talk directly with the author and especially important that you involve the author if you are having conversations about the pull request with others.
 
-**For external reviewers and async collaborators:** Draft status means "not ready yet, but will be soon." Once a PR comes out of draft status, there will be plenty of time for async feedback.
+**For external reviewers and async collaborators:** Draft status means the work is still evolving. Authors may prioritize completing the draft before engaging asynchronously, but there will be plenty of time for async feedback once the PR moves to open status.
 
 #### When Draft PRs May Welcome Feedback
 
@@ -280,10 +280,10 @@ While draft status generally discourages async feedback, authors MAY explicitly 
 
 #### Feedback Expectations
 
-- **Draft PRs:** Reviewers should not expect immediate responses to feedback. Authors may defer and/or resolve comments until the PR moves to open status.
+- **Draft PRs:** Reviewers may provide feedback at any time. Authors may defer and/or resolve comments until the PR moves to open status.
 - **Open PRs:** Authors are expected to be responsive to reviewer feedback in a timely manner.
 
-When in doubt, respect the draft status and wait for the author to mark the PR as ready for review, or communicate directly with the author to ask if feedback would be helpful.
+When in doubt, respect the draft status as a signal that the author may still be iterating, and communicate directly with the author to ask if feedback would be helpful.
 
 
 ### Reviewing
