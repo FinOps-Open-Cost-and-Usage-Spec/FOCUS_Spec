@@ -7,7 +7,6 @@ The Pricing Currency Contracted Unit Price represents the agreed-upon unit price
 PricingCurrencyContractedUnitPrice adheres to the following requirements:
 
 * PricingCurrencyContractedUnitPrice presence in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
-  * PricingCurrencyContractedUnitPrice MUST be present in a Cost and Usage *FOCUS dataset* when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
   * PricingCurrencyContractedUnitPrice SHOULD be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
   * PricingCurrencyContractedUnitPrice MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.
 * PricingCurrencyContractedUnitPrice MUST be of type Decimal.
@@ -40,14 +39,15 @@ The agreed-upon unit price for a single Pricing Unit of the associated SKU, incl
 
 ## Content Constraints
 
-| Constraint      | Value                                |
-|:----------------|:-------------------------------------|
-| Column type     | Metric                               |
-| Feature level   | Conditional                          |
-| Allows nulls    | True                                 |
-| Data type       | Decimal                              |
-| Value format    | [Numeric Format](#attributes.numericformat)     |
-| Number range    | Any valid non-negative decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid non-negative decimal value                 |
 
 ## Introduced (version)
 

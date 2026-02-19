@@ -10,7 +10,6 @@ Billed Cost is denominated in the [Billing Currency](#datasets.costandusage.bill
 
 BilledCost adheres to the following requirements:
 
-* BilledCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * BilledCost MUST NOT be null.
@@ -33,14 +32,15 @@ Cost of a *charge* as invoiced by the *invoice issuer* in a given *billing perio
 
 ## Content constraints
 
-|    Constraint   |      Value              |
-|:----------------|:------------------------|
-| Column type     | Metric                  |
-| Feature level   | Mandatory               |
-| Allows nulls    | False                   |
-| Data type       | Decimal                 |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 
