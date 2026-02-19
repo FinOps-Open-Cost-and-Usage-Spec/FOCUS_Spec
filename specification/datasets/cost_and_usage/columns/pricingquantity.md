@@ -6,7 +6,6 @@ The Pricing Quantity represents the volume of a given [*SKU*](#glossary:sku) ass
 
 PricingQuantity adheres to the following requirements:
 
-* PricingQuantity MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PricingQuantity MUST be of type Decimal.
 * PricingQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingQuantity nullability is defined as follows:
@@ -35,14 +34,15 @@ The volume of a given *SKU* associated with a *resource* or *service* used or pu
 
 ## Content Constraints
 
-|    Constraint   |      Value                |
-|:----------------|:--------------------------|
-| Column type     | Metric                    |
-| Feature level   | Mandatory                 |
-| Allows nulls    | True                      |
-| Data type       | Decimal                   |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number Range    | Any valid decimal value   |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number Range    | Any valid decimal value                              |
 
 ## Introduced (version)
 
