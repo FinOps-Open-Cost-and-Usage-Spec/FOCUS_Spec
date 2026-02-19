@@ -45,7 +45,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
 
-**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a $51.14/hour commitment, this value is $51.14.
+**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a &dollar;51.14/hour commitment, this value is &dollar;51.14.
 
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
@@ -80,6 +80,17 @@ The following critical rules apply to commitment discount data:
 | ChargeCategory           | Purchase           | Commitment purchase transaction                 |
 | ChargeFrequency          | One-Time           | One-time upfront payment                        |
 | BilledCost               | &dollar;224,000.00 | Portion of commitment payment                   |
+| EffectiveCost            | &dollar;0.00       | **MUST be 0** - cost is amortized to usage rows |
+| PricingQuantity          | 1                  | One commitment unit purchased                   |
+| CommitmentDiscountStatus | null               | Status only applies to usage rows               |
+
+## Recurring Purchase Row Details
+
+| Column                   | Value              | Explanation                                     |
+| ------------------------ | ------------------ | ----------------------------------------------- |
+| ChargeCategory           | Purchase           | Commitment purchase transaction                 |
+| ChargeFrequency          | Recurring          | Monthly recurring fee                           |
+| BilledCost               | &dollar;18,666.67  | Monthly portion of commitment payment           |
 | EffectiveCost            | &dollar;0.00       | **MUST be 0** - cost is amortized to usage rows |
 | PricingQuantity          | 1                  | One commitment unit purchased                   |
 | CommitmentDiscountStatus | null               | Status only applies to usage rows               |

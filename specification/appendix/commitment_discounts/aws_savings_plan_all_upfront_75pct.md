@@ -46,7 +46,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
 
-**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a $52.40/hour commitment, this value is $52.40.
+**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a &dollar;52.40/hour commitment, this value is &dollar;52.40.
 
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
@@ -191,7 +191,7 @@ Validation for All-Upfront payment option:
 * Hours in term: 24
 * Hourly amortization: &dollar;459,000.00 / 24 = &dollar;19,125.00/hour
 * Daily amortization (365 days): &dollar;459,000.00 / 365 = &dollar;1,257.53/day
-* Sum(Usage EffectiveCost where CommitmentDiscountStatus IS NOT NULL): $1,257.60 (18 Used × $52.40 + 6 Unused × $52.40)
+* Sum(Usage EffectiveCost where CommitmentDiscountStatus IS NOT NULL): &dollar;1,257.60 (18 Used × &dollar;52.40 + 6 Unused × &dollar;52.40)
 
 ### All Validation Rules Passed
 
