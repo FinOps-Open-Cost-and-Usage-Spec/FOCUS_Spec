@@ -245,7 +245,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ResourceId MUST be a unique identifier within the provider.",
+      "MustSatisfy": "ResourceId MUST be a unique identifier within the service provider.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
