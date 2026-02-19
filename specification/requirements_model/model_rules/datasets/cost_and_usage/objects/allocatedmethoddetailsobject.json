@@ -47,6 +47,14 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-015-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-019-O"
           }
         ]
       },
@@ -62,7 +70,9 @@
         "CAU-AllocatedMethodDetailsObject-O-004-M",
         "CAU-AllocatedMethodDetailsObject-O-005-M",
         "CAU-AllocatedMethodDetailsObject-O-006-M",
-        "CAU-AllocatedMethodDetailsObject-O-007-M"
+        "CAU-AllocatedMethodDetailsObject-O-007-M",
+        "CAU-AllocatedMethodDetailsObject-O-015-M",
+        "CAU-AllocatedMethodDetailsObject-O-019-O"
       ]
     }
   },
