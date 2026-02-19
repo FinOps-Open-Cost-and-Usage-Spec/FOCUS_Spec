@@ -1,62 +1,101 @@
 # Commitment Eligibility Details
 
-Commitment Eligibility Details presents all types of usage based [*commitment*](#glossary:commitment) programs available for a specific usage line item. This column allows practitioners to which [*commitment discount*](#glossary:commitment-discount) program are available for a usage line item, enabling the calculation of true coverage and uncovered spend.
+Commitment Eligibility Details identifies the types of [*commitment*](#glossary:commitment) programs for which a usage line item is eligible. This column enables practitioners to understand which commitment programs are available for a given usage line item, supporting the calculation of true coverage and uncovered spend.
 
 ## Requirements
 
-CommitmentEligibilityDetails adheres to the following requirements:
+The CommitmentEligibilityDetails column adheres to the following requirements:
 
-* CommitmentEligibilityDetails MUST be present in Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports at least one type of [*commitment discount*](#glossary:commitment-discount) program.
-* CommitmentEligibilityDetails MUST be of type String.
-* CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* CommitmentEligibilityDetails nullability is defined as follows:
-  * CommitmentEligibilityDetails MUST be null if the usage is not eligible for any non-negotiated commitment.
-  * CommitmentEligibilityDetails MUST NOT be null if the usage is eligible for any non-negotiated commitment.
-* CommitmentEligibilityDetails MUST correspond to defined [commitment](#glossary:commitment) program types (e.g., "SavingsPlan", "ReservedInstance", "CUD") or vendor-specific pricing tiers (e.g., "MonthlyCommitment").
-* The values in CommitmentEligibilityDetails MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for the provider.
-* CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
-* CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment discount was actually applied to the line item. For example, if CommitmentDiscountType = 'SavingsPlan' and CommitmentEligibilityDetails = '["SavingsPlan", "ReservedInstance"]', this indicates the usage was covered by a Savings Plan but could also have been covered by Reserved Instance. 
-* CommitmentEligibilityDetails MUST reflect eligibility based on the inherent nature of the Service, Category, and SKU (e.g., "Standard" vs "Spot"). 
-* CommitmentEligibilityDetails SHOULD reflect inherent eligibility, but MAY include provider-specific constraints that affect purchase ability.
-* CommitmentEligibilityDetails MUST exclude custom, negotiated, or private pricing agreements (e.g., Private Pricing Addenda or Enterprise Agreements). It refers strictly to publicly available commitment constructs.
+-   CommitmentEligibilityDetails MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports at least one type of [*commitment*](#glossary:commitment) program.
+-   CommitmentEligibilityDetails MUST be of type String.
+-   CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+-   CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
+-   CommitmentEligibilityDetails nullability is defined as follows:
+    -   CommitmentEligibilityDetails MUST be null when the usage is not eligible for any commitment program.
+    -   CommitmentEligibilityDetails MUST NOT be null when the usage is eligible for at least one publicly available commitment program.
+-   CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment was actually applied to the line item.
+-   CommitmentEligibilityDetails SHOULD reflect inherent eligibility, but MAY include provider-specific constraints that affect purchase ability.
+-   CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
+-   CommitmentEligibilityDetails SHOULD include negotiated or private commitment programs for which the usage is eligible, but MAY omit them at the provider's discretion.
+-   CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
+-   CommitmentEligibilityDetails MUST conform to [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) requirements when CommitmentEligibilityDetails is not null.
 
-### Object Schema Requirements
+## Commitment Eligibility Details Object
 
-CommitmentEligibilityDetails consists of a valid JSON object which contains a list of commitment discount types that are applicable to the line item's usage.
+Commitment Eligibility Details consists of a valid JSON object with top-level property keys representing categories of commitment programs. Each key contains an array of objects describing the specific commitment types available for the line item's usage.
 
-When CommitmentEligibilityDetails is not null, the JsonObjectFormat for CommitmentEligibilityDetails adheres to the following requirements:
+### Object Requirements
 
-* CommitmentEligibilityDetails MUST have a top-level key "EligibleCommitmentTypes" which contains an array.
-* The "EligibleCommitmentTypes" array MUST contain one or more strings.
-* Each string in the "EligibleCommitmentTypes" array MUST correspond to a valid commitment discount program type supported by the provider (e.g., "SavingsPlan", "ReservedInstance", "ResourceBasedCommittedUseDiscount").
-* Where possible, values in "EligibleCommitmentTypes" SHOULD correspond to values used in the [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) column for consistency.
-* CommitmentEligibilityDetails root object MAY contain additional data generator-defined keys (e.g., vendor-specific eligibility constraints), provided they do not conflict with FOCUS-defined keys.
+The CommitmentEligibilityDetailsObject adheres to the following requirements:
 
-### Examples
+-   CommitmentEligibilityDetailsObject MUST have at least one top-level property key when not null.
+-   CommitmentEligibilityDetailsObject MAY have a top-level property key "CommitmentDiscountTypes".
+-   CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys for future or provider-specific commitment categories.
+-   CommitmentEligibilityDetailsObject MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
+-   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes adheres to the following requirements:
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type Array.
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST contain one or more objects.
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type JSON Object.
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have a property key "Type".
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MAY contain additional data generator-defined property keys.
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be of type String.
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST NOT be null.
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST correspond to a commitment program type supported by the provider (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount").
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when CommitmentDiscountType is populated by the provider.
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type SHOULD correspond to terminology disclosed by the provider in public documentation when CommitmentDiscountType is not populated by the provider.
 
-The CommitmentEligibilityDetails object contains a list of commitment discount programs that are applicable to the line item's usage.
+### Top-Level Properties
 
-### Array Entries
+| Property                  | Type  | Required    | Description                                                                                                                   |
+|:--------------------------|:------|:------------|:------------------------------------------------------------------------------------------------------------------------------|
+| `CommitmentDiscountTypes` | Array | Conditional | Array of objects identifying [*commitment discount*](#glossary:commitment-discount) programs for which the usage is eligible. |
 
-Array contains one or more strings, representing the specific commitment programs:
+### CommitmentDiscountTypes Entry
 
-| Value | ValueType | Required | Description |
-| ----- | ---- | ---------- | ----------- |
-| [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) | [String](#attributes.stringhandling) | True | The specific type of commitment discount (e.g., "SavingsPlan", "ReservedInstance", "ResourceBasedCommittedUseDiscount") or vendor-specific pricing model (e.g., "MonthlyCommitment") available for this usage. |
+| Key  | ValueType                            | Required | Description                                                                |
+|:-----|:-------------------------------------|:---------|:---------------------------------------------------------------------------|
+| Type | [String](#attributes.stringhandling) | True     | The specific type of commitment discount program available for this usage. |
 
-### Example
+### Object Example
 
-```json
+``` json
 {
-  "EligibleCommitmentTypes": [
-    "SavingsPlan",
-    "ReservedInstance",
-    "ComputeFlexibleCommittedUseDiscount",
-    "UniversalCredits"
+  "CommitmentDiscountTypes": [
+    { "Type": "SavingsPlan" },
+    { "Type": "ReservedInstance" }
   ]
 }
 ```
+
+### JSON Type Definition
+
+``` json
+{
+  "definitions": {
+    "commitmentDiscountTypeEntry": {
+      "properties": {
+        "Type": { "type": "string" }
+      }
+    }
+  },
+  "optionalProperties": {
+    "CommitmentDiscountTypes": {
+      "elements": { "ref": "commitmentDiscountTypeEntry" }
+    }
+  }
+}
+```
+
+NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for CommitmentEligibilityDetails. Where there are discrepancies, deference will be given to the normative requirements.
+
+### Object ID
+
+CommitmentEligibilityDetailsObject
+
+### Object Display Name
+
+Commitment Eligibility Details Object
 
 ## Column ID
 
@@ -68,17 +107,18 @@ Commitment Eligibility Details
 
 ## Description
 
-The types of non-negotiated *commitment* programs available for the specific usage line item.
+The types of [*commitment*](#glossary:commitment) programs available for a specific usage line item.
 
 ## Content constraints
 
-| Constraint      | Value         |
-|:----------------|:--------------|
-| Column type     | Dimension     |
-| Feature level   | Conditional   |
-| Allows nulls    | True          |
-| Data type       | String        |
-| Value format    | [JsonObjectFormat](#attributes.jsonobjectformat) |
+| Constraint    | Value                                                                                                                        |
+|:--------------|:-----------------------------------------------------------------------------------------------------------------------------|
+| Column type   | Dimension                                                                                                                    |
+| Feature level | Conditional                                                                                                                  |
+| Allows nulls  | True                                                                                                                         |
+| Data type     | String                                                                                                                       |
+| Value format  | [JsonObjectFormat](#attributes.jsonobjectformat)                                                                             |
+| Object        | [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) |
 
 ## Introduced (version)
 
