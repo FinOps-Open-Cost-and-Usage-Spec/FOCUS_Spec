@@ -88,6 +88,8 @@ The Contract Commitment Applied Unit represents a service-provider-specified mea
 
 ### Object Example
 
+Here is a basic example of the object format.  For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractapplied).
+
 ```json
 {
   "Elements" : [ {
@@ -133,6 +135,7 @@ A set of properties that associate a charge with one or more [*contract commitme
 | Allows nulls    | True                                                 |
 | Data type       | JSON                                                 |
 | Value format    | [JSON Object Format](#attributes.jsonobjectformat)   |
+| Object          | [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject)
 
 ## Introduced (version)
 

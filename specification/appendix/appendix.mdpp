@@ -1,8 +1,7 @@
 !INCLUDE "appendix_overview.md",0
-!INCLUDE "examples/allocated_method_details_examples/allocated_method_details_examples.md",1
-!INCLUDE "examples/contract_applied_examples/contract_applied_examples.md",1
 !INCLUDE "commitment_discounts/commitment_discounts.mdpp",1
 !INCLUDE "examples/commitment_discount_flexibility_examples/commitment_discount_flexibility_examples.mdpp",1
+!INCLUDE "json_object_examples/json_object_examples.mdpp",1
 !INCLUDE "metadata_examples/metadata_examples.mdpp",1
 !INCLUDE "participating_entity_identification.md",1
 !INCLUDE "saas_examples/saas_examples.mdpp",1
