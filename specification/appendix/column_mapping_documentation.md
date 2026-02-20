@@ -76,7 +76,7 @@ Data generators publishing mapping documentation should:
 
 * Make documentation publicly accessible without authentication
 * Version documentation to align with supported FOCUS versions
-* Provide clear guidance on where practitioners can locate the documentation (e.g., include a URL in FOCUS dataset metadata or reference it from the provider's FOCUS data export documentation)
+* Provide clear guidance on where practitioners can locate the documentation (e.g., include a URL in [FOCUS metadata](#metadata) or reference it from the provider's FOCUS data export documentation)
 
 ## Reference Template
 
