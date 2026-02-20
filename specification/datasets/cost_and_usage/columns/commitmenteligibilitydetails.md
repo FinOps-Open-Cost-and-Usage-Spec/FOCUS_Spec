@@ -16,7 +16,7 @@ The CommitmentEligibilityDetails column adheres to the following requirements:
 * CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment was actually applied to the line item.
 * CommitmentEligibilityDetails SHOULD reflect inherent eligibility, but MAY include provider-specific constraints that affect purchase ability.
 * CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
-* CommitmentEligibilityDetails SHOULD include negotiated or private commitment programs for which the usage is eligible, but MAY omit them at the provider's discretion.
+* CommitmentEligibilityDetails SHOULD include negotiated commitment programs for which the usage is eligible.
 * CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
 * CommitmentEligibilityDetails MUST conform to [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) requirements when CommitmentEligibilityDetails is not null.
 
@@ -27,7 +27,7 @@ Commitment Eligibility Details consists of a valid JSON object with top-level pr
 ### Object Requirements
 
 The CommitmentEligibilityDetailsObject adheres to the following requirements:
-
+The CommitmentEligibilityDetailsObject adheres to the following requirements when CommitmentEligibilityDetails is not null:
 * CommitmentEligibilityDetailsObject MUST have at least one top-level property key when not null.
 * CommitmentEligibilityDetailsObject MAY have a top-level property key "CommitmentDiscountTypes".
 * CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys for future or provider-specific commitment categories.
@@ -35,7 +35,7 @@ The CommitmentEligibilityDetailsObject adheres to the following requirements:
 * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes adheres to the following requirements:
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type Array.
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST contain one or more objects.
-  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type JSON Object.
+  * Each entry in CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type JSON Object.
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have a property key "Type".
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MAY contain additional data generator-defined property keys.
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
@@ -112,7 +112,10 @@ The types of [*commitment*](#glossary:commitment) programs available for a speci
 ## Content constraints
 
 | Constraint    | Value                                                                                                                        |
+| Constraint    | Value                                                                                                                        |
 |:-------------------------------------|:---------------------------------|
+| Dataset       | [Cost and Usage](#datasets.costandusage)                                                                                     |
+| Column type   | Dimension                                                                                                                    |
 | Column type   | Dimension                                                                                                                    |
 | Feature level | Conditional                                                                                                                  |
 | Allows nulls  | True                                                                                                                         |
