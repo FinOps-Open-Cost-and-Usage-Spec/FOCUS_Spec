@@ -1,4 +1,4 @@
-# Billed Cost and Effective Cost Normative Requirements Discussions
+# Billed Cost and Effective Cost Normative Requirements Discussions - 2026-02-20
 
 ## Current Candidates for BilledCost and EffectiveCost Requirements
 
@@ -23,11 +23,11 @@ BilledCost adheres to the following requirements:
 
 #### Independent Usage and Purchase Charges (Effective - Billed comparison)
 
-> DRY. Addressed in EffectiveCost.
+> DRY (Don't Repeat Yourself). Addressed in EffectiveCost.
 
 #### Covering/Covered Charges
 
-**NOK:** BilledCost MUST be 0 when the *charge* is fully covered by other eligible *charges*.
+* **NOK:** BilledCost MUST be 0 when the *charge* is fully covered by other eligible *charges*.
 
 > I thought Udam already provided a suggestion for this but I don't see it.
 
@@ -66,7 +66,7 @@ EffectiveCost adheres to the following requirements:
 
 #### Third party charges
 
-TODO
+> TODO
 
 #### Independent Usage and Purchase Charges (Effective - Billed comparison)
 
@@ -94,19 +94,33 @@ TODO
 * **NOK:** The sum of EffectiveCost MUST equal the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when those *dataset artifacts* include both purchase *charges* (ChargeCategory is "Purchase") and the related eligible *charges* they are intended to cover from the same source, or when the artifact contains neither purchase nor covered charges.
 * **NOK:** The sum of EffectiveCost MAY differ from the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when the artifact contains only purchase *charges* (ChargeCategory is "Purchase") or only the related eligible *charges* they are intended to cover, and those *charges* originate from different data sources (e.g., marketplace scenarios).
 
+> Udam: Seems like we dont need these.
+
 ##### Commitment Discount specifics
 
-* *Charges* for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) adhere to the following additional requirements:
-  * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".
-  * **NOK:** The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".
-  * When CommitmentDiscountStatus is "Used", EffectiveCost MUST represent the portion of the amortized *commitment discount* allocated to eligible *resources* or *services* consumed during the *charge period*.
-  * When CommitmentDiscountStatus is "Unused", EffectiveCost MUST represent the portion of the amortized *commitment discount* that was not allocated to any *resources* or *services* during the *charge period*.
+* ~~*Charges* for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) adhere to the following additional requirements:~~
+  * ~~**NOK:** The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".~~
+  * ~~**NOK:** The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".~~
+  * ~~**NOK:** When CommitmentDiscountStatus is "Used", EffectiveCost MUST represent the portion of the amortized *commitment discount* allocated to eligible *resources* or *services* consumed during the *charge period*.~~
+  * ~~**NOK:** When CommitmentDiscountStatus is "Unused", EffectiveCost MUST represent the portion of the amortized *commitment discount* that was not allocated to any *resources* or *services* during the *charge period*.~~
+
+> Udam: feels like we can get rid of these and move them to examples of usage and purchases charges that have different cost origins (e.g., commitment discount, prepayment, marketplace purchase scenarios)
+
+> Irena: As previously mentioned, I agree with Udam's suggestion - we should remove this block of CommitmentDiscount-specific requirements.
+> However, I suggest we keep the DiscountHandling attribute, at least for now (we need to revisit it, but that’s out of scope for this PR, right?). - to be discussed with the RM team as well
+> If we decide to keep them, I suggest replacing them with something like the following:
+
+* **NOK:** The sum of EffectiveCost where ChargeCategory is "Usage" for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) MUST equal the sum of BilledCost where ChargeCategory is "Purchase" for the same CommitmentDiscountId.
+* **NOK:** EffectiveCost MUST represent the portion of the amortized *commitment discount* allocated to eligible *resources* or *services* consumed during the *charge period* when CommitmentDiscountStatus is "Used".
+* **NOK:** EffectiveCost MUST represent the portion of the amortized *commitment discount* that was not allocated to any *resources* or *services* during the *charge period* when CommitmentDiscountStatus is "Unused".
 
 #### CostAndUsage - InvoiceDetail - Invoice Sum Checks
 
 * **NOK:** The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the payable amounts provided in the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
 
 ---
+
+# Billed Cost and Effective Cost Normative Requirements Discussions - 2026-02-13
 
 ## Draft normative requirements for single-provider matching
 
