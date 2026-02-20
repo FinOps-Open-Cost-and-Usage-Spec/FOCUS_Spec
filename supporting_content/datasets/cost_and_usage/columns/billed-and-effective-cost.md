@@ -29,7 +29,7 @@ BilledCost adheres to the following requirements:
 
 **NOK:** BilledCost MUST be 0 when the *charge* is fully covered by other eligible *charges*.
 
-I thought Udam already provided a suggestion for this but I don't see it.
+> I thought Udam already provided a suggestion for this but I don't see it.
 
 #### Credits
 
