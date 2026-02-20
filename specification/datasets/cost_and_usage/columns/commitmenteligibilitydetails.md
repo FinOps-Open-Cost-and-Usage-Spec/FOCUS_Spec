@@ -6,19 +6,19 @@ Commitment Eligibility Details identifies the types of [*commitment*](#glossary:
 
 The CommitmentEligibilityDetails column adheres to the following requirements:
 
--   CommitmentEligibilityDetails MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports at least one type of [*commitment*](#glossary:commitment) program.
--   CommitmentEligibilityDetails MUST be of type String.
--   CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
--   CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
--   CommitmentEligibilityDetails nullability is defined as follows:
-    -   CommitmentEligibilityDetails MUST be null when the usage is not eligible for any commitment program.
-    -   CommitmentEligibilityDetails MUST NOT be null when the usage is eligible for at least one publicly available commitment program.
--   CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment was actually applied to the line item.
--   CommitmentEligibilityDetails SHOULD reflect inherent eligibility, but MAY include provider-specific constraints that affect purchase ability.
--   CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
--   CommitmentEligibilityDetails SHOULD include negotiated or private commitment programs for which the usage is eligible, but MAY omit them at the provider's discretion.
--   CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
--   CommitmentEligibilityDetails MUST conform to [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) requirements when CommitmentEligibilityDetails is not null.
+* CommitmentEligibilityDetails MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports at least one type of [*commitment*](#glossary:commitment) program.
+* CommitmentEligibilityDetails MUST be of type String.
+* CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
+* CommitmentEligibilityDetails nullability is defined as follows:
+  * CommitmentEligibilityDetails MUST be null when the usage is not eligible for any commitment program.
+  * CommitmentEligibilityDetails MUST NOT be null when the usage is eligible for at least one publicly available commitment program.
+* CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment was actually applied to the line item.
+* CommitmentEligibilityDetails SHOULD reflect inherent eligibility, but MAY include provider-specific constraints that affect purchase ability.
+* CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
+* CommitmentEligibilityDetails SHOULD include negotiated or private commitment programs for which the usage is eligible, but MAY omit them at the provider's discretion.
+* CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
+* CommitmentEligibilityDetails MUST conform to [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) requirements when CommitmentEligibilityDetails is not null.
 
 ## Commitment Eligibility Details Object
 
@@ -28,33 +28,33 @@ Commitment Eligibility Details consists of a valid JSON object with top-level pr
 
 The CommitmentEligibilityDetailsObject adheres to the following requirements:
 
--   CommitmentEligibilityDetailsObject MUST have at least one top-level property key when not null.
--   CommitmentEligibilityDetailsObject MAY have a top-level property key "CommitmentDiscountTypes".
--   CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys for future or provider-specific commitment categories.
--   CommitmentEligibilityDetailsObject MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
--   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes adheres to the following requirements:
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type Array.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST contain one or more objects.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type JSON Object.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have a property key "Type".
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MAY contain additional data generator-defined property keys.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be of type String.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST NOT be null.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST correspond to a commitment program type supported by the provider (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount").
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when CommitmentDiscountType is populated by the provider.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type SHOULD correspond to terminology disclosed by the provider in public documentation when CommitmentDiscountType is not populated by the provider.
+* CommitmentEligibilityDetailsObject MUST have at least one top-level property key when not null.
+* CommitmentEligibilityDetailsObject MAY have a top-level property key "CommitmentDiscountTypes".
+* CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys for future or provider-specific commitment categories.
+* CommitmentEligibilityDetailsObject MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
+* CommitmentEligibilityDetailsObject.CommitmentDiscountTypes adheres to the following requirements:
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type Array.
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST contain one or more objects.
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type JSON Object.
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have a property key "Type".
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MAY contain additional data generator-defined property keys.
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be of type String.
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST NOT be null.
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST correspond to a commitment program type supported by the provider (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount").
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when CommitmentDiscountType is populated by the provider.
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type SHOULD correspond to terminology disclosed by the provider in public documentation when CommitmentDiscountType is not populated by the provider.
 
 ### Top-Level Properties
 
 | Property                  | Type  | Required    | Description                                                                                                                   |
-|:--------------------------|:------|:------------|:------------------------------------------------------------------------------------------------------------------------------|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | `CommitmentDiscountTypes` | Array | Conditional | Array of objects identifying [*commitment discount*](#glossary:commitment-discount) programs for which the usage is eligible. |
 
 ### CommitmentDiscountTypes Entry
 
 | Key  | ValueType                            | Required | Description                                                                |
-|:-----|:-------------------------------------|:---------|:---------------------------------------------------------------------------|
+|:-----------------|:-----------------|:-----------------|:-----------------|
 | Type | [String](#attributes.stringhandling) | True     | The specific type of commitment discount program available for this usage. |
 
 ### Object Example
@@ -112,7 +112,7 @@ The types of [*commitment*](#glossary:commitment) programs available for a speci
 ## Content constraints
 
 | Constraint    | Value                                                                                                                        |
-|:--------------|:-----------------------------------------------------------------------------------------------------------------------------|
+|:-------------------------------------|:---------------------------------|
 | Column type   | Dimension                                                                                                                    |
 | Feature level | Conditional                                                                                                                  |
 | Allows nulls  | True                                                                                                                         |
