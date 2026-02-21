@@ -13,7 +13,6 @@ The CommitmentEligibilityDetails column adheres to the following requirements:
 * CommitmentEligibilityDetails nullability is defined as follows:
   * CommitmentEligibilityDetails MUST be null when the charge is not eligible for any commitment program.
   * CommitmentEligibilityDetails MUST NOT be null when the charge is eligible for at least one publicly available commitment program.
-* CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment was actually applied to the line item.
 * CommitmentEligibilityDetails MUST NOT consider transient account configurations or quotas that might temporarily prevent purchase or participation in a commitment program.
 * CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
 * CommitmentEligibilityDetails SHOULD include negotiated commitment programs for which the usage is eligible.
