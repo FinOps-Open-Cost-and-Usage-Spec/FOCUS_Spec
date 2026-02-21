@@ -1,6 +1,6 @@
 # Commitment Eligibility Details
 
-Commitment Eligibility Details identifies the types of [*commitment*](#glossary:commitment) programs for which a usage line item is eligible. This column enables practitioners to understand which commitment programs are available for a given usage line item, supporting the calculation of true coverage and uncovered spend.
+Commitment Eligibility Details indicates which [*commitment*](#glossary:commitment) programs a provider designates as applicable to a usage line item. This reflects the inherent eligibility of the service, subject to any provider-defined constraints. This column enables practitioners to identify uncovered spend that could have been covered, separating it from spend that is strictly ineligible.
 
 ## Requirements
 
@@ -11,10 +11,10 @@ The CommitmentEligibilityDetails column adheres to the following requirements:
 * CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * CommitmentEligibilityDetails nullability is defined as follows:
-  * CommitmentEligibilityDetails MUST be null when the usage is not eligible for any commitment program.
-  * CommitmentEligibilityDetails MUST NOT be null when the usage is eligible for at least one publicly available commitment program.
+  * CommitmentEligibilityDetails MUST be null when the charge is not eligible for any commitment program.
+  * CommitmentEligibilityDetails MUST NOT be null when the charge is eligible for at least one publicly available commitment program.
 * CommitmentEligibilityDetails MUST be populated for all eligible usage, regardless of whether a commitment was actually applied to the line item.
-* CommitmentEligibilityDetails SHOULD reflect inherent eligibility, but MAY include provider-specific constraints that affect purchase ability.
+* CommitmentEligibilityDetails MUST NOT consider transient account configurations or quotas that might temporarily prevent purchase or participation in a commitment program.
 * CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
 * CommitmentEligibilityDetails SHOULD include negotiated commitment programs for which the usage is eligible.
 * CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
