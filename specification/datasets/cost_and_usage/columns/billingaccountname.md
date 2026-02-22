@@ -4,7 +4,7 @@ A Billing Account Name is a display name assigned to a [*billing account*](#glos
 
 ## Requirements
 
-BillingAccountName adheres to the following requirements:
+The BillingAccountName column MUST adhere to the following requirements:
 
 * BillingAccountName MUST be of type String.
 * BillingAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.

@@ -16,7 +16,7 @@ In addition to these, a data generator may include one or more custom properties
 
 ### Column Requirements
 
-The ContractApplied column adheres to the following requirements:
+The ContractApplied column MUST adhere to the following requirements:
 
 * ContractApplied MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
@@ -25,7 +25,7 @@ The ContractApplied column adheres to the following requirements:
 
 Contract Applied consists of a valid JSON object which contains an array of key-value objects describing the one or more contract commitments applied to the charge. Each object consists of FOCUS-defined keys but can be extended to provide additional details about the contract application.
 
-* If ContractApplied is not null, ContractApplied adheres to the following requirements:
+* If ContractApplied is not null, ContractApplied MUST adhere to the following requirements:
   * ContractApplied MUST have a top-level key "Elements" which contains an array.
   * ContractApplied root object MAY contain custom objects, in addition to "Elements".
   * Each item in "Elements" MUST be an object.
@@ -38,7 +38,7 @@ Contract Applied consists of a valid JSON object which contains an array of key-
     * Contract application property custom key-value pairs MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
     * Contract application property custom key-value pairs MUST be documented by the data generator.
     * Contract application property custom key-value pairs MUST NOT be nested.
-  * FOCUS-defined contract application properties adhere to the following additional requirements:
+  * FOCUS-defined contract application properties MUST adhere to the following additional requirements:
     * Contract application property key MUST match the spelling and casing specified for the FOCUS-defined property.
     * Contract application property value MUST be of the type specified for that property.
     * Contract application property MUST adhere to additional normative requirements specific to that property.

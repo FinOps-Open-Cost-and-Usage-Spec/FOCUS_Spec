@@ -4,15 +4,15 @@ Pricing Category describes the pricing model used for a [*charge*](#glossary:cha
 
 ## Requirements
 
-PricingCategory adheres to the following requirements:
+The PricingCategory column MUST adhere to the following requirements:
 
 * PricingCategory MUST be of type String.
-* PricingCategory nullability is defined as follows:
+* PricingCategory MUST adhere to the following nullability requirements:
   * PricingCategory MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * PricingCategory MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * PricingCategory MAY be null in all other cases.
-* When PricingCategory is not null, PricingCategory adheres to the following additional requirements:
+* When PricingCategory is not null, PricingCategory MUST adhere to the following additional requirements:
   * PricingCategory MUST be one of the allowed values.
   * PricingCategory MUST be "Standard" when pricing is predetermined at the agreed upon rate for the [billing account](#glossary:billing-account).
   * PricingCategory MUST be "Committed" when the *charge* is subject to an existing *commitment discount* and is not the purchase of the *commitment discount*.

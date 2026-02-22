@@ -4,7 +4,7 @@ The Pricing Currency Effective Cost represents the cost of the [*charge*](#gloss
 
 ## Requirements
 
-PricingCurrencyEffectiveCost adheres to the following requirements:
+The PricingCurrencyEffectiveCost column MUST adhere to the following requirements:
 
 * PricingCurrencyEffectiveCost presence in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
   * PricingCurrencyEffectiveCost SHOULD be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.

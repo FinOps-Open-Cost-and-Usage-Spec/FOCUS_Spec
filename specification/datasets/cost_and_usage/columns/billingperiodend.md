@@ -4,7 +4,7 @@ Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveend
 
 ## Requirements
 
-BillingPeriodEnd adheres to the following requirements:
+The BillingPeriodEnd column MUST adhere to the following requirements:
 
 * BillingPeriodEnd MUST be of type Date/Time.
 * BillingPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

@@ -4,14 +4,14 @@ The Consumed Quantity represents the volume of a metered SKU associated with a [
 
 ## Requirements
 
-ConsumedQuantity adheres to the following requirements:
+The ConsumedQuantity column MUST adhere to the following requirements:
 
 * ConsumedQuantity MUST be of type Decimal.
 * ConsumedQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ConsumedQuantity nullability is defined as follows:
+* ConsumedQuantity MUST adhere to the following nullability requirements:
   * ConsumedQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * ConsumedQuantity MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Unused".
-  * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity adheres to the following additional requirements:
+  * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity MUST adhere to the following additional requirements:
     * ConsumedQuantity MUST NOT be null when [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
     * ConsumedQuantity MAY be null when ChargeClass is "Correction".
 * ConsumedQuantity MUST be a valid decimal value when not null.

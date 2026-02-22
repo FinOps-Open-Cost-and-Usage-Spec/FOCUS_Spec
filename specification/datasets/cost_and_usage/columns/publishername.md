@@ -4,7 +4,7 @@ Publisher is the name of the entity that produces the [*resources*](#glossary:re
 
 ## Requirements
 
-PublisherName adheres to the following requirements:
+The PublisherName column MUST adhere to the following requirements:
 
 * PublisherName MUST be of type String.
 * PublisherName MUST conform to [StringHandling](#attributes.stringhandling) requirements.

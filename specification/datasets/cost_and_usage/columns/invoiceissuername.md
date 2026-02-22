@@ -4,7 +4,7 @@ Invoice Issuer Name is the name of the entity responsible for issuing payable in
 
 ## Requirements
 
-InvoiceIssuerName adheres to the following requirements:
+The InvoiceIssuerName column MUST adhere to the following requirements:
 
 * InvoiceIssuerName MUST be of type String.
 * InvoiceIssuerName MUST conform to [StringHandling](#attributes.stringhandling) requirements.

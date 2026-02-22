@@ -4,14 +4,14 @@ List Cost represents the cost calculated by multiplying the [*list unit price*](
 
 ## Requirements
 
-ListCost adheres to the following requirements:
+The ListCost column MUST adhere to the following requirements:
 
 * ListCost MUST be of type Decimal.
 * ListCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListCost MUST NOT be null.
 * ListCost MUST be a valid decimal value.
 * ListCost MUST be denominated in the BillingCurrency.
-* When [ListUnitPrice](#datasets.costandusage.listunitprice) is null, ListCost adheres to the following additional requirements:
+* When [ListUnitPrice](#datasets.costandusage.listunitprice) is null, ListCost MUST adhere to the following additional requirements:
   * ListCost of a [*charge*](#glossary:charge) calculated based on other *charges* (e.g., when the [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax") MUST be calculated based on the ListCost of those related *charges*.
   * ListCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#datasets.costandusage.billedcost).
 * ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.
