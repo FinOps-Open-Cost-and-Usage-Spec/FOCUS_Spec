@@ -4,7 +4,7 @@ Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveen
 
 ## Requirements
 
-ContractPeriodEnd adheres to the following requirements:
+The ContractPeriodEnd column MUST adhere to the following requirements:
 
 * ContractPeriodEnd MUST be of type Date/Time.
 * ContractPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

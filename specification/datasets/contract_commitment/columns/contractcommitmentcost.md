@@ -4,11 +4,11 @@ Contract Commitment Cost represents the monetary value of the [*contract commitm
 
 ## Requirements
 
-ContractCommitmentCost adheres to the following requirements:
+The ContractCommitmentCost column MUST adhere to the following requirements:
 
 * ContractCommitmentCost MUST be of type Decimal.
 * ContractCommitmentCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ContractCommitmentCost nullability is defined as follows:
+* ContractCommitmentCost MUST adhere to the following nullability requirements:
   * ContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is "Spend".
   * ContractCommitmentCost MAY be null when ContractCommitmentCategory is "Usage".
 * ContractCommitmentCost MUST be a valid decimal value.
