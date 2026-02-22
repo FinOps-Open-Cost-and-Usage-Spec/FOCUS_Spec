@@ -9,7 +9,7 @@ Service Provider Name is the name of the entity that provides the [*resources*](
 
 ## Requirements
 
-ServiceProviderName adheres to the following requirements:
+The ServiceProviderName column MUST adhere to the following requirements:
 
 * ServiceProviderName MUST be of type String.
 * ServiceProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.

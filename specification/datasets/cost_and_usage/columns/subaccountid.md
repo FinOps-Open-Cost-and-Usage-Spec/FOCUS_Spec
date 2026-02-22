@@ -4,11 +4,11 @@ A Sub Account ID is a service-provider-assigned identifier assigned to a [*sub a
 
 ## Requirements
 
-SubAccountId adheres to the following requirements:
+The SubAccountId column MUST adhere to the following requirements:
 
 * SubAccountId MUST be of type String.
 * SubAccountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* SubAccountId nullability is defined as follows:
+* SubAccountId MUST adhere to the following nullability requirements:
   * SubAccountId MUST be null when a [*charge*](#glossary:charge) is not related to a *sub account*.
   * SubAccountId MUST NOT be null when a *charge* is related to a *sub account*.
 
