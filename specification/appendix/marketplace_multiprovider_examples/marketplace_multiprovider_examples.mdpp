@@ -1,0 +1,5 @@
+# Marketplace Multi-Provider Examples
+
+The following section contains examples illustrating how FOCUS datasets should be populated in marketplace multi-provider scenarios, where purchase and usage data come from different providers.
+
+!INCLUDE "marketplace_purchase_and_usage.md",1
