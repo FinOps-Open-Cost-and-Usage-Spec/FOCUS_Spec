@@ -31,10 +31,6 @@ BilledCost adheres to the following requirements:
 
 > I thought Udam already provided a suggestion for this but I don't see it.
 
-#### Credits
-
-> Probably ignore for now and address as part of cost value ranges spec at a later stage
-
 #### Derived Charges
 
 * ~~**NOK:** EffectiveCost MUST be derived from the EffectiveCost of underlying *charges* when ChargeCategory is "Tax" or "Adjustment".~~
@@ -82,14 +78,12 @@ EffectiveCost adheres to the following requirements:
 * ~~**NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is not "Adjustment" and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.~~
 * **NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is "Usage" and the *charge* is not covered by other eligible *charges*.
 * **NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is "Purchase" and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.
+* **NOK:** EffectiveCost MUST equal BilledCost when ChargeCategory is "Tax" or "Credit".
+* **NOK:** EffectiveCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
 
 #### Covering/Covered Charges
 
 * **NOK:** EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*.
-
-#### Credits
-
-* **NOK:** EffectiveCost MUST be 0 when ChargeCategory is "Credit".
 
 #### Derived Charges
 
