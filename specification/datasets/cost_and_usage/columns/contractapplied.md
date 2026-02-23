@@ -80,7 +80,8 @@ The "ContractCommitmentID" property adheres to the following requirements:
   * "ContractCommitmentID" MUST be a unique identifier within the service provider.
   * "ContractCommitmentID" SHOULD be a fully-qualified identifier.
   * "ContractCommitmentID" MUST have one and only one parent "ContractID".
-  * "ContractCommitmentID" MUST be equal to ResourceID when ChargeCategory is "Purchase".
+  * "ContractCommitmentID" MUST be equal to ResourceID when ChargeCategory is "Purchase" and the charge represents a purchase of that contract commitment.
+  * "ContractCommitmentID" MUST be equal to ResourceID when ChargeCategory is "Usage" and the charge represents an unused portion of that contract commitment.
   * "ContractCommitmentID" MAY be equal to "ContractID".
 
 <b>Contract Commitment Applied Cost</b>
