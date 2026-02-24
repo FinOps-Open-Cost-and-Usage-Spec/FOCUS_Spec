@@ -10,6 +10,7 @@ BillingPeriodStart adheres to the following requirements:
 * BillingPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodStart MUST NOT be null.
 * BillingPeriodStart MUST be the *inclusive start bound* of the *billing period*.
+* BillingPeriodStart for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match [CostAndUsage.BillingPeriodStart](#datasets.costandusage.billingperiodstart) for the same [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
 
 ## Column ID
 

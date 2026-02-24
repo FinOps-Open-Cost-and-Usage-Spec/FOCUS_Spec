@@ -10,6 +10,7 @@ BillingPeriodEnd adheres to the following requirements:
 * BillingPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodEnd MUST NOT be null.
 * BillingPeriodEnd MUST be the *exclusive end bound* of the *billing period*.
+* BillingPeriodEnd for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match [CostAndUsage.BillingPeriodEnd](#datasets.costandusage.billingperiodend) for the same [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
 
 ## Column ID
 
