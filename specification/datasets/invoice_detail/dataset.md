@@ -31,7 +31,11 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 
 ## Relationships
 
-The Invoice Detail dataset can be joined to the [Cost and Usage](#datasets.costandusage) dataset through the use of either Invoice ID or Invoice Detail ID. Take note: one or both datasets will need to be aggregated in order to facilitate any comparison. For more information, see the [Invoice Reconciliation](#supportedfeatures.invoicereconciliation) supported feature.
+The Invoice Detail dataset can be joined to the [Cost and Usage](#datasets.costandusage) dataset through the use of either Invoice ID or Invoice Detail ID. Take note: one or both datasets will need to be aggregated in order to facilitate any comparison. 
+
+The timing of Invoice ID and Invoice Detail ID availability in Cost and Usage varies across data generators. Some data generators populate these values while the [*billing period*](#glossary:billing-period) is still open, while others do not populate them until after the *billing period* is closed and invoices have been issued.
+
+For more information, see the [Invoice Reconciliation](#supportedfeatures.invoicereconciliation) supported feature.
 
 | Dataset A      | Dataset A Column   | Dataset B      | Dataset B Column   |
 | :------------- | :----------------- | :------------- | :----------------- |

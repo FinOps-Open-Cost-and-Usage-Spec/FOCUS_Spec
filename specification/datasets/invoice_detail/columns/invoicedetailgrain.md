@@ -1,6 +1,8 @@
 # Invoice Detail Grain
 
-Invoice Detail Grain represents the set of key-value pairs that defines the granularity of the invoice line item. This data is represented as key-value pairs instead of separate columns because the grain may vary from one record to the next, both on a single invoice and across invoice issuers; this enables FinOps practitioners to have a single point of reference for the known universe of [Invoice Detail](#datasets.invoicedetail) granularities for use in any necessary downstream data transformations. This information helps FinOps practitioners understand the specific grouping or aggregation level of a given [Invoice Detail](#datasets.invoicedetail) record, such as whether it represents a summary by service, resource, or another dimensional attribute.
+Invoice Detail Grain represents the set of key-value pairs that defines the granularity of an invoice line item. The grain may vary from one record to the next, both within a single invoice and across invoice issuers, and key-value pairs are used instead of separate columns to accommodate this variability. 
+
+This gives FinOps practitioners a single point of reference for all possible [Invoice Detail](#datasets.invoicedetail) granularities (e.g., SKU, service, resource, custom dimension), supporting downstream data transformations such as reconciliation and cost allocation.
 
 ## Requirements
 
