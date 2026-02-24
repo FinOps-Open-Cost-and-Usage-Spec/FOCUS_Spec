@@ -4,7 +4,7 @@ List Cost represents the cost calculated by multiplying the [*list unit price*](
 
 ## Requirements
 
-The ListCost column MUST adhere to the following requirements:
+ListCost MUST adhere to the following requirements:
 
 * ListCost MUST be of type Decimal.
 * ListCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.

@@ -11,10 +11,10 @@ ServiceName MUST adhere to the following requirements:
 * ServiceName MUST be of type String.
 * ServiceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ServiceName MUST NOT be null.
-* The relationship between ServiceName and [ServiceCategory](#datasets.costandusage.servicecategory) columns MUST adhere to the following requirements:
+* The relationship between ServiceName and [ServiceCategory](#datasets.costandusage.servicecategory) MUST adhere to the following requirements:
   * ServiceName MUST have one and only one ServiceCategory that best aligns with its primary purpose, except when no suitable ServiceCategory is available.
   * ServiceName MUST be associated with the ServiceCategory "Other" when no suitable ServiceCategory is available.
-* The relationship between ServiceName and [ServiceSubcategory](#datasets.costandusage.servicesubcategory) columns MUST adhere to the following requirements:
+* The relationship between ServiceName and [ServiceSubcategory](#datasets.costandusage.servicesubcategory) MUST adhere to the following requirements:
   * ServiceName SHOULD have one and only one ServiceSubcategory that best aligns with its primary purpose, except when no suitable ServiceSubcategory is available.
   * ServiceName SHOULD be associated with the ServiceSubcategory "Other" when no suitable ServiceSubcategory is available.
 

@@ -4,7 +4,7 @@ The Allocated Tags column represents the set of [*tags*](#glossary:tag) assigned
 
 ## Requirements
 
-AllocatedTags column adhere to the following requirements:
+AllocatedTags MUST adhere to the following requirements:
 
 * AllocatedTags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * AllocatedTags MUST adhere to the following nullability requirements:
