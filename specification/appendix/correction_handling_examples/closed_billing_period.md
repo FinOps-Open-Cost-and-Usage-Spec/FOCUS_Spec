@@ -4,7 +4,7 @@ The following examples illustrate how corrections to previously closed billing p
 
 ## Closed-Period Correction Scenarios
 
-All scenarios in this section relate to a closed billing period for which the corresponding invoices have already been issued. In the example scenarios presented below, this corresponds specifically to the May 2025 billing period, which was closed on June 16th, 2025. All discrepancies described were identified in July 2025, at which time the subsequent June 2025 billing period was still open.
+All scenarios in this section relate to a closed billing period for which the corresponding invoices have already been issued. In the example scenarios presented below, this corresponds specifically to the May 2025 billing period, which was closed on June 16th, 2025. All described discrepancies were identified and addressed on July 12th, 2025, at which time the subsequent June 2025 billing period was still open.
 
 The corresponding corrections are associated with that open billing period (refer to BillingPeriodStart and BillingPeriodEnd), with ChargeClass set to "Correction", indicating that they reconcile cost or usage from a previously closed billing period, while the charge period (ChargePeriodStart and ChargePeriodEnd) reflects when the cost or usage was originally incurred. This approach ensures a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 

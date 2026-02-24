@@ -6,11 +6,17 @@ Note: Corrections in this section apply to billing periods that are still open, 
 
 ## Current Open-Period Correction Scenarios
 
+All scenarios in this section relate to the current billing period, which is still open as of the date of correction. All discrepancies described in the examples pertain to the July 2025 billing period and were identified on July 12th, 2025.
+
+Since the billing period is still open and invoices have not yet been issued, corrections can be applied without introducing retroactive semantics. All records remain associated with the billing period in which the cost or usage was actually incurred (refer to BillingPeriodStart and BillingPeriodEnd), and ChargeClass is set to null.
+
+In these examples, ACME Corp delivers corrections using Replacement, Delta, and Ledger correction styles, each offering varying levels of traceability and auditability.
+
 ### Scenario 1: Current Open-Period Correction - Partial Reallocation to Correct Resource
 
 On July 12th, 2025, ACME Corp identified that a charge record for the current billing period (July 2025) was incorrectly attributed entirely to ResourceId `R-111`. In reality, only part of the cost and usage belonged to that resource, while the remainder pertained to ResourceId `R-222`.
 
-Since the billing period was still open and the invoice had not yet been finalized, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To correct the misattribution, ACME Corp had the option to use any of the following approaches:
+Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To correct the misattribution, ACME Corp had the option to use any of the following approaches:
 
 * Replacement style correction, which replaced the original record attributed to R-111 with a corrected version, and introduced a new record for `R-222` to reflect the accurate resource attribution.
 * Delta style correction, which used a decrement to reduce the cost from the incorrectly attributed resource (`R-111`), and an increment to assign the cost to the correct resource (`R-222`).
@@ -45,7 +51,7 @@ Note the following details in the example dataset:
 
 On July 12th, 2025, ACME Corp identified a cost incurred during the current billing period (ChargePeriodStart: `2025-07-01`) that was not included in the initial dataset.
 
-Since the billing period was still open and the invoice had not yet been finalized, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To account for the previously omitted usage, ACME Corp had the option to use either Overwrite or Append mechanisms, i.e.:
+Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To account for the previously omitted usage, ACME Corp had the option to use either Overwrite or Append mechanisms, i.e.:
 
 * Replacement style correction
 * Delta style correction
@@ -71,7 +77,7 @@ Note the following details in the example datasets:
 
 On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
-Since the billing period was still open and the invoice had not yet been finalized, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, ACME Corp had the option to use either Overwrite or Append mechanisms, i.e.:
+Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, ACME Corp had the option to use either Overwrite or Append mechanisms, i.e.:
 
 * Replacement style correction
 * Delta style correction
@@ -102,7 +108,7 @@ Note the following details in the example datasets:
 
 On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
-Since the billing period was still open and the invoice had not yet been finalized, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, ACME Corp had the option to use either Overwrite or Append mechanisms, i.e.:
+Since the billing period was still open and invoices had not yet been issued, the correction was applied within the same billing period, allowing for more flexible correction mechanisms. To reconcile this discrepancy, ACME Corp had the option to use either Overwrite or Append mechanisms, i.e.:
 
 * Replacement style correction
 * Delta style correction
@@ -130,6 +136,12 @@ Note the following details in the example datasets:
 * The correction record is assigned to the current billing period (July 2025).
 
 ## Previous Open-Period Correction Scenarios
+
+All scenarios in this section relate to a previous billing period that has ended but has not yet been closed. All described discrepancies pertain to the June 2025 billing period and were identified and addressed on July 12th, 2025.
+
+Although applied after the period had ended, these corrections do not introduce retroactive semantics, as the billing period was still open and invoices had not yet been issued when the corrections were applied. All records remain associated with the billing period in which the cost or usage was originally incurred (refer to BillingPeriodStart and BillingPeriodEnd), and ChargeClass is set to null.
+
+In these examples, ACME Corp (acting as both the data generator and invoice issuer) delivers corrections using Replacement, Delta, and Ledger correction styles, offering varying levels of traceability and auditability.
 
 ### Scenario 1: Previous Open-Period Correction - Partial Reallocation to Correct Resource
 
