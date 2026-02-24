@@ -12,7 +12,7 @@
 !INCLUDE "invoiceid.md",1
 !INCLUDE "invoiceissuedate.md",1
 !INCLUDE "invoiceissuername.md",1
-!INCLUDE "invoicestatus.md",1
+!INCLUDE "invoiceissuestatus.md",1
 !INCLUDE "paymentcurrency.md",1
 !INCLUDE "paymentcurrencybilledcost.md",1
 !INCLUDE "paymentcurrencyinvoicedetailid.md",1
