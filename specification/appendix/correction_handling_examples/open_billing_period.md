@@ -29,7 +29,7 @@ CSV Examples:
 * [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
 * [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
 
-Note the following details in the example dataset:
+Note the following details in the example datasets:
 
 * The correction is modeled using either Overwrite or Append mechanisms, as the billing period is still open and invoice has not yet been issued.
 * Original Dataset includes:
