@@ -8,7 +8,7 @@ The CommitmentDiscountType column MUST adhere to the following requirements:
 
 * CommitmentDiscountType MUST be of type String.
 * CommitmentDiscountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentDiscountType MUST adhere to the following nullability requirements:
+* The CommitmentDiscountType column MUST adhere to the following nullability requirements:
   * CommitmentDiscountType MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
   * CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
 

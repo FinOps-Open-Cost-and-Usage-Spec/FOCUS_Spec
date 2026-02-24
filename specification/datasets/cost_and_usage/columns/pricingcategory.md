@@ -7,7 +7,7 @@ Pricing Category describes the pricing model used for a [*charge*](#glossary:cha
 The PricingCategory column MUST adhere to the following requirements:
 
 * PricingCategory MUST be of type String.
-* PricingCategory MUST adhere to the following nullability requirements:
+* The PricingCategory column MUST adhere to the following nullability requirements:
   * PricingCategory MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * PricingCategory MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".

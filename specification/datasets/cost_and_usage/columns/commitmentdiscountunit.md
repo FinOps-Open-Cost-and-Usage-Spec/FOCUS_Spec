@@ -9,7 +9,7 @@ The CommitmentDiscountUnit column MUST adhere to the following requirements:
 * CommitmentDiscountUnit MUST be of type String.
 * CommitmentDiscountUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentDiscountUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
-* CommitmentDiscountUnit MUST adhere to the following nullability requirements:
+* The CommitmentDiscountUnit column MUST adhere to the following nullability requirements:
   * CommitmentDiscountUnit MUST be null when CommitmentDiscountQuantity is null.
   * CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountQuantity is not null.
 * When CommitmentDiscountUnit is not null, CommitmentDiscountUnit MUST adhere to the following additional requirements:

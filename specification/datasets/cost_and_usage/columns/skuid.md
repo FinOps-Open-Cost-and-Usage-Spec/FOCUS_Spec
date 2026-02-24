@@ -21,11 +21,11 @@ The SkuId column MUST adhere to the following requirements:
 
 * SkuId MUST be of type String.
 * SkuId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* SkuId MUST adhere to the following nullability requirements:
+* The SkuId column MUST adhere to the following nullability requirements:
   * SkuId MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * SkuId MAY be null in all other cases.
-* SkuId for a given *SKU* MUST adhere to the following additional requirements:
+* The SkuId column for a given *SKU* MUST adhere to the following additional requirements:
   * SkuId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
   * SkuId MUST remain consistent across [PricingCategory](#datasets.costandusage.pricingcategory) values.
   * SkuId MUST remain consistent regardless of any other factors that might impact the price but do not affect the functionality of the *SKU*.

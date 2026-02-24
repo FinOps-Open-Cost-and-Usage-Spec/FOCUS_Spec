@@ -8,7 +8,7 @@ The ResourceName column MUST adhere to the following requirements:
 
 * ResourceName MUST be of type String.
 * ResourceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ResourceName MUST adhere to the following nullability requirements:
+* The ResourceName column MUST adhere to the following nullability requirements:
   * ResourceName MUST be null when [ResourceId](#datasets.costandusage.resourceid) is null or when the *resource* does not have an assigned display name.
   * ResourceName MUST NOT be null when ResourceId is not null and the *resource* has an assigned display name.
 * ResourceName MUST NOT duplicate ResourceId when the *resource* is not provisioned interactively or only has a system-generated ResourceId.

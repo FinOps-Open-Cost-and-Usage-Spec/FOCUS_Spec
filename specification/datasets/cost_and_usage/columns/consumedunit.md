@@ -9,7 +9,7 @@ The ConsumedUnit column MUST adhere to the following requirements:
 * ConsumedUnit MUST be of type String.
 * ConsumedUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ConsumedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
-* ConsumedUnit MUST adhere to the following nullability requirements:
+* The ConsumedUnit column MUST adhere to the following nullability requirements:
   * ConsumedUnit MUST be null when ConsumedQuantity is null.
   * ConsumedUnit MUST NOT be null when ConsumedQuantity is not null.
 

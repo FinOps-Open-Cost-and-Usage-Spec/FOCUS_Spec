@@ -7,7 +7,7 @@ Capacity Reservation Status indicates whether the [*charge*](#glossary:charge) r
 The CapacityReservationStatus column MUST adhere to the following requirements:
 
 * CapacityReservationStatus MUST be of type String.
-* CapacityReservationStatus MUST adhere to the following nullability requirements:
+* The CapacityReservationStatus column MUST adhere to the following nullability requirements:
   * CapacityReservationStatus MUST be null when CapacityReservationId is null.
   * CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage".
 * When CapacityReservationStatus is not null, CapacityReservationStatus MUST adhere to the following additional requirements:

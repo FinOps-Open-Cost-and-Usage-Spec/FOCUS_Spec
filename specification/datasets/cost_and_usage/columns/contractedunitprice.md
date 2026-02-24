@@ -9,7 +9,7 @@ The ContractedUnitPrice column MUST adhere to the following requirements:
 * ContractedUnitPrice MUST adhere to the following additional requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ContractedUnitPrice MUST adhere to the following nullability requirements:
+* The ContractedUnitPrice column MUST adhere to the following nullability requirements:
   * ContractedUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * ContractedUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * ContractedUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.

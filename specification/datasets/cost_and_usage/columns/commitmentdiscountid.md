@@ -8,7 +8,7 @@ The CommitmentDiscountId column MUST adhere to the following requirements:
 
 * CommitmentDiscountId MUST be of type String.
 * CommitmentDiscountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentDiscountId MUST adhere to the following nullability requirements:
+* The CommitmentDiscountId column MUST adhere to the following nullability requirements:
   * CommitmentDiscountId MUST be null when a [*charge*](#glossary:charge) is not related to a *commitment discount*.
   * CommitmentDiscountId MUST NOT be null when a *charge* is related to a *commitment discount*.
 * When CommitmentDiscountId is not null, CommitmentDiscountId MUST adhere to the following additional requirements:

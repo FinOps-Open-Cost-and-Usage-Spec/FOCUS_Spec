@@ -8,7 +8,7 @@ The ListUnitPrice column MUST adhere to the following requirements:
 
 * ListUnitPrice MUST be of type Decimal.
 * ListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ListUnitPrice MUST adhere to the following nullability requirements:
+* The ListUnitPrice column MUST adhere to the following nullability requirements:
   * ListUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * ListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * ListUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.

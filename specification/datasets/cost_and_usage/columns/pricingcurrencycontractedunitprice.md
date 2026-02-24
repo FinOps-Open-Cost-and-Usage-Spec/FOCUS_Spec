@@ -11,7 +11,7 @@ The PricingCurrencyContractedUnitPrice column MUST adhere to the following requi
   * PricingCurrencyContractedUnitPrice MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.
 * PricingCurrencyContractedUnitPrice MUST be of type Decimal.
 * PricingCurrencyContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* PricingCurrencyContractedUnitPrice MUST adhere to the following nullability requirements:
+* The PricingCurrencyContractedUnitPrice column MUST adhere to the following nullability requirements:
   * PricingCurrencyContractedUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * PricingCurrencyContractedUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * PricingCurrencyContractedUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.

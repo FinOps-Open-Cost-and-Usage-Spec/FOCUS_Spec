@@ -6,12 +6,12 @@ The Pricing Currency List Unit Price represents the suggested service-provider-p
 
 The PricingCurrencyListUnitPrice column MUST adhere to the following requirements:
 
-* PricingCurrencyListUnitPrice presence in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
+* The PricingCurrencyListUnitPrice presence in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) MUST adhere to the following presence requirements:
   * PricingCurrencyListUnitPrice SHOULD be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
   * PricingCurrencyListUnitPrice MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.
 * PricingCurrencyListUnitPrice MUST be of type Decimal.
 * PricingCurrencyListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* PricingCurrencyListUnitPrice MUST adhere to the following nullability requirements:
+* The PricingCurrencyListUnitPrice column MUST adhere to the following nullability requirements:
   * PricingCurrencyListUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * PricingCurrencyListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * PricingCurrencyListUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.
