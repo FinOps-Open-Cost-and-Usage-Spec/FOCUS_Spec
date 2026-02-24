@@ -7,6 +7,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | Column | Column Type | Feature Level | Allows Nulls | Data Type |
 | :--- | :--- | :--- | :--- | :--- |
 | [Billing Currency](#datasets.contractcommitment.billingcurrency) | Dimension | Mandatory | True | String |
+| [Contract Commitment Applicability](#datasets.contractcommitment.contractcommitmentapplicability) | Dimension | Mandatory | False | JSON |
 | [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory) | Dimension | Mandatory | False | String |
 | [Contract Commitment Category](#datasets.contractcommitment.contractcommitmentcategory) | Dimension | Mandatory | False | String |
 | [Contract Commitment Cost](#datasets.contractcommitment.contractcommitmentcost) | Metric | Mandatory | True | Numeric |
@@ -14,7 +15,6 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Description](#datasets.contractcommitment.contractcommitmentdescription) | Dimension | Mandatory | True | String |
 | [Contract Commitment Discount Percentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage) | Dimension | Mandatory | True | Decimal |
 | [Contract Commitment Duration Type](#datasets.contractcommitment.contractcommitmentdurationtype) | Dimension | Mandatory | False | String |
-| [Contract Commitment Eligibility](#datasets.contractcommitment.contractcommitmenteligibility) | Dimension | Mandatory | False | JSON |
 | [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) | Dimension | Mandatory | False | String |
 | [Contract Commitment ID](#datasets.contractcommitment.contractcommitmentid) | Dimension | Mandatory | False | String |
 | [Contract Commitment Last Updated](#datasets.contractcommitment.contractcommitmentlastupdated) | Dimension | Mandatory | False | Date/Time |

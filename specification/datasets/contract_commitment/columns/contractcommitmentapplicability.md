@@ -1,23 +1,23 @@
-# Contract Commitment Eligibility
+# Contract Commitment Applicability
 
-Contract Commitment Eligibility is a structured definition of the specific entities to which a contract commitment applies, with both inclusionary and exclusionary logic, as well as the portion of cost or usage that is applicable.
+Contract Commitment Applicability is a structured definition of the specific entities eligible for coverage under a [*contract commitment*](#glossary:contract-commitment).  This column details inclusionary and exclusionary logic, as well as the specific portion of cost or usage that is applicable.
 
 ## Requirements
 
-ContractCommitmentEligibility adheres to the following requirements:
+ContractCommitmentApplicability adheres to the following requirements:
 
-* ContractCommitmentEligibility MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* ContractCommitmentEligibility MUST NOT be null.
+* ContractCommitmentApplicability MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
+* ContractCommitmentApplicability MUST NOT be null.
 
 ## Logical Schema Structure
 
-ContractCommitmentEligibility contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
+ContractCommitmentApplicability contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
 
 ### Top-Level Attributes
 
 | Attribute | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `IsGlobalScope` | Boolean | No | If `true`, the commitment applies to all resources. Defaults to `false`. |
+| `IsGlobalScope` | Boolean | No | If `true`, all entities are eligible for the commitment. Defaults to `false`. |
 | `IsComplexScope` | Boolean | No | If `true`, indicates logic exceeds schema capabilities. Defaults to `false`. |
 | `Applicability` | Object | No | The fractional mapping for metrics. If omitted, both `Cost` and `Usage` keys default to `1.0`. |
 | `InclusionOperator` | String | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `AND`, `OR`. |
@@ -61,7 +61,7 @@ To ensure schema stability and avoid polymorphic type-checking, `Applicability` 
 
 ### Wildcard Handling
 
-ContractCommitmentEligibility uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
+ContractCommitmentApplicability uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
 
 | Reserved Value | Description | Supported Operators |
 | :--- | :--- | :--- |
@@ -69,8 +69,8 @@ ContractCommitmentEligibility uses a reserved string to represent global or unre
 
 ### Wildcard Behavior Rules
 
-1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every resource, effectively making the commitment "Organization-wide" for that specific Dimension.
-2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every resource, effectively excluding all resources (this is typically used only in combination with `ExclusionOperator: "AND"` for surgical filtering).
+1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, every entity is eligible for that specific Dimension, effectively making the commitment "Organization-wide."
+2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, all entities are rendered ineligible (typically used with `ExclusionOperator: "AND"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted) unless the `InclusionOperator` is set to `AND`.
 
 ## Examples
@@ -223,7 +223,7 @@ A commitment with dynamic or conditional logic that requires calculation against
       },
       "additionalProperties": false
     },
-    "eligibilityRule": {
+    "applicabilityRule": {
       "properties": {
         "Dimension": { "type": "string" },
         "Operator": { "type": "string" },
@@ -239,9 +239,9 @@ A commitment with dynamic or conditional logic that requires calculation against
     "IsComplexScope": { "type": "boolean" },
     "Applicability": { "ref": "applicabilityObject" },
     "InclusionOperator": { "enum": ["AND", "OR"] },
-    "Inclusions": { "elements": { "ref": "eligibilityRule" } },
+    "Inclusions": { "elements": { "ref": "applicabilityRule" } },
     "ExclusionOperator": { "enum": ["AND", "OR"] },
-    "Exclusions": { "elements": { "ref": "eligibilityRule" } }
+    "Exclusions": { "elements": { "ref": "applicabilityRule" } }
   }
 }
 ```
@@ -250,11 +250,11 @@ A commitment with dynamic or conditional logic that requires calculation against
 
 ### Processing Workflow
 
-The evaluation of a resource against a commitment eligibility MUST follow a strict linear progression:
+The evaluation of an entity against commitment applicability MUST follow a strict linear progression:
 
-1. **Normalization:** Convert the resource attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
-2. **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
-3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, terminate evaluation.
+1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase).
+2. **Inclusion Evaluation:** Iterate through `Inclusions` to determine if the entity is eligible. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
+3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, the entity is ineligible; terminate evaluation.
 4. **Applicability Resolution:**
    * **Inheritance:** A matching rule's `Applicability` object takes precedence over the top-level object.
    * **Defaulting:** If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine MUST default that specific value to `1.0`.
@@ -265,21 +265,21 @@ The evaluation of a resource against a commitment eligibility MUST follow a stri
 
 The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval):
 
-* **Continuous Models:** The `Applicability` percentages (Cost/Usage) MUST be applied to each discrete unit of activity within the **Interval** (e.g., every hour). If the commitment is not fully utilized by the applicable resources within that specific hour, the remaining capacity expires.
-* **Discontinuous Models:** The `Applicability` percentages determine the portion of aggregate activity that counts toward the commitment fulfillment over the entire **Interval** (e.g., the full year).
+* **Continuous Models:** Applicability percentages MUST be applied to each discrete unit of activity (e.g., every hour). If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.
+* **Discontinuous Models:** Applicability percentages determine the portion of aggregate activity that counts toward fulfillment over the entire **Interval** (e.g., a full year).
 
 ### Dependency Logic
 
-1. **Consistency:** Engines SHOULD expect an object and SHOULD NOT support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
+1. **Consistency:** Engines SHOULD expect an object and SHOULD NOT support scalar values for this field.
 2. **Conflict Resolution:** If `IsGlobalScope` is `true`, rule-level applicability in the `Inclusions` array is ignored in favor of the top-level `Applicability` attribute.
 
 ## Column ID
 
-ContractCommitmentEligibility
+ContractCommitmentApplicability
 
 ## Display Name
 
-Contract Commitment Eligibility
+Contract Commitment Applicability
 
 ## Description
 
