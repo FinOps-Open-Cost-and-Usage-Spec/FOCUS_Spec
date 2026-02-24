@@ -5,7 +5,7 @@
 !INCLUDE "contractcommitmentcreated.md",1
 !INCLUDE "contractcommitmentdescription.md",1
 !INCLUDE "contractcommitmentdiscountpercentage.md",1
-!INCLUDE "contractcommitmentduration.md",1
+!INCLUDE "contractcommitmentdurationtype.md",1
 !INCLUDE "contractcommitmenteligibility.md",1
 !INCLUDE "contractcommitmentfulfillmentinterval.md",1
 !INCLUDE "contractcommitmentid.md",1

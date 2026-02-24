@@ -13,7 +13,7 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Created](#datasets.contractcommitment.contractcommitmentcreated) | Dimension | Mandatory | False | Date/Time |
 | [Contract Commitment Description](#datasets.contractcommitment.contractcommitmentdescription) | Dimension | Mandatory | True | String |
 | [Contract Commitment Discount Percentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage) | Dimension | Mandatory | True | Decimal |
-| [Contract Commitment Duration](#datasets.contractcommitment.contractcommitmentduration) | Dimension | Mandatory | False | String |
+| [Contract Commitment Duration Type](#datasets.contractcommitment.contractcommitmentdurationtype) | Dimension | Mandatory | False | String |
 | [Contract Commitment Eligibility](#datasets.contractcommitment.contractcommitmenteligibility) | Dimension | Mandatory | False | JSON |
 | [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) | Dimension | Mandatory | False | String |
 | [Contract Commitment ID](#datasets.contractcommitment.contractcommitmentid) | Dimension | Mandatory | False | String |
@@ -59,7 +59,7 @@ ContractCommitment adheres to the following requirements:
   * ContractCommitment MUST include [ContractCommitmentCreated](#datasets.contractcommitment.contractcommitmentcreated).
   * ContractCommitment MUST include [ContractCommitmentDescription](#datasets.contractcommitment.contractcommitmentdescription).
   * ContractCommitment MUST include [ContractCommitmentDiscountPercentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage).
-  * ContractCommitment MUST include [ContractCommitmentDuration](#datasets.contractcommitment.contractcommitmentduration).
+  * ContractCommitment MUST include [ContractCommitmentDurationType](#datasets.contractcommitment.contractcommitmentdurationtype).
   * ContractCommitment MUST include [ContractCommitmentEligibility](#datasets.contractcommitment.contractcommitmenteligibility).
   * ContractCommitment MUST include [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval).
   * ContractCommitment MUST include [ContractCommitmentId](#datasets.contractcommitment.contractcommitmentid).
