@@ -1,6 +1,6 @@
 # Payment Currency
 
-A Payment Currency represents the currency in which an invoice is paid, as determined by the invoice issuer. This currency may differ from the [Billing Currency](#datasets.costandusage.billingcurrency) if the customer and provider have agreed on a different settlement currency, making it essential for tracking actual cash outflow and foreign exchange impacts.
+A Payment Currency represents the currency in which the invoice issuer requires settlement.  This is the currency of the financial obligation created by the invoice, which may differ from the [Billing Currency](#datasets.costandusage.billingcurrency) and/or the source currency of the payer’s funds or bank account.  Payment Currency allows FinOps practitioners to track settlement obligations and foreign exchange impacts.
 
 ## Requirements
 
