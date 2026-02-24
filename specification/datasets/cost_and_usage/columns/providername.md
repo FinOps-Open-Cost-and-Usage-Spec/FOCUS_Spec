@@ -4,7 +4,7 @@ Provider is the name of the entity that makes the [*resources*](#glossary:resour
 
 ## Requirements
 
-The ProviderName column MUST adhere to the following requirements:
+ProviderName MUST adhere to the following requirements:
 
 * ProviderName MUST be of type String.
 * ProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.

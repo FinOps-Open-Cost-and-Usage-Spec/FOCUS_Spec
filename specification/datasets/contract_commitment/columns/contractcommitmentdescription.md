@@ -4,7 +4,7 @@ Contract Commitment Description provides a high-level context of a [*contract co
 
 ## Requirements
 
-The ContractCommitmentDescription column MUST adhere to the following requirements:
+ContractCommitmentDescription MUST adhere to the following requirements:
 
 * ContractCommitmentDescription MUST be of type String.
 * ContractCommitmentDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.

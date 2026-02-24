@@ -8,7 +8,7 @@ Effective Cost is denominated in the [Billing Currency](#datasets.costandusage.b
 
 ## Requirements
 
-The EffectiveCost column MUST adhere to the following requirements:
+EffectiveCost MUST adhere to the following requirements:
 
 * EffectiveCost MUST be of type Decimal.
 * EffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.

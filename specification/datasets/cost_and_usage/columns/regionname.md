@@ -4,11 +4,11 @@ Region Name is a host-provider-assigned display name for an isolated geographic 
 
 ## Requirements
 
-The RegionName column MUST adhere to the following requirements:
+RegionName MUST adhere to the following requirements:
 
 * RegionName MUST be of type String.
 * RegionName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* The RegionName column MUST adhere to the following nullability requirements:
+* RegionName MUST adhere to the following nullability requirements:
   * RegionName MUST be null when [RegionId](#datasets.costandusage.regionid) is null.
   * RegionName MUST NOT be null when RegionId is not null.
 

@@ -4,11 +4,11 @@ The Pricing Quantity represents the volume of a given [*SKU*](#glossary:sku) ass
 
 ## Requirements
 
-The PricingQuantity column MUST adhere to the following requirements:
+PricingQuantity MUST adhere to the following requirements:
 
 * PricingQuantity MUST be of type Decimal.
 * PricingQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* The PricingQuantity column MUST adhere to the following nullability requirements:
+* PricingQuantity MUST adhere to the following nullability requirements:
   * PricingQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * PricingQuantity MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * PricingQuantity MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".

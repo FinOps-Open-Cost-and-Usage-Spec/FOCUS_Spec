@@ -4,7 +4,7 @@ A Sub Account Name is a display name assigned to a [*sub account*](#glossary:sub
 
 ## Requirements
 
-The SubAccountName column MUST adhere to the following requirements:
+SubAccountName MUST adhere to the following requirements:
 
 * SubAccountName MUST be of type String.
 * SubAccountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.

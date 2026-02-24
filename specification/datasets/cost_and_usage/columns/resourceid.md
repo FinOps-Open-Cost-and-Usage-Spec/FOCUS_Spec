@@ -4,11 +4,11 @@ A Resource ID is an identifier assigned to a [*resource*](#glossary:resource) by
 
 ## Requirements
 
-The ResourceId column MUST adhere to the following requirements:
+ResourceId MUST adhere to the following requirements:
 
 * ResourceId MUST be of type String.
 * ResourceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* The ResourceId column MUST adhere to the following nullability requirements:
+* ResourceId MUST adhere to the following nullability requirements:
   * ResourceId MUST be null when a [*charge*](#glossary:charge) is not related to a *resource*.
   * ResourceId MUST NOT be null when a *charge* is related to a *resource*.
 * When ResourceId is not null, ResourceId MUST adhere to the following additional requirements:

@@ -4,14 +4,14 @@ The Pricing Currency Contracted Unit Price represents the agreed-upon unit price
 
 ## Requirements
 
-The PricingCurrencyContractedUnitPrice column MUST adhere to the following requirements:
+PricingCurrencyContractedUnitPrice MUST adhere to the following requirements:
 
 * PricingCurrencyContractedUnitPrice presence in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) is defined as follows:
   * PricingCurrencyContractedUnitPrice SHOULD be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
   * PricingCurrencyContractedUnitPrice MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.
 * PricingCurrencyContractedUnitPrice MUST be of type Decimal.
 * PricingCurrencyContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* The PricingCurrencyContractedUnitPrice column MUST adhere to the following nullability requirements:
+* PricingCurrencyContractedUnitPrice MUST adhere to the following nullability requirements:
   * PricingCurrencyContractedUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * PricingCurrencyContractedUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * PricingCurrencyContractedUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.

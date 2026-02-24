@@ -4,7 +4,7 @@ An [*availability zone*](#glossary:availability-zone) is a host-provider-assigne
 
 ## Requirements
 
-The AvailabilityZone column MUST adhere to the following requirements:
+AvailabilityZone MUST adhere to the following requirements:
 
 * AvailabilityZone MUST be of type String.
 * AvailabilityZone MUST conform to [StringHandling](#attributes.stringhandling) requirements.

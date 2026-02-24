@@ -6,11 +6,11 @@ When [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcateg
 
 ## Requirements
 
-The CommitmentDiscountQuantity column MUST adhere to the following requirements:
+CommitmentDiscountQuantity MUST adhere to the following requirements:
 
 * CommitmentDiscountQuantity MUST be of type Decimal.
 * CommitmentDiscountQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* The CommitmentDiscountQuantity column MUST adhere to the following nullability requirements:
+* CommitmentDiscountQuantity MUST adhere to the following nullability requirements:
   * CommitmentDiscountQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * When ChargeCategory is "Usage" or "Purchase" and CommitmentDiscountId is not null, CommitmentDiscountQuantity MUST adhere to the following additional requirements:
     * CommitmentDiscountQuantity MUST NOT be null when [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".

@@ -6,11 +6,11 @@ Service providers often have billing models in which multiple SKUs exist for a g
 
 ## Requirements
 
-The SkuMeter column MUST adhere to the following requirements:
+SkuMeter MUST adhere to the following requirements:
 
 * SkuMeter MUST be of type String.
 * SkuMeter MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* The SkuMeter column MUST adhere to the following nullability requirements:
+* SkuMeter MUST adhere to the following nullability requirements:
   * SkuMeter MUST be null when [SkuId](#datasets.costandusage.skuid) is null.
   * SkuMeter SHOULD NOT be null when SkuId is not null.
 * SkuMeter SHOULD remain consistent over time for a given SkuId.

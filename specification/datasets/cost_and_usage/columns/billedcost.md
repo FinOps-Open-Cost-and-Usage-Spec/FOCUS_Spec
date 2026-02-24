@@ -8,7 +8,7 @@ Billed Cost is denominated in the [Billing Currency](#datasets.costandusage.bill
 
 ## Requirements
 
-The BilledCost column MUST adhere to the following requirements:
+BilledCost MUST adhere to the following requirements:
 
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.

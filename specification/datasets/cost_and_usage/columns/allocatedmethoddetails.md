@@ -16,12 +16,12 @@ In addition to these, a data generator may include one or more custom properties
 
 ### Column Requirements
 
-The AllocatedMethodDetails column MUST adhere to the following requirements:
+AllocatedMethodDetails MUST adhere to the following requirements:
 
 * AllocatedMethodDetails MUST be of type String.
 * AllocatedMethodDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedMethodDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* The AllocatedMethodDetails column MUST adhere to the following nullability requirements:
+* AllocatedMethodDetails MUST adhere to the following nullability requirements:
   * AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
 
@@ -50,7 +50,7 @@ The following keys are used for allocation properties to facilitate querying dat
 
 Allocated Ratio communicates the percentage of the [*Origin Charge*](#glossary:origin-charge) that this [*Allocated Charge*](#glossary:allocated-charge) derived from the corresponding [Allocated Method Id](#datasets.costandusage.allocatedmethodid) and Usage Unit property.
 
-The "AllocatedRatio" property MUST adhere to the following requirements:
+"AllocatedRatio" property MUST adhere to the following requirements:
 
 * "AllocatedRatio" MUST be included inside each "Elements" object.
 * Values for "AllocatedRatio" MUST be a decimal value compatible with [NumericFormat](#attributes.numericformat) representing the allocated charge's percentage of the origin charge.
@@ -60,7 +60,7 @@ The "AllocatedRatio" property MUST adhere to the following requirements:
 
 Usage Unit communicates the aspect of the documented Allocation Method Id being used to calculate the Allocated Ratio property and what is being measured by Usage Quantity property.
 
-The "UsageUnit" property MUST adhere to the following requirements:
+"UsageUnit" property MUST adhere to the following requirements:
 
 * "UsageUnit" MUST be included inside an "Elements" object if "UsageQuantity" allocation property is included in that "Elements" object, otherwise "UsageUnit" MAY be included in each "Elements" object.
 * Values for "UsageUnit" MUST capture the unit or component of data generator's documented [AllocationMethod](#datasets.costandusage.allocatedmethodid) that was used to determine the "AllocatedRatio" value.
@@ -70,7 +70,7 @@ The "UsageUnit" property MUST adhere to the following requirements:
 
 Usage Quantity communicates the volume that was consumed or used, denominated in the Usage Unit property value.
 
-The "UsageQuantity" property MUST adhere to the following requirements:
+"UsageQuantity" property MUST adhere to the following requirements:
 
 * "UsageQuantity" MAY be included inside an "Elements" object when that "Elements" object contains a "UsageUnit" allocation property.
 * Values for "UsageQuantity" MUST be compatible with NumericFormat.

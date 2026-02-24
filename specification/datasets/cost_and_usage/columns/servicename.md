@@ -6,7 +6,7 @@ The Service Name is a display name for the offering that was purchased. The Serv
 
 ## Requirements
 
-The ServiceName column MUST adhere to the following requirements:
+ServiceName MUST adhere to the following requirements:
 
 * ServiceName MUST be of type String.
 * ServiceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.

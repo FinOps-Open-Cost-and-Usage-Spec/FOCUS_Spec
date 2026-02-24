@@ -4,12 +4,12 @@ The Pricing Unit represents a service-provider-specified measurement unit for de
 
 ## Requirements
 
-The PricingUnit column MUST adhere to the following requirements:
+PricingUnit MUST adhere to the following requirements:
 
 * PricingUnit MUST be of type String.
 * PricingUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
-* The PricingUnit column MUST adhere to the following nullability requirements:
+* PricingUnit MUST adhere to the following nullability requirements:
   * PricingUnit MUST be null when PricingQuantity is null.
   * PricingUnit MUST NOT be null when PricingQuantity is not null.
 * When PricingUnit is not null, PricingUnit MUST adhere to the following additional requirements:

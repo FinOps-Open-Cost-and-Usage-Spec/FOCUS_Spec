@@ -4,7 +4,7 @@ The Service Subcategory is a secondary classification of the [Service Category](
 
 ## Requirements
 
-The ServiceSubcategory column MUST adhere to the following requirements:
+ServiceSubcategory MUST adhere to the following requirements:
 
 * ServiceSubcategory MUST be of type String.
 * ServiceSubcategory MUST NOT be null.

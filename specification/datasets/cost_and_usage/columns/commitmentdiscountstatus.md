@@ -4,10 +4,10 @@ Commitment Discount Status indicates whether the [*charge*](#glossary:charge) co
 
 ## Requirements
 
-The CommitmentDiscountStatus column MUST adhere to the following requirements:
+CommitmentDiscountStatus MUST adhere to the following requirements:
 
 * CommitmentDiscountStatus MUST be of type String.
-* The CommitmentDiscountStatus column MUST adhere to the following nullability requirements:
+* CommitmentDiscountStatus MUST adhere to the following nullability requirements:
   * CommitmentDiscountStatus MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
   * CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and [Charge Category](#datasets.costandusage.chargecategory) is "Usage".
 * CommitmentDiscountStatus MUST be one of the allowed values.

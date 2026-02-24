@@ -8,7 +8,7 @@ SKU Price Details helps practitioners understand and distinguish *SKU Prices*, e
 
 ## Requirements
 
-The SkuPriceDetails column MUST adhere to the following requirements:
+SkuPriceDetails MUST adhere to the following requirements:
 
 * SkuPriceDetails MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * SkuPriceDetails property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
@@ -29,7 +29,7 @@ The SkuPriceDetails column MUST adhere to the following requirements:
   * Property key SHOULD remain consistent across comparable *SKUs* having that property, and the values for this key SHOULD remain in a consistent format.
   * Property key MUST begin with the string "x_" unless it is a FOCUS-defined property.
   * Property value MUST represent the value for a single [PricingUnit](#datasets.costandusage.pricingunit) when the property holds a numeric value.
-* The FOCUS-defined SKU Price properties MUST adhere to the following additional requirements:
+* FOCUS-defined SKU Price properties MUST adhere to the following additional requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
   * Property value MUST represent the value for a single PricingUnit, denominated in the unit of measure specified for that property when the property holds a numeric value.

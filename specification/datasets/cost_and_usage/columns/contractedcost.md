@@ -4,7 +4,7 @@ Contracted Cost represents the cost calculated by multiplying [*contracted unit 
 
 ## Requirements
 
-The ContractedCost column MUST adhere to the following requirements:
+ContractedCost MUST adhere to the following requirements:
 
 * ContractedCost MUST be of type Decimal.
 * ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.

@@ -4,7 +4,7 @@ Contract Commitment Period Start represents the [*inclusive start bound*](#gloss
 
 ## Requirements
 
-The ContractCommitmentPeriodStart column MUST adhere to the following requirements:
+ContractCommitmentPeriodStart MUST adhere to the following requirements:
 
 * ContractCommitmentPeriodStart MUST be of type Date/Time.
 * ContractCommitmentPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
