@@ -9,7 +9,7 @@ ContractCommitmentUnit MUST adhere to the following requirements:
 * ContractCommitmentUnit MUST be of type String.
 * ContractCommitmentUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
-* ContractCommitmentUnit column adhere to the following nullability requirements:
+* ContractCommitmentUnit MUST adhere to the following nullability requirements:
   * ContractCommitmentUnit MUST be null when ContractCommitmentQuantity is null.
   * ContractCommitmentUnit MUST NOT be null when ContractCommitmentQuantity is not null.
 
