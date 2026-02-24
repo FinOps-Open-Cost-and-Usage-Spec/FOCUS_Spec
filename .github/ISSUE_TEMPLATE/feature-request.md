@@ -142,9 +142,7 @@ Links to similar or related feature requests or scopes of work.
 
 ---
 
-<!-- ====================================================================================================== -->
-<!-- STOP: The sections below are for FOCUS Maintainers only. Requesters do not need to fill these out.   -->
-<!-- ====================================================================================================== -->
+> **STOP:** The sections below are for FOCUS Maintainers only. Requesters do not need to fill these out. **Scroll to the bottom and click "Create" to submit your request.**
 
 ---
 
