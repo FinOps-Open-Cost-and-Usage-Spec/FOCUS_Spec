@@ -2,7 +2,15 @@
 
 The following examples illustrate how corrections to previously closed billing periods may be represented in FOCUS Cost and Usage dataset artifacts, using delivery mechanisms and correction styles that preserve invoice integrity and auditability.
 
+## Common Characteristics for Closed Billing Period Corrections
+
 ## Closed-Period Correction Scenarios
+
+All scenarios in this section relate to a closed billing period for which the corresponding invoices have already been issued. In the example scenarios presented below, this corresponds specifically to the May 2025 billing period, which was closed on June 16th, 2025. All discrepancies described were identified in July 2025, at which time the subsequent June 2025 billing period was still open.
+
+The corresponding corrections are associated with that open billing period (refer to BillingPeriodStart and BillingPeriodEnd), with ChargeClass set to "Correction", indicating that they reconcile cost or usage from a previously closed billing period, while the charge period (ChargePeriodStart and ChargePeriodEnd) reflects when the cost or usage was originally incurred. This approach ensures a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
+
+The permissibility of delivery mechanisms depends on whether the correction affects invoice reconciliation for issued invoices or would require issuing additional invoices for the closed billing period. While the Overwrite delivery mechanism (i.e., Replacement correction style) could be applied if a correction does not impact invoice reconciliation or require additional invoices for the closed billing period, ACME Corp (acting as both the data generator and invoice issuer) generally chooses the Append delivery mechanism (i.e., Delta and Ledger correction styles) when delivering corrections to closed billing periods. This preference ensures consistency with auditability and traceability requirements, taking into account downstream processes, in particular chargeback, which relies on timely and accurate cost attribution.
 
 ### Scenario 1: Closed-Period Correction - Partial Reallocation to Correct Resource
 
@@ -10,7 +18,7 @@ On July 12th, 2025, ACME Corp identified that a charge record previously invoice
 
 To correct this misattribution, ACME Corp provisioned a reallocation correction using Append mechanisms. The correction was realized either through a Delta style correction, which redistributed the cost between resources using increment and decrement records, or through a Ledger style correction, which negated the original charge and introduced corrected records for each resource.
 
-Correction records were assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
+***Note:*** *Replacement (i.e., Overwrite delivery mechanism) could have been applied in this scenario because the reallocation would not affect invoice reconciliation and would not require additional invoices. However, ACME Corp chose Append to preserve traceability and auditability while ensuring that downstream processes, in particular chargeback, receive timely and accurate cost attribution.*
 
 CSV Examples:
 
@@ -21,7 +29,6 @@ CSV Examples:
 Note the following details in the example datasets:
 
 * The original dataset was delivered before the billing period was closed and includes a charge record that was part of the finalized invoice for May 2025.
-* The correction is modeled using Append mechanisms, as the May billing period is closed and invoice immutability must be preserved.
 * Correction records have ChargeClass set to "Correction", indicating they reallocate cost from a previously closed billing period.
 * Original Dataset includes:
   * A charge record attributed entirely to ResourceId `R-111`.
@@ -35,11 +42,9 @@ Note the following details in the example datasets:
 
 ### Scenario 2: Closed-Period Correction - Late-arriving Usage
 
-On July 12th, 2025, ACME Corp identified a cost that was incurred during May 2025 (ChargePeriodStart: `2025-05-01`) but was not included in the finalized invoice issued on June 12th, 2025. Since the May billing period was closed, the correction was delivered in the next open billing period (e.g., June or July).
+On July 12th, 2025, ACME Corp identified a cost that was incurred during May 2025 (ChargePeriodStart: `2025-05-01`) but was not included in the finalized invoice issued on June 16th, 2025. Since the May billing period was closed, the correction was delivered in the next open billing period (e.g., June or July).
 
 To account for the previously omitted usage, ACME Corp provisioned a correction using Append mechanisms. The correction was realized by introducing a single increment record in both Delta style correction and Ledger style correction formats, representing the late-arriving cost and usage.
-
-This record was assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
 
 CSV Examples:
 
@@ -49,9 +54,8 @@ CSV Examples:
 Note the following details in the example datasets:
 
 * The original dataset was delivered before the billing period was closed.
-* The late-arriving cost was incurred during May 2025 but was not captured in the original dataset and was therefore not reflected in the invoice for May 2025, issued on June 12th, 2025.
+* The late-arriving cost was incurred during May 2025 but was not captured in the original dataset and was therefore not reflected in the invoice for May 2025, issued on June 16th, 2025.
 * The correction introduces a new charge record to account for this previously omitted cost.
-* The correction is modeled using Append mechanism, as the original billing period is closed and invoice immutability must be preserved.
 * The correction record is assigned to the next open billing period (e.g., June 2025).
 * The correction record has ChargeClass set to "Correction", indicating it accounts for usage from a previously closed billing period.
 * Both Delta style and Ledger style corrections use a single increment record to represent the late-arriving usage and associated cost.
@@ -62,8 +66,6 @@ On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumu
 
 To reconcile this discrepancy, ACME Corp provisioned a cost-only correction using Append mechanism. In both Delta style correction and Ledger style correction formats, the correction was realized by introducing two itemized increment records, each representing a cost-only adjustment for one of the affected SkuPriceId values. Unlike bulk corrections, which consolidate adjustments into a single record without specifying a SkuPriceId, this approach explicitly itemizes the correction per SkuPriceId. Compared to the bulk correction approach, this method ensures transparency and traceability and is preferred when itemized correction is feasible.
 
-These correction records were assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
-
 CSV Examples:
 
 * [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
@@ -71,10 +73,9 @@ CSV Examples:
 
 Note the following details in the example datasets:
 
-* The original dataset was delivered before the billing period was closec.
+* The original dataset was delivered before the billing period was closed.
 * The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
-* The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 12th, 2025.
-* The correction is modeled using Append mechanism, as the original billing period is closed and invoice immutability must be preserved.
+* The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 16th, 2025.
 * Both Delta style and Ledger style corrections introduce two itemized increment records representing cost-only adjustments.
 * Each correction record is assigned to the next open billing period (e.g., July 2025).
 * Each correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously closed billing period.
@@ -87,8 +88,6 @@ On July 12th, 2025, ACME Corp detected a minor cost discrepancy caused by accumu
 
 To reconcile this discrepancy, ACME Corp provisioned a bulk cost-only correction using Append mechanism. The correction was realized by introducing a single increment record in both Delta style correction and Ledger style correction formats, representing the bulk cost-only adjustment. Unlike itemized corrections, this bulk record did not specify a SkuPriceId, as the discrepancy spanned multiple SKU Price IDs.
 
-This record was assigned to the next open billing period, with the charge period reflecting when the cost was originally incurred. This approach ensured a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
-
 CSV Examples:
 
 * [Original Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
@@ -99,8 +98,7 @@ Note the following details in the example datasets:
 
 * The original dataset was delivered before the billing period was closed.
 * The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
-* The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 12th, 2025.
-* The correction is modeled using Append mechanism, as the original billing period is closed and invoice immutability must be preserved.
+* The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 16th, 2025.
 * Both Delta style and Ledger style corrections introduce a bulk cost-only record to reconcile the total drift and ensure invoice accuracy.
 * The correction record is assigned to the next open billing period (e.g., July 2025).
 * The correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously closed billing period.
