@@ -19,8 +19,8 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 | [Invoice Detail Last Updated](#datasets.invoicedetail.invoicedetaillastupdated)   | Dimension   | Mandatory     | False        | Date/Time |
 | [Invoice ID](#datasets.invoicedetail.invoiceid)                                 | Dimension   | Mandatory     | False        | String    |
 | [Invoice Issue Date](#datasets.invoicedetail.invoiceissuedate)                   | Dimension   | Mandatory     | True        | Date/Time |
+| [Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus)             | Dimension   | Mandatory     | False        | String    |
 | [Invoice Issuer Name](#datasets.invoicedetail.invoiceissuername)                 | Dimension   | Mandatory     | False        | String    |
-| [Invoice Status](#datasets.invoicedetail.invoicestatus)                         | Dimension   | Mandatory     | False        | String    |
 | [Payment Currency](#datasets.invoicedetail.paymentcurrency)                     | Dimension   | Mandatory     | False        | String    |
 | [Payment Currency Billed Cost](#datasets.invoicedetail.paymentcurrencybilledcost) | Metric      | Conditional   | False        | Decimal   |
 | [Payment Currency Invoice Detail ID](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) | Dimension | Conditional | False | String |
@@ -61,8 +61,8 @@ InvoiceDetail adheres to the following requirements:
   * InvoiceDetail MUST include [InvoiceDetailLastUpdated](#datasets.invoicedetail.invoicedetaillastupdated).
   * InvoiceDetail MUST include [InvoiceId](#datasets.invoicedetail.invoiceid).
   * InvoiceDetail MUST include [InvoiceIssueDate](#datasets.invoicedetail.invoiceissuedate).
+  * InvoiceDetail MUST include [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus).
   * InvoiceDetail MUST include [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername).
-  * InvoiceDetail MUST include [InvoiceStatus](#datasets.invoicedetail.invoicestatus).
   * InvoiceDetail MUST include [PaymentCurrency](#datasets.invoicedetail.paymentcurrency) if the invoice issuer supports billing and payment in different currencies.
   * InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) if the invoice issuer supports billing and payment in different currencies.
   * InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) if the invoice issuer represents billing currency and payment currency at different aggregation levels on payable invoices.
