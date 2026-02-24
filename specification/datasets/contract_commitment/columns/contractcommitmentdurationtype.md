@@ -1,6 +1,6 @@
 # Contract Commitment Duration Type
 
-Contract Commitment Duration Type represents the categorical length of a [*contract commitment*](#glossary:contract-commitment) (e.g., "1 Year", "3 Years") based on the commercial agreement or pricing model. 
+Contract Commitment Duration Type represents the categorical length of a [*contract commitment*](#glossary:contract-commitment) (e.g., "1 Year", "3 Years") based on the commercial agreement or pricing model.
 
 This column serves as a stable classifier for the commitment's duration, distinct from the actual lifespan of the specific record. For example, a 3-year commitment that is exchanged or modified may have a calculated duration of only a few months, but its Contract Commitment Duration Type remains "3 Years". This allows for consistent grouping and reporting on commitment durations, regardless of lifecycle events.
 
