@@ -2,8 +2,6 @@
 
 The following examples illustrate how corrections to previously closed billing periods may be represented in FOCUS Cost and Usage dataset artifacts, using delivery mechanisms and correction styles that preserve invoice integrity and auditability.
 
-## Common Characteristics for Closed Billing Period Corrections
-
 ## Closed-Period Correction Scenarios
 
 All scenarios in this section relate to a closed billing period for which the corresponding invoices have already been issued. In the example scenarios presented below, this corresponds specifically to the May 2025 billing period, which was closed on June 16th, 2025. All discrepancies described were identified in July 2025, at which time the subsequent June 2025 billing period was still open.
