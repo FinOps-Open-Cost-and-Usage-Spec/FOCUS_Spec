@@ -2,7 +2,11 @@
 
 ## Description
 
-FOCUS supports the comparison of cost columns in order to identify savings, amortization, or other constructs.
+FOCUS supports comparing cost columns to identify savings from [*negotiated discounts*](#glossary:negotiated-discount), the impact of [*commitment discount*](#glossary:commitment-discount) amortization, and differences between [*cash-based*](#glossary:cash-based-accounting) and [*accrual-based*](#glossary:accrual-based-accounting) cost perspectives.
+
+[BilledCost](#datasets.costandusage.billedcost) represents the *cash-based* view: amounts invoiced by the [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) in a given [*billing period*](#glossary:billing-period). [EffectiveCost](#datasets.costandusage.effectivecost) represents the *accrual-based* view: costs recognized when [*resources*](#glossary:resource) are consumed, [*services*](#glossary:service) are used, or [*contract commitments*](#glossary:contract-commitment) are recognized. [ListCost](#datasets.costandusage.listcost) provides the pre-discount baseline. [ContractedCost](#datasets.costandusage.contractedcost) reflects pricing after *negotiated discounts*. Comparing them quantifies negotiated savings; comparing EffectiveCost against either quantifies further savings from *commitment discounts*. BilledCost and EffectiveCost diverge when billing timing differs from consumption, such as with *commitment discounts*, prepaid purchases, or marketplace transactions.
+
+When comparing costs across marketplace boundaries, practitioners should be aware that BilledCost and EffectiveCost sums may not align within a single dataset when purchase [*charges*](#glossary:charge) and the usage *charges* they cover originate from different data generators. This is expected and does not indicate a data quality issue. See the [Marketplace Purchases](#supportedfeatures.marketplacepurchases) supported feature, [Examples: Commitment Discount Flexibility](#appendix.examples:commitmentdiscountflexibility), and [Examples: SaaS](#appendix.examples:saas) for additional context.
 
 ## Directly Dependent Columns
 
@@ -18,11 +22,17 @@ FOCUS supports the comparison of cost columns in order to identify savings, amor
 * BillingCurrency
 * BillingPeriodEnd
 * BillingPeriodStart
+* ChargeCategory
 * ChargePeriodEnd
 * ChargePeriodStart
+* CommitmentDiscountId
+* InvoiceIssuerName
 * ServiceName
+* ServiceProviderName
 
-## Example SQL Query
+## Example SQL Queries
+
+### Discount Effectiveness by Service
 
 ```sql
 WITH AggregatedData AS (
@@ -68,6 +78,31 @@ SELECT ServiceProviderName,
 FROM AggregatedData
 ```
 
+### Cash vs. Accrual Comparison by Billing Period
+
+```sql
+SELECT
+  ServiceProviderName,
+  InvoiceIssuerName,
+  BillingPeriodStart,
+  BillingPeriodEnd,
+  SUM(BilledCost) AS TotalBilledCost,
+  SUM(EffectiveCost) AS TotalEffectiveCost,
+  SUM(EffectiveCost) - SUM(BilledCost) AS CostBasisDifference
+FROM focus_data_table
+WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
+GROUP BY
+  ServiceProviderName,
+  InvoiceIssuerName,
+  BillingPeriodStart,
+  BillingPeriodEnd
+HAVING ABS(SUM(EffectiveCost) - SUM(BilledCost)) > 0.01
+```
+
 ## Introduced (Version)
 
 0.5
+
+## Updated (Version)
+
+1.4
