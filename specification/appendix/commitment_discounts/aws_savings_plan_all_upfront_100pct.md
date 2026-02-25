@@ -4,11 +4,10 @@
 | ----------------- | ------------------- |
 | Scenario Type     | commitment          |
 | Payment Model     | All-Upfront         |
-| CommitmentDiscountCategory | Spend         |
+| CommitmentDiscountCategory | Spend      |
 | Utilization       | 100%                |
 | Hours Generated   | 24                  |
 | Annual Commitment | &dollar;628,000     |
-| Effective Unit Price | &dollar;71.69/hour  |
 | List Unit Price   | &dollar;107.54/hour |
 | Savings           | 33%                 |
 
@@ -28,7 +27,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 | ----------------- | ----- | ---------------------- | -------------------- |
 | Purchase          | 1     | &dollar;628,000.00     | &dollar;0.00         |
 | Usage (Used)      | 24    | &dollar;0.00           | &dollar;1,720.56     |
-| Usage (Standard) | 12    | &dollar;22.54          | &dollar;22.54        |
+| Usage (Standard)  | 12    | &dollar;22.54          | &dollar;22.54        |
 | **Total**         | 37    | **&dollar;628,022.54** | **&dollar;1,743.10** |
 
 ## Column Interactions
