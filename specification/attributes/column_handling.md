@@ -36,7 +36,7 @@ ColumnHandling MUST adhere to the following requirements:
   * FOCUS column MUST NOT use abbreviations in the Column ID.
   * FOCUS column MUST use only alphanumeric characters in the Column ID.
   * FOCUS column MUST NOT include special characters in the Column ID.
-  * FOCUS column SHOULD NOT use acronyms in the Column ID.
+  * FOCUS column SHOULD NOT use acronyms other than `Sku` in the Column ID.
   * FOCUS column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
   * FOCUS column representing an identifier MUST include the `Id` suffix in the Column ID.
   * FOCUS column representing a name MUST include the `Name` suffix in the Column ID.
