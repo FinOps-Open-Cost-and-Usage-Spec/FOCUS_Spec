@@ -1,0 +1,136 @@
+# Commitment Eligibility
+
+## Description
+
+FOCUS supports the identification of charges that are eligible for commitment-based discount programs. The [*CommitmentEligibilityDetails*](#datasets.costandusage.commitmenteligibilitydetails) column captures which commitment programs a charge qualifies for, regardless of whether a [*commitment discount*](#glossary:commitment-discount) is currently applied. This enables practitioners to calculate accurate commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
+
+CommitmentEligibilityDetails contains a JSON object with a `CommitmentDiscountTypes` array, where each entry identifies a specific commitment program via a `Type` property. For more information, see the definition of CommitmentEligibilityDetails [here](#datasets.costandusage.commitmenteligibilitydetails).
+
+### Naming Conventions for Commitment Discount Types
+
+The `Type` property uses PascalCase strings identifying commitment programs supported by the provider. Per the [column requirements](#datasets.costandusage.commitmenteligibilitydetails), these values:
+
+* Are consistent with [*CommitmentDiscountType*](#datasets.costandusage.commitmentdiscounttype) strings when that column is populated.
+* Correspond to the provider's documented terminology when CommitmentDiscountType is not populated (common for SaaS providers that do not itemize commitment discount application at the line-item level).
+* Do not encode term length, payment option, or other commitment attributes. For example, use "SavingsPlan" rather than "1YearSavingsPlanNoUpfront".
+
+Examples of Type values by provider:
+
+| Provider    | Example Type Values                                                       | Context                                                    |
+|:------------|:--------------------------------------------------------------------------|:-----------------------------------------------------------|
+| AWS         | SavingsPlan, ReservedInstance                                             | Consistent with CommitmentDiscountType                     |
+| Azure       | SavingsPlan, ReservedInstance                                             | Consistent with CommitmentDiscountType                     |
+| GCP         | ResourceBasedCommittedUseDiscount, ComputeFlexibleCommittedUseDiscount    | Granular per commitment program                            |
+| Datadog     | MonthlyCommitment, AnnualCommitment                                       | Provider terminology; CommitmentDiscountType not populated  |
+| Databricks  | CommittedUseDiscount                                                      | Provider terminology                                       |
+
+## Directly Dependent Columns
+
+* CommitmentEligibilityDetails
+
+## Supporting Columns
+
+* BilledCost
+* ChargePeriodEnd
+* ChargePeriodStart
+* CommitmentDiscountId
+* CommitmentDiscountStatus
+* CommitmentDiscountType
+* EffectiveCost
+* ServiceCategory
+* ServiceName
+* ServiceProviderName
+
+## Example SQL Queries
+
+The FOCUS specification implements commitment eligibility via the [*CommitmentEligibilityDetails*](#datasets.costandusage.commitmenteligibilitydetails) column, which is defined in [*JSON object format*](#attributes.jsonobjectformat).
+
+Because ANSI SQL does not inherently support the parsing of JSON, the following queries leverage the JSON functions found in BigQuery Standard SQL in order to demonstrate this feature's functionality. Similar JSON functions are available in all major SQL engines; thus, the below examples can be slightly modified to accommodate any particular database instance.
+
+### Identify Eligible Uncovered Spend by Commitment Type (CSP Example)
+
+This query identifies on-demand charges that are eligible for commitment programs but are not currently covered by a commitment discount. A practitioner running AWS workloads can use this to quantify the savings opportunity per commitment program type (e.g., SavingsPlan vs. ReservedInstance) and per service.
+
+The query filters to Usage charges where CommitmentEligibilityDetails is populated (the charge is eligible) and CommitmentDiscountId is null (no commitment is applied). It then expands the CommitmentDiscountTypes array to aggregate eligible spend per Type.
+
+Note: When a charge is eligible for multiple commitment types, it appears once per eligible type. Costs are not deduplicated across types, since each type represents an independent purchasing opportunity.
+
+```sql
+SELECT
+  CU.ServiceProviderName,
+  CU.ServiceName,
+  JSON_VALUE(CDT, '$.Type') AS CommitmentDiscountType,
+  SUM(CU.BilledCost) AS TotalEligibleUncoveredCost
+FROM focus_data_table CU
+CROSS JOIN
+  UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentEligibilityDetails, '$.CommitmentDiscountTypes')) AS CDT
+WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
+  AND CU.ChargeCategory = 'Usage'
+  AND CU.CommitmentDiscountId IS NULL
+GROUP BY
+  CU.ServiceProviderName,
+  CU.ServiceName,
+  JSON_VALUE(CDT, '$.Type')
+ORDER BY TotalEligibleUncoveredCost DESC
+```
+
+### Calculate Commitment Coverage Rate with Accurate Denominator
+
+This query computes a commitment coverage rate using only eligible charges as the denominator. Without eligibility data, practitioners typically divide covered spend by total spend, which understates the coverage rate because ineligible charges (e.g., storage services, support fees) inflate the denominator.
+
+By filtering on `CommitmentEligibilityDetails IS NOT NULL`, the denominator includes only charges that could realistically be covered by a commitment, producing an actionable coverage metric.
+
+```sql
+SELECT
+  CU.ServiceProviderName,
+  SUM(CASE
+    WHEN CU.CommitmentDiscountId IS NOT NULL
+    THEN CU.EffectiveCost ELSE 0 END) AS CoveredCost,
+  SUM(CU.EffectiveCost) AS TotalEligibleCost,
+  SAFE_DIVIDE(
+    SUM(CASE
+      WHEN CU.CommitmentDiscountId IS NOT NULL
+      THEN CU.EffectiveCost ELSE 0 END),
+    SUM(CU.EffectiveCost)
+  ) AS CommitmentCoverageRate
+FROM focus_data_table CU
+WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
+  AND CU.ChargeCategory = 'Usage'
+  AND CU.CommitmentEligibilityDetails IS NOT NULL
+GROUP BY CU.ServiceProviderName
+```
+
+### Compare Commitment Opportunities Across Providers (SaaS Example)
+
+This query aggregates eligible spend and uncovered eligible spend across all providers, including SaaS platforms. A practitioner managing both CSP and SaaS workloads (e.g., AWS alongside Databricks or Datadog) can identify where commitment investment would yield the greatest return.
+
+Note: Some SaaS providers may not populate CommitmentDiscountId even when a commitment is applied. For those providers, this query captures total eligible spend rather than distinguishing covered from uncovered. Practitioners should consult provider-specific documentation to determine actual commitment utilization.
+
+```sql
+SELECT
+  CU.ServiceProviderName,
+  JSON_VALUE(CDT, '$.Type') AS CommitmentDiscountType,
+  SUM(CU.BilledCost) AS TotalEligibleCost,
+  SUM(CASE
+    WHEN CU.CommitmentDiscountId IS NULL
+    THEN CU.BilledCost ELSE 0 END) AS UncoveredEligibleCost,
+  SAFE_DIVIDE(
+    SUM(CASE
+      WHEN CU.CommitmentDiscountId IS NULL
+      THEN CU.BilledCost ELSE 0 END),
+    SUM(CU.BilledCost)
+  ) AS UncoveredRate
+FROM focus_data_table CU
+CROSS JOIN
+  UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentEligibilityDetails, '$.CommitmentDiscountTypes')) AS CDT
+WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
+  AND CU.ChargeCategory = 'Usage'
+GROUP BY
+  CU.ServiceProviderName,
+  JSON_VALUE(CDT, '$.Type')
+ORDER BY UncoveredEligibleCost DESC
+```
+
+## Introduced (Version)
+
+1.4
