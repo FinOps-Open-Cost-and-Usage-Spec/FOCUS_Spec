@@ -49,7 +49,7 @@ ColumnHandling MUST adhere to the following requirements:
   * Custom column SHOULD NOT use abbreviations in the Column ID.
   * Custom column SHOULD use only alphanumeric characters in the Column ID.
   * Custom column SHOULD NOT include special characters in the Column ID.
-  * Custom column SHOULD NOT use acronyms in the Column ID.
+  * Custom column SHOULD NOT use acronyms other than `Sku` in the Column ID.
   * Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
   * Custom column representing an identifier SHOULD include the `Id` suffix in the Column ID.
   * Custom column representing a name SHOULD include the `Name` suffix in the Column ID.
