@@ -6,12 +6,11 @@ Pricing Category describes the pricing model used for a [*charge*](#glossary:cha
 
 PricingCategory adheres to the following requirements:
 
-* PricingCategory MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports more than one pricing category across all [*SKUs*](#glossary:sku).
 * PricingCategory MUST be of type String.
 * PricingCategory nullability is defined as follows:
-  * PricingCategory MUST be null when [SkuPriceId](#skupriceid) is null.
-  * PricingCategory MUST be null when [ChargeCategory](#chargecategory) is "Tax".
-  * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+  * PricingCategory MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
+  * PricingCategory MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+  * PricingCategory MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * PricingCategory MAY be null in all other cases.
 * When PricingCategory is not null, PricingCategory adheres to the following additional requirements:
   * PricingCategory MUST be one of the allowed values.
@@ -34,13 +33,14 @@ Describes the pricing model used for a *charge* at the time of use or purchase.
 
 ## Content constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Conditional    |
-| Allows nulls    | True           |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | Allowed values                                       |
 
 Allowed values:
 

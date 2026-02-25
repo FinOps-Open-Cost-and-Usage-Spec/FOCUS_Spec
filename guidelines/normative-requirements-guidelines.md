@@ -8,7 +8,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 
   1. **Technical Requirements**
      1. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
-     2. **Column Presence in Dataset (*FOR FUTURE USE*):** Intended to define which columns must or are recommended to be present within a dataset, and under which conditions. Currently managed under column-level requirements, but may be elevated to the dataset level in future iterations.
+     2. **Column Presence in Dataset:** Intended to define which columns must or are recommended to be present within a dataset, and under which conditions.
      3. **Technical Attributes Conformance:** Captures technical requirements that apply to all (or most) columns within the dataset (e.g., column handling, null handling). These requirements reflect general technical rules rather than rules for individual columns.
   2. **Business & Contextual Requirements**
      1. **Business/Contextual Attributes Conformance:** Captures business logic and contextual requirements that span multiple columns within the dataset (e.g., discount handling, invoice handling). These rules are not tied to a single column but define broader dataset behavior.
@@ -19,7 +19,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 | Requirement Type | Requirement Group                                      | When Required?                               | Example                                                    |
 |------------------|--------------------------------------------------------|----------------------------------------------|------------------------------------------------------------|
 | Technical        | Dataset Presence                                       | Always                                       | {DatasetId} MUST be present when {Condition}.              |
-| Technical        | Column Presence in Dataset (FOR FUTURE USE)            | For future use; currently managed per column | N/A                                                        |
+| Technical        | Column Presence in Dataset            | {DatasetId} MUST include {ColumnId} | N/A                                                        |
 | Technical        | Technical Attributes Conformance                       | Always or when applicable                    | {DatasetId} MUST conform to ColumnHandling requirements.   |
 | Business         | Business/Contextual Attributes Conformance             | When applicable                              | {DatasetId} MUST conform to DiscountHandling requirements. |
 | Business         | Other Business/Contextual Requirements (FOR FUTURE USE)| For future use                               | N/A                                                        |
@@ -30,9 +30,10 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
   * **MUST** – an absolute requirement
   * **MUST NOT** – a prohibition
   * **SHOULD** – recommended but not mandatory
-  * **RECOMMENDED** - recommended but not mandatory (currently used only for presence-related normative requirements, as specified in the [FOCUS Feature Level](#focusfeaturelevel) section)
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
+
+  > ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -58,6 +59,15 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 
 ```markdown
 * <DatasetId> MUST be present[ when <Condition>].
+```
+
+##### Technical Requirements: Column Presence
+
+```markdown
+* <DatasetId> MUST include <ColumnId>.
+* <DatasetId> MUST include <ColumnId> when <Condition>.
+* <DatasetId> SHOULD include <ColumnId>.
+* <DatasetId> SHOULD include <ColumnId> when <Condition>.
 ```
 
 ##### Technical Requirements: Technical Attributes Conformance
@@ -93,7 +103,7 @@ CostAndUsage adheres to the following requirements:
 * CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling) requirements.
 
-## Column Requrements
+## Column Requirements
 
 ### Logical Grouping of Column Requirements
 
@@ -102,12 +112,11 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 **Note**: This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
   1. **Technical Requirements**
-     1. **Presence**: Defines whether this column must exist in the dataset.
-     2. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
-     3. **Value Format**: Ensures the value (if present) adheres to specific structural or syntactic rules.
-     4. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
-     5. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
-     6. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
+     1. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
+     2. **Value Format**: Ensures the value (if present) adheres to specific structural or syntactic rules.
+     3. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
+     4. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
+     5. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
   2. **Business & Contextual Requirements**
      1. **Unit/Denomination**: Ensures consistency in measurement or currency.
      2. **Uniqueness**: Defines uniqueness constraints for data integrity.
@@ -123,7 +132,6 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 | **Requirement Type** | **Requirement Group**              | **When required?**                    | **Example**                                                                                |
 |----------------------|------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------|
-| Technical            | Presence                           | Always                                | {ColumnId} MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when {Condition}. |
 | Technical            | Data Type                          | Always                                | {ColumnId} MUST be of type String.                                                         |
 | Technical            | Value Format                       | Always (except normalized dimensions) | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                 |
 | Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when {Condition}.                     |
@@ -134,7 +142,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 | Business             | Fallback/Substitute Values         | When applicable                       | {ColumnId} MUST NOT duplicate {OtherColumnId} when {Condition}.                              |
 | Business             | Relationships Outside the Spec     | When applicable                       | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
 | Business             | Formula-based Cost Validation      | When applicable                       | {CostColumnId} MUST equal the product of {UnitPriceColumnId} and PricingQuantity when {UnitPriceColumnId} is not null and PricingQuantity is not null. |
-| Business             | Cost Calculation and Relationships | When applicable                       | When {Condition}, {ColumnId} adheres to the following additional requirements:<br>  * {ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>  * {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
+| Business             | Cost Calculation and Relationships | When applicable                       | When {Condition}, {ColumnId} adheres to the following additional requirements:<br>  *{ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>* {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
 | Business             | Other                              | When applicable                       |                                                                                           |
 
 ### Ordering of Column Requirements Within Groups
@@ -143,9 +151,10 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   * **MUST** – an absolute requirement
   * **MUST NOT** – a prohibition
   * **SHOULD** – recommended but not mandatory
-  * **RECOMMENDED** - recommended but not mandatory (currently used only for presence-related normative requirements, as specified in the [FOCUS Feature Level](#focusfeaturelevel) section)
   * **SHOULD NOT** – discouraged but not strictly prohibited
   * **MAY** – optional
+
+  > ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -324,14 +333,6 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 #### Column Requirement Patterns
 
-##### Technical Requirements: Presence
-
-```markdown
-* <ColumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-* <CoumnId> MUST be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
-* <ColumnId> is RECOMMENDED to be present in a [*FOCUS dataset*](#glossary:FOCUS-dataset) when <Condition>.
-```
-
 ##### Technical Requirements: Data Type
 
 ```markdown
@@ -487,7 +488,6 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ListUnitPrice adheres to the following requirements:
 
-* ListUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider publishes unit prices exclusive of discounts.
 * ListUnitPrice MUST be of type Decimal.
 * ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
 * ListUnitPrice nullability is defined as follows:
@@ -504,7 +504,6 @@ ListUnitPrice adheres to the following requirements:
 
 BilledCost adheres to the following requirements:
 
-* BilledCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#numericformat) requirements.
 * BilledCost MUST NOT be null.
@@ -516,7 +515,6 @@ BilledCost adheres to the following requirements:
 
 CommitmentDiscountQuantity adheres to the following requirements:
 
-* CommitmentDiscountQuantity MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountQuantity MUST be of type Decimal.
 * CommitmentDiscountQuantity MUST conform to [NumericFormat](#numericformat) requirements.
 * CommitmentDiscountQuantity nullability is defined as follows:

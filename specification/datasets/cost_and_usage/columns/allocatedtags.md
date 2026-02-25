@@ -6,14 +6,13 @@ The Allocated Tags column represents the set of [*tags*](#glossary:tag) assigned
 
 AllocatedTags adheres to the following requirements:
 
-* AllocatedTags MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
-* AllocatedTags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* AllocatedTags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * AllocatedTags nullability is defined as follows:
   * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
   * AllocatedTags MAY be null in all other cases.
 * When AllocatedTags is not null, AllocatedTags adheres to the following additional requirements:
-  * AllocatedTags MUST NOT include resource tags already present in [Tags](#tags).
-  * AllocatedTags MUST include all applicable user-defined and data generator-defined tags for the [AllocatedResourceId](#AllocatedResourceId).
+  * AllocatedTags MUST NOT include resource tags already present in [Tags](#datasets.costandusage.tags).
+  * AllocatedTags MUST include all applicable user-defined and data generator-defined tags for the [AllocatedResourceId](#datasets.costandusage.allocatedresourceid).
   * Tag keys that do not support corresponding values MUST have a corresponding true (boolean) value set.
   * Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
 * Data generator-defined tags adhere to the following additional requirements:
@@ -51,13 +50,14 @@ A set of tags assigned to tag sources that are applicable to *allocated charges*
 
 ## Content Constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | JSON             |
-| Value format    | [Key-Value Format](#key-valueformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | JSON                                                 |
+| Value format    | [Key-Value Format](#attributes.key-valueformat)      |
 
 ## Introduced (version)
 

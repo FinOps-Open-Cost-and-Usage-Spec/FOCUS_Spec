@@ -1,0 +1,337 @@
+{
+  "ColumnHandling-A-000-M": {
+    "Function": "Composite",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "All columns defined by FOCUS MUST follow the following rules:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-004-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-005-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-007-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-009-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-012-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-013-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-014-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ColumnHandling-A-001-M",
+        "ColumnHandling-A-002-M",
+        "ColumnHandling-A-003-M",
+        "ColumnHandling-A-004-O",
+        "ColumnHandling-A-005-O",
+        "ColumnHandling-A-006-M",
+        "ColumnHandling-A-007-O",
+        "ColumnHandling-A-008-M",
+        "ColumnHandling-A-009-M",
+        "ColumnHandling-A-012-O",
+        "ColumnHandling-A-013-O",
+        "ColumnHandling-A-014-O"
+      ]
+    }
+  },
+  "ColumnHandling-A-001-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Column IDs MUST use Pascal case.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-002-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Column IDs MUST NOT use abbreviations.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-003-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Column IDs MUST be alphanumeric with no special characters.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-004-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Column IDs SHOULD NOT use acronyms.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-005-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Column IDs SHOULD NOT exceed 50 characters to accommodate column length restrictions of various data repositories.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-006-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Columns that have an ID and a Name MUST have the Id or Name suffix in the Column ID.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-007-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Column display names MAY avoid the Name suffix if there are no other columns with the same name prefix.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-008-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Columns with the Category suffix MUST be normalized.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-009-M": {
+    "Function": "Composite",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom (e.g., provider-defined) columns that are not defined by FOCUS but included in a FOCUS dataset MUST follow the following rules:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "ColumnHandling-A-011-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "ColumnHandling-A-010-M",
+        "ColumnHandling-A-011-O"
+      ]
+    }
+  },
+  "ColumnHandling-A-010-M": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom columns MUST be prefixed with a consistent x_ prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-011-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom columns SHOULD follow the same rules listed above for FOCUS columns.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-012-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "All FOCUS columns SHOULD be first in the provided dataset.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-013-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "ColumnHandling-A-014-O": {
+    "Function": "Validation",
+    "Reference": "ColumnHandling",
+    "EntityType": "Attribute",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

@@ -8,8 +8,7 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 
 Tags adheres to the following requirements:
 
-* Tags MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports setting user or provider-defined tags.
-* Tags MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* Tags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * Tags MAY be null.
 * When Tags is not null, Tags adheres to the following additional requirements:
   * Tags MUST include all user-defined and provider-defined tags.
@@ -45,7 +44,7 @@ The last two tags illustrate examples from two different, provider-defined tag s
 
 ## Finalized Tags
 
-Within a data generator, tag keys may be associated with multiple values, and potentially defined at different levels within the data generator, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, *data generator* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each data generatorder but must be documented within their respective documentation.
+Within a data generator, tag keys may be associated with multiple values, and potentially defined at different levels within the data generator, such as accounts, folders, [*resource*](#glossary:resource) and other *resource* grouping constructs. When finalizing, *data generator* must reduce these multiple levels of definition to a single value where each key is associated with exactly one value. The method by which this is done and the semantics are up to each data generator but must be documented within their respective documentation.
 
 As an example, let's assume 1 [*sub account*](#glossary:sub-account) exists with 1 virtual machine with the following details, and tag inheritance favors Resources over *Sub Accounts*.
 
@@ -79,13 +78,14 @@ The set of tags assigned to *tag sources* that account for potential provider-de
 
 ## Content Constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | JSON             |
-| Value format    | [Key-Value Format](#key-valueformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | JSON                                                 |
+| Value format    | [Key-Value Format](#attributes.key-valueformat)      |
 
 ## Introduced (version)
 

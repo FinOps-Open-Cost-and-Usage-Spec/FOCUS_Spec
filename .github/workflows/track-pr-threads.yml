@@ -1,0 +1,149 @@
+name: Sync PR Open Thread Counts
+
+on:
+  # 1. Safety Net: Runs every 4 hours to catch silent "Resolve" clicks
+  schedule:
+    - cron: '0 */4 * * *'
+
+  # 2. The Main Trigger: catches single replies AND batch reviews
+  pull_request_review_comment:
+    types: 
+      - created
+      - deleted
+
+  # 3. Initialization: Sets the count when a PR is first created
+  pull_request:
+    types: 
+      - opened
+      - reopened
+
+  # 4. Manual Override
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number (leave blank for all open PRs)'
+        required: false
+
+jobs:
+  sync:
+    name: Sync PR Open Thread Counts
+    runs-on: ubuntu-latest
+    
+    # Run only if it's a Schedule/Dispatch OR a relevant PR event
+    if: >
+      github.event_name == 'schedule' ||
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'pull_request_review_comment' ||
+      (github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened'))
+
+    # THE QUEUE STRATEGY
+    concurrency:
+      # Group by PR so we don't block updates for other PRs
+      group: sync-threads-${{ github.event.pull_request.id || 'bulk' }}
+      # FALSE = Runs line up single-file. No cancellations. All Green Checks.
+      cancel-in-progress: false
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Safety Sleep: Ensures the API is consistent even for the very first job in the queue
+      - name: Wait for API Consistency
+        if: github.event_name == 'pull_request_review_comment'
+        run: sleep 5
+
+      - name: Calculate and Sync
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_PAT }}
+          ORG: "FinOps-Open-Cost-and-Usage-Spec"
+          PROJECT_NUM: 5
+          FIELD_NAME: "PR Open Threads"
+          SINGLE_PR: ${{ github.event.pull_request.number || github.event.inputs.pr_number }}
+        run: |
+          set -e
+
+          # 1. Fetch Project and Field IDs
+          PROJ_DATA=$(gh api graphql -f query='
+            query($org: String!, $p_num: Int!) {
+              organization(login: $org) {
+                projectV2(number: $p_num) {
+                  id
+                  fields(first: 50) { nodes { ... on ProjectV2Field { id name } } }
+                }
+              }
+            }' -f org="$ORG" -F p_num=$PROJECT_NUM)
+
+          PROJECT_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.id')
+          FIELD_ID=$(echo "$PROJ_DATA" | jq -r --arg NAME "$FIELD_NAME" '.data.organization.projectV2.fields.nodes[] | select(.name==$NAME) | .id')
+
+          if [ -z "$FIELD_ID" ] || [ "$FIELD_ID" == "null" ]; then
+            echo "Error: Field '$FIELD_NAME' not found in Project #$PROJECT_NUM"
+            exit 1
+          fi
+
+          # 2. Identify PRs
+          if [ -n "$SINGLE_PR" ]; then
+            echo "Processing single PR: #$SINGLE_PR"
+            PR_LIST=("$SINGLE_PR")
+          else
+            echo "Running bulk sync for all open PRs..."
+            PR_LIST=($(gh pr list --state open --json number --jq '.[].number'))
+          fi
+
+          # 3. Loop and Update
+          for NUM in "${PR_LIST[@]}"; do
+            echo "--- Processing PR #$NUM ---"
+            
+            # Fetch ALL threads using GraphQL + Auto-Pagination
+            # We must include $endCursor in the query so the CLI knows how to paginate.
+            PR_DATA_FULL=$(gh api graphql --paginate -f query='
+              query($org: String!, $repo: String!, $num: Int!, $endCursor: String) {
+                repository(owner: $org, name: $repo) {
+                  pullRequest(number: $num) {
+                    id
+                    reviewThreads(first: 100, after: $endCursor) {
+                      pageInfo { hasNextPage endCursor }
+                      nodes { isResolved }
+                    }
+                  }
+                }
+              }' -f org="$ORG" -f repo="${{ github.event.repository.name }}" -F num=$NUM)
+
+            # Extract Node ID (safe to take from the first page of results)
+            # We use `jq -s` to handle the stream of JSON pages
+            PR_NODE_ID=$(echo "$PR_DATA_FULL" | jq -s -r '.[0].data.repository.pullRequest.id')
+            
+            # Count ALL unresolved threads across ALL pages
+            COUNT=$(echo "$PR_DATA_FULL" | jq -s '[.[].data.repository.pullRequest.reviewThreads.nodes[] | select(.isResolved == false)] | length')
+
+            if [ -z "$PR_NODE_ID" ] || [ "$PR_NODE_ID" == "null" ]; then 
+              echo "PR #$NUM not found. Skipping."
+              continue
+            fi
+
+            echo "Debug: PR #$NUM Summary - Open Threads found: $COUNT"
+
+            # 4. Resolve Item ID
+            ITEM_ID=$(gh api graphql -f query='
+              mutation($project: ID!, $content: ID!) {
+                addProjectV2ItemById(input: {projectId: $project, contentId: $content}) { 
+                  item { id } 
+                }
+              }' -f project="$PROJECT_ID" -f content="$PR_NODE_ID" --jq '.data.addProjectV2ItemById.item.id')
+
+            if [ -n "$ITEM_ID" ] && [ "$ITEM_ID" != "null" ]; then
+              # 5. Update the Field
+              gh api graphql -f query='
+                mutation($project: ID!, $item: ID!, $field: ID!, $value: Float!) {
+                  updateProjectV2ItemFieldValue(input: {
+                    projectId: $project, itemId: $item, fieldId: $field, value: { number: $value }
+                  }) { clientMutationId }
+                }' -f project="$PROJECT_ID" -f item="$ITEM_ID" -f field="$FIELD_ID" -F value=$COUNT
+              echo "Updated PR #$NUM: $COUNT threads."
+            else
+              echo "Error: Could not resolve Item ID for PR #$NUM."
+            fi
+            
+            # Small throttle for the loop, just in case
+            sleep 1
+          done
