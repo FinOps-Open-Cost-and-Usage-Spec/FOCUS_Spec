@@ -1,50 +1,50 @@
-# Contract Commitment Eligibility
+# Contract Commitment Applicability
 
-Contract Commitment Eligibility is a structured definition of the specific entities to which a [*contract commitment*](#glossary:contract-commitment) applies, with both inclusionary and exclusionary logic, as well as the portion of cost or usage that is applicable.
+Contract Commitment Applicability is a structured definition of the specific entities eligible for coverage under a [*contract commitment*](#glossary:contract-commitment). This column details inclusionary and exclusionary logic, as well as the specific portion of cost or usage that is applicable.
 
 ## Requirements
 
 ### Column Requirements
 
-The ContractCommitmentEligibility column adheres to the following requirements:
+The ContractCommitmentApplicability column adheres to the following requirements:
 
-* ContractCommitmentEligibility MUST be of type String.
-* ContractCommitmentEligibility MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractCommitmentEligibility MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* ContractCommitmentEligibility MUST NOT be null.
-* ContractCommitmentEligibility MUST conform to [ContractCommitmentEligibilityObject](#datasets.contractcommitment.contractcommitmenteligibility.contractcommitmenteligibilityobject) requirements.
+* ContractCommitmentApplicability MUST be of type String.
+* ContractCommitmentApplicability MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* ContractCommitmentApplicability MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
+* ContractCommitmentApplicability MUST conform to [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) requirements.
+* ContractCommitmentApplicability MUST NOT be null.
 
-## Contract Commitment Eligibility Object
+## Contract Commitment Applicability Object
 
-Contract Commitment Eligibility consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
+Contract Commitment Applicability consists of a valid JSON object which contains a set of top-level property keys. These keys define entity-based inclusionary and exclusionary logic, as well as the portion of relevant cost and/or usage that is applicable to the *contract commitment*.
 
-The following section details the normative requirements for the ContractCommitmentEligibilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.contractcommitment.contractcommitmenteligibility.schemastructure) and [Examples](#datasets.contractcommitment.contractcommitmenteligibility.examples) sections.
+The following section details the normative requirements for the ContractCommitmentApplicabilityObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.contractcommitment.contractcommitmentapplicability.schemastructure) and [Examples](#datasets.contractcommitment.contractcommitmentapplicability.examples) sections.
 
 ### Object Requirements
 
-The ContractCommitmentEligibilityObject adheres to the following requirements:
+The ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 
-* ContractCommitmentEligibilityObject MUST conform to the [ContractCommitmentEligibilityObjectSchema](#schemas.datasets.contractcommitment.contractcommitmenteligibilityobjectschema) JSON Schema.
-* ContractCommitmentEligibilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all resources.
-* ContractCommitmentEligibilityObject.IsComplexScope MUST be `true` if the *contract commitment's* eligibility logic exceeds schema capabilities.
-* ContractCommitmentEligibilityObject.Applicability.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
-* ContractCommitmentEligibilityObject.Applicability.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
-* ContractCommitmentEligibilityObject.Inclusions[*].Applicability.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
-* ContractCommitmentEligibilityObject.Inclusions[*].Applicability.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
-* ContractCommitmentEligibilityObject.Inclusions[\*].Dimension SHOULD represent a column in the FOCUS [Cost and Usage dataset](#datasets.costandusage).
-* ContractCommitmentEligibilityObject.Exclusions[\*].Dimension SHOULD represent a column in the FOCUS [Cost and Usage dataset](#datasets.costandusage).
-* ContractCommitmentEligibilityObject.Inclusions[*].Values MUST contain only the single string "*" if the wildcard is present.
-* ContractCommitmentEligibilityObject.Exclusions[*].Values MUST contain only the single string "*" if the wildcard is present.
+* ContractCommitmentApplicabilityObject MUST conform to the [ContractCommitmentApplicabilityObjectSchema](#schemas.datasets.contractcommitment.contractcommitmentapplicabilityobjectschema) JSON Schema.
+* ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.
+* ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` if the *contract commitment's* applicability logic exceeds schema capabilities.
+* ContractCommitmentApplicabilityObject.Applicability.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
+* ContractCommitmentApplicabilityObject.Applicability.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
+* ContractCommitmentApplicabilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
+* ContractCommitmentApplicabilityObject.Exclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
 
 ## Schema Structure
 
-ContractCommitmentEligibility contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
+ContractCommitmentApplicability contains a structured JSON object defining the logical boundaries and the applicability percentage of a commitment.
 
 ### Top-Level Properties
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `IsGlobalScope` | Boolean | No | If `true`, the commitment applies to all resources. Defaults to `false`. |
+| `IsGlobalScope` | Boolean | No | If `true`, the commitment applies to all entities. Defaults to `false`. |
 | `IsComplexScope` | Boolean | No | If `true`, indicates logic exceeds schema capabilities. Defaults to `false`. |
 | `Applicability` | Object | No | The fractional mapping for metrics. If omitted, both `Cost` and `Usage` keys default to `1.0`. |
 | `InclusionOperator` | String | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `AND`, `OR`. |
@@ -59,7 +59,7 @@ ContractCommitmentEligibility contains a structured JSON object defining the log
 | `Dimension` | String | A valid FOCUS Column Name (e.g., `ProviderAccountId`, `RegionId`). |
 | `Operator` | String | The comparison logic to apply. Must be one of the Supported Operators. |
 | `Values` | Array | A list of strings to compare. A value of `["*"]` acts as a global wildcard. |
-| `Applicability` | Object | Optional. The specific fraction of applicability for resources matching this rule. Overrides the top-level `Applicability`. |
+| `Applicability` | Object | Optional. The specific fraction of applicability for entities matching this rule. Overrides the top-level `Applicability`. |
 
 ### Applicability Object
 
@@ -84,7 +84,7 @@ ContractCommitmentEligibility contains a structured JSON object defining the log
 
 ### Wildcard Handling
 
-ContractCommitmentEligibility uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
+ContractCommitmentApplicability uses a reserved string to represent global or unrestricted boundaries within a specific Dimension.
 
 | Reserved Value | Description | Supported Operators |
 | :--- | :--- | :--- |
@@ -93,15 +93,15 @@ ContractCommitmentEligibility uses a reserved string to represent global or unre
 ### Wildcard Behavior Rules
 
 1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every resource, effectively making the commitment "Organization-wide" for that specific Dimension.
-2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every resource, effectively excluding all resources (this is typically used only in combination with `ExclusionOperator: "AND"` for surgical filtering).
+2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every resource, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "AND"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted) unless the `InclusionOperator` is set to `AND`.
 
 ## Object Example
 
 Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.  
 
-* For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmenteligibility).
-* For the JSON schema, please see [Contract Commitment Eligibility Object Schema](#schemas.datasets.contractcommitment.contractcommitmenteligibilityobjectschema).
+* For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractcommitmentapplicability).
+* For the JSON schema, please see [Contract Commitment Applicability Object Schema](#schemas.datasets.contractcommitment.contractcommitmentapplicabilityobjectschema).
 
 ```json
 {
@@ -126,7 +126,7 @@ Here is a basic example of the object format, describing organization-wide cover
 
 ### Processing Workflow
 
-The evaluation of a resource against a commitment eligibility MUST follow a strict linear progression:
+The evaluation of a resource against a commitment applicability MUST follow a strict linear progression:
 
 1. **Normalization:** Convert the resource attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
 2. **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
@@ -141,8 +141,8 @@ The evaluation of a resource against a commitment eligibility MUST follow a stri
 
 The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval):
 
-* **Continuous Models:** The `Applicability` percentages (Cost/Usage) MUST be applied to each discrete unit of activity within the **Fulfillment Interval** (e.g., every hour). If the commitment is not fully utilized by the applicable resources within that specific hour, the remaining capacity expires.
-* **Discontinuous Models:** The `Applicability` percentages determine the portion of aggregate activity that counts toward the commitment fulfillment over the entire **Fulfillment Interval** (e.g., the full year).
+* **Continuous Models:** Applicability percentages MUST be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.
+* **Discontinuous Models:** Applicability percentages determine the portion of aggregate activity that counts toward fulfillment over the entire **Interval** (e.g., a full year).
 
 ### Dependency Logic
 
@@ -151,19 +151,19 @@ The evaluation of **Applicability** percentages must be contextually aligned wit
 
 ### Object ID
 
-ContractCommitmentEligibilityObject
+ContractCommitmentApplicabilityObject
 
 ### Object Display Name
 
-Contract Commitment Eligibility Object
+Contract Commitment Applicability Object
 
 ## Column ID
 
-ContractCommitmentEligibility
+ContractCommitmentApplicability
 
 ## Display Name
 
-Contract Commitment Eligibility
+Contract Commitment Applicability
 
 ## Description
 
@@ -179,7 +179,7 @@ A structured definition of the specific entities to which a contract commitment 
 | Allows nulls | False |
 | Data type | JSON |
 | Value format | [JSON Object Format](#attributes.jsonobjectformat) |
-| Object          | [ContractCommitmentEligibilityObject](#datasets.contractcommitment.contractcommitmenteligibility.contractcommitmenteligibilityobject)
+| Object          | [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject)
 
 ## Introduced (version)
 

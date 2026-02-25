@@ -1,4 +1,4 @@
-# Examples: Contract Commitment Eligibility
+# Examples: Contract Commitment Applicability
 
 ## Global Scope and Applicability
 
@@ -104,7 +104,7 @@ Applies to Compute in `us-east-1` and `us-west-2`, excluding any resources or se
 
 ## Regional Applicability
 
-A commitment that applies fully to `us-east-1` but only 50% of cost and usage in `us-west-2` is eligible. Note the use of the object even for symmetrical applicability.
+A commitment that applies fully to `us-east-1` but only 50% of cost and usage in `us-west-2` is eligible. Note the differing applicability percentages in the two regions.
 
 ```json
 {

@@ -1,8 +1,8 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://focus.finops.org/schemas/contractcommitmenteligibilityobject.json",
-    "title": "Contract Commitment Eligibility Object",
-    "description": "Schema for validating the Contract Commitment Eligibility column JSON object structure in FOCUS datasets",
+    "$id": "https://focus.finops.org/schemas/contractcommitmentapplicabilityobject.json",
+    "title": "Contract Commitment Applicability Object",
+    "description": "Schema for validating the Contract Commitment Applicability column JSON object structure in FOCUS datasets",
     "type": "object",
     "$defs": {
         "applicabilityObject": {
@@ -23,7 +23,7 @@
             },
             "additionalProperties": false
         },
-        "eligibilityRule": {
+        "applicabilityRule": {
             "type": "object",
             "required": [
                 "Dimension",
@@ -98,11 +98,11 @@
     "properties": {
         "IsGlobalScope": {
             "type": "boolean",
-            "description": "If true, commitment applies to all resources"
+            "description": "If true, commitment applies to all entities"
         },
         "IsComplexScope": {
             "type": "boolean",
-            "description": "If true, eligibility logic exceeds schema capabilities"
+            "description": "If true, applicability logic exceeds schema capabilities"
         },
         "Applicability": {
             "$ref": "#/$defs/applicabilityObject",
@@ -118,9 +118,9 @@
         },
         "Inclusions": {
             "type": "array",
-            "description": "List of rules defining the eligibility boundary",
+            "description": "List of rules defining the applicability boundary",
             "items": {
-                "$ref": "#/$defs/eligibilityRule"
+                "$ref": "#/$defs/applicabilityRule"
             },
             "minItems": 1
         },
@@ -136,7 +136,7 @@
             "type": "array",
             "description": "List of rules defining entities to exclude",
             "items": {
-                "$ref": "#/$defs/eligibilityRule"
+                "$ref": "#/$defs/applicabilityRule"
             },
             "minItems": 1
         }
