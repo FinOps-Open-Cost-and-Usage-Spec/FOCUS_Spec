@@ -1,16 +1,15 @@
 # AWS Savings Plan - All Upfront - 75% Utilization
 
-| Parameter         | Value              |
-| ----------------- | ------------------ |
-| Scenario Type     | commitment         |
-| Payment Model     | All-Upfront        |
-| CommitmentDiscountCategory | Spend        |
-| Utilization       | 75%                |
-| Hours Generated   | 24                 |
-| Annual Commitment | &dollar;459,000.00 |
-| Effective Unit Price | &dollar;52.40/hour |
-| List Unit Price   | &dollar;78.60/hour |
-| Savings           | 33%                |
+| Parameter                  | Value              |
+| -------------------------- | ------------------ |
+| Scenario Type              | commitment         |
+| Payment Model              | All-Upfront        |
+| CommitmentDiscountCategory | Spend              |
+| Utilization                | 75%                |
+| Hours Generated            | 24                 |
+| Annual Commitment          | &dollar;459,000.00 |
+| List Unit Price            | &dollar;78.60/hour |
+| Savings                    | 33%                |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_all_upfront_75pct.csv)
 
@@ -29,7 +28,7 @@ This scenario demonstrates **underutilization** at 75% where only 18 of 24 commi
 | Purchase          | 1     | &dollar;459,000.00     | &dollar;0.00         |
 | Usage (Used)      | 18    | &dollar;0.00           | &dollar;943.20       |
 | Usage (Unused)    | 6     | &dollar;0.00           | &dollar;314.40       |
-| Usage (Standard) | 12    | &dollar;10.15          | &dollar;10.15        |
+| Usage (Standard)  | 12    | &dollar;10.15          | &dollar;10.15        |
 | **Total**         | 37    | **&dollar;459,010.15** | **&dollar;1,267.75** |
 
 ## Column Interactions
