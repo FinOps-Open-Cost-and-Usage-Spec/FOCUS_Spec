@@ -31,7 +31,7 @@ When TagDetails is not null, the JsonObjectFormat for TagDetails adheres to the 
     * Tag property key MUST match the spelling and casing specified for the FOCUS-defined property.
     * Tag property value MUST be of the type specified for that property.
     * Tag properties MUST adhere to additional normative requirements specific to that property.
-  * Each tag key object MUST contain an object with they key "AncestorTaggedSources".
+  * Each tag key object MUST contain an object with the key "AncestorTaggedSources".
     * The value of AncestorTaggedSources MUST be null when the tag key from the corresponding tag key object within the tag scheme is not present in any *tag source* other than the *tag source* which results in the *finalized tag*.
     * When the value of AncestorTaggedSources is not null, each object in AncestorTaggedSources MUST have a key denoting the *tag source*.
       * Each tag source object MUST contain FOCUS-defined tag properties.
