@@ -2,7 +2,7 @@
 
 The following examples illustrate how BilledCost and EffectiveCost behave across common SaaS and PaaS billing models. Each scenario uses publicly available pricing and demonstrates a distinct billing pattern that SaaS or PaaS data generators may encounter when implementing the FOCUS specification.
 
-These examples complement the existing SaaS examples by covering credit-based consumption, host-based monitoring, seat-based annual subscriptions, and multi-unit PaaS usage.
+These examples complement the existing SaaS examples by covering credit-based consumption, host-based monitoring, seat-based annual subscriptions, multi-unit PaaS usage, flat-rate licensing, annual commitment billed monthly, and tiered pricing with committed minimums.
 
 ## Credit-Based Consumption: On-Demand Data Platform Usage
 
@@ -216,3 +216,50 @@ Key observations:
 * This scenario demonstrates that an annual contract does not automatically produce a [*commitment discount*](#glossary:commitment-discount) in FOCUS. The distinguishing factor is whether the commitment provides a price reduction from the standard rate.
 
 [**CSV Example**](/specification/data/saas_examples/annual_commitment_billed_monthly_a.csv)
+
+## Tiered Pricing with Committed Minimum: Email API Platform
+
+A SaaS email API provider offers tiered plans that include a monthly email allowance. Emails sent within the allowance are covered by the plan fee. Emails exceeding the allowance are billed at a per-email overage rate. The plan minimum functions as a usage-denominated [*commitment discount*](#glossary:commitment-discount) because the customer pays a fixed fee for a quantity of usage units.
+
+The provider's pricing for this example (Essentials 50K plan):
+
+| Component | Rate | Unit |
+| :-------- | ---: | :--- |
+| Plan fee (includes 50,000 emails) | &dollar;19.95 | Month |
+| Overage | &dollar;0.00133 | Email |
+
+This example covers two billing periods to show both under-minimum and over-minimum scenarios:
+
+* **January 2025:** The customer sends 30,000 emails, below the 50,000 email allowance. 20,000 emails go unused.
+* **February 2025:** The customer sends 65,000 emails, exceeding the allowance by 15,000.
+
+**January charges (under minimum):**
+
+The monthly plan fee of &dollar;19.95 appears as a Purchase charge. Two Usage charges split the commitment between used and unused portions:
+
+* Purchase: &dollar;19.95 (plan fee covering 50,000 emails)
+* Used: 30,000 emails, [EffectiveCost](#datasets.costandusage.effectivecost) = &dollar;11.97 (`30,000 / 50,000 x &dollar;19.95`)
+* Unused: 20,000 emails, [EffectiveCost](#datasets.costandusage.effectivecost) = &dollar;7.98 (`20,000 / 50,000 x &dollar;19.95`)
+
+Total [BilledCost](#datasets.costandusage.billedcost): &dollar;19.95
+
+**February charges (over minimum):**
+
+The customer uses all 50,000 plan emails plus 15,000 overage emails:
+
+* Purchase: &dollar;19.95 (plan fee covering 50,000 emails)
+* Used: 50,000 emails, [EffectiveCost](#datasets.costandusage.effectivecost) = &dollar;19.95 (full allowance consumed)
+* Overage: 15,000 emails at &dollar;0.00133 = &dollar;19.95 (standard pricing, not part of commitment)
+
+Total [BilledCost](#datasets.costandusage.billedcost): &dollar;39.90
+
+Key observations:
+
+* [CommitmentDiscountCategory](#datasets.costandusage.commitmentdiscountcategory) is "Usage" on all commitment-related rows. The plan minimum is denominated in email quantity (50,000 emails), not a dollar amount. This distinguishes it from the "Spend" category in the Seat-Based SaaS Subscription example.
+* [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) shows "Used" and "Unused" on Usage rows. In January, the customer only consumed 30,000 of 50,000 emails, so the remaining 20,000 generate an "Unused" row. The Unused row has [BilledCost](#datasets.costandusage.billedcost) of &dollar;0.00 but [EffectiveCost](#datasets.costandusage.effectivecost) of &dollar;7.98, representing waste from the commitment.
+* The Purchase row has [BilledCost](#datasets.costandusage.billedcost) of &dollar;19.95 and [EffectiveCost](#datasets.costandusage.effectivecost) of &dollar;0.00. This follows the same pattern as the Seat-Based SaaS Subscription: the purchase captures the [*cash-based*](#glossary:cash-based-accounting) cost, while [*accrual-based*](#glossary:accrual-based-accounting) cost is recognized on the Usage rows.
+* The overage row in February has no [*commitment discount*](#glossary:commitment-discount) columns populated. Overage emails are billed at the standard per-email rate and are not part of the commitment.
+* [ListUnitPrice](#datasets.costandusage.listunitprice) on Usage rows is &dollar;0.00133, which is the overage (standard) rate. [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) on commitment rows is &dollar;0.000399, derived from the plan fee divided by the email allowance (`&dollar;19.95 / 50,000`). The difference between these two prices is the per-email savings from the plan minimum.
+* [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Recurring" on the Purchase rows (the plan fee recurs monthly) and "Usage-Based" on the Usage rows (charges vary based on email volume consumed).
+
+[**CSV Example**](/specification/data/saas_examples/tiered_pricing_committed_minimum_a.csv)
