@@ -35,7 +35,7 @@ A service-provider-assigned identifier describing a single contract term agreed 
 | Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
+| Allows nulls    | False                                                |
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 

@@ -65,7 +65,7 @@ The effective percentage reduction applied to the list price of resources or ser
 | Allows nulls    | True           |
 | Data type       | Decimal        |
 | Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number range    | Any valid decimal value                              |
+| Number range    | 0.0 to 1.0                                           |
 
 ## Introduced (version)
 
