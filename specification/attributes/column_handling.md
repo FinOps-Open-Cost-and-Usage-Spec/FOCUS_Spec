@@ -33,7 +33,7 @@ ColumnHandling MUST adhere to the following requirements:
 
 * FOCUS column MUST adhere to the following requirements:
   * FOCUS column MUST use Pascal case in the Column ID.
-  * FOCUS column MUST NOT use abbreviations in the Column ID.
+  * FOCUS column MUST NOT use abbreviations other than `Id` in the Column ID.
   * FOCUS column MUST use only alphanumeric characters in the Column ID.
   * FOCUS column MUST NOT include special characters in the Column ID.
   * FOCUS column SHOULD NOT use acronyms other than `Sku` in the Column ID.
