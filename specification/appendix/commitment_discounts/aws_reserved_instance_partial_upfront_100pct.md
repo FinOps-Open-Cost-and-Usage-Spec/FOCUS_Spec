@@ -8,7 +8,6 @@
 | Utilization       | 100%               |
 | Hours Generated   | 24                 |
 | Annual Commitment | &dollar;238,333.33 |
-| Effective Unit Price | &dollar;50.23/hour |
 | List Unit Price   | &dollar;75.35/hour |
 | Savings           | 33%                |
 
