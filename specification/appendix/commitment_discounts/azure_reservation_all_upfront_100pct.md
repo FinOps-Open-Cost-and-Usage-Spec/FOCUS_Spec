@@ -8,7 +8,6 @@
 | Utilization       | 100%               |
 | Hours Generated   | 24                 |
 | Annual Commitment | &dollar;358,000.00 |
-| Effective Unit Price | &dollar;40.87/hour |
 | List Unit Price   | &dollar;61.31/hour |
 | Savings           | 33%                |
 
@@ -28,7 +27,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 | ----------------- | ----- | ---------------------- | -------------------- |
 | Purchase          | 1     | &dollar;358,000.00     | &dollar;0.00         |
 | Usage (Used)      | 24    | &dollar;0.00           | &dollar;980.88       |
-| Usage (Standard) | 12    | &dollar;22.31          | &dollar;22.31        |
+| Usage (Standard)  | 12    | &dollar;22.31          | &dollar;22.31        |
 | **Total**         | 37    | **&dollar;358,022.31** | **&dollar;1,003.19** |
 
 ## Column Interactions
