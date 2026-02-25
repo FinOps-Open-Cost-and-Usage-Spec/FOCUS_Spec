@@ -65,7 +65,7 @@ Identify the target for the rule: **Dataset**, **Column**, **Attribute** propert
 
 The following architectural components define the core entities in FOCUS that shape the structure and flow of billing data.
 
-<img width="491" height="491" alt="Image" src="https://github.com/user-attachments/assets/edf052d2-669a-4baf-a8a2-ae4b92651d9f" />
+<img width="491" height="491" alt="Image" src="https://github.com/user-attachments/assets/a30d828e-d2af-4185-984c-475998466437"/>
 
 - **Dataset, Column, Attribute, Metadata** are the **core structural entities** where model requirements are directly assigned.
 
