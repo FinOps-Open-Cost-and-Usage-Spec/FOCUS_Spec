@@ -157,3 +157,62 @@ Key observations:
 * [RegionId](#datasets.costandusage.regionid) and [RegionName](#datasets.costandusage.regionname) are populated. Unlike SaaS *services*, PaaS database clusters are deployed to specific regions and pricing may vary by region.
 
 [**CSV Example**](/specification/data/saas_examples/multi_unit_paas_database_a.csv)
+
+## Flat-Rate SaaS Licensing: Fixed Monthly Subscription
+
+A project management and team communication provider offers a single flat-rate subscription. All features and unlimited users are included for a fixed monthly fee with no per-user pricing.
+
+The provider's pricing for this example:
+
+| Service | SKU | Unit Price | Pricing Unit |
+| :------ | :-- | ---------: | :----------- |
+| Basecamp | Pro Unlimited | &dollar;349.00 | Subscription |
+
+The provider also offers an annual billing option at &dollar;299.00 per month (billed annually). This example uses the month-to-month option with no annual commitment.
+
+A customer subscribes to the Pro Unlimited plan on a month-to-month basis. During January 2025, the customer's team of 35 people uses the platform.
+
+One charge appears on the January invoice:
+
+* Pro Unlimited: `1 Subscription x &dollar;349.00` = &dollar;349.00
+
+Total [BilledCost](#datasets.costandusage.billedcost): &dollar;349.00
+
+Key observations:
+
+* [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are equal. With no related purchase charges, the [*cash-based*](#glossary:cash-based-accounting) and [*accrual-based*](#glossary:accrual-based-accounting) costs align.
+* [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Recurring". The subscription is a fixed monthly fee regardless of usage activity or user count within the [*billing period*](#glossary:billing-period).
+* [PricingUnit](#datasets.costandusage.pricingunit) is "Subscriptions" and [PricingQuantity](#datasets.costandusage.pricingquantity) is 1. Unlike per-seat or per-unit models, the entire platform is a single billable unit.
+* There is no relationship between [ConsumedQuantity](#datasets.costandusage.consumedquantity) and the number of users. The 35-person team does not affect the charge.
+* If the customer chose the annual billing option (&dollar;299.00/month billed annually), this would follow a [*commitment discount*](#glossary:commitment-discount) pattern similar to the Seat-Based SaaS Subscription example above, with a Purchase row for the annual payment and monthly Usage rows for amortized [EffectiveCost](#datasets.costandusage.effectivecost).
+
+[**CSV Example**](/specification/data/saas_examples/flat_rate_saas_licensing_a.csv)
+
+## Annual Commitment Billed Monthly: Seat-Based CRM
+
+A CRM provider offers a seat-based sales platform requiring an annual commitment. Unlike prepaid annual subscriptions, one billing option charges monthly throughout the contract term. The monthly billed rate equals the list price, so no [*commitment discount*](#glossary:commitment-discount) is applied in FOCUS terms.
+
+The provider's pricing for this example (Professional plan, 10 users):
+
+| Billing Option | Unit Price | Monthly Cost (10 users) | Annual Cost |
+| :------------- | ---------: | ----------------------: | ----------: |
+| Annual (pay upfront) | &dollar;90.00/user/month | &dollar;900.00 | &dollar;10,800.00 |
+| Annual (billed monthly) | &dollar;100.00/user/month | &dollar;1,000.00 | &dollar;12,000.00 |
+
+A customer subscribes to the Professional plan for 10 users, choosing the annual commitment with monthly billing. They pay &dollar;100.00 per user per month with no upfront payment.
+
+One charge appears on the January 2025 invoice:
+
+* Sales Hub Professional: `10 Users x &dollar;100.00` = &dollar;1,000.00
+
+Total [BilledCost](#datasets.costandusage.billedcost): &dollar;1,000.00
+
+Key observations:
+
+* [BilledCost](#datasets.costandusage.billedcost), [EffectiveCost](#datasets.costandusage.effectivecost), [ListCost](#datasets.costandusage.listcost), and [ContractedCost](#datasets.costandusage.contractedcost) are all equal at &dollar;1,000.00. Monthly billing on an annual contract produces no divergence between [*cash-based*](#glossary:cash-based-accounting) and [*accrual-based*](#glossary:accrual-based-accounting) costs because there is no upfront payment to amortize.
+* [PricingCategory](#datasets.costandusage.pricingcategory) is "Standard" because the billed rate equals the [ListUnitPrice](#datasets.costandusage.listunitprice). The annual contract is a term commitment, not a pricing discount. No [*commitment discount*](#glossary:commitment-discount) columns are populated.
+* [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Recurring" because the charge recurs monthly at a fixed per-seat rate regardless of usage activity within the [*billing period*](#glossary:billing-period).
+* If the customer chose the annual pay-upfront option (&dollar;90.00/user/month), the &dollar;10.00 per-seat discount would qualify as a [*commitment discount*](#glossary:commitment-discount), following the pattern in the Seat-Based SaaS Subscription example with a Purchase row and amortized [EffectiveCost](#datasets.costandusage.effectivecost).
+* This scenario demonstrates that an annual contract does not automatically produce a [*commitment discount*](#glossary:commitment-discount) in FOCUS. The distinguishing factor is whether the commitment provides a price reduction from the standard rate.
+
+[**CSV Example**](/specification/data/saas_examples/annual_commitment_billed_monthly_a.csv)
