@@ -46,7 +46,7 @@ ColumnHandling MUST adhere to the following requirements:
 * Custom column (e.g., service-provider-defined column included in FOCUS dataset) MUST adhere to the following requirements:
   * Custom column MUST include the `x_` prefix in the Column ID to identify it as an external, custom column and to distinguish it from FOCUS columns to avoid conflicts in future releases.
   * Custom column SHOULD use Pascal case in the Column ID.
-  * Custom column SHOULD NOT use abbreviations in the Column ID.
+  * Custom column SHOULD NOT use abbreviations other than `Id` in the Column ID.
   * Custom column SHOULD use only alphanumeric characters in the Column ID.
   * Custom column SHOULD NOT include special characters in the Column ID.
   * Custom column SHOULD NOT use acronyms other than `Sku` in the Column ID.
