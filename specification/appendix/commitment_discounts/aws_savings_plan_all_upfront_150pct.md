@@ -8,7 +8,6 @@
 | Utilization       | 150% (100% committed + 50% overflow to standard pricing) |
 | Hours Generated   | 48 (24 committed + 24 overflow to standard pricing)      |
 | Annual Commitment | &dollar;212,000.00                                |
-| Effective Unit Price | &dollar;24.20/hour                                |
 | List Unit Price   | &dollar;36.30/hour                                |
 | Savings           | 33%                                               |
 
