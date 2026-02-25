@@ -1,16 +1,15 @@
 # AWS Savings Plan - No Upfront - 100% Utilization
 
-| Parameter         | Value              |
-| ----------------- | ------------------ |
-| Scenario Type     | commitment         |
-| Payment Model     | No-Upfront         |
-| CommitmentDiscountCategory | Spend        |
-| Utilization       | 100%               |
-| Hours Generated   | 24                 |
-| Annual Commitment | &dollar;38,583.33  |
-| Effective Unit Price | &dollar;52.85/hour |
-| List Unit Price   | &dollar;79.28/hour |
-| Savings           | 33%                |
+| Parameter                   | Value              |
+| --------------------------- | ------------------ |
+| Scenario Type               | commitment         |
+| Payment Model               | No-Upfront         |
+| CommitmentDiscountCategory  | Spend              |
+| Utilization                 | 100%               |
+| Hours Generated             | 24                 |
+| Annual Commitment           | &dollar;38,583.33  |
+| List Unit Price             | &dollar;79.28/hour |
+| Savings                     | 33%                |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_no_upfront_100pct.csv)
 
@@ -28,7 +27,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 | ----------------- | ----- | --------------------- | -------------------- |
 | Purchase          | 1     | &dollar;38,583.33     | &dollar;0.00         |
 | Usage (Used)      | 24    | &dollar;0.00          | &dollar;1,268.40     |
-| Usage (Standard) | 12    | &dollar;13.18         | &dollar;13.18        |
+| Usage (Standard)  | 12    | &dollar;13.18         | &dollar;13.18        |
 | **Total**         | 37    | **&dollar;38,596.51** | **&dollar;1,281.58** |
 
 ## Column Interactions
