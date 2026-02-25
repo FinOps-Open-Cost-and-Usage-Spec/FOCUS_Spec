@@ -29,11 +29,13 @@ The Contract Commitment dataset is a supporting dataset that describes the terms
 | [Contract Commitment Quantity](#datasets.contractcommitment.contractcommitmentquantity) | Metric | Mandatory | True | Numeric |
 | [Contract Commitment Type](#datasets.contractcommitment.contractcommitmenttype) | Dimension | Mandatory | False | String |
 | [Contract Commitment Unit](#datasets.contractcommitment.contractcommitmentunit) | Dimension | Mandatory | True | String |
-| [Contract ID](#datasets.contractid) | Dimension | Mandatory | False | String |
-| [Contract Period End](#datasets.contractperiodend) | Dimension | Mandatory | False | Date/Time |
-| [Contract Period Start](#datasets.contractperiodstart) | Dimension | Mandatory | False | Date/Time |
+| [Contract ID](#datasets.contractcommitment.contractid) | Dimension | Mandatory | False | String |
+| [Contract Period End](#datasets.contractcommitment.contractperiodend) | Dimension | Mandatory | False | Date/Time |
+| [Contract Period Start](#datasets.contractcommitment.contractperiodstart) | Dimension | Mandatory | False | Date/Time |
 | [Invoice Issuer Name](#datasets.contractcommitment.invoiceissuername) | Dimension | Mandatory | False | String |
 | [Pricing Currency](#datasets.contractcommitment.pricingcurrency) | Dimension | Conditional | False | String |
+| [Pricing Currency Contract Commitment Cost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) | Metric | Conditional | True | Decimal |
+| [Service Provider Name](#datasets.contractcommitment.serviceprovidername) | Dimension | Mandatory | False | String |
 
 ## Relationships<!--SkipTOC-->
 
@@ -53,6 +55,7 @@ ContractCommitment adheres to the following requirements:
 * ContractCommitment MUST be present when the service provider supports *contract commitments*.
 * ContractCommitment column presence MUST adhere to the following requirements:
   * ContractCommitment MUST include [BillingCurrency](#datasets.contractcommitment.billingcurrency).
+  * ContractCommitment MUST include [ContractCommitmentApplicability](#datasets.contractcommitment.contractcommitmentapplicability).
   * ContractCommitment MUST include [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory).
   * ContractCommitment MUST include [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory).
   * ContractCommitment MUST include [ContractCommitmentCost](#datasets.contractcommitment.contractcommitmentcost).
@@ -60,7 +63,6 @@ ContractCommitment adheres to the following requirements:
   * ContractCommitment MUST include [ContractCommitmentDescription](#datasets.contractcommitment.contractcommitmentdescription).
   * ContractCommitment MUST include [ContractCommitmentDiscountPercentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage).
   * ContractCommitment MUST include [ContractCommitmentDurationType](#datasets.contractcommitment.contractcommitmentdurationtype).
-  * ContractCommitment MUST include [ContractCommitmentEligibility](#datasets.contractcommitment.contractcommitmenteligibility).
   * ContractCommitment MUST include [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval).
   * ContractCommitment MUST include [ContractCommitmentId](#datasets.contractcommitment.contractcommitmentid).
   * ContractCommitment MUST include [ContractCommitmentLastUpdated](#datasets.contractcommitment.contractcommitmentlastupdated).
