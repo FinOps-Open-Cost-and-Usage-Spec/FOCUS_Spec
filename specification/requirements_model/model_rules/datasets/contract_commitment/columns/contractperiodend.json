@@ -143,7 +143,7 @@
     "DatasetName": "Contract Commitment",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractPeriodEnd MUST be the exclusive end bound of the effective period of the contract commitment.",
+      "MustSatisfy": "ContractPeriodEnd MUST be the exclusive end bound of the effective period of the contract.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
