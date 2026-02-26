@@ -43,7 +43,7 @@ The following table provides a reference for how common cloud and SaaS commercia
 
 In the below table, CC represents Contract Commitment.
 
-| Offering Example | CC Category | CC Model | CC Offer Category | CC Benefit Category | CC Fulfillment Interval | CC Duration | CC Payment Model | CC Payment Interval |
+| Offering Example | CC Category | CC Model | CC Offer Category | CC Benefit Category | CC Fulfillment Interval | CC Duration Type | CC Payment Model | CC Payment Interval |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | **AWS Savings Plan** | Spend | Continuous | Public | Discount | Hourly | 1 Year | Partial Upfront | Monthly |
 | **Azure Reservation** | Usage | Continuous | Public | Discount | Hourly | 3 Years | All Upfront | One-Time |
@@ -93,8 +93,8 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 | **CC Created** | `2025-12-01T09:00:00Z` | `2025-12-01T09:00:00Z` | `2026-01-15T14:30:00Z` |
 | **CC Description** | `3yr Enterprise Spend Goal` | `us-east-1 m5 Reservations` | `DataStreamer Pro via Marketplace` |
 | **CC Discount %** | `0.15` | `0.40` | `0.10` |
-| **CC Duration** | `3 Years` | `1 Year` | `1 Year` |
-| **CC Eligibility** | `{"IsGlobalScope": true}` | `{"Inclusions": [{"Dimension": "RegionId", "Operator": "In", "Values": ["us-east-1"]}]}` | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Analytics"]}]}` |
+| **CC Duration Type** | `3 Years` | `1 Year` | `1 Year` |
+| **CC Applicability** | `{"IsGlobalScope": true}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "RegionId", "Operator": "In", "Values": ["us-east-1"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Analytics"]}]}` |
 | **CC Fulfillment Interval** | `Total Term` | `Hourly` | `Annual` |
 | **CC ID** | `CMT-SPEND-001` | `CMT-RI-002` | `CMT-SaaS-003` |
 | **CC Last Updated** | `2026-02-01T10:00:00Z` | `2025-12-01T09:00:00Z` | `2026-01-15T14:30:00Z` |
@@ -150,8 +150,8 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 | **CC Created** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
 | **CC Description** | `H100 GPU Reservation - Q1` | `CyberGuard Endpoint Seats` | `Inter-Cloud Egress Tier` |
 | **CC Discount %** | `0.30` | `null` | `0.50` |
-| **CC Duration** | `3 Months` | `1 Year` | `1 Year` |
-| **CC Eligibility** | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["AI/ML"]}]}` | `{"IsGlobalScope": true}` | `{"Inclusions": [{"Dimension": "UsageType", "Operator": "Contains", "Values": ["Egress"]}]}` |
+| **CC Duration Type** | `3 Months` | `1 Year` | `1 Year` |
+| **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["AI/ML"]}]}` | `{"IsGlobalScope": true}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "UsageType", "Operator": "Contains", "Values": ["Egress"]}]}` |
 | **CC Fulfillment Interval** | `Monthly` | `Annual` | `Monthly` |
 | **CC ID** | `CMT-AI-888` | `CMT-SEC-999` | `CMT-DATA-111` |
 | **CC Last Updated** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
@@ -201,8 +201,8 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **CC Created** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
 | **CC Description** | `Base 100TB DB Storage` | `Tier 2 Storage Overage` | `1PB Annual CDN Volume` |
 | **CC Discount %** | `0.20` | `0.10` | `0.25` |
-| **CC Duration** | `1 Year` | `1 Year` | `1 Year` |
-| **CC Eligibility** | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Database"]}]}` | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Database"]}]}` | `{"Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["CDN"]}]}` |
+| **CC Duration Type** | `1 Year` | `1 Year` | `1 Year` |
+| **CC Applicability** | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Database"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["Database"]}]}` | `{"InclusionOperator": "Or", "Inclusions": [{"Dimension": "ServiceCategory", "Operator": "In", "Values": ["CDN"]}]}` |
 | **CC Fulfillment Interval** | `Monthly` | `Monthly` | `Annual` |
 | **CC ID** | `CMT-STR-BASE` | `CMT-STR-OVER` | `CMT-CDN-VOL` |
 | **CC Last Updated** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |

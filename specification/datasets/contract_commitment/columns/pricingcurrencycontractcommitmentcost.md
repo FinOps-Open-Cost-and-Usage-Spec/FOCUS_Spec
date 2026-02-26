@@ -7,8 +7,8 @@ Pricing Currency Contract Commitment Cost represents the monetary value of the [
 * PricingCurrencyContractCommitmentCost MUST be of type Decimal.
 * PricingCurrencyContractCommitmentCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyContractCommitmentCost nullability is defined as follows:
-  * PricingCurrencyContractCommitmentCost MUST NOT be null when [Category](#datasets.contractcommitment.category) is "Spend" and [PricingCurrency](#datasets.contractcommitment.pricingcurrency) is provided.
-  * PricingCurrencyContractCommitmentCost MAY be null when Category is "Usage".
+  * PricingCurrencyContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is "Spend" and [PricingCurrency](#datasets.contractcommitment.pricingcurrency) is provided.
+  * PricingCurrencyContractCommitmentCost MAY be null when ContractCommitmentCategory is "Usage".
 * PricingCurrencyContractCommitmentCost MUST be a valid decimal value.
 * PricingCurrencyContractCommitmentCost MUST be denominated in the [PricingCurrency](#datasets.contractcommitment.pricingcurrency).
 
