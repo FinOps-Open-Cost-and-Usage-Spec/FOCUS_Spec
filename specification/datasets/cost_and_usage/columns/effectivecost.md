@@ -16,7 +16,10 @@ EffectiveCost adheres to the following requirements:
 * EffectiveCost MUST be a valid decimal value.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * EffectiveCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
-* EffectiveCost MUST equal BilledCost when ChargeCategory is not "Adjustment" and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.
+* EffectiveCost MUST equal BilledCost when ChargeCategory is "Usage" and the *charge* is not covered by other eligible *charges*.
+* EffectiveCost MUST equal BilledCost when ChargeCategory is "Purchase" and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.
+* EffectiveCost MUST equal BilledCost when ChargeCategory is "Tax" or "Credit".
+* EffectiveCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
 * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover related eligible *charges*.
 * The sum of EffectiveCost MUST equal the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when those *dataset artifacts* include both purchase *charges* (ChargeCategory is "Purchase") and the related eligible *charges* they are intended to cover from the same source, or when the artifact contains neither purchase nor covered charges.
 * The sum of EffectiveCost MAY differ from the sum of BilledCost within [*dataset artifacts*](#glossary:dataset-artifact) from a single data generator when the artifact contains only purchase *charges* (ChargeCategory is "Purchase") or only the related eligible *charges* they are intended to cover, and those *charges* originate from different data sources (e.g., marketplace scenarios).
