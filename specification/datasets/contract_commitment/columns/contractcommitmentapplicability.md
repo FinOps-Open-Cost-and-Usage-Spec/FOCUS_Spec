@@ -8,7 +8,7 @@ Contract Commitment Applicability is a structured definition of the specific ent
 
 The ContractCommitmentApplicability column adheres to the following requirements:
 
-* ContractCommitmentApplicability MUST be of type String.
+* ContractCommitmentApplicability MUST be of type JSON Object (serialized as a String where necessary).
 * ContractCommitmentApplicability MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentApplicability MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractCommitmentApplicability MUST conform to [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) requirements.
@@ -47,8 +47,8 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `IsGlobalScope` | Boolean | No | If `true`, the commitment applies to all entities. Defaults to `false`. |
 | `IsComplexScope` | Boolean | No | If `true`, indicates logic exceeds schema capabilities. Defaults to `false`. |
 | `Applicability` | Object | No | The fractional mapping for metrics. If omitted, both `Cost` and `Usage` keys default to `1.0`. |
-| `InclusionOperator` | String | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `AND`, `OR`. |
-| `Inclusions` | Array | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. List of `Rule` objects defining the boundary. |
+| `InclusionOperator` | String | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `AND`, `OR`. Must be omitted if Global or Complex scope is true. |
+| `Inclusions` | Array | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. List of `Rule` objects defining the boundary. Must be omitted if Global or Complex scope is true. |
 | `ExclusionOperator` | String | No | Defines the relationship for `Exclusions`. Valid values: `AND`, `OR`. Defaults to `OR`. |
 | `Exclusions` | Array | No | List of `Rule` objects defining entities to be removed from the boundary. |
 
@@ -79,8 +79,8 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `Contains` | Substring match anywhere in the value. | `["database"]` |
 | `NotContains` | Substring is not present in the value. | `["sandbox"]` |
 | `EndsWith` | String suffix match. | `["-temp"]` |
-| `Exists` | Checks if the dimension is present and not null. | `Values` can be `["*"]` |
-| `DoesNotExist` | Checks if the dimension is missing or null. | `Values` can be `["*"]` |
+| `Exists` | Checks if the dimension is present and not null. | `Values` MUST be `["*"]` |
+| `DoesNotExist` | Checks if the dimension is missing or null. | `Values` MUST be `["*"]` |
 
 ### Wildcard Handling
 
@@ -94,7 +94,7 @@ ContractCommitmentApplicability uses a reserved string to represent global or un
 
 1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every resource, effectively making the commitment "Organization-wide" for that specific Dimension.
 2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every resource, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "AND"` for surgical filtering).
-3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted) unless the `InclusionOperator` is set to `AND`.
+3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
 ## Object Example
 
@@ -146,8 +146,8 @@ The evaluation of **Applicability** percentages must be contextually aligned wit
 
 ### Dependency Logic
 
-1. **Consistency:** Engines SHOULD expect an object and SHOULD NOT support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
-2. **Conflict Resolution:** If `IsGlobalScope` is `true`, rule-level applicability in the `Inclusions` array is ignored in favor of the top-level `Applicability` attribute.
+1. **Consistency:** Engines SHOULD expect a JSON Object and SHOULD NOT support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
+2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array MUST be empty or omitted. Engines should validate this structural constraint before processing.
 
 ### Object ID
 
