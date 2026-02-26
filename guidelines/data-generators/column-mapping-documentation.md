@@ -15,7 +15,7 @@ Mapping documentation should include the following information for each FOCUS co
 | FOCUS Column | The FOCUS column identifier (e.g., `BilledCost`) |
 | Source Field(s) | Native billing column name(s) that map to this FOCUS column |
 | Transform Logic | How the native field value is converted to the FOCUS column value |
-| Feature Level | Mandatory, Conditional, or Recommended |
+| Feature Level | Mandatory, Conditional, or Optional |
 | Notes | Additional context, edge cases, or variations |
 
 ## Transform Logic Patterns
@@ -76,7 +76,7 @@ Data generators publishing mapping documentation should:
 
 * Make documentation publicly accessible without authentication
 * Version documentation to align with supported FOCUS versions
-* Provide clear guidance on where practitioners can locate the documentation (e.g., include a URL in [FOCUS metadata](#metadata) or reference it from the provider's FOCUS data export documentation)
+* Provide clear guidance on where practitioners can locate the documentation (e.g., include a URL in FOCUS metadata or reference it from the provider's FOCUS data export documentation)
 
 ## Reference Template
 
