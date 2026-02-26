@@ -51,8 +51,6 @@ These three quantity columns serve different purposes and must be understood in 
 | **ListUnitPrice**       | List (public) unit price | &dollar;44.18      | &dollar;44.18 |
 | **ContractedUnitPrice** | Negotiated unit price    | &dollar;29.45      | null          |
 
-| **ContractedUnitPrice** | Negotiated unit price | &dollar;44.18      | &dollar;44.18 |
-
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
