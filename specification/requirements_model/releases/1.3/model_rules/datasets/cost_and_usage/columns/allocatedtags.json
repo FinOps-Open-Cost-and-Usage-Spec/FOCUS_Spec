@@ -1,0 +1,456 @@
+{
+  "CAU-AllocatedTags-C-000-C": {
+    "Function": "Composite",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "The AllocatedTags column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-010-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-013-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-073-C",
+        "CAU-AllocatedTags-C-001-M",
+        "CAU-AllocatedTags-C-002-M",
+        "CAU-AllocatedTags-C-005-C",
+        "CAU-AllocatedTags-C-010-M",
+        "CAU-AllocatedTags-C-013-C"
+      ]
+    }
+  },
+  "CAU-AllocatedTags-C-001-M": {
+    "Function": "Format",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedTags MUST conform to KeyValueFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatKeyValue",
+        "ColumnName": "AllocatedTags"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-002-M": {
+    "Function": "Composite",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedTags nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-004-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedTags-C-003-C",
+        "CAU-AllocatedTags-C-004-O"
+      ]
+    }
+  },
+  "CAU-AllocatedTags-C-003-C": {
+    "Function": "Nullability",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-004-O": {
+    "Function": "Nullability",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedTags MAY be null in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "AllocatedTags",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-005-C": {
+    "Function": "Composite",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When AllocatedTags is not null, AllocatedTags adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-006-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-008-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-009-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "AllocatedTags",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-AllocatedTags-C-006-M",
+        "CAU-AllocatedTags-C-007-M",
+        "CAU-AllocatedTags-C-008-M",
+        "CAU-AllocatedTags-C-009-C"
+      ]
+    }
+  },
+  "CAU-AllocatedTags-C-006-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedTags MUST NOT include resource tags already present in Tags.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-007-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedTags MUST include all applicable user-defined and data generator-defined tags for the AllocatedResourceId.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-008-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Tag keys that do not support corresponding values MUST have a corresponding true (boolean) value set.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-009-C": {
+    "Function": "Validation",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-010-M": {
+    "Function": "Composite",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generator-defined tags adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-011-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-012-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedTags-C-011-M",
+        "CAU-AllocatedTags-C-012-O"
+      ]
+    }
+  },
+  "CAU-AllocatedTags-C-011-M": {
+    "Function": "Validation",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 120,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generator-defined tag keys MUST be prefixed with a predetermined, data generator-specified tag key prefix that is unique to each corresponding provider-specified tag scheme.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-012-O": {
+    "Function": "Validation",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generator SHOULD publish all data generator-specified tag key prefixes within their respective documentation.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedTags-C-013-C": {
+    "Function": "Composite",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 140,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "User-defined tags adhere to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedTags-C-014-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedTags-C-014-C"
+      ]
+    }
+  },
+  "CAU-AllocatedTags-C-014-C": {
+    "Function": "Validation",
+    "Reference": "AllocatedTags",
+    "EntityType": "Column",
+    "EntityId": "AllocatedTags",
+    "EntityName": "Allocated Tags",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 150,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost And Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "Data generator MUST prefix all user-defined tags scheme with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined tag scheme when the data generator has more than one user-defined tag scheme.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
