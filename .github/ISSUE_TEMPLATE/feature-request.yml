@@ -1,106 +1,273 @@
-name: "FOCUS Feature Request"
-description: Propose a new attribute, refinement, or data structure for the FOCUS Specification.
-title: "[FR] <Short description>"
-type: "Feature"
+name: "Feature Request"
+description: "Propose a new feature or enhancement to the FOCUS specification"
+title: "[FR]: "
 labels: ["feature", "needs triage"]
 assignees: ["matt-cowsert"]
 body:
   - type: markdown
     attributes:
       value: |
-        _Use this template to propose changes to the FOCUS Spec. Do not include personal information (PII)._
+        **For Requesters:** Complete only the "Requester Information" section below (estimated time: 10-15 minutes). The "Maintainer Assessment" section will be completed by FOCUS Maintainers during triage.
 
-        ⚠️ **If your suggestion is a minor correction or formatting fix, use the General Feedback template instead.**
+        Brief, clear responses are fine. Maintainers will follow up if more detail is needed.
+
+        **Required fields:** Problem Statement, Success Criteria, Type of Request, Organizations Requesting This Feature
+
+        **Optional but helpful:** Use Case / User Story, Data Generator Support, Supporting Documentation, Proposed Solution / Approach, Additional Context
+
+        ---
+
+        ## Requester Information
 
   - type: textarea
-    id: problem
+    id: problem-statement
     attributes:
       label: Problem Statement
-      description: Describe the issue or opportunity. Include real-world quotes if available.
+      description: "Describe the problem, issue, or opportunity this feature addresses. What is FOCUS unable to do today that creates this problem? Include practitioner quotes or real-world examples if available."
+      placeholder: "Write your problem statement here."
     validations:
       required: true
 
   - type: textarea
-    id: use_case
+    id: use-case
     attributes:
-      label: Use Case (Optional)
-      description: "Provide 1–2 sentences describing usage. Example: As a FinOps practitioner, I want to [...], so that [...]."
+      label: Use Case / User Story
+      description: |
+        Provide a clear, specific use case that defines what is being provided to the practitioner or persona.
+
+        Format: **As a** [specific role] **I need to** [specific capability in FOCUS data] **So that** [measurable outcome or decision I can make]
+
+        Example: As a FinOps practitioner, I need to group costs by resource groupings within my Sub Account, so that I can align cost reporting with my organization's structure without post-processing.
+      placeholder: "As a [role], I need to [capability], so that [outcome]."
+    validations:
+      required: false
 
   - type: textarea
-    id: outcome
+    id: success-criteria
     attributes:
-      label: Desired Outcome / Practitioner Impact
-      description: Describe expected result, KPIs, and impact on FinOps users.
+      label: Success Criteria
+      description: |
+        What needs to be true when we deliver this capability for it to be meaningful? Describe 2-4 specific criteria. Focus on what you need to be able to DO with the data, not implementation details.
+
+        Example (describe what you can DO, not structural changes like "add column X"):
+        - I can perform cost allocation using this data without additional processing
+        - The data is consistently available across all data generators that support this concept
+        - Missing or unavailable data is handled in a clear, standardized way
+      placeholder: |
+        - Criterion 1
+        - Criterion 2
+        - Criterion 3
     validations:
       required: true
 
   - type: dropdown
-    id: request_type
+    id: type-of-request
     attributes:
       label: Type of Request
-      description: Select the best fit for the novelty of this request.
+      description: "Select the option that best describes this request. Maintainers may reclassify during triage."
       options:
-        - Refinement of an existing FOCUS attribute
-        - Addition of a provider-supported field not yet in FOCUS
-        - Net-new concept (not currently supported by providers or FOCUS)
-        - Supporting Content (e.g., appendices, use cases)
+        - "Standardization - Data already exists across data generators but is not yet normalized in FOCUS"
+        - "Enhancement - Refinement or extension of an existing FOCUS column, metric, or capability"
+        - "Net New - A concept not yet represented in FOCUS or widely available from data generators"
+        - "Enablement/Supporting Content - Non-normative items like appendix explanations, examples, or supporting documentation"
+        - "Tech Debt - Addressing technical debt or maintenance items"
     validations:
       required: true
 
   - type: textarea
-    id: org_support
+    id: organizations
     attributes:
-      label: Organizations Requesting or Supporting This Feature
-      description: List one or more organizations who have requested or explicitly supported this request (including your own, if applicable).
+      label: Organizations Requesting This Feature
+      description: |
+        List one or more organizations who have requested or explicitly supported this request. For each organization, indicate whether this feature blocks their adoption of FOCUS or is a nice-to-have enhancement.
 
-  - type: checkboxes
-    id: finops_scope
-    attributes:
-      label: FinOps Scope Alignment (Optional)
-      options:
-        - label: Public Cloud – e.g., AWS, Azure, GCP, OCI
-        - label: Software-as-a-Service (SaaS) – e.g., Salesforce, Snowflake
-        - label: Data Center – on-prem compute and infrastructure
-        - label: Licensing – subscription or usage-based licensing *(under development)*
-        - label: AI – cost and usage for AI models and platforms *(under development)*
-        - label: Custom – internal tooling, specialized infra *(under development)*
+        Format: **[Organization Name]** - [Adoption Blocker / Nice to Have] - [Brief explanation]
 
-  - type: checkboxes
-    id: impacted_parties
-    attributes:
-      label: Impacted Parties
-      description: Which roles or systems are affected?
-      options:
-        - label: FinOps Practitioner – end users who analyze or act on the data
-        - label: FOCUS Data Generator – providers generating aligned output
-        - label: Vendor Supporting FOCUS – tools or platforms using the spec
-        - label: Other (please explain in comments)
-
-  - type: input
-    id: ambiguity
-    attributes:
-      label: Level of Ambiguity (1–5)
-      description: 1 = well defined, 3 = moderately scoped, 5 = highly complex
-      placeholder: e.g., 2
+        Example:
+        - **Acme Corp** - Adoption Blocker - Cannot implement FOCUS without multi-cloud tagging support
+        - **BigCloud Inc** - Nice to Have - Would streamline our reporting process
+      placeholder: "- Organization Name - Adoption Blocker / Nice to Have - Brief explanation"
     validations:
       required: true
 
-  - type: textarea
-    id: docs
+  - type: dropdown
+    id: data-generator-support
     attributes:
-      label: Supporting Documentation
-      description: Include links to data, GitHub issues, or spec references. Ensure access is open.
+      label: Data Generator Support (Optional)
+      description: "Do data generators already support this concept in their native billing data? It's OK to select 'Unknown.' Maintainers will validate during triage."
+      options:
+        - "Yes - Widely available across data generators"
+        - "Partially - Some data generators support this, others don't"
+        - "No - Would require new data collection/exposure"
+        - "Unknown - Not sure about data generator support"
+    validations:
+      required: false
 
   - type: textarea
-    id: solution
+    id: data-generator-docs
     attributes:
-      label: Proposed Solution / Approach
-      description: Initial ideas, feasibility notes, or references.
+      label: Data Generator Documentation Links (Optional)
+      description: "If data generators partially or fully support this concept, provide links to their documentation."
+      placeholder: "Links to data generator documentation."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting-docs
+    attributes:
+      label: Supporting Documentation (Optional)
+      description: "Include links to data samples, relevant PRs, GitHub discussions, or implementation references. Please ensure any linked documents are accessible to maintainers and collaborators. If access is restricted, your request may be delayed."
+      placeholder: "Paste links here."
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution / Approach (Optional)
+      description: "Share initial ideas, constraints, and feasibility considerations if you have them. Solutions are welcome but not required. Maintainers may explore alternative approaches during discovery."
+      placeholder: "Your proposal goes here."
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context (Optional)
+      description: "Add any other context that might be helpful, including current workarounds, urgency/timeline, and related requests."
+      placeholder: |
+        Current Workaround: What do you do today without this feature?
+        Urgency/Timeline: Is there a specific timeframe when your organization needs this?
+        Related Requests: Links to similar or related feature requests or scopes of work.
+    validations:
+      required: false
 
   - type: markdown
     attributes:
       value: |
-        ### 💬 Community Support (Add Your Voice)
+        ---
+
+        > **STOP:** The sections below are for FOCUS Maintainers only. Requesters do not need to fill these out. **Scroll to the bottom and click "Create" to submit your request.**
+
+        ---
+
+        ## Maintainer Assessment
+        *This section will be completed by FOCUS Maintainers during triage.*
+
+  - type: checkboxes
+    id: adoption-impact
+    attributes:
+      label: Adoption Impact
+      description: "Which category best describes this feature's impact on FOCUS adoption?"
+      options:
+        - label: "**Adoption Blocker** - Organizations cannot adopt FOCUS without this feature"
+        - label: "**Adoption Accelerator** - This feature would help organizations start using FOCUS"
+        - label: "**Practitioner Enhancement** - Improves experience for existing FOCUS users"
+        - label: "**Technical Improvement** - Internal specification refinement"
+    validations:
+      required: false
+
+  - type: textarea
+    id: adoption-justification
+    attributes:
+      label: Adoption Impact Justification
+      description: "Explain the reasoning behind the adoption impact classification."
+      placeholder: "FOCUS Maintainers complete during triage."
+    validations:
+      required: false
+
+  - type: textarea
+    id: supported-features
+    attributes:
+      label: Supported Features Alignment
+      description: "Which FOCUS Supported Features (https://focus.finops.org/#supported-features) does this request enable or enhance? Describe how this request advances FinOps capabilities or defines new supported features."
+      placeholder: "FOCUS Maintainers describe how this request advances FinOps capabilities or defines new supported features."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ### Implementation Scope
+        *Note: This section should not block the creation of the feature request. If the scope isn't clear yet, it can be filled in during the discovery/development phase.*
+
+        **Phasing/Sequencing:** What is the minimum we can deliver (MVP) vs. the long-term state?
+
+  - type: textarea
+    id: mvp-definition
+    attributes:
+      label: MVP Definition
+      description: "Define the minimum implementation that provides value."
+      placeholder: "FOCUS Maintainers define minimum implementation that provides value."
+    validations:
+      required: false
+
+  - type: textarea
+    id: north-star
+    attributes:
+      label: North Star Vision
+      description: "Describe the ideal complete solution."
+      placeholder: "FOCUS Maintainers describe ideal complete solution."
+    validations:
+      required: false
+
+  - type: textarea
+    id: phasing-strategy
+    attributes:
+      label: Phasing Strategy
+      description: "Determine if/how this should be implemented in phases."
+      placeholder: "FOCUS Maintainers determine if/how this should be implemented in phases."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: impacted-parties
+    attributes:
+      label: "Impacted Parties"
+      description: "Which roles or systems are affected?"
+      options:
+        - label: "FinOps Practitioner - end users who analyze or act on the data"
+        - label: "FOCUS Data Generator - data generators producing output aligned to the spec"
+        - label: "Vendor Supporting FOCUS - vendors or tools ingesting the spec or using the spec language in their UI"
+        - label: "Other (please specify in comments)"
+    validations:
+      required: false
+
+  - type: textarea
+    id: ambiguity
+    attributes:
+      label: Level of Ambiguity (1-5)
+      description: |
+        Rate from 1 to 5. This is for maintainers to assess, not for requesters to estimate.
+        - 1 = very well-defined, low complexity
+        - 3 = moderately scoped, some ambiguity
+        - 5 = vague, high complexity or conceptual
+      placeholder: "Rating and reasoning."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: finops-scope
+    attributes:
+      label: FinOps Scope Alignment
+      description: "Does this request align with one or more of the following FinOps Scopes (https://www.finops.org/framework/scopes/)?"
+      options:
+        - label: "Public Cloud - e.g., AWS, Azure, GCP, OCI"
+        - label: "Software-as-a-Service (SaaS) - e.g., Salesforce, Snowflake"
+        - label: "Data Center - on-prem compute and infrastructure"
+        - label: "Licensing - subscription or usage-based licensing models *(under development)*"
+        - label: "AI - cost and usage for AI models and platforms *(under development)*"
+        - label: "Custom - internal tooling, specialized infra *(under development)*"
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Community Support
         If your organization supports this request or has a similar use case:
-        - Comment below with your **organization** and a **brief explanation** of its relevance or urgency.
-        - FOCUS Staff & Maintainers will aggregate support.
+
+        - Add a **comment** below including:
+          - Your **organization**
+          - A **brief explanation** of why this is important to you (e.g., use case, urgency)
+        - FOCUS Staff & Maintainers will aggregate supporting orgs over time.
