@@ -29,10 +29,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-005-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "DiscountHandling-A-008-C"
           },
           {
@@ -45,7 +41,6 @@
       "Dependencies": [
         "DiscountHandling-A-001-C",
         "DiscountHandling-A-002-C",
-        "DiscountHandling-A-005-C",
         "DiscountHandling-A-008-C",
         "DiscountHandling-A-020-C"
       ]
@@ -100,13 +95,18 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "DiscountHandling-A-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DiscountHandling-A-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "DiscountHandling-A-003-C",
-        "DiscountHandling-A-004-C"
+        "DiscountHandling-A-004-C",
+        "DiscountHandling-A-005-C"
       ]
     }
   },

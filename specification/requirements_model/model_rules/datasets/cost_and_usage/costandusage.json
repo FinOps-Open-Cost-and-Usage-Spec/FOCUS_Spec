@@ -574,7 +574,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-PricingCategory-C-000-M"
+            "ModelRuleId": "CAU-PricingCategory-C-000-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -719,7 +719,7 @@
         "CAU-InvoiceIssuerName-C-000-M",
         "CAU-ListCost-C-000-M",
         "CAU-ListUnitPrice-C-000-C",
-        "CAU-PricingCategory-C-000-M",
+        "CAU-PricingCategory-C-000-C",
         "CAU-PricingCurrency-C-000-C",
         "CAU-PricingCurrencyContractedUnitPrice-C-000-C",
         "CAU-PricingCurrencyEffectiveCost-C-000-C",

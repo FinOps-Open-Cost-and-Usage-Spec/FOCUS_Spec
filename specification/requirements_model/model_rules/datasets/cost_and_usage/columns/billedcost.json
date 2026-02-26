@@ -182,24 +182,13 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "BilledCost MUST be 0 for charges where payments are received by a third party (e.g., marketplace transactions).",
       "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "BilledCost",
-        "Value": 0
-      },
-      "Condition": {
-        "CheckFunction": "CheckNotSameValue",
-        "ColumnAName": "ServiceProviderName",
-        "ColumnBName": "InvoiceIssuerName"
-      },
-      "Dependencies": [
-        "CAU-InvoiceIssuerName-C-000-M",
-        "CAU-ServiceProviderName-C-000-M"
-      ]
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
     }
   },
   "CAU-BilledCost-C-006-M": {

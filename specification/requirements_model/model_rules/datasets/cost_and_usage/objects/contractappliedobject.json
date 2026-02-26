@@ -942,7 +942,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ContractAppliedObject-O-033-C"
+            "ModelRuleId": "CAU-ContractAppliedObject-O-032-C"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -955,7 +955,7 @@
         "CAU-ContractAppliedObject-O-029-C",
         "CAU-ContractAppliedObject-O-030-M",
         "CAU-ContractAppliedObject-O-031-M",
-        "CAU-ContractAppliedObject-O-033-C",
+        "CAU-ContractAppliedObject-O-032-C",
         "CAU-ContractAppliedObject-O-035-C"
       ]
     }
@@ -1919,7 +1919,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ContractAppliedObject-O-065-C"
+            "ModelRuleId": "CAU-ContractAppliedObject-O-064-C"
           }
         ]
       },
@@ -1929,7 +1929,7 @@
         "CAU-ContractAppliedObject-O-061-M",
         "CAU-ContractAppliedObject-O-062-M",
         "CAU-ContractAppliedObject-O-063-O",
-        "CAU-ContractAppliedObject-O-065-C"
+        "CAU-ContractAppliedObject-O-064-C"
       ]
     }
   },

@@ -130,11 +130,16 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ConsumedQuantity-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedQuantity-C-009-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
+        "CAU-ConsumedQuantity-C-009-C",
         "CAU-ConsumedQuantity-C-004-C",
         "CAU-ConsumedQuantity-C-005-C"
       ]
@@ -329,6 +334,37 @@
       "Condition": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "ConsumedQuantity",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-ConsumedQuantity-C-009-C": {
+    "Function": "Nullability",
+    "Reference": "ConsumedQuantity",
+    "EntityType": "Column",
+    "EntityName": "Consumed Quantity",
+    "EntityId": "ConsumedQuantity",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 45,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedQuantity MUST be null when SkuPriceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ConsumedQuantity",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuPriceId",
         "Value": null
       },
       "Dependencies": []

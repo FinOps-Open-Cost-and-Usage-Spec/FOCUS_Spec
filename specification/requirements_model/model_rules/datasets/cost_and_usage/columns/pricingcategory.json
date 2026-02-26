@@ -1,5 +1,5 @@
 {
-  "CAU-PricingCategory-C-000-M": {
+  "CAU-PricingCategory-C-000-C": {
     "Function": "Composite",
     "Reference": "PricingCategory",
     "EntityType": "Column",
@@ -8,7 +8,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "MULTIPLE_PRICING_CATEGORIES_SUPPORTED"
+    ],
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",

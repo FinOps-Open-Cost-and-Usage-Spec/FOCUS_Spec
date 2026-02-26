@@ -64,14 +64,6 @@
       ],
       "FormatAttributes": []
     },
-    "CheckNotSameValue": {
-      "Description": "Check if column does not have the same value as another column",
-      "Arguments": [
-        "ColumnAName",
-        "ColumnBName"
-      ],
-      "FormatAttributes": []
-    },
     "CheckSameValue": {
       "Description": "Check if column does have the same value as another column",
       "Arguments": [
@@ -108,7 +100,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyFormat-A-000-C"
+        "CurrencyFormat-A-000-M"
       ]
     },
     "TypeDecimal": {
@@ -167,7 +159,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyFormat-A-000-C"
+        "CurrencyFormat-A-000-M"
       ]
     },
     "ColumnByColumnEqualsColumnValue": {

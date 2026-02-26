@@ -326,11 +326,11 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ContractedUnitPrice-C-009-C"
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-009-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ContractedUnitPrice-C-010-C"
+            "ModelRuleId": "CAU-ContractedUnitPrice-C-010-M"
           }
         ]
       },
@@ -340,12 +340,12 @@
         "Value": null
       },
       "Dependencies": [
-        "CAU-ContractedUnitPrice-C-009-C",
-        "CAU-ContractedUnitPrice-C-010-C"
+        "CAU-ContractedUnitPrice-C-009-M",
+        "CAU-ContractedUnitPrice-C-010-M"
       ]
     }
   },
-  "CAU-ContractedUnitPrice-C-009-C": {
+  "CAU-ContractedUnitPrice-C-009-M": {
     "Function": "Validation",
     "Reference": "ContractedUnitPrice",
     "EntityType": "Column",
@@ -368,15 +368,11 @@
         "ColumnName": "ContractedUnitPrice",
         "Value": 0
       },
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "ContractedUnitPrice",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": []
     }
   },
-  "CAU-ContractedUnitPrice-C-010-C": {
+  "CAU-ContractedUnitPrice-C-010-M": {
     "Function": "Validation",
     "Reference": "ContractedUnitPrice",
     "EntityType": "Column",
@@ -395,11 +391,7 @@
       "MustSatisfy": "ContractedUnitPrice MUST be denominated in the BillingCurrency.",
       "Keyword": "MUST",
       "Requirement": {},
-      "Condition": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "ContractedUnitPrice",
-        "Value": null
-      },
+      "Condition": {},
       "Dependencies": [
         "CAU-BillingCurrency-C-000-M"
       ]

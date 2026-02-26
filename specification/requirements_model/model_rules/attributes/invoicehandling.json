@@ -97,7 +97,7 @@
     "Type": "Dynamic",
     "Order": 30,
     "ValidationCriteria": {
-      "MustSatisfy": "Informational line items that have zero monetary impact and are included solely for transparency MAY be excluded. Examples include:\n  * Tax exemption notifications\n  * SLA credit details when the credit is already applied to the charged amount.",
+      "MustSatisfy": "Informational line items that have zero monetary impact and are included solely for transparency MAY be excluded. Examples include: Tax exemption notifications, SLA credit details when the credit is already applied to the charged amount.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},

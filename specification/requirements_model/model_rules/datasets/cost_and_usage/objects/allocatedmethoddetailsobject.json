@@ -38,15 +38,19 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-005-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-008-O"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-006-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-009-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-007-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-010-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-011-M"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -68,9 +72,10 @@
         "CAU-AllocatedMethodDetailsObject-O-002-M",
         "CAU-AllocatedMethodDetailsObject-O-003-M",
         "CAU-AllocatedMethodDetailsObject-O-004-M",
-        "CAU-AllocatedMethodDetailsObject-O-005-M",
-        "CAU-AllocatedMethodDetailsObject-O-006-M",
-        "CAU-AllocatedMethodDetailsObject-O-007-M",
+        "CAU-AllocatedMethodDetailsObject-O-008-O",
+        "CAU-AllocatedMethodDetailsObject-O-009-C",
+        "CAU-AllocatedMethodDetailsObject-O-010-O",
+        "CAU-AllocatedMethodDetailsObject-O-011-M",
         "CAU-AllocatedMethodDetailsObject-O-015-M",
         "CAU-AllocatedMethodDetailsObject-O-019-O"
       ]
@@ -182,23 +187,23 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-012-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-005-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-013-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-006-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-014-M"
+            "ModelRuleId": "CAU-AllocatedMethodDetailsObject-O-007-M"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
-        "CAU-AllocatedMethodDetailsObject-O-012-M",
-        "CAU-AllocatedMethodDetailsObject-O-013-M",
-        "CAU-AllocatedMethodDetailsObject-O-014-M"
+        "CAU-AllocatedMethodDetailsObject-O-005-M",
+        "CAU-AllocatedMethodDetailsObject-O-006-M",
+        "CAU-AllocatedMethodDetailsObject-O-007-M"
       ]
     }
   },

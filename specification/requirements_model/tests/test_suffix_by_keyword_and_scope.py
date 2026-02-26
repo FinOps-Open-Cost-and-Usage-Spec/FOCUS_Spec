@@ -18,7 +18,7 @@ def _text_has_keywords(text, keywords=None) -> bool:
     if not isinstance(text, str):
         return False
     if keywords is None:
-        keywords = ["when", "unless"]
+        keywords = ["when", "unless", "where"]
     s = text.lower()
     return any(kw in s for kw in keywords)
 
