@@ -19,7 +19,7 @@ Organization-wide coverage **except** for Database services running in BillingAc
 ```json
 {
   "IsGlobalScope": true,
-  "ExclusionOperator": "AND",
+  "ExclusionOperator": "And",
   "Exclusions": [
     {
       "Dimension": "BillingAccountId",
@@ -41,7 +41,7 @@ A commitment purchased for a specific region (e.g., `us-east-1`). Since `IsGloba
 
 ```json
 {
-  "InclusionOperator": "OR",
+  "InclusionOperator": "Or",
   "Inclusions": [
     {
       "Dimension": "RegionId",
@@ -58,7 +58,7 @@ A commitment that is only applicable to a specific value (Pay-As-You-Go) for a c
 
 ```json
 {
-  "InclusionOperator": "OR",
+  "InclusionOperator": "And",
   "Inclusions": [
     {
       "Dimension": "RegionId",
@@ -76,11 +76,11 @@ A commitment that is only applicable to a specific value (Pay-As-You-Go) for a c
 
 ## Regional Compute Commitment with Exceptions
 
-Applies to Compute in `us-east-1` and `us-west-2`, excluding any resources or services tagged with an `Environment` of `Sandbox`.
+Applies to Compute services in either `us-east-1` or `us-west-2`, excluding any resources tagged with an `Environment` of `Sandbox`.
 
 ```json
 {
-  "InclusionOperator": "AND",
+  "InclusionOperator": "And",
   "Inclusions": [
     {
       "Dimension": "RegionId",
@@ -93,7 +93,7 @@ Applies to Compute in `us-east-1` and `us-west-2`, excluding any resources or se
       "Values": ["Compute"]
     }
   ],
-  "ExclusionOperator": "OR",
+  "ExclusionOperator": "Or",
   "Exclusions": [
     {
       "Dimension": "Tags",
@@ -110,7 +110,7 @@ A commitment that applies fully to `us-east-1` but only 50% of cost and usage in
 
 ```json
 {
-  "InclusionOperator": "OR",
+  "InclusionOperator": "Or",
   "Inclusions": [
     {
       "Dimension": "RegionId",
@@ -136,7 +136,7 @@ A scenario where 100% of Marketplace **Usage** counts toward a volume commitment
 
 ```json
 {
-  "InclusionOperator": "OR",
+  "InclusionOperator": "Or",
   "Inclusions": [
     {
       "Dimension": "InvoiceIssuerName",

@@ -5,7 +5,7 @@
   "description": "Schema for validating the Contract Commitment Applicability column JSON object structure in FOCUS datasets",
   "type": "object",
   "$defs": {
-    "applicabilityObject": {
+    "ApplicabilityObject": {
       "type": "object",
       "properties": {
         "Cost": {
@@ -25,7 +25,7 @@
       },
       "additionalProperties": false
     },
-    "applicabilityRule": {
+    "ApplicabilityRule": {
       "type": "object",
       "required": [
         "Dimension",
@@ -61,7 +61,7 @@
           "minItems": 1
         },
         "Applicability": {
-          "$ref": "#/$defs/applicabilityObject",
+          "$ref": "#/$defs/ApplicabilityObject",
           "description": "Optional rule-level applicability that overrides top-level"
         }
       },
@@ -132,38 +132,38 @@
       "default": false
     },
     "Applicability": {
-      "$ref": "#/$defs/applicabilityObject",
+      "$ref": "#/$defs/ApplicabilityObject",
       "description": "Top-level fractional mapping for metrics"
     },
     "InclusionOperator": {
       "type": "string",
       "description": "Logical operator for Inclusions array",
       "enum": [
-        "AND",
-        "OR"
+        "And",
+        "Or"
       ]
     },
     "Inclusions": {
       "type": "array",
       "description": "List of rules defining the applicability boundary",
       "items": {
-        "$ref": "#/$defs/applicabilityRule"
+        "$ref": "#/$defs/ApplicabilityRule"
       }
     },
     "ExclusionOperator": {
       "type": "string",
       "description": "Logical operator for Exclusions array",
       "enum": [
-        "AND",
-        "OR"
+        "And",
+        "Or"
       ],
-      "default": "OR"
+      "default": "Or"
     },
     "Exclusions": {
       "type": "array",
       "description": "List of rules defining entities to exclude",
       "items": {
-        "$ref": "#/$defs/applicabilityRule"
+        "$ref": "#/$defs/ApplicabilityRule"
       },
       "minItems": 1
     }

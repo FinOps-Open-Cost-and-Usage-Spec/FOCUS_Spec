@@ -47,9 +47,9 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `IsGlobalScope` | Boolean | No | If `true`, the commitment applies to all entities. Defaults to `false`. |
 | `IsComplexScope` | Boolean | No | If `true`, indicates logic exceeds schema capabilities. Defaults to `false`. |
 | `Applicability` | Object | No | The fractional mapping for metrics. If omitted, both `Cost` and `Usage` keys default to `1.0`. |
-| `InclusionOperator` | String | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `AND`, `OR`. Must be omitted if Global or Complex scope is true. |
+| `InclusionOperator` | String | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `And`, `Or`. Must be omitted if Global or Complex scope is true. |
 | `Inclusions` | Array | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. List of `Rule` objects defining the boundary. Must be omitted if Global or Complex scope is true. |
-| `ExclusionOperator` | String | No | Defines the relationship for `Exclusions`. Valid values: `AND`, `OR`. Defaults to `OR`. |
+| `ExclusionOperator` | String | No | Defines the relationship for `Exclusions`. Valid values: `And`, `Or`. Defaults to `Or`. |
 | `Exclusions` | Array | No | List of `Rule` objects defining entities to be removed from the boundary. |
 
 ### Rule Object
@@ -92,8 +92,8 @@ ContractCommitmentApplicability uses a reserved string to represent global or un
 
 ### Wildcard Behavior Rules
 
-1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every resource, effectively making the commitment "Organization-wide" for that specific Dimension.
-2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every resource, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "AND"` for surgical filtering).
+1. **Inclusion Logic:** When `["*"]` is used in an Inclusion rule, the rule evaluates to `True` for every entity, effectively making the commitment "Organization-wide" for that specific Dimension.
+2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every entity, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
 ## Object Example
@@ -106,7 +106,7 @@ Here is a basic example of the object format, describing organization-wide cover
 ```json
 {
   "IsGlobalScope": true,
-  "ExclusionOperator": "AND",
+  "ExclusionOperator": "And",
   "Exclusions": [
     {
       "Dimension": "BillingAccountId",
@@ -126,15 +126,15 @@ Here is a basic example of the object format, describing organization-wide cover
 
 ### Processing Workflow
 
-The evaluation of a resource against a commitment applicability MUST follow a strict linear progression:
+The evaluation of an entity against a commitment applicability MUST follow a strict linear progression:
 
-1. **Normalization:** Convert the resource attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
+1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
 2. **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
 3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, terminate evaluation.
 4. **Applicability Resolution:**
    * **Inheritance:** A matching rule's `Applicability` object takes precedence over the top-level object.
    * **Defaulting:** If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine MUST default that specific value to `1.0`.
-   * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `OR`, the engine MUST use the highest percentage for each respective metric.
+   * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine MUST use the highest percentage for each respective metric.
    * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
 
 ### Integration with Commitment Logic
