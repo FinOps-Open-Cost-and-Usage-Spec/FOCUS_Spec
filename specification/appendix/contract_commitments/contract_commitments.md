@@ -145,7 +145,7 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 | :--- | :--- | :--- | :--- |
 | **Billing Currency** | `USD` | `USD` | `USD` |
 | **CC Benefit Category** | `Discount` | `Availability` | `Discount` |
-| **CC Category** | `Usage` | `Quantity` | `Usage` |
+| **CC Category** | `Usage` | `Usage` | `Usage` |
 | **CC Cost** | `250000.00` | `120000.00` | `15000.00` |
 | **CC Created** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
 | **CC Description** | `H100 GPU Reservation - Q1` | `CyberGuard Endpoint Seats` | `Inter-Cloud Egress Tier` |
