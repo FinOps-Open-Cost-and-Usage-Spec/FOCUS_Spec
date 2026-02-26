@@ -23,7 +23,7 @@ The following table defines the high-level expectations for key categorical colu
 | **Benefit Category** | The primary economic advantage provided. | `Discount`, `Monetary Pool`, `Availability`, `Other` |
 | **Model** | How the commitment is consumed. | `Continuous`, `Discontinuous` |
 | **Fulfillment Interval** | The "Use-it-or-lose-it" or "Goal" window for reset. | `Hourly`, `Monthly`, `Annual`, `Total Term` |
-| **Status** | The current lifecycle state of the record. | `Active`, `Pending`, `Expired`, `Canceled` |
+| **Lifecycle Status** | The current lifecycle state of the record. | `Active`, `Pending`, `Expired`, `Canceled` |
 | **Offer Category** | The "privacy" or source level of the pricing. | `Public`, `Negotiated` |
 | **Payment Model** | The cash-flow timing for the commitment. | `No Upfront`, `Partial Upfront`, `All Upfront` |
 
@@ -106,7 +106,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 | **CC Period End** | `2028-12-01` | `2026-12-01` | `2027-01-15` |
 | **CC Period Start** | `2025-12-01` | `2025-12-01` | `2026-01-15` |
 | **CC Quantity** | `1000000.00` | `10.00` | `120000.00` |
-| **CC Status** | `Active` | `Active` | `Pending` |
+| **CC Lifecycle Status** | `Active` | `Active` | `Pending` |
 | **CC Type** | `Enterprise Agreement` | `Reserved Instance` | `SaaS Subscription` |
 | **CC Unit** | `USD` | `Instance-Hours` | `Credits` |
 | **Contract ID** | `AGR-99-BETA` | `AGR-99-BETA` | `AGR-99-BETA` |
@@ -163,7 +163,7 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 | **CC Period End** | `2026-05-01` | `2027-02-01` | `2027-02-01` |
 | **CC Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
 | **CC Quantity** | `5000.00` | `500.00` | `100.00` |
-| **CC Status** | `Active` | `Active` | `Active` |
+| **CC Lifecycle Status** | `Active` | `Active` | `Active` |
 | **CC Type** | `Capacity Reservation` | `SaaS Subscription` | `Usage Tier` |
 | **CC Unit** | `GPU-Hours` | `Seats` | `Terabytes` |
 | **Contract ID** | `AGR-44-GAMMA` | `AGR-44-GAMMA` | `AGR-44-GAMMA` |
@@ -188,7 +188,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 
 * **Context:** An annual volume commitment of 1PB (1,000TB) for Content Delivery Network services.
 * **Commercial Logic:** This is a **Discontinuous** model with an **Annual Fulfillment Interval**.
-* **Overage Status:** Because the customer has already consumed their allotted volume before the `CC Period End`, the **CC Status** has shifted to `Overage`. This signals that the pool is empty and subsequent usage will be handled according to the contract's true-up or on-demand terms.
+* **Overage Status:** Because the customer has already consumed their allotted volume before the `CC Period End`, the **CC Lifecycle Status** has shifted to `Overage`. This signals that the pool is empty and subsequent usage will be handled according to the contract's true-up or on-demand terms.
 
 ### Data Example: AGR-11-DELTA
 
@@ -214,7 +214,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **CC Period End** | `2027-02-01` | `2027-02-01` | `2027-02-01` |
 | **CC Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
 | **CC Quantity** | `100.00` | `0.00` | `1000.00` |
-| **CC Status** | `Active` | `Active` | `Overage` |
+| **CC Lifecycle Status** | `Active` | `Active` | `Overage` |
 | **CC Type** | `Usage Tier` | `Usage Tier` | `Volume Commitment` |
 | **CC Unit** | `Terabytes` | `Terabytes` | `Terabytes` |
 | **Contract ID** | `AGR-11-DELTA` | `AGR-11-DELTA` | `AGR-11-DELTA` |
