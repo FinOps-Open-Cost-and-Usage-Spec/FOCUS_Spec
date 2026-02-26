@@ -4,11 +4,11 @@ This section provides machine-readable JSON Schema definitions for validating th
 
 ## Contract Commitment
 
-### Contract Commitment Eligibility Object Schema
+### Contract Commitment Applicability Object Schema
 
-The Contract Commitment Eligibility Object Schema defines the structure for the [Contract Commitment Eligibility](#datasets.costandusage.contractcommitmenteligibility) column.
+The Contract Commitment Applicability Object Schema defines the structure for the [Contract Commitment Applicability](#datasets.costandusage.contractcommitmentapplicability) column.
 
-!INCLUDECODE "schemas/datasets/cost_and_usage/allocatedmethoddetailsobject.json" (json)
+!INCLUDECODE "schemas/datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json" (json)
 
 ## Cost And Usage
 
@@ -16,7 +16,7 @@ The Contract Commitment Eligibility Object Schema defines the structure for the 
 
 The Allocated Method Details Object Schema defines the structure for the [Allocated Method Details](#datasets.costandusage.allocatedmethoddetails) column.
 
-!INCLUDECODE "schemas/datasets/cost_and_usage/allocatedmethoddetailsobject.json" (json)
+!INCLUDECODE "schemas/datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json" (json)
 
 ### Contract Applied Object Schema
 
