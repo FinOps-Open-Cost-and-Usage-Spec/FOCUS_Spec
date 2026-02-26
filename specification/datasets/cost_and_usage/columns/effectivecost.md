@@ -23,9 +23,6 @@ EffectiveCost adheres to the following requirements:
 * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover related eligible *charges*.
 * The sum of the EffectiveCost of eligible *charges* covered by a purchase *charge* (ChargeCategory is "Purchase") MUST equal the sum of the BilledCost of the purchase and covered usage *charges* (ChargeCategory is "Usage"), over the *charge period* the purchase applies to, even in cases where the purchase and eligible usage *charges* have different cost origins (e.g., commitment discount, prepayment, marketplace purchase scenarios).
 * The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the BilledCost for the same *billing period* for granularities like [*billing account*](#glossary:billing-account) and ServiceProviderName when the covered *charges* span more than one *billing period*, *billing account*, and in cases where the purchase records and usage records have different cost origins (e.g., commitment discount, prepayment, marketplace purchase scenarios).
-* The sum of EffectiveCost where ChargeCategory is "Usage" for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) MUST equal the sum of BilledCost where ChargeCategory is "Purchase" for the same CommitmentDiscountId.
-* EffectiveCost MUST represent the portion of the amortized *commitment discount* allocated to eligible *resources* or *services* consumed during the *charge period* when CommitmentDiscountStatus is "Used".
-* EffectiveCost MUST represent the portion of the amortized *commitment discount* that was not allocated to any *resources* or *services* during the *charge period* when CommitmentDiscountStatus is "Unused".
 
 ## Column ID
 
