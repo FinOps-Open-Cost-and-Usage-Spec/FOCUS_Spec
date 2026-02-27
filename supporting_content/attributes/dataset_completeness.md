@@ -124,77 +124,43 @@ Custom column values must be handled consistently when rows are split or aggrega
 
 ### Column Handling
 
-The Column Handling attribute defines *how* custom columns should be named and formatted (using the `x_` prefix convention). Dataset Completeness defines *what* custom columns should be included to ensure complete coverage of native dataset columns. These attributes work together to ensure custom columns are both properly formatted and comprehensively included.
+The Column Handling attribute defines *how* custom columns should be named (using the `x_` prefix convention), formatted, and documented. Dataset Completeness defines *what* custom columns should be included to ensure complete coverage of native dataset columns. These attributes work together to ensure custom columns are both properly handled and comprehensively included.
 
 ### Provider Column Mappings (FR #1098)
 
-For comprehensive documentation of how native columns map to FOCUS columns (both standard and custom), see the provider column mappings feature request (#1098). While Dataset Completeness requires documentation of custom columns, #1098 addresses the broader need for complete native-to-FOCUS column mapping documentation across all column types.
+For comprehensive documentation of how native columns map to FOCUS columns (both standard and custom), see the provider column mappings feature request (#1098). While Column Handling requires documentation of custom columns, #1098 addresses the broader need for complete native-to-FOCUS column mapping documentation across all column types.
 
 ## Design Decisions
 
-### Scope Clarification: Aggregation and Granularity (PR #1800)
-
-During review, concerns were raised about whether this attribute introduces aggregation or time granularity requirements that overlap with FR #1091 (column selection) and FR #1093 (data granularity).
-
-**Clarification:** This attribute does NOT:
-
-* Require column selection to trigger row aggregation
-* Mandate specific time granularities (hourly, daily, monthly)
-* Introduce new aggregation mechanisms
-
-The requirements in this attribute address different concerns:
-
-* **Data fidelity requirement:** Custom columns should preserve the fidelity of their native equivalents. This means "don't degrade the data you already have" - not "you must provide data at specific granularities."
-
-* **Row split/aggregation handling:** When *other* FOCUS requirements (such as Discount Handling) cause rows to be split or aggregated, custom column values must be handled consistently. This addresses data integrity during transformations required by existing FOCUS attributes, not new aggregation requirements.
-
-These clarifications were incorporated into the normative text to avoid confusion with FR #1091 and FR #1093, which address column selection and data granularity respectively.
-
-### Scenario-Based vs Column-Based Framing (PR #1800)
-
-During review, feedback suggested the requirement be more concrete and enforceable. Two framing approaches were considered:
-
-#### Option A: Scenario-based (original approach)
-
-* Requirement: Include custom columns to achieve the same analysis and reporting *scenarios*
-* Pros: Flexible, accommodates provider differences, focuses on practitioner outcomes
-* Cons: Scenarios are subjective and harder to validate objectively
-
-#### Option B: Column-based (adopted approach)
-
-* Requirement: Include custom columns for all native dataset *columns* not represented in FOCUS
-* Pros: More concrete, easier to validate against native dataset documentation
-* Cons: May require columns that don't support meaningful scenarios ("junk drawer" concern)
-
-#### Decision
-
-The attribute was initially drafted with scenario-based framing but switched to column-based framing during PR review because:
-
-1. Scenario-based requirements are difficult to validate objectively - "same analysis and reporting scenarios" is subjective
-2. Column-based framing is concrete and enforceable - native dataset documentation provides a clear reference point
-3. The MAY requirement allowing exclusion of columns that don't support analysis or reporting scenarios addresses the "junk drawer" concern, preserving the practical benefits of scenario-based thinking within a column-based framework
-4. Provider column mappings (FR #1098) will provide additional concrete column-level documentation
-
-### Terminology: "Native Dataset" (PR #1800)
-
-During review, the need for a formal term to describe provider-specific, non-FOCUS cost and usage datasets was identified. Several alternatives were considered:
-
-* **Native dataset** - Implies the dataset that is "native to" the provider's platform
-  * Pros: Intuitive, directive, implies the provider's primary dataset
-  * Cons: "Native" has varied connotations in tech contexts
-* **Non-FOCUS dataset** - Defines by exclusion (anything not conforming to FOCUS)
-  * Pros: Neutral, precise
-  * Cons: Too broad - includes any arbitrary dataset, not just the provider's primary billing export
-* **Proprietary dataset** - Emphasizes the closed/vendor-specific nature
-  * Pros: Accurate for provider datasets
-  * Cons: Carries negative connotation ("proprietary = bad"), could be seen as adversarial
-* **Source dataset** / **Provider dataset** - Describes origin
-  * Pros: Simple, descriptive
-  * Cons: "Source" implies FOCUS is derived; "Provider" excludes FinOps tool vendors
-
-#### Outcome
-
-"Native dataset" was chosen because it most precisely conveys the intended meaning: the provider's own cost and usage dataset in their own format. Unlike "non-FOCUS," which could refer to any arbitrary dataset, "native" implies the dataset that belongs to and originates from the provider's platform. A glossary entry was added to formalize the definition.
+* **Separate attribute from Column Handling**
+  * Concern: Why not add these requirements to Column Handling?
+  * Decision: Column Handling applies requirements to columns already in the dataset (naming, ordering). Dataset Completeness defines which additional columns the dataset should include. These are different scopes — column-level formatting vs dataset-level coverage.
+* **Scenario-based vs column-based framing**
+  * Concern: Should the MUST requirement reference analysis/reporting *scenarios* or native dataset *columns*?
+  * Options: Scenario-based (flexible but subjective) vs column-based (concrete, enforceable against native dataset documentation)
+  * Decision: Column-based. The MAY exclusion for columns that don't support scenarios preserves scenario thinking within a verifiable framework.
+* **No aggregation or granularity requirements**
+  * Concern: Does this overlap with FR #1091 (column selection) or FR #1093 (data granularity)?
+  * Decision: No. Fidelity means "don't degrade data you already have." Row split/aggregation handling only applies when *other* FOCUS requirements (e.g., Discount Handling) cause splits.
+* **"Native dataset" terminology**
+  * Concern: Need a formal term for provider-specific, non-FOCUS datasets.
+  * Options: Native dataset, non-FOCUS dataset, proprietary dataset, source/provider dataset
+  * Decision: "Native dataset" — intuitive, not overly broad (unlike "non-FOCUS") or adversarial (unlike "proprietary"). Glossary entry added.
+* **"Materially" qualifier on MUST include requirement**
+  * Concern: Providers could be forced to include 60+ native columns (Mike, pydi-aws)
+  * Decision: Added "materially support analysis or reporting" to scope the requirement.
+* **Integrity requirement made verifiable**
+  * Concern: "Preserve the integrity of all columns" too vague to test (Shawn)
+  * Decision: Changed to "MUST NOT alter the aggregated values of summable metrics."
+* **Default column set moved to Dataset Configuration**
+  * Concern: Column selection belongs with Dataset Configuration, not here (Shawn, Matt)
+  * Decision: Moved MAY requirement to Dataset Configuration.
+* **SHOULD NOT duplicate vs MAY preserve**
+  * Concern: Appear contradictory (Shawn)
+  * Decision: Complementary — SHOULD NOT prevents new duplication; MAY preserve allows temporary overlap during migration when FOCUS adds equivalent columns.
+* **Custom column documentation requirement moved to Column Handling**
+  * Concern: Documentation is a column-level requirement — it applies to all custom columns regardless of why they were added (Shawn)
+  * Decision: Moved to Column Handling. Documentation applies to every custom column (whether added for Dataset Completeness, Invoice Handling, or Discount Handling), making it a column-level rule alongside naming and ordering, not a dataset coverage policy.
 
 ## Future Considerations
 

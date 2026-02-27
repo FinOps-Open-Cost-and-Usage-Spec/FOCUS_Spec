@@ -11,9 +11,9 @@ A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that c
 
 While FOCUS establishes the core structure and standardizes columns for consistent reporting of cost and usage data, the diverse and evolving landscape of service providers and service offerings may require [*data generators*](#metadata.datagenerator) to include custom columns in a *FOCUS dataset*. These additional columns enable deeper analysis and provide more detailed descriptions of usage that may not be fully captured by standard FOCUS columns. See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what custom columns to include.
 
-Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming and ordering conventions for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
+Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming, ordering, and documentation conventions for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
-All columns defined in the FOCUS specification MUST follow the naming and ordering requirements listed below.
+All columns defined in the FOCUS specification MUST follow the requirements listed below.
 
 ## Attribute ID
 
@@ -25,7 +25,7 @@ Column Handling
 
 ## Description
 
-Naming and ordering convention for columns appearing in a *FOCUS dataset*.
+Naming, ordering, and documentation conventions for columns appearing in a *FOCUS dataset*.
 
 ## Requirements
 
@@ -43,6 +43,7 @@ Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 * <a name="column_handling:custom-column"></a>Custom (e.g., service-provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
   * Custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
   * Custom columns SHOULD follow the same rules listed above for FOCUS columns.
+  * Custom columns MUST be documented, including description, purpose, and relationship to [*native dataset*](#glossary:native-dataset) columns.
 
 ### Column Order
 

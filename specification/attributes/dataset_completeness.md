@@ -18,13 +18,12 @@ Defines requirements for a *FOCUS dataset* to include custom columns for *native
 
 ## Requirements
 
-* *FOCUS dataset* MUST include [*custom columns*](#column_handling:custom-column) corresponding to *native dataset* columns that materially support analysis or reporting scenarios and do not duplicate information already captured in FOCUS columns.
-* *FOCUS dataset* MUST preserve the integrity of all columns (particularly summable [*metrics*](#glossary:metric) such as costs and quantities) when records are split or aggregated or when custom columns are added.
+* *FOCUS dataset* MUST include [*custom columns*](#glossary:custom-column) corresponding to *native dataset* columns that materially support analysis or reporting scenarios and do not duplicate information already captured in FOCUS columns.
+* *FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) when records are split or aggregated or when custom columns are added.
 * *FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers).
 * *FOCUS dataset* SHOULD NOT include custom columns that duplicate information already captured in FOCUS columns.
 * *FOCUS dataset* MAY omit *native dataset* columns that do not support any analysis or reporting scenarios.
 * *FOCUS dataset* MAY preserve custom columns even after one or more equivalent FOCUS columns are introduced, to enable migration without breaking changes.
-* Custom columns MUST be documented, including description, purpose, and relationship to native columns.
 * Custom columns SHOULD accurately represent the corresponding values from the *native dataset*.
 
 ## Example
