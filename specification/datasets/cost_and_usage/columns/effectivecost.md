@@ -16,7 +16,7 @@ EffectiveCost adheres to the following requirements:
 * EffectiveCost MUST be a valid decimal value.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * EffectiveCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
-* EffectiveCost MUST equal BilledCost when ChargeCategory is "Usage" and the *charge* is not covered by other eligible *charges*.
+* EffectiveCost MUST equal BilledCost when [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage" and the *charge* is not covered by other eligible *charges*.
 * EffectiveCost MUST equal BilledCost when ChargeCategory is "Purchase" and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.
 * EffectiveCost MUST equal BilledCost when ChargeCategory is "Tax" or "Credit".
 * EffectiveCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
