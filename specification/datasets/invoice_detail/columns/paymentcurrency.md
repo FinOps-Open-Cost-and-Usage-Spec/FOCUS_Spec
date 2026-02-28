@@ -4,7 +4,7 @@ A Payment Currency represents the currency in which the invoice issuer requires 
 
 ## Requirements
 
-PaymentCurrency adheres to the following requirements:
+PaymentCurrency MUST adhere to the following requirements:
 
 * PaymentCurrency MUST be of type String.
 * PaymentCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.

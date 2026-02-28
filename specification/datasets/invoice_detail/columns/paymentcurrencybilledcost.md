@@ -4,7 +4,7 @@ A Payment Currency Billed Cost represents the [Billed Cost](#datasets.invoicedet
 
 ## Requirements
 
-PaymentCurrencyBilledCost adheres to the following requirements:
+PaymentCurrencyBilledCost MUST adhere to the following requirements:
 
 * PaymentCurrencyBilledCost MUST be of type Decimal.
 * PaymentCurrencyBilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.

@@ -4,7 +4,7 @@ An Invoice ID is an invoice-issuer-assigned identifier for an invoice encapsulat
 
 ## Requirements
 
-InvoiceId adheres to the following requirements:
+InvoiceId MUST adhere to the following requirements:
 
 * InvoiceId MUST be of type String.
 * InvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.

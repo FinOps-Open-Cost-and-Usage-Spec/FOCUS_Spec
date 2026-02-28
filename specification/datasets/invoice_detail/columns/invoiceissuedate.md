@@ -4,7 +4,7 @@ An Invoice Issue Date is the date the invoice was issued by the invoice issuer. 
 
 ## Requirements
 
-InvoiceIssueDate adheres to the following requirements:
+InvoiceIssueDate MUST adhere to the following requirements:
 
 * InvoiceIssueDate MUST be of type Date/Time.
 * InvoiceIssueDate MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

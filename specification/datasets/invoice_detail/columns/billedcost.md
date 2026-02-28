@@ -8,7 +8,7 @@ Billed Cost is denominated in the [Billing Currency](#datasets.invoicedetail.bil
 
 ## Requirements
 
-BilledCost adheres to the following requirements:
+BilledCost MUST adhere to the following requirements:
 
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
@@ -17,10 +17,10 @@ BilledCost adheres to the following requirements:
 * BilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).
 * BilledCost MUST be denominated in the BillingCurrency.
 * The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the payable amount provided in the corresponding entries on the issued invoice when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Issued".
-* When comparing BilledCost and [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername), BilledCost adheres to the following requirements:
+* When comparing BilledCost and [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername), BilledCost MUST adhere to the following requirements:
   * The sum of BilledCost for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when [ChargeCategory](#datasets.invoicedetail.chargecategory) = "Tax" or [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Open".
   * Otherwise, the sum of BilledCost for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
-* When comparing BilledCost and [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername), BilledCost adheres to the following requirements:
+* When comparing BilledCost and [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername), BilledCost MUST adhere to the following requirements:
   * The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid), [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid), and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Open".
   * Otherwise, the sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid), [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid), and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
 

@@ -4,7 +4,7 @@ A Payment Currency Invoice Detail ID is a reference to the [Invoice Detail ID](#
 
 ## Requirements
 
-PaymentCurrencyInvoiceDetailId adheres to the following requirements:
+PaymentCurrencyInvoiceDetailId MUST adhere to the following requirements:
 
 * PaymentCurrencyInvoiceDetailId MUST be of type String.
 * PaymentCurrencyInvoiceDetailId MUST conform to [StringHandling](#attributes.stringhandling) requirements.

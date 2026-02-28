@@ -4,7 +4,7 @@ A Payment Terms represents the [*terms*](#glossary:term) (typically focused on t
 
 ## Requirements
 
-PaymentTerms adheres to the following requirements:
+PaymentTerms MUST adhere to the following requirements:
 
 * PaymentTerms MUST be of type String.
 * PaymentTerms MUST conform to [StringHandling](#attributes.stringhandling) requirements.

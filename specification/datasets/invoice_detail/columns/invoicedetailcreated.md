@@ -4,7 +4,7 @@ Invoice Detail Created is the timestamp when the [Invoice Detail](#datasets.invo
 
 ## Requirements
 
-InvoiceDetailCreated adheres to the following requirements:
+InvoiceDetailCreated MUST adhere to the following requirements:
 
 * InvoiceDetailCreated MUST be of type Date/Time.
 * InvoiceDetailCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

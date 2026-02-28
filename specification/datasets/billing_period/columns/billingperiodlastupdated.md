@@ -4,7 +4,7 @@ A Billing Period Last Updated is the timestamp when the [Billing Period](#datase
 
 ## Requirements
 
-BillingPeriodLastUpdated adheres to the following requirements:
+BillingPeriodLastUpdated MUST adhere to the following requirements:
 
 * BillingPeriodLastUpdated MUST be of type Date/Time.
 * BillingPeriodLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

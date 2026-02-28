@@ -4,7 +4,7 @@ An Invoice Detail Description is the invoice-issuer-provided description of an i
 
 ## Requirements
 
-InvoiceDetailDescription adheres to the following requirements:
+InvoiceDetailDescription MUST adhere to the following requirements:
 
 * InvoiceDetailDescription MUST be of type String.
 * InvoiceDetailDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.

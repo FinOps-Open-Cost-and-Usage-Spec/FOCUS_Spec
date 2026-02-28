@@ -4,7 +4,7 @@ Billing Period Created is the timestamp when the [Billing Period](#datasets.bill
 
 ## Requirements
 
-BillingPeriodCreated adheres to the following requirements:
+BillingPeriodCreated MUST adhere to the following requirements:
 
 * BillingPeriodCreated MUST be of type Date/Time.
 * BillingPeriodCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

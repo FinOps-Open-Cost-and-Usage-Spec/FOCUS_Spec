@@ -4,7 +4,7 @@ Invoice Detail Last Updated is the timestamp when the [Invoice Detail](#datasets
 
 ## Requirements
 
-InvoiceDetailLastUpdated adheres to the following requirements:
+InvoiceDetailLastUpdated MUST adhere to the following requirements:
 
 * InvoiceDetailLastUpdated MUST be of type Date/Time.
 * InvoiceDetailLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

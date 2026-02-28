@@ -4,7 +4,7 @@ A Reference Invoice ID is an invoice-issuer-assigned identifier for an invoice t
 
 ## Requirements
 
-ReferenceInvoiceId adheres to the following requirements:
+ReferenceInvoiceId MUST adhere to the following requirements:
 
 * ReferenceInvoiceId MUST be of type String.
 * ReferenceInvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.

@@ -6,7 +6,7 @@ This gives FinOps practitioners a single point of reference for all possible [In
 
 ## Requirements
 
-InvoiceDetailGrain adheres to the following requirements:
+InvoiceDetailGrain MUST adhere to the following requirements:
 
 * InvoiceDetailGrain MUST be of type JSON.
 * InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
@@ -16,7 +16,7 @@ InvoiceDetailGrain adheres to the following requirements:
 * InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.
 * InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
 * InvoiceDetailGrain property keys MUST begin with the string "x_" unless it is a FOCUS-defined property.
-* FOCUS-defined InvoiceDetailGrain properties adhere to the following additional requirements:
+* FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:
   * Property key MUST match the spelling and casing specified for the FOCUS-defined property.
   * Property value MUST be of the type specified for that property.
 

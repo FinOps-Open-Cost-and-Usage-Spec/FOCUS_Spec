@@ -4,7 +4,7 @@ A Billing Period Status represents the state of the billing period (i.e., open o
 
 ## Requirements
 
-BillingPeriodStatus adheres to the following requirements:
+BillingPeriodStatus MUST adhere to the following requirements:
 
 * BillingPeriodStatus MUST be of type String.
 * BillingPeriodStatus MUST NOT be null.
