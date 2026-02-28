@@ -19,10 +19,32 @@ BilledCost MUST adhere to the following requirements:
 * The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the payable amount provided in the corresponding entries on the issued invoice when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Issued".
 * When comparing BilledCost and [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername), BilledCost MUST adhere to the following requirements:
   * The sum of BilledCost for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when [ChargeCategory](#datasets.invoicedetail.chargecategory) = "Tax" or [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Open".
-  * Otherwise, the sum of BilledCost for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
+  * Otherwise, the absolute difference between the sum of BilledCost for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) and the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST NOT exceed the count of [CostAndUsage](#datasets.costandusage) rows multiplied by 0.5 times the smallest subunit of the [BillingCurrency](#datasets.invoicedetail.billingcurrency) (e.g., 0.01 for USD).
 * When comparing BilledCost and [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername), BilledCost MUST adhere to the following requirements:
   * The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid), [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid), and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Open".
-  * Otherwise, the sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid), [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid), and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
+  * Otherwise, the absolute difference between the sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) and the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid), [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid), and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST NOT exceed the count of [CostAndUsage](#datasets.costandusage) rows multiplied by 0.5 times the smallest subunit of the [BillingCurrency](#datasets.invoicedetail.billingcurrency) (e.g., 0.01 for USD).
+
+## Implementation Guidance
+
+### Handling Rounding Discrepancies
+
+When validating InvoiceDetail.BilledCost against [CostAndUsage.BilledCost](#datasets.costandusage.billedcost), exact matches are not expected due to precision differences (e.g., 6 decimals in CostAndUsage vs. 2 decimals in InvoiceDetail). The requirement allows for a maximum rounding error based on the number of CostAndUsage rows and the [BillingCurrency](#datasets.invoicedetail.billingcurrency) precision.
+
+### Tolerance Formula
+
+Tolerance = ([CostAndUsage](#datsets.costandusage) rows) x 0.5 x (Smallest Subunit of [BillingCurrency](#datasets.invoicedetail.billingcurrency))
+
+### Examples
+
+* Scenario 1: High Volume (Pass)
+  * Data: 1,000 CostAndUsage rows sum to &dollar;150.492. InvoiceDetail sums to &dollar;152.00. Difference is &dollar;1.508.
+  * Limit: 1,000 * 0.5 * &dollar;0.01 = &dollar;5.00.
+  * Result: Pass (Difference $1.508 < Limit &dollar;5.00).
+
+* Scenario 2: Missing Data (Fail)
+  * Data: 50 CostAndUsage rows sum to &dollar;5,400.00. InvoiceDetail sums to &dollar;5,350.00. Difference is &dollar;50.00.
+  * Limit: 50 * 0.5 * &dollar;0.01 = &dollar;0.25.
+  * Result: Fail (Difference &dollar;50.00 > Limit &dollar;0.25).
 
 ## Column ID
 
