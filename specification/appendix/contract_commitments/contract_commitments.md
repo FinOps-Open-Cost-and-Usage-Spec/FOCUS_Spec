@@ -23,7 +23,7 @@ The following table defines the high-level expectations for key categorical colu
 | **Benefit Category** | The primary economic advantage provided. | `Discount`, `Monetary Pool`, `Availability`, `Other` |
 | **Model** | How the commitment is consumed. | `Continuous`, `Discontinuous` |
 | **Fulfillment Interval** | The "Use-it-or-lose-it" or "Goal" window for reset. | `Hourly`, `Monthly`, `Annual`, `Total Term` |
-| **Lifecycle Status** | The current lifecycle state of the record. | `Active`, `Pending`, `Expired`, `Canceled` |
+| **Lifecycle Status** | The current lifecycle state of the record. | `Active`, `Exhausted`, `Pending`, `Expired`, `Canceled` |
 | **Offer Category** | The "privacy" or source level of the pricing. | `Public`, `Negotiated` |
 | **Payment Model** | The cash-flow timing for the commitment. | `No Upfront`, `Partial Upfront`, `All Upfront` |
 
@@ -188,7 +188,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 
 * **Context:** An annual volume commitment of 1PB (1,000TB) for Content Delivery Network services.
 * **Commercial Logic:** This is a **Discontinuous** model with an **Annual Fulfillment Interval**.
-* **Overage Status:** Because the customer has already consumed their allotted volume before the `CC Period End`, the **CC Lifecycle Status** has shifted to `Overage`. This signals that the pool is empty and subsequent usage will be handled according to the contract's true-up or on-demand terms.
+* **Overage Status:** Because the customer has already consumed their allotted volume before the `CC Period End`, the **CC Lifecycle Status** has shifted to `Exhausted`. This signals that the pool is empty and subsequent usage will be handled according to the contract's true-up or on-demand terms.
 
 ### Data Example: AGR-11-DELTA
 
@@ -214,7 +214,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **CC Period End** | `2027-02-01` | `2027-02-01` | `2027-02-01` |
 | **CC Period Start** | `2026-02-01` | `2026-02-01` | `2026-02-01` |
 | **CC Quantity** | `100.00` | `0.00` | `1000.00` |
-| **CC Lifecycle Status** | `Active` | `Active` | `Overage` |
+| **CC Lifecycle Status** | `Active` | `Active` | `Exhausted` |
 | **CC Type** | `Usage Tier` | `Usage Tier` | `Volume Commitment` |
 | **CC Unit** | `Terabytes` | `Terabytes` | `Terabytes` |
 | **Contract ID** | `AGR-11-DELTA` | `AGR-11-DELTA` | `AGR-11-DELTA` |
