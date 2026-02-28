@@ -20,7 +20,7 @@ EffectiveCost adheres to the following requirements:
 * EffectiveCost MUST equal BilledCost when ChargeCategory is "Purchase" and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.
 * EffectiveCost MUST equal BilledCost when ChargeCategory is "Tax" or "Credit".
 * EffectiveCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
-* EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover related eligible *charges*.
+* EffectiveCost MUST be 0 when ChargeCategory is "Purchase," and the purchase is intended to cover related eligible *charges*.
 * The sum of the EffectiveCost of eligible *charges* covered by a purchase *charge* (ChargeCategory is "Purchase") MUST equal the sum of the BilledCost of the purchase and covered usage *charges* (ChargeCategory is "Usage"), over the *charge period* the purchase applies to, even in cases where the purchase and eligible usage *charges* have different cost origins (e.g., commitment discount, prepayment, marketplace purchase scenarios).
 * The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the BilledCost for the same *billing period* for granularities like [*billing account*](#glossary:billing-account) and ServiceProviderName when the covered *charges* span more than one *billing period*, *billing account*, and in cases where the purchase records and usage records have different cost origins (e.g., commitment discount, prepayment, marketplace purchase scenarios).
 
