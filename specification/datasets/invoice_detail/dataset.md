@@ -44,7 +44,7 @@ For more information, see the [Invoice Reconciliation](#supportedfeatures.invoic
 
 ## Requirements
 
-InvoiceDetail adheres to the following requirements:
+InvoiceDetail MUST adhere to the following requirements:
 
 * InvoiceDetail MUST be present if the invoice issuer supports payable invoices.
 * The presence of columns in InvoiceDetail MUST adhere to the following requirements:
