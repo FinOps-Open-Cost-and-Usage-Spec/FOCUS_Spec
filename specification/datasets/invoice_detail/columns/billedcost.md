@@ -38,12 +38,12 @@ Tolerance = ([CostAndUsage](#datsets.costandusage) rows) x 0.5 x (Smallest Subun
 
 * Scenario 1: High Volume (Pass)
   * Data: 1,000 CostAndUsage rows sum to &dollar;150.492. InvoiceDetail sums to &dollar;152.00. Difference is &dollar;1.508.
-  * Limit: 1,000 * 0.5 * &dollar;0.01 = &dollar;5.00.
+  * Limit: 1,000 x 0.5 x &dollar;0.01 = &dollar;5.00.
   * Result: Pass (Difference $1.508 < Limit &dollar;5.00).
 
 * Scenario 2: Missing Data (Fail)
   * Data: 50 CostAndUsage rows sum to &dollar;5,400.00. InvoiceDetail sums to &dollar;5,350.00. Difference is &dollar;50.00.
-  * Limit: 50 * 0.5 * &dollar;0.01 = &dollar;0.25.
+  * Limit: 50 x 0.5 x &dollar;0.01 = &dollar;0.25.
   * Result: Fail (Difference &dollar;50.00 > Limit &dollar;0.25).
 
 ## Column ID
