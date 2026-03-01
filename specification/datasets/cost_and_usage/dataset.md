@@ -72,6 +72,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Sub Account ID](#datasets.costandusage.subaccountid)                                               | Dimension          | Conditional   | True         | String    |
 | [Sub Account Name](#datasets.costandusage.subaccountname)                                           | Dimension          | Conditional   | True         | String    |
 | [Sub Account Type](#datasets.costandusage.subaccounttype)                                           | Dimension          | Conditional   | True         | String    |
+| [TagDetails](#datasets.costandusage.tagdetails)                                                     | Dimension          | Recommended   | True         | JSON      |
 | [Tags](#datasets.costandusage.tags)                                                                 | Dimension          | Conditional   | True         | JSON      |
 
 ## Relationships<!--SkipTOC-->
