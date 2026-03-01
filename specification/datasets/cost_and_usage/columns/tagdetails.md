@@ -79,7 +79,7 @@ The "TagSourceId" property adheres to the following requirements:
 
 ## Overview
 
-### Object Scheme
+### Object Schema
 
 The object contains an object for each tag scheme present in the Tags column.
 
