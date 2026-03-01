@@ -2,7 +2,7 @@
 
 The Invoice Detail dataset is a transactional dataset that represents the financial record of [*charges*](#glossary:charges) as they appear on invoices provided by an invoice issuer. This dataset enables FinOps practitioners to perform financial reconciliation, tax reporting, and payment processing tasks. While the [Cost and Usage](#datasets.costandusage) dataset provides granular visibility into consumption, the Invoice Detail dataset ensures alignment with the physical or electronic billing documents.
 
-## Columns
+## Columns<!--SkipTOC-->
 
 | Column                                                                           | Column Type | Feature Level | Allows Nulls | Data Type |
 | :------------------------------------------------------------------------------- | :---------- | :------------ | :----------- | :-------- |
@@ -29,7 +29,7 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 | [Purchase Order Number](#datasets.invoicedetail.purchaseordernumber)             | Dimension   | Conditional   | False        | String    |
 | [Reference Invoice ID](#datasets.invoicedetail.referenceinvoiceid)               | Dimension   | Mandatory     | False        | String    |
 
-## Relationships
+## Relationships<!--SkipTOC-->
 
 The Invoice Detail dataset can be joined to the [Cost and Usage](#datasets.costandusage) dataset through the use of either Invoice ID or Invoice Detail ID. Take note: one or both datasets will need to be aggregated in order to facilitate any comparison.
 
@@ -42,7 +42,7 @@ For more information, see the [Invoice Reconciliation](#supportedfeatures.invoic
 | Invoice Detail | Invoice ID         | Cost and Usage | Invoice ID         |
 | Invoice Detail | Invoice Detail ID  | Cost and Usage | Invoice Detail ID  |
 
-## Requirements
+## Requirements<!--SkipTOC-->
 
 InvoiceDetail MUST adhere to the following requirements:
 
@@ -80,18 +80,18 @@ InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's invoice reconciliation process.
   * InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.
 
-## Dataset ID
+## Dataset ID<!--SkipTOC-->
 
 InvoiceDetail
 
-## Display Name
+## Display Name<!--SkipTOC-->
 
 Invoice Detail
 
-## Description
+## Description<!--SkipTOC-->
 
 The financial record of *charges* as they appear on invoices provided by an invoice issuer.
 
-## Introduced (version)
+## Introduced (version)<!--SkipTOC-->
 
 1.4
