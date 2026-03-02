@@ -10,7 +10,7 @@ To ensure interoperability across different data generators, the dataset relies 
 
 1. **Commitment Categorization:** Distinguishes between obligations based on **Spend** (e.g., "I will spend 1M") vs. **Usage** (e.g., "I will use 500 vCPUs"). This determines which metrics —- Cost or Quantity —- are used to measure fulfillment.
 2. **Fulfillment Modeling:** Defines the operational behavior and consumption flexibility of a commitment.
-   * **Continuous** models (like Reserved Instances) are typically "use-it-or-lose-it" within short windows (e.g., Hourly).
+   * **Continuous** models (like Reserved Instances) are "use-it-or-lose-it", typically within short windows (e.g., Hourly).
    * **Discontinuous** models (like Enterprise Agreements) allow consumption to be aggregated over a longer duration (e.g., Total Term).
 3. **Eligibility Boundaries:** Using a structured JSON format, the dataset defines the logical perimeter of a commitment, specifying exactly which accounts, regions, or services are eligible to receive the negotiated benefit.
 
