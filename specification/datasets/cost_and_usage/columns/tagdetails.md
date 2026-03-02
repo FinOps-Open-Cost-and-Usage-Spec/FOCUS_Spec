@@ -1,6 +1,6 @@
 # Tag Details
 
-The Tag Details column is a superset of [Tags](#tags) which includes additional properties describing tag eligibility and tag provenance from all [*tag sources*](#glossary:tag-source). Tag Details can be used to determine whether a [*charge*](#glossary:charge) was eligible to be tagged, improving the accuracy of tag coverage calculations. Tag Details can also be used to determine the origin of the [*finalized tag*](#glossary:finalized-tag) as well as find tag values present on ancestor sources.
+The Tag Details column is a superset of [Tags](#tags) which includes additional properties describing tag eligibility and tag provenance from all [*tag sources*](#glossary:tag-source). Tag Details can be used to determine whether a [*charge*](#glossary:charge) was eligible to be tagged, improving the accuracy of tag coverage calculations. Tag Details can also be used to determine the origin of the [*finalized tag*](#glossary:finalized-tag) as well as find tag values present on ancestor sources which do not appear in the Tags column.
 
 ## Requirements
 
@@ -8,13 +8,14 @@ The Tag Details column is a superset of [Tags](#tags) which includes additional 
 
 The TagDetails column adheres to the following requirements:
 
-* TagDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports setting user or provider-defined tags.
 * TagDetails MUST be of type String.
 * TagDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * TagDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * TagDetails nullability is defined as follows:
-  * TagDetails MUST be null when Tags is null.
-  * TagDetails SHOULD NOT be null when Tags is not null.
+  * TagDetails MUST NOT be null unless all of the following are true:
+    * Tags column is null.
+    * Tags are not present in any other *tag sources*.
+    * No *tag sources* are supported for any user-defined or provider-defined tag scheme.
 
 ### Object Schema Requirements
 
@@ -64,8 +65,8 @@ The "TagValue" property adheres to the following requirements:
 The "TagSource" property adheres to the following requirements:
 
 * TagSource MUST be present in each tag key object in the Tags object.
-* TagSource MUST be present in each tag source object in the AncestorTaggedSources object.
-* TagSourceId MUST contain the type of *tag source* where the tag key is present.
+* TagSource MUST contain the type of *tag source* where the tag key is present.
+* TagSource SHOULD NOT be present in each tag source object in the AncestorTaggedSources object.
 
 <b>TagSourceId</b>
 
@@ -99,9 +100,9 @@ The tag key object and tag source objects contain the following properties:
 
 | Key | ValueType | Required | Description |
 | ----- | ---- | ---------- | ----------- |
-| TagValue | String | TRUE |  The value of the tag key. |
-| TagSource | String | TRUE | The type of *tag source* where the tag key is present. |
+| TagSource | String | Conditional | The type of *tag source* where the tag key is present. |
 | TagSourceId | String | TRUE | The identifier of the *tag source* where the tag key is present. |
+| TagValue | String | TRUE |  The value of the tag key. |
 
 ### Example
 
@@ -199,6 +200,45 @@ The corresponding Tags column would be:
 ```
 
 ## Example Scenarios
+
+### Ancestor tags only
+Details:
+* One Tag Scheme supported (default).
+* Charge is for API usage which has no resource to tag, but does support job tagging in the API request payload.
+  * No tags were applied in the API request payload.
+* One tag was applied at the ancestor level.
+
+```json
+{
+  "Default": {
+    "Tags": {
+      "foo": {
+        "FocusColumn": null,
+        "TagsSourceType": null,
+        "TagsSourceId": null,
+        "TagValue": null,
+        "AncestorTaggedSources": {
+          "Project": {
+            "FocusColumn": subaccountid,
+            "TagsSourceId": "gcp-project-8675309",
+            "TagValue": "bar"
+          }
+        }
+      }
+    },
+    "UntaggedSources": "api-job-label"
+  }
+}
+```
+
+The corresponding Tags column would be null:
+
+```json
+{}
+```
+
+###
+
 
 ## Column ID
 
