@@ -1,6 +1,6 @@
 # Commitment Discount Category
 
-Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend"). The CommitmentDiscountCategory column is only applicable to *commitment discounts*, i.e., [*public commitment discounts (no carry-over)*](#glossary:public-commitment-discount-no-carry-over).
+Commitment Discount Category indicates whether the [*commitment discount*](#glossary:commitment-discount) identified in the CommitmentDiscountId column is based on usage quantity or cost (aka "spend"). The CommitmentDiscountCategory column is only applicable to *commitment discounts* and not [*negotiated discounts*](#glossary:negotiated-discount).
 
 ## Requirements
 
