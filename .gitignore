@@ -10,3 +10,7 @@ model_graph.dot
 model_graph.png
 model-*.json
 specification/requirements_model/build/*
+
+# AI tool local settings
+settings.local.json
+*.local.md

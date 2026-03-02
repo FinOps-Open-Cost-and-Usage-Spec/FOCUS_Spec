@@ -6,7 +6,6 @@ Publisher is the name of the entity that produces the [*resources*](#glossary:re
 
 PublisherName adheres to the following requirements:
 
-* PublisherName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PublisherName MUST be of type String.
 * PublisherName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PublisherName MUST NOT be null.
@@ -27,13 +26,14 @@ The name of the entity that produced the *resources* or *services* that were pur
 
 ## Content Constraints
 
-| Constraint      | Value           |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Mandatory       |
-| Allows nulls    | False           |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 
