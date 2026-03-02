@@ -66,11 +66,16 @@ A customer's agreement to either spend a defined monetary amount or consume a sp
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A legacy term referring to [*public commitment discount (no carry-over)*](#glossary:public-commitment-discount-no-carry-over).
+A [*contract commitment*](#glossary:contract-commitment), typically offered by cloud service providers (e.g., AWS, Azure, GCP), with the following designations:
+
+* Contract Commitment Model: "Continuous
+* Contract Commitment Benefit Category: "Discount"
+* Contract Commitment Offer Category: "Public"
+* Unused benefits cannot be carried over to subsequent Contract Commitment Fulfillment Intervals
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
-A legacy term referring to [*public commitment discount (no carry-over) flexibility*](#glossary:public-commitment-discount-no-carry-over-flexibility)..
+A feature of [*commitment discounts*](#glossary:commitment-discount) that may further transform the predetermined amount of usage purchased or consumed based on additional, service-provider-specific requirements.
 
 <a name="glossary:contract"><b>Contract</b></a>
 
@@ -158,7 +163,10 @@ A government-issued currency (e.g., US dollars, Euros).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
-A contractual agreement where a customer commits to specific spend or usage goals over a specified [*period*](#glossary:period) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
+A [*contract commitment*](#glossary:contract-commitment) with the following designations:
+
+* Contract Commitment Benefit Category: "Discount"
+* Contract Commitment Offer Category: "Negotiated"
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
@@ -187,14 +195,6 @@ An individual who performs FinOps within an organization to maximize the busines
 <a name="glossary:price-list"><b>Price List</b></a>
 
 A comprehensive list of prices offered by a service provider.
-
-<a name="glossary:public-commitment-discount-no-carry-over"><b>Public Commitment Discount (No Carry-Over)</b></a>
-
-A discount program that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period). Purchases in this program, made upfront and/or with recurring monthly payments, are amortized evenly across predefined charge periods (e.g., hourly), and unused amounts do not carry over to subsequent charge periods. This program is publicly available to customers without special contract arrangements.
-
-<a name="glossary:public-commitment-discount-no-carry-over-flexibility"><b>Public Commitment Discount (No Carry-Over) Flexibility</b></a>
-
-A feature of [*public commitment discount (no carry-over)*](#glossary:public-commitment-discount-no-carry-over) that may further transform the predetermined amount of usage purchased or consumed based on additional, service-provider-specific requirements.
 
 <a name="glossary:service provider"><b>Service Provider</b></a>
 
