@@ -1,6 +1,8 @@
-# Commitment Discounts
+# Examples: Commitment Discounts
 
-## Examples: Commitment Discount Scenarios
+This appendix section defines the concept of a [*commitment discount*](#glossary:commitment-discount).  It then lays out a series of real-world examples based on actual FOCUS data generators.
+
+## Overview
 
 A [*commitment discount*](#glossary:commitment-discount) is a billing discount model that offers reduced rates on preselected [*SKUs*](#glossary:sku) in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period). *Commitment discounts* typically consist of purchase and usage records within cost and usage datasets.
 
@@ -8,7 +10,7 @@ Usage-based *commitment discounts* obligate a customer to a predetermined amount
 
 Spend-based commitment discounts obligate a customer to a predetermined amount of spend over a specified [*period*](#glossary:period). In the usage examples below, each [*row*](#glossary:row) measures the monetary amount of the hourly commit consumed by the *commitment discount*, so the CommitmentDiscountUnit chosen is "USD", or the [*billing currency*](#glossary:billing-currency).
 
-## Purchasing
+### Purchasing
 
 While customers are bound to the [*period*](#glossary:period) of a *commitment discount*, service providers offer some or all of the following payment options before and/or during the *period*:
 
@@ -21,15 +23,13 @@ For example, if a customer buys a 1-year, spend-based *commitment discount* with
 1. *One-Time* - &dollar;4,380 (`24 hours * 365 days * &dollar;1.00 * 0.5`)
 2. *Recurring* - &dollar;182.50 (`24 hours * 365 days * &dollar;1.00 / 12 months`)
 
-## Usage
+### Usage
 
 Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization*](#glossary:amortization) of a *commitment discount's* purchase applies evenly to eligible *resources* over each [*charge period*](#glossary:charge-period) of the *period*.
 
 For example, if a customer buys a spend-based *commitment discount* with a &dollar;1.00 hourly commit in January (31 days), only &dollar;1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to &dollar;1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this &dollar;1.00 during this *charge period*, then some or all of this amount will go to waste.
 
-The following sections detail each scenario:
-
-## AWS
+## Commitment Discount Examples: Amazon Web Services (AWS)
 
 | Scenario                            | What You'll Learn                                                                                                                                                                                     |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,7 +43,7 @@ The following sections detail each scenario:
 | [Savings Plan - 50% Utilization](#appendix.commitmentdiscountexamples.awssavingsplan-allupfront-50%utilization)      | Significant underutilization: 12 hours `Used`, 12 hours `Unused`. Half the commitment value is wasted - key pattern for identifying commitment right-sizing opportunities.                            |
 | [Savings Plan - 0% Utilization](#appendix.commitmentdiscountexamples.awssavingsplan-allupfront-0%utilization)       | Worst case: commitment purchased but never applied. All 24 hours show `Unused` status. EffectiveCost accrues entirely as waste.                                                                       |
 
-## Azure
+## Commitment Discount Examples: Microsoft Azure
 
 | Scenario                   | What You'll Learn                                                                                                                                                                              |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -51,7 +51,7 @@ The following sections detail each scenario:
 | [Reservation - No Upfront](#appendix.commitmentdiscountexamples.azurereservation-noupfront-100%utilization)   | Azure no-upfront reservations with monthly recurring payments only. Note the higher effective rate vs all-upfront, reflecting the deferred-payment premium.                                    |
 | [Savings Plan - All Upfront](#appendix.commitmentdiscountexamples.azuresavingsplan-allupfront-100%utilization) | Azure's spend-based Savings Plan (`CommitmentDiscountCategory=Spend`). Uses `Microsoft.BillingBenefits/savingsPlans` resource paths. Compare against Azure Reservations and AWS Savings Plans. |
 
-## GCP
+## Commitment Discount Examples: Google Cloud Platform (GCP)
 
 | Scenario                   | What You'll Learn                                                                                                                                               |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
