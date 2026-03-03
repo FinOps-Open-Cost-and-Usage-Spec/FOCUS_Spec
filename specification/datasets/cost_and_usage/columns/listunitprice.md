@@ -14,7 +14,7 @@ ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.
   * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * ListUnitPrice MAY be null in all other cases.
-* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following additional requirements:
+* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
 * [ListCost](#datasets.costandusage.listcost) MUST equal the product of ListUnitPrice and [PricingQuantity](#datasets.costandusage.pricingquantity) when ListUnitPrice is not null and PricingQuantity is not null.

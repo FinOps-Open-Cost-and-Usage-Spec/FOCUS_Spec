@@ -10,7 +10,7 @@ CapacityReservationStatus MUST adhere to the following requirements:
 * CapacityReservationStatus MUST adhere to the following nullability requirements:
   * CapacityReservationStatus MUST be null when CapacityReservationId is null.
   * CapacityReservationStatus MUST NOT be null when CapacityReservationId is not null and [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage".
-* When CapacityReservationStatus is not null, CapacityReservationStatus MUST adhere to the following additional requirements:
+* When CapacityReservationStatus is not null, CapacityReservationStatus MUST adhere to the following requirements:
   * CapacityReservationStatus MUST be one of the allowed values.
   * CapacityReservationStatus MUST be "Unused" when the *charge* represents the unused portion of a *capacity reservation*.
   * CapacityReservationStatus MUST be "Used" when the *charge* represents the used portion of a *capacity reservation*.

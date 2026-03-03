@@ -17,10 +17,10 @@ EffectiveCost MUST adhere to the following requirements:
 * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover future eligible *charges*.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
-* When ChargeCategory is not "Usage" or "Purchase", EffectiveCost MUST adhere to the following additional requirements:
+* When ChargeCategory is not "Usage" or "Purchase", EffectiveCost MUST adhere to the following requirements:
   * EffectiveCost of a *charge* calculated based on other *charges* (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related *charges*.
   * EffectiveCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#datasets.costandusage.billedcost).
-* *Charges* for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) MUST adhere to the following additional requirements:
+* *Charges* for a given [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) MUST adhere to the following requirements:
   * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".
   * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".
 

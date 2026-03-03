@@ -14,7 +14,7 @@ SkuPriceId MUST adhere to the following requirements:
   * SkuPriceId MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * SkuPriceId MAY be null in all other cases.
-* When SkuPriceId is not null, SkuPriceId MUST adhere to the following additional requirements:
+* When SkuPriceId is not null, SkuPriceId MUST adhere to the following requirements:
   * SkuPriceId MUST have one and only one parent [SkuId](#datasets.costandusage.skuid).
   * SkuPriceId MUST remain consistent over time.
   * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.

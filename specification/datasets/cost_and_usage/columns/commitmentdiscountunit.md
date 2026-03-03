@@ -12,7 +12,7 @@ CommitmentDiscountUnit MUST adhere to the following requirements:
 * CommitmentDiscountUnit MUST adhere to the following nullability requirements:
   * CommitmentDiscountUnit MUST be null when CommitmentDiscountQuantity is null.
   * CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountQuantity is not null.
-* When CommitmentDiscountUnit is not null, CommitmentDiscountUnit MUST adhere to the following additional requirements:
+* When CommitmentDiscountUnit is not null, CommitmentDiscountUnit MUST adhere to the following requirements:
   * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
   * CommitmentDiscountUnit MUST represent the unit used to measure the *commitment discount*.
   * When accounting for [*commitment discount flexibility*](#glossary:commitment-discount-flexibility), the CommitmentDiscountUnit value SHOULD reflect this consideration.

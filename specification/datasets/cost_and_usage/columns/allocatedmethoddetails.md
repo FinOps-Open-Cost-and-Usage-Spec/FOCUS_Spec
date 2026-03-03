@@ -34,7 +34,7 @@ When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMetho
 * AllocatedMethodDetails MUST have a top-level key "Elements" which contains an array.
 * Each item in "Elements" MUST be an object.
   * Objects inside "Elements" MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
-    * FOCUS-defined allocation properties adhere to the following additional requirements:
+    * FOCUS-defined allocation properties MUST adhere to the following requirements:
       * Allocation property key MUST match the spelling and casing specified for the FOCUS-defined property.
       * Allocation property value MUST be of the type specified for that property.
       * Allocation properties MUST adhere to additional normative requirements specific to that property.

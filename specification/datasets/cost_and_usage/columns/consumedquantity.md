@@ -11,7 +11,7 @@ ConsumedQuantity MUST adhere to the following requirements:
 * ConsumedQuantity MUST adhere to the following nullability requirements:
   * ConsumedQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * ConsumedQuantity MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is not "Usage", or when ChargeCategory is "Usage" and [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) is "Unused".
-  * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity MUST adhere to the following additional requirements:
+  * When ChargeCategory is "Usage" and CommitmentDiscountStatus is not "Unused", ConsumedQuantity MUST adhere to the following requirements:
     * ConsumedQuantity MUST NOT be null when [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
     * ConsumedQuantity MAY be null when ChargeClass is "Correction".
 * ConsumedQuantity MUST be a valid decimal value when not null.

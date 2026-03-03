@@ -17,7 +17,7 @@ PricingCurrencyListUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyListUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.
   * PricingCurrencyListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * PricingCurrencyListUnitPrice MAY be null in all other cases.
-* When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice MUST adhere to the following additional requirements:
+* When PricingCurrencyListUnitPrice is not null, PricingCurrencyListUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyListUnitPrice MUST be a non-negative decimal value.
   * PricingCurrencyListUnitPrice MUST be denominated in the PricingCurrency.
 

@@ -12,7 +12,7 @@ PricingUnit MUST adhere to the following requirements:
 * PricingUnit MUST adhere to the following nullability requirements:
   * PricingUnit MUST be null when PricingQuantity is null.
   * PricingUnit MUST NOT be null when PricingQuantity is not null.
-* When PricingUnit is not null, PricingUnit MUST adhere to the following additional requirements:
+* When PricingUnit is not null, PricingUnit MUST adhere to the following requirements:
   * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in service-provider-published [*price list*](#glossary:price-list).
   * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in invoice, when the invoice includes a pricing measurement unit.
 
