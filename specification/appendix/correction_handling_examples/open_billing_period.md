@@ -151,7 +151,6 @@ Although applied after the period had ended, these corrections do not introduce 
 
 ACME Corp (acting as both the data generator and invoice issuer) delivers corrections using Replacement, Delta, and Ledger correction styles, offering varying levels of traceability and auditability.
 
-
 ### Scenario 1: Previous Open-Period Correction - Partial Reallocation to Correct Resource
 
 This scenario is nearly identical to *Scenario 1: Current Open-Period Correction - Partial Reallocation to Correct Resource*. The only difference is that the original misattributed charge occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
