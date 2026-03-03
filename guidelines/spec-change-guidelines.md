@@ -64,7 +64,37 @@ The deprecation notice in the changelog MUST include this classification. If cir
 
 #### Expected Behavior for Removed Capabilities
 
-Data generators are expected to remove capabilities at the same time that the FOCUS specification does. If a data generator chooses to retain a capability (e.g., column) after it has been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). 
+Data generators are expected to remove capabilities at the same time that the FOCUS specification does. If a data generator chooses to retain a capability (e.g., column) after it has been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). See the [Requirements Model Guidelines](guidelines/writing-requirements-model-guidelines.md) for additional information. 
+
+### Entity Removal Process
+
+To ensure complete and error-free removal of deprecated entities from the FOCUS specification, follow this checklist:
+
+1. **Confirm Deprecation Status**: Verify the entity has been deprecated for at least one release cycle and meets retention period requirements.
+
+2. **Identify All Files Related to the Entity**:
+   - Remove definition files from specification paths (for example: `specification/datasets/*/columns/`, or other relevant subfolders)
+   - Remove any applicable supporting content files from `supporting_content/`
+   - Remove the entity from any tables or listings that include it (for example: dataset tables in `specification/datasets/*/dataset.md`)
+  
+3. **Update References**:
+   - Remove any associated normative requirements (for example: “MUST” entries in dataset or requirement documentation)
+   - Search for and update or remove all links to and mentions of the removed entity
+   - Update migration guidance documents to reflect removal
+   - Review and update any examples or tables referencing the removed entity
+
+4. **Update Version Information**:
+   - Update changelog to document the removal
+   - Update version migration guidance to indicate entities have been removed
+
+5. **Validate Removal**:
+   - Ensure no broken links remain in the specification
+   - Verify build processes complete successfully
+   - Check that all references have been addressed
+
+6. **Communicate Changes**:
+   - Update release notes with removal details
+   - Notify stakeholders of the removal
 
 ## Change Type Classification
 
