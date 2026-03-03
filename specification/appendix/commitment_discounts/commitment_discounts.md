@@ -29,7 +29,11 @@ Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization
 
 For example, if a customer buys a spend-based *commitment discount* with a &dollar;1.00 hourly commit in January (31 days), only &dollar;1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to &dollar;1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this &dollar;1.00 during this *charge period*, then some or all of this amount will go to waste.
 
-## Commitment Discount Examples: Amazon Web Services (AWS)
+## Data Generator Scenarios
+
+Below are tables listing some common commitment discount scenarios for a few prominent FOCUS data generators.
+
+### Data Generator Scenarios: Amazon Web Services (AWS)
 
 | Scenario                            | What You'll Learn                                                                                                                                                                                     |
 | ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,7 +47,7 @@ For example, if a customer buys a spend-based *commitment discount* with a &doll
 | [Savings Plan - 50% Utilization](#appendix.commitmentdiscountexamples.awssavingsplan-allupfront-50%utilization)      | Significant underutilization: 12 hours `Used`, 12 hours `Unused`. Half the commitment value is wasted - key pattern for identifying commitment right-sizing opportunities.                            |
 | [Savings Plan - 0% Utilization](#appendix.commitmentdiscountexamples.awssavingsplan-allupfront-0%utilization)       | Worst case: commitment purchased but never applied. All 24 hours show `Unused` status. EffectiveCost accrues entirely as waste.                                                                       |
 
-## Commitment Discount Examples: Microsoft Azure
+### Data Generator Scenarios: Microsoft Azure
 
 | Scenario                   | What You'll Learn                                                                                                                                                                              |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -51,7 +55,7 @@ For example, if a customer buys a spend-based *commitment discount* with a &doll
 | [Reservation - No Upfront](#appendix.commitmentdiscountexamples.azurereservation-noupfront-100%utilization)   | Azure no-upfront reservations with monthly recurring payments only. Note the higher effective rate vs all-upfront, reflecting the deferred-payment premium.                                    |
 | [Savings Plan - All Upfront](#appendix.commitmentdiscountexamples.azuresavingsplan-allupfront-100%utilization) | Azure's spend-based Savings Plan (`CommitmentDiscountCategory=Spend`). Uses `Microsoft.BillingBenefits/savingsPlans` resource paths. Compare against Azure Reservations and AWS Savings Plans. |
 
-## Commitment Discount Examples: Google Cloud Platform (GCP)
+### Data Generator Scenarios: Google Cloud Platform (GCP)
 
 | Scenario                   | What You'll Learn                                                                                                                                               |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
