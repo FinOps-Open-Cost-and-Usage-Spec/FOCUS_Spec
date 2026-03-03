@@ -47,11 +47,10 @@ These three quantity columns serve different purposes and must be understood in 
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For this commitment, the value equals the hourly dollar commitment.
 
-| Column                  | Purpose                  | Commitment-Covered      | Standard    |
-|-------------------------|--------------------------|-------------------------|-------------|
-| **ListUnitPrice**       | List (public) unit price | (list rate)             | (list rate) |
-| **ContractedUnitPrice** | Negotiated unit price    | (contracted unit price) | null        |
-| **ContractedUnitPrice** | Negotiated unit price    | (list rate)             | (list rate) |
+| Column                  | Purpose                  | Commitment-Covered      | Standard      |
+|-------------------------|--------------------------|-------------------------|---------------|
+| **ListUnitPrice**       | List (public) unit price | &dollar;60.45           | &dollar;60.45 |
+| **ContractedUnitPrice** | Negotiated unit price    | &dollar;60.45           | &dollar;60.45 |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
