@@ -49,10 +49,7 @@ These three quantity columns serve different purposes and must be understood in 
 |-------------------------|--------------------------|-------------------------|-------------|
 | **ListUnitPrice**       | List (public) unit price | (list rate)             | (list rate) |
 | **ContractedUnitPrice** | Negotiated unit price    | (contracted unit price) | null        |
-
-**Why this matters:** The difference between ListUnitPrice and ContractedUnitPrice represents your savings from the contract. Standard pricing rows have no ContractedUnitPrice because they aren't covered by a commitment.
-
-| **ContractedUnitPrice** | Negotiated unit price | (list rate)        | (list rate) |
+| **ContractedUnitPrice** | Negotiated unit price    | (list rate)             | (list rate) |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
