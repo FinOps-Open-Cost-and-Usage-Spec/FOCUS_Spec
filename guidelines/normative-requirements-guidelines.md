@@ -5,19 +5,19 @@ This section defines guidelines for authoring normative requirements in the FOCU
 The guidelines cover normative requirements applicable to:
 
 * **FOCUS Datasets** — the primary containers of structured data as defined in FOCUS.
-* **Columns** — individual columns within datasets (may contain nested Elements and ElementProperties, which can have additional normative rules)
-* **Attributes** — schema-level rules that datasets, columns, or element properties must conform to.
+* **Columns** — individual columns within datasets (may contain nested objects and object properties, which can have additional normative rules)
+* **Attributes** — schema-level rules that datasets, columns, or object properties must conform to.
 
 The diagram below illustrates the relationships among these entities and shows where normative requirements apply:
 
 ```mermaid
 erDiagram
 Dataset ||--|{ Column : has
-Column ||--o{ Element : contains
-Element ||--|{ ElementProperty : has
+Column ||--o{ Object : contains
+Object ||--|{ ObjectProperty : has
 Dataset }|..|| Attribute : conforms-to
 Column }|..|| Attribute : conforms-to
-ElementProperty }|..|| Attribute : conforms-to
+ObjectProperty }|..|| Attribute : conforms-to
 
 %% Attribute
 style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
@@ -25,8 +25,8 @@ style Attribute fill:#f8d7da,stroke:#666,stroke-width:1px
 %% Schema-level entities
 style Dataset fill:#d4edda,stroke:#666,stroke-width:1px
 style Column fill:#d4edda,stroke:#666,stroke-width:1px
-style Element fill:#d4edda,stroke:#666,stroke-width:1px
-style ElementProperty fill:#d4edda,stroke:#666,stroke-width:1px
+style Object fill:#d4edda,stroke:#666,stroke-width:1px
+style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 ```
 
 **Nodes:**
