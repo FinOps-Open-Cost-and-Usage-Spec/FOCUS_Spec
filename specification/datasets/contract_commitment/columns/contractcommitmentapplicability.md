@@ -147,7 +147,7 @@ The evaluation of **Applicability** percentages must be contextually aligned wit
 ### Dependency Logic
 
 1. **Consistency:** Engines SHOULD expect a JSON Object and SHOULD NOT support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
-2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array MUST be empty or omitted. Engines should validate this structural constraint before processing.
+2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array MUST be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` MUST NOT both be `true` at the same time. Engines should validate these structural constraints before processing.
 
 ### Object ID
 

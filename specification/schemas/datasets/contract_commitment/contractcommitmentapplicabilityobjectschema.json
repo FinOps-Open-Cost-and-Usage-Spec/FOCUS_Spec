@@ -170,6 +170,23 @@
   },
   "allOf": [
     {
+      "description": "IsGlobalScope and IsComplexScope cannot both be true simultaneously.",
+      "not": {
+        "required": [
+          "IsGlobalScope",
+          "IsComplexScope"
+        ],
+        "properties": {
+          "IsGlobalScope": {
+            "const": true
+          },
+          "IsComplexScope": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
       "description": "If IsGlobalScope is true, Inclusions must be empty or omitted.",
       "if": {
         "properties": {
