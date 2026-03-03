@@ -10,7 +10,7 @@ These scenarios address discrepancies related to charges from the July 2025 bill
 
 ### Billing Period Alignment
 
-Since the billing period is still open and invoices have not yet been issued, corrections can be applied without introducing retroactive semantics. The ChargeClass is set to null, and the BillingPeriodStart/End reflect the in which the cost or usage was actually incurred (July).
+Since the billing period is still open and invoices have not yet been issued, corrections can be applied without introducing retroactive semantics. The ChargeClass is set to null, and the BillingPeriodStart/End reflect the billing period in which the cost or usage was actually incurred (July).
 
 ### Correction Style
 
@@ -141,11 +141,16 @@ Note the following details in the example datasets:
 
 ## Previous Open-Period Correction Scenarios
 
-All scenarios in this section relate to a previous billing period that has ended but has not yet been closed. All described discrepancies pertain to the June 2025 billing period and were identified and addressed on July 5th, 2025.
+These scenarios address discrepancies related to charges from the June 2025 billing period. The discrepancies were identified on July 5th, 2025, while the June 2025 billing period was still open.
 
-Although applied after the period had ended, these corrections do not introduce retroactive semantics, as the billing period was still open and invoices had not yet been issued when the corrections were applied. All records remain associated with the billing period in which the cost or usage was originally incurred (refer to BillingPeriodStart and BillingPeriodEnd), and ChargeClass is set to null.
+### Billing Period Alignment
 
-In these examples, ACME Corp (acting as both the data generator and invoice issuer) delivers corrections using Replacement, Delta, and Ledger correction styles, offering varying levels of traceability and auditability.
+Although applied after the period had ended, these corrections do not introduce retroactive semantics, as the billing period was still open and invoices had not yet been issued when the corrections were applied. The ChargeClass is set to null, and the BillingPeriodStart/End reflect the billing period in which the cost or usage was originally incurred (June).
+
+### Correction Style
+
+ACME Corp (acting as both the data generator and invoice issuer) delivers corrections using Replacement, Delta, and Ledger correction styles, offering varying levels of traceability and auditability.
+
 
 ### Scenario 1: Previous Open-Period Correction - Partial Reallocation to Correct Resource
 
