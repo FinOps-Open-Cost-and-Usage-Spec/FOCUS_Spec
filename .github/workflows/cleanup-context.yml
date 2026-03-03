@@ -1,0 +1,66 @@
+name: PR Readiness
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-working-folders:
+    name: Delete AI working folder before merge
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract issue number from branch
+        id: branch
+        run: |
+          BRANCH_NAME="${{ github.event.pull_request.head.ref }}"
+          # Extract issue number if branch starts with a number (e.g., 1805-ai-usage-policy)
+          ISSUE_NUMBER=$(echo "$BRANCH_NAME" | grep -oE '^[0-9]+' || true)
+          echo "issue=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+          echo "branch=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "Branch: $BRANCH_NAME, Issue: $ISSUE_NUMBER"
+
+      - name: Check for working folder
+        id: check
+        run: |
+          ISSUE_NUMBER="${{ steps.branch.outputs.issue }}"
+          BRANCH_NAME="${{ steps.branch.outputs.branch }}"
+          FOUND=""
+
+          if [ -n "$ISSUE_NUMBER" ]; then
+            # Look for folder matching this PR's branch name
+            FOLDER=".ai/work/${BRANCH_NAME}"
+            if [ -d "$FOLDER" ]; then
+              FOUND="$FOLDER"
+            fi
+          fi
+
+          if [ -n "$FOUND" ]; then
+            echo "found=true" >> $GITHUB_OUTPUT
+            echo "folder=$FOUND" >> $GITHUB_OUTPUT
+          else
+            echo "found=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Report status
+        run: |
+          if [ "${{ steps.check.outputs.found }}" == "true" ]; then
+            echo "::error title=Delete AI working folder before merge::Found: ${{ steps.check.outputs.folder }}"
+            echo ""
+            echo "❌ BLOCKING: AI working folder must be deleted before merging"
+            echo ""
+            echo "   Found: ${{ steps.check.outputs.folder }}"
+            echo ""
+            echo "   To resolve:"
+            echo "   1. Wait for final PR approval"
+            echo "   2. Delete the folder: git rm -r ${{ steps.check.outputs.folder }}"
+            echo "   3. Commit and push: git commit -m 'Delete AI working folder' && git push"
+            echo ""
+            echo "   See: guidelines/ai-usage-guidelines.md#working-file-lifecycle"
+            exit 1
+          else
+            echo "✅ No AI working folder found - ready for merge"
+          fi
