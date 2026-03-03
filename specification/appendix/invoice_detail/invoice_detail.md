@@ -2,7 +2,7 @@
 
 ## Overview
 
-The **Invoice Detail** dataset provides a transactional representation of the financial obligations between a customer and an invoice issuer. While the [Cost and Usage](#datasets.costandusage) dataset tracks granular consumption, the Invoice Detail dataset tracks the legal and financial record of charges as they appear on a physical or electronic billing document.
+The **Invoice Detail** dataset provides a transactional representation of the financial obligations between a customer and an invoice issuer. While the [Cost and Usage](#datasets.costandusage) dataset tracks granular consumption, the Invoice Detail dataset tracks the financial record of charges as they appear on a physical or electronic billing document.
 
 ### Core Logical Pillars
 
@@ -65,7 +65,7 @@ This example includes a mix of standard consumption, a one-time purchase of a re
 
 ### Scenario 2: Multi-Currency Settlement
 
-This example demonstrates the "Divergent Grain" model, where usage is tracked in a global currency (USD), but the legal financial obligation is settled in a local currency (AUD).
+This example demonstrates the "Divergent Grain" model, where usage is tracked in a global currency (USD), but the financial obligation is settled in a local currency (AUD).
 
 * **Row 1 & 2 (Usage):** The detail lines, denominated in USD. `PaymentCurrencyBilledCost` is `0.00` because the detail does not have an exchange rate applied.
 * **Row 3 (Settlement):** The aggregate payable line, denominated in AUD. `BilledCost` is `0.00` (USD) to avoid double-counting consumption. `PaymentCurrencyBilledCost` holds the 5.17 AUD obligation.
