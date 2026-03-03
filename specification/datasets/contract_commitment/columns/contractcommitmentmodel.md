@@ -11,7 +11,7 @@ Contract Commitment Model has two possible values: **Continuous** and **Disconti
 
 ## Requirements
 
-ContractCommitmentModel adheres to the following requirements:
+ContractCommitmentModel MUST adhere to the following requirements:
 
 * ContractCommitmentModel MUST be of type String.
 * ContractCommitmentModel MUST NOT be null.

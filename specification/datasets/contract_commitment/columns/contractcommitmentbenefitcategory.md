@@ -14,7 +14,7 @@ In cases where a commitment provides multiple benefits (e.g., a Discount and an 
 
 ## Requirements
 
-ContractCommitmentBenefitCategory adheres to the following requirements:
+ContractCommitmentBenefitCategory MUST adhere to the following requirements:
 
 * ContractCommitmentBenefitCategory MUST be of type String.
 * ContractCommitmentBenefitCategory MUST NOT be null.

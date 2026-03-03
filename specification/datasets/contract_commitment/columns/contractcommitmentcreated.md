@@ -4,7 +4,7 @@ Contract Commitment Created is the timestamp when the [Contract Commitment](#dat
 
 ## Requirements
 
-ContractCommitmentCreated adheres to the following requirements:
+ContractCommitmentCreated MUST adhere to the following requirements:
 
 * ContractCommitmentCreated MUST be of type Date/Time.
 * ContractCommitmentCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

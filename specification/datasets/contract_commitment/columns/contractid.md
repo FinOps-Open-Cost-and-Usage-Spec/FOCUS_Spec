@@ -4,7 +4,7 @@ Contract ID is a service-provider-assigned identifier for a contract describing 
 
 ## Requirements
 
-ContractId adheres to the following requirements:
+ContractId MUST adhere to the following requirements:
 
 * ContractId MUST be of type String.
 * ContractId MUST conform to [StringHandling](#attributes.stringhandling) requirements.

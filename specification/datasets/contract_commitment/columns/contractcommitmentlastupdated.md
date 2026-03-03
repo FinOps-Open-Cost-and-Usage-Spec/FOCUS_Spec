@@ -4,7 +4,7 @@ A Contract Commitment Last Updated is the timestamp when the [Contract Commitmen
 
 ## Requirements
 
-ContractCommitmentLastUpdated adheres to the following requirements:
+ContractCommitmentLastUpdated MUST adhere to the following requirements:
 
 * ContractCommitmentLastUpdated MUST be of type Date/Time.
 * ContractCommitmentLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

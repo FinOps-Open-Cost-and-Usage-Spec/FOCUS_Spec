@@ -6,7 +6,7 @@ Note: Do not confuse the Contract Commitment Payment Interval with the [Contract
 
 ## Requirements
 
-ContractCommitmentPaymentInterval adheres to the following requirements:
+ContractCommitmentPaymentInterval MUST adhere to the following requirements:
 
 * ContractCommitmentPaymentInterval MUST be of type String.
 * ContractCommitmentPaymentInterval MUST NOT be null.

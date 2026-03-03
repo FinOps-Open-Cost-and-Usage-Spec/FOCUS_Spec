@@ -4,7 +4,7 @@ Contract Commitment Cost represents the monetary value of the [*contract commitm
 
 ## Requirements
 
-ContractCommitmentCost adheres to the following requirements:
+ContractCommitmentCost MUST adhere to the following requirements:
 
 * ContractCommitmentCost MUST be of type Decimal.
 * ContractCommitmentCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.

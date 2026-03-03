@@ -13,7 +13,7 @@ A given Contract Commitment Duration Type value follows a structured format of "
 
 ## Requirements
 
-ContractCommitmentDurationType adheres to the following requirements:
+ContractCommitmentDurationType MUST adhere to the following requirements:
 
 * ContractCommitmentDurationType MUST be of type String.
 * ContractCommitmentDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.

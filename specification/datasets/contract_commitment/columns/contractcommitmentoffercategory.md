@@ -13,7 +13,7 @@ Sensitivity Note: Records marked as Negotiated often fall under non-disclosure a
 
 ## Requirements
 
-ContractCommitmentOfferCategory adheres to the following requirements:
+ContractCommitmentOfferCategory MUST adhere to the following requirements:
 
 * ContractCommitmentOfferCategory MUST be of type String.
 * ContractCommitmentOfferCategory MUST NOT be null.

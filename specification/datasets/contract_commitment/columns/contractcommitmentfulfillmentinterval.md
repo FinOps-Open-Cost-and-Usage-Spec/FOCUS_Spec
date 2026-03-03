@@ -6,7 +6,7 @@ Contract Commitment Fulfillment Interval has a series of possible values that re
 
 ## Requirements
 
-ContractCommitmentFulfillmentInterval adheres to the following requirements:
+ContractCommitmentFulfillmentInterval MUST adhere to the following requirements:
 
 * ContractCommitmentFulfillmentInterval MUST be of type String.
 * ContractCommitmentFulfillmentInterval MUST NOT be null.

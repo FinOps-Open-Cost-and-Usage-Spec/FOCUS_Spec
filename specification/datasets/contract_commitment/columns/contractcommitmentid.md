@@ -4,7 +4,7 @@ Contract Commitment ID is a service-provider-assigned identifier describing a si
 
 ## Requirements
 
-ContractCommitmentId adheres to the following requirements:
+ContractCommitmentId MUST adhere to the following requirements:
 
 * ContractCommitmentId MUST be of type String.
 * ContractCommitmentId MUST conform to [StringHandling](#attributes.stringhandling) requirements.

@@ -4,6 +4,8 @@ Pricing Currency is the national or virtual currency denomination that a [*contr
 
 ## Requirements
 
+PricingCurrency MUST adhere to the following requirements:
+
 * PricingCurrency MUST be of type String.
 * PricingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingCurrency MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements.

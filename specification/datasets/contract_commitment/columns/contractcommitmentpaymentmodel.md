@@ -15,7 +15,7 @@ Contract Commitment Payment Model has three possible values: **No Upfront**, **P
 
 ## Requirements
 
-ContractCommitmentPaymentModel adheres to the following requirements:
+ContractCommitmentPaymentModel MUST adhere to the following requirements:
 
 * ContractCommitmentPaymentModel MUST be of type String.
 * ContractCommitmentPaymentModel MUST NOT be null.

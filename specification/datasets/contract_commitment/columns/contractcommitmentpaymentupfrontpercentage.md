@@ -6,6 +6,8 @@ This column allows for precise financial modeling of "Partial Upfront" [payment 
 
 ## Requirements
 
+ContractCommitmentPaymentUpfrontPercentage MUST adhere to the following requirements:
+
 * ContractCommitmentPaymentUpfrontPercentage MUST be of type Decimal.
 * ContractCommitmentPaymentUpfrontPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentPaymentUpfrontPercentage MUST NOT be null.

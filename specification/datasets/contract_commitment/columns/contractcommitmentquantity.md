@@ -4,7 +4,7 @@ Contract Commitment Quantity represents the amount associated with the [*contrac
 
 ## Requirements
 
-ContractCommitmentQuantity adheres to the following requirements:
+ContractCommitmentQuantity MUST adhere to the following requirements:
 
 * ContractCommitmentQuantity MUST be of type Decimal.
 * ContractCommitmentQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.

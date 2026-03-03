@@ -4,7 +4,7 @@ Contract Commitment Lifecycle Status represents the current lifecycle state of a
 
 ## Requirements
 
-ContractCommitmentLifecycleStatus adheres to the following requirements:
+ContractCommitmentLifecycleStatus MUST adhere to the following requirements:
 
 * ContractCommitmentLifecycleStatus MUST be of type String.
 * ContractCommitmentLifecycleStatus MUST NOT be null.
