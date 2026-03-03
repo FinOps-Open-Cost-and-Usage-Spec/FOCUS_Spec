@@ -2,13 +2,17 @@
 
 The following examples illustrate how corrections to previously closed billing periods may be represented in FOCUS Cost and Usage dataset artifacts, using delivery mechanisms and correction styles that preserve invoice integrity and auditability.
 
-## Closed-Period Correction Scenarios
+## Closed Period Correction Scenarios
 
-All scenarios in this section relate to a closed billing period for which the corresponding invoices have already been issued. In the example scenarios presented below, this corresponds specifically to the May 2025 billing period, which was closed on June 16th, 2025. All described discrepancies were identified and addressed on July 12th, 2025, at which time the subsequent June 2025 billing period was still open.
+These scenarios address discrepancies found in the May 2025 billing period after it was closed and invoiced by the issuer ACME Corp on June 16th, 2025. The discrepancies were identified on July 5th, 2025, during the open June 2025 billing cycle.
 
-In accordance with the requirements outlined in the Correction Handling attribute, the corresponding corrections are associated with that open billing period (refer to BillingPeriodStart and BillingPeriodEnd), with ChargeClass set to "Correction", indicating they reconcile cost or usage from a previously closed billing period, while the charge period (ChargePeriodStart and ChargePeriodEnd) reflects when the cost or usage was originally incurred. This approach ensures a clear temporal separation between closed and open billing cycles, preserving transparency for closed billing periods and enabling traceable corrections in subsequent ones.
+### Column Mapping
 
-The permissibility of delivery mechanisms depends on whether the correction affects invoice reconciliation for issued invoices or would require issuing additional invoices for the closed billing period. While the Overwrite delivery mechanism (i.e., Replacement correction style) could be applied if a correction does not impact invoice reconciliation or require additional invoices for the closed billing period, ACME Corp (acting as both the data generator and invoice issuer) generally chooses the Append delivery mechanism (i.e., Delta and Ledger correction styles) when delivering corrections to closed billing periods. This preference ensures consistency with auditability and traceability requirements, taking into account downstream processes, in particular chargeback, which relies on timely and accurate cost attribution.
+Corrections are applied to the open billing period rather than modifying the closed one. The ChargeClass is set to "Correction," and the BillingPeriodStart/End reflect the current open period (June). However, the ChargePeriodStart/End remain mapped to the original timeframe (May) to preserve the historical accuracy of when the cost was incurred.
+
+### Correction Style
+
+While the Overwrite mechanism is permissible when it doesn't impact issued invoices, ACME Corp defaults to the Append mechanism (Delta and Ledger styles) for all closed period corrections. This preference prioritizes auditability and traceability, ensuring that downstream consumers -- particularly those managing chargeback -- receive a clear, additive history of changes.
 
 ### Scenario 1: Closed-Period Correction - Partial Reallocation to Correct Resource
 
