@@ -66,11 +66,13 @@ A customer's agreement to either spend a defined monetary amount or consume a sp
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A [*contract commitment*](#glossary:contract-commitment), typically offered by cloud service providers (e.g., AWS, Azure, GCP), with the following designations:
+A [*contract commitment*](#glossary:contract-commitment) that provides discounted pricing on preselected SKUs in exchange for a commitment to specific spend or usage goals over a specified [*period*](#glossary:period), with terms that are generally available to all customers via the service provider’s standard rate card or portal. Committed spend or usage is evenly distributed across predefined [Contract Commitment Fulfillment Intervals](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) (e.g., hourly), and unused benefits cannot be carried over to subsequent Intervals. Only one Commitment Discount may be applied to a single charge at a time, and it may overlap with one or more Negotiated Discounts.
 
-* Contract Commitment Model: "Continuous
-* Contract Commitment Benefit Category: "Discount"
-* Contract Commitment Offer Category: "Public"
+Commitment discounts are classified with the following designations:
+
+* [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory): "Public"
+* [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory): "Discount"
+* [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel): "Continuous
 * Unused benefits cannot be carried over to subsequent Contract Commitment Fulfillment Intervals
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
@@ -163,10 +165,12 @@ A government-issued currency (e.g., US dollars, Euros).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
-A [*contract commitment*](#glossary:contract-commitment) with the following designations:
+A [*contract commitment*](#glossary:contract-commitment) that provides discounted pricing in exchange for a commitment to specific spend or usage goals over a specified [*period*](#glossary:period), with terms and pricing specifically modified through an agreement between the customer and the service provider. Multiple Negotiated Discounts may be applied to a single charge at a time, and they may overlap with a Commitment Discount.
 
-* Contract Commitment Benefit Category: "Discount"
-* Contract Commitment Offer Category: "Negotiated"
+Negotiated discounts are classified with the following designations:
+
+* [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory): "Negotiated"
+* [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory): "Discount"
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
