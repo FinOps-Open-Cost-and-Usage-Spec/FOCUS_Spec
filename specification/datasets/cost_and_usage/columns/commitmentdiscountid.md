@@ -6,7 +6,6 @@ A Commitment Discount ID is the identifier assigned to a [*commitment discount*]
 
 CommitmentDiscountId adheres to the following requirements:
 
-* CommitmentDiscountId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountId MUST be of type String.
 * CommitmentDiscountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentDiscountId nullability is defined as follows:
@@ -30,13 +29,14 @@ The identifier assigned to a *commitment discount* by the service provider.
 
 ## Content constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 
