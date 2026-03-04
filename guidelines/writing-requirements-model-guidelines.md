@@ -443,7 +443,8 @@ Version-specific model content is organized under `specification/requirements_mo
 - `check_functions.json`: Logical validation functions and their arguments
 - `model_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
 - `model_rules/attributes/`: JSON files defining multiple `ModelRules` for a single attribute
-- `model_rules/columns/`: JSON files defining multiple `ModelRules` for a single column
+- `model_rules/datasets/<dataset_id>/columns/`: JSON files defining multiple `ModelRules` for a single column
+- `model_rules/datasets/<dataset_id>/objects/`: JSON files defining multiple `ModelRules` for properties within JSON object columns
 
 **Build output** (top-level):
 - `build/model-X.X.json`: Built complete model JSON files for all versions
@@ -562,14 +563,20 @@ The `Order` field serves several important functions:
 
 **Example Order Values:**
 
+| RMID                     | Order Value |
+|:-------------------------|:------------|
+| CAU-SampleColumn-C-001-M | 10          |
+| CAU-OtherRule-C-001-M    | 20          |
+| CAU-AnotherRule-C-002-M  | 30          |
+
 ```json
 {
   "CAU-SampleColumn-C-001-M": {
     "Order": 10,
     "ValidationCriteria": {
       "Dependencies": [
-        "CAU-OtherRule-C-001-M",    // Order: 20
-        "CAU-AnotherRule-C-002-M"   // Order: 30
+        "CAU-OtherRule-C-001-M",
+        "CAU-AnotherRule-C-002-M"
       ]
     }
   }
