@@ -31,7 +31,7 @@ The name of the entity responsible for invoicing for the [*contract commitment*]
 | Feature level   | Mandatory       |
 | Allows nulls    | False           |
 | Data type       | String          |
-| Value format    | <not specified> |
+| Value format    | \<not specified> |
 
 ## Introduced (version)
 
