@@ -63,6 +63,8 @@ This example includes a mix of standard consumption, a one-time purchase of a re
 | **Purchase Order Number** | `PO-998877` | `PO-998877` | `PO-998877` |
 | **Reference Invoice ID** | `INV-2025-001` | `INV-2025-001` | `INV-2025-001` |
 
+[CSV Example](../../data/invoice_detail/invoice_detail_scenario_1.csv)
+
 ### Scenario 2: Multi-Currency Settlement
 
 This example demonstrates the "Divergent Grain" model, where usage is tracked in a global currency (USD), but the financial obligation is settled in a local currency (AUD).
@@ -99,6 +101,8 @@ This example demonstrates the "Divergent Grain" model, where usage is tracked in
 | **Purchase Order Number** | `null` | `null` | `null` |
 | **Reference Invoice ID** | `AUIN25-1286479` | `AUIN25-1286479` | `AUIN25-1286479` |
 
+[CSV Example](../../data/invoice_detail/invoice_detail_scenario_2.csv)
+
 ### Scenario 3: Billing Error Correction
 
 This example demonstrates the lineage of a billing error correction.
@@ -132,3 +136,5 @@ This example demonstrates the lineage of a billing error correction.
 | **Payment Terms** | `Net 30` | `Net 30` |
 | **Purchase Order Number** | `PO-554433` | `PO-554433` |
 | **Reference Invoice ID** | `INV-JAN` | `INV-JAN` |
+
+[CSV Example](../../data/invoice_detail/invoice_detail_scenario_3.csv)
