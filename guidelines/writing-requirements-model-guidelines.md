@@ -29,7 +29,7 @@ The first stage of conversion of rules from the normative text to model rules is
 - `ModelRuleId` - Formal identifier for this model rule entry
 - `Function` - The type of rule to be defined (Valid types: `Composite`, `Presence`, `Type`, `Format`, `Validation`)
 - `Reference` - The Column/Attribute Id this rule applies to
-- `EntityType` - The type of entity this rule applies to (Valid types: `Dataset`, `Column`, `Attribute`, `Object`, `Metadata`)
+- `EntityType` - The type of entity this rule applies to (Valid types: `Dataset`, `Column`, `Attribute`, `Object`)
 - `EntityName` - The human-readable name of the entity this rule applies to
 - `EntityId` - The unique identifier of the entity this rule applies to
 - `Notes` - Free form notes (short) included in the model rule document
