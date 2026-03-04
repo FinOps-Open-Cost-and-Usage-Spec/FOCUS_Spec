@@ -8,7 +8,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Static",
     "Order": 0,
     "ValidationCriteria": {
@@ -88,7 +90,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 10,
     "ValidationCriteria": {
@@ -108,7 +112,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 20,
     "ValidationCriteria": {
@@ -128,7 +134,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 30,
     "ValidationCriteria": {
@@ -148,7 +156,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 40,
     "ValidationCriteria": {
@@ -168,7 +178,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 50,
     "ValidationCriteria": {
@@ -188,7 +200,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 60,
     "ValidationCriteria": {
@@ -208,7 +222,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 70,
     "ValidationCriteria": {
@@ -228,7 +244,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 80,
     "ValidationCriteria": {
@@ -248,7 +266,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 90,
     "ValidationCriteria": {
@@ -268,7 +288,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 100,
     "ValidationCriteria": {
@@ -288,7 +310,9 @@
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": [],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Dynamic",
     "Order": 110,
     "ValidationCriteria": {
