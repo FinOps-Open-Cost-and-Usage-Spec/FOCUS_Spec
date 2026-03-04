@@ -232,6 +232,10 @@
           },
           {
             "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-SkuPriceDetails-C-010-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-SkuPriceDetails-C-008-M"
           },
           {
@@ -240,7 +244,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-SkuPriceDetails-C-010-C"
+            "ModelRuleId": "CAU-SkuPriceDetails-C-023-C"
           },
           {
             "CheckFunction": "CheckModelRule",
