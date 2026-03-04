@@ -64,7 +64,7 @@ The deprecation notice in the changelog MUST include this classification. If cir
 
 #### Expected Behavior for Removed Capabilities
 
-Data generators are expected to remove capabilities at the same time that the FOCUS specification does. If a data generator chooses to retain a capability (e.g., column) after it has been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). See the [Requirements Model Guidelines](guidelines/contributor/writing-requirements-model-guidelines.md) for additional information. 
+Data generators are expected to remove capabilities at the same time that the FOCUS specification does. If a data generator chooses to retain a capability (e.g., column) after it has been removed from the FOCUS specification, they must explain the rationale in their FOCUS documentation (e.g., conformance gap report). See the [Requirements Model Guidelines](writing-requirements-model-guidelines.md) for additional information. 
 
 ### Entity Removal Process
 

@@ -64,7 +64,7 @@ The following examples illustrate mapping documentation for common scenarios.
 
 | FOCUS Column | Source Field(s) | Transform Logic | Feature Level | Notes |
 |--------------|-----------------|-----------------|---------------|-------|
-| BilledCost | `lineItem/UnblendedCost`, `lineItem/LineItemType` | Composite: Sum of `UnblendedCost` across all line items within the same billing period where `LineItemType` in (`Usage`, `Fee`, `DiscountedUsage`, `SavingsPlanCoveredUsage`) | Mandatory | Excludes refunds and credits. Grouping logic depends on charge granularity |
+| BilledCost | `lineItem/UnblendedCost`, `lineItem/LineItemType` | Composite: Sum of `UnblendedCost` where `LineItemType` in (`Usage`, `Fee`, `DiscountedUsage`, `SavingsPlanCoveredUsage`) grouped by all target FOCUS dimensions. | Mandatory | Refunds and credits are mapped using separate conditional logic. |
 
 ## Documentation Variations
 
@@ -94,8 +94,8 @@ The following JSON example illustrates what a machine-readable mapping entry mig
 ```json
 [
   {
-    "focus_column": "BilledCost",
-    "source_fields": ["lineItem/UnblendedCost"],
+    "focus_column": "BillingPeriodEnd",
+    "source_fields": ["bill/BillingPeriodEndDate"],
     "transform_logic": "Direct",
     "feature_level": "Mandatory",
     "notes": null
