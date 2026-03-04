@@ -98,7 +98,7 @@
       "type": "object",
       "description": "The list of all rules, each containing logic, reference metadata, and criteria.",
       "patternProperties": {
-        "^[A-Za-z0-9]+-[CAD]{1}-\\d{3}-[MOC]$": {
+        "^([A-Za-z0-9]{3}-)?[A-Za-z0-9]+-[CADO]{1}-\\d{3}-[MOC]$": {
           "type": "object",
           "properties": {
             "Function": {
@@ -120,8 +120,15 @@
               "enum": [
                 "Dataset",
                 "Column",
-                "Attribute"
+                "Attribute",
+                "Object"
               ]
+            },
+            "EntityId": {
+              "type": "string"
+            },
+            "EntityName": {
+              "type": "string"
             },
             "Notes": {
               "type": [
@@ -129,14 +136,31 @@
                 "null"
               ]
             },
+            "Order": {
+              "type": "number"
+            },
+            "DatasetType": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            },
+            "DatasetId": {
+              "type": "string"
+            },
+            "DatasetName": {
+              "type": "string"
+            },
             "ModelVersionIntroduced": {
+              "type": "string"
+            },
+            "ModelVersionRemoved": {
               "type": "string"
             },
             "Status": {
               "type": "string",
               "enum": [
                 "Active",
-                "Deprecated"
+                "Deprecated",
+                "Removed"
               ]
             },
             "ApplicabilityCriteria": {
@@ -203,12 +227,70 @@
           "required": [
             "Function",
             "Reference",
+            "EntityId",
+            "EntityName",
             "EntityType",
             "ModelVersionIntroduced",
             "Status",
             "ApplicabilityCriteria",
             "Type",
             "ValidationCriteria"
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "Status": {
+                    "const": "Removed"
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "ModelVersionRemoved"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "Status": {
+                    "enum": [
+                      "Active",
+                      "Deprecated"
+                    ]
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "Order"
+                ],
+                "not": {
+                  "required": [
+                    "ModelVersionRemoved"
+                  ]
+                }
+              }
+            },
+            {
+              "if": {
+                "not": {
+                  "properties": {
+                    "EntityType": {
+                      "const": "Attribute"
+                    }
+                  }
+                }
+              },
+              "then": {
+                "required": [
+                  "DatasetType",
+                  "DatasetId",
+                  "DatasetName"
+                ]
+              }
+            }
           ],
           "additionalProperties": false
         }

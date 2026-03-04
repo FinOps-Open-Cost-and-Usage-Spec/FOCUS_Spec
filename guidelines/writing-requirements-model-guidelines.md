@@ -24,7 +24,7 @@ An Action Item (AI) ticket should be opened to track the progress of implementin
 
 The first stage of conversion of rules from the normative text to model rules is for a table to be generated with the format as follows:
 
-- `ModelRuleId` - Is the formal Id given to this entry in the model rules (See: [CR Expression Format](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1121-ai-align-on-approach-for-scrs/specification/requirements_model/README.md#-cr-expression-format))
+- `ModelRuleId` - Is the formal Id given to this entry in the model rules (See: [RM Expression Format](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1121-ai-align-on-approach-for-scrs/specification/requirements_model/README.md#-cr-expression-format))
 - `Function` - The type of rule to be defined (Valid types: `Composite`, `Presence`, `Type`, `Format`, `Validation`)
 - `Reference` - The Column/Attribute Id this rule applies to
 - `EntityType` - The type of entity this rule applies to (Valid types: `Dataset`, `Column`, `Attribute`, `Object`, `Metadata`)
@@ -72,15 +72,15 @@ The following architectural components define the core entities in FOCUS that sh
 
 ##### FOCUS Entity Reference Table
 
-| Entity             | Description                                         | Applies To                                | Example CR Function                                                                                             |
+| Entity             | Description                                         | Applies To                                | Example RM Function                                                                                             |
 |--------------------|-----------------------------------------------------| ----------------------------------------- |-----------------------------------------------------------------------------------------------------------------|
 | `Dataset`          | Whole billing dataset                               | Structural presence, versioning, coverage | Dataset MUST include all columns required by the declared FOCUS version                                         |
-| `Column`           | Named field across rows                             | Data type, format, constraints            | Column `BillingPeriodStart` MUST be of type `DateTime`                                                          |
+| `Row`              | Individual line item in dataset                     | Logic conditions, nullability, alignment  | Rows with `ChargeCategory = Purchase` MUST contain a `SkuId`                                                    |
+| `Column`           | Named field across rows                             | Data type, format, constraints            | Each item in `AllocatedMethodDetailsObject.Elements` MUST be an object.                                                         |
+| `Object`           | JSONObject content of a column                      | Data type, format, constraints            | Column `BillingPeriodStart` MUST be of type `DateTime`                                                          |
 | `Attribute`        | Shared formatting/logic constraint                  | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                              |
-| `Metadata`         | Schema-level dataset descriptors                    | Schema versioning, declaration            | Metadata MUST declare `focus_version` as a valid semantic version string (e.g., "1.2.0")                        |
-| `Object`           | TBD                                                 | TBD                                       | TBD                                                                                                             |
 
-#### 2. CRID – Apply CRID Naming Rules
+#### 2. RMID – Apply RMID Naming Rules
 
 Construct a unique identifier for the rule using the format:  
 `{{ColumnID}}-{{EntityType}}-{{NNN}}-{{Level}}`
@@ -92,7 +92,8 @@ This ensures traceability, uniqueness, and clarity.
 - `ColumnID`: UpperCamelCase (e.g., `ListUnitPrice`)
 - `EntityType:`
   - `D` = Dataset  
-  - `C` = Column  
+  - `C` = Column
+  - `O` = Object
   - `A` = Attribute  
   - `M` = Metadata
   - `O` = Object
@@ -107,7 +108,7 @@ This ensures traceability, uniqueness, and clarity.
 
 **Example**  
 A rule states: "`ListUnitPrice` MUST conform to `NumericFormat`." (in Cost and Usage dataset)
-→ `CRID = CAU-ListUnitPrice-C-003-M`
+→ `RMID = CAU-ListUnitPrice-C-003-M`
 
 #### Multi-Dataset Entity Structure and Naming
 
@@ -124,7 +125,7 @@ Each dataset will reference their own set of Requirement Entities. A single requ
 
 ##### Dataset-Namespaced Naming Convention
 
-Column entities are now namespaced by the dataset they belong to. The CRID format has been updated to:
+Column entities are now namespaced by the dataset they belong to. The RMID format has been updated to:
 
 `DatasetType-ColumnID-EntityType-NNN-Level`
 
@@ -159,7 +160,7 @@ Categorize the type of logic the rule enforces. This helps determine how it shou
 - Use `Format` for pattern-based constraints (e.g., `DateTimeFormat`, `UUID`, `NumericFormat`).
 - Use `NullabilityRules` to define when values must or must not be null.
 - Use `Validation` for business logic or fixed-value conditions not covered above.
-- Use `Composite` to group multiple CRIDs with logical expressions (`AND` / `OR` / `NOT`).
+- Use `Composite` to group multiple RMIDs with logical expressions (`AND` / `OR` / `NOT`).
 - Use `Ambiguous` only when no clear classification is possible.
 
 **Example**  
@@ -187,8 +188,8 @@ Determine the obligation level using the normative keyword from the source text,
   - `SHOULD`, `SHOULD NOT` → Optional (unless conditional)
   - `MAY`, `MAY NOT` → Optional
 - Normalize the keyword to uppercase.
-- Only one keyword should be assigned per CRItem.
-- For composite rules, choose the highest obligation level from constituent CRIDs  
+- Only one keyword should be assigned per RM Item.
+- For composite rules, choose the highest obligation level from constituent RMIDs  
   (e.g., prioritize `MUST` > `SHOULD` > `MAY`).
 - If `SHOULD` is used conditionally, treat the rule as `Conditional` and define the `Condition`.
 
@@ -204,7 +205,7 @@ Define the dataset-level or service-provider-level condition that determines whe
 - Use a dataset-level statement (e.g., `"Dataset includes ChargeCategory column"`) for presence rules.
 - Use a service provider or environment condition if the rule depends on system capabilities  
   (e.g., `"Service Provider supports capacity reservation"`).
-- For composite rules, inherit the most restrictive gating condition from child CRItems.
+- For composite rules, inherit the most restrictive gating condition from child RM Items.
 - Do not leave this field blank. Only omit if the applicability is inherited from a parent composite.
 
 **Example**  
@@ -245,16 +246,16 @@ A rule states: “`BillingPeriodStart` MUST be of type `DateTime`.”
 
 #### 9. Requirement – Identify logical dependencies
 
-Define whether the rule groups or depends on other CRIDs or attribute rule sets.
+Define whether the rule groups or depends on other RMIDs or attribute rule sets.
 
-- Use a logical expression (`AND()`, `OR()`, `NOT()`) to group CRIDs in composite rules.
+- Use a logical expression (`AND()`, `OR()`, `NOT()`) to group RMIDs in composite rules.
 - If the rule refers to a shared attribute rule set (e.g., `NumericFormat`, `StringHandling`), use:  
-  `Requirement = NumericFormat:CR`
+  `Requirement = NumericFormat:RM`
 - Set to `"null"` for atomic rules that do not depend on other rules or attributes.
-- Always define this field for composite rules, and make sure referenced CRIDs exist or appear later in the table.
+- Always define this field for composite rules, and make sure referenced RMIDs exist or appear later in the table.
 
 **Example**  
-A rule states: “The following rules MUST be enforced for `CommitmentDiscountQuantity` when it is not null…” and lists three CRs.  
+A rule states: “The following rules MUST be enforced for `CommitmentDiscountQuantity` when it is not null…” and lists three RMs.  
 → `Requirement = AND(CommitmentDiscountQuantity-C-010-M, CommitmentDiscountQuantity-C-011-C, CommitmentDiscountQuantity-C-012-C)`
 
 #### 10. Validation Type – Indicate static vs. dynamic
@@ -267,7 +268,7 @@ Specify whether the rule can be validated using only the dataset itself or if it
   - External invoice records  
   - Catalog metadata  
   - Service Provider configuration or billing systems
-- For composite rules, set to `dynamic` if any child CRItem is dynamic.
+- For composite rules, set to `dynamic` if any child RM Item is dynamic.
 
 **Example**  
 A rule states: “`BillingAccountType` MUST align with the service provider’s contractual agreement.”  
@@ -299,18 +300,18 @@ A rule marked in the spec as legacy:
 
 #### 13. Notes – Capture comments
 
-Use this field to add clarifying comments, editorial notes, or cross-references to other CRItems or attributes.
+Use this field to add clarifying comments, editorial notes, or cross-references to other RM Items or attributes.
 
 - Add contextual information for better understanding of the rule.
 - For attribute-based dependencies, always include a note like:  
-  `Cross-attribute reference: NumericFormat:CR`
+  `Cross-attribute reference: NumericFormat:RM`
 - For column-to-column dependencies, use:  
   `Cross-column reference: BillingPeriodEnd-C-001-M`
 - Leave blank only when no additional clarification is needed.
 
 **Example**  
 A rule that delegates to `NumericFormat`  
-→ `Notes = Cross-attribute reference: NumericFormat:CR`
+→ `Notes = Cross-attribute reference: NumericFormat:RM`
 
 #### 14. DatasetId and DatasetName – Dataset Association
 
@@ -424,12 +425,15 @@ Base rule for a column which links all related Model Rules for the column.
     "Function": "Composite",
     "Reference": "SampleColumn",
     "EntityType": "Column",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "Order": 0,
     "ValidationCriteria": {
@@ -465,12 +469,15 @@ Base rule for a column which links all related Model Rules for the column.
     "Function": "Presence",
     "Reference": "SampleColumn",
     "EntityType": "Column",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "Order": 10,
     "ValidationCriteria": {
@@ -495,12 +502,15 @@ Common rule for columns with a NOT NULL requirement. Can also be used when there
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "Order": 10,
     "ValidationCriteria": {
@@ -526,12 +536,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "Order": 10,
     "ValidationCriteria": {
@@ -570,12 +583,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "Order": 10,
     "ValidationCriteria": {
@@ -598,12 +614,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Format",
     "Reference": "SampleColumn",
     "EntityType": "Column",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "Order": 10,
     "ValidationCriteria": {
@@ -626,12 +645,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "Order": 10,
     "ValidationCriteria": {
@@ -654,12 +676,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "Order": 10,
     "ValidationCriteria": {

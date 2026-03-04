@@ -3,10 +3,13 @@
     "Function": "Composite",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "Root composite capturing all UnitFormat requirements",
     "ApplicabilityCriteria": [],
+    "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "All columns defined in FOCUS specifying Unit Format as a value format MUST follow the requirements listed below.",
@@ -16,7 +19,7 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "UnitFormat-A-001-M"
+            "ModelRuleId": "UnitFormat-A-001-O"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -34,21 +37,24 @@
       },
       "Condition": {},
       "Dependencies": [
-        "UnitFormat-A-001-M",
+        "UnitFormat-A-001-O",
         "UnitFormat-A-002-O",
         "UnitFormat-A-003-M",
         "UnitFormat-A-004-C"
       ]
     }
   },
-  "UnitFormat-A-001-M": {
+  "UnitFormat-A-001-O": {
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Units SHOULD be expressed as a single unit of measure adhering to one of the following three formats.",
@@ -62,10 +68,13 @@
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Units MAY be expressed with a unit quantity or time interval. If a unit quantity or time interval is used, the unit quantity or time interval MUST be expressed as a whole number.",
@@ -79,10 +88,13 @@
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Unit values and components of columns using the Unit Format MUST use a capitalization scheme that is consistent with the capitalization scheme used in this attribute if that term is listed in this section.",
@@ -96,10 +108,13 @@
     "Function": "Format",
     "Reference": "UnitFormat",
     "EntityType": "Attribute",
+    "EntityName": "Unit Format",
+    "EntityId": "UnitFormat",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Units SHOULD be composed of the list of recommended units listed in this section unless the unit value covers a dimension not listed in the recommended unit set, or if the unit covers a count-based unit distinct from recommended values in the count dimension listed in this section.",

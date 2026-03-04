@@ -3,12 +3,15 @@
     "Function": "Composite",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The DiscountHandling attribute adheres to the following requirements:",
@@ -26,10 +29,6 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DiscountHandling-A-005-C"
-          },
-          {
-            "CheckFunction": "CheckModelRule",
             "ModelRuleId": "DiscountHandling-A-008-C"
           },
           {
@@ -42,7 +41,6 @@
       "Dependencies": [
         "DiscountHandling-A-001-C",
         "DiscountHandling-A-002-C",
-        "DiscountHandling-A-005-C",
         "DiscountHandling-A-008-C",
         "DiscountHandling-A-020-C"
       ]
@@ -52,12 +50,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "All applicable discounts SHOULD be applied to each row they pertain to and SHOULD NOT be negated in a separate row.",
@@ -71,12 +72,15 @@
     "Function": "Composite",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 20,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "All discounts applied to a row MUST apply to the entire charge.",
@@ -91,13 +95,18 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "DiscountHandling-A-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "DiscountHandling-A-005-C"
           }
         ]
       },
       "Condition": {},
       "Dependencies": [
         "DiscountHandling-A-003-C",
-        "DiscountHandling-A-004-C"
+        "DiscountHandling-A-004-C",
+        "DiscountHandling-A-005-C"
       ]
     }
   },
@@ -105,12 +114,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Multiple discounts MAY apply to a row, but they MUST apply to the entire charge covered by that row.",
@@ -124,12 +136,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "If a discount only applies to a portion of a charge, then the discounted portion of the charge MUST be split into a separate row.",
@@ -143,12 +158,15 @@
     "Function": "Composite",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 50,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "Each discount MUST be identifiable using existing FOCUS columns.",
@@ -177,12 +195,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 60,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Rows with a commitment discount applied to them MUST include a CommitmentDiscountId.",
@@ -196,15 +217,18 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 70,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "If a provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.",
+      "MustSatisfy": "If a service provider applies a discount that cannot be represented by a FOCUS column, they SHOULD include additional columns to identify the source of the discount.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -215,12 +239,15 @@
     "Function": "Composite",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 80,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "Purchased discounts (e.g., commitment discounts) MUST be amortized.",
@@ -294,12 +321,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 90,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The BilledCost MUST be 0 for any row where the commitment covers the entire cost for the charge period.",
@@ -313,12 +343,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 100,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The EffectiveCost MUST include the portion of the amortized purchase cost that applies to this row.",
@@ -332,15 +365,18 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 110,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "The sum of the EffectiveCost for all rows where CommitmentDiscountStatus is \"Used\" or \"Unused\" for each CommitmentDiscountId over the entire duration of the commitment MUST be the same as the total BilledCost of the commitment discount.",
+      "MustSatisfy": "The sum of the EffectiveCost for all rows where CommitmentDiscountStatus is \"Used\" or \"Unused\" for each CommitmentDiscountId over the entire commitment period MUST be the same as the total BilledCost of the commitment discount.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -351,12 +387,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 120,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "The CommitmentDiscountId and ResourceId MUST be set to the ID assigned to the commitment discount.",
@@ -370,12 +409,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 130,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ChargeCategory MUST be set to \"Purchase\" on rows that represent a purchase of a commitment discount.",
@@ -389,12 +431,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 140,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountStatus MUST be \"Used\" for ChargeCategory \"Usage\" rows that received a reduced price from a commitment.",
@@ -408,12 +453,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 150,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "CommitmentDiscountId MUST be set to the ID assigned to the discount.",
@@ -427,12 +475,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 160,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ResourceId MUST be set to the ID of the resource that received the discount.",
@@ -446,15 +497,18 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 170,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "If a commitment is not fully utilized, the provider MUST include a row that represents the unused portion of the commitment for that charge period.",
+      "MustSatisfy": "If a commitment is not fully utilized, the service provider MUST include a row that represents the unused portion of the commitment for that charge period.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -465,12 +519,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 180,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "These rows MUST be represented with CommitmentDiscountStatus set to \"Unused\" and ChargeCategory set to \"Usage\".",
@@ -484,12 +541,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 190,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Such rows MUST have their CommitmentDiscountId and ResourceId set to the ID assigned to the commitment discount.",
@@ -503,12 +563,15 @@
     "Function": "Validation",
     "Reference": "DiscountHandling",
     "EntityType": "Attribute",
+    "EntityName": "Discount Handling",
+    "EntityId": "DiscountHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [
       "COMMITMENT_DISCOUNT_SUPPORTED"
     ],
+    "Order": 200,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Credits that are applied after the fact MUST use a ChargeCategory of \"Credit\".",

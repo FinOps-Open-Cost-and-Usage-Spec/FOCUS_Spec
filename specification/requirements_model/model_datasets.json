@@ -2,7 +2,12 @@
   "ModelDatasets": {
     "CostAndUsage": {
       "ModelRules": [
-        "CostAndUsage-D-000-M"
+        "CAU-CostAndUsage-D-000-M"
+      ]
+    },
+    "ContractCommitment": {
+      "ModelRules": [
+        "CCT-ContractCommitment-D-000-M"
       ]
     }
   }

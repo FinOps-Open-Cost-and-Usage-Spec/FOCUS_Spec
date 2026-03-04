@@ -3,10 +3,13 @@
     "Function": "Composite",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "Root composite capturing all StringHandling requirements",
     "ApplicabilityCriteria": [],
+    "Order": 0,
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "All columns of type String defined in the FOCUS specification MUST follow the string handling requirements listed below.",
@@ -14,10 +17,6 @@
       "Requirement": {
         "CheckFunction": "AND",
         "Items": [
-          {
-            "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "StringHandling-A-001-M"
-          },
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "StringHandling-A-002-O"
@@ -40,7 +39,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "StringHandling-A-007-M"
+            "ModelRuleId": "StringHandling-A-007-O"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -50,13 +49,12 @@
       },
       "Condition": {},
       "Dependencies": [
-        "StringHandling-A-001-M",
         "StringHandling-A-002-O",
         "StringHandling-A-003-M",
         "StringHandling-A-004-M",
         "StringHandling-A-005-M",
         "StringHandling-A-006-M",
-        "StringHandling-A-007-M",
+        "StringHandling-A-007-O",
         "StringHandling-A-008-C"
       ]
     }
@@ -65,10 +63,14 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
-    "Status": "Active",
+    "ModelVersionRemoved": "1.3",
+    "Status": "Removed",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 10,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "String values MUST be valid Unicode strings.",
@@ -82,10 +84,13 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 20,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Custom string value capturing columns SHOULD adopt the same requirements over time.",
@@ -99,13 +104,16 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 30,
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by providers and end-users.",
+      "MustSatisfy": "String values MUST maintain the original casing, spacing, and other relevant consistency factors as specified by data generators and end-users.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -116,10 +124,13 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 40,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Charges to mutable entities (e.g., resource names) MUST be accurately reflected in corresponding charges incurred after the change.",
@@ -133,10 +144,13 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 50,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Charges to mutable entities MUST NOT alter charges incurred before the change, preserving data integrity and auditability for all charge records.",
@@ -150,10 +164,13 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 60,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Immutable string values that refer to the same entity (e.g., resource identifiers, region identifiers, etc.) MUST remain consistent and unchanged across all billing periods.",
@@ -163,14 +180,17 @@
       "Dependencies": []
     }
   },
-  "StringHandling-A-007-M": {
+  "StringHandling-A-007-O": {
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 70,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Empty strings and strings consisting solely of spaces SHOULD NOT be used in not-nullable string columns.",
@@ -184,10 +204,13 @@
     "Function": "Format",
     "Reference": "StringHandling",
     "EntityType": "Attribute",
+    "EntityName": "String Handling",
+    "EntityId": "StringHandling",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "Notes": "",
     "ApplicabilityCriteria": [],
+    "Order": 80,
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "When a record is provided after a change to a mutable string value and the ChargeClass is “Correction”, the record MAY contain the altered value.",

@@ -32,6 +32,13 @@
       ],
       "FormatAttributes": []
     },
+    "CheckNoDuplicates": {
+      "Description": "Check if column has duplicate values",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
     "FormatKeyValue": {
       "Description": "Check a column has a key value format",
       "Arguments": [
@@ -54,14 +61,6 @@
       "Arguments": [
         "ColumnName",
         "Value"
-      ],
-      "FormatAttributes": []
-    },
-    "CheckNotSameValue": {
-      "Description": "Check if column does not have the same value as another column",
-      "Arguments": [
-        "ColumnAName",
-        "ColumnBName"
       ],
       "FormatAttributes": []
     },
@@ -101,7 +100,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyFormat-A-000-C"
+        "CurrencyFormat-A-000-M"
       ]
     },
     "TypeDecimal": {
@@ -160,7 +159,7 @@
         "ColumnName"
       ],
       "FormatAttributes": [
-        "CurrencyFormat-A-000-C"
+        "CurrencyFormat-A-000-M"
       ]
     },
     "ColumnByColumnEqualsColumnValue": {
@@ -178,6 +177,139 @@
         "ColumnName"
       ],
       "FormatAttributes": []
+    },
+    "JSONCheckPathType": {
+      "Description": "Check element(s) at JSON path is of a particular type",
+      "Arguments": [
+        "ColumnName",
+        "Path",
+        "ExpectedType"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathKeyValueFormat": {
+      "Description": "Check element(s) at JSON path has a particular key is of a KeyValue format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathKeyStartsWith": {
+      "Description": "Check element(s) at JSON path only keys that starts with a specific string prefix, ignoring specified keys",
+      "Arguments": [
+        "ColumnName",
+        "Path",
+        "Prefix",
+        "IgnoreKeys"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathKeyExists": {
+      "Description": "Check element(s) at JSON path has a particular key",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathValue": {
+      "Description": "Check element(s) at JSON path has specific value",
+      "Arguments": [
+        "ColumnName",
+        "Path",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathNotValue": {
+      "Description": "Check element(s) at JSON path does not have specific value",
+      "Arguments": [
+        "ColumnName",
+        "Path",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathSameValue": {
+      "Description": "Check element(s) at JSON path has the same value as another column, if PathB is null compare to value of the column directly",
+      "Arguments": [
+        "ColumnAName",
+        "PathA",
+        "ColumnBName",
+        "PathB"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathNumericFormat": {
+      "Description": "Check element(s) at JSON path meets numeric format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "NumericFormat-A-000-M"
+      ]
+    },
+    "JSONCheckPathUnitFormat": {
+      "Description": "Check element(s) at JSON path meets unit format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "UnitFormat-A-000-M"
+      ]
+    },
+    "JSONCheckPathDistinctParent": {
+      "Description": "Check distinct count of parent elements at JSON path equals expected count for a child path",
+      "Arguments": [
+        "ColumnName",
+        "ParentPath",
+        "ChildPath",
+        "ExpectedCount"
+      ],
+      "FormatAttributes": []
+    },
+    "FormatJSONFormat": {
+      "Description": "Check element(s) at JSON path meets JSONFormatRequirements format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "JsonObjectFormat-A-000-M"
+      ]
+    },
+    "JSONFormatString": {
+      "Description": "Check a JSON path in column has a string format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "StringHandling-A-000-M"
+      ]
+    },
+    "JSONFormatUnit": {
+      "Description": "Check a JSON path in column has a unit format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "UnitFormat-A-000-M"
+      ]
+    },
+    "JSONFormatNumeric": {
+      "Description": "Check a JSON path in column has a numeric format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "NumericFormat-A-000-M"
+      ]
     }
   }
 }
