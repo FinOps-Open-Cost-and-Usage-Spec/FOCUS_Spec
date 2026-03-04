@@ -31,7 +31,7 @@ The terms (typically focused on timeframe) by which the invoice issuer expects t
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | \<unspecified>                  |
+| Value format    | \<not specified>                |
 
 ## Introduced (version)
 

@@ -31,7 +31,7 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | \<unspecified>                  |
+| Value format    | \<not specified>                |
 
 ## Introduced (version)
 
