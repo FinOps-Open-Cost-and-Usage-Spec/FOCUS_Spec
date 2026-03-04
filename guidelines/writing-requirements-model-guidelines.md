@@ -57,7 +57,14 @@ Stage 1 converts normative requirements from the FOCUS specification into struct
 
 #### 1. Target Entity – Determine the entity
 
-Identify the target for the rule: **Dataset**, **Column**, **Attribute** property, **Metadata**, **Object**etc. This sets the scope of the model requirement.
+Identify the target for the rule:
+
+- **Attribute**
+- **Dataset**
+- **Column**
+- **Object**
+
+This sets the scope of the model requirement.
 
 #### FOCUS Core Entities
 
