@@ -1276,7 +1276,7 @@
         "CheckFunction": "JSONCheckPathSameValue",
         "ColumnAName": "ContractApplied",
         "PathA": "$.Elements[*].ContractCommitmentID",
-        "ColumnBName": "ResourceID",
+        "ColumnBName": "ResourceId",
         "PathB": null
       },
       "Condition": {
