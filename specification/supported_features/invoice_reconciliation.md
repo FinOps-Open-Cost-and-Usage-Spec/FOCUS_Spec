@@ -71,7 +71,7 @@ SELECT
   SUM(BilledCost) AS TotalBilled_BillingCurrency,
   SUM(PaymentCurrencyBilledCost) AS TotalBilled_PaymentCurrency,
   -- Calculate effective exchange rate for the group
-  SAFE_DIVIDE(SUM(PaymentCurrencyBilledCost), SUM(BilledCost)) AS EffectiveExchangeRate
+  SUM(PaymentCurrencyBilledCost) / NULLIF(SUM(BilledCost), 0) AS EffectiveExchangeRate
 FROM InvoiceDetail
 WHERE InvoiceId = ?
 GROUP BY PaymentCurrencyInvoiceDetailId
