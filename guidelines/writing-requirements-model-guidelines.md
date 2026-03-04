@@ -1,8 +1,10 @@
 # Guidelines for writing model rules
 
-As the FOCUS working group moves to introduce a formal rule definition structure the requirement for FOCUS members to understand how to read and write rules will increase. This guide is here to assist those who are starting their journey in writing rules for FOCUS.
+The FOCUS Requirements Model is a machine-readable representation of the normative requirements defined in the FOCUS specification. It transforms human-readable specification text (written using keywords like MUST, SHOULD, and MAY) into structured JSON that can be programmatically validated, tested, and enforced. This model enables automated conformance testing, tooling integration, and consistent interpretation of FOCUS requirements across different implementations. By capturing rules in a standardized format with explicit dependencies, conditions, and validation logic, the Requirements Model ensures that FOCUS datasets can be reliably validated against specification requirements.
 
-The `specification/requirements_model` folder contains modular model components and a Python-based build process that assembles them into a validated `model-<version>.json` file using a corresponding JSON Schema (`model_schema.json`).
+With the formal rule definition structure now in place, FOCUS members need to understand how to read and write model rules effectively. This guide assists those working with the Requirements Model, whether creating new rules, maintaining existing ones, or validating datasets against FOCUS requirements.
+
+The `specification/requirements_model` folder contains modular model components organized by version under `releases/X.X/` directories. A Python-based build process assembles these components into a validated `model-<version>.json` file using a corresponding JSON Schema (`model_schema.json`). The `releases/latest/` symlink always points to the most recent model version.
 
 ## Model document overview
 
@@ -16,7 +18,7 @@ The model document for FOCUS contains the following major sections:
 | ModelDatasets | List of datasets defined by FOCUS and the related top level model rules associated with the dataset |
 | ModelRules | Individual model rule definitions that are linked together by requirements and dependencies to form the full model ruleset |
 
-## Steps to apply model rules to existing attributes and columns
+## Steps to create model rules for FOCUS entities
 
 An Action Item (AI) ticket should be opened to track the progress of implementing the model rules for an existing check.
 
@@ -24,14 +26,14 @@ An Action Item (AI) ticket should be opened to track the progress of implementin
 
 The first stage of conversion of rules from the normative text to model rules is for a table to be generated with the format as follows:
 
-- `ModelRuleId` - Is the formal Id given to this entry in the model rules (See: [RM Expression Format](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1121-ai-align-on-approach-for-scrs/specification/requirements_model/README.md#-cr-expression-format))
+- `ModelRuleId` - Formal identifier for this model rule entry
 - `Function` - The type of rule to be defined (Valid types: `Composite`, `Presence`, `Type`, `Format`, `Validation`)
 - `Reference` - The Column/Attribute Id this rule applies to
 - `EntityType` - The type of entity this rule applies to (Valid types: `Dataset`, `Column`, `Attribute`, `Object`, `Metadata`)
 - `EntityName` - The human-readable name of the entity this rule applies to
 - `EntityId` - The unique identifier of the entity this rule applies to
 - `Notes` - Free form notes (short) included in the model rule document
-- `ModelVersionIntroduced` - Requirement Model Version this rule was added to the Model Rules (See: [Model Versioning](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1121-ai-align-on-approach-for-scrs/specification/requirements_model/README.md#versioning))
+- `ModelVersionIntroduced` - Requirement Model Version this rule was added to the Model Rules
 - `Status` - Status of the rule (Valid values: Active, Deprecated, Removed)
 - `ModelVersionRemoved` - Requirement Model Version this rule was removed from the Model Rules
 - `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
@@ -49,11 +51,7 @@ The first stage of conversion of rules from the normative text to model rules is
 
 #### Stage 1: Rule-Based Extraction of Normative Requirements
 
-Stage 1 defines a rule-based extraction process for converting normative requirements from FOCUS Releases into a structured, machine-readable JSON representation. The objective of this stage is not to model the extraction visually, but to ensure that each normative statement in the specification is deterministically identified, classified, and represented using the set of JSON properties defined in the previous section.
-
-During Stage 1, normative requirements are extracted by applying a fixed set of authoring and interpretation rules that govern how requirements are detected, how scope and applicability are determined, and how each requirement is expressed without inference or reinterpretation. The resulting JSON output must strictly conform to the required property structure, enabling consistency across releases and supporting downstream automation, validation, and analysis workflows.
-
-This stage intentionally avoids diagrammatic representations, as the extraction logic is entirely driven by the prescribed rules and constraints. The focus is on accuracy, repeatability, and structural alignment with the defined JSON model, ensuring that Stage 1 produces a faithful and complete representation of the normative requirements as written in the FOCUS specification.
+Stage 1 converts normative requirements from the FOCUS specification into structured, machine-readable JSON using the property definitions below. Apply the extraction rules deterministically to ensure each normative statement is consistently identified, classified, and represented without inference or reinterpretation. The resulting JSON must strictly conform to the defined structure, enabling consistency across releases and supporting automation, validation, and analysis workflows.
 
 #### High-Level Description of the Model Rule Properties
 
@@ -76,14 +74,14 @@ The following architectural components define the core entities in FOCUS that sh
 |--------------------|-----------------------------------------------------| ----------------------------------------- |-----------------------------------------------------------------------------------------------------------------|
 | `Dataset`          | Whole billing dataset                               | Structural presence, versioning, coverage | Dataset MUST include all columns required by the declared FOCUS version                                         |
 | `Row`              | Individual line item in dataset                     | Logic conditions, nullability, alignment  | Rows with `ChargeCategory = Purchase` MUST contain a `SkuId`                                                    |
-| `Column`           | Named field across rows                             | Data type, format, constraints            | Each item in `AllocatedMethodDetailsObject.Elements` MUST be an object.                                                         |
-| `Object`           | JSONObject content of a column                      | Data type, format, constraints            | Column `BillingPeriodStart` MUST be of type `DateTime`                                                          |
+| `Column`           | Named field across rows                             | Data type, format, constraints            | Column `BilledCost` MUST be of type `Decimal`                                                          |
+| `Object`           | JSONObject content of a column                      | Data type, format, constraints            | Object property `name` MUST be of type `String`                                                          |
 | `Attribute`        | Shared formatting/logic constraint                  | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                              |
 
 #### 2. RMID – Apply RMID Naming Rules
 
 Construct a unique identifier for the rule using the format:  
-`{{ColumnID}}-{{EntityType}}-{{NNN}}-{{Level}}`
+`DatasetType-ColumnID-EntityType-NNN-Level`
 
 This ensures traceability, uniqueness, and clarity.
 
@@ -94,9 +92,7 @@ This ensures traceability, uniqueness, and clarity.
   - `D` = Dataset  
   - `C` = Column
   - `O` = Object
-  - `A` = Attribute  
-  - `M` = Metadata
-  - `O` = Object
+  - `A` = Attribute
 - `NNN:` (unique only within the dataset namespace)
   - `000` for root composite  
   - `0NN` for intermediate composites  
@@ -158,30 +154,33 @@ Categorize the type of logic the rule enforces. This helps determine how it shou
 - Use `Presence` for rules requiring the column’s inclusion in the dataset.
 - Use `Type` to enforce primitive types like `Decimal`, `String`, `Boolean`.
 - Use `Format` for pattern-based constraints (e.g., `DateTimeFormat`, `UUID`, `NumericFormat`).
-- Use `Nullability` to define when values must or must not be null.
-- Use `Validation` for business logic or fixed-value conditions not covered above.
+- Use `Nullability` to define conditional nullability rules (e.g., "MUST NOT be null when condition X" or "MAY be null when condition Y").
+- Use `Validation` for business logic or fixed-value conditions not covered above, including unconditional NOT NULL rules.
 - Use `Composite` to group multiple RMIDs with logical expressions (`AND` / `OR` / `NOT`).
 - Use `Ambiguous` only when no clear classification is possible.
 
-**Example**  
-A rule states: "`BillingPeriodStart` MUST be of type `DateTime`."  
-→ `Function = Format`
+**Examples**  
+Rule states "`BillingPeriodStart` MUST be of type `DateTime`":  
+→ `Function = Type`
+
+Rule states "`CommitmentDiscountQuantity` MUST NOT be null when `ChargeCategory` is `Purchase`":  
+→ `Function = Nullability`
 
 #### 4. Reference – Identify the reference target
 
-Point to the human-readable column or attribute name that the rule applies to, as defined in the FOCUS specification.
+Provide the identifier for the column or attribute that the rule applies to, using the PascalCase ID format.
 
-- Use the `display_name` for the column as written in the spec.
-- For rules related to attribute-level constraints (e.g., `NumericFormat`), use the attribute name.
-- This field should exactly match the title of the column or attribute from the normative requirements.
+- For columns: Use the ColumnId (e.g., `CommitmentDiscountQuantity`)
+- For attributes: Use the attribute name (e.g., `NumericFormat`, `StringHandling`)
+- This field should match the ID as defined in the FOCUS specification
 
 **Example**  
-If the rule applies to the column `CommitmentDiscountQuantity`, set:  
-→ `Reference = Commitment Discount Quantity`
+If the rule applies to the column with ID `CommitmentDiscountQuantity`:  
+→ `Reference = CommitmentDiscountQuantity`
 
 #### 5. Keyword – Extract the normative keyword
 
-Determine the obligation level using the normative keyword from the source text, such as `MUST`, `SHALL`, `SHOULD`, or `MAY`.
+Determine the obligation level using the normative keyword from the source text, such as `MUST`, `SHOULD`, or `MAY`.
 
 - Identify the first normative keyword present in the requirement:
   - `MUST`, `MUST NOT` → Mandatory
@@ -197,82 +196,126 @@ Determine the obligation level using the normative keyword from the source text,
 A rule states: “Rows SHOULD include `SkuId` when `ChargeCategory = Purchase`.”  
 → `Keyword = SHOULD`
 
-#### 6. Applicability Criteria (GATE) – Determine if the rule should be evaluated
+#### 6. Applicability Criteria – Determine if the rule should be evaluated
 
-Define the dataset-level or service-provider-level condition that determines when the rule is relevant for evaluation.
+Specify provider capability flags that determine when the rule applies. Use keys defined in the ApplicabilityCriteria section of the model.
 
-- Use an empty list [] when no structural gating is defined.
-- Use a dataset-level statement (e.g., `"Dataset includes ChargeCategory column"`) for presence rules.
-- Use a service provider or environment condition if the rule depends on system capabilities  
-  (e.g., `"Service Provider supports capacity reservation"`).
-- For composite rules, inherit the most restrictive gating condition from child RM Items.
-- Do not leave this field blank. Only omit if the applicability is inherited from a parent composite.
+- Use an empty list `[]` when no applicability gating is required
+- Use array of criteria keys when rule depends on provider capabilities  
+  (e.g., `["COMMITMENT_DISCOUNT_SUPPORTED"]`, `["CAPACITY_RESERVATION_SUPPORTED"]`)
+- Common criteria: `REGION_SUPPORTED`, `TAGGING_SUPPORTED`, `SUB_ACCOUNT_SUPPORTED`
 
 **Example**  
-A presence rule states: “Column `CapacityReservationId` MUST be present when the service provider supports capacity reservation.”  
-→ `ApplicabilityCriteria = Service Provider supports capacity reservation`
+A rule requires capacity reservation support:  
+→ `ApplicabilityCriteria = ["CAPACITY_RESERVATION_SUPPORTED"]`
 
-#### 7. Condition (GATE) – Specify when to test
+#### 7. Condition – Specify when to test
 
-Define the row-level logic that determines whether the rule should be applied to a given record in the dataset.
+Define the row-level logic that determines whether the rule applies to a given record using CheckFunction objects.
 
-- Use `"All_Rows"` if the rule applies to every row in the dataset.
-- If the rule applies conditionally, extract the condition from the normative text using simple boolean logic.
+- Use empty object `{}` when the rule applies to all rows unconditionally
+- Use CheckFunction structure when rule applies conditionally (same structure as Requirement field)
 
-**Example patterns:**
+**Examples:**
 
-- `ChargeCategory = "Purchase"`
-- `CommitmentDiscountQuantity IS NOT NULL`
+Unconditional rule (applies to all rows):
+```json
+"Condition": {}
+```
 
-- Always express conditions in a machine-readable, testable format.
-- Never leave this field empty or set to `null`.
+Conditional rule when ChargeCategory equals "Purchase":
+```json
+"Condition": {
+  "CheckFunction": "CheckValue",
+  "ColumnName": "ChargeCategory",
+  "Value": "Purchase"
+}
+```
 
-**Example**  
-A rule states: “`SkuId` MUST be present when `ChargeCategory = Purchase`.”  
-→ `Condition = ChargeCategory = "Purchase"`
+Conditional rule when ContractCommitmentCategory equals "Usage":
+```json
+"Condition": {
+  "CheckFunction": "CheckValue",
+  "ColumnName": "ContractCommitmentCategory",
+  "Value": "Usage"
+}
+```
 
 #### 8. MustSatisfy – Define how to test the rule
 
-State the actual behavior or constraint being enforced by the rule in a testable format, using the original normative keyword.
+Copy the actual normative text from the column specification that this rule enforces, including the full sentence with the column name.
 
-- Express the rule in clear, declarative language.
-- Use the same keyword (`MUST`, `SHOULD`, `MAY`) as in the normative requirement.
-- Keep the logic atomic — this field should describe only the rule itself, not any dependencies or logical groupings.
-- Exclude conditional logic — that belongs in the `Condition` field.
+- Use the exact text from the specification document
+- Include the column/entity name in the statement
+- Preserve the normative keyword (`MUST`, `SHOULD`, `MAY`) as written in the specification
+
+**Examples:**
+
+From the specification text "`ContractCommitmentQuantity` MUST be of type Decimal.":  
+→ `MustSatisfy = "ContractCommitmentQuantity MUST be of type Decimal."`
+
+From the specification text "`ContractCommitmentQuantity` MUST conform to NumericFormat requirements.":  
+→ `MustSatisfy = "ContractCommitmentQuantity MUST conform to NumericFormat requirements."`
+
+#### 9. Requirement – Identify the check function and arguments
+
+Define the specific validation check that implements this rule using CheckFunction objects.
+
+For **Composite rules**, use logical CheckFunctions to group other rules:
+- `CheckFunction: "AND"` with `Items` array containing nested requirement references
+- `CheckFunction: "OR"` with `Items` array containing nested requirement references
+
+For **Atomic rules**, use specific CheckFunction types from the model:
+- `ColumnPresent` - Check if a column exists in the dataset
+- `CheckNotValue` - Verify a column does not contain a specific value
+- `CheckValue` - Verify a column contains a specific value
+- `TypeDecimal`, `TypeString`, `TypeBoolean` - Check data type
+- `FormatNumeric`, `FormatString`, `FormatDateTime` - Check format compliance
+- See CheckFunctions section in the model for complete list
+
+**Examples:**
+
+Composite rule grouping three child rules:
+```json
+"Requirement": {
+  "CheckFunction": "AND",
+  "Items": [
+    {
+      "CheckFunction": "CheckModelRule",
+      "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-010-M"
+    },
+    {
+      "CheckFunction": "CheckModelRule",
+      "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-011-C"
+    },
+    {
+      "CheckFunction": "CheckModelRule",
+      "ModelRuleId": "CAU-CommitmentDiscountQuantity-C-012-C"
+    }
+  ]
+}
+```
+
+Atomic rule checking column presence:
+```json
+"Requirement": {
+  "CheckFunction": "ColumnPresent",
+  "ColumnName": "BilledCost"
+}
+```
+
+#### 10. Type – Specify validation dependency classification
+
+Indicates whether the rule can be validated using only the dataset itself or requires external dependencies.
+
+- `Static` - Rule can be validated by examining the dataset alone (data types, nullability, formatting, schema presence)
+- `Dynamic` - Rule requires external dependencies (invoice records, catalog metadata, provider configuration)
+
+For composite rules, use `Dynamic` if any child rule is dynamic.
 
 **Example**  
-A rule states: “`BillingPeriodStart` MUST be of type `DateTime`.”  
-→ `MustSatisfy = MUST be of type DateTime`
-
-#### 9. Requirement – Identify logical dependencies
-
-Define whether the rule groups or depends on other RMIDs or attribute rule sets.
-
-- Use a logical expression (`AND()`, `OR()`, `NOT()`) to group RMIDs in composite rules.
-- If the rule refers to a shared attribute rule set (e.g., `NumericFormat`, `StringHandling`), use:  
-  `Requirement = NumericFormat:RM`
-- Set to `"null"` for atomic rules that do not depend on other rules or attributes.
-- Always define this field for composite rules, and make sure referenced RMIDs exist or appear later in the table.
-
-**Example**  
-A rule states: “The following rules MUST be enforced for `CommitmentDiscountQuantity` when it is not null…” and lists three RMs.  
-→ `Requirement = AND(CommitmentDiscountQuantity-C-010-M, CommitmentDiscountQuantity-C-011-C, CommitmentDiscountQuantity-C-012-C)`
-
-#### 10. Validation Type – Indicate static vs. dynamic
-
-Specify whether the rule can be validated using only the dataset itself or if it depends on external systems or metadata.
-
-- Use `Static` if the rule can be enforced by examining the dataset alone:  
-  Example: value types, nullability, formatting, or schema presence.
-- Use `Dynamic` if validation depends on:
-  - External invoice records  
-  - Catalog metadata  
-  - Service Provider configuration or billing systems
-- For composite rules, set to `Dynamic` if any child RM Item is dynamic.
-
-**Example**  
-A rule states: “`BillingAccountType` MUST align with the service provider’s contractual agreement.”  
-→ `Validation Type = dynamic`
+Rule checks data type: `Type = Static`  
+Rule validates against provider catalog: `Type = Dynamic`
 
 #### 11. ModelVersionIntroduced – Version tracking
 
@@ -296,22 +339,14 @@ Indicate whether the rule is `Active`, `Deprecated`, or `Removed` for future use
 **Example**  
 A rule marked in the spec as legacy:  
 “This requirement will be removed in future versions.”  
-→ `Status = deprecated`
+→ `Status = Deprecated`
 
 #### 13. Notes – Capture comments
 
-Use this field to add clarifying comments, editorial notes, or cross-references to other RM Items or attributes.
+Use this field to add clarifying comments, editorial notes.
 
 - Add contextual information for better understanding of the rule.
-- For attribute-based dependencies, always include a note like:  
-  `Cross-attribute reference: NumericFormat:RM`
-- For column-to-column dependencies, use:  
-  `Cross-column reference: BillingPeriodEnd-C-001-M`
 - Leave blank only when no additional clarification is needed.
-
-**Example**  
-A rule that delegates to `NumericFormat`  
-→ `Notes = Cross-attribute reference: NumericFormat:RM`
 
 #### 14. DatasetId and DatasetName – Dataset Association
 
@@ -322,8 +357,6 @@ For Column and Dataset entity types, these fields establish the relationship bet
 - `DatasetId` must match the identifier of the dataset the entity belongs to
 - `DatasetName` must match the human-readable name of the dataset
 - Both fields are required for all Column and Dataset entity types
-- For Cost and Usage dataset: `DatasetId = "CostAndUsage"`, `DatasetName = "Cost and Usage"`
-- For Contract Commitment dataset: `DatasetId = "ContractCommitment"`, `DatasetName = "Contract Commitment"`
 - These fields ensure proper dataset-rule association and enable dataset-specific validation
 
 **Example**  
@@ -331,39 +364,168 @@ For a rule applying to a column in the Cost and Usage dataset:
 → `DatasetId = CostAndUsage`  
 → `DatasetName = Cost and Usage`
 
+#### 15. Dependencies – Track rule relationships
+
+The Dependencies array lists prerequisite rules that must be evaluated before the current rule. This establishes the dependency graph and evaluation order.
+
+**When to use Dependencies:**
+
+- When your rule references a column that must exist (add that column's composite rule)
+- When your Condition uses a column (add that column's composite rule)
+- When logical evaluation order matters (e.g., type checking before format checking)
+- When your rule builds on another rule's validation
+
+**Ordering Requirements:**
+
+- Dependencies must be listed in ascending order by their `Order` field values
+- This ensures rules are evaluated in the correct sequence
+- Automated tests validate dependency ordering
+
+**Examples:**
+
+Unconditional rule with no dependencies:
+→ `Dependencies = []`
+
+Nullability rule that depends on ChargeCategory column:
+```json
+"Dependencies": [
+  "CAU-ChargeCategory-C-000-M"
+]
+```
+
+Complex rule depending on multiple prerequisites (ordered by Order field):
+```json
+"Dependencies": [
+  "CAU-BilledCost-C-000-M",        // Order: 10
+  "CAU-BillingCurrency-C-000-M",   // Order: 20
+  "CAU-ChargeCategory-C-000-M"     // Order: 30
+]
+```
+
+#### 16. ModelVersionRemoved – Track removed rules
+
+Record the model version when a rule is removed from the specification. Only populate this field when `Status = "Removed"`.
+
+**When to use:**
+
+- A rule has been completely removed from the FOCUS specification
+- Enables version-specific rule filtering and backward compatibility
+- Leave empty for Active and Deprecated rules
+
+**Examples:**
+
+Active rule (most common):
+→ `Status = "Active"`, `ModelVersionRemoved` field omitted or empty
+
+Rule removed in version 1.4:
+→ `Status = "Removed"`, `ModelVersionRemoved = "1.4"`
+
+**Note:** Deprecated rules should not have ModelVersionRemoved populated until they are actually removed in a future version.
+
 ### Stage 2
 
 The second phase of conversion is to take the table created in Stage 1 and create the entries in the `specification/requirements_model` folder that adds the rules to the formal JSON structure.
 
 #### Folder structure
 
-- `cr_details.json`: Metadata like versioning
+Version-specific model content is organized under `specification/requirements_model/releases/X.X/` where X.X represents the model version (e.g., 1.2, 1.3). A `latest` symlink points to the most recent version.
+
+**Version-specific structure** (`releases/X.X/`):
+- `cr_details.json`: Metadata like versioning for this model version
 - `applicability_criteria.json`: Feature flags controlling rule application
 - `check_functions.json`: Logical validation functions and their arguments
 - `model_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
 - `model_rules/attributes/`: JSON files defining multiple `ModelRules` for a single attribute
 - `model_rules/columns/`: JSON files defining multiple `ModelRules` for a single column
 
+**Build output** (top-level):
+- `build/model-X.X.json`: Built complete model JSON files for all versions
+
+**Convenience paths:**
+- `releases/latest/`: Symlink to the latest model version directory
+- All work should be done in the appropriate version directory under `releases/X.X/`
+
 #### Steps
 
 - Assign the Action Item (AI) to yourself to signal that you are working on the item (See: [GitHub Issues](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues))
-- Open a branch with the source of git branch `1121-ai-align-on-approach-for-scrs` for your development work with the naming format as follows `ai number`-cr-`entity-name`-1121. (example: 1255-cr-AvailabilityZone-1121)
+- Open a branch with the source of git feature branch for the development work in progress for your development work.
 - Pull your branch to your development environment and perform all work specific to this AI in this branch.
+- Navigate to the appropriate model version directory under `specification/requirements_model/releases/X.X/` (or use the `latest` symlink for current development)
 - Add a file into the relevant folder `model_rules/attributes/` or `model_rules/columns/` with name `entity-name`.json (example: availabilityzone.json)
 - Write your rules into this file based on the rules in the Stage 1 table from the AI ticket (See: [ModelRule Templates](#modelrule-templates) for helpers)
-- If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` avoiding duplication
-- If you need to add new CheckFunctions add them to `check_functions.json` avoiding duplication
+- If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` in the version directory, avoiding duplication
+- If you need to add new CheckFunctions add them to `check_functions.json` in the version directory, avoiding duplication
 - Add your top level model rule entry into the relevant Dataset entries in the `model_datasets.json` file
+- Validate and test your changes (see Build and Test workflow below)
 - Commit your changes to your branch and then move onto raising the PR section
-If you need assistance reach out to Mike Fuller in the FOCUS slack
+
+#### Build and Test Workflow
+
+Before committing your changes, validate that your model rules are correctly structured and pass all tests.
+
+**Building the model JSON:**
+
+From the `specification/requirements_model` directory, run the build script:
+
+```bash
+cd specification/requirements_model
+./build_json.py
+```
+
+This script will:
+1. Run all pytest tests to validate rule structure and dependencies
+2. Assemble all version-specific JSON files from `releases/X.X/` directories
+3. Generate complete `build/model-X.X.json` files for each version
+4. Validate the generated JSON against `model_schema.json`
+
+**Build-only mode:**
+
+To skip tests and only generate the JSON (useful during development):
+
+```bash
+./build_json.py --build-only
+```
+
+**Running tests independently:**
+
+To run the test suite without building:
+
+```bash
+cd specification/requirements_model
+pytest tests/
+```
+
+Or run specific test files:
+
+```bash
+pytest tests/test_schema.py
+pytest tests/test_dependencies.py
+```
+
+**Common validation checks:**
+
+The tests verify:
+- JSON structure conformance to `model_schema.json`
+- RMID format and uniqueness
+- Dependency references exist and are valid
+- Order field consistency in Dependencies arrays
+- CheckFunction argument structure
+- ApplicabilityCriteria key validity
+- Cross-reference integrity between rules
+
+**Troubleshooting build errors:**
+
+- **JSON syntax errors**: Check for missing commas, brackets, or quotes in your rule files
+- **Schema validation failures**: Ensure all required fields are present (Function, Reference, EntityType, etc.)
+- **Dependency errors**: Verify all ModelRuleIds in Dependencies arrays exist
+- **RMID conflicts**: Ensure your RMID is unique within the dataset namespace
 
 ## Pull Request Workflow
 
-- Navigate to Github and raise a pull request (PR) from your `ai number`-cr-`entity-name`-1121 branch to the `1121-ai-align-on-approach-for-scrs` branch
+- Navigate to Github and raise a pull request (PR) from your branch to the base development feature branch
 - Ensure you link the opened PR to your issue ticket by using the development cog on the right side of the PR page
-- Assign the PR to `mike-finopsorg`
 - Announce your PR in the [#tf-conformance-requirements](https://f2-focus.slack.com/archives/C096UTPE3NF) slack channel for other members to see
-- Once reviewed and the members have had time (5 days) to add any feedback, Mike will merge the PR into the `1121-ai-align-on-approach-for-scrs` branch which will get full review when that branch is reviewed to merge into the `working_draft` branch via the PR [FR #1054: Initial commit with Model Data structure](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1209)
+- Once reviewed and the members have had time (5 days) to add any feedback, TF-RM leader will merge the PR into the base feature development branch which will get full review when that branch is reviewed to merge into the `working_draft` branch via the PR for the RM feature development.
 
 ## Order Field Usage
 
@@ -696,6 +858,46 @@ Common rule for columns with a MUST be one of the allowed values requirement.
       },
       "Condition": {},
       "Dependencies": []
+    }
+  }
+```
+
+### Nullability requirement rule (conditional)
+
+Common rule for columns with conditional nullability requirements. Use when a column MUST NOT be null under certain conditions or MAY be null under others.
+
+```json
+  "CAU-SampleColumn-C-008-C": {
+    "Function": "Nullability",
+    "Reference": "SampleColumn",
+    "EntityType": "Column",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "Order": 10,
+    "ValidationCriteria": {
+      "MustSatisfy": "SampleColumn MUST NOT be null when ChargeCategory is \"Purchase\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "SampleColumn",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Purchase"
+      },
+      "Dependencies": [
+        "CAU-ChargeCategory-C-000-M"
+      ]
     }
   }
 ```
