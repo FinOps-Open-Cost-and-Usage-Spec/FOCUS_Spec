@@ -15,7 +15,7 @@ Mapping documentation should include the following information for each FOCUS co
 | FOCUS Column | The FOCUS column identifier (e.g., `BilledCost`) |
 | Source Field(s) | Native billing column name(s) that map to this FOCUS column |
 | Transform Logic | How the native field value is converted to the FOCUS column value |
-| Feature Level | Mandatory, Conditional, or Optional |
+| Feature Level | The requirement level for the FOCUS column's inclusion in the FOCUS dataset (Mandatory, Conditional, or Optional) |
 | Notes | Additional context, edge cases, or variations |
 
 ## Transform Logic Patterns
