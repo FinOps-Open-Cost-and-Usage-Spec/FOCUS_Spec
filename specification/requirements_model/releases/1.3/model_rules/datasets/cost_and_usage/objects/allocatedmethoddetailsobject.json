@@ -13,7 +13,7 @@
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMethodDetails adheres to the following requirements:",
       "Keyword": "MUST",
@@ -95,7 +95,7 @@
     "Order": 10,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetails MUST have a top-level key \"Elements\" which contains an array.",
       "Keyword": "MUST",
@@ -123,7 +123,7 @@
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Each item in \"Elements\" MUST be an object.",
       "Keyword": "MUST",
@@ -151,7 +151,7 @@
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Objects inside \"Elements\" MUST conform to KeyValueFormat requirements.",
       "Keyword": "MUST",
@@ -178,7 +178,7 @@
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "FOCUS-defined allocation properties adhere to the following additional requirements:",
       "Keyword": "MUST",
@@ -221,7 +221,7 @@
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Allocation property key MUST match the spelling and casing specified for the FOCUS-defined property.",
       "Keyword": "MUST",
@@ -244,7 +244,7 @@
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Allocation property value MUST be of the type specified for that property.",
       "Keyword": "MUST",
@@ -267,7 +267,7 @@
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Allocation properties MUST adhere to additional normative requirements specific to that property.",
       "Keyword": "MUST",
@@ -290,7 +290,7 @@
     "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Data generator-defined allocation properties MAY be included in \"Elements\".",
       "Keyword": "MAY",
@@ -313,7 +313,7 @@
     "Order": 90,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Allocation property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined allocation property.",
       "Keyword": "MUST",
@@ -346,7 +346,7 @@
     "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetails root object MAY contain additional data generator-defined items, in addition to \"Elements\".",
       "Keyword": "MAY",
@@ -369,7 +369,7 @@
     "Order": 110,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "The \"AllocatedRatio\" property adheres to the following requirements:",
       "Keyword": "MUST",
@@ -412,7 +412,7 @@
     "Order": 120,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "\"AllocatedRatio\" MUST be included inside each \"Elements\" object.",
       "Keyword": "MUST",
@@ -439,7 +439,7 @@
     "Order": 130,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Values for \"AllocatedRatio\" MUST be a decimal value compatible with NumericFormat representing the allocated charge's percentage of the origin charge.",
       "Keyword": "MUST",
@@ -467,7 +467,7 @@
     "Order": 140,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Values for all \"AllocatedRatio\" properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).",
       "Keyword": "MUST",
@@ -490,7 +490,7 @@
     "Order": 150,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "The \"UsageUnit\" property adheres to the following requirements:",
       "Keyword": "MUST",
@@ -533,7 +533,7 @@
     "Order": 160,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "\"UsageUnit\" MUST be included inside an \"Elements\" object if \"UsageQuantity\" allocation property is included in that \"Elements\" object, otherwise \"UsageUnit\" MAY be included in each \"Elements\" object.",
       "Keyword": "MUST",
@@ -564,7 +564,7 @@
     "Order": 170,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Values for \"UsageUnit\" MUST capture the unit or component of data generator's documented AllocationMethod that was used to determine the \"AllocatedRatio\" value.",
       "Keyword": "MUST",
@@ -587,7 +587,7 @@
     "Order": 180,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Values for \"UsageUnit\" SHOULD conform to UnitFormat requirements.",
       "Keyword": "SHOULD",
@@ -614,7 +614,7 @@
     "Order": 190,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "The \"UsageQuantity\" property adheres to the following requirements:",
       "Keyword": "MUST",
@@ -657,7 +657,7 @@
     "Order": 200,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "\"UsageQuantity\" MAY be included inside an \"Elements\" object when that \"Elements\" object contains a \"UsageUnit\" allocation property.",
       "Keyword": "MAY",
@@ -688,7 +688,7 @@
     "Order": 210,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Values for \"UsageQuantity\" MUST be compatible with NumericFormat.",
       "Keyword": "MUST",
@@ -715,7 +715,7 @@
     "Order": 220,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "Values for \"UsageQuantity\" SHOULD capture the quantity or volume of the \"UsageUnit\" measured by the data generator that was used to determine the \"AllocatedRatio\" value.",
       "Keyword": "SHOULD",

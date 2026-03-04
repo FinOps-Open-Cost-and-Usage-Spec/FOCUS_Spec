@@ -15,7 +15,7 @@
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "The AllocatedResourceId column adheres to the following requirements:",
       "Keyword": "MUST",
@@ -64,7 +64,7 @@
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceId MUST be of type String.",
       "Keyword": "MUST",
@@ -90,7 +90,7 @@
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceId MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
@@ -116,7 +116,7 @@
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceId nullability is defined as follows:",
       "Keyword": "MUST",
@@ -159,7 +159,7 @@
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceId MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.",
       "Keyword": "MUST",
@@ -182,7 +182,7 @@
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceId MUST be null when a *charge* represents the unallocated portion of the origin *charge* after split cost allocation.",
       "Keyword": "MUST",
@@ -205,7 +205,7 @@
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceId MUST NOT be null when a *charge* represents the allocated portion of the origin *charge*.",
       "Keyword": "MUST NOT",
@@ -228,7 +228,7 @@
     "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "When AllocatedResourceId is not null, AllocatedResourceId adheres to the following additional requirements:",
       "Keyword": "MUST",
@@ -270,7 +270,7 @@
     "Order": 90,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceId SHOULD be a locally unique identifier within the associated ResourceId and ChargePeriod.",
       "Keyword": "SHOULD",
@@ -293,7 +293,7 @@
     "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceId MAY NOT be unique across ResourceId or ChargePeriod values.",
       "Keyword": "MAY",

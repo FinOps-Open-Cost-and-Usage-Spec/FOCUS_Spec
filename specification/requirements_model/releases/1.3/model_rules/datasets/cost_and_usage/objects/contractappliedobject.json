@@ -14,7 +14,7 @@
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "If ContractApplied is not null, ContractApplied adheres to the following requirements:",
@@ -126,7 +126,7 @@
     "Order": 10,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractApplied MUST have a top-level key \"Elements\" which contains an array.",
@@ -154,7 +154,7 @@
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ContractApplied root object MAY contain custom objects, in addition to \"Elements\".",
@@ -177,7 +177,7 @@
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "Each item in \"Elements\" MUST be an object.",
@@ -205,7 +205,7 @@
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"Elements\" objects MUST conform to KeyValueFormat requirements.",
@@ -232,7 +232,7 @@
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"Elements\" objects MUST contain key-value pairs (contract application properties).",
@@ -255,7 +255,7 @@
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Contract application property keys SHOULD conform to PascalCase format.",
@@ -278,7 +278,7 @@
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"Elements\" objects MUST contain four key-value pairs, representing \"ContractCommitmentID\", \"ContractCommitmentAppliedCost\", \"ContractCommitmentAppliedQuantity\", and \"ContractCommitmentAppliedUnit\".",
@@ -325,7 +325,7 @@
     "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"Elements\" objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.",
@@ -348,7 +348,7 @@
     "Order": 90,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When custom key-value pairs within \"Elements\" objects are present:",
@@ -391,7 +391,7 @@
     "Order": 100,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "Contract application property custom key-value pairs MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.",
@@ -425,7 +425,7 @@
     "Order": 110,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Contract application property custom key-value pairs MUST be documented by the type generator.",
@@ -448,7 +448,7 @@
     "Order": 120,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Contract application property custom key-value pairs MUST NOT be nested.",
@@ -471,7 +471,7 @@
     "Order": 130,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "FOCUS-defined contract application properties adhere to the following additional requirements:",
@@ -514,7 +514,7 @@
     "Order": 140,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Contract application property key MUST match the spelling and casing specified for the FOCUS-defined property.",
@@ -537,7 +537,7 @@
     "Order": 150,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Contract application property value MUST be of the type specified for that property.",
@@ -560,7 +560,7 @@
     "Order": 160,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "Contract application property MUST adhere to additional normative requirements specific to that property.",
@@ -583,7 +583,7 @@
     "Order": 170,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "Contract application property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined allocation property.",
@@ -617,7 +617,7 @@
     "Order": 180,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The \"ContractId\" property adheres to the following requirements:",
@@ -670,7 +670,7 @@
     "Order": 190,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractId\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider supports *contract commitments*.",
@@ -697,7 +697,7 @@
     "Order": 200,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractId\" MUST be of type String.",
@@ -725,7 +725,7 @@
     "Order": 210,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractId\" MUST conform to StringHandling requirements.",
@@ -752,7 +752,7 @@
     "Order": 220,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractId\" nullability is defined as follows:",
@@ -790,7 +790,7 @@
     "Order": 230,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractId\" MUST be null when a *charge* is not related to a *contract commitment*.",
@@ -813,7 +813,7 @@
     "Order": 240,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractId\" MUST NOT be null when a *charge* is related to a *contract commitment*.",
@@ -836,7 +836,7 @@
     "Order": 250,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When \"ContractId\" is not null, \"ContractId\" adheres to the following additional requirements:",
@@ -874,7 +874,7 @@
     "Order": 260,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractId\" MUST be a unique identifier within the service provider.",
@@ -897,7 +897,7 @@
     "Order": 270,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractId\" SHOULD be a fully-qualified identifier.",
@@ -920,7 +920,7 @@
     "Order": 280,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The \"ContractCommitmentID\" property adheres to the following requirements:",
@@ -973,7 +973,7 @@
     "Order": 290,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider supports *contract commitments*.",
@@ -1000,7 +1000,7 @@
     "Order": 300,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" MUST be of type String.",
@@ -1028,7 +1028,7 @@
     "Order": 310,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" MUST conform to StringHandling requirements.",
@@ -1055,7 +1055,7 @@
     "Order": 320,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" nullability is defined as follows:",
@@ -1093,7 +1093,7 @@
     "Order": 330,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" MUST be null when a *charge* is not related to a *contract commitment*.",
@@ -1116,7 +1116,7 @@
     "Order": 340,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" MUST NOT be null when a *charge* is related to a *contract commitment*.",
@@ -1139,7 +1139,7 @@
     "Order": 350,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "When \"ContractCommitmentID\" is not null, \"ContractCommitmentID\" adheres to the following additional requirements:",
@@ -1169,7 +1169,12 @@
           }
         ]
       },
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "JSONCheckPathNotValue",
+        "ColumnName": "ContractApplied",
+        "Path": "$.Elements[*].ContractCommitmentID",
+        "Value": null
+      },
       "Dependencies": [
         "CAU-ContractAppliedObject-O-036-M",
         "CAU-ContractAppliedObject-O-037-O",
@@ -1192,7 +1197,7 @@
     "Order": 360,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" MUST be a unique identifier within the service provider.",
@@ -1215,7 +1220,7 @@
     "Order": 370,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" SHOULD be a fully-qualified identifier.",
@@ -1238,7 +1243,7 @@
     "Order": 380,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" MUST have one and only one parent \"ContractID\".",
@@ -1267,7 +1272,7 @@
     "Order": 390,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" MUST be equal to ResourceID when ChargeCategory is \"Purchase\".",
@@ -1276,7 +1281,7 @@
         "CheckFunction": "JSONCheckPathSameValue",
         "ColumnAName": "ContractApplied",
         "PathA": "$.Elements[*].ContractCommitmentID",
-        "ColumnBName": "ResourceID",
+        "ColumnBName": "ResourceId",
         "PathB": null
       },
       "Condition": {
@@ -1300,7 +1305,7 @@
     "Order": 400,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentID\" MAY be equal to \"ContractID\".",
@@ -1323,7 +1328,7 @@
     "Order": 410,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The \"ContractCommitmentAppliedCost\" property adheres to the following requirements:",
@@ -1381,7 +1386,7 @@
     "Order": 420,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider associates the *charge's* value with one or more *contract commitments*.",
@@ -1408,7 +1413,7 @@
     "Order": 430,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST be of type Decimal.",
@@ -1436,7 +1441,7 @@
     "Order": 440,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST conform to NumericFormat requirements.",
@@ -1463,7 +1468,7 @@
     "Order": 450,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedCost\" nullability is defined as follows:",
@@ -1501,7 +1506,7 @@
     "Order": 460,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST NOT be null when \"ContractCommitmentAppliedQuantity\" is null.",
@@ -1534,7 +1539,7 @@
     "Order": 470,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedCost\" MAY be null in all other cases.",
@@ -1557,7 +1562,7 @@
     "Order": 480,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST be a valid decimal value.",
@@ -1585,7 +1590,7 @@
     "Order": 490,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST be denominated in the BillingCurrency.",
@@ -1608,7 +1613,7 @@
     "Order": 500,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The \"ContractCommitmentAppliedQuantity\" property adheres to the following requirements:",
@@ -1666,7 +1671,7 @@
     "Order": 510,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
@@ -1693,7 +1698,7 @@
     "Order": 520,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST be of type Decimal.",
@@ -1721,7 +1726,7 @@
     "Order": 530,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST conform to NumericFormat requirements.",
@@ -1748,7 +1753,7 @@
     "Order": 540,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" nullability is defined as follows:",
@@ -1786,7 +1791,7 @@
     "Order": 550,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST NOT be null when \"ContractCommitmentAppliedCost\" is null.",
@@ -1819,7 +1824,7 @@
     "Order": 560,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MAY be null in all other cases.",
@@ -1842,7 +1847,7 @@
     "Order": 570,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST be a valid decimal value.",
@@ -1870,7 +1875,7 @@
     "Order": 580,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST be denominated in the \"ContractCommitmentAppliedUnit\".",
@@ -1893,7 +1898,7 @@
     "Order": 590,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The \"ContractCommitmentAppliedUnit\" property adheres to the following requirements:",
@@ -1946,7 +1951,7 @@
     "Order": 600,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedUnit\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
@@ -1973,7 +1978,7 @@
     "Order": 610,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedUnit\" MUST be of type String.",
@@ -2001,7 +2006,7 @@
     "Order": 620,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedUnit\" MUST conform to StringHandling requirements.",
@@ -2028,7 +2033,7 @@
     "Order": 630,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedUnit\" SHOULD conform to UnitFormat requirements.",
@@ -2055,7 +2060,7 @@
     "Order": 640,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedUnit\" nullability is defined as follows:",
@@ -2093,7 +2098,7 @@
     "Order": 650,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedUnit\" MUST be null when \"ContractCommitmentAppliedQuantity\" is null.",
@@ -2126,7 +2131,7 @@
     "Order": 660,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "\"ContractCommitmentAppliedUnit\" MUST NOT be null when \"ContractCommitmentAppliedQuantity\" is not null.",

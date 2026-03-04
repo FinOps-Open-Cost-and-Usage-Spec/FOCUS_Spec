@@ -5,7 +5,7 @@
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
@@ -25,18 +25,19 @@
       ]
     }
   },
-
   "CAU-AllocatedMethodId-C-001-C": {
     "Order": "10",
     "Function": "Presence",
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Notes": "Note: Review Applicability Criteria",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
-    "ApplicabilityCriteria": ["DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"],
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports data generator-calculated split cost allocation.",
@@ -46,14 +47,13 @@
       "Dependencies": []
     }
   },
-
   "CAU-AllocatedMethodId-C-002-M": {
     "Order": "20",
     "Function": "DataType",
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
@@ -67,14 +67,13 @@
       "Dependencies": []
     }
   },
-
   "CAU-AllocatedMethodId-C-003-M": {
     "Order": "30",
     "Function": "Format",
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
@@ -88,14 +87,13 @@
       "Dependencies": []
     }
   },
-
   "CAU-AllocatedMethodId-C-004-C": {
     "Order": "40",
     "Function": "Composite",
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
@@ -112,14 +110,13 @@
       ]
     }
   },
-
   "CAU-AllocatedMethodId-C-005-C": {
     "Order": "50",
     "Function": "NullabilityRules",
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
@@ -133,14 +130,13 @@
       "Dependencies": []
     }
   },
-
   "CAU-AllocatedMethodId-C-006-C": {
     "Order": "60",
     "Function": "NullabilityRules",
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
@@ -154,14 +150,13 @@
       "Dependencies": []
     }
   },
-
   "CAU-AllocatedMethodId-C-007-M": {
     "Order": "70",
     "Function": "Validation",
     "Reference": "AllocatedMethodId",
     "EntityType": "Column",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Notes": "",
     "ModelVersionIntroduced": "1.3",
     "Status": "Active",
