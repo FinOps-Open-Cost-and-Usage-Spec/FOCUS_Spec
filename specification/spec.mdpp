@@ -7,13 +7,11 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 !INCLUDE "version.md",0
 
+!INCLUDE "spec_abstract.md",0
+
 !INCLUDE "license.md",0
 
 <div style="page-break-after: always"></div>
-
-## Abstract
-
-!INCLUDE "spec_abstract.md",0
 
 ## Table of Contents
 
