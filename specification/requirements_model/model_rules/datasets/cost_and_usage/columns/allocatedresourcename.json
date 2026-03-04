@@ -15,7 +15,7 @@
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "The AllocatedResourceName column adheres to the following requirements:",
       "Keyword": "MUST",
@@ -64,7 +64,7 @@
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceName MUST be of type String.",
       "Keyword": "MUST",
@@ -90,7 +90,7 @@
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceName MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
@@ -116,7 +116,7 @@
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceName nullability is defined as follows:",
       "Keyword": "MUST",
@@ -154,7 +154,7 @@
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceName MUST be null when AllocatedResourceId is null.",
       "Keyword": "MUST",
@@ -185,7 +185,7 @@
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceName MUST NOT be null when AllocatedResourceId is not null.",
       "Keyword": "MUST NOT",
@@ -216,7 +216,7 @@
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedResourceName MAY duplicate AllocatedResourceId when a separate display name is not applicable.",
       "Keyword": "MAY",

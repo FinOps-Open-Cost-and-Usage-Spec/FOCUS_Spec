@@ -14,7 +14,7 @@
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "The ContractApplied column adheres to the following requirements:",
@@ -58,7 +58,7 @@
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "ContractApplied MUST conform to JsonObjectFormat requirements.",
@@ -84,7 +84,7 @@
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.",
@@ -108,7 +108,7 @@
     "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "ContractAppliedObject MUST adhere to the following requirements:",
       "Keyword": "MUST",

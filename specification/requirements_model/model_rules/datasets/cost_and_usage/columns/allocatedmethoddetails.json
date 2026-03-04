@@ -15,7 +15,7 @@
     "Order": 0,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "The AllocatedMethodDetails column adheres to the following requirements:",
       "Keyword": "MUST",
@@ -69,7 +69,7 @@
     "Order": 20,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetails MUST be of type String.",
       "Keyword": "MUST",
@@ -95,7 +95,7 @@
     "Order": 30,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetails MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
@@ -121,7 +121,7 @@
     "Order": 40,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetails MUST conform to JsonObjectFormat requirements.",
       "Keyword": "MUST",
@@ -147,7 +147,7 @@
     "Order": 50,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetails nullability is defined as follows:",
       "Keyword": "MUST",
@@ -185,7 +185,7 @@
     "Order": 60,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.",
       "Keyword": "MUST",
@@ -208,7 +208,7 @@
     "Order": 70,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.",
       "Keyword": "SHOULD NOT",
@@ -231,7 +231,7 @@
     "Order": 80,
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost And Usage",
+    "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
       "MustSatisfy": "AllocatedMethodDetailsObject MUST adhere to the following requirements:",
       "Keyword": "MUST",
