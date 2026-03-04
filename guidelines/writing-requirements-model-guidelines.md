@@ -33,18 +33,18 @@ The first stage of conversion of rules from the normative text to model rules is
 - `EntityName` - The human-readable name of the entity this rule applies to
 - `EntityId` - The unique identifier of the entity this rule applies to
 - `Notes` - Free form notes (short) included in the model rule document
-- `ModelVersionIntroduced` - Requirement Model Version this rule was added to the Model Rules
+- `ModelVersionIntroduced` - Requirements Model Version this rule was added to the Model Rules
 - `Status` - Status of the rule (Valid values: Active, Deprecated, Removed)
-- `ModelVersionRemoved` - Requirement Model Version this rule was removed from the Model Rules
+- `ModelVersionRemoved` - Requirements Model Version this rule was removed from the Model Rules
 - `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
 - `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
 - `Order` - The order in which this rule should be processed or displayed
 - `DatasetType` - The dataset type this rule applies to (e.g. "CAU" for Cost and Usage, "CCT" for Contract Commitment)
-- `DatasetId` - The identifier of the dataset this rule belongs to (Required for Column and Dataset entity types, e.g. "CostAndUsage" for Cost and Usage, "ContractCommitment" for Contract Commitment)
+- `DatasetId` - The identifier of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g. "CostAndUsage" for Cost and Usage, "ContractCommitment" for Contract Commitment)
 - `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Column and Dataset entity types, e.g. "Cost and Usage" for Cost and Usage)
-- `ValidationCriteria` - The detailed criteria that defines how this rule is to be validated,
+- `ValidationCriteria` - The detailed criteria that defines how this rule is to be validated
   - `MustSatisfy` - The normative text that this rule defines
-  - `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `RECOMMENDED`, `SHOULD`, `MAY`, `OPTIONAL`)
+  - `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`)
   - `Requirement` - The definition of what is required for model
   - `Condition` - The definition of conditions under which this rule applies
 
@@ -131,7 +131,7 @@ Where:
 - `ColumnID`: The column identifier in UpperCamelCase
 - `EntityType`, `NNN`, `Level`: Same as previously defined
 
-The `NNN` numbering is only unique within each dataset namespace. For example, `CAU-ListPrice-C-000-M` and `CCT-ListPrice-C-000-M` can both exist independently - the `000` is reused and only needs to be unique within that specific dataset abbreviation.
+The `NNN` numbering is only unique within each dataset namespace. For example, `CAU-ListUnitPrice-C-000-M` and `CCT-ListUnitPrice-C-000-M` can both exist independently - the `000` is reused and only needs to be unique within that specific dataset abbreviation.
 
 ##### Examples
 
@@ -330,7 +330,7 @@ Record the version of the FOCUS specification in which this rule was introduced.
 
 #### 12. Status – Set rule lifecycle status
 
-Indicate whether the rule is `Active`, `Deprecated`, or `Removed` for future use.
+Indicate whether the rule is `Active`, `Deprecated`, or `Removed`.
 
 - Default to `Active` unless the normative text explicitly states otherwise.
 - Use `Deprecated` if the rule is marked for removal or obsolescence.
@@ -451,7 +451,7 @@ Version-specific model content is organized under `specification/requirements_mo
 - Open a branch with the source of git feature branch for the development work in progress for your development work.
 - Pull your branch to your development environment and perform all work specific to this AI in this branch.
 - Navigate to the appropriate model version directory under `specification/requirements_model/releases/X.X/` (or use the `latest` symlink for current development)
-- Add a file into the relevant folder `model_rules/attributes/` or `model_rules/columns/` with name `entity-name`.json (example: availabilityzone.json)
+- Add a file into the relevant folder `model_rules/attributes/` or `model_rules/datasets/<dataset_id>/columns/` with name `entity-name`.json (example: availabilityzone.json)
 - Write your rules into this file based on the rules in the Stage 1 table from the AI ticket (See: [ModelRule Templates](#modelrule-templates) for helpers)
 - If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` in the version directory, avoiding duplication
 - If you need to add new CheckFunctions add them to `check_functions.json` in the version directory, avoiding duplication
@@ -674,7 +674,7 @@ Common rule for columns with a NOT NULL requirement. Can also be used when there
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
-    "Order": 10,
+    "Order": 20,
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null",
       "Keyword": "MUST",
@@ -708,7 +708,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
-    "Order": 10,
+    "Order": 30,
     "ValidationCriteria": {
       "MustSatisfy": "MUST be one of the allowed values",
       "Keyword": "MUST",
@@ -755,7 +755,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
-    "Order": 10,
+    "Order": 40,
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type Decimal",
       "Keyword": "MUST",
@@ -786,7 +786,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
-    "Order": 10,
+    "Order": 50,
     "ValidationCriteria": {
       "MustSatisfy": "MUST conform to NumericFormat requirements",
       "Keyword": "MUST",
@@ -817,7 +817,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
-    "Order": 10,
+    "Order": 60,
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type String",
       "Keyword": "MUST",
@@ -848,7 +848,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
-    "Order": 10,
+    "Order": 70,
     "ValidationCriteria": {
       "MustSatisfy": "MUST conform to StringHandling requirements",
       "Keyword": "MUST",
@@ -881,7 +881,7 @@ Common rule for columns with conditional nullability requirements. Use when a co
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "Type": "Static",
-    "Order": 10,
+    "Order": 80,
     "ValidationCriteria": {
       "MustSatisfy": "SampleColumn MUST NOT be null when ChargeCategory is \"Purchase\".",
       "Keyword": "MUST NOT",
