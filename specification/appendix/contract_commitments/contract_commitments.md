@@ -117,6 +117,8 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 | **Pricing Currency CC Cost** | `1000000.00` | `50000.00` | `120000.00` |
 | **Service Provider Name** | `Acme Co` | `Acme Co` | `DataStreamer` |
 
+[CSV Example](../../data/contract_commitments/contract_commitment_scenario_1.csv)
+
 ### Scenario 2: SaaS Expansion & Hybrid Connector
 
 In this scenario, an enterprise with an existing master agreement with **Acme Co** (`AGR-44-GAMMA`) expands its footprint to include specialized AI training and security licensing. This example highlights how the model handles non-financial units (Seats) and project-based burst windows.
@@ -174,6 +176,8 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 | **Pricing Currency CC Cost** | `250000.00` | `120000.00` | `15000.00` |
 | **Service Provider Name** | `Acme Co` | `CyberGuard Inc` | `Acme Co` |
 
+[CSV Example](../../data/contract_commitments/contract_commitment_scenario_2.csv)
+
 ### Scenario 3: Scale-Out & Overage
 
 This scenario focuses on how the model handles growth beyond initial estimates. In the master agreement `AGR-11-DELTA`, the customer has established "safety nets" and tiered pricing to ensure that scale-out events are still covered by negotiated rates, even after a primary pool is exhausted.
@@ -224,3 +228,5 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **Pricing Currency** | `USD` | `USD` | `USD` |
 | **Pricing Currency CC Cost** | `50000.00` | `0.00` | `100000.00` |
 | **Service Provider Name** | `Acme Co` | `Acme Co` | `Acme Co` |
+
+[CSV Example](../../data/contract_commitments/contract_commitment_scenario_3.csv)
