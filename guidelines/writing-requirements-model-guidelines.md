@@ -88,7 +88,7 @@ Construct a unique identifier for the rule using the format:
 This ensures traceability, uniqueness, and clarity.
 
 - Use the format: `DatasetType-ColumnID-EntityType-NNN-Level`
-- `DatasetType`: Short identifier for the dataset (e.g., `CAU`, `CC`, `META`)
+- `DatasetType`: Short identifier for the dataset (e.g., `CAU`, `CCT`)
 - `ColumnID`: UpperCamelCase (e.g., `ListUnitPrice`)
 - `EntityType:`
   - `D` = Dataset  
@@ -135,12 +135,12 @@ Where:
 - `ColumnID`: The column identifier in UpperCamelCase
 - `EntityType`, `NNN`, `Level`: Same as previously defined
 
-The `NNN` numbering is only unique within each dataset namespace. For example, `CAU-ListPrice-C-000-M` and `CC-ListPrice-C-000-M` can both exist independently - the `000` is reused and only needs to be unique within that specific dataset abbreviation.
+The `NNN` numbering is only unique within each dataset namespace. For example, `CAU-ListPrice-C-000-M` and `CCT-ListPrice-C-000-M` can both exist independently - the `000` is reused and only needs to be unique within that specific dataset abbreviation.
 
 ##### Examples
 
 - Cost and Usage dataset: `CAU-BillingAccountName-C-000-M`
-- Contract Commitment dataset: `CC-CommitmentDiscountId-C-001-M`
+- Contract Commitment dataset: `CCT-CommitmentDiscountId-C-001-M`
 
 ##### Dataset Abbreviations
 
