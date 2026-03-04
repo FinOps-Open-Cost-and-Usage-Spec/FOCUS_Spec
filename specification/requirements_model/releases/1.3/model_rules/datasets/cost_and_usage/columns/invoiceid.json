@@ -162,15 +162,11 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "InvoiceId MUST be null when the charge is not associated either with an invoice or with a pre-generated provisional invoice.",
       "Keyword": "MUST",
-      "Requirement": {
-        "CheckFunction": "CheckValue",
-        "ColumnName": "InvoiceId",
-        "Value": null
-      },
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
@@ -189,15 +185,11 @@
     "DatasetType": "CAU",
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
-    "Type": "Static",
+    "Type": "Dynamic",
     "ValidationCriteria": {
       "MustSatisfy": "InvoiceId MUST NOT be null when the charge is associated with either an issued invoice or a pre-generated provisional invoice.",
       "Keyword": "MUST NOT",
-      "Requirement": {
-        "CheckFunction": "CheckNotValue",
-        "ColumnName": "InvoiceId",
-        "Value": null
-      },
+      "Requirement": {},
       "Condition": {},
       "Dependencies": []
     }
