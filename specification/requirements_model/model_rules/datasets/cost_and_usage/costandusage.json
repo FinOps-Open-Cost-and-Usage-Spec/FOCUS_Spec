@@ -2765,7 +2765,7 @@
     "Order": 10,
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractApplied MUST be present in a Cost and Usage *FOCUS dataset* when the service provider supports contractcommitments.",
+      "MustSatisfy": "ContractApplied MUST be present in a Cost and Usage *FOCUS dataset* when the service provider supports contract commitments.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
