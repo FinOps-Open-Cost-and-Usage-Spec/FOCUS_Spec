@@ -328,7 +328,7 @@
     "DatasetName": "Cost And Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "\"Elements\" objects MAY contain custom key-value pairs, representing additional typepoints provided by the type generator.",
+      "MustSatisfy": "\"Elements\" objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
