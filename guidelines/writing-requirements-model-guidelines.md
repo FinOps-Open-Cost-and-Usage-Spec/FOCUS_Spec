@@ -158,7 +158,7 @@ Categorize the type of logic the rule enforces. This helps determine how it shou
 - Use `Presence` for rules requiring the column’s inclusion in the dataset.
 - Use `Type` to enforce primitive types like `Decimal`, `String`, `Boolean`.
 - Use `Format` for pattern-based constraints (e.g., `DateTimeFormat`, `UUID`, `NumericFormat`).
-- Use `NullabilityRules` to define when values must or must not be null.
+- Use `Nullability` to define when values must or must not be null.
 - Use `Validation` for business logic or fixed-value conditions not covered above.
 - Use `Composite` to group multiple RMIDs with logical expressions (`AND` / `OR` / `NOT`).
 - Use `Ambiguous` only when no clear classification is possible.
@@ -201,7 +201,7 @@ A rule states: “Rows SHOULD include `SkuId` when `ChargeCategory = Purchase`.�
 
 Define the dataset-level or service-provider-level condition that determines when the rule is relevant for evaluation.
 
-- Use `"All_Rows"` when no structural gating is defined.
+- Use an empty list [] when no structural gating is defined.
 - Use a dataset-level statement (e.g., `"Dataset includes ChargeCategory column"`) for presence rules.
 - Use a service provider or environment condition if the rule depends on system capabilities  
   (e.g., `"Service Provider supports capacity reservation"`).
@@ -262,13 +262,13 @@ A rule states: “The following rules MUST be enforced for `CommitmentDiscountQu
 
 Specify whether the rule can be validated using only the dataset itself or if it depends on external systems or metadata.
 
-- Use `static` if the rule can be enforced by examining the dataset alone:  
+- Use `Static` if the rule can be enforced by examining the dataset alone:  
   Example: value types, nullability, formatting, or schema presence.
-- Use `dynamic` if validation depends on:
+- Use `Dynamic` if validation depends on:
   - External invoice records  
   - Catalog metadata  
   - Service Provider configuration or billing systems
-- For composite rules, set to `dynamic` if any child RM Item is dynamic.
+- For composite rules, set to `Dynamic` if any child RM Item is dynamic.
 
 **Example**  
 A rule states: “`BillingAccountType` MUST align with the service provider’s contractual agreement.”  
@@ -287,11 +287,11 @@ Record the version of the FOCUS specification in which this rule was introduced.
 
 #### 12. Status – Set rule lifecycle status
 
-Indicate whether the rule is `active`, `deprecated`, or `removed` for future use.
+Indicate whether the rule is `Active`, `Deprecated`, or `Removed` for future use.
 
-- Default to `active` unless the normative text explicitly states otherwise.
-- Use `deprecated` if the rule is marked for removal or obsolescence.
-- Use `removed` if the rule is removed from the model.
+- Default to `Active` unless the normative text explicitly states otherwise.
+- Use `Deprecated` if the rule is marked for removal or obsolescence.
+- Use `Removed` if the rule is removed from the model.
 
 **Example**  
 A rule marked in the spec as legacy:  
@@ -384,7 +384,7 @@ The `Order` field serves several important functions:
 - Use incremental values (e.g., 10, 20, 30) to allow for future insertions
 - Lower values indicate higher priority/earlier processing
 - Rules without an `Order` field are ignored for ordering purposes
-- The `Order` field is optional but recommended for rules that need explicit sequencing
+- The `Order` field is required for rules to show explicit sequencing
 
 **Dependency Array Ordering:**
 
@@ -399,8 +399,8 @@ The `Order` field serves several important functions:
     "Order": 10,
     "ValidationCriteria": {
       "Dependencies": [
-        "CAU-OtherRule-C-001-M",    // Order: 5
-        "CAU-AnotherRule-C-002-M"   // Order: 15
+        "CAU-OtherRule-C-001-M",    // Order: 20
+        "CAU-AnotherRule-C-002-M"   // Order: 30
       ]
     }
   }
@@ -673,7 +673,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
 
 ```json
   "CAU-SampleColumn-C-007-M": {
-    "Function": "Type",
+    "Function": "Format",
     "Reference": "SampleColumn",
     "EntityType": "Column",
     "EntityId": "SampleColumn",
