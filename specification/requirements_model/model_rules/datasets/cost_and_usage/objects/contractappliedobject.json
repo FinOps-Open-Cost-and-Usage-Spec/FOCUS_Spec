@@ -1169,7 +1169,12 @@
           }
         ]
       },
-      "Condition": {},
+      "Condition": {
+        "CheckFunction": "JSONCheckPathNotValue",
+        "ColumnName": "ContractApplied",
+        "Path": "$.Elements[*].ContractCommitmentID",
+        "Value": null
+      },
       "Dependencies": [
         "CAU-ContractAppliedObject-O-036-M",
         "CAU-ContractAppliedObject-O-037-O",
