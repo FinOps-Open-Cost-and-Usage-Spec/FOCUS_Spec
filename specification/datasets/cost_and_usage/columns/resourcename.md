@@ -6,7 +6,6 @@ The Resource Name is a display name assigned to a [*resource*](#glossary:resourc
 
 ResourceName adheres to the following requirements:
 
-* ResourceName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports billing based on provisioned resources.
 * ResourceName MUST be of type String.
 * ResourceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ResourceName nullability is defined as follows:
@@ -28,13 +27,14 @@ Display name assigned to a *resource*.
 
 ## Content Constraints
 
-|    Constraint   |      Value      |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Conditional     |
-| Allows nulls    | True            |
-| Data type       | String          |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

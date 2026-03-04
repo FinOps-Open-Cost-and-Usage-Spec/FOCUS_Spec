@@ -8,7 +8,6 @@ A tag becomes [*finalized*](#glossary:finalized-tag) when a single value is sele
 
 Tags adheres to the following requirements:
 
-* Tags MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports setting user or provider-defined tags.
 * Tags MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
 * Tags MAY be null.
 * When Tags is not null, Tags adheres to the following additional requirements:
@@ -79,13 +78,14 @@ The set of tags assigned to *tag sources* that account for potential provider-de
 
 ## Content Constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | JSON             |
-| Value format    | [Key-Value Format](#attributes.key-valueformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | JSON                                                 |
+| Value format    | [Key-Value Format](#attributes.key-valueformat)      |
 
 ## Introduced (version)
 

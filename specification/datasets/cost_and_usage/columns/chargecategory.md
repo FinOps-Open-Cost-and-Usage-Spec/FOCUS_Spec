@@ -6,7 +6,6 @@ Charge Category represents the highest-level classification of a [*charge*](#glo
 
 ChargeCategory adheres to the following requirements:
 
-* ChargeCategory MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeCategory MUST be of type String.
 * ChargeCategory MUST NOT be null.
 * ChargeCategory MUST be one of the allowed values.
@@ -25,13 +24,14 @@ Represents the highest-level classification of a *charge* based on the nature of
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Mandatory      |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | Allowed values                                       |
 
 Allowed values:
 
