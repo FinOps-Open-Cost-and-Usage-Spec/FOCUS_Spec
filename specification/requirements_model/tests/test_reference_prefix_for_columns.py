@@ -1,8 +1,14 @@
 import pytest
 import re
+from conftest import requires_version
 
-@pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns_and_objects", scope="session")
-def test_reference_matches_rule_key_prefix_for_columns_and_objects(cr_json):
+@pytest.mark.dependency(name="reference_matches_rule_key_prefix_for_columns", scope="session")
+def test_reference_matches_rule_key_prefix_for_columns_and_objects(version, cr_json):
+    # EntityId field was introduced in v1.3
+    should_skip, reason = requires_version(version, min_version="1.3")
+    if should_skip:
+        pytest.skip(reason)
+    
     rules = cr_json.get("ModelRules") or {}
     violations = []
 

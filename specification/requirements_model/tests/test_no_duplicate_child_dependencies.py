@@ -1,13 +1,19 @@
 import pytest
+from conftest import requires_version
 
 @pytest.mark.dependency(name="no_duplicate_child_dependencies", scope="session")
-def test_no_duplicate_child_dependencies(cr_json):
+def test_no_duplicate_child_dependencies(version, cr_json):
     """
     Test that composite rules don't list dependencies that are already dependencies of their child rules.
     
     For example, if rule A lists rules B and C as dependencies, and rule B also lists C as a dependency,
     then rule A shouldn't need to list C since it's already covered by B.
     """
+    # EntityId field was introduced in v1.3
+    should_skip, reason = requires_version(version, min_version="1.3")
+    if should_skip:
+        pytest.skip(reason)
+    
     rules = cr_json.get("ModelRules") or {}
     violations = []
 

@@ -1,4 +1,5 @@
 import pytest
+from conftest import requires_version
 
 
 def _iter_rule_ids_in_requirement(node):
@@ -81,7 +82,11 @@ def _deps_presence_keywords(rule: dict, rules: dict):
     depends=["provider_supports_requires_applicabilitycriteria"],
     scope="session",
 )
-def test_suffixes_unified(cr_json):
+def test_suffixes_unified(version, cr_json):
+    # EntityId field was introduced in v1.3
+    should_skip, reason = requires_version(version, min_version="1.3")
+    if should_skip:
+        pytest.skip(reason)
     """
     Scope = non-empty ApplicabilityCriteria OR non-empty Condition OR 'when'/'unless' in MustSatisfy
     • If scope: require '-C' (skip '-M'/'-O').

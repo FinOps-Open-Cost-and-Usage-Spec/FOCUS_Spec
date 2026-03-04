@@ -9,21 +9,21 @@ from pathlib import Path
 import pytest
 
 
-def get_model_rules_json_files():
-    """Get all JSON files in the model_rules directory."""
-    model_rules_path = Path(__file__).parent.parent / "model_rules"
+def get_model_rules_json_files(version_dir):
+    """Get all JSON files in the model_rules directory for a specific version."""
+    model_rules_path = version_dir / "model_rules"
     json_files = []
     
-    for root, dirs, files in os.walk(model_rules_path):
-        for file in files:
-            if file.endswith('.json'):
-                json_files.append(os.path.join(root, file))
+    if model_rules_path.exists():
+        for root, dirs, files in os.walk(model_rules_path):
+            for file in files:
+                if file.endswith('.json'):
+                    json_files.append(os.path.join(root, file))
     
     return json_files
 
 
-@pytest.mark.parametrize("json_file", get_model_rules_json_files())
-def test_json_indentation_is_two_spaces(json_file):
+def test_json_indentation_is_two_spaces(version, version_dir):
     """
     Test that JSON files use 2-space indentation.
     
@@ -32,32 +32,39 @@ def test_json_indentation_is_two_spaces(json_file):
     2. When re-serialized with 2-space indent, it matches the original
     3. The file does not use 4-space or tab indentation
     """
-    with open(json_file, 'r', encoding='utf-8') as f:
-        original_content = f.read()
-        f.seek(0)
-        data = json.load(f)
+    json_files = get_model_rules_json_files(version_dir)
     
-    # Re-serialize with 2-space indentation
-    expected_content = json.dumps(data, indent=2, ensure_ascii=False)
+    errors = []
+    for json_file in json_files:
+        with open(json_file, 'r', encoding='utf-8') as f:
+            original_content = f.read()
+            f.seek(0)
+            data = json.load(f)
+        
+        # Re-serialize with 2-space indentation
+        expected_content = json.dumps(data, indent=2, ensure_ascii=False)
+        
+        # Normalize line endings for comparison
+        original_normalized = original_content.strip().replace('\r\n', '\n')
+        expected_normalized = expected_content.strip().replace('\r\n', '\n')
+        
+        # Check if content matches expected 2-space indentation
+        if original_normalized != expected_normalized:
+            errors.append(f"{json_file} does not use 2-space indentation")
     
-    # Normalize line endings for comparison
-    original_normalized = original_content.strip().replace('\r\n', '\n')
-    expected_normalized = expected_content.strip().replace('\r\n', '\n')
-    
-    # Check if content matches expected 2-space indentation
-    assert original_normalized == expected_normalized, (
-        f"{json_file} does not use 2-space indentation. "
-        f"Please format with 2 spaces (not 4 spaces or tabs)."
+    assert not errors, (
+        "The following files do not use 2-space indentation:\n" +
+        "\n".join(errors)
     )
 
 
-def test_no_four_space_indentation():
+def test_no_four_space_indentation(version, version_dir):
     """
     Test that no JSON files use 4-space indentation patterns.
     
     This is a supplementary check that looks for common 4-space indent patterns.
     """
-    json_files = get_model_rules_json_files()
+    json_files = get_model_rules_json_files(version_dir)
     files_with_four_spaces = []
     
     for json_file in json_files:
@@ -82,11 +89,11 @@ def test_no_four_space_indentation():
     # The main parametrized test will catch these, this is just a helper
 
 
-def test_no_tab_indentation():
+def test_no_tab_indentation(version, version_dir):
     """
     Test that no JSON files use tab indentation.
     """
-    json_files = get_model_rules_json_files()
+    json_files = get_model_rules_json_files(version_dir)
     files_with_tabs = []
     
     for json_file in json_files:
