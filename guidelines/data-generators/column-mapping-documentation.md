@@ -2,13 +2,13 @@
 
 ## Overview
 
-Column mapping documentation describes how a data generator transforms native billing data into FOCUS columns. This documentation helps practitioners validate FOCUS data accuracy, reconcile discrepancies with native billing, and understand transformation logic.
+Dataset mapping documentation describes the relationship between a data generator's native datasets and corresponding FOCUS datasets. This reference helps practitioners validate the accuracy of FOCUS data, reconcile it against native billing data, and understand the specific definitions used to populate FOCUS fields.
 
 This section provides guidance for data generators who wish to publish mapping documentation. The guidance is informative and does not establish conformance requirements.
 
 ## Recommended Content
 
-Mapping documentation should include the following information for each FOCUS column present in the data generator's dataset:
+Mapping documentation should include the following information for each column included in the FOCUS dataset:
 
 | Property | Description |
 |----------|-------------|
@@ -75,7 +75,8 @@ Data generators should document variations in mapping logic that depend on:
 Data generators publishing mapping documentation should:
 
 * Make documentation publicly accessible without authentication
-* Version documentation to align with supported FOCUS versions
+* Align version documentation with supported FOCUS versions. 
+* Ensure the documentation clearly states which FOCUS version (e.g., 1.0 vs 1.1) it applies to
 * Provide clear guidance on where practitioners can locate the documentation (e.g., include a URL in FOCUS metadata or reference it from the provider's FOCUS data export documentation)
 
 ## Reference Template
