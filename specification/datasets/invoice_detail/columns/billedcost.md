@@ -38,7 +38,7 @@ When validating InvoiceDetail.BilledCost against [CostAndUsage.BilledCost](#data
 
 Tolerance = `MAX(100 * Subunit, SQRT(Rows) * 0.5 * Subunit)`
 
-* Rows: The count of related [CostAndUsage](#datsets.costandusage) rows.
+* Rows: The count of related [CostAndUsage](#datasets.costandusage) rows.
 * Subunit: The smallest subunit of [BillingCurrency](#datasets.invoicedetail.billingcurrency) (e.g., 0.01 for USD, 1 for JPY).
 * 100 * Subunit: Represents a universal floor of 100 "ticks" of precision to prevent false positives on small files, regardless of currency scale.
 

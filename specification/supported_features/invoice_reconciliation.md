@@ -24,7 +24,7 @@ This feature also supports reconciliation across divergent currency grains. When
 * [InvoiceDetail](#datasets.invoicedetail)
   * BillingCurrency
   * ChargeCategory
-  * InvoiceStatus
+  * InvoiceIssueStatus
   * PaymentCurrency
 * [CostAndUsage](#datasets.costandusage)
   * ChargeCategory

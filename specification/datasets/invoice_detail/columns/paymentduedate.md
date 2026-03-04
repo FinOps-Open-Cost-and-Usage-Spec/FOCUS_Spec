@@ -30,7 +30,7 @@ The date by which the payment for an invoice is expected to be received by the i
 | Feature level   | Mandatory                       |
 | Allows nulls    | True                            |
 | Data type       | Date/Time                       |
-| Value format    | [DateTime Format](#attributes.date/timeformat) |
+| Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Introduced (version)
 
