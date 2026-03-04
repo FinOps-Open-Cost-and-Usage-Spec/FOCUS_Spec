@@ -13,7 +13,6 @@ ContractCommitmentId MUST adhere to the following requirements:
 * ContractCommitmentId SHOULD be a fully-qualified identifier.
 * ContractCommitmentId MUST have one and only one parent [ContractId](#datasets.contractcommitment.contractid).
 * ContractCommitmentId MAY be equal to ContractId.
-* ContractCommitmentId MUST be unique across the Contract Commitment dataset.
 
 ## Column ID
 
