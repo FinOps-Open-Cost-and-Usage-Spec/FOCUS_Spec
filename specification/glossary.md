@@ -72,7 +72,7 @@ Commitment discounts are classified with the following designations:
 
 * [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory): "Public"
 * [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory): "Discount"
-* [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel): "Continuous
+* [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel): "Continuous"
 * Unused benefits cannot be carried over to subsequent Contract Commitment Fulfillment Intervals
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
