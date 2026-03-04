@@ -54,8 +54,6 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | Conditional   | True         | Decimal   |
 | [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
-| [Provider - DEPRECATED](#datasets.costandusage.provider-deprecated)                                        | Dimension          | Mandatory     | False        | String    |
-| [Publisher - DEPRECATED](#datasets.costandusage.publisher-deprecated)                                      | Dimension          | Mandatory     | False        | String    |
 | [Region ID](#datasets.costandusage.regionid)                                                        | Dimension          | Conditional   | True         | String    |
 | [Region Name](#datasets.costandusage.regionname)                                                    | Dimension          | Conditional   | True         | String    |
 | [Resource ID](#datasets.costandusage.resourceid)                                                    | Dimension          | Conditional   | True         | String    |
@@ -137,8 +135,6 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [PricingCurrencyListUnitPrice](#datasets.costandusage.pricingcurrencylistunitprice) when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
   * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
-  * CostAndUsage MUST include [ProviderName](#datasets.costandusage.provider-deprecated).
-  * CostAndUsage MUST include [PublisherName](#datasets.costandusage.publisher-deprecated).
   * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the host provider supports deploying resources or services within a region.
   * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the host provider supports deploying resources or services within a region.
   * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the service provider supports billing based on provisioned *resources*.
