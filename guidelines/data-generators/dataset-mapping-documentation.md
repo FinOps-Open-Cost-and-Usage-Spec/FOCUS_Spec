@@ -1,10 +1,10 @@
-# Column Mapping Documentation
+# Dataset Mapping Documentation
 
 ## Overview
 
 Dataset mapping documentation describes the relationship between a data generator's native datasets and corresponding FOCUS datasets. This reference helps practitioners validate the accuracy of FOCUS data, reconcile it against native billing data, and understand the specific definitions used to populate FOCUS fields.
 
-This section provides guidance for data generators who wish to publish mapping documentation. The guidance is informative and does not establish conformance requirements.
+This section provides guidance for data generators who wish to publish dataset mapping documentation. The guidance is informative and does not establish conformance requirements.
 
 ## Recommended Content
 
@@ -60,6 +60,12 @@ The following examples illustrate mapping documentation for common scenarios.
 |--------------|-----------------|-----------------|---------------|-------|
 | CapacityReservationId | — | Not Available | Conditional | Native billing does not expose capacity reservation identifiers |
 
+### Composite Mapping
+
+| FOCUS Column | Source Field(s) | Transform Logic | Feature Level | Notes |
+|--------------|-----------------|-----------------|---------------|-------|
+| BilledCost | `lineItem/UnblendedCost`, `lineItem/LineItemType` | Composite: Sum of `UnblendedCost` across all line items within the same billing period where `LineItemType` in (`Usage`, `Fee`, `DiscountedUsage`, `SavingsPlanCoveredUsage`) | Mandatory | Excludes refunds and credits. Grouping logic depends on charge granularity |
+
 ## Documentation Variations
 
 Data generators should document variations in mapping logic that depend on:
@@ -75,10 +81,31 @@ Data generators should document variations in mapping logic that depend on:
 Data generators publishing mapping documentation should:
 
 * Make documentation publicly accessible without authentication
-* Align version documentation with supported FOCUS versions. 
+* Align version documentation with supported FOCUS versions.
 * Ensure the documentation clearly states which FOCUS version (e.g., 1.0 vs 1.1) it applies to
 * Provide clear guidance on where practitioners can locate the documentation (e.g., include a URL in FOCUS metadata or reference it from the provider's FOCUS data export documentation)
 
 ## Reference Template
 
-The [FOCUS Conformance Submission Workbook](https://docs.google.com/spreadsheets/d/11s3xr1gUlJt6isrhuYGgaTU7XE5ZPTek/edit?usp=sharing&ouid=105511592610552198421&rtpof=true&sd=true) provides a reference template for mapping documentation. Data generators may use this template or provide equivalent documentation in their preferred format, provided the documentation addresses the recommended content described above. Where feasible, data generators are encouraged to provide mapping documentation in both human-readable and machine-readable formats (e.g., JSON, YAML, CSV).
+The [FOCUS Conformance Submission Workbook (v1.2)](https://docs.google.com/spreadsheets/d/11s3xr1gUlJt6isrhuYGgaTU7XE5ZPTek/edit?usp=sharing&ouid=105511592610552198421&rtpof=true&sd=true) provides a reference template for mapping documentation. Data generators may use this template or provide equivalent documentation in their preferred format, provided the documentation addresses the recommended content described above. Where feasible, data generators are encouraged to provide mapping documentation in both human-readable and machine-readable formats (e.g., JSON, YAML, CSV).
+
+The following JSON example illustrates what a machine-readable mapping entry might look like:
+
+```json
+[
+  {
+    "focus_column": "BilledCost",
+    "source_fields": ["lineItem/UnblendedCost"],
+    "transform_logic": "Direct",
+    "feature_level": "Mandatory",
+    "notes": null
+  },
+  {
+    "focus_column": "ChargeCategory",
+    "source_fields": ["lineItem/LineItemType"],
+    "transform_logic": "Conditional: Usage → Usage, Fee → Purchase, Tax → Tax, Credit → Adjustment",
+    "feature_level": "Mandatory",
+    "notes": "See ChargeCategory mapping table for complete logic"
+  }
+]
+```

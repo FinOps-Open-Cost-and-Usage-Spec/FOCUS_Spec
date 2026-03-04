@@ -147,4 +147,4 @@ Persistent learnings are stored in `.ai/memory/` and are not deleted.
 
 ## AI Usage Policy
 
-AI-assisted contributions are permitted and follow the same review standards as human-authored content. See [AI Usage Guidelines](guidelines/ai-usage-guidelines.md) for details.
+AI-assisted contributions are permitted and follow the same review standards as human-authored content. See [AI Usage Guidelines](guidelines/contributor/ai-usage-guidelines.md) for details.

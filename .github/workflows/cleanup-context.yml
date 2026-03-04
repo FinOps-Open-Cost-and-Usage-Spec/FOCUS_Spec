@@ -59,7 +59,7 @@ jobs:
             echo "   2. Delete the folder: git rm -r ${{ steps.check.outputs.folder }}"
             echo "   3. Commit and push: git commit -m 'Delete AI working folder' && git push"
             echo ""
-            echo "   See: guidelines/ai-usage-guidelines.md#working-file-lifecycle"
+            echo "   See: guidelines/contributor/ai-usage-guidelines.md#working-file-lifecycle"
             exit 1
           else
             echo "✅ No AI working folder found - ready for merge"

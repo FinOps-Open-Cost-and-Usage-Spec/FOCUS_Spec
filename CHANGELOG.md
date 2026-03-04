@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <sup>Announced June 2026</sup>
 
-### Changes to Supported Features by [Change Impact Classification](/guidelines/spec-change-guidelines.md)
+### Changes to Supported Features by [Change Impact Classification](/guidelines/contributor/spec-change-guidelines.md)
 
 #### Compatible Changes
 
@@ -31,7 +31,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <sup>Announced December 2025</sup>
 
-### Changes to Supported Features by [Change Impact Classification](/guidelines/spec-change-guidelines.md)
+### Changes to Supported Features by [Change Impact Classification](/guidelines/contributor/spec-change-guidelines.md)
 
 #### Compatible Changes
 
