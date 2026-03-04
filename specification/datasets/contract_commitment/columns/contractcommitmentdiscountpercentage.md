@@ -36,7 +36,7 @@ ContractCommitmentDiscountPercentage MUST adhere to the following requirements:
 * ContractCommitmentDiscountPercentage MUST be of type Decimal.
 * ContractCommitmentDiscountPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentDiscountPercentage MUST NOT be null if [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory) is "Discount".
-* ContractCommitmentDiscountPercentage MUST be null if ContractCommitmentBenefitCategory is "Monetary Pool" or "Availability".
+* ContractCommitmentDiscountPercentage MUST be null if ContractCommitmentBenefitCategory is "Availability".
 * ContractCommitmentDiscountPercentage MUST be a value between 0.0 and 1.0.
 * For contracts with multiple tiers (e.g., 5% discount up to 1M, 10% above 1M), ContractCommitmentDiscountPercentage MUST adhere to the following additional requirements:
   * ContractCommitmentDiscountPercentage MUST reflect the discount percentage defined for the specific pricing tier represented by the Contract Commitment row.
@@ -64,8 +64,8 @@ The effective percentage reduction applied to the list price of resources or ser
 | Feature level   | Mandatory      |
 | Allows nulls    | True           |
 | Data type       | Decimal        |
-| Value format    | [Numeric Format](#attributes.numericformat)          |
-| Number range    | 0.0 to 1.0                                           |
+| Value format    | [Numeric Format](#attributes.numericformat) |
+| Number range    | 0.0 to 1.0     |
 
 ## Introduced (version)
 

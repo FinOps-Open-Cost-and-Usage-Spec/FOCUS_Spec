@@ -212,7 +212,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | **CC Last Updated** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
 | **CC Model** | `Continuous` | `Continuous` | `Discontinuous` |
 | **CC Offer Category** | `Negotiated` | `Negotiated` | `Negotiated` |
-| **CC Payment Interval** | `Monthly` | `Monthly` | `Annual` |
+| **CC Payment Interval** | `Monthly` | `Monthly` | `One-Time` |
 | **CC Payment Model** | `No Upfront` | `No Upfront` | `All Upfront` |
 | **CC Payment Upfront %** | `0.00` | `0.00` | `1.00` |
 | **CC Period End** | `2027-02-01` | `2027-02-01` | `2027-02-01` |

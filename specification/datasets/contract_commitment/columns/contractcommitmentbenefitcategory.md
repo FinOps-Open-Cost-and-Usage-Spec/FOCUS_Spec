@@ -48,7 +48,7 @@ Allowed values:
 | Value         | Sort Order | Description                                                               | Typical Use Case                                                 |
 | ------------- | ---------- | ------------------------------------------------------------------------- | ---------------------------------------------------------------- |
 | Discount      | 10         | Direct reduction in the unit price or list rate applied from the start.   | Flat rate negotiated reductions or Savings Plans.                |
-| Monetary Pool | 20         | A shared reservoir of value or credits used to offset costs.              | Credit drawdown agreements or prepaid balances.                  |
+| Monetary Pool | 20         | A shared reservoir of value or credits used to offset costs. May include an associated discount. | Credit drawdown agreements or prepaid balances.                  |
 | Availability  | 30         | A contractual assurance of resource access and physical capacity.         | Capacity reservations or dedicated host guarantees.              |
 | Other         | 40         | Benefits not captured by standard categories.                             | Support access, training, or professional services.              |
 
