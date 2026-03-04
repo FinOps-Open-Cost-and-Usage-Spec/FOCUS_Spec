@@ -56,7 +56,7 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 
 | Key | Type | Description |
 | :--- | :--- | :--- |
-| `Dimension` | String | A valid FOCUS Column Name (e.g., `ProviderAccountId`, `RegionId`). |
+| `Dimension` | String | A valid FOCUS Column Name (e.g., `SkuId`, `RegionId`). |
 | `Operator` | String | The comparison logic to apply. Must be one of the Supported Operators. |
 | `Values` | Array | A list of strings to compare. A value of `["*"]` acts as a global wildcard. |
 | `Applicability` | Object | Optional. The specific fraction of applicability for entities matching this rule. Overrides the top-level `Applicability`. |
