@@ -156,7 +156,7 @@ This namespacing approach prevents naming conflicts between datasets and provide
 Categorize the type of logic the rule enforces. This helps determine how it should be validated.
 
 - Use `Presence` for rules requiring the column’s inclusion in the dataset.
-- Use `DataType` to enforce primitive types like `Decimal`, `String`, `Boolean`.
+- Use `Type` to enforce primitive types like `Decimal`, `String`, `Boolean`.
 - Use `Format` for pattern-based constraints (e.g., `DateTimeFormat`, `UUID`, `NumericFormat`).
 - Use `NullabilityRules` to define when values must or must not be null.
 - Use `Validation` for business logic or fixed-value conditions not covered above.
