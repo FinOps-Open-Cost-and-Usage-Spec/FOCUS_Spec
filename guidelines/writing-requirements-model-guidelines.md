@@ -39,7 +39,7 @@ The first stage of conversion of rules from the normative text to model rules is
 - `Order` - The order in which this rule should be processed or displayed
 - `DatasetType` - The dataset type this rule applies to (e.g. "CAU" for Cost and Usage, "CCT" for Contract Commitment)
 - `DatasetId` - The identifier of the dataset this rule belongs to (Required for Column and Dataset entity types, e.g. "CostAndUsage" for Cost and Usage, "ContractCommitment" for Contract Commitment)
-- `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Column and Dataset entity types, e.g. "Cost and Usage" for Cost and Usage,
+- `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Column and Dataset entity types, e.g. "Cost and Usage" for Cost and Usage)
 - `ValidationCriteria` - The detailed criteria that defines how this rule is to be validated,
   - `MustSatisfy` - The normative text that this rule defines
   - `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `RECOMMENDED`, `SHOULD`, `MAY`, `OPTIONAL`)
