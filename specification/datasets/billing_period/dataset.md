@@ -29,7 +29,7 @@ BillingPeriod MUST adhere to the following requirements:
 * BillingPeriod MUST be present if the invoice issuer supports payable invoices.
 * The presence of columns in BillingPeriod MUST adhere to the following requirements:
   * BillingPeriod MUST include [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).
-  * BillingPeriod MUST include [BilledPeriodEnd](#datasets.billingperiod.billingperiodend).
+  * BillingPeriod MUST include [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).
   * BillingPeriod MUST include [BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated).
   * BillingPeriod MUST include [BillingPeriodStart](#datasets.billingperiod.billingperiodstart).
   * BillingPeriod MUST include [BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus).

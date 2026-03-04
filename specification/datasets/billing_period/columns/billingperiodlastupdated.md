@@ -32,7 +32,7 @@ The timestamp when the Billing Period record was last updated.
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | Date/Time                        |
-| Value format    | [DateTime Format](#attributes.date/timeformat) |
+| Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Introduced (version)
 

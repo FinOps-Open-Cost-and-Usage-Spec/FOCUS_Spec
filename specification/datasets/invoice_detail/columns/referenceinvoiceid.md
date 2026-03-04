@@ -32,7 +32,7 @@ The invoice-issuer-assigned identifier for an invoice that affects charges as st
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | <unspecified>                   |
+| Value format    | \<unspecified>                   |
 
 ## Introduced (version)
 

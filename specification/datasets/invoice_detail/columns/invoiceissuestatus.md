@@ -32,7 +32,7 @@ The publication state of the invoice, indicating if it is provisional (`Open`), 
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | <unspecified>                   |
+| Value format    | \<unspecified>                   |
 
 ## Allowed Values
 

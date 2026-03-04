@@ -31,7 +31,7 @@ The unique customer-issued identifier for tracking the lifecycle of a purchase.
 | Feature level   | Conditional                     |
 | Allows nulls    | True                            |
 | Data type       | String                          |
-| Value format    | <unspecified>                   |
+| Value format    | \<unspecified>                   |
 
 ## Introduced (version)
 
