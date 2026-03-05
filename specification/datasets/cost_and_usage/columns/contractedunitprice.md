@@ -6,7 +6,6 @@ The Contracted Unit Price represents the agreed-upon unit price for a single [Pr
 
 ContractedUnitPrice MUST adhere to the following requirements:
 
-* ContractedUnitPrice MUST adhere to the following requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedUnitPrice MUST adhere to the following nullability requirements:
