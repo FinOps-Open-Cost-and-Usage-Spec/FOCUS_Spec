@@ -4,7 +4,7 @@ An Invoice Detail ID is the invoice-issuer-assigned identifier for an [Invoice D
 
 ## Requirements
 
-InvoiceDetailId adheres to the following requirements:
+InvoiceDetailId MUST adhere to the following requirements:
 
 * InvoiceDetailId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceDetailId MUST be of type String.
