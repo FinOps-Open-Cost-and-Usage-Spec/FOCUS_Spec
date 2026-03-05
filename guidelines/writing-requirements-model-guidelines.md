@@ -4,7 +4,7 @@ The FOCUS Requirements Model is a machine-readable representation of the normati
 
 With the formal rule definition structure now in place, FOCUS members need to understand how to read and write model rules effectively. This guide assists those working with the Requirements Model, whether creating new rules, maintaining existing ones, or validating datasets against FOCUS requirements.
 
-The `specification/requirements_model` folder contains modular model components organized by version under `releases/X.X/` directories. A Python-based build process assembles these components into a validated `model-<version>.json` file using a corresponding JSON Schema (`model_schema.json`). The `releases/latest/` symlink always points to the most recent model version.
+The `specification/requirements_model` folder contains modular model components organized by version under `releases/X.Y/` directories. A Python-based build process assembles these components into a validated `model-<version>.json` file using a corresponding JSON Schema (`model_schema.json`). The `releases/latest/` symlink always points to the most recent model version.
 
 ## Model document overview
 
@@ -80,7 +80,6 @@ The following architectural components define the core entities in FOCUS that sh
 | Entity             | Description                                         | Applies To                                | Example RM Function                                                                                             |
 |--------------------|-----------------------------------------------------| ----------------------------------------- |-----------------------------------------------------------------------------------------------------------------|
 | `Dataset`          | Whole billing dataset                               | Structural presence, versioning, coverage | Dataset MUST include all columns required by the declared FOCUS version                                         |
-| `Row`              | Individual line item in dataset                     | Logic conditions, nullability, alignment  | Rows with `ChargeCategory = Purchase` MUST contain a `SkuId`                                                    |
 | `Column`           | Named field across rows                             | Data type, format, constraints            | Column `BilledCost` MUST be of type `Decimal`                                                          |
 | `Object`           | JSONObject content of a column                      | Data type, format, constraints            | Object property `name` MUST be of type `String`                                                          |
 | `Attribute`        | Shared formatting/logic constraint                  | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                              |
@@ -435,9 +434,9 @@ The second phase of conversion is to take the table created in Stage 1 and creat
 
 #### Folder structure
 
-Version-specific model content is organized under `specification/requirements_model/releases/X.X/` where X.X represents the model version (e.g., 1.2, 1.3). A `latest` symlink points to the most recent version.
+Version-specific model content is organized under `specification/requirements_model/releases/X.Y/` where X.Y represents the model version (e.g., 1.2, 1.3). A `latest` symlink points to the most recent version.
 
-**Version-specific structure** (`releases/X.X/`):
+**Version-specific structure** (`releases/X.Y/`):
 - `cr_details.json`: Metadata like versioning for this model version
 - `applicability_criteria.json`: Feature flags controlling rule application
 - `check_functions.json`: Logical validation functions and their arguments
@@ -447,18 +446,18 @@ Version-specific model content is organized under `specification/requirements_mo
 - `model_rules/datasets/<dataset_id>/objects/`: JSON files defining multiple `ModelRules` for properties within JSON object columns
 
 **Build output** (top-level):
-- `build/model-X.X.json`: Built complete model JSON files for all versions
+- `build/model-X.Y.json`: Built complete model JSON files for all versions
 
 **Convenience paths:**
 - `releases/latest/`: Symlink to the latest model version directory
-- All work should be done in the appropriate version directory under `releases/X.X/`
+- All work should be done in the appropriate version directory under `releases/X.Y/`
 
 #### Steps
 
 - Assign the Action Item (AI) to yourself to signal that you are working on the item (See: [GitHub Issues](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues))
 - Open a branch with the source of git feature branch for the development work in progress for your development work.
 - Pull your branch to your development environment and perform all work specific to this AI in this branch.
-- Navigate to the appropriate model version directory under `specification/requirements_model/releases/X.X/` (or use the `latest` symlink for current development)
+- Navigate to the appropriate model version directory under `specification/requirements_model/releases/X.Y/` (or use the `latest` symlink for current development)
 - Add a file into the relevant folder `model_rules/attributes/` or `model_rules/datasets/<dataset_id>/columns/` with name `entity-name`.json (example: availabilityzone.json)
 - Write your rules into this file based on the rules in the Stage 1 table from the AI ticket (See: [ModelRule Templates](#modelrule-templates) for helpers)
 - If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` in the version directory, avoiding duplication
@@ -482,8 +481,8 @@ cd specification/requirements_model
 
 This script will:
 1. Run all pytest tests to validate rule structure and dependencies
-2. Assemble all version-specific JSON files from `releases/X.X/` directories
-3. Generate complete `build/model-X.X.json` files for each version
+2. Assemble all version-specific JSON files from `releases/X.Y/` directories
+3. Generate complete `build/model-X.Y.json` files for each version
 4. Validate the generated JSON against `model_schema.json`
 
 **Build-only mode:**
