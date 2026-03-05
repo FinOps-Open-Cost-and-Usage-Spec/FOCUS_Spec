@@ -1,6 +1,6 @@
 # Dataset Completeness
 
-FinOps practitioners need data beyond what [*FOCUS columns*](#glossary:FOCUS-column) define to facilitate a variety of FinOps activities, like organizational hierarchy attribution, commitment discount tracking, invoice reconciliation, or optimizations. When this data is only available in [*native datasets*](#glossary:native-dataset), practitioners cannot rely on [*FOCUS datasets*](#glossary:FOCUS-dataset) as a primary data source, making FOCUS an added overhead rather than a data generator-agnostic alternative that supports essential FinOps activities.
+FinOps practitioners need data beyond what [*FOCUS columns*](#glossary:FOCUS-column) define to facilitate a variety of FinOps activities. When this data is only available in [*native datasets*](#glossary:native-dataset), practitioners cannot rely on [*FOCUS datasets*](#glossary:FOCUS-dataset) as a primary data source, making FOCUS an added overhead rather than a data generator-agnostic alternative that supports essential FinOps activities.
 
 The Dataset Completeness attribute ensures data generators include [*custom columns*](#glossary:custom-column) in a *FOCUS dataset* to cover *native dataset* columns that materially support analysis or reporting and are not already captured by [*FOCUS columns*](#glossary:FOCUS-column). This bridges the gap between FOCUS standardization and data generator capabilities, allowing practitioners to adopt *FOCUS datasets* without losing analytical capabilities.
 
@@ -19,12 +19,15 @@ Defines requirements for a *FOCUS dataset* to include custom columns for *native
 ## Requirements
 
 * *FOCUS dataset* MUST include [*custom columns*](#glossary:custom-column) corresponding to *native dataset* columns that materially support analysis or reporting scenarios and do not duplicate information already captured in FOCUS columns.
-* *FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) when records are split or aggregated or when custom columns are added.
+* *FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) when custom columns are introduced.
 * *FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers).
 * *FOCUS dataset* SHOULD NOT include custom columns that duplicate information already captured in FOCUS columns.
 * *FOCUS dataset* MAY omit *native dataset* columns that do not support any analysis or reporting scenarios.
-* *FOCUS dataset* MAY preserve custom columns even after one or more equivalent FOCUS columns are introduced, to enable migration without breaking changes.
+* *FOCUS dataset* MAY preserve custom columns for a limited time even after one or more equivalent FOCUS columns are newly introduced, to enable migration without breaking changes.
 * Custom columns SHOULD accurately represent the corresponding values from the *native dataset*.
+* *FOCUS dataset* SHOULD list all *FOCUS columns* before any *custom columns*.
+* *FOCUS dataset* SHOULD NOT intermix *FOCUS columns* and *custom columns*.
+* *FOCUS dataset* MAY sort columns alphabetically, but *custom columns* SHOULD be listed after all *FOCUS columns*.
 
 ## Example
 

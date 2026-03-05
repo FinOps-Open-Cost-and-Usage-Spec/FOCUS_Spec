@@ -124,7 +124,7 @@ Custom column values must be handled consistently when rows are split or aggrega
 
 ### Column Handling
 
-The Column Handling attribute defines *how* custom columns should be named (using the `x_` prefix convention), formatted, and documented. Dataset Completeness defines *what* custom columns should be included to ensure complete coverage of native dataset columns. These attributes work together to ensure custom columns are both properly handled and comprehensively included.
+The Column Handling attribute defines *how* custom columns should be named (using the `x_` prefix convention) and documented. Dataset Completeness defines *what* custom columns should be included and *how* they should be ordered in the dataset. These attributes work together to ensure custom columns are both properly handled and comprehensively included.
 
 ### Provider Column Mappings (FR #1098)
 
@@ -134,7 +134,7 @@ For comprehensive documentation of how native columns map to FOCUS columns (both
 
 * **Separate attribute from Column Handling**
   * Concern: Why not add these requirements to Column Handling?
-  * Decision: Column Handling applies requirements to columns already in the dataset (naming, ordering). Dataset Completeness defines which additional columns the dataset should include. These are different scopes — column-level formatting vs dataset-level coverage.
+  * Decision: Column Handling applies requirements to columns (naming, documentation). Dataset Completeness defines dataset-level policy (which columns to include, how they're ordered). These are different scopes — column-level formatting vs dataset-level coverage.
 * **Scenario-based vs column-based framing**
   * Concern: Should the MUST requirement reference analysis/reporting *scenarios* or native dataset *columns*?
   * Options: Scenario-based (flexible but subjective) vs column-based (concrete, enforceable against native dataset documentation)
@@ -149,9 +149,9 @@ For comprehensive documentation of how native columns map to FOCUS columns (both
 * **"Materially" qualifier on MUST include requirement**
   * Concern: Providers could be forced to include 60+ native columns (Mike, pydi-aws)
   * Decision: Added "materially support analysis or reporting" to scope the requirement.
-* **Integrity requirement made verifiable**
-  * Concern: "Preserve the integrity of all columns" too vague to test (Shawn)
-  * Decision: Changed to "MUST NOT alter the aggregated values of summable metrics."
+* **Integrity requirement scope clarified**
+  * Concern: Original wording about splits/aggregations suggested this belonged in Split Cost Allocation, not Dataset Completeness (Shawn)
+  * Decision: Clarified scope to focus on what happens when custom columns are introduced. Changed from "FOCUS dataset MUST NOT alter aggregated values when records are split or aggregated or when custom columns are added" to "Custom columns MUST NOT alter aggregated values when introduced to a FOCUS dataset."
 * **Default column set moved to Dataset Configuration**
   * Concern: Column selection belongs with Dataset Configuration, not here (Shawn, Matt)
   * Decision: Moved MAY requirement to Dataset Configuration.
@@ -161,6 +161,15 @@ For comprehensive documentation of how native columns map to FOCUS columns (both
 * **Custom column documentation requirement moved to Column Handling**
   * Concern: Documentation is a column-level requirement — it applies to all custom columns regardless of why they were added (Shawn)
   * Decision: Moved to Column Handling. Documentation applies to every custom column (whether added for Dataset Completeness, Invoice Handling, or Discount Handling), making it a column-level rule alongside naming and ordering, not a dataset coverage policy.
+* **MAY preserve wording refined and reordered**
+  * Concern: Clarify migration timing and place exception next to the rule it modifies (Shawn)
+  * Decision: Added "for a limited time" and "newly introduced" to clarify temporary migration window. Moved next to SHOULD NOT duplicate so exception immediately follows the rule.
+* **Preamble genericized for multi-dataset applicability**
+  * Concern: Original examples were Cost & Usage-specific but attribute applies to Contract Commitment, Invoice Detail, and other datasets (Shawn)
+  * Decision: Removed dataset-specific examples. The Example section provides concrete illustrations; the intro stays generic for broad applicability.
+* **Column ordering requirements moved from Column Handling**
+  * Concern: If CH is column-level rules and DC is dataset-level policy, ordering belongs in DC (Shawn)
+  * Decision: Moved three ordering requirements (FOCUS columns first, custom columns after, alphabetical sorting) from Column Handling to Dataset Completeness. Ordering is about dataset structure, not individual column properties.
 
 ## Future Considerations
 
