@@ -153,30 +153,3 @@ ul.toc.tocdepth2 li.toc.item a {
   line-height: 125%;
   margin-top: 2em;
 }
-
-/* Code block wrapping for PDF rendering */
-pre {
-  white-space: pre-wrap !important;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-pre>code {
-  white-space: pre-wrap !important;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-code.sourceCode {
-  white-space: pre-wrap !important;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-pre>code.sourceCode {
-  white-space: pre-wrap !important;
-}
-
-div.sourceCode {
-  overflow: visible !important;
-}
