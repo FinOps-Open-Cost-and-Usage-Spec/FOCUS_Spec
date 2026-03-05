@@ -46,7 +46,6 @@ The tolerance is the **greater** of the following values:
 * **100 × Subunit** — Establishes a fixed minimum tolerance equal to 100 units of the smallest currency subunit.
 * **(SQRT(Rows) × 0.5) × Subunit** — Provides a tolerance that increases with the square root of the number of rows to account for rounding accumulation in larger datasets.
 
-
 ### Scenario 1: Small Invoice (Pass)
 
 * Data: A small invoice with 5 line items.
