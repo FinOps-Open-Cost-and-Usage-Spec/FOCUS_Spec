@@ -9,10 +9,11 @@ Attributes serve as reusable containers for requirements that enforce consistenc
 | [Column Handling](#attributes.columnhandling) | Defines naming and ordering conventions for columns appearing in a FOCUS dataset. |
 | [Currency Format](#attributes.currencyformat) | Specifies rules and formatting requirements for currency columns. |
 | [Data Generator-Calculated Split Cost Allocation Handling](#attributes.datagenerator-calculatedsplitcostallocationhandling) | Allows data generators to provide granular cost information based on specific documented methods. |
+| [Dataset Configuration](#attributes.datasetconfiguration) | Defines the rules for customizing a dataset's schema. |
 | [Date/Time Format](#attributes.date/timeformat) | Outlines rules and ISO 8601 formatting requirements for date and time information. |
 | [Discount Handling](#attributes.discounthandling) | Indicates how to include and apply various types of discounts to usage charges or rows. |
-| [JSON Object Format](#attributes.jsonobjectformat) | Defines rules for columns that convey data as complex, hierarchical serialized JSON strings. |
 | [Invoice Handling](#attributes.invoicehandling) | Ensures all monetary charges on an invoice are represented in the dataset for reconciliation. |
+| [JSON Object Format](#attributes.jsonobjectformat) | Defines rules for columns that convey data as complex, hierarchical serialized JSON strings. |
 | [Key-Value Format](#attributes.key-valueformat) | Provides formatting requirements for columns conveying data as simple key-value pairs. |
 | [Null Handling](#attributes.nullhandling) | Standardizes how to represent columns that do not have a value using NULL. |
 | [Numeric Format](#attributes.numericformat) | Establishes rules for numeric values to ensure clarity, accuracy, and ease of interpretation. |
