@@ -1,0 +1,204 @@
+{
+  "CAU-RegionName-C-000-C": {
+    "Function": "Composite",
+    "Reference": "RegionName",
+    "EntityType": "Column",
+    "EntityName": "Region Name",
+    "EntityId": "RegionName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "REGION_SUPPORTED"
+    ],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionName adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RegionName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RegionName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RegionName-C-003-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-062-C",
+        "CAU-RegionName-C-001-M",
+        "CAU-RegionName-C-002-M",
+        "CAU-RegionName-C-003-C"
+      ]
+    }
+  },
+  "CAU-RegionName-C-001-M": {
+    "Function": "Type",
+    "Reference": "RegionName",
+    "EntityType": "Column",
+    "EntityName": "Region Name",
+    "EntityId": "RegionName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "RegionName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RegionName-C-002-M": {
+    "Function": "Format",
+    "Reference": "RegionName",
+    "EntityType": "Column",
+    "EntityName": "Region Name",
+    "EntityId": "RegionName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "RegionName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-RegionName-C-003-C": {
+    "Function": "Composite",
+    "Reference": "RegionName",
+    "EntityType": "Column",
+    "EntityName": "Region Name",
+    "EntityId": "RegionName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionName nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RegionName-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-RegionName-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-RegionName-C-004-C",
+        "CAU-RegionName-C-005-C"
+      ]
+    }
+  },
+  "CAU-RegionName-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "RegionName",
+    "EntityType": "Column",
+    "EntityName": "Region Name",
+    "EntityId": "RegionName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionName MUST be null when RegionId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "RegionName",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "RegionId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-RegionId-C-000-C"
+      ]
+    }
+  },
+  "CAU-RegionName-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "RegionName",
+    "EntityType": "Column",
+    "EntityName": "Region Name",
+    "EntityId": "RegionName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "RegionName MUST NOT be null when RegionId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "RegionName",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "RegionId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-RegionId-C-000-C"
+      ]
+    }
+  }
+}
