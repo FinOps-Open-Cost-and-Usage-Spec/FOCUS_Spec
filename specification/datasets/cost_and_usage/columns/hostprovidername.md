@@ -14,7 +14,7 @@ HostProviderName MUST adhere to the following requirements:
   * HostProviderName MAY be NULL when the associated [ServiceName](#datasets.costandusage.servicename) does not involve deployment on any underlying infrastructure (e.g., professional services, software licenses).
   * HostProviderName MAY be NULL when the information about the entity providing the underlying infrastructure cannot be uniquely determined (e.g., when the [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax" or "Adjustment").
   * HostProviderName MUST NOT be null in all other cases.
-* When HostProviderName is not null, HostProviderName values MUST adhere to the following additionalrequirements:
+* When HostProviderName is not null, HostProviderName values MUST adhere to the following requirements:
   * HostProviderName MUST reflect the name of the host provider when explicitly selected by the customer.
   * HostProviderName MUST reflect the name of the host provider when the service provider exposes the underlying hosting provider.
   * HostProviderName MUST equal [ServiceProviderName](#datasets.costandusage.serviceprovidername) in all other cases.
