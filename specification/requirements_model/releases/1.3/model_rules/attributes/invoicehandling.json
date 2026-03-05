@@ -27,7 +27,7 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "InvoiceHandling-A-003-C"
+            "ModelRuleId": "InvoiceHandling-A-003-O"
           },
           {
             "CheckFunction": "CheckModelRule",
@@ -39,7 +39,7 @@
       "Dependencies": [
         "InvoiceHandling-A-001-M",
         "InvoiceHandling-A-002-M",
-        "InvoiceHandling-A-003-C",
+        "InvoiceHandling-A-003-O",
         "InvoiceHandling-A-004-M"
       ]
     }
@@ -84,7 +84,7 @@
       "Dependencies": []
     }
   },
-  "InvoiceHandling-A-003-C": {
+  "InvoiceHandling-A-003-O": {
     "Function": "Validation",
     "Reference": "InvoiceHandling",
     "EntityType": "Attribute",

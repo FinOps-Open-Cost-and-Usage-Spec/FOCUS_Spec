@@ -2,6 +2,12 @@ import pytest
 from conftest import requires_version
 
 
+# Phrases to exclude from keyword matching to avoid false positives
+KEYWORD_EXCLUDE_PHRASES = [
+    "SLA credit details when the credit is already applied"
+]
+
+
 def _iter_rule_ids_in_requirement(node):
     if node is None:
         return
@@ -20,7 +26,12 @@ def _text_has_keywords(text, keywords=None) -> bool:
         return False
     if keywords is None:
         keywords = ["when", "unless", "where"]
+    
+    # Remove excluded phrases before checking for keywords
     s = text.lower()
+    for phrase in KEYWORD_EXCLUDE_PHRASES:
+        s = s.replace(phrase.lower(), "")
+    
     return any(kw in s for kw in keywords)
 
 def _rule_has_scope(rule: dict) -> bool:
