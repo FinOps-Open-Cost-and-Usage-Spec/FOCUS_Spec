@@ -2,11 +2,13 @@
 
 This document outlines non-material corrections, clarifications, and typographical fixes for published versions of the FinOps Open Cost and Usage Specification (FOCUS). 
 
+These updates serve as the basis for revising FOCUS enablement artifacts, such as the Requirements Model, to ensure they remain accurate. FOCUS data generators should review these clarifications to ensure their implementations align with the working group's original intent.
+
 ---
 
 ## Version 1.3
 
-This section outlines minor discrepancies found in the 1.3 release of the FOCUS specification. These issues have been resolved within FOCUS enablement artifacts such as the Requirements Model and Validator, and FOCUS data generators should review these clarifications to ensure their implementations align with the working group's original intent.
+This section outlines minor discrepancies found in the 1.3 release of the FOCUS specification. 
 
 All issues are considered clarifications to intended language and are not meant to represent material changes. The working group has implemented checks going forward that will prevent the introduction of similar issues. All issues were introduced in version 1.3 of the specification and have been addressed in version 1.4.
 
