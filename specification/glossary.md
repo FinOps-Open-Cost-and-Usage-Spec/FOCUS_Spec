@@ -88,6 +88,14 @@ The agreed-upon unit price for a single [Pricing Unit](#datasets.costandusage.pr
 
 A charge to correct cost or usage data in a previously invoiced [*billing period*](#glossary:billing-period).
 
+<a name="glossary:covered-charge"><b>Covered Charge</b></a>
+
+A [*charge*](#glossary:charge) whose cost is wholly or partially paid for by a related purchase [*charge*](#glossary:charge), known as a [*covering charge*](#glossary:covering-charge). Common examples include usage charges eligible for [*commitment discounts*](#glossary:commitment-discount), prepaid entitlements, or marketplace purchases.
+
+<a name="glossary:covering-charge"><b>Covering Charge</b></a>
+
+A purchase [*charge*](#glossary:charge) that is intended to pay for future eligible [*charges*](#glossary:charge), known as [*covered charges*](#glossary:covered-charge). Common examples include [*commitment discount*](#glossary:commitment-discount) purchases, prepayment charges, and marketplace purchase charges.
+
 <a name="glossary:credit"><b>Credit</b></a>
 
 A financial incentive or allowance granted by a service provider unrelated to other past/current/future charges.
