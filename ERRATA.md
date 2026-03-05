@@ -27,7 +27,7 @@ All issues are considered clarifications to intended language and are not meant 
 | **#4: Incorrect AllocatedTags reference** | Section 4.3.4, line [23](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/c67b95bd40e6fb43a57f74a53a615c4d6d3c118f/specification/attributes/data_generator_calculated_split_cost_allocation_handling.md?plain=1#L23) | References column **AllocatedResourceTags** | References column **AllocatedTags**. | TBD |
 
 ### C. Typographical Errors
-*The following corrections fix minor textual discrepancies that clarify the text but do not impact technical implementation.*
+*The following corrections fix minor textual discrepancies that clarify the text but do not impact the intended technical implementation.*
 
 | Issue | Section / Location | Original | Corrected | PR Tracking |
 | :--- | :--- | :--- | :--- | :--- |
