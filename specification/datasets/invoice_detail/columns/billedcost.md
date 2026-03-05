@@ -17,16 +17,12 @@ BilledCost MUST adhere to the following requirements:
 * BilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).
 * BilledCost MUST be denominated in the BillingCurrency.
 * The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the payable amount provided in the corresponding entries on the issued invoice when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Issued".
-* When comparing BilledCost and [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername), BilledCost MUST adhere to the following requirements:
-  * The sum of BilledCost for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when [ChargeCategory](#datasets.invoicedetail.chargecategory) = "Tax" or [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Open".
-  * Otherwise, the absolute difference between the sum of BilledCost for a given [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) and the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST NOT exceed the **greater** of:
-    * 100 units of the smallest subunit of the [BillingCurrency](#datasets.invoicedetail.billingcurrency) (e.g., 1.00 for USD, 100 for JPY).
-    * The square root of the count of [CostAndUsage](#datasets.costandusage) rows multiplied by 0.5 times the smallest subunit of the [BillingCurrency](#datasets.invoicedetail.billingcurrency).
-* When comparing BilledCost and [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername), BilledCost MUST adhere to the following requirements:
-  * The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid), [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid), and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Open".
-  * Otherwise, the absolute difference between the sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) and the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid), [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid), and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST NOT exceed the **greater** of:
-    * 100 units of the smallest subunit of the [BillingCurrency](#datasets.invoicedetail.billingcurrency) (e.g., 1.00 for USD, 100 for JPY).
-    * The square root of the count of [CostAndUsage](#datasets.costandusage) rows multiplied by 0.5 times the smallest subunit of the [BillingCurrency](#datasets.invoicedetail.billingcurrency).
+* When comparing BilledCost aggregated by [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) with [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) aggregated by [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername), BilledCost MUST adhere to the following requirements:
+  * When [ChargeCategory](#datasets.invoicedetail.chargecategory) is not "Tax" and [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is not "Open", the sum of BilledCost MUST NOT differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in [Tolerance Formula](#datasets.invoicedetail.billedcost.implementationguidance.toleranceformula).
+  * When [ChargeCategory](#datasets.invoicedetail.chargecategory) is "Tax" or [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Open", the sum of BilledCost MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost).
+* When comparing BilledCost aggregated by [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) with [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) aggregated by [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid), [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid), and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername), BilledCost MUST adhere to the following requirements:
+  * When [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is not "Open", the sum of BilledCost MUST NOT differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in [Tolerance Formula](#datasets.invoicedetail.billedcost.implementationguidance.toleranceformula).
+  * When [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Open", the sum of BilledCost MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost).
 
 ## Implementation Guidance
 
@@ -36,11 +32,20 @@ When validating InvoiceDetail.BilledCost against [CostAndUsage.BilledCost](#data
 
 ### Tolerance Formula
 
-Tolerance = `MAX(100 * Subunit, SQRT(Rows) * 0.5 * Subunit)`
+The tolerance used when comparing aggregated BilledCost values is defined as:
 
-* Rows: The count of related [CostAndUsage](#datasets.costandusage) rows.
-* Subunit: The smallest subunit of [BillingCurrency](#datasets.invoicedetail.billingcurrency) (e.g., 0.01 for USD, 1 for JPY).
-* 100 * Subunit: Represents a universal floor of 100 "ticks" of precision to prevent false positives on small files, regardless of currency scale.
+Tolerance = `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)`
+
+Where:
+
+* **Rows** — The number of [CostAndUsage](#datasets.costandusage) rows included in the aggregation for the relevant [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
+* **Subunit** — The numeric value of the smallest subunit of [BillingCurrency](#datasets.invoicedetail.billingcurrency) (for example, `0.01` for USD or `1` for JPY).
+
+The tolerance is the **greater** of the following values:
+
+* **100 × Subunit** — Establishes a fixed minimum tolerance equal to 100 units of the smallest currency subunit.
+* **(SQRT(Rows) × 0.5) × Subunit** — Provides a tolerance that increases with the square root of the number of rows to account for rounding accumulation in larger datasets.
+
 
 ### Scenario 1: Small Invoice (Pass)
 
