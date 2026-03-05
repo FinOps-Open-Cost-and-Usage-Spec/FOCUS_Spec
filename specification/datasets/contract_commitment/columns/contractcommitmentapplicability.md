@@ -24,7 +24,7 @@ The following section details the normative requirements for the ContractCommitm
 
 The ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 
-* ContractCommitmentApplicabilityObject MUST conform to the [ContractCommitmentApplicabilityObjectSchema](#schemas.datasets.contractcommitment.contractcommitmentapplicabilityobjectschema) JSON Schema.
+* ContractCommitmentApplicabilityObject MUST conform to the [ContractCommitmentApplicabilityObjectSchema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema) JSON Schema.
 * ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.
 * ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` if the *contract commitment's* applicability logic exceeds schema capabilities.
 * ContractCommitmentApplicabilityObject.Applicability.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
