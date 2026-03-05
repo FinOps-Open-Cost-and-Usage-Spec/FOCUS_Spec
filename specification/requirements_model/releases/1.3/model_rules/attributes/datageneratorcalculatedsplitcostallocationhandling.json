@@ -1,5 +1,5 @@
 {
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-000-M": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-000-C": {
     "Function": "Composite",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -29,39 +29,39 @@
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-003-M"
+            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-003-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-004-M"
+            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-004-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-005-M"
+            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-005-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-006-M"
+            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-006-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-007-M"
+            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-007-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-008-O"
+            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-008-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-009-O"
+            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-009-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-010-O"
+            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-010-C"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-011-O"
+            "ModelRuleId": "DataGeneratorCalculatedSplitCostAllocationHandling-A-011-C"
           }
         ]
       },
@@ -69,15 +69,15 @@
       "Dependencies": [
         "DataGeneratorCalculatedSplitCostAllocationHandling-A-001-C",
         "DataGeneratorCalculatedSplitCostAllocationHandling-A-002-C",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-003-M",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-004-M",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-005-M",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-006-M",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-007-M",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-008-O",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-009-O",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-010-O",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-011-O"
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-003-C",
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-004-C",
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-005-C",
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-006-C",
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-007-C",
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-008-C",
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-009-C",
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-010-C",
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-011-C"
       ]
     }
   },
@@ -125,7 +125,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-003-M": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-003-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -147,7 +147,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-004-M": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-004-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -169,7 +169,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-005-M": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-005-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -191,7 +191,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-006-M": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-006-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -213,7 +213,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-007-M": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-007-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -235,7 +235,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-008-O": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-008-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -257,7 +257,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-009-O": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-009-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -279,7 +279,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-010-O": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-010-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",
@@ -301,7 +301,7 @@
       "Dependencies": []
     }
   },
-  "DataGeneratorCalculatedSplitCostAllocationHandling-A-011-O": {
+  "DataGeneratorCalculatedSplitCostAllocationHandling-A-011-C": {
     "Function": "Validation",
     "Reference": "DataGeneratorCalculatedSplitCostAllocationHandling",
     "EntityType": "Attribute",

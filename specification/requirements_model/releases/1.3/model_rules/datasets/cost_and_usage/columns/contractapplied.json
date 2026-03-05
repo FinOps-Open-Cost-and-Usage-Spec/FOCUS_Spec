@@ -64,8 +64,9 @@
       "MustSatisfy": "ContractApplied MUST conform to JsonObjectFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "FormatJSONFormat",
-        "ColumnName": "ContractApplied"
+        "CheckFunction": "FormatJSON",
+        "ColumnName": "ContractApplied",
+        "Path": "$"
       },
       "Condition": {},
       "Dependencies": []

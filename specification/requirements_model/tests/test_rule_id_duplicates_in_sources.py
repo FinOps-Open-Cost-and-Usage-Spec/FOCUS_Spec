@@ -4,10 +4,8 @@ from pathlib import Path
 import pytest
 
 @pytest.mark.dependency(name="no_duplicate_rule_ids_in_source_files", scope="session")
-def test_no_duplicate_rule_ids_in_source_files():
-    # tests/.../this_file.py -> .../specification/conformance
-    REQUIREMENTS_MODEL = Path(__file__).resolve().parents[1]
-    SRC_DIR = REQUIREMENTS_MODEL / "model_rules"
+def test_no_duplicate_rule_ids_in_source_files(version, version_dir):
+    SRC_DIR = version_dir / "model_rules"
 
     assert SRC_DIR.is_dir(), f"Source folder not found: {SRC_DIR}"
 

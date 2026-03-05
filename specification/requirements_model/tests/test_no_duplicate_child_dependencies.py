@@ -1,7 +1,13 @@
 import pytest
+from conftest import requires_version
 
 @pytest.mark.dependency(name="no_duplicate_child_dependencies", scope="session")
-def test_no_duplicate_child_dependencies(cr_json):
+def test_no_duplicate_child_dependencies(cr_json, model_version):
+    # This test only applies to model version 1.3 and above
+    should_skip, reason = requires_version(model_version, min_version="1.3")
+    if should_skip:
+        pytest.skip(reason)
+    
     """
     Test that composite rules don't list dependencies that are already dependencies of their child rules.
     

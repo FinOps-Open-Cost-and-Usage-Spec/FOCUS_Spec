@@ -126,8 +126,9 @@
       "MustSatisfy": "AllocatedMethodDetails MUST conform to JsonObjectFormat requirements.",
       "Keyword": "MUST",
       "Requirement": {
-        "CheckFunction": "FormatJSONFormat",
-        "ColumnName": "AllocatedMethodDetails"
+        "CheckFunction": "FormatJSON",
+        "ColumnName": "AllocatedMethodDetails",
+        "Path": "$"
       },
       "Condition": {},
       "Dependencies": []

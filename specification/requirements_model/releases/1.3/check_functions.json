@@ -271,7 +271,7 @@
       ],
       "FormatAttributes": []
     },
-    "FormatJSONFormat": {
+    "FormatJSON": {
       "Description": "Check element(s) at JSON path meets JSONFormatRequirements format",
       "Arguments": [
         "ColumnName",

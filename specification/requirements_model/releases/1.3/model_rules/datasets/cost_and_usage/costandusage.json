@@ -38,7 +38,7 @@
         "NullHandling-A-000-M",
         "ColumnHandling-A-000-M",
         "InvoiceHandling-A-000-M",
-        "DataGeneratorCalculatedSplitCostAllocationHandling-A-000-M"
+        "DataGeneratorCalculatedSplitCostAllocationHandling-A-000-C"
       ]
     }
   },
