@@ -79,8 +79,8 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `Contains` | Substring match anywhere in the value. | `["database"]` |
 | `NotContains` | Substring is not present in the value. | `["sandbox"]` |
 | `EndsWith` | String suffix match. | `["-temp"]` |
-| `Exists` | Checks if the dimension is present and not null. | `Values` MUST be `["*"]` |
-| `DoesNotExist` | Checks if the dimension is missing or null. | `Values` MUST be `["*"]` |
+| `Exists` | Checks if the dimension is present and not null. | `Values` must be `["*"]` |
+| `DoesNotExist` | Checks if the dimension is missing or null. | `Values` must be `["*"]` |
 
 ### Wildcard Handling
 
@@ -141,13 +141,13 @@ The evaluation of an entity against a commitment applicability MUST follow a str
 
 The evaluation of **Applicability** percentages must be contextually aligned with the [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel) and [Contract Commitment Fulfillment Interval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval):
 
-* **Continuous Models:** Applicability percentages MUST be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.
+* **Continuous Models:** Applicability percentages must be applied to each discrete unit of activity (e.g., every hour) within the **Fulfillment Interval**. If the commitment is not fully utilized by eligible entities within that hour, the remaining capacity expires.
 * **Discontinuous Models:** Applicability percentages determine the portion of aggregate activity that counts toward fulfillment over the entire **Interval** (e.g., a full year).
 
 ### Dependency Logic
 
-1. **Consistency:** Engines SHOULD expect a JSON Object and SHOULD NOT support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
-2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array MUST be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` MUST NOT both be `true` at the same time. Engines should validate these structural constraints before processing.
+1. **Consistency:** Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
+2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both be `true` at the same time. Engines should validate these structural constraints before processing.
 
 ### Object ID
 
