@@ -283,11 +283,11 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-EffectiveCost-C-009-C"
+            "ModelRuleId": "CAU-EffectiveCost-C-009-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-EffectiveCost-C-010-C"
+            "ModelRuleId": "CAU-EffectiveCost-C-010-M"
           }
         ]
       },
@@ -307,13 +307,13 @@
         ]
       },
       "Dependencies": [
-        "CAU-EffectiveCost-C-009-C",
-        "CAU-EffectiveCost-C-010-C",
+        "CAU-EffectiveCost-C-009-M",
+        "CAU-EffectiveCost-C-010-M",
         "CAU-ChargeCategory-C-000-M"
       ]
     }
   },
-  "CAU-EffectiveCost-C-009-C": {
+  "CAU-EffectiveCost-C-009-M": {
     "Function": "Validation",
     "Reference": "EffectiveCost",
     "EntityType": "Column",
@@ -336,7 +336,7 @@
       "Dependencies": []
     }
   },
-  "CAU-EffectiveCost-C-010-C": {
+  "CAU-EffectiveCost-C-010-M": {
     "Function": "Validation",
     "Reference": "EffectiveCost",
     "EntityType": "Column",

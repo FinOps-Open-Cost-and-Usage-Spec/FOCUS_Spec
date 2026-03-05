@@ -217,11 +217,11 @@
         "Items": [
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ListCost-C-007-C"
+            "ModelRuleId": "CAU-ListCost-C-007-M"
           },
           {
             "CheckFunction": "CheckModelRule",
-            "ModelRuleId": "CAU-ListCost-C-008-C"
+            "ModelRuleId": "CAU-ListCost-C-008-M"
           }
         ]
       },
@@ -231,13 +231,13 @@
         "Value": null
       },
       "Dependencies": [
-        "CAU-ListCost-C-007-C",
-        "CAU-ListCost-C-008-C",
+        "CAU-ListCost-C-007-M",
+        "CAU-ListCost-C-008-M",
         "CAU-ListUnitPrice-C-000-C"
       ]
     }
   },
-  "CAU-ListCost-C-007-C": {
+  "CAU-ListCost-C-007-M": {
     "Function": "Validation",
     "Reference": "ListCost",
     "EntityType": "Column",
@@ -260,7 +260,7 @@
       "Dependencies": []
     }
   },
-  "CAU-ListCost-C-008-C": {
+  "CAU-ListCost-C-008-M": {
     "Function": "Validation",
     "Reference": "ListCost",
     "EntityType": "Column",
