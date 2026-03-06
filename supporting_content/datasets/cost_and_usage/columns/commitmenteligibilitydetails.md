@@ -2,7 +2,7 @@
 
 ## Example
 
-The following scenarios illustrate how CommitmentEligibilityDetails is populated across different providers, including major cloud platforms and SaaS data platforms.
+The following scenarios illustrate how CommitmentEligibilityDetails are populated across different providers, including major cloud platforms and SaaS data platforms.
 
 | Provider   | Service           | ChargeClass | CommitmentEligibilityDetails                                                                                                  |
 |---------------|---------------|---------------|---------------------------|
