@@ -260,7 +260,30 @@ All Pull Requests must be linked to a parent Issue which tracks the work and the
 
 When a pull request is first opened and still being edited and contributed to by Task Force members, it should be configured to [draft mode](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request), as this signals to other members of the project that the PR is not ready for full review and should be treated as a work in progress. As a PR becomes ready for review, it should be marked as such in GitHub. If after further review and comments it becomes clear that more work is needed, the Pull Request should be moved back to draft mode, enabling the open PRs to be sorted and reviewed.
 
-Draft status signals that the author is still working on the pull request and would prefer direct conversations on your feedback vs asynchronous review/comments. Adding comments to a draft pull request can be disruptive as the author is forced to stop and respond to your comment vs work on getting the PR completed. It would be best to talk directly with the author and especially important that you involve the author if you are having conversations about the pull request with others. Once a PR comes out of draft status, there will be plenty of time for async feedback.
+#### Understanding Draft Status
+
+Draft status signals that the author is still actively working on the pull request. Early feedback is welcome in open-source development, but reviewers should understand that the author may not respond immediately while the work is still in progress. Adding comments to a draft pull request can create a context-switching cost as the author is pulled between responding and completing the draft. It would be best to talk directly with the author and especially important that you involve the author if you are having conversations about the pull request with others.
+
+**For external reviewers and async collaborators:** Draft status means the work is still evolving. Authors may prioritize completing the draft before engaging asynchronously, but there will be plenty of time for async feedback once the PR moves to open status.
+
+#### When Draft PRs May Welcome Feedback
+
+While draft status generally discourages async feedback, authors MAY explicitly invite feedback on specific aspects of a draft PR:
+
+1. **Allowlist/Denylist Approach:** Authors can leave PR comments indicating which sections are ready for feedback (allowlist) or which sections are not ready (denylist):
+   - **More draft than open:** Keep as draft and comment on specific sections ready for feedback
+   - **More open than draft:** Mark as open and comment on specific sections not ready for feedback
+
+2. **Assignment as Signal:** Authors MAY assign specific reviewers to a draft PR to explicitly request their feedback, even while the PR remains in draft status.
+
+3. **Task Force Collaboration:** Within a Task Force working on complex topics, members may collaborate more actively on draft PRs when the author has communicated (in TF meetings, Slack, or PR comments) that feedback is welcome on specific aspects.
+
+#### Feedback Expectations
+
+- **Draft PRs:** Reviewers may provide feedback at any time. Authors may defer and/or resolve comments until the PR moves to open status.
+- **Open PRs:** Authors are expected to be responsive to reviewer feedback in a timely manner.
+
+When in doubt, respect the draft status as a signal that the author may still be iterating, and communicate directly with the author to ask if feedback would be helpful.
 
 
 ### Reviewing

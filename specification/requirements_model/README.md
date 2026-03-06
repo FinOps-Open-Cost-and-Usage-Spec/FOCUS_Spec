@@ -177,6 +177,10 @@ This approach ensures clear linkage to the original specification version while 
 
 - `build_model_json.py`: Python script that builds and validates the final model file
 
+### 📋 Helper Scripts
+
+- `output_normative_text_from_model.py`: Utility script for extracting and formatting normative requirements from the model
+
 ---
 
 ## 🚀 Getting Started
@@ -216,13 +220,73 @@ Or on error:
 
 ---
 
+## 📋 Normative Text Extraction
+
+The `output_normative_text_from_model.py` script extracts human-readable normative requirements from the compiled model file and formats them for documentation or review purposes.
+
+### Usage
+
+```bash
+# Print all normative text to console
+python output_normative_text_from_model.py
+
+# Save all normative text to a file
+python output_normative_text_from_model.py --filename requirements_output.md
+
+# Show only requirements for a specific reference entity
+python output_normative_text_from_model.py --reference "BilledCost"
+
+# Show requirements without Rule Model IDs (clean format)
+python output_normative_text_from_model.py --exclude-rmids
+
+# Combine options: specific reference, clean format, save to file
+python output_normative_text_from_model.py --reference "BilledCost" --exclude-rmids --filename billedcost_requirements.md
+```
+
+### Options
+
+| Option | Description |
+|--------|-------------|
+| `--filename <file>` | Save output to specified filename instead of printing to console |
+| `--reference <name>` | Only display normative text for the specified reference entity |
+| `--exclude-rmids` | Exclude Rule Model IDs from output (show only MustSatisfy text) |
+
+### Output Format
+
+The script organizes requirements by Reference entity and applies proper ordering based on:
+
+1. Composite rules (-000-) first
+2. Dataset rules, ordered by numeric ID and Order field
+3. Other rules (e.g., Column), ordered by numeric ID and Order field
+
+Example output:
+
+```markdown
+# BilledCost
+
+CAU-BilledCost-D-000-M – BilledCost adheres to the following requirements:
+CAU-BilledCost-D-001-M – MUST be present in a Cost and Usage FOCUS dataset
+CAU-BilledCost-C-000-M – BilledCost adheres to the following requirements:
+CAU-BilledCost-C-001-M – MUST be present in a Cost and Usage FOCUS dataset
+CAU-BilledCost-C-002-M – MUST be of type Decimal
+```
+
+This tool is particularly useful for:
+
+- Generating documentation from the model
+- Reviewing normative text for specific entities
+- Creating clean, human-readable requirement lists
+- Extracting requirements for specification comparison
+
+---
+
 ## 📘  Model Rule  Format
 
 Each JSON file in `model_rules/` contains one or more rules structured as:
 
 ```json
 {
-  "ListUnitPrice-C-001-C": {
+  "CAU-ListUnitPrice-C-001-C": {
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",

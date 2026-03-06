@@ -4,7 +4,7 @@ A Charge Description provides a high-level context of a [*row*](#glossary:row) w
 
 ## Requirements
 
-ChargeDescription adheres to the following requirements:
+ChargeDescription MUST adhere to the following requirements:
 
 * ChargeDescription MUST be of type String.
 * ChargeDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.

@@ -106,7 +106,7 @@ The CommitmentEligibilityDetailsObject adheres to the following requirements:
 }
 ```
 
-NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for CommitmentEligibilityDetails. Where there are discrepancies, deference will be given to the normative requirements.
+NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for CommitmentEligibilityDetails. Where there are discrepancies, preference will be given to the normative requirements.
 
 ### Object ID
 
