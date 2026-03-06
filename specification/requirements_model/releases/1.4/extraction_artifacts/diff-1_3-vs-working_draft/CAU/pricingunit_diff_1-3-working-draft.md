@@ -1,0 +1,15 @@
+## Diff
+
+PricingUnit [-adheres-]{+MUST adhere+} to the following requirements:
+
+[-* PricingUnit MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).-]
+* PricingUnit MUST be of type String.
+* PricingUnit MUST conform to [-[StringHandling](#stringhandling)-]{+[StringHandling](#attributes.stringhandling)+} requirements.
+* PricingUnit SHOULD conform to [-[UnitFormat](#unitformat)-]{+[UnitFormat](#attributes.unitformat)+} requirements.
+* PricingUnit {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
+  * PricingUnit MUST be null when PricingQuantity is null.
+  * PricingUnit MUST NOT be null when PricingQuantity is not null.
+* When PricingUnit is not null, PricingUnit [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
+  * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in service-provider-published [*price list*](#glossary:price-list).
+  * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in invoice, when the invoice includes a pricing measurement unit.
+
