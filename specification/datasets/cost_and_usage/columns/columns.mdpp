@@ -45,8 +45,6 @@
 !INCLUDE "pricingcurrencylistunitprice.md",1
 !INCLUDE "pricingquantity.md",1
 !INCLUDE "pricingunit.md",1
-!INCLUDE "providername.md",1
-!INCLUDE "publishername.md",1
 !INCLUDE "regionid.md",1
 !INCLUDE "regionname.md",1
 !INCLUDE "resourceid.md",1
