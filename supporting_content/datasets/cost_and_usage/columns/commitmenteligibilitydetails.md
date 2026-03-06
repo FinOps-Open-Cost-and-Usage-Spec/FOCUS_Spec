@@ -71,3 +71,12 @@ OCI Compute usage eligible for Universal Credits. Because Universal Credits are 
 | Provider | Service         | ChargeClass | CommitmentDiscountStatus | CommitmentEligibilityDetails                                |
 |---------------|---------------|---------------|---------------|---------------|
 | Oracle   | Virtual Machine | Usage       | null                     | {"CommitmentDiscountTypes": [{"Type": "UniversalCredits"}]} |
+
+**Scenario 8: AWS (Capacity Reservation–eligible EC2 Usage)**
+
+An EC2 instance type and tenancy that are eligible for both Savings Plans/Reserved Instances and for capacity reservations (for example, regional or zonal reservations). The eligibility column reflects all commitment constructs the usage qualifies for.
+
+| Provider | Service   | ChargeClass | CommitmentDiscountStatus | CommitmentEligibilityDetails                                                                                                                                   |
+|---------------|---------------|---------------|---------------|---------------|
+| AWS      | AmazonEC2 | Usage       | null                     | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}], "CapacityReservationTypes": [{"Type": "CapacityReservation"}, {"Type": "ZonalReservation"}]} |
+
