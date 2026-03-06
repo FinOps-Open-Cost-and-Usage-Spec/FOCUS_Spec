@@ -1,13 +1,5 @@
 ## Diff
 
-diff --git a/specification/datasets/cost_and_usage/columns/invoiceid.md b/specification/datasets/cost_and_usage/columns/invoiceid.md
-index 92478d1b..7ac9c4bc 100644
---- a/specification/datasets/cost_and_usage/columns/invoiceid.md
-+++ b/specification/datasets/cost_and_usage/columns/invoiceid.md
-@@ -4,19 +4,18 @@ An Invoice ID is an invoice-issuer-assigned identifier for an invoice encapsulat
-
-## Requirements
-
 InvoiceId [-adheres-]{+MUST adhere+} to the following requirements:
 
 [-* InvoiceId is RECOMMENDED to be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).-]
