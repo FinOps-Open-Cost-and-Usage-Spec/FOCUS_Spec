@@ -15,7 +15,7 @@
 
 ## Scenario Description
 
-This example shows an **Amazon Web Services EC2 Reserved Instance** (Reserved Instance), which is a commitment (CommitmentDiscountCategory: Usage) where you commit to a specific quantity of resource capacity (e.g., instance hours).
+This example shows an **Amazon Web Services EC2 Reserved Instance**, which is a commitment (CommitmentDiscountCategory: Usage) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
 The **Partial-Upfront** payment option combines an initial upfront payment with a reduced recurring monthly fee. This results in two Purchase rows: one One-Time for the upfront portion and one Recurring for the monthly fee, both with EffectiveCost=0.
 
