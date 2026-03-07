@@ -23,6 +23,8 @@ This scenario demonstrates **underutilization** at 75% where only 18 of 24 commi
 
 ## Row Summary
 
+*The following row summary reflects only the rows included in the 24-hour sample CSV.*
+
 | Row Type         | Count | BilledCost       | EffectiveCost  |
 | ---------------- | ----- | ---------------------- | -------------------- |
 | Purchase         | 1     | &dollar;459,000.00     | &dollar;0.00         |

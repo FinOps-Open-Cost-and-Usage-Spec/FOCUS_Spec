@@ -23,6 +23,8 @@ This scenario demonstrates **overflow** at 150% utilization where demand exceeds
 
 ## Row Summary
 
+*The following row summary reflects only the rows included in the 24-hour sample CSV.*
+
 | Row Type         | Count | BilledCost       | EffectiveCost  |
 | ---------------- | ----- | ---------------------- | -------------------- |
 | Purchase         | 1     | &dollar;212,000.00     | &dollar;0.00         |

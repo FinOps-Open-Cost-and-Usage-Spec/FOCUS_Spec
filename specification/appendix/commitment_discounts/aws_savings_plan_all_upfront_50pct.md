@@ -23,6 +23,8 @@ This scenario demonstrates **underutilization** at 50% where only 12 of 24 commi
 
 ## Row Summary
 
+*The following row summary reflects only the rows included in the 24-hour sample CSV.*
+
 | Row Type         | Count | BilledCost       | EffectiveCost  |
 | ---------------- | ----- | ---------------------- | -------------------- |
 | Purchase         | 1     | &dollar;693,000.00     | &dollar;0.00         |
@@ -110,6 +112,8 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountQuantity | 79.11         | Commitment wasted                                |
 | CommitmentDiscountStatus   | Unused        | Commitment not utilized                          |
 | ResourceId                 | null       | No resource associated                           |
+
+ListCost is null for unused rows because no resource was consumed. The opportunity cost is reflected in EffectiveCost.
 
 ## Standard Pricing Usage Row Details
 

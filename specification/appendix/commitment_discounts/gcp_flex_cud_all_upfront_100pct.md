@@ -23,6 +23,8 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 ## Row Summary
 
+*The following row summary reflects only the rows included in the 24-hour sample CSV.*
+
 | Row Type         | Count | BilledCost       | EffectiveCost  |
 | ---------------- | ----- | ---------------------- | -------------------- |
 | Purchase         | 1     | &dollar;553,000.00     | &dollar;0.00         |
