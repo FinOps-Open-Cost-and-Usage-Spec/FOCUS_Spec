@@ -53,7 +53,7 @@ These three quantity columns serve different purposes and must be understood in 
 | Column                  | Purpose                  | Commitment-Covered | Standard      |
 | ----------------------- | ------------------------ | ------------------ | ------------- |
 | **ListUnitPrice**       | List (public) unit price | &dollar;79.28      | &dollar;79.28 |
-| **ContractedUnitPrice** | Negotiated unit price    | &dollar;52.85      | null          |
+| **ContractedUnitPrice** | Negotiated unit price    | &dollar;79.28      | &dollar;79.28 |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
