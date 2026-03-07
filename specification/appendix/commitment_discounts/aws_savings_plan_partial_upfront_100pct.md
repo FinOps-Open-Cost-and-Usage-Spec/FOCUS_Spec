@@ -3,8 +3,8 @@
 | Parameter                  | Value              |
 | -------------------------- | ------------------ |
 | Scenario Type              | commitment         |
-| Payment Model              | Partial-Upfront    |
-| CommitmentDiscountCategory | Spend              |
+| Payment Model              | Partial Upfront    |
+| Commitment Discount Category | Spend              |
 | Utilization                | 100%               |
 | Hours Generated            | 24                 |
 | Annual Commitment          | &dollar;242,666.67 |
@@ -17,7 +17,7 @@
 
 This example shows an **Amazon Web Services EC2 Instance Savings Plan**, which is a commitment (CommitmentDiscountCategory: Spend) where you commit to a specific dollar amount of usage per hour.
 
-The **Partial-Upfront** payment option combines an initial upfront payment with a reduced recurring monthly fee. This results in two Purchase rows: one One-Time for the upfront portion and one Recurring for the monthly fee, both with EffectiveCost=0.
+The **Partial Upfront** payment option combines an initial upfront payment with a reduced recurring monthly fee. This results in two Purchase rows: one One-Time for the upfront portion and one Recurring for the monthly fee, both with EffectiveCost=0.
 
 This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
 
@@ -120,5 +120,5 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 234           | Hours used                                    |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
-| CommitmentDiscountId       | (empty)       | No associated commitment                      |
+| CommitmentDiscountId       | null       | No associated commitment                      |
 | ContractedUnitPrice        | &dollar;76.71 | Equals ListUnitPrice (no negotiated discount) |

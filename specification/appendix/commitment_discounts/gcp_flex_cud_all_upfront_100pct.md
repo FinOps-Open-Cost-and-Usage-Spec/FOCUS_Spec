@@ -3,8 +3,8 @@
 | Parameter                  | Value              |
 | -------------------------- | ------------------ |
 | Scenario Type              | commitment         |
-| Payment Model              | All-Upfront        |
-| CommitmentDiscountCategory | Spend              |
+| Payment Model              | All Upfront        |
+| Commitment Discount Category | Spend              |
 | Utilization                | 100%               |
 | Hours Generated            | 24                 |
 | Annual Commitment          | &dollar;553,000.00 |
@@ -17,7 +17,7 @@
 
 This example shows a **Google Cloud Platform Spend-based CUD**, which is a commitment (CommitmentDiscountCategory: Spend) where you commit to a specific dollar amount of usage per hour.
 
-The **All-Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
+The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
 
 This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
 
@@ -109,5 +109,5 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 488           | Hours used                                    |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
-| CommitmentDiscountId       | (empty)       | No associated commitment                      |
+| CommitmentDiscountId       | null       | No associated commitment                      |
 | ContractedUnitPrice        | &dollar;94.70 | Equals ListUnitPrice (no negotiated discount) |

@@ -3,8 +3,8 @@
 | Parameter                  | Value              |
 |----------------------------|--------------------|
 | Scenario Type              | commitment         |
-| Payment Model              | All-Upfront        |
-| CommitmentDiscountCategory | Spend              |
+| Payment Model              | All Upfront        |
+| Commitment Discount Category | Spend              |
 | Utilization                | 0%                 |
 | Hours Generated            | 24                 |
 | Annual Commitment          | &dollar;353,000.00 |
@@ -17,7 +17,7 @@
 
 This example shows an **Amazon Web Services EC2 Instance Savings Plan** (Savings Plan), which is a commitment (CommitmentDiscountCategory: Spend) where you commit to a specific dollar amount of usage per hour.
 
-The **All-Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
+The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
 
 This scenario demonstrates **zero utilization** where the commitment is purchased but no resources are consumed. All usage rows have CommitmentDiscountStatus='Unused', representing wasted commitment capacity. The EffectiveCost on these rows reflects the cost of unused commitment that cannot be recovered.
 
@@ -88,7 +88,7 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | null          | **No resource consumed**                         |
 | CommitmentDiscountQuantity | 40.30         | Commitment wasted                                |
 | CommitmentDiscountStatus   | Unused        | Commitment not utilized                          |
-| ResourceId                 | (empty)       | No resource associated                           |
+| ResourceId                 | null       | No resource associated                           |
 
 ## Standard Pricing Usage Row Details
 

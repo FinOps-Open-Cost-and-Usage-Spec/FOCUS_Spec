@@ -3,8 +3,8 @@
 | Parameter                  | Value              |
 | -------------------------- | ------------------ |
 | Scenario Type              | commitment         |
-| Payment Model              | No-Upfront         |
-| CommitmentDiscountCategory | Spend              |
+| Payment Model              | No Upfront         |
+| Commitment Discount Category | Spend              |
 | Utilization                | 100%               |
 | Hours Generated            | 24                 |
 | Annual Commitment          | &dollar;38,583.33  |
@@ -17,7 +17,7 @@
 
 This example shows an **Amazon Web Services EC2 Instance Savings Plan**, which is a commitment (CommitmentDiscountCategory: Spend) where you commit to a specific dollar amount of usage per hour.
 
-The **No-Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and EffectiveCost=0.
+The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and EffectiveCost=0.
 
 This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
 
@@ -109,5 +109,5 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 265           | Hours used                                    |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
-| CommitmentDiscountId       | (empty)       | No associated commitment                      |
+| CommitmentDiscountId       | null       | No associated commitment                      |
 | ContractedUnitPrice        | &dollar;79.28 | Equals ListUnitPrice (no negotiated discount) |

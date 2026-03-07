@@ -3,8 +3,8 @@
 | Parameter                  | Value                                                    |
 | -------------------------- | -------------------------------------------------------- |
 | Scenario Type              | commitment                                               |
-| Payment Model              | All-Upfront                                              |
-| CommitmentDiscountCategory | Spend                                                    |
+| Payment Model              | All Upfront                                              |
+| Commitment Discount Category | Spend                                                    |
 | Utilization                | 150% (100% committed + 50% overflow to standard pricing) |
 | Hours Generated            | 48 (24 committed + 24 overflow to standard pricing)      |
 | Annual Commitment          | &dollar;212,000.00                                       |
@@ -17,7 +17,7 @@
 
 This example shows an **Amazon Web Services EC2 Instance Savings Plan**, which is a commitment (CommitmentDiscountCategory: Spend) where you commit to a specific dollar amount of usage per hour.
 
-The **All-Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
+The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
 
 This scenario demonstrates **overflow** at 150% utilization where demand exceeds commitment capacity by 50%. The first 24 hours represent 100% utilization of the commitment, while the additional 12 hours represent 50% overflow that spills to standard pricing. Standard pricing rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
 
@@ -109,5 +109,5 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 1             | Hours used                                    |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
-| CommitmentDiscountId       | (empty)       | No associated commitment                      |
+| CommitmentDiscountId       | null       | No associated commitment                      |
 | ContractedUnitPrice        | &dollar;36.30 | Equals ListUnitPrice (no negotiated discount) |

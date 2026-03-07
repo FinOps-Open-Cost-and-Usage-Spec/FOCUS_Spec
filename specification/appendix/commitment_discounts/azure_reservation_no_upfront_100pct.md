@@ -3,8 +3,8 @@
 | Parameter                  | Value               |
 | -------------------------- | ------------------- |
 | Scenario Type              | commitment          |
-| Payment Model              | No-Upfront          |
-| CommitmentDiscountCategory | Usage               |
+| Payment Model              | No Upfront          |
+| Commitment Discount Category | Usage               |
 | Utilization                | 100%                |
 | Hours Generated            | 24                  |
 | Annual Commitment          | &dollar;55,333.33   |
@@ -17,7 +17,7 @@
 
 This example shows a **Microsoft Azure Virtual Machine Reserved Instance**, which is a commitment (CommitmentDiscountCategory: Usage) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
-The **No-Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and EffectiveCost=0.
+The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and EffectiveCost=0.
 
 This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
 
@@ -107,5 +107,5 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 459            | Hours used                                    |
 | CommitmentDiscountQuantity | null           | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null           | No commitment                                 |
-| CommitmentDiscountId       | (empty)        | No associated commitment                      |
+| CommitmentDiscountId       | null        | No associated commitment                      |
 | ContractedUnitPrice        | &dollar;113.70 | Equals ListUnitPrice (no negotiated discount) |
