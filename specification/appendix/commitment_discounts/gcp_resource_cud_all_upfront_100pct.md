@@ -90,7 +90,7 @@ The following critical rules apply to commitment discount data:
 | ListCost                   | &dollar;44.18                                         | What you would have paid at list price |
 | PricingQuantity            | 1                                                     | Units priced                           |
 | ConsumedQuantity           | 1                                                     | Hours used                             |
-| CommitmentDiscountQuantity | 1                                                     | Units applied                          |
+| CommitmentDiscountQuantity | 1                                                     | Commitment units applied                          |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                     |
 | CommitmentDiscountId       | projects/my-project-123456/locations/us-central1/c... | Links usage to purchase                |
 

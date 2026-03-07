@@ -65,8 +65,8 @@ These three quantity columns serve different purposes and must be understood in 
 | **Unused Row**   | &dollar;0.00       | &dollar;52.40 | null               |
 | **Standard Row** | &dollar;3.96       | &dollar;3.96  | &dollar;3.96       |
 
-ListCost is null for unused rows because no resource was consumed.
-The opportunity cost is reflected in EffectiveCost.
+ListCost is null for unused rows because no resource was consumed. The opportunity cost is reflected in EffectiveCost.
+
 The following critical rules apply to commitment discount data:
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
