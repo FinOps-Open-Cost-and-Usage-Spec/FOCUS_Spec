@@ -32,6 +32,6 @@ The above SKU Catalog shows that this service provider only has 1 service that o
 
 * 1 recurring, purchase record exists for 1 eligible "Normalized Hour" for a no upfront, _commitment discount_ and incurs a $2.00 [_BilledCost_](#datasets.costandusage.billedcost).
 * With _commitment discount flexibility_, 1 _commitment discount_ for a VM_XLARGE covers 2 VM_MEDIUM resources within the corresponding [_charge period_](#glossary:chargeperiod) and incurs a $2.00 total [_EffectiveCost_](#datasets.costandusage.effectivecost).
-  - 1 _commitment discount_ with a normalization factor of 8 covers 2 resources with normalization factors of 4 (i.e 4 + 4 = 8).
+  * 1 _commitment discount_ with a normalization factor of 8 covers 2 resources with normalization factors of 4 (i.e 4 + 4 = 8).
 
 [CSV Example](/specification/data/commitment_discount_flexibility/one_hundred_percent_utilization_with_commitment_discount_flexibility_with_2_resources.csv)
