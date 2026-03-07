@@ -195,9 +195,10 @@ The corresponding Tags column would be:
 ## Example Scenarios
 
 ### Ancestor tags only
+
 Details:
 * One Tag Scheme supported (default).
-* Charge is for API usage which has no resource to tag, but does support job tagging in the API request payload.
+* Charge is for API usage which has no resource to tag, but this charge does support job tagging in the API request payload.
   * No tags were applied in the API request payload.
 * One tag was applied at the ancestor level.
 
@@ -206,7 +207,7 @@ Details:
   "Default": {
     "Tags": {
       "foo": {
-        "TagsSourceType": null,
+        "TagsSource": null,
         "TagsSourceId": null,
         "TagValue": null,
         "AncestorTaggedSources": {
@@ -222,14 +223,106 @@ Details:
 }
 ```
 
-The corresponding Tags column would be null:
+The corresponding Tags column would either be null or contain an empty object:
 
 ```json
 {}
 ```
 
-###
+### Tags from multiple sources and schemas with different value types
 
+Details:
+* 3 tag schemes are used:
+  * User defined tags (default)
+    * Provider supports tag finalization via inheritance.
+    * First tag (foo) is set at the resource level as well as ancestor levels.
+    * Second tag (lorem) is applied at ancestor levels.
+      * One of the values from an ancestor is included in Tags column due to tag finalization process.
+    * There are no other supported sources for tags to be applied for this charge.
+  * userDefinedValuelessLabelScheme
+    * Label scheme is valueless so boolean `true` is provided as value to represent the presence of the label.
+    * User has set the label (project_foci) on the resource.
+    * Label scheme is supported on ancestor levels, but no labels have been set on either.
+  * providerDefinedTagScheme
+    * Provider has tag scheme which is only applicable at the resource level.
+    * First tag (isfeatureenabled) is boolean.
+    * Second tag (versionnumber) is numeric.
+
+```json
+{
+  "Default": {
+    "Tags": {
+      "foo": {
+        "TagsSource": "Resource",
+        "TagsSourceId": "my-resource-11",
+        "TagValue": "baz",
+        "AncestorTaggedSources": {
+          "Subscription": {
+            "TagsSourceId": "1234-abcd-5678",
+            "TagValue": "bar"
+          },
+          "Resource Group": {
+            "TagsSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
+            "TagValue": "bang"
+          }
+        }
+      },
+      "lorem": {
+        "TagsSource": "Resource Group",
+        "TagsSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
+        "TagValue": "ipsum",
+        "AncestorTaggedSources": {
+          "Subscription": {
+            "TagsSourceId": "1234-abcd-5678",
+            "TagValue": "adest"
+          }
+        }
+      }
+    },
+    "UntaggedSources": null
+  },
+  "userDefinedValuelessLabelScheme": {
+    "Tags": {
+      "project_foci": {
+        "TagSource": "Resource",
+        "TagSourceId": "my-resource-11",
+        "TagValue": true,
+        "AncestorTaggedSources": null
+      }
+    },
+    "UntaggedSources": ["Resource Group", "Subscription"]
+  },
+  "providerDefinedTagScheme": {
+    "Tags": {
+      "isfeatureenabled": {
+        "TagSource": "Resource",
+        "TagSourceId": "my-resource-11",
+        "TagValue": false,
+        "AncestorTaggedSources": null
+      },
+      "versionnumber": {
+        "TagSource": "Resource",
+        "TagSourceId": "my-resource-11",
+        "TagValue": 12.1,
+        "AncestorTaggedSources": null
+      }
+    },
+    "UntaggedSources": null
+  }
+}
+```
+
+The corresponding Tags column would contain:
+
+```json
+{
+"foo": "baz",
+"lorem": "ipsum",
+"userDefinedValuelessLabelScheme/project_foci": true,
+"providerDefinedTagScheme/isfeatureenabled": false,
+"providerDefinedTagScheme/versionnumber": 12.2
+}
+```
 
 ## Column ID
 
