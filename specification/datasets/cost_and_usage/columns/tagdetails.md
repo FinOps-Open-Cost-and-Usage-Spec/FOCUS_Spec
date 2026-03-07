@@ -15,7 +15,7 @@ The TagDetails column adheres to the following requirements:
   * TagDetails MUST NOT be null unless all of the following are true:
     * Tags column is null.
     * Tags are not present in any other *tag sources*.
-    * No *tag sources* are supported for any user-defined or provider-defined tag scheme.
+    * No *tag sources* are supported for any user-defined tag scheme.
 
 ### Object Schema Requirements
 
@@ -111,18 +111,15 @@ The tag key object and tag source objects contain the following properties:
   "Default": {
     "Tags": {
       "foo": {
-        "FocusColumn": "ResourceId",
         "TagSource": "Resource",
         "TagSourceId": "my-resource-11",
         "TagValue": "baz",
         "AncestorTaggedSources": {
           "Subscription": {
-            "FocusColumn": null,
             "TagSourceId": "/subs/#",
             "TagValue": "foo"
           },
           "Resource Group": {
-            "FocusColumn": null,
             "TagSourceId": "/subs/#/rgs/x",
             "TagValue": "bar"
           }
@@ -134,7 +131,6 @@ The tag key object and tag source objects contain the following properties:
   "userDefinedTagScheme2": {
     "Tags": {
       "foo": {
-        "FocusColumn": "ResourceId",
         "TagSource": "Resource",
         "TagSourceId": "my-resource-11",
         "TagValue": "bar",
@@ -146,7 +142,6 @@ The tag key object and tag source objects contain the following properties:
   "userDefinedTagScheme3": {
     "Tags": {
       "foo": {
-        "FocusColumn": "ResourceId",
         "TagSource": "Resource",
         "TagSourceId": "my-resource-11",
         "TagValue": "bar",
@@ -158,7 +153,6 @@ The tag key object and tag source objects contain the following properties:
   "providerDefinedTagScheme1": {
     "Tags": {
       "foo": {
-        "FocusColumn": "ResourceId",
         "TagSource": "Resource",
         "TagSourceId": "my-resource-11",
         "TagValue": "bar",
@@ -170,7 +164,6 @@ The tag key object and tag source objects contain the following properties:
   "providerDefinedTagScheme2": {
     "Tags": {
       "foo": {
-        "FocusColumn": "ResourceId",
         "TagSource": "Resource",
         "TagSourceId": "my-resource-11",
         "TagValue": "bar",
@@ -213,13 +206,11 @@ Details:
   "Default": {
     "Tags": {
       "foo": {
-        "FocusColumn": null,
         "TagsSourceType": null,
         "TagsSourceId": null,
         "TagValue": null,
         "AncestorTaggedSources": {
           "Project": {
-            "FocusColumn": subaccountid,
             "TagsSourceId": "gcp-project-8675309",
             "TagValue": "bar"
           }
