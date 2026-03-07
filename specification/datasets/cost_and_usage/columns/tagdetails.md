@@ -207,18 +207,18 @@ Details:
   "Default": {
     "Tags": {
       "foo": {
-        "TagsSource": null,
-        "TagsSourceId": null,
+        "TagSource": null,
+        "TagSourceId": null,
         "TagValue": null,
         "AncestorTaggedSources": {
           "Project": {
-            "TagsSourceId": "gcp-project-8675309",
+            "TagSourceId": "gcp-project-8675309",
             "TagValue": "bar"
           }
         }
       }
     },
-    "UntaggedSources": "api-job-label"
+    "UntaggedSources": ["api-job-label"]
   }
 }
 ```
@@ -253,27 +253,27 @@ Details:
   "Default": {
     "Tags": {
       "foo": {
-        "TagsSource": "Resource",
-        "TagsSourceId": "my-resource-11",
+        "TagSource": "Resource",
+        "TagSourceId": "my-resource-11",
         "TagValue": "baz",
         "AncestorTaggedSources": {
           "Subscription": {
-            "TagsSourceId": "1234-abcd-5678",
+            "TagSourceId": "1234-abcd-5678",
             "TagValue": "bar"
           },
           "Resource Group": {
-            "TagsSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
+            "TagSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
             "TagValue": "bang"
           }
         }
       },
       "lorem": {
-        "TagsSource": "Resource Group",
-        "TagsSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
+        "TagSource": "Resource Group",
+        "TagSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
         "TagValue": "ipsum",
         "AncestorTaggedSources": {
           "Subscription": {
-            "TagsSourceId": "1234-abcd-5678",
+            "TagSourceId": "1234-abcd-5678",
             "TagValue": "adest"
           }
         }
@@ -303,7 +303,7 @@ Details:
       "versionnumber": {
         "TagSource": "Resource",
         "TagSourceId": "my-resource-11",
-        "TagValue": 12.1,
+        "TagValue": 12.2,
         "AncestorTaggedSources": null
       }
     },
