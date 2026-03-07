@@ -17,13 +17,13 @@
 
 This example shows a **Microsoft Azure Virtual Machine Reserved Instance**, which is a commitment (CommitmentDiscountCategory: Usage) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
-The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and EffectiveCost=0.
+The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
 
 This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
 
 ## Row Summary
 
-| Row Type         | Count | Total BilledCost      | Total EffectiveCost  |
+| Row Type         | Count | BilledCost      | EffectiveCost  |
 | ---------------- | ----- | --------------------- | -------------------- |
 | Purchase         | 1     | &dollar;55,333.33     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00          | &dollar;1,819.20     |

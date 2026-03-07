@@ -17,13 +17,13 @@
 
 This example shows an **Amazon Web Services EC2 Instance Savings Plan** (Savings Plan), which is a commitment (CommitmentDiscountCategory: Spend) where you commit to a specific dollar amount of usage per hour.
 
-The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
+The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
 
 This scenario demonstrates **zero utilization** where the commitment is purchased but no resources are consumed. All usage rows have CommitmentDiscountStatus='Unused', representing wasted commitment capacity. The EffectiveCost on these rows reflects the cost of unused commitment that cannot be recovered.
 
 ## Row Summary
 
-| Row Type         | Count | Total BilledCost       | Total EffectiveCost |
+| Row Type         | Count | BilledCost       | EffectiveCost |
 |------------------|-------|------------------------|---------------------|
 | Purchase         | 1     | &dollar;353,000.00     | &dollar;0.00        |
 | Usage (Used)     | 0     | &dollar;0.00           | &dollar;0.00        |
