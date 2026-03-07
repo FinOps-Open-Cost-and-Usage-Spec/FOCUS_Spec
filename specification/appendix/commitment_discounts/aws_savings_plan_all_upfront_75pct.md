@@ -1,15 +1,15 @@
 # AWS Savings Plan - All Upfront - 75% Utilization
 
-| Parameter                  | Value              |
-| -------------------------- | ------------------ |
-| Scenario Type              | commitment         |
-| Payment Model              | All Upfront        |
+| Parameter                    | Value              |
+| ---------------------------- | ------------------ |
+| Scenario Type                | commitment         |
+| Payment Model                | All Upfront        |
 | Commitment Discount Category | Spend              |
-| Utilization                | 75%                |
-| Hours Generated            | 24                 |
-| Annual Commitment          | &dollar;459,000.00 |
-| List Unit Price            | &dollar;78.60/hour |
-| Savings                    | 33%                |
+| Utilization                  | 75%                |
+| Hours Generated              | 24                 |
+| Annual Commitment            | &dollar;459,000.00 |
+| List Unit Price              | &dollar;78.60/hour |
+| Savings                      | 33%                |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_all_upfront_75pct.csv)
 
@@ -25,7 +25,7 @@ This scenario demonstrates **underutilization** at 75% where only 18 of 24 commi
 
 *The following row summary reflects only the rows included in the 24-hour sample CSV.*
 
-| Row Type         | Count | BilledCost       | EffectiveCost  |
+| Row Type         | Count | BilledCost             | EffectiveCost        |
 | ---------------- | ----- | ---------------------- | -------------------- |
 | Purchase         | 1     | &dollar;459,000.00     | &dollar;0.00         |
 | Usage (Used)     | 18    | &dollar;0.00           | &dollar;943.20       |
@@ -113,7 +113,7 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | null          | **No resource consumed**                         |
 | CommitmentDiscountQuantity | 52.40         | Commitment wasted                                |
 | CommitmentDiscountStatus   | Unused        | Commitment not utilized                          |
-| ResourceId                 | null       | No resource associated                           |
+| ResourceId                 | null          | No resource associated                           |
 
 ## Standard Pricing Usage Row Details
 
@@ -128,5 +128,5 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 172           | Hours used                                    |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
-| CommitmentDiscountId       | null       | No associated commitment                      |
+| CommitmentDiscountId       | null          | No associated commitment                      |
 | ContractedUnitPrice        | &dollar;78.60 | Equals ListUnitPrice (no negotiated discount) |

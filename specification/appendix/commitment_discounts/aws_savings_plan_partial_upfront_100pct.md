@@ -1,15 +1,15 @@
 # AWS Savings Plan - Partial Upfront - 100% Utilization
 
-| Parameter                  | Value              |
-| -------------------------- | ------------------ |
-| Scenario Type              | commitment         |
-| Payment Model              | Partial Upfront    |
+| Parameter                    | Value              |
+| ---------------------------- | ------------------ |
+| Scenario Type                | commitment         |
+| Payment Model                | Partial Upfront    |
 | Commitment Discount Category | Spend              |
-| Utilization                | 100%               |
-| Hours Generated            | 24                 |
-| Annual Commitment          | &dollar;242,666.67 |
-| List Unit Price            | &dollar;76.71/hour |
-| Savings                    | 33%                |
+| Utilization                  | 100%               |
+| Hours Generated              | 24                 |
+| Annual Commitment            | &dollar;242,666.67 |
+| List Unit Price              | &dollar;76.71/hour |
+| Savings                      | 33%                |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_partial_upfront_100pct.csv)
 
@@ -25,12 +25,12 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 *The following row summary reflects only the rows included in the 24-hour sample CSV.*
 
-| Row Type         | Count | BilledCost       | EffectiveCost  |
+| Row Type         | Count | BilledCost             | EffectiveCost        |
 | ---------------- | ----- | ---------------------- | -------------------- |
-| Purchase         | 2     | &dollar;242,666.67     | &dollar;0.00         |
+| Purchase         | 2     | &dollar;131,444.45     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;1,227.36     |
 | Usage (Standard) | 12    | &dollar;19.27          | &dollar;19.27        |
-| **Total**        | 38    | **&dollar;242,685.94** | **&dollar;1,246.63** |
+| **Total**        | 38    | **&dollar;131,463.72** | **&dollar;1,246.63** |
 
 ## Column Interactions
 
@@ -59,11 +59,12 @@ These three quantity columns serve different purposes and must be understood in 
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
-| Scenario         | BilledCost         | EffectiveCost | ListCost           |
-| ---------------- | ------------------ | ------------- | ------------------ |
-| **Purchase Row** | &dollar;242,666.67 | &dollar;0.00  | &dollar;242,666.67 |
-| **Used Row**     | &dollar;0.00       | &dollar;51.14 | &dollar;76.71      |
-| **Standard Row** | &dollar;5.38       | &dollar;5.38  | &dollar;5.38       |
+| Scenario                     | BilledCost         | EffectiveCost | ListCost           |
+| ---------------------------- | ------------------ | ------------- | ------------------ |
+| **Purchase Row (One-Time)**  | &dollar;121,333.34 | &dollar;0.00  | &dollar;121,333.34 |
+| **Purchase Row (Recurring)** | &dollar;10,111.11  | &dollar;0.00  | &dollar;10,111.11  |
+| **Used Row**                 | &dollar;0.00       | &dollar;51.14 | &dollar;76.71      |
+| **Standard Row**             | &dollar;5.38       | &dollar;5.38  | &dollar;5.38       |
 
 The following critical rules apply to commitment discount data:
 
@@ -78,7 +79,7 @@ The following critical rules apply to commitment discount data:
 | ------------------------ | ------------------ | ----------------------------------------------- |
 | ChargeCategory           | Purchase           | Commitment purchase transaction                 |
 | ChargeFrequency          | One-Time           | One-time upfront payment                        |
-| BilledCost               | &dollar;224,000.00 | Portion of commitment payment                   |
+| BilledCost               | &dollar;121,333.34 | Upfront portion (50% of annual commitment)      |
 | EffectiveCost            | &dollar;0.00       | **MUST be 0** - cost is amortized to usage rows |
 | PricingQuantity          | 1                  | One commitment unit purchased                   |
 | CommitmentDiscountStatus | null               | Status only applies to usage rows               |
@@ -89,7 +90,7 @@ The following critical rules apply to commitment discount data:
 | ------------------------ | ----------------- | ----------------------------------------------- |
 | ChargeCategory           | Purchase          | Commitment purchase transaction                 |
 | ChargeFrequency          | Recurring         | Monthly recurring fee                           |
-| BilledCost               | &dollar;18,666.67 | Monthly portion of commitment payment           |
+| BilledCost               | &dollar;10,111.11 | Monthly portion (remaining 50% / 12 months)     |
 | EffectiveCost            | &dollar;0.00      | **MUST be 0** - cost is amortized to usage rows |
 | PricingQuantity          | 1                 | One commitment unit purchased                   |
 | CommitmentDiscountStatus | null              | Status only applies to usage rows               |
@@ -122,5 +123,5 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 234           | Hours used                                    |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
-| CommitmentDiscountId       | null       | No associated commitment                      |
+| CommitmentDiscountId       | null          | No associated commitment                      |
 | ContractedUnitPrice        | &dollar;76.71 | Equals ListUnitPrice (no negotiated discount) |

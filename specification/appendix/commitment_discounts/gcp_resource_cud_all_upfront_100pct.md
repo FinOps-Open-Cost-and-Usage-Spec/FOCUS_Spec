@@ -1,15 +1,15 @@
 # GCP Resource CUD - All Upfront - 100% Utilization
 
-| Parameter                  | Value              |
-| -------------------------- | ------------------ |
-| Scenario Type              | commitment         |
-| Payment Model              | All Upfront        |
+| Parameter                    | Value              |
+| ---------------------------- | ------------------ |
+| Scenario Type                | commitment         |
+| Payment Model                | All Upfront        |
 | Commitment Discount Category | Usage              |
-| Utilization                | 100%               |
-| Hours Generated            | 24                 |
-| Annual Commitment          | &dollar;258,000.00 |
-| List Unit Price            | &dollar;44.18/hour |
-| Savings                    | 33%                |
+| Utilization                  | 100%               |
+| Hours Generated              | 24                 |
+| Annual Commitment            | &dollar;258,000.00 |
+| List Unit Price              | &dollar;44.18/hour |
+| Savings                      | 33%                |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/gcp_resource_cud_all_upfront_100pct.csv)
 
@@ -25,7 +25,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 *The following row summary reflects only the rows included in the 24-hour sample CSV.*
 
-| Row Type         | Count | BilledCost       | EffectiveCost |
+| Row Type         | Count | BilledCost             | EffectiveCost       |
 | ---------------- | ----- | ---------------------- | ------------------- |
 | Purchase         | 1     | &dollar;258,000.00     | &dollar;0.00        |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;706.80      |
@@ -94,7 +94,7 @@ The following critical rules apply to commitment discount data:
 | ListCost                   | &dollar;44.18                                         | What you would have paid at list price |
 | PricingQuantity            | 1                                                     | Units priced                           |
 | ConsumedQuantity           | 1                                                     | Hours used                             |
-| CommitmentDiscountQuantity | 1                                                     | Commitment units applied                          |
+| CommitmentDiscountQuantity | 1                                                     | Commitment units applied               |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                     |
 | CommitmentDiscountId       | projects/my-project-123456/locations/us-central1/c... | Links usage to purchase                |
 
@@ -111,5 +111,5 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 299           | Hours used                                    |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
-| CommitmentDiscountId       | null       | No associated commitment                      |
+| CommitmentDiscountId       | null          | No associated commitment                      |
 | ContractedUnitPrice        | &dollar;44.18 | Equals ListUnitPrice (no negotiated discount) |
