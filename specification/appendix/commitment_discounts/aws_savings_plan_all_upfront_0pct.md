@@ -88,7 +88,7 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | null          | **No resource consumed**                         |
 | CommitmentDiscountQuantity | 40.30         | Commitment wasted                                |
 | CommitmentDiscountStatus   | Unused        | Commitment not utilized                          |
-| ResourceId                 | (empty)       | No resource associated                           |
+| ResourceId                 | null          | No resource associated                           |
 
 ## Standard Pricing Usage Row Details
 
@@ -103,5 +103,5 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | 124          | Hours used                                    |
 | CommitmentDiscountQuantity | null         | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null         | No commitment                                 |
-| CommitmentDiscountId       | (empty)      | No associated commitment                      |
-| ContractedUnitPrice        | (list rate)  | Equals ListUnitPrice (no negotiated discount) |
+| CommitmentDiscountId       | null         | No associated commitment                      |
+| ContractedUnitPrice        | &dollar;2.85 | Equals ListUnitPrice (no negotiated discount) |

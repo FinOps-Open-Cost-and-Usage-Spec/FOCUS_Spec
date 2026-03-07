@@ -15,7 +15,7 @@
 
 ## Scenario Description
 
-This example shows a **Google Cloud Platform Spend-based CUD** (Committed Use Discount (Spend)), which is a commitment (CommitmentDiscountCategory: Spend) where you commit to a specific dollar amount of usage per hour.
+This example shows a **Google Cloud Platform Spend-based CUD**, which is a commitment (CommitmentDiscountCategory: Spend) where you commit to a specific dollar amount of usage per hour.
 
 The **All-Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
 

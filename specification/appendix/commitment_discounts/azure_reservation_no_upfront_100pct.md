@@ -15,7 +15,7 @@
 
 ## Scenario Description
 
-This example shows a **Microsoft Azure Virtual Machine Reserved Instance** (Azure Reservation), which is a commitment (CommitmentDiscountCategory: Usage) where you commit to a specific quantity of resource capacity (e.g., instance hours).
+This example shows a **Microsoft Azure Virtual Machine Reserved Instance**, which is a commitment (CommitmentDiscountCategory: Usage) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
 The **No-Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and EffectiveCost=0.
 

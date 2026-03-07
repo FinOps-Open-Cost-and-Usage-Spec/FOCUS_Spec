@@ -15,7 +15,7 @@
 
 ## Scenario Description
 
-This example shows a **Microsoft Azure Virtual Machine Reserved Instance** (Azure Reservation), which is a commitment (CommitmentDiscountCategory: Usage) where you commit to a specific quantity of resource capacity (e.g., instance hours).
+This example shows a **Microsoft Azure Virtual Machine Reserved Instance**, which is a commitment (CommitmentDiscountCategory: Usage) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
 The **All-Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and EffectiveCost=0 (since the cost is amortized to usage rows).
 
