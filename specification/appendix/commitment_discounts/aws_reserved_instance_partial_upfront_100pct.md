@@ -1,7 +1,7 @@
 # AWS Reserved Instance - Partial Upfront - 100% Utilization
 
 | Parameter                  | Value              |
-|----------------------------|--------------------|
+| -------------------------- | ------------------ |
 | Scenario Type              | commitment         |
 | Payment Model              | Partial-Upfront    |
 | CommitmentDiscountCategory | Usage              |
@@ -24,7 +24,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 ## Row Summary
 
 | Row Type         | Count | Total BilledCost       | Total EffectiveCost  |
-|------------------|-------|------------------------|----------------------|
+| ---------------- | ----- | ---------------------- | -------------------- |
 | Purchase         | 2     | &dollar;238,333.33     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;1,205.52     |
 | Usage (Standard) | 12    | &dollar;19.82          | &dollar;19.82        |
@@ -39,7 +39,7 @@ Understanding how columns relate to each other is critical for validating FOCUS 
 These three quantity columns serve different purposes and must be understood in context:
 
 | Column                         | Purpose                               | When Populated                | Typical Value        |
-|--------------------------------|---------------------------------------|-------------------------------|----------------------|
+| ------------------------------ | ------------------------------------- | ----------------------------- | -------------------- |
 | **PricingQuantity**            | Quantity used for pricing calculation | All priced rows               | 1 (per hour/unit)    |
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
@@ -47,7 +47,7 @@ These three quantity columns serve different purposes and must be understood in 
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
 | Column                  | Purpose                  | Commitment-Covered | Standard      |
-|-------------------------|--------------------------|--------------------|---------------|
+| ----------------------- | ------------------------ | ------------------ | ------------- |
 | **ListUnitPrice**       | List (public) unit price | &dollar;75.35      | &dollar;75.35 |
 | **ContractedUnitPrice** | Negotiated unit price    | &dollar;50.23      | null          |
 
@@ -56,22 +56,22 @@ These three quantity columns serve different purposes and must be understood in 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
 | Scenario         | BilledCost         | EffectiveCost | ListCost           |
-|------------------|--------------------|---------------|--------------------|
+| ---------------- | ------------------ | ------------- | ------------------ |
 | **Purchase Row** | &dollar;238,333.33 | &dollar;0.00  | &dollar;238,333.33 |
 | **Used Row**     | &dollar;0.00       | &dollar;50.23 | &dollar;75.35      |
 | **Standard Row** | &dollar;5.84       | &dollar;5.84  | &dollar;5.84       |
 
 The following critical rules apply to commitment discount data:
 
-* **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-* **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
-* **Standard pricing rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
+- **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
+- **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
+- **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
+- **Standard pricing rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
 | Column                   | Value              | Explanation                                     |
-|--------------------------|--------------------|-------------------------------------------------|
+| ------------------------ | ------------------ | ----------------------------------------------- |
 | ChargeCategory           | Purchase           | Commitment purchase transaction                 |
 | ChargeFrequency          | One-Time           | One-time upfront payment                        |
 | BilledCost               | &dollar;220,000.00 | Portion of commitment payment                   |
@@ -82,7 +82,7 @@ The following critical rules apply to commitment discount data:
 ## Recurring Purchase Row Details
 
 | Column                   | Value             | Explanation                                     |
-|--------------------------|-------------------|-------------------------------------------------|
+| ------------------------ | ----------------- | ----------------------------------------------- |
 | ChargeCategory           | Purchase          | Commitment purchase transaction                 |
 | ChargeFrequency          | Recurring         | Monthly recurring fee                           |
 | BilledCost               | &dollar;18,333.33 | Monthly portion of commitment payment           |
@@ -93,7 +93,7 @@ The following critical rules apply to commitment discount data:
 ## Usage Row Details (Commitment-Covered)
 
 | Column                     | Value                                                 | Explanation                            |
-|----------------------------|-------------------------------------------------------|----------------------------------------|
+| -------------------------- | ----------------------------------------------------- | -------------------------------------- |
 | ChargeCategory             | Usage                                                 | Compute resource consumption           |
 | PricingCategory            | Committed                                             | Priced under commitment discount       |
 | BilledCost                 | &dollar;0.00                                          | **MUST be 0** - covered by commitment  |
@@ -108,7 +108,7 @@ The following critical rules apply to commitment discount data:
 ## Standard Pricing Usage Row Details
 
 | Column                     | Value         | Explanation                                   |
-|----------------------------|---------------|-----------------------------------------------|
+| -------------------------- | ------------- | --------------------------------------------- |
 | ChargeCategory             | Usage         | Compute consumption (standard pricing)        |
 | PricingCategory            | Standard      | No discount applied                           |
 | BilledCost                 | &dollar;5.84  | List unit price                               |
