@@ -25,13 +25,13 @@ The above SKU Catalog shows that this service provider only has 1 service that o
 
 ## Scenario
 
-- 1 no upfront _commitment discount_ is purchased for 1 year (2023) for 1 VM_LARGE.
-- 1 VM_MEDIUM resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
+* 1 no upfront _commitment discount_ is purchased for 1 year (2023) for 1 VM_LARGE.
+* 1 VM_MEDIUM resource runs for 1 hour from 2023-01-01T00:00:00 to 2023-01-01T01:00:00.
 
 ## Outcome
 
-- 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, _commitment discount_ and incurs a $1.50 [_BilledCost_](#datasets.costandusage.billedcost).
-- The VM_LARGE _commitment discount_ is unused for the corresponding [_charge period_](#glossary:chargeperiod) because no VM_LARGE resources are running and incurs a $1.50 [_EffectiveCost_](#datasets.costandusage.effectivecost).
-- 1 hour of on-demand usage is incurred by the VM_MEDIUM resource and incurs a $2.00 _BilledCost_ and _EffectiveCost_.
+* 1 recurring, purchase record exists for 1 eligible "Hour" of the no upfront, _commitment discount_ and incurs a $1.50 [_BilledCost_](#datasets.costandusage.billedcost).
+* The VM_LARGE _commitment discount_ is unused for the corresponding [_charge period_](#glossary:chargeperiod) because no VM_LARGE resources are running and incurs a $1.50 [_EffectiveCost_](#datasets.costandusage.effectivecost).
+* 1 hour of on-demand usage is incurred by the VM_MEDIUM resource and incurs a $2.00 _BilledCost_ and _EffectiveCost_.
 
 [CSV Example](/specification/data/commitment_discount_flexibility/zero_percent_utilization_without_commitment_discount_flexibility.csv)
