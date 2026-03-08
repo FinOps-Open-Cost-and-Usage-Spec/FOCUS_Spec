@@ -7,7 +7,7 @@
 | Commitment Discount Category | Usage               |
 | Utilization                  | 100%                |
 | Hours Generated              | 24                  |
-| Annual Commitment            | &dollar;55,333.33   |
+| Annual Commitment            | &dollar;664,008.00  |
 | List Unit Price              | &dollar;113.70/hour |
 | Savings                      | 33%                 |
 
@@ -27,10 +27,10 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 | Row Type         | Count | BilledCost            | EffectiveCost        |
 | ---------------- | ----- | --------------------- | -------------------- |
-| Purchase         | 1     | &dollar;55,333.33     | &dollar;0.00         |
+| Purchase         | 1     | &dollar;55,334.00     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00          | &dollar;1,819.20     |
 | Usage (Standard) | 12    | &dollar;39.35         | &dollar;39.35        |
-| **Total**        | 37    | **&dollar;55,372.68** | **&dollar;1,858.55** |
+| **Total**        | 37    | **&dollar;55,373.35** | **&dollar;1,858.55** |
 
 ## Column Interactions
 
@@ -61,7 +61,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Scenario         | BilledCost        | EffectiveCost | ListCost          |
 | ---------------- | ----------------- | ------------- | ----------------- |
-| **Purchase Row** | &dollar;55,333.33 | &dollar;0.00  | &dollar;55,333.33 |
+| **Purchase Row** | &dollar;55,334.00 | &dollar;0.00  | &dollar;55,334.00 |
 | **Used Row**     | &dollar;0.00      | &dollar;75.80 | &dollar;113.70    |
 | **Standard Row** | &dollar;9.55      | &dollar;9.55  | &dollar;9.55      |
 
@@ -78,7 +78,7 @@ The following critical rules apply to commitment discount data:
 | ------------------------ | ----------------- | ----------------------------------------------- |
 | ChargeCategory           | Purchase          | Commitment purchase transaction                 |
 | ChargeFrequency          | Recurring         | Monthly recurring fee                           |
-| BilledCost               | &dollar;55,333.33 | Portion of commitment payment                   |
+| BilledCost               | &dollar;55,334.00 | Monthly recurring payment (annual / 12)         |
 | EffectiveCost            | &dollar;0.00      | **MUST be 0** - cost is amortized to usage rows |
 | PricingQuantity          | 1                 | One commitment unit purchased                   |
 | CommitmentDiscountStatus | null              | Status only applies to usage rows               |
