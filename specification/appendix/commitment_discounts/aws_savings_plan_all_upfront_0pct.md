@@ -57,16 +57,18 @@ These three quantity columns serve different purposes and must be understood in 
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
-### Unused Row
+### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
-| Scenario           | BilledCost     | EffectiveCost   | ListCost       |
-| ------------------ | -------------- | --------------- | -------------- |
-| **Unused Row**     | &dollar;0.00   | &dollar;40.30   | null           |
+| Scenario           | BilledCost         | EffectiveCost   | ListCost           |
+| ------------------ | ------------------ | --------------- | ------------------ |
+| **Purchase Row**   | &dollar;353,000.00 | &dollar;0.00    | &dollar;353,000.00 |
+| **Unused Row**     | &dollar;0.00       | &dollar;40.30   | null               |
+
+This scenario has no Used or Standard rows because utilization is 0% — no resources were consumed.
 
 The following critical rules apply to commitment discount data:
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
 * **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
 
 ## Purchase Row Details
