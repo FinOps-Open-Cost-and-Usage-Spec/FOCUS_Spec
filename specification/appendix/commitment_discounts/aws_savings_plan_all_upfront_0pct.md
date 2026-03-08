@@ -30,8 +30,7 @@ This scenario demonstrates **zero utilization** where the commitment is purchase
 | Purchase           | 1       | &dollar;353,000.00       | &dollar;0.00          |
 | Usage (Used)       | 0       | &dollar;0.00             | &dollar;0.00          |
 | Usage (Unused)     | 24      | &dollar;0.00             | &dollar;967.20        |
-| Usage (Standard)   | 12      | &dollar;12.84            | &dollar;12.84         |
-| **Total**          | 37      | **&dollar;353,012.84**   | **&dollar;980.04**    |
+| **Total**          | 25      | **&dollar;353,000.00**   | **&dollar;967.20**    |
 
 ## Column Interactions
 
@@ -49,24 +48,26 @@ These three quantity columns serve different purposes and must be understood in 
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For this commitment, the value equals the hourly dollar commitment.
 
-| Column                    | Purpose                    | Commitment-Covered        | Standard        |
-| ------------------------- | -------------------------- | ------------------------- | --------------- |
-| **ListUnitPrice**         | List (public) unit price   | &dollar;60.45             | &dollar;60.45   |
-| **ContractedUnitPrice**   | Negotiated unit price      | &dollar;60.45             | &dollar;60.45   |
+### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
+
+| Column                    | Purpose                    | Commitment-Covered        |
+| ------------------------- | -------------------------- | ------------------------- |
+| **ListUnitPrice**         | List (public) unit price   | &dollar;60.45             |
+| **ContractedUnitPrice**   | Negotiated unit price      | &dollar;60.45             |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+
+### Unused Row
 
 | Scenario           | BilledCost     | EffectiveCost   | ListCost       |
 | ------------------ | -------------- | --------------- | -------------- |
 | **Unused Row**     | &dollar;0.00   | &dollar;40.30   | null           |
-| **Standard Row**   | &dollar;2.85   | &dollar;2.85    | &dollar;2.85   |
 
 The following critical rules apply to commitment discount data:
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
 * **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
 * **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
-* **Standard pricing rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
@@ -92,20 +93,4 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus     | Unused          | Commitment not utilized                            |
 | ResourceId                   | null            | No resource associated                             |
 
-ListCost is null for unused rows because no resource was consumed. The opportunity cost is reflected in EffectiveCost.
-
-## Standard Pricing Usage Row Details
-
-| Column                       | Value          | Explanation                                     |
-| ---------------------------- | -------------- | ----------------------------------------------- |
-| ChargeCategory               | Usage          | Compute consumption (standard pricing)          |
-| PricingCategory              | Standard       | No discount applied                             |
-| BilledCost                   | &dollar;2.85   | List unit price                                 |
-| EffectiveCost                | &dollar;2.85   | = BilledCost                                    |
-| ListCost                     | &dollar;2.85   | Same as BilledCost                              |
-| PricingQuantity              | 124            | Units priced                                    |
-| ConsumedQuantity             | 124            | Hours used                                      |
-| CommitmentDiscountQuantity   | null           | **No commitment applied**                       |
-| CommitmentDiscountStatus     | null           | No commitment                                   |
-| CommitmentDiscountId         | null           | No associated commitment                        |
-| ContractedUnitPrice          | &dollar;2.85   | Equals ListUnitPrice (no negotiated discount)   |
+ListCost is null for unused rows because no resource was consumed. The wasted cost is reflected in EffectiveCost.
