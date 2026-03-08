@@ -4,7 +4,7 @@
 !INCLUDE "aws_savings_plan_all_upfront_100pct.md",1
 !INCLUDE "aws_savings_plan_partial_upfront_100pct.md",1
 !INCLUDE "aws_savings_plan_no_upfront_100pct.md",1
-!INCLUDE "aws_savings_plan_all_upfront_150pct.md",1
+!INCLUDE "aws_savings_plan_all_upfront_overage.md",1
 !INCLUDE "aws_savings_plan_all_upfront_75pct.md",1
 !INCLUDE "aws_savings_plan_all_upfront_50pct.md",1
 !INCLUDE "aws_savings_plan_all_upfront_0pct.md",1
