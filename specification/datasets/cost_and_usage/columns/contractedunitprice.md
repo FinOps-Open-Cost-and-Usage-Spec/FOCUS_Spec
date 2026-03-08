@@ -4,18 +4,17 @@ The Contracted Unit Price represents the agreed-upon unit price for a single [Pr
 
 ## Requirements
 
-ContractedUnitPrice adheres to the following requirements:
+ContractedUnitPrice MUST adhere to the following requirements:
 
-* ContractedUnitPrice adheres to the following additional requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ContractedUnitPrice nullability is defined as follows:
+* ContractedUnitPrice MUST adhere to the following nullability requirements:
   * ContractedUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * ContractedUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * ContractedUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.
   * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * ContractedUnitPrice MAY be null in all other cases.
-* When ContractedUnitPrice is not null, ContractedUnitPrice adheres to the following additional requirements:
+* When ContractedUnitPrice is not null, ContractedUnitPrice MUST adhere to the following requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
   * ContractedUnitPrice MUST be denominated in the BillingCurrency.
 * [ContractedCost](#datasets.costandusage.contractedcost) MUST equal the product of ContractedUnitPrice and [PricingQuantity](#datasets.costandusage.pricingquantity) when ContractedUnitPrice is not null and PricingQuantity is not null.
