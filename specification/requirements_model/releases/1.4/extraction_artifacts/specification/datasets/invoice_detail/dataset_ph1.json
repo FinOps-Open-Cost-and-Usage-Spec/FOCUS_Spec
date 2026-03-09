@@ -1,0 +1,868 @@
+{
+  "phase": 1,
+  "source": {
+    "path": "specification/datasets/invoice_detail/dataset.md",
+    "version": "unknown"
+  },
+  "entity": {
+    "entity_type": "Dataset",
+    "entity_id": "InvoiceDetail",
+    "entity_name": "Invoice Detail"
+  },
+  "entities_found": [
+    {
+      "entity_type": "Dataset",
+      "entity_id": "InvoiceDetail",
+      "entity_name": "Invoice Detail"
+    }
+  ],
+  "atoms": [
+    {
+      "temp_id": "R001",
+      "order": 1,
+      "text": "InvoiceDetail MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 47,
+        "line_end": 47
+      },
+      "ref": "L047"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
+      "text": "InvoiceDetail MUST be present if the invoice issuer supports payable invoices.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 49,
+        "line_end": 49
+      },
+      "ref": "L049"
+    },
+    {
+      "temp_id": "R003",
+      "order": 3,
+      "text": "The presence of columns in InvoiceDetail MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 50,
+        "line_end": 50
+      },
+      "ref": "L050"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "InvoiceDetail MUST include [BilledCost](#datasets.invoicedetail.billedcost).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 51,
+        "line_end": 51
+      },
+      "ref": "L051"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "InvoiceDetail MUST include [BillingAccountId](#datasets.invoicedetail.billingaccountid).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 52,
+        "line_end": 52
+      },
+      "ref": "L052"
+    },
+    {
+      "temp_id": "R006",
+      "order": 6,
+      "text": "InvoiceDetail MUST include [BillingCurrency](#datasets.invoicedetail.billingcurrency).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 53,
+        "line_end": 53
+      },
+      "ref": "L053"
+    },
+    {
+      "temp_id": "R007",
+      "order": 7,
+      "text": "InvoiceDetail MUST include [BillingPeriodEnd](#datasets.invoicedetail.billingperiodend).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 54,
+        "line_end": 54
+      },
+      "ref": "L054"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "InvoiceDetail MUST include [BillingPeriodStart](#datasets.invoicedetail.billingperiodstart).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 55,
+        "line_end": 55
+      },
+      "ref": "L055"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "InvoiceDetail MUST include [ChargeCategory](#datasets.invoicedetail.chargecategory).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 56,
+        "line_end": 56
+      },
+      "ref": "L056"
+    },
+    {
+      "temp_id": "R010",
+      "order": 10,
+      "text": "InvoiceDetail MUST include [InvoiceDetailCreated](#datasets.invoicedetail.invoicedetailcreated).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 57,
+        "line_end": 57
+      },
+      "ref": "L057"
+    },
+    {
+      "temp_id": "R011",
+      "order": 11,
+      "text": "InvoiceDetail MUST include [InvoiceDetailDescription](#datasets.invoicedetail.invoicedetaildescription).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 58,
+        "line_end": 58
+      },
+      "ref": "L058"
+    },
+    {
+      "temp_id": "R012",
+      "order": 12,
+      "text": "InvoiceDetail MUST include [InvoiceDetailGrain](#datasets.invoicedetail.invoicedetailgrain).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 59,
+        "line_end": 59
+      },
+      "ref": "L059"
+    },
+    {
+      "temp_id": "R013",
+      "order": 13,
+      "text": "InvoiceDetail MUST include [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 60,
+        "line_end": 60
+      },
+      "ref": "L060"
+    },
+    {
+      "temp_id": "R014",
+      "order": 14,
+      "text": "InvoiceDetail MUST include [InvoiceDetailLastUpdated](#datasets.invoicedetail.invoicedetaillastupdated).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 61,
+        "line_end": 61
+      },
+      "ref": "L061"
+    },
+    {
+      "temp_id": "R015",
+      "order": 15,
+      "text": "InvoiceDetail MUST include [InvoiceId](#datasets.invoicedetail.invoiceid).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 62,
+        "line_end": 62
+      },
+      "ref": "L062"
+    },
+    {
+      "temp_id": "R016",
+      "order": 16,
+      "text": "InvoiceDetail MUST include [InvoiceIssueDate](#datasets.invoicedetail.invoiceissuedate).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 63,
+        "line_end": 63
+      },
+      "ref": "L063"
+    },
+    {
+      "temp_id": "R017",
+      "order": 17,
+      "text": "InvoiceDetail MUST include [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 64,
+        "line_end": 64
+      },
+      "ref": "L064"
+    },
+    {
+      "temp_id": "R018",
+      "order": 18,
+      "text": "InvoiceDetail MUST include [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 65,
+        "line_end": 65
+      },
+      "ref": "L065"
+    },
+    {
+      "temp_id": "R019",
+      "order": 19,
+      "text": "InvoiceDetail MUST include [PaymentCurrency](#datasets.invoicedetail.paymentcurrency) if the invoice issuer supports billing and payment in different currencies.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 66,
+        "line_end": 66
+      },
+      "ref": "L066"
+    },
+    {
+      "temp_id": "R020",
+      "order": 20,
+      "text": "InvoiceDetail MUST include [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) if the invoice issuer supports billing and payment in different currencies.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 67,
+        "line_end": 67
+      },
+      "ref": "L067"
+    },
+    {
+      "temp_id": "R021",
+      "order": 21,
+      "text": "InvoiceDetail MUST include [PaymentCurrencyInvoiceDetailId](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) if the invoice issuer represents billing currency and payment currency at different aggregation levels on payable invoices.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 68,
+        "line_end": 68
+      },
+      "ref": "L068"
+    },
+    {
+      "temp_id": "R022",
+      "order": 22,
+      "text": "InvoiceDetail MUST include [PaymentDueDate](#datasets.invoicedetail.paymentduedate).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 69,
+        "line_end": 69
+      },
+      "ref": "L069"
+    },
+    {
+      "temp_id": "R023",
+      "order": 23,
+      "text": "InvoiceDetail MUST include [PaymentTerms](#datasets.invoicedetail.paymentterms).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 70,
+        "line_end": 70
+      },
+      "ref": "L070"
+    },
+    {
+      "temp_id": "R024",
+      "order": 24,
+      "text": "InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.invoicedetail.purchaseordernumber) if the invoice issuer supports customer input of purchase order numbers.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 71,
+        "line_end": 71
+      },
+      "ref": "L071"
+    },
+    {
+      "temp_id": "R025",
+      "order": 25,
+      "text": "InvoiceDetail MUST include [ReferenceInvoiceId](#datasets.invoicedetail.referenceinvoiceid).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 72,
+        "line_end": 72
+      },
+      "ref": "L072"
+    },
+    {
+      "temp_id": "R026",
+      "order": 26,
+      "text": "InvoiceDetail MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 73,
+        "line_end": 73
+      },
+      "ref": "L073"
+    },
+    {
+      "temp_id": "R027",
+      "order": 27,
+      "text": "InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 74,
+        "line_end": 74
+      },
+      "ref": "L074"
+    },
+    {
+      "temp_id": "R028",
+      "order": 28,
+      "text": "InvoiceDetail MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 75,
+        "line_end": 75
+      },
+      "ref": "L075"
+    },
+    {
+      "temp_id": "R029",
+      "order": 29,
+      "text": "InvoiceDetail MUST represent all invoice line items with a non-zero [BilledCost](#datasets.invoicedetail.billedcost) on any invoice associated with a [BillingAccountId](#datasets.invoicedetail.billingaccountid).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 76,
+        "line_end": 76
+      },
+      "ref": "L076"
+    },
+    {
+      "temp_id": "R030",
+      "order": 30,
+      "text": "InvoiceDetail documentation MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 77,
+        "line_end": 77
+      },
+      "ref": "L077"
+    },
+    {
+      "temp_id": "R031",
+      "order": 31,
+      "text": "InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 78,
+        "line_end": 78
+      },
+      "ref": "L078"
+    },
+    {
+      "temp_id": "R032",
+      "order": 32,
+      "text": "InvoiceDetail documentation MUST specify whether invoice line items with BilledCost of 0 are excluded from InvoiceDetail.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 79,
+        "line_end": 79
+      },
+      "ref": "L079"
+    },
+    {
+      "temp_id": "R033",
+      "order": 33,
+      "text": "InvoiceDetail documentation MUST describe how columns in the CostAndUsage and InvoiceDetail datasets represent the invoice issuer's invoice reconciliation process.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 80,
+        "line_end": 80
+      },
+      "ref": "L080"
+    },
+    {
+      "temp_id": "R034",
+      "order": 34,
+      "text": "InvoiceDetail documentation MUST be freely accessible to FOCUS consumers.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Invoice Detail",
+        "Requirements<!--SkipTOC-->"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 81,
+        "line_end": 81
+      },
+      "ref": "L081"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "W_ENTITY_NAME_CONFLICT",
+      "message": "Both name and display name headings are present for the same entity type.",
+      "details": {
+        "entity_type": "Dataset",
+        "name_heading_expected": "## Dataset Name",
+        "name_heading_present": true,
+        "display_name_heading_expected": "## Display Name",
+        "display_name_heading_present": true
+      },
+      "text": "(document-level)"
+    },
+    {
+      "code": "W_VERSION_INTRODUCED_MISSING_OR_INVALID",
+      "severity": "MEDIUM",
+      "message": "Heading \"## Introduced (version)\" is missing, empty, or invalid.",
+      "details": {
+        "found_heading": false,
+        "found_version": null
+      },
+      "text": "(document-level)"
+    }
+  ],
+  "structural": {
+    "lead_ins": [],
+    "index": {
+      "by_section_path": {},
+      "by_line": {}
+    }
+  }
+}
