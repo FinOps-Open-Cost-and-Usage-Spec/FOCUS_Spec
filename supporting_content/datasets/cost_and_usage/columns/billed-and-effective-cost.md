@@ -1,3 +1,5 @@
+> **Note:** This file is a TF3 working document that tracks the evolution of BilledCost and EffectiveCost normative requirement candidates. It includes discussion history, struck alternatives, and status markers from multiple TF3 sessions. It is not part of the normative specification. The current normative requirements are in [billedcost.md](../../../../specification/datasets/cost_and_usage/columns/billedcost.md) and [effectivecost.md](../../../../specification/datasets/cost_and_usage/columns/effectivecost.md).
+
 # Billed Cost and Effective Cost Normative Requirements Discussions - 2026-02-20
 
 ## Current Candidates for BilledCost and EffectiveCost Requirements
