@@ -20,7 +20,7 @@ The following table defines the high-level expectations for key categorical colu
 
 | Attribute | Expected Value Logic | Example Values |
 | :--- | :--- | :--- |
-| **Benefit Category** | The primary economic advantage provided. | `Discount`, `Monetary Pool`, `Availability`, `Other` |
+| **Benefit Category** | The primary economic advantage provided. | `Discount`, `Entitlement`, `Availability`, `Other` |
 | **Model** | How the commitment is consumed. | `Continuous`, `Discontinuous` |
 | **Fulfillment Interval** | The "Use-it-or-lose-it" or "Goal" window for reset. | `Hourly`, `Monthly`, `Annual`, `Total Term` |
 | **Lifecycle Status** | The current lifecycle state of the record. | `Active`, `Exhausted`, `Pending`, `Expired`, `Canceled` |
@@ -50,14 +50,14 @@ In the below table, CC represents Contract Commitment.
 | **GCP Flex CUD** | Spend | Continuous | Public | Discount | Hourly | 3 Years | No Upfront | Monthly |
 | **Azure ODCR** | Usage | Continuous | Public | Availability | Hourly | 1 Month | No Upfront | Monthly |
 | **AWS EDP / MACC** | Spend | Discontinuous | Negotiated | Discount | Annual | 3 Years | No Upfront | Monthly |
-| **Snowflake (EA)** | Spend | Discontinuous | Negotiated | Monetary Pool | Annual | 1 Year | All Upfront | Annual |
-| **Datadog (Public)** | Spend | Discontinuous | Public | Monetary Pool | Annual | 1 Year | No Upfront | Monthly |
+| **Snowflake (EA)** | Spend | Discontinuous | Negotiated | Entitlement | Annual | 1 Year | All Upfront | Annual |
+| **Datadog (Public)** | Spend | Discontinuous | Public | Entitlement | Annual | 1 Year | No Upfront | Monthly |
 | **SaaS Seats (CRM)** | Usage | Continuous | Negotiated | Discount | Monthly | 1 Year | No Upfront | Monthly |
-| **Multi-Year Pool** | Spend | Discontinuous | Negotiated | Monetary Pool | Total Term | 3 Years | All Upfront | One-Time |
-| **Growth Rebate** | Spend | Discontinuous | Negotiated | Monetary Pool | Annual | 2 Years | No Upfront | Annual |
-| **API Credit Pack** | Usage | Discontinuous | Public | Monetary Pool | Transactional | 2 Years | All Upfront | One-Time |
-| **Marketplace SaaS** | Spend | Discontinuous | Negotiated | Monetary Pool | Annual | 1 Year | All Upfront | One-Time |
-| **90-Day POC** | Spend | Discontinuous | Negotiated | Monetary Pool | Custom | 90 Days | No Upfront | Custom |
+| **Multi-Year Pool** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | All Upfront | One-Time |
+| **Growth Rebate** | Spend | Discontinuous | Negotiated | Discount | Annual | 2 Years | No Upfront | Annual |
+| **API Credit Pack** | Usage | Discontinuous | Public | Entitlement | Transactional | 2 Years | All Upfront | One-Time |
+| **Marketplace SaaS** | Spend | Discontinuous | Negotiated | Entitlement | Annual | 1 Year | All Upfront | One-Time |
+| **90-Day POC** | Spend | Discontinuous | Negotiated | Entitlement | Custom | 90 Days | No Upfront | Custom |
 | **Enterprise Support** | Usage | Continuous | Negotiated | Other | Monthly | 1 Year | No Upfront | Monthly |
 
 ### Scenario 1: Strategic Cloud Transformation Agreement
@@ -87,7 +87,7 @@ This example demonstrates a complex, multi-faceted agreement between a customer 
 | Column | Commitment 1: Spend Pool | Commitment 2: Compute RI | Commitment 3: Marketplace SaaS |
 | :--- | :--- | :--- | :--- |
 | **Billing Currency** | `EUR` | `EUR` | `EUR` |
-| **CC Benefit Category** | `Monetary Pool` | `Discount` | `Monetary Pool` |
+| **CC Benefit Category** | `Discount` | `Discount` | `Entitlement` |
 | **CC Category** | `Spend` | `Usage` | `Spend` |
 | **CC Cost** | `925000.00` | `46250.00` | `111000.00` |
 | **CC Created** | `2025-12-01T09:00:00Z` | `2025-12-01T09:00:00Z` | `2026-01-15T14:30:00Z` |
@@ -199,7 +199,7 @@ This scenario focuses on how the model handles growth beyond initial estimates. 
 | Column | Commitment 1: Base Storage | Commitment 2: Storage Overage | Commitment 3: CDN Annual |
 | :--- | :--- | :--- | :--- |
 | **Billing Currency** | `USD` | `USD` | `USD` |
-| **CC Benefit Category** | `Discount` | `Discount` | `Monetary Pool` |
+| **CC Benefit Category** | `Discount` | `Discount` | `Discount` |
 | **CC Category** | `Usage` | `Usage` | `Usage` |
 | **CC Cost** | `50000.00` | `0.00` | `100000.00` |
 | **CC Created** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
