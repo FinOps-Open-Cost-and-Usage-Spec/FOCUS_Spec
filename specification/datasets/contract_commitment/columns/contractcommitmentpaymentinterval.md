@@ -41,7 +41,7 @@ Allowed values:
 
 | Value       | Sort Order | Description                                                         | Typical Use Case                                  |
 | ----------- | ---------- | ------------------------------------------------------------------- | ------------------------------------------------- |
-| One-Time    | 10         | A single invoice is generated for the entire obligation.            | All Upfront models (e.g., 3yr All-Upfront RI).    |
+| One-Time    | 10         | A single invoice is generated for the entire obligation.            | All Upfront models (e.g., 3yr All-Upfront RI) or single-invoice arrears paid at the end of a term.    |
 | Monthly     | 20         | Invoices for the deferred balance are generated once per month.     | No Upfront Savings Plans or Monthly SaaS.         |
 | Quarterly   | 30         | Invoices for the deferred balance are generated every three months. | Partial Upfront deals with 90-day true-ups.       |
 | Semi-Annual | 40         | Invoices for the deferred balance are generated every six months.   | Split-payment agreements.                         |

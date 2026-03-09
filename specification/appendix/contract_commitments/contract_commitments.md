@@ -49,9 +49,9 @@ In the below table, CC represents Contract Commitment.
 | **Azure Reservation** | Usage | Continuous | Public | Discount | Hourly | 3 Years | All Upfront | One-Time |
 | **GCP Flex CUD** | Spend | Continuous | Public | Discount | Hourly | 3 Years | No Upfront | Monthly |
 | **Azure ODCR** | Usage | Continuous | Public | Availability | Hourly | 1 Month | No Upfront | Monthly |
-| **AWS EDP / MACC** | Spend | Discontinuous | Negotiated | Discount | Annual | 3 Years | No Upfront | Monthly |
-| **Snowflake (EA)** | Spend | Discontinuous | Negotiated | Entitlement | Annual | 1 Year | All Upfront | Annual |
-| **Datadog (Public)** | Spend | Discontinuous | Public | Entitlement | Annual | 1 Year | No Upfront | Monthly |
+| **AWS EDP / MACC** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | No Upfront | Monthly |
+| **Snowflake (EA)** | Spend | Discontinuous | Negotiated | Entitlement | Total Term | 1 Year | All Upfront | One-Time |
+| **Datadog (Public)** | Spend | Discontinuous | Public | Entitlement | Total Term | 1 Year | No Upfront | Monthly |
 | **SaaS Seats (CRM)** | Usage | Continuous | Negotiated | Discount | Monthly | 1 Year | No Upfront | Monthly |
 | **Multi-Year Pool** | Spend | Discontinuous | Negotiated | Discount | Total Term | 3 Years | All Upfront | One-Time |
 | **Growth Rebate** | Spend | Discontinuous | Negotiated | Discount | Annual | 2 Years | No Upfront | Annual |
@@ -146,7 +146,7 @@ In this scenario, an enterprise with an existing master agreement with **Acme Co
 | Column | Commitment 1: AI Training | Commitment 2: Security Seats | Commitment 3: Data Connector |
 | :--- | :--- | :--- | :--- |
 | **Billing Currency** | `USD` | `USD` | `USD` |
-| **CC Benefit Category** | `Discount` | `Availability` | `Discount` |
+| **CC Benefit Category** | `Discount` | `Entitlement` | `Discount` |
 | **CC Category** | `Usage` | `Usage` | `Usage` |
 | **CC Cost** | `250000.00` | `120000.00` | `15000.00` |
 | **CC Created** | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` | `2026-02-01T08:00:00Z` |
