@@ -16,12 +16,12 @@ EffectiveCost MUST adhere to the following requirements:
 * EffectiveCost MUST be a valid decimal value.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * EffectiveCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
-* EffectiveCost MUST equal BilledCost when [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage" and the *charge* is not covered by other eligible *charges*.
+* EffectiveCost MUST equal BilledCost when [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage" and the *charge* is not [*covered*](#glossary:covered-charge) by other eligible *charges*.
 * EffectiveCost MUST equal BilledCost when ChargeCategory is "Purchase" and the *charge* is neither intended to cover other eligible *charges* nor covered by other eligible *charges*.
 * EffectiveCost MUST equal BilledCost when ChargeCategory is "Tax" or "Credit".
 * EffectiveCost MAY differ from BilledCost when ChargeCategory is "Adjustment".
-* EffectiveCost MUST include any portion of the BilledCost of covering purchase *charges* (ChargeCategory set to "Purchase") that is applied to this *charge*.
-* EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*. This requirement applies even when the *covered charges* originate from different cost and usage datasets, possibly from a different ServiceProviderName.
+* EffectiveCost MUST include any portion of the BilledCost of [*covering*](#glossary:covering-charge) purchase *charges* (ChargeCategory set to "Purchase") that is applied to this *charge*.
+* EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*. This requirement applies even when the *covered charges* originate from different cost and usage datasets, possibly from a different [ServiceProviderName](#datasets.costandusage.serviceprovidername).
 * Entities that do not originate the cost and usage data for this *charge* MUST NOT generate *charges* with non-zero EffectiveCost to avoid double-counting when merging multiple datasets.
 * When a single cost and usage dataset provides both the [*covered*](#glossary:covered-charge) and [*covering charges*](#glossary:covering-charge), the sum of their EffectiveCost MUST equal the sum of their BilledCost over the *charge period* the *covering charge* applies to.
 * When *covered* and *covering charges* originate from different cost and usage datasets, possibly from different ServiceProviderNames, the sum of their EffectiveCost MUST equal the sum of their BilledCost across the concatenated datasets over the *charge period* the *covering charge* applies to.
