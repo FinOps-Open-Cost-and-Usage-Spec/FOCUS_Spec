@@ -38,7 +38,7 @@ Represents the portion of the total [Contract Commitment Cost](#datasets.contrac
 | Allows nulls  | False            |
 | Data type     | Decimal          |
 | Value format  | [Numeric Format](#attributes.numericformat)  |
-| Number range  | 0.0 to 1.0             |
+| Number range  | 0.0 to 1.0 (inclusive)            |
 
 ## Introduced (version)
 
