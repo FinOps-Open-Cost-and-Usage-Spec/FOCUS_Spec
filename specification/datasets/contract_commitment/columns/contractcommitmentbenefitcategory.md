@@ -9,9 +9,11 @@ Contract Commitment Benefit Category defines the primary value or advantage rece
 When categorizing a commitment, the value reflects the actual commercial benefit received, rather than the funding or consumption mechanism used to acquire it. For example, a prepaid "monetary pool" or a drawdown fund is a mechanism; the *benefit* of that pool is typically the right to use the feature (**Entitlement**) or the reduced rate unlocked by the commitment (**Discount**).
 
 ### Distinguishing from Technical IDs
+
 **Availability** represents the contractual right to access resources. It must not be confused with technical fields like `CapacityReservationId`. A single **Availability** within a contract may encompass multiple technical reservations across various regions or accounts.
 
 ### Primary Benefit Logic
+
 In cases where a commitment provides multiple benefits (e.g., an Entitlement that also includes a Discount), the value should reflect the **primary commercial driver** of the agreement as defined by the procurement or FinOps team.
 
 ## Requirements
