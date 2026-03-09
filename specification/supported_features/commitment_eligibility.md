@@ -2,11 +2,11 @@
 
 ## Description
 
-FOCUS supports the identification of charges that are eligible for commitment programs. The [*CommitmentEligibilityDetails*](#datasets.costandusage.commitmenteligibilitydetails) column captures which commitment programs a charge qualifies for, regardless of whether a [*commitment discount*](#glossary:commitment-discount) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
+FOCUS supports the identification of charges that are eligible for commitment programs. The [*CommitmentEligibilityDetails*](#datasets.costandusage.commitmenteligibilitydetails) column captures which commitment programs a charge qualifies for, regardless of whether a [*commitment*](#glossary:commitment) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
 
-CommitmentEligibilityDetails contains a JSON object with two FOCUS-defined top-level keys: `CommitmentDiscountTypes` for discount-bearing programs and `CapacityReservationTypes` for programs that reserve capacity without providing a unit discount. Each key holds an array of objects with a `Type` property identifying the specific program. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. For more information, see the definition of CommitmentEligibilityDetails [here](#datasets.costandusage.commitmenteligibilitydetails).
+CommitmentEligibilityDetails contains a JSON object with two FOCUS-defined top-level keys: `CommitmentDiscountTypes` for discount-bearing programs and `CapacityReservationTypes` for programs that reserve capacity without providing a unit discount. Each key holds an array of objects with a `Type` property identifying the specific program. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. Providers SHOULD also include negotiated commitment programs for which usage is eligible (see [column requirements](#datasets.costandusage.commitmenteligibilitydetails)). For more information, see the definition of CommitmentEligibilityDetails [here](#datasets.costandusage.commitmenteligibilitydetails).
 
-### Naming Conventions for Commitment Discount Types
+### Naming Conventions for Type Values
 
 The `Type` property follows PascalCase by convention, identifying commitment programs supported by the provider. Per the [column requirements](#datasets.costandusage.commitmenteligibilitydetails), these values:
 
@@ -26,6 +26,7 @@ Illustrative examples of Type values by provider:
 | Datadog     | MonthlyCommitment, AnnualCommitment                                       | Provider terminology; CommitmentDiscountType not populated  |
 | Databricks  | CommittedUseDiscount                                                      | Provider terminology                                       |
 | Snowflake   | CapacityCommitment                                                        | Provider terminology                                       |
+| AWS         | CapacityReservation, ZonalReservation                                     | CapacityReservationTypes key                               |
 
 ## Directly Dependent Columns
 
@@ -56,7 +57,7 @@ Note: The queries below target the `CommitmentDiscountTypes` key. To include cap
 
 This query identifies on-demand charges that are eligible for commitment programs but are not currently covered by a commitment discount. A practitioner running AWS workloads can use this to quantify the savings opportunity per commitment program type (e.g., SavingsPlan vs. ReservedInstance) and per service.
 
-The query filters to Usage charges where CommitmentEligibilityDetails is populated (the charge is eligible) and CommitmentDiscountId is null (no commitment is applied). It then expands the CommitmentDiscountTypes array to aggregate eligible spend per Type.
+The query filters to Usage charges where CommitmentEligibilityDetails is populated (the charge is eligible) and CommitmentDiscountId is null (no commitment is applied). It then expands the CommitmentDiscountTypes array to aggregate eligible spend per Type. This query uses BilledCost rather than EffectiveCost because the charges are uncovered (CommitmentDiscountId IS NULL), so BilledCost reflects the actual amount paid and the savings opportunity.
 
 Note: When a charge is eligible for multiple commitment types, it appears once per eligible type. Costs are not deduplicated across types, since each type represents an independent purchasing opportunity.
 
@@ -85,7 +86,7 @@ This query computes a commitment coverage rate using only eligible charges as th
 
 By filtering on `CommitmentEligibilityDetails IS NOT NULL`, the denominator includes only charges that could realistically be covered by a commitment, producing an eligibility-adjusted coverage metric.
 
-Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and are included in CoveredCost. This reflects that commitment capacity was purchased and allocated, even if not fully consumed. Practitioners seeking a utilization-adjusted rate should additionally filter on CommitmentDiscountStatus = "Used".
+Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and are included in CoveredCost. This reflects that commitment capacity was purchased and allocated, even if not fully consumed. Practitioners seeking a utilization-adjusted rate should additionally filter on CommitmentDiscountStatus = "Used". This query relies on Unused rows having CommitmentEligibilityDetails populated so they pass the IS NOT NULL filter; if a provider does not populate CommitmentEligibilityDetails on Unused rows, the denominator would exclude them while the numerator (via CommitmentDiscountId IS NOT NULL) would not, potentially inflating the coverage rate.
 
 ```sql
 SELECT
@@ -136,6 +137,29 @@ GROUP BY
   CU.ServiceProviderName,
   JSON_VALUE(CDT, '$.Type')
 ORDER BY UncoveredEligibleCost DESC
+```
+
+### Extract Capacity Reservation Eligibility (CapacityReservationTypes Example)
+
+This query demonstrates the JSON extraction pattern for the `CapacityReservationTypes` key, which follows the same structure as `CommitmentDiscountTypes`. A practitioner can use this to identify usage eligible for capacity-reservation programs separately from discount-bearing programs.
+
+```sql
+SELECT
+  CU.ServiceProviderName,
+  CU.ServiceName,
+  JSON_VALUE(CRT, '$.Type') AS EligibleCapacityReservationType,
+  SUM(CU.BilledCost) AS TotalEligibleUncoveredCost
+FROM focus_data_table CU
+CROSS JOIN
+  UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentEligibilityDetails, '$.CapacityReservationTypes')) AS CRT
+WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
+  AND CU.ChargeCategory = 'Usage'
+  AND CU.CommitmentDiscountId IS NULL
+GROUP BY
+  CU.ServiceProviderName,
+  CU.ServiceName,
+  JSON_VALUE(CRT, '$.Type')
+ORDER BY TotalEligibleUncoveredCost DESC
 ```
 
 ## Introduced (Version)
