@@ -1,0 +1,149 @@
+{
+  "phase": 1,
+  "source": {
+    "path": "specification/datasets/invoice_detail/columns/chargecategory.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "ChargeCategory",
+    "entity_name": "Charge Category"
+  },
+  "entities_found": [
+    {
+      "entity_type": "Column",
+      "entity_id": "ChargeCategory",
+      "entity_name": "Charge Category"
+    }
+  ],
+  "atoms": [
+    {
+      "temp_id": "R001",
+      "order": 1,
+      "text": "ChargeCategory MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 7,
+        "line_end": 7
+      },
+      "ref": "L007"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
+      "text": "ChargeCategory MUST be of type String.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 9,
+        "line_end": 9
+      },
+      "ref": "L009"
+    },
+    {
+      "temp_id": "R003",
+      "order": 3,
+      "text": "ChargeCategory MUST NOT be null.",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 10,
+        "line_end": 10
+      },
+      "ref": "L010"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "ChargeCategory MUST be one of the allowed values.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 11,
+        "line_end": 11
+      },
+      "ref": "L011"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "ChargeCategory MAY equal \"Usage\" when the record aggregates *charges* across multiple allowed values other than \"Tax\" (for example, aggregation of \"Usage\" and \"Credit\" is allowed, but not \"Usage\" and \"Tax\").",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Charge Category",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 12,
+        "line_end": 12
+      },
+      "ref": "L012"
+    }
+  ],
+  "warnings": [],
+  "structural": {
+    "lead_ins": [],
+    "index": {
+      "by_section_path": {},
+      "by_line": {}
+    }
+  }
+}
