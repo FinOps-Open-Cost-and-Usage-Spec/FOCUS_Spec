@@ -1,6 +1,6 @@
 # Service Provider Name
 
-Service Provider Name is the name of the entity that provides the [*contract commitment*](#glossary:contract-commitment). This entity is responsible for fulfilling the terms of the commitment, such as applying discounts, managing credit pools, or guaranteeing resource availability.
+Service Provider Name is the name of the entity that provides the resources or services available for usage or purchase. This entity is responsible for fulfilling the terms of the [*contract commitment*](#glossary:contract-commitment), such as applying discounts, managing credit pools, or guaranteeing resource availability.
 
 **Notes:**
 
