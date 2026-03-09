@@ -49,7 +49,7 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 | `Applicability` | Object | No | The fractional mapping for metrics. If omitted, both `Cost` and `Usage` keys default to `1.0`. |
 | `InclusionOperator` | String | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. Valid values: `And`, `Or`. Must be omitted if Global or Complex scope is true. |
 | `Inclusions` | Array | Conditional | Required only if `IsGlobalScope` and `IsComplexScope` are both `false` or null. List of `Rule` objects defining the boundary. Must be omitted if Global or Complex scope is true. |
-| `ExclusionOperator` | String | No | Defines the relationship for `Exclusions`. Valid values: `And`, `Or`. Defaults to `Or`. |
+| `ExclusionOperator` | String | Conditional | Required only if `Exclusions` are present. Defines the relationship for `Exclusions`. Valid values: `And`, `Or`. |
 | `Exclusions` | Array | No | List of `Rule` objects defining entities to be removed from the boundary. |
 
 ### Rule Object
@@ -147,7 +147,7 @@ The evaluation of **Applicability** percentages must be contextually aligned wit
 ### Dependency Logic
 
 1. **Consistency:** Engines should expect a JSON Object and should not support scalar (Decimal/Float) values for this field to ensure compatibility with typed database schemas.
-2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both be `true` at the same time. Engines should validate these structural constraints before processing.
+2. **Conflict Resolution:** If `IsGlobalScope` or `IsComplexScope` is `true`, the `Inclusions` array must be empty or omitted. Additionally, `IsGlobalScope` and `IsComplexScope` must both not be `true` at the same time. Engines should validate these structural constraints before processing.
 
 ### Object ID
 

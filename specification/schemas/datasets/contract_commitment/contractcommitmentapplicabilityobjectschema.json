@@ -156,8 +156,7 @@
       "enum": [
         "And",
         "Or"
-      ],
-      "default": "Or"
+      ]
     },
     "Exclusions": {
       "type": "array",
