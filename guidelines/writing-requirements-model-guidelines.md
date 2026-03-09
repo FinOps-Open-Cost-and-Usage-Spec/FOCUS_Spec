@@ -30,10 +30,16 @@ The first stage of conversion of rules from the normative text to model rules is
 
 - `ModelRuleId` - Is the formal Id given to this entry in the model rules (See: [CR Expression Format](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/1121-ai-align-on-approach-for-scrs/specification/requirements_model/README.md#-cr-expression-format))
 - `Function` - The type of rule to be defined (Valid types: `Composite`, `Presence`, `Type`, `Format`, `Validation`)
-- `Reference` - The Column/Attribute Id this rule applies to
+- `Reference` - Area of the specification this entry relates to
+- `EntityType` - The type of the entity this rule applies to (Valid types: `Dataset`, `Column`, `Object`, `Attribute`)
+- `EntityId` - The Id of the entity this rule applies to
+- `EntityName` - The Name of the entity this rule applies to
+- `DatasetType` - The three letter acronym for the dataset of the dataset entity this rule is related to
+- `DatasetId` - The Id of the dataset entity this rule is related to
+- `DatasetName` - The Name of the dataset entity this rule is related to
 - `ApplicabilityCriteria` - Specific criteria that must be true of the data generator for this rule to apply to the dataset
 - `Condition` - The definition of conditions under which this rule applies
-- `Requirement` - The definition of what is required for model
+- `Requirement` - The definition of what is required for model to pass validation checks using defined CheckFunctions.
 - `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `SHOULD`, `MAY`)
 - `MustSatisfy` - The normative text that this rule defines
 - `Type` - Identifier if this is a Static or Dynamic rule, with Static rules being possible to assess model without external information being required
@@ -104,7 +110,8 @@ Provider -.->|Used in rule conditions| Column
 |--------------------|-----------------------------------------------------| ----------------------------------------- |-----------------------------------------------------------------------------------------------------------------|
 | `Dataset`          | Whole billing dataset                               | Structural presence, versioning, coverage | Dataset MUST include all columns required by the declared FOCUS version                                         |
 | `Row`              | Individual line item in dataset                     | Logic conditions, nullability, alignment  | Rows with `ChargeCategory = Purchase` MUST contain a `SkuId`                                                    |
-| `Column`           | Named field across rows                             | Data type, format, constraints            | Column `BillingPeriodStart` MUST be of type `DateTime`                                                          |
+| `Column`           | Named field across rows                             | Data type, format, constraints            | Each item in `AllocatedMethodDetailsObject.Elements` MUST be an object.                                                         |
+| `Object`           | JSONObject content of a column                      | Data type, format, constraints            | Column `BillingPeriodStart` MUST be of type `DateTime`                                                          |
 | `Attribute`        | Shared formatting/logic constraint                  | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                              |
 | `Metadata`         | Schema-level dataset descriptors                    | Schema versioning, declaration            | Metadata MUST declare `focus_version` as a valid semantic version string (e.g., "1.2.0")                        |
 | `Service Provider` | Entity that made the resource available for purchase | Conditional logic in requirements         | Column `CapacityReservationId` MUST be present when the service provider supports capacity reservation features |
@@ -122,7 +129,8 @@ This ensures traceability, uniqueness, and clarity.
 - `ColumnID`: UpperCamelCase (e.g., `ListUnitPrice`)
 - `EntityType:`
   - `D` = Dataset  
-  - `C` = Column  
+  - `C` = Column
+  - `O` = Object
   - `A` = Attribute  
   - `P` = Service Provider  
   - `R` = Row  
@@ -369,10 +377,15 @@ Base rule for a column which links all related Model Rules for the column.
     "Function": "Composite",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "",
@@ -407,10 +420,15 @@ Base rule for a column which links all related Model Rules for the column.
     "Function": "Presence",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be present in a FOCUS dataset",
@@ -434,10 +452,15 @@ Common rule for columns with a NOT NULL requirement. Can also be used when there
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST NOT be null",
@@ -462,10 +485,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Validation",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be one of the allowed values",
@@ -502,10 +530,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type Decimal",
@@ -527,10 +560,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Format",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST conform to NumericFormat requirements",
@@ -552,10 +590,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST be of type String",
@@ -577,10 +620,15 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Function": "Type",
     "Reference": "SampleColumn",
     "EntityType": "Column",
+    "EntityId": "SampleColumn",
+    "EntityName": "Sample Column",
     "Notes": "",
     "ModelVersionIntroduced": "1.2",
     "Status": "Active",
     "ApplicabilityCriteria": [],
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
       "MustSatisfy": "MUST conform to StringHandling requirements",

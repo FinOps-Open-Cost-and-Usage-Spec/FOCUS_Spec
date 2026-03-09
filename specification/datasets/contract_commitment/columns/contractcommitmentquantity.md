@@ -8,7 +8,7 @@ ContractCommitmentQuantity MUST adhere to the following requirements:
 
 * ContractCommitmentQuantity MUST be of type Decimal.
 * ContractCommitmentQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
-* ContractCommitmentQuantity nullability is defined as follows:
+* ContractCommitmentQuantity MUST adhere to the following nullability requirements:
   * ContractCommitmentQuantity MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is "Usage".
   * ContractCommitmentQuantity MAY be null when ContractCommitmentCategory is "Spend".
 * ContractCommitmentQuantity MUST be a valid decimal value.
