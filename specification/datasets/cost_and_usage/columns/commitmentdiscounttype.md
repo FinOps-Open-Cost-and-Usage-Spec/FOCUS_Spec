@@ -4,11 +4,11 @@ Commitment Discount Type is a service-provider-assigned name to identify the typ
 
 ## Requirements
 
-CommitmentDiscountType adheres to the following requirements:
+CommitmentDiscountType MUST adhere to the following requirements:
 
 * CommitmentDiscountType MUST be of type String.
 * CommitmentDiscountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentDiscountType nullability is defined as follows:
+* CommitmentDiscountType MUST adhere to the following nullability requirements:
   * CommitmentDiscountType MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
   * CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
 

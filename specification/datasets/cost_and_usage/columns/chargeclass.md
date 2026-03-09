@@ -4,10 +4,10 @@ Charge Class indicates whether the [*row*](#glossary:row) represents a correctio
 
 ## Requirements
 
-ChargeClass adheres to the following requirements:
+ChargeClass MUST adhere to the following requirements:
 
 * ChargeClass MUST be of type String.
-* ChargeClass nullability is defined as follows:
+* ChargeClass MUST adhere to the following nullability requirements:
   * ChargeClass MUST be null when the *row* does not represent a correction or when it represents a correction within the current *billing period*.
   * ChargeClass MUST NOT be null when the *row* represents a correction to a previously invoiced *billing period*.
 * ChargeClass MUST be "Correction" when ChargeClass is not null.

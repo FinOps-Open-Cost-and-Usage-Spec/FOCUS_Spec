@@ -4,7 +4,7 @@ Charge Period Start represents the [*inclusive start bound*](#glossary:inclusive
 
 ## Requirements
 
-ChargePeriodStart adheres to the following requirements:
+ChargePeriodStart MUST adhere to the following requirements:
 
 * ChargePeriodStart MUST be of type Date/Time.
 * ChargePeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
