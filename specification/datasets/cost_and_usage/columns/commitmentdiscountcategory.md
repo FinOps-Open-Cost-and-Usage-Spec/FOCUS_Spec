@@ -4,10 +4,10 @@ Commitment Discount Category indicates whether the [*commitment discount*](#glos
 
 ## Requirements
 
-CommitmentDiscountCategory adheres to the following requirements:
+CommitmentDiscountCategory MUST adhere to the following requirements:
 
 * CommitmentDiscountCategory MUST be of type String.
-* CommitmentDiscountCategory nullability is defined as follows:
+* CommitmentDiscountCategory MUST adhere to the following nullability requirements:
   * CommitmentDiscountCategory MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
   * CommitmentDiscountCategory MUST NOT be null when CommitmentDiscountId is not null.
 * CommitmentDiscountCategory MUST be one of the allowed values.
