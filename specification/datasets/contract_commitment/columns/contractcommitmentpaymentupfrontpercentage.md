@@ -11,7 +11,7 @@ ContractCommitmentPaymentUpfrontPercentage MUST adhere to the following requirem
 * ContractCommitmentPaymentUpfrontPercentage MUST be of type Decimal.
 * ContractCommitmentPaymentUpfrontPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentPaymentUpfrontPercentage MUST NOT be null.
-* ContractCommitmentPaymentUpfrontPercentage MUST be a value between 0.0 and 1.0.
+* ContractCommitmentPaymentUpfrontPercentage MUST be a value between 0.0 and 1.0, inclusive.
 * ContractCommitmentPaymentUpfrontPercentage MUST be 1.0 when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is "All Upfront".
 * ContractCommitmentPaymentUpfrontPercentage MUST be 0.0 when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is "No Upfront".
 
