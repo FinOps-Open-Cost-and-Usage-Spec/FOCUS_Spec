@@ -31,7 +31,7 @@ The date the invoice was issued by the invoice issuer.
 | Feature level   | Mandatory                       |
 | Allows nulls    | True                            |
 | Data type       | Date/Time                        |
-| Value format    | [DateTime Format](#attributes.date/timeformat) |
+| Value format    | [Date/Time Format](#attributes.date/timeformat) |
 
 ## Introduced (version)
 

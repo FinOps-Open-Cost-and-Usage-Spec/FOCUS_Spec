@@ -8,6 +8,7 @@ InvoiceDetailCreated MUST adhere to the following requirements:
 
 * InvoiceDetailCreated MUST be of type Date/Time.
 * InvoiceDetailCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
+* InvoiceDetailCreated MUST NOT be null.
 * InvoiceDetailCreated MUST represent the moment in time the Invoice Detail record was instantiated.
 * InvoiceDetailCreated for a given [BillingPeriodStart](#datasets.invoicedetail.billingperiodstart) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST be earlier than or equal to [BillingPeriod.BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated) for the same [BillingPeriod.BillingPeriodStart](#datasets.billingperiod.billingperiodstart) and [BillingPeriod.InvoiceIssuerName](#datasets.billingperiod.invoiceissuername) when [BillingPeriod.BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus) is "Closed".
 
