@@ -28,7 +28,7 @@ The invoice-issuer-assigned identifier for an Invoice Detail record encapsulatin
 |:----------------|:--------------------------------|
 | Column type     | Dimension                       |
 | Feature level   | Mandatory                       |
-| Allows nulls    | False                           |
+| Allows nulls    | True                           |
 | Data type       | String                          |
 | Value format    | \<not specified>                |
 
