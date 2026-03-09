@@ -17,8 +17,8 @@ BilledCost MUST adhere to the following requirements:
 * BilledCost MUST be denominated in the BillingCurrency.
 * BilledCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
 * BilledCost MUST NOT include any portion covered by related purchase *charges*.
-* BilledCost MUST be based on amounts invoiced by the InvoiceIssuerName, not estimated or inferred values.
-* Entities that are not responsible or authorized for invoicing this charge MUST NOT generate *charges* with non-zero BilledCost to avoid double-counting when merging multiple datasets.
+* BilledCost MUST be based on amounts invoiced by the [InvoiceIssuerName](#datasets.costandusage.invoiceissuername), not estimated or inferred values.
+* Entities that are not responsible or authorized for invoicing this *charge* MUST NOT generate *charges* with non-zero BilledCost to avoid double-counting when merging multiple datasets.
 * The sum of BilledCost for a given [InvoiceId](#datasets.costandusage.invoiceid) and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST match the payable amount provided on the corresponding issued invoice.
 
 ## Column ID
