@@ -4,7 +4,7 @@
 
 The Correction Handling attribute defines how [*corrections*](#glossary:correction) to previously delivered FOCUS [*dataset artifacts*](#glossary:dataset-artifact) are represented in subsequent deliveries.
 
-*Corrections* may consist of one or more simultaneous changes, including updates to or omission of previously delivered records, or the addition of new records that supplement previously delivered data within the affected [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)). This concept applies across all [*FOCUS datasets*](#glossary:FOCUS-dataset).
+*Corrections* may consist of one or more simultaneous changes, including updates to or omission of previously delivered records, or the addition of new records that supplement previously delivered data within the affected [*delivery scope*](#glossary:delivery-scope) (e.g., temporal grouping such as a [*billing period*](#glossary:billing-period) or non-temporal, logical grouping such as a [*contract*](#glossary:contract)).
 
 Corrections may address a variety of operational or technical causes, such as refunds, late-arriving data, rounding errors, delivery errors, and other post-processing adjustments.
 
