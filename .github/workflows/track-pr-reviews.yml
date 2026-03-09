@@ -5,7 +5,8 @@ on:
     - cron: '0 */4 * * *'  # Runs every 4 hours
   pull_request:
     types: 
-      - review_requested
+      - opened
+      - reopened
   pull_request_review:
     types: 
       - submitted
@@ -22,7 +23,7 @@ jobs:
     if: >
       github.event_name == 'workflow_dispatch' ||
       github.event_name == 'schedule' ||
-      (github.event_name == 'pull_request' && github.event.action == 'review_requested') || 
+      (github.event_name == 'pull_request' && (github.event.action == 'opened' || github.event.action == 'reopened')) || 
       (github.event_name == 'pull_request_review' && github.event.review.state != 'commented')
     runs-on: ubuntu-latest
     env:
@@ -66,17 +67,30 @@ jobs:
           APP_FIELD_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Approvals") | .id')
           REQ_FIELD_ID=$(echo "$PROJ_DATA" | jq -r '.data.organization.projectV2.fields.nodes[] | select(.name == "PR Change Requests") | .id')
 
-          # 3. Loop PRs
+          # 3. Loop through identified PRs
           for PR_NUM in "${PR_LIST[@]}"; do
             echo "--- Processing PR #$PR_NUM ---"
 
-            PR_QUERY=$(gh api graphql -f query='
-              query($org: String!, $repo: String!, $num: Int!) {
-                repository(owner: $org, name: $repo) {
-                  pullRequest(number: $num) {
-                    id
-                    createdAt
-                    reviews(first: 100) { nodes { state author { login } submittedAt } }
+            PR_BASE=$(gh pr view "$PR_NUM" --json id,createdAt)
+            PR_NODE_ID=$(echo "$PR_BASE" | jq -r '.id')
+            CREATED_AT=$(echo "$PR_BASE" | jq -r '.createdAt')
+
+            REVIEWS_RAW=$(gh api "repos/${{ github.repository }}/pulls/$PR_NUM/reviews" --paginate)
+
+            REVIEWS_JSON=$(echo "$REVIEWS_RAW" | jq -s -c '
+              add 
+              | map({state: .state, author: {login: .user.login}, submittedAt: .submitted_at}) 
+              | map(select(.state != "COMMENTED")) 
+              | group_by(.author.login) 
+              | map(sort_by(.submittedAt) | .[-1])')
+
+            APP_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "APPROVED")) | length')
+            REQ_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "CHANGES_REQUESTED")) | length')
+
+            ITEM_QUERY=$(gh api graphql -f query='
+              query($node: ID!) {
+                node(id: $node) {
+                  ... on PullRequest {
                     projectItems(first: 10) {
                       nodes {
                         project { id }
@@ -87,21 +101,14 @@ jobs:
                     }
                   }
                 }
-              }' -f org="$ORG" -f repo="${{ github.event.repository.name }}" -F num=$PR_NUM)
+              }' -f node="$PR_NODE_ID")
 
-            PR_NODE_ID=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.id')
-            CREATED_AT=$(echo "$PR_QUERY" | jq -r '.data.repository.pullRequest.createdAt')
-            
-            REVIEWS_JSON=$(echo "$PR_QUERY" | jq -c '.data.repository.pullRequest.reviews.nodes | group_by(.author.login) | map(sort_by(.submittedAt) | .[-1])')
-            APP_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "APPROVED")) | length')
-            REQ_COUNT=$(echo "$REVIEWS_JSON" | jq 'map(select(.state == "CHANGES_REQUESTED")) | length')
-
-            ITEM_DATA=$(echo "$PR_QUERY" | jq -r --arg PROJ "$PROJECT_ID" '.data.repository.pullRequest.projectItems.nodes[] | select(.project.id == $PROJ)')
+            ITEM_DATA=$(echo "$ITEM_QUERY" | jq -r --arg PROJ "$PROJECT_ID" '.data.node.projectItems.nodes[] | select(.project.id == $PROJ)')
             ITEM_ID=$(echo "$ITEM_DATA" | jq -r '.id // empty')
             
-            # Detect if fields are truly null/blank
-            RAW_OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number')
-            RAW_OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number')
+            # Use jq conditional to floor the number if it exists, otherwise return "null" string
+            RAW_OLD_APP=$(echo "$ITEM_DATA" | jq -r 'if .app_val.number != null then (.app_val.number | floor) else "null" end')
+            RAW_OLD_REQ=$(echo "$ITEM_DATA" | jq -r 'if .req_val.number != null then (.req_val.number | floor) else "null" end')
 
             OLD_APP=$(echo "$ITEM_DATA" | jq -r '.app_val.number // 0 | floor')
             OLD_REQ=$(echo "$ITEM_DATA" | jq -r '.req_val.number // 0 | floor')
@@ -114,7 +121,6 @@ jobs:
                 mutation($project: ID!, $content: ID!) {
                   addProjectV2ItemById(input: {projectId: $project, contentId: $content}) { item { id } }
                 }' -f project="$PROJECT_ID" -f content="$PR_NODE_ID" | jq -r '.data.addProjectV2ItemById.item.id')
-              # Since it was just added, we force update
               IS_NEW_ITEM=true
             else
               IS_NEW_ITEM=false

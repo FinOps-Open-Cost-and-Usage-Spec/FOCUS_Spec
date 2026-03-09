@@ -15,10 +15,10 @@ def test_no_orphans_deps_only_same_type_with_c000_dataset_exception(cr_json):
     # Build rule -> type map (normalized strings)
     rtype = {rid: (rule.get("EntityType") or "").strip() for rid, rule in rules.items()}
 
-    # ACTIVE rules to check (exclude Deprecated, Attributes, and *-D-000-)
+    # ACTIVE rules to check (exclude Removed, Attributes, and *-D-000-)
     active = {
         rid for rid, rule in rules.items()
-        if (rule.get("Status") or "").strip() != "Deprecated"
+        if (rule.get("Status") or "").strip() != "Removed"
         and rtype.get(rid) in _ALLOWED_TYPES
         and not _D000_RE.search(rid)
     }

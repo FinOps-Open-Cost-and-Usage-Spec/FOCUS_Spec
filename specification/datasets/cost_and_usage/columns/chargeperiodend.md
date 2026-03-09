@@ -4,7 +4,7 @@ Charge Period End represents the [*exclusive end bound*](#glossary:exclusiveendb
 
 ## Requirements
 
-ChargePeriodEnd adheres to the following requirements:
+ChargePeriodEnd MUST adhere to the following requirements:
 
 * ChargePeriodEnd MUST be of type Date/Time.
 * ChargePeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

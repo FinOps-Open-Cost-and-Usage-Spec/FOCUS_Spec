@@ -324,7 +324,7 @@ Effective Cost represents the cost of a [*charge*](#glossary:charge) based on th
 
 ### Requirements
 
-EffectiveCost adheres to the following requirements:
+EffectiveCost MUST adhere to the following requirements:
 
 * EffectiveCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * EffectiveCost MUST be of type Decimal.
@@ -334,10 +334,10 @@ EffectiveCost adheres to the following requirements:
 * EffectiveCost MUST be 0 when [ChargeCategory](#chargecategory) is "Purchase" and the purchase is intended to cover future eligible *charges*.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * The sum of EffectiveCost in a given *billing period* MAY differ from the sum of the invoices received for the same *billing period* for a [*billing account*](#glossary:billing-account).
-* When ChargeCategory is not "Usage" or "Purchase", EffectiveCost adheres to the following additional requirements:
+* When ChargeCategory is not "Usage" or "Purchase", EffectiveCost MUST adhere to the following requirements:
   * EffectiveCost of a *charge* calculated based on other *charges* (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the EffectiveCost of those related *charges*.
   * EffectiveCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#billedcost).
-* *Charges* for a given [CommitmentDiscountId](#commitmentdiscountid) adhere to the following additional requirements:
+* *Charges* for a given [CommitmentDiscountId](#commitmentdiscountid) MUST adhere to the following requirements:
   * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of BilledCost where ChargeCategory is "Purchase".
   * The sum of EffectiveCost where ChargeCategory is "Usage" MUST equal the sum of EffectiveCost where ChargeCategory is "Usage" and [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used", plus the sum of EffectiveCost where ChargeCategory is "Usage" and CommitmentDiscountStatus is "Unused".
 
