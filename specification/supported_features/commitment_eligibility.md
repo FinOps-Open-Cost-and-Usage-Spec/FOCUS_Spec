@@ -4,7 +4,7 @@
 
 FOCUS supports the identification of charges that are eligible for commitment programs. The [*CommitmentEligibilityDetails*](#datasets.costandusage.commitmenteligibilitydetails) column captures which commitment programs a charge qualifies for, regardless of whether a [*commitment discount*](#glossary:commitment-discount) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
 
-CommitmentEligibilityDetails contains a JSON object whose FOCUS-defined key is `CommitmentDiscountTypes`, an array where each entry identifies a specific commitment program via a `Type` property. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. For more information, see the definition of CommitmentEligibilityDetails [here](#datasets.costandusage.commitmenteligibilitydetails).
+CommitmentEligibilityDetails contains a JSON object with two FOCUS-defined top-level keys: `CommitmentDiscountTypes` for discount-bearing programs and `CapacityReservationTypes` for programs that reserve capacity without providing a unit discount. Each key holds an array of objects with a `Type` property identifying the specific program. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. For more information, see the definition of CommitmentEligibilityDetails [here](#datasets.costandusage.commitmenteligibilitydetails).
 
 ### Naming Conventions for Commitment Discount Types
 
@@ -13,6 +13,8 @@ The `Type` property follows PascalCase by convention, identifying commitment pro
 * Are consistent with [*CommitmentDiscountType*](#datasets.costandusage.commitmentdiscounttype) strings when that column is populated.
 * Should correspond to the provider's documented terminology when CommitmentDiscountType is not populated (common for SaaS providers that do not itemize commitment discount application at the line-item level).
 * Do not encode term length, payment option, or other commitment attributes. For example, use "SavingsPlan" rather than "1YearSavingsPlanNoUpfront".
+
+The same naming conventions apply to entries in `CapacityReservationTypes`. For example, AWS capacity-reservation programs use types such as "CapacityReservation" and "ZonalReservation".
 
 Illustrative examples of Type values by provider:
 
@@ -23,6 +25,7 @@ Illustrative examples of Type values by provider:
 | GCP         | ResourceBasedCommittedUseDiscount, ComputeFlexibleCommittedUseDiscount    | Granular per commitment program                            |
 | Datadog     | MonthlyCommitment, AnnualCommitment                                       | Provider terminology; CommitmentDiscountType not populated  |
 | Databricks  | CommittedUseDiscount                                                      | Provider terminology                                       |
+| Snowflake   | CapacityCommitment                                                        | Provider terminology                                       |
 
 ## Directly Dependent Columns
 
@@ -47,7 +50,7 @@ The FOCUS specification implements commitment eligibility via the [*CommitmentEl
 
 Because ANSI SQL does not inherently support the parsing of JSON, the following queries leverage the JSON functions found in BigQuery Standard SQL in order to demonstrate this feature's functionality. Similar JSON functions are available in all major SQL engines; thus, the below examples can be slightly modified to accommodate any particular database instance.
 
-Note: The queries below target the FOCUS-defined `CommitmentDiscountTypes` key. Providers using only custom (`x_`-prefixed) keys would require modified JSON paths.
+Note: The queries below target the `CommitmentDiscountTypes` key. To include capacity-reservation programs, apply the same JSON extraction pattern to the `CapacityReservationTypes` key. Providers using only custom (`x_`-prefixed) keys would require modified JSON paths.
 
 ### Identify Eligible Uncovered Spend by Commitment Type (CSP Example)
 
@@ -108,7 +111,7 @@ GROUP BY CU.ServiceProviderName
 
 This query aggregates eligible spend and uncovered eligible spend across all providers, including SaaS platforms. A practitioner managing both CSP and SaaS workloads (e.g., AWS alongside Databricks or Datadog) can identify where uncovered eligible spend is concentrated across commitment program types.
 
-Note: Some SaaS providers may not populate CommitmentDiscountId even when a commitment is applied. For those providers, EffectiveCost may not reflect commitment pricing, and this query captures total eligible spend rather than distinguishing covered from uncovered. Practitioners should consult provider-specific documentation to determine actual commitment utilization.
+Note: Some SaaS providers may not populate CommitmentDiscountId even when a commitment is applied. For those providers, EffectiveCost may not reflect commitment pricing, and this query captures total eligible spend rather than distinguishing covered from uncovered. Practitioners should consult provider-specific documentation to determine actual commitment utilization. This query targets CommitmentDiscountTypes only. To include capacity-reservation programs, UNION a parallel query targeting the CapacityReservationTypes key.
 
 ```sql
 SELECT
