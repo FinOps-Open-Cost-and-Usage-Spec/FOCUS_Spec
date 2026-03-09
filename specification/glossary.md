@@ -114,7 +114,7 @@ A physical representation of a specific [*dataset instance*](#glossary:dataset-i
 
 <a name="glossary:delivery-scope"><b>Delivery Scope</b></a>
 
-A dataset-specific boundary or set of boundaries that determines which records are included in a [*dataset artifact*](#glossary:dataset-instance-artifact) delivery. Scopes can be temporal (e.g., a [*billing period*](#glossary:billing-period) or non-temporal (e.g., a [*contract*]((#glossary:contract)) or other logical grouping), and multiple scopes may be applicable for a single dataset depending on use case or delivery configuration. Scopes determine how Overwrite and Append *dataset artifact* deliveries, as well as corrections, are applied.
+A dataset-specific boundary or set of boundaries that determines which records are included in a [*dataset artifact*](#glossary:dataset-instance-artifact) delivery. Scopes can be temporal (e.g., a [*billing period*](#glossary:billing-period) or non-temporal (e.g., a [*contract*](#glossary:contract) or other logical grouping), and multiple scopes may be applicable for a single dataset depending on use case or delivery configuration. Scopes determine how Overwrite and Append *dataset artifact* deliveries, as well as corrections, are applied.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
