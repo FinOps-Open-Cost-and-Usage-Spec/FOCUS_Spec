@@ -1,0 +1,397 @@
+{
+  "phase": 1,
+  "source": {
+    "path": "specification/datasets/invoice_detail/columns/billedcost.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "BilledCost",
+    "entity_name": "Billed Cost"
+  },
+  "entities_found": [
+    {
+      "entity_type": "Column",
+      "entity_id": "BilledCost",
+      "entity_name": "Billed Cost"
+    }
+  ],
+  "atoms": [
+    {
+      "temp_id": "R001",
+      "order": 1,
+      "text": "BilledCost MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "paragraph",
+        "indent_level": 0,
+        "bullet": null
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 11,
+        "line_end": 11
+      },
+      "ref": "L011"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
+      "text": "BilledCost MUST be of type Decimal.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 13,
+        "line_end": 13
+      },
+      "ref": "L013"
+    },
+    {
+      "temp_id": "R003",
+      "order": 3,
+      "text": "BilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 14,
+        "line_end": 14
+      },
+      "ref": "L014"
+    },
+    {
+      "temp_id": "R004",
+      "order": 4,
+      "text": "BilledCost MUST NOT be null.",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 15,
+        "line_end": 15
+      },
+      "ref": "L015"
+    },
+    {
+      "temp_id": "R005",
+      "order": 5,
+      "text": "BilledCost MUST be a valid decimal value.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 16,
+        "line_end": 16
+      },
+      "ref": "L016"
+    },
+    {
+      "temp_id": "R006",
+      "order": 6,
+      "text": "BilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 17,
+        "line_end": 17
+      },
+      "ref": "L017"
+    },
+    {
+      "temp_id": "R007",
+      "order": 7,
+      "text": "BilledCost MUST be denominated in the BillingCurrency.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 18,
+        "line_end": 18
+      },
+      "ref": "L018"
+    },
+    {
+      "temp_id": "R008",
+      "order": 8,
+      "text": "The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the payable amount provided in the corresponding entries on the issued invoice when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is \"Issued\".",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 19,
+        "line_end": 19
+      },
+      "ref": "L019"
+    },
+    {
+      "temp_id": "R009",
+      "order": 9,
+      "text": "When comparing BilledCost aggregated by [InvoiceId](#datasets.invoicedetail.invoiceid) and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) with [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) aggregated by [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid) and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername), BilledCost MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 20,
+        "line_end": 20
+      },
+      "ref": "L020"
+    },
+    {
+      "temp_id": "R010",
+      "order": 10,
+      "text": "When [ChargeCategory](#datasets.invoicedetail.chargecategory) is not \"Tax\" and [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in [Tolerance Formula](#datasets.invoicedetail.billedcost.implementationguidance.toleranceformula).",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 21,
+        "line_end": 21
+      },
+      "ref": "L021"
+    },
+    {
+      "temp_id": "R011",
+      "order": 11,
+      "text": "When [ChargeCategory](#datasets.invoicedetail.chargecategory) is \"Tax\" or [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is \"Open\", the sum of BilledCost MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost).",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 22,
+        "line_end": 22
+      },
+      "ref": "L022"
+    },
+    {
+      "temp_id": "R012",
+      "order": 12,
+      "text": "When comparing BilledCost aggregated by [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) with [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) aggregated by [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid), [CostAndUsage.InvoiceId](#datasets.costandusage.invoiceid), and [CostAndUsage.InvoiceIssuerName](#datasets.costandusage.invoiceissuername), BilledCost MUST adhere to the following requirements:",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": true
+      },
+      "provenance": {
+        "line_start": 23,
+        "line_end": 23
+      },
+      "ref": "L023"
+    },
+    {
+      "temp_id": "R013",
+      "order": 13,
+      "text": "When [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is not \"Open\", the sum of BilledCost MUST NOT differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost) by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in [Tolerance Formula](#datasets.invoicedetail.billedcost.implementationguidance.toleranceformula).",
+      "keyword": "MUST NOT",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 24,
+        "line_end": 24
+      },
+      "ref": "L024"
+    },
+    {
+      "temp_id": "R014",
+      "order": 14,
+      "text": "When [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is \"Open\", the sum of BilledCost MAY differ from the sum of [CostAndUsage.BilledCost](#datasets.costandusage.billedcost).",
+      "keyword": "MAY",
+      "role": "requirement",
+      "section_path": [
+        "Billed Cost",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 1,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 25,
+        "line_end": 25
+      },
+      "ref": "L025"
+    }
+  ],
+  "warnings": [],
+  "structural": {
+    "lead_ins": [
+      {
+        "text": "The tolerance is the **greater** of the following values:",
+        "class": "requirements_list_intro",
+        "confidence": "high",
+        "section_path": [
+          "Implementation Guidance",
+          "Tolerance Formula"
+        ],
+        "block": {
+          "block_type": "paragraph",
+          "indent_level": 0,
+          "bullet": null
+        },
+        "lead_in": {
+          "ends_with_colon": true
+        },
+        "provenance": {
+          "line_start": 44,
+          "line_end": 44
+        },
+        "ref": "LI044",
+        "next_normative_refs": []
+      }
+    ],
+    "index": {
+      "by_section_path": {
+        "Implementation Guidance > Tolerance Formula": [
+          "LI044"
+        ]
+      },
+      "by_line": {
+        "44": [
+          "LI044"
+        ]
+      }
+    }
+  }
+}
