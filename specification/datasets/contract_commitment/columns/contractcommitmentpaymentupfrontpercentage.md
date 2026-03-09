@@ -13,7 +13,8 @@ ContractCommitmentPaymentUpfrontPercentage MUST adhere to the following requirem
 * ContractCommitmentPaymentUpfrontPercentage MUST NOT be null.
 * ContractCommitmentPaymentUpfrontPercentage MUST be a value between 0.0 and 1.0, inclusive.
 * ContractCommitmentPaymentUpfrontPercentage MUST be 1.0 when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is "All Upfront".
-* ContractCommitmentPaymentUpfrontPercentage MUST be 0.0 when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is "No Upfront".
+* ContractCommitmentPaymentUpfrontPercentage MUST be 0.0 when ContractCommitmentPaymentModel is "No Upfront".
+* ContractCommitmentPaymentUpfrontPercentage MUST be greater than 0.0 and less than 1.0 when ContractCommitmentPaymentModel is "Partial Upfront".
 
 ## Column ID
 
