@@ -7,7 +7,7 @@
 | Commitment Discount Category | Spend               |
 | Utilization                  | 100%                |
 | Hours Generated              | 24                  |
-| Annual Commitment            | &dollar;628,000     |
+| Annual Commitment            | &dollar;628,000.00  |
 | List Unit Price              | &dollar;107.54/hour |
 | Savings                      | 33%                 |
 
@@ -46,7 +46,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
 | **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
 
-**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a &dollar;24.20/hour commitment, this value is &dollar;24.20.
+**For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a &dollar;71.69/hour commitment, this value is &dollar;71.69.
 
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 

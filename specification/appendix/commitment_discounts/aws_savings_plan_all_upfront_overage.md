@@ -6,7 +6,7 @@
 | Payment Model                | All Upfront                                              |
 | Commitment Discount Category | Spend                                                    |
 | Utilization                  | 100% (with overage to standard pricing)                  |
-| Hours Generated              | 48 (24 committed + 24 overflow to standard pricing)      |
+| Hours Generated              | 24 committed + 12 EC2 overflow + 12 other standard usage |
 | Annual Commitment            | &dollar;212,000.00                                       |
 | List Unit Price              | &dollar;36.30/hour                                       |
 | Savings                      | 33%                                                      |
@@ -19,7 +19,7 @@ This example shows an **Amazon Web Services EC2 Instance Savings Plan**, which i
 
 The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
 
-This scenario demonstrates **100% utilization with overage** where demand exceeds commitment capacity. The first 24 hours represent full utilization of the commitment, while the additional 24 hours represent overage that spills to standard pricing. Standard pricing rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
+This scenario demonstrates **100% utilization with overage** where demand exceeds commitment capacity. The 24 Used rows represent full utilization of the commitment. The 24 Standard rows include 12 EC2 hours that represent overage spilling to standard pricing, plus 12 rows for other services (S3, RDS, Lambda, DynamoDB) that are not covered by the Savings Plan. Standard pricing rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
 
 ## Row Summary
 
