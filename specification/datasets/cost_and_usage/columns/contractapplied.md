@@ -63,7 +63,7 @@ The `Elements` array contains one or more objects, each of which contains the fo
 Here is a basic example of the object format.
 
 * For more detailed examples, please see this column's entry in the JSON Object Examples appendix entry [here](#appendix.examples:jsonobject.examples:contractapplied).
-* For the JSON schema, please see [Contract Applied Object Schema](#schemas.datasets.contractcommitment.contractappliedobjectschema).
+* For the JSON schema, please see [Contract Applied Object Schema](#schemas.datasets.costandusage.contractappliedobjectschema).
 
 ```json
 {

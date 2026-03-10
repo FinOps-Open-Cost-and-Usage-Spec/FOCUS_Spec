@@ -33,6 +33,7 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
     }
+}
 ```
 
 ## Scenario 2: Contract commitment usage with no custom columns
@@ -67,6 +68,7 @@ This applies to the contract commitments in the following manner:
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
     }
+}
 ```
 
 ## Scenario 3: Contract commitment usage with custom columns
@@ -99,4 +101,5 @@ The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCost
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
     }
+}
 ```
