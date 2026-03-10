@@ -95,7 +95,6 @@ Contract Commitment Applied Cost represents the cost of the charge applied to th
 * "ContractCommitmentAppliedCost" MUST adhere to the following nullability requirements:
   * "ContractCommitmentAppliedCost" MUST NOT be null when "ContractCommitmentAppliedQuantity" is null.
   * "ContractCommitmentAppliedCost" MAY be null in all other cases.
-* "ContractCommitmentAppliedCost" MUST be a valid decimal value.
 * "ContractCommitmentAppliedCost" MUST be denominated in the BillingCurrency.
 
 <b>Contract Commitment Applied Quantity</b>
@@ -110,7 +109,6 @@ Contract Commitment Applied Quantity represents the quantity of the charge appli
 * "ContractCommitmentAppliedQuantity" MUST adhere to the following nullability requirements:
   * "ContractCommitmentAppliedQuantity" MUST NOT be null when "ContractCommitmentAppliedCost" is null.
   * "ContractCommitmentAppliedQuantity" MAY be null in all other cases.
-* "ContractCommitmentAppliedQuantity" MUST be a valid decimal value.
 * "ContractCommitmentAppliedQuantity" MUST be denominated in the "ContractCommitmentAppliedUnit".
 
 <b>Contract Commitment Applied Unit</b>
