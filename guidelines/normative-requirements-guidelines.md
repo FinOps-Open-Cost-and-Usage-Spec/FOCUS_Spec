@@ -168,9 +168,11 @@ They are allowed only when:
   * apply to that same subject,
   * do not introduce a new normative context.
 
-Nested bullets MUST share the same condition if defined by the parent bullet.
-Nested bullets SHOULD NOT introduce a different subject. 
-When nested bullets introduce different subjects, all subjects SHOULD be of the same subject type (e.g., FOCUS columns).
+Composite (parent + nested) requirements MAY be used when strictly controlled and MUST adhere to the following requirements:
+
+* Nested bullets MUST share the same condition if defined by the parent bullet.
+* Nested bullets SHOULD NOT introduce a different subject.
+* When nested bullets introduce different subjects, all subjects SHOULD be of the same subject type (e.g., FOCUS * columns).
 
 ### 8. Definitions vs. Normative Requirements
 
