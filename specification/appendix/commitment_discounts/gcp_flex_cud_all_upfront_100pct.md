@@ -52,8 +52,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Column                  | Purpose                  | Commitment-Covered | Standard      |
 | ----------------------- | ------------------------ | ------------------ | ------------- |
-| **ListUnitPrice**       | List (public) unit price | &dollar;94.70      | &dollar;94.70 |
-| **ContractedUnitPrice** | Negotiated unit price    | &dollar;94.70      | &dollar;94.70 |
+| **ListUnitPrice**       | List (public) unit price | &dollar;94.70      | &dollar;0.020 |
+| **ContractedUnitPrice** | Negotiated unit price    | &dollar;94.70      | &dollar;0.020 |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
@@ -108,8 +108,8 @@ The following critical rules apply to commitment discount data:
 | EffectiveCost              | &dollar;9.76  | Same as BilledCost, no pre/post payments      |
 | ListCost                   | &dollar;9.76  | Public, non-negotiated cost                   |
 | PricingQuantity            | 488           | Units priced                                  |
-| ConsumedQuantity           | 488           | Hours used                                    |
+| ConsumedQuantity           | 488           | GB consumed                                   |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
 | CommitmentDiscountId       | null          | No associated commitment                      |
-| ContractedUnitPrice        | &dollar;94.70 | Equals ListUnitPrice (no negotiated discount) |
+| ContractedUnitPrice        | &dollar;0.020 | Equals ListUnitPrice (no negotiated discount) |

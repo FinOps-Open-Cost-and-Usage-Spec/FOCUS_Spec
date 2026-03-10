@@ -52,8 +52,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Column                  | Purpose                  | Commitment-Covered | Standard       |
 | ----------------------- | ------------------------ | ------------------ | -------------- |
-| **ListUnitPrice**       | List (public) unit price | &dollar;113.70     | &dollar;113.70 |
-| **ContractedUnitPrice** | Negotiated unit price    | &dollar;113.70     | &dollar;113.70 |
+| **ListUnitPrice**       | List (public) unit price | &dollar;113.70     | &dollar;0.0208 |
+| **ContractedUnitPrice** | Negotiated unit price    | &dollar;113.70     | &dollar;0.0208 |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
@@ -107,8 +107,8 @@ The following critical rules apply to commitment discount data:
 | EffectiveCost              | &dollar;9.55   | Same as BilledCost, no pre/post payments      |
 | ListCost                   | &dollar;9.55   | Public, non-negotiated cost                   |
 | PricingQuantity            | 459            | Units priced                                  |
-| ConsumedQuantity           | 459            | Hours used                                    |
-| CommitmentDiscountQuantity | null           | **No commitment applied**                     |
-| CommitmentDiscountStatus   | null           | No commitment                                 |
-| CommitmentDiscountId       | null           | No associated commitment                      |
-| ContractedUnitPrice        | &dollar;113.70 | Equals ListUnitPrice (no negotiated discount) |
+| ConsumedQuantity           | 459           | GB consumed                                   |
+| CommitmentDiscountQuantity | null          | **No commitment applied**                     |
+| CommitmentDiscountStatus   | null          | No commitment                                 |
+| CommitmentDiscountId       | null          | No associated commitment                      |
+| ContractedUnitPrice        | &dollar;0.0208 | Equals ListUnitPrice (no negotiated discount) |
