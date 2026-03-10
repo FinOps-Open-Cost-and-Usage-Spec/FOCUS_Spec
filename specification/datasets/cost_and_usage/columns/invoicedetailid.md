@@ -6,8 +6,12 @@ An Invoice Detail ID is the invoice-issuer-assigned identifier for an [Invoice D
 
 InvoiceDetailId MUST adhere to the following requirements:
 
-* InvoiceDetailId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * InvoiceDetailId MUST be of type String.
+* InvoiceDetailId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* InvoiceDetailId MUST adhere to the following nullability requirements:
+  * InvoiceDetailId MUST be null when the charge is not associated either with an invoice or with a pre-generated provisional invoice.
+  * InvoiceDetailId MUST NOT be null when the charge is associated with either an issued invoice or a pre-generated provisional invoice.
+* InvoiceDetailId MAY be generated prior to an invoice being issued.  
 * InvoiceDetailId MUST uniquely identify a specific record within a given [InvoiceId](#datasets.invoicedetail.invoiceid).
 
 ## Column ID

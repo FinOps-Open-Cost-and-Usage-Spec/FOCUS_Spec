@@ -1,6 +1,6 @@
 # Billing Period
 
-The Billing Period dataset is a supporting dataset that defines the time intervals and statuses associated with an invoice issuer's billing cycles for grouping and presenting [*charges*](#glossary:charge) on invoices.  This dataset helps FinOps practitioners better understand how and when they can leverage [Cost and Usage](#dataset.costandusage) and [Invoice Detail](#datasets.invoicedetail) data for formal financial reporting and showback/chargeback processes.
+The Billing Period dataset is a supporting dataset that defines the time intervals and statuses associated with an invoice issuer's billing cycles for grouping and presenting [*charges*](#glossary:charge) on invoices.  This dataset helps FinOps practitioners better understand how and when they can leverage [Cost and Usage](#datasets.costandusage) and [Invoice Detail](#datasets.invoicedetail) data for formal financial reporting and showback/chargeback processes.
 
 ## Columns<!--SkipTOC-->
 
@@ -15,12 +15,12 @@ The Billing Period dataset is a supporting dataset that defines the time interva
 
 ## Relationships<!--SkipTOC-->
 
-The Billing Period dataset is primarily used to provide context for the [Cost and Usage](#datasets.costandusage) and [Invoice Detail](#datasets.invoicedetail) datasets. It is joined using the Billing Period Start column available in those datasets.
+The Billing Period dataset is primarily used to provide context for the [Cost and Usage](#datasets.costandusage) and [Invoice Detail](#datasets.invoicedetail) datasets. It is joined using the Billing Period Start and Invoice Issuer Name columns available in those datasets.
 
 | Dataset A      | Dataset A Column   | Dataset B      | Dataset B Column   |
 | :------------- | :----------------- | :------------- | :----------------- |
-| Billing Period | Billing Period Start | Cost and Usage | Billing Period Start |
-| Billing Period | Billing Period Start | Invoice Detail | Billing Period Start |
+| Billing Period | Billing Period Start and Invoice Issuer Name | Cost and Usage | Billing Period Start and Invoice Issuer Name |
+| Billing Period | Billing Period Start and Invoice Issuer Name | Invoice Detail | Billing Period Start and Invoice Issuer Name |
 
 ## Requirements<!--SkipTOC-->
 

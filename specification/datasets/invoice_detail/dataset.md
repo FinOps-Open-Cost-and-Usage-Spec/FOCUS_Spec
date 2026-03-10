@@ -39,8 +39,8 @@ For more information, see the [Invoice Reconciliation](#supportedfeatures.invoic
 
 | Dataset A      | Dataset A Column   | Dataset B      | Dataset B Column   |
 | :------------- | :----------------- | :------------- | :----------------- |
-| Invoice Detail | Invoice ID         | Cost and Usage | Invoice ID         |
-| Invoice Detail | Invoice Detail ID  | Cost and Usage | Invoice Detail ID  |
+| Invoice Detail | Invoice Issuer Name and Invoice ID         | Cost and Usage | Invoice Issuer Name and Invoice ID         |
+| Invoice Detail | Invoice Issuer Name, Invoice ID, and Invoice Detail ID  | Cost and Usage | Invoice Issuer Name, Invoice ID, and Invoice Detail ID  |
 
 ## Requirements<!--SkipTOC-->
 
