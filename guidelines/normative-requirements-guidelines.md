@@ -777,15 +777,20 @@ The following table lists commonly used intended subjects.
 | Column         | FOCUS/Custom column containing immutable string values | |
 | Column         | FOCUS/Custom column containing mutable string values | |
 | Column         | FOCUS/Custom column containing not-nullable string values | |
-| Column         | FOCUS/Custom column containing values in JsonObjectFormat format | |
 | Column         | FOCUS/Custom column containing values in key-value pair format | |
-| Column         | `<FOCUS Dataset ID>.<FOCUS Column ID>` | Specific column included in a FOCUS dataset, identified by Column ID |
-| Object/Element | Object/Element in array in FOCUS/Custom column containing JsonObjectFormat values | |
-| Object         | Object in FOCUS/Custom column containing JsonObjectFormat values | |
-| Key            | Keys in Object in FOCUS/Custom column containing JsonObjectFormat values | |
-| Key value      | Key values in Object in FOCUS/Custom column containing JsonObjectFormat values | |
 | Key            | Keys in FOCUS/Custom column containing values in key-value pair format | |
 | Key value      | Key values in FOCUS/Custom column containing values in key-value pair format | |
+| Column         | FOCUS column containing values in JsonObjectFormat format | |
+| Object         | Object in FOCUS column containing JsonObjectFormat values | |
+| Key            | Keys in Object in FOCUS column containing JsonObjectFormat values | |
+| Key value      | Key values in Object in FOCUS column containing JsonObjectFormat values | |
+| Object         | Object in array in FOCUS column containing JsonObjectFormat values | |
+| Column         | Custom column containing JSON object | |
+| Object         | Object in Custom column containing JSON object | |
+| Key            | Keys in Object in Custom column containing JSON object | |
+| Key value      | Key values in Object in Custom column containing JSON object | |
+| Object         | Object in array in Custom column containing JSON object | |
+| Column         | `<FOCUS Dataset ID>.<FOCUS Column ID>` | Specific column included in a FOCUS dataset, identified by Column ID |
 
 ### 4. Grouping of Attribute Requirements
 
