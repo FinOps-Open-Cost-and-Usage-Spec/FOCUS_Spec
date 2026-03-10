@@ -22,8 +22,8 @@ StringHandling MUST adhere to the following requirements:
   * FOCUS column containing string values MUST preserve the original casing of string values.
   * FOCUS column containing string values MUST preserve the original spacing of string values.
   * FOCUS column containing string values MUST preserve other relevant consistency factors as specified by the data generator or end-user.
-  * FOCUS column containing immutable string values (e.g., resource identifiers, region identifiers) MUST remain consistent across all [*billing periods*](#glossary:billing-period).
-  * FOCUS column representing mutable string values MUST reflect the altered value in all records pertaining to a period after the change.
+  * FOCUS column containing immutable string values (e.g., resource identifier, region identifier) MUST remain consistent across all [*billing periods*](#glossary:billing-period).
+  * FOCUS column representing mutable string values (e.g., resource name, region name) MUST reflect the altered value in all records pertaining to a period after the change.
   * FOCUS column representing mutable string values MUST reflect the string value as it existed prior to the change in all records pertaining to a period prior to the change when the record does not represent a correction to a previously closed billing period.
   * FOCUS column representing mutable string values MAY reflect the altered value in records pertaining to a period prior to the change when the record represents a correction to a previously closed billing period.
   * FOCUS column containing not-nullable string values SHOULD NOT contain empty strings.
