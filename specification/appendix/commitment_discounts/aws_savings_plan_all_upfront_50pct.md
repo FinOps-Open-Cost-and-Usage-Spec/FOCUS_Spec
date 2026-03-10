@@ -121,9 +121,9 @@ ListCost is null for unused rows because no resource was consumed. The opportuni
 | -------------------------- | -------------- | --------------------------------------------- |
 | ChargeCategory             | Usage          | Compute consumption (standard pricing)        |
 | PricingCategory            | Standard       | No discount applied                           |
-| BilledCost                 | &dollar;10.14  | List unit price                               |
-| EffectiveCost              | &dollar;10.14  | = BilledCost                                  |
-| ListCost                   | &dollar;10.14  | Same as BilledCost                            |
+| BilledCost                 | &dollar;10.14  | Same as ListCost, no negotiation/commitments  |
+| EffectiveCost              | &dollar;10.14  | Same as BilledCost, no pre/post payments      |
+| ListCost                   | &dollar;10.14  | Public, non-negotiated cost                   |
 | PricingQuantity            | 441            | Units priced                                  |
 | ConsumedQuantity           | 441            | Hours used                                    |
 | CommitmentDiscountQuantity | null           | **No commitment applied**                     |

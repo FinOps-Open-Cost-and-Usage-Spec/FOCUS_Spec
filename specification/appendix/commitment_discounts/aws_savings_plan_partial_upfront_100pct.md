@@ -70,7 +70,6 @@ The following critical rules apply to commitment discount data:
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
 * **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-* **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
 * **Standard pricing rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
@@ -116,9 +115,9 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ------------- | --------------------------------------------- |
 | ChargeCategory             | Usage         | Compute consumption (standard pricing)        |
 | PricingCategory            | Standard      | No discount applied                           |
-| BilledCost                 | &dollar;5.38  | List unit price                               |
-| EffectiveCost              | &dollar;5.38  | = BilledCost                                  |
-| ListCost                   | &dollar;5.38  | Same as BilledCost                            |
+| BilledCost                 | &dollar;5.38  | Same as ListCost, no negotiation/commitments  |
+| EffectiveCost              | &dollar;5.38  | Same as BilledCost, no pre/post payments      |
+| ListCost                   | &dollar;5.38  | Public, non-negotiated cost                   |
 | PricingQuantity            | 234           | Units priced                                  |
 | ConsumedQuantity           | 234           | Hours used                                    |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |

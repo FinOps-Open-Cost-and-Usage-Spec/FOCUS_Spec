@@ -121,9 +121,9 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ------------- | --------------------------------------------- |
 | ChargeCategory             | Usage         | Compute consumption (standard pricing)        |
 | PricingCategory            | Standard      | No discount applied                           |
-| BilledCost                 | &dollar;3.96  | List unit price                               |
-| EffectiveCost              | &dollar;3.96  | = BilledCost                                  |
-| ListCost                   | &dollar;3.96  | Same as BilledCost                            |
+| BilledCost                 | &dollar;3.96  | Same as ListCost, no negotiation/commitments  |
+| EffectiveCost              | &dollar;3.96  | Same as BilledCost, no pre/post payments      |
+| ListCost                   | &dollar;3.96  | Public, non-negotiated cost                   |
 | PricingQuantity            | 172           | Units priced                                  |
 | ConsumedQuantity           | 172           | Hours used                                    |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
