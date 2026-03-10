@@ -64,7 +64,7 @@ These three quantity columns serve different purposes and must be understood in 
 | ---------------- | ------------------ | ------------- | ------------------ |
 | **Purchase Row** | &dollar;693,000.00 | &dollar;0.00  | &dollar;693,000.00 |
 | **Used Row**     | &dollar;0.00       | &dollar;79.11 | &dollar;118.67     |
-| **Unused Row**   | &dollar;0.00       | &dollar;79.11 | null               |
+| **Unused Row**   | &dollar;0.00       | &dollar;79.11 | &dollar;118.67     |
 | **Standard Row** | &dollar;10.14      | &dollar;10.14 | &dollar;10.14      |
 
 The following critical rules apply to commitment discount data:
