@@ -27,7 +27,7 @@ An Action Item (AI) ticket should be opened to track the progress of implementin
 The first stage of conversion of rules from the normative text to model rules is for a table to be generated with the format as follows:
 
 - `ModelRuleId` - Formal identifier for this model rule entry
-- `Function` - The type of rule to be defined (Valid types: `Composite`, `Presence`, `Type`, `Format`, `Validation`)
+- `Function` - The type of rule to be defined (Valid types: `Composite`, `Presence`, `Type`, `Format`, `Validation`, `Nullability`)
 - `Reference` - The Column/Attribute Id this rule applies to
 - `EntityType` - The type of entity this rule applies to (Valid types: `Dataset`, `Column`, `Attribute`, `Object`)
 - `EntityName` - The human-readable name of the entity this rule applies to
@@ -41,12 +41,13 @@ The first stage of conversion of rules from the normative text to model rules is
 - `Order` - The order in which this rule should be processed or displayed
 - `DatasetType` - The dataset type this rule applies to (e.g. "CAU" for Cost and Usage, "CCT" for Contract Commitment)
 - `DatasetId` - The identifier of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g. "CostAndUsage" for Cost and Usage, "ContractCommitment" for Contract Commitment)
-- `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Column and Dataset entity types, e.g. "Cost and Usage" for Cost and Usage)
+- `DatasetName` - The human-readable name of the dataset this rule belongs to (Required for Dataset, Column, and Object entity types, e.g. "Cost and Usage" for Cost and Usage)
 - `ValidationCriteria` - The detailed criteria that defines how this rule is to be validated
   - `MustSatisfy` - The normative text that this rule defines
   - `Keyword` - The Normative keyword that applies to this rule (Allowed Values: `MUST`, `MUST NOT`, `SHOULD`, `SHOULD NOT`, `MAY`)
   - `Requirement` - The definition of what is required for model
   - `Condition` - The definition of conditions under which this rule applies
+  - `Dependencies` - A list of prerequisite rules that must be evaluated before this rule, ordered by sequence
 
 
 #### Stage 1: Rule-Based Extraction of Normative Requirements
@@ -72,7 +73,7 @@ The following architectural components define the core entities in FOCUS that sh
 
 <img width="491" height="491" alt="Image" src="https://github.com/user-attachments/assets/a30d828e-d2af-4185-984c-475998466437"/>
 
-- **Dataset, Column, Attribute, Metadata** are the **core structural entities** where model requirements are directly assigned.
+- **Dataset, Column, Object, and Attribute** are the **core structural entities** where model requirements are directly assigned.
 
 
 ##### FOCUS Entity Reference Table
@@ -163,7 +164,6 @@ Categorize the type of logic the rule enforces. This helps determine how it shou
 - Use `Nullability` to define conditional nullability rules (e.g., "MUST NOT be null when condition X" or "MAY be null when condition Y").
 - Use `Validation` for business logic or fixed-value conditions not covered above, including unconditional NOT NULL rules.
 - Use `Composite` to group multiple RMIDs with logical expressions (`AND` / `OR` / `NOT`).
-- Use `Ambiguous` only when no clear classification is possible.
 
 **Examples**  
 Rule states "`BillingPeriodStart` MUST be of type `DateTime`":  
@@ -176,7 +176,9 @@ Rule states "`CommitmentDiscountQuantity` MUST NOT be null when `ChargeCategory`
 
 Provide the identifier for the column or attribute that the rule applies to, using the PascalCase ID format.
 
+- For datasets: Use the DatasetId (e.g., `CostAndUsage`)
 - For columns: Use the ColumnId (e.g., `CommitmentDiscountQuantity`)
+- For objects: Use the ObjectId (e.g., `AllocatedMethodDetailsObject`)
 - For attributes: Use the attribute name (e.g., `NumericFormat`, `StringHandling`)
 - This field should match the ID as defined in the FOCUS specification
 
@@ -191,7 +193,7 @@ Determine the obligation level using the normative keyword from the source text,
 - Identify the first normative keyword present in the requirement:
   - `MUST`, `MUST NOT` → Mandatory
   - `SHOULD`, `SHOULD NOT` → Optional (unless conditional)
-  - `MAY`, `MAY NOT` → Optional
+  - `MAY` → Optional
 - Normalize the keyword to uppercase.
 - Only one keyword should be assigned per RM Item.
 - For composite rules, choose the highest obligation level from constituent RMIDs  
@@ -270,11 +272,13 @@ Define the specific validation check that implements this rule using CheckFuncti
 For **Composite rules**, use logical CheckFunctions to group other rules:
 - `CheckFunction: "AND"` with `Items` array containing nested requirement references
 - `CheckFunction: "OR"` with `Items` array containing nested requirement references
+- Use `CheckFunction: "CheckModelRule"` inside the `Items` array to reference other RMIDs
 
 For **Atomic rules**, use specific CheckFunction types from the model:
 - `ColumnPresent` - Check if a column exists in the dataset
 - `CheckNotValue` - Verify a column does not contain a specific value
 - `CheckValue` - Verify a column contains a specific value
+- `CheckAllowedValues` - Verify a column contains one of the allowed values
 - `TypeDecimal`, `TypeString`, `TypeBoolean` - Check data type
 - `FormatNumeric`, `FormatString`, `FormatDateTime` - Check format compliance
 - See CheckFunctions section in the model for complete list
@@ -356,7 +360,7 @@ Use this field to add clarifying comments, editorial notes.
 
 #### 14. DatasetId and DatasetName – Dataset Association
 
-For Column and Dataset entity types, these fields establish the relationship between the rule and its parent dataset.
+For Dataset, Column, and Object entity types, these fields establish the relationship between the rule and its parent dataset.
 
 **Reasoning Rules**
 
