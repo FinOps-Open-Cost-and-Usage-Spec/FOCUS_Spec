@@ -30,6 +30,7 @@ CurrencyFormat MUST adhere to the following requirements:
 * Custom column representing national currency MUST adhere to the following requirements:
   * Custom column representing national currency SHOULD conform to ISO 4217:2015 standard.
   * Custom column representing national currency SHOULD use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
+* Custom column representing virtual currency SHOULD conform to StringHandling requirements.
 
 ## Introduced (version)
 
