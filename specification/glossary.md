@@ -165,7 +165,7 @@ A government-issued currency (e.g., US dollars, Euros).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
-A [*contract commitment*](#glossary:contract-commitment) that provides discounted pricing in exchange for a commitment to specific spend or usage goals over a specified [*period*](#glossary:period), with terms and pricing specifically modified through an agreement between the customer and the service provider. Multiple Negotiated Discounts may be applied to a single charge at a time, and they may overlap with a Commitment Discount.
+A [*contract commitment*](#glossary:contract-commitment) that provides discounted pricing in exchange for a commitment to specific spend or usage goals over a specified [*period*](#glossary:period), with terms and pricing specifically modified through an agreement between the customer and the service provider. Multiple negotiated discounts may be applied to a single charge at a time, and they may overlap with a [*commitment discount*](#glossary:commitment-discount).
 
 Negotiated discounts are classified with the following designations:
 
