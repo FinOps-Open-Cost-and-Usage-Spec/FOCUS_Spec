@@ -64,7 +64,7 @@ These three quantity columns serve different purposes and must be understood in 
 | ---------------- | ------------------ | ------------- | ------------------ |
 | **Purchase Row** | &dollar;459,000.00 | &dollar;0.00  | &dollar;459,000.00 |
 | **Used Row**     | &dollar;0.00       | &dollar;52.40 | &dollar;78.60      |
-| **Unused Row**   | &dollar;0.00       | &dollar;52.40 | null               |
+| **Unused Row**   | &dollar;0.00       | &dollar;52.40 | &dollar;78.60      |
 | **Standard Row** | &dollar;3.96       | &dollar;3.96  | &dollar;3.96       |
 
 ListCost is null for unused rows because no resource was consumed. The opportunity cost is reflected in EffectiveCost.
