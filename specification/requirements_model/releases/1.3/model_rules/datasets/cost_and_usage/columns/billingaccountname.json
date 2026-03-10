@@ -1,0 +1,127 @@
+{
+  "CAU-BillingAccountName-C-000-M": {
+    "Function": "Composite",
+    "Reference": "BillingAccountName",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Name",
+    "EntityId": "BillingAccountName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountName adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountName-C-003-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-005-M",
+        "CAU-BillingAccountName-C-001-M",
+        "CAU-BillingAccountName-C-002-M",
+        "CAU-BillingAccountName-C-003-C"
+      ]
+    }
+  },
+  "CAU-BillingAccountName-C-001-M": {
+    "Function": "Type",
+    "Reference": "BillingAccountName",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Name",
+    "EntityId": "BillingAccountName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "BillingAccountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingAccountName-C-002-M": {
+    "Function": "Format",
+    "Reference": "BillingAccountName",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Name",
+    "EntityId": "BillingAccountName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "BillingAccountName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingAccountName-C-003-C": {
+    "Function": "Nullability",
+    "Reference": "BillingAccountName",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Name",
+    "EntityId": "BillingAccountName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "ACCOUNT_NAMING_SUPPORTED"
+    ],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountName MUST NOT be null when the invoice issuer supports assigning a display name for the billing account.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "BillingAccountName",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
