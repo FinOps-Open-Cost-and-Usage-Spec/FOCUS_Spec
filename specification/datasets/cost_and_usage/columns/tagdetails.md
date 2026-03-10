@@ -102,7 +102,7 @@ The tag key object and tag source objects contain the following properties:
 | ----- | ---- | ---------- | ----------- |
 | TagSource | String | Conditional | The type of *tag source* where the tag key is present. |
 | TagSourceId | String | TRUE | The identifier of the *tag source* where the tag key is present. |
-| TagValue | String | TRUE |  The value of the tag key. |
+| TagValue | String or Boolean | TRUE |  The value associated with the tag key. |
 
 ### Example
 
@@ -303,7 +303,7 @@ Details:
       "versionnumber": {
         "TagSource": "Resource",
         "TagSourceId": "my-resource-11",
-        "TagValue": 12.2,
+        "TagValue": "12.2",
         "AncestorTaggedSources": null
       }
     },
