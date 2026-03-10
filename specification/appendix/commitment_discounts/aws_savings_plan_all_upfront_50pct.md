@@ -113,7 +113,7 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountStatus   | Unused        | Commitment not utilized                          |
 | ResourceId                 | null          | No resource associated                           |
 
-ListCost is null for unused rows because no resource was consumed. The opportunity cost is reflected in EffectiveCost.
+ListCost on unused rows represents the list-price value of the unused commitment capacity (ListUnitPrice × PricingQuantity).
 
 ## Standard Pricing Usage Row Details
 
