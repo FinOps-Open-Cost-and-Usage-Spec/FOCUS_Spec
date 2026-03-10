@@ -1,0 +1,228 @@
+{
+  "CAU-AllocatedResourceName-C-000-C": {
+    "Function": "Composite",
+    "Reference": "AllocatedResourceName",
+    "EntityType": "Column",
+    "EntityName": "Allocated Resource Name",
+    "EntityId": "AllocatedResourceName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED"
+    ],
+    "Type": "Static",
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "The AllocatedResourceName column adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedResourceName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedResourceName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedResourceName-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedResourceName-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-072-C",
+        "CAU-AllocatedResourceName-C-001-M",
+        "CAU-AllocatedResourceName-C-002-M",
+        "CAU-AllocatedResourceName-C-003-C",
+        "CAU-AllocatedResourceName-C-006-C"
+      ]
+    }
+  },
+  "CAU-AllocatedResourceName-C-001-M": {
+    "Function": "Type",
+    "Reference": "AllocatedResourceName",
+    "EntityName": "Allocated Resource Name",
+    "EntityId": "AllocatedResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "AllocatedResourceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceName-C-002-M": {
+    "Function": "Format",
+    "Reference": "AllocatedResourceName",
+    "EntityName": "Allocated Resource Name",
+    "EntityId": "AllocatedResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "AllocatedResourceName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceName-C-003-C": {
+    "Function": "Composite",
+    "Reference": "AllocatedResourceName",
+    "EntityName": "Allocated Resource Name",
+    "EntityId": "AllocatedResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceName nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedResourceName-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-AllocatedResourceName-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-AllocatedResourceName-C-004-C",
+        "CAU-AllocatedResourceName-C-005-C"
+      ]
+    }
+  },
+  "CAU-AllocatedResourceName-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "AllocatedResourceName",
+    "EntityName": "Allocated Resource Name",
+    "EntityId": "AllocatedResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceName MUST be null when AllocatedResourceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "AllocatedResourceName",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "AllocatedResourceId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceName-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "AllocatedResourceName",
+    "EntityName": "Allocated Resource Name",
+    "EntityId": "AllocatedResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Static",
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceName MUST NOT be null when AllocatedResourceId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "AllocatedResourceName",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "AllocatedResourceId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-AllocatedResourceName-C-006-C": {
+    "Function": "Nullability",
+    "Reference": "AllocatedResourceName",
+    "EntityName": "Allocated Resource Name",
+    "EntityId": "AllocatedResourceName",
+    "EntityType": "Column",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Type": "Dynamic",
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "ValidationCriteria": {
+      "MustSatisfy": "AllocatedResourceName MAY duplicate AllocatedResourceId when a separate display name is not applicable.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

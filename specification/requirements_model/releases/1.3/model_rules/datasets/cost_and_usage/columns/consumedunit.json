@@ -1,0 +1,237 @@
+{
+  "CAU-ConsumedUnit-C-000-C": {
+    "Function": "Composite",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Column",
+    "EntityName": "Consumed Unit",
+    "EntityId": "ConsumedUnit",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedUnit-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedUnit-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedUnit-C-003-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedUnit-C-004-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-066-C",
+        "CAU-ConsumedUnit-C-001-M",
+        "CAU-ConsumedUnit-C-002-M",
+        "CAU-ConsumedUnit-C-003-O",
+        "CAU-ConsumedUnit-C-004-C"
+      ]
+    }
+  },
+  "CAU-ConsumedUnit-C-001-M": {
+    "Function": "Type",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Column",
+    "EntityName": "Consumed Unit",
+    "EntityId": "ConsumedUnit",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ConsumedUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ConsumedUnit-C-002-M": {
+    "Function": "Format",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Column",
+    "EntityName": "Consumed Unit",
+    "EntityId": "ConsumedUnit",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ConsumedUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ConsumedUnit-C-003-O": {
+    "Function": "Format",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Column",
+    "EntityName": "Consumed Unit",
+    "EntityId": "ConsumedUnit",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit SHOULD conform to UnitFormat requirements.",
+      "Keyword": "SHOULD",
+      "Requirement": {
+        "CheckFunction": "FormatUnit",
+        "ColumnName": "ConsumedUnit"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ConsumedUnit-C-004-C": {
+    "Function": "Composite",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Column",
+    "EntityName": "Consumed Unit",
+    "EntityId": "ConsumedUnit",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "USAGE_MEASUREMENT_SUPPORTED"
+    ],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedUnit-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ConsumedUnit-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-ConsumedUnit-C-005-C",
+        "CAU-ConsumedUnit-C-006-C"
+      ]
+    }
+  },
+  "CAU-ConsumedUnit-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Column",
+    "EntityName": "Consumed Unit",
+    "EntityId": "ConsumedUnit",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit MUST be null when ConsumedQuantity is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ConsumedUnit",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ConsumedQuantity",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-ConsumedQuantity-C-000-C"
+      ]
+    }
+  },
+  "CAU-ConsumedUnit-C-006-C": {
+    "Function": "Nullability",
+    "Reference": "ConsumedUnit",
+    "EntityType": "Column",
+    "EntityName": "Consumed Unit",
+    "EntityId": "ConsumedUnit",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ConsumedUnit MUST NOT be null when ConsumedQuantity is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ConsumedUnit",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ConsumedQuantity",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-ConsumedQuantity-C-000-C"
+      ]
+    }
+  }
+}
