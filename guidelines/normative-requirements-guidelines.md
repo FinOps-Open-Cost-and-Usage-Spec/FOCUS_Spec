@@ -775,8 +775,8 @@ The following table lists commonly used intended subjects.
 | Column         | FOCUS/Custom column containing date/time values | |
 | Column         | FOCUS/Custom column containing string values | |
 | Column         | FOCUS/Custom column containing immutable string values | |
+| Column         | FOCUS/Custom column containing mutable string values | |
 | Column         | FOCUS/Custom column containing not-nullable string values | |
-| Column         | FOCUS/Custom column representing charges to mutable entities?? | |
 | Column         | FOCUS/Custom column containing values in JsonObjectFormat format | |
 | Column         | FOCUS/Custom column containing values in key-value pair format | |
 | Column         | `<FOCUS Dataset ID>.<FOCUS Column ID>` | Specific column included in a FOCUS dataset, identified by Column ID |
