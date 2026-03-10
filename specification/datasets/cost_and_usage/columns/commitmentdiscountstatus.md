@@ -4,11 +4,10 @@ Commitment Discount Status indicates whether the [*charge*](#glossary:charge) co
 
 ## Requirements
 
-CommitmentDiscountStatus adheres to the following requirements:
+CommitmentDiscountStatus MUST adhere to the following requirements:
 
-* CommitmentDiscountStatus MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountStatus MUST be of type String.
-* CommitmentDiscountStatus nullability is defined as follows:
+* CommitmentDiscountStatus MUST adhere to the following nullability requirements:
   * CommitmentDiscountStatus MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
   * CommitmentDiscountStatus MUST NOT be null when CommitmentDiscountId is not null and [Charge Category](#datasets.costandusage.chargecategory) is "Usage".
 * CommitmentDiscountStatus MUST be one of the allowed values.
@@ -27,13 +26,14 @@ Indicates whether the *charge* corresponds with the consumption of a *commitment
 
 ## Content constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Conditional    |
-| Allows nulls    | True           |
-| Data type       | String         |
-| Value format    | Allowed Values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | Allowed Values                                       |
 
 Allowed values:
 

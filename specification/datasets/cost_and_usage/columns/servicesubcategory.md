@@ -4,9 +4,8 @@ The Service Subcategory is a secondary classification of the [Service Category](
 
 ## Requirements
 
-ServiceSubcategory adheres to the following requirements:
+ServiceSubcategory MUST adhere to the following requirements:
 
-* ServiceSubcategory SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ServiceSubcategory MUST be of type String.
 * ServiceSubcategory MUST NOT be null.
 * ServiceSubcategory MUST be one of the allowed values.
@@ -26,13 +25,14 @@ Secondary classification of the Service Category for a *service* based on its co
 
 ## Content Constraints
 
-| Constraint      | Value          |
-| :-------------- | :------------- |
-| Column type     | Dimension      |
-| Feature level   | Recommended    |
-| Allows nulls    | False          |
-| Data type       | String         |
-| Value format    | Allowed Values |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Recommended                                          |
+| Allows nulls    | False                                                |
+| Data type       | String                                               |
+| Value format    | Allowed Values                                       |
 
 Allowed values:
 

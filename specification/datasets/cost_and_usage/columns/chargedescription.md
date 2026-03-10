@@ -4,9 +4,8 @@ A Charge Description provides a high-level context of a [*row*](#glossary:row) w
 
 ## Requirements
 
-ChargeDescription adheres to the following requirements:
+ChargeDescription MUST adhere to the following requirements:
 
-* ChargeDescription MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ChargeDescription MUST be of type String.
 * ChargeDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ChargeDescription SHOULD NOT be null.
@@ -26,13 +25,14 @@ Self-contained summary of the *charge's* purpose and price.
 
 ## Content Constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Mandatory        |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

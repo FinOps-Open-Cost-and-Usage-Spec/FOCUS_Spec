@@ -6,16 +6,15 @@ The composition of properties associated with the SKU Price ID may differ across
 
 ## Requirements
 
-SkuPriceId adheres to the following requirements:
+SkuPriceId MUST adhere to the following requirements:
 
-* SkuPriceId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports unit pricing concepts and publishes *price lists*, publicly or as part of contracting.
 * SkuPriceId MUST be of type String.
 * SkuPriceId MUST conform to [String Handling](#attributes.stringhandling) requirements.
-* SkuPriceId nullability is defined as follows:
+* SkuPriceId MUST adhere to the following nullability requirements:
   * SkuPriceId MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * SkuPriceId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * SkuPriceId MAY be null in all other cases.
-* When SkuPriceId is not null, SkuPriceId adheres to the following additional requirements:
+* When SkuPriceId is not null, SkuPriceId MUST adhere to the following requirements:
   * SkuPriceId MUST have one and only one parent [SkuId](#datasets.costandusage.skuid).
   * SkuPriceId MUST remain consistent over time.
   * SkuPriceId MUST remain consistent across [*billing accounts*](#glossary:billing-account) or contracts.
@@ -41,13 +40,14 @@ A service-provider-specified unique identifier that represents a specific *SKU P
 
 ## Content constraints
 
-| Constraint       | Value          |
-| :--------------- | :------------- |
-| Column type      | Dimension      |
-| Feature level    | Conditional    |
-| Allows nulls     | True           |
-| Data type        | String         |
-| Value format     | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 
