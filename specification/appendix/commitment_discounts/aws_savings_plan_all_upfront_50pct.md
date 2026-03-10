@@ -125,8 +125,8 @@ ListCost on unused rows represents the list-price value of the unused commitment
 | EffectiveCost              | &dollar;10.14  | Same as BilledCost, no pre/post payments      |
 | ListCost                   | &dollar;10.14  | Public, non-negotiated cost                   |
 | PricingQuantity            | 441            | Units priced                                  |
-| ConsumedQuantity           | 441            | Hours used                                    |
-| CommitmentDiscountQuantity | null           | **No commitment applied**                     |
-| CommitmentDiscountStatus   | null           | No commitment                                 |
-| CommitmentDiscountId       | null           | No associated commitment                      |
-| ContractedUnitPrice        | &dollar;118.67 | Equals ListUnitPrice (no negotiated discount) |
+| ConsumedQuantity           | 441           | GB consumed                                   |
+| CommitmentDiscountQuantity | null          | **No commitment applied**                     |
+| CommitmentDiscountStatus   | null          | No commitment                                 |
+| CommitmentDiscountId       | null          | No associated commitment                      |
+| ContractedUnitPrice        | &dollar;0.023 | Equals ListUnitPrice (no negotiated discount) |
