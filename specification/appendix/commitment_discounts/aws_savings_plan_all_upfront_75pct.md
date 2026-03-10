@@ -67,7 +67,7 @@ These three quantity columns serve different purposes and must be understood in 
 | **Unused Row**   | &dollar;0.00       | &dollar;52.40 | &dollar;78.60      |
 | **Standard Row** | &dollar;3.96       | &dollar;3.96  | &dollar;3.96       |
 
-ListCost is null for unused rows because no resource was consumed. The opportunity cost is reflected in EffectiveCost.
+ListCost on unused rows represents the list-price value of the unused commitment capacity (ListUnitPrice × PricingQuantity).
 
 The following critical rules apply to commitment discount data:
 
