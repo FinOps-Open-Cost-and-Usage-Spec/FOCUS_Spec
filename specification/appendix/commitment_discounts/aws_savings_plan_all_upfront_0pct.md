@@ -62,7 +62,7 @@ These three quantity columns serve different purposes and must be understood in 
 | Scenario           | BilledCost         | EffectiveCost   | ListCost           |
 | ------------------ | ------------------ | --------------- | ------------------ |
 | **Purchase Row**   | &dollar;353,000.00 | &dollar;0.00    | &dollar;353,000.00 |
-| **Unused Row**     | &dollar;0.00       | &dollar;40.30   | null               |
+| **Unused Row**     | &dollar;0.00       | &dollar;40.30   | &dollar;60.45           |
 
 This scenario has no Used or Standard rows because utilization is 0% — no resources were consumed.
 
