@@ -30,7 +30,7 @@
       }
     },
     "BIP-BillingPeriodCreated-C-001-M": {
-      "Function": "Validation",
+      "Function": "Type",
       "Reference": "BillingPeriodCreated",
       "EntityType": "Column",
       "EntityName": "Billing Period Created",
