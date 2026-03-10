@@ -85,7 +85,7 @@ The Cost and Usage dataset can be joined to the Contract Commitment dataset thro
 
 ## Requirements<!--SkipTOC-->
 
-CostAndUsage adheres to the following requirements:
+CostAndUsage MUST adhere to the following requirements:
 
 * CostAndUsage MUST be present.
 * CostAndUsage column presence MUST adhere to the following requirements:
