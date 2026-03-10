@@ -10,6 +10,7 @@ model_graph.dot
 model_graph.png
 model-*.json
 specification/requirements_model/build/*
+.markdownlint-cli2.jsonc
 
 # AI tool local settings
 settings.local.json
