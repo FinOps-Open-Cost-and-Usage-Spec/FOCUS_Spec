@@ -159,15 +159,6 @@ A requirement MUST be split into multiple bullets if it:
 
 ### 7. Composite Requirements
 
-Composite (parent + nested) requirements MAY be used when strictly controlled.
-
-They are allowed only when:
-
-* the parent bullet introduces exactly one normative subject, and
-* all nested bullets:
-  * apply to that same subject,
-  * do not introduce a new normative context.
-
 Composite (parent + nested) requirements MAY be used when strictly controlled and MUST adhere to the following requirements:
 
 * Nested bullets MUST share the same condition if defined by the parent bullet.
