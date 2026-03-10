@@ -10,7 +10,7 @@ Allocated Method Details consists of a valid JSON object which contains an array
 
 AllocatedMethodDetails MUST adhere to the following requirements:
 
-* AllocatedMethodDetails MUST be of type String.
+* AllocatedMethodDetails MUST be of type JSON Object (serialized as a String where necessary).
 * AllocatedMethodDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedMethodDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * AllocatedMethodDetails MUST adhere to the following nullability requirements:
@@ -22,13 +22,7 @@ AllocatedMethodDetails MUST adhere to the following requirements:
 
 Allocated Method Details consists of a valid JSON object with a top level key of Elements containing an Array of entry objects. Each entry object consists of FOCUS-defined property keys but can be extended to provide additional details about the allocation.
 
-The FOCUS-defined properties are:
-
-* `Allocated Ratio`: The ratio of a [*charge*](#glossary:charge) that this allocation represents.
-* `Usage Unit`: Unit being measured used to calculate this allocation.
-* `Usage Quantity`: The quantity of units used denominated by the defined usage unit.
-
-In addition to these, a data generator may include one or more custom properties, also denoted as key-value pairs.
+The following section details the normative requirements for the AllocatedMethodDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.allocatedmethoddetails.schemastructure) and [Object Example](#datasets.costandusage.allocatedmethoddetails.objectexample) sections.
 
 ### Object Requirements
 
@@ -41,39 +35,27 @@ The AllocatedMethodDetailsObject MUST adhere to the following requirements:
 * AllocatedMethodDetailsObject.Elements[\*].UsageUnit MUST represent the unit or component of data generator's documented [AllocationMethod](#datasets.costandusage.allocatedmethodid) which was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 * AllocatedMethodDetailsObject.Elements[\*].UsageQuantity SHOULD capture the quantity or volume of the AllocatedMethodDetailsObject.Elements[\*].UsageUnit measured by the data generator that was used to determine the AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio value.
 
-### Array of Objects
+## Schema Structure
 
-The parent array is called `Elements` and contains one or more objects which communicate information about how an allocated record was calculated.
+AllocatedMethodDetails contains a structured JSON object defining the allocation properties used to calculate a split cost allocation.
 
-| Key | ValueType | Required | Description |
-| ----- | ---- | ---------- | ----------- |
-| Elements | Array | True | The parent array containing one or more objects which communicate information about how an allocated record was calculated. |
+### Top-Level Properties
 
-### Object Entries
+| Property | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `Elements` | Array | True | The parent array containing one or more objects which communicate information about how an allocated record was calculated. |
+
+### Elements Object
 
 The `Elements` array contains one or more objects, each of which contains the following entries:
 
-| Key | ValueType | Required | Description |
-| ----- | ---- | ---------- | ----------- |
-| AllocatedRatio | Numeric | True | Percentage of overall cost derived from corresponding method and metric. |
-| UsageUnit | [String](#attributes.stringhandling) | Conditional | Unit being measured used to calculate allocation. |
-| UsageQuantity | Numeric | False | Volume of UsageUnit consumed or used. |
+| Key | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `AllocatedRatio` | Numeric | True | Communicates the percentage of the [*Origin Charge*](#glossary:origin-charge) that this [*Allocated Charge*](#glossary:allocated-charge) derived from the corresponding [Allocated Method Id](#datasets.costandusage.allocatedmethodid) and Usage Unit property. |
+| `UsageUnit` | String | Conditional | Communicates the aspect of the documented Allocation Method Id being used to calculate the Allocated Ratio property and what is being measured by Usage Quantity property. <br><br>**Condition:** MUST be present if Usage Quantity is provided. |
+| `UsageQuantity` | Numeric | False | Communicates the volume that was consumed or used, denominated in the Usage Unit property value. |
 
-The following property keys are used for allocation properties to facilitate querying data across allocations and across data generators. Focus-defined property keys will appear in the list below and data generator-defined property keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
-
-<b>Allocated Ratio</b>
-
-Allocated Ratio communicates the percentage of the [*Origin Charge*](#glossary:origin-charge) that this [*Allocated Charge*](#glossary:allocated-charge) derived from the corresponding [Allocated Method Id](#datasets.costandusage.allocatedmethodid) and Usage Unit property.
-
-<b>Usage Unit</b>
-
-Usage Unit communicates the aspect of the documented Allocation Method Id being used to calculate the Allocated Ratio property and what is being measured by Usage Quantity property.
-
-<b>Usage Quantity</b>
-
-Usage Quantity communicates the volume that was consumed or used, denominated in the Usage Unit property value.
-
-### Object Example
+## Object Example
 
 Here is a basic example of the object format.
 
@@ -93,6 +75,12 @@ Here is a basic example of the object format.
   } ]
 }
 ```
+
+## Implementation Guidance
+
+### Custom Properties
+
+To facilitate querying data across allocations and across data generators, a data generator may include one or more custom properties. These may be placed at the top level of the object (alongside `Elements`) or nested within the individual `Elements` objects. Custom keys MUST be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
 
 ### Object ID
 
@@ -116,15 +104,15 @@ A set of properties describing how resources are allocated in data generator-def
 
 ## Content Constraints
 
-| Constraint      | Value                                                |
-| :-------------- | :--------------------------------------------------- |
-| Dataset         | [Cost and Usage](#datasets.costandusage)             |
-| Column type     | Dimension                                            |
-| Feature level   | Recommended                                          |
-| Allows nulls    | True                                                 |
-| Data type       | JSON                                                 |
-| Value format    | [JSON Object Format](#attributes.jsonobjectformat)   |
-| Object          | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject)
+| Constraint | Value |
+| :--- | :--- |
+| Dataset | [Cost and Usage](#datasets.costandusage) |
+| Column type | Dimension |
+| Feature level | Recommended |
+| Allows nulls | True |
+| Data type | JSON |
+| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object | [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) |
 
 ## Introduced (version)
 

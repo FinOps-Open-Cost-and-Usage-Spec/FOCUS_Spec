@@ -6,7 +6,7 @@ Contract Applied is a set of properties that associate a charge with one or more
 
 ### Column Requirements
 
-The ContractApplied column MUST adhere to the following requirements:
+ContractApplied MUST adhere to the following requirements:
 
 * ContractApplied MUST be of type JSON Object (serialized as a String where necessary).
 * ContractApplied MUST conform to [StringHandling](#attributes.stringhandling) requirements.
@@ -22,7 +22,7 @@ The following section details the normative requirements for the ContractApplied
 
 ### Object Requirements
 
-The ContractAppliedObject MUST adhere to the following requirements:
+ContractAppliedObject MUST adhere to the following requirements:
 
 * ContractAppliedObject MUST conform to the [ContractAppliedObjectSchema](#schemas.datasets.costandusage.contractappliedobjectschema) JSON Schema.
 * ContractAppliedObject.Elements[\*].ContractId MUST be a unique identifier within the service provider.
