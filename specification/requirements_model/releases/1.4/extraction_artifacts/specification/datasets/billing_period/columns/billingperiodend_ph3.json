@@ -30,7 +30,7 @@
       }
     },
     "BIP-BillingPeriodEnd-C-001-M": {
-      "Function": "Validation",
+      "Function": "Type",
       "Reference": "BillingPeriodEnd",
       "EntityType": "Column",
       "EntityName": "Billing Period End",
