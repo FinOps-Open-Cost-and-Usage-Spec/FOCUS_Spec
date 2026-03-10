@@ -107,8 +107,8 @@ The following critical rules apply to commitment discount data:
 | EffectiveCost              | &dollar;6.10  | Same as BilledCost, no pre/post payments      |
 | ListCost                   | &dollar;6.10  | Public, non-negotiated cost                   |
 | PricingQuantity            | 265           | Units priced                                  |
-| ConsumedQuantity           | 265           | Hours used                                    |
+| ConsumedQuantity           | 265           | GB consumed                                   |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
 | CommitmentDiscountId       | null          | No associated commitment                      |
-| ContractedUnitPrice        | &dollar;79.28 | Equals ListUnitPrice (no negotiated discount) |
+| ContractedUnitPrice        | &dollar;0.023 | Equals ListUnitPrice (no negotiated discount) |
