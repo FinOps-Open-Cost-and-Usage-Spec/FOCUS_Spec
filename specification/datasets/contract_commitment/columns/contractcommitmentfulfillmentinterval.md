@@ -11,6 +11,7 @@ ContractCommitmentFulfillmentInterval MUST adhere to the following requirements:
 * ContractCommitmentFulfillmentInterval MUST be of type String.
 * ContractCommitmentFulfillmentInterval MUST NOT be null.
 * ContractCommitmentFulfillmentInterval MUST be one of the allowed values.
+* ContractCommitmentFulfillmentInterval MUST NOT be "Total Term" if [ContractCommitmentModel](#datasets.contractcommitment.contractcommitmentmodel) is "Continuous".
 
 ## Column ID
 
