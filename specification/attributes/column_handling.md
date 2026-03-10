@@ -40,7 +40,7 @@ ColumnHandling MUST adhere to the following requirements:
   * FOCUS column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
   * FOCUS column representing an identifier MUST include the `Id` suffix in the Column ID.
   * FOCUS column representing a name MUST include the `Name` suffix in the Column ID.
-  * FOCUS column representing a product offerings that incurred a charge MUST include the `Sku` prefix in the Column ID.
+  * FOCUS column representing a product offering that incurred a charge MUST include the `Sku` prefix in the Column ID.
   * FOCUS column MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID "BillingAccountName" and Display Name "Billing Account Name").
   * FOCUS column with `Category` suffix MUST be normalized.
 * Custom column (e.g., service-provider-defined column included in FOCUS dataset) MUST adhere to the following requirements:
@@ -57,7 +57,7 @@ ColumnHandling MUST adhere to the following requirements:
   * FOCUS dataset SHOULD list all FOCUS columns before all Custom columns.
   * FOCUS dataset SHOULD sort FOCUS columns alphabetically by their Column ID within the FOCUS columns group.
   * FOCUS dataset SHOULD sort Custom columns alphabetically by their Column ID within the Custom columns group.
-  * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns.
+  * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns when ordering columns.
 
 ## Introduced (version)
 
