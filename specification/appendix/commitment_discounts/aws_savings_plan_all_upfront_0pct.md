@@ -28,7 +28,6 @@ This scenario demonstrates **zero utilization** where the commitment is purchase
 | Row Type           | Count   | BilledCost               | EffectiveCost         |
 | ------------------ | ------- | ------------------------ | --------------------- |
 | Purchase           | 1       | &dollar;353,000.00       | &dollar;0.00          |
-| Usage (Used)       | 0       | &dollar;0.00             | &dollar;0.00          |
 | Usage (Unused)     | 24      | &dollar;0.00             | &dollar;967.20        |
 | **Total**          | 25      | **&dollar;353,000.00**   | **&dollar;967.20**    |
 
