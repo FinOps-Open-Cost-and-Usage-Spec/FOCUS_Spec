@@ -31,20 +31,21 @@ All errata must be tracked via a GitHub Issue to ensure visibility.
 
 1. **Open an Issue:** Navigate to the FOCUS repository and create a new Issue.
 2. **Select the Template:** Choose the **General Feedback** issue template. This template is specifically designed for reporting minor corrections, clarity improvements, or inconsistencies.
-3. **Provide Details:** * Set the Type of Feedback to "Typo or grammar," "Minor correction (non-breaking)," or "Field naming or label inconsistency".
-   * Clearly state the affected section or field.
-   * Provide the "Original Text" and the proposed "Corrected Text".
+3. **Provide Details:**
+  * Set the Type of Feedback to "Typo or grammar," "Minor correction (non-breaking)," or "Field naming or label inconsistency".
+  * Clearly state the affected section or field.
+  * Provide the "Original Text" and the proposed "Corrected Text".
 
 ---
 
 ## 3. Maintainer Assessment and Triage
 Once a General Feedback issue is submitted, it must be evaluated to ensure it meets the strict definition of an erratum.
 
-* **Review:** The Maintainers will meet to review the submitted issue.
-* **Assessment:** They will determine if the report constitutes a valid, non-material erratum or if it represents a material/normative change that should be deferred to a future specification release.
+* **Review:** The Maintainers shall meet to review the submitted issue.
+* **Assessment:** They shall determine if the report constitutes a valid, non-material erratum or if it represents a material/normative change that should be deferred to a future specification release.
 * **Outcome:** 
-  * *Approved:* If the issue qualifies as an erratum that the working group wishes to issue, the Maintainers will approve it for inclusion and signal that a Pull Request can be drafted.
-  * *Rejected/Re-routed:* If the issue introduces material changes, the submitter will be provided an explanation and directed to open a formal Feature Request.
+  * *Approved:* If the issue qualifies as an erratum that the working group wishes to issue, the Maintainers shall approve it for inclusion and signal that a Pull Request can be drafted.  The issue shall receive the `errata` label.
+  * *Rejected/Re-routed:* If the issue introduces material changes, the submitter shall be provided an explanation and directed to open a formal Feature Request.
 
 ---
 
@@ -66,7 +67,7 @@ Once an issue is assessed and confirmed as a valid erratum by the Maintainers, i
 ## 5. Review and Approval
 Even non-material corrections must go through the formal FOCUS review process to ensure they do not accidentally alter normative logic.
 
-* **Drafting:** Open a PR against the `working_draft` branch. Include the prefix `[Feedback]` or reference the issue in the PR title.
-* **Review:** The PR must be reviewed by the Task Force / Maintainers to confirm the change aligns with the approved erratum scope.
+* **Drafting:** Open a PR against the `working_draft` branch. Reference the issue in the PR title and affix the label `errata`.
+* **Review:** The PR must be reviewed by the Members to confirm the change aligns with the approved erratum scope.
 * **Approval:** To be eligible for merging, the PR must have resolved all comments and receive approval from at least one Maintainer and the assigned reviewers.
-* **Publication:** Once merged into `working_draft`, the corrections will be included in the next automated build and will be formally published to the `main` branch during the next release or patch cycle.
+* **Publication:** Once merged into `working_draft`, the corrections will be formally published to the `main` branch during the next release.
