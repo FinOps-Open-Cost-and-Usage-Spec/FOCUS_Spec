@@ -49,39 +49,41 @@
                         "description": "Unit of measure for the applied quantity"
                     }
                 },
-                "allOf": [
+                "oneOf": [
                     {
-                        "description": "Unit is required if Quantity is present and not null",
-                        "if": {
-                            "properties": {
-                                "ContractCommitmentAppliedQuantity": {
-                                    "type": "number"
-                                }
+                        "description": "Scenario 1: Cost has a value. Quantity and Unit MUST be absent or explicitly null.",
+                        "required": [
+                            "ContractCommitmentAppliedCost"
+                        ],
+                        "properties": {
+                            "ContractCommitmentAppliedCost": {
+                                "type": "number"
                             },
-                            "required": [
-                                "ContractCommitmentAppliedQuantity"
-                            ]
-                        },
-                        "then": {
-                            "required": [
-                                "ContractCommitmentAppliedUnit"
-                            ]
+                            "ContractCommitmentAppliedQuantity": {
+                                "type": "null"
+                            },
+                            "ContractCommitmentAppliedUnit": {
+                                "type": "null"
+                            }
                         }
                     },
                     {
-                        "description": "At least one metric (Cost or Quantity) must be present",
-                        "anyOf": [
-                            {
-                                "required": [
-                                    "ContractCommitmentAppliedCost"
-                                ]
+                        "description": "Scenario 2: Quantity and Unit have values. Cost MUST be absent or explicitly null.",
+                        "required": [
+                            "ContractCommitmentAppliedQuantity",
+                            "ContractCommitmentAppliedUnit"
+                        ],
+                        "properties": {
+                            "ContractCommitmentAppliedCost": {
+                                "type": "null"
                             },
-                            {
-                                "required": [
-                                    "ContractCommitmentAppliedQuantity"
-                                ]
+                            "ContractCommitmentAppliedQuantity": {
+                                "type": "number"
+                            },
+                            "ContractCommitmentAppliedUnit": {
+                                "type": "string"
                             }
-                        ]
+                        }
                     }
                 ],
                 "patternProperties": {
