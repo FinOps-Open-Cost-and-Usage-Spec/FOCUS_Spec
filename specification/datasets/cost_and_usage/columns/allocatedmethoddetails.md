@@ -6,12 +6,14 @@ Allocated Method Details consists of a valid JSON object which contains an array
 
 ## Requirements
 
-The AllocatedMethodDetails column adheres to the following requirements:
+### Column Requirements
+
+AllocatedMethodDetails MUST adhere to the following requirements:
 
 * AllocatedMethodDetails MUST be of type String.
 * AllocatedMethodDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedMethodDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* AllocatedMethodDetails nullability is defined as follows:
+* AllocatedMethodDetails MUST adhere to the following nullability requirements:
   * AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
 * AllocatedMethodDetails MUST conform to [AllocatedMethodDetailsObject](#datasets.costandusage.allocatedmethoddetails.allocatedmethoddetailsobject) requirements when AllocatedMethodDetails is not null.
@@ -30,7 +32,7 @@ In addition to these, a data generator may include one or more custom properties
 
 ### Object Requirements
 
-The AllocatedMethodDetailsObject adheres to the following requirements:
+The AllocatedMethodDetailsObject MUST adhere to the following requirements:
 
 * AllocatedMethodDetailsObject MUST conform to the [AllocatedMethodDetailsObjectSchema](#schemas.datasets.costandusage.allocatedmethoddetailsobjectschema) JSON Schema.
 * AllocatedMethodDetailsObject.Elements[\*].AllocatedRatio MUST represent the allocated charge's percentage of the origin charge.

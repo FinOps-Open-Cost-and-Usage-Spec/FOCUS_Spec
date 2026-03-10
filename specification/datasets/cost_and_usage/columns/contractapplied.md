@@ -4,7 +4,7 @@ Contract Applied is a set of properties that associate a charge with one or more
 
 ## Requirements
 
-The ContractApplied column adheres to the following requirements:
+The ContractApplied column MUST adhere to the following requirements:
 
 * ContractApplied MUST be of type String.
 * ContractApplied MUST conform to [StringHandling](#attributes.stringhandling) requirements.
@@ -29,7 +29,7 @@ In addition to these, a data generator may include one or more custom properties
 
 ### Object Requirements
 
-The ContractAppliedObject adheres to the following requirements:
+The ContractAppliedObject MUST adhere to the following requirements:
 
 * ContractAppliedObject MUST conform to the [ContractAppliedObjectSchema](#schemas.datasets.costandusage.contractappliedobjectschema) JSON Schema.
 * ContractAppliedObject.Elements[\*] MUST NOT have nested property key-value pairs.

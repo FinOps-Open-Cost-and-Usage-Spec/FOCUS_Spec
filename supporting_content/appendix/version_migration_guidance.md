@@ -49,7 +49,7 @@ See the [CHANGELOG](/CHANGELOG.md) for complete details.
 
 ### What Requires Migration
 
-Only the `ProviderName` and `PublisherName` columns are deprecated in FOCUS 1.3. These columns will be removed in FOCUS 1.4.
+Only the `ProviderName` and `PublisherName` columns are deprecated in FOCUS 1.3. These columns have been removed in FOCUS 1.4.
 
 ---
 

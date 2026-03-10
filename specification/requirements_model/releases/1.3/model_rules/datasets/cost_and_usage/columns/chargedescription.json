@@ -1,0 +1,153 @@
+{
+  "CAU-ChargeDescription-C-000-M": {
+    "Function": "Composite",
+    "Reference": "ChargeDescription",
+    "EntityType": "Column",
+    "EntityName": "Charge Description",
+    "EntityId": "ChargeDescription",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeDescription-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeDescription-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeDescription-C-003-O"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ChargeDescription-C-004-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-025-M",
+        "CAU-ChargeDescription-C-001-M",
+        "CAU-ChargeDescription-C-002-M",
+        "CAU-ChargeDescription-C-003-O",
+        "CAU-ChargeDescription-C-004-O"
+      ]
+    }
+  },
+  "CAU-ChargeDescription-C-001-M": {
+    "Function": "Type",
+    "EntityType": "Column",
+    "EntityName": "Charge Description",
+    "EntityId": "ChargeDescription",
+    "Reference": "ChargeDescription",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ChargeDescription"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ChargeDescription-C-002-M": {
+    "Function": "Format",
+    "EntityType": "Column",
+    "EntityName": "Charge Description",
+    "EntityId": "ChargeDescription",
+    "Reference": "ChargeDescription",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ChargeDescription"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ChargeDescription-C-003-O": {
+    "Function": "Nullability",
+    "Reference": "ChargeDescription",
+    "EntityType": "Column",
+    "EntityName": "Charge Description",
+    "EntityId": "ChargeDescription",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription SHOULD NOT be null.",
+      "Keyword": "SHOULD NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ChargeDescription",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ChargeDescription-C-004-O": {
+    "Function": "Validation",
+    "Reference": "ChargeDescription",
+    "EntityType": "Column",
+    "EntityName": "Charge Description",
+    "EntityId": "ChargeDescription",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "ChargeDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.",
+      "Keyword": "SHOULD",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
