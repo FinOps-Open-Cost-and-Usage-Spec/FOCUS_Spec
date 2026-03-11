@@ -281,7 +281,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"Elements\" objects MUST contain four key-value pairs, representing \"ContractCommitmentID\", \"ContractCommitmentAppliedCost\", \"ContractCommitmentAppliedQuantity\", and \"ContractCommitmentAppliedUnit\".",
+      "MustSatisfy": "\"Elements\" objects MUST contain five key-value pairs, representing \"ContractId\", \"ContractCommitmentId\", \"ContractCommitmentAppliedCost\", \"ContractCommitmentAppliedQuantity\", and \"ContractCommitmentAppliedUnit\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -289,7 +289,12 @@
           {
             "CheckFunction": "JSONCheckPathKeyExists",
             "ColumnName": "ContractApplied",
-            "Path": "$.Elements[*].ContractCommitmentID"
+            "Path": "$.Elements[*].ContractId"
+          },
+          {
+            "CheckFunction": "JSONCheckPathKeyExists",
+            "ColumnName": "ContractApplied",
+            "Path": "$.Elements[*].ContractCommitmentId"
           },
           {
             "CheckFunction": "JSONCheckPathKeyExists",
@@ -402,7 +407,7 @@
         "Path": "$.Elements[*]",
         "Prefix": "x_",
         "IgnoreKeys": [
-          "ContractCommitmentID",
+          "ContractCommitmentId",
           "ContractCommitmentAppliedCost",
           "ContractCommitmentAppliedQuantity",
           "ContractCommitmentAppliedUnit"
@@ -586,7 +591,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "Contract application property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined allocation property.",
+      "MustSatisfy": "Contract application property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined application property.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyStartsWith",
@@ -594,7 +599,8 @@
         "Path": "$.Elements[*]",
         "Prefix": "x_",
         "IgnoreKeys": [
-          "ContractCommitmentID",
+          "ContractId",
+          "ContractCommitmentId",
           "ContractCommitmentAppliedCost",
           "ContractCommitmentAppliedQuantity",
           "ContractCommitmentAppliedUnit"
@@ -673,7 +679,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractId\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider supports *contract commitments*.",
+      "MustSatisfy": "\"ContractId\" MUST be present in an Elements object within ContractApplied when the service provider supports *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
@@ -923,7 +929,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "The \"ContractCommitmentID\" property adheres to the following requirements:",
+      "MustSatisfy": "The \"ContractCommitmentId\" property adheres to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -976,12 +982,12 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider supports *contract commitments*.",
+      "MustSatisfy": "\"ContractCommitmentId\" MUST be present in an Elements object within ContractApplied when the service provider supports *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentID"
+        "Path": "$.Elements[*].ContractCommitmentId"
       },
       "Condition": {},
       "Dependencies": []
@@ -1003,12 +1009,12 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MUST be of type String.",
+      "MustSatisfy": "\"ContractCommitmentId\" MUST be of type String.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathType",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentID",
+        "Path": "$.Elements[*].ContractCommitmentId",
         "ExpectedType": "String"
       },
       "Condition": {},
@@ -1031,12 +1037,12 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MUST conform to StringHandling requirements.",
+      "MustSatisfy": "\"ContractCommitmentId\" MUST conform to StringHandling requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONFormatString",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentID"
+        "Path": "$.Elements[*].ContractCommitmentId"
       },
       "Condition": {},
       "Dependencies": []
@@ -1058,7 +1064,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" nullability is defined as follows:",
+      "MustSatisfy": "\"ContractCommitmentId\" nullability is defined as follows:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -1096,7 +1102,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MUST be null when a *charge* is not related to a *contract commitment*.",
+      "MustSatisfy": "\"ContractCommitmentId\" MUST be null when a *charge* is not related to a *contract commitment*.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -1119,7 +1125,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MUST NOT be null when a *charge* is related to a *contract commitment*.",
+      "MustSatisfy": "\"ContractCommitmentId\" MUST NOT be null when a *charge* is related to a *contract commitment*.",
       "Keyword": "MUST NOT",
       "Requirement": {},
       "Condition": {},
@@ -1142,7 +1148,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "When \"ContractCommitmentID\" is not null, \"ContractCommitmentID\" adheres to the following additional requirements:",
+      "MustSatisfy": "When \"ContractCommitmentId\" is not null, \"ContractCommitmentId\" adheres to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -1172,7 +1178,7 @@
       "Condition": {
         "CheckFunction": "JSONCheckPathNotValue",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentID",
+        "Path": "$.Elements[*].ContractCommitmentId",
         "Value": null
       },
       "Dependencies": [
@@ -1200,7 +1206,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MUST be a unique identifier within the service provider.",
+      "MustSatisfy": "\"ContractCommitmentId\" MUST be a unique identifier within the service provider.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},
@@ -1223,7 +1229,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" SHOULD be a fully-qualified identifier.",
+      "MustSatisfy": "\"ContractCommitmentId\" SHOULD be a fully-qualified identifier.",
       "Keyword": "SHOULD",
       "Requirement": {},
       "Condition": {},
@@ -1246,12 +1252,12 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MUST have one and only one parent \"ContractID\".",
+      "MustSatisfy": "\"ContractCommitmentId\" MUST have one and only one parent \"ContractId\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathDistinctParent",
         "ColumnName": "ContractApplied",
-        "ChildPath": "$.Elements[*].ContractCommitmentID",
+        "ChildPath": "$.Elements[*].ContractCommitmentId",
         "ParentPath": "$.Elements[*].ContractId",
         "ExpectedCount": 1
       },
@@ -1275,12 +1281,12 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MUST be equal to ResourceID when ChargeCategory is \"Purchase\".",
+      "MustSatisfy": "\"ContractCommitmentId\" MUST be equal to ResourceId when ChargeCategory is \"Purchase\".",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathSameValue",
         "ColumnAName": "ContractApplied",
-        "PathA": "$.Elements[*].ContractCommitmentID",
+        "PathA": "$.Elements[*].ContractCommitmentId",
         "ColumnBName": "ResourceId",
         "PathB": null
       },
@@ -1308,7 +1314,7 @@
     "DatasetName": "Cost and Usage",
     "Type": "Dynamic",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentID\" MAY be equal to \"ContractID\".",
+      "MustSatisfy": "\"ContractCommitmentId\" MAY be equal to \"ContractId\".",
       "Keyword": "MAY",
       "Requirement": {},
       "Condition": {},
@@ -1389,12 +1395,12 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider associates the *charge's* value with one or more *contract commitments*.",
+      "MustSatisfy": "\"ContractCommitmentAppliedCost\" MUST be present in an Elements object within ContractApplied when the service provider associates the *charge's* value with one or more *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentID"
+        "Path": "$.Elements[*].ContractCommitmentId"
       },
       "Condition": {},
       "Dependencies": []
@@ -1674,12 +1680,12 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
+      "MustSatisfy": "\"ContractCommitmentAppliedQuantity\" MUST be present in an Elements object within ContractApplied when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentID"
+        "Path": "$.Elements[*].ContractCommitmentId"
       },
       "Condition": {},
       "Dependencies": []
@@ -1954,12 +1960,12 @@
     "DatasetName": "Cost and Usage",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "\"ContractCommitmentAppliedUnit\" MUST be present in a Cost and Usage *FOCUS Dataset* when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
+      "MustSatisfy": "\"ContractCommitmentAppliedUnit\" MUST be present in an Elements object within ContractApplied when the service provider associates the *charge's* quantity with one or more *contract commitments*.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentID"
+        "Path": "$.Elements[*].ContractCommitmentId"
       },
       "Condition": {},
       "Dependencies": []
