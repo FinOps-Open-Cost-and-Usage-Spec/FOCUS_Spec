@@ -87,7 +87,7 @@ The following architectural components define the core entities in FOCUS that sh
 
 For detailed guidance on working with each entity type, see the [Working with Entity Types](#working-with-entity-types) section below.
 
-#### 2. RMId – Apply RMId Naming Rules
+#### 2. RMId – Apply Requirements Model ID (RMId) Naming Rules
 
 Construct a unique identifier for the rule using the appropriate format based on entity type. This ensures traceability, uniqueness, and clarity.
 
