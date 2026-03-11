@@ -142,7 +142,7 @@ This guidance is supported by provider practices where CSPs handle transactions 
 
 ## Validation
 
-This guidance has been validated with implementations from Datadog, Grafana, and Neos using the [FOCUS Validator](https://github.com/finopsfoundation/focus_validator). The CSV examples in the [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp) have been tested against the FOCUS specification to ensure compliance.
+This guidance references implementations from Datadog, Grafana, and Neos. The CSV examples in the [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp) should be validated against the FOCUS specification using the [FOCUS Validator](https://github.com/finopsfoundation/focus_validator) before merging.
 
 For the full FOCUS specification and column definitions, see [focus.finops.org](https://focus.finops.org).
 
