@@ -138,7 +138,6 @@ Practitioners can address mismatches through the following approaches:
 5. **Documentation and Disclaimers**: Include disclaimers in reports noting that cross-provider totals may not match due to data source differences.
 
 This guidance is supported by provider practices where CSPs handle transactions but SaaS providers deliver usage data, leading to potential mismatches in unified views.
-This guidance is supported by provider practices where CSPs handle transactions but SaaS providers deliver usage data, leading to potential mismatches in unified views.
 
 ## Validation
 
