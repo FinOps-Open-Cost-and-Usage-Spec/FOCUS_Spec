@@ -227,7 +227,7 @@ For `Function: "Composite"` rules that don't match rules 1 or 2, examine the `De
 "CAU-SampleColumn-C-000-M": {
   "Function": "Composite",
   "Dependencies": [
-    "CAU-SampleDataset-C-010-M"  // This is Presence rule with Keyword: "MUST"
+    "CAU-SampleDataset-D-010-M"  // This is Presence rule with Keyword: "MUST"
   ]
 }
 ```
@@ -279,7 +279,7 @@ pytest specification/requirements_model/tests/test_suffix_by_keyword_and_scope.p
 | Composite with MUST/SHOULD Presence dep | `-M` |
 | Composite with other Presence dep | `-O` |
 | MUST/MUST NOT keyword (no scope) | `-M` |
-| MAY/SHOULD (no scope) | `-O` |
+| MAY/SHOULD/SHOULD NOT (no scope) | `-O` |
 
 #### 3. Function – Classify the rule type
 
@@ -469,6 +469,8 @@ Atomic rule checking column presence:
 ```
 
 #### 10. Type – Specify validation dependency classification
+
+Note: Do not confuse the Type property (Static/Dynamic) with the Function property value of "Type" (which refers to data types like Decimal or String).
 
 Indicates whether the rule can be validated using only the dataset itself or requires external dependencies.
 
@@ -751,11 +753,12 @@ The second phase of conversion is to take the table created in Stage 1 and creat
 Version-specific model content is organized under `specification/requirements_model/releases/X.Y/` where X.Y represents the model version (e.g., 1.2, 1.3). A `latest` symlink points to the most recent version.
 
 **Version-specific structure** (`releases/X.Y/`):
-- `cr_details.json`: Metadata like versioning for this model version
+- `model_details.json`: Metadata like versioning for this model version
 - `applicability_criteria.json`: Feature flags controlling rule application
 - `check_functions.json`: Logical validation functions and their arguments
 - `model_datasets.json`: Maps datasets (e.g. FOCUS) to rule sets
 - `model_rules/attributes/`: JSON files defining multiple `ModelRules` for a single attribute
+- `model_rules/datasets/<dataset_id>/`: JSON files defining multiple `ModelRules` for a single dataset
 - `model_rules/datasets/<dataset_id>/columns/`: JSON files defining multiple `ModelRules` for a single column
 - `model_rules/datasets/<dataset_id>/objects/`: JSON files defining multiple `ModelRules` for properties within JSON object columns
 
