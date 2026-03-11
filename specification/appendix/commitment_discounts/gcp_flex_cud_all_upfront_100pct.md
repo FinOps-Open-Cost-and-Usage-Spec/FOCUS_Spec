@@ -9,7 +9,6 @@
 | Hours Generated              | 24                 |
 | Annual Commitment            | &dollar;553,000.00 |
 | List Unit Price              | &dollar;94.70/hour |
-| Savings                      | 33%                |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/gcp_flex_cud_all_upfront_100pct.csv)
 

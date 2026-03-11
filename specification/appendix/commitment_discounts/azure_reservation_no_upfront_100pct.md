@@ -9,7 +9,6 @@
 | Hours Generated              | 24                  |
 | Annual Commitment            | &dollar;664,008.00  |
 | List Unit Price              | &dollar;113.70/hour |
-| Savings                      | 33%                 |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/azure_reservation_no_upfront_100pct.csv)
 

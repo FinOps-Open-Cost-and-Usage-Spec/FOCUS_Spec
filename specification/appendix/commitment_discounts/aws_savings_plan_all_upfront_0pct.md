@@ -9,7 +9,6 @@
 | Hours Generated              | 24                   |
 | Annual Commitment            | &dollar;353,000.00   |
 | List Unit Price              | &dollar;60.45/hour   |
-| Savings                      | 0%                   |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_all_upfront_0pct.csv)
 

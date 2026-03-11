@@ -9,7 +9,6 @@
 | Hours Generated              | 24 committed + 12 EC2 overflow + 12 other standard usage |
 | Annual Commitment            | &dollar;212,000.00                                       |
 | List Unit Price              | &dollar;36.30/hour                                       |
-| Savings                      | 33%                                                      |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_all_upfront_overage.csv)
 
