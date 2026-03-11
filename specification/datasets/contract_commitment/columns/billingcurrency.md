@@ -4,7 +4,7 @@
 
 ## Requirements
 
-BillingCurrency adheres to the following requirements:
+BillingCurrency MUST adhere to the following requirements:
 
 * BillingCurrency MUST be of type String.
 * BillingCurrency MUST conform to [StringHandling](#attributes.stringhandling) requirements.

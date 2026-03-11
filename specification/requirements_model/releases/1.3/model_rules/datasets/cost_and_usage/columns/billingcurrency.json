@@ -1,0 +1,215 @@
+{
+  "CAU-BillingCurrency-C-000-M": {
+    "Function": "Composite",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Billing Currency",
+    "EntityId": "BillingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingCurrency adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingCurrency-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingCurrency-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingCurrency-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingCurrency-C-004-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingCurrency-C-005-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingCurrency-C-006-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-035-M",
+        "CAU-BillingCurrency-C-001-M",
+        "CAU-BillingCurrency-C-002-M",
+        "CAU-BillingCurrency-C-003-M",
+        "CAU-BillingCurrency-C-004-M",
+        "CAU-BillingCurrency-C-005-M",
+        "CAU-BillingCurrency-C-006-M"
+      ]
+    }
+  },
+  "CAU-BillingCurrency-C-001-M": {
+    "Function": "Type",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Billing Currency",
+    "EntityId": "BillingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingCurrency MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingCurrency-C-002-M": {
+    "Function": "Format",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Billing Currency",
+    "EntityId": "BillingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingCurrency MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingCurrency-C-003-M": {
+    "Function": "Format",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Billing Currency",
+    "EntityId": "BillingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingCurrency MUST conform to CurrencyFormat requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatCurrency",
+        "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingCurrency-C-004-M": {
+    "Function": "Nullability",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Billing Currency",
+    "EntityId": "BillingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingCurrency MUST NOT be null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "BillingCurrency",
+        "Value": null
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingCurrency-C-005-M": {
+    "Function": "Validation",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Billing Currency",
+    "EntityId": "BillingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingCurrency MUST match the currency used in the invoice generated by the invoice issuer.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingCurrency-C-006-M": {
+    "Function": "Validation",
+    "Reference": "BillingCurrency",
+    "EntityType": "Column",
+    "EntityName": "Billing Currency",
+    "EntityId": "BillingCurrency",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingCurrency MUST be expressed in national currency (e.g., USD, EUR).",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckNationalCurrency",
+        "ColumnName": "BillingCurrency"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
