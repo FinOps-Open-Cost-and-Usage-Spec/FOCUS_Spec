@@ -85,6 +85,8 @@ The following architectural components define the core entities in FOCUS that sh
 | `Object`           | JSONObject content of a column                      | Data type, format, constraints            | Object property `name` MUST be of type `String`                                                          |
 | `Attribute`        | Shared formatting/logic constraint                  | Formatting consistency across columns     | All `String` columns MUST conform to `StringHandling` requirements                                              |
 
+For detailed guidance on working with each entity type, see the [Working with Entity Types](#working-with-entity-types) section below.
+
 #### 2. RMID – Apply RMID Naming Rules
 
 Construct a unique identifier for the rule using the format:  
@@ -154,6 +156,131 @@ The `NNN` numbering is only unique within each dataset namespace. For example, `
 
 This namespacing approach prevents naming conflicts between datasets and provides clear traceability of which dataset a requirement belongs to.
 
+#### Suffix Determination Logic
+
+The suffix (`-M`, `-O`, or `-C`) at the end of each RMID is determined through a precedence-based algorithm that evaluates scope, dependencies, and normative keywords. Understanding this logic is critical for correctly constructing RMIDs.
+
+##### Precedence Hierarchy
+
+The suffix is determined by applying the following rules in order. Once a rule matches, the suffix is set and no further rules are evaluated:
+
+**1. Scope Precedence (Always `-C`)**
+
+If a rule has **any** of the following scope indicators, it **MUST** use the `-C` suffix:
+- Non-empty `ApplicabilityCriteria` array (e.g., `["COMMITMENT_DISCOUNT_SUPPORTED"]`)
+- Non-empty `Condition` object (row-level conditions)
+- Conditional keywords in `MustSatisfy` text: "when", "unless", or "where"
+
+**Examples:**
+
+```json
+// ApplicabilityCriteria present → -C
+"CAU-AvailabilityZone-C-000-C": {
+  "ApplicabilityCriteria": ["AVAILABILITY_ZONE_SUPPORTED"],
+  ...
+}
+
+// Condition present → -C
+"CCT-ContractCommitmentQuantity-C-004-C": {
+  "Condition": {
+    "CheckFunction": "CheckValue",
+    "ColumnName": "ContractCommitmentCategory",
+    "Value": "Usage"
+  },
+  ...
+}
+
+// "when" in MustSatisfy → -C
+"MustSatisfy": "ConsumedQuantity MUST be null when ChargeCategory is not 'Usage'."
+```
+
+**2. Composite Rules with All-Scoped Requirements (→ `-C`)**
+
+For `Function: "Composite"` rules where **ALL** rules referenced in the `Requirement` field have scope (per rule 1), the composite rule **MUST** use `-C` suffix.
+
+**Example:**
+```json
+// All child rules have ApplicabilityCriteria → Parent gets -C
+"CAU-SampleColumn-C-003-C": {
+  "Function": "Composite",
+  "Requirement": {
+    "CheckFunction": "AND",
+    "Items": [
+      {"CheckFunction": "CheckModelRule", "ModelRuleId": "CAU-SampleColumn-C-004-C"},
+      {"CheckFunction": "CheckModelRule", "ModelRuleId": "CAU-SampleColumn-C-005-C"}
+    ]
+  }
+}
+```
+
+**3. Composite Rules with Presence Dependencies (→ `-M` or `-O`)**
+
+For `Function: "Composite"` rules that don't match rules 1 or 2, examine the `Dependencies` array for rules with `Function: "Presence"`:
+
+- If **ANY** Presence dependency has `Keyword` in `{"MUST", "SHOULD"}` → use `-M` suffix
+- Else if **ANY** Presence dependency has other keyword → use `-O` suffix
+- If no Presence dependencies match, continue to rule 4
+
+**Example:**
+```json
+// Has Presence dependency with MUST → -M
+"CAU-SampleColumn-C-000-M": {
+  "Function": "Composite",
+  "Dependencies": [
+    "CAU-SampleDataset-C-010-M"  // This is Presence rule with Keyword: "MUST"
+  ]
+}
+```
+
+**4. Base Keyword Handling (No scope, non-composite or no special dependencies)**
+
+For rules that don't match rules 1-3, use the normative `Keyword` field:
+- `MUST` or `MUST NOT` → `-M` suffix
+- `MAY`, `SHOULD`, `SHOULD NOT` → `-O` suffix
+
+**Examples:**
+```json
+// MUST keyword, no scope → -M
+"CAU-BilledCost-C-001-M": {
+  "Keyword": "MUST",
+  "MustSatisfy": "BilledCost MUST be of type Decimal.",
+  "ApplicabilityCriteria": [],
+  "Condition": {}
+}
+
+// MAY keyword, no scope → -O
+"InvoiceHandling-A-003-O": {
+  "Keyword": "MAY",
+  "MustSatisfy": "Informational line items... MAY be excluded.",
+  "ApplicabilityCriteria": [],
+  "Condition": {}
+}
+```
+
+##### Validation
+
+The test suite validates suffix correctness in `test_suffix_by_keyword_and_scope.py`. This test:
+- Checks all rules for proper suffix assignment
+- Fails if a rule does not end with the correct suffix
+
+When creating new rules, run the test suite to validate your suffix choices:
+```bash
+pytest specification/requirements_model/tests/test_suffix_by_keyword_and_scope.py
+```
+
+##### Quick Reference
+
+| Condition | Suffix |
+|-----------|--------|
+| Has ApplicabilityCriteria | `-C` |
+| Has non-empty Condition | `-C` |
+| "when"/"unless"/"where" in MustSatisfy | `-C` |
+| Composite with all scoped children | `-C` |
+| Composite with MUST/SHOULD Presence dep | `-M` |
+| Composite with other Presence dep | `-O` |
+| MUST/MUST NOT keyword (no scope) | `-M` |
+| MAY/SHOULD (no scope) | `-O` |
+
 #### 3. Function – Classify the rule type
 
 Categorize the type of logic the rule enforces. This helps determine how it should be validated.
@@ -161,8 +288,8 @@ Categorize the type of logic the rule enforces. This helps determine how it shou
 - Use `Presence` for rules requiring the column’s inclusion in the dataset.
 - Use `Type` to enforce primitive types like `Decimal`, `String`, `Boolean`.
 - Use `Format` for pattern-based constraints (e.g., `DateTimeFormat`, `UUID`, `NumericFormat`).
-- Use `Nullability` to define conditional nullability rules (e.g., "MUST NOT be null when condition X" or "MAY be null when condition Y").
-- Use `Validation` for business logic or fixed-value conditions not covered above, including unconditional NOT NULL rules.
+- Use `Nullability` to define nullability rules, both conditional (e.g., "MUST NOT be null when condition X") and unconditional (e.g., "MUST NOT be null").
+- Use `Validation` for business logic or fixed-value conditions not covered above.
 - Use `Composite` to group multiple RMIDs with logical expressions (`AND` / `OR` / `NOT`).
 
 **Examples**  
@@ -192,13 +319,12 @@ Determine the obligation level using the normative keyword from the source text,
 
 - Identify the first normative keyword present in the requirement:
   - `MUST`, `MUST NOT` → Mandatory
-  - `SHOULD`, `SHOULD NOT` → Optional (unless conditional)
+  - `SHOULD`, `SHOULD NOT` → Optional
   - `MAY` → Optional
 - Normalize the keyword to uppercase.
 - Only one keyword should be assigned per RM Item.
 - For composite rules, choose the highest obligation level from constituent RMIDs  
   (e.g., prioritize `MUST` > `SHOULD` > `MAY`).
-- If `SHOULD` is used conditionally, treat the rule as `Conditional` and define the `Condition`.
 
 **Example**  
 A rule states: “Rows SHOULD include `SkuId` when `ChargeCategory = Purchase`.”  
@@ -206,12 +332,40 @@ A rule states: “Rows SHOULD include `SkuId` when `ChargeCategory = Purchase`.�
 
 #### 6. Applicability Criteria – Determine if the rule should be evaluated
 
-Specify provider capability flags that determine when the rule applies. Use keys defined in the ApplicabilityCriteria section of the model.
+Specify provider capability flags that determine when the rule applies. These keys are defined in the `applicability_criteria.json` file for each model version.
 
 - Use an empty list `[]` when no applicability gating is required
 - Use array of criteria keys when rule depends on provider capabilities  
   (e.g., `["COMMITMENT_DISCOUNT_SUPPORTED"]`, `["CAPACITY_RESERVATION_SUPPORTED"]`)
-- Common criteria: `REGION_SUPPORTED`, `TAGGING_SUPPORTED`, `SUB_ACCOUNT_SUPPORTED`
+
+**ApplicabilityCriteria Reference:**
+
+The following provider capability flags are defined in the model. Use these to gate rules that depend on specific data generator capabilities.
+
+**Location**: `specification/requirements_model/releases/X.Y/applicability_criteria.json` (or `releases/latest/applicability_criteria.json` for current version)
+
+| Key | Description |
+|-----|-------------|
+| `ACCOUNT_NAMING_SUPPORTED` | Provider supports account naming features |
+| `AVAILABILITY_ZONE_SUPPORTED` | Provider supports availability zone identification |
+| `BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED` | Billing is based on provisioned resources |
+| `CAPACITY_RESERVATION_SUPPORTED` | Provider supports capacity reservations |
+| `COMMITMENT_DISCOUNT_SUPPORTED` | Provider supports commitment-based discounts |
+| `CONTRACT_COMMITMENTS_SUPPORTED` | Provider supports contract commitments |
+| `DATA_GENERATOR_SPLIT_COST_ALLOCATION_SUPPORTED` | Data generator performs split cost allocation |
+| `MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED` | Provider supports multiple billing account types |
+| `MULTIPLE_PRICING_CATEGORIES_SUPPORTED` | Provider supports multiple pricing categories |
+| `MULTIPLE_SUB_ACCOUNT_TYPES_SUPPORTED` | Provider supports multiple sub-account types |
+| `NEGOTIATED_PRICING_SUPPORTED` | Provider supports negotiated pricing |
+| `PRICING_BILLING_CURRENCY_DIFFERENCES_SUPPORTED` | Pricing and billing currencies can differ |
+| `PUBLIC_PRICE_LIST_SUPPORTED` | Provider publishes a public price list |
+| `REGION_SUPPORTED` | Provider supports regional identification |
+| `RESOURCE_TYPE_ASSIGNMENT_SUPPORTED` | Provider supports resource type assignment |
+| `SUB_ACCOUNT_SUPPORTED` | Provider supports sub-accounts |
+| `TAGGING_SUPPORTED` | Provider supports resource tagging |
+| `UNIT_PRICING_SUPPORTED` | Provider supports unit-based pricing |
+| `USAGE_MEASUREMENT_SUPPORTED` | Provider measures and reports usage |
+| `VIRTUAL_CURRENCY_SUPPORTED` | Provider uses virtual currency |
 
 **Example**  
 A rule requires capacity reservation support:  
@@ -331,12 +485,30 @@ Rule validates against provider catalog: `Type = Dynamic`
 
 Record the version of the FOCUS specification in which this rule was introduced.
 
-- For all rules generated from FOCUS v1.2, set this field to `"1.2"`.
-- Do not infer or omit — this value is fixed for each release of the specification.
-- This field enables forward/backward compatibility during conformance testing.
+- Set this field to the model version where the rule first appears (e.g., `"1.2"`, `"1.3"`)
+- This value is fixed for each release and should not be changed once set
+- This field enables forward/backward compatibility during conformance testing and version-specific rule filtering
+
+**Version-Specific Model Structure:**
+
+The Requirements Model uses a multi-version structure under `specification/requirements_model/releases/`:
+- Each version has its own directory: `releases/1.2/`, `releases/1.3/`, etc.
+- The `releases/latest/` symlink points to the most recent model version
+- When creating new rules, work in the appropriate version directory (typically `releases/latest/`)
+- The build process generates separate `build/model-X.Y.json` files for each version
+- Tests are parametrized to run against all model versions
+
+**When working with versions:**
+- New rules added in a release should set `ModelVersionIntroduced` to that release version
+- Rules inherited from previous versions keep their original `ModelVersionIntroduced` value
+- The test suite validates rules against their declared version compatibility
 
 **Example**  
-→ `ModelVersionIntroduced = 1.2`
+New rule added in FOCUS v1.3:  
+→ `ModelVersionIntroduced = "1.3"`
+
+Rule originally from FOCUS v1.2 (unchanged):  
+→ `ModelVersionIntroduced = "1.2"`
 
 #### 12. Status – Set rule lifecycle status
 
@@ -366,7 +538,7 @@ For Dataset, Column, and Object entity types, these fields establish the relatio
 
 - `DatasetId` must match the identifier of the dataset the entity belongs to
 - `DatasetName` must match the human-readable name of the dataset
-- Both fields are required for all Column and Dataset entity types
+- Both fields are required for Dataset, Column, and Object entity types
 - These fields ensure proper dataset-rule association and enable dataset-specific validation
 
 **Example**  
@@ -385,9 +557,14 @@ The Dependencies array lists prerequisite rules that must be evaluated before th
 - When logical evaluation order matters (e.g., type checking before format checking)
 - When your rule builds on another rule's validation
 
+**Special Requirement for Column Root Composites:**
+
+Column root composite rules (`-C-000-M` or `-C-000-C`) **MUST** include their Dataset presence rule as the first dependency. This ensures the dataset exists and contains the column before any column-level validation occurs.
+
 **Ordering Requirements:**
 
 - Dependencies must be listed in ascending order by their `Order` field values
+- For Column root composites, the Dataset presence rule comes first
 - This ensures rules are evaluated in the correct sequence
 - Automated tests validate dependency ordering
 
@@ -396,7 +573,19 @@ The Dependencies array lists prerequisite rules that must be evaluated before th
 Unconditional rule with no dependencies:
 → `Dependencies = []`
 
-Nullability rule that depends on ChargeCategory column:
+Column root composite with Dataset presence rule first:
+```json
+"CAU-ChargeCategory-C-000-M": {
+  "Dependencies": [
+    "CAU-CostAndUsage-D-008-M",
+    "CAU-ChargeCategory-C-001-M",
+    "CAU-ChargeCategory-C-002-M",
+    "CAU-ChargeCategory-C-003-M"
+  ]
+}
+```
+
+Nullability rule that depends on another column:
 ```json
 "Dependencies": [
   "CAU-ChargeCategory-C-000-M"
@@ -431,6 +620,127 @@ Rule removed in version 1.4:
 → `Status = "Removed"`, `ModelVersionRemoved = "1.4"`
 
 **Note:** Deprecated rules should not have ModelVersionRemoved populated until they are actually removed in a future version.
+
+### Working with Entity Types
+
+This section provides detailed guidance for creating model rules for each entity type in FOCUS.
+
+#### Working with Attribute Entity Types
+
+Attribute entity types define cross-cutting requirements that apply to multiple columns across datasets. Attributes ensure consistency in formatting, handling, and validation logic.
+
+**What They Represent:**
+- Cross-column formatting rules (e.g., `NumericFormat`, `StringHandling`, `DateTimeFormat`)
+- Shared business logic patterns (e.g., `DiscountHandling`, `InvoiceHandling`)
+- Common data type constraints (e.g., `CurrencyFormat`, `UnitFormat`)
+
+**Key Characteristics:**
+
+1. **Naming Convention**: Attribute EntityIds use descriptive names (e.g., `NumericFormat`, `StringHandling`, `DiscountHandling`)
+2. **RMID Format**: Use `-A-` in EntityType position: `NumericFormat-A-001-M`
+3. **No DatasetType**: Attributes are not dataset-specific, so RMID starts with the attribute name
+4. **Referenced by Columns**: Column rules reference attribute rules to inherit common requirements
+
+**Creating Attribute Rules:**
+
+1. Extract attribute requirements from the FOCUS specification (attributes are defined by the spec)
+2. Create attribute composite rule (`-A-000-M`) grouping all related attribute requirements from the spec
+3. Create individual atomic rules for each specific constraint defined in the spec
+4. Column rules reference these attribute rules using `CheckFunction: "CheckModelRule"` with the attribute RMID
+
+**File Organization:**
+
+Attribute rules are stored in: `specification/requirements_model/releases/X.Y/model_rules/attributes/`
+
+#### Working with Dataset Entity Types
+
+Dataset entity types define requirements for entire datasets, including structural presence, versioning, and mandatory column requirements.
+
+**What They Represent:**
+- Dataset-level presence validation
+- Dataset versioning and metadata requirements
+- Mandatory column coverage for the dataset
+- Dataset-wide configuration rules
+
+**Key Characteristics:**
+
+1. **Naming Convention**: Dataset EntityIds match the dataset identifier (e.g., `CostAndUsage`, `ContractCommitment`)
+2. **RMID Format**: Use `-D-` in EntityType position: `CAU-CostAndUsage-D-001-M`
+3. **Root Composite Pattern**: Dataset root composite (`-D-000-M`) groups all dataset-level requirements
+4. **Dataset Coverage**: Dataset rules typically reference all mandatory column composite rules
+
+**Creating Dataset Rules:**
+
+1. Create dataset root composite (`-D-000-M`) as the entry point for all dataset requirements
+2. Reference all mandatory column composites in the dataset's Dependencies
+3. Add dataset-level validation rules (metadata, versioning, coverage)
+4. Ensure proper ordering of dependencies
+
+**File Organization:**
+
+Dataset rules are stored in: `specification/requirements_model/releases/X.Y/model_rules/datasets/<dataset_id>/`
+
+#### Working with Column Entity Types
+
+Column entity types define requirements for individual columns within a dataset, including presence, data type, format, nullability, and value constraints.
+
+**What They Represent:**
+- Column presence requirements
+- Data type validation (Decimal, String, Boolean, DateTime)
+- Format constraints (conformance to attributes like NumericFormat)
+- Nullability rules (conditional and unconditional)
+- Allowed value constraints
+
+**Key Characteristics:**
+
+1. **Naming Convention**: Column EntityIds match the column identifier in PascalCase (e.g., `BilledCost`, `ChargeCategory`)
+2. **RMID Format**: Use `-C-` in EntityType position: `CAU-BilledCost-C-001-M`
+3. **Root Composite Pattern**: Column root composite (`-C-000-M` or `-C-000-C`) groups all column requirements
+4. **Common Rule Sequence**: Presence → Type → Format → Nullability → Validation
+
+**Creating Column Rules:**
+
+1. Create column root composite (`-C-000-M` or `-C-000-C`) grouping all column requirements
+2. Add Dataset presence rule as first dependency in the root composite Dependencies array
+3. Add Presence rule if column is required in the dataset
+4. Add Type rule defining the data type
+5. Add Format rule referencing applicable attribute (e.g., `NumericFormat`, `StringHandling`)
+6. Add Nullability or Validation rules for null handling and value constraints
+7. Reference attribute rules where applicable for common formatting
+
+**File Organization:**
+
+Column rules are stored in: `specification/requirements_model/releases/X.Y/model_rules/datasets/<dataset_id>/columns/`
+
+#### Working with Object Entity Types
+
+Object entity types validate the internal structure and properties of JSON object columns. While Column entity types validate the column itself (presence, type, nullability), Object entity types validate the **content** of JSON object values.
+
+**What They Represent:**
+- JSON object content validation (required keys, property types, property constraints)
+- Column entity type (`-C-`) handles column-level validation (presence, data type, nullability)
+- Object entity type (`-O-`) handles JSON object structure validation
+
+**Key Characteristics:**
+
+1. **Naming Convention**: Object EntityIds end with "Object" suffix (e.g., `AllocatedMethodDetailsObject`, `ContractAppliedObject`)
+2. **RMID Format**: Use `-O-` in EntityType position: `CAU-AllocatedMethodDetailsObject-O-001-M`
+3. **Root Composite Pattern**: 
+   - Nullable columns: Use `-O-000-C` with Condition checking column is not null
+   - NOT NULL columns: Use `-O-000-M` with empty Condition `{}`
+4. **Conditional Application**: Object rules only apply when an object value exists (when column is not null)
+
+**Creating Object Rules:**
+
+1. Create Column entity rules first for the column itself
+2. Create Object root composite (`-O-000-C` or `-O-000-M`) that references all child Object rules
+3. Create individual Object rules for each property requirement from the specification
+4. Copy MustSatisfy text exactly from the specification
+5. Match EntityId to column name (e.g., `AllocatedMethodDetails` → `AllocatedMethodDetailsObject`)
+
+**File Organization:**
+
+Object rules are stored in: `specification/requirements_model/releases/X.Y/model_rules/datasets/<dataset_id>/objects/`
 
 ### Stage 2
 
@@ -674,11 +984,11 @@ Base rule for a column which links all related Model Rules for the column.
 
 ### NOT NULL requirement rule
 
-Common rule for columns with a NOT NULL requirement. Can also be used when there is a NOT NULL condition.
+Common rule for columns with an unconditional NOT NULL requirement.
 
 ```json
   "CAU-SampleColumn-C-002-M": {
-    "Function": "Validation",
+    "Function": "Nullability",
     "Reference": "SampleColumn",
     "EntityType": "Column",
     "EntityId": "SampleColumn",
