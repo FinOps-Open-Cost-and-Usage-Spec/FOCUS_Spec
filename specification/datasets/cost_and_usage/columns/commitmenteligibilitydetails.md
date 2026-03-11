@@ -10,8 +10,7 @@ CommitmentEligibilityDetails column MUST adhere to the following requirements:
 * CommitmentEligibilityDetails MUST be of type String.
 * CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* CommitmentEligibilityDetails MUST be null when a charge is not eligible for any commitment program.
-* CommitmentEligibilityDetails MUST be populated when a charge is eligible for a commitment program, regardless of whether a commitment was actually applied to the line item.
+* CommitmentEligibilityDetails MUST NOT be null when a charge is eligible for a commitment program, regardless of whether a commitment was actually applied to the line item.
 * CommitmentEligibilityDetails MUST NOT consider transient account configurations or quotas that might temporarily prevent purchase or participation in a commitment program.
 * CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
 * CommitmentEligibilityDetails SHOULD include negotiated commitment programs for which the usage is eligible.
