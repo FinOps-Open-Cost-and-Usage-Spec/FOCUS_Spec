@@ -69,7 +69,6 @@ The following critical rules apply to commitment discount data:
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
 * **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-* **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
 * **Standard pricing rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
