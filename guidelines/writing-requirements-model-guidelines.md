@@ -769,10 +769,10 @@ Version-specific model content is organized under `specification/requirements_mo
 #### Steps
 
 - Assign the Action Item (AI) to yourself to signal that you are working on the item (See: [GitHub Issues](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues))
-- Open a branch with the source of git feature branch for the development work in progress for your development work.
+- Open a branch with the source of git feature branch for your development work.
 - Pull your branch to your development environment and perform all work specific to this AI in this branch.
 - Navigate to the appropriate model version directory under `specification/requirements_model/releases/X.Y/` (or use the `latest` symlink for current development)
-- Add a file into the relevant folder `model_rules/attributes/` or `model_rules/datasets/<dataset_id>/columns/` with name `entity-name`.json (example: availabilityzone.json)
+- Add a file into the relevant folder `model_rules/attributes/`, `model_rules/datasets/<dataset_id>/columns/`, or `model_rules/datasets/<dataset_id>/objects/` with name `entity-name.json` (example: availabilityzone.json)
 - Write your rules into this file based on the rules in the Stage 1 table from the AI ticket (See: [ModelRule Templates](#modelrule-templates) for helpers)
 - If you need to add new ApplicabilityCriteria add them to `applicability_criteria.json` in the version directory, avoiding duplication
 - If you need to add new CheckFunctions add them to `check_functions.json` in the version directory, avoiding duplication
@@ -1003,7 +1003,7 @@ Common rule for columns with an unconditional NOT NULL requirement.
     "Type": "Static",
     "Order": 20,
     "ValidationCriteria": {
-      "MustSatisfy": "MUST NOT be null",
+      "MustSatisfy": "SampleColumn MUST NOT be null",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
