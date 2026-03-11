@@ -147,5 +147,5 @@ This guidance is supported by provider practices where CSPs handle transactions 
 
 This guidance has been validated with implementations from Datadog, Grafana, and Neos using the [FOCUS Validator](https://github.com/finopsfoundation/focus_validator). The CSV examples in the [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp) have been tested against the FOCUS specification to ensure compliance.
 
-For further details, refer to the related GitHub issue: [AI] Draft Marketplace Multi-Provider Scenario Guidance (Appendix) [#1896](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1896). It contributes to the broader effort in [FR] Clarify definitions of EffectiveCost vs BilledCost across providers [#982](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/982), specifically supporting Milestone 3 scenario-based guidance for marketplace purchases.
+For the full FOCUS specification and column definitions, see [focus.finops.org](https://focus.finops.org).
 
