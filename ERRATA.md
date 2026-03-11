@@ -43,3 +43,26 @@ All issues are considered clarifications to intended language and are not meant 
 | :--- | :--- | :--- | :--- | :--- |
 | **#7: Missing Ignored Key** | `contractappliedobject.json` | The `IgnoreKeys` array omitted `"ContractId"`, causing valid custom key checks to fail. | `"ContractId"` was added to the `IgnoreKeys` array. | Issue: [#2048](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2048)<br>PR: [#2052](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2052) |
 | **#8: Incorrect JSON Path targets** | `contractappliedobject.json` | The `Path` targeted `"$.Elements[*].ContractCommitmentId"` for all three metric presence checks. | The `Path` was corrected to target the respective `Cost`, `Quantity`, and `Unit` JSON properties. | Issue: [#2048](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2048)<br>PR: [#2052](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/2052) |
+
+---
+
+## Version 1.2
+
+This section outlines discrepancies found in the enablement artifacts (Requirements Model) for the 1.2 release of the FOCUS specification. The underlying specification text for version 1.2 remains accurate and unchanged.
+
+### A. Schema & Validation Logic Corrections
+*No errata reported for this release.*
+
+### B. Terminology & Reference Corrections
+*No errata reported for this release.*
+
+### C. Typographical Errors
+*No errata reported for this release.*
+
+### D. Requirements Model Corrections
+*The following corrections address bugs found strictly within the FOCUS 1.2 Requirements Model validation rules.*
+
+| Issue | File / Rule | Original | Corrected | Tracking |
+| :--- | :--- | :--- | :--- | :--- |
+| **#1: Incorrect argument name** | `resourcetype.json` | The condition function incorrectly used the argument `"CheckCondition": "ResourceId"`. | The argument was corrected to the standard `"ColumnName": "ResourceId"`. | Issue: [#1824](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1824)<br>PR: [#1956](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1956) |
+| **#2: Incorrect nullability function** | `commitmentdiscountstatus.json` | The requirement used `CheckNotValue` to ensure the status was null, which caused valid nulls to fail. | The function was corrected to `CheckValue` to properly enforce the `MUST be null` requirement. | Issue: [#1825](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1825)<br>PR: [#1956](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1956) |
