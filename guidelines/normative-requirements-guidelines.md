@@ -811,15 +811,15 @@ This structured grouping improves clarity, consistency, and maintainability acro
    1. **Global FOCUS Column Requirements:** Applicable to all FOCUS columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
    2. **Qualified FOCUS Column Requirements:** Applicable to a subset of FOCUS columns that declare conformance to the Attribute and are identified through a qualifier
    3. **Specific FOCUS Column Requirements:** Applicable to a specific FOCUS column, identified explicitly by Column ID.
-3. **Custom Column Attribute Requirements:**
-   1. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
-   2. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
-4. **Sub-element Attribute Requirements:** Applicable to structural sub-elements within Columns that declare conformance to the Attribute.
+3. **FOCUS Column sub-element Attribute Requirements:** Applicable to structural sub-elements within columns that declare conformance to the Attribute.
    1. **Elements (Objects) in Columns containing JsonObjectFormat values**
    2. **Keys in Objects in Columns containing JsonObjectFormat values**
    3. **Key values in Objects in Columns containing JsonObjectFormat values**
    4. **Keys in Columns containing Key-Value pair format values**
    5. **Key values in Columns containing Key-Value pair format values**
+4. **Custom Column Attribute Requirements:**
+   1. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
+   2. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
 
 ### 5. Ordering of Attribute Requirements within Groups
 
