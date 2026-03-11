@@ -17,25 +17,292 @@
       "Dataset Requirements",
       "Attribute Requirements"
     ],
-    "atoms_in_scope_count": 0
+    "atoms_in_scope_count": 10
   },
   "0_outline_root": "ROOT: Billing Period > Requirements",
-  "0_outline_lines": [],
+  "0_outline_lines": [
+    "L027: \"BillingPeriod MUST adhere to the following requirements:\"",
+    "  L029: \"BillingPeriod MUST be present if the invoice issuer supports payable invoices.\"",
+    "  L030: \"The presence of columns in BillingPeriod MUST adhere to the following requirements:\"",
+    "    L031: \"BillingPeriod MUST include [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).\"",
+    "    L032: \"BillingPeriod MUST include [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).\"",
+    "    L033: \"BillingPeriod MUST include [BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated).\"",
+    "    L034: \"BillingPeriod MUST include [BillingPeriodStart](#datasets.billingperiod.billingperiodstart).\"",
+    "    L035: \"BillingPeriod MUST include [BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus).\"",
+    "    L036: \"BillingPeriod MUST include [InvoiceIssuerName](#datasets.billingperiod.invoiceissuername).\"",
+    "  L037: \"BillingPeriod MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.\""
+  ],
   "0_outline_summary": {
-    "node_count": 0,
-    "leaf_count": 0,
-    "lead_in_count": 0,
-    "max_depth": 0,
-    "max_indent_level": 0,
-    "root_children_count": 0,
-    "keyword_distribution": {},
-    "lead_ins": []
+    "node_count": 10,
+    "leaf_count": 8,
+    "lead_in_count": 2,
+    "max_depth": 2,
+    "max_indent_level": 1,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 10
+    },
+    "lead_ins": [
+      {
+        "ref": "L027",
+        "text_preview": "BillingPeriod MUST adhere to the following requirements:",
+        "children": 3
+      },
+      {
+        "ref": "L030",
+        "text_preview": "The presence of columns in BillingPeriod MUST adhere to the following requirements:",
+        "children": 6
+      }
+    ]
   },
   "structure": {
     "root": {
       "node_id": "R000",
       "kind": "root",
-      "children": []
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L027",
+            "text": "BillingPeriod MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Billing Period",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L029",
+                "text": "BillingPeriod MUST be present if the invoice issuer supports payable invoices.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L030",
+                "text": "The presence of columns in BillingPeriod MUST adhere to the following requirements:",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": true
+                }
+              },
+              "children": [
+                {
+                  "node_id": "R004",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R004",
+                    "order": 4,
+                    "ref": "L031",
+                    "text": "BillingPeriod MUST include [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Billing Period",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R005",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R005",
+                    "order": 5,
+                    "ref": "L032",
+                    "text": "BillingPeriod MUST include [BillingPeriodEnd](#datasets.billingperiod.billingperiodend).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Billing Period",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R006",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R006",
+                    "order": 6,
+                    "ref": "L033",
+                    "text": "BillingPeriod MUST include [BillingPeriodLastUpdated](#datasets.billingperiod.billingperiodlastupdated).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Billing Period",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R007",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R007",
+                    "order": 7,
+                    "ref": "L034",
+                    "text": "BillingPeriod MUST include [BillingPeriodStart](#datasets.billingperiod.billingperiodstart).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Billing Period",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R008",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R008",
+                    "order": 8,
+                    "ref": "L035",
+                    "text": "BillingPeriod MUST include [BillingPeriodStatus](#datasets.billingperiod.billingperiodstatus).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Billing Period",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R009",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R009",
+                    "order": 9,
+                    "ref": "L036",
+                    "text": "BillingPeriod MUST include [InvoiceIssuerName](#datasets.billingperiod.invoiceissuername).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Billing Period",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "R010",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R010",
+                "order": 10,
+                "ref": "L037",
+                "text": "BillingPeriod MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
     }
   },
   "debug": {
