@@ -407,6 +407,7 @@
         "Path": "$.Elements[*]",
         "Prefix": "x_",
         "IgnoreKeys": [
+          "ContractId",
           "ContractCommitmentId",
           "ContractCommitmentAppliedCost",
           "ContractCommitmentAppliedQuantity",
@@ -1400,7 +1401,7 @@
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentId"
+        "Path": "$.Elements[*].ContractCommitmentAppliedCost"
       },
       "Condition": {},
       "Dependencies": []
@@ -1685,7 +1686,7 @@
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentId"
+        "Path": "$.Elements[*].ContractCommitmentAppliedQuantity"
       },
       "Condition": {},
       "Dependencies": []
@@ -1965,7 +1966,7 @@
       "Requirement": {
         "CheckFunction": "JSONCheckPathKeyExists",
         "ColumnName": "ContractApplied",
-        "Path": "$.Elements[*].ContractCommitmentId"
+        "Path": "$.Elements[*].ContractCommitmentAppliedUnit"
       },
       "Condition": {},
       "Dependencies": []
