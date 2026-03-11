@@ -254,9 +254,11 @@ For `Function: "Composite"` rules that don't match rules 1 or 2, examine the `De
 // Has Presence dependency with MUST → -M
 "CAU-SampleColumn-C-000-M": {
   "Function": "Composite",
-  "Dependencies": [
-    "CAU-SampleDataset-D-010-M"  // This is Presence rule with Keyword: "MUST"
-  ]
+  "ValidationCriteria": {
+    "Dependencies": [
+      "CAU-SampleDataset-D-010-M"  // This is Presence rule with Keyword: "MUST"
+    ]
+  }
 }
 ```
 
@@ -957,8 +959,8 @@ Base rule for a column which links all related Model Rules for the column.
     "Status": "Active",
     "ApplicabilityCriteria": [],
     "DatasetType": "CAU",
-    "DatasetId": "CostAndUsage",
-    "DatasetName": "Cost and Usage",
+    "DatasetId": "SampleDataset",
+    "DatasetName": "Sample Dataset",
     "Type": "Static",
     "Order": 0,
     "ValidationCriteria": {
