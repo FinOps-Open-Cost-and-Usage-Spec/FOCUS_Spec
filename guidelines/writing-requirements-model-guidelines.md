@@ -97,13 +97,13 @@ Construct a unique identifier for the rule using the appropriate format based on
 `AttributeName-EntityType-NNN-Level`
 
 **For Datasets, Columns, and Objects:**  
-`DatasetType-EntityName-EntityType-NNN-Level`
+`DatasetType-EntityId-EntityType-NNN-Level`
 
 ##### RMId Component Definitions
 
 - `AttributeName`: Name of the attribute (e.g., `NumericFormat`, `StringHandling`, `InvoiceHandling`)
 - `DatasetType`: Short identifier for the dataset (e.g., `CAU`, `CCT`)
-- `EntityName`: UpperCamelCase identifier for the entity (e.g., `ListUnitPrice`, `CostAndUsage`, `AllocatedMethodDetailsObject`)
+- `EntityId`: UpperCamelCase identifier for the entity (e.g., `ListUnitPrice`, `CostAndUsage`, `AllocatedMethodDetailsObject`)
 - `EntityType:`
   - `D` = Dataset  
   - `C` = Column
@@ -199,10 +199,11 @@ If a rule has **any** of the following scope indicators, it **MUST** use the `-C
 
 // Condition present → -C
 "CCT-ContractCommitmentQuantity-C-004-C": {
-  "Condition": {
-    "CheckFunction": "CheckValue",
-    "ColumnName": "ContractCommitmentCategory",
-    "Value": "Usage"
+  "ValidationCriteria": {
+    "Condition": {
+      "CheckFunction": "CheckValue",
+      "ColumnName": "ContractCommitmentCategory",
+      "Value": "Usage"
   },
   ...
 }
@@ -220,12 +221,20 @@ For `Function: "Composite"` rules where **ALL** rules referenced in the `Require
 // All child rules have ApplicabilityCriteria → Parent gets -C
 "CAU-SampleColumn-C-003-C": {
   "Function": "Composite",
-  "Requirement": {
-    "CheckFunction": "AND",
-    "Items": [
-      {"CheckFunction": "CheckModelRule", "ModelRuleId": "CAU-SampleColumn-C-004-C"},
-      {"CheckFunction": "CheckModelRule", "ModelRuleId": "CAU-SampleColumn-C-005-C"}
-    ]
+  "ValidationCriteria": {
+    "Requirement": {
+      "CheckFunction": "AND",
+      "Items": [
+        {
+          "CheckFunction": "CheckModelRule",
+          "ModelRuleId": "CAU-SampleColumn-C-004-C"
+        },
+        {
+          "CheckFunction": "CheckModelRule",
+          "ModelRuleId": "CAU-SampleColumn-C-005-C"
+        }
+      ]
+    }
   }
 }
 ```
@@ -259,18 +268,22 @@ For rules that don't match rules 1-3, use the normative `Keyword` field:
 ```json
 // MUST keyword, no scope → -M
 "CAU-BilledCost-C-001-M": {
-  "Keyword": "MUST",
-  "MustSatisfy": "BilledCost MUST be of type Decimal.",
   "ApplicabilityCriteria": [],
-  "Condition": {}
+  "ValidationCriteria": {
+    "Keyword": "MUST",
+    "MustSatisfy": "BilledCost MUST be of type Decimal.",
+    "Condition": {}
+  }
 }
 
 // MAY keyword, no scope → -O
 "InvoiceHandling-A-003-O": {
-  "Keyword": "MAY",
-  "MustSatisfy": "Informational line items... MAY be excluded.",
   "ApplicabilityCriteria": [],
-  "Condition": {}
+  "ValidationCriteria": {
+    "Keyword": "MAY",
+    "MustSatisfy": "Informational line items... MAY be excluded.",
+    "Condition": {}
+  }
 }
 ```
 
@@ -594,12 +607,14 @@ Unconditional rule with no dependencies:
 Column root composite with Dataset presence rule first:
 ```json
 "CAU-ChargeCategory-C-000-M": {
-  "Dependencies": [
-    "CAU-CostAndUsage-D-008-M",
-    "CAU-ChargeCategory-C-001-M",
-    "CAU-ChargeCategory-C-002-M",
-    "CAU-ChargeCategory-C-003-M"
-  ]
+  "ValidationCriteria": {
+    "Dependencies": [
+      "CAU-CostAndUsage-D-008-M",
+      "CAU-ChargeCategory-C-001-M",
+      "CAU-ChargeCategory-C-002-M",
+      "CAU-ChargeCategory-C-003-M"
+    ]
+  }
 }
 ```
 
@@ -966,6 +981,7 @@ Base rule for a column which links all related Model Rules for the column.
       },
       "Condition": {},
       "Dependencies": [
+        "CAU-SampleDataset-D-008-M",
         "CAU-SampleColumn-C-001-M",
         "CAU-SampleColumn-C-002-M",
         "CAU-SampleColumn-C-003-M"
