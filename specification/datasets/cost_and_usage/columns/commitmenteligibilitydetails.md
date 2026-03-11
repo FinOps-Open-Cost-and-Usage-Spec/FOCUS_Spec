@@ -14,7 +14,7 @@ CommitmentEligibilityDetails column MUST adhere to the following requirements:
 * CommitmentEligibilityDetails MUST NOT consider transient account configurations or quotas that might temporarily prevent purchase or participation in a commitment program.
 * CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
 * CommitmentEligibilityDetails SHOULD include negotiated commitment programs for which the usage is eligible.
-* CommitmentEligibilityDetails MUST NOT include data related to [term](#glossary:term) lengths or payment options.
+* CommitmentEligibilityDetails MUST NOT include data related to commitment [*periods*](#glossary:periods) or payment options.
 * CommitmentEligibilityDetails MUST conform to [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) requirements when CommitmentEligibilityDetails is not null.
 
 ## Commitment Eligibility Details Object
