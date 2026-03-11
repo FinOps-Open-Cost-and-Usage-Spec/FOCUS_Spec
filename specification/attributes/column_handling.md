@@ -31,33 +31,33 @@ Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 
 ColumnHandling MUST adhere to the following requirements:
 
-* FOCUS column MUST adhere to the following requirements:
-  * FOCUS column MUST use Pascal case in the Column ID.
-  * FOCUS column MUST NOT use abbreviations other than `Id` in the Column ID.
-  * FOCUS column MUST use only alphanumeric characters in the Column ID.
-  * FOCUS column MUST NOT include special characters in the Column ID.
-  * FOCUS column SHOULD NOT use acronyms other than `Sku` in the Column ID.
-  * FOCUS column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
-  * FOCUS column representing an identifier MUST include the `Id` suffix in the Column ID.
-  * FOCUS column representing a name MUST include the `Name` suffix in the Column ID.
-  * FOCUS column representing a product offering that incurred a charge MUST include `Sku` in the Column ID.
-  * FOCUS column MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID "BillingAccountName" and Display Name "Billing Account Name").
-  * FOCUS column with `Category` suffix MUST be normalized.
-* Custom column (e.g., service-provider-defined column included in FOCUS dataset) MUST adhere to the following requirements:
-  * Custom column MUST include the `x_` prefix in the Column ID to identify it as an external, custom column and to distinguish it from FOCUS columns to avoid conflicts in future releases.
-  * Custom column SHOULD use Pascal case in the Column ID.
-  * Custom column SHOULD NOT use abbreviations other than `Id` in the Column ID.
-  * Custom column SHOULD use only alphanumeric characters in the Column ID.
-  * Custom column SHOULD NOT include special characters in the Column ID.
-  * Custom column SHOULD NOT use acronyms other than `Sku` in the Column ID.
-  * Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
-  * Custom column representing an identifier SHOULD include the `Id` suffix in the Column ID.
-  * Custom column representing a name SHOULD include the `Name` suffix in the Column ID.
 * FOCUS dataset MUST adhere to the following column ordering requirements:
   * FOCUS dataset SHOULD list all FOCUS columns before all Custom columns.
   * FOCUS dataset SHOULD sort FOCUS columns alphabetically by their Column ID within the FOCUS columns group.
   * FOCUS dataset SHOULD sort Custom columns alphabetically by their Column ID within the Custom columns group.
   * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns when ordering columns.
+* FOCUS column MUST adhere to the following requirements:
+  * FOCUS column MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID "BillingAccountName" and Display Name "Billing Account Name").
+  * FOCUS column MUST use Pascal case in the Column ID.
+  * FOCUS column MUST use only alphanumeric characters in the Column ID.
+  * FOCUS column MUST NOT include special characters in the Column ID.
+  * FOCUS column MUST NOT use abbreviations other than `Id` in the Column ID.
+  * FOCUS column SHOULD NOT use acronyms other than `Sku` in the Column ID.
+  * FOCUS column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
+  * FOCUS column representing an identifier MUST include the `Id` suffix in the Column ID.
+  * FOCUS column representing a name MUST include the `Name` suffix in the Column ID.
+  * FOCUS column representing a product offering that incurred a charge MUST include `Sku` in the Column ID.
+  * FOCUS column with `Category` suffix MUST contain one of the FOCUS-defined allowed values when not null.
+* Custom column (e.g., service-provider-defined column included in FOCUS dataset) MUST adhere to the following requirements:
+  * Custom column MUST include the `x_` prefix in the Column ID to identify it as an external, custom column and to distinguish it from FOCUS columns to avoid conflicts in future releases.
+  * Custom column SHOULD use Pascal case in the Column ID.
+  * Custom column SHOULD use only alphanumeric characters in the Column ID.
+  * Custom column SHOULD NOT include special characters in the Column ID.
+  * Custom column SHOULD NOT use abbreviations other than `Id` in the Column ID.
+  * Custom column SHOULD NOT use acronyms other than `Sku` in the Column ID.
+  * Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
+  * Custom column representing an identifier SHOULD include the `Id` suffix in the Column ID.
+  * Custom column representing a name SHOULD include the `Name` suffix in the Column ID.
 
 ## Introduced (version)
 
