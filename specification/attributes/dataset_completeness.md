@@ -2,7 +2,7 @@
 
 FinOps practitioners need data beyond what [*FOCUS columns*](#glossary:FOCUS-column) define to facilitate a variety of FinOps activities. When this data is only available in [*native datasets*](#glossary:native-dataset), practitioners cannot rely on [*FOCUS datasets*](#glossary:FOCUS-dataset) as a primary data source, making FOCUS an added overhead rather than a data generator-agnostic alternative that supports essential FinOps activities.
 
-The Dataset Completeness attribute ensures data generators include [*custom columns*](#glossary:custom-column) in a *FOCUS dataset* to cover *native dataset* columns that materially support analysis or reporting and are not already captured by [*FOCUS columns*](#glossary:FOCUS-column). This bridges the gap between FOCUS standardization and data generator capabilities, allowing practitioners to adopt *FOCUS datasets* without losing analytical capabilities.
+The Dataset Completeness attribute requires [*data generators*](#glossary:data-generator) to include [*custom columns*](#glossary:custom-column) in a *FOCUS dataset* for *native dataset* columns that materially support analysis or reporting and are not already captured by [*FOCUS columns*](#glossary:FOCUS-column). This allows practitioners to adopt *FOCUS datasets* without losing analytical capabilities.
 
 ## Attribute ID
 
@@ -26,8 +26,7 @@ Defines requirements for a *FOCUS dataset* to include custom columns for *native
 * *FOCUS dataset* MAY preserve custom columns for a limited time even after one or more equivalent FOCUS columns are newly introduced, to enable migration without breaking changes.
 * Custom columns SHOULD accurately represent the corresponding values from the *native dataset*.
 * *FOCUS dataset* SHOULD list all *FOCUS columns* before any *custom columns*.
-* *FOCUS dataset* SHOULD NOT intermix *FOCUS columns* and *custom columns*.
-* *FOCUS dataset* MAY sort columns alphabetically, but *custom columns* SHOULD be listed after all *FOCUS columns*.
+* *FOCUS dataset* MAY sort *FOCUS columns* alphabetically first, then list *custom columns* alphabetically second.
 
 ## Example
 
