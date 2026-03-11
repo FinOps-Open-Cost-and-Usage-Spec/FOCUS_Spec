@@ -187,9 +187,134 @@ The corresponding Tags column would be:
 }
 ```
 
-### JSON Type Definition
+### JSON Schema Definition
 
 ```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://focus.finops.org/schemas/tagdetails.json",
+  "title": "TagDetails",
+  "description": "A superset of Tags which includes additional properties describing tag eligibility and tag provenance from all tag sources.",
+  "type": "object",
+  "patternProperties": {
+    "^[a-zA-Z0-9_]+$": {
+      "$ref": "#/$defs/tagScheme"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "tagScheme": {
+      "type": "object",
+      "properties": {
+        "Tags": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z0-9_]+$": {
+              "$ref": "#/$defs/tagKeyObject"
+            }
+          },
+          "additionalProperties": false
+        },
+        "UntaggedSources": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "Tags",
+        "UntaggedSources"
+      ]
+    },
+    "tagKeyObject": {
+      "type": "object",
+      "properties": {
+        "TagSource": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The source of the finalized tag. Can be null if the tag is only present on an ancestor."
+        },
+        "TagSourceId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "The ID of the finalized tag's source. Can be null if the tag is only present on an ancestor."
+        },
+        "TagValue": {
+          "description": "The finalized tag value. Can be null, indicating it doesn't appear in the Tags column.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "AncestorTaggedSources": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "patternProperties": {
+            "^[a-zA-Z0-9_ ]+$": {
+              "$ref": "#/$defs/ancestorTag"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "TagSource",
+        "TagSourceId",
+        "TagValue",
+        "AncestorTaggedSources"
+      ]
+    },
+    "ancestorTag": {
+      "type": "object",
+      "properties": {
+        "TagSourceId": {
+          "type": "string"
+        },
+        "TagValue": {
+          "description": "The tag value from an ancestor source.",
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "TagSourceId",
+        "TagValue"
+      ]
+    }
+  }
+}
 ```
 
 ## Example Scenarios
