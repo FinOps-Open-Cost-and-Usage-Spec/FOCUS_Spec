@@ -1,15 +1,15 @@
 # Column Handling
 
-A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that convey information about the charges incurred with a service provider. Each column describes an aspect of the charge, including but not limited to:
+A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that convey information about the records provided by a [*data generator*](#metadata.datagenerator). Each column describes an aspect of the record, including but not limited to:
 
-* Who is responsible for incurring or delivering the service.
-* What the charge is for.
-* When the charge was incurred.
-* Where the service was delivered.
-* Why the charge was incurred for a specific price.
-* How much the charge is and how that cost is calculated.
+* Who is responsible for or associated with the activity.
+* What the record represents.
+* When the activity occurred.
+* Where the activity took place.
+* Why the record exists or has specific values.
+* How values are calculated or determined.
 
-While FOCUS establishes the core structure and standardizes columns for consistent reporting of cost and usage data, the diverse and evolving landscape of service providers and service offerings may require [*data generators*](#metadata.datagenerator) to include custom columns in a *FOCUS dataset*. These additional columns enable deeper analysis and provide more detailed descriptions of usage that may not be fully captured by standard FOCUS columns. See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what custom columns to include.
+While FOCUS establishes the core structure and standardizes columns for consistent reporting, the diverse and evolving landscape of service providers and service offerings may require [*data generators*](#metadata.datagenerator) to include custom columns in a *FOCUS dataset*. These additional columns enable deeper analysis and provide more detailed information that may not be fully captured by standard FOCUS columns. See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what custom columns to include.
 
 Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming and documentation conventions for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
