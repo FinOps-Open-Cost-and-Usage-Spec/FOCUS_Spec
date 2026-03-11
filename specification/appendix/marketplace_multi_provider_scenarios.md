@@ -18,9 +18,7 @@ This guidance addresses the data accuracy concerns outlined in the parent issue 
 ## Key Principles
 
 ### CSP Responsibilities
-- **Purchase Record Without Usage Details**: CSPs MUST NOT estimate EffectiveCost.
-  - Rationale: Aligns with #982's conformance requirement that data generators MUST NOT populate EffectiveCost with estimated or made-up values when lacking actual usage/accrual information.
-  - Usage: In marketplace scenarios, CSPs handle transactions but defer to SaaS providers for usage data.
+- **Purchase Record Without Usage Details**: When a CSP handles the purchase but not the usage, EffectiveCost on the purchase row is 0. Per the EffectiveCost column definition, EffectiveCost is 0 when ChargeCategory is "Purchase" and the purchase covers future eligible charges.
 
 ### SaaS Provider Responsibilities
 - **Usage Details Without Purchase Record**: EffectiveCost reflects actual usage.
