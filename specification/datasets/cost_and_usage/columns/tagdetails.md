@@ -303,7 +303,7 @@ Details:
       "versionnumber": {
         "TagSource": "Resource",
         "TagSourceId": "my-resource-11",
-        "TagValue": "12.2",
+        "TagValue": 12.2,
         "AncestorTaggedSources": null
       }
     },
@@ -320,7 +320,7 @@ The corresponding Tags column would contain:
 "lorem": "ipsum",
 "userDefinedValuelessLabelScheme/project_foci": true,
 "providerDefinedTagScheme/isfeatureenabled": false,
-"providerDefinedTagScheme/versionnumber": "12.2"
+"providerDefinedTagScheme/versionnumber": 12.2
 }
 ```
 
