@@ -15,7 +15,7 @@
 
 ## Scenario Description
 
-This example shows a **Google Cloud Platform Spend-based CUD**, which is a commitment (CommitmentDiscountCategory: Spend) where you commit to a specific dollar amount of usage per hour.
+This example shows a **Google Cloud Platform Spend-based CUD**, which is a commitment (with a Commitment Discount Category of `Spend`) where you commit to a specific dollar amount of usage per hour.
 
 The **Partial Upfront** payment option combines an initial upfront payment with a reduced recurring monthly fee. This results in two Purchase rows: one One-Time for the upfront portion and one Recurring for the monthly fee, both with zero EffectiveCost.
 
