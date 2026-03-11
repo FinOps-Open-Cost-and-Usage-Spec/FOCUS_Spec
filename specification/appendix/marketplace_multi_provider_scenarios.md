@@ -46,7 +46,7 @@ A customer purchases monitoring subscriptions (Datadog or Grafana) through AWS M
 
 #### FOCUS Dataset Population
 - **BilledCost**: Populated by AWS with the total marketplace purchase amount (e.g., $10,000.00), including any fees or taxes.
-- **EffectiveCost**: Not populated by AWS (empty in AWS dataset); populated by Datadog in their separate dataset with actual usage-based costs.
+- **EffectiveCost**: 0 in the AWS dataset (per the EffectiveCost column definition, EffectiveCost is 0 when ChargeCategory is "Purchase" and the purchase covers future usage). Populated by Datadog in their separate dataset with actual usage-based costs.
 - **ResourceId**: Unique marketplace identifier (e.g., marketplace-123) for correlation.
 - **ChargeCategory**: "Purchase" for the marketplace transaction.
 - **ServiceName**: "AWS Marketplace" for the billing entry.
