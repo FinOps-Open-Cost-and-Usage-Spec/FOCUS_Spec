@@ -4,7 +4,7 @@ Charge Category represents the highest-level classification of a [*charge*](#glo
 
 ## Requirements
 
-ChargeCategory adheres to the following requirements:
+ChargeCategory MUST adhere to the following requirements:
 
 * ChargeCategory MUST be of type String.
 * ChargeCategory MUST NOT be null.
