@@ -4,15 +4,15 @@
 
 The following scenarios illustrate how CommitmentEligibilityDetails are populated across different providers, including major cloud platforms and SaaS data platforms.
 
-| Provider   | Service           | ChargeClass | CommitmentEligibilityDetails                                                                                                  |
-|---------------|---------------|---------------|---------------------------|
-| AWS        | AmazonEC2         | Usage       | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}]}                                          |
-| Azure      | Virtual Machines  | Usage       | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}]}                                          |
-| Google     | Kubernetes Engine | Usage       | {"CommitmentDiscountTypes": [{"Type": "ResourceBasedCommittedUseDiscount"}, {"Type": "ComputeFlexibleCommittedUseDiscount"}]} |
-| Snowflake  | Warehouse         | Usage       | {"CommitmentDiscountTypes": [{"Type": "CapacityCommitment"}]}                                                                 |
-| Databricks | Jobs              | Usage       | {"CommitmentDiscountTypes": [{"Type": "CommittedUseDiscount"}]}                                                               |
-| Datadog    | Infrastructure    | Usage       | {"CommitmentDiscountTypes": [{"Type": "MonthlyCommitment"}, {"Type": "AnnualCommitment"}]}                                    |
-| AWS        | AmazonS3          | Usage       | null                                                                                                                          |
+| Provider   | Service           | ServiceSubcategory | ChargeClass | CommitmentEligibilityDetails                                                                                                  |
+|---------------|---------------|--------------------|---------------|---------------------------|
+| AWS        | AmazonEC2         | Compute            | Usage       | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}]}                                          |
+| Azure      | Virtual Machines  | VirtualMachine     | Usage       | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}]}                                          |
+| Google     | Kubernetes Engine | Node               | Usage       | {"CommitmentDiscountTypes": [{"Type": "ResourceBasedCommittedUseDiscount"}, {"Type": "ComputeFlexibleCommittedUseDiscount"}]} |
+| Snowflake  | Warehouse         | n/a                | Usage       | {"CommitmentDiscountTypes": [{"Type": "CapacityCommitment"}]}                                                                 |
+| Databricks | Jobs              | n/a                | Usage       | {"CommitmentDiscountTypes": [{"Type": "CommittedUseDiscount"}]}                                                               |
+| Datadog    | Infrastructure    | Host               | Usage       | {"CommitmentDiscountTypes": [{"Type": "MonthlyCommitment"}, {"Type": "AnnualCommitment"}]}                                    |
+| AWS        | AmazonS3          | StandardStorage    | Usage       | null                                                                                                                          |
 
 ## Example usage scenarios
 
@@ -72,11 +72,10 @@ OCI Compute usage eligible for Universal Credits. Because Universal Credits are 
 |---------------|---------------|---------------|---------------|---------------|
 | Oracle   | Virtual Machine | Usage       | null                     | {"CommitmentDiscountTypes": [{"Type": "UniversalCredits"}]} |
 
-**Scenario 8: AWS (Capacity Reservation–eligible EC2 Usage)**
+**Scenario 8: AWS (Capacity Reservation-eligible EC2 Usage)**
 
 An EC2 instance type and tenancy that are eligible for both Savings Plans/Reserved Instances and for capacity reservations (for example, regional or zonal reservations). The eligibility column reflects all commitment constructs the usage qualifies for.
 
 | Provider | Service   | ChargeClass | CommitmentDiscountStatus | CommitmentEligibilityDetails                                                                                                                                   |
 |---------------|---------------|---------------|---------------|---------------|
 | AWS      | AmazonEC2 | Usage       | null                     | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}], "CapacityReservationTypes": [{"Type": "CapacityReservation"}, {"Type": "ZonalReservation"}]} |
-
