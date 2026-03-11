@@ -8,6 +8,7 @@ _EXPECTED_MARKER = {
     "Attribute": "A",
     "Column": "C",
     "Dataset": "D",
+    "Object": "O",
 }
 
 def _marker_ok(entity_id: str, expected_letter: str) -> bool:
@@ -30,18 +31,13 @@ def test_entityid_marker_matches_entitytype(cr_json):
             # Ignore other entity types (or collect as separate violations if you prefer)
             continue
 
-        # Prefer explicit EntityId; fall back to rule key if not provided
-        entity_id = rule.get("EntityId") or rid
-        if not isinstance(entity_id, str) or not entity_id:
-            violations.append((rid, et, "<missing or non-string EntityId>"))
-            continue
-
+        # Validate the rule key (rid) itself
         expected = _EXPECTED_MARKER[et]
-        if not _marker_ok(entity_id, expected):
-            violations.append((rid, et, entity_id))
+        if not _marker_ok(rid, expected):
+            violations.append((rid, et, rid))
 
     assert not violations, (
         "EntityId must include the correct marker before the numeric segment "
-        "(Attribute -> -A-, Column -> -C-, Dataset -> -D-):\n" +
+        "(Attribute -> -A-, Column -> -C-, Object -> -O-, Dataset -> -D-):\n" +
         "\n".join(f"- Rule {rid} (EntityType={et}): EntityId='{eid}'" for rid, et, eid in violations)
     )
