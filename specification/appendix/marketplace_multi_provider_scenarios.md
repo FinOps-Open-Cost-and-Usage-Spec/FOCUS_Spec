@@ -6,7 +6,7 @@ This section is non-normative.
 
 In multi-provider marketplace scenarios, billing data may originate from different data generators. For example, a Cloud Service Provider (CSP) might handle the purchase transaction, while a Software-as-a-Service (SaaS) provider generates usage records. This guidance clarifies how FOCUS columns, particularly EffectiveCost, should be populated in such cases.
 
-This guidance addresses the data accuracy concerns outlined in the parent issue [FR] Clarify definitions of EffectiveCost vs BilledCost across providers [#982](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/982), which reframes the problem from "double counting" to providers populating inaccurate EffectiveCost values when lacking actual usage information. It provides scenario-based guidance for marketplace purchases as specified in Milestone 3 of #982.
+This guidance addresses data accuracy concerns in multi-provider marketplace scenarios, specifically the risk of providers populating inaccurate EffectiveCost values when lacking actual usage information. It provides scenario-based guidance for marketplace purchases.
 ## Provider Responsibility Matrix
 
 | Scenario | Purchase Provider | Usage Provider | EffectiveCost Population |
