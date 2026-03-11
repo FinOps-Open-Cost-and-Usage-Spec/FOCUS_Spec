@@ -20,7 +20,7 @@ An attribute that allows data generators to offer more detailed cost and usage i
   * [AllocatedMethodId](#datasets.costandusage.allocatedmethodid)
   * [AllocatedResourceId](#datasets.costandusage.allocatedresourceid)
   * [AllocatedResourceName](#datasets.costandusage.allocatedresourcename)
-  * [AllocatedTags](#datasets.costandusage.allocatedtags)
+  * [AllocatedResourceTags](#datasets.costandusage.allocatedtags)
 * A FOCUS dataset SHOULD include the following column when the data generator supports data generator-calculated split cost allocation:
   * [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails)
 * Allocated charge records in a FOCUS dataset MUST sum up to the origin charge record for all aggregatable metric columns.
