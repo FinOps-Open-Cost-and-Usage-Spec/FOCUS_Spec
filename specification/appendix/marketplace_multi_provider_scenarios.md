@@ -121,7 +121,7 @@ Practitioners can correlate data using common identifiers such as:
 
 For examples, refer to the CSV datasets in [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp), where ResourceId and ChargeId are populated to demonstrate correlation in multi-provider scenarios.
 
-Note: Correlation may require additional metadata or external systems. For more details on FOCUS columns, see the [FOCUS Column Library](https://focus.finops.org/focus-columns/). Reference the parent issue for this guidance: [FR] Clarify definitions of EffectiveCost vs BilledCost across providers [#982](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/982).
+Note: Correlation may require additional metadata or external systems. For more details on FOCUS columns, see the [FOCUS Column Library](https://focus.finops.org/focus-columns/).
 
 ## Cross-Provider Aggregation Mismatch
 
