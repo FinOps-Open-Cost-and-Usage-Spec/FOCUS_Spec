@@ -27,7 +27,7 @@ This guidance addresses data accuracy concerns in multi-provider marketplace sce
 
 ### Aggregation Behavior
 - **Cross-Provider Aggregations Will NOT Match**: This is expected behavior, not an error.
-  - Rationale: Supports #982's cross-cutting criteria for when aggregations will NOT match in cross-provider marketplace scenarios.
+  - Rationale: Cross-provider aggregations may not match when purchase and usage data come from different providers with different cost calculation methods.
   - Usage: Practitioners should account for this in reporting and analysis.
 
 ### General Rule
