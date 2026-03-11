@@ -57,7 +57,7 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 | Property                  | Type  | Required    | Description                                                                                                                   |
 |:-----------------|:-----------------|:-----------------|:-----------------|
 | `CommitmentDiscountTypes` | Array | Conditional | Array of objects identifying [*commitment discount*](#glossary:commitment-discount) programs for which the usage is eligible. |
-| `CapacityReservationTypes` | Array | Conditional | Array of objects identifying capacity-reservation commitment programs (for example, capacity reservations, zonal reservations) for which the usage is eligible. |
+| `CapacityReservationTypes` | Array | Conditional | Array of objects identifying capacity-reservation commitment programs (e.g., capacity reservations, zonal reservations) for which the usage is eligible. |
 
 ### CommitmentDiscountTypes Entry
 
