@@ -62,7 +62,7 @@ This section outlines discrepancies found in the enablement artifacts (Requireme
 ### D. Requirements Model Corrections
 *The following corrections address bugs found strictly within the FOCUS 1.2 Requirements Model validation rules.*
 
-| Issue | File / Rule | Original | Corrected | Tracking |
+| Issue | File | Original | Corrected | Tracking |
 | :--- | :--- | :--- | :--- | :--- |
 | **#1: Incorrect argument name** | `resourcetype.json` | The condition function incorrectly used the argument `"CheckCondition": "ResourceId"`. | The argument was corrected to the standard `"ColumnName": "ResourceId"`. | Issue: [#1824](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1824)<br>PR: [#1956](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1956) |
 | **#2: Incorrect nullability function** | `commitmentdiscountstatus.json` | The requirement used `CheckNotValue` to ensure the status was null, which caused valid nulls to fail. | The function was corrected to `CheckValue` to properly enforce the `MUST be null` requirement. | Issue: [#1825](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/issues/1825)<br>PR: [#1956](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/pull/1956) |
