@@ -87,22 +87,29 @@ The following architectural components define the core entities in FOCUS that sh
 
 For detailed guidance on working with each entity type, see the [Working with Entity Types](#working-with-entity-types) section below.
 
-#### 2. RMID – Apply RMID Naming Rules
+#### 2. RMId – Apply RMId Naming Rules
 
-Construct a unique identifier for the rule using the format:  
-`DatasetType-ColumnID-EntityType-NNN-Level`
+Construct a unique identifier for the rule using the appropriate format based on entity type. This ensures traceability, uniqueness, and clarity.
 
-This ensures traceability, uniqueness, and clarity.
+##### RMId Format by Entity Type
 
-- Use the format: `DatasetType-ColumnID-EntityType-NNN-Level`
+**For Attributes:**  
+`AttributeName-EntityType-NNN-Level`
+
+**For Datasets, Columns, and Objects:**  
+`DatasetType-EntityName-EntityType-NNN-Level`
+
+##### RMId Component Definitions
+
+- `AttributeName`: Name of the attribute (e.g., `NumericFormat`, `StringHandling`, `InvoiceHandling`)
 - `DatasetType`: Short identifier for the dataset (e.g., `CAU`, `CCT`)
-- `ColumnID`: UpperCamelCase (e.g., `ListUnitPrice`)
+- `EntityName`: UpperCamelCase identifier for the entity (e.g., `ListUnitPrice`, `CostAndUsage`, `AllocatedMethodDetailsObject`)
 - `EntityType:`
   - `D` = Dataset  
   - `C` = Column
   - `O` = Object
   - `A` = Attribute
-- `NNN:` (unique only within the dataset namespace)
+- `NNN:` Sequential number (unique only within the entity namespace)
   - `000` for root composite  
   - `0NN` for intermediate composites  
   - `001+` for single atomic rules
@@ -111,9 +118,19 @@ This ensures traceability, uniqueness, and clarity.
   - `C` = Conditional (e.g., SHOULD under a condition)  
   - `O` = Optional (from MAY or unconditional SHOULD)
 
-**Example**  
-A rule states: "`ListUnitPrice` MUST conform to `NumericFormat`." (in Cost and Usage dataset)
-→ `RMID = CAU-ListUnitPrice-C-003-M`
+##### RMId Examples
+
+**Attribute rule example:**  
+→ `RMId = NumericFormat-A-001-M`
+
+**Column rule example:**  
+→ `RMId = CAU-ListUnitPrice-C-003-M`
+
+**Dataset rule example:**  
+→ `RMId = CAU-CostAndUsage-D-008-M`
+
+**Object rule example:**  
+→ `RMId = CAU-AllocatedMethodDetailsObject-O-001-M`
 
 #### Multi-Dataset Entity Structure and Naming
 
@@ -130,14 +147,14 @@ Each dataset will reference their own set of Requirement Entities. A single requ
 
 ##### Dataset-Namespaced Naming Convention
 
-Column entities are now namespaced by the dataset they belong to. The RMID format has been updated to:
+Column entities are now namespaced by the dataset they belong to. The RMId format has been updated to:
 
-`DatasetType-ColumnID-EntityType-NNN-Level`
+`DatasetType-ColumnId-EntityType-NNN-Level`
 
 Where:
 
 - `DatasetType`: Short identifier for the dataset (e.g., `CAU` for Cost and Usage)
-- `ColumnID`: The column identifier in UpperCamelCase
+- `ColumnId`: The column identifier in UpperCamelCase
 - `EntityType`, `NNN`, `Level`: Same as previously defined
 
 The `NNN` numbering is only unique within each dataset namespace. For example, `CAU-ListUnitPrice-C-000-M` and `CCT-ListUnitPrice-C-000-M` can both exist independently - the `000` is reused and only needs to be unique within that specific dataset abbreviation.
@@ -158,7 +175,7 @@ This namespacing approach prevents naming conflicts between datasets and provide
 
 #### Suffix Determination Logic
 
-The suffix (`-M`, `-O`, or `-C`) at the end of each RMID is determined through a precedence-based algorithm that evaluates scope, dependencies, and normative keywords. Understanding this logic is critical for correctly constructing RMIDs.
+The suffix (`-M`, `-O`, or `-C`) at the end of each RMId is determined through a precedence-based algorithm that evaluates scope, dependencies, and normative keywords. Understanding this logic is critical for correctly constructing RMIds.
 
 ##### Precedence Hierarchy
 
@@ -290,7 +307,7 @@ Categorize the type of logic the rule enforces. This helps determine how it shou
 - Use `Format` for pattern-based constraints (e.g., `DateTimeFormat`, `UUID`, `NumericFormat`).
 - Use `Nullability` to define nullability rules, both conditional (e.g., "MUST NOT be null when condition X") and unconditional (e.g., "MUST NOT be null").
 - Use `Validation` for business logic or fixed-value conditions not covered above.
-- Use `Composite` to group multiple RMIDs with logical expressions (`AND` / `OR` / `NOT`).
+- Use `Composite` to group multiple RMIds with logical expressions (`AND` / `OR` / `NOT`).
 
 **Examples**  
 Rule states "`BillingPeriodStart` MUST be of type `DateTime`":  
@@ -301,16 +318,16 @@ Rule states "`CommitmentDiscountQuantity` MUST NOT be null when `ChargeCategory`
 
 #### 4. Reference – Identify the reference target
 
-Provide the identifier for the column or attribute that the rule applies to, using the PascalCase ID format.
+Provide the identifier for the column or attribute that the rule applies to, using the PascalCase Id format.
 
 - For datasets: Use the DatasetId (e.g., `CostAndUsage`)
 - For columns: Use the ColumnId (e.g., `CommitmentDiscountQuantity`)
 - For objects: Use the ObjectId (e.g., `AllocatedMethodDetailsObject`)
 - For attributes: Use the attribute name (e.g., `NumericFormat`, `StringHandling`)
-- This field should match the ID as defined in the FOCUS specification
+- This field should match the Id as defined in the FOCUS specification
 
 **Example**  
-If the rule applies to the column with ID `CommitmentDiscountQuantity`:  
+If the rule applies to the column with Id `CommitmentDiscountQuantity`:  
 → `Reference = CommitmentDiscountQuantity`
 
 #### 5. Keyword – Extract the normative keyword
@@ -323,7 +340,7 @@ Determine the obligation level using the normative keyword from the source text,
   - `MAY` → Optional
 - Normalize the keyword to uppercase.
 - Only one keyword should be assigned per RM Item.
-- For composite rules, choose the highest obligation level from constituent RMIDs  
+- For composite rules, choose the highest obligation level from constituent RMIds  
   (e.g., prioritize `MUST` > `SHOULD` > `MAY`).
 
 **Example**  
@@ -426,7 +443,7 @@ Define the specific validation check that implements this rule using CheckFuncti
 For **Composite rules**, use logical CheckFunctions to group other rules:
 - `CheckFunction: "AND"` with `Items` array containing nested requirement references
 - `CheckFunction: "OR"` with `Items` array containing nested requirement references
-- Use `CheckFunction: "CheckModelRule"` inside the `Items` array to reference other RMIDs
+- Use `CheckFunction: "CheckModelRule"` inside the `Items` array to reference other RMIds
 
 For **Atomic rules**, use specific CheckFunction types from the model:
 - `ColumnPresent` - Check if a column exists in the dataset
@@ -639,8 +656,8 @@ Attribute entity types define cross-cutting requirements that apply to multiple 
 **Key Characteristics:**
 
 1. **Naming Convention**: Attribute EntityIds use descriptive names (e.g., `NumericFormat`, `StringHandling`, `DiscountHandling`)
-2. **RMID Format**: Use `-A-` in EntityType position: `NumericFormat-A-001-M`
-3. **No DatasetType**: Attributes are not dataset-specific, so RMID starts with the attribute name
+2. **RMId Format**: Use `-A-` in EntityType position: `NumericFormat-A-001-M`
+3. **No DatasetType**: Attributes are not dataset-specific, so RMId starts with the attribute name
 4. **Referenced by Columns**: Column rules reference attribute rules to inherit common requirements
 
 **Creating Attribute Rules:**
@@ -648,7 +665,7 @@ Attribute entity types define cross-cutting requirements that apply to multiple 
 1. Extract attribute requirements from the FOCUS specification (attributes are defined by the spec)
 2. Create attribute composite rule (`-A-000-M`) grouping all related attribute requirements from the spec
 3. Create individual atomic rules for each specific constraint defined in the spec
-4. Column rules reference these attribute rules using `CheckFunction: "CheckModelRule"` with the attribute RMID
+4. Column rules reference these attribute rules using `CheckFunction: "CheckModelRule"` with the attribute RMId
 
 **File Organization:**
 
@@ -667,7 +684,7 @@ Dataset entity types define requirements for entire datasets, including structur
 **Key Characteristics:**
 
 1. **Naming Convention**: Dataset EntityIds match the dataset identifier (e.g., `CostAndUsage`, `ContractCommitment`)
-2. **RMID Format**: Use `-D-` in EntityType position: `CAU-CostAndUsage-D-001-M`
+2. **RMId Format**: Use `-D-` in EntityType position: `CAU-CostAndUsage-D-001-M`
 3. **Root Composite Pattern**: Dataset root composite (`-D-000-M`) groups all dataset-level requirements
 4. **Dataset Coverage**: Dataset rules typically reference all mandatory column composite rules
 
@@ -696,7 +713,7 @@ Column entity types define requirements for individual columns within a dataset,
 **Key Characteristics:**
 
 1. **Naming Convention**: Column EntityIds match the column identifier in PascalCase (e.g., `BilledCost`, `ChargeCategory`)
-2. **RMID Format**: Use `-C-` in EntityType position: `CAU-BilledCost-C-001-M`
+2. **RMId Format**: Use `-C-` in EntityType position: `CAU-BilledCost-C-001-M`
 3. **Root Composite Pattern**: Column root composite (`-C-000-M` or `-C-000-C`) groups all column requirements
 4. **Common Rule Sequence**: Presence → Type → Format → Nullability → Validation
 
@@ -726,7 +743,7 @@ Object entity types validate the internal structure and properties of JSON objec
 **Key Characteristics:**
 
 1. **Naming Convention**: Object EntityIds end with "Object" suffix (e.g., `AllocatedMethodDetailsObject`, `ContractAppliedObject`)
-2. **RMID Format**: Use `-O-` in EntityType position: `CAU-AllocatedMethodDetailsObject-O-001-M`
+2. **RMId Format**: Use `-O-` in EntityType position: `CAU-AllocatedMethodDetailsObject-O-001-M`
 3. **Root Composite Pattern**: 
    - Nullable columns: Use `-O-000-C` with Condition checking column is not null
    - NOT NULL columns: Use `-O-000-M` with empty Condition `{}`
@@ -830,7 +847,7 @@ pytest tests/test_dependencies.py
 
 The tests verify:
 - JSON structure conformance to `model_schema.json`
-- RMID format and uniqueness
+- RMId format and uniqueness
 - Dependency references exist and are valid
 - Order field consistency in Dependencies arrays
 - CheckFunction argument structure
@@ -842,7 +859,7 @@ The tests verify:
 - **JSON syntax errors**: Check for missing commas, brackets, or quotes in your rule files
 - **Schema validation failures**: Ensure all required fields are present (Function, Reference, EntityType, etc.)
 - **Dependency errors**: Verify all ModelRuleIds in Dependencies arrays exist
-- **RMID conflicts**: Ensure your RMID is unique within the dataset namespace
+- **RMId conflicts**: Ensure your RMId is unique within the dataset namespace
 
 ## Pull Request Workflow
 
@@ -879,7 +896,7 @@ The `Order` field serves several important functions:
 
 **Example Order Values:**
 
-| RMID                     | Order Value |
+| RMId                     | Order Value |
 |:-------------------------|:------------|
 | CAU-SampleColumn-C-001-M | 10          |
 | CAU-OtherRule-C-001-M    | 20          |
