@@ -2,7 +2,7 @@
   "phase": 2,
   "source": {
     "path": "specification/datasets/billing_period/dataset.md",
-    "version": "unknown"
+    "version": "1.4"
   },
   "entity": {
     "entity_type": "Dataset",
