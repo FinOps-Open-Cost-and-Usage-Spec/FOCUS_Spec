@@ -946,7 +946,7 @@ Base rule for a column which links all related Model Rules for the column.
     "Type": "Static",
     "Order": 0,
     "ValidationCriteria": {
-      "MustSatisfy": "",
+      "MustSatisfy": "SampleColumn MUST meet all column requirements.",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -966,7 +966,11 @@ Base rule for a column which links all related Model Rules for the column.
         ]
       },
       "Condition": {},
-      "Dependencies": []
+      "Dependencies": [
+        "CAU-SampleColumn-C-001-M",
+        "CAU-SampleColumn-C-002-M",
+        "CAU-SampleColumn-C-003-M"
+      ]
     }
   }
 ```
@@ -990,7 +994,7 @@ Base rule for a column which links all related Model Rules for the column.
     "Type": "Static",
     "Order": 10,
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be present in a FOCUS dataset",
+      "MustSatisfy": "SampleColumn MUST be present in a FOCUS dataset",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "ColumnPresent",
@@ -1057,7 +1061,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Type": "Static",
     "Order": 30,
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be one of the allowed values",
+      "MustSatisfy": "SampleColumn MUST be one of the allowed values",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "OR",
@@ -1104,7 +1108,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Type": "Static",
     "Order": 40,
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type Decimal",
+      "MustSatisfy": "SampleColumn MUST be of type Decimal",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeDecimal",
@@ -1135,7 +1139,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Type": "Static",
     "Order": 50,
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to NumericFormat requirements",
+      "MustSatisfy": "SampleColumn MUST conform to NumericFormat requirements",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatNumeric",
@@ -1166,7 +1170,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Type": "Static",
     "Order": 60,
     "ValidationCriteria": {
-      "MustSatisfy": "MUST be of type String",
+      "MustSatisfy": "SampleColumn MUST be of type String",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "TypeString",
@@ -1197,7 +1201,7 @@ Common rule for columns with a MUST be one of the allowed values requirement.
     "Type": "Static",
     "Order": 70,
     "ValidationCriteria": {
-      "MustSatisfy": "MUST conform to StringHandling requirements",
+      "MustSatisfy": "SampleColumn MUST conform to StringHandling requirements",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "FormatString",
