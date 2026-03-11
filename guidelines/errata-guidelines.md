@@ -58,8 +58,9 @@ Once an issue is assessed and confirmed as a valid erratum by the Maintainers, i
    * *A. Schema & Validation Logic Corrections*
    * *B. Terminology & Reference Corrections*
    * *C. Typographical Errors*
+   * *D. Requirements Model Corrections*
 4. **Format the Entry:** Use the standard side-by-side format:
-   `| **#[Issue Number]: Brief Title** | Section X.Y | Original Text | Corrected Text | Issue:[#IssueLink](url) <br> PR:[#PRLink](url) |`
+   `| **#[Issue Number]: Brief Title** | Section X.Y (or File) | Original | Corrected | Issue:[#IssueLink](url) <br> PR:[#PRLink](url) |`
 5. **Commit & Push:** Commit your changes with a clear, atomic commit message referencing the issue (e.g., `Fixes #1042: Correct presence scope in ContractApplied`).
 
 ---
