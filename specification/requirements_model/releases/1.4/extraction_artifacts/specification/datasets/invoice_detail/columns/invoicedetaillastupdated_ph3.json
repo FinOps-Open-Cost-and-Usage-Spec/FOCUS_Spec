@@ -1,0 +1,129 @@
+{
+  "ModelRules": {
+    "IND-InvoiceDetailLastUpdated-C-000-M": {
+      "Function": "Validation",
+      "Reference": "InvoiceDetailLastUpdated",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Last Updated",
+      "EntityId": "InvoiceDetailLastUpdated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 0,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailLastUpdated MUST adhere to the following requirements:",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": [
+          "IND-InvoiceDetailLastUpdated-C-001-M",
+          "IND-InvoiceDetailLastUpdated-C-002-M",
+          "IND-InvoiceDetailLastUpdated-C-003-C",
+          "IND-InvoiceDetailLastUpdated-C-004-M"
+        ]
+      }
+    },
+    "IND-InvoiceDetailLastUpdated-C-001-M": {
+      "Function": "Type",
+      "Reference": "InvoiceDetailLastUpdated",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Last Updated",
+      "EntityId": "InvoiceDetailLastUpdated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 10,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailLastUpdated MUST be of type Date/Time.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-InvoiceDetailLastUpdated-C-002-M": {
+      "Function": "Format",
+      "Reference": "InvoiceDetailLastUpdated",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Last Updated",
+      "EntityId": "InvoiceDetailLastUpdated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 20,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailLastUpdated MUST conform to DateTimeFormat requirements.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-InvoiceDetailLastUpdated-C-003-C": {
+      "Function": "Validation",
+      "Reference": "InvoiceDetailLastUpdated",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Last Updated",
+      "EntityId": "InvoiceDetailLastUpdated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Dynamic",
+      "Order": 30,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailLastUpdated MUST represent the most recent moment in time when any column value of the record identified by InvoiceDetailId was created or modified.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-InvoiceDetailLastUpdated-C-004-M": {
+      "Function": "Validation",
+      "Reference": "InvoiceDetailLastUpdated",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Last Updated",
+      "EntityId": "InvoiceDetailLastUpdated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 40,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailLastUpdated MUST be greater than or equal to InvoiceDetailCreated.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    }
+  }
+}
