@@ -165,6 +165,13 @@ Composite (parent + nested) requirements MAY be used when strictly controlled an
 * Nested bullets SHOULD NOT introduce a different subject.
 * When nested bullets introduce different subjects, all subjects SHOULD be of the same subject type (e.g., FOCUS * columns).
 
+Composite requirements SHOULD be used when grouping improves readability and:
+
+* multiple requirements share the same subject, or
+* multiple requirements share the same business context (e.g., all requirements related to a specific business scenario or feature)
+
+Flat parallel bullets SHOULD be preferred when ordering keyword is sufficient for clarity and readability.
+
 ### 8. Definitions vs. Normative Requirements
 
 * Definitions, explanations, rationale, and examples MUST NOT be expressed as normative requirements.
