@@ -449,8 +449,7 @@ For **Atomic rules**, use specific CheckFunction types from the model:
 - `ColumnPresent` - Check if a column exists in the dataset
 - `CheckNotValue` - Verify a column does not contain a specific value
 - `CheckValue` - Verify a column contains a specific value
-- `CheckAllowedValues` - Verify a column contains one of the allowed values
-- `TypeDecimal`, `TypeString`, `TypeBoolean` - Check data type
+- `TypeDecimal`, `TypeString` - Check data type
 - `FormatNumeric`, `FormatString`, `FormatDateTime` - Check format compliance
 - See CheckFunctions section in the model for complete list
 
