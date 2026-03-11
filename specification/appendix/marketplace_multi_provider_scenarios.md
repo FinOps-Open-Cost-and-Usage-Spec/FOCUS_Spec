@@ -31,8 +31,7 @@ This guidance addresses the data accuracy concerns outlined in the parent issue 
   - Usage: Practitioners should account for this in reporting and analysis.
 
 ### General Rule
-- **EffectiveCost Population**: Only the provider with actual usage data should populate EffectiveCost.
-  - Rationale: Ensures data accuracy and prevents double-counting or estimation errors.
+- **EffectiveCost Population**: Only the provider with actual usage data populates EffectiveCost with a non-zero value. The purchase provider sets EffectiveCost to 0.
 
 ## Examples
 
