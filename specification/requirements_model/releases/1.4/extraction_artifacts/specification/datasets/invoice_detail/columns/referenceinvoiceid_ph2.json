@@ -1,0 +1,212 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/invoice_detail/columns/referenceinvoiceid.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "ReferenceInvoiceId",
+    "entity_name": "Reference Invoice ID"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 6
+  },
+  "0_outline_root": "ROOT: Reference Invoice ID > Requirements",
+  "0_outline_lines": [
+    "L007: \"ReferenceInvoiceId MUST adhere to the following requirements:\"",
+    "  L009: \"ReferenceInvoiceId MUST be of type String.\"",
+    "  L010: \"ReferenceInvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
+    "  L011: \"ReferenceInvoiceId MUST NOT be null.\"",
+    "  L012: \"ReferenceInvoiceId MUST equal the [InvoiceId](#datasets.costandusage.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.\"",
+    "  L013: \"ReferenceInvoiceId MUST equal the InvoiceId of the current invoice if it does not adjust another invoice.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 6,
+    "leaf_count": 5,
+    "lead_in_count": 1,
+    "max_depth": 1,
+    "max_indent_level": 0,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 5,
+      "MUST NOT": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L007",
+        "text_preview": "ReferenceInvoiceId MUST adhere to the following requirements:",
+        "children": 5
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L007",
+            "text": "ReferenceInvoiceId MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Reference Invoice ID",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L009",
+                "text": "ReferenceInvoiceId MUST be of type String.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Reference Invoice ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L010",
+                "text": "ReferenceInvoiceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Reference Invoice ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L011",
+                "text": "ReferenceInvoiceId MUST NOT be null.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "Reference Invoice ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R005",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R005",
+                "order": 5,
+                "ref": "L012",
+                "text": "ReferenceInvoiceId MUST equal the [InvoiceId](#datasets.costandusage.invoiceid) of the original [*invoice*](#glossary:invoice) if it adjusts another invoice.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Reference Invoice ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R006",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R006",
+                "order": 6,
+                "ref": "L013",
+                "text": "ReferenceInvoiceId MUST equal the InvoiceId of the current invoice if it does not adjust another invoice.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Reference Invoice ID",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}
