@@ -816,7 +816,15 @@ This structured grouping improves clarity, consistency, and maintainability acro
 
 ### 5. Ordering of Attribute Requirements within Groups
 
-> TODO:
+* Within each group of requirements, order individual requirements as follows:
+  * Requirements targeting the general subject (e.g., FOCUS column) first
+  * Requirements targeting qualified subjects (e.g., FOCUS column containing numeric values) after
+  * Within each subject, order by BCP 14 keyword:
+    * MUST – an absolute requirement
+    * MUST NOT – a prohibition
+    * SHOULD – recommended but not mandatory
+    * SHOULD NOT – discouraged but not strictly prohibited
+    * MAY – optional
 
 ### 6. Attribute Normative Requirements Examples
 
