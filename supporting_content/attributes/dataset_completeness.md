@@ -167,9 +167,15 @@ For comprehensive documentation of how native columns map to FOCUS columns (both
 * **Preamble genericized for multi-dataset applicability**
   * Concern: Original examples were Cost & Usage-specific but attribute applies to Contract Commitment, Invoice Detail, and other datasets (Shawn)
   * Decision: Removed dataset-specific examples. The Example section provides concrete illustrations; the intro stays generic for broad applicability.
+* **Intro paragraph simplified**
+  * Concern: Second paragraph was a run-on sentence that was hard to parse (Matt)
+  * Decision: Split into two sentences. Changed ending from "bridging the gap between FOCUS standardization and data generator capabilities, allowing practitioners to adopt *FOCUS datasets* without losing analytical capabilities" to "This allows practitioners to adopt *FOCUS datasets* without losing analytical capabilities."
 * **Column ordering requirements moved from Column Handling**
   * Concern: If CH is column-level rules and DC is dataset-level policy, ordering belongs in DC (Shawn)
   * Decision: Moved three ordering requirements (FOCUS columns first, custom columns after, alphabetical sorting) from Column Handling to Dataset Completeness. Ordering is about dataset structure, not individual column properties.
+* **Removed opposite-polarity ordering requirement (antipattern)**
+  * Concern: Having both "SHOULD list FOCUS before custom" and "SHOULD NOT list custom before FOCUS" is the Requirements Model antipattern of stating the same rule in opposite polarities (Shawn)
+  * Decision: Removed the SHOULD NOT requirement. The positive SHOULD statement (line 28) is sufficient and clearer.
 
 ## Future Considerations
 
