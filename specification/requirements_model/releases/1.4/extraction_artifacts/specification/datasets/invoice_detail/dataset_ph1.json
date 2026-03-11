@@ -836,18 +836,6 @@
   ],
   "warnings": [
     {
-      "code": "W_ENTITY_NAME_CONFLICT",
-      "message": "Both a Dataset Name heading and a Display Name heading are present for the same entity type.",
-      "details": {
-        "entity_type": "Dataset",
-        "name_heading_expected": "## Dataset Name",
-        "name_heading_present": true,
-        "display_name_heading_expected": "## Display Name",
-        "display_name_heading_present": true
-      },
-      "text": "(document-level)"
-    },
-    {
       "code": "W_VERSION_INTRODUCED_MISSING_OR_INVALID",
       "severity": "MEDIUM",
       "message": "Heading \"## Introduced (version)\" is missing, empty, or invalid.",
