@@ -1043,7 +1043,7 @@ Common rule for columns with an unconditional NOT NULL requirement.
     "Order": 20,
     "ValidationCriteria": {
       "MustSatisfy": "SampleColumn MUST NOT be null",
-      "Keyword": "MUST",
+      "Keyword": "MUST NOT",
       "Requirement": {
         "CheckFunction": "CheckNotValue",
         "ColumnName": "SampleColumn",
