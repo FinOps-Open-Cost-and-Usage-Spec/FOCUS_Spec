@@ -50,13 +50,13 @@ Illustrative examples of Type values by provider:
 
 The FOCUS specification implements commitment eligibility via the [*CommitmentEligibilityDetails*](#datasets.costandusage.commitmenteligibilitydetails) column, which is defined in [*JSON object format*](#attributes.jsonobjectformat).
 
-Because ANSI SQL does not inherently support the parsing of JSON, the following queries leverage the JSON functions found in BigQuery Standard SQL in order to demonstrate this feature's functionality. Similar JSON functions are available in all major SQL engines; thus, the below examples can be slightly modified to accommodate any particular database instance.
+Because ANSI SQL does not inherently support the parsing of JSON, the following queries leverage the JSON functions and utility functions (e.g., SAFE_DIVIDE) found in BigQuery Standard SQL in order to demonstrate this feature's functionality. Similar functions are available in all major SQL engines; thus, the below examples can be slightly modified to accommodate any particular database instance.
 
 Note: The queries below target the `CommitmentDiscountTypes` key. To include capacity-reservation programs, apply the same JSON extraction pattern to the `CapacityReservationTypes` key. Providers using only custom (`x_`-prefixed) keys would require modified JSON paths.
 
 ### Identify Eligible Uncovered Spend by Commitment Type (CSP Example)
 
-This query identifies on-demand charges that are eligible for commitment programs but are not currently covered by a commitment discount. A practitioner running AWS workloads can use this to quantify the savings opportunity per commitment program type (e.g., SavingsPlan vs. ReservedInstance) and per service.
+This query identifies charges that are eligible for commitment programs but are not currently covered by a commitment discount. A practitioner running AWS workloads can use this to quantify the savings opportunity per commitment program type (e.g., SavingsPlan vs. ReservedInstance) and per service.
 
 The query filters to Usage charges where CommitmentEligibilityDetails is populated (the charge is eligible) and CommitmentDiscountId is null (no commitment is applied). It then expands the CommitmentDiscountTypes array to aggregate eligible spend per Type. This query uses BilledCost rather than EffectiveCost because the charges are uncovered (CommitmentDiscountId IS NULL), so BilledCost reflects the actual amount paid and the savings opportunity.
 
@@ -87,7 +87,7 @@ This query computes a commitment coverage rate using only eligible charges as th
 
 By filtering on `CommitmentEligibilityDetails IS NOT NULL`, the denominator includes only charges that could realistically be covered by a commitment, producing an eligibility-adjusted coverage metric.
 
-Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and are included in CoveredCost. This reflects that commitment capacity was purchased and allocated, even if not fully consumed. Practitioners seeking a utilization-adjusted rate should additionally filter on CommitmentDiscountStatus = "Used". This query relies on Unused rows having CommitmentEligibilityDetails populated so they pass the IS NOT NULL filter; if a provider does not populate CommitmentEligibilityDetails on Unused rows, the denominator would exclude them while the numerator (via CommitmentDiscountId IS NOT NULL) would not, potentially inflating the coverage rate.
+Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and are included in CoveredCost. Practitioners seeking a utilization-adjusted rate should additionally filter on CommitmentDiscountStatus = "Used". Whether CommitmentEligibilityDetails MUST be populated on Unused rows is not explicitly addressed in the column requirements. If a provider does not populate it on Unused rows, the denominator excludes them while the numerator does not, potentially inflating the coverage rate.
 
 ```sql
 SELECT
@@ -138,29 +138,6 @@ GROUP BY
   CU.ServiceProviderName,
   JSON_VALUE(CDT, '$.Type')
 ORDER BY UncoveredEligibleCost DESC
-```
-
-### Extract Capacity Reservation Eligibility (CapacityReservationTypes Example)
-
-This query demonstrates the JSON extraction pattern for the `CapacityReservationTypes` key, which follows the same structure as `CommitmentDiscountTypes`. A practitioner can use this to identify usage eligible for capacity-reservation programs separately from discount-bearing programs.
-
-```sql
-SELECT
-  CU.ServiceProviderName,
-  CU.ServiceName,
-  JSON_VALUE(CRT, '$.Type') AS EligibleCapacityReservationType,
-  SUM(CU.BilledCost) AS TotalEligibleUncoveredCost
-FROM focus_data_table CU
-CROSS JOIN
-  UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentEligibilityDetails, '$.CapacityReservationTypes')) AS CRT
-WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
-  AND CU.ChargeCategory = 'Usage'
-  AND CU.CommitmentDiscountId IS NULL
-GROUP BY
-  CU.ServiceProviderName,
-  CU.ServiceName,
-  JSON_VALUE(CRT, '$.Type')
-ORDER BY TotalEligibleUncoveredCost DESC
 ```
 
 ## Introduced (Version)
