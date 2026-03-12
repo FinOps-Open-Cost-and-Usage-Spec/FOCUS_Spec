@@ -18,7 +18,7 @@ Rules and formatting requirements for numeric columns appearing in a [*FOCUS dat
 
 ## Requirements
 
-NumericValueFormat MUST adhere to the following requirements:
+NumericFormat MUST adhere to the following requirements:
 
 * FOCUS column containing numeric values MUST adhere to the following requirements:
   * FOCUS column containing numeric values MUST contain a single numeric value.
