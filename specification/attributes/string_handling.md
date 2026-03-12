@@ -30,7 +30,7 @@ Column conforming to StringHandling attribute MUST adhere to the following requi
   * When column contains not-nullable string values, FOCUS column MUST adhere to the following requirements:
     * FOCUS column SHOULD NOT contain empty strings.
     * FOCUS column SHOULD NOT contain strings consisting solely of whitespace characters.
-* When custom column contains string values, FOCUS column MUST adhere to the following requirements:
+* When custom column contains string values, custom column MUST adhere to the following requirements:
   * Custom column SHOULD preserve the original casing of string values.
   * Custom column SHOULD preserve the original spacing of string values.
   * Custom column SHOULD preserve other relevant consistency factors as specified by the data generator or end-user.
