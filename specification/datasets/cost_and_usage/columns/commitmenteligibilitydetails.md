@@ -4,7 +4,7 @@ Commitment Eligibility Details indicates which [*commitment*](#glossary:commitme
 
 ## Requirements
 
-CommitmentEligibilityDetails column MUST adhere to the following requirements:
+CommitmentEligibilityDetails MUST adhere to the following requirements:
 
 * CommitmentEligibilityDetails MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the provider supports at least one type of [*commitment*](#glossary:commitment) program.
 * CommitmentEligibilityDetails MUST be of type String.
