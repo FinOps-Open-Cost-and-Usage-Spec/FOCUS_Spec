@@ -20,7 +20,7 @@ NullHandling MUST adhere to the following requirements:
 
 * FOCUS column MUST adhere to the following requirements:
   * FOCUS column defined as nullable MUST use NULL when no value is applicable.
-  * FOCUS column containing string values MUST NOT contain empty strings or placeholder strings (e.g., ""Not Applicable"") to indicate that no value is applicable.
+  * FOCUS column containing string values MUST NOT contain empty strings or placeholder strings (e.g., "Not Applicable") to indicate that no value is applicable.
   * FOCUS column containing numeric values MUST NOT contain placeholder numeric values (e.g., 0) to indicate that no value is applicable.
 * Custom column MUST adhere to the following requirements:
   * Custom column defined as nullable SHOULD use NULL when no value is applicable.
