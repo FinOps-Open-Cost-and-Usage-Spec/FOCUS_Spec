@@ -126,7 +126,7 @@ Here is a basic example of the object format, describing organization-wide cover
 
 ### Processing Workflow
 
-The evaluation of an entity against a commitment applicability MUST follow a strict linear progression:
+The evaluation of an entity against a commitment applicability must follow a strict linear progression:
 
 1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
 2. **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
