@@ -6,7 +6,7 @@ Contract Commitment Applicability is a structured definition of the specific ent
 
 ### Column Requirements
 
-The ContractCommitmentApplicability column MUST adhere to the following requirements:
+ContractCommitmentApplicability MUST adhere to the following requirements:
 
 * ContractCommitmentApplicability MUST be of type JSON Object (serialized as a String where necessary).
 * ContractCommitmentApplicability MUST conform to [StringHandling](#attributes.stringhandling) requirements.
@@ -22,7 +22,7 @@ The following section details the normative requirements for the ContractCommitm
 
 ### Object Requirements
 
-The ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
+ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 
 * ContractCommitmentApplicabilityObject MUST conform to the [ContractCommitmentApplicabilityObjectSchema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema) JSON Schema.
 * ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.
