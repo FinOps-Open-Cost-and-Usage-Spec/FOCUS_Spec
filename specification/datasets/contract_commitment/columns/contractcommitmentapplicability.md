@@ -1,6 +1,6 @@
 # Contract Commitment Applicability
 
-Contract Commitment Applicability is a structured definition of the specific entities eligible for coverage under a [*contract commitment*](#glossary:contract-commitment). This column details inclusionary and exclusionary logic, as well as the specific portion of cost or usage that is applicable.
+Contract Commitment Applicability is a structured definition of the specific entities eligible for coverage under a [*contract commitment*](#glossary:contract-commitment). This column details inclusionary and exclusionary logic, as well as the specific portion of eligible cost or usage that is applicable.
 
 ## Requirements
 
@@ -27,10 +27,10 @@ ContractCommitmentApplicabilityObject MUST adhere to the following requirements:
 * ContractCommitmentApplicabilityObject MUST conform to the [ContractCommitmentApplicabilityObjectSchema](#schemas.contractcommitment.contractcommitmentapplicabilityobjectschema) JSON Schema.
 * ContractCommitmentApplicabilityObject.IsGlobalScope MUST be `true` if the *contract commitment* applies to all entities.
 * ContractCommitmentApplicabilityObject.IsComplexScope MUST be `true` if the *contract commitment's* applicability logic exceeds schema capabilities.
-* ContractCommitmentApplicabilityObject.Applicability.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
-* ContractCommitmentApplicabilityObject.Applicability.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
-* ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Cost MUST represent the fraction of the charge's cost eligible for the commitment (0.0 to 1.0).
-* ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Usage MUST represent the fraction of the charge's usage quantity eligible for the commitment (0.0 to 1.0).
+* ContractCommitmentApplicabilityObject.Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).
+* ContractCommitmentApplicabilityObject.Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Cost MUST represent the fraction of an eligible charge's cost that is applicable to the commitment (0.0 to 1.0).
+* ContractCommitmentApplicabilityObject.Inclusions[\*].Applicability.Usage MUST represent the fraction of an eligible charge's usage that is applicable to the commitment (0.0 to 1.0).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
 * ContractCommitmentApplicabilityObject.Exclusions[\*].Dimension SHOULD represent a column in [Cost and Usage](#datasets.costandusage).
 * ContractCommitmentApplicabilityObject.Inclusions[\*].Values MUST contain only the single string "*" if the wildcard is present.
@@ -65,8 +65,8 @@ ContractCommitmentApplicability contains a structured JSON object defining the l
 
 | Key | Type | Default | Description |
 | :--- | :--- | :--- | :--- |
-| `Cost` | Decimal | 1.0 | Percentage applicable to `ContractCommitmentCost`. |
-| `Usage` | Decimal | 1.0 | Percentage applicable to `ContractCommitmentQuantity`. |
+| `Cost` | Decimal | 1.0 | Fraction of an eligible charge's cost applicable to the *contract commitment*. |
+| `Usage` | Decimal | 1.0 | Fraction of an eligible charge's usage applicable to the *contract commitment*. |
 
 ### Supported Operators
 
