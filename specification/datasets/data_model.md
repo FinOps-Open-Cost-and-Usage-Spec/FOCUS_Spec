@@ -6,7 +6,6 @@ FOCUS defines many individual datasets made up of a selected set of columns whic
 
 | Dataset                                             | Dataset Type | Feature Level | Description                                                                                                   |
 | --------------------------------------------------- | ------------ | ------------- | ------------------------------------------------------------------------------------------------------------- |
-
 | [Contract Commitment](#datasets.contractcommitment) | Reference    | Conditional   | Describes the terms of contracts agreed between a service provider and a customer.                            |
 | [Cost and Usage](#datasets.costandusage)            | Transaction  | Mandatory     | Describes the cost and usage incurred through using or purchasing a service provider's resources or services. |
 | [Invoice Detail](#datasets.invoicedetail)           | Transaction  | Conditional   | Describes the cost and usage issued on invoices.                                                              |
