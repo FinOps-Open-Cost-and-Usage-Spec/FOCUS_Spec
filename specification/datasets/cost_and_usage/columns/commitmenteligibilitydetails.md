@@ -91,7 +91,7 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 ``` json
 {
   "definitions": {
-    "commitmentDiscountTypeEntry": {
+    "commitmentProgramEntry": {
       "properties": {
         "Type": { "type": "string" }
       }
@@ -99,7 +99,10 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
   },
   "optionalProperties": {
     "CommitmentDiscountTypes": {
-      "elements": { "ref": "commitmentDiscountTypeEntry" }
+      "elements": { "ref": "commitmentProgramEntry" }
+    },
+    "CapacityReservationTypes": {
+      "elements": { "ref": "commitmentProgramEntry" }
     }
   }
 }
