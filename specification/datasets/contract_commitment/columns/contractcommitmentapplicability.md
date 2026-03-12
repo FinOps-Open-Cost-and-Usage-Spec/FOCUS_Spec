@@ -126,15 +126,15 @@ Here is a basic example of the object format, describing organization-wide cover
 
 ### Processing Workflow
 
-The evaluation of an entity against a commitment applicability MUST follow a strict linear progression:
+The evaluation of an entity against a commitment applicability must follow a strict linear progression:
 
 1. **Normalization:** Convert the entity attribute and the Scope `Values` to a consistent case (default: lowercase) for comparison.
 2. **Inclusion Evaluation:** Iterate through `Inclusions`. If a match is found, record the rule-level `Applicability` if present. Apply `InclusionOperator`. If result is `False`, terminate.
 3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, terminate evaluation.
 4. **Applicability Resolution:**
    * **Inheritance:** A matching rule's `Applicability` object takes precedence over the top-level object.
-   * **Defaulting:** If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine MUST default that specific value to `1.0`.
-   * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine MUST use the highest percentage for each respective metric.
+   * **Defaulting:** If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine must default that specific value to `1.0`.
+   * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine must use the highest percentage for each respective metric.
    * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
 
 ### Integration with Commitment Logic
