@@ -29,13 +29,16 @@ Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 
 ## Requirements
 
-ColumnHandling MUST adhere to the following requirements:
+Dataset conforming to ColumnHandling attribute MUST adhere to the following requirements:
 
 * FOCUS dataset MUST adhere to the following column ordering requirements:
   * FOCUS dataset SHOULD list all FOCUS columns before all Custom columns.
   * FOCUS dataset SHOULD sort FOCUS columns alphabetically by their Column ID within the FOCUS columns group.
   * FOCUS dataset SHOULD sort Custom columns alphabetically by their Column ID within the Custom columns group.
   * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns when ordering columns.
+
+Column conforming to ColumnHandling attribute MUST adhere to the following requirements:
+
 * FOCUS column MUST adhere to the following requirements:
   * FOCUS column MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID "BillingAccountName" and Display Name "Billing Account Name").
   * FOCUS column MUST use Pascal case in the Column ID.

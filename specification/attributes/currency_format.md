@@ -21,16 +21,14 @@ Formatting for currency columns appearing in a [*FOCUS dataset*](#glossary:FOCUS
 
 ## Requirements
 
-CurrencyFormat MUST adhere to the following requirements:
+Column conforming to CurrencyFormat attribute MUST adhere to the following requirements:
 
-* FOCUS column representing national currency MUST adhere to the following requirements:
-  * FOCUS column representing national currency MUST conform to ISO 4217:2015 standard.
-  * FOCUS column representing national currency MUST use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
-* FOCUS column representing virtual currency MUST conform to [StringHandling](#attributes.stringhandling) requirements (e.g., Credits, Tokens).
-* Custom column representing national currency MUST adhere to the following requirements:
-  * Custom column representing national currency SHOULD conform to ISO 4217:2015 standard.
-  * Custom column representing national currency SHOULD use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
-* Custom column representing virtual currency SHOULD conform to StringHandling requirements.
+* When FOCUS column represents national currency, FOCUS column MUST adhere to the following requirements:
+  * FOCUS column MUST conform to ISO 4217:2015 standard.
+  * FOCUS column MUST use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
+* When custom column represents national currency, custom column MUST adhere to the following requirements:
+  * Custom column SHOULD conform to ISO 4217:2015 standard.
+  * Custom column SHOULD use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
 
 ## Introduced (version)
 

@@ -16,16 +16,16 @@ Indicates how to handle columns that don't have a value.
 
 ## Requirements
 
-NullHandling MUST adhere to the following requirements:
+Column conforming to NullHandling attribute MUST adhere to the following requirements:
 
 * FOCUS column MUST adhere to the following requirements:
-  * FOCUS column defined as nullable MUST use NULL when no value is applicable.
-  * FOCUS column containing string values MUST NOT contain empty strings or placeholder strings (e.g., "Not Applicable") to indicate that no value is applicable.
-  * FOCUS column containing numeric values MUST NOT contain placeholder numeric values (e.g., 0) to indicate that no value is applicable.
+  * FOCUS column MUST use NULL for absent values when the FOCUS column is defined as nullable.
+  * FOCUS column MUST NOT contain empty strings or placeholder strings (e.g., "Not Applicable") for absent values when the FOCUS column contains string values.
+  * FOCUS column MUST NOT contain placeholder numeric values (e.g., 0) for absent values when the FOCUS column contains numeric values.
 * Custom column MUST adhere to the following requirements:
-  * Custom column defined as nullable SHOULD use NULL when no value is applicable.
-  * Custom column containing string values SHOULD NOT contain empty strings or placeholder strings (e.g., "Not Applicable") to indicate that no value is applicable.
-  * Custom column containing numeric values SHOULD NOT contain placeholder numeric values (e.g., 0) to indicate that no value is applicable.
+  * Custom column SHOULD use NULL for absent values when the custom column is defined as nullable.
+  * Custom column SHOULD NOT contain empty strings or placeholder strings (e.g., "Not Applicable") for absent values when the custom column contains string values.
+  * Custom column SHOULD NOT contain placeholder numeric values (e.g., 0) for absent values when the custom column contains numeric values.
 
 ## Introduced (version)
 

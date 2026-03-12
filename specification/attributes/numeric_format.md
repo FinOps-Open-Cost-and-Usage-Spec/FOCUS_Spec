@@ -16,34 +16,36 @@ Rules and formatting requirements for numeric columns appearing in a [*FOCUS dat
 
 ## Requirements
 
-NumericFormat MUST adhere to the following requirements:
+Column conforming to NumericFormat attribute MUST adhere to the following requirements:
 
-* FOCUS column containing numeric values MUST adhere to the following requirements:
-  * FOCUS column containing numeric values MUST contain a single numeric value.
-  * FOCUS column containing numeric values MUST have values of type integer, decimal, or scientific notation.
-  * FOCUS column containing numeric values expressed in scientific notation MUST use E notation "mEn", where m is a real number and n is an integer exponent.
-  * FOCUS column containing numeric values expressed in scientific notation MUST use a negative sign (-) to indicate a negative exponent.
-  * FOCUS column containing numeric values expressed in scientific notation MUST NOT include a positive sign (+) for a positive exponent.
-  * FOCUS column containing numeric values MUST NOT use mathematical symbols, functions, or operators.
-  * FOCUS column containing numeric values MUST NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
-  * FOCUS column containing numeric values MUST NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
-  * FOCUS column containing numeric values MUST use a negative sign (-) to indicate a negative value.
-  * FOCUS column containing numeric values MUST NOT include a positive sign (+) for a positive value.
-  * FOCUS column containing numeric values MUST contain values that, when not null, conform to one of the allowed Data Types defined in the table below.
-  * FOCUS column containing numeric values MUST contain values that, when not null, conform to one of the allowed precision levels (and scale, where applicable) defined in the table below.
-* Custom column containing numeric values MUST adhere to the following requirements:
-  * Custom column containing numeric values SHOULD contain a single numeric value.
-  * Custom column containing numeric values SHOULD have values of type integer, decimal, or scientific notation.
-  * Custom column containing numeric values expressed in scientific notation SHOULD use E notation "mEn", where m is a real number and n is an integer exponent.
-  * Custom column containing numeric values expressed in scientific notation SHOULD use a negative sign (-) to indicate a negative exponent.
-  * Custom column containing numeric values expressed in scientific notation SHOULD NOT include a positive sign (+) for a positive exponent.
-  * Custom column containing numeric values SHOULD NOT use mathematical symbols, functions, or operators.
-  * Custom column containing numeric values SHOULD NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
-  * Custom column containing numeric values SHOULD NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
-  * Custom column containing numeric values SHOULD use a negative sign (-) to indicate a negative value.
-  * Custom column containing numeric values SHOULD NOT include a positive sign (+) for a positive value.
-  * Custom column containing numeric values SHOULD contain values that, when not null, conform to one of the allowed Data Types defined in the table below.
-  * Custom column containing numeric values SHOULD contain values that, when not null, conform to one of the allowed precisions (and scale, where applicable) defined in the table below.
+* When FOCUS column contains numeric values, FOCUS column MUST adhere to the following requirements:
+  * FOCUS column MUST contain a single numeric value.
+  * FOCUS column MUST have values of type integer, decimal, or scientific notation.
+  * FOCUS column MUST contain values that, when not null, conform to one of the allowed Data Types defined in the table below.
+  * FOCUS column MUST contain values that, when not null, conform to one of the allowed precision levels (and scale, where applicable) defined in the table below.
+  * FOCUS column MUST NOT use mathematical symbols, functions, or operators, except for a negative sign (-) to indicate a negative value or a negative exponent in scientific notation.
+  * FOCUS column MUST NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
+  * FOCUS column MUST NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
+  * FOCUS column MUST use a negative sign (-) to indicate a negative value.
+  * FOCUS column MUST NOT include a positive sign (+) for a positive value.
+  * When column contains numeric values expressed in scientific notation, FOCUS column MUST adhere to the following requirements:
+    * FOCUS column MUST use E notation "mEn", where m is a real number and n is an integer exponent.
+    * FOCUS column MUST use a negative sign (-) to indicate a negative exponent.
+    * FOCUS column MUST NOT include a positive sign (+) for a positive exponent.
+* When custom column contains numeric values, custom column MUST adhere to the following requirements:
+  * Custom column MUST contain a single numeric value.
+  * Custom column SHOULD contain values that, when not null, conform to one of the allowed Data Types defined in the table below.
+  * Custom column SHOULD contain values that, when not null, conform to one of the allowed precisions (and scale, where applicable) defined in the table below.
+  * Custom column SHOULD have values of type integer, decimal, or scientific notation.
+  * Custom column SHOULD NOT use mathematical symbols, functions, or operators, except for a negative sign (-) to indicate a negative value or a negative exponent in scientific notation.
+  * Custom column SHOULD NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
+  * Custom column SHOULD NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
+  * Custom column SHOULD use a negative sign (-) to indicate a negative value.
+  * Custom column SHOULD NOT include a positive sign (+) for a positive value.
+  * When column contains numeric values expressed in scientific notation, custom column MUST adhere to the following requirements:
+    * Custom column SHOULD use E notation "mEn", where m is a real number and n is an integer exponent.
+    * Custom column SHOULD use a negative sign (-) to indicate a negative exponent.
+    * Custom column SHOULD NOT include a positive sign (+) for a positive exponent.
 
 ### Allowed Data Types
 

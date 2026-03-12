@@ -18,7 +18,7 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
 
 ## Requirements
 
-InvoiceHandling MUST adhere to the following requirements:
+Dataset conforming to InvoiceHandling attribute MUST adhere to the following requirements:
 
 * CostAndUsage *FOCUS dataset* MUST account for all monetary line items included on any invoice issued to a BillingAccountId.
 * CostAndUsage *FOCUS dataset* MAY omit informational line items with zero monetary impact included on invoice only for transparency (e.g., tax exemption notifications, SLA credit details when the credit is already applied to the charged amount).

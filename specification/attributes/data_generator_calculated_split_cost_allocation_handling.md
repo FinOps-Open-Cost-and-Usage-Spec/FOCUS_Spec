@@ -16,22 +16,12 @@ An attribute that allows data generators to offer more detailed cost and usage i
 
 ## Requirements
 
-DataGeneratorCalculatedSplitCostAllocationHandling MUST adhere to the following requirements:
+When the data generator supports data generator-calculated split cost allocation, column conforming to DataGeneratorCalculatedSplitCostAllocationHandling attribute MUST adhere to the following requirements:
 
-* CostAndUsage FOCUS dataset MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid), [AllocatedResourceId](#datasets.costandusage.allocatedresourceid), [AllocatedResourceName](#datasets.costandusage.allocatedresourcename), and [AllocatedResourceTags](#datasets.costandusage.allocatedtags) when the data generator supports data generator-calculated split cost allocation.
-* CostAndUsage FOCUS dataset SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the data generator supports data generator-calculated split cost allocation.
-* When the data generator supports data generator-calculated split cost allocation, CostAndUsage FOCUS dataset MUST adhere to the following requirements:
-  * CostAndUsage FOCUS dataset MUST have its split cost allocation method documented and accessible to practitioners.
-  * CostAndUsage FOCUS dataset SHOULD offer split cost allocation on an opt-in basis.
-  * CostAndUsage FOCUS dataset MAY contain records for concepts not related to resource usage, if it aligns with the documented split cost allocation method.
-  * CostAndUsage FOCUS dataset MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented split cost allocation method.
-  * CostAndUsage FOCUS dataset MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented split cost allocation method.
-  * CostAndUsage FOCUS dataset MUST conform to normative requirements for all columns in *allocated charges*.
-* When the data generator supports data generator-calculated split cost allocation, FOCUS column MUST adhere to the following requirements:
-  * FOCUS column containing summable [*metric*](#glossary:metric) values (e.g., costs and quantities) in *allocated charges* MUST sum up to the corresponding value in the *origin charge*.
-  * FOCUS column containing non-summable *metric* values (e.g., unit prices) in *allocated charges* MUST match the corresponding value in the *origin charge*.
-  * FOCUS column containing dimension values in *allocated charges* MUST match the corresponding value in the *origin charge*.
-  * FOCUS column containing tag values in *allocated charges* MUST include the same keys and values present in the [CostAndUsage.Tags](#datasets.costandusage.tags) column in the *origin charge*.
+* The sum of FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a summable [*metric*](#glossary:metric) (e.g., costs and quantities).
+* FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a non-summable *metric* (e.g., unit prices).
+* FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a dimension.
+* FOCUS column values in *allocated charges* MUST include the same keys and values present in the [CostAndUsage.Tags](#datasets.costandusage.tags) in the *origin charge* when the FOCUS column contains tag values.
 
 ## Introduced (version)
 

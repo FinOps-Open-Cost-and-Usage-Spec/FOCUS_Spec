@@ -16,28 +16,32 @@ Requirements for string-capturing columns appearing in a [*FOCUS dataset*](#glos
 
 ## Requirements
 
-StringHandling MUST adhere to the following requirements:
+Column conforming to StringHandling attribute MUST adhere to the following requirements:
 
-* FOCUS column containing string values MUST adhere to the following requirements:
-  * FOCUS column containing string values MUST preserve the original casing of string values.
-  * FOCUS column containing string values MUST preserve the original spacing of string values.
-  * FOCUS column containing string values MUST preserve other relevant consistency factors as specified by the data generator or end-user.
-  * FOCUS column containing immutable string values (e.g., resource identifier, region identifier) MUST remain consistent across all [*billing periods*](#glossary:billing-period).
-  * FOCUS column containing mutable string values (e.g., resource name, region name) MUST reflect the altered value in all records pertaining to a period after the change.
-  * FOCUS column containing mutable string values MUST reflect the string value as it existed prior to the change in all records pertaining to a period prior to the change when the record does not represent a correction to a previously closed billing period.
-  * FOCUS column containing mutable string values MAY reflect the altered value in records pertaining to a period prior to the change when the record represents a correction to a previously closed billing period.
-  * FOCUS column containing not-nullable string values SHOULD NOT contain empty strings.
-  * FOCUS column containing not-nullable string values SHOULD NOT contain strings consisting solely of whitespace characters.
-* Custom column containing string values MUST adhere to the following requirements:
-  * Custom column containing string values SHOULD preserve the original casing of string values.
-  * Custom column containing string values SHOULD preserve the original spacing of string values.
-  * Custom column containing string values SHOULD preserve other relevant consistency factors as specified by the data generator or end-user.
-  * Custom column containing immutable string values SHOULD remain consistent across all *billing periods*.
-  * Custom column containing mutable string values SHOULD reflect the altered value in all records pertaining to a period after the change.
-  * Custom column containing mutable string values SHOULD reflect the string value as it existed prior to the change in all records pertaining to a period prior to the change when the record does not represent a correction to a previously closed billing period.
-  * Custom column containing mutable string values MAY reflect the altered value in records pertaining to a period prior to the change when the record represents a correction to a previously closed billing period.
-  * Custom column containing not-nullable string values SHOULD NOT contain empty strings.
-  * Custom column containing not-nullable string values SHOULD NOT contain strings consisting solely of whitespace characters.
+* When FOCUS column contains string values, FOCUS column MUST adhere to the following requirements:
+  * FOCUS column MUST preserve the original casing of string values.
+  * FOCUS column MUST preserve the original spacing of string values.
+  * FOCUS column MUST preserve other relevant consistency factors as specified by the data generator or end-user.
+  * FOCUS column MUST remain consistent across all [*billing periods*](#glossary:billing-period) when the FOCUS column contains immutable string values (e.g., resource identifier, region identifier).
+  * When column contains mutable string values, FOCUS column MUST adhere to the following requirements:
+    * FOCUS column (e.g., resource name, region name) MUST reflect the altered value in all records pertaining to a period after the change.
+    * FOCUS column MUST reflect the string value as it existed prior to the change in all records pertaining to a period prior to the change when the record does not represent a correction to a previously closed billing period.
+    * FOCUS column MAY reflect the altered value in records pertaining to a period prior to the change when the record represents a correction to a previously closed billing period.
+  * When column contains not-nullable string values, FOCUS column MUST adhere to the following requirements:
+    * FOCUS column SHOULD NOT contain empty strings.
+    * FOCUS column SHOULD NOT contain strings consisting solely of whitespace characters.
+* When custom column contains string values, FOCUS column MUST adhere to the following requirements:
+  * Custom column SHOULD preserve the original casing of string values.
+  * Custom column SHOULD preserve the original spacing of string values.
+  * Custom column SHOULD preserve other relevant consistency factors as specified by the data generator or end-user.
+  * Custom column SHOULD remain consistent across all *billing periods* when the custom column contains immutable string values.
+  * When column contains mutable string values, custom column MUST adhere to the following requirements:
+    * Custom column SHOULD reflect the altered value in all records pertaining to a period after the change.
+    * Custom column SHOULD reflect the string value as it existed prior to the change in all records pertaining to a period prior to the change when the record does not represent a correction to a previously closed billing period.
+    * Custom column MAY reflect the altered value in records pertaining to a period prior to the change when the record represents a correction to a previously closed billing period.
+  * When column contains not-nullable string values, custom column MUST adhere to the following requirements:
+    * Custom column SHOULD NOT contain empty strings.
+    * Custom column SHOULD NOT contain strings consisting solely of whitespace characters.
 
 ## Introduced (version)
 
