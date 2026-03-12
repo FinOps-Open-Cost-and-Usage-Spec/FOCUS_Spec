@@ -38,7 +38,7 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be of type String.
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST NOT be null.
-  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST correspond to a commitment program type supported by the provider (for example, "SavingsPlan", "ReservedInstance", "CommittedUseDiscount").
+  * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST correspond to a commitment program type supported by the provider (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount").
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when CommitmentDiscountType is populated by the provider.
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type SHOULD correspond to terminology disclosed by the provider in public documentation when CommitmentDiscountType is not populated by the provider.
 * CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST adhere to the following requirements:
