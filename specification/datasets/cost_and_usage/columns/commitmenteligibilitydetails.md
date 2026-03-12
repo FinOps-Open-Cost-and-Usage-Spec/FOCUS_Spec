@@ -1,6 +1,6 @@
 # Commitment Eligibility Details
 
-Commitment Eligibility Details indicates which [*commitment*](#glossary:commitment) programs a provider designates as applicable to a usage line item. This reflects the inherent eligibility of the service, subject to any provider-defined constraints. This column enables practitioners to identify uncovered spend that could have been covered, separating it from spend that is strictly ineligible. For the purposes of this column, *commitment* programs include both discount-bearing constructs (for example, Savings Plans, committed-use discounts) and non-discount constructs that reserve capacity in advance (for example, capacity reservations, zonal reservations), when those constructs are treated by the provider as commitments.
+Commitment Eligibility Details indicates which [*commitment*](#glossary:commitment) programs a provider designates as applicable to a usage row. This reflects the inherent eligibility of the service, subject to any provider-defined constraints. This column enables practitioners to identify uncovered spend that could have been covered, separating it from spend that is strictly ineligible. For the purposes of this column, *commitment* programs include both discount-bearing constructs (for example, Savings Plans, committed-use discounts) and non-discount constructs that reserve capacity in advance (for example, capacity reservations, zonal reservations), when those constructs are treated by the provider as commitments.
 
 ## Requirements
 
@@ -10,7 +10,7 @@ CommitmentEligibilityDetails MUST adhere to the following requirements:
 * CommitmentEligibilityDetails MUST be of type String.
 * CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* CommitmentEligibilityDetails MUST NOT be null when a charge is eligible for a commitment program, regardless of whether a commitment was actually applied to the line item.
+* CommitmentEligibilityDetails MUST NOT be null when a charge is eligible for a commitment program, regardless of whether a commitment was actually applied to the charge.
 * CommitmentEligibilityDetails MUST NOT consider transient account configurations or quotas that might temporarily prevent purchase or participation in a commitment program.
 * CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
 * CommitmentEligibilityDetails SHOULD include negotiated commitment programs for which the usage is eligible.
@@ -19,7 +19,7 @@ CommitmentEligibilityDetails MUST adhere to the following requirements:
 
 ## Commitment Eligibility Details Object
 
-Commitment Eligibility Details consists of a valid JSON object with top-level property keys representing categories of commitment programs. Each key contains an array of objects describing the specific commitment types available for the line item's usage.
+Commitment Eligibility Details consists of a valid JSON object with top-level property keys representing categories of commitment programs. Each key contains an array of objects describing the specific commitment types available for the usage charge.
 
 ### Object Requirements
 
@@ -59,16 +59,11 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 | `CommitmentDiscountTypes` | Array | Conditional | Array of objects identifying [*commitment discount*](#glossary:commitment-discount) programs for which the usage is eligible. |
 | `CapacityReservationTypes` | Array | Conditional | Array of objects identifying capacity-reservation commitment programs (e.g., capacity reservations, zonal reservations) for which the usage is eligible. |
 
-### CommitmentDiscountTypes Entry
+### Example Entries
 
 | Key  | ValueType                            | Required | Description                                                                |
 |:-----------------|:-----------------|:-----------------|:-----------------|
 | Type | [String](#attributes.stringhandling) | True     | The specific type of commitment discount program available for this usage. |
-
-### CapacityReservationTypes Entry
-
-| Key  | ValueType                            | Required | Description                                                                |
-|:-----------------|:-----------------|:-----------------|:-----------------|
 | Type | [String](#attributes.stringhandling) | True     | The specific type of capacity-reservation commitment program available for this usage. |
 
 ### Object Example
@@ -128,7 +123,7 @@ Commitment Eligibility Details
 
 ## Description
 
-The types of [*commitment*](#glossary:commitment) programs available for a specific usage line item.
+The types of [*commitment*](#glossary:commitment) programs available for a specific usage row.
 
 ## Content constraints
 
