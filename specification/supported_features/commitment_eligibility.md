@@ -4,7 +4,7 @@
 
 FOCUS supports the identification of charges that are eligible for commitment programs. The [*CommitmentEligibilityDetails*](#datasets.costandusage.commitmenteligibilitydetails) column captures which commitment programs a charge qualifies for, regardless of whether a [*commitment*](#glossary:commitment) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
 
-CommitmentEligibilityDetails contains a JSON object with two FOCUS-defined top-level keys: `CommitmentDiscountTypes` for discount-bearing programs and `CapacityReservationTypes` for programs that reserve capacity without providing a unit discount. Each key holds an array of objects with a `Type` property identifying the specific program. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. Providers SHOULD also include negotiated commitment programs for which usage is eligible (see [column requirements](#datasets.costandusage.commitmenteligibilitydetails)). For more information, see the definition of CommitmentEligibilityDetails [here](#datasets.costandusage.commitmenteligibilitydetails).
+CommitmentEligibilityDetails contains a JSON object with two FOCUS-defined top-level keys: `CommitmentDiscountTypes` for discount-bearing programs and `CapacityReservationTypes` for programs that reserve capacity without providing a unit discount. Each key holds an array of objects with a `Type` property identifying the specific program. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. Per the [column requirements](#datasets.costandusage.commitmenteligibilitydetails), providers SHOULD also include negotiated commitment programs for which usage is eligible. For more information, see the definition of CommitmentEligibilityDetails [here](#datasets.costandusage.commitmenteligibilitydetails).
 
 ### Naming Conventions for Type Values
 
@@ -12,7 +12,7 @@ The `Type` property follows PascalCase by convention, identifying commitment pro
 
 * Are consistent with [*CommitmentDiscountType*](#datasets.costandusage.commitmentdiscounttype) strings when that column is populated.
 * Should correspond to the provider's documented terminology when CommitmentDiscountType is not populated (common for SaaS providers that do not itemize commitment discount application at the line-item level).
-* Do not encode term length, payment option, or other commitment attributes. For example, use "SavingsPlan" rather than "1YearSavingsPlanNoUpfront".
+* Do not encode term length, payment option, or other commitment attributes. For example, use "SavingsPlan" rather than "1YearSavingsPlanNoUpfront". Where a provider's documented program name inherently includes a term reference (e.g., Datadog's "MonthlyCommitment"), use the provider name as-is.
 
 The same naming conventions apply to entries in `CapacityReservationTypes`. For example, AWS capacity-reservation programs use types such as "CapacityReservation" and "ZonalReservation".
 
@@ -35,6 +35,7 @@ Illustrative examples of Type values by provider:
 ## Supporting Columns
 
 * BilledCost
+* ChargeCategory
 * ChargePeriodEnd
 * ChargePeriodStart
 * CommitmentDiscountId
