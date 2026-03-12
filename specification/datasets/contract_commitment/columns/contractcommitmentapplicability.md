@@ -133,8 +133,8 @@ The evaluation of an entity against a commitment applicability must follow a str
 3. **Exclusion Evaluation:** Iterate through `Exclusions`. If `True`, terminate evaluation.
 4. **Applicability Resolution:**
    * **Inheritance:** A matching rule's `Applicability` object takes precedence over the top-level object.
-   * **Defaulting:** If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine MUST default that specific value to `1.0`.
-   * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine MUST use the highest percentage for each respective metric.
+   * **Defaulting:** If a metric key (`Cost` or `Usage`) is missing within a provided `Applicability` object, the engine must default that specific value to `1.0`.
+   * **Rule-level Priority:** Use the `Applicability` from the matching inclusion rule. If multiple rules match under `Or`, the engine must use the highest percentage for each respective metric.
    * **Fallback:** Use the top-level `Applicability` if no rule-level value is provided.
 
 ### Integration with Commitment Logic
