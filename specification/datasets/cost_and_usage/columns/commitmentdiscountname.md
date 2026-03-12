@@ -4,13 +4,13 @@ A Commitment Discount Name is the display name assigned to a [*commitment discou
 
 ## Requirements
 
-CommitmentDiscountName adheres to the following requirements:
+CommitmentDiscountName MUST adhere to the following requirements:
 
 * CommitmentDiscountName MUST be of type String.
 * CommitmentDiscountName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentDiscountName nullability is defined as follows:
+* CommitmentDiscountName MUST adhere to the following nullability requirements:
   * CommitmentDiscountName MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
-  * When CommitmentDiscountId is not null, CommitmentDiscountName adheres to the following additional requirements:
+  * When CommitmentDiscountId is not null, CommitmentDiscountName MUST adhere to the following requirements:
     * CommitmentDiscountName MUST NOT be null when a display name can be assigned to a *commitment discount*.
     * CommitmentDiscountName MAY be null when a display name cannot be assigned to a *commitment discount*.
 

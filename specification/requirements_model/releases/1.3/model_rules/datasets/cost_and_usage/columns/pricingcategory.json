@@ -1,0 +1,465 @@
+{
+  "CAU-PricingCategory-C-000-C": {
+    "Function": "Composite",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_PRICING_CATEGORIES_SUPPORTED"
+    ],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-006-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-022-C",
+        "CAU-PricingCategory-C-001-M",
+        "CAU-PricingCategory-C-002-M",
+        "CAU-PricingCategory-C-006-C"
+      ]
+    }
+  },
+  "CAU-PricingCategory-C-001-M": {
+    "Function": "Type",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "PricingCategory"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCategory-C-002-M": {
+    "Function": "Composite",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-012-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-005-O"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-PricingCategory-C-012-C",
+        "CAU-PricingCategory-C-003-C",
+        "CAU-PricingCategory-C-004-C",
+        "CAU-PricingCategory-C-005-O"
+      ]
+    }
+  },
+  "CAU-PricingCategory-C-003-C": {
+    "Function": "Nullability",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "Cross-column reference: ChargeCategory",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be null when ChargeCategory is \"Tax\".",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "PricingCategory",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ChargeCategory",
+        "Value": "Tax"
+      },
+      "Dependencies": [
+        "CAU-ChargeCategory-C-000-M"
+      ]
+    }
+  },
+  "CAU-PricingCategory-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST NOT be null when ChargeCategory is \"Usage\" or \"Purchase\" and ChargeClass is not \"Correction\".",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCategory",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "OR",
+            "Items": [
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Usage"
+              },
+              {
+                "CheckFunction": "CheckValue",
+                "ColumnName": "ChargeCategory",
+                "Value": "Purchase"
+              }
+            ]
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ChargeClass",
+            "Value": "Correction"
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-ChargeCategory-C-000-M",
+        "CAU-ChargeClass-C-000-M"
+      ]
+    }
+  },
+  "CAU-PricingCategory-C-005-O": {
+    "Function": "Nullability",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MAY be null in all other cases.",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCategory-C-006-C": {
+    "Function": "Composite",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When PricingCategory is not null, PricingCategory adheres to the following additional requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-007-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-008-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-010-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-PricingCategory-C-011-C"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCategory",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-PricingCategory-C-007-M",
+        "CAU-PricingCategory-C-008-C",
+        "CAU-PricingCategory-C-009-C",
+        "CAU-PricingCategory-C-010-C",
+        "CAU-PricingCategory-C-011-C"
+      ]
+    }
+  },
+  "CAU-PricingCategory-C-007-M": {
+    "Function": "Validation",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be one of the allowed values.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "OR",
+        "Items": [
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "PricingCategory",
+            "Value": "Standard"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "PricingCategory",
+            "Value": "Committed"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "PricingCategory",
+            "Value": "Dynamic"
+          },
+          {
+            "CheckFunction": "CheckValue",
+            "ColumnName": "PricingCategory",
+            "Value": "Other"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCategory-C-008-C": {
+    "Function": "Validation",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be \"Standard\" when pricing is predetermined at the agreed upon rate for the billing account.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "PricingCategory",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCategory-C-009-C": {
+    "Function": "Validation",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be \"Committed\" when the charge is subject to an existing commitment discount and is not the purchase of the commitment discount.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCategory-C-010-C": {
+    "Function": "Validation",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 120,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be \"Dynamic\" when pricing is determined by the service provider and may change over time, regardless of predetermined agreement pricing.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCategory-C-011-C": {
+    "Function": "Validation",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be \"Other\" when there is a pricing model but none of the allowed values apply.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-PricingCategory-C-012-C": {
+    "Function": "Nullability",
+    "Reference": "PricingCategory",
+    "EntityType": "Column",
+    "EntityName": "Pricing Category",
+    "EntityId": "PricingCategory",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "PricingCategory MUST be null when SkuPriceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "PricingCategory",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "SkuPriceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-SkuPriceId-C-003-M"
+      ]
+    }
+  }
+}

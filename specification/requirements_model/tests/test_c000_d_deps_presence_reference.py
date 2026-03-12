@@ -77,12 +77,12 @@ def test_c000_rules_d_deps_presence_or_composite_refs_match(cr_json):
             missing_any_d.append(col_id)
             continue
 
-        col_ref = col_rule.get("Reference")
+        col_ref = col_rule.get("EntityId")
 
         for d_id in d_dep_ids:
             d_rule = rules.get(d_id) or {}
             d_func = d_rule.get("Function")
-            d_ref = d_rule.get("Reference")
+            d_ref = d_rule.get("EntityId")
 
             if d_func == "Presence":
                 if d_ref != col_ref:
@@ -97,7 +97,7 @@ def test_c000_rules_d_deps_presence_or_composite_refs_match(cr_json):
                 # All nested -D- rules reachable via Requirement/Condition must match too
                 nested_d_ids = _collect_nested_d_rules(d_id, rules)
                 for nd in nested_d_ids:
-                    nd_ref = (rules.get(nd) or {}).get("Reference")
+                    nd_ref = (rules.get(nd) or {}).get("EntityId")
                     if nd_ref != col_ref:
                         local_bad.append((nd, nd_ref))
                 if local_bad:
