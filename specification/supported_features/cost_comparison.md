@@ -73,8 +73,8 @@ SELECT ServiceProviderName,
     TotalEffectiveCost,
     TotalBilledCost,
     TotalListCost,
-    1 - (TotalContractedCost / NULLIF(TotalListCost, 0)) * 100 AS ContractedDiscount,
-    1 - (TotalEffectiveCost / NULLIF(TotalListCost, 0)) * 100 AS EffectiveDiscount
+    (1 - TotalContractedCost / NULLIF(TotalListCost, 0)) * 100 AS ContractedDiscount,
+    (1 - TotalEffectiveCost / NULLIF(TotalListCost, 0)) * 100 AS EffectiveDiscount
 FROM AggregatedData
 ```
 
