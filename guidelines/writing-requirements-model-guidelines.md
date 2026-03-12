@@ -199,7 +199,6 @@ If a rule has **any** of the following scope indicators, it **MUST** use the `-C
 
 // Condition present → -C
 "CCT-ContractCommitmentQuantity-C-004-C": {
-"CCT-ContractCommitmentQuantity-C-004-C": {
   "ValidationCriteria": {
     "Condition": {
       "CheckFunction": "CheckValue",
