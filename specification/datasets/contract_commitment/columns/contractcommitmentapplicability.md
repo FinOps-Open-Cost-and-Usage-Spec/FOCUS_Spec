@@ -96,7 +96,7 @@ ContractCommitmentApplicability uses a reserved string to represent global or un
 2. **Exclusion Logic:** When `["*"]` is used in an Exclusion rule, the rule evaluates to `True` for every entity, effectively excluding all entities (this is typically used only in combination with `ExclusionOperator: "And"` for surgical filtering).
 3. **Implicit Wildcards:** If a Dimension (e.g., `RegionId`) is omitted entirely from the `Inclusions` array, it is treated as an implicit wildcard (unrestricted).
 
-### Object Example
+## Object Example
 
 Here is a basic example of the object format, describing organization-wide coverage **except** for Database services running in BillingAccountId 123456789012.  
 
