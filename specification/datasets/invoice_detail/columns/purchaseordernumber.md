@@ -1,6 +1,6 @@
 # Purchase Order Number
 
-A Purchase Order Number is the unique customer-issued identifier for tracking the lifecycle of a purchase. This identifier is typically provided by the customer to the invoice issuer to ensure that charges are mapped to specific internal procurement records or purchase orders.
+Purchase Order Number is the unique customer-issued identifier for tracking the lifecycle of a purchase. This identifier is typically provided by the customer to the invoice issuer to ensure that charges are mapped to specific internal procurement records or purchase orders.
 
 ## Requirements
 

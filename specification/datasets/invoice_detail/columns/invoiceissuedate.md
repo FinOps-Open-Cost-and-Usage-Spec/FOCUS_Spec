@@ -1,6 +1,6 @@
 # Invoice Issue Date
 
-An Invoice Issue Date is the date the invoice was issued by the invoice issuer. This date serves as the official point of record for the billing document, determining the beginning of payment terms and providing a key reference point for financial audits and period closing processes.
+Invoice Issue Date is the date the invoice was issued by the invoice issuer. This date serves as the official point of record for the billing document, determining the beginning of payment terms and providing a key reference point for financial audits and period closing processes.
 
 ## Requirements
 

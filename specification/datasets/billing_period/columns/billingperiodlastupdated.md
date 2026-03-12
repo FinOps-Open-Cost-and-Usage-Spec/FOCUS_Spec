@@ -1,6 +1,6 @@
 # Billing Period Last Updated
 
-A Billing Period Last Updated is the timestamp when the [Billing Period](#datasets.billingperiod) record was last updated. This timestamp helps FinOps practitioners ensure that they are working with the most current version of a record, particularly if corrections or status changes have been applied to the record after its initial creation.
+Billing Period Last Updated is the timestamp when the [Billing Period](#datasets.billingperiod) record was last updated. This timestamp helps FinOps practitioners ensure that they are working with the most current version of a record, particularly if corrections or status changes have been applied to the record after its initial creation.
 
 ## Requirements
 
