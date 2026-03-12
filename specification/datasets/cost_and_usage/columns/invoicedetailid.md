@@ -1,6 +1,6 @@
 # Invoice Detail ID
 
-An Invoice Detail ID is the invoice-issuer-assigned identifier for an [Invoice Detail](#datasets.invoicedetail) record encapsulating charges in the corresponding billing period for a given billing account. This identifier allows FinOps practitioners to map specific line items from an invoice to the granular charge data, facilitating detailed reconciliation and auditability.
+Invoice Detail ID is the invoice-issuer-assigned identifier for an [Invoice Detail](#datasets.invoicedetail) record encapsulating charges in the corresponding billing period for a given billing account. This identifier allows FinOps practitioners to map specific line items from an invoice to the granular charge data, facilitating detailed reconciliation and auditability.
 
 ## Requirements
 
