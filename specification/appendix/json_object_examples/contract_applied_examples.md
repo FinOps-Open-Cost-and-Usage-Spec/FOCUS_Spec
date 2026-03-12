@@ -4,7 +4,7 @@
 
 A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a service provider and a customer:
 
-1) 12345: Spend $500k overall.  (This is the value of the contract, and thus ContractID = ContractCommitmentID.)
+1) 12345: Spend $500k overall.  (This is the value of the contract, and thus ContractId = ContractCommitmentId.)
 2) 23456: Spend $25k on a particular service.
 3) 34567: Consume 100k compute hours on a particular resource type.
 
@@ -12,23 +12,23 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
 
 ```json
 {
-  "ResourceID": "12345",
+  "ResourceId": "12345",
   "ChargeCategory": "Purchase",
   "BilledCost": 500000.00,
   "EffectiveCost": 0.00,
   "ContractApplied":
     {
       "Elements": [ {
-        "ContractID": "12345",
-        "ContractCommitmentID": "12345",
+        "ContractId": "12345",
+        "ContractCommitmentId": "12345",
         "ContractCommitmentAppliedCost": 500000.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "23456",
+        "ContractId": "12345",
+        "ContractCommitmentId": "23456",
         "ContractCommitmentAppliedCost": 25000.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "34567",
+        "ContractId": "12345",
+        "ContractCommitmentId": "34567",
         "ContractCommitmentAppliedQuantity": 100000.00,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
@@ -46,7 +46,7 @@ This applies to the contract commitments in the following manner:
 
 ```json
 {
-  "ResourceID": "myResource1",
+  "ResourceId": "myResource1",
   "ChargeCategory": "Usage",
   "BilledCost": 0.00,
   "EffectiveCost": 30.00,
@@ -54,16 +54,16 @@ This applies to the contract commitments in the following manner:
   "ContractApplied":
     {
       "Elements": [ {
-        "ContractID": "12345",
-        "ContractCommitmentID": "12345",
+        "ContractId": "12345",
+        "ContractCommitmentId": "12345",
         "ContractCommitmentAppliedCost": 15.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "23456",
+        "ContractId": "12345",
+        "ContractCommitmentId": "23456",
         "ContractCommitmentAppliedCost": 15.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "34567",
+        "ContractId": "12345",
+        "ContractCommitmentId": "34567",
         "ContractCommitmentAppliedQuantity": 0.50,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
@@ -77,7 +77,7 @@ The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCost
 
 ```json
 {
-  "ResourceID": "myResource1",
+  "ResourceId": "myResource1",
   "ChargeCategory": "Usage",
   "BilledCost": 0.00,
   "EffectiveCost": 30.00,
@@ -85,18 +85,18 @@ The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCost
   "ContractApplied":
     {
       "Elements": [ {
-        "ContractID": "12345",
-        "ContractCommitmentID": "12345",
+        "ContractId": "12345",
+        "ContractCommitmentId": "12345",
         "ContractCommitmentAppliedCost": 15.00,
         "x_ContractCommitmentCostBalance": 499985.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "23456",
+        "ContractId": "12345",
+        "ContractCommitmentId": "23456",
         "ContractCommitmentAppliedCost": 15.00,
         "x_ContractCommitmentCostBalance": 24985.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "34567",
+        "ContractId": "12345",
+        "ContractCommitmentId": "34567",
         "ContractCommitmentAppliedQuantity": 0.50,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
