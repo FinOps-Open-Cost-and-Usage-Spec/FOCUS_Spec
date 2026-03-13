@@ -16,7 +16,7 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
 
 ## Requirements
 
-Dataset/Column conforming to KeyValueFormat attribute MUST adhere to the following requirements:
+Column conforming to KeyValueFormat attribute MUST adhere to the following requirements:
 
 * When FOCUS column contains values in key-value pair format, FOCUS column MUST adhere to the following requirements:
   * FOCUS column MUST be a serialized JSON string, consistent with the ECMA 404 definition of an object.
