@@ -1,0 +1,205 @@
+{
+  "CAU-ResourceType-C-000-C": {
+    "Function": "Composite",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "EntityName": "Resource Type",
+    "EntityId": "ResourceType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "BILLING_BASED_ON_PROVISIONED_RESOURCES_SUPPORTED",
+      "RESOURCE_TYPE_ASSIGNMENT_SUPPORTED"
+    ],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ResourceType-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ResourceType-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ResourceType-C-003-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-039-C",
+        "CAU-ResourceType-C-001-M",
+        "CAU-ResourceType-C-002-M",
+        "CAU-ResourceType-C-003-C"
+      ]
+    }
+  },
+  "CAU-ResourceType-C-001-M": {
+    "Function": "Type",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "EntityName": "Resource Type",
+    "EntityId": "ResourceType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ResourceType-C-002-M": {
+    "Function": "Format",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "EntityName": "Resource Type",
+    "EntityId": "ResourceType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "ResourceType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-ResourceType-C-003-C": {
+    "Function": "Composite",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "EntityName": "Resource Type",
+    "EntityId": "ResourceType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ResourceType-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ResourceType-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-ResourceType-C-004-C",
+        "CAU-ResourceType-C-005-C"
+      ]
+    }
+  },
+  "CAU-ResourceType-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "EntityName": "Resource Type",
+    "EntityId": "ResourceType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST be null when ResourceId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ResourceType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "ResourceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-ResourceId-C-000-C"
+      ]
+    }
+  },
+  "CAU-ResourceType-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "ResourceType",
+    "EntityType": "Column",
+    "EntityName": "Resource Type",
+    "EntityId": "ResourceType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ResourceType MUST NOT be null when ResourceId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "ResourceType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "CheckCondition": "ResourceId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-ResourceId-C-000-C"
+      ]
+    }
+  }
+}

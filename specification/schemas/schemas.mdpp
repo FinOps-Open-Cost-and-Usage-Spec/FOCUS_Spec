@@ -1,0 +1,11 @@
+# Schemas
+
+This section provides machine-readable JSON Schema definitions for validating the structure and content of JSON-formatted columns in FOCUS datasets.
+
+## Contract Commitment
+
+### Contract Commitment Applicability Object Schema
+
+The Contract Commitment Applicability Object Schema defines the structure for the [Contract Commitment Applicability](#datasets.contractcommitment.contractcommitmentapplicability) column.
+
+!INCLUDECODE "schemas/datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json" (json)

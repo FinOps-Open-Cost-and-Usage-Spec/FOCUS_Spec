@@ -1,0 +1,315 @@
+{
+  "CheckFunctions": {
+    "OR": {
+      "Description": "OR check items, will return true on ANY check passing",
+      "Arguments": [
+        "Items"
+      ],
+      "FormatAttributes": []
+    },
+    "AND": {
+      "Description": "AND check items, will return true on ALL checks passing",
+      "Arguments": [
+        "Items"
+      ],
+      "FormatAttributes": []
+    },
+    "ColumnPresent": {
+      "Description": "Check if column is present in the dataset",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "ColumnHandling-A-000-M"
+      ]
+    },
+    "CheckDistinctCount": {
+      "Description": "Check if two columns have a distinct count equal to a value",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName",
+        "ExpectedCount"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckNoDuplicates": {
+      "Description": "Check if column has duplicate values",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "FormatKeyValue": {
+      "Description": "Check a column has a key value format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "KeyValueFormat-A-000-M"
+      ]
+    },
+    "CheckValue": {
+      "Description": "Check if column has a particular value",
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckNotValue": {
+      "Description": "Check if column does not have a particular value",
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckSameValue": {
+      "Description": "Check if column does have the same value as another column",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckDecimalValue": {
+      "Description": "Check if column has a valid decimal value",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckGreaterOrEqualThanValue": {
+      "Description": "Check if column has value equal or greater than a value",
+      "Arguments": [
+        "ColumnName",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckModelRule": {
+      "Description": "Check another ModelRule and turn its value",
+      "Arguments": [
+        "ModelRuleId"
+      ],
+      "FormatAttributes": []
+    },
+    "CheckNationalCurrency": {
+      "Description": "Check column has a valid national currency code",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "CurrencyFormat-A-000-M"
+      ]
+    },
+    "TypeDecimal": {
+      "Description": "Check column has the data type of decimal",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "TypeString": {
+      "Description": "Check column has the data type of string",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "FormatDateTime": {
+      "Description": "Check column has the format of datetime",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "DateTimeFormat-A-000-M"
+      ]
+    },
+    "FormatNumeric": {
+      "Description": "Check a column has a numeric format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "NumericFormat-A-000-M"
+      ]
+    },
+    "FormatString": {
+      "Description": "Check a column has a string format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "StringHandling-A-000-M"
+      ]
+    },
+    "FormatUnit": {
+      "Description": "Check a column has a unit format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "UnitFormat-A-000-M"
+      ]
+    },
+    "FormatCurrency": {
+      "Description": "Check a column has a currency format",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": [
+        "CurrencyFormat-A-000-M"
+      ]
+    },
+    "ColumnByColumnEqualsColumnValue": {
+      "Description": "Check the result of a column value times by another column value and confirm if it matches the value of third column",
+      "Arguments": [
+        "ColumnAName",
+        "ColumnBName",
+        "ResultColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "TypeDateTime": {
+      "Description": "Check column has the data type of datetime",
+      "Arguments": [
+        "ColumnName"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathType": {
+      "Description": "Check element(s) at JSON path is of a particular type",
+      "Arguments": [
+        "ColumnName",
+        "Path",
+        "ExpectedType"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathKeyValueFormat": {
+      "Description": "Check element(s) at JSON path has a particular key is of a KeyValue format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathKeyStartsWith": {
+      "Description": "Check element(s) at JSON path only keys that starts with a specific string prefix, ignoring specified keys",
+      "Arguments": [
+        "ColumnName",
+        "Path",
+        "Prefix",
+        "IgnoreKeys"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathKeyExists": {
+      "Description": "Check element(s) at JSON path has a particular key",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathValue": {
+      "Description": "Check element(s) at JSON path has specific value",
+      "Arguments": [
+        "ColumnName",
+        "Path",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathNotValue": {
+      "Description": "Check element(s) at JSON path does not have specific value",
+      "Arguments": [
+        "ColumnName",
+        "Path",
+        "Value"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathSameValue": {
+      "Description": "Check element(s) at JSON path has the same value as another column, if PathB is null compare to value of the column directly",
+      "Arguments": [
+        "ColumnAName",
+        "PathA",
+        "ColumnBName",
+        "PathB"
+      ],
+      "FormatAttributes": []
+    },
+    "JSONCheckPathNumericFormat": {
+      "Description": "Check element(s) at JSON path meets numeric format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "NumericFormat-A-000-M"
+      ]
+    },
+    "JSONCheckPathUnitFormat": {
+      "Description": "Check element(s) at JSON path meets unit format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "UnitFormat-A-000-M"
+      ]
+    },
+    "JSONCheckPathDistinctParent": {
+      "Description": "Check distinct count of parent elements at JSON path equals expected count for a child path",
+      "Arguments": [
+        "ColumnName",
+        "ParentPath",
+        "ChildPath",
+        "ExpectedCount"
+      ],
+      "FormatAttributes": []
+    },
+    "FormatJSON": {
+      "Description": "Check element(s) at JSON path meets JSONFormatRequirements format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "JsonObjectFormat-A-000-M"
+      ]
+    },
+    "JSONFormatString": {
+      "Description": "Check a JSON path in column has a string format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "StringHandling-A-000-M"
+      ]
+    },
+    "JSONFormatUnit": {
+      "Description": "Check a JSON path in column has a unit format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "UnitFormat-A-000-M"
+      ]
+    },
+    "JSONFormatNumeric": {
+      "Description": "Check a JSON path in column has a numeric format",
+      "Arguments": [
+        "ColumnName",
+        "Path"
+      ],
+      "FormatAttributes": [
+        "NumericFormat-A-000-M"
+      ]
+    }
+  }
+}
