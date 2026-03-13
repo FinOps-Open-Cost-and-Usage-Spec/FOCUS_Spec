@@ -1,4 +1,4 @@
-# Contract Commitments
+# Examples: Contract Commitments
 
 ## Overview
 
