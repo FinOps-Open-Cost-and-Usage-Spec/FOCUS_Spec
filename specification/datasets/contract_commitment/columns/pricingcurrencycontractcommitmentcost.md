@@ -11,7 +11,6 @@ PricingCurrencyContractCommitmentCost MUST adhere to the following requirements:
 * PricingCurrencyContractCommitmentCost MUST adhere to the following nullability requirements:
   * PricingCurrencyContractCommitmentCost MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is "Spend" and [PricingCurrency](#datasets.contractcommitment.pricingcurrency) is provided.
   * PricingCurrencyContractCommitmentCost MAY be null when ContractCommitmentCategory is "Usage".
-* PricingCurrencyContractCommitmentCost MUST be a valid decimal value.
 * PricingCurrencyContractCommitmentCost MUST be denominated in the [PricingCurrency](#datasets.contractcommitment.pricingcurrency).
 
 ## Column ID
