@@ -139,7 +139,7 @@ Normative requirements MUST describe a **verifiable state**, not an operational 
 Specifically:
 
 * Process-oriented verbs such as *ensure*, *handle*, *support*, or *provide* MUST NOT be used.
-* If a requirement refers to actor behavior, it MUST be reformulated as:
+* If a requirement refers to actor behavior, it MUST be expressed as:
   * a constraint on the resulting dataset state, or
   * a constraint on a schema-defined artifact.
 
