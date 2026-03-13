@@ -2,7 +2,7 @@
 
 ## AI Tool Output Ownership
 
-The [AI Usage Guidelines](../../guidelines/ai-usage-guidelines.md) require contributors to ensure that the terms of their AI tools do not conflict with FOCUS licensing. This aligns with the [Linux Foundation Generative AI Policy](https://www.linuxfoundation.org/legal/generative-ai).
+The [AI Usage Guidelines](../../guidelines/contributors/ai-usage-guidelines.md) require contributors to ensure that the terms of their AI tools do not conflict with FOCUS licensing. This aligns with the [Linux Foundation Generative AI Policy](https://www.linuxfoundation.org/legal/generative-ai).
 
 The following summarizes how major AI coding tools handle output ownership as of January 2025. Contributors should verify current terms before use, as these may change.
 
