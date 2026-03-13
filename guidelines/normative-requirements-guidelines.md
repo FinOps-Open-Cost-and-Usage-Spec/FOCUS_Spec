@@ -5,7 +5,7 @@ This section defines guidelines for authoring normative requirements in the FOCU
 The guidelines cover normative requirements applicable to:
 
 * **FOCUS Datasets** — the primary containers of structured data as defined in FOCUS.
-* **Columns** — individual columns within datasets (may contain nested objects and object properties, which can have additional normative rules)
+* **FOCUS Columns** — individual columns within FOCUS datasets (may contain nested objects and object properties, which can have additional normative rules)
 * **Attributes** — schema-level rules that datasets, columns, or object properties must conform to.
 
 The diagram below illustrates the relationships among these entities and shows where normative requirements apply:
