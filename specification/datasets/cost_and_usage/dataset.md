@@ -162,7 +162,6 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.
-  * CostAndUsage MUST conform to normative requirements for all columns in *allocated charges*.  
   * CostAndUsage SHOULD offer split cost allocation on an opt-in basis.
   * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented split cost allocation method.
   * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented split cost allocation method.
