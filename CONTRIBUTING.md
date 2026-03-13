@@ -51,7 +51,7 @@ AI tools (such as GitHub Copilot, Claude Code, Cursor, and similar coding assist
 - The responsible human reviews and approves AI-generated contributions
 - AI-assisted contributions follow the same review process as other contributions, including peer review and consensus approval
 
-For complete guidance, see [AI Usage Guidelines](guidelines/ai-usage-guidelines.md).
+For complete guidance, see [AI Usage Guidelines](guidelines/contributors/ai-usage-guidelines.md).
 
 ---
 
@@ -62,7 +62,7 @@ For complete guidance, see [AI Usage Guidelines](guidelines/ai-usage-guidelines.
 git checkout -b feature/your-change-description
 ```
 
-> For further details on how to work with Git and GitHub, refer to the [GitHub Guidelines](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/guidelines/github-guidelines.md).
+> For further details on how to work with Git and GitHub, refer to the [GitHub Guidelines](guidelines/contributors/github-guidelines.md).
 
 2. **Reference existing issues** or create a new one to track your change. Include the issue number in your PR title or description (e.g., Fixes #845).
 
@@ -79,7 +79,7 @@ git checkout -b feature/your-change-description
 - Use one PR per logical change.  
 - Assign appropriate labels (e.g., `normative-change`, `editorial`, `discussion`).
 
-> For details about labels and stages, see [Git Issues - Project - Content Creation](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/guidelines/development-processes.md#focus-development-process)
+> For details about labels and stages, see [Git Issues - Project - Content Creation](guidelines/contributors/development-processes.md#focus-development-process)
 
 5. **Participate in the review**
 
@@ -97,7 +97,7 @@ git checkout -b feature/your-change-description
 - Follow the structure of existing sections (Introduction → Requirements → Examples → Notes).  
 - Use **RFC 2119** language for normative statements.
 
-> Visit [Editorial Guidelines](https://github.com/FinOps-Open-Cost-and-Usage-Spec/FOCUS_Spec/blob/working_draft/guidelines/editorial-guidelines.md) for further information.
+> Visit [Editorial Guidelines](guidelines/contributors/editorial-guidelines.md) for further information.
 
 
 7. **Normative vs Supporting Content**
