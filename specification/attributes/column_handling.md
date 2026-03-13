@@ -47,10 +47,10 @@ Column conforming to ColumnHandling attribute MUST adhere to the following requi
   * FOCUS column MUST NOT use abbreviations other than `Id` in the Column ID.
   * FOCUS column SHOULD NOT use acronyms other than `Sku` in the Column ID.
   * FOCUS column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
-  * FOCUS column representing an identifier MUST include the `Id` suffix in the Column ID.
-  * FOCUS column representing a name MUST include the `Name` suffix in the Column ID.
-  * FOCUS column representing a product offering that incurred a charge MUST include `Sku` in the Column ID.
-  * FOCUS column with `Category` suffix MUST contain one of the FOCUS-defined allowed values when not null.
+  * FOCUS column MUST include the `Id` suffix in the Column ID when the FOCUS column represents an identifier.
+  * FOCUS column MUST include the `Name` suffix in the Column ID when the FOCUS column represents a name.
+  * FOCUS column MUST include `Sku` in the Column ID when the FOCUS column represents a product offering that incurred a charge.
+  * FOCUS column MUST contain one of the FOCUS-defined allowed values when the FOCUS column includes `Category` suffix in the Column ID and is not null.
 * Custom column (e.g., service-provider-defined column included in FOCUS dataset) MUST adhere to the following requirements:
   * Custom column MUST include the `x_` prefix in the Column ID to identify it as an external custom column and to distinguish it from FOCUS columns to avoid conflicts in future releases.
   * Custom column SHOULD use Pascal case in the Column ID.
@@ -59,8 +59,8 @@ Column conforming to ColumnHandling attribute MUST adhere to the following requi
   * Custom column SHOULD NOT use abbreviations other than `Id` in the Column ID.
   * Custom column SHOULD NOT use acronyms other than `Sku` in the Column ID.
   * Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
-  * Custom column representing an identifier SHOULD include the `Id` suffix in the Column ID.
-  * Custom column representing a name SHOULD include the `Name` suffix in the Column ID.
+  * Custom column SHOULD include the `Id` suffix in the Column ID when the custom column represents an identifier.
+  * Custom column SHOULD include the `Name` suffix in the Column ID when the custom column represents a name.
 
 ## Introduced (version)
 
