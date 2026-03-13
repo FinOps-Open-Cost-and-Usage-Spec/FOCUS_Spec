@@ -32,7 +32,7 @@ The *exclusive end bound* of a *billing period*.
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
 | Data type       | Date/Time                                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat)      |
+| Value format    | [Date/Time Format](#attributes.date/timeformat)       |
 
 ## Introduced (version)
 
