@@ -153,3 +153,7 @@ ul.toc.tocdepth2 li.toc.item a {
   line-height: 125%;
   margin-top: 2em;
 }
+
+.small-table table {
+  font-size: 0.65em;
+}
