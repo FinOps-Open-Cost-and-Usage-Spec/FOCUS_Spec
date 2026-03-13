@@ -123,7 +123,7 @@ The normative subject MUST be a schema-level entity, such as:
 
 The subject SHOULD be explicit and unambiguous.
 
-**Exception:** A structural anchor requirement MAY use the ID of the enclosing schema construct as its subject, even if that construct is not otherwise an allowed normative subject (e.g., `<FOCUS Attribute  ID>`). This exception applies only to structural anchor requirements.
+**Exception:** A structural anchor requirement MAY use the ID of the enclosing schema construct as its subject, even if that construct is not otherwise an allowed normative subject (e.g., `<FOCUS Attribute ID>`). This exception applies only to structural anchor requirements.
 
 #### 3.2 Disallowed Subjects
 
@@ -163,7 +163,7 @@ Composite (parent + nested) requirements MAY be used when strictly controlled an
 
 * Nested bullets MUST share the same condition if defined by the parent bullet.
 * Nested bullets SHOULD NOT introduce a different subject.
-* When nested bullets introduce different subjects, all subjects SHOULD be of the same subject type (e.g., FOCUS * columns).
+* When nested bullets introduce different subjects, all subjects SHOULD be of the same subject type (e.g., FOCUS columns).
 
 Composite requirements SHOULD be used when grouping improves readability and:
 
@@ -827,11 +827,11 @@ This structured grouping improves clarity, consistency, and maintainability acro
   * Requirements targeting the general subject (e.g., FOCUS column) first
   * Requirements targeting qualified subjects (e.g., FOCUS column containing numeric values) after
   * Within each subject, order by BCP 14 keyword:
-    * MUST – an absolute requirement
-    * MUST NOT – a prohibition
-    * SHOULD – recommended but not mandatory
-    * SHOULD NOT – discouraged but not strictly prohibited
-    * MAY – optional
+    * **MUST** – an absolute requirement
+    * **MUST NOT** – a prohibition
+    * **SHOULD** – recommended but not mandatory
+    * **SHOULD NOT** – discouraged but not strictly prohibited
+    * **MAY** – optional
 
 ### 6. Attribute Normative Requirements Examples
 
