@@ -12,7 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 #### Compatible Changes
 
-- None
+- New Datasets and Columns to support [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
 
 #### Migration Compatible Changes
 
@@ -21,6 +21,115 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 #### Incompatible Changes
 
 - Removal of deprecated ProviderName and PublisherName columns
+
+### Added
+
+#### New supported features
+
+- [Invoice Reconciliation](/specification/supported_features/invoice_reconciliation.md)
+
+#### New datasets
+
+- [`BillingPeriod`](/specification/datasets/billing_period/dataset.md)
+- [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md)
+
+#### New columns
+
+- [`BillingPeriod`](/specification/datasets/billing_period/dataset.md)
+  - [`BillingPeriodCreated`](/specification/datasets/billing_period/columns/billingperiodcreated.md)
+  - [`BillingPeriodEnd`](/specification/datasets/billing_period/columns/billingperiodend.md)
+  - [`BillingPeriodLastUpdated`](/specification/datasets/billing_period/columns/billingperiodlastupdated.md)
+  - [`BillingPeriodStart`](/specification/datasets/billing_period/columns/billingperiodstart.md)
+  - [`BillingPeriodStatus`](/specification/datasets/billing_period/columns/billingperiodstatus.md)
+  - [`InvoiceIssuerName`](/specification/datasets/billing_period/columns/invoiceissuername.md)
+- [`ContractCommitment`](/specification/datasets/contract_commitment/dataset.md)
+  - [`ContractCommitmentApplicability`](/specification/datasets/contract_commitment/columns/contractcommitmentapplicability.md)
+  - [`ContractCommitmentBenefitCategory`](/specification/datasets/contract_commitment/columns/contractcommitmentbenefitcategory.md)
+  - [`ContractCommitmentCreated`](/specification/datasets/contract_commitment/columns/contractcommitmentcreated.md)
+  - [`ContractCommitmentDiscountPercentage`](/specification/datasets/contract_commitment/columns/contractcommitmentdiscountpercentage.md)
+  - [`ContractCommitmentDurationType`](/specification/datasets/contract_commitment/columns/contractcommitmentdurationtype.md)
+  - [`ContractCommitmentFulfillmentInterval`](/specification/datasets/contract_commitment/columns/contractcommitmentfulfillmentinterval.md)
+  - [`ContractCommitmentLastUpdated`](/specification/datasets/contract_commitment/columns/contractcommitmentlastupdated.md)
+  - [`ContractCommitmentLifecycleStatus`](/specification/datasets/contract_commitment/columns/contractcommitmentlifecyclestatus.md)
+  - [`ContractCommitmentModel`](/specification/datasets/contract_commitment/columns/contractcommitmentmodel.md)
+  - [`ContractCommitmentOfferCategory`](/specification/datasets/contract_commitment/columns/contractcommitmentoffercategory.md)
+  - [`ContractCommitmentPaymentInterval`](/specification/datasets/contract_commitment/columns/contractcommitmentpaymentinterval.md)
+  - [`ContractCommitmentPaymentModel`](/specification/datasets/contract_commitment/columns/contractcommitmentpaymentmodel.md)
+  - [`ContractCommitmentPaymentUpfrontPercentage`](/specification/datasets/contract_commitment/columns/contractcommitmentpaymentupfrontpercentage.md)
+  - [`InvoiceIssuerName`](/specification/datasets/contract_commitment/columns/invoiceissuername.md)
+  - [`PricingCurrency`](/specification/datasets/contract_commitment/columns/pricingcurrency.md)
+  - [`PricingCurrencyContractCommitmentCost`](/specification/datasets/contract_commitment/columns/pricingcurrencycontractcommitmentcost.md)
+  - [`ServiceProviderName`](/specification/datasets/contract_commitment/columns/serviceprovidername.md)
+- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  - [`InvoiceDetailId`](/specification/datasets/cost_and_usage/columns/invoicedetailid.md)
+- [`InvoiceDetail`](/specification/datasets/invoice_detail/dataset.md)
+  - [`BilledCost`](/specification/datasets/invoice_detail/columns/billedcost.md)
+  - [`BillingAccountId`](/specification/datasets/invoice_detail/columns/billingaccountid.md)
+  - [`BillingCurrency`](/specification/datasets/invoice_detail/columns/billingcurrency.md)
+  - [`BillingPeriodEnd`](/specification/datasets/invoice_detail/columns/billingperiodend.md)
+  - [`BillingPeriodStart`](/specification/datasets/invoice_detail/columns/billingperiodstart.md)
+  - [`ChargeCategory`](/specification/datasets/invoice_detail/columns/chargecategory.md)
+  - [`InvoiceDetailCreated`](/specification/datasets/invoice_detail/columns/invoicedetailcreated.md)
+  - [`InvoiceDetailDescription`](/specification/datasets/invoice_detail/columns/invoicedetaildescription.md)
+  - [`InvoiceDetailGrain`](/specification/datasets/invoice_detail/columns/invoicedetailgrain.md)
+  - [`InvoiceDetailId`](/specification/datasets/invoice_detail/columns/invoicedetailid.md)
+  - [`InvoiceDetailLastUpdated`](/specification/datasets/invoice_detail/columns/invoicedetaillastupdated.md)
+  - [`InvoiceId`](/specification/datasets/invoice_detail/columns/invoiceid.md)
+  - [`InvoiceIssueDate`](/specification/datasets/invoice_detail/columns/invoiceissuedate.md)
+  - [`InvoiceIssueStatus`](/specification/datasets/invoice_detail/columns/invoiceissuestatus.md)
+  - [`InvoiceIssuerName`](/specification/datasets/invoice_detail/columns/invoiceissuername.md)
+  - [`PaymentCurrency`](/specification/datasets/invoice_detail/columns/paymentcurrency.md)
+  - [`PaymentCurrencyBilledCost`](/specification/datasets/invoice_detail/columns/paymentcurrencybilledcost.md)
+  - [`PaymentCurrencyInvoiceDetailId`](/specification/datasets/invoice_detail/columns/paymentcurrencyinvoicedetailid.md)
+  - [`PaymentDueDate`](/specification/datasets/invoice_detail/columns/paymentduedate.md)
+  - [`PaymentTerms`](/specification/datasets/invoice_detail/columns/paymentterms.md)
+  - [`PurchaseOrderNumber`](/specification/datasets/invoice_detail/columns/purchaseordernumber.md)
+  - [`ReferenceInvoiceId`](/specification/datasets/invoice_detail/columns/referenceinvoiceid.md)
+
+#### New attributes
+
+- [`DatasetConfiguration`](/specification/attributes/dataset_configuration.md)
+
+#### New appendix entries
+
+- [Examples: Contract Commitments](/specification/appendix/contract_commitments/contract_commitments.md)
+- [Examples: JSON Object](/specification/appendix/json_object_examples/json_object_examples_overview.md)
+  - [Examples: Contract Commitment Applicability](/specification/appendix/json_object_examples/contract_commitment_applicability_examples.md)
+- [Examples: Invoice Detail](/specification/appendix/invoice_detail/invoice_detail.md)
+
+#### New guidelines
+
+- [Dataset Mapping Documentation](/guidelines/data-generators/dataset-mapping-documentation.md)
+- [AI Usage Guidelines](/guidelines/contributors/ai-usage-guidelines.md)
+- [Decision Brief Guidelines](/guidelines/contributors/decision-brief-guidelines.md)
+- [Writing Requirements Model Guidelines](/guidelines/contributors/writing-requirements-model-guidelines.md)
+
+#### New glossary entries
+
+- [Glossary](/specification/glossary.md)
+  - `Accrual-Based Accounting`
+  - `Cash-Based Accounting`
+  - `Entitlement`
+
+### Changed
+
+#### Changed datasets
+
+- [`CostAndUsage`](/specification/datasets/cost_and_usage/dataset.md)
+  - `InvoiceId`: Changed Feature Level from Recommended to Mandatory.
+
+#### Changed attributes
+
+- TBD
+
+#### Change guidelines
+
+- Deprecated the normative keyword "RECOMMENDED" in favor of "SHOULD".
+
+#### Changed glossary entries
+
+- [Glossary](/specification/glossary.md)
+  - `Term`: Updated definition to apply to agreements specified on a contract *or* invoice.
 
 ### Removed
 
