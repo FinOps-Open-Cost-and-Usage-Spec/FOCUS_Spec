@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://focus.finops.org/schemas/contractcommitmentapplicabilityobject.json",
+  "title": "Contract Commitment Applicability Object",
+  "description": "Schema for validating the Contract Commitment Applicability column JSON object structure in FOCUS datasets",
+  "type": "object",
+  "$defs": {
+    "ApplicabilityObject": {
+      "type": "object",
+      "properties": {
+        "Cost": {
+          "type": "number",
+          "description": "Percentage applicable to ContractCommitmentCost",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "default": 1.0
+        },
+        "Usage": {
+          "type": "number",
+          "description": "Percentage applicable to ContractCommitmentQuantity",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "default": 1.0
+        }
+      },
+      "additionalProperties": false
+    },
+    "ApplicabilityRule": {
+      "type": "object",
+      "required": [
+        "Dimension",
+        "Operator",
+        "Values"
+      ],
+      "properties": {
+        "Dimension": {
+          "type": "string",
+          "description": "A valid FOCUS Column Name"
+        },
+        "Operator": {
+          "type": "string",
+          "description": "The comparison logic to apply",
+          "enum": [
+            "In",
+            "NotIn",
+            "StartsWith",
+            "NotStartsWith",
+            "Contains",
+            "NotContains",
+            "EndsWith",
+            "Exists",
+            "DoesNotExist"
+          ]
+        },
+        "Values": {
+          "type": "array",
+          "description": "List of strings to compare",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1
+        },
+        "Applicability": {
+          "$ref": "#/$defs/ApplicabilityObject",
+          "description": "Optional rule-level applicability that overrides top-level"
+        }
+      },
+      "allOf": [
+        {
+          "description": "Wildcard constraint: If '*' is used, it must be the only value and Operator must be compatible.",
+          "if": {
+            "properties": {
+              "Values": {
+                "contains": {
+                  "const": "*"
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Values": {
+                "maxItems": 1
+              },
+              "Operator": {
+                "enum": [
+                  "In",
+                  "Contains",
+                  "Exists",
+                  "DoesNotExist"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "description": "Existence Logic: Exists/DoesNotExist operators require the specific wildcard value.",
+          "if": {
+            "properties": {
+              "Operator": {
+                "enum": [
+                  "Exists",
+                  "DoesNotExist"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "Values": {
+                "items": {
+                  "const": "*"
+                },
+                "maxItems": 1
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "IsGlobalScope": {
+      "type": "boolean",
+      "description": "If true, commitment applies to all entities",
+      "default": false
+    },
+    "IsComplexScope": {
+      "type": "boolean",
+      "description": "If true, applicability logic exceeds schema capabilities",
+      "default": false
+    },
+    "Applicability": {
+      "$ref": "#/$defs/ApplicabilityObject",
+      "description": "Top-level fractional mapping for metrics"
+    },
+    "InclusionOperator": {
+      "type": "string",
+      "description": "Logical operator for Inclusions array",
+      "enum": [
+        "And",
+        "Or"
+      ]
+    },
+    "Inclusions": {
+      "type": "array",
+      "description": "List of rules defining the applicability boundary",
+      "items": {
+        "$ref": "#/$defs/ApplicabilityRule"
+      }
+    },
+    "ExclusionOperator": {
+      "type": "string",
+      "description": "Logical operator for Exclusions array",
+      "enum": [
+        "And",
+        "Or"
+      ]
+    },
+    "Exclusions": {
+      "type": "array",
+      "description": "List of rules defining entities to exclude",
+      "items": {
+        "$ref": "#/$defs/ApplicabilityRule"
+      },
+      "minItems": 1
+    }
+  },
+  "allOf": [
+    {
+      "description": "IsGlobalScope and IsComplexScope cannot both be true simultaneously.",
+      "not": {
+        "required": [
+          "IsGlobalScope",
+          "IsComplexScope"
+        ],
+        "properties": {
+          "IsGlobalScope": {
+            "const": true
+          },
+          "IsComplexScope": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "description": "If IsGlobalScope is true, Inclusions must be empty or omitted.",
+      "if": {
+        "properties": {
+          "IsGlobalScope": {
+            "const": true
+          }
+        },
+        "required": [
+          "IsGlobalScope"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Inclusions": {
+            "maxItems": 0
+          },
+          "InclusionOperator": false
+        }
+      }
+    },
+    {
+      "description": "If IsComplexScope is true, Inclusions must be empty or omitted.",
+      "if": {
+        "properties": {
+          "IsComplexScope": {
+            "const": true
+          }
+        },
+        "required": [
+          "IsComplexScope"
+        ]
+      },
+      "then": {
+        "properties": {
+          "Inclusions": {
+            "maxItems": 0
+          },
+          "InclusionOperator": false
+        }
+      }
+    },
+    {
+      "description": "If neither Global nor Complex scope is active, Inclusions and InclusionOperator are required.",
+      "if": {
+        "not": {
+          "anyOf": [
+            {
+              "properties": {
+                "IsGlobalScope": {
+                  "const": true
+                }
+              },
+              "required": [
+                "IsGlobalScope"
+              ]
+            },
+            {
+              "properties": {
+                "IsComplexScope": {
+                  "const": true
+                }
+              },
+              "required": [
+                "IsComplexScope"
+              ]
+            }
+          ]
+        }
+      },
+      "then": {
+        "required": [
+          "InclusionOperator",
+          "Inclusions"
+        ],
+        "properties": {
+          "Inclusions": {
+            "minItems": 1
+          }
+        }
+      }
+    },
+    {
+      "description": "If Exclusions are present, ExclusionOperator is required.",
+      "if": {
+        "required": [
+          "Exclusions"
+        ]
+      },
+      "then": {
+        "required": [
+          "ExclusionOperator"
+        ]
+      }
+    }
+  ],
+  "patternProperties": {
+    "^x_[A-Z][a-zA-Z0-9]*$": {
+      "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+    }
+  },
+  "additionalProperties": false
+}
