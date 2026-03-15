@@ -28,8 +28,8 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 | ---------------- | ----- | ---------------------- | -------------------- |
 | Purchase         | 1     | &dollar;553,000.00     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;1,515.12     |
-| Usage (Standard) | 12    | &dollar;25.52          | &dollar;25.52        |
-| **Total**        | 37    | **&dollar;553,025.52** | **&dollar;1,540.64** |
+| Usage (Standard) | 3     | &dollar;8.10           | &dollar;8.10         |
+| **Total**        | 28    | **&dollar;553,008.10** | **&dollar;1,523.22** |
 
 ## Column Interactions
 
@@ -39,11 +39,11 @@ Understanding how columns relate to each other is critical for validating FOCUS 
 
 These three quantity columns serve different purposes and must be understood in context:
 
-| Column                         | Purpose                               | When Populated                | Typical Value        |
-| ------------------------------ | ------------------------------------- | ----------------------------- | -------------------- |
-| **PricingQuantity**            | Quantity used for pricing calculation | All priced rows               | 1 (per hour/unit)    |
-| **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
-| **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
+| Column                         | Purpose                               | When Populated                | Typical Value              |
+| ------------------------------ | ------------------------------------- | ----------------------------- | -------------------------- |
+| **PricingQuantity**            | Quantity used for pricing calculation | All priced rows               | 1 (per hour/unit)          |
+| **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)         |
+| **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 63.13 (USD)                |
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a &dollar;63.13/hour commitment, this value is &dollar;63.13.
 
@@ -51,8 +51,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Column                  | Purpose                  | Commitment-Covered | Standard      |
 | ----------------------- | ------------------------ | ------------------ | ------------- |
-| **ListUnitPrice**       | List (public) unit price | &dollar;94.70      | &dollar;0.020 |
-| **ContractedUnitPrice** | Negotiated unit price    | &dollar;94.70      | &dollar;0.020 |
+| **ListUnitPrice**       | List (public) unit price | &dollar;94.70      | &dollar;2.70  |
+| **ContractedUnitPrice** | Negotiated unit price    | &dollar;94.70      | &dollar;2.70  |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
@@ -62,7 +62,7 @@ These three quantity columns serve different purposes and must be understood in 
 | ---------------- | ------------------ | ------------- | ------------------ |
 | **Purchase Row** | &dollar;553,000.00 | &dollar;0.00  | &dollar;553,000.00 |
 | **Used Row**     | &dollar;0.00       | &dollar;63.13 | &dollar;94.70      |
-| **Standard Row** | &dollar;9.76       | &dollar;9.76  | &dollar;9.76       |
+| **Standard Row** | &dollar;2.70       | &dollar;2.70  | &dollar;2.70       |
 
 The following critical rules apply to commitment discount data:
 
@@ -92,7 +92,7 @@ The following critical rules apply to commitment discount data:
 | ListCost                   | &dollar;94.70                                         | What you would have paid at list price |
 | PricingQuantity            | 1                                                     | Units priced                           |
 | ConsumedQuantity           | 1                                                     | Hours used                             |
-| CommitmentDiscountQuantity | 63.13                                                 | Commitment dollars applied             |
+| CommitmentDiscountQuantity | 63.13                                                 | Hourly commitment spend applied        |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                     |
 | CommitmentDiscountId       | projects/my-project-123456/locations/us-central1/c... | Links usage to purchase                |
 
@@ -102,12 +102,12 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ------------- | --------------------------------------------- |
 | ChargeCategory             | Usage         | Compute consumption (standard pricing)        |
 | PricingCategory            | Standard      | No discount applied                           |
-| BilledCost                 | &dollar;9.76  | Same as ListCost, no negotiation/commitments  |
-| EffectiveCost              | &dollar;9.76  | Same as BilledCost, no pre/post payments      |
-| ListCost                   | &dollar;9.76  | Public, non-negotiated cost                   |
-| PricingQuantity            | 488           | Units priced                                  |
-| ConsumedQuantity           | 488           | GB consumed                                   |
+| BilledCost                 | &dollar;2.70  | Same as ListCost, no negotiation/commitments  |
+| EffectiveCost              | &dollar;2.70  | Same as BilledCost, no pre/post payments      |
+| ListCost                   | &dollar;2.70  | Public, non-negotiated cost                   |
+| PricingQuantity            | 1             | Units priced                                  |
+| ConsumedQuantity           | 1             | Hours consumed                                |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
 | CommitmentDiscountId       | null          | No associated commitment                      |
-| ContractedUnitPrice        | &dollar;0.020 | Equals ListUnitPrice (no negotiated discount) |
+| ContractedUnitPrice        | &dollar;2.70  | Equals ListUnitPrice (no negotiated discount) |

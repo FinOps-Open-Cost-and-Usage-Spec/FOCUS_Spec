@@ -6,7 +6,7 @@
 | Payment Model                | All Upfront                                              |
 | Commitment Discount Category | Spend                                                    |
 | Utilization                  | 100% (with overage to standard pricing)                  |
-| Hours Generated              | 24 committed + 12 EC2 overflow + 12 other standard usage |
+| Hours Generated              | 24 committed + 12 standard overflow                      |
 | Annual Commitment            | &dollar;212,000.00                                       |
 | List Unit Price              | &dollar;36.30/hour                                       |
 
@@ -18,7 +18,7 @@ This example shows an **Amazon Web Services EC2 Instance Savings Plan**, which i
 
 The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
 
-This scenario demonstrates **100% utilization with overage** where demand exceeds commitment capacity. The 24 Used rows represent full utilization of the commitment. The 24 Standard rows include 12 EC2 hours that represent overage spilling to standard pricing, plus 12 rows for other services (S3, RDS, Lambda, DynamoDB) that are not covered by the Savings Plan. Standard pricing rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
+This scenario demonstrates **100% utilization with overage** where demand exceeds commitment capacity. The 24 Used rows represent full utilization of the commitment. The 12 Standard rows represent EC2 usage beyond the commitment that spills to standard pricing. Standard pricing rows have no CommitmentDiscountStatus, PricingCategory='Standard', and BilledCost=EffectiveCost at the full list price.
 
 ## Row Summary
 
@@ -28,8 +28,8 @@ This scenario demonstrates **100% utilization with overage** where demand exceed
 | ---------------- | ----- | ---------------------- | -------------------- |
 | Purchase         | 1     | &dollar;212,000.00     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;580.80       |
-| Usage (Standard) | 24    | &dollar;459.18         | &dollar;459.18       |
-| **Total**        | 49    | **&dollar;212,459.18** | **&dollar;1,039.98** |
+| Usage (Standard) | 12    | &dollar;435.60         | &dollar;435.60       |
+| **Total**        | 37    | **&dollar;212,435.60** | **&dollar;1,016.40** |
 
 ## Column Interactions
 
@@ -39,11 +39,11 @@ Understanding how columns relate to each other is critical for validating FOCUS 
 
 These three quantity columns serve different purposes and must be understood in context:
 
-| Column                         | Purpose                               | When Populated                | Typical Value        |
-| ------------------------------ | ------------------------------------- | ----------------------------- | -------------------- |
-| **PricingQuantity**            | Quantity used for pricing calculation | All priced rows               | 1 (per hour/unit)    |
-| **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)   |
-| **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 1 (commitment units) |
+| Column                         | Purpose                               | When Populated                | Typical Value              |
+| ------------------------------ | ------------------------------------- | ----------------------------- | -------------------------- |
+| **PricingQuantity**            | Quantity used for pricing calculation | All priced rows               | 1 (per hour/unit)          |
+| **ConsumedQuantity**           | Actual resource consumption           | Usage rows with resources     | 1 (hours consumed)         |
+| **CommitmentDiscountQuantity** | Commitment capacity applied           | Rows with commitment discount | 24.20 (USD)                |
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For a &dollar;24.20/hour commitment, this value is &dollar;24.20.
 
@@ -92,7 +92,7 @@ The following critical rules apply to commitment discount data:
 | ListCost                   | &dollar;36.30                                         | What you would have paid at list price |
 | PricingQuantity            | 1                                                     | Units priced                           |
 | ConsumedQuantity           | 1                                                     | Hours used                             |
-| CommitmentDiscountQuantity | 24.20                                                 | Commitment dollars applied             |
+| CommitmentDiscountQuantity | 24.20                                                 | Hourly commitment spend applied        |
 | CommitmentDiscountStatus   | Used                                                  | Commitment applied                     |
 | CommitmentDiscountId       | arn:aws:savingsplans::123456789012:savingsplan/sp-... | Links usage to purchase                |
 
@@ -106,7 +106,7 @@ The following critical rules apply to commitment discount data:
 | EffectiveCost              | &dollar;36.30 | Same as BilledCost, no pre/post payments      |
 | ListCost                   | &dollar;36.30 | Public, non-negotiated cost                   |
 | PricingQuantity            | 1             | Units priced                                  |
-| ConsumedQuantity           | 1             | Hours used                                    |
+| ConsumedQuantity           | 1             | Hours consumed                                |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
 | CommitmentDiscountId       | null          | No associated commitment                      |

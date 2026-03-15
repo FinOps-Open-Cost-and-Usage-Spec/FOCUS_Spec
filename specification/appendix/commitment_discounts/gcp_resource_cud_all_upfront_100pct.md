@@ -28,8 +28,8 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 | ---------------- | ----- | ---------------------- | ------------------- |
 | Purchase         | 1     | &dollar;258,000.00     | &dollar;0.00        |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;706.80      |
-| Usage (Standard) | 12    | &dollar;19.14          | &dollar;19.14       |
-| **Total**        | 37    | **&dollar;258,019.14** | **&dollar;725.94**  |
+| Usage (Standard) | 3     | &dollar;8.10           | &dollar;8.10        |
+| **Total**        | 28    | **&dollar;258,008.10** | **&dollar;714.90**  |
 
 ## Column Interactions
 
@@ -51,8 +51,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Column                  | Purpose                  | Commitment-Covered | Standard      |
 | ----------------------- | ------------------------ | ------------------ | ------------- |
-| **ListUnitPrice**       | List (public) unit price | &dollar;44.18      | &dollar;0.020 |
-| **ContractedUnitPrice** | Negotiated unit price    | &dollar;44.18      | &dollar;0.020 |
+| **ListUnitPrice**       | List (public) unit price | &dollar;44.18      | &dollar;2.70  |
+| **ContractedUnitPrice** | Negotiated unit price    | &dollar;44.18      | &dollar;2.70  |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
@@ -62,7 +62,7 @@ These three quantity columns serve different purposes and must be understood in 
 | ---------------- | ------------------ | ------------- | ------------------ |
 | **Purchase Row** | &dollar;258,000.00 | &dollar;0.00  | &dollar;258,000.00 |
 | **Used Row**     | &dollar;0.00       | &dollar;29.45 | &dollar;44.18      |
-| **Standard Row** | &dollar;5.98       | &dollar;5.98  | &dollar;5.98       |
+| **Standard Row** | &dollar;2.70       | &dollar;2.70  | &dollar;2.70       |
 
 The following critical rules apply to commitment discount data:
 
@@ -102,12 +102,12 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ------------- | --------------------------------------------- |
 | ChargeCategory             | Usage         | Compute consumption (standard pricing)        |
 | PricingCategory            | Standard      | No discount applied                           |
-| BilledCost                 | &dollar;5.98  | Same as ListCost, no negotiation/commitments  |
-| EffectiveCost              | &dollar;5.98  | Same as BilledCost, no pre/post payments      |
-| ListCost                   | &dollar;5.98  | Public, non-negotiated cost                   |
-| PricingQuantity            | 299           | Units priced                                  |
-| ConsumedQuantity           | 299           | GB consumed                                   |
+| BilledCost                 | &dollar;2.70  | Same as ListCost, no negotiation/commitments  |
+| EffectiveCost              | &dollar;2.70  | Same as BilledCost, no pre/post payments      |
+| ListCost                   | &dollar;2.70  | Public, non-negotiated cost                   |
+| PricingQuantity            | 1             | Units priced                                  |
+| ConsumedQuantity           | 1             | Hours consumed                                |
 | CommitmentDiscountQuantity | null          | **No commitment applied**                     |
 | CommitmentDiscountStatus   | null          | No commitment                                 |
 | CommitmentDiscountId       | null          | No associated commitment                      |
-| ContractedUnitPrice        | &dollar;0.020 | Equals ListUnitPrice (no negotiated discount) |
+| ContractedUnitPrice        | &dollar;2.70  | Equals ListUnitPrice (no negotiated discount) |

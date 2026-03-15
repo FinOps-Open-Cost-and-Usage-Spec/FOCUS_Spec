@@ -38,11 +38,11 @@ Understanding how columns relate to each other is critical for validating FOCUS 
 
 These three quantity columns serve different purposes and must be understood in context:
 
-| Column                           | Purpose                                 | When Populated                  | Typical Value          |
-| -------------------------------- | --------------------------------------- | ------------------------------- | ---------------------- |
-| **PricingQuantity**              | Quantity used for pricing calculation   | All priced rows                 | 1 (per hour/unit)      |
-| **ConsumedQuantity**             | Actual resource consumption             | Usage rows with resources       | 1 (hours consumed)     |
-| **CommitmentDiscountQuantity**   | Commitment capacity applied             | Rows with commitment discount   | 1 (commitment units)   |
+| Column                           | Purpose                                 | When Populated                  | Typical Value              |
+| -------------------------------- | --------------------------------------- | ------------------------------- | -------------------------- |
+| **PricingQuantity**              | Quantity used for pricing calculation   | All priced rows                 | 1 (per hour/unit)          |
+| **ConsumedQuantity**             | Actual resource consumption             | Usage rows with resources       | 1 (hours consumed)         |
+| **CommitmentDiscountQuantity**   | Commitment capacity applied             | Rows with commitment discount   | 40.30 (USD)                |
 
 **For spend-based commitments:** CommitmentDiscountQuantity represents the dollar amount applied, not a count of resources. For this commitment, the value equals the hourly dollar commitment.
 
@@ -60,9 +60,9 @@ These three quantity columns serve different purposes and must be understood in 
 | Scenario           | BilledCost         | EffectiveCost   | ListCost           |
 | ------------------ | ------------------ | --------------- | ------------------ |
 | **Purchase Row**   | &dollar;353,000.00 | &dollar;0.00    | &dollar;353,000.00 |
-| **Unused Row**     | &dollar;0.00       | &dollar;40.30   | &dollar;60.45           |
+| **Unused Row**     | &dollar;0.00       | &dollar;40.30   | &dollar;60.45      |
 
-This scenario has no Used or Standard rows because utilization is 0% — no resources were consumed.
+This scenario has no Used or Standard rows because utilization is 0% and no resources were consumed.
 
 The following critical rules apply to commitment discount data:
 
