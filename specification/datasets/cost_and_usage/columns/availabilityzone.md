@@ -4,9 +4,8 @@ An [*availability zone*](#glossary:availability-zone) is a host-provider-assigne
 
 ## Requirements
 
-AvailabilityZone adheres to the following requirements:
+AvailabilityZone MUST adhere to the following requirements:
 
-* AvailabilityZone SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the host provider supports deploying resources or services within an *availability zone*.
 * AvailabilityZone MUST be of type String.
 * AvailabilityZone MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AvailabilityZone MUST be null when a [*charge*](#glossary:charge) is not specific to an *availability zone*.
@@ -25,13 +24,14 @@ A host-provider-assigned identifier for a physically separated and isolated area
 
 ## Content constraints
 
-| Constraint      | Value            |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Recommended      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Recommended                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

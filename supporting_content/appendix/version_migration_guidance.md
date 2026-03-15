@@ -18,7 +18,7 @@ Practitioners updating queries should focus on the migration decision tree and q
 
 ### Overview
 
-FOCUS 1.3 introduces changes across three categories defined by the [Change Impact Classification](/guidelines/spec-change-guidelines.md):
+FOCUS 1.3 introduces changes across three categories defined by the [Change Impact Classification](/guidelines/contributors/spec-change-guidelines.md):
 
 | Classification | Summary |
 |----------------|---------|
@@ -49,7 +49,7 @@ See the [CHANGELOG](/CHANGELOG.md) for complete details.
 
 ### What Requires Migration
 
-Only the `ProviderName` and `PublisherName` columns are deprecated in FOCUS 1.3. These columns will be removed in FOCUS 1.4.
+Only the `ProviderName` and `PublisherName` columns are deprecated in FOCUS 1.3. These columns have been removed in FOCUS 1.4.
 
 ---
 

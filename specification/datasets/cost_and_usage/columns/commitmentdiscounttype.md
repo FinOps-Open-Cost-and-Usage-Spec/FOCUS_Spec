@@ -4,12 +4,11 @@ Commitment Discount Type is a service-provider-assigned name to identify the typ
 
 ## Requirements
 
-CommitmentDiscountType adheres to the following requirements:
+CommitmentDiscountType MUST adhere to the following requirements:
 
-* CommitmentDiscountType MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountType MUST be of type String.
 * CommitmentDiscountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentDiscountType nullability is defined as follows:
+* CommitmentDiscountType MUST adhere to the following nullability requirements:
   * CommitmentDiscountType MUST be null when [CommitmentDiscountId](#datasets.costandusage.commitmentdiscountid) is null.
   * CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.
 
@@ -27,13 +26,14 @@ A service-provider-assigned identifier for the type of *commitment discount* app
 
 ## Content Constraints
 
-| Constraint      | Value            |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

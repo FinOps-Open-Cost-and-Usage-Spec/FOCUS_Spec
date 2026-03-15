@@ -4,12 +4,11 @@ Sub Account Type is a service-provider-assigned name to identify the type of [*s
 
 ## Requirements
 
-SubAccountType adheres to the following requirements:
+SubAccountType MUST adhere to the following requirements:
 
-* SubAccountType MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports more than one possible SubAccountType value.
 * SubAccountType MUST be of type String.
 * SubAccountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* SubAccountType nullability is defined as follows:
+* SubAccountType MUST adhere to the following nullability requirements:
   * SubAccountType MUST be null when [SubAccountId](#datasets.costandusage.subaccountid) is null.
   * SubAccountType MUST NOT be null when SubAccountId is not null.
 * SubAccountType MUST be a consistent, readable display value.
@@ -28,13 +27,14 @@ A service-provider-assigned name to identify the type of *sub account*.
 
 ## Content Constraints
 
-| Constraint      | Value            |
-| :-------------- | :--------------- |
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

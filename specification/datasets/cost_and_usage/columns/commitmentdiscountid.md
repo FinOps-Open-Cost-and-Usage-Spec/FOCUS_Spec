@@ -4,15 +4,14 @@ A Commitment Discount ID is the identifier assigned to a [*commitment discount*]
 
 ## Requirements
 
-CommitmentDiscountId adheres to the following requirements:
+CommitmentDiscountId MUST adhere to the following requirements:
 
-* CommitmentDiscountId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.
 * CommitmentDiscountId MUST be of type String.
 * CommitmentDiscountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* CommitmentDiscountId nullability is defined as follows:
+* CommitmentDiscountId MUST adhere to the following nullability requirements:
   * CommitmentDiscountId MUST be null when a [*charge*](#glossary:charge) is not related to a *commitment discount*.
   * CommitmentDiscountId MUST NOT be null when a *charge* is related to a *commitment discount*.
-* When CommitmentDiscountId is not null, CommitmentDiscountId adheres to the following additional requirements:
+* When CommitmentDiscountId is not null, CommitmentDiscountId MUST adhere to the following requirements:
   * CommitmentDiscountId MUST be a unique identifier within the service provider.
   * CommitmentDiscountId SHOULD be a fully-qualified identifier.
 
@@ -30,13 +29,14 @@ The identifier assigned to a *commitment discount* by the service provider.
 
 ## Content constraints
 
-|    Constraint   |      Value       |
-|:----------------|:-----------------|
-| Column type     | Dimension        |
-| Feature level   | Conditional      |
-| Allows nulls    | True             |
-| Data type       | String           |
-| Value format    | \<not specified> |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Conditional                                          |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | \<not specified>                                     |
 
 ## Introduced (version)
 

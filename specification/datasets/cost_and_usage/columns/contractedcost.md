@@ -4,15 +4,14 @@ Contracted Cost represents the cost calculated by multiplying [*contracted unit 
 
 ## Requirements
 
-ContractedCost adheres to the following requirements:
+ContractedCost MUST adhere to the following requirements:
 
-* ContractedCost MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * ContractedCost MUST be of type Decimal.
 * ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedCost MUST NOT be null.
 * ContractedCost MUST be a valid decimal value.
 * ContractedCost MUST be denominated in the BillingCurrency.
-* When [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) is null, ContractedCost adheres to the following additional requirements:
+* When [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) is null, ContractedCost MUST adhere to the following requirements:
   * ContractedCost of a [*charge*](#glossary:charge) calculated based on other *charges* (e.g., when the [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related *charges*.
   * ContractedCost of a *charge* unrelated to other *charges* (e.g., when the ChargeCategory is "Credit") MUST match the [BilledCost](#datasets.costandusage.billedcost).
 * ContractedCost MUST equal the product of ContractedUnitPrice and PricingQuantity when ContractedUnitPrice is not null and PricingQuantity is not null.
@@ -35,14 +34,15 @@ Cost calculated by multiplying *contracted unit price* and the corresponding Pri
 
 ## Content Constraints
 
-| Constraint      | Value                   |
-|:----------------|:------------------------|
-| Column type     | Metric                  |
-| Feature level   | Mandatory               |
-| Allows nulls    | False                   |
-| Data type       | Decimal                 |
-| Value format    | [Numeric Format](#attributes.numericformat) |
-| Number range    | Any valid decimal value |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Metric                                               |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | False                                                |
+| Data type       | Decimal                                              |
+| Value format    | [Numeric Format](#attributes.numericformat)          |
+| Number range    | Any valid decimal value                              |
 
 ## Introduced (version)
 

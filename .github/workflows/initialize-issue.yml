@@ -1,0 +1,91 @@
+name: Initialize Project Fields
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  setup_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Inherit Task Force from Parent
+        env:
+          GH_TOKEN: ${{ secrets.PROJECT_PAT }}
+          ORG: "FinOps-Open-Cost-and-Usage-Spec"
+          PRJ_NUM: 5
+          ISSUE_NODE_ID: ${{ github.event.issue.node_id }}
+        run: |
+          set -e
+
+          # 1. Query Issue Type and Project Metadata
+          read -r -d '' QUERY << 'EOF' || true
+          query($issue_id: ID!, $org: String!, $num: Int!) {
+            node(id: $issue_id) {
+              ... on Issue {
+                issueType { name }
+                projectItems(first: 5) {
+                  nodes { id project { number } }
+                }
+                parent {
+                  projectItems(first: 5) {
+                    nodes {
+                      project { number }
+                      fieldValueByName(name: "Task Force") {
+                        ... on ProjectV2ItemFieldSingleSelectValue { optionId }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            organization(login: $org) {
+              projectV2(number: $num) {
+                id
+                ai_field: field(name: "AI Status") { ... on ProjectV2SingleSelectField { id options { id name } } }
+                tf_field: field(name: "Task Force") { ... on ProjectV2SingleSelectField { id } }
+              }
+            }
+          }
+          EOF
+
+          # 2. Polling Loop (Wait for GitHub to link the issue to the project)
+          for i in {1..3}; do
+            echo "Fetching data (Attempt $i)..."
+            QUERY_DATA=$(gh api graphql -f query="$QUERY" -f issue_id="$ISSUE_NODE_ID" -f org="$ORG" -F num=$PRJ_NUM)
+            ITEM_ID=$(echo "$QUERY_DATA" | jq -r --argjson NUM "$PRJ_NUM" '.data.node.projectItems.nodes[] | select(.project.number == $NUM) | .id // empty')
+            if [ -n "$ITEM_ID" ]; then break; fi
+            sleep 5
+          done
+
+          if [ -z "$ITEM_ID" ]; then echo "Item not found in Project"; exit 1; fi
+
+          # 3. Extract IDs and Metadata
+          PRJ_ID=$(echo "$QUERY_DATA" | jq -r '.data.organization.projectV2.id')
+          AI_FIELD_ID=$(echo "$QUERY_DATA" | jq -r '.data.organization.projectV2.ai_field.id')
+          AI_OPEN_ID=$(echo "$QUERY_DATA" | jq -r '.data.organization.projectV2.ai_field.options[] | select(.name=="Open") | .id')
+          TF_FIELD_ID=$(echo "$QUERY_DATA" | jq -r '.data.organization.projectV2.tf_field.id')
+          ISSUE_TYPE=$(echo "$QUERY_DATA" | jq -r '.data.node.issueType.name // empty')
+          PARENT_TF_VALUE=$(echo "$QUERY_DATA" | jq -r --argjson NUM "$PRJ_NUM" '.data.node.parent.projectItems.nodes[]? | select(.project.number == $NUM) | .fieldValueByName.optionId // empty')
+
+          # 4. Update AI Status
+          if [ "$ISSUE_TYPE" == "Action Item" ]; then
+            echo "Issue Type is 'Action Item'. Setting AI Status to Open..."
+            gh api graphql -f query='
+              mutation($project: ID!, $item: ID!, $field: ID!, $option: String!) {
+                updateProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field, value: { singleSelectOptionId: $option } }) { clientMutationId }
+              }' -f project="$PRJ_ID" -f item="$ITEM_ID" -f field="$AI_FIELD_ID" -f option="$AI_OPEN_ID"
+            
+            # --- THE STAGGER ---
+            # Wait for the Logger to post the AI Status comment so Task Force can append to it.
+            echo "Staggering 6 seconds to prevent duplicate Logger comments..."
+            sleep 6
+          fi
+
+          # 5. Inherit Task Force
+          if [ -n "$PARENT_TF_VALUE" ] && [ "$PARENT_TF_VALUE" != "null" ]; then
+            echo "Inheriting Task Force..."
+            # Fixed variable naming to match mutation: -f value matches $value
+            gh api graphql -f query='
+              mutation($project: ID!, $item: ID!, $field: ID!, $value: String!) {
+                updateProjectV2ItemFieldValue(input: { projectId: $project, itemId: $item, fieldId: $field, value: { singleSelectOptionId: $value } }) { clientMutationId }
+              }' -f project="$PRJ_ID" -f item="$ITEM_ID" -f field="$TF_FIELD_ID" -f value="$PARENT_TF_VALUE"
+          fi

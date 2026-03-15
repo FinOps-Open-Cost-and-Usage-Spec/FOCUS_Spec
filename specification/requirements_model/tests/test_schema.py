@@ -4,15 +4,11 @@ from jsonschema import Draft202012Validator
 import pytest
 
 
-# Adjust these if your paths differ
-HERE = Path(__file__).resolve().parent
-REQUIREMENTS_MODEL = HERE.parent  # .../specification/conformance
-SCHEMA_PATH = REQUIREMENTS_MODEL / "model_schema.json"          # your schema file
-
 @pytest.mark.order(1)
 @pytest.mark.dependency(name="cr_json_matches_schema", scope="session")
-def test_cr_json_matches_schema(cr_json):
-    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+def test_cr_json_matches_schema(version, version_dir, cr_json):
+    schema_path = version_dir / "model_schema.json"
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
 
     # Precompile validator (catches schema errors early)
     validator = Draft202012Validator(schema)

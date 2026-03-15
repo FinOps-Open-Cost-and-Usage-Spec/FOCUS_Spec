@@ -4,16 +4,15 @@ The Pricing Unit represents a service-provider-specified measurement unit for de
 
 ## Requirements
 
-PricingUnit adheres to the following requirements:
+PricingUnit MUST adhere to the following requirements:
 
-* PricingUnit MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).
 * PricingUnit MUST be of type String.
 * PricingUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PricingUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
-* PricingUnit nullability is defined as follows:
+* PricingUnit MUST adhere to the following nullability requirements:
   * PricingUnit MUST be null when PricingQuantity is null.
   * PricingUnit MUST NOT be null when PricingQuantity is not null.
-* When PricingUnit is not null, PricingUnit adheres to the following additional requirements:
+* When PricingUnit is not null, PricingUnit MUST adhere to the following requirements:
   * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in service-provider-published [*price list*](#glossary:price-list).
   * PricingUnit MUST be semantically equal to the corresponding pricing measurement unit provided in invoice, when the invoice includes a pricing measurement unit.
 
@@ -31,13 +30,14 @@ Service-provider-specified measurement unit for determining unit prices, indicat
 
 ## Content constraints
 
-| Constraint      | Value                   |
-|-----------------|-------------------------|
-| Column type     | Dimension               |
-| Feature level   | Mandatory               |
-| Allows nulls    | True                    |
-| Data type       | String                  |
-| Value format    | [Unit Format](#attributes.unitformat) |
+| Constraint      | Value                                                |
+| :-------------- | :--------------------------------------------------- |
+| Dataset         | [Cost and Usage](#datasets.costandusage)             |
+| Column type     | Dimension                                            |
+| Feature level   | Mandatory                                            |
+| Allows nulls    | True                                                 |
+| Data type       | String                                               |
+| Value format    | [Unit Format](#attributes.unitformat)                |
 
 ## Introduced (version)
 
