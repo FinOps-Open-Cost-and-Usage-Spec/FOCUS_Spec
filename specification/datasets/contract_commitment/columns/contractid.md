@@ -32,7 +32,7 @@ A service-provider-assigned identifier for a contract describing the agreed term
 | Dataset         | [Contract Commitment](#datasets.contractcommitment)  |
 | Column type     | Dimension                                            |
 | Feature level   | Mandatory                                            |
-| Allows nulls    | True                                                 |
+| Allows nulls    | False                                                |
 | Data type       | String                                               |
 | Value format    | \<not specified>                                     |
 
