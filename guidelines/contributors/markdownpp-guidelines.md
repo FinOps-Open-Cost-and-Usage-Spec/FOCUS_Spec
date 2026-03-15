@@ -193,29 +193,64 @@ While markdown can be included in a .mdpp, the FOCUS project discourages this be
 !INCLUDE "attributes/numeric_format.md"
 ```
 
+### Directory Naming Conventions
+
+To ensure consistency, ease of maintenance, and portability, all directories in the FOCUS Specification repository, except the `.github` directory and its subdirectories, MUST follow these naming conventions:
+
+- Directory names MUST use lowercase characters.
+- Directory names MUST NOT contain spaces.
+- Directory names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
+  - If a directory requires a rename:
+    - all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
+    - The FinOps Foundation staff MUST be notified in order to repair any hyperlink references to that directory within Foundation assets.
+- Directory names SHOULD be descriptive and reflect the primary content of the directory.
+- Directory names consisting of multiple words MUST use hyphens (`-`) as the word separator, except for directories defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes).
+- Directory names consisting of multiple words MUST NOT use any word separator for directories defining FOCUS entities, so that the directory name matches the FOCUS entity identifier in lowercase.
+
+The `.github` directory and its subdirectories (e.g., `ISSUE_TEMPLATE`, `workflows`) MUST follow standard GitHub directory naming conventions.
+
+**Preferred directory name examples:**
+
+```text
+supported-features
+costandusage
+pricingquantity
+numericformat
+```
+
+**Forbidden directory name examples:**
+
+```text
+SupportedFeatures
+Supported Features
+supportedFeatures
+supported_features
+cost-and-usage
+```
+
 ### File Naming Conventions
 
-To ensure consistency, ease of maintenance, and portability, all Markdown and MarkdownPP files in the FOCUS Specification repository, except key repository files, SHOULD follow these naming conventions:
+To ensure consistency, ease of maintenance, and portability, all Markdown and MarkdownPP files in the FOCUS Specification repository, except key repository files, MUST follow these naming conventions:
 
 - File names MUST use lowercase characters.
-- Spaces MUST NOT be used.
+- File names MUST NOT contain spaces.
 - File names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
   - If a file requires a rename:
-    - all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.  
+    - all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
     - The FinOps Foundation staff MUST be notified in order to repair any hyperlink references to that file within Foundation assets.
 - File names SHOULD be descriptive and reflect the primary content of the file.
-- Words in file names SHOULD be separated using underscores (`_`) or joined without any separator.
-- Words in file names MAY be separated using hyphens (`-`).
+- File names consisting of multiple words MUST use hyphens (`-`) as the word separator, except for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes).
+- File names consisting of multiple words MUST NOT use any word separator for files defining FOCUS entities, so that the file name matches the FOCUS entity identifier in lowercase.
 
-Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) SHOULD follow common GitHub naming conventions.
+Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) MUST follow common GitHub naming conventions.
 
 **Preferred file name examples:**
 
 ```text
-numeric_format.md
-supported_features.mdpp
-cost_and_usage.md
+supported-features.mdpp
+costandusage.mdpp
 pricingquantity.md
+numericformat.md
 ```
 
 **Forbidden file name examples:**
@@ -224,6 +259,8 @@ pricingquantity.md
 PricingQuantity.md
 Pricing Quantity.md
 pricingQuantity.md
+numeric_format.md
+numeric-format.md
 ```
 
 ### Header Level Management
