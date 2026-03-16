@@ -40,8 +40,6 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 * `|| -- contains -- o{` : one parent to zero-or-more child entities (array of objects)
 * `}| .. conforms-to .. ||` : many children to one parent conformance relationship
 
-## Note on FOCUS Dataset, Dataset Instance, and Glossary Alignment
-
 > **Important clarification**
 
 By glossary definition, the following concepts are used:
@@ -61,9 +59,9 @@ However, by design decision, the specification adopts the following normative co
 
 This choice is intentional and overrides interpretations based solely on abstraction level.
 
-## Core Normative Authoring Rules
+## 1. Core Normative Authoring Rules
 
-### 1. Normative Requirement Structure
+### 1.1. Normative Requirement Structure
 
 The recommended pattern for a normative requirement is:
 
@@ -77,7 +75,7 @@ The recommended pattern for a normative requirement is:
   * express exactly one **verifiable constraint**
 * Each normative requirement SHOULD describe a **verifiable state** of the object rather than behavior
 
-### 2. Structural Anchor Requirement
+### 1.2. Structural Anchor Requirement
 
 Each Requirements section for a schema-level construct MUST begin with a single **structural anchor requirement**.
 
@@ -95,9 +93,9 @@ The canonical form of a structural anchor requirement is:
 For **Attribute Requirements** sections, the Attribute ID MAY be used as the subject of the structural anchor requirement.
 This usage is a structural exception only and MUST NOT be interpreted as implying that Attributes are normative subjects or independently enforceable schema entities.
 
-### 3. Normative Subject
+### 1.3. Normative Subject
 
-#### 3.1 Allowed Subjects
+#### 1.3.1 Allowed Subjects
 
 The normative subject MUST be a schema-level entity, such as:
 
@@ -125,14 +123,14 @@ The subject SHOULD be explicit and unambiguous.
 
 **Exception:** A structural anchor requirement MAY use the ID of the enclosing schema construct as its subject, even if that construct is not otherwise an allowed normative subject (e.g., `<FOCUS Attribute ID>`). This exception applies only to structural anchor requirements.
 
-#### 3.2 Disallowed Subjects
+#### 1.3.2 Disallowed Subjects
 
 The following MUST NOT be used as normative subjects:
 
 * Actors (e.g. data generator, service provider, consumer)
 * Processes or mechanisms (e.g. Delivery Handling, Correction Handling, etc.)
 
-### 4. State, Not Behavior
+### 1.4. State, Not Behavior
 
 Normative requirements MUST describe a **verifiable state**, not an operational process or behavior.
 
@@ -143,12 +141,12 @@ Specifically:
   * a constraint on the resulting dataset state, or
   * a constraint on a schema-defined artifact.
 
-### 5. Use of BCP 14 Keywords
+### 1.5. Use of BCP 14 Keywords
 
 * Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT).
 * A bullet containing more than one normative keyword MUST be split.
 
-### 6. Splitting Requirements
+### 1.6. Splitting Requirements
 
 A requirement MUST be split into multiple bullets if it:
 
@@ -157,7 +155,7 @@ A requirement MUST be split into multiple bullets if it:
 * mixes a definition with a constraint,
 * applies different constraints to different subjects.
 
-### 7. Composite Requirements
+### 1.7. Composite Requirements
 
 Composite (parent + nested) requirements MAY be used when strictly controlled and MUST adhere to the following requirements:
 
@@ -172,15 +170,15 @@ Composite requirements SHOULD be used when grouping improves readability and:
 
 Flat parallel bullets SHOULD be preferred when ordering keyword is sufficient for clarity and readability.
 
-### 8. Definitions vs. Normative Requirements
+### 1.8. Definitions vs. Normative Requirements
 
 * Definitions, explanations, rationale, and examples MUST NOT be expressed as normative requirements.
 * Definitions SHOULD be written as plain declarative statements without BCP 14 keywords.
 * Normative bullets SHOULD be reduced to the enforceable constraint only.
 
-## Dataset Requirements
+## 2. Dataset Requirements
 
-### 1. Logical Grouping of Dataset Requirements
+### 2.1. Logical Grouping of Dataset Requirements
 
 Grouping and ordering of dataset-level normative requirements ensures clarity, consistency, and maintainability across all FOCUS datasets, making related or similar requirements easy to identify and follow.
 
@@ -202,7 +200,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 | Business         | Business/Contextual Attributes Conformance             | When applicable                              | {DatasetId} MUST conform to DiscountHandling requirements. |
 | Business         | Other Business/Contextual Requirements (FOR FUTURE USE)| For future use                               | N/A                                                        |
 
-### 2. Ordering of Dataset Requirements Within Groups
+### 2.2. Ordering of Dataset Requirements Within Groups
 
 * Within each group of requirements, order individual requirements as follows:
   * **MUST** – an absolute requirement
@@ -215,7 +213,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
-### 3. Structuring Individual Dataset Requirements
+### 2.3. Structuring Individual Dataset Requirements
 
 * **Start with the DatasetId**: Whenever possible, begin each requirement with the DatasetId to make the requirement clear and focused.
 
@@ -227,19 +225,19 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
   * <DatasetId> MUST be present[ when <Condition>].
   ```
 
-### 4. Consistent Wording and Patterns in Dataset Requirements
+### 2.4. Consistent Wording and Patterns in Dataset Requirements
 
 Use standardized phrasing and terminology, and apply common requirement patterns where applicable to ensure clarity and consistency across datasets and corresponding requirements.
 
-#### 4.1. Dataset Requirement Patterns
+#### 2.4.1. Dataset Requirement Patterns
 
-##### 4.1.1. Technical Requirements: Dataset Presence
+##### 2.4.1.1. Technical Requirements: Dataset Presence
 
 ```markdown
 * <DatasetId> MUST be present[ when <Condition>].
 ```
 
-##### 4.1.2. Technical Requirements: Column Presence
+##### 2.4.1.2. Technical Requirements: Column Presence
 
 ```markdown
 * <DatasetId> MUST include <ColumnId>.
@@ -248,21 +246,21 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 * <DatasetId> SHOULD include <ColumnId> when <Condition>.
 ```
 
-##### 4.1.3. Technical Requirements: Technical Attributes Conformance
+##### 2.4.1.3. Technical Requirements: Technical Attributes Conformance
 
 ```markdown
 * <DatasetId> MUST conform to <TechnicalAttributeId> requirements.
 ```
 
-##### 4.1.4. Business Requirements: Business/Contextual Attributes Conformance
+##### 2.4.1.4. Business Requirements: Business/Contextual Attributes Conformance
 
 ```markdown
 * <DatasetId> MUST conform to <BusinessAttributeId> requirements.
 ```
 
-### 5. Dataset Normative Requirements Examples
+### 2.5. Dataset Normative Requirements Examples
 
-#### **Contract Commitment**
+#### 2.5.1. **Contract Commitment**
 
 ContractCommitment adheres to the following requirements:
 
@@ -270,7 +268,7 @@ ContractCommitment adheres to the following requirements:
 * ContractCommitment MUST conform to [ColumnHandling](#columnhandling) requirements.
 * ContractCommitment MUST conform to [NullHandling](#nullhandling) requirements.
 
-#### **Cost and Usage**
+#### 2.5.2. **Cost and Usage**
 
 CostAndUsage adheres to the following requirements:
 
@@ -281,9 +279,9 @@ CostAndUsage adheres to the following requirements:
 * CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling) requirements.
 
-## Column Requirements
+## 3. Column Requirements
 
-### 1. Logical Grouping of Column Requirements
+### 3.1. Logical Grouping of Column Requirements
 
 Grouping and ordering of requirements ensure clarity, logical flow, and consistency across all columns, making related requirements easy to identify and follow. This structure should be maintained for consistency across the specification.
 
@@ -323,7 +321,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 | Business             | Cost Calculation and Relationships | When applicable                       | When {Condition}, {ColumnId} adheres to the following additional requirements:<br>  *{ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>* {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
 | Business             | Other                              | When applicable                       |                                                                                           |
 
-### 2. Ordering of Column Requirements Within Groups
+### 3.2. Ordering of Column Requirements Within Groups
 
 * Within each group of requirements, order individual requirements as follows:
   * **MUST** – an absolute requirement
@@ -336,7 +334,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
-### 3. Structuring Individual Column Requirements
+### 3.3. Structuring Individual Column Requirements
 
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
 
@@ -358,16 +356,16 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
   ```  
 
-### 4. Additional Guidelines for Columns in JSON Format
+### 3.4. Additional Guidelines for Columns in JSON Format
 
-#### 4.1. Column Definition Structure
+#### 3.4.1. Column Definition Structure
 
 * **Separate normative requirements into sections for column, JSON schema, and contents**: Communicating the normative requirements for a column, JSON schema, and the contents can be convoluted. Separating these requirements provides better clarity.
   * Column normative requirements specify requirements of the column such as nullability.
   * JSON schema normative requirements specify the shape of the JSON.
   * Contents normative requirements usually specify the expected Keys, the format of the Values, and the expected contents of the Values.
 
-#### 4.2. JSON Schema
+#### 3.4.2. JSON Schema
 
 * **Omit JSON schema normative requirements for Key-Value Format columns**: The Key-Value Format definition is sufficient to define the expected JSON schema.
 
@@ -414,13 +412,13 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   }
   ```
 
-#### 4.3. Key-Value Pairs
+#### 3.4.3. Key-Value Pairs
 
 * **References to Key-Value Pairs depend on the context**: The terminology for key-value pairs varies depending on the column and context. For instance, when referring to key-value pairs, **tags**, **user-defined tags**, and **data generator-defined tags** are used in **Tags**, whereas **SkuPriceDetails property** is used in **SkuPriceDetails**.
 
 * **Default to Plural for Key-Value Pairs**: When referring to key-value pairs, **tags** and **properties** should be used in the plural form to reflect the fact that the column may contain multiple key-value pairs.
 
-#### 4.4. Keys and Values
+#### 3.4.4. Keys and Values
 
 * **Refer to Key and Values Explicitly**: When specifying normative requirements for key and value, use precise terminology based on the column type. For instance:
   * In **Tags**, refer to **tag key** when addressing only the key, and **tag value** when addressing only the value.
@@ -439,7 +437,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
   * Use plural when referring to keys or values to reflect the fact that the column may contain multiple keys/values (e.g., "property keys", "tag values").
   * Use singular when referring to the key or value of a single tag or property (e.g., "property key", "tag value"), with the understanding that the requirement applies to all occurrences.
 
-### 5. Grouping of Nullability-Related and Subsequent Column Requirements
+### 3.5. Grouping of Nullability-Related and Subsequent Column Requirements
 
 * When there is only one nullability-related requirement, state it directly. If there are multiple, list them as nested bullets under the introductory bullet 'ColumnId nullability is defined as follows:'
 
@@ -472,7 +470,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
       * <ColumnId> MAY be null when <Condition>.
   ```
 
-### 6. Grouping of Column Requirements Based on Specific Conditions
+### 3.6. Grouping of Column Requirements Based on Specific Conditions
 
 * **Parent Condition**
   * When a specific condition (or set of conditions) applies to a subset of requirements, you may group them under that condition.
@@ -504,16 +502,16 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
       * <ColumnId> MUST be <SpecificRequirement>.
   ```
 
-### 7. Consistent Wording and Patterns in Column Requirements
+### 3.7. Consistent Wording and Patterns in Column Requirements
 
 To ensure clarity and consistency across columns and corresponding requirements, it is important to:
 
 * Follow common requirement patterns where applicable
 * Use standardized phrasing and terminology
 
-#### 7.1. Column Requirement Patterns
+#### 3.7.1. Column Requirement Patterns
 
-##### 7.1.1. Technical Requirements: Data Type
+##### 3.7.1.1. Technical Requirements: Data Type
 
 ```markdown
 * <ColumnId> MUST be of type String.
@@ -521,7 +519,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * <ColumnId> MUST be of type Date/Time.
 ```
 
-##### 7.1.2. Technical Requirements: Value Format
+##### 3.7.1.2. Technical Requirements: Value Format
 
 ```markdown
 * <ColumnId> MUST conform to [StringHandling](#stringhandling) requirements.
@@ -532,7 +530,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 * <ColumnId> MUST conform to [CurrencyCodeFormat](#currencycodeformat) requirements.
 ```
 
-##### 7.1.3. Technical Requirements: Nullability
+##### 3.7.1.3. Technical Requirements: Nullability
 
 ```markdown
 * <ColumnId> MUST NOT be null.
@@ -571,51 +569,51 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * <ColumnId> MUST be null in all other cases.
 ```
 
-##### 7.1.4. Technical Requirements: Values and Value Ranges
+##### 3.7.1.4. Technical Requirements: Values and Value Ranges
 
 ```markdown
 * <ColumnId> MUST be a valid decimal value.
 * <ColumnId> MUST be a non-negative decimal value.
 ```
 
-##### 7.1.5. Technical Requirements: Column-to-Column Relationships
+##### 3.7.1.5. Technical Requirements: Column-to-Column Relationships
 
 ```markdown
 * <ColumnId> SHOULD/MUST remain consistent over time for a given <OtherColumnId>.
 ```
 
-##### 7.1.6. Business & Contextual Requirements: Unit/Denomination
+##### 3.7.1.6. Business & Contextual Requirements: Unit/Denomination
 
 ```markdown
 * <ColumnId> MUST be denominated in the BillingCurrency.
 * <ColumnId> MUST be expressed in the <OtherColumnId>.
 ```
 
-##### 7.1.7. Business & Contextual Requirements: Uniqueness
+##### 3.7.1.7. Business & Contextual Requirements: Uniqueness
 
 ```markdown
 * <ColumnId> MUST be a unique identifier within <Scope>.
 ```
 
-##### 7.1.8. Business & Contextual Requirements: Fallback/Substitute Values
+##### 3.7.1.8. Business & Contextual Requirements: Fallback/Substitute Values
 
 ```markdown
 * <ColumnId> MUST NOT duplicate <OtherColumnId> when <Condition>
 ```
 
-##### 7.1.9. Business & Contextual Requirements: Relationships Outside the Spec
+##### 3.7.1.9. Business & Contextual Requirements: Relationships Outside the Spec
 
 ```markdown
 * The sum of <ColumnId> in a given billing period MUST/MAY NOT match the sum of the invoices received for that billing period for a billing account.
 ```
 
-##### 7.1.10. Business & Contextual Requirements: Cost Validation Rules
+##### 3.7.1.10. Business & Contextual Requirements: Cost Validation Rules
 
 ```markdown
 * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
 ```
 
-##### 7.1.11. Business & Contextual Requirements: Cost Calculation and Relationships
+##### 3.7.1.11. Business & Contextual Requirements: Cost Calculation and Relationships
 
 ```markdown
 * When <Condition>, <CostColumnId> adheres to the following additional requirements:
@@ -623,9 +621,9 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * <CostColumnId> of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost.
 ```
 
-#### 7.2. Column Requirement Standardized Terminology
+#### 3.7.2. Column Requirement Standardized Terminology
 
-##### 7.2.1. Identifiers and Uniqueness within Scope
+##### 3.7.2.1. Identifiers and Uniqueness within Scope
 
 * Patterns:
   * {ColumnId} MUST be a unique identifier within {Scope}.
@@ -634,12 +632,12 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * BillingAccountId MUST be a unique identifier within a service provider.
   * ResourceId SHOULD be a fully-qualified identifier.
 
-##### 7.2.2. Column Aggregation
+##### 3.7.2.2. Column Aggregation
 
 * Pattern: The sum of {ColumnId} in a given billing period...
 * Example: The sum of BilledCost in a given billing period...
 
-##### 7.2.3. Column value Consistency
+##### 3.7.2.3. Column value Consistency
 
 * Patterns:
   * {ColumnId} MUST/SHOULD remain consistent over time for a given {OtherColumnId}.
@@ -647,13 +645,13 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * SkuMeter SHOULD remain consistent over time for a given SkuId.
   * CommitmentDiscountUnit MUST remain consistent over time for a given CommitmentDiscountId.
 
-##### 7.2.4. References to charge and billing periods
+##### 3.7.2.4. References to charge and billing periods
 
 * Patterns:
   * in a given billing period
   * in a given charge period
 
-##### 7.2.5. Preferred Terminology for Numerical References
+##### 3.7.2.5. Preferred Terminology for Numerical References
 
 * Patterns: When specifying quantities in normative requirements, follow these conventions:
   * Use "one" instead of "1".
@@ -662,9 +660,9 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * When the service provider has only one user-defined tag scheme. (instead of: When the service provider has only 1 user-defined tag scheme.)
   * When the service provider has more than one user-defined tag scheme. (instead of: When the service provider has 2 or more user-defined tag schemes.)
 
-### 8. Column Normative Requirements Examples
+### 3.8. Column Normative Requirements Examples
 
-#### **List Unit Price**
+#### 3.8.1. **List Unit Price**
 
 ListUnitPrice adheres to the following requirements:
 
@@ -680,7 +678,7 @@ ListUnitPrice adheres to the following requirements:
   * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
   * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
 
-#### **Billed Cost**
+#### 3.8.2. **Billed Cost**
 
 BilledCost adheres to the following requirements:
 
@@ -691,7 +689,7 @@ BilledCost adheres to the following requirements:
 * BilledCost MUST be denominated in the BillingCurrency.
 * The sum of BilledCost in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
-#### **CommitmentDiscountQuantity**
+#### 3.8.3. **CommitmentDiscountQuantity**
 
 CommitmentDiscountQuantity adheres to the following requirements:
 
@@ -711,92 +709,83 @@ CommitmentDiscountQuantity adheres to the following requirements:
     * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
     * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given *charge period* when CommitmentDiscountStatus is "Unused".
 
-## Attribute Requirements
+## 4. Attribute Requirements
 
-> This section is **Work In Progress**.
+### 4.1. Role of Attributes in the Specification
 
-This section defines guidelines for authoring **Attribute-level normative requirements**.
-
-Attributes are **not normative subjects**, **except** that the Attribute ID is used as **the subject of the structural anchor requirement** for automated validation consistency. They define reusable sets of normative constraints applied to Datasets, Columns, or ElementProperties that declare conformance to the Attribute.
-
-### 1. Role of Attributes in the Specification
-
-Attributes serve as:
-
-* reusable rule sets that avoid duplication across Datasets and Columns,
-* a mechanism for expressing cross-cutting technical or business constraints,
-* a conformance target for schema-level entities.
+Attributes represent one of FOCUS entities but they are **not normative subjects** of requirements. They define reusable sets of normative constraints applied to FOCUS datasets, columns (both FOCUS and custom), or sub-elements within columns (e.g., objects, keys, key values) that declare conformance to the Attribute.
 
 Normative requirements defined in an Attribute section are enforced on the conforming schema-level entity, not on the Attribute itself.
 
-### 2. Structural Anchor Requirement for Attributes
+### 4.2. Structural Anchor Requirement for Attributes
 
 Each Attribute Requirements section MUST begin with a structural anchor requirement.
 
 The structural anchor requirement:
 
-* uses the Attribute ID as the subject,
-* introduces the scope of the requirements,
+* uses the primary schema-level entity as the subject,
+* references the Attribute ID to establish the conformance context,
+* introduces the scope of the subsequent requirements,
 * is non-verifiable and non-enforceable,
 * exists solely for structural consistency and automated parsing.
 
-Canonical form:
+The canonical form of the structural anchor requirement is:
 
-``` markdown
-<AttributeId> MUST adhere to the following requirements:
+```markdown
+[Dataset|Column] conforming to  attribute MUST adhere to the following requirements:
 ```
 
-This is the only case in which an Attribute ID may appear as a normative subject.
+Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attribute — either Dataset or Column. Most Attributes target either datasets or columns, but not both. When an Attribute targets both datasets and columns, a separate structural anchor requirement MUST be used for each entity type.
 
-### 3. Normative Subjects in Attribute Requirements
+When an Attribute is applicable only under specific conditions, the structural anchor requirement MAY be preceded by an applicability criteria condition:
+
+```markdown
+When <actor> <applicability-citeria-condition>, [Dataset|Column] conforming to  attribute MUST adhere to the following requirements:
+```
+
+#### 4.3. Normative Subjects in Attribute Requirements
 
 All enforceable normative requirements within an Attribute section MUST target schema-level entities that conform to the Attribute. The Attribute itself MUST NOT be treated as an enforceable subject beyond the structural anchor requirement.
 
-Each Attribute implicitly assumes one or more intended normative subjects. These subjects determine which schema-level entities the Attribute’s requirements apply to.
+Each Attribute implicitly assumes one or more intended normative subjects. These subjects determine which schema-level entities the Attribute's requirements apply to.
 
-The following table lists commonly used intended subjects.
+##### Tabular Overview of Normative Subjects
 
-***Note:** This list is non-exhaustive and will be extended over time.*
+The following table provides an overview of anchor subject types and requirement subjects used across all attributes.
 
-| Subject (Core) | Distinct Subjects with Qualifiers | Description/Note |
-|----------------|-----------------------------------|------------------|
-| Attribute      | `<Attribute ID>` | Specific Attribute identified by Dataset ID |
-| FOCUS Dataset  | FOCUS dataset | |
-| FOCUS Dataset  | `<FOCUS Dataset ID>` FOCUS dataset | Specific FOCUS dataset identified by Dataset ID |
-| Native dataset | Native dataset | |
-| Native column  | Native dataset column | |
-| Column         | FOCUS column | Column defined by FOCUS and included in a FOCUS dataset |
-| Column         | Custom column | Column not defined by FOCUS and included in a FOCUS dataset |
-| Column         | FOCUS/Custom column representing national currency | |
-| Column         | FOCUS/Custom column representing virtual currency | |
-| Column         | FOCUS/Custom column representing an identifier | |
-| Column         | FOCUS/Custom column representing a name | |
-| Column         | FOCUS/Custom column representing a product offering that incurred the charge | |
-| Column         | FOCUS column with `Category` suffix | |
-| Column         | FOCUS/Custom column containing numeric values | |
-| Column         | FOCUS/Custom column containing date/time values | |
-| Column         | FOCUS/Custom column containing string values | |
-| Column         | FOCUS/Custom column containing immutable string values | |
-| Column         | FOCUS/Custom column containing mutable string values | |
-| Column         | FOCUS/Custom column containing not-nullable string values | |
-| Column         | FOCUS/Custom column containing values in key-value pair format | |
-| Key            | Keys in FOCUS/Custom column containing values in key-value pair format | |
-| Key value      | Key values in FOCUS/Custom column containing values in key-value pair format | |
-| Column         | FOCUS column containing values in JsonObjectFormat format | |
-| Object         | Object in FOCUS column containing JsonObjectFormat values | |
-| Key            | Keys in Object in FOCUS column containing JsonObjectFormat values | |
-| Key value      | Key values in Object in FOCUS column containing JsonObjectFormat values | |
-| Object         | Object in array in FOCUS column containing JsonObjectFormat values | |
-| Column         | Custom column containing JSON object | |
-| Object         | Object in Custom column containing JSON object | |
-| Key            | Keys in Object in Custom column containing JSON object | |
-| Key value      | Key values in Object in Custom column containing JSON object | |
-| Object         | Object in array in Custom column containing JSON object | |
-| Column         | `<FOCUS Dataset ID>.<FOCUS Column ID>` | Specific column included in a FOCUS dataset, identified by Column ID |
+| Anchor Subject Type | Requirement Subject | Attribute IDs |
+|---|---|---|
+| Dataset | FOCUS dataset | ColumnHandling, InvoiceHandling, DataGeneratorCalculatedSplitCostAllocationHandling |
+| Column | FOCUS column | ColumnHandling, NullHandling, StringHandling, NumericFormat, DateTimeFormat, KeyValueFormat, JsonObjectFormat, UnitFormat, CurrencyFormat, DataGeneratorCalculatedSplitCostAllocationHandling |
+| Column | Custom column | ColumnHandling, NullHandling, StringHandling, NumericFormat, DateTimeFormat, KeyValueFormat, JsonObjectFormat, UnitFormat, CurrencyFormat |
+| Column | Object in FOCUS column | JsonObjectFormat |
+| Column | Object in array in FOCUS column | JsonObjectFormat |
+| Column | Key in Object in FOCUS column | JsonObjectFormat |
+| Column | Key value in Object in FOCUS column | JsonObjectFormat |
+| Column | Key in FOCUS column | KeyValueFormat |
+| Column | Key value in FOCUS column | KeyValueFormat |
 
-### 4. Grouping of Attribute Requirements
+#### 4.4. FOCUS vs Custom Column Requirements
+
+Custom columns are expected to behave in the same or similar way as FOCUS columns. The difference is that requirements for Custom columns are expressed as recommendations rather than mandatory constraints.
+
+As a general rule, when authoring requirements for a FOCUS column, the author SHOULD also consider whether the same requirements apply to Custom columns and, where applicable, restate them as recommendations using `SHOULD` instead of `MUST` and `SHOULD NOT` instead of `MUST NOT`. `MAY` and `MAY NOT` SHOULD be retained as-is.
+
+The following exceptions apply:
+
+* Some requirements MAY not be applicable to Custom columns and SHOULD be omitted.
+* Some requirements MAY be mandatory for Custom columns and SHOULD retain `MUST` or `MUST NOT`.
+* Some requirements MAY be optional for Custom columns and SHOULD use `MAY` or `MAY NOT` instead.
+
+The appropriate keyword SHOULD always be chosen based on the intent and context of the requirement.
+
+### 4.5. Grouping of Attribute Requirements
 
 Grouping and ordering of Attribute requirements ensure clarity, consistency, and maintainability across the specification, making related requirements easy to identify and follow.
+
+The groups defined below represent an ordering convention, not a structural requirement. Requirements within each group MAY be expressed as flat parallel bullets or as composite (parent + nested) bullets — whichever improves clarity and readability.
+
+The only **exception** is the Structural Anchor Requirement (group 0). By it's natire, Anchor Requirement always acts as a parent composite requirement.
 
 Attributes may include requirements that apply to one or more intended normative subjects. To make the applicability of each Attribute, and each of its individual requirements, as transparent as possible, intended normative subjects serve as the basis for grouping. This ensures that readers can readily determine whether a requirement applies to a dataset, a subset of datasets, FOCUS columns, or custom columns.
 
@@ -821,7 +810,7 @@ This structured grouping improves clarity, consistency, and maintainability acro
    1. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
    2. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
 
-### 5. Ordering of Attribute Requirements within Groups
+### 4.6. Ordering of Attribute Requirements within Groups
 
 * Within each group of requirements, order individual requirements as follows:
   * Requirements targeting the general subject (e.g., FOCUS column) first
@@ -833,6 +822,108 @@ This structured grouping improves clarity, consistency, and maintainability acro
     * **SHOULD NOT** – discouraged but not strictly prohibited
     * **MAY** – optional
 
-### 6. Attribute Normative Requirements Examples
+### 4.6. Attribute Normative Requirements Examples
 
-> TODO:
+#### 4.6.1. Null Handling
+
+> *Note: This example illustrates the baseline pattern for an Attribute that applies to both FOCUS columns and Custom columns, with no qualifiers.*
+
+NullHandling MUST adhere to the following requirements:
+
+* FOCUS column MUST adhere to the following requirements:
+  * FOCUS column MUST use NULL for absent values when the FOCUS column is defined as nullable.
+  * FOCUS column MUST NOT contain empty strings or placeholder strings (e.g., "Not Applicable") for absent values when the FOCUS column contains string values.
+  * FOCUS column MUST NOT contain placeholder numeric values (e.g., 0) for absent values when the FOCUS column contains numeric values.
+* Custom column MUST adhere to the following requirements:
+  * Custom column SHOULD use NULL for absent values when the custom column is defined as nullable.
+  * Custom column SHOULD NOT contain empty strings or placeholder strings (e.g., "Not Applicable") for absent values when the custom column contains string values.
+  * Custom column SHOULD NOT contain placeholder numeric values (e.g., 0) for absent values when the custom column contains numeric values.
+
+#### 4.6.2. Date/Time Format
+
+> *Note: This example illustrates an Attribute with a qualifier and a nested composite requirement, expressed for both FOCUS columns and Custom columns.*
+
+Column conforming to DateTimeFormat attribute MUST adhere to the following requirements:
+
+* When FOCUS column contains date/time values, FOCUS column MUST adhere to the following requirements:
+  * FOCUS column MUST be expressed in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.
+  * FOCUS column MUST conform to the ISO 8601 standard, which provides a globally recognized format for representing dates and times.
+  * When column represents a specific moment in time, FOCUS column MUST adhere to the following requirements:
+    * FOCUS column MUST use the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ').
+    * FOCUS column MUST include both the date and time components, separated with the letter 'T'.
+    * FOCUS column MUST use two-digit hours (HH), minutes (mm), and seconds (ss).
+    * FOCUS column MUST end with the ISO 8601 UTC designator 'Z'.
+* When custom column contains date/time values, custom column MUST adhere to the following requirements:
+  * Custom column SHOULD be expressed in UTC (Coordinated Universal Time).
+  * Custom column SHOULD conform to the ISO 8601 standard.
+  * When column represents a specific moment in time, custom column MUST adhere to the following requirements:
+    * Custom column SHOULD use the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ').
+    * Custom column SHOULD include both the date and time components, separated with the letter 'T'.
+    * Custom column SHOULD use two-digit hours (HH), minutes (mm), and seconds (ss).
+    * Custom column SHOULD end with the ISO 8601 UTC designator 'Z'.
+
+#### 4.6.3. JSON Object Format
+
+> *Note: This example illustrates an Attribute with sub-element requirements (Object, Key, Key value) expressed as qualified bullets within the FOCUS Column group.*
+
+JsonObjectFormat MUST adhere to the following requirements:
+
+* When FOCUS column contains JsonObjectFormat values, FOCUS column MUST adhere to the following requirements:
+  * FOCUS column MUST contain a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
+  * FOCUS column MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the object.
+  * Object in FOCUS column SHOULD NOT exceed 3 levels of nesting.
+  * Key in Object in FOCUS column MUST be unique.
+  * Key value in Object in FOCUS column MUST be of type number, string, boolean (`true` or `false`), array, object, or `null`.
+  * Object in array in FOCUS column MUST adhere to the following requirements:
+    * Object in array in FOCUS column MUST be of a consistent type.
+    * Object in array in FOCUS column MUST NOT be repeated.
+    * Object in array in FOCUS column MUST NOT be null.
+* Custom column MUST have its object schema documented by the data generator and accessible to practitioners when the custom column contains a JSON object.
+
+#### 4.6.4. Data Generator Calculated Split Cost Allocation Handling
+
+> *Note: This example illustrates an Attribute with an applicability condition preceding the structural anchor requirement.*
+
+When the data generator supports data generator-calculated split cost allocation, column conforming to DataGeneratorCalculatedSplitCostAllocationHandling attribute MUST adhere to the following requirements:
+
+* The sum of FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a summable [*metric*](#glossary:metric) (e.g., costs and quantities).
+* FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a non-summable *metric* (e.g., unit prices).
+* FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a dimension.
+* FOCUS column values in *allocated charges* MUST include the same keys and values present in the [CostAndUsage.Tags](#datasets.costandusage.tags) in the *origin charge* when the FOCUS column contains tag values.
+
+#### 4.6.5. Column Handling
+
+> *Note: This example illustrates the special case of an Attribute that targets both datasets and columns, requiring two separate structural anchor requirements.*
+
+Dataset conforming to ColumnHandling attribute MUST adhere to the following requirements:
+
+* FOCUS dataset MUST adhere to the following column ordering requirements:
+  * FOCUS dataset SHOULD list all FOCUS columns before all Custom columns.
+  * FOCUS dataset SHOULD sort FOCUS columns alphabetically by their Column ID within the FOCUS columns group.
+  * FOCUS dataset SHOULD sort Custom columns alphabetically by their Column ID within the Custom columns group.
+  * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns when ordering columns.
+
+Column conforming to ColumnHandling attribute MUST adhere to the following requirements:
+
+* FOCUS column MUST adhere to the following requirements:
+  * FOCUS column MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID "BillingAccountName" and Display Name "Billing Account Name").
+  * FOCUS column MUST use Pascal case in the Column ID.
+  * FOCUS column MUST use only alphanumeric characters in the Column ID.
+  * FOCUS column MUST NOT include special characters in the Column ID.
+  * FOCUS column MUST NOT use abbreviations other than `Id` in the Column ID.
+  * FOCUS column SHOULD NOT use acronyms other than `Sku` in the Column ID.
+  * FOCUS column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
+  * FOCUS column MUST include the `Id` suffix in the Column ID when the FOCUS column represents an identifier.
+  * FOCUS column MUST include the `Name` suffix in the Column ID when the FOCUS column represents a name.
+  * FOCUS column MUST include `Sku` in the Column ID when the FOCUS column represents a product offering that incurred a charge.
+  * FOCUS column MUST contain one of the FOCUS-defined allowed values when the FOCUS column includes `Category` suffix in the Column ID and is not null.
+* Custom column (e.g., service-provider-defined column included in FOCUS dataset) MUST adhere to the following requirements:
+  * Custom column MUST include the `x_` prefix in the Column ID to identify it as an external custom column and to distinguish it from FOCUS columns to avoid conflicts in future releases.
+  * Custom column SHOULD use Pascal case in the Column ID.
+  * Custom column SHOULD use only alphanumeric characters in the Column ID.
+  * Custom column SHOULD NOT include special characters in the Column ID.
+  * Custom column SHOULD NOT use abbreviations other than `Id` in the Column ID.
+  * Custom column SHOULD NOT use acronyms other than `Sku` in the Column ID.
+  * Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
+  * Custom column SHOULD include the `Id` suffix in the Column ID when the custom column represents an identifier.
+  * Custom column SHOULD include the `Name` suffix in the Column ID when the custom column represents a name.
