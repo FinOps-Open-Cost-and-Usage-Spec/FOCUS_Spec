@@ -1,14 +1,24 @@
 # Billing Scenario Examples
 
-The following examples illustrate how BilledCost and EffectiveCost behave across common software as a service (SaaS) and platform as a service (PaaS) billing models. Each scenario uses publicly available pricing and demonstrates a distinct billing pattern that SaaS or PaaS data generators may implement via the FOCUS specification.
+The following examples illustrate how [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) behave across common software as a service (SaaS) and platform as a service (PaaS) billing models. Each scenario uses publicly available pricing and demonstrates a distinct billing pattern that SaaS or PaaS data generators may implement via the FOCUS specification.
 
-These examples complement the existing SaaS examples by covering credit-based consumption, host-based monitoring, seat-based annual subscriptions, multi-unit PaaS usage, flat-rate licensing, annual commitment billed monthly, and tiered pricing with committed minimums. Each CSV includes only the columns relevant to its scenario. On-demand examples omit [*commitment discount*](#glossary:commitment-discount) columns; examples without regional billing omit [RegionId](#datasets.costandusage.regionid) and [RegionName](#datasets.costandusage.regionname).
+Each example targets a specific billing pattern and includes only the columns relevant to its scenario. On-demand examples omit [*commitment discount*](#glossary:commitment-discount) columns; examples without regional billing omit [RegionId](#datasets.costandusage.regionid) and [RegionName](#datasets.costandusage.regionname).
+
+| Scenario | Billing Model | ChargeFrequency | Key Concepts | Commitment Discount? |
+| :--- | :--- | :--- | :--- | :--- |
+| [Credit-Based Consumption](#credit-based-consumption-on-demand-data-platform-usage) | Consumption (credits + storage) | Usage-Based, Recurring | Custom units (Credits), BilledCost = EffectiveCost | No |
+| [Host-Based SaaS Monitoring](#host-based-saas-monitoring-monthly-on-demand-usage) | Per-host + per-volume | Recurring, Usage-Based | Independent service billing, multiple metrics | No |
+| [Seat-Based SaaS Subscription](#seat-based-saas-subscription-annual-upfront-with-commitment-discount) | Per-seat annual upfront | One-Time | Upfront purchase amortization, BilledCost vs. EffectiveCost divergence | Yes (Spend) |
+| [Multi-Unit PaaS Database](#multi-unit-usage-based-paas-database-as-a-service) | Compute + storage + transfer | Usage-Based, Recurring | Region-specific billing, heterogeneous pricing units | No |
+| [Flat-Rate SaaS Licensing](#flat-rate-saas-licensing-fixed-monthly-subscription) | Fixed monthly fee | Recurring | Subscription unit decoupled from user count | No |
+| [Annual Commitment Billed Monthly](#annual-commitment-billed-monthly-seat-based-crm) | Per-seat monthly billing | Recurring | Term contract without upfront payment or discount | No |
+| [Tiered Pricing with Committed Minimum](#tiered-pricing-with-committed-minimum-email-api-platform) | Plan fee + overage | Recurring, Usage-Based | Minimum capacity, Used/Unused split, overage pricing | Yes (Usage) |
 
 ## Credit-Based Consumption: On-Demand Data Platform Usage
 
-A data platform provider uses a credit-based consumption model. Customers consume credits based on warehouse compute activity and pay a fixed per-credit rate determined by their service edition. Storage is billed separately on a per-terabyte basis.
+A data platform service provider uses a credit-based consumption model. Customers consume credits based on warehouse compute activity and pay a fixed per-credit rate determined by their service edition. Storage is billed separately on a per-terabyte basis.
 
-The provider's on-demand pricing for this example (Enterprise edition):
+The service provider's on-demand pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
@@ -35,7 +45,7 @@ Total [BilledCost](#datasets.costandusage.billedcost): &dollar;1,675.00
 Key observations:
 
 * Both warehouses share the same [ListUnitPrice](#datasets.costandusage.listunitprice) of &dollar;3.00 per credit. The credit price is determined by the service edition, not warehouse size.
-* [ConsumedUnit](#datasets.costandusage.consumedunit) is "Credits" for compute and "TB" for storage. The credit is the provider's unit of compute consumption.
+* [ConsumedUnit](#datasets.costandusage.consumedunit) is "Credits" for compute and "TB" for storage. The credit is the service provider's unit of compute consumption.
 * [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Usage-Based" for compute (metered by credit consumption) and "Recurring" for storage (billed per TB per month).
 * Storage has no [ResourceId](#datasets.costandusage.resourceid) or [ResourceName](#datasets.costandusage.resourcename) because it is an account-level charge, not tied to a specific [*resource*](#glossary:resource).
 * [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are equal on all rows. These two columns diverge when a purchase [*charge*](#glossary:charge) covers future usage (as with a [*commitment discount*](#glossary:commitment-discount)), because the [*cash-based*](#glossary:cash-based-accounting) outflow is invoiced upfront while cost is recognized on an [*accrual basis*](#glossary:accrual-based-accounting) over time. With no such purchase *charges* here, the two views produce the same cost per row.
@@ -44,9 +54,9 @@ Key observations:
 
 ## Host-Based SaaS Monitoring: Monthly On-Demand Usage
 
-A SaaS observability provider offers multiple monitoring [*services*](#glossary:service) billed on different units: host-based pricing for infrastructure and application performance monitoring, and volume-based pricing for log ingestion.
+A SaaS observability service provider offers multiple monitoring [*services*](#glossary:service) billed on different units: host-based pricing for infrastructure and application performance monitoring, and volume-based pricing for log ingestion.
 
-The provider's on-demand pricing for this example:
+The service provider's on-demand pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
@@ -54,7 +64,7 @@ The provider's on-demand pricing for this example:
 | APM | APM Standard | &dollar;36.00 | Host |
 | Log Management | Log Ingestion | &dollar;0.10 | GB |
 
-A customer uses the provider's monitoring platform on a month-to-month basis with no annual commitment. During January 2025, the customer's usage is:
+A customer uses the service provider's monitoring platform on a month-to-month basis with no annual commitment. During January 2025, the customer's usage is:
 
 * 25 infrastructure hosts monitored
 * 10 APM hosts monitored (a subset of the infrastructure hosts, billed independently)
@@ -72,7 +82,7 @@ Key observations:
 
 * [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Recurring" for the host-based *services* (billed per host per month regardless of utilization within the month) and "Usage-Based" for log ingestion (billed on actual volume consumed).
 * APM hosts are a subset of infrastructure hosts but each *service* is billed independently. The 10 APM hosts also appear in the 25 infrastructure host count.
-* No [RegionId](#datasets.costandusage.regionid) or [RegionName](#datasets.costandusage.regionname) values are present. This provider does not expose region in its billing. Some SaaS and PaaS providers do bill by region, in which case these columns would be populated (see the Multi-Unit PaaS example below).
+* No [RegionId](#datasets.costandusage.regionid) or [RegionName](#datasets.costandusage.regionname) values are present. This service provider does not expose region in its billing. Some SaaS and PaaS service providers do bill by region, in which case these columns would be populated (see the Multi-Unit PaaS example below).
 * All three *services* share the [ServiceCategory](#datasets.costandusage.servicecategory) "Management and Governance" per the FOCUS allowed values for logging, monitoring, and observability *services*.
 * [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are equal on all rows because there are no purchase *charges* covering future usage (see the Credit-Based Consumption example for a full explanation of when these columns diverge).
 
@@ -82,7 +92,7 @@ Key observations:
 
 This example illustrates an annual upfront SaaS subscription where the customer receives a discounted per-user rate by committing to a 12-month term. The discounted rate is only available with the annual commitment, making this a [*commitment discount*](#glossary:commitment-discount).
 
-The provider offers a project management platform with the following pricing for 50 users on the Standard plan:
+The service provider offers a project management platform with the following pricing for 50 users on the Standard plan:
 
 | Billing Option | Unit Price | Monthly Cost (50 users) | Annual Cost |
 | :------------- | ---------: | ----------------------: | ----------: |
@@ -122,16 +132,16 @@ Two charges appear in the April 2025 [*billing period*](#glossary:billing-period
 
 ## Multi-Unit Usage-Based PaaS: Database-as-a-Service
 
-A PaaS database [*service*](#glossary:service) provider bills different resource types on different units. The provider offers dedicated database clusters with separate charges for compute, storage, and data transfer.
+A PaaS database [*service*](#glossary:service) provider bills different resource types on different units. The service provider offers dedicated database clusters with separate charges for compute, storage, and data transfer.
 
-The provider's on-demand pricing for this example:
+The service provider's on-demand pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
-| Atlas Dedicated Clusters | M10 Cluster | &dollar;0.08 | Hour |
-| Atlas Dedicated Clusters | M30 Cluster | &dollar;0.54 | Hour |
-| Atlas Storage | SSD Storage | &dollar;0.25 | GB |
-| Atlas Data Transfer | Data Transfer Out | &dollar;0.01 | GB |
+| CloudDB Clusters | M10 Cluster | &dollar;0.08 | Hour |
+| CloudDB Clusters | M30 Cluster | &dollar;0.54 | Hour |
+| CloudDB Storage | SSD Storage | &dollar;0.25 | GB |
+| CloudDB Data Transfer | Data Transfer Out | &dollar;0.01 | GB |
 
 A customer runs two dedicated database clusters in the US East region for the full month of January 2025 (744 hours). They also consume 100 GB of SSD storage and 50 GB of outbound data transfer.
 
@@ -151,26 +161,26 @@ Total [BilledCost](#datasets.costandusage.billedcost): &dollar;486.78
 
 Key observations:
 
-* Three different [PricingUnit](#datasets.costandusage.pricingunit) values appear within a single provider: Hours (compute), GB (storage), and GB (data transfer). This heterogeneity is typical for PaaS database *services*.
+* Three different [PricingUnit](#datasets.costandusage.pricingunit) values appear within a single service provider: Hours (compute), GB (storage), and GB (data transfer). This heterogeneity is typical for PaaS database *services*.
 * [ChargeFrequency](#datasets.costandusage.chargefrequency) varies by resource type. Compute clusters are "Usage-Based" (metered hourly). Storage is "Recurring" (billed per GB provisioned per month regardless of access patterns). Data transfer is "Usage-Based" (billed on actual volume transferred).
 * Compute clusters have [ResourceId](#datasets.costandusage.resourceid) and [ResourceName](#datasets.costandusage.resourcename) values because each cluster is a distinct [*resource*](#glossary:resource). Storage and data transfer are account-level charges with no specific *resource*, so these columns are null.
-* All four charges share the [ServiceCategory](#datasets.costandusage.servicecategory) "Databases" but are split across three distinct [ServiceName](#datasets.costandusage.servicename) values: Atlas Dedicated Clusters, Atlas Storage, and Atlas Data Transfer.
-* [RegionId](#datasets.costandusage.regionid) and [RegionName](#datasets.costandusage.regionname) are populated. This provider deploys database clusters to specific regions, and pricing varies by region.
+* All four charges share the [ServiceCategory](#datasets.costandusage.servicecategory) "Databases" but are split across three distinct [ServiceName](#datasets.costandusage.servicename) values: CloudDB Clusters, CloudDB Storage, and CloudDB Data Transfer.
+* [RegionId](#datasets.costandusage.regionid) and [RegionName](#datasets.costandusage.regionname) are populated. This service provider deploys database clusters to specific regions, and pricing varies by region.
 * [BilledCost](#datasets.costandusage.billedcost) and [EffectiveCost](#datasets.costandusage.effectivecost) are equal on all rows because there are no purchase *charges* covering future usage (see the Credit-Based Consumption example for a full explanation of when these columns diverge).
 
 [**CSV Example**](/specification/data/saas_examples/multi_unit_paas_database_a.csv)
 
 ## Flat-Rate SaaS Licensing: Fixed Monthly Subscription
 
-A project management and team communication provider offers a single flat-rate subscription. All features and unlimited users are included for a fixed monthly fee with no per-user pricing.
+A project management and team communication service provider offers a single flat-rate subscription. All features and unlimited users are included for a fixed monthly fee with no per-user pricing.
 
-The provider's pricing for this example:
+The service provider's pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
-| Basecamp | Pro Unlimited | &dollar;349.00 | Subscription |
+| TeamSpace | Pro Unlimited | &dollar;349.00 | Subscription |
 
-The provider also offers an annual billing option at &dollar;299.00 per month (billed annually). This example uses the month-to-month option with no annual commitment.
+The service provider also offers an annual billing option at &dollar;299.00 per month (billed annually). This example uses the month-to-month option with no annual commitment.
 
 A customer subscribes to the Pro Unlimited plan on a month-to-month basis. During January 2025, the customer's team of 35 people uses the platform.
 
@@ -192,9 +202,9 @@ Key observations:
 
 ## Annual Commitment Billed Monthly: Seat-Based CRM
 
-A CRM provider offers a seat-based sales platform requiring an annual commitment. Unlike prepaid annual subscriptions, one billing option charges monthly throughout the contract term. The monthly billed rate equals the list price, so no [*commitment discount*](#glossary:commitment-discount) is applied in FOCUS terms.
+A CRM service provider offers a seat-based sales platform requiring an annual commitment. Unlike prepaid annual subscriptions, one billing option charges monthly throughout the contract term. The monthly billed rate equals the list price, so no [*commitment discount*](#glossary:commitment-discount) is applied in FOCUS terms.
 
-The provider's pricing for this example (Professional plan, 10 users):
+The service provider's pricing for this example (Professional plan, 10 users):
 
 | Billing Option | Unit Price | Monthly Cost (10 users) | Annual Cost |
 | :------------- | ---------: | ----------------------: | ----------: |
@@ -205,7 +215,7 @@ A customer subscribes to the Professional plan for 10 users, choosing the annual
 
 One charge appears on the January 2025 invoice:
 
-* Sales Hub Professional: `10 Users x &dollar;100.00` = &dollar;1,000.00
+* Sales Platform Professional: `10 Users x &dollar;100.00` = &dollar;1,000.00
 
 Total [BilledCost](#datasets.costandusage.billedcost): &dollar;1,000.00
 
@@ -221,9 +231,9 @@ Key observations:
 
 ## Tiered Pricing with Committed Minimum: Email API Platform
 
-A SaaS email API provider offers tiered plans that include a monthly email allowance. Emails sent within the allowance are covered by the plan fee. Emails exceeding the allowance are billed at a per-email overage rate. The plan minimum functions as a usage-denominated [*commitment discount*](#glossary:commitment-discount) because the customer pays a fixed fee for a quantity of usage units.
+A SaaS email API service provider offers tiered plans that include a monthly email allowance. Emails sent within the allowance are covered by the plan fee. Emails exceeding the allowance are billed at a per-email overage rate. The plan minimum functions as a usage-denominated [*commitment discount*](#glossary:commitment-discount) because the customer pays a fixed fee for a quantity of usage units.
 
-The provider's pricing for this example (Essentials 50K plan):
+The service provider's pricing for this example (Essentials 50K plan):
 
 | Component | Rate | Unit |
 | :-------- | ---: | :--- |
@@ -245,6 +255,19 @@ The monthly plan fee of &dollar;19.95 appears as a Purchase charge. Two Usage ch
 
 Total [BilledCost](#datasets.costandusage.billedcost): &dollar;19.95
 
+Here is how the January charges appear in the data (relevant columns only):
+
+| FOCUS Column | Purchase | Usage (Used) | Usage (Unused) |
+| :--- | :--- | :--- | :--- |
+| ChargeCategory | Purchase | Usage | Usage |
+| CommitmentDiscountStatus | *(null)* | Used | Unused |
+| ConsumedQuantity | *(null)* | 30,000 | *(null)* |
+| BilledCost | &dollar;19.95 | &dollar;0.00 | &dollar;0.00 |
+| EffectiveCost | &dollar;0.00 | &dollar;11.97 | &dollar;7.98 |
+| ListCost | &dollar;19.95 | &dollar;39.90 | &dollar;26.60 |
+| ContractedCost | &dollar;19.95 | &dollar;39.90 | &dollar;26.60 |
+| ListUnitPrice | &dollar;19.95 | &dollar;0.00133 | &dollar;0.00133 |
+
 **February charges (over minimum):**
 
 The customer uses all 50,000 plan emails plus 15,000 overage emails:
@@ -262,6 +285,7 @@ Key observations:
 * The Purchase row has [BilledCost](#datasets.costandusage.billedcost) of &dollar;19.95 and [EffectiveCost](#datasets.costandusage.effectivecost) of &dollar;0.00. This follows the same pattern as the Seat-Based SaaS Subscription: the purchase captures the [*cash-based*](#glossary:cash-based-accounting) cost, while [*accrual-based*](#glossary:accrual-based-accounting) cost is recognized on the Usage rows.
 * The overage row in February has no [*commitment discount*](#glossary:commitment-discount) columns populated. Overage emails are billed at the standard per-email rate and are not part of the commitment.
 * [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) and [ListUnitPrice](#datasets.costandusage.listunitprice) are both &dollar;0.00133 on all Usage rows. Because no [*negotiated discounts*](#glossary:negotiated-discount) apply, ContractedUnitPrice defaults to ListUnitPrice per the spec. The *commitment discount* savings are reflected in the difference between [ContractedCost](#datasets.costandusage.contractedcost) and [EffectiveCost](#datasets.costandusage.effectivecost), not in ContractedUnitPrice.
+* [ListCost](#datasets.costandusage.listcost) and ContractedCost on Usage rows represent the market value of those emails at the per-email rate: `&dollar;0.00133 x 30,000` = &dollar;39.90 for the January Used row. These values exceed BilledCost (&dollar;0.00) because the usage is covered by the plan fee, not billed individually. The gap between ListCost and EffectiveCost shows the *commitment discount* benefit per row.
 * [ChargeFrequency](#datasets.costandusage.chargefrequency) is "Recurring" on the Purchase rows (the plan fee recurs monthly). On the Usage rows, ChargeFrequency is "Usage-Based" for both Used and Unused rows because the amounts vary based on actual email consumption each period.
 
 [**CSV Example**](/specification/data/saas_examples/tiered_pricing_committed_minimum_a.csv)
