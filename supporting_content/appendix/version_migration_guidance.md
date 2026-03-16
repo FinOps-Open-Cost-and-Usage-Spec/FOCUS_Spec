@@ -18,7 +18,7 @@ Practitioners updating queries should focus on the migration decision tree and q
 
 ### Overview
 
-FOCUS 1.3 introduces changes across three categories defined by the [Change Impact Classification](/guidelines/spec-change-guidelines.md):
+FOCUS 1.3 introduces changes across three categories defined by the [Change Impact Classification](/guidelines/contributors/spec-change-guidelines.md):
 
 | Classification | Summary |
 |----------------|---------|
