@@ -18,10 +18,10 @@ While customers are bound to the [*period*](#glossary:period) of a *commitment d
 * *No Upfront* - The *commitment discount* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *period*.
 * *Partial Upfront* - Some of the *commitment discount* is paid before the *period* begins, and the rest is paid repeatedly over the *period*.
 
-For example, if a customer buys a 1-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *period* *and* monthly recurring purchases with the following totals:
+For example, if a customer buys a 1-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *period* *and* monthly recurring purchases. The one-time payment covers half of the annual commitment (AWS Savings Plans are half, Reserved Instances are a portion of the cost), while the recurring payment covers the remaining half and is calculated based on the exact number of hours in each [*billing period*](#glossary:billing-period):
 
 1. *One-Time* - &dollar;4,380 (24 hours &times; 365 days &times; &dollar;1.00 &times; 0.5)
-2. *Recurring* - &dollar;365 per month (24 hours &times; 365 days &times; &dollar;1.00 &times; 0.5 &divide; 12 months)
+2. *Recurring* - &dollar;336.00 for February (672 hours in the month &times; &dollar;1.00 &times; 0.5)
 
 ### Usage
 
