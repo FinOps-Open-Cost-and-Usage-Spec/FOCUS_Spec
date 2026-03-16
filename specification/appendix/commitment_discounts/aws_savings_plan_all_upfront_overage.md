@@ -7,7 +7,7 @@
 | Commitment Discount Category | Spend                                                    |
 | Utilization                  | 100% (with overage to standard pricing)                  |
 | Hours Generated              | 24 committed + 12 standard overflow                      |
-| Annual Commitment            | &dollar;212,000.00                                       |
+| Annual Commitment            | &dollar;211,992.00                                       |
 | List Unit Price              | &dollar;36.30/hour                                       |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/aws_savings_plan_all_upfront_overage.csv)
@@ -26,7 +26,7 @@ This scenario demonstrates **100% utilization with overage** where demand exceed
 
 | Row Type         | Count | BilledCost             | EffectiveCost        |
 | ---------------- | ----- | ---------------------- | -------------------- |
-| Purchase         | 1     | &dollar;212,000.00     | &dollar;0.00         |
+| Purchase         | 1     | &dollar;211,992.00     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;580.80       |
 | Usage (Standard) | 12    | &dollar;435.60         | &dollar;435.60       |
 | **Total**        | 37    | **&dollar;212,435.60** | **&dollar;1,016.40** |
@@ -60,7 +60,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Scenario         | BilledCost         | EffectiveCost | ListCost           |
 | ---------------- | ------------------ | ------------- | ------------------ |
-| **Purchase Row** | &dollar;212,000.00 | &dollar;0.00  | &dollar;212,000.00 |
+| **Purchase Row** | &dollar;211,992.00 | &dollar;0.00  | &dollar;211,992.00 |
 | **Used Row**     | &dollar;0.00       | &dollar;24.20 | &dollar;36.30      |
 | **Standard Row** | &dollar;36.30      | &dollar;36.30 | &dollar;36.30      |
 
@@ -76,7 +76,7 @@ The following critical rules apply to commitment discount data:
 | ------------------------ | ------------------ | ----------------------------------------------- |
 | ChargeCategory           | Purchase           | Commitment purchase transaction                 |
 | ChargeFrequency          | One-Time           | One-time upfront payment                        |
-| BilledCost               | &dollar;212,000.00 | Full annual commitment payment                  |
+| BilledCost               | &dollar;211,992.00 | Full annual commitment payment                  |
 | EffectiveCost            | &dollar;0.00       | **MUST be 0** - cost is amortized to usage rows |
 | PricingQuantity          | 1                  | One commitment unit purchased                   |
 | CommitmentDiscountStatus | null               | Status only applies to usage rows               |

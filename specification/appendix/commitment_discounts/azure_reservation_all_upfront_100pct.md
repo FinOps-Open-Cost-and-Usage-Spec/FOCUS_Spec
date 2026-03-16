@@ -7,7 +7,7 @@
 | Commitment Discount Category | Usage              |
 | Utilization                  | 100%               |
 | Hours Generated              | 24                 |
-| Annual Commitment            | &dollar;358,000.00 |
+| Annual Commitment            | &dollar;358,021.20 |
 | List Unit Price              | &dollar;61.31/hour |
 
 [CSV Example](/specification/data/commitment_discount_scenarios/azure_reservation_all_upfront_100pct.csv)
@@ -26,7 +26,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 | Row Type         | Count | BilledCost             | EffectiveCost        |
 | ---------------- | ----- | ---------------------- | -------------------- |
-| Purchase         | 1     | &dollar;358,000.00     | &dollar;0.00         |
+| Purchase         | 1     | &dollar;358,021.20     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;980.88       |
 | Usage (Standard) | 3     | &dollar;9.21           | &dollar;9.21         |
 | **Total**        | 28    | **&dollar;358,009.21** | **&dollar;990.09**   |
@@ -60,7 +60,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Scenario         | BilledCost         | EffectiveCost | ListCost           |
 | ---------------- | ------------------ | ------------- | ------------------ |
-| **Purchase Row** | &dollar;358,000.00 | &dollar;0.00  | &dollar;358,000.00 |
+| **Purchase Row** | &dollar;358,021.20 | &dollar;0.00  | &dollar;358,021.20 |
 | **Used Row**     | &dollar;0.00       | &dollar;40.87 | &dollar;61.31      |
 | **Standard Row** | &dollar;3.07       | &dollar;3.07  | &dollar;3.07       |
 
@@ -76,7 +76,7 @@ The following critical rules apply to commitment discount data:
 | ------------------------ | ------------------ | ----------------------------------------------- |
 | ChargeCategory           | Purchase           | Commitment purchase transaction                 |
 | ChargeFrequency          | One-Time           | One-time upfront payment                        |
-| BilledCost               | &dollar;358,000.00 | Full annual commitment payment                  |
+| BilledCost               | &dollar;358,021.20 | Full annual commitment payment                  |
 | EffectiveCost            | &dollar;0.00       | **MUST be 0** - cost is amortized to usage rows |
 | PricingQuantity          | 1                  | One commitment unit purchased                   |
 | CommitmentDiscountStatus | null               | Status only applies to usage rows               |
