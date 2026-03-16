@@ -40,7 +40,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Column                           | Purpose                                 | When Populated                  | Typical Value              |
 | -------------------------------- | --------------------------------------- | ------------------------------- | -------------------------- |
-| **PricingQuantity**              | Quantity used for pricing calculation   | All priced rows                 | 1 (per hour/unit)          |
+| **PricingQuantity**              | Quantity used for pricing calculation   | All priced rows                 | 40.30 (USD, hourly rate)   |
 | **ConsumedQuantity**             | Actual resource consumption             | Usage rows with resources       | 1 (hours consumed)         |
 | **CommitmentDiscountQuantity**   | Commitment capacity applied             | Rows with commitment discount   | 40.30 (USD)                |
 
@@ -50,17 +50,17 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Column                    | Purpose                    | Commitment-Covered        |
 | ------------------------- | -------------------------- | ------------------------- |
-| **ListUnitPrice**         | List (public) unit price   | &dollar;60.45             |
-| **ContractedUnitPrice**   | Negotiated unit price      | &dollar;60.45             |
+| **ListUnitPrice**         | List (public) unit price   | &dollar;1.00              |
+| **ContractedUnitPrice**   | Negotiated unit price      | &dollar;1.00              |
 
-**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
+**Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices. For spend-based purchase and unused rows, PricingUnit is USD and ListUnitPrice is &dollar;1.00, because you are fundamentally purchasing a block of dollars.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
 | Scenario           | BilledCost         | EffectiveCost   | ListCost           |
 | ------------------ | ------------------ | --------------- | ------------------ |
 | **Purchase Row**   | &dollar;353,028.00 | &dollar;0.00    | &dollar;353,028.00 |
-| **Unused Row**     | &dollar;0.00       | &dollar;40.30   | &dollar;60.45      |
+| **Unused Row**     | &dollar;0.00       | &dollar;40.30   | &dollar;40.30      |
 
 This scenario has no Used or Standard rows because utilization is 0% and no resources were consumed.
 
@@ -77,7 +77,7 @@ The following critical rules apply to commitment discount data:
 | ChargeFrequency            | One-Time             | One-time upfront payment                                    |
 | BilledCost                 | &dollar;353,028.00   | Full annual commitment payment                              |
 | EffectiveCost              | &dollar;0.00         | **MUST be 0** - cost is amortized to usage rows             |
-| PricingQuantity            | 1                    | One commitment unit purchased                               |
+| PricingQuantity            | 353,028.00           | Total commitment in USD (PricingUnit = USD)                 |
 | CommitmentDiscountStatus   | null                 | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 353,028.00           | Full annual commitment (&dollar;40.30/hr &times; 8,760 hrs) |
 | CommitmentDiscountUnit     | USD                  | Unit of commitment capacity (spend-based)                   |
@@ -89,10 +89,11 @@ The following critical rules apply to commitment discount data:
 | ChargeCategory               | Usage           | Represents commitment capacity                     |
 | BilledCost                   | &dollar;0.00    | No additional billing (already paid at purchase)   |
 | EffectiveCost                | &dollar;40.30   | **Wasted value** - lost commitment                 |
-| PricingQuantity              | 1               | Commitment units unused                            |
+| PricingQuantity              | 40.30           | Hourly commitment in USD (PricingUnit = USD)       |
+| ListCost                     | &dollar;40.30   | &dollar;1.00 &times; 40.30 USD                     |
 | ConsumedQuantity             | null            | **No resource consumed**                           |
 | CommitmentDiscountQuantity   | 40.30           | Commitment wasted                                  |
 | CommitmentDiscountStatus     | Unused          | Commitment not utilized                            |
-| ResourceId                   | null            | No resource associated                             |
+| ResourceId                   | sp-abc123def456 | MUST equal CommitmentDiscountId (no resource used) |
 
-ListCost on unused rows represents the list-price value of the unused commitment capacity (ListUnitPrice × PricingQuantity).
+For spend-based unused rows, PricingUnit is USD and PricingQuantity is the hourly commitment amount. ListCost = ListUnitPrice (&dollar;1.00) &times; PricingQuantity, which equals the wasted commitment dollars per hour.

@@ -63,7 +63,7 @@ These three quantity columns serve different purposes and must be understood in 
 | ---------------- | ------------------ | ------------- | ------------------ |
 | **Purchase Row** | &dollar;459,024.00 | &dollar;0.00  | &dollar;459,024.00 |
 | **Used Row**     | &dollar;0.00       | &dollar;52.40 | &dollar;78.60      |
-| **Unused Row**   | &dollar;0.00       | &dollar;52.40 | &dollar;78.60      |
+| **Unused Row**   | &dollar;0.00       | &dollar;52.40 | &dollar;52.40      |
 | **Standard Row** | &dollar;3.84       | &dollar;3.84  | &dollar;3.84       |
 
 The following critical rules apply to commitment discount data:
@@ -81,7 +81,7 @@ The following critical rules apply to commitment discount data:
 | ChargeFrequency            | One-Time           | One-time upfront payment                                    |
 | BilledCost                 | &dollar;459,024.00 | Full annual commitment payment                              |
 | EffectiveCost              | &dollar;0.00       | **MUST be 0** - cost is amortized to usage rows             |
-| PricingQuantity            | 1                  | One commitment unit purchased                               |
+| PricingQuantity            | 459,024.00         | Total commitment in USD (PricingUnit = USD)                 |
 | CommitmentDiscountStatus   | null               | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 459,024.00         | Full annual commitment (&dollar;52.40/hr &times; 8,760 hrs) |
 | CommitmentDiscountUnit     | USD                | Unit of commitment capacity (spend-based)                   |
@@ -103,18 +103,19 @@ The following critical rules apply to commitment discount data:
 
 ## Unused Commitment Row Details
 
-| Column                     | Value         | Explanation                                      |
-| -------------------------- | ------------- | ------------------------------------------------ |
-| ChargeCategory             | Usage         | Represents commitment capacity                   |
-| BilledCost                 | &dollar;0.00  | No additional billing (already paid at purchase) |
-| EffectiveCost              | &dollar;52.40 | **Wasted value** - lost commitment               |
-| PricingQuantity            | 1             | Commitment units unused                          |
-| ConsumedQuantity           | null          | **No resource consumed**                         |
-| CommitmentDiscountQuantity | 52.40         | Commitment wasted                                |
-| CommitmentDiscountStatus   | Unused        | Commitment not utilized                          |
-| ResourceId                 | null          | No resource associated                           |
+| Column                     | Value           | Explanation                                        |
+| -------------------------- | --------------- | -------------------------------------------------- |
+| ChargeCategory             | Usage           | Represents commitment capacity                     |
+| BilledCost                 | &dollar;0.00    | No additional billing (already paid at purchase)   |
+| EffectiveCost              | &dollar;52.40   | **Wasted value** - lost commitment                 |
+| PricingQuantity            | 52.40           | Hourly commitment in USD (PricingUnit = USD)       |
+| ListCost                   | &dollar;52.40   | &dollar;1.00 &times; 52.40 USD                     |
+| ConsumedQuantity           | null            | **No resource consumed**                           |
+| CommitmentDiscountQuantity | 52.40           | Commitment wasted                                  |
+| CommitmentDiscountStatus   | Unused          | Commitment not utilized                            |
+| ResourceId                 | sp-abc123def456 | MUST equal CommitmentDiscountId (no resource used) |
 
-ListCost on unused rows represents the list-price value of the unused commitment capacity (ListUnitPrice × PricingQuantity).
+For spend-based unused rows, PricingUnit is USD and PricingQuantity is the hourly commitment amount. ListCost = ListUnitPrice (&dollar;1.00) &times; PricingQuantity, which equals the wasted commitment dollars per hour.
 
 ## Standard Pricing Usage Row Details
 
