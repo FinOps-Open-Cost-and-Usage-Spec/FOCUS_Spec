@@ -1,33 +1,33 @@
 # Examples: Commitment Discounts
 
-This appendix section defines the concept of a [_commitment discount_](#glossary:commitment-discount). It then lays out a series of real-world examples based on actual FOCUS data generators.
+This appendix section defines the concept of a [*commitment discount*](#glossary:commitment-discount). It then lays out a series of FOCUS dataset examples.
 
 ## Overview
 
-A [_commitment discount_](#glossary:commitment-discount) is a billing discount model that offers reduced rates on preselected [_SKUs_](#glossary:sku) in exchange for an obligated usage or spend amount over a specified [_period_](#glossary:period). _Commitment discounts_ typically consist of purchase and usage records within cost and usage datasets.
+A [*commitment discount*](#glossary:commitment-discount) is a billing discount model that offers reduced rates on preselected [*SKUs*](#glossary:sku) in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period). *Commitment discounts* typically consist of purchase and usage records within cost and usage datasets.
 
-Usage-based _commitment discounts_ obligate a customer to a predetermined amount of usage over a specified [_period_](#glossary:period). In some cases, usage-based _commitment discounts_ also feature [_commitment discount flexibility_](#glossary:commitment-discount-flexibility) which may expand the types of [_resources_](#glossary:resource) that a _commitment discount_ can cover. It is important to note when mixing _commitment discounts_ with and without _commitment discount flexibility_, the [CommitmentDiscountUnit](#datasets.costandusage.commitmentdiscountunit) should reflect this difference.
+Usage-based *commitment discounts* obligate a customer to a predetermined amount of usage over a specified [*period*](#glossary:period). In some cases, usage-based *commitment discounts* also feature [*commitment discount flexibility*](#glossary:commitment-discount-flexibility) which may expand the types of [*resources*](#glossary:resource) that a *commitment discount* can cover. It is important to note when mixing *commitment discounts* with and without *commitment discount flexibility*, the [CommitmentDiscountUnit](#datasets.costandusage.commitmentdiscountunit) should reflect this difference.
 
-Spend-based _commitment discounts_ obligate a customer to a predetermined amount of spend over a specified [_period_](#glossary:period). In the usage examples below, each [_row_](#glossary:row) measures the monetary amount of the hourly commit consumed by the _commitment discount_, so the CommitmentDiscountUnit chosen is "USD", or the [_billing currency_](#glossary:billing-currency).
+Spend-based *commitment discounts* obligate a customer to a predetermined amount of spend over a specified [*period*](#glossary:period). In the usage examples below, each [*row*](#glossary:row) measures the monetary amount of the hourly commit consumed by the *commitment discount*, so the CommitmentDiscountUnit chosen is "USD", or the [*billing currency*](#glossary:billing-currency).
 
 ### Purchasing
 
-While customers are bound to the [_period_](#glossary:period) of a _commitment discount_, service providers offer some or all of the following payment options before and/or during the _period_:
+While customers are bound to the [*period*](#glossary:period) of a *commitment discount*, service providers offer some or all of the following payment options before and/or during the *period*:
 
-* _All Upfront_ - The _commitment discount_ is paid in full before the _period_ begins.
-* _No Upfront_ - The _commitment discount_ is paid on a repeated basis, typically over each [_billing period_](#glossary:billing-period) of the _period_.
-* _Partial Upfront_ - Some of the _commitment discount_ is paid before the _period_ begins, and the rest is paid repeatedly over the _period_.
+* *All Upfront* - The *commitment discount* is paid in full before the *period* begins.
+* *No Upfront* - The *commitment discount* is paid on a repeated basis, typically over each [*billing period*](#glossary:billing-period) of the *period*.
+* *Partial Upfront* - Some of the *commitment discount* is paid before the *period* begins, and the rest is paid repeatedly over the *period*.
 
-For example, if a customer buys a 1-year, spend-based _commitment discount_ with a &dollar;1.00 hourly commit and pays with the partial option, the _commitment discount's_ payment consists of a one-time purchase in the beginning of the _period_ _and_ monthly recurring purchases with the following totals:
+For example, if a customer buys a 1-year, spend-based *commitment discount* with a &dollar;1.00 hourly commit and pays with the partial option, the *commitment discount's* payment consists of a one-time purchase in the beginning of the *period* *and* monthly recurring purchases with the following totals:
 
-1. _One-Time_ - &dollar;4,380 (24 hours &times; 365 days &times; &dollar;1.00 &times; 0.5)
-2. _Recurring_ - &dollar;365 per month (24 hours &times; 365 days &times; &dollar;1.00 &times; 0.5 &divide; 12 months)
+1. *One-Time* - &dollar;4,380 (24 hours &times; 365 days &times; &dollar;1.00 &times; 0.5)
+2. *Recurring* - &dollar;365 per month (24 hours &times; 365 days &times; &dollar;1.00 &times; 0.5 &divide; 12 months)
 
 ### Usage
 
-Commitment discounts follow a "use-it-or-lose-it" model where the [_amortization_](#glossary:amortization) of a _commitment discount's_ purchase applies evenly to eligible _resources_ over each [_charge period_](#glossary:charge-period) of the _period_.
+Commitment discounts follow a "use-it-or-lose-it" model where the [*amortization*](#glossary:amortization) of a *commitment discount's* purchase applies evenly to eligible *resources* over each [*charge period*](#glossary:charge-period) of the *period*.
 
-For example, if a customer buys a spend-based _commitment discount_ with a &dollar;1.00 hourly commit in January (31 days), only &dollar;1.00 is eligible for consumption for each hourly _charge period_. If a customer has eligible _resources_ running during this _charge period_, an amount of up to &dollar;1.00 will be allocated to these _resources_. Conversely, if a customer does not have eligible _resources_ running that fully take advantage of this &dollar;1.00 during this _charge period_, then some or all of this amount will go to waste.
+For example, if a customer buys a spend-based *commitment discount* with a &dollar;1.00 hourly commit in January (31 days), only &dollar;1.00 is eligible for consumption for each hourly *charge period*. If a customer has eligible *resources* running during this *charge period*, an amount of up to &dollar;1.00 will be allocated to these *resources*. Conversely, if a customer does not have eligible *resources* running that fully take advantage of this &dollar;1.00 during this *charge period*, then some or all of this amount will go to waste.
 
 ## Data Generator Scenarios
 
