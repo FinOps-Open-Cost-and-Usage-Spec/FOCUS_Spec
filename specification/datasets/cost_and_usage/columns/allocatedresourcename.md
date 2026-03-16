@@ -4,11 +4,11 @@ The Allocated Resource Name is a display name which cost is being allocated to i
 
 ## Requirements
 
-AllocatedResourceName adheres to the following requirements:
+AllocatedResourceName MUST adhere to the following requirements:
 
 * AllocatedResourceName MUST be of type String.
 * AllocatedResourceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* AllocatedResourceName nullability is defined as follows:
+* AllocatedResourceName MUST adhere to the following nullability requirements:
   * AllocatedResourceName MUST be null when [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) is null.
   * AllocatedResourceName MUST NOT be null when AllocatedResourceId is not null.
 * AllocatedResourceName MAY duplicate AllocatedResourceId when a separate display name is not applicable.

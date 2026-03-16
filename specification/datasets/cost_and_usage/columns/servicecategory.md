@@ -4,7 +4,7 @@ The Service Category is the highest-level classification of a [*service*](#gloss
 
 ## Requirements
 
-ServiceCategory adheres to the following requirements:
+ServiceCategory MUST adhere to the following requirements:
 
 * ServiceCategory MUST be of type String.
 * ServiceCategory MUST NOT be null.
