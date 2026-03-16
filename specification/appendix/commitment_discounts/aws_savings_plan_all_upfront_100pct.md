@@ -29,7 +29,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 | Purchase         | 1     | &dollar;628,004.40     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;1,720.56     |
 | Usage (Standard) | 3     | &dollar;11.52          | &dollar;11.52        |
-| **Total**        | 28    | **&dollar;628,011.52** | **&dollar;1,732.08** |
+| **Total**        | 28    | **&dollar;628,015.92** | **&dollar;1,732.08** |
 
 ## Column Interactions
 

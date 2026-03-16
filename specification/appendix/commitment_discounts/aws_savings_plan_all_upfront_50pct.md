@@ -30,7 +30,7 @@ This scenario demonstrates **underutilization** at 50% where only 12 of 24 commi
 | Usage (Used)     | 12    | &dollar;0.00           | &dollar;949.32       |
 | Usage (Unused)   | 12    | &dollar;0.00           | &dollar;949.32       |
 | Usage (Standard) | 3     | &dollar;11.52          | &dollar;11.52        |
-| **Total**        | 28    | **&dollar;693,011.52** | **&dollar;1,910.16** |
+| **Total**        | 28    | **&dollar;693,015.12** | **&dollar;1,910.16** |
 
 ## Column Interactions
 

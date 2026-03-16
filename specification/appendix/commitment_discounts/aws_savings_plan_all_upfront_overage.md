@@ -29,7 +29,7 @@ This scenario demonstrates **100% utilization with overage** where demand exceed
 | Purchase         | 1     | &dollar;211,992.00     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00           | &dollar;580.80       |
 | Usage (Standard) | 12    | &dollar;435.60         | &dollar;435.60       |
-| **Total**        | 37    | **&dollar;212,435.60** | **&dollar;1,016.40** |
+| **Total**        | 37    | **&dollar;212,427.60** | **&dollar;1,016.40** |
 
 ## Column Interactions
 
