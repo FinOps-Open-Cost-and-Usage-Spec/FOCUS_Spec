@@ -2,8 +2,6 @@
 
 Billing data frequently captures data measured in units related to data size, count, time, and other [*dimensions*](#glossary:dimension). The Unit Format attribute provides a standard for expressing units of measure in columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-All columns defined in FOCUS specifying Unit Format as a value format MUST follow the requirements listed below.
-
 ## Attribute ID
 
 UnitFormat
@@ -18,21 +16,44 @@ Indicates standards for expressing measurement units in columns appearing in a *
 
 ## Requirements
 
-* Units SHOULD be expressed as a single unit of measure adhering to one of the following three formats.
-  * `<plural-units>` - "GB", "Seconds"
-  * `<singular-unit>-<plural-time-units>` - "GB-Hours", "MB-Days"
-  * `<plural-units>/<singular-time-unit>` - "GB/Hour", "PB/Day"
-* Units MAY be expressed with a unit quantity or time interval.  If a unit quantity or time interval is used, the unit quantity or time interval MUST be expressed as a whole number.  The following formats are valid:
-  * `<quantity> <plural-units>` - "1000 Tokens", "1000 Characters"
-  * `<plural-units>/<interval> <plural-time-units>` - "Units/3 Months"
-* Unit values and components of columns using the Unit Format MUST use a capitalization scheme that is consistent with the capitalization scheme used in this attribute if that term is listed in this section. For example, a value of "gigabyte-seconds" would not be compliant with this specification as the terms "gigabyte" and "second" are listed in this section with the appropriate capitalization.  If the unit is not listed in the table, it is to be used over a functional equivalent with a similar meaning with the same capitalization scheme.
-* Units SHOULD be composed of the list of recommended units listed in this section unless the unit value covers a *dimension* not listed in the recommended unit set, or if the unit covers a count-based unit distinct from recommended values in the count *dimension* listed in this section.  
+Column conforming to UnitFormat attribute MUST adhere to the following requirements:
 
-### Data Size Unit Names
+* When FOCUS column represents a measurement unit, the FOCUS column MUST adhere to the following requirements:
 
-Data size unit names MUST be abbreviated using one of the abbreviations in the following table.  For example, a unit name of "TB" is a valid unit name, and a unit name of "terabyte" is an invalid unit name. Data size abbreviations can be considered both the singular and plural form of the unit.  For example, "GB" is both the singular and plural form of the unit "gigabyte", and "GBs" would be an invalid unit name.  Values that exceed 10^18 MUST use the abbreviation for exabit, exabyte, exbibit, and exbibyte, and values smaller than a byte MUST use the abbreviation for bit or byte.   For example, the abbreviation "YB" for "yottabyte" is not a valid data size unit name as it represents a value larger than what is listed in the following table.
+  * FOCUS column MUST adhere to the following base unit requirements:
+    * FOCUS column MUST include at least one base unit.
+    * FOCUS column MUST use one of the allowed data size unit abbreviations listed below for data size base units.
+    * FOCUS column MUST use the allowed data size unit abbreviations in the same form for both singular and plural units.
+    * FOCUS column MUST use the allowed abbreviation for exabit, exabyte, exbibit, or exbibyte when representing values exceeding 10^18.
+    * FOCUS column MUST use the allowed abbreviation for bit or byte when representing values smaller than one byte.
+    * FOCUS column MUST use one of the allowed time-based unit names listed below for time-based base units.
+    * FOCUS column SHOULD use one of the recommended count-based unit names listed below for count-based base units.
+    * FOCUS column MAY include a count-based base unit that is not listed as one of the allowed values.
+    * FOCUS column SHOULD use capitalized nouns for base units that do not correspond to any of the allowed base unit names listed below.
+  * FOCUS column MUST use a hyphen ("-") to separate base units when expressing a compound unit (e.g., "GB-Hours").
+  * FOCUS column MUST use a slash ("/") to separate the numerator and denominator when expressing a ratio unit (e.g., "GB/Hour" to signify gigabytes per hour).
+  * FOCUS column SHOULD use the `<plural-units>` format when expressing a simple unit (e.g., "GB", "Seconds").
+  * FOCUS column SHOULD use the `<singular-unit>-<plural-time-units>` format when expressing a compound unit (e.g., "GB-Hours", "MB-Days").
+  * FOCUS column SHOULD use the `<plural-units>/<singular-time-unit>` format when expressing a ratio unit with a time denominator (e.g., "GB/Hour", "PB/Day").
+  * FOCUS column MAY include a unit quantity expressed as a positive integer.
+  * FOCUS column SHOULD use the `<unit-quantity> <plural-units>` format when a unit quantity is included (e.g., "1000 Tokens", "1000 Characters").
+  * FOCUS column MAY include a denominator quantity expressed as a positive integer when the FOCUS column represents a ratio unit.
+  * FOCUS column SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format when the FOCUS column represents a ratio unit and a denominator quantity is included (e.g., "Units/3 Months").
 
-The following table lists the valid abbreviations for data size units from a single bit or byte to 10^18 bits or bytes.
+## Base Unit Names
+
+### Allowed Data Size Unit Abbreviations
+
+Data size units are nouns representing data size measured in bits or bytes, expressed using standard abbreviations. Each abbreviation can be used for both the singular and plural form of the unit.
+
+For example:
+
+* "GB" represents both the singular and plural form of a gigabyte.
+* "TB" is a valid base unit name, while "TBs" and "terabyte" are considered invalid.
+
+Values larger than 10^18 must use the abbreviation for exabit, exabyte, exbibit, or exbibyte. Values smaller than a byte must use the abbreviation for bit or byte.
+
+The table below lists the valid abbreviations for data size units from a single bit or byte to 10^18 bits or bytes.
 
 | Data size in bits    | Data size in bytes    |
 | :------------------- | :-------------------- |
@@ -50,45 +71,39 @@ The following table lists the valid abbreviations for data size units from a sin
 | Pib (pebibit = 2^50) | PiB (pebibyte = 2^50) |
 | Eib (exbibit = 2^60) | EiB (exbibyte = 2^60) |
 
-### Count-based Unit Names
+### Allowed Time-based Unit Names
 
-A count-based unit is a noun that represents a discrete number of items, events, or actions.  For example, a count-based unit can be used to represent the number of requests, instances, tokens, or connections.  
+Time-based units are nouns representing a discrete time period. They can be used alone to indicate duration, combined with another unit to form a compound unit (e.g., "GB-Hours"), or a per-time ratio unit (e.g., "GB/Hour").
 
-If the following list of recommended values does not cover a count-based unit, a service provider/data generator MAY introduce a new noun representing a count-based unit.  All nouns appearing in units that are not listed in the recommended values table will be considered count-based units.  A new count-based unit value MUST be capitalized.
+The table below lists allowed time-based base units.
 
-| Count        |
-|:-------------|
-| Count        |
-| Unit         |
-| Request      |
-| Token        |
-| Connection   |
-| Certificate  |
-| Domain       |
-| Core         |
+| Time-based Unit (Singular) | Time-based Unit (Plural) |
+|:---------------------------|:-------------------------|
+| Year                       | Years                    |
+| Month                      | Months                   |
+| Day                        | Days                     |
+| Hour                       | Hours                    |
+| Minute                     | Minutes                  |
+| Second                     | Seconds                  |
 
-### Time-based Unit Names
+### Recommended Count-based Unit Names
 
-A time-based unit is a noun that represents a time interval.  Time-based units can be used to measure consumption over a time interval or in combination with another unit to capture a rate of consumption.  Time-based units MUST match one of the values listed in the following table.
+A count-based unit is a noun representing a discrete number of items, events, or actions. For example, a count-based unit can represent the number of requests, instances, tokens, or connections.
 
-| Time         |
-|:-------------|
-| Year         |
-| Month        |
-| Day          |
-| Hour         |
-| Minute       |
-| Second       |
+The table below lists recommended names for count-based base units.
 
-### Composite Units
+| Count-based Unit (Singular) | Count-based Unit (Plural) |
+|:----------------------------|:--------------------------|
+| Count                       | Counts                    |
+| Unit                        | Units                     |
+| Request                     | Requests                  |
+| Token                       | Tokens                    |
+| Connection                  | Connections               |
+| Certificate                 | Certificates              |
+| Domain                      | Domains                   |
+| Core                        | Cores                     |
 
-If the unit value is a composite value made from combinations of one or more units, each component MUST also align with the set of recommended values.
-
-Instead of "per" or "-" to denote a Composite Unit, slash ("/") and space(" ") MUST be used as a common convention.  Count-based units like requests, instances, and tokens SHOULD be expressed using a value listed in the count *dimension*.  For example, if a usage unit is measured as a rate of requests or instances over a period of time, the unit SHOULD be listed as "Requests/Day" to signify the number of requests per day.
-
-## Exceptions
-
-None
+*Note: If a count-based base unit is not covered by the recommended values, a new value may be used as long as it is capitalized.*
 
 ## Introduced (version)
 
