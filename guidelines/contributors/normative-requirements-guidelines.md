@@ -135,7 +135,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 | Technical            | Data Type                          | Always                                | {ColumnId} MUST be of type String.                                                         |
 | Technical            | Value Format                       | Always (except normalized dimensions) | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                 |
 | Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when {Condition}.                     |
-| Technical            | Values and Value Ranges            | Metrics and normalized dimensions     | {ColumnId} MUST be a valid decimal value.<br/>{ColumnId} MUST be one of the allowed values. |
+| Technical            | Value Ranges                       | Metrics and normalized dimensions     | {ColumnId} MUST be one of the allowed values.                                              |
 | Technical            | Column to column Relationships     | When applicable                       | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
 | Business             | Unit/Denomination                  | When applicable                       | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
 | Business             | Uniqueness                         | When applicable                       | BillingAccountId MUST be a unique identifier within a provider.                            |
@@ -318,7 +318,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
   ```markdown
   * When <Condition>, <ColumnId> adheres to the following additional requirements:
-    * <ColumnId> MUST be a valid decimal value.
+    * <ColumnId> MUST be <SpecificRequirement>.
     * When <NestedCondition>:
       * <ColumnId> MUST be <SpecificRequirement>.
       * <ColumnId> MUST be <SpecificRequirement>.
@@ -394,7 +394,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### Technical Requirements: Values and Value Ranges
 
 ```markdown
-* <ColumnId> MUST be a valid decimal value.
+* <ColumnId> MUST be a specific value.
 * <ColumnId> MUST be a non-negative decimal value.
 ```
 
@@ -507,7 +507,6 @@ BilledCost adheres to the following requirements:
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#numericformat) requirements.
 * BilledCost MUST NOT be null.
-* BilledCost MUST be a valid decimal value.
 * BilledCost MUST be denominated in the BillingCurrency.
 * The sum of BilledCost in a given [*billing period*](#glossary:billing-period) MUST match the sum of the invoices received for that *billing period* for a [*billing account*](#glossary:billing-account).
 
@@ -523,7 +522,6 @@ CommitmentDiscountQuantity adheres to the following requirements:
     * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
   * CommitmentDiscountQuantity MUST be null in all other cases.
 * When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
-  * CommitmentDiscountQuantity MUST be a valid decimal value.
   * When ChargeCategory is "Purchase":
     * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* [*period*](#glossary:period) when [ChargeFrequency](#chargefrequency) is "One-Time".
     * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each *charge period* that corresponds with the purchase when ChargeFrequency is "Recurring".
