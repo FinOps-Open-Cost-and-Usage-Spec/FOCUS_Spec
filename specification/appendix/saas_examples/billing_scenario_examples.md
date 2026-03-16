@@ -1,6 +1,6 @@
 # Billing Scenario Examples
 
-The following examples illustrate how BilledCost and EffectiveCost behave across common SaaS and PaaS billing models. Each scenario uses publicly available pricing and demonstrates a distinct billing pattern that SaaS or PaaS data generators may encounter when implementing the FOCUS specification.
+The following examples illustrate how BilledCost and EffectiveCost behave across common software as a service (SaaS) and platform as a service (PaaS) billing models. Each scenario uses publicly available pricing and demonstrates a distinct billing pattern that SaaS or PaaS data generators may implement via the FOCUS specification.
 
 These examples complement the existing SaaS examples by covering credit-based consumption, host-based monitoring, seat-based annual subscriptions, multi-unit PaaS usage, flat-rate licensing, annual commitment billed monthly, and tiered pricing with committed minimums. Each CSV includes only the columns relevant to its scenario. On-demand examples omit [*commitment discount*](#glossary:commitment-discount) columns; examples without regional billing omit [RegionId](#datasets.costandusage.regionid) and [RegionName](#datasets.costandusage.regionname).
 
