@@ -4,15 +4,15 @@ The following examples illustrate how [BilledCost](#datasets.costandusage.billed
 
 Each example targets a specific billing pattern and includes only the columns relevant to its scenario. On-demand examples omit [*commitment discount*](#glossary:commitment-discount) columns; examples without regional billing omit [RegionId](#datasets.costandusage.regionid) and [RegionName](#datasets.costandusage.regionname).
 
-| Scenario | Billing Model | ChargeFrequency | Key Concepts | Commitment Discount? |
-| :--- | :--- | :--- | :--- | :--- |
-| [Credit-Based Consumption](#credit-based-consumption-on-demand-data-platform-usage) | Consumption (credits + storage) | Usage-Based, Recurring | Custom units (Credits), BilledCost = EffectiveCost | No |
-| [Host-Based SaaS Monitoring](#host-based-saas-monitoring-monthly-on-demand-usage) | Per-host + per-volume | Recurring, Usage-Based | Independent service billing, multiple metrics | No |
-| [Seat-Based SaaS Subscription](#seat-based-saas-subscription-annual-upfront-with-commitment-discount) | Per-seat annual upfront | One-Time | Upfront purchase amortization, BilledCost vs. EffectiveCost divergence | Yes (Spend) |
-| [Multi-Unit PaaS Database](#multi-unit-usage-based-paas-database-as-a-service) | Compute + storage + transfer | Usage-Based, Recurring | Region-specific billing, heterogeneous pricing units | No |
-| [Flat-Rate SaaS Licensing](#flat-rate-saas-licensing-fixed-monthly-subscription) | Fixed monthly fee | Recurring | Subscription unit decoupled from user count | No |
-| [Annual Commitment Billed Monthly](#annual-commitment-billed-monthly-seat-based-crm) | Per-seat monthly billing | Recurring | Term contract without upfront payment or discount | No |
-| [Tiered Pricing with Committed Minimum](#tiered-pricing-with-committed-minimum-email-api-platform) | Plan fee + overage | Recurring, Usage-Based | Minimum capacity, Used/Unused split, overage pricing | Yes (Usage) |
+| Scenario | What You'll Learn |
+| :--- | :--- |
+| [Credit-Based Consumption](#credit-based-consumption-on-demand-data-platform-usage) | Custom consumption units (Credits) with `ChargeFrequency` split between "Usage-Based" (compute) and "Recurring" (storage). No commitment discount; BilledCost = EffectiveCost on all rows. |
+| [Host-Based SaaS Monitoring](#host-based-saas-monitoring-monthly-on-demand-usage) | Multiple services billed on independent metrics (hosts vs. GB). "Recurring" for host-based charges, "Usage-Based" for log ingestion. No regional billing. |
+| [Seat-Based SaaS Subscription](#seat-based-saas-subscription-annual-upfront-with-commitment-discount) | Upfront annual purchase amortized to monthly Usage rows. BilledCost vs. EffectiveCost divergence. Spend-based `CommitmentDiscountCategory`, One-Time `ChargeFrequency`. |
+| [Multi-Unit PaaS Database](#multi-unit-usage-based-paas-database-as-a-service) | Three heterogeneous PricingUnit values (Hours, GB, GB) within one service provider. Region-specific billing with RegionId/RegionName populated. |
+| [Flat-Rate SaaS Licensing](#flat-rate-saas-licensing-fixed-monthly-subscription) | Fixed monthly subscription where PricingUnit is "Subscriptions" and PricingQuantity is 1, decoupled from underlying user count. |
+| [Annual Commitment Billed Monthly](#annual-commitment-billed-monthly-seat-based-crm) | Annual term contract with monthly billing where the billed rate equals list price. No commitment discount despite the annual obligation. |
+| [Tiered Pricing with Committed Minimum](#tiered-pricing-with-committed-minimum-email-api-platform) | Plan fee as a usage-denominated commitment discount with Used/Unused split and overage pricing. `CommitmentDiscountCategory` = "Usage". Two billing periods showing under- and over-minimum scenarios. |
 
 ## Credit-Based Consumption: On-Demand Data Platform Usage
 
