@@ -72,44 +72,50 @@ The following critical rules apply to commitment discount data:
 
 ## Purchase Row Details
 
-| Column                     | Value             | Explanation                                                    |
-| -------------------------- | ----------------- | -------------------------------------------------------------- |
-| ChargeCategory             | Purchase          | Commitment purchase transaction                                |
-| ChargeFrequency            | Recurring         | Monthly recurring fee                                          |
-| BilledCost                 | &dollar;55,334.00 | Monthly recurring payment (annual / 12)                        |
-| EffectiveCost              | &dollar;0.00      | **MUST be 0** - cost is amortized to usage rows                |
-| PricingQuantity            | 1                 | One commitment unit purchased                                  |
-| CommitmentDiscountStatus   | null              | Status only applies to usage rows                              |
-| CommitmentDiscountQuantity | 672.00            | Commitment capacity for Feb (1 instance-hr/hr &times; 672 hrs) |
-| CommitmentDiscountUnit     | Hours             | Unit of commitment capacity (usage-based)                      |
+| Column                     | Value                                 | Explanation                                                    |
+| -------------------------- | ------------------------------------- | -------------------------------------------------------------- |
+| ChargeCategory             | Purchase                              | Commitment purchase transaction                                |
+| ChargeFrequency            | Recurring                             | Monthly recurring fee                                          |
+| BilledCost                 | &dollar;55,334.00                     | Monthly recurring payment (annual / 12)                        |
+| EffectiveCost              | &dollar;0.00                          | **MUST be 0** - cost is amortized to usage rows                |
+| PricingQuantity            | 1                                     | One commitment unit purchased                                  |
+| CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                              |
+| CommitmentDiscountQuantity | 672.00                                | Commitment capacity for Feb (1 instance-hr/hr &times; 672 hrs) |
+| CommitmentDiscountUnit     | Hours                                 | Unit of commitment capacity (usage-based)                      |
+| SkuId                      | Azure-EASTUS-COMPUTE-PURCHASE         | Commitment purchase SKU                                        |
+| SkuPriceId                 | Azure-EASTUS-COMPUTE-PURCHASE-MONTHLY | Price point for recurring purchase                             |
 
 ## Usage Row Details (Commitment-Covered)
 
-| Column                     | Value                                                 | Explanation                            |
-| -------------------------- | ----------------------------------------------------- | -------------------------------------- |
-| ChargeCategory             | Usage                                                 | Compute resource consumption           |
-| PricingCategory            | Committed                                             | Priced under commitment discount       |
-| BilledCost                 | &dollar;0.00                                          | **MUST be 0** - covered by commitment  |
-| EffectiveCost              | &dollar;75.80                                         | Amortized cost (annual / hours)        |
-| ListCost                   | &dollar;113.70                                        | What you would have paid at list price |
-| PricingQuantity            | 1                                                     | Units priced                           |
-| ConsumedQuantity           | 1                                                     | Hours used                             |
-| CommitmentDiscountQuantity | 1                                                     | Commitment units applied               |
-| CommitmentDiscountStatus   | Used                                                  | Commitment applied                     |
-| CommitmentDiscountId       | /subscriptions/f0e9d8c7-b6a5-4321-0987-654321fedcb... | Links usage to purchase                |
+| Column                     | Value                                                 | Explanation                                |
+| -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
+| ChargeCategory             | Usage                                                 | Compute resource consumption               |
+| PricingCategory            | Committed                                             | Priced under commitment discount           |
+| BilledCost                 | &dollar;0.00                                          | **MUST be 0** - covered by commitment      |
+| EffectiveCost              | &dollar;75.80                                         | Amortized cost (annual / hours)            |
+| ListCost                   | &dollar;113.70                                        | What you would have paid at list price     |
+| PricingQuantity            | 1                                                     | Units priced                               |
+| ConsumedQuantity           | 1                                                     | Hours used                                 |
+| CommitmentDiscountQuantity | 1                                                     | Commitment units applied                   |
+| CommitmentDiscountStatus   | Used                                                  | Commitment applied                         |
+| CommitmentDiscountId       | /subscriptions/f0e9d8c7-b6a5-4321-0987-654321fedcb... | Links usage to purchase                    |
+| SkuId                      | Azure-EASTUS-COMPUTE-USAGE                            | Resource usage SKU (differs from Purchase) |
+| SkuPriceId                 | Azure-EASTUS-COMPUTE-USAGE-COMMITTED                  | Price point for committed usage            |
 
 ## Standard Pricing Usage Row Details
 
-| Column                     | Value          | Explanation                                   |
-| -------------------------- | -------------- | --------------------------------------------- |
-| ChargeCategory             | Usage          | Compute consumption (standard pricing)        |
-| PricingCategory            | Standard       | No discount applied                           |
-| BilledCost                 | &dollar;3.07   | Same as ListCost, no negotiation/commitments  |
-| EffectiveCost              | &dollar;3.07   | Same as BilledCost, no pre/post payments      |
-| ListCost                   | &dollar;3.07   | Public, non-negotiated cost                   |
-| PricingQuantity            | 1              | Units priced                                  |
-| ConsumedQuantity           | 1              | Hours consumed                                |
-| CommitmentDiscountQuantity | null           | **No commitment applied**                     |
-| CommitmentDiscountStatus   | null           | No commitment                                 |
-| CommitmentDiscountId       | null           | No associated commitment                      |
-| ContractedUnitPrice        | &dollar;3.07   | Equals ListUnitPrice (no negotiated discount) |
+| Column                     | Value                                  | Explanation                                   |
+| -------------------------- | -------------------------------------- | --------------------------------------------- |
+| ChargeCategory             | Usage                                  | Compute consumption (standard pricing)        |
+| PricingCategory            | Standard                               | No discount applied                           |
+| BilledCost                 | &dollar;3.07                           | Same as ListCost, no negotiation/commitments  |
+| EffectiveCost              | &dollar;3.07                           | Same as BilledCost, no pre/post payments      |
+| ListCost                   | &dollar;3.07                           | Public, non-negotiated cost                   |
+| PricingQuantity            | 1                                      | Units priced                                  |
+| ConsumedQuantity           | 1                                      | Hours consumed                                |
+| CommitmentDiscountQuantity | null                                   | **No commitment applied**                     |
+| CommitmentDiscountStatus   | null                                   | No commitment                                 |
+| CommitmentDiscountId       | null                                   | No associated commitment                      |
+| ContractedUnitPrice        | &dollar;3.07                           | Equals ListUnitPrice (no negotiated discount) |
+| SkuId                      | Azure-EASTUS-COMPUTE-ONDEMAND          | Standard (on-demand) resource SKU             |
+| SkuPriceId                 | Azure-EASTUS-COMPUTE-ONDEMAND-STANDARD | Price point for standard pricing              |

@@ -71,29 +71,33 @@ The following critical rules apply to commitment discount data:
 
 ## Purchase Row Details
 
-| Column                     | Value                | Explanation                                                 |
-| -------------------------- | -------------------- | ----------------------------------------------------------- |
-| ChargeCategory             | Purchase             | Commitment purchase transaction                             |
-| ChargeFrequency            | One-Time             | One-time upfront payment                                    |
-| BilledCost                 | &dollar;353,028.00   | Full annual commitment payment                              |
-| EffectiveCost              | &dollar;0.00         | **MUST be 0** - cost is amortized to usage rows             |
-| PricingQuantity            | 353,028.00           | Total commitment in USD (PricingUnit = USD)                 |
-| CommitmentDiscountStatus   | null                 | Status only applies to usage rows                           |
-| CommitmentDiscountQuantity | 353,028.00           | Full annual commitment (&dollar;40.30/hr &times; 8,760 hrs) |
-| CommitmentDiscountUnit     | USD                  | Unit of commitment capacity (spend-based)                   |
+| Column                     | Value                                | Explanation                                                 |
+| -------------------------- | ------------------------------------ | ----------------------------------------------------------- |
+| ChargeCategory             | Purchase                             | Commitment purchase transaction                             |
+| ChargeFrequency            | One-Time                             | One-time upfront payment                                    |
+| BilledCost                 | &dollar;353,028.00                   | Full annual commitment payment                              |
+| EffectiveCost              | &dollar;0.00                         | **MUST be 0** - cost is amortized to usage rows             |
+| PricingQuantity            | 353,028.00                           | Total commitment in USD (PricingUnit = USD)                 |
+| CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                           |
+| CommitmentDiscountQuantity | 353,028.00                           | Full annual commitment (&dollar;40.30/hr &times; 8,760 hrs) |
+| CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                   |
+| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE         | Commitment purchase SKU                                     |
+| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT | Price point for upfront purchase                            |
 
 ## Unused Commitment Row Details
 
-| Column                       | Value           | Explanation                                        |
-| ---------------------------- | --------------- | -------------------------------------------------- |
-| ChargeCategory               | Usage           | Represents commitment capacity                     |
-| BilledCost                   | &dollar;0.00    | No additional billing (already paid at purchase)   |
-| EffectiveCost                | &dollar;40.30   | **Wasted value** - lost commitment                 |
-| PricingQuantity              | 40.30           | Hourly commitment in USD (PricingUnit = USD)       |
-| ListCost                     | &dollar;40.30   | &dollar;1.00 &times; 40.30 USD                     |
-| ConsumedQuantity             | null            | **No resource consumed**                           |
-| CommitmentDiscountQuantity   | 40.30           | Commitment wasted                                  |
-| CommitmentDiscountStatus     | Unused          | Commitment not utilized                            |
-| ResourceId                   | sp-abc123def456 | MUST equal CommitmentDiscountId (no resource used) |
+| Column                       | Value                                | Explanation                                        |
+| ---------------------------- | ------------------------------------ | -------------------------------------------------- |
+| ChargeCategory               | Usage                                | Represents commitment capacity                     |
+| BilledCost                   | &dollar;0.00                         | No additional billing (already paid at purchase)   |
+| EffectiveCost                | &dollar;40.30                        | **Wasted value** - lost commitment                 |
+| PricingQuantity              | 40.30                                | Hourly commitment in USD (PricingUnit = USD)       |
+| ListCost                     | &dollar;40.30                        | &dollar;1.00 &times; 40.30 USD                     |
+| ConsumedQuantity             | null                                 | **No resource consumed**                           |
+| CommitmentDiscountQuantity   | 40.30                                | Commitment wasted                                  |
+| CommitmentDiscountStatus     | Unused                               | Commitment not utilized                            |
+| ResourceId                   | sp-abc123def456                      | MUST equal CommitmentDiscountId (no resource used) |
+| SkuId                        | AWS-USEAST1-COMPUTE-PURCHASE         | MUST match Purchase row (no resource consumed)     |
+| SkuPriceId                   | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT | MUST match Purchase row (no resource consumed)     |
 
 For spend-based unused rows, PricingUnit is USD and PricingQuantity is the hourly commitment amount. ListCost = ListUnitPrice (&dollar;1.00) &times; PricingQuantity, which equals the wasted commitment dollars per hour.
