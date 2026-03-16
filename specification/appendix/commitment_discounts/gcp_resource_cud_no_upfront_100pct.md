@@ -1,22 +1,22 @@
-# GCP Resource CUD - All Upfront - 100% Utilization
+# GCP Resource CUD - No Upfront - 100% Utilization
 
 | Parameter                    | Value              |
 | ---------------------------- | ------------------ |
 | Scenario Type                | commitment         |
-| Payment Model                | All Upfront        |
+| Payment Model                | No Upfront         |
 | Commitment Discount Category | Usage              |
 | Utilization                  | 100%               |
 | Hours Generated              | 24                 |
 | Annual Commitment            | &dollar;257,982.00 |
 | List Unit Price              | &dollar;44.18/hour |
 
-[CSV Example](/specification/data/commitment_discount_scenarios/gcp_resource_cud_all_upfront_100pct.csv)
+[CSV Example](/specification/data/commitment_discount_scenarios/gcp_resource_cud_no_upfront_100pct.csv)
 
 ## Scenario Description
 
 This example shows a **Google Cloud Platform Resource-based CUD**, which is a commitment (with a Commitment Discount Category of `Usage`) where you commit to a specific quantity of resource capacity (e.g., instance hours).
 
-The **All Upfront** payment option means the entire commitment cost is paid at purchase time. This results in a single Purchase row with the full BilledCost and zero EffectiveCost (since the cost is amortized to usage rows).
+The **No Upfront** payment option means you pay nothing at purchase time and instead pay a recurring monthly fee. GCP CUDs are billed monthly with no upfront payment option. This results in a recurring Purchase row each billing period with BilledCost equal to the monthly fee and zero EffectiveCost.
 
 This scenario demonstrates **full utilization** where exactly 100% of the commitment capacity is consumed. All usage rows have CommitmentDiscountStatus='Used', indicating the commitment was fully applied. BilledCost=0 on usage rows because they're covered by the commitment.
 
@@ -24,12 +24,12 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 *The following row summary reflects only the rows included in the 24-hour sample CSV.*
 
-| Row Type         | Count | BilledCost             | EffectiveCost       |
-| ---------------- | ----- | ---------------------- | ------------------- |
-| Purchase         | 1     | &dollar;257,982.00     | &dollar;0.00        |
-| Usage (Used)     | 24    | &dollar;0.00           | &dollar;706.80      |
-| Usage (Standard) | 3     | &dollar;8.10           | &dollar;8.10        |
-| **Total**        | 28    | **&dollar;258,008.10** | **&dollar;714.90**  |
+| Row Type         | Count | BilledCost            | EffectiveCost      |
+| ---------------- | ----- | --------------------- | ------------------ |
+| Purchase         | 1     | &dollar;21,498.50     | &dollar;0.00       |
+| Usage (Used)     | 24    | &dollar;0.00          | &dollar;706.80     |
+| Usage (Standard) | 3     | &dollar;8.10          | &dollar;8.10       |
+| **Total**        | 28    | **&dollar;21,506.60** | **&dollar;714.90** |
 
 ## Column Interactions
 
@@ -49,20 +49,20 @@ These three quantity columns serve different purposes and must be understood in 
 
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
-| Column                  | Purpose                  | Commitment-Covered | Standard      |
-| ----------------------- | ------------------------ | ------------------ | ------------- |
-| **ListUnitPrice**       | List (public) unit price | &dollar;44.18      | &dollar;2.70  |
-| **ContractedUnitPrice** | Negotiated unit price    | &dollar;44.18      | &dollar;2.70  |
+| Column                  | Purpose                  | Commitment-Covered | Standard     |
+| ----------------------- | ------------------------ | ------------------ | ------------ |
+| **ListUnitPrice**       | List (public) unit price | &dollar;44.18      | &dollar;2.70 |
+| **ContractedUnitPrice** | Negotiated unit price    | &dollar;44.18      | &dollar;2.70 |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
 ### Cost Columns: BilledCost vs EffectiveCost vs ListCost
 
-| Scenario         | BilledCost         | EffectiveCost | ListCost           |
-| ---------------- | ------------------ | ------------- | ------------------ |
-| **Purchase Row** | &dollar;257,982.00 | &dollar;0.00  | &dollar;257,982.00 |
-| **Used Row**     | &dollar;0.00       | &dollar;29.45 | &dollar;44.18      |
-| **Standard Row** | &dollar;2.70       | &dollar;2.70  | &dollar;2.70       |
+| Scenario         | BilledCost        | EffectiveCost | ListCost          |
+| ---------------- | ----------------- | ------------- | ----------------- |
+| **Purchase Row** | &dollar;21,498.50 | &dollar;0.00  | &dollar;21,498.50 |
+| **Used Row**     | &dollar;0.00      | &dollar;29.45 | &dollar;44.18     |
+| **Standard Row** | &dollar;2.70      | &dollar;2.70  | &dollar;2.70      |
 
 The following critical rules apply to commitment discount data:
 
@@ -72,14 +72,14 @@ The following critical rules apply to commitment discount data:
 
 ## Purchase Row Details
 
-| Column                   | Value              | Explanation                                     |
-| ------------------------ | ------------------ | ----------------------------------------------- |
-| ChargeCategory           | Purchase           | Commitment purchase transaction                 |
-| ChargeFrequency          | One-Time           | One-time upfront payment                        |
-| BilledCost               | &dollar;257,982.00 | Full annual commitment payment                  |
-| EffectiveCost            | &dollar;0.00       | **MUST be 0** - cost is amortized to usage rows |
-| PricingQuantity          | 1                  | One commitment unit purchased                   |
-| CommitmentDiscountStatus | null               | Status only applies to usage rows               |
+| Column                   | Value             | Explanation                                     |
+| ------------------------ | ----------------- | ----------------------------------------------- |
+| ChargeCategory           | Purchase          | Commitment purchase transaction                 |
+| ChargeFrequency          | Recurring         | Monthly recurring fee                           |
+| BilledCost               | &dollar;21,498.50 | Monthly fee (annual commitment / 12)            |
+| EffectiveCost            | &dollar;0.00      | **MUST be 0** - cost is amortized to usage rows |
+| PricingQuantity          | 1                 | One commitment unit purchased                   |
+| CommitmentDiscountStatus | null              | Status only applies to usage rows               |
 
 ## Usage Row Details (Commitment-Covered)
 
@@ -98,16 +98,16 @@ The following critical rules apply to commitment discount data:
 
 ## Standard Pricing Usage Row Details
 
-| Column                     | Value         | Explanation                                   |
-| -------------------------- | ------------- | --------------------------------------------- |
-| ChargeCategory             | Usage         | Compute consumption (standard pricing)        |
-| PricingCategory            | Standard      | No discount applied                           |
-| BilledCost                 | &dollar;2.70  | Same as ListCost, no negotiation/commitments  |
-| EffectiveCost              | &dollar;2.70  | Same as BilledCost, no pre/post payments      |
-| ListCost                   | &dollar;2.70  | Public, non-negotiated cost                   |
-| PricingQuantity            | 1             | Units priced                                  |
-| ConsumedQuantity           | 1             | Hours consumed                                |
-| CommitmentDiscountQuantity | null          | **No commitment applied**                     |
-| CommitmentDiscountStatus   | null          | No commitment                                 |
-| CommitmentDiscountId       | null          | No associated commitment                      |
-| ContractedUnitPrice        | &dollar;2.70  | Equals ListUnitPrice (no negotiated discount) |
+| Column                     | Value        | Explanation                                   |
+| -------------------------- | ------------ | --------------------------------------------- |
+| ChargeCategory             | Usage        | Compute consumption (standard pricing)        |
+| PricingCategory            | Standard     | No discount applied                           |
+| BilledCost                 | &dollar;2.70 | Same as ListCost, no negotiation/commitments  |
+| EffectiveCost              | &dollar;2.70 | Same as BilledCost, no pre/post payments      |
+| ListCost                   | &dollar;2.70 | Public, non-negotiated cost                   |
+| PricingQuantity            | 1            | Units priced                                  |
+| ConsumedQuantity           | 1            | Hours consumed                                |
+| CommitmentDiscountQuantity | null         | **No commitment applied**                     |
+| CommitmentDiscountStatus   | null         | No commitment                                 |
+| CommitmentDiscountId       | null         | No associated commitment                      |
+| ContractedUnitPrice        | &dollar;2.70 | Equals ListUnitPrice (no negotiated discount) |
