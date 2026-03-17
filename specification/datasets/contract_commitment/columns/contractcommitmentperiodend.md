@@ -4,7 +4,7 @@ Contract Commitment Period End represents the [*exclusive end bound*](#glossary:
 
 ## Requirements
 
-ContractCommitmentPeriodEnd adheres to the following requirements:
+ContractCommitmentPeriodEnd MUST adhere to the following requirements:
 
 * ContractCommitmentPeriodEnd MUST be of type Date/Time.
 * ContractCommitmentPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.

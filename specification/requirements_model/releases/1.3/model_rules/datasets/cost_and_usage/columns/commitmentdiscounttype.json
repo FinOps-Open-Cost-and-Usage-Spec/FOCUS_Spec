@@ -1,0 +1,204 @@
+{
+  "CAU-CommitmentDiscountType-C-000-C": {
+    "Function": "Composite",
+    "Reference": "CommitmentDiscountType",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Type",
+    "EntityId": "CommitmentDiscountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "COMMITMENT_DISCOUNT_SUPPORTED"
+    ],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountType adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountType-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountType-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountType-C-003-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-014-C",
+        "CAU-CommitmentDiscountType-C-001-M",
+        "CAU-CommitmentDiscountType-C-002-M",
+        "CAU-CommitmentDiscountType-C-003-C"
+      ]
+    }
+  },
+  "CAU-CommitmentDiscountType-C-001-M": {
+    "Function": "Type",
+    "Reference": "CommitmentDiscountType",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Type",
+    "EntityId": "CommitmentDiscountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountType MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "CommitmentDiscountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CommitmentDiscountType-C-002-M": {
+    "Function": "Format",
+    "Reference": "CommitmentDiscountType",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Type",
+    "EntityId": "CommitmentDiscountType",
+    "Notes": "Cross-column reference: StringHandling",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountType MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "CommitmentDiscountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-CommitmentDiscountType-C-003-C": {
+    "Function": "Composite",
+    "Reference": "CommitmentDiscountType",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Type",
+    "EntityId": "CommitmentDiscountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountType nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountType-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-CommitmentDiscountType-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CommitmentDiscountType-C-004-C",
+        "CAU-CommitmentDiscountType-C-005-C"
+      ]
+    }
+  },
+  "CAU-CommitmentDiscountType-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "CommitmentDiscountType",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Type",
+    "EntityId": "CommitmentDiscountType",
+    "Notes": "Cross-column reference: CommitmentDiscountId",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountType MUST be null when CommitmentDiscountId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "CommitmentDiscountType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "CommitmentDiscountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-CommitmentDiscountId-C-000-C"
+      ]
+    }
+  },
+  "CAU-CommitmentDiscountType-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "CommitmentDiscountType",
+    "EntityType": "Column",
+    "EntityName": "Commitment Discount Type",
+    "EntityId": "CommitmentDiscountType",
+    "Notes": "Cross-column reference: CommitmentDiscountId",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "CommitmentDiscountType MUST NOT be null when CommitmentDiscountId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CommitmentDiscountType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "CommitmentDiscountId",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-CommitmentDiscountId-C-000-C"
+      ]
+    }
+  }
+}

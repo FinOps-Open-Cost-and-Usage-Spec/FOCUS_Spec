@@ -4,7 +4,7 @@ Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveend
 
 ## Requirements
 
-BillingPeriodEnd adheres to the following requirements:
+BillingPeriodEnd MUST adhere to the following requirements:
 
 * BillingPeriodEnd MUST be of type Date/Time.
 * BillingPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
@@ -32,7 +32,7 @@ The *exclusive end bound* of a *billing period*.
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
 | Data type       | Date/Time                                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat)      |
+| Value format    | [Date/Time Format](#attributes.date/timeformat)       |
 
 ## Introduced (version)
 
