@@ -101,7 +101,6 @@ For **Attribute Requirements** sections, a different canonical form applies:
 
 See [Section 4.2. Structural Anchor Requirement for Attributes](#42-structural-anchor-requirement-for-attributes) for details.
 
-
 ### 1.3. Normative Subject
 
 #### 1.3.1 Allowed Subjects
