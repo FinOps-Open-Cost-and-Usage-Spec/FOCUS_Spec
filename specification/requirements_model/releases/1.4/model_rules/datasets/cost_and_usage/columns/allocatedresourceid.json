@@ -17,7 +17,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "The AllocatedResourceId column adheres to the following requirements:",
+      "MustSatisfy": "The AllocatedResourceId column MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -118,7 +118,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "AllocatedResourceId nullability is defined as follows:",
+      "MustSatisfy": "AllocatedResourceId nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -230,7 +230,7 @@
     "DatasetId": "CostAndUsage",
     "DatasetName": "Cost and Usage",
     "ValidationCriteria": {
-      "MustSatisfy": "When AllocatedResourceId is not null, AllocatedResourceId adheres to the following additional requirements:",
+      "MustSatisfy": "When AllocatedResourceId is not null, AllocatedResourceId MUST adhere to the following additional requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
