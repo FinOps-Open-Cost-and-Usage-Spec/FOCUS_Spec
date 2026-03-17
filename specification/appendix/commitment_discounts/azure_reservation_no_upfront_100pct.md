@@ -28,8 +28,7 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 | ---------------- | ----- | --------------------- | -------------------- |
 | Purchase         | 1     | &dollar;55,334.00     | &dollar;0.00         |
 | Usage (Used)     | 24    | &dollar;0.00          | &dollar;1,819.20     |
-| Usage (Standard) | 3     | &dollar;9.21          | &dollar;9.21         |
-| **Total**        | 28    | **&dollar;55,343.21** | **&dollar;1,828.41** |
+| **Total**        | 25    | **&dollar;55,334.00** | **&dollar;1,819.20** |
 
 ## Column Interactions
 
@@ -49,10 +48,10 @@ These three quantity columns serve different purposes and must be understood in 
 
 ### Pricing Columns: ListUnitPrice vs ContractedUnitPrice
 
-| Column                  | Purpose                  | Commitment-Covered | Standard       |
-| ----------------------- | ------------------------ | ------------------ | -------------- |
-| **ListUnitPrice**       | List (public) unit price | &dollar;113.70     | &dollar;3.07   |
-| **ContractedUnitPrice** | Negotiated unit price    | &dollar;113.70     | &dollar;3.07   |
+| Column                  | Purpose                  | Commitment-Covered |
+| ----------------------- | ------------------------ | ------------------ |
+| **ListUnitPrice**       | List (public) unit price | &dollar;113.70     |
+| **ContractedUnitPrice** | Negotiated unit price    | &dollar;113.70     |
 
 **Why this matters:** ContractedUnitPrice reflects enterprise-negotiated pricing (e.g., EDP rates), not commitment discount savings. In non-negotiated scenarios, ContractedUnitPrice equals ListUnitPrice. Commitment discount savings are reflected in EffectiveCost, not in unit prices.
 
@@ -62,13 +61,11 @@ These three quantity columns serve different purposes and must be understood in 
 | ---------------- | ----------------- | ------------- | ----------------- |
 | **Purchase Row** | &dollar;55,334.00 | &dollar;0.00  | &dollar;55,334.00 |
 | **Used Row**     | &dollar;0.00      | &dollar;75.80 | &dollar;113.70    |
-| **Standard Row** | &dollar;3.07      | &dollar;3.07  | &dollar;3.07      |
 
 The following critical rules apply to commitment discount data:
 
 * **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
 * **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
-* **Standard pricing rows:** `BilledCost` = `EffectiveCost` = `ListCost`. No commitment discount applies.
 
 ## Purchase Row Details
 
@@ -101,21 +98,3 @@ The following critical rules apply to commitment discount data:
 | CommitmentDiscountId       | /subscriptions/f0e9d8c7-b6a5-4321-0987-654321fedcb... | Links usage to purchase                    |
 | SkuId                      | Azure-EASTUS-COMPUTE-USAGE                            | Resource usage SKU (differs from Purchase) |
 | SkuPriceId                 | Azure-EASTUS-COMPUTE-USAGE-COMMITTED                  | Price point for committed usage            |
-
-## Standard Pricing Usage Row Details
-
-| Column                     | Value                                  | Explanation                                   |
-| -------------------------- | -------------------------------------- | --------------------------------------------- |
-| ChargeCategory             | Usage                                  | Compute consumption (standard pricing)        |
-| PricingCategory            | Standard                               | No discount applied                           |
-| BilledCost                 | &dollar;3.07                           | Same as ListCost, no negotiation/commitments  |
-| EffectiveCost              | &dollar;3.07                           | Same as BilledCost, no pre/post payments      |
-| ListCost                   | &dollar;3.07                           | Public, non-negotiated cost                   |
-| PricingQuantity            | 1                                      | Units priced                                  |
-| ConsumedQuantity           | 1                                      | Hours consumed                                |
-| CommitmentDiscountQuantity | null                                   | **No commitment applied**                     |
-| CommitmentDiscountStatus   | null                                   | No commitment                                 |
-| CommitmentDiscountId       | null                                   | No associated commitment                      |
-| ContractedUnitPrice        | &dollar;3.07                           | Equals ListUnitPrice (no negotiated discount) |
-| SkuId                      | Azure-EASTUS-COMPUTE-ONDEMAND          | Standard (on-demand) resource SKU             |
-| SkuPriceId                 | Azure-EASTUS-COMPUTE-ONDEMAND-STANDARD | Price point for standard pricing              |
