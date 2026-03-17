@@ -505,5 +505,50 @@
         "CAU-SkuPriceId-C-003-M"
       ]
     }
+  },
+  "CAU-ListUnitPrice-C-014-C": {
+    "Function": "Nullability",
+    "Reference": "ListUnitPrice",
+    "EntityType": "Column",
+    "EntityName": "List Unit Price",
+    "EntityId": "ListUnitPrice",
+    "Notes": null,
+    "ModelVersionIntroduced": "1.3",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 130,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "ListCost MUST equal the product of ListUnitPrice and PricingQuantity when ListUnitPrice is not null and PricingQuantity is not null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "ColumnByColumnEqualsColumnValue",
+        "ColumnAName": "ListUnitPrice",
+        "ColumnBName": "PricingQuantity",
+        "ResultColumnName": "ListCost"
+      },
+      "Condition": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "ListUnitPrice",
+            "Value": null
+          },
+          {
+            "CheckFunction": "CheckNotValue",
+            "ColumnName": "PricingQuantity",
+            "Value": null
+          }
+        ]
+      },
+      "Dependencies": [
+        "CAU-ListCost-C-003-M",
+        "CAU-PricingQuantity-C-003-M"
+      ]
+    }
   }
 }
