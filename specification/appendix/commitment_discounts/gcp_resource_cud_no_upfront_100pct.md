@@ -26,10 +26,10 @@ This scenario demonstrates **full utilization** where exactly 100% of the commit
 
 | Row Type         | Count | BilledCost            | EffectiveCost      |
 | ---------------- | ----- | --------------------- | ------------------ |
-| Purchase         | 1     | &dollar;21,498.50     | &dollar;0.00       |
+| Purchase         | 1     | &dollar;19,790.40     | &dollar;0.00       |
 | Usage (Used)     | 24    | &dollar;0.00          | &dollar;706.80     |
 | Usage (Standard) | 3     | &dollar;8.10          | &dollar;8.10       |
-| **Total**        | 28    | **&dollar;21,506.60** | **&dollar;714.90** |
+| **Total**        | 28    | **&dollar;19,798.50** | **&dollar;714.90** |
 
 ## Column Interactions
 
@@ -60,7 +60,7 @@ These three quantity columns serve different purposes and must be understood in 
 
 | Scenario         | BilledCost        | EffectiveCost | ListCost          |
 | ---------------- | ----------------- | ------------- | ----------------- |
-| **Purchase Row** | &dollar;21,498.50 | &dollar;0.00  | &dollar;21,498.50 |
+| **Purchase Row** | &dollar;19,790.40 | &dollar;0.00  | &dollar;19,790.40 |
 | **Used Row**     | &dollar;0.00      | &dollar;29.45 | &dollar;44.18     |
 | **Standard Row** | &dollar;2.70      | &dollar;2.70  | &dollar;2.70      |
 
@@ -76,7 +76,7 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | --------------------------------------- | -------------------------------------------------------------- |
 | ChargeCategory             | Purchase                                | Commitment purchase transaction                                |
 | ChargeFrequency            | Recurring                               | Monthly recurring fee                                          |
-| BilledCost                 | &dollar;21,498.50                       | Monthly fee (annual commitment / 12)                           |
+| BilledCost                 | &dollar;19,790.40                       | Monthly fee (hourly rate &times; 672 hours in Feb)             |
 | EffectiveCost              | &dollar;0.00                            | **MUST be 0** - cost is amortized to usage rows                |
 | PricingQuantity            | 1                                       | One commitment unit purchased                                  |
 | CommitmentDiscountStatus   | null                                    | Status only applies to usage rows                              |

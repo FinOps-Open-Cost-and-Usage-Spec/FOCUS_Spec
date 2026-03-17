@@ -86,18 +86,20 @@ The following critical rules apply to commitment discount data:
 
 ## Unused Commitment Row Details
 
-| Column                       | Value                                | Explanation                                        |
-| ---------------------------- | ------------------------------------ | -------------------------------------------------- |
-| ChargeCategory               | Usage                                | Represents commitment capacity                     |
-| BilledCost                   | &dollar;0.00                         | No additional billing (already paid at purchase)   |
-| EffectiveCost                | &dollar;40.30                        | **Wasted value** - lost commitment                 |
-| PricingQuantity              | 40.30                                | Hourly commitment in USD (PricingUnit = USD)       |
-| ListCost                     | &dollar;40.30                        | &dollar;1.00 &times; 40.30 USD                     |
-| ConsumedQuantity             | null                                 | **No resource consumed**                           |
-| CommitmentDiscountQuantity   | 40.30                                | Commitment wasted                                  |
-| CommitmentDiscountStatus     | Unused                               | Commitment not utilized                            |
-| ResourceId                   | sp-abc123def456                      | MUST equal CommitmentDiscountId (no resource used) |
-| SkuId                        | AWS-USEAST1-COMPUTE-PURCHASE         | MUST match Purchase row (no resource consumed)     |
-| SkuPriceId                   | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT | MUST match Purchase row (no resource consumed)     |
+| Column                       | Value                                                          | Explanation                                        |
+| ---------------------------- | -------------------------------------------------------------- | -------------------------------------------------- |
+| ChargeCategory               | Usage                                                          | Represents commitment capacity                     |
+| BilledCost                   | &dollar;0.00                                                   | No additional billing (already paid at purchase)   |
+| EffectiveCost                | &dollar;40.30                                                  | **Wasted value** - lost commitment                 |
+| PricingQuantity              | 40.30                                                          | Hourly commitment in USD (PricingUnit = USD)       |
+| ListCost                     | &dollar;40.30                                                  | &dollar;1.00 &times; 40.30 USD                     |
+| ConsumedQuantity             | null                                                           | **No resource consumed**                           |
+| CommitmentDiscountQuantity   | 40.30                                                          | Commitment wasted                                  |
+| CommitmentDiscountStatus     | Unused                                                         | Commitment not utilized                            |
+| ResourceId                   | arn:aws:savingsplans::123456789012:savingsplan/sp-abc123def456 | MUST equal CommitmentDiscountId (no resource used) |
+| ResourceName                 | EC2 Instance Savings Plan                                      | Carried from Purchase row (no resource consumed)   |
+| ResourceType                 | Commitment                                                     | Carried from Purchase row (no resource consumed)   |
+| SkuId                        | AWS-USEAST1-COMPUTE-PURCHASE                                   | MUST match Purchase row (no resource consumed)     |
+| SkuPriceId                   | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT                           | MUST match Purchase row (no resource consumed)     |
 
 For spend-based unused rows, PricingUnit is USD and PricingQuantity is the hourly commitment amount. ListCost = ListUnitPrice (&dollar;1.00) &times; PricingQuantity, which equals the wasted commitment dollars per hour.
