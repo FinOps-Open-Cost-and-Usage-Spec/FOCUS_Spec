@@ -37,6 +37,10 @@
           {
             "CheckFunction": "CheckModelRule",
             "ModelRuleId": "CAU-ListUnitPrice-C-007-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-ListUnitPrice-C-014-C"
           }
         ]
       },
@@ -46,7 +50,8 @@
         "CAU-ListUnitPrice-C-001-M",
         "CAU-ListUnitPrice-C-002-M",
         "CAU-ListUnitPrice-C-003-M",
-        "CAU-ListUnitPrice-C-007-C"
+        "CAU-ListUnitPrice-C-007-C",
+        "CAU-ListUnitPrice-C-014-C"
       ]
     }
   },
