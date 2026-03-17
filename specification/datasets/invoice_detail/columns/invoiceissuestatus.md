@@ -13,6 +13,16 @@ InvoiceIssueStatus MUST adhere to the following requirements:
 * InvoiceIssueStatus MUST represent the current publication state of the invoice.
 * InvoiceIssueStatus MUST NOT transition from "Closed" to "Open" unless explicitly requested or approved by the customer.
 
+## Implementation Context
+
+While the transition from "Open" to "Issued" typically signifies that an invoice has been finalized, invoice reconciliation has been performed, and the provided data is accurate, when the provided data is found to be inaccurate or incomplete, it may be necessary to apply corrections to records associated with the issued invoice.
+
+If needed, a previously issued invoice may be reopened to apply such corrections, but this transition from "Issued" to "Open" must be explicitly requested or approved by the customer to maintain auditability.
+
+FinOps tools and reporting engines should be designed to detect these transitions and trigger updates to downstream showback or chargeback reports to ensure financial accuracy.
+
+For more information, please see the [Correction Handling](#attributes.correctionhandling) attribute.
+
 ## Column ID
 
 InvoiceIssueStatus
