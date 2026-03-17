@@ -135,7 +135,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 | Technical            | Data Type                          | Always                                | {ColumnId} MUST be of type String.                                                         |
 | Technical            | Value Format                       | Always (except normalized dimensions) | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                 |
 | Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when {Condition}.                     |
-| Technical            | Value Ranges                       | Metrics and normalized dimensions     | {ColumnId} MUST be one of the allowed values.                                              |
+| Technical            | Values and Value Ranges                       | Metrics and normalized dimensions     | {ColumnId} MUST be a non-negative decimal value.<br/>{ColumnId} MUST be one of the allowed values. |
 | Technical            | Column to column Relationships     | When applicable                       | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
 | Business             | Unit/Denomination                  | When applicable                       | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
 | Business             | Uniqueness                         | When applicable                       | BillingAccountId MUST be a unique identifier within a provider.                            |
