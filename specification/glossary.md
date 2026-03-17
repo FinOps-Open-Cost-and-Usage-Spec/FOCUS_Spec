@@ -244,7 +244,7 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 
 <a name="glossary:term"><b>Term</b></a>
 
-An agreement specified on a [*contract*](#glossary:contract).
+An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 

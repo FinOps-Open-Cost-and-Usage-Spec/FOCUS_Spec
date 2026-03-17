@@ -21,7 +21,7 @@
 
 ### Phase 3: Plan
 
-1. Read `guidelines/normative-requirements-guidelines.md`
+1. Read `guidelines/contributors/normative-requirements-guidelines.md`
 2. Define requirements table (# | Requirement | MUST/SHOULD/MAY | Rule ID)
 3. List deliverables with paths and guideline references
 4. Save lightweight execution plan outline to `plan.md`
@@ -86,7 +86,7 @@ Read these for structure (don't memorize - read when needed):
 
 - **Column:** `specification/datasets/cost_and_usage/columns/billingaccountid.md`
 - **Attribute:** `specification/attributes/invoice_handling.md`
-- **JSON rules:** `guidelines/writing-requirements-model-guidelines.md`
+- **JSON rules:** `guidelines/contributors/writing-requirements-model-guidelines.md`
 
 ## Rule ID Suffixes
 
