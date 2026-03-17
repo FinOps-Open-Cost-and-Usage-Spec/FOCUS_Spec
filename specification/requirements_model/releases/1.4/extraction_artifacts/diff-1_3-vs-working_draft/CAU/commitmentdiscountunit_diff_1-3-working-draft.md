@@ -4,8 +4,8 @@ CommitmentDiscountUnit [-adheres-]{+MUST adhere+} to the following requirements:
 
 [-* CommitmentDiscountUnit MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *commitment discounts*.-]
 * CommitmentDiscountUnit MUST be of type String.
-* CommitmentDiscountUnit MUST conform to [-[StringHandling](#stringhandling)-]{+[StringHandling](#attributes.stringhandling)+} requirements.
-* CommitmentDiscountUnit SHOULD conform to [-[UnitFormat](#unitformat)-]{+[UnitFormat](#attributes.unitformat)+} requirements.
+* CommitmentDiscountUnit MUST conform to StringHandling requirements.
+* CommitmentDiscountUnit SHOULD conform to UnitFormat requirements.
 * CommitmentDiscountUnit {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * CommitmentDiscountUnit MUST be null when CommitmentDiscountQuantity is null.
   * CommitmentDiscountUnit MUST NOT be null when CommitmentDiscountQuantity is not null.

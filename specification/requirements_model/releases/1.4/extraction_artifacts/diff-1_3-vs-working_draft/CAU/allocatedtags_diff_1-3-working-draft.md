@@ -3,7 +3,7 @@
 AllocatedTags [-adheres-]{+MUST adhere+} to the following requirements:
 
 * AllocatedTags MUST[-be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).-]
-[-* AllocatedTags MUST-] conform to [-[KeyValueFormat](#key-valueformat)-]{+[KeyValueFormat](#attributes.key-valueformat)+} requirements.
+[-* AllocatedTags MUST-] conform to KeyValueFormat requirements.
 * AllocatedTags {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * AllocatedTags MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
   * AllocatedTags MAY be null in all other cases.

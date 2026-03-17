@@ -7,12 +7,12 @@ PricingCurrencyContractedUnitPrice [-adheres-]{+MUST adhere+} to the following r
   * PricingCurrencyContractedUnitPrice [-is RECOMMENDED to-]{+SHOULD+} be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
   * PricingCurrencyContractedUnitPrice MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.
 * PricingCurrencyContractedUnitPrice MUST be of type Decimal.
-* PricingCurrencyContractedUnitPrice MUST conform to [-[NumericFormat](#numericformat)-]{+[NumericFormat](#attributes.numericformat)+} requirements.
+* PricingCurrencyContractedUnitPrice MUST conform to NumericFormat requirements.
 * PricingCurrencyContractedUnitPrice {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
-  * PricingCurrencyContractedUnitPrice MUST be null when [-[SkuPriceId](#skupriceid)-]{+[SkuPriceId](#datasets.costandusage.skupriceid)+} is null.
-  * PricingCurrencyContractedUnitPrice MUST be null when [-[ChargeCategory](#chargecategory)-]{+[ChargeCategory](#datasets.costandusage.chargecategory)+} is "Tax".
-  * PricingCurrencyContractedUnitPrice MUST NOT be null when [-[SkuPriceId](#skupriceid)-]{+[SkuPriceId](#datasets.costandusage.skupriceid)+} is not null.
-  * PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [-[ChargeClass](#chargeclass)-]{+[ChargeClass](#datasets.costandusage.chargeclass)+} is not "Correction".
+  * PricingCurrencyContractedUnitPrice MUST be null when SkuPriceId is null.
+  * PricingCurrencyContractedUnitPrice MUST be null when ChargeCategory is "Tax".
+  * PricingCurrencyContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
+  * PricingCurrencyContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
   * PricingCurrencyContractedUnitPrice MAY be null in all other cases.
 * When PricingCurrencyContractedUnitPrice is not null, PricingCurrencyContractedUnitPrice [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
   * PricingCurrencyContractedUnitPrice MUST be a non-negative decimal value.

@@ -4,8 +4,8 @@
 
 [-* AllocatedMethodDetails SHOULD be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).-]
 * AllocatedMethodDetails MUST be of type String.
-* AllocatedMethodDetails MUST conform to [-[StringHandling](#stringhandling)-]{+[StringHandling](#attributes.stringhandling)+} requirements.
-* AllocatedMethodDetails MUST conform to [-[JsonObjectFormat](#jsonobjectformat)-]{+[JsonObjectFormat](#attributes.jsonobjectformat)+} requirements.
+* AllocatedMethodDetails MUST conform to StringHandling requirements.
+* AllocatedMethodDetails MUST conform to JsonObjectFormat requirements.
 * AllocatedMethodDetails {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.
@@ -18,7 +18,7 @@ When AllocatedMethodDetails is not null, the JsonObjectFormat for AllocatedMetho
 
 * AllocatedMethodDetails MUST have a top-level key "Elements" which contains an array.
 * Each item in "Elements" MUST be an object.
-  * Objects inside "Elements" MUST conform to [-[KeyValueFormat](#key-valueformat)-]{+[KeyValueFormat](#attributes.key-valueformat)+} requirements.
+  * Objects inside "Elements" MUST conform to KeyValueFormat requirements.
     * FOCUS-defined allocation properties {+MUST+} adhere to the following[-additional-] requirements:
       * Allocation property key MUST match the spelling and casing specified for the FOCUS-defined property.
       * Allocation property value MUST be of the type specified for that property.
@@ -32,7 +32,7 @@ Allocated Ratio communicates the percentage of the [*Origin Charge*](#glossary:o
 [-The-]"AllocatedRatio" property [-adheres-]{+MUST adhere+} to the following requirements:
 
 * "AllocatedRatio" MUST be included inside each "Elements" object.
-* Values for "AllocatedRatio" MUST be a decimal value compatible with [-[NumericFormat](#numericformat)-]{+[NumericFormat](#attributes.numericformat)+} representing the allocated charge's percentage of the origin charge.
+* Values for "AllocatedRatio" MUST be a decimal value compatible with NumericFormat representing the allocated charge's percentage of the origin charge.
 * Values for all "AllocatedRatio" properties across all allocated charges related to a single origin charge MUST sum up to 1 (100%).
 
 <b>Usage Unit</b>
@@ -42,8 +42,8 @@ Usage Unit communicates the aspect of the documented Allocation Method Id being 
 [-The-]"UsageUnit" property [-adheres-]{+MUST adhere+} to the following requirements:
 
 * "UsageUnit" MUST be included inside an "Elements" object if "UsageQuantity" allocation property is included in that "Elements" object, otherwise "UsageUnit" MAY be included in each "Elements" object.
-* Values for "UsageUnit" MUST capture the unit or component of data generator's documented [-[AllocationMethod](#allocationmethodid)-]{+[AllocationMethod](#datasets.costandusage.allocatedmethodid)+} that was used to determine the "AllocatedRatio" value.
-* Values for "UsageUnit" SHOULD conform to [-[UnitFormat](#unitformat)-]{+[UnitFormat](#attributes.unitformat)+} requirements.
+* Values for "UsageUnit" MUST capture the unit or component of data generator's documented AllocationMethod that was used to determine the "AllocatedRatio" value.
+* Values for "UsageUnit" SHOULD conform to UnitFormat requirements.
 
 <b>Usage Quantity</b>
 
@@ -57,7 +57,7 @@ Usage Quantity communicates the volume that was consumed or used, denominated in
 | Key | ValueType | Required | Description |
 | ----- | ---- | ---------- | ----------- |
 | AllocatedRatio | Numeric | True | Percentage of overall cost derived from corresponding method and metric. |
-| UsageUnit | [-[String](#stringhandling)-]{+[String](#attributes.stringhandling)+} | Conditional | Unit being measured used to calculate allocation. |
+| UsageUnit | String | Conditional | Unit being measured used to calculate allocation. |
 | UsageQuantity | Numeric | False | Volume of UsageUnit consumed or used. |
 
 

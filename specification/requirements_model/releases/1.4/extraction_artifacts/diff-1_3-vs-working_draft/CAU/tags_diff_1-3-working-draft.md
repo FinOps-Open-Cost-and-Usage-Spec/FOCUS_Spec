@@ -3,7 +3,7 @@
 Tags [-adheres-]{+MUST adhere+} to the following requirements:
 
 * Tags MUST[-be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the data generator supports setting user or provider-defined tags.-]
-[-* Tags MUST-] conform to [-[KeyValueFormat](#key-valueformat)-]{+[KeyValueFormat](#attributes.key-valueformat)+} requirements.
+[-* Tags MUST-] conform to KeyValueFormat requirements.
 * Tags MAY be null.
 * When Tags is not null, Tags [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
   * Tags MUST include all user-defined and provider-defined tags.

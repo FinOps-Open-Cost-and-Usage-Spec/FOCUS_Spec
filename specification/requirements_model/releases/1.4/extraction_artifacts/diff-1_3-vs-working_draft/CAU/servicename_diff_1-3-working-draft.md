@@ -4,7 +4,7 @@ ServiceName [-adheres-]{+MUST adhere+} to the following requirements:
 
 [-* ServiceName MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset).-]
 * ServiceName MUST be of type String.
-* ServiceName MUST conform to [-[StringHandling](#stringhandling)-]{+[StringHandling](#attributes.stringhandling)+} requirements.
+* ServiceName MUST conform to StringHandling requirements.
 * ServiceName MUST NOT be null.
 * The relationship between ServiceName and [-[ServiceCategory](#servicecategory) is defined as follows:-]{+[ServiceCategory](#datasets.costandusage.servicecategory) MUST adhere to the following requirements:+}
   * ServiceName MUST have one and only one ServiceCategory that best aligns with its primary purpose, except when no suitable ServiceCategory is available.

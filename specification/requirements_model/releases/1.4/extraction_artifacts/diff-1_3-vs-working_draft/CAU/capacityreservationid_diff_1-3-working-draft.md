@@ -4,7 +4,7 @@ CapacityReservationId [-adheres-]{+MUST adhere+} to the following requirements:
 
 [-* CapacityReservationId MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *capacity reservations*.-]
 * CapacityReservationId MUST be of type String.
-* CapacityReservationId MUST conform to [-[StringHandling](#stringhandling)-]{+[StringHandling](#attributes.stringhandling)+} requirements.
+* CapacityReservationId MUST conform to StringHandling requirements.
 * CapacityReservationId {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * CapacityReservationId MUST be null when a *charge* is not related to a *capacity reservation*.
   * CapacityReservationId MUST NOT be null when a *charge* represents the unused portion of a *capacity reservation*.
