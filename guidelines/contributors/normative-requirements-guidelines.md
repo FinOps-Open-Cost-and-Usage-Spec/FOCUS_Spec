@@ -184,14 +184,6 @@ Flat parallel bullets SHOULD be preferred when ordering keyword is sufficient fo
 
 ### 1.9. DRY (Don't Repeat Yourself) Principle
 
-Each normative requirement MUST be defined in exactly one place across the specification. The following guidelines determine where a requirement belongs:
-
-* If a requirement applies broadly to multiple normative entities (e.g., datasets, columns, objects within columns), it SHOULD be defined as an Attribute requirement, with conformance declared by those entities.
-* If a requirement involves multiple columns within a single dataset, it MUST be defined on the primary column it describes (e.g., a cost calculation integrity requirement belongs on the cost column). Other columns involved MUST NOT restate it as a normative requirement but MAY reference it in their introductory description.
-* If a requirement spans multiple datasets, it MUST be defined on the column in the dataset that is the primary owner of the validation (e.g., a cross-dataset sum validation belongs on the column in the dataset where the validation is most meaningful). Other datasets involved MUST NOT restate it as a normative requirement but MAY reference it in their introductory description.
-
-### 1.9. DRY (Don't Repeat Yourself) Principle
-
 Each normative requirement MUST be defined in exactly one place across the specification. The following rules determine where a requirement belongs:
 
 * If a requirement applies broadly to multiple datasets, columns, or column sub-elements (e.g., objects within columns), it SHOULD be defined as an Attribute requirement, with conformance declared by those entities.
