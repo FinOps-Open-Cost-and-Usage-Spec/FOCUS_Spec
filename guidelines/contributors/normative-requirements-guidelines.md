@@ -2,11 +2,12 @@
 
 This section defines guidelines for authoring normative requirements in the FOCUS specification. These guidelines define **how** to write normative requirements to ensure clarity, consistency, and testability. It does not define the requirements themselves (the "what") but concentrates on their **structure, subjects, and verifiability**.
 
-The guidelines cover normative requirements applicable to:
+The guidelines cover authoring of normative requirements for the following entities:
 
-* **FOCUS Datasets** — the primary containers of structured data as defined in FOCUS.
-* **FOCUS Columns** — individual columns within FOCUS datasets (may contain nested objects and object properties, which can have additional normative rules)
-* **Attributes** — schema-level rules that datasets, columns, or object properties must conform to.
+* **FOCUS datasets** — the primary containers of structured data as defined in FOCUS.
+* **FOCUS columns** — individual columns within FOCUS datasets, defined by FOCUS (may contain nested objects and object properties, which can have additional normative rules).
+* **Custom columns** — individual columns within FOCUS datasets, not defined by FOCUS.
+* **FOCUS attributes** — reusable sets of normative constraints that datasets, columns, or column sub-elements (such as objects and object properties) conform to; guidelines cover how to author requirements within Attribute sections.
 
 The diagram below illustrates the relationships among these entities and shows where normative requirements apply:
 
