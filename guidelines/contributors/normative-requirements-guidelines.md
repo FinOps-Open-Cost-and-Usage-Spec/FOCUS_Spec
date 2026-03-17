@@ -88,10 +88,18 @@ The structural anchor requirement:
 
 The canonical form of a structural anchor requirement is:
 
-> `<Entity> MUST adhere to the following requirements:`
+``` markdown
+<Entity> MUST adhere to the following requirements:
+```
 
-For **Attribute Requirements** sections, the Attribute ID MAY be used as the subject of the structural anchor requirement.
-This usage is a structural exception only and MUST NOT be interpreted as implying that Attributes are normative subjects or independently enforceable schema entities.
+For **Attribute Requirements** sections, a different canonical form applies:
+
+``` markdown
+[Dataset|Column] conforming to <AttributeId> attribute MUST adhere to the following requirements:
+```
+
+See [Section 4.2. Structural Anchor Requirement for Attributes](#42-structural-anchor-requirement-for-attributes) for details.
+
 
 ### 1.3. Normative Subject
 
