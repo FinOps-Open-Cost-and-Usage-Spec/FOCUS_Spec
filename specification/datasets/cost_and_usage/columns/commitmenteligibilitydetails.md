@@ -60,10 +60,9 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 
 ### Example Entries
 
-| Key  | ValueType                            | Required | Description                                                                |
-|:-----------------|:-----------------|:-----------------|:-----------------|
-| Type | [String](#attributes.stringhandling) | True     | The specific type of commitment discount program available for this usage. |
-| Type | [String](#attributes.stringhandling) | True     | The specific type of capacity-reservation commitment program available for this usage. |
+| Key         | ValueType                            | Required | Description                                                                                                |
+|:------------|:-------------------------------------|:---------|:-----------------------------------------------------------------------------------------------------------|
+| ProgramType | [String](#attributes.stringhandling) | True     | The specific type of commitment program (e.g., discount or capacity reservation) available for this usage. |
 
 ### Object Example
 
@@ -132,7 +131,7 @@ The types of [*commitment*](#glossary:commitment) programs available for a speci
 | Column type   | Dimension                                                                                                                    |
 | Feature level | Conditional                                                                                                                  |
 | Allows nulls  | True                                                                                                                         |
-| Data type     | String                                                                                                                       |
+| Data type     | JSON                                                                                                                       |
 | Value format  | [JsonObjectFormat](#attributes.jsonobjectformat)                                                                             |
 | Object        | [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) |
 
