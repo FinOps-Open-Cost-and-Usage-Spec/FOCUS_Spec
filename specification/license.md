@@ -28,5 +28,3 @@ POSSIBILITY OF SUCH DAMAGE.
 
 This document is governed by the Patent Policy Option 4: W3C Mode:
 See [project charter](https://github.com/FinOps-Open-Cost-and-Usage-Spec/foundation/blob/main/FOCUS_-_Membership_Agreement_Package_for_use.pdf).
-
-<div style="page-break-after: always"></div>
