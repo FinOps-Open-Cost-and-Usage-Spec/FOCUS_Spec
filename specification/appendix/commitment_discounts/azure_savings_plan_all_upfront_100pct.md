@@ -78,7 +78,7 @@ The following critical rules apply to commitment discount data:
 | ChargeFrequency            | One-Time                              | One-time upfront payment                                    |
 | BilledCost                 | &dollar;462,002.40                    | Full annual commitment payment                              |
 | EffectiveCost              | &dollar;0.00                          | **MUST be 0** - cost is amortized to usage rows             |
-| PricingQuantity            | 1                                     | One commitment unit purchased                               |
+| PricingQuantity            | 462,002.40                            | Total commitment in USD (PricingUnit = USD)                 |
 | CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 462,002.40                            | Full annual commitment (&dollar;52.74/hr &times; 8,760 hrs) |
 | CommitmentDiscountUnit     | USD                                   | Unit of commitment capacity (spend-based)                   |

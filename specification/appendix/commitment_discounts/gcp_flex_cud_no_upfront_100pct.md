@@ -78,7 +78,7 @@ The following critical rules apply to commitment discount data:
 | ChargeFrequency            | Recurring                               | Monthly recurring fee                                          |
 | BilledCost                 | &dollar;42,423.36                       | Monthly fee (hourly rate &times; 672 hours in Feb)             |
 | EffectiveCost              | &dollar;0.00                            | **MUST be 0** - cost is amortized to usage rows                |
-| PricingQuantity            | 1                                       | One commitment unit purchased                                  |
+| PricingQuantity            | 42,423.36                               | Total commitment in USD (PricingUnit = USD)                    |
 | CommitmentDiscountStatus   | null                                    | Status only applies to usage rows                              |
 | CommitmentDiscountQuantity | 42,423.36                               | Commitment capacity for Feb (&dollar;63.13/hr &times; 672 hrs) |
 | CommitmentDiscountUnit     | USD                                     | Unit of commitment capacity (spend-based)                      |

@@ -79,7 +79,7 @@ The following critical rules apply to commitment discount data:
 | ChargeFrequency            | One-Time                             | One-time upfront payment                                                    |
 | BilledCost                 | &dollar;223,993.20                   | Upfront portion (50% of annual commitment)                                  |
 | EffectiveCost              | &dollar;0.00                         | **MUST be 0** - cost is amortized to usage rows                             |
-| PricingQuantity            | 1                                    | One commitment unit purchased                                               |
+| PricingQuantity            | 223,993.20                           | Upfront portion in USD (PricingUnit = USD)                                  |
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                                           |
 | CommitmentDiscountQuantity | 447,986.40                           | Full annual commitment capacity (&dollar;51.14/hr &times; 8,760 hrs)        |
 | CommitmentDiscountUnit     | USD                                  | Unit of commitment capacity (spend-based)                                   |
@@ -94,7 +94,7 @@ The following critical rules apply to commitment discount data:
 | ChargeFrequency            | Recurring                              | Monthly recurring fee                                                      |
 | BilledCost                 | &dollar;17,183.04                      | Monthly portion (hourly rate / 2 &times; 672 hours in Feb)                 |
 | EffectiveCost              | &dollar;0.00                           | **MUST be 0** - cost is amortized to usage rows                            |
-| PricingQuantity            | 1                                      | One commitment unit purchased                                              |
+| PricingQuantity            | 17,183.04                              | Monthly portion in USD (PricingUnit = USD)                                 |
 | CommitmentDiscountStatus   | null                                   | Status only applies to usage rows                                          |
 | CommitmentDiscountQuantity | 34,366.08                              | Full monthly commitment capacity (&dollar;51.14/hr &times; 672 hrs)        |
 | CommitmentDiscountUnit     | USD                                    | Unit of commitment capacity (spend-based)                                  |
