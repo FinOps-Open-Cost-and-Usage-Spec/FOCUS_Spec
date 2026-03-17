@@ -32,7 +32,11 @@ The *exclusive end bound* of a *charge period*.
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
 | Data type       | Date/Time                                            |
+<<<<<<< HEAD
 | Value format    | [DateTime Format](#attributes.date/timeformat)       |
+=======
+| Value format    | [Date/Time Format](#attributes.date/timeformat)       |
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 
 ## Introduced (version)
 

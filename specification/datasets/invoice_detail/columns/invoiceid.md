@@ -1,6 +1,10 @@
 # Invoice ID
 
+<<<<<<< HEAD
 An Invoice ID is an invoice-issuer-assigned identifier for an invoice encapsulating [*charges*](#glossary:charge) in the corresponding [*billing period*](#glossary:billing-period) for a given [*billing account*](#glossary:billing-account). Invoices are commonly used for scenarios like tracking billing transactions, facilitating payment processes and for performing invoice reconciliation between *charges* and billing periods.
+=======
+Invoice ID is an invoice-issuer-assigned identifier for an invoice encapsulating [*charges*](#glossary:charge) in the corresponding [*billing period*](#glossary:billing-period) for a given [*billing account*](#glossary:billing-account). Invoices are commonly used for scenarios like tracking billing transactions, facilitating payment processes and for performing invoice reconciliation between *charges* and billing periods.
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 
 ## Requirements
 

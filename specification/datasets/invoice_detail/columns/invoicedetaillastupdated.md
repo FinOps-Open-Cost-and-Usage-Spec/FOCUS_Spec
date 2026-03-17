@@ -8,6 +8,10 @@ InvoiceDetailLastUpdated MUST adhere to the following requirements:
 
 * InvoiceDetailLastUpdated MUST be of type Date/Time.
 * InvoiceDetailLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
+<<<<<<< HEAD
+=======
+* InvoiceDetailLastUpdated MUST NOT be null.
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 * InvoiceDetailLastUpdated MUST represent the most recent moment in time when any column value of the record identified by [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) was created or modified.
 * InvoiceDetailLastUpdated MUST be greater than or equal to [InvoiceDetailCreated](#datasets.invoicedetail.invoicedetailcreated).
 

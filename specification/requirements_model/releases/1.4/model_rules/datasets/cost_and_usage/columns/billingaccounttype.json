@@ -1,0 +1,228 @@
+{
+  "CAU-BillingAccountType-C-000-C": {
+    "Function": "Composite",
+    "Reference": "BillingAccountType",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Type",
+    "EntityId": "BillingAccountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [
+      "MULTIPLE_BILLING_ACCOUNT_TYPES_SUPPORTED"
+    ],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountType adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountType-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountType-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountType-C-003-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountType-C-006-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-007-C",
+        "CAU-BillingAccountType-C-001-M",
+        "CAU-BillingAccountType-C-002-M",
+        "CAU-BillingAccountType-C-003-C",
+        "CAU-BillingAccountType-C-006-M"
+      ]
+    }
+  },
+  "CAU-BillingAccountType-C-001-M": {
+    "Function": "Type",
+    "Reference": "BillingAccountType",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Type",
+    "EntityId": "BillingAccountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountType MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "BillingAccountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingAccountType-C-002-M": {
+    "Function": "Format",
+    "Reference": "BillingAccountType",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Type",
+    "EntityId": "BillingAccountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountType MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "BillingAccountType"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingAccountType-C-003-C": {
+    "Function": "Composite",
+    "Reference": "BillingAccountType",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Type",
+    "EntityId": "BillingAccountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountType nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountType-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-BillingAccountType-C-005-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-BillingAccountType-C-004-C",
+        "CAU-BillingAccountType-C-005-C"
+      ]
+    }
+  },
+  "CAU-BillingAccountType-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "BillingAccountType",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Type",
+    "EntityId": "BillingAccountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountType MUST be null when BillingAccountId is null.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "BillingAccountType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckValue",
+        "ColumnName": "BillingAccountId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingAccountType-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "BillingAccountType",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Type",
+    "EntityId": "BillingAccountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountType MUST NOT be null when BillingAccountId is not null.",
+      "Keyword": "MUST NOT",
+      "Requirement": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "BillingAccountType",
+        "Value": null
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "BillingAccountId",
+        "Value": null
+      },
+      "Dependencies": []
+    }
+  },
+  "CAU-BillingAccountType-C-006-M": {
+    "Function": "Validation",
+    "Reference": "BillingAccountType",
+    "EntityType": "Column",
+    "EntityName": "Billing Account Type",
+    "EntityId": "BillingAccountType",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "BillingAccountType MUST be a consistent, readable display value.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}

@@ -1,6 +1,10 @@
 # Billing Period Status
 
+<<<<<<< HEAD
 A Billing Period Status represents the state of the billing period (i.e., open or closed). This status helps FinOps practitioners determine if the [Cost and Usage](#datasets.costandusage) data for a given period is preliminary and subject to change, or if it is finalized and ready for formal financial reporting and showback/chargeback processes.
+=======
+Billing Period Status represents the state of the billing period (i.e., open or closed). This status helps FinOps practitioners determine if the [Cost and Usage](#datasets.costandusage) data for a given period is preliminary and subject to change, or if it is finalized and ready for formal financial reporting and showback/chargeback processes.
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 
 ## Requirements
 

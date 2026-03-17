@@ -1,6 +1,10 @@
 # Invoice Detail
 
+<<<<<<< HEAD
 The Invoice Detail dataset is a transactional dataset that represents the financial record of [*charges*](#glossary:charges) as they appear on invoices provided by an invoice issuer. This dataset enables FinOps practitioners to perform financial reconciliation, tax reporting, and payment processing tasks. While the [Cost and Usage](#datasets.costandusage) dataset provides granular visibility into consumption, the Invoice Detail dataset ensures alignment with the physical or electronic billing documents.
+=======
+The Invoice Detail dataset is a transactional dataset that represents the financial record of [*charges*](#glossary:charge) as they appear on invoices provided by an invoice issuer. This dataset enables FinOps practitioners to perform financial reconciliation, tax reporting, and payment processing tasks. While the [Cost and Usage](#datasets.costandusage) dataset provides granular visibility into consumption, the Invoice Detail dataset ensures alignment with the physical or electronic billing documents.
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 
 ## Columns<!--SkipTOC-->
 
@@ -26,12 +30,20 @@ The Invoice Detail dataset is a transactional dataset that represents the financ
 | [Payment Currency Invoice Detail ID](#datasets.invoicedetail.paymentcurrencyinvoicedetailid) | Dimension | Conditional | False | String |
 | [Payment Due Date](#datasets.invoicedetail.paymentduedate)               | Dimension   | Mandatory     | True         | Date/Time |
 | [Payment Terms](#datasets.invoicedetail.paymentterms)                     | Dimension   | Mandatory     | False        | String    |
+<<<<<<< HEAD
 | [Purchase Order Number](#datasets.invoicedetail.purchaseordernumber)             | Dimension   | Conditional   | False        | String    |
+=======
+| [Purchase Order Number](#datasets.invoicedetail.purchaseordernumber)             | Dimension   | Conditional   | True        | String    |
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 | [Reference Invoice ID](#datasets.invoicedetail.referenceinvoiceid)               | Dimension   | Mandatory     | False        | String    |
 
 ## Relationships<!--SkipTOC-->
 
+<<<<<<< HEAD
 The Invoice Detail dataset can be joined to the [Cost and Usage](#datasets.costandusage) dataset through the use of either Invoice ID or Invoice Detail ID. Take note: one or both datasets will need to be aggregated in order to facilitate any comparison.
+=======
+The Invoice Detail dataset can be joined to the [Cost and Usage](#datasets.costandusage) dataset through Invoice Issuer Name, Invoice ID, and (optionally) Invoice Detail ID. Take note: one or both datasets will need to be aggregated in order to facilitate any comparison.
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 
 The timing of Invoice ID and Invoice Detail ID availability in Cost and Usage varies across data generators. Some data generators populate these values while the [*billing period*](#glossary:billing-period) is still open, while others do not populate them until after the *billing period* is closed and invoices have been issued.
 
@@ -39,8 +51,13 @@ For more information, see the [Invoice Reconciliation](#supportedfeatures.invoic
 
 | Dataset A      | Dataset A Column   | Dataset B      | Dataset B Column   |
 | :------------- | :----------------- | :------------- | :----------------- |
+<<<<<<< HEAD
 | Invoice Detail | Invoice ID         | Cost and Usage | Invoice ID         |
 | Invoice Detail | Invoice Detail ID  | Cost and Usage | Invoice Detail ID  |
+=======
+| Invoice Detail | Invoice Issuer Name and Invoice ID         | Cost and Usage | Invoice Issuer Name and Invoice ID         |
+| Invoice Detail | Invoice Issuer Name, Invoice ID, and Invoice Detail ID  | Cost and Usage | Invoice Issuer Name, Invoice ID, and Invoice Detail ID  |
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 
 ## Requirements<!--SkipTOC-->
 

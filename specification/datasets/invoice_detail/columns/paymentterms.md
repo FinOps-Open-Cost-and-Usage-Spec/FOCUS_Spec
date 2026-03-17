@@ -1,6 +1,10 @@
 # Payment Terms
 
+<<<<<<< HEAD
 A Payment Terms represents the [*terms*](#glossary:term) (typically focused on timeframe) by which the invoice issuer expects to receive payment for an invoice. These terms define the agreed-upon period for settling the invoice, helping both the provider and the customer manage financial expectations and payment schedules.
+=======
+Payment Terms represents the [*terms*](#glossary:term) (typically focused on timeframe) by which the invoice issuer expects to receive payment for an invoice. These terms define the agreed-upon period for settling the invoice, helping both the provider and the customer manage financial expectations and payment schedules.
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 
 ## Requirements
 

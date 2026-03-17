@@ -1,6 +1,10 @@
 # Payment Currency Invoice Detail ID
 
+<<<<<<< HEAD
 A Payment Currency Invoice Detail ID is a reference to the [Invoice Detail ID](#datasets.invoicedetail.invoicedetailid) of the record where the [Payment Currency Billed Cost](#datasets.invoicedetail.paymentcurrencybilledcost) for the current row is aggregated. This identifier enables practitioners to explicitly link granular usage records to their corresponding aggregate records stated in their chosen currency for settlement, ensuring accurate reconciliation across divergent grains.
+=======
+Payment Currency Invoice Detail ID is a reference to the [Invoice Detail ID](#datasets.invoicedetail.invoicedetailid) of the record where the [Payment Currency Billed Cost](#datasets.invoicedetail.paymentcurrencybilledcost) for the current row is aggregated. This identifier enables practitioners to explicitly link granular usage records to their corresponding aggregate records stated in their chosen currency for settlement, ensuring accurate reconciliation across divergent grains.
+>>>>>>> 1467-fr-add-14-specification-revisions-to-requirements-model-recreate
 
 ## Requirements
 

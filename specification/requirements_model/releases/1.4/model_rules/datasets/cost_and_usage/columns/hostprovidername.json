@@ -1,0 +1,331 @@
+{
+  "CAU-HostProviderName-C-000-M": {
+    "Function": "Composite",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 0,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName adheres to the following requirements:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-001-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-002-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-003-M"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-007-C"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-CostAndUsage-D-075-M",
+        "CAU-HostProviderName-C-001-M",
+        "CAU-HostProviderName-C-002-M",
+        "CAU-HostProviderName-C-003-M",
+        "CAU-HostProviderName-C-007-C"
+      ]
+    }
+  },
+  "CAU-HostProviderName-C-001-M": {
+    "Function": "Type",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 20,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName MUST be of type String.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "TypeString",
+        "ColumnName": "HostProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-HostProviderName-C-002-M": {
+    "Function": "Format",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 30,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName MUST conform to StringHandling requirements.",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "FormatString",
+        "ColumnName": "HostProviderName"
+      },
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-HostProviderName-C-003-M": {
+    "Function": "Composite",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 40,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName nullability is defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-004-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-005-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-006-M"
+          }
+        ]
+      },
+      "Condition": {},
+      "Dependencies": [
+        "CAU-HostProviderName-C-004-C",
+        "CAU-HostProviderName-C-005-C",
+        "CAU-HostProviderName-C-006-M"
+      ]
+    }
+  },
+  "CAU-HostProviderName-C-004-C": {
+    "Function": "Nullability",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 50,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName MAY be NULL when the associated ServiceName does not involve deployment on any underlying infrastructure (e.g., professional services, software licenses).",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-HostProviderName-C-005-C": {
+    "Function": "Nullability",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 60,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName MAY be NULL when the information about the entity providing the underlying infrastructure cannot be uniquely determined (e.g., when the ChargeCategory is \"Tax\" or \"Adjustment\").",
+      "Keyword": "MAY",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-HostProviderName-C-006-M": {
+    "Function": "Nullability",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 70,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName MUST NOT be null in all other cases.",
+      "Keyword": "MUST NOT",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-HostProviderName-C-007-C": {
+    "Function": "Composite",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 80,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Static",
+    "ValidationCriteria": {
+      "MustSatisfy": "When HostProviderName is not null, HostProviderName values are defined as follows:",
+      "Keyword": "MUST",
+      "Requirement": {
+        "CheckFunction": "AND",
+        "Items": [
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-008-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-009-C"
+          },
+          {
+            "CheckFunction": "CheckModelRule",
+            "ModelRuleId": "CAU-HostProviderName-C-010-M"
+          }
+        ]
+      },
+      "Condition": {
+        "CheckFunction": "CheckNotValue",
+        "ColumnName": "HostProviderName",
+        "Value": null
+      },
+      "Dependencies": [
+        "CAU-HostProviderName-C-008-C",
+        "CAU-HostProviderName-C-009-C",
+        "CAU-HostProviderName-C-010-M"
+      ]
+    }
+  },
+  "CAU-HostProviderName-C-008-C": {
+    "Function": "Validation",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 90,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName MUST reflect the name of the host provider when explicitly selected by the customer.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-HostProviderName-C-009-C": {
+    "Function": "Validation",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 100,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName MUST reflect the name of the host provider when the service provider exposes the underlying hosting provider.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  },
+  "CAU-HostProviderName-C-010-M": {
+    "Function": "Validation",
+    "Reference": "HostProviderName",
+    "EntityType": "Column",
+    "EntityName": "Host Provider Name",
+    "EntityId": "HostProviderName",
+    "Notes": "",
+    "ModelVersionIntroduced": "1.2",
+    "Status": "Active",
+    "ApplicabilityCriteria": [],
+    "Order": 110,
+    "DatasetType": "CAU",
+    "DatasetId": "CostAndUsage",
+    "DatasetName": "Cost and Usage",
+    "Type": "Dynamic",
+    "ValidationCriteria": {
+      "MustSatisfy": "HostProviderName MUST equal ServiceProviderName in all other cases.",
+      "Keyword": "MUST",
+      "Requirement": {},
+      "Condition": {},
+      "Dependencies": []
+    }
+  }
+}
