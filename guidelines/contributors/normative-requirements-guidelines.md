@@ -202,14 +202,16 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 
 ### 2.2. Ordering of Dataset Requirements Within Groups
 
-* Within each group of requirements, order individual requirements as follows:
-  * **MUST** – an absolute requirement
-  * **MUST NOT** – a prohibition
-  * **SHOULD** – recommended but not mandatory
-  * **SHOULD NOT** – discouraged but not strictly prohibited
-  * **MAY** – optional
+To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
 
-  > ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
+* **MUST** – an absolute requirement
+* **MUST NOT** – a prohibition
+* **SHOULD** – recommended but not mandatory
+* **SHOULD NOT** – discouraged but not strictly prohibited
+* **MAY** – optional
+* **MAY NOT** – optional prohibition / permitted not to
+
+> ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -323,14 +325,16 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 
 ### 3.2. Ordering of Column Requirements Within Groups
 
-* Within each group of requirements, order individual requirements as follows:
-  * **MUST** – an absolute requirement
-  * **MUST NOT** – a prohibition
-  * **SHOULD** – recommended but not mandatory
-  * **SHOULD NOT** – discouraged but not strictly prohibited
-  * **MAY** – optional
+To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
 
-  > ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
+* **MUST** – an absolute requirement
+* **MUST NOT** – a prohibition
+* **SHOULD** – recommended but not mandatory
+* **SHOULD NOT** – discouraged but not strictly prohibited
+* **MAY** – optional
+* **MAY NOT** – optional prohibition / permitted not to
+
+> ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
@@ -713,9 +717,11 @@ CommitmentDiscountQuantity adheres to the following requirements:
 
 ### 4.1. Role of Attributes in the Specification
 
-Attributes represent one of FOCUS entities but they are **not normative subjects** of requirements. They define reusable sets of normative constraints applied to FOCUS datasets, columns (both FOCUS and custom), or sub-elements within columns (e.g., objects, keys, key values) that declare conformance to the Attribute.
+Attributes define reusable sets of normative constraints applicable to FOCUS datasets, columns (both FOCUS and custom), and column sub-elements (e.g., objects, keys, key values). Although Attributes are FOCUS entities, they serve only as containers for these constraints and are not treated as normative subjects of requirements.
 
-Normative requirements defined in an Attribute section are enforced on the conforming schema-level entity, not on the Attribute itself.
+An entity is considered conforming to an Attribute if it explicitly declares conformance or inherits it from a parent entity. For example, when a dataset declares conformance to NullHandling, all columns within that dataset are considered conforming to that Attribute.
+
+Normative requirements defined in an Attribute section are evaluated within the scope of conforming entities but apply only to the subjects explicitly defined by each requirement. Conformance determines the set of entities in scope, while the requirement subject determines which of those entities are targeted.
 
 ### 4.2. Structural Anchor Requirement for Attributes
 
@@ -732,7 +738,7 @@ The structural anchor requirement:
 The canonical form of the structural anchor requirement is:
 
 ```markdown
-[Dataset|Column] conforming to  attribute MUST adhere to the following requirements:
+[Dataset|Column] conforming to <Attribute ID> attribute MUST adhere to the following requirements:
 ```
 
 Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attribute — either Dataset or Column. Most Attributes target either datasets or columns, but not both. When an Attribute targets both datasets and columns, a separate structural anchor requirement MUST be used for each entity type.
@@ -740,30 +746,30 @@ Where `[Dataset|Column]` is the primary schema-level entity targeted by the Attr
 When an Attribute is applicable only under specific conditions, the structural anchor requirement MAY be preceded by an applicability criteria condition:
 
 ```markdown
-When <actor> <applicability-citeria-condition>, [Dataset|Column] conforming to  attribute MUST adhere to the following requirements:
+When <actor> <applicability-citeria-condition>, [Dataset|Column] conforming to <Attribute ID> attribute MUST adhere to the following requirements:
 ```
 
 #### 4.3. Normative Subjects in Attribute Requirements
 
-All enforceable normative requirements within an Attribute section MUST target schema-level entities that conform to the Attribute. The Attribute itself MUST NOT be treated as an enforceable subject beyond the structural anchor requirement.
+Unlike column-level and dataset-level requirements, where the subject is a specific named dataset, column, or column sub-element, Attribute requirements are expressed against normative subjects that represent normative FOCUS entities, i.e., datasets, columns, or column sub-elements.
 
-Each Attribute implicitly assumes one or more intended normative subjects. These subjects determine which schema-level entities the Attribute's requirements apply to.
+These subjects define the targets of individual requirements within the scope of conforming entities. While conformance determines which entities are in scope, the subject of each requirement determines which of those entities are affected.
 
-##### Tabular Overview of Normative Subjects
+When an Attribute's requirements do not apply to all entities within scope but only to a subset, a qualifier condition narrows the scope by describing that subset (e.g., `When FOCUS column contains numeric values, FOCUS column MUST adhere to the following requirements`). This ensures that the applicability of each requirement is explicit and does not rely solely on the conformance declaration.
 
-The following table provides an overview of anchor subject types and requirement subjects used across all attributes.
+The following table provides an overview of anchor subject types and requirement subjects used across all attributes, with each Attribute typically targeting only a subset of these subjects.
 
-| Anchor Subject Type | Requirement Subject | Attribute IDs |
-|---|---|---|
-| Dataset | FOCUS dataset | ColumnHandling, InvoiceHandling, DataGeneratorCalculatedSplitCostAllocationHandling |
-| Column | FOCUS column | ColumnHandling, NullHandling, StringHandling, NumericFormat, DateTimeFormat, KeyValueFormat, JsonObjectFormat, UnitFormat, CurrencyFormat, DataGeneratorCalculatedSplitCostAllocationHandling |
-| Column | Custom column | ColumnHandling, NullHandling, StringHandling, NumericFormat, DateTimeFormat, KeyValueFormat, JsonObjectFormat, UnitFormat, CurrencyFormat |
-| Column | Object in FOCUS column | JsonObjectFormat |
-| Column | Object in array in FOCUS column | JsonObjectFormat |
-| Column | Key in Object in FOCUS column | JsonObjectFormat |
-| Column | Key value in Object in FOCUS column | JsonObjectFormat |
-| Column | Key in FOCUS column | KeyValueFormat |
-| Column | Key value in FOCUS column | KeyValueFormat |
+| Anchor Subject Type | Requirement Subject |
+|---|---|
+| Dataset | FOCUS dataset |
+| Column | FOCUS column |
+| Column | Custom column |
+| Column | Object in FOCUS column |
+| Column | Object in array in FOCUS column |
+| Column | Key in Object in FOCUS column |
+| Column | Key value in Object in FOCUS column |
+| Column | Key in FOCUS column |
+| Column | Key value in FOCUS column |
 
 #### 4.4. FOCUS vs Custom Column Requirements
 
@@ -781,15 +787,13 @@ The appropriate keyword SHOULD always be chosen based on the intent and context 
 
 ### 4.5. Grouping of Attribute Requirements
 
-Grouping and ordering of Attribute requirements ensure clarity, consistency, and maintainability across the specification, making related requirements easy to identify and follow.
+Structured grouping and ordering of Attribute requirements improves clarity, consistency, and maintainability across the specification by making related requirements easier to locate and understand, without introducing any additional normative meaning.
 
-The groups defined below represent an ordering convention, not a structural requirement. Requirements within each group MAY be expressed as flat parallel bullets or as composite (parent + nested) bullets — whichever improves clarity and readability.
+The groups defined here represent an ordering convention, not a structural requirement. Requirements within each group MAY be expressed as flat parallel bullets or as composite (parent + nested) bullets — whichever improves clarity and readability.
 
-The only **exception** is the Structural Anchor Requirement (group 0). By it's natire, Anchor Requirement always acts as a parent composite requirement.
+The only **exception** is the Structural Anchor Requirement (group 0), which by its nature always acts as a parent composite requirement.
 
 Attributes may include requirements that apply to one or more intended normative subjects. To make the applicability of each Attribute, and each of its individual requirements, as transparent as possible, intended normative subjects serve as the basis for grouping. This ensures that readers can readily determine whether a requirement applies to a dataset, a subset of datasets, FOCUS columns, or custom columns.
-
-This structured grouping improves clarity, consistency, and maintainability across the specification by making related requirements easier to locate and understand, without introducing any additional normative meaning.
 
 0. **Structural Attribute Anchor Requirement:** Introduces the scope of the Attribute and provides a stable parsing entry point; it does not introduce a verifiable constraint.
 1. **FOCUS Dataset-level Attribute Requirements:**
@@ -812,15 +816,21 @@ This structured grouping improves clarity, consistency, and maintainability acro
 
 ### 4.6. Ordering of Attribute Requirements within Groups
 
-* Within each group of requirements, order individual requirements as follows:
-  * Requirements targeting the general subject (e.g., FOCUS column) first
-  * Requirements targeting qualified subjects (e.g., FOCUS column containing numeric values) after
-  * Within each subject, order by BCP 14 keyword:
-    * **MUST** – an absolute requirement
-    * **MUST NOT** – a prohibition
-    * **SHOULD** – recommended but not mandatory
-    * **SHOULD NOT** – discouraged but not strictly prohibited
-    * **MAY** – optional
+To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
+
+* Requirements targeting the general subject (e.g., FOCUS column) first
+* Requirements targeting qualified subjects (e.g., FOCUS column containing numeric values) after
+* Within each subject, order by BCP 14 keyword:
+  * **MUST** – an absolute requirement
+  * **MUST NOT** – a prohibition
+  * **SHOULD** – recommended but not mandatory
+  * **SHOULD NOT** – discouraged but not strictly prohibited
+  * **MAY** – optional
+  * **MAY NOT** – optional prohibition / permitted not to
+
+> ***Important Note:*** *The term **RECOMMENDED** (recommended but not mandatory; previously used only for presence-related normative requirements) is no longer permitted for use in normative requirements as of December 2025. The keyword **SHOULD** must be used instead. Please refer to the [**Editorial Style Guidelines**](#editorialstyleguidelines).*
+
+* For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
 ### 4.6. Attribute Normative Requirements Examples
 
