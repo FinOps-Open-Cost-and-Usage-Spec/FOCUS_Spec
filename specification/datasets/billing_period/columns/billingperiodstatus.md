@@ -14,11 +14,13 @@ BillingPeriodStatus MUST adhere to the following requirements:
 
 ## Implementation Context
 
-While the transition from Open to Closed typically signifies the end of a billing cycle, the billing period may reopen in scenarios such as:
+While the transition from "Open" to "Closed" typically signifies the end of a billing cycle, but in scenarios such as the following, it may be necessary to provide corrections to closed billing periods:
 
 * Retroactive adjustments: an invoice issuer generates credits or corrections for a period previously marked as finalized.
 * Audit corrections: discrepancies are discovered during financial reconciliation that require the data to be re-processed.
 * Late-arriving usage: occasional delays in usage reporting necessitate a revision of the final invoice.
+
+Corrections to closed billing periods are generally represented in the context of a subsequent open billing period to preserve historical financial accuracy and ensure transparent tracking. Exceptionally, a previously closed billing period may be reopened to apply such corrections, but this transition from "Closed" to "Open" must be explicitly requested or approved by the customer to maintain auditability and the integrity of financial reporting.
 
 FinOps tools and reporting engines should be designed to detect these transitions and trigger updates to downstream showback or chargeback reports to ensure financial accuracy.
 
