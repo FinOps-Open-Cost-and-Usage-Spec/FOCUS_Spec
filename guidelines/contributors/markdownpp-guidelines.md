@@ -239,7 +239,7 @@ To ensure consistency, ease of maintenance, and portability, all Markdown and Ma
     - all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
     - The FinOps Foundation staff MUST be notified in order to repair any hyperlink references to that file within Foundation assets.
 - File names SHOULD be descriptive and reflect the primary content of the file.
-- File names consisting of multiple words MUST use hyphens (`-`) as the word separator (e.g., kebab-case.md), except for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes).
+- File names consisting of multiple words MUST use hyphens (`-`) as the word separator (e.g., kebab-case), except for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes).
 - File names consisting of multiple words MUST NOT use any word separator for files defining FOCUS entities, so that the file name matches the FOCUS entity identifier in lowercase.
 
 Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) MUST follow common GitHub naming conventions.
