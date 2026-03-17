@@ -130,8 +130,6 @@ The normative subject MUST be a schema-level entity, such as:
 
 The subject SHOULD be explicit and unambiguous.
 
-**Exception:** A structural anchor requirement MAY use the ID of the enclosing schema construct as its subject, even if that construct is not otherwise an allowed normative subject (e.g., `<FOCUS Attribute ID>`). This exception applies only to structural anchor requirements.
-
 #### 1.3.2 Disallowed Subjects
 
 The following MUST NOT be used as normative subjects:
