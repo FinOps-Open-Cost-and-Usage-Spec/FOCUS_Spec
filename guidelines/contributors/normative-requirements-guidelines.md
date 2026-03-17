@@ -103,7 +103,7 @@ See [Section 4.2. Structural Anchor Requirement for Attributes](#42-structural-a
 
 ### 1.3. Normative Subject
 
-#### 1.3.1 Allowed Subjects
+#### 1.3.1. Allowed Subjects
 
 The normative subject MUST be a schema-level entity, such as:
 
@@ -129,7 +129,7 @@ The normative subject MUST be a schema-level entity, such as:
 
 The subject SHOULD be explicit and unambiguous.
 
-#### 1.3.2 Disallowed Subjects
+#### 1.3.2. Disallowed Subjects
 
 The following MUST NOT be used as normative subjects:
 
@@ -371,14 +371,6 @@ To further enhance readability, individual requirements within each group SHOULD
 * **Use {ColumnId} for Column and Value References**: Whenever possible, use {ColumnId} when referring to a column or its values.
 
 * **Default to Singular Form**: Column references should be singular, with the understanding that the requirement applies to all values in the column.
-
-* **Reuse Requirement Text Across Columns**: When a normative requirement applies to multiple columns, the exact same wording should be used for all. This takes precedence over the **Start with the ColumnId** rule to maintain consistency and avoid unnecessary variations in language.
-  
-  **Example Pattern 2**
-
-  ```markdown
-  * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
-  ```  
 
 ### 3.4. Additional Guidelines for Columns in JSON Format
 
