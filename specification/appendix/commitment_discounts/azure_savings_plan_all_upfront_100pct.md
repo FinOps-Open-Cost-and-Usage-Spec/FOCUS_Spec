@@ -64,8 +64,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 The following critical rules apply to commitment discount data:
 
-* **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
+* **Purchase rows:** `EffectiveCost` must be 0. The cost is distributed to usage rows.
+* **Used rows:** `BilledCost` must be 0. Usage is covered by the commitment.
 
 ## Purchase Row Details
 
@@ -74,7 +74,7 @@ The following critical rules apply to commitment discount data:
 | ChargeCategory             | Purchase                              | Commitment purchase transaction                             |
 | ChargeFrequency            | One-Time                              | One-time upfront payment                                    |
 | BilledCost                 | &dollar;462,002.40                    | Full annual commitment payment                              |
-| EffectiveCost              | &dollar;0.00                          | **MUST be 0** - cost is amortized to usage rows             |
+| EffectiveCost              | &dollar;0.00                          | **must be 0** - cost is amortized to usage rows             |
 | PricingQuantity            | 462,002.40                            | Total commitment in USD (PricingUnit = USD)                 |
 | CommitmentDiscountStatus   | null                                  | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 462,002.40                            | Full annual commitment (&dollar;52.74/hr &times; 8,760 hrs) |
@@ -88,7 +88,7 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
 | ChargeCategory             | Usage                                                 | Compute resource consumption               |
 | PricingCategory            | Committed                                             | Priced under commitment discount           |
-| BilledCost                 | &dollar;0.00                                          | **MUST be 0** - covered by commitment      |
+| BilledCost                 | &dollar;0.00                                          | **must be 0** - covered by commitment      |
 | EffectiveCost              | &dollar;52.74                                         | Amortized cost (annual / hours)            |
 | ListCost                   | &dollar;79.11                                         | What you would have paid at list price     |
 | PricingQuantity            | 1                                                     | Units priced                               |

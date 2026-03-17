@@ -66,8 +66,8 @@ These three quantity columns serve different purposes and must be understood in 
 
 The following critical rules apply to commitment discount data:
 
-* **Purchase rows:** `EffectiveCost` MUST be 0. The cost is distributed to usage rows.
-* **Used rows:** `BilledCost` MUST be 0. Usage is covered by the commitment.
+* **Purchase rows:** `EffectiveCost` must be 0. The cost is distributed to usage rows.
+* **Used rows:** `BilledCost` must be 0. Usage is covered by the commitment.
 * **Unused rows:** `BilledCost` = 0 but `EffectiveCost` > 0 to represent wasted commitment value.
 
 ## Purchase Row Details
@@ -77,7 +77,7 @@ The following critical rules apply to commitment discount data:
 | ChargeCategory             | Purchase                             | Commitment purchase transaction                             |
 | ChargeFrequency            | One-Time                             | One-time upfront payment                                    |
 | BilledCost                 | &dollar;693,003.60                   | Full annual commitment payment                              |
-| EffectiveCost              | &dollar;0.00                         | **MUST be 0** - cost is amortized to usage rows             |
+| EffectiveCost              | &dollar;0.00                         | **must be 0** - cost is amortized to usage rows             |
 | PricingQuantity            | 693,003.60                           | Total commitment in USD (PricingUnit = USD)                 |
 | CommitmentDiscountStatus   | null                                 | Status only applies to usage rows                           |
 | CommitmentDiscountQuantity | 693,003.60                           | Full annual commitment (&dollar;79.11/hr &times; 8,760 hrs) |
@@ -91,7 +91,7 @@ The following critical rules apply to commitment discount data:
 | -------------------------- | ----------------------------------------------------- | ------------------------------------------ |
 | ChargeCategory             | Usage                                                 | Compute resource consumption               |
 | PricingCategory            | Committed                                             | Priced under commitment discount           |
-| BilledCost                 | &dollar;0.00                                          | **MUST be 0** - covered by commitment      |
+| BilledCost                 | &dollar;0.00                                          | **must be 0** - covered by commitment      |
 | EffectiveCost              | &dollar;79.11                                         | Amortized cost (annual / hours)            |
 | ListCost                   | &dollar;118.67                                        | What you would have paid at list price     |
 | PricingQuantity            | 1                                                     | Units priced                               |
@@ -114,10 +114,10 @@ The following critical rules apply to commitment discount data:
 | ConsumedQuantity           | null                                                           | **No resource consumed**                           |
 | CommitmentDiscountQuantity | 79.11                                                          | Commitment wasted                                  |
 | CommitmentDiscountStatus   | Unused                                                         | Commitment not utilized                            |
-| ResourceId                 | arn:aws:savingsplans::123456789012:savingsplan/sp-abc123def456 | MUST equal CommitmentDiscountId (no resource used) |
+| ResourceId                 | arn:aws:savingsplans::123456789012:savingsplan/sp-abc123def456 | must equal CommitmentDiscountId (no resource used) |
 | ResourceName               | EC2 Instance Savings Plan                                      | Carried from Purchase row (no resource consumed)   |
 | ResourceType               | Commitment                                                     | Carried from Purchase row (no resource consumed)   |
-| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE                                   | MUST match Purchase row (no resource consumed)     |
-| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT                           | MUST match Purchase row                            |
+| SkuId                      | AWS-USEAST1-COMPUTE-PURCHASE                                   | must match Purchase row (no resource consumed)     |
+| SkuPriceId                 | AWS-USEAST1-COMPUTE-PURCHASE-UPFRONT                           | must match Purchase row                            |
 
 For spend-based unused rows, PricingUnit is USD and PricingQuantity is the hourly commitment amount. ListCost = ListUnitPrice (&dollar;1.00) &times; PricingQuantity, which equals the wasted commitment dollars per hour.
