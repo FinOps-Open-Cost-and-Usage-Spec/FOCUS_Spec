@@ -143,7 +143,7 @@ Specifically:
 
 ### 1.5. Use of BCP 14 Keywords
 
-* Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT).
+* Each normative bullet MUST contain exactly one BCP 14 keyword (MUST, SHOULD, MAY, MUST NOT, SHOULD NOT). See [BCP14](https://tools.ietf.org/html/bcp14) [RFC2119](https://tools.ietf.org/html/rfc2119)][RFC8174](https://tools.ietf.org/html/rfc8174)].
 * A bullet containing more than one normative keyword MUST be split.
 
 ### 1.6. Splitting Requirements
