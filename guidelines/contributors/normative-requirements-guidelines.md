@@ -841,13 +841,13 @@ To further enhance readability, individual requirements within each group SHOULD
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
-### 4.6. Attribute Normative Requirements Examples
+### 4.7. Attribute Normative Requirements Examples
 
-#### 4.6.1. Null Handling
+#### 4.7.1. Null Handling
 
 > *Note: This example illustrates the baseline pattern for an Attribute that applies to both FOCUS columns and Custom columns, with no qualifiers.*
 
-NullHandling MUST adhere to the following requirements:
+Column conforming to NullHandling attribute MUST adhere to the following requirements:
 
 * FOCUS column MUST adhere to the following requirements:
   * FOCUS column MUST use NULL for absent values when the FOCUS column is defined as nullable.
@@ -858,7 +858,7 @@ NullHandling MUST adhere to the following requirements:
   * Custom column SHOULD NOT contain empty strings or placeholder strings (e.g., "Not Applicable") for absent values when the custom column contains string values.
   * Custom column SHOULD NOT contain placeholder numeric values (e.g., 0) for absent values when the custom column contains numeric values.
 
-#### 4.6.2. Date/Time Format
+#### 4.7.2. Date/Time Format
 
 > *Note: This example illustrates an Attribute with a qualifier and a nested composite requirement, expressed for both FOCUS columns and Custom columns.*
 
@@ -881,11 +881,11 @@ Column conforming to DateTimeFormat attribute MUST adhere to the following requi
     * Custom column SHOULD use two-digit hours (HH), minutes (mm), and seconds (ss).
     * Custom column SHOULD end with the ISO 8601 UTC designator 'Z'.
 
-#### 4.6.3. JSON Object Format
+#### 4.7.3. JSON Object Format
 
 > *Note: This example illustrates an Attribute with sub-element requirements (Object, Key, Key value) expressed as qualified bullets within the FOCUS Column group.*
 
-JsonObjectFormat MUST adhere to the following requirements:
+Column conforming to JsonObjectFormat attribute MUST adhere to the following requirements:
 
 * When FOCUS column contains JsonObjectFormat values, FOCUS column MUST adhere to the following requirements:
   * FOCUS column MUST contain a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
@@ -899,7 +899,7 @@ JsonObjectFormat MUST adhere to the following requirements:
     * Object in array in FOCUS column MUST NOT be null.
 * Custom column MUST have its object schema documented by the data generator and accessible to practitioners when the custom column contains a JSON object.
 
-#### 4.6.4. Data Generator Calculated Split Cost Allocation Handling
+#### 4.7.4. Data Generator Calculated Split Cost Allocation Handling
 
 > *Note: This example illustrates an Attribute with an applicability condition preceding the structural anchor requirement.*
 
@@ -910,7 +910,7 @@ When the data generator supports data generator-calculated split cost allocation
 * FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a dimension.
 * FOCUS column values in *allocated charges* MUST include the same keys and values present in the [CostAndUsage.Tags](#datasets.costandusage.tags) in the *origin charge* when the FOCUS column contains tag values.
 
-#### 4.6.5. Column Handling
+#### 4.7.5. Column Handling
 
 > *Note: This example illustrates the special case of an Attribute that targets both datasets and columns, requiring two separate structural anchor requirements.*
 
