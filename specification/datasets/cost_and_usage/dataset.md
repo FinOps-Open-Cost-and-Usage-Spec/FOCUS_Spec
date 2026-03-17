@@ -43,6 +43,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | Conditional   | True         | Decimal   |
 | [Effective Cost](#datasets.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
 | [Host Provider Name](#datasets.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
+| [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                                      | Dimension          | Recommended   | True         | String    |
 | [Invoice ID](#datasets.costandusage.invoiceid)                                                      | Dimension          | Recommended   | True         | String    |
 | [Invoice Issuer Name](#datasets.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
 | [List Cost](#datasets.costandusage.listcost)                                                        | Metric             | Mandatory     | False        | Decimal   |
@@ -124,7 +125,8 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
   * CostAndUsage MUST include [EffectiveCost](#datasets.costandusage.effectivecost).
   * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).
-  * CostAndUsage SHOULD include [InvoiceId](#datasets.costandusage.invoiceid).
+  * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid).
+  * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid).
   * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
   * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).
   * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
