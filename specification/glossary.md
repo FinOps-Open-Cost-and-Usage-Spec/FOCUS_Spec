@@ -226,7 +226,7 @@ A metadata label assigned to a resource to provide information about it or to ca
 
 <a name="glossary:tag-scheme"><b>Tag Scheme</b></a>
 
-A user-defined or service-provider-defined tagging concept which exists independently from other tagging concepts supported by the service provider (e.g. if both tags and labels are supported, each would be considered a tag scheme).
+A user-defined or service-provider-defined tagging concept which exists independently from other tagging concepts supported by the service provider (e.g., if both tags and labels are supported, each would be considered a tag scheme).
 
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
