@@ -24,15 +24,15 @@ Tag Details consists of a valid JSON object which contains objects for one or mo
 When TagDetails is not null, the JsonObjectFormat for TagDetails adheres to the following requirements:
 
 * TagDetails root object MUST contain an object for each tag scheme present in Tags.
-  * TagDetails.{\*} keys MUST align to the tag prefix (up to but not including the forward slash) used to define the tag scheme in Tags.
-  * TagDetails.Default MUST be used to represent the unprefixed user-defined tag scheme in Tags.
-* TagDetails.{TagScheme} MUST contain an object for each tag key used in that tag scheme.
-  * TagDetails.{TagScheme}.{TagKey} MUST contain FOCUS-defined tag properties.
+  * The key for each tag scheme object MUST align to the tag prefix (up to but not including the forward slash) used to define the tag scheme in Tags.
+  * The key for the unprefixed user-defined tag scheme in Tags MUST be "Default".
+* Each tag scheme object MUST contain an object for each tag key used in that tag scheme.
+  * Each tag key object MUST contain FOCUS-defined tag properties.
   * FOCUS-defined tag properties are subject to the additional requirements:
     * Tag property key MUST match the spelling and casing specified for the FOCUS-defined property.
     * Tag property value MUST be of the type specified for that property.
     * Tag properties MUST adhere to additional normative requirements specific to that property.
-  * TagDetails.{TagScheme}.{TagKey} MUST contain an array with the key "AncestorTaggedSources".
+  * Each tag key object MUST contain an object with the key "AncestorTaggedSources".
     * The value of AncestorTaggedSources MUST be null when the tag key from the corresponding tag key object within the tag scheme is not present in any *tag source* other than the *tag source* which results in the *finalized tag*.
     * When the value of AncestorTaggedSources is not null, each object in AncestorTaggedSources MUST have a key denoting the *tag source*.
       * Each tag source object MUST contain FOCUS-defined tag properties.
