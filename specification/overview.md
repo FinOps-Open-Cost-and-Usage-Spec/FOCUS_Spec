@@ -1,6 +1,6 @@
 # Introduction
 
-*This section is non-normative.*
+*This section is informative. It illustrates the application of normative rules defined elsewhere in this specification and does not introduce additional requirements.*
 
 FOCUS is a standards development organization (SDO) formed to establish an open, consensus-driven standard for billing data. In the absence of a broadly adopted standard, infrastructure and service [*service providers*](#glossary:service provider) have relied on proprietary billing schemas and inconsistent terminology, making cost data difficult to normalize and act upon across environments. This lack of conformance has forced FinOps [*practitioners*](#glossary:practitioner) to develop best-effort custom normalization schemes for each provider, in order to perform essential FinOps capabilities such as chargeback, cost allocation, budgeting and forecasting.
 
