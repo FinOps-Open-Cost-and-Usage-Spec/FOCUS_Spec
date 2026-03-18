@@ -761,7 +761,7 @@ When an Attribute is applicable only under specific conditions, the structural a
 When <actor> <applicability-citeria-condition>, [Dataset|Column] conforming to <Attribute ID> attribute MUST adhere to the following requirements:
 ```
 
-#### 4.3. Normative Subjects in Attribute Requirements
+### 4.3. Normative Subjects in Attribute Requirements
 
 Unlike column-level and dataset-level requirements, where the subject is a specific named dataset, column, or column sub-element, Attribute requirements are expressed against normative subjects that represent normative FOCUS entities, i.e., datasets, columns, or column sub-elements.
 
