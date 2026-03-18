@@ -24,22 +24,22 @@ Tag Details consists of a valid JSON object which contains objects for one or mo
 When TagDetails is not null, the JsonObjectFormat for TagDetails adheres to the following requirements:
 
 * TagDetails root object MUST contain an object for each tag scheme present in Tags.
-  * The key for each tag scheme object MUST align to the tag prefix (up to but not including the forward slash) used to define the tag scheme in Tags.
-  * The key for the unprefixed user-defined tag scheme in Tags MUST be "Default".
-* Each tag scheme object MUST contain an object for each tag key applied to any tag source in that tag scheme.
-  * Each tag key object MUST contain FOCUS-defined tag properties.
+  * TagDetails.{\*} keys MUST align to the tag prefix (up to but not including the forward slash) used to define the tag scheme in Tags.
+  * TagDetails.Default MUST be used to represent the unprefixed user-defined tag scheme in Tags.
+* TagDetails.{TagScheme} MUST contain an object for each tag key applied to any tag source in that tag scheme.
+  * TagDetails.{TagScheme}.{TagKey} MUST contain FOCUS-defined tag properties.
   * FOCUS-defined tag properties are subject to the additional requirements:
     * Tag property key MUST match the spelling and casing specified for the FOCUS-defined property.
     * Tag property value MUST be of the type specified for that property.
     * Tag properties MUST adhere to additional normative requirements specific to that property.
-  * Each tag key object MUST contain an object with the key "AncestorTaggedSources".
-    * The value of AncestorTaggedSources MUST be null when the tag key from the corresponding tag key object within the tag scheme is not present in any *tag source* other than the *tag source* which results in the *finalized tag*.
-    * When the value of AncestorTaggedSources is not null, each object in AncestorTaggedSources MUST have a key denoting the *tag source*.
-      * Each tag source object MUST contain FOCUS-defined tag properties.
-    * AncestorTaggedSources SHOULD contain objects for *tag sources* which did not result in the *finalized tag*.
-* Each tag scheme object MUST contain an array with the key "UntaggedSources".
-  * UntaggedSources array MUST contain all *tag sources* for the corresponding tag scheme which are eligible to be tagged for the *charge* but have no tags applied.
-  * The value of UntaggedSources MUST be null when there are no eligible *tag sources* which contain no tags.
+  * TagDetails.{TagScheme}.{TagKey} MUST contain an object with the key "AncestorTaggedSources".
+    * TagDetails.{TagScheme}.{TagKey}.AncestorTaggedSources MUST be null when the tag key from the corresponding tag key object within the tag scheme is not present in any *tag source* other than the *tag source* which results in the *finalized tag*.
+    * When TagDetails.{TagScheme}.{TagKey}.AncestorTaggedSources is not null, each object in AncestorTaggedSources MUST have a key denoting the *tag source*.
+      * When TagDetails.{TagScheme}.{TagKey}.AncestorTaggedSources.{TagSource} MUST contain FOCUS-defined tag properties.
+    * TagDetails.{TagScheme}.{TagKey}.AncestorTaggedSources SHOULD contain objects for *tag sources* which did not result in the *finalized tag*.
+* TagDetails.{TagScheme} MUST contain an array with the key "UntaggedSources".
+  * TagDetails.{TagScheme}.UntaggedSources[\*] MUST contain all *tag sources* for the corresponding tag scheme which are eligible to be tagged for the *charge* but have no tags applied.
+  * TagDetails.{TagScheme}.UntaggedSources[\*] MUST be null when there are no eligible *tag sources* which contain no tags.
 
 ### Content Requirements
 
@@ -51,12 +51,16 @@ The following keys are used for tag properties to facilitate standardized extrac
 
 The "TagValue" property adheres to the following requirements:
 
-* TagValue MUST be present in each tag key object in the Tags object.
-* When TagValue is directly contained in the tag key object, TagValue MUST represent the *finalized tag*.
-* TagValue MUST be present in each tag source object in the AncestorTaggedSources object.
-* TagValue MUST have the value of true (boolean) when the TagScheme does not support values.
+* TagDetails.{TagScheme}.{TagKey}.TagValue MUST be present.
+* TagDetails.{TagScheme}.{TagKey}.TagValue MUST represent the *finalized tag*.
+* TagDetails.{TagScheme}.{TagKey}.TagValue MUST have the value of true (boolean) when the TagScheme does not support values.
 * Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
-* TagValue MAY be null when the data generator supports setting a null value for a key-value pair type tag.
+* TagDetails.{TagScheme}.{TagKey}.TagValue MAY be null when the data generator supports setting a null value for a key-value pair type tag.
+
+* TagDetails.{TagScheme}.{TagKey}.AncestorTaggedSources.{TagSource}.TagValue MUST be present.
+* TagDetails.{TagScheme}.{TagKey}.AncestorTaggedSources.{TagSource}.TagValue MUST have the value of true (boolean) when the TagScheme does not support values.
+* Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
+* TagDetails.{TagScheme}.{TagKey}.AncestorTaggedSources.{TagSource}.TagValue MAY be null when the data generator supports setting a null value for a key-value pair type tag.
 
 <b>TagSource</b>
 
@@ -64,9 +68,8 @@ The "TagValue" property adheres to the following requirements:
 
 The "TagSource" property adheres to the following requirements:
 
-* TagSource MUST be present in each tag key object in the Tags object.
-* TagSource MUST NOT be present in each tag source object in the AncestorTaggedSources object.
-* TagSource MUST contain the type of *tag source* where the tag key is present.
+* TagDetails.{TagScheme}.{TagKey}.TagSource MUST be present in each tag key object in the Tags object.
+* TagDetails.{TagScheme}.{TagKey}.TagSource MUST contain the type of *tag source* where the tag key is present.
 
 <b>TagSourceId</b>
 
@@ -74,9 +77,11 @@ The "TagSource" property adheres to the following requirements:
 
 The "TagSourceId" property adheres to the following requirements:
 
-* TagSourceId MUST be present in each tag key object in the Tags object.
-* TagSourceId MUST be present in each tag source object in the AncestorTaggedSources object.
-* TagSourceId MUST contain the identifier of the TagSource.
+* TagDetails.{TagScheme}.{TagKey}.TagSourceId MUST be present.
+* TagDetails.{TagScheme}.{TagKey}.TagSourceId MUST contain the identifier of the TagSource.
+
+* TagDetails.{TagScheme}.{TagKey}.AncestorTaggedSources.{TagSource}.TagSourceId MUST be present
+* TagDetails.{TagScheme}.{TagKey}.AncestorTaggedSources.{TagSource}.TagSourceId MUST contain the identifier of the TagSource.
 
 ## Overview
 
