@@ -15,11 +15,11 @@ The TagDetails column adheres to the following requirements:
   * TagDetails MUST NOT be null unless all of the following are true:
     * Tags column is null.
     * Tags are not present in any other *tag sources*.
-    * No *tag sources* are supported for any user-defined tag scheme.
+    * No *tag sources* are supported for any user-defined [*tag scheme*](glossary:tag-scheme).
 
 ### Object Schema Requirements
 
-Tag Details consists of a valid JSON object which contains objects for one or more Tags schemes which each contain an object describing the tags as well as an array of eligible *tag sources* which do not contain tags.
+Tag Details consists of a valid JSON object which contains objects for one or more *tag schemes* which each contain an object describing the tags as well as an array of eligible *tag sources* which do not contain tags.
 
 When TagDetails is not null, the JsonObjectFormat for TagDetails adheres to the following requirements:
 
@@ -38,8 +38,8 @@ When TagDetails is not null, the JsonObjectFormat for TagDetails adheres to the 
       * Each tag source object MUST contain FOCUS-defined tag properties.
     * AncestorTaggedSources SHOULD contain objects for *tag sources* which did not result in the *finalized tag*.
 * Each tag scheme object MUST contain an array with the key "UntaggedSources".
-  * Untagged Sources array MUST contain all *tag sources* for the corresponding tag scheme which are eligible to be tagged for the *charge*.
-  * The value of Untagged Sources MUST be null when there are no eligible *tag sources* which contain no tags.
+  * UntaggedSources array MUST contain all *tag sources* for the corresponding tag scheme which are eligible to be tagged for the *charge* but have no tags applied.
+  * The value of UntaggedSources MUST be null when there are no eligible *tag sources* which contain no tags.
 
 ### Content Requirements
 
@@ -56,7 +56,7 @@ The "TagValue" property adheres to the following requirements:
 * TagValue MUST be present in each tag source object in the AncestorTaggedSources object.
 * TagValue MUST have the value of true (boolean) when the TagScheme does not support values.
 * Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
-* TagValue MAY be null when the the data generator supports setting a null value for a key-value pair type tag.
+* TagValue MAY be null when the data generator supports setting a null value for a key-value pair type tag.
 
 <b>TagSource</b>
 
@@ -92,7 +92,7 @@ The object contains an object for each tag scheme present in the Tags column.
 | UntaggedSources | _tag scheme object_ | Array | TRUE | A list of sources which support this tag scheme (i.e. are taggable) that had no tags applied. |
 | _TagKey_ | Tags | Object | TRUE | An object containing the properties of the *finalized tag* as well as other *tag sources* where this key was present. |
 | AncestorTaggedSources | _TagKey_ | Object | TRUE | An object containing all *tag sources* where the corresponding tag key was present which did not result in the *finalized tag*. |
-| _AncestorTaggedSource_ | AncestorTaggedSources | Object | Conditional | An object containing the the properties of the tag present in the *tag source*. |
+| _AncestorTaggedSource_ | AncestorTaggedSources | Object | Conditional | An object containing the properties of the tag present in the *tag source*. |
 
 ### Object Entries
 
@@ -102,7 +102,7 @@ The tag key object and tag source objects contain the following properties:
 | ----- | ---- | ---------- | ----------- |
 | TagSource | String | Conditional | The type of *tag source* where the tag key is present. |
 | TagSourceId | String | TRUE | The identifier of the *tag source* where the tag key is present. |
-| TagValue | String or Boolean | TRUE |  The value associated with the tag key. |
+| TagValue | String, Boolean, or Number | TRUE |  The value associated with the tag key. |
 
 ### Example
 
@@ -354,7 +354,7 @@ The corresponding Tags column would either be null or contain an empty object:
 {}
 ```
 
-### Tags from multiple sources and schemas with different value types
+### Tags from multiple sources and schemes with different value types
 
 Details:
 * 3 tag schemes are used:
