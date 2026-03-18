@@ -289,7 +289,6 @@ All headers appearing after the !TOC directive automatically receive an HTML anc
 - Other special characters such as `/`, `:`, `%`, `&`, `@` are preserved.
 - Dots (.) are inserted between header levels to represent the full hierarchy of document sections.
 - Headers marked with `<!--SkipTOC-->` will appear in the document but will not be included in the Table of Contents, and no anchor will be created.
-- Duplicate header names are automatically de-duplicated for anchor generation. For example: the first use of header `Column A` results in `#columna`, whereas the second use results in `#columna-1`.
 
 ### Header Conventions
 
