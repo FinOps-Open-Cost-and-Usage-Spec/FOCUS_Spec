@@ -299,7 +299,7 @@ All headers appearing after the !TOC directive automatically receive an HTML anc
 
 ### Header Conventions
 
-FOCUS Specification relies on Markdown headers to define document structure, section numbering, and navigation. Consistent header usage is required to ensure predictable Table of Contents (TOC) generation and stable internal links.
+The FOCUS Specification relies on Markdown headers to define document structure, section numbering, and navigation. Consistent header usage is required to ensure predictable Table of Contents (TOC) generation and stable internal links.
 
 #### File-Level Header Structure
 
