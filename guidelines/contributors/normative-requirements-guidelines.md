@@ -707,7 +707,7 @@ BilledCost adheres to the following requirements:
 
 #### 3.8.3. **CommitmentDiscountQuantity**
 
-CommitmentDiscountQuantity adheres to the following requirements:
+CommitmentDiscountQuantity MUST adhere to the following requirements:
 
 * CommitmentDiscountQuantity MUST be of type Decimal.
 * CommitmentDiscountQuantity MUST conform to [NumericFormat](#numericformat) requirements.
