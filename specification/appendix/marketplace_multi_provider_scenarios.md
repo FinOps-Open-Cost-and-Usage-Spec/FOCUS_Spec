@@ -4,144 +4,107 @@ This section is non-normative.
 
 ## Overview
 
-In multi-provider marketplace scenarios, billing data may originate from different data generators. For example, a Cloud Service Provider (CSP) might handle the purchase transaction, while a Software-as-a-Service (SaaS) provider generates usage records. This guidance clarifies how FOCUS columns, particularly EffectiveCost, should be populated in such cases.
+In marketplace scenarios, billing data may originate from more than one provider. A Cloud Service Provider (CSP) typically handles the purchase and invoicing of a third-party software subscription, while the Software-as-a-Service (SaaS) provider independently generates usage records. Because these two data streams describe different aspects of the same commercial relationship, each provider populates a distinct subset of FOCUS columns.
 
-This guidance addresses data accuracy concerns in multi-provider marketplace scenarios, specifically the risk of providers populating inaccurate EffectiveCost values when lacking actual usage information. It provides scenario-based guidance for marketplace purchases.
+This guidance clarifies how `EffectiveCost`, `BilledCost`, and related entity identification columns should be populated by each participating entity, and how practitioners can correlate records across providers in a unified FOCUS dataset.
+
 ## Provider Responsibility Matrix
 
-| Scenario | Purchase Provider | Usage Provider | EffectiveCost Population |
-|----------|-------------------|----------------|--------------------------|
-| CSP Marketplace (CSP as invoice issuer) | CSP | CSP | CSP populates based on actual usage |
-| Third-party SaaS via Marketplace (SaaS as usage provider) | CSP | SaaS | SaaS populates based on actual usage; CSP does not estimate |
-| Cross-provider | CSP | SaaS | Only provider with actual usage data populates EffectiveCost |
+The table below summarizes which provider is responsible for populating key FOCUS columns in common marketplace scenarios.
+
+| Scenario | Purchase Provider | Usage Provider | BilledCost | EffectiveCost |
+|---|---|---|---|---|
+| CSP Marketplace — CSP as invoice issuer | CSP | CSP | CSP populates with invoiced amount | CSP populates based on actual usage |
+| Third-party SaaS via CSP Marketplace | CSP | SaaS Provider | CSP populates with contracted amount; SaaS Provider sets to 0 | SaaS Provider populates based on actual usage; CSP sets to 0 |
+| Cross-provider | CSP | SaaS Provider | Only the invoice-issuing provider populates a non-zero BilledCost | Only the provider with actual usage data populates a non-zero EffectiveCost |
 
 ## Key Principles
 
-### CSP Responsibilities
-- **Purchase Record Without Usage Details**: When a CSP handles the purchase but not the usage, EffectiveCost on the purchase row is 0. Per the EffectiveCost column definition, EffectiveCost is 0 when ChargeCategory is "Purchase" and the purchase covers future eligible charges.
+When a CSP processes a marketplace purchase but does not have visibility into the SaaS provider's consumption metrics, it sets `EffectiveCost` to 0 on the purchase row. Per the `EffectiveCost` column definition, `EffectiveCost` is 0 when `ChargeCategory` is `Purchase` and the charge covers future eligible usage.
 
-### SaaS Provider Responsibilities
-- **Usage Details Without Purchase Record**: EffectiveCost reflects actual usage.
-  - Rationale: SaaS providers have direct access to consumption metrics.
-  - Usage: Populate EffectiveCost based on service-specific data like API calls or data ingested.
+The SaaS provider, which has direct access to consumption data, sets `BilledCost` to 0 on its usage rows. Per the `BilledCost` column definition, `BilledCost` is 0 for charges where payment is received by a third party, such as marketplace transactions billed through a CSP. The SaaS provider populates `EffectiveCost` with the actual usage amount in its own billing records.
 
-### Aggregation Behavior
-- **Cross-Provider Aggregations Will NOT Match**: This is expected behavior, not an error.
-  - Rationale: Cross-provider aggregations may not match when purchase and usage data come from different providers with different cost calculation methods.
-  - Usage: Practitioners should account for this in reporting and analysis.
+Cross-provider totals for `EffectiveCost` and `BilledCost` will not reconcile to a single figure. This is expected behavior. The CSP records the contracted purchase amount in `BilledCost`; the SaaS provider records actual consumption in `EffectiveCost`. Practitioners should treat these as complementary datasets rather than summing across them directly.
 
-### General Rule
-- **EffectiveCost Population**: Only the provider with actual usage data populates EffectiveCost with a non-zero value. The purchase provider sets EffectiveCost to 0.
+## Entity Identification
+
+The scenario covered in this appendix maps to entity identification scenario 3.3.x in the Participating Entity Identification appendix, where a SaaS provider does not expose its hosting infrastructure through billing data. Because the customer's payment flows to the SaaS provider through the CSP, the CSP is the `InvoiceIssuerName` on both the purchase record and the SaaS usage record. The following entity columns apply to all three CSP examples below.
+
+| Column | CSP Purchase Row | SaaS Usage Row |
+|---|---|---|
+| `ServiceProviderName` | Marketplace seller (e.g., Datadog) | Marketplace seller (e.g., Datadog) |
+| `InvoiceIssuerName` | CSP (e.g., Amazon Web Services) | CSP (e.g., Amazon Web Services) |
+| `HostProviderName` | Marketplace seller (e.g., Datadog) | Marketplace seller (e.g., Datadog) |
+
+`ServiceProviderName` identifies the seller of the service rather than the marketplace operator. The CSP's role as marketplace operator is reflected in `ServiceName` (e.g., "AWS Marketplace"), not in `ServiceProviderName`.
 
 ## Examples
 
-### AWS Marketplace Example
+The following examples illustrate how FOCUS columns are populated across AWS Marketplace, Azure Marketplace, and Google Cloud Marketplace when a customer procures a third-party SaaS subscription. Each scenario shows both the purchase record generated by the CSP and the usage record generated by the SaaS provider.
 
-In [AWS Marketplace](https://aws.amazon.com/marketplace/), customers can browse and purchase third-party software solutions directly integrated with AWS services. AWS facilitates the entire purchase process, from discovery to invoicing, and consolidates charges into the customer's AWS bill. However, for SaaS offerings, AWS does not track or report on the actual usage of the software; that responsibility falls to the SaaS provider (e.g., Datadog, Grafana, New Relic).
+Full example datasets are available in the linked CSV files.
 
-AWS Marketplace supports various pricing models, including upfront payments, hourly rates, and annual contracts, but usage data is always sourced from the SaaS vendor. This separation ensures AWS focuses on infrastructure billing, while SaaS providers handle service-specific metrics.
+### AWS Marketplace
 
-#### Scenario Description
-A customer purchases monitoring subscriptions (Datadog or Grafana) through AWS Marketplace. AWS handles the billing and invoicing, appearing as a line item in the AWS Cost and Usage Report (CUR). The SaaS providers (Datadog/Grafana) provide the actual usage data separately, reflecting metrics like log ingestion, API calls, or active series.
+A customer purchases an annual Datadog Pro subscription through AWS Marketplace. AWS records the purchase transaction in its billing export and sets `EffectiveCost` to 0, because it does not have access to Datadog's consumption data. Datadog records actual usage in its own billing export, sets `BilledCost` to 0, and populates `EffectiveCost` with the usage amount for the period. Both records carry the same `InvoiceIssuerName` (Amazon Web Services) and `InvoiceId`, and the shared `ResourceId` value enables practitioners to correlate the two records.
 
-#### FOCUS Dataset Population
-- **BilledCost**: Populated by AWS with the total marketplace purchase amount (e.g., $10,000.00), including any fees or taxes.
-- **EffectiveCost**: 0 in the AWS dataset (per the EffectiveCost column definition, EffectiveCost is 0 when ChargeCategory is "Purchase" and the purchase covers future usage). Populated by Datadog in their separate dataset with actual usage-based costs.
-- **ResourceId**: Unique marketplace identifier (e.g., marketplace-123) for correlation.
-- **ChargeCategory**: "Purchase" for the marketplace transaction.
-- **ServiceName**: "AWS Marketplace" for the billing entry.
-- **InvoiceIssuerName**: "AWS Marketplace" indicating AWS as the invoice issuer.
+**AWS Marketplace — purchase record** ([full dataset](../data/marketplace_multiprovider_examples/marketplace_m1_aws.csv))
 
-Detailed considerations include:
-- AWS (Purchase Provider): Handles the marketplace transaction, populates BilledCost in AWS Cost and Usage Reports (CUR), and includes any AWS marketplace fees or taxes. EffectiveCost is not populated, as AWS lacks access to SaaS usage details.
-- SaaS Provider (e.g., Datadog): Delivers usage reports through their own dashboards or APIs, populating EffectiveCost with actual consumption data like ingested logs, API requests, or active users.
-- Integration Features: AWS Marketplace integrates with AWS Organizations, Service Catalog, and Cost Allocation Tags for governance. Correlation can use AWS Resource Tags or Account IDs shared between providers.
-- Billing Mechanics: Charges appear in the AWS invoice under "Marketplace" line items, with usage potentially reported separately by the SaaS provider.
+| BillingAccountId | InvoiceIssuerName | ServiceProviderName | HostProviderName | ChargeCategory | ChargeFrequency | BilledCost | EffectiveCost | ServiceName | ResourceId | InvoiceId |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 123456789012 | Amazon Web Services | Datadog | Datadog | Purchase | One-Time | 10000 | 0 | AWS Marketplace | mp-sub-dd-pro-2025-04 | INV-AWS-2025-04-001 |
 
-For comprehensive guidance, see [AWS Marketplace billing and invoicing](https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-paying-for-products.html) and [AWS Cost and Usage Reports](https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html). For FOCUS dataset examples, see the [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp), including CSV samples like [AWS Purchase Data](/specification/data/marketplace_multiprovider_examples/marketplace_m1_aws.csv).
+**Datadog — usage record** ([full dataset](../data/marketplace_multiprovider_examples/marketplace_m1_datadog.csv))
 
-### Azure Marketplace Example
+| BillingAccountId | InvoiceIssuerName | ServiceProviderName | HostProviderName | ChargeCategory | ChargeFrequency | BilledCost | EffectiveCost | ServiceName | ResourceId | InvoiceId |
+|---|---|---|---|---|---|---|---|---|---|---|
+| dd-acct-9876543210 | Amazon Web Services | Datadog | Datadog | Usage | Usage-Based | 0 | 8245 | Datadog | mp-sub-dd-pro-2025-04 | INV-AWS-2025-04-001 |
 
-In [Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/), customers can procure third-party software solutions directly through the Azure portal. Azure acts as the intermediary for purchases, handling transactions, invoicing, and payment processing. However, the actual SaaS providers (e.g., Datadog, Grafana) are responsible for delivering usage metrics and performance data.
+The contracted purchase amount recorded by AWS ($10,000) differs from the usage-based effective cost recorded by Datadog ($8,245) because the two figures represent different accounting perspectives: cash outlay at purchase versus actual consumption during the billing period. This difference is expected and does not indicate an error.
 
-Azure's marketplace billing integrates with Azure Cost Management, but usage details are sourced from the SaaS vendor's systems. This separation ensures that Azure focuses on infrastructure and billing consolidation, while SaaS providers maintain control over their service-specific data.
+### Azure Marketplace
 
-#### Scenario Description
-A customer subscribes to Datadog through Azure Marketplace. Azure processes the purchase and includes it in the Azure billing export. Datadog separately reports usage metrics, such as monitored hosts or ingested data volumes.
+A customer purchases an annual Grafana Cloud Pro subscription through Azure Marketplace. Microsoft records the purchase transaction and sets `EffectiveCost` to 0. Grafana Labs records actual consumption in its own billing export, sets `BilledCost` to 0, and populates `EffectiveCost` with the usage amount. Both records carry the same `InvoiceIssuerName` (Microsoft) and `InvoiceId`, and the shared `ResourceId` value enables correlation.
 
-#### FOCUS Dataset Population
-- **BilledCost**: Populated by Azure with the marketplace purchase cost, reflecting the invoiced amount.
-- **EffectiveCost**: Not populated by Azure (empty in Azure dataset); populated by Datadog with usage-based effective costs.
-- **ResourceId**: Azure-specific resource identifier for the marketplace item.
-- **ChargeCategory**: "Purchase" for the transaction.
-- **ServiceName**: "Azure Marketplace" in billing exports.
-- **InvoiceIssuerName**: "Microsoft" or "Azure" as the invoice issuer.
+**Azure Marketplace — purchase record** ([full dataset](../data/marketplace_multiprovider_examples/marketplace_m1_azure.csv))
 
-Key aspects include:
-- Azure (Purchase Provider): Manages the marketplace transaction, populates BilledCost in Azure billing exports, and may include marketplace fees. EffectiveCost is not populated as Azure lacks granular usage insights.
-- SaaS Provider (e.g., Datadog): Provides detailed usage reports via their own APIs or exports, populating EffectiveCost based on actual consumption metrics like API calls, data ingested, or user activity.
-- Integration Points: Azure Resource Manager (ARM) templates often facilitate deployment, and Azure Monitor can correlate with SaaS telemetry, but FOCUS datasets require manual correlation using fields like SubscriptionId or ResourceGroup.
+| BillingAccountId | InvoiceIssuerName | ServiceProviderName | HostProviderName | ChargeCategory | ChargeFrequency | BilledCost | EffectiveCost | ServiceName | ResourceId | InvoiceId |
+|---|---|---|---|---|---|---|---|---|---|---|
+| az-billing-8f2a1234 | Microsoft | Grafana Labs | Grafana Labs | Purchase | One-Time | 5000 | 0 | Azure Marketplace | mp-sub-gf-pro-2025-04 | INV-AZ-2025-04-001 |
 
-For more on Azure Marketplace billing, see [Azure Marketplace purchasing](https://learn.microsoft.com/en-us/marketplace/azure-purchasing-invoicing) and [Azure Cost Management](https://learn.microsoft.com/en-us/azure/cost-management-billing/). For FOCUS dataset examples illustrating multi-provider scenarios, see the [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp), including CSV samples like [Azure Purchase Data](/specification/data/marketplace_multiprovider_examples/marketplace_m1_azure.csv).
+**Grafana Labs — usage record** ([full dataset](../data/marketplace_multiprovider_examples/marketplace_m1_grafana.csv))
 
-### GCP Marketplace Example
+| BillingAccountId | InvoiceIssuerName | ServiceProviderName | HostProviderName | ChargeCategory | ChargeFrequency | BilledCost | EffectiveCost | ServiceName | ResourceId | InvoiceId |
+|---|---|---|---|---|---|---|---|---|---|---|
+| gf-acct-cloudtechdemo | Microsoft | Grafana Labs | Grafana Labs | Usage | Usage-Based | 0 | 4120 | Grafana Cloud | mp-sub-gf-pro-2025-04 | INV-AZ-2025-04-001 |
 
-[Google Cloud Marketplace](https://cloud.google.com/marketplace/docs/overview) allows customers to discover, purchase, and deploy third-party software on Google Cloud. GCP handles the commercial aspects, including pricing, invoicing, and billing integration with Google Cloud Billing. SaaS providers (e.g., Datadog, Grafana) manage the operational delivery, including usage tracking and reporting.
+### Google Cloud Marketplace
 
-GCP's marketplace emphasizes seamless integration with Google Cloud services, but usage data remains with the SaaS provider. This model supports complex deployments where GCP provides the underlying infrastructure, and SaaS adds value through specialized tools.
+A customer purchases an annual Datadog Pro subscription through Google Cloud Marketplace. Google records the purchase transaction and sets `EffectiveCost` to 0. Datadog records actual consumption in its own billing export, sets `BilledCost` to 0, and populates `EffectiveCost` with the usage amount. Both records carry the same `InvoiceIssuerName` (Google) and `InvoiceId`, and the shared `ResourceId` value enables correlation.
 
-#### Scenario Description
-A customer deploys Datadog via Google Cloud Marketplace. GCP bills for the marketplace purchase in Cloud Billing exports. Datadog reports actual usage, such as data processing volumes or API usage.
+**Google Cloud Marketplace — purchase record** ([full dataset](../data/marketplace_multiprovider_examples/marketplace_m1_gcp.csv))
 
-#### FOCUS Dataset Population
-- **BilledCost**: Populated by GCP with the marketplace cost, including surcharges.
-- **EffectiveCost**: Not populated by GCP (empty in GCP dataset); populated by Datadog with effective usage costs.
-- **ResourceId**: GCP project or resource identifier.
-- **ChargeCategory**: "Purchase" for the transaction.
-- **ServiceName**: "Google Cloud Marketplace" in billing.
-- **InvoiceIssuerName**: "Google" as the issuer.
+| BillingAccountId | InvoiceIssuerName | ServiceProviderName | HostProviderName | ChargeCategory | ChargeFrequency | BilledCost | EffectiveCost | ServiceName | ResourceId | InvoiceId |
+|---|---|---|---|---|---|---|---|---|---|---|
+| gcp-billing-proj-001 | Google | Datadog | Datadog | Purchase | One-Time | 10000 | 0 | Google Cloud Marketplace | mp-sub-dd-pro-gcp-2025-04 | INV-GCP-2025-04-001 |
 
-Detailed considerations:
-- GCP (Purchase Provider): Records the marketplace purchase in Cloud Billing exports, populating BilledCost with any applicable marketplace surcharges or discounts. EffectiveCost is not included, as GCP does not monitor SaaS-specific usage.
-- SaaS Provider (e.g., Datadog, Grafana): Supplies usage data through their platforms, populating EffectiveCost with metrics tailored to their service (e.g., log volume, query counts). Billing may be separate or integrated via GCP's billing APIs.
-- Advanced Features: GCP Marketplace supports private offers and custom pricing, which can complicate FOCUS population. Correlation can leverage Google Cloud Project IDs or BigQuery exports for unified views.
-- Documentation: Refer to [GCP Marketplace billing](https://cloud.google.com/marketplace/docs/billing) and [Cloud Billing reports](https://cloud.google.com/billing/docs/how-to/reports) for integration details. For detailed FOCUS dataset examples, see the [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp), including CSV samples like [GCP Purchase Data](/specification/data/marketplace_multiprovider_examples/marketplace_m1_gcp.csv).
+**Datadog — usage record** ([full dataset](../data/marketplace_multiprovider_examples/marketplace_m1_datadog.csv))
 
-These examples highlight provider-specific nuances in marketplace transactions, ensuring accurate FOCUS dataset handling.
+| BillingAccountId | InvoiceIssuerName | ServiceProviderName | HostProviderName | ChargeCategory | ChargeFrequency | BilledCost | EffectiveCost | ServiceName | ResourceId | InvoiceId |
+|---|---|---|---|---|---|---|---|---|---|---|
+| dd-acct-9876543210 | Google | Datadog | Datadog | Usage | Usage-Based | 0 | 8245 | Datadog | mp-sub-dd-pro-gcp-2025-04 | INV-GCP-2025-04-001 |
 
-For detailed FOCUS dataset examples illustrating these scenarios, see the [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp).
+## Correlating Records Across Providers
 
-## Correlation Approach for Practitioners
+Practitioners can correlate purchase records from a CSP with usage records from a SaaS provider using identifiers that both parties populate for the same subscription:
 
-Practitioners can correlate data using common identifiers such as:
+- `ResourceId`: A marketplace subscription identifier populated by both the CSP billing export and the SaaS provider's usage records. Both parties must use the same value for correlation to succeed.
+- `InvoiceId`: Because payment flows to the SaaS provider through the CSP, both the CSP purchase record and the SaaS usage record carry the CSP's `InvoiceId`. This can be used together with `ResourceId` to group all records associated with a given subscription and billing period.
 
-- **ResourceId**: Links resources across providers (e.g., AWS instance ID or Azure resource ID).
-- **ChargeId**: Unique identifier for charges, useful for matching line items.
-- **InvoiceId** (where available): Ties back to billing documents.
+Correlation may not always be fully automated. Additional metadata — such as account identifiers exchanged during subscription onboarding, or tags applied at purchase time — may be needed to reliably link records across datasets.
 
-For examples, refer to the CSV datasets in [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp), where ResourceId and ChargeId are populated to demonstrate correlation in multi-provider scenarios.
+## Cross-Provider Aggregation
 
-Note: Correlation may require additional metadata or external systems. For more details on FOCUS columns, see the [FOCUS Column Library](https://focus.finops.org/focus-columns/).
+When combining FOCUS datasets from a CSP and a SaaS provider, `BilledCost` and `EffectiveCost` totals will differ across sources. This is expected. The CSP records the full contracted purchase amount as `BilledCost`; the SaaS provider records actual consumption as `EffectiveCost`. Summing across both datasets without accounting for this structural difference will produce misleading totals.
 
-## Cross-Provider Aggregation Mismatch
-
-When aggregating data from multiple providers, totals may not match due to different data sources. This is expected behavior, not an error, as confirmed by provider documentation (e.g., [AWS Marketplace Billing](https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-paying-for-products.html), [Azure Marketplace](https://azure.microsoft.com/en-us/marketplace/), [GCP Marketplace](https://cloud.google.com/marketplace/docs/overview)).
-
-### Addressing Aggregation Mismatches
-
-Practitioners can address mismatches through the following approaches:
-
-1. **Correlation and Matching**: Use shared identifiers (e.g., ResourceId, ChargeId) to link purchase records from CSPs with usage records from SaaS providers. This may require custom ETL processes or third-party tools.
-2. **Separate Reporting**: Report CSP and SaaS data separately, with clear labels indicating the source, to avoid misleading aggregations.
-3. **Reconciliation Processes**: Implement manual or automated reconciliation workflows to account for discrepancies, such as comparing invoice totals against usage-based calculations.
-4. **Provider Communication**: Contact providers for additional metadata or clarification on how their billing data relates.
-5. **Documentation and Disclaimers**: Include disclaimers in reports noting that cross-provider totals may not match due to data source differences.
-
-This guidance is supported by provider practices where CSPs handle transactions but SaaS providers deliver usage data, leading to potential mismatches in unified views.
-
-## Validation
-
-This guidance references implementations from Datadog, Grafana, and Neos. The CSV examples in the [Marketplace Multi-Provider Examples](/specification/appendix/marketplace_multiprovider_examples/marketplace_multiprovider_examples.mdpp) should be validated against the FOCUS specification using the [FOCUS Validator](https://github.com/finopsfoundation/focus_validator) before merging.
-
-For the full FOCUS specification and column definitions, see [focus.finops.org](https://focus.finops.org).
-
+Practitioners should report CSP and SaaS cost data in separate reporting dimensions, or implement reconciliation logic that accounts for the relationship between contracted purchase cost and usage-based effective cost before combining figures in a unified view.

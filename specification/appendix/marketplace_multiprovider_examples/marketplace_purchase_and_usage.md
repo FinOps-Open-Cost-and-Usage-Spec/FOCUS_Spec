@@ -1,46 +1,32 @@
-# Marketplace Purchase and Usage Examples
+# Marketplace Purchase and Usage Example
 
-Many marketplace transactions involve multiple providers, where Cloud Service Providers (CSPs) handle purchases and invoicing, while Software-as-a-Service (SaaS) providers supply usage data. This leads to scenarios where FOCUS datasets from different providers must be correlated and combined for accurate cost analysis.
+This section is non-normative.
 
-The scenarios described below illustrate how a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) should be populated in marketplace multi-provider scenarios. These examples highlight the separation of responsibilities and provide guidance on handling data from disparate sources.
+## Scenario
 
-## Scenario M1: CSP Marketplace Purchase with SaaS Usage (Upfront Purchase Model)
+A customer purchases an annual Datadog Pro subscription through AWS Marketplace. This generates two separate FOCUS billing records: a purchase record from AWS and a usage record from Datadog. This example illustrates how `BilledCost` and `EffectiveCost` are populated by each provider, and how the two records can be correlated using `ResourceId` and `InvoiceId`.
 
-CloudTech Solutions decides to purchase a SaaS monitoring tool (Datadog) through AWS Marketplace for a 12-month term starting April 1st, 2025. AWS Marketplace facilitates the transaction, consolidates billing, and issues the invoice for $10,000. However, AWS does not track or provide detailed usage metrics for Datadog's service. Datadog separately provides usage-based reports to CloudTech Solutions, reflecting actual consumption.
+## Purchase Provider (AWS Marketplace)
 
-In this upfront purchase model, the entire cost is billed at the start, but usage is realized over time. Practitioners need to correlate AWS's purchase record with Datadog's usage data to understand true cost allocation.
+AWS records the marketplace transaction as a purchase charge. Because AWS does not have access to Datadog's consumption data, `EffectiveCost` is 0 on this row. Per the `EffectiveCost` column definition, `EffectiveCost` is 0 when `ChargeCategory` is `Purchase` and the purchase is intended to cover future eligible charges. `BilledCost` reflects the full contracted amount invoiced to the customer.
 
-- **Purchase Provider (AWS):** Records the marketplace transaction as a one-time charge, populating BilledCost and related purchase fields.
-- **Usage Provider (Datadog):** Records ongoing usage, populating EffectiveCost and consumption metrics.
+## Usage Provider (Datadog)
 
-[**CSV Example - AWS Purchase**](/specification/data/marketplace_multiprovider_examples/marketplace_m1_aws.csv)  
-[**CSV Example - Datadog Usage**](/specification/data/marketplace_multiprovider_examples/marketplace_m1_datadog.csv)  
-[**CSV Example - Grafana Usage**](/specification/data/marketplace_multiprovider_examples/marketplace_m1_grafana.csv)
+Datadog records the actual usage consumed against the subscription. Because the customer's payment flows through AWS Marketplace rather than directly to Datadog, `BilledCost` is 0 on this row. Per the `BilledCost` column definition, `BilledCost` is 0 for charges where payment is received by a third party. `EffectiveCost` reflects actual consumption for the billing period. Because the invoice is issued by AWS, `InvoiceIssuerName` is "Amazon Web Services" on the Datadog record, and `InvoiceId` matches the AWS invoice.
+
+## Dataset Notes
 
 Note the following details in the example datasets:
 
-* **Charge Period and Billing Period Alignment:** Both records share the same ChargePeriodStart (April 1st, 2025) and ChargePeriodEnd (April 1st, 2026), representing the service term. The BillingPeriodStart/End (April 2025) reflects when the purchase was invoiced. This alignment enables time-based correlation.
-* **BilledCost Population:** In the AWS dataset, BilledCost is 10000, representing the full invoiced amount. ListCost and ContractedCost are also 10000, as there are no discounts. EffectiveCost is 0 because the purchase covers future usage charges (per the EffectiveCost column definition).
-* **EffectiveCost Population:** In the Datadog dataset, EffectiveCost is 10000, reflecting actual usage-based cost (1000 GB ingested). BilledCost is 0 because payments are received by a third party (per the BilledCost column definition). The Grafana CSV follows the same pattern. This separation prevents double-counting in aggregated views.
-* **ChargeCategory and ChargeClass:** ChargeCategory is "Purchase" for the marketplace transaction and "Usage" for consumption-based charges. ChargeClass is null for all rows because none represent corrections to previously invoiced billing periods.
-* **Consumption Metrics:** Datadog populates ConsumedQuantity (1000) and ConsumedUnit (GB), along with PricingQuantity (1000) and PricingUnit (GB), showing how usage drives the cost. Grafana uses Active Series as the consumption metric, reflecting their billing model based on time series data. AWS leaves these empty as it doesn't track usage.
-* **Provider Identification:** Per the Participating Entity Identification appendix (rows 3.3.1/3.3.2), ServiceProviderName is "Datadog" (the marketplace seller) for both purchase and usage records. InvoiceIssuerName is "AWS" (the CSP) for both records, as the payable invoice is issued through the marketplace. HostProviderName is "Datadog" since the hosting infrastructure is not visible to the customer. The Grafana CSV follows the same pattern.
-* **Correlation Fields:** ResourceId ("marketplace-123" in AWS, "resource-456" in Datadog, "resource-789" in Grafana) serves as a key identifier. In practice, providers might use shared marketplace transaction IDs (if available) or external mapping.
-* **Practitioner Implications:** When combining these datasets, sum BilledCost from AWS and EffectiveCost from Datadog/Grafana for total spend. Discrepancies may arise if usage exceeds the purchased amount or if there are adjustments.
+- **Charge Period and Billing Period Alignment:** The AWS purchase record has `ChargePeriodStart` of April 1, 2025 and `ChargePeriodEnd` of April 1, 2026, representing the full annual subscription term. `BillingPeriodStart` and `BillingPeriodEnd` cover April 2025, reflecting when the purchase was invoiced. The Datadog usage record has a `ChargePeriodEnd` of May 1, 2025, reflecting a single month of consumption within the subscription term. This distinction enables time-based correlation between the two records.
+- **ResourceId for Correlation:** Both records carry the same `ResourceId` value (`mp-sub-dd-pro-2025-04`). This shared identifier is the primary mechanism for linking the CSP purchase record to the SaaS usage record. Practitioners should ensure this value is consistently applied at subscription onboarding time.
+- **Shared InvoiceIssuerName and InvoiceId:** Because the customer's payment flows through AWS, both records carry `InvoiceIssuerName` = "Amazon Web Services" and the same `InvoiceId`. This reflects the FOCUS entity identification pattern for marketplace scenarios where the SaaS provider does not issue a separate invoice to the customer.
+- **BilledCost and EffectiveCost are not additive across providers:** The AWS `BilledCost` of $10,000 represents a cash-basis recording of the annual contract. The Datadog `EffectiveCost` of $8,245 represents an accrual-basis recording of actual April consumption. These figures describe different accounting perspectives on the same subscription and should not be summed in a unified view without additional reconciliation logic.
 
-## Scenario M2: Cross-Provider Aggregation Mismatch (Combined Reporting Challenge)
+## Example Data
 
-Building on Scenario M1, CloudTech Solutions attempts to create a unified cost report by aggregating data from AWS Marketplace and Datadog usage data. While the totals match in this simple example, real-world scenarios often show mismatches due to timing differences, partial data, or provider-specific calculations.
+See the full datasets:
 
-The combined dataset demonstrates how records from multiple providers appear together, emphasizing the need for careful correlation to avoid erroneous aggregations.
-
-[**CSV Example - Combined View**](/specification/data/marketplace_multiprovider_examples/marketplace_m2_combined.csv)
-
-Note the following details in the example dataset:
-
-* **Record Separation:** The dataset includes two distinct records—one from AWS (BillingAccountId: 12345) and one from Grafana (BillingAccountId: 67890)—reflecting separate provider accounts. BillingAccountName ("CloudTechDemo") is consistent for organizational correlation.
-* **Cost Fields:** BilledCost ($10,000 from AWS) represents the invoiced amount, while EffectiveCost ($10,000 from Grafana) represents the realized cost. In mismatched scenarios, these might differ (e.g., BilledCost could be $10,000, but EffectiveCost $9,500 due to unused credits).
-* **Charge Descriptions:** AWS describes it as "Marketplace purchase for SaaS service," while Grafana uses "Usage-based charges for Grafana Cloud metrics monitoring," providing context for each record's origin.
-* **Aggregation Challenges:** Summing BilledCost across providers gives the total invoiced ($10,000), but summing EffectiveCost shows actual consumption. Practitioners should reconcile using ResourceId or ChargePeriod to identify related records.
-* **Common Mismatch Causes:** Delays in usage reporting, currency conversions, or provider-specific tax handling can lead to discrepancies. For example, if Grafana reports usage a month late, EffectiveCost might not align with BilledCost periods.
-* **Best Practices:** Use tools for cross-provider matching, include disclaimers in reports about potential mismatches, and validate totals against invoices. This scenario underscores that multi-provider data is not always additive without reconciliation.
+- [AWS purchase record](../../data/marketplace_multiprovider_examples/marketplace_m1_aws.csv)
+- [Datadog usage record](../../data/marketplace_multiprovider_examples/marketplace_m1_datadog.csv)
+- [Combined view across all providers](../../data/marketplace_multiprovider_examples/marketplace_m2_combined.csv)
