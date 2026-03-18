@@ -178,7 +178,7 @@ This feature automatically:
 
 ### File Content
 
-While markdown can be included in a .mdpp, the FOCUS project discourages this behavior, as the markdown will not natively render in GitHub and development environments such as VS Code, thereby making spec maintenance more difficult.  Therefore, we encourage the use of overview .md files, limiting the use of .mdpp files to `!INCLUDE` statements only.
+While markdown can be included in a .mdpp, the FOCUS project discourages this behavior, as the markdown will not natively render in GitHub and development environments such as VS Code, thereby making spec maintenance more difficult. Therefore, we encourage the use of overview .md files, limiting the use of .mdpp files to `!INCLUDE` statements only.
 
 ### File Organization
 
@@ -286,11 +286,7 @@ numeric-format.md
 <!-- Example: # Title becomes ### Title -->
 ```
 
-### Header Conventions
-
-FOCUS Specification relies on Markdown headers to define document structure, section numbering, and navigation. Consistent header usage is required to ensure predictable Table of Contents (TOC) generation and stable internal links.
-
-#### Automatic Anchor Generation
+### Automatic Anchor Generation
 
 All headers appearing after the !TOC directive automatically receive an HTML anchor generated from the header text whereby the following applies:
 
@@ -299,14 +295,18 @@ All headers appearing after the !TOC directive automatically receive an HTML anc
 - Other special characters such as `/`, `:`, `%`, `&`, `@` are preserved.
 - Dots (.) are inserted between header levels to represent the full hierarchy of document sections.
 - Headers marked with `<!--SkipTOC-->` will appear in the document but will not be included in the Table of Contents, and no anchor will be created.
-- Duplicate header names are automatically de-duplicated for anchor generation.  For example: the first use of header `Column A` results in `#columna`, whereas the second use results in `#columna-1`.
+- Duplicate header names are automatically de-duplicated for anchor generation. For example: the first use of header `Column A` results in `#columna`, whereas the second use results in `#columna-1`.
+
+### Header Conventions
+
+FOCUS Specification relies on Markdown headers to define document structure, section numbering, and navigation. Consistent header usage is required to ensure predictable Table of Contents (TOC) generation and stable internal links.
 
 #### File-Level Header Structure
 
 - Content-oriented Markdown files (.md) SHOULD begin with a top-level header that defines the section title.
 - MarkdownPP assembly files (.mdpp) that consist only of !INCLUDE directives MAY omit headers.
 
-### Header Syntax
+#### Header Syntax
 
 To ensure predictable Table of Contents (TOC) generation, stable internal links, and reliable external references, all headers in the FOCUS Specification MUST follow these conventions:
 
