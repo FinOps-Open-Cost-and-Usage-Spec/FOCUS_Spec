@@ -199,17 +199,24 @@ To ensure consistency, ease of maintenance, and portability, all directories in 
 
 - Directory names MUST use lowercase characters.
 - Directory names MUST NOT contain spaces.
-- Directory names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
-  - If a directory requires a rename:
-    - all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
-    - The FinOps Foundation staff MUST be notified in order to repair any hyperlink references to that directory within Foundation assets.
 - Directory names SHOULD be descriptive and reflect the primary content of the directory.
 - Directory names consisting of multiple words MUST use hyphens (`-`) as the word separator (e.g., kebab-case), except for directories defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes).
 - Directory names consisting of multiple words MUST NOT use any word separator for directories defining FOCUS entities, so that the directory name matches the FOCUS entity identifier in lowercase.
 
-The `.github` directory and its subdirectories (e.g., `ISSUE_TEMPLATE`, `workflows`) MUST follow standard GitHub directory naming conventions.
+#### Exception: GitHub directories
 
-**Preferred directory name examples:**
+- The `.github` directory and its subdirectories (e.g., `ISSUE_TEMPLATE`, `workflows`) MUST follow common GitHub directory naming conventions.
+
+#### Renaming directories after publication
+
+Directory names are used by build processes (e.g., `!INCLUDE` statements) and may also appear in external hyperlinks (e.g., within FinOps Foundation assets). Directory names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
+
+If a rename is necessary:
+
+- All affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
+- The FinOps Foundation staff MUST be notified to repair any hyperlink references to that directory within Foundation assets.
+
+#### Preferred directory name examples
 
 ```text
 supported-features
@@ -218,7 +225,7 @@ pricingquantity
 numericformat
 ```
 
-**Forbidden directory name examples:**
+#### Forbidden directory name examples
 
 ```text
 SupportedFeatures
@@ -234,17 +241,24 @@ To ensure consistency, ease of maintenance, and portability, all Markdown and Ma
 
 - File names MUST use lowercase characters.
 - File names MUST NOT contain spaces.
-- File names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
-  - If a file requires a rename:
-    - all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
-    - The FinOps Foundation staff MUST be notified in order to repair any hyperlink references to that file within Foundation assets.
 - File names SHOULD be descriptive and reflect the primary content of the file.
 - File names consisting of multiple words MUST use hyphens (`-`) as the word separator (e.g., kebab-case), except for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes).
 - File names consisting of multiple words MUST NOT use any word separator for files defining FOCUS entities, so that the file name matches the FOCUS entity identifier in lowercase.
 
-Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) MUST follow common GitHub naming conventions.
+#### Exception: Key repository files
 
-**Preferred file name examples:**
+- Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) MUST follow common GitHub file naming conventions.
+
+#### Renaming files after publication
+
+File names are used by build processes (e.g., `!INCLUDE` statements) and may also appear in external hyperlinks (e.g., within FinOps Foundation assets). File names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
+
+If a rename is necessary:
+
+- All affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
+- The FinOps Foundation staff MUST be notified to repair any hyperlink references to that file within Foundation assets.
+
+#### Preferred file name examples
 
 ```text
 supported-features.mdpp
@@ -253,7 +267,7 @@ pricingquantity.md
 numericformat.md
 ```
 
-**Forbidden file name examples:**
+#### Forbidden file name examples
 
 ```text
 PricingQuantity.md
@@ -292,7 +306,9 @@ All headers appearing after the !TOC directive automatically receive an HTML anc
 - Content-oriented Markdown files (.md) SHOULD begin with a top-level header that defines the section title.
 - MarkdownPP assembly files (.mdpp) that consist only of !INCLUDE directives MAY omit headers.
 
-#### Header Syntax
+### Header Syntax
+
+To ensure predictable Table of Contents (TOC) generation, stable internal links, and reliable external references, all headers in the FOCUS Specification MUST follow these conventions:
 
 - Headers MUST use ATX-style Markdown syntax (`#`).
 - Up to six header levels (######) are supported.
@@ -300,6 +316,15 @@ All headers appearing after the !TOC directive automatically receive an HTML anc
 - Headers MUST NOT use Setext-style headers (`=` or `-` underlines), even though they are technically supported.
 - Headers MUST NOT be empty.
 - Special characters that may interfere with anchor generation SHOULD be used with caution.
+
+#### Renaming or changing headers after publication
+
+Header anchors are used by build processes (e.g., TOC generation) and may also appear in external hyperlinks. Header text and structure SHOULD remain stable after publication to maintain repository consistency, TOC accuracy, and external hyperlink integrity.
+
+If a header change is necessary:
+
+- All affected build references MUST be updated accordingly to avoid broken links.
+- The FinOps Foundation staff MUST be notified to repair any hyperlink references to that header within Foundation assets.
 
 ## Validation and Quality Control
 
