@@ -211,10 +211,7 @@ To ensure consistency, ease of maintenance, and portability, all directories in 
 
 Directory names are used by build processes (e.g., `!INCLUDE` statements) and may also appear in external hyperlinks (e.g., within FinOps Foundation assets). Directory names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
 
-If a rename is necessary:
-
-- All affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
-- The FinOps Foundation staff MUST be notified to repair any hyperlink references to that directory within Foundation assets.
+If a rename is necessary, all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
 
 #### Preferred directory name examples
 
@@ -253,10 +250,7 @@ To ensure consistency, ease of maintenance, and portability, all Markdown and Ma
 
 File names are used by build processes (e.g., `!INCLUDE` statements) and may also appear in external hyperlinks (e.g., within FinOps Foundation assets). File names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
 
-If a rename is necessary:
-
-- All affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
-- The FinOps Foundation staff MUST be notified to repair any hyperlink references to that file within Foundation assets.
+If a rename is necessary, all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
 
 #### Preferred file name examples
 
@@ -321,10 +315,7 @@ To ensure predictable Table of Contents (TOC) generation, stable internal links,
 
 Header anchors are used by build processes (e.g., TOC generation) and may also appear in external hyperlinks. Header text and structure SHOULD remain stable after publication to maintain repository consistency, TOC accuracy, and external hyperlink integrity.
 
-If a header change is necessary:
-
-- All affected build references MUST be updated accordingly to avoid broken links.
-- The FinOps Foundation staff MUST be notified to repair any hyperlink references to that header within Foundation assets.
+If a header change is necessary, all affected build references MUST be updated accordingly to avoid broken links.
 
 ## Validation and Quality Control
 
