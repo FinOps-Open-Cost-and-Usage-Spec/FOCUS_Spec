@@ -315,7 +315,7 @@ To ensure predictable Table of Contents (TOC) generation, stable internal links,
 - A single space MUST follow the `#` character(s).
 - Headers MUST NOT use Setext-style headers (`=` or `-` underlines), even though they are technically supported.
 - Headers MUST NOT be empty.
-- Special characters that may interfere with anchor generation SHOULD be used with caution.
+- Header text SHOULD only contain alphanumeric characters (`A-Z`, `0-9`), spaces (` `), commas (`,`), and the following special characters: hyphens (`-`), apostrophes (`'`), and parentheses (`(`, `)`). Other special characters SHOULD be avoided.
 
 #### Renaming or changing headers after publication
 
