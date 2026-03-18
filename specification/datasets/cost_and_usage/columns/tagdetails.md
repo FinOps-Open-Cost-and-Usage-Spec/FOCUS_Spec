@@ -26,7 +26,7 @@ When TagDetails is not null, the JsonObjectFormat for TagDetails adheres to the 
 * TagDetails root object MUST contain an object for each tag scheme present in Tags.
   * The key for each tag scheme object MUST align to the tag prefix (up to but not including the forward slash) used to define the tag scheme in Tags.
   * The key for the unprefixed user-defined tag scheme in Tags MUST be "Default".
-* Each tag scheme object MUST contain an object for each tag key used in that tag scheme.
+* Each tag scheme object MUST contain an object for each tag key applied to any tag source in that tag scheme.
   * Each tag key object MUST contain FOCUS-defined tag properties.
   * FOCUS-defined tag properties are subject to the additional requirements:
     * Tag property key MUST match the spelling and casing specified for the FOCUS-defined property.
@@ -65,8 +65,8 @@ The "TagValue" property adheres to the following requirements:
 The "TagSource" property adheres to the following requirements:
 
 * TagSource MUST be present in each tag key object in the Tags object.
+* TagSource MUST NOT be present in each tag source object in the AncestorTaggedSources object.
 * TagSource MUST contain the type of *tag source* where the tag key is present.
-* TagSource SHOULD NOT be present in each tag source object in the AncestorTaggedSources object.
 
 <b>TagSourceId</b>
 
@@ -96,11 +96,18 @@ The object contains an object for each tag scheme present in the Tags column.
 
 ### Object Entries
 
-The tag key object and tag source objects contain the following properties:
+The tag key object contains the following properties:
 
 | Key | ValueType | Required | Description |
 | ----- | ---- | ---------- | ----------- |
-| TagSource | String | Conditional | The type of *tag source* where the tag key is present. |
+| TagSource | String | TRUE | The type of *tag source* where the tag key is present. |
+| TagSourceId | String | TRUE | The identifier of the *tag source* where the tag key is present. |
+| TagValue | String, Boolean, or Number | TRUE |  The value associated with the tag key. |
+
+The ancestor tag source object contains the following properties:
+
+| Key | ValueType | Required | Description |
+| ----- | ---- | ---------- | ----------- |
 | TagSourceId | String | TRUE | The identifier of the *tag source* where the tag key is present. |
 | TagValue | String, Boolean, or Number | TRUE |  The value associated with the tag key. |
 
