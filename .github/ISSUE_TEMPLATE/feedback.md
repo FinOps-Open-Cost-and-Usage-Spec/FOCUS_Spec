@@ -35,6 +35,7 @@ e.g., Typo in field `skuDescription` definition — should say "metered" instead
 Select the category that best describes your suggestion:
 
 - [ ] Bug — incorrect or contradictory behavior in the current spec
+  _e.g., a column definition that contradicts its own validation rules_
 - [ ] Typo or grammar
   _e.g., spelling, punctuation, or wording errors_
 - [ ] Clarity improvement
