@@ -394,8 +394,8 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### Technical Requirements: Values and Value Ranges
 
 ```markdown
-* <ColumnId> MUST be a specific value.
 * <ColumnId> MUST be a non-negative decimal value.
+* <ColumnId> MUST be one of the allowed values.
 ```
 
 ##### Technical Requirements: Column-to-Column Relationships
