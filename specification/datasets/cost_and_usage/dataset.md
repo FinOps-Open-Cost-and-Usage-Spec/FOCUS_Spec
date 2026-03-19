@@ -43,6 +43,7 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Contracted Unit Price](#datasets.costandusage.contractedunitprice)                                 | Metric             | Conditional   | True         | Decimal   |
 | [Effective Cost](#datasets.costandusage.effectivecost)                                              | Metric             | Mandatory     | False        | Decimal   |
 | [Host Provider Name](#datasets.costandusage.hostprovidername)                                       | Dimension          | Mandatory     | False        | String    |
+| [Invoice Detail ID](#datasets.costandusage.invoicedetailid)                                                      | Dimension          | Recommended   | True         | String    |
 | [Invoice ID](#datasets.costandusage.invoiceid)                                                      | Dimension          | Recommended   | True         | String    |
 | [Invoice Issuer Name](#datasets.costandusage.invoiceissuername)                                     | Dimension          | Mandatory     | False        | String    |
 | [List Cost](#datasets.costandusage.listcost)                                                        | Metric             | Mandatory     | False        | Decimal   |
@@ -54,8 +55,6 @@ The specification for the Cost and Usage dataset defines a group of columns that
 | [Pricing Currency List Unit Price](#datasets.costandusage.pricingcurrencylistunitprice)             | Metric             | Conditional   | True         | Decimal   |
 | [Pricing Quantity](#datasets.costandusage.pricingquantity)                                          | Metric             | Mandatory     | True         | Decimal   |
 | [Pricing Unit](#datasets.costandusage.pricingunit)                                                  | Dimension          | Mandatory     | True         | String    |
-| [Provider - DEPRECATED](#datasets.costandusage.provider-deprecated)                                        | Dimension          | Mandatory     | False        | String    |
-| [Publisher - DEPRECATED](#datasets.costandusage.publisher-deprecated)                                      | Dimension          | Mandatory     | False        | String    |
 | [Region ID](#datasets.costandusage.regionid)                                                        | Dimension          | Conditional   | True         | String    |
 | [Region Name](#datasets.costandusage.regionname)                                                    | Dimension          | Conditional   | True         | String    |
 | [Resource ID](#datasets.costandusage.resourceid)                                                    | Dimension          | Conditional   | True         | String    |
@@ -87,7 +86,7 @@ The Cost and Usage dataset can be joined to the Contract Commitment dataset thro
 
 ## Requirements<!--SkipTOC-->
 
-CostAndUsage adheres to the following requirements:
+CostAndUsage MUST adhere to the following requirements:
 
 * CostAndUsage MUST be present.
 * CostAndUsage column presence MUST adhere to the following requirements:
@@ -126,7 +125,8 @@ CostAndUsage adheres to the following requirements:
   * CostAndUsage MUST include [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) when the service provider supports negotiated pricing concepts.
   * CostAndUsage MUST include [EffectiveCost](#datasets.costandusage.effectivecost).
   * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).
-  * CostAndUsage SHOULD include [InvoiceId](#datasets.costandusage.invoiceid).
+  * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid).
+  * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid).
   * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername).
   * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).
   * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
@@ -137,8 +137,6 @@ CostAndUsage adheres to the following requirements:
   * CostAndUsage MUST include [PricingCurrencyListUnitPrice](#datasets.costandusage.pricingcurrencylistunitprice) when the service provider supports prices in virtual currency and publishes unit prices exclusive of discounts.
   * CostAndUsage MUST include [PricingQuantity](#datasets.costandusage.pricingquantity).
   * CostAndUsage MUST include [PricingUnit](#datasets.costandusage.pricingunit).
-  * CostAndUsage MUST include [ProviderName](#datasets.costandusage.provider-deprecated).
-  * CostAndUsage MUST include [PublisherName](#datasets.costandusage.publisher-deprecated).
   * CostAndUsage MUST include [RegionId](#datasets.costandusage.regionid) when the host provider supports deploying resources or services within a region.
   * CostAndUsage MUST include [RegionName](#datasets.costandusage.regionname) when the host provider supports deploying resources or services within a region.
   * CostAndUsage MUST include [ResourceId](#datasets.costandusage.resourceid) when the service provider supports billing based on provisioned *resources*.

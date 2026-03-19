@@ -4,7 +4,7 @@ Billing Period Start represents the [*inclusive start bound*](#glossary:inclusiv
 
 ## Requirements
 
-BillingPeriodStart adheres to the following requirements:
+BillingPeriodStart MUST adhere to the following requirements:
 
 * BillingPeriodStart MUST be of type Date/Time.
 * BillingPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
@@ -32,7 +32,7 @@ The *inclusive start bound* of a *billing period*.
 | Feature level   | Mandatory                                            |
 | Allows nulls    | False                                                |
 | Data type       | Date/Time                                            |
-| Value format    | [Date/Time Format](#attributes.date/timeformat)      |
+| Value format    | [Date/Time Format](#attributes.date/timeformat)       |
 
 ## Introduced (version)
 
