@@ -1,6 +1,6 @@
 ## Summary
 
-(Add a summary of your PR here.  Use of AI assistance is encouraged; once you have created your pull request, take a copy of the diff by appending `.diff` to the end the PR URL, provide it an LLM, and edit this section to include the output.) 
+(Add a summary of your PR here.  Use of AI assistance is encouraged; once you have created your pull request, take a copy of the diff by appending `.diff` to the end of the PR URL, provide it an LLM, and edit this section to include the output.) 
 
 ### Type of Change
 - [ ] Bug fix
