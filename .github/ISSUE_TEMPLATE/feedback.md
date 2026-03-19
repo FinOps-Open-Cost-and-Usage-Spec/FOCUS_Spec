@@ -9,7 +9,7 @@ Suggested Assignee: @matt-cowsert
 _Use this template to report corrections, clarity improvements, or bugs in the FOCUS Specification._
 
 > **Not sure which template to use?**
-> If your suggestion involves **adding, changing, or removing a data field, label, or structure**, please submit a [Feature Request](../feature_request_template.md) instead.
+> If your suggestion involves **adding, changing, or removing a data field, label, or structure**, please submit a [Feature Request](feature_request_template.md) instead.
 
 ---
 
