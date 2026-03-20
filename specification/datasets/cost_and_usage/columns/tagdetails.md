@@ -99,65 +99,68 @@ Here is a basic example of the object format containing multiple tag schemes and
 
 ```json
 {
-  "Default": {
-    "Tags": {
-      "foo": {
-        "TagSource": "Resource",
-        "TagSourceId": "my-resource-11",
-        "TagValue": "baz",
-        "AncestorTaggedSources": {
-          "Subscription": {
-            "TagSourceId": "1234-abcd-5678",
-            "TagValue": "bar"
-          },
-          "Resource Group": {
-            "TagSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
-            "TagValue": "bang"
-          }
-        }
-      },
-      "lorem": {
-        "TagSource": "Resource Group",
-        "TagSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
-        "TagValue": "ipsum",
-        "AncestorTaggedSources": {
-          "Subscription": {
-            "TagSourceId": "1234-abcd-5678",
-            "TagValue": "adest"
-          }
-        }
-      }
-    },
-    "UntaggedSources": null
-  },
-  "userDefinedValuelessLabelScheme": {
-    "Tags": {
-      "project_foci": {
-        "TagSource": "Resource",
-        "TagSourceId": "my-resource-11",
-        "TagValue": true,
-        "AncestorTaggedSources": null
-      }
-    },
-    "UntaggedSources": ["Resource Group", "Subscription"]
-  },
-  "providerDefinedTagScheme": {
-    "Tags": {
-      "isfeatureenabled": {
-        "TagSource": "Resource",
-        "TagSourceId": "my-resource-11",
-        "TagValue": false,
-        "AncestorTaggedSources": null
-      },
-      "versionnumber": {
-        "TagSource": "Resource",
-        "TagSourceId": "my-resource-11",
-        "TagValue": 12.2,
-        "AncestorTaggedSources": null
-      }
-    },
-    "UntaggedSources": null
-  }
+  "Default": {
+    "Tags": {
+      "foo": {
+        "TagSource": "Resource",
+        "TagSourceId": "my-resource-11",
+        "TagValue": "baz",
+        "AncestorTaggedSources": {
+          "Subscription": {
+            "TagSourceId": "1234-abcd-5678",
+            "TagValue": "bar"
+          },
+          "Resource Group": {
+            "TagSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
+            "TagValue": "bang"
+          }
+        }
+      },
+      "lorem": {
+        "TagSource": "Resource Group",
+        "TagSourceId": "/subscriptions/1234-abcd-5678/resourceGroups/myresourcegroup",
+        "TagValue": "ipsum",
+        "AncestorTaggedSources": {
+          "Subscription": {
+            "TagSourceId": "1234-abcd-5678",
+            "TagValue": "adest"
+          }
+        }
+      }
+    },
+    "UntaggedSources": null
+  },
+  "userDefinedValuelessLabelScheme": {
+    "Tags": {
+      "project_foci": {
+        "TagSource": "Resource",
+        "TagSourceId": "my-resource-11",
+        "TagValue": true,
+        "AncestorTaggedSources": null
+      }
+    },
+    "UntaggedSources": [
+      "Resource Group",
+      "Subscription"
+    ]
+  },
+  "providerDefinedTagScheme": {
+    "Tags": {
+      "isfeatureenabled": {
+        "TagSource": "Resource",
+        "TagSourceId": "my-resource-11",
+        "TagValue": false,
+        "AncestorTaggedSources": null
+      },
+      "versionnumber": {
+        "TagSource": "Resource",
+        "TagSourceId": "my-resource-11",
+        "TagValue": 12.2,
+        "AncestorTaggedSources": null
+      }
+    },
+    "UntaggedSources": null
+  }
 }
 ```
 
