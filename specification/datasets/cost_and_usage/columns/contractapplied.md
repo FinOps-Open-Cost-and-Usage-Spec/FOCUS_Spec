@@ -32,7 +32,7 @@ Contract Applied consists of a valid JSON object which contains an array of key-
   * "Elements" objects MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.
   * "Elements" objects MUST contain key-value pairs (contract application properties).
   * Contract application property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.
-  * "Elements" objects MUST contain four key-value pairs, representing "ContractCommitmentID", "ContractCommitmentAppliedCost", "ContractCommitmentAppliedQuantity", and "ContractCommitmentAppliedUnit".
+  * "Elements" objects MUST contain five key-value pairs, representing "ContractId", "ContractCommitmentId", "ContractCommitmentAppliedCost", "ContractCommitmentAppliedQuantity", and "ContractCommitmentAppliedUnit".
   * "Elements" objects MAY contain custom key-value pairs, representing additional datapoints provided by the data generator.
   * When custom key-value pairs within "Elements" objects are present:
     * Contract application property custom key-value pairs MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
@@ -42,7 +42,7 @@ Contract Applied consists of a valid JSON object which contains an array of key-
     * Contract application property key MUST match the spelling and casing specified for the FOCUS-defined property.
     * Contract application property value MUST be of the type specified for that property.
     * Contract application property MUST adhere to additional normative requirements specific to that property.
-  * Contract application property keys MUST begin with the string "x_" unless it is a FOCUS-defined allocation property.
+  * Contract application property keys MUST begin with the string "x_" unless it is a FOCUS-defined application property.
 
 ### Content Requirements
 
@@ -54,7 +54,7 @@ Contract ID is a service-provider-assigned identifier for a contract describing 
 
 "ContractId" property MUST adhere to the following requirements:
 
-* "ContractId" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *contract commitments*.
+* "ContractId" MUST be present in an Elements object within ContractApplied when the service provider supports *contract commitments*.
 * "ContractId" MUST be of type String.
 * "ContractId" MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * "ContractId" nullability is defined as follows:
@@ -68,21 +68,21 @@ Contract ID is a service-provider-assigned identifier for a contract describing 
 
 A Contract Commitment ID is a service-provider-assigned identifier describing an agreement agreed between a service provider and a customer.  Contracts can include commitment to a certain amount of spend or usage over an agreed period of time.
 
-"ContractCommitmentID" property MUST adhere to the following requirements:
+"ContractCommitmentId" property MUST adhere to the following requirements:
 
-* "ContractCommitmentID" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports *contract commitments*.
-* "ContractCommitmentID" MUST be of type String.
-* "ContractCommitmentID" MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* "ContractCommitmentID" nullability is defined as follows:
-  * "ContractCommitmentID" MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
-  * "ContractCommitmentID" MUST NOT be null when a *charge* is related to a *contract commitment*.
-* When "ContractCommitmentID" is not null, "ContractCommitmentID" MUST adhere to the following requirements:
-  * "ContractCommitmentID" MUST be a unique identifier within the service provider.
-  * "ContractCommitmentID" SHOULD be a fully-qualified identifier.
-  * "ContractCommitmentID" MUST have one and only one parent "ContractID".
-  * "ContractCommitmentID" MUST be equal to ResourceID when ChargeCategory is "Purchase" and the charge represents a purchase of that contract commitment.
-  * "ContractCommitmentID" MUST be equal to ResourceID when ChargeCategory is "Usage" and the charge represents an unused portion of that contract commitment.
-  * "ContractCommitmentID" MAY be equal to "ContractID".
+* "ContractCommitmentId" MUST be present in an Elements object within ContractApplied when the service provider supports *contract commitments*.
+* "ContractCommitmentId" MUST be of type String.
+* "ContractCommitmentId" MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+* "ContractCommitmentId" nullability is defined as follows:
+  * "ContractCommitmentId" MUST be null when a [*charge*](#glossary:charge) is not related to a *contract commitment*.
+  * "ContractCommitmentId" MUST NOT be null when a *charge* is related to a *contract commitment*.
+* When "ContractCommitmentId" is not null, "ContractCommitmentId" MUST adhere to the following requirements:
+  * "ContractCommitmentId" MUST be a unique identifier within the service provider.
+  * "ContractCommitmentId" SHOULD be a fully-qualified identifier.
+  * "ContractCommitmentId" MUST have one and only one parent "ContractId".
+  * "ContractCommitmentId" MUST be equal to ResourceId when ChargeCategory is "Purchase" and the charge represents a purchase of that contract commitment.
+  * "ContractCommitmentId" MUST be equal to ResourceId when ChargeCategory is "Usage" and the charge represents an unused portion of that contract commitment.
+  * "ContractCommitmentId" MAY be equal to "ContractId".
 
 <b>Contract Commitment Applied Cost</b>
 
@@ -90,7 +90,7 @@ Contract Commitment Applied Cost represents the cost of the charge applied to th
 
 "ContractCommitmentAppliedCost" property MUST adhere to the following requirements:
 
-* "ContractCommitmentAppliedCost" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider associates the *charge's* value with one or more *contract commitments*.
+* "ContractCommitmentAppliedCost" MUST be present in an Elements object within ContractApplied when the service provider associates the *charge's* value with one or more *contract commitments*.
 * "ContractCommitmentAppliedCost" MUST be of type Decimal.
 * "ContractCommitmentAppliedCost" MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * "ContractCommitmentAppliedCost" MUST adhere to the following nullability requirements:
@@ -105,7 +105,7 @@ Contract Commitment Applied Quantity represents the quantity of the charge appli
 
 "ContractCommitmentAppliedQuantity" property MUST adhere to the following requirements:
 
-* "ContractCommitmentAppliedQuantity" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider associates the *charge's* quantity with one or more *contract commitments*.
+* "ContractCommitmentAppliedQuantity" MUST be present in an Elements object within ContractApplied when the service provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedQuantity" MUST be of type Decimal.
 * "ContractCommitmentAppliedQuantity" MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * "ContractCommitmentAppliedQuantity" MUST adhere to the following nullability requirements:
@@ -120,7 +120,7 @@ The Contract Commitment Applied Unit represents a service-provider-specified mea
 
 The "ContractCommitmentAppliedUnit" property adheres to the following requirements:
 
-* "ContractCommitmentAppliedUnit" MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider associates the *charge's* quantity with one or more *contract commitments*.
+* "ContractCommitmentAppliedUnit" MUST be present in an Elements object within ContractApplied when the service provider associates the *charge's* quantity with one or more *contract commitments*.
 * "ContractCommitmentAppliedUnit" MUST be of type String.
 * "ContractCommitmentAppliedUnit" MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * "ContractCommitmentAppliedUnit" SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
@@ -144,8 +144,8 @@ The `Elements` array contains one or more objects, each of which contains the fo
 
 | Key                               | Key Type    | Feature Level | Allows Nulls | Data Type |
 | --------------------------------- | ----------- | ------------- | ------------ | --------- |
-| ContractID                        | Dimension   | Conditional   | False        | String    |
-| ContractCommitmentID              | Dimension   | Conditional   | False        | String    |
+| ContractId                        | Dimension   | Conditional   | False        | String    |
+| ContractCommitmentId              | Dimension   | Conditional   | False        | String    |
 | ContractCommitmentAppliedCost     | Dimension   | Conditional   | True         | Numeric   |
 | ContractCommitmentAppliedQuantity | Dimension   | Conditional   | True         | Numeric   |
 | ContractCommitmentAppliedUnit     | Dimension   | Conditional   | True         | String    |
@@ -155,12 +155,12 @@ The `Elements` array contains one or more objects, each of which contains the fo
 ```json
 {
   "Elements" : [ {
-    "ContractID" : "12345",
-    "ContractCommitmentID" : "23456",
+    "ContractId" : "12345",
+    "ContractCommitmentId" : "23456",
     "ContractCommitmentAppliedCost" : 500000.00
   }, {
-    "ContractID" : "12345",
-    "ContractCommitmentID" : "34567",
+    "ContractId" : "12345",
+    "ContractCommitmentId" : "34567",
     "ContractCommitmentAppliedQuantity" : 10000.00,
     "ContractCommitmentAppliedUnit" : "compute_hours"
   } ]
@@ -175,13 +175,13 @@ The `Elements` array contains one or more objects, each of which contains the fo
     "Elements": {
       "elements": {
         "properties": {
-          "ContractID": { "type": "string" },
-          "ContractCommitmentID": { "type": "string" }
+          "ContractId": { "type": "string" },
+          "ContractCommitmentId": { "type": "string" }
         },
         "optionalProperties": {
           "ContractCommitmentAppliedCost": { "type": "float64" },
           "ContractCommitmentAppliedQuantity": { "type": "float64" },
-          "ContractCommitmentAppliedUnit": { "type": "float64" }
+          "ContractCommitmentAppliedUnit": { "type": "string" }
         },
         "additionalProperties": true
       }
@@ -199,7 +199,7 @@ NOTE: The above JSON Type Definition (JTD) is an approximation of the expected c
 
 A single Cost and Usage charge represents the values stated on a contract and its three contract commitments agreed between a service provider and a customer:
 
-1) 12345: Spend $500k overall.  (This is the value of the contract, and thus ContractID = ContractCommitmentID.)
+1) 12345: Spend $500k overall.  (This is the value of the contract, and thus ContractId = ContractCommitmentId.)
 2) 23456: Spend $25k on a particular service.
 3) 34567: Consume 100k compute hours on a particular resource type.
 
@@ -207,23 +207,23 @@ The Charge Category is denoted as Purchase, and the Contract ID, Resource ID, an
 
 ```json
 {
-  "ResourceID": "12345",
+  "ResourceId": "12345",
   "ChargeCategory": "Purchase",
   "BilledCost": 500000.00,
   "EffectiveCost": 0.00,
   "ContractApplied":
     {
       "Elements": [ {
-        "ContractID": "12345",
-        "ContractCommitmentID": "12345",
+        "ContractId": "12345",
+        "ContractCommitmentId": "12345",
         "ContractCommitmentAppliedCost": 500000.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "23456",
+        "ContractId": "12345",
+        "ContractCommitmentId": "23456",
         "ContractCommitmentAppliedCost": 25000.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "34567",
+        "ContractId": "12345",
+        "ContractCommitmentId": "34567",
         "ContractCommitmentAppliedQuantity": 100000.00,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
@@ -240,7 +240,7 @@ This applies to the contract commitments in the following manner:
 
 ```json
 {
-  "ResourceID": "myResource1",
+  "ResourceId": "myResource1",
   "ChargeCategory": "Usage",
   "BilledCost": 0.00,
   "EffectiveCost": 30.00,
@@ -248,16 +248,16 @@ This applies to the contract commitments in the following manner:
   "ContractApplied":
     {
       "Elements": [ {
-        "ContractID": "12345",
-        "ContractCommitmentID": "12345",
+        "ContractId": "12345",
+        "ContractCommitmentId": "12345",
         "ContractCommitmentAppliedCost": 15.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "23456",
+        "ContractId": "12345",
+        "ContractCommitmentId": "23456",
         "ContractCommitmentAppliedCost": 15.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "34567",
+        "ContractId": "12345",
+        "ContractCommitmentId": "34567",
         "ContractCommitmentAppliedQuantity": 0.50,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
@@ -270,7 +270,7 @@ The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCost
 
 ```json
 {
-  "ResourceID": "myResource1",
+  "ResourceId": "myResource1",
   "ChargeCategory": "Usage",
   "BilledCost": 0.00,
   "EffectiveCost": 30.00,
@@ -278,18 +278,18 @@ The same as Scenario 2, except a custom key-value pair `x_ContractCommitmentCost
   "ContractApplied":
     {
       "Elements": [ {
-        "ContractID": "12345",
-        "ContractCommitmentID": "12345",
+        "ContractId": "12345",
+        "ContractCommitmentId": "12345",
         "ContractCommitmentAppliedCost": 15.00,
         "x_ContractCommitmentCostBalance": 499985.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "23456",
+        "ContractId": "12345",
+        "ContractCommitmentId": "23456",
         "ContractCommitmentAppliedCost": 15.00,
         "x_ContractCommitmentCostBalance": 24985.00
       }, {
-        "ContractID": "12345",
-        "ContractCommitmentID": "34567",
+        "ContractId": "12345",
+        "ContractCommitmentId": "34567",
         "ContractCommitmentAppliedQuantity": 0.50,
         "ContractCommitmentAppliedUnit": "compute_hours"
       } ]
