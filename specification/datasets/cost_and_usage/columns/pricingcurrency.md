@@ -30,7 +30,7 @@ The national or virtual currency denomination that a *resource* or *service* was
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Dimension                                            |
 | Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
+| Allows nulls    | False                                                |
 | Data type       | String                                               |
 | Value format    | [Currency Format](#attributes.currencyformat)        |
 
