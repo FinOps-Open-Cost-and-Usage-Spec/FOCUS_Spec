@@ -20,7 +20,8 @@ BilledCost MUST adhere to the following requirements:
 * BilledCost MUST be 0 for *charges* that are fully *covered* by one or more *covering charges*.
 * BilledCost MUST reflect amounts as invoiced by the [InvoiceIssuerName](#datasets.costandusage.invoiceissuername), not estimated or inferred values.
 * Entities that are not responsible or authorized for invoicing a *charge* MUST NOT generate *charges* with non-zero BilledCost to avoid double-counting when merging multiple datasets.
-* The sum of BilledCost for a given [InvoiceId](#datasets.costandusage.invoiceid) and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST match the payable amount provided on the corresponding issued invoice.
+* When a corresponding invoice has been issued, the sum of BilledCost for a given [InvoiceId](#datasets.costandusage.invoiceid) and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST NOT differ from the payable amount provided on that invoice by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in the Rounding Variance Tolerance formula.
+* When a corresponding invoice has not yet been issued, the sum of BilledCost MAY differ from preliminary or estimated invoiced amounts.
 
 ## Column ID
 
