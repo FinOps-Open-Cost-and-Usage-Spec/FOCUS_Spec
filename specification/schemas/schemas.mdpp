@@ -29,3 +29,11 @@ The Contract Applied Object Schema defines the structure for the [Contract Appli
 [Download from GitHub](/specification/schemas/datasets/cost_and_usage/contractappliedobjectschema.json)
 
 !INCLUDECODE "schemas/datasets/cost_and_usage/contractappliedobjectschema.json" (json)
+
+### Tag Details Object Schema
+
+The Tag Details Object Schema defines the structure for the [Tag Details](#datasets.costandusage.tagdetails) column.
+
+[Download from GitHub](/specification/schemas/datasets/cost_and_usage/tagdetailsobjectschema.json)
+
+!INCLUDECODE "schemas/datasets/cost_and_usage/tagdetailsobjectschema.json" (json)

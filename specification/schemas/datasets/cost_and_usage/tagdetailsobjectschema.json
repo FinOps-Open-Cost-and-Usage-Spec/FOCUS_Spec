@@ -1,0 +1,149 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://focus.finops.org/schemas/tagdetailsobject.json",
+    "title": "Tag Details Object",
+    "description": "Schema for validating the Tag Details column JSON object structure in FOCUS datasets",
+    "type": "object",
+    "required": [
+        "Default"
+    ],
+    "properties": {
+        "Default": {
+            "description": "The object containing information about the unprefixed tag scheme in the Tags column",
+            "$ref": "#/$defs/tagScheme"
+        }
+    },
+    "patternProperties": {
+        "^x_[A-Z][a-zA-Z0-9]*$": {
+            "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format"
+        },
+        "^(?!x_[A-Z])[a-zA-Z0-9_]+$": {
+            "description": "Objects containing information about a prefixed tag scheme in the Tags column",
+            "$ref": "#/$defs/tagScheme"
+        }
+    },
+    "additionalProperties": false,
+    "$defs": {
+        "tagScheme": {
+            "type": "object",
+            "required": [
+                "Tags",
+                "UntaggedSources"
+            ],
+            "properties": {
+                "Tags": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^x_[A-Z][a-zA-Z0-9]*$": {
+                            "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+                        },
+                        "^(?!x_[A-Z])[a-zA-Z0-9_]+$": {
+                            "$ref": "#/$defs/tagKeyObject"
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "UntaggedSources": {
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "description": "A list of sources which support this tag scheme that had no tags applied",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "patternProperties": {
+                "^x_[A-Z][a-zA-Z0-9]*$": {
+                    "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+                }
+            },
+            "additionalProperties": false
+        },
+        "tagKeyObject": {
+            "type": "object",
+            "required": [
+                "TagSource",
+                "TagSourceId",
+                "TagValue",
+                "AncestorTaggedSources"
+            ],
+            "properties": {
+                "TagSource": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The type of tag source where the tag key is present. Can be null if only present on an ancestor."
+                },
+                "TagSourceId": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The identifier of the tag source where the tag key is present. Can be null if only present on an ancestor."
+                },
+                "TagValue": {
+                    "type": [
+                        "string",
+                        "boolean",
+                        "number",
+                        "null"
+                    ],
+                    "description": "The finalized tag value. Can be null, indicating it doesn't appear in the Tags column."
+                },
+                "AncestorTaggedSources": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "description": "An object containing all tag sources where the tag key was present which did not result in the finalized tag.",
+                    "patternProperties": {
+                        "^x_[A-Z][a-zA-Z0-9]*$": {
+                            "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+                        },
+                        "^(?!x_[A-Z])[a-zA-Z0-9_ ]+$": {
+                            "$ref": "#/$defs/ancestorTag"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "patternProperties": {
+                "^x_[A-Z][a-zA-Z0-9]*$": {
+                    "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+                }
+            },
+            "additionalProperties": false
+        },
+        "ancestorTag": {
+            "type": "object",
+            "required": [
+                "TagSourceId",
+                "TagValue"
+            ],
+            "properties": {
+                "TagSourceId": {
+                    "type": "string",
+                    "description": "The identifier of the tag source where the tag key is present."
+                },
+                "TagValue": {
+                    "type": [
+                        "string",
+                        "boolean",
+                        "number",
+                        "null"
+                    ],
+                    "description": "The tag value from an ancestor source."
+                }
+            },
+            "patternProperties": {
+                "^x_[A-Z][a-zA-Z0-9]*$": {
+                    "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
+                }
+            },
+            "additionalProperties": false
+        }
+    }
+}
