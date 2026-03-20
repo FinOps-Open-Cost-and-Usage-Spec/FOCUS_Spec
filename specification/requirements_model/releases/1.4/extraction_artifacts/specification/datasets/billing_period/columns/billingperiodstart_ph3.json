@@ -1,0 +1,129 @@
+{
+  "ModelRules": {
+    "BIP-BillingPeriodStart-C-000-M": {
+      "Function": "Validation",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "EntityName": "Billing Period Start",
+      "EntityId": "BillingPeriodStart",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 0,
+      "DatasetType": "BIP",
+      "DatasetId": "BillingPeriod",
+      "DatasetName": "Billing Period",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingPeriodStart MUST adhere to the following requirements:",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": [
+          "BIP-BillingPeriodStart-C-001-M",
+          "BIP-BillingPeriodStart-C-002-M",
+          "BIP-BillingPeriodStart-C-003-M",
+          "BIP-BillingPeriodStart-C-004-M"
+        ]
+      }
+    },
+    "BIP-BillingPeriodStart-C-001-M": {
+      "Function": "Type",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "EntityName": "Billing Period Start",
+      "EntityId": "BillingPeriodStart",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 10,
+      "DatasetType": "BIP",
+      "DatasetId": "BillingPeriod",
+      "DatasetName": "Billing Period",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingPeriodStart MUST be of type Date/Time.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "BIP-BillingPeriodStart-C-002-M": {
+      "Function": "Format",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "EntityName": "Billing Period Start",
+      "EntityId": "BillingPeriodStart",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 20,
+      "DatasetType": "BIP",
+      "DatasetId": "BillingPeriod",
+      "DatasetName": "Billing Period",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingPeriodStart MUST conform to DateTimeFormat requirements.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "BIP-BillingPeriodStart-C-003-M": {
+      "Function": "Nullability",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "EntityName": "Billing Period Start",
+      "EntityId": "BillingPeriodStart",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 30,
+      "DatasetType": "BIP",
+      "DatasetId": "BillingPeriod",
+      "DatasetName": "Billing Period",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingPeriodStart MUST NOT be null.",
+        "Keyword": "MUST NOT",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "BIP-BillingPeriodStart-C-004-M": {
+      "Function": "Validation",
+      "Reference": "BillingPeriodStart",
+      "EntityType": "Column",
+      "EntityName": "Billing Period Start",
+      "EntityId": "BillingPeriodStart",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 40,
+      "DatasetType": "BIP",
+      "DatasetId": "BillingPeriod",
+      "DatasetName": "Billing Period",
+      "ValidationCriteria": {
+        "MustSatisfy": "BillingPeriodStart MUST be the *inclusive start bound* of the *billing period*.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    }
+  }
+}
