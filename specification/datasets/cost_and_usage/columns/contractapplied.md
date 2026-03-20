@@ -80,7 +80,8 @@ A Contract Commitment ID is a service-provider-assigned identifier describing an
   * "ContractCommitmentId" MUST be a unique identifier within the service provider.
   * "ContractCommitmentId" SHOULD be a fully-qualified identifier.
   * "ContractCommitmentId" MUST have one and only one parent "ContractId".
-  * "ContractCommitmentId" MUST be equal to ResourceId when ChargeCategory is "Purchase".
+  * "ContractCommitmentId" MUST be equal to ResourceId when ChargeCategory is "Purchase" and the charge represents a purchase of that contract commitment.
+  * "ContractCommitmentId" MUST be equal to ResourceId when ChargeCategory is "Usage" and the charge represents an unused portion of that contract commitment.
   * "ContractCommitmentId" MAY be equal to "ContractId".
 
 <b>Contract Commitment Applied Cost</b>
