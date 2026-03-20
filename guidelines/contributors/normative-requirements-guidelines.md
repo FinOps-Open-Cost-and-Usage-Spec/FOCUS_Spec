@@ -163,7 +163,9 @@ A requirement MUST be split into multiple bullets if it:
 
 ### 1.7. Composite Requirements
 
-Composite (parent + nested) requirements MAY be used when strictly controlled and MUST adhere to the following requirements:
+Composite (parent + nested) requirements MAY be used when strictly controlled.
+
+Composite requirements MUST adhere to the following requirements:
 
 * Nested bullets MUST share the same condition if defined by the parent bullet.
 * Nested bullets SHOULD NOT introduce a different subject.
@@ -299,7 +301,7 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
-* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling) requirements.
+* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datageneratorcalculatedsplitcostallocationhandling) requirements.
 
 ## 3. Column Requirements
 
@@ -539,10 +541,10 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ```markdown
 * <ColumnId> MUST conform to [StringHandling](#stringhandling) requirements.
-* <ColumnId> MUST conform to [Numeric Format](#numericformat) requirements.
-* <ColumnId> MUST conform to [DateTimeFormat](#date/timeformat) requirements.
+* <ColumnId> MUST conform to [NumericFormat](#numericformat) requirements.
+* <ColumnId> MUST conform to [DateTimeFormat](#datetimeformat) requirements.
 * <ColumnId> SHOULD conform to [UnitFormat](#unitformat) requirements.
-* <ColumnId> MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* <ColumnId> MUST conform to [KeyValueFormat](#keyvalueformat) requirements.
 * <ColumnId> MUST conform to [CurrencyFormat](#currencyformat) requirements.
 ```
 
@@ -565,7 +567,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ```markdown
 * <ColumnId> nullability is defined as follows:
   * <ColumnId> MUST be null when <Condition>.
-  * When <Condition>, the column adheres to the following additional requirements:
+  * When <Condition>, <ColumnId> adheres to the following additional requirements:
     * <ColumnId> MUST NOT be null when <Condition>.
     * <ColumnId> MAY be null when <Condition>.
 ```
@@ -719,7 +721,7 @@ CommitmentDiscountQuantity MUST adhere to the following requirements:
 * When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
   * CommitmentDiscountQuantity MUST be a valid decimal value.
   * When ChargeCategory is "Purchase":
-    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* [*period*](#glossary:period) when [ChargeFrequency](#chargefrequency) is "One-Time".
+    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#chargefrequency) is "One-Time".
     * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each *charge period* that corresponds with the purchase when ChargeFrequency is "Recurring".
   * When ChargeCategory is "Usage":
     * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
@@ -791,9 +793,9 @@ As a general rule, when authoring requirements for a FOCUS column, the author SH
 
 The following exceptions apply:
 
-* Some requirements MAY not be applicable to Custom columns and SHOULD be omitted.
-* Some requirements MAY be mandatory for Custom columns and SHOULD retain `MUST` or `MUST NOT`.
-* Some requirements MAY be optional for Custom columns and SHOULD use `MAY` or `MAY NOT` instead.
+* Some requirements might not be applicable to Custom columns and SHOULD be omitted.
+* Some requirements might be mandatory for Custom columns and SHOULD retain `MUST` or `MUST NOT`.
+* Some requirements might be optional for Custom columns and SHOULD use `MAY` or `MAY NOT` instead.
 
 The appropriate keyword SHOULD always be chosen based on the intent and context of the requirement.
 
@@ -870,7 +872,7 @@ Column conforming to DateTimeFormat attribute MUST adhere to the following requi
 * When FOCUS column contains date/time values, FOCUS column MUST adhere to the following requirements:
   * FOCUS column MUST be expressed in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.
   * FOCUS column MUST conform to the ISO 8601 standard, which provides a globally recognized format for representing dates and times.
-  * When column represents a specific moment in time, FOCUS column MUST adhere to the following requirements:
+  * When FOCUS column represents a specific moment in time, FOCUS column MUST adhere to the following requirements:
     * FOCUS column MUST use the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ').
     * FOCUS column MUST include both the date and time components, separated with the letter 'T'.
     * FOCUS column MUST use two-digit hours (HH), minutes (mm), and seconds (ss).
@@ -878,7 +880,7 @@ Column conforming to DateTimeFormat attribute MUST adhere to the following requi
 * When custom column contains date/time values, custom column MUST adhere to the following requirements:
   * Custom column SHOULD be expressed in UTC (Coordinated Universal Time).
   * Custom column SHOULD conform to the ISO 8601 standard.
-  * When column represents a specific moment in time, custom column MUST adhere to the following requirements:
+  * When custom column represents a specific moment in time, custom column MUST adhere to the following requirements:
     * Custom column SHOULD use the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ').
     * Custom column SHOULD include both the date and time components, separated with the letter 'T'.
     * Custom column SHOULD use two-digit hours (HH), minutes (mm), and seconds (ss).
