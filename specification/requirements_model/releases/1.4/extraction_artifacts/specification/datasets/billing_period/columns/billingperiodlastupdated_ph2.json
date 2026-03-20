@@ -1,0 +1,212 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/billing_period/columns/billingperiodlastupdated.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "BillingPeriodLastUpdated",
+    "entity_name": "Billing Period Last Updated"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 6
+  },
+  "0_outline_root": "ROOT: Billing Period Last Updated > Requirements",
+  "0_outline_lines": [
+    "L007: \"BillingPeriodLastUpdated MUST adhere to the following requirements:\"",
+    "  L009: \"BillingPeriodLastUpdated MUST be of type Date/Time.\"",
+    "  L010: \"BillingPeriodLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.\"",
+    "  L011: \"BillingPeriodLastUpdated MUST NOT be null.\"",
+    "  L012: \"BillingPeriodLastUpdated MUST represent the most recent moment in time when any column value of the Billing Period record was created or modified.\"",
+    "  L013: \"BillingPeriodLastUpdated MUST be greater than or equal to [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).\""
+  ],
+  "0_outline_summary": {
+    "node_count": 6,
+    "leaf_count": 5,
+    "lead_in_count": 1,
+    "max_depth": 1,
+    "max_indent_level": 0,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 5,
+      "MUST NOT": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L007",
+        "text_preview": "BillingPeriodLastUpdated MUST adhere to the following requirements:",
+        "children": 5
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L007",
+            "text": "BillingPeriodLastUpdated MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Billing Period Last Updated",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L009",
+                "text": "BillingPeriodLastUpdated MUST be of type Date/Time.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period Last Updated",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L010",
+                "text": "BillingPeriodLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period Last Updated",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L011",
+                "text": "BillingPeriodLastUpdated MUST NOT be null.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "Billing Period Last Updated",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R005",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R005",
+                "order": 5,
+                "ref": "L012",
+                "text": "BillingPeriodLastUpdated MUST represent the most recent moment in time when any column value of the Billing Period record was created or modified.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period Last Updated",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R006",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R006",
+                "order": 6,
+                "ref": "L013",
+                "text": "BillingPeriodLastUpdated MUST be greater than or equal to [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).",
+                "keyword": "MUST",
+                "section_path": [
+                  "Billing Period Last Updated",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}
