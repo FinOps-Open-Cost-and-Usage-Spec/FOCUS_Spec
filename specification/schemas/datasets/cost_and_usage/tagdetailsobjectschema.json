@@ -4,21 +4,13 @@
     "title": "Tag Details Object",
     "description": "Schema for validating the Tag Details column JSON object structure in FOCUS datasets",
     "type": "object",
-    "required": [
-        "Default"
-    ],
-    "properties": {
-        "Default": {
-            "description": "The object containing information about the unprefixed tag scheme in the Tags column",
-            "$ref": "#/$defs/tagScheme"
-        }
-    },
+    "minProperties": 1,
     "patternProperties": {
         "^x_[A-Z][a-zA-Z0-9]*$": {
             "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format"
         },
         "^(?!x_[A-Z])[a-zA-Z0-9_]+$": {
-            "description": "Objects containing information about a prefixed tag scheme in the Tags column",
+            "description": "Objects containing information about a tag scheme (including 'Default') in the Tags column",
             "$ref": "#/$defs/tagScheme"
         }
     },
