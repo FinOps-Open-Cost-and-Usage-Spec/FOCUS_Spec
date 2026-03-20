@@ -20,8 +20,30 @@ BilledCost MUST adhere to the following requirements:
 * BilledCost MUST be 0 for *charges* that are fully *covered* by one or more *covering charges*.
 * BilledCost MUST reflect amounts as invoiced by the [InvoiceIssuerName](#datasets.costandusage.invoiceissuername), not estimated or inferred values.
 * Entities that are not responsible or authorized for invoicing a *charge* MUST NOT generate *charges* with non-zero BilledCost to avoid double-counting when merging multiple datasets.
-* When a corresponding invoice has been issued, the sum of BilledCost for a given [InvoiceId](#datasets.costandusage.invoiceid) and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST NOT differ from the payable amount provided on that invoice by more than `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)` as defined in the Rounding Variance Tolerance formula.
+* When a corresponding invoice has been issued, the sum of BilledCost for a given [InvoiceId](#datasets.costandusage.invoiceid) and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST NOT differ from the payable amount provided on that invoice by more than the [Rounding Variance Tolerance](#datasets.costandusage.billedcost.implementationguidance.roundingvariancetolerance).
 * When a corresponding invoice has not yet been issued, the sum of BilledCost MAY differ from preliminary or estimated invoiced amounts.
+
+## Implementation Guidance
+
+### Handling Rounding Discrepancies
+
+When validating the sum of BilledCost against the payable amount on an issued invoice, exact matches are not expected due to precision differences between cost and usage data and invoiced amounts (e.g., 6 or more decimal places in cost and usage data vs. 2 decimal places on the invoice). The requirement allows for a maximum rounding error based on the statistical probability of rounding variance, which grows with the square root of the row count.
+
+### Rounding Variance Tolerance
+
+The tolerance used when comparing the sum of BilledCost against the payable amount on an issued invoice is defined as:
+
+Tolerance = `MAX(100 × Subunit, (SQRT(Rows) × 0.5) × Subunit)`
+
+Where:
+
+* **Rows** -- The number of cost and usage rows included in the aggregation for the relevant InvoiceId and InvoiceIssuerName.
+* **Subunit** -- The numeric value of the smallest subunit of [BillingCurrency](#datasets.costandusage.billingcurrency) (for example, `0.01` for USD or `1` for JPY).
+
+The tolerance is the **greater** of the following values:
+
+* **100 × Subunit** -- Establishes a fixed minimum tolerance equal to 100 units of the smallest currency subunit.
+* **(SQRT(Rows) × 0.5) × Subunit** -- Provides a tolerance that increases with the square root of the number of rows to account for rounding accumulation in larger datasets.
 
 ## Column ID
 
