@@ -23,7 +23,7 @@ EffectiveCost MUST adhere to the following requirements:
 * EffectiveCost MUST include any portion of the BilledCost of [*covering*](#glossary:covering-charge) purchase *charges* (ChargeCategory set to "Purchase") that is applied to this *charge*.
 * EffectiveCost MUST be 0 when ChargeCategory is "Purchase" and the purchase is intended to cover related eligible *charges*. This requirement applies even when the *covered charges* originate from different cost and usage datasets, possibly from a different [ServiceProviderName](#datasets.costandusage.serviceprovidername).
 * Entities that do not originate the cost and usage data for this *charge* MUST NOT generate *charges* with non-zero EffectiveCost to avoid double-counting when merging multiple datasets.
-* The sum of EffectiveCost across all related *covering* and *covered charges* MUST equal the sum of BilledCost across the same set of *charges*, within the *charge period* of the [*covering charges*](#glossary:covering-charge), when both the *covering* and *covered charges* are present in the dataset.
+* The sum of EffectiveCost across all related *covering* and *covered charges* MUST equal the sum of BilledCost across the same set of *charges*, within the *charge period* of the *covering charges*, when both the *covering* and *covered charges* are present in the dataset.
 * The sum of EffectiveCost for a given *billing period* MAY differ from the sum of BilledCost when *covered* and *covering charges* span multiple *billing periods* or [*billing accounts*](#glossary:billing-account), or when only one side of a covering relationship is present in the dataset.
 
 ## Column ID

@@ -16,11 +16,11 @@ BilledCost MUST adhere to the following requirements:
 * BilledCost MUST be a valid decimal value.
 * BilledCost MUST be denominated in the BillingCurrency.
 * BilledCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
-* BilledCost MUST NOT include any portion of a *covered charge* that is offset by a *covering charge*.
+* BilledCost MUST NOT include any portion of a [*covered charge*](#glossary:covered-charge) that is offset by a [*covering charge*](#glossary:covering-charge).
 * BilledCost MUST be 0 for *charges* that are fully *covered* by one or more *covering charges*.
 * BilledCost MUST reflect amounts as invoiced by the [InvoiceIssuerName](#datasets.costandusage.invoiceissuername), not estimated or inferred values.
 * Entities that are not responsible or authorized for invoicing a *charge* MUST NOT generate *charges* with non-zero BilledCost to avoid double-counting when merging multiple datasets.
-* When a corresponding invoice has been issued, the sum of BilledCost for a given [InvoiceId](#datasets.costandusage.invoiceid) and [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) MUST NOT differ from the payable amount provided on that invoice by more than the [Rounding Variance Tolerance](#datasets.costandusage.billedcost.implementationguidance.roundingvariancetolerance).
+* When a corresponding invoice has been issued, the sum of BilledCost for a given [InvoiceId](#datasets.costandusage.invoiceid) and InvoiceIssuerName MUST NOT differ from the payable amount provided on that invoice by more than the [Rounding Variance Tolerance](#datasets.costandusage.billedcost.implementationguidance.roundingvariancetolerance).
 * When a corresponding invoice has not yet been issued, the sum of BilledCost MAY differ from preliminary or estimated invoiced amounts.
 
 ## Implementation Guidance
