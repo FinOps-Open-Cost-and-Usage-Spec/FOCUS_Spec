@@ -77,10 +77,10 @@ The tag key object contains the properties of the *finalized tag* as well as oth
 
 | Key | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `TagSource` | String | True | The type of *tag source* where the tag key is present. |
-| `TagSourceId` | String | True | The identifier of the *tag source* where the tag key is present. |
-| `TagValue` | String, Boolean, or Number | True |  The value associated with the tag key. |
-| `AncestorTaggedSources` | Object | True | An object containing all *tag sources* where the corresponding tag key was present which did not result in the *finalized tag*. |
+| `TagSource` | String or Null | True | The type of *tag source* where the tag key is present. |
+| `TagSourceId` | String or Null | True | The identifier of the *tag source* where the tag key is present. |
+| `TagValue` | String, Boolean, Number, or Null | True |  The value associated with the tag key. |
+| `AncestorTaggedSources` | Object or Null | True | An object containing all *tag sources* where the corresponding tag key was present which did not result in the *finalized tag*. |
 
 ### Ancestor Tagged Sources Object
 
@@ -89,7 +89,7 @@ The ancestor tag source object contains the properties of the tag present in the
 | Key | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | `TagSourceId` | String | True | The identifier of the *tag source* where the tag key is present. |
-| `TagValue` | String, Boolean, or Number | True |  The value associated with the tag key. |
+| `TagValue` | String, Boolean, Number, or Null | True |  The value associated with the tag key. |
 
 ## Object Example
 

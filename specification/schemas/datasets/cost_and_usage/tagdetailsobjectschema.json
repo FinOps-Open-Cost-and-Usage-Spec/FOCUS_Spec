@@ -9,7 +9,7 @@
         "^x_[A-Z][a-zA-Z0-9]*$": {
             "description": "Custom data generator-defined top-level properties prefixed with x_ in PascalCase format"
         },
-        "^(?!x_[A-Z])[a-zA-Z0-9_]+$": {
+        "^(?!x_[A-Z]).+$": {
             "description": "Objects containing information about a tag scheme (including 'Default') in the Tags column",
             "$ref": "#/$defs/tagScheme"
         }
@@ -29,7 +29,7 @@
                         "^x_[A-Z][a-zA-Z0-9]*$": {
                             "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
                         },
-                        "^(?!x_[A-Z])[a-zA-Z0-9_]+$": {
+                        "^(?!x_[A-Z]).+$": {
                             "$ref": "#/$defs/tagKeyObject"
                         }
                     },
@@ -95,7 +95,7 @@
                         "^x_[A-Z][a-zA-Z0-9]*$": {
                             "description": "Custom data generator-defined properties prefixed with x_ in PascalCase format"
                         },
-                        "^(?!x_[A-Z])[a-zA-Z0-9_ ]+$": {
+                        "^(?!x_[A-Z]).+$": {
                             "$ref": "#/$defs/ancestorTag"
                         }
                     },
