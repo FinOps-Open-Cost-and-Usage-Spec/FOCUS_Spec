@@ -18,7 +18,7 @@ PricingCurrencyEffectiveCost MUST adhere to the following requirements:
 * PricingCurrencyEffectiveCost MUST NOT be null.
 * PricingCurrencyEffectiveCost MUST be a valid decimal value.
 * PricingCurrencyEffectiveCost MUST be denominated in the [PricingCurrency](#datasets.costandusage.pricingcurrency).
-* PricingCurrencyEffectiveCost MUST be the PricingCurrency-denominated equivalent of [EffectiveCost](#datasets.costandusage.effectivecost). All normative requirements that apply to EffectiveCost apply equivalently to PricingCurrencyEffectiveCost when denominated in PricingCurrency.
+* PricingCurrencyEffectiveCost MUST be the PricingCurrency-denominated equivalent of [EffectiveCost](#datasets.costandusage.effectivecost).
 
 ## Column ID
 
