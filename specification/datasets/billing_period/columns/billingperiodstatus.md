@@ -52,7 +52,7 @@ The state of the billing period (i.e., "Open" or "Closed"), indicating whether t
 
 | Value  | Description                                                                                                   |
 | :----- | :------------------------------------------------------------------------------------------------------------ |
-| Open   | The billing period is currently active or still being processed. Charges may continue to be added or revised. |
+| Open   | The billing period is currently active or still being processed. Records may continue to be added or revised. |
 | Closed | The billing period has ended, all anticipated invoices have been issued, and the delivered data is finalized. |
 
 ## Introduced (version)
