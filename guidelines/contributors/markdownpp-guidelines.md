@@ -195,17 +195,18 @@ While markdown can be included in a .mdpp, the FOCUS project discourages this be
 
 ### Directory Naming Conventions
 
-To ensure consistency, ease of maintenance, and portability, all directories in the FOCUS Specification repository, except the `.github` directory and its subdirectories, MUST follow these naming conventions:
+To ensure consistency, ease of maintenance, and portability, all directories in the FOCUS Specification repository, except [GitHub-managed directories](#github-managed-directories), MUST follow these naming conventions:
 
 - Directory names MUST use lowercase characters.
 - Directory names MUST NOT contain spaces.
 - Directory names SHOULD be descriptive and reflect the primary content of the directory.
-- Directory names consisting of multiple words MUST use hyphens (`-`) as the word separator (e.g., kebab-case), except for directories defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes).
-- Directory names consisting of multiple words MUST NOT use any word separator for directories defining FOCUS entities, so that the directory name matches the FOCUS entity identifier in lowercase.
+- Directory names consisting of multiple words MUST adhere to the following requirements:
+  - Directory names for directories defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes) MUST NOT use any word separator, so that the directory name matches the FOCUS entity identifier in lowercase.
+  - All other directory names MUST use hyphens (`-`) as the word separator (i.e., kebab-case).
 
-#### Exception: GitHub directories
+#### GitHub-managed Directories
 
-- The `.github` directory and its subdirectories (e.g., `ISSUE_TEMPLATE`, `workflows`) MUST follow common GitHub directory naming conventions.
+GitHub-managed directories (e.g., `.github` and its subdirectories such as `ISSUE_TEMPLATE`, `workflows`) are exempt from these rules and MUST follow common GitHub directory naming conventions.
 
 #### Renaming directories after publication
 
@@ -234,17 +235,18 @@ cost-and-usage
 
 ### File Naming Conventions
 
-To ensure consistency, ease of maintenance, and portability, all Markdown and MarkdownPP files in the FOCUS Specification repository, except key repository files, MUST follow these naming conventions:
+To ensure consistency, ease of maintenance, and portability, all Markdown and MarkdownPP files in the FOCUS Specification repository, except [key repository files](#key-repository-files), MUST follow these naming conventions:
 
 - File names MUST use lowercase characters.
 - File names MUST NOT contain spaces.
 - File names SHOULD be descriptive and reflect the primary content of the file.
-- File names consisting of multiple words MUST use hyphens (`-`) as the word separator (e.g., kebab-case), except for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes).
-- File names consisting of multiple words MUST NOT use any word separator for files defining FOCUS entities, so that the file name matches the FOCUS entity identifier in lowercase.
+- File names consisting of multiple words MUST adhere to the following requirements:
+  - File names for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes) MUST NOT use any word separator, so that the file name matches the FOCUS entity identifier in lowercase.
+  - All other file names MUST use hyphens (`-`) as the word separator (i.e., kebab-case).
 
-#### Exception: Key repository files
+#### Key Repository Files
 
-- Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) MUST follow common GitHub file naming conventions.
+Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) are exempt from these rules and MUST follow common GitHub file naming conventions.
 
 #### Renaming files after publication
 
