@@ -1,0 +1,79 @@
+{
+  "phase": 1,
+  "source": {
+    "path": "specification/attributes/dataset_configuration.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Attribute",
+    "entity_id": "DatasetConfiguration",
+    "entity_name": "Dataset Configuration"
+  },
+  "entities_found": [
+    {
+      "entity_type": "Attribute",
+      "entity_id": "DatasetConfiguration",
+      "entity_name": "Dataset Configuration"
+    }
+  ],
+  "atoms": [
+    {
+      "temp_id": "R001",
+      "order": 1,
+      "text": "*FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Dataset Configuration",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 26,
+        "line_end": 26
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L026"
+    },
+    {
+      "temp_id": "R002",
+      "order": 2,
+      "text": "*FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).",
+      "keyword": "MUST",
+      "role": "requirement",
+      "section_path": [
+        "Dataset Configuration",
+        "Requirements"
+      ],
+      "block": {
+        "block_type": "list_item",
+        "indent_level": 0,
+        "bullet": "*"
+      },
+      "lead_in": {
+        "ends_with_colon": false
+      },
+      "provenance": {
+        "line_start": 27,
+        "line_end": 27
+      },
+      "_alignment_status": "confirmed",
+      "ref": "L027"
+    }
+  ],
+  "warnings": [],
+  "structural": {
+    "lead_ins": [],
+    "index": {
+      "by_section_path": {},
+      "by_line": {}
+    }
+  }
+}
