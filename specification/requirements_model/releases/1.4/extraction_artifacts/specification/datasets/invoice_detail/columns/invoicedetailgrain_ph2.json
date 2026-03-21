@@ -1,0 +1,369 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/invoice_detail/columns/invoicedetailgrain.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "InvoiceDetailGrain",
+    "entity_name": "Invoice Detail Grain"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 12
+  },
+  "0_outline_root": "ROOT: Invoice Detail Grain > Requirements",
+  "0_outline_lines": [
+    "L009: \"InvoiceDetailGrain MUST adhere to the following requirements:\"",
+    "  L011: \"InvoiceDetailGrain MUST be of type JSON.\"",
+    "  L012: \"InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.\"",
+    "  L013: \"InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.\"",
+    "  L014: \"InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.\"",
+    "  L015: \"InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.\"",
+    "  L016: \"InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.\"",
+    "  L017: \"InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.\"",
+    "  L018: \"InvoiceDetailGrain property keys MUST begin with the string \\\"x_\\\" unless it is a FOCUS-defined property.\"",
+    "  L019: \"FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:\"",
+    "    L020: \"Property key MUST match the spelling and casing specified for the FOCUS-defined property.\"",
+    "    L021: \"Property value MUST be of the type specified for that property.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 12,
+    "leaf_count": 10,
+    "lead_in_count": 2,
+    "max_depth": 2,
+    "max_indent_level": 1,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 9,
+      "MUST NOT": 1,
+      "SHOULD": 2
+    },
+    "lead_ins": [
+      {
+        "ref": "L009",
+        "text_preview": "InvoiceDetailGrain MUST adhere to the following requirements:",
+        "children": 9
+      },
+      {
+        "ref": "L019",
+        "text_preview": "FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:",
+        "children": 2
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L009",
+            "text": "InvoiceDetailGrain MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Invoice Detail Grain",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L011",
+                "text": "InvoiceDetailGrain MUST be of type JSON.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L012",
+                "text": "InvoiceDetailGrain MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L013",
+                "text": "InvoiceDetailGrain MUST NOT be null when one or more properties uniquely define the granularity of the invoice line item.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R005",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R005",
+                "order": 5,
+                "ref": "L014",
+                "text": "InvoiceDetailGrain MUST contain the set of all properties that uniquely define the granularity of the invoice line item.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R006",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R006",
+                "order": 6,
+                "ref": "L015",
+                "text": "InvoiceDetailGrain SHOULD use the applicable FOCUS-defined Invoice Detail Grain properties listed below to represent the granularity of the invoice line item.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R007",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L016",
+                "text": "InvoiceDetailGrain MUST include all custom Invoice Detail Grain properties that are applicable to the granularity of the invoice line item when there is no equivalent FOCUS-defined property.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R008",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R008",
+                "order": 8,
+                "ref": "L017",
+                "text": "InvoiceDetailGrain property keys SHOULD conform to [PascalCase](#glossary:pascalcase) format.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R009",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R009",
+                "order": 9,
+                "ref": "L018",
+                "text": "InvoiceDetailGrain property keys MUST begin with the string \"x_\" unless it is a FOCUS-defined property.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R010",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R010",
+                "order": 10,
+                "ref": "L019",
+                "text": "FOCUS-defined InvoiceDetailGrain properties MUST adhere to the following requirements:",
+                "keyword": "MUST",
+                "section_path": [
+                  "Invoice Detail Grain",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": true
+                }
+              },
+              "children": [
+                {
+                  "node_id": "R011",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R011",
+                    "order": 11,
+                    "ref": "L020",
+                    "text": "Property key MUST match the spelling and casing specified for the FOCUS-defined property.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Invoice Detail Grain",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R012",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R012",
+                    "order": 12,
+                    "ref": "L021",
+                    "text": "Property value MUST be of the type specified for that property.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Invoice Detail Grain",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}
