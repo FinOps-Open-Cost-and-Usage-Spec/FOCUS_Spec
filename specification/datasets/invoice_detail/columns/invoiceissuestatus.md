@@ -33,7 +33,7 @@ Invoice Issue Status
 
 ## Description
 
-The publication state of the invoice and the reliability of its associated delivered data, indicating if it is provisional ("Open"), finalized ("Issued"), or voided ("Voided").
+The publication state of the invoice and the reliability of its associated delivered data, indicating if it is provisional ("Open"), issued ("Issued"), or voided ("Voided").
 
 ## Content constraints
 
