@@ -3,8 +3,8 @@
 !INCLUDE "examples/commitment_discount_flexibility_examples/commitment_discount_flexibility_examples.mdpp",1
 !INCLUDE "contract_commitments/contract_commitments.mdpp",1
 !INCLUDE "correction_handling_examples/correction_handling_examples.mdpp",1
-!INCLUDE "json_object_examples/json_object_examples.mdpp",1
 !INCLUDE "invoice_detail/invoice_detail.mdpp",1
+!INCLUDE "json_object_examples/json_object_examples.mdpp",1
 !INCLUDE "metadata_examples/metadata_examples.mdpp",1
 !INCLUDE "participating_entity_identification.md",1
 !INCLUDE "saas_examples/saas_examples.mdpp",1
