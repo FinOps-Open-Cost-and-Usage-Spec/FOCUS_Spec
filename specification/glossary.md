@@ -94,7 +94,7 @@ A financial incentive or allowance granted by a service provider unrelated to ot
 
 <a name="glossary:custom-column"><b>Custom Column</b></a>
 
-A column not defined by FOCUS and included a [*FOCUS dataset*](#glossary:FOCUS-dataset). Custom columns are prefixed with `x_` and provide additional context from [*native datasets*](#glossary:native-dataset) beyond what is captured in FOCUS columns.
+A column not defined by FOCUS and included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). Custom columns are prefixed with `x_` and provide additional context from [*native datasets*](#glossary:native-dataset) beyond what is captured in FOCUS columns.
 
 <a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
 

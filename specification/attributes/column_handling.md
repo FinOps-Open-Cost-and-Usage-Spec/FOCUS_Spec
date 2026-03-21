@@ -13,7 +13,7 @@ While FOCUS establishes the core structure and standardizes columns for consiste
 
 Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming and documentation conventions for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
-All columns defined in the FOCUS specification MUST follow the naming and documentation requirements listed below.
+All columns included in a *FOCUS dataset* must follow the naming and documentation requirements listed below.
 
 ## Attribute ID
 
@@ -43,7 +43,7 @@ Naming and documentation conventions for columns appearing in a *FOCUS dataset*.
 * <a name="column_handling:custom-column"></a>Custom (e.g., service-provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
   * Custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
   * Custom columns SHOULD follow the same rules listed above for FOCUS columns.
-  * Custom columns MUST be documented, including description, purpose, and relationship to [*native dataset*](#glossary:native-dataset) columns.
+  * Custom columns MUST be detailed in publicly-available documentation, including description, purpose, and relationship to [*native dataset*](#glossary:native-dataset) columns.
 
 ## Exceptions
 
