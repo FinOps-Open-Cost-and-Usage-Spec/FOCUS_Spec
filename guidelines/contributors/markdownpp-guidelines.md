@@ -168,11 +168,11 @@ Headers can be excluded from table of contents generation while maintaining prop
 
 This feature automatically:
 
-- Excludes marked headers from TOC generation
-- Prevents section numbering for these headers
-- Skips anchor link creation
-- Ensures proper spacing around headers to meet markdown linting requirements
-- Maintains document readability and structure
+* Excludes marked headers from TOC generation
+* Prevents section numbering for these headers
+* Skips anchor link creation
+* Ensures proper spacing around headers to meet markdown linting requirements
+* Maintains document readability and structure
 
 ## Best Practices
 
@@ -197,24 +197,24 @@ While markdown can be included in a .mdpp, the FOCUS project discourages this be
 
 To ensure consistency, ease of maintenance, and portability, all directories in the FOCUS Specification repository, except [GitHub-managed directories](#github-managed-directories), MUST follow these naming conventions:
 
-- Directory names MUST use lowercase characters.
-- Directory names MUST NOT contain spaces.
-- Directory names SHOULD be descriptive and reflect the primary content of the directory.
-- Directory names consisting of multiple words MUST adhere to the following requirements:
-  - Directory names for directories defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes) MUST NOT use any word separator, so that the directory name matches the FOCUS entity identifier in lowercase.
-  - All other directory names MUST use hyphens (`-`) as the word separator (i.e., kebab-case).
+* Directory names MUST use lowercase characters.
+* Directory names MUST NOT contain spaces.
+* Directory names SHOULD be descriptive and reflect the primary content of the directory.
+* Directory names consisting of multiple words MUST adhere to the following requirements:
+  * Directory names for directories defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes) MUST NOT use any word separator, so that the directory name matches the FOCUS entity identifier in lowercase.
+  * All other directory names MUST use hyphens (`-`) as the word separator (i.e., kebab-case).
 
 #### GitHub-managed Directories
 
 GitHub-managed directories (e.g., `.github` and its subdirectories such as `ISSUE_TEMPLATE`, `workflows`) are exempt from these rules and MUST follow common GitHub directory naming conventions.
 
-#### Renaming directories after publication
+#### Renaming Directories After Publication
 
 Directory names are used by build processes (e.g., `!INCLUDE` statements) and may also appear in external hyperlinks (e.g., within FinOps Foundation assets). Directory names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
 
 If a rename is necessary, all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
 
-#### Preferred directory name examples
+#### Preferred Directory Name Examples
 
 ```text
 supported-features
@@ -223,7 +223,7 @@ pricingquantity
 numericformat
 ```
 
-#### Forbidden directory name examples
+#### Forbidden Directory Name Examples
 
 ```text
 SupportedFeatures
@@ -237,24 +237,24 @@ cost-and-usage
 
 To ensure consistency, ease of maintenance, and portability, all Markdown and MarkdownPP files in the FOCUS Specification repository, except [key repository files](#key-repository-files), MUST follow these naming conventions:
 
-- File names MUST use lowercase characters.
-- File names MUST NOT contain spaces.
-- File names SHOULD be descriptive and reflect the primary content of the file.
-- File names consisting of multiple words MUST adhere to the following requirements:
-  - File names for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes) MUST NOT use any word separator, so that the file name matches the FOCUS entity identifier in lowercase.
-  - All other file names MUST use hyphens (`-`) as the word separator (i.e., kebab-case).
+* File names MUST use lowercase characters.
+* File names MUST NOT contain spaces.
+* File names SHOULD be descriptive and reflect the primary content of the file.
+* File names consisting of multiple words MUST adhere to the following requirements:
+  * File names for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes) MUST NOT use any word separator, so that the file name matches the FOCUS entity identifier in lowercase.
+  * All other file names MUST use hyphens (`-`) as the word separator (i.e., kebab-case).
 
 #### Key Repository Files
 
 Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) are exempt from these rules and MUST follow common GitHub file naming conventions.
 
-#### Renaming files after publication
+#### Renaming Files After Publication
 
 File names are used by build processes (e.g., `!INCLUDE` statements) and may also appear in external hyperlinks (e.g., within FinOps Foundation assets). File names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
 
 If a rename is necessary, all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
 
-#### Preferred file name examples
+#### Preferred File Name Examples
 
 ```text
 supported-features.mdpp
@@ -263,7 +263,7 @@ pricingquantity.md
 numericformat.md
 ```
 
-#### Forbidden file name examples
+#### Forbidden File Name Examples
 
 ```text
 PricingQuantity.md
@@ -286,11 +286,11 @@ numeric-format.md
 
 All headers appearing after the !TOC directive automatically receive an HTML anchor generated from the header text whereby the following applies:
 
-- Anchor text is normalized to lowercase.
-- Whitespace and the following characters are removed: `,` `-` `(` `)`.
-- Other special characters such as `/`, `:`, `%`, `&`, `@` are preserved.
-- Dots (.) are inserted between header levels to represent the full hierarchy of document sections.
-- Headers marked with `<!--SkipTOC-->` will appear in the document but will not be included in the Table of Contents, and no anchor will be created.
+* Anchor text is normalized to lowercase.
+* Whitespace and the following characters are removed: `,` `-` `(` `)`.
+* Other special characters such as `/`, `:`, `%`, `&`, `@` are preserved.
+* Dots (.) are inserted between header levels to represent the full hierarchy of document sections.
+* Headers marked with `<!--SkipTOC-->` will appear in the document but will not be included in the Table of Contents, and no anchor will be created.
 
 ### Header Conventions
 
@@ -298,21 +298,21 @@ The FOCUS Specification relies on Markdown headers to define document structure,
 
 #### File-Level Header Structure
 
-- Content-oriented Markdown files (.md) SHOULD begin with a top-level header that defines the section title.
-- MarkdownPP assembly files (.mdpp) that consist only of !INCLUDE directives MAY omit headers.
+* Content-oriented Markdown files (.md) SHOULD begin with a top-level header that defines the section title.
+* MarkdownPP assembly files (.mdpp) that consist only of !INCLUDE directives MAY omit headers.
 
 #### Header Syntax
 
 To ensure predictable Table of Contents (TOC) generation, stable internal links, and reliable external references, all headers in the FOCUS Specification MUST follow these conventions:
 
-- Headers MUST use ATX-style Markdown syntax (`#`).
-- Up to six header levels (######) are supported.
-- A single space MUST follow the `#` character(s).
-- Headers MUST NOT use Setext-style headers (`=` or `-` underlines), even though they are technically supported.
-- Headers MUST NOT be empty.
-- Header text SHOULD only contain alphanumeric characters (`A-Z`, `0-9`), spaces (` `), commas (`,`), and the following special characters: hyphens (`-`), apostrophes (`'`), and parentheses (`(`, `)`). Other special characters SHOULD be avoided.
+* Headers MUST use ATX-style Markdown syntax (`#`).
+* Up to six header levels (######) are supported.
+* A single space MUST follow the `#` character(s).
+* Headers MUST NOT use Setext-style headers (`=` or `-` underlines), even though they are technically supported.
+* Headers MUST NOT be empty.
+* Header text SHOULD only contain alphanumeric characters (`A-Z`, `0-9`), spaces (` `), commas (`,`), and the following special characters: hyphens (`-`), apostrophes (`'`), and parentheses (`(`, `)`). Other special characters SHOULD be avoided.
 
-#### Renaming or changing headers after publication
+#### Renaming or Changing Headers After Publication
 
 Header anchors are used by build processes (e.g., TOC generation) and may also appear in external hyperlinks. Header text and structure SHOULD remain stable after publication to maintain repository consistency, TOC accuracy, and external hyperlink integrity.
 
