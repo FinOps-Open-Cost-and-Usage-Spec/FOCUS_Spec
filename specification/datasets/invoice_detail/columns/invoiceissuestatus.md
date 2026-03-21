@@ -1,6 +1,6 @@
 # Invoice Issue Status
 
-Invoice Issue Status indicates the publication state of the invoice. It distinguishes between provisional data that is subject to change, invoices that have been formally issued as valid financial obligations, and invoices that have been explicitly retracted.
+Invoice Issue Status indicates the publication state of the invoice and the reliability of its associated delivered [Cost and Usage](#datasets.costandusage) and [Invoice Detail](#datasets.invoicedetail) data. It distinguishes between provisional data that is subject to change, invoices that have been formally issued as valid financial obligations with finalized associated data, and invoices that have been explicitly retracted.
 
 ## Requirements
 
@@ -33,7 +33,7 @@ Invoice Issue Status
 
 ## Description
 
-The publication state of the invoice, indicating if it is provisional (`Open`), issued (`Issued`), or voided (`Voided`).
+The publication state of the invoice and the reliability of its associated delivered data, indicating if it is provisional ("Open"), finalized ("Issued"), or voided ("Voided").
 
 ## Content constraints
 
@@ -43,15 +43,15 @@ The publication state of the invoice, indicating if it is provisional (`Open`), 
 | Feature level   | Mandatory                       |
 | Allows nulls    | False                           |
 | Data type       | String                          |
-| Value format    | \<unspecified>                   |
+| Value format    | \<unspecified>                  |
 
 ## Allowed Values
 
-| Value    | Description                              |
-| :---     | :---                                     |
-| `Open`   | The invoice is provisional and subject to change. It is not a valid financial obligation. |
-| `Issued` | The invoice has been formally issued by the provider. It represents a static financial obligation. |
-| `Voided` | The invoice was previously issued but has been retracted or nullified. It is not a valid financial obligation. |
+| Value  | Description |
+| :---   | :---        |
+| Open   | The invoice is provisional and subject to change. It is not a valid financial obligation and the associated delivered data is preliminary. |
+| Issued | The invoice has been formally issued by the provider. It represents a valid financial obligation with finalized associated data. |
+| Voided | The invoice was previously issued but has been retracted or nullified. It is not a valid financial obligation. |
 
 ## Introduced (version)
 

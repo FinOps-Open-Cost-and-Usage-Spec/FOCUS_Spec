@@ -1,6 +1,6 @@
 # Billing Period Status
 
-Billing Period Status represents the state of the billing period (i.e., open or closed). This status helps FinOps practitioners determine if the [Cost and Usage](#datasets.costandusage) data for a given period is preliminary and subject to change, or if it is finalized and ready for formal financial reporting and showback/chargeback processes.
+Billing Period Status represents the state of the billing period (i.e., "Open" or "Closed"). This status helps FinOps practitioners determine if the [Cost and Usage](#datasets.costandusage) and [Invoice Detail](#datasets.invoicedetail) data for a given period is preliminary and subject to change, or if all anticipated invoices have been issued and the delivered data is finalized and ready for formal financial reporting and showback/chargeback processes.
 
 ## Requirements
 
@@ -36,7 +36,7 @@ Billing Period Status
 
 ## Description
 
-The state of the billing period (i.e., open or closed).
+The state of the billing period (i.e., "Open" or "Closed"), indicating whether the delivered data for the period is preliminary, or if all anticipated invoices have been issued and the delivered data is finalized.
 
 ## Content Constraints
 
@@ -50,10 +50,10 @@ The state of the billing period (i.e., open or closed).
 
 ## Allowed Values
 
-| Value    | Description                                                                                                                                      |
-| :------- | :----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Open   | The billing period is currently active or still being processed. Charges may continue to be added or revised.        |
-| Closed | The billing period has ended, and all charges have been finalized and issued via invoice. |
+| Value  | Description                                                                                                   |
+| :----- | :------------------------------------------------------------------------------------------------------------ |
+| Open   | The billing period is currently active or still being processed. Charges may continue to be added or revised. |
+| Closed | The billing period has ended, all anticipated invoices have been issued, and the delivered data is finalized. |
 
 ## Introduced (version)
 
