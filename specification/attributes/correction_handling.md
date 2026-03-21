@@ -32,7 +32,7 @@ In the Replacement correction style, a *dataset artifact* uses the Overwrite del
 
 Any given *dataset artifact* completely replaces all previous *dataset artifacts* for the same *delivery scope* to reflect updates, additions, or omissions relative to the previous snapshot. The practitioner only needs to reference the most recent *dataset artifact* for a given *delivery scope* in order to see a complete view; all previously delivered *dataset artifacts* for that *delivery scope* are considered obsolete and can be safely ignored.
 
-Given that changes are not presented as separate entries, this style lacks inherent auditability.
+Given that changes are not presented as separate entries, this style lacks inherent auditability. Dataset artifact size typically increases within a delivery scope as underlying data accumulates, but total data volume remains the lowest compared to other correction styles as each dataset artifact supersedes previously delivered ones for the same delivery scope.
 
 #### Delta Corrections
 
@@ -40,7 +40,7 @@ In the Delta correction style, a *dataset artifact* uses the Append delivery mec
 
 All previously delivered *dataset artifacts* are preserved, and corrections are expressed as additive records that are applied during aggregation. These records effectively increase or decrease values in selected additive metrics (e.g., cost- and quantity-related columns) of previously delivered records, or supplement previously delivered records, all within the same *delivery scope*. The practitioner must reference all *dataset artifacts* delivered for a given *delivery scope* in order to see a complete and accurate view.
 
-Given that only net changes are presented and previously delivered records are not explicitly reversed, the Delta correction style provides limited inherent auditability compared to Ledger corrections.
+Given that only net changes are presented and previously delivered records are not explicitly reversed, the Delta correction style provides limited inherent auditability compared to Ledger corrections. Total data volume increases over time as all delivered dataset artifacts are preserved, and is typically higher compared to Replacement corrections but lower compared to Ledger corrections.
 
 #### Ledger Corrections
 
@@ -48,7 +48,7 @@ In the Ledger correction style, a *dataset artifact* uses the Append delivery me
 
 All previously delivered *dataset artifacts* are preserved, and corrections are expressed as additive records that reflect explicit reversals and re-entries, applied during aggregation. These records effectively increase or decrease values in selected additive metrics (e.g., cost- and quantity-related columns) of previously delivered records, or supplement previously delivered records, all within the same *delivery scope*. The practitioner must reference all *dataset artifacts* delivered for a given *delivery scope* in order to see a complete and accurate view.
 
-Given that the entire change history is presented, the Ledger correction style provides full inherent auditability.
+Given that the entire change history is presented, the Ledger correction style provides full inherent auditability. Total data volume increases over time as all delivered dataset artifacts are preserved, and is typically the highest compared to other correction styles as each correction requires explicit reversal and re-entry records.
 
 ### Corrections to Issued Invoices
 

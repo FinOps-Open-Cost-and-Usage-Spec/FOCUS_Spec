@@ -21,7 +21,7 @@ For more information on corrections, see the [Correction Handling attribute](#at
 
 #### Overwrite Delivery
 
-In the Overwrite delivery mechanism, each *dataset artifact* provides a complete snapshot of data for a predefined scope (e.g., a *billing period* or a logical grouping), based on the data available at the time of delivery. Subsequent *dataset artifacts* for the same scope typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism provides delivery simplicity, but it lacks inherent auditability.
+In the Overwrite delivery mechanism, each *dataset artifact* provides a complete snapshot of data for a predefined scope (e.g., a *billing period* or a logical grouping), based on the data available at the time of delivery. Subsequent *dataset artifacts* for the same scope typically reflect updates, additions, or omissions relative to the previous snapshot. This mechanism provides delivery simplicity, but it lacks inherent auditability. Dataset artifact size typically increases within a delivery scope as underlying data accumulates, but total data volume remains the lowest compared to Append delivery as each dataset artifact supersedes previously delivered ones for the same delivery scope.
 
 Subsequent *dataset artifacts* using the Overwrite mechanism may include the following:
 
@@ -32,7 +32,7 @@ Subsequent *dataset artifacts* using the Overwrite mechanism may include the fol
 
 #### Append Delivery
 
-In the Append delivery mechanism, a subsequent *dataset artifact* appends new records without modifying or removing previously delivered ones. This mechanism inherently supports auditability, as all original and correction records are retained.
+In the Append delivery mechanism, a subsequent *dataset artifact* appends new records without modifying or removing previously delivered ones. This mechanism inherently supports auditability, as all original and correction records are retained. Total data volume increases over time as all delivered dataset artifacts are preserved, and is typically higher compared to Overwrite delivery.
 
 Subsequent *dataset artifacts* using the Append mechanism may include the following:
 
@@ -58,6 +58,7 @@ Defines how data generator delivers *FOCUS dataset* to customer.
 DeliveryHandling MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST have its mechanism(s) for delivering *dataset artifacts* documented and accessible to practitioners (including whether Overwrite or Append is used and under which conditions).
+* *FOCUS dataset* MUST NOT require practitioners to deduplicate records within or across delivered dataset artifacts.
 * When using Overwrite delivery mechanism, *FOCUS dataset* MUST adhere to the following additional requirements:
   * *FOCUS dataset* MUST represent a complete snapshot for a given *delivery scope*.
   * *FOCUS dataset* MUST supersede all previously delivered *dataset artifacts* for the same *delivery scope*.
