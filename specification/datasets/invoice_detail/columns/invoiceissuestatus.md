@@ -15,13 +15,15 @@ InvoiceIssueStatus MUST adhere to the following requirements:
 
 ## Implementation Context
 
-While the transition from "Open" to "Issued" typically signifies that an invoice has been finalized, invoice reconciliation has been performed, and the provided data is accurate, when the provided data is found to be inaccurate or incomplete, it may be necessary to apply corrections to records associated with the issued invoice.
+The transition from "Open" to "Issued" typically signifies that an invoice has been finalized, invoice reconciliation has been performed, and the delivered data is accurate. However, when the delivered data is found to be inaccurate or incomplete, it may be necessary to apply corrections to records associated with the issued invoice.
 
 If needed, a previously issued invoice may be reopened to apply such corrections, but this transition from "Issued" to "Open" must be explicitly requested or approved by the customer to maintain auditability.
 
-FinOps tools and reporting engines should be designed to detect these transitions and trigger updates to downstream showback or chargeback reports to ensure financial accuracy.
+Corrections to underlying records that do not impact invoice reconciliation are allowed regardless of Invoice Issue Status, but may reduce auditability and traceability or affect downstream processes (e.g., cost allocation, chargeback, reporting).
 
-For more information, please see the [Correction Handling](#attributes.correctionhandling) attribute.
+FinOps tools and reporting engines should be designed to detect Invoice Issue Status transitions and corrections to records associated with issued invoices, and trigger updates to downstream processes to ensure financial accuracy.
+
+For more information, please see the [Invoice and Billing Period Handling](#appendix.invoiceandbillingperiodhandling) appendix and the [Correction Handling](#attributes.correctionhandling) attribute.
 
 ## Column ID
 

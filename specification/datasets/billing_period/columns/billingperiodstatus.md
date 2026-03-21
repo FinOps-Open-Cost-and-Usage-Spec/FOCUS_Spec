@@ -14,7 +14,7 @@ BillingPeriodStatus MUST adhere to the following requirements:
 
 ## Implementation Context
 
-While the transition from "Open" to "Closed" typically signifies the end of a billing cycle, but in scenarios such as the following, it may be necessary to provide corrections to closed billing periods:
+While the transition from "Open" to "Closed" typically signifies the end of a billing cycle, in scenarios such as the following, it may be necessary to provide corrections to closed billing periods:
 
 * Retroactive adjustments: an invoice issuer generates credits or corrections for a period previously marked as finalized.
 * Audit corrections: discrepancies are discovered during financial reconciliation that require the data to be re-processed.
@@ -22,9 +22,11 @@ While the transition from "Open" to "Closed" typically signifies the end of a bi
 
 Corrections to closed billing periods are generally represented in the context of a subsequent open billing period to preserve historical financial accuracy and ensure transparent tracking. Exceptionally, a previously closed billing period may be reopened to apply such corrections, but this transition from "Closed" to "Open" must be explicitly requested or approved by the customer to maintain auditability and the integrity of financial reporting.
 
-FinOps tools and reporting engines should be designed to detect these transitions and trigger updates to downstream showback or chargeback reports to ensure financial accuracy.
+Corrections that do not impact the integrity of the closed billing period, such as informational or metadata updates, are allowed regardless of Billing Period Status.
 
-For more information, please see the [Correction Handling](#attributes.correctionhandling) attribute.
+FinOps tools and reporting engines should be designed to detect Billing Period Status transitions and corrections to closed billing periods, and trigger updates to downstream processes (e.g., cost allocation, chargeback, reporting) to ensure financial accuracy.
+
+For more information, please see the [Invoice and Billing Period Handling](#appendix.invoiceandbillingperiodhandling) appendix and the [Correction Handling](#attributes.correctionhandling) attribute.
 
 ## Column ID
 

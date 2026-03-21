@@ -167,7 +167,7 @@ A category of compute resources that can be paused or terminated by the CSP with
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
-An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated [invoice issuer](#glossary:invoice-issuer) ([Invoice Status](#datasets.invoicedetail.invoicestatus) set to "Closed"). Once issued, the invoice becomes the authoritative financial document and is considered finalized and the financial data presented on the invoice must not be altered.
+An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated invoice issuer ([Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized and the financial data presented on the invoice must not be altered.
 
 <a name="glossary:json"><b>JSON</b></a>
 
