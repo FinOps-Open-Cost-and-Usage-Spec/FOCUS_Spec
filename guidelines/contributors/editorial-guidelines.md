@@ -152,6 +152,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Non-Normative Use of “recommended”:** The lowercase word “recommended” may still be used in non-normative, descriptive text (e.g., “Feature level: Recommended”) provided it does not express a normative requirement on implementers.
 
+* **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
+
 ### Example
 
 > **2.28. Pricing Quantity**
