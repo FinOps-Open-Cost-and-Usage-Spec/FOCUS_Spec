@@ -1,0 +1,154 @@
+{
+  "ModelRules": {
+    "IND-InvoiceDetailDescription-C-000-M": {
+      "Function": "Validation",
+      "Reference": "InvoiceDetailDescription",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Description",
+      "EntityId": "InvoiceDetailDescription",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 0,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailDescription MUST adhere to the following requirements:",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": [
+          "IND-InvoiceDetailDescription-C-001-M",
+          "IND-InvoiceDetailDescription-C-002-M",
+          "IND-InvoiceDetailDescription-C-003-O",
+          "IND-InvoiceDetailDescription-C-004-O",
+          "IND-InvoiceDetailDescription-C-005-M"
+        ]
+      }
+    },
+    "IND-InvoiceDetailDescription-C-001-M": {
+      "Function": "Type",
+      "Reference": "InvoiceDetailDescription",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Description",
+      "EntityId": "InvoiceDetailDescription",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 10,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailDescription MUST be of type String.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-InvoiceDetailDescription-C-002-M": {
+      "Function": "Format",
+      "Reference": "InvoiceDetailDescription",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Description",
+      "EntityId": "InvoiceDetailDescription",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 20,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailDescription MUST conform to StringHandling requirements.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-InvoiceDetailDescription-C-003-O": {
+      "Function": "Nullability",
+      "Reference": "InvoiceDetailDescription",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Description",
+      "EntityId": "InvoiceDetailDescription",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 30,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailDescription SHOULD NOT be null.",
+        "Keyword": "SHOULD NOT",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-InvoiceDetailDescription-C-004-O": {
+      "Function": "Validation",
+      "Reference": "InvoiceDetailDescription",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Description",
+      "EntityId": "InvoiceDetailDescription",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 40,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.",
+        "Keyword": "SHOULD",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "IND-InvoiceDetailDescription-C-005-M": {
+      "Function": "Validation",
+      "Reference": "InvoiceDetailDescription",
+      "EntityType": "Column",
+      "EntityName": "Invoice Detail Description",
+      "EntityId": "InvoiceDetailDescription",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 50,
+      "DatasetType": "IND",
+      "DatasetId": "InvoiceDetail",
+      "DatasetName": "Invoice Detail",
+      "ValidationCriteria": {
+        "MustSatisfy": "InvoiceDetailDescription MUST describe the *charges* represented by the InvoiceDetailId.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    }
+  }
+}
