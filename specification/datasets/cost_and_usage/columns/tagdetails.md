@@ -60,7 +60,7 @@ Each tag scheme object (including `Default`) contains the following entries:
 | Key | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
 | `Tags` | Object | True | An object containing all tag keys present in the Tags column for this scheme. |
-| `UntaggedSources` | Array | True | A list of sources which support this tag scheme (i.e. are taggable) that had no tags applied. |
+| `UntaggedSources` | Array or Null | True | A list of sources which support this tag scheme (i.e. are taggable) that had no tags applied. |
 
 ### Tag Key Object
 
