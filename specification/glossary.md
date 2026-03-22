@@ -165,7 +165,7 @@ A document that summarizes the charges for resources or services consumed by a c
 
 The process of ensuring that detailed cost and usage data is accurate, complete, and matches across all relevant sources, typically involving the reconciliation of raw usage or cost records against invoiced amounts.
 
-In the context of FOCUS, this process is performed by comparing aggregated Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) records with corresponding Invoice Detail *FOCUS dataset* records, and ensuring that both align with the associated cost and usage information presented on an [*invoice*](#glossary:invoice).
+In the context of FOCUS, this process involves ensuring consistency between the [*invoice*](#glossary:invoice), the Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset), and the Cost and Usage *FOCUS dataset*, specifically, that aggregated data across all three sources is aligned.
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
