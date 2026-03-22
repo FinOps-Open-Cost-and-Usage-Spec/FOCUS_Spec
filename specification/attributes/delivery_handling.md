@@ -15,7 +15,7 @@ FOCUS recognizes two *FOCUS datasets* delivery mechanisms:
 
 Overwrite and Append mechanisms are not mutually exclusive, and hybrid implementations are common in practice, allowing data generators to meet specific technical and auditability requirements.
 
-For example, for Cost and Usage *FOCUS datasets*, a data generator may use Overwrite mechanism for *dataset artifacts* corresponding to an [*open billing period*](#open-billing-period), ensuring the snapshot reflects the most recent state, while using Append mechanism for [*closed billing periods*](#glossary:closed-billing-period) to preserve historical data and support auditing of corrections to previously *closed billing periods* (i.e., [*charges*](#glossary:charge) with Charge Class set to "Correction").
+For example, for Cost and Usage *FOCUS datasets*, a data generator may use Overwrite mechanism for *dataset artifacts* corresponding to an [*open billing period*](#glossary:open-billing-period), ensuring the snapshot reflects the most recent state, while using Append mechanism for [*closed billing periods*](#glossary:closed-billing-period) to preserve historical data and support auditing of corrections to previously *closed billing periods* (i.e., [*charges*](#glossary:charge) with Charge Class set to "Correction").
 
 For more information on corrections, see the [Correction Handling attribute](#attributes.correctionhandling).
 

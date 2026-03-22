@@ -26,7 +26,7 @@ FOCUS recognizes three styles for handling corrections within subsequent *datase
 | Delta            | Append             | Previously delivered records are preserved; corrections are appended as additive records applied during aggregation and may include supplemental records as needed. |
 | Ledger           | Append             | Previously delivered records are preserved; corrections are appended as additive records representing explicit reversals and re-entries, applied during aggregation, and may include supplemental records as needed. |
 
-For more information on delivery mechanisms for *dataset artifacts*, see the [Delivery Handling attribute](#deliveryhandling).
+For more information on delivery mechanisms for *dataset artifacts*, see the [Delivery Handling attribute](#attributes.deliveryhandling).
 
 #### Replacement Corrections
 
