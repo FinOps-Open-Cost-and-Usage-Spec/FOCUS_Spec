@@ -1,6 +1,8 @@
 # MarkdownPP Guidelines for FOCUS Specification
 
-This document outlines the use of MarkdownPP in the FOCUS Specification repository, including build processes, custom enhancements, and best practices.
+This document outlines the use of MarkdownPP in the FOCUS Specification, including build processes, custom enhancements, and best practices.
+
+***Note:*** *The guidelines in this document apply to the content within the `specification/` directory.*
 
 ## Overview
 
@@ -20,6 +22,8 @@ specification/
 ├── supported_features/          # Features enabled by FOCUS
 └── requirements_model/          # Validation rules and models
 ```
+
+***Note:*** *For directory and file naming conventions across the repository, see [Repository Naming Conventions](repository-naming-conventions.md).*
 
 ## MarkdownPP Usage in FOCUS
 
@@ -174,123 +178,17 @@ This feature automatically:
 * Ensures proper spacing around headers to meet markdown linting requirements
 * Maintains document readability and structure
 
-## Best Practices
-
-### File Content
-
-While markdown can be included in a .mdpp, the FOCUS project discourages this behavior, as the markdown will not natively render in GitHub and development environments such as VS Code, thereby making spec maintenance more difficult. Therefore, we encourage the use of overview .md files, limiting the use of .mdpp files to `!INCLUDE` statements only.
-
-### File Organization
-
-```markdown
-<!-- Use descriptive include paths -->
-!INCLUDE "datasets/cost_and_usage/overview.md"
-!INCLUDE "datasets/cost_and_usage/columns/billedcost.md"
-
-<!-- Group related includes -->
-!INCLUDE "attributes/column_handling.md"
-!INCLUDE "attributes/string_handling.md"
-!INCLUDE "attributes/numeric_format.md"
-```
-
-### Directory Naming Conventions
-
-To ensure consistency, ease of maintenance, and portability, all directories in the FOCUS Specification repository, except [GitHub-managed directories](#github-managed-directories), MUST follow these naming conventions:
-
-* Directory names MUST use lowercase characters.
-* Directory names MUST NOT contain spaces.
-* Directory names SHOULD be descriptive and reflect the primary content of the directory.
-* Directory names consisting of multiple words MUST adhere to the following requirements:
-  * Directory names for directories defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes) MUST NOT use any word separator, so that the directory name matches the FOCUS entity identifier in lowercase.
-  * All other directory names MUST use hyphens (`-`) as the word separator (i.e., kebab-case).
-
-#### GitHub-managed Directories
-
-GitHub-managed directories (e.g., `.github` and its subdirectories such as `ISSUE_TEMPLATE`, `workflows`) are exempt from these rules and MUST follow common GitHub directory naming conventions.
-
-#### Renaming Directories After Publication
-
-Directory names are used by build processes (e.g., `!INCLUDE` statements) and may also appear in external hyperlinks (e.g., within FinOps Foundation assets). Directory names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
-
-If a rename is necessary, all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
-
-#### Preferred Directory Name Examples
-
-```text
-supported-features
-costandusage
-pricingquantity
-numericformat
-```
-
-#### Forbidden Directory Name Examples
-
-```text
-SupportedFeatures
-Supported Features
-supportedFeatures
-supported_features
-cost-and-usage
-```
-
-### File Naming Conventions
-
-To ensure consistency, ease of maintenance, and portability, all Markdown and MarkdownPP files in the FOCUS Specification repository, except [key repository files](#key-repository-files), MUST follow these naming conventions:
-
-* File names MUST use lowercase characters.
-* File names MUST NOT contain spaces.
-* File names SHOULD be descriptive and reflect the primary content of the file.
-* File names consisting of multiple words MUST adhere to the following requirements:
-  * File names for files defining FOCUS entities (e.g., FOCUS datasets, FOCUS columns, FOCUS attributes) MUST NOT use any word separator, so that the file name matches the FOCUS entity identifier in lowercase.
-  * All other file names MUST use hyphens (`-`) as the word separator (i.e., kebab-case).
-
-#### Key Repository Files
-
-Key repository files (e.g., `README.md`, `CHANGELOG.md`, `CONTRIBUTING.md`) are exempt from these rules and MUST follow common GitHub file naming conventions.
-
-#### Renaming Files After Publication
-
-File names are used by build processes (e.g., `!INCLUDE` statements) and may also appear in external hyperlinks (e.g., within FinOps Foundation assets). File names SHOULD remain stable after publication to maintain repository consistency and external hyperlink integrity.
-
-If a rename is necessary, all affected `!INCLUDE` statements and build dependencies MUST be updated accordingly to avoid broken references.
-
-#### Preferred File Name Examples
-
-```text
-supported-features.mdpp
-costandusage.mdpp
-pricingquantity.md
-numericformat.md
-```
-
-#### Forbidden File Name Examples
-
-```text
-PricingQuantity.md
-Pricing Quantity.md
-pricingQuantity.md
-numeric_format.md
-numeric-format.md
-```
-
-### Header Level Management
-
-```markdown
-<!-- Adjust header levels when including -->
-!INCLUDE "section.md", 2    # Shift headers down 2 levels
-
-<!-- Example: # Title becomes ### Title -->
-```
-
-### Automatic Anchor Generation
+**Automatic Anchor Generation:**
 
 All headers appearing after the !TOC directive automatically receive an HTML anchor generated from the header text whereby the following applies:
 
 * Anchor text is normalized to lowercase.
 * Whitespace and the following characters are removed: `,` `-` `(` `)`.
-* Other special characters such as `/`, `:`, `%`, `&`, `@` are preserved.
+* Other special characters are preserved.
 * Dots (.) are inserted between header levels to represent the full hierarchy of document sections.
 * Headers marked with `<!--SkipTOC-->` will appear in the document but will not be included in the Table of Contents, and no anchor will be created.
+
+## Best Practices
 
 ### Header Conventions
 
@@ -310,13 +208,40 @@ To ensure predictable Table of Contents (TOC) generation, stable internal links,
 * A single space MUST follow the `#` character(s).
 * Headers MUST NOT use Setext-style headers (`=` or `-` underlines), even though they are technically supported.
 * Headers MUST NOT be empty.
-* Header text SHOULD only contain alphanumeric characters (`A-Z`, `0-9`), spaces (` `), commas (`,`), and the following special characters: hyphens (`-`), apostrophes (`'`), and parentheses (`(`, `)`). Other special characters SHOULD be avoided.
+* Header text SHOULD only contain alphanumeric characters (`A-Z`, `0-9`), spaces (` `), commas (`,`), and the following special characters: hyphens (`-`), apostrophes (`'`), and parentheses (`(`, `)`).
+* Other special characters SHOULD be avoided.
 
 #### Renaming or Changing Headers After Publication
 
 Header anchors are used by build processes (e.g., TOC generation) and may also appear in external hyperlinks. Header text and structure SHOULD remain stable after publication to maintain repository consistency, TOC accuracy, and external hyperlink integrity.
 
 If a header change is necessary, all affected build references MUST be updated accordingly to avoid broken links.
+
+### File Content
+
+While markdown can be included in a .mdpp, the FOCUS project discourages this behavior, as the markdown will not natively render in GitHub and development environments such as VS Code, thereby making spec maintenance more difficult. Therefore, we encourage the use of overview .md files, limiting the use of .mdpp files to `!INCLUDE` statements only.
+
+### File Organization
+
+```markdown
+<!-- Use descriptive include paths -->
+!INCLUDE "datasets/cost_and_usage/overview.md"
+!INCLUDE "datasets/cost_and_usage/columns/billedcost.md"
+
+<!-- Group related includes -->
+!INCLUDE "attributes/column_handling.md"
+!INCLUDE "attributes/string_handling.md"
+!INCLUDE "attributes/numeric_format.md"
+```
+
+### Header Level Management
+
+```markdown
+<!-- Adjust header levels when including -->
+!INCLUDE "section.md", 2    # Shift headers down 2 levels
+
+<!-- Example: # Title becomes ### Title -->
+```
 
 ## Validation and Quality Control
 
