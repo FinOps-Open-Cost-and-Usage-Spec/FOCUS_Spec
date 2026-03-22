@@ -117,7 +117,7 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
-* ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
+* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * ...
 
 ## Column Requirements
