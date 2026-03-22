@@ -159,7 +159,9 @@ A document that summarizes the charges for resources or services consumed by a c
 
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
-The process of ensuring that aggregated Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) records match the corresponding Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset) records, and that both align with the associated cost and usage information presented on an [*invoice*](#glossary:invoice).
+The process of ensuring that detailed cost and usage data is accurate, complete, and matches across all relevant sources, typically involving the reconciliation of raw usage or cost records against invoiced amounts.
+
+In the context of FOCUS, this process is performed by comparing aggregated Cost and Usage [*FOCUS dataset*] records with corresponding Invoice Detail [*FOCUS dataset*] records, and ensuring that both align with the associated cost and usage information presented on an [*invoice*](#glossary:invoice).
 
 <a name="glossary:interruptible"><b>Interruptible</b></a>
 
