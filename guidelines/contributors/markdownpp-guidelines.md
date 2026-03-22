@@ -1,6 +1,6 @@
 # MarkdownPP Guidelines for FOCUS Specification
 
-This document outlines the use of MarkdownPP in the FOCUS Specification, including build processes, custom enhancements, and best practices.
+This document outlines the use of MarkdownPP in the FOCUS Specification repository, including build processes, custom enhancements, and best practices.
 
 ***Note:*** *The guidelines in this document apply to the content within the `specification/` directory.*
 

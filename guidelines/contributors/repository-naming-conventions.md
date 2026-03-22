@@ -25,10 +25,10 @@ The following examples illustrate correct and incorrect directory names based on
 
 **Directories defining FOCUS entities** (no word separator):
 
-| Correct         | Incorrect                                                        |
-|-----------------|------------------------------------------------------------------|
-| `costandusage`  | `cost-and-usage`, `CostAndUsage`, `cost_and_usage`              |
-| `invoicedetail` | `invoice-detail`, `InvoiceDetail`, `invoice_detail`        |
+| Correct         | Incorrect                                           |
+|-----------------|-----------------------------------------------------|
+| `costandusage`  | `cost-and-usage`, `CostAndUsage`, `cost_and_usage`  |
+| `invoicedetail` | `invoice-detail`, `InvoiceDetail`, `invoice_detail` |
 
 **Other FOCUS-defined directories** (kebab-case):
 
