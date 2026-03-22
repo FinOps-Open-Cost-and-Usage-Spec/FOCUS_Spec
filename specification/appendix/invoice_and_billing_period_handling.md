@@ -2,11 +2,11 @@
 
 ## Overview
 
-FinOps practitioners must be able to reconcile [*FOCUS datasets*](#glossary:FOCUS-dataset) (including [Cost and Usage](#datasets.costandusage), [Invoice Detail](#datasets.invoicedetail), and [Billing Period](#datasets.billingperiod) datasets) with the corresponding [*invoices*](#glossary:invoice) and usage statements they receive from invoice issuers.
+A primary use case for FinOps practitioners is the reconciliation of invoices and usage statements. This critical process requires the use of [*FOCUS datasets*](#glossary:FOCUS-dataset), notably the [Cost and Usage](#datasets.costandusage), [Invoice Detail](#datasets.invoicedetail), and [Billing Period](#datasets.billingperiod) datasets.
 
-In practice, this means ensuring that all monetary data appearing on an invoice or usage statement, including data not tied to metered usage (such as taxes, credits, refunds, support, training, and marketplace transactions), is accurately captured and categorized in *FOCUS datasets*.
+In practice, successful [*invoice reconciliation*](#glossary:invoice-reconciliation) requires that all monetary data appearing on an invoice or usage statement -- including non-usage charges such as taxes, credits, refunds, support, training, and marketplace transactions -- is accurately captured and categorized within these datasets.
 
-Without this alignment, it becomes difficult to perform accurate [*invoice reconciliation*](#glossary:invoice-reconciliation), financial reporting, and chargeback.
+Without this fundamental alignment, downstream processes like invoice reconciliation, financial reporting, and chargeback become unreliable.
 
 ### Invoice Reconciliation and Issuance
 
