@@ -73,7 +73,7 @@ The tag key object contains the properties of the *finalized tag* as well as oth
 | `TagValue` | String, Boolean, Number, or Null | True |  The value associated with the tag key. |
 | `AncestorTaggedSources` | Object or Null | True | An object containing all *tag sources* where the corresponding tag key was present which did not result in the *finalized tag*. |
 
-### Ancestor Tagged Sources Object
+### Ancestor Tagged Source Object
 
 The ancestor tag source object contains the properties of the tag present in the *tag source*:
 
