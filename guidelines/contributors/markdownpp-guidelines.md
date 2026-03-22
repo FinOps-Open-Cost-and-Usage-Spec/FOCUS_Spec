@@ -188,6 +188,8 @@ All headers appearing after the !TOC directive automatically receive an HTML anc
 * Dots (.) are inserted between header levels to represent the full hierarchy of document sections.
 * Headers marked with `<!--SkipTOC-->` will appear in the document but will not be included in the Table of Contents, and no anchor will be created.
 
+***Note:*** *These anchors are generated for the HTML and PDF builds of the specification and differ from how GitHub natively generates anchors for markdown files. Links using these anchors will work in the built specification output but not when viewing the source markdown on GitHub.*
+
 ## Best Practices
 
 ### Header Conventions
