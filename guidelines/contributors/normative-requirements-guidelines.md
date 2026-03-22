@@ -99,6 +99,7 @@ ContractCommitment MUST adhere to the following requirements:
   * ...
 * ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * ...
 
 #### **Cost And Usage**
@@ -116,7 +117,6 @@ CostAndUsage MUST adhere to the following requirements:
   * ...
 * CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * ...
 
