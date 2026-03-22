@@ -86,6 +86,7 @@ The ancestor tag source object contains the properties of the tag present in the
 
 Here is a basic example of the object format containing multiple tag schemes and sources.
 
+* For more detailed scenarios, including side-by-side comparisons with the corresponding `Tags` column, please see the [Tag Details Examples](#appendix.examples:jsonobject.examples:tagdetails) appendix.
 * For the JSON schema, please see [Tag Details Object Schema](#schemas.datasets.costandusage.tagdetailsobjectschema).
 
 ```json
