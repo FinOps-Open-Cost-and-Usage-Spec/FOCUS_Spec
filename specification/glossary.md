@@ -58,7 +58,7 @@ The time window for which a charge is effective, inclusive of the start date and
 
 <a name="glossary:closed-billing-period"><b>Closed Billing Period</b></a>
 
-A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all planned invoices for the period have been [*issued*](#glossary:issued-invoice) by designated [*invoice issuers*](#glossary:invoice-issuer) and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
+A [*billing period*](#glossary:billing-period) with [Billing Period Status](#datasets.billingperiod.billingperiodstatus) set to "Closed". The period has been financially closed after all anticipated invoices for the period have been [*issued*](#glossary:issued-invoice) by designated invoice issuers and no additional invoices will be associated with this period. Exceptionally, additional invoices may be associated with a closed billing period if explicitly requested or approved by the customer.
 
 <a name="glossary:cloud-service-provider"><b>Cloud Service Provider (CSP)</b></a>
 
@@ -123,7 +123,7 @@ A physical representation of a specific [*dataset instance*](#glossary:dataset-i
 
 <a name="glossary:delivery-scope"><b>Delivery Scope</b></a>
 
-A dataset-specific boundary or set of boundaries that determines which records are included in a [*dataset artifact*](#glossary:dataset-instance-artifact) delivery. Scopes can be temporal (e.g., a [*billing period*](#glossary:billing-period) or non-temporal (e.g., a [*contract*](#glossary:contract) or other logical grouping), and multiple scopes may be applicable for a single dataset depending on use case or delivery configuration. Scopes determine how Overwrite and Append *dataset artifact* deliveries, as well as corrections, are applied.
+A dataset-specific boundary or set of boundaries that determines which records are included in a [*dataset artifact*](#glossary:dataset-instance-artifact) delivery. Scopes can be temporal (e.g., a [*billing period*](#glossary:billing-period)) or non-temporal (e.g., a [*contract*](#glossary:contract) or other logical grouping), and multiple scopes may be applicable for a single dataset depending on use case or delivery configuration. Scopes determine how Overwrite and Append *dataset artifact* deliveries, as well as corrections, are applied.
 
 <a name="glossary:dimension"><b>Dimension</b></a>
 
@@ -153,6 +153,10 @@ The collection of datasets are designed to provide billing insight, additional c
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
 
+<a name="glossary:interruptible"><b>Interruptible</b></a>
+
+A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
+
 <a name="glossary:invoice"><b>Invoice</b></a>
 
 A document that summarizes the charges for resources or services consumed by a customer.
@@ -161,11 +165,7 @@ A document that summarizes the charges for resources or services consumed by a c
 
 The process of ensuring that detailed cost and usage data is accurate, complete, and matches across all relevant sources, typically involving the reconciliation of raw usage or cost records against invoiced amounts.
 
-In the context of FOCUS, this process is performed by comparing aggregated Cost and Usage [*FOCUS dataset*] records with corresponding Invoice Detail [*FOCUS dataset*] records, and ensuring that both align with the associated cost and usage information presented on an [*invoice*](#glossary:invoice).
-
-<a name="glossary:interruptible"><b>Interruptible</b></a>
-
-A category of compute resources that can be paused or terminated by the CSP within certain criteria, often advertised at reduced unit pricing when compared to the equivalent non-interruptible resource.
+In the context of FOCUS, this process is performed by comparing aggregated Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) records with corresponding Invoice Detail *FOCUS dataset* records, and ensuring that both align with the associated cost and usage information presented on an [*invoice*](#glossary:invoice).
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
