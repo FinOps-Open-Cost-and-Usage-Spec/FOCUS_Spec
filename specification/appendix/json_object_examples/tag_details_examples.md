@@ -1,6 +1,6 @@
 # Examples: Tag Details
 
-The scenarios below illustrate the relationship between the [TagDetails](#datasets.costandusage.tagdetails) and [Tags](#datasets.costandusage.tags) columns for a single charge. 
+The scenarios below illustrate the relationship between the [TagDetails](#datasets.costandusage.tagdetails) and [Tags](#datasets.costandusage.tags) columns for a single charge.
 
 For each scenario, two JSON samples are provided:
 1. **`TagDetails`:** Details the provenance and eligibility of tags across various tag sources and schemes, showing how the finalized tags were derived.
@@ -79,7 +79,7 @@ The charge has no tags finalized directly at the primary source level (e.g., an 
 
 ### `Tags` Column
 
-*(The column would be null or contain an empty object, as no tags were finalized)*
+(The column would be null or contain an empty object, as no tags were finalized.)
 
 ```json
 {}
