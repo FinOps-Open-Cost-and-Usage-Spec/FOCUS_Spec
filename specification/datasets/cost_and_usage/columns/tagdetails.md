@@ -62,7 +62,7 @@ Each tag scheme object (including `Default`) contains the following entries:
 | `Tags` | Object | True | An object containing all tag keys present in the Tags column for this scheme. |
 | `UntaggedSources` | Array | True | A list of sources which support this tag scheme (i.e. are taggable) that had no tags applied. |
 
-### Tags Object (Tag Key)
+### Tag Key Object
 
 The tag key object contains the properties of the *finalized tag* as well as other *tag sources* where this key was present:
 
