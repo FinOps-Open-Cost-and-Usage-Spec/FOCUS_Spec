@@ -87,21 +87,38 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 
 #### **Contract Commitment**
 
-ContractCommitment adheres to the following requirements:
+ContractCommitment MUST adhere to the following requirements:
 
-* ContractCommitment MUST be present when the provider supports *contract commitments*.
-* ContractCommitment MUST conform to [ColumnHandling](#columnhandling) requirements.
-* ContractCommitment MUST conform to [NullHandling](#nullhandling) requirements.
+* ContractCommitment MUST be present when the service provider supports *contract commitments*.
+* ContractCommitment column presence MUST adhere to the following requirements:
+  * ContractCommitment MUST include [BillingCurrency](#datasets.contractcommitment.billingcurrency).
+  * ContractCommitment MUST include [ContractCommitmentApplicability](#datasets.contractcommitment.contractcommitmentapplicability).
+  * ContractCommitment MUST include [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory).
+  * ContractCommitment MUST include [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory).
+  * ContractCommitment MUST include [ContractCommitmentCost](#datasets.contractcommitment.contractcommitmentcost).
+  * ...
+* ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
+* ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* ...
 
-#### **Cost and Usage**
+#### **Cost And Usage**
 
-CostAndUsage adheres to the following requirements:
+CostAndUsage MUST adhere to the following requirements:
 
 * CostAndUsage MUST be present.
-* CostAndUsage MUST conform to [ColumnHandling](#columnhandling) requirements.
-* CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
-* CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
-* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datagenerator-calculatedsplitcostallocationhandling) requirements.
+* CostAndUsage column presence MUST adhere to the following requirements:
+  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the host provider supports deploying resources or services within an *availability zone*.
+  * ...
+* CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
+* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
+* ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
+* ...
 
 ## Column Requirements
 

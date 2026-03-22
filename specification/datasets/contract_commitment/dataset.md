@@ -87,8 +87,8 @@ ContractCommitment MUST adhere to the following requirements:
 * ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
-* ContractCommitment MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
+* ContractCommitment MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 
 ## Dataset ID<!--SkipTOC-->
 
