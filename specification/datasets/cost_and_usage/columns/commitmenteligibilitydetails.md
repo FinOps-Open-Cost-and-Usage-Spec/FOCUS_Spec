@@ -18,7 +18,7 @@ CommitmentEligibilityDetails MUST adhere to the following requirements:
 
 ## Commitment Eligibility Details Object
 
-Commitment Eligibility Details consists of a valid JSON object with top-level property keys representing categories of commitment programs. Each key contains an array of objects describing the specific commitment types available for the usage charge.
+Commitment Eligibility Details consists of a valid JSON object with a top-level property key `CommitmentPrograms` containing an array of objects describing the specific [*commitment programs*](#glossary:commitment-program) available for the usage charge.
 
 ### Object Requirements
 
@@ -54,10 +54,9 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 
 ### Top-Level Properties
 
-| Property                   | Type  | Required    | Description                                                                                                                                              |
-|:-----------------|:-----------------|:-----------------|:-----------------|
-| `CommitmentDiscountTypes`  | Array | Conditional | Array of objects identifying [*commitment discount*](#glossary:commitment-discount) programs for which the usage is eligible.                            |
-| `CapacityReservationTypes` | Array | Conditional | Array of objects identifying capacity-reservation commitment programs (e.g., capacity reservations, zonal reservations) for which the usage is eligible. |
+| Property             | Type  | Required | Description                                                                        |
+|:---------------------|:------|:---------|:-----------------------------------------------------------------------------------|
+| `CommitmentPrograms` | Array | True     | Array of objects identifying *commitment programs* for which the usage is eligible. |
 
 ### Example Entries
 
@@ -69,13 +68,11 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 
 ``` json
 {
-  "CommitmentDiscountTypes": [
-    { "Type": "SavingsPlan" },
-    { "Type": "ReservedInstance" }
-  ],
-  "CapacityReservationTypes": [
-    { "Type": "CapacityReservation" },
-    { "Type": "ZonalReservation" }
+  "CommitmentPrograms": [
+    { "ProgramType": "SavingsPlan" },
+    { "ProgramType": "ReservedInstance" },
+    { "ProgramType": "CapacityReservation" },
+    { "ProgramType": "ZonalReservation" }
   ]
 }
 ```
@@ -87,15 +84,12 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
   "definitions": {
     "commitmentProgramEntry": {
       "properties": {
-        "Type": { "type": "string" }
+        "ProgramType": { "type": "string" }
       }
     }
   },
-  "optionalProperties": {
-    "CommitmentDiscountTypes": {
-      "elements": { "ref": "commitmentProgramEntry" }
-    },
-    "CapacityReservationTypes": {
+  "properties": {
+    "CommitmentPrograms": {
       "elements": { "ref": "commitmentProgramEntry" }
     }
   }
@@ -114,15 +108,15 @@ A Virtual Machine usage row that is partially covered by Savings Plan. The eligi
 
 | ServiceProviderName | ServiceName      | ChargeClass | CommitmentEligibilityDetails                                                         |
 |---------------|---------------|---------------|---------------|
-| Azure               | Virtual Machines | Usage       | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}]} |
+| Azure               | Virtual Machines | Usage       | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}]} |
 
 **Datadog (Monthly and Annual Commitment)**
 
-An On-Demand infrastructure host usage row (potentially billed as overage). This usage is eligible for coverage under commitment plans that offer lower rates than On-Demand. Since Datadog does not populate CommitmentDiscountType, the Type values correspond to publicly available program names from Datadog documentation.
+An On-Demand infrastructure host usage row (potentially billed as overage). This usage is eligible for coverage under commitment plans that offer lower rates than On-Demand. Since Datadog does not populate CommitmentDiscountType, the ProgramType values correspond to publicly available program names from Datadog documentation.
 
 | ServiceProviderName | ServiceName    | ChargeClass | CommitmentEligibilityDetails                                                               |
 |---------------|---------------|---------------|---------------|
-| Datadog             | Infrastructure | Usage       | {"CommitmentDiscountTypes": [{"Type": "MonthlyCommitment"}, {"Type": "AnnualCommitment"}]} |
+| Datadog             | Infrastructure | Usage       | {"CommitmentPrograms": [{"ProgramType": "MonthlyCommitment"}, {"ProgramType": "AnnualCommitment"}]} |
 
 **AWS (Capacity Reservation-eligible EC2 Usage)**
 
@@ -130,7 +124,7 @@ An EC2 instance type and tenancy that are eligible for both Savings Plans/Reserv
 
 | ServiceProviderName | ServiceName | ChargeClass | CommitmentEligibilityDetails                                                                                                                                                      |
 |---------------|---------------|---------------|---------------|
-| AWS                 | AmazonEC2   | Usage       | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}], "CapacityReservationTypes": [{"Type": "CapacityReservation"}, {"Type": "ZonalReservation"}]} |
+| AWS                 | AmazonEC2   | Usage       | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}, {"ProgramType": "CapacityReservation"}, {"ProgramType": "ZonalReservation"}]} |
 
 ### Object ID
 
