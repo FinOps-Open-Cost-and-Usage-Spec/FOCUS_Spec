@@ -54,6 +54,6 @@ OCI Compute usage eligible for Universal Credits. Because Universal Credits are 
 
 | Provider | Service         | ChargeClass | CommitmentDiscountStatus | CommitmentEligibilityDetails                                |
 |---------------|---------------|---------------|---------------|---------------|
-| Oracle   | Virtual Machine | Usage       | null                     | {"CommitmentDiscountTypes": [{"Type": "UniversalCredits"}]} |
+| Oracle   | COMPUTE | Usage       | null                     | {"CommitmentDiscountTypes": [{"Type": "UniversalCredits"}]} |
 
 
