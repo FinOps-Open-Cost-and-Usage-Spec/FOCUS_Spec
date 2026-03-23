@@ -2,25 +2,27 @@
 
 ## Overview
 
-A primary use case for FinOps practitioners is the reconciliation of invoices and usage statements. This critical process requires the use of [*FOCUS datasets*](#glossary:FOCUS-dataset), notably the [Cost and Usage](#datasets.costandusage), [Invoice Detail](#datasets.invoicedetail), and [Billing Period](#datasets.billingperiod) datasets.
+A primary use case for FinOps practitioners is the reconciliation of invoices and usage statements. In FOCUS, this process is supported through [*FOCUS datasets*](#glossary:FOCUS-dataset), notably the [Cost and Usage](#datasets.costandusage), [Invoice Detail](#datasets.invoicedetail), and [Billing Period](#datasets.billingperiod) datasets.
 
-In practice, successful [*invoice reconciliation*](#glossary:invoice-reconciliation) requires that all monetary data appearing on an invoice or usage statement -- including non-usage charges such as taxes, credits, refunds, support, training, and marketplace transactions -- is accurately captured and categorized within these datasets.
+In the context of FOCUS, successful [*invoice reconciliation*](#glossary:invoice-reconciliation) requires that all monetary data appearing on an invoice or usage statement (including non-usage charges such as taxes, credits, refunds, support, training, and marketplace transactions) is accurately captured and categorized in these datasets.
 
-Without this fundamental alignment, downstream processes like invoice reconciliation, financial reporting, and chargeback become unreliable.
+Without this fundamental alignment, downstream processes like financial reporting and chargeback become unreliable.
 
 ### Invoice Reconciliation and Issuance
 
-Before an [*invoice is issued*](#glossary:issued-invoice), i.e., the [Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) (within Invoice Detail *FOCUS dataset*) transitions to "Issued", the [data generator](#metadata.datagenerator) is expected to perform a reconciliation to ensure consistency between the invoice, [Invoice Detail](#datasets.invoicedetail) FOCUS dataset, and [Cost and Usage](#datasets.costandusage) FOCUS dataset.
+Before an [*invoice is issued*](#glossary:issued-invoice), i.e., before the [Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) in the Invoice Detail dataset transitions to "Issued", the [data generator](#metadata.datagenerator) is expected to perform *invoice reconciliation* to ensure consistency between the invoice, the Invoice Detail dataset, and the Cost and Usage dataset.
 
-At the conclusion of this process, the aggregated [Billed Costs](#datasets.invoicedetail.billedcost) in the Invoice Detail *FOCUS dataset* for a given [InvoiceDetail.InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) are expected to match the payable amounts presented on the corresponding invoice line items.
+At the conclusion of this process, the aggregated [Billed Costs](#datasets.invoicedetail.billedcost) in the Invoice Detail dataset for a given [Invoice Detail ID](#datasets.invoicedetail.invoicedetailid) are expected to match the payable amounts presented on the corresponding invoice line items. This alignment is performed across [Invoice ID](#datasets.invoicedetail.invoiceid), Invoice Detail ID, and [Invoice Issuer](#datasets.invoicedetail.invoiceissuername).
 
-Similarly, the aggregated Billed Cost in the Invoice Detail *FOCUS dataset* for a given InvoiceDetail.InvoiceDetailId is expected to match the corresponding aggregated [Billed Costs](#datasets.costandusage.billedcost) in the Cost and Usage *FOCUS dataset* for the same [CostAndUsage.InvoiceDetailId](#datasets.costandusage.invoicedetailid).
+Similarly, the aggregated Billed Costs in the Invoice Detail dataset are expected to match aggregated [Billed Costs](#datasets.costandusage.billedcost) in the Cost and Usage dataset for the same identifiers.
 
-Practitioners may independently perform *invoice reconciliation* by verifying that invoice line items are aligned with data delivered in the [*FOCUS dataset artifacts*](#glossary:dataset-artifact), particularly Cost and Usage, Invoice Detail, and Billing Period.
+Practitioners may perform *invoice reconciliation* independently by verifying that invoice line items align with data delivered in [*FOCUS dataset artifacts*](#glossary:dataset-artifact), particularly Cost and Usage, Invoice Detail, and Billing Period.
 
-Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is expected not to change. [*Corrections*](#glossary:correction) to an *issued invoice* (including updates, additions, or omissions of underlying records in Cost and Usage, Invoice Detail, and Billing Period *FOCUS datasets*) may be permitted only in accordance with the [Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) requirements and must not compromise the integrity of the *issued invoice*.
+Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is expected not to change.
 
-Corrections to underlying records that do not impact *invoice reconciliation* are allowed regardless of Invoice Issue Status, but even in this case they may reduce auditability and traceability or affect downstream processes (e.g., cost allocation, chargeback, reporting).
+[*Corrections*](#glossary:correction) related to an *issued invoice* (i.e., updates, additions, or omissions of underlying records in Cost and Usage, Invoice Detail, and Billing Period datasets) are permitted in accordance with the Invoice Issue Status requirements. In other words, such *corrections* are expected to be performed upon explicit request or approval by the customer, as long as they do not compromise the integrity of the issued invoice.
+
+*Corrections* to underlying records that do not impact *invoice reconciliation* are allowed regardless of Invoice Issue Status. However, even in this case, they may reduce auditability and traceability or affect downstream processes (e.g., cost allocation, chargeback, reporting).
 
 ### Open and Closed Billing Periods
 
@@ -28,7 +30,7 @@ A [*closed billing period*](#glossary:closed-billing-period) represents a billin
 
 The Billing Period *FOCUS dataset* provides the necessary context to determine the status of each billing period for a specific invoice issuer. Since invoice issuer and *billing period*-related columns are present in all three FOCUS datasets (Billing Period, Cost and Usage, and Invoice Detail), records across the three datasets can be consistently associated with the corresponding billing cycles.
 
-For a *closed billing period*, the data delivered in *FOCUS dataset artifacts* is expected not to change. *Corrections* to *closed billing periods* (including updates, additions, or omissions of underlying records in Cost and Usage, Invoice Detail, and Billing Period *FOCUS datasets*) may be permitted only in accordance with the [Billing Period Status](#datasets.billingperiod.billingperiodstatus) requirements and must not compromise the integrity of the *closed billing period*.
+*Corrections* to *closed billing periods* (including updates, additions, or omissions of underlying records in Cost and Usage, Invoice Detail, and Billing Period *FOCUS datasets*) may be permitted only in accordance with the [Billing Period Status](#datasets.billingperiod.billingperiodstatus) requirements and must not compromise the integrity of the *closed billing period*.
 
 Corrections that do not impact the integrity of the closed billing period, such as informational or metadata updates, are allowed regardless of Billing Period Status.
 
