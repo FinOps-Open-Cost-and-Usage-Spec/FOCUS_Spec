@@ -11,7 +11,10 @@ TagDetails MUST adhere to the following requirements:
 * TagDetails MUST be of type JSON Object (serialized as a String where necessary).
 * TagDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * TagDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* TagDetails MUST be null when [Tags](#datasets.costandusage.tags) is null, tags are not present in any other *tag sources*, and no *tag sources* are supported for any user-defined [*tag scheme*](#glossary:tag-scheme).
+* TagDetails MUST adhere to the following nullability requirements:
+  * TagDetails MUST NOT be null when [Tags](#datasets.costandusage.tags) is not null.
+  * TagDetails MUST NOT be null when tags are present in any *tag sources* which did not result in *finalized* tags.
+  * TagDetails MUST NOT be null when *tag sources* are supported for any user-defined [*tag scheme*](#glossary:tag-scheme) which could have contained tags.
 * TagDetails MUST conform to the [TagDetailsObjectSchema](#schemas.datasets.costandusage.tagdetailsobjectschema) JSON Schema.
 
 ## Tag Details Object
