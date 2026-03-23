@@ -104,6 +104,34 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 
 NOTE: The above JSON Type Definition (JTD) is an approximation of the expected contents of this column, but it should not be considered normative because it cannot accurately describe the normative requirements (above) for CommitmentEligibilityDetails. Where there are discrepancies, preference will be given to the normative requirements.
 
+## Example Scenarios
+The examples below are not exhaustive and may change over time. Service providers are the authoritative source for their commitment programs. 
+
+**Azure (Partially covered Virtual Machine Usage)**
+
+A Virtual Machine usage row that is partially covered by Savings Plan. The eligibility column still reflects all programs this usage qualifies for, regardless of current coverage.
+
+| Provider | Service          | ChargeClass | CommitmentDiscountStatus | CommitmentEligibilityDetails                                                         |
+|---------------|---------------|---------------|---------------|---------------|
+| Azure    | Virtual Machines | Usage       | null                     | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}]} |
+
+**Datadog (Monthly and Annual Commitment)**
+
+An On-Demand infrastructure host usage row (potentially billed as overage). This usage is eligible for coverage under commitment plans that offer lower rates than On-Demand. Since Datadog does not populate CommitmentDiscountType, the Type values correspond to publicly available program names from Datadog documentation.
+
+| Provider | Service        | ChargeClass | CommitmentDiscountStatus | CommitmentEligibilityDetails                                                               |
+|---------------|---------------|---------------|---------------|---------------|
+| Datadog  | Infrastructure | Usage       | null                     | {"CommitmentDiscountTypes": [{"Type": "MonthlyCommitment"}, {"Type": "AnnualCommitment"}]} |
+
+**AWS (Capacity Reservation-eligible EC2 Usage)**
+
+An EC2 instance type and tenancy that are eligible for both Savings Plans/Reserved Instances and for capacity reservations (e.g., regional reservations, zonal reservations). The eligibility column reflects all commitment constructs the usage qualifies for.
+
+| Provider | Service   | ChargeClass | CommitmentDiscountStatus | CommitmentEligibilityDetails                                                                                                                                   |
+|---------------|---------------|---------------|---------------|---------------|
+| AWS      | AmazonEC2 | Usage       | null                     | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}], "CapacityReservationTypes": [{"Type": "CapacityReservation"}, {"Type": "ZonalReservation"}]} |
+
+
 ### Object ID
 
 CommitmentEligibilityDetailsObject
