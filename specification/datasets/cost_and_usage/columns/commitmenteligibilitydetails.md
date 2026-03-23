@@ -1,6 +1,6 @@
 # Commitment Eligibility Details
 
-Commitment Eligibility Details indicates which [*commitment*](#glossary:commitment) programs a provider designates as applicable to a usage row. This reflects the inherent eligibility of the service, subject to any provider-defined constraints. This column enables practitioners to identify uncovered spend that could have been covered, separating it from spend that is strictly ineligible. For the purposes of this column, *commitment* programs include both discount-bearing constructs (for example, Savings Plans, committed-use discounts) and non-discount constructs that reserve capacity in advance (for example, capacity reservations, zonal reservations), when those constructs are treated by the provider as commitments.
+Commitment Eligibility Details indicates which [*commitment*](#glossary:commitment) programs a service provider designates as applicable to a usage row. This reflects the inherent eligibility of the service, subject to any service provider-defined constraints. This column enables practitioners to identify uncovered spend that could have been covered, separating it from spend that is strictly ineligible. For the purposes of this column, *commitment* programs include both discount-bearing constructs (for example, Savings Plans, committed-use discounts) and non-discount constructs that reserve capacity in advance (for example, capacity reservations, zonal reservations), when those constructs are treated by the service provider as commitments.
 
 ## Requirements
 
@@ -26,7 +26,7 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 * CommitmentEligibilityDetailsObject MUST have at least one top-level property key when not null.
 * CommitmentEligibilityDetailsObject MAY have a top-level property key "CommitmentDiscountTypes".
 * CommitmentEligibilityDetailsObject MAY have a top-level property key "CapacityReservationTypes" for commitment programs whose primary purpose is to reserve capacity rather than to provide a unit discount.
-* CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys for future or provider-specific commitment categories.
+* CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys for future or service provider-specific commitment categories.
 * CommitmentEligibilityDetailsObject MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
 * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST adhere to the following requirements:
   * CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type Array.
