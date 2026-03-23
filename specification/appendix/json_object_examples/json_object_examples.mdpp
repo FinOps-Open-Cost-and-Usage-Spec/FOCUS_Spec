@@ -2,3 +2,4 @@
 !INCLUDE "allocated_method_details_examples.md",1
 !INCLUDE "contract_applied_examples.md",1
 !INCLUDE "contract_commitment_applicability_examples.md",1
+!INCLUDE "tag_details_examples.md",1

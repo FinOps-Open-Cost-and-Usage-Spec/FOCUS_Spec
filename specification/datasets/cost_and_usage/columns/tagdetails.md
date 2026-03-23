@@ -6,379 +6,91 @@ The Tag Details column is a superset of [Tags](#tags) which includes additional 
 
 ### Column Requirements
 
-The TagDetails column adheres to the following requirements:
+TagDetails MUST adhere to the following requirements:
 
-* TagDetails MUST be of type String.
+* TagDetails MUST be of type JSON Object (serialized as a String where necessary).
 * TagDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * TagDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
-* TagDetails nullability is defined as follows:
-  * TagDetails MUST NOT be null unless all of the following are true:
-    * Tags column is null.
-    * Tags are not present in any other *tag sources*.
-    * No *tag sources* are supported for any user-defined [*tag scheme*](glossary:tag-scheme).
+* TagDetails MUST adhere to the following nullability requirements:
+  * TagDetails MUST NOT be null when [Tags](#datasets.costandusage.tags) is not null.
+  * TagDetails MUST NOT be null when tags are present in any *tag sources* which did not result in *finalized* tags.
+  * TagDetails MUST NOT be null when *tag sources* are supported for any user-defined [*tag scheme*](#glossary:tag-scheme) which could have contained tags.
+* TagDetails MUST conform to the [TagDetailsObjectSchema](#schemas.datasets.costandusage.tagdetailsobjectschema) JSON Schema.
 
-### Object Schema Requirements
+## Tag Details Object
 
-Tag Details consists of a valid JSON object which contains objects for one or more *tag schemes* which each contain an object describing the tags as well as an array of eligible *tag sources* which do not contain tags.
+Tag Details consists of a valid JSON object which contains objects for one or more *tag schemes*, each of which contains an object describing the tags as well as an array of eligible *tag sources* which do not contain tags.
 
-When TagDetails is not null, the JsonObjectFormat for TagDetails adheres to the following requirements:
+The following section details the normative requirements for the TagDetailsObject and its nested properties. For a logical overview of the expected content, see the [Schema Structure](#datasets.costandusage.tagdetails.schemastructure) and [Object Example](#datasets.costandusage.tagdetails.objectexample) sections.
 
-* TagDetails root object MUST contain an object for each tag scheme present in Tags.
-  * The key for each tag scheme object MUST align to the tag prefix (up to but not including the forward slash) used to define the tag scheme in Tags.
-  * The key for the unprefixed user-defined tag scheme in Tags MUST be "Default".
-* Each tag scheme object MUST contain an object for each tag key applied to any tag source in that tag scheme.
-  * Each tag key object MUST contain FOCUS-defined tag properties.
-  * FOCUS-defined tag properties are subject to the additional requirements:
-    * Tag property key MUST match the spelling and casing specified for the FOCUS-defined property.
-    * Tag property value MUST be of the type specified for that property.
-    * Tag properties MUST adhere to additional normative requirements specific to that property.
-  * Each tag key object MUST contain an object with the key "AncestorTaggedSources".
-    * The value of AncestorTaggedSources MUST be null when the tag key from the corresponding tag key object within the tag scheme is not present in any *tag source* other than the *tag source* which results in the *finalized tag*.
-    * When the value of AncestorTaggedSources is not null, each object in AncestorTaggedSources MUST have a key denoting the *tag source*.
-      * Each tag source object MUST contain FOCUS-defined tag properties.
-    * AncestorTaggedSources SHOULD contain objects for *tag sources* which did not result in the *finalized tag*.
-* Each tag scheme object MUST contain an array with the key "UntaggedSources".
-  * UntaggedSources array MUST contain all *tag sources* for the corresponding tag scheme which are eligible to be tagged for the *charge* but have no tags applied.
-  * The value of UntaggedSources MUST be null when there are no eligible *tag sources* which contain no tags.
+### Object Requirements
 
-### Content Requirements
+The TagDetailsObject MUST adhere to the following requirements:
 
-The following keys are used for tag properties to facilitate standardized extraction of data across providers. FOCUS-defined keys will appear in the list below and data generator-defined keys will be prefixed with "x_" to make them easy to identify as well as prevent collisions.
+* TagDetailsObject.{\*} keys MUST align to the tag prefix (up to but not including the forward slash) used to define the tag scheme in Tags.
+* TagDetailsObject.Default MUST be used to represent the unprefixed user-defined tag scheme in Tags.
+* TagDetailsObject.{TagScheme}.UntaggedSources[\*] MUST contain all *tag sources* for the corresponding tag scheme which are eligible to be tagged for the *charge* but have no tags applied.
+* TagDetailsObject.{TagScheme}.UntaggedSources MUST be null when there are no eligible *tag sources* which contain no tags.
+* TagDetailsObject.{TagScheme}.Tags.{TagKey}.TagSource MUST contain the type of *tag source* where the tag key is present.
+* TagDetailsObject.{TagScheme}.Tags.{TagKey}.TagSourceId MUST contain the identifier of the TagSource.
+* TagDetailsObject.{TagScheme}.Tags.{TagKey}.TagValue MUST represent the *finalized tag*.
+* When TagDetailsObject.{TagScheme}.Tags.{TagKey}.TagValue is not null, TagDetailsObject.{TagScheme}.Tags.{TagKey}.TagValue adheres to the following additional requirements:
+  * TagDetailsObject.{TagScheme}.Tags.{TagKey}.TagValue MUST have the value of true (boolean) when the tag scheme does not support values.
+  * TagDetailsObject.{TagScheme}.Tags.{TagKey}.TagValue MUST NOT be altered from the original tag value unless applying true (boolean) to valueless tags.
+* TagDetailsObject.{TagScheme}.Tags.{TagKey}.TagValue MAY be null when setting a null value is supported for a key-value pair type tag.
+* TagDetailsObject.{TagScheme}.Tags.{TagKey}.AncestorTaggedSources MUST be null when the tag key from the corresponding tag key object within the tag scheme is not present in any *tag source* other than the *tag source* which results in the *finalized tag*.
+* When TagDetailsObject.{TagScheme}.Tags.{TagKey}.AncestorTaggedSources is not null, TagDetailsObject.{TagScheme}.Tags.{TagKey}.AncestorTaggedSources adheres to the following additional requirements:
+  * TagDetailsObject.{TagScheme}.Tags.{TagKey}.AncestorTaggedSources.{TagSource} key MUST denote the *tag source*.
+  * TagDetailsObject.{TagScheme}.Tags.{TagKey}.AncestorTaggedSources.{TagSource}.TagSourceId MUST contain the identifier of the TagSource.
+  * TagDetailsObject.{TagScheme}.Tags.{TagKey}.AncestorTaggedSources.{TagSource}.TagValue MUST adhere to the same boolean/null conditional logic as the finalized TagValue.
+  * TagDetailsObject.{TagScheme}.Tags.{TagKey}.AncestorTaggedSources SHOULD contain objects for *tag sources* which did not result in the *finalized tag*.
 
-<b>TagValue</b>
+## Schema Structure
 
-"TagValue" represents the tag value associated with the tag key for the corresponding tag scheme and *tag source*.
+TagDetails contains a structured JSON object defining tag eligibility and provenance from all tag sources.
 
-The "TagValue" property adheres to the following requirements:
+### Top-Level Properties
 
-* TagValue MUST be present in each tag key object in the Tags object.
-* When TagValue is directly contained in the tag key object, TagValue MUST represent the *finalized tag*.
-* TagValue MUST be present in each tag source object in the AncestorTaggedSources object.
-* TagValue MUST have the value of true (boolean) when the TagScheme does not support values.
-* Data generator MUST NOT alter tag values unless applying true (boolean) to valueless tags.
-* TagValue MAY be null when the data generator supports setting a null value for a key-value pair type tag.
+| Property | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `Default` | Object | Conditional | The object containing information about the unprefixed tag scheme in the Tags column. |
+| `*{TagScheme}*` | Object | True | One or more objects containing information about a prefixed tag scheme in the Tags column. |
 
-<b>TagSource</b>
+### Tag Scheme Object
 
-"TagSource" denotes the type of *tag source* where the tag key is present.
+Each tag scheme object (including `Default`) contains the following entries:
 
-The "TagSource" property adheres to the following requirements:
+| Key | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `Tags` | Object | True | An object containing all tag keys present in the Tags column for this scheme. |
+| `UntaggedSources` | Array or Null | True | A list of sources which support this tag scheme (i.e. are taggable) that had no tags applied. |
 
-* TagSource MUST be present in each tag key object in the Tags object.
-* TagSource MUST NOT be present in each tag source object in the AncestorTaggedSources object.
-* TagSource MUST contain the type of *tag source* where the tag key is present.
+### Tag Key Object
 
-<b>TagSourceId</b>
+The tag key object contains the properties of the *finalized tag* as well as other *tag sources* where this key was present:
 
-"TagSourceId" denotes the identifier of the specific *tag source* where the tag key is present.
+| Key | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `TagSource` | String or Null | True | The type of *tag source* where the tag key is present. |
+| `TagSourceId` | String or Null | True | The identifier of the *tag source* where the tag key is present. |
+| `TagValue` | String, Boolean, Number, or Null | True |  The value associated with the tag key. |
+| `AncestorTaggedSources` | Object or Null | True | An object containing all *tag sources* where the corresponding tag key was present which did not result in the *finalized tag*. |
 
-The "TagSourceId" property adheres to the following requirements:
+### Ancestor Tagged Source Object
 
-* TagSourceId MUST be present in each tag key object in the Tags object.
-* TagSourceId MUST be present in each tag source object in the AncestorTaggedSources object.
-* TagSourceId MUST contain the identifier of the TagSource.
+The ancestor tag source object contains the properties of the tag present in the *tag source*:
 
-## Overview
+| Key | Type | Required | Description |
+| :--- | :--- | :--- | :--- |
+| `TagSourceId` | String | True | The identifier of the *tag source* where the tag key is present. |
+| `TagValue` | String, Boolean, Number, or Null | True |  The value associated with the tag key. |
 
-### Object Schema
+## Object Example
 
-The object contains an object for each tag scheme present in the Tags column.
+Here is a basic example of the object format containing multiple tag schemes and sources.
 
-| Key | Parent | ValueType | Required | Description |
-| ----- | ---- | ---- | ---------- | ----------- |
-| Default | _root object_ | Object | TRUE | The object containing information about the unprefixed tag scheme in the Tags column. |
-| _TagScheme_ | _root object_ | Object | TRUE | One or more objects containing information about a prefixed tag scheme in the Tags column. |
-| Tags | _tag scheme object_ | Object | TRUE | An object containing all tag keys present in the Tags column. |
-| UntaggedSources | _tag scheme object_ | Array | TRUE | A list of sources which support this tag scheme (i.e. are taggable) that had no tags applied. |
-| _TagKey_ | Tags | Object | TRUE | An object containing the properties of the *finalized tag* as well as other *tag sources* where this key was present. |
-| AncestorTaggedSources | _TagKey_ | Object | TRUE | An object containing all *tag sources* where the corresponding tag key was present which did not result in the *finalized tag*. |
-| _AncestorTaggedSource_ | AncestorTaggedSources | Object | Conditional | An object containing the properties of the tag present in the *tag source*. |
-
-### Object Entries
-
-The tag key object contains the following properties:
-
-| Key | ValueType | Required | Description |
-| ----- | ---- | ---------- | ----------- |
-| TagSource | String | TRUE | The type of *tag source* where the tag key is present. |
-| TagSourceId | String | TRUE | The identifier of the *tag source* where the tag key is present. |
-| TagValue | String, Boolean, or Number | TRUE |  The value associated with the tag key. |
-
-The ancestor tag source object contains the following properties:
-
-| Key | ValueType | Required | Description |
-| ----- | ---- | ---------- | ----------- |
-| TagSourceId | String | TRUE | The identifier of the *tag source* where the tag key is present. |
-| TagValue | String, Boolean, or Number | TRUE |  The value associated with the tag key. |
-
-### Example
-
-```json
-{
-  "Default": {
-    "Tags": {
-      "foo": {
-        "TagSource": "Resource",
-        "TagSourceId": "my-resource-11",
-        "TagValue": "baz",
-        "AncestorTaggedSources": {
-          "Subscription": {
-            "TagSourceId": "/subs/#",
-            "TagValue": "foo"
-          },
-          "Resource Group": {
-            "TagSourceId": "/subs/#/rgs/x",
-            "TagValue": "bar"
-          }
-        }
-      }
-    },
-    "UntaggedSources": ["CustomSourceOne"]
-  },
-  "userDefinedTagScheme2": {
-    "Tags": {
-      "foo": {
-        "TagSource": "Resource",
-        "TagSourceId": "my-resource-11",
-        "TagValue": "bar",
-        "AncestorTaggedSources": null
-      }
-    },
-    "UntaggedSources": null
-  },
-  "userDefinedTagScheme3": {
-    "Tags": {
-      "foo": {
-        "TagSource": "Resource",
-        "TagSourceId": "my-resource-11",
-        "TagValue": "bar",
-        "AncestorTaggedSources": null
-      }
-    },
-    "UntaggedSources": null
-  },
-  "providerDefinedTagScheme1": {
-    "Tags": {
-      "foo": {
-        "TagSource": "Resource",
-        "TagSourceId": "my-resource-11",
-        "TagValue": "bar",
-        "AncestorTaggedSources": null
-      }
-    },
-    "UntaggedSources": null
-  },
-  "providerDefinedTagScheme2": {
-    "Tags": {
-      "foo": {
-        "TagSource": "Resource",
-        "TagSourceId": "my-resource-11",
-        "TagValue": "bar",
-        "AncestorTaggedSources": null
-      }
-    },
-    "UntaggedSources": null
-  }
-}
-```
-
-The corresponding Tags column would be:
-
-```json
-{
-  "foo":"baz",
-  "userDefinedTagScheme2/foo":"bar",
-  "userDefinedTagScheme3/foo":"bar",
-  "providerDefinedTagScheme1/foo":"bar",
-  "providerDefinedTagScheme2/foo":"bar"
-}
-```
-
-### JSON Schema Definition
-
-```json
-{
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://focus.finops.org/schemas/tagdetails.json",
-  "title": "TagDetails",
-  "description": "A superset of Tags which includes additional properties describing tag eligibility and tag provenance from all tag sources.",
-  "type": "object",
-  "patternProperties": {
-    "^[a-zA-Z0-9_]+$": {
-      "$ref": "#/$defs/tagScheme"
-    }
-  },
-  "additionalProperties": false,
-  "$defs": {
-    "tagScheme": {
-      "type": "object",
-      "properties": {
-        "Tags": {
-          "type": "object",
-          "patternProperties": {
-            "^[a-zA-Z0-9_]+$": {
-              "$ref": "#/$defs/tagKeyObject"
-            }
-          },
-          "additionalProperties": false
-        },
-        "UntaggedSources": {
-          "type": [
-            "array",
-            "null"
-          ],
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "Tags",
-        "UntaggedSources"
-      ]
-    },
-    "tagKeyObject": {
-      "type": "object",
-      "properties": {
-        "TagSource": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The source of the finalized tag. Can be null if the tag is only present on an ancestor."
-        },
-        "TagSourceId": {
-          "type": [
-            "string",
-            "null"
-          ],
-          "description": "The ID of the finalized tag's source. Can be null if the tag is only present on an ancestor."
-        },
-        "TagValue": {
-          "description": "The finalized tag value. Can be null, indicating it doesn't appear in the Tags column.",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        },
-        "AncestorTaggedSources": {
-          "type": [
-            "object",
-            "null"
-          ],
-          "patternProperties": {
-            "^[a-zA-Z0-9_ ]+$": {
-              "$ref": "#/$defs/ancestorTag"
-            }
-          },
-          "additionalProperties": false
-        }
-      },
-      "required": [
-        "TagSource",
-        "TagSourceId",
-        "TagValue",
-        "AncestorTaggedSources"
-      ]
-    },
-    "ancestorTag": {
-      "type": "object",
-      "properties": {
-        "TagSourceId": {
-          "type": "string"
-        },
-        "TagValue": {
-          "description": "The tag value from an ancestor source.",
-          "anyOf": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "boolean"
-            },
-            {
-              "type": "number"
-            },
-            {
-              "type": "null"
-            }
-          ]
-        }
-      },
-      "required": [
-        "TagSourceId",
-        "TagValue"
-      ]
-    }
-  }
-}
-```
-
-## Example Scenarios
-
-### Ancestor tags only
-
-Details:
-* One Tag Scheme supported (default).
-* Charge is for API usage which has no resource to tag, but this charge does support job tagging in the API request payload.
-  * No tags were applied in the API request payload.
-* One tag was applied at the ancestor level.
-
-```json
-{
-  "Default": {
-    "Tags": {
-      "foo": {
-        "TagSource": null,
-        "TagSourceId": null,
-        "TagValue": null,
-        "AncestorTaggedSources": {
-          "Project": {
-            "TagSourceId": "gcp-project-8675309",
-            "TagValue": "bar"
-          }
-        }
-      }
-    },
-    "UntaggedSources": ["api-job-label"]
-  }
-}
-```
-
-The corresponding Tags column would either be null or contain an empty object:
-
-```json
-{}
-```
-
-### Tags from multiple sources and schemes with different value types
-
-Details:
-* 3 tag schemes are used:
-  * User defined tags (default)
-    * Provider supports tag finalization via inheritance.
-    * First tag (foo) is set at the resource level as well as ancestor levels.
-    * Second tag (lorem) is applied at ancestor levels.
-      * One of the values from an ancestor is included in Tags column due to tag finalization process.
-    * There are no other supported sources for tags to be applied for this charge.
-  * userDefinedValuelessLabelScheme
-    * Label scheme is valueless so boolean `true` is provided as value to represent the presence of the label.
-    * User has set the label (project_foci) on the resource.
-    * Label scheme is supported on ancestor levels, but no labels have been set on either.
-  * providerDefinedTagScheme
-    * Provider has tag scheme which is only applicable at the resource level.
-    * First tag (isfeatureenabled) is boolean.
-    * Second tag (versionnumber) is numeric.
+* For more detailed scenarios, including side-by-side comparisons with the corresponding `Tags` column, please see the [Tag Details Examples](#appendix.examples:jsonobject.examples:tagdetails) appendix.
+* For the JSON schema, please see [Tag Details Object Schema](#schemas.datasets.costandusage.tagdetailsobjectschema).
 
 ```json
 {
@@ -422,7 +134,10 @@ Details:
         "AncestorTaggedSources": null
       }
     },
-    "UntaggedSources": ["Resource Group", "Subscription"]
+    "UntaggedSources": [
+      "Resource Group",
+      "Subscription"
+    ]
   },
   "providerDefinedTagScheme": {
     "Tags": {
@@ -444,17 +159,19 @@ Details:
 }
 ```
 
-The corresponding Tags column would contain:
+## Implementation Guidance
 
-```json
-{
-"foo": "baz",
-"lorem": "ipsum",
-"userDefinedValuelessLabelScheme/project_foci": true,
-"providerDefinedTagScheme/isfeatureenabled": false,
-"providerDefinedTagScheme/versionnumber": 12.2
-}
-```
+### Custom Properties
+
+To facilitate querying data across tagging systems and data generators, a data generator may include one or more custom properties nested within the individual schema or element objects. Custom keys must be prefixed with "x_" followed by PascalCase format (e.g., `x_MyCustomKey`) to make them easy to identify as well as prevent collisions with FOCUS-defined keys.
+
+### Object ID
+
+TagDetailsObject
+
+### Object Display Name
+
+Tag Details Object
 
 ## Column ID
 
@@ -466,17 +183,19 @@ Tag Details
 
 ## Description
 
-The superset of Tags which includes additional properties describing tag eligibility and tag provenance from all *tag sources,* both provider-defined and user-defined.
+The superset of Tags which includes additional properties describing tag eligibility and tag provenance from all *tag sources*, both provider-defined and user-defined.
 
 ## Content Constraints
 
-| Constraint      | Value           |
-|:----------------|:----------------|
-| Column type     | Dimension       |
-| Feature level   | Recommended     |
-| Allows nulls    | True            |
-| Data type       | JSON            |
-| Value format    | [JSON Object Format](#attributes.jsonobjectformat) |
+| Constraint | Value |
+| :--- | :--- |
+| Dataset | [Cost and Usage](#datasets.costandusage) |
+| Column type | Dimension |
+| Feature level | Recommended |
+| Allows nulls | True |
+| Data type | JSON |
+| Value format | [JSON Object Format](#attributes.jsonobjectformat) |
+| Object | [TagDetailsObject](#datasets.costandusage.tagdetails.tagdetailsobject) |
 
 ## Introduced (version)
 
