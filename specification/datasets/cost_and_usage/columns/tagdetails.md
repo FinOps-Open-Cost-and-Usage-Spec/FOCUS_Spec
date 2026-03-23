@@ -53,7 +53,7 @@ TagDetails contains a structured JSON object defining tag eligibility and proven
 
 | Property | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| `Default` | Object | True | The object containing information about the unprefixed tag scheme in the Tags column. |
+| `Default` | Object | Conditional | The object containing information about the unprefixed tag scheme in the Tags column. |
 | `*{TagScheme}*` | Object | True | One or more objects containing information about a prefixed tag scheme in the Tags column. |
 
 ### Tag Scheme Object
