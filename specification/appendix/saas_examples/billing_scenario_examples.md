@@ -22,8 +22,8 @@ The service provider's on-demand pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit | Credits/Hour |
 | :------ | :-- | ---------: | :----------- | -----------: |
-| Virtual Warehouse Compute | XS Warehouse | &dollar;3.00 | Credit | 1 |
-| Virtual Warehouse Compute | Medium Warehouse | &dollar;3.00 | Credit | 4 |
+| Virtual Warehouse Compute | XS Warehouse | &dollar;3.00 | Credits | 1 |
+| Virtual Warehouse Compute | Medium Warehouse | &dollar;3.00 | Credits | 4 |
 | Storage | Active Storage | &dollar;23.00 | TB | n/a |
 
 Credit consumption varies by warehouse size. An XS warehouse consumes 1 credit per hour. A Medium warehouse consumes 4 credits per hour.
@@ -75,8 +75,8 @@ The service provider's on-demand pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
-| Infrastructure Monitoring | Infra Pro | &dollar;18.00 | Host |
-| APM | APM Standard | &dollar;36.00 | Host |
+| Infrastructure Monitoring | Infra Pro | &dollar;18.00 | Hosts |
+| APM | APM Standard | &dollar;36.00 | Hosts |
 | Log Management | Log Ingestion | &dollar;0.10 | GB |
 
 A customer uses the service provider's monitoring platform on a month-to-month basis with no annual commitment. During January 2025, the customer's usage is:
@@ -185,8 +185,8 @@ The service provider's on-demand pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
-| CloudDB Clusters | M10 Cluster | &dollar;0.08 | Hour |
-| CloudDB Clusters | M30 Cluster | &dollar;0.54 | Hour |
+| CloudDB Clusters | M10 Cluster | &dollar;0.08 | Hours |
+| CloudDB Clusters | M30 Cluster | &dollar;0.54 | Hours |
 | CloudDB Storage | SSD Storage | &dollar;0.25 | GB |
 | CloudDB Data Transfer | Data Transfer Out | &dollar;0.01 | GB |
 
@@ -241,7 +241,7 @@ The service provider's pricing for this example:
 
 | Service | SKU | Unit Price | Pricing Unit |
 | :------ | :-- | ---------: | :----------- |
-| TeamSpace | Pro Unlimited | &dollar;349.00 | Subscription |
+| TeamSpace | Pro Unlimited | &dollar;349.00 | Subscriptions |
 
 The service provider also offers an annual billing option at &dollar;299.00 per month (billed annually). This example uses the month-to-month option with no annual commitment.
 
@@ -331,7 +331,7 @@ The service provider's pricing for this example (Essentials 50K plan):
 | Component | Rate | Unit |
 | :-------- | ---: | :--- |
 | Plan fee (includes 50,000 emails) | &dollar;19.95 | Count |
-| Overage | &dollar;0.00133 | Email |
+| Overage | &dollar;0.00133 | Emails |
 
 This example covers two billing periods to show both under-minimum and over-minimum scenarios:
 
