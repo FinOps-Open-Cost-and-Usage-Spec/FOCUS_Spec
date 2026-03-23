@@ -154,10 +154,10 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [SubAccountId](#datasets.costandusage.subaccountid) when the service provider supports a *sub account* construct.
   * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the service provider supports a *sub account* construct.
   * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.
-  * CostAndUsage SHOULD conform to the following requirements regarding the inclusion of [TagDetails](#datasets.costandusage.tagdetails):
-    * CostAndUsage SHOULD include [TagDetails](#datasets.costandusage.tagdetails) when the data generator supports setting user or provider-defined tags and supports [Dataset Configuration](#attributes.datasetconfiguration).
+  * When the data generator supports setting user or provider-defined tags, CostAndUsage MUST adhere to the following column presence requirements:
+    * CostAndUsage SHOULD include [TagDetails](#datasets.costandusage.tagdetails) when the data generator supports [Dataset Configuration](#attributes.datasetconfiguration).
     * CostAndUsage SHOULD NOT include [TagDetails](#datasets.costandusage.tagdetails) when the data generator does not support [Dataset Configuration](#attributes.datasetconfiguration).
-  * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.
+    * CostAndUsage MUST include [Tags](#datasets.costandusage.tags).
 * CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
