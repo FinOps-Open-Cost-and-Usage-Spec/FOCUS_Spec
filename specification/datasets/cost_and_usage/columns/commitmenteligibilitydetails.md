@@ -9,11 +9,11 @@ CommitmentEligibilityDetails MUST adhere to the following requirements:
 -   CommitmentEligibilityDetails MUST be of type String.
 -   CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 -   CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
--   CommitmentEligibilityDetails MUST NOT be null when a charge is eligible for a commitment program, regardless of whether a commitment was actually applied to the charge.
--   CommitmentEligibilityDetails MUST NOT consider transient account configurations or quotas that might temporarily prevent purchase or participation in a commitment program.
--   CommitmentEligibilityDetails MUST include all publicly available commitment programs for which the usage is eligible.
--   CommitmentEligibilityDetails SHOULD include negotiated commitment programs for which the usage is eligible.
--   CommitmentEligibilityDetails MUST NOT include data related to commitment [*periods*](#glossary:periods) or payment options.
+*   CommitmentEligibilityDetails MUST NOT be null when a charge is eligible for a [*commitment program*](#glossary:commitment-program), regardless of whether a [*commitment*](#glossary:commitment) was actually applied to the charge.
+*   CommitmentEligibilityDetails MUST NOT consider transient account configurations or quotas that might temporarily prevent purchase or participation in a *commitment program*.
+*   CommitmentEligibilityDetails MUST include all publicly available *commitment programs* for which the usage is eligible.
+*   CommitmentEligibilityDetails SHOULD include negotiated *commitment programs* for which the usage is eligible.
+*   CommitmentEligibilityDetails MUST NOT include data related to *commitment* [*periods*](#glossary:period) or payment options.
 -   CommitmentEligibilityDetails MUST conform to [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) requirements when CommitmentEligibilityDetails is not null.
 
 ## Commitment Eligibility Details Object
@@ -22,7 +22,11 @@ Commitment Eligibility Details consists of a valid JSON object with top-level pr
 
 ### Object Requirements
 
-CommitmentEligibilityDetailsObject MUST adhere to the following requirements: \* CommitmentEligibilityDetailsObject MUST have at least one top-level property key when not null. \* CommitmentEligibilityDetailsObject MAY have a top-level property key "CommitmentDiscountTypes". \* CommitmentEligibilityDetailsObject MAY have a top-level property key "CapacityReservationTypes" for commitment programs whose primary purpose is to reserve capacity rather than to provide a unit discount. \* CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys for future or service provider-specific commitment categories.
+CommitmentEligibilityDetailsObject MUST adhere to the following requirements: 
+* CommitmentEligibilityDetailsObject MUST have at least one top-level property key when not null. 
+* CommitmentEligibilityDetailsObject MAY have a top-level property key "CommitmentDiscountTypes". 
+* CommitmentEligibilityDetailsObject MAY have a top-level property key "CapacityReservationTypes" for commitment programs whose primary purpose is to reserve capacity rather than to provide a unit discount. 
+* CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys for future or service provider-specific commitment categories.
 
 -   CommitmentEligibilityDetailsObject MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
 -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST adhere to the following requirements:
@@ -35,8 +39,8 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements: \*
     -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be of type String.
     -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST NOT be null.
     -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST correspond to a commitment program type supported by the provider (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount").
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be consistent with strings used in [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when CommitmentDiscountType is populated by the provider.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type SHOULD correspond to terminology disclosed by the provider in public documentation when CommitmentDiscountType is not populated by the provider.
+    -    CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for  one object in CommitmentEligibilityDetailsObject.CommitmentDiscountTypes when CommitmentDiscountType is not null.
+    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type SHOULD correspond to terminology disclosed by the service provider in public documentation.
 -   CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST adhere to the following requirements:
     -   CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST be of type Array.
     -   CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST contain one or more objects.
@@ -102,7 +106,7 @@ NOTE: The above JSON Type Definition (JTD) is an approximation of the expected c
 
 ## Example Scenarios
 
-The examples below are not exhaustive and may change over time. Service providers are the authoritative source for their commitment programs.
+The examples below are not exhaustive and may change over time. Service providers are the authoritative source for their [*commitment programs*](#glossary:commitment-program).
 
 **Azure (Partially covered Virtual Machine Usage)**
 
@@ -146,7 +150,7 @@ Commitment Eligibility Details
 
 ## Description
 
-The types of [*commitment*](#glossary:commitment) programs available for a specific usage row.
+The types of [*commitment programs*](#glossary:commitment-program) available for a specific usage row.
 
 ## Content constraints
 

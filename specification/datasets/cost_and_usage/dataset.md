@@ -118,7 +118,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [CommitmentDiscountStatus](#datasets.costandusage.commitmentdiscountstatus) when the service provider supports *commitment discounts*.
   * CostAndUsage MUST include [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) when the service provider supports *commitment discounts*.
   * CostAndUsage MUST include [CommitmentDiscountUnit](#datasets.costandusage.commitmentdiscountunit) when the service provider supports *commitment discounts*.
-  * CostAndUsage MUST include [CommitmentEligibilityDetails](#datasets.costandusage.commitmenteligibilitydetails) when the service provider supports at least one [*commitment*](#glossary:commitment) program.
+  * CostAndUsage MUST include [CommitmentEligibilityDetails](#datasets.costandusage.commitmenteligibilitydetails) when the service provider supports at least one [*commitment program*](#glossary:commitment-program).
   * CostAndUsage MUST include [ConsumedQuantity](#datasets.costandusage.consumedquantity) when the service provider supports the measurement of usage.
   * CostAndUsage MUST include [ConsumedUnit](#datasets.costandusage.consumedunit) when the service provider supports the measurement of usage.
   * CostAndUsage MUST include [ContractApplied](#datasets.costandusage.contractapplied) when the service provider supports *contract commitments*.
