@@ -127,7 +127,7 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [HostProviderName](#datasets.costandusage.hostprovidername).
   * CostAndUsage MUST include [InvoiceDetailId](#datasets.costandusage.invoicedetailid).
   * CostAndUsage MUST include [InvoiceId](#datasets.costandusage.invoiceid) when the invoice issuer supports payable invoices.
-  * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when the invoice issuer supports payable invoices..
+  * CostAndUsage MUST include [InvoiceIssuerName](#datasets.costandusage.invoiceissuername) when the invoice issuer supports payable invoices.
   * CostAndUsage MUST include [ListCost](#datasets.costandusage.listcost).
   * CostAndUsage MUST include [ListUnitPrice](#datasets.costandusage.listunitprice) when the service provider publishes unit prices exclusive of discounts.
   * CostAndUsage MUST include [PricingCategory](#datasets.costandusage.pricingcategory) when the service provider supports more than one pricing category across all [*SKUs*](#glossary:sku).
