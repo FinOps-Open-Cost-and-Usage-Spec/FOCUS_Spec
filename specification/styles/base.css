@@ -200,3 +200,7 @@ pre>code.sourceCode {
 div.sourceCode {
   overflow: visible !important;
 }
+
+.small-table table {
+  font-size: 0.65em;
+}
