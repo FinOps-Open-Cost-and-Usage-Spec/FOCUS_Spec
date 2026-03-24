@@ -20,7 +20,7 @@ The tolerance is the **greater** of the following values:
 
 ## Scenario 1: Small Invoice (Pass)
 
-* Data: A small invoice with 5 line items.
+* Data: A small invoice with 5 underlying CostAndUsage rows.
 * Values: CostAndUsage sums to &dollar;12.50. InvoiceDetail sums to &dollar;12.52. Difference is **&dollar;0.02**.
 * Limit Calculation:
   * Statistical Limit: `SQRT(5) * 0.5 * 0.01` = &dollar;0.011.
@@ -30,7 +30,7 @@ The tolerance is the **greater** of the following values:
 
 ## Scenario 2: Small Invoice (Fail)
 
-* Data: A small invoice with 5 line items where a &dollar;5.00 charge is missing from CostAndUsage.
+* Data: A small invoice with 5 underlying CostAndUsage rows where a &dollar;5.00 charge is missing from CostAndUsage.
 * Values: CostAndUsage sums to &dollar;10.00. InvoiceDetail sums to &dollar;15.00. Difference is **&dollar;5.00**.
 * Limit Calculation:
   * Effective Tolerance: **&dollar;1.00**.
@@ -38,7 +38,7 @@ The tolerance is the **greater** of the following values:
 
 ## Scenario 3: Large Invoice (Pass)
 
-* Data: An enterprise invoice with 1,000,000 line items.
+* Data: An enterprise invoice with 1,000,000 underlying CostAndUsage rows.
 * Values: CostAndUsage sums to &dollar;5,000,000.00. InvoiceDetail sums to &dollar;5,000,004.50. Difference is **&dollar;4.50**.
 * Limit Calculation:
   * Statistical Limit: `SQRT(1,000,000) * 0.5 * 0.01` = &dollar;5.00.
@@ -48,7 +48,7 @@ The tolerance is the **greater** of the following values:
 
 ## Scenario 4: Large Invoice (Fail)
 
-* Data: An enterprise invoice with 1,000,000 line items with a systematic rounding error (truncation bias).
+* Data: An enterprise invoice with 1,000,000 underlying CostAndUsage rows with a systematic rounding error (truncation bias).
 * Values: CostAndUsage sums to &dollar;5,000,000.00. InvoiceDetail sums to &dollar;5,000,015.00. Difference is **&dollar;15.00**.
 * Limit Calculation:
   * Effective Tolerance: **&dollar;5.00**.
