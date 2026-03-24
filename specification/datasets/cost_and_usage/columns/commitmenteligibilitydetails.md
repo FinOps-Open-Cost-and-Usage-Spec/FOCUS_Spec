@@ -90,7 +90,7 @@ NOTE: The above JSON Type Definition (JTD) is an approximation of the expected c
 
 The examples below are not exhaustive and may change over time. Service providers are the authoritative source for their [*commitment programs*](#glossary:commitment-program).
 
-**Provider A (Partially covered Virtual Machine Usage)**
+### Provider A (Partially covered Virtual Machine Usage)
 
 Scenario: A Virtual Machine usage row that is partially covered by Savings Plan. The eligibility column still reflects all programs this usage qualifies for, regardless of current coverage.
 
@@ -98,21 +98,29 @@ Scenario: A Virtual Machine usage row that is partially covered by Savings Plan.
 |------------------|------------------|------------------|
 | Provider A          | Virtual Machines | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}]} |
 
-**Provider B (Monthly and Annual Commitment)**
+### Provider B (Infrastructure with Subscription Commitment)
 
-Scenario: An On-Demand infrastructure host usage row (potentially billed as overage). This usage is eligible for coverage under commitment plans that offer lower rates than On-Demand.
+Scenario: An infrastructure host usage row eligible for Monthly and Annual commitment-based pricing, offering lower effective rates than On-Demand usage.
 
 | ServiceProviderName | ServiceName    | CommitmentEligibilityDetails                                                                        |
-|------------------|------------------|------------------|
+|-----------|-----------|----------------------------------------|
 | Provider B          | Infrastructure | {"CommitmentPrograms": [{"ProgramType": "MonthlyCommitment"}, {"ProgramType": "AnnualCommitment"}]} |
 
-**Provider C (Capacity Reservation-eligible EC2 Usage)**
+### Provider C (Ineligible Object Storage Usage)
+
+Scenario: Standard object storage usage or a support fee, which is not eligible for any commitment program.
+
+| ServiceProviderName | ServiceName   | CommitmentEligibilityDetails |
+|---------------------|---------------|------------------------------|
+| Provider C          | ObjectStorage | null                         |
+
+### Provider D (Capacity Reservation-eligible EC2 Usage)
 
 A compute instance type and tenancy that are eligible for both Savings Plans/Reserved Instances and for capacity reservations (e.g., regional reservations, zonal reservations). The eligibility column reflects all commitment constructs the usage qualifies for.
 
 | ServiceProviderName | ServiceName    | CommitmentEligibilityDetails                                                                                                                                               |
 |------------------|------------------|------------------|
-| Provider C          | Compute Engine | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}, {"ProgramType": "CapacityReservation"}, {"ProgramType": "ZonalReservation"}]} |
+| Provider D          | Compute Engine | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}, {"ProgramType": "CapacityReservation"}, {"ProgramType": "ZonalReservation"}]} |
 
 ### Object ID
 
