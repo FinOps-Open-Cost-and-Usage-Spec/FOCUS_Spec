@@ -326,8 +326,9 @@ Use this option when **significant revisions** are needed.
 
 ### Resolving Comments and Suggestions
 
-As the assignee of a Pull Request you are responsible for timely responses to the comments and suggestions made by reviewers. If a comment or suggestion is unclear it is essential that you ask for clarification as leaving unclear comments will only delay the completion of work. 
+As the assignee of a Pull Request you are responsible for timely responses to the comments and suggestions made by reviewers. If a comment or suggestion is unclear it is essential that you ask for clarification as leaving unclear comments will only delay the completion of work.
 
+If you agree completely with a comment that includes a proposed change, you must either directly commit that suggestion via the GitHub UI, or manually record the commenter's co-authorship in the commit message using standard `Co-authored-by:` trailers, thus preserving the commenter's co-authorship.
 
 ### Pull Request Approval and Conflict Resolution
 

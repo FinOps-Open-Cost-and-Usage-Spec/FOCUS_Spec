@@ -34,7 +34,7 @@ AI-assisted contributions follow the same review process as human-authored contr
 2. **Technical Validation**: The relevant Task Force MUST review the contribution for technical accuracy and schema compliance.
 3. **Strategic Alignment**: WG Members MUST review the contribution to ensure it aligns with broader community goals and the FOCUS roadmap.
 4. **Standard Approval**: All contributions MUST follow the established workflow per [Development Processes](development-processes.md).
-5. **Acceptance of Suggestions**: If the author agrees completely with a comment that includes a suggestion, the author MUST commit that suggestion directly, rather than commit it separately through the use of an AI assistant.  A separate commit denies public documentation of the commenter's co-authorship.
+5. **Acceptance of Suggestions**: If the author chooses to apply the suggestion via a separate commit through the use of an AI assistant, the author MUST manually record the commenter's co-authorship in the commit message using standard `Co-authored-by:` trailers.
 
 AI-generated content does not bypass any approval workflow or receive different treatment during review.
 
