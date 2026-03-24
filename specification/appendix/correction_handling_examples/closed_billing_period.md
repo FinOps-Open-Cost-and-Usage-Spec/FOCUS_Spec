@@ -70,6 +70,7 @@ To reconcile this discrepancy, ACME Corp provisioned a cost-only correction usin
 
 CSV Examples:
 
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_3_itemized_cost_only_original.csv)
 * [Delta Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_3_itemized_cost_only_delta.csv)
 * [Ledger Dataset Artifact](/specification/data/correction-handling-examples/closed-billing-period/scenario_3_itemized_cost_only_ledger.csv)
 
