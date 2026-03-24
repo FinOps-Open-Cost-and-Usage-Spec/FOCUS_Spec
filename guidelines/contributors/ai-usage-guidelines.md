@@ -46,7 +46,7 @@ To minimize the burden on reviewers:
 * **Manual Verification:** Contributors MUST independently calculate, parse, or manually verify all AI-generated examples before committing them to a pull request.
 * **No Blind Commits:** Contributors MUST NOT directly commit AI-generated examples without human validation.
 * **Mathematical and Schema Accuracy:** Contributors MUST ensure all data within an AI-generated example is logically consistent and mathematically accurate according to the FOCUS normative requirements.
-* **Zero-Tolerance for Unreviewed Examples:** Maintainers MUST return a pull request to draft if they determine it contains obviously unreviewed, hallucinated, or broken AI-generated examples.
+* **Zero-Tolerance for Unreviewed Examples:** Maintainers MUST return a pull request to draft if they determine it contains obviously unreviewed, hallucinated, or broken AI-assisted examples.
 
 ### CLA Coverage
 
