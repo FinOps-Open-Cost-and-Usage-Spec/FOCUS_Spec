@@ -6,15 +6,15 @@ Commitment Eligibility Details indicates which [*commitment*](#glossary:commitme
 
 CommitmentEligibilityDetails MUST adhere to the following requirements:
 
--   CommitmentEligibilityDetails MUST be of type String.
--   CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
--   CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
+*   CommitmentEligibilityDetails MUST be of type String.
+*   CommitmentEligibilityDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
+*   CommitmentEligibilityDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 *   CommitmentEligibilityDetails MUST NOT be null when a charge is eligible for a [*commitment program*](#glossary:commitment-program), regardless of whether a [*commitment*](#glossary:commitment) was actually applied to the charge.
 *   CommitmentEligibilityDetails MUST NOT consider transient account configurations or quotas that might temporarily prevent purchase or participation in a *commitment program*.
 *   CommitmentEligibilityDetails MUST include all publicly available *commitment programs* for which the usage is eligible.
 *   CommitmentEligibilityDetails SHOULD include negotiated *commitment programs* for which the usage is eligible.
 *   CommitmentEligibilityDetails MUST NOT include data related to *commitment* [*periods*](#glossary:period) or payment options.
--   CommitmentEligibilityDetails MUST conform to [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) requirements when CommitmentEligibilityDetails is not null.
+*   CommitmentEligibilityDetails MUST conform to [CommitmentEligibilityDetailsObject](#datasets.costandusage.commitmenteligibilitydetails.commitmenteligibilitydetailsobject) requirements when CommitmentEligibilityDetails is not null.
 
 ## Commitment Eligibility Details Object
 
@@ -22,35 +22,23 @@ Commitment Eligibility Details consists of a valid JSON object with a top-level 
 
 ### Object Requirements
 
-CommitmentEligibilityDetailsObject MUST adhere to the following requirements: 
-* CommitmentEligibilityDetailsObject MUST have at least one top-level property key when not null. 
-* CommitmentEligibilityDetailsObject MAY have a top-level property key "CommitmentDiscountTypes". 
-* CommitmentEligibilityDetailsObject MAY have a top-level property key "CapacityReservationTypes" for commitment programs whose primary purpose is to reserve capacity rather than to provide a unit discount. 
-* CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys for future or service provider-specific commitment categories.
+CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 
--   CommitmentEligibilityDetailsObject MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
--   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST adhere to the following requirements:
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type Array.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST contain one or more objects.
-    -   Each entry in CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST be of type JSON Object.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have a property key "Type".
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MAY contain additional data generator-defined property keys.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST be of type String.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST NOT be null.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST correspond to a commitment program type supported by the provider (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount").
-    -    CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for  one object in CommitmentEligibilityDetailsObject.CommitmentDiscountTypes when CommitmentDiscountType is not null.
-    -   CommitmentEligibilityDetailsObject.CommitmentDiscountTypes.Type SHOULD correspond to terminology disclosed by the service provider in public documentation.
--   CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST adhere to the following requirements:
-    -   CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST be of type Array.
-    -   CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST contain one or more objects.
-    -   Each entry in CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST be of type JSON Object.
-    -   CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST have a property key "Type".
-    -   CommitmentEligibilityDetailsObject.CapacityReservationTypes MAY contain additional data generator-defined property keys.
-    -   CommitmentEligibilityDetailsObject.CapacityReservationTypes MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
-    -   CommitmentEligibilityDetailsObject.CapacityReservationTypes.Type MUST be of type String.
-    -   CommitmentEligibilityDetailsObject.CapacityReservationTypes.Type MUST NOT be null.
-    -   CommitmentEligibilityDetailsObject.CapacityReservationTypes.Type MUST correspond to a capacity-reservation-style commitment program supported by the provider (for example, "CapacityReservation", "ZonalReservation").
+*   CommitmentEligibilityDetailsObject MUST have a top-level property key "CommitmentPrograms".
+*   CommitmentEligibilityDetailsObject MAY contain additional data generator-defined top-level property keys.
+*   CommitmentEligibilityDetailsObject MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
+*   CommitmentEligibilityDetailsObject.CommitmentPrograms MUST adhere to the following requirements:
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms MUST be of type Array.
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms MUST contain one or more objects.
+    *   Each entry in CommitmentEligibilityDetailsObject.CommitmentPrograms MUST be of type JSON Object.
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms MUST have a property key "ProgramType".
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms MAY contain additional data generator-defined property keys.
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST be of type String.
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST NOT be null.
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount", "CapacityReservation", "ZonalReservation").
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
+    *   CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.
 
 ### Top-Level Properties
 

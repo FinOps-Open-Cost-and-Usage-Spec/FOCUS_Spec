@@ -6,23 +6,23 @@ The following scenarios illustrate how CommitmentEligibilityDetails are populate
 
 | ServiceProviderName | ServiceName       | ChargeClass | CommitmentEligibilityDetails                                                                                                  |
 |--------------|--------------|--------------|-----------------|
-| AWS                 | AmazonEC2         | Usage       | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}]}                                          |
-| Azure               | Virtual Machines  | Usage       | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}]}                                          |
-| Google              | Kubernetes Engine | Usage       | {"CommitmentDiscountTypes": [{"Type": "ResourceBasedCommittedUseDiscount"}, {"Type": "ComputeFlexibleCommittedUseDiscount"}]} |
-| Snowflake           | Warehouse         | Usage       | {"CommitmentDiscountTypes": [{"Type": "CapacityCommitment"}]}                                                                 |
-| Databricks          | Jobs              | Usage       | {"CommitmentDiscountTypes": [{"Type": "CommittedUseDiscount"}]}                                                               |
-| Datadog             | Infrastructure    | Usage       | {"CommitmentDiscountTypes": [{"Type": "MonthlyCommitment"}, {"Type": "AnnualCommitment"}]}                                    |
+| AWS                 | AmazonEC2         | Usage       | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}]}                                          |
+| Azure               | Virtual Machines  | Usage       | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}]}                                          |
+| Google              | Kubernetes Engine | Usage       | {"CommitmentPrograms": [{"ProgramType": "ResourceBasedCommittedUseDiscount"}, {"ProgramType": "ComputeFlexibleCommittedUseDiscount"}]} |
+| Snowflake           | Warehouse         | Usage       | {"CommitmentPrograms": [{"ProgramType": "CapacityCommitment"}]}                                                                 |
+| Databricks          | Jobs              | Usage       | {"CommitmentPrograms": [{"ProgramType": "CommittedUseDiscount"}]}                                                               |
+| Datadog             | Infrastructure    | Usage       | {"CommitmentPrograms": [{"ProgramType": "MonthlyCommitment"}, {"ProgramType": "AnnualCommitment"}]}                                    |
 | AWS                 | AmazonS3          | Usage       | null                                                                                                                          |
 
 ## Example usage scenarios
 
 **AWS (On-Demand EC2 Usage)**
 
-An On-Demand EC2 instance that is not currently covered by any commitment but is eligible for both Savings Plan and Reserved Instance.
+An On-Demand EC2 instance that is not currently covered by any commitment but is eligible for Savings Plan, Reserved Instance, and capacity reservations.
 
 | ServiceProviderName | ServiceName | ChargeClass | CommitmentEligibilityDetails                                                         |
 |---------------|---------------|---------------|---------------|
-| AWS                 | AmazonEC2   | Usage       | {"CommitmentDiscountTypes": [{"Type": "SavingsPlan"}, {"Type": "ReservedInstance"}]} |
+| AWS                 | AmazonEC2   | Usage       | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}, {"ProgramType": "CapacityReservation"}]} |
 
 **Google Cloud (Fully covered GKE Usage)**
 
@@ -30,7 +30,7 @@ A GKE cluster usage row that is covered by a Resource-based Committed Use Discou
 
 | ServiceProviderName | ServiceName       | ChargeClass | CommitmentEligibilityDetails                                                                                                  |
 |---------------|---------------|---------------|---------------|
-| Google              | Kubernetes Engine | Usage       | {"CommitmentDiscountTypes": [{"Type": "ResourceBasedCommittedUseDiscount"}, {"Type": "ComputeFlexibleCommittedUseDiscount"}]} |
+| Google              | Kubernetes Engine | Usage       | {"CommitmentPrograms": [{"ProgramType": "ResourceBasedCommittedUseDiscount"}, {"ProgramType": "ComputeFlexibleCommittedUseDiscount"}]} |
 
 **Databricks**
 
@@ -38,7 +38,7 @@ Databricks Units (DBUs) consumed by a Jobs cluster. This usage is eligible for c
 
 | ServiceProviderName | ServiceName | ChargeClass | CommitmentEligibilityDetails                                    |
 |---------------|---------------|---------------|---------------|
-| Databricks          | Jobs        | Usage       | {"CommitmentDiscountTypes": [{"Type": "CommittedUseDiscount"}]} |
+| Databricks          | Jobs        | Usage       | {"CommitmentPrograms": [{"ProgramType": "CommittedUseDiscount"}]} |
 
 **Ineligible Usage**
 
@@ -54,4 +54,4 @@ OCI Compute usage eligible for Universal Credits. Because Universal Credits are 
 
 | ServiceProviderName | ServiceName     | ChargeClass | CommitmentEligibilityDetails                                |
 |---------------|---------------|---------------|---------------|
-| Oracle              | Virtual Machine | Usage       | {"CommitmentDiscountTypes": [{"Type": "UniversalCredits"}]} |
+| Oracle              | Virtual Machine | Usage       | {"CommitmentPrograms": [{"ProgramType": "UniversalCredits"}]} |
