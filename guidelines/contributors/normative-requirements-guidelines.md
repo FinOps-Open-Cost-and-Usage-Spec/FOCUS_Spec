@@ -85,6 +85,11 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 
 ### Dataset Normative Requirements Examples
 
+**Notes:**
+
+* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full dataset specification.
+* Authors should consult the actual FOCUS dataset specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
+
 #### **Contract Commitment**
 
 ContractCommitment MUST adhere to the following requirements:
@@ -501,6 +506,11 @@ To ensure clarity and consistency across columns and corresponding requirements,
   * When the service provider has more than one user-defined tag scheme. (instead of: When the service provider has 2 or more user-defined tag schemes.)
 
 ### Column Normative Requirements Examples
+
+**Notes:**
+
+* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
+* Authors should consult the actual FOCUS column specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
 
 #### **List Unit Price**
 
