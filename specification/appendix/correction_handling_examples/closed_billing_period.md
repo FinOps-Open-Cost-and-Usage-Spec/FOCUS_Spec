@@ -24,9 +24,9 @@ To correct this misattribution, ACME Corp provisioned a reallocation correction 
 
 CSV Examples:
 
-* [Original Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
+* [Original Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_1_partial_reallocation_original.csv)
+* [Delta Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_1_partial_reallocation_delta.csv)
+* [Ledger Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_1_partial_reallocation_ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -50,8 +50,8 @@ To account for the previously omitted usage, ACME Corp provisioned a correction 
 
 CSV Examples:
 
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
+* [Delta Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_2_late_arriving_usage_delta.csv)
+* [Ledger Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_2_late_arriving_usage_ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -70,8 +70,8 @@ To reconcile this discrepancy, ACME Corp provisioned a cost-only correction usin
 
 CSV Examples:
 
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
+* [Delta Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_3_itemized_cost_only_delta.csv)
+* [Ledger Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_3_itemized_cost_only_ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -92,9 +92,9 @@ To reconcile this discrepancy, ACME Corp provisioned a bulk cost-only correction
 
 CSV Examples:
 
-* [Original Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=620136225#gid=620136225)
+* [Original Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_4_bulk_cost_only_original.csv)
+* [Delta Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_4_bulk_cost_only_delta.csv)
+* [Ledger Dataset Artifact](specification/data/correction-handling-examples/closed-billing-period/scenario_4_bulk_cost_only_ledger.csv)
 
 Note the following details in the example datasets:
 
