@@ -28,10 +28,10 @@ Since the billing period was still open and invoices had not yet been issued, th
 
 CSV Examples:
 
-* [Original Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Replacement Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_1_partial_reallocation_original.csv)
+* [Replacement Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_1_partial_reallocation_replacement.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_1_partial_reallocation_delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_1_partial_reallocation_ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -65,9 +65,9 @@ Regardless of the correction style used, the correction was realized by introduc
 
 CSV Examples:
 
-* [Replacement Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Replacement Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_2_late_arriving_usage_replacement.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_2_late_arriving_usage_delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_2_late_arriving_usage_ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -93,10 +93,10 @@ Compared to the bulk correction approach, this method ensures transparency and t
 
 CSV Examples:
 
-* [Original Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Replacement Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_3_itemized_cost_only_original.csv)
+* [Replacement Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_3_itemized_cost_only_replacement.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_3_itemized_cost_only_delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_3_itemized_cost_only_ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -124,10 +124,10 @@ Compared to the itemized correction approach, this method sacrifices transparenc
 
 CSV Examples:
 
-* [Original Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Replacement Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=1014183943#gid=1014183943)
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_4_bulk_cost_only_original.csv)
+* [Replacement Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_4_bulk_cost_only_replacement.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_4_bulk_cost_only_delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_4_bulk_cost_only_ledger.csv)
 
 Note the following details in the example datasets:
 
@@ -157,10 +157,10 @@ This scenario is nearly identical to *Scenario 1: Current Open-Period Correction
 
 CSV Examples:
 
-* [Original Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Replacement Dataset](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_1_partial_reallocation_original.csv)
+* [Replacement Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_1_partial_reallocation_replacement.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_1_partial_reallocation_delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_1_partial_reallocation_ledger.csv)
 
 ### Scenario 2: Previous Open-Period Correction - Late-arriving Usage
 
@@ -168,9 +168,9 @@ This scenario is nearly identical to *Scenario 2: Current Open-Period Correction
 
 CSV Examples:
 
-* [Replacement Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+* [Replacement Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_2_late_arriving_usage_replacement.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_2_late_arriving_usage_delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_2_late_arriving_usage_ledger.csv)
 
 ### Scenario 3: Previous Open-Period Correction - Itemized Cost-only Corrections
 
@@ -178,10 +178,10 @@ This scenario is nearly identical to *Scenario 3: Current Open-Period Correction
 
 CSV Examples:
 
-* [Original Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Replacement Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_3_itemized_cost_only_original.csv)
+* [Replacement Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_3_itemized_cost_only_replacement.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_3_itemized_cost_only_delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_3_itemized_cost_only_ledger.csv)
 
 ### Scenario 4: Previous Open-Period Correction - Bulk Cost-only Corrections
 
@@ -189,7 +189,7 @@ This scenario is nearly identical to *Scenario 4: Current Open-Period Correction
 
 CSV Examples:
 
-* [Original Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Replacement Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Delta Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
-* [Ledger Dataset Artifact](https://docs.google.com/spreadsheets/d/1UDZCxPqUNEUQt90h8sW-YuhgBsk4pHYcwRlgPJVmwPo/edit?gid=957542531#gid=957542531)
+* [Original Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_4_bulk_cost_only_original.csv)
+* [Replacement Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_4_bulk_cost_only_replacement.csv)
+* [Delta Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_4_bulk_cost_only_delta.csv)
+* [Ledger Dataset Artifact](/specification/data/correction-handling-examples/open-billing-period-current/scenario_4_bulk_cost_only_ledger.csv)
