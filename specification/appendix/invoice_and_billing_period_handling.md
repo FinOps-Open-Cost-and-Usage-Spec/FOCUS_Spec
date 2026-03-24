@@ -18,7 +18,7 @@ Similarly, practitioners rely on the aggregated Billed Costs in the Invoice Deta
 
 Practitioners may perform *invoice reconciliation* independently by verifying that invoice line items align with data delivered in [*FOCUS dataset artifacts*](#glossary:dataset-artifact), particularly Cost and Usage, Invoice Detail, and Billing Period.
 
-Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is generally treated as a static historical record.
+Once an invoice is issued, it becomes an authoritative financial document, and the information it contains is expected not to change.
 
 [*Corrections*](#glossary:correction) related to *issued invoices* (i.e., updates, additions, or omissions of underlying records in Cost and Usage, Invoice Detail, and Billing Period datasets) are permitted in accordance with the Invoice Issue Status requirements, as well as the Billed Cost requirements in both Invoice Detail and Cost and Usage datasets. In other words, such *corrections* are typically performed upon explicit request or approval by the customer, provided that they do not compromise the integrity of the issued invoice.
 
