@@ -15,7 +15,7 @@
     "DatasetName": "Contract Commitment",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "BillingCurrency adheres to the following requirements:",
+      "MustSatisfy": "BillingCurrency MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -48,7 +48,6 @@
       },
       "Condition": {},
       "Dependencies": [
-        "CCT-ContractCommitment-D-003-M",
         "CCT-BillingCurrency-C-001-M",
         "CCT-BillingCurrency-C-002-M",
         "CCT-BillingCurrency-C-003-M",
