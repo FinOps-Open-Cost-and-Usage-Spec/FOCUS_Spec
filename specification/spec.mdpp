@@ -51,6 +51,10 @@ pagetitle: FinOps Open Cost and Usage Specification
 
 <div style="page-break-after: always"></div>
 
+!INCLUDE "schemas/schemas.mdpp",1
+
+<div style="page-break-after: always"></div>
+
 !INCLUDE "glossary.md",1
 
 <div style="page-break-after: always"></div>
