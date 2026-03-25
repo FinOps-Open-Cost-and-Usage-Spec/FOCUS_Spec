@@ -45,7 +45,7 @@ SELECT
   SUM(EffectiveCost) AS TotalEffectiveCost,
   SUM(PricingQuantity) AS TotalPricingQuantity
 FROM focus_data_table
-WHERE BillingPeriodStart >= ? AND BillingPeriodEnd <= ?
+WHERE BillingPeriodStart >= ? AND BillingPeriodEnd < ?
 GROUP BY
   ServiceProviderName,
   BillingPeriodStart,
