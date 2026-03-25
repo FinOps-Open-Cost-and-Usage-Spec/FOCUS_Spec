@@ -30,7 +30,6 @@ Indicates standards for expressing measurement units in columns appearing in a *
 Column conforming to UnitFormat attribute MUST adhere to the following requirements:
 
 * When FOCUS column represents a measurement unit, the FOCUS column MUST adhere to the following requirements:
-
   * FOCUS column MUST adhere to the following base unit requirements:
     * FOCUS column MUST include at least one base unit.
     * FOCUS column MUST use one of the allowed data size unit abbreviations listed below for data size base units.
@@ -50,6 +49,26 @@ Column conforming to UnitFormat attribute MUST adhere to the following requireme
   * FOCUS column SHOULD use the `<unit-quantity> <plural-units>` format when a unit quantity is included (e.g., "1000 Tokens", "1000 Characters").
   * FOCUS column MAY include a denominator quantity expressed as a positive integer when the FOCUS column represents a ratio unit.
   * FOCUS column SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format when the FOCUS column represents a ratio unit and a denominator quantity is included (e.g., "Units/3 Months").
+* When custom column represents a measurement unit, the custom column MUST adhere to the following requirements:
+  * Custom column MUST adhere to the following base unit requirements:
+    * Custom column SHOULD include at least one base unit.
+    * Custom column SHOULD use one of the allowed data size unit abbreviations listed below for data size base units.
+    * Custom column SHOULD use the allowed data size unit abbreviations in the same form for both singular and plural units.
+    * Custom column SHOULD use the allowed abbreviation for exabit, exabyte, exbibit, or exbibyte when representing values exceeding 10^18.
+    * Custom column SHOULD use the allowed abbreviation for bit or byte when representing values smaller than one byte.
+    * Custom column SHOULD use one of the allowed time-based unit names listed below for time-based base units.
+    * Custom column SHOULD use one of the recommended count-based unit names listed below for count-based base units.
+    * Custom column MAY include a count-based base unit that is not listed as one of the allowed values.
+    * Custom column SHOULD use capitalized nouns for base units that do not correspond to any of the allowed base unit names listed below.
+  * Custom column SHOULD use a hyphen ("-") to separate base units when expressing a compound unit (e.g., "GB-Hours").
+  * Custom column SHOULD use a slash ("/") to separate the numerator and denominator when expressing a ratio unit (e.g., "GB/Hour" to signify gigabytes per hour).
+  * Custom column SHOULD use the `<plural-units>` format when expressing a simple unit (e.g., "GB", "Seconds").
+  * Custom column SHOULD use the `<singular-unit>-<plural-time-units>` format when expressing a compound unit (e.g., "GB-Hours", "MB-Days").
+  * Custom column SHOULD use the `<plural-units>/<singular-time-unit>` format when expressing a ratio unit with a time denominator (e.g., "GB/Hour", "PB/Day").
+  * Custom column MAY include a unit quantity expressed as a positive integer.
+  * Custom column SHOULD use the `<unit-quantity> <plural-units>` format when a unit quantity is included (e.g., "1000 Tokens", "1000 Characters").
+  * Custom column MAY include a denominator quantity expressed as a positive integer when the custom column represents a ratio unit.
+  * Custom column SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format when the custom column represents a ratio unit and a denominator quantity is included (e.g., "Units/3 Months").
 
 ## Base Unit Names
 
