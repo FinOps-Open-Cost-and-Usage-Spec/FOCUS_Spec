@@ -32,8 +32,8 @@ This attribute ensures custom columns are fully represented in the *FOCUS datase
 
 *FOCUS dataset* MUST adhere to the following requirements:
 
-* *FOCUS dataset* MUST include [*custom columns*](#glossary:custom-column) for all [*native dataset*](#glossary:native-dataset) columns except those explicitly listed as exclusions with justification (e.g., deprecated fields) in publicly-available documentation.
-* *FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers).
+* *FOCUS dataset* MUST include [*custom columns*](#glossary:custom-column) for all [*native dataset*](#glossary:native-dataset) columns except those explicitly listed as exclusions with justification (e.g., deprecated fields, overlap with [*FOCUS columns*](#glossary:FOCUS-column)) in publicly-available documentation.
+* *FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even if they meet the criteria for exclusion.
 * *FOCUS dataset* SHOULD exclude custom columns that duplicate information already captured in FOCUS columns, except during a transitional period as defined in publicly-available documentation, to enable migration without breaking changes.
 * *FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of custom columns.
 * *FOCUS dataset* MUST ensure *custom columns* retain the fidelity of corresponding *native dataset* values without lossy transformations (e.g., rounding or truncation).

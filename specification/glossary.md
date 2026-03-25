@@ -103,7 +103,7 @@ A financial incentive or allowance granted by a service provider unrelated to ot
 
 <a name="glossary:custom-column"><b>Custom Column</b></a>
 
-A column not defined by FOCUS and included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). Custom columns are prefixed with `x_` and provide additional context from [*native datasets*](#glossary:native-dataset) beyond what is captured in FOCUS columns.
+A column not defined by FOCUS and included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). Custom columns are prefixed with `x_` and provide additional context from [*native datasets*](#glossary:native-dataset) beyond what is captured in FOCUS columns. See [Dataset Completeness](#attributes.datasetcompleteness) for inclusion requirements.
 
 <a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
 
@@ -141,7 +141,7 @@ A column defined by FOCUS and included in a [*FOCUS dataset*](#glossary:FOCUS-da
 
 A structured collection of columns that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
 
-In addition to these standardized columns, [data generators](#metadata.datagenerator) may include [*custom columns*](#glossary:custom-column) where additional context is needed beyond what is captured in the defined [*FOCUS columns*](#glossary:FOCUS-column). If custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
+In addition to these standardized columns, [data generators](#metadata.datagenerator) include [*custom columns*](#glossary:custom-column) to capture information from [*native datasets*](#glossary:native-dataset) that is not represented by [*FOCUS columns*](#glossary:FOCUS-column). If custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
 
 The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness. See also: [*Native Dataset*](#glossary:native-dataset).
 
