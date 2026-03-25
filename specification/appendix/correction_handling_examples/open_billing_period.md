@@ -108,7 +108,7 @@ Note the following details in the example datasets:
 * Each correction record has ChargeCategory set to "Adjustment", which is the only valid value when both PricingQuantity and ChargeClass are null, due to the normative requirement that PricingQuantity must not be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
 * Each correction record is assigned to the current billing period (July 2025).
 
-### Scenario 4: Current Open-Period Correction - Bulk Cost-only Correction
+### Scenario 4: Current Open-Period Correction - Bulk Cost-only Corrections
 
 On July 5th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple records spanning two distinct SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in small drifts.
 
@@ -185,7 +185,7 @@ CSV Examples:
 
 ### Scenario 4: Previous Open-Period Correction - Bulk Cost-only Corrections
 
-This scenario is nearly identical to *Scenario 4: Current Open-Period Correction - Bulk Cost-only Correction*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
+This scenario is nearly identical to *Scenario 4: Current Open-Period Correction - Bulk Cost-only Corrections*. The only difference is that the original cost discrepancy occurred in the previous billing period (June 2025), which has ended but has not yet been closed. The correction is applied before invoice issuance, using the same correction styles: Replacement, Delta, and Ledger.
 
 CSV Examples:
 

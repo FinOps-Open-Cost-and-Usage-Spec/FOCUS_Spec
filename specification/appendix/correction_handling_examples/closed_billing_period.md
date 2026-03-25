@@ -62,7 +62,7 @@ Note the following details in the example datasets:
 * The correction record has ChargeClass set to "Correction", indicating it accounts for usage from a previously closed billing period.
 * Both Delta style and Ledger style corrections use a single increment record to represent the late-arriving usage and associated cost.
 
-### Scenario 3: Closed-Period Correction - Itemized Cost-only Correction
+### Scenario 3: Closed-Period Correction - Itemized Cost-only Corrections
 
 On July 5th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
@@ -85,7 +85,7 @@ Note the following details in the example datasets:
 * Each correction record is itemized and explicitly references the relevant SkuPriceId.
 * Each correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
 
-### Scenario 4: Closed-Period Correction - Bulk Cost-only Correction
+### Scenario 4: Closed-Period Correction - Bulk Cost-only Corrections
 
 On July 5th, 2025, ACME Corp detected a minor cost discrepancy caused by accumulated rounding differences across multiple previously invoiced records spanning several different SkuPriceId values. While each individual record was correctly rounded, the aggregated cost differed slightly from the precise total, resulting in a small drift.
 
