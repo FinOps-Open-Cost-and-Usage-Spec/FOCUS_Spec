@@ -238,7 +238,7 @@ This table displays key milestones and dates related to the development of FOCUS
       <td></td>
       <td>Start / End IPR Review v1.5</td>
       <td>
-        Start of IPR Review begins at least 3 days after end of Consistency Review (baseline prep).<br/>
+        Start of IPR Review begins after baseline prep.<br/>
         IPR Review duration is at least 30 days.<br/>
         End of IPR Review completes at least 3 days before Final Approval (approval package preparation).
       </td>
