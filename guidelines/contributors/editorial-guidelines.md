@@ -139,18 +139,33 @@ These guidelines can be modified through a Pull Request (PR), which the members 
     </tr>
 </table>
 
-**Editorial Notes**
+## Editorial Notes
+
+### Linking
+
 * **Linking Only the First Time**: To prevent excessive linking within sections, Column Name, Column ID, Attributes Names, Attributes IDs, and Glossary will only be linked to their corresponding section or glossary the first time they appear in a section.
 
-* **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) should be written as bullet points instead of lengthy sentences. 
+---
 
-* **Column IDs:** They SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. These Column IDs should be formatted without spaces and should match the exact naming conventions used in the schema (e.g., CommitmentDiscountID). 
+### Normative Statements
 
-* **Display Names:** They SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. In these sections, display names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
+* **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) should be written as bullet points instead of lengthy sentences.
 
 * **Normative Keyword Standardization:** To ensure consistency in the specification, normative language MUST use only the BCP-14 keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY. The term "RECOMMENDED" as a normative keyword is deprecated starting December 2025. Where legacy text uses RECOMMENDED, it MUST be replaced with SHOULD.
 
 * **Non-Normative Use of “recommended”:** The lowercase word “recommended” may still be used in non-normative, descriptive text (e.g., “Feature level: Recommended”) provided it does not express a normative requirement on implementers.
+
+---
+
+### Column References
+
+* **Column IDs:** They SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. These Column IDs should be formatted without spaces and should match the exact naming conventions used in the schema (e.g., CommitmentDiscountID).
+
+* **Display Names:** They SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. In these sections, display names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
+
+---
+
+### Formatting
 
 * **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
 
