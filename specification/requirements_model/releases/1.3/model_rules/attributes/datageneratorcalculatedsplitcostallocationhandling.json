@@ -96,7 +96,7 @@
     "Type": "Dynamic",
     "Order": 10,
     "ValidationCriteria": {
-      "MustSatisfy": "A FOCUS dataset MUST include the following columns when the data generator supports data generator-calculated split cost allocation: AllocatedMethodId, AllocatedResourceId, AllocatedResourceName, AllocatedResourceTags.",
+      "MustSatisfy": "A FOCUS dataset MUST include the following columns when the data generator supports data generator-calculated split cost allocation: AllocatedMethodId, AllocatedResourceId, AllocatedResourceName, AllocatedTags.",
       "Keyword": "MUST",
       "Requirement": {},
       "Condition": {},

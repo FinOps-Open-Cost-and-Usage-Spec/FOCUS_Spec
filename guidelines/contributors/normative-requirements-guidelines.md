@@ -40,6 +40,7 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 ### Structuring Individual Dataset Requirements
 
 * **Start with the DatasetId**: Whenever possible, begin each requirement with the DatasetId to make the requirement clear and focused.
+* **Use Asterisks for Lists**: All unordered lists representing normative requirements must use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
 
   **Example Pattern 1**
 
@@ -182,6 +183,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 ### Structuring Individual Column Requirements
 
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
+* **Use Asterisks for Lists**: All unordered lists representing normative requirements MUST use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
 
   **Example Pattern 1**
 

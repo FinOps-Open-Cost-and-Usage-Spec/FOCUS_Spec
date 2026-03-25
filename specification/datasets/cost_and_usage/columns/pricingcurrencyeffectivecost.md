@@ -34,7 +34,7 @@ The cost of the *charge* after applying all reduced rates, discounts, and the ap
 | Dataset         | [Cost and Usage](#datasets.costandusage)             |
 | Column type     | Metric                                               |
 | Feature level   | Conditional                                          |
-| Allows nulls    | True                                                 |
+| Allows nulls    | False                                                |
 | Data type       | Decimal                                              |
 | Value format    | [Numeric Format](#attributes.numericformat)          |
 | Number range    | Any valid decimal value                              |
