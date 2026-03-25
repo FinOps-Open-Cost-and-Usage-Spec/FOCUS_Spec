@@ -10,7 +10,8 @@ PaymentCurrencyBilledCost MUST adhere to the following requirements:
 * PaymentCurrencyBilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PaymentCurrencyBilledCost MUST NOT be null.
 * PaymentCurrencyBilledCost MUST be a valid decimal value.
-* PaymentCurrencyBilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).
+* PaymentCurrencyBilledCost MUST be denominated in the [PaymentCurrency](#datasets.invoicedetail.paymentcurrency).
+* PaymentCurrencyBilledCost MUST be the PaymentCurrency-denominated equivalent of [BilledCost](#datasets.invoicedetail.billedcost).
 * PaymentCurrencyBilledCost MAY be non-zero while [BilledCost](#datasets.invoicedetail.billedcost) is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) stated in other records.
 * PaymentCurrencyBilledCost MAY be 0 while [BilledCost](#datasets.invoicedetail.billedcost) is non-zero when BilledCost (denominated in [PaymentCurrency](#datasets.invoicedetail.paymentcurrency)) is represented in a separate aggregate record.
 
