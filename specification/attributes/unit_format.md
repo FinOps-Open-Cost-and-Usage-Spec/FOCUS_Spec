@@ -5,7 +5,6 @@ Billing data frequently captures data measured in units related to data size, co
 Key concepts used in Unit Format:
 
 * Measurement Unit: a standardized expression that describes how quantities in a FOCUS dataset are denominated (e.g., `GB`, `Seconds`, `GB-Hours`, `10 GB/Hour`, `Units/3 Months`).
-* Base Unit: a single, indivisible unit of measurement that serves as a building block for all measurement units; can be a data size unit, time-based unit, or count-based unit (e.g., `GB`, `Hour`, `Token`).
 * Base Unit: an atomic unit of measurement that serves as a building block for all measurement units; can be a data size unit, time-based unit, or count-based unit (e.g., `GB`, `Hour`, `Token`).
 * Simple Unit: a measurement unit that contains exactly one base unit, optionally preceded by a unit quantity (e.g., `GB`, `Seconds`, `1000 Tokens`).
 * Compound Unit: a measurement unit that combines two base units using a hyphen (`-`) to express a quantity sustained over a period, optionally preceded by a unit quantity (e.g., `GB-Hours`, `MB-Days`).
