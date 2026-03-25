@@ -114,13 +114,13 @@ Scenario: Standard object storage usage or a support fee, which is not eligible 
 |---------------------|---------------|------------------------------|
 | Provider C          | ObjectStorage | null                         |
 
-### Provider D (Capacity Reservation-eligible EC2 Usage)
+### Provider D (Capacity Reservation-eligible Compute Usage)
 
 A compute instance type and tenancy that are eligible for both Savings Plans/Reserved Instances and for capacity reservations (e.g., regional reservations, zonal reservations). The eligibility column reflects all commitment constructs the usage qualifies for.
 
 | ServiceProviderName | ServiceName    | CommitmentEligibilityDetails                                                                                                                                               |
 |------------------|------------------|------------------|
-| Provider D          | Compute Engine | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}, {"ProgramType": "CapacityReservation"}, {"ProgramType": "ZonalReservation"}]} |
+| Provider D          | Compute | {"CommitmentPrograms": [{"ProgramType": "SavingsPlan"}, {"ProgramType": "ReservedInstance"}, {"ProgramType": "CapacityReservation"}, {"ProgramType": "ZonalReservation"}]} |
 
 ### Object ID
 
