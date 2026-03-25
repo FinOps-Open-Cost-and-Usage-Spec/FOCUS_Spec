@@ -2,6 +2,17 @@
 
 Billing data frequently captures data measured in units related to data size, count, time, and other [*dimensions*](#glossary:dimension). The Unit Format attribute provides a standard for expressing units of measure in columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
+Key concepts used in Unit Format:
+
+* Measurement Unit: a standardized expression that describes how quantities in a FOCUS dataset are denominated (e.g., `GB`, `Seconds`, `GB-Hours`, `10 GB/Hour`, `Units/3 Months`).
+* Base Unit: a single, indivisible unit of measurement that serves as a building block for all measurement units; can be a data size unit, time-based unit, or count-based unit (e.g., `GB`, `Hour`, `Token`).
+* Base Unit: an atomic unit of measurement that serves as a building block for all measurement units; can be a data size unit, time-based unit, or count-based unit (e.g., `GB`, `Hour`, `Token`).
+* Simple Unit: a measurement unit that contains exactly one base unit, optionally preceded by a unit quantity (e.g., `GB`, `Seconds`, `1000 Tokens`).
+* Compound Unit: a measurement unit that combines two base units using a hyphen (`-`) to express a quantity sustained over a period, optionally preceded by a unit quantity (e.g., `GB-Hours`, `MB-Days`).
+* Ratio Unit: a measurement unit that expresses one base unit per another using a slash (`/`), optionally including a denominator quantity (e.g., `GB/Hour`, `Units/3 Months`).
+* Unit Quantity: a positive integer included in a measurement unit, indicating the granularity of measurement (e.g., `1000` in `1000 Tokens`).
+* Denominator Quantity: a positive integer included in the denominator of a ratio unit, indicating the granularity of the denominator (e.g., `3` in `Units/3 Months`).
+
 ## Attribute ID
 
 UnitFormat
