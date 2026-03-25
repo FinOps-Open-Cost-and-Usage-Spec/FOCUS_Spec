@@ -107,7 +107,7 @@ ContractCommitment MUST adhere to the following requirements:
 * ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * ...
 
-#### **Cost And Usage**
+#### **Cost and Usage**
 
 CostAndUsage MUST adhere to the following requirements:
 
