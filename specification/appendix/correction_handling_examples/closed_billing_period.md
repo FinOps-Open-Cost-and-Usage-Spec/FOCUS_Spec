@@ -80,7 +80,7 @@ Note the following details in the example datasets:
 * The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
 * The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 8th, 2025.
 * Both Delta style and Ledger style corrections introduce two itemized increment records representing cost-only adjustments.
-* Each correction record is assigned to the next open billing period (e.g., July 2025).
+* Each correction record is assigned to the next open billing period (e.g., June 2025).
 * Each correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously closed billing period.
 * Each correction record is itemized and explicitly references the relevant SkuPriceId.
 * Each correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
@@ -103,7 +103,7 @@ Note the following details in the example datasets:
 * The original records were correctly rounded individually, but a minor discrepancy was later identified due to accumulated rounding drift across multiple records spanning two SkuPriceId values.
 * The discrepancies were not captured in the original dataset and therefore were not reflected in the invoice for May 2025, issued on June 8th, 2025.
 * Both Delta style and Ledger style corrections introduce a bulk cost-only record to reconcile the total drift and ensure invoice accuracy.
-* The correction record is assigned to the next open billing period (e.g., July 2025).
+* The correction record is assigned to the next open billing period (e.g., June 2025).
 * The correction record has ChargeClass set to "Correction", indicating it reconciles cost discrepancies from a previously closed billing period.
 * The correction record does not specify a SkuPriceId, as it spans multiple SKU Price IDs.
 * The correction record has ChargeCategory set to "Adjustment". While in this case "Usage" might be more precise and is permitted (since ChargeClass is "Correction"), "Adjustment" was selected to denote a cost-only correction due to a rounding error.
