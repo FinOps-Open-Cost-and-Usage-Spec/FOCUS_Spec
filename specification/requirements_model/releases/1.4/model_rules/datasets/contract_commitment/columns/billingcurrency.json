@@ -48,6 +48,7 @@
       },
       "Condition": {},
       "Dependencies": [
+      "CCT-ContractCommitment-D-003-M",
         "CCT-BillingCurrency-C-001-M",
         "CCT-BillingCurrency-C-002-M",
         "CCT-BillingCurrency-C-003-M",
