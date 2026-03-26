@@ -57,5 +57,15 @@ class RuleMd990(RulePlugin):
                     )
                     start_index = found_index + len(smart_char_item)
                     found_index = text_token.token_text.find(smart_char_item, start_index)
-
-
+        elif token.is_code_block:
+            self.__in_code_block = True
+        elif token.is_code_block_end:
+            self.__in_code_block = False
+        elif token.is_html_block:
+            self.__in_html_block = True
+        elif token.is_html_block_end:
+            self.__in_html_block = False
+        elif token.is_inline_link:
+            self.__in_link = True
+        elif token.is_inline_link_end:
+            self.__in_link = False
