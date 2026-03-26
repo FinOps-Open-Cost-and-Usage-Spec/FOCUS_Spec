@@ -141,6 +141,8 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ## Editorial Notes
 
+> Note: Examples are illustrative and do not replace or limit the rules defined in this section.
+
 ### Linking
 
 * **Linking Only the First Time**: To prevent excessive linking within sections, Entity Names, and Entity IDs, e.g. Column Names, Attributes IDs, and Glossary will only be linked to their corresponding section or glossary the first time they appear in a section.
@@ -157,11 +159,32 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Single Requirement per Statement:** Each normative statement MUST express a single requirement.
 
+* **Example** (illustrative):
+
+  ```md
+  * ... MUST be of type String.
+  * ... MUST conform to CurrencyFormat requirements.
+  ```
+
 * **Explicit Conditions:** Normative statements MUST include an explicit condition when the rule is not universally applicable.
 
 * **Condition Format:** Conditional clauses SHOULD use standardized patterns: “when / if / unless / only when / except when <condition>”.
 
-* **Subject Consistency:** Each normative statement MUST clearly identify the subject being constrained (e.g., “BillingPeriod” or the Column ID).
+* **Example** (illustrative):
+
+  ```md
+  * ... MUST be null when ChargeCategory is "Tax".
+  * ... MUST be null if ChargeCategory is "Tax".
+  * ... MUST be null unless ChargeCategory is "Usage".
+  ```
+
+* **Subject Consistency:** Each normative statement MUST clearly identify the subject being constrained.
+
+* **Example** (illustrative):
+
+  ```md
+  * ... MUST be greater than 0.
+  ```
 
 ---
 
@@ -183,17 +206,43 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Indentation Levels:** Nested bullet points MUST be indented using two spaces per level.
 
+* **Example** (illustrative):
+
+    ```md
+    ... MUST adhere to the following rules:
+
+    * ... MUST be of tyepe JSON ...
+    * ... MUST adhere to the following nullability requirements:
+      * ... SHOULD NOT be null when ...
+      * ... MUST be null when ...
+      * ... MUST adhere to the following ...
+          * ... MUST be of type ...
+    ```
+
 * **No Skipped Levels:** Nested bullets MUST NOT skip indentation levels.
 
 * **Consistent Indentation:** All bullets within the same list MUST use consistent indentation.
 
 * **Separate Conditions:** Alternative conditions MUST be expressed as separate bullet points.
 
+* **Example** (illustrative):
+
+  ```md
+  * ... MUST be null when ChargeCategory is "Tax"
+  * ... MUST be null when ChargeCategory is "Adjustment"
+  ```
+
 ---
 
 ### Formatting
 
-* **Introductory Phrase for Rules:** Normative bullet lists SHOULD be preceded by a short introductory phrase ending with a colon (e.g., “BillingCurrency MUST adhere to the following rules:”).
+* **Introductory Phrase for Rules:** Normative bullet lists SHOULD be preceded by a short introductory phrase ending with a colon 
+
+* **Example** (illustrative):
+
+  ```md
+  ... MUST adhere to the following rules:
+  ```
 
 * **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
 
@@ -222,6 +271,18 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 * **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
 
 * **No New Terminology:** Examples MUST NOT introduce terminology that is not defined in the specification.
+
+### Examples
+
+* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements. Add 
+
+* **Example Note Requirement:** Example sections MUST include a note indicating that the content is informative and non-normative.
+
+* **Example** (illustrative):
+
+```md
+> Note: The following examples are informative and non-normative. They do not define requirements.
+```
 
 ---
 
