@@ -141,7 +141,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ## Editorial Notes
 
-> Note: Examples are illustrative and do not replace or limit the rules defined in this section.
+> Note: Examples are illustrative, informative, and non-normative. They do not define requirements and do not override the rules in this section.
 
 ### Linking
 
@@ -166,9 +166,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
   * ... MUST conform to CurrencyFormat requirements.
   ```
 
-* **Explicit Conditions:** Normative statements MUST include an explicit condition when the rule is not universally applicable.
+* **Explicit Conditions:** Normative statements MUST include an explicit condition unless the rule applies in all cases.
 
-* **Condition Format:** Conditional clauses SHOULD use standardized patterns: “when / if / unless / only when / except when <condition>”.
+* **Condition Format:** Conditional clauses SHOULD use standardized patterns: “when / if / unless / only when / only if / except when / except if <condition>”.
 
 * **Example** (illustrative):
 
@@ -183,8 +183,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 * **Example** (illustrative):
 
   ```md
-  * ... MUST be greater than 0.
+  * PricingQuantity MUST be greater than 0.
   ```
+* **No Compound Conditions:** Normative statements MUST NOT combine multiple conditions using “and” or “or”.
 
 ---
 
@@ -211,7 +212,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
     ```md
     ... MUST adhere to the following rules:
 
-    * ... MUST be of tyepe JSON ...
+    * ... MUST be of type JSON ...
     * ... MUST adhere to the following nullability requirements:
       * ... SHOULD NOT be null when ...
       * ... MUST be null when ...
@@ -264,6 +265,21 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across all columns.
 
+* **Normative Scope:** Normative requirements (those using BCP-14 keywords) MUST appear only in the "Requirements" section.
+
+* **No Normative Leakage:** Normative keywords (MUST, SHOULD, MAY, etc.) MUST NOT be used in any section other than "Requirements".
+
+* **Example** (illustrative):
+  > ✔ Correct:
+  >   ## Requirements
+  >   * PricingQuantity MUST be greater than 0
+  >
+  >
+  > ✘ Incorrect:
+  >   ## Description
+  >   * PricingQuantity MUST be greater than 0
+
+
 ---
 
 ### Examples
@@ -272,17 +288,15 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **No New Terminology:** Examples MUST NOT introduce terminology that is not defined in the specification.
 
-### Examples
-
-* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements. Add 
+* **Informative Examples:** Examples MUST be considered informative and non-normative, and MUST NOT define requirements. 
 
 * **Example Note Requirement:** Example sections MUST include a note indicating that the content is informative and non-normative.
 
 * **Example** (illustrative):
 
-```md
-> Note: The following examples are informative and non-normative. They do not define requirements.
-```
+  ```md
+  > Note: The following examples are informative and non-normative. They do not define requirements.
+  ```
 
 ---
 
