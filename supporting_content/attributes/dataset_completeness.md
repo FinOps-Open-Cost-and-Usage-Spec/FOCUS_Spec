@@ -1,186 +1,94 @@
 # Dataset Completeness
 
-## Design Rationale
+## Purpose
 
-The Dataset Completeness attribute ensures that FOCUS datasets include custom columns for native dataset columns not represented in FOCUS columns. This attribute complements Column Handling by addressing *what* custom columns should be included, while Column Handling addresses *how* custom columns should be named and formatted.
+Dataset Completeness addresses *what* custom columns to include in a FOCUS dataset. Column Handling addresses *how* they are named and documented. Without Dataset Completeness, practitioners must maintain parallel native dataset workflows, making FOCUS an added overhead rather than a viable replacement. For some organizations, this has been noted as a blocker to adopting FOCUS.
 
-Without this attribute, practitioners adopting FOCUS datasets may lose access to provider-specific information needed for critical analyses, forcing them to maintain parallel native dataset workflows. This attribute establishes clear expectations for data completeness while maintaining data quality.
+## Key Decisions
 
-## How Concerns Are Addressed
+### Relationship with Column Handling
 
-### AWS Column Stability Concern
+* **Question:** Why not add these requirements to Column Handling?
+* **Decision:** Different scopes — Column Handling is column-level (naming, documentation); Dataset Completeness is dataset-level (which columns to include).
+* **Decided:** Dec 2025
 
-**Concern:** AWS believes columns should NEVER change. If they add non-FOCUS columns (e.g., `x_ColumnName`) that later become FOCUS columns, those columns would need to change names, breaking customers who built workflows around the custom column names.
+### Inclusion framing
 
-**Solution:** The attribute includes a MAY requirement allowing data generators to preserve non-FOCUS versions of custom columns even after FOCUS equivalents are introduced. This enables migration on practitioners' own terms without breaking changes, addressing AWS's column stability policy.
+* **For exclusion-based ("include all except documented exclusions"):** Concrete, enforceable, verifiable against native dataset documentation. Shifts burden of proof to data generators — they must justify what they exclude, not what they include. Simpler than enumerating inclusion categories.
+* **For scenario-based ("materially support analysis or reporting"):** More flexible, but subjective and hard to validate.
+* **Decision:** Exclusion-based model. Evolved from scenario-based framing through TF2 consensus.
+* **Decided:** Mar 2026
 
-### GCP "Junk Drawer" Concern
+### MUST vs SHOULD for primary inclusion requirement
 
-**Concern:** Requiring providers to include all native dataset information as custom columns could cause FOCUS to become a "junk drawer" - accumulating unnecessary, low-quality, or unfocused data.
+* **For MUST:** Practitioners need confidence that FOCUS datasets are complete. SHOULD allows providers to omit columns without accountability, undermining the attribute's purpose.
+* **For SHOULD:** Column stability concerns — if custom columns later become FOCUS columns, names change, breaking workflows. Data volume concerns. Implementation burden.
+* **Decision:** MUST with safeguards: (1) exclusion-based framing allows documented exceptions, (2) Dataset Configuration lets practitioners control what they receive, (3) "publicly-available documentation" ensures transparency, (4) correlation columns use SHOULD.
+* **Decided:** Feb 2026
 
-**Solution:** Since FOCUS only asks providers to include data they already have in their native datasets, data quality depends on provider data quality, not FOCUS requirements. Providers maintain control over what they include and can curate their data appropriately. The MAY requirement allowing exclusion of columns that don't support scenarios enables providers to avoid including low-value data, ensuring quality standards are preserved.
+### Column stability and migration (duplicate columns)
 
-## When to Include Custom Columns
+* **For removing duplicates immediately:** Avoids confusion, keeps datasets clean.
+* **For preserving duplicates temporarily:** Practitioners build workflows around `x_` column names. If FOCUS later standardizes an equivalent column, removing the custom version breaks those workflows.
+* **Decision:** SHOULD exclude duplicates, except during a documented transitional period. "Transitional period" must be defined in publicly-available documentation so practitioners know when migration is expected.
+* **Decided:** Mar 2026
 
-Custom columns should be included in the following scenarios:
+### Data volume
 
-1. **Provider-Specific Attributes:** When native datasets contain attributes not represented in FOCUS columns (e.g., Azure Resource Group, GCP project hierarchy, AWS account organizational units).
+* **Concern:** Requiring all native columns inflates dataset size and storage costs. Could accumulate low-quality data.
+* **Decision:** Dataset Configuration (introduced alongside Dataset Completeness) lets practitioners select only columns they need. The requirement is about schema *availability*, not forced inclusion in every export. Data generators may offer default column sets.
+* **Decided:** Feb 2026
 
-2. **Marketplace Metadata:** When charges include marketplace or publisher information needed for attribution or analysis (e.g., marketplace product identifiers, seller information).
+### Data fidelity
 
-3. **Service-Specific Configuration:** When provider services include configuration details needed for optimization or cost attribution (e.g., capacity types, instance families, storage classes).
+* **For "accurately represent":** Simple, intuitive.
+* **For "retain fidelity":** More precise — "accurately represent" is ambiguous about whether reformatting a date or normalizing casing on an identifier counts as a violation.
+* **Decision:** "Retain fidelity without lossy transformations (e.g., rounding or truncation)." Formatting improvements that preserve information are fine. Lossy changes (rounding numbers, truncating strings, altering identifier casing) are prohibited. DateTimeFormat and StringHandling already have SHOULD-level guidance for custom columns.
+* **Decided:** Mar 2026
 
-4. **Correlation Identifiers:** When native datasets include identifiers that enable reliable correlation between FOCUS and native datasets (e.g., native charge identifiers, line item IDs).
+### Correlation columns
 
-## When NOT to Include Custom Columns
+* **For SHOULD NOT exclude:** Consistent with exclusion-based framing of the primary MUST.
+* **For SHOULD include:** Reads more naturally; avoids confusing "exclude" and "exclusion" in the same sentence.
+* **Decision:** SHOULD include, with "even if they meet the criteria for exclusion" to make clear these should survive the exclusion process.
+* **Decided:** Mar 2026
 
-Custom columns should be avoided in the following scenarios:
+### Requirement structure
 
-1. **Duplication:** When information is already captured in FOCUS standard columns. Custom columns should not duplicate data already represented in FOCUS columns.
+* **For nesting sub-bullets:** Groups related sub-requirements under the MUST they modify.
+* **For flat top-level bullets:** Requirements Model guidelines discourage nesting. Each requirement should be independently testable.
+* **Decision:** Flattened to top-level bullets. Each requirement stands alone.
+* **Decided:** Mar 2026
 
-2. **Transformed Data:** When native data is transformed or aggregated into FOCUS columns, data generators should generally not add custom columns for the original native representation. The transformation should be documented instead. However, data generators MAY preserve non-FOCUS versions of columns when FOCUS equivalents are introduced to enable migration without breaking changes.
+### Custom column documentation location
 
-3. **Violates Data Integrity:** When including custom columns would violate FOCUS metrics integrity (e.g., would break cost summation or quantity aggregation).
+* **For Dataset Completeness:** It's about what to include, so documentation of what's included belongs here.
+* **For Column Handling:** Documentation is a column-level rule that applies to all custom columns regardless of origin.
+* **Decision:** Kept in Column Handling. Added "publicly-available" to the documentation MUST.
+* **Decided:** Feb 2026
 
-## Correlation Guidance
+### Column ordering
 
-To enable reliable correlation between FOCUS and native datasets:
+* **For MAY:** Ordering is a nice-to-have, not critical.
+* **For SHOULD:** Consistent ordering improves practitioner experience.
+* **Decision:** Upgraded to SHOULD. Merged into single requirement: "SHOULD sort all FOCUS columns alphabetically first, then all custom columns alphabetically second." Removed opposite-polarity SHOULD NOT (antipattern per Requirements Model guidelines).
+* **Decided:** Mar 2026
 
-* **Providers with existing unique identifiers:** Include them as custom columns (e.g., `x_ChargeId`, `x_LineItemId`).
-* **Providers without existing identifiers:** Document correlation guidance and include minimal custom columns required for dataset joins.
-* **Correlation columns serve as linking mechanisms:** Uniqueness within FOCUS datasets is not required, as correlation is typically done at the dataset level.
+### Default column set
 
-## Aggregation and Splitting Examples
+* **For Dataset Completeness:** Relates to what columns are available by default.
+* **For Dataset Configuration:** Column selection belongs with the attribute that governs configuration.
+* **Decision:** Moved to Dataset Configuration. MAY offer a default set, but if offered, MUST include all applicable FOCUS columns.
+* **Decided:** Feb 2026
 
-Custom column values must be handled consistently when rows are split or aggregated to conform to other FOCUS requirements (e.g., Discount Handling):
+### Column Handling intro scope
 
-### Example: Row Splitting
-
-**Native Dataset:**
-
-* Single row with `ResourceId = "vm-123"`, `Cost = $100`, `x_ResourceGroup = "production"`
-
-**FOCUS Dataset (after discount handling split):**
-
-* Row 1: `ResourceId = "vm-123"`, `BilledCost = $90`, `x_ResourceGroup = "production"`
-* Row 2: `ResourceId = "vm-123"`, `BilledCost = $10`, `x_ResourceGroup = "production"` (discount row)
-
-**Note:** `x_ResourceGroup` is preserved on both rows to maintain correlation.
-
-### Example: Row Aggregation
-
-**Native Dataset:**
-
-* Multiple rows with different `x_Tags` values but same `ResourceId`
-
-**FOCUS Dataset (after aggregation):**
-
-* Single row with `ResourceId`, aggregated costs, and `x_Tags` containing all tag values (as JSON or delimited string)
-
-**Note:** Custom column values are aggregated appropriately to preserve data integrity.
-
-## Provider-Specific Examples
-
-### AWS
-
-**Custom columns to include:**
-
-* `x_LineItemId` (for correlation with CUR)
-* `x_ReservationArn` (for Reserved Instance tracking)
-* `x_SavingsPlanArn` (for Savings Plan tracking)
-* `x_LegalEntity` (billing entity information)
-
-**Example:** AWS CUR includes `lineItem/LineItemId` which should be included as `x_LineItemId` to enable correlation.
-
-### Microsoft Azure
-
-**Custom columns to include:**
-
-* `x_ResourceGroup` (for resource group attribution)
-* `x_BillingProfileId` (for billing profile hierarchy)
-* `x_InvoiceSectionId` (for invoice section attribution)
-
-**Example:** Azure Cost Details include `ResourceGroup` which should be included as `x_ResourceGroup` to enable resource group analysis.
-
-### GCP
-
-**Custom columns to include:**
-
-* `x_ProjectNumber` (if different from SubAccountId)
-* `x_BillingAccountId` (GCP's native billing account identifier)
-
-**Example:** GCP BigQuery Billing Export includes project-level identifiers which should be included to enable correlation.
-
-### OCI
-
-**Custom columns to include:**
-
-* `x_CompartmentId` (for compartment hierarchy)
-* `x_CompartmentName` (for compartment display names)
-
-**Example:** OCI Cost Reports include compartment information which should be included as custom columns to enable compartment-based analysis.
-
-## Related Requirements
-
-### Column Handling
-
-The Column Handling attribute defines *how* custom columns should be named (using the `x_` prefix convention) and documented. Dataset Completeness defines *what* custom columns should be included and *how* they should be ordered in the dataset. These attributes work together to ensure custom columns are both properly handled and comprehensively included.
-
-### Provider Column Mappings (FR #1098)
-
-For comprehensive documentation of how native columns map to FOCUS columns (both standard and custom), see the provider column mappings feature request (#1098). While Column Handling requires documentation of custom columns, #1098 addresses the broader need for complete native-to-FOCUS column mapping documentation across all column types.
-
-## Design Decisions
-
-* **Separate attribute from Column Handling**
-  * Concern: Why not add these requirements to Column Handling?
-  * Decision: Column Handling applies requirements to columns (naming, documentation). Dataset Completeness defines dataset-level policy (which columns to include, how they're ordered). These are different scopes — column-level formatting vs dataset-level coverage.
-* **Scenario-based vs column-based framing**
-  * Concern: Should the MUST requirement reference analysis/reporting *scenarios* or native dataset *columns*?
-  * Options: Scenario-based (flexible but subjective) vs column-based (concrete, enforceable against native dataset documentation)
-  * Decision: Column-based. The MAY exclusion for columns that don't support scenarios preserves scenario thinking within a verifiable framework.
-* **No aggregation or granularity requirements**
-  * Concern: Does this overlap with FR #1091 (column selection) or FR #1093 (data granularity)?
-  * Decision: No. Fidelity means "don't degrade data you already have." Row split/aggregation handling only applies when *other* FOCUS requirements (e.g., Discount Handling) cause splits.
-* **"Native dataset" terminology**
-  * Concern: Need a formal term for provider-specific, non-FOCUS datasets.
-  * Options: Native dataset, non-FOCUS dataset, proprietary dataset, source/provider dataset
-  * Decision: "Native dataset" — intuitive, not overly broad (unlike "non-FOCUS") or adversarial (unlike "proprietary"). Glossary entry added.
-* **"Materially" qualifier on MUST include requirement**
-  * Concern: Providers could be forced to include 60+ native columns (Mike, pydi-aws)
-  * Decision: Added "materially support analysis or reporting" to scope the requirement.
-* **Integrity requirement scope clarified**
-  * Concern: Original wording about splits/aggregations suggested this belonged in Split Cost Allocation, not Dataset Completeness (Shawn)
-  * Decision: Clarified scope to focus on what happens when custom columns are introduced. Changed from "FOCUS dataset MUST NOT alter aggregated values when records are split or aggregated or when custom columns are added" to "Custom columns MUST NOT alter aggregated values when introduced to a FOCUS dataset."
-* **Default column set moved to Dataset Configuration**
-  * Concern: Column selection belongs with Dataset Configuration, not here (Shawn, Matt)
-  * Decision: Moved MAY requirement to Dataset Configuration.
-* **SHOULD NOT duplicate vs MAY preserve**
-  * Concern: Appear contradictory (Shawn)
-  * Decision: Complementary — SHOULD NOT prevents new duplication; MAY preserve allows temporary overlap during migration when FOCUS adds equivalent columns.
-* **Custom column documentation requirement moved to Column Handling**
-  * Concern: Documentation is a column-level requirement — it applies to all custom columns regardless of why they were added (Shawn)
-  * Decision: Moved to Column Handling. Documentation applies to every custom column (whether added for Dataset Completeness, Invoice Handling, or Discount Handling), making it a column-level rule alongside naming and ordering, not a dataset coverage policy.
-* **MAY preserve wording refined and reordered**
-  * Concern: Clarify migration timing and place exception next to the rule it modifies (Shawn)
-  * Decision: Added "for a limited time" and "newly introduced" to clarify temporary migration window. Moved next to SHOULD NOT duplicate so exception immediately follows the rule.
-* **Preamble genericized for multi-dataset applicability**
-  * Concern: Original examples were Cost & Usage-specific but attribute applies to Contract Commitment, Invoice Detail, and other datasets (Shawn)
-  * Decision: Removed dataset-specific examples. The Example section provides concrete illustrations; the intro stays generic for broad applicability.
-* **Intro paragraph simplified**
-  * Concern: Second paragraph was a run-on sentence that was hard to parse (Matt)
-  * Decision: Split into two sentences. Changed ending from "bridging the gap between FOCUS standardization and data generator capabilities, allowing practitioners to adopt *FOCUS datasets* without losing analytical capabilities" to "This allows practitioners to adopt *FOCUS datasets* without losing analytical capabilities."
-* **Column ordering requirements moved from Column Handling**
-  * Concern: If CH is column-level rules and DC is dataset-level policy, ordering belongs in DC (Shawn)
-  * Decision: Moved three ordering requirements (FOCUS columns first, custom columns after, alphabetical sorting) from Column Handling to Dataset Completeness. Ordering is about dataset structure, not individual column properties.
-* **Removed opposite-polarity ordering requirement (antipattern)**
-  * Concern: Having both "SHOULD list FOCUS before custom" and "SHOULD NOT list custom before FOCUS" is the Requirements Model antipattern of stating the same rule in opposite polarities (Shawn)
-  * Decision: Removed the SHOULD NOT requirement. The positive SHOULD statement (line 28) is sufficient and clearer.
+* **Concern:** Intro said "All columns defined in the FOCUS specification MUST follow..." but custom columns aren't defined by FOCUS — this logically exempts them from the rules below.
+* **Decision:** Changed to lowercase "must" (informative, not normative) and broadened scope to "All columns included in a FOCUS dataset."
+* **Decided:** Mar 2026
 
 ## Future Considerations
 
-The following items were identified during development but deferred for future work:
-
 1. **Clarify "data generator" scope:** The glossary should explicitly note that data generators include both providers (cloud, SaaS) and FinOps tool vendors who aggregate or transform billing data.
-
-2. **GA dataset qualifier (potential):** Consider whether to limit requirements to generally available (GA) native datasets only, excluding preview/beta datasets. This could address provider concerns about matching experimental features.
+2. **GA dataset qualifier:** Consider limiting requirements to generally available native datasets only, excluding preview/beta datasets.
+3. **Metadata importance:** With custom columns, Metadata (especially ColumnDefinition) gains importance. The current SHOULD for metadata may become a MUST in future releases.
