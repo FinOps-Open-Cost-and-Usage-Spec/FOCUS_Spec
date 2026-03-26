@@ -145,13 +145,13 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Linking
 
-* **Linking Only the First Time**: To prevent excessive linking within sections, Entity Names, and Entity IDs, e.g. Column Names, Attributes IDs, and Glossary will only be linked to their corresponding section or glossary the first time they appear in a section.
+* **Linking Only the First Time**: To prevent excessive linking within sections, Entity Names and Entity IDs (e.g., Column Names, Attribute IDs, and Glossary) will only be linked to their corresponding section or glossary the first time they appear in a section.
 
 ---
 
 ### Normative Statements
 
-* **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) should be written as bullet points instead of lengthy sentences.
+* **Normative Requirements as a Bullet List**: Normative statements (those using Normative Keywords) MUST be written as bullet points instead of lengthy sentences.
 
 * **Normative Keyword Standardization:** To ensure consistency in the specification, normative language MUST use only the BCP-14 keywords MUST, MUST NOT, SHOULD, SHOULD NOT, and MAY. The term "RECOMMENDED" as a normative keyword is deprecated starting December 2025. Where legacy text uses RECOMMENDED, it MUST be replaced with SHOULD.
 
@@ -159,7 +159,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Single Requirement per Statement:** Each normative statement MUST express a single requirement.
 
-* **Example** (illustrative):
+* **Example** (Markdown, illustrative):
 
   ```md
   * ... MUST be of type String.
@@ -168,9 +168,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Explicit Conditions:** Normative statements MUST include an explicit condition unless the rule applies in all cases.
 
-* **Condition Format:** Conditional clauses SHOULD use standardized patterns: “when / if / unless / only when / only if / except when / except if <condition>”.
+* **Condition Format:** Conditional clauses MUST use standardized patterns: “when / if / unless / only when / only if / except when / except if <condition>”.
 
-* **Example** (illustrative):
+* **Example** (Markdown, illustrative):
 
   ```md
   * ... MUST be null when ChargeCategory is "Tax".
@@ -180,12 +180,12 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Subject Consistency:** Each normative statement MUST clearly identify the subject being constrained.
 
-* **Example** (illustrative):
+* **Example** (Markdown, illustrative):
 
   ```md
   * PricingQuantity MUST be greater than 0.
   ```
-* **No Compound Conditions:** Normative statements MUST NOT combine multiple conditions using “and” or “or”.
+* **No Compound Conditions:** Normative statements MUST NOT combine multiple conditions using “and” or “or” within a single statement.
 
 ---
 
@@ -226,20 +226,20 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Separate Conditions:** Alternative conditions MUST be expressed as separate bullet points.
 
-* **Example** (illustrative):
+* **Example** (Markdown, illustrative):
 
   ```md
-  * ... MUST be null when ChargeCategory is "Tax"
-  * ... MUST be null when ChargeCategory is "Adjustment"
+  * ... MUST be null when ChargeCategory is "Tax".
+  * ... MUST be null when ChargeCategory is "Adjustment".
   ```
 
 ---
 
 ### Formatting
 
-* **Introductory Phrase for Rules:** Normative bullet lists SHOULD be preceded by a short introductory phrase ending with a colon 
+* **Introductory Phrase for Rules:** Normative bullet lists SHOULD be preceded by a short introductory phrase ending with a colon (:). 
 
-* **Example** (illustrative):
+* **Example** (Markdown, illustrative):
 
   ```md
   ... MUST adhere to the following rules:
@@ -249,7 +249,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ---
 
-### JSON and Examples
+### JSON Formatting
 
 * **Valid JSON:** JSON examples MUST be valid and complete.
 
@@ -269,16 +269,17 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **No Normative Leakage:** Normative keywords (MUST, SHOULD, MAY, etc.) MUST NOT be used in any section other than "Requirements".
 
-* **Example** (illustrative):
-  > ✔ Correct:
-  >   ## Requirements
-  >   * PricingQuantity MUST be greater than 0
-  >
-  >
-  > ✘ Incorrect:
-  >   ## Description
-  >   * PricingQuantity MUST be greater than 0
+* **Example** (Markdown, illustrative):
 
+```md
+ ✔ Correct:
+  ## Requirements
+  * PricingQuantity MUST be greater than 0.
+  
+ ✘ Incorrect:
+  ## Description
+  * PricingQuantity MUST be greater than 0.
+```
 
 ---
 
@@ -292,7 +293,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Example Note Requirement:** Example sections MUST include a note indicating that the content is informative and non-normative.
 
-* **Example** (illustrative):
+* **Example** (Markdown, illustrative):
 
   ```md
   > Note: The following examples are informative and non-normative. They do not define requirements.
