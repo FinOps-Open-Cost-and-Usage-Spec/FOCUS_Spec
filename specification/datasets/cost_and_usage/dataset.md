@@ -155,12 +155,12 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.
   * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.
 * CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
-* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * CostAndUsage MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
+* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * CostAndUsage MUST include custom columns (e.g., x_ChargeSubType) needed to support [*invoice reconciliation*](#glossary:invoice-reconciliation) when FOCUS columns are not sufficient.
 
 ## Dataset ID<!--SkipTOC-->

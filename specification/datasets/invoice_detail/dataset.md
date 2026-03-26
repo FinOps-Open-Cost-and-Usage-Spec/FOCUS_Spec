@@ -71,9 +71,9 @@ InvoiceDetail MUST adhere to the following requirements:
   * InvoiceDetail MUST include [PurchaseOrderNumber](#datasets.invoicedetail.purchaseordernumber) if the invoice issuer supports customer input of purchase order numbers.
   * InvoiceDetail MUST include [ReferenceInvoiceId](#datasets.invoicedetail.referenceinvoiceid).
 * InvoiceDetail MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
-* InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * InvoiceDetail MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
 * InvoiceDetail MUST conform to [DeliveryHandling](#attributes.deliveryhandling) requirements.
+* InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId.
 * InvoiceDetail MUST include custom columns to represent any monetary metric that appears on an invoice issued to a [BillingAccountId](#datasets.invoicedetail.billingaccountid) when there is no equivalent FOCUS column.
 * InvoiceDetail documentation MUST adhere to the following requirements:
