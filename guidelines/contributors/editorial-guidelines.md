@@ -189,15 +189,17 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ---
 
-### Column References
+### Entity References
 
-* **Column IDs:** They SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. These Column IDs should be formatted without spaces and should match the exact naming conventions used in the schema (e.g., CommitmentDiscountID).
+* **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs) SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. Entity IDs MUST be formatted without spaces and MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
-* **Display Names:** They SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. In these sections, display names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
+* **Display Names:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. These names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
-* **Consistent Reference Type:** Normative statements MUST use Column IDs consistently and MUST NOT mix Column IDs and Display Names within the same statement.
+* **Consistent Reference Type:** Normative statements MUST use Entity IDs consistently and MUST NOT mix Entity IDs and Display Names within the same statement.
 
-* **Multiple Column References:** When referencing multiple columns in a normative statement, all references MUST use Column IDs.
+* **Multiple Entity References:** When referencing multiple entities in a normative statement, all references MUST use Entity IDs.
+
+* **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
 ---
 
