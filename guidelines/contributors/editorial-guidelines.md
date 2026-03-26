@@ -263,9 +263,9 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Section Structure
 
-* **Consistent Subsection Order:** All column sections SHOULD follow the same subsection order (e.g., Title, Requirements, Column ID, Display Name, Description, Content Constraints, Introduced (version)).
+* **Consistent Subsection Order:** Sections for the same entity type SHOULD follow the same subsection order (e.g., Title, Requirements, Entity ID, Display Name, Description, Content Constraints, Introduced (version)).
 
-* **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across all columns.
+* **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across sections of the same entity type.
 
 * **Normative Scope:** Normative requirements (those using BCP-14 keywords) MUST appear only in the "Requirements" section.
 
