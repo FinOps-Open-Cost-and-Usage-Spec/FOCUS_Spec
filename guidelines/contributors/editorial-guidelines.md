@@ -143,7 +143,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Linking
 
-* **Linking Only the First Time**: To prevent excessive linking within sections, Column Name, Column ID, Attributes Names, Attributes IDs, and Glossary will only be linked to their corresponding section or glossary the first time they appear in a section.
+* **Linking Only the First Time**: To prevent excessive linking within sections, Entity Names, and Entity IDs, e.g. Column Names, Attributes IDs, and Glossary will only be linked to their corresponding section or glossary the first time they appear in a section.
 
 ---
 
@@ -155,6 +155,14 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Non-Normative Use of “recommended”:** The lowercase word “recommended” may still be used in non-normative, descriptive text (e.g., “Feature level: Recommended”) provided it does not express a normative requirement on implementers.
 
+* **Single Requirement per Statement:** Each normative statement MUST express a single requirement.
+
+* **Explicit Conditions:** Normative statements MUST include an explicit condition when the rule is not universally applicable.
+
+* **Condition Format:** Conditional clauses SHOULD use standardized patterns: “when / if / unless / only when / except when <condition>”.
+
+* **Subject Consistency:** Each normative statement MUST clearly identify the subject being constrained (e.g., “BillingPeriod” or the Column ID).
+
 ---
 
 ### Column References
@@ -163,11 +171,63 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 * **Display Names:** They SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. In these sections, display names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
+* **Consistent Reference Type:** Normative statements MUST use Column IDs consistently and MUST NOT mix Column IDs and Display Names within the same statement.
+
+* **Multiple Column References:** When referencing multiple columns in a normative statement, all references MUST use Column IDs.
+
+---
+
+### Bullet Structure
+
+* **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
+
+* **Indentation Levels:** Nested bullet points MUST be indented using two spaces per level.
+
+* **No Skipped Levels:** Nested bullets MUST NOT skip indentation levels.
+
+* **Consistent Indentation:** All bullets within the same list MUST use consistent indentation.
+
+* **Separate Conditions:** Alternative conditions MUST be expressed as separate bullet points.
+
 ---
 
 ### Formatting
 
-* **Unordered List Style:** All unordered lists in Markdown MUST use asterisks (`*`) rather than dashes (`-`) or plus signs (`+`). This maintains visual consistency across the specification and aligns with our automated linting standards.
+* **Introductory Phrase for Rules:** Normative bullet lists SHOULD be preceded by a short introductory phrase ending with a colon (e.g., “BillingCurrency MUST adhere to the following rules:”).
+
+* **Consistent Introductory Phrases:** Introductory phrases for normative lists SHOULD be consistent within a section.
+
+---
+
+### JSON and Examples
+
+* **Valid JSON:** JSON examples MUST be valid and complete.
+
+* **JSON Quotation Marks:** JSON keys MUST use double quotation marks.
+
+* **Consistent Structure:** JSON examples SHOULD follow consistent formatting and indentation.
+
+---
+
+### Section Structure
+
+* **Consistent Subsection Order:** All column sections SHOULD follow the same subsection order (e.g., Title, Requirements, Column ID, Display Name, Description, Content Constraints, Introduced (version)).
+
+* **Consistent Subsection Titles:** Subsection titles SHOULD match exactly across all columns.
+
+---
+
+### Examples
+
+* **Valid Examples:** Examples MUST reflect valid combinations of values defined in the specification.
+
+* **No New Terminology:** Examples MUST NOT introduce terminology that is not defined in the specification.
+
+---
+
+### Important Text
+
+* **Informative Notes:** Important notes MUST NOT contain normative keywords.
 
 ### Example
 
@@ -197,7 +257,7 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 >
 > The volume of a given SKU associated with a *resource* or *service* used or purchased, based on the Pricing Unit. 
 >
-> **2.28.4. Content Constraints Constraint**
+> **2.28.4. Content Constraints**
 > 
 > <img width="492" alt="image" src="https://github.com/user-attachments/assets/5185cbf9-306d-4663-a1c7-c8b7ab5c5bb8">
 >
