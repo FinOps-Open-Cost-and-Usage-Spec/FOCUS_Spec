@@ -49,7 +49,7 @@ To contextualize the billing and cost allocation examples, this appendix utilize
 | **NovaLink** | Cloud-Native Startup | A fast-growing tech startup operating entirely in the cloud. They heavily utilize serverless architectures, managed databases, and agile deployment pipelines. |
 | **GearPeak Outdoors** | Mid-Market Retailer | An outdoor apparel and equipment brand with massive seasonal traffic spikes. They leverage auto-scaling infrastructure for their e-commerce storefront and a heavy mix of SaaS for supply chain and CRM. |
 
-## Fictitious Commitment Discounts
+## Fictitious Commitment Discount Reference
 
 To illustrate discount application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common discount mechanisms used by major cloud providers.
 
