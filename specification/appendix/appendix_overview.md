@@ -24,7 +24,7 @@ Disclaimer: *The fictitious data generators referenced in this appendix are inte
 
 The table below outlines the fictitious data generators used throughout the appendix, their primary functions, and their real-world counterparts for context:
 
-| Fictitious Data Generator | Service Offering | Quick Description | Real-World Equivalents |
+| Fictitious Data Generator | Service Offering | Data Generator Description | Similar Real-World Companies |
 | :--- | :--- | :--- | :--- |
 | **Nexus Web** | Cloud Service Provider | A highly scalable, market-leading cloud infrastructure provider offering extensive compute, storage, and serverless options. | Amazon Web Services (AWS) |
 | **Zenith** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
@@ -38,3 +38,23 @@ The table below outlines the fictitious data generators used throughout the appe
 | **GrowthCRM** | CRM | A customer relationship management platform designed to track sales pipelines, manage contacts, and optimize lead conversion. | Salesforce, HubSpot |
 | **Budget Beacon** | Cost Management | A cloud cost‑optimization platform that shines a spotlight on overspending, waste, and savings opportunities across multi‑cloud environments. | Cloudability, CloudHealth, ProsperOps |
 | **Data Distiller** | Open Source Library | An open‑source tool that refines raw cloud cost and usage data, normalizing it into FOCUS‑compliant schemas for downstream analytics and reporting. Not a public service. | OpenCost, Cloud Intelligence Dashboards, FinOps toolkit |
+
+## Fictitious Customer Reference
+
+To contextualize the billing and cost allocation examples, this appendix utilizes fictitious customer profiles. These profiles represent common organizational structures and cloud adoption patterns.
+
+| Fictitious Customer | Company Profile | Customer Description |
+| :--- | :--- | :--- |
+| **Acme Corp** | Large Enterprise | A traditional multinational corporation undergoing a major cloud transformation. They manage a complex, hybrid multi-cloud environment with strict regulatory and compliance requirements. |
+| **NovaLink** | Cloud-Native Startup | A fast-growing tech startup operating entirely in the cloud. They heavily utilize serverless architectures, managed databases, and agile deployment pipelines. |
+| **GearPeak Outdoors** | Mid-Market Retailer | An outdoor apparel and equipment brand with massive seasonal traffic spikes. They leverage auto-scaling infrastructure for their e-commerce storefront and a heavy mix of SaaS for supply chain and CRM. |
+
+## Fictitious Commitment Discounts
+
+To illustrate discount application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common discount mechanisms used by major cloud providers.
+
+| Fictitious Commitment Discount | CD Category | Commitment Discount Description | Similar Real-World CDs |
+| :--- | :--- | :--- | :--- |
+| **Resource Reservations (RRs)** | Usage | An upfront commitment to use a specific resource type, family, and region for a set term (e.g., 1 or 3 years) in exchange for a significantly reduced hourly rate. | Reserved Instances (AWS/Azure), Resource-based CUDs (GCP) |
+| **Flexible Spend Plans (FSPs)** | Spend | A commitment to spend a specific monetary amount per hour across a broader category of compute or service offerings, providing high flexibility as workloads shift. | Savings Plans (AWS), Flexible CUDs (GCP) |
+| **Tiered Usage Agreements (TUAs)** | Spend | An agreement that applies automatic, tiered discounts as aggregate usage or spending crosses predefined thresholds within a billing period. | Tiered Pricing, Enterprise Discount Programs (EDPs) |
