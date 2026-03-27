@@ -7,10 +7,10 @@ ContractedUnitPrice [-adheres-]{+MUST adhere+} to the following requirements:
 * ContractedUnitPrice MUST be of type Decimal.
 * ContractedUnitPrice MUST conform to NumericFormat requirements.
 * ContractedUnitPrice {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
-  * ContractedUnitPrice MUST be null when [-[SkuPriceId](#skupriceid)-]{+[SkuPriceId](#datasets.costandusage.skupriceid)+} is null.
-  * ContractedUnitPrice MUST be null when [-[ChargeCategory](#chargecategory)-]{+[ChargeCategory](#datasets.costandusage.chargecategory)+} is "Tax".
-  * ContractedUnitPrice MUST NOT be null when [-[SkuPriceId](#skupriceid)-]{+[SkuPriceId](#datasets.costandusage.skupriceid)+} is not null.
-  * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [-[ChargeClass](#chargeclass)-]{+[ChargeClass](#datasets.costandusage.chargeclass)+} is not "Correction".
+  * ContractedUnitPrice MUST be null when SkuPriceId is null.
+  * ContractedUnitPrice MUST be null when ChargeCategory is "Tax".
+  * ContractedUnitPrice MUST NOT be null when SkuPriceId is not null.
+  * ContractedUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and ChargeClass is not "Correction".
   * ContractedUnitPrice MAY be null in all other cases.
 * When ContractedUnitPrice is not null, ContractedUnitPrice [-adheres-]{+MUST adhere+} to the following[-additional-] requirements:
   * ContractedUnitPrice MUST be a non-negative decimal value.
