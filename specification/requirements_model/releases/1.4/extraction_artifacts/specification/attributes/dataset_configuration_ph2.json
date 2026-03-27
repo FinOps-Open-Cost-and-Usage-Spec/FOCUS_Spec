@@ -1,0 +1,187 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/attributes/dataset_configuration.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Attribute",
+    "entity_id": "DatasetConfiguration",
+    "entity_name": "Dataset Configuration"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 5
+  },
+  "0_outline_root": "ROOT: Dataset Configuration > Requirements",
+  "0_outline_lines": [
+    "L026: \"*FOCUS dataset* MUST adhere to the following requirements:\"",
+    "  L028: \"*FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.\"",
+    "  L029: \"*FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).\"",
+    "  L030: \"*FOCUS dataset* MAY offer a default column set.\"",
+    "  L031: \"*FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 5,
+    "leaf_count": 4,
+    "lead_in_count": 1,
+    "max_depth": 1,
+    "max_indent_level": 0,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 4,
+      "MAY": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L026",
+        "text_preview": "*FOCUS dataset* MUST adhere to the following requirements:",
+        "children": 4
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L026",
+            "text": "*FOCUS dataset* MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Dataset Configuration",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L028",
+                "text": "*FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Dataset Configuration",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L029",
+                "text": "*FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).",
+                "keyword": "MUST",
+                "section_path": [
+                  "Dataset Configuration",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L030",
+                "text": "*FOCUS dataset* MAY offer a default column set.",
+                "keyword": "MAY",
+                "section_path": [
+                  "Dataset Configuration",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R005",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R005",
+                "order": 5,
+                "ref": "L031",
+                "text": "*FOCUS dataset* default column set MUST include all applicable [*FOCUS columns*](#glossary:FOCUS-column) when a default column set is offered.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Dataset Configuration",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}
