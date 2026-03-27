@@ -23,6 +23,8 @@ Examples of column names found in provider datasets:
   > * Data generators SHOULD allow practitioners to select a subset of FOCUS or custom columns.
   > * Data generators SHOULD provide conformance documentation that indicates whether the *FOCUS dataset* fully, partially, or does not conform to each requirement.
   >   * Data generators SHOULD include an explanation of what does not conform when a requirement is not fully conformant so practitioners will know they need to handle the difference.
+* Column ordering requirements (FOCUS columns first, custom columns after, alphabetical sorting) were moved to the Dataset Completeness attribute in FOCUS 1.4.
+  * Column Handling now focuses solely on column-level rules (naming and documentation), while Dataset Completeness covers dataset-level policy (what columns to include and how to order them).
 
 ### How to handle custom columns
 
