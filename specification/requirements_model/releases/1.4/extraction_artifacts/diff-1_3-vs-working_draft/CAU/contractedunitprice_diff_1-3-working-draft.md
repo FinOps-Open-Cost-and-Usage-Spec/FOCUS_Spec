@@ -5,7 +5,7 @@ ContractedUnitPrice [-adheres-]{+MUST adhere+} to the following requirements:
 [-* ContractedUnitPrice MUST be present in a Cost and Usage [*FOCUS dataset*](#glossary:FOCUS-dataset) when the service provider supports negotiated pricing concepts.-]
 [-* ContractedUnitPrice adheres to the following additional requirements:-]
 * ContractedUnitPrice MUST be of type Decimal.
-* ContractedUnitPrice MUST conform to [-[NumericFormat](#numericformat)-]{+[NumericFormat](#attributes.numericformat)+} requirements.
+* ContractedUnitPrice MUST conform to NumericFormat requirements.
 * ContractedUnitPrice {+MUST adhere to the following+} nullability [-is defined as follows:-]{+requirements:+}
   * ContractedUnitPrice MUST be null when [-[SkuPriceId](#skupriceid)-]{+[SkuPriceId](#datasets.costandusage.skupriceid)+} is null.
   * ContractedUnitPrice MUST be null when [-[ChargeCategory](#chargecategory)-]{+[ChargeCategory](#datasets.costandusage.chargecategory)+} is "Tax".
