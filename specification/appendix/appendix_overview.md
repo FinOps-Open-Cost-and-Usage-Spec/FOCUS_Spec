@@ -14,5 +14,5 @@
 | [Examples: Metadata](#appendix.examples:metadata) | Contains JSON payload examples for updating Data Generator, Dataset, Schema, and Recency metadata. |
 | [Examples: Participating Entity Identification](#appendix.examples:participatingentityidentification) | Illustrates how to identify the roles of participating entities (e.g., Service Provider, Invoice Issuer, Host Provider, Data Generator) across various supply chain scenarios. |
 | [Examples: SaaS](#appendix.examples:saas) | Illustrates how to model SaaS billing scenarios, including simple SaaS agreements, SaaS spend agreements, and virtual currency pricing models. |
-| [Grouping Constructs for Resources or Services](#appendix.groupingconstructsforresourcesorservices) | Outlines and compares the two distinct levels of resource or service grouping mechanisms supported by FOCUS: billing accounts and sub accounts. | 
+| [Grouping Constructs for Resources or Services](#appendix.groupingconstructsforresourcesorservices) | Outlines and compares the two distinct levels of resource or service grouping mechanisms supported by FOCUS: billing accounts and sub accounts. |
 | [Rounding Variance Tolerance](#appendix.roundingvariancetolerance) | Defines the statistical tolerance formula and provides scenarios for handling precision differences during invoice reconciliation between detailed cost data and invoices. |
