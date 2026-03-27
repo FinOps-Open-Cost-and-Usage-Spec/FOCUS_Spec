@@ -1,0 +1,129 @@
+{
+  "ModelRules": {
+    "CCT-ContractCommitmentCreated-C-000-M": {
+      "Function": "Validation",
+      "Reference": "ContractCommitmentCreated",
+      "EntityType": "Column",
+      "EntityName": "Contract Commitment Created",
+      "EntityId": "ContractCommitmentCreated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 0,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "ContractCommitmentCreated MUST adhere to the following requirements:",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": [
+          "CCT-ContractCommitmentCreated-C-001-M",
+          "CCT-ContractCommitmentCreated-C-002-M",
+          "CCT-ContractCommitmentCreated-C-003-M",
+          "CCT-ContractCommitmentCreated-C-004-M"
+        ]
+      }
+    },
+    "CCT-ContractCommitmentCreated-C-001-M": {
+      "Function": "Type",
+      "Reference": "ContractCommitmentCreated",
+      "EntityType": "Column",
+      "EntityName": "Contract Commitment Created",
+      "EntityId": "ContractCommitmentCreated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 10,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "ContractCommitmentCreated MUST be of type Date/Time.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CCT-ContractCommitmentCreated-C-002-M": {
+      "Function": "Format",
+      "Reference": "ContractCommitmentCreated",
+      "EntityType": "Column",
+      "EntityName": "Contract Commitment Created",
+      "EntityId": "ContractCommitmentCreated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 20,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "ContractCommitmentCreated MUST conform to DateTimeFormat requirements.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CCT-ContractCommitmentCreated-C-003-M": {
+      "Function": "Nullability",
+      "Reference": "ContractCommitmentCreated",
+      "EntityType": "Column",
+      "EntityName": "Contract Commitment Created",
+      "EntityId": "ContractCommitmentCreated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 30,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "ContractCommitmentCreated MUST NOT be null.",
+        "Keyword": "MUST NOT",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    },
+    "CCT-ContractCommitmentCreated-C-004-M": {
+      "Function": "Validation",
+      "Reference": "ContractCommitmentCreated",
+      "EntityType": "Column",
+      "EntityName": "Contract Commitment Created",
+      "EntityId": "ContractCommitmentCreated",
+      "Notes": "",
+      "ModelVersionIntroduced": "1.4",
+      "Status": "Active",
+      "ModelVersionRemoved": "",
+      "ApplicabilityCriteria": [],
+      "Type": "Static",
+      "Order": 40,
+      "DatasetType": "CCT",
+      "DatasetId": "ContractCommitment",
+      "DatasetName": "Contract Commitment",
+      "ValidationCriteria": {
+        "MustSatisfy": "ContractCommitmentCreated MUST represent the moment in time the Contract Commitment record was instantiated.",
+        "Keyword": "MUST",
+        "Requirement": {},
+        "Condition": [],
+        "Dependencies": []
+      }
+    }
+  }
+}
