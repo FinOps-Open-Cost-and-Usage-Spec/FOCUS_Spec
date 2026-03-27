@@ -8,4 +8,24 @@ This section provides machine-readable JSON Schema definitions for validating th
 
 The Contract Commitment Applicability Object Schema defines the structure for the [Contract Commitment Applicability](#datasets.contractcommitment.contractcommitmentapplicability) column.
 
+[Download from GitHub](/specification/schemas/datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json)
+
 !INCLUDECODE "schemas/datasets/contract_commitment/contractcommitmentapplicabilityobjectschema.json" (json)
+
+## Cost And Usage
+
+### Allocated Method Details Object Schema
+
+The Allocated Method Details Object Schema defines the structure for the [Allocated Method Details](#datasets.costandusage.allocatedmethoddetails) column.
+
+[Download from GitHub](/specification/schemas/datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json)
+
+!INCLUDECODE "schemas/datasets/cost_and_usage/allocatedmethoddetailsobjectschema.json" (json)
+
+### Contract Applied Object Schema
+
+The Contract Applied Object Schema defines the structure for the [Contract Applied](#datasets.costandusage.contractapplied) column.
+
+[Download from GitHub](/specification/schemas/datasets/cost_and_usage/contractappliedobjectschema.json)
+
+!INCLUDECODE "schemas/datasets/cost_and_usage/contractappliedobjectschema.json" (json)

@@ -34,8 +34,19 @@ AI-assisted contributions follow the same review process as human-authored contr
 2. **Technical Validation**: The relevant Task Force MUST review the contribution for technical accuracy and schema compliance.
 3. **Strategic Alignment**: WG Members MUST review the contribution to ensure it aligns with broader community goals and the FOCUS roadmap.
 4. **Standard Approval**: All contributions MUST follow the established workflow per [Development Processes](development-processes.md).
+5. **Acceptance of Suggestions**: If the author chooses to apply the suggestion via a separate commit through the use of an AI assistant, the author MUST manually record the commenter's co-authorship in the commit message using standard `Co-authored-by:` trailers.
 
 AI-generated content does not bypass any approval workflow or receive different treatment during review.
+
+### Generation of Specification Examples
+
+AI tools frequently generate plausible but incorrect data, mathematical inconsistencies, and schema violations. Because examples serve as the ground truth for specification implementation, they require the highest level of scrutiny.
+
+To minimize the burden on reviewers:
+* **Manual Verification:** Contributors MUST independently calculate, parse, or manually verify all AI-generated examples before committing them to a pull request.
+* **No Blind Commits:** Contributors MUST NOT directly commit AI-generated examples without human validation.
+* **Mathematical and Schema Accuracy:** Contributors MUST ensure all data within an AI-generated example is logically consistent and mathematically accurate according to the FOCUS normative requirements.
+* **Zero-Tolerance for Unreviewed Examples:** Maintainers MUST return a pull request to draft if they determine it contains obviously unreviewed, hallucinated, or broken AI-assisted examples.
 
 ### CLA Coverage
 
