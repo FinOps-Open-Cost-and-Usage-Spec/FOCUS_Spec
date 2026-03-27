@@ -9,7 +9,6 @@ ContractedCost MUST adhere to the following requirements:
 * ContractedCost MUST be of type Decimal.
 * ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedCost MUST NOT be null.
-* ContractedCost MUST be a valid decimal value.
 * ContractedCost MUST be denominated in the BillingCurrency.
 * When [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) is null, ContractedCost MUST adhere to the following requirements:
   * ContractedCost of a [*charge*](#glossary:charge) calculated based on other *charges* (e.g., when the [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax") MUST be calculated based on the ContractedCost of those related *charges*.
