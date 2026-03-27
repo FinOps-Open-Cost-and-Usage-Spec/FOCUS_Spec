@@ -1,0 +1,992 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/contract_commitment/dataset.md",
+    "version": "1.3"
+  },
+  "entity": {
+    "entity_type": "Dataset",
+    "entity_id": "ContractCommitment",
+    "entity_name": "Contract Commitment"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 37
+  },
+  "0_outline_root": "ROOT: Contract Commitment > Requirements",
+  "0_outline_lines": [
+    "L053: \"ContractCommitment MUST adhere to the following requirements:\"",
+    "  L055: \"ContractCommitment MUST be present when the service provider supports *contract commitments*.\"",
+    "  L056: \"ContractCommitment column presence MUST adhere to the following requirements:\"",
+    "    L057: \"ContractCommitment MUST include [BillingCurrency](#datasets.contractcommitment.billingcurrency).\"",
+    "    L058: \"ContractCommitment MUST include [ContractCommitmentApplicability](#datasets.contractcommitment.contractcommitmentapplicability).\"",
+    "    L059: \"ContractCommitment MUST include [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory).\"",
+    "    L060: \"ContractCommitment MUST include [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory).\"",
+    "    L061: \"ContractCommitment MUST include [ContractCommitmentCost](#datasets.contractcommitment.contractcommitmentcost).\"",
+    "    L062: \"ContractCommitment MUST include [ContractCommitmentCreated](#datasets.contractcommitment.contractcommitmentcreated).\"",
+    "    L063: \"ContractCommitment MUST include [ContractCommitmentDescription](#datasets.contractcommitment.contractcommitmentdescription).\"",
+    "    L064: \"ContractCommitment MUST include [ContractCommitmentDiscountPercentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage).\"",
+    "    L065: \"ContractCommitment MUST include [ContractCommitmentDurationType](#datasets.contractcommitment.contractcommitmentdurationtype).\"",
+    "    L066: \"ContractCommitment MUST include [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval).\"",
+    "    L067: \"ContractCommitment MUST include [ContractCommitmentId](#datasets.contractcommitment.contractcommitmentid).\"",
+    "    L068: \"ContractCommitment MUST include [ContractCommitmentLastUpdated](#datasets.contractcommitment.contractcommitmentlastupdated).\"",
+    "    L069: \"ContractCommitment MUST include [ContractCommitmentLifecycleStatus](#datasets.contractcommitment.contractcommitmentlifecyclestatus).\"",
+    "    L070: \"ContractCommitment MUST include [ContractCommitmentModel](#datasets.contractcommitment.contractcommitmentmodel).\"",
+    "    L071: \"ContractCommitment MUST include [ContractCommitmentOfferCategory](#datasets.contractcommitment.contractcommitmentoffercategory).\"",
+    "    L072: \"ContractCommitment MUST include [ContractCommitmentPaymentInterval](#datasets.contractcommitment.contractcommitmentpaymentinterval).\"",
+    "    L073: \"ContractCommitment MUST include [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel).\"",
+    "    L074: \"ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) if the service provider offers \\\"Partial Upfront\\\" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).\"",
+    "    L075: \"ContractCommitment MUST include [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend).\"",
+    "    L076: \"ContractCommitment MUST include [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart).\"",
+    "    L077: \"ContractCommitment MUST include [ContractCommitmentQuantity](#datasets.contractcommitment.contractcommitmentquantity).\"",
+    "    L078: \"ContractCommitment MUST include [ContractCommitmentType](#datasets.contractcommitment.contractcommitmenttype).\"",
+    "    L079: \"ContractCommitment MUST include [ContractCommitmentUnit](#datasets.contractcommitment.contractcommitmentunit).\"",
+    "    L080: \"ContractCommitment MUST include [ContractId](#datasets.contractcommitment.contractid).\"",
+    "    L081: \"ContractCommitment MUST include [ContractPeriodEnd](#datasets.contractcommitment.contractperiodend).\"",
+    "    L082: \"ContractCommitment MUST include [ContractPeriodStart](#datasets.contractcommitment.contractperiodstart).\"",
+    "    L083: \"ContractCommitment MUST include [InvoiceIssuerName](#datasets.contractcommitment.invoiceissuername).\"",
+    "    L084: \"ContractCommitment MUST include [PricingCurrency](#datasets.contractcommitment.pricingcurrency) when the service provider supports pricing and billing in different currencies.\"",
+    "    L085: \"ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) when the service provider supports pricing and billing in different currencies.\"",
+    "    L086: \"ContractCommitment MUST include [ServiceProviderName](#datasets.contractcommitment.serviceprovidername).\"",
+    "  L087: \"ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.\"",
+    "  L088: \"ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.\"",
+    "  L089: \"ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.\"",
+    "  L090: \"ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.\""
+  ],
+  "0_outline_summary": {
+    "node_count": 37,
+    "leaf_count": 35,
+    "lead_in_count": 2,
+    "max_depth": 2,
+    "max_indent_level": 1,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 37
+    },
+    "lead_ins": [
+      {
+        "ref": "L053",
+        "text_preview": "ContractCommitment MUST adhere to the following requirements:",
+        "children": 6
+      },
+      {
+        "ref": "L056",
+        "text_preview": "ContractCommitment column presence MUST adhere to the following requirements:",
+        "children": 30
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L053",
+            "text": "ContractCommitment MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Contract Commitment",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L055",
+                "text": "ContractCommitment MUST be present when the service provider supports *contract commitments*.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L056",
+                "text": "ContractCommitment column presence MUST adhere to the following requirements:",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": true
+                }
+              },
+              "children": [
+                {
+                  "node_id": "R004",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R004",
+                    "order": 4,
+                    "ref": "L057",
+                    "text": "ContractCommitment MUST include [BillingCurrency](#datasets.contractcommitment.billingcurrency).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R005",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R005",
+                    "order": 5,
+                    "ref": "L058",
+                    "text": "ContractCommitment MUST include [ContractCommitmentApplicability](#datasets.contractcommitment.contractcommitmentapplicability).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R006",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R006",
+                    "order": 6,
+                    "ref": "L059",
+                    "text": "ContractCommitment MUST include [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R007",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R007",
+                    "order": 7,
+                    "ref": "L060",
+                    "text": "ContractCommitment MUST include [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R008",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R008",
+                    "order": 8,
+                    "ref": "L061",
+                    "text": "ContractCommitment MUST include [ContractCommitmentCost](#datasets.contractcommitment.contractcommitmentcost).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R009",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R009",
+                    "order": 9,
+                    "ref": "L062",
+                    "text": "ContractCommitment MUST include [ContractCommitmentCreated](#datasets.contractcommitment.contractcommitmentcreated).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R010",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R010",
+                    "order": 10,
+                    "ref": "L063",
+                    "text": "ContractCommitment MUST include [ContractCommitmentDescription](#datasets.contractcommitment.contractcommitmentdescription).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R011",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R011",
+                    "order": 11,
+                    "ref": "L064",
+                    "text": "ContractCommitment MUST include [ContractCommitmentDiscountPercentage](#datasets.contractcommitment.contractcommitmentdiscountpercentage).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R012",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R012",
+                    "order": 12,
+                    "ref": "L065",
+                    "text": "ContractCommitment MUST include [ContractCommitmentDurationType](#datasets.contractcommitment.contractcommitmentdurationtype).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R013",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R013",
+                    "order": 13,
+                    "ref": "L066",
+                    "text": "ContractCommitment MUST include [ContractCommitmentFulfillmentInterval](#datasets.contractcommitment.contractcommitmentfulfillmentinterval).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R014",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R014",
+                    "order": 14,
+                    "ref": "L067",
+                    "text": "ContractCommitment MUST include [ContractCommitmentId](#datasets.contractcommitment.contractcommitmentid).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R015",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R015",
+                    "order": 15,
+                    "ref": "L068",
+                    "text": "ContractCommitment MUST include [ContractCommitmentLastUpdated](#datasets.contractcommitment.contractcommitmentlastupdated).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R016",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R016",
+                    "order": 16,
+                    "ref": "L069",
+                    "text": "ContractCommitment MUST include [ContractCommitmentLifecycleStatus](#datasets.contractcommitment.contractcommitmentlifecyclestatus).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R017",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R017",
+                    "order": 17,
+                    "ref": "L070",
+                    "text": "ContractCommitment MUST include [ContractCommitmentModel](#datasets.contractcommitment.contractcommitmentmodel).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R018",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R018",
+                    "order": 18,
+                    "ref": "L071",
+                    "text": "ContractCommitment MUST include [ContractCommitmentOfferCategory](#datasets.contractcommitment.contractcommitmentoffercategory).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R019",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R019",
+                    "order": 19,
+                    "ref": "L072",
+                    "text": "ContractCommitment MUST include [ContractCommitmentPaymentInterval](#datasets.contractcommitment.contractcommitmentpaymentinterval).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R020",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R020",
+                    "order": 20,
+                    "ref": "L073",
+                    "text": "ContractCommitment MUST include [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R021",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R021",
+                    "order": 21,
+                    "ref": "L074",
+                    "text": "ContractCommitment MUST include [ContractCommitmentPaymentUpfrontPercentage](#datasets.contractcommitment.contractcommitmentpaymentupfrontpercentage) if the service provider offers \"Partial Upfront\" [payment models](#datasets.contractcommitment.contractcommitmentpaymentmodel).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R022",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R022",
+                    "order": 22,
+                    "ref": "L075",
+                    "text": "ContractCommitment MUST include [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R023",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R023",
+                    "order": 23,
+                    "ref": "L076",
+                    "text": "ContractCommitment MUST include [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R024",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R024",
+                    "order": 24,
+                    "ref": "L077",
+                    "text": "ContractCommitment MUST include [ContractCommitmentQuantity](#datasets.contractcommitment.contractcommitmentquantity).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R025",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R025",
+                    "order": 25,
+                    "ref": "L078",
+                    "text": "ContractCommitment MUST include [ContractCommitmentType](#datasets.contractcommitment.contractcommitmenttype).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R026",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R026",
+                    "order": 26,
+                    "ref": "L079",
+                    "text": "ContractCommitment MUST include [ContractCommitmentUnit](#datasets.contractcommitment.contractcommitmentunit).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R027",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R027",
+                    "order": 27,
+                    "ref": "L080",
+                    "text": "ContractCommitment MUST include [ContractId](#datasets.contractcommitment.contractid).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R028",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R028",
+                    "order": 28,
+                    "ref": "L081",
+                    "text": "ContractCommitment MUST include [ContractPeriodEnd](#datasets.contractcommitment.contractperiodend).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R029",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R029",
+                    "order": 29,
+                    "ref": "L082",
+                    "text": "ContractCommitment MUST include [ContractPeriodStart](#datasets.contractcommitment.contractperiodstart).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R030",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R030",
+                    "order": 30,
+                    "ref": "L083",
+                    "text": "ContractCommitment MUST include [InvoiceIssuerName](#datasets.contractcommitment.invoiceissuername).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R031",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R031",
+                    "order": 31,
+                    "ref": "L084",
+                    "text": "ContractCommitment MUST include [PricingCurrency](#datasets.contractcommitment.pricingcurrency) when the service provider supports pricing and billing in different currencies.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R032",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R032",
+                    "order": 32,
+                    "ref": "L085",
+                    "text": "ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) when the service provider supports pricing and billing in different currencies.",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                },
+                {
+                  "node_id": "R033",
+                  "kind": "atom",
+                  "atom": {
+                    "temp_id": "R033",
+                    "order": 33,
+                    "ref": "L086",
+                    "text": "ContractCommitment MUST include [ServiceProviderName](#datasets.contractcommitment.serviceprovidername).",
+                    "keyword": "MUST",
+                    "section_path": [
+                      "Contract Commitment",
+                      "Requirements"
+                    ],
+                    "block": {
+                      "block_type": "list_item",
+                      "indent_level": 1,
+                      "bullet": "*"
+                    },
+                    "lead_in": {
+                      "ends_with_colon": false
+                    }
+                  },
+                  "children": []
+                }
+              ]
+            },
+            {
+              "node_id": "R034",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R034",
+                "order": 34,
+                "ref": "L087",
+                "text": "ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R035",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R035",
+                "order": 35,
+                "ref": "L088",
+                "text": "ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R036",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R036",
+                "order": 36,
+                "ref": "L089",
+                "text": "ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R037",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R037",
+                "order": 37,
+                "ref": "L090",
+                "text": "ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}
