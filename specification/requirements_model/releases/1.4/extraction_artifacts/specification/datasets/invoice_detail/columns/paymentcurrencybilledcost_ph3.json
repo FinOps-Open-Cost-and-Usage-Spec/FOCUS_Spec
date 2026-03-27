@@ -26,9 +26,8 @@
           "IND-PaymentCurrencyBilledCost-C-002-M",
           "IND-PaymentCurrencyBilledCost-C-003-M",
           "IND-PaymentCurrencyBilledCost-C-004-M",
-          "IND-PaymentCurrencyBilledCost-C-005-M",
-          "IND-PaymentCurrencyBilledCost-C-006-C",
-          "IND-PaymentCurrencyBilledCost-C-007-C"
+          "IND-PaymentCurrencyBilledCost-C-005-C",
+          "IND-PaymentCurrencyBilledCost-C-006-C"
         ]
       }
     },
@@ -105,7 +104,7 @@
       }
     },
     "IND-PaymentCurrencyBilledCost-C-004-M": {
-      "Function": "Type",
+      "Function": "Validation",
       "Reference": "PaymentCurrencyBilledCost",
       "EntityType": "Column",
       "EntityName": "Payment Currency Billed Cost",
@@ -121,14 +120,14 @@
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "PaymentCurrencyBilledCost MUST be a valid decimal value.",
+        "MustSatisfy": "PaymentCurrencyBilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).",
         "Keyword": "MUST",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
       }
     },
-    "IND-PaymentCurrencyBilledCost-C-005-M": {
+    "IND-PaymentCurrencyBilledCost-C-005-C": {
       "Function": "Validation",
       "Reference": "PaymentCurrencyBilledCost",
       "EntityType": "Column",
@@ -139,14 +138,14 @@
       "Status": "Active",
       "ModelVersionRemoved": "",
       "ApplicabilityCriteria": [],
-      "Type": "Static",
+      "Type": "Dynamic",
       "Order": 50,
       "DatasetType": "IND",
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
       "ValidationCriteria": {
-        "MustSatisfy": "PaymentCurrencyBilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).",
-        "Keyword": "MUST",
+        "MustSatisfy": "PaymentCurrencyBilledCost MAY be non-zero while BilledCost is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in PaymentCurrency) stated in other records.",
+        "Keyword": "MAY",
         "Requirement": {},
         "Condition": [],
         "Dependencies": []
@@ -165,30 +164,6 @@
       "ApplicabilityCriteria": [],
       "Type": "Dynamic",
       "Order": 60,
-      "DatasetType": "IND",
-      "DatasetId": "InvoiceDetail",
-      "DatasetName": "Invoice Detail",
-      "ValidationCriteria": {
-        "MustSatisfy": "PaymentCurrencyBilledCost MAY be non-zero while BilledCost is 0 when PaymentCurrencyBilledCost represents the aggregation of BilledCost amounts (denominated in PaymentCurrency) stated in other records.",
-        "Keyword": "MAY",
-        "Requirement": {},
-        "Condition": [],
-        "Dependencies": []
-      }
-    },
-    "IND-PaymentCurrencyBilledCost-C-007-C": {
-      "Function": "Validation",
-      "Reference": "PaymentCurrencyBilledCost",
-      "EntityType": "Column",
-      "EntityName": "Payment Currency Billed Cost",
-      "EntityId": "PaymentCurrencyBilledCost",
-      "Notes": "",
-      "ModelVersionIntroduced": "1.4",
-      "Status": "Active",
-      "ModelVersionRemoved": "",
-      "ApplicabilityCriteria": [],
-      "Type": "Dynamic",
-      "Order": 70,
       "DatasetType": "IND",
       "DatasetId": "InvoiceDetail",
       "DatasetName": "Invoice Detail",
