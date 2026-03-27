@@ -13,7 +13,6 @@ BilledCost MUST adhere to the following requirements:
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * BilledCost MUST NOT be null.
-* BilledCost MUST be a valid decimal value.
 * BilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).
 * BilledCost MUST be denominated in the BillingCurrency.
 * The sum of BilledCost for a given [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid), [InvoiceId](#datasets.invoicedetail.invoiceid), and [InvoiceIssuerName](#datasets.invoicedetail.invoiceissuername) MUST match the payable amount provided in the corresponding entries on the issued invoice when [InvoiceIssueStatus](#datasets.invoicedetail.invoiceissuestatus) is "Issued".
