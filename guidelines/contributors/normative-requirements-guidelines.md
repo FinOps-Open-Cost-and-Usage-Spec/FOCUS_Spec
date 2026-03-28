@@ -204,23 +204,22 @@ Each normative requirement MUST be defined in exactly one place across the speci
 
 Grouping and ordering of dataset-level normative requirements ensures clarity, consistency, and maintainability across all FOCUS datasets, making related or similar requirements easy to identify and follow.
 
-  1. **Technical Requirements**
-     1. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
-     2. **Column Presence in Dataset:** Intended to define which columns must or are recommended to be present within a dataset, and under which conditions.
-     3. **Technical Attributes Conformance:** Captures technical requirements that apply to all (or most) columns within the dataset (e.g., column handling, null handling). These requirements reflect general technical rules rather than rules for individual columns.
-  2. **Business & Contextual Requirements**
-     1. **Business/Contextual Attributes Conformance:** Captures business logic and contextual requirements that span multiple columns within the dataset (e.g., discount handling, invoice handling). These rules are not tied to a single column but define broader dataset behavior.
-     2. **Other Business/Contextual Requirements (*FOR FUTURE USE*):** Captures additional dataset-level rules that do not fall into the above categories but are relevant for interpretation, validation, or integration.
+  1. **Presence Requirements**
+     i. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
+     ii. **Column Presence in Dataset:** Defines which columns must or are recommended to be present within a dataset, and under which conditions.
+  2. **Attribute Conformance Requirements**
+     i. **Attribute Conformance:** Defines requirements where a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., NullHandling, ColumnHandling, DatasetCompleteness), which may capture technical or business/contextual constraints.
+  3. **Other Requirements**
+     i. **Other:** Captures dataset-level rules that do not fall into the above categories but are relevant for interpretation, validation, or integration.
 
 #### Tabular Overview of Dataset Normative Requirement Grouping and Specifications
 
-| Requirement Type | Requirement Group                                      | When Required?                               | Example                                                    |
-|------------------|--------------------------------------------------------|----------------------------------------------|------------------------------------------------------------|
-| Technical        | Dataset Presence                                       | Always                                       | {DatasetId} MUST be present when {Condition}.              |
-| Technical        | Column Presence in Dataset                             | {DatasetId} MUST include {ColumnId} | N/A                                                        |
-| Technical        | Technical Attributes Conformance                       | Always or when applicable                    | {DatasetId} MUST conform to ColumnHandling requirements.   |
-| Business         | Business/Contextual Attributes Conformance             | When applicable                              | {DatasetId} MUST conform to DiscountHandling requirements. |
-| Business         | Other Business/Contextual Requirements (FOR FUTURE USE)| For future use                               | N/A                                                        |
+| **Requirement Type** | **Requirement Group** | **When required?** | **Example** |
+|---|---|---|---|
+| Presence | Dataset Presence | Always | {DatasetId} MUST be present when {Condition}. |
+| Presence | Column Presence in Dataset | Always | {DatasetId} MUST include {ColumnId}. |
+| Attribute Conformance | Attribute Conformance | When applicable | {DatasetId} MUST conform to ColumnHandling requirements. |
+| Other | Other | When applicable | InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId. |
 
 ### 2.2. Ordering of Dataset Requirements Within Groups
 
@@ -334,38 +333,34 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 **Note**: This section provides a current preview of the requirements grouping and ordering. Members should review how this applies to specific columns and provide feedback. The order may be adjusted based on that feedback.
 
   1. **Technical Requirements**
-     1. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
-     2. **Value Format**: Ensures the value (if present) adheres to specific structural or syntactic rules.
-     3. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
-     4. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
-     5. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
+     i. **Data Type**: Establishes a foundational expectation, ensuring all subsequent rules align with this type.
+     ii. **Value Format**: Ensures the value (if present) adheres to specific structural or syntactic rules.
+     iii. **Nullability**: Clarifies when the value can or cannot exist, ensuring all subsequent rules align with column nullability.
+     iv. **Values and Value Ranges**: Further constrains valid values, assuming the format is already correct.
+     v. **Column-to-Column Relationships**: Defines dependencies and consistency rules between related columns.
   2. **Business & Contextual Requirements**
-     1. **Unit/Denomination**: Ensures consistency in measurement or currency.
-     2. **Uniqueness**: Defines uniqueness constraints for data integrity.
-     3. **Fallback/Substitute Values**: Specifies what alternative values may be used if the expected value is missing.
-     4. **Relationships Outside the Spec**: Defines dependencies on external systems or datasets.
-     5. **Cost Validation Rules:**
-        1. **Formula-based Cost Validation (e.g., P × Q = C)**: Ensures calculated fields adhere to mathematical rules.
-        2. **Cost Correction Discrepancies**: Disclaimer on discrepancies in unit pricing, pricing quantities, and costs, which can be addressed independently when ChargeClass is 'Correction'.
-     6. **Cost Calculation and Relationships**: Defines how costs are calculated in specific use cases, including dependencies on related charges and alignment with other cost values.
-     7. **Other**: Requirements that do not fall into one of the previous categories.
+     i. **Unit/Denomination**: Ensures consistency in measurement or currency.
+     ii. **Uniqueness**: Defines uniqueness constraints for data integrity.
+     iii. **Fallback/Substitute Values**: Specifies what alternative values may be used if the expected value is missing.
+     iv. **Relationships Outside the Spec**: Defines dependencies on external systems or datasets.
+     v. **Cost Validation**: Defines how cost-related values are calculated and validated, including mathematical relationships, dependencies on other columns, and business-specific logic.
+     vi. **Other**: Requirements that do not fall into one of the previous categories.
 
 #### Tabular Overview of Column Normative Requirement Grouping and Specifications
 
-| **Requirement Type** | **Requirement Group**              | **When required?**                    | **Example**                                                                                |
-|----------------------|------------------------------------|---------------------------------------|--------------------------------------------------------------------------------------------|
-| Technical            | Data Type                          | Always                                | {ColumnId} MUST be of type String.                                                         |
-| Technical            | Value Format                       | Always (except normalized dimensions) | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                 |
-| Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when {Condition}.                     |
-| Technical            | Values and Value Ranges                       | Metrics and normalized dimensions     | {ColumnId} MUST be a non-negative decimal value.<br/>{ColumnId} MUST be one of the allowed values. |
-| Technical            | Column to column Relationships     | When applicable                       | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
-| Business             | Unit/Denomination                  | When applicable                       | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
-| Business             | Uniqueness                         | When applicable                       | BillingAccountId MUST be a unique identifier within a provider.                            |
-| Business             | Fallback/Substitute Values         | When applicable                       | {ColumnId} MUST NOT duplicate {OtherColumnId} when {Condition}.                              |
-| Business             | Relationships Outside the Spec     | When applicable                       | The sum of {ColumnId} in a given billing period MUST match the sum of the invoices received for that billing period for a billing account. |
-| Business             | Formula-based Cost Validation      | When applicable                       | {CostColumnId} MUST equal the product of {UnitPriceColumnId} and PricingQuantity when {UnitPriceColumnId} is not null and PricingQuantity is not null. |
-| Business             | Cost Calculation and Relationships | When applicable                       | When {Condition}, {ColumnId} adheres to the following additional requirements:<br>  *{ColumnId} of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the ContractedCost of those related charges.<br>* {ColumnId} of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost. |
-| Business             | Other                              | When applicable                       |                                                                                           |
+| **Requirement Type** | **Requirement Group** | **When required?** | **Example** |
+|---|---|---|---|
+| Technical | Data Type | Always | {ColumnId} MUST be of type String. |
+| Technical | Value Format | Always (except normalized dimensions) | {ColumnId} MUST conform to {AttributeId} requirements. |
+| Technical | Nullability | Always | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when {Condition}. |
+| Technical | Values and Value Ranges | Metrics and normalized dimensions | {ColumnId} MUST be a non-negative decimal value.<br/>{ColumnId} MUST be one of the allowed values. |
+| Technical | Column-to-Column Relationships | When applicable | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId. |
+| Business | Unit/Denomination | When applicable | {ColumnId} MUST be denominated in the BillingCurrency. |
+| Business | Uniqueness | When applicable | BillingAccountId MUST be a unique identifier within an invoice issuer. |
+| Business | Fallback/Substitute Values | When applicable | {ColumnId} MUST NOT duplicate {OtherColumnId} when {Condition}. |
+| Business | Relationships Outside the Spec | When applicable | BillingCurrency MUST match the currency used in the invoice generated by the invoice issuer. |
+| Business | Cost Validation | When applicable | {CostColumnId} MUST equal the product of {UnitPriceColumnId} and PricingQuantity when {UnitPriceColumnId} is not null and PricingQuantity is not null. |
+| Business | Other | When applicable | HostProviderName MUST reflect the name of the host provider when explicitly selected by the customer. |
 
 ### 3.2. Ordering of Column Requirements Within Groups
 
@@ -826,22 +821,22 @@ Attributes may include requirements that apply to one or more intended normative
 
 0. **Structural Attribute Anchor Requirement:** Introduces the scope of the Attribute and provides a stable parsing entry point; it does not introduce a verifiable constraint.
 1. **FOCUS Dataset-level Attribute Requirements:**
-   1. **Global FOCUS Dataset Requirements:** Applicable to all FOCUS datasets that declare conformance to the Attribute, regardless of their structure, specific role or context.
-   2. **Qualified FOCUS Dataset Requirements:** Applicable to a subset of FOCUS datasets that declare conformance to the Attribute and are identified through a qualifier.
-   3. **Specific FOCUS Dataset Requirements:** Applicable to a specific FOCUS dataset, identified explicitly by Dataset ID.
+   i. **Global FOCUS Dataset Requirements:** Applicable to all FOCUS datasets that declare conformance to the Attribute, regardless of their structure, specific role or context.
+   ii. **Qualified FOCUS Dataset Requirements:** Applicable to a subset of FOCUS datasets that declare conformance to the Attribute and are identified through a qualifier.
+   iii. **Specific FOCUS Dataset Requirements:** Applicable to a specific FOCUS dataset, identified explicitly by Dataset ID.
 2. **FOCUS Column-level Attribute Requirements:** Applicable to FOCUS columns that declare conformance to the Attribute.
-   1. **Global FOCUS Column Requirements:** Applicable to all FOCUS columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
-   2. **Qualified FOCUS Column Requirements:** Applicable to a subset of FOCUS columns that declare conformance to the Attribute and are identified through a qualifier.
-   3. **Specific FOCUS Column Requirements:** Applicable to a specific FOCUS column, identified explicitly by Column ID.
+   i. **Global FOCUS Column Requirements:** Applicable to all FOCUS columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
+   ii. **Qualified FOCUS Column Requirements:** Applicable to a subset of FOCUS columns that declare conformance to the Attribute and are identified through a qualifier.
+   iii. **Specific FOCUS Column Requirements:** Applicable to a specific FOCUS column, identified explicitly by Column ID.
 3. **FOCUS Column sub-element Attribute Requirements:** Applicable to structural sub-elements within columns that declare conformance to the Attribute.
-   1. **Objects in Columns containing JsonObjectFormat values**
-   2. **Keys in Objects in Columns containing JsonObjectFormat values**
-   3. **Key values in Objects in Columns containing JsonObjectFormat values**
-   4. **Keys in Columns containing Key-Value pair format values**
-   5. **Key values in Columns containing Key-Value pair format values**
+   i. **Objects in Columns containing JsonObjectFormat values**
+   ii. **Keys in Objects in Columns containing JsonObjectFormat values**
+   iii. **Key values in Objects in Columns containing JsonObjectFormat values**
+   iv. **Keys in Columns containing Key-Value pair format values**
+   v. **Key values in Columns containing Key-Value pair format values**
 4. **Custom Column Attribute Requirements:**
-   1. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
-   2. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
+   i. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
+   ii. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
 
 ### 4.6. Ordering of Attribute Requirements within Groups
 
@@ -966,4 +961,3 @@ Column conforming to ColumnHandling attribute MUST adhere to the following requi
   * Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
   * Custom column SHOULD include the `Id` suffix in the Column ID when the custom column represents an identifier.
   * Custom column SHOULD include the `Name` suffix in the Column ID when the custom column represents a name.
-  
