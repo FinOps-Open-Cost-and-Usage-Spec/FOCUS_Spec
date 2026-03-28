@@ -480,7 +480,7 @@ To further enhance readability, individual requirements within each group SHOULD
   **Example Pattern 1**
 
   ```markdown
-  * <ColumnId> nullability is defined as follows:
+  * <ColumnId> MUST adhere to the following nullability requirements:
     * <ColumnId> MUST be null when <Condition>.
     * <ColumnId> MUST NOT be null when <Condition>.
   ```
@@ -490,7 +490,7 @@ To further enhance readability, individual requirements within each group SHOULD
   **Example Pattern 2**
 
   ```markdown
-  * <ColumnId> nullability is defined as follows:
+  * <ColumnId> MUST adhere to the following nullability requirements:
     * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
     * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
     * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null in all other cases.
@@ -499,9 +499,9 @@ To further enhance readability, individual requirements within each group SHOULD
   **Example Pattern 3**
 
   ```markdown
-  * <ColumnId> nullability is defined as follows:
+  * <ColumnId> MUST adhere to the following nullability requirements:
     * <ColumnId> MUST be null when <Condition>.
-    * When <Condition>, <ColumnId> adheres to the following additional requirements:
+    * When <Condition>, <ColumnId> MUST adhere to the following requirements:
       * <ColumnId> MUST NOT be null when <Condition>.
       * <ColumnId> MAY be null when <Condition>.
   ```
@@ -514,13 +514,13 @@ To further enhance readability, individual requirements within each group SHOULD
   * For conditions that apply to multiple nested requirements, use the following pattern:
 
   ```markdown
-    When <Condition(s)>, <ColumnId> adheres to the following additional requirements:
+    When <Condition(s)>, <ColumnId> MUST adhere to the following requirements:
   ```
 
   **Example Pattern 1**
   
   ```markdown
-  * When <Condition>, <ColumnId> adheres to the following additional requirements:
+  * When <Condition>, <ColumnId> MUST adhere to the following requirements:
     * <ColumnId> MUST NOT be null when <Condition>.
     * <ColumnId> MAY be null when <Condition>.
   ```
@@ -531,7 +531,7 @@ To further enhance readability, individual requirements within each group SHOULD
   **Example Pattern 2**
 
   ```markdown
-  * When <Condition>, <ColumnId> adheres to the following additional requirements:
+  * When <Condition>, <ColumnId> MUST adhere to the following requirements:
     * <ColumnId> MUST be <SpecificRequirement>.
     * When <NestedCondition>:
       * <ColumnId> MUST be <SpecificRequirement>.
@@ -558,12 +558,7 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### 3.7.1.2. Technical Requirements: Value Format
 
 ```markdown
-* <ColumnId> MUST conform to [StringHandling](#stringhandling) requirements.
-* <ColumnId> MUST conform to [Numeric Format](#numericformat) requirements.
-* <ColumnId> MUST conform to [DateTimeFormat](#date/timeformat) requirements.
-* <ColumnId> SHOULD conform to [UnitFormat](#unitformat) requirements.
-* <ColumnId> MUST conform to [KeyValueFormat](#key-valueformat) requirements.
-* <ColumnId> MUST conform to [CurrencyCodeFormat](#currencycodeformat) requirements.
+* <ColumnId> MUST conform to <FormatAttributeId> requirements.
 ```
 
 ##### 3.7.1.3. Technical Requirements: Nullability
@@ -647,14 +642,6 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ```markdown
 * <CostColumnId> MUST equal the product of <UnitPriceColumnId> and PricingQuantity when <UnitPriceColumnId> is not null and PricingQuantity is not null.
-```
-
-##### 3.7.1.11. Business & Contextual Requirements: Cost Calculation and Relationships
-
-```markdown
-* When <Condition>, <CostColumnId> adheres to the following additional requirements:
-  * <CostColumnId> of a charge calculated based on other charges (e.g., when the ChargeCategory is "Tax") MUST be calculated based on the <CostColumnId> of those related charges.
-  * <CostColumnId> of a charge unrelated to other charges (e.g., when the ChargeCategory is "Credit") MUST match the BilledCost.
 ```
 
 #### 3.7.2. Column Requirement Standardized Terminology
