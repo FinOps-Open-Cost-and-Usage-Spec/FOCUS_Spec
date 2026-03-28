@@ -17,7 +17,6 @@ ListUnitPrice MUST adhere to the following requirements:
 * When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
   * ListUnitPrice MUST be denominated in the BillingCurrency.
-* [ListCost](#datasets.costandusage.listcost) MUST equal the product of ListUnitPrice and [PricingQuantity](#datasets.costandusage.pricingquantity) when ListUnitPrice is not null and PricingQuantity is not null.
 
 ## Column ID
 
