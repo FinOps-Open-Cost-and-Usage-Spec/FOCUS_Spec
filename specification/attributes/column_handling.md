@@ -1,21 +1,19 @@
 # Column Handling
 
-A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that convey information about the charges incurred with a service provider. Each column describes an aspect of the charge, including but not limited to:
+A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that convey information about the records provided by a [*data generator*](#metadata.datagenerator). Each column describes an aspect of the record, including but not limited to:
 
-* Who is responsible for incurring or delivering the service.
-* What the charge is for.
-* When the charge was incurred.
-* Where the service was delivered.
-* Why the charge was incurred for a specific price.
-* How much the charge is and how that cost is calculated.
+* Who is responsible for or associated with the activity.
+* What the record represents.
+* When the activity occurred.
+* Where the activity took place.
+* Why the record exists or has specific values.
+* How values are calculated or determined.
 
-While FOCUS establishes the core structure and standardizes columns for consistent reporting of cost and usage data, the diverse and evolving landscape of service providers and service offerings may require service providers and data generators to include supplemental columns in the FOCUS dataset. These additional columns may enable deeper analysis and provide more detailed descriptions of usage that may not be fully captured by standard FOCUS dataset columns.
+While FOCUS establishes the core structure and standardizes columns for consistent reporting, the diverse and evolving landscape of service providers and service offerings may require [*data generators*](#metadata.datagenerator) to include custom columns in a *FOCUS dataset*. These additional columns enable deeper analysis and provide more detailed information that may not be fully captured by standard FOCUS columns. See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what custom columns to include.
 
-In such cases, service providers and data generators are responsible for ensuring that their usage and cost data is accurately and comprehensively represented by including necessary supplemental columns without duplicating data in FOCUS columns. Rows in a FOCUS dataset may be aggregated or split differently than non-FOCUS datasets to align with FOCUS requirements (e.g., Discount Handling), while enriching the dataset, providers and data generators must maintain the integrity of FOCUS-defined dimensions and metrics. When performing these transformations, providers and data generators must ensure the accuracy of all dimensions and metrics, particularly summable values such as costs and quantities.
+Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming and documentation conventions for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
-Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming and ordering conventions for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
-
-All columns defined in the FOCUS specification MUST follow the naming and ordering requirements listed below.
+All columns included in a *FOCUS dataset* must follow the naming and documentation requirements listed below.
 
 ## Attribute ID
 
@@ -27,7 +25,7 @@ Column Handling
 
 ## Description
 
-Naming and ordering convention for columns appearing in a *FOCUS dataset*.
+Naming and documentation conventions for columns appearing in a *FOCUS dataset*.
 
 ## Requirements
 
@@ -45,12 +43,7 @@ Naming and ordering convention for columns appearing in a *FOCUS dataset*.
 * <a name="column_handling:custom-column"></a>Custom (e.g., service-provider-defined) columns that are not defined by FOCUS but included in a *FOCUS dataset* MUST follow the following rules:
   * Custom columns MUST be prefixed with a consistent `x_` prefix to identify them as external, custom columns and distinguish them from FOCUS columns to avoid conflicts in future releases.
   * Custom columns SHOULD follow the same rules listed above for FOCUS columns.
-
-### Column Order
-
-* All FOCUS columns SHOULD be first in the provided dataset.
-* Custom columns SHOULD be listed after all FOCUS columns and SHOULD NOT be intermixed.
-* Columns MAY be sorted alphabetically, but custom columns SHOULD be after all FOCUS columns.
+  * Custom columns MUST be detailed in publicly-available documentation, including description, purpose, and relationship to [*native dataset*](#glossary:native-dataset) columns.
 
 ## Exceptions
 

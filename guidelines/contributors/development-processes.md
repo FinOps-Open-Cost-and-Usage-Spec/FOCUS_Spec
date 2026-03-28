@@ -229,6 +229,13 @@ Branches not following this naming convention may be closed without notice.
 
 We prefer using merge commits, as they provide traceability and context on the features being merged. For feature branches (used for creating Pull Requests) a clean-up rebase before sharing for review is encouraged. Merge commits are absolutely preferred on the protected branches. Squash merges should be avoided due to the nature of how the original commits are not recorded in the commit graph of the target branch. For more information on how merges work in Git see: ([Different Merge Types in Git](https://lukemerrett.com/different-merge-types-in-git/))
 
+## Content
+
+### Authoring Examples
+
+When a contribution requires creating a series of examples, contributors must not draft the entire set all at once. Instead, authors are required to draft one or two representative examples and submit them to their respective Task Force for preliminary review.
+
+The contributor may only proceed with requesting review of the complete set of examples after the Task Force has formally approved the initial subset. This iterative approach ensures early alignment on formatting, canonical terminology, and technical accuracy, significantly reducing the need for extensive rework later in the review cycle.
 
 ## Pull Requests
 
@@ -254,7 +261,6 @@ As much as possible, descriptions should provide the most amount of information 
 ### Related to Issues
 
 All Pull Requests must be linked to a parent Issue which tracks the work and the reason the pull request was raised. This linking is performed via the “Development” section in the right-hand nav of GitHub.  The definition of done of the parent Issue should be referenced when reviewing the Pull Request to ensure the desired outcomes are being reached.
-
 
 ### Drafting
 
@@ -320,8 +326,9 @@ Use this option when **significant revisions** are needed.
 
 ### Resolving Comments and Suggestions
 
-As the assignee of a Pull Request you are responsible for timely responses to the comments and suggestions made by reviewers. If a comment or suggestion is unclear it is essential that you ask for clarification as leaving unclear comments will only delay the completion of work. 
+As the assignee of a Pull Request you are responsible for timely responses to the comments and suggestions made by reviewers. If a comment or suggestion is unclear it is essential that you ask for clarification as leaving unclear comments will only delay the completion of work.
 
+If you agree completely with a comment that includes a proposed change, you must either directly commit that suggestion via the GitHub UI, or manually record the commenter's co-authorship in the commit message using standard `Co-authored-by:` trailers, thus preserving the commenter's co-authorship.
 
 ### Pull Request Approval and Conflict Resolution
 

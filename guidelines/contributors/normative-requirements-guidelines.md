@@ -240,6 +240,7 @@ To further enhance readability, individual requirements within each group SHOULD
 ### 2.3. Structuring Individual Dataset Requirements
 
 * **Start with the DatasetId**: Whenever possible, begin each requirement with the DatasetId to make the requirement clear and focused.
+* **Use Asterisks for Lists**: All unordered lists representing normative requirements must use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
 
   **Example Pattern 1**
 
@@ -284,24 +285,45 @@ Use standardized phrasing and terminology, and apply common requirement patterns
 
 ### 2.5. Dataset Normative Requirements Examples
 
+**Notes:**
+
+* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full dataset specification.
+* Authors should consult the actual FOCUS dataset specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
+
 #### 2.5.1. **Contract Commitment**
 
 ContractCommitment MUST adhere to the following requirements:
 
-* ContractCommitment MUST be present when the provider supports *contract commitments*.
-* ContractCommitment MUST conform to [ColumnHandling](#columnhandling) requirements.
-* ContractCommitment MUST conform to [NullHandling](#nullhandling) requirements.
+* ContractCommitment MUST be present when the service provider supports *contract commitments*.
+* ContractCommitment column presence MUST adhere to the following requirements:
+  * ContractCommitment MUST include [BillingCurrency](#datasets.contractcommitment.billingcurrency).
+  * ContractCommitment MUST include [ContractCommitmentApplicability](#datasets.contractcommitment.contractcommitmentapplicability).
+  * ContractCommitment MUST include [ContractCommitmentBenefitCategory](#datasets.contractcommitment.contractcommitmentbenefitcategory).
+  * ContractCommitment MUST include [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory).
+  * ContractCommitment MUST include [ContractCommitmentCost](#datasets.contractcommitment.contractcommitmentcost).
+  * ...
+* ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
+* ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
+* ...
 
 #### 2.5.2. **Cost and Usage**
 
 CostAndUsage MUST adhere to the following requirements:
 
 * CostAndUsage MUST be present.
-* CostAndUsage MUST conform to [ColumnHandling](#columnhandling) requirements.
-* CostAndUsage MUST conform to [NullHandling](#nullhandling) requirements.
-* CostAndUsage MUST conform to [DiscountHandling](#discounthandling) requirements.
-* CostAndUsage MUST conform to [InvoiceHandling](#invoicehandling) requirements.
-* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#datageneratorcalculatedsplitcostallocationhandling) requirements.
+* CostAndUsage column presence MUST adhere to the following requirements:
+  * CostAndUsage SHOULD include [AllocatedMethodDetails](#datasets.costandusage.allocatedmethoddetails) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedMethodId](#datasets.costandusage.allocatedmethodid) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedResourceId](#datasets.costandusage.allocatedresourceid) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedResourceName](#datasets.costandusage.allocatedresourcename) when the data generator supports [Data Generator-Calculated Split Cost Allocation](#attributes.datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
+  * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the host provider supports deploying resources or services within an *availability zone*.
+  * ...
+* CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
+* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
+* ...
 
 ## 3. Column Requirements
 
@@ -335,7 +357,7 @@ Grouping and ordering of requirements ensure clarity, logical flow, and consiste
 | Technical            | Data Type                          | Always                                | {ColumnId} MUST be of type String.                                                         |
 | Technical            | Value Format                       | Always (except normalized dimensions) | {ColumnId} MUST conform to [StringHandling](#stringhandling) requirements.                 |
 | Technical            | Nullability                        | Always                                | {ColumnId} MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when {Condition}.                     |
-| Technical            | Values and Value Ranges            | Metrics and normalized dimensions     | {ColumnId} MUST be a valid decimal value.<br/>{ColumnId} MUST be one of the allowed values. |
+| Technical            | Values and Value Ranges                       | Metrics and normalized dimensions     | {ColumnId} MUST be a non-negative decimal value.<br/>{ColumnId} MUST be one of the allowed values. |
 | Technical            | Column to column Relationships     | When applicable                       | {ColumnId} SHOULD/MUST remain consistent over time for a given ReferencedColumnId.         |
 | Business             | Unit/Denomination                  | When applicable                       | {ColumnId} MUST be denominated in the BillingCurrency.                                     |
 | Business             | Uniqueness                         | When applicable                       | BillingAccountId MUST be a unique identifier within a provider.                            |
@@ -363,6 +385,7 @@ To further enhance readability, individual requirements within each group SHOULD
 ### 3.3. Structuring Individual Column Requirements
 
 * **Start with the ColumnId**: Whenever possible, begin each requirement with the ColumnId to make the requirement clear and focused.
+* **Use Asterisks for Lists**: All unordered lists representing normative requirements MUST use an asterisk (`*`) for the bullet character. Do not use dashes (`-`) or plus signs (`+`). This ensures visual consistency across the specification and aligns with our automated linting standards.
 
   **Example Pattern 1**
 
@@ -514,7 +537,7 @@ To further enhance readability, individual requirements within each group SHOULD
 
   ```markdown
   * When <Condition>, <ColumnId> adheres to the following additional requirements:
-    * <ColumnId> MUST be a valid decimal value.
+    * <ColumnId> MUST be <SpecificRequirement>.
     * When <NestedCondition>:
       * <ColumnId> MUST be <SpecificRequirement>.
       * <ColumnId> MUST be <SpecificRequirement>.
@@ -541,11 +564,11 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ```markdown
 * <ColumnId> MUST conform to [StringHandling](#stringhandling) requirements.
-* <ColumnId> MUST conform to [NumericFormat](#numericformat) requirements.
-* <ColumnId> MUST conform to [DateTimeFormat](#datetimeformat) requirements.
+* <ColumnId> MUST conform to [Numeric Format](#numericformat) requirements.
+* <ColumnId> MUST conform to [DateTimeFormat](#date/timeformat) requirements.
 * <ColumnId> SHOULD conform to [UnitFormat](#unitformat) requirements.
-* <ColumnId> MUST conform to [KeyValueFormat](#keyvalueformat) requirements.
-* <ColumnId> MUST conform to [CurrencyFormat](#currencyformat) requirements.
+* <ColumnId> MUST conform to [KeyValueFormat](#key-valueformat) requirements.
+* <ColumnId> MUST conform to [CurrencyCodeFormat](#currencycodeformat) requirements.
 ```
 
 ##### 3.7.1.3. Technical Requirements: Nullability
@@ -559,29 +582,29 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ```
 
 ```markdown
-* <ColumnId> nullability is defined as follows:
+* <ColumnId> MUST adhere to the following nullability requirements:
   * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition1>.
   * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition2>.
 ```
 
 ```markdown
-* <ColumnId> nullability is defined as follows:
+* <ColumnId> MUST adhere to the following nullability requirements:
   * <ColumnId> MUST be null when <Condition>.
-  * When <Condition>, <ColumnId> adheres to the following additional requirements:
+  * When <Condition>, <ColumnId> MUST adhere to the following requirements:
     * <ColumnId> MUST NOT be null when <Condition>.
     * <ColumnId> MAY be null when <Condition>.
 ```
 
 ```markdown
-* <ColumnId> nullability is defined as follows:
+* <ColumnId> MUST adhere to the following nullability requirements:
   * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
   * <ColumnId> MUST/MUST NOT/SHOULD/SHOULD NOT/MAY be null when <Condition>.
   * <ColumnId> MAY be null in all other cases.
 ```
 
 ```markdown
-* <ColumnId> nullability is defined as follows:
-  * When <Condition>, <ColumnId> adheres to the following additional requirements:
+* <ColumnId> MUST adhere to the following nullability requirements:
+  * When <Condition>, <ColumnId> MUST adhere to the following requirements:
     * <ColumnId> MUST NOT be null when <Condition>.
     * <ColumnId> MAY be null when <Condition>.
   * <ColumnId> MUST be null in all other cases.
@@ -590,8 +613,8 @@ To ensure clarity and consistency across columns and corresponding requirements,
 ##### 3.7.1.4. Technical Requirements: Values and Value Ranges
 
 ```markdown
-* <ColumnId> MUST be a valid decimal value.
 * <ColumnId> MUST be a non-negative decimal value.
+* <ColumnId> MUST be one of the allowed values.
 ```
 
 ##### 3.7.1.5. Technical Requirements: Column-to-Column Relationships
@@ -680,52 +703,44 @@ To ensure clarity and consistency across columns and corresponding requirements,
 
 ### 3.8. Column Normative Requirements Examples
 
+**Notes:**
+
+* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
+* Authors should consult the actual FOCUS column specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
+
 #### 3.8.1. **List Unit Price**
 
 ListUnitPrice MUST adhere to the following requirements:
 
 * ListUnitPrice MUST be of type Decimal.
-* ListUnitPrice MUST conform to [NumericFormat](#numericformat) requirements.
-* ListUnitPrice nullability is defined as follows:
-  * ListUnitPrice MUST be null when [ChargeCategory](#chargecategory) is "Tax".
-  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#chargeclass) is not "Correction".
+* ListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
+* ListUnitPrice MUST adhere to the following nullability requirements:
+  * ListUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
+  * ListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
+  * ListUnitPrice MUST NOT be null when [SkuPriceId](#datasets.costandusage.skupriceid) is not null.
+  * ListUnitPrice MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
   * ListUnitPrice MAY be null in all other cases.
-* When ListUnitPrice is not null, ListUnitPrice adheres to the following additional requirements:
+* When ListUnitPrice is not null, ListUnitPrice MUST adhere to the following requirements:
   * ListUnitPrice MUST be a non-negative decimal value.
-  * ListUnitPrice MUST be denominated in the BillingCurrency.
-  * The product of ListUnitPrice and [PricingQuantity](#pricingquantity) MUST match the [ListCost](#listcost) when PricingQuantity is not null and ChargeClass is not "Correction".
-  * Discrepancies in ListUnitPrice, ListCost, or PricingQuantity MAY exist when ChargeClass is "Correction".
+  * ...
 
-#### 3.8.2. **Billed Cost**
-
-BilledCost MUST adhere to the following requirements:
-
-* BilledCost MUST be of type Decimal.
-* BilledCost MUST conform to [NumericFormat](#numericformat) requirements.
-* BilledCost MUST NOT be null.
-* BilledCost MUST be a valid decimal value.
-* BilledCost MUST be denominated in the BillingCurrency.
-* The sum of BilledCost for a given [InvoiceId](#invoiceid) MUST match the sum of the payable amount provided in the corresponding invoice with the same id generated by the [InvoiceIssuerName](#invoiceissuername).
-
-#### 3.8.3. **CommitmentDiscountQuantity**
+#### 3.8.2. **CommitmentDiscountQuantity**
 
 CommitmentDiscountQuantity MUST adhere to the following requirements:
 
 * CommitmentDiscountQuantity MUST be of type Decimal.
-* CommitmentDiscountQuantity MUST conform to [NumericFormat](#numericformat) requirements.
-* CommitmentDiscountQuantity nullability is defined as follows:
-  * When ChargeCategory is "Usage" or "Purchase" and CommitmentDiscountId is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
-    * CommitmentDiscountQuantity MUST NOT be null when [ChargeClass](#chargeclass) is not "Correction".
+* CommitmentDiscountQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
+* CommitmentDiscountQuantity MUST adhere to the following nullability requirements:
+  * CommitmentDiscountQuantity MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
+  * When ChargeCategory is "Usage" or "Purchase" and CommitmentDiscountId is not null, CommitmentDiscountQuantity MUST adhere to the following requirements:
+    * CommitmentDiscountQuantity MUST NOT be null when [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".
     * CommitmentDiscountQuantity MAY be null when ChargeClass is "Correction".
   * CommitmentDiscountQuantity MUST be null in all other cases.
-* When CommitmentDiscountQuantity is not null, CommitmentDiscountQuantity adheres to the following additional requirements:
-  * CommitmentDiscountQuantity MUST be a valid decimal value.
-  * When ChargeCategory is "Purchase":
-    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#chargefrequency) is "One-Time".
-    * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit that is eligible for consumption for each *charge period* that corresponds with the purchase when ChargeFrequency is "Recurring".
-  * When ChargeCategory is "Usage":
-    * CommitmentDiscountQuantity MUST be the metered quantity of CommitmentDiscountUnit that is consumed in a given *charge period* when [CommitmentDiscountStatus](#commitmentdiscountstatus) is "Used".
-    * CommitmentDiscountQuantity MUST be the remaining, unused quantity of CommitmentDiscountUnit in a given *charge period* when CommitmentDiscountStatus is "Unused".
+* CommitmentDiscountQuantity MUST be a valid decimal value when not null.
+* When CommitmentDiscountQuantity is not null and ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
+  * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#datasets.costandusage.chargefrequency) is "One-Time".
+  * ...
+  
 
 ## 4. Attribute Requirements
 
@@ -951,3 +966,4 @@ Column conforming to ColumnHandling attribute MUST adhere to the following requi
   * Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
   * Custom column SHOULD include the `Id` suffix in the Column ID when the custom column represents an identifier.
   * Custom column SHOULD include the `Name` suffix in the Column ID when the custom column represents a name.
+  
