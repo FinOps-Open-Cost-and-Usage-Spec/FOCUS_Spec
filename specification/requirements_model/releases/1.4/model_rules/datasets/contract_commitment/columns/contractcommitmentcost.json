@@ -15,7 +15,7 @@
     "DatasetName": "Contract Commitment",
     "Type": "Static",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentCost adheres to the following requirements:",
+      "MustSatisfy": "ContractCommitmentCost MUST adhere to the following requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
@@ -121,7 +121,7 @@
     "DatasetId": "ContractCommitment",
     "DatasetName": "Contract Commitment",
     "ValidationCriteria": {
-      "MustSatisfy": "ContractCommitmentCost nullability is defined as follows:",
+      "MustSatisfy": "ContractCommitmentCost MUST adhere to the following nullability requirements:",
       "Keyword": "MUST",
       "Requirement": {
         "CheckFunction": "AND",
