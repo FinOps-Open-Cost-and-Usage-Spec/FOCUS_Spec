@@ -13,8 +13,6 @@ While FOCUS establishes the core structure and standardizes columns for consiste
 
 Columns within FOCUS include an ID and a display name. Column IDs are used in files and database tables and display names can be used in report output and other descriptive content, like documentation. Column IDs provided in a *FOCUS dataset* follow consistent naming and documentation conventions for FinOps practitioners who consume the data for analysis, reporting, and other use cases.
 
-All columns included in a *FOCUS dataset* must follow the naming and documentation requirements listed below.
-
 ## Attribute ID
 
 ColumnHandling
