@@ -159,8 +159,15 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
 * CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each column.
+* CostAndUsage MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements for each column representing national currency.
 * CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements for each column.
+* CostAndUsage MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements for each column containing date/time values.
+* CostAndUsage MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements for each column containing JSON values.
+* CostAndUsage MUST conform to [KeyValueFormat](#attributes.key-valueformat) requirements for each column containing JSON values in key-value pair format.
 * CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
+* CostAndUsage MUST conform to [NumericFormat](#attributes.numericformat) requirements for each column containing numeric values.
+* CostAndUsage MUST conform to [StringHandling](#attributes.stringhandling) requirements for each column containing string values.
+* CostAndUsage MUST conform to [UnitFormat](#attributes.unitformat) requirements for each column representing measurement unit.
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer split cost allocation on an opt-in basis.

@@ -87,7 +87,13 @@ ContractCommitment MUST adhere to the following requirements:
 * ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each column.
+* ContractCommitment MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements for each column representing national currency.
+* ContractCommitment MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements for each column containing date/time values.
+* ContractCommitment MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements for each column containing JSON values.
 * ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
+* ContractCommitment MUST conform to [NumericFormat](#attributes.numericformat) requirements for each column containing numeric values.
+* ContractCommitment MUST conform to [StringHandling](#attributes.stringhandling) requirements for each column containing string values.
+* ContractCommitment MUST conform to [UnitFormat](#attributes.unitformat) requirements for each column representing measurement unit.
 
 ## Dataset ID<!--SkipTOC-->
 

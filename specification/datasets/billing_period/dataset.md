@@ -37,7 +37,13 @@ BillingPeriod MUST adhere to the following requirements:
 * BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * BillingPeriod MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each column.
+* BillingPeriod MUST conform to [CurrencyFormat](#attributes.currencyformat) requirements for each column representing national currency.
+* BillingPeriod MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements for each column containing date/time values.
+* BillingPeriod MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements for each column containing JSON values.
 * BillingPeriod MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
+* BillingPeriod MUST conform to [NumericFormat](#attributes.numericformat) requirements for each column containing numeric values.
+* BillingPeriod MUST conform to [StringHandling](#attributes.stringhandling) requirements for each column containing string values.
+* BillingPeriod MUST conform to [UnitFormat](#attributes.unitformat) requirements for each column representing measurement unit.
 
 ## Dataset ID<!--SkipTOC-->
 
