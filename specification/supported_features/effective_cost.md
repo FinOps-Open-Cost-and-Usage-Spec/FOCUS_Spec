@@ -30,7 +30,11 @@ EffectiveCost is commonly used for *accrual-based* reporting, cost allocation, c
 
 ## Example SQL Queries
 
+EffectiveCost can be analyzed using [*billing period*](#glossary:billing-period) or [*charge period*](#glossary:chargeperiod) time filters. Billing period aligns with invoice cycles and is useful for financial reporting. Charge period captures when resources were consumed or commitments were recognized, which is more precise for consumption-based analysis.
+
 ### Effective Cost by Service and Region
+
+Aggregates EffectiveCost by billing period to align accrual-based cost reporting with invoice cycles.
 
 ```sql
 SELECT
@@ -58,6 +62,8 @@ GROUP BY
 ```
 
 ### Commitment Discount Effective Cost Breakdown
+
+Analyzes commitment discount amortization by charge period, capturing costs based on when resources were consumed.
 
 ```sql
 SELECT
