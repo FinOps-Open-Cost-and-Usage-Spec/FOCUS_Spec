@@ -7,7 +7,6 @@ Contract Period Start represents the [*inclusive start bound*](#glossary:inclusi
 ContractPeriodStart MUST adhere to the following requirements:
 
 * ContractPeriodStart MUST be of type Date/Time.
-* ContractPeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ContractPeriodStart MUST NOT be null.
 * ContractPeriodStart MUST be the *inclusive start bound* of the effective period of the *contract*.
 

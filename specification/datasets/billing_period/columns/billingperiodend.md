@@ -7,7 +7,6 @@ Billing Period End represents the [*exclusive end bound*](#glossary:exclusiveend
 BillingPeriodEnd MUST adhere to the following requirements:
 
 * BillingPeriodEnd MUST be of type Date/Time.
-* BillingPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodEnd MUST NOT be null.
 * BillingPeriodEnd MUST be the *exclusive end bound* of the *billing period*.
 

@@ -7,7 +7,6 @@ Charge Period Start represents the [*inclusive start bound*](#glossary:inclusive
 ChargePeriodStart MUST adhere to the following requirements:
 
 * ChargePeriodStart MUST be of type Date/Time.
-* ChargePeriodStart MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ChargePeriodStart MUST NOT be null.
 * ChargePeriodStart MUST be the *inclusive start bound* of the effective period of the *charge*.
 

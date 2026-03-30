@@ -7,7 +7,6 @@ Contract Commitment Created is the timestamp when the [Contract Commitment](#dat
 ContractCommitmentCreated MUST adhere to the following requirements:
 
 * ContractCommitmentCreated MUST be of type Date/Time.
-* ContractCommitmentCreated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ContractCommitmentCreated MUST NOT be null.
 * ContractCommitmentCreated MUST represent the moment in time the [Contract Commitment](#datasets.contractcommitment) record was instantiated.
 

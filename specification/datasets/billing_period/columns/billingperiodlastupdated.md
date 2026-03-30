@@ -7,7 +7,6 @@ Billing Period Last Updated is the timestamp when the [Billing Period](#datasets
 BillingPeriodLastUpdated MUST adhere to the following requirements:
 
 * BillingPeriodLastUpdated MUST be of type Date/Time.
-* BillingPeriodLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * BillingPeriodLastUpdated MUST NOT be null.
 * BillingPeriodLastUpdated MUST represent the most recent moment in time when any column value of the Billing Period record was created or modified.
 * BillingPeriodLastUpdated MUST be greater than or equal to [BillingPeriodCreated](#datasets.billingperiod.billingperiodcreated).

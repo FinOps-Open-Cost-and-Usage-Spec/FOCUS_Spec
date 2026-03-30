@@ -7,7 +7,6 @@ Contract Period End represents the [*exclusive end bound*](#glossary:exclusiveen
 ContractPeriodEnd MUST adhere to the following requirements:
 
 * ContractPeriodEnd MUST be of type Date/Time.
-* ContractPeriodEnd MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ContractPeriodEnd MUST NOT be null.
 * ContractPeriodEnd MUST be the *exclusive end bound* of the effective period of the *contract*.
 

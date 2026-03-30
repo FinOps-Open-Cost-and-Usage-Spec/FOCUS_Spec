@@ -7,7 +7,6 @@ Contract Commitment Last Updated is the timestamp when the [Contract Commitment]
 ContractCommitmentLastUpdated MUST adhere to the following requirements:
 
 * ContractCommitmentLastUpdated MUST be of type Date/Time.
-* ContractCommitmentLastUpdated MUST conform to [DateTimeFormat](#attributes.date/timeformat) requirements.
 * ContractCommitmentLastUpdated MUST NOT be null.
 * ContractCommitmentLastUpdated MUST represent the most recent moment in time when any column value of the Contract Commitment record was created or modified.
 * ContractCommitmentLastUpdated MUST be greater than or equal to [ContractCommitmentCreated](#datasets.contractcommitment.contractcommitmentcreated).
