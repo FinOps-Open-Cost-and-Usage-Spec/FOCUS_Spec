@@ -9,8 +9,6 @@ Contract Commitment Applicability is a structured definition of the specific ent
 ContractCommitmentApplicability MUST adhere to the following requirements:
 
 * ContractCommitmentApplicability MUST be of type JSON Object (serialized as a String where necessary).
-* ContractCommitmentApplicability MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractCommitmentApplicability MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractCommitmentApplicability MUST conform to [ContractCommitmentApplicabilityObject](#datasets.contractcommitment.contractcommitmentapplicability.contractcommitmentapplicabilityobject) requirements.
 * ContractCommitmentApplicability MUST NOT be null.
 

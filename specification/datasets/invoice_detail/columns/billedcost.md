@@ -11,7 +11,6 @@ Billed Cost is denominated in the [Billing Currency](#datasets.invoicedetail.bil
 BilledCost MUST adhere to the following requirements:
 
 * BilledCost MUST be of type Decimal.
-* BilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * BilledCost MUST NOT be null.
 * BilledCost MUST be 0 for *charges* where payments are received by a third party (e.g., marketplace transactions).
 * BilledCost MUST be denominated in the BillingCurrency.

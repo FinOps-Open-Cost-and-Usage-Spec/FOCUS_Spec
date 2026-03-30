@@ -10,7 +10,6 @@ PricingCurrencyListUnitPrice MUST adhere to the following requirements:
   * PricingCurrencyListUnitPrice SHOULD be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
   * PricingCurrencyListUnitPrice MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.
 * PricingCurrencyListUnitPrice MUST be of type Decimal.
-* PricingCurrencyListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyListUnitPrice MUST adhere to the following nullability requirements:
   * PricingCurrencyListUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * PricingCurrencyListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".

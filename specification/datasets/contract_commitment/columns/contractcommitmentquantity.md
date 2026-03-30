@@ -7,7 +7,6 @@ Contract Commitment Quantity represents the amount associated with the [*contrac
 ContractCommitmentQuantity MUST adhere to the following requirements:
 
 * ContractCommitmentQuantity MUST be of type Decimal.
-* ContractCommitmentQuantity MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentQuantity MUST adhere to the following nullability requirements:
   * ContractCommitmentQuantity MUST NOT be null when [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory) is "Usage".
   * ContractCommitmentQuantity MAY be null when ContractCommitmentCategory is "Spend".

@@ -11,7 +11,6 @@ Effective Cost is denominated in the [Billing Currency](#datasets.costandusage.b
 EffectiveCost MUST adhere to the following requirements:
 
 * EffectiveCost MUST be of type Decimal.
-* EffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * EffectiveCost MUST NOT be null.
 * EffectiveCost MUST be 0 when [ChargeCategory](#datasets.costandusage.chargecategory) is "Purchase" and the purchase is intended to cover future eligible *charges*.
 * EffectiveCost MUST be denominated in the BillingCurrency.

@@ -7,7 +7,6 @@ Contracted Cost represents the cost calculated by multiplying [*contracted unit 
 ContractedCost MUST adhere to the following requirements:
 
 * ContractedCost MUST be of type Decimal.
-* ContractedCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractedCost MUST NOT be null.
 * ContractedCost MUST be denominated in the BillingCurrency.
 * When [ContractedUnitPrice](#datasets.costandusage.contractedunitprice) is null, ContractedCost MUST adhere to the following requirements:

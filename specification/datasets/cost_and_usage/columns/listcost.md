@@ -7,7 +7,6 @@ List Cost represents the cost calculated by multiplying the [*list unit price*](
 ListCost MUST adhere to the following requirements:
 
 * ListCost MUST be of type Decimal.
-* ListCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListCost MUST NOT be null.
 * ListCost MUST be denominated in the BillingCurrency.
 * When [ListUnitPrice](#datasets.costandusage.listunitprice) is null, ListCost MUST adhere to the following requirements:

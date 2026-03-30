@@ -11,8 +11,6 @@ Allocated Method Details consists of a valid JSON object which contains an array
 AllocatedMethodDetails MUST adhere to the following requirements:
 
 * AllocatedMethodDetails MUST be of type JSON Object (serialized as a String where necessary).
-* AllocatedMethodDetails MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* AllocatedMethodDetails MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * AllocatedMethodDetails MUST adhere to the following nullability requirements:
   * AllocatedMethodDetails MUST be null when a charge is not related to a data generator-calculated split cost allocation.
   * AllocatedMethodDetails SHOULD NOT be null when a charge is related to a data generator-calculated split cost allocation.

@@ -43,7 +43,7 @@ BillingPeriod MUST adhere to the following requirements:
 * BillingPeriod MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
 * BillingPeriod MUST conform to [NumericFormat](#attributes.numericformat) requirements for each column containing numeric values.
 * BillingPeriod MUST conform to [StringHandling](#attributes.stringhandling) requirements for each column containing string values.
-* BillingPeriod MUST conform to [UnitFormat](#attributes.unitformat) requirements for each column representing measurement unit.
+* BillingPeriod SHOULD conform to [UnitFormat](#attributes.unitformat) requirements for each column representing measurement unit.
 
 ## Dataset ID<!--SkipTOC-->
 

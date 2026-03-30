@@ -7,7 +7,6 @@ The Consumed Unit represents a service-provider-specified measurement unit indic
 ConsumedUnit MUST adhere to the following requirements:
 
 * ConsumedUnit MUST be of type String.
-* ConsumedUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ConsumedUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * ConsumedUnit MUST adhere to the following nullability requirements:
   * ConsumedUnit MUST be null when ConsumedQuantity is null.

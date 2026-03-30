@@ -7,7 +7,6 @@ Commitment Discount Unit represents the service-provider-specified measurement u
 CommitmentDiscountUnit MUST adhere to the following requirements:
 
 * CommitmentDiscountUnit MUST be of type String.
-* CommitmentDiscountUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CommitmentDiscountUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * CommitmentDiscountUnit MUST adhere to the following nullability requirements:
   * CommitmentDiscountUnit MUST be null when CommitmentDiscountQuantity is null.

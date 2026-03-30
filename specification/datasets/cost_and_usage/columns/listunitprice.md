@@ -7,7 +7,6 @@ The List Unit Price represents the suggested service-provider-published unit pri
 ListUnitPrice MUST adhere to the following requirements:
 
 * ListUnitPrice MUST be of type Decimal.
-* ListUnitPrice MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ListUnitPrice MUST adhere to the following nullability requirements:
   * ListUnitPrice MUST be null when [SkuPriceId](#datasets.costandusage.skupriceid) is null.
   * ListUnitPrice MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".

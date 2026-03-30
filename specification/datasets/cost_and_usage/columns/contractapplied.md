@@ -9,8 +9,6 @@ Contract Applied is a set of properties that associate a charge with one or more
 ContractApplied MUST adhere to the following requirements:
 
 * ContractApplied MUST be of type JSON Object (serialized as a String where necessary).
-* ContractApplied MUST conform to [StringHandling](#attributes.stringhandling) requirements.
-* ContractApplied MUST conform to [JsonObjectFormat](#attributes.jsonobjectformat) requirements.
 * ContractApplied MUST NOT be null when one or more *contract commitments* are applied to the *charge*.
 * ContractApplied MUST conform to [ContractAppliedObject](#datasets.costandusage.contractapplied.contractappliedobject) requirements when ContractApplied is not null.
 

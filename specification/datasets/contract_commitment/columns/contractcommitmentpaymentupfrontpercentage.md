@@ -9,7 +9,6 @@ This column allows for precise financial modeling of "Partial Upfront" [payment 
 ContractCommitmentPaymentUpfrontPercentage MUST adhere to the following requirements:
 
 * ContractCommitmentPaymentUpfrontPercentage MUST be of type Decimal.
-* ContractCommitmentPaymentUpfrontPercentage MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * ContractCommitmentPaymentUpfrontPercentage MUST NOT be null.
 * ContractCommitmentPaymentUpfrontPercentage MUST be a value between 0.0 and 1.0, inclusive.
 * ContractCommitmentPaymentUpfrontPercentage MUST be 1.0 when [ContractCommitmentPaymentModel](#datasets.contractcommitment.contractcommitmentpaymentmodel) is "All Upfront".

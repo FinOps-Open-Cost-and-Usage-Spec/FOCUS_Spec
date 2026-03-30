@@ -10,7 +10,6 @@ PricingCurrencyEffectiveCost MUST adhere to the following requirements:
   * PricingCurrencyEffectiveCost SHOULD be present in a Cost and Usage *FOCUS dataset* when the service provider supports pricing and billing in different currencies and publishes unit prices exclusive of discounts.
   * PricingCurrencyEffectiveCost MAY be present in a Cost and Usage *FOCUS dataset* in all other cases.
 * PricingCurrencyEffectiveCost MUST be of type Decimal.
-* PricingCurrencyEffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyEffectiveCost MUST NOT be null.
 * PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage.
 * PricingCurrencyEffectiveCost MUST be denominated in the [PricingCurrency](#datasets.costandusage.pricingcurrency).

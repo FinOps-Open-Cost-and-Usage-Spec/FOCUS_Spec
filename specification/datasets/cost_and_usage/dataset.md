@@ -167,7 +167,7 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
 * CostAndUsage MUST conform to [NumericFormat](#attributes.numericformat) requirements for each column containing numeric values.
 * CostAndUsage MUST conform to [StringHandling](#attributes.stringhandling) requirements for each column containing string values.
-* CostAndUsage MUST conform to [UnitFormat](#attributes.unitformat) requirements for each column representing measurement unit.
+* CostAndUsage SHOULD conform to [UnitFormat](#attributes.unitformat) requirements for each column representing measurement unit.
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer split cost allocation on an opt-in basis.

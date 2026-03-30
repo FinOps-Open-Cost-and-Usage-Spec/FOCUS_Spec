@@ -93,7 +93,7 @@ ContractCommitment MUST adhere to the following requirements:
 * ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
 * ContractCommitment MUST conform to [NumericFormat](#attributes.numericformat) requirements for each column containing numeric values.
 * ContractCommitment MUST conform to [StringHandling](#attributes.stringhandling) requirements for each column containing string values.
-* ContractCommitment MUST conform to [UnitFormat](#attributes.unitformat) requirements for each column representing measurement unit.
+* ContractCommitment SHOULD conform to [UnitFormat](#attributes.unitformat) requirements for each column representing measurement unit.
 
 ## Dataset ID<!--SkipTOC-->
 
