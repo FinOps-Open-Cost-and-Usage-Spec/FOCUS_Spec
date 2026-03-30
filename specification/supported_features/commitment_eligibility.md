@@ -4,15 +4,15 @@
 
 FOCUS supports the identification of [*charges*](#glossary:charge) in the Cost and Usage dataset that are eligible for [*commitment programs*](#glossary:commitment-program). The [CommitmentEligibilityDetails](#datasets.costandusage.commitmenteligibilitydetails) column captures which *commitment programs* a charge qualifies for, regardless of whether a [*commitment*](#glossary:commitment) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
 
-CommitmentEligibilityDetails contains a JSON object with a FOCUS-defined top-level key `CommitmentPrograms` containing an array of objects. Each object has a `ProgramType` property identifying the specific *commitment program*. Both discount-bearing programs (e.g., Savings Plans, committed-use discounts) and capacity-reservation programs (e.g., zonal reservations) are included in the same array, distinguished by their ProgramType value. Providers MAY include additional custom keys (prefixed with `x_`) for other commitment categories. Per the [column requirements](#datasets.costandusage.commitmenteligibilitydetails), providers SHOULD also include negotiated *commitment programs* for which usage is eligible. For more information, see the definition of CommitmentEligibilityDetails [here](#datasets.costandusage.commitmenteligibilitydetails).
+CommitmentEligibilityDetails contains a JSON object with a FOCUS-defined top-level key `CommitmentPrograms` containing an array of objects. Each object has a `ProgramType` property identifying the specific *commitment program*. Both discount-bearing programs (e.g., Savings Plans, committed-use discounts) and capacity-reservation programs (e.g., zonal reservations) are included in the same array, distinguished by their ProgramType value. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. Per the [column requirements](#datasets.costandusage.commitmenteligibilitydetails), providers should also include negotiated *commitment programs* for which usage is eligible. For more information, see the definition of Commitment Eligibility Details [here](#datasets.costandusage.commitmenteligibilitydetails).
 
 ### Naming Conventions for ProgramType Values
 
 The `ProgramType` property follows PascalCase by convention, identifying [*commitment programs*](#glossary:commitment-program) supported by the provider. Per the [column requirements](#datasets.costandusage.commitmenteligibilitydetails), these values:
 
-* MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
-* SHOULD correspond to terminology disclosed by the [*service provider*](#glossary:service-provider) in public documentation when CommitmentDiscountType is not populated (common for SaaS providers that do not itemize [*commitment discount*](#glossary:commitment-discount) application at the row level).
-* Do not encode [*period*](#glossary:period) length, payment option, or other *commitment* attributes. For example, use "SavingsPlan" rather than "1YearSavingsPlanNoUpfront". Where a provider's documented program name inherently includes a period reference (e.g., Datadog's "MonthlyCommitment"), use the provider name as-is.
+* Must equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
+* Should correspond to terminology disclosed by the [*service provider*](#glossary:service-provider) in public documentation when CommitmentDiscountType is not populated (common for SaaS providers that do not itemize [*commitment discount*](#glossary:commitment-discount) application at the row level).
+* Do not encode [*period*](#glossary:period) length, payment option, or other *commitment* attributes (e.g., use "SavingsPlan" rather than "1YearSavingsPlanNoUpfront"). Where a provider's documented program name inherently includes a period reference (e.g., Datadog's "MonthlyCommitment"), use the provider name as-is.
 
 Illustrative examples of ProgramType values by provider:
 
@@ -85,7 +85,7 @@ This query computes a [*commitment*](#glossary:commitment) coverage rate using o
 
 By filtering on `CommitmentEligibilityDetails IS NOT NULL`, the denominator includes only charges that could realistically be covered by a *commitment*, producing an eligibility-adjusted coverage metric.
 
-Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and are included in CoveredCost. Practitioners seeking a utilization-adjusted rate should additionally filter on CommitmentDiscountStatus = "Used". Whether CommitmentEligibilityDetails MUST be populated on "Unused" rows is not explicitly addressed in the column requirements. If a provider does not populate it on "Unused" rows, the denominator excludes them while the numerator does not, potentially inflating the coverage rate.
+Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and are included in CoveredCost. Practitioners seeking a utilization-adjusted rate should additionally filter on CommitmentDiscountStatus = "Used". Whether CommitmentEligibilityDetails must be populated on "Unused" rows is not explicitly addressed in the column requirements. If a provider does not populate it on "Unused" rows, the denominator excludes them while the numerator does not, potentially inflating the coverage rate.
 
 ```sql
 SELECT
