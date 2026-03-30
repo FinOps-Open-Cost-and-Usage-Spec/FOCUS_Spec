@@ -7,7 +7,6 @@ Purchase Order Number is the unique customer-issued identifier for tracking the 
 PurchaseOrderNumber MUST adhere to the following requirements:
 
 * PurchaseOrderNumber MUST be of type String.
-* PurchaseOrderNumber MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PurchaseOrderNumber MAY be null.
 * PurchaseOrderNumber MUST represent the identifier used by the customer to unique identify the purchase order responsible for the charge.
 

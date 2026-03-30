@@ -7,7 +7,6 @@ A Capacity Reservation ID is the identifier assigned to a [*capacity reservation
 CapacityReservationId MUST adhere to the following requirements:
 
 * CapacityReservationId MUST be of type String.
-* CapacityReservationId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * CapacityReservationId MUST adhere to the following nullability requirements:
   * CapacityReservationId MUST be null when a *charge* is not related to a *capacity reservation*.
   * CapacityReservationId MUST NOT be null when a *charge* represents the unused portion of a *capacity reservation*.

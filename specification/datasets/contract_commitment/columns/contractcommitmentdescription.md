@@ -7,7 +7,6 @@ Contract Commitment Description provides a high-level context of a [*contract co
 ContractCommitmentDescription MUST adhere to the following requirements:
 
 * ContractCommitmentDescription MUST be of type String.
-* ContractCommitmentDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentDescription SHOULD NOT be null.
 * ContractCommitmentDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
 

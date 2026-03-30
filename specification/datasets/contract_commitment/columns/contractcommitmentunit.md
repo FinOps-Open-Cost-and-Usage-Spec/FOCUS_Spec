@@ -7,7 +7,6 @@ The Contract Commitment Unit represents a service-provider-specified measurement
 ContractCommitmentUnit MUST adhere to the following requirements:
 
 * ContractCommitmentUnit MUST be of type String.
-* ContractCommitmentUnit MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentUnit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 * ContractCommitmentUnit MUST adhere to the following nullability requirements:
   * ContractCommitmentUnit MUST be null when ContractCommitmentQuantity is null.

@@ -7,7 +7,6 @@ A Charge Description provides a high-level context of a [*row*](#glossary:row) w
 ChargeDescription MUST adhere to the following requirements:
 
 * ChargeDescription MUST be of type String.
-* ChargeDescription MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ChargeDescription SHOULD NOT be null.
 * ChargeDescription maximum length SHOULD be provided in the corresponding FOCUS Metadata Schema.
 

@@ -7,7 +7,6 @@ Billing Account Type is an invoice-issuer-assigned name to identify the type of 
 BillingAccountType MUST adhere to the following requirements:
 
 * BillingAccountType MUST be of type String.
-* BillingAccountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingAccountType MUST adhere to the following nullability requirements:
   * BillingAccountType MUST be null when [BillingAccountId](#datasets.costandusage.billingaccountid) is null.
   * BillingAccountType MUST NOT be null when BillingAccountId is not null.

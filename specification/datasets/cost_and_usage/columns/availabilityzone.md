@@ -7,7 +7,6 @@ An [*availability zone*](#glossary:availability-zone) is a host-provider-assigne
 AvailabilityZone MUST adhere to the following requirements:
 
 * AvailabilityZone MUST be of type String.
-* AvailabilityZone MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AvailabilityZone MUST be null when a [*charge*](#glossary:charge) is not specific to an *availability zone*.
 
 ## Column ID

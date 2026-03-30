@@ -16,7 +16,6 @@ A given Contract Commitment Duration Type value follows a structured format of "
 ContractCommitmentDurationType MUST adhere to the following requirements:
 
 * ContractCommitmentDurationType MUST be of type String.
-* ContractCommitmentDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentDurationType MUST NOT be null.
 * ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., "1 Day", "1 Year", "3 Months", "3 Years").
 * ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.

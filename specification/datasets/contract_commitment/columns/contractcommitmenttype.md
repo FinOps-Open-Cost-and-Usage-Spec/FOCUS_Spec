@@ -7,7 +7,6 @@ Contract Commitment Type is a service-provider-assigned name to identify the typ
 ContractCommitmentType MUST adhere to the following requirements:
 
 * ContractCommitmentType MUST be of type String.
-* ContractCommitmentType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ContractCommitmentType MUST NOT be null.
 * ContractCommitmentType MUST be a consistent, readable display value.
 

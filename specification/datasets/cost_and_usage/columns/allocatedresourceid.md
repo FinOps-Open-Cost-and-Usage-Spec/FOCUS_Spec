@@ -7,7 +7,6 @@ An Allocated Resource ID is an identifier assigned by the data generator which c
 AllocatedResourceId MUST adhere to the following requirements:
 
 * AllocatedResourceId MUST be of type String.
-* AllocatedResourceId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * AllocatedResourceId MUST adhere to the following nullability requirements:
   * AllocatedResourceId MUST be null when a *charge* is not related to a data generator-calculated split cost allocation.
   * AllocatedResourceId MUST be null when a *charge* represents the unallocated portion of the origin *charge* after split cost allocation.
