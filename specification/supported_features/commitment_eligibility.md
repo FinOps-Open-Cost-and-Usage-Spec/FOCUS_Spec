@@ -83,9 +83,9 @@ ORDER BY TotalEligibleUncoveredCost DESC
 
 This query computes a [*commitment*](#glossary:commitment) coverage rate using only eligible [*charges*](#glossary:charge) as the denominator. Without eligibility data, practitioners typically divide covered spend by total spend, which produces a coverage rate that includes ineligible charges (e.g., storage services, support fees) in the denominator and may not reflect the actionable coverage opportunity.
 
-By filtering on `CommitmentEligibilityDetails IS NOT NULL`, the denominator includes only charges that could realistically be covered by a *commitment*, producing an eligibility-adjusted coverage metric.
+The denominator uses an OR condition: a charge is counted as eligible if it is already covered (CommitmentDiscountId is not null) or if it is flagged as eligible (CommitmentEligibilityDetails is not null). This safeguards against providers that omit the eligibility JSON on already-covered rows, which would otherwise exclude covered spend from the denominator and produce a 0% rate.
 
-Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and are included in CoveredCost. Practitioners seeking a utilization-adjusted rate should additionally filter on CommitmentDiscountStatus = "Used". Whether CommitmentEligibilityDetails must be populated on "Unused" rows is not explicitly addressed in the column requirements. If a provider does not populate it on "Unused" rows, the denominator excludes them while the numerator does not, potentially inflating the coverage rate.
+Note: Unused commitment rows (CommitmentDiscountStatus = "Unused") have CommitmentDiscountId populated and are included in both the numerator and denominator. Practitioners seeking a utilization-adjusted rate should additionally filter on CommitmentDiscountStatus = "Used". Whether CommitmentEligibilityDetails must be populated on "Unused" rows is not explicitly addressed in the column requirements.
 
 ```sql
 SELECT
@@ -93,17 +93,22 @@ SELECT
   SUM(CASE
     WHEN CU.CommitmentDiscountId IS NOT NULL
     THEN CU.EffectiveCost ELSE 0 END) AS CoveredCost,
-  SUM(CU.EffectiveCost) AS TotalEligibleCost,
+  SUM(CASE
+    WHEN CU.CommitmentDiscountId IS NOT NULL
+      OR CU.CommitmentEligibilityDetails IS NOT NULL
+    THEN CU.EffectiveCost ELSE 0 END) AS TotalEligibleCost,
   SAFE_DIVIDE(
     SUM(CASE
       WHEN CU.CommitmentDiscountId IS NOT NULL
       THEN CU.EffectiveCost ELSE 0 END),
-    SUM(CU.EffectiveCost)
+    SUM(CASE
+      WHEN CU.CommitmentDiscountId IS NOT NULL
+        OR CU.CommitmentEligibilityDetails IS NOT NULL
+      THEN CU.EffectiveCost ELSE 0 END)
   ) AS CommitmentCoverageRate
 FROM focus_data_table CU
 WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
   AND CU.ChargeCategory = 'Usage'
-  AND CU.CommitmentEligibilityDetails IS NOT NULL
 GROUP BY CU.ServiceProviderName
 ```
 
