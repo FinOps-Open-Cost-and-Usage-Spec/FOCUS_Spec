@@ -7,7 +7,6 @@ Billing Account ID is an invoice-issuer-assigned identifier for a [*billing acco
 BillingAccountId MUST adhere to the following requirements:
 
 * BillingAccountId MUST be of type String.
-* BillingAccountId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * BillingAccountId MUST NOT be null.
 * BillingAccountId MUST be a unique identifier within an invoice issuer.
 * BillingAccountId SHOULD be a fully-qualified identifier.

@@ -7,7 +7,6 @@ Invoice Issue Status indicates the publication state of the invoice. It distingu
 InvoiceIssueStatus MUST adhere to the following requirements:
 
 * InvoiceIssueStatus MUST be of type String.
-* InvoiceIssueStatus MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceIssueStatus MUST NOT be null.
 * InvoiceIssueStatus MUST be one of the allowed values defined in the [Allowed Values](#datasets.invoicedetail.invoiceissuestatus.allowed-values) section.
 * InvoiceIssueStatus MUST represent the current publication state of the invoice.

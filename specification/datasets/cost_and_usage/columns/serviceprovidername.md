@@ -12,7 +12,6 @@ Service Provider Name is the name of the entity that provides the [*resources*](
 ServiceProviderName MUST adhere to the following requirements:
 
 * ServiceProviderName MUST be of type String.
-* ServiceProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ServiceProviderName MUST NOT be null.
 
 See [Appendix: Participating Entity Identification Examples](#appendix.examples:participatingentityidentification) section for examples of Service Provider Name values across various use case scenarios.

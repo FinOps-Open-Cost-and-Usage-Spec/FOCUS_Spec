@@ -7,7 +7,6 @@ The Resource Name is a display name assigned to a [*resource*](#glossary:resourc
 ResourceName MUST adhere to the following requirements:
 
 * ResourceName MUST be of type String.
-* ResourceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ResourceName MUST adhere to the following nullability requirements:
   * ResourceName MUST be null when [ResourceId](#datasets.costandusage.resourceid) is null or when the *resource* does not have an assigned display name.
   * ResourceName MUST NOT be null when ResourceId is not null and the *resource* has an assigned display name.

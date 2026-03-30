@@ -20,7 +20,6 @@ SKU ID should be consistent across pricing variations of a good or service to fa
 SkuId MUST adhere to the following requirements:
 
 * SkuId MUST be of type String.
-* SkuId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SkuId MUST adhere to the following nullability requirements:
   * SkuId MUST be null when [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax".
   * SkuId MUST NOT be null when ChargeCategory is "Usage" or "Purchase" and [ChargeClass](#datasets.costandusage.chargeclass) is not "Correction".

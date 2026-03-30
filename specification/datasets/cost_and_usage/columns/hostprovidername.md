@@ -9,7 +9,6 @@ In some instances, the host provider and the service provider are the same entit
 HostProviderName MUST adhere to the following requirements:
 
 * HostProviderName MUST be of type String.
-* HostProviderName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * HostProviderName MUST adhere to the following nullability requirements:
   * HostProviderName MAY be NULL when the associated [ServiceName](#datasets.costandusage.servicename) does not involve deployment on any underlying infrastructure (e.g., professional services, software licenses).
   * HostProviderName MAY be NULL when the information about the entity providing the underlying infrastructure cannot be uniquely determined (e.g., when the [ChargeCategory](#datasets.costandusage.chargecategory) is "Tax" or "Adjustment").

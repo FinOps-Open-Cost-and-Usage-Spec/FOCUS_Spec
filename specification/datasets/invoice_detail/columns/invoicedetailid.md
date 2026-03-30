@@ -7,7 +7,6 @@ Invoice Detail ID is the invoice-issuer-assigned identifier for an [Invoice Deta
 InvoiceDetailId MUST adhere to the following requirements:
 
 * InvoiceDetailId MUST be of type String.
-* InvoiceDetailId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * InvoiceDetailId MUST NOT be null.
 * InvoiceDetailId MUST uniquely identify a record within a given [InvoiceId](#datasets.invoicedetail.invoiceid).
 

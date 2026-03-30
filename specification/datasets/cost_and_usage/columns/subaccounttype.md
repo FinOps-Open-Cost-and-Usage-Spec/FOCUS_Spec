@@ -7,7 +7,6 @@ Sub Account Type is a service-provider-assigned name to identify the type of [*s
 SubAccountType MUST adhere to the following requirements:
 
 * SubAccountType MUST be of type String.
-* SubAccountType MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * SubAccountType MUST adhere to the following nullability requirements:
   * SubAccountType MUST be null when [SubAccountId](#datasets.costandusage.subaccountid) is null.
   * SubAccountType MUST NOT be null when SubAccountId is not null.

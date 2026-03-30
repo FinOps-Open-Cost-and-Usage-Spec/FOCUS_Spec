@@ -9,7 +9,6 @@ The Service Name is a display name for the offering that was purchased. The Serv
 ServiceName MUST adhere to the following requirements:
 
 * ServiceName MUST be of type String.
-* ServiceName MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * ServiceName MUST NOT be null.
 * The relationship between ServiceName and [ServiceCategory](#datasets.costandusage.servicecategory) MUST adhere to the following requirements:
   * ServiceName MUST have one and only one ServiceCategory that best aligns with its primary purpose, except when no suitable ServiceCategory is available.

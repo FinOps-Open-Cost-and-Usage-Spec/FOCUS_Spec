@@ -7,7 +7,6 @@ Payment Currency Invoice Detail ID is a reference to the [Invoice Detail ID](#da
 PaymentCurrencyInvoiceDetailId MUST adhere to the following requirements:
 
 * PaymentCurrencyInvoiceDetailId MUST be of type String.
-* PaymentCurrencyInvoiceDetailId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PaymentCurrencyInvoiceDetailId MUST NOT be null.
 * PaymentCurrencyInvoiceDetailId MUST match the [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) of the record representing the [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) aggregation for the current row.
 * PaymentCurrencyInvoiceDetailId MUST match [InvoiceDetailId](#datasets.invoicedetail.invoicedetailid) of the current record when [PaymentCurrencyBilledCost](#datasets.invoicedetail.paymentcurrencybilledcost) is non-zero.

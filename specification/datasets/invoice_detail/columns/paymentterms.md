@@ -7,7 +7,6 @@ Payment Terms represents the [*terms*](#glossary:term) (typically focused on tim
 PaymentTerms MUST adhere to the following requirements:
 
 * PaymentTerms MUST be of type String.
-* PaymentTerms MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * PaymentTerms MUST NOT be null.
 * PaymentTerms MUST represent the payment terms (e.g., "Net 30") as defined on the corresponding invoice.
 

@@ -7,7 +7,6 @@ A Region ID is a host-provider-assigned identifier for an isolated geographic ar
 RegionId MUST adhere to the following requirements:
 
 * RegionId MUST be of type String.
-* RegionId MUST conform to [StringHandling](#attributes.stringhandling) requirements.
 * RegionId MUST adhere to the following nullability requirements:
   * RegionId MUST NOT be null when a *resource* or *service* is operated in or managed from a distinct region.
   * RegionId MAY be null when a *resource* or *service* is not operated in or managed from a distinct region.
