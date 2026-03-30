@@ -4,7 +4,7 @@ Billed Cost represents the cost of a [*charge*](#glossary:charge) as invoiced by
 
 For all *charges*, Billed Cost reflects all applicable pricing adjustments (e.g., reduced pricing from [*negotiated discounts*](#glossary:negotiated-discount) or [*commitment discounts*](#glossary:commitment-discount)). For purchase *charges*, Billed Cost includes any portion invoiced in the given *billing period*. For usage *charges*, Billed Cost excludes any portion [*covered*](#glossary:covered-charge) by related purchase *charges* (e.g., [*covering charges*](#glossary:covering-charge) such as *commitments*, prepayments, or marketplace purchases), regardless of when those related *charges* are invoiced.
 
-Billed Cost is denominated in the [Billing Currency](#datasets.invoicedetail.billingcurrency). Billed Cost is commonly used to support FinOps activities, including invoice reconciliation, [*cash-flow-based*](#glossary:cash-based-accounting) forecasting, budgeting, and cost allocation.
+Billed Cost is denominated in the [Billing Currency](#datasets.invoicedetail.billingcurrency). Billed Cost is commonly used to support FinOps activities, including invoice reconciliation, [*cash-based*](#glossary:cash-based-accounting) forecasting, budgeting, and cost allocation.
 
 ## Requirements
 
