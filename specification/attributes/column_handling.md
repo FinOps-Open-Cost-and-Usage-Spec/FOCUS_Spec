@@ -27,14 +27,6 @@ Naming and documentation conventions for columns appearing in a *FOCUS dataset*.
 
 ## Requirements
 
-Dataset conforming to ColumnHandling attribute MUST adhere to the following requirements:
-
-* FOCUS dataset MUST adhere to the following column ordering requirements:
-  * FOCUS dataset SHOULD list all FOCUS columns before all Custom columns.
-  * FOCUS dataset SHOULD sort FOCUS columns alphabetically by their Column ID within the FOCUS columns group.
-  * FOCUS dataset SHOULD sort Custom columns alphabetically by their Column ID within the Custom columns group.
-  * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns when ordering columns.
-
 Column conforming to ColumnHandling attribute MUST adhere to the following requirements:
 
 * FOCUS column MUST adhere to the following requirements:
@@ -49,7 +41,7 @@ Column conforming to ColumnHandling attribute MUST adhere to the following requi
   * FOCUS column MUST include the `Name` suffix in the Column ID when the FOCUS column represents a name.
   * FOCUS column MUST include `Sku` in the Column ID when the FOCUS column represents a product offering that incurred a charge.
   * FOCUS column MUST contain one of the FOCUS-defined allowed values when the FOCUS column includes `Category` suffix in the Column ID and is not null.
-* Custom column (e.g., service-provider-defined column included in FOCUS dataset) MUST adhere to the following requirements:
+* Custom column MUST adhere to the following requirements:
   * Custom column MUST include the `x_` prefix in the Column ID to identify it as an external custom column and to distinguish it from FOCUS columns to avoid conflicts in future releases.
   * Custom column SHOULD use Pascal case in the Column ID.
   * Custom column SHOULD use only alphanumeric characters in the Column ID.
@@ -59,7 +51,6 @@ Column conforming to ColumnHandling attribute MUST adhere to the following requi
   * Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
   * Custom column SHOULD include the `Id` suffix in the Column ID when the custom column represents an identifier.
   * Custom column SHOULD include the `Name` suffix in the Column ID when the custom column represents a name.
-  * Custom columns MUST be detailed in publicly-available documentation, including description, purpose, and relationship to [*native dataset*](#glossary:native-dataset) columns.
 
 ## Introduced (version)
 
