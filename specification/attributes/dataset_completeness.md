@@ -42,7 +42,6 @@ Dataset conforming to DatasetCompleteness attribute MUST adhere to the following
   * *FOCUS dataset* SHOULD list all *FOCUS columns* before all *custom columns*.
   * *FOCUS dataset* SHOULD sort *FOCUS columns* alphabetically by their Column ID within the *FOCUS columns* group.
   * *FOCUS dataset* SHOULD sort *custom columns* alphabetically by their Column ID within the *custom columns* group.
-  * *FOCUS dataset* SHOULD NOT intermix *FOCUS columns* and *custom columns* when ordering columns.
 
 ## Exceptions
 
