@@ -21,7 +21,6 @@ When the data generator supports data generator-calculated split cost allocation
 * The sum of FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a summable [*metric*](#glossary:metric) (e.g., costs and quantities).
 * FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a non-summable *metric* (e.g., unit prices).
 * FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a dimension.
-* FOCUS column values in *allocated charges* MUST include the same keys and values present in the [CostAndUsage.Tags](#datasets.costandusage.tags) in the *origin charge* when the FOCUS column contains tag values.
 
 ## Introduced (version)
 
