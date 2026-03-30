@@ -12,7 +12,6 @@ PricingCurrencyEffectiveCost MUST adhere to the following requirements:
 * PricingCurrencyEffectiveCost MUST be of type Decimal.
 * PricingCurrencyEffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * PricingCurrencyEffectiveCost MUST NOT be null.
-* PricingCurrencyEffectiveCost MUST be a valid decimal value.
 * PricingCurrencyEffectiveCost MUST be 0 in the event of prepaid purchases or purchases that are applicable to previous usage.
 * PricingCurrencyEffectiveCost MUST be denominated in the [PricingCurrency](#datasets.costandusage.pricingcurrency).
 
