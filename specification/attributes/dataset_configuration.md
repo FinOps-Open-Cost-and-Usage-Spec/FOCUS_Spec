@@ -23,7 +23,7 @@ Defines configuration options for controlling the structure and content of a FOC
 
 ## Requirements
 
-*FOCUS dataset* MUST adhere to the following requirements:
+Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST be configurable to include only a user-defined selection of columns.
 * *FOCUS dataset* MUST adhere to all column-level specifications defined in the FOCUS schema, regardless of the user's chosen configuration (e.g., column selection).
@@ -41,10 +41,6 @@ A practitioner configures their FOCUS Cost and Usage dataset to include only the
 * Tags
 
 Even though columns like `CommitmentDiscountId` and `ResourceId` are excluded, the included cost columns (`BilledCost`, `EffectiveCost`) still reflect commitment discounts correctly. The dataset remains conformant to the FOCUS specification because each included column follows all requirements for that column, including requirements that reference columns not in the dataset.
-
-## Exceptions
-
-None
 
 ## Introduced (version)
 

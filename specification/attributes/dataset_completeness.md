@@ -43,10 +43,6 @@ Dataset conforming to DatasetCompleteness attribute MUST adhere to the following
   * *FOCUS dataset* SHOULD sort *FOCUS columns* alphabetically by their Column ID within the *FOCUS columns* group.
   * *FOCUS dataset* SHOULD sort *custom columns* alphabetically by their Column ID within the *custom columns* group.
 
-## Exceptions
-
-None
-
 ## Introduced (version)
 
 1.4
