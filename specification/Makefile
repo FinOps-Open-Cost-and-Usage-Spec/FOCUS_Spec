@@ -43,6 +43,10 @@ spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py datasets
 	./validate_includes.py datasets/cost_and_usage
 	./validate_includes.py datasets/cost_and_usage/columns
+	./validate_includes.py datasets/invoice_detail
+	./validate_includes.py datasets/invoice_detail/columns
+	./validate_includes.py datasets/billing_period
+	./validate_includes.py datasets/billing_period/columns
 	./validate_includes.py datasets/contract_commitment
 	./validate_includes.py datasets/contract_commitment/columns
 	./validate_includes.py attributes
@@ -58,6 +62,8 @@ spec.md: $(SPEC_SOURCE_FILES)
 	./validate_includes.py appendix/commitment_discounts
 	./validate_includes.py appendix/examples/commitment_discount_flexibility_examples
 	./validate_includes.py appendix/saas_examples
+	./validate_includes.py appendix/json_object_examples
+
 
 	@echo "Checking for misaligned code block markers (\`\`\`)..."
 	@find . -type f \( -name "*.md" -o -name "*.mdpp" \) \

@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <sup>Announced June 2026</sup>
 
-### Changes to Supported Features by [Change Impact Classification](/guidelines/spec-change-guidelines.md)
+### Changes to Supported Features by [Change Impact Classification](/guidelines/contributors/spec-change-guidelines.md)
 
 #### Compatible Changes
 
@@ -31,7 +31,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <sup>Announced December 2025</sup>
 
-### Changes to Supported Features by [Change Impact Classification](/guidelines/spec-change-guidelines.md)
+> ⚠️ **Note: Errata Available**
+> A list of non-material editorial corrections and clarifications for this release can be found in the [FOCUS 1.3 Errata](ERRATA.md#version-13). Please review this document alongside the 1.3 specification.
+
+### Changes to Supported Features by [Change Impact Classification](/guidelines/contributors/spec-change-guidelines.md)
 
 #### Compatible Changes
 
