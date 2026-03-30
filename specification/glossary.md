@@ -240,7 +240,7 @@ A metadata label assigned to a resource to provide information about it or to ca
 
 <a name="glossary:tag-scheme"><b>Tag Scheme</b></a>
 
-A distinct framework used to apply metadata to resources, other types of assets, or directly to charges. E.g., if a provider supports labels and tags or multiple different types of tags, each would be considered its own Tag Scheme. Tag Schemes that take input from the user are referred to as user-defined tag schemes and those that are completely controlled by a provider or data generator are referred to as provider-defined or data generator-defined tag schemes, respectively.
+A distinct framework for assigning metadata to charges, resources, or other assets. Different metadata types within a single provider (e.g., "tags" vs. "labels") are considered separate schemes. They can be user-defined (custom input) or provider-defined (system-controlled).
 
 <a name="glossary:tag-source"><b>Tag Source</b></a>
 
