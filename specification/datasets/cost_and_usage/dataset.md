@@ -154,13 +154,13 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [SubAccountName](#datasets.costandusage.subaccountname) when the service provider supports a *sub account* construct.
   * CostAndUsage MUST include [SubAccountType](#datasets.costandusage.subaccounttype) when the service provider supports more than one possible SubAccountType value.
   * CostAndUsage MUST include [Tags](#datasets.costandusage.tags) when the data generator supports setting user or provider-defined tags.
-* CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
-* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
-* CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
-* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements.
 * CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
+* CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
+* CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
+* CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each column.
+* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements for each column.
+* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.
   * CostAndUsage SHOULD offer split cost allocation on an opt-in basis.

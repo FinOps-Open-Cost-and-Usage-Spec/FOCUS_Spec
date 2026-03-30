@@ -84,10 +84,10 @@ ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [PricingCurrency](#datasets.contractcommitment.pricingcurrency) when the service provider supports pricing and billing in different currencies.
   * ContractCommitment MUST include [PricingCurrencyContractCommitmentCost](#datasets.contractcommitment.pricingcurrencycontractcommitmentcost) when the service provider supports pricing and billing in different currencies.
   * ContractCommitment MUST include [ServiceProviderName](#datasets.contractcommitment.serviceprovidername).
-* ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
 * ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
-* ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
 * ContractCommitment MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
+* ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each column.
+* ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
 
 ## Dataset ID<!--SkipTOC-->
 
