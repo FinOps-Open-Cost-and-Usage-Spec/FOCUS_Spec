@@ -37,7 +37,7 @@ The table below outlines the fictitious *data generators* used throughout the ap
 | **SendWeave** | Email API | A developer-friendly service for reliably routing, sending, and tracking both transactional and marketing emails. | SendGrid, Mailgun |
 | **PipelCRM** | CRM | A customer relationship management platform designed to track sales pipelines, manage contacts, and optimize lead conversion. | Salesforce, HubSpot |
 | **Budget Beacon** | Cost Management | A cloud cost-optimization platform that shines a spotlight on overspending, waste, and savings opportunities across multi-cloud environments. | Cloudability, CloudHealth, ProsperOps |
-| **SchemaWeaver** | Open Source Library | An open‑source tool that refines raw cloud cost and usage data, normalizing it into FOCUS‑compliant schemas for downstream analytics and reporting. Not a public service. | OpenCost, Cloud Intelligence Dashboards, FinOps toolkit |
+| **SchemaWeaver** | Open Source Library | An open-source tool that refines raw cloud cost and usage data, normalizing it into FOCUS-compliant schemas for downstream analytics and reporting. Not a public service. | OpenCost, Cloud Intelligence Dashboards, FinOps toolkit |
 
 ## Fictitious Customer Reference
 
