@@ -18,11 +18,10 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
 
 Column conforming to KeyValueFormat attribute MUST adhere to the following requirements:
 
-* When [*FOCUS column*](#glossary:FOCUS-column) contains JSON values in key-value pair format, *FOCUS column* MUST adhere to the following requirements:
-  * *FOCUS column* MUST be a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
-  * Keys in *FOCUS column* MUST be unique within the object.
-  * Key values in *FOCUS column* MUST be of type number, string, boolean (`true` or `false`), or `null`.
-  * Key values in *FOCUS column* MUST NOT be objects or arrays.
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST be a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
+* Keys in *FOCUS dataset column* MUST be unique within the object.
+* Key values in *FOCUS dataset column* MUST be of type number, string, boolean (`true` or `false`), or `null`.
+* Key values in *FOCUS dataset column* MUST NOT be objects or arrays.
 
 ## Introduced (version)
 
