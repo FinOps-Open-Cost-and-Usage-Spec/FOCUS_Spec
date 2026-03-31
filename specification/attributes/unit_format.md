@@ -158,7 +158,6 @@ Unit Format
 
 Indicates standards for expressing measurement units in columns appearing in a *FOCUS dataset*.
 
-
 ## Introduced (version)
 
 1.0-preview
