@@ -13,7 +13,6 @@ BilledCost MUST adhere to the following requirements:
 * BilledCost MUST be of type Decimal.
 * BilledCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * BilledCost MUST NOT be null.
-* BilledCost MUST be a valid decimal value.
 * BilledCost MUST be denominated in the BillingCurrency.
 * BilledCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
 * BilledCost MUST NOT include any portion of a [*covered charge*](#glossary:covered-charge) that is offset by a [*covering charge*](#glossary:covering-charge).

@@ -13,7 +13,6 @@ EffectiveCost MUST adhere to the following requirements:
 * EffectiveCost MUST be of type Decimal.
 * EffectiveCost MUST conform to [NumericFormat](#attributes.numericformat) requirements.
 * EffectiveCost MUST NOT be null.
-* EffectiveCost MUST be a valid decimal value.
 * EffectiveCost MUST be denominated in the BillingCurrency.
 * EffectiveCost MUST reflect all applicable pricing adjustments, including but not limited to *negotiated discounts*, *commitment discounts*, and other applicable discount programs.
 * EffectiveCost MUST equal BilledCost when [ChargeCategory](#datasets.costandusage.chargecategory) is "Usage" and the *charge* is not [*covered*](#glossary:covered-charge) by other eligible *charges*.
