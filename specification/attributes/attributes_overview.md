@@ -7,7 +7,7 @@ Attributes serve as reusable containers for requirements that enforce consistenc
 | Attribute | Description |
 | :--- | :--- |
 | [Currency Format](#attributes.currencyformat) | Specifies rules and formatting requirements for currency columns. |
-| [Custom Column Handling](#attributes.customcolumnhandling) | Defines Column ID naming conventions and formatting requirements for [*custom columns*](#glossary:custom-column) appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset). |
+| [Custom Column Handling](#attributes.customcolumnhandling) | Defines column ID naming, formatting, and value requirements for [*custom columns*](#glossary:custom-column) appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset). |
 | [Data Generator-Calculated Split Cost Allocation Handling](#attributes.datagenerator-calculatedsplitcostallocationhandling) | Allows data generators to provide granular cost information based on specific documented methods. |
 | [Dataset Completeness](#attributes.datasetcompleteness) | Defines requirements for a *FOCUS dataset* to include *custom columns* not represented in [*FOCUS columns*](#glossary:FOCUS-column). |
 | [Dataset Configuration](#attributes.datasetconfiguration) | Defines the rules for customizing a dataset's schema. |
