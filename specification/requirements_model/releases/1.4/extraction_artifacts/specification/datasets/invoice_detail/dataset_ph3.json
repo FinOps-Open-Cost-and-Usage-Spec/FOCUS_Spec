@@ -58,7 +58,7 @@
       }
     },
     "IND-InvoiceDetail-C-002-M": {
-      "Function": "Presence",
+      "Function": "Composite",
       "Reference": "InvoiceDetail",
       "EntityType": "Dataset",
       "EntityName": "Invoice Detail",
