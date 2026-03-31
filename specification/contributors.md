@@ -1,6 +1,6 @@
-## Working Group
+# Credits
 
-### Maintainers
+## Maintainers
 
 Thanks to the following FOCUS Maintainers for their leadership and contributions to the FOCUS Release **v1.3** specification.
 
@@ -15,7 +15,7 @@ Thanks to the following FOCUS Maintainers for their leadership and contributions
 * Shawn Alpay (FinOps Foundation)
 * Udam Dewaraja (StitcherAI)
 
-### Contributors
+## Contributors
 
 Thanks to the following FOCUS members for their contributions to the FOCUS Release **v1.3** specification.
 
@@ -43,9 +43,11 @@ Thanks to the following FOCUS members for their contributions to the FOCUS Relea
 * Sanjna Srivatsa (Broadcom)
 * Tim Wright (Google)
 
+<div style="page-break-after: always"></div>
+
 ## Steering Committee Members
 
-Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS specification.
+Thanks to the following FOCUS Steering Committee members for their leadership on the FOCUS **v1.3** specification.
 
 * Ben Olson (Adobe)
 * Christopher Harris (Datadog)
