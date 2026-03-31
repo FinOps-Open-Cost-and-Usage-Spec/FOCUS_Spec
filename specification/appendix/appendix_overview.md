@@ -34,7 +34,7 @@ The table below outlines the fictitious *data generators* used throughout the ap
 | **SprintCanvas** | Project Management | A collaborative workspace for planning, assigning, and tracking team tasks and agile workflows. | Jira, Asana, Trello |
 | **StoreStack** | Database as a Service | A fully managed, scalable cloud database solution that handles provisioning, backups, and routine maintenance. | MongoDB Atlas |
 | **CollabChat** | Team Communications | A messaging platform offering organized chat channels, direct messaging, and secure file sharing for remote teams. | Slack |
-| **SendWeave** | Email API | A developer-friendly service for reliably routing, sending, and tracking both transactional and marketing emails. | SendGrid, Mailgun |
+| **PulseMail** | Email API | A developer-friendly service for reliably routing, sending, and tracking both transactional and marketing emails. | SendGrid, Mailgun |
 | **PipelCRM** | CRM | A customer relationship management platform designed to track sales pipelines, manage contacts, and optimize lead conversion. | Salesforce, HubSpot |
 | **Budget Beacon** | Cost Management | A cloud cost-optimization platform that shines a spotlight on overspending, waste, and savings opportunities across multi-cloud environments. | Cloudability, CloudHealth, ProsperOps |
 | **SchemaWeaver** | Open Source Library | An open-source tool that refines raw cloud cost and usage data, normalizing it into FOCUS-compliant schemas for downstream analytics and reporting. Not a public service. | OpenCost, Cloud Intelligence Dashboards, FinOps toolkit |
