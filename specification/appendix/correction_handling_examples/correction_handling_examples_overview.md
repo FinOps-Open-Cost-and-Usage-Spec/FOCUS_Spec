@@ -1,4 +1,4 @@
-# Examples: Correction Handling - Cost and Usage Dataset
+# Examples: Correction Handling
 
 This section provides examples of how correction handling may be implemented in alignment with the FOCUS specification. The examples are limited to illustrating correction handling for the Cost and Usage FOCUS dataset, and cover scenarios involving corrections to open and closed billing periods, as well as the various delivery mechanisms and correction styles supported by FOCUS.
 
