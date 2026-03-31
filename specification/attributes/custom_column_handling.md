@@ -41,14 +41,14 @@ Column conforming to CustomColumnHandling attribute MUST adhere to the following
   * *Custom column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
   * *Custom column* SHOULD include the `Id` suffix in the Column ID when the *custom column* represents an identifier.
   * *Custom column* SHOULD include the `Name` suffix in the Column ID when the *custom column* represents a name.
-* *Custom column* SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements when *custom column* represents national currency.
-* *Custom column* SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements when *custom column* contains date/time values.
 * *Custom column* SHOULD conform to [NullHandling](#attributes.nullhandling) requirements.
-* *Custom column* SHOULD conform to [NumericFormat](#attributes.numericformat) requirements when *custom column* contains numeric values.
-* *Custom column* SHOULD conform to [StringHandling](#attributes.stringhandling) requirements when *custom column* contains string values.
-* *Custom column* SHOULD conform to [UnitFormat](#attributes.unitformat) requirements when *custom column* represents a measurement unit.
-* *Custom column* containing numeric values MUST contain a single numeric value.
+* *Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.
 * *Custom column* containing JSON objects MUST have its object schema documented by the data generator and accessible to practitioners.
+* *Custom column* containing numeric values MUST contain a single numeric value.
+* *Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat).
+* *Custom column* containing string values SHOULD conform to [StringHandling](#attributes.stringhandling) requirements.
+* *Custom column* representing a national currency SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.
+* *Custom column* representing a measurement unit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
 
 ## Introduced (version)
 
