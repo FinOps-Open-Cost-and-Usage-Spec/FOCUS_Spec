@@ -36,7 +36,7 @@ BillingPeriod MUST adhere to the following requirements:
   * BillingPeriod MUST include [InvoiceIssuerName](#datasets.billingperiod.invoiceissuername).
 * BillingPeriod MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * BillingPeriod MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
-* BillingPeriod MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each [*FOCUS column*](#glossary:FOCUS-column).
+* BillingPeriod MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements for each [*FOCUS column*](#glossary:FOCUS-column).
 * BillingPeriod MUST conform to [NullHandling](#attributes.nullhandling) requirements for each *FOCUS column*.
 * BillingPeriod MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements for each [*custom column*](#glossary:custom-column).
 

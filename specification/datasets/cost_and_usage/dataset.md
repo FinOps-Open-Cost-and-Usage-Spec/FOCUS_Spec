@@ -158,8 +158,8 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
-* CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each [*FOCUS column*](#glossary:FOCUS-column).
-* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements for each *FOCUS column*.
+* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements for each [*FOCUS column*](#glossary:FOCUS-column).
+* CostAndUsage MUST conform to [FocusColumnHandling](#attributes.focuscolumnhandling) requirements for each *FOCUS column*.
 * CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements for each *FOCUS column*.
 * CostAndUsage MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements for each [*custom column*](#glossary:custom-column).
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
