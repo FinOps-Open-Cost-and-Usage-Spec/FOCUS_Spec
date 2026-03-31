@@ -145,6 +145,10 @@ In addition to these standardized columns, [data generators](#metadata.datagener
 
 The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness. See also: [*Native Dataset*](#glossary:native-dataset).
 
+<a name="glossary:FOCUS-dataset-column"><b>FOCUS Dataset Column</b></a>
+
+A column included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). A FOCUS dataset column is either a [*FOCUS column*](#glossary:FOCUS-column) or a [*custom column*](#glossary:custom-column).
+
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
 A Date/Time Format value that is contained within the beginning bound of a time period.
