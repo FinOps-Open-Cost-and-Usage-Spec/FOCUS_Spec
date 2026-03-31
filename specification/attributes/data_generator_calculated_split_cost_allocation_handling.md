@@ -18,14 +18,9 @@ An attribute that allows data generators to offer more detailed cost and usage i
 
 When the data generator supports data generator-calculated split cost allocation, column conforming to DataGeneratorCalculatedSplitCostAllocationHandling attribute MUST adhere to the following requirements:
 
-* [*FOCUS column*](#glossary:FOCUS-column) MUST adhere to the following requirements:
-  * *FOCUS column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS column* represents a non-summable [*metric*](#glossary:metric) (e.g., unit prices).
-  * *FOCUS column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS column* represents a dimension.
-  * The sum of *FOCUS column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS column* represents a summable *metric* (e.g., costs and quantities).
-* [*Custom column*](#glossary:custom-column) MUST adhere to the following requirements:
-  * *Custom column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *custom column* represents a non-summable *metric* (e.g., unit prices).
-  * *Custom column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *custom column* represents a dimension.
-  * The sum of *custom column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *custom column* represents a summable *metric* (e.g., costs and quantities).
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset column* represents a dimension.
+* *FOCUS dataset column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset column* represents a non-summable [*metric*](#glossary:metric) (e.g., unit prices).
+* The sum of *FOCUS dataset column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset column* represents a summable *metric* (e.g., costs and quantities).
 
 ## Introduced (version)
 
