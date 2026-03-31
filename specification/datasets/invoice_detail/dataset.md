@@ -73,8 +73,9 @@ InvoiceDetail MUST adhere to the following requirements:
 * InvoiceDetail MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
 * InvoiceDetail MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
 * InvoiceDetail MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
-* InvoiceDetail MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each column.
-* InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
+* InvoiceDetail MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each [*FOCUS column*](#glossary:FOCUS-column).
+* InvoiceDetail MUST conform to [NullHandling](#attributes.nullhandling) requirements for each *FOCUS column*.
+* InvoiceDetail MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements for each [*custom column*](#glossary:custom-column).
 * InvoiceDetail MUST represent all invoice line items with a non-zero [BilledCost](#datasets.invoicedetail.billedcost) on any invoice associated with a [BillingAccountId](#datasets.invoicedetail.billingaccountid).
 * InvoiceDetail documentation MUST adhere to the following requirements:
   * InvoiceDetail documentation MUST specify how InvoiceDetail records correspond to invoice line items.
