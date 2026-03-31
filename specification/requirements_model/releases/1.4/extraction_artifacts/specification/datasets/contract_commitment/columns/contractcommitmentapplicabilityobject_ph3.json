@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-ContractCommitmentApplicabilityObject-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ContractCommitmentApplicabilityObject",
       "EntityType": "Object",
       "EntityName": "Contract Commitment Applicability Object",

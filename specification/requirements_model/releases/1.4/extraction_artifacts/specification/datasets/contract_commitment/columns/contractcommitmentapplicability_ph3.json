@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-ContractCommitmentApplicability-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ContractCommitmentApplicability",
       "EntityType": "Column",
       "EntityName": "Contract Commitment Applicability",
