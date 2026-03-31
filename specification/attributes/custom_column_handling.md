@@ -41,6 +41,7 @@ Column conforming to CustomColumnHandling attribute MUST adhere to the following
   * *Custom column* SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
   * *Custom column* SHOULD include the `Id` suffix in the Column ID when the *custom column* represents an identifier.
   * *Custom column* SHOULD include the `Name` suffix in the Column ID when the *custom column* represents a name.
+* *Custom column* MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.
 * *Custom column* SHOULD conform to [NullHandling](#attributes.nullhandling) requirements.
 * *Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.
 * *Custom column* containing JSON objects MUST have its object schema documented by the data generator and accessible to practitioners.
