@@ -171,9 +171,9 @@ A document that summarizes the charges for resources or services consumed by a c
 
 <a name="glossary:invoice-reconciliation"><b>Invoice Reconciliation</b></a>
 
-The process of ensuring that detailed cost and usage data is accurate, complete, and matches across all relevant sources, typically involving the reconciliation of raw usage or cost records against invoiced amounts.
+The process of verifying that the costs, quantities, and applied adjustments on an [*invoice*](#glossary:invoice) match the underlying usage records and contracted rates for a specific [*billing period*](#glossary:billing-period).
 
-In the context of FOCUS, this process involves ensuring consistency between the [*invoice*](#glossary:invoice), the Invoice Detail [*FOCUS dataset*](#glossary:FOCUS-dataset), and the Cost and Usage *FOCUS dataset*, specifically, that aggregated data across all three sources is aligned.
+In the context of FOCUS, this process ensures consistency by reconciling cost and usage data across the invoice, the [Invoice Detail](#datasets.invoicedetail) dataset, and the [Cost and Usage](#datasets.costandusage) dataset to identify and resolve any discrepancies.
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
