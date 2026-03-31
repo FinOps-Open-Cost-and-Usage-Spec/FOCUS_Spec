@@ -30,7 +30,7 @@ The table below outlines the fictitious *data generators* used throughout the ap
 | **CrestNode** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
 | **LatticeScale** | Cloud Service Provider | A cloud provider heavily optimized for machine learning, data analytics, and containerized Kubernetes workloads. | Google Cloud Platform (GCP) |
 | **OmniQuery** | Data Platform | A centralized hub for storing, processing, and analyzing massive datasets to drive business intelligence. | Snowflake, Databricks |
-| **MetricBeacon** | SaaS Observability | A monitoring tool that tracks application performance, logs, and system health in real-time to prevent downtime. | Datadog, New Relic |
+| **StackLens** | SaaS Observability | A monitoring tool that tracks application performance, logs, and system health in real-time to prevent downtime. | Datadog, New Relic |
 | **SprintCanvas** | Project Management | A collaborative workspace for planning, assigning, and tracking team tasks and agile workflows. | Jira, Asana, Trello |
 | **StoreStack** | Database as a Service | A fully managed, scalable cloud database solution that handles provisioning, backups, and routine maintenance. | MongoDB Atlas |
 | **CollabChat** | Team Communications | A messaging platform offering organized chat channels, direct messaging, and secure file sharing for remote teams. | Slack |
