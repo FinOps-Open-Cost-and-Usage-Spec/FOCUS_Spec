@@ -1,6 +1,6 @@
 # Commitment Eligibility Details
 
-Commitment Eligibility Details identifies the [*commitment programs*](#glossary:commitment-program) that could potentially [*cover charges*](#glossary:covered-charge), subject to [*service provider*](#glossary:service-provider) constraints. By distinguishing the pool of spend that was eligible to be covered, Commitment Eligibility Details provides the fundamental denominator for calculating precise commitment coverage metrics. This allows FinOps practitioners to accurately size the pool of uncovered spend that could realistically be covered by a future commitment. In this context, *commitment programs* include both discount-bearing constructs (e.g., Savings Plans, committed-use discounts) and advance capacity reservations (e.g., zonal reservations), provided the service provider treats them as [*commitments*](#glossary:commitment).
+Commitment Eligibility Details identifies the [*commitment programs*](#glossary:commitment-program) that could potentially [*cover charges*](#glossary:covered-charge), subject to [*service provider*](#glossary:service provider) constraints. By distinguishing the pool of spend that was eligible to be covered, Commitment Eligibility Details provides the fundamental denominator for calculating precise commitment coverage metrics. This allows FinOps practitioners to accurately size the pool of uncovered spend that could realistically be covered by a future commitment. In this context, *commitment programs* include both discount-bearing constructs (e.g., Savings Plans, committed-use discounts) and advance capacity reservations (e.g., zonal reservations), provided the service provider treats them as [*commitments*](#glossary:commitment).
 
 ## Requirements
 
@@ -31,12 +31,13 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
   * CommitmentEligibilityDetailsObject.CommitmentPrograms MUST be of type Array.
   * CommitmentEligibilityDetailsObject.CommitmentPrograms MUST contain one or more objects.
   * Each entry in CommitmentEligibilityDetailsObject.CommitmentPrograms MUST be of type JSON Object.
-  * CommitmentEligibilityDetailsObject.CommitmentPrograms MUST have a property key "ProgramType".
-  * CommitmentEligibilityDetailsObject.CommitmentPrograms MAY contain additional data generator-defined property keys.
-  * CommitmentEligibilityDetailsObject.CommitmentPrograms MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
+  * Each entry in CommitmentEligibilityDetailsObject.CommitmentPrograms MUST have a property key "ProgramType".
+  * Each entry in CommitmentEligibilityDetailsObject.CommitmentPrograms MAY contain additional data generator-defined property keys.
+  * Each entry in CommitmentEligibilityDetailsObject.CommitmentPrograms MUST have property keys that begin with the string "x\_" unless it is a FOCUS-defined property key.
+
   * CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST be of type String.
   * CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST NOT be null.
-  * CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider (e.g., "SavingsPlan", "ReservedInstance", "CommittedUseDiscount", "CapacityReservation", "ZonalReservation").
+  * CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider (e.g., "Savings Plan", "Reserved Instance", "Committed Use Discount", "Capacity Reservation", "Zonal Reservation").
   * CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentEligibilityDetailsObject.CommitmentPrograms when CommitmentDiscountType is not null.
   * CommitmentEligibilityDetailsObject.CommitmentPrograms.ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.
 
@@ -50,6 +51,7 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 
 | Key         | ValueType                            | Required | Description                                                                                                |
 |:-------------|:-------------|:-------------|:------------------------------|
+| ProgramCategory | [String](#attributes.stringhandling) | True     | Provider-agnostic classification of *commitment program*. |
 | ProgramType | [String](#attributes.stringhandling) | True     | The specific type of commitment program (e.g., discount or capacity reservation) available for this usage. |
 
 ### Object Example
@@ -57,10 +59,10 @@ CommitmentEligibilityDetailsObject MUST adhere to the following requirements:
 ``` json
 {
   "CommitmentPrograms": [
-    { "ProgramType": "SavingsPlan" },
-    { "ProgramType": "ReservedInstance" },
-    { "ProgramType": "CapacityReservation" },
-    { "ProgramType": "ZonalReservation" }
+    { "ProgramType": "Savings Plan" },
+    { "ProgramType": "Reserved Instance" },
+    { "ProgramType": "Capacity Reservation" },
+    { "ProgramType": "Zonal Reservation" }
   ]
 }
 ```
@@ -142,7 +144,7 @@ Commitment Eligibility Details
 
 The types of [*commitment programs*](#glossary:commitment-program) available for a specific usage row.
 
-## Content constraints
+## Content Constraints
 
 | Constraint    | Value                                                                                                                        |
 |:-------------------------------------|:---------------------------------|
