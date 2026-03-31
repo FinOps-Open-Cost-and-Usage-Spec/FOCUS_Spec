@@ -159,14 +159,14 @@ CostAndUsage MUST adhere to the following requirements:
 * CostAndUsage MUST conform to [DiscountHandling](#attributes.discounthandling) requirements.
 * CostAndUsage MUST conform to [InvoiceHandling](#attributes.invoicehandling) requirements.
 * CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements for each column.
-* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements for each column.
+* CostAndUsage MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements for each column when the data generator supports data generator-calculated split cost allocation.
 * CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements for each column.
 * When the data generator supports data generator-calculated split cost allocation, CostAndUsage MUST adhere to the following requirements:
-  * CostAndUsage MUST have its split cost allocation method documented and accessible to practitioners.
-  * CostAndUsage SHOULD offer split cost allocation on an opt-in basis.
-  * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented split cost allocation method.
-  * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented split cost allocation method.
-  * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented split cost allocation method.
+  * CostAndUsage MUST have its data generator-calculated split cost allocation method documented and accessible to practitioners.
+  * CostAndUsage SHOULD offer data generator-calculated split cost allocation on an opt-in basis.
+  * CostAndUsage MAY contain records for concepts not related to resource usage, if it aligns with the documented data generator-calculated split cost allocation method.
+  * CostAndUsage MAY contain records for unused or unallocated usage from the *origin charge* as separate *allocated charges*, if it aligns with the documented data generator-calculated split cost allocation method.
+  * CostAndUsage MAY contain *allocated charges* with apportioned costs for unused or unallocated usage, if it aligns with the documented data generator-calculated split cost allocation method.
 
 ## Dataset ID<!--SkipTOC-->
 
