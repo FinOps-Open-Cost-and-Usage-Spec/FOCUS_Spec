@@ -2,34 +2,12 @@
 
 Billing data frequently captures data measured in units related to data size, count, time, and other [*dimensions*](#glossary:dimension). The Unit Format attribute provides a standard for expressing units of measure in columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
-Key concepts used in Unit Format:
-
-* Measurement Unit: a standardized expression that describes how quantities in a FOCUS dataset are denominated (e.g., `GB`, `Seconds`, `GB-Hours`, `10 GB/Hour`, `Units/3 Months`).
-* Base Unit: an atomic unit of measurement that serves as a building block for all measurement units; can be a data size unit, time-based unit, or count-based unit (e.g., `GB`, `Hour`, `Token`).
-* Simple Unit: a measurement unit that contains exactly one base unit, optionally preceded by a unit quantity (e.g., `GB`, `Seconds`, `1000 Tokens`).
-* Compound Unit: a measurement unit that combines two base units using a hyphen (`-`) to express a quantity sustained over a period, optionally preceded by a unit quantity (e.g., `GB-Hours`, `MB-Days`).
-* Ratio Unit: a measurement unit that expresses one base unit per another using a slash (`/`), optionally including a denominator quantity (e.g., `GB/Hour`, `Units/3 Months`).
-* Unit Quantity: a positive integer included in a measurement unit, indicating the granularity of measurement (e.g., `1000` in `1000 Tokens`).
-* Denominator Quantity: a positive integer included in the denominator of a ratio unit, indicating the granularity of the denominator (e.g., `3` in `Units/3 Months`).
-
-## Attribute ID
-
-UnitFormat
-
-## Attribute Name
-
-Unit Format
-
-## Description
-
-Indicates standards for expressing measurement units in columns appearing in a *FOCUS dataset*.
-
 ## Requirements
 
 Column conforming to UnitFormat attribute MUST adhere to the following requirements:
 
-* When FOCUS column represents a measurement unit, the FOCUS column MUST adhere to the following requirements:
-  * FOCUS column MUST adhere to the following base unit requirements:
+* When FOCUS column represents a [measurement unit](#attributes.definitions.measurementunit), the FOCUS column MUST adhere to the following requirements:
+  * FOCUS column MUST adhere to the following [base unit](#attributes.definitions.baseunit) requirements:
     * FOCUS column MUST include at least one base unit.
     * FOCUS column MUST use one of the allowed data size unit abbreviations listed below for data size base units.
     * FOCUS column MUST use the allowed data size unit abbreviations in the same form for both singular and plural units.
@@ -39,14 +17,14 @@ Column conforming to UnitFormat attribute MUST adhere to the following requireme
     * FOCUS column SHOULD use one of the recommended count-based unit names listed below for count-based base units.
     * FOCUS column MAY include a count-based base unit that is not listed as one of the allowed values.
     * FOCUS column SHOULD use capitalized nouns for base units that do not correspond to any of the allowed base unit names listed below.
-  * FOCUS column MUST use a hyphen ("-") to separate base units when expressing a compound unit (e.g., "GB-Hours").
-  * FOCUS column MUST use a slash ("/") to separate the numerator and denominator when expressing a ratio unit (e.g., "GB/Hour" to signify gigabytes per hour).
-  * FOCUS column SHOULD use the `<plural-units>` format when expressing a simple unit (e.g., "GB", "Seconds").
-  * FOCUS column SHOULD use the `<singular-unit>-<plural-time-units>` format when expressing a compound unit (e.g., "GB-Hours", "MB-Days").
+  * FOCUS column MUST use a hyphen ("-") to separate base units when expressing a [compound unit](#attributes.definitions.compoundunit) (e.g., "GB-Hours").
+  * FOCUS column MUST use a slash ("/") to separate the numerator and denominator when expressing a [ratio unit](#attributes.definitions.ratiounit) (e.g., "GB/Hour" to signify gigabytes per hour).
+  * FOCUS column SHOULD use the `<plural-units>` format when expressing a [simple unit](#attributes.definitions.simpleunit) (e.g., "GB", "Seconds").
+  * FOCUS column SHOULD use the `<singular-base-unit>-<plural-base-unit>` format when expressing a compound unit (e.g., "GB-Hours", "MB-Days", "Request-Tokens").
   * FOCUS column SHOULD use the `<plural-units>/<singular-time-unit>` format when expressing a ratio unit with a time denominator (e.g., "GB/Hour", "PB/Day").
-  * FOCUS column MAY include a unit quantity expressed as a positive integer.
+  * FOCUS column MAY include a [unit quantity](#attributes.definitions.unitquantity) expressed as a positive integer.
   * FOCUS column SHOULD use the `<unit-quantity> <plural-units>` format when a unit quantity is included (e.g., "1000 Tokens", "1000 Characters").
-  * FOCUS column MAY include a denominator quantity expressed as a positive integer when the FOCUS column represents a ratio unit.
+  * FOCUS column MAY include a [denominator quantity](#attributes.definitions.denominatorquantity) expressed as a positive integer when the FOCUS column represents a ratio unit.
   * FOCUS column SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format when the FOCUS column represents a ratio unit and a denominator quantity is included (e.g., "Units/3 Months").
 * When custom column represents a measurement unit, the custom column MUST adhere to the following requirements:
   * Custom column MUST adhere to the following base unit requirements:
@@ -62,12 +40,44 @@ Column conforming to UnitFormat attribute MUST adhere to the following requireme
   * Custom column SHOULD use a hyphen ("-") to separate base units when expressing a compound unit (e.g., "GB-Hours").
   * Custom column SHOULD use a slash ("/") to separate the numerator and denominator when expressing a ratio unit (e.g., "GB/Hour" to signify gigabytes per hour).
   * Custom column SHOULD use the `<plural-units>` format when expressing a simple unit (e.g., "GB", "Seconds").
-  * Custom column SHOULD use the `<singular-unit>-<plural-time-units>` format when expressing a compound unit (e.g., "GB-Hours", "MB-Days").
+  * Custom column SHOULD use the `<singular-base-unit>-<plural-base-unit>` format when expressing a compound unit (e.g., "GB-Hours", "MB-Days", "Request-Tokens").
   * Custom column SHOULD use the `<plural-units>/<singular-time-unit>` format when expressing a ratio unit with a time denominator (e.g., "GB/Hour", "PB/Day").
   * Custom column MAY include a unit quantity expressed as a positive integer.
   * Custom column SHOULD use the `<unit-quantity> <plural-units>` format when a unit quantity is included (e.g., "1000 Tokens", "1000 Characters").
   * Custom column MAY include a denominator quantity expressed as a positive integer when the custom column represents a ratio unit.
   * Custom column SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format when the custom column represents a ratio unit and a denominator quantity is included (e.g., "Units/3 Months").
+
+## Definitions
+
+The normative requirements above refer to the following definitions.
+
+### Measurement Unit
+
+A standardized expression that describes how quantities in a FOCUS dataset are denominated (e.g., `GB`, `Seconds`, `GB-Hours`, `10 GB/Hour`, `Units/3 Months`).
+
+### Base Unit
+
+An atomic unit that serves as a building block for all [measurement units](#attributes.definitions.measurementunit); can be a data size unit, time-based unit, or count-based unit (e.g., `GB`, `Hour`, `Token`).
+
+### Simple Unit
+
+A [measurement unit](#attributes.definitions.measurementunit) that contains exactly one [base unit](#attributes.definitions.baseunit), optionally preceded by a [unit quantity](#attributes.definitions.unitquantity) (e.g., `GB`, `Seconds`, `1000 Tokens`).
+
+### Compound Unit
+
+A [measurement unit](#attributes.definitions.measurementunit) that combines two [base units](#attributes.definitions.baseunit) using a hyphen (`-`) to express a quantity sustained over a period, optionally preceded by a [unit quantity](#attributes.definitions.unitquantity) (e.g., `GB-Hours`, `MB-Days`).
+
+### Ratio Unit
+
+A [measurement unit](#attributes.definitions.measurementunit) that expresses one [base unit](#attributes.definitions.baseunit) or [compound unit](#attributes.definitions.compoundunit) per another using a slash (`/`), optionally including a [denominator quantity](#attributes.definitions.denominatorquantity) (e.g., `GB/Hour`, `Units/3 Months`, `Core-Hours/Day`).
+
+### Unit Quantity
+
+A positive integer included in a [measurement unit](#attributes.definitions.measurementunit), indicating the granularity (e.g., `1000` in `1000 Tokens`).
+
+### Denominator Quantity
+
+A positive integer included in the denominator of a [ratio unit](#attributes.definitions.ratiounit), indicating the granularity of the denominator (e.g., `3` in `Units/3 Months`).
 
 ## Base Unit Names
 
@@ -86,7 +96,7 @@ The table below lists the valid abbreviations for data size units from a single 
 
 | Data size in bits    | Data size in bytes    |
 | :------------------- | :-------------------- |
-| b (bit) = 10^1       | B (byte = 10^1)       |
+| b (bit) = 10^0       | B (byte = 10^0)       |
 | Kb (kilobit = 10^3)  | KB (kilobyte = 10^3)  |
 | Mb (megabit = 10^6)  | MB (megabyte = 10^6)  |
 | Gb (gigabit = 10^9)  | GB (gigabyte = 10^9)  |
@@ -114,6 +124,8 @@ The table below lists allowed time-based base units.
 | Hour                       | Hours                    |
 | Minute                     | Minutes                  |
 | Second                     | Seconds                  |
+| Millisecond                | Milliseconds             |
+| Microsecond                | Microseconds             |
 
 ### Recommended Count-based Unit Names
 
@@ -133,6 +145,19 @@ The table below lists recommended names for count-based base units.
 | Core                        | Cores                     |
 
 *Note: If a count-based base unit is not covered by the recommended values, a new value may be used as long as it is capitalized.*
+
+## Attribute ID
+
+UnitFormat
+
+## Attribute Name
+
+Unit Format
+
+## Description
+
+Indicates standards for expressing measurement units in columns appearing in a *FOCUS dataset*.
+
 
 ## Introduced (version)
 
