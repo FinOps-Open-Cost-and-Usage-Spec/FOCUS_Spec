@@ -23,8 +23,8 @@ Formatting for currency columns appearing in a [*FOCUS dataset*](#glossary:FOCUS
 
 Column conforming to CurrencyFormat attribute MUST adhere to the following requirements:
 
-* *FOCUS dataset* column MUST conform to [ISO 4217:2015](https://www.iso.org/standard/64758.html) standard.
-* *FOCUS dataset* column MUST use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST conform to [ISO 4217:2015](https://www.iso.org/standard/64758.html) standard.
+* *FOCUS dataset column* MUST use the three-letter alphabetic code defined in ISO 4217:2015 (e.g., USD, EUR).
 
 ## Introduced (version)
 

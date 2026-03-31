@@ -18,9 +18,9 @@ Indicates how to handle columns that don't have a value.
 
 Column conforming to NullHandling attribute MUST adhere to the following requirements:
 
-* *FOCUS dataset* column MUST use `null` for absent values when the *FOCUS dataset* column is defined as nullable.
-* *FOCUS dataset* column MUST NOT contain empty strings or placeholder strings (e.g., `Not Applicable`) for absent values when the *FOCUS dataset* column contains string values.
-* *FOCUS dataset* column MUST NOT contain placeholder numeric values (e.g., `0`) for absent values when the *FOCUS dataset* column contains numeric values.
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST use `null` for absent values when the *FOCUS dataset column* is defined as nullable.
+* *FOCUS dataset column* MUST NOT contain empty strings or placeholder strings (e.g., `Not Applicable`) for absent values when the *FOCUS dataset column* contains string values.
+* *FOCUS dataset column* MUST NOT contain placeholder numeric values (e.g., `0`) for absent values when the *FOCUS dataset column* contains numeric values.
 
 ## Introduced (version)
 

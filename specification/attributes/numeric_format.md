@@ -18,19 +18,19 @@ Rules and formatting requirements for numeric columns appearing in a [*FOCUS dat
 
 Column conforming to NumericFormat attribute MUST adhere to the following requirements:
 
-* *FOCUS dataset* column MUST contain a single numeric value.
-* *FOCUS dataset* column MUST have values of type integer, decimal, or scientific notation.
-* *FOCUS dataset* column MUST contain values that, when not null, conform to one of the allowed Data Types defined in the table below.
-* *FOCUS dataset* column MUST contain values that, when not null, conform to one of the allowed precision levels (and scale, where applicable) defined in the table below.
-* *FOCUS dataset* column MUST NOT use mathematical symbols, functions, or operators, except for a negative sign (-) to indicate a negative value or a negative exponent in scientific notation.
-* *FOCUS dataset* column MUST NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
-* *FOCUS dataset* column MUST NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
-* *FOCUS dataset* column MUST use a negative sign (-) to indicate a negative value.
-* *FOCUS dataset* column MUST NOT include a positive sign (+) for a positive value.
-* When column contains numeric values expressed in scientific notation, *FOCUS dataset* column MUST adhere to the following requirements:
-  * *FOCUS dataset* column MUST use E notation "mEn", where m is a real number and n is an integer exponent.
-  * *FOCUS dataset* column MUST use a negative sign (-) to indicate a negative exponent.
-  * *FOCUS dataset* column MUST NOT include a positive sign (+) for a positive exponent.
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST contain a single numeric value.
+* *FOCUS dataset column* MUST have values of type integer, decimal, or scientific notation.
+* *FOCUS dataset column* MUST contain values that, when not null, conform to one of the allowed Data Types defined in the table below.
+* *FOCUS dataset column* MUST contain values that, when not null, conform to one of the allowed precision levels (and scale, where applicable) defined in the table below.
+* *FOCUS dataset column* MUST NOT use mathematical symbols, functions, or operators, except for a negative sign (-) to indicate a negative value or a negative exponent in scientific notation.
+* *FOCUS dataset column* MUST NOT include additional characters or qualifiers (e.g., currency symbols, units of measure).
+* *FOCUS dataset column* MUST NOT contain commas or punctuation marks, except for a single decimal point when required for a decimal value.
+* *FOCUS dataset column* MUST use a negative sign (-) to indicate a negative value.
+* *FOCUS dataset column* MUST NOT include a positive sign (+) for a positive value.
+* When column contains numeric values expressed in scientific notation, *FOCUS dataset column* MUST adhere to the following requirements:
+  * *FOCUS dataset column* MUST use E notation "mEn", where m is a real number and n is an integer exponent.
+  * *FOCUS dataset column* MUST use a negative sign (-) to indicate a negative exponent.
+  * *FOCUS dataset column* MUST NOT include a positive sign (+) for a positive exponent.
 
 ### Allowed Data Types
 

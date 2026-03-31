@@ -18,9 +18,9 @@ An attribute that allows data generators to offer more detailed cost and usage i
 
 When the data generator supports data generator-calculated split cost allocation, column conforming to DataGeneratorCalculatedSplitCostAllocationHandling attribute MUST adhere to the following requirements:
 
-* [*FOCUS dataset*](#glossary:FOCUS-dataset) column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset* column represents a dimension.
-* *FOCUS dataset* column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset* column represents a non-summable [*metric*](#glossary:metric) (e.g., unit prices).
-* The sum of *FOCUS dataset* column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset* column represents a summable *metric* (e.g., costs and quantities).
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset column* represents a dimension.
+* *FOCUS dataset column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset column* represents a non-summable [*metric*](#glossary:metric) (e.g., unit prices).
+* The sum of *FOCUS dataset column* values in *allocated charges* MUST match the corresponding value in the *origin charge* when the *FOCUS dataset column* represents a summable *metric* (e.g., costs and quantities).
 
 ## Introduced (version)
 

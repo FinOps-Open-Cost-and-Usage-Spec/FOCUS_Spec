@@ -18,15 +18,15 @@ Rules and formatting requirements for columns appearing in a [*FOCUS dataset*](#
 
 Column conforming to JsonObjectFormat attribute MUST adhere to the following requirements:
 
-* *FOCUS dataset* column MUST contain a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
-* *FOCUS dataset* column MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the object.
-* Object in *FOCUS dataset* column SHOULD NOT exceed 3 levels of nesting.
-* Key in Object in *FOCUS dataset* column MUST be unique.
-* Key value in Object in *FOCUS dataset* column MUST be of type number, string, boolean (`true` or `false`), array, object, or `null`.
-* Object in array in *FOCUS dataset* column MUST adhere to the following requirements:
-  * Object in array in *FOCUS dataset* column MUST be of a consistent type.
-  * Object in array in *FOCUS dataset* column MUST NOT be repeated.
-  * Object in array in *FOCUS dataset* column MUST NOT be null.
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST contain a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
+* *FOCUS dataset column* MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the object.
+* Object in *FOCUS dataset column* SHOULD NOT exceed 3 levels of nesting.
+* Key in Object in *FOCUS dataset column* MUST be unique.
+* Key value in Object in *FOCUS dataset column* MUST be of type number, string, boolean (`true` or `false`), array, object, or `null`.
+* Object in array in *FOCUS dataset column* MUST adhere to the following requirements:
+  * Object in array in *FOCUS dataset column* MUST be of a consistent type.
+  * Object in array in *FOCUS dataset column* MUST NOT be repeated.
+  * Object in array in *FOCUS dataset column* MUST NOT be null.
 
 ## Introduced (version)
 
