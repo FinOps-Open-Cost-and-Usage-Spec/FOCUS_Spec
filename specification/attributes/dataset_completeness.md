@@ -32,7 +32,7 @@ This attribute ensures custom columns are fully represented in the *FOCUS datase
 
 *FOCUS dataset* MUST adhere to the following requirements:
 
-* *FOCUS dataset* MUST adhere to the following [*custom column*](#glossary:custom-column) inclusion requirements:
+* *FOCUS dataset* MUST adhere to the following [*custom column*](#glossary:custom-column) presence requirements:
   * *FOCUS dataset* MUST include custom columns (e.g., x_ChargeSubType) needed to support invoice reconciliation when the invoice issuer supports payable invoices, and when FOCUS columns are not sufficient.
   * *FOCUS dataset* MUST include *custom columns* corresponding to [*native dataset*](#glossary:native-dataset) columns, except those explicitly listed as exclusions with justification in publicly-available documentation, provided those excluded columns are unrelated to invoice reconciliation.
   * *FOCUS dataset* SHOULD include custom columns that enable correlation between *FOCUS dataset* records and *native dataset* records (e.g., native [*charge*](#glossary:charge) identifiers), even if they meet the criteria for exclusion.
