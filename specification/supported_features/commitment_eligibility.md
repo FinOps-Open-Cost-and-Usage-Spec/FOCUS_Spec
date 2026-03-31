@@ -12,19 +12,18 @@ The `ProgramType` property follows PascalCase by convention, identifying [*commi
 
 * Must equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
 * Should correspond to terminology disclosed by the [*service provider*](#glossary:service-provider) in public documentation when CommitmentDiscountType is not populated (common for SaaS providers that do not itemize [*commitment discount*](#glossary:commitment-discount) application at the row level).
-* Do not encode [*period*](#glossary:period) length, payment option, or other *commitment* attributes (e.g., use "SavingsPlan" rather than "1YearSavingsPlanNoUpfront"). Where a provider's documented program name inherently includes a period reference (e.g., Datadog's "MonthlyCommitment"), use the provider name as-is.
+* Do not encode [*period*](#glossary:period) length, payment option, or other *commitment* attributes (e.g., use "FlexibleSpendPlan" rather than "1YearFlexibleSpendPlanNoUpfront"). Where a provider's documented program name inherently includes a period reference (e.g., StackLens's "MonthlyPlatformCommitment"), use the provider name as-is.
 
 Illustrative examples of ProgramType values by provider:
 
-| Provider    | Example ProgramType Values                                                | Context                                                    |
-|:------------|:--------------------------------------------------------------------------|:-----------------------------------------------------------|
-| AWS         | SavingsPlan, ReservedInstance                                             | Consistent with CommitmentDiscountType                     |
-| Azure       | SavingsPlan, ReservedInstance                                             | Consistent with CommitmentDiscountType                     |
-| GCP         | ResourceBasedCommittedUseDiscount, ComputeFlexibleCommittedUseDiscount    | Granular per commitment program                            |
-| Datadog     | MonthlyCommitment, AnnualCommitment                                       | Provider terminology; CommitmentDiscountType not populated  |
-| Databricks  | CommittedUseDiscount                                                      | Provider terminology                                       |
-| Snowflake   | CapacityCommitment                                                        | Provider terminology                                       |
-| AWS         | CapacityReservation, ZonalReservation                                     | Capacity-reservation programs                              |
+| Provider     | Example ProgramType Values                                   | Context                                                    |
+|:-------------|:-------------------------------------------------------------|:-----------------------------------------------------------|
+| Aura Web     | FlexibleSpendPlan, ResourceReservation                       | Consistent with CommitmentDiscountType                     |
+| CrestNode    | FlexibleSpendPlan, ResourceReservation                       | Consistent with CommitmentDiscountType                     |
+| LatticeScale | ResourceReservation, FlexibleSpendPlan                       | Granular per commitment program                            |
+| StackLens    | MonthlyPlatformCommitment, AnnualPlatformCommitment           | Provider terminology; CommitmentDiscountType not populated  |
+| OmniQuery    | CapacityCreditPool                                           | Provider terminology                                       |
+| Aura Web     | AdvanceCapacityReservation, ZonalCapacityReservation          | Capacity-reservation programs                              |
 
 ## Directly Dependent Columns
 
@@ -54,7 +53,7 @@ Note: The queries below extract from the `CommitmentPrograms` array, which conta
 
 ### Identify Eligible Uncovered Spend by Program Type (CSP Example)
 
-This query identifies [*charges*](#glossary:charge) that are eligible for [*commitment programs*](#glossary:commitment-program) but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A practitioner running AWS workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., SavingsPlan vs. ReservedInstance) and per [*service*](#glossary:service).
+This query identifies [*charges*](#glossary:charge) that are eligible for [*commitment programs*](#glossary:commitment-program) but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A practitioner running Aura Web workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., FlexibleSpendPlan vs. ResourceReservation) and per [*service*](#glossary:service).
 
 The query filters to "Usage" charges where CommitmentEligibilityDetails is populated (the charge is eligible) and CommitmentDiscountId is null (no *commitment* is applied). It then expands the CommitmentPrograms array to aggregate eligible spend per ProgramType. This query uses BilledCost rather than EffectiveCost because the charges are uncovered (CommitmentDiscountId IS NULL), so BilledCost reflects the actual amount paid and the savings opportunity.
 
@@ -114,7 +113,7 @@ GROUP BY CU.ServiceProviderName
 
 ### Compare Commitment Opportunities Across Providers (Cross-Provider with SaaS)
 
-This query aggregates eligible spend and uncovered eligible spend across all providers, including SaaS platforms. A practitioner managing both CSP and SaaS workloads (e.g., AWS alongside Databricks or Datadog) can identify where uncovered eligible spend is concentrated across [*commitment program*](#glossary:commitment-program) types.
+This query aggregates eligible spend and uncovered eligible spend across all providers, including SaaS platforms. A practitioner managing both CSP and SaaS workloads (e.g., Aura Web alongside OmniQuery or StackLens) can identify where uncovered eligible spend is concentrated across [*commitment program*](#glossary:commitment-program) types.
 
 Note: Some SaaS providers may not populate CommitmentDiscountId even when a [*commitment*](#glossary:commitment) is applied. For those providers, EffectiveCost may not reflect *commitment* pricing, and this query captures total eligible spend rather than distinguishing covered from uncovered. Practitioners should consult provider-specific documentation to determine actual *commitment* utilization.
 
