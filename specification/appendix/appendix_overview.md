@@ -23,7 +23,7 @@ To illustrate how FOCUS normalizes the presentation of data across diverse techn
 
 Disclaimer: *The fictitious data generators referenced in this appendix are intended solely for illustrative purposes to resemble real-world services. They do not reflect, represent, or imply the actual current or future FOCUS implementations, billing schemas, or data formats of any real-world companies or equivalents listed herein.*
 
-The table below outlines the fictitious data generators used throughout the appendix, their primary functions, and their real-world counterparts for context:
+The table below outlines the fictitious *data generators* used throughout the appendix, their primary functions, and their real-world counterparts for context:
 
 | Fictitious Data Generator | Service Offering | Data Generator Description | Similar Real-World Companies |
 | :--- | :--- | :--- | :--- |
