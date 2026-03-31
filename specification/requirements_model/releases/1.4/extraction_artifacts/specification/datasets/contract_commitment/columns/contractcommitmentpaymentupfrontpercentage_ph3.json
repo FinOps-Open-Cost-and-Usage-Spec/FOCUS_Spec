@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-ContractCommitmentPaymentUpfrontPercentage-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ContractCommitmentPaymentUpfrontPercentage",
       "EntityType": "Column",
       "EntityName": "Contract Commitment Payment Upfront Percentage",

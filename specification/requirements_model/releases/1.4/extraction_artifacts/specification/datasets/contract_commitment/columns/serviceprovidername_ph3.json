@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-ServiceProviderName-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ServiceProviderName",
       "EntityType": "Column",
       "EntityName": "Service Provider Name",

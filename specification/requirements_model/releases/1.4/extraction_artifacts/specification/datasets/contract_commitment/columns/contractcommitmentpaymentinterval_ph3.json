@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-ContractCommitmentPaymentInterval-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ContractCommitmentPaymentInterval",
       "EntityType": "Column",
       "EntityName": "Contract Commitment Payment Interval",

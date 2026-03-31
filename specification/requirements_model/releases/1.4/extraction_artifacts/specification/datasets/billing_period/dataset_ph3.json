@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "BIP-BillingPeriod-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BillingPeriod",
       "EntityType": "Dataset",
       "EntityName": "Billing Period",

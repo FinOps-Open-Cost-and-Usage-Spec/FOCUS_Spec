@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-PricingCurrency-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "PricingCurrency",
       "EntityType": "Column",
       "EntityName": "Pricing Currency",

@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CAU-InvoiceDetailId-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceDetailId",
       "EntityType": "Column",
       "EntityName": "Invoice Detail ID",

@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-ContractCommitmentDiscountPercentage-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ContractCommitmentDiscountPercentage",
       "EntityType": "Column",
       "EntityName": "Contract Commitment Discount Percentage",
@@ -153,7 +153,7 @@
       }
     },
     "CCT-ContractCommitmentDiscountPercentage-C-006-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ContractCommitmentDiscountPercentage",
       "EntityType": "Column",
       "EntityName": "Contract Commitment Discount Percentage",

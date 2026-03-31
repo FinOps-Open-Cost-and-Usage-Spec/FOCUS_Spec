@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-ContractCommitmentCreated-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ContractCommitmentCreated",
       "EntityType": "Column",
       "EntityName": "Contract Commitment Created",

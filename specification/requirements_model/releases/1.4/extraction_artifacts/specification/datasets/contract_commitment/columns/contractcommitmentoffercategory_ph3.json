@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-ContractCommitmentOfferCategory-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ContractCommitmentOfferCategory",
       "EntityType": "Column",
       "EntityName": "Contract Commitment Offer Category",

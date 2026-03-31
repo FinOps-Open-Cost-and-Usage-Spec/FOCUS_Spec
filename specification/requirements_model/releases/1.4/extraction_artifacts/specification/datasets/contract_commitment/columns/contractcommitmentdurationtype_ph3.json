@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-ContractCommitmentDurationType-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "ContractCommitmentDurationType",
       "EntityType": "Column",
       "EntityName": "Contract Commitment Duration Type",
