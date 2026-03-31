@@ -238,7 +238,7 @@ Key observations:
 
 ## Flat-Rate SaaS Licensing: Fixed Monthly Subscription
 
-A project management and team communication [*service provider*](#glossary:service%20provider), CollabChat, offers a single flat-rate subscription. All features and unlimited users are included for a fixed monthly fee with no per-user pricing.
+A team communications [*service provider*](#glossary:service%20provider), CollabChat, offers a single flat-rate subscription. All features and unlimited users are included for a fixed monthly fee with no per-user pricing.
 
 The *service provider*'s pricing for this example:
 
