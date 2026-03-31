@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-InvoiceDetailLastUpdated-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceDetailLastUpdated",
       "EntityType": "Column",
       "EntityName": "Invoice Detail Last Updated",

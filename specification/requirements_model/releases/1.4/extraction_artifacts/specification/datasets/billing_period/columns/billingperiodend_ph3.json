@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "BIP-BillingPeriodEnd-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BillingPeriodEnd",
       "EntityType": "Column",
       "EntityName": "Billing Period End",
