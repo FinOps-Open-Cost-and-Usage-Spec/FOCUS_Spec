@@ -6,9 +6,9 @@ The examples that follow are sectioned by [Billing Period Status](#datasets.bill
 
 | Billing Period Status | Billing Period Category | Description |
 | :--- | :--- | :--- |
-| Open | Current Open | [Examples](#appendix.examples:correctionhandling-costandusagedataset.correctionstoopenbillingperiod.currentopen-periodcorrectionscenarios) of corrections to the current, open billing period. |
-| Open | Previous Open | [Examples](#appendix.examples:correctionhandling-costandusagedataset.correctionstoopenbillingperiod.previousopen-periodcorrectionscenarios) of corrections to a previous billing period that has not yet been closed. |
-| Closed | Closed | [Examples](#appendix.examples:correctionhandling-costandusagedataset.correctionstoclosedbillingperiod) of corrections to a closed billing period. |
+| Open | Current Open | [Examples](#appendix.examples:correctionhandling.correctionstoopenbillingperiod.currentopen-periodcorrectionscenarios) of corrections to the current, open billing period. |
+| Open | Previous Open | [Examples](#appendix.examples:correctionhandling.correctionstoopenbillingperiod.previousopen-periodcorrectionscenarios) of corrections to a previous billing period that has not yet been closed. |
+| Closed | Closed | [Examples](#appendix.examples:correctionhandling.correctionstoclosedbillingperiod) of corrections to a closed billing period. |
 
 Within each of the sections above, the following four correction scenarios are demonstrated:
 
