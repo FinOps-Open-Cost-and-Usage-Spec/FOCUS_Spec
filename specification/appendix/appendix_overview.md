@@ -24,7 +24,7 @@ Disclaimer: *The fictitious data generators referenced in this appendix are inte
 
 The table below outlines the fictitious *data generators* used throughout the appendix, their primary functions, and their real-world counterparts for context:
 
-| Fictitious Data Generator | Service Offering | Data Generator Description | Similar Real-World Companies |
+| Fictitious Data Generator | Service Offering | Fictitious Data Generator Description | Similar Real-World Companies |
 | :--- | :--- | :--- | :--- |
 | **Aura Web** | Cloud Service Provider | A highly scalable, market-leading cloud infrastructure provider offering extensive compute, storage, and serverless options. | Amazon Web Services (AWS) |
 | **CrestNode** | Cloud Service Provider | An enterprise-focused cloud platform with deep integrations into existing corporate software ecosystems and directory services. | Microsoft Azure |
@@ -53,7 +53,7 @@ To contextualize the billing and cost allocation examples, this appendix utilize
 
 To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers.
 
-| Fictitious Commitment Program | Category | Commitment Program Description | Similar Real-World Programs |
+| Fictitious Commitment Program | Category | Fictitious Commitment Program Description | Similar Real-World Programs |
 | :--- | :--- | :--- | :--- |
 | **Resource Reservations (RRs)** | Usage | An upfront commitment to use a specific resource type, family, and region for a set term (e.g., 1 or 3 years) in exchange for a significantly reduced hourly rate. | Reserved Instances (AWS/Azure), Resource-based CUDs (GCP) |
 | **Flexible Spend Plans (FSPs)** | Spend | A commitment to spend a specific monetary amount per hour across a broad category of compute or service offerings, providing high flexibility as workloads shift. | Savings Plans (AWS) |
