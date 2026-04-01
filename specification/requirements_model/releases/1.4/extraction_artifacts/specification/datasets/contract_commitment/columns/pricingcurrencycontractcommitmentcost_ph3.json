@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "CCT-PricingCurrencyContractCommitmentCost-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "PricingCurrencyContractCommitmentCost",
       "EntityType": "Column",
       "EntityName": "Pricing Currency Contract Commitment Cost",

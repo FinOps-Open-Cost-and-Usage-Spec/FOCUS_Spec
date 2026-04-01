@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "ATT-DatasetConfiguration-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "DatasetConfiguration",
       "EntityType": "Attribute",
       "EntityName": "Dataset Configuration",

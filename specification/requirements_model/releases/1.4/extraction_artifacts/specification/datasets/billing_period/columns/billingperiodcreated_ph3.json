@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "BIP-BillingPeriodCreated-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "BillingPeriodCreated",
       "EntityType": "Column",
       "EntityName": "Billing Period Created",

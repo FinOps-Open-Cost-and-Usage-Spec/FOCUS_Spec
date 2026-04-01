@@ -1,7 +1,7 @@
 {
   "ModelRules": {
     "IND-InvoiceDetailDescription-C-000-M": {
-      "Function": "Validation",
+      "Function": "Composite",
       "Reference": "InvoiceDetailDescription",
       "EntityType": "Column",
       "EntityName": "Invoice Detail Description",

@@ -1,0 +1,264 @@
+{
+  "phase": 2,
+  "source": {
+    "path": "specification/datasets/contract_commitment/columns/contractcommitmentdurationtype.md",
+    "version": "1.4"
+  },
+  "entity": {
+    "entity_type": "Column",
+    "entity_id": "ContractCommitmentDurationType",
+    "entity_name": "Contract Commitment Duration Type"
+  },
+  "requirements_scope": {
+    "section_names_allowed": [
+      "Requirements",
+      "Column Requirements",
+      "Object Requirements",
+      "Dataset Requirements",
+      "Attribute Requirements"
+    ],
+    "atoms_in_scope_count": 8
+  },
+  "0_outline_root": "ROOT: Contract Commitment Duration Type > Requirements",
+  "0_outline_lines": [
+    "L016: \"ContractCommitmentDurationType MUST adhere to the following requirements:\"",
+    "  L018: \"ContractCommitmentDurationType MUST be of type String.\"",
+    "  L019: \"ContractCommitmentDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.\"",
+    "  L020: \"ContractCommitmentDurationType MUST NOT be null.\"",
+    "  L021: \"ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., \\\"1 Day\\\", \\\"1 Year\\\", \\\"3 Months\\\", \\\"3 Years\\\").\"",
+    "  L022: \"ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.\"",
+    "  L023: \"ContractCommitmentDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., \\\"1 Year\\\", \\\"3 Years\\\") rather than a precise calculation of days or hours.\"",
+    "  L024: \"ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of \\\"3 Years\\\").\""
+  ],
+  "0_outline_summary": {
+    "node_count": 8,
+    "leaf_count": 7,
+    "lead_in_count": 1,
+    "max_depth": 1,
+    "max_indent_level": 0,
+    "root_children_count": 1,
+    "keyword_distribution": {
+      "MUST": 3,
+      "MUST NOT": 1,
+      "SHOULD": 3,
+      "MAY": 1
+    },
+    "lead_ins": [
+      {
+        "ref": "L016",
+        "text_preview": "ContractCommitmentDurationType MUST adhere to the following requirements:",
+        "children": 7
+      }
+    ]
+  },
+  "structure": {
+    "root": {
+      "node_id": "R000",
+      "kind": "root",
+      "children": [
+        {
+          "node_id": "R001",
+          "kind": "atom",
+          "atom": {
+            "temp_id": "R001",
+            "order": 1,
+            "ref": "L016",
+            "text": "ContractCommitmentDurationType MUST adhere to the following requirements:",
+            "keyword": "MUST",
+            "section_path": [
+              "Contract Commitment Duration Type",
+              "Requirements"
+            ],
+            "block": {
+              "block_type": "paragraph",
+              "indent_level": 0,
+              "bullet": null
+            },
+            "lead_in": {
+              "ends_with_colon": true
+            }
+          },
+          "children": [
+            {
+              "node_id": "R002",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R002",
+                "order": 2,
+                "ref": "L018",
+                "text": "ContractCommitmentDurationType MUST be of type String.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Duration Type",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R003",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R003",
+                "order": 3,
+                "ref": "L019",
+                "text": "ContractCommitmentDurationType MUST conform to [StringHandling](#attributes.stringhandling) requirements.",
+                "keyword": "MUST",
+                "section_path": [
+                  "Contract Commitment Duration Type",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R004",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R004",
+                "order": 4,
+                "ref": "L020",
+                "text": "ContractCommitmentDurationType MUST NOT be null.",
+                "keyword": "MUST NOT",
+                "section_path": [
+                  "Contract Commitment Duration Type",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R005",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R005",
+                "order": 5,
+                "ref": "L021",
+                "text": "ContractCommitmentDurationType SHOULD be expressed with a quantity and time unit, where quantity is a positive integer, and time-unit is a standardized unit of time, either singular or plural (e.g., \"1 Day\", \"1 Year\", \"3 Months\", \"3 Years\").",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Contract Commitment Duration Type",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R006",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R006",
+                "order": 6,
+                "ref": "L022",
+                "text": "ContractCommitmentDurationType SHOULD present the unit of time as one of the allowed values.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Contract Commitment Duration Type",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R007",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R007",
+                "order": 7,
+                "ref": "L023",
+                "text": "ContractCommitmentDurationType SHOULD correspond to the standard duration of the purchased offering (e.g., \"1 Year\", \"3 Years\") rather than a precise calculation of days or hours.",
+                "keyword": "SHOULD",
+                "section_path": [
+                  "Contract Commitment Duration Type",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            },
+            {
+              "node_id": "R008",
+              "kind": "atom",
+              "atom": {
+                "temp_id": "R008",
+                "order": 8,
+                "ref": "L024",
+                "text": "ContractCommitmentDurationType MAY differ from the actual duration calculated between [ContractCommitmentPeriodStart](#datasets.contractcommitment.contractcommitmentperiodstart) and [ContractCommitmentPeriodEnd](#datasets.contractcommitment.contractcommitmentperiodend) (e.g., if a 3-year commitment is exchanged in its final month, the resulting record may have a short lifespan but retains a value of \"3 Years\").",
+                "keyword": "MAY",
+                "section_path": [
+                  "Contract Commitment Duration Type",
+                  "Requirements"
+                ],
+                "block": {
+                  "block_type": "list_item",
+                  "indent_level": 0,
+                  "bullet": "*"
+                },
+                "lead_in": {
+                  "ends_with_colon": false
+                }
+              },
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "debug": {
+    "ruleset": "ph2_tree_v1",
+    "parenting_signals": [
+      "section_path_boundary",
+      "lead_in_colon",
+      "indent_level"
+    ],
+    "warnings": []
+  }
+}
