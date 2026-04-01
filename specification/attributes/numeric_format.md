@@ -2,18 +2,6 @@
 
 Columns that provide numeric values conforming to specified rules and formatting requirements ensure clarity, accuracy, and ease of interpretation for humans and systems. The FOCUS specification does not require a specific level of precision for numeric values. The level of precision required for a given column is determined by the provider and should be part of a data definition published by the provider.
 
-## Attribute ID
-
-NumericFormat
-
-## Attribute Name
-
-Numeric Format
-
-## Description
-
-Rules and formatting requirements for numeric columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-
 ## Requirements
 
 Column conforming to NumericFormat attribute MUST adhere to the following requirements:
@@ -75,9 +63,17 @@ This format requires that single numeric values be represented using an integer 
   * 3,432,342 - contains a comma
   * +333 - contains a positive sign
 
-## Exceptions
+## Attribute ID
 
-None
+NumericFormat
+
+## Attribute Name
+
+Numeric Format
+
+## Description
+
+Rules and formatting requirements for numeric columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Introduced (version)
 

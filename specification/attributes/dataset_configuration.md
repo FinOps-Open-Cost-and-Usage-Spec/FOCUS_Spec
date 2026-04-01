@@ -9,18 +9,6 @@ Common scenarios where dataset configuration is valuable include:
 * **Lowering Barriers**: Strip away technical complexity for spreadsheet users
 * **Enabling Comparison**: Remove custom (`x_`) columns for standardized cross-provider reporting
 
-## Attribute ID
-
-DatasetConfiguration
-
-## Attribute Name
-
-Dataset Configuration
-
-## Description
-
-Defines configuration options for controlling the structure and content of a FOCUS dataset.
-
 ## Requirements
 
 Dataset conforming to DatasetConfiguration attribute MUST adhere to the following requirements:
@@ -41,6 +29,18 @@ A practitioner configures their FOCUS Cost and Usage dataset to include only the
 * Tags
 
 Even though columns like `CommitmentDiscountId` and `ResourceId` are excluded, the included cost columns (`BilledCost`, `EffectiveCost`) still reflect commitment discounts correctly. The dataset remains conformant to the FOCUS specification because each included column follows all requirements for that column, including requirements that reference columns not in the dataset.
+
+## Attribute ID
+
+DatasetConfiguration
+
+## Attribute Name
+
+Dataset Configuration
+
+## Description
+
+Defines configuration options for controlling the structure and content of a FOCUS dataset.
 
 ## Introduced (version)
 

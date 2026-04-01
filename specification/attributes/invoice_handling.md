@@ -4,18 +4,6 @@ FinOps practitioners must be able to reconcile FOCUS datasets with the correspon
 
 This attribute introduces requirements for how charges such as usage, taxes, credits, refunds, etc, inclusive of support, training, and marketplace transactions, and any other type of charge should be captured and categorized. It also defines expectations around the completeness and consistency of invoice-level totals within the dataset, enabling FOCUS datasets to be used in a system of record for all invoiced costs.
 
-## Attribute ID
-
-InvoiceHandling
-
-## Attribute Name
-
-Invoice Handling
-
-## Description
-
-Indicates how invoice-level *charges*, including those not directly tied to usage, should be represented in a FOCUS dataset.
-
 ## Requirements
 
 * All costs that appear on any invoice issued to a [*BillingAccountId*](#datasets.costandusage.billingaccountid) MUST be included in the *FOCUS dataset*.
@@ -27,6 +15,18 @@ Indicates how invoice-level *charges*, including those not directly tied to usag
   * Tax exemption notifications
   * SLA credit details when the credit is already applied to the charged amount
 * If such informational items are excluded, data generators MUST document this in their FOCUS implementation guide and ensure the sum of included charges still equals the invoice total.
+
+## Attribute ID
+
+InvoiceHandling
+
+## Attribute Name
+
+Invoice Handling
+
+## Description
+
+Indicates how invoice-level *charges*, including those not directly tied to usage, should be represented in a FOCUS dataset.
 
 ## Introduced (version)
 

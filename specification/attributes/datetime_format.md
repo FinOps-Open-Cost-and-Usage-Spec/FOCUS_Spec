@@ -2,18 +2,6 @@
 
 Columns that provide date and time information conforming to specified rules and formatting requirements ensure clarity, accuracy, and ease of interpretation for both humans and systems.
 
-## Attribute ID
-
-DateTimeFormat
-
-## Attribute Name
-
-Date/Time Format
-
-## Description
-
-Rules and formatting requirements for date/time-related columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-
 ## Requirements
 
 Column conforming to DateTimeFormat attribute MUST adhere to the following requirements:
@@ -25,6 +13,18 @@ Column conforming to DateTimeFormat attribute MUST adhere to the following requi
   * *FOCUS dataset column* MUST include both the date and time components, separated with the letter `T`.
   * *FOCUS dataset column* MUST use two-digit hours (`HH`), minutes (`mm`), and seconds (`ss`).
   * *FOCUS dataset column* MUST end with the ISO 8601 UTC designator `Z`.
+
+## Attribute ID
+
+DateTimeFormat
+
+## Attribute Name
+
+Date/Time Format
+
+## Description
+
+Rules and formatting requirements for date/time-related columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Introduced (version)
 

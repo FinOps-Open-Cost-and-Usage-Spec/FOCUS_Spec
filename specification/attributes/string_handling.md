@@ -2,18 +2,6 @@
 
 Columns that capture string values conforming to specified requirements foster data integrity, interoperability, and consistency, improve data analysis and reporting, and support reliable data-driven decision-making.
 
-## Attribute ID
-
-StringHandling
-
-## Attribute Name
-
-String Handling
-
-## Description
-
-Requirements for string-capturing columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
-
 ## Requirements
 
 Column conforming to StringHandling attribute MUST adhere to the following requirements:
@@ -29,6 +17,18 @@ Column conforming to StringHandling attribute MUST adhere to the following requi
 * When column contains not-nullable string values, *FOCUS dataset column* MUST adhere to the following requirements:
   * *FOCUS dataset column* SHOULD NOT contain empty strings.
   * *FOCUS dataset column* SHOULD NOT contain strings consisting solely of whitespace characters.
+
+## Attribute ID
+
+StringHandling
+
+## Attribute Name
+
+String Handling
+
+## Description
+
+Requirements for string-capturing columns appearing in a [*FOCUS dataset*](#glossary:FOCUS-dataset).
 
 ## Introduced (version)
 

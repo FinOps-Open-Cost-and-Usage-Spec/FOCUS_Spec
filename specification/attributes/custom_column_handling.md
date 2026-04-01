@@ -15,18 +15,6 @@ Each column describes an aspect of the record, including but not limited to:
 
 These additional columns enable deeper analysis and provide more detailed information that may not be fully captured by standard [*FOCUS columns*](#glossary:FOCUS-column). See the [Dataset Completeness](#attributes.datasetcompleteness) attribute for requirements on what *custom columns* to include.
 
-## Attribute ID
-
-CustomColumnHandling
-
-## Attribute Name
-
-Custom Column Handling
-
-## Description
-
-Column ID naming, formatting, and value requirements for *custom columns* appearing in a *FOCUS dataset*.
-
 ## Requirements
 
 Column conforming to CustomColumnHandling attribute MUST adhere to the following requirements:
@@ -50,6 +38,18 @@ Column conforming to CustomColumnHandling attribute MUST adhere to the following
 * *Custom column* containing string values SHOULD conform to [StringHandling](#attributes.stringhandling) requirements.
 * *Custom column* representing a national currency SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.
 * *Custom column* representing a measurement unit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
+
+## Attribute ID
+
+CustomColumnHandling
+
+## Attribute Name
+
+Custom Column Handling
+
+## Description
+
+Column ID naming, formatting, and value requirements for *custom columns* appearing in a *FOCUS dataset*.
 
 ## Introduced (version)
 
