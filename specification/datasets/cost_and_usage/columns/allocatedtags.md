@@ -19,7 +19,7 @@ AllocatedTags MUST adhere to the following requirements:
   * Data generator-defined tag keys MUST be prefixed with a predetermined, data generator-specified tag key prefix that is unique to each corresponding provider-specified [*tag scheme*](#glossary:tag-scheme).
   * Data generator SHOULD publish all data generator-specified tag key prefixes within their respective documentation.
 * User-defined tags MUST adhere to the following requirements:
-  * Data generator MUST prefix all user-defined tag schemes with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
+  * Data generator MUST prefix all user-defined *tag schemes* with a predetermined, data generator-specified tag key prefix that is unique to each corresponding user-defined *tag scheme* when the data generator has more than one user-defined *tag scheme*.
 
 ## Data Generator-Defined vs. User-Defined Tags
 
