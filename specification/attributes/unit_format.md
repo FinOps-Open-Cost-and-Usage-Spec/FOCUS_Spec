@@ -45,7 +45,7 @@ A [measurement unit](#attributes.definitions.measurementunit) that contains exac
 
 ### Compound Unit
 
-A [measurement unit](#attributes.definitions.measurementunit) that combines two [base units](#attributes.definitions.baseunit) using a hyphen (`-`) to express a quantity sustained over a period, optionally preceded by a [unit quantity](#attributes.definitions.unitquantity) (e.g., `GB-Hours`, `MB-Days`).
+A [measurement unit](#attributes.definitions.measurementunit) that combines two [base units](#attributes.definitions.baseunit) using a hyphen (`-`), optionally preceded by a [unit quantity](#attributes.definitions.unitquantity) (e.g., `GB-Hours`, `MB-Days`, `Request-Tokens`).
 
 ### Ratio Unit
 
