@@ -49,12 +49,16 @@ To contextualize the billing and cost allocation examples, this appendix utilize
 | **AeroScale** | Cloud-Native Startup | A fast-growing tech startup operating entirely in the cloud. They heavily utilize serverless architectures, managed databases, and agile deployment pipelines. |
 | **GearPeak Outdoors** | Mid-Market Retailer | An outdoor apparel and equipment brand with massive seasonal traffic spikes. They leverage auto-scaling infrastructure for their e-commerce storefront and a heavy mix of SaaS for supply chain and CRM. |
 
-## Fictitious Commitment Discount Reference
+## Fictitious Commitment Program Reference
 
-To illustrate discount application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common discount mechanisms used by major cloud providers.
+To illustrate commitment program application and amortization without relying on vendor-specific terminology, the examples in this appendix use standardized fictitious commitment instruments. These constructs abstract the common commitment mechanisms used by major cloud and SaaS providers.
 
-| Fictitious Commitment Discount | CD Category | Commitment Discount Description | Similar Real-World CDs |
+| Fictitious Commitment Program | Category | Commitment Program Description | Similar Real-World Programs |
 | :--- | :--- | :--- | :--- |
 | **Resource Reservations (RRs)** | Usage | An upfront commitment to use a specific resource type, family, and region for a set term (e.g., 1 or 3 years) in exchange for a significantly reduced hourly rate. | Reserved Instances (AWS/Azure), Resource-based CUDs (GCP) |
-| **Flexible Spend Plans (FSPs)** | Spend | A commitment to spend a specific monetary amount per hour across a broader category of compute or service offerings, providing high flexibility as workloads shift. | Savings Plans (AWS), Flexible CUDs (GCP) |
-| **Tiered Usage Agreements (TUAs)** | Spend | An agreement that applies automatic, tiered discounts as aggregate usage or spending crosses predefined thresholds within a billing period. | Tiered Pricing, Enterprise Discount Programs (EDPs) |
+| **Flexible Spend Plans (FSPs)** | Spend | A commitment to spend a specific monetary amount per hour across a broad category of compute or service offerings, providing high flexibility as workloads shift. | Savings Plans (AWS) |
+| **Dynamic Compute Commitments (DCCs)** | Spend | A spend-based commitment covering aggregate compute resources (such as vCPU and memory) across multiple regions and machine families, converting the hourly spend into a usage discount. | Flexible CUDs (GCP) |
+| **Tiered Usage Agreements (TUAs)** | Spend | An agreement that applies automatic, tiered discounts as aggregate usage or spending crosses predefined thresholds within a billing period. | Tiered Pricing (Various), Enterprise Discount Programs (AWS) |
+| **Interval Spend Commitments (ISCs)** | Spend | A recurring minimum-spend or minimum-usage agreement at fixed intervals (e.g., monthly, annual), common among SaaS observability and infrastructure monitoring providers. Program names inherently include the period reference. | Monthly/Annual Commitments (Datadog) |
+| **Bulk Capacity Credits (BCCs)** | Spend | A pre-purchased pool of platform-specific credits or capacity units, consumed against usage over a contract period. Common among data and analytics platforms. | Capacity Commitments (Snowflake), Committed Use Discounts (Databricks) |
+| **Advance Resource Commitments (ARCs)** | Usage | An advance reservation of specific compute capacity in a region or availability zone, guaranteeing resource availability without necessarily providing a unit discount. Distinct from Resource Reservations, which are commitment discounts. | Capacity Reservations (AWS), Zonal Reservations (AWS) |
