@@ -34,7 +34,7 @@ Column conforming to CustomColumnHandling attribute MUST adhere to the following
 * *Custom column* containing date/time values SHOULD conform to [DateTimeFormat](#attributes.datetimeformat) requirements.
 * *Custom column* containing JSON objects MUST have its object schema documented by the data generator and accessible to practitioners.
 * *Custom column* containing numeric values MUST contain a single numeric value.
-* *Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat).
+* *Custom column* containing numeric values SHOULD conform to [NumericFormat](#attributes.numericformat) requirements.
 * *Custom column* containing string values SHOULD conform to [StringHandling](#attributes.stringhandling) requirements.
 * *Custom column* representing a national currency SHOULD conform to [CurrencyFormat](#attributes.currencyformat) requirements.
 * *Custom column* representing a measurement unit SHOULD conform to [UnitFormat](#attributes.unitformat) requirements.
