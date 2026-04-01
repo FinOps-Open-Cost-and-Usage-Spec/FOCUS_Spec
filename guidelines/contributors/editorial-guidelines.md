@@ -191,13 +191,19 @@ These guidelines can be modified through a Pull Request (PR), which the members 
 
 ### Entity References
 
-* **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs) SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. Entity IDs MUST be formatted without spaces and MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
+* **Entity IDs:** Entity IDs (e.g., Column IDs, Attribute IDs, Dataset IDs) SHOULD be used in normative text sections, such as when specifying mandatory rules, schema definitions, or other implementation-related content. 
+
+* **Entity IDs:** MUST be formatted without spaces.
+
+* **Entity IDs:** MUST match the exact naming conventions used in the schema (e.g., CommitmentDiscountId).
 
 * **Display Names:** Display Names SHOULD be used in introductory or explanatory sections where natural language context is more appropriate. These names should follow normal text conventions, including spaces between words (e.g., Commitment Discount ID).
 
-* **Consistent Reference Type:** Normative statements MUST use Entity IDs consistently and MUST NOT mix Entity IDs and Display Names within the same statement.
+* **Consistent Reference Type:** Normative statements MUST use Entity IDs consistently.
 
-* **Multiple Entity References:** When referencing multiple entities in a normative statement, all references MUST use Entity IDs.
+* **Consistent Reference Type:** MUST NOT mix Entity IDs and Display Names within the same statement.
+
+* **Multiple Entity References:** MUST use Entity IDs when referencing multiple entities in a normative statement.
 
 * **Entity Scope:** These rules apply to all entities defined in the FOCUS specification (e.g., Columns, Attributes, Datasets, Objects).
 
