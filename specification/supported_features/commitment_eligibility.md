@@ -2,7 +2,7 @@
 
 ## Description
 
-FOCUS supports the identification of [*charges*](#glossary:charge) in the Cost and Usage dataset that are eligible for [*commitment programs*](#glossary:commitment-program). The [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) column captures which *commitment programs* a charge qualifies for, regardless of whether a [*commitment*](#glossary:commitment) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
+FOCUS supports the identification of [*charges*](#glossary:charge) in the [Cost and Usage](#datasets.costandusage) dataset that are eligible for [*commitment programs*](#glossary:commitment-program). The [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) column captures which *commitment programs* a charge qualifies for, regardless of whether a [*commitment*](#glossary:commitment) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
 
 CommitmentProgramEligibility contains a JSON object with a FOCUS-defined top-level key `CommitmentPrograms` containing an array of objects. Each object has a `ProgramType` property identifying the specific *commitment program*. Both discount-bearing programs (e.g., Savings Plans, committed-use discounts) and capacity-reservation programs (e.g., zonal reservations) are included in the same array, distinguished by their ProgramType value. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibility), providers should also include negotiated *commitment programs* for which usage is eligible. For more information, see the definition of Commitment Program Eligibility [here](#datasets.costandusage.commitmentprogrameligibility).
 
@@ -13,17 +13,6 @@ The `ProgramType` property follows PascalCase by convention, identifying [*commi
 * Must equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
 * Should correspond to terminology disclosed by the [*service provider*](#glossary:service-provider) in public documentation when CommitmentDiscountType is not populated (common for SaaS providers that do not itemize [*commitment discount*](#glossary:commitment-discount) application at the row level).
 * Do not encode [*period*](#glossary:period) length, payment option, or other *commitment* attributes (e.g., use "FlexibleSpendPlan" rather than "1YearFlexibleSpendPlanNoUpfront"). Where a provider's documented program name inherently includes a period reference (e.g., StackLens's "MonthlyPlatformCommitment"), use the provider name as-is.
-
-Illustrative examples of ProgramType values by provider:
-
-| Provider     | Example ProgramType Values                                   | Context                                                    |
-|:-------------|:-------------------------------------------------------------|:-----------------------------------------------------------|
-| Aura Web     | FlexibleSpendPlan, ResourceReservation                       | Consistent with CommitmentDiscountType                     |
-| CrestNode    | FlexibleSpendPlan, ResourceReservation                       | Consistent with CommitmentDiscountType                     |
-| LatticeScale | ResourceReservation, FlexibleSpendPlan                       | Granular per commitment program                            |
-| StackLens    | MonthlyPlatformCommitment, AnnualPlatformCommitment           | Provider terminology; CommitmentDiscountType not populated  |
-| OmniQuery    | CapacityCreditPool                                           | Provider terminology                                       |
-| Aura Web     | AdvanceCapacityReservation, ZonalCapacityReservation          | Capacity-reservation programs                              |
 
 ## Directly Dependent Columns
 
@@ -53,7 +42,7 @@ Note: The queries below extract from the `CommitmentPrograms` array, which conta
 
 ### Identify Eligible Uncovered Spend by Program Type (CSP Example)
 
-This query identifies [*charges*](#glossary:charge) that are eligible for [*commitment programs*](#glossary:commitment-program) but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A practitioner running Aura Web workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., FlexibleSpendPlan vs. ResourceReservation) and per [*service*](#glossary:service).
+This query identifies [*charges*](#glossary:charge) that are eligible for [*commitment programs*](#glossary:commitment-program) but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A practitioner running relevant workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., FlexibleSpendPlan vs. ResourceReservation) and per [*service*](#glossary:service).
 
 The query filters to "Usage" charges where CommitmentProgramEligibility is populated (the charge is eligible) and CommitmentDiscountId is null (no *commitment* is applied). It then expands the CommitmentPrograms array to aggregate eligible spend per ProgramType. This query uses BilledCost rather than EffectiveCost because the charges are uncovered (CommitmentDiscountId IS NULL), so BilledCost reflects the actual amount paid and the savings opportunity.
 
