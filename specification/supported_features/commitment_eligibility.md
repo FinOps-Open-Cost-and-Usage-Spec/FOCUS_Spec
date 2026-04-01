@@ -4,14 +4,14 @@
 
 FOCUS supports the identification of [*charges*](#glossary:charge) in the [Cost and Usage](#datasets.costandusage) dataset that are eligible for [*commitment programs*](#glossary:commitment-program). The [CommitmentProgramEligibility](#datasets.costandusage.commitmentprogrameligibility) column captures which *commitment programs* a charge qualifies for, regardless of whether a [*commitment*](#glossary:commitment) is currently applied. This enables practitioners to calculate eligibility-adjusted commitment coverage rates, identify uncovered savings opportunities, and compare commitment options across providers.
 
-CommitmentProgramEligibility contains a JSON object with a FOCUS-defined top-level key `CommitmentPrograms` containing an array of objects. Each object has a `ProgramType` property identifying the specific *commitment program*. Both discount-bearing programs (e.g., Savings Plans, committed-use discounts) and capacity-reservation programs (e.g., zonal reservations) are included in the same array, distinguished by their ProgramType value. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibility), providers should also include negotiated *commitment programs* for which usage is eligible. For more information, see the definition of Commitment Program Eligibility [here](#datasets.costandusage.commitmentprogrameligibility).
+CommitmentProgramEligibility contains a JSON object with a FOCUS-defined top-level key `CommitmentPrograms` containing an array of objects. Each object has a `ProgramType` property identifying the specific *commitment program*. Both discount-bearing programs (e.g., Flexible Spend Plans, Resource Reservations) and capacity-reservation programs (e.g., Advance Resource Commitments) are included in the same array, distinguished by their ProgramType value. Providers may include additional custom keys (prefixed with `x_`) for other commitment categories. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibility), providers should also include negotiated *commitment programs* for which usage is eligible. For more information, see the definition of Commitment Program Eligibility [here](#datasets.costandusage.commitmentprogrameligibility).
 
 ### Naming Conventions for ProgramType Values
 
 The `ProgramType` property follows PascalCase by convention, identifying [*commitment programs*](#glossary:commitment-program) supported by the provider. Per the [column requirements](#datasets.costandusage.commitmentprogrameligibility), these values:
 
 * Must equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in the CommitmentPrograms array when CommitmentDiscountType is not null.
-* Should correspond to terminology disclosed by the [*service provider*](#glossary:service-provider) in public documentation when CommitmentDiscountType is not populated (common for SaaS providers that do not itemize [*commitment discount*](#glossary:commitment-discount) application at the row level).
+* Should correspond to terminology disclosed by the [*service provider*](#glossary:service-provider) in public documentation. This guidance is especially relevant for SaaS providers that do not itemize [*commitment discount*](#glossary:commitment-discount) application at the row level, where CommitmentDiscountType is typically not populated.
 * Do not encode [*period*](#glossary:period) length, payment option, or other *commitment* attributes (e.g., use "FlexibleSpendPlan" rather than "1YearFlexibleSpendPlanNoUpfront"). Where a provider's documented program name inherently includes a period reference (e.g., StackLens's "MonthlyPlatformCommitment"), use the provider name as-is.
 
 ## Directly Dependent Columns
@@ -28,7 +28,6 @@ The `ProgramType` property follows PascalCase by convention, identifying [*commi
 * CommitmentDiscountStatus
 * CommitmentDiscountType
 * EffectiveCost
-* ServiceCategory
 * ServiceName
 * ServiceProviderName
 
@@ -40,7 +39,7 @@ Because ANSI SQL does not inherently support the parsing of JSON, the following 
 
 Note: The queries below extract from the `CommitmentPrograms` array, which contains all [*commitment program*](#glossary:commitment-program) types (both discount-bearing and capacity-reservation). To target a specific category, filter on ProgramType values. Providers using only custom (`x_`-prefixed) top-level keys would require modified JSON paths.
 
-### Identify Eligible Uncovered Spend by Program Type (CSP Example)
+### Identify Eligible Uncovered Spend by Program Type
 
 This query identifies [*charges*](#glossary:charge) that are eligible for [*commitment programs*](#glossary:commitment-program) but are not currently covered by a [*commitment discount*](#glossary:commitment-discount). A practitioner running relevant workloads can use this to quantify the savings opportunity per *commitment program* type (e.g., FlexibleSpendPlan vs. ResourceReservation) and per [*service*](#glossary:service).
 
@@ -103,7 +102,7 @@ GROUP BY CU.ServiceProviderName
 
 ### Compare Commitment Opportunities Across Providers (Cross-Provider with SaaS)
 
-This query aggregates eligible spend and uncovered eligible spend across all providers, including SaaS platforms. A practitioner managing both CSP and SaaS workloads (e.g., Aura Web alongside OmniQuery or StackLens) can identify where uncovered eligible spend is concentrated across [*commitment program*](#glossary:commitment-program) types.
+This query aggregates eligible spend and uncovered eligible spend across all providers, including SaaS platforms. A practitioner managing both CSP and SaaS workloads can identify where uncovered eligible spend is concentrated across [*commitment program*](#glossary:commitment-program) types.
 
 Note: Some SaaS providers may not populate CommitmentDiscountId even when a [*commitment*](#glossary:commitment) is applied. For those providers, EffectiveCost may not reflect *commitment* pricing, and this query captures total eligible spend rather than distinguishing covered from uncovered. Practitioners should consult provider-specific documentation to determine actual *commitment* utilization.
 
