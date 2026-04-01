@@ -66,7 +66,16 @@ A customer's agreement to either spend a defined monetary amount or consume a sp
 
 <a name="glossary:commitment-discount"><b>Commitment Discount</b></a>
 
-A billing discount model that offers reduced rates on preselected SKUs in exchange for an obligated usage or spend amount over a specified [*period*](#glossary:period).  Commitment discount purchases, made upfront and/or with recurring monthly payments are amortized evenly across predefined charge periods (i.e., hourly), and unused amounts cannot be carried over to subsequent charge periods. Commitment discounts are publicly available to customers without special contract arrangements.
+A publicly available [*contract commitment*](#glossary:contract-commitment) that provides discounted pricing on preselected SKUs in exchange for a commitment to specific spend or usage goals over a specified [*period*](#glossary:period), based on publicly disclosed standard terms and pricing. Committed spend or usage is evenly distributed across predefined [Contract Commitment Fulfillment Intervals](#datasets.contractcommitment.contractcommitmentfulfillmentinterval) (e.g., hourly), and unused benefits cannot be carried over to subsequent Intervals. Only one commitment discount may be applied to a single charge at a time, and it may overlap with one or more [*negotiated discounts*](#glossary:negotiated-discount).
+
+This term has been used in the past by FinOps teams managing Public Cloud to refer to specific *contract commitments* (including Reserved Instances, Savings Plans and Committed Use Discounts) offered by cloud providers, and is defined here to maintain consistency with the terms of that subset of *contract commitments*.
+
+Commitment discounts are classified with the following designations:
+
+* [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory): "Public"
+* [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory): "Discount"
+* [Contract Commitment Model](#datasets.contractcommitment.contractcommitmentmodel): "Continuous"
+* Unused benefits cannot be carried over to subsequent Contract Commitment Fulfillment Intervals
 
 <a name="glossary:commitment-discount-flexibility"><b>Commitment Discount Flexibility</b></a>
 
@@ -91,6 +100,10 @@ A charge to correct cost or usage data in a previously invoiced [*billing period
 <a name="glossary:credit"><b>Credit</b></a>
 
 A financial incentive or allowance granted by a service provider unrelated to other past/current/future charges.
+
+<a name="glossary:custom-column"><b>Custom Column</b></a>
+
+A column not defined by FOCUS and included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). Custom columns are prefixed with `x_` and provide additional context from [*native datasets*](#glossary:native-dataset) beyond what is captured in FOCUS columns. See [Dataset Completeness](#attributes.datasetcompleteness) for inclusion requirements.
 
 <a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
 
@@ -120,13 +133,17 @@ A tag with one tag value chosen from a set of possible tag values after being pr
 
 An open-source specification that defines requirements for billing data.
 
+<a name="glossary:FOCUS-column"><b>FOCUS Column</b></a>
+
+A column defined by FOCUS and included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). See the Columns section of each dataset for definitions.
+
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
 A structured collection of columns that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
 
-In addition to these standardized columns, [data generators](#metadata.datagenerator) may include custom columns (prefixed with `x_`) where additional context is needed beyond what is captured in the defined FOCUS columns. If custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
+In addition to these standardized columns, [data generators](#metadata.datagenerator) include [*custom columns*](#glossary:custom-column) to capture information from [*native datasets*](#glossary:native-dataset) that is not represented by [*FOCUS columns*](#glossary:FOCUS-column). If custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
 
-The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness.
+The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness. See also: [*Native Dataset*](#glossary:native-dataset).
 
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
@@ -156,9 +173,18 @@ A FOCUS-defined column that provides numeric values, allowing for aggregation op
 
 A government-issued currency (e.g., US dollars, Euros).
 
+<a name="glossary:native-dataset"><b>Native Dataset</b></a>
+
+A dataset provided by a [*data generator*](#metadata.datagenerator) in a format other than FOCUS. For [*service providers*](#glossary:service-provider), this typically refers to their proprietary data exports (e.g., billing exports, contract details, or other FinOps-related datasets). For FinOps tool vendors, this refers to any non-FOCUS dataset they offer to [*practitioners*](#glossary:practitioner). See also: [*FOCUS Dataset*](#glossary:FOCUS-dataset).
+
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
-A contractual agreement where a customer commits to specific spend or usage goals over a specified [*period*](#glossary:period) in exchange for discounted rates across varying SKUs.  Unlike [*commitment discounts*](#glossary:commitment-discount), negotiated discounts are typically more customized to customer's accounts, can be utilized at varying frequencies, and may overlap with *commitment discounts*.
+A privately agreed [*contract commitment*](#glossary:contract-commitment) that provides discounted pricing in exchange for a commitment to specific spend or usage goals over a specified [*period*](#glossary:period), with terms and pricing specifically modified from standard. Multiple negotiated discounts may be applied to a single charge at a time, and they may overlap with a [*commitment discount*](#glossary:commitment-discount).
+
+Negotiated discounts are classified with the following designations:
+
+* [Contract Commitment Offer Category](#datasets.contractcommitment.contractcommitmentoffercategory): "Negotiated"
+* [Contract Commitment Benefit Category](#datasets.contractcommitment.contractcommitmentbenefitcategory): "Discount"
 
 <a name="glossary:on-demand"><b>On-Demand</b></a>
 
@@ -230,7 +256,7 @@ A Resource or Service-Provider-defined construct for grouping resources and/or o
 
 <a name="glossary:term"><b>Term</b></a>
 
-An agreement specified on a [*contract*](#glossary:contract).
+An agreement specified on a [*contract*](#glossary:contract) or [*invoice*](#glossary:invoice).
 
 <a name="glossary:virtual-currency"><b>Virtual Currency</b></a>
 

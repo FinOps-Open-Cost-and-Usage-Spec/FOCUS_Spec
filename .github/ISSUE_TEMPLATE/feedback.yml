@@ -1,5 +1,5 @@
 name: "General Feedback"
-description: Suggest minor corrections, clarity improvements, or inconsistencies in the FOCUS Specification.
+description: Report corrections, clarity improvements, or bugs in the FOCUS Specification.
 title: "[Feedback] <Brief description of issue>"
 labels: ["feedback", "needs triage"]
 assignees: ["matt-cowsert"]
@@ -7,9 +7,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        _Use this form to report small corrections or suggestions that improve clarity, accuracy, or consistency._
+        _Use this form to report corrections, clarity improvements, or bugs in the FOCUS Specification._
 
-        ⚠️ **Feature-related suggestions should be submitted via the Feature Request template instead.**
+        **Feature-related suggestions should be submitted via the Feature Request template instead.**
 
   - type: input
     id: organization
@@ -35,12 +35,13 @@ body:
       label: Type of Feedback
       description: Select the option that best describes your suggestion.
       options:
+        - label: Bug — incorrect or contradictory behavior in the current spec
         - label: Typo or grammar
         - label: Clarity improvement
         - label: Field naming or label inconsistency
         - label: Definition or behavior inconsistency
         - label: Minor correction (non-breaking)
-        - label: Other
+        - label: Other (please explain)
 
   - type: input
     id: affected_section
