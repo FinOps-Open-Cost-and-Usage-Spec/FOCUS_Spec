@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Delivery Handling attribute defines how data generator delivers [*FOCUS dataset*](#glossary:FOCUS-dataset) to customer.
+The Delivery Handling attribute defines how a [*data generator*](#metadata.datagenerator) delivers a [*FOCUS dataset*](#glossary:FOCUS-dataset) to a customer.
 
 A [*dataset instance*](#glossary:dataset-instance) represents a specific implementation of a [*FOCUS dataset*](#glossary:FOCUS-dataset). A [*dataset instance artifact*](#glossary:dataset-instance-artifact) is the physical delivery of that instance, representing one or more records, independent of storage or transport boundaries (e.g., files, batches, or responses).
 
