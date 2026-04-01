@@ -1,0 +1,7 @@
+ChargePeriodStart,ChargePeriodEnd,ChargeCategory,PricingCategory,ServiceProviderName,ServiceName,CommitmentDiscountId,CommitmentDiscountCategory,CommitmentDiscountStatus,CommitmentDiscountType,CommitmentProgramEligibility,BilledCost,EffectiveCost
+2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Standard,Aura Web,Compute,,,,,"{""CommitmentPrograms"":[{""ProgramType"":""FlexibleSpendPlan""},{""ProgramType"":""ResourceReservation""}]}",300.0,300.0
+2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Standard,Aura Web,Compute,,,,,"{""CommitmentPrograms"":[{""ProgramType"":""FlexibleSpendPlan""},{""ProgramType"":""ResourceReservation""}]}",200.0,200.0
+2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Committed,Aura Web,Compute,cd-rr-acme-001,Usage,Used,ResourceReservation,"{""CommitmentPrograms"":[{""ProgramType"":""FlexibleSpendPlan""},{""ProgramType"":""ResourceReservation""}]}",0.0,150.0
+2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Standard,Aura Web,Support,,,,,,50.0,50.0
+2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Standard,StackLens,Observability,,,,,"{""CommitmentPrograms"":[{""ProgramType"":""MonthlyIntervalSpendCommitment""},{""ProgramType"":""AnnualIntervalSpendCommitment""}]}",120.0,120.0
+2025-04-01T00:00:00Z,2025-04-02T00:00:00Z,Usage,Standard,StackLens,Observability,,,,,"{""CommitmentPrograms"":[{""ProgramType"":""MonthlyIntervalSpendCommitment""},{""ProgramType"":""AnnualIntervalSpendCommitment""}]}",80.0,80.0
