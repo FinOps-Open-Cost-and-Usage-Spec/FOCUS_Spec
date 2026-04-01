@@ -69,7 +69,7 @@ Defines how *corrections* to previously delivered FOCUS *dataset artifacts* are 
 CorrectionHandling MUST adhere to the following requirements:
 
 * *FOCUS dataset* MUST have its styles for representing corrections in *dataset artifacts* documented and accessible to practitioners (including whether Replacement, Delta, or Ledger style is used and under which conditions each style applies).
-* *FOCUS dataset* MUST represent a complete snapshot of data for the affected *delivery scope* when using [Replacement correction style](#attributes.correctionhandling.overview.correctionstyles.replacementcorrections).
+* *FOCUS dataset* MUST represent a complete snapshot of data for the affected [*delivery scope*](#glossary:delivery-scope) when using [Replacement correction style](#attributes.correctionhandling.overview.correctionstyles.replacementcorrections).
 * *FOCUS dataset* MUST include additive records representing corrections within the same *delivery scope* when using [Delta correction style](#attributes.correctionhandling.overview.correctionstyles.deltacorrections).
 * *FOCUS dataset* MUST include explicit reversal and re-entry additive records representing corrections within the same *delivery scope* when using [Ledger correction style](#attributes.correctionhandling.overview.correctionstyles.ledgercorrections).
 
