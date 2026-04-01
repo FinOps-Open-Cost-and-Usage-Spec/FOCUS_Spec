@@ -1,6 +1,6 @@
 # Custom Column Handling
 
-A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that convey information about the records provided by a [*data generator*](#metadata.datagenerator). While FOCUS establishes the core structure and defins standardized [*FOCUS columns*](#glossary:FOCUS-column) for consistent reporting, the diverse and evolving landscape of service providers and service offerings may require [*data generators*](#metadata.datagenerator) to include [*custom columns*](#glossary:custom-column) in a *FOCUS dataset*.
+A [*FOCUS dataset*](#glossary:FOCUS-dataset) consists of a set of columns that convey information about the records provided by a [*data generator*](#metadata.datagenerator). While FOCUS establishes the core structure and defines standardized [*FOCUS columns*](#glossary:FOCUS-column) for consistent reporting, the diverse and evolving landscape of service providers and service offerings may require [*data generators*](#metadata.datagenerator) to include [*custom columns*](#glossary:custom-column) in a *FOCUS dataset*.
 
 The Custom Column Handling attribute defines column ID naming, formatting, and value requirements for *custom columns* appearing in a *FOCUS dataset*.
 
