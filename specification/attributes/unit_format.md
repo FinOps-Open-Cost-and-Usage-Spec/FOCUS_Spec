@@ -21,6 +21,7 @@ Column conforming to UnitFormat attribute MUST adhere to the following requireme
 * *FOCUS dataset column* SHOULD use the `<plural-units>` format when expressing a [simple unit](#attributes.definitions.simpleunit) (e.g., "GB", "Seconds").
 * *FOCUS dataset column* SHOULD use the `<singular-base-unit>-<plural-base-unit>` format when expressing a compound unit (e.g., "GB-Hours", "MB-Days", "Request-Tokens").
 * *FOCUS dataset column* SHOULD use the `<plural-units>/<singular-time-unit>` format when expressing a ratio unit with a time denominator (e.g., "GB/Hour", "PB/Day").
+* *FOCUS dataset column* SHOULD use the `<compound-unit>/<singular-time-unit>` format when expressing a ratio unit with a compound unit numerator (e.g., "Core-Hours/Day").
 * *FOCUS dataset column* MAY include a [unit quantity](#attributes.definitions.unitquantity) expressed as a positive integer.
 * *FOCUS dataset column* SHOULD use the `<unit-quantity> <plural-units>` format when a unit quantity is included (e.g., "1000 Tokens", "1000 Characters").
 * *FOCUS dataset column* MAY include a [denominator quantity](#attributes.definitions.denominatorquantity) expressed as a positive integer when the *FOCUS dataset column* represents a ratio unit.
