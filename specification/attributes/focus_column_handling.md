@@ -12,7 +12,7 @@ FOCUS Column Handling
 
 ## Description
 
-Naming conventions for columns appearing in a *FOCUS dataset*.
+Naming conventions for *FOCUS columns* appearing in a *FOCUS dataset*.
 
 ## Requirements
 
