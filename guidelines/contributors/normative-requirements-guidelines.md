@@ -845,6 +845,11 @@ To further enhance readability, individual requirements within each group SHOULD
 
 ### 4.7. Attribute Normative Requirements Examples
 
+**Notes:**
+
+* The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
+* Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
+
 #### 4.7.1. Null Handling
 
 > *Note: This example illustrates the baseline pattern for an Attribute that applies to both FOCUS columns and Custom columns, with no qualifiers.*
