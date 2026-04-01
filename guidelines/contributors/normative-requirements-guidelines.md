@@ -112,6 +112,10 @@ The normative subject MUST be a schema-level entity, such as:
   * `FOCUS dataset` keyword with a qualifier represents a qualified subset of FOCUS datasets  
   * A single FOCUS dataset explicitly identified by `<FOCUS Dataset ID>` (e.g., `CostAndUsage`)
 
+* **FOCUS Dataset Column**, whereby use of:  
+  * `FOCUS dataset column` keyword represents any column in a FOCUS dataset (either a FOCUS column or a custom column)  
+  * `FOCUS dataset column` keyword with a qualifier represents a qualified subset of FOCUS dataset columns (e.g., `FOCUS dataset column containing numeric values`)
+
 * **FOCUS Column**, whereby use of:  
   * `FOCUS column` keyword represents any FOCUS column  
   * `FOCUS column` keyword with a qualifier represents a qualified subset of FOCUS columns (e.g., `FOCUS column containing numeric values`)  
@@ -123,9 +127,14 @@ The normative subject MUST be a schema-level entity, such as:
 
 * **Structural sub-elements within Columns** (objects, keys, key values):  
   *Note: MUST NOT use `object`, `key`, or `value` keywords alone. Always reference them in context, e.g.:*  
-  * `Object in Columns containing JsonObjectFormat values`  
   * `Key in Object in FOCUS/Custom column containing JsonObjectFormat values`  
   * `Key value in Object in FOCUS/Custom column containing key-value pairs`
+  * `Object in FOCUS dataset column`  
+  * `Object in array in FOCUS dataset column`  
+  * `Key in Object in FOCUS dataset column`  
+  * `Key value in Object in FOCUS dataset column`  
+  * `Key in FOCUS dataset column`  
+  * `Key value in FOCUS dataset column`
 
 The subject SHOULD be explicit and unambiguous.
 
@@ -722,7 +731,6 @@ CommitmentDiscountQuantity MUST adhere to the following requirements:
 * When CommitmentDiscountQuantity is not null and ChargeCategory is "Purchase", CommitmentDiscountQuantity MUST adhere to the following requirements:
   * CommitmentDiscountQuantity MUST be the quantity of CommitmentDiscountUnit, paid fully or partially upfront, that is eligible for consumption over the *commitment discount's* *term* when [ChargeFrequency](#datasets.costandusage.chargefrequency) is "One-Time".
   * ...
-  
 
 ## 4. Attribute Requirements
 
@@ -773,14 +781,15 @@ The following table provides an overview of anchor subject types and requirement
 | Anchor Subject Type | Requirement Subject |
 |---|---|
 | Dataset | FOCUS dataset |
+| Column | FOCUS dataset column |
 | Column | FOCUS column |
 | Column | Custom column |
-| Column | Object in FOCUS column |
-| Column | Object in array in FOCUS column |
-| Column | Key in Object in FOCUS column |
-| Column | Key value in Object in FOCUS column |
-| Column | Key in FOCUS column |
-| Column | Key value in FOCUS column |
+| Column | Object in FOCUS dataset column |
+| Column | Object in array in FOCUS dataset column |
+| Column | Key in Object in FOCUS dataset column |
+| Column | Key value in Object in FOCUS dataset column |
+| Column | Key in FOCUS dataset column |
+| Column | Key value in FOCUS dataset column |
 
 ### 4.4. FOCUS vs Custom Column Requirements
 
@@ -811,17 +820,20 @@ Attributes may include requirements that apply to one or more intended normative
    i. **Global FOCUS Dataset Requirements:** Applicable to all FOCUS datasets that declare conformance to the Attribute, regardless of their structure, specific role or context.
    ii. **Qualified FOCUS Dataset Requirements:** Applicable to a subset of FOCUS datasets that declare conformance to the Attribute and are identified through a qualifier.
    iii. **Specific FOCUS Dataset Requirements:** Applicable to a specific FOCUS dataset, identified explicitly by Dataset ID.
-2. **FOCUS Column-level Attribute Requirements:** Applicable to FOCUS columns that declare conformance to the Attribute.
+2. **FOCUS Dataset Column-level Attribute Requirements:** Applicable to all columns (FOCUS columns and custom columns) in FOCUS datasets that declare conformance to the Attribute.
+   i. **Global FOCUS Dataset Column Requirements:** Applicable to all FOCUS dataset columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
+   ii. **Qualified FOCUS Dataset Column Requirements:** Applicable to a subset of FOCUS dataset columns that declare conformance to the Attribute and are identified through a qualifier.
+3. **FOCUS Column-level Attribute Requirements:** Applicable to FOCUS columns that declare conformance to the Attribute.
    i. **Global FOCUS Column Requirements:** Applicable to all FOCUS columns that declare conformance to the Attribute, regardless of their structure, specific role or context.
    ii. **Qualified FOCUS Column Requirements:** Applicable to a subset of FOCUS columns that declare conformance to the Attribute and are identified through a qualifier.
    iii. **Specific FOCUS Column Requirements:** Applicable to a specific FOCUS column, identified explicitly by Column ID.
-3. **FOCUS Column sub-element Attribute Requirements:** Applicable to structural sub-elements within columns that declare conformance to the Attribute.
+4. **FOCUS Column sub-element Attribute Requirements:** Applicable to structural sub-elements within columns that declare conformance to the Attribute.
    i. **Objects in Columns containing JsonObjectFormat values**
    ii. **Keys in Objects in Columns containing JsonObjectFormat values**
    iii. **Key values in Objects in Columns containing JsonObjectFormat values**
    iv. **Keys in Columns containing Key-Value pair format values**
    v. **Key values in Columns containing Key-Value pair format values**
-4. **Custom Column Attribute Requirements:**
+5. **Custom Column Attribute Requirements:**
    i. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
    ii. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
 
@@ -852,104 +864,56 @@ To further enhance readability, individual requirements within each group SHOULD
 
 #### 4.7.1. Null Handling
 
-> *Note: This example illustrates the baseline pattern for an Attribute that applies to both FOCUS columns and Custom columns, with no qualifiers.*
+> *Note: This example illustrates the baseline pattern for an Attribute with flat bullets and no qualifiers.*
 
 Column conforming to NullHandling attribute MUST adhere to the following requirements:
 
-* FOCUS column MUST adhere to the following requirements:
-  * FOCUS column MUST use NULL for absent values when the FOCUS column is defined as nullable.
-  * FOCUS column MUST NOT contain empty strings or placeholder strings (e.g., "Not Applicable") for absent values when the FOCUS column contains string values.
-  * FOCUS column MUST NOT contain placeholder numeric values (e.g., 0) for absent values when the FOCUS column contains numeric values.
-* Custom column MUST adhere to the following requirements:
-  * Custom column SHOULD use NULL for absent values when the custom column is defined as nullable.
-  * Custom column SHOULD NOT contain empty strings or placeholder strings (e.g., "Not Applicable") for absent values when the custom column contains string values.
-  * Custom column SHOULD NOT contain placeholder numeric values (e.g., 0) for absent values when the custom column contains numeric values.
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST use `null` for absent values when the *FOCUS dataset column* is defined as nullable.
+* *FOCUS dataset column* MUST NOT contain empty strings or placeholder strings (e.g., `Not Applicable`) for absent values when the *FOCUS dataset column* contains string values.
+* *FOCUS dataset column* MUST NOT contain placeholder numeric values (e.g., `0`) for absent values when the *FOCUS dataset column* contains numeric values.
 
 #### 4.7.2. Date/Time Format
 
-> *Note: This example illustrates an Attribute with a qualifier and a nested composite requirement, expressed for both FOCUS columns and Custom columns.*
+> *Note: This example illustrates an Attribute with flat bullets and a nested composite requirement.*
 
 Column conforming to DateTimeFormat attribute MUST adhere to the following requirements:
 
-* When FOCUS column contains date/time values, FOCUS column MUST adhere to the following requirements:
-  * FOCUS column MUST be expressed in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.
-  * FOCUS column MUST conform to the ISO 8601 standard, which provides a globally recognized format for representing dates and times.
-  * When FOCUS column represents a specific moment in time, FOCUS column MUST adhere to the following requirements:
-    * FOCUS column MUST use the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ').
-    * FOCUS column MUST include both the date and time components, separated with the letter 'T'.
-    * FOCUS column MUST use two-digit hours (HH), minutes (mm), and seconds (ss).
-    * FOCUS column MUST end with the ISO 8601 UTC designator 'Z'.
-* When custom column contains date/time values, custom column MUST adhere to the following requirements:
-  * Custom column SHOULD be expressed in UTC (Coordinated Universal Time).
-  * Custom column SHOULD conform to the ISO 8601 standard.
-  * When custom column represents a specific moment in time, custom column MUST adhere to the following requirements:
-    * Custom column SHOULD use the extended ISO 8601 format with UTC offset ('YYYY-MM-DDTHH:mm:ssZ').
-    * Custom column SHOULD include both the date and time components, separated with the letter 'T'.
-    * Custom column SHOULD use two-digit hours (HH), minutes (mm), and seconds (ss).
-    * Custom column SHOULD end with the ISO 8601 UTC designator 'Z'.
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST be expressed in UTC (Coordinated Universal Time) to avoid ambiguity and ensure consistency across different time zones.
+* *FOCUS dataset column* MUST conform to the ISO 8601 standard, which provides a globally recognized format for representing dates and times (see [ISO 8601-1:2019](https://www.iso.org/standard/70907.html) governing document for details).
+* When column represents a specific moment in time, *FOCUS dataset column* MUST adhere to the following requirements:
+  * *FOCUS dataset column* MUST use the extended ISO 8601 format with UTC offset (`YYYY-MM-DDTHH:mm:ssZ`).
+  * *FOCUS dataset column* MUST include both the date and time components, separated with the letter `T`.
+  * *FOCUS dataset column* MUST use two-digit hours (`HH`), minutes (`mm`), and seconds (`ss`).
+  * *FOCUS dataset column* MUST end with the ISO 8601 UTC designator `Z`.
 
 #### 4.7.3. JSON Object Format
 
-> *Note: This example illustrates an Attribute with sub-element requirements (Object, Key, Key value) expressed as qualified bullets within the FOCUS Column group.*
+> *Note: This example illustrates an Attribute with sub-element requirements (Object, Key, Key value) expressed as flat bullets.*
 
 Column conforming to JsonObjectFormat attribute MUST adhere to the following requirements:
 
-* When FOCUS column contains JsonObjectFormat values, FOCUS column MUST adhere to the following requirements:
-  * FOCUS column MUST contain a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
-  * FOCUS column MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the object.
-  * Object in FOCUS column SHOULD NOT exceed 3 levels of nesting.
-  * Key in Object in FOCUS column MUST be unique.
-  * Key value in Object in FOCUS column MUST be of type number, string, boolean (`true` or `false`), array, object, or `null`.
-  * Object in array in FOCUS column MUST adhere to the following requirements:
-    * Object in array in FOCUS column MUST be of a consistent type.
-    * Object in array in FOCUS column MUST NOT be repeated.
-    * Object in array in FOCUS column MUST NOT be null.
-* Custom column MUST have its object schema documented by the data generator and accessible to practitioners when the custom column contains a JSON object.
+* [*FOCUS dataset column*](#glossary:FOCUS-dataset-column) MUST contain a serialized JSON string, consistent with the [ECMA 404](https://www.ecma-international.org/wp-content/uploads/ECMA-404_2nd_edition_december_2017.pdf) definition of an object.
+* *FOCUS dataset column* MUST conform to all requirements of the corresponding column definition, which may specify or restrict the shape or contents of the object.
+* Object in *FOCUS dataset column* SHOULD NOT exceed 3 levels of nesting.
+* Key in Object in *FOCUS dataset column* MUST be unique.
+* Key value in Object in *FOCUS dataset column* MUST be of type number, string, boolean (`true` or `false`), array, object, or `null`.
+* Object in array in *FOCUS dataset column* MUST adhere to the following requirements:
+  * Object in array in *FOCUS dataset column* MUST be of a consistent type.
+  * Object in array in *FOCUS dataset column* MUST NOT be repeated.
+  * Object in array in *FOCUS dataset column* MUST NOT be null.
 
-#### 4.7.4. Data Generator Calculated Split Cost Allocation Handling
+#### 4.7.4. Dataset Completeness
 
-> *Note: This example illustrates an Attribute with an applicability condition preceding the structural anchor requirement.*
+> *Note: This example illustrates an Attribute with a Dataset anchor and nested composite requirement.*
 
-When the data generator supports data generator-calculated split cost allocation, column conforming to DataGeneratorCalculatedSplitCostAllocationHandling attribute MUST adhere to the following requirements:
+Dataset conforming to DatasetCompleteness attribute MUST adhere to the following requirements:
 
-* The sum of FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a summable [*metric*](#glossary:metric) (e.g., costs and quantities).
-* FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a non-summable *metric* (e.g., unit prices).
-* FOCUS column values in *allocated charges* MUST match the corresponding value in the *origin charge* when the FOCUS column represents a dimension.
-* FOCUS column values in *allocated charges* MUST include the same keys and values present in the [CostAndUsage.Tags](#datasets.costandusage.tags) in the *origin charge* when the FOCUS column contains tag values.
-
-#### 4.7.5. Column Handling
-
-> *Note: This example illustrates the special case of an Attribute that targets both datasets and columns, requiring two separate structural anchor requirements.*
-
-Dataset conforming to ColumnHandling attribute MUST adhere to the following requirements:
-
-* FOCUS dataset MUST adhere to the following column ordering requirements:
-  * FOCUS dataset SHOULD list all FOCUS columns before all Custom columns.
-  * FOCUS dataset SHOULD sort FOCUS columns alphabetically by their Column ID within the FOCUS columns group.
-  * FOCUS dataset SHOULD sort Custom columns alphabetically by their Column ID within the Custom columns group.
-  * FOCUS dataset SHOULD NOT intermix FOCUS columns and Custom columns when ordering columns.
-
-Column conforming to ColumnHandling attribute MUST adhere to the following requirements:
-
-* FOCUS column MUST adhere to the following requirements:
-  * FOCUS column MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID "BillingAccountName" and Display Name "Billing Account Name").
-  * FOCUS column MUST use Pascal case in the Column ID.
-  * FOCUS column MUST use only alphanumeric characters in the Column ID.
-  * FOCUS column MUST NOT include special characters in the Column ID.
-  * FOCUS column MUST NOT use abbreviations other than `Id` in the Column ID.
-  * FOCUS column SHOULD NOT use acronyms other than `Sku` in the Column ID.
-  * FOCUS column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
-  * FOCUS column MUST include the `Id` suffix in the Column ID when the FOCUS column represents an identifier.
-  * FOCUS column MUST include the `Name` suffix in the Column ID when the FOCUS column represents a name.
-  * FOCUS column MUST include `Sku` in the Column ID when the FOCUS column represents a product offering that incurred a charge.
-  * FOCUS column MUST contain one of the FOCUS-defined allowed values when the FOCUS column includes `Category` suffix in the Column ID and is not null.
-* Custom column (e.g., service-provider-defined column included in FOCUS dataset) MUST adhere to the following requirements:
-  * Custom column MUST include the `x_` prefix in the Column ID to identify it as an external custom column and to distinguish it from FOCUS columns to avoid conflicts in future releases.
-  * Custom column SHOULD use Pascal case in the Column ID.
-  * Custom column SHOULD use only alphanumeric characters in the Column ID.
-  * Custom column SHOULD NOT include special characters in the Column ID.
-  * Custom column SHOULD NOT use abbreviations other than `Id` in the Column ID.
-  * Custom column SHOULD NOT use acronyms other than `Sku` in the Column ID.
-  * Custom column SHOULD NOT exceed 50 characters in the Column ID to accommodate column length restrictions of various data repositories.
-  * Custom column SHOULD include the `Id` suffix in the Column ID when the custom column represents an identifier.
-  * Custom column SHOULD include the `Name` suffix in the Column ID when the custom column represents a name.
+* *FOCUS dataset* MUST include *custom columns* for all corresponding *native dataset* columns except those explicitly listed as exclusions with justification (e.g., deprecated fields, overlap with *FOCUS columns*) in publicly-available documentation.
+* *FOCUS dataset* MUST have all included *custom columns* documented in publicly-available documentation, including description, purpose, and relationship to *native dataset* columns.
+* *FOCUS dataset* MUST ensure *custom columns* retain the fidelity of corresponding *native dataset* values without lossy transformations (e.g., rounding or truncation).
+* *FOCUS dataset* MUST NOT alter the aggregated values of summable [*metrics*](#glossary:metric) (e.g., costs and quantities) due to the inclusion of *custom columns*.
+* ...
+* *FOCUS dataset* MUST adhere to the following column ordering requirements:
+  * *FOCUS dataset* SHOULD list all *FOCUS columns* before all *custom columns*.
+  * *FOCUS dataset* SHOULD sort *FOCUS columns* alphabetically by their Column ID within the *FOCUS columns* group.
+  * *FOCUS dataset* SHOULD sort *custom columns* alphabetically by their Column ID within the *custom columns* group.
