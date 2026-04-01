@@ -18,7 +18,7 @@ Naming conventions for *FOCUS columns* appearing in a *FOCUS dataset*.
 
 Column conforming to FocusColumnHandling attribute MUST adhere to the following requirements:
 
-* [*FOCUS column*](#glossary:FOCUS-column) MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID "BillingAccountName" and Display Name "Billing Account Name").
+* [*FOCUS column*](#glossary:FOCUS-column) MUST use a Display Name consistent with the Column ID, with spaces inserted between words (e.g., Column ID `BillingAccountName` and Display Name `Billing Account Name`, Column ID `BillingAccountId` and Display Name `Billing Account ID`).
 * *FOCUS column* MUST use [*Pascal case*](#glossary:pascalcase) in the Column ID.
 * *FOCUS column* MUST use only alphanumeric characters in the Column ID.
 * *FOCUS column* MUST NOT include special characters in the Column ID.
