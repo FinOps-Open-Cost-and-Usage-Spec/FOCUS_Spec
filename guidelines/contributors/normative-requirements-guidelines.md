@@ -165,10 +165,10 @@ Specifically:
 
 A requirement MUST be split into multiple bullets if it:
 
-* combines multiple obligations,
-* combines a rule and an exception,
-* mixes a definition with a constraint,
-* applies different constraints to different subjects.
+* contains more than one BCP 14 keyword,
+* combines multiple obligations (e.g., multiple verifiable state descriptors, multiple objects, or multiple conditions that result in distinct constraints),
+* contains a hidden constraint expressed as a definition (e.g., "ColumnA MUST be Z, where Z is defined as Y"),
+* applies constraints to multiple subjects, even with a single BCP 14 keyword (e.g., "ColumnA and ColumnB MUST be X").
 
 ### 1.7. Composite Requirements
 
