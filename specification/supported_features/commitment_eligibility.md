@@ -60,6 +60,7 @@ CROSS JOIN
 WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
   AND CU.ChargeCategory = 'Usage'
   AND CU.CommitmentDiscountId IS NULL
+  AND CU.CommitmentProgramEligibility IS NOT NULL
 GROUP BY
   CU.ServiceProviderName,
   CU.ServiceName,
@@ -106,6 +107,8 @@ This query aggregates eligible spend and uncovered eligible spend across all pro
 
 Note: Some SaaS providers may not populate CommitmentDiscountId even when a [*commitment*](#glossary:commitment) is applied. For those providers, EffectiveCost may not reflect *commitment* pricing, and this query captures total eligible spend rather than distinguishing covered from uncovered. Practitioners should consult provider-specific documentation to determine actual *commitment* utilization.
 
+Note: As with the first query above, when a charge is eligible for multiple *commitment program* types, it appears once per eligible type. Removing the EligibleProgramType grouping without deduplicating would inflate totals.
+
 ```sql
 SELECT
   CU.ServiceProviderName,
@@ -125,6 +128,7 @@ CROSS JOIN
   UNNEST(JSON_EXTRACT_ARRAY(CU.CommitmentProgramEligibility, '$.CommitmentPrograms')) AS CP
 WHERE CU.ChargePeriodStart >= ? AND CU.ChargePeriodEnd < ?
   AND CU.ChargeCategory = 'Usage'
+  AND CU.CommitmentProgramEligibility IS NOT NULL
 GROUP BY
   CU.ServiceProviderName,
   JSON_VALUE(CP, '$.ProgramType')
