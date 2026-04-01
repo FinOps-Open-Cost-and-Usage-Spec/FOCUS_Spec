@@ -101,6 +101,10 @@ A charge to correct cost or usage data in a previously invoiced [*billing period
 
 A financial incentive or allowance granted by a service provider unrelated to other past/current/future charges.
 
+<a name="glossary:custom-column"><b>Custom Column</b></a>
+
+A column not defined by FOCUS and included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). Custom columns are prefixed with `x_` and provide additional context from [*native datasets*](#glossary:native-dataset) beyond what is captured in FOCUS columns. See [Dataset Completeness](#attributes.datasetcompleteness) for inclusion requirements.
+
 <a name="glossary:dataset-artifact"><b>Dataset Artifact</b></a>
 
 An abbreviated term for [*dataset instance artifact*](#glossary:dataset-instance-artifact).
@@ -129,13 +133,17 @@ A tag with one tag value chosen from a set of possible tag values after being pr
 
 An open-source specification that defines requirements for billing data.
 
+<a name="glossary:FOCUS-column"><b>FOCUS Column</b></a>
+
+A column defined by FOCUS and included in a [*FOCUS dataset*](#glossary:FOCUS-dataset). See the Columns section of each dataset for definitions.
+
 <a name="glossary:FOCUS-dataset"><b>FOCUS Dataset</b></a>
 
 A structured collection of columns that conforms to the BCP14 criteria established by FOCUS. All columns included must be defined in the FOCUS Columns section of the specification.
 
-In addition to these standardized columns, [data generators](#metadata.datagenerator) may include custom columns (prefixed with `x_`) where additional context is needed beyond what is captured in the defined FOCUS columns. If custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
+In addition to these standardized columns, [data generators](#metadata.datagenerator) include [*custom columns*](#glossary:custom-column) to capture information from [*native datasets*](#glossary:native-dataset) that is not represented by [*FOCUS columns*](#glossary:FOCUS-column). If custom columns introduce record-splitting (i.e., a single original charge results in multiple rows), the data generator is responsible for ensuring that all cost and quantity metrics still meet the aggregation and consistency rules required by the specification.
 
-The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness.
+The collection of datasets are designed to provide billing insight, additional context, metadata, mapping, or enrichment information that enhances the interpretability or completeness. See also: [*Native Dataset*](#glossary:native-dataset).
 
 <a name="glossary:inclusivestartbound"><b>Inclusive Start Bound</b></a>
 
@@ -164,6 +172,10 @@ A FOCUS-defined column that provides numeric values, allowing for aggregation op
 <a name="glossary:national-currency"><b>National Currency</b></a>
 
 A government-issued currency (e.g., US dollars, Euros).
+
+<a name="glossary:native-dataset"><b>Native Dataset</b></a>
+
+A dataset provided by a [*data generator*](#metadata.datagenerator) in a format other than FOCUS. For [*service providers*](#glossary:service-provider), this typically refers to their proprietary data exports (e.g., billing exports, contract details, or other FinOps-related datasets). For FinOps tool vendors, this refers to any non-FOCUS dataset they offer to [*practitioners*](#glossary:practitioner). See also: [*FOCUS Dataset*](#glossary:FOCUS-dataset).
 
 <a name="glossary:negotiated-discount"><b>Negotiated Discount</b></a>
 
