@@ -1,6 +1,6 @@
 # Commitment Program Eligibility
 
-Commitment Program Eligibility identifies the [*commitment programs*](#glossary:commitment-program) that could potentially cover [*charges*](#glossary:charge), subject to [*service provider*](#glossary:service-provider) constraints. By distinguishing the pool of spend that was eligible to be covered, Commitment Program Eligibility provides the fundamental denominator for calculating precise commitment coverage metrics. This allows FinOps practitioners to accurately size the pool of uncovered spend that could realistically be covered by a future commitment. In this context, *commitment programs* include both discount-bearing programs (e.g., Flexible Spend Plans, Resource Reservations) and advance capacity reservations (e.g., Advance Capacity Reservations), provided the service provider treats them as [*commitments*](#glossary:commitment).
+Commitment Program Eligibility identifies the [*commitment programs*](#glossary:commitment-program) that could potentially cover [*charges*](#glossary:charge), subject to [*service provider*](#glossary:service-provider) constraints. By distinguishing the pool of spend that was eligible to be covered, Commitment Program Eligibility provides the fundamental denominator for calculating precise commitment coverage metrics. This allows FinOps practitioners to accurately size the pool of uncovered spend that could realistically be covered by a future commitment. In this context, *commitment programs* include both discount-bearing programs (e.g., Flexible Spend Plans, Resource Reservations) and advance resource commitments (e.g., Advance Resource Commitments), provided the service provider treats them as [*commitments*](#glossary:commitment).
 
 ## Requirements
 
@@ -36,7 +36,7 @@ CommitmentProgramEligibilityObject MUST adhere to the following requirements:
   * Each entry in CommitmentProgramEligibilityObject.CommitmentPrograms MUST have property keys that begin with the string "x_" unless it is a FOCUS-defined property key.
   * CommitmentProgramEligibilityObject.CommitmentPrograms.ProgramType MUST be of type String.
   * CommitmentProgramEligibilityObject.CommitmentPrograms.ProgramType MUST NOT be null.
-  * CommitmentProgramEligibilityObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider (e.g., "FlexibleSpendPlan", "ResourceReservation", "CapacityCreditPool", "AdvanceCapacityReservation").
+  * CommitmentProgramEligibilityObject.CommitmentPrograms.ProgramType MUST correspond to a *commitment program* type supported by the service provider (e.g., "FlexibleSpendPlan", "ResourceReservation", "BulkCapacityCredit", "AdvanceResourceCommitment").
   * CommitmentProgramEligibilityObject.CommitmentPrograms.ProgramType MUST equal [CommitmentDiscountType](#datasets.costandusage.commitmentdiscounttype) for one object in CommitmentProgramEligibilityObject.CommitmentPrograms when CommitmentDiscountType is not null.
   * CommitmentProgramEligibilityObject.CommitmentPrograms.ProgramType SHOULD correspond to terminology disclosed by the service provider in public documentation.
 
@@ -60,8 +60,8 @@ CommitmentProgramEligibilityObject MUST adhere to the following requirements:
   "CommitmentPrograms": [
     { "ProgramType": "FlexibleSpendPlan" },
     { "ProgramType": "ResourceReservation" },
-    { "ProgramType": "AdvanceCapacityReservation" },
-    { "ProgramType": "ZonalCapacityReservation" }
+    { "ProgramType": "AdvanceResourceCommitment" },
+    { "ProgramType": "ZonalResourceCommitment" }
   ]
 }
 ```
@@ -99,13 +99,13 @@ Scenario: A compute usage row that is partially covered by a Flexible Spend Plan
 |---------------------|-------------|---------------------------------------------------------------------------------------------------------|
 | Aura Web            | Compute     | {"CommitmentPrograms": [{"ProgramType": "FlexibleSpendPlan"}, {"ProgramType": "ResourceReservation"}]} |
 
-### StackLens (Observability with Platform Commitment)
+### StackLens (Observability with Interval Spend Commitment)
 
-Scenario: An observability platform usage row eligible for Monthly and Annual commitment-based pricing, offering lower effective rates than standard usage.
+Scenario: An observability platform usage row eligible for Monthly and Annual interval spend commitment pricing, offering lower effective rates than standard usage.
 
 | ServiceProviderName | ServiceName   | CommitmentProgramEligibility                                                                                            |
 |---------------------|---------------|-------------------------------------------------------------------------------------------------------------------------|
-| StackLens           | Observability | {"CommitmentPrograms": [{"ProgramType": "MonthlyPlatformCommitment"}, {"ProgramType": "AnnualPlatformCommitment"}]} |
+| StackLens           | Observability | {"CommitmentPrograms": [{"ProgramType": "MonthlyIntervalSpendCommitment"}, {"ProgramType": "AnnualIntervalSpendCommitment"}]} |
 
 ### LatticeScale (Ineligible Object Storage Usage)
 
@@ -115,13 +115,13 @@ Scenario: Standard object storage usage or a support fee, which is not eligible 
 |---------------------|---------------|------------------------------|
 | LatticeScale        | ObjectStorage | null                         |
 
-### Aura Web (Capacity Reservation-Eligible Compute Usage)
+### Aura Web (Advance Resource Commitment-Eligible Compute Usage)
 
-Scenario: A compute instance type and tenancy that are eligible for both discount-bearing programs and capacity reservations. The eligibility column reflects all commitment constructs the usage qualifies for.
+Scenario: A compute instance type and tenancy that are eligible for both discount-bearing programs and advance resource commitments. The eligibility column reflects all commitment constructs the usage qualifies for.
 
 | ServiceProviderName | ServiceName | CommitmentProgramEligibility                                                                                                                                                                           |
 |---------------------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Aura Web            | Compute     | {"CommitmentPrograms": [{"ProgramType": "FlexibleSpendPlan"}, {"ProgramType": "ResourceReservation"}, {"ProgramType": "AdvanceCapacityReservation"}, {"ProgramType": "ZonalCapacityReservation"}]} |
+| Aura Web            | Compute     | {"CommitmentPrograms": [{"ProgramType": "FlexibleSpendPlan"}, {"ProgramType": "ResourceReservation"}, {"ProgramType": "AdvanceResourceCommitment"}, {"ProgramType": "ZonalResourceCommitment"}]} |
 
 ### Object ID
 
