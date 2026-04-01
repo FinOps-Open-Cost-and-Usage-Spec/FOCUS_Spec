@@ -75,7 +75,7 @@ The table below lists the valid abbreviations for data size units from a single 
 
 | Data size in bits    | Data size in bytes    |
 | :------------------- | :-------------------- |
-| b (bit) = 10^0       | B (byte = 10^0)       |
+| b (bit = 10^0)       | B (byte = 10^0)       |
 | Kb (kilobit = 10^3)  | KB (kilobyte = 10^3)  |
 | Mb (megabit = 10^6)  | MB (megabyte = 10^6)  |
 | Gb (gigabit = 10^9)  | GB (gigabyte = 10^9)  |
