@@ -16,16 +16,16 @@ Column conforming to UnitFormat attribute MUST adhere to the following requireme
   * *FOCUS dataset column* SHOULD use one of the recommended count-based unit names listed below for count-based base units.
   * *FOCUS dataset column* MAY include a count-based base unit that is not listed as one of the allowed values.
   * *FOCUS dataset column* SHOULD use capitalized nouns for base units that do not correspond to any of the allowed base unit names listed below.
-* *FOCUS dataset column* MUST use a hyphen ("-") to separate base units when expressing a [compound unit](#attributes.definitions.compoundunit) (e.g., "GB-Hours").
-* *FOCUS dataset column* MUST use a slash ("/") to separate the numerator and denominator when expressing a [ratio unit](#attributes.definitions.ratiounit) (e.g., "GB/Hour" to signify gigabytes per hour).
-* *FOCUS dataset column* SHOULD use the `<plural-units>` format when expressing a [simple unit](#attributes.definitions.simpleunit) (e.g., "GB", "Seconds").
-* *FOCUS dataset column* SHOULD use the `<singular-base-unit>-<plural-base-unit>` format when expressing a compound unit (e.g., "GB-Hours", "MB-Days", "Request-Tokens").
-* *FOCUS dataset column* SHOULD use the `<plural-units>/<singular-time-unit>` format when expressing a ratio unit with a time denominator (e.g., "GB/Hour", "PB/Day").
-* *FOCUS dataset column* SHOULD use the `<compound-unit>/<singular-time-unit>` format when expressing a ratio unit with a compound unit numerator (e.g., "Core-Hours/Day").
+* *FOCUS dataset column* MUST use a hyphen (`-`) to separate base units when expressing a [compound unit](#attributes.definitions.compoundunit) (e.g., `GB-Hours`).
+* *FOCUS dataset column* MUST use a slash (`/`) to separate the numerator and denominator when expressing a [ratio unit](#attributes.definitions.ratiounit) (e.g., `GB/Hour` to signify gigabytes per hour).
+* *FOCUS dataset column* SHOULD use the `<plural-units>` format when expressing a [simple unit](#attributes.definitions.simpleunit) (e.g., `GB`, `Seconds`).
+* *FOCUS dataset column* SHOULD use the `<singular-base-unit>-<plural-base-unit>` format when expressing a compound unit (e.g., `GB-Hours`, `MB-Days`, `Request-Tokens`).
+* *FOCUS dataset column* SHOULD use the `<plural-units>/<singular-time-unit>` format when expressing a ratio unit with a time denominator (e.g., `GB/Hour`, `PB/Day`).
+* *FOCUS dataset column* SHOULD use the `<compound-unit>/<singular-time-unit>` format when expressing a ratio unit with a compound unit numerator (e.g., `Core-Hours/Day`).
 * *FOCUS dataset column* MAY include a [unit quantity](#attributes.definitions.unitquantity) expressed as a positive integer.
-* *FOCUS dataset column* SHOULD use the `<unit-quantity> <plural-units>` format when a unit quantity is included (e.g., "1000 Tokens", "1000 Characters").
+* *FOCUS dataset column* SHOULD use the `<unit-quantity> <plural-units>` format when a unit quantity is included (e.g., `1000 Tokens`, `1000 Characters`).
 * *FOCUS dataset column* MAY include a [denominator quantity](#attributes.definitions.denominatorquantity) expressed as a positive integer when the *FOCUS dataset column* represents a ratio unit.
-* *FOCUS dataset column* SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format when the *FOCUS dataset column* represents a ratio unit and a denominator quantity is included (e.g., "Units/3 Months").
+* *FOCUS dataset column* SHOULD use the `<plural-units>/<denominator-quantity> <plural-time-units>` format when the *FOCUS dataset column* represents a ratio unit and a denominator quantity is included (e.g., `Units/3 Months`).
 
 ## Definitions
 
@@ -67,8 +67,8 @@ Data size units are nouns representing data size measured in bits or bytes, expr
 
 For example:
 
-* "GB" represents both the singular and plural form of a gigabyte.
-* "TB" is a valid base unit name, while "TBs" and "terabyte" are considered invalid.
+* `GB` represents both the singular and plural form of a gigabyte.
+* `TB` is a valid base unit name, while `TBs` and `terabyte` are considered invalid.
 
 Values larger than 10^18 must use the abbreviation for exabit, exabyte, exbibit, or exbibyte. Values smaller than a byte must use the abbreviation for bit or byte.
 
@@ -92,7 +92,7 @@ The table below lists the valid abbreviations for data size units from a single 
 
 ### Allowed Time-based Unit Names
 
-Time-based units are nouns representing a discrete time period. They can be used alone to indicate duration, combined with another unit to form a compound unit (e.g., "GB-Hours"), or a per-time ratio unit (e.g., "GB/Hour").
+Time-based units are nouns representing a discrete time period. They can be used alone to indicate duration, combined with another unit to form a compound unit (e.g., `GB-Hours`), or a per-time ratio unit (e.g., `GB/Hour`).
 
 The table below lists allowed time-based base units.
 
