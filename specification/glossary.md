@@ -177,7 +177,7 @@ In the context of FOCUS, this process ensures consistency by reconciling cost an
 
 <a name="glossary:issued-invoice"><b>Issued Invoice</b></a>
 
-An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated invoice issuer ([Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized and the financial data presented on the invoice must not be altered.
+An [*invoice*](#glossary:invoice) that has been formally [*reconciled*](#glossary:invoice-reconciliation) and issued by the designated invoice issuer ([Invoice Issue Status](#datasets.invoicedetail.invoiceissuestatus) set to "Issued"). Once issued, the invoice becomes the authoritative financial document and is considered finalized. The financial data presented on the invoice is not expected to change.
 
 <a name="glossary:json"><b>JSON</b></a>
 
