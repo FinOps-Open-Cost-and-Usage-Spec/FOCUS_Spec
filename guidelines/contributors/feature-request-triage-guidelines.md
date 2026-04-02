@@ -145,9 +145,7 @@ The specific failure mode behind a `weak` label (e.g., solution-oriented vs. too
 
 ### When to Create Labels
 
-Labels defined in this document will be created in GitHub after these guidelines are approved. No labels should be created, renamed, or deleted before approval.
-
-The existing kebab-case labels `needs-scoping` and `needs-splitting` will be deleted and replaced by the space-separated equivalents defined above. Existing granular triage labels (e.g., `use-cases-solution-oriented`, `use-cases-too-broad`, `success-criteria-not-testable`, `blends-dimensions-metrics`) will be deprecated in favor of the `weak` prefix labels, with failure details captured in triage comments instead of label names.
+Labels defined in this document will be created in GitHub after these guidelines are approved. No labels should be created, renamed, or deleted before approval. FRs that carried prior triage labels will be re-triaged under the new system during backlog grooming.
 
 ## Triage Workflow
 
@@ -203,7 +201,7 @@ The PM fills the Maintainer Assessment sections of the FR template:
 
 ## Staleness Policy
 
-Feature Requests that remain in an unresolved triage state accumulate staleness across release cycles. The release count starts from the FR's creation date.
+Feature Requests that remain in an unresolved triage state accumulate staleness across release cycles. The release count starts from when the first `needs` or `weak` label is applied.
 
 | Threshold | Action |
 |:----------|:-------|
