@@ -41,6 +41,10 @@ style ObjectProperty fill:#d4edda,stroke:#666,stroke-width:1px
 * `|| -- contains -- o{` : one parent to zero-or-more child entities (array of objects)
 * `}| .. conforms-to .. ||` : many children to one parent conformance relationship
 
+**Exceptions:**
+
+* `CustomColumnHandling` is a special Attribute that references other Attributes (e.g., `NullHandling`, `DateTimeFormat`) to establish recommended conformance for custom columns. This cross-reference pattern is an exception rather than a general relationship shown in the diagram.
+
 > **Important clarification**
 
 By glossary definition, the following concepts are used:
@@ -127,8 +131,8 @@ The normative subject MUST be a schema-level entity, such as:
 
 * **Structural sub-elements within Columns** (objects, keys, key values):  
   *Note: MUST NOT use `object`, `key`, or `value` keywords alone. Always reference them in context, e.g.:*  
-  * `Key in Object in FOCUS/Custom column containing JsonObjectFormat values`  
-  * `Key value in Object in FOCUS/Custom column containing key-value pairs`
+  * `Key in Object in [FOCUS|Custom] column containing JsonObjectFormat values`  
+  * `Key value in Object in [FOCUS|Custom] column containing key-value pairs`
   * `Object in FOCUS dataset column`  
   * `Object in array in FOCUS dataset column`  
   * `Key in Object in FOCUS dataset column`  
@@ -217,9 +221,11 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
      i. **Dataset Presence:** Defines whether, and under what conditions, a dataset must be present in the FOCUS delivery.
      ii. **Column Presence in Dataset:** Defines which columns must or are recommended to be present within a dataset, and under which conditions.
   2. **Attribute Conformance Requirements**
-     i. **Attribute Conformance:** Defines requirements where a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., NullHandling, ColumnHandling, DatasetCompleteness), which may capture technical or business/contextual constraints.
+     i. **Dataset Attribute Conformance:** Defines requirements where a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `DatasetCompleteness`, `DatasetConfiguration`).
+     ii. **FOCUS Column Attribute Conformance:** Defines requirements where FOCUS columns within a dataset MUST conform to one or more FOCUS-defined Attributes (e.g., `NullHandling`).
+     iii. **Custom Column Attribute Conformance:** Defines requirements where custom columns within a dataset MUST conform to `CustomColumnHandling`.
   3. **Other Requirements**
-     i. **Other:** Captures dataset-level rules that do not fall into the above categories but are relevant for interpretation, validation, or integration.
+     i. **Other:** Captures dataset-level requirements that do not fall into the above categories but are relevant for interpretation, validation, or integration.
 
 #### Tabular Overview of Dataset Normative Requirement Grouping and Specifications
 
@@ -227,7 +233,9 @@ Grouping and ordering of dataset-level normative requirements ensures clarity, c
 |---|---|---|---|
 | Presence | Dataset Presence | Always | {DatasetId} MUST be present when {Condition}. |
 | Presence | Column Presence in Dataset | Always | {DatasetId} MUST include {ColumnId}. |
-| Attribute Conformance | Attribute Conformance | When applicable | {DatasetId} MUST conform to ColumnHandling requirements. |
+| Attribute Conformance | Dataset Attribute Conformance | Always | {DatasetId} MUST conform to DatasetCompleteness requirements. |
+| Attribute Conformance | FOCUS Column Attribute Conformance | Always | {DatasetId} *FOCUS columns* MUST conform to NullHandling requirements. |
+| Attribute Conformance | Custom Column Attribute Conformance | Always | {DatasetId} *custom columns* MUST conform to CustomColumnHandling requirements. |
 | Other | Other | When applicable | InvoiceDetail MUST represent all invoice line items with a non-zero BilledCost on any invoice associated with a BillingAccountId. |
 
 ### 2.2. Ordering of Dataset Requirements Within Groups
@@ -310,9 +318,10 @@ ContractCommitment MUST adhere to the following requirements:
   * ContractCommitment MUST include [ContractCommitmentCategory](#datasets.contractcommitment.contractcommitmentcategory).
   * ContractCommitment MUST include [ContractCommitmentCost](#datasets.contractcommitment.contractcommitmentcost).
   * ...
-* ContractCommitment MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
-* ContractCommitment MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* ContractCommitment MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
+* ContractCommitment MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
+* ...
+* ContractCommitment FOCUS columns MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* ContractCommitment custom columns MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 * ...
 
 #### 2.5.2. **Cost and Usage**
@@ -328,9 +337,13 @@ CostAndUsage MUST adhere to the following requirements:
   * CostAndUsage MUST include [AllocatedTags](#datasets.costandusage.allocatedtags) when the service provider supports [Data Generator-Calculated Split Cost Allocation](#datagenerator-calculatedsplitcostallocationhandling).
   * CostAndUsage SHOULD include [AvailabilityZone](#datasets.costandusage.availabilityzone) when the host provider supports deploying resources or services within an *availability zone*.
   * ...
-* CostAndUsage MUST conform to [ColumnHandling](#attributes.columnhandling) requirements.
-* CostAndUsage MUST conform to [NullHandling](#attributes.nullhandling) requirements.
-* CostAndUsage MUST conform to [CorrectionHandling](#attributes.correctionhandling) requirements.
+* CostAndUsage MUST conform to [DatasetCompleteness](#attributes.datasetcompleteness) requirements.
+* CostAndUsage MUST conform to [DatasetConfiguration](#attributes.datasetconfiguration) requirements.
+* ...
+* CostAndUsage [*FOCUS columns*](#glossary:FOCUS-column) MUST conform to [DataGeneratorCalculatedSplitCostAllocationHandling](#attributes.datagenerator-calculatedsplitcostallocationhandling) requirements when the data generator supports data generator-calculated split cost allocation.
+* CostAndUsage *FOCUS columns* MUST conform to [NullHandling](#attributes.nullhandling) requirements.
+* ...
+* CostAndUsage [*custom columns*](#glossary:custom-column) MUST conform to [CustomColumnHandling](#attributes.customcolumnhandling) requirements.
 * ...
 
 ## 3. Column Requirements
@@ -738,7 +751,13 @@ CommitmentDiscountQuantity MUST adhere to the following requirements:
 
 Attributes define reusable sets of normative constraints applicable to FOCUS datasets, columns (both FOCUS and custom), and column sub-elements (e.g., objects, keys, key values). Although Attributes are FOCUS entities, they serve only as containers for these constraints and are not treated as normative subjects of requirements.
 
-An entity is considered conforming to an Attribute if it explicitly declares conformance or inherits it from a parent entity. For example, when a dataset declares conformance to NullHandling, all columns within that dataset are considered conforming to that Attribute.
+An entity is considered conforming to an Attribute if it explicitly declares conformance or inherits it from a parent entity. For example, when a dataset declares conformance to `NullHandling`, all columns within that dataset are considered conforming to that Attribute.
+
+Conformance to an Attribute can be declared at:
+
+* **Dataset level:** The dataset declares conformance, and all columns within the dataset inherit it (e.g., `CostAndUsage MUST conform to NullHandling requirements.`).
+* **Column group level:** The dataset declares conformance for a specific group of columns (e.g., `CostAndUsage FOCUS columns MUST conform to [FocusColumnHandling] requirements.` or `CostAndUsage custom columns MUST conform to CustomColumnHandling requirements.`). This pattern is used to apply attributes separately to FOCUS columns and custom columns within a dataset.
+* **Column level:** A specific column declares conformance directly (e.g., `BilledCost MUST conform to NumericFormat requirements.`).
 
 Normative requirements defined in an Attribute section are evaluated within the scope of conforming entities but apply only to the subjects explicitly defined by each requirement. Conformance determines the set of entities in scope, while the requirement subject determines which of those entities are targeted.
 
@@ -791,21 +810,32 @@ The following table provides an overview of anchor subject types and requirement
 | Column | Key in FOCUS dataset column |
 | Column | Key value in FOCUS dataset column |
 
-### 4.4. FOCUS vs Custom Column Requirements
+### 4.4. FOCUS Dataset Column vs FOCUS Column vs Custom Column Requirements
 
-Custom columns are expected to behave in the same or similar way as FOCUS columns. The difference is that requirements for Custom columns are expressed as recommendations rather than mandatory constraints.
+Requirements that can apply to all columns in a FOCUS dataset (both FOCUS columns and custom columns) use `*FOCUS dataset column*` as the normative subject. This approach is used by the majority of attributes (e.g., NullHandling, DateTimeFormat, NumericFormat, StringHandling) to define column-agnostic requirements. Requirements specific to FOCUS-defined columns use `*FOCUS column*` as the normative subject and are defined in FocusColumnHandling. Requirements specific to custom columns use `*Custom column*` as the normative subject and are defined in CustomColumnHandling.
 
-As a general rule, when authoring requirements for a FOCUS column, the author SHOULD also consider whether the same requirements apply to Custom columns and, where applicable, restate them as recommendations using `SHOULD` instead of `MUST` and `SHOULD NOT` instead of `MUST NOT`. `MAY` and `MAY NOT` SHOULD be retained as-is.
+When an Attribute uses `*FOCUS dataset column*` as the subject:
 
-The following exceptions apply:
+* The requirements can apply equally to both FOCUS columns and custom columns.
+* CustomColumnHandling establishes the conformance level (typically SHOULD) for custom columns at the attribute reference level, not within individual requirements.
 
-* Some requirements might not be applicable to Custom columns and SHOULD be omitted.
-* Some requirements might be mandatory for Custom columns and SHOULD retain `MUST` or `MUST NOT`.
-* Some requirements might be optional for Custom columns and SHOULD use `MAY` or `MAY NOT` instead.
+### 4.5. CustomColumnHandling Attribute
 
-The appropriate keyword SHOULD always be chosen based on the intent and context of the requirement.
+CustomColumnHandling serves as the single source of truth for all custom column requirements. It is a special Attribute that:
 
-### 4.5. Grouping of Attribute Requirements
+* Defines column ID naming requirements (e.g., `x_` prefix as MUST, Pascal case as SHOULD).
+* Typically references other attributes (e.g., NullHandling, DateTimeFormat, NumericFormat) with `SHOULD conform` to establish recommended conformance for custom columns.
+* Lists specific requirements that must remain mandatory for custom columns (e.g., documented schema for JSON objects, single numeric value for numeric columns).
+
+Datasets declare conformance to CustomColumnHandling for custom columns using the pattern:
+
+```markdown
+* <DatasetId> *custom columns* MUST conform to [CustomColumnHandling] requirements.
+```
+
+This pattern ensures custom column requirements are centralized in one Attribute rather than duplicated across individual attributes.
+
+### 4.6. Grouping of Attribute Requirements
 
 Structured grouping and ordering of Attribute requirements improves clarity, consistency, and maintainability across the specification by making related requirements easier to locate and understand, without introducing any additional normative meaning.
 
@@ -837,7 +867,7 @@ Attributes may include requirements that apply to one or more intended normative
    i. **Global Custom Column Requirements:** Applicable to all Custom columns, regardless of their structure or purpose.
    ii. **Qualified Custom Column Requirements:** Applicable to a subset of Custom columns, identified through a qualifier.
 
-### 4.6. Ordering of Attribute Requirements within Groups
+### 4.7. Ordering of Attribute Requirements within Groups
 
 To further enhance readability, individual requirements within each group SHOULD be ordered as follows:
 
@@ -855,14 +885,14 @@ To further enhance readability, individual requirements within each group SHOULD
 
 * For detailed interpretation of keywords such as "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", "MAY", and others, see [BCP14](https://tools.ietf.org/html/bcp14) [[RFC2119](https://tools.ietf.org/html/rfc2119)][[RFC8174](https://tools.ietf.org/html/rfc8174)].
 
-### 4.7. Attribute Normative Requirements Examples
+### 4.8. Attribute Normative Requirements Examples
 
 **Notes:**
 
 * The examples below are **snippets** that illustrate patterns only, not full listings. The `...` indicates additional requirements exist in the full column specification.
 * Authors should consult the actual FOCUS attribute specification files as the **source of truth**, as these guidelines may not always reflect the latest version.
 
-#### 4.7.1. Null Handling
+#### 4.8.1. Null Handling
 
 > *Note: This example illustrates the baseline pattern for an Attribute with flat bullets and no qualifiers.*
 
@@ -872,7 +902,7 @@ Column conforming to NullHandling attribute MUST adhere to the following require
 * *FOCUS dataset column* MUST NOT contain empty strings or placeholder strings (e.g., `Not Applicable`) for absent values when the *FOCUS dataset column* contains string values.
 * *FOCUS dataset column* MUST NOT contain placeholder numeric values (e.g., `0`) for absent values when the *FOCUS dataset column* contains numeric values.
 
-#### 4.7.2. Date/Time Format
+#### 4.8.2. Date/Time Format
 
 > *Note: This example illustrates an Attribute with flat bullets and a nested composite requirement.*
 
@@ -886,7 +916,7 @@ Column conforming to DateTimeFormat attribute MUST adhere to the following requi
   * *FOCUS dataset column* MUST use two-digit hours (`HH`), minutes (`mm`), and seconds (`ss`).
   * *FOCUS dataset column* MUST end with the ISO 8601 UTC designator `Z`.
 
-#### 4.7.3. JSON Object Format
+#### 4.8.3. JSON Object Format
 
 > *Note: This example illustrates an Attribute with sub-element requirements (Object, Key, Key value) expressed as flat bullets.*
 
@@ -902,7 +932,7 @@ Column conforming to JsonObjectFormat attribute MUST adhere to the following req
   * Object in array in *FOCUS dataset column* MUST NOT be repeated.
   * Object in array in *FOCUS dataset column* MUST NOT be null.
 
-#### 4.7.4. Dataset Completeness
+#### 4.8.4. Dataset Completeness
 
 > *Note: This example illustrates an Attribute with a Dataset anchor and nested composite requirement.*
 
